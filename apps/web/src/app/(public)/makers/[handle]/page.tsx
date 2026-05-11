@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { prisma, CreatorApplicationStatus, TutorialStatus } from '@homemade/db'
 import { TutorialCard } from '@/components/public/tutorial-card'
-import { cloudflareDeliveryUrl } from '@/lib/media'
+import { mediaUrl } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { emptyReaderState, loadReaderState, readerStateFor } from '@/lib/user-state'
 
@@ -63,7 +63,7 @@ export default async function MakerProfilePage({ params }: PageProps) {
       difficulty: true,
       season: true,
       category: { select: { slug: true, name: true } },
-      hero: { select: { cloudflareId: true } },
+      hero: { select: { cloudflareId: true, r2Key: true } },
     },
   })
 
@@ -123,7 +123,7 @@ export default async function MakerProfilePage({ params }: PageProps) {
                 href={`/${t.category.slug}/${t.slug}`}
                 title={t.title}
                 excerpt={t.excerpt}
-                heroUrl={cloudflareDeliveryUrl(t.hero?.cloudflareId, 'card')}
+                heroUrl={mediaUrl(t.hero, 'card')}
                 difficulty={t.difficulty}
                 season={t.season}
                 categoryName={t.category.name}

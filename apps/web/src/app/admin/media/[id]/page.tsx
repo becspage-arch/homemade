@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { prisma, MediaStatus } from '@homemade/db'
-import { cloudflareDeliveryUrl } from '@/lib/media'
+import { mediaUrl } from '@/lib/media'
 import { updateMedia, deleteMedia } from '../actions'
 
 export const dynamic = 'force-dynamic'
@@ -20,9 +20,7 @@ export default async function EditMediaPage({
   if (!media) notFound()
 
   const previewUrl =
-    media.cloudflareId && media.status === MediaStatus.READY
-      ? cloudflareDeliveryUrl(media.cloudflareId, 'public')
-      : null
+    media.status === MediaStatus.READY ? mediaUrl(media, 'public') : null
 
   const updateAction = updateMedia.bind(null, id)
   const deleteAction = deleteMedia.bind(null, id)
@@ -72,6 +70,7 @@ export default async function EditMediaPage({
             value={media.width && media.height ? `${media.width} × ${media.height}` : '—'}
           />
           <Pair label="Size" value={media.bytes ? formatBytes(media.bytes) : '—'} />
+          <Pair label="R2 key" value={media.r2Key ?? '—'} mono />
           <Pair label="Cloudflare ID" value={media.cloudflareId ?? '—'} mono />
           <Pair label="Status" value={media.status.toLowerCase()} />
           <Pair label="Uploaded" value={media.createdAt.toLocaleString('en-GB')} />

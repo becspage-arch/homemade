@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { prisma, TutorialStatus } from '@homemade/db'
 import { searchTutorials, isSearchConfigured } from '@homemade/search'
 import { TutorialCard } from '@/components/public/tutorial-card'
-import { cloudflareDeliveryUrl } from '@/lib/media'
+import { mediaUrl } from '@/lib/media'
 import { SearchForm } from './search-form'
 
 import './search-page.css'
@@ -51,7 +51,7 @@ export default async function SearchPage({ searchParams }: PageProps) {
           difficulty: true,
           season: true,
           category: { select: { slug: true, name: true } },
-          hero: { select: { cloudflareId: true } },
+          hero: { select: { cloudflareId: true, r2Key: true } },
         },
       })
     : []
@@ -102,7 +102,7 @@ export default async function SearchPage({ searchParams }: PageProps) {
                   href={`/${hit.document.categorySlug}/${hit.document.slug}`}
                   title={hit.document.title}
                   excerpt={hit.document.excerpt}
-                  heroUrl={cloudflareDeliveryUrl(hit.document.heroCloudflareId, 'card')}
+                  heroUrl={mediaUrl({ r2Key: hit.document.heroR2Key, cloudflareId: hit.document.heroCloudflareId }, 'card')}
                   difficulty={hit.document.difficulty}
                   season={hit.document.season}
                   categoryName={hit.document.categoryName}
@@ -133,7 +133,7 @@ export default async function SearchPage({ searchParams }: PageProps) {
                   href={`/${t.category.slug}/${t.slug}`}
                   title={t.title}
                   excerpt={t.excerpt}
-                  heroUrl={cloudflareDeliveryUrl(t.hero?.cloudflareId, 'card')}
+                  heroUrl={mediaUrl(t.hero, 'card')}
                   difficulty={t.difficulty}
                   season={t.season}
                   categoryName={t.category.name}

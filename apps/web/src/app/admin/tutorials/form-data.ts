@@ -1,6 +1,6 @@
 import 'server-only'
 import { prisma } from '@homemade/db'
-import { cloudflareDeliveryUrl } from '@/lib/media'
+import { mediaUrl } from '@/lib/media'
 import type {
   GlossaryRef,
   TutorialRef,
@@ -74,6 +74,7 @@ export async function loadTutorialFormData(
           caption: true,
           type: true,
           cloudflareId: true,
+          r2Key: true,
         },
       }),
     ])
@@ -100,7 +101,7 @@ export async function loadTutorialFormData(
     caption: m.caption,
     type: m.type,
     cloudflareId: m.cloudflareId,
-    thumbnailUrl: cloudflareDeliveryUrl(m.cloudflareId, 'thumbnail'),
+    thumbnailUrl: mediaUrl(m, 'thumbnail'),
   }))
 
   return {

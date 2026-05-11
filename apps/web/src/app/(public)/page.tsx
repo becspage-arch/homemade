@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { prisma, TutorialStatus, UserProjectStatus } from '@homemade/db'
 import { TutorialCard } from '@/components/public/tutorial-card'
 import { Wordmark } from '@/components/wordmark'
-import { cloudflareDeliveryUrl } from '@/lib/media'
+import { mediaUrl } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import {
   emptyReaderState,
@@ -31,7 +31,7 @@ export default async function HomePage() {
         difficulty: true,
         season: true,
         category: { select: { slug: true, name: true } },
-        hero: { select: { cloudflareId: true } },
+        hero: { select: { cloudflareId: true, r2Key: true } },
       },
     }),
     getCurrentDbUser(),
@@ -55,7 +55,7 @@ export default async function HomePage() {
               difficulty: true,
               season: true,
               category: { select: { slug: true, name: true } },
-              hero: { select: { cloudflareId: true } },
+              hero: { select: { cloudflareId: true, r2Key: true } },
             },
           },
         },
@@ -100,10 +100,7 @@ export default async function HomePage() {
                 href={`/${p.tutorial.category.slug}/${p.tutorial.slug}`}
                 title={p.tutorial.title}
                 excerpt={p.tutorial.excerpt}
-                heroUrl={cloudflareDeliveryUrl(
-                  p.tutorial.hero?.cloudflareId,
-                  'card',
-                )}
+                heroUrl={mediaUrl(p.tutorial.hero, 'card')}
                 difficulty={p.tutorial.difficulty}
                 season={p.tutorial.season}
                 categoryName={p.tutorial.category.name}
@@ -127,7 +124,7 @@ export default async function HomePage() {
             className="home-feature-card"
           >
             {(() => {
-              const heroUrl = cloudflareDeliveryUrl(lead.hero?.cloudflareId, 'hero')
+              const heroUrl = mediaUrl(lead.hero, 'hero')
               return heroUrl ? (
                 <span
                   className="home-feature-image"
@@ -165,7 +162,7 @@ export default async function HomePage() {
                 href={`/${t.category.slug}/${t.slug}`}
                 title={t.title}
                 excerpt={t.excerpt}
-                heroUrl={cloudflareDeliveryUrl(t.hero?.cloudflareId, 'card')}
+                heroUrl={mediaUrl(t.hero, 'card')}
                 difficulty={t.difficulty}
                 season={t.season}
                 categoryName={t.category.name}

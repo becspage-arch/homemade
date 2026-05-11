@@ -2,10 +2,10 @@
 
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
-import { prisma, MediaStatus, MediaType, type User } from '@homemade/db'
+import { prisma, type User } from '@homemade/db'
 import { getCurrentDbUser, isAdmin } from '@/lib/auth'
 import { audit } from '@/lib/audit'
-import { deleteImage } from '@/lib/cloudflare-images'
+import { r2Delete } from '@/lib/r2'
 
 async function requireAdminActor(): Promise<User> {
   const user = await getCurrentDbUser()
@@ -13,58 +13,6 @@ async function requireAdminActor(): Promise<User> {
     throw new Error('Not authorised.')
   }
   return user
-}
-
-interface RegisterUploadInput {
-  cloudflareId: string
-  status: 'READY' | 'FAILED'
-  filename?: string | null
-  mimeType?: string | null
-  width?: number | null
-  height?: number | null
-  bytes?: number | null
-  alt?: string | null
-}
-
-/**
- * Called from the upload page after the browser has finished POSTing the file
- * directly to Cloudflare. Creates the Prisma row with READY or FAILED status.
- */
-export async function registerUpload(input: RegisterUploadInput): Promise<{ id: string }> {
-  const actor = await requireAdminActor()
-
-  if (!input.cloudflareId) throw new Error('cloudflareId is required.')
-  if (input.status !== 'READY' && input.status !== 'FAILED') {
-    throw new Error('status must be READY or FAILED.')
-  }
-
-  const media = await prisma.media.create({
-    data: {
-      cloudflareId: input.cloudflareId,
-      type: MediaType.PHOTO,
-      status: input.status === 'READY' ? MediaStatus.READY : MediaStatus.FAILED,
-      filename: input.filename ?? null,
-      mimeType: input.mimeType ?? null,
-      width: input.width ?? null,
-      height: input.height ?? null,
-      bytes: input.bytes ?? null,
-      alt: input.alt ?? null,
-    },
-  })
-
-  await audit({
-    actorId: actor.id,
-    action: 'media.create',
-    resource: `Media:${media.id}`,
-    metadata: {
-      cloudflareId: media.cloudflareId,
-      filename: media.filename,
-      status: media.status,
-    },
-  })
-
-  revalidatePath('/admin/media')
-  return { id: media.id }
 }
 
 export async function updateMedia(id: string, formData: FormData): Promise<void> {
@@ -118,19 +66,22 @@ export async function deleteMedia(id: string): Promise<void> {
     )
   }
 
-  // Remove from Cloudflare first. If that fails we abort and keep the DB row,
-  // so the admin can retry. We swallow "image not found" because a row whose
-  // CF asset was already deleted should still be removable from the DB.
-  if (existing.cloudflareId) {
+  // Remove from R2 first. If that fails we abort and keep the DB row so the
+  // admin can retry. The R2 delete is best-effort — a 404 / "no such key"
+  // should not stop the row from being cleaned up.
+  if (existing.r2Key) {
     try {
-      await deleteImage(existing.cloudflareId)
+      await r2Delete(existing.r2Key)
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err)
-      if (!/not\s*found/i.test(message)) {
-        throw new Error(`Cloudflare delete failed: ${message}`)
+      if (!/not\s*found|nosuchkey/i.test(message)) {
+        throw new Error(`R2 delete failed: ${message}`)
       }
     }
   }
+  // Legacy Cloudflare Images rows: we no longer call the Images API on delete
+  // (that subscription is gone). Just drop the row; the asset on CF Images is
+  // either already gone or will sit unused until manual cleanup.
 
   await prisma.media.delete({ where: { id } })
 
@@ -139,6 +90,7 @@ export async function deleteMedia(id: string): Promise<void> {
     action: 'media.delete',
     resource: `Media:${existing.id}`,
     metadata: {
+      r2Key: existing.r2Key,
       cloudflareId: existing.cloudflareId,
       filename: existing.filename,
     },

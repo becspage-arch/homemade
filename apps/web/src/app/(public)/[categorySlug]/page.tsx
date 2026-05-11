@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { prisma, TutorialStatus, Difficulty } from '@homemade/db'
 import { TutorialCard } from '@/components/public/tutorial-card'
-import { cloudflareDeliveryUrl } from '@/lib/media'
+import { mediaUrl } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import {
   emptyReaderState,
@@ -72,7 +72,7 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
         difficulty: true,
         season: true,
         subCategoryId: true,
-        hero: { select: { cloudflareId: true } },
+        hero: { select: { cloudflareId: true, r2Key: true } },
       },
     }),
     getCurrentDbUser(),
@@ -153,7 +153,7 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
                     href={`/${category.slug}/${t.slug}`}
                     title={t.title}
                     excerpt={t.excerpt}
-                    heroUrl={cloudflareDeliveryUrl(t.hero?.cloudflareId, 'card')}
+                    heroUrl={mediaUrl(t.hero, 'card')}
                     difficulty={t.difficulty}
                     season={t.season}
                     state={readerStateFor(readerState, t.id)}

@@ -5,7 +5,7 @@ import { TutorialContent } from '@/components/public/tutorial-content/tutorial-c
 import { TutorialChrome } from '@/components/public/tutorial-chrome'
 import type { TipTapNode } from '@/components/public/tutorial-content/types'
 import { loadContentRefs } from '@/lib/tutorial-refs'
-import { cloudflareDeliveryUrl } from '@/lib/media'
+import { mediaUrl } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { harvestSupplies } from '@/lib/supplies'
 import { loadTutorialUgc } from '@/lib/ugc-loader'
@@ -42,6 +42,7 @@ async function loadTutorial(categorySlug: string, tutorialSlug: string) {
       hero: {
         select: {
           cloudflareId: true,
+          r2Key: true,
           alt: true,
           caption: true,
           attribution: true,
@@ -80,7 +81,7 @@ export default async function TutorialPage({ params }: PageProps) {
 
   const body = tutorial.body as TipTapNode | null
   const refs = await loadContentRefs(body, tutorial.id)
-  const heroUrl = cloudflareDeliveryUrl(tutorial.hero?.cloudflareId, 'hero')
+  const heroUrl = mediaUrl(tutorial.hero, 'hero')
   const beginnerMode = currentUser?.beginnerMode === true
 
   // Per-user state: bookmark + project on this tutorial.

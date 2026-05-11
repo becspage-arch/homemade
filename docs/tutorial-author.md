@@ -205,13 +205,29 @@ The script:
   sub-category by slug. Fails loudly if a category slug is missing.
 - Creates any glossary terms referenced by the body that don't yet exist,
   using the definitions in the input JSON.
-- Pushes the hero image to Cloudflare Images via the same direct-upload
-  flow the admin uses, then creates a Media row.
+- Pushes the hero image to Cloudflare R2 (object key
+  `tutorials/<uuid>.<ext>` in the `homemade-media` bucket), then creates a
+  Media row in `READY` state with `r2Key` set.
 - Inserts the Tutorial as `DRAFT` with `sourceType: PUBLIC_DOMAIN` (or
   whatever the input specifies), and snapshots the first `TutorialVersion`
   to match the admin lifecycle.
 - Is idempotent on re-run: a Tutorial with the same `slug` is updated in
   place, with a new version snapshot.
+
+Storage notes:
+
+- R2 bucket: `homemade-media`, region auto (Cloudflare picks).
+- Public delivery URL: `https://media.homemade.education/<key>` — the
+  bucket has a custom domain attached on the existing Cloudflare zone.
+- Resized URLs go through Image Transformations on the zone root, e.g.
+  `https://homemade.education/cdn-cgi/image/width=1600,format=auto/https://media.homemade.education/<key>`.
+  The four variant builders live in `apps/web/src/lib/media.ts` (`mediaUrl`).
+- Credentials: the script will use `R2_ACCESS_KEY_ID` +
+  `R2_SECRET_ACCESS_KEY` (R2 API tokens, created in the Cloudflare
+  dashboard) when present, falling back to the regular
+  `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID` against the Cloudflare
+  REST API. The REST fallback is capped at 300 MB per object, which is
+  more than enough for hero images.
 
 Run:
 

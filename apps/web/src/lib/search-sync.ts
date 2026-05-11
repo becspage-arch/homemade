@@ -28,7 +28,7 @@ async function buildTutorialDoc(id: string): Promise<TutorialDoc | null> {
       category: { select: { slug: true, name: true } },
       subCategory: { select: { slug: true, name: true } },
       tags: { select: { slug: true } },
-      hero: { select: { cloudflareId: true } },
+      hero: { select: { cloudflareId: true, r2Key: true } },
     },
   })
   if (!tutorial) return null
@@ -50,6 +50,7 @@ async function buildTutorialDoc(id: string): Promise<TutorialDoc | null> {
     timeMinutes: tutorial.timeMinutes,
     tagSlugs: tutorial.tags.map((t) => t.slug),
     heroCloudflareId: tutorial.hero?.cloudflareId ?? null,
+    heroR2Key: tutorial.hero?.r2Key ?? null,
     publishedAt: tutorial.publishedAt ? tutorial.publishedAt.getTime() : null,
   }
 }

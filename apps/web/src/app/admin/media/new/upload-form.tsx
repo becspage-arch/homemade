@@ -2,13 +2,6 @@
 
 import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { registerUpload } from '../actions'
-
-interface DirectUploadResponse {
-  id: string
-  uploadURL: string
-  error?: string
-}
 
 interface ImageProbe {
   width: number
@@ -33,23 +26,45 @@ function probeImage(file: File): Promise<ImageProbe | null> {
 }
 
 function uploadWithProgress(
-  url: string,
   file: File,
+  alt: string,
+  probe: ImageProbe | null,
   onProgress: (pct: number) => void,
-): Promise<void> {
+): Promise<{ id: string }> {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest()
-    xhr.open('POST', url)
+    xhr.open('POST', '/api/media/upload')
     xhr.upload.onprogress = (e) => {
       if (e.lengthComputable) onProgress(Math.round((e.loaded / e.total) * 100))
     }
     xhr.onload = () => {
-      if (xhr.status >= 200 && xhr.status < 300) resolve()
-      else reject(new Error(`Upload failed (${xhr.status}): ${xhr.responseText.slice(0, 200)}`))
+      if (xhr.status >= 200 && xhr.status < 300) {
+        try {
+          const body = JSON.parse(xhr.responseText)
+          resolve({ id: body.id })
+        } catch (err) {
+          reject(new Error(`Server returned non-JSON: ${xhr.responseText.slice(0, 200)}`))
+        }
+        return
+      }
+      let message = `Upload failed (${xhr.status})`
+      try {
+        const body = JSON.parse(xhr.responseText)
+        if (body?.error) message = body.error
+      } catch {
+        message = `${message}: ${xhr.responseText.slice(0, 200)}`
+      }
+      reject(new Error(message))
     }
     xhr.onerror = () => reject(new Error('Network error during upload.'))
+
     const form = new FormData()
     form.append('file', file)
+    if (alt) form.append('alt', alt)
+    if (probe) {
+      form.append('width', String(probe.width))
+      form.append('height', String(probe.height))
+    }
     xhr.send(form)
   })
 }
@@ -60,7 +75,7 @@ export function UploadForm() {
   const [file, setFile] = useState<File | null>(null)
   const [alt, setAlt] = useState('')
   const [progress, setProgress] = useState<number | null>(null)
-  const [status, setStatus] = useState<'idle' | 'uploading' | 'finishing' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'uploading' | 'error'>('idle')
   const [error, setError] = useState<string | null>(null)
 
   async function handleSubmit(e: React.FormEvent) {
@@ -73,57 +88,13 @@ export function UploadForm() {
     setStatus('uploading')
     setProgress(0)
 
-    let directUpload: DirectUploadResponse
-    try {
-      const res = await fetch('/api/media/direct-upload', { method: 'POST' })
-      directUpload = (await res.json()) as DirectUploadResponse
-      if (!res.ok) throw new Error(directUpload.error ?? `Request failed (${res.status})`)
-    } catch (err) {
-      setStatus('error')
-      setError(err instanceof Error ? err.message : 'Could not get upload URL.')
-      return
-    }
-
     const probe = await probeImage(file)
 
     try {
-      await uploadWithProgress(directUpload.uploadURL, file, setProgress)
+      await uploadWithProgress(file, alt, probe, setProgress)
     } catch (err) {
-      setStatus('finishing')
-      try {
-        await registerUpload({
-          cloudflareId: directUpload.id,
-          status: 'FAILED',
-          filename: file.name,
-          mimeType: file.type || null,
-          bytes: file.size,
-          width: probe?.width ?? null,
-          height: probe?.height ?? null,
-          alt: alt || null,
-        })
-      } catch {
-        // Audit logging best-effort; show the original upload error.
-      }
       setStatus('error')
       setError(err instanceof Error ? err.message : 'Upload failed.')
-      return
-    }
-
-    setStatus('finishing')
-    try {
-      await registerUpload({
-        cloudflareId: directUpload.id,
-        status: 'READY',
-        filename: file.name,
-        mimeType: file.type || null,
-        bytes: file.size,
-        width: probe?.width ?? null,
-        height: probe?.height ?? null,
-        alt: alt || null,
-      })
-    } catch (err) {
-      setStatus('error')
-      setError(err instanceof Error ? err.message : 'Could not save media row.')
       return
     }
 
@@ -131,7 +102,7 @@ export function UploadForm() {
     router.refresh()
   }
 
-  const busy = status === 'uploading' || status === 'finishing'
+  const busy = status === 'uploading'
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
@@ -146,7 +117,8 @@ export function UploadForm() {
           className="mb-2 mt-1 block text-xs text-[var(--color-warm-taupe)] opacity-70"
           style={{ fontFamily: 'var(--font-lora)', fontStyle: 'italic' }}
         >
-          JPEG, PNG, WebP, or GIF. Cloudflare resizes to delivery variants.
+          JPEG, PNG, WebP, or GIF. Stored on Cloudflare R2; delivered through
+          Image Transformations at request time.
         </span>
         <input
           ref={fileRef}
@@ -190,10 +162,9 @@ export function UploadForm() {
             className="text-xs uppercase tracking-[0.25em] text-[var(--color-warm-taupe)]"
             style={{ fontFamily: 'var(--font-lora)' }}
           >
-            {status === 'uploading' ? `uploading ${progress}%` : null}
-            {status === 'finishing' ? 'saving…' : null}
+            {status === 'uploading' && progress < 100 ? `uploading ${progress}%` : null}
+            {status === 'uploading' && progress === 100 ? 'saving…' : null}
             {status === 'error' ? 'upload failed' : null}
-            {status === 'idle' && progress === 100 ? 'done' : null}
           </div>
           <div className="h-1 w-full bg-[var(--color-linen-grey)]">
             <div

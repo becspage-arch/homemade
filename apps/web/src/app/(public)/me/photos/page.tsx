@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { prisma } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
-import { cloudflareDeliveryUrl } from '@/lib/media'
+import { mediaUrl } from '@/lib/media'
 
 export const dynamic = 'force-dynamic'
 
@@ -27,7 +27,7 @@ export default async function MyPhotosPage() {
           category: { select: { slug: true } },
         },
       },
-      media: { select: { cloudflareId: true } },
+      media: { select: { cloudflareId: true, r2Key: true } },
     },
   })
 
@@ -50,7 +50,7 @@ export default async function MyPhotosPage() {
           }}
         >
           {photos.map((p) => {
-            const url = cloudflareDeliveryUrl(p.media.cloudflareId, 'card')
+            const url = mediaUrl(p.media, 'card')
             return (
               <div
                 key={p.id}

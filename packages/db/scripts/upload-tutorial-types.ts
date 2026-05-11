@@ -116,7 +116,7 @@ export interface UploadResult {
   categorySlug: string
   subCategorySlug: string | null
   heroMediaId: string | null
-  heroCloudflareId: string | null
+  heroR2Key: string | null
   createdGlossary: { slug: string; term: string; id: string }[]
 }
 

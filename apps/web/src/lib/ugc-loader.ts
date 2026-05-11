@@ -6,7 +6,7 @@ import {
   UGCPhotoStatus,
   type User,
 } from '@homemade/db'
-import { cloudflareDeliveryUrl } from './media'
+import { mediaUrl } from './media'
 
 function fmtDate(d: Date): string {
   return d.toLocaleDateString('en-GB', {
@@ -91,7 +91,7 @@ export async function loadTutorialUgc(
         take: 24,
         include: {
           user: { select: { displayHandle: true, name: true, email: true } },
-          media: { select: { cloudflareId: true, alt: true } },
+          media: { select: { cloudflareId: true, r2Key: true, alt: true } },
         },
       }),
       prisma.question.findMany({
@@ -173,8 +173,8 @@ export async function loadTutorialUgc(
     },
     photos: photoRows.map((p) => ({
       id: p.id,
-      thumbUrl: cloudflareDeliveryUrl(p.media.cloudflareId, 'card'),
-      fullUrl: cloudflareDeliveryUrl(p.media.cloudflareId, 'public'),
+      thumbUrl: mediaUrl(p.media, 'card'),
+      fullUrl: mediaUrl(p.media, 'public'),
       caption: p.caption,
       authorHandle: handleOf(p.user),
       createdAt: fmtDate(p.createdAt),

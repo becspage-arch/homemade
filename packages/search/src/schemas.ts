@@ -32,6 +32,7 @@ export interface TutorialDoc {
   timeMinutes: number | null
   tagSlugs: string[]
   heroCloudflareId: string | null
+  heroR2Key: string | null
   publishedAt: number | null
 }
 
@@ -70,6 +71,7 @@ export const tutorialSchema: CollectionCreateSchema = {
     { name: 'timeMinutes', type: 'int32', optional: true },
     { name: 'tagSlugs', type: 'string[]', facet: true, optional: true },
     { name: 'heroCloudflareId', type: 'string', optional: true, index: false },
+    { name: 'heroR2Key', type: 'string', optional: true, index: false },
     { name: 'publishedAt', type: 'int64', optional: true },
   ],
 }

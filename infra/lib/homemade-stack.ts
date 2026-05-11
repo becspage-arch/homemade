@@ -136,6 +136,20 @@ export class HomemadeStack extends cdk.Stack {
       'ClerkWebhookSecret',
       'homemade/clerk-webhook-signing-secret-v2',
     )
+    // R2 access credentials. Stored manually in Secrets Manager by Rebecca
+    // (Cloudflare dashboard → R2 → Manage R2 API Tokens). Mounted with the
+    // same two-step CFN pattern as the Clerk webhook secret: IAM grant lands
+    // first, then `MOUNT_R2_SECRETS=1` flips the secrets references on.
+    const r2AccessKeyIdSecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'R2AccessKeyIdSecret',
+      'homemade/r2-access-key-id',
+    )
+    const r2SecretAccessKeySecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'R2SecretAccessKeySecret',
+      'homemade/r2-secret-access-key',
+    )
 
     // The Clerk webhook signing secret is wired in two deploys to avoid the
     // CFN circuit breaker race (IAM grant landing in parallel with task
@@ -147,6 +161,11 @@ export class HomemadeStack extends cdk.Stack {
     //           container's `secrets:` block adds the env reference. Task
     //           replacement happens, but IAM is already in place.
     const mountClerkWebhookSecret = process.env.MOUNT_CLERK_WEBHOOK_SECRET === '1'
+
+    // Same two-step pattern for R2:
+    // Deploy 1: this stack adds the IAM grant on the execution role.
+    // Deploy 2: `MOUNT_R2_SECRETS=1` adds the actual env references.
+    const mountR2Secrets = process.env.MOUNT_R2_SECRETS === '1'
 
     // ────────────────────────────────────────────────────────────────
     // CloudWatch — task logs
@@ -198,6 +217,8 @@ export class HomemadeStack extends cdk.Stack {
           `${cloudflareApiTokenSecret.secretArn}-??????`,
           `${cloudflareAccountIdSecret.secretArn}-??????`,
           `${clerkWebhookSecret.secretArn}-??????`,
+          `${r2AccessKeyIdSecret.secretArn}-??????`,
+          `${r2SecretAccessKeySecret.secretArn}-??????`,
         ],
       }),
     )
@@ -211,7 +232,18 @@ export class HomemadeStack extends cdk.Stack {
         PORT: '3000',
         HOSTNAME: '0.0.0.0',
         NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: requireEnv('NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY'),
+        // Legacy Cloudflare Images delivery hash. Required for any pre-R2
+        // Media rows still in the database; new uploads use R2 + Image
+        // Transformations and ignore this value.
         CLOUDFLARE_IMAGES_DELIVERY_HASH: requireEnv('CLOUDFLARE_IMAGES_DELIVERY_HASH'),
+        // R2 bucket configuration. Public delivery URL is the custom domain
+        // attached to the R2 bucket; transform origin is the zone Cloudflare
+        // serves /cdn-cgi/image/ from. Defaults match the production setup
+        // so they're safe to omit, but pinning them keeps the prod task
+        // definition explicit.
+        R2_BUCKET: 'homemade-media',
+        R2_PUBLIC_BASE_URL: 'https://media.homemade.education',
+        CDN_IMAGE_TRANSFORM_ORIGIN: 'https://homemade.education',
       },
       secrets: {
         SPLASH_PASSWORD: ecs.Secret.fromSecretsManager(splashSecret),
@@ -221,6 +253,12 @@ export class HomemadeStack extends cdk.Stack {
         CLOUDFLARE_ACCOUNT_ID: ecs.Secret.fromSecretsManager(cloudflareAccountIdSecret),
         ...(mountClerkWebhookSecret
           ? { CLERK_WEBHOOK_SIGNING_SECRET: ecs.Secret.fromSecretsManager(clerkWebhookSecret) }
+          : {}),
+        ...(mountR2Secrets
+          ? {
+              R2_ACCESS_KEY_ID: ecs.Secret.fromSecretsManager(r2AccessKeyIdSecret),
+              R2_SECRET_ACCESS_KEY: ecs.Secret.fromSecretsManager(r2SecretAccessKeySecret),
+            }
           : {}),
       },
       portMappings: [{ containerPort: 3000, protocol: ecs.Protocol.TCP }],

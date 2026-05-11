@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { prisma } from '@homemade/db'
 import type { JSONContent } from '@tiptap/core'
 import { ReadOnlyRenderer } from '@/components/admin/editor/read-only-renderer'
-import { cloudflareDeliveryUrl } from '@/lib/media'
+import { mediaUrl } from '@/lib/media'
 import { restoreTutorialVersion } from '../../../actions'
 
 export const dynamic = 'force-dynamic'
@@ -55,7 +55,7 @@ export default async function TutorialVersionDetailPage({
 
   // Touch the helper so unused-import lint doesn't bite later; the function is
   // there for when we render media-aware previews in Phase 3.
-  void cloudflareDeliveryUrl
+  void mediaUrl
 
   const restoreAction = restoreTutorialVersion.bind(null, versionId)
 

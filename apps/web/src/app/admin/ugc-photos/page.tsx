@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { prisma, UGCPhotoStatus } from '@homemade/db'
-import { cloudflareDeliveryUrl } from '@/lib/media'
+import { mediaUrl } from '@/lib/media'
 import { nsfwDecision } from '@/lib/nsfw-scan'
 import { PhotoModerationCard } from './photo-card'
 
@@ -36,7 +36,7 @@ export default async function AdminUgcPhotosPage({ searchParams }: PageProps) {
           category: { select: { slug: true, name: true } },
         },
       },
-      media: { select: { cloudflareId: true, alt: true } },
+      media: { select: { cloudflareId: true, r2Key: true, alt: true } },
     },
   })
 
@@ -88,8 +88,8 @@ export default async function AdminUgcPhotosPage({ searchParams }: PageProps) {
               key={p.id}
               photo={{
                 ...p,
-                thumbUrl: cloudflareDeliveryUrl(p.media.cloudflareId, 'card'),
-                fullUrl: cloudflareDeliveryUrl(p.media.cloudflareId, 'public'),
+                thumbUrl: mediaUrl(p.media, 'card'),
+                fullUrl: mediaUrl(p.media, 'public'),
                 nsfwBucket: nsfwDecision(p.nsfwScore),
               }}
             />

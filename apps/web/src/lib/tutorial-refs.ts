@@ -5,7 +5,7 @@ import type {
   SubTutorialRef,
   TipTapNode,
 } from '@/components/public/tutorial-content/types'
-import { cloudflareDeliveryUrl } from './media'
+import { mediaUrl } from './media'
 
 /**
  * Walks a TipTap document and collects the IDs of every glossary term and
@@ -78,7 +78,7 @@ export async function loadContentRefs(
             title: true,
             excerpt: true,
             category: { select: { slug: true, name: true } },
-            hero: { select: { cloudflareId: true } },
+            hero: { select: { cloudflareId: true, r2Key: true } },
           },
         })
       : Promise.resolve([]),
@@ -98,7 +98,7 @@ export async function loadContentRefs(
     excerpt: t.excerpt,
     categorySlug: t.category.slug,
     categoryName: t.category.name,
-    heroThumbnailUrl: cloudflareDeliveryUrl(t.hero?.cloudflareId, 'thumbnail'),
+    heroThumbnailUrl: mediaUrl(t.hero, 'thumbnail'),
   }))
 
   return { glossary, subTutorials }

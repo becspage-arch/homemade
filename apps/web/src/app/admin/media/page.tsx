@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { prisma, MediaStatus } from '@homemade/db'
-import { cloudflareDeliveryUrl } from '@/lib/media'
+import { mediaUrl } from '@/lib/media'
 
 export const dynamic = 'force-dynamic'
 
@@ -48,7 +48,7 @@ export default async function MediaIndexPage() {
           </thead>
           <tbody>
             {media.map((m) => {
-              const thumb = m.cloudflareId ? cloudflareDeliveryUrl(m.cloudflareId, 'thumbnail') : null
+              const thumb = mediaUrl(m, 'thumbnail')
               return (
                 <tr key={m.id} className="border-b border-[var(--color-linen-grey)]">
                   <Td>

@@ -60,7 +60,7 @@ async function main(): Promise<void> {
       category: { select: { slug: true, name: true } },
       subCategory: { select: { slug: true, name: true } },
       tags: { select: { slug: true } },
-      hero: { select: { cloudflareId: true } },
+      hero: { select: { cloudflareId: true, r2Key: true } },
     },
   })
   const tutorialDocs: TutorialDoc[] = tutorials.map((t) => ({
@@ -80,6 +80,7 @@ async function main(): Promise<void> {
     timeMinutes: t.timeMinutes,
     tagSlugs: t.tags.map((tag) => tag.slug),
     heroCloudflareId: t.hero?.cloudflareId ?? null,
+    heroR2Key: t.hero?.r2Key ?? null,
     publishedAt: t.publishedAt ? t.publishedAt.getTime() : null,
   }))
   await bulkImport(TUTORIALS_COLLECTION, tutorialDocs)

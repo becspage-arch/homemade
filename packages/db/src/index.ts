@@ -4,6 +4,9 @@ import { PrismaPg } from '@prisma/adapter-pg'
 // Re-export Prisma's generated types so consumers only import from @homemade/db
 export * from '@prisma/client'
 
+// R2 uploader for scripts that work this package directly.
+export { r2Upload } from './r2'
+
 declare global {
   // eslint-disable-next-line no-var
   var __homemade_prisma: PrismaClient | undefined

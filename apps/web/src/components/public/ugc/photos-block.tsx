@@ -21,9 +21,9 @@ interface Props {
   photos: UgcPhotoView[]
 }
 
-interface DirectUploadResponse {
-  id: string
-  uploadURL: string
+interface UploadResponse {
+  key: string
+  publicUrl: string
   error?: string
 }
 
@@ -43,16 +43,33 @@ function probeImage(file: File): Promise<{ width: number; height: number } | nul
   })
 }
 
-function uploadWithProgress(url: string, file: File, onProgress: (pct: number) => void): Promise<void> {
+function uploadWithProgress(
+  file: File,
+  onProgress: (pct: number) => void,
+): Promise<UploadResponse> {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest()
-    xhr.open('POST', url)
+    xhr.open('POST', '/api/ugc/photo-upload')
     xhr.upload.onprogress = (e) => {
       if (e.lengthComputable) onProgress(Math.round((e.loaded / e.total) * 100))
     }
     xhr.onload = () => {
-      if (xhr.status >= 200 && xhr.status < 300) resolve()
-      else reject(new Error(`Upload failed (${xhr.status})`))
+      if (xhr.status >= 200 && xhr.status < 300) {
+        try {
+          resolve(JSON.parse(xhr.responseText) as UploadResponse)
+        } catch (err) {
+          reject(new Error('Server returned non-JSON.'))
+        }
+        return
+      }
+      let message = `Upload failed (${xhr.status})`
+      try {
+        const body = JSON.parse(xhr.responseText)
+        if (body?.error) message = body.error
+      } catch {
+        // ignore parse error
+      }
+      reject(new Error(message))
     }
     xhr.onerror = () => reject(new Error('Network error.'))
     const form = new FormData()
@@ -152,19 +169,11 @@ function UploadForm({
     setError(null)
     setProgress(0)
 
-    let direct: DirectUploadResponse
-    try {
-      const res = await fetch('/api/ugc/photo-upload', { method: 'POST' })
-      direct = (await res.json()) as DirectUploadResponse
-      if (!res.ok) throw new Error(direct.error ?? `Request failed (${res.status})`)
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Could not get upload URL.')
-      return
-    }
-
     const probe = await probeImage(file)
+
+    let uploaded: UploadResponse
     try {
-      await uploadWithProgress(direct.uploadURL, file, setProgress)
+      uploaded = await uploadWithProgress(file, setProgress)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Upload failed.')
       return
@@ -173,7 +182,7 @@ function UploadForm({
     start(async () => {
       const res = await submitUgcPhoto({
         tutorialId,
-        cloudflareId: direct.id,
+        r2Key: uploaded.key,
         caption: caption || null,
         filename: file.name,
         mimeType: file.type || null,

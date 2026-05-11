@@ -8,8 +8,9 @@
  * Or from the package directory:
  *   pnpm exec tsx scripts/upload-tutorial.ts scripts/anchor-tutorials/bechamel.json
  *
- * Reads DATABASE_URL + CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID from the
- * environment, falling back to `.env.credentials` at the repo root.
+ * Reads DATABASE_URL + CLOUDFLARE_ACCOUNT_ID + R2_ACCESS_KEY_ID +
+ * R2_SECRET_ACCESS_KEY from the environment, falling back to
+ * `.env.credentials` at the repo root.
  *
  * Companion scripts:
  *   - seed-cooking-taxonomy.ts  (creates Cooking + Sauces + Preserves once)
@@ -26,8 +27,8 @@
  *      slug. Create any that are missing using the definition supplied
  *      alongside (so the upload is self-describing and idempotent).
  *   5. If `hero.localPath` is set and the input has no `hero.mediaId`, push the
- *      file through Cloudflare Images direct-upload and create a Media row in
- *      READY state, then use the new media as hero.
+ *      file to Cloudflare R2 and create a Media row in READY state, then use
+ *      the new media as hero.
  *   6. Insert the Tutorial as DRAFT (or update an existing row with the same
  *      slug — idempotent re-run).
  *   7. Snapshot a TutorialVersion to match the admin's lifecycle pattern.
@@ -71,87 +72,6 @@ let prismaMod: PrismaModule | null = null
 async function getPrisma(): Promise<PrismaModule> {
   if (!prismaMod) prismaMod = await import('../src/index.js')
   return prismaMod
-}
-
-// ─── Cloudflare Images (mirrors apps/web/src/lib/cloudflare-images.ts) ────────
-
-const CF_API_BASE = 'https://api.cloudflare.com/client/v4'
-
-interface CloudflareEnvelope<T> {
-  result: T
-  success: boolean
-  errors: { code: number; message: string }[]
-  messages: { code: number; message: string }[]
-}
-
-interface DirectUploadResult {
-  id: string
-  uploadURL: string
-}
-
-function cloudflareEnv(): { accountId: string; apiToken: string } {
-  const accountId = process.env.CLOUDFLARE_ACCOUNT_ID
-  const apiToken = process.env.CLOUDFLARE_API_TOKEN
-  if (!accountId || !apiToken) {
-    throw new Error(
-      'Cloudflare credentials are not configured. Set CLOUDFLARE_ACCOUNT_ID + CLOUDFLARE_API_TOKEN.',
-    )
-  }
-  return { accountId, apiToken }
-}
-
-async function callCloudflare<T>(
-  path: string,
-  init: RequestInit & { authToken: string },
-): Promise<T> {
-  const { authToken, ...rest } = init
-  const res = await fetch(`${CF_API_BASE}${path}`, {
-    ...rest,
-    headers: {
-      ...(rest.headers ?? {}),
-      Authorization: `Bearer ${authToken}`,
-    },
-    cache: 'no-store',
-  })
-  const text = await res.text()
-  let payload: CloudflareEnvelope<T>
-  try {
-    payload = JSON.parse(text) as CloudflareEnvelope<T>
-  } catch {
-    throw new Error(`Cloudflare returned non-JSON (${res.status}): ${text.slice(0, 200)}`)
-  }
-  if (!res.ok || !payload.success) {
-    const msg = payload.errors?.map((e) => `${e.code}: ${e.message}`).join('; ') || res.statusText
-    throw new Error(`Cloudflare API error (${res.status}): ${msg}`)
-  }
-  return payload.result
-}
-
-async function createDirectUpload(): Promise<DirectUploadResult> {
-  const { accountId, apiToken } = cloudflareEnv()
-  const formData = new FormData()
-  formData.append('requireSignedURLs', 'false')
-  return callCloudflare<DirectUploadResult>(
-    `/accounts/${accountId}/images/v2/direct_upload`,
-    { method: 'POST', body: formData, authToken: apiToken },
-  )
-}
-
-async function uploadFileToCloudflare(
-  uploadURL: string,
-  fileBytes: Buffer,
-  filename: string,
-  mimeType: string,
-): Promise<void> {
-  const form = new FormData()
-  // Buffer -> Uint8Array -> Blob keeps the types straight under DOM lib defs.
-  const blob = new Blob([new Uint8Array(fileBytes)], { type: mimeType })
-  form.append('file', blob, filename)
-  const res = await fetch(uploadURL, { method: 'POST', body: form })
-  if (!res.ok) {
-    const text = await res.text()
-    throw new Error(`Cloudflare direct-upload POST failed (${res.status}): ${text.slice(0, 200)}`)
-  }
 }
 
 // PNG dimensions from the 16-byte IHDR header. Avoids pulling in sharp / image-size.
@@ -232,7 +152,7 @@ async function uploadTutorial(input: TutorialUploadInput, inputFilePath: string)
 
   // 5. Hero image — upload if a localPath is given.
   let heroMediaId: string | null = input.hero?.mediaId ?? null
-  let heroCloudflareId: string | null = null
+  let heroR2Key: string | null = null
 
   if (!heroMediaId && input.hero?.localPath) {
     const heroPath = isAbsolute(input.hero.localPath)
@@ -257,10 +177,8 @@ async function uploadTutorial(input: TutorialUploadInput, inputFilePath: string)
     const probe = mimeType === 'image/png' ? readPngDimensions(fileBytes) : null
 
     // Idempotency: re-running on an existing Tutorial slug + same hero filename
-    // would re-upload the image every time. Cheap dedup: if a Media row already
-    // exists for this exact filename + bytes, reuse it. Includes UPLOADING-state
-    // rows (the Cloudflare-Images-not-enabled fallback path) so we don't pile
-    // up stub rows on re-runs.
+    // would re-upload the image every time. Cheap dedup: if a READY Media row
+    // already exists for this exact filename + bytes, reuse it.
     const existingByFilename = await prisma.media.findFirst({
       where: {
         filename,
@@ -272,36 +190,21 @@ async function uploadTutorial(input: TutorialUploadInput, inputFilePath: string)
 
     if (existingByFilename) {
       heroMediaId = existingByFilename.id
-      heroCloudflareId = existingByFilename.cloudflareId
+      heroR2Key = existingByFilename.r2Key
       console.log(`  [hero] reusing existing Media ${existingByFilename.id} (filename match)`)
     } else {
-      console.log('  [hero] pushing to Cloudflare Images')
-      let cfId: string | null = null
-      let cfStatus: typeof MediaStatus.READY | typeof MediaStatus.FAILED | typeof MediaStatus.UPLOADING =
-        MediaStatus.READY
-      try {
-        const direct = await createDirectUpload()
-        await uploadFileToCloudflare(direct.uploadURL, fileBytes, filename, mimeType)
-        cfId = direct.id
-      } catch (err) {
-        const message = err instanceof Error ? err.message : String(err)
-        if (/5403|not authorized to access this service/i.test(message)) {
-          console.warn(
-            `  [hero] Cloudflare Images is not enabled on this account. ` +
-              `Creating Media row in UPLOADING state with no cloudflareId — ` +
-              `attach a hero manually via /admin/media + /admin/tutorials/<id> once the Images subscription is restored.`,
-          )
-          cfStatus = MediaStatus.UPLOADING
-        } else {
-          throw err
-        }
-      }
+      console.log('  [hero] pushing to Cloudflare R2')
+      const { r2Upload } = await import('../src/r2.js')
+      const { key } = await r2Upload(fileBytes, mimeType, {
+        filename,
+        prefix: 'tutorials',
+      })
 
       const media = await prisma.media.create({
         data: {
-          cloudflareId: cfId,
+          r2Key: key,
           type: MediaType.ILLUSTRATION,
-          status: cfStatus,
+          status: MediaStatus.READY,
           filename,
           mimeType,
           width: probe?.width ?? null,
@@ -313,10 +216,8 @@ async function uploadTutorial(input: TutorialUploadInput, inputFilePath: string)
         },
       })
       heroMediaId = media.id
-      heroCloudflareId = cfId
-      console.log(
-        `  [hero] created Media ${media.id} (cloudflareId=${cfId ?? 'pending'}, status=${cfStatus})`,
-      )
+      heroR2Key = key
+      console.log(`  [hero] created Media ${media.id} (r2Key=${key}, status=READY)`)
     }
   }
 
@@ -401,7 +302,7 @@ async function uploadTutorial(input: TutorialUploadInput, inputFilePath: string)
     categorySlug: category.slug,
     subCategorySlug: input.subCategorySlug ?? null,
     heroMediaId,
-    heroCloudflareId,
+    heroR2Key,
     createdGlossary,
   }
 }
@@ -489,7 +390,7 @@ async function main(): Promise<void> {
   console.log(`  slug: ${result.slug}`)
   console.log(`  category: ${result.categorySlug}${result.subCategorySlug ? ` / ${result.subCategorySlug}` : ''}`)
   if (result.heroMediaId) {
-    console.log(`  hero Media id: ${result.heroMediaId}${result.heroCloudflareId ? ` (cloudflareId=${result.heroCloudflareId})` : ''}`)
+    console.log(`  hero Media id: ${result.heroMediaId}${result.heroR2Key ? ` (r2Key=${result.heroR2Key})` : ''}`)
   }
   if (result.createdGlossary.length > 0) {
     console.log(`  glossary created (${result.createdGlossary.length}):`)

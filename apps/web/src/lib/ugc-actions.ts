@@ -19,7 +19,7 @@ import {
 import { getCurrentDbUser } from './get-current-user'
 import { audit } from './audit'
 import { scanImageForNsfw, nsfwDecision } from './nsfw-scan'
-import { cloudflareDeliveryUrl } from './media'
+import { mediaUrl } from './media'
 
 type ActionResult = { ok: true } | { ok: false; error: string }
 
@@ -147,7 +147,7 @@ export async function toggleReviewHelpful(reviewId: string): Promise<
 
 export async function submitUgcPhoto(input: {
   tutorialId: string
-  cloudflareId: string
+  r2Key: string
   caption: string | null
   filename: string | null
   mimeType: string | null
@@ -158,8 +158,8 @@ export async function submitUgcPhoto(input: {
   const { user, error } = await requireMember()
   if (!user) return { ok: false, error: error ?? 'Not signed in.' }
 
-  if (!input.cloudflareId) {
-    return { ok: false, error: 'Upload was missing the Cloudflare image ID.' }
+  if (!input.r2Key) {
+    return { ok: false, error: 'Upload was missing the R2 key.' }
   }
   const caption = input.caption?.trim().slice(0, 280) || null
 
@@ -185,7 +185,7 @@ export async function submitUgcPhoto(input: {
   // exists even if the scan fails mid-flight.
   const media = await prisma.media.create({
     data: {
-      cloudflareId: input.cloudflareId,
+      r2Key: input.r2Key,
       type: MediaType.PHOTO,
       status: MediaStatus.READY,
       filename: input.filename ?? null,
@@ -206,8 +206,8 @@ export async function submitUgcPhoto(input: {
     select: { id: true },
   })
 
-  // Run the NSFW pre-screen against the public Cloudflare URL.
-  const imageUrl = cloudflareDeliveryUrl(input.cloudflareId, 'public')
+  // Run the NSFW pre-screen against the public URL.
+  const imageUrl = mediaUrl({ r2Key: input.r2Key }, 'public')
   let status: UGCPhotoStatus = UGCPhotoStatus.PENDING_MODERATION
   if (imageUrl) {
     const scan = await scanImageForNsfw(imageUrl)

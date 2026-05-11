@@ -2,7 +2,7 @@ import { prisma } from '@homemade/db'
 import { redirect } from 'next/navigation'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { TutorialCard } from '@/components/public/tutorial-card'
-import { cloudflareDeliveryUrl } from '@/lib/media'
+import { mediaUrl } from '@/lib/media'
 import { BookmarkRemove } from './bookmark-remove'
 
 export const dynamic = 'force-dynamic'
@@ -24,7 +24,7 @@ export default async function MeBookmarksPage() {
           difficulty: true,
           season: true,
           category: { select: { slug: true, name: true } },
-          hero: { select: { cloudflareId: true } },
+          hero: { select: { cloudflareId: true, r2Key: true } },
         },
       },
     },
@@ -47,10 +47,7 @@ export default async function MeBookmarksPage() {
                 href={`/${b.tutorial.category.slug}/${b.tutorial.slug}`}
                 title={b.tutorial.title}
                 excerpt={b.tutorial.excerpt}
-                heroUrl={cloudflareDeliveryUrl(
-                  b.tutorial.hero?.cloudflareId,
-                  'card',
-                )}
+                heroUrl={mediaUrl(b.tutorial.hero, 'card')}
                 difficulty={b.tutorial.difficulty}
                 season={b.tutorial.season}
                 categoryName={b.tutorial.category.name}
