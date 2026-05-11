@@ -29,7 +29,11 @@ COPY --from=deps /repo/node_modules ./node_modules
 COPY --from=deps /repo/apps/web/node_modules ./apps/web/node_modules
 COPY --from=deps /repo/packages/db/node_modules ./packages/db/node_modules
 COPY . .
-RUN pnpm --filter @homemade/web build
+# Bump Node heap (Phase 6 schema + Prisma client push the deps-status check
+# over the default ~2GB heap) and skip pnpm 11's pre-script deps verification
+# since the deps stage already installed everything from the lockfile.
+ENV NODE_OPTIONS=--max-old-space-size=4096
+RUN pnpm --filter @homemade/web --config.verify-deps-before-run=false build
 
 # ---- Runner ----
 FROM node:22-alpine AS runner
