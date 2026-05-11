@@ -55,12 +55,15 @@ These don't need to exist before there's content and users to track. We add each
 - Move secrets out of `.env.credentials` and into a password manager
 - GitHub Actions: switch to Node 24 (`FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true` or upgrade action versions)
 - Add CloudWatch alarms (task failure, ALB 5xx, ECS service unhealthy)
+- ESLint won't run — `next lint` removed in Next 16, ESLint v9 needs flat config. Migrate to `eslint.config.js` so we have a linter again.
+- SubTutorialCard cross-references: deleting a tutorial leaves dead `tutorialId` refs in other tutorials' TipTap JSON. Either scan JSON content for refs before delete and block, or schedule a periodic cleanup that nulls dangling refs.
+- `CLOUDFLARE_IMAGES_DELIVERY_HASH` env var: the hero media picker computes thumbnail URLs from it. Without it set, picker tiles fall back to a placeholder. Wire alongside the Phase 2e media upload work.
 
 ---
 
 ## Phase 2 — Data model & content management
 
-**In progress.**
+**Complete** (Phase 2e media-upload UI is the only optional remainder; tutorials authoring is fully functional without it).
 
 ### ✅ Done
 
@@ -103,13 +106,30 @@ These don't need to exist before there's content and users to track. We add each
 - **Admin nav extended** with sub-cats and tags links.
 - **Brand favicon** — `icon.svg` (Fraunces "h" sage on cream) + `apple-icon.png` (180×180) + `favicon.ico` (legacy fallback) wired into apps/web. Next.js auto-generates `<link>` tags.
 
-### Up next
+### ✅ Phase 2f — tutorials CRUD + TipTap editor + version history
 
-- `/admin/media` — Cloudflare R2 + Cloudflare Images upload flow, moderation status.
-- `/admin/tutorials` — list + create + edit with TipTap rich editor + custom blocks. The biggest single piece of Phase 2.
-- Custom TipTap blocks: info panel, supplies card, inline tooltip, sub-tutorial card, pull quote.
-- Live preview matching production rendering.
-- Draft / scheduled / published states + version history UI (using `TutorialVersion` model).
+- **`/admin/tutorials`** list view with title / category / status / last edited / published-date columns. Status filter chips (All / Draft / Scheduled / Published / Archived). Sorted by `updatedAt desc`.
+- **`/admin/tutorials/new`** and **`/admin/tutorials/[id]`** edit pages share the same `TutorialForm` client component: title (auto-fills slug), subtitle, excerpt, category (filtered sub-category dropdown), tags, difficulty / season / time, source type + notes, hero media picker, TipTap body. Slug uniqueness validated server-side.
+- **Hero media picker** modal reads existing `Media` rows from Prisma. Thumbnail URLs are built from `CLOUDFLARE_IMAGES_DELIVERY_HASH` env var when present; until that's set (Phase 2e), tiles show a placeholder. Empty state links to `/admin/media/new`.
+- **TipTap editor** (`apps/web/src/components/admin/editor/`) — `@tiptap/react@3.23.1` + StarterKit (includes link, lists, blockquote, headings, marks). Five custom extensions:
+  1. **InfoPanel** — node, atom, tone (info / tip / warning) + title + body
+  2. **SuppliesCard** — node, atom, heading + items[] (name, qty?, link?)
+  3. **GlossaryTooltip** — inline mark with `termId`; toolbar picker searches `GlossaryTerm` by term/slug; dotted-underline visual cue via CSS
+  4. **SubTutorialCard** — node, atom; in-block picker searches published tutorials by title/slug/category
+  5. **PullQuote** — node, atom, quote + attribution
+- TipTap content stored on `Tutorial.body` (the existing schema field — spec described it as `content`).
+- **Lifecycle** — server action `transitionTutorialStatus` enforces allowed transitions: DRAFT→SCHEDULED|PUBLISHED, SCHEDULED→DRAFT|PUBLISHED, PUBLISHED→ARCHIVED, ARCHIVED→DRAFT (plus IN_REVIEW back/forward). Scheduling captures `scheduledFor`; publishing stamps `publishedAt` (idempotent). No background job to auto-flip Scheduled→Published yet — Inngest is Phase 1 deferred. Each transition snapshots a `TutorialVersion` first.
+- **Version history** — `/admin/tutorials/[id]/versions` lists all versions newest-first with author + timestamp + change note. `/admin/tutorials/[id]/versions/[versionId]` renders the version in a read-only TipTap renderer (same five extensions, `editable: false`). Restore copies title / subtitle / excerpt / body back to the live `Tutorial`, snapshotting the current state first. All transitions, edits, and restores are audit-logged.
+- **Server actions** (`actions.ts`): `createTutorial`, `updateTutorial` (snapshots before write), `transitionTutorialStatus`, `restoreTutorialVersion`, `deleteTutorial`. Hard-delete cascades versions via the existing `onDelete: Cascade` on `TutorialVersion.tutorialId`.
+
+**Out-of-scope from this phase (per worker spec):**
+- Public tutorial rendering — Phase 3
+- Live preview pane
+- Autosave / debounced save (explicit Save button only)
+- Inline image upload inside the editor body
+- Background scheduled-publish job
+- SubTutorialCard reference clean-up on delete (dead-link check skipped — flagged below)
+- SEO meta editor (not in schema yet)
 
 ### Architecture decisions to note
 
@@ -146,4 +166,6 @@ Not started. Plan unchanged.
 - `03ce874` — docs: log Phase 2a + 2b in BUILD_PROGRESS
 - `90973ae` — feat(admin): categories CRUD + JIT user provisioning + audit log + migrate-in-CI
 - `bfd9dc9` — docs: log Phase 2c
-- Phase 2d (this session): glossary + sub-categories + tags CRUD + Clerk webhook + favicon
+- `568ec8a` — feat(admin): glossary + sub-categories + tags CRUD + Clerk webhook + favicon
+- `ef7d528` — fix(infra): defer CLERK_WEBHOOK_SIGNING_SECRET mount until webhook is configured
+- Phase 2f (this session): /admin/tutorials list + create + edit, TipTap editor with five custom blocks, version history, lifecycle transitions

@@ -1,0 +1,91 @@
+/* TipTap editor surface styling for /admin/tutorials.
+   Loaded only by the editor component. */
+
+.ProseMirror {
+  outline: none;
+  min-height: 24rem;
+  font-family: var(--font-lora);
+  color: var(--color-espresso);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.ProseMirror p {
+  margin: 0 0 1em;
+}
+
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3 {
+  font-family: var(--font-fraunces);
+  color: var(--color-espresso);
+  font-weight: 400;
+  margin-top: 1.6em;
+  margin-bottom: 0.4em;
+  line-height: 1.25;
+}
+
+.ProseMirror h1 {
+  font-size: 2.25rem;
+}
+
+.ProseMirror h2 {
+  font-size: 1.7rem;
+}
+
+.ProseMirror h3 {
+  font-size: 1.35rem;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+  padding-left: 1.5em;
+  margin: 0 0 1em;
+}
+
+.ProseMirror li {
+  margin: 0.25em 0;
+}
+
+.ProseMirror blockquote {
+  border-left: 3px solid var(--color-soft-sage);
+  padding-left: 1em;
+  margin: 1em 0;
+  font-style: italic;
+  color: var(--color-warm-taupe);
+}
+
+.ProseMirror a {
+  color: var(--color-sage);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ProseMirror code {
+  background: var(--color-bone);
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+  font-size: 0.95em;
+}
+
+.ProseMirror .glossary-tooltip {
+  border-bottom: 1px dotted var(--color-sage);
+  background: rgba(107, 117, 88, 0.08);
+  padding: 0 0.1em;
+  cursor: help;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: var(--color-warm-taupe);
+  opacity: 0.5;
+  pointer-events: none;
+  float: left;
+  height: 0;
+  font-style: italic;
+}
+
+.ProseMirror-selectednode {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 2px;
+}
