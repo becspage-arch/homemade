@@ -1,0 +1,228 @@
+/* Long-form legal pages — privacy, terms, cookies, AUP, DMCA, subscription
+ * terms. Quiet, readable, generously spaced. Fraunces headings, Lora body. */
+
+.legal-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 64px 32px 96px;
+}
+
+.legal-eyebrow {
+  display: block;
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+  margin-bottom: 14px;
+}
+
+.legal-title {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.15;
+  color: var(--color-espresso);
+  margin: 0 0 14px;
+}
+
+.legal-dates {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--color-warm-taupe);
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.legal-body {
+  font-family: var(--font-lora);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-espresso);
+}
+
+.legal-body h2 {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 26px;
+  color: var(--color-espresso);
+  margin: 48px 0 14px;
+  scroll-margin-top: 80px;
+}
+
+.legal-body h3 {
+  font-family: var(--font-fraunces);
+  font-weight: 500;
+  font-size: 19px;
+  color: var(--color-espresso);
+  margin: 28px 0 10px;
+}
+
+.legal-body p {
+  margin: 0 0 16px;
+}
+
+.legal-body ul,
+.legal-body ol {
+  margin: 0 0 16px;
+  padding-left: 22px;
+}
+
+.legal-body li {
+  margin-bottom: 8px;
+}
+
+.legal-body a {
+  color: var(--color-sage);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 0.5px;
+}
+
+.legal-body a:hover {
+  color: var(--color-forest);
+}
+
+.legal-body strong {
+  color: var(--color-espresso);
+  font-weight: 600;
+}
+
+.legal-body em {
+  font-style: italic;
+  color: var(--color-warm-taupe);
+}
+
+.legal-contact-block {
+  margin-top: 64px;
+  padding: 28px 28px 24px;
+  background: var(--color-soft-parchment);
+  border-left: 3px solid var(--color-sage);
+  border-radius: 4px;
+}
+
+.legal-contact-block h3 {
+  margin-top: 0;
+}
+
+.legal-contact-block p {
+  margin-bottom: 8px;
+}
+
+.legal-toc {
+  background: var(--color-soft-parchment);
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 4px;
+  padding: 18px 24px;
+  margin-bottom: 40px;
+}
+
+.legal-toc-title {
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+  margin-bottom: 8px;
+}
+
+.legal-toc ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.legal-toc a {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  color: var(--color-sage);
+  text-decoration: none;
+}
+
+.legal-toc a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal-index {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 64px 32px 96px;
+}
+
+.legal-index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.legal-index-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+  background: var(--color-soft-parchment);
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.legal-index-card:hover {
+  border-color: var(--color-sage);
+}
+
+.legal-index-card-title {
+  font-family: var(--font-fraunces);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--color-espresso);
+  margin: 0;
+}
+
+.legal-index-card-description {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  color: var(--color-warm-taupe);
+  margin: 0;
+  line-height: 1.55;
+}
+
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 32px;
+  font-family: var(--font-lora);
+  font-size: 14px;
+}
+
+.legal-table th,
+.legal-table td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 0.5px solid var(--color-linen-grey);
+  vertical-align: top;
+}
+
+.legal-table th {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+  font-weight: 500;
+}
+
+.legal-table code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  background: var(--color-soft-parchment);
+  padding: 2px 5px;
+  border-radius: 2px;
+}

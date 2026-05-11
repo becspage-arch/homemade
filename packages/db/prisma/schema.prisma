@@ -40,6 +40,15 @@ model User {
   isSuspended    Boolean   @default(false)
   suspendedUntil DateTime?
 
+  // Legal compliance (Phase 8a). `cookieConsent` is the persisted version of
+  // the cookie banner's decision (mirrored to localStorage); null = the
+  // banner hasn't been answered for this account yet. `deletionScheduledFor`
+  // is set while a 30-day deletion grace period is in flight. `deletedAt`
+  // marks the row as soft-deleted (PII scrubbed, audit-log entries retained).
+  cookieConsent        Json?
+  deletionScheduledFor DateTime?
+  deletedAt            DateTime?
+
   // Creator program (Phase 6). `isCreator` is the denormalised flag set when
   // an application is approved; the full profile lives in `CreatorProfile`.
   // `isPatternTester` flips on when a member opts in to the tester pool.
@@ -78,6 +87,10 @@ model User {
   creatorDecisions CreatorProfile[] @relation("CreatorProfileDecider")
   patternTests     PatternTest[]
   testAssignments  TestAssignment[]
+
+  dataExportRequests       DataExportRequest[]
+  accountDeletionRequest   AccountDeletionRequest?
+  dmcaResolutions          DmcaTakedownRequest[]   @relation("DmcaResolver")
 
   @@index([role])
   @@index([isSuspended])
@@ -848,4 +861,119 @@ enum TestAssignmentStatus {
   COMPLETED
   WITHDRAWN
   REJECTED
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Phase 8a — Legal compliance: GDPR data rights + DMCA takedowns
+// ────────────────────────────────────────────────────────────────────────────
+
+/// One row per data-export request a user has fired. Holds the bundle URL
+/// once produced. `expiresAt` is enforced at read time — once past, the
+/// download link 410s and the row is marked EXPIRED.
+model DataExportRequest {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  status DataExportStatus @default(REQUESTED)
+
+  /// Public URL the user can fetch the bundle from (R2 custom domain).
+  fileUrl String?
+  /// R2 object key — kept so we can delete the bundle after expiry.
+  fileKey String?
+  bytes   Int?
+
+  error String?
+
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+  expiresAt   DateTime?
+
+  @@index([userId, createdAt])
+  @@index([status, expiresAt])
+}
+
+enum DataExportStatus {
+  REQUESTED
+  PROCESSING
+  READY
+  EXPIRED
+  FAILED
+}
+
+/// One active row per user — `userId` is unique. While SCHEDULED, the user
+/// is also flagged `isSuspended = true` so the account can't be used during
+/// the grace period; cancelling lifts the suspension. After
+/// `scheduledFor` passes a follow-up job (manual for now) runs the hard
+/// delete: scrubs PII, sets `User.deletedAt`, preserves audit log entries.
+model AccountDeletionRequest {
+  id String @id @default(cuid())
+
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  reason String?
+
+  status DeletionStatus @default(SCHEDULED)
+
+  /// 30 days after `requestedAt`. A scheduled hard-delete job picks up rows
+  /// past this date; until then the user can cancel.
+  scheduledFor DateTime
+  requestedAt  DateTime @default(now())
+  cancelledAt  DateTime?
+  completedAt  DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status, scheduledFor])
+}
+
+enum DeletionStatus {
+  SCHEDULED
+  CANCELLED
+  COMPLETED
+}
+
+/// DMCA / takedown notices from outside the platform. We never want to
+/// trust the claimant blindly — every record stores their sworn-statement
+/// acceptance and a contact trail. Admin actions are audit-logged via the
+/// shared `audit()` helper.
+model DmcaTakedownRequest {
+  id String @id @default(cuid())
+
+  claimantName     String
+  claimantEmail    String
+  claimantAddress  String?
+
+  /// The URL or location of the allegedly infringing content. Free text
+  /// because claimants don't always send a clean URL.
+  contentUrl         String
+  /// Description of the work being infringed and how it's being infringed.
+  contentDescription String
+
+  /// The DMCA notice requires the claimant to swear under penalty of perjury
+  /// that the information is accurate and they are authorised to act. We
+  /// don't accept a notice without this box ticked.
+  swornStatementAccepted Boolean @default(false)
+
+  status DmcaStatus @default(RECEIVED)
+
+  actionTakenNote String?
+
+  createdAt DateTime @default(now())
+  resolvedAt DateTime?
+  resolvedById String?
+  resolvedBy   User?   @relation("DmcaResolver", fields: [resolvedById], references: [id])
+
+  @@index([status, createdAt])
+}
+
+enum DmcaStatus {
+  RECEIVED
+  UNDER_REVIEW
+  ACTION_TAKEN
+  REJECTED
+  COUNTER_NOTICED
 }

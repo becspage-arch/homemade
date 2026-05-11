@@ -613,6 +613,238 @@ Notifications fire via the existing `notify()` helper for: application decided, 
 - Pattern-test board has no search or full-text filter (only category chips). Add when volume warrants it.
 - The Tutorial.creatorId FK uses `onDelete: SetNull`, so deleting a User row blanks the byline on their tutorials. That's correct for moderation flow but may not be what we want at GDPR-delete time — revisit when the GDPR session lands.
 
+## Phase 8a — Legal compliance bundle (pre-launch gate)
+
+### ✅ Done
+
+**Legal entity config** (`apps/web/src/lib/legal-entity.ts`): single
+source of truth for controller name, contact / DPO / legal emails,
+postal address, ICO / Companies House / VAT numbers, jurisdiction, and
+the policy `effectiveDate`. Every legal page renders from these values.
+Set up as sole-trader (`Rebecca Page (trading as Homemade)`) with
+`postalAddress` / `icoRegistrationNumber` / `companiesHouseNumber` /
+`vatNumber` as null — incorporating later is a one-file change.
+
+**Six legal pages** under `apps/web/src/app/(public)/legal/`:
+- `/legal` — index card grid linking to all six.
+- `/legal/privacy` — UK GDPR-shaped: who we are, what we collect (four
+  categories), lawful bases (contract / consent / legitimate interest /
+  legal obligation), per-processor list (Clerk / Neon / AWS / Cloudflare
+  / PostHog / Sentry / Inngest / Upstash / Typesense / Google Workspace /
+  Anthropic / Stripe), international transfers via SCCs, retention
+  periods, your rights including the link to `/me/data-rights` and the
+  ICO complaint route, minimum age 16, cookie summary, change-notice
+  policy. Table of contents at the top.
+- `/legal/terms` — who we are, the service, account rules, AUP link,
+  **UGC licence clause** (perpetual / irrevocable / worldwide /
+  royalty-free / sublicensable, user keeps ownership, attribution by
+  handle, warranty of rights, removal honours future-facing display
+  only, GDPR erasure rights sit alongside the licence), our content,
+  premium link, disclaimers (food / sharps / pesticides / electrical),
+  UK liability cap (£100 floor / 12-month spend ceiling),
+  termination, governing law (England and Wales), changes notice.
+- `/legal/cookies` — categories (necessary / analytics / error
+  monitoring / preferences), named cookies table with purpose / expiry /
+  party / category for each, how to manage preferences (banner + browser
+  settings), reminder that necessary cookies can't be opted out.
+- `/legal/acceptable-use` — what's welcome, then the forbidden list
+  (illegal, harassment, spam, copyright, sexually explicit, scraping,
+  unauthorised security probing, misrepresentation), reporting flow,
+  what happens after a breach.
+- `/legal/dmca` — notice procedure with all six required elements,
+  what happens next, counter-notice procedure with the four required
+  elements, repeat infringer policy, misuse warning. Flagged
+  `Designated agent registration pending` with a `TODO(legal)` comment
+  because the formal US Copyright Office filing is Rebecca-must-do.
+- `/legal/subscription-terms` — premium feature set placeholder,
+  billing cycle, auto-renewal, cancellation (effective end of period,
+  no pro-rata refunds), **UK Consumer Contracts Regulations 2013
+  14-day cooling-off with the digital-services waiver**, refunds,
+  price changes (30-day notice), VAT handling (inclusive once
+  VAT-registered, exclusive until then), account closure, disputes.
+
+All six render from `LEGAL_ENTITY` constants. Effective + last-updated
+dates render via a shared `LegalHeader`; `formatDate` builds the
+en-GB long form from ISO parts so server / client agree. Voice rules
+audited: no `honest` / `frankly` / `delve` / `embrace` / `nurture` /
+`tapestry` / `at its core` / `not just X but Y` etc. British English
+throughout (organisation, behaviour, recognise).
+
+**Cookie consent banner** (`apps/web/src/components/public/cookie-banner.tsx`)
+mounted in the `(public)` route group layout (NOT the root layout —
+services-activation owns root). Two views: compact (Accept all /
+Necessary only / Customise — all same visual weight, so refusing is
+no harder than accepting) and customise (toggles for analytics + error
+monitoring, necessary disabled). Stores `homemade-consent` JSON in
+localStorage and, when signed in, mirrors via the `persistConsent`
+server action into `User.cookieConsent`. Re-shows when
+`CURRENT_CONSENT_VERSION` is bumped (handled by version mismatch on
+read). A `reopenCookieBanner()` helper + a `CookiePreferencesButton`
+client component let the footer + `/me/data-rights` pop the banner.
+
+**Consent helpers:**
+- `apps/web/src/lib/consent.ts` — pure client API: `getConsent`,
+  `hasAnalyticsConsent`, `hasErrorMonitoringConsent`, `setConsent`,
+  `clearConsent`. Dispatches a `CONSENT_CHANGE_EVENT` on the window so
+  the analytics wrappers don't need to poll.
+- `apps/web/src/lib/analytics-consent.ts` — wrappers that services-
+  activation imports. `applyAnalyticsConsent()` reads consent and calls
+  PostHog `opt_in_capturing()` / `opt_out_capturing()` if PostHog is
+  on `window`; `installAnalyticsConsentListener()` keeps it in sync
+  with future changes; `shouldSendSentryEvent()` is the predicate to
+  drop into Sentry's `beforeSend`. All three no-op when the underlying
+  SDK is missing, so they survive whatever order services-activation
+  lands its init in.
+- `apps/web/src/lib/consent-actions.ts` — `persistConsent` server
+  action writes `User.cookieConsent` for signed-in users; anonymous
+  paths are localStorage-only.
+
+**GDPR data rights centre** (`/me/data-rights`):
+- Three sections: Export my data, Delete my account, Manage cookie
+  preferences (re-opens banner).
+- Listed in the `/me` nav between Notifications and Settings.
+- `ExportPanel` shows the latest READY export with download link, bundle
+  size and expiry, plus a confirmation step for generating a fresh one.
+  Past-export history is collapsed in a `<details>`.
+- `DeletionPanel` either shows the schedule-deletion form (optional
+  reason) or, when a deletion is in flight, shows the countdown to
+  `scheduledFor` with a Cancel button.
+- `CookiePreferencesPanel` invokes `reopenCookieBanner()`.
+
+**API routes** under `apps/web/src/app/api/account/`:
+- `POST /api/account/export` — fires `requestDataExport()`. Returns
+  `{ ok, requestId }` or `{ ok: false, error }`. Throttled to one
+  export per hour per user via the existing-request check.
+- `POST /api/account/delete` — body `{ action: 'schedule' | 'cancel',
+  reason? }`. Defaults to schedule. Wraps the same server actions the
+  page uses, so the audit log + suspension toggle are identical.
+
+**`requestDataExport` server action** (`apps/web/src/lib/data-rights-actions.ts`):
+- Throttles to 1/h. Creates a `DataExportRequest` row in PROCESSING.
+- `buildExportBundle()` (`data-rights.ts`) walks every model that holds
+  user-owned content: User, Bookmark, UserProject, Review, Question,
+  Answer, UGCPhoto (URLs not bytes), Errata, Notification,
+  AuditLog (actorId-authored, last 5000), CreatorProfile, PatternTest,
+  TestAssignment. Wraps it as a notice-bearing JSON document.
+- Uploads to R2 under `data-exports/{userId}/{uuid}.json` via the
+  existing `r2Upload()` helper; the row gets `fileUrl` + `fileKey` +
+  `bytes` + `expiresAt = now + 7 days`. Failures flip the row to
+  FAILED with the error message.
+- Audit-logged as `data_export.created` / `data_export.failed`.
+- `expireStaleExports()` runs cheap on-page-load cleanup: any READY
+  rows past `expiresAt` are flipped to EXPIRED with `fileUrl` cleared.
+
+**`scheduleAccountDeletion` / `cancelAccountDeletion`:**
+- Schedules a `DeletionStatus.SCHEDULED` `AccountDeletionRequest` 30
+  days out. Sets `User.deletionScheduledFor`, `User.isSuspended = true`,
+  `User.suspendedUntil` so the account is unusable during the grace
+  period — cancelling clears all three. The actual hard-delete job
+  is intentionally deferred (no Inngest yet); the queue is built so
+  Rebecca can run it manually or wire an Inngest cron when services-
+  activation lands. Audit-logged as `account_deletion.scheduled` /
+  `account_deletion.cancelled` / `account_deletion.cancelled_by_admin`.
+
+**Schema additions** in `phase8a_legal_compliance` migration:
+- `User.cookieConsent` (Json?), `User.deletionScheduledFor` (DateTime?),
+  `User.deletedAt` (DateTime?, reserved for the future hard-delete job).
+- `DataExportRequest` + `DataExportStatus` enum (REQUESTED / PROCESSING
+  / READY / EXPIRED / FAILED). Index on `(userId, createdAt)` and
+  `(status, expiresAt)`.
+- `AccountDeletionRequest` + `DeletionStatus` enum (SCHEDULED / CANCELLED
+  / COMPLETED). Unique on `userId` (only one active per user). Index on
+  `(status, scheduledFor)`.
+- `DmcaTakedownRequest` + `DmcaStatus` enum (RECEIVED / UNDER_REVIEW /
+  ACTION_TAKEN / REJECTED / COUNTER_NOTICED). FK on `resolvedById ->
+  User` with `onDelete: SetNull`. Index on `(status, createdAt)`.
+
+**Admin pages** — replaced + added:
+- `/admin/users/data-requests` — replaced the placeholder. Status-
+  filtered table of `DataExportRequest` rows with user, status pill,
+  bytes, created / completed / expires timestamps, and any error.
+  Read-only for the bundle (it's the user's data).
+- `/admin/users/deletion-queue` — new. Filter by status, default
+  SCHEDULED. Days-left countdown on each row. Admin-only Cancel button
+  (note required) that lifts the suspension and audit-logs as
+  `account_deletion.cancelled_by_admin`.
+- `/admin/community/dmca` — new. Filter chips for each status, an
+  inline intake form to log notices we receive by email (sworn-statement
+  checkbox required), plus per-row controls to mark Under review /
+  Action taken (note required) / Counter-noticed / Reject (note
+  required). All actions audit-logged.
+
+**Admin sidebar** — extended the Users group with "Deletion queue"
+(replaced the data-requests placeholder), and the Community group with
+"DMCA / takedowns".
+
+**Public site footer** (`site-footer.tsx`) — was a wordmark + tagline
+strip; now a three-row footer with brand row, the legal nav (Privacy /
+Terms / Cookies / Acceptable use / DMCA / Subscription terms / Cookie
+preferences / Data rights for signed-in users), and a fine-print row
+with `LEGAL_ENTITY.name` + jurisdiction + ICO registration status.
+Server component that reads Clerk session via `auth()` to decide
+whether to show the data-rights link.
+
+**Docs:**
+- `docs/ico-registration.md` — what ICO is, the £40/year Tier 1 fee,
+  the registration URL, the data needed, where to plug the
+  registration number once it exists, calendar reminder for renewal,
+  and the related external follow-ups list (email aliases / postal
+  address / DMCA designated agent / VAT / Companies House).
+- `docs/email-aliases-needed.md` — the three aliases (`privacy@`,
+  `dpo@`, `legal@`), where to create them in Google Workspace, and
+  the Gmail filter setup so each lands in its own label.
+
+**Voice / British English audit:** every page hand-read against the
+banned-phrase list in `feedback_homemade_voice.md`. One instance of
+"honest" replaced with "plain-spoken". British spellings throughout
+(`personalised`, `organisation`, `behaviour`, `recognise`, `licence`
+the noun, `license` the verb).
+
+### Out of scope (deferred)
+
+- The hard-delete job that runs after the 30-day grace period — needs
+  Inngest, which is Phase 1 deferred. Until that lands, scheduled
+  deletions stay SCHEDULED and the account stays suspended until
+  Rebecca runs the deletion manually.
+- Email notifications for "Your export is ready" / "Your deletion
+  was cancelled by an admin" — no email provider wired yet.
+- Public DMCA submission form (currently admin-only intake of
+  notices Rebecca receives by email).
+- Wiring the Sentry / PostHog init to actually call
+  `installAnalyticsConsentListener()` and `shouldSendSentryEvent()` —
+  belongs to the services-activation session, which owns those
+  files. Wrappers are ready and import-stable.
+
+### New pre-launch debt items
+
+- **Hard-delete job**. The 30-day deletion queue is populated and
+  visible to admins; the job that actually scrubs PII + sets
+  `User.deletedAt` + cascades content removal needs an Inngest cron
+  once services-activation lands.
+- **DMCA designated agent**. `legal/dmca` flags the registration as
+  pending. Rebecca to file with the US Copyright Office
+  (`copyright.gov/dmca-directory/`), then the page's "pending" line
+  can be replaced with the listed agent.
+- **Email aliases**. Privacy / DPO / Legal addresses are linked from
+  every legal page but bounce until the aliases exist (`docs/email-
+  aliases-needed.md`).
+- **ICO registration**. `LEGAL_ENTITY.icoRegistrationNumber = null`
+  renders as "pending" in the privacy page footer and the site footer
+  fine print. Rebecca to register, then bump the value in
+  `legal-entity.ts` (`docs/ico-registration.md`).
+- **Public DMCA submission form**. Currently admin-only intake.
+  Lower priority than the agent registration but worth adding when
+  notice volume justifies it.
+
+### Build hygiene
+
+- `pnpm --filter @homemade/db typecheck` — passes.
+- `pnpm --filter @homemade/web typecheck` — passes.
+- `pnpm --filter @homemade/web build` — passes (Next.js 16 /
+  Turbopack). Pre-existing Prisma `export *` warning unchanged.
+- Migration `20260605000000_phase8a_legal_compliance` applies cleanly
+  on top of Phase 6.
+
 ## Phases 7–8
 
 Plan unchanged.
@@ -806,4 +1038,5 @@ banner, protobufjs setup).
 - Phase 6 — creator program + pattern testing + public maker profiles + creator-tutorial moderation flow
 - `41e2051` — feat(media): move image pipeline to Cloudflare R2 + Image Transformations
 - `a312c78` — feat(infra): activate Sentry + PostHog + Inngest + Upstash rate limits
+- _this session_ — feat(legal): Phase 8a legal compliance bundle — six legal pages, cookie consent banner + consent helpers, /me/data-rights + export / deletion API, DMCA + deletion + data-export admin queues, schema additions (cookieConsent / deletionScheduledFor / deletedAt + 3 new models)
 - Phase 3a (this session): public tutorial / category / home pages, TipTap-JSON renderer with no TipTap runtime in the public bundle, admin Preview toggle

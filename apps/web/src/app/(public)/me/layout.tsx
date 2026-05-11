@@ -21,6 +21,7 @@ const BASE_NAV: NavItem[] = [
   { href: '/me/photos', label: 'Photos' },
   { href: '/me/questions', label: 'Questions' },
   { href: '/me/notifications', label: 'Notifications' },
+  { href: '/me/data-rights', label: 'Data rights' },
   { href: '/me/settings', label: 'Settings' },
 ]
 

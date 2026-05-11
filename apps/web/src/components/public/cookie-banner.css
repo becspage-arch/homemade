@@ -1,0 +1,143 @@
+/* Cookie consent banner — sage-on-cream, fixed to the bottom of the
+ * viewport on first visit, dismissed once a decision is made. */
+
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 300;
+  background: var(--color-linen-cream);
+  border-top: 0.5px solid var(--color-linen-grey);
+  box-shadow: 0 -8px 24px rgba(40, 33, 28, 0.06);
+}
+
+.cookie-banner-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: var(--font-lora);
+}
+
+.cookie-banner-title {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--color-espresso);
+  margin: 0;
+}
+
+.cookie-banner-body {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-warm-taupe);
+  margin: 0;
+}
+
+.cookie-banner-body a {
+  color: var(--color-sage);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.cookie-banner-button {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  padding: 10px 18px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 0.5px solid var(--color-sage);
+  background: var(--color-sage);
+  color: var(--color-linen-cream);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.cookie-banner-button:hover:not(:disabled) {
+  background: var(--color-forest);
+  border-color: var(--color-forest);
+}
+
+.cookie-banner-button.secondary {
+  background: transparent;
+  color: var(--color-sage);
+}
+
+.cookie-banner-button.secondary:hover:not(:disabled) {
+  background: rgba(107, 117, 88, 0.08);
+  color: var(--color-forest);
+}
+
+.cookie-banner-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cookie-banner-categories {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cookie-banner-category {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 3px;
+  background: var(--color-soft-parchment);
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color-espresso);
+}
+
+.cookie-banner-category input {
+  margin-top: 3px;
+  accent-color: var(--color-sage);
+  width: 16px;
+  height: 16px;
+}
+
+.cookie-banner-category strong {
+  display: block;
+  font-weight: 600;
+}
+
+.cookie-banner-category-hint {
+  display: block;
+  font-size: 12px;
+  color: var(--color-warm-taupe);
+  margin-top: 2px;
+}
+
+.cookie-banner-version {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+  margin: 4px 0 0;
+}
+
+@media (max-width: 640px) {
+  .cookie-banner-inner {
+    padding: 20px 22px;
+  }
+  .cookie-banner-button {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}

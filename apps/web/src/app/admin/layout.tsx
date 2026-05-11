@@ -36,7 +36,8 @@ const SIDEBAR_GROUPS: SidebarGroup[] = [
     items: [
       { href: '/admin/users', label: 'List' },
       { href: '/admin/users/suspended', label: 'Suspensions' },
-      { href: '/admin/users/data-requests', label: 'Data requests', placeholder: true },
+      { href: '/admin/users/data-requests', label: 'Data requests' },
+      { href: '/admin/users/deletion-queue', label: 'Deletion queue' },
     ],
   },
   {
@@ -48,6 +49,7 @@ const SIDEBAR_GROUPS: SidebarGroup[] = [
       { href: '/admin/questions', label: 'Q&A' },
       { href: '/admin/errata', label: 'Errata' },
       { href: '/admin/reports', label: 'Reports' },
+      { href: '/admin/community/dmca', label: 'DMCA / takedowns' },
     ],
   },
   {

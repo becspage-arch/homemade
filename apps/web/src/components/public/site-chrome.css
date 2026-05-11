@@ -225,6 +225,12 @@
   max-width: 1280px;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.site-footer-brand {
+  display: flex;
   align-items: baseline;
   gap: 24px;
   flex-wrap: wrap;
@@ -242,4 +248,37 @@
   font-style: italic;
   font-size: 14px;
   color: var(--color-warm-taupe);
+}
+
+.site-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 24px;
+  border-top: 0.5px solid var(--color-linen-grey);
+  border-bottom: 0.5px solid var(--color-linen-grey);
+  padding: 18px 0;
+}
+
+.site-footer-link {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--color-warm-taupe);
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.site-footer-link:hover {
+  color: var(--color-sage);
+}
+
+.site-footer-fineprint {
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--color-warm-taupe);
+  margin: 0;
 }
