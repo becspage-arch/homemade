@@ -3,9 +3,12 @@ packages:
   - "packages/*"
   - "infra"
 
-# Approved native build scripts. Both are trusted deps:
-# - sharp is used by Next.js for image optimisation
-# - unrs-resolver is used by eslint
+# Approved native build scripts. All trusted deps:
+# - sharp: Next.js image optimisation
+# - unrs-resolver: ESLint module resolution
+# - prisma / @prisma/engines: Prisma query engine native binary
 allowBuilds:
   sharp: true
   unrs-resolver: true
+  prisma: true
+  '@prisma/engines': true

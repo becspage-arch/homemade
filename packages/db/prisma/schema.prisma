@@ -1,0 +1,280 @@
+// Homemade Prisma schema.
+//
+// Conventions:
+// - cuid IDs everywhere
+// - createdAt + updatedAt timestamps on every mutable row
+// - soft-delete-by-status rather than physical deletes for content tables
+// - body fields are JSON (TipTap document)
+//
+// Schema is incremental — start with the tutorial spine; add Recipe / Pattern /
+// Review / Q&A / UserProject / Marketplace / Creator / Errata models in later
+// phases as they become needed.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Users — Clerk shadow + role
+// ────────────────────────────────────────────────────────────────────────────
+
+model User {
+  id        String   @id @default(cuid())
+  clerkId   String   @unique
+  email     String   @unique
+  name      String?
+  role      UserRole @default(MEMBER)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  tutorialsAuthored Tutorial[]        @relation("TutorialAuthor")
+  versions          TutorialVersion[] @relation("VersionAuthor")
+  auditLogs         AuditLog[]
+
+  @@index([role])
+}
+
+enum UserRole {
+  ANONYMOUS
+  MEMBER
+  CREATOR
+  TESTER
+  EDITOR
+  ADMIN
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Taxonomy — Category / SubCategory / Tag
+// ────────────────────────────────────────────────────────────────────────────
+
+model Category {
+  id          String  @id @default(cuid())
+  slug        String  @unique
+  name        String
+  description String?
+  introBody   Json? // Rich content (TipTap) for the editorial intro
+  order       Int     @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  subCategories SubCategory[]
+  tutorials     Tutorial[]
+}
+
+model SubCategory {
+  id          String  @id @default(cuid())
+  slug        String
+  name        String
+  description String?
+  order       Int     @default(0)
+
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
+
+  tutorials Tutorial[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([categoryId, slug])
+}
+
+model Tag {
+  id   String @id @default(cuid())
+  slug String @unique
+  name String
+
+  tutorials Tutorial[]
+
+  createdAt DateTime @default(now())
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Glossary — per-category technical terms
+// ────────────────────────────────────────────────────────────────────────────
+
+model GlossaryTerm {
+  id         String  @id @default(cuid())
+  slug       String  @unique
+  term       String
+  definition String // Short plain-text definition for tooltips
+  body       Json? // Optional longer rich content for the term's own page
+
+  categoryId String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([categoryId])
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Tutorials — the heart of the platform
+// ────────────────────────────────────────────────────────────────────────────
+
+model Tutorial {
+  id       String  @id @default(cuid())
+  slug     String  @unique
+  title    String
+  subtitle String?
+  excerpt  String? // Short summary used on cards and meta description
+
+  // Categorisation
+  categoryId    String
+  category      Category     @relation(fields: [categoryId], references: [id])
+  subCategoryId String?
+  subCategory   SubCategory? @relation(fields: [subCategoryId], references: [id])
+  tags          Tag[]
+
+  // Metadata shown in the info bar
+  difficulty  Difficulty @default(BEGINNER)
+  timeMinutes Int? // Total time the tutorial takes (sum of all steps)
+  season      Season?
+  sourceType  SourceType @default(SYNTHESISED)
+  sourceNotes String? // Reference list / attribution notes
+
+  // Content
+  heroMediaId String?
+  hero        Media?  @relation(fields: [heroMediaId], references: [id])
+  body        Json // TipTap document — the article body
+
+  // Lifecycle
+  status       TutorialStatus @default(DRAFT)
+  publishedAt  DateTime?
+  scheduledFor DateTime?
+
+  // Authorship
+  authorId String
+  author   User   @relation("TutorialAuthor", fields: [authorId], references: [id])
+
+  versions TutorialVersion[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status, publishedAt])
+  @@index([categoryId, status])
+  @@index([slug])
+}
+
+enum Difficulty {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+
+enum Season {
+  SPRING
+  SUMMER
+  AUTUMN
+  WINTER
+  YEAR_ROUND
+}
+
+enum SourceType {
+  TESTED // Tested in Homemade kitchen/garden/etc
+  CLASSIC // Classic precedent, cross-referenced across 5+ sources
+  SYNTHESISED // Synthesised from public domain / extension service sources
+  PUBLIC_DOMAIN // Direct public domain (e.g. Victorian crochet pattern)
+  CREATOR // From an external creator (post Phase 6)
+}
+
+enum TutorialStatus {
+  DRAFT
+  IN_REVIEW
+  SCHEDULED
+  PUBLISHED
+  ARCHIVED
+}
+
+// One row per save in the admin editor. Used for version history + rollback.
+model TutorialVersion {
+  id         String   @id @default(cuid())
+  tutorialId String
+  tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+
+  // Snapshot of the editable fields at this version
+  title    String
+  subtitle String?
+  excerpt  String?
+  body     Json
+  status   TutorialStatus
+
+  authorId   String
+  author     User    @relation("VersionAuthor", fields: [authorId], references: [id])
+  changeNote String?
+
+  createdAt DateTime @default(now())
+
+  @@index([tutorialId, createdAt])
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Media — photos, videos, diagrams, illustrations
+// ────────────────────────────────────────────────────────────────────────────
+
+model Media {
+  id String @id @default(cuid())
+
+  // Cloudflare identifiers (one or both depending on type)
+  cloudflareId String? @unique // Cloudflare Images / Stream ID
+  r2Key        String? // R2 raw asset key
+
+  type        MediaType
+  mimeType    String?
+  alt         String?
+  caption     String?
+  attribution String? // Wikimedia / Unsplash / Pexels credit
+
+  width  Int?
+  height Int?
+
+  status MediaStatus @default(PENDING)
+
+  tutorialsHero Tutorial[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+  @@index([type])
+}
+
+enum MediaType {
+  PHOTO
+  VIDEO
+  DIAGRAM
+  ILLUSTRATION
+}
+
+enum MediaStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Audit log — every admin action recorded
+// ────────────────────────────────────────────────────────────────────────────
+
+model AuditLog {
+  id      String @id @default(cuid())
+  actorId String
+  actor   User   @relation(fields: [actorId], references: [id])
+
+  action   String // e.g. "tutorial.create", "tutorial.publish", "category.update"
+  resource String // e.g. "Tutorial:abc123"
+  metadata Json? // Action-specific data (diff, before/after, etc.)
+
+  createdAt DateTime @default(now())
+
+  @@index([resource])
+  @@index([actorId])
+  @@index([createdAt])
+}

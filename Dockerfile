@@ -10,6 +10,11 @@ WORKDIR /repo
 FROM base AS deps
 COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
 COPY apps/web/package.json apps/web/
+# packages/db: copy package.json + prisma schema + config so the postinstall
+# step (prisma generate) has everything it needs to produce the typed client.
+COPY packages/db/package.json packages/db/
+COPY packages/db/prisma packages/db/prisma
+COPY packages/db/prisma.config.ts packages/db/
 RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store \
     pnpm install --frozen-lockfile
 
