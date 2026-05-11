@@ -10,6 +10,9 @@ WORKDIR /repo
 FROM base AS deps
 COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
 COPY apps/web/package.json apps/web/
+COPY apps/mobile/package.json apps/mobile/
+COPY packages/search/package.json packages/search/
+COPY infra/package.json infra/
 # packages/db: copy package.json + prisma schema + config so the postinstall
 # step (prisma generate) has everything it needs to produce the typed client.
 COPY packages/db/package.json packages/db/
@@ -28,12 +31,13 @@ ENV NEXT_TELEMETRY_DISABLED=1
 COPY --from=deps /repo/node_modules ./node_modules
 COPY --from=deps /repo/apps/web/node_modules ./apps/web/node_modules
 COPY --from=deps /repo/packages/db/node_modules ./packages/db/node_modules
+COPY --from=deps /repo/packages/search/node_modules ./packages/search/node_modules
 COPY . .
-# Bump Node heap (Phase 6 schema + Prisma client push the deps-status check
-# over the default ~2GB heap) and skip pnpm 11's pre-script deps verification
-# since the deps stage already installed everything from the lockfile.
+# Bump Node heap: pnpm 11's pre-script `verify-deps-before-run` runs an
+# in-process install that re-triggers prisma generate; the Phase 6 schema
+# pushes this past Node's default ~2GB heap on the GHA builder.
 ENV NODE_OPTIONS=--max-old-space-size=4096
-RUN pnpm --filter @homemade/web --config.verify-deps-before-run=false build
+RUN pnpm --filter @homemade/web build
 
 # ---- Runner ----
 FROM node:22-alpine AS runner
