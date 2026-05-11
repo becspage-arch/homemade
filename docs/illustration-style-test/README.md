@@ -75,18 +75,34 @@ If none of the four styles is strong enough at the end of this round, the
 fix is to iterate the prompt or run a second round with refined styles, not
 to bring someone in.
 
-## On no API key being available right now
+## Status: images generated
 
-`.env.credentials` does not contain `FAL_KEY`, `REPLICATE_API_TOKEN`,
-`OPENAI_API_KEY`, or `STABILITY_API_KEY` at the time this brief was
-written. So the 24-image grid cannot be generated automatically as part of
-this docs session. Rebecca runs the generations manually in whatever tool
-she already has access to and drops the PNGs into the `output/` folders.
+The 24-image grid is in `output/` (6 subjects × 4 styles, all PNG, 16:9).
+Generated via fal.ai (Flux 1.1 Pro Ultra) using
+`scripts/generate-style-test.mjs`. See `generation-log.md` for prompts,
+elapsed time, and seed per cell.
 
-If a key gets added later, a follow-up worker session can read the prompts
-from `styles.md` and the subjects from `subjects.md`, run them through the
-provider's API, and fill the folders directly. The brief is structured so
-that step is mechanical — same prompt strings, same file names.
+Rebecca's job now: open the grid, score against `rubric.md`, write the
+decision paragraph. The grid is the input; the rubric is where the
+decision lives.
+
+## Re-running or extending the test
+
+If we want to re-test (different prompt prefixes, different subjects, a
+second pass on the winner with refined prompts), the script is reusable.
+It reads `FAL_KEY` from
+`C:\Users\Rebecca\Projects\code\homemade\.env.credentials`, takes no
+arguments, and overwrites whatever is in `output/`.
+
+```
+cd C:\Users\Rebecca\Projects\code\homemade
+node docs/illustration-style-test/generate.mjs
+```
+
+To run a different style or subject set, edit the `STYLES` and `SUBJECTS`
+arrays at the top of `generate.mjs` — they are the source of truth, not the
+markdown files. Keep `styles.md` and `subjects.md` in sync if the change is
+permanent.
 
 ## Once the winning style is locked
 
