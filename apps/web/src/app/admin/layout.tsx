@@ -1,7 +1,88 @@
 import { redirect } from 'next/navigation'
-import { UserButton } from '@clerk/nextjs'
-import Link from 'next/link'
-import { getCurrentDbUser, isAdmin } from '@/lib/auth'
+import { getCurrentDbUser, isAdmin, isEditorOrAbove } from '@/lib/auth'
+import { AdminShell } from '@/components/admin/admin-shell'
+import type { SidebarGroup } from '@/components/admin/admin-sidebar'
+
+import '@/components/admin/admin-shell.css'
+import '@/components/admin/admin-moderation.css'
+
+/**
+ * Sidebar groups for /admin. Eight top-level groups per the menu restructure
+ * landed in Phase 5 (see `project_admin_roadmap.md`). Placeholders flag pages
+ * that still need their own phase.
+ */
+const SIDEBAR_GROUPS: SidebarGroup[] = [
+  {
+    id: 'dashboard',
+    label: 'Dashboard',
+    href: '/admin',
+    items: [],
+  },
+  {
+    id: 'content',
+    label: 'Content',
+    items: [
+      { href: '/admin/tutorials', label: 'Tutorials' },
+      { href: '/admin/categories', label: 'Categories' },
+      { href: '/admin/sub-categories', label: 'Sub-categories' },
+      { href: '/admin/tags', label: 'Tags' },
+      { href: '/admin/glossary', label: 'Glossary' },
+      { href: '/admin/media', label: 'Media' },
+    ],
+  },
+  {
+    id: 'users',
+    label: 'Users',
+    items: [
+      { href: '/admin/users', label: 'List' },
+      { href: '/admin/users/suspended', label: 'Suspensions' },
+      { href: '/admin/users/data-requests', label: 'Data requests', placeholder: true },
+    ],
+  },
+  {
+    id: 'community',
+    label: 'Community',
+    items: [
+      { href: '/admin/reviews', label: 'Reviews' },
+      { href: '/admin/ugc-photos', label: 'UGC photos' },
+      { href: '/admin/questions', label: 'Q&A' },
+      { href: '/admin/errata', label: 'Errata' },
+      { href: '/admin/reports', label: 'Reports' },
+    ],
+  },
+  {
+    id: 'billing',
+    label: 'Billing',
+    items: [
+      { href: '/admin/billing', label: 'Overview', placeholder: true },
+    ],
+  },
+  {
+    id: 'marketing',
+    label: 'Marketing',
+    items: [
+      { href: '/admin/marketing', label: 'Overview', placeholder: true },
+    ],
+  },
+  {
+    id: 'analytics',
+    label: 'Analytics',
+    items: [
+      { href: '/admin/analytics', label: 'Overview', placeholder: true },
+    ],
+  },
+  {
+    id: 'system',
+    label: 'System',
+    adminOnly: true,
+    items: [
+      { href: '/admin/audit-log', label: 'Audit log' },
+      { href: '/admin/system/settings', label: 'Settings', placeholder: true },
+      { href: '/admin/system/feature-flags', label: 'Feature flags', placeholder: true },
+      { href: '/admin/system/jobs', label: 'Jobs', placeholder: true },
+    ],
+  },
+]
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const user = await getCurrentDbUser()
@@ -10,7 +91,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     redirect('/sign-in')
   }
 
-  if (!isAdmin(user)) {
+  if (!isEditorOrAbove(user)) {
     return (
       <main className="flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">
         <h1
@@ -30,62 +111,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   }
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <header className="flex items-center justify-between border-b border-[var(--color-linen-grey)] bg-[var(--color-soft-parchment)] px-8 py-4">
-        <Link
-          href="/admin"
-          className="text-2xl text-[var(--color-sage)] lowercase"
-          style={{ fontFamily: 'var(--font-fraunces)', letterSpacing: '0.18em', fontWeight: 300 }}
-        >
-          homemade admin
-        </Link>
-        <nav className="flex items-center gap-8">
-          <Link
-            href="/admin/tutorials"
-            className="text-xs uppercase text-[var(--color-warm-taupe)] hover:text-[var(--color-sage)]"
-            style={{ fontFamily: 'var(--font-lora)', letterSpacing: '0.25em' }}
-          >
-            tutorials
-          </Link>
-          <Link
-            href="/admin/categories"
-            className="text-xs uppercase text-[var(--color-warm-taupe)] hover:text-[var(--color-sage)]"
-            style={{ fontFamily: 'var(--font-lora)', letterSpacing: '0.25em' }}
-          >
-            categories
-          </Link>
-          <Link
-            href="/admin/sub-categories"
-            className="text-xs uppercase text-[var(--color-warm-taupe)] hover:text-[var(--color-sage)]"
-            style={{ fontFamily: 'var(--font-lora)', letterSpacing: '0.25em' }}
-          >
-            sub-cats
-          </Link>
-          <Link
-            href="/admin/tags"
-            className="text-xs uppercase text-[var(--color-warm-taupe)] hover:text-[var(--color-sage)]"
-            style={{ fontFamily: 'var(--font-lora)', letterSpacing: '0.25em' }}
-          >
-            tags
-          </Link>
-          <Link
-            href="/admin/glossary"
-            className="text-xs uppercase text-[var(--color-warm-taupe)] hover:text-[var(--color-sage)]"
-            style={{ fontFamily: 'var(--font-lora)', letterSpacing: '0.25em' }}
-          >
-            glossary
-          </Link>
-          <Link
-            href="/admin/media"
-            className="text-xs uppercase text-[var(--color-warm-taupe)] hover:text-[var(--color-sage)]"
-            style={{ fontFamily: 'var(--font-lora)', letterSpacing: '0.25em' }}
-          >
-            media
-          </Link>
-          <UserButton />
-        </nav>
-      </header>
-      <main className="flex-1 px-8 py-12">{children}</main>
-    </div>
+    <AdminShell groups={SIDEBAR_GROUPS} isAdmin={isAdmin(user)}>
+      {children}
+    </AdminShell>
   )
 }

@@ -8,14 +8,20 @@ import { loadContentRefs } from '@/lib/tutorial-refs'
 import { cloudflareDeliveryUrl } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { harvestSupplies } from '@/lib/supplies'
+import { loadTutorialUgc } from '@/lib/ugc-loader'
 import { BookmarkButton } from '@/components/public/tutorial-reader/bookmark-button'
 import { ProjectButton } from '@/components/public/tutorial-reader/project-button'
 import { ReadingProgress } from '@/components/public/tutorial-reader/reading-progress'
 import { StickyToc } from '@/components/public/tutorial-reader/sticky-toc'
 import { ProjectCompanion } from '@/components/public/tutorial-reader/project-companion'
 import { BeginnerHelpFooter } from '@/components/public/tutorial-reader/beginner-help-footer'
+import { ReviewsBlock } from '@/components/public/ugc/reviews-block'
+import { PhotosBlock } from '@/components/public/ugc/photos-block'
+import { QaBlock } from '@/components/public/ugc/qa-block'
+import { ErrataLink } from '@/components/public/ugc/errata-link'
 
 import '@/components/public/tutorial-reader/tutorial-reader.css'
+import '@/components/public/ugc/ugc.css'
 
 export const dynamic = 'force-dynamic'
 
@@ -71,7 +77,7 @@ export default async function TutorialPage({ params }: PageProps) {
   const beginnerMode = currentUser?.beginnerMode === true
 
   // Per-user state: bookmark + project on this tutorial.
-  const [bookmark, project] = currentUser
+  const [bookmark, project, ugc] = currentUser
     ? await Promise.all([
         prisma.bookmark.findUnique({
           where: {
@@ -90,8 +96,13 @@ export default async function TutorialPage({ params }: PageProps) {
             },
           },
         }),
+        loadTutorialUgc(tutorial.id, currentUser),
       ])
-    : [null, null]
+    : await Promise.all([
+        Promise.resolve(null),
+        Promise.resolve(null),
+        loadTutorialUgc(tutorial.id, null),
+      ])
 
   const inProgressId =
     project?.status === UserProjectStatus.IN_PROGRESS ? project.id : null
@@ -131,14 +142,52 @@ export default async function TutorialPage({ params }: PageProps) {
       <div /> // placeholder so the right column reserves space
     ) : null
 
-  const footerSlot = beginnerMode ? (
-    <BeginnerHelpFooter
-      glossary={refs.glossary}
-      categorySlug={tutorial.category.slug}
-      categoryName={tutorial.category.name}
-      subCategoryName={tutorial.subCategory?.name ?? null}
-    />
-  ) : null
+  const canReview =
+    Boolean(currentUser) &&
+    project?.status === UserProjectStatus.COMPLETED
+  const canUploadPhoto =
+    Boolean(currentUser) &&
+    (project?.status === UserProjectStatus.IN_PROGRESS ||
+      project?.status === UserProjectStatus.COMPLETED)
+
+  const footerSlot = (
+    <>
+      {beginnerMode && (
+        <BeginnerHelpFooter
+          glossary={refs.glossary}
+          categorySlug={tutorial.category.slug}
+          categoryName={tutorial.category.name}
+          subCategoryName={tutorial.subCategory?.name ?? null}
+        />
+      )}
+
+      <PhotosBlock
+        tutorialId={tutorial.id}
+        signedIn={Boolean(currentUser)}
+        canUpload={canUploadPhoto}
+        photos={ugc.photos}
+      />
+
+      <ReviewsBlock
+        tutorialId={tutorial.id}
+        signedIn={Boolean(currentUser)}
+        canReview={canReview}
+        alreadyReviewed={ugc.reviews.alreadyReviewed}
+        avg={ugc.reviews.avg}
+        total={ugc.reviews.total}
+        distribution={ugc.reviews.distribution}
+        reviews={ugc.reviews.rows}
+      />
+
+      <QaBlock
+        tutorialId={tutorial.id}
+        signedIn={Boolean(currentUser)}
+        questions={ugc.questions}
+      />
+
+      <ErrataLink tutorialId={tutorial.id} />
+    </>
+  )
 
   return (
     <>

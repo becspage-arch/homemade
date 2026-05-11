@@ -10,6 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@aws-sdk/client-rekognition": "^3.717.0",
     "@clerk/nextjs": "^7.3.3",
     "@homemade/db": "workspace:*",
     "@homemade/search": "workspace:*",

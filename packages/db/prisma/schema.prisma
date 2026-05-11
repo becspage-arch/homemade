@@ -34,6 +34,12 @@ model User {
   displayHandle String? @unique
   bio           String?
 
+  // Suspension state (Phase 5). `isSuspended` is the convenience flag the
+  // moderation flow toggles; `suspendedUntil` mirrors the active UserSuspension's
+  // end. Both are denormalised so filtering doesn't need a join.
+  isSuspended    Boolean   @default(false)
+  suspendedUntil DateTime?
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -43,7 +49,25 @@ model User {
   bookmarks         Bookmark[]
   projects          UserProject[]
 
+  reviews         Review[]
+  reviewHelpfuls  ReviewHelpful[]
+  ugcPhotos       UGCPhoto[]
+  questions       Question[]
+  answers         Answer[]
+  questionUpvotes QuestionUpvote[]
+  errata          Errata[]            @relation("ErrataAuthor")
+  errataResolved  Errata[]            @relation("ErrataResolver")
+  reportsFiled    Report[]            @relation("ReportReporter")
+  reportsResolved Report[]            @relation("ReportResolver")
+  suspensions     UserSuspension[]    @relation("SuspensionSubject")
+  suspensionsApplied UserSuspension[] @relation("SuspensionActor")
+  suspensionsLifted  UserSuspension[] @relation("SuspensionLifter")
+  notifications   Notification[]
+  reviewsModerated   Review[]   @relation("ReviewModerator")
+  photosModerated    UGCPhoto[] @relation("PhotoModerator")
+
   @@index([role])
+  @@index([isSuspended])
 }
 
 enum UserRole {
@@ -163,6 +187,10 @@ model Tutorial {
   versions  TutorialVersion[]
   bookmarks Bookmark[]
   projects  UserProject[]
+  reviews   Review[]
+  ugcPhotos UGCPhoto[]
+  questions Question[]
+  errata    Errata[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -249,6 +277,7 @@ model Media {
   status MediaStatus @default(UPLOADING)
 
   tutorialsHero Tutorial[]
+  ugcPhotos     UGCPhoto[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -342,4 +371,314 @@ model AuditLog {
   @@index([resource])
   @@index([actorId])
   @@index([createdAt])
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Phase 5 — UGC: reviews, photos, Q&A, errata, reports, suspensions
+// ────────────────────────────────────────────────────────────────────────────
+
+model Review {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  tutorialId String
+  tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+
+  rating Int // 1..5
+  title  String?
+  body   String
+
+  helpfulCount Int          @default(0)
+  helpfuls     ReviewHelpful[]
+
+  status ReviewStatus @default(PENDING_MODERATION)
+
+  moderatedAt    DateTime?
+  moderatedById  String?
+  moderatedBy    User?     @relation("ReviewModerator", fields: [moderatedById], references: [id])
+  moderationNote String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, tutorialId])
+  @@index([tutorialId, status, createdAt])
+  @@index([status, createdAt])
+}
+
+enum ReviewStatus {
+  PENDING_MODERATION
+  PUBLISHED
+  HIDDEN
+  REMOVED
+}
+
+model ReviewHelpful {
+  userId    String
+  user      User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  reviewId  String
+  review    Review @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@id([userId, reviewId])
+  @@index([reviewId])
+}
+
+model UGCPhoto {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  tutorialId String
+  tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+
+  mediaId String
+  media   Media  @relation(fields: [mediaId], references: [id], onDelete: Restrict)
+
+  caption String?
+
+  status UGCPhotoStatus @default(PENDING_MODERATION)
+
+  // NSFW pre-screen results. Null means the scanner hasn't run (or no permission).
+  nsfwScore          Float?
+  nsfwClassification String?
+
+  rejectionReason String?
+
+  moderatedAt   DateTime?
+  moderatedById String?
+  moderatedBy   User?     @relation("PhotoModerator", fields: [moderatedById], references: [id])
+
+  createdAt DateTime @default(now())
+
+  @@index([tutorialId, status])
+  @@index([status, createdAt])
+  @@index([userId])
+}
+
+enum UGCPhotoStatus {
+  PENDING_MODERATION
+  APPROVED
+  REJECTED
+}
+
+model Question {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  tutorialId String
+  tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+
+  body String
+
+  status      UGCStatus       @default(PENDING_MODERATION)
+  upvoteCount Int             @default(0)
+  upvotes     QuestionUpvote[]
+  answers     Answer[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([tutorialId, status, upvoteCount])
+  @@index([userId])
+}
+
+enum UGCStatus {
+  PENDING_MODERATION
+  PUBLISHED
+  HIDDEN
+  REMOVED
+}
+
+model Answer {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  questionId String
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  body String
+
+  /// True when the author has role ADMIN or EDITOR at write time.
+  isAuthorAnswer Boolean   @default(false)
+
+  status       UGCStatus @default(PENDING_MODERATION)
+  helpfulCount Int       @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([questionId, status])
+}
+
+model QuestionUpvote {
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  questionId String
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+
+  @@id([userId, questionId])
+  @@index([questionId])
+}
+
+model Errata {
+  id String @id @default(cuid())
+
+  /// Nullable so future anonymous reports can flow through. In practice the
+  /// splash gate means every reporter has a session.
+  userId String?
+  user   User?   @relation("ErrataAuthor", fields: [userId], references: [id], onDelete: SetNull)
+
+  tutorialId String
+  tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+
+  body String
+
+  status ErrataStatus @default(OPEN)
+
+  resolvedAt     DateTime?
+  resolvedById   String?
+  resolvedBy     User?     @relation("ErrataResolver", fields: [resolvedById], references: [id])
+  resolutionNote String?
+
+  createdAt DateTime @default(now())
+
+  @@index([status, createdAt])
+  @@index([tutorialId])
+}
+
+enum ErrataStatus {
+  OPEN
+  ADDRESSED
+  DISMISSED
+}
+
+model Report {
+  id String @id @default(cuid())
+
+  reporterId String
+  reporter   User   @relation("ReportReporter", fields: [reporterId], references: [id], onDelete: Cascade)
+
+  targetType ReportTargetType
+  /// Generic ID into the target table. Not a FK because the target type varies.
+  targetId   String
+
+  reason      ReportReason
+  description String?
+
+  status           ReportStatus @default(OPEN)
+  resolutionAction String?
+
+  resolvedAt   DateTime?
+  resolvedById String?
+  resolvedBy   User?     @relation("ReportResolver", fields: [resolvedById], references: [id])
+
+  createdAt DateTime @default(now())
+
+  @@index([status, createdAt])
+  @@index([targetType, targetId])
+  @@index([reporterId])
+}
+
+enum ReportTargetType {
+  REVIEW
+  PHOTO
+  QUESTION
+  ANSWER
+  USER
+}
+
+enum ReportReason {
+  SPAM
+  ABUSE
+  MISINFORMATION
+  COPYRIGHT
+  NSFW
+  OTHER
+}
+
+enum ReportStatus {
+  OPEN
+  RESOLVED_ACTION_TAKEN
+  RESOLVED_NO_ACTION
+  DISMISSED
+}
+
+model UserSuspension {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation("SuspensionSubject", fields: [userId], references: [id], onDelete: Cascade)
+
+  suspendedById String
+  suspendedBy   User   @relation("SuspensionActor", fields: [suspendedById], references: [id])
+
+  reason String
+
+  startedAt DateTime  @default(now())
+  /// Null means indefinite / permanent.
+  endsAt    DateTime?
+
+  liftedAt     DateTime?
+  liftedById   String?
+  liftedBy     User?     @relation("SuspensionLifter", fields: [liftedById], references: [id])
+
+  status SuspensionStatus @default(ACTIVE)
+
+  createdAt DateTime @default(now())
+
+  @@index([userId, status])
+  @@index([status, endsAt])
+}
+
+enum SuspensionStatus {
+  ACTIVE
+  LIFTED
+  EXPIRED
+}
+
+/// In-app notifications surfaced under /me. Intentionally small — moderation
+/// outcomes + a couple of system messages. Email + push are deferred.
+model Notification {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  type NotificationType
+  body String
+  /// Optional URL the user can click through to (e.g. the published review).
+  href String?
+
+  readAt DateTime?
+
+  createdAt DateTime @default(now())
+
+  @@index([userId, readAt])
+  @@index([userId, createdAt])
+}
+
+enum NotificationType {
+  REVIEW_PUBLISHED
+  REVIEW_HIDDEN
+  REVIEW_REMOVED
+  PHOTO_APPROVED
+  PHOTO_REJECTED
+  QUESTION_PUBLISHED
+  QUESTION_HIDDEN
+  ANSWER_PUBLISHED
+  ANSWER_HIDDEN
+  ERRATA_ADDRESSED
+  ERRATA_DISMISSED
+  ACCOUNT_SUSPENDED
+  ACCOUNT_UNSUSPENDED
+  SYSTEM
 }

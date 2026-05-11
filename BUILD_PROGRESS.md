@@ -297,11 +297,200 @@ All user-facing strings audited against `feedback_homemade_voice.md` Section 6b 
 - The supplies-card admin UI gained a `substitutions` input but no CMS-side migration of existing SuppliesCard items. Existing tutorials still render fine (the field is optional and defaults to absent), but if substitution hints become important pre-launch, Rebecca will want a sweep through current content to fill them in.
 - Adaptive icons for the reading-progress bar / TOC are CSS-only and may need a re-pass once we have one tutorial with real heading density.
 
-## Phases 5–8
+## Phase 5 — UGC pipeline & moderation + admin menu restructure
 
-Not started. Plan unchanged.
+### ✅ Done
 
-- Phase 5: UGC pipeline & moderation
+**Schema (`20260520000000_phase5_ugc_moderation`):**
+
+- `Review` (one per user+tutorial, status enum `ReviewStatus` =
+  PENDING_MODERATION / PUBLISHED / HIDDEN / REMOVED, helpfulCount,
+  moderation note). `ReviewHelpful` join row.
+- `UGCPhoto` (per-photo row pointing at Media, status enum
+  `UGCPhotoStatus` = PENDING_MODERATION / APPROVED / REJECTED,
+  `nsfwScore` Float?, `nsfwClassification` String?, rejectionReason).
+- `Question`, `Answer`, `QuestionUpvote`. Shared `UGCStatus` enum
+  (PENDING_MODERATION / PUBLISHED / HIDDEN / REMOVED). Answers carry an
+  `isAuthorAnswer` boolean — true for editor / admin replies, which
+  surfaces a "from Homemade" badge on the public Q&A.
+- `Errata` (open / addressed / dismissed; nullable userId for future
+  anonymous reports).
+- `Report` (cross-cutting abuse / spam reports; generic
+  `targetType` + `targetId`; reason enum `ReportReason`; status enum
+  `ReportStatus`).
+- `UserSuspension` history table + denormalised `User.isSuspended`
+  Boolean and `User.suspendedUntil` DateTime? for fast filtering.
+- `Notification` + `NotificationType` enum — in-app feed under /me.
+  Email / push are deferred.
+
+**Role helper:** `requireAdminRole({ minimum: 'EDITOR' | 'ADMIN' })`
+replaces the old `isAdmin()` check. Editors can moderate community
+content + apply bounded suspensions; permanent bans, role changes,
+and audit-log access stay ADMIN-only.
+
+**Admin sidebar restructure** (`apps/web/src/components/admin/admin-shell.tsx` +
+`admin-sidebar.tsx`): replaces the flat seven-link nav with the eight
+top-level groups from `project_admin_roadmap.md`:
+
+1. Dashboard
+2. Content (Tutorials / Categories / Sub-categories / Tags / Glossary / Media)
+3. Users (List / Suspensions / Data requests — last is placeholder)
+4. Community (Reviews / UGC photos / Q&A / Errata / Reports)
+5. Billing (placeholder — Phase 7/8)
+6. Marketing (placeholder — Phase 8)
+7. Analytics (placeholder — Phase 8 / PostHog)
+8. System (Audit log / Settings / Feature flags / Jobs — last three placeholders, group is ADMIN-only)
+
+Group state persists per-user in localStorage. Mobile collapses to a
+slide-out drawer with a menu toggle.
+
+**New /admin routes (community moderation):**
+
+- `/admin/reviews` — moderation queue with status filter + approve /
+  hide / remove actions. Note required on hide / remove.
+- `/admin/ugc-photos` — moderation grid with NSFW score visible per
+  photo and a "flagged" badge when score ≥ 0.5. Approve / reject
+  actions. Reject reason required.
+- `/admin/questions` — Q&A moderation. Approve / hide / remove on each
+  question; approve / hide on each answer; admin / editor can post a
+  direct answer from the queue that publishes immediately with
+  `isAuthorAnswer = true`.
+- `/admin/errata` — open queue with mark-addressed (note + edit-tutorial
+  link) or dismiss actions.
+- `/admin/reports` — cross-cutting abuse queue with status + target
+  filters; resolution closes the report and links back to the target's
+  primary queue.
+- `/admin/users` — list with search + role / suspended filters; row →
+  `/admin/users/[id]` activity view with role-change (ADMIN only),
+  suspend (EDITOR for bounded, ADMIN for indefinite), un-suspend, plus
+  recent reviews / photos / questions / projects and suspension history.
+- `/admin/users/suspended` redirects to the suspended filter.
+- `/admin/audit-log` — paginated, filterable viewer (actor email /
+  action substring / resource substring) for the data we've been
+  collecting since Phase 2c. ADMIN-only.
+
+Placeholder routes for the deferred phases all live and render a "lands
+in Phase X" note so the sidebar never points at a 404:
+`/admin/billing`, `/admin/marketing`, `/admin/analytics`,
+`/admin/system/settings`, `/admin/system/feature-flags`,
+`/admin/system/jobs`, `/admin/users/data-requests`.
+
+**Public tutorial-page UGC blocks** (added to
+`apps/web/src/app/(public)/[categorySlug]/[tutorialSlug]/page.tsx`,
+loaded via `apps/web/src/lib/ugc-loader.ts`):
+
+- **Photos** — grid of approved photos with optional captions on
+  hover/tap. "Share yours" CTA for signed-in members with a
+  `UserProject` (IN_PROGRESS or COMPLETED). Upload via the existing
+  Cloudflare direct-upload pattern through a new
+  `/api/ugc/photo-upload` endpoint (open to any signed-in member, not
+  admin-gated). Submission creates a Media row + UGCPhoto row, runs the
+  NSFW pre-screen, and either auto-rejects (≥ 0.9 score) or holds for
+  human review (everything else).
+- **Reviews** — star summary at the top with average + per-bucket
+  distribution. List of PUBLISHED reviews ordered by helpfulCount
+  desc. Each review carries a helpful toggle (members), report link,
+  and author handle. "Write a review" CTA only enabled for members
+  with a COMPLETED UserProject on this tutorial. Composer creates a
+  Review row with `PENDING_MODERATION`. One review per user per
+  tutorial.
+- **Q&A** — published questions sorted by upvotes desc then recent,
+  with all PUBLISHED answers nested. ADMIN / EDITOR answers carry a
+  "from Homemade" badge. Members can ask, answer, upvote, and report.
+- **Errata** — subtle "Spot an issue with this tutorial?" link in the
+  tutorial footer; modal with a short body field. Allowed even when
+  signed out (per spec; `userId` is nullable).
+- **Report** — shared modal accessible from review / photo / question /
+  answer items. Reason dropdown + optional description.
+
+**/me extensions** for the signed-in reader:
+
+- `/me/reviews` — every review you've written with its current status
+  and moderation note if any.
+- `/me/photos` — your photos with status pill and rejection reason
+  surfaced when relevant.
+- `/me/questions` — your questions and answers with status.
+- `/me/notifications` — in-app feed of moderation outcomes
+  ("Your review of {tutorial} was published" / "Your photo of
+  {tutorial} wasn't approved: {reason}" etc). Unread count in the /me
+  nav. Mark-all-as-read button.
+
+**NSFW scanner:** `apps/web/src/lib/nsfw-scan.ts` wraps AWS Rekognition's
+`DetectModerationLabels`. Reads `AWS_REGION` / `AWS_DEFAULT_REGION` to
+decide whether to even try; gracefully returns
+`{ scanned: false, skippedReason }` if region isn't set, the SDK throws,
+or the image fetch fails. Threshold map:
+≥ 0.9 → auto-reject with a generic reason; 0.5–0.9 → stays
+PENDING_MODERATION but the admin queue tags it as "flagged"; < 0.5 →
+ordinary PENDING_MODERATION. SDK package
+`@aws-sdk/client-rekognition@^3.717.0` added to `apps/web` deps.
+
+**IAM follow-up (deferred):** The ECS task role needs
+`rekognition:DetectModerationLabels` to actually scan. Phase 5
+**did not edit** `infra/lib/homemade-stack.ts` because the hardening
+pass session is in flight and editing the stack from two sessions risks
+a CDK conflict. Until that permission is granted, the scanner silently
+returns `scanned: false` and photos stay `PENDING_MODERATION` for human
+review — exactly the safe default the worker spec called for. When the
+hardening pass merges, a small follow-up CDK pass should add a
+`Policy.fromStatementJson({ Action: 'rekognition:DetectModerationLabels',
+Effect: 'Allow', Resource: '*' })` to the ECS task role using the same
+two-step pattern Phase 2e set up. No new ECS secret is needed (no new
+secret references), so this can be a single deploy.
+
+**Audit-log new action types:**
+`review.approved` / `review.hidden` / `review.removed`,
+`photo.approved` / `photo.rejected`,
+`question.approved` / `question.hidden` / `question.removed`,
+`answer.approved` / `answer.hidden` / `answer.author_posted`,
+`errata.addressed` / `errata.dismissed`,
+`report.create` (on submission) and `report.resolved`,
+`user.role_changed`, `user.suspended`, `user.unsuspended`.
+
+**Build hygiene:**
+
+- `pnpm --filter @homemade/web typecheck` — passes.
+- `pnpm --filter @homemade/db typecheck` — passes.
+- `pnpm --filter @homemade/web build` — passes. New routes show up in
+  the route manifest.
+- `pnpm --filter @homemade/web lint` — still broken (ESLint v9 flat-
+  config migration is pre-existing pre-launch debt; this session
+  doesn't introduce new lint suppressions).
+- No TipTap leakage into the public bundle (UGC blocks are plain React
+  client islands).
+
+### Out of scope (deferred)
+
+- Legal pages (privacy, terms, cookies, AUP, DMCA, UGC reuse clause) —
+  separate session.
+- GDPR data export / deletion endpoints — bundled with the legal-pages
+  session.
+- Email notifications for moderation outcomes — in-app /me feed is
+  enough for Phase 5.
+- Auto-approval thresholds for trusted users.
+- Verified Maker / Pattern Tester roles — Phase 6.
+- Public user profile routes at `/u/[handle]` — Phase 6.
+- Real-time moderation queue updates (Ably).
+- Sentry / PostHog wiring.
+- Inngest background jobs (everything runs synchronously / inline).
+- Typesense secret-mount (separate hardening follow-up).
+
+### New pre-launch debt items discovered
+
+- **ECS task role needs `rekognition:DetectModerationLabels`.** Until
+  granted, NSFW pre-screen no-ops gracefully and every photo gets
+  human moderation. Apply via a small follow-up CDK deploy after the
+  hardening pass merges.
+- **Public UGC photo uploads aren't enabled until legal pages land.**
+  The admin queue and upload flow work for test accounts so Rebecca
+  can exercise the path; the `/admin/ugc-photos` page surfaces this in
+  an admin notice block. When the legal session lands, drop the notice
+  and the upload flow is already there.
+
+## Phases 6–8
+
+Plan unchanged.
+
 - Phase 6: Pattern testing & creator program
 - Phase 7: Marketplace
 - Phase 8: Premium tier, content seeding & launch readiness
@@ -328,5 +517,6 @@ Not started. Plan unchanged.
 - `3db774b` — feat(admin): /admin/media CRUD + Cloudflare Images direct-upload
 - `fed610c` — feat(public): tutorial / category / homepage + TipTap-JSON renderer (Phase 3a)
 - `13930f1` — Phase 3b Typesense search + Phase 3c Capacitor 8 mobile wrapper + three extra TipTap blocks + admin Preview metadata polish
-- _this session_ — feat(public): Phase 4 accounts — bookmarks, projects, reading-progress / TOC / project companion, beginner mode, /me dashboard + settings, signed-in header, supplies substitutions
+- `8261c89` — feat(public): Phase 4 accounts — bookmarks, projects, reading-progress / TOC / project companion, beginner mode, /me dashboard + settings, signed-in header, supplies substitutions
+- _this session_ — feat(public+admin): Phase 5 UGC pipeline + moderation queues + admin menu restructure + audit-log viewer
 - Phase 3a (this session): public tutorial / category / home pages, TipTap-JSON renderer with no TipTap runtime in the public bundle, admin Preview toggle

@@ -1,1 +1,7 @@
-export { getCurrentDbUser, isAdmin } from './get-current-user'
+export {
+  getCurrentDbUser,
+  isAdmin,
+  isEditorOrAbove,
+  hasRoleAtLeast,
+  requireAdminRole,
+} from './get-current-user'

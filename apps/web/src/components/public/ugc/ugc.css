@@ -1,0 +1,388 @@
+/* Public UGC blocks on tutorial pages — reviews, photos, Q&A, errata, reports. */
+
+.ugc-section {
+  margin: 64px 0 0;
+  padding-top: 32px;
+  border-top: 0.5px solid var(--color-linen-grey);
+}
+
+.ugc-section-eyebrow {
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+}
+
+.ugc-section-title {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 28px;
+  color: var(--color-espresso);
+  margin: 6px 0 16px;
+}
+
+.ugc-section-description {
+  font-family: var(--font-lora);
+  color: var(--color-warm-taupe);
+  font-size: 14px;
+  max-width: 56ch;
+  margin: 0 0 18px;
+}
+
+.ugc-cta {
+  font-family: var(--font-lora);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  padding: 9px 18px;
+  border-radius: 3px;
+  background: var(--color-sage);
+  color: var(--color-cream);
+  text-decoration: none;
+  border: 0.5px solid var(--color-sage);
+  cursor: pointer;
+}
+.ugc-cta:hover {
+  background: var(--color-forest);
+  border-color: var(--color-forest);
+}
+.ugc-cta.secondary {
+  background: transparent;
+  color: var(--color-sage);
+}
+.ugc-cta.secondary:hover {
+  background: rgba(160, 176, 132, 0.08);
+}
+.ugc-cta[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ugc-summary {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
+  margin-bottom: 28px;
+  align-items: center;
+}
+
+.ugc-summary-avg {
+  font-family: var(--font-fraunces);
+  font-size: 56px;
+  font-weight: 400;
+  color: var(--color-sage);
+  line-height: 1;
+}
+.ugc-summary-avg small {
+  display: block;
+  font-family: var(--font-lora);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+  margin-top: 4px;
+}
+
+.ugc-summary-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--font-lora);
+  font-size: 12px;
+}
+.ugc-summary-bar-row {
+  display: grid;
+  grid-template-columns: 32px 1fr 40px;
+  gap: 8px;
+  align-items: center;
+  color: var(--color-warm-taupe);
+}
+.ugc-summary-bar-track {
+  height: 6px;
+  background: var(--color-linen-grey);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.ugc-summary-bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--color-sage);
+}
+
+.ugc-review {
+  border-top: 0.5px solid var(--color-linen-grey);
+  padding: 20px 0;
+  font-family: var(--font-lora);
+}
+.ugc-review h3 {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0 0 4px;
+  color: var(--color-espresso);
+}
+.ugc-review-stars {
+  color: var(--color-sage);
+  letter-spacing: 0.08em;
+  font-size: 14px;
+}
+.ugc-review-body {
+  margin: 10px 0;
+  line-height: 1.6;
+  color: var(--color-espresso);
+}
+.ugc-review-meta {
+  font-size: 12px;
+  color: var(--color-warm-taupe);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.ugc-review-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+.ugc-review-actions button {
+  background: transparent;
+  border: 0;
+  font-family: var(--font-lora);
+  font-size: 12px;
+  color: var(--color-warm-taupe);
+  cursor: pointer;
+  padding: 0;
+}
+.ugc-review-actions button:hover {
+  color: var(--color-sage);
+}
+.ugc-review-actions button.active {
+  color: var(--color-sage);
+}
+
+.ugc-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.ugc-photo-tile {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-soft-parchment);
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.ugc-photo-tile-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 8px 10px;
+  background: linear-gradient(to top, rgba(40, 33, 28, 0.7), rgba(40, 33, 28, 0));
+  color: var(--color-cream);
+  font-family: var(--font-lora);
+  font-size: 11px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.ugc-photo-tile:hover .ugc-photo-tile-caption,
+.ugc-photo-tile:focus-within .ugc-photo-tile-caption {
+  opacity: 1;
+}
+.ugc-photo-tile button.report {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: rgba(40, 33, 28, 0.6);
+  color: var(--color-cream);
+  border: 0;
+  border-radius: 3px;
+  font-family: var(--font-lora);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  padding: 3px 6px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.ugc-photo-tile:hover button.report {
+  opacity: 1;
+}
+
+.ugc-question {
+  border-top: 0.5px solid var(--color-linen-grey);
+  padding: 18px 0;
+  font-family: var(--font-lora);
+}
+.ugc-question-body {
+  font-family: var(--font-fraunces);
+  font-size: 18px;
+  color: var(--color-espresso);
+  margin: 0 0 8px;
+}
+.ugc-answers {
+  margin-top: 12px;
+  padding-left: 18px;
+  border-left: 2px solid var(--color-linen-grey);
+}
+.ugc-answer {
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--color-espresso);
+  line-height: 1.5;
+}
+.ugc-answer.author {
+  border-left: 2px solid var(--color-sage);
+  margin-left: -20px;
+  padding-left: 18px;
+  background: rgba(160, 176, 132, 0.06);
+}
+.ugc-author-badge {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--color-sage);
+  color: var(--color-cream);
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-left: 6px;
+}
+.ugc-question-meta {
+  font-size: 12px;
+  color: var(--color-warm-taupe);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 4px;
+}
+.ugc-question-meta button {
+  background: transparent;
+  border: 0;
+  font-family: var(--font-lora);
+  font-size: 12px;
+  color: var(--color-warm-taupe);
+  cursor: pointer;
+  padding: 0;
+}
+.ugc-question-meta button.active,
+.ugc-question-meta button:hover {
+  color: var(--color-sage);
+}
+
+.ugc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--color-soft-parchment);
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+.ugc-form label {
+  font-family: var(--font-lora);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--color-warm-taupe);
+}
+.ugc-form input[type='text'],
+.ugc-form textarea {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  padding: 10px 12px;
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 3px;
+  background: var(--color-cream);
+  resize: vertical;
+  color: var(--color-espresso);
+}
+.ugc-form textarea:focus,
+.ugc-form input:focus {
+  outline: none;
+  border-color: var(--color-sage);
+}
+
+.ugc-error {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--color-burnt-sienna);
+}
+.ugc-success {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--color-sage);
+  font-style: italic;
+}
+
+.ugc-rating-input {
+  display: inline-flex;
+  gap: 4px;
+}
+.ugc-rating-input button {
+  background: transparent;
+  border: 0;
+  font-size: 24px;
+  color: var(--color-linen-grey);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+.ugc-rating-input button.active {
+  color: var(--color-sage);
+}
+
+.ugc-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(40, 33, 28, 0.5);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.ugc-modal {
+  background: var(--color-cream);
+  border-radius: 6px;
+  padding: 28px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 80vh;
+  overflow: auto;
+}
+.ugc-modal h3 {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  margin: 0 0 12px;
+  font-size: 22px;
+  color: var(--color-espresso);
+}
+.ugc-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.ugc-errata-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--font-lora);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--color-warm-taupe);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.ugc-errata-link:hover {
+  color: var(--color-sage);
+}

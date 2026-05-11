@@ -47,3 +47,45 @@ export async function getCurrentDbUser(): Promise<User | null> {
 export function isAdmin(user: { role: UserRole } | null | undefined): boolean {
   return user?.role === UserRole.ADMIN
 }
+
+/**
+ * EDITOR or ADMIN — anyone who can moderate content. Used by /admin route
+ * gates that should be open to editors but not regular members.
+ */
+export function isEditorOrAbove(user: { role: UserRole } | null | undefined): boolean {
+  return user?.role === UserRole.ADMIN || user?.role === UserRole.EDITOR
+}
+
+const RANK: Record<UserRole, number> = {
+  ANONYMOUS: 0,
+  MEMBER: 1,
+  TESTER: 2,
+  CREATOR: 3,
+  EDITOR: 4,
+  ADMIN: 5,
+}
+
+export function hasRoleAtLeast(
+  user: { role: UserRole } | null | undefined,
+  minimum: UserRole,
+): boolean {
+  if (!user) return false
+  return RANK[user.role] >= RANK[minimum]
+}
+
+/**
+ * Throwing variant for server actions. Returns the user (typed as User), or
+ * throws if the caller doesn't meet the minimum role. ADMIN is the default
+ * minimum — explicit EDITOR opens moderation actions to editors too.
+ */
+export async function requireAdminRole(opts: {
+  minimum: 'ADMIN' | 'EDITOR'
+} = { minimum: 'ADMIN' }): Promise<User> {
+  const user = await getCurrentDbUser()
+  if (!user) throw new Error('Not authorised.')
+  const min = opts.minimum === 'EDITOR' ? UserRole.EDITOR : UserRole.ADMIN
+  if (!hasRoleAtLeast(user, min)) {
+    throw new Error('Not authorised.')
+  }
+  return user
+}
