@@ -99,6 +99,7 @@ export default async function EditTutorialPage({
           heroMediaId: tutorial.heroMediaId,
           body: (tutorial.body as JSONContent | null) ?? EMPTY_DOC,
         }}
+        cloudflareDeliveryHash={process.env.CLOUDFLARE_IMAGES_DELIVERY_HASH ?? null}
         {...formData}
       />
 

@@ -1,0 +1,30 @@
+{
+  "name": "@homemade/mobile",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Capacitor 8 mobile wrapper that loads homemade.education.",
+  "scripts": {
+    "sync": "cap sync",
+    "open:android": "cap open android",
+    "open:ios": "cap open ios",
+    "dev": "node scripts/dev.js",
+    "build:android": "node scripts/build-android.js",
+    "build:ios": "node scripts/build-ios.js",
+    "assets:generate": "capacitor-assets generate --ios --android --assetPath assets",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.3.3",
+    "@capacitor/app": "^8.1.0",
+    "@capacitor/core": "^8.3.3",
+    "@capacitor/ios": "^8.3.3",
+    "@capacitor/splash-screen": "^8.0.1",
+    "@capacitor/status-bar": "^8.0.2"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.3.3",
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2"
+  }
+}

@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation'
 import { prisma } from '@homemade/db'
 import { getCurrentDbUser, isAdmin } from '@/lib/auth'
 import { audit } from '@/lib/audit'
+import { syncGlossaryById, removeGlossaryById } from '@/lib/search-sync'
 
 const SLUG_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/
 
@@ -65,6 +66,8 @@ export async function createGlossaryTerm(formData: FormData): Promise<void> {
     metadata: { slug: created.slug, term: created.term },
   })
 
+  await syncGlossaryById(created.id)
+
   revalidatePath('/admin/glossary')
   redirect('/admin/glossary')
 }
@@ -105,6 +108,8 @@ export async function updateGlossaryTerm(id: string, formData: FormData): Promis
     },
   })
 
+  await syncGlossaryById(updated.id)
+
   revalidatePath('/admin/glossary')
   redirect('/admin/glossary')
 }
@@ -123,6 +128,8 @@ export async function deleteGlossaryTerm(id: string): Promise<void> {
     resource: `GlossaryTerm:${existing.id}`,
     metadata: { slug: existing.slug, term: existing.term },
   })
+
+  await removeGlossaryById(id)
 
   revalidatePath('/admin/glossary')
 }

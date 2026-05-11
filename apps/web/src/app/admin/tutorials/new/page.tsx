@@ -45,6 +45,7 @@ export default async function NewTutorialPage() {
           heroMediaId: null,
           body: { type: 'doc', content: [{ type: 'paragraph' }] },
         }}
+        cloudflareDeliveryHash={process.env.CLOUDFLARE_IMAGES_DELIVERY_HASH ?? null}
         {...data}
       />
     </div>

@@ -8,9 +8,11 @@ packages:
 # - unrs-resolver: ESLint module resolution
 # - prisma / @prisma/engines: Prisma query engine native binary
 # - @clerk/shared: Clerk shared package
+# - esbuild: bundler used by tsx for the Typesense backfill script
 allowBuilds:
   sharp: true
   unrs-resolver: true
   prisma: true
   '@prisma/engines': true
   '@clerk/shared': true
+  esbuild: true

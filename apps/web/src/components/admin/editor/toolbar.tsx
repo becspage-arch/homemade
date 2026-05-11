@@ -181,6 +181,66 @@ export function Toolbar({ editor, glossary }: ToolbarProps) {
         />
       </Group>
 
+      <Group>
+        <Btn
+          label="product"
+          onClick={() =>
+            editor
+              .chain()
+              .focus()
+              .insertContent({
+                type: 'productCard',
+                attrs: {
+                  imageUrl: '',
+                  title: '',
+                  description: '',
+                  label: 'Editorial pick',
+                  price: '',
+                  currency: '£',
+                  retailerName: '',
+                  productUrl: '',
+                },
+              })
+              .run()
+          }
+        />
+        <Btn
+          label="varieties"
+          onClick={() =>
+            editor
+              .chain()
+              .focus()
+              .insertContent({
+                type: 'varietiesPanel',
+                attrs: {
+                  label: 'A starting selection',
+                  heading: '',
+                  intro: '',
+                  items: [],
+                },
+              })
+              .run()
+          }
+        />
+        <Btn
+          label="troubles"
+          onClick={() =>
+            editor
+              .chain()
+              .focus()
+              .insertContent({
+                type: 'troubleshooter',
+                attrs: {
+                  heading: 'Common troubles',
+                  intro: '',
+                  items: [],
+                },
+              })
+              .run()
+          }
+        />
+      </Group>
+
       {glossaryOpen && (
         <div
           className="fixed inset-0 z-50 flex items-start justify-center bg-black/30 px-4 pt-24"

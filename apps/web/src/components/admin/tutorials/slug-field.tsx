@@ -6,9 +6,14 @@ import { slugify } from '@/lib/slug'
 interface SlugFieldProps {
   defaultTitle?: string
   defaultSlug?: string
+  onTitleChange?: (title: string) => void
 }
 
-export function SlugField({ defaultTitle, defaultSlug }: SlugFieldProps) {
+export function SlugField({
+  defaultTitle,
+  defaultSlug,
+  onTitleChange,
+}: SlugFieldProps) {
   const [title, setTitle] = useState(defaultTitle ?? '')
   const [slug, setSlug] = useState(defaultSlug ?? '')
   const [slugTouched, setSlugTouched] = useState(Boolean(defaultSlug))
@@ -16,6 +21,7 @@ export function SlugField({ defaultTitle, defaultSlug }: SlugFieldProps) {
   function handleTitle(value: string) {
     setTitle(value)
     if (!slugTouched) setSlug(slugify(value))
+    onTitleChange?.(value)
   }
 
   return (

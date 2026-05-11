@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import type { JSONContent } from '@tiptap/core'
 
 import { TiptapEditor } from '@/components/admin/editor/tiptap-editor'
@@ -38,6 +38,7 @@ interface TutorialFormProps {
   glossary: GlossaryRef[]
   tutorials: TutorialRef[]
   media: MediaOption[]
+  cloudflareDeliveryHash: string | null
 }
 
 const DIFFICULTIES = [
@@ -71,10 +72,37 @@ export function TutorialForm({
   glossary,
   tutorials,
   media,
+  cloudflareDeliveryHash,
 }: TutorialFormProps) {
   const [submitting, setSubmitting] = useState(false)
   const [previewBody, setPreviewBody] = useState<JSONContent>(defaults.body)
   const [showPreview, setShowPreview] = useState(false)
+
+  // Live state for everything the preview reflects. The form's controlled
+  // inputs still drive submission so the server sees current values without
+  // us re-wiring server actions.
+  const [title, setTitle] = useState(defaults.title)
+  const [subtitle, setSubtitle] = useState(defaults.subtitle)
+  const [excerpt, setExcerpt] = useState(defaults.excerpt)
+  const [categoryId, setCategoryId] = useState(defaults.categoryId)
+  const [subCategoryId, setSubCategoryId] = useState(defaults.subCategoryId ?? '')
+  const [difficulty, setDifficulty] = useState(defaults.difficulty)
+  const [season, setSeason] = useState(defaults.season)
+  const [sourceType, setSourceType] = useState(defaults.sourceType)
+  const [sourceNotes, setSourceNotes] = useState(defaults.sourceNotes)
+  const [timeMinutes, setTimeMinutes] = useState(defaults.timeMinutes)
+  const [heroMedia, setHeroMedia] = useState<MediaOption | null>(
+    media.find((m) => m.id === defaults.heroMediaId) ?? null,
+  )
+
+  const selectedCategory = useMemo(
+    () => categories.find((c) => c.id === categoryId) ?? null,
+    [categories, categoryId],
+  )
+  const selectedSubCategory = useMemo(
+    () => subCategories.find((s) => s.id === subCategoryId) ?? null,
+    [subCategories, subCategoryId],
+  )
 
   async function handleSubmit(formData: FormData) {
     setSubmitting(true)
@@ -87,20 +115,26 @@ export function TutorialForm({
 
   return (
     <form action={handleSubmit} className="space-y-10">
-      <SlugField defaultTitle={defaults.title} defaultSlug={defaults.slug} />
+      <SlugField
+        defaultTitle={defaults.title}
+        defaultSlug={defaults.slug}
+        onTitleChange={setTitle}
+      />
 
       <Field
         label="Subtitle"
         hint="Optional. A short line under the title."
         name="subtitle"
-        defaultValue={defaults.subtitle}
+        value={subtitle}
+        onChange={setSubtitle}
       />
 
       <Field
         label="Excerpt"
         hint="Short summary for cards, meta description, search snippets."
         name="excerpt"
-        defaultValue={defaults.excerpt}
+        value={excerpt}
+        onChange={setExcerpt}
         multiline
       />
 
@@ -109,6 +143,10 @@ export function TutorialForm({
         subCategories={subCategories}
         defaultCategoryId={defaults.categoryId}
         defaultSubCategoryId={defaults.subCategoryId}
+        onChange={(next) => {
+          setCategoryId(next.categoryId)
+          setSubCategoryId(next.subCategoryId)
+        }}
       />
 
       <div>
@@ -121,13 +159,19 @@ export function TutorialForm({
           <Label>Difficulty</Label>
           <Select
             name="difficulty"
-            defaultValue={defaults.difficulty}
+            value={difficulty}
+            onChange={setDifficulty}
             options={DIFFICULTIES}
           />
         </label>
         <label className="block">
           <Label>Season</Label>
-          <Select name="season" defaultValue={defaults.season} options={SEASONS} />
+          <Select
+            name="season"
+            value={season}
+            onChange={setSeason}
+            options={SEASONS}
+          />
         </label>
         <label className="block">
           <Label>Time (minutes)</Label>
@@ -135,7 +179,8 @@ export function TutorialForm({
             type="number"
             name="timeMinutes"
             min="0"
-            defaultValue={defaults.timeMinutes}
+            value={timeMinutes}
+            onChange={(e) => setTimeMinutes(e.target.value)}
             className={inputClass}
             style={inputStyle}
           />
@@ -147,7 +192,8 @@ export function TutorialForm({
           <Label>Source type</Label>
           <Select
             name="sourceType"
-            defaultValue={defaults.sourceType}
+            value={sourceType}
+            onChange={setSourceType}
             options={SOURCE_TYPES}
           />
         </label>
@@ -155,7 +201,8 @@ export function TutorialForm({
           label="Source notes"
           hint="Reference list, attribution, links."
           name="sourceNotes"
-          defaultValue={defaults.sourceNotes}
+          value={sourceNotes}
+          onChange={setSourceNotes}
           multiline
         />
       </div>
@@ -166,6 +213,7 @@ export function TutorialForm({
           options={media}
           defaultSelectedId={defaults.heroMediaId}
           name="heroMediaId"
+          onChange={setHeroMedia}
         />
       </div>
 
@@ -226,6 +274,22 @@ export function TutorialForm({
             body={previewBody}
             glossary={glossary}
             tutorials={tutorials}
+            title={title}
+            subtitle={subtitle}
+            excerpt={excerpt}
+            category={
+              selectedCategory
+                ? { slug: '#preview', name: selectedCategory.name }
+                : null
+            }
+            subCategoryName={selectedSubCategory?.name ?? null}
+            difficulty={difficulty}
+            timeMinutes={parseTime(timeMinutes)}
+            season={season || null}
+            heroMedia={heroMedia}
+            sourceType={sourceType}
+            sourceNotes={sourceNotes}
+            cloudflareDeliveryHash={cloudflareDeliveryHash}
           />
         )}
       </div>
@@ -242,6 +306,13 @@ export function TutorialForm({
       </div>
     </form>
   )
+}
+
+function parseTime(raw: string): number | null {
+  if (!raw) return null
+  const n = parseInt(raw, 10)
+  if (!Number.isFinite(n) || n < 0) return null
+  return n
 }
 
 const inputClass =
@@ -273,11 +344,12 @@ interface FieldProps {
   label: string
   hint?: string
   name: string
-  defaultValue?: string
+  value: string
+  onChange: (value: string) => void
   multiline?: boolean
 }
 
-function Field({ label, hint, name, defaultValue, multiline }: FieldProps) {
+function Field({ label, hint, name, value, onChange, multiline }: FieldProps) {
   return (
     <label className="block">
       <Label>{label}</Label>
@@ -292,7 +364,8 @@ function Field({ label, hint, name, defaultValue, multiline }: FieldProps) {
       {multiline ? (
         <textarea
           name={name}
-          defaultValue={defaultValue}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
           rows={3}
           className={inputClass}
           style={inputStyle}
@@ -301,7 +374,8 @@ function Field({ label, hint, name, defaultValue, multiline }: FieldProps) {
         <input
           type="text"
           name={name}
-          defaultValue={defaultValue}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
           className={inputClass}
           style={inputStyle}
         />
@@ -312,17 +386,20 @@ function Field({ label, hint, name, defaultValue, multiline }: FieldProps) {
 
 function Select({
   name,
-  defaultValue,
+  value,
+  onChange,
   options,
 }: {
   name: string
-  defaultValue: string
+  value: string
+  onChange: (value: string) => void
   options: { value: string; label: string }[]
 }) {
   return (
     <select
       name={name}
-      defaultValue={defaultValue}
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
       className={inputClass}
       style={inputStyle}
     >

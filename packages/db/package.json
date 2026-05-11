@@ -16,9 +16,11 @@
     "push": "prisma db push",
     "studio": "prisma studio",
     "format": "prisma format",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "search:backfill": "tsx scripts/typesense-backfill.ts"
   },
   "dependencies": {
+    "@homemade/search": "workspace:*",
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
     "pg": "^8.13.1"
@@ -28,6 +30,7 @@
     "@types/pg": "^8.11.10",
     "dotenv": "^17.4.2",
     "prisma": "^7.8.0",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   }
 }

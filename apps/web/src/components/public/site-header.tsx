@@ -22,6 +22,24 @@ export async function SiteHeader() {
             ))}
           </nav>
         )}
+        <form
+          method="GET"
+          action="/search"
+          className="site-header-search"
+          role="search"
+        >
+          <label className="visually-hidden" htmlFor="site-search-q">
+            Search the site
+          </label>
+          <input
+            id="site-search-q"
+            type="search"
+            name="q"
+            placeholder="Search"
+            aria-label="Search"
+            className="site-header-search-input"
+          />
+        </form>
       </div>
     </header>
   )

@@ -10,6 +10,9 @@ import { SuppliesCard } from './extensions/supplies-card'
 import { SubTutorialCard } from './extensions/sub-tutorial-card'
 import { PullQuote } from './extensions/pull-quote'
 import { GlossaryTooltip } from './extensions/glossary-tooltip'
+import { ProductCard } from './extensions/product-card'
+import { VarietiesPanel } from './extensions/varieties-panel'
+import { Troubleshooter } from './extensions/troubleshooter'
 import { Toolbar } from './toolbar'
 import type { GlossaryRef, TutorialRef } from './types'
 
@@ -63,6 +66,9 @@ export function TiptapEditor({
       SubTutorialCard,
       PullQuote,
       GlossaryTooltip,
+      ProductCard,
+      VarietiesPanel,
+      Troubleshooter,
     ],
     content: initialJson,
     editorProps: {

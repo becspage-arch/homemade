@@ -18,6 +18,7 @@ interface Props {
   subCategories: SubCategoryOption[]
   defaultCategoryId?: string
   defaultSubCategoryId?: string | null
+  onChange?: (state: { categoryId: string; subCategoryId: string }) => void
 }
 
 export function CategorySubCategoryFields({
@@ -25,6 +26,7 @@ export function CategorySubCategoryFields({
   subCategories,
   defaultCategoryId,
   defaultSubCategoryId,
+  onChange,
 }: Props) {
   const [categoryId, setCategoryId] = useState(defaultCategoryId ?? '')
   const [subCategoryId, setSubCategoryId] = useState(
@@ -44,8 +46,10 @@ export function CategorySubCategoryFields({
           name="categoryId"
           value={categoryId}
           onChange={(e) => {
-            setCategoryId(e.target.value)
+            const next = e.target.value
+            setCategoryId(next)
             setSubCategoryId('')
+            onChange?.({ categoryId: next, subCategoryId: '' })
           }}
           required
           className="w-full border-b border-[var(--color-linen-grey)] bg-transparent px-1 py-2 text-[var(--color-espresso)] outline-none focus:border-[var(--color-sage)]"
@@ -67,7 +71,11 @@ export function CategorySubCategoryFields({
         <select
           name="subCategoryId"
           value={subCategoryId}
-          onChange={(e) => setSubCategoryId(e.target.value)}
+          onChange={(e) => {
+            const next = e.target.value
+            setSubCategoryId(next)
+            onChange?.({ categoryId, subCategoryId: next })
+          }}
           disabled={!categoryId || filteredSubs.length === 0}
           className="w-full border-b border-[var(--color-linen-grey)] bg-transparent px-1 py-2 text-[var(--color-espresso)] outline-none focus:border-[var(--color-sage)] disabled:opacity-50"
           style={{ fontFamily: 'var(--font-lora)', fontSize: '1rem' }}

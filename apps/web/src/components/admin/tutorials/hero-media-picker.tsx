@@ -18,12 +18,14 @@ interface HeroMediaPickerProps {
   defaultSelectedId?: string | null
   /** Name of the hidden input that holds the chosen media id. */
   name: string
+  onChange?: (selected: MediaOption | null) => void
 }
 
 export function HeroMediaPicker({
   options,
   defaultSelectedId,
   name,
+  onChange,
 }: HeroMediaPickerProps) {
   const [open, setOpen] = useState(false)
   const [selectedId, setSelectedId] = useState<string | null>(
@@ -35,6 +37,11 @@ export function HeroMediaPicker({
     () => options.find((o) => o.id === selectedId) ?? null,
     [options, selectedId],
   )
+
+  function setSelected(id: string | null) {
+    setSelectedId(id)
+    onChange?.(id ? (options.find((o) => o.id === id) ?? null) : null)
+  }
 
   const filtered = useMemo(() => {
     if (!search.trim()) return options
@@ -80,7 +87,7 @@ export function HeroMediaPicker({
           {selected && (
             <button
               type="button"
-              onClick={() => setSelectedId(null)}
+              onClick={() => setSelected(null)}
               className="text-left text-xs uppercase tracking-[0.25em] text-[var(--color-warm-taupe)] hover:text-[var(--color-burnt-sienna)]"
               style={{ fontFamily: 'var(--font-lora)' }}
             >
@@ -150,7 +157,7 @@ export function HeroMediaPicker({
                         type="button"
                         key={m.id}
                         onClick={() => {
-                          setSelectedId(m.id)
+                          setSelected(m.id)
                           setOpen(false)
                         }}
                         className={`overflow-hidden rounded-sm border ${

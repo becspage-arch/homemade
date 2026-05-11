@@ -5,6 +5,9 @@ import { SuppliesCard } from './blocks/supplies-card'
 import { PullQuote } from './blocks/pull-quote'
 import { SubTutorialCard } from './blocks/sub-tutorial-card'
 import { GlossaryTooltip } from './blocks/glossary-tooltip'
+import { ProductCard } from './blocks/product-card'
+import { VarietiesPanel } from './blocks/varieties-panel'
+import { Troubleshooter } from './blocks/troubleshooter'
 import type {
   GlossaryRef,
   SubTutorialRef,
@@ -157,6 +160,39 @@ function RenderNode({ node, glossary, subTutorials }: RenderNodeProps): ReactNod
       }
       return <SubTutorialCard tutorialId={id} refs={subTutorials} />
     }
+
+    case 'productCard':
+      return (
+        <ProductCard
+          imageUrl={stringOrUndef(attrs.imageUrl) ?? ''}
+          title={stringOrUndef(attrs.title) ?? ''}
+          description={stringOrUndef(attrs.description) ?? ''}
+          label={stringOrUndef(attrs.label) ?? ''}
+          price={stringOrUndef(attrs.price) ?? ''}
+          currency={stringOrUndef(attrs.currency) ?? ''}
+          retailerName={stringOrUndef(attrs.retailerName) ?? ''}
+          productUrl={stringOrUndef(attrs.productUrl) ?? ''}
+        />
+      )
+
+    case 'varietiesPanel':
+      return (
+        <VarietiesPanel
+          label={stringOrUndef(attrs.label) ?? ''}
+          heading={stringOrUndef(attrs.heading) ?? ''}
+          intro={stringOrUndef(attrs.intro) ?? ''}
+          items={Array.isArray(attrs.items) ? (attrs.items as never[]) : []}
+        />
+      )
+
+    case 'troubleshooter':
+      return (
+        <Troubleshooter
+          heading={stringOrUndef(attrs.heading) ?? ''}
+          intro={stringOrUndef(attrs.intro) ?? ''}
+          items={Array.isArray(attrs.items) ? (attrs.items as never[]) : []}
+        />
+      )
 
     case 'doc':
       // Defensive: doc inside doc shouldn't happen but render its children.

@@ -13,6 +13,7 @@ import {
 import { getCurrentDbUser, isAdmin } from '@/lib/auth'
 import { audit } from '@/lib/audit'
 import { isValidSlug, slugify } from '@/lib/slug'
+import { syncTutorialById, removeTutorialById } from '@/lib/search-sync'
 
 // ────────────────────────────────────────────────────────────────────────────
 // Shape parsing & validation
@@ -286,6 +287,8 @@ export async function createTutorial(formData: FormData): Promise<void> {
     metadata: { slug: created.slug, title: created.title },
   })
 
+  await syncTutorialById(created.id)
+
   revalidatePath('/admin/tutorials')
   redirect(`/admin/tutorials/${created.id}`)
 }
@@ -342,6 +345,8 @@ export async function updateTutorial(id: string, formData: FormData): Promise<vo
       title: updated.title,
     },
   })
+
+  await syncTutorialById(updated.id)
 
   revalidatePath('/admin/tutorials')
   revalidatePath(`/admin/tutorials/${id}`)
@@ -403,6 +408,8 @@ export async function transitionTutorialStatus(
     metadata: { from: existing.status, to: target },
   })
 
+  await syncTutorialById(id)
+
   revalidatePath('/admin/tutorials')
   revalidatePath(`/admin/tutorials/${id}`)
 }
@@ -435,6 +442,8 @@ export async function restoreTutorialVersion(versionId: string): Promise<void> {
     metadata: { restoredVersionId: versionId },
   })
 
+  await syncTutorialById(version.tutorialId)
+
   revalidatePath('/admin/tutorials')
   revalidatePath(`/admin/tutorials/${version.tutorialId}`)
   revalidatePath(`/admin/tutorials/${version.tutorialId}/versions`)
@@ -456,6 +465,8 @@ export async function deleteTutorial(id: string): Promise<void> {
     resource: `Tutorial:${id}`,
     metadata: { slug: existing.slug, title: existing.title },
   })
+
+  await removeTutorialById(id)
 
   revalidatePath('/admin/tutorials')
   redirect('/admin/tutorials')

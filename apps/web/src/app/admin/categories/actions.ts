@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation'
 import { prisma, UserRole } from '@homemade/db'
 import { getCurrentDbUser, isAdmin } from '@/lib/auth'
 import { audit } from '@/lib/audit'
+import { syncCategoryById, removeCategoryById } from '@/lib/search-sync'
 
 const SLUG_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/
 
@@ -61,6 +62,8 @@ export async function createCategory(formData: FormData): Promise<void> {
     metadata: { slug: category.slug, name: category.name },
   })
 
+  await syncCategoryById(category.id)
+
   revalidatePath('/admin/categories')
   redirect('/admin/categories')
 }
@@ -101,6 +104,8 @@ export async function updateCategory(id: string, formData: FormData): Promise<vo
     },
   })
 
+  await syncCategoryById(updated.id)
+
   revalidatePath('/admin/categories')
   redirect('/admin/categories')
 }
@@ -133,6 +138,8 @@ export async function deleteCategory(id: string): Promise<void> {
     resource: `Category:${existing.id}`,
     metadata: { slug: existing.slug, name: existing.name },
   })
+
+  await removeCategoryById(id)
 
   revalidatePath('/admin/categories')
 }

@@ -57,6 +57,8 @@ These don't need to exist before there's content and users to track. We add each
 - Add CloudWatch alarms (task failure, ALB 5xx, ECS service unhealthy)
 - ESLint won't run — `next lint` removed in Next 16, ESLint v9 needs flat config. Migrate to `eslint.config.js` so we have a linter again.
 - SubTutorialCard cross-references: deleting a tutorial leaves dead `tutorialId` refs in other tutorials' TipTap JSON. Either scan JSON content for refs before delete and block, or schedule a periodic cleanup that nulls dangling refs.
+- **Typesense CDK secret-mount.** `packages/search` is wired and gracefully no-ops without env vars. To turn search on in production: (a) Rebecca creates a Typesense Cloud cluster and drops keys into `.env.credentials`, (b) a small follow-up CDK pass adds the three Typesense secrets to AWS Secrets Manager and mounts them into the ECS task definition, using the same two-step CFN pattern as Phase 2e.
+- **Mobile splash asset.** Current splash source is `favicon-1024.png` (1024×1024). Capacitor wants 2732×2732 with content centred in the inner 1200×1200 — replace `apps/mobile/assets/splash.png` and rerun `pnpm --filter @homemade/mobile assets:generate` then `sync`. Same for splitting the icon foreground / background pair into a transparent sage "h" + a sage tile for a proper Android adaptive icon.
 
 ---
 
@@ -176,19 +178,65 @@ These don't need to exist before there's content and users to track. We add each
 - **Hero / card image variants** — `cloudflareDeliveryUrl` now exposes `hero` and `card` variants alongside `thumbnail` / `public`. The Cloudflare Images variant definitions themselves are configured in CF (Phase 2e); if a variant isn't yet defined the placeholder tile shows.
 - **Old root `apps/web/src/app/page.tsx` removed**; homepage now lives at `apps/web/src/app/(public)/page.tsx` to share the public layout. Splash cookie gate in `proxy.ts` continues to cover everything outside `/coming-soon`, `/unlock`, `/healthz`, Clerk paths, and `/api/webhooks/clerk` — verified.
 
-**Out of scope from this phase (deferred):**
-- Search (Typesense) — Phase 3 still
-- Inline product blocks, varieties panel, trouble-shooter blocks (reference HTMLs show them, but they're not in the TipTap schema yet — add when needed)
+**Out of scope from Phase 3a (now addressed in Phase 3b / 3c):**
+- ~~Search (Typesense)~~ — shipped in Phase 3b
+- ~~Inline product blocks, varieties panel, trouble-shooter blocks~~ — shipped in the three-extra-blocks pass
+- ~~Admin preview of metadata/hero~~ — shipped in the admin-preview-polish pass
 - Reading-progress bar, sticky TOC, Project companion sidebar (Phase 4 territory once accounts exist)
 - Reviews, Q&A, community photos sections at the bottom of the reference HTML (Phase 5 UGC pipeline)
 - Sitemap / `robots.txt` — site is still gated by the splash cookie
-- Admin preview of metadata/hero in the Preview toggle (currently previews body only; the surrounding metadata uses the form values on save)
 
-## Phases 3b–8
+### ✅ Phase 3b — Search (Typesense)
+
+- **`packages/search`** workspace wrapping the Typesense JS client. Three thin layers: schemas (typed `TutorialDoc` / `CategoryDoc` / `GlossaryDoc` + `CollectionCreateSchema` definitions), `client.ts` (admin + search-only client getters, env-var gated, return `null` and gracefully no-op when keys aren't set), `sync.ts` (upsert / remove + a bulk-import helper), and `public.ts` (a `searchTutorials` wrapper used by the public search page).
+- **`extractBodyText`** walks the TipTap JSON and flattens it to a single plain-text string for full-text indexing — pulls inline text out of every custom block (info-panel title/body, supplies items, varieties, troubleshooter symptoms etc.).
+- **Sync hooks** in `apps/web/src/lib/search-sync.ts` are called from the admin server actions after each Prisma write:
+  - Tutorials: `createTutorial`, `updateTutorial`, `transitionTutorialStatus`, `restoreTutorialVersion`, `deleteTutorial`. Behaviour: index only if `status === PUBLISHED`; remove if status moves away from published or the row is deleted.
+  - Categories: any write upserts the category doc; delete removes it.
+  - Glossary: any write upserts; delete removes.
+- Sync calls are fire-and-forget — failures log to console but never fail the admin action. If env vars aren't set, the client returns `null` and every sync call is a no-op.
+- **Backfill script** at `packages/db/scripts/typesense-backfill.ts` (run via `pnpm --filter "@homemade/db" run search:backfill`). Loads `.env.credentials` via dotenv, drops the three collections, recreates them from the schemas, and bulk-imports current Prisma rows. Idempotent — safe to run repeatedly.
+- **Public `/search`** page at `apps/web/src/app/(public)/search/page.tsx`. Server-rendered from URL query params (`q`, `category`, `difficulty`, `season`), shareable, filterable. Result cards re-use `TutorialCard`. Empty-state shows "recently published" tutorials. Filters are anchor links so toggling one keeps the other filter state intact and back / forward works as expected.
+- **Header search bar** in the public site header — compact, search-icon prefix, submits to `/search?q=…`. No live-as-you-type — that's a defer until the public bundle cost is worth measuring.
+- **No admin Typesense key in the public bundle.** The admin key is only ever pulled by `getAdminClient()` which is called from server actions and the backfill script. The public page uses the search-only key via `getSearchClient()`.
+- **CDK secret-mount deferred.** Rebecca needs to (a) create a Typesense Cloud cluster, (b) drop `TYPESENSE_HOST` + `TYPESENSE_ADMIN_API_KEY` + `TYPESENSE_SEARCH_ONLY_API_KEY` into `.env.credentials`, then (c) a tiny follow-up session adds the secrets to AWS Secrets Manager + the CDK task definition (using the same two-step pattern as Phase 2e). Until that lands, search returns zero results in production but the rest of the site is unaffected.
+
+### ✅ Phase 3c — Mobile (Capacitor 8)
+
+- **`apps/mobile`** workspace, Capacitor 8 latest (`@capacitor/core@8.3.3`, `@capacitor/android@8.3.3`, `@capacitor/ios@8.3.3`).
+- **Bundle ID** `education.homemade.app`, app name `Homemade`.
+- **`capacitor.config.ts`** loads the live site via `server.url: 'https://homemade.education'` so the wrapper is a thin native shell rather than duplicating the web codebase. `webDir: 'dist'` points at a tiny fallback HTML page bundled into the app for offline / network-error cases.
+- **Plugins installed:** `@capacitor/app`, `@capacitor/splash-screen`, `@capacitor/status-bar`. Splash screen plugin shows a sage-cream splash for 1.5s on launch.
+- **Native projects exist** under `apps/mobile/android/` and `apps/mobile/ios/`. Android builds with Android Studio + JDK 17. iOS is scaffolded only — `pnpm --filter @homemade/mobile build:ios` refuses to run off macOS (Rebecca's on Windows, so this is a Mac / CI requirement).
+- **Icons + splash generated** from `H:\My Drive\Branding\favicon-1024.png` and `wordmark-cream-on-sage.png` via `@capacitor/assets`. 148 Android assets + 14 iOS assets generated. **Asset-quality follow-up:** the splash source is the 1024×1024 favicon; Capacitor wants 2732×2732 with the wordmark centred ≤1200×1200 for tablets. Note in `docs/mobile-setup.md`.
+- **Build scripts:**
+  - `pnpm --filter @homemade/mobile dev` — patches `capacitor.config.ts` to point at the local Next.js dev server (set `LAN_IP=192.168.x.x`), runs `cap sync`, restores on Ctrl-C.
+  - `pnpm --filter @homemade/mobile build:android` — `cap sync android` + `./gradlew assembleDebug`, produces an unsigned debug APK at `apps/mobile/android/app/build/outputs/apk/debug/app-debug.apk`.
+  - `pnpm --filter @homemade/mobile build:ios` — placeholder that prints "must run on macOS" until a Mac is available.
+- **`docs/mobile-setup.md`** is the runbook for Apple Developer Program enrolment, App Store Connect, Google Play Console enrolment, iOS code signing, Android keystore, and the GitHub-Actions-on-`macos-latest` pattern for TestFlight (mirrors the Aura project setup Rebecca already has working).
+
+### ✅ Three additional TipTap blocks
+
+Two reference HTMLs (`H:\My Drive\Homemade_Tutorial_Tomatoes_v4.html` + the Granny Square one) had three blocks beyond the existing five. All three now ship:
+
+1. **ProductCard** — inline product / affiliate card. Schema: imageUrl, title, description, label, price, currency, retailerName, productUrl. Note: this is a content block, not a relation to a `Product` model — proper Product / SKU schema lands in Phase 7 Marketplace. Public renderer adds `rel="noopener noreferrer nofollow sponsored"` for affiliate hygiene.
+2. **VarietiesPanel** — comparison grid (tomato varieties, stitch types, etc.). Schema: label + heading + intro + items array of `{ name, type, description }`. Two-column grid that collapses on mobile.
+3. **Troubleshooter** — symptom → cause → fix list. Schema: heading + intro + items array of `{ symptom, cause, fix }`. Public renderer matches the tomato reference's `.trouble` styling: italic terracotta symptom column, espresso bold cause, taupe body.
+
+All three: TipTap node atoms in `apps/web/src/components/admin/editor/extensions/`, toolbar insert buttons, React renderers in `apps/web/src/components/public/tutorial-content/blocks/`, CSS in `tutorial-content.css`. Wired into the admin editor (`tiptap-editor.tsx`) and the public renderer switch (`tutorial-content.tsx`). Public bundle stays TipTap-free.
+
+### ✅ Admin preview — metadata + hero
+
+- The admin Preview toggle now reflects every previewable field in real time, not just the body. The form lifts state for title / subtitle / excerpt / category / sub-category / difficulty / season / time / source type / source notes / hero media into `TutorialForm`, and passes that state to the preview pane.
+- Public route's tutorial chrome (breadcrumb / hero / info bar / body / sources aside) was extracted into a shared `TutorialChrome` presentation component (`apps/web/src/components/public/tutorial-chrome.tsx`). Public route at `/[categorySlug]/[tutorialSlug]` and the admin Preview both render through it.
+- Hero URL is built from the form's selected media id + the Cloudflare delivery hash (passed in from the server-rendered page via a prop).
+- Reading-time recalculates from the in-progress body word count.
+- The shared CSS (`tutorial-page.css`) moved from the public route into `components/public/` so both consumers can import it without crossing route boundaries.
+
+## Phases 4–8
 
 Not started. Plan unchanged.
 
-- Phase 3b: Search (Typesense), mobile (Capacitor)
 - Phase 4: Accounts & user state
 - Phase 5: UGC pipeline & moderation
 - Phase 6: Pattern testing & creator program
@@ -215,4 +263,6 @@ Not started. Plan unchanged.
 - `ef7d528` — fix(infra): defer CLERK_WEBHOOK_SIGNING_SECRET mount (CFN race fix)
 - `fac45dc` — feat(admin): /admin/tutorials CRUD + TipTap editor with five custom blocks + version history
 - `3db774b` — feat(admin): /admin/media CRUD + Cloudflare Images direct-upload
+- `fed610c` — feat(public): tutorial / category / homepage + TipTap-JSON renderer (Phase 3a)
+- _this session_ — feat: Phase 3b Typesense search + Phase 3c Capacitor 8 mobile wrapper + three extra TipTap blocks + admin Preview metadata polish
 - Phase 3a (this session): public tutorial / category / home pages, TipTap-JSON renderer with no TipTap runtime in the public bundle, admin Preview toggle
