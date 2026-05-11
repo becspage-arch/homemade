@@ -7,13 +7,31 @@ weakness will show up at scale.
 Fill in the scores after generating all 24 images. Write the decision
 paragraph at the top once scoring is done and commit.
 
-## Decision (fill in after scoring)
+## Decision (locked 2026-05-11)
 
-**Winning style:** _________
+**Winning style:** Style A — Modern botanical.
 
-**Why:** _________ (one paragraph — what made the difference, what the
-runner-up was weaker on, and any caveats for the bulk-authoring prompt
-prefix).
+**Tier:** Flux 1.1 Pro Ultra ($0.06/image ≈ £0.048).
+
+**Why:** Style A is the cleanest brand fit. The reference is exactly the
+"vintage gardening manual" register the brand direction names. Holds
+consistency across the six test subjects better than the other three.
+Style B (pencil + wash) was the runner-up — warmer but more variance risk
+across bulk generation. Style C (flat) reads commercial. Style D (etching)
+reads cold and pastiche. Pro Ultra over Pro standard because Pro standard
+drifted toward photo-realistic on the sourdough loaf test — Ultra holds
+the illustrated quality reliably. Schnell only good enough for simple
+ingredient illustrations, not for hero images.
+
+**Budget at 3,000 tutorials (1 hero + ~1 inline average):** ~£345
+including a 20% regeneration buffer.
+
+**Negative prompts to add** (from observations during the test): "no text,
+no letters, no writing, no labels on the food itself" — Flux hallucinates
+text on bread crusts, jar labels, and packaging.
+
+**Diagram subjects:** generate without labels in the prompt, typeset
+labels over the image in admin. Flux misspells label text.
 
 ---
 
