@@ -81,11 +81,16 @@ export class HomemadeStack extends cdk.Stack {
       'ClerkSecret',
       'homemade/clerk-secret-key',
     )
-    const clerkWebhookSecret = secretsmanager.Secret.fromSecretNameV2(
-      this,
-      'ClerkWebhookSecret',
-      'homemade/clerk-webhook-secret',
-    )
+
+    // The Clerk webhook signing secret exists in Secrets Manager (as
+    // `homemade/clerk-webhook-secret`) but is intentionally NOT referenced in
+    // the task definition until the webhook endpoint is wired up in Clerk's
+    // dashboard. Adding it as an ECS secret reference triggered the deployment
+    // circuit breaker because CFN updates the IAM policy in parallel with the
+    // task replacement, and new tasks could start trying to pull the secret
+    // before the IAM grant had landed. When you're ready to enable the
+    // webhook, put the real signing value into the existing secret and
+    // re-add the reference here in a follow-up deploy.
 
     // ────────────────────────────────────────────────────────────────
     // CloudWatch — task logs
@@ -130,7 +135,7 @@ export class HomemadeStack extends cdk.Stack {
         SPLASH_PASSWORD: ecs.Secret.fromSecretsManager(splashSecret),
         DATABASE_URL: ecs.Secret.fromSecretsManager(databaseSecret),
         CLERK_SECRET_KEY: ecs.Secret.fromSecretsManager(clerkSecret),
-        CLERK_WEBHOOK_SIGNING_SECRET: ecs.Secret.fromSecretsManager(clerkWebhookSecret),
+        // CLERK_WEBHOOK_SIGNING_SECRET intentionally omitted (see above)
       },
       portMappings: [{ containerPort: 3000, protocol: ecs.Protocol.TCP }],
       essential: true,

@@ -94,11 +94,18 @@ These don't need to exist before there's content and users to track. We add each
 - **`/admin/categories`**: list view (order / name / slug / counts / updated date), new form, edit form, delete (blocks if tutorials or sub-categories still reference it). Server actions with validation in `actions.ts`, all writing audit entries.
 - **`prisma migrate deploy` in GitHub Actions**: runs before ECS rollout so new code finds the migrated schema. Idempotent — no-op when no migrations are pending. `DATABASE_URL` added as a repo secret.
 
+### ✅ Phase 2d — taxonomy + Clerk webhook + favicon
+
+- **Clerk webhook** (`apps/web/src/app/api/webhooks/clerk/route.ts`) — svix-verified handler that mirrors `user.created` / `user.updated` / `user.deleted` events into the Prisma `User` row. Returns 503 if `CLERK_WEBHOOK_SIGNING_SECRET` isn't set so the app runs fine until the webhook is actually configured. The signing secret exists in AWS Secrets Manager as `homemade/clerk-webhook-secret` (placeholder value) but is intentionally **not** mounted into the ECS task definition yet — adding it triggered the ECS deployment circuit breaker because CFN updates the IAM policy in parallel with the task replacement, so new tasks could try to pull the secret before the IAM grant landed. When you're ready to enable the webhook: (a) create the endpoint in Clerk's dashboard pointing at `https://homemade.education/api/webhooks/clerk`, (b) put the real signing secret into AWS Secrets Manager, (c) uncomment the reference in `infra/lib/homemade-stack.ts` and redeploy CDK.
+- **`/admin/glossary`** CRUD — list, new, edit, delete. Optional category association via dropdown. Same audit-log + validation pattern as categories.
+- **`/admin/sub-categories`** CRUD — list, new, edit, delete. Required parent category. Slug unique within parent (compound unique).
+- **`/admin/tags`** — single-page inline CRUD (add at top of page, each row is its own edit form). Many-to-many with tutorials, so delete is unblocked but disconnects existing tutorial associations first.
+- **Admin nav extended** with sub-cats and tags links.
+- **Brand favicon** — `icon.svg` (Fraunces "h" sage on cream) + `apple-icon.png` (180×180) + `favicon.ico` (legacy fallback) wired into apps/web. Next.js auto-generates `<link>` tags.
+
 ### Up next
 
-- Clerk webhook handler (`/api/webhooks/clerk`) — JIT works fine but a webhook means roles/emails stay in sync if Rebecca changes them in Clerk.
-- `/admin/glossary` CRUD — same shape as categories, fast to build on the same pattern.
-- `/admin/media` — Cloudflare upload flow (R2 + Cloudflare Images), moderation status.
+- `/admin/media` — Cloudflare R2 + Cloudflare Images upload flow, moderation status.
 - `/admin/tutorials` — list + create + edit with TipTap rich editor + custom blocks. The biggest single piece of Phase 2.
 - Custom TipTap blocks: info panel, supplies card, inline tooltip, sub-tutorial card, pull quote.
 - Live preview matching production rendering.
@@ -138,3 +145,5 @@ Not started. Plan unchanged.
 - `60a38c9` — feat(admin): Clerk auth + first /admin dashboard
 - `03ce874` — docs: log Phase 2a + 2b in BUILD_PROGRESS
 - `90973ae` — feat(admin): categories CRUD + JIT user provisioning + audit log + migrate-in-CI
+- `bfd9dc9` — docs: log Phase 2c
+- Phase 2d (this session): glossary + sub-categories + tags CRUD + Clerk webhook + favicon
