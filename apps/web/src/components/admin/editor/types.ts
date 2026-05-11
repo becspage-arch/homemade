@@ -15,6 +15,8 @@ export interface TutorialRef {
   slug: string
   title: string
   categoryName: string
+  categorySlug: string
+  excerpt: string | null
 }
 
 export interface EditorPickers {

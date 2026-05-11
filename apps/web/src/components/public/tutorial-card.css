@@ -1,0 +1,85 @@
+.tutorial-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  background: var(--color-linen-cream);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.tutorial-card:hover {
+  transform: translateY(-2px);
+}
+
+.tutorial-card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.88);
+  background-color: var(--color-bone);
+}
+
+.tutorial-card-image.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-sage);
+  color: var(--color-linen-cream);
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-size: 60px;
+  font-weight: 300;
+}
+
+.tutorial-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 4px 0;
+}
+
+.tutorial-card-eyebrow {
+  font-family: var(--font-lora);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+
+.tutorial-card-title {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--color-espresso);
+}
+
+.tutorial-card-excerpt {
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-warm-taupe);
+}
+
+.tutorial-card-meta {
+  margin-top: 4px;
+  display: flex;
+  gap: 14px;
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+  opacity: 0.75;
+}
+
+.tutorial-card-meta span + span::before {
+  content: '·';
+  margin-right: 14px;
+  opacity: 0.6;
+}

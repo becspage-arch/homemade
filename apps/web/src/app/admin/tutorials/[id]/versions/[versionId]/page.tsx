@@ -37,7 +37,8 @@ export default async function TutorialVersionDetailPage({
         id: true,
         slug: true,
         title: true,
-        category: { select: { name: true } },
+        excerpt: true,
+        category: { select: { name: true, slug: true } },
       },
     }),
   ])
@@ -47,7 +48,9 @@ export default async function TutorialVersionDetailPage({
     id: t.id,
     slug: t.slug,
     title: t.title,
+    excerpt: t.excerpt,
     categoryName: t.category.name,
+    categorySlug: t.category.slug,
   }))
 
   // Touch the helper so unused-import lint doesn't bite later; the function is

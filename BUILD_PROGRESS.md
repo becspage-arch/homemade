@@ -137,13 +137,17 @@ These don't need to exist before there's content and users to track. We add each
 - **Server actions** (`actions.ts`): `createTutorial`, `updateTutorial` (snapshots before write), `transitionTutorialStatus`, `restoreTutorialVersion`, `deleteTutorial`. Hard-delete cascades versions via the existing `onDelete: Cascade` on `TutorialVersion.tutorialId`.
 
 **Out-of-scope from Phase 2f (per worker spec):**
-- Public tutorial rendering — Phase 3
-- Live preview pane
+- Public tutorial rendering — handled in Phase 3a below
+- Live preview pane — added in the Phase 2f follow-up below
 - Autosave / debounced save (explicit Save button only)
 - Inline image upload inside the editor body
 - Background scheduled-publish job
 - SubTutorialCard reference clean-up on delete (dead-link check skipped — flagged above)
 - SEO meta editor (not in schema yet)
+
+### ✅ Phase 2f follow-up — live preview toggle (added in the Phase 3a session)
+
+- **Preview toggle** sits in the body label row of the create/edit form. Switches between TipTap and a live render through the public `TutorialContent` component, using the in-progress JSON the editor pushes back via `onChange`. The editor stays mounted while previewing so editor state survives a round trip. Sub-tutorial cards in preview render from the form's `TutorialRef[]` (no hero image until publish + reload).
 
 ### Architecture decisions to note
 
@@ -153,11 +157,38 @@ These don't need to exist before there's content and users to track. We add each
 
 ---
 
-## Phases 3–8
+## Phase 3 — The reading experience
+
+### ✅ Phase 3a — public tutorial / category / homepage + custom-block renderers
+
+- **TipTap-JSON → React renderer** in `apps/web/src/components/public/tutorial-content/`. Walks the TipTap document and emits plain React. **Crucially, no `@tiptap/*` runtime imports** — keeps the public bundle clean. Lives under one CSS file (`tutorial-content.css`) that mirrors the typography rhythm of the reference designs (Fraunces headings, Lora body, sage rules, parchment fills).
+- **Five custom-block React components** (renderers, distinct from the admin's TipTap node views) under `tutorial-content/blocks/`:
+  - InfoPanel — three tones (info / tip / warning), labelled aside with tone-coloured left rule
+  - SuppliesCard — parchment frame, sage label, qty/name/link grid
+  - PullQuote — large Fraunces italic in sage, top + bottom sage rules, optional attribution as a small caps line
+  - SubTutorialCard — thumb + label + title + excerpt + arrow, links via `/[categorySlug]/[tutorialSlug]`; surfaces a dotted-frame "linked tutorial no longer available" if the target was unpublished/deleted (covers the SubTutorialCard delete gap from Phase 2f)
+  - GlossaryTooltip — sage dotted-underline `<button>` with CSS-only hover/focus popover (no JS state), accessible via keyboard + `aria-describedby`. Falls back to plain text if the term is missing
+- **Per-page ref loader** in `apps/web/src/lib/tutorial-refs.ts` walks the document and fetches only the glossary terms + sub-tutorials the document actually references. Sub-tutorial lookups are filtered to `status: PUBLISHED` so unpublished references degrade to the missing-link block.
+- **Public route group** `apps/web/src/app/(public)/` provides a shared header (wordmark + category nav) and footer. The category nav is server-rendered from the live `Category` rows.
+- **Tutorial detail page** at `/[categorySlug]/[tutorialSlug]` — 404 unless the row exists, `status === PUBLISHED`, and the slugs match. Renders hero, breadcrumb, info bar (difficulty / time / season / reading-time estimate / published date), body, and a "sources and provenance" aside that reads from `SourceType` + `sourceNotes`. Reading-time is derived from word-count, threshold 60 words.
+- **Category index page** at `/[categorySlug]` — groups published tutorials by sub-category (sub-cats in declared `order`, then a "More in {name}" bucket for the unassigned). Tutorial cards show hero thumbnail, title, excerpt, difficulty, season.
+- **Homepage** at `/` shows a featured-card hero (most-recent published) + a recent grid. Falls back to the wordmark + tagline layout when no tutorials are published yet so the splash still feels intentional.
+- **Hero / card image variants** — `cloudflareDeliveryUrl` now exposes `hero` and `card` variants alongside `thumbnail` / `public`. The Cloudflare Images variant definitions themselves are configured in CF (Phase 2e); if a variant isn't yet defined the placeholder tile shows.
+- **Old root `apps/web/src/app/page.tsx` removed**; homepage now lives at `apps/web/src/app/(public)/page.tsx` to share the public layout. Splash cookie gate in `proxy.ts` continues to cover everything outside `/coming-soon`, `/unlock`, `/healthz`, Clerk paths, and `/api/webhooks/clerk` — verified.
+
+**Out of scope from this phase (deferred):**
+- Search (Typesense) — Phase 3 still
+- Inline product blocks, varieties panel, trouble-shooter blocks (reference HTMLs show them, but they're not in the TipTap schema yet — add when needed)
+- Reading-progress bar, sticky TOC, Project companion sidebar (Phase 4 territory once accounts exist)
+- Reviews, Q&A, community photos sections at the bottom of the reference HTML (Phase 5 UGC pipeline)
+- Sitemap / `robots.txt` — site is still gated by the splash cookie
+- Admin preview of metadata/hero in the Preview toggle (currently previews body only; the surrounding metadata uses the form values on save)
+
+## Phases 3b–8
 
 Not started. Plan unchanged.
 
-- Phase 3: The reading experience (tutorial page, homepage, category pages, search)
+- Phase 3b: Search (Typesense), mobile (Capacitor)
 - Phase 4: Accounts & user state
 - Phase 5: UGC pipeline & moderation
 - Phase 6: Pattern testing & creator program
@@ -184,3 +215,4 @@ Not started. Plan unchanged.
 - `ef7d528` — fix(infra): defer CLERK_WEBHOOK_SIGNING_SECRET mount (CFN race fix)
 - `fac45dc` — feat(admin): /admin/tutorials CRUD + TipTap editor with five custom blocks + version history
 - `3db774b` — feat(admin): /admin/media CRUD + Cloudflare Images direct-upload
+- Phase 3a (this session): public tutorial / category / home pages, TipTap-JSON renderer with no TipTap runtime in the public bundle, admin Preview toggle

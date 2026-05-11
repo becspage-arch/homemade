@@ -62,7 +62,8 @@ export async function loadTutorialFormData(
           id: true,
           slug: true,
           title: true,
-          category: { select: { name: true } },
+          excerpt: true,
+          category: { select: { name: true, slug: true } },
         },
       }),
       prisma.media.findMany({
@@ -88,7 +89,9 @@ export async function loadTutorialFormData(
     id: t.id,
     slug: t.slug,
     title: t.title,
+    excerpt: t.excerpt,
     categoryName: t.category.name,
+    categorySlug: t.category.slug,
   }))
 
   const media: MediaOption[] = mediaRows.map((m) => ({

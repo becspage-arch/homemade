@@ -7,9 +7,11 @@ import 'server-only'
  * pending upload, or a video / non-image type). The actual upload flow lives
  * in /admin/media (Phase 2e).
  */
+export type ImageVariant = 'thumbnail' | 'public' | 'hero' | 'card'
+
 export function cloudflareDeliveryUrl(
   cloudflareId: string | null | undefined,
-  variant: 'thumbnail' | 'public' = 'thumbnail',
+  variant: ImageVariant = 'thumbnail',
 ): string | null {
   if (!cloudflareId) return null
   const hash = process.env.CLOUDFLARE_IMAGES_DELIVERY_HASH

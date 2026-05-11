@@ -21,6 +21,8 @@ interface TiptapEditorProps {
   tutorials: TutorialRef[]
   /** Name of the hidden input that stays in sync with the editor JSON. */
   hiddenInputName: string
+  /** Fires on every editor update with the latest JSON. Optional. */
+  onChange?: (json: JSONContent) => void
 }
 
 const DEFAULT_DOC: JSONContent = {
@@ -33,6 +35,7 @@ export function TiptapEditor({
   glossary,
   tutorials,
   hiddenInputName,
+  onChange,
 }: TiptapEditorProps) {
   const hiddenInputRef = useRef<HTMLInputElement>(null)
 
@@ -68,9 +71,11 @@ export function TiptapEditor({
       },
     },
     onUpdate({ editor }) {
+      const json = editor.getJSON()
       if (hiddenInputRef.current) {
-        hiddenInputRef.current.value = JSON.stringify(editor.getJSON())
+        hiddenInputRef.current.value = JSON.stringify(json)
       }
+      onChange?.(json)
     },
   })
 

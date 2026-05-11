@@ -9,6 +9,7 @@ import { CategorySubCategoryFields, type CategoryOption, type SubCategoryOption 
 import { SlugField } from './slug-field'
 import { TagPicker, type TagOption } from './tag-picker'
 import { HeroMediaPicker, type MediaOption } from './hero-media-picker'
+import { PreviewPane } from './preview-pane'
 
 export interface TutorialFormDefaults {
   title: string
@@ -72,6 +73,8 @@ export function TutorialForm({
   media,
 }: TutorialFormProps) {
   const [submitting, setSubmitting] = useState(false)
+  const [previewBody, setPreviewBody] = useState<JSONContent>(defaults.body)
+  const [showPreview, setShowPreview] = useState(false)
 
   async function handleSubmit(formData: FormData) {
     setSubmitting(true)
@@ -167,19 +170,64 @@ export function TutorialForm({
       </div>
 
       <div>
-        <Label>Body</Label>
+        <div className="mb-3 flex items-center justify-between">
+          <Label>Body</Label>
+          <div
+            className="inline-flex overflow-hidden rounded-full border border-[var(--color-linen-grey)] text-[10px] uppercase tracking-[0.2em]"
+            style={{ fontFamily: 'var(--font-lora)' }}
+            role="tablist"
+            aria-label="Editor view"
+          >
+            <button
+              type="button"
+              role="tab"
+              aria-selected={!showPreview}
+              onClick={() => setShowPreview(false)}
+              className={`px-4 py-1.5 transition ${
+                !showPreview
+                  ? 'bg-[var(--color-sage)] text-[var(--color-linen-cream)]'
+                  : 'text-[var(--color-warm-taupe)] hover:text-[var(--color-sage)]'
+              }`}
+            >
+              edit
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={showPreview}
+              onClick={() => setShowPreview(true)}
+              className={`px-4 py-1.5 transition ${
+                showPreview
+                  ? 'bg-[var(--color-sage)] text-[var(--color-linen-cream)]'
+                  : 'text-[var(--color-warm-taupe)] hover:text-[var(--color-sage)]'
+              }`}
+            >
+              preview
+            </button>
+          </div>
+        </div>
         <p
           className="mb-3 text-xs italic text-[var(--color-warm-taupe)] opacity-70"
           style={{ fontFamily: 'var(--font-lora)' }}
         >
           Insert custom blocks from the toolbar. Hit save when you're done — there's no autosave.
         </p>
-        <TiptapEditor
-          initialContent={defaults.body}
-          glossary={glossary}
-          tutorials={tutorials}
-          hiddenInputName="body"
-        />
+        <div style={{ display: showPreview ? 'none' : 'block' }}>
+          <TiptapEditor
+            initialContent={defaults.body}
+            glossary={glossary}
+            tutorials={tutorials}
+            hiddenInputName="body"
+            onChange={setPreviewBody}
+          />
+        </div>
+        {showPreview && (
+          <PreviewPane
+            body={previewBody}
+            glossary={glossary}
+            tutorials={tutorials}
+          />
+        )}
       </div>
 
       <div className="flex items-center gap-4 pt-4">
