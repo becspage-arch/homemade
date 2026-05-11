@@ -228,14 +228,16 @@ model Media {
 
   type        MediaType
   mimeType    String?
+  filename    String?
   alt         String?
   caption     String?
   attribution String? // Wikimedia / Unsplash / Pexels credit
 
-  width  Int?
-  height Int?
+  width    Int?
+  height   Int?
+  bytes    Int?
 
-  status MediaStatus @default(PENDING)
+  status MediaStatus @default(UPLOADING)
 
   tutorialsHero Tutorial[]
 
@@ -254,9 +256,9 @@ enum MediaType {
 }
 
 enum MediaStatus {
-  PENDING
-  APPROVED
-  REJECTED
+  UPLOADING
+  READY
+  FAILED
 }
 
 // ────────────────────────────────────────────────────────────────────────────

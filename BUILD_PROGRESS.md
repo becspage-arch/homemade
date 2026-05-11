@@ -57,13 +57,12 @@ These don't need to exist before there's content and users to track. We add each
 - Add CloudWatch alarms (task failure, ALB 5xx, ECS service unhealthy)
 - ESLint won't run — `next lint` removed in Next 16, ESLint v9 needs flat config. Migrate to `eslint.config.js` so we have a linter again.
 - SubTutorialCard cross-references: deleting a tutorial leaves dead `tutorialId` refs in other tutorials' TipTap JSON. Either scan JSON content for refs before delete and block, or schedule a periodic cleanup that nulls dangling refs.
-- `CLOUDFLARE_IMAGES_DELIVERY_HASH` env var: the hero media picker computes thumbnail URLs from it. Without it set, picker tiles fall back to a placeholder. Wire alongside the Phase 2e media upload work.
 
 ---
 
 ## Phase 2 — Data model & content management
 
-**Complete** (Phase 2e media-upload UI is the only optional remainder; tutorials authoring is fully functional without it).
+**Complete.**
 
 ### ✅ Done
 
@@ -99,18 +98,33 @@ These don't need to exist before there's content and users to track. We add each
 
 ### ✅ Phase 2d — taxonomy + Clerk webhook + favicon
 
-- **Clerk webhook** (`apps/web/src/app/api/webhooks/clerk/route.ts`) — svix-verified handler that mirrors `user.created` / `user.updated` / `user.deleted` events into the Prisma `User` row. Returns 503 if `CLERK_WEBHOOK_SIGNING_SECRET` isn't set so the app runs fine until the webhook is actually configured. The signing secret exists in AWS Secrets Manager as `homemade/clerk-webhook-secret` (placeholder value) but is intentionally **not** mounted into the ECS task definition yet — adding it triggered the ECS deployment circuit breaker because CFN updates the IAM policy in parallel with the task replacement, so new tasks could try to pull the secret before the IAM grant landed. When you're ready to enable the webhook: (a) create the endpoint in Clerk's dashboard pointing at `https://homemade.education/api/webhooks/clerk`, (b) put the real signing secret into AWS Secrets Manager, (c) uncomment the reference in `infra/lib/homemade-stack.ts` and redeploy CDK.
+- **Clerk webhook** (`apps/web/src/app/api/webhooks/clerk/route.ts`) — svix-verified handler that mirrors `user.created` / `user.updated` / `user.deleted` events into the Prisma `User` row. Returns 503 if `CLERK_WEBHOOK_SIGNING_SECRET` isn't set so the app runs fine until the webhook is actually configured. The signing secret exists in AWS Secrets Manager as `homemade/clerk-webhook-secret` (placeholder value) but is intentionally **not** mounted into the ECS task definition yet — adding it triggered the ECS deployment circuit breaker because CFN updates the IAM policy in parallel with the task replacement, so new tasks could try to pull the secret before the IAM grant landed. When you're ready to enable the webhook: (a) create the endpoint in Clerk's dashboard pointing at `https://homemade.education/api/webhooks/clerk`, (b) put the real signing secret into AWS Secrets Manager, (c) uncomment the reference in `infra/lib/homemade-stack.ts` and redeploy CDK. (The Phase 2e two-step CDK deploy pattern is exactly how to land it without the race.)
 - **`/admin/glossary`** CRUD — list, new, edit, delete. Optional category association via dropdown. Same audit-log + validation pattern as categories.
 - **`/admin/sub-categories`** CRUD — list, new, edit, delete. Required parent category. Slug unique within parent (compound unique).
 - **`/admin/tags`** — single-page inline CRUD (add at top of page, each row is its own edit form). Many-to-many with tutorials, so delete is unblocked but disconnects existing tutorial associations first.
 - **Admin nav extended** with sub-cats and tags links.
 - **Brand favicon** — `icon.svg` (Fraunces "h" sage on cream) + `apple-icon.png` (180×180) + `favicon.ico` (legacy fallback) wired into apps/web. Next.js auto-generates `<link>` tags.
 
+### ✅ Phase 2e — media (Cloudflare Images)
+
+- **`/admin/media`** CRUD — list (thumb, filename/alt, dimensions, status, uploaded date, sorted by created desc), upload page, edit page with metadata fields (alt / caption / credit). Same audit-log + admin-gate pattern as categories.
+- **Direct-upload flow** — `/api/media/direct-upload` (admin-gated) calls Cloudflare's `images/v2/direct_upload` endpoint and returns the one-time `uploadURL` + image `id`. The browser POSTs the file directly to Cloudflare with XHR for progress reporting. On completion the client invokes a server action (`registerUpload`) to create the Prisma `Media` row as `READY` or `FAILED` depending on the result. Image dimensions are read from the file in the browser before upload; mime type / filename / byte size come from the `File` object.
+- **`Media` schema changes** — new migration `20260512000000_media_upload_state`:
+  - `MediaStatus` enum replaced (`PENDING`/`APPROVED`/`REJECTED` → `UPLOADING`/`READY`/`FAILED`). Moderation state will reappear as its own column in Phase 5 when NSFW scanning ships; mixing moderation and upload state in one enum was the wrong shape.
+  - Added `filename` and `bytes` columns.
+  - Default status flipped to `UPLOADING`.
+- **CFN secret-mount race avoided** by splitting the CDK change across two deploys. Deploy 1 added an inline IAM `secretsmanager:GetSecretValue` policy on the execution role for the two new Cloudflare ARNs but did NOT reference them in the container's `secrets:` block — no task replacement, IAM grant lands cleanly. Deploy 2 added the `ecs.Secret.fromSecretsManager(...)` references — task replacement, but IAM was already in place. Both deploys went green first-try. The same pattern can now be reused to wire the Clerk webhook secret back in (Phase 2d's outstanding pre-launch item).
+- **Cloudflare secrets in AWS Secrets Manager**: `homemade/cloudflare-api-token`, `homemade/cloudflare-account-id`. Both mounted into the ECS task as `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` (task definition revision 5).
+- **`CLOUDFLARE_IMAGES_DELIVERY_HASH`** — ECS env var so the server can build CDN delivery URLs (`https://imagedelivery.net/<hash>/<image_id>/<variant>`). Not secret; it appears in every delivery URL anyway. Set in `infra/lib/homemade-stack.ts` (`qTHUFgOzX6ApY3B_SdLnDA`). The Phase 2f hero-media picker reads the same env var.
+- **Two delivery variants** configured in Cloudflare: `public` (1366×768 scale-down, default) and `thumbnail` (256×256 cover). Picker tiles and list-page rows use `thumbnail`; edit-page preview uses `public`.
+- **Helper consolidation** — Phase 2f shipped a `cloudflareDeliveryUrl()` URL builder in `apps/web/src/lib/media.ts`; Phase 2e's API client (`createDirectUpload`, `deleteImage`) lives in `apps/web/src/lib/cloudflare-images.ts`. Media pages import the URL builder from `@/lib/media` to avoid duplication.
+- **Cloudflare delete on row delete** — the `deleteMedia` server action calls `images/v1/<id>` DELETE on Cloudflare before deleting the Prisma row. "Image not found" responses from Cloudflare are tolerated (so a row whose CF asset has already been removed can still be cleaned up from the DB). Deletion is blocked if any `Tutorial.heroMediaId` references the row.
+
 ### ✅ Phase 2f — tutorials CRUD + TipTap editor + version history
 
 - **`/admin/tutorials`** list view with title / category / status / last edited / published-date columns. Status filter chips (All / Draft / Scheduled / Published / Archived). Sorted by `updatedAt desc`.
 - **`/admin/tutorials/new`** and **`/admin/tutorials/[id]`** edit pages share the same `TutorialForm` client component: title (auto-fills slug), subtitle, excerpt, category (filtered sub-category dropdown), tags, difficulty / season / time, source type + notes, hero media picker, TipTap body. Slug uniqueness validated server-side.
-- **Hero media picker** modal reads existing `Media` rows from Prisma. Thumbnail URLs are built from `CLOUDFLARE_IMAGES_DELIVERY_HASH` env var when present; until that's set (Phase 2e), tiles show a placeholder. Empty state links to `/admin/media/new`.
+- **Hero media picker** modal reads existing `Media` rows from Prisma. Thumbnail URLs are built from the Cloudflare delivery hash. Empty state links to `/admin/media/new`.
 - **TipTap editor** (`apps/web/src/components/admin/editor/`) — `@tiptap/react@3.23.1` + StarterKit (includes link, lists, blockquote, headings, marks). Five custom extensions:
   1. **InfoPanel** — node, atom, tone (info / tip / warning) + title + body
   2. **SuppliesCard** — node, atom, heading + items[] (name, qty?, link?)
@@ -122,13 +136,13 @@ These don't need to exist before there's content and users to track. We add each
 - **Version history** — `/admin/tutorials/[id]/versions` lists all versions newest-first with author + timestamp + change note. `/admin/tutorials/[id]/versions/[versionId]` renders the version in a read-only TipTap renderer (same five extensions, `editable: false`). Restore copies title / subtitle / excerpt / body back to the live `Tutorial`, snapshotting the current state first. All transitions, edits, and restores are audit-logged.
 - **Server actions** (`actions.ts`): `createTutorial`, `updateTutorial` (snapshots before write), `transitionTutorialStatus`, `restoreTutorialVersion`, `deleteTutorial`. Hard-delete cascades versions via the existing `onDelete: Cascade` on `TutorialVersion.tutorialId`.
 
-**Out-of-scope from this phase (per worker spec):**
+**Out-of-scope from Phase 2f (per worker spec):**
 - Public tutorial rendering — Phase 3
 - Live preview pane
 - Autosave / debounced save (explicit Save button only)
 - Inline image upload inside the editor body
 - Background scheduled-publish job
-- SubTutorialCard reference clean-up on delete (dead-link check skipped — flagged below)
+- SubTutorialCard reference clean-up on delete (dead-link check skipped — flagged above)
 - SEO meta editor (not in schema yet)
 
 ### Architecture decisions to note
@@ -167,5 +181,6 @@ Not started. Plan unchanged.
 - `90973ae` — feat(admin): categories CRUD + JIT user provisioning + audit log + migrate-in-CI
 - `bfd9dc9` — docs: log Phase 2c
 - `568ec8a` — feat(admin): glossary + sub-categories + tags CRUD + Clerk webhook + favicon
-- `ef7d528` — fix(infra): defer CLERK_WEBHOOK_SIGNING_SECRET mount until webhook is configured
-- Phase 2f (this session): /admin/tutorials list + create + edit, TipTap editor with five custom blocks, version history, lifecycle transitions
+- `ef7d528` — fix(infra): defer CLERK_WEBHOOK_SIGNING_SECRET mount (CFN race fix)
+- `fac45dc` — feat(admin): /admin/tutorials CRUD + TipTap editor with five custom blocks + version history
+- Phase 2e (this session): media CRUD + Cloudflare Images direct-upload + secrets wiring

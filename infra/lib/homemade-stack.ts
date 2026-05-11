@@ -4,6 +4,7 @@ import * as ec2 from 'aws-cdk-lib/aws-ec2'
 import * as ecs from 'aws-cdk-lib/aws-ecs'
 import * as ecr from 'aws-cdk-lib/aws-ecr'
 import * as elbv2 from 'aws-cdk-lib/aws-elasticloadbalancingv2'
+import * as iam from 'aws-cdk-lib/aws-iam'
 import * as logs from 'aws-cdk-lib/aws-logs'
 import * as secretsmanager from 'aws-cdk-lib/aws-secretsmanager'
 
@@ -81,6 +82,16 @@ export class HomemadeStack extends cdk.Stack {
       'ClerkSecret',
       'homemade/clerk-secret-key',
     )
+    const cloudflareApiTokenSecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'CloudflareApiTokenSecret',
+      'homemade/cloudflare-api-token',
+    )
+    const cloudflareAccountIdSecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'CloudflareAccountIdSecret',
+      'homemade/cloudflare-account-id',
+    )
 
     // The Clerk webhook signing secret exists in Secrets Manager (as
     // `homemade/clerk-webhook-secret`) but is intentionally NOT referenced in
@@ -120,6 +131,26 @@ export class HomemadeStack extends cdk.Stack {
       },
     })
 
+    // Explicit IAM grant on the Cloudflare secrets. The `ecs.Secret.from...`
+    // calls below auto-grant the same permissions, but having them spelled
+    // out here means a future first-time secret addition can be safely landed
+    // in two deploys: (1) add the inline grant alone — pure IAM update, no
+    // task replacement; (2) add the secret reference to the task definition
+    // — IAM grant is already in place, so the ECS deployment circuit breaker
+    // doesn't race the policy update. See Phase 2d note above and Phase 2e in
+    // BUILD_PROGRESS.md.
+    taskDef.addToExecutionRolePolicy(
+      new iam.PolicyStatement({
+        actions: ['secretsmanager:GetSecretValue'],
+        resources: [
+          cloudflareApiTokenSecret.secretArn,
+          `${cloudflareApiTokenSecret.secretArn}-*`,
+          cloudflareAccountIdSecret.secretArn,
+          `${cloudflareAccountIdSecret.secretArn}-*`,
+        ],
+      }),
+    )
+
     taskDef.addContainer('web', {
       containerName: 'web',
       image: ecs.ContainerImage.fromEcrRepository(webRepo, 'latest'),
@@ -130,11 +161,15 @@ export class HomemadeStack extends cdk.Stack {
         HOSTNAME: '0.0.0.0',
         NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
           process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY ?? '',
+        CLOUDFLARE_IMAGES_DELIVERY_HASH:
+          process.env.CLOUDFLARE_IMAGES_DELIVERY_HASH ?? '',
       },
       secrets: {
         SPLASH_PASSWORD: ecs.Secret.fromSecretsManager(splashSecret),
         DATABASE_URL: ecs.Secret.fromSecretsManager(databaseSecret),
         CLERK_SECRET_KEY: ecs.Secret.fromSecretsManager(clerkSecret),
+        CLOUDFLARE_API_TOKEN: ecs.Secret.fromSecretsManager(cloudflareApiTokenSecret),
+        CLOUDFLARE_ACCOUNT_ID: ecs.Secret.fromSecretsManager(cloudflareAccountIdSecret),
         // CLERK_WEBHOOK_SIGNING_SECRET intentionally omitted (see above)
       },
       portMappings: [{ containerPort: 3000, protocol: ecs.Protocol.TCP }],
