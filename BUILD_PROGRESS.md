@@ -233,11 +233,74 @@ All three: TipTap node atoms in `apps/web/src/components/admin/editor/extensions
 - Reading-time recalculates from the in-progress body word count.
 - The shared CSS (`tutorial-page.css`) moved from the public route into `components/public/` so both consumers can import it without crossing route boundaries.
 
-## Phases 4–8
+## Phase 4 — Accounts & user state
+
+### ✅ Done
+
+- **Schema additions** in `packages/db/prisma/schema.prisma`, migration `20260514000000_user_state`:
+  - `Bookmark` (id, userId, tutorialId, createdAt; unique on (userId, tutorialId); idx on userId; cascade both sides).
+  - `UserProject` (id, userId, tutorialId, status `UserProjectStatus`, startedAt, completedAt?, abandonedAt?, notes default `""`, suppliesChecked JSON default `[]`, readingProgressPercent Int default 0, lastViewedAt; unique on (userId, tutorialId); idx on userId and status; cascade both sides). One project per (user, tutorial) — `startProject` resumes an existing row rather than creating a duplicate.
+  - `UserProjectStatus` enum: `IN_PROGRESS` / `COMPLETED` / `ABANDONED`.
+  - `User` additions: `beginnerMode` (Boolean, default false), `displayHandle` (String?, unique), `bio` (String?). The handle + bio fields prep for Phase 5/6 social work cheaply — no public profile route is wired yet.
+  - JIT user provisioning in `apps/web/src/lib/get-current-user.ts` keeps working since all new fields have defaults or are nullable.
+- **Proxy** — `/me(.*)` added to the Clerk-protected matcher alongside `/admin(.*)`. Splash cookie still gates everything as before.
+- **Server actions** in `apps/web/src/lib/user-state-actions.ts`:
+  - `toggleBookmark`, `startProject`, `markProjectComplete`, `abandonProject`, `resumeProject`, `updateProjectNotes`, `toggleSupplyChecked`, `updateReadingProgress`, `updateBeginnerMode`, `updateProfile`.
+  - Lifecycle changes (start / resume / complete / abandon) are audit-logged via the existing `audit()` helper. High-volume actions (reading progress, notes typing, supply ticks) skip the audit log on purpose.
+  - `updateProfile` enforces a `^[a-z0-9](?:[a-z0-9_-]{1,30}[a-z0-9])?$` handle pattern and unique-checks against other users; bio is trimmed to 280 chars.
+- **`/me` route group** in `apps/web/src/app/(public)/me/`:
+  - `layout.tsx` redirects to `/sign-in` when unauthenticated, renders a greeting + sub-nav (Overview / Projects / Bookmarks / Settings).
+  - `page.tsx` — dashboard with "In progress" (up to 3 most-recent), "Recent bookmarks" (up to 6), "Recently completed" (up to 3). Warm empty states for each.
+  - `bookmarks/page.tsx` — full list using `TutorialCard`s with an inline "Remove" pill (`bookmark-remove.tsx`).
+  - `projects/page.tsx` — all projects with status filter chips (All / In progress / Completed / Abandoned) via `?status=…` query param.
+  - `projects/[projectId]/page.tsx` — full project view with status pill, supplies tick list (`project-supplies.tsx`), debounced notes textarea (`project-notes.tsx`), and status controls (`project-status-controls.tsx`).
+  - `settings/page.tsx` + `settings-form.tsx` — beginner-mode toggle, display handle, bio, Clerk sign-out button.
+- **Site header** (`apps/web/src/components/public/site-header.tsx`): signed-out shows a small "Sign in" pill; signed-in shows a sage avatar disc + `Hi, {firstName}` + a click-to-open menu (`user-menu.tsx`, client) with links to Overview / Projects / Bookmarks / Settings / Sign out. The right-hand slot reserves a fixed-min width so the layout doesn't jump.
+- **Tutorial page** (`apps/web/src/app/(public)/[categorySlug]/[tutorialSlug]/page.tsx`):
+  - Server fetches the signed-in user's bookmark + UserProject for this tutorial in one round-trip alongside the existing tutorial / refs loads.
+  - `TutorialChrome` was extended with optional `actionsSlot` + `leftRail` + `rightRail` + `footerSlot`. Admin Preview keeps passing nothing; the public route fills them for signed-in readers.
+  - **Bookmark button** (client, optimistic) and **project button** (client, lifecycle-aware: Start making → In progress controls → Completed-on-{date} with "Make this again") render in `actionsSlot`.
+  - **Reading-progress bar** (`reading-progress.tsx`) — fixed sage strip under the sticky header, rAF-throttled scroll listener. Persists to `UserProject.readingProgressPercent` at most every 5s (and on unmount) when a project exists; session-only otherwise.
+  - **Sticky TOC** (`sticky-toc.tsx`) — reads h2/h3 inside `.tutorial-content` after mount, assigns ids if missing, uses an IntersectionObserver to highlight the active section. Collapses to a `<details>` dropdown below 1100px.
+  - **Project companion sidebar** (`project-companion.tsx`) — only when a UserProject is `IN_PROGRESS`. Supplies harvested via `harvestSupplies()` (`apps/web/src/lib/supplies.ts`), de-duplicated by lowercase name across every SuppliesCard in the body. Persists ticks, debounced notes, and status controls. Below 1100px the rails go static so the sidebar drops below the body.
+- **Beginner mode** (when `User.beginnerMode === true`):
+  - `TutorialContent` threads a `beginnerMode` prop through every `RenderNode` call.
+  - `GlossaryTooltip` switches from CSS-only popover to an inline expansion (`term (definition)`) with a dotted underline on the term.
+  - `InfoPanel` gets a "for beginners — …" label and a bolder left rule via `.info-panel-beginner`.
+  - `SuppliesCard` items gain an italic "or {substitutions}" line when the optional new `substitutions` field is set. The admin TipTap extension (`apps/web/src/components/admin/editor/extensions/supplies-card.tsx`) grows a second input row per item; the schema is additive (default empty), so existing TipTap docs deserialise fine.
+  - A `BeginnerHelpFooter` renders below the sources aside with each glossary term used + an `?difficulty=BEGINNER` link back into the category index.
+- **Tutorial cards** — `TutorialCard` accepts an optional `state: ReaderTutorialState`. A sage filled bookmark glyph overlays the hero when saved; a small "{n}% in progress" pill sits below the meta when the user has an IN_PROGRESS UserProject. Per-card state is fetched once via `loadReaderState()` in the parent and threaded through, never refetched per card.
+- **Homepage** — when signed in with at least one IN_PROGRESS UserProject, a "Continue making" strip renders above the latest hero (up to 3 cards). Signed-out homepage is unchanged.
+- **Category page** — accepts `?difficulty=BEGINNER|INTERMEDIATE|ADVANCED` (drives both the BeginnerHelpFooter link and the public surface), threads reader state to each card.
+
+### Microcopy
+
+All user-facing strings audited against `feedback_homemade_voice.md` Section 6b banned-phrase list: no `honest`, `frankly`, `delve`, `at its core`, `embrace`, `elevate`, `nurture`, `treasure trove`, `game-changer`, `unlock the secrets`, `tapestry`, `testament to`, `beacon of`, `happy crafting`, "in conclusion" / "furthermore" / "moreover" / "additionally" openers, `not just X but Y` negation patterns. Em-dash count kept low.
+
+### Build hygiene
+
+- `pnpm --filter @homemade/web typecheck` — passes.
+- `pnpm --filter @homemade/web build` — passes (Next.js 16 / Turbopack). The `@prisma/client` `export *` warning is pre-existing.
+- `pnpm --filter @homemade/web lint` — still broken (ESLint v9 flat-config migration listed in pre-launch debt).
+- Public bundle: the tutorial reader components are split into client modules that only load on signed-in tutorial pages; no TipTap leaks into the public bundle.
+
+### Out of scope (deferred to later phases)
+
+- Reviews, Q&A, errata, user-uploaded photos — Phase 5.
+- Following / friending / public profile pages — Phase 6+. Handle + bio fields exist but no `/u/[handle]` route yet.
+- Email digests / push notifications — deferred.
+- Recommendations engine, streaks / gamification — not on plan.
+- Legal pages (privacy, terms, cookies, AUP, DMCA) — separate session.
+
+### New pre-launch debt items discovered
+
+- The supplies-card admin UI gained a `substitutions` input but no CMS-side migration of existing SuppliesCard items. Existing tutorials still render fine (the field is optional and defaults to absent), but if substitution hints become important pre-launch, Rebecca will want a sweep through current content to fill them in.
+- Adaptive icons for the reading-progress bar / TOC are CSS-only and may need a re-pass once we have one tutorial with real heading density.
+
+## Phases 5–8
 
 Not started. Plan unchanged.
 
-- Phase 4: Accounts & user state
 - Phase 5: UGC pipeline & moderation
 - Phase 6: Pattern testing & creator program
 - Phase 7: Marketplace
@@ -264,5 +327,6 @@ Not started. Plan unchanged.
 - `fac45dc` — feat(admin): /admin/tutorials CRUD + TipTap editor with five custom blocks + version history
 - `3db774b` — feat(admin): /admin/media CRUD + Cloudflare Images direct-upload
 - `fed610c` — feat(public): tutorial / category / homepage + TipTap-JSON renderer (Phase 3a)
-- _this session_ — feat: Phase 3b Typesense search + Phase 3c Capacitor 8 mobile wrapper + three extra TipTap blocks + admin Preview metadata polish
+- `13930f1` — Phase 3b Typesense search + Phase 3c Capacitor 8 mobile wrapper + three extra TipTap blocks + admin Preview metadata polish
+- _this session_ — feat(public): Phase 4 accounts — bookmarks, projects, reading-progress / TOC / project companion, beginner mode, /me dashboard + settings, signed-in header, supplies substitutions
 - Phase 3a (this session): public tutorial / category / home pages, TipTap-JSON renderer with no TipTap runtime in the public bundle, admin Preview toggle

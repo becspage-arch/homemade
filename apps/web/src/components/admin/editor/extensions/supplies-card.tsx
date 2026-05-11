@@ -7,6 +7,8 @@ export interface SuppliesItem {
   name: string
   qty?: string
   link?: string
+  /** Optional substitution hints — surfaced to readers in beginner mode. */
+  substitutions?: string
 }
 
 export interface SuppliesCardAttrs {
@@ -87,39 +89,51 @@ function SuppliesCardView({ node, updateAttributes, selected }: ReactNodeViewPro
 
         <ul className="mt-3 space-y-2">
           {items.map((it, i) => (
-            <li key={i} className="flex items-start gap-2">
+            <li key={i} className="flex flex-col gap-1">
+              <div className="flex items-start gap-2">
+                <input
+                  type="text"
+                  value={it.qty ?? ''}
+                  onChange={(e) => updateItem(i, { qty: e.target.value })}
+                  placeholder="qty"
+                  className="w-20 border-b border-[var(--color-linen-grey)] bg-transparent px-1 py-1 text-sm text-[var(--color-warm-taupe)] outline-none focus:border-[var(--color-sage)]"
+                  style={{ fontFamily: 'var(--font-lora)' }}
+                />
+                <input
+                  type="text"
+                  value={it.name}
+                  onChange={(e) => updateItem(i, { name: e.target.value })}
+                  placeholder="Item name"
+                  className="flex-1 border-b border-[var(--color-linen-grey)] bg-transparent px-1 py-1 text-[var(--color-espresso)] outline-none focus:border-[var(--color-sage)]"
+                  style={{ fontFamily: 'var(--font-lora)' }}
+                />
+                <input
+                  type="url"
+                  value={it.link ?? ''}
+                  onChange={(e) => updateItem(i, { link: e.target.value })}
+                  placeholder="link (optional)"
+                  className="w-48 border-b border-[var(--color-linen-grey)] bg-transparent px-1 py-1 text-sm text-[var(--color-warm-taupe)] outline-none focus:border-[var(--color-sage)]"
+                  style={{ fontFamily: 'var(--font-lora)' }}
+                />
+                <button
+                  type="button"
+                  onClick={() => removeItem(i)}
+                  className="text-xs uppercase tracking-[0.2em] text-[var(--color-burnt-sienna)] opacity-60 hover:opacity-100"
+                  style={{ fontFamily: 'var(--font-lora)' }}
+                >
+                  remove
+                </button>
+              </div>
               <input
                 type="text"
-                value={it.qty ?? ''}
-                onChange={(e) => updateItem(i, { qty: e.target.value })}
-                placeholder="qty"
-                className="w-20 border-b border-[var(--color-linen-grey)] bg-transparent px-1 py-1 text-sm text-[var(--color-warm-taupe)] outline-none focus:border-[var(--color-sage)]"
-                style={{ fontFamily: 'var(--font-lora)' }}
+                value={it.substitutions ?? ''}
+                onChange={(e) =>
+                  updateItem(i, { substitutions: e.target.value })
+                }
+                placeholder="substitutions (optional — shown to beginners)"
+                className="ml-22 border-b border-dashed border-[var(--color-linen-grey)] bg-transparent px-1 py-1 text-sm italic text-[var(--color-warm-taupe)] outline-none focus:border-[var(--color-sage)]"
+                style={{ fontFamily: 'var(--font-lora)', marginLeft: '88px' }}
               />
-              <input
-                type="text"
-                value={it.name}
-                onChange={(e) => updateItem(i, { name: e.target.value })}
-                placeholder="Item name"
-                className="flex-1 border-b border-[var(--color-linen-grey)] bg-transparent px-1 py-1 text-[var(--color-espresso)] outline-none focus:border-[var(--color-sage)]"
-                style={{ fontFamily: 'var(--font-lora)' }}
-              />
-              <input
-                type="url"
-                value={it.link ?? ''}
-                onChange={(e) => updateItem(i, { link: e.target.value })}
-                placeholder="link (optional)"
-                className="w-48 border-b border-[var(--color-linen-grey)] bg-transparent px-1 py-1 text-sm text-[var(--color-warm-taupe)] outline-none focus:border-[var(--color-sage)]"
-                style={{ fontFamily: 'var(--font-lora)' }}
-              />
-              <button
-                type="button"
-                onClick={() => removeItem(i)}
-                className="text-xs uppercase tracking-[0.2em] text-[var(--color-burnt-sienna)] opacity-60 hover:opacity-100"
-                style={{ fontFamily: 'var(--font-lora)' }}
-              >
-                remove
-              </button>
             </li>
           ))}
         </ul>

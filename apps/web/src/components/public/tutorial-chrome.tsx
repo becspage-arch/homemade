@@ -49,6 +49,18 @@ export interface TutorialChromeProps {
    * so a half-typed category slug doesn't navigate away.
    */
   linkBreadcrumb?: boolean
+  /**
+   * Optional row of actions (bookmark / start-making etc.) rendered between
+   * the info bar and the body. Public route fills this in for signed-in
+   * readers; admin preview leaves it empty.
+   */
+  actionsSlot?: ReactNode
+  /** Optional left rail (sticky TOC). When passed, body becomes 3-column. */
+  leftRail?: ReactNode
+  /** Optional right rail (project companion). When passed, body becomes 3-column. */
+  rightRail?: ReactNode
+  /** Optional footer rendered after the sources aside. */
+  footerSlot?: ReactNode
 }
 
 /**
@@ -77,7 +89,12 @@ export function TutorialChrome(props: TutorialChromeProps) {
     sourceNotes,
     body,
     linkBreadcrumb = true,
+    actionsSlot,
+    leftRail,
+    rightRail,
+    footerSlot,
   } = props
+  const hasRails = Boolean(leftRail || rightRail)
 
   return (
     <article className="tutorial-page">
@@ -161,23 +178,53 @@ export function TutorialChrome(props: TutorialChromeProps) {
         </dl>
       </div>
 
-      <div className="tutorial-page-body">
-        {body}
+      {actionsSlot && (
+        <div className="tutorial-actions-bar">{actionsSlot}</div>
+      )}
 
-        <aside className="tutorial-sources">
-          <span className="tutorial-sources-label">
-            {sourceType === 'TESTED'
-              ? 'A note from Homemade'
-              : 'Sources and provenance'}
-          </span>
-          <p className="tutorial-sources-text">
-            {SOURCE_LABEL[sourceType] ?? ''}
-          </p>
-          {sourceNotes && (
-            <p className="tutorial-sources-notes">{sourceNotes}</p>
-          )}
-        </aside>
-      </div>
+      {hasRails ? (
+        <div className="tutorial-page-rails">
+          <div className="tutorial-page-rail-left">{leftRail}</div>
+          <div className="tutorial-page-body tutorial-page-body-railed">
+            {body}
+
+            <aside className="tutorial-sources">
+              <span className="tutorial-sources-label">
+                {sourceType === 'TESTED'
+                  ? 'A note from Homemade'
+                  : 'Sources and provenance'}
+              </span>
+              <p className="tutorial-sources-text">
+                {SOURCE_LABEL[sourceType] ?? ''}
+              </p>
+              {sourceNotes && (
+                <p className="tutorial-sources-notes">{sourceNotes}</p>
+              )}
+            </aside>
+            {footerSlot}
+          </div>
+          <div className="tutorial-page-rail-right">{rightRail}</div>
+        </div>
+      ) : (
+        <div className="tutorial-page-body">
+          {body}
+
+          <aside className="tutorial-sources">
+            <span className="tutorial-sources-label">
+              {sourceType === 'TESTED'
+                ? 'A note from Homemade'
+                : 'Sources and provenance'}
+            </span>
+            <p className="tutorial-sources-text">
+              {SOURCE_LABEL[sourceType] ?? ''}
+            </p>
+            {sourceNotes && (
+              <p className="tutorial-sources-notes">{sourceNotes}</p>
+            )}
+          </aside>
+          {footerSlot}
+        </div>
+      )}
     </article>
   )
 }

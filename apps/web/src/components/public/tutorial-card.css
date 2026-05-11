@@ -13,6 +13,11 @@
   transform: translateY(-2px);
 }
 
+.tutorial-card-image-wrap {
+  position: relative;
+  display: block;
+}
+
 .tutorial-card-image {
   display: block;
   width: 100%;
@@ -21,6 +26,30 @@
   background-position: center;
   filter: saturate(0.88);
   background-color: var(--color-bone);
+}
+
+.tutorial-card-saved {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(255, 252, 245, 0.92);
+  color: var(--color-sage);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.tutorial-card-progress {
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  margin-top: 4px;
 }
 
 .tutorial-card-image.placeholder {

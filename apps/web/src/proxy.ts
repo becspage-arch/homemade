@@ -25,6 +25,7 @@ const PUBLIC_PATHS = [
 ]
 
 const isAdminRoute = createRouteMatcher(['/admin(.*)'])
+const isAccountRoute = createRouteMatcher(['/me(.*)'])
 
 export default clerkMiddleware(async (auth, req) => {
   const { pathname } = req.nextUrl
@@ -34,8 +35,8 @@ export default clerkMiddleware(async (auth, req) => {
     pathname.startsWith('/_next') ||
     PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(p + '/'))
   ) {
-    // Admin routes still need Clerk protection even if "public" from the splash view
-    if (isAdminRoute(req)) {
+    // Admin / account routes still need Clerk protection even if "public" from the splash view
+    if (isAdminRoute(req) || isAccountRoute(req)) {
       await auth.protect()
     }
     return NextResponse.next()
@@ -49,8 +50,8 @@ export default clerkMiddleware(async (auth, req) => {
     return NextResponse.rewrite(url)
   }
 
-  // Admin gate (Clerk)
-  if (isAdminRoute(req)) {
+  // Auth gates (Clerk)
+  if (isAdminRoute(req) || isAccountRoute(req)) {
     await auth.protect()
   }
 

@@ -1,0 +1,327 @@
+/* Reading-progress bar */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: transparent;
+  z-index: 110;
+  pointer-events: none;
+}
+
+.reading-progress-fill {
+  display: block;
+  height: 100%;
+  background: var(--color-sage);
+  transition: width 0.1s linear;
+}
+
+/* Action buttons (bookmark, start making, etc.) */
+.reader-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-lora);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 0.5px solid var(--color-sage);
+  background: transparent;
+  color: var(--color-sage);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.reader-action:hover {
+  background: var(--color-sage);
+  color: var(--color-cream);
+}
+
+.reader-action[disabled] {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.reader-action.primary {
+  background: var(--color-sage);
+  color: var(--color-cream);
+}
+
+.reader-action.primary:hover {
+  background: var(--color-forest);
+  border-color: var(--color-forest);
+}
+
+.reader-action.subtle {
+  border-color: var(--color-linen-grey);
+  color: var(--color-warm-taupe);
+}
+
+.reader-action.subtle:hover {
+  background: var(--color-soft-parchment);
+  color: var(--color-warm-taupe);
+}
+
+.bookmark.active {
+  color: var(--color-sage);
+  background: rgba(160, 176, 132, 0.08);
+}
+
+.reader-action-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.reader-action-label {
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+
+.reader-action-label.subtle {
+  color: var(--color-warm-taupe);
+}
+
+/* Sticky table of contents */
+.toc {
+  font-family: var(--font-lora);
+  color: var(--color-warm-taupe);
+}
+
+.toc-desktop {
+  display: block;
+}
+
+.toc-mobile {
+  display: none;
+}
+
+.toc-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+  margin-bottom: 12px;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 0.5px solid var(--color-linen-grey);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.toc-item a {
+  display: block;
+  padding: 4px 0 4px 12px;
+  margin-left: -0.5px;
+  border-left: 1.5px solid transparent;
+  color: var(--color-warm-taupe);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.toc-item a:hover {
+  color: var(--color-sage);
+}
+
+.toc-item.active a {
+  color: var(--color-sage);
+  border-left-color: var(--color-sage);
+}
+
+.toc-item-l3 a {
+  padding-left: 24px;
+  font-size: 12px;
+}
+
+@media (max-width: 1100px) {
+  .toc-desktop {
+    display: none;
+  }
+  .toc-mobile {
+    display: block;
+    border: 0.5px solid var(--color-linen-grey);
+    background: var(--color-soft-parchment);
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 0 0 24px;
+  }
+  .toc-mobile summary {
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--color-warm-taupe);
+  }
+  .toc-mobile .toc-list {
+    margin-top: 12px;
+  }
+}
+
+/* Project companion sidebar */
+.companion {
+  background: var(--color-soft-parchment);
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 4px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-family: var(--font-lora);
+}
+
+.companion-label {
+  font-family: var(--font-lora);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+
+.companion-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.companion-section-label {
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+}
+
+.companion-supplies {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.companion-supplies label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--color-espresso);
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.companion-supplies input[type='checkbox'] {
+  margin-top: 3px;
+  accent-color: var(--color-sage);
+}
+
+.companion-supply-name.checked {
+  text-decoration: line-through;
+  color: var(--color-warm-taupe);
+}
+
+.companion-supply-sub {
+  display: block;
+  margin: 2px 0 0 26px;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--color-warm-taupe);
+}
+
+.companion-notes {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  color: var(--color-espresso);
+  background: var(--color-cream);
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 3px;
+  padding: 10px 12px;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.companion-notes:focus {
+  outline: none;
+  border-color: var(--color-sage);
+}
+
+.companion-status {
+  font-size: 11px;
+  font-style: italic;
+  color: var(--color-warm-taupe);
+  min-height: 16px;
+}
+
+.companion-section.actions {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 1100px) {
+  .companion {
+    margin-bottom: 24px;
+  }
+}
+
+/* Beginner-mode "more help" footer */
+.beginner-help-footer {
+  margin: 48px 0 16px;
+  padding: 28px;
+  background: var(--color-soft-parchment);
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 4px;
+  font-family: var(--font-lora);
+  color: var(--color-warm-taupe);
+}
+
+.beginner-help-footer-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  margin-bottom: 10px;
+}
+
+.beginner-help-footer-title {
+  font-family: var(--font-fraunces);
+  font-size: 22px;
+  color: var(--color-espresso);
+  margin: 0 0 16px;
+}
+
+.beginner-help-footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.beginner-help-footer-list a {
+  color: var(--color-sage);
+  text-decoration: none;
+}
+
+.beginner-help-footer-list a:hover {
+  color: var(--color-forest);
+  text-decoration: underline;
+}

@@ -29,12 +29,19 @@ model User {
   name      String?
   role      UserRole @default(MEMBER)
 
+  // Reader-side preferences and profile
+  beginnerMode  Boolean @default(false)
+  displayHandle String? @unique
+  bio           String?
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   tutorialsAuthored Tutorial[]        @relation("TutorialAuthor")
   versions          TutorialVersion[] @relation("VersionAuthor")
   auditLogs         AuditLog[]
+  bookmarks         Bookmark[]
+  projects          UserProject[]
 
   @@index([role])
 }
@@ -153,7 +160,9 @@ model Tutorial {
   authorId String
   author   User   @relation("TutorialAuthor", fields: [authorId], references: [id])
 
-  versions TutorialVersion[]
+  versions  TutorialVersion[]
+  bookmarks Bookmark[]
+  projects  UserProject[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -259,6 +268,60 @@ enum MediaStatus {
   UPLOADING
   READY
   FAILED
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// User state — bookmarks + projects (Phase 4)
+// ────────────────────────────────────────────────────────────────────────────
+
+model Bookmark {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  tutorialId String
+  tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, tutorialId])
+  @@index([userId])
+}
+
+// One UserProject per (user, tutorial). Tracks "I'm making this" lifecycle plus
+// the reader's private notes, supplies tick-list, and reading progress.
+model UserProject {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  tutorialId String
+  tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+
+  status      UserProjectStatus @default(IN_PROGRESS)
+  startedAt   DateTime          @default(now())
+  completedAt DateTime?
+  abandonedAt DateTime?
+
+  notes                   String   @default("")
+  suppliesChecked         Json     @default("[]")
+  readingProgressPercent  Int      @default(0)
+  lastViewedAt            DateTime @default(now())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, tutorialId])
+  @@index([userId])
+  @@index([status])
+}
+
+enum UserProjectStatus {
+  IN_PROGRESS
+  COMPLETED
+  ABANDONED
 }
 
 // ────────────────────────────────────────────────────────────────────────────

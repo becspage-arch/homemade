@@ -130,6 +130,50 @@
   padding: 64px 0 0;
 }
 
+/* When user-state rails are present, the body sits in the middle column of a
+ * three-column grid. The body still caps at 720px for readability; rails take
+ * the remaining width on each side. */
+.tutorial-page-rails {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr) 280px;
+  gap: 40px;
+  padding-top: 48px;
+  align-items: start;
+}
+
+.tutorial-page-body-railed {
+  padding-top: 0;
+  margin: 0;
+  max-width: 720px;
+}
+
+.tutorial-page-rail-left,
+.tutorial-page-rail-right {
+  position: sticky;
+  top: 96px;
+  align-self: start;
+}
+
+.tutorial-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  border-bottom: 0.5px solid var(--color-linen-grey);
+}
+
+@media (max-width: 1100px) {
+  .tutorial-page-rails {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .tutorial-page-rail-left,
+  .tutorial-page-rail-right {
+    position: static;
+  }
+}
+
 .tutorial-sources {
   margin: 48px 0 0;
   padding: 28px 0;

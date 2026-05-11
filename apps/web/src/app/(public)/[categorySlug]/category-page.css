@@ -41,6 +41,26 @@
   line-height: 1.5;
 }
 
+.category-filter-note {
+  margin: 18px auto 0;
+  font-family: var(--font-lora);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--color-warm-taupe);
+}
+
+.category-filter-note a {
+  color: var(--color-sage);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--color-sage);
+  margin-left: 6px;
+}
+
+.category-filter-note a:hover {
+  color: var(--color-forest);
+  border-bottom-color: var(--color-forest);
+}
+
 .category-empty {
   margin: 48px auto 0;
   max-width: 540px;

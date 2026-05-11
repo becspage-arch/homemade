@@ -4,11 +4,14 @@ interface SuppliesItem {
   name?: string
   qty?: string
   link?: string
+  /** Optional substitution hints — only surfaced in beginner mode. */
+  substitutions?: string
 }
 
 interface SuppliesCardProps {
   heading: string
   items: SuppliesItem[]
+  beginnerMode?: boolean
 }
 
 function isHttpUrl(value: string): boolean {
@@ -20,7 +23,11 @@ function isHttpUrl(value: string): boolean {
   }
 }
 
-export function SuppliesCard({ heading, items }: SuppliesCardProps): ReactNode {
+export function SuppliesCard({
+  heading,
+  items,
+  beginnerMode = false,
+}: SuppliesCardProps): ReactNode {
   const cleanItems = items.filter((i) => i?.name?.trim())
   if (cleanItems.length === 0 && !heading) return null
   return (
@@ -31,7 +38,14 @@ export function SuppliesCard({ heading, items }: SuppliesCardProps): ReactNode {
         {cleanItems.map((item, i) => (
           <li key={i}>
             <span className="supplies-qty">{item.qty?.trim() || '·'}</span>
-            <span className="supplies-name">{item.name}</span>
+            <span className="supplies-name">
+              {item.name}
+              {beginnerMode && item.substitutions?.trim() && (
+                <span className="supplies-sub">
+                  or {item.substitutions.trim()}
+                </span>
+              )}
+            </span>
             {item.link?.trim() && isHttpUrl(item.link.trim()) ? (
               <a
                 className="supplies-link"

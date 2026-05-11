@@ -21,6 +21,8 @@ interface TutorialContentProps {
   content: TipTapNode | null | undefined
   glossary: GlossaryRef[]
   subTutorials: SubTutorialRef[]
+  /** When true, glossary terms inline-expand and info panels get extra weight. */
+  beginnerMode?: boolean
 }
 
 /**
@@ -35,19 +37,26 @@ export function TutorialContent({
   content,
   glossary,
   subTutorials,
+  beginnerMode = false,
 }: TutorialContentProps): ReactNode {
   if (!content || content.type !== 'doc' || !Array.isArray(content.content)) {
     return (
-      <div className="tutorial-content">
+      <div className={`tutorial-content${beginnerMode ? ' beginner' : ''}`}>
         <p className="lead">This tutorial has no content yet.</p>
       </div>
     )
   }
 
   return (
-    <div className="tutorial-content">
+    <div className={`tutorial-content${beginnerMode ? ' beginner' : ''}`}>
       {content.content.map((node, i) => (
-        <RenderNode key={i} node={node} glossary={glossary} subTutorials={subTutorials} />
+        <RenderNode
+          key={i}
+          node={node}
+          glossary={glossary}
+          subTutorials={subTutorials}
+          beginnerMode={beginnerMode}
+        />
       ))}
     </div>
   )
@@ -56,14 +65,20 @@ export function TutorialContent({
 interface RenderContext {
   glossary: GlossaryRef[]
   subTutorials: SubTutorialRef[]
+  beginnerMode: boolean
 }
 
 interface RenderNodeProps extends RenderContext {
   node: TipTapNode
 }
 
-function RenderNode({ node, glossary, subTutorials }: RenderNodeProps): ReactNode {
-  const ctx: RenderContext = { glossary, subTutorials }
+function RenderNode({
+  node,
+  glossary,
+  subTutorials,
+  beginnerMode,
+}: RenderNodeProps): ReactNode {
+  const ctx: RenderContext = { glossary, subTutorials, beginnerMode }
   const attrs = (node.attrs ?? {}) as Record<string, unknown>
 
   switch (node.type) {
@@ -130,6 +145,7 @@ function RenderNode({ node, glossary, subTutorials }: RenderNodeProps): ReactNod
           tone={stringOrUndef(attrs.tone) ?? 'tip'}
           title={stringOrUndef(attrs.title) ?? ''}
           body={stringOrUndef(attrs.body) ?? ''}
+          beginnerMode={beginnerMode}
         />
       )
 
@@ -138,6 +154,7 @@ function RenderNode({ node, glossary, subTutorials }: RenderNodeProps): ReactNod
         <SuppliesCard
           heading={stringOrUndef(attrs.heading) ?? ''}
           items={Array.isArray(attrs.items) ? (attrs.items as never[]) : []}
+          beginnerMode={beginnerMode}
         />
       )
 
@@ -215,6 +232,7 @@ function renderChildren(
       node={n}
       glossary={ctx.glossary}
       subTutorials={ctx.subTutorials}
+      beginnerMode={ctx.beginnerMode}
     />
   ))
 }
@@ -274,7 +292,11 @@ function wrapMark(mark: TipTapMark, children: ReactNode, ctx: RenderContext): Re
       const termId = stringOrUndef(attrs.termId)
       if (!termId) return <>{children}</>
       return (
-        <GlossaryTooltip termId={termId} glossary={ctx.glossary}>
+        <GlossaryTooltip
+          termId={termId}
+          glossary={ctx.glossary}
+          beginnerMode={ctx.beginnerMode}
+        >
           {children}
         </GlossaryTooltip>
       )

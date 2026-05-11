@@ -1,11 +1,27 @@
 import Link from 'next/link'
+import { auth } from '@clerk/nextjs/server'
 import { prisma } from '@homemade/db'
+import { UserMenu } from './user-menu'
 
 export async function SiteHeader() {
-  const categories = await prisma.category.findMany({
-    orderBy: [{ order: 'asc' }, { name: 'asc' }],
-    select: { slug: true, name: true },
-  })
+  const { userId } = await auth()
+
+  const [categories, dbUser] = await Promise.all([
+    prisma.category.findMany({
+      orderBy: [{ order: 'asc' }, { name: 'asc' }],
+      select: { slug: true, name: true },
+    }),
+    userId
+      ? prisma.user.findUnique({
+          where: { clerkId: userId },
+          select: { name: true, email: true },
+        })
+      : Promise.resolve(null),
+  ])
+
+  const greeting = dbUser?.name?.split(' ')[0] ?? null
+  const initial =
+    (dbUser?.name?.trim()?.[0] ?? dbUser?.email?.trim()?.[0] ?? 'h').toUpperCase()
 
   return (
     <header className="site-header">
@@ -40,6 +56,16 @@ export async function SiteHeader() {
             className="site-header-search-input"
           />
         </form>
+
+        <div className="site-header-user">
+          {userId ? (
+            <UserMenu initial={initial} greeting={greeting} />
+          ) : (
+            <Link href="/sign-in" className="site-header-signin">
+              Sign in
+            </Link>
+          )}
+        </div>
       </div>
     </header>
   )

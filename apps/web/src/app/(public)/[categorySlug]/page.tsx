@@ -1,8 +1,14 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { prisma, TutorialStatus } from '@homemade/db'
+import { prisma, TutorialStatus, Difficulty } from '@homemade/db'
 import { TutorialCard } from '@/components/public/tutorial-card'
 import { cloudflareDeliveryUrl } from '@/lib/media'
+import { getCurrentDbUser } from '@/lib/get-current-user'
+import {
+  emptyReaderState,
+  loadReaderState,
+  readerStateFor,
+} from '@/lib/user-state'
 
 import './category-page.css'
 
@@ -10,6 +16,7 @@ export const dynamic = 'force-dynamic'
 
 interface PageProps {
   params: Promise<{ categorySlug: string }>
+  searchParams: Promise<{ difficulty?: string }>
 }
 
 async function loadCategory(slug: string) {
@@ -19,6 +26,15 @@ async function loadCategory(slug: string) {
       subCategories: { orderBy: [{ order: 'asc' }, { name: 'asc' }] },
     },
   })
+}
+
+function parseDifficulty(raw: string | undefined): Difficulty | null {
+  if (!raw) return null
+  const upper = raw.toUpperCase()
+  if (upper === 'BEGINNER' || upper === 'INTERMEDIATE' || upper === 'ADVANCED') {
+    return upper as Difficulty
+  }
+  return null
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -32,28 +48,42 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default async function CategoryPage({ params }: PageProps) {
+export default async function CategoryPage({ params, searchParams }: PageProps) {
   const { categorySlug } = await params
+  const { difficulty: difficultyRaw } = await searchParams
+  const difficulty = parseDifficulty(difficultyRaw)
+
   const category = await loadCategory(categorySlug)
   if (!category) notFound()
 
-  const tutorials = await prisma.tutorial.findMany({
-    where: {
-      categoryId: category.id,
-      status: TutorialStatus.PUBLISHED,
-    },
-    orderBy: [{ publishedAt: 'desc' }],
-    select: {
-      id: true,
-      slug: true,
-      title: true,
-      excerpt: true,
-      difficulty: true,
-      season: true,
-      subCategoryId: true,
-      hero: { select: { cloudflareId: true } },
-    },
-  })
+  const [tutorials, currentUser] = await Promise.all([
+    prisma.tutorial.findMany({
+      where: {
+        categoryId: category.id,
+        status: TutorialStatus.PUBLISHED,
+        ...(difficulty ? { difficulty } : {}),
+      },
+      orderBy: [{ publishedAt: 'desc' }],
+      select: {
+        id: true,
+        slug: true,
+        title: true,
+        excerpt: true,
+        difficulty: true,
+        season: true,
+        subCategoryId: true,
+        hero: { select: { cloudflareId: true } },
+      },
+    }),
+    getCurrentDbUser(),
+  ])
+
+  const readerState = currentUser
+    ? await loadReaderState(
+        currentUser.id,
+        tutorials.map((t) => t.id),
+      )
+    : emptyReaderState()
 
   const grouped = new Map<string | null, typeof tutorials>()
   for (const t of tutorials) {
@@ -67,7 +97,6 @@ export default async function CategoryPage({ params }: PageProps) {
     category.subCategories.map((s) => [s.id, s] as const),
   )
 
-  // Render sub-category groups in declared order, then any unassigned at the end.
   const orderedKeys: (string | null)[] = [
     ...category.subCategories
       .map((s) => s.id)
@@ -83,12 +112,19 @@ export default async function CategoryPage({ params }: PageProps) {
         {category.description && (
           <p className="category-description">{category.description}</p>
         )}
+        {difficulty && (
+          <p className="category-filter-note">
+            Showing {difficulty.toLowerCase()} tutorials only ·{' '}
+            <a href={`/${category.slug}`}>show all</a>
+          </p>
+        )}
       </header>
 
       {tutorials.length === 0 ? (
         <p className="category-empty">
-          Nothing published in {category.name.toLowerCase()} just yet. New
-          tutorials are added each week.
+          {difficulty
+            ? `No ${difficulty.toLowerCase()} tutorials in ${category.name.toLowerCase()} yet.`
+            : `Nothing published in ${category.name.toLowerCase()} just yet. New tutorials are added each week.`}
         </p>
       ) : (
         orderedKeys.map((key) => {
@@ -120,6 +156,7 @@ export default async function CategoryPage({ params }: PageProps) {
                     heroUrl={cloudflareDeliveryUrl(t.hero?.cloudflareId, 'card')}
                     difficulty={t.difficulty}
                     season={t.season}
+                    state={readerStateFor(readerState, t.id)}
                   />
                 ))}
               </div>
