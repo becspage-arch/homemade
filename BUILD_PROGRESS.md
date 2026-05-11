@@ -49,16 +49,46 @@ These don't need to exist before there's content and users to track. We add each
 
 ### 🏗 Pre-launch debt (must address before public launch)
 
-- Upgrade Cloudflare SSL from **Flexible** → **Full (strict)** with a Cloudflare Origin Certificate + HTTPS listener on ALB
-- Tighten the `claude-deploy` IAM user — drop `AdministratorAccess` for a scoped policy once the resource set stabilises
 - Rotate all credentials (AWS keys, Cloudflare token, Neon, Clerk, splash password)
 - Move secrets out of `.env.credentials` and into a password manager
-- GitHub Actions: switch to Node 24 (`FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true` or upgrade action versions)
-- Add CloudWatch alarms (task failure, ALB 5xx, ECS service unhealthy)
 - ESLint won't run — `next lint` removed in Next 16, ESLint v9 needs flat config. Migrate to `eslint.config.js` so we have a linter again.
 - SubTutorialCard cross-references: deleting a tutorial leaves dead `tutorialId` refs in other tutorials' TipTap JSON. Either scan JSON content for refs before delete and block, or schedule a periodic cleanup that nulls dangling refs.
 - **Typesense CDK secret-mount.** `packages/search` is wired and gracefully no-ops without env vars. To turn search on in production: (a) Rebecca creates a Typesense Cloud cluster and drops keys into `.env.credentials`, (b) a small follow-up CDK pass adds the three Typesense secrets to AWS Secrets Manager and mounts them into the ECS task definition, using the same two-step CFN pattern as Phase 2e.
 - **Mobile splash asset.** Current splash source is `favicon-1024.png` (1024×1024). Capacitor wants 2732×2732 with content centred in the inner 1200×1200 — replace `apps/mobile/assets/splash.png` and rerun `pnpm --filter @homemade/mobile assets:generate` then `sync`. Same for splitting the icon foreground / background pair into a transparent sage "h" + a sage tile for a proper Android adaptive icon.
+
+### ✅ Pre-launch hardening pass
+
+Resolved in this session — see "Phase 1 hardening pass" below.
+
+- Cloudflare SSL Flexible → Full (strict) with Cloudflare Origin Cert on the ALB
+- `claude-deploy` IAM tightened — `AdministratorAccess` replaced with `HomemadeScopedDeploy` (custom-managed policy in `infra/policies/claude-deploy.json`)
+- GitHub Actions runners on Node 24 (`actions/checkout@v5`, `actions/setup-node@v5`, `aws-actions/configure-aws-credentials@v5`)
+- CloudWatch alarms wired (ALB 5xx, target unhealthy, ECS task count) into a new SNS topic `homemade-alarms` with email subscription
+- Clerk webhook secret mounted into ECS task — `CLERK_WEBHOOK_SIGNING_SECRET` env var live, `/api/webhooks/clerk` endpoint goes from 503 → 400/200 once a signed request lands
+
+### Phase 1 hardening pass
+
+Pre-launch infra cleanup, run end-to-end in one session.
+
+- **Cloudflare SSL: Flexible → Full (strict).** Generated a 15-year Cloudflare Origin Certificate for `homemade.education` + `*.homemade.education` (via the Cloudflare dashboard — the user-scoped API token can't hit the Origin CA endpoint), imported into ACM in `eu-west-2`, attached to a new HTTPS:443 listener on the ALB. HTTP:80 listener kept and switched from forward → 301 redirect to HTTPS. Migration ran in three CDK deploys to avoid a redirect loop while Cloudflare was still in Flexible mode: (a) add HTTPS:443 with HTTP:80 still forwarding, (b) flip Cloudflare to Full strict, (c) flip HTTP:80 to redirect. Net result: no plaintext traffic between Cloudflare and origin, no plaintext traffic to the ALB.
+- **`claude-deploy` IAM scoped.** Wrote `infra/policies/claude-deploy.json` — covers CDK bootstrap-role assumption, ECR push for `homemade/web`, ECS service update, Secrets Manager `homemade/*`, ACM cert import, CloudWatch alarms/logs read, and a break-glass section for self-policy management on the `claude-deploy` user. Attached as a managed policy (`HomemadeScopedDeploy`), `AdministratorAccess` detached. Verified by running `cdk diff` and a no-op `cdk deploy` with only the scoped policy attached — both succeeded.
+- **GitHub Actions on Node 24.** Bumped `actions/checkout` v4→v5, `actions/setup-node` v4→v5, and `aws-actions/configure-aws-credentials` v4→v5 in `.github/workflows/deploy.yml`. The pnpm, Docker, and ECR-login actions were already on current Node-20+ versions.
+- **CloudWatch alarms + SNS.** Three alarms wired in CDK with an SNS topic `homemade-alarms` and `rebecca@homemade.education` as an email subscriber:
+  - `homemade-web-alb-5xx` — `HTTPCode_ELB_5XX_Count + HTTPCode_Target_5XX_Count` > 5 in a 5-minute window (3 of 5 datapoints).
+  - `homemade-web-targets-unhealthy` — `HealthyHostCount < 1` for 2 consecutive minutes.
+  - `homemade-web-running-task-count` — `RunningTaskCount < 1` for 5 consecutive minutes.
+  - All tagged `Project=Homemade`. Email subscription confirmation manually accepted.
+- **Clerk webhook signing secret mounted.** Endpoint created in Clerk's dashboard (Development env) pointing at `https://homemade.education/api/webhooks/clerk`, signing secret stored in AWS Secrets Manager, and `CLERK_WEBHOOK_SIGNING_SECRET` mounted into the ECS task. The two-deploy CFN-race mitigation (Option A) was wired into the CDK code with a `MOUNT_CLERK_WEBHOOK_SECRET=1` env-gated reference, separate from the IAM grant which lands earlier in the same stack template.
+- **AWS Secrets Manager parser bug — workaround.** The original secret was named `homemade/clerk-webhook-secret`. AWS Secrets Manager's API can't parse the *no-suffix* ARN form (`arn:...:secret:homemade/clerk-webhook-secret`) for secrets whose names end in `-secret` — the parser appears to treat the trailing `-secret` as the random suffix and resolves to a different (non-existent) underlying secret, returning `ResourceNotFoundException`. ECS Fargate, which passes the no-suffix ARN from the task definition's `valueFrom`, wraps that error as a misleading `AccessDeniedException`. Fix: renamed the AWS secret to `homemade/clerk-webhook-signing-secret-v2` (doesn't end in `-secret`) and pointed the CDK reference at the new name. Old secret scheduled for deletion with a 7-day recovery window.
+- **CDK guard added.** Replaced `process.env.X ?? ''` fallback for `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` and `CLOUDFLARE_IMAGES_DELIVERY_HASH` with `requireEnv()` so a local deploy without these set hard-fails instead of silently overwriting production values with empty strings.
+- **Three-stage HTTPS migration is reversible.** Stack now reads `ORIGIN_CERT_ARN` and `HTTP_PORT_80_REDIRECT` from env, so the old plain-HTTP topology is one deploy away if needed for re-bootstrap.
+
+#### Out of scope for this pass
+
+- Credential rotation + password manager migration — needs Rebecca in external account UIs.
+- WAF / Bot Fight Mode / rate-limiting — defer.
+- Backup verification / drift detection / Sentry / PostHog / Inngest — phase-specific.
+- Token-scope upgrade for `CLOUDFLARE_API_TOKEN` (to include Origin CA + Zone Settings:Edit) — current token can't issue origin certs or flip SSL mode via API; both were done in the dashboard this session.
 
 ---
 
