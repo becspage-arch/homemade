@@ -87,16 +87,22 @@ These don't need to exist before there's content and users to track. We add each
   - Server component pulling live Prisma counts of tutorials / categories / glossary / media
   - Sage-on-cream header with nav for Tutorials / Categories / Glossary / Media + Clerk user button
 
-### Up next (Phase 2c, next session)
+### ✅ Phase 2c — categories CRUD + plumbing
 
-- Clerk webhook handler (`/api/webhooks/clerk`) that upserts a `User` row in Prisma on signup, sets role from the email allowlist
-- `/admin/tutorials` — list + create + edit with rich-text editor (TipTap)
-- Custom TipTap blocks: info panel, supplies card, inline tooltip, sub-tutorial card, pull quote
-- Live preview matching production rendering
-- Draft / scheduled / published states + version history UI
-- `/admin/categories`, `/admin/glossary`, `/admin/media` CRUD
-- Audit log writes on every admin action
-- `prisma migrate deploy` step in the GitHub Actions workflow so future schema changes auto-apply
+- **JIT user provisioning** in `apps/web/src/lib/get-current-user.ts` — the Prisma `User` row is created on first sign-in. Email allowlist sets role: `rebecca@homemade.education` → ADMIN, everyone else → MEMBER. Replaces the hardcoded email check in the admin layout.
+- **Audit log helper** in `apps/web/src/lib/audit.ts` — writes a row per admin mutation, never throws.
+- **`/admin/categories`**: list view (order / name / slug / counts / updated date), new form, edit form, delete (blocks if tutorials or sub-categories still reference it). Server actions with validation in `actions.ts`, all writing audit entries.
+- **`prisma migrate deploy` in GitHub Actions**: runs before ECS rollout so new code finds the migrated schema. Idempotent — no-op when no migrations are pending. `DATABASE_URL` added as a repo secret.
+
+### Up next
+
+- Clerk webhook handler (`/api/webhooks/clerk`) — JIT works fine but a webhook means roles/emails stay in sync if Rebecca changes them in Clerk.
+- `/admin/glossary` CRUD — same shape as categories, fast to build on the same pattern.
+- `/admin/media` — Cloudflare upload flow (R2 + Cloudflare Images), moderation status.
+- `/admin/tutorials` — list + create + edit with TipTap rich editor + custom blocks. The biggest single piece of Phase 2.
+- Custom TipTap blocks: info panel, supplies card, inline tooltip, sub-tutorial card, pull quote.
+- Live preview matching production rendering.
+- Draft / scheduled / published states + version history UI (using `TutorialVersion` model).
 
 ### Architecture decisions to note
 
@@ -130,3 +136,5 @@ Not started. Plan unchanged.
 - `dc2f04c` — docs: BUILD_PROGRESS.md
 - `4b7a662` — feat(db): packages/db with Prisma 7 + initial schema + first migration
 - `60a38c9` — feat(admin): Clerk auth + first /admin dashboard
+- `03ce874` — docs: log Phase 2a + 2b in BUILD_PROGRESS
+- `90973ae` — feat(admin): categories CRUD + JIT user provisioning + audit log + migrate-in-CI
