@@ -64,26 +64,45 @@ These don't need to exist before there's content and users to track. We add each
 
 ### ✅ Done
 
-(Will update as items land.)
+- `packages/db` workspace with Prisma 7 + `@prisma/adapter-pg` + `pg`
+- Initial schema in `packages/db/prisma/schema.prisma`:
+  - `User` (Clerk shadow + role enum)
+  - `Category`, `SubCategory`, `Tag`
+  - `GlossaryTerm`
+  - `Tutorial` (full metadata, source attribution, status lifecycle, hero media)
+  - `TutorialVersion` (per-save snapshot for history + rollback)
+  - `Media` (Cloudflare ID, R2 key, status)
+  - `AuditLog`
+- First migration applied to Neon (`20260511104429_init`)
+- `prisma.config.ts` configured for Prisma 7's new datasource-via-config pattern
+- `prisma generate` runs as a workspace postinstall and during Docker build
+- Lazy-proxied Prisma client (safe to import at build time without `DATABASE_URL`)
+- `apps/web` wired to Clerk:
+  - `@clerk/nextjs` installed, `ClerkProvider` wraps the root layout
+  - `proxy.ts` combines splash cookie gate + Clerk auth for `/admin/*`
+  - `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` flowing from GitHub secret → Docker build arg → JS bundle
+  - `CLERK_SECRET_KEY` already in Secrets Manager and mounted into ECS via CDK
+- `/admin` dashboard live:
+  - Email-allowlist gate (`rebecca@homemade.education` → ADMIN)
+  - Server component pulling live Prisma counts of tutorials / categories / glossary / media
+  - Sage-on-cream header with nav for Tutorials / Categories / Glossary / Media + Clerk user button
 
-### Up next
+### Up next (Phase 2c, next session)
 
-- `packages/db` with Prisma 7
-- Full initial Prisma schema covering: `User`, `Tutorial`, `TutorialVersion`, `Category`, `SubCategory`, `Tag`, `Glossary`, `Media`
-- First migration against Neon
-- Migrations workflow in CI
-- Admin route in `apps/web` (gated by Clerk role)
-- Tutorial CRUD with rich block editor (TipTap)
-- Custom blocks: info panel, supplies card, inline tooltip, chart, sub-tutorial card, pull quote
+- Clerk webhook handler (`/api/webhooks/clerk`) that upserts a `User` row in Prisma on signup, sets role from the email allowlist
+- `/admin/tutorials` — list + create + edit with rich-text editor (TipTap)
+- Custom TipTap blocks: info panel, supplies card, inline tooltip, sub-tutorial card, pull quote
 - Live preview matching production rendering
-- Draft / scheduled / published states
-- Version history per save with rollback
-- Audit log entries for every edit
-- Category, sub-category, tag, glossary management UI
+- Draft / scheduled / published states + version history UI
+- `/admin/categories`, `/admin/glossary`, `/admin/media` CRUD
+- Audit log writes on every admin action
+- `prisma migrate deploy` step in the GitHub Actions workflow so future schema changes auto-apply
 
 ### Architecture decisions to note
 
 - **Admin lives at `/admin` route inside `apps/web`, not a separate `apps/admin` app.** The architecture doc specifies a separate app; we're starting simpler (single app, Clerk-role-gated route) because for now Rebecca is the only admin and the additional infra cost of a second deploy target isn't worth it pre-launch. We can split into `apps/admin` later if/when scale or separation needs justify it. Tracked as a possible-future-refactor, not debt.
+- **Admin authorisation is a hardcoded email allowlist** in `apps/web/src/lib/auth.ts`, not a Prisma `User.role` lookup. To be replaced once the Clerk webhook is wired and `User` rows are populated automatically on signup.
+- **Recipe / Pattern / Review / Q&A / UserProject / Marketplace / Creator / Errata models intentionally deferred** until the phases that need them. The schema is incremental.
 
 ---
 
@@ -108,3 +127,6 @@ Not started. Plan unchanged.
 - `f49abb8` — fix: add `apps/web/public/.gitkeep`
 - `cf74228` — fix: unlock route redirects to public origin
 - `7924cbb` — fix: force https in unlock redirect origin in production
+- `dc2f04c` — docs: BUILD_PROGRESS.md
+- `4b7a662` — feat(db): packages/db with Prisma 7 + initial schema + first migration
+- `60a38c9` — feat(admin): Clerk auth + first /admin dashboard
