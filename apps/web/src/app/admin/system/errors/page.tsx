@@ -1,3 +1,5 @@
+import { SentryTestButton } from './test-button'
+
 const SENTRY_ORG_SLUG = process.env.SENTRY_ORG_SLUG ?? null
 const SENTRY_PROJECT_SLUG = process.env.SENTRY_PROJECT_SLUG ?? null
 
@@ -31,6 +33,17 @@ export default function AdminErrorsPage() {
           Sentry isn’t configured in this environment yet.
         </p>
       )}
+
+      <section style={{ marginTop: 32 }}>
+        <h2 style={{ fontSize: '1.1rem' }}>Smoke test</h2>
+        <p style={{ marginBottom: 12 }}>
+          One-off check that Sentry is catching real errors. Clicking this
+          throws a server error with a recognisable message; it should appear
+          in the Sentry dashboard within a minute. Remove this button after
+          the first successful capture.
+        </p>
+        <SentryTestButton />
+      </section>
     </div>
   )
 }
