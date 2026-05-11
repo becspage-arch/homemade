@@ -1,0 +1,26 @@
+{
+  "name": "@homemade/infra",
+  "private": true,
+  "version": "0.0.0",
+  "bin": {
+    "homemade": "bin/homemade.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "synth": "cdk synth",
+    "diff": "cdk diff",
+    "deploy": "cdk deploy",
+    "destroy": "cdk destroy",
+    "bootstrap": "cdk bootstrap"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.253.1",
+    "constructs": "^10.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "aws-cdk": "^2.1121.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
