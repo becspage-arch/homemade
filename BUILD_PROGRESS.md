@@ -854,6 +854,109 @@ Plan unchanged.
 
 ---
 
+## Pre-launch checklist
+
+Definitive list of items that must land before the splash gate comes
+down. Most are external (registrations, account aliases, postal-address
+decisions) — they don't show up in any failing typecheck or CI run, so
+they're easy to forget. Mirrored in
+`memory/project_pre_launch_checklist.md` so future sessions read the
+same list.
+
+Tick items here as they're done.
+
+### Legal / compliance
+
+- [ ] **ICO registration.** £40/yr Tier 1, online via
+      [ico.org.uk/for-organisations/data-protection-fee](https://ico.org.uk/for-organisations/data-protection-fee/).
+      After registering, set `LEGAL_ENTITY.icoRegistrationNumber` in
+      `apps/web/src/lib/legal-entity.ts`. Runbook:
+      `docs/ico-registration.md`.
+- [ ] **DMCA designated agent.** $6 one-time via the US Copyright
+      Office at
+      [copyright.gov/dmca-directory](https://www.copyright.gov/dmca-directory/).
+      Gets us US safe-harbour against copyright claims from US users.
+      Until done, `/legal/dmca` shows "Designated agent registration
+      pending" + there's a `TODO(legal)` comment in
+      `apps/web/src/app/(public)/legal/dmca/page.tsx`.
+- [ ] **Email aliases — privacy@ / dpo@ / legal@.** Create in Google
+      Workspace, forward all three to `rebecca@homemade.education`.
+      Every legal-page contact link bounces until these exist.
+      Runbook: `docs/email-aliases-needed.md`.
+- [ ] **Postal address decision.** Optional pre-launch (UK GDPR
+      allows email-only controller contact) but **required once the
+      premium tier launches** (E-Commerce Regulations 2002 + Consumer
+      Contracts Regulations 2013 require a published geographic
+      address the moment we charge money). Options: home address,
+      virtual office / mail-forwarding service (~£10-20/month for a
+      London address), or registered office service if/when
+      incorporating. Until decided, `LEGAL_ENTITY.postalAddress =
+      null` renders "available on request" — legally fine for a
+      free service.
+- [ ] **Legal-copy audit on scope change.** Whenever we add a new
+      processor (analytics, support tool, etc.), a new data category
+      (voice, location, biometric…), a new feature with IP / privacy
+      implications (AI generation, real-time chat, marketplace), a
+      new paid feature, or operations in a new jurisdiction, re-read
+      `/legal/privacy`, `/legal/terms`, `/legal/cookies` and patch
+      anything stale. Bump `LEGAL_ENTITY.effectiveDate` on material
+      changes so the "Last updated" pin moves and the cookie banner
+      re-shows (version check). Voice rules
+      (`feedback_homemade_voice.md`) still apply.
+
+### Identity / incorporation
+
+- [ ] **Companies House decision.** Sole-trader by default;
+      incorporating is optional but informs lots of downstream copy
+      (limited-liability shield, Companies House number in the
+      footer per Companies Act 2006). If incorporating, also
+      re-register with ICO under the new entity name and update
+      `LEGAL_ENTITY.name` + `companiesHouseNumber`.
+- [ ] **VAT registration.** Only triggers above £90k turnover or
+      voluntarily. Once registered, set `LEGAL_ENTITY.vatNumber` and
+      flip subscription-terms copy from "exclusive" to "inclusive of
+      VAT".
+
+### Operations / launch readiness
+
+- [ ] **Splash gate flip.** Either remove the splash gate entirely
+      or add `/legal` to `PUBLIC_PATHS` in `apps/web/src/proxy.ts`
+      so the policies stay reachable for regulators / journalists
+      hitting the URLs without the splash password. Currently the
+      gate rewrites `/legal/*` to `/coming-soon` — fine for private
+      beta, not for public launch.
+- [ ] **Hard-delete cron for scheduled account deletions.** The
+      30-day deletion queue is populated and visible to admins; an
+      Inngest function needs to run nightly to scrub PII, set
+      `User.deletedAt`, and cascade content removal for any
+      `AccountDeletionRequest` past `scheduledFor`. Inngest is live
+      since the services-activation session, so this is a small
+      follow-up.
+- [ ] **Analytics consent wiring.** Wrappers at
+      `apps/web/src/lib/analytics-consent.ts`:
+      `installAnalyticsConsentListener()` (PostHog),
+      `shouldSendSentryEvent()` (Sentry `beforeSend`). Need a
+      one-line wire-in from each init file
+      (`instrumentation-client.ts` for Sentry, `posthog-provider.tsx`
+      for PostHog). Without these, PostHog captures + Sentry sends
+      regardless of the cookie banner choice.
+- [ ] **Credential rotation.** Rotate every secret in
+      `.env.credentials` and move to a password manager (AWS keys,
+      Cloudflare token, Neon, Clerk, splash password).
+- [ ] **ESLint flat-config migration.** `next lint` was removed in
+      Next 16; no linter currently runs in CI. Migrate to
+      `eslint.config.js`.
+- [ ] **TODO(legal) sweep.** Grep `TODO(legal)` across the repo
+      before launch — every comment should have an action taken or a
+      conscious "still deferred" decision.
+
+### Done since this checklist was created
+
+_When ticking, move the line here with the date + commit SHA so the
+history stays visible._
+
+---
+
 ## Phase 1 deferred-services activation — Sentry + PostHog + Inngest + Upstash
 
 Bundled session that ticks the four "wired but not active" services off the
