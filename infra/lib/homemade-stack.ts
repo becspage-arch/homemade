@@ -81,6 +81,11 @@ export class HomemadeStack extends cdk.Stack {
       'ClerkSecret',
       'homemade/clerk-secret-key',
     )
+    const clerkWebhookSecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'ClerkWebhookSecret',
+      'homemade/clerk-webhook-secret',
+    )
 
     // ────────────────────────────────────────────────────────────────
     // CloudWatch — task logs
@@ -125,6 +130,7 @@ export class HomemadeStack extends cdk.Stack {
         SPLASH_PASSWORD: ecs.Secret.fromSecretsManager(splashSecret),
         DATABASE_URL: ecs.Secret.fromSecretsManager(databaseSecret),
         CLERK_SECRET_KEY: ecs.Secret.fromSecretsManager(clerkSecret),
+        CLERK_WEBHOOK_SIGNING_SECRET: ecs.Secret.fromSecretsManager(clerkWebhookSecret),
       },
       portMappings: [{ containerPort: 3000, protocol: ecs.Protocol.TCP }],
       essential: true,

@@ -55,6 +55,20 @@ export default async function AdminLayout({ children }: { children: React.ReactN
             categories
           </Link>
           <Link
+            href="/admin/sub-categories"
+            className="text-xs uppercase text-[var(--color-warm-taupe)] hover:text-[var(--color-sage)]"
+            style={{ fontFamily: 'var(--font-lora)', letterSpacing: '0.25em' }}
+          >
+            sub-cats
+          </Link>
+          <Link
+            href="/admin/tags"
+            className="text-xs uppercase text-[var(--color-warm-taupe)] hover:text-[var(--color-sage)]"
+            style={{ fontFamily: 'var(--font-lora)', letterSpacing: '0.25em' }}
+          >
+            tags
+          </Link>
+          <Link
             href="/admin/glossary"
             className="text-xs uppercase text-[var(--color-warm-taupe)] hover:text-[var(--color-sage)]"
             style={{ fontFamily: 'var(--font-lora)', letterSpacing: '0.25em' }}
