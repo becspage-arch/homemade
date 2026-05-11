@@ -17,7 +17,10 @@
     "studio": "prisma studio",
     "format": "prisma format",
     "typecheck": "tsc --noEmit",
-    "search:backfill": "tsx scripts/typesense-backfill.ts"
+    "search:backfill": "tsx scripts/typesense-backfill.ts",
+    "tutorial:upload": "tsx scripts/upload-tutorial.ts",
+    "tutorial:verify": "tsx scripts/verify-tutorial-bodies.ts",
+    "seed:cooking": "tsx scripts/seed-cooking-taxonomy.ts"
   },
   "dependencies": {
     "@homemade/search": "workspace:*",

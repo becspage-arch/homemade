@@ -1,0 +1,515 @@
+/**
+ * Programmatic tutorial upload.
+ *
+ * Run:
+ *   pnpm --filter "@homemade/db" run tutorial:upload <path-to-input.json>
+ *   pnpm --filter "@homemade/db" exec tsx scripts/upload-tutorial.ts <path-to-input.json>
+ *
+ * Or from the package directory:
+ *   pnpm exec tsx scripts/upload-tutorial.ts scripts/anchor-tutorials/bechamel.json
+ *
+ * Reads DATABASE_URL + CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID from the
+ * environment, falling back to `.env.credentials` at the repo root.
+ *
+ * Companion scripts:
+ *   - seed-cooking-taxonomy.ts  (creates Cooking + Sauces + Preserves once)
+ *   - verify-tutorial-bodies.ts (walks bodies and checks node + mark types)
+ *
+ * The input file is a JSON document of shape `TutorialUploadInput` (see
+ * `./upload-tutorial-types.ts`). The script will:
+ *
+ *   1. Resolve the author (rebecca@homemade.education) — fail if absent.
+ *   2. Resolve the Category by slug — fail if absent. NEVER creates a Category.
+ *   3. Resolve the SubCategory by slug (within the chosen Category) — fail
+ *      if a slug is given that doesn't exist. SubCategory is optional.
+ *   4. For every glossary `slug` referenced in `glossaryTerms`, look it up by
+ *      slug. Create any that are missing using the definition supplied
+ *      alongside (so the upload is self-describing and idempotent).
+ *   5. If `hero.localPath` is set and the input has no `hero.mediaId`, push the
+ *      file through Cloudflare Images direct-upload and create a Media row in
+ *      READY state, then use the new media as hero.
+ *   6. Insert the Tutorial as DRAFT (or update an existing row with the same
+ *      slug — idempotent re-run).
+ *   7. Snapshot a TutorialVersion to match the admin's lifecycle pattern.
+ *
+ * Mirrors `apps/web/src/app/admin/tutorials/actions.ts` (createTutorial /
+ * updateTutorial) and `apps/web/src/app/admin/media/actions.ts` (registerUpload)
+ * so the resulting rows look identical to admin-authored ones.
+ */
+
+import { config as loadEnv } from 'dotenv'
+import { existsSync, readFileSync } from 'node:fs'
+import { basename, dirname, isAbsolute, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
+// Try `.env.credentials` in three plausible locations: repo root next to
+// the worktree, a relative-up path, or whatever the CWD says. First match wins.
+for (const candidate of [
+  resolve(__dirname, '../../..', '.env.credentials'),
+  resolve(__dirname, '../../../..', '.env.credentials'),
+  resolve(__dirname, '../../../../..', '.env.credentials'),
+  resolve(process.cwd(), '.env.credentials'),
+]) {
+  if (existsSync(candidate)) {
+    loadEnv({ path: candidate })
+    break
+  }
+}
+
+// Imports that touch process.env (Prisma client) are loaded lazily inside main()
+// after env is loaded.
+import type { Prisma } from '@prisma/client'
+
+import type { TutorialUploadInput, UploadResult } from './upload-tutorial-types.js'
+import { validateInput } from './upload-tutorial-types.js'
+
+type PrismaModule = typeof import('../src/index.js')
+let prismaMod: PrismaModule | null = null
+async function getPrisma(): Promise<PrismaModule> {
+  if (!prismaMod) prismaMod = await import('../src/index.js')
+  return prismaMod
+}
+
+// ─── Cloudflare Images (mirrors apps/web/src/lib/cloudflare-images.ts) ────────
+
+const CF_API_BASE = 'https://api.cloudflare.com/client/v4'
+
+interface CloudflareEnvelope<T> {
+  result: T
+  success: boolean
+  errors: { code: number; message: string }[]
+  messages: { code: number; message: string }[]
+}
+
+interface DirectUploadResult {
+  id: string
+  uploadURL: string
+}
+
+function cloudflareEnv(): { accountId: string; apiToken: string } {
+  const accountId = process.env.CLOUDFLARE_ACCOUNT_ID
+  const apiToken = process.env.CLOUDFLARE_API_TOKEN
+  if (!accountId || !apiToken) {
+    throw new Error(
+      'Cloudflare credentials are not configured. Set CLOUDFLARE_ACCOUNT_ID + CLOUDFLARE_API_TOKEN.',
+    )
+  }
+  return { accountId, apiToken }
+}
+
+async function callCloudflare<T>(
+  path: string,
+  init: RequestInit & { authToken: string },
+): Promise<T> {
+  const { authToken, ...rest } = init
+  const res = await fetch(`${CF_API_BASE}${path}`, {
+    ...rest,
+    headers: {
+      ...(rest.headers ?? {}),
+      Authorization: `Bearer ${authToken}`,
+    },
+    cache: 'no-store',
+  })
+  const text = await res.text()
+  let payload: CloudflareEnvelope<T>
+  try {
+    payload = JSON.parse(text) as CloudflareEnvelope<T>
+  } catch {
+    throw new Error(`Cloudflare returned non-JSON (${res.status}): ${text.slice(0, 200)}`)
+  }
+  if (!res.ok || !payload.success) {
+    const msg = payload.errors?.map((e) => `${e.code}: ${e.message}`).join('; ') || res.statusText
+    throw new Error(`Cloudflare API error (${res.status}): ${msg}`)
+  }
+  return payload.result
+}
+
+async function createDirectUpload(): Promise<DirectUploadResult> {
+  const { accountId, apiToken } = cloudflareEnv()
+  const formData = new FormData()
+  formData.append('requireSignedURLs', 'false')
+  return callCloudflare<DirectUploadResult>(
+    `/accounts/${accountId}/images/v2/direct_upload`,
+    { method: 'POST', body: formData, authToken: apiToken },
+  )
+}
+
+async function uploadFileToCloudflare(
+  uploadURL: string,
+  fileBytes: Buffer,
+  filename: string,
+  mimeType: string,
+): Promise<void> {
+  const form = new FormData()
+  // Buffer -> Uint8Array -> Blob keeps the types straight under DOM lib defs.
+  const blob = new Blob([new Uint8Array(fileBytes)], { type: mimeType })
+  form.append('file', blob, filename)
+  const res = await fetch(uploadURL, { method: 'POST', body: form })
+  if (!res.ok) {
+    const text = await res.text()
+    throw new Error(`Cloudflare direct-upload POST failed (${res.status}): ${text.slice(0, 200)}`)
+  }
+}
+
+// PNG dimensions from the 16-byte IHDR header. Avoids pulling in sharp / image-size.
+function readPngDimensions(buf: Buffer): { width: number; height: number } | null {
+  if (buf.length < 24) return null
+  // PNG signature is bytes 0..7, IHDR starts at byte 8 with length(4) + 'IHDR'(4)
+  if (buf.toString('ascii', 12, 16) !== 'IHDR') return null
+  const width = buf.readUInt32BE(16)
+  const height = buf.readUInt32BE(20)
+  return { width, height }
+}
+
+// ─── Main upload flow ────────────────────────────────────────────────────────
+
+async function uploadTutorial(input: TutorialUploadInput, inputFilePath: string): Promise<UploadResult> {
+  validateInput(input)
+
+  const { prisma, MediaStatus, MediaType, TutorialStatus, SourceType, Difficulty, Season } =
+    await getPrisma()
+
+  // 1. Author.
+  const author = await prisma.user.findUnique({
+    where: { email: 'rebecca@homemade.education' },
+  })
+  if (!author) {
+    throw new Error(
+      "Author user 'rebecca@homemade.education' not found. Sign in once at /admin to provision the row, then re-run.",
+    )
+  }
+
+  // 2. Category by slug.
+  const category = await prisma.category.findUnique({ where: { slug: input.categorySlug } })
+  if (!category) {
+    throw new Error(
+      `Category with slug "${input.categorySlug}" not found. Create it in /admin/categories first.`,
+    )
+  }
+
+  // 3. Optional sub-category by slug (within this category's id).
+  let subCategoryId: string | null = null
+  if (input.subCategorySlug) {
+    const sub = await prisma.subCategory.findUnique({
+      where: {
+        categoryId_slug: {
+          categoryId: category.id,
+          slug: input.subCategorySlug,
+        },
+      },
+    })
+    if (!sub) {
+      throw new Error(
+        `Sub-category "${input.subCategorySlug}" not found under category "${input.categorySlug}". Create it in /admin/sub-categories first, or omit the field.`,
+      )
+    }
+    subCategoryId = sub.id
+  }
+
+  // 4. Glossary terms — create any that are missing.
+  const createdGlossary: { slug: string; term: string; id: string }[] = []
+  const glossaryIdBySlug = new Map<string, string>()
+  for (const g of input.glossaryTerms ?? []) {
+    const existing = await prisma.glossaryTerm.findUnique({ where: { slug: g.slug } })
+    if (existing) {
+      glossaryIdBySlug.set(g.slug, existing.id)
+      continue
+    }
+    const created = await prisma.glossaryTerm.create({
+      data: {
+        slug: g.slug,
+        term: g.term,
+        definition: g.definition,
+        categoryId: category.id,
+      },
+    })
+    glossaryIdBySlug.set(g.slug, created.id)
+    createdGlossary.push({ slug: created.slug, term: created.term, id: created.id })
+  }
+
+  // 5. Hero image — upload if a localPath is given.
+  let heroMediaId: string | null = input.hero?.mediaId ?? null
+  let heroCloudflareId: string | null = null
+
+  if (!heroMediaId && input.hero?.localPath) {
+    const heroPath = isAbsolute(input.hero.localPath)
+      ? input.hero.localPath
+      : resolve(dirname(inputFilePath), input.hero.localPath)
+
+    if (!existsSync(heroPath)) {
+      throw new Error(`Hero image not found at ${heroPath}. Check the localPath field in the input JSON.`)
+    }
+
+    const fileBytes = readFileSync(heroPath)
+    const filename = basename(heroPath)
+    const lowered = filename.toLowerCase()
+    const mimeType = lowered.endsWith('.png')
+      ? 'image/png'
+      : lowered.endsWith('.jpg') || lowered.endsWith('.jpeg')
+        ? 'image/jpeg'
+        : lowered.endsWith('.webp')
+          ? 'image/webp'
+          : 'application/octet-stream'
+
+    const probe = mimeType === 'image/png' ? readPngDimensions(fileBytes) : null
+
+    // Idempotency: re-running on an existing Tutorial slug + same hero filename
+    // would re-upload the image every time. Cheap dedup: if a Media row already
+    // exists for this exact filename + bytes, reuse it. Includes UPLOADING-state
+    // rows (the Cloudflare-Images-not-enabled fallback path) so we don't pile
+    // up stub rows on re-runs.
+    const existingByFilename = await prisma.media.findFirst({
+      where: {
+        filename,
+        bytes: fileBytes.length,
+        status: { in: [MediaStatus.READY, MediaStatus.UPLOADING] },
+      },
+      orderBy: { createdAt: 'desc' },
+    })
+
+    if (existingByFilename) {
+      heroMediaId = existingByFilename.id
+      heroCloudflareId = existingByFilename.cloudflareId
+      console.log(`  [hero] reusing existing Media ${existingByFilename.id} (filename match)`)
+    } else {
+      console.log('  [hero] pushing to Cloudflare Images')
+      let cfId: string | null = null
+      let cfStatus: typeof MediaStatus.READY | typeof MediaStatus.FAILED | typeof MediaStatus.UPLOADING =
+        MediaStatus.READY
+      try {
+        const direct = await createDirectUpload()
+        await uploadFileToCloudflare(direct.uploadURL, fileBytes, filename, mimeType)
+        cfId = direct.id
+      } catch (err) {
+        const message = err instanceof Error ? err.message : String(err)
+        if (/5403|not authorized to access this service/i.test(message)) {
+          console.warn(
+            `  [hero] Cloudflare Images is not enabled on this account. ` +
+              `Creating Media row in UPLOADING state with no cloudflareId — ` +
+              `attach a hero manually via /admin/media + /admin/tutorials/<id> once the Images subscription is restored.`,
+          )
+          cfStatus = MediaStatus.UPLOADING
+        } else {
+          throw err
+        }
+      }
+
+      const media = await prisma.media.create({
+        data: {
+          cloudflareId: cfId,
+          type: MediaType.ILLUSTRATION,
+          status: cfStatus,
+          filename,
+          mimeType,
+          width: probe?.width ?? null,
+          height: probe?.height ?? null,
+          bytes: fileBytes.length,
+          alt: input.hero?.alt ?? null,
+          caption: input.hero?.caption ?? null,
+          attribution: input.hero?.attribution ?? null,
+        },
+      })
+      heroMediaId = media.id
+      heroCloudflareId = cfId
+      console.log(
+        `  [hero] created Media ${media.id} (cloudflareId=${cfId ?? 'pending'}, status=${cfStatus})`,
+      )
+    }
+  }
+
+  // Resolve glossary IDs inside the body's glossaryTooltip marks. Authors
+  // reference terms by slug for portability; we swap in IDs here.
+  const body = resolveGlossarySlugs(input.body, glossaryIdBySlug) as Prisma.InputJsonValue
+
+  // 6. Upsert the Tutorial.
+  const existingTutorial = await prisma.tutorial.findUnique({ where: { slug: input.slug } })
+
+  const sharedData = {
+    slug: input.slug,
+    title: input.title,
+    subtitle: input.subtitle ?? null,
+    excerpt: input.excerpt ?? null,
+    categoryId: category.id,
+    subCategoryId,
+    difficulty: input.difficulty ?? Difficulty.BEGINNER,
+    season: input.season ?? null,
+    timeMinutes: input.timeMinutes ?? null,
+    sourceType: input.sourceType ?? SourceType.PUBLIC_DOMAIN,
+    sourceNotes: input.sourceNotes ?? null,
+    heroMediaId,
+    body,
+  }
+
+  let tutorialId: string
+  let mode: 'created' | 'updated'
+
+  if (existingTutorial) {
+    // Snapshot the existing state before overwriting (matches admin updateTutorial).
+    await prisma.tutorialVersion.create({
+      data: {
+        tutorialId: existingTutorial.id,
+        title: existingTutorial.title,
+        subtitle: existingTutorial.subtitle,
+        excerpt: existingTutorial.excerpt,
+        body: existingTutorial.body as Prisma.InputJsonValue,
+        status: existingTutorial.status,
+        authorId: author.id,
+        changeNote: 'Script re-upload',
+      },
+    })
+
+    const updated = await prisma.tutorial.update({
+      where: { id: existingTutorial.id },
+      data: sharedData,
+    })
+    tutorialId = updated.id
+    mode = 'updated'
+  } else {
+    const created = await prisma.tutorial.create({
+      data: {
+        ...sharedData,
+        status: TutorialStatus.DRAFT,
+        authorId: author.id,
+      },
+    })
+
+    // 7. First-save snapshot.
+    await prisma.tutorialVersion.create({
+      data: {
+        tutorialId: created.id,
+        title: created.title,
+        subtitle: created.subtitle,
+        excerpt: created.excerpt,
+        body: created.body as Prisma.InputJsonValue,
+        status: created.status,
+        authorId: author.id,
+        changeNote: 'Created via script',
+      },
+    })
+
+    tutorialId = created.id
+    mode = 'created'
+  }
+
+  return {
+    mode,
+    tutorialId,
+    slug: input.slug,
+    categorySlug: category.slug,
+    subCategorySlug: input.subCategorySlug ?? null,
+    heroMediaId,
+    heroCloudflareId,
+    createdGlossary,
+  }
+}
+
+interface NodeShape {
+  type: string
+  attrs?: Record<string, unknown>
+  marks?: { type: string; attrs?: Record<string, unknown> }[]
+  content?: NodeShape[]
+  text?: string
+}
+
+/**
+ * Walk the TipTap document and swap `glossaryTooltip` mark `termSlug` attrs
+ * for `termId` attrs (the renderer + Prisma side both speak in IDs).
+ *
+ * Accepts both shapes — if the author writes `termId` directly that's fine too.
+ */
+function resolveGlossarySlugs(
+  doc: unknown,
+  slugToId: Map<string, string>,
+): unknown {
+  if (!doc || typeof doc !== 'object') return doc
+  const node = doc as NodeShape
+
+  if (Array.isArray(node.marks)) {
+    for (const mark of node.marks) {
+      if (mark.type === 'glossaryTooltip' && mark.attrs) {
+        const attrs = mark.attrs
+        const slug = typeof attrs.termSlug === 'string' ? attrs.termSlug : null
+        if (slug) {
+          const id = slugToId.get(slug)
+          if (!id) {
+            throw new Error(
+              `Body references glossary term slug "${slug}" but no matching term was declared in glossaryTerms[].`,
+            )
+          }
+          attrs.termId = id
+          delete attrs.termSlug
+        }
+      }
+    }
+  }
+
+  if (Array.isArray(node.content)) {
+    for (const child of node.content) {
+      resolveGlossarySlugs(child, slugToId)
+    }
+  }
+  return doc
+}
+
+// ─── Entrypoint ──────────────────────────────────────────────────────────────
+
+async function main(): Promise<void> {
+  const inputArg = process.argv[2]
+  if (!inputArg) {
+    console.error('Usage: pnpm exec tsx scripts/upload-tutorial.ts <path-to-input.json>')
+    process.exit(1)
+  }
+
+  const inputPath = isAbsolute(inputArg) ? inputArg : resolve(process.cwd(), inputArg)
+  if (!existsSync(inputPath)) {
+    console.error(`Input file not found: ${inputPath}`)
+    process.exit(1)
+  }
+
+  const raw = readFileSync(inputPath, 'utf8')
+  let input: TutorialUploadInput
+  try {
+    input = JSON.parse(raw) as TutorialUploadInput
+  } catch (err) {
+    console.error(`Input file is not valid JSON: ${err instanceof Error ? err.message : err}`)
+    process.exit(1)
+  }
+
+  console.log(`[upload-tutorial] ${inputPath}`)
+  console.log(`  slug: ${input.slug}`)
+  console.log(`  title: ${input.title}`)
+
+  const result = await uploadTutorial(input, inputPath)
+
+  console.log(`\n[upload-tutorial] ${result.mode.toUpperCase()}`)
+  console.log(`  Tutorial id: ${result.tutorialId}`)
+  console.log(`  slug: ${result.slug}`)
+  console.log(`  category: ${result.categorySlug}${result.subCategorySlug ? ` / ${result.subCategorySlug}` : ''}`)
+  if (result.heroMediaId) {
+    console.log(`  hero Media id: ${result.heroMediaId}${result.heroCloudflareId ? ` (cloudflareId=${result.heroCloudflareId})` : ''}`)
+  }
+  if (result.createdGlossary.length > 0) {
+    console.log(`  glossary created (${result.createdGlossary.length}):`)
+    for (const g of result.createdGlossary) {
+      console.log(`    - ${g.slug} (id=${g.id}) "${g.term}"`)
+    }
+  } else if ((input.glossaryTerms ?? []).length > 0) {
+    console.log(`  glossary: all ${input.glossaryTerms!.length} terms already existed`)
+  }
+
+  const { prisma } = await getPrisma()
+  await prisma.$disconnect()
+}
+
+main().catch(async (err) => {
+  console.error('[upload-tutorial] failed:', err)
+  try {
+    if (prismaMod) await prismaMod.prisma.$disconnect()
+  } catch {
+    // ignore
+  }
+  process.exit(1)
+})
