@@ -1,0 +1,10 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+# Approved native build scripts. Both are trusted deps:
+# - sharp is used by Next.js for image optimisation
+# - unrs-resolver is used by eslint
+allowBuilds:
+  sharp: true
+  unrs-resolver: true

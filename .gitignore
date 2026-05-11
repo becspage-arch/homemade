@@ -1,0 +1,38 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+.env.credentials
+
+# Node
+node_modules/
+.pnpm-store/
+.turbo/
+.next/
+out/
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local Claude scratch / user-local settings
+.claude/extracted/
+.claude/scratch/
+.claude/settings.local.json
+.claude/worktrees/
+
+# Caches
+.cache/
+.eslintcache
+*.tsbuildinfo
