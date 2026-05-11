@@ -53,6 +53,28 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      # ── Database migrations ──
+      # Runs BEFORE ECS rollout so the new container code finds the migrated
+      # schema. Idempotent — a no-op when no migrations are pending.
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: '11.0.9'
+          run_install: false
+
+      - name: Install @homemade/db deps for migrate step
+        run: pnpm install --filter @homemade/db --frozen-lockfile
+
+      - name: Run database migrations
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: pnpm --filter @homemade/db migrate:deploy
+
       - name: Update ECS service (ensures >=1 task and pulls new image)
         run: |
           aws ecs update-service \

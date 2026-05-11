@@ -1,15 +1,16 @@
-import { currentUser } from '@clerk/nextjs/server'
 import { redirect } from 'next/navigation'
 import { UserButton } from '@clerk/nextjs'
 import Link from 'next/link'
-import { isAdminEmail } from '@/lib/auth'
+import { getCurrentDbUser, isAdmin } from '@/lib/auth'
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
-  const user = await currentUser()
-  if (!user) redirect('/sign-in')
+  const user = await getCurrentDbUser()
 
-  const email = user.emailAddresses[0]?.emailAddress
-  if (!isAdminEmail(email)) {
+  if (!user) {
+    redirect('/sign-in')
+  }
+
+  if (!isAdmin(user)) {
     return (
       <main className="flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">
         <h1
