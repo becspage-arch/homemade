@@ -308,6 +308,42 @@ Not started. Plan unchanged.
 
 ---
 
+## Social media & audience building (pre-launch, standalone)
+
+A standalone work stream sitting alongside the phased build. Getting a social following established before the splash gate drops is part of launch readiness — the day public traffic is welcomed in, there needs to be a route by which it actually arrives.
+
+### ✅ Done
+
+- **Research dossier** in `docs/social-strategy/`. Covers TikTok, YouTube, Pinterest, Instagram, Substack across all five niches (cooking, baking, gardening, crochet, knitting). 26 account cards plus per-platform and per-niche write-ups, a cross-niche synthesis, and a `playbook.md` with a first-90-days calendar template.
+- **Provisional lead-platform recommendation:** Pinterest, paired with YouTube long-form as the second-priority. Pinterest wins on lowest production cost (no video), highest evergreen leverage, strongest audience demographic match, and structural fit with the existing tutorial publishing pipeline. YouTube long-form is the second move because a single Peaceful-Cuisine-style anchor video produces the Shorts / Reels / TikTok cuts plus seeds the Pinterest pin set.
+
+### 🏗 Outstanding before we can act
+
+- **Social Blade growth verification.** Follower counts in the research dossier come from marketing-blog aggregators and may be stale by years. Worksheet at `docs/social-strategy/socialblade-worksheet.md` lists every studied account with its Social Blade URL and the four numbers to record per account (Δ-30-day followers, 30-day views, last-upload date, grade). Rebecca populates the columns; once the data is in we revisit the playbook with currently-growing accounts weighted over historically-large-but-flat ones. **Non-negotiable before acting on the playbook** — without trajectory data, the plan could be built on accounts that grew years ago and have been dormant since.
+- **Lead-platform decision** is provisional and gets re-confirmed (or revised) after the Social Blade data lands.
+
+### Substeps to define once the lead platform is locked
+
+These will be broken out into trackable items once Social Blade data is in and the lead platform is confirmed. Provisional list, in rough order:
+
+- Create + claim the Homemade brand accounts on the lead platforms; reserve handles on the others.
+- Verify `homemade.education` on Pinterest Business; enable Rich Pins via open-graph metadata + the Pinterest validator.
+- Build the Pinterest pin template in Canva or Figma — Fraunces title overlay, sage on cream, brand-direction palette, 1000×1500 vertical.
+- Initial board set: Cooking, Baking, Gardening, Crochet, Knitting. Board descriptions referencing the relevant tutorials.
+- UTM convention for traffic attribution back to homemade.education (`?utm_source=pinterest&utm_medium=pin&utm_campaign=[tutorial-slug]`).
+- First pin batch generated from the existing tutorial library (5–10 pins per tutorial — hero, supplies, step pins, finished result, chart).
+- Pin generation script / pipeline integrated into the tutorial publishing flow so new tutorials produce pins automatically.
+- Weekly Substack letter format locked; first letter shipped alongside the lead-platform launch.
+- YouTube long-form production stack (overhead camera rig, clip-on microphone, lighting, CapCut / DaVinci Resolve editing template, sound design pattern). First anchor video produced.
+- Short-form (TikTok / Reels / Shorts) cuts produced from the first YouTube long-form. Cross-platform posting cadence established.
+
+### What we explicitly don't do at this stage
+
+- No filming Rebecca, no on-camera narration with personality, no paid creator collaborations, no paid advertising.
+- Lock per `feedback_no_hiring_yet.md`. Designer-teacher contributors come in at Phase 6.
+
+---
+
 ## Commit history milestones
 
 - `5d1b5e6` — initial monorepo scaffold
