@@ -1,5 +1,8 @@
 import * as cdk from 'aws-cdk-lib'
 import { Construct } from 'constructs'
+import * as acm from 'aws-cdk-lib/aws-certificatemanager'
+import * as cloudwatch from 'aws-cdk-lib/aws-cloudwatch'
+import * as cloudwatchActions from 'aws-cdk-lib/aws-cloudwatch-actions'
 import * as ec2 from 'aws-cdk-lib/aws-ec2'
 import * as ecs from 'aws-cdk-lib/aws-ecs'
 import * as ecr from 'aws-cdk-lib/aws-ecr'
@@ -7,6 +10,8 @@ import * as elbv2 from 'aws-cdk-lib/aws-elasticloadbalancingv2'
 import * as iam from 'aws-cdk-lib/aws-iam'
 import * as logs from 'aws-cdk-lib/aws-logs'
 import * as secretsmanager from 'aws-cdk-lib/aws-secretsmanager'
+import * as sns from 'aws-cdk-lib/aws-sns'
+import * as snsSubscriptions from 'aws-cdk-lib/aws-sns-subscriptions'
 
 /**
  * Homemade web stack.
@@ -15,10 +20,36 @@ import * as secretsmanager from 'aws-cdk-lib/aws-secretsmanager'
  * public IP so it can pull from ECR and reach Neon directly. ALB sits in
  * front and is the only thing exposed publicly.
  *
- * HTTPS is terminated at Cloudflare for now. ALB listens on plain port 80.
- * Cloudflare proxies homemade.education to the ALB. Upgrade to "Full (strict)"
- * SSL with a Cloudflare Origin Certificate before launch.
+ * HTTPS: Cloudflare runs in Full (strict) mode. It connects to the ALB over
+ * HTTPS:443, presenting a Cloudflare Origin Certificate that was imported
+ * into ACM (ARN supplied via the `ORIGIN_CERT_ARN` env var at deploy time).
+ *
+ * Three deploy stages for the SSL migration (Flexible → Full strict):
+ *   Stage 1 (no env): HTTP:80 only, target-group forward. The original
+ *     Flexible-mode topology.
+ *   Stage 2 (ORIGIN_CERT_ARN set): adds HTTPS:443 listener while KEEPING
+ *     HTTP:80 forwarding to the target group. This is the overlap window —
+ *     flip Cloudflare from Flexible to Full (strict) during this stage so
+ *     CF connects on 443 from then on.
+ *   Stage 3 (ORIGIN_CERT_ARN + HTTP_PORT_80_REDIRECT=1): once Cloudflare is
+ *     on Full strict, replace the HTTP:80 forward with a 301 → HTTPS:443
+ *     redirect. This is the final hardened state. Doing this BEFORE the
+ *     Cloudflare flip would cause an infinite redirect loop in Flexible
+ *     mode (CF would pass the 301 back to the browser, which would come
+ *     back through CF on 443, which proxies to ALB on 80 again).
  */
+function requireEnv(name: string): string {
+  const value = process.env[name]
+  if (!value) {
+    throw new Error(
+      `${name} env var is required for cdk deploy. ` +
+        `These values land directly in the ECS task definition; an empty ` +
+        `value would silently break production. Check .env.credentials.`,
+    )
+  }
+  return value
+}
+
 export class HomemadeStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props)
@@ -92,16 +123,30 @@ export class HomemadeStack extends cdk.Stack {
       'CloudflareAccountIdSecret',
       'homemade/cloudflare-account-id',
     )
+    // Stored under a name that doesn't end in "-secret". The old name
+    // `homemade/clerk-webhook-secret` hit an AWS Secrets Manager parser bug:
+    // when a secret's name ends in something that looks like a random suffix
+    // (e.g. "-secret"), the no-suffix ARN form (which ECS Fargate uses for
+    // `valueFrom`) returns ResourceNotFoundException — surfaced upstream as
+    // an opaque AccessDeniedException. Renaming to a tail that can't be
+    // confused with a suffix fixes the lookup. See BUILD_PROGRESS pre-launch
+    // notes for the full debug story.
+    const clerkWebhookSecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'ClerkWebhookSecret',
+      'homemade/clerk-webhook-signing-secret-v2',
+    )
 
-    // The Clerk webhook signing secret exists in Secrets Manager (as
-    // `homemade/clerk-webhook-secret`) but is intentionally NOT referenced in
-    // the task definition until the webhook endpoint is wired up in Clerk's
-    // dashboard. Adding it as an ECS secret reference triggered the deployment
-    // circuit breaker because CFN updates the IAM policy in parallel with the
-    // task replacement, and new tasks could start trying to pull the secret
-    // before the IAM grant had landed. When you're ready to enable the
-    // webhook, put the real signing value into the existing secret and
-    // re-add the reference here in a follow-up deploy.
+    // The Clerk webhook signing secret is wired in two deploys to avoid the
+    // CFN circuit breaker race (IAM grant landing in parallel with task
+    // replacement → new tasks try to pull the secret before the grant exists).
+    // Deploy 1: this stack — adds the explicit IAM grant on the execution
+    //           role (see addToExecutionRolePolicy below). No task
+    //           replacement, IAM lands cleanly.
+    // Deploy 2: flip `MOUNT_CLERK_WEBHOOK_SECRET=1` at deploy time — the
+    //           container's `secrets:` block adds the env reference. Task
+    //           replacement happens, but IAM is already in place.
+    const mountClerkWebhookSecret = process.env.MOUNT_CLERK_WEBHOOK_SECRET === '1'
 
     // ────────────────────────────────────────────────────────────────
     // CloudWatch — task logs
@@ -131,22 +176,28 @@ export class HomemadeStack extends cdk.Stack {
       },
     })
 
-    // Explicit IAM grant on the Cloudflare secrets. The `ecs.Secret.from...`
-    // calls below auto-grant the same permissions, but having them spelled
-    // out here means a future first-time secret addition can be safely landed
-    // in two deploys: (1) add the inline grant alone — pure IAM update, no
-    // task replacement; (2) add the secret reference to the task definition
-    // — IAM grant is already in place, so the ECS deployment circuit breaker
-    // doesn't race the policy update. See Phase 2d note above and Phase 2e in
-    // BUILD_PROGRESS.md.
+    // Explicit IAM grant on the Cloudflare + Clerk-webhook secrets. The L2
+    // `ecs.Secret.fromSecretsManager` calls below auto-grant the same
+    // permissions, but having them spelled out here means a first-time secret
+    // addition can be safely landed in two deploys: (1) add the inline grant
+    // alone — pure IAM update, no task replacement; (2) add the secret
+    // reference to the task definition — IAM grant is already in place, so
+    // the ECS deployment circuit breaker doesn't race the policy update.
+    //
+    // IMPORTANT: the resource pattern must use `-??????` (exactly six chars
+    // matching the Secrets Manager random suffix), NOT `-*`. ECS Fargate
+    // calls Secrets Manager with the no-suffix ARN form, and IAM matches
+    // resource patterns against the *canonical* suffixed ARN. The `-*` form
+    // failed to grant access in testing even though it should be a superset
+    // — only the `-??????` form actually works. This matches CDK's L2 auto-
+    // generated grant pattern.
     taskDef.addToExecutionRolePolicy(
       new iam.PolicyStatement({
         actions: ['secretsmanager:GetSecretValue'],
         resources: [
-          cloudflareApiTokenSecret.secretArn,
-          `${cloudflareApiTokenSecret.secretArn}-*`,
-          cloudflareAccountIdSecret.secretArn,
-          `${cloudflareAccountIdSecret.secretArn}-*`,
+          `${cloudflareApiTokenSecret.secretArn}-??????`,
+          `${cloudflareAccountIdSecret.secretArn}-??????`,
+          `${clerkWebhookSecret.secretArn}-??????`,
         ],
       }),
     )
@@ -159,10 +210,8 @@ export class HomemadeStack extends cdk.Stack {
         NODE_ENV: 'production',
         PORT: '3000',
         HOSTNAME: '0.0.0.0',
-        NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
-          process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY ?? '',
-        CLOUDFLARE_IMAGES_DELIVERY_HASH:
-          process.env.CLOUDFLARE_IMAGES_DELIVERY_HASH ?? '',
+        NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: requireEnv('NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY'),
+        CLOUDFLARE_IMAGES_DELIVERY_HASH: requireEnv('CLOUDFLARE_IMAGES_DELIVERY_HASH'),
       },
       secrets: {
         SPLASH_PASSWORD: ecs.Secret.fromSecretsManager(splashSecret),
@@ -170,7 +219,9 @@ export class HomemadeStack extends cdk.Stack {
         CLERK_SECRET_KEY: ecs.Secret.fromSecretsManager(clerkSecret),
         CLOUDFLARE_API_TOKEN: ecs.Secret.fromSecretsManager(cloudflareApiTokenSecret),
         CLOUDFLARE_ACCOUNT_ID: ecs.Secret.fromSecretsManager(cloudflareAccountIdSecret),
-        // CLERK_WEBHOOK_SIGNING_SECRET intentionally omitted (see above)
+        ...(mountClerkWebhookSecret
+          ? { CLERK_WEBHOOK_SIGNING_SECRET: ecs.Secret.fromSecretsManager(clerkWebhookSecret) }
+          : {}),
       },
       portMappings: [{ containerPort: 3000, protocol: ecs.Protocol.TCP }],
       essential: true,
@@ -202,7 +253,12 @@ export class HomemadeStack extends cdk.Stack {
     })
 
     // ────────────────────────────────────────────────────────────────
-    // ALB — public, HTTP only (Cloudflare in front for HTTPS)
+    // ALB — HTTPS:443 with Cloudflare Origin Cert, HTTP:80 → HTTPS redirect.
+    //
+    // The cert is imported into ACM separately (Cloudflare Origin Certs can't
+    // go through ACM's automatic validation). Pass the imported cert's ARN at
+    // deploy time via `ORIGIN_CERT_ARN`. If unset, the stack falls back to
+    // HTTP-only — useful for re-bootstrapping or rolling back.
     // ────────────────────────────────────────────────────────────────
     const alb = new elbv2.ApplicationLoadBalancer(this, 'WebAlb', {
       loadBalancerName: 'homemade-web',
@@ -210,17 +266,12 @@ export class HomemadeStack extends cdk.Stack {
       internetFacing: true,
     })
 
-    const listener = alb.addListener('HttpListener', {
-      port: 80,
-      protocol: elbv2.ApplicationProtocol.HTTP,
-      open: true,
-    })
-
-    listener.addTargets('WebTargets', {
+    const targetGroup = new elbv2.ApplicationTargetGroup(this, 'WebTargetGroup', {
       targetGroupName: 'homemade-web',
+      vpc,
       port: 3000,
       protocol: elbv2.ApplicationProtocol.HTTP,
-      targets: [service],
+      targetType: elbv2.TargetType.IP,
       healthCheck: {
         path: '/healthz',
         healthyHttpCodes: '200',
@@ -231,6 +282,146 @@ export class HomemadeStack extends cdk.Stack {
       },
       deregistrationDelay: cdk.Duration.seconds(15),
     })
+    // The existing target group in CFN was nested under the old HttpListener
+    // construct path; preserve its logical ID so this refactor doesn't trigger
+    // a replacement (which would fail on name collision since the target
+    // group's name is fixed to "homemade-web").
+    ;(targetGroup.node.defaultChild as cdk.CfnResource).overrideLogicalId(
+      'WebAlbHttpListenerWebTargetsGroupFC6895C7',
+    )
+    targetGroup.addTarget(service)
+
+    const originCertArn = process.env.ORIGIN_CERT_ARN
+    const httpPort80Redirect = process.env.HTTP_PORT_80_REDIRECT === '1'
+
+    if (originCertArn) {
+      const originCert = acm.Certificate.fromCertificateArn(
+        this,
+        'OriginCert',
+        originCertArn,
+      )
+
+      alb.addListener('HttpsListener', {
+        port: 443,
+        protocol: elbv2.ApplicationProtocol.HTTPS,
+        certificates: [originCert],
+        defaultTargetGroups: [targetGroup],
+        open: true,
+      })
+    }
+
+    // HTTP:80 listener — defined under the original `HttpListener` construct
+    // ID so CFN updates the existing port-80 listener in place rather than
+    // destroying + recreating it. Default action depends on stage:
+    //   - Stage 1/2: forward to target group (keep site reachable, especially
+    //     while Cloudflare is still in Flexible mode and is the one hitting
+    //     port 80).
+    //   - Stage 3: redirect to HTTPS:443 (Cloudflare is on Full strict now,
+    //     so it never hits port 80; this catches stray direct-ALB requests).
+    alb.addListener('HttpListener', {
+      port: 80,
+      protocol: elbv2.ApplicationProtocol.HTTP,
+      open: true,
+      ...(originCertArn && httpPort80Redirect
+        ? {
+            defaultAction: elbv2.ListenerAction.redirect({
+              protocol: 'HTTPS',
+              port: '443',
+              permanent: true,
+            }),
+          }
+        : {
+            defaultTargetGroups: [targetGroup],
+          }),
+    })
+
+    // ────────────────────────────────────────────────────────────────
+    // Alarms — SNS topic with email subscription, three CloudWatch alarms.
+    //
+    // Goal: SOMETHING wakes someone when the site is down. Thresholds are
+    // intentionally conservative and can be tuned once we have real traffic.
+    // ────────────────────────────────────────────────────────────────
+    const alarmTopic = new sns.Topic(this, 'AlarmTopic', {
+      topicName: 'homemade-alarms',
+      displayName: 'Homemade alarms',
+    })
+    alarmTopic.addSubscription(
+      new snsSubscriptions.EmailSubscription('rebecca@homemade.education'),
+    )
+    cdk.Tags.of(alarmTopic).add('Project', 'Homemade')
+
+    const alarmAction = new cloudwatchActions.SnsAction(alarmTopic)
+
+    const elb5xxAlarm = new cloudwatch.Alarm(this, 'Alb5xxAlarm', {
+      alarmName: 'homemade-web-alb-5xx',
+      alarmDescription:
+        'ALB-originated 5xx responses (target-side OR ALB-side) over 5 in any 5-minute window.',
+      metric: new cloudwatch.MathExpression({
+        expression: 'elb5xx + target5xx',
+        usingMetrics: {
+          elb5xx: new cloudwatch.Metric({
+            namespace: 'AWS/ApplicationELB',
+            metricName: 'HTTPCode_ELB_5XX_Count',
+            dimensionsMap: { LoadBalancer: alb.loadBalancerFullName },
+            statistic: 'Sum',
+            period: cdk.Duration.minutes(1),
+          }),
+          target5xx: new cloudwatch.Metric({
+            namespace: 'AWS/ApplicationELB',
+            metricName: 'HTTPCode_Target_5XX_Count',
+            dimensionsMap: { LoadBalancer: alb.loadBalancerFullName },
+            statistic: 'Sum',
+            period: cdk.Duration.minutes(1),
+          }),
+        },
+        period: cdk.Duration.minutes(1),
+      }),
+      threshold: 5,
+      evaluationPeriods: 5,
+      datapointsToAlarm: 3,
+      comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
+      treatMissingData: cloudwatch.TreatMissingData.NOT_BREACHING,
+    })
+    elb5xxAlarm.addAlarmAction(alarmAction)
+    cdk.Tags.of(elb5xxAlarm).add('Project', 'Homemade')
+
+    const unhealthyTargetAlarm = new cloudwatch.Alarm(this, 'TargetUnhealthyAlarm', {
+      alarmName: 'homemade-web-targets-unhealthy',
+      alarmDescription: 'Healthy host count on the target group dropped below 1.',
+      metric: targetGroup.metrics.healthyHostCount({
+        period: cdk.Duration.minutes(1),
+        statistic: 'Minimum',
+      }),
+      threshold: 1,
+      evaluationPeriods: 2,
+      comparisonOperator: cloudwatch.ComparisonOperator.LESS_THAN_THRESHOLD,
+      treatMissingData: cloudwatch.TreatMissingData.BREACHING,
+    })
+    unhealthyTargetAlarm.addAlarmAction(alarmAction)
+    cdk.Tags.of(unhealthyTargetAlarm).add('Project', 'Homemade')
+
+    const runningTaskCountAlarm = new cloudwatch.Alarm(this, 'EcsRunningTaskAlarm', {
+      alarmName: 'homemade-web-running-task-count',
+      alarmDescription:
+        'ECS service is running fewer tasks than desired for 5 consecutive minutes.',
+      metric: new cloudwatch.Metric({
+        namespace: 'AWS/ECS',
+        metricName: 'RunningTaskCount',
+        dimensionsMap: {
+          ClusterName: cluster.clusterName,
+          ServiceName: service.serviceName,
+        },
+        statistic: 'Minimum',
+        period: cdk.Duration.minutes(1),
+      }),
+      threshold: 1,
+      evaluationPeriods: 5,
+      datapointsToAlarm: 5,
+      comparisonOperator: cloudwatch.ComparisonOperator.LESS_THAN_THRESHOLD,
+      treatMissingData: cloudwatch.TreatMissingData.BREACHING,
+    })
+    runningTaskCountAlarm.addAlarmAction(alarmAction)
+    cdk.Tags.of(runningTaskCountAlarm).add('Project', 'Homemade')
 
     // ────────────────────────────────────────────────────────────────
     // Outputs
@@ -248,5 +439,10 @@ export class HomemadeStack extends cdk.Stack {
     new cdk.CfnOutput(this, 'ClusterName', { value: cluster.clusterName })
     new cdk.CfnOutput(this, 'ServiceName', { value: service.serviceName })
     new cdk.CfnOutput(this, 'LogGroupName', { value: logGroup.logGroupName })
+    new cdk.CfnOutput(this, 'AlarmTopicArn', {
+      value: alarmTopic.topicArn,
+      description: 'SNS topic for site-up alarms',
+      exportName: 'HomemadeAlarmTopicArn',
+    })
   }
 }
