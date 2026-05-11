@@ -622,6 +622,165 @@ Plan unchanged.
 
 ---
 
+## Phase 1 deferred-services activation — Sentry + PostHog + Inngest + Upstash
+
+Bundled session that ticks the four "wired but not active" services off the
+pre-launch debt list and adds rate limiting on every UGC submission path.
+
+### Sentry (error tracking)
+
+- `@sentry/nextjs@10` installed; `apps/web/src/instrumentation.ts`
+  (Node + edge) and `apps/web/src/instrumentation-client.ts` (browser)
+  initialise Sentry only when `NEXT_PUBLIC_SENTRY_DSN` is set, so local
+  dev builds and uncrewed branches no-op cleanly.
+- Sample rate: 100% errors, 10% transactions, replays off. PII scrub
+  drops cookies, request bodies, IPs, emails. Allowlist of request
+  headers: `user-agent`, `referer`, `x-forwarded-host`, `x-vercel-id`.
+- `next.config.mjs` wraps in `withSentryConfig` when DSN is present;
+  source-map upload runs only when `SENTRY_AUTH_TOKEN` is supplied
+  (i.e. on CI). Tunnel route `/monitoring/sentry` dodges ad-blockers.
+- `/admin/system/errors` page links out to the 7-day project view in
+  the Sentry dashboard.
+
+### PostHog (product analytics)
+
+- `posthog-js` (client) + `posthog-node` (server) installed.
+- Client provider at `apps/web/src/components/posthog-provider.tsx`
+  initialises lazily, identifies on Clerk sign-in (and resets on sign-
+  out), captures `$pageview` manually so App Router transitions count.
+- Server lib at `apps/web/src/lib/posthog.ts` exposes
+  `captureServerEvent` + `identifyServerUser` + `flushPostHog` with
+  fire-and-forget error handling — analytics must never break a
+  request.
+- Event taxonomy in place for launch funnels: `signup_completed`
+  (Clerk webhook), `tutorial_viewed` (tutorial page render),
+  `tutorial_started` / `tutorial_completed` / `tutorial_bookmarked` /
+  `tutorial_unbookmarked` / `tutorial_published_scheduled`,
+  `search_query` (with query, resultCount, filters), `review_submitted`
+  / `review_published`, `photo_uploaded` / `photo_approved` /
+  `photo_rejected`, `question_asked` / `question_answered`,
+  `errata_submitted`.
+- Users identified by Clerk userId both server-side and client-side so
+  events stitch across surfaces.
+
+### Inngest (background jobs)
+
+- `inngest@4` installed; client at `apps/web/src/inngest/client.ts`,
+  serve endpoint at `apps/web/src/app/api/inngest/route.ts`. `proxy.ts`
+  bypasses the splash + Clerk gates for `/api/inngest`.
+- Three functions registered:
+  * **`scheduled-publish-tutorial`** — cron `*/5 * * * *`. Finds rows
+    where `status = SCHEDULED AND scheduledFor <= now()`, transitions
+    them to `PUBLISHED`, audit-logs each, syncs to Typesense, fires
+    PostHog `tutorial_published_scheduled` per row.
+  * **`typesense-reindex`** — event-triggered. Wipes + rebuilds all
+    three Typesense collections from Prisma. Manual trigger button at
+    `/admin/system/jobs`.
+  * **`moderation-outcome-notify`** — event-triggered observability
+    sink. The in-app `Notification` row is still written synchronously
+    by `notify()`; this function exists so future email / push
+    delivery can be added without touching every moderation call site.
+    Wired from `moderateReview`, `moderateUgcPhoto`, `moderateQuestion`,
+    `moderateAnswer`, `resolveErrata`.
+- `/admin/system/jobs` page lists the three functions, has the reindex
+  trigger button, and links out to the Inngest dashboard.
+
+### Upstash Redis (rate limiting)
+
+- `@upstash/redis` + `@upstash/ratelimit` installed. Helper at
+  `apps/web/src/lib/ratelimit.ts` exposes `checkRateLimit(bucket, id)`
+  returning `{ allowed: true }` if Redis is unconfigured (graceful
+  no-op) or under the cap, otherwise a user-facing message.
+- Sliding-window buckets:
+  * `reviewSubmission` — 5/hr per user
+  * `photoUpload` — 10/hr per user
+  * `questionAsked` — 10/hr per user (also covers answer submission)
+  * `errataSubmitted` — 5/hr per user (or `anon:<tutorialId>` when
+    signed out)
+  * `reportSubmitted` — 20/hr per user
+  * `searchQuery` — 60/min per IP (IP-keyed because search is open to
+    every reader behind the splash cookie)
+- Applied in `submitReview`, `submitUgcPhoto`, `submitQuestion`,
+  `submitAnswer`, `submitErrata`, `submitReport`, and the `/search`
+  server component.
+- Fails open: if Redis blips, the action goes through — better to let
+  the user submit than to lock them out of their own site.
+
+### Admin /admin/system/* pages
+
+- `/admin/system/errors` — Sentry link-out + last-7-day URL helper.
+- `/admin/system/jobs` — function list + reindex trigger + Inngest
+  dashboard link.
+- `/admin/system/settings` and `/admin/system/feature-flags` remain
+  placeholders for now.
+- Admin sidebar restructured so `Error log` and `Jobs` are real links
+  above the two placeholders.
+
+### Infra — CDK two-step deploy
+
+Four new AWS Secrets Manager entries (`homemade/inngest-event-key`,
+`homemade/inngest-signing-key`, `homemade/upstash-redis-url`,
+`homemade/upstash-redis-token`) created via the AWS CLI before the
+first deploy.
+
+- **Deploy 1** (`cdk deploy` with no MOUNT flag): adds inline
+  `secretsmanager:GetSecretValue` policy on the task execution role
+  for the four new secret ARNs. Also lands the R2 task env vars
+  (`R2_BUCKET`, `R2_PUBLIC_BASE_URL`, `CDN_IMAGE_TRANSFORM_ORIGIN`)
+  and R2 IAM grants that the R2 migration commit had staged but not
+  yet deployed.
+- **Deploy 2** (`MOUNT_PHASE1_SECRETS=1 cdk deploy`): adds the four
+  `ecs.Secret.fromSecretsManager` references to the container env.
+  Task replacement happens, IAM is already in place.
+
+Same two-step CFN pattern Phase 2e established for the Clerk webhook
+secret. Both deploys green first try.
+
+### Build-time secrets flow
+
+`NEXT_PUBLIC_POSTHOG_KEY`, `NEXT_PUBLIC_POSTHOG_HOST`,
+`NEXT_PUBLIC_SENTRY_DSN`, `SENTRY_AUTH_TOKEN`, `SENTRY_ORG_SLUG`,
+`SENTRY_PROJECT_SLUG` flow through GitHub Actions secrets → Docker
+build-args → `ENV`, mirroring how `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
+is plumbed. Set via `gh secret set` from the session.
+
+### pnpm-workspace.yaml
+
+`@sentry/cli`, `core-js`, `protobufjs` added to `allowBuilds` so pnpm
+runs their postinstall scripts (Sentry CLI binary download, core-js
+banner, protobufjs setup).
+
+### Things scoped out of this session
+
+- Real PostHog dashboards — Phase 8.
+- Email + push notification delivery for moderation outcomes — defer.
+- Sentry alert rules + Slack integration — Rebecca configures in the
+  Sentry dashboard.
+- Site-wide HTTP cache layer using Redis — Next.js + Cloudflare are
+  enough for now.
+- `signin_completed` event — PostHog's built-in `$session_start` covers
+  it; if we want our own we can add a sessionStorage-deduped client fire.
+- `tutorial_shared` event + share button — Phase 8 polish.
+- Cookie consent banner — legal-pages session.
+
+### Pre-launch debt observed during this session
+
+- `CLERK_WEBHOOK_SIGNING_SECRET` is no longer mounted on the task
+  (revision 11 dropped it; my deploys carried the gap forward without
+  re-mounting because I didn't pass `MOUNT_CLERK_WEBHOOK_SECRET=1`).
+  Fix in a tiny follow-up deploy by re-running CDK with
+  `MOUNT_CLERK_WEBHOOK_SECRET=1`.
+- `.env.credentials` is missing `CLOUDFLARE_IMAGES_DELIVERY_HASH` —
+  CDK requires it at deploy time; I exported the known value
+  (`qTHUFgOzX6ApY3B_SdLnDA`) inline. Add it to the file proper.
+- Inngest Cloud needs the production endpoint registered manually in
+  its dashboard. I triggered the initial sync via
+  `PUT https://homemade.education/api/inngest` (returns `Successfully
+  registered`); after that, Inngest Cloud handles re-syncs on every
+  push. Verify in the Inngest dashboard's "Apps" view.
+
+---
+
 ## Commit history milestones
 
 - `5d1b5e6` — initial monorepo scaffold
@@ -644,5 +803,7 @@ Plan unchanged.
 - `13930f1` — Phase 3b Typesense search + Phase 3c Capacitor 8 mobile wrapper + three extra TipTap blocks + admin Preview metadata polish
 - `8261c89` — feat(public): Phase 4 accounts — bookmarks, projects, reading-progress / TOC / project companion, beginner mode, /me dashboard + settings, signed-in header, supplies substitutions
 - Phase 5 — UGC pipeline + moderation queues + admin menu restructure + audit-log viewer
-- _this session_ — feat(public+admin): Phase 6 creator program + pattern testing + public maker profiles + creator-tutorial moderation flow
+- Phase 6 — creator program + pattern testing + public maker profiles + creator-tutorial moderation flow
+- `41e2051` — feat(media): move image pipeline to Cloudflare R2 + Image Transformations
+- `a312c78` — feat(infra): activate Sentry + PostHog + Inngest + Upstash rate limits
 - Phase 3a (this session): public tutorial / category / home pages, TipTap-JSON renderer with no TipTap runtime in the public bundle, admin Preview toggle
