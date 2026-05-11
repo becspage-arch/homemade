@@ -9,28 +9,48 @@ declare global {
   var __homemade_prisma: PrismaClient | undefined
 }
 
-function createPrismaClient(): PrismaClient {
+let cached: PrismaClient | undefined
+
+function getPrismaClient(): PrismaClient {
+  if (cached) return cached
+  if (globalThis.__homemade_prisma) {
+    cached = globalThis.__homemade_prisma
+    return cached
+  }
+
   const connectionString = process.env.DATABASE_URL
   if (!connectionString) {
-    throw new Error('DATABASE_URL is not set')
+    throw new Error(
+      'DATABASE_URL is not set. Make sure the env var is configured before any Prisma operation.',
+    )
   }
 
   const adapter = new PrismaPg({ connectionString })
-
-  return new PrismaClient({
+  cached = new PrismaClient({
     adapter,
     log: process.env.NODE_ENV === 'development' ? ['query', 'warn', 'error'] : ['warn', 'error'],
   })
+
+  if (process.env.NODE_ENV !== 'production') {
+    globalThis.__homemade_prisma = cached
+  }
+
+  return cached
 }
 
 /**
- * Single shared Prisma client.
+ * Lazy-proxied Prisma client.
  *
- * Production: one per container. Dev: cached on globalThis to survive HMR
- * reloads without exhausting the pool.
+ * The actual `PrismaClient` is only constructed on first property access. This
+ * lets `apps/web` import `prisma` from `@homemade/db` during the build pass
+ * (when Next.js collects page configs) without DATABASE_URL having to be set.
+ * It also keeps the dev-mode singleton behaviour: in non-prod, the client is
+ * cached on `globalThis` so HMR reloads don't exhaust the pool.
  */
-export const prisma: PrismaClient = globalThis.__homemade_prisma ?? createPrismaClient()
-
-if (process.env.NODE_ENV !== 'production') {
-  globalThis.__homemade_prisma = prisma
-}
+export const prisma: PrismaClient = new Proxy({} as PrismaClient, {
+  get(_target, prop, receiver) {
+    const client = getPrismaClient()
+    const value = Reflect.get(client, prop, receiver)
+    return typeof value === 'function' ? value.bind(client) : value
+  },
+})

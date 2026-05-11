@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Fraunces, Lora } from 'next/font/google'
+import { ClerkProvider } from '@clerk/nextjs'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -25,8 +26,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={`${fraunces.variable} ${lora.variable}`}>
-      <body>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en-GB" className={`${fraunces.variable} ${lora.variable}`}>
+        <body>{children}</body>
+      </html>
+    </ClerkProvider>
   )
 }

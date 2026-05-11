@@ -7,8 +7,10 @@ packages:
 # - sharp: Next.js image optimisation
 # - unrs-resolver: ESLint module resolution
 # - prisma / @prisma/engines: Prisma query engine native binary
+# - @clerk/shared: Clerk shared package
 allowBuilds:
   sharp: true
   unrs-resolver: true
   prisma: true
   '@prisma/engines': true
+  '@clerk/shared': true

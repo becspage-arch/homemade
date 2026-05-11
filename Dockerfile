@@ -20,9 +20,14 @@ RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store \
 
 # ---- Builder ----
 FROM base AS builder
+# NEXT_PUBLIC_* env vars are embedded at build time into the JS bundle.
+# Pass the Clerk publishable key as a build arg from CI.
+ARG NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+ENV NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=$NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
 ENV NEXT_TELEMETRY_DISABLED=1
 COPY --from=deps /repo/node_modules ./node_modules
 COPY --from=deps /repo/apps/web/node_modules ./apps/web/node_modules
+COPY --from=deps /repo/packages/db/node_modules ./packages/db/node_modules
 COPY . .
 RUN pnpm --filter @homemade/web build
 
