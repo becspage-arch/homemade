@@ -192,8 +192,9 @@ async function assertHeroMediaExists(id: string | null): Promise<void> {
 // ────────────────────────────────────────────────────────────────────────────
 
 const ALLOWED_TRANSITIONS: Record<TutorialStatus, readonly TutorialStatus[]> = {
-  [TutorialStatus.DRAFT]: [TutorialStatus.SCHEDULED, TutorialStatus.PUBLISHED],
+  [TutorialStatus.DRAFT]: [TutorialStatus.SCHEDULED, TutorialStatus.PUBLISHED, TutorialStatus.PENDING_MODERATION],
   [TutorialStatus.IN_REVIEW]: [TutorialStatus.DRAFT, TutorialStatus.PUBLISHED],
+  [TutorialStatus.PENDING_MODERATION]: [TutorialStatus.DRAFT, TutorialStatus.PUBLISHED],
   [TutorialStatus.SCHEDULED]: [TutorialStatus.DRAFT, TutorialStatus.PUBLISHED],
   [TutorialStatus.PUBLISHED]: [TutorialStatus.ARCHIVED],
   [TutorialStatus.ARCHIVED]: [TutorialStatus.DRAFT],

@@ -1,0 +1,134 @@
+/* Public pattern test board */
+
+.patterns-page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 48px 32px 96px;
+}
+
+.patterns-header {
+  border-bottom: 0.5px solid var(--color-linen-grey);
+  padding-bottom: 32px;
+  margin-bottom: 40px;
+}
+
+.patterns-eyebrow {
+  display: block;
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+  margin-bottom: 12px;
+}
+
+.patterns-title {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.1;
+  color: var(--color-espresso);
+  margin: 0 0 16px;
+}
+
+.patterns-intro {
+  font-family: var(--font-lora);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-warm-taupe);
+  max-width: 60ch;
+  margin: 0 0 18px;
+}
+
+.patterns-filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.patterns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.pattern-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--color-cream);
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 4px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.pattern-card:hover {
+  border-color: var(--color-sage);
+}
+
+.pattern-card-eyebrow {
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+}
+
+.pattern-card-title {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--color-espresso);
+  margin: 4px 0 6px;
+}
+
+.pattern-card-tutorial {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--color-warm-taupe);
+  font-style: italic;
+}
+
+.pattern-card-brief {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  color: var(--color-espresso);
+  line-height: 1.6;
+  margin: 6px 0 12px;
+}
+
+.pattern-card-meta {
+  font-family: var(--font-lora);
+  font-size: 12px;
+  color: var(--color-warm-taupe);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.pattern-detail {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 32px 96px;
+}
+
+.pattern-detail-section {
+  margin-top: 32px;
+}
+
+.pattern-detail-brief {
+  font-family: var(--font-lora);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-espresso);
+  white-space: pre-wrap;
+  background: var(--color-soft-parchment);
+  border: 0.5px solid var(--color-linen-grey);
+  padding: 24px;
+  border-radius: 4px;
+}

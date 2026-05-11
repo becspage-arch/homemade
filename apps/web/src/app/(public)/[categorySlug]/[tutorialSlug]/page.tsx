@@ -47,6 +47,13 @@ async function loadTutorial(categorySlug: string, tutorialSlug: string) {
           attribution: true,
         },
       },
+      creator: {
+        select: {
+          name: true,
+          displayHandle: true,
+          creatorVerifiedAt: true,
+        },
+      },
     },
   })
 }
@@ -212,6 +219,16 @@ export default async function TutorialPage({ params }: PageProps) {
         readingTime={estimateReadingTime(body)}
         sourceType={tutorial.sourceType}
         sourceNotes={tutorial.sourceNotes}
+        attribution={
+          tutorial.creator
+            ? {
+                name: tutorial.creator.name ?? tutorial.creator.displayHandle ?? 'A maker',
+                handle: tutorial.creator.displayHandle,
+                verified: Boolean(tutorial.creator.creatorVerifiedAt),
+                homemade: false,
+              }
+            : { name: null, handle: null, verified: false, homemade: true }
+        }
         body={
           <TutorialContent
             content={body}

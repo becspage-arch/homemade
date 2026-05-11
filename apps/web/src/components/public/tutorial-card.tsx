@@ -27,6 +27,8 @@ export interface TutorialCardProps {
   categoryName?: string | null
   /** Reader state from the signed-in user, when available. */
   state?: ReaderTutorialState
+  /** Optional byline — "By {name}" or "By Homemade". */
+  byline?: string | null
 }
 
 export function TutorialCard({
@@ -38,6 +40,7 @@ export function TutorialCard({
   season,
   categoryName,
   state,
+  byline,
 }: TutorialCardProps) {
   const inProgress =
     state?.projectStatus === 'IN_PROGRESS' &&
@@ -73,6 +76,7 @@ export function TutorialCard({
           <span className="tutorial-card-eyebrow">{categoryName}</span>
         )}
         <span className="tutorial-card-title">{title}</span>
+        {byline && <span className="tutorial-card-byline">{byline}</span>}
         {excerpt && <span className="tutorial-card-excerpt">{excerpt}</span>}
         <span className="tutorial-card-meta">
           <span>{DIFFICULTY_LABEL[difficulty] ?? difficulty.toLowerCase()}</span>

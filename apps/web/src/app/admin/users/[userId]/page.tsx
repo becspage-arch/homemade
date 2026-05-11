@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { prisma, SuspensionStatus, UserRole } from '@homemade/db'
 import { getCurrentDbUser, isAdmin } from '@/lib/auth'
 import { UserDetailControls } from './user-controls'
+import { CreatorTesterControls } from './creator-tester-controls'
 
 export const dynamic = 'force-dynamic'
 
@@ -24,6 +25,7 @@ export default async function AdminUserDetail({ params }: PageProps) {
             liftedBy: { select: { name: true, email: true } },
           },
         },
+        creatorProfile: true,
         _count: {
           select: {
             projects: true,
@@ -33,6 +35,9 @@ export default async function AdminUserDetail({ params }: PageProps) {
             answers: true,
             errata: true,
             reportsFiled: true,
+            tutorialsCreated: true,
+            patternTests: true,
+            testAssignments: true,
           },
         },
       },
@@ -103,6 +108,18 @@ export default async function AdminUserDetail({ params }: PageProps) {
         targetIsAdmin={target.role === UserRole.ADMIN}
       />
 
+      <CreatorTesterControls
+        userId={target.id}
+        isCreator={target.isCreator}
+        isPatternTester={target.isPatternTester}
+        creatorVerifiedAt={target.creatorVerifiedAt}
+        actorIsAdmin={actorIsAdmin}
+        isSelf={actor?.id === target.id}
+        displayHandle={target.displayHandle}
+        creatorProfileStatus={target.creatorProfile?.applicationStatus ?? null}
+        creatorProfileId={target.creatorProfile?.id ?? null}
+      />
+
       <div className="admin-card" style={{ marginTop: 24 }}>
         <div className="admin-card-eyebrow">Activity</div>
         <ul style={{ fontFamily: 'var(--font-lora)', lineHeight: 1.7 }}>
@@ -112,6 +129,15 @@ export default async function AdminUserDetail({ params }: PageProps) {
           <li>{target._count.questions} questions, {target._count.answers} answers</li>
           <li>{target._count.errata} errata reports</li>
           <li>{target._count.reportsFiled} abuse reports filed</li>
+          {target.isCreator && (
+            <>
+              <li>{target._count.tutorialsCreated} creator tutorials</li>
+              <li>{target._count.patternTests} pattern tests run</li>
+            </>
+          )}
+          {target.isPatternTester && (
+            <li>{target._count.testAssignments} pattern test assignments</li>
+          )}
           <li>Joined {target.createdAt.toLocaleDateString('en-GB')}</li>
         </ul>
       </div>

@@ -51,6 +51,15 @@ const SIDEBAR_GROUPS: SidebarGroup[] = [
     ],
   },
   {
+    id: 'creators',
+    label: 'Creators',
+    items: [
+      { href: '/admin/creators', label: 'Applications & active' },
+      { href: '/admin/creators/moderation', label: 'Tutorial moderation' },
+      { href: '/admin/patterns', label: 'Pattern tests' },
+    ],
+  },
+  {
     id: 'billing',
     label: 'Billing',
     items: [

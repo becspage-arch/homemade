@@ -8,10 +8,12 @@ import './me.css'
 
 export const dynamic = 'force-dynamic'
 
-const NAV_ITEMS: {
-  href: '/me' | '/me/bookmarks' | '/me/projects' | '/me/reviews' | '/me/photos' | '/me/questions' | '/me/notifications' | '/me/settings'
+interface NavItem {
+  href: string
   label: string
-}[] = [
+}
+
+const BASE_NAV: NavItem[] = [
   { href: '/me', label: 'Overview' },
   { href: '/me/projects', label: 'Projects' },
   { href: '/me/bookmarks', label: 'Bookmarks' },
@@ -32,6 +34,15 @@ export default async function MeLayout({ children }: { children: ReactNode }) {
     where: { userId: user.id, readAt: null },
   })
 
+  const navItems: NavItem[] = [...BASE_NAV]
+  if (user.isCreator) {
+    // Slot creator nav before Settings
+    navItems.splice(navItems.length - 1, 0, { href: '/me/creator', label: 'Creator' })
+  }
+  if (user.isPatternTester) {
+    navItems.splice(navItems.length - 1, 0, { href: '/me/tester', label: 'Tester' })
+  }
+
   return (
     <div className="me-page">
       <header className="me-header">
@@ -40,7 +51,7 @@ export default async function MeLayout({ children }: { children: ReactNode }) {
           {greetingName ? `Hello, ${greetingName}` : 'Hello'}
         </h1>
         <nav className="me-nav" aria-label="Account sections">
-          {NAV_ITEMS.map((item) => (
+          {navItems.map((item) => (
             <Link key={item.href} href={item.href} className="me-nav-link">
               {item.label}
               {item.href === '/me/notifications' && unread > 0 && (

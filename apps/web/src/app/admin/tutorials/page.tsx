@@ -8,6 +8,7 @@ type StatusFilter = 'ALL' | TutorialStatus
 const FILTERS: { value: StatusFilter; label: string }[] = [
   { value: 'ALL', label: 'all' },
   { value: TutorialStatus.DRAFT, label: 'draft' },
+  { value: TutorialStatus.PENDING_MODERATION, label: 'pending moderation' },
   { value: TutorialStatus.SCHEDULED, label: 'scheduled' },
   { value: TutorialStatus.PUBLISHED, label: 'published' },
   { value: TutorialStatus.ARCHIVED, label: 'archived' },
@@ -161,15 +162,17 @@ function StatusBadge({ status }: { status: TutorialStatus }) {
         ? 'bg-[var(--color-honey)] text-[var(--color-espresso)]'
         : status === TutorialStatus.ARCHIVED
           ? 'bg-[var(--color-stone)] text-[var(--color-espresso)]'
-          : status === TutorialStatus.IN_REVIEW
-            ? 'bg-[var(--color-dusty-blush)] text-[var(--color-espresso)]'
-            : 'border border-[var(--color-linen-grey)] text-[var(--color-warm-taupe)]'
+          : status === TutorialStatus.PENDING_MODERATION
+            ? 'bg-[var(--color-burnt-sienna)] text-[var(--color-linen-cream)]'
+            : status === TutorialStatus.IN_REVIEW
+              ? 'bg-[var(--color-dusty-blush)] text-[var(--color-espresso)]'
+              : 'border border-[var(--color-linen-grey)] text-[var(--color-warm-taupe)]'
   return (
     <span
       className={`inline-block rounded-full px-3 py-0.5 text-[10px] uppercase tracking-[0.25em] ${tone}`}
       style={{ fontFamily: 'var(--font-lora)' }}
     >
-      {status.toLowerCase()}
+      {status.toLowerCase().replace('_', ' ')}
     </span>
   )
 }

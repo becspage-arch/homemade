@@ -1,0 +1,287 @@
+/* Public maker directory + profile pages */
+
+.makers-page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 48px 32px 96px;
+}
+
+.makers-header {
+  border-bottom: 0.5px solid var(--color-linen-grey);
+  padding-bottom: 32px;
+  margin-bottom: 40px;
+}
+
+.makers-eyebrow {
+  display: block;
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+  margin-bottom: 12px;
+}
+
+.makers-title {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.1;
+  color: var(--color-espresso);
+  margin: 0 0 16px;
+}
+
+.makers-intro {
+  font-family: var(--font-lora);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-warm-taupe);
+  max-width: 60ch;
+  margin: 0 0 24px;
+}
+
+.makers-filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.makers-filter {
+  font-family: var(--font-lora);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 0.5px solid var(--color-linen-grey);
+  color: var(--color-warm-taupe);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.makers-filter:hover {
+  color: var(--color-sage);
+  border-color: var(--color-sage);
+}
+
+.makers-filter.active {
+  background: var(--color-sage);
+  border-color: var(--color-sage);
+  color: var(--color-cream);
+}
+
+.makers-empty {
+  font-family: var(--font-lora);
+  font-style: italic;
+  color: var(--color-warm-taupe);
+  background: var(--color-soft-parchment);
+  border: 0.5px solid var(--color-linen-grey);
+  padding: 32px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.makers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.maker-card {
+  display: flex;
+  gap: 16px;
+  background: var(--color-cream);
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 4px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.maker-card:hover {
+  border-color: var(--color-sage);
+}
+
+.maker-card-avatar {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-sage);
+  color: var(--color-cream);
+  font-family: var(--font-fraunces);
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.maker-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.maker-card-name {
+  font-family: var(--font-fraunces);
+  font-size: 18px;
+  color: var(--color-espresso);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.maker-card-handle {
+  font-family: var(--font-lora);
+  font-size: 12px;
+  color: var(--color-warm-taupe);
+}
+
+.maker-card-specialty {
+  font-family: var(--font-lora);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--color-warm-taupe);
+  margin-top: 4px;
+}
+
+.maker-card-meta {
+  font-family: var(--font-lora);
+  font-size: 12px;
+  color: var(--color-warm-taupe);
+  margin-top: 8px;
+}
+
+.maker-verified-dot {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-sage);
+}
+
+/* Profile page */
+
+.maker-profile {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 48px 32px 96px;
+}
+
+.maker-profile-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: flex-start;
+  border-bottom: 0.5px solid var(--color-linen-grey);
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+}
+
+.maker-profile-avatar {
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--color-sage);
+  color: var(--color-cream);
+  font-family: var(--font-fraunces);
+  font-size: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.maker-profile-meta {
+  flex: 1;
+  min-width: 280px;
+}
+
+.maker-profile-name {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 36px;
+  color: var(--color-espresso);
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.maker-profile-handle {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  color: var(--color-warm-taupe);
+  margin-top: 4px;
+}
+
+.maker-profile-specialty {
+  font-family: var(--font-lora);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--color-warm-taupe);
+  margin: 14px 0 0;
+}
+
+.maker-profile-bio {
+  font-family: var(--font-lora);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-espresso);
+  margin: 18px 0 0;
+  white-space: pre-wrap;
+  max-width: 60ch;
+}
+
+.maker-profile-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.maker-profile-social {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--color-sage);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 0;
+  border-bottom: 0.5px solid transparent;
+}
+
+.maker-profile-social:hover {
+  color: var(--color-forest);
+  border-bottom-color: var(--color-forest);
+}
+
+.maker-profile-section-label {
+  display: block;
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+  margin-bottom: 14px;
+}
+
+.maker-profile-section-title {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--color-espresso);
+  margin: 0 0 18px;
+}
+
+.maker-profile-empty {
+  font-family: var(--font-lora);
+  font-style: italic;
+  color: var(--color-warm-taupe);
+}
+
+.maker-profile-tutorials {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}

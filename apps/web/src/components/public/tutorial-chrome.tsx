@@ -27,6 +27,17 @@ const SOURCE_LABEL: Record<string, string> = {
   CREATOR: 'Contributed by an external creator.',
 }
 
+export interface TutorialAttribution {
+  /** Display name shown in "By {name}". null falls back to "By Homemade" if homemade=true, else hidden. */
+  name: string | null
+  /** Maker handle for the /makers/[handle] link. null hides the link. */
+  handle: string | null
+  /** True when verified by Homemade — shows a small verified dot. */
+  verified: boolean
+  /** True when the tutorial has no external creator. Renders "By Homemade". */
+  homemade: boolean
+}
+
 export interface TutorialChromeProps {
   title: string
   subtitle: string | null
@@ -42,6 +53,8 @@ export interface TutorialChromeProps {
   readingTime: string | null
   sourceType: string
   sourceNotes: string | null
+  /** Optional byline / attribution row. */
+  attribution?: TutorialAttribution | null
   /** The rendered tutorial body. */
   body: ReactNode
   /**
@@ -87,6 +100,7 @@ export function TutorialChrome(props: TutorialChromeProps) {
     readingTime,
     sourceType,
     sourceNotes,
+    attribution,
     body,
     linkBreadcrumb = true,
     actionsSlot,
@@ -178,6 +192,12 @@ export function TutorialChrome(props: TutorialChromeProps) {
         </dl>
       </div>
 
+      {attribution && (
+        <div className="tutorial-attribution">
+          <AttributionByline attribution={attribution} />
+        </div>
+      )}
+
       {actionsSlot && (
         <div className="tutorial-actions-bar">{actionsSlot}</div>
       )}
@@ -226,6 +246,44 @@ export function TutorialChrome(props: TutorialChromeProps) {
         </div>
       )}
     </article>
+  )
+}
+
+function AttributionByline({ attribution }: { attribution: TutorialAttribution }) {
+  if (attribution.homemade) {
+    return <span className="tutorial-byline">By Homemade</span>
+  }
+  if (!attribution.name) return null
+  return (
+    <span className="tutorial-byline">
+      By{' '}
+      {attribution.handle ? (
+        <Link href={`/makers/${attribution.handle}`} className="tutorial-byline-link">
+          {attribution.name}
+        </Link>
+      ) : (
+        <span>{attribution.name}</span>
+      )}
+      {attribution.verified && (
+        <span
+          className="tutorial-byline-verified"
+          aria-label="Verified maker"
+          title="Verified maker"
+        >
+          <svg viewBox="0 0 14 14" width="13" height="13" aria-hidden="true">
+            <circle cx="7" cy="7" r="6.4" fill="currentColor" />
+            <path
+              d="M4 7.4l2 2 4-4"
+              stroke="var(--color-cream)"
+              strokeWidth="1.6"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+      )}
+    </span>
   )
 }
 

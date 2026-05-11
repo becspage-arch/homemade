@@ -517,12 +517,107 @@ secret references), so this can be a single deploy.
   an admin notice block. When the legal session lands, drop the notice
   and the upload flow is already there.
 
-## Phases 6–8
+## Phase 6 — Creator program + pattern testing + public maker profiles
+
+### ✅ Done
+
+**Schema (migrations `20260601000000_phase6_creator_enums` + `20260601000001_phase6_creator_program`):**
+
+- `User` additions: `isCreator` (Boolean, default false), `creatorVerifiedAt` (DateTime?), `isPatternTester` (Boolean, default false). New index on `isCreator`.
+- `Tutorial.creatorId` (String? FK to User, `onDelete: SetNull`). Null = Homemade-authored. Index on (creatorId, status, publishedAt desc).
+- `TutorialStatus` enum gains `PENDING_MODERATION` (split into its own enum-only migration so the program changes can run in a single transaction — Postgres < 14 forbids using a freshly-added enum value in the same txn).
+- `CreatorProfile` — `userId` unique, `bio`, `specialty` (≤200 chars), socials (`websiteUrl`, `instagramHandle`, `youtubeHandle`, `tiktokHandle`, `substackUrl`, `pinterestHandle`), `applicationStatus` (`CreatorApplicationStatus`: NONE/APPLIED/APPROVED/REJECTED), `applicationNote`, `appliedAt`, `decidedAt?`, `decidedById?`, `rejectionReason?`.
+- `PatternTest` — `tutorialId` + `creatorId` FKs, `status` (`PatternTestStatus`: DRAFT/RECRUITING/IN_PROGRESS/COMPLETED/CANCELLED), `title`, `briefForTesters`, `maxTesters` (default 5), `recruitingClosesAt?`, `completedAt?`.
+- `TestAssignment` — `patternTestId` + `userId` FKs (unique on the pair), `status` (`TestAssignmentStatus`: APPLIED/ACCEPTED/IN_PROGRESS/COMPLETED/WITHDRAWN/REJECTED), `applicationNote?`, `feedback` (Json — structured form payload), lifecycle timestamps + `rejectionReason?`.
+- `NotificationType` enum gains: CREATOR_APPLICATION_APPROVED, CREATOR_APPLICATION_REJECTED, CREATOR_TUTORIAL_PUBLISHED, CREATOR_TUTORIAL_REJECTED, CREATOR_TUTORIAL_SUBMITTED, PATTERN_TEST_APPLICATION_ACCEPTED, PATTERN_TEST_APPLICATION_REJECTED, PATTERN_TEST_FEEDBACK_RECEIVED.
+
+**Server actions** consolidated into two libs:
+
+- `apps/web/src/lib/creator-actions.ts` — application submit / decide / profile edit, tester opt-in/opt-out, pattern test CRUD + transitions, tester apply / start / withdraw / submit feedback, creator-tutorial submit-for-moderation + admin moderate, admin revoke / tester toggle.
+- `apps/web/src/lib/creator-tutorial-actions.ts` — creator-scoped tutorial create/update/delete (mirrors the admin lib but gated to `tutorial.creatorId === user.id`, defaults `sourceType: CREATOR`).
+
+Notifications fire via the existing `notify()` helper for: application decided, tutorial submitted (admins) / published / sent back, pattern test applicant accepted / rejected, pattern test feedback submitted (to creator).
+
+**Public maker surfaces:**
+
+- `/makers` — directory of approved + verified creators. Card grid (avatar = first letter of name on sage disc, name + verified dot, handle, specialty, published-tutorial count). Sort: "recently active" (default) or "by handle".
+- `/makers/[handle]` — creator profile page. Avatar, name + verified dot, specialty, bio, social links rendered as small Lora links (Website / Instagram / YouTube / TikTok / Pinterest / Substack). Their published tutorials below, rendered through the existing `TutorialCard`. 404 if the user isn't an approved + verified creator, or their handle isn't set yet.
+
+**Public pattern test board:**
+
+- `/patterns` — list of `RECRUITING` pattern tests with brief preview, max testers + applicant count, "Apply" CTA. Category filter chips driven by the live `Category` table. Logged-out users see "Sign in to apply"; logged-in non-testers see "Join the tester pool first".
+- `/patterns/[id]` — pattern test detail. Eyebrow / title / status pill / creator byline / closes-on date. Full brief in a parchment block. Tutorial summary link. Apply CTA opens a small note-to-the-creator form.
+
+**`/me/creator` subroutes:**
+
+- `/me/creator` — gates the experience: no profile → redirect to `apply`; APPLIED → "Under review" empty state; REJECTED → reason + re-apply link; APPROVED → dashboard with tutorial draft/in-review/published counts, active pattern tests, quick actions, recent activity.
+- `/me/creator/apply` — single form: handle (only when not yet set), specialty, bio (≥30 chars), private note to reviewers, socials (all optional). Re-submits update the existing row.
+- `/me/creator/profile` — edit bio / specialty / handle / socials. Live edits.
+- `/me/creator/tutorials` — list with status filter chips (all / draft / in review / published / archived).
+- `/me/creator/tutorials/new` + `/me/creator/tutorials/[id]` — reuses the admin `TutorialForm` + full TipTap editor (same 8 custom blocks, same preview pane). Creator-authored tutorials start in DRAFT; "Submit for review" transitions to `PENDING_MODERATION`. Once PUBLISHED, edits go live immediately (with version snapshots) — explicit scope choice: lower friction over re-moderation cycles.
+- `/me/creator/patterns` — list of the creator's pattern tests.
+- `/me/creator/patterns/new` + `/me/creator/patterns/[id]` — create / edit form with tutorial picker (creator's own tutorials only). Edit page shows status-transition controls + tabs to applicants and feedback views.
+- `/me/creator/patterns/[id]/applicants` — applicant queue with each applicant's existing activity (project count, review count) + note. Accept (subject to remaining slots) or reject with optional note.
+- `/me/creator/patterns/[id]/feedback` — aggregated view of completed assignments: per-axis average score cards, average time taken, then each tester's individual notes.
+
+**`/me/tester` subroutes:**
+
+- `/me/tester/apply` — self-serve. One button flips `isPatternTester` on. Lighter than the creator review path per the spec.
+- `/me/tester` — dashboard split into Active / Waiting / Past with status pills.
+- `/me/tester/assignments` — full list of every assignment the user has.
+- `/me/tester/assignments/[id]` — assignment detail with the brief + link to the tutorial, lifecycle buttons (start / withdraw), and the structured feedback form (1–5 scores + comment on pattern clarity / instruction clarity / photo accuracy / supplies accuracy; time taken; what worked / what didn't). Submitted feedback locks the form and shows it back read-only.
+
+**Admin surfaces:**
+
+- New "Creators" group in the sidebar (renders above Billing/Marketing/Analytics for visibility).
+- `/admin/creators` — two tabs: "Applications" (APPLIED, sorted oldest first) and "Active creators" (approved + isCreator, sorted by verified date desc). Active-creator rows link to `/makers/[handle]` and offer a "Moderate tutorials" shortcut.
+- `/admin/creators/[id]` — application review page. Full profile draft + socials + the applicant's prior reviews / photos / questions / projects so admins can judge quality. Approve / Reject controls. Approval flips `isCreator + creatorVerifiedAt`; rejection requires a note.
+- `/admin/creators/moderation` — cross-creator queue of all PENDING_MODERATION creator tutorials. Each row: link into the full admin tutorial editor (read + edit) + inline Publish / Send-back-with-note controls.
+- `/admin/patterns` — overview of every pattern test on the platform with status filter chips. Read-only; admin can click the creator link to drill into the user.
+- `/admin/users/[userId]` extended with a "Creator program" card: creator status, public profile link, revoke-creator action (ADMIN only), and a tester-pool toggle (EDITOR or above).
+- Admin tutorial list now includes a "pending moderation" filter chip + a burnt-sienna PENDING_MODERATION status badge.
+- `transitionTutorialStatus` table extended: DRAFT can move to PENDING_MODERATION, PENDING_MODERATION can move to DRAFT or PUBLISHED.
+
+**Public tutorial attribution:**
+
+- `TutorialChrome` accepts an optional `attribution` prop. When the tutorial has a creator, renders "By {creator-name}" with a link to `/makers/[handle]` and a small sage verified dot when applicable. When the tutorial has no creator, renders "By Homemade". The byline sits between the info bar and the actions bar.
+- `TutorialCard` accepts an optional `byline` string for the same "By Homemade" or "By {creator}" attribution on cards. Not threaded through everywhere yet — used by the public attribution row on the detail page where it most matters; cards stay clean by default to avoid visual noise on dense grids.
+
+**Build hygiene:**
+
+- `pnpm --filter @homemade/web typecheck` — passes.
+- `pnpm --filter @homemade/web build` — passes. All 17 new routes registered.
+- Client components type-only use `@homemade/db` enums via local string-union types so the pg adapter doesn't leak into the public bundle (same pattern as the existing `user-controls.tsx`).
+- Public bundle stays TipTap-free; the creator editor uses the same admin TipTap module (server-route-gated).
+
+### Open scope choices resolved
+
+- **Creator edits to published tutorials** go live immediately with a `TutorialVersion` snapshot, instead of bouncing back to PENDING_MODERATION on every save. Chose lower friction over churn for typo fixes; the "significant change → resubmit" flag is parked for later if needed.
+- **Tester opt-in** is self-serve (one button on `/me/tester/apply`). Admin can still add or remove someone from the pool manually via `/admin/users/[id]`.
+- **Application detail URL** uses the `CreatorProfile.id`, not the user id, so application review is a stable URL even before approval. Active-creator rows use `/admin/users/[id]` for ongoing creator management.
+- **Creator tutorial moderation queue** is a single cross-creator queue at `/admin/creators/moderation` instead of the per-creator `[id]/moderate-tutorials` shape from the spec. Reads more naturally for admins working through the backlog and keeps the URL space tidy.
+- **Public follow / messaging / creator avatars / payouts / analytics** all explicitly deferred per the spec — no scaffolding added.
+
+### Out of scope (deferred to later phases)
+
+- Stripe / payouts — Phase 7.
+- Marketplace product listings — Phase 7.
+- Email notifications for any creator-program event — Phase 8 (in-app only).
+- Per-creator analytics — Phase 8.
+- Creator avatar uploads (uses first letter on sage disc for now).
+- Creator-to-creator messaging, public follows, royalty tracking.
+
+### New pre-launch debt items
+
+- Creator-tutorial moderation has no preview-with-track-changes — admins read the live editor. Worth a follow-up if review volume grows.
+- Pattern-test board has no search or full-text filter (only category chips). Add when volume warrants it.
+- The Tutorial.creatorId FK uses `onDelete: SetNull`, so deleting a User row blanks the byline on their tutorials. That's correct for moderation flow but may not be what we want at GDPR-delete time — revisit when the GDPR session lands.
+
+## Phases 7–8
 
 Plan unchanged.
 
-- Phase 6: Pattern testing & creator program
-- Phase 7: Marketplace
+- Phase 7: Marketplace + creator payouts
 - Phase 8: Premium tier, content seeding & launch readiness
 
 ---
@@ -548,5 +643,6 @@ Plan unchanged.
 - `fed610c` — feat(public): tutorial / category / homepage + TipTap-JSON renderer (Phase 3a)
 - `13930f1` — Phase 3b Typesense search + Phase 3c Capacitor 8 mobile wrapper + three extra TipTap blocks + admin Preview metadata polish
 - `8261c89` — feat(public): Phase 4 accounts — bookmarks, projects, reading-progress / TOC / project companion, beginner mode, /me dashboard + settings, signed-in header, supplies substitutions
-- _this session_ — feat(public+admin): Phase 5 UGC pipeline + moderation queues + admin menu restructure + audit-log viewer
+- Phase 5 — UGC pipeline + moderation queues + admin menu restructure + audit-log viewer
+- _this session_ — feat(public+admin): Phase 6 creator program + pattern testing + public maker profiles + creator-tutorial moderation flow
 - Phase 3a (this session): public tutorial / category / home pages, TipTap-JSON renderer with no TipTap runtime in the public bundle, admin Preview toggle

@@ -244,3 +244,67 @@
 .admin-notice strong {
   color: var(--color-forest);
 }
+
+.admin-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 24px;
+  border-bottom: 0.5px solid var(--color-linen-grey);
+}
+.admin-tab {
+  font-family: var(--font-lora);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+  text-decoration: none;
+  padding: 10px 14px;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.admin-tab.active {
+  color: var(--color-sage);
+  border-bottom-color: var(--color-sage);
+}
+.admin-tab:hover {
+  color: var(--color-sage);
+}
+
+.admin-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.admin-list-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 18px 0;
+  border-bottom: 0.5px solid var(--color-linen-grey);
+}
+.admin-list-title {
+  font-family: var(--font-fraunces);
+  font-size: 18px;
+  color: var(--color-espresso);
+  text-decoration: none;
+}
+.admin-list-title:hover {
+  color: var(--color-sage);
+}
+.admin-list-meta {
+  font-family: var(--font-lora);
+  font-size: 12px;
+  color: var(--color-warm-taupe);
+  margin-top: 4px;
+}
+
+.admin-empty {
+  font-family: var(--font-lora);
+  font-style: italic;
+  color: var(--color-warm-taupe);
+  background: var(--color-soft-parchment);
+  border: 0.5px solid var(--color-linen-grey);
+  padding: 24px;
+  border-radius: 4px;
+}

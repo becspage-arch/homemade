@@ -163,6 +163,34 @@
   border-bottom: 0.5px solid var(--color-linen-grey);
 }
 
+.tutorial-attribution {
+  padding: 12px 0 0;
+}
+
+.tutorial-byline {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  color: var(--color-warm-taupe);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tutorial-byline-link {
+  color: var(--color-sage);
+  text-decoration: none;
+}
+
+.tutorial-byline-link:hover {
+  color: var(--color-forest);
+  text-decoration: underline;
+}
+
+.tutorial-byline-verified {
+  display: inline-flex;
+  color: var(--color-sage);
+}
+
 @media (max-width: 1100px) {
   .tutorial-page-rails {
     grid-template-columns: 1fr;

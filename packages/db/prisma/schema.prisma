@@ -23,11 +23,11 @@ datasource db {
 // ────────────────────────────────────────────────────────────────────────────
 
 model User {
-  id        String   @id @default(cuid())
-  clerkId   String   @unique
-  email     String   @unique
-  name      String?
-  role      UserRole @default(MEMBER)
+  id      String   @id @default(cuid())
+  clerkId String   @unique
+  email   String   @unique
+  name    String?
+  role    UserRole @default(MEMBER)
 
   // Reader-side preferences and profile
   beginnerMode  Boolean @default(false)
@@ -40,34 +40,48 @@ model User {
   isSuspended    Boolean   @default(false)
   suspendedUntil DateTime?
 
+  // Creator program (Phase 6). `isCreator` is the denormalised flag set when
+  // an application is approved; the full profile lives in `CreatorProfile`.
+  // `isPatternTester` flips on when a member opts in to the tester pool.
+  isCreator         Boolean   @default(false)
+  creatorVerifiedAt DateTime?
+  isPatternTester   Boolean   @default(false)
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   tutorialsAuthored Tutorial[]        @relation("TutorialAuthor")
+  tutorialsCreated  Tutorial[]        @relation("TutorialCreator")
   versions          TutorialVersion[] @relation("VersionAuthor")
   auditLogs         AuditLog[]
   bookmarks         Bookmark[]
   projects          UserProject[]
 
-  reviews         Review[]
-  reviewHelpfuls  ReviewHelpful[]
-  ugcPhotos       UGCPhoto[]
-  questions       Question[]
-  answers         Answer[]
-  questionUpvotes QuestionUpvote[]
-  errata          Errata[]            @relation("ErrataAuthor")
-  errataResolved  Errata[]            @relation("ErrataResolver")
-  reportsFiled    Report[]            @relation("ReportReporter")
-  reportsResolved Report[]            @relation("ReportResolver")
-  suspensions     UserSuspension[]    @relation("SuspensionSubject")
+  reviews            Review[]
+  reviewHelpfuls     ReviewHelpful[]
+  ugcPhotos          UGCPhoto[]
+  questions          Question[]
+  answers            Answer[]
+  questionUpvotes    QuestionUpvote[]
+  errata             Errata[]         @relation("ErrataAuthor")
+  errataResolved     Errata[]         @relation("ErrataResolver")
+  reportsFiled       Report[]         @relation("ReportReporter")
+  reportsResolved    Report[]         @relation("ReportResolver")
+  suspensions        UserSuspension[] @relation("SuspensionSubject")
   suspensionsApplied UserSuspension[] @relation("SuspensionActor")
   suspensionsLifted  UserSuspension[] @relation("SuspensionLifter")
-  notifications   Notification[]
-  reviewsModerated   Review[]   @relation("ReviewModerator")
-  photosModerated    UGCPhoto[] @relation("PhotoModerator")
+  notifications      Notification[]
+  reviewsModerated   Review[]         @relation("ReviewModerator")
+  photosModerated    UGCPhoto[]       @relation("PhotoModerator")
+
+  creatorProfile   CreatorProfile?  @relation("CreatorProfileOwner")
+  creatorDecisions CreatorProfile[] @relation("CreatorProfileDecider")
+  patternTests     PatternTest[]
+  testAssignments  TestAssignment[]
 
   @@index([role])
   @@index([isSuspended])
+  @@index([isCreator])
 }
 
 enum UserRole {
@@ -131,8 +145,8 @@ model Tag {
 // ────────────────────────────────────────────────────────────────────────────
 
 model GlossaryTerm {
-  id         String  @id @default(cuid())
-  slug       String  @unique
+  id         String @id @default(cuid())
+  slug       String @unique
   term       String
   definition String // Short plain-text definition for tooltips
   body       Json? // Optional longer rich content for the term's own page
@@ -184,13 +198,19 @@ model Tutorial {
   authorId String
   author   User   @relation("TutorialAuthor", fields: [authorId], references: [id])
 
-  versions  TutorialVersion[]
-  bookmarks Bookmark[]
-  projects  UserProject[]
-  reviews   Review[]
-  ugcPhotos UGCPhoto[]
-  questions Question[]
-  errata    Errata[]
+  // Creator attribution (Phase 6). Null = Homemade-authored. When set, the
+  // tutorial is shown with a "By {creator}" byline that links to /makers/[handle].
+  creatorId String?
+  creator   User?   @relation("TutorialCreator", fields: [creatorId], references: [id])
+
+  versions     TutorialVersion[]
+  bookmarks    Bookmark[]
+  projects     UserProject[]
+  reviews      Review[]
+  ugcPhotos    UGCPhoto[]
+  questions    Question[]
+  errata       Errata[]
+  patternTests PatternTest[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -198,6 +218,7 @@ model Tutorial {
   @@index([status, publishedAt])
   @@index([categoryId, status])
   @@index([slug])
+  @@index([creatorId, status, publishedAt])
 }
 
 enum Difficulty {
@@ -225,6 +246,7 @@ enum SourceType {
 enum TutorialStatus {
   DRAFT
   IN_REVIEW
+  PENDING_MODERATION
   SCHEDULED
   PUBLISHED
   ARCHIVED
@@ -270,9 +292,9 @@ model Media {
   caption     String?
   attribution String? // Wikimedia / Unsplash / Pexels credit
 
-  width    Int?
-  height   Int?
-  bytes    Int?
+  width  Int?
+  height Int?
+  bytes  Int?
 
   status MediaStatus @default(UPLOADING)
 
@@ -334,10 +356,10 @@ model UserProject {
   completedAt DateTime?
   abandonedAt DateTime?
 
-  notes                   String   @default("")
-  suppliesChecked         Json     @default("[]")
-  readingProgressPercent  Int      @default(0)
-  lastViewedAt            DateTime @default(now())
+  notes                  String   @default("")
+  suppliesChecked        Json     @default("[]")
+  readingProgressPercent Int      @default(0)
+  lastViewedAt           DateTime @default(now())
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -390,7 +412,7 @@ model Review {
   title  String?
   body   String
 
-  helpfulCount Int          @default(0)
+  helpfulCount Int             @default(0)
   helpfuls     ReviewHelpful[]
 
   status ReviewStatus @default(PENDING_MODERATION)
@@ -417,9 +439,9 @@ enum ReviewStatus {
 
 model ReviewHelpful {
   userId    String
-  user      User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   reviewId  String
-  review    Review @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  review    Review   @relation(fields: [reviewId], references: [id], onDelete: Cascade)
   createdAt DateTime @default(now())
 
   @@id([userId, reviewId])
@@ -476,8 +498,8 @@ model Question {
 
   body String
 
-  status      UGCStatus       @default(PENDING_MODERATION)
-  upvoteCount Int             @default(0)
+  status      UGCStatus        @default(PENDING_MODERATION)
+  upvoteCount Int              @default(0)
   upvotes     QuestionUpvote[]
   answers     Answer[]
 
@@ -507,7 +529,7 @@ model Answer {
   body String
 
   /// True when the author has role ADMIN or EDITOR at write time.
-  isAuthorAnswer Boolean   @default(false)
+  isAuthorAnswer Boolean @default(false)
 
   status       UGCStatus @default(PENDING_MODERATION)
   helpfulCount Int       @default(0)
@@ -627,9 +649,9 @@ model UserSuspension {
   /// Null means indefinite / permanent.
   endsAt    DateTime?
 
-  liftedAt     DateTime?
-  liftedById   String?
-  liftedBy     User?     @relation("SuspensionLifter", fields: [liftedById], references: [id])
+  liftedAt   DateTime?
+  liftedById String?
+  liftedBy   User?     @relation("SuspensionLifter", fields: [liftedById], references: [id])
 
   status SuspensionStatus @default(ACTIVE)
 
@@ -680,5 +702,150 @@ enum NotificationType {
   ERRATA_DISMISSED
   ACCOUNT_SUSPENDED
   ACCOUNT_UNSUSPENDED
+  CREATOR_APPLICATION_APPROVED
+  CREATOR_APPLICATION_REJECTED
+  CREATOR_TUTORIAL_PUBLISHED
+  CREATOR_TUTORIAL_REJECTED
+  CREATOR_TUTORIAL_SUBMITTED
+  PATTERN_TEST_APPLICATION_ACCEPTED
+  PATTERN_TEST_APPLICATION_REJECTED
+  PATTERN_TEST_FEEDBACK_RECEIVED
   SYSTEM
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Phase 6 — Creator program + pattern testing
+// ────────────────────────────────────────────────────────────────────────────
+
+/// One row per user who has applied for or holds the creator role. The
+/// application + decision history lives on the row; once decidedAt is set,
+/// `applicationStatus` reflects the outcome. The owning user's `isCreator`
+/// flag is set on approval so role checks don't need a join.
+model CreatorProfile {
+  id String @id @default(cuid())
+
+  userId String @unique
+  user   User   @relation("CreatorProfileOwner", fields: [userId], references: [id], onDelete: Cascade)
+
+  bio       String
+  specialty String
+
+  // Optional social links surfaced on the public maker profile.
+  websiteUrl      String?
+  instagramHandle String?
+  youtubeHandle   String?
+  tiktokHandle    String?
+  substackUrl     String?
+  pinterestHandle String?
+
+  applicationStatus CreatorApplicationStatus @default(APPLIED)
+  applicationNote   String?
+  appliedAt         DateTime                 @default(now())
+  decidedAt         DateTime?
+  decidedById       String?
+  decidedBy         User?                    @relation("CreatorProfileDecider", fields: [decidedById], references: [id])
+  rejectionReason   String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([applicationStatus, appliedAt])
+}
+
+enum CreatorApplicationStatus {
+  NONE
+  APPLIED
+  APPROVED
+  REJECTED
+}
+
+/// A pattern test is run by a creator (or future Homemade staff) on a tutorial
+/// they own. Members opt in via `TestAssignment`. Once feedback is in, the
+/// creator sees aggregated form data on the `feedback` page.
+model PatternTest {
+  id String @id @default(cuid())
+
+  tutorialId String
+  tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+
+  creatorId String
+  creator   User   @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+
+  status PatternTestStatus @default(DRAFT)
+
+  /// Title shown on the public board — can differ from the tutorial title.
+  title           String
+  briefForTesters String
+  maxTesters      Int    @default(5)
+
+  recruitingClosesAt DateTime?
+  completedAt        DateTime?
+
+  assignments TestAssignment[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status, createdAt])
+  @@index([creatorId, status])
+  @@index([tutorialId])
+}
+
+enum PatternTestStatus {
+  DRAFT
+  RECRUITING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+/// One row per (test, tester). Tracks lifecycle from APPLIED through
+/// COMPLETED and stores the structured feedback JSON blob the tester submits.
+model TestAssignment {
+  id String @id @default(cuid())
+
+  patternTestId String
+  patternTest   PatternTest @relation(fields: [patternTestId], references: [id], onDelete: Cascade)
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  status          TestAssignmentStatus @default(APPLIED)
+  applicationNote String?
+
+  /// Structured feedback form output. Shape:
+  /// {
+  ///   patternClarity: { score: 1..5, comment: string },
+  ///   instructionClarity: { score: 1..5, comment: string },
+  ///   photoAccuracy: { score: 1..5, comment: string },
+  ///   suppliesAccuracy: { score: 1..5, comment: string },
+  ///   timeTakenMinutes: number | null,
+  ///   estimatedTimeMinutes: number | null,
+  ///   whatWorked: string,
+  ///   whatDidnt: string,
+  /// }
+  feedback Json?
+
+  appliedAt       DateTime  @default(now())
+  decidedAt       DateTime?
+  startedAt       DateTime?
+  completedAt     DateTime?
+  withdrawnAt     DateTime?
+  rejectionReason String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([patternTestId, userId])
+  @@index([userId, status])
+  @@index([patternTestId, status])
+}
+
+enum TestAssignmentStatus {
+  APPLIED
+  ACCEPTED
+  IN_PROGRESS
+  COMPLETED
+  WITHDRAWN
+  REJECTED
 }
