@@ -183,4 +183,4 @@ Not started. Plan unchanged.
 - `568ec8a` — feat(admin): glossary + sub-categories + tags CRUD + Clerk webhook + favicon
 - `ef7d528` — fix(infra): defer CLERK_WEBHOOK_SIGNING_SECRET mount (CFN race fix)
 - `fac45dc` — feat(admin): /admin/tutorials CRUD + TipTap editor with five custom blocks + version history
-- Phase 2e (this session): media CRUD + Cloudflare Images direct-upload + secrets wiring
+- `3db774b` — feat(admin): /admin/media CRUD + Cloudflare Images direct-upload
