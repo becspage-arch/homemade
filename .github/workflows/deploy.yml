@@ -10,6 +10,9 @@ env:
   ECR_REPOSITORY: homemade/web
   ECS_CLUSTER: homemade
   ECS_SERVICE: homemade-web
+  # Forces actions that still ship Node 20 entrypoints (aws-actions/*,
+  # docker/*) to run on Node 24. Removable once those actions update.
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
 
 concurrency:
   group: deploy-${{ github.ref }}
@@ -56,16 +59,21 @@ jobs:
       # ── Database migrations ──
       # Runs BEFORE ECS rollout so the new container code finds the migrated
       # schema. Idempotent — a no-op when no migrations are pending.
-      - name: Set up Node.js
-        uses: actions/setup-node@v5
-        with:
-          node-version: '22'
-
+      #
+      # pnpm/action-setup MUST come before actions/setup-node — v5 of
+      # setup-node turned on the package-manager cache by default, which
+      # tries to run pnpm during setup. Without pnpm already on PATH the
+      # step fails with "Unable to locate executable file: pnpm".
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
         with:
           version: '11.0.9'
           run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
 
       - name: Install @homemade/db deps for migrate step
         run: pnpm install --filter @homemade/db --frozen-lockfile
