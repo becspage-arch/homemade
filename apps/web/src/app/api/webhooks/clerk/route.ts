@@ -1,6 +1,7 @@
 import { headers } from 'next/headers'
 import { Webhook } from 'svix'
 import { prisma, UserRole } from '@homemade/db'
+import { captureServerEvent, flushPostHog, identifyServerUser } from '@/lib/posthog'
 
 /**
  * Clerk webhook receiver. Keeps the Prisma `User` row in sync when Clerk's
@@ -92,7 +93,7 @@ export async function POST(req: Request): Promise<Response> {
           return Response.json({ ok: true, skipped: 'no primary email' })
         }
         const name = combineName(evt.data)
-        await prisma.user.upsert({
+        const upserted = await prisma.user.upsert({
           where: { clerkId: evt.data.id },
           create: {
             clerkId: evt.data.id,
@@ -108,6 +109,23 @@ export async function POST(req: Request): Promise<Response> {
             // (handled by upsert.create).
           },
         })
+        if (evt.type === 'user.created') {
+          await identifyServerUser({
+            distinctId: evt.data.id,
+            properties: {
+              email,
+              name: name ?? undefined,
+              displayHandle: upserted.displayHandle ?? undefined,
+              role: upserted.role,
+            },
+          })
+          await captureServerEvent({
+            event: 'signup_completed',
+            distinctId: evt.data.id,
+            properties: { role: upserted.role },
+          })
+          await flushPostHog()
+        }
         return Response.json({ ok: true, type: evt.type })
       }
       case 'user.deleted': {

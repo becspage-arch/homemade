@@ -1,9 +1,13 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { headers } from 'next/headers'
 import { prisma, TutorialStatus } from '@homemade/db'
 import { searchTutorials, isSearchConfigured } from '@homemade/search'
 import { TutorialCard } from '@/components/public/tutorial-card'
 import { mediaUrl } from '@/lib/media'
+import { captureServerEvent } from '@/lib/posthog'
+import { checkRateLimit } from '@/lib/ratelimit'
+import { getCurrentDbUser } from '@/lib/get-current-user'
 import { SearchForm } from './search-form'
 
 import './search-page.css'
@@ -56,7 +60,16 @@ export default async function SearchPage({ searchParams }: PageProps) {
       })
     : []
 
-  const results = !isEmpty
+  // IP-keyed rate limit on actual search queries. Skip the empty/recent state
+  // since that's just landing on /search with no input.
+  let rateLimited = false
+  if (!isEmpty) {
+    const ip = await getClientIp()
+    const limit = await checkRateLimit('searchQuery', ip)
+    if (!limit.allowed) rateLimited = true
+  }
+
+  const results = !isEmpty && !rateLimited
     ? await searchTutorials({
         q,
         categorySlug,
@@ -65,6 +78,25 @@ export default async function SearchPage({ searchParams }: PageProps) {
         perPage: RESULTS_PER_PAGE,
       })
     : null
+
+  if (results) {
+    const dbUser = await getCurrentDbUser()
+    const ip = await getClientIp()
+    void captureServerEvent({
+      event: 'search_query',
+      distinctId: dbUser?.clerkId ?? `anon:${ip}`,
+      properties: {
+        query: q,
+        resultCount: results.found,
+        filters: {
+          category: categorySlug ?? undefined,
+          difficulty: difficulty ?? undefined,
+          season: season ?? undefined,
+        },
+        identified: Boolean(dbUser),
+      },
+    })
+  }
 
   return (
     <div className="search-page">
@@ -83,6 +115,12 @@ export default async function SearchPage({ searchParams }: PageProps) {
         <p className="search-empty">
           Search is not yet wired up in this environment. Try the category
           pages from the menu while we finish setting it up.
+        </p>
+      )}
+
+      {rateLimited && (
+        <p className="search-empty">
+          Search is busy right now. Try again in a minute.
         </p>
       )}
 
@@ -152,4 +190,15 @@ export default async function SearchPage({ searchParams }: PageProps) {
 function pickString(value: string | string[] | undefined): string | undefined {
   if (Array.isArray(value)) return value[0]
   return value
+}
+
+async function getClientIp(): Promise<string> {
+  const h = await headers()
+  // Cloudflare puts the original client IP in cf-connecting-ip; ALB rewrites
+  // x-forwarded-for. Fall back to a coarse bucket so the limiter has *something*.
+  return (
+    h.get('cf-connecting-ip') ??
+    h.get('x-forwarded-for')?.split(',')[0]?.trim() ??
+    'unknown'
+  )
 }

@@ -15,6 +15,25 @@ import {
 import { audit } from './audit'
 import { notify } from './notify'
 import { requireAdminRole } from './get-current-user'
+import { inngest } from '@/inngest/client'
+import { captureServerEvent } from './posthog'
+
+async function fireOutcome(
+  actorId: string,
+  targetType: 'review' | 'photo' | 'question' | 'answer' | 'errata' | 'report' | 'user',
+  targetId: string,
+  outcome: string,
+  extras: { tutorialId?: string; userId?: string } = {},
+): Promise<void> {
+  try {
+    await inngest.send({
+      name: 'moderation/outcome.notified',
+      data: { actorId, targetType, targetId, outcome, ...extras },
+    })
+  } catch {
+    // never block the moderation action on Inngest hiccups
+  }
+}
 
 type ActionResult = { ok: true } | { ok: false; error: string }
 
@@ -98,6 +117,19 @@ export async function moderateReview(input: {
     href: tutorialPath(review.tutorial),
   })
 
+  await fireOutcome(actor.id, 'review', review.id, input.action, {
+    tutorialId: review.tutorialId,
+    userId: review.userId,
+  })
+
+  if (input.action === 'APPROVE') {
+    await captureServerEvent({
+      event: 'review_published',
+      distinctId: review.userId,
+      properties: { reviewId: review.id, tutorialId: review.tutorialId },
+    })
+  }
+
   revalidatePath('/admin/reviews')
   const path = tutorialPath(review.tutorial)
   if (path) revalidatePath(path)
@@ -161,6 +193,17 @@ export async function moderateUgcPhoto(input: {
     href: tutorialPath(photo.tutorial),
   })
 
+  await fireOutcome(actor.id, 'photo', photo.id, input.action, {
+    tutorialId: photo.tutorialId,
+    userId: photo.userId,
+  })
+
+  await captureServerEvent({
+    event: input.action === 'APPROVE' ? 'photo_approved' : 'photo_rejected',
+    distinctId: photo.userId,
+    properties: { photoId: photo.id, tutorialId: photo.tutorialId },
+  })
+
   revalidatePath('/admin/ugc-photos')
   const path = tutorialPath(photo.tutorial)
   if (path) revalidatePath(path)
@@ -222,6 +265,11 @@ export async function moderateQuestion(input: {
     href: tutorialPath(q.tutorial),
   })
 
+  await fireOutcome(actor.id, 'question', q.id, input.action, {
+    tutorialId: q.tutorialId,
+    userId: q.userId,
+  })
+
   revalidatePath('/admin/questions')
   const path = tutorialPath(q.tutorial)
   if (path) revalidatePath(path)
@@ -272,6 +320,10 @@ export async function moderateAnswer(input: {
         ? `Your answer on “${a.question.tutorial.title}” is now visible.`
         : `Your answer on “${a.question.tutorial.title}” was hidden.`,
     href: tutorialPath(a.question.tutorial),
+  })
+
+  await fireOutcome(actor.id, 'answer', a.id, input.action, {
+    userId: a.userId,
   })
 
   revalidatePath('/admin/questions')
@@ -378,6 +430,11 @@ export async function resolveErrata(input: {
       href: tutorialPath(errata.tutorial),
     })
   }
+
+  await fireOutcome(actor.id, 'errata', errata.id, input.action, {
+    tutorialId: errata.tutorialId,
+    userId: errata.userId ?? undefined,
+  })
 
   revalidatePath('/admin/errata')
   return { ok: true }

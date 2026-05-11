@@ -28,6 +28,21 @@ FROM base AS builder
 # Pass the Clerk publishable key as a build arg from CI.
 ARG NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
 ENV NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=$NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+# PostHog public key + host (NEXT_PUBLIC_* — bundled into the browser).
+ARG NEXT_PUBLIC_POSTHOG_KEY
+ENV NEXT_PUBLIC_POSTHOG_KEY=$NEXT_PUBLIC_POSTHOG_KEY
+ARG NEXT_PUBLIC_POSTHOG_HOST
+ENV NEXT_PUBLIC_POSTHOG_HOST=$NEXT_PUBLIC_POSTHOG_HOST
+# Sentry DSN is safe to expose to the browser; auth token + slugs are used
+# at build time only for source-map upload (withSentryConfig reads them).
+ARG NEXT_PUBLIC_SENTRY_DSN
+ENV NEXT_PUBLIC_SENTRY_DSN=$NEXT_PUBLIC_SENTRY_DSN
+ARG SENTRY_AUTH_TOKEN
+ENV SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN
+ARG SENTRY_ORG_SLUG
+ENV SENTRY_ORG_SLUG=$SENTRY_ORG_SLUG
+ARG SENTRY_PROJECT_SLUG
+ENV SENTRY_PROJECT_SLUG=$SENTRY_PROJECT_SLUG
 ENV NEXT_TELEMETRY_DISABLED=1
 COPY --from=deps /repo/node_modules ./node_modules
 COPY --from=deps /repo/apps/web/node_modules ./apps/web/node_modules

@@ -150,6 +150,30 @@ export class HomemadeStack extends cdk.Stack {
       'R2SecretAccessKeySecret',
       'homemade/r2-secret-access-key',
     )
+    // Runtime secrets for Inngest + Upstash, added in the Phase 1 deferred-
+    // services activation session. Mounted with the same two-step CFN pattern:
+    // first deploy lands the IAM grant; second deploy (MOUNT_PHASE1_SECRETS=1)
+    // adds the actual `ecs.Secret` references and replaces the task.
+    const inngestEventKeySecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'InngestEventKeySecret',
+      'homemade/inngest-event-key',
+    )
+    const inngestSigningKeySecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'InngestSigningKeySecret',
+      'homemade/inngest-signing-key',
+    )
+    const upstashRedisUrlSecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'UpstashRedisUrlSecret',
+      'homemade/upstash-redis-url',
+    )
+    const upstashRedisTokenSecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'UpstashRedisTokenSecret',
+      'homemade/upstash-redis-token',
+    )
 
     // The Clerk webhook signing secret is wired in two deploys to avoid the
     // CFN circuit breaker race (IAM grant landing in parallel with task
@@ -166,6 +190,9 @@ export class HomemadeStack extends cdk.Stack {
     // Deploy 1: this stack adds the IAM grant on the execution role.
     // Deploy 2: `MOUNT_R2_SECRETS=1` adds the actual env references.
     const mountR2Secrets = process.env.MOUNT_R2_SECRETS === '1'
+
+    // And for the Phase 1 deferred services (Inngest + Upstash).
+    const mountPhase1Secrets = process.env.MOUNT_PHASE1_SECRETS === '1'
 
     // ────────────────────────────────────────────────────────────────
     // CloudWatch — task logs
@@ -219,6 +246,10 @@ export class HomemadeStack extends cdk.Stack {
           `${clerkWebhookSecret.secretArn}-??????`,
           `${r2AccessKeyIdSecret.secretArn}-??????`,
           `${r2SecretAccessKeySecret.secretArn}-??????`,
+          `${inngestEventKeySecret.secretArn}-??????`,
+          `${inngestSigningKeySecret.secretArn}-??????`,
+          `${upstashRedisUrlSecret.secretArn}-??????`,
+          `${upstashRedisTokenSecret.secretArn}-??????`,
         ],
       }),
     )
@@ -258,6 +289,14 @@ export class HomemadeStack extends cdk.Stack {
           ? {
               R2_ACCESS_KEY_ID: ecs.Secret.fromSecretsManager(r2AccessKeyIdSecret),
               R2_SECRET_ACCESS_KEY: ecs.Secret.fromSecretsManager(r2SecretAccessKeySecret),
+            }
+          : {}),
+        ...(mountPhase1Secrets
+          ? {
+              INNGEST_EVENT_KEY: ecs.Secret.fromSecretsManager(inngestEventKeySecret),
+              INNGEST_SIGNING_KEY: ecs.Secret.fromSecretsManager(inngestSigningKeySecret),
+              UPSTASH_REDIS_REST_URL: ecs.Secret.fromSecretsManager(upstashRedisUrlSecret),
+              UPSTASH_REDIS_REST_TOKEN: ecs.Secret.fromSecretsManager(upstashRedisTokenSecret),
             }
           : {}),
       },

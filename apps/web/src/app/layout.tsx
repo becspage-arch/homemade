@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import { Fraunces, Lora } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
+import { PostHogProvider } from '@/components/posthog-provider'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -28,7 +30,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <ClerkProvider>
       <html lang="en-GB" className={`${fraunces.variable} ${lora.variable}`}>
-        <body>{children}</body>
+        <body>
+          <Suspense>
+            <PostHogProvider>{children}</PostHogProvider>
+          </Suspense>
+        </body>
       </html>
     </ClerkProvider>
   )

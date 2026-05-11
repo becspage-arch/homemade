@@ -9,6 +9,7 @@ import { mediaUrl } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { harvestSupplies } from '@/lib/supplies'
 import { loadTutorialUgc } from '@/lib/ugc-loader'
+import { captureServerEvent } from '@/lib/posthog'
 import { BookmarkButton } from '@/components/public/tutorial-reader/bookmark-button'
 import { ProjectButton } from '@/components/public/tutorial-reader/project-button'
 import { ReadingProgress } from '@/components/public/tutorial-reader/reading-progress'
@@ -83,6 +84,21 @@ export default async function TutorialPage({ params }: PageProps) {
   const refs = await loadContentRefs(body, tutorial.id)
   const heroUrl = mediaUrl(tutorial.hero, 'hero')
   const beginnerMode = currentUser?.beginnerMode === true
+
+  // Fire-and-forget pageview analytics. Anonymous readers get a stable
+  // per-tutorial distinct id from the slug pair; signed-in readers get their
+  // Clerk id so events stitch onto their PostHog profile.
+  void captureServerEvent({
+    event: 'tutorial_viewed',
+    distinctId: currentUser?.clerkId ?? `anon:${categorySlug}:${tutorialSlug}`,
+    properties: {
+      tutorialId: tutorial.id,
+      categorySlug,
+      tutorialSlug,
+      authorId: tutorial.authorId,
+      identified: Boolean(currentUser),
+    },
+  })
 
   // Per-user state: bookmark + project on this tutorial.
   const [bookmark, project, ugc] = currentUser

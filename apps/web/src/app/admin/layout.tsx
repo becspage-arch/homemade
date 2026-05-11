@@ -86,9 +86,10 @@ const SIDEBAR_GROUPS: SidebarGroup[] = [
     adminOnly: true,
     items: [
       { href: '/admin/audit-log', label: 'Audit log' },
+      { href: '/admin/system/errors', label: 'Error log' },
+      { href: '/admin/system/jobs', label: 'Jobs' },
       { href: '/admin/system/settings', label: 'Settings', placeholder: true },
       { href: '/admin/system/feature-flags', label: 'Feature flags', placeholder: true },
-      { href: '/admin/system/jobs', label: 'Jobs', placeholder: true },
     ],
   },
 ]

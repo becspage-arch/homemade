@@ -20,6 +20,8 @@ import { getCurrentDbUser } from './get-current-user'
 import { audit } from './audit'
 import { scanImageForNsfw, nsfwDecision } from './nsfw-scan'
 import { mediaUrl } from './media'
+import { captureServerEvent } from './posthog'
+import { checkRateLimit } from './ratelimit'
 
 type ActionResult = { ok: true } | { ok: false; error: string }
 
@@ -81,6 +83,9 @@ export async function submitReview(input: {
   })
   if (existing) return { ok: false, error: 'You’ve already reviewed this tutorial.' }
 
+  const limit = await checkRateLimit('reviewSubmission', user.id)
+  if (!limit.allowed) return { ok: false, error: limit.message }
+
   await prisma.review.create({
     data: {
       userId: user.id,
@@ -93,6 +98,11 @@ export async function submitReview(input: {
 
   revalidatePath(tutorialPath(tutorial))
   revalidatePath('/me/reviews')
+  await captureServerEvent({
+    event: 'review_submitted',
+    distinctId: user.clerkId,
+    properties: { tutorialId: tutorial.id, rating: input.rating },
+  })
   return { ok: true }
 }
 
@@ -181,6 +191,9 @@ export async function submitUgcPhoto(input: {
     }
   }
 
+  const limit = await checkRateLimit('photoUpload', user.id)
+  if (!limit.allowed) return { ok: false, error: limit.message }
+
   // Create the Media row + UGCPhoto row. NSFW scan runs after so the row
   // exists even if the scan fails mid-flight.
   const media = await prisma.media.create({
@@ -230,6 +243,11 @@ export async function submitUgcPhoto(input: {
 
   revalidatePath(tutorialPath(tutorial))
   revalidatePath('/me/photos')
+  await captureServerEvent({
+    event: 'photo_uploaded',
+    distinctId: user.clerkId,
+    properties: { tutorialId: tutorial.id, photoId: photo.id, status },
+  })
   return { ok: true, photoId: photo.id, status }
 }
 
@@ -254,12 +272,20 @@ export async function submitQuestion(input: {
   })
   if (!tutorial) return { ok: false, error: 'Tutorial not found.' }
 
+  const limit = await checkRateLimit('questionAsked', user.id)
+  if (!limit.allowed) return { ok: false, error: limit.message }
+
   await prisma.question.create({
     data: { userId: user.id, tutorialId: tutorial.id, body },
   })
 
   revalidatePath(tutorialPath(tutorial))
   revalidatePath('/me/questions')
+  await captureServerEvent({
+    event: 'question_asked',
+    distinctId: user.clerkId,
+    properties: { tutorialId: tutorial.id },
+  })
   return { ok: true }
 }
 
@@ -286,6 +312,9 @@ export async function submitAnswer(input: {
   const isAuthorAnswer =
     user.role === UserRole.ADMIN || user.role === UserRole.EDITOR
 
+  const limit = await checkRateLimit('questionAsked', user.id)
+  if (!limit.allowed) return { ok: false, error: limit.message }
+
   await prisma.answer.create({
     data: {
       userId: user.id,
@@ -299,6 +328,11 @@ export async function submitAnswer(input: {
 
   revalidatePath(tutorialPath(question.tutorial))
   revalidatePath('/me/questions')
+  await captureServerEvent({
+    event: 'question_answered',
+    distinctId: user.clerkId,
+    properties: { questionId: question.id, isAuthorAnswer },
+  })
   return { ok: true }
 }
 
@@ -370,6 +404,12 @@ export async function submitErrata(input: {
   })
   if (!tutorial) return { ok: false, error: 'Tutorial not found.' }
 
+  const limit = await checkRateLimit(
+    'errataSubmitted',
+    user?.id ?? `anon:${tutorial.id}`,
+  )
+  if (!limit.allowed) return { ok: false, error: limit.message }
+
   await prisma.errata.create({
     data: {
       userId: user?.id ?? null,
@@ -379,6 +419,13 @@ export async function submitErrata(input: {
   })
 
   revalidatePath(tutorialPath(tutorial))
+  if (user) {
+    await captureServerEvent({
+      event: 'errata_submitted',
+      distinctId: user.clerkId,
+      properties: { tutorialId: tutorial.id },
+    })
+  }
   return { ok: true }
 }
 
@@ -419,6 +466,9 @@ export async function submitReport(input: {
     return { ok: false, error: 'Pick a reason.' }
   }
   const description = input.description?.trim().slice(0, 1000) || null
+
+  const limit = await checkRateLimit('reportSubmitted', user.id)
+  if (!limit.allowed) return { ok: false, error: limit.message }
 
   await prisma.report.create({
     data: {

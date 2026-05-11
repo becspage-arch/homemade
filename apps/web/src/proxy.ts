@@ -17,6 +17,12 @@ const PUBLIC_PATHS = [
   '/api/unlock',
   '/favicon.ico',
   '/healthz',
+  // Sentry tunnels client error reports through /monitoring/sentry to dodge
+  // ad-blockers — must bypass the splash gate or anonymous browsers can't report.
+  '/monitoring/sentry',
+  // Inngest serve endpoint — Inngest Cloud syncs functions + delivers job
+  // runs by POST'ing here, so it can't be behind the splash cookie.
+  '/api/inngest',
   // Clerk's hosted flows + webhook receiver must work even before unlock,
   // otherwise admins can't sign in if they hit /admin first.
   '/sign-in',

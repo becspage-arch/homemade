@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation'
 import { prisma, UserProjectStatus } from '@homemade/db'
 import { audit } from './audit'
 import { getCurrentDbUser } from './get-current-user'
+import { captureServerEvent } from './posthog'
 
 /**
  * Caller-facing result shape. Server actions return a plain object so client
@@ -51,6 +52,11 @@ export async function toggleBookmark(tutorialId: string): Promise<
   revalidatePath(`/${tutorial.category.slug}/${tutorial.slug}`)
   revalidatePath('/me')
   revalidatePath('/me/bookmarks')
+  await captureServerEvent({
+    event: bookmarked ? 'tutorial_bookmarked' : 'tutorial_unbookmarked',
+    distinctId: user.clerkId,
+    properties: { tutorialId },
+  })
   return { ok: true, bookmarked }
 }
 
@@ -107,6 +113,11 @@ export async function startProject(tutorialId: string): Promise<
   revalidatePath(`/${tutorial.category.slug}/${tutorial.slug}`)
   revalidatePath('/me')
   revalidatePath('/me/projects')
+  await captureServerEvent({
+    event: 'tutorial_started',
+    distinctId: user.clerkId,
+    properties: { tutorialId, projectId: project.id, resumed: Boolean(existing) },
+  })
   return { ok: true, projectId: project.id }
 }
 
@@ -146,6 +157,11 @@ export async function markProjectComplete(projectId: string): Promise<ActionResu
   revalidatePath('/me')
   revalidatePath('/me/projects')
   revalidatePath(`/me/projects/${project.id}`)
+  await captureServerEvent({
+    event: 'tutorial_completed',
+    distinctId: user.clerkId,
+    properties: { tutorialId: project.tutorialId, projectId: project.id },
+  })
   return { ok: true }
 }
 
