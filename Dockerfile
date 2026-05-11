@@ -12,7 +12,8 @@ COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
 COPY apps/web/package.json apps/web/
 COPY apps/mobile/package.json apps/mobile/
 COPY packages/search/package.json packages/search/
-COPY infra/package.json infra/
+# Note: infra/ is excluded from the Docker build context via .dockerignore.
+# pnpm install treats the missing workspace package as a no-op.
 # packages/db: copy package.json + prisma schema + config so the postinstall
 # step (prisma generate) has everything it needs to produce the typed client.
 COPY packages/db/package.json packages/db/
