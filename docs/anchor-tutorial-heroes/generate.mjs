@@ -16,8 +16,11 @@ const FAL_KEY = readFileSync(
   'utf8',
 ).match(/^FAL_KEY=(.+)$/m)[1].trim()
 
-const STYLE_A_LOCKED =
-  'Modern botanical illustration in the style of vintage gardening manuals, clean ink linework with delicate watercolour fills, warm muted palette of sage green, linen cream, soft terracotta, and walnut brown, generous white margins on a soft cream background, restrained detail, hand-drawn quality, no photographic realism, no commercial slickness, calm composition, soft natural light implied, no text, no letters, no writing, no labels on the food itself'
+// Hero prompt — editorial food photography, slow-living register.
+// Locked policy: heroes are photographic, inlines are botanical
+// illustration. See docs/tutorial-author.md.
+const HERO_PROMPT =
+  'Editorial food photography in the slow-living register, soft directional window light from the left, slightly underexposed, linen and wood surfaces, ceramic and terracotta props, shallow depth of field, muted palette of linen cream, sage green, warm taupe, walnut, and honey, calm unhurried composition, real food and real surfaces, the look of Kinfolk or Cereal magazine, not commercial stock photography, no text, no letters, no writing, no labels on the food or props'
 
 const HEROES = [
   {
@@ -39,7 +42,7 @@ for (const h of HEROES) {
     method: 'POST',
     headers: { Authorization: `Key ${FAL_KEY}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      prompt: `${STYLE_A_LOCKED}, ${h.description}`,
+      prompt: `${HERO_PROMPT}, ${h.description}`,
       aspect_ratio: '16:9',
       output_format: 'png',
       num_images: 1,

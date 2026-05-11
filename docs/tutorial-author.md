@@ -7,41 +7,63 @@ pipeline grows (Phase 6 of the author loop in
 `memory/project_content_pipeline.md`), the body-authoring prompt template
 lands here too.
 
-Currently locked: the illustration prompt. The body-authoring prompt is
-TODO and lands as part of the pilot-batch session.
+Currently locked: the illustration prompts (hero and inline). The
+body-authoring prompt lands as part of the pilot-batch session.
 
 ---
 
-## Locked illustration prompt prefix
+## Locked illustration prompts
 
-**Style:** Style A — Modern botanical.
-**Tier:** Flux 1.1 Pro Ultra on fal.ai. Endpoint:
-`https://fal.run/fal-ai/flux-pro/v1.1-ultra`. Aspect: `16:9`. Output: PNG.
+Two prompts, two visual registers. The split was decided 2026-05-11 after
+running the test grid.
 
-**Prefix** (paste verbatim, then append `, <subject description>`):
+- **Hero images** are editorial food photography in the slow-living
+  register. The Kinfolk / Cereal magazine look. Soft window light,
+  shallow depth of field, muted palette, real food.
+- **Inline illustrations** are hand-drawn botanical watercolour. Vintage
+  gardening-manual feel. Clearly drawn, never mistaken for a photograph.
+
+Both run on Flux 1.1 Pro Ultra at fal.ai (endpoint
+`https://fal.run/fal-ai/flux-pro/v1.1-ultra`), aspect `16:9`, output PNG.
+
+### Hero prompt prefix
+
+Paste verbatim, then append `, <subject description>`:
+
+```
+Editorial food photography in the slow-living register, soft directional
+window light from the left, slightly underexposed, linen and wood
+surfaces, ceramic and terracotta props, shallow depth of field, muted
+palette of linen cream, sage green, warm taupe, walnut, and honey, calm
+unhurried composition, real food and real surfaces, the look of Kinfolk
+or Cereal magazine, not commercial stock photography, no text, no
+letters, no writing, no labels on the food or props
+```
+
+### Inline illustration prompt prefix
+
+Paste verbatim, then append `, <subject description>`:
 
 ```
 Modern botanical illustration in the style of vintage gardening manuals,
-clean ink linework with delicate watercolour fills, warm muted palette of
-sage green, linen cream, soft terracotta, and walnut brown, generous
+clean ink linework with delicate watercolour fills, warm muted palette
+of sage green, linen cream, soft terracotta, and walnut brown, generous
 white margins on a soft cream background, restrained detail, hand-drawn
 quality, no photographic realism, no commercial slickness, calm
 composition, soft natural light implied, no text, no letters, no writing,
-no labels on the food itself
+no labels
 ```
 
-(The last clause — "no text, no letters, no writing, no labels on the food
-itself" — is the negative against Flux's tendency to hallucinate text on
-bread, jar labels, and packaging. The style-test surfaced this on Style B's
-sourdough loaf; the prefix above prevents most of it.)
+The "no text" negative on both prompts prevents Flux's text-on-bread and
+text-on-jar-label hallucinations. The style-test surfaced these.
 
 ## Image-tier policy
 
-| Image role | Tier | Cost per image |
-|---|---|---|
-| Hero (one per tutorial) | Flux 1.1 Pro Ultra | $0.06 ≈ £0.048 |
-| Inline illustrations | Flux 1.1 Pro Ultra | $0.06 ≈ £0.048 |
-| Diagrams | Flux 1.1 Pro Ultra, label-free; labels typeset over the image in admin | $0.06 ≈ £0.048 |
+| Image role | Tier | Prompt | Cost per image |
+|---|---|---|---|
+| Hero (one per tutorial) | Flux 1.1 Pro Ultra | Hero prompt above | $0.06 ≈ £0.048 |
+| Inline illustrations | Flux 1.1 Pro Ultra | Inline prompt above | $0.06 ≈ £0.048 |
+| Diagrams | Flux 1.1 Pro Ultra | Inline prompt above, label-free; labels typeset over the image in admin | $0.06 ≈ £0.048 |
 
 Schnell is not used for production. The £80 saved at scale isn't worth the
 quality drop on finished-food subjects, and the consistency risk is real
