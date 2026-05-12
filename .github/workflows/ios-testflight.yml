@@ -82,13 +82,15 @@ jobs:
       - name: Install Fastlane
         run: sudo gem install fastlane -N
 
-      # Keychain bootstrap. The .p12 is intentionally generated WITHOUT a
-      # password (passwords were a recurring source of encoding bugs across
-      # PowerShell / Git Bash / GitHub Secrets — see the workflow's commit
-      # history). The .p12 is still protected by being inside a GitHub
-      # repository secret; an empty `.p12` password adds no real risk.
+      # Keychain bootstrap. The .p12 is intentionally generated with the
+      # hardcoded password "ci" — macOS `security import` is unreliable with
+      # empty passwords, but the password itself adds no security boundary
+      # (the base64 .p12 inside a GitHub repository secret is the actual
+      # protection). Hardcoding the password in the workflow removes a
+      # whole class of cross-tool encoding bugs we hit earlier in PowerShell
+      # → GitHub Secrets → macOS keychain.
       # Two secrets used:
-      #   IOS_SIGNING_P12_BASE64       — base64 of the password-less .p12
+      #   IOS_SIGNING_P12_BASE64       — base64 of the .p12 (password "ci")
       #   IOS_PROVISION_PROFILE_BASE64 — base64 of the .mobileprovision
       - name: Install signing assets
         env:
@@ -99,6 +101,7 @@ jobs:
 
           KEYCHAIN="$RUNNER_TEMP/build.keychain"
           KEYCHAIN_PASSWORD="ci_password"
+          P12_PASSWORD="ci"
 
           security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
           security default-keychain -s "$KEYCHAIN"
@@ -109,13 +112,13 @@ jobs:
 
           echo "p12 size: $(wc -c < cert.p12) bytes"
           echo "p12 SHA256: $(shasum -a 256 cert.p12 | awk '{print $1}')"
-          if ! openssl pkcs12 -info -in cert.p12 -noout -passin pass: >/dev/null 2>&1; then
-            echo "openssl: .p12 rejected — either IOS_SIGNING_P12_BASE64 is stale or the .p12 has a password (it shouldn't)"
+          if ! openssl pkcs12 -info -in cert.p12 -noout -passin "pass:$P12_PASSWORD" >/dev/null 2>&1; then
+            echo "openssl: .p12 rejected — either IOS_SIGNING_P12_BASE64 is stale or the .p12 wasn't built with the expected password"
             exit 1
           fi
           echo "openssl: .p12 OK"
 
-          security import cert.p12 -k "$KEYCHAIN" -P "" -T /usr/bin/codesign
+          security import cert.p12 -k "$KEYCHAIN" -P "$P12_PASSWORD" -T /usr/bin/codesign
 
           security set-key-partition-list -S apple-tool:,apple: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
 
