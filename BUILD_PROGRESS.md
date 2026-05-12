@@ -1117,6 +1117,180 @@ banner, protobufjs setup).
 
 ---
 
+## Phase B — comprehensive analytics taxonomy + event wiring
+
+Berkowski-inspired pass that turns the initial-services PostHog taxonomy
+into the canonical event catalogue and wires every plausibly-useful
+event into the natural code path so we can't lose historical data later.
+
+### Taxonomy doc
+
+- **`docs/analytics-taxonomy.md`** — full event catalogue (~50 events
+  across acquisition / activation / engagement / search / content /
+  creator program / pattern testing / project lifecycle / cookie
+  consent / account lifecycle / friction / moderation), property
+  definitions, user properties, seven named funnels (signup, activation,
+  content, creator, pattern test creator-side, pattern test tester-side,
+  deletion), and eight dashboards for Rebecca to build in PostHog's UI.
+  Includes naming conventions + an "adding new events" workflow so
+  future phase sessions extend the catalogue rather than diverging.
+
+### Schema additions
+
+- **Migration `20260605000001_phase_b_analytics_user_props`** — `User`
+  picks up nine nullable analytics columns:
+  - `utmSource` / `utmMedium` / `utmCampaign` / `utmContent` / `utmTerm`
+  - `acquisitionChannel`
+  - `signupCohortWeek` (ISO `YYYY-Www`)
+  - `country` (ISO 3166-1 alpha-2 from Cloudflare `CF-IPCountry`)
+  - `deviceClass` (`mobile` / `tablet` / `desktop`)
+- All nullable; pre-launch users predate capture, by design. Cohort
+  week + acquisition data fill in either on signup (Clerk webhook) or
+  on first signed-in page load after acquisition capture (self-healing
+  via `persistAcquisitionIfMissing`).
+
+### Helpers
+
+- **`apps/web/src/lib/cohort.ts`** — `isoWeek(date)` returns ISO 8601
+  `YYYY-Www`. Pure function; tested implicitly through the webhook +
+  acquisition action.
+- **`apps/web/src/lib/acquisition.ts`** — `deriveChannel`, `parseUtm`,
+  `deriveDeviceClass`, `readStoredAcquisition`, plus the
+  localStorage-key constant. Channel lookup is a small explicit table
+  (paid_search / paid_social / email / social / referral / organic /
+  direct / unknown) — easy to extend per campaign.
+- **`apps/web/src/lib/client-analytics.ts`** — `captureClientEvent` is
+  the consent-aware client wrapper. No-ops when analytics consent
+  hasn't been granted, except for the six `consent_*` events themselves
+  which are always allowed (necessary instrumentation of the legal
+  flow). Auto-attaches `acquisitionChannel` from localStorage so events
+  fired before signup still carry it.
+- **`apps/web/src/lib/identify.ts`** — `identifyCurrentUser(user)`
+  pushes the canonical user-property bundle to PostHog. Called from
+  the `/me` and `/admin` layouts so authenticated sessions always
+  have fresh person properties on PostHog.
+- **`apps/web/src/lib/acquisition-actions.ts`** —
+  `persistAcquisitionIfMissing(payload)` server action. Self-healing:
+  every page load is allowed to call it; once `signupCohortWeek` is
+  set it's a no-op. Country + deviceClass come from headers so the
+  client can't lie about them.
+
+### Client tracking components
+
+- **`components/acquisition-tracker.tsx`** — mounted in the root
+  layout. On first visit reads `?utm_*` + `document.referrer`, derives
+  channel, persists to `homemade-acquisition` localStorage JSON, and
+  fires `acquisition_captured`. When the user signs in (Clerk
+  `useUser()` returns a user) calls `persistAcquisitionIfMissing`
+  once per browser session.
+- **`components/public/tutorial-reader/scroll-depth-tracker.tsx`** —
+  mounted on the public tutorial detail page. Fires
+  `tutorial_scroll_depth` at 25 / 50 / 75 / 100% scroll thresholds.
+  rAF-throttled, deduped per page load.
+- **`components/public/form-abandonment-tracker.tsx`** — generic
+  wrapper. Fires `form_abandoned` on `pagehide` if the user interacted
+  with the form (focus or input) but didn't submit. Wrapped around the
+  creator application form; reusable for sign-up wrappers and any
+  multi-step form going forward.
+
+### Server-side events wired (incremental on top of services-activation)
+
+- **First-* milestones** — `first_bookmark`, `first_project_started`,
+  `first_project_completed`, `first_review_submitted`,
+  `first_photo_uploaded`. Each fires from the relevant server action
+  exactly once per user by counting prior rows before the insert.
+  Carries `isFirst: true` so PostHog dashboards can filter without
+  needing PostHog person-property reads.
+- **Project lifecycle** — `project_abandoned`, `project_progress_updated`,
+  `project_notes_updated`, `project_supplies_checked`,
+  `beginner_mode_toggled`. `project_progress_updated` rate is
+  controlled by the existing client-side debouncing in
+  `reading-progress.tsx` (max once per 5s).
+  `tutorial_completed` now carries `timeToCompleteMinutes` derived from
+  `startedAt → completedAt`.
+- **Creator program** — `creator_application_submitted`,
+  `creator_application_approved`, `creator_application_rejected`,
+  `creator_status_revoked`, `creator_tutorial_drafted`,
+  `creator_tutorial_submitted_for_review`,
+  `creator_tutorial_approved`, `creator_tutorial_returned_for_edits`,
+  `creator_first_publish`, `creator_profile_viewed`.
+- **Pattern testing** — `pattern_test_created`,
+  `pattern_test_recruiting_opened`, `pattern_test_completed`,
+  `pattern_test_application_submitted`,
+  `pattern_test_application_accepted`,
+  `pattern_test_application_rejected`, `pattern_test_started`,
+  `pattern_test_withdrawn`, `pattern_test_feedback_submitted`.
+- **Account-rights lifecycle** — `account_data_export_requested`,
+  `account_deletion_scheduled`, `account_deletion_cancelled`.
+  `account_deletion_completed` is reserved for the hard-delete cron
+  (Session B's scope) — the cron should fire it from inside the
+  Inngest function.
+- **Cookie consent (client)** — `consent_banner_shown`,
+  `consent_accepted_all`, `consent_necessary_only`,
+  `consent_customized`, `consent_preferences_changed`. Fire **before**
+  PostHog's opt-in/opt-out flip so the decision itself is always
+  captured.
+- **Friction / errors** — `rate_limit_hit` (every UGC bucket that
+  rejects), `nsfw_auto_rejected` (when an upload is auto-rejected by
+  the Rekognition score).
+- **Engagement (extended)** — `tutorial_viewed` properties expanded
+  with `creatorId`, `difficulty`, `season`, `wordCount`, `cohortWeek`,
+  `acquisitionChannel`. `signin_completed` / `signout_completed`
+  fire from the PostHog provider on auth state change, deduped per
+  browser session.
+
+### Funnels
+
+Catalogued in `docs/analytics-taxonomy.md`. Seven named funnels with
+explicit step lists: signup, activation, content, creator, pattern
+test (creator + tester sides), deletion.
+
+### Privacy
+
+Raw email is **not** sent to PostHog. The Clerk webhook now hashes
+the address (FNV-1a 32-bit, 8 hex chars) before pushing as a person
+property. Audit-log entries still hold the canonical PII; PostHog
+only sees the hash. Decision recorded in the taxonomy doc.
+
+### Out of scope (deferred)
+
+- **Hard-delete cron's `account_deletion_completed` firing.** The
+  cron itself is Session B's scope. They wire the event from inside
+  the Inngest function once the cron is in place.
+- **`account_data_export_downloaded`.** The download link is a static
+  signed URL; firing the event needs a click handler that doesn't
+  exist yet. Tracked as a follow-up.
+- **`payment_failed`.** Phase 7 / 8 placeholder; no firing path yet.
+- **`error_boundary_triggered`.** Catalogued in the taxonomy doc but
+  no React error boundaries exist on the public surface yet. Add when
+  one lands.
+- **`search_result_clicked`.** Need a click handler on TutorialCard
+  from `/search`. Out of scope for this pass to keep the diff focused.
+- **`tutorial_shared`** with `destination` property. Existing event
+  is wired but the public share button doesn't surface the
+  destination yet; needs the share UI itself.
+- **PostHog dashboards.** Documented as instructions for Rebecca; the
+  actual dashboard configuration lives in PostHog's UI.
+
+### Build hygiene
+
+- `pnpm --filter @homemade/web typecheck` — passes.
+- `pnpm --filter @homemade/db typecheck` — passes.
+- `pnpm --filter @homemade/web build` — passes; all routes (including
+  the new client trackers) registered.
+- No new admin pages; `/admin/system/analytics` placeholder stays a
+  placeholder for the Phase 8 dashboard build.
+
+### New pre-launch debt items
+
+- The hard-delete cron needs to call `posthog-node`'s capture from
+  inside the Inngest function once it lands (Session B).
+- Search-result-click + share-destination events are catalogued but
+  unwired; pick up when the click-handling refactor for those
+  surfaces happens.
+
+---
+
 ## Commit history milestones
 
 - `5d1b5e6` — initial monorepo scaffold

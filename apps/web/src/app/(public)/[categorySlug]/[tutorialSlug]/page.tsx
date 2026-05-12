@@ -16,6 +16,7 @@ import { ReadingProgress } from '@/components/public/tutorial-reader/reading-pro
 import { StickyToc } from '@/components/public/tutorial-reader/sticky-toc'
 import { ProjectCompanion } from '@/components/public/tutorial-reader/project-companion'
 import { BeginnerHelpFooter } from '@/components/public/tutorial-reader/beginner-help-footer'
+import { ScrollDepthTracker } from '@/components/public/tutorial-reader/scroll-depth-tracker'
 import { ReviewsBlock } from '@/components/public/ugc/reviews-block'
 import { PhotosBlock } from '@/components/public/ugc/photos-block'
 import { QaBlock } from '@/components/public/ugc/qa-block'
@@ -96,7 +97,13 @@ export default async function TutorialPage({ params }: PageProps) {
       categorySlug,
       tutorialSlug,
       authorId: tutorial.authorId,
+      creatorId: tutorial.creatorId ?? null,
+      difficulty: tutorial.difficulty,
+      season: tutorial.season,
+      wordCount: countWords(body),
       identified: Boolean(currentUser),
+      cohortWeek: currentUser?.signupCohortWeek ?? null,
+      acquisitionChannel: currentUser?.acquisitionChannel ?? null,
     },
   })
 
@@ -215,6 +222,7 @@ export default async function TutorialPage({ params }: PageProps) {
 
   return (
     <>
+      <ScrollDepthTracker tutorialId={tutorial.id} />
       {currentUser && (
         <ReadingProgress
           projectId={inProgressId}
@@ -263,8 +271,8 @@ export default async function TutorialPage({ params }: PageProps) {
   )
 }
 
-function estimateReadingTime(body: TipTapNode | null): string | null {
-  if (!body) return null
+function countWords(body: TipTapNode | null): number {
+  if (!body) return 0
   let words = 0
   function walk(n: TipTapNode): void {
     if (n.text) {
@@ -273,6 +281,11 @@ function estimateReadingTime(body: TipTapNode | null): string | null {
     if (n.content) n.content.forEach(walk)
   }
   walk(body)
+  return words
+}
+
+function estimateReadingTime(body: TipTapNode | null): string | null {
+  const words = countWords(body)
   if (words < 60) return null
   const minutes = Math.max(1, Math.round(words / 220))
   return `${minutes} min`

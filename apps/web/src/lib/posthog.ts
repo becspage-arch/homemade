@@ -13,6 +13,7 @@ function getPostHog(): PostHog | null {
 }
 
 export type PosthogEvent =
+  // Engagement
   | 'tutorial_viewed'
   | 'tutorial_started'
   | 'tutorial_completed'
@@ -20,8 +21,16 @@ export type PosthogEvent =
   | 'tutorial_unbookmarked'
   | 'tutorial_published_scheduled'
   | 'search_query'
+  // Account lifecycle
   | 'signup_completed'
   | 'signin_completed'
+  // First-* milestones
+  | 'first_bookmark'
+  | 'first_project_started'
+  | 'first_project_completed'
+  | 'first_review_submitted'
+  | 'first_photo_uploaded'
+  // Moderation outcomes
   | 'review_submitted'
   | 'review_published'
   | 'photo_uploaded'
@@ -30,6 +39,41 @@ export type PosthogEvent =
   | 'question_asked'
   | 'question_answered'
   | 'errata_submitted'
+  // Project lifecycle (server side)
+  | 'project_abandoned'
+  | 'project_progress_updated'
+  | 'project_notes_updated'
+  | 'project_supplies_checked'
+  | 'beginner_mode_toggled'
+  // Creator program
+  | 'creator_application_submitted'
+  | 'creator_application_approved'
+  | 'creator_application_rejected'
+  | 'creator_status_revoked'
+  | 'creator_tutorial_drafted'
+  | 'creator_tutorial_submitted_for_review'
+  | 'creator_tutorial_approved'
+  | 'creator_tutorial_returned_for_edits'
+  | 'creator_first_publish'
+  | 'creator_profile_viewed'
+  // Pattern testing
+  | 'pattern_test_created'
+  | 'pattern_test_recruiting_opened'
+  | 'pattern_test_completed'
+  | 'pattern_test_application_submitted'
+  | 'pattern_test_application_accepted'
+  | 'pattern_test_application_rejected'
+  | 'pattern_test_started'
+  | 'pattern_test_withdrawn'
+  | 'pattern_test_feedback_submitted'
+  // Account-rights lifecycle
+  | 'account_data_export_requested'
+  | 'account_deletion_scheduled'
+  | 'account_deletion_cancelled'
+  | 'account_deletion_completed'
+  // Friction / errors
+  | 'rate_limit_hit'
+  | 'nsfw_auto_rejected'
 
 /**
  * Capture a server-side analytics event. Fire-and-forget: failures must

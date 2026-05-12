@@ -56,6 +56,19 @@ model User {
   creatorVerifiedAt DateTime?
   isPatternTester   Boolean   @default(false)
 
+  // Analytics — acquisition + cohort plumbing. All nullable: existing users
+  // pre-date the capture and that's fine. Captured client-side on first visit
+  // (localStorage) and persisted here on first signup (Clerk webhook).
+  utmSource           String?
+  utmMedium           String?
+  utmCampaign         String?
+  utmContent          String?
+  utmTerm             String?
+  acquisitionChannel  String?
+  signupCohortWeek    String?
+  country             String?
+  deviceClass         String?
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

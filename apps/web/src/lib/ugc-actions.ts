@@ -84,9 +84,21 @@ export async function submitReview(input: {
   if (existing) return { ok: false, error: 'You’ve already reviewed this tutorial.' }
 
   const limit = await checkRateLimit('reviewSubmission', user.id)
-  if (!limit.allowed) return { ok: false, error: limit.message }
+  if (!limit.allowed) {
+    await captureServerEvent({
+      event: 'rate_limit_hit',
+      distinctId: user.clerkId,
+      properties: { bucket: 'reviewSubmission', tutorialId: tutorial.id },
+    })
+    return { ok: false, error: limit.message }
+  }
 
-  await prisma.review.create({
+  // First-review check before insert so we fire `first_review_submitted`
+  // exactly once.
+  const priorReviewCount = await prisma.review.count({ where: { userId: user.id } })
+  const isFirstReview = priorReviewCount === 0
+
+  const created = await prisma.review.create({
     data: {
       userId: user.id,
       tutorialId: tutorial.id,
@@ -94,6 +106,7 @@ export async function submitReview(input: {
       title,
       body,
     },
+    select: { id: true },
   })
 
   revalidatePath(tutorialPath(tutorial))
@@ -103,6 +116,13 @@ export async function submitReview(input: {
     distinctId: user.clerkId,
     properties: { tutorialId: tutorial.id, rating: input.rating },
   })
+  if (isFirstReview) {
+    await captureServerEvent({
+      event: 'first_review_submitted',
+      distinctId: user.clerkId,
+      properties: { tutorialId: tutorial.id, reviewId: created.id, isFirst: true },
+    })
+  }
   return { ok: true }
 }
 
@@ -192,7 +212,17 @@ export async function submitUgcPhoto(input: {
   }
 
   const limit = await checkRateLimit('photoUpload', user.id)
-  if (!limit.allowed) return { ok: false, error: limit.message }
+  if (!limit.allowed) {
+    await captureServerEvent({
+      event: 'rate_limit_hit',
+      distinctId: user.clerkId,
+      properties: { bucket: 'photoUpload', tutorialId: tutorial.id },
+    })
+    return { ok: false, error: limit.message }
+  }
+
+  const priorPhotoCount = await prisma.uGCPhoto.count({ where: { userId: user.id } })
+  const isFirstPhoto = priorPhotoCount === 0
 
   // Create the Media row + UGCPhoto row. NSFW scan runs after so the row
   // exists even if the scan fails mid-flight.
@@ -222,6 +252,7 @@ export async function submitUgcPhoto(input: {
   // Run the NSFW pre-screen against the public URL.
   const imageUrl = mediaUrl({ r2Key: input.r2Key }, 'public')
   let status: UGCPhotoStatus = UGCPhotoStatus.PENDING_MODERATION
+  let nsfwScoreFired: number | null = null
   if (imageUrl) {
     const scan = await scanImageForNsfw(imageUrl)
     const decision = nsfwDecision(scan.score)
@@ -234,6 +265,7 @@ export async function submitUgcPhoto(input: {
       updates.rejectionReason = `Auto-rejected: ${scan.classification ?? 'flagged content'}`
       updates.moderatedAt = new Date()
       status = UGCPhotoStatus.REJECTED
+      nsfwScoreFired = scan.score ?? null
     }
     await prisma.uGCPhoto.update({
       where: { id: photo.id },
@@ -248,6 +280,20 @@ export async function submitUgcPhoto(input: {
     distinctId: user.clerkId,
     properties: { tutorialId: tutorial.id, photoId: photo.id, status },
   })
+  if (isFirstPhoto) {
+    await captureServerEvent({
+      event: 'first_photo_uploaded',
+      distinctId: user.clerkId,
+      properties: { tutorialId: tutorial.id, photoId: photo.id, isFirst: true },
+    })
+  }
+  if (status === UGCPhotoStatus.REJECTED) {
+    await captureServerEvent({
+      event: 'nsfw_auto_rejected',
+      distinctId: user.clerkId,
+      properties: { tutorialId: tutorial.id, photoId: photo.id, score: nsfwScoreFired },
+    })
+  }
   return { ok: true, photoId: photo.id, status }
 }
 
@@ -273,7 +319,14 @@ export async function submitQuestion(input: {
   if (!tutorial) return { ok: false, error: 'Tutorial not found.' }
 
   const limit = await checkRateLimit('questionAsked', user.id)
-  if (!limit.allowed) return { ok: false, error: limit.message }
+  if (!limit.allowed) {
+    await captureServerEvent({
+      event: 'rate_limit_hit',
+      distinctId: user.clerkId,
+      properties: { bucket: 'questionAsked', tutorialId: tutorial.id },
+    })
+    return { ok: false, error: limit.message }
+  }
 
   await prisma.question.create({
     data: { userId: user.id, tutorialId: tutorial.id, body },
@@ -313,7 +366,14 @@ export async function submitAnswer(input: {
     user.role === UserRole.ADMIN || user.role === UserRole.EDITOR
 
   const limit = await checkRateLimit('questionAsked', user.id)
-  if (!limit.allowed) return { ok: false, error: limit.message }
+  if (!limit.allowed) {
+    await captureServerEvent({
+      event: 'rate_limit_hit',
+      distinctId: user.clerkId,
+      properties: { bucket: 'questionAsked', surface: 'answer' },
+    })
+    return { ok: false, error: limit.message }
+  }
 
   await prisma.answer.create({
     data: {
@@ -408,7 +468,16 @@ export async function submitErrata(input: {
     'errataSubmitted',
     user?.id ?? `anon:${tutorial.id}`,
   )
-  if (!limit.allowed) return { ok: false, error: limit.message }
+  if (!limit.allowed) {
+    if (user) {
+      await captureServerEvent({
+        event: 'rate_limit_hit',
+        distinctId: user.clerkId,
+        properties: { bucket: 'errataSubmitted', tutorialId: tutorial.id },
+      })
+    }
+    return { ok: false, error: limit.message }
+  }
 
   await prisma.errata.create({
     data: {
@@ -468,7 +537,14 @@ export async function submitReport(input: {
   const description = input.description?.trim().slice(0, 1000) || null
 
   const limit = await checkRateLimit('reportSubmitted', user.id)
-  if (!limit.allowed) return { ok: false, error: limit.message }
+  if (!limit.allowed) {
+    await captureServerEvent({
+      event: 'rate_limit_hit',
+      distinctId: user.clerkId,
+      properties: { bucket: 'reportSubmitted' },
+    })
+    return { ok: false, error: limit.message }
+  }
 
   await prisma.report.create({
     data: {

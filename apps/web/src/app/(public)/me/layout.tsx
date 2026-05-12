@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { prisma } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { identifyCurrentUser } from '@/lib/identify'
 
 import './me.css'
 
@@ -28,6 +29,8 @@ const BASE_NAV: NavItem[] = [
 export default async function MeLayout({ children }: { children: ReactNode }) {
   const user = await getCurrentDbUser()
   if (!user) redirect('/sign-in')
+
+  void identifyCurrentUser(user)
 
   const greetingName = user.name?.split(' ')[0] ?? null
 

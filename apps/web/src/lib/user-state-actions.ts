@@ -39,10 +39,15 @@ export async function toggleBookmark(tutorialId: string): Promise<
   })
 
   let bookmarked: boolean
+  let isFirstBookmark = false
   if (existing) {
     await prisma.bookmark.delete({ where: { id: existing.id } })
     bookmarked = false
   } else {
+    // Is this the user's very first bookmark? Check before creating so
+    // `first_bookmark` fires exactly once per user across their lifetime.
+    const priorCount = await prisma.bookmark.count({ where: { userId: user.id } })
+    isFirstBookmark = priorCount === 0
     await prisma.bookmark.create({
       data: { userId: user.id, tutorialId },
     })
@@ -57,6 +62,13 @@ export async function toggleBookmark(tutorialId: string): Promise<
     distinctId: user.clerkId,
     properties: { tutorialId },
   })
+  if (bookmarked && isFirstBookmark) {
+    await captureServerEvent({
+      event: 'first_bookmark',
+      distinctId: user.clerkId,
+      properties: { tutorialId, isFirst: true },
+    })
+  }
   return { ok: true, bookmarked }
 }
 
@@ -78,6 +90,13 @@ export async function startProject(tutorialId: string): Promise<
     where: { userId_tutorialId: { userId: user.id, tutorialId } },
     select: { id: true, status: true },
   })
+
+  // First-project? Check before insert/update so we can fire `first_project_started`
+  // exactly once per user.
+  const priorProjectCount = existing
+    ? 1 // resume implies the user already has at least one project
+    : await prisma.userProject.count({ where: { userId: user.id } })
+  const isFirstProject = !existing && priorProjectCount === 0
 
   let project
   if (existing) {
@@ -118,6 +137,13 @@ export async function startProject(tutorialId: string): Promise<
     distinctId: user.clerkId,
     properties: { tutorialId, projectId: project.id, resumed: Boolean(existing) },
   })
+  if (isFirstProject) {
+    await captureServerEvent({
+      event: 'first_project_started',
+      distinctId: user.clerkId,
+      properties: { tutorialId, projectId: project.id, isFirst: true },
+    })
+  }
   return { ok: true, projectId: project.id }
 }
 
@@ -139,11 +165,31 @@ export async function markProjectComplete(projectId: string): Promise<ActionResu
   const project = await loadProjectForUser(projectId, user.id)
   if (!project) return { ok: false, error: 'Project not found' }
 
+  // Look up startedAt so we can derive timeToCompleteMinutes for the event.
+  const before = await prisma.userProject.findUnique({
+    where: { id: project.id },
+    select: { startedAt: true },
+  })
+  const completedAt = new Date()
+  const timeToCompleteMinutes = before?.startedAt
+    ? Math.max(0, Math.round((completedAt.getTime() - before.startedAt.getTime()) / 60000))
+    : null
+
+  // First-completed? Count prior completions before flipping this one.
+  const priorCompleted = await prisma.userProject.count({
+    where: {
+      userId: user.id,
+      status: UserProjectStatus.COMPLETED,
+      id: { not: project.id },
+    },
+  })
+  const isFirstCompletion = priorCompleted === 0
+
   await prisma.userProject.update({
     where: { id: project.id },
     data: {
       status: UserProjectStatus.COMPLETED,
-      completedAt: new Date(),
+      completedAt,
       abandonedAt: null,
     },
   })
@@ -160,8 +206,23 @@ export async function markProjectComplete(projectId: string): Promise<ActionResu
   await captureServerEvent({
     event: 'tutorial_completed',
     distinctId: user.clerkId,
-    properties: { tutorialId: project.tutorialId, projectId: project.id },
+    properties: {
+      tutorialId: project.tutorialId,
+      projectId: project.id,
+      timeToCompleteMinutes,
+    },
   })
+  if (isFirstCompletion) {
+    await captureServerEvent({
+      event: 'first_project_completed',
+      distinctId: user.clerkId,
+      properties: {
+        tutorialId: project.tutorialId,
+        projectId: project.id,
+        isFirst: true,
+      },
+    })
+  }
   return { ok: true }
 }
 
@@ -188,6 +249,11 @@ export async function abandonProject(projectId: string): Promise<ActionResult> {
   revalidatePath('/me')
   revalidatePath('/me/projects')
   revalidatePath(`/me/projects/${project.id}`)
+  await captureServerEvent({
+    event: 'project_abandoned',
+    distinctId: user.clerkId,
+    properties: { projectId: project.id, tutorialId: project.tutorialId },
+  })
   return { ok: true }
 }
 
@@ -239,6 +305,13 @@ export async function updateProjectNotes(
     where: { id: exists.id },
     data: { notes: trimmed },
   })
+  // Caller (project-notes.tsx) debounces, so this fires at the caller's
+  // cadence — typically once per minute per project per user.
+  await captureServerEvent({
+    event: 'project_notes_updated',
+    distinctId: user.clerkId,
+    properties: { projectId: exists.id },
+  })
   return { ok: true }
 }
 
@@ -263,6 +336,11 @@ export async function toggleSupplyChecked(
     where: { id: project.id },
     data: { suppliesChecked: next },
   })
+  await captureServerEvent({
+    event: 'project_supplies_checked',
+    distinctId: user.clerkId,
+    properties: { projectId: project.id, checked: !has },
+  })
   return { ok: true, checked: !has }
 }
 
@@ -282,6 +360,12 @@ export async function updateReadingProgress(
     where: { id: exists.id },
     data: { readingProgressPercent: clamped, lastViewedAt: new Date() },
   })
+  // Caller (reading-progress.tsx) throttles to once every 5s + on unmount.
+  await captureServerEvent({
+    event: 'project_progress_updated',
+    distinctId: user.clerkId,
+    properties: { projectId: exists.id, percent: clamped },
+  })
   return { ok: true }
 }
 
@@ -296,6 +380,11 @@ export async function updateBeginnerMode(value: boolean): Promise<ActionResult> 
     data: { beginnerMode: Boolean(value) },
   })
   revalidatePath('/me/settings')
+  await captureServerEvent({
+    event: 'beginner_mode_toggled',
+    distinctId: user.clerkId,
+    properties: { value: Boolean(value) },
+  })
   return { ok: true }
 }
 

@@ -3,6 +3,7 @@ import { Suspense } from 'react'
 import { Fraunces, Lora } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
 import { PostHogProvider } from '@/components/posthog-provider'
+import { AcquisitionTracker } from '@/components/acquisition-tracker'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -32,7 +33,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <html lang="en-GB" className={`${fraunces.variable} ${lora.variable}`}>
         <body>
           <Suspense>
-            <PostHogProvider>{children}</PostHogProvider>
+            <PostHogProvider>
+              <AcquisitionTracker />
+              {children}
+            </PostHogProvider>
           </Suspense>
         </body>
       </html>

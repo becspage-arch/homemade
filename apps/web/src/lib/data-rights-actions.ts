@@ -10,6 +10,7 @@ import {
 import { audit } from './audit'
 import { getCurrentDbUser } from './get-current-user'
 import { uploadExportBundle } from './data-rights'
+import { captureServerEvent } from './posthog'
 
 type ActionResult = { ok: true } | { ok: false; error: string }
 
@@ -54,6 +55,12 @@ export async function requestDataExport(): Promise<
 
   const request = await prisma.dataExportRequest.create({
     data: { userId: user.id, status: DataExportStatus.PROCESSING },
+  })
+
+  await captureServerEvent({
+    event: 'account_data_export_requested',
+    distinctId: user.clerkId,
+    properties: { requestId: request.id },
   })
 
   try {
@@ -154,6 +161,12 @@ export async function scheduleAccountDeletion(
     metadata: { scheduledFor: scheduledFor.toISOString(), reason: reason ?? null },
   })
 
+  await captureServerEvent({
+    event: 'account_deletion_scheduled',
+    distinctId: user.clerkId,
+    properties: { scheduledFor: scheduledFor.toISOString() },
+  })
+
   revalidatePath('/me/data-rights')
   return { ok: true }
 }
@@ -189,6 +202,12 @@ export async function cancelAccountDeletion(): Promise<ActionResult> {
     actorId: user.id,
     action: 'account_deletion.cancelled',
     resource: `User:${user.id}`,
+  })
+
+  await captureServerEvent({
+    event: 'account_deletion_cancelled',
+    distinctId: user.clerkId,
+    properties: {},
   })
 
   revalidatePath('/me/data-rights')

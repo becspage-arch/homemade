@@ -2,6 +2,8 @@ import { headers } from 'next/headers'
 import { Webhook } from 'svix'
 import { prisma, UserRole } from '@homemade/db'
 import { captureServerEvent, flushPostHog, identifyServerUser } from '@/lib/posthog'
+import { isoWeek } from '@/lib/cohort'
+import { deriveDeviceClass } from '@/lib/acquisition'
 
 /**
  * Clerk webhook receiver. Keeps the Prisma `User` row in sync when Clerk's
@@ -25,6 +27,21 @@ const ADMIN_EMAILS = new Set(['rebecca@homemade.education'])
 
 function deriveRole(email: string): UserRole {
   return ADMIN_EMAILS.has(email.toLowerCase()) ? UserRole.ADMIN : UserRole.MEMBER
+}
+
+/**
+ * Hash the email before pushing as a PostHog person property. Raw emails
+ * stay out of analytics per the taxonomy doc; the prefix is short enough
+ * to be useful for joins from logs but not reversible to plaintext.
+ */
+function hashEmailForAnalytics(email: string): string {
+  // FNV-1a 32-bit; good enough for non-cryptographic person-property keying.
+  let hash = 2166136261
+  for (let i = 0; i < email.length; i++) {
+    hash ^= email.charCodeAt(i)
+    hash = Math.imul(hash, 16777619)
+  }
+  return (hash >>> 0).toString(16).padStart(8, '0')
 }
 
 interface ClerkEmail {
@@ -93,6 +110,9 @@ export async function POST(req: Request): Promise<Response> {
           return Response.json({ ok: true, skipped: 'no primary email' })
         }
         const name = combineName(evt.data)
+        const country = hdrs.get('cf-ipcountry') ?? null
+        const deviceClass = deriveDeviceClass(hdrs.get('user-agent'))
+        const cohortWeek = isoWeek(new Date())
         const upserted = await prisma.user.upsert({
           where: { clerkId: evt.data.id },
           create: {
@@ -100,6 +120,12 @@ export async function POST(req: Request): Promise<Response> {
             email,
             name,
             role: deriveRole(email),
+            // Acquisition data is filled in by the client tracker on next
+            // page load via `persistAcquisitionIfMissing`. Cohort + first-
+            // touch headers we know now.
+            signupCohortWeek: cohortWeek,
+            country,
+            deviceClass,
           },
           update: {
             email,
@@ -113,16 +139,36 @@ export async function POST(req: Request): Promise<Response> {
           await identifyServerUser({
             distinctId: evt.data.id,
             properties: {
-              email,
+              email: hashEmailForAnalytics(email),
               name: name ?? undefined,
+              userId: upserted.id,
               displayHandle: upserted.displayHandle ?? undefined,
               role: upserted.role,
+              isCreator: upserted.isCreator,
+              creatorVerified: Boolean(upserted.creatorVerifiedAt),
+              isPatternTester: upserted.isPatternTester,
+              isSuspended: upserted.isSuspended,
+              beginnerMode: upserted.beginnerMode,
+              signupCohortWeek: upserted.signupCohortWeek,
+              country: upserted.country,
+              deviceClass: upserted.deviceClass,
+              acquisitionChannel: upserted.acquisitionChannel,
+              utmSource: upserted.utmSource,
+              utmMedium: upserted.utmMedium,
+              utmCampaign: upserted.utmCampaign,
+              utmContent: upserted.utmContent,
+              utmTerm: upserted.utmTerm,
             },
           })
           await captureServerEvent({
             event: 'signup_completed',
             distinctId: evt.data.id,
-            properties: { role: upserted.role },
+            properties: {
+              role: upserted.role,
+              cohortWeek: upserted.signupCohortWeek,
+              country: upserted.country,
+              deviceClass: upserted.deviceClass,
+            },
           })
           await flushPostHog()
         }

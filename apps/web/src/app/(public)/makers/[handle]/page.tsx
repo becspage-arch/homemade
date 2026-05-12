@@ -5,6 +5,7 @@ import { TutorialCard } from '@/components/public/tutorial-card'
 import { mediaUrl } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { emptyReaderState, loadReaderState, readerStateFor } from '@/lib/user-state'
+import { captureServerEvent } from '@/lib/posthog'
 
 import '../makers.css'
 
@@ -48,6 +49,15 @@ export default async function MakerProfilePage({ params }: PageProps) {
   ])
 
   if (!creator || !creator.creatorProfile) notFound()
+
+  void captureServerEvent({
+    event: 'creator_profile_viewed',
+    distinctId: currentUser?.clerkId ?? `anon:makers:${handle}`,
+    properties: {
+      creatorUserId: creator.id,
+      handle: creator.displayHandle,
+    },
+  })
 
   const tutorials = await prisma.tutorial.findMany({
     where: {

@@ -15,6 +15,7 @@ import {
 import { audit } from './audit'
 import { notify } from './notify'
 import { getCurrentDbUser, requireAdminRole } from './get-current-user'
+import { captureServerEvent } from './posthog'
 
 type ActionResult<T = void> =
   | (T extends void ? { ok: true } : { ok: true; data: T })
@@ -121,6 +122,12 @@ export async function submitCreatorApplication(
     metadata: { specialty },
   })
 
+  await captureServerEvent({
+    event: 'creator_application_submitted',
+    distinctId: user.clerkId,
+    properties: { specialty },
+  })
+
   revalidatePath('/me/creator')
   revalidatePath('/me/creator/apply')
   revalidatePath('/admin/creators')
@@ -140,7 +147,7 @@ export async function decideCreatorApplication(input: {
 
   const profile = await prisma.creatorProfile.findUnique({
     where: { id: input.profileId },
-    include: { user: { select: { id: true, email: true, displayHandle: true } } },
+    include: { user: { select: { id: true, clerkId: true, email: true, displayHandle: true } } },
   })
   if (!profile) return { ok: false, error: 'Application not found.' }
   if (profile.applicationStatus !== CreatorApplicationStatus.APPLIED) {
@@ -173,6 +180,12 @@ export async function decideCreatorApplication(input: {
       type: NotificationType.CREATOR_APPLICATION_REJECTED,
       body: `Your creator application wasn’t accepted this round: ${reason}`,
       href: '/me/creator/apply',
+    })
+
+    await captureServerEvent({
+      event: 'creator_application_rejected',
+      distinctId: profile.user.clerkId,
+      properties: { creatorUserId: profile.user.id, hasReason: Boolean(reason) },
     })
 
     revalidatePath('/admin/creators')
@@ -209,6 +222,12 @@ export async function decideCreatorApplication(input: {
     type: NotificationType.CREATOR_APPLICATION_APPROVED,
     body: 'Your creator application is approved. Welcome — your dashboard is at /me/creator.',
     href: '/me/creator',
+  })
+
+  await captureServerEvent({
+    event: 'creator_application_approved',
+    distinctId: profile.user.clerkId,
+    properties: { creatorUserId: profile.user.id },
   })
 
   revalidatePath('/admin/creators')
@@ -409,6 +428,12 @@ export async function createPatternTest(input: PatternTestInput): Promise<Action
     metadata: { tutorialId: input.tutorialId },
   })
 
+  await captureServerEvent({
+    event: 'pattern_test_created',
+    distinctId: creator.clerkId,
+    properties: { patternTestId: test.id, tutorialId: input.tutorialId },
+  })
+
   revalidatePath('/me/creator/patterns')
   return { ok: true, data: { id: test.id } }
 }
@@ -484,6 +509,20 @@ export async function transitionPatternTestStatus(input: {
     metadata: { from: test.status, to: input.target },
   })
 
+  if (input.target === PatternTestStatus.RECRUITING) {
+    await captureServerEvent({
+      event: 'pattern_test_recruiting_opened',
+      distinctId: creator.clerkId,
+      properties: { patternTestId: test.id },
+    })
+  } else if (input.target === PatternTestStatus.COMPLETED) {
+    await captureServerEvent({
+      event: 'pattern_test_completed',
+      distinctId: creator.clerkId,
+      properties: { patternTestId: test.id },
+    })
+  }
+
   revalidatePath('/me/creator/patterns')
   revalidatePath(`/me/creator/patterns/${test.id}`)
   revalidatePath('/patterns')
@@ -535,6 +574,12 @@ export async function applyToPatternTest(input: {
     metadata: {},
   })
 
+  await captureServerEvent({
+    event: 'pattern_test_application_submitted',
+    distinctId: user.clerkId,
+    properties: { patternTestId: test.id, tutorialId: test.tutorialId },
+  })
+
   revalidatePath('/patterns')
   revalidatePath(`/patterns/${test.id}`)
   revalidatePath('/me/tester/assignments')
@@ -555,7 +600,10 @@ export async function decideTestApplicant(input: {
 
   const assignment = await prisma.testAssignment.findUnique({
     where: { id: input.assignmentId },
-    include: { patternTest: { select: { id: true, creatorId: true, title: true } } },
+    include: {
+      patternTest: { select: { id: true, creatorId: true, title: true } },
+      user: { select: { clerkId: true } },
+    },
   })
   if (!assignment) return { ok: false, error: 'Application not found.' }
   if (assignment.patternTest.creatorId !== creator.id) {
@@ -587,6 +635,15 @@ export async function decideTestApplicant(input: {
       body: `Your application to test “${assignment.patternTest.title}” wasn’t taken this round.${reason ? ` ${reason}` : ''}`,
       href: '/me/tester/assignments',
     })
+    await captureServerEvent({
+      event: 'pattern_test_application_rejected',
+      distinctId: assignment.user.clerkId,
+      properties: {
+        assignmentId: assignment.id,
+        patternTestId: assignment.patternTestId,
+        hasReason: Boolean(reason),
+      },
+    })
   } else {
     await prisma.testAssignment.update({
       where: { id: assignment.id },
@@ -606,6 +663,14 @@ export async function decideTestApplicant(input: {
       type: NotificationType.PATTERN_TEST_APPLICATION_ACCEPTED,
       body: `You’re in: “${assignment.patternTest.title}”. Open the assignment to start.`,
       href: '/me/tester/assignments',
+    })
+    await captureServerEvent({
+      event: 'pattern_test_application_accepted',
+      distinctId: assignment.user.clerkId,
+      properties: {
+        assignmentId: assignment.id,
+        patternTestId: assignment.patternTestId,
+      },
     })
   }
 
@@ -631,6 +696,11 @@ export async function startTestAssignment(input: { assignmentId: string }): Prom
     where: { id: assignment.id },
     data: { status: TestAssignmentStatus.IN_PROGRESS, startedAt: new Date() },
   })
+  await captureServerEvent({
+    event: 'pattern_test_started',
+    distinctId: user.clerkId,
+    properties: { assignmentId: assignment.id, patternTestId: assignment.patternTestId },
+  })
   revalidatePath(`/me/tester/assignments/${assignment.id}`)
   revalidatePath('/me/tester/assignments')
   return { ok: true }
@@ -652,6 +722,11 @@ export async function withdrawTestAssignment(input: { assignmentId: string }): P
   await prisma.testAssignment.update({
     where: { id: assignment.id },
     data: { status: TestAssignmentStatus.WITHDRAWN, withdrawnAt: new Date() },
+  })
+  await captureServerEvent({
+    event: 'pattern_test_withdrawn',
+    distinctId: user.clerkId,
+    properties: { assignmentId: assignment.id, patternTestId: assignment.patternTestId },
   })
   revalidatePath(`/me/tester/assignments/${assignment.id}`)
   revalidatePath('/me/tester/assignments')
@@ -745,6 +820,16 @@ export async function submitTestFeedback(input: {
     href: `/me/creator/patterns/${assignment.patternTest.id}/feedback`,
   })
 
+  await captureServerEvent({
+    event: 'pattern_test_feedback_submitted',
+    distinctId: user.clerkId,
+    properties: {
+      assignmentId: assignment.id,
+      patternTestId: assignment.patternTestId,
+      timeTakenMinutes: f.timeTakenMinutes,
+    },
+  })
+
   revalidatePath(`/me/tester/assignments/${assignment.id}`)
   revalidatePath('/me/tester/assignments')
   revalidatePath(`/me/creator/patterns/${assignment.patternTest.id}/feedback`)
@@ -784,6 +869,12 @@ export async function submitCreatorTutorialForModeration(input: {
     metadata: {},
   })
 
+  await captureServerEvent({
+    event: 'creator_tutorial_submitted_for_review',
+    distinctId: creator.clerkId,
+    properties: { tutorialId: tutorial.id },
+  })
+
   // Notify admins. We notify any user with role ADMIN — small list pre-launch.
   const admins = await prisma.user.findMany({
     where: { role: UserRole.ADMIN },
@@ -818,10 +909,15 @@ export async function moderateCreatorTutorial(input: {
 
   const tutorial = await prisma.tutorial.findUnique({
     where: { id: input.tutorialId },
-    include: { category: { select: { slug: true } } },
+    include: {
+      category: { select: { slug: true } },
+      creator: { select: { id: true, clerkId: true } },
+    },
   })
   if (!tutorial) return { ok: false, error: 'Tutorial not found.' }
-  if (!tutorial.creatorId) return { ok: false, error: 'Not a creator-authored tutorial.' }
+  if (!tutorial.creatorId || !tutorial.creator) {
+    return { ok: false, error: 'Not a creator-authored tutorial.' }
+  }
   if (tutorial.status !== TutorialStatus.PENDING_MODERATION) {
     return { ok: false, error: 'This tutorial isn’t pending moderation.' }
   }
@@ -829,6 +925,17 @@ export async function moderateCreatorTutorial(input: {
   const note = trimOrNull(input.note ?? null)
 
   if (input.decision === 'PUBLISH') {
+    // Was this the creator's first publication? Count prior PUBLISHED rows
+    // before flipping.
+    const priorPublishedCount = await prisma.tutorial.count({
+      where: {
+        creatorId: tutorial.creatorId,
+        status: TutorialStatus.PUBLISHED,
+        id: { not: tutorial.id },
+      },
+    })
+    const isFirstPublish = priorPublishedCount === 0
+
     await prisma.tutorial.update({
       where: { id: tutorial.id },
       data: {
@@ -848,6 +955,22 @@ export async function moderateCreatorTutorial(input: {
       body: `Your tutorial “${tutorial.title}” is live.${note ? ` ${note}` : ''}`,
       href: `/${tutorial.category.slug}/${tutorial.slug}`,
     })
+    await captureServerEvent({
+      event: 'creator_tutorial_approved',
+      distinctId: tutorial.creator.clerkId,
+      properties: { tutorialId: tutorial.id, creatorUserId: tutorial.creatorId },
+    })
+    if (isFirstPublish) {
+      await captureServerEvent({
+        event: 'creator_first_publish',
+        distinctId: tutorial.creator.clerkId,
+        properties: {
+          tutorialId: tutorial.id,
+          creatorUserId: tutorial.creatorId,
+          isFirst: true,
+        },
+      })
+    }
   } else {
     if (!note) return { ok: false, error: 'Add a note so the creator knows what to change.' }
     await prisma.tutorial.update({
@@ -865,6 +988,11 @@ export async function moderateCreatorTutorial(input: {
       type: NotificationType.CREATOR_TUTORIAL_REJECTED,
       body: `Your tutorial “${tutorial.title}” was sent back for changes: ${note}`,
       href: `/me/creator/tutorials/${tutorial.id}`,
+    })
+    await captureServerEvent({
+      event: 'creator_tutorial_returned_for_edits',
+      distinctId: tutorial.creator.clerkId,
+      properties: { tutorialId: tutorial.id, creatorUserId: tutorial.creatorId },
     })
   }
 
@@ -889,6 +1017,7 @@ export async function revokeCreatorStatus(input: { userId: string }): Promise<Ac
   if (!target) return { ok: false, error: 'User not found.' }
   if (!target.isCreator) return { ok: false, error: 'User isn’t a creator.' }
   if (actor.id === target.id) return { ok: false, error: 'You can’t revoke your own creator status.' }
+  const targetClerkId = target.clerkId
 
   await prisma.$transaction([
     prisma.user.update({
@@ -910,6 +1039,12 @@ export async function revokeCreatorStatus(input: { userId: string }): Promise<Ac
     action: 'creator.status_revoked',
     resource: `User:${target.id}`,
     metadata: {},
+  })
+
+  await captureServerEvent({
+    event: 'creator_status_revoked',
+    distinctId: targetClerkId,
+    properties: { creatorUserId: target.id },
   })
 
   revalidatePath('/admin/users')

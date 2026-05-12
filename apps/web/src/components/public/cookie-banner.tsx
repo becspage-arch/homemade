@@ -12,6 +12,7 @@ import {
 } from '@/lib/consent'
 import { persistConsent } from '@/lib/consent-actions'
 import { installAnalyticsConsentListener } from '@/lib/analytics-consent'
+import { captureClientEvent } from '@/lib/client-analytics'
 
 import './cookie-banner.css'
 
@@ -32,6 +33,7 @@ export function CookieBanner() {
     if (!stored) {
       setOpen(true)
       setView('compact')
+      captureClientEvent('consent_banner_shown', { reason: 'first_visit' })
     } else {
       setAnalytics(stored.analytics)
       setErrorMonitoring(stored.errorMonitoring)
@@ -50,6 +52,7 @@ export function CookieBanner() {
       }
       setView('customise')
       setOpen(true)
+      captureClientEvent('consent_banner_shown', { reason: 'reopen' })
     }
     window.addEventListener(REOPEN_EVENT, onReopen)
     return () => window.removeEventListener(REOPEN_EVENT, onReopen)
@@ -62,6 +65,7 @@ export function CookieBanner() {
       if (detail === null) {
         setView('compact')
         setOpen(true)
+        captureClientEvent('consent_banner_shown', { reason: 'version_bump' })
       }
     }
     window.addEventListener(CONSENT_CHANGE_EVENT, onChange)
@@ -69,9 +73,36 @@ export function CookieBanner() {
   }, [])
 
   const commit = useCallback(
-    async (prefs: { analytics: boolean; errorMonitoring: boolean }) => {
+    async (
+      prefs: { analytics: boolean; errorMonitoring: boolean },
+      decision: 'accept_all' | 'necessary_only' | 'customized',
+    ) => {
       setSaving(true)
+      const before = getConsent()
       const next = setConsent(prefs)
+
+      // Banner events are necessary instrumentation of the legal flow — fire
+      // before opt-in/opt-out so the decision itself is captured even when
+      // the user opts out.
+      if (decision === 'accept_all') {
+        captureClientEvent('consent_accepted_all', {})
+      } else if (decision === 'necessary_only') {
+        captureClientEvent('consent_necessary_only', {})
+      } else {
+        captureClientEvent('consent_customized', {
+          analytics: prefs.analytics,
+          errorMonitoring: prefs.errorMonitoring,
+        })
+      }
+      if (before) {
+        captureClientEvent('consent_preferences_changed', {
+          analyticsBefore: before.analytics,
+          analyticsAfter: prefs.analytics,
+          errorMonitoringBefore: before.errorMonitoring,
+          errorMonitoringAfter: prefs.errorMonitoring,
+        })
+      }
+
       try {
         // Sync to the user row when signed in. Failures don't block dismissal.
         await persistConsent(next)
@@ -110,7 +141,7 @@ export function CookieBanner() {
                 type="button"
                 className="cookie-banner-button primary"
                 disabled={saving}
-                onClick={() => commit({ analytics: true, errorMonitoring: true })}
+                onClick={() => commit({ analytics: true, errorMonitoring: true }, 'accept_all')}
               >
                 Accept all
               </button>
@@ -118,7 +149,7 @@ export function CookieBanner() {
                 type="button"
                 className="cookie-banner-button primary"
                 disabled={saving}
-                onClick={() => commit({ analytics: false, errorMonitoring: false })}
+                onClick={() => commit({ analytics: false, errorMonitoring: false }, 'necessary_only')}
               >
                 Necessary only
               </button>
@@ -189,7 +220,7 @@ export function CookieBanner() {
                 type="button"
                 className="cookie-banner-button primary"
                 disabled={saving}
-                onClick={() => commit({ analytics, errorMonitoring })}
+                onClick={() => commit({ analytics, errorMonitoring }, 'customized')}
               >
                 Save preferences
               </button>
@@ -197,7 +228,7 @@ export function CookieBanner() {
                 type="button"
                 className="cookie-banner-button secondary"
                 disabled={saving}
-                onClick={() => commit({ analytics: false, errorMonitoring: false })}
+                onClick={() => commit({ analytics: false, errorMonitoring: false }, 'necessary_only')}
               >
                 Necessary only
               </button>

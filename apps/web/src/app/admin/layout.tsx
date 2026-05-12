@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
 import { getCurrentDbUser, isAdmin, isEditorOrAbove } from '@/lib/auth'
+import { identifyCurrentUser } from '@/lib/identify'
 import { AdminShell } from '@/components/admin/admin-shell'
 import type { SidebarGroup } from '@/components/admin/admin-sidebar'
 
@@ -102,6 +103,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   if (!user) {
     redirect('/sign-in')
   }
+
+  void identifyCurrentUser(user)
 
   if (!isEditorOrAbove(user)) {
     return (

@@ -14,6 +14,7 @@ import { audit } from './audit'
 import { getCurrentDbUser } from './get-current-user'
 import { isValidSlug, slugify } from './slug'
 import { syncTutorialById, removeTutorialById } from './search-sync'
+import { captureServerEvent } from './posthog'
 
 type ActionResult<T = void> =
   | (T extends void ? { ok: true } : { ok: true; data: T })
@@ -226,6 +227,12 @@ export async function createCreatorTutorial(formData: FormData): Promise<void> {
     action: 'tutorial.create',
     resource: `Tutorial:${created.id}`,
     metadata: { slug: created.slug, byCreator: true },
+  })
+
+  await captureServerEvent({
+    event: 'creator_tutorial_drafted',
+    distinctId: actor.clerkId,
+    properties: { tutorialId: created.id },
   })
 
   revalidatePath('/me/creator/tutorials')

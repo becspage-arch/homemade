@@ -1,8 +1,10 @@
 'use client'
 
-import { useState, useTransition } from 'react'
+import { useEffect, useRef, useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
 import { submitCreatorApplication } from '@/lib/creator-actions'
+import { captureClientEvent } from '@/lib/client-analytics'
+import { FormAbandonmentTracker } from '@/components/public/form-abandonment-tracker'
 
 interface Props {
   defaults: {
@@ -26,6 +28,14 @@ export function CreatorApplicationForm({ defaults, handleAlreadySet }: Props) {
   const [pending, start] = useTransition()
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
+  const startedRef = useRef(false)
+
+  // Fire `creator_application_started` once per page mount.
+  useEffect(() => {
+    if (startedRef.current) return
+    startedRef.current = true
+    captureClientEvent('creator_application_started', {})
+  }, [])
 
   const [bio, setBio] = useState(defaults.bio)
   const [specialty, setSpecialty] = useState(defaults.specialty)
@@ -64,6 +74,7 @@ export function CreatorApplicationForm({ defaults, handleAlreadySet }: Props) {
   }
 
   return (
+    <FormAbandonmentTracker formId="creator-application">
     <form className="me-form" onSubmit={onSubmit} style={{ maxWidth: 640 }}>
       {!handleAlreadySet && (
         <div className="me-field">
@@ -207,5 +218,6 @@ export function CreatorApplicationForm({ defaults, handleAlreadySet }: Props) {
         </button>
       </div>
     </form>
+    </FormAbandonmentTracker>
   )
 }
