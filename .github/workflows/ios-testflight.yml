@@ -74,9 +74,10 @@ jobs:
         working-directory: apps/mobile
         run: npx cap sync ios
 
-      - name: Install CocoaPods
-        working-directory: apps/mobile/ios/App
-        run: pod install --repo-update
+      # No CocoaPods step — this Capacitor iOS project uses Swift Package
+      # Manager (note the `CapApp-SPM` folder under apps/mobile/ios/App).
+      # Xcode resolves SPM dependencies automatically during the archive
+      # step below.
 
       - name: Install Fastlane
         run: sudo gem install fastlane -N
@@ -151,7 +152,7 @@ jobs:
           BUILD_NUMBER="${GITHUB_RUN_NUMBER}.${GITHUB_RUN_ATTEMPT}"
 
           xcodebuild \
-            -workspace App.xcworkspace \
+            -project App.xcodeproj \
             -scheme App \
             -configuration Release \
             -destination "generic/platform=iOS" \
