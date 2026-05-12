@@ -451,20 +451,127 @@ export async function restoreTutorialVersion(versionId: string): Promise<void> {
   redirect(`/admin/tutorials/${version.tutorialId}`)
 }
 
+/**
+ * Walk a TipTap document and strip every `subTutorialCard` block whose
+ * `attrs.tutorialId` matches `targetId`. Returns the cleaned tree and the
+ * number of nodes removed. Used by `deleteTutorial` to scrub dangling
+ * cross-references before the row goes away.
+ */
+function stripSubTutorialRefs(
+  node: unknown,
+  targetId: string,
+): { node: unknown; stripped: number } {
+  if (node === null || typeof node !== 'object') return { node, stripped: 0 }
+
+  if (Array.isArray(node)) {
+    let stripped = 0
+    const out: unknown[] = []
+    for (const child of node) {
+      if (
+        child &&
+        typeof child === 'object' &&
+        (child as { type?: unknown }).type === 'subTutorialCard' &&
+        (child as { attrs?: { tutorialId?: unknown } }).attrs?.tutorialId === targetId
+      ) {
+        stripped++
+        continue
+      }
+      const r = stripSubTutorialRefs(child, targetId)
+      stripped += r.stripped
+      out.push(r.node)
+    }
+    return { node: out, stripped }
+  }
+
+  const obj = node as Record<string, unknown>
+  const out: Record<string, unknown> = { ...obj }
+  let stripped = 0
+  for (const key of Object.keys(obj)) {
+    const r = stripSubTutorialRefs(obj[key], targetId)
+    stripped += r.stripped
+    out[key] = r.node
+  }
+  return { node: out, stripped }
+}
+
 export async function deleteTutorial(id: string): Promise<void> {
   const actor = await requireAdminActor()
 
   const existing = await prisma.tutorial.findUnique({ where: { id } })
   if (!existing) throw new Error('Tutorial not found.')
 
-  // Hard delete; versions cascade per schema.
-  await prisma.tutorial.delete({ where: { id } })
+  // Find every other tutorial whose body still references this one via a
+  // `subTutorialCard` block. Walk the JSON in JS — at expected catalogue
+  // scale this is cheap, and a JSON walk handles arbitrary nesting that a
+  // top-level @> containment query would miss.
+  const referrers = await prisma.tutorial.findMany({
+    where: { id: { not: id } },
+    select: { id: true, body: true },
+  })
+  const affected: Array<{ id: string; newBody: Prisma.InputJsonValue; stripped: number }> = []
+  for (const r of referrers) {
+    const result = stripSubTutorialRefs(r.body, id)
+    if (result.stripped > 0) {
+      affected.push({
+        id: r.id,
+        newBody: result.node as Prisma.InputJsonValue,
+        stripped: result.stripped,
+      })
+    }
+  }
+
+  // Snapshot every affected referrer first, then patch its body, then delete
+  // the source tutorial — all in one transaction so a mid-flight failure
+  // doesn't leave half the catalogue stripped while the source still exists
+  // (or vice versa).
+  await prisma.$transaction(async (tx) => {
+    for (const a of affected) {
+      const cur = await tx.tutorial.findUnique({ where: { id: a.id } })
+      if (!cur) continue
+      await tx.tutorialVersion.create({
+        data: {
+          tutorialId: cur.id,
+          title: cur.title,
+          subtitle: cur.subtitle,
+          excerpt: cur.excerpt,
+          body: cur.body as Prisma.InputJsonValue,
+          status: cur.status,
+          authorId: actor.id,
+          changeNote: `Pre-strip of ${a.stripped} subTutorialCard ref(s) to deleted tutorial ${existing.slug}`,
+        },
+      })
+      await tx.tutorial.update({ where: { id: a.id }, data: { body: a.newBody } })
+    }
+
+    // Hard delete; versions cascade per schema.
+    await tx.tutorial.delete({ where: { id } })
+  })
+
+  // Audit-log the strip-and-snapshot per affected referrer separately from
+  // the delete, so version history shows the edit was driven by this delete.
+  for (const a of affected) {
+    await audit({
+      actorId: actor.id,
+      action: 'tutorial.subref_stripped',
+      resource: `Tutorial:${a.id}`,
+      metadata: {
+        deletedTutorialId: id,
+        deletedTutorialSlug: existing.slug,
+        strippedCount: a.stripped,
+      },
+    })
+    await syncTutorialById(a.id)
+  }
 
   await audit({
     actorId: actor.id,
     action: 'tutorial.delete',
     resource: `Tutorial:${id}`,
-    metadata: { slug: existing.slug, title: existing.title },
+    metadata: {
+      slug: existing.slug,
+      title: existing.title,
+      strippedFromTutorials: affected.map((a) => a.id),
+    },
   })
 
   await removeTutorialById(id)

@@ -45,9 +45,14 @@ model User {
   // banner hasn't been answered for this account yet. `deletionScheduledFor`
   // is set while a 30-day deletion grace period is in flight. `deletedAt`
   // marks the row as soft-deleted (PII scrubbed, audit-log entries retained).
+  // `hardDeletedAt` is the bookkeeping stamp the daily hard-delete cron sets
+  // when it actually scrubs the account — distinct from `deletedAt` so we
+  // can differentiate "scrubbed by user request via the cron" from any
+  // future admin-initiated soft-delete that might reuse `deletedAt`.
   cookieConsent        Json?
   deletionScheduledFor DateTime?
   deletedAt            DateTime?
+  hardDeletedAt        DateTime?
 
   // Creator program (Phase 6). `isCreator` is the denormalised flag set when
   // an application is approved; the full profile lives in `CreatorProfile`.

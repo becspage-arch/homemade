@@ -51,9 +51,9 @@ These don't need to exist before there's content and users to track. We add each
 
 - Rotate all credentials (AWS keys, Cloudflare token, Neon, Clerk, splash password)
 - Move secrets out of `.env.credentials` and into a password manager
-- ESLint won't run — `next lint` removed in Next 16, ESLint v9 needs flat config. Migrate to `eslint.config.js` so we have a linter again.
-- SubTutorialCard cross-references: deleting a tutorial leaves dead `tutorialId` refs in other tutorials' TipTap JSON. Either scan JSON content for refs before delete and block, or schedule a periodic cleanup that nulls dangling refs.
-- **Typesense CDK secret-mount.** `packages/search` is wired and gracefully no-ops without env vars. To turn search on in production: (a) Rebecca creates a Typesense Cloud cluster and drops keys into `.env.credentials`, (b) a small follow-up CDK pass adds the three Typesense secrets to AWS Secrets Manager and mounts them into the ECS task definition, using the same two-step CFN pattern as Phase 2e.
+- ESLint cleanup pass. Phase 1 of the migration shipped in the pre-launch debt sweep: flat-config in `apps/web/eslint.config.mjs`, `pnpm lint` exits 0 on the current codebase with 73 warnings, lint job in CI as a `continue-on-error` step. A follow-up session tightens the downgraded rules (`react-hooks/set-state-in-effect`, `react-hooks/immutability`, `react-hooks/exhaustive-deps`, `react/no-unescaped-entities`, `@next/next/no-img-element`, `@typescript-eslint/no-explicit-any`, `prefer-const`) back to `error` and cleans the violations.
+- ~~SubTutorialCard cross-references: deleting a tutorial leaves dead `tutorialId` refs in other tutorials' TipTap JSON.~~ Resolved in the pre-launch debt sweep — `deleteTutorial` now strips matching `subTutorialCard` blocks from every other tutorial's body, snapshotting a `TutorialVersion` first so the strip is reversible. Audit-logged per affected referrer separately from the delete.
+- **Typesense CDK secret-mount.** CDK code wired for the three secrets (`homemade/typesense-host`, `homemade/typesense-admin-api-key`, `homemade/typesense-search-only-api-key`) in the pre-launch debt sweep — gated behind `MOUNT_TYPESENSE_SECRETS=1`, IAM grant always present. To turn search on: (a) Rebecca creates a Typesense Cloud cluster and pastes the three values into AWS Secrets Manager under those names; (b) run `pnpm --filter @homemade/infra exec cdk deploy` (IAM-only diff, no task replacement); (c) run `MOUNT_TYPESENSE_SECRETS=1 pnpm --filter @homemade/infra exec cdk deploy` (task replacement; IAM is already in place).
 - **Mobile splash asset.** Current splash source is `favicon-1024.png` (1024×1024). Capacitor wants 2732×2732 with content centred in the inner 1200×1200 — replace `apps/mobile/assets/splash.png` and rerun `pnpm --filter @homemade/mobile assets:generate` then `sync`. Same for splitting the icon foreground / background pair into a transparent sage "h" + a sage tile for a proper Android adaptive icon.
 - **`proxy.ts` matcher leaks bot traffic into Clerk-less renders.** The negative lookahead `.*\.[a-zA-Z]+$` was meant to skip static assets but also skips category-slug-shaped URLs with file-extension-looking suffixes (e.g. `/wp-admin.php`, `/sitemap.xml.html`, `/.env`). Those route to the dynamic `[categorySlug]` page (and other server components calling `getCurrentDbUser()`), which then hits Clerk's `auth()` with no middleware-set context and throws `Clerk: auth() was called but Clerk can't detect …`. Surfaced the day Sentry was wired (2026-05-11) — ~17 occurrences/hour from bot probes, no real-user impact. Fix in a small session: replace the broad regex with an explicit deny-list of asset roots, OR wrap `getCurrentDbUser()` in a try/catch that returns null on Clerk errors. Worth fixing before the splash gate comes down so Sentry's noise floor stays low.
 
@@ -926,13 +926,17 @@ Tick items here as they're done.
       hitting the URLs without the splash password. Currently the
       gate rewrites `/legal/*` to `/coming-soon` — fine for private
       beta, not for public launch.
-- [ ] **Hard-delete cron for scheduled account deletions.** The
-      30-day deletion queue is populated and visible to admins; an
-      Inngest function needs to run nightly to scrub PII, set
-      `User.deletedAt`, and cascade content removal for any
-      `AccountDeletionRequest` past `scheduledFor`. Inngest is live
-      since the services-activation session, so this is a small
-      follow-up.
+- [x] **Hard-delete cron for scheduled account deletions.** Inngest
+      function `hard-delete-scheduled-accounts` (cron `0 3 * * *`)
+      picks up every `AccountDeletionRequest` whose `scheduledFor` has
+      passed, runs the `hardDeleteAccount` helper in
+      `apps/web/src/lib/hard-delete-account.ts` (drops user-owned UGC
+      + private state inside a transaction, scrubs PII on the `User`
+      row, sets `deletedAt + hardDeletedAt`, marks the request
+      `COMPLETED`), and audit-logs the result. Tutorials authored by
+      the user stay in place — orphaning is editorial. Shipped in the
+      pre-launch debt sweep alongside the `User.hardDeletedAt` schema
+      addition (`20260606000000_user_hard_deleted_at`).
 - [ ] **Analytics consent wiring.** Wrappers at
       `apps/web/src/lib/analytics-consent.ts`:
       `installAnalyticsConsentListener()` (PostHog),
@@ -944,9 +948,12 @@ Tick items here as they're done.
 - [ ] **Credential rotation.** Rotate every secret in
       `.env.credentials` and move to a password manager (AWS keys,
       Cloudflare token, Neon, Clerk, splash password).
-- [ ] **ESLint flat-config migration.** `next lint` was removed in
-      Next 16; no linter currently runs in CI. Migrate to
-      `eslint.config.js`.
+- [x] **ESLint flat-config migration (phase 1).** Flat-config lives at
+      `apps/web/eslint.config.mjs` (eslint-config-next 16 +
+      permissive rule overrides). `pnpm lint` exits 0 on the current
+      codebase with 73 warnings, 0 errors. A non-blocking lint step
+      runs in CI as `continue-on-error: true`. The rule-tightening +
+      violation-cleanup pass is its own session (still pending).
 - [ ] **TODO(legal) sweep.** Grep `TODO(legal)` across the repo
       before launch — every comment should have an action taken or a
       conscious "still deferred" decision.
@@ -1291,6 +1298,168 @@ only sees the hash. Decision recorded in the taxonomy doc.
 
 ---
 
+## Pre-launch debt sweep — iOS TestFlight + ESLint v9 + CLAUDE.md + SubTutorialCard cleanup + hard-delete cron + Typesense CDK
+
+Bundled session ticking off five pre-launch debt items in one push.
+
+### iOS TestFlight pipeline
+
+- `.github/workflows/ios-testflight.yml` mirrors the Aura iOS workflow
+  pattern verbatim (manual signing, `macos-26` runner, fastlane pilot
+  upload). Trigger is **manual-only** (`workflow_dispatch`) for now so
+  TestFlight builds don't burn App Store Connect API quota on every
+  commit.
+- Monorepo adaptations: `pnpm install --filter @homemade/mobile`,
+  Capacitor sync from `apps/mobile/`, iOS project path
+  `apps/mobile/ios/App`, no web build (the wrapper loads
+  `https://homemade.education` directly per
+  `apps/mobile/capacitor.config.ts`).
+- Bundle ID `education.homemade.app` is hard-coded (matches
+  `capacitor.config.ts`). `IOS_TEAM_ID` defaults to the Aura team ID
+  (`YA5SH43A77` — same Apple Dev account per
+  memory/`project_apple_developer.md`); override with GitHub Variable
+  `IOS_TEAM_ID` if Homemade ever moves to its own Apple Dev account.
+  `IOS_PROVISIONING_PROFILE_NAME` defaults to "Homemade App Store" —
+  override with the same-named GitHub Variable.
+- Secrets Rebecca pastes before the first run: `IOS_SIGNING_P12_BASE64`,
+  `IOS_SIGNING_P12_PASSWORD`, `IOS_PROVISION_PROFILE_BASE64`,
+  `APPSTORE_CONNECT_KEY_ID`, `APPSTORE_CONNECT_ISSUER_ID`,
+  `APPSTORE_CONNECT_API_KEY_BASE64`. Full runbook in
+  `docs/mobile-setup.md` § 1c.
+
+### ESLint flat-config migration (phase 1)
+
+- `apps/web/eslint.config.mjs` — flat-config using
+  `eslint-config-next/core-web-vitals` + `eslint-config-next/typescript`
+  presets (eslint-config-next 16 ships flat-config exports). Config
+  lives inside `apps/web` so it resolves `eslint`,
+  `eslint-config-next`, etc. from the workspace's own `node_modules`
+  without needing root-level hoisting.
+- Permissive rule overrides — Phase 1 goal is "lint runs without
+  failing on the existing codebase", not "tighten everything":
+  `@typescript-eslint/no-explicit-any` warn,
+  `@typescript-eslint/no-unused-vars` warn with `_`-prefix bypass,
+  `react-hooks/exhaustive-deps` warn,
+  `react-hooks/set-state-in-effect` warn,
+  `react-hooks/immutability` warn,
+  `react/no-unescaped-entities` warn,
+  `@next/next/no-img-element` warn, `prefer-const` warn. All four
+  pre-existing errors in the codebase fall under the two React 19
+  strict-mode rules; downgraded together so the cleanup session can
+  address them with proper refactors.
+- Root `pnpm lint` delegates to `pnpm --filter @homemade/web lint`.
+  `apps/web/package.json` script changed from `next lint` to
+  `eslint .`. Legacy `apps/web/.eslintrc.json` deleted.
+- CI lint step in `.github/workflows/deploy.yml` runs the lint as
+  `continue-on-error: true` — non-blocking signal visible in the
+  Actions UI without gating deploys. Drop `continue-on-error` after
+  the cleanup pass tightens rules.
+- **Rules downgraded for Phase 1 (cleanup pass owes):** the seven listed
+  above. The cleanup session restores them to `error` and fixes the
+  violations behind them.
+
+### CLAUDE.md at repo root
+
+- New `CLAUDE.md` at the repo root carries the deploy-verify protocol
+  verbatim (`gh run watch` block, 3-retry cap, `/healthz` smoke,
+  "don't bypass with `--no-verify`" guidance). Auto-loaded by every
+  Claude Code session in the repo, so the rule doesn't depend on the
+  orchestrator remembering to brief.
+- Also includes a short list of repo quirks worth knowing on day one
+  (pnpm-deploy collision, `proxy.ts` rename, admin route layout,
+  TipTap-free public bundle, Prisma 7 datasource config, pnpm PATH).
+
+### SubTutorialCard dead-ref strip-and-snapshot
+
+- `deleteTutorial` in `apps/web/src/app/admin/tutorials/actions.ts`
+  now walks every other tutorial's `body` JSON for
+  `subTutorialCard` nodes whose `attrs.tutorialId` matches the row
+  being deleted, snapshots the affected tutorials' current state as
+  a `TutorialVersion` (`Pre-strip of N subTutorialCard ref(s) to
+  deleted tutorial <slug>`), patches their bodies to remove the
+  matching nodes, then deletes the source — all in one transaction
+  so a mid-flight failure can't leave the catalogue half-stripped.
+- Audit log writes a per-referrer `tutorial.subref_stripped` entry
+  alongside the usual `tutorial.delete`, so version history shows
+  the edit was driven by the delete (and is reversible from the
+  referrer's version history if Rebecca ever needs to undo).
+- Recursive JSON walker handles arbitrary nesting — TipTap can put a
+  `subTutorialCard` inside any container node.
+
+### Hard-delete cron for AccountDeletionRequest
+
+- `apps/web/src/lib/hard-delete-account.ts` — the `hardDeleteAccount`
+  helper Phase 8a left as a TODO. Deletes the user's owned content
+  (reviews, ugcPhotos, questions, answers, errata, reports filed,
+  bookmarks, userProjects, notifications, reviewHelpfuls,
+  questionUpvotes, testAssignments, patternTests, creatorProfile,
+  dataExportRequests, suspensions) inside one transaction, then
+  scrubs the `User` row's personal fields and stamps `deletedAt +
+  hardDeletedAt`. The User row itself is never physically deleted —
+  `AuditLog.actorId` keeps a non-null FK on it and audit-log
+  integrity outranks PII minimisation. Tutorials authored by the
+  user stay in place (editorial value is high; the public layer
+  renders an authorless byline once the User's `displayHandle / name`
+  are null).
+- `apps/web/src/inngest/functions/hard-delete-accounts.ts` —
+  `hard-delete-scheduled-accounts` cron, `0 3 * * *` (daily at 03:00
+  UTC). Selects `AccountDeletionRequest` rows where `status =
+  SCHEDULED AND scheduledFor <= now()`; processes each in its own
+  Inngest step so a single failure doesn't stall the queue. Wired
+  into the Inngest serve route alongside the existing three
+  functions.
+- Schema: `User.hardDeletedAt DateTime?` added — bookkeeping stamp
+  distinct from `deletedAt` so we can differentiate "scrubbed via
+  the cron" from any future admin-initiated soft-delete that might
+  reuse `deletedAt`. Migration:
+  `20260606000000_user_hard_deleted_at`.
+- Email scrub uses `deleted-user+<userId>@homemade.local` to keep
+  the unique-email constraint satisfied without retaining the
+  original address. Audit log records the redacted email, never the
+  original.
+
+### Typesense CDK secret-mount (gated)
+
+- `infra/lib/homemade-stack.ts` now declares three Secrets Manager
+  references for `homemade/typesense-host`,
+  `homemade/typesense-admin-api-key`,
+  `homemade/typesense-search-only-api-key`, adds the
+  `-??????`-suffixed IAM grant on the execution role, and
+  conditionally mounts them into the container env when
+  `MOUNT_TYPESENSE_SECRETS=1`. Mirrors the Phase 2e two-step pattern
+  used for the Clerk webhook, R2, and Phase 1 service secrets.
+- **CDK was not deployed from this session** — the secrets don't yet
+  exist in AWS Secrets Manager. Rebecca's path to enable search in
+  production:
+  1. Create the Typesense Cloud cluster, drop `TYPESENSE_HOST`,
+     `TYPESENSE_ADMIN_API_KEY`, `TYPESENSE_SEARCH_ONLY_API_KEY`
+     into `.env.credentials`.
+  2. Create the three secrets in AWS Secrets Manager with the names
+     above.
+  3. `pnpm --filter @homemade/infra exec cdk deploy` — lands the
+     IAM grant only; no task replacement.
+  4. `MOUNT_TYPESENSE_SECRETS=1 pnpm --filter @homemade/infra exec
+     cdk deploy` — adds the secret references; task replaces with
+     IAM already in place.
+
+### Things scoped out of this session
+
+- Analytics events for any of the new flows — Session C owns the
+  analytics taxonomy wiring across server actions.
+- Tightening the ESLint rules and fixing existing violations — its
+  own session (see "Pre-launch debt" above).
+- Existing admin tutorial moderation flows — untouched beyond the
+  `deleteTutorial` dead-ref scanner.
+- Mobile splash asset / Android adaptive icon / Android signing
+  keystore + Play Console workflow — separate pre-launch debt
+  items.
+- Schema reshape for the recipes-first content architecture — that
+  session owns `packages/db/prisma/schema.prisma`; the
+  `User.hardDeletedAt` addition is additive and on a different
+  model.
+
+---
+
 ## Commit history milestones
 
 - `5d1b5e6` — initial monorepo scaffold
@@ -1316,5 +1485,6 @@ only sees the hash. Decision recorded in the taxonomy doc.
 - Phase 6 — creator program + pattern testing + public maker profiles + creator-tutorial moderation flow
 - `41e2051` — feat(media): move image pipeline to Cloudflare R2 + Image Transformations
 - `a312c78` — feat(infra): activate Sentry + PostHog + Inngest + Upstash rate limits
-- _this session_ — feat(legal): Phase 8a legal compliance bundle — six legal pages, cookie consent banner + consent helpers, /me/data-rights + export / deletion API, DMCA + deletion + data-export admin queues, schema additions (cookieConsent / deletionScheduledFor / deletedAt + 3 new models)
+- `45c78a7` — feat(legal): Phase 8a legal compliance bundle — six legal pages, cookie consent banner + consent helpers, /me/data-rights + export / deletion API, DMCA + deletion + data-export admin queues, schema additions (cookieConsent / deletionScheduledFor / deletedAt + 3 new models)
+- _this session_ — chore(prelaunch): pre-launch debt sweep — iOS TestFlight workflow + ESLint v9 flat-config (phase 1) + repo CLAUDE.md + SubTutorialCard dead-ref strip-and-snapshot + hard-delete cron + Typesense CDK secret-mount (gated)
 - Phase 3a (this session): public tutorial / category / home pages, TipTap-JSON renderer with no TipTap runtime in the public bundle, admin Preview toggle

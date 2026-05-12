@@ -18,20 +18,15 @@ Bundle ID locked across both stores: **education.homemade.app**.
 
 ### 1a. Enrol the account (rebecca-only)
 
-- Aura already has an Apple Developer ID. **Don't reuse it for Homemade**
-  — App Store Connect lets one developer account host multiple apps, but
-  keeping them on separate developer accounts means a future sale or
-  hand-over of one product doesn't entangle the other. New account it is.
-- Sign in at [developer.apple.com/programs](https://developer.apple.com/programs/)
-  with the Apple ID Rebecca wants to be the public Homemade publisher
-  (recommend a fresh apple-id under `rebecca@homemade.education`).
-- Choose **Individual** enrolment unless we've set up a UK company by
-  then (then it's **Organisation**, which needs a D-U-N-S number — free
-  via [Dun & Bradstreet](https://www.dnb.co.uk/duns-number/get-a-duns.html)
-  but takes 5–10 working days).
-- £79/year fee. Charged to the card on the Apple ID.
-- Identity verification takes anywhere from a few hours to a few days.
-- Confirmation lands in the Apple-ID inbox.
+Rebecca's existing Apple Developer ID (set up for the Aura project) covers
+Homemade — App Store Connect lets one developer account host multiple apps,
+and a single £79/year membership is cheaper than running two. The Homemade
+app record sits alongside Aura's under the same team ID.
+
+(If a separate Homemade-only Apple Dev account is ever needed — e.g. to keep
+ownership clean for a future sale — set the GitHub Variable `IOS_TEAM_ID`
+on the repo and the iOS workflow picks it up; otherwise it falls back to the
+Aura team ID.)
 
 ### 1b. App Store Connect app record (rebecca-now)
 
@@ -49,26 +44,52 @@ Once the developer account is approved:
 3. Fill in app information later, but the *record* must exist before
    we can run the first archive upload.
 
-### 1c. iOS code signing (automatable, after 1a + 1b)
+### 1c. iOS code signing + TestFlight pipeline
 
-This is the bit that runs on a Mac. Aura already uses GitHub Actions on
-`macos-latest` to push to TestFlight, and that's the same pattern here.
+The pipeline lives at `.github/workflows/ios-testflight.yml` (added in the
+pre-launch debt sweep — mirrors the Aura iOS workflow). It runs on the
+GitHub Actions `macos-26` runner — there is no need for a local Mac.
 
-Once we have an Apple Developer account and the App Store Connect app
-record, a worker session can:
+The workflow is **manual-only** (`workflow_dispatch`) for now to avoid
+burning App Store Connect API quota on every commit. Trigger it from the
+Actions tab once the secrets below are in place; flip on a path-filtered
+push trigger when a release cadence settles.
 
-1. Create a Distribution certificate + provisioning profile in
-   Apple Developer Console.
-2. Create an App Store Connect API key (Users and Access → Keys → "+").
-   Download the `.p8` once — it's never re-issuable.
-3. Drop the API key + key ID + issuer ID + cert / profile into GitHub
-   Actions secrets (`APPLE_*` names).
-4. Add a `.github/workflows/ios-testflight.yml` that mirrors the Aura
-   setup: `macos-latest`, install certificates, `npx cap sync ios`,
-   `xcodebuild -workspace App.xcworkspace ... archive`, upload to
-   TestFlight via fastlane or `xcrun altool`.
+What Rebecca does once (in the Apple Developer Console + App Store Connect):
 
-Everything in step 4 lives in the repo. The keys live in GitHub.
+1. **Distribution certificate** — Apple Developer → Certificates → Apple
+   Distribution. Generate it from a CSR; download the `.cer` and import
+   into Keychain (or, on Windows, generate the CSR via `openssl` then
+   export the cert + private key as a `.p12` from any machine that has the
+   key). The `.p12` is what CI consumes.
+2. **Provisioning profile** — Apple Developer → Profiles → "+" → App Store.
+   Pick App ID = `education.homemade.app`, the Distribution cert from
+   step 1, and name it **Homemade App Store** (matches the workflow's
+   `IOS_PROVISIONING_PROFILE_NAME` default — override with the GitHub
+   Variable of the same name if you pick a different name).
+3. **App Store Connect API key** — App Store Connect → Users and Access →
+   Keys → "+". Role: App Manager. Download the `.p8` once; record the Key
+   ID and Issuer ID from the same page.
+4. **GitHub repository secrets** (Settings → Secrets and variables →
+   Actions → Secrets):
+   - `IOS_SIGNING_P12_BASE64` — `base64 < cert.p12`
+   - `IOS_SIGNING_P12_PASSWORD` — the password set when exporting the .p12
+   - `IOS_PROVISION_PROFILE_BASE64` — `base64 < profile.mobileprovision`
+   - `APPSTORE_CONNECT_KEY_ID` — the Key ID from step 3
+   - `APPSTORE_CONNECT_ISSUER_ID` — the Issuer ID from step 3
+   - `APPSTORE_CONNECT_API_KEY_BASE64` — `base64 < AuthKey_<id>.p8`
+5. **Optional GitHub Variables** (only if defaults don't fit):
+   - `IOS_TEAM_ID` — defaults to the Aura team ID (`YA5SH43A77`); set this
+     only if Homemade ends up on a separate Apple Dev account.
+   - `IOS_PROVISIONING_PROFILE_NAME` — defaults to "Homemade App Store".
+
+Once all secrets are pasted, kick off the workflow from the Actions tab.
+First run uploads a build to TestFlight Internal Testing track. Subsequent
+runs increment the build number from `${GITHUB_RUN_NUMBER}.${GITHUB_RUN_ATTEMPT}`.
+
+The local placeholder `pnpm --filter @homemade/mobile build:ios` still
+refuses to run off macOS — it's a stub for the unlikely case Rebecca ever
+gets Mac access; the CI workflow is the actual ship path.
 
 ---
 
@@ -124,17 +145,18 @@ the default for new apps now.
 
 ---
 
-## 3. After both accounts exist — build pipeline
+## 3. After both accounts exist — build pipelines
 
-Then a worker session can:
-
-- Add `.github/workflows/mobile-android.yml` — builds + signs a release
+- **iOS**: `.github/workflows/ios-testflight.yml` — already in the repo
+  (see 1c above). Manual `workflow_dispatch` only.
+- **Android**: not yet wired. A future worker session adds
+  `.github/workflows/mobile-android.yml` — builds + signs a release
   bundle (`.aab`), uploads to Play internal testing track.
-- Add `.github/workflows/mobile-ios.yml` — `macos-latest`, builds the
-  archive, uploads to TestFlight.
-- Both workflows trigger on push to a `mobile/release` branch (or a
-  manual `workflow_dispatch`) so we don't burn macOS minutes on every
-  web-only push.
+
+Once the cadence settles, both can flip on a path-filtered push trigger
+(`apps/mobile/ios/**`, `apps/mobile/android/**`,
+`apps/mobile/capacitor.config.*`) so a web-only push doesn't burn macOS or
+Android-build minutes.
 
 ---
 
@@ -165,8 +187,9 @@ script is paused — the config file is in a "dev mode" state.
 - `apps/mobile/` workspace, Capacitor 8 latest, plain TypeScript config
 - Bundle ID `education.homemade.app` baked into the config
 - Android project under `apps/mobile/android` — builds in Android Studio
-- iOS project under `apps/mobile/ios` — needs a Mac to build, otherwise
-  the Xcode project files are already there
+- iOS project under `apps/mobile/ios` — built and shipped to TestFlight
+  via `.github/workflows/ios-testflight.yml` on the macos-26 GHA runner.
+  No local Mac needed.
 - Splash screen plugin, status bar plugin, app plugin all installed
 - Native icons + splash generated from
   `H:\My Drive\Branding\favicon-1024.png` and `wordmark-cream-on-sage.png`

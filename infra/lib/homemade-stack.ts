@@ -174,6 +174,25 @@ export class HomemadeStack extends cdk.Stack {
       'UpstashRedisTokenSecret',
       'homemade/upstash-redis-token',
     )
+    // Typesense Cloud cluster credentials. Stored manually in Secrets Manager
+    // by Rebecca after she creates the cluster (Typesense Cloud → API Keys).
+    // Same two-step CFN pattern: Deploy 1 lands the IAM grant, Deploy 2 flips
+    // `MOUNT_TYPESENSE_SECRETS=1` to add the secret references.
+    const typesenseHostSecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'TypesenseHostSecret',
+      'homemade/typesense-host',
+    )
+    const typesenseAdminApiKeySecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'TypesenseAdminApiKeySecret',
+      'homemade/typesense-admin-api-key',
+    )
+    const typesenseSearchOnlyApiKeySecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'TypesenseSearchOnlyApiKeySecret',
+      'homemade/typesense-search-only-api-key',
+    )
 
     // The Clerk webhook signing secret is wired in two deploys to avoid the
     // CFN circuit breaker race (IAM grant landing in parallel with task
@@ -193,6 +212,11 @@ export class HomemadeStack extends cdk.Stack {
 
     // And for the Phase 1 deferred services (Inngest + Upstash).
     const mountPhase1Secrets = process.env.MOUNT_PHASE1_SECRETS === '1'
+
+    // And for Typesense (Phase 3b finish-line). Search returns zero results
+    // until this is on; the @homemade/search clients no-op gracefully when
+    // the env vars are missing.
+    const mountTypesenseSecrets = process.env.MOUNT_TYPESENSE_SECRETS === '1'
 
     // ────────────────────────────────────────────────────────────────
     // CloudWatch — task logs
@@ -250,6 +274,9 @@ export class HomemadeStack extends cdk.Stack {
           `${inngestSigningKeySecret.secretArn}-??????`,
           `${upstashRedisUrlSecret.secretArn}-??????`,
           `${upstashRedisTokenSecret.secretArn}-??????`,
+          `${typesenseHostSecret.secretArn}-??????`,
+          `${typesenseAdminApiKeySecret.secretArn}-??????`,
+          `${typesenseSearchOnlyApiKeySecret.secretArn}-??????`,
         ],
       }),
     )
@@ -297,6 +324,13 @@ export class HomemadeStack extends cdk.Stack {
               INNGEST_SIGNING_KEY: ecs.Secret.fromSecretsManager(inngestSigningKeySecret),
               UPSTASH_REDIS_REST_URL: ecs.Secret.fromSecretsManager(upstashRedisUrlSecret),
               UPSTASH_REDIS_REST_TOKEN: ecs.Secret.fromSecretsManager(upstashRedisTokenSecret),
+            }
+          : {}),
+        ...(mountTypesenseSecrets
+          ? {
+              TYPESENSE_HOST: ecs.Secret.fromSecretsManager(typesenseHostSecret),
+              TYPESENSE_ADMIN_API_KEY: ecs.Secret.fromSecretsManager(typesenseAdminApiKeySecret),
+              TYPESENSE_SEARCH_ONLY_API_KEY: ecs.Secret.fromSecretsManager(typesenseSearchOnlyApiKeySecret),
             }
           : {}),
       },
