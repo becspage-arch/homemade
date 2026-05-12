@@ -82,14 +82,17 @@ jobs:
       - name: Install Fastlane
         run: sudo gem install fastlane -N
 
-      # Mirrors Aura's keychain + signing-asset bootstrap. Three secrets:
-      #   IOS_SIGNING_P12_BASE64  — base64 of the Apple Distribution .p12
-      #   IOS_SIGNING_P12_PASSWORD — its password
+      # Keychain bootstrap. The .p12 is intentionally generated WITHOUT a
+      # password (passwords were a recurring source of encoding bugs across
+      # PowerShell / Git Bash / GitHub Secrets — see the workflow's commit
+      # history). The .p12 is still protected by being inside a GitHub
+      # repository secret; an empty `.p12` password adds no real risk.
+      # Two secrets used:
+      #   IOS_SIGNING_P12_BASE64       — base64 of the password-less .p12
       #   IOS_PROVISION_PROFILE_BASE64 — base64 of the .mobileprovision
       - name: Install signing assets
         env:
           IOS_SIGNING_P12_BASE64: ${{ secrets.IOS_SIGNING_P12_BASE64 }}
-          IOS_SIGNING_P12_PASSWORD: ${{ secrets.IOS_SIGNING_P12_PASSWORD }}
           IOS_PROVISION_PROFILE_BASE64: ${{ secrets.IOS_PROVISION_PROFILE_BASE64 }}
         run: |
           set -e
@@ -104,25 +107,15 @@ jobs:
 
           echo "$IOS_SIGNING_P12_BASE64" | base64 --decode > cert.p12
 
-          # Strip any trailing whitespace / newlines that the GitHub secrets
-          # web UI may have included when pasted. The MAC-verification-failed
-          # error has historically been "invisible newline in password".
-          P12_PASSWORD_CLEAN=$(printf '%s' "$IOS_SIGNING_P12_PASSWORD" | tr -d '\r\n\t ')
-
-          # Diagnostic: verify the .p12 + password independently with openssl
-          # before handing them to `security import`. openssl's error messages
-          # are much clearer than the keychain's. Nothing sensitive is printed.
           echo "p12 size: $(wc -c < cert.p12) bytes"
           echo "p12 SHA256: $(shasum -a 256 cert.p12 | awk '{print $1}')"
-          echo "password length (after trim): ${#P12_PASSWORD_CLEAN} chars"
-          if openssl pkcs12 -info -in cert.p12 -noout -passin "pass:$P12_PASSWORD_CLEAN" >/dev/null 2>&1; then
-            echo "openssl: password OK"
-          else
-            echo "openssl: password REJECTED — either IOS_SIGNING_P12_BASE64 is stale (re-encode + re-paste) or IOS_SIGNING_P12_PASSWORD doesn't match the .p12 you uploaded"
+          if ! openssl pkcs12 -info -in cert.p12 -noout -passin pass: >/dev/null 2>&1; then
+            echo "openssl: .p12 rejected — either IOS_SIGNING_P12_BASE64 is stale or the .p12 has a password (it shouldn't)"
             exit 1
           fi
+          echo "openssl: .p12 OK"
 
-          security import cert.p12 -k "$KEYCHAIN" -P "$P12_PASSWORD_CLEAN" -T /usr/bin/codesign
+          security import cert.p12 -k "$KEYCHAIN" -P "" -T /usr/bin/codesign
 
           security set-key-partition-list -S apple-tool:,apple: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
 
