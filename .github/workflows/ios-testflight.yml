@@ -103,7 +103,26 @@ jobs:
           security set-keychain-settings -lut 21600 "$KEYCHAIN"
 
           echo "$IOS_SIGNING_P12_BASE64" | base64 --decode > cert.p12
-          security import cert.p12 -k "$KEYCHAIN" -P "$IOS_SIGNING_P12_PASSWORD" -T /usr/bin/codesign
+
+          # Strip any trailing whitespace / newlines that the GitHub secrets
+          # web UI may have included when pasted. The MAC-verification-failed
+          # error has historically been "invisible newline in password".
+          P12_PASSWORD_CLEAN=$(printf '%s' "$IOS_SIGNING_P12_PASSWORD" | tr -d '\r\n\t ')
+
+          # Diagnostic: verify the .p12 + password independently with openssl
+          # before handing them to `security import`. openssl's error messages
+          # are much clearer than the keychain's. Nothing sensitive is printed.
+          echo "p12 size: $(wc -c < cert.p12) bytes"
+          echo "p12 SHA256: $(shasum -a 256 cert.p12 | awk '{print $1}')"
+          echo "password length (after trim): ${#P12_PASSWORD_CLEAN} chars"
+          if openssl pkcs12 -info -in cert.p12 -noout -passin "pass:$P12_PASSWORD_CLEAN" >/dev/null 2>&1; then
+            echo "openssl: password OK"
+          else
+            echo "openssl: password REJECTED — either IOS_SIGNING_P12_BASE64 is stale (re-encode + re-paste) or IOS_SIGNING_P12_PASSWORD doesn't match the .p12 you uploaded"
+            exit 1
+          fi
+
+          security import cert.p12 -k "$KEYCHAIN" -P "$P12_PASSWORD_CLEAN" -T /usr/bin/codesign
 
           security set-key-partition-list -S apple-tool:,apple: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
 
