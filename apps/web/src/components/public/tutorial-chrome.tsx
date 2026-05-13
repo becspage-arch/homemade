@@ -101,9 +101,11 @@ export interface TutorialChromeProps {
 
 const MEAL_LABEL: Record<string, string> = {
   breakfast: 'Breakfast',
+  brunch: 'Brunch',
   lunch: 'Lunch',
   dinner: 'Dinner',
   snack: 'Snack',
+  starter: 'Starter',
   dessert: 'Dessert',
   drink: 'Drink',
   side: 'Side',
@@ -112,12 +114,39 @@ const MEAL_LABEL: Record<string, string> = {
 const DIETARY_LABEL: Record<string, string> = {
   vegetarian: 'vegetarian',
   vegan: 'vegan',
-  glutenFree: 'gluten-free',
-  dairyFree: 'dairy-free',
+  pescatarian: 'pescatarian',
   halal: 'halal',
   kosher: 'kosher',
+  glutenFree: 'gluten-free',
+  dairyFree: 'dairy-free',
+  milkFree: 'milk-free',
+  eggFree: 'egg-free',
   nutFree: 'nut-free',
-  pescatarian: 'pescatarian',
+  soyFree: 'soy-free',
+  alcoholFree: 'alcohol-free',
+  lowFodmap: 'low-FODMAP',
+  lowCarb: 'low-carb',
+  sugarFree: 'sugar-free',
+  keto: 'keto',
+  paleo: 'paleo',
+  whole30: 'Whole30',
+}
+
+const CUISINE_LABEL: Record<string, string> = {
+  british: 'British',
+  italian: 'Italian',
+  italianAmerican: 'Italian-American',
+  french: 'French',
+  american: 'American',
+  mediterranean: 'Mediterranean',
+  greek: 'Greek',
+  spanish: 'Spanish',
+  middleEastern: 'Middle Eastern',
+  northAfrican: 'North African',
+  caribbean: 'Caribbean',
+  easternEuropean: 'Eastern European',
+  jewish: 'Jewish',
+  angloIndian: 'Anglo-Indian',
 }
 
 /**
@@ -242,7 +271,7 @@ export function TutorialChrome(props: TutorialChromeProps) {
           {isRecipe && recipeMeta?.cuisine && (
             <div>
               <dt>Cuisine</dt>
-              <dd>{recipeMeta.cuisine}</dd>
+              <dd>{CUISINE_LABEL[recipeMeta.cuisine] ?? recipeMeta.cuisine}</dd>
             </div>
           )}
           {isRecipe && recipeMeta?.mealType && (

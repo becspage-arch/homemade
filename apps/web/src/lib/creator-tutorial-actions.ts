@@ -17,40 +17,17 @@ import { isValidSlug, slugify } from './slug'
 import { syncTutorialById, removeTutorialById } from './search-sync'
 import { captureServerEvent } from './posthog'
 import { syncRecipeIngredientsFromBody } from './recipe-ingredients-sync'
+import {
+  DIETARY_FLAGS,
+  MEAL_TYPES,
+  MOOD_FLAGS,
+  CUISINES,
+} from '@/app/admin/tutorials/ingredient-constants'
 
 const TUTORIAL_TYPES: readonly TutorialType[] = [
   TutorialType.RECIPE,
   TutorialType.TECHNIQUE,
 ]
-const MEAL_TYPES = [
-  'breakfast',
-  'lunch',
-  'dinner',
-  'snack',
-  'dessert',
-  'drink',
-  'side',
-] as const
-const DIETARY_FLAGS = [
-  'vegetarian',
-  'vegan',
-  'glutenFree',
-  'dairyFree',
-  'halal',
-  'kosher',
-  'nutFree',
-  'pescatarian',
-] as const
-const MOOD_FLAGS = [
-  'comfortFood',
-  'weeknight',
-  'party',
-  'kidFriendly',
-  'freezerFriendly',
-  'healthy',
-  'showstopper',
-  'lightAndFresh',
-] as const
 
 function parseIntOrNull(formData: FormData, key: string): number | null {
   const raw = String(formData.get(key) ?? '').trim()
@@ -211,7 +188,10 @@ function parseInput(formData: FormData): CreatorTutorialInput {
     batchNotes: String(formData.get('batchNotes') ?? '').trim() || null,
     makeAheadNotes: String(formData.get('makeAheadNotes') ?? '').trim() || null,
     dietaryFlags: parseStringArrayAllowed(formData, 'dietaryFlags', DIETARY_FLAGS),
-    cuisine: String(formData.get('cuisine') ?? '').trim() || null,
+    cuisine: (() => {
+      const raw = String(formData.get('cuisine') ?? '').trim()
+      return raw && (CUISINES as readonly string[]).includes(raw) ? raw : null
+    })(),
     mealType,
     mood: parseStringArrayAllowed(formData, 'mood', MOOD_FLAGS),
     temperatureCelsius: parseIntOrNull(formData, 'temperatureCelsius'),

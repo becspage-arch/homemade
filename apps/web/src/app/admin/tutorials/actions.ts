@@ -16,28 +16,12 @@ import { audit } from '@/lib/audit'
 import { isValidSlug, slugify } from '@/lib/slug'
 import { syncTutorialById, removeTutorialById } from '@/lib/search-sync'
 import { syncRecipeIngredientsFromBody } from '@/lib/recipe-ingredients-sync'
-import { DIETARY_FLAGS } from './ingredient-constants'
-
-const MEAL_TYPES = [
-  'breakfast',
-  'lunch',
-  'dinner',
-  'snack',
-  'dessert',
-  'drink',
-  'side',
-] as const
-
-const MOOD_FLAGS = [
-  'comfortFood',
-  'weeknight',
-  'party',
-  'kidFriendly',
-  'freezerFriendly',
-  'healthy',
-  'showstopper',
-  'lightAndFresh',
-] as const
+import {
+  DIETARY_FLAGS,
+  MEAL_TYPES,
+  MOOD_FLAGS,
+  CUISINES,
+} from './ingredient-constants'
 
 // ────────────────────────────────────────────────────────────────────────────
 // Shape parsing & validation
@@ -199,7 +183,11 @@ function parseMetadata(formData: FormData): TutorialMetadataInput {
   const batchNotes = String(formData.get('batchNotes') ?? '').trim() || null
   const makeAheadNotes =
     String(formData.get('makeAheadNotes') ?? '').trim() || null
-  const cuisine = String(formData.get('cuisine') ?? '').trim() || null
+  const cuisineRaw = String(formData.get('cuisine') ?? '').trim()
+  const cuisine =
+    cuisineRaw && (CUISINES as readonly string[]).includes(cuisineRaw)
+      ? cuisineRaw
+      : null
   const mealRaw = String(formData.get('mealType') ?? '').trim()
   const mealType = mealRaw && (MEAL_TYPES as readonly string[]).includes(mealRaw) ? mealRaw : null
   const temperatureNote =

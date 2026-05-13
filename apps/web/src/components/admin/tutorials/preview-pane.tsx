@@ -31,6 +31,24 @@ interface PreviewPaneProps {
   sourceNotes: string
   /** Cloudflare Images delivery hash, passed down from the server page. */
   cloudflareDeliveryHash: string | null
+  /** RECIPE / TECHNIQUE — controls which info-bar variant + body renderer fires. */
+  type: 'RECIPE' | 'TECHNIQUE'
+  /** Recipe metadata mirrored from form state. Read only when type === 'RECIPE'. */
+  recipeMeta?: {
+    servings: number | null
+    yieldDescription: string | null
+    prepMinutes: number | null
+    cookMinutes: number | null
+    totalMinutes: number | null
+    scalable: boolean
+    freezable: boolean
+    batchable: boolean
+    makeAheadSummary: string | null
+    cuisine: string | null
+    mealType: string | null
+    dietaryFlags: string[]
+    foundational: boolean
+  }
 }
 
 /**
@@ -55,7 +73,10 @@ export function PreviewPane({
   sourceType,
   sourceNotes,
   cloudflareDeliveryHash,
+  type,
+  recipeMeta,
 }: PreviewPaneProps) {
+  const isRecipe = type === 'RECIPE'
   const publicGlossary: PublicGlossaryRef[] = glossary.map((g) => ({
     id: g.id,
     term: g.term,
@@ -96,11 +117,41 @@ export function PreviewPane({
         sourceType={sourceType}
         sourceNotes={sourceNotes || null}
         linkBreadcrumb={false}
+        recipeMeta={
+          recipeMeta
+            ? {
+                type,
+                servings: recipeMeta.servings,
+                yieldDescription: recipeMeta.yieldDescription,
+                prepMinutes: recipeMeta.prepMinutes,
+                cookMinutes: recipeMeta.cookMinutes,
+                totalMinutes: recipeMeta.totalMinutes,
+                cuisine: recipeMeta.cuisine,
+                mealType: recipeMeta.mealType,
+                dietaryFlags: recipeMeta.dietaryFlags,
+                freezable: recipeMeta.freezable,
+                batchable: recipeMeta.batchable,
+                makeAheadSummary: recipeMeta.makeAheadSummary,
+                foundational: recipeMeta.foundational,
+              }
+            : null
+        }
         body={
           <TutorialContent
             content={body as TipTapNode}
             glossary={publicGlossary}
             subTutorials={subTutorials}
+            recipeContext={
+              isRecipe
+                ? {
+                    // Synthetic id + slug used only for the scaler's analytics
+                    // event distinct id. The preview never persists.
+                    tutorialId: 'preview',
+                    tutorialSlug: 'preview',
+                    scalable: recipeMeta?.scalable ?? true,
+                  }
+                : null
+            }
           />
         }
       />

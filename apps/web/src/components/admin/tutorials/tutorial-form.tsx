@@ -10,6 +10,16 @@ import { SlugField } from './slug-field'
 import { TagPicker, type TagOption } from './tag-picker'
 import { HeroMediaPicker, type MediaOption } from './hero-media-picker'
 import { PreviewPane } from './preview-pane'
+import {
+  CUISINES,
+  CUISINE_LABEL,
+  DIETARY_FLAGS,
+  DIETARY_LABEL,
+  MEAL_TYPES,
+  MEAL_TYPE_LABEL,
+  MOOD_FLAGS,
+  MOOD_LABEL,
+} from '@/app/admin/tutorials/ingredient-constants'
 
 export interface TutorialFormDefaults {
   title: string
@@ -88,36 +98,19 @@ const TUTORIAL_TYPES = [
   { value: 'RECIPE', label: 'recipe' },
   { value: 'TECHNIQUE', label: 'technique' },
 ]
+
 const MEAL_TYPE_OPTIONS = [
   { value: '', label: '— none —' },
-  { value: 'breakfast', label: 'breakfast' },
-  { value: 'lunch', label: 'lunch' },
-  { value: 'dinner', label: 'dinner' },
-  { value: 'snack', label: 'snack' },
-  { value: 'dessert', label: 'dessert' },
-  { value: 'drink', label: 'drink' },
-  { value: 'side', label: 'side' },
+  ...MEAL_TYPES.map((m) => ({ value: m, label: MEAL_TYPE_LABEL[m].toLowerCase() })),
 ]
-const DIETARY_OPTIONS = [
-  'vegetarian',
-  'vegan',
-  'glutenFree',
-  'dairyFree',
-  'halal',
-  'kosher',
-  'nutFree',
-  'pescatarian',
-] as const
-const MOOD_OPTIONS = [
-  'comfortFood',
-  'weeknight',
-  'party',
-  'kidFriendly',
-  'freezerFriendly',
-  'healthy',
-  'showstopper',
-  'lightAndFresh',
-] as const
+
+const CUISINE_OPTIONS = [
+  { value: '', label: '— none —' },
+  ...CUISINES.map((c) => ({ value: c, label: CUISINE_LABEL[c] })),
+]
+
+const DIETARY_OPTIONS = DIETARY_FLAGS
+const MOOD_OPTIONS = MOOD_FLAGS
 
 export function TutorialForm({
   action,
@@ -431,20 +424,18 @@ export function TutorialForm({
               value={dietaryFlags}
               name="dietaryFlags"
               onToggle={(v) => toggleFlag(v, dietaryFlags, setDietaryFlags)}
+              labels={DIETARY_LABEL as Record<string, string>}
             />
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2">
             <label className="block">
               <Label>Cuisine</Label>
-              <input
-                type="text"
+              <Select
                 name="cuisine"
-                placeholder="Italian / British / French / Indian / …"
                 value={cuisine}
-                onChange={(e) => setCuisine(e.target.value)}
-                className={inputClass}
-                style={inputStyle}
+                onChange={setCuisine}
+                options={CUISINE_OPTIONS}
               />
             </label>
             <label className="block">
@@ -465,6 +456,7 @@ export function TutorialForm({
               value={mood}
               name="mood"
               onToggle={(v) => toggleFlag(v, mood, setMood)}
+              labels={MOOD_LABEL as Record<string, string>}
             />
           </div>
 
@@ -617,6 +609,27 @@ export function TutorialForm({
             sourceType={sourceType}
             sourceNotes={sourceNotes}
             cloudflareDeliveryHash={cloudflareDeliveryHash}
+            type={type}
+            recipeMeta={{
+              servings: parseTime(servings),
+              yieldDescription: yieldDescription || null,
+              prepMinutes: parseTime(prepMinutes),
+              cookMinutes: parseTime(cookMinutes),
+              totalMinutes: sumOrNull([
+                parseTime(prepMinutes),
+                parseTime(cookMinutes),
+                parseTime(restingMinutes),
+                parseTime(chillingMinutes),
+              ]),
+              scalable,
+              freezable,
+              batchable,
+              makeAheadSummary: makeAheadNotes || null,
+              cuisine: cuisine || null,
+              mealType: mealType || null,
+              dietaryFlags,
+              foundational,
+            }}
           />
         )}
       </div>
@@ -640,6 +653,12 @@ function parseTime(raw: string): number | null {
   const n = parseInt(raw, 10)
   if (!Number.isFinite(n) || n < 0) return null
   return n
+}
+
+function sumOrNull(values: (number | null)[]): number | null {
+  const filtered = values.filter((v): v is number => v !== null)
+  if (filtered.length === 0) return null
+  return filtered.reduce((sum, n) => sum + n, 0)
 }
 
 const inputClass =
@@ -786,11 +805,14 @@ function FlagGrid({
   options,
   value,
   onToggle,
+  labels,
 }: {
   name: string
   options: readonly string[]
   value: string[]
   onToggle: (v: string) => void
+  /** Optional slug → display-label map. Falls back to the slug. */
+  labels?: Record<string, string>
 }) {
   return (
     <div className="flex flex-wrap gap-3">
@@ -814,7 +836,7 @@ function FlagGrid({
               onChange={() => onToggle(flag)}
               className="sr-only"
             />
-            {flag}
+            {labels?.[flag] ?? flag}
           </label>
         )
       })}
