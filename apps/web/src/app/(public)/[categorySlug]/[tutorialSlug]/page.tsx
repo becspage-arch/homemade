@@ -2,6 +2,10 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { prisma, TutorialStatus, UserProjectStatus } from '@homemade/db'
 import { TutorialContent } from '@/components/public/tutorial-content/tutorial-content'
+import {
+  ScaleProvider,
+  extractScaleIngredients,
+} from '@/components/public/tutorial-content/scale-context'
 import { TutorialChrome } from '@/components/public/tutorial-chrome'
 import type { TipTapNode } from '@/components/public/tutorial-content/types'
 import { loadContentRefs } from '@/lib/tutorial-refs'
@@ -288,21 +292,32 @@ export default async function TutorialPage({ params }: PageProps) {
           foundational: tutorial.foundational,
         }}
         body={
-          <TutorialContent
-            content={body}
-            glossary={refs.glossary}
-            subTutorials={refs.subTutorials}
-            beginnerMode={beginnerMode}
-            recipeContext={
-              tutorial.type === 'RECIPE'
-                ? {
-                    tutorialId: tutorial.id,
-                    tutorialSlug,
-                    scalable: tutorial.scalable,
-                  }
-                : null
-            }
-          />
+          tutorial.type === 'RECIPE' ? (
+            <ScaleProvider
+              defaultServings={tutorial.servings ?? null}
+              ingredients={extractScaleIngredients(body)}
+            >
+              <TutorialContent
+                content={body}
+                glossary={refs.glossary}
+                subTutorials={refs.subTutorials}
+                beginnerMode={beginnerMode}
+                recipeContext={{
+                  tutorialId: tutorial.id,
+                  tutorialSlug,
+                  scalable: tutorial.scalable,
+                }}
+              />
+            </ScaleProvider>
+          ) : (
+            <TutorialContent
+              content={body}
+              glossary={refs.glossary}
+              subTutorials={refs.subTutorials}
+              beginnerMode={beginnerMode}
+              recipeContext={null}
+            />
+          )
         }
         actionsSlot={actionsSlot}
         leftRail={leftRail}

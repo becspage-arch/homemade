@@ -1,9 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 import { captureClientEvent } from '@/lib/client-analytics'
+import { useScale } from '../scale-context'
 
 export interface IngredientsListItem {
   ingredientId: string
@@ -59,6 +60,14 @@ export function IngredientsList({
     if (!defaultServings || defaultServings <= 0) return 1
     return scale.servings / defaultServings
   }, [scale, defaultServings])
+
+  // Mirror the multiplier into the page-level ScaleProvider so {{slug}}
+  // tokens in method prose update alongside the ingredients list. The
+  // hook returns null on technique pages, where this is a no-op.
+  const scaleCtx = useScale()
+  useEffect(() => {
+    if (scaleCtx) scaleCtx.setMultiplier(multiplier)
+  }, [scaleCtx, multiplier])
 
   function changeScale(next: Scale): void {
     if (scale.label === next.label && scale.kind === next.kind) return

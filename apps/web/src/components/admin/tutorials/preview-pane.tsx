@@ -2,6 +2,10 @@
 
 import type { JSONContent } from '@tiptap/core'
 import { TutorialContent } from '@/components/public/tutorial-content/tutorial-content'
+import {
+  ScaleProvider,
+  extractScaleIngredients,
+} from '@/components/public/tutorial-content/scale-context'
 import { TutorialChrome } from '@/components/public/tutorial-chrome'
 import type {
   GlossaryRef as PublicGlossaryRef,
@@ -137,22 +141,32 @@ export function PreviewPane({
             : null
         }
         body={
-          <TutorialContent
-            content={body as TipTapNode}
-            glossary={publicGlossary}
-            subTutorials={subTutorials}
-            recipeContext={
-              isRecipe
-                ? {
-                    // Synthetic id + slug used only for the scaler's analytics
-                    // event distinct id. The preview never persists.
-                    tutorialId: 'preview',
-                    tutorialSlug: 'preview',
-                    scalable: recipeMeta?.scalable ?? true,
-                  }
-                : null
-            }
-          />
+          isRecipe ? (
+            <ScaleProvider
+              defaultServings={recipeMeta?.servings ?? null}
+              ingredients={extractScaleIngredients(body)}
+            >
+              <TutorialContent
+                content={body as TipTapNode}
+                glossary={publicGlossary}
+                subTutorials={subTutorials}
+                recipeContext={{
+                  // Synthetic id + slug used only for the scaler's analytics
+                  // event distinct id. The preview never persists.
+                  tutorialId: 'preview',
+                  tutorialSlug: 'preview',
+                  scalable: recipeMeta?.scalable ?? true,
+                }}
+              />
+            </ScaleProvider>
+          ) : (
+            <TutorialContent
+              content={body as TipTapNode}
+              glossary={publicGlossary}
+              subTutorials={subTutorials}
+              recipeContext={null}
+            />
+          )
         }
       />
     </div>

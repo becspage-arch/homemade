@@ -251,9 +251,9 @@ unless the brief says otherwise. Each heading is an H2 unless flagged.
 4. **Method** — H2 "Method". One H3 per step. Steps are numbered in
    spirit, not actually numbered with `orderedList`: each H3 is a
    short noun phrase ("Sear the sausages", "Pour the batter, slam the
-   door"). Method body is plain prose. See the "Scaling tokens"
-   section below for how amounts in prose will plug into the scale
-   selector once the renderer ships; for now, write the amount inline.
+   door"). Method body is plain prose. Use scaling tokens (see below)
+   for every numeric ingredient amount referenced — they update live
+   when the reader picks 2× / 4× / custom servings.
 
 5. **Troubleshooting** — `troubleshooter` block with at least four
    rows, more for harder recipes. Each row is `{ symptom, cause, fix
@@ -300,25 +300,31 @@ No "Cooking notes" sub-section. No "Conclusion".
 
 The reader can pick `1× / 2× / 4× / Custom servings` on the public
 page. The structured `ingredientsList` rows recompute automatically.
-The plan for method prose is to follow via scaling tokens the renderer
-substitutes.
+Method prose follows via scaling tokens the renderer substitutes.
 
-**Token contract (settled; renderer plumbing pending):**
+**Token shape:** `{{<ingredientSlug>}}`. The renderer reads the row's
+current scaled `amount` + `unit` and substitutes the value with the
+unit in place.
 
-- Token shape: `{{<ingredientSlug>}}`. Once the renderer lands it will
-  read the row's current scaled `amount` + `unit` and substitute in
-  place.
-- Examples once the renderer ships:
-  - `{{plain-flour}}` → "140 g" at 1×, "280 g" at 2×.
-  - `{{stock-beef}}` → "250 ml" at 1×.
+**Examples:**
+
+- `{{plain-flour}}` → "140 g" at 1×, "280 g" at 2×, "560 g" at 4×.
+- `{{stock-beef}}` → "250 ml" at 1×.
+- `{{sausages-pork}}` → "8" at 1× (the `each` unit is dropped in
+  prose; the surrounding word "sausages" gives the noun).
+
+**Rules:**
+
+- Every `ingredientSlug` referenced by a token must appear in the
+  recipe's `ingredientsList`. Tokens with no matching row render the
+  literal `{{slug}}` text (and look broken).
 - If the prose names an ingredient without a numeric quantity (a
   pinch, a turn of pepper), no token.
-
-**Until the renderer lands, write the amount inline** in the prose at
-the recipe's default servings. Drafts go in as DRAFT and aren't
-public; a follow-up sweep adds tokens once the renderer reads them.
-Don't use literal `{{slug}}` tokens in body prose yet — they would
-render as the literal string on the page.
+- Tokens render amount + unit only — the ingredient name is in the
+  surrounding prose. Phrase as "`{{plain-flour}}` of plain flour" so
+  it reads "140 g of plain flour" at 1× and "280 g of plain flour" at
+  2×. For countable ingredients on `each`, name the noun after the
+  token: "`{{eggs}}` eggs" → "4 eggs".
 
 ## Structured ingredients
 
@@ -545,9 +551,12 @@ Checklist:
    recipe is genuinely American — pumpkin pie, brownies — keep the
    British name first with US in brackets at first mention.)
 10. Wrap-up sign-offs: zero.
-11. Scaling tokens: no literal `{{slug}}` strings in body prose yet
-    (the renderer hasn't shipped). Numeric amounts are written inline
-    at the recipe's default servings.
+11. Scaling tokens: every numeric ingredient amount in method prose
+    is written as a `{{slug}}` token whose slug appears in the
+    `ingredientsList`. Non-numeric references (a pinch, a turn of
+    pepper) stay as plain prose. Render-read the prose with the token
+    substituted to make sure it reads cleanly: "140 g of plain flour",
+    not "140 g plain flour".
 12. Every `ingredientSlug` in `ingredientsList` matches a row in the
     INGREDIENT_LOOKUP table. Every `recipeTools[].slug` matches a row
     in TOOL_LOOKUP.

@@ -10,6 +10,7 @@ import { VarietiesPanel } from './blocks/varieties-panel'
 import { Troubleshooter } from './blocks/troubleshooter'
 import { IngredientsList } from './blocks/ingredients-list'
 import type { IngredientsListItem } from './blocks/ingredients-list'
+import { ScaleToken } from './scale-context'
 import type {
   GlossaryRef,
   SubTutorialRef,
@@ -297,8 +298,41 @@ function renderChildren(
 function renderText(node: TipTapNode, ctx: RenderContext): ReactNode {
   const text = node.text ?? ''
   if (!text) return null
+  // Split out any `{{ingredient-slug}}` scaling tokens before applying marks.
+  // The token segments render as <ScaleToken> so they react to the recipe
+  // scale selector; the literal text segments fall through as plain strings.
+  // On technique pages (no recipe context) ScaleToken falls back to the
+  // literal `{{slug}}` text so nothing surprising appears.
+  const segments = splitTokenSegments(text)
+  const rendered: ReactNode =
+    segments.length === 1 && typeof segments[0] === 'string'
+      ? segments[0]
+      : segments.map((seg, i) =>
+          typeof seg === 'string'
+            ? <span key={i}>{seg}</span>
+            : <ScaleToken key={i} slug={seg.slug} />,
+        )
   const marks = sortMarks(node.marks ?? [])
-  return marks.reduce<ReactNode>((children, mark) => wrapMark(mark, children, ctx), text)
+  return marks.reduce<ReactNode>((children, mark) => wrapMark(mark, children, ctx), rendered)
+}
+
+const TOKEN_PATTERN = /\{\{([a-z0-9]+(?:-[a-z0-9]+)*)\}\}/g
+
+type TextSegment = string | { token: true; slug: string }
+
+function splitTokenSegments(text: string): TextSegment[] {
+  if (!text.includes('{{')) return [text]
+  const out: TextSegment[] = []
+  let lastIndex = 0
+  TOKEN_PATTERN.lastIndex = 0
+  let match: RegExpExecArray | null
+  while ((match = TOKEN_PATTERN.exec(text)) !== null) {
+    if (match.index > lastIndex) out.push(text.slice(lastIndex, match.index))
+    out.push({ token: true, slug: match[1]! })
+    lastIndex = match.index + match[0].length
+  }
+  if (lastIndex < text.length) out.push(text.slice(lastIndex))
+  return out.length > 0 ? out : [text]
 }
 
 // Sort marks to a deterministic outer-to-inner order so nesting is stable.

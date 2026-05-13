@@ -1000,10 +1000,18 @@ rows are rebuilt in a transaction on every upload, mirroring
 `apps/web/src/lib/recipe-ingredients-sync.ts`. The script computes
 `totalMinutes` from `prep + cook + resting + chilling` when absent.
 
-Scaling tokens (`{{ingredient-slug}}`) are documented as the settled
-contract; the renderer plumbing is pending. Until it lands, drafts
-write amounts inline at the recipe's default servings. A follow-up
-session will sweep tokens in once the renderer reads them.
+Scaling tokens (`{{ingredient-slug}}`) ship live in this step. A new
+`ScaleProvider` context at `apps/web/src/components/public/tutorial-content/scale-context.tsx`
+holds the multiplier; the IngredientsList block mirrors its scale chip
+selection into the provider via `useEffect`; `ScaleToken` (rendered
+inline from `renderText` when a `{{slug}}` pattern is detected) reads
+multiplier + ingredient lookup and renders the scaled amount + unit.
+Countable units (`sprig`, `clove`, `leaf`, `sheet`, `slice`, `bunch`,
+`handful`, `pinch`) pluralise when amount ≠ 1; `each` is dropped from
+the rendered output so prose reads "4 eggs" not "4 each eggs". The
+public tutorial page and the admin preview pane both wrap recipe
+bodies in the provider; technique bodies stay server-rendered without
+it.
 
 **Sample.** Toad in the hole (`packages/db/scripts/anchor-tutorials/toad-in-the-hole.json`),
 drafted to the new prompt, voice-checked clean first try (0 errors, 4
