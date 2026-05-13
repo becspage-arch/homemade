@@ -47,5 +47,15 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<!--
+	    Apple's "App Encryption Documentation" question (US export
+	    compliance) defaults to firing on every TestFlight upload. The
+	    Homemade wrapper only uses iOS's built-in HTTPS / system
+	    keychain, which is exempt. Declaring it here makes App Store
+	    Connect skip the prompt for every future build.
+	    https://developer.apple.com/documentation/security/complying_with_encryption_export_regulations
+	-->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 </dict>
 </plist>
