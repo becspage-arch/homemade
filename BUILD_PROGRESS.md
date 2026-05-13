@@ -934,6 +934,17 @@ Tick items here as they're done.
       hitting the URLs without the splash password. Currently the
       gate rewrites `/legal/*` to `/coming-soon` — fine for private
       beta, not for public launch.
+- [ ] **Signup allowlist removal.** Pre-launch we restrict Clerk
+      signups to the Prisma `SignupAllowlist` table (`/admin/users/
+      signup-allowlist`) plus the Clerk dashboard "Restrictions →
+      Allowlist" feature (see `docs/clerk-restrictions-setup.md`).
+      Belt-and-braces gates live in the Clerk webhook + the JIT
+      provisioning fallback in `apps/web/src/lib/get-current-user.ts`,
+      both reading the `SIGNUP_ALLOWLIST_ENABLED` constant in
+      `apps/web/src/lib/signup-allowlist.ts`. **Launch-day flip:**
+      (a) Clerk dashboard Restrictions → Sign-up mode → "Public",
+      (b) flip `SIGNUP_ALLOWLIST_ENABLED = false` and redeploy. Once
+      stable, the table + helper can be deleted in a follow-up sweep.
 - [x] **Hard-delete cron for scheduled account deletions.** Inngest
       function `hard-delete-scheduled-accounts` (cron `0 3 * * *`)
       picks up every `AccountDeletionRequest` whose `scheduledFor` has
@@ -1631,4 +1642,5 @@ catalogued-but-unwired (Phase 7/8 placeholder).
 - `45c78a7` — feat(legal): Phase 8a legal compliance bundle — six legal pages, cookie consent banner + consent helpers, /me/data-rights + export / deletion API, DMCA + deletion + data-export admin queues, schema additions (cookieConsent / deletionScheduledFor / deletedAt + 3 new models)
 - `aadd8fd` — chore(prelaunch): pre-launch debt sweep — iOS TestFlight workflow + ESLint v9 flat-config (phase 1) + repo CLAUDE.md + SubTutorialCard dead-ref strip-and-snapshot + hard-delete cron + Typesense CDK secret-mount (gated)
 - _this session_ — fix(auth+analytics): narrow `proxy.ts` matcher + defensive `getCurrentDbUser` try/catch (kills Clerk auth() Sentry spam from bot probes) + public error boundaries + wire `tutorial_shared` (new share UI) / `search_result_clicked` / `account_data_export_downloaded` / `error_boundary_triggered` / `account_deletion_completed` (closes the last analytics loose ends from Phase B except `payment_failed`)
+- _this session_ — feat(auth): pre-launch signup allowlist — `SignupAllowlist` Prisma model + seed migration (`20260607000000_phase_signup_allowlist`), Clerk webhook + JIT rejection paths that delete the Clerk user via the Backend API on non-allowlisted signup, ADMIN-only `/admin/users/signup-allowlist` CRUD with audit-log + PostHog wiring, `docs/clerk-restrictions-setup.md` runbook for mirroring the list into Clerk's dashboard, three new analytics events
 - Phase 3a (earlier session): public tutorial / category / home pages, TipTap-JSON renderer with no TipTap runtime in the public bundle, admin Preview toggle

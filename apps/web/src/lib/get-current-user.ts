@@ -2,6 +2,12 @@ import 'server-only'
 import { currentUser } from '@clerk/nextjs/server'
 import * as Sentry from '@sentry/nextjs'
 import { prisma, UserRole, type User } from '@homemade/db'
+import {
+  SIGNUP_ALLOWLIST_ENABLED,
+  findAllowlistEntry,
+  markAllowlistUsed,
+  rejectNonAllowlistedSignup,
+} from './signup-allowlist'
 
 /**
  * Pre-launch admin allowlist. Any email here gets ADMIN role on first sign-in.
@@ -43,10 +49,25 @@ export async function getCurrentDbUser(): Promise<User | null> {
   const existing = await prisma.user.findUnique({ where: { clerkId: clerkUser.id } })
   if (existing) return existing
 
+  // Pre-launch signup allowlist gate (belt-and-braces with the Clerk webhook).
+  // If the webhook lagged or was never delivered, the first authenticated
+  // request still gets gated here before we create the Prisma User row.
+  if (SIGNUP_ALLOWLIST_ENABLED) {
+    const allowlisted = await findAllowlistEntry(email)
+    if (!allowlisted) {
+      await rejectNonAllowlistedSignup({
+        clerkUserId: clerkUser.id,
+        email,
+        via: 'jit',
+      })
+      return null
+    }
+  }
+
   const name =
     [clerkUser.firstName, clerkUser.lastName].filter(Boolean).join(' ').trim() || null
 
-  return prisma.user.create({
+  const created = await prisma.user.create({
     data: {
       clerkId: clerkUser.id,
       email: email.toLowerCase(),
@@ -54,6 +75,12 @@ export async function getCurrentDbUser(): Promise<User | null> {
       role: deriveRoleFromEmail(email),
     },
   })
+
+  if (SIGNUP_ALLOWLIST_ENABLED) {
+    await markAllowlistUsed(email)
+  }
+
+  return created
 }
 
 export function isAdmin(user: { role: UserRole } | null | undefined): boolean {

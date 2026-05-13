@@ -4,6 +4,13 @@ import { prisma, UserRole } from '@homemade/db'
 import { captureServerEvent, flushPostHog, identifyServerUser } from '@/lib/posthog'
 import { isoWeek } from '@/lib/cohort'
 import { deriveDeviceClass } from '@/lib/acquisition'
+import { hashEmailForAnalytics } from '@/lib/email-hash'
+import {
+  SIGNUP_ALLOWLIST_ENABLED,
+  findAllowlistEntry,
+  markAllowlistUsed,
+  rejectNonAllowlistedSignup,
+} from '@/lib/signup-allowlist'
 
 /**
  * Clerk webhook receiver. Keeps the Prisma `User` row in sync when Clerk's
@@ -27,21 +34,6 @@ const ADMIN_EMAILS = new Set(['rebecca@homemade.education'])
 
 function deriveRole(email: string): UserRole {
   return ADMIN_EMAILS.has(email.toLowerCase()) ? UserRole.ADMIN : UserRole.MEMBER
-}
-
-/**
- * Hash the email before pushing as a PostHog person property. Raw emails
- * stay out of analytics per the taxonomy doc; the prefix is short enough
- * to be useful for joins from logs but not reversible to plaintext.
- */
-function hashEmailForAnalytics(email: string): string {
-  // FNV-1a 32-bit; good enough for non-cryptographic person-property keying.
-  let hash = 2166136261
-  for (let i = 0; i < email.length; i++) {
-    hash ^= email.charCodeAt(i)
-    hash = Math.imul(hash, 16777619)
-  }
-  return (hash >>> 0).toString(16).padStart(8, '0')
 }
 
 interface ClerkEmail {
@@ -109,6 +101,25 @@ export async function POST(req: Request): Promise<Response> {
           // No primary email — nothing meaningful to upsert.
           return Response.json({ ok: true, skipped: 'no primary email' })
         }
+
+        // Pre-launch signup allowlist gate. Only applies to user.created —
+        // updates to existing users (email change, name change) are allowed
+        // through regardless.
+        if (evt.type === 'user.created' && SIGNUP_ALLOWLIST_ENABLED) {
+          const allowlisted = await findAllowlistEntry(email)
+          if (!allowlisted) {
+            await rejectNonAllowlistedSignup({
+              clerkUserId: evt.data.id,
+              email,
+              via: 'webhook',
+              eventId: svixId,
+            })
+            // Return 200 so Clerk doesn't retry — the event was handled, just
+            // not in the way the signed-up user expected.
+            return Response.json({ ok: true, rejected: 'not_allowlisted' })
+          }
+        }
+
         const name = combineName(evt.data)
         const country = hdrs.get('cf-ipcountry') ?? null
         const deviceClass = deriveDeviceClass(hdrs.get('user-agent'))
@@ -136,6 +147,9 @@ export async function POST(req: Request): Promise<Response> {
           },
         })
         if (evt.type === 'user.created') {
+          if (SIGNUP_ALLOWLIST_ENABLED) {
+            await markAllowlistUsed(email)
+          }
           await identifyServerUser({
             distinctId: evt.data.id,
             properties: {

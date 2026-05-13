@@ -39,6 +39,7 @@ const SIDEBAR_GROUPS: SidebarGroup[] = [
       { href: '/admin/users/suspended', label: 'Suspensions' },
       { href: '/admin/users/data-requests', label: 'Data requests' },
       { href: '/admin/users/deletion-queue', label: 'Deletion queue' },
+      { href: '/admin/users/signup-allowlist', label: 'Signup allowlist', adminOnly: true },
     ],
   },
   {

@@ -109,6 +109,7 @@ model User {
   dataExportRequests       DataExportRequest[]
   accountDeletionRequest   AccountDeletionRequest?
   dmcaResolutions          DmcaTakedownRequest[]   @relation("DmcaResolver")
+  signupAllowlistAdded     SignupAllowlist[]       @relation("SignupAllowlistAddedBy")
 
   @@index([role])
   @@index([isSuspended])
@@ -994,4 +995,37 @@ enum DmcaStatus {
   ACTION_TAKEN
   REJECTED
   COUNTER_NOTICED
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Pre-launch signup allowlist
+// ────────────────────────────────────────────────────────────────────────────
+
+/// Pre-launch gate that pairs with the Clerk dashboard Restrictions feature.
+/// While `SIGNUP_ALLOWLIST_ENABLED` is true (in the webhook handler), any
+/// Clerk signup whose primary email isn't on this table is deleted via the
+/// Clerk Backend API immediately and the Prisma mirror row is rolled back.
+/// Flipped off on launch day — see `project_pre_launch_checklist.md`.
+model SignupAllowlist {
+  id String @id @default(cuid())
+
+  /// Lowercased before write. Unique so we can't have stale duplicates.
+  email String @unique
+
+  /// The admin who added the entry. ON DELETE SET NULL so removing an admin
+  /// account doesn't drop allowlist rows.
+  addedById String?
+  addedBy   User?   @relation("SignupAllowlistAddedBy", fields: [addedById], references: [id], onDelete: SetNull)
+
+  /// Optional free-text context, e.g. "Phase 6 creator test account".
+  note String?
+
+  /// Set when an allowlisted user actually signs up. Lets us spot stale
+  /// entries that were never used.
+  lastUsedAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([addedById])
 }

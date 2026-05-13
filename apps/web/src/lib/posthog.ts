@@ -74,6 +74,10 @@ export type PosthogEvent =
   // Friction / errors
   | 'rate_limit_hit'
   | 'nsfw_auto_rejected'
+  // Pre-launch signup allowlist
+  | 'signup_rejected_not_allowlisted'
+  | 'signup_allowlist_email_added'
+  | 'signup_allowlist_email_removed'
 
 /**
  * Capture a server-side analytics event. Fire-and-forget: failures must

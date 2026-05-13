@@ -9,6 +9,8 @@ export interface SidebarItem {
   href: string
   label: string
   placeholder?: boolean
+  /** Hide from non-ADMINs (e.g. signup allowlist that EDITORs don't manage). */
+  adminOnly?: boolean
 }
 
 export interface SidebarGroup {
@@ -91,6 +93,7 @@ export function AdminSidebar({ groups, isAdmin }: AdminSidebarProps) {
                     </li>
                   )}
                   {group.items.map((item) => {
+                    if (item.adminOnly && !isAdmin) return null
                     const active =
                       pathname === item.href || pathname.startsWith(item.href + '/')
                     return (

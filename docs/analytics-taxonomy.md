@@ -183,6 +183,18 @@ analytics).
 | `payment_failed` | Phase 7 / 8 placeholder — no firing path yet. | (TBD) |
 | `error_boundary_triggered` | React error boundary catches a render error in the `(public)` route group (root + tutorial-scoped boundaries). Client-side. Also reported to Sentry via `Sentry.captureException`. | `path`, `errorName`, `errorMessage` (truncated to 120 chars), `digest` (Next.js error digest, nullable), `scope` (`tutorial` for the per-tutorial boundary, omitted for the root one) |
 
+### Pre-launch signup allowlist
+
+Pre-launch only. Once `SIGNUP_ALLOWLIST_ENABLED` is flipped off on launch
+day and the gate is removed, these events stop firing — keep them in the
+catalogue for historical analysis of the pre-launch period.
+
+| Event | Fires when | Properties |
+|---|---|---|
+| `signup_rejected_not_allowlisted` | Clerk webhook or JIT path rejects a signup because the email isn't on the `SignupAllowlist` table. Server-side. distinctId is the (about-to-be-deleted) Clerk user id so the event stitches onto the same anon profile that fired prior acquisition events. | `via` (`webhook` / `jit`), `attemptedEmail` (FNV-1a 8-hex hash, matches the identify-time hashing), `attemptedDomain` (raw, for monitoring signup attempts clustering on one domain) |
+| `signup_allowlist_email_added` | Admin adds an entry via `/admin/users/signup-allowlist/new`. Server-side. | `addedBy` (admin User.id), `noteWasProvided` (boolean — note text itself is never sent) |
+| `signup_allowlist_email_removed` | Admin removes an entry from `/admin/users/signup-allowlist`. Server-side. | `removedBy` (admin User.id) |
+
 ### Moderation outcomes (existing)
 
 Already wired by Phase 5 / services-activation; properties expanded here.
