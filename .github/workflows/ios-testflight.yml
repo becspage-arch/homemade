@@ -1,12 +1,27 @@
-name: iOS TestFlight
+name: iOS TestFlight (DISABLED — see BUILD_PROGRESS)
 
-# Manual-only initially. TestFlight uploads burn App Store Connect API
-# quota — auto-firing on every push to main is wasteful while we're not
-# actively iterating on the wrapper. Re-enable a path-filtered push trigger
-# (apps/mobile/ios/**, apps/mobile/capacitor.config.*) once a release cadence
-# settles.
+# DISABLED 2026-05-12. The keychain `security import` step rejects every
+# .p12 we throw at it (modern AES-256, legacy 3DES, with password, without
+# password — all hit "MAC verification failed"). The .p12 itself is valid
+# (openssl reads it cleanly locally), the base64 transfers correctly
+# (SHA256 matches across machines), the password length matches the
+# expected ASCII string. macOS `security import` is the bottleneck.
+#
+# Next session should switch from manual signing (the Aura-mirrored
+# pattern this file uses) to fastlane match, which manages certs +
+# profiles via its own encrypted git repo and avoids the GitHub Secrets +
+# base64 + cross-tool-encoding chain entirely. See BUILD_PROGRESS.md
+# under "Pre-launch debt" for the full triage.
+#
+# To re-enable for testing, change the trigger below back to
+# `workflow_dispatch:` (it's currently a never-fired no-op).
 on:
   workflow_dispatch:
+    inputs:
+      _disabled:
+        description: "DISABLED — see BUILD_PROGRESS.md before re-enabling"
+        required: true
+        default: "see BUILD_PROGRESS.md"
 
 jobs:
   build-upload:
