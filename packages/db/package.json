@@ -20,14 +20,12 @@
     "search:backfill": "tsx scripts/typesense-backfill.ts",
     "tutorial:upload": "tsx scripts/upload-tutorial.ts",
     "tutorial:verify": "tsx scripts/verify-tutorial-bodies.ts",
-    "tutorial:bot-edit": "tsx scripts/bot-edit.ts",
     "tutorial:voice-check": "tsx scripts/voice-check.ts",
     "tutorial:voice-check-all": "tsx scripts/voice-check-all.ts",
     "seed:cooking": "tsx scripts/seed-cooking-taxonomy.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.717.0",
-    "@homemade/ai": "workspace:*",
     "@homemade/search": "workspace:*",
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
