@@ -17,6 +17,10 @@ const config: CapacitorConfig = {
     url: 'https://homemade.education',
     cleartext: false,
     androidScheme: 'https',
+    // Keep navigation inside the WKWebView for same-origin links. Without
+    // this, every <a href> tap was punting users out to Safari — observed
+    // on the "Already have access? Sign in" link from /coming-soon.
+    allowNavigation: ['homemade.education', '*.homemade.education'],
   },
   ios: {
     contentInset: 'always',
