@@ -137,6 +137,12 @@
   gap: 32px 28px;
 }
 
+/* The click-tracking wrapper around each result card. `display: contents`
+   lets the underlying card stay as the grid item so layout is unchanged. */
+.search-result-card-wrap {
+  display: contents;
+}
+
 .search-no-results {
   padding: 48px 0;
   font-family: var(--font-fraunces);

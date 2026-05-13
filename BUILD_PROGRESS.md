@@ -1468,6 +1468,141 @@ Bundled session ticking off five pre-launch debt items in one push.
 
 ---
 
+## Bug-fix bundle — Clerk auth error on tutorial pages + public error boundaries + analytics loose ends (2026-05-13)
+
+Six-item bundle clearing one production Sentry issue, adding the
+public-side error boundaries the analytics taxonomy was waiting on,
+and wiring the last five "catalogued but unwired" PostHog events.
+
+### Clerk auth() error on tutorial pages — root cause + fix
+
+- **Root cause** (already documented in pre-launch debt before this
+  session): `apps/web/src/proxy.ts` matcher excluded any path ending
+  in `.<letters>` via `.*\.[a-zA-Z]+$`. That swallowed bot probes like
+  `/wp-admin.php`, `/.env`, `/sitemap.xml.html` — the matcher rule
+  meant `clerkMiddleware` never ran for them, but Next still routed
+  them to the dynamic `[categorySlug]` page, which calls
+  `getCurrentDbUser()` → `currentUser()` → throws "Clerk: auth() was
+  called but Clerk can't detect usage of clerkMiddleware()". ~17
+  occurrences/hour from bot traffic; no real-user impact, but Sentry
+  noise drowned signal.
+- **Fix A (matcher):** swap the broad regex for an allowlist of
+  actual static-asset extensions:
+  `svg|png|jpg|jpeg|gif|webp|avif|ico|css|js|mjs|map|woff|woff2|ttf|otf|wasm|txt|xml|json`.
+  Bot probes now go through `clerkMiddleware` and hit the splash gate
+  (404 / rewrite to `/coming-soon`) like any other unknown URL.
+- **Fix B (defensive try/catch):** `getCurrentDbUser()` wraps
+  `currentUser()` in a try/catch that returns `null` on Clerk runtime
+  errors and reports a warning-level Sentry exception with
+  `tags: { source: 'getCurrentDbUser' }`. Cheap insurance against
+  future RSC sub-request edge cases where middleware might not
+  surround a server-component call.
+
+Both fixes ship together — matcher is the root cause, defensive
+try/catch keeps a future regression from being a 500.
+
+### Public error boundaries
+
+- `apps/web/src/app/(public)/error.tsx` — root client error boundary
+  for the entire public route group. Brand-fit fallback ("Something
+  went wrong on our end. We've been told, and we'll have a look.")
+  with "Try again" (calls `reset()`) and "Back to homepage" links.
+- `apps/web/src/app/(public)/[categorySlug]/[tutorialSlug]/error.tsx`
+  — tutorial-scoped boundary so a broken tutorial keeps the site
+  header / footer and isolates the failure to the article body.
+- Both boundaries call `Sentry.captureException(error)` AND
+  `captureClientEvent('error_boundary_triggered', { ... })` so the
+  PostHog `error_boundary_triggered` dashboard pairs with Sentry's
+  view from the user's perspective.
+- Brand-fit CSS in `apps/web/src/components/public/site-chrome.css`
+  (under `.public-error-boundary`).
+
+### Analytics events — five closed out
+
+All five remaining "catalogued but unwired" events from Phase B now
+fire from their natural code paths. The taxonomy doc
+(`docs/analytics-taxonomy.md`) was updated in this same commit with
+the final property shapes — only `payment_failed` remains
+catalogued-but-unwired (Phase 7/8 placeholder).
+
+- **`error_boundary_triggered`** — fires from the two new boundaries
+  above with `{ path, errorName, errorMessage (truncated 120),
+  digest, scope? }`. `scope: 'tutorial'` on the tutorial boundary,
+  omitted on the root one so dashboards can distinguish them.
+- **`account_data_export_downloaded`** — `apps/web/src/app/(public)/me/data-rights/export-panel.tsx`
+  added an `onClick` to the "Download bundle" anchor that fires
+  `{ requestId, bytes, generatedAt }` before the navigation. Fire-
+  and-forget, doesn't block the download.
+- **`search_result_clicked`** — new
+  `apps/web/src/app/(public)/search/search-results.tsx` client
+  wrapper around the result grid. Uses `display: contents` on the
+  wrapping span so the underlying `TutorialCard` stays as the grid
+  item and layout is unchanged. Fires
+  `{ query, filters, position, tutorialId, tutorialSlug,
+  categorySlug, totalResults }` on capture so the navigation isn't
+  delayed. Only wraps actual search hits, not the recently-published
+  fallback shown when the page is opened with no query.
+- **`tutorial_shared`** — first wire in any form (the event existed
+  in the taxonomy but never had a firing path). New
+  `apps/web/src/components/public/tutorial-reader/share-button.tsx`:
+  on devices that expose `navigator.share`, renders a single Share
+  button that opens the OS sheet and fires `destination: 'native'`.
+  Otherwise renders a popover menu with copy-link / Twitter (X) /
+  Pinterest / Facebook / email — each fires with the matching
+  `destination` (`copy_link` / `twitter` / `pinterest` / `facebook`
+  / `email`). Click-outside + Escape close the menu. Available on
+  every tutorial page for signed-in AND anonymous readers (the
+  tutorial actions bar now renders the share button as a baseline,
+  with bookmark + project buttons layered in for signed-in users).
+- **`account_deletion_completed`** — fires from the per-user step in
+  the hard-delete Inngest cron (`apps/web/src/inngest/functions/hard-delete-accounts.ts`)
+  after `hardDeleteAccount` succeeds. The cron now also pre-loads
+  the user's `clerkId` and the `AccountDeletionRequest.requestedAt`
+  alongside the queue. `distinctId` is the Clerk id so the event
+  stitches onto the same PostHog person the user's lifecycle has
+  been tracked against. Properties:
+  `{ userId, daysScheduledFor: 30, requestedAt, completedAt, reason }`.
+  `flushPostHog()` runs once at the end of the function so the
+  serverless process doesn't tear down before events leave the
+  buffer.
+
+### Files touched
+
+- `apps/web/src/proxy.ts` (matcher allowlist)
+- `apps/web/src/lib/get-current-user.ts` (try/catch + Sentry)
+- `apps/web/src/app/(public)/error.tsx` (new)
+- `apps/web/src/app/(public)/[categorySlug]/[tutorialSlug]/error.tsx` (new)
+- `apps/web/src/app/(public)/[categorySlug]/[tutorialSlug]/page.tsx` (import + wire share into actions slot)
+- `apps/web/src/app/(public)/me/data-rights/export-panel.tsx` (onClick)
+- `apps/web/src/app/(public)/search/page.tsx` (use SearchResults wrapper)
+- `apps/web/src/app/(public)/search/search-results.tsx` (new)
+- `apps/web/src/app/(public)/search/search-page.css` (`.search-result-card-wrap` shim)
+- `apps/web/src/components/public/tutorial-reader/share-button.tsx` (new)
+- `apps/web/src/components/public/tutorial-reader/tutorial-reader.css` (share menu styles)
+- `apps/web/src/components/public/site-chrome.css` (error boundary styles)
+- `apps/web/src/inngest/functions/hard-delete-accounts.ts` (event firing)
+- `docs/analytics-taxonomy.md` (five rows reworded as wired with final properties)
+
+### Things scoped out of this session
+
+- Recipes-first schema reshape — parallel content-pipeline session
+  owns `packages/db/prisma/schema.prisma` and the recipe TipTap
+  blocks. This session stayed out of both.
+- Public tutorial page layout — only minimum-surgical edits inside
+  `page.tsx` (import + actionsSlot tweak); no rearranging sections
+  or styling.
+- New admin pages or marketing pages.
+- Tightening the rules ESLint Phase 1 downgraded — its own session.
+
+### Pre-launch debt observed during this session
+
+- The `proxy.ts` matcher row in BUILD_PROGRESS.md "Pre-launch debt"
+  is now closed (the fix landed here). Memory's
+  `project_build_state.md` and `feedback_analytics_*` should drop
+  that bullet on the next memory refresh.
+
+---
+
 ## Commit history milestones
 
 - `5d1b5e6` — initial monorepo scaffold
@@ -1494,5 +1629,6 @@ Bundled session ticking off five pre-launch debt items in one push.
 - `41e2051` — feat(media): move image pipeline to Cloudflare R2 + Image Transformations
 - `a312c78` — feat(infra): activate Sentry + PostHog + Inngest + Upstash rate limits
 - `45c78a7` — feat(legal): Phase 8a legal compliance bundle — six legal pages, cookie consent banner + consent helpers, /me/data-rights + export / deletion API, DMCA + deletion + data-export admin queues, schema additions (cookieConsent / deletionScheduledFor / deletedAt + 3 new models)
-- _this session_ — chore(prelaunch): pre-launch debt sweep — iOS TestFlight workflow + ESLint v9 flat-config (phase 1) + repo CLAUDE.md + SubTutorialCard dead-ref strip-and-snapshot + hard-delete cron + Typesense CDK secret-mount (gated)
-- Phase 3a (this session): public tutorial / category / home pages, TipTap-JSON renderer with no TipTap runtime in the public bundle, admin Preview toggle
+- `aadd8fd` — chore(prelaunch): pre-launch debt sweep — iOS TestFlight workflow + ESLint v9 flat-config (phase 1) + repo CLAUDE.md + SubTutorialCard dead-ref strip-and-snapshot + hard-delete cron + Typesense CDK secret-mount (gated)
+- _this session_ — fix(auth+analytics): narrow `proxy.ts` matcher + defensive `getCurrentDbUser` try/catch (kills Clerk auth() Sentry spam from bot probes) + public error boundaries + wire `tutorial_shared` (new share UI) / `search_result_clicked` / `account_data_export_downloaded` / `error_boundary_triggered` / `account_deletion_completed` (closes the last analytics loose ends from Phase B except `payment_failed`)
+- Phase 3a (earlier session): public tutorial / category / home pages, TipTap-JSON renderer with no TipTap runtime in the public bundle, admin Preview toggle

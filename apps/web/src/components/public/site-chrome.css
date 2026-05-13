@@ -282,3 +282,68 @@
   color: var(--color-warm-taupe);
   margin: 0;
 }
+
+/* Error boundary fallback (public route group + tutorial-scoped). */
+
+.public-error-boundary {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 96px 32px 128px;
+  text-align: center;
+}
+
+.public-error-boundary-tutorial {
+  padding: 48px 32px 96px;
+}
+
+.public-error-boundary-card h1 {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 28px;
+  color: var(--color-charcoal);
+  margin: 0 0 16px;
+}
+
+.public-error-boundary-card p {
+  font-family: var(--font-lora);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-warm-taupe);
+  margin: 0 0 28px;
+}
+
+.public-error-boundary-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.public-error-boundary-button {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  padding: 10px 22px;
+  border: 0.5px solid var(--color-sage);
+  background: var(--color-sage);
+  color: var(--color-cream);
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.public-error-boundary-button:hover {
+  background: var(--color-deep-sage, var(--color-sage));
+}
+
+.public-error-boundary-link {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--color-sage);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--color-linen-grey);
+  padding-bottom: 2px;
+}
+
+.public-error-boundary-link:hover {
+  color: var(--color-charcoal);
+}

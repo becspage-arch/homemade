@@ -85,7 +85,7 @@ database?" before firing.
 | `tutorial_viewed` | Public tutorial page render. Server-side. | `tutorialId`, `categorySlug`, `tutorialSlug`, `authorId`, `creatorId?`, `cuisine?`, `mealType?`, `difficulty`, `season`, `wordCount`, `identified` |
 | `tutorial_scroll_depth` | 25 / 50 / 75 / 100% scroll on a tutorial page. Client-side, deduped per page load via component state. | `tutorialId`, `percent` |
 | `tutorial_completed` | `markProjectComplete`. Server-side. | `tutorialId`, `projectId`, `timeToCompleteMinutes?` (derived from startedAt → completedAt) |
-| `tutorial_shared` | Client-side share button click. | `tutorialId`, `destination` (`copy-link` / `twitter` / `pinterest` / `native-share`) |
+| `tutorial_shared` | Client-side share button click. Fires once per chosen destination — native sheet, copy link, or one of the per-network buttons. | `tutorialId`, `tutorialSlug`, `categorySlug`, `destination` (`native` / `copy_link` / `twitter` / `pinterest` / `facebook` / `email`) |
 | `tutorial_bookmarked` / `tutorial_unbookmarked` | `toggleBookmark`. | `tutorialId` |
 | `feature_used` | Generic feature-reach event. Fired at most once per user per feature per day (sessionStorage-deduped on client). | `feature` (`bookmarks` / `projects` / `search` / `reviews` / `qa` / `pattern_testing` / `beginner_mode` / `share`) |
 
@@ -94,7 +94,7 @@ database?" before firing.
 | Event | Fires when | Properties |
 |---|---|---|
 | `search_query` | Public `/search` server render. Server-side. | `query`, `resultCount`, `filters`, `zeroResult`, `categoryFilter?`, `difficultyFilter?`, `seasonFilter?` |
-| `search_result_clicked` | Click on a `TutorialCard` from `/search`. Client-side. | `query`, `tutorialId`, `position` |
+| `search_result_clicked` | Click on a `TutorialCard` from `/search`. Client-side, fires on capture before navigation. | `query`, `filters` (`{category, difficulty, season}`), `position` (0-indexed), `tutorialId`, `tutorialSlug`, `categorySlug`, `totalResults` |
 | `search_no_results_then_left` | Last interaction of a session is a zero-result `search_query`. Derived in PostHog dashboards from `search_query` + `$pageleave` sequence. | — |
 
 ### Content performance
@@ -168,10 +168,10 @@ analytics).
 | Event | Fires when | Properties |
 |---|---|---|
 | `account_data_export_requested` | `requestDataExport` creates a PROCESSING row. | `requestId` |
-| `account_data_export_downloaded` | (Future) signed URL fetched. Client-side. Wired when the download link adds a click handler. | `requestId` |
+| `account_data_export_downloaded` | Signed-URL "Download bundle" link click in `/me/data-rights`. Client-side. | `requestId`, `bytes`, `generatedAt` |
 | `account_deletion_scheduled` | `scheduleAccountDeletion`. | `scheduledFor` (ISO) |
 | `account_deletion_cancelled` | `cancelAccountDeletion`. | — |
-| `account_deletion_completed` | Hard-delete cron (Session B is wiring the cron; this event is fired from inside the Inngest function on each successful delete). | `userId` |
+| `account_deletion_completed` | Hard-delete Inngest cron fires this for each successful per-user delete, server-side, with the user's Clerk id as the distinctId so it stitches onto the deleted profile. | `userId`, `daysScheduledFor` (30), `requestedAt` (ISO), `completedAt` (ISO), `reason` (nullable, free-text from the deletion request) |
 
 ### Friction / error
 
@@ -181,7 +181,7 @@ analytics).
 | `rate_limit_hit` | `checkRateLimit` returns `allowed: false` in any of the UGC server actions. Server-side. | `bucket`, `tutorialId?` |
 | `nsfw_auto_rejected` | `submitUgcPhoto` decision is `auto-reject`. Server-side. | `tutorialId`, `photoId`, `score` |
 | `payment_failed` | Phase 7 / 8 placeholder — no firing path yet. | (TBD) |
-| `error_boundary_triggered` | React error boundary catches a render error. Client-side. | `path`, `errorMessage` (truncated to 120 chars) |
+| `error_boundary_triggered` | React error boundary catches a render error in the `(public)` route group (root + tutorial-scoped boundaries). Client-side. Also reported to Sentry via `Sentry.captureException`. | `path`, `errorName`, `errorMessage` (truncated to 120 chars), `digest` (Next.js error digest, nullable), `scope` (`tutorial` for the per-tutorial boundary, omitted for the root one) |
 
 ### Moderation outcomes (existing)
 

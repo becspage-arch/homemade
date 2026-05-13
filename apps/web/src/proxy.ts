@@ -65,9 +65,17 @@ export default clerkMiddleware(async (auth, req) => {
 })
 
 export const config = {
-  // Run on every path except Next.js asset paths.
+  // Run on every path except Next.js internals and actual static assets.
+  //
+  // The previous regex `.*\.[a-zA-Z]+$` excluded ANY path ending in a dot-
+  // extension, which also swallowed bot probes like `/wp-admin.php`, `/.env`,
+  // and `/sitemap.xml.html`. Those still hit the dynamic `[categorySlug]`
+  // route (which calls `getCurrentDbUser()`), but with no clerkMiddleware
+  // context, so `auth()` throws. We now allowlist the real static-asset
+  // extensions only — anything else, including bot-shaped URLs, runs
+  // through clerkMiddleware and the splash gate as normal.
   matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.[a-zA-Z]+$).*)',
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|avif|ico|css|js|mjs|map|woff|woff2|ttf|otf|wasm|txt|xml|json)$).*)',
     '/(api|trpc)(.*)',
   ],
 }

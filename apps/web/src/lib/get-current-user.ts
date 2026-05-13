@@ -1,5 +1,6 @@
 import 'server-only'
 import { currentUser } from '@clerk/nextjs/server'
+import * as Sentry from '@sentry/nextjs'
 import { prisma, UserRole, type User } from '@homemade/db'
 
 /**
@@ -22,7 +23,18 @@ function deriveRoleFromEmail(email: string): UserRole {
  * one Clerk call old.
  */
 export async function getCurrentDbUser(): Promise<User | null> {
-  const clerkUser = await currentUser()
+  // Clerk's `currentUser()` throws when it can't detect clerkMiddleware on
+  // the request — e.g. an RSC sub-request that skipped the matcher, or a bot
+  // probe hitting a path the matcher excluded. Treat that as "no user" rather
+  // than 500-ing the whole render. Still report to Sentry as a breadcrumb so
+  // genuine regressions stay visible.
+  let clerkUser: Awaited<ReturnType<typeof currentUser>>
+  try {
+    clerkUser = await currentUser()
+  } catch (err) {
+    Sentry.captureException(err, { level: 'warning', tags: { source: 'getCurrentDbUser' } })
+    return null
+  }
   if (!clerkUser) return null
 
   const email = clerkUser.emailAddresses[0]?.emailAddress

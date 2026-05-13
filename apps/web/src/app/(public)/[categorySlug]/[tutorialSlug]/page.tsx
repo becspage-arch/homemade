@@ -17,6 +17,7 @@ import { StickyToc } from '@/components/public/tutorial-reader/sticky-toc'
 import { ProjectCompanion } from '@/components/public/tutorial-reader/project-companion'
 import { BeginnerHelpFooter } from '@/components/public/tutorial-reader/beginner-help-footer'
 import { ScrollDepthTracker } from '@/components/public/tutorial-reader/scroll-depth-tracker'
+import { ShareButton } from '@/components/public/tutorial-reader/share-button'
 import { ReviewsBlock } from '@/components/public/ugc/reviews-block'
 import { PhotosBlock } from '@/components/public/ugc/photos-block'
 import { QaBlock } from '@/components/public/ugc/qa-block'
@@ -143,6 +144,17 @@ export default async function TutorialPage({ params }: PageProps) {
       ? (project.suppliesChecked as string[]).filter((s) => typeof s === 'string')
       : []
 
+  const shareButton = (
+    <ShareButton
+      tutorialId={tutorial.id}
+      tutorialSlug={tutorialSlug}
+      categorySlug={categorySlug}
+      title={tutorial.title}
+      excerpt={tutorial.excerpt}
+      heroUrl={heroUrl}
+    />
+  )
+
   const actionsSlot = currentUser ? (
     <>
       <BookmarkButton
@@ -155,8 +167,11 @@ export default async function TutorialPage({ params }: PageProps) {
         status={project?.status ?? null}
         completedAt={project?.completedAt ?? null}
       />
+      {shareButton}
     </>
-  ) : null
+  ) : (
+    shareButton
+  )
 
   const showRails = Boolean(currentUser)
   const leftRail = showRails ? <StickyToc /> : null

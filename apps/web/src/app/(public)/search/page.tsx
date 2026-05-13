@@ -9,6 +9,7 @@ import { captureServerEvent } from '@/lib/posthog'
 import { checkRateLimit } from '@/lib/ratelimit'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { SearchForm } from './search-form'
+import { SearchResults } from './search-results'
 
 import './search-page.css'
 
@@ -133,20 +134,29 @@ export default async function SearchPage({ searchParams }: PageProps) {
           </p>
 
           {results.hits.length > 0 ? (
-            <div className="search-grid">
-              {results.hits.map((hit) => (
-                <TutorialCard
-                  key={hit.document.id}
-                  href={`/${hit.document.categorySlug}/${hit.document.slug}`}
-                  title={hit.document.title}
-                  excerpt={hit.document.excerpt}
-                  heroUrl={mediaUrl({ r2Key: hit.document.heroR2Key, cloudflareId: hit.document.heroCloudflareId }, 'card')}
-                  difficulty={hit.document.difficulty}
-                  season={hit.document.season}
-                  categoryName={hit.document.categoryName}
-                />
-              ))}
-            </div>
+            <SearchResults
+              query={q}
+              filters={{
+                category: categorySlug ?? undefined,
+                difficulty: difficulty ?? undefined,
+                season: season ?? undefined,
+              }}
+              totalResults={results.found}
+              hits={results.hits.map((hit) => ({
+                id: hit.document.id,
+                slug: hit.document.slug,
+                categorySlug: hit.document.categorySlug,
+                categoryName: hit.document.categoryName,
+                title: hit.document.title,
+                excerpt: hit.document.excerpt,
+                heroUrl: mediaUrl(
+                  { r2Key: hit.document.heroR2Key, cloudflareId: hit.document.heroCloudflareId },
+                  'card',
+                ),
+                difficulty: hit.document.difficulty,
+                season: hit.document.season,
+              }))}
+            />
           ) : (
             <div className="search-no-results">
               <p>

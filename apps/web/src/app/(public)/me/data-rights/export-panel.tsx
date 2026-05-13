@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from 'react'
 import { requestDataExport } from '@/lib/data-rights-actions'
+import { captureClientEvent } from '@/lib/client-analytics'
 
 interface ExportHistoryItem {
   id: string
@@ -81,6 +82,13 @@ export function ExportPanel({ latestReady, history }: ExportPanelProps) {
             href={latestReady.fileUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              captureClientEvent('account_data_export_downloaded', {
+                requestId: latestReady.id,
+                bytes: latestReady.bytes,
+                generatedAt: latestReady.completedAt,
+              })
+            }}
           >
             Download bundle
           </a>
