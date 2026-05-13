@@ -908,19 +908,50 @@ Additive only — no column drops, no breaking renames. Existing tutorials still
 
 **Out.** Method-narrative `{{tokenId}}` substitution (Step 8). `equipmentList` block — deferred to a future small session per the prompt's explicit decision. Master ingredient / tool seeding (Steps 4 + 5).
 
-### Step 4 — Master ingredient list
+### Step 4 — Master ingredient list ✅ landed 2026-05-13
 
 **Goal.** Draft `docs/ingredient-master.md` and seed the Ingredient table.
 
-**Deliverable.** 300–500 entries with slug / name / pluralName / defaultUnit / dietaryFlags / commonSubstitutes / notes (UK-US naming gotchas). `packages/db/scripts/seed-ingredients.ts` runs idempotent upsert against dev + prod.
+**Landed.** 547 ingredient rows across all 18 categories live in
+`packages/db/scripts/data/ingredients.ts` — that file is the source of
+truth, the seed script imports it directly. Shape per entry: slug, name,
+optional pluralName, category, defaultUnit, dietaryFlags,
+commonSubstitutes (cross-referenced slugs), aliases (US / regional /
+brand-shorthand), notes (UK-US naming gotchas + prep tips), isStaple,
+isAllergen + allergenType (UK 14), seasonality, shelfLifeDays, storage.
+British conventions throughout; US names live in aliases. Halal and
+kosher flags intentionally not applied at ingredient level — those
+depend on slaughter / certification and get set on the recipe by the
+author.
+
+`packages/db/scripts/seed-ingredients.ts` runs idempotent upsert with
+up-front validation (slug shape, category / unit / dietary / allergen /
+storage enums, substitute-slug existence) and a `--dry-run` flag that
+exits without touching the DB. `generate-ingredient-master-md.ts`
+regenerates `docs/ingredient-master.md` from the TS source — markdown
+view is grouped by category, sorted alphabetically.
+
+Not run against prod yet — runbook in `docs/seed-master-lists.md`.
 
 **Out.** Tools (step 5). Browsing UI.
 
-### Step 5 — Master tools list
+### Step 5 — Master tools list ✅ landed 2026-05-13
 
 **Goal.** Draft `docs/tools-master.md` and seed the Tool table.
 
-**Deliverable.** 150–250 entries. `packages/db/scripts/seed-tools.ts`.
+**Landed.** 179 tool rows across all 17 categories in
+`packages/db/scripts/data/tools.ts`. Shape per entry: slug, name,
+optional pluralName, category, aliases (brand-shorthand: KitchenAid →
+stand mixer, Le Creuset → casserole, Vitamix → high-powered blender),
+isPurchasable (false only for fixtures — oven, hob, sink),
+typicalPriceGbp (in pennies, skipped when uncertain), notes.
+
+`packages/db/scripts/seed-tools.ts` mirrors the ingredients seed —
+validation up-front, `--dry-run` flag, idempotent upsert.
+`generate-tools-master-md.ts` regenerates `docs/tools-master.md` from
+the TS source.
+
+Not run against prod yet — same runbook covers it.
 
 **Out.** Prices, retailer links, marketplace integration (all Phase 7).
 
