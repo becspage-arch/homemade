@@ -20,15 +20,23 @@ import { fileURLToPath } from 'node:url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-for (const candidate of [
-  resolve(__dirname, '../../..', '.env.credentials'),
-  resolve(__dirname, '../../../..', '.env.credentials'),
-  resolve(__dirname, '../../../../..', '.env.credentials'),
-  resolve(process.cwd(), '.env.credentials'),
-]) {
-  if (existsSync(candidate)) {
-    loadEnv({ path: candidate })
-    break
+{
+  let dir = __dirname
+  let found = false
+  for (let depth = 0; depth < 8; depth++) {
+    const candidate = resolve(dir, '.env.credentials')
+    if (existsSync(candidate)) {
+      loadEnv({ path: candidate, override: true })
+      found = true
+      break
+    }
+    const parent = dirname(dir)
+    if (parent === dir) break
+    dir = parent
+  }
+  if (!found) {
+    const cwdCandidate = resolve(process.cwd(), '.env.credentials')
+    if (existsSync(cwdCandidate)) loadEnv({ path: cwdCandidate, override: true })
   }
 }
 

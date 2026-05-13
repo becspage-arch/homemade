@@ -21,15 +21,28 @@ import { fileURLToPath } from 'node:url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-for (const candidate of [
-  resolve(__dirname, '../../..', '.env.credentials'),
-  resolve(__dirname, '../../../..', '.env.credentials'),
-  resolve(__dirname, '../../../../..', '.env.credentials'),
-  resolve(process.cwd(), '.env.credentials'),
-]) {
-  if (existsSync(candidate)) {
-    loadEnv({ path: candidate })
-    break
+// Walk up from this file looking for .env.credentials. Covers the main-repo
+// layout (packages/db/scripts → 3 levels up to repo root) and the worktree
+// layout (.claude/worktrees/<name>/packages/db/scripts → 6 levels up).
+// `override: true` because some shells (e.g. Claude Code's sandbox) pre-set
+// ANTHROPIC_API_KEY to an empty string and dotenv won't replace it otherwise.
+{
+  let dir = __dirname
+  let found = false
+  for (let depth = 0; depth < 8; depth++) {
+    const candidate = resolve(dir, '.env.credentials')
+    if (existsSync(candidate)) {
+      loadEnv({ path: candidate, override: true })
+      found = true
+      break
+    }
+    const parent = dirname(dir)
+    if (parent === dir) break
+    dir = parent
+  }
+  if (!found) {
+    const cwdCandidate = resolve(process.cwd(), '.env.credentials')
+    if (existsSync(cwdCandidate)) loadEnv({ path: cwdCandidate, override: true })
   }
 }
 

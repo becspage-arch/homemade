@@ -46,17 +46,29 @@ import { fileURLToPath } from 'node:url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-// Try `.env.credentials` in three plausible locations: repo root next to
-// the worktree, a relative-up path, or whatever the CWD says. First match wins.
-for (const candidate of [
-  resolve(__dirname, '../../..', '.env.credentials'),
-  resolve(__dirname, '../../../..', '.env.credentials'),
-  resolve(__dirname, '../../../../..', '.env.credentials'),
-  resolve(process.cwd(), '.env.credentials'),
-]) {
-  if (existsSync(candidate)) {
-    loadEnv({ path: candidate })
-    break
+// Walk up from this file looking for .env.credentials. Covers both the
+// main-repo layout (packages/db/scripts → 3 levels to repo root) and the
+// worktree layout (.claude/worktrees/<name>/packages/db/scripts → 6 levels
+// up to the main repo root, since the file lives there, not in the worktree).
+// `override: true` because some shells (e.g. Claude Code's sandbox) pre-set
+// keys to empty values and dotenv won't replace existing env vars otherwise.
+{
+  let dir = __dirname
+  let found = false
+  for (let depth = 0; depth < 8; depth++) {
+    const candidate = resolve(dir, '.env.credentials')
+    if (existsSync(candidate)) {
+      loadEnv({ path: candidate, override: true })
+      found = true
+      break
+    }
+    const parent = dirname(dir)
+    if (parent === dir) break
+    dir = parent
+  }
+  if (!found) {
+    const cwdCandidate = resolve(process.cwd(), '.env.credentials')
+    if (existsSync(cwdCandidate)) loadEnv({ path: cwdCandidate, override: true })
   }
 }
 
