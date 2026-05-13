@@ -66,6 +66,7 @@ import type { Prisma } from '@prisma/client'
 
 import type { TutorialUploadInput, UploadResult } from './upload-tutorial-types.js'
 import { validateInput } from './upload-tutorial-types.js'
+import { exitCodeFor, formatReport, runVoiceCheck } from './voice-check-lib.js'
 
 type PrismaModule = typeof import('../src/index.js')
 let prismaMod: PrismaModule | null = null
@@ -357,14 +358,42 @@ function resolveGlossarySlugs(
 
 // ─── Entrypoint ──────────────────────────────────────────────────────────────
 
+interface UploadCliFlags {
+  inputPath: string
+  skipBotEdit: boolean
+  skipVoiceCheck: boolean
+}
+
+function parseUploadArgs(argv: string[]): UploadCliFlags | null {
+  let inputPath: string | null = null
+  let skipBotEdit = false
+  let skipVoiceCheck = false
+  for (const arg of argv) {
+    if (arg === '--skip-bot-edit') skipBotEdit = true
+    else if (arg === '--skip-voice-check') skipVoiceCheck = true
+    else if (arg.startsWith('--')) {
+      console.error(`Unknown flag: ${arg}`)
+      return null
+    } else if (!inputPath) {
+      inputPath = arg
+    }
+  }
+  if (!inputPath) return null
+  return { inputPath, skipBotEdit, skipVoiceCheck }
+}
+
 async function main(): Promise<void> {
-  const inputArg = process.argv[2]
-  if (!inputArg) {
-    console.error('Usage: pnpm exec tsx scripts/upload-tutorial.ts <path-to-input.json>')
+  const flags = parseUploadArgs(process.argv.slice(2))
+  if (!flags) {
+    console.error(
+      'Usage: pnpm exec tsx scripts/upload-tutorial.ts <path-to-input.json> [--skip-bot-edit] [--skip-voice-check]',
+    )
     process.exit(1)
   }
 
-  const inputPath = isAbsolute(inputArg) ? inputArg : resolve(process.cwd(), inputArg)
+  const inputPath = isAbsolute(flags.inputPath)
+    ? flags.inputPath
+    : resolve(process.cwd(), flags.inputPath)
   if (!existsSync(inputPath)) {
     console.error(`Input file not found: ${inputPath}`)
     process.exit(1)
@@ -382,6 +411,53 @@ async function main(): Promise<void> {
   console.log(`[upload-tutorial] ${inputPath}`)
   console.log(`  slug: ${input.slug}`)
   console.log(`  title: ${input.title}`)
+
+  // Bot-edit pass — second-pass Claude rewrite. Skipped if the user passed
+  // --skip-bot-edit or ANTHROPIC_API_KEY isn't set (with a clear warning in
+  // that case so it doesn't fail silently).
+  if (!flags.skipBotEdit) {
+    if (!(process.env.ANTHROPIC_API_KEY ?? '').trim()) {
+      console.warn(
+        '  [bot-edit] ANTHROPIC_API_KEY not set — skipping bot-edit pass. Add the key to .env.credentials to enable it.',
+      )
+    } else {
+      console.log('  [bot-edit] running second-pass editor')
+      const { botEdit } = await import('@homemade/ai')
+      const edit = await botEdit({
+        slug: input.slug,
+        title: input.title,
+        subtitle: input.subtitle ?? null,
+        excerpt: input.excerpt ?? null,
+        body: input.body,
+      })
+      input.body = edit.revised as TutorialUploadInput['body']
+      console.log(`  [bot-edit] ${edit.changes.length} changes`)
+      edit.changes.forEach((c, i) => {
+        console.log(`    ${i + 1}. ${c.path}: ${c.note}`)
+      })
+    }
+  } else {
+    console.log('  [bot-edit] skipped (--skip-bot-edit)')
+  }
+
+  // Voice-check pass — deterministic gate. Block on errors unless the admin
+  // escape hatch is set.
+  if (!flags.skipVoiceCheck) {
+    const report = runVoiceCheck(input)
+    const code = exitCodeFor(report)
+    console.log('  [voice-check]')
+    for (const line of formatReport(report).split('\n')) {
+      console.log(`    ${line}`)
+    }
+    if (code === 2) {
+      console.error('\n[upload-tutorial] BLOCKED — voice-check reported errors. Fix the draft or re-run with --skip-voice-check (admin escape hatch).')
+      process.exit(2)
+    }
+  } else {
+    console.warn(
+      '  [voice-check] skipped (--skip-voice-check). Admin escape hatch only — voice rules are NOT enforced on this upload.',
+    )
+  }
 
   const result = await uploadTutorial(input, inputPath)
 

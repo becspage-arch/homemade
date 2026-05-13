@@ -933,11 +933,13 @@ Image generation is **deferred** through this whole phase. Bodies are authored w
 
 **Out.** Running the prompt (step 10+).
 
-### Step 9 — Bot-as-editor + voice-check CLI
+### Step 9 — Bot-as-editor + voice-check CLI ✅ landed 2026-05-13
 
 **Goal.** Two pieces gating the upload pipeline.
 
 **Deliverable.** (a) Second-pass Claude that reads a draft, scores against Section 6b voice rules, rewrites flagged sentences in place, outputs a clean draft plus a diff. (b) `packages/db/scripts/voice-check.ts` — CLI grep tool that flags banned phrases / openers / em-dash count / negation patterns / medical advice / price mentions / UK-only references. Voice-check fails the upload on a hit.
+
+**Landed.** New `@homemade/ai` workspace with the Anthropic SDK client and a cached Section 6b system prompt. `packages/db/scripts/voice-check.ts` runs deterministic rules over draft TipTap JSON (file path, `--stdin`, or `--json` output) with exit codes 0 / 1 / 2. `packages/db/scripts/bot-edit.ts` calls Claude Sonnet 4.5 with prompt caching, rewrites prose in place, leaves ingredient amounts / timings / temperatures untouched, and emits a change log. `upload-tutorial.ts` now pipes drafts through bot-edit → voice-check before insertion, with `--skip-bot-edit` and `--skip-voice-check` escape hatches. `voice-check-all` (root: `pnpm voice-check:all`) scans every published Tutorial body for periodic spot-checks. Voice-check tested clean against the béchamel + jam anchor drafts (six and four tricolon warnings respectively, zero errors); a seeded fixture trips eighteen errors covering every rule.
 
 **Out.** Style-rule tuning beyond the locked Section 6b rules.
 

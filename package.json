@@ -12,6 +12,9 @@
     "dev": "turbo dev",
     "lint": "pnpm --filter @homemade/web lint",
     "typecheck": "turbo typecheck",
+    "voice-check": "pnpm --filter @homemade/db exec tsx scripts/voice-check.ts",
+    "voice-check:all": "pnpm --filter @homemade/db exec tsx scripts/voice-check-all.ts",
+    "bot-edit": "pnpm --filter @homemade/db exec tsx scripts/bot-edit.ts",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css}\""
   },
