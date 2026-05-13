@@ -124,6 +124,32 @@
   margin: 0;
 }
 
+.tutorial-recipe-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px 0 0;
+  border-bottom: 0.5px solid var(--color-linen-grey);
+  padding-bottom: 24px;
+}
+
+.tutorial-recipe-badge {
+  padding: 4px 12px;
+  border: 1px solid var(--color-sage);
+  border-radius: 999px;
+  font-family: var(--font-lora);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+  color: var(--color-sage);
+  background: transparent;
+}
+
+.tutorial-recipe-badge-dietary {
+  color: var(--color-forest, #5d6e47);
+  border-color: var(--color-forest, #5d6e47);
+}
+
 .tutorial-page-body {
   max-width: 720px;
   margin: 0 auto;

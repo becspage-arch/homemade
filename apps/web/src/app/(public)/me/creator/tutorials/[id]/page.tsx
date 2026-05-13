@@ -100,6 +100,37 @@ export default async function CreatorTutorialEditPage({ params }: PageProps) {
             timeMinutes: tutorial.timeMinutes != null ? String(tutorial.timeMinutes) : '',
             heroMediaId: tutorial.heroMediaId,
             body: (tutorial.body ?? { type: 'doc', content: [{ type: 'paragraph' }] }) as JSONContent,
+
+            type: tutorial.type,
+            servings: tutorial.servings != null ? String(tutorial.servings) : '',
+            yieldDescription: tutorial.yieldDescription ?? '',
+            prepMinutes:
+              tutorial.prepMinutes != null ? String(tutorial.prepMinutes) : '',
+            cookMinutes:
+              tutorial.cookMinutes != null ? String(tutorial.cookMinutes) : '',
+            restingMinutes:
+              tutorial.restingMinutes != null ? String(tutorial.restingMinutes) : '',
+            chillingMinutes:
+              tutorial.chillingMinutes != null
+                ? String(tutorial.chillingMinutes)
+                : '',
+            scalable: tutorial.scalable,
+            freezable: tutorial.freezable,
+            freezeNotes: tutorial.freezeNotes ?? '',
+            batchable: tutorial.batchable,
+            batchNotes: tutorial.batchNotes ?? '',
+            makeAheadNotes: tutorial.makeAheadNotes ?? '',
+            dietaryFlags: tutorial.dietaryFlags,
+            cuisine: tutorial.cuisine ?? '',
+            mealType: tutorial.mealType ?? '',
+            mood: tutorial.mood,
+            temperatureCelsius:
+              tutorial.temperatureCelsius != null
+                ? String(tutorial.temperatureCelsius)
+                : '',
+            temperatureNote: tutorial.temperatureNote ?? '',
+            foundational: tutorial.foundational,
+            leftoverTutorialId: tutorial.leftoverTutorialId,
           }}
           cloudflareDeliveryHash={process.env.CLOUDFLARE_IMAGES_DELIVERY_HASH ?? null}
           {...data}

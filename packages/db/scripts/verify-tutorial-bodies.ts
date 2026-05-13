@@ -41,6 +41,7 @@ const KNOWN_NODES = new Set([
   'productCard',
   'varietiesPanel',
   'troubleshooter',
+  'ingredientsList',
 ])
 const KNOWN_MARKS = new Set(['bold', 'italic', 'underline', 'strike', 'code', 'link', 'glossaryTooltip'])
 

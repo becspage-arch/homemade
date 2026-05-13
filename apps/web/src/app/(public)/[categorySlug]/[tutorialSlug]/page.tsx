@@ -95,12 +95,15 @@ export default async function TutorialPage({ params }: PageProps) {
     distinctId: currentUser?.clerkId ?? `anon:${categorySlug}:${tutorialSlug}`,
     properties: {
       tutorialId: tutorial.id,
+      tutorialType: tutorial.type,
       categorySlug,
       tutorialSlug,
       authorId: tutorial.authorId,
       creatorId: tutorial.creatorId ?? null,
       difficulty: tutorial.difficulty,
       season: tutorial.season,
+      cuisine: tutorial.cuisine,
+      mealType: tutorial.mealType,
       wordCount: countWords(body),
       identified: Boolean(currentUser),
       cohortWeek: currentUser?.signupCohortWeek ?? null,
@@ -269,12 +272,36 @@ export default async function TutorialPage({ params }: PageProps) {
               }
             : { name: null, handle: null, verified: false, homemade: true }
         }
+        recipeMeta={{
+          type: tutorial.type,
+          servings: tutorial.servings,
+          yieldDescription: tutorial.yieldDescription,
+          prepMinutes: tutorial.prepMinutes,
+          cookMinutes: tutorial.cookMinutes,
+          totalMinutes: tutorial.totalMinutes,
+          cuisine: tutorial.cuisine,
+          mealType: tutorial.mealType,
+          dietaryFlags: tutorial.dietaryFlags,
+          freezable: tutorial.freezable,
+          batchable: tutorial.batchable,
+          makeAheadSummary: tutorial.makeAheadNotes,
+          foundational: tutorial.foundational,
+        }}
         body={
           <TutorialContent
             content={body}
             glossary={refs.glossary}
             subTutorials={refs.subTutorials}
             beginnerMode={beginnerMode}
+            recipeContext={
+              tutorial.type === 'RECIPE'
+                ? {
+                    tutorialId: tutorial.id,
+                    tutorialSlug,
+                    scalable: tutorial.scalable,
+                  }
+                : null
+            }
           />
         }
         actionsSlot={actionsSlot}

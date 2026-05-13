@@ -78,6 +78,9 @@ export type PosthogEvent =
   | 'signup_rejected_not_allowlisted'
   | 'signup_allowlist_email_added'
   | 'signup_allowlist_email_removed'
+  // Recipe authoring + scaling
+  | 'ingredients_scaled'
+  | 'ingredient_created_inline'
 
 /**
  * Capture a server-side analytics event. Fire-and-forget: failures must

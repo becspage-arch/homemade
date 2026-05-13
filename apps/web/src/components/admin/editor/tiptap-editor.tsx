@@ -13,6 +13,7 @@ import { GlossaryTooltip } from './extensions/glossary-tooltip'
 import { ProductCard } from './extensions/product-card'
 import { VarietiesPanel } from './extensions/varieties-panel'
 import { Troubleshooter } from './extensions/troubleshooter'
+import { IngredientsList } from './extensions/ingredients-list'
 import { Toolbar } from './toolbar'
 import type { GlossaryRef, TutorialRef } from './types'
 
@@ -26,6 +27,11 @@ interface TiptapEditorProps {
   hiddenInputName: string
   /** Fires on every editor update with the latest JSON. Optional. */
   onChange?: (json: JSONContent) => void
+  /**
+   * Recipe servings — when set, the "ingredients (structured)" insert button
+   * seeds new blocks with this `defaultServings` value.
+   */
+  defaultServings?: number | null
 }
 
 const DEFAULT_DOC: JSONContent = {
@@ -39,6 +45,7 @@ export function TiptapEditor({
   tutorials,
   hiddenInputName,
   onChange,
+  defaultServings,
 }: TiptapEditorProps) {
   const hiddenInputRef = useRef<HTMLInputElement>(null)
 
@@ -69,6 +76,7 @@ export function TiptapEditor({
       ProductCard,
       VarietiesPanel,
       Troubleshooter,
+      IngredientsList,
     ],
     content: initialJson,
     editorProps: {
@@ -95,7 +103,13 @@ export function TiptapEditor({
 
   return (
     <div className="rounded-sm border border-[var(--color-linen-grey)] bg-[var(--color-linen-cream)]">
-      {editor && <Toolbar editor={editor} glossary={glossary} />}
+      {editor && (
+        <Toolbar
+          editor={editor}
+          glossary={glossary}
+          defaultServings={defaultServings ?? null}
+        />
+      )}
       <EditorContent editor={editor} />
       <input
         ref={hiddenInputRef}

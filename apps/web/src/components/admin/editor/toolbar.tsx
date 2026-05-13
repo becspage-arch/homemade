@@ -7,9 +7,11 @@ import type { GlossaryRef } from './types'
 interface ToolbarProps {
   editor: Editor
   glossary: GlossaryRef[]
+  /** Default servings to seed onto a freshly inserted ingredients-list block. */
+  defaultServings?: number | null
 }
 
-export function Toolbar({ editor, glossary }: ToolbarProps) {
+export function Toolbar({ editor, glossary, defaultServings }: ToolbarProps) {
   const [glossaryOpen, setGlossaryOpen] = useState(false)
   const [glossarySearch, setGlossarySearch] = useState('')
 
@@ -133,6 +135,22 @@ export function Toolbar({ editor, glossary }: ToolbarProps) {
               .insertContent({
                 type: 'suppliesCard',
                 attrs: { heading: 'You will need', items: [] },
+              })
+              .run()
+          }
+        />
+        <Btn
+          label="ingredients"
+          onClick={() =>
+            editor
+              .chain()
+              .focus()
+              .insertContent({
+                type: 'ingredientsList',
+                attrs: {
+                  defaultServings: defaultServings ?? null,
+                  items: [],
+                },
               })
               .run()
           }

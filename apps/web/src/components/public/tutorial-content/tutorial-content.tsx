@@ -8,6 +8,8 @@ import { GlossaryTooltip } from './blocks/glossary-tooltip'
 import { ProductCard } from './blocks/product-card'
 import { VarietiesPanel } from './blocks/varieties-panel'
 import { Troubleshooter } from './blocks/troubleshooter'
+import { IngredientsList } from './blocks/ingredients-list'
+import type { IngredientsListItem } from './blocks/ingredients-list'
 import type {
   GlossaryRef,
   SubTutorialRef,
@@ -23,6 +25,18 @@ interface TutorialContentProps {
   subTutorials: SubTutorialRef[]
   /** When true, glossary terms inline-expand and info panels get extra weight. */
   beginnerMode?: boolean
+  /**
+   * Recipe-specific context — only relevant when the tutorial is a RECIPE.
+   * Passed through to the structured-ingredients block for the scaler.
+   * Null on technique pages.
+   */
+  recipeContext?: RecipeRenderContext | null
+}
+
+export interface RecipeRenderContext {
+  tutorialId: string
+  tutorialSlug: string
+  scalable: boolean
 }
 
 /**
@@ -38,6 +52,7 @@ export function TutorialContent({
   glossary,
   subTutorials,
   beginnerMode = false,
+  recipeContext = null,
 }: TutorialContentProps): ReactNode {
   if (!content || content.type !== 'doc' || !Array.isArray(content.content)) {
     return (
@@ -56,6 +71,7 @@ export function TutorialContent({
           glossary={glossary}
           subTutorials={subTutorials}
           beginnerMode={beginnerMode}
+          recipeContext={recipeContext}
         />
       ))}
     </div>
@@ -66,10 +82,15 @@ interface RenderContext {
   glossary: GlossaryRef[]
   subTutorials: SubTutorialRef[]
   beginnerMode: boolean
+  recipeContext: RecipeRenderContext | null
 }
 
-interface RenderNodeProps extends RenderContext {
+interface RenderNodeProps {
   node: TipTapNode
+  glossary: GlossaryRef[]
+  subTutorials: SubTutorialRef[]
+  beginnerMode: boolean
+  recipeContext: RecipeRenderContext | null
 }
 
 function RenderNode({
@@ -77,8 +98,9 @@ function RenderNode({
   glossary,
   subTutorials,
   beginnerMode,
+  recipeContext,
 }: RenderNodeProps): ReactNode {
-  const ctx: RenderContext = { glossary, subTutorials, beginnerMode }
+  const ctx: RenderContext = { glossary, subTutorials, beginnerMode, recipeContext }
   const attrs = (node.attrs ?? {}) as Record<string, unknown>
 
   switch (node.type) {
@@ -211,6 +233,36 @@ function RenderNode({
         />
       )
 
+    case 'ingredientsList': {
+      // Renders nothing on a technique page (no recipe context). Bodies that
+      // accidentally carry the block on a technique fall through silently.
+      if (!recipeContext) return null
+      const items = Array.isArray(attrs.items)
+        ? (attrs.items as Array<Record<string, unknown>>)
+        : []
+      const defaultServings =
+        typeof attrs.defaultServings === 'number' ? attrs.defaultServings : null
+      const cleanItems: IngredientsListItem[] = items.map((raw) => ({
+        ingredientId: stringOrUndef(raw.ingredientId) ?? '',
+        ingredientSlug: stringOrUndef(raw.ingredientSlug) ?? '',
+        name: stringOrUndef(raw.name) ?? '',
+        amount: typeof raw.amount === 'number' ? raw.amount : null,
+        unit: stringOrUndef(raw.unit) ?? null,
+        prepNote: stringOrUndef(raw.prepNote) ?? null,
+        isOptional: raw.isOptional === true,
+        groupLabel: stringOrUndef(raw.groupLabel) ?? null,
+      }))
+      return (
+        <IngredientsList
+          tutorialId={recipeContext.tutorialId}
+          tutorialSlug={recipeContext.tutorialSlug}
+          items={cleanItems}
+          defaultServings={defaultServings}
+          scalable={recipeContext.scalable}
+        />
+      )
+    }
+
     case 'doc':
       // Defensive: doc inside doc shouldn't happen but render its children.
       return <>{renderChildren(node.content, ctx)}</>
@@ -233,6 +285,7 @@ function renderChildren(
       glossary={ctx.glossary}
       subTutorials={ctx.subTutorials}
       beginnerMode={ctx.beginnerMode}
+      recipeContext={ctx.recipeContext}
     />
   ))
 }

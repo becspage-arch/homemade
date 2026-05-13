@@ -856,3 +856,205 @@
   font-weight: 500;
 }
 
+/* ─────────────────────────────────────────────────────────────────────
+   Structured ingredients block (Phase 8 Step 3)
+   ───────────────────────────────────────────────────────────────────── */
+
+.tutorial-content .ingredients-list {
+  margin: 32px 0;
+  padding: 24px 28px;
+  background: var(--color-soft-parchment, #faf7f0);
+  border: 1px solid var(--color-linen-grey, #e7e2d6);
+  border-radius: 4px;
+}
+
+.tutorial-content .ingredients-list-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.tutorial-content .ingredients-list-heading {
+  font-family: var(--font-fraunces);
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 0;
+  color: var(--color-espresso);
+}
+
+.tutorial-content .ingredients-list-scaler {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+  position: relative;
+}
+
+.tutorial-content .ingredients-list-scale-chip {
+  padding: 4px 12px;
+  border: 1px solid var(--color-sage);
+  background: transparent;
+  color: var(--color-sage);
+  font-family: var(--font-lora);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.tutorial-content .ingredients-list-scale-chip:hover {
+  background: rgba(160, 176, 132, 0.1);
+}
+
+.tutorial-content .ingredients-list-scale-chip.is-active {
+  background: var(--color-sage);
+  color: var(--color-linen-cream);
+}
+
+.tutorial-content .ingredients-list-no-scale {
+  font-family: var(--font-lora);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--color-warm-taupe);
+  cursor: help;
+}
+
+.tutorial-content .ingredients-list-custom {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 8px;
+}
+
+.tutorial-content .ingredients-list-custom-label {
+  font-family: var(--font-lora);
+  font-size: 0.8rem;
+  color: var(--color-warm-taupe);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tutorial-content .ingredients-list-custom-label input {
+  width: 4.5rem;
+  border: none;
+  border-bottom: 1px solid var(--color-linen-grey);
+  background: transparent;
+  padding: 2px 4px;
+  font-family: var(--font-lora);
+  text-align: center;
+  outline: none;
+}
+
+.tutorial-content .ingredients-list-custom-label input:focus {
+  border-bottom-color: var(--color-sage);
+}
+
+.tutorial-content .ingredients-list-custom-apply {
+  padding: 4px 10px;
+  background: var(--color-sage);
+  color: var(--color-linen-cream);
+  font-family: var(--font-lora);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.tutorial-content .ingredients-list-yield {
+  margin: 4px 0 16px;
+  font-family: var(--font-lora);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--color-warm-taupe);
+}
+
+.tutorial-content .ingredients-list-group {
+  margin-top: 16px;
+}
+
+.tutorial-content .ingredients-list-group-heading {
+  font-family: var(--font-fraunces);
+  font-style: italic;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 12px 0 8px;
+  color: var(--color-espresso);
+}
+
+.tutorial-content .ingredients-list-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tutorial-content .ingredients-list-row {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 4px;
+  border-bottom: 1px dashed var(--color-linen-grey);
+  font-family: var(--font-lora);
+}
+
+.tutorial-content .ingredients-list-row:last-child {
+  border-bottom: none;
+}
+
+.tutorial-content .ingredients-list-amount {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-espresso);
+  font-weight: 500;
+  text-align: right;
+}
+
+.tutorial-content .ingredients-list-unit {
+  margin-left: 4px;
+  font-weight: 400;
+  color: var(--color-warm-taupe);
+}
+
+.tutorial-content .ingredients-list-name {
+  color: var(--color-espresso);
+}
+
+.tutorial-content .ingredients-list-name-link {
+  color: var(--color-espresso);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+
+.tutorial-content .ingredients-list-name-link:hover {
+  border-bottom-color: var(--color-sage);
+}
+
+.tutorial-content .ingredients-list-prep {
+  color: var(--color-warm-taupe);
+  font-style: italic;
+}
+
+.tutorial-content .ingredients-list-optional {
+  color: var(--color-warm-taupe);
+  font-style: italic;
+  font-size: 0.85em;
+}
+
+@media (max-width: 720px) {
+  .tutorial-content .ingredients-list {
+    padding: 20px 18px;
+  }
+  .tutorial-content .ingredients-list-row {
+    grid-template-columns: 5rem 1fr;
+    gap: 8px;
+  }
+}
+

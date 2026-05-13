@@ -82,7 +82,9 @@ database?" before firing.
 |---|---|---|
 | `$pageview` | App-Router pathname change (auto by `posthog-provider.tsx`). | `$current_url` |
 | `$pageleave` | Tab close / navigation away (auto, `capture_pageleave: true`). | — |
-| `tutorial_viewed` | Public tutorial page render. Server-side. | `tutorialId`, `categorySlug`, `tutorialSlug`, `authorId`, `creatorId?`, `cuisine?`, `mealType?`, `difficulty`, `season`, `wordCount`, `identified` |
+| `tutorial_viewed` | Public tutorial page render. Server-side. | `tutorialId`, `tutorialType` (`RECIPE` / `TECHNIQUE`), `categorySlug`, `tutorialSlug`, `authorId`, `creatorId?`, `cuisine?`, `mealType?`, `difficulty`, `season`, `wordCount`, `identified` |
+| `ingredients_scaled` | Client-side scale-selector click on the structured ingredients block. Fires once per change. | `tutorialId`, `tutorialSlug`, `fromScale` (e.g. `1×`), `toScale` (e.g. `2×` or `8 servings`) |
+| `ingredient_created_inline` | Admin author created a new master `Ingredient` row from the editor's "+ create new" modal. Server-side, fires from `createIngredientFromEditor`. | `ingredientSlug`, `category` |
 | `tutorial_scroll_depth` | 25 / 50 / 75 / 100% scroll on a tutorial page. Client-side, deduped per page load via component state. | `tutorialId`, `percent` |
 | `tutorial_completed` | `markProjectComplete`. Server-side. | `tutorialId`, `projectId`, `timeToCompleteMinutes?` (derived from startedAt → completedAt) |
 | `tutorial_shared` | Client-side share button click. Fires once per chosen destination — native sheet, copy link, or one of the per-network buttons. | `tutorialId`, `tutorialSlug`, `categorySlug`, `destination` (`native` / `copy_link` / `twitter` / `pinterest` / `facebook` / `email`) |

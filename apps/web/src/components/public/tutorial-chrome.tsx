@@ -38,6 +38,27 @@ export interface TutorialAttribution {
   homemade: boolean
 }
 
+/**
+ * Recipe-only metadata surfaced on the info bar of a RECIPE tutorial. Null
+ * (or undefined) on technique pages — the chrome falls back to the lean
+ * technique info bar in that case.
+ */
+export interface TutorialRecipeMeta {
+  type: 'RECIPE' | 'TECHNIQUE'
+  servings: number | null
+  yieldDescription: string | null
+  prepMinutes: number | null
+  cookMinutes: number | null
+  totalMinutes: number | null
+  cuisine: string | null
+  mealType: string | null
+  dietaryFlags: string[]
+  freezable: boolean
+  batchable: boolean
+  makeAheadSummary: string | null
+  foundational: boolean
+}
+
 export interface TutorialChromeProps {
   title: string
   subtitle: string | null
@@ -55,6 +76,8 @@ export interface TutorialChromeProps {
   sourceNotes: string | null
   /** Optional byline / attribution row. */
   attribution?: TutorialAttribution | null
+  /** Recipe-side metadata for the info bar — null for techniques. */
+  recipeMeta?: TutorialRecipeMeta | null
   /** The rendered tutorial body. */
   body: ReactNode
   /**
@@ -74,6 +97,27 @@ export interface TutorialChromeProps {
   rightRail?: ReactNode
   /** Optional footer rendered after the sources aside. */
   footerSlot?: ReactNode
+}
+
+const MEAL_LABEL: Record<string, string> = {
+  breakfast: 'Breakfast',
+  lunch: 'Lunch',
+  dinner: 'Dinner',
+  snack: 'Snack',
+  dessert: 'Dessert',
+  drink: 'Drink',
+  side: 'Side',
+}
+
+const DIETARY_LABEL: Record<string, string> = {
+  vegetarian: 'vegetarian',
+  vegan: 'vegan',
+  glutenFree: 'gluten-free',
+  dairyFree: 'dairy-free',
+  halal: 'halal',
+  kosher: 'kosher',
+  nutFree: 'nut-free',
+  pescatarian: 'pescatarian',
 }
 
 /**
@@ -101,6 +145,7 @@ export function TutorialChrome(props: TutorialChromeProps) {
     sourceType,
     sourceNotes,
     attribution,
+    recipeMeta,
     body,
     linkBreadcrumb = true,
     actionsSlot,
@@ -109,6 +154,18 @@ export function TutorialChrome(props: TutorialChromeProps) {
     footerSlot,
   } = props
   const hasRails = Boolean(leftRail || rightRail)
+  const isRecipe = recipeMeta?.type === 'RECIPE'
+
+  const servingsLabel = recipeMeta?.yieldDescription
+    ? recipeMeta.yieldDescription
+    : recipeMeta?.servings != null
+      ? `Serves ${recipeMeta.servings}`
+      : null
+
+  const totalForBar =
+    isRecipe && recipeMeta?.totalMinutes != null
+      ? recipeMeta.totalMinutes
+      : timeMinutes
 
   return (
     <article className="tutorial-page">
@@ -158,10 +215,46 @@ export function TutorialChrome(props: TutorialChromeProps) {
             <dt>Difficulty</dt>
             <dd>{DIFFICULTY_LABEL[difficulty] ?? difficulty.toLowerCase()}</dd>
           </div>
-          {timeMinutes !== null && (
+          {isRecipe && recipeMeta?.prepMinutes != null && (
             <div>
-              <dt>Time</dt>
-              <dd>{formatTime(timeMinutes)}</dd>
+              <dt>Prep</dt>
+              <dd>{formatTime(recipeMeta.prepMinutes)}</dd>
+            </div>
+          )}
+          {isRecipe && recipeMeta?.cookMinutes != null && (
+            <div>
+              <dt>Cook</dt>
+              <dd>{formatTime(recipeMeta.cookMinutes)}</dd>
+            </div>
+          )}
+          {totalForBar !== null && (
+            <div>
+              <dt>{isRecipe ? 'Total' : 'Time'}</dt>
+              <dd>{formatTime(totalForBar)}</dd>
+            </div>
+          )}
+          {isRecipe && servingsLabel && (
+            <div>
+              <dt>{recipeMeta?.mealType === 'drink' ? 'Makes' : 'Yield'}</dt>
+              <dd>{servingsLabel}</dd>
+            </div>
+          )}
+          {isRecipe && recipeMeta?.cuisine && (
+            <div>
+              <dt>Cuisine</dt>
+              <dd>{recipeMeta.cuisine}</dd>
+            </div>
+          )}
+          {isRecipe && recipeMeta?.mealType && (
+            <div>
+              <dt>Meal</dt>
+              <dd>{MEAL_LABEL[recipeMeta.mealType] ?? recipeMeta.mealType}</dd>
+            </div>
+          )}
+          {!isRecipe && recipeMeta?.foundational && (
+            <div>
+              <dt>Reference</dt>
+              <dd>Foundational technique</dd>
             </div>
           )}
           {season && (
@@ -190,6 +283,33 @@ export function TutorialChrome(props: TutorialChromeProps) {
             </div>
           )}
         </dl>
+
+        {isRecipe && recipeMeta && (
+          <div className="tutorial-recipe-badges">
+            {recipeMeta.dietaryFlags.map((flag) => (
+              <span
+                key={flag}
+                className="tutorial-recipe-badge tutorial-recipe-badge-dietary"
+              >
+                {DIETARY_LABEL[flag] ?? flag}
+              </span>
+            ))}
+            {recipeMeta.freezable && (
+              <span className="tutorial-recipe-badge">freezable</span>
+            )}
+            {recipeMeta.batchable && (
+              <span className="tutorial-recipe-badge">good for batch-cooking</span>
+            )}
+            {recipeMeta.makeAheadSummary && (
+              <span
+                className="tutorial-recipe-badge"
+                title={recipeMeta.makeAheadSummary}
+              >
+                make-ahead
+              </span>
+            )}
+          </div>
+        )}
       </div>
 
       {attribution && (

@@ -877,21 +877,36 @@ Image generation is **deferred** through this whole phase. Bodies are authored w
 
 **Out.** No code. No schema. Spec only.
 
-### Step 2 — Schema migration
+### Step 2 — Schema migration ✅ landed
 
-**Goal.** Apply `docs/schema-changes.md` as a single Prisma migration.
+**Goal.** Apply the recipe-side schema as a single Prisma migration.
 
-**Deliverable.** New tables (Ingredient, Tool, RecipeIngredient, RecipeTool). New fields on Tutorial: servings, prepMinutes, cookMinutes, totalMinutes, scalable, freezable, freezeNotes, batchable, batchNotes, makeAheadNotes, dietaryFlags, cuisine, mealType, mood, plus a `type` discriminator (TECHNIQUE | RECIPE). Idempotent on re-run.
+**Deliverable.** Shipped in migration `20260613000000_phase_8_step_2_recipe_schema`. Adds:
 
-**Out.** UI changes. Data seeding. Bulk re-categorisation of existing tutorials.
+- `TutorialType` enum (`RECIPE` | `TECHNIQUE`) + `Tutorial.type` discriminator. Existing rows default to `TECHNIQUE`; strawberry jam backfilled to `RECIPE`, béchamel stays `TECHNIQUE`.
+- Recipe metadata on `Tutorial`: `servings`, `yieldDescription`, `prepMinutes`, `cookMinutes`, `restingMinutes`, `chillingMinutes`, `totalMinutes`, `scalable`, `freezable`, `freezeNotes`, `batchable`, `batchNotes`, `makeAheadNotes`, `dietaryFlags[]`, `cuisine`, `mealType`, `mood[]`, `temperatureCelsius`, `temperatureNote`, `nutritionalInfoPerServing`, `foundational`, `leftoverTutorialId`. All field-up-front per `feedback_schema_all_fields_upfront.md`.
+- New tables: `Ingredient` (slug, name, category, defaultUnit, dietaryFlags, commonSubstitutes, aliases, beginnerNote, isStaple, isAllergen + allergenType, seasonality, shelfLifeDays, storage, nutritionalInfoPer100g), `Tool` (slug, name, category, aliases, isPurchasable, typicalPriceGbp, notes), `RecipeIngredient` (cascade-delete on Tutorial, restrict-delete on Ingredient, position, prepNote, isOptional, groupLabel, substitutionAllowed), `RecipeTool` (cascade / restrict pattern, isOptional, notes, position).
+- Indexes on `(type, …)` for the public-page filters and `(slug)` / `(category)` on master tables.
 
-### Step 3 — Structured ingredients TipTap block
+Additive only — no column drops, no breaking renames. Existing tutorials still render unchanged.
+
+**Out.** UI changes (Step 3). Master-table seeding (Steps 4 + 5). Bulk re-categorisation of existing tutorials.
+
+### Step 3 — Structured ingredients TipTap block ✅ landed
 
 **Goal.** New `ingredientsList` block with scalable rows referencing master Ingredient rows.
 
-**Deliverable.** Block extension in the admin editor (with type-ahead lookup against the Ingredient table). Public renderer in `apps/web/src/components/public/tutorial-content/blocks/`. Scale-selector client island (1× / 2× / 4× / custom).
+**Deliverable.** Shipped together with Step 2:
 
-**Out.** Method-narrative scaling (the `{{flour}}` token substitution) — that lands in step 8.
+- Admin TipTap extension at `apps/web/src/components/admin/editor/extensions/ingredients-list.tsx`. Type-ahead row picker hits `searchIngredients` (admin-only server action); inline "+ create new ingredient" modal calls `createIngredientFromEditor` and adopts the new row into the editing row without leaving the page.
+- Toolbar "ingredients" insert button seeds new blocks with the recipe's `defaultServings` from the form state.
+- Public client renderer at `apps/web/src/components/public/tutorial-content/blocks/ingredients-list.tsx`. Renders `1× / 2× / 4× / Custom servings` chips, recomputes amounts on change, hides the scaler with a tooltip when `Tutorial.scalable === false`. Each row links to a future `/ingredients/{slug}` page.
+- Tutorial-save sync: `apps/web/src/lib/recipe-ingredients-sync.ts` walks the body JSON on every `createTutorial` / `updateTutorial` / creator-side equivalent and rebuilds the `RecipeIngredient` join rows. Free-text rows (no ingredientId) stay in the editorial body but don't mirror to the join table.
+- Admin form gains a Type selector + a full Recipe-metadata fieldset (servings, yield, prep/cook/resting/chilling, scalable, freezable + notes, batchable + notes, make-ahead notes, dietary flags, cuisine, meal type, mood, temperature + note, leftover tutorial selector). Technique tutorials see a `foundational` toggle instead.
+- Public tutorial page surfaces the recipe metadata in the info bar + a dietary / freezable / batchable / make-ahead badge row when `Tutorial.type === RECIPE`.
+- New analytics events documented in `docs/analytics-taxonomy.md` and wired: `ingredients_scaled` (client, on scale chip click) and `ingredient_created_inline` (server, on the inline-create modal). `tutorial_viewed` now also carries `tutorialType`, `cuisine`, `mealType`.
+
+**Out.** Method-narrative `{{tokenId}}` substitution (Step 8). `equipmentList` block — deferred to a future small session per the prompt's explicit decision. Master ingredient / tool seeding (Steps 4 + 5).
 
 ### Step 4 — Master ingredient list
 

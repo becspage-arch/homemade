@@ -202,6 +202,11 @@ model Tutorial {
   subtitle String?
   excerpt  String? // Short summary used on cards and meta description
 
+  // RECIPE | TECHNIQUE discriminator (Phase 8 Step 2). Recipes lead, techniques
+  // support — see `project_content_pipeline.md`. Existing rows default to
+  // TECHNIQUE; the migration backfills strawberry jam to RECIPE.
+  type TutorialType @default(TECHNIQUE)
+
   // Categorisation
   categoryId    String
   category      Category     @relation(fields: [categoryId], references: [id])
@@ -215,6 +220,44 @@ model Tutorial {
   season      Season?
   sourceType  SourceType @default(SYNTHESISED)
   sourceNotes String? // Reference list / attribution notes
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Phase 8 Step 2 — recipe metadata. Null on TECHNIQUE rows. Authors set
+  // these per recipe in the admin form; the public renderer surfaces the
+  // values in the info bar + footer asides when `type === RECIPE`.
+  // ──────────────────────────────────────────────────────────────────────────
+
+  servings             Int? // Default yield (4 → "Serves 4")
+  yieldDescription     String? // "1 loaf" / "12 muffins" — overrides "Serves N" when set
+  prepMinutes          Int?
+  cookMinutes          Int?
+  restingMinutes       Int? // Dough rising, marinating
+  chillingMinutes      Int? // Fridge / freezer rests (distinct from resting for filters)
+  totalMinutes         Int? // Denormalised: prep + cook + resting + chilling. Recomputed on save.
+  scalable             Boolean @default(true)
+  freezable            Boolean @default(false)
+  freezeNotes          String?
+  batchable            Boolean @default(false)
+  batchNotes           String?
+  makeAheadNotes       String?
+  dietaryFlags         String[] // vegetarian / vegan / glutenFree / dairyFree / halal / kosher / nutFree / pescatarian
+  cuisine              String? // Italian / British / French / etc. Single-valued.
+  mealType             String? // breakfast / lunch / dinner / snack / dessert / drink / side
+  mood                 String[] // multi: comfortFood / weeknight / party / kidFriendly / freezerFriendly / healthy
+  temperatureCelsius   Int?
+  temperatureNote      String? // "fan oven", "low and slow"
+  nutritionalInfoPerServing Json?
+
+  // Foundational technique flag — drives the "Foundational technique" info-bar
+  // badge for the ~500–700 core techniques (knife skills, mother sauces, etc.).
+  // Always false on RECIPE rows.
+  foundational Boolean @default(false)
+
+  // Editorial pointer used by the recipe-page "Leftover bridge" block —
+  // "when you've cooked this, here's what to do with the leftovers".
+  leftoverTutorialId String?
+  leftoverTutorial   Tutorial?  @relation("LeftoverBridge", fields: [leftoverTutorialId], references: [id], onDelete: SetNull)
+  leftoverFor        Tutorial[] @relation("LeftoverBridge")
 
   // Content
   heroMediaId String?
@@ -243,6 +286,8 @@ model Tutorial {
   questions    Question[]
   errata       Errata[]
   patternTests PatternTest[]
+  recipeIngredients RecipeIngredient[]
+  recipeTools       RecipeTool[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -251,6 +296,18 @@ model Tutorial {
   @@index([categoryId, status])
   @@index([slug])
   @@index([creatorId, status, publishedAt])
+  @@index([type])
+  @@index([type, cuisine])
+  @@index([type, mealType])
+  @@index([type, totalMinutes])
+  @@index([type, freezable])
+  @@index([type, batchable])
+  @@index([type, foundational])
+}
+
+enum TutorialType {
+  RECIPE
+  TECHNIQUE
 }
 
 enum Difficulty {
@@ -1028,4 +1085,180 @@ model SignupAllowlist {
   updatedAt DateTime @updatedAt
 
   @@index([addedById])
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Phase 8 — Master ingredient + tool tables. Recipes link to these via
+// RecipeIngredient / RecipeTool join rows. The Ingredient table is the single
+// source of truth for dietary flags, allergens, UK/US naming, substitutes —
+// so "plain flour" carries its own gluten flag once and every recipe inherits.
+// ────────────────────────────────────────────────────────────────────────────
+
+model Ingredient {
+  id   String @id @default(cuid())
+  slug String @unique
+  name String
+
+  /// Optional explicit plural (used in summaries / titles). Falls back to the
+  /// English `name + "s"` heuristic at render time when null.
+  pluralName String?
+
+  /// Free-form string enum: flour / dairy / meat / fish / vegetable / fruit /
+  /// herb / spice / condiment / baking / pulse / grain / nut / seed / oil /
+  /// vinegar / sweetener / alcohol / other. Kept as a string rather than a
+  /// Prisma enum so authors can add categories without a follow-up migration.
+  category String
+
+  /// g / ml / each / tbsp / tsp / cup / pinch. Authors may override per
+  /// RecipeIngredient via RecipeIngredient.unit.
+  defaultUnit String
+
+  /// Per-ingredient dietary flags — recipes derive their own dietaryFlags
+  /// from the AND of their ingredient flags at index time.
+  dietaryFlags String[]
+
+  /// Slugs of other Ingredient rows that work as 1:1 substitutes.
+  commonSubstitutes String[]
+
+  /// Alternative names (UK ↔ US, regional). Indexed at search time so
+  /// "rapeseed oil" finds "canola oil" and similar.
+  aliases String[]
+
+  /// Free-form notes — UK/US naming, prep tips, sourcing hints.
+  notes String?
+
+  /// Beginner-mode helper line surfaced in the structured-ingredients block
+  /// when the reader has beginnerMode on. Per docs/page-design.md § 7.1.
+  beginnerNote String?
+
+  /// Cupboard-mode flag — items the average kitchen will already have
+  /// (salt, pepper, plain flour, olive oil, …). Phase 8 cupboard-mode UI hooks
+  /// off this so recipes that need 90% staples surface first.
+  isStaple Boolean @default(false)
+
+  /// UK 14-allergen list. When true, `allergenType` carries which group.
+  isAllergen   Boolean @default(false)
+  /// gluten / crustaceans / eggs / fish / peanuts / soybeans / milk / nuts /
+  /// celery / mustard / sesame / sulphites / lupin / molluscs.
+  allergenType String?
+
+  /// Months when fresh-and-in-season, e.g. `["june", "july", "august"]`.
+  /// Empty for pantry items.
+  seasonality String[]
+
+  /// Typical shelf life in days (fridge / cupboard depending on `storage`).
+  shelfLifeDays Int?
+  /// "fridge", "cool dark cupboard", "freezer".
+  storage       String?
+
+  /// Per-100g nutritional info. Flexible Json shape so we can refine later
+  /// without re-migrating; stays null until populated.
+  nutritionalInfoPer100g Json?
+
+  recipeIngredients RecipeIngredient[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([category])
+  @@index([isStaple])
+  @@index([isAllergen])
+}
+
+model Tool {
+  id   String @id @default(cuid())
+  slug String @unique
+  name String
+
+  /// knife / pan / pot / oven / mixer / processor / measuring / bowl / tray /
+  /// tin / board / utensil / appliance / electrical / thermometer / scale /
+  /// other. Free-form string for the same forwards-compat reason.
+  category String
+
+  /// Alternative names ("stand mixer" alias for "KitchenAid", "loaf tin"
+  /// alias for "bread pan").
+  aliases String[]
+
+  /// Flips false for tools we'll never sell (e.g. a sink). Lets the future
+  /// marketplace filter out non-purchasable rows up-front.
+  isPurchasable Boolean @default(true)
+
+  /// Typical price in pennies (GBP). Phase 7 marketplace sorts the buy panel
+  /// by this. Stays null until Rebecca sets one.
+  typicalPriceGbp Int?
+
+  notes String?
+
+  recipeTools RecipeTool[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([category])
+  @@index([isPurchasable])
+}
+
+/// One row per (recipe, ingredient). Derived from the `ingredientsList` block
+/// in the recipe body on every save — see `syncRecipeIngredientsFromBody` in
+/// `apps/web/src/lib/recipe-ingredients-sync.ts`.
+model RecipeIngredient {
+  id String @id @default(cuid())
+
+  tutorialId String
+  tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+
+  ingredientId String
+  ingredient   Ingredient @relation(fields: [ingredientId], references: [id], onDelete: Restrict)
+
+  /// Null means "to taste" / "as needed".
+  amount Float?
+  /// Overrides Ingredient.defaultUnit when set.
+  unit   String?
+
+  /// "finely chopped", "at room temperature", "zest only".
+  prepNote String?
+
+  isOptional Boolean @default(false)
+
+  /// Sub-heading the row sits under in the rendered list ("For the dough",
+  /// "For the topping"). Null = renders under the recipe's main "Ingredients".
+  groupLabel String?
+
+  /// Display order within the group.
+  position Int
+
+  /// When false, the scale selector and "swap with substitute" affordance
+  /// are suppressed for this row (e.g. flour percentages in bakery).
+  substitutionAllowed Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([tutorialId, position])
+  @@index([ingredientId])
+}
+
+/// One row per (recipe, tool). The `equipmentList` TipTap block is deferred to
+/// a future small session; for now these rows can be seeded directly when
+/// recipes are authored, even though there's no editor block writing them yet.
+model RecipeTool {
+  id String @id @default(cuid())
+
+  tutorialId String
+  tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+
+  toolId String
+  tool   Tool   @relation(fields: [toolId], references: [id], onDelete: Restrict)
+
+  isOptional Boolean @default(false)
+  /// "or any oven-safe non-stick pan".
+  notes      String?
+
+  position Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([tutorialId, position])
+  @@index([toolId])
 }

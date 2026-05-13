@@ -44,6 +44,28 @@ export default async function NewTutorialPage() {
           timeMinutes: '',
           heroMediaId: null,
           body: { type: 'doc', content: [{ type: 'paragraph' }] },
+
+          type: 'TECHNIQUE',
+          servings: '',
+          yieldDescription: '',
+          prepMinutes: '',
+          cookMinutes: '',
+          restingMinutes: '',
+          chillingMinutes: '',
+          scalable: true,
+          freezable: false,
+          freezeNotes: '',
+          batchable: false,
+          batchNotes: '',
+          makeAheadNotes: '',
+          dietaryFlags: [],
+          cuisine: '',
+          mealType: '',
+          mood: [],
+          temperatureCelsius: '',
+          temperatureNote: '',
+          foundational: false,
+          leftoverTutorialId: null,
         }}
         cloudflareDeliveryHash={process.env.CLOUDFLARE_IMAGES_DELIVERY_HASH ?? null}
         {...data}

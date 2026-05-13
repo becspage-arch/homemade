@@ -26,6 +26,29 @@ export interface TutorialFormDefaults {
   timeMinutes: string
   heroMediaId: string | null
   body: JSONContent
+
+  // Phase 8 Step 2 — recipe metadata
+  type: 'RECIPE' | 'TECHNIQUE'
+  servings: string
+  yieldDescription: string
+  prepMinutes: string
+  cookMinutes: string
+  restingMinutes: string
+  chillingMinutes: string
+  scalable: boolean
+  freezable: boolean
+  freezeNotes: string
+  batchable: boolean
+  batchNotes: string
+  makeAheadNotes: string
+  dietaryFlags: string[]
+  cuisine: string
+  mealType: string
+  mood: string[]
+  temperatureCelsius: string
+  temperatureNote: string
+  foundational: boolean
+  leftoverTutorialId: string | null
 }
 
 interface TutorialFormProps {
@@ -61,6 +84,40 @@ const SOURCE_TYPES = [
   { value: 'PUBLIC_DOMAIN', label: 'public domain' },
   { value: 'CREATOR', label: 'external creator' },
 ]
+const TUTORIAL_TYPES = [
+  { value: 'RECIPE', label: 'recipe' },
+  { value: 'TECHNIQUE', label: 'technique' },
+]
+const MEAL_TYPE_OPTIONS = [
+  { value: '', label: '— none —' },
+  { value: 'breakfast', label: 'breakfast' },
+  { value: 'lunch', label: 'lunch' },
+  { value: 'dinner', label: 'dinner' },
+  { value: 'snack', label: 'snack' },
+  { value: 'dessert', label: 'dessert' },
+  { value: 'drink', label: 'drink' },
+  { value: 'side', label: 'side' },
+]
+const DIETARY_OPTIONS = [
+  'vegetarian',
+  'vegan',
+  'glutenFree',
+  'dairyFree',
+  'halal',
+  'kosher',
+  'nutFree',
+  'pescatarian',
+] as const
+const MOOD_OPTIONS = [
+  'comfortFood',
+  'weeknight',
+  'party',
+  'kidFriendly',
+  'freezerFriendly',
+  'healthy',
+  'showstopper',
+  'lightAndFresh',
+] as const
 
 export function TutorialForm({
   action,
@@ -95,6 +152,40 @@ export function TutorialForm({
     media.find((m) => m.id === defaults.heroMediaId) ?? null,
   )
 
+  // Phase 8 Step 2 — recipe metadata state
+  const [type, setType] = useState<'RECIPE' | 'TECHNIQUE'>(defaults.type)
+  const [servings, setServings] = useState(defaults.servings)
+  const [yieldDescription, setYieldDescription] = useState(defaults.yieldDescription)
+  const [prepMinutes, setPrepMinutes] = useState(defaults.prepMinutes)
+  const [cookMinutes, setCookMinutes] = useState(defaults.cookMinutes)
+  const [restingMinutes, setRestingMinutes] = useState(defaults.restingMinutes)
+  const [chillingMinutes, setChillingMinutes] = useState(defaults.chillingMinutes)
+  const [scalable, setScalable] = useState(defaults.scalable)
+  const [freezable, setFreezable] = useState(defaults.freezable)
+  const [freezeNotes, setFreezeNotes] = useState(defaults.freezeNotes)
+  const [batchable, setBatchable] = useState(defaults.batchable)
+  const [batchNotes, setBatchNotes] = useState(defaults.batchNotes)
+  const [makeAheadNotes, setMakeAheadNotes] = useState(defaults.makeAheadNotes)
+  const [dietaryFlags, setDietaryFlags] = useState<string[]>(defaults.dietaryFlags)
+  const [cuisine, setCuisine] = useState(defaults.cuisine)
+  const [mealType, setMealType] = useState(defaults.mealType)
+  const [mood, setMood] = useState<string[]>(defaults.mood)
+  const [temperatureCelsius, setTemperatureCelsius] = useState(
+    defaults.temperatureCelsius,
+  )
+  const [temperatureNote, setTemperatureNote] = useState(defaults.temperatureNote)
+  const [foundational, setFoundational] = useState(defaults.foundational)
+  const [leftoverTutorialId, setLeftoverTutorialId] = useState<string>(
+    defaults.leftoverTutorialId ?? '',
+  )
+
+  function toggleFlag(value: string, list: string[], set: (next: string[]) => void) {
+    set(list.includes(value) ? list.filter((v) => v !== value) : [...list, value])
+  }
+
+  const isRecipe = type === 'RECIPE'
+  const isTechnique = type === 'TECHNIQUE'
+
   const selectedCategory = useMemo(
     () => categories.find((c) => c.id === categoryId) ?? null,
     [categories, categoryId],
@@ -115,6 +206,26 @@ export function TutorialForm({
 
   return (
     <form action={handleSubmit} className="space-y-10">
+      <div className="grid gap-6 sm:grid-cols-[1fr_2fr]">
+        <label className="block">
+          <Label>Type</Label>
+          <Select
+            name="type"
+            value={type}
+            onChange={(v) => setType(v as 'RECIPE' | 'TECHNIQUE')}
+            options={TUTORIAL_TYPES}
+          />
+        </label>
+        <p
+          className="self-end text-xs italic text-[var(--color-warm-taupe)]"
+          style={{ fontFamily: 'var(--font-lora)' }}
+        >
+          {isRecipe
+            ? 'Recipe — surfaces servings, times, dietary tags, cuisine, mood. Editor offers the structured ingredients block.'
+            : 'Technique — reference content. Foundational flag surfaces a badge on the page.'}
+        </p>
+      </div>
+
       <SlugField
         defaultTitle={defaults.title}
         defaultSlug={defaults.slug}
@@ -207,6 +318,221 @@ export function TutorialForm({
         />
       </div>
 
+      {isRecipe && (
+        <fieldset className="space-y-6 border-t border-[var(--color-linen-grey)] pt-6">
+          <legend
+            className="text-xs uppercase tracking-[0.3em] text-[var(--color-warm-taupe)]"
+            style={{ fontFamily: 'var(--font-lora)' }}
+          >
+            Recipe metadata
+          </legend>
+
+          <div className="grid gap-6 sm:grid-cols-4">
+            <label className="block">
+              <Label>Servings</Label>
+              <input
+                type="number"
+                name="servings"
+                min="0"
+                value={servings}
+                onChange={(e) => setServings(e.target.value)}
+                className={inputClass}
+                style={inputStyle}
+              />
+            </label>
+            <label className="block sm:col-span-3">
+              <Label>Yield description</Label>
+              <input
+                type="text"
+                name="yieldDescription"
+                placeholder="e.g. 1 loaf · 12 muffins"
+                value={yieldDescription}
+                onChange={(e) => setYieldDescription(e.target.value)}
+                className={inputClass}
+                style={inputStyle}
+              />
+            </label>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-4">
+            {(
+              [
+                ['Prep (min)', prepMinutes, setPrepMinutes, 'prepMinutes'],
+                ['Cook (min)', cookMinutes, setCookMinutes, 'cookMinutes'],
+                ['Resting (min)', restingMinutes, setRestingMinutes, 'restingMinutes'],
+                ['Chilling (min)', chillingMinutes, setChillingMinutes, 'chillingMinutes'],
+              ] as const
+            ).map(([label, value, setter, name]) => (
+              <label key={name} className="block">
+                <Label>{label}</Label>
+                <input
+                  type="number"
+                  name={name}
+                  min="0"
+                  value={value}
+                  onChange={(e) => setter(e.target.value)}
+                  className={inputClass}
+                  style={inputStyle}
+                />
+              </label>
+            ))}
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-3">
+            <Toggle
+              label="Scalable"
+              name="scalable"
+              checked={scalable}
+              onChange={setScalable}
+              hint="Off for bakery / sourdough recipes that rely on fixed ratios."
+            />
+            <Toggle
+              label="Freezable"
+              name="freezable"
+              checked={freezable}
+              onChange={setFreezable}
+            />
+            <Toggle
+              label="Batchable"
+              name="batchable"
+              checked={batchable}
+              onChange={setBatchable}
+            />
+          </div>
+
+          <Field
+            label="Freezer notes"
+            name="freezeNotes"
+            value={freezeNotes}
+            onChange={setFreezeNotes}
+            multiline
+            hint="Shown on the page in a 'From the freezer' aside when freezable is on."
+          />
+          <Field
+            label="Batch notes"
+            name="batchNotes"
+            value={batchNotes}
+            onChange={setBatchNotes}
+            multiline
+            hint="Shown in a 'Cooking for the week' aside when batchable is on."
+          />
+          <Field
+            label="Make-ahead notes"
+            name="makeAheadNotes"
+            value={makeAheadNotes}
+            onChange={setMakeAheadNotes}
+            multiline
+          />
+
+          <div>
+            <Label>Dietary flags</Label>
+            <FlagGrid
+              options={DIETARY_OPTIONS as readonly string[]}
+              value={dietaryFlags}
+              name="dietaryFlags"
+              onToggle={(v) => toggleFlag(v, dietaryFlags, setDietaryFlags)}
+            />
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2">
+            <label className="block">
+              <Label>Cuisine</Label>
+              <input
+                type="text"
+                name="cuisine"
+                placeholder="Italian / British / French / Indian / …"
+                value={cuisine}
+                onChange={(e) => setCuisine(e.target.value)}
+                className={inputClass}
+                style={inputStyle}
+              />
+            </label>
+            <label className="block">
+              <Label>Meal type</Label>
+              <Select
+                name="mealType"
+                value={mealType}
+                onChange={setMealType}
+                options={MEAL_TYPE_OPTIONS}
+              />
+            </label>
+          </div>
+
+          <div>
+            <Label>Mood</Label>
+            <FlagGrid
+              options={MOOD_OPTIONS as readonly string[]}
+              value={mood}
+              name="mood"
+              onToggle={(v) => toggleFlag(v, mood, setMood)}
+            />
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2">
+            <label className="block">
+              <Label>Temperature (°C)</Label>
+              <input
+                type="number"
+                name="temperatureCelsius"
+                min="0"
+                value={temperatureCelsius}
+                onChange={(e) => setTemperatureCelsius(e.target.value)}
+                className={inputClass}
+                style={inputStyle}
+              />
+            </label>
+            <label className="block">
+              <Label>Temperature note</Label>
+              <input
+                type="text"
+                name="temperatureNote"
+                placeholder='e.g. "fan oven", "low and slow"'
+                value={temperatureNote}
+                onChange={(e) => setTemperatureNote(e.target.value)}
+                className={inputClass}
+                style={inputStyle}
+              />
+            </label>
+          </div>
+
+          <label className="block">
+            <Label>Leftover tutorial</Label>
+            <select
+              name="leftoverTutorialId"
+              value={leftoverTutorialId}
+              onChange={(e) => setLeftoverTutorialId(e.target.value)}
+              className={inputClass}
+              style={inputStyle}
+            >
+              <option value="">— no leftover bridge —</option>
+              {tutorials.map((t) => (
+                <option key={t.id} value={t.id}>
+                  {t.title}
+                </option>
+              ))}
+            </select>
+          </label>
+        </fieldset>
+      )}
+
+      {isTechnique && (
+        <fieldset className="space-y-4 border-t border-[var(--color-linen-grey)] pt-6">
+          <legend
+            className="text-xs uppercase tracking-[0.3em] text-[var(--color-warm-taupe)]"
+            style={{ fontFamily: 'var(--font-lora)' }}
+          >
+            Technique metadata
+          </legend>
+          <Toggle
+            label="Foundational"
+            name="foundational"
+            checked={foundational}
+            onChange={setFoundational}
+            hint="Surfaces a 'Foundational technique' badge on the page. For the ~500–700 core entries."
+          />
+        </fieldset>
+      )}
+
       <div>
         <Label>Hero media</Label>
         <HeroMediaPicker
@@ -267,6 +593,7 @@ export function TutorialForm({
             tutorials={tutorials}
             hiddenInputName="body"
             onChange={setPreviewBody}
+            defaultServings={parseTime(servings)}
           />
         </div>
         {showPreview && (
@@ -409,5 +736,88 @@ function Select({
         </option>
       ))}
     </select>
+  )
+}
+
+function Toggle({
+  label,
+  name,
+  checked,
+  onChange,
+  hint,
+}: {
+  label: string
+  name: string
+  checked: boolean
+  onChange: (next: boolean) => void
+  hint?: string
+}) {
+  return (
+    <label className="flex items-start gap-3">
+      <input
+        type="checkbox"
+        name={name}
+        checked={checked}
+        onChange={(e) => onChange(e.target.checked)}
+        className="mt-1"
+      />
+      <span>
+        <span
+          className="block text-xs uppercase text-[var(--color-warm-taupe)]"
+          style={{ fontFamily: 'var(--font-lora)', letterSpacing: '0.25em' }}
+        >
+          {label}
+        </span>
+        {hint && (
+          <span
+            className="block text-xs italic text-[var(--color-warm-taupe)] opacity-70"
+            style={{ fontFamily: 'var(--font-lora)' }}
+          >
+            {hint}
+          </span>
+        )}
+      </span>
+    </label>
+  )
+}
+
+function FlagGrid({
+  name,
+  options,
+  value,
+  onToggle,
+}: {
+  name: string
+  options: readonly string[]
+  value: string[]
+  onToggle: (v: string) => void
+}) {
+  return (
+    <div className="flex flex-wrap gap-3">
+      {options.map((flag) => {
+        const checked = value.includes(flag)
+        return (
+          <label
+            key={flag}
+            className={`flex items-center gap-2 rounded-full border px-3 py-1 text-xs ${
+              checked
+                ? 'border-[var(--color-sage)] bg-[var(--color-sage)] text-[var(--color-linen-cream)]'
+                : 'border-[var(--color-linen-grey)] text-[var(--color-warm-taupe)]'
+            }`}
+            style={{ fontFamily: 'var(--font-lora)' }}
+          >
+            <input
+              type="checkbox"
+              name={name}
+              value={flag}
+              checked={checked}
+              onChange={() => onToggle(flag)}
+              className="sr-only"
+            />
+            {flag}
+          </label>
+        )
+      })}
+    </div>
   )
 }

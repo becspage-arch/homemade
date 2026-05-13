@@ -8,12 +8,36 @@ import {
   Season,
   SourceType,
   TutorialStatus,
+  TutorialType,
   type Prisma,
 } from '@homemade/db'
 import { getCurrentDbUser, isAdmin } from '@/lib/auth'
 import { audit } from '@/lib/audit'
 import { isValidSlug, slugify } from '@/lib/slug'
 import { syncTutorialById, removeTutorialById } from '@/lib/search-sync'
+import { syncRecipeIngredientsFromBody } from '@/lib/recipe-ingredients-sync'
+import { DIETARY_FLAGS } from './ingredient-constants'
+
+const MEAL_TYPES = [
+  'breakfast',
+  'lunch',
+  'dinner',
+  'snack',
+  'dessert',
+  'drink',
+  'side',
+] as const
+
+const MOOD_FLAGS = [
+  'comfortFood',
+  'weeknight',
+  'party',
+  'kidFriendly',
+  'freezerFriendly',
+  'healthy',
+  'showstopper',
+  'lightAndFresh',
+] as const
 
 // ────────────────────────────────────────────────────────────────────────────
 // Shape parsing & validation
@@ -33,6 +57,29 @@ interface TutorialMetadataInput {
   sourceNotes: string | null
   timeMinutes: number | null
   heroMediaId: string | null
+
+  // Phase 8 Step 2 — recipe metadata
+  type: TutorialType
+  servings: number | null
+  yieldDescription: string | null
+  prepMinutes: number | null
+  cookMinutes: number | null
+  restingMinutes: number | null
+  chillingMinutes: number | null
+  scalable: boolean
+  freezable: boolean
+  freezeNotes: string | null
+  batchable: boolean
+  batchNotes: string | null
+  makeAheadNotes: string | null
+  dietaryFlags: string[]
+  cuisine: string | null
+  mealType: string | null
+  mood: string[]
+  temperatureCelsius: number | null
+  temperatureNote: string | null
+  foundational: boolean
+  leftoverTutorialId: string | null
 }
 
 interface TutorialFullInput extends TutorialMetadataInput {
@@ -82,6 +129,34 @@ const SOURCE_TYPES: readonly SourceType[] = [
   SourceType.CREATOR,
 ]
 
+const TUTORIAL_TYPES: readonly TutorialType[] = [
+  TutorialType.RECIPE,
+  TutorialType.TECHNIQUE,
+]
+
+function parseInt0OrNull(formData: FormData, key: string): number | null {
+  const raw = String(formData.get(key) ?? '').trim()
+  if (raw === '') return null
+  const n = Number.parseInt(raw, 10)
+  return Number.isFinite(n) && n >= 0 ? n : null
+}
+
+function parseBool(formData: FormData, key: string): boolean {
+  const raw = String(formData.get(key) ?? '').toLowerCase()
+  return raw === 'true' || raw === 'on' || raw === '1'
+}
+
+function parseStringArrayAllowed(
+  formData: FormData,
+  key: string,
+  allowed: readonly string[],
+): string[] {
+  return formData
+    .getAll(key)
+    .map((v) => String(v).trim())
+    .filter((v) => allowed.includes(v))
+}
+
 function parseTagIds(formData: FormData): string[] {
   // FormData.getAll preserves checkbox semantics
   return formData.getAll('tagIds').map(String).filter(Boolean)
@@ -111,8 +186,26 @@ function parseMetadata(formData: FormData): TutorialMetadataInput {
   const heroRaw = String(formData.get('heroMediaId') ?? '').trim()
   const heroMediaId = heroRaw || null
   const sourceNotes = String(formData.get('sourceNotes') ?? '').trim() || null
-  const timeRaw = String(formData.get('timeMinutes') ?? '').trim()
-  const timeMinutes = timeRaw === '' ? null : Number.parseInt(timeRaw, 10)
+
+  const type = pickEnum(
+    String(formData.get('type') ?? ''),
+    TUTORIAL_TYPES,
+    TutorialType.TECHNIQUE,
+  )
+
+  const yieldDescription =
+    String(formData.get('yieldDescription') ?? '').trim() || null
+  const freezeNotes = String(formData.get('freezeNotes') ?? '').trim() || null
+  const batchNotes = String(formData.get('batchNotes') ?? '').trim() || null
+  const makeAheadNotes =
+    String(formData.get('makeAheadNotes') ?? '').trim() || null
+  const cuisine = String(formData.get('cuisine') ?? '').trim() || null
+  const mealRaw = String(formData.get('mealType') ?? '').trim()
+  const mealType = mealRaw && (MEAL_TYPES as readonly string[]).includes(mealRaw) ? mealRaw : null
+  const temperatureNote =
+    String(formData.get('temperatureNote') ?? '').trim() || null
+  const leftoverRaw = String(formData.get('leftoverTutorialId') ?? '').trim()
+  const leftoverTutorialId = leftoverRaw || null
 
   return {
     title,
@@ -134,12 +227,42 @@ function parseMetadata(formData: FormData): TutorialMetadataInput {
       SourceType.SYNTHESISED,
     ),
     sourceNotes,
-    timeMinutes:
-      timeMinutes !== null && Number.isFinite(timeMinutes) && timeMinutes >= 0
-        ? timeMinutes
-        : null,
+    timeMinutes: parseInt0OrNull(formData, 'timeMinutes'),
     heroMediaId,
+
+    type,
+    servings: parseInt0OrNull(formData, 'servings'),
+    yieldDescription,
+    prepMinutes: parseInt0OrNull(formData, 'prepMinutes'),
+    cookMinutes: parseInt0OrNull(formData, 'cookMinutes'),
+    restingMinutes: parseInt0OrNull(formData, 'restingMinutes'),
+    chillingMinutes: parseInt0OrNull(formData, 'chillingMinutes'),
+    scalable: parseBool(formData, 'scalable'),
+    freezable: parseBool(formData, 'freezable'),
+    freezeNotes,
+    batchable: parseBool(formData, 'batchable'),
+    batchNotes,
+    makeAheadNotes,
+    dietaryFlags: parseStringArrayAllowed(formData, 'dietaryFlags', DIETARY_FLAGS),
+    cuisine,
+    mealType,
+    mood: parseStringArrayAllowed(formData, 'mood', MOOD_FLAGS),
+    temperatureCelsius: parseInt0OrNull(formData, 'temperatureCelsius'),
+    temperatureNote,
+    foundational: parseBool(formData, 'foundational'),
+    leftoverTutorialId,
   }
+}
+
+function computeTotalMinutes(input: TutorialMetadataInput): number | null {
+  const parts = [
+    input.prepMinutes,
+    input.cookMinutes,
+    input.restingMinutes,
+    input.chillingMinutes,
+  ].filter((v): v is number => v !== null)
+  if (parts.length === 0) return input.timeMinutes
+  return parts.reduce((sum, n) => sum + n, 0)
 }
 
 function parseFull(formData: FormData): TutorialFullInput {
@@ -246,6 +369,8 @@ export async function createTutorial(formData: FormData): Promise<void> {
   await assertSubCategoryFitsCategory(input.subCategoryId, input.categoryId)
   await assertHeroMediaExists(input.heroMediaId)
 
+  const totalMinutes = computeTotalMinutes(input)
+
   const created = await prisma.tutorial.create({
     data: {
       slug: input.slug,
@@ -264,8 +389,33 @@ export async function createTutorial(formData: FormData): Promise<void> {
       body: input.body,
       status: TutorialStatus.DRAFT,
       authorId: actor.id,
+
+      type: input.type,
+      servings: input.servings,
+      yieldDescription: input.yieldDescription,
+      prepMinutes: input.prepMinutes,
+      cookMinutes: input.cookMinutes,
+      restingMinutes: input.restingMinutes,
+      chillingMinutes: input.chillingMinutes,
+      totalMinutes,
+      scalable: input.scalable,
+      freezable: input.freezable,
+      freezeNotes: input.freezeNotes,
+      batchable: input.batchable,
+      batchNotes: input.batchNotes,
+      makeAheadNotes: input.makeAheadNotes,
+      dietaryFlags: input.dietaryFlags,
+      cuisine: input.cuisine,
+      mealType: input.mealType,
+      mood: input.mood,
+      temperatureCelsius: input.temperatureCelsius,
+      temperatureNote: input.temperatureNote,
+      foundational: input.foundational,
+      leftoverTutorialId: input.leftoverTutorialId,
     },
   })
+
+  await syncRecipeIngredientsFromBody(created.id, input.body)
 
   // First-save snapshot
   await prisma.tutorialVersion.create({
@@ -317,6 +467,8 @@ export async function updateTutorial(id: string, formData: FormData): Promise<vo
 
   await snapshotVersion(id, actor.id, 'Edit')
 
+  const totalMinutes = computeTotalMinutes(input)
+
   const updated = await prisma.tutorial.update({
     where: { id },
     data: {
@@ -334,8 +486,33 @@ export async function updateTutorial(id: string, formData: FormData): Promise<vo
       timeMinutes: input.timeMinutes,
       heroMediaId: input.heroMediaId,
       body: input.body,
+
+      type: input.type,
+      servings: input.servings,
+      yieldDescription: input.yieldDescription,
+      prepMinutes: input.prepMinutes,
+      cookMinutes: input.cookMinutes,
+      restingMinutes: input.restingMinutes,
+      chillingMinutes: input.chillingMinutes,
+      totalMinutes,
+      scalable: input.scalable,
+      freezable: input.freezable,
+      freezeNotes: input.freezeNotes,
+      batchable: input.batchable,
+      batchNotes: input.batchNotes,
+      makeAheadNotes: input.makeAheadNotes,
+      dietaryFlags: input.dietaryFlags,
+      cuisine: input.cuisine,
+      mealType: input.mealType,
+      mood: input.mood,
+      temperatureCelsius: input.temperatureCelsius,
+      temperatureNote: input.temperatureNote,
+      foundational: input.foundational,
+      leftoverTutorialId: input.leftoverTutorialId,
     },
   })
+
+  await syncRecipeIngredientsFromBody(updated.id, input.body)
 
   await audit({
     actorId: actor.id,

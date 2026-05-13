@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { TutorialForm } from '@/components/admin/tutorials/tutorial-form'
+import { EMPTY_RECIPE_DEFAULTS } from '@/components/admin/tutorials/tutorial-form-defaults'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { loadTutorialFormData } from '@/app/admin/tutorials/form-data'
 import { createCreatorTutorial } from '@/lib/creator-tutorial-actions'
@@ -48,6 +49,7 @@ export default async function NewCreatorTutorialPage() {
             timeMinutes: '',
             heroMediaId: null,
             body: { type: 'doc', content: [{ type: 'paragraph' }] },
+            ...EMPTY_RECIPE_DEFAULTS,
           }}
           cloudflareDeliveryHash={process.env.CLOUDFLARE_IMAGES_DELIVERY_HASH ?? null}
           {...data}
