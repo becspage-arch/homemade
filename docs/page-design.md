@@ -329,9 +329,9 @@ print.
 
 A single-card editorial block: "When you've cooked one of these,
 this is what to do with the leftovers." Manually curated by the
-author per recipe (new field `Tutorial.leftoverTutorialId: String?`
-in a later schema pass). Renders only when set. **Open question 3 —
-defer this field until we have the recipes to point at.**
+author per recipe via `Tutorial.leftoverTutorialId: String?` (added
+in the schema migration alongside the rest of the recipe metadata
+fields). Renders only when set; hidden in print.
 
 ## 3. Technique page
 
@@ -346,10 +346,9 @@ fields surfaced.
 - **Hero image is a hand-drawn botanical illustration, not editorial
   photography.** Locked in `project_content_pipeline.md`. The
   difference is enforced by the AI prompt at authoring time; the
-  schema doesn't distinguish image source. **Open question 4 —
-  should the schema carry a `heroStyle` enum (PHOTO / ILLUSTRATION)
-  so the renderer can apply different framing CSS, or is the
-  authoring prompt enough?**
+  schema doesn't carry a separate `heroStyle` field. `Tutorial.type`
+  plus the authoring prompt are enough to pick the right visual
+  style when image generation runs pre-launch.
 
 ### 3.2 Info bar
 
@@ -890,46 +889,35 @@ Every component listed above, scored against the current code.
 | Sort — Most cooked | ❌ | Needs project count denormalisation. |
 | Sort — Highest rated | ❌ | Needs review average denormalisation. |
 
-## 10. Open questions for Rebecca
+## 10. Locked decisions
 
-A handful of decisions need a call before the next step (schema
-migration) lands.
+Decisions made in the page-design review session on 2026-05-13.
 
-1. **Social proof strip.** The reference HTMLs show "247 makers grew
-   this · 94% would grow again · 3.2 kg average yield". Until we
-   have real data, the strip would render fabricated or empty
-   numbers. Options: (a) hide entirely until launch + 6 months;
-   (b) show only when ≥ N completed projects exist; (c) replace
-   with a quiet "first to make this" badge until we have data.
-   Recommend (b) with N = 5.
-2. **Mood chips in the info bar.** Spec keeps them out — mood is a
-   search axis, not header content. Confirm, or do you want one or
-   two of the most relevant moods chipped in beneath the dietary
-   row?
-3. **Leftover bridge field.** Worth adding `Tutorial.leftoverTutorialId`
-   in the Phase 8 Step 2 migration, or wait until the recipe backlog
-   exists and we have something to point at? Recommend defer.
-4. **Hero style discriminator.** Schema field `heroStyle`
-   (PHOTO / ILLUSTRATION) or rely on the authoring prompt only?
-   Recommend the prompt is enough — recipe = photo, technique =
-   illustration is structural to `type`, no separate field needed.
-5. **`foundational` flag on Tutorial.** The technique backlog prune
-   targets 500–700 "truly foundational" entries (knife skills, mother
-   sauces, foundation breads, …). Is "foundational" a `Tutorial`
-   field, a `SubCategory` field, or just an editorial reality with no
-   schema home? Recommend a `Tutorial.foundational` bool — cheap to
-   add, useful for the "Foundational technique" badge and for a
-   future `/foundations` editorial page.
-6. **Linked-from recipes panel — query strategy.** Run JSONB scan at
-   request time, or pre-compute via Inngest on tutorial publish /
-   unpublish? Recommend request-time with a covering GIN index on
-   `body` for the first 200 techniques; revisit if measured.
-7. **Mobile ingredients pattern.** Bottom-sheet trigger
-   (recommended) vs step-level pinned ingredients. The step-level
-   version needs the body parsed into discrete steps with metadata,
-   which the current TipTap shape doesn't enforce. Recommend
-   bottom-sheet now, revisit with step-level metadata later.
-
-If a question's recommendation is right, no reply needed — the
-schema migration session reads this doc as input. Reply only when
-you want to override.
+1. **Social proof strip.** Show only when ≥ 5 completed projects
+   exist. Hide entirely below that threshold. No "first to make
+   this" placeholder copy.
+2. **Mood in the info bar.** Do not show. Moods stay as a search
+   filter (the user browses "comfort food" or "weeknight"), but
+   they're never surfaced on the recipe page header. Spec § 2.2
+   and § 8.2 already match this.
+3. **Leftover bridge field.** `Tutorial.leftoverTutorialId: String?`
+   added in the schema migration alongside every other recipe
+   metadata field. Rebecca's standing preference: all fields added
+   up-front; no follow-up migrations to backfill metadata.
+4. **Hero style discriminator.** No `heroStyle` schema field. The
+   recipe-vs-technique split (food photography vs hand-drawn
+   illustration) is enforced by the AI authoring prompt when image
+   generation runs pre-launch; `Tutorial.type` plus the prompt are
+   enough.
+5. **Foundational flag.** Add `Tutorial.foundational: Boolean`
+   (default false). Used for the "Foundational technique" info-bar
+   badge on the ~500–700 core techniques (knife skills, mother
+   sauces, foundation breads). Lets a future `/foundations`
+   editorial page exist without further schema work.
+6. **Linked-from recipes panel query.** Request-time JSONB scan
+   against `Tutorial.body` for `subTutorialCard` references, backed
+   by a covering GIN index. Revisit if measured latency forces a
+   pre-computed index.
+7. **Mobile ingredients pattern.** Bottom-sheet trigger pinned to
+   the corner. Step-level pinned ingredients is a later iteration
+   once the body parses into discrete steps with metadata.
