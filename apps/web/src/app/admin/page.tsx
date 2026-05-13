@@ -28,7 +28,7 @@ export default async function AdminDashboardPage() {
         className="mt-6 text-lg text-[var(--color-warm-taupe)]"
         style={{ fontFamily: 'var(--font-lora)' }}
       >
-        The library is still small. When there's enough to publish, this page becomes a real
+        The library is still small. When there&apos;s enough to publish, this page becomes a real
         editorial dashboard.
       </p>
 

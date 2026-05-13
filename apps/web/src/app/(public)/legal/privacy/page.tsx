@@ -196,7 +196,7 @@ export default function PrivacyPage() {
           <li>Objection — object to processing on legitimate-interest grounds.</li>
           <li>Withdrawal of consent — switch off analytics or marketing whenever you want.</li>
           <li>
-            Complaint — lodge a complaint with the Information Commissioner's
+            Complaint — lodge a complaint with the Information Commissioner&apos;s
             Office (the UK regulator) at{' '}
             <a href="https://ico.org.uk/make-a-complaint/" rel="noopener noreferrer">
               ico.org.uk

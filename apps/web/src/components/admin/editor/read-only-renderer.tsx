@@ -50,6 +50,10 @@ export function ReadOnlyRenderer({
 
   useEffect(() => {
     if (!editor) return
+    // TipTap's `editor.storage` is the documented mutation surface for
+    // extension state from outside the extension; the React-immutability
+    // rule doesn't know about that contract.
+    // eslint-disable-next-line react-hooks/immutability
     editor.storage.subTutorialCard = { tutorials }
     editor.storage.glossaryTooltip = { glossary }
   }, [editor, tutorials, glossary])

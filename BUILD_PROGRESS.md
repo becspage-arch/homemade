@@ -1100,6 +1100,21 @@ Tick items here as they're done.
       codebase with 73 warnings, 0 errors. A non-blocking lint step
       runs in CI as `continue-on-error: true`. The rule-tightening +
       violation-cleanup pass is its own session (still pending).
+- [x] **ESLint phase 2 — strict rules + blocking CI.** Eight rules
+      downgraded in phase 1 (`aadd8fd`) re-tightened to `error`:
+      `@typescript-eslint/no-explicit-any`,
+      `@typescript-eslint/no-unused-vars`,
+      `react-hooks/exhaustive-deps`,
+      `react-hooks/set-state-in-effect`,
+      `react-hooks/immutability`,
+      `react/no-unescaped-entities`, `@next/next/no-img-element`,
+      `prefer-const`. Violations fixed across `apps/web/` with no
+      behavioural changes; targeted line-level disables only where the
+      pattern is intentional (TipTap `editor.storage` mutation,
+      CMS-authored `<img>`, localStorage / DOM sync in effects). CI
+      lint step in `.github/workflows/deploy.yml` is now blocking
+      (`continue-on-error` removed). Phase 1 → Phase 2 transition
+      complete.
 - [ ] **TODO(legal) sweep.** Grep `TODO(legal)` across the repo
       before launch — every comment should have an action taken or a
       conscious "still deferred" decision.

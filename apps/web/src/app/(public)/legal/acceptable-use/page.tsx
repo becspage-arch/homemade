@@ -72,8 +72,8 @@ export default function AcceptableUsePage() {
         <h3>Copyright and trademark infringement</h3>
         <p>
           Only upload content you have the right to share. Do not pass off
-          someone else's tutorial, photograph or pattern as your own. If
-          you adapt someone else's work, credit them. If you believe
+          someone else&apos;s tutorial, photograph or pattern as your own. If
+          you adapt someone else&apos;s work, credit them. If you believe
           someone has infringed your rights on Homemade, follow our{' '}
           <Link href="/legal/dmca">DMCA / Takedown Policy</Link>.
         </p>
@@ -114,7 +114,7 @@ export default function AcceptableUsePage() {
 
         <h2>Reporting a problem</h2>
         <p>
-          Most pages with user-generated content have a "Report" link
+          Most pages with user-generated content have a &ldquo;Report&rdquo; link
           alongside reviews, photos, questions and answers. Use it. Reports
           go to a moderation queue that an editor or admin reviews. For
           serious or sensitive concerns, write to{' '}

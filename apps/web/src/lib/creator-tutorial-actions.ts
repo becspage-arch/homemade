@@ -52,10 +52,6 @@ function parseStringArrayAllowed(
     .filter((v) => allowed.includes(v))
 }
 
-type ActionResult<T = void> =
-  | (T extends void ? { ok: true } : { ok: true; data: T })
-  | { ok: false; error: string }
-
 interface CreatorTutorialInput {
   title: string
   slug: string

@@ -75,7 +75,6 @@ export async function scanImageForNsfw(imageUrl: string): Promise<NsfwScanResult
     }
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err)
-    // eslint-disable-next-line no-console
     console.warn('rekognition NSFW scan failed', { message })
     return {
       score: null,

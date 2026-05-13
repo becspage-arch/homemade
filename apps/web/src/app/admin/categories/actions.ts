@@ -2,7 +2,7 @@
 
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
-import { prisma, UserRole } from '@homemade/db'
+import { prisma } from '@homemade/db'
 import { getCurrentDbUser, isAdmin } from '@/lib/auth'
 import { audit } from '@/lib/audit'
 import { syncCategoryById, removeCategoryById } from '@/lib/search-sync'

@@ -57,7 +57,7 @@ export default async function MeProjectsPage({ searchParams }: PageProps) {
   return (
     <section>
       <span className="me-section-label">Projects</span>
-      <h2 className="me-section-title">What you're making</h2>
+      <h2 className="me-section-title">What you&apos;re making</h2>
 
       <nav className="me-filters" aria-label="Filter projects by status">
         {FILTERS.map((f) => {

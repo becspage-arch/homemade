@@ -42,7 +42,7 @@ function uploadWithProgress(
         try {
           const body = JSON.parse(xhr.responseText)
           resolve({ id: body.id })
-        } catch (err) {
+        } catch {
           reject(new Error(`Server returned non-JSON: ${xhr.responseText.slice(0, 200)}`))
         }
         return

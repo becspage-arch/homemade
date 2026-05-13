@@ -36,8 +36,8 @@ export default function TermsPage() {
         <h2 id="who-we-are">1. Who we are</h2>
         <p>
           Homemade is run by {LEGAL_ENTITY.name}. When these terms say
-          "we", "us" or "our", they mean Homemade. When they say "you" or
-          "your", they mean you, the person using the site or the apps.
+          &ldquo;we&rdquo;, &ldquo;us&rdquo; or &ldquo;our&rdquo;, they mean Homemade. When they say &ldquo;you&rdquo; or
+          &ldquo;your&rdquo;, they mean you, the person using the site or the apps.
         </p>
 
         <h2 id="the-service">2. The service</h2>
@@ -54,7 +54,7 @@ export default function TermsPage() {
           <li>One account per person.</li>
           <li>
             You must be at least 16 years old. Younger users can use the
-            site through a parent or carer's account.
+            site through a parent or carer&apos;s account.
           </li>
           <li>Give accurate information when you sign up.</li>
           <li>
@@ -97,7 +97,7 @@ export default function TermsPage() {
         </p>
 
         <p>
-          "Marketing" includes social media posts, email newsletters,
+          &ldquo;Marketing&rdquo; includes social media posts, email newsletters,
           printed materials, paid advertising, and case studies. Where we
           show your content publicly we will credit you using your display
           handle (or your name where you have asked us to).
@@ -166,7 +166,7 @@ export default function TermsPage() {
           advice.
         </p>
         <p>
-          The service is provided "as is" and "as available". We do our
+          The service is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo;. We do our
           best to keep it running but we do not promise uninterrupted
           access.
         </p>
@@ -215,7 +215,7 @@ export default function TermsPage() {
           We may update these terms from time to time. Material changes
           will be notified by email and on the next sign-in; smaller
           tidy-ups (typos, clarifications, processor name changes) will be
-          made quietly with the "last updated" date refreshed.
+          made quietly with the &ldquo;last updated&rdquo; date refreshed.
         </p>
       </div>
 

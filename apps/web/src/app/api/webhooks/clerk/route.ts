@@ -87,7 +87,6 @@ export async function POST(req: Request): Promise<Response> {
       'svix-signature': svixSignature,
     }) as ClerkEvent
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.error('clerk webhook signature verification failed', err)
     return Response.json({ error: 'bad signature' }, { status: 401 })
   }
@@ -196,7 +195,6 @@ export async function POST(req: Request): Promise<Response> {
         return Response.json({ ok: true, ignored: evt.type })
     }
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.error('clerk webhook handler error', { type: evt.type, err })
     return Response.json({ error: 'handler failed' }, { status: 500 })
   }

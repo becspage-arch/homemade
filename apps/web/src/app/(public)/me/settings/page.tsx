@@ -16,7 +16,7 @@ export default async function MeSettingsPage() {
         <h2 className="me-section-title">How you read</h2>
         <p className="me-section-description">
           Beginner mode pulls glossary terms into view and surfaces extra
-          guidance on tutorials. Turn it off whenever you'd rather read
+          guidance on tutorials. Turn it off whenever you&apos;d rather read
           without the scaffolding.
         </p>
         <SettingsForm

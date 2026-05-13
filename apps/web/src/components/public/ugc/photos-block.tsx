@@ -57,7 +57,7 @@ function uploadWithProgress(
       if (xhr.status >= 200 && xhr.status < 300) {
         try {
           resolve(JSON.parse(xhr.responseText) as UploadResponse)
-        } catch (err) {
+        } catch {
           reject(new Error('Server returned non-JSON.'))
         }
         return

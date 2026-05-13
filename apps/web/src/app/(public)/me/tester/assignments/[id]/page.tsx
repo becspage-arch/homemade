@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { notFound, redirect } from 'next/navigation'
-import { prisma, TestAssignmentStatus } from '@homemade/db'
+import { prisma } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { AssignmentBody } from './assignment-body'
 

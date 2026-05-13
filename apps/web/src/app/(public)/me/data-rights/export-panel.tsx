@@ -64,7 +64,7 @@ export function ExportPanel({ latestReady, history }: ExportPanelProps) {
         them from those links while the export is fresh.
       </p>
       <p className="me-section-description">
-        Each export is available for 7 days from the moment it's ready.
+        Each export is available for 7 days from the moment it&apos;s ready.
       </p>
 
       {latestReady?.fileUrl ? (

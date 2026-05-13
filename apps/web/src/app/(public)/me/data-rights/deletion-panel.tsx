@@ -82,7 +82,7 @@ export function DeletionPanel({ scheduled }: DeletionPanelProps) {
       <h2 className="me-section-title">Delete my account</h2>
       <p className="me-section-description">
         Schedules your account for deletion in 30 days. During those 30 days
-        the account is suspended (you can't sign in or post), but you can
+        the account is suspended (you can&apos;t sign in or post), but you can
         cancel and bring it back. After 30 days your account and personal
         data are permanently removed.
       </p>
@@ -114,7 +114,7 @@ export function DeletionPanel({ scheduled }: DeletionPanelProps) {
             />
           </label>
           <p className="me-section-description">
-            We'll schedule deletion for 30 days from now. The account will
+            We&apos;ll schedule deletion for 30 days from now. The account will
             be suspended in the meantime, and you can cancel any time
             before that date.
           </p>

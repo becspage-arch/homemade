@@ -154,7 +154,7 @@ export default async function MeDashboard() {
         {completed.length === 0 ? (
           <p className="me-empty">
             Once you mark a project complete it lands here as a small record
-            of what you've made.
+            of what you&apos;ve made.
           </p>
         ) : (
           <div className="me-grid">

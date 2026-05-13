@@ -50,7 +50,7 @@ export default async function AdminDataRequestsPage({ searchParams }: PageProps)
         <div>
           <h1>Data export requests</h1>
           <p>
-            GDPR subject-access requests fired from the user's data-rights
+            GDPR subject-access requests fired from the user&apos;s data-rights
             centre. The bundle itself belongs to the user — admins see the
             row state but not the contents.
           </p>

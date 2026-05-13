@@ -23,7 +23,6 @@ export function ReadingProgress({
 }: ReadingProgressProps) {
   const [percent, setPercent] = useState(initialPercent)
   const lastPersisted = useRef(initialPercent)
-  const persistTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const latestPercent = useRef(initialPercent)
 
   useEffect(() => {
@@ -66,7 +65,6 @@ export function ReadingProgress({
       window.removeEventListener('resize', onScroll)
       if (raf !== null) cancelAnimationFrame(raf)
       if (interval !== null) clearInterval(interval)
-      if (persistTimer.current) clearTimeout(persistTimer.current)
       if (projectId && lastPersisted.current !== latestPercent.current) {
         void updateReadingProgress(projectId, latestPercent.current)
       }

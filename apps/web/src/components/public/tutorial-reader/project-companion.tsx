@@ -76,7 +76,7 @@ export function ProjectCompanion({
 
   return (
     <aside className="companion">
-      <span className="companion-label">You're making this</span>
+      <span className="companion-label">You&apos;re making this</span>
 
       {supplies.length > 0 && (
         <section className="companion-section">

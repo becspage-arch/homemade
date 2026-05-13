@@ -29,7 +29,7 @@ export default function PublicError({ error, reset }: PublicErrorProps) {
       <div className="public-error-boundary-card">
         <h1>Something went wrong on our end.</h1>
         <p>
-          We've been told, and we'll have a look. While we sort it out, you
+          We&apos;ve been told, and we&apos;ll have a look. While we sort it out, you
           can head back to the homepage or try again.
         </p>
         <div className="public-error-boundary-actions">

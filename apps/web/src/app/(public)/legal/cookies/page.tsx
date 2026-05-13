@@ -159,7 +159,7 @@ export default function CookiesPage() {
           </li>
           <li>
             Most browsers let you block or clear cookies from their
-            settings — see your browser's help for instructions. Blocking
+            settings — see your browser&apos;s help for instructions. Blocking
             necessary cookies will break the site.
           </li>
         </ul>

@@ -80,7 +80,7 @@ export default function SubscriptionTermsPage() {
 
         <h2>Price changes</h2>
         <p>
-          We will give you at least 30 days' notice by email before any
+          We will give you at least 30 days&apos; notice by email before any
           price increase, and the new price will only apply from your next
           renewal after that notice period ends. You can cancel before the
           new price takes effect and you will keep your current price

@@ -21,7 +21,6 @@ export async function notify(input: {
       },
     })
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.error('notification write failed', { input, err })
   }
 }

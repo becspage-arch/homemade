@@ -36,6 +36,10 @@ export function StickyToc() {
         level: h.tagName === 'H2' ? 2 : 3,
       })
     }
+    // One-shot DOM measurement after the tutorial body has mounted; headings
+    // don't change during the page lifetime, so the one cascading render is
+    // intentional rather than a missed memoisation.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setItems(collected)
 
     if (collected.length === 0) return

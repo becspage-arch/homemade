@@ -39,7 +39,7 @@ export default function DmcaPage() {
         <p>
           Send a written notice to{' '}
           <a href={`mailto:${LEGAL_ENTITY.legalEmail}`}>{LEGAL_ENTITY.legalEmail}</a>{' '}
-          with the subject "Copyright infringement notice". Your notice
+          with the subject &ldquo;Copyright infringement notice&rdquo;. Your notice
           must include all of the following — incomplete notices will
           delay our response.
         </p>
@@ -99,7 +99,7 @@ export default function DmcaPage() {
           response to a notice you believe is mistaken or misdirected, you
           can send a counter-notice. Send it to{' '}
           <a href={`mailto:${LEGAL_ENTITY.legalEmail}`}>{LEGAL_ENTITY.legalEmail}</a>{' '}
-          with the subject "Counter-notice" and include:
+          with the subject &ldquo;Counter-notice&rdquo; and include:
         </p>
         <ol>
           <li>Identification of the removed content and the URL it used to live at.</li>
@@ -125,7 +125,7 @@ export default function DmcaPage() {
         <p>
           We will terminate accounts of users who are the subject of
           repeated valid copyright notices, taking into account the
-          seriousness of the infringement and the user's past conduct on
+          seriousness of the infringement and the user&apos;s past conduct on
           the platform.
         </p>
 
@@ -133,7 +133,7 @@ export default function DmcaPage() {
         <p>
           Filing a false notice or counter-notice is unlawful under both UK
           and US law and exposes you to liability for damages, including
-          costs and lawyers' fees. Please read your notice carefully before
+          costs and lawyers&apos; fees. Please read your notice carefully before
           sending it.
         </p>
       </div>

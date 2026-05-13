@@ -27,7 +27,11 @@ export function CookieBanner() {
   const [errorMonitoring, setErrorMonitoring] = useState(true)
   const [saving, setSaving] = useState(false)
 
-  // Decide on mount whether the banner should be open.
+  // Decide on mount whether the banner should be open. The initial render
+  // is SSR with no access to localStorage, so we sync the stored consent
+  // (an external store) into React state here. Setting state in this effect
+  // is the documented external-system-sync pattern.
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     const stored = getConsent()
     if (!stored) {
@@ -41,6 +45,7 @@ export function CookieBanner() {
     const removeListener = installAnalyticsConsentListener()
     return removeListener
   }, [])
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   // Listen for a "reopen" event so footer links can pop the banner.
   useEffect(() => {
@@ -170,7 +175,7 @@ export function CookieBanner() {
             </h2>
             <p className="cookie-banner-body">
               You can switch categories on or off below. Necessary cookies
-              keep the site working and can't be turned off.
+              keep the site working and can&apos;t be turned off.
             </p>
             <ul className="cookie-banner-categories">
               <li>

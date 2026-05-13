@@ -8,7 +8,6 @@ import {
   UGCPhotoStatus,
   UserProjectStatus,
   ReviewStatus,
-  ErrataStatus,
   ReportStatus,
   ReportTargetType,
   ReportReason,

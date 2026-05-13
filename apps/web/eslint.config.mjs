@@ -1,14 +1,9 @@
-// Root ESLint flat-config (Phase 1 migration).
+// Root ESLint flat-config (Phase 2 — strict).
 //
-// Goal of this config: get a working linter back in CI. `next lint` was
-// removed in Next 16; eslint-config-next now ships flat-config presets we
-// consume directly.
-//
-// Rules are intentionally permissive — `pnpm lint` should exit 0 on the
-// current codebase so deploys don't start failing on legacy violations.
-// A separate session will tighten rules and clean up existing violations.
-// If you find yourself adding `// eslint-disable-next-line` comments to
-// silence a rule, leave a TODO pointing at that follow-up.
+// Phase 1 (`aadd8fd`) brought lint back in CI with eight rules downgraded
+// to warnings so the legacy codebase wouldn't fail the deploy. Phase 2
+// re-tightened them to `error` and fixed the violations behind them; the
+// CI lint step is now blocking.
 
 import { defineConfig, globalIgnores } from 'eslint/config'
 import nextVitals from 'eslint-config-next/core-web-vitals'
@@ -21,31 +16,23 @@ export default defineConfig([
 
   {
     rules: {
-      // Permissive Phase 1 ruleset. Anything noisy is a warning; nothing
-      // here errors. The cleanup pass turns these back to the project's
-      // intended strictness.
-      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-unused-vars': [
-        'warn',
+        'error',
         {
           argsIgnorePattern: '^_',
           varsIgnorePattern: '^_',
           caughtErrorsIgnorePattern: '^_',
         },
       ],
-      'react-hooks/exhaustive-deps': 'warn',
+      'react-hooks/exhaustive-deps': 'error',
       // React 19 strict-mode rules in eslint-plugin-react-hooks (shipped
-      // by eslint-config-next 16). Several legacy effects + the TipTap
-      // editor's hook-storage mutation trip these; cleanup pass tightens.
-      'react-hooks/set-state-in-effect': 'warn',
-      'react-hooks/immutability': 'warn',
-      // The auto-loaded Next.js rule-set treats unescaped HTML entities as
-      // an error; downgrade to warn for Phase 1.
-      'react/no-unescaped-entities': 'warn',
-      // Some legacy admin pages use plain <img> instead of next/image —
-      // intentional for one-off small assets. Warn rather than error.
-      '@next/next/no-img-element': 'warn',
-      'prefer-const': 'warn',
+      // by eslint-config-next 16).
+      'react-hooks/set-state-in-effect': 'error',
+      'react-hooks/immutability': 'error',
+      'react/no-unescaped-entities': 'error',
+      '@next/next/no-img-element': 'error',
+      'prefer-const': 'error',
     },
   },
 

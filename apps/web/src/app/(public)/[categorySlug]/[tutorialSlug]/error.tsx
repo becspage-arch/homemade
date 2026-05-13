@@ -27,7 +27,7 @@ export default function TutorialError({ error, reset }: TutorialErrorProps) {
   return (
     <section className="public-error-boundary public-error-boundary-tutorial">
       <div className="public-error-boundary-card">
-        <h1>This tutorial didn't load.</h1>
+        <h1>This tutorial didn&apos;t load.</h1>
         <p>
           Something went wrong while we were preparing this page. Try again,
           or pick another tutorial from the menu.

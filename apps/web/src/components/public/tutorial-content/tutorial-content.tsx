@@ -150,6 +150,10 @@ function RenderNode({
       const src = stringOrUndef(attrs.src)
       if (!src) return null
       return (
+        // CMS-authored images may point at arbitrary hosts that aren't on
+        // next/image's allowlist — keep a plain <img> tag for inline editor
+        // images. Hero / lead photography uses next/image elsewhere.
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           src={src}
           alt={stringOrUndef(attrs.alt) ?? ''}

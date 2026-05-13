@@ -94,9 +94,12 @@ export function TiptapEditor({
   })
 
   // Seed storage for picker-aware extensions so they can render their lookups
-  // without having to fetch live data per render.
+  // without having to fetch live data per render. TipTap's `editor.storage`
+  // is the documented mutation surface for extension state from outside the
+  // extension; the React-immutability rule doesn't know about that contract.
   useEffect(() => {
     if (!editor) return
+    // eslint-disable-next-line react-hooks/immutability
     editor.storage.subTutorialCard = { tutorials }
     editor.storage.glossaryTooltip = { glossary }
   }, [editor, tutorials, glossary])

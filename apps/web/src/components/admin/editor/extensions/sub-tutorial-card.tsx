@@ -54,7 +54,10 @@ function SubTutorialCardView({
 }: ReactNodeViewProps) {
   const attrs = node.attrs as SubTutorialCardAttrs
   const storage = extension.storage as ExtensionStorage
-  const tutorials = Array.isArray(storage.tutorials) ? storage.tutorials : []
+  const tutorials = useMemo(
+    () => (Array.isArray(storage.tutorials) ? storage.tutorials : []),
+    [storage.tutorials],
+  )
 
   const [open, setOpen] = useState(!attrs.tutorialId)
   const [search, setSearch] = useState('')

@@ -93,7 +93,7 @@ export default async function MeProjectDetailPage({ params }: PageProps) {
             Private to you
           </h3>
           <p className="me-section-description">
-            Anything you want to remember about how this one's going. Saves as
+            Anything you want to remember about how this one&apos;s going. Saves as
             you type.
           </p>
           <ProjectNotes projectId={project.id} initialNotes={project.notes} />
@@ -107,7 +107,7 @@ export default async function MeProjectDetailPage({ params }: PageProps) {
             className="me-section-description"
             style={{ margin: 0, fontStyle: 'italic' }}
           >
-            This tutorial doesn't list supplies yet.
+            This tutorial doesn&apos;t list supplies yet.
           </p>
         ) : (
           <ProjectSupplies

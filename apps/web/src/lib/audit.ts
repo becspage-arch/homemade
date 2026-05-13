@@ -24,7 +24,6 @@ export async function audit(entry: AuditEntry): Promise<void> {
       },
     })
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.error('audit log write failed', { entry, err })
   }
 }

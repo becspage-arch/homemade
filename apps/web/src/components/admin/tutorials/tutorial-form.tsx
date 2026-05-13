@@ -576,7 +576,7 @@ export function TutorialForm({
           className="mb-3 text-xs italic text-[var(--color-warm-taupe)] opacity-70"
           style={{ fontFamily: 'var(--font-lora)' }}
         >
-          Insert custom blocks from the toolbar. Hit save when you're done — there's no autosave.
+          Insert custom blocks from the toolbar. Hit save when you&apos;re done — there&apos;s no autosave.
         </p>
         <div style={{ display: showPreview ? 'none' : 'block' }}>
           <TiptapEditor

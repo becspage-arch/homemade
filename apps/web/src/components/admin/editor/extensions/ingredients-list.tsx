@@ -232,19 +232,26 @@ function IngredientRow({
   onRequestCreate,
 }: IngredientRowProps) {
   const [query, setQuery] = useState(item.name)
+  const [prevExternalName, setPrevExternalName] = useState(item.name)
   const [results, setResults] = useState<IngredientSearchResult[]>([])
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const rowId = useId()
 
-  // Keep the search input in sync if the row's name changes externally.
-  useEffect(() => {
+  // Reset the search input when the row's name changes externally (e.g. an
+  // ingredient is picked from results). Following the React 19 docs pattern
+  // for state-from-props rather than an effect.
+  if (item.name !== prevExternalName) {
+    setPrevExternalName(item.name)
     setQuery(item.name)
-  }, [item.name])
+  }
 
   useEffect(() => {
     if (!open) return
     let cancelled = false
+    // Toggling the "searching…" indicator before the debounced fetch fires —
+    // intentional one render to flip the placeholder text.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true)
     const handle = setTimeout(() => {
       void searchIngredients(query, 12)

@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { captureClientEvent } from '@/lib/client-analytics'
 
 type ShareDestination =
@@ -32,6 +32,13 @@ function fire(
   })
 }
 
+// Feature-detect navigator.share without an effect: useSyncExternalStore lets
+// us return `false` during SSR and the real value on first client render.
+const subscribeNativeShare = (): (() => void) => () => {}
+const getNativeShareSnapshot = (): boolean =>
+  typeof navigator !== 'undefined' && typeof navigator.share === 'function'
+const getNativeShareServerSnapshot = (): boolean => false
+
 /**
  * Share affordance for tutorial pages. On devices that expose
  * `navigator.share` we present a single Share button that opens the OS
@@ -48,16 +55,14 @@ export function ShareButton({
   excerpt,
   heroUrl,
 }: ShareButtonProps) {
-  const [hasNativeShare, setHasNativeShare] = useState(false)
+  const hasNativeShare = useSyncExternalStore(
+    subscribeNativeShare,
+    getNativeShareSnapshot,
+    getNativeShareServerSnapshot,
+  )
   const [open, setOpen] = useState(false)
   const [copied, setCopied] = useState(false)
   const wrapRef = useRef<HTMLDivElement | null>(null)
-
-  useEffect(() => {
-    setHasNativeShare(
-      typeof navigator !== 'undefined' && typeof navigator.share === 'function',
-    )
-  }, [])
 
   useEffect(() => {
     if (!open) return

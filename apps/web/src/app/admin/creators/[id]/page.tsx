@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { prisma, CreatorApplicationStatus, TutorialStatus } from '@homemade/db'
+import { prisma, CreatorApplicationStatus } from '@homemade/db'
 import { CreatorApplicationDecisionControls } from './decision-controls'
 
 export const dynamic = 'force-dynamic'

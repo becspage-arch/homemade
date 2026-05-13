@@ -80,7 +80,6 @@ export async function syncTutorialById(id: string): Promise<void> {
     if (!doc) return
     await syncTutorialDoc(doc)
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.warn(`[search] syncTutorialById(${id}) failed`, err)
   }
 }
@@ -89,7 +88,6 @@ export async function removeTutorialById(id: string): Promise<void> {
   try {
     await removeTutorialFromSearch(id)
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.warn(`[search] removeTutorialById(${id}) failed`, err)
   }
 }
@@ -113,7 +111,6 @@ export async function syncCategoryById(id: string): Promise<void> {
     }
     await syncCategoryDoc(doc)
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.warn(`[search] syncCategoryById(${id}) failed`, err)
   }
 }
@@ -122,7 +119,6 @@ export async function removeCategoryById(id: string): Promise<void> {
   try {
     await removeCategoryFromSearch(id)
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.warn(`[search] removeCategoryById(${id}) failed`, err)
   }
 }
@@ -147,7 +143,6 @@ export async function syncGlossaryById(id: string): Promise<void> {
     }
     await syncGlossaryDoc(doc)
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.warn(`[search] syncGlossaryById(${id}) failed`, err)
   }
 }
@@ -156,7 +151,6 @@ export async function removeGlossaryById(id: string): Promise<void> {
   try {
     await removeGlossaryFromSearch(id)
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.warn(`[search] removeGlossaryById(${id}) failed`, err)
   }
 }

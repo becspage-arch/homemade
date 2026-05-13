@@ -84,15 +84,14 @@ jobs:
       - name: Install @homemade/db deps for migrate step
         run: pnpm install --filter @homemade/db --frozen-lockfile
 
-      # Lint runs alongside the deploy as a non-blocking signal. Failures
-      # don't fail the deploy (cleanup pass is on a separate session); the
-      # job step shows up red so we know without having to grep logs.
-      # Once the cleanup pass tightens rules, drop `continue-on-error`.
+      # Lint blocks the deploy. Phase 2 of the ESLint migration tightened
+      # the rules downgraded in Phase 1 and fixed the violations behind
+      # them, so a lint failure now means real new debt rather than legacy
+      # noise — fail fast instead of letting it merge.
       - name: Install @homemade/web deps for lint
         run: pnpm install --filter @homemade/web --frozen-lockfile
 
       - name: Lint @homemade/web
-        continue-on-error: true
         run: pnpm --filter @homemade/web lint
 
       - name: Run database migrations
