@@ -863,6 +863,114 @@ Plan unchanged.
 
 ---
 
+## Phase 8 — Content pipeline build queue
+
+The pipeline needed to author and publish ~2,000 recipes plus ~500–700 foundational techniques. Steps run in dependency order; each step blocks the next.
+
+Image generation is **deferred** through this whole phase. Bodies are authored without heroes. Heroes batch-generate from budget allocated at pre-launch, attached to existing Tutorial rows in one pass.
+
+### Step 1 — Page-design review and lock
+
+**Goal.** Rebecca walks through the two existing draft tutorials (béchamel + strawberry jam) in admin preview, desktop and mobile. Lists what's missing or wrong. The page design then locks.
+
+**Deliverable.** `docs/page-design.md` — the recipe page and the technique page, every component, every field, every interaction. Header (title, hero, info bar with time / servings / difficulty / dietary tags / freezable badge / batchable badge). Body sections. Sidebar (saved recipes, sticky TOC, project companion). Footer (sources, related, made-by-others). Mobile rules. Print rules. Must support: ingredient scaling, freezable / batchable / make-ahead notes, dietary tags, prep / cook / total time, servings, cuisine and meal-type filters, save-for-later, the eight existing custom blocks, structured ingredients.
+
+**Out.** No code. No schema. Spec only.
+
+### Step 2 — Schema migration
+
+**Goal.** Apply `docs/schema-changes.md` as a single Prisma migration.
+
+**Deliverable.** New tables (Ingredient, Tool, RecipeIngredient, RecipeTool). New fields on Tutorial: servings, prepMinutes, cookMinutes, totalMinutes, scalable, freezable, freezeNotes, batchable, batchNotes, makeAheadNotes, dietaryFlags, cuisine, mealType, mood, plus a `type` discriminator (TECHNIQUE | RECIPE). Idempotent on re-run.
+
+**Out.** UI changes. Data seeding. Bulk re-categorisation of existing tutorials.
+
+### Step 3 — Structured ingredients TipTap block
+
+**Goal.** New `ingredientsList` block with scalable rows referencing master Ingredient rows.
+
+**Deliverable.** Block extension in the admin editor (with type-ahead lookup against the Ingredient table). Public renderer in `apps/web/src/components/public/tutorial-content/blocks/`. Scale-selector client island (1× / 2× / 4× / custom).
+
+**Out.** Method-narrative scaling (the `{{flour}}` token substitution) — that lands in step 8.
+
+### Step 4 — Master ingredient list
+
+**Goal.** Draft `docs/ingredient-master.md` and seed the Ingredient table.
+
+**Deliverable.** 300–500 entries with slug / name / pluralName / defaultUnit / dietaryFlags / commonSubstitutes / notes (UK-US naming gotchas). `packages/db/scripts/seed-ingredients.ts` runs idempotent upsert against dev + prod.
+
+**Out.** Tools (step 5). Browsing UI.
+
+### Step 5 — Master tools list
+
+**Goal.** Draft `docs/tools-master.md` and seed the Tool table.
+
+**Deliverable.** 150–250 entries. `packages/db/scripts/seed-tools.ts`.
+
+**Out.** Prices, retailer links, marketplace integration (all Phase 7).
+
+### Step 6 — Recipe backlog
+
+**Goal.** Draft `docs/recipe-backlog.md`. ~2,000 recipes organised by category.
+
+**Deliverable.** Heavy categories: British, Italian, French, American, Mediterranean, Middle Eastern, North African, Caribbean, Eastern European, Indian (Anglo-Indian only — modern regional deferred), baking, preserves, desserts, soups, salads, breakfasts, drinks. Heavy air-fryer + slow-cooker sections (high SEO demand). Cross-cutting use-cases: Sunday roasts, weeknight, batch-cook, lunchbox, kids, Christmas, Friday pizza, curry night, comfort food. Deferred-until-v2 cuisines flagged at the end (Korean, Vietnamese, Thai, modern Japanese, modern Indian beyond Beeton, modern Mexican / Latin American). Vegetarian / vegan live as variants within parent dishes, not a standalone category.
+
+**Out.** Tutorial body writing (step 10+).
+
+### Step 7 — Technique backlog prune
+
+**Goal.** Cut `docs/content-backlog.md` from ~2,500 entries down to ~500–700 truly foundational techniques.
+
+**Deliverable.** Foundational = standalone reference content a reader consults to learn HOW (knife skills, kit, basic methods, mother sauces, foundation breads, ingredient deep-dives, food safety). Anything that's a complete dish moves to the recipe backlog. Cross-reference each moved entry in the commit body so we have an audit trail.
+
+**Out.** Writing technique bodies. Building the technique → recipe link UI.
+
+### Step 8 — Body-authoring prompt rewrite
+
+**Goal.** Rewrite the body-authoring section of `docs/tutorial-author.md` for the recipe-first shape.
+
+**Deliverable.** Prompt produces JSON matching the updated `TutorialUploadInput`. Bodies include `ingredientsList` blocks, recipe metadata fields, freezer / batch / make-ahead notes, scaling tokens in the method narrative. Voice rules strict (`feedback_homemade_voice.md`).
+
+**Out.** Running the prompt (step 10+).
+
+### Step 9 — Bot-as-editor + voice-check CLI
+
+**Goal.** Two pieces gating the upload pipeline.
+
+**Deliverable.** (a) Second-pass Claude that reads a draft, scores against Section 6b voice rules, rewrites flagged sentences in place, outputs a clean draft plus a diff. (b) `packages/db/scripts/voice-check.ts` — CLI grep tool that flags banned phrases / openers / em-dash count / negation patterns / medical advice / price mentions / UK-only references. Voice-check fails the upload on a hit.
+
+**Out.** Style-rule tuning beyond the locked Section 6b rules.
+
+### Step 10 — Pilot batch of 10 recipes
+
+**Goal.** Draft 10 recipes from `docs/recipe-backlog.md` to test the whole pipeline.
+
+**Deliverable.** 10 Tutorial rows of type RECIPE. Mix of cuisines and difficulty (Italian × 2, British × 2, French × 1, American × 1, Indian-Anglo × 1, Mediterranean × 1, air fryer × 1, slow cooker × 1). Each ran through the bot-editor + voice-check. Uploaded as DRAFT.
+
+**Out.** Image generation (heroes attach later).
+
+### Step 11 — Pilot batch of 50
+
+**Goal.** Rebecca's findings from the 10 feed prompt edits. Worker drafts 50 more.
+
+**Deliverable.** 50 more Tutorial rows. Updated prompt template.
+
+**Out.** Bulk scaling.
+
+### Step 12 — Bulk authoring at 100–200 per batch
+
+**Goal.** Standing worker pattern.
+
+**Deliverable.** Each batch picks N from the backlog, drafts, voice-checks, uploads. Rebecca spot-checks ~5 per 100. Recipes land daily until the backlog is exhausted.
+
+**Out.** Image generation (deferred until pre-launch budget).
+
+### Pre-launch — image generation pass
+
+Generate heroes (and inline illustrations where the page design calls for them) in batches once budget is allocated. Update existing Tutorial rows via the upload script (idempotent on re-run). Locked prompts and tier in `docs/tutorial-author.md`. Expected total at 2,000 recipes + 600 techniques: ~£100–£150 for heroes only, ~£260–£400 if inline illustrations come too.
+
+---
+
 ## Pre-launch checklist
 
 Definitive list of items that must land before the splash gate comes
