@@ -14,16 +14,28 @@ import { existsSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+// Walk up from this file looking for .env.credentials. Covers both the
+// main-repo layout and the worktree layout (.env.credentials lives at the
+// main repo root, not inside the worktree). `override: true` because some
+// shells pre-set keys to empty values and dotenv won't replace them otherwise.
 const __dirname = dirname(fileURLToPath(import.meta.url))
-for (const candidate of [
-  resolve(__dirname, '../..', '.env.credentials'),
-  resolve(__dirname, '../../..', '.env.credentials'),
-  resolve(__dirname, '../../../..', '.env.credentials'),
-  resolve(__dirname, '../../../../..', '.env.credentials'),
-]) {
-  if (existsSync(candidate)) {
-    loadEnv({ path: candidate })
-    break
+{
+  let dir = __dirname
+  let found = false
+  for (let depth = 0; depth < 8; depth++) {
+    const candidate = resolve(dir, '.env.credentials')
+    if (existsSync(candidate)) {
+      loadEnv({ path: candidate, override: true })
+      found = true
+      break
+    }
+    const parent = dirname(dir)
+    if (parent === dir) break
+    dir = parent
+  }
+  if (!found) {
+    const cwdCandidate = resolve(process.cwd(), '.env.credentials')
+    if (existsSync(cwdCandidate)) loadEnv({ path: cwdCandidate, override: true })
   }
 }
 

@@ -46,10 +46,11 @@ pnpm --filter "@homemade/db" exec tsx scripts/seed-tools.ts
 
 Re-running is safe — unchanged rows skip the update.
 
-## Production seeding (Rebecca runs this)
+## Production seeding
 
-This is the only place that writes to prod. Worker sessions don't run
-it; Rebecca does, with prod credentials in `.env.credentials`.
+Initial prod seed ran 2026-05-13: 547 ingredients + 179 tools created.
+Re-runs after editing the TS sources only touch rows whose fields
+changed.
 
 ```bash
 # Confirm DATABASE_URL points at production (not dev) — check the host
@@ -64,10 +65,9 @@ pnpm --filter "@homemade/db" exec tsx scripts/seed-ingredients.ts
 pnpm --filter "@homemade/db" exec tsx scripts/seed-tools.ts
 ```
 
-The script prints `done: N created, M updated, K unchanged`. First run
-will be ~547 created for ingredients and ~179 for tools. Subsequent
-runs after edits show created at 0 and the rest split between updated
-and unchanged.
+The script prints `done: N created, M updated, K unchanged`. After
+edits to the TS source, created will be 0 and the rest split between
+updated and unchanged.
 
 ## Editing the lists
 

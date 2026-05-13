@@ -931,7 +931,7 @@ exits without touching the DB. `generate-ingredient-master-md.ts`
 regenerates `docs/ingredient-master.md` from the TS source — markdown
 view is grouped by category, sorted alphabetically.
 
-Not run against prod yet — runbook in `docs/seed-master-lists.md`.
+Seeded into prod 2026-05-13: 547 created, 0 updated, 0 unchanged.
 
 **Out.** Tools (step 5). Browsing UI.
 
@@ -951,7 +951,7 @@ validation up-front, `--dry-run` flag, idempotent upsert.
 `generate-tools-master-md.ts` regenerates `docs/tools-master.md` from
 the TS source.
 
-Not run against prod yet — same runbook covers it.
+Seeded into prod 2026-05-13: 179 created, 0 updated, 0 unchanged.
 
 **Out.** Prices, retailer links, marketplace integration (all Phase 7).
 
