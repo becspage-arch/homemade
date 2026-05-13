@@ -1,0 +1,257 @@
+{
+  "slug": "toad-in-the-hole",
+  "title": "Toad in the hole",
+  "subtitle": "Sausages baked into Yorkshire pudding batter.",
+  "excerpt": "Sausages baked into Yorkshire pudding batter, the same batter that goes round Sunday's roast beef. Crisp gold walls risen tall, browned sausages tucked in, onion gravy on top. Forty-five minutes in a hot oven and dinner for four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), recipe for Toad-in-the-Hole — Project Gutenberg #10136. Beeton's version uses rump steak rather than sausages; the sausage form became the standard later in the century.\n\nCassell's Dictionary of Cookery (1875) gives the sausage version close to the modern one, baked into Yorkshire pudding batter in a heavy tin.\n\nWeights and oven temperatures are written for a UK fan oven; conventional is 240°C / 460°F.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 45,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": "Cooked toad-in-the-hole goes leathery on reheating from frozen, so freezing isn't worth it. Onion gravy on its own freezes well for up to three months.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The batter can rest in the fridge for up to twenty-four hours; whisk it briefly before pouring, since the flour will have settled. The onion gravy can be made a day ahead and reheated gently.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood", "kidFriendly"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "fan oven; 240°C conventional",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false, "notes": "Heavy-base metal tin around 30 by 23 cm. Thin or ceramic loses too much heat when the batter hits it." },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "measuring-jug", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false, "notes": "For browning the sausages and making the gravy." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rusk",
+      "term": "Rusk",
+      "definition": "Dried breadcrumb used as a binder in British sausages. Cheap supermarket sausages can carry up to 10% rusk by weight and release water as they cook, which sits between the sausages and the batter."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Toad in the hole is sausages baked into Yorkshire pudding batter. Forty-five minutes in the oven, and you have dinner for four, with crisp gold walls risen tall around the sausages and an onion gravy poured over." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The batter is the same one that goes round Sunday's roast beef. The rule is the same too. Cold batter goes into a smoking-hot tin of fat, and the fat has to be properly smoking, or the pudding sits flat instead of climbing the sides of the tin." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "What you cook it in matters more than the brand of sausage. A heavy metal roasting tin around 30 by 23 cm holds the heat. Anything thin-bottomed loses too much temperature when the batter hits it. Good Cumberland or Lincolnshire sausages brown well; supermarket sausages with too much " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rusk" } }], "text": "rusk" },
+          { "type": "text", "text": " weep liquid into the batter." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Why the tin has to be hot",
+          "body": "Yorkshire pudding rises because steam from the cold batter hits hot fat and inflates the protein matrix the eggs are building. Cold tin, cold fat, no rise. The tin goes into the oven empty with the fat in it. It comes out smoking; the batter goes straight in. The whole sequence from oven-to-pour takes about ten seconds. Open the door. Slide the tin out. Pour. Slide back in. Shut. Anything slower and the fat cools below the temperature that makes the lift work."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "sausages-pork", "amount": 8, "unit": "each", "prepNote": "good butcher's, around 80 g each", "isOptional": false, "groupLabel": "For the toad" },
+            { "ingredientSlug": "plain-flour", "amount": 140, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the toad" },
+            { "ingredientSlug": "whole-milk", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the toad" },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "each", "prepNote": "large, room temperature", "isOptional": false, "groupLabel": "For the toad" },
+            { "ingredientSlug": "vegetable-oil", "amount": 3, "unit": "tbsp", "prepNote": "or beef dripping for a rounder flavour", "isOptional": false, "groupLabel": "For the toad" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": null, "prepNote": "a generous pinch in the batter", "isOptional": false, "groupLabel": "For the toad" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": "For the onion gravy" },
+            { "ingredientSlug": "thyme", "amount": 2, "unit": "sprig", "prepNote": "leaves picked", "isOptional": false, "groupLabel": "For the onion gravy" },
+            { "ingredientSlug": "english-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the onion gravy" },
+            { "ingredientSlug": "stock-beef", "amount": 250, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the onion gravy" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "to season the gravy", "isOptional": false, "groupLabel": "For the onion gravy" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "You also need a balloon whisk for the batter plus a frying pan for the sausages and the gravy. The roasting tin is the key bit of kit; a heavy metal one holds the heat where a thin one will let you down." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Heat the tin and the oven" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220°C fan, 240°C conventional. Pour 3 tablespoons of vegetable oil into a heavy 30 by 23 cm roasting tin and slide it onto the middle rack. The fat needs ten minutes in the oven before anything else goes near it." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the batter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tip 140 g plain flour into a large bowl with a generous pinch of fine salt. Make a well in the middle and crack in 4 eggs. Whisk inwards from the centre, drawing flour into the eggs, until the mixture starts to thicken. Pour in 200 ml whole milk a little at a time, whisking after each addition, until the batter is the consistency of single cream. Leave it to rest for at least ten minutes, half an hour if you have it. Resting lets the gluten relax and the flour hydrate, which gives a taller rise." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sear the sausages" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Brown 8 sausages in a frying pan over a medium heat, turning every minute, until coloured on all sides. They don't need to be cooked through; five minutes is enough to give them a head start and render a bit of fat into the pan. Lift the sausages out and set aside; keep the fat in the pan for the onion gravy later." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pour the batter, slam the door" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Open the oven door and pull the tin halfway out. It should be smoking. Quickly arrange the sausages in the tin, evenly spaced, then pour the batter around them in one steady stream. Slide the tin back to the middle rack and close the door. Don't open it again for twenty minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake until risen and crisp" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After twenty minutes the batter will have climbed up the sides of the tin in great peaks, paler on top, brown at the edges. Give it another five minutes if the top is still soft. Forty to forty-five minutes total is the usual window. The pudding should be deeply gold across the top, the sausages browned and just cooked through." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the onion gravy while the pudding bakes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Slice 2 onions thinly. Cook them in the sausage fat over a low heat for twenty minutes, stirring now and then, until they turn the colour of wet sand. Stir in the leaves from 2 sprigs of thyme and 1 teaspoon of English mustard, then pour in 250 ml beef stock. Simmer for ten minutes until the gravy thickens enough to coat the back of a spoon. Taste, season with freshly ground pepper." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Take the toad out of the oven and bring it straight to the table. The pudding starts to flag the moment it leaves the heat, so the gap between oven and plate should be the time it takes to cross the room. Cut into squares, sausage and pudding in each square, and pour the onion gravy over." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "Toad in the hole is forgiving until the moment the batter goes into the tin. Most failures trace back to the tin, the fat, or how cooked the sausages were when they went in.",
+          "items": [
+            { "symptom": "Batter sat flat in the tin and didn't rise.", "cause": "The fat wasn't hot enough when the batter went in.", "fix": "Give the tin a full ten minutes in the oven at full temperature and check that the fat is smoking before you open the door. A cold splash of batter onto cool fat is the standard failure mode." },
+            { "symptom": "Pudding rose but collapsed within a minute of leaving the oven.", "cause": "Underbaked.", "fix": "An underbaked pudding crashes as the steam cools. Give it another five minutes; the top should be deeply gold, not just risen. A small puff of steam should escape when you press the top with a fingertip." },
+            { "symptom": "Sausages tough, batter pale around them.", "cause": "Sausages overcooked in the pan before going in.", "fix": "Aim for a coloured exterior and a still-pink centre when you transfer them. They finish in the oven." },
+            { "symptom": "Soggy bottom under the pudding.", "cause": "Tin was the wrong shape or too small for the batter volume.", "fix": "Pick a tin where the batter sits no deeper than 1.5 cm before baking. A 30 by 23 cm tin is right for this quantity. If the only tin you have is small and deep, the centre won't lift." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Vegetarian toad-in-the-hole works with two reservations. Pick a sausage with the protein structure to brown rather than break apart at heat; a good halloumi-based or chickpea-and-onion sausage holds up better than a mushroom-based one. Sear them more gently than pork sausages, since they have less internal fat to render." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a deeper-flavoured pudding, swap the vegetable oil for beef dripping. The flavour is rounder. The smoke point is similar, so the method doesn't change." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead, freezing, leftovers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The batter can rest for up to twenty-four hours in the fridge. Whisk it briefly before pouring, since the flour will have settled out." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cooked toad-in-the-hole doesn't freeze well; the pudding goes leathery on reheating. Better to refrigerate any leftovers and reheat slices in a hot oven for ten minutes to bring back some of the crispness. Onion gravy reheats cleanly and keeps three days in the fridge or three months in the freezer." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Toad-in-the-hole is one of the older British supper dishes. Mrs Beeton's 1861 Book of Household Management gives a version with rump steak rather than sausages, baked into the same Yorkshire pudding batter. The sausage form is the later one, settled into pub menus and Sunday-night kitchens through the second half of the nineteenth century." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cassell's Dictionary of Cookery from 1875 gives the sausage recipe more or less as we cook it now. The name probably comes from the look of the sausages poking up out of the risen batter, though several earlier theories have been floated and none stands up to scrutiny." }
+        ]
+      }
+    ]
+  }
+}

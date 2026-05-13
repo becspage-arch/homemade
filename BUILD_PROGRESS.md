@@ -971,13 +971,56 @@ Seeded into prod 2026-05-13: 179 created, 0 updated, 0 unchanged.
 
 **Out.** Writing technique bodies. Building the technique → recipe link UI.
 
-### Step 8 — Body-authoring prompt rewrite
+### Step 8 — Body-authoring prompt rewrite ✅ landed 2026-05-13
 
 **Goal.** Rewrite the body-authoring section of `docs/tutorial-author.md` for the recipe-first shape.
 
-**Deliverable.** Prompt produces JSON matching the updated `TutorialUploadInput`. Bodies include `ingredientsList` blocks, recipe metadata fields, freezer / batch / make-ahead notes, scaling tokens in the method narrative. Voice rules strict (`feedback_homemade_voice.md`).
+**Landed.** `docs/tutorial-author.md` rewritten end-to-end as a recipe-first
+prompt template (version 2). Bakes in the input contract, the
+`TutorialUploadInput` output shape with recipe metadata + structured
+`ingredientsList` + `recipeTools`, hard voice rules and soft voice
+rules (mirroring `feedback_homemade_voice.md`), a self-critique pass
+the drafting session runs before writing the final JSON, source rules,
+and length guidance.
 
-**Out.** Running the prompt (step 10+).
+Master ingredient + tool lookup tables are expanded inline via fence
+markers regenerated from the seed data by a new
+`packages/db/scripts/generate-master-lookup.ts`
+(`pnpm --filter "@homemade/db" run lookup:generate`): 547 ingredient
+slugs + 179 tool slugs, grouped by category, with dietary flags
+abbreviated to keep the prompt cache-friendly. Authors pick slugs from
+these blocks; unknown slugs fail loudly on upload.
+
+`packages/db/scripts/upload-tutorial.ts` extended to accept the new
+recipe shape: `type` discriminator (default RECIPE), full recipe
+metadata, top-level `recipeTools[]`, and `ingredientSlug` references
+inside `ingredientsList` blocks (resolved to `ingredientId` + canonical
+name + defaultUnit on insert). `RecipeIngredient` and `RecipeTool` join
+rows are rebuilt in a transaction on every upload, mirroring
+`apps/web/src/lib/recipe-ingredients-sync.ts`. The script computes
+`totalMinutes` from `prep + cook + resting + chilling` when absent.
+
+Scaling tokens (`{{ingredient-slug}}`) are documented as the settled
+contract; the renderer plumbing is pending. Until it lands, drafts
+write amounts inline at the recipe's default servings. A follow-up
+session will sweep tokens in once the renderer reads them.
+
+**Sample.** Toad in the hole (`packages/db/scripts/anchor-tutorials/toad-in-the-hole.json`),
+drafted to the new prompt, voice-checked clean first try (0 errors, 4
+warnings on first pass; tightened to 0 / 0 before upload). Uploaded as
+DRAFT (Tutorial `cmp4bbzut0001a4v43wxyjmc5`) with type RECIPE, cuisine
+british, mealType dinner, mood [weeknight, comfortFood, kidFriendly],
+servings 4, totalMinutes 90, scalable true, freezable false, 11
+RecipeIngredient rows, 5 RecipeTool rows, one new glossary term (rusk).
+Visible in `/admin/tutorials` with the new recipe info bar.
+
+The bot-as-editor pass is absorbed into the drafting prompt — the
+drafting session runs the self-critique itself before writing JSON.
+The standalone bot-edit CLI revert (`f958b9d`) is now formal: the
+voice-editor pass is a section of `docs/voice-editor-prompt.md` the
+drafting worker reads, not a separate process.
+
+**Out.** Running the prompt at scale (step 10+).
 
 ### Step 9 — Bot-as-editor + voice-check CLI ✅ landed 2026-05-13
 

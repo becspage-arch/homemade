@@ -14,6 +14,9 @@
  *
  * Companion scripts:
  *   - seed-cooking-taxonomy.ts  (creates Cooking + Sauces + Preserves once)
+ *   - seed-ingredients.ts       (master Ingredient table)
+ *   - seed-tools.ts             (master Tool table)
+ *   - voice-check.ts            (CLI gate)
  *   - verify-tutorial-bodies.ts (walks bodies and checks node + mark types)
  *
  * The input file is a JSON document of shape `TutorialUploadInput` (see
@@ -26,16 +29,28 @@
  *   4. For every glossary `slug` referenced in `glossaryTerms`, look it up by
  *      slug. Create any that are missing using the definition supplied
  *      alongside (so the upload is self-describing and idempotent).
- *   5. If `hero.localPath` is set and the input has no `hero.mediaId`, push the
- *      file to Cloudflare R2 and create a Media row in READY state, then use
- *      the new media as hero.
- *   6. Insert the Tutorial as DRAFT (or update an existing row with the same
- *      slug — idempotent re-run).
- *   7. Snapshot a TutorialVersion to match the admin's lifecycle pattern.
+ *   5. Resolve every `ingredientSlug` inside the body's `ingredientsList`
+ *      blocks against the master Ingredient table. Fail loudly if any slug
+ *      is missing — the master tables are the source of truth, and a
+ *      typo there would silently strip the row from the join table sync.
+ *   6. Resolve every `recipeTools[].slug` against the master Tool table.
+ *      Fail loudly on a missing slug.
+ *   7. If `hero.localPath` is set and the input has no `hero.mediaId`, push
+ *      the file to Cloudflare R2 and create a Media row in READY state,
+ *      then use the new media as hero.
+ *   8. Insert the Tutorial as DRAFT (or update an existing row with the same
+ *      slug — idempotent re-run). Sets `type` from the input (default RECIPE)
+ *      and copies the recipe metadata fields over when present. Computes
+ *      `totalMinutes` from prep + cook + resting + chilling if not given.
+ *   9. Sync RecipeIngredient join rows from the body's ingredientsList blocks
+ *      (delete-then-insert in a transaction). Sync RecipeTool join rows from
+ *      the top-level recipeTools array the same way.
+ *  10. Snapshot a TutorialVersion to match the admin's lifecycle pattern.
  *
  * Mirrors `apps/web/src/app/admin/tutorials/actions.ts` (createTutorial /
- * updateTutorial) and `apps/web/src/app/admin/media/actions.ts` (registerUpload)
- * so the resulting rows look identical to admin-authored ones.
+ * updateTutorial) so the resulting rows look identical to admin-authored
+ * ones — including the same `RecipeIngredient` rebuild logic from
+ * `apps/web/src/lib/recipe-ingredients-sync.ts`.
  */
 
 import { config as loadEnv } from 'dotenv'
@@ -76,7 +91,12 @@ const __dirname = dirname(__filename)
 // after env is loaded.
 import type { Prisma } from '@prisma/client'
 
-import type { TutorialUploadInput, UploadResult } from './upload-tutorial-types.js'
+import type {
+  RecipeToolRef,
+  TutorialType,
+  TutorialUploadInput,
+  UploadResult,
+} from './upload-tutorial-types.js'
 import { validateInput } from './upload-tutorial-types.js'
 import { exitCodeFor, formatReport, runVoiceCheck } from './voice-check-lib.js'
 
@@ -99,10 +119,23 @@ function readPngDimensions(buf: Buffer): { width: number; height: number } | nul
 
 // ─── Main upload flow ────────────────────────────────────────────────────────
 
+interface IngredientResolution {
+  id: string
+  slug: string
+  name: string
+  defaultUnit: string
+}
+
+interface ToolResolution {
+  id: string
+  slug: string
+  name: string
+}
+
 async function uploadTutorial(input: TutorialUploadInput, inputFilePath: string): Promise<UploadResult> {
   validateInput(input)
 
-  const { prisma, MediaStatus, MediaType, TutorialStatus, SourceType, Difficulty, Season } =
+  const { prisma, MediaStatus, MediaType, TutorialStatus, SourceType, Difficulty } =
     await getPrisma()
 
   // 1. Author.
@@ -163,7 +196,61 @@ async function uploadTutorial(input: TutorialUploadInput, inputFilePath: string)
     createdGlossary.push({ slug: created.slug, term: created.term, id: created.id })
   }
 
-  // 5. Hero image — upload if a localPath is given.
+  // 5. Resolve ingredient slugs in the body's ingredientsList blocks.
+  const ingredientSlugs = collectIngredientSlugs(input.body)
+  const ingredientBySlug = new Map<string, IngredientResolution>()
+  if (ingredientSlugs.size > 0) {
+    const rows = await prisma.ingredient.findMany({
+      where: { slug: { in: Array.from(ingredientSlugs) } },
+      select: { id: true, slug: true, name: true, defaultUnit: true },
+    })
+    for (const row of rows) {
+      ingredientBySlug.set(row.slug, row)
+    }
+    const missing = Array.from(ingredientSlugs).filter((s) => !ingredientBySlug.has(s))
+    if (missing.length > 0) {
+      throw new Error(
+        `Body references ingredient slugs not in the master table: ${missing.join(', ')}. ` +
+          `Add them to packages/db/scripts/data/ingredients.ts and re-seed, or fix the body.`,
+      )
+    }
+  }
+
+  // 6. Resolve tool slugs from the top-level recipeTools array.
+  const toolSlugs = new Set((input.recipeTools ?? []).map((t) => t.slug))
+  const toolBySlug = new Map<string, ToolResolution>()
+  if (toolSlugs.size > 0) {
+    const rows = await prisma.tool.findMany({
+      where: { slug: { in: Array.from(toolSlugs) } },
+      select: { id: true, slug: true, name: true },
+    })
+    for (const row of rows) toolBySlug.set(row.slug, row)
+    const missing = Array.from(toolSlugs).filter((s) => !toolBySlug.has(s))
+    if (missing.length > 0) {
+      throw new Error(
+        `recipeTools references slugs not in the master table: ${missing.join(', ')}. ` +
+          `Add them to packages/db/scripts/data/tools.ts and re-seed, or fix the input.`,
+      )
+    }
+  }
+
+  // 7. Optional leftover-bridge target.
+  let leftoverTutorialId: string | null = null
+  if (input.recipe?.leftoverTutorialSlug) {
+    const target = await prisma.tutorial.findUnique({
+      where: { slug: input.recipe.leftoverTutorialSlug },
+      select: { id: true },
+    })
+    if (!target) {
+      throw new Error(
+        `recipe.leftoverTutorialSlug "${input.recipe.leftoverTutorialSlug}" not found. ` +
+          `Either upload that recipe first or clear the field.`,
+      )
+    }
+    leftoverTutorialId = target.id
+  }
+
+  // 8. Hero image — upload if a localPath is given.
   let heroMediaId: string | null = input.hero?.mediaId ?? null
   let heroR2Key: string | null = null
 
@@ -234,11 +321,30 @@ async function uploadTutorial(input: TutorialUploadInput, inputFilePath: string)
     }
   }
 
-  // Resolve glossary IDs inside the body's glossaryTooltip marks. Authors
-  // reference terms by slug for portability; we swap in IDs here.
-  const body = resolveGlossarySlugs(input.body, glossaryIdBySlug) as Prisma.InputJsonValue
+  // 9. Resolve glossary IDs and ingredient IDs inside the body.
+  const body = resolveBodyReferences(
+    input.body,
+    glossaryIdBySlug,
+    ingredientBySlug,
+  ) as Prisma.InputJsonValue
 
-  // 6. Upsert the Tutorial.
+  // 10. Tutorial type + recipe metadata.
+  const tutorialType: TutorialType = input.type ?? 'RECIPE'
+  const recipe = input.recipe ?? {}
+
+  // Compute totalMinutes if not given. Falls back to the explicit
+  // `timeMinutes` if a recipe author already set that.
+  const computedTotal =
+    (recipe.prepMinutes ?? 0) +
+    (recipe.cookMinutes ?? 0) +
+    (recipe.restingMinutes ?? 0) +
+    (recipe.chillingMinutes ?? 0)
+  const totalMinutes =
+    recipe.totalMinutes ??
+    (computedTotal > 0 ? computedTotal : null)
+  const timeMinutes = input.timeMinutes ?? totalMinutes
+
+  // 11. Upsert the Tutorial.
   const existingTutorial = await prisma.tutorial.findUnique({ where: { slug: input.slug } })
 
   const sharedData = {
@@ -246,15 +352,40 @@ async function uploadTutorial(input: TutorialUploadInput, inputFilePath: string)
     title: input.title,
     subtitle: input.subtitle ?? null,
     excerpt: input.excerpt ?? null,
+    type: tutorialType,
     categoryId: category.id,
     subCategoryId,
     difficulty: input.difficulty ?? Difficulty.BEGINNER,
     season: input.season ?? null,
-    timeMinutes: input.timeMinutes ?? null,
+    timeMinutes,
     sourceType: input.sourceType ?? SourceType.PUBLIC_DOMAIN,
     sourceNotes: input.sourceNotes ?? null,
     heroMediaId,
     body,
+    // Recipe metadata. Null on TECHNIQUE rows except for `foundational`.
+    servings: recipe.servings ?? null,
+    yieldDescription: recipe.yieldDescription ?? null,
+    prepMinutes: recipe.prepMinutes ?? null,
+    cookMinutes: recipe.cookMinutes ?? null,
+    restingMinutes: recipe.restingMinutes ?? null,
+    chillingMinutes: recipe.chillingMinutes ?? null,
+    totalMinutes,
+    scalable: recipe.scalable ?? true,
+    freezable: recipe.freezable ?? false,
+    freezeNotes: recipe.freezeNotes ?? null,
+    batchable: recipe.batchable ?? false,
+    batchNotes: recipe.batchNotes ?? null,
+    makeAheadNotes: recipe.makeAheadNotes ?? null,
+    dietaryFlags: recipe.dietaryFlags ?? [],
+    cuisine: recipe.cuisine ?? null,
+    mealType: recipe.mealType ?? null,
+    mood: recipe.mood ?? [],
+    temperatureCelsius: recipe.temperatureCelsius ?? null,
+    temperatureNote: recipe.temperatureNote ?? null,
+    nutritionalInfoPerServing:
+      (recipe.nutritionalInfoPerServing as Prisma.InputJsonValue | undefined) ?? undefined,
+    foundational: recipe.foundational ?? false,
+    leftoverTutorialId,
   }
 
   let tutorialId: string
@@ -290,7 +421,7 @@ async function uploadTutorial(input: TutorialUploadInput, inputFilePath: string)
       },
     })
 
-    // 7. First-save snapshot.
+    // First-save snapshot.
     await prisma.tutorialVersion.create({
       data: {
         tutorialId: created.id,
@@ -308,17 +439,38 @@ async function uploadTutorial(input: TutorialUploadInput, inputFilePath: string)
     mode = 'created'
   }
 
+  // 12. Sync RecipeIngredient join rows from the body's ingredientsList blocks.
+  const recipeIngredientRows = await syncRecipeIngredients(
+    tutorialId,
+    body,
+    ingredientBySlug,
+    prisma,
+  )
+
+  // 13. Sync RecipeTool join rows from the top-level recipeTools array.
+  const recipeToolRows = await syncRecipeTools(
+    tutorialId,
+    input.recipeTools ?? [],
+    toolBySlug,
+    prisma,
+  )
+
   return {
     mode,
     tutorialId,
     slug: input.slug,
+    type: tutorialType,
     categorySlug: category.slug,
     subCategorySlug: input.subCategorySlug ?? null,
     heroMediaId,
     heroR2Key,
     createdGlossary,
+    recipeIngredientRows,
+    recipeToolRows,
   }
 }
+
+// ─── Body walking helpers ────────────────────────────────────────────────────
 
 interface NodeShape {
   type: string
@@ -329,14 +481,48 @@ interface NodeShape {
 }
 
 /**
- * Walk the TipTap document and swap `glossaryTooltip` mark `termSlug` attrs
- * for `termId` attrs (the renderer + Prisma side both speak in IDs).
- *
- * Accepts both shapes — if the author writes `termId` directly that's fine too.
+ * Walk the body, gathering every `ingredientSlug` referenced in
+ * `ingredientsList` blocks. The author writes slugs (portable); the upload
+ * script resolves them to IDs once.
  */
-function resolveGlossarySlugs(
+function collectIngredientSlugs(doc: unknown): Set<string> {
+  const out = new Set<string>()
+  function walk(node: unknown): void {
+    if (!node || typeof node !== 'object') return
+    const n = node as NodeShape
+    if (n.type === 'ingredientsList' && n.attrs && typeof n.attrs === 'object') {
+      const items = Array.isArray((n.attrs as Record<string, unknown>).items)
+        ? ((n.attrs as Record<string, unknown>).items as unknown[])
+        : []
+      for (const raw of items) {
+        if (!raw || typeof raw !== 'object') continue
+        const row = raw as Record<string, unknown>
+        const slug = typeof row.ingredientSlug === 'string' ? row.ingredientSlug.trim() : ''
+        if (slug) out.add(slug)
+      }
+    }
+    if (Array.isArray(n.content)) {
+      for (const child of n.content) walk(child)
+    }
+  }
+  walk(doc)
+  return out
+}
+
+/**
+ * Walk the TipTap document and:
+ *   - Swap `glossaryTooltip` mark `termSlug` attrs for `termId`.
+ *   - Replace each `ingredientsList` item's `ingredientSlug` with
+ *     `ingredientId` and back-fill `name` + `unit` from the master row
+ *     so the public renderer has everything it needs without an extra join.
+ *
+ * Accepts pre-resolved shapes too — if the author writes `termId` or
+ * `ingredientId` directly, that's fine.
+ */
+function resolveBodyReferences(
   doc: unknown,
-  slugToId: Map<string, string>,
+  slugToGlossaryId: Map<string, string>,
+  ingredientBySlug: Map<string, IngredientResolution>,
 ): unknown {
   if (!doc || typeof doc !== 'object') return doc
   const node = doc as NodeShape
@@ -347,7 +533,7 @@ function resolveGlossarySlugs(
         const attrs = mark.attrs
         const slug = typeof attrs.termSlug === 'string' ? attrs.termSlug : null
         if (slug) {
-          const id = slugToId.get(slug)
+          const id = slugToGlossaryId.get(slug)
           if (!id) {
             throw new Error(
               `Body references glossary term slug "${slug}" but no matching term was declared in glossaryTerms[].`,
@@ -360,12 +546,177 @@ function resolveGlossarySlugs(
     }
   }
 
+  if (node.type === 'ingredientsList' && node.attrs && typeof node.attrs === 'object') {
+    const attrs = node.attrs as Record<string, unknown>
+    const items = Array.isArray(attrs.items) ? (attrs.items as unknown[]) : []
+    attrs.items = items.map((raw) => {
+      if (!raw || typeof raw !== 'object') return raw
+      const row = { ...(raw as Record<string, unknown>) }
+      const slug = typeof row.ingredientSlug === 'string' ? row.ingredientSlug.trim() : ''
+      if (slug) {
+        const resolved = ingredientBySlug.get(slug)
+        if (!resolved) {
+          throw new Error(
+            `ingredientsList item references slug "${slug}" but no matching Ingredient row was found.`,
+          )
+        }
+        row.ingredientId = resolved.id
+        row.ingredientSlug = resolved.slug
+        if (!row.name || typeof row.name !== 'string') row.name = resolved.name
+        if (row.unit === undefined || row.unit === null || row.unit === '') {
+          row.unit = resolved.defaultUnit
+        }
+      }
+      return row
+    })
+  }
+
   if (Array.isArray(node.content)) {
     for (const child of node.content) {
-      resolveGlossarySlugs(child, slugToId)
+      resolveBodyReferences(child, slugToGlossaryId, ingredientBySlug)
     }
   }
   return doc
+}
+
+interface ParsedIngredientRow {
+  ingredientId: string
+  amount: number | null
+  unit: string | null
+  prepNote: string | null
+  isOptional: boolean
+  groupLabel: string | null
+  position: number
+  substitutionAllowed: boolean
+}
+
+/**
+ * Walk the (already-resolved) body and pull every ingredientsList row
+ * into the shape RecipeIngredient expects. Mirrors
+ * `apps/web/src/lib/recipe-ingredients-sync.ts` so script-uploaded and
+ * admin-uploaded recipes produce identical join rows.
+ */
+function extractRecipeIngredientsFromBody(doc: unknown): ParsedIngredientRow[] {
+  const out: ParsedIngredientRow[] = []
+  let position = 0
+  function walk(node: unknown): void {
+    if (!node || typeof node !== 'object') return
+    const n = node as NodeShape
+    if (n.type === 'ingredientsList' && n.attrs && typeof n.attrs === 'object') {
+      const items = Array.isArray((n.attrs as Record<string, unknown>).items)
+        ? ((n.attrs as Record<string, unknown>).items as unknown[])
+        : []
+      for (const raw of items) {
+        if (!raw || typeof raw !== 'object') continue
+        const row = raw as Record<string, unknown>
+        const ingredientId =
+          typeof row.ingredientId === 'string' ? row.ingredientId.trim() : ''
+        if (!ingredientId) continue
+        const amount = typeof row.amount === 'number' ? row.amount : null
+        const unit =
+          typeof row.unit === 'string' && row.unit.trim() ? row.unit.trim() : null
+        const prepNote =
+          typeof row.prepNote === 'string' && row.prepNote.trim()
+            ? row.prepNote.trim()
+            : null
+        const isOptional = row.isOptional === true
+        const groupLabel =
+          typeof row.groupLabel === 'string' && row.groupLabel.trim()
+            ? row.groupLabel.trim()
+            : null
+        const substitutionAllowed = row.substitutionAllowed !== false
+        out.push({
+          ingredientId,
+          amount,
+          unit,
+          prepNote,
+          isOptional,
+          groupLabel,
+          position,
+          substitutionAllowed,
+        })
+        position += 1
+      }
+    }
+    if (Array.isArray(n.content)) {
+      for (const child of n.content) walk(child)
+    }
+  }
+  walk(doc)
+  return out
+}
+
+async function syncRecipeIngredients(
+  tutorialId: string,
+  body: Prisma.InputJsonValue,
+  ingredientBySlug: Map<string, IngredientResolution>,
+  prisma: PrismaModule['prisma'],
+): Promise<number> {
+  const parsed = extractRecipeIngredientsFromBody(body)
+
+  // Cross-check: every parsed ingredientId should match one of the master
+  // rows we resolved earlier. Catches the case where a body has a
+  // pre-resolved ingredientId that doesn't actually exist.
+  const knownIds = new Set(Array.from(ingredientBySlug.values()).map((r) => r.id))
+  const filtered = parsed.filter((p) => knownIds.has(p.ingredientId))
+
+  await prisma.$transaction(async (tx) => {
+    await tx.recipeIngredient.deleteMany({ where: { tutorialId } })
+    if (filtered.length > 0) {
+      await tx.recipeIngredient.createMany({
+        data: filtered.map((p) => ({
+          tutorialId,
+          ingredientId: p.ingredientId,
+          amount: p.amount,
+          unit: p.unit,
+          prepNote: p.prepNote,
+          isOptional: p.isOptional,
+          groupLabel: p.groupLabel,
+          position: p.position,
+          substitutionAllowed: p.substitutionAllowed,
+        })),
+      })
+    }
+  })
+
+  return filtered.length
+}
+
+async function syncRecipeTools(
+  tutorialId: string,
+  refs: RecipeToolRef[],
+  toolBySlug: Map<string, ToolResolution>,
+  prisma: PrismaModule['prisma'],
+): Promise<number> {
+  const rows = refs.map((ref, i) => {
+    const resolved = toolBySlug.get(ref.slug)
+    if (!resolved) {
+      throw new Error(`recipeTools slug "${ref.slug}" failed to resolve at sync time.`)
+    }
+    return {
+      toolId: resolved.id,
+      isOptional: ref.isOptional === true,
+      notes: ref.notes ?? null,
+      position: typeof ref.position === 'number' ? ref.position : i,
+    }
+  })
+
+  await prisma.$transaction(async (tx) => {
+    await tx.recipeTool.deleteMany({ where: { tutorialId } })
+    if (rows.length > 0) {
+      await tx.recipeTool.createMany({
+        data: rows.map((r) => ({
+          tutorialId,
+          toolId: r.toolId,
+          isOptional: r.isOptional,
+          notes: r.notes,
+          position: r.position,
+        })),
+      })
+    }
+  })
+
+  return rows.length
 }
 
 // ─── Entrypoint ──────────────────────────────────────────────────────────────
@@ -420,6 +771,7 @@ async function main(): Promise<void> {
   console.log(`[upload-tutorial] ${inputPath}`)
   console.log(`  slug: ${input.slug}`)
   console.log(`  title: ${input.title}`)
+  console.log(`  type: ${input.type ?? 'RECIPE'}`)
 
   // Voice-check pass — deterministic gate. Block on errors unless the admin
   // escape hatch is set. The bot-as-editor rewrite happens earlier in the
@@ -447,7 +799,10 @@ async function main(): Promise<void> {
   console.log(`\n[upload-tutorial] ${result.mode.toUpperCase()}`)
   console.log(`  Tutorial id: ${result.tutorialId}`)
   console.log(`  slug: ${result.slug}`)
+  console.log(`  type: ${result.type}`)
   console.log(`  category: ${result.categorySlug}${result.subCategorySlug ? ` / ${result.subCategorySlug}` : ''}`)
+  console.log(`  RecipeIngredient rows: ${result.recipeIngredientRows}`)
+  console.log(`  RecipeTool rows: ${result.recipeToolRows}`)
   if (result.heroMediaId) {
     console.log(`  hero Media id: ${result.heroMediaId}${result.heroR2Key ? ` (r2Key=${result.heroR2Key})` : ''}`)
   }
