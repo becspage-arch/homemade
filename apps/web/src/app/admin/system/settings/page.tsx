@@ -1,11 +1,13 @@
-import { AdminPlaceholder } from '@/components/admin/admin-placeholder'
-
 export default function AdminSystemSettingsPage() {
   return (
-    <AdminPlaceholder
-      title="Site settings"
-      description="Key/value settings for the application. Empty for now — every setting is in the codebase or AWS Secrets Manager."
-      phase="Phase 8 — Premium tier and launch readiness"
-    />
+    <div className="admin-placeholder">
+      <h1>Site settings</h1>
+      <p>
+        Site-wide configuration UI lands when there’s something worth flipping
+        from the admin. Currently nothing to set — every site-level value lives
+        in the codebase, in AWS Secrets Manager, or in the legal-entity config
+        at <code>apps/web/src/lib/legal-entity.ts</code>.
+      </p>
+    </div>
   )
 }

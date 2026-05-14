@@ -1,5 +1,6 @@
 const SENTRY_ORG_SLUG = process.env.SENTRY_ORG_SLUG ?? null
 const SENTRY_PROJECT_SLUG = process.env.SENTRY_PROJECT_SLUG ?? null
+const SENTRY_CONFIGURED = Boolean(process.env.NEXT_PUBLIC_SENTRY_DSN)
 
 export default function AdminErrorsPage() {
   const dashboardUrl =
@@ -10,11 +11,28 @@ export default function AdminErrorsPage() {
   return (
     <div className="admin-placeholder">
       <h1>Error log</h1>
+
+      {SENTRY_CONFIGURED ? (
+        <p>
+          Sentry is live. Browser, server, and edge runtime errors all report
+          into the project, with PII scrubbed (cookies, request bodies, IPs,
+          emails dropped). Source maps upload from CI on every deploy.
+        </p>
+      ) : (
+        <p>
+          Sentry isn’t configured in this environment yet.{' '}
+          <code>NEXT_PUBLIC_SENTRY_DSN</code> is unset.
+        </p>
+      )}
+
       <p>
-        Errors caught by the browser, server, and edge runtimes are reported to
-        Sentry. Open the dashboard for the full timeline, alert rules, and
-        Slack / email integrations.
+        Many issues are caught before they reach Sentry: each push to{' '}
+        <code>main</code> blocks on the GitHub Actions deploy and a{' '}
+        <code>/healthz</code> smoke check (see <code>CLAUDE.md</code> — deploy
+        verification). Sentry catches what the smoke check misses: runtime
+        errors on specific routes, browser-only failures, and slow regressions.
       </p>
+
       {dashboardUrl ? (
         <p style={{ marginTop: 24 }}>
           <a
@@ -28,10 +46,10 @@ export default function AdminErrorsPage() {
         </p>
       ) : (
         <p style={{ marginTop: 24, fontStyle: 'italic' }}>
-          Sentry isn’t configured in this environment yet.
+          Set <code>SENTRY_ORG_SLUG</code> and <code>SENTRY_PROJECT_SLUG</code>{' '}
+          to link out directly.
         </p>
       )}
-
     </div>
   )
 }

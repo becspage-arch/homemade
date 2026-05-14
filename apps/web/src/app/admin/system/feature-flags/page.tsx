@@ -1,11 +1,12 @@
-import { AdminPlaceholder } from '@/components/admin/admin-placeholder'
-
 export default function AdminFeatureFlagsPage() {
   return (
-    <AdminPlaceholder
-      title="Feature flags"
-      description="Per-flag rollout to cohorts. Wired up once we need flagged releases."
-      phase="Phase 8 — Premium tier and launch readiness"
-    />
+    <div className="admin-placeholder">
+      <h1>Feature flags</h1>
+      <p>
+        Flag-driven rollouts. Lands with the premium tier and gradual rollouts
+        in Phase 7–8. No flags are defined right now — every feature is on or
+        off in code.
+      </p>
+    </div>
   )
 }

@@ -486,6 +486,14 @@ secret references), so this can be a single deploy.
 `report.create` (on submission) and `report.resolved`,
 `user.role_changed`, `user.suspended`, `user.unsuspended`.
 
+**Placeholder refresh follow-up (2026-05-14):** `/admin/analytics` and
+`/admin/system/errors` now reflect that PostHog + Sentry are live (wired
+in services activation + Phase B). Analytics page lists the eight
+dashboards still to build in the PostHog UI; errors page cross-references
+the deploy-verification loop. Settings + feature-flags copy tightened —
+no more "Lands in Phase 8" marketing language. `/admin/system/jobs` and
+`/admin/audit-log` were already current and left alone.
+
 **Build hygiene:**
 
 - `pnpm --filter @homemade/web typecheck` — passes.
