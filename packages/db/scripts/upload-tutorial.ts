@@ -341,6 +341,7 @@ async function uploadTutorial(
   // 10. Tutorial type + recipe metadata.
   const tutorialType: TutorialType = input.type ?? 'RECIPE'
   const recipe = input.recipe ?? {}
+  const practice = input.practice ?? null
 
   // Compute totalMinutes if not given. Falls back to the explicit
   // `timeMinutes` if a recipe author already set that.
@@ -396,6 +397,15 @@ async function uploadTutorial(
       (recipe.nutritionalInfoPerServing as Prisma.InputJsonValue | undefined) ?? undefined,
     foundational: recipe.foundational ?? false,
     leftoverTutorialId,
+    // Mindset practice metadata (Phase 8 Step 13). Null on RECIPE / TECHNIQUE rows.
+    practiceType: practice?.practiceType ?? null,
+    practiceTargets: practice?.practiceTargets ?? [],
+    timeBand: practice?.timeBand ?? null,
+    bestTime: practice?.bestTime ?? null,
+    practiceDepth: practice?.practiceDepth ?? null,
+    whenToUse: practice?.whenToUse ?? null,
+    whenNotToUse: practice?.whenNotToUse ?? null,
+    alternativePracticeIds: practice?.alternativePracticeIds ?? [],
   }
 
   // Publish intent. --status PUBLISHED stamps publishedAt now and flips the

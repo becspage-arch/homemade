@@ -1343,6 +1343,86 @@ longer ones.
 Remaining 77 of the 100 selection list: `docs/bulk-batch-001-briefs/.selection.md`.
 Next bulk-batch worker picks any subset.
 
+### Step 14 — Mindset authoring prompt + anti-tells + anchor batch ✅ landed 2026-05-14
+
+**Goal.** Build the Mindset drafting prompt template (v1), seed the
+Mindset anti-tells doc, and land 3–5 anchor practices across types as
+`DRAFT` so Rebecca can review the end-to-end shape before pilot-10
+fires.
+
+**Deliverable.**
+
+- `docs/mindset-author.md` v1 — the Mindset equivalent of
+  `docs/tutorial-author.md`. Covers all 11 practice types, voice
+  rules (standard + Mindset-specific register bans), self-critique
+  checklist, source-attribution rules, length guidance per type,
+  and the input / output contracts mapped to `TutorialUploadInput`.
+- `docs/mindset-anti-tells.md` — 11 seeded entries across voice
+  issues (therapeutic-claim creep, "queen / boss / step into your
+  power" register, "manifest" overuse, spiritual bypass, future
+  tense / negation in affirmations, false-intimacy openers,
+  cosmic-promise framings), structural issues (tapping eight-point
+  order, set-up statement specificity, reframe-mirroring),
+  metadata issues, source-attribution issues. Six entries flagged
+  `[needs-voice-check]` for the voice-check extension follow-up.
+- **Anchor batch** — 5 `DRAFT` practices across types, visible at
+  `/admin/tutorials?type=PRACTICE`:
+  - `tapping-for-daily-money-panic` — TAPPING — MONEY + ANXIETY
+  - `i-am-allowed-to-want-this` — ENERGY_STATEMENT — SELF_WORTH +
+    MONEY + ABUNDANCE
+  - `the-calm-and-safe-money-reset` — RITUAL — MONEY + ANXIETY +
+    ABUNDANCE
+  - `body-scan-for-sleep` — MEDITATION — SLEEP + ANXIETY + ENERGY
+  - `feast-and-famine-journal-prompts` — JOURNAL_PROMPT — MONEY +
+    ABUNDANCE + STUCK
+- `docs/mindset-anchor-briefs/*.json` — five full `TutorialUploadInput`
+  JSON files; the upload script's input + the canonical drafting
+  reference for future Mindset workers.
+- `docs/mindset-anchor-report.md` — anchor batch report (sources
+  drawn from per anchor, voice-check pass / warning counts, what
+  Rebecca should review first, TipTap-block gaps flagged for
+  follow-up).
+- `packages/db/scripts/seed-mindset-taxonomy.ts` — one-off seed for
+  the `mindset` Category row. No sub-categories at launch; Mindset
+  uses `practiceTargets[]` for life-category routing instead.
+- `packages/db/scripts/upload-tutorial-types.ts` +
+  `upload-tutorial.ts` — additive extension to accept `type =
+  "PRACTICE" | "READING"` and a `practice` block carrying the
+  Mindset metadata (`practiceType`, `practiceTargets`, `timeBand`,
+  `bestTime`, `practiceDepth`, `whenToUse`, `whenNotToUse`,
+  `alternativePracticeIds`). RECIPE / TECHNIQUE paths untouched.
+
+**Out.**
+
+- No `voice-check.ts` deterministic-rule edits — Mindset-specific
+  bans (queen / boss / high-vibe / manifest overuse, therapeutic-
+  claim verbs, cosmic-promise patterns, future-tense affirmations)
+  captured in `docs/mindset-anti-tells.md` for the drafter's
+  self-critique pass. Voice-check extension is its own session.
+- No new TipTap blocks (anchor batch uses existing eight blocks).
+  Three block gaps flagged in the anchor report (`tappingScript`,
+  `ritualSteps`, `practiceStatement`) for a follow-up Mindset-blocks
+  session.
+- No pilot-10 batch — that's the next worker after Rebecca reviews
+  the anchors.
+- No bulk fill, no plan generator code, no admin UI extension, no
+  public UI.
+
+**Next Mindset sessions, in order.**
+
+1. Voice-check CLI extension — `[needs-voice-check]` entries from
+   `docs/mindset-anti-tells.md` land in `voice-check-lib.ts`.
+2. *(optional)* Mindset-blocks gap fill — `tappingScript` /
+   `ritualSteps` / `practiceStatement` TipTap blocks.
+3. Pilot-10 — auto-publish via the Phase 8 Step 11–12 pattern.
+4. Bulk fill — standing worker pattern consuming
+   `docs/mindset-backlog.md`.
+5. Admin UI for Mindset — type-toggle in `tutorial-form.tsx`.
+6. Public UI for Mindset — Today view, Practice page, Library
+   browse, "I'm feeling..." matcher.
+7. Plan generator worker — picks up `UserPlan PENDING_GENERATION`
+   rows, runs the generator prompt, writes 30 `UserPlanDay` rows.
+
 ### Step 13 — Mindset pipeline scaffold ✅ landed 2026-05-14
 
 **Goal.** Open the second category in the multi-category fill plan. Get
@@ -1473,7 +1553,7 @@ Revise the rates here when actuals diverge from estimates.
 | 2 | Baking | 3,000 | 0 | Not started — ~1 wk setup (baker's percentages, hydration, proofing, lamination, decorating metadata) | 3 |
 | 3 | Garden | 4,000 | 0 | Not started — ~1 wk setup | 4 |
 | 4 | Herbal medicine | 2,500 | 0 | Not started — ~1 wk setup | 2.5 |
-| 5 | Mindset | 4,300 | 0 | ✅ schema + backlog ready (Phase 8 Step 13, 2026-05-14). Migration `20260614000000_phase_8_step_13_mindset_schema` adds PRACTICE / READING TutorialType values, the 11-value `PracticeType` + 20-value `PracticeTarget` + `TimeBand` + `BestTime` + `PlanTier` + `PlanStatus` + `PlanSlotSource` enums, Tutorial practice-metadata columns, and the user-side `UserPlan` / `UserPlanDay` / `DailyPick` / `UserPracticeFavorite` / `UserPracticeUse` / `UserFeeling` tables. `docs/mindset-backlog.md` enumerates ~2,945 specific entry titles across all 16 life categories with `MONEY-v2`, `MONEY-Journal`, `Money-Zone`, `SLEEP-v2`, `WEIGHT-LOSS-v2`, `MANIFESTING-v2`, `[PD]`, and `[NEW]` source codes per entry — the rest of the ~4,300 target lands as bulk authoring batches consume existing rows and back-fill stuck-on points the brainstorm flagged. Authoring prompt template, voice-check extension, anchor batch, pilot of 10, plan generator — all still ahead. | 4.3 |
+| 5 | Mindset | 4,300 | 5 DRAFT (anchor batch landed Phase 8 Step 14, 2026-05-14) | ✅ schema + backlog + authoring prompt + anti-tells + 5-anchor batch ready (Phase 8 Step 13 → Step 14, 2026-05-14). Migration `20260614000000_phase_8_step_13_mindset_schema` ships PRACTICE / READING TutorialType values + 11-value `PracticeType` + 20-value `PracticeTarget` + `TimeBand` + `BestTime` + `PlanTier` + `PlanStatus` + `PlanSlotSource` enums + Tutorial practice-metadata columns + the six user-side tables (`UserPlan` / `UserPlanDay` / `DailyPick` / `UserPracticeFavorite` / `UserPracticeUse` / `UserFeeling`). `docs/mindset-backlog.md` enumerates ~2,945 specific entry titles across all 16 life categories. `docs/mindset-author.md` v1 + `docs/mindset-anti-tells.md` (11 seeded entries) drive future Mindset drafting. Five anchor DRAFTs across TAPPING / ENERGY_STATEMENT / RITUAL / MEDITATION / JOURNAL_PROMPT seeded for Rebecca's review at `/admin/tutorials?type=PRACTICE`. Upload script extended to accept PRACTICE / READING (additive — RECIPE / TECHNIQUE unchanged). Voice-check Mindset extension, anchor review, pilot of 10, plan generator — still ahead. | 4.3 |
 | 6 | Crochet | 1,500 | 0 | Not started — ~1 wk setup | 1.5 |
 | 7 | Knitting | 1,500 | 0 | Not started — ~1 wk setup | 1.5 |
 | 8 | Needlework | 800 | 0 | Not started — ~1 wk setup | 0.8 |
