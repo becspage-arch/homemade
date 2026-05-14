@@ -1266,11 +1266,11 @@ Revise the rates here when actuals diverge from estimates.
 
 | # | Category | Target | Current | Pipeline | Fill weeks @ 1k/wk |
 |---|---|---:|---:|---|---:|
-| 1 | Cooking | 7,000 | 13 DRAFT | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
+| 1 | Cooking | 7,000 | 202 DRAFT (13 pilot + 189 personal recipes ingested 2026-05-14) | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
 | 2 | Baking | 3,000 | 0 | Not started — ~1 wk setup (baker's percentages, hydration, proofing, lamination, decorating metadata) | 3 |
 | 3 | Garden | 4,000 | 0 | Not started — ~1 wk setup | 4 |
 | 4 | Herbal medicine | 2,500 | 0 | Not started — ~1 wk setup | 2.5 |
-| 5 | Mindset | 1,000 | 0 | Not started — ~1 wk setup | 1 |
+| 5 | Mindset | 4,300 | 0 | Not started — ~1 wk setup. Full brainstorm complete (`docs/mindset-brainstorm.md`): 16 life categories, sub-categories for Body / Relationships / Motherhood / Business / Home / Fear / Spirituality / Health / Grief; Perimenopause + Menopause are explicit Body sub-cats. | 4.3 |
 | 6 | Crochet | 1,500 | 0 | Not started — ~1 wk setup | 1.5 |
 | 7 | Knitting | 1,500 | 0 | Not started — ~1 wk setup | 1.5 |
 | 8 | Needlework | 800 | 0 | Not started — ~1 wk setup | 0.8 |
@@ -1283,7 +1283,7 @@ Revise the rates here when actuals diverge from estimates.
 | 15 | Home & repair | 800 | 0 | Not started — ~1 wk setup | 0.8 |
 | 16 | Natural home | 800 | 0 | Not started — ~1 wk setup | 0.8 |
 | 17 | Sustainability | 700 | 0 | Not started — ~1 wk setup | 0.7 |
-| | **Total** | **28,400** | **13** | ~16 wks setup outstanding (new categories) + ~3 wks Cooking sub-extensions | ~28 weeks fill |
+| | **Total** | **31,700** | **202** | ~16 wks setup outstanding (new categories) + ~3 wks Cooking sub-extensions | ~32 weeks fill |
 
 #### Sub-categories per top-level
 
@@ -1401,9 +1401,10 @@ finalise at setup time.
 #### Strategic reference
 
 - **Holistic-life spine** = Cooking + Baking + Garden + Herbal medicine
-  + Mindset. ~17,500 articles at full depth, ~18 weeks fill + ~3 weeks
-  remaining setup. Fills the Barbara O'Neill-style worldview
-  unmistakably before broadening.
+  + Mindset. ~20,800 articles at full depth (Mindset's full brainstorm
+  came in much richer than the original estimate — ~4,300 entries).
+  ~21 weeks fill + ~3 weeks remaining setup. Fills the Barbara
+  O'Neill-style worldview unmistakably before broadening.
 - **Carryover from the original 5-launch list**: Crochet + Knitting
   benefit from existing public-domain pattern sources mapped in Master
   Plan §6 (Weldon's, de Dillmont). Moderate setup, straightforward fill.
