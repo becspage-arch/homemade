@@ -17,14 +17,23 @@ const config: CapacitorConfig = {
     url: 'https://homemade.education',
     cleartext: false,
     androidScheme: 'https',
-    // NOTE: tried `allowNavigation: ['homemade.education',
-    // '*.homemade.education']` to keep same-origin links from punting to
-    // Safari. That setting blanked the WKWebView entirely (page never
-    // rendered) — possibly because Capacitor 8's allowNavigation
-    // implementation also gates the initial server.url load when the
-    // list is non-empty. Removed pending a different approach (probably
-    // setting the right Capacitor server config on the iOS native side,
-    // or handling navigation in JS via window.open intercept).
+    // Clerk's DEV environment performs a "dev browser" cookie handshake
+    // on first visit by redirecting to its hosted domain
+    // (open-muskrat-74.clerk.accounts.dev). Without that domain in the
+    // allowNavigation list, the WKWebView either punts the redirect to
+    // Safari (observed: app opens to a Safari sign-in screen) or stalls
+    // (observed: white screen).
+    //
+    // The earlier attempt with only homemade.education in the list also
+    // blanked the wrapper, because the redirect to Clerk's domain
+    // counted as a disallowed navigation. Listing both fixes both
+    // symptoms.
+    allowNavigation: [
+      'homemade.education',
+      '*.homemade.education',
+      '*.clerk.accounts.dev',
+      '*.accounts.dev',
+    ],
   },
   ios: {
     contentInset: 'always',
