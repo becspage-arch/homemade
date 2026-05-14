@@ -25,7 +25,7 @@ import { CLOUDFLARE_IPV4, CLOUDFLARE_IPV6 } from './cloudflare-ips'
  * HTTPS:443, presenting a Cloudflare Origin Certificate that was imported
  * into ACM (ARN supplied via the `ORIGIN_CERT_ARN` env var at deploy time).
  *
- * Three deploy stages for the SSL migration (Flexible → Full strict):
+ * Three deploy stages for the SSL migration (Flexible to Full strict):
  *   Stage 1 (no env): HTTP:80 only, target-group forward. The original
  *     Flexible-mode topology.
  *   Stage 2 (ORIGIN_CERT_ARN set): adds HTTPS:443 listener while KEEPING
@@ -33,7 +33,7 @@ import { CLOUDFLARE_IPV4, CLOUDFLARE_IPV6 } from './cloudflare-ips'
  *     flip Cloudflare from Flexible to Full (strict) during this stage so
  *     CF connects on 443 from then on.
  *   Stage 3 (ORIGIN_CERT_ARN + HTTP_PORT_80_REDIRECT=1): once Cloudflare is
- *     on Full strict, replace the HTTP:80 forward with a 301 → HTTPS:443
+ *     on Full strict, replace the HTTP:80 forward with a 301 to HTTPS:443
  *     redirect. This is the final hardened state. Doing this BEFORE the
  *     Cloudflare flip would cause an infinite redirect loop in Flexible
  *     mode (CF would pass the 301 back to the browser, which would come
@@ -138,7 +138,7 @@ export class HomemadeStack extends cdk.Stack {
       'homemade/clerk-webhook-signing-secret-v2',
     )
     // R2 access credentials. Stored manually in Secrets Manager by Rebecca
-    // (Cloudflare dashboard → R2 → Manage R2 API Tokens). Mounted with the
+    // (Cloudflare dashboard to R2 to Manage R2 API Tokens). Mounted with the
     // same two-step CFN pattern as the Clerk webhook secret: IAM grant lands
     // first, then `MOUNT_R2_SECRETS=1` flips the secrets references on.
     const r2AccessKeyIdSecret = secretsmanager.Secret.fromSecretNameV2(
@@ -176,7 +176,7 @@ export class HomemadeStack extends cdk.Stack {
       'homemade/upstash-redis-token',
     )
     // Typesense Cloud cluster credentials. Stored manually in Secrets Manager
-    // by Rebecca after she creates the cluster (Typesense Cloud → API Keys).
+    // by Rebecca after she creates the cluster (Typesense Cloud to API Keys).
     // Same two-step CFN pattern: Deploy 1 lands the IAM grant, Deploy 2 flips
     // `MOUNT_TYPESENSE_SECRETS=1` to add the secret references.
     const typesenseHostSecret = secretsmanager.Secret.fromSecretNameV2(
@@ -197,7 +197,7 @@ export class HomemadeStack extends cdk.Stack {
 
     // The Clerk webhook signing secret is wired in two deploys to avoid the
     // CFN circuit breaker race (IAM grant landing in parallel with task
-    // replacement → new tasks try to pull the secret before the grant exists).
+    // replacement to new tasks try to pull the secret before the grant exists).
     // Deploy 1: this stack — adds the explicit IAM grant on the execution
     //           role (see addToExecutionRolePolicy below). No task
     //           replacement, IAM lands cleanly.
@@ -365,7 +365,7 @@ export class HomemadeStack extends cdk.Stack {
     })
 
     // ────────────────────────────────────────────────────────────────
-    // ALB — HTTPS:443 with Cloudflare Origin Cert, HTTP:80 → HTTPS redirect.
+    // ALB — HTTPS:443 with Cloudflare Origin Cert, HTTP:80 to HTTPS redirect.
     //
     // The cert is imported into ACM separately (Cloudflare Origin Certs can't
     // go through ACM's automatic validation). Pass the imported cert's ARN at
@@ -469,24 +469,24 @@ export class HomemadeStack extends cdk.Stack {
       alb.connections.allowFrom(
         ec2.Peer.ipv4(cidr),
         ec2.Port.tcp(80),
-        `Cloudflare ${cidr} → ALB:80`,
+        `Cloudflare ${cidr} to ALB:80`,
       )
       alb.connections.allowFrom(
         ec2.Peer.ipv4(cidr),
         ec2.Port.tcp(443),
-        `Cloudflare ${cidr} → ALB:443`,
+        `Cloudflare ${cidr} to ALB:443`,
       )
     }
     for (const cidr of CLOUDFLARE_IPV6) {
       alb.connections.allowFrom(
         ec2.Peer.ipv6(cidr),
         ec2.Port.tcp(80),
-        `Cloudflare ${cidr} → ALB:80`,
+        `Cloudflare ${cidr} to ALB:80`,
       )
       alb.connections.allowFrom(
         ec2.Peer.ipv6(cidr),
         ec2.Port.tcp(443),
-        `Cloudflare ${cidr} → ALB:443`,
+        `Cloudflare ${cidr} to ALB:443`,
       )
     }
 
