@@ -1060,21 +1060,268 @@ drafting worker reads, not a separate process.
 
 **Landed.** 10 RECIPE drafts in production DB, status DRAFT: lasagne-alla-bolognese, quick-weeknight-lasagne, roast-chicken-sunday, piccalilli, coq-au-vin, buttermilk-pancakes, chicken-tikka-masala, shakshuka, air-fryer-chicken-thighs, slow-cooker-pulled-pork. Voice-check passed within 1 retry on all 10 (3 clean first pass, 7 with one retry; zero failed all 3 attempts). 13 new GlossaryTerm rows landed via the upload script. Zero new ingredients needed; the Step 4 master list covered everything. Briefs at `docs/pilot-10-briefs/`, full upload JSON at `packages/db/scripts/drafts/`, report at `docs/pilot-10-report.md`. Patterns for Step 11 prompt-refinement: em-dash overuse (most common failure), "honest" as a softener, tricolons in intros/conclusions.
 
-### Step 11 — Pilot batch of 50
+### Step 11 — Prompt template v3 + common-issues + auto-publish wiring
 
-**Goal.** Rebecca's findings from the 10 feed prompt edits. Worker drafts 50 more.
+**Goal.** Turn the manual-review pilot pattern into an auto-publish flow
+that scales to 28k articles without Rebecca gating every draft.
 
-**Deliverable.** 50 more Tutorial rows. Updated prompt template.
+**Partial — done so far:**
 
-**Out.** Bulk scaling.
+- `docs/tutorial-author.md` bumped from v2 to v3 (commit `2f64530`,
+  2026-05-14). Tightened em-dash rule with Don't/Do table; added
+  anti-softener call-out for "honest" / "frankly" / "genuinely";
+  rewrote scaling-tokens section with per-unit grammar + worked
+  examples; added render-read self-critique step for tokens.
 
-### Step 12 — Bulk authoring at 100–200 per batch
+**Still owed:**
 
-**Goal.** Standing worker pattern.
+- Extend `docs/tutorial-author.md` so the drafter reads
+  `docs/common-issues.md` at session start and adds a check against
+  every entry to the self-critique pass.
+- `docs/common-issues.md` created (this commit) seeded with the
+  pilot-10 patterns; common-issues entries appended by future workers
+  whenever a pattern recurs 3+ times in a batch.
+- `packages/db/scripts/upload-tutorial.ts` extended with a `--status`
+  flag (default `DRAFT` for backwards compat; opt-in `PUBLISHED`).
+  Bulk authoring workers invoke with `--status published`.
+- `packages/db/scripts/voice-check.ts` extended with any new
+  deterministic rules where pilot patterns are deterministic
+  (em-dash count already covered; nothing else is deterministic yet).
 
-**Deliverable.** Each batch picks N from the backlog, drafts, voice-checks, uploads. Rebecca spot-checks ~5 per 100. Recipes land daily until the backlog is exhausted.
+**Out.**
 
-**Out.** Image generation (deferred until pre-launch budget).
+- The 50-recipe pilot batch from the old Step 11 is dropped — we skip
+  straight from pilot-10 to bulk auto-publish with the v3 prompt.
+  Pilot-10 patterns are enough signal to refine.
+
+### Step 12 — Bulk auto-publish at 100–200 per batch
+
+**Goal.** Standing worker pattern. Daily auto-publish, no per-draft
+manual review.
+
+**Deliverable.** Each batch picks N from the backlog, drafts,
+self-critiques (including the `docs/common-issues.md` check),
+voice-checks, uploads with `--status published`. Tutorials land live on
+the site (still splash-gated pre-launch, so Rebecca-only). The worker
+session updates `docs/common-issues.md` at the end of a batch if it
+spotted a recurring pattern (3+ instances in this batch). Recipes land
+daily until the backlog is exhausted.
+
+Rebecca spot-checks live on the site as she has bandwidth — not gating,
+not per-draft. If she spots a pattern that recurs across multiple
+articles, she adds it to `docs/common-issues.md` herself; the next
+worker session picks it up.
+
+**Out.**
+
+- Image generation (deferred until pre-launch budget).
+- Tester-user review (Phase 6 work; not in scope yet).
+
+### Multi-category fill plan
+
+Steps 1–12 above build out the cooking pipeline. This section extends the
+plan to every top-level category so the broader scope stays visible.
+
+Order is **feel-based**: pick the next category each session by what you
+want depth in vs breadth on, what's reading well already, and what's
+under-represented. The grid is a tracker, not a sequence.
+
+#### Working assumptions
+
+- **Plan tier:** Max 20x (confirmed). Half the weekly allocation goes to
+  Homemade.
+- **Models per session type:**
+  - **Orchestrator** (occasional planning + coordination): Opus
+  - **Tech / marketing worker** (code, deploys, copy work, infra): Opus
+  - **Pipeline-setup worker** (per-category schema, prompt template,
+    voice-check tuning, anchor tutorial): Opus
+  - **Bulk content authoring worker** (the 2 parallel sessions doing
+    daily fill): Sonnet
+  - **Voice-check CLI**: deterministic, no model
+- **Concurrency:** ~2 parallel content sessions, 12h × 6 days/week each,
+  plus the orchestrator and the tech/marketing session running as needed.
+- **Throughput per session-hour:** ~10 articles drafted, voice-checked,
+  uploaded. The Step-10 pilot measured 12.8/hr on the tuned cooking
+  pipeline (10 recipes in 47 minutes wall-clock). Real rate drops on new
+  categories; 70% productivity factor accounts for that.
+- **Total throughput:** **~1,000 articles/week** with both content
+  sessions on the same category. ~500/wk per category if split across
+  two in parallel.
+- **Per-category pipeline setup:** ~1 week each (master entity tables,
+  authoring prompt template, voice-check tuning, category-specific
+  schema additions, anchor tutorial, pilot batch of 10 with feedback).
+- **Auto-publish flow.** Bulk content sessions write → self-critique →
+  voice-check → auto-publish as PUBLISHED. No per-draft manual review
+  by Rebecca; she spot-checks live on the site as she has bandwidth.
+  Splash gate keeps the site private pre-launch, so anything that slips
+  through is only seen by her. When a recurring quality issue surfaces
+  (3+ instances in a batch), the worker appends it to
+  `docs/common-issues.md`; subsequent workers explicitly check for it
+  during self-critique. The post-launch path is a Tester program that
+  sees tutorials before public publish — not in scope yet (tracked in
+  Phase 6 + future work).
+- **Image generation:** deferred for the whole fill phase — heroes
+  batch-generate from pre-launch budget.
+
+Revise the rates here when actuals diverge from estimates.
+
+#### Category grid
+
+| # | Category | Target | Current | Pipeline | Fill weeks @ 1k/wk |
+|---|---|---:|---:|---|---:|
+| 1 | Cooking | 7,000 | 13 DRAFT | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
+| 2 | Baking | 3,000 | 0 | Not started — ~1 wk setup (baker's percentages, hydration, proofing, lamination, decorating metadata) | 3 |
+| 3 | Garden | 4,000 | 0 | Not started — ~1 wk setup | 4 |
+| 4 | Herbal medicine | 2,500 | 0 | Not started — ~1 wk setup | 2.5 |
+| 5 | Mindset | 1,000 | 0 | Not started — ~1 wk setup | 1 |
+| 6 | Crochet | 1,500 | 0 | Not started — ~1 wk setup | 1.5 |
+| 7 | Knitting | 1,500 | 0 | Not started — ~1 wk setup | 1.5 |
+| 8 | Needlework | 800 | 0 | Not started — ~1 wk setup | 0.8 |
+| 9 | Sewing | 1,200 | 0 | Not started — ~1 wk setup | 1.2 |
+| 10 | Fibre arts | 800 | 0 | Not started — ~1 wk setup | 0.8 |
+| 11 | Wood & natural craft | 800 | 0 | Not started — ~1 wk setup | 0.8 |
+| 12 | Paper & word | 800 | 0 | Not started — ~1 wk setup | 0.8 |
+| 13 | Pottery & ceramics | 500 | 0 | Not started — ~1 wk setup | 0.5 |
+| 14 | Animals & smallholding | 700 | 0 | Not started — ~1 wk setup | 0.7 |
+| 15 | Home & repair | 800 | 0 | Not started — ~1 wk setup | 0.8 |
+| 16 | Natural home | 800 | 0 | Not started — ~1 wk setup | 0.8 |
+| 17 | Sustainability | 700 | 0 | Not started — ~1 wk setup | 0.7 |
+| | **Total** | **28,400** | **13** | ~16 wks setup outstanding (new categories) + ~3 wks Cooking sub-extensions | ~28 weeks fill |
+
+#### Sub-categories per top-level
+
+- **Cooking** — savoury meals, soups, salads, breakfasts, sauces &
+  condiments, preserving & fermenting, charcuterie, cheese & dairy,
+  brewing & drinks
+- **Baking** — bread, cakes, pastries, biscuits, pies, scones,
+  sweets & confectionery, cake decorating
+- **Garden** — vegetables, fruit, herbs, flowers, permaculture,
+  microgreens, hydroponics, mushroom growing, foraging
+- **Herbal medicine** — remedies, tinctures, infusions, decoctions, oils,
+  balms, salves, syrups, home apothecary
+- **Mindset** — manifesting, tapping, energy work, daily practice,
+  journal prompts, 30-day plans
+- **Crochet** — stitches, techniques, patterns (public-domain only at
+  launch)
+- **Knitting** — stitches, techniques, patterns (public-domain only at
+  launch)
+- **Needlework** — cross-stitch, tatting, lacemaking, needlepoint
+- **Sewing** — dressmaking, quilting, mending & visible mending
+- **Fibre arts** — spinning, weaving, dyeing, felting, rug making,
+  macramé
+- **Wood & natural craft** — woodworking, whittling, spoon carving,
+  basketry, willow weaving
+- **Paper & word** — paper crafts, bookbinding, calligraphy,
+  scrapbooking, journalling-as-craft (bullet journals, art journals,
+  junk journals, travel / nature journals, making the book itself).
+  Journal *practice* — prompts, gratitude, daily reflection — sits in
+  Mindset.
+- **Pottery & ceramics** — hand-building, throwing, glazing, firing
+- **Animals & smallholding** — beekeeping, chickens, backyard livestock
+- **Home & repair** — building, upholstery, furniture restoration,
+  bushcraft
+- **Natural home** — soap, candles, DIY beauty, DIY cleaning, home
+  fragrance
+- **Sustainability** — solar (DIY solar projects, solar oven, solar
+  water heater), water reduction & harvesting (rainwater catchers,
+  greywater, water-saving fixtures), composting (kitchen, garden, hot
+  vs cold, vermicompost), waste reduction (zero-waste, plastic-free,
+  package-free swaps, repair-don't-replace), energy efficiency
+  (insulation, draft-proofing), renewable heating (wood stove, masonry
+  heater), off-grid basics
+
+#### Pipeline-specific setup notes
+
+The rough shape for each new pipeline. Schema notes are illustrative —
+finalise at setup time.
+
+- **Garden.** Master `PlantVariety` table (variety, parent species, USDA
+  + RHS hardiness zones, sun / water / soil prefs, days to maturity),
+  zone reference table, planting-calendar metadata on Tutorial,
+  pest / disease cross-refs, companion-planting relations. Tutorial type
+  extends to `GROWING_GUIDE`.
+
+- **Herbal medicine.** Master `Herb` table (Latin binomial, common names,
+  parts used, primary actions, key constituents, safety flags),
+  `Condition` table (body system, common symptoms, cross-refs),
+  preparation typing (tincture / decoction / infusion / oil / salve /
+  balm / syrup), drug-interaction notes. Strongest "no medical advice"
+  voice rules of any category. Tutorial type extends to `REMEDY` and
+  `HERB_PROFILE`.
+
+- **Mindset.** `Practice` library (tapping script / energy alignment
+  statement / ritual / journal prompt / breathwork as typed entities),
+  `Plan` template entity (30-day skeletons with daily activity slots).
+  No master ingredient / tool equivalents. Tutorial type extends to
+  `PRACTICE`, `READING`, `PLAN`.
+
+- **Crochet / Knitting.** Master `Stitch` table (name, US + UK
+  terminology variants, symbol, difficulty), `YarnWeight` reference,
+  pattern metadata (gauge, hook / needle size, finished dimensions, yarn
+  quantity), symbol-chart rendering. AI not used for stitch photos
+  (locked decision); one-time manual stitch shoot. Tutorial type extends
+  to `PATTERN` and `STITCH`.
+
+- **Needlework.** Similar shape to crochet / knitting with a separate
+  `Stitch` namespace (cross-stitch counts grid squares, tatting uses
+  shuttle motions, lacemaking has bobbin diagrams).
+
+- **Sewing.** `Pattern` table for garment patterns (public-domain at
+  launch — Edwardian, 1940s, vintage), fabric metadata, body-measurement
+  reference, quilt-block library. Tutorial type extends to `PATTERN`
+  and `TECHNIQUE`.
+
+- **Fibre arts, Wood & natural, Paper & word, Pottery, Animals, Home &
+  repair, Natural home.** Schema notes deferred to each category's
+  setup session — most follow the pattern of "master entity table +
+  category-specific Tutorial subtype + metadata fields", echoing what
+  cooking has.
+
+#### How to use the grid
+
+- **Current count** updates after every content batch. Worker sessions
+  update it as part of their hand-off; spot-checks update it when
+  Rebecca reviews.
+- **Target** is "super super full and deep". Adjust down if a category
+  reads fine at half depth; up if a sub-category wants more.
+- **Order is your call session-by-session.** Common patterns: fill one
+  category to feel-it-out depth and pause; alternate deep / quick
+  categories for variety; push the holistic-life spine first
+  (Kitchen + Garden + Herbal + Mindset).
+- **Pipeline** flips to ✅ once a category's setup is complete (master
+  entity tables seeded, authoring prompt tuned, schema extensions
+  migrated, voice-check tuned, anchor tutorial drafted, pilot-10
+  reviewed). Pipeline-setup sessions are their own worker sessions.
+- **Fill weeks** assume both content sessions are on one category. Halve
+  the rate if they're working different categories in parallel.
+- **Adding new categories or sub-categories.** Just append a row to the
+  grid (copy the column shape from an existing row) and a bullet to the
+  sub-categories list. Bump the **Total** row. A brand-new top-level
+  category adds ~1 week of pipeline setup; a new sub-category typically
+  slots into its parent's existing pipeline (smaller schema / prompt
+  extension, no full setup).
+
+#### Strategic reference
+
+- **Holistic-life spine** = Cooking + Baking + Garden + Herbal medicine
+  + Mindset. ~17,500 articles at full depth, ~18 weeks fill + ~3 weeks
+  remaining setup. Fills the Barbara O'Neill-style worldview
+  unmistakably before broadening.
+- **Carryover from the original 5-launch list**: Crochet + Knitting
+  benefit from existing public-domain pattern sources mapped in Master
+  Plan §6 (Weldon's, de Dillmont). Moderate setup, straightforward fill.
+- **Cheap-breadth categories**: Pottery, Wood & natural, Animals &
+  smallholding, Home & repair, Paper & word, Sustainability. Smaller
+  volumes, on-brand, useful for filling the platform out once the spine
+  is solid. Sustainability has natural cross-references into Garden
+  (composting, greenhouse), Natural home (eco cleaning, plastic-free),
+  and Home & repair (insulation, draft-proofing) — overlap is fine, tag
+  primary + secondary categories on individual tutorials.
+- **Pending decisions:** all open at the time of writing are now
+  locked. Max 20x confirmed. Natural home named. Cooking + Baking
+  split as separate top-level categories. Launch shape "C-ish,
+  feel-based" — the grid is the tracking surface; sequencing happens
+  session-by-session.
 
 ### Pre-launch — image generation pass
 
