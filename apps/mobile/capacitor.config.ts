@@ -17,10 +17,14 @@ const config: CapacitorConfig = {
     url: 'https://homemade.education',
     cleartext: false,
     androidScheme: 'https',
-    // Keep navigation inside the WKWebView for same-origin links. Without
-    // this, every <a href> tap was punting users out to Safari — observed
-    // on the "Already have access? Sign in" link from /coming-soon.
-    allowNavigation: ['homemade.education', '*.homemade.education'],
+    // NOTE: tried `allowNavigation: ['homemade.education',
+    // '*.homemade.education']` to keep same-origin links from punting to
+    // Safari. That setting blanked the WKWebView entirely (page never
+    // rendered) — possibly because Capacitor 8's allowNavigation
+    // implementation also gates the initial server.url load when the
+    // list is non-empty. Removed pending a different approach (probably
+    // setting the right Capacitor server config on the iOS native side,
+    // or handling navigation in JS via window.open intercept).
   },
   ios: {
     contentInset: 'always',
