@@ -1,0 +1,219 @@
+{
+  "slug": "quick-weeknight-lasagne",
+  "title": "Quick weeknight lasagne",
+  "subtitle": "Forty-five minutes from chopping board to table.",
+  "excerpt": "A weeknight lasagne built around passata instead of a three-hour ragù. Browned mince, garlic, herbs, and tomato passata in twenty minutes; a quick all-in-one béchamel; four layers of dried sheets; thirty minutes in a hot oven. Feeds four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The structural reference is the slow version of lasagne alla bolognese (Artusi, 1891) shortened for a weeknight. The weeknight pattern of passata-based meat sauce and an all-in-one béchamel comes from the Anglo-American household-magazine tradition that adapted Italian lasagne to home kitchens in the mid-twentieth century.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 35,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well in portions for up to three months. Cool fully before freezing. Reheat from frozen in a 160°C oven, covered with foil, for forty minutes; uncover for the last ten.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly in a deep 30 by 22 cm tin. Triple-batch needs two trays; one stacked too high gives an under-cooked middle layer.",
+    "makeAheadNotes": "The meat sauce holds for two days in the fridge. The assembled lasagne can sit covered in the fridge for up to twenty-four hours; add ten minutes to the bake time if it goes in cold.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood", "kidFriendly"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven; 220°C conventional",
+    "foundational": false,
+    "leftoverTutorialSlug": "lasagne-alla-bolognese"
+  },
+  "recipeTools": [
+    { "slug": "saute-pan", "isOptional": false, "notes": "Wide pan for browning the mince and building the sauce." },
+    { "slug": "rectangular-baking-tin", "isOptional": false, "notes": "Around 22 by 18 cm and 6 cm deep, for four layers." },
+    { "slug": "small-saucepan", "isOptional": false, "notes": "For the béchamel." },
+    { "slug": "whisk-balloon", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "microplane", "isOptional": false, "notes": "For grating parmesan." },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A weeknight lasagne built around tomato passata rather than a three-hour ragù. Forty-five minutes from chopping board to table, dinner for four, the same comfort as the long version but in a different gear. The slow Bolognese earns its three hours on a Sunday; this earns its forty-five on a Tuesday." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The shortcuts hold up. Passata replaces the slow simmer of stock and wine; the meat sauce thickens in twenty minutes instead of three hours. The béchamel is built all-in-one: cold milk into a roux, then up to the boil whisking the whole time. Four layers of dried sheets, not six. The result is shallower and tomato-led where the proper one is deep and meaty, but it eats well and the kids like it." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Why passata works here",
+          "body": "Tomato passata is sieved raw tomato; it cooks down fast and brings instant savoury depth where a slow ragù relies on long reduction. The trade-off is brightness rather than darkness. A tablespoon of tomato purée stirred in alongside the passata gives the sauce a little more body and rounds the acidity. The kids' version skips the chilli flakes; the adults' keeps them."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-mince", "amount": 500, "unit": "g", "prepNote": "15% fat", "isOptional": false, "groupLabel": "For the meat sauce" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the meat sauce" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the meat sauce" },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the meat sauce" },
+            { "ingredientSlug": "tomato-passata", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the meat sauce" },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the meat sauce" },
+            { "ingredientSlug": "oregano-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the meat sauce" },
+            { "ingredientSlug": "chilli-flakes", "amount": null, "unit": null, "prepNote": "a pinch, optional", "isOptional": true, "groupLabel": "For the meat sauce" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": null, "prepNote": "to season", "isOptional": false, "groupLabel": "For the meat sauce" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "freshly ground", "isOptional": false, "groupLabel": "For the meat sauce" },
+            { "ingredientSlug": "whole-milk", "amount": 500, "unit": "ml", "prepNote": "cold, for the béchamel", "isOptional": false, "groupLabel": "For the béchamel" },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the béchamel" },
+            { "ingredientSlug": "plain-flour", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the béchamel" },
+            { "ingredientSlug": "nutmeg-ground", "amount": null, "unit": null, "prepNote": "a pinch", "isOptional": false, "groupLabel": "For the béchamel" },
+            { "ingredientSlug": "lasagne-sheets", "amount": 9, "unit": "sheet", "prepNote": "dried; no-pre-cook is fine", "isOptional": false, "groupLabel": "For the assembly" },
+            { "ingredientSlug": "mozzarella", "amount": 125, "unit": "g", "prepNote": "torn into pieces", "isOptional": false, "groupLabel": "For the assembly" },
+            { "ingredientSlug": "parmesan", "amount": 50, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": "For the assembly" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A wide sauté pan does the meat sauce in one go. The béchamel needs a small saucepan and a balloon whisk; a flat whisk works too. The bake dish should be deep enough to take four layers without the top sitting proud of the rim." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the mince" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C fan, 220°C conventional. Warm {{olive-oil}} of olive oil in a wide sauté pan over a medium heat. Tip in {{onion}} chopped onion and cook for five minutes until soft. Add {{garlic}} crushed garlic cloves and a pinch of chilli flakes if you want them; cook for thirty seconds. Add {{beef-mince}} of mince, breaking it up with a wooden spoon. Turn the heat up and brown the meat for eight minutes until it's lost its raw colour and the bottom of the pan starts to catch." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stir in {{tomato-puree}} of tomato purée and cook for a minute. Pour in {{tomato-passata}} of passata, add {{oregano-dried}} of dried oregano, and bring to a simmer. Turn the heat to low and let it bubble for ten minutes until the sauce thickens enough to coat the back of a spoon. Season with fine salt and freshly ground black pepper. Taste; passata varies wildly in salt content so adjust." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the all-in-one béchamel" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Put {{unsalted-butter}} of butter, {{plain-flour}} of plain flour, and {{whole-milk}} of cold milk into a small saucepan. Whisk constantly over a medium heat until the butter melts and the sauce starts to thicken. Keep whisking; bring to a gentle boil. The flour cooks out and the sauce thickens to the texture of pourable custard in about six minutes. Add a pinch of ground nutmeg and a pinch of salt. Pull off the heat." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble four layers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Spoon a thin layer of meat sauce across the base of the dish. Cover with a single layer of pasta sheets, breaking to fit. Spoon over a third of the remaining meat sauce, then a quarter of the béchamel, then a scatter of mozzarella. Repeat twice more: pasta, sauce, béchamel, mozzarella. Finish with a fourth layer of pasta, the last quarter of béchamel poured over the top, and the grated parmesan scattered evenly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Slide the dish into the middle of the oven. Bake for twenty-five to thirty minutes until the top is deeply gold and the edges bubble. The pasta sheets should give to a knife slipped in at the centre; if there's resistance, give it five more minutes. Rest for ten minutes before slicing so the layers hold." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "The quick build is forgiving but trips at the same points the long version does: hard pasta, watery base, burnt top.",
+          "items": [
+            { "symptom": "Pasta sheets still firm after baking.", "cause": "Sauces too thick to wet the dried pasta through.", "fix": "Both meat sauce and béchamel should be pourable when you assemble. Loosen the meat sauce with a splash of water and the béchamel with a splash of milk if either has stiffened. No-pre-cook sheets need wetter sauces than the packet implies." },
+            { "symptom": "Watery puddle in the bottom of the dish.", "cause": "Meat sauce finished too wet, or mozzarella released a lot of water.", "fix": "Simmer the meat sauce a few minutes longer next time so it sits on a spoon rather than running off. If using fresh mozzarella di bufala, drain and pat dry first; the firmer block mozzarella is drier and behaves better here." },
+            { "symptom": "Top burnt before the centre was cooked through.", "cause": "Oven too hot or dish too high in the oven.", "fix": "Drop to 180°C fan and slide the dish one rack lower. Cover loosely with foil for the first fifteen minutes, then uncover to brown." },
+            { "symptom": "Slice slips apart on the plate.", "cause": "Didn't rest before slicing.", "fix": "Ten minutes out of the oven before the first cut. Lasagne sets as it cools; that's what gives a clean square. Hot from the oven the layers slide past each other." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A vegetarian version swaps the mince for diced courgette and aubergine, fried hard in olive oil before the onion goes in; the rest of the build holds. For a lighter dish, drop the béchamel and double the mozzarella, layering torn pieces between the sheets. The bake time stays the same." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead, freezing, leftovers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The meat sauce holds two days in the fridge. The assembled, unbaked lasagne keeps a day in the fridge under cling film; add ten minutes to the bake time if it goes in cold. Baked, the lasagne freezes well in portions for three months: reheat from frozen in a 160°C oven for forty minutes covered with foil, then ten minutes uncovered. Leftovers eat well cold the next day, sliced into the lunchbox." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The weeknight lasagne is an Anglo-American adaptation rather than a true Italian dish. It comes from mid-twentieth-century household magazines that took the Bolognese model and shortened every step to fit a weekday kitchen. Passata replaces stock and wine; an all-in-one béchamel replaces the roux-and-warm-milk method; mozzarella appears between layers where the orthodox version has none. The Italian-American baked-ziti tradition cross-fertilised the British weeknight version through the 1970s and 1980s, which is why mozzarella ends up here." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The slow version remains the cornerstone for a Sunday or a dinner party; this one is for a Tuesday with two hungry children and a small window. Both are useful. They sit in different parts of the week." }
+        ]
+      }
+    ]
+  }
+}

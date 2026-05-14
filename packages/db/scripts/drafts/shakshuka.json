@@ -1,0 +1,225 @@
+{
+  "slug": "shakshuka",
+  "title": "Shakshuka",
+  "subtitle": "Eggs poached in a spiced tomato-pepper sauce.",
+  "excerpt": "Eggs cracked into a pan of tomato, red pepper, onion, and cumin and cooked under a lid until the whites set and the yolks stay soft. Twenty-five minutes from cupboard to table. One pan, four eggs, dinner or brunch for two; six eggs and a bigger pan, brunch for four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Shakshuka originates in the Maghreb (Tunisia, Algeria, Libya) and travelled into Israeli cookery via twentieth-century North African Jewish migration, from where it entered the global brunch canon. Pre-1928 cookery books on Maghrebi cuisine in English are thin in the public-domain record, so the recipe here is synthesised rather than cited.\n\nThe egg-cookery temperatures (whites set at around 62°C, yolks still flow up to around 65°C) draw on public-domain US Department of Agriculture extension material on egg safety and cooking.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": "Cooked eggs don't freeze well; the whites turn rubbery. The tomato-pepper sauce alone freezes for three months. Reheat the sauce gently before cracking fresh eggs in.",
+    "batchable": false,
+    "batchNotes": "Best made in the right-sized pan for the number of eggs. Doubling means a wider pan, not a deeper one — the eggs need to sit in a single layer on the sauce.",
+    "makeAheadNotes": "The tomato sauce can be made up to two days ahead and refrigerated. Bring to a simmer in the pan before adding the eggs. The eggs themselves need to be cooked at the moment of serving.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "middleEastern",
+    "mealType": "brunch",
+    "mood": ["weeknight", "brunchy", "comfortFood", "lightAndFresh"],
+    "temperatureCelsius": null,
+    "temperatureNote": "the hob; no oven needed for the stovetop version",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "saute-pan", "isOptional": false, "notes": "Wide 26 cm sauté pan with a fitted lid. Cast iron is right; the heat distribution suits the eggs." },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "tin-opener", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Shakshuka is eggs cracked into a hot pan of spiced tomato and pepper sauce, cooked under a lid until the whites set and the yolks stay soft. Twenty-five minutes from cupboard to table. One wide pan, six eggs, a small handful of fresh herbs at the end, and bread to mop up the sauce." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The dish is a North African export turned global brunch staple. The sauce holds the cooking together: a low simmer, deep enough to half-cover the eggs but loose enough to flow around them. Too dry and the eggs scorch on the base of the pan; too thin and the whites disperse into the sauce instead of setting in clean ovals." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Egg temperatures",
+          "body": "Egg whites set at around 62°C; yolks still flow up to around 65°C. The window between a set white and a still-runny yolk is narrow. The lid traps steam, which carries heat into the upper part of the egg without overcooking the base. Watch for the whites: when they turn opaque and feather slightly at the edges, lift the lid and check. The yolks should still wobble in the centre."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-red", "amount": 1, "unit": "each", "prepNote": "deseeded, sliced thin", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-sweet", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-smoked", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-flakes", "amount": null, "unit": null, "prepNote": "a pinch, to taste", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": "good-quality whole plum, crushed by hand", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": null, "prepNote": "to season", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "freshly ground", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 6, "unit": "each", "prepNote": "large, at room temperature", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "feta", "amount": 100, "unit": "g", "prepNote": "crumbled, to finish", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "coriander", "amount": null, "unit": null, "prepNote": "a small handful, chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": null, "unit": null, "prepNote": "a small handful, chopped", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A wide 26 cm sauté pan with a lid is the only specialist kit. Cast iron holds heat well; a heavy non-stick works too. The pan needs a lid that fits properly; foil over the top is a fine substitute if the lid doesn't seal." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the onion and pepper" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Warm {{olive-oil}} of olive oil in a wide sauté pan over a medium heat. Add {{onion}} chopped onion and {{pepper-red}} sliced red pepper with a pinch of fine salt. Cook for eight minutes, stirring every minute or two, until the onion is soft and the pepper has collapsed and started to colour at the edges." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bloom the spices" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add {{garlic}} sliced garlic cloves, {{cumin-ground}} of cumin, {{paprika-sweet}} of sweet paprika, {{paprika-smoked}} of smoked paprika, and a pinch of chilli flakes if you want heat. Stir for forty seconds; the spices should release their fragrance and look a little darker." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stir in {{tomato-puree}} of tomato purée. Tip in {{tinned-tomatoes}} of tinned tomatoes, crushing the whole plums with the back of the spoon. Half-fill the empty tin with water and add that too. Bring to a simmer and cook for eight minutes, stirring now and then, until the sauce has darkened and thickened to the texture of pourable porridge. Season with fine salt and freshly ground black pepper." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Crack in the eggs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Use the back of the spoon to make six small wells in the sauce. Crack {{eggs}} eggs one at a time into a cup, then tip each into a well. The eggs should sit half-submerged in the sauce, whites and yolks visible above the surface. If the sauce has tightened too much to hold the eggs, splash in a tablespoon of water and stir." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cover and cook" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cover the pan with the lid and cook over a low heat for five to seven minutes. Check at five: the whites should be opaque and set; the yolks should still wobble when the pan is shaken gently. If the whites are still translucent, give them another minute. Don't overcook — set yolks are the line between a proper shakshuka and a tomato omelette." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Take the pan off the heat. Scatter over crumbled feta if using, and a generous handful of chopped coriander and parsley. Take the pan straight to the table; serve scooped out with the eggs onto warm plates, with bread to mop up the sauce." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "Shakshuka mostly trips on the eggs: undercooked whites, overcooked yolks, or whites dispersed into the sauce.",
+          "items": [
+            { "symptom": "Whites still raw and runny when the yolks set.", "cause": "Heat too low or lid not sealing.", "fix": "The lid traps steam, which is what cooks the top of the egg. Check the lid sits flush; if it doesn't, lay a sheet of foil under it to seal the edges. Keep the heat at a steady simmer rather than a flicker." },
+            { "symptom": "Yolks set hard rather than runny.", "cause": "Cooked too long; eggs went into a sauce that was too hot.", "fix": "Five minutes covered, then check. Yolks go from runny to set in seconds; lift the lid early and re-cover if needed. A simmering sauce is right; a hard boil is too hot." },
+            { "symptom": "Whites floated and dispersed across the sauce.", "cause": "Sauce too thin to hold the eggs.", "fix": "Simmer the sauce longer before the eggs go in, until a spoon dragged through leaves a temporary trail. Thin sauce won't support the whites; they spread and overcook." },
+            { "symptom": "Sauce burnt on the base of the pan.", "cause": "Sauce too dry under the heat; eggs taking too long.", "fix": "If you see the sauce darkening too fast at the base, splash in a tablespoon of water and stir before adding the eggs. The covered cook concentrates the sauce; it needs to be just slightly looser than you'd plate up." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Green shakshuka swaps the tomato sauce for a base of sautéed spinach, chard, and leek, with the eggs cooked the same way. A Tunisian version stirs in a spoonful of harissa with the spices for a sharper, hotter dish. For a richer brunch, scatter cubed halloumi over the sauce before the eggs go in; it softens but holds its shape." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead, freezing, leftovers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The sauce can be made two days ahead and refrigerated, or frozen in portions for three months. Bring it to a steady simmer in the pan before cracking in fresh eggs. The eggs themselves want to be cooked just before serving; cooked eggs reheat to a rubbery texture, so leftover portions are best eaten cold the next day on toast." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Shakshuka is a North African dish, with roots in the Maghreb across Tunisia, Algeria, Libya, and Morocco. The name itself is thought to come from a Berber-influenced word meaning a mixture or a stew. It travelled into Israeli cookery through twentieth-century migration from North African Jewish communities, and from there into the global brunch canon over the last twenty years." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "What makes it travel so well is the form: one pan, cupboard ingredients, twenty-five minutes. It works on a Sunday morning for a slow brunch, on a Tuesday evening when the fridge is empty, on a holiday breakfast in the garden. The eggs go on the table with the pan on a trivet, bread torn into the sauce, and the conversation runs as long as the bread does." }
+        ]
+      }
+    ]
+  }
+}

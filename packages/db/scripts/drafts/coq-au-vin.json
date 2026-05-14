@@ -1,0 +1,312 @@
+{
+  "slug": "coq-au-vin",
+  "title": "Coq au vin",
+  "subtitle": "Chicken braised in red wine with lardons and mushrooms.",
+  "excerpt": "Bone-in chicken marinated overnight in red wine, then browned and braised with lardons, button mushrooms, and small whole onions. Three hours from the marinade going on to the dish reaching the table. Better the day after.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903): the codifying source for the classic French version of poulet sauté au vin rouge, the dish that became known popularly as coq au vin. Public domain in most jurisdictions.\n\nThe dish has older peasant origins in Burgundy, the Auvergne, and the Jura; pre-Escoffier recipes appear in regional French cookery books of the late nineteenth century. The use of a tough old cockerel (the coq of the name) marinated and slow-braised to tenderise the meat is the technique those rural recipes pass down.\n\nThe modern home version uses bone-in chicken pieces rather than a whole cockerel, since cockerels of the right age are not generally sold by butchers. The braising time shortens accordingly.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 120,
+    "restingMinutes": 720,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for three months. Cool quickly after cooking and freeze in portions. Reheat from frozen in a low oven, covered, until bubbling at the centre.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly in a 6-litre casserole. Brown the meat in batches, never crowding the pan, or the chicken steams instead of colouring.",
+    "makeAheadNotes": "Coq au vin is better the day after it's cooked. The sauce thickens and deepens overnight in the fridge. Reheat gently on the hob with a splash of water if it has tightened too far. The overnight marinade is the other half of the make-ahead structure.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "comfortFood", "specialOccasion", "dateNight"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "fan oven; 180°C conventional",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false, "notes": "Heavy 5-litre cast-iron casserole. The pan needs to do hob browning and oven braising, so a metal-handled, oven-safe pot is the only option." },
+    { "slug": "mixing-bowl-large", "isOptional": false, "notes": "For marinating the chicken in the fridge overnight." },
+    { "slug": "fine-mesh-sieve", "isOptional": false, "notes": "For straining the marinade." },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false, "notes": "For cooking the garnish: lardons, mushrooms, onions." },
+    { "slug": "tongs", "isOptional": false },
+    { "slug": "kitchen-twine", "isOptional": true, "notes": "For tying the bouquet garni." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "beurre-manie",
+      "term": "Beurre manié",
+      "definition": "A paste of equal weights of soft butter and plain flour worked together with the back of a fork. Whisked into a hot sauce in pinches, it thickens the sauce without the raw-flour taste of a roux. Used to finish coq au vin, boeuf bourguignon, and other red-wine braises where the sauce wants more body at the end."
+    },
+    {
+      "slug": "bouquet-garni",
+      "term": "Bouquet garni",
+      "definition": "A small bundle of aromatic herbs (typically parsley stalks, thyme, and bay) tied with kitchen twine or wrapped in a leek leaf, dropped into a braise or stock to scent the liquid. Removed before serving. The bundle keeps the herbs from getting lost in the sauce, so you can lift them out cleanly at the end."
+    },
+    {
+      "slug": "lardon",
+      "term": "Lardon",
+      "definition": "A thick batton of streaky bacon or pancetta, around 1 cm by 1 cm by 3 cm, fried until the fat renders and the outside is crisp. The base flavour of most French braises. Cut from a single thick slice of bacon rather than the thin supermarket rashers, which dry out before they colour."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Coq au vin is the Burgundian one-pot: chicken pieces marinated overnight in red wine, browned hard, then braised slowly with lardons, button mushrooms, and small whole onions. The sauce reduces and thickens with a knob of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "beurre-manie" } }], "text": "beurre manié" },
+          { "type": "text", "text": " at the end. Three hours of cooking, twelve hours of marinating before that, and the dish is better the day after." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The name says cockerel but no one sells cockerels of the right age, so the modern version uses a good bone-in jointed chicken — thighs and drumsticks for the dark meat braise; breasts left whole on the bone and added halfway so they don't dry out. Bone-in is non-negotiable: the bones release gelatine into the sauce, which is what gives coq au vin its glossy weight." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The wine should be one you would drink. A young Pinot Noir from Burgundy is canonical; any decent red Burgundy, or a Pinot Noir from elsewhere, or a Côtes du Rhône works. Cheap supermarket cooking wine doesn't, because the cook concentrates whatever flavour is there at the start. If the wine tastes thin in the glass, it tastes thinner in the sauce." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "The marinade isn't optional",
+          "body": "Overnight in red wine isn't tradition for its own sake. The wine softens the meat fibres, carries flavour deeper than a surface seasoning can, and concentrates the sauce when the marinade reduces in the pan. Skip the marinade and the dish loses two of the three things that make it itself: the deep wine flavour through the meat and the colour saturation in the sauce. Plan the day before; this is not a Tuesday-night recipe."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "chicken-thigh", "amount": 6, "unit": "each", "prepNote": "bone-in, skin-on", "isOptional": false, "groupLabel": "For the chicken and marinade" },
+            { "ingredientSlug": "chicken-drumsticks", "amount": 4, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "For the chicken and marinade" },
+            { "ingredientSlug": "chicken-breast", "amount": 2, "unit": "each", "prepNote": "bone-in if you can get them; whole, not sliced", "isOptional": false, "groupLabel": "For the chicken and marinade" },
+            { "ingredientSlug": "red-wine", "amount": 750, "unit": "ml", "prepNote": "young Pinot Noir or other decent red", "isOptional": false, "groupLabel": "For the chicken and marinade" },
+            { "ingredientSlug": "brandy", "amount": 50, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the chicken and marinade" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "roughly chopped, for the marinade only", "isOptional": false, "groupLabel": "For the chicken and marinade" },
+            { "ingredientSlug": "carrot", "amount": 1, "unit": "each", "prepNote": "roughly chopped, for the marinade only", "isOptional": false, "groupLabel": "For the chicken and marinade" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the chicken and marinade" },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the chicken and marinade" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the chicken and marinade" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "a teaspoon of cracked peppercorns", "isOptional": false, "groupLabel": "For the chicken and marinade" },
+            { "ingredientSlug": "streaky-bacon", "amount": 200, "unit": "g", "prepNote": "thick-cut, in one piece if possible; cut into 1 cm lardons", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "plain-flour", "amount": 2, "unit": "tbsp", "prepNote": "for dusting the chicken before browning", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "stock-chicken", "amount": 250, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": null, "prepNote": "to season", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "shallot", "amount": 300, "unit": "g", "prepNote": "small ones, peeled and left whole; pearl onions if you can find them", "isOptional": false, "groupLabel": "For the garnish" },
+            { "ingredientSlug": "mushrooms-button", "amount": 250, "unit": "g", "prepNote": "small, left whole; halve any larger ones", "isOptional": false, "groupLabel": "For the garnish" },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the garnish" },
+            { "ingredientSlug": "granulated-sugar", "amount": 1, "unit": "tsp", "prepNote": "for the onions", "isOptional": false, "groupLabel": "For the garnish" },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "soft, for the beurre manié", "isOptional": false, "groupLabel": "For finishing" },
+            { "ingredientSlug": "plain-flour", "amount": 30, "unit": "g", "prepNote": "for the beurre manié", "isOptional": false, "groupLabel": "For finishing" },
+            { "ingredientSlug": "parsley-flat", "amount": null, "unit": null, "prepNote": "a small handful, finely chopped, to scatter at the end", "isOptional": false, "groupLabel": "For finishing" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A heavy 5-litre cast-iron casserole is the central piece of kit, since the same pan does the browning on the hob and the braising in the oven. A separate frying pan handles the garnish. Tongs help when turning the chicken pieces in the hot pan; a wooden spoon does the rest." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Marinate overnight" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Put the chicken thighs, drumsticks, and breasts in a large bowl. Pour over {{red-wine}} of red wine and {{brandy}} of brandy. Add the roughly chopped {{onion}}, the roughly chopped {{carrot}}, {{garlic}} crushed garlic cloves, {{thyme}} sprigs of thyme, {{bay-leaves}} bay leaves, and a teaspoon of cracked black peppercorns. Turn the chicken to coat it in the marinade. Cover and refrigerate for twelve hours, overnight." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Strain and reduce the marinade" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the chicken out of the marinade onto a tray lined with kitchen paper. Pat the pieces dry; wet meat doesn't brown. Strain the marinade through a fine-mesh sieve into a small saucepan; keep the wine, discard the spent vegetables. Bring the strained wine to a vigorous simmer and reduce by a third, around eight minutes. Skim off any grey scum that rises to the surface; it carries off-flavours." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Render the lardons" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "While the wine reduces, heat the cast-iron casserole over a medium heat. Tip in {{streaky-bacon}} of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lardon" } }], "text": "lardons" },
+          { "type": "text", "text": " and cook for eight minutes until the fat runs and the outsides are crisp and gold. Lift the lardons out with a slotted spoon onto a plate, leaving the rendered fat in the pan." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the chicken" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add {{olive-oil}} of olive oil to the bacon fat in the pan. Heat the oven to 160°C fan, 180°C conventional. Season the chicken pieces with fine salt and dust lightly with {{plain-flour}} of plain flour. Brown the pieces, skin-side down first, in two or three batches, without crowding the pan; six minutes a side gives a deep colour. As each batch finishes, lift it out onto the lardon plate. Crowd the pan and the chicken steams instead of browning." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the braise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drain off most of the fat in the pan, leaving a film. Stir in {{tomato-puree}} of tomato purée and cook for a minute. Pour in the reduced wine, scraping the base of the pan to lift the brown crust. Add {{stock-chicken}} of chicken stock, the browned thighs and drumsticks, and the lardons. The breasts stay aside for now. The liquid should come about two-thirds of the way up the chicken; if it doesn't, add a little more stock." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bring to a simmer on the hob. Cover the casserole and slide it into the oven for fifty minutes. After fifty minutes, add the browned chicken breasts on top of the dark meat and return to the oven for a further thirty minutes, covered. The dark meat takes longer than the white meat; this staggered braise stops the breasts drying out." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the garnish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "While the chicken braises, heat a frying pan over a medium heat. Melt half of {{unsalted-butter}} of butter for the garnish. Add the peeled whole {{shallot}} of small shallots, {{granulated-sugar}} of sugar, and a pinch of salt. Cook for fifteen minutes, turning the onions every few minutes, until they're tender and gold all over. Lift them out onto a plate." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add the rest of the butter to the same pan. Tip in {{mushrooms-button}} of button mushrooms with a pinch of salt and cook over a high heat for six minutes, stirring, until the mushrooms are coloured and have given up their water. Pull off the heat." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the chicken pieces out of the braise onto a warm plate. Tip the cooked onions and mushrooms into the casserole. Bring the sauce to a simmer on the hob. Mash together {{unsalted-butter}} of soft butter and {{plain-flour}} of plain flour with the back of a fork to make a smooth paste — beurre manié. Whisk pinches of the paste into the simmering sauce, one at a time, until the sauce coats the back of a spoon. Slip the chicken back into the casserole, basting each piece with the thickened sauce. Taste; season with salt if it needs it." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Scatter with chopped flat-leaf parsley. Serve straight from the casserole on the table, with mashed potatoes or buttered noodles to take the sauce." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "Coq au vin trips at three points: dry breast meat, thin sauce, and grey wine flavour from a poor bottle. Most problems trace back to one of those.",
+          "items": [
+            { "symptom": "Breast meat dry and stringy.", "cause": "Breasts added to the pot at the start, not halfway.", "fix": "Brown the breasts at the same time as the dark meat, then set them aside and only add them to the braise for the last thirty minutes. The dark meat needs the full braise; the white meat doesn't." },
+            { "symptom": "Sauce thin and pale after the braise.", "cause": "Marinade not reduced enough, or beurre manié skipped.", "fix": "Reduce the strained wine by a full third before it goes back in; this is what gives the sauce body and colour. The beurre manié at the end isn't optional; whisk in pinches until the sauce sits on the spoon." },
+            { "symptom": "Sauce harsh, with a metallic edge.", "cause": "Wine too cheap, or skin from the marinade not skimmed.", "fix": "The wine concentrates as it cooks. A bottle that tastes thin and acidic in the glass tastes thin and acidic in the sauce. Skim the marinade when it simmers; the grey scum carries off-flavours." },
+            { "symptom": "Garnish onions or mushrooms swimming in liquid.", "cause": "Cooked over a heat too low, or added straight into the braise.", "fix": "Cook the garnish in a separate pan, hot enough to colour rather than steam. Adding them to the casserole only at the end keeps their texture distinct from the chicken." },
+            { "symptom": "Chicken pieces fell apart in the pan.", "cause": "Cooked too long, or moved around too much.", "fix": "Eighty minutes total in the oven is the upper limit for thighs; longer and the meat collapses off the bone. Don't stir the braise; let it sit. If the pieces have to move, use tongs gently." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Coq au vin jaune is the Jura version, made with the local white vin jaune and finished with morels in place of button mushrooms. It's a different dish in colour and weight, paler and more elegant; the same method otherwise. Coq au Riesling uses Alsatian dry Riesling; lighter again. The red-wine Burgundian version is the one most people mean by coq au vin." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead, freezing, leftovers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Coq au vin is better the day after. Cook the full recipe a day ahead, cool quickly, and refrigerate overnight. Reheat gently on the hob, covered, with a splash of water if the sauce has tightened. The overnight rest lets the flavours marry and the sauce thicken naturally; a fresh-made version always tastes a little raw by comparison." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Frozen, the dish keeps three months in airtight tubs. Reheat from frozen in a low oven, covered, until bubbling at the centre. The leftovers shred into pasta, fold into a pie under puff pastry, or sit on a slice of toasted sourdough for lunch the next day." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Coq au vin began as a peasant solution to the toughness of an old cockerel. A bird past its laying years was killed for the pot; the meat was stringy and dense, so the cook marinated it in wine and braised it slowly until the fibres broke down. The Burgundy version, using Pinot Noir, became the canonical one. Auguste Escoffier formalised the recipe in Le Guide Culinaire in 1903 under the name poulet sauté au vin rouge." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The popular name coq au vin took over by the mid-twentieth century, helped along by Julia Child's televised cookery in the early 1960s, which introduced the dish to American home kitchens. The cockerel itself disappeared from the recipe along the way: butchers don't stock old cockerels, so a good bone-in jointed chicken takes its place. The braise time shortens; everything else holds." }
+        ]
+      },
+      {
+        "type": "pullQuote",
+        "attrs": {
+          "quote": "La cuisine, c'est quand les choses ont le goût de ce qu'elles sont.",
+          "attribution": "Curnonsky, prince of gastronomes, attributed (late nineteenth century)"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The dish is associated above all with Burgundy, where the wine, the chicken, and the cuisine all meet. A dinner of coq au vin with mashed potatoes and the rest of the bottle of red on the table is what the French call a bistro classic for a reason: it is the food of a small restaurant table, made for company, made for autumn, made the day before." }
+        ]
+      }
+    ]
+  }
+}

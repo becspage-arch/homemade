@@ -1,0 +1,232 @@
+{
+  "slug": "buttermilk-pancakes",
+  "title": "Buttermilk pancakes",
+  "subtitle": "Tall, fluffy, ready in twenty-five minutes.",
+  "excerpt": "American-style breakfast pancakes leavened by the reaction between bicarbonate of soda and buttermilk. Twenty-five minutes from bowl to plate. A batter that rests for ten minutes, a hot pan, butter and maple syrup at the table. Feeds four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Fannie Farmer, Boston Cooking-School Cook Book (1896): the late-Victorian American source that codified standardised cup measures and gave a clean buttermilk-pancake template. Public domain via Project Gutenberg.\n\nMarion Harland, Common Sense in the Household (1871): earlier American household manual with multiple pancake recipes, including the buttermilk-and-bicarb leavening pattern that defines the modern version.\n\nThe science of the bicarb-and-acid reaction comes from public-domain food chemistry papers and US Department of Agriculture extension service material.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": "about 12 pancakes, 10 cm across",
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Cooked pancakes freeze well, layered between baking paper, for two months. Reheat from frozen in a toaster on a medium setting or in a 180°C oven for five minutes.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly. Hold cooked pancakes in a 100°C oven on a wire rack to keep crisp while the rest cook.",
+    "makeAheadNotes": "The batter is best made fresh — the bicarb starts reacting with the buttermilk the moment they meet, and the lift fades after about thirty minutes. Dry ingredients can be measured and mixed the night before; the wet ones come together when the pan goes on.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "american",
+    "mealType": "breakfast",
+    "mood": ["weeknight", "brunchy", "kidFriendly", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "mixing-bowl-large", "isOptional": false, "notes": "For the wet ingredients." },
+    { "slug": "mixing-bowl-medium", "isOptional": false, "notes": "For the dry ingredients." },
+    { "slug": "whisk-balloon", "isOptional": false },
+    { "slug": "small-frying-pan", "isOptional": false, "notes": "20 cm non-stick or well-seasoned cast iron. Two pans speed the cook." },
+    { "slug": "fish-slice", "isOptional": false, "notes": "Or any thin flat turner for flipping." },
+    { "slug": "measuring-jug", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": true, "notes": "For holding cooked pancakes crisp in a low oven." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "buttermilk-substitute",
+      "term": "Buttermilk substitute",
+      "definition": "If buttermilk isn't to hand, stir a tablespoon of lemon juice or white vinegar into 300 ml of whole milk and leave for ten minutes. The milk thickens and turns faintly tangy. It isn't a perfect substitute (real buttermilk is thicker and more complex) but it provides the acid that the bicarbonate needs to fizz."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "American buttermilk pancakes are taller and fluffier than the British pancake-day crêpe; the lift comes from a fizz reaction between bicarbonate of soda and the acidity in buttermilk. The batter is thick, like double cream that almost holds its shape. A hot pan, a small ladle, and ninety seconds a side gives twelve pancakes in twenty-five minutes." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two technical things make or break the batter. First, don't over-mix: a few floury streaks left in the bowl are normal. Over-mixing develops gluten and gives a tough, chewy pancake. Second, rest the batter for ten minutes after mixing; the flour hydrates and the bicarb begins its fizz, so the first pancake into the pan is already aerated." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Buttermilk is the right ingredient if you have it; it brings tang as well as acid. If you don't, the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "buttermilk-substitute" } }], "text": "buttermilk substitute" },
+          { "type": "text", "text": " of milk with a splash of lemon juice gets you most of the way there. Plain milk on its own won't work — no acid means no fizz from the bicarb, and the pancakes come out flat and dense." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Why the pan matters",
+          "body": "Pancakes want a pan that's hot but not screaming. Test it: flick a few drops of water onto the surface. If the drops bead and skitter for a second before evaporating, the pan is right. If they sizzle off instantly, it's too hot and the outside burns before the middle sets. If they pool and steam, it's too cold and the pancakes spread thin. Adjust the burner and test again."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dry" },
+            { "ingredientSlug": "caster-sugar", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dry" },
+            { "ingredientSlug": "baking-powder", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dry" },
+            { "ingredientSlug": "bicarbonate-of-soda", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dry" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": null, "prepNote": "a generous pinch", "isOptional": false, "groupLabel": "Dry" },
+            { "ingredientSlug": "buttermilk", "amount": 400, "unit": "ml", "prepNote": "or 400 ml whole milk plus 1 tbsp lemon juice", "isOptional": false, "groupLabel": "Wet" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "large, lightly beaten", "isOptional": false, "groupLabel": "Wet" },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": "melted and slightly cooled", "isOptional": false, "groupLabel": "Wet" },
+            { "ingredientSlug": "vanilla-extract", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": "Wet" },
+            { "ingredientSlug": "unsalted-butter", "amount": null, "unit": null, "prepNote": "for greasing the pan", "isOptional": false, "groupLabel": "For cooking" },
+            { "ingredientSlug": "maple-syrup", "amount": null, "unit": null, "prepNote": "for the table", "isOptional": false, "groupLabel": "To serve" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two small frying pans cook the batch twice as fast as one; a 20 cm non-stick or well-seasoned cast iron is right. A thin flat fish slice is the only flipping tool that really works. A wire rack in a 100°C oven holds the cooked pancakes crisp while the rest cook." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the dry ingredients" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Whisk together {{plain-flour}} of plain flour, {{caster-sugar}} of caster sugar, {{baking-powder}} of baking powder, {{bicarbonate-of-soda}} of bicarbonate of soda, and a generous pinch of fine salt in a medium bowl. Whisking the dry ingredients first distributes the raising agents evenly, so the batter rises uniformly across the pancake instead of in patches." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the wet ingredients" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In a separate larger bowl, whisk {{eggs}} eggs into {{buttermilk}} of buttermilk. Pour in {{unsalted-butter}} of melted butter (cooled to not-quite-warm, or the eggs scramble) and {{vanilla-extract}} of vanilla extract if using." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Combine and rest" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tip the dry mix into the wet bowl all at once. Fold together with a few turns of a wooden spoon or spatula; stop when there is no visible dry flour but a few small lumps and floury streaks remain. Over-folding develops gluten and gives a tough pancake. Leave the batter to rest for ten minutes, uncovered, on the worktop while you heat the pan." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the pancakes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the pan over a medium heat for two minutes. Test with a flick of water; it should bead and skitter for a second before evaporating. Rub the pan with a knob of butter on a piece of kitchen paper to grease it lightly. Spoon in a small ladleful of batter, about 60 ml, and let it spread into a 10 cm round. Cook for ninety seconds: the underside should turn deep gold and the surface should fill with bubbles that pop and stay popped." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Slide the fish slice under the pancake and flip in one quick motion. Cook the second side for sixty seconds; it cooks faster than the first, since the heat has already started working from above. Lift onto a wire rack in a low oven to keep crisp while you cook the rest. Re-butter the pan lightly between pancakes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Serve straight away" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stack three or four pancakes on each plate, top with a small knob of butter, and pour over maple syrup. Pancakes go from peak to past-peak fast; they want to be eaten in the ten minutes after cooking, not the hour after." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "Most pancake problems trace back to one of three things: the batter, the pan temperature, or the flip.",
+          "items": [
+            { "symptom": "Pancakes flat and dense, no rise.", "cause": "Bicarbonate of soda gone stale, or batter sat too long.", "fix": "Bicarbonate of soda loses its fizz after about six months in an opened tub. Drop a spoonful into a glass of vinegar; if it fizzes hard, it's still active. If it just dissolves quietly, replace. Cook the batter within thirty minutes of mixing; longer and the rise fades." },
+            { "symptom": "Pancakes pale and floury, undercooked in the middle.", "cause": "Pan not hot enough, or pancake too thick.", "fix": "Heat the pan longer before the first pancake goes in. The water-flick test is the most reliable check. If the batter is too thick to spread on its own, thin it with a tablespoon of milk; the pancake should be 1 cm thick at most." },
+            { "symptom": "Outside burnt, middle raw.", "cause": "Pan too hot.", "fix": "Drop the heat to medium-low and let the pan cool for a minute. A second test flick of water should bead and skitter rather than vanish instantly. The cook time goes up to two minutes a side at the lower heat, which is what you want for tall pancakes." },
+            { "symptom": "Pancakes stuck to the pan on the flip.", "cause": "Flipped too early, before the underside set.", "fix": "The bubbles on the top surface are the cue. Wait until most of them have popped and the holes stay open; only then will the pancake release cleanly. Forcing the flip before the underside sets tears the batter." },
+            { "symptom": "Pancakes tough and chewy.", "cause": "Over-mixed batter.", "fix": "A few small lumps and floury streaks are right. As soon as the dry and wet meet, fold gently and stop early. Mixing past that point develops gluten, which gives a chewy texture." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Blueberry pancakes: scatter a small handful of fresh or frozen blueberries onto the wet surface of each pancake just after it hits the pan, before flipping. Banana pancakes: mash a small banana and fold it into the batter. American-diner-style: add a teaspoon of melted bacon fat to the wet ingredients in place of some of the butter; the flavour shifts savoury without crossing the line." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead, freezing, leftovers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The batter wants to be made fresh; bicarb starts reacting with the buttermilk the moment they meet and the lift fades after thirty minutes. Dry ingredients can be measured the night before. Cooked pancakes freeze well, layered between baking paper, for two months. Reheat from frozen in the toaster on a medium setting or in a 180°C oven for five minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The tall buttermilk pancake is American by adoption and English by parentage. Eighteenth-century English griddle cakes leavened with hartshorn or pearl-ash were the colonial ancestor; nineteenth-century American household manuals (Marion Harland's 1871 Common Sense in the Household, Fannie Farmer's 1896 Boston Cooking-School Cook Book) settled the modern pattern of buttermilk and bicarbonate." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The dish belongs to the American weekend breakfast: tall stacks, a knob of butter sliding down the side, maple syrup pooled around the base, bacon on the side. British pancake day (Shrove Tuesday) is a different tradition entirely, with thin crêpe-style pancakes rolled with lemon and sugar; the American buttermilk pancake earned its own slot on the British breakfast table only in the last twenty years, mostly through brunch culture and American-style diners." }
+        ]
+      }
+    ]
+  }
+}

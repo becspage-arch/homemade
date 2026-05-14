@@ -1042,13 +1042,15 @@ drafting worker reads, not a separate process.
 
 **Out.** Style-rule tuning beyond the locked Section 6b rules.
 
-### Step 10 — Pilot batch of 10 recipes
+### Step 10 — Pilot batch of 10 recipes ✅ landed 2026-05-14
 
 **Goal.** Draft 10 recipes from `docs/recipe-backlog.md` to test the whole pipeline.
 
 **Deliverable.** 10 Tutorial rows of type RECIPE. Mix of cuisines and difficulty (Italian × 2, British × 2, French × 1, American × 1, Indian-Anglo × 1, Mediterranean × 1, air fryer × 1, slow cooker × 1). Each ran through the bot-editor + voice-check. Uploaded as DRAFT.
 
 **Out.** Image generation (heroes attach later).
+
+**Landed.** 10 RECIPE drafts in production DB, status DRAFT: lasagne-alla-bolognese, quick-weeknight-lasagne, roast-chicken-sunday, piccalilli, coq-au-vin, buttermilk-pancakes, chicken-tikka-masala, shakshuka, air-fryer-chicken-thighs, slow-cooker-pulled-pork. Voice-check passed within 1 retry on all 10 (3 clean first pass, 7 with one retry; zero failed all 3 attempts). 13 new GlossaryTerm rows landed via the upload script. Zero new ingredients needed; the Step 4 master list covered everything. Briefs at `docs/pilot-10-briefs/`, full upload JSON at `packages/db/scripts/drafts/`, report at `docs/pilot-10-report.md`. Patterns for Step 11 prompt-refinement: em-dash overuse (most common failure), "honest" as a softener, tricolons in intros/conclusions.
 
 ### Step 11 — Pilot batch of 50
 

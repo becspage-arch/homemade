@@ -1,0 +1,294 @@
+{
+  "slug": "lasagne-alla-bolognese",
+  "title": "Lasagne alla bolognese",
+  "subtitle": "Slow ragù, thin béchamel, six layers of pasta.",
+  "excerpt": "The Bolognese classic: a slow-built meat ragù, a light pourable béchamel, six layers of fresh or dried pasta with grated parmesan between each. Four hours from chopping board to table. Better the day after.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": "YEAR_ROUND",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Pellegrino Artusi, La Scienza in Cucina e l'Arte di Mangiar Bene (1891), recipe 87 (Maccheroni alla bolognese): the foundational nineteenth-century Italian source for the meat sauce the modern lasagne draws on. Artusi's ragù uses veal with dried mushrooms and a finish of cream; the modern recipe shifted to beef-and-pork with a milk finish over the early twentieth century.\n\nThe Accademia Italiana della Cucina deposited a canonical ragù alla bolognese ratio at the Bologna chamber of commerce in 1982; useful as a reference for meat-to-aromatic proportions, though not a public-domain source to quote.\n\nLasagne assembly conventions (thin béchamel, six layers, parmesan between each) are drawn from the published technique of Bolognese trattorie active in the early twentieth century.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 45,
+    "cookMinutes": 210,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well in slices for up to three months. Wrap each slice in baking paper then foil. Reheat from frozen in a 160°C oven, covered with foil, for forty minutes; uncover for the last ten to crisp the top.",
+    "batchable": true,
+    "batchNotes": "The ragù scales linearly and doubles or triples in a wide stockpot. Build the lasagne in two trays if you scale up, since stacking the sheets too high gives an undercooked middle layer.",
+    "makeAheadNotes": "The ragù is better made a day ahead and refrigerated. Make the béchamel an hour before assembly so it stays pourable. The assembled lasagne can sit covered in the fridge for up to twenty-four hours before baking; add ten minutes to the oven time if it goes in cold.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "comfortFood", "specialOccasion"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "fan oven; 200°C conventional",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false, "notes": "Heavy 4-litre casserole for the ragù. A thin-base saucepan will scorch the milk." },
+    { "slug": "rectangular-baking-tin", "isOptional": false, "notes": "About 30 by 22 cm and at least 6 cm deep, for six layers." },
+    { "slug": "medium-saucepan", "isOptional": false, "notes": "For the béchamel." },
+    { "slug": "whisk-balloon", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "microplane", "isOptional": false, "notes": "For grating parmesan finely so it melts cleanly into the layers." },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "soffritto",
+      "term": "Soffritto",
+      "definition": "The Italian aromatic base of finely chopped onion, carrot, and celery sweated in fat. The foundation of most braises, stews, and ragù. Cook it slowly — twenty minutes minimum — until the onion is translucent and sweet, never coloured."
+    },
+    {
+      "slug": "bechamel",
+      "term": "Béchamel",
+      "definition": "A white sauce made by whisking hot milk into a butter-and-flour roux. One of the French mother sauces; in Italian cookery it binds baked pasta dishes like lasagne and cannelloni. For lasagne, the béchamel should be pourable, not thick — about the consistency of single cream."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Proper lasagne alla bolognese is the long version. A meat ragù that simmers for three hours, a béchamel made fresh, six layers of pasta with grated parmesan between each. Four hours of work from chopping board to oven, and the lasagne is better the day after." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "What makes it lasagne rather than baked pasta with meat sauce is the build. The ragù is loose and savoury, not thick or tomato-heavy. The béchamel is thin enough to pour, so it slips between the sheets rather than sitting in pockets. Parmesan goes between every layer, not just on top. Six layers minimum gives you the stripe of meat-and-pasta the slice should show on a plate." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The standard Bolognese ragù is a mix of beef and pork minced together with diced pancetta, built on a slow " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "soffritto" } }], "text": "soffritto" },
+          { "type": "text", "text": ", deglazed with dry red wine, then loosened with stock and finished with milk. Tomato is present but restrained: two tablespoons of purée, not a tin of chopped tomatoes. The milk softens the meat and rounds the acidity of the wine." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Why the ragù needs three hours",
+          "body": "Mince gives up its water fast and toughens if you stop cooking too early. The first hour of simmer breaks the protein fibres back down; the second concentrates the wine and stock into a glaze; the third pulls everything together into the loose, dark sauce the lasagne needs. You can cut to two hours if you're pushed, but the texture stops short of where it wants to go. The ragù costs almost no attention after the first twenty minutes — set the heat low, set a timer, walk away."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "beef-mince", "amount": 400, "unit": "g", "prepNote": "15% fat, not lean", "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "pork-mince", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "pancetta", "amount": 100, "unit": "g", "prepNote": "diced small", "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "carrot", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "sticks, finely chopped", "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "extra-virgin-olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": "double-concentrate", "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "red-wine", "amount": 250, "unit": "ml", "prepNote": "dry; a young Sangiovese is right", "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "stock-beef", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "whole-milk", "amount": 300, "unit": "ml", "prepNote": "for the ragù finish", "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "nutmeg-ground", "amount": null, "unit": null, "prepNote": "a pinch", "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": null, "prepNote": "to taste", "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "freshly ground", "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "whole-milk", "amount": 1000, "unit": "ml", "prepNote": "for the béchamel", "isOptional": false, "groupLabel": "For the béchamel" },
+            { "ingredientSlug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": "for the béchamel roux", "isOptional": false, "groupLabel": "For the béchamel" },
+            { "ingredientSlug": "plain-flour", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the béchamel" },
+            { "ingredientSlug": "lasagne-sheets", "amount": 14, "unit": "sheet", "prepNote": "dried egg sheets; soak briefly if the packet calls for it", "isOptional": false, "groupLabel": "For the assembly" },
+            { "ingredientSlug": "parmesan", "amount": 150, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": "For the assembly" },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "for dotting the top layer", "isOptional": false, "groupLabel": "For the assembly" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pick a heavy casserole at least four litres for the ragù; a thin saucepan will scorch the milk in the finish. The assembly tin should be rectangular, around 30 by 22 cm, and at least 6 cm deep so six layers fit without the top sitting proud of the rim. A balloon whisk and a wooden spoon are the only specialist kit you need." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the soffritto" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Warm {{extra-virgin-olive-oil}} of olive oil in a heavy four-litre casserole over a low heat. Tip in {{pancetta}} of diced pancetta and let it render slowly for five minutes until the fat runs. Add {{onion}} chopped onion, {{carrot}} chopped carrot, and {{celery}} sticks of chopped celery. Cook on a low heat for twenty minutes, stirring now and then. The soffritto should turn soft and golden, never brown. If it colours, the heat is too high." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the meat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Turn the heat up to medium. Add {{beef-mince}} of beef mince and {{pork-mince}} of pork mince, breaking the meat up with a wooden spoon. Don't crowd it: the pan needs to dry-fry the meat, not boil it. Stir for ten minutes until the mince has lost its raw colour and the liquid has cooked off. You want the bottom of the pan to start showing a brown crust." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Deglaze with wine, then start the simmer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stir in {{tomato-puree}} of tomato purée and cook for a minute to take the raw edge off. Pour in {{red-wine}} of dry red wine, scraping up any brown stuck to the base of the pan. Let the wine bubble down for five minutes until the smell of alcohol burns off. Pour in {{stock-beef}} of beef stock and tuck in {{bay-leaves}} bay leaves. Bring to a gentle simmer, then turn the heat to the lowest setting. Cover with the lid half-on and leave to cook for two hours, stirring every twenty minutes or so." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish with milk" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After two hours the ragù should be dark, with the meat surrounded by a glossy sauce. Pour in {{whole-milk}} of whole milk and add a pinch of ground nutmeg. Simmer uncovered for a further hour, stirring more often as it thickens. The finished ragù is the texture of porridge, the colour of dark mahogany. Season with fine salt and freshly ground black pepper. Fish out the bay leaves." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the béchamel" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Warm {{whole-milk}} of milk in a small saucepan until just steaming, not boiling. In a separate medium saucepan, melt {{unsalted-butter}} of butter over a low heat. Tip in {{plain-flour}} of plain flour and whisk to a paste. Cook the roux gently for two minutes, whisking, until it smells of biscuit. Pour in the warm milk a third at a time, whisking after each addition until smooth. Bring to a bare simmer, whisking, and cook for five minutes until the sauce coats the back of a spoon but still flows freely off a ladle. Season with a pinch of fine salt and a pinch of ground nutmeg. The béchamel should be pourable; if it sets thick on standing, loosen with a splash of warm milk before assembly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble the lasagne" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 180°C fan, 200°C conventional. Spoon two ladles of ragù across the base of the tin and spread it thin. Lay sheets of pasta across the ragù in a single layer, breaking sheets to fit corners. Spoon over three or four ladles of ragù, then four ladles of béchamel, then a generous handful of grated parmesan. Repeat: pasta, ragù, béchamel, parmesan. Build six layers. The top layer is béchamel and parmesan only, with no ragù under it, so the surface bakes to a clean gold. Dot the top with {{unsalted-butter}} of butter cut into small pieces." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake until the edges bubble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Slide the tin into the middle of the oven. Bake for thirty minutes until the top is deeply gold and the edges bubble gently. The béchamel should puff and brown in patches; the pasta should be tender all the way through when a knife slips in at the centre. If the top browns too fast, slide a sheet of foil loosely over it for the last ten minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rest, then slice" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the tin out and rest the lasagne for fifteen minutes before slicing. Hot from the oven, the layers slide; rested, they hold a sharp square. Cut with a serrated knife and lift each slice out with a fish slice. Serve plain or with a small leaf salad dressed in lemon and oil; nothing else is needed." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "Most failures with lasagne trace back to a too-thick béchamel, too-thick ragù, or under-baked centre. The fixes are usually about loosening the sauces and giving the oven more time.",
+          "items": [
+            { "symptom": "Slice falls apart on the plate, layers slide around.", "cause": "Didn't rest before slicing.", "fix": "Lasagne needs at least fifteen minutes out of the oven before the first cut. The béchamel sets as it cools and that's what holds the slice square. If you cut straight from the oven the layers slip past each other." },
+            { "symptom": "Pasta sheets crunchy in the centre after baking.", "cause": "Sauces too thick; pasta didn't get enough moisture.", "fix": "Loosen the ragù with a splash of stock and the béchamel with a splash of milk before assembly. Both should pour off a ladle, not plop. Dried lasagne sheets in particular need wetter sauces around them than the packet often implies." },
+            { "symptom": "Top burnt, middle still cool.", "cause": "Oven too hot or tin too high in the oven.", "fix": "Drop the temperature to 170°C fan and slide the tin one rack lower. Cover the top loosely with foil. Give it another fifteen minutes, then check the centre with a thin knife — it should slip through with no resistance." },
+            { "symptom": "Ragù tastes flat after three hours.", "cause": "Under-seasoned; not enough salt added during the simmer.", "fix": "Salt the ragù in stages: a pinch when the soffritto goes in, another pinch with the meat, another pinch after the milk. Taste at the two-hour mark and adjust. A long simmer needs more salt than a short one, because the volume reduces and concentrates." },
+            { "symptom": "Watery puddle at the base of the tin after baking.", "cause": "Ragù finished too wet, or béchamel too thin.", "fix": "The ragù should look like thick porridge when you stop cooking it. If it's still slack, simmer uncovered for another twenty minutes. The béchamel should pour off a ladle in a steady stream, not a flood. Both adjust on the hob before assembly." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lasagne verdi uses green spinach pasta in place of plain egg sheets, which gives the layers a soft chlorophyll note that suits the heavy ragù well. A vegetarian version swaps the meat ragù for a sauce of porcini, chestnut mushrooms, and lentils built on the same soffritto: brown the mushrooms hard first, deglaze with white wine instead of red, then add cooked puy lentils and a tin of tomatoes. The béchamel and the assembly stay the same." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead, freezing, leftovers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The ragù is better the day after it's made. Cook it ahead, cool quickly, and store in the fridge for up to three days or in the freezer for three months. Reheat gently before assembly. The béchamel is best made fresh the same day it's used; it can sit on the side of the hob for an hour, covered, with the surface filmed by a piece of greaseproof paper to stop a skin forming." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Assembled lasagne can wait covered in the fridge for up to twenty-four hours before going into the oven; add ten minutes to the bake time if it goes in cold. Cooked lasagne freezes well in slices: wrap in baking paper then foil, keep three months, reheat from frozen in a 160°C oven for forty minutes with foil on top, then ten minutes uncovered." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lasagne alla bolognese is the canonical dish of Emilia-Romagna, the broad-shouldered region between Modena and Bologna that gave the world prosciutto di Parma, parmigiano-reggiano, and the bolognese ragù that defines this lasagne. Pellegrino Artusi's 1891 La Scienza in Cucina e l'Arte di Mangiar Bene includes a Bolognese-style meat sauce for macaroni — recipe 87, the foundation document for what later became the official Accademia ratio." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Artusi's version differs from the modern one in three respects: he uses veal where the modern recipe uses beef and pork; he includes dried mushrooms which the modern recipe drops; and he finishes with cream rather than milk. The migration to beef-and-pork and the milk finish settled in the early twentieth century, formalised by the Accademia Italiana della Cucina in 1982 in a deposited recipe that names the cuts, the ratios, and the cooking time." }
+        ]
+      },
+      {
+        "type": "pullQuote",
+        "attrs": {
+          "quote": "La cucina è una bricconcella; spesso e volentieri fa disperare, ma dà anche piacere, perché quando si riesce o si supera una difficoltà, si prova soddisfazione e si canta vittoria.",
+          "attribution": "Pellegrino Artusi, La Scienza in Cucina e l'Arte di Mangiar Bene (1891)"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "What separates Bolognese lasagne from the Anglo-American baked-pasta tradition is restraint. There is no ricotta; there is no mozzarella; there is no thick tomato sauce. The richness sits in the meat, the milk, the butter, and the parmesan. Each layer is thinner than the slice that arrives on the plate suggests. The dish reads savoury and dark rather than gloopy and red, and the pleasure of cutting into a properly built one is the stripe in the cross-section: six bands of pasta separated by five bands of dark ragù bound with pale béchamel." }
+        ]
+      }
+    ]
+  }
+}
