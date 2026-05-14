@@ -1214,6 +1214,80 @@ worker session picks it up.
 - Image generation (deferred until pre-launch budget).
 - Tester-user review (Phase 6 work; not in scope yet).
 
+### Step 13 — Mindset pipeline scaffold ✅ landed 2026-05-14
+
+**Goal.** Open the second category in the multi-category fill plan. Get
+the Mindset schema, library taxonomy, plan-generator tables, and
+backlog into the repo so subsequent Mindset sessions (authoring prompt
+template → voice-check extension → anchor batch → pilot-10 →
+bulk authoring → plan generator) can each pick up their slice.
+
+**Deliverable.**
+
+- `packages/db/prisma/schema.prisma` — extends `TutorialType` with
+  `PRACTICE` and `READING`, adds the eight Mindset enums
+  (`PracticeType` 11-value, `PracticeTarget` 20-value, `TimeBand`,
+  `BestTime`, `PlanTier`, `PlanStatus`, `PlanSlotSource`), the
+  Tutorial Mindset metadata columns (`practiceType`,
+  `practiceTargets[]`, `timeBand`, `bestTime`, `practiceDepth`,
+  `whenToUse`, `whenNotToUse`, `alternativePracticeIds[]`), and the
+  six user-side tables (`UserPlan`, `UserPlanDay`, `DailyPick`,
+  `UserPracticeFavorite`, `UserPracticeUse`, `UserFeeling`). GIN
+  index on `Tutorial.practiceTargets`, unique on
+  `(UserPlan, dayNumber)` and `(userId, pickDate)` and
+  `(userId, practiceId)` favorites. All additive — Cooking pipeline
+  untouched.
+- `packages/db/prisma/migrations/20260614000000_phase_8_step_13_mindset_schema/`
+  — the migration SQL. Runs on the GH Actions deploy `prisma migrate
+  deploy` step before ECS rollout, per the standard pattern.
+- `apps/web/src/components/admin/tutorials/tutorial-form.tsx` +
+  `preview-pane.tsx` + `apps/web/src/components/public/tutorial-chrome.tsx`
+  — `type` unions widened from `'RECIPE' | 'TECHNIQUE'` to include
+  `'PRACTICE'` and `'READING'`. No new admin UI yet; the form still
+  only renders the RECIPE / TECHNIQUE toggle. Mindset admin lives in
+  a later worker.
+- `docs/mindset-backlog.md` — ~2,945 specific entry titles across all
+  16 life categories. Mirrors the structure of `docs/recipe-backlog.md`:
+  every brainstorm stuck-on point expanded into TAPPING / ENERGY_STATEMENT
+  / AFFIRMATION / SPELL / RITUAL / ACTIVITY / JOURNAL_PROMPT /
+  VISUALISATION / MEDITATION / EMBODIMENT / READING entry titles where
+  the practice type fits. Source codes (`MONEY-v2/D<n>`, `MONEY-Journal/W<n>`,
+  `Money-Zone/Ch<n>`, `SLEEP-v2/D<n>`, `WEIGHT-LOSS-v2/D<n>`,
+  `MANIFESTING-v2/D<n>`, `[PD]`, `[NEW]`) tell the bulk-authoring worker
+  where to pull from. Backlog finishes with cross-cutting indices —
+  "I'm feeling..." matcher seeds, curated entry-point bundles,
+  worker-handover note.
+
+**Out.**
+
+- **No content authoring.** No tapping scripts written, no rituals
+  written, no readings written. Just schema + backlog.
+- No premium gating logic — every feature built free per
+  `feedback_premium_philosophy.md`, gated later via flag.
+- No admin UI for Mindset yet (separate worker session).
+- No public UI for Mindset yet.
+- No plan generator code yet (`UserPlan PENDING_GENERATION` worker
+  script is its own session).
+- No image generation.
+- No master entity tables for Mindset — practices are self-contained;
+  Mindset has no equivalent of `Ingredient` / `Tool`.
+
+**Next Mindset sessions, in order.**
+
+1. Authoring prompt template — `docs/mindset-author.md`, the
+   equivalent of `docs/tutorial-author.md` but for Mindset's shape.
+2. Voice-check CLI extension — add the Mindset-specific bans
+   (`queen` / `high-vibe` / `manifest` overuse) to
+   `packages/db/scripts/voice-check.ts`.
+3. Anchor batch — 3–5 practices across types, Rebecca reviews in
+   admin preview.
+4. Pilot-10 — auto-publish via the Phase 8 Step 11–12 pattern.
+5. Bulk fill — standing worker pattern consuming
+   `docs/mindset-backlog.md`.
+6. Plan generator worker — picks up `UserPlan` rows with
+   `status = PENDING_GENERATION`, runs the generator prompt, writes
+   the 30 `UserPlanDay` rows, flips status to `ACTIVE`.
+
 ### Multi-category fill plan
 
 Steps 1–12 above build out the cooking pipeline. This section extends the
@@ -1270,7 +1344,7 @@ Revise the rates here when actuals diverge from estimates.
 | 2 | Baking | 3,000 | 0 | Not started — ~1 wk setup (baker's percentages, hydration, proofing, lamination, decorating metadata) | 3 |
 | 3 | Garden | 4,000 | 0 | Not started — ~1 wk setup | 4 |
 | 4 | Herbal medicine | 2,500 | 0 | Not started — ~1 wk setup | 2.5 |
-| 5 | Mindset | 4,300 | 0 | Not started — ~1 wk setup. Full brainstorm complete (`docs/mindset-brainstorm.md`): 16 life categories, sub-categories for Body / Relationships / Motherhood / Business / Home / Fear / Spirituality / Health / Grief; Perimenopause + Menopause are explicit Body sub-cats. | 4.3 |
+| 5 | Mindset | 4,300 | 0 | ✅ schema + backlog ready (Phase 8 Step 13, 2026-05-14). Migration `20260614000000_phase_8_step_13_mindset_schema` adds PRACTICE / READING TutorialType values, the 11-value `PracticeType` + 20-value `PracticeTarget` + `TimeBand` + `BestTime` + `PlanTier` + `PlanStatus` + `PlanSlotSource` enums, Tutorial practice-metadata columns, and the user-side `UserPlan` / `UserPlanDay` / `DailyPick` / `UserPracticeFavorite` / `UserPracticeUse` / `UserFeeling` tables. `docs/mindset-backlog.md` enumerates ~2,945 specific entry titles across all 16 life categories with `MONEY-v2`, `MONEY-Journal`, `Money-Zone`, `SLEEP-v2`, `WEIGHT-LOSS-v2`, `MANIFESTING-v2`, `[PD]`, and `[NEW]` source codes per entry — the rest of the ~4,300 target lands as bulk authoring batches consume existing rows and back-fill stuck-on points the brainstorm flagged. Authoring prompt template, voice-check extension, anchor batch, pilot of 10, plan generator — all still ahead. | 4.3 |
 | 6 | Crochet | 1,500 | 0 | Not started — ~1 wk setup | 1.5 |
 | 7 | Knitting | 1,500 | 0 | Not started — ~1 wk setup | 1.5 |
 | 8 | Needlework | 800 | 0 | Not started — ~1 wk setup | 0.8 |

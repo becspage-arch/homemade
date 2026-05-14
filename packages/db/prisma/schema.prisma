@@ -111,6 +111,12 @@ model User {
   dmcaResolutions          DmcaTakedownRequest[]   @relation("DmcaResolver")
   signupAllowlistAdded     SignupAllowlist[]       @relation("SignupAllowlistAddedBy")
 
+  // Phase 8 Step 13 — Mindset
+  mindsetPlans         UserPlan[]
+  mindsetDailyPicks    DailyPick[]
+  practiceFavorites    UserPracticeFavorite[]
+  practiceUses         UserPracticeUse[]
+
   @@index([role])
   @@index([isSuspended])
   @@index([isCreator])
@@ -289,6 +295,34 @@ model Tutorial {
   recipeIngredients RecipeIngredient[]
   recipeTools       RecipeTool[]
 
+  // ──────────────────────────────────────────────────────────────────────────
+  // Phase 8 Step 13 — Mindset practice metadata. Null on rows where
+  // type != PRACTICE. The `whenToUse` matcher string is the one-sentence
+  // signal the "I'm feeling..." surface and the plan generator both read
+  // when deciding which library row to surface. `alternativePracticeIds`
+  // is a free-form string array (not a Prisma relation) so practices can
+  // point at sibling slugs without needing a join row — same pattern as
+  // `Ingredient.commonSubstitutes`.
+  // ──────────────────────────────────────────────────────────────────────────
+
+  practiceType           PracticeType?
+  practiceTargets        PracticeTarget[]    @default([])
+  timeBand               TimeBand?
+  bestTime               BestTime?
+  practiceDepth          Difficulty?
+  whenToUse              String?
+  whenNotToUse           String?
+  alternativePracticeIds String[]            @default([])
+
+  planDayMornings       UserPlanDay[]         @relation("PlanDayMorningPractice")
+  planDayEvenings       UserPlanDay[]         @relation("PlanDayEveningPractice")
+  planDayAnchors        UserPlanDay[]         @relation("PlanDayAnchorPractice")
+  planDayReflections    UserPlanDay[]         @relation("PlanDayReflectionPrompt")
+  dailyPicks            DailyPick[]
+  practiceFavorites     UserPracticeFavorite[]
+  practiceUses          UserPracticeUse[]
+  feelingMatches        UserFeeling[]
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -303,11 +337,17 @@ model Tutorial {
   @@index([type, freezable])
   @@index([type, batchable])
   @@index([type, foundational])
+  @@index([type, practiceType])
+  @@index([type, timeBand])
+  @@index([type, bestTime])
+  @@index([practiceTargets], type: Gin)
 }
 
 enum TutorialType {
   RECIPE
   TECHNIQUE
+  PRACTICE
+  READING
 }
 
 enum Difficulty {
@@ -1261,4 +1301,271 @@ model RecipeTool {
 
   @@index([tutorialId, position])
   @@index([toolId])
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Phase 8 Step 13 — Mindset pipeline schema.
+//
+// Adds the practice-library taxonomy (PracticeType, PracticeTarget, TimeBand,
+// BestTime) plus the user-side surfaces — UserPlan / UserPlanDay for the
+// 30-day plan generator (free daily pick + paid custom), DailyPick for the
+// free Today view, UserPracticeFavorite / UserPracticeUse for saved + done
+// state, and UserFeeling for the anonymised "I'm feeling..." matcher.
+//
+// Practices themselves are Tutorial rows with `type = PRACTICE` and the
+// columns added on the Tutorial model above. Long-form reading articles are
+// Tutorial rows with `type = READING`. No master entity table for Mindset
+// (practices are self-contained; no equivalent of Ingredient / Tool).
+//
+// See `docs/mindset-pipeline.md` for the rationale + page mapping, and
+// `docs/mindset-brainstorm.md` for the matrix that drives the library.
+// ────────────────────────────────────────────────────────────────────────────
+
+enum PracticeType {
+  TAPPING
+  ENERGY_STATEMENT
+  AFFIRMATION
+  SPELL
+  RITUAL
+  ACTIVITY
+  JOURNAL_PROMPT
+  VISUALISATION
+  MEDITATION
+  EMBODIMENT
+  READING
+}
+
+enum PracticeTarget {
+  MONEY
+  BODY
+  RELATIONSHIPS
+  SLEEP
+  ANXIETY
+  CONFIDENCE
+  ABUNDANCE
+  STUCK
+  GRIEF
+  FEAR
+  MOTHERHOOD
+  PURPOSE
+  TIME
+  ENERGY
+  JOY
+  SPIRITUALITY
+  HEALTH
+  SELF_WORTH
+  FORGIVENESS
+  AGEING
+}
+
+enum TimeBand {
+  THREE_MIN
+  FIVE_MIN
+  TEN_MIN
+  TWENTY_MIN
+  THIRTY_PLUS
+}
+
+enum BestTime {
+  MORNING
+  EVENING
+  ANYTIME
+  AS_NEEDED
+}
+
+enum PlanTier {
+  FREE_DAILY_PICK
+  PAID_CUSTOM
+}
+
+enum PlanStatus {
+  PENDING_GENERATION
+  ACTIVE
+  PAUSED
+  COMPLETED
+  ABANDONED
+}
+
+enum PlanSlotSource {
+  LIBRARY_REF
+  GENERATED
+}
+
+/// One row per user-generated plan. `inputText` is the Path A "pour it out"
+/// free-text; `inputFields` is the Path B structured JSON. Either is null
+/// depending on which path the user picked. `tierAtCreation` snapshots the
+/// user's tier when the plan was created — a free user who later upgrades
+/// keeps their original plan as FREE_DAILY_PICK (the daily-pick surface),
+/// any subsequent plan they create is PAID_CUSTOM (the 30-day custom plan).
+model UserPlan {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  inputText   String?
+  inputFields Json?
+
+  /// Default daily minutes the user has for practices. The generator
+  /// matches library rows whose `timeBand` falls within these budgets.
+  timeMorning Int @default(5)
+  timeEvening Int @default(5)
+
+  /// Free-text anti-tags ("nothing too woo", "nothing involving the body").
+  /// The generator avoids library rows that match these patterns.
+  antiTags String[] @default([])
+
+  tierAtCreation PlanTier   @default(FREE_DAILY_PICK)
+  status         PlanStatus @default(PENDING_GENERATION)
+
+  startDate   DateTime?
+  currentDay  Int       @default(1)
+  completedAt DateTime?
+
+  /// Personalised paragraph from the generator addressing the user's
+  /// specific situation — paid tier only.
+  generatorIntro String?
+
+  days UserPlanDay[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, status])
+  @@index([status, createdAt])
+}
+
+/// One row per (UserPlan, dayNumber). Each day has three optional slots —
+/// morning, evening, anchor — plus an optional reflection prompt and a
+/// weekly theme. Each slot points at either a library Tutorial row
+/// (`LIBRARY_REF`) or stores generated TipTap content inline (`GENERATED`).
+/// Generated content is private to the user — it never enters the public
+/// library and never surfaces in search or browse.
+model UserPlanDay {
+  id String @id @default(cuid())
+
+  userPlanId String
+  userPlan   UserPlan @relation(fields: [userPlanId], references: [id], onDelete: Cascade)
+
+  dayNumber Int
+
+  morningSource           PlanSlotSource @default(LIBRARY_REF)
+  morningPracticeId       String?
+  morningPractice         Tutorial?      @relation("PlanDayMorningPractice", fields: [morningPracticeId], references: [id], onDelete: SetNull)
+  morningGeneratedContent Json?
+  morningDoneAt           DateTime?
+
+  eveningSource           PlanSlotSource @default(LIBRARY_REF)
+  eveningPracticeId       String?
+  eveningPractice         Tutorial?      @relation("PlanDayEveningPractice", fields: [eveningPracticeId], references: [id], onDelete: SetNull)
+  eveningGeneratedContent Json?
+  eveningDoneAt           DateTime?
+
+  /// Anchor slot — the weekly ritual / activity slot. Nullable on days
+  /// that don't have one. `anchorSource` is null when no anchor is set.
+  anchorSource           PlanSlotSource?
+  anchorPracticeId       String?
+  anchorPractice         Tutorial?       @relation("PlanDayAnchorPractice", fields: [anchorPracticeId], references: [id], onDelete: SetNull)
+  anchorGeneratedContent Json?
+  anchorDoneAt           DateTime?
+
+  /// Optional journal prompt for the day — typically a JOURNAL_PROMPT
+  /// library row. Generated journal prompts live in
+  /// `morning_generated_content` / `evening_generated_content` instead
+  /// (the slot they were generated into).
+  dailyReflectionPromptId String?
+  dailyReflectionPrompt   Tutorial? @relation("PlanDayReflectionPrompt", fields: [dailyReflectionPromptId], references: [id], onDelete: SetNull)
+
+  weeklyTheme String?
+
+  /// Private. The plaintext is encrypted at the app layer before write —
+  /// the column stores ciphertext only. Excluded from analytics.
+  reflectionNote String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userPlanId, dayNumber])
+  @@index([userPlanId, dayNumber])
+}
+
+/// One row per (user, day). The free-tier "Today view" pick — the library
+/// row surfaced for that user on that date. Unique on (userId, pickDate)
+/// so the same user can't get two picks for the same day.
+model DailyPick {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  /// The calendar date the pick is for (user's local day — stored as a
+  /// DATE without time so it survives time-zone changes).
+  pickDate DateTime @db.Date
+
+  practiceId String
+  practice   Tutorial @relation(fields: [practiceId], references: [id], onDelete: Cascade)
+
+  shownAt       DateTime  @default(now())
+  viewedAt      DateTime?
+  markedHelpful Boolean   @default(false)
+  markedDoneAt  DateTime?
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, pickDate])
+  @@index([userId, pickDate])
+}
+
+model UserPracticeFavorite {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  practiceId String
+  practice   Tutorial @relation(fields: [practiceId], references: [id], onDelete: Cascade)
+
+  addedAt DateTime @default(now())
+
+  @@unique([userId, practiceId])
+  @@index([userId])
+}
+
+/// One row per "I did this practice" event. Powers the user's history view
+/// + feeds back into the free-tier daily pick rotation so the same row
+/// doesn't surface repeatedly.
+model UserPracticeUse {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  practiceId String
+  practice   Tutorial @relation(fields: [practiceId], references: [id], onDelete: Cascade)
+
+  usedAt        DateTime        @default(now())
+  contextTarget PracticeTarget?
+
+  @@index([userId, usedAt])
+  @@index([practiceId])
+}
+
+/// One row per "I'm feeling..." matcher event. `userIdHashed` is a salted
+/// hash of the userId so analytics aggregates don't tie back to a single
+/// account — the matcher is anonymised by default. The matched practice
+/// is captured (nullable; null = no good match found) for analytics on
+/// library coverage gaps.
+model UserFeeling {
+  id String @id @default(cuid())
+
+  userIdHashed String
+
+  feelingAt    DateTime       @default(now())
+  targetAtTime PracticeTarget
+
+  matchedPracticeId String?
+  matchedPractice   Tutorial? @relation(fields: [matchedPracticeId], references: [id], onDelete: SetNull)
+
+  @@index([userIdHashed, feelingAt])
+  @@index([targetAtTime])
 }

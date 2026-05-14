@@ -37,8 +37,11 @@ export interface TutorialFormDefaults {
   heroMediaId: string | null
   body: JSONContent
 
-  // Phase 8 Step 2 — recipe metadata
-  type: 'RECIPE' | 'TECHNIQUE'
+  // Phase 8 Step 2 — recipe metadata. The Mindset migration (Phase 8 Step
+  // 13) widens this to include PRACTICE and READING; the admin form still
+  // only renders the RECIPE / TECHNIQUE toggle, but typed-through values
+  // for the other variants are tolerated so existing rows round-trip.
+  type: 'RECIPE' | 'TECHNIQUE' | 'PRACTICE' | 'READING'
   servings: string
   yieldDescription: string
   prepMinutes: string
@@ -146,7 +149,7 @@ export function TutorialForm({
   )
 
   // Phase 8 Step 2 — recipe metadata state
-  const [type, setType] = useState<'RECIPE' | 'TECHNIQUE'>(defaults.type)
+  const [type, setType] = useState<'RECIPE' | 'TECHNIQUE' | 'PRACTICE' | 'READING'>(defaults.type)
   const [servings, setServings] = useState(defaults.servings)
   const [yieldDescription, setYieldDescription] = useState(defaults.yieldDescription)
   const [prepMinutes, setPrepMinutes] = useState(defaults.prepMinutes)
@@ -205,7 +208,7 @@ export function TutorialForm({
           <Select
             name="type"
             value={type}
-            onChange={(v) => setType(v as 'RECIPE' | 'TECHNIQUE')}
+            onChange={(v) => setType(v as 'RECIPE' | 'TECHNIQUE' | 'PRACTICE' | 'READING')}
             options={TUTORIAL_TYPES}
           />
         </label>

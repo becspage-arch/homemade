@@ -44,7 +44,7 @@ export interface TutorialAttribution {
  * technique info bar in that case.
  */
 export interface TutorialRecipeMeta {
-  type: 'RECIPE' | 'TECHNIQUE'
+  type: 'RECIPE' | 'TECHNIQUE' | 'PRACTICE' | 'READING'
   servings: number | null
   yieldDescription: string | null
   prepMinutes: number | null
