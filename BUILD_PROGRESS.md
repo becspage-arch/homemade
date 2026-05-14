@@ -1115,12 +1115,44 @@ sources), same master-slug coverage, same voice-checked text. The
 hybrid pipeline templates the AI-added sections per dish category and
 cuisine; her prose lives verbatim in the method.
 
-**Landed.** 216 unique recipes (up from 189 — parser improvements
-found 26 more the first run missed). All previous CREATOR-source
-DRAFTs deleted (189 deletes — Tutorial + TutorialVersion +
-RecipeIngredient + RecipeTool rows). New enriched briefs uploaded as
-DRAFT. 0 voice-check errors across the corpus; 111 clean, 104
-warn-only.
+**Landed.** 215 unique recipes (up from 189 — parser improvements
+found 27 more the first run missed; one recipe deleted in the
+brand-rename follow-up). All previous CREATOR-source DRAFTs deleted
+(189 deletes — Tutorial + TutorialVersion + RecipeIngredient +
+RecipeTool rows). New enriched briefs uploaded as DRAFT. 0
+voice-check errors across the corpus; 111 clean, 104 warn-only.
+
+**Brand + personal-name rename pass.** Rebecca's review caught
+trademark conflicts and personal-name attributions. Resolved:
+
+- **Deleted entirely**: jennifer-aniston-salad (celebrity name).
+- **Renamed + adjusted** (recipe content modified so it's no longer a
+  direct copy of someone else's attributed recipe):
+  - andy-the-gasman-s-stew → `smoky-lamb-and-chickpea-stew` (swapped
+    orange for lemon, added red wine, restructured method, added
+    chicken stock + flat-leaf parsley finish)
+  - carols-soft-and-chewy-chocolate-chippies →
+    `soft-chewy-chocolate-chip-cookies` (replaced branded
+    instant-pudding-mix with cornflour for chewiness; converted cup
+    measures to grams; added chill step; dark chocolate chunks)
+  - winnie-s-chocolate-chip-cookies → `family-chocolate-chip-cookies`
+    (rebalanced sugar ratio in favour of brown, added salt, dropped
+    baking powder from 2 tsp to 1 tsp, added chill step, °C)
+- **Renamed** (title + slug + body brand mentions stripped):
+  - wagamamas-chicken-katsu-curry → `chicken-katsu-curry`
+  - nutella-stuffed-cookies → `chocolate-hazelnut-stuffed-cookies`
+  - oreo-truffles → `cookies-and-cream-truffles`
+  - biscoff-truffles → `caramelised-biscuit-truffles`
+  - boozy-bailey-s-cheesecake → `boozy-irish-cream-cheesecake`
+- **Master-list slug renames** (brand-free internal handle; brand
+  kept as alias for search):
+  - `tabasco` → `louisiana-hot-sauce`
+  - `biscoff-biscuit` → `caramelised-biscuit`
+  - `biscoff-spread` → `caramelised-biscuit-spread`
+  - `oreo-biscuit` → `chocolate-sandwich-biscuit`
+  - `baileys` → `irish-cream-liqueur`
+- **Kept on Rebecca's call** (personal-name attributions from her own
+  circle): `jeanette-s-vegetable-crumble`, `vanessa-s-quiche`.
 
 Master-slug coverage: 1973 of 2254 ingredient lines mapped (87.5%);
 175 skipped as junk / sub-section labels; 106 truly unmapped now
@@ -1178,10 +1210,10 @@ delete after the session ships:
 
 **Output.**
 
-- 216 Tutorial rows in production DB at `/admin/tutorials` filtered
+- 215 Tutorial rows in production DB at `/admin/tutorials` filtered
   to draft, type RECIPE, sourceType CREATOR
-- 216 brief JSON files in `docs/personal-recipes-briefs/`
-- 216 intermediate `.md` files in `docs/personal-recipes-extracted/`
+- 215 brief JSON files in `docs/personal-recipes-briefs/`
+- 215 intermediate `.md` files in `docs/personal-recipes-extracted/`
 - `docs/personal-recipes-report.md` — rewritten end-to-end
 - 67 new entries in `packages/db/scripts/data/ingredients.ts`
 
