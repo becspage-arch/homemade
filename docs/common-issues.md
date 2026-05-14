@@ -68,6 +68,17 @@ Severity flag with the rule: `[block]` (rewrite mandatory),
   turn and Z."` — both work, both keep the rhythm without the
   appositive pair.
 
+- **Em-dash pairs in sourceNotes** `[block]`
+  Voice-check validates **all text fields** including `sourceNotes`,
+  not just body content. The model treats `sourceNotes` as a plain
+  background note and commonly writes an appositive em-dash pair when
+  describing the historical method or the dish variant — e.g.
+  `"Pot roasting — browning a joint in a covered pot — is documented
+  across..."`. This blocked two uploads in bulk-batch-001-resume.
+  **How to fix:** rewrite as parentheses or split into two sentences.
+  The rule is identical: never two em-dashes in one sentence, never
+  more than one em-dash per paragraph.
+
 ## Structural issues
 
 (empty initially — populated as workers spot recurring structural

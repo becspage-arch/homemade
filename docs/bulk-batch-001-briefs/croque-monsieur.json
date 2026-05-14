@@ -1,0 +1,128 @@
+{
+  "slug": "croque-monsieur",
+  "title": "Croque-monsieur",
+  "subtitle": "The French toasted ham and cheese, made properly with béchamel.",
+  "excerpt": "White bread with ham and Gruyère, spread with a thick béchamel and grilled until bubbling and golden. The Parisian café classic, made at home in twenty minutes. Makes four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Croque-monsieur. The name first appeared on Parisian café menus around 1910. The béchamel-topped version is considered the proper version; the simpler butter-fried version omits the sauce. Auguste Escoffier's Le Guide Culinaire (1903, public domain) documents the foundational béchamel technique.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": "4 sandwiches",
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The béchamel can be made ahead and refrigerated for up to two days.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "lunch",
+    "mood": ["weeknight", "quick", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": "Finished under a hot grill.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "grill-tray", "isOptional": false },
+    { "slug": "grill", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The croque-monsieur in the café and the one you make at home are not the same dish. The café version cuts corners; the béchamel is often absent. Made properly, with a thick, well-seasoned sauce spread generously over the top, the sandwich finishes under the grill as something close to a gratin, with a scorched cheese surface and a molten centre." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "bread", "amount": 8, "unit": "each", "prepNote": "thick slices of white bread", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "gruyere", "amount": 150, "unit": "g", "prepNote": "coarsely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "serrano-ham", "amount": 8, "unit": "each", "prepNote": "thin slices of cooked ham", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dijon-mustard", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Béchamel" },
+            { "ingredientSlug": "plain-flour", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Béchamel" },
+            { "ingredientSlug": "whole-milk", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Béchamel" },
+            { "ingredientSlug": "nutmeg-ground", "amount": 0.125, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Béchamel" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Béchamel" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the béchamel" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a small saucepan over medium heat. Add {{plain-flour}} of flour and stir for 1 minute. Gradually pour in {{whole-milk}} of milk, whisking constantly, until smooth. Cook for 3 minutes, stirring, until thick. Season with {{sea-salt-fine}} of salt and {{nutmeg-ground}} of nutmeg. Remove from the heat." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and grill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the grill to its highest setting. Toast {{bread}} slices of bread lightly on one side under the grill. Flip. Spread the untoasted side lightly with {{dijon-mustard}} of Dijon mustard if using. Lay {{serrano-ham}} of ham and a little of the {{gruyere}} of Gruyère on half the slices. Press the remaining bread on top, toasted side up. Spread the béchamel generously over the top of each sandwich. Scatter the remaining Gruyère on top. Grill for 4 to 5 minutes until the cheese is bubbling and scorched in places." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Béchamel lumpy", "cause": "Milk added too fast to a dry roux, or not enough whisking.", "fix": "Add the milk gradually and whisk without stopping. If lumps form, push the sauce through a sieve." },
+            { "symptom": "Cheese not bubbling after 5 minutes", "cause": "Grill not hot enough, or rack too low.", "fix": "The grill must be fully preheated. Place the sandwiches close to the element." },
+            { "symptom": "Bread soggy underneath", "cause": "Too much béchamel, or grill not reaching the base.", "fix": "Toast the bread base first in a dry pan or under the grill before assembling; the toasted surface prevents the sauce soaking through." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The croque-monsieur has been on Paris café menus for over a century. It is the midday staple of the zinc bar and the brasserie, eaten standing or with a glass of red on a paper tablecloth. At home it is a ten-minute lunch that requires very little, makes very little washing up, and tastes significantly better than the effort suggests." }
+        ]
+      }
+    ]
+  }
+}

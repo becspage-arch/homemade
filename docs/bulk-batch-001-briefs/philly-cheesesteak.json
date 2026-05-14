@@ -1,0 +1,137 @@
+{
+  "slug": "philly-cheesesteak",
+  "title": "Philly cheesesteak",
+  "subtitle": "Shaved ribeye with caramelised onions and melted cheese in a roll.",
+  "excerpt": "Thinly sliced ribeye steak cooked with caramelised onion and green pepper, loaded into a soft roll and topped with melted cheese. The signature sandwich of Philadelphia, cooked at high heat in minutes. Makes two.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Philadelphia cheesesteak. The sandwich was invented in Philadelphia in the 1930s; Pat Olivieri is often credited with its creation. The traditional cheese debate is between Cheez Whiz, provolone and American cheese. This version uses cheddar, which melts comparably to provolone and is widely available in the UK.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": "2 sandwiches",
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The steak is easier to slice thin if frozen for 30 minutes first.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "lunch",
+    "mood": ["weeknight", "fun", "quick"],
+    "temperatureCelsius": null,
+    "temperatureNote": "High heat for the steak; the pan must be very hot.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "cast-iron-skillet", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two rules for a proper cheesesteak. First, slice the beef as thin as possible; the texture of paper-thin ribeye cooked on a very hot pan is completely different from thickly cut steak. Freeze the meat for 30 minutes to firm it up before slicing. Second, cook the onions long and separately, until they are properly soft and sweet before the meat goes in." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "beef-ribeye", "amount": 300, "unit": "g", "prepNote": "frozen 30 mins, sliced as thin as possible", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "halved and thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-green", "amount": 1, "unit": "each", "prepNote": "deseeded, thinly sliced", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "cheddar", "amount": 80, "unit": "g", "prepNote": "sliced or grated; or use provolone", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "baguette", "amount": 1, "unit": "each", "prepNote": "cut into two 20 cm lengths and split", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rapeseed-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the onions and pepper" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat 1 tablespoon of {{rapeseed-oil}} of oil in a cast-iron skillet over medium heat. Add {{onion}} sliced onion and {{pepper-green}} green pepper if using. Cook for 15 minutes, stirring often, until soft, sweet and beginning to caramelise. Push to one side of the pan." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the steak" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Raise the heat to high. Add the remaining oil to the empty side of the pan. Add {{beef-ribeye}} of sliced ribeye in a single layer; season with {{sea-salt-fine}} of salt and {{black-pepper}} of pepper. Cook for 1 to 2 minutes per side until just cooked through. Stir together with the onions. Lower the heat. Lay {{cheddar}} of cheese over the meat; cover the pan for 1 minute until melted." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Toast the split baguette halves cut-side down in the pan for 1 minute. Load the meat and cheese mixture into the rolls. Serve immediately." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Steak chewy and tough", "cause": "Sliced too thick, or pan not hot enough.", "fix": "Freeze the beef before slicing; 30 minutes makes it much easier to get thin strips. Cook on the highest possible heat." },
+            { "symptom": "Cheese not melting", "cause": "Pan too cold when cheese added, or cheese dried out.", "fix": "After adding the cheese, cover the pan immediately. The steam from the meat melts it in under a minute." },
+            { "symptom": "Roll soggy from the juices", "cause": "Meat not drained before loading into the roll.", "fix": "Press the meat mixture briefly with a spatula to push excess juice back into the pan before loading the roll." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "South Philly is where the cheesesteak originates, and where the great arguments over its correct composition are still conducted. The locals have firm opinions about the roll, the cheese and the onions. Outside Philadelphia, fewer rules apply. This version respects the principle: very thin meat, a lot of caramelised onion, melted cheese, a soft roll." }
+        ]
+      }
+    ]
+  }
+}

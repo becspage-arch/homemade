@@ -1,0 +1,149 @@
+{
+  "slug": "paella-valenciana",
+  "title": "Paella valenciana",
+  "subtitle": "The original Valencian paella with chicken, rabbit and flat beans.",
+  "excerpt": "The authentic version: chicken thighs and rabbit browned in olive oil, cooked with green beans, butter beans, tomato, sweet paprika and saffron, the rice added to the pan and cooked until dry with a socarrat at the base. Serves four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Paella valenciana. The dish originates in the Albufera region near Valencia, where it was a farmworkers' meal cooked over a wood fire. The Valencian Community's Council of Paella lists the canonical ingredients. Claudia Roden's The Food of Spain (2011) and José Andrés's documents provide comprehensive accounts of the dish.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 45,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "spanish",
+    "mealType": "dinner",
+    "mood": ["weekendProject", "summery", "special"],
+    "temperatureCelsius": null,
+    "temperatureNote": "Cooked on the hob; a wide paella pan is essential for the socarrat crust.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "paella-pan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "socarrat", "term": "Socarrat", "definition": "The crispy, caramelised rice crust that forms on the bottom of a paella pan during the final minutes of cooking. It is considered the prize of the dish and requires high, steady heat." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Real Valencian paella has no seafood. That is a later variation. The original is a land dish: chicken, rabbit, flat beans, white beans and rice cooked over a wood fire in the fields. The wood fire is hard to replicate at home; the paella pan over a gas hob gets close. The socarrat is the goal: a layer of crispy caramelised rice at the base that forms in the last few minutes without burning." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Paella rice is added to the liquid and not stirred after that. This is not risotto. Stirring develops starch and makes the rice gluey; leave it alone and the grains cook separately, absorbing the stock from below." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thigh", "amount": 4, "unit": "each", "prepNote": "bone-in, skin-on, cut in half through the bone", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rabbit", "amount": 500, "unit": "g", "prepNote": "jointed into pieces; or extra chicken", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paella-rice", "amount": 320, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 900, "unit": "ml", "prepNote": "kept hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato", "amount": 2, "unit": "each", "prepNote": "ripe, grated on a box grater", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "green-beans", "amount": 150, "unit": "g", "prepNote": "cut into 3 cm pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "butter-beans", "amount": 100, "unit": "g", "prepNote": "tinned, drained; or runner beans", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-sweet", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "saffron", "amount": 0.5, "unit": "tsp", "prepNote": "threads, dissolved in 2 tbsp hot water", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rosemary", "amount": 2, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the meat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat {{olive-oil}} of olive oil in a wide paella pan over medium-high heat. Season the chicken and rabbit with {{sea-salt-fine}} of salt. Brown in batches for 4 minutes per side. Push to the edges of the pan." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the sofrito and add beans" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In the centre of the pan, cook {{green-beans}} of green beans and {{butter-beans}} of butter beans for 3 minutes. Push aside. Fry {{garlic}} of grated garlic for 1 minute. Add the grated {{tomato}} tomatoes and {{paprika-sweet}} of sweet paprika; cook for 5 minutes until the sofrito is dark and dry." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the rice and cook" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Push the meat back into the centre. Add {{paella-rice}} of rice and stir through the sofrito for 1 minute. Pour in {{stock-chicken}} of hot stock and the saffron water. Add {{rosemary}} of rosemary sprigs. Arrange the meat evenly. Bring to a vigorous boil, then reduce to medium-low. Cook for 18 minutes without stirring. In the last 2 minutes, raise the heat to medium-high to form the socarrat; you should hear a gentle crackle. Remove from the heat and rest for 5 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Rice mushy and clumped", "cause": "Too much stirring, or too much liquid.", "fix": "Never stir after the rice goes in. Use the correct stock-to-rice ratio (about 2.8:1 by volume) and resist adding extra." },
+            { "symptom": "Burnt base, undercooked rice", "cause": "Heat too high after the boil, or liquid absorbed too fast.", "fix": "Once at a simmer, keep the heat medium-low. The socarrat crust forms from a brief final blast of heat; the rest of the cooking should be steady." },
+            { "symptom": "Bland flavour", "cause": "Sofrito not reduced enough, or weak stock.", "fix": "The sofrito must be almost dry and very dark before the rice goes in. Use a well-seasoned stock." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Paella began in the rice fields near Valencia, cooked over orange wood by farmers for a midday meal. The dish is a Sunday ritual in Valencia, made outdoors when possible, eaten directly from the pan. The Valencian cook's insistence on the original recipe, and the offence caused by adding chorizo or seafood, reflects how closely the dish is tied to place. Make it with patience and a proper paella pan and you will understand why." }
+        ]
+      }
+    ]
+  }
+}

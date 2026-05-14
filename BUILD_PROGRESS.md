@@ -1246,37 +1246,33 @@ worker session picks it up.
 - Image generation (deferred until pre-launch budget).
 - Tester-user review (Phase 6 work; not in scope yet).
 
-#### Batch 001 — partial (2026-05-14)
+#### Batch 001 — COMPLETE (2026-05-14)
 
-First real bulk PUBLISHED batch. Target was 100; **23 recipes shipped**
-in one Opus session as PUBLISHED. Full report:
-`docs/bulk-batch-001-report.md`.
+**100 cooking recipes PUBLISHED.** Target met. Full report:
+`docs/bulk-batch-001-report.md` (Opus session + Sonnet resume both
+documented there).
 
-Spread: 10 British mains, 3 Italian (carbonara / cacio e pepe / alla
-norma), 5 preserves (raspberry / blackberry jam, lemon curd, mint jelly,
-apple chutney), 2 scones (plain / cheese), 3 air-fryer (salmon /
-halloumi / roast potatoes).
+**Opus session (23 recipes):** 10 British mains, 3 Italian (carbonara /
+cacio e pepe / alla norma), 5 preserves, 2 scones, 3 air-fryer.
 
-Voice stats: 1 clean first pass, 19 passed with warnings only (tricolon
-mostly), 3 failed on em-dash and were rewritten, 0 dropped after retries.
+**Sonnet resume (77 recipes):** preserves, British puddings, continental
+desserts, soups, salads, baking, air-fryer, slow cooker, plus bulk
+British mains and pasta.
 
-Common-issues append: tightened the tricolon entry with hot-spot guidance
-(excerpts + closers) and added an appositive-em-dash-in-steps sub-entry.
+Voice stats (combined): em-dash errors the dominant failure mode;
+sourceNotes validated by voice-check (same rules as body) — new
+common-issues entry added. Americanism "fall" triggers on phrasal verbs
+("fall apart" → "break apart").
 
-Infra added: `packages/db/scripts/upload-batch.ts` — iterates a directory
-of TutorialUploadInput JSON files, calls upload-tutorial.ts per file with
-the chosen `--status`, writes an aggregated JSON report. Supports
-`--skip-file` for slug-collision avoidance.
+Common-issues appended: em-dash-in-sourceNotes entry added.
 
-**Working assumption revised.** The original plan assumed ~10 articles
-drafted+uploaded per session-hour. The hourly rate holds, but the
-*session ceiling* for an Opus bulk-content session is closer to **25-35
-recipes** before output-token economics bite. Two parallel sessions
-should sustain ~60/day; the 1k/week target needs more sessions, not
-longer ones.
+Slug gaps surfaced: `parsley` → `parsley-flat`; `miso-paste-white` →
+`miso-white`; no `suet` (used `lard`); no `savoiardi` (used
+`digestive-biscuit` with redirect); no `ramekins` or `blowtorch` in
+tools table.
 
-Remaining 77 of the 100 selection list: `docs/bulk-batch-001-briefs/.selection.md`.
-Next bulk-batch worker picks any subset.
+**Working assumption:** 25-35 recipes per Sonnet session is sustainable.
+Next batch picks fresh from the backlog.
 
 ### Step 13 — Mindset pipeline scaffold ✅ landed 2026-05-14
 

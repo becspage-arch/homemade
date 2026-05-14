@@ -1,0 +1,165 @@
+{
+  "slug": "ragu-alla-bolognese",
+  "title": "Ragù alla bolognese",
+  "subtitle": "The slow meat sauce of Bologna, built over two to three hours.",
+  "excerpt": "Beef and pork mince with pancetta, soffritto, white wine, milk and a small amount of tomato, cooked low and slow until the meat is tender and the sauce is rich. Made properly this takes two hours minimum. Worth it. Serves six.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Ragù alla bolognese. The Accademia Italiana della Cucina registered a canonical recipe with the Bologna Chamber of Commerce in 1982. Pellegrino Artusi's La Scienza in Cucina e l'Arte di Mangiar Bene (1891, public domain) contains the foundational meat sauce traditions. The milk step is documented in both Artusi and in the registered recipe.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 150,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in portions for up to three months. Thaw overnight in the fridge and reheat gently on the hob.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Make a large batch and freeze in meal-sized portions.",
+    "makeAheadNotes": "Better made the day before. Reheat on the hob over low heat, adding a splash of water if needed.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weekendProject", "comfortFood", "hearty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "soffritto", "term": "Soffritto", "definition": "The Italian aromatic base of finely chopped onion, celery and carrot cooked slowly in olive oil. The foundation flavour for soups, braises and sauces." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Real bolognese has very little tomato. The sauce is about the meat: the combination of beef and pork, the slow cooking that breaks down the fat and connective tissue, the milk that mellows and enriches. Tomato is a background note, not the lead. If your bolognese is red, it needs more time and less passata." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The traditional pasta is tagliatelle, not spaghetti. A wide, egg-based pasta catches the sauce properly. This recipe makes enough for six; it keeps for four days in the fridge and improves each day." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-mince", "amount": 300, "unit": "g", "prepNote": "not too lean; 15-20% fat", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pork-mince", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pancetta", "amount": 100, "unit": "g", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "white-wine-dry", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 200, "unit": "g", "prepNote": "half a tin, roughly crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "nutmeg-ground", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the pancetta and soffritto" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat {{olive-oil}} of olive oil in a large, heavy pot over medium-low heat. Add {{pancetta}} of pancetta and cook for 5 minutes until the fat renders. Add {{onion}} diced onion, {{celery}} diced celery and {{carrot}} diced carrot. Cook gently for 12 to 15 minutes, stirring occasionally, until completely soft. Add {{garlic}} of chopped garlic; cook for 2 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the meat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Raise the heat to medium-high. Add {{beef-mince}} of beef mince and {{pork-mince}} of pork mince. Break up with a wooden spoon and cook for 10 minutes, stirring occasionally, until the meat is deeply browned and any liquid has evaporated. Season with {{sea-salt-fine}} of salt and {{black-pepper}} of pepper." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add wine, milk and tomato" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour in {{white-wine-dry}} of white wine. Let it bubble and reduce until almost completely gone, about 5 minutes. Pour in {{whole-milk}} of milk; reduce again until absorbed, about 5 minutes. Add {{tinned-tomatoes}} of tinned tomatoes, {{tomato-puree}} of tomato purée, {{nutmeg-ground}} of nutmeg and {{bay-leaves}} of bay leaves. Stir well." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Simmer low and slow" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Reduce to the lowest possible heat. Place the lid on the pot slightly ajar. Cook for 1.5 to 2 hours, stirring every 20 minutes, adding a splash of water if the sauce looks dry. The finished ragù should be dense, meaty and pale-orange rather than red. Remove the bay leaves and adjust seasoning before serving." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Sauce is very red and tastes of tomato", "cause": "Too much tomato, or not enough cooking time.", "fix": "Bolognese has very little tomato; only half a tin is traditional. If using too much, add more milk and cook longer. A 2-hour minimum at very low heat is the fix." },
+            { "symptom": "Meat is grainy and dry", "cause": "Lean mince, or too high heat during browning.", "fix": "Use mince with some fat content. The milk step is there to prevent this; add it and cook until absorbed." },
+            { "symptom": "Sauce catching on the bottom", "cause": "Heat too high during the long simmer.", "fix": "Use the lowest hob setting, with the lid slightly ajar. A heat diffuser helps on gas." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bologna is the gastronomic capital of Italy, and the ragù is its signature contribution. The registered recipe from 1982 codified what Bolognese home cooks had been making for generations. It belongs on a Sunday: a pot started in the morning, the house filling with the low, sweet smell of meat and wine, ready for a late lunch with wide pasta and good Parmesan." }
+        ]
+      }
+    ]
+  }
+}

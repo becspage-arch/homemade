@@ -1,0 +1,174 @@
+{
+  "slug": "slow-cooker-beef-brisket",
+  "title": "Slow-cooker beef brisket",
+  "subtitle": "Long-braised brisket that pulls apart at a fork.",
+  "excerpt": "Beef brisket browned in a hot pan then slow-cooked with onions, beef stock and a spoonful of tomato purée for eight hours until it falls into tender shreds. A working-day braise: start in the morning, come home to dinner. Serves six.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Braised brisket. The American-Jewish pot-roast tradition and the British pot-roast are closely related; the core technique of browning then long braising appears in Mrs Beeton's Book of Household Management (1861, Project Gutenberg #10136), 'Stewed or Braised Brisket'. The slow-cooker adaptation is contemporary.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 480,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in the braising juices for up to three months. Defrost overnight in the fridge; reheat gently with a splash of stock.",
+    "batchable": true,
+    "batchNotes": "Brisket is a natural batch-cook cut. Leftovers reheat well and work in sandwiches, tacos or piled on toast with mustard.",
+    "makeAheadNotes": "Cook the day before; the texture improves overnight. Refrigerate in the braising juices and reheat covered in a low oven at 160°C for 30 minutes.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "comfortFood", "mealPrep", "hearty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "slow-cooker", "isOptional": false },
+    { "slug": "frying-pan-30", "isOptional": false, "notes": "For browning the brisket before slow cooking. Heavy-based; cast-iron is ideal." },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "braising", "term": "Braising", "definition": "A slow-cooking technique where meat is browned first then cooked long and low in a small amount of liquid in a covered vessel. The steam circulates, the collagen in tough cuts dissolves into gelatin, and the meat becomes tender and unctuous." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Brisket is one of the toughest cuts on the animal, threaded through with collagen. Cook it fast and it is chewy and dry. Cook it low and slow for eight hours and the collagen dissolves into gelatin, the fibres relax, and the meat pulls apart into unctuous, deeply flavoured shreds. This is what the slow cooker was made for." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The browning step is not optional. A pale, unseared brisket put directly into the slow cooker gives a wan result with none of the roasted depth that makes the braising liquid worthwhile. Five minutes in a screaming hot pan first makes the difference." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-brisket", "amount": 1500, "unit": "g", "prepNote": "rolled or flat, tied if necessary", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "thickly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "peeled and lightly crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rapeseed-oil", "amount": 2, "unit": "tbsp", "prepNote": "for browning", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": "coarsely ground", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Season and sear the brisket" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pat the {{beef-brisket}} of brisket dry with kitchen paper. Season all over with {{sea-salt-fine}} of salt and {{black-pepper}} of black pepper. Heat {{rapeseed-oil}} of oil in a large heavy frying pan over high heat until smoking. Sear the brisket for 3 to 4 minutes per side until deeply browned. Transfer to the slow-cooker pot." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soften the vegetables" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In the same pan over medium heat, cook the {{onion}} sliced onions, {{carrot}} chopped carrots and {{celery}} chopped celery for 5 minutes until beginning to soften. Add {{garlic}} of crushed garlic and {{tomato-puree}} of tomato purée, stir, and cook for 1 minute more. Add {{stock-beef}} of beef stock and {{worcestershire-sauce}} of Worcestershire sauce. Stir to lift any browned bits from the base of the pan." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Slow cook" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour the vegetable and stock mixture over the brisket in the slow cooker. Tuck {{thyme}} of thyme sprigs and {{bay-leaves}} of bay leaves around the meat. The liquid should come about a third of the way up the brisket; brisket releases its own juices as it cooks. Cook on LOW for 8 hours or HIGH for 5 hours. The meat is ready when it yields easily to a fork and the fibres begin to pull apart." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rest and shred" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the brisket onto a board and rest for 15 minutes. Meanwhile, strain the braising liquid through a sieve into a saucepan. Simmer for 10 minutes to reduce slightly and intensify. Slice or shred the brisket; it will pull apart easily. Serve with the reduced gravy spooned over." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Meat still tough after 8 hours", "cause": "Cooker temperature too low, or piece too thick.", "fix": "Cook on HIGH for a further hour. Individual slow cookers vary; some LOW settings barely reach a simmer." },
+            { "symptom": "Braising liquid tastes thin and watery", "cause": "Too much liquid added, or brisket not browned first.", "fix": "Start with 400 ml stock, not more. Simmer the strained liquid to reduce. Browning is essential for depth." },
+            { "symptom": "Meat dry and stringy", "cause": "Overcooked past 10 hours, or the wrong cut used.", "fix": "Check at 7 hours. Beyond 10 hours on HIGH even brisket can dry out. The meat should be unctuous, not shredded to a paste." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead and freezing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Brisket is at its best the day after cooking: the juices settle back into the meat as it chills, and reheating loosens them again. Refrigerate in the braising liquid in an airtight container. Reheat covered in a 160°C oven for 30 minutes, with the liquid spooned over. For the freezer, portion into the liquid and freeze for up to three months." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Slow-cooked brisket appears in British pot-roast tradition, American Jewish cooking, and Texas barbecue culture — all different expressions of the same observation that the worst cut of beef, given enough time and gentle heat, becomes the best. In the slow-cooker version, the appeal is practical: start it in the morning and come home to dinner. Serve with buttered mashed potato and whatever green vegetable is in the house." }
+        ]
+      }
+    ]
+  }
+}

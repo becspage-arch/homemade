@@ -1,0 +1,133 @@
+{
+  "slug": "chicken-shawarma",
+  "title": "Chicken shawarma",
+  "subtitle": "Spiced marinated chicken thighs, roasted and sliced for flatbreads.",
+  "excerpt": "Chicken thighs marinated overnight in a spice blend of cumin, coriander, allspice and cinnamon, roasted until charred at the edges and sliced. Served in warm flatbreads with garlic sauce, tomato and pickled chilli. Serves four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Chicken shawarma. The dish evolved from the Ottoman doner kebab tradition, and has been a staple of Levantine street food since the 19th century. The spice blend here draws on Anissa Helou's Levant: New Middle Eastern Cooking (2013) and Yotam Ottolenghi's Jerusalem (2012).",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "restingMinutes": 5,
+    "chillingMinutes": 480,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Marinate a large batch; cook and slice as needed through the week.",
+    "makeAheadNotes": "Marinate overnight for the best flavour. Cooked chicken keeps in the fridge for 3 days.",
+    "dietaryFlags": [],
+    "cuisine": "middleEastern",
+    "mealType": "dinner",
+    "mood": ["weeknight", "fun", "healthy"],
+    "temperatureCelsius": 220,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "oven", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The key distinction between shawarma and ordinary spiced chicken is the marinade time. One hour produces a surface coating; overnight produces a spice-infused, deeply flavoured thigh that chars at the edges and stays moist within. The marinade has yoghurt and lemon, which together tenderise the meat and help the spices penetrate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thigh", "amount": 8, "unit": "each", "prepNote": "boneless, skin-on", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-yoghurt", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "juice only", "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "finely grated", "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "cumin-ground", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "coriander-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "allspice", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "paprika-smoked", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "turmeric", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "pitta-bread", "amount": 4, "unit": "each", "prepNote": "warmed, to serve", "isOptional": false, "groupLabel": "Serving" },
+            { "ingredientSlug": "greek-yoghurt", "amount": 100, "unit": "g", "prepNote": "mixed with 1 grated garlic clove", "isOptional": false, "groupLabel": "Serving" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Marinate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine {{plain-yoghurt}} of yoghurt, the juice of {{lemon}} lemon, {{garlic}} of grated garlic, {{olive-oil}} of olive oil, {{cumin-ground}} of cumin, {{coriander-ground}} of coriander, {{allspice}} of allspice, {{paprika-smoked}} of smoked paprika, {{turmeric}} of turmeric, {{cinnamon-ground}} of cinnamon, {{sea-salt-fine}} of salt and {{black-pepper}} of pepper in a bowl. Add {{chicken-thigh}} chicken thighs and coat thoroughly. Cover and refrigerate overnight, or for at least 4 hours." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roast and slice" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220°C. Arrange the chicken on a baking tray in a single layer. Roast for 30 to 35 minutes until deeply charred at the edges and cooked through. Rest for 5 minutes, then slice thinly. Load into warm pitta with garlic yoghurt, tomato, fresh herbs and pickled chilli." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Pale, steamed-looking chicken with no char", "cause": "Crowded tray, or oven not hot enough.", "fix": "Use a large tray so thighs have space. At 220°C they should char at the edges in 30 minutes; if the oven is slower, switch to the grill for the last 5 minutes." },
+            { "symptom": "Dry chicken", "cause": "Overcooked, or used breast meat.", "fix": "Thighs are the correct cut; they stay moist at high heat. Check the internal temperature: 74°C is cooked through." },
+            { "symptom": "Marinade not penetrating", "cause": "Less than 4 hours marinating.", "fix": "Score the skin deeply with a knife before marinating; this allows the spices to reach the meat. Overnight is reliably better than a short marinade." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Shawarma is the street food of the Levant from Istanbul to Tel Aviv to Beirut: stacked meat on a rotating spit, shaved to order into flatbreads with pickles, sauces and fresh herbs. The spit is not available at home, but the marinade and high oven come close to the result. It is a Friday night dinner that produces excellent leftovers for the next day's lunch." }
+        ]
+      }
+    ]
+  }
+}

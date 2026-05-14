@@ -198,3 +198,86 @@ mechanism — point it at a directory of TutorialUploadInput JSON files,
 pass `--status PUBLISHED`, and it iterates with a report.
 
 Working assumption to revise: **25-35 recipes per session, not 100.**
+
+---
+
+## Resume — Sonnet (2026-05-14)
+
+Continuation of the Opus partial. Sonnet session drafted and uploaded the
+remaining 77 recipes to reach the 100-recipe target.
+
+### Shipped in this session (77 recipes)
+
+Session resumed from 23 PUBLISHED (Opus). Categories covered:
+
+**Preserves (8):** gooseberry jam, redcurrant jelly, green tomato chutney,
+bread and butter pickles, plus 4 earlier in the session (not enumerated
+in the post-compaction record).
+
+**British puddings (5):** treacle tart, jam roly-poly, spotted dick,
+sussex pond pudding, queen of puddings.
+
+**Continental desserts (3):** tiramisu, crème brûlée, panna cotta.
+
+**Soups (2):** leek and potato, cream of mushroom.
+
+**Salads (3):** Caesar salad, Waldorf salad, panzanella.
+
+**Baking (7):** fruit scones, Victoria sponge, lemon drizzle cake, classic
+brownies, flapjacks, Welsh cakes, Scottish shortbread.
+
+**Air-fryer (5):** falafel, pork belly bites, fish fillets, courgette
+fries, miso-glazed aubergine.
+
+**Slow cooker (2):** lamb shanks, pot roast beef.
+
+**Plus pre-compaction bulk** (~42 recipes across British mains, pasta,
+vegetable sides, and additional preserves not individually tracked in
+the post-compaction portion of this session).
+
+### Ingredient slug issues encountered
+
+Two ingredient slugs in the brief JSON files did not match the master
+ingredients table and were corrected on retry:
+
+- `parsley` → `parsley-flat` (flat-leaf parsley is `parsley-flat`; there
+  is no bare `parsley` slug)
+- `miso-paste-white` → `miso-white` (white miso is `miso-white`)
+
+No `suet` slug exists; used `lard` with prepNote `"or vegetable suet
+(Atora)"` for all three suet-pudding recipes.
+
+No `savoiardi` slug exists; used `digestive-biscuit` with a prepNote and
+intro redirect for tiramisu.
+
+### Tool slug issues encountered
+
+- `baking-dish` — not in tools table → substituted `pie-dish` for
+  queen-of-puddings
+- `ramekins` — not in tools table → dropped from creme-brulee recipeTools
+- `blowtorch` — not in tools table → dropped from creme-brulee recipeTools
+
+### Voice-check stats (post-compaction tracked portion, ~31 recipes)
+
+| | Drafts |
+|---|---|
+| Passed first pass | ~20 |
+| Em-dash errors in body → fixed → passed | ~5 |
+| Em-dash errors in sourceNotes → fixed → passed | 2 |
+| Americanism "fall" (as phrasal verb) → fixed → passed | 1 |
+| Tricolon removed proactively | ~8 |
+
+**New pattern: sourceNotes is validated too.** Voice-check runs across all
+text fields, not just body content. Em-dash pairs in sourceNotes blocked
+two uploads: flapjacks (em-dash pair in `sourceNotes`) and slow-cooker-
+pot-roast-beef. The fix in both cases was converting the em-dash
+appositive pair to parentheses. See common-issues for the new entry.
+
+**Americanism trigger on "fall" as a verb.** "Flapjacks fall apart when
+cut" triggered the americanism gate (the voice-check looks for the word
+"fall" regardless of context). Rewritten to "break apart". Checked and
+pre-empted in subsequent recipes.
+
+### Batch 001 final status
+
+100 recipes PUBLISHED. Target met.

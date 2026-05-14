@@ -1,0 +1,148 @@
+{
+  "slug": "lamb-rogan-josh",
+  "title": "Lamb rogan josh",
+  "subtitle": "Kashmiri spiced lamb, deep red and aromatic.",
+  "excerpt": "Diced lamb shoulder braised in a rich sauce of whole spices, fried onion, yoghurt and chilli until the meat is falling-tender and the sauce is thick and red. A slow, rewarding cook. Serves four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Lamb rogan josh. The dish originates in Kashmir, where it was brought by Mughal invaders and adapted into the local Muslim cooking tradition. The name derives from Persian; 'rogan' means clarified butter or oil, and 'josh' means intensity or heat. Madhur Jaffrey's Indian Cookery (1982) and Camellia Panjabi's 50 Great Curries of India (1994) are the primary English-language references.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to three months. Defrost overnight; reheat on the hob with a splash of water.",
+    "batchable": true,
+    "batchNotes": "Doubles well. The flavour deepens with time.",
+    "makeAheadNotes": "Best made the day before. The oil rises to the surface as it rests — skim and reheat gently.",
+    "dietaryFlags": [],
+    "cuisine": "angloIndian",
+    "mealType": "dinner",
+    "mood": ["weekendProject", "comfortFood", "hearty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The deep red colour of rogan josh comes from Kashmiri chilli, which gives colour without excessive heat. Outside Kashmir, smoked paprika and chilli powder together approximate the shade and flavour. The yoghurt is added a spoonful at a time, fried between each addition until the fat re-separates; this technique is what makes the sauce rich and glossy rather than grainy." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-shoulder", "amount": 800, "unit": "g", "prepNote": "cut into 4 cm cubes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-yoghurt", "amount": 120, "unit": "g", "prepNote": "full-fat", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 5, "unit": "clove", "prepNote": "finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-root", "amount": 30, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-hot", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-sweet", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cumin-seeds", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coriander-ground", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cardamom-green", "amount": 4, "unit": "each", "prepNote": "pods, lightly crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cinnamon-stick", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cloves", "amount": 4, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 200, "unit": "g", "prepNote": "half a tin", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garam-masala", "amount": 0.5, "unit": "tsp", "prepNote": "added at the end", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ghee", "amount": 3, "unit": "tbsp", "prepNote": "or rapeseed oil", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coriander", "amount": 10, "unit": "g", "prepNote": "roughly chopped, to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry the onions and whole spices" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat {{ghee}} of ghee in a large, heavy pot over medium heat. Add {{cardamom-green}} of cardamom pods, {{cinnamon-stick}} of cinnamon stick, {{cloves}} of cloves and {{bay-leaves}} of bay leaves; fry for 1 minute until fragrant. Add {{cumin-seeds}} of cumin seeds. Add {{onion}} sliced onions and cook for 15 minutes, stirring, until deep golden brown." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add garlic, ginger and lamb" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add {{garlic}} of grated garlic and {{ginger-root}} of grated ginger; cook for 2 minutes. Add {{paprika-hot}} of hot paprika, {{paprika-sweet}} of sweet paprika, {{coriander-ground}} of ground coriander and {{cumin-ground}} of ground cumin; stir for 1 minute. Add the lamb; stir to coat in the spices and cook for 5 minutes to seal." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add yoghurt and simmer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add {{plain-yoghurt}} of yoghurt a tablespoon at a time, stirring between each addition and allowing the fat to re-separate before adding the next. Add {{tinned-tomatoes}} of tinned tomatoes and {{sea-salt-fine}} of salt. Bring to a simmer; cover and cook on low heat for 70 to 80 minutes until the lamb is very tender. In the last 5 minutes, stir in {{garam-masala}} of garam masala. Scatter coriander to serve." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Yoghurt curdled into white lumps", "cause": "Added all at once to a very hot pan, or too quickly.", "fix": "Add yoghurt a spoonful at a time, stirring constantly. Each spoonful should be absorbed before the next goes in." },
+            { "symptom": "Sauce oily and separated at the end", "cause": "Normal — this is called 'bhunoing' and is a sign of a properly cooked Indian sauce.", "fix": "Skim off excess oil with a spoon, or stir it back in. The oil separating shows the masala is cooked through." },
+            { "symptom": "Lamb tough after 80 minutes", "cause": "Shoulder pieces too large, or heat too high.", "fix": "Cut lamb to 4 cm; very large pieces need more time. Low, steady heat dissolves the connective tissue slowly." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rogan josh belongs to the Wazwan, the elaborate feast cooking of Kashmir, brought to the region by the Mughals and made into something distinctly Kashmiri over centuries. In the Anglo-Indian tradition it occupies the position of the serious Saturday curry: made slowly, served with basmati rice, raita and flatbread, and reliably better the next day." }
+        ]
+      }
+    ]
+  }
+}

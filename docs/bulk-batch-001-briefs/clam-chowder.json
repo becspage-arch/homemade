@@ -1,0 +1,143 @@
+{
+  "slug": "clam-chowder",
+  "title": "Clam chowder",
+  "subtitle": "New England's creamy potato and clam soup.",
+  "excerpt": "Fresh clams steamed open in white wine, with their broth forming the base of a creamy soup with potato, smoked bacon and a little cream. New England style, properly made. Serves four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "New England clam chowder. The dish has been associated with New England since the 18th century. Amelia Simmons's American Cookery (1796, public domain) references fish chowder, and clam versions appear throughout 19th-century New England cookbooks. The cream-based New England version is distinct from the tomato-based Manhattan version.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": "The dairy-based soup does not freeze well. Make and eat fresh.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the base without cream the day before; add cream and clams when reheating.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "lunch",
+    "mood": ["weekendProject", "comfortFood", "hearty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "stockpot", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The clam liquor is the flavour of chowder. When fresh clams open in white wine, they release a briny, sweet juice that no stock can replicate. Strain this liquid carefully and use it all. The dairy is secondary: it mellows and enriches, but the ocean flavour underneath is what makes the dish." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "clams", "amount": 1000, "unit": "g", "prepNote": "live, scrubbed clean", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "white-wine-dry", "amount": 100, "unit": "ml", "prepNote": "for steaming the clams", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "streaky-bacon", "amount": 100, "unit": "g", "prepNote": "cut into small lardons", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 400, "unit": "g", "prepNote": "peeled, cut into 1 cm dice", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 2, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.25, "unit": "tsp", "prepNote": "the clam liquor is salty; season carefully", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "white-pepper", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Open the clams" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Put {{clams}} of scrubbed clams in a large pot with {{white-wine-dry}} of white wine. Cover tightly and cook over high heat for 3 to 4 minutes, shaking once, until the clams have opened. Discard any that remain closed. Strain the liquid through a fine sieve lined with kitchen paper; you should have about 400 ml of clam liquor. Pick the clam meat from the shells and set aside." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the chowder base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In the same pot over medium heat, cook {{streaky-bacon}} of bacon lardons until the fat renders and the bacon is crisp, about 5 minutes. Add {{unsalted-butter}} of butter; melt. Add {{onion}} diced onion and {{celery}} diced celery; cook for 8 minutes until soft. Add {{plain-flour}} of flour and stir for 2 minutes. Gradually add the strained clam liquor and {{whole-milk}} of milk, whisking until smooth. Add {{potato}} of diced potato, {{bay-leaves}} of bay leaves and {{thyme}} of thyme. Simmer for 15 minutes until the potato is tender." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remove the bay leaves and thyme. Stir in {{double-cream}} of double cream and the reserved clam meat. Heat gently for 2 minutes without boiling. Season carefully with {{sea-salt-fine}} of salt and {{white-pepper}} of white pepper; the clam liquor is already salty. Ladle into bowls." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Clam meat rubbery", "cause": "Clams added too early or reheated for too long.", "fix": "Add the clam meat only at the final stage, after the cream, and heat very gently. Clams become rubbery after prolonged cooking." },
+            { "symptom": "Soup too salty", "cause": "Clam liquor not strained, or over-seasoned without tasting.", "fix": "Strain the liquor carefully through lined sieve and taste before seasoning. The briny clam liquid adds significant salt." },
+            { "symptom": "Soup too thick", "cause": "Too much roux, or potatoes breaking down completely.", "fix": "Add more milk to loosen. A small amount of potato breaking down is desirable and natural; if they dissolve entirely, remove half and mash roughly before returning." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "New England clam chowder is a coastal dish with a long history: a hearty soup made from the most abundant ingredient along the Massachusetts shore. Boston and Providence both claim a version. The Manhattan chowder, made with tomato instead of cream, is the New York version and the subject of strong opinions. This version makes no apologies for the cream." }
+        ]
+      }
+    ]
+  }
+}

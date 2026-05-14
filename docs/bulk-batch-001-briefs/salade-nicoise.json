@@ -1,0 +1,136 @@
+{
+  "slug": "salade-nicoise",
+  "title": "Salade niçoise",
+  "subtitle": "The composed salad of Nice: tuna, egg, beans and olives.",
+  "excerpt": "A composed salad of tuna, hard-boiled eggs, green beans, tomatoes, black olives and anchovies on a bed of lettuce, dressed with a sharp vinaigrette. Classic Nice in a bowl. Serves four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "SUMMER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Salade niçoise. The dish is the signature salad of Nice and the French Riviera, documented throughout the 20th century in Provençal cookbooks. Traditional versions contain no cooked potato; this is a modern addition. Auguste Escoffier's Ma Cuisine (1934) and Elizabeth David's French Provincial Cooking (1960) both include versions.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Components can be prepped a few hours ahead and refrigerated separately. Dress and compose just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "lunch",
+    "mood": ["summery", "healthy", "quick"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "salad-bowl", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A niçoise should be composed, not tossed. Each element is arranged separately on the plate so the diner can see what they are getting. The dressing is sharp, made with more lemon or vinegar than feels comfortable, because the tuna, eggs and anchovies are all rich and need something assertive to cut through them." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The traditional dispute is over potatoes: purists say no potato, the rest of France says yes. Here, there are no potatoes — which makes it faster and lighter, and closer to what the Niçois actually eat." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "tuna-tinned", "amount": 2, "unit": "each", "prepNote": "160 g tins in olive oil, drained", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "each", "prepNote": "hard-boiled, peeled, halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "green-beans", "amount": 200, "unit": "g", "prepNote": "topped and tailed, blanched 3 minutes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato", "amount": 300, "unit": "g", "prepNote": "ripe, cut into wedges", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olives-black", "amount": 80, "unit": "g", "prepNote": "pitted", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "anchovies", "amount": 8, "unit": "each", "prepNote": "fillets in olive oil", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "capers", "amount": 1, "unit": "tbsp", "prepNote": "drained", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "cos-lettuce", "amount": 1, "unit": "each", "prepNote": "leaves separated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "extra-virgin-olive-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Dressing" },
+            { "ingredientSlug": "red-wine-vinegar", "amount": 1.5, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Dressing" },
+            { "ingredientSlug": "dijon-mustard", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dressing" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dressing" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the beans and eggs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bring a saucepan of salted water to the boil. Blanch {{green-beans}} of green beans for 3 minutes; remove with a slotted spoon and plunge into cold water. Add {{eggs}} eggs to the same water and boil for 9 minutes. Transfer to cold water, peel and halve." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dressing and compose" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Whisk {{extra-virgin-olive-oil}} of extra-virgin olive oil with {{red-wine-vinegar}} of red wine vinegar, {{dijon-mustard}} of Dijon mustard and {{sea-salt-fine}} of salt until emulsified. Arrange {{cos-lettuce}} lettuce leaves on a large platter. Lay the tomato wedges, green beans, halved eggs and {{tuna-tinned}} of drained tuna over the leaves. Scatter {{olives-black}} of olives and {{capers}} of capers if using. Lay the anchovy fillets over the top. Drizzle the dressing over everything just before serving." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Eggs with grey-green yolks", "cause": "Overcooked eggs or not cooled quickly enough.", "fix": "Transfer eggs to cold water immediately after cooking. 9 minutes gives a fully set but vivid yellow yolk." },
+            { "symptom": "Salad watery and bland", "cause": "Dressing too timid or applied too early.", "fix": "Niçoise needs a sharp dressing; more vinegar than feels natural. Dress just before serving — the tomatoes release water if dressed ahead." },
+            { "symptom": "Tuna dry and crumbly", "cause": "Tuna in brine instead of oil.", "fix": "Use tuna packed in olive oil; it has a better texture and more flavour. If only brine-packed is available, drain well and drizzle with a little olive oil." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Nice is the city where Provençal cooking meets the sea, and the niçoise is its edible signature. The salad has been exported so widely that most versions have drifted from the original, but the principle remains: a collection of the best summer vegetables and preserved fish, dressed and served at room temperature. On a hot day, with cold rosé and good bread, it is as good as lunch gets." }
+        ]
+      }
+    ]
+  }
+}
