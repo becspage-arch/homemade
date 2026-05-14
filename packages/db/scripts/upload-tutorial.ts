@@ -42,6 +42,10 @@
  *      slug — idempotent re-run). Sets `type` from the input (default RECIPE)
  *      and copies the recipe metadata fields over when present. Computes
  *      `totalMinutes` from prep + cook + resting + chilling if not given.
+ *      Pass `--status PUBLISHED` to land the row live (also stamps
+ *      `publishedAt = now()`); this is the bulk auto-publish path used by
+ *      Phase 8 Step 12 workers. Default `--status DRAFT` is the editorial
+ *      pilot path (preserves existing behaviour).
  *   9. Sync RecipeIngredient join rows from the body's ingredientsList blocks
  *      (delete-then-insert in a transaction). Sync RecipeTool join rows from
  *      the top-level recipeTools array the same way.
@@ -132,7 +136,13 @@ interface ToolResolution {
   name: string
 }
 
-async function uploadTutorial(input: TutorialUploadInput, inputFilePath: string): Promise<UploadResult> {
+type DesiredStatus = 'DRAFT' | 'PUBLISHED'
+
+async function uploadTutorial(
+  input: TutorialUploadInput,
+  inputFilePath: string,
+  desiredStatus: DesiredStatus = 'DRAFT',
+): Promise<UploadResult> {
   validateInput(input)
 
   const { prisma, MediaStatus, MediaType, TutorialStatus, SourceType, Difficulty } =
@@ -388,8 +398,20 @@ async function uploadTutorial(input: TutorialUploadInput, inputFilePath: string)
     leftoverTutorialId,
   }
 
+  // Publish intent. --status PUBLISHED stamps publishedAt now and flips the
+  // row to PUBLISHED on both create and update (bulk auto-publish path from
+  // Phase 8 Step 12). --status DRAFT keeps the existing behaviour: new rows
+  // land as DRAFT with publishedAt=null; existing rows keep their current
+  // status / publishedAt untouched.
+  const publishUpdate =
+    desiredStatus === 'PUBLISHED'
+      ? { status: TutorialStatus.PUBLISHED, publishedAt: new Date() }
+      : null
+
   let tutorialId: string
   let mode: 'created' | 'updated'
+  let finalStatus: UploadResult['status']
+  let finalPublishedAt: Date | null
 
   if (existingTutorial) {
     // Snapshot the existing state before overwriting (matches admin updateTutorial).
@@ -408,18 +430,26 @@ async function uploadTutorial(input: TutorialUploadInput, inputFilePath: string)
 
     const updated = await prisma.tutorial.update({
       where: { id: existingTutorial.id },
-      data: sharedData,
+      data: {
+        ...sharedData,
+        ...(publishUpdate ?? {}),
+      },
     })
     tutorialId = updated.id
     mode = 'updated'
+    finalStatus = updated.status as UploadResult['status']
+    finalPublishedAt = updated.publishedAt
   } else {
     const created = await prisma.tutorial.create({
       data: {
         ...sharedData,
-        status: TutorialStatus.DRAFT,
+        status: publishUpdate?.status ?? TutorialStatus.DRAFT,
+        publishedAt: publishUpdate?.publishedAt ?? null,
         authorId: author.id,
       },
     })
+    finalStatus = created.status as UploadResult['status']
+    finalPublishedAt = created.publishedAt
 
     // First-save snapshot.
     await prisma.tutorialVersion.create({
@@ -460,6 +490,8 @@ async function uploadTutorial(input: TutorialUploadInput, inputFilePath: string)
     tutorialId,
     slug: input.slug,
     type: tutorialType,
+    status: finalStatus,
+    publishedAt: finalPublishedAt ? finalPublishedAt.toISOString() : null,
     categorySlug: category.slug,
     subCategorySlug: input.subCategorySlug ?? null,
     heroMediaId,
@@ -724,30 +756,82 @@ async function syncRecipeTools(
 interface UploadCliFlags {
   inputPath: string
   skipVoiceCheck: boolean
+  status: DesiredStatus
 }
 
-function parseUploadArgs(argv: string[]): UploadCliFlags | null {
+const USAGE = [
+  'Usage: pnpm exec tsx scripts/upload-tutorial.ts <path-to-input.json> [flags]',
+  '',
+  'Flags:',
+  '  --status DRAFT|PUBLISHED  Lifecycle to land the row in. Default DRAFT.',
+  '                            PUBLISHED also stamps publishedAt=now() and is',
+  '                            the bulk-auto-publish path (Phase 8 Step 12).',
+  '  --skip-voice-check        Admin escape hatch — bypass the deterministic',
+  '                            voice gate. Do not use in bulk authoring.',
+  '  --help                    Show this message.',
+].join('\n')
+
+function parseUploadArgs(argv: string[]): UploadCliFlags | null | 'help' {
   let inputPath: string | null = null
   let skipVoiceCheck = false
-  for (const arg of argv) {
-    if (arg === '--skip-voice-check') skipVoiceCheck = true
-    else if (arg.startsWith('--')) {
+  let status: DesiredStatus = 'DRAFT'
+
+  for (let i = 0; i < argv.length; i++) {
+    const arg = argv[i]!
+    if (arg === '--help' || arg === '-h') return 'help'
+    if (arg === '--skip-voice-check') {
+      skipVoiceCheck = true
+      continue
+    }
+    if (arg === '--status') {
+      const raw = argv[i + 1]
+      if (!raw) {
+        console.error('--status requires a value: DRAFT or PUBLISHED')
+        return null
+      }
+      const upper = raw.toUpperCase()
+      if (upper !== 'DRAFT' && upper !== 'PUBLISHED') {
+        console.error(`--status must be DRAFT or PUBLISHED (got "${raw}")`)
+        return null
+      }
+      status = upper as DesiredStatus
+      i += 1
+      continue
+    }
+    if (arg.startsWith('--status=')) {
+      const raw = arg.slice('--status='.length)
+      const upper = raw.toUpperCase()
+      if (upper !== 'DRAFT' && upper !== 'PUBLISHED') {
+        console.error(`--status must be DRAFT or PUBLISHED (got "${raw}")`)
+        return null
+      }
+      status = upper as DesiredStatus
+      continue
+    }
+    if (arg.startsWith('--')) {
       console.error(`Unknown flag: ${arg}`)
       return null
-    } else if (!inputPath) {
-      inputPath = arg
     }
+    if (!inputPath) {
+      inputPath = arg
+      continue
+    }
+    console.error(`Unexpected positional argument: ${arg}`)
+    return null
   }
   if (!inputPath) return null
-  return { inputPath, skipVoiceCheck }
+  return { inputPath, skipVoiceCheck, status }
 }
 
 async function main(): Promise<void> {
-  const flags = parseUploadArgs(process.argv.slice(2))
+  const parsed = parseUploadArgs(process.argv.slice(2))
+  if (parsed === 'help') {
+    console.log(USAGE)
+    process.exit(0)
+  }
+  const flags = parsed
   if (!flags) {
-    console.error(
-      'Usage: pnpm exec tsx scripts/upload-tutorial.ts <path-to-input.json> [--skip-voice-check]',
-    )
+    console.error(USAGE)
     process.exit(1)
   }
 
@@ -772,6 +856,7 @@ async function main(): Promise<void> {
   console.log(`  slug: ${input.slug}`)
   console.log(`  title: ${input.title}`)
   console.log(`  type: ${input.type ?? 'RECIPE'}`)
+  console.log(`  target status: ${flags.status}`)
 
   // Voice-check pass — deterministic gate. Block on errors unless the admin
   // escape hatch is set. The bot-as-editor rewrite happens earlier in the
@@ -794,12 +879,13 @@ async function main(): Promise<void> {
     )
   }
 
-  const result = await uploadTutorial(input, inputPath)
+  const result = await uploadTutorial(input, inputPath, flags.status)
 
   console.log(`\n[upload-tutorial] ${result.mode.toUpperCase()}`)
   console.log(`  Tutorial id: ${result.tutorialId}`)
   console.log(`  slug: ${result.slug}`)
   console.log(`  type: ${result.type}`)
+  console.log(`  status: ${result.status}${result.publishedAt ? ` (publishedAt=${result.publishedAt})` : ''}`)
   console.log(`  category: ${result.categorySlug}${result.subCategorySlug ? ` / ${result.subCategorySlug}` : ''}`)
   console.log(`  RecipeIngredient rows: ${result.recipeIngredientRows}`)
   console.log(`  RecipeTool rows: ${result.recipeToolRows}`)

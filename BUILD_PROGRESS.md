@@ -1060,38 +1060,49 @@ drafting worker reads, not a separate process.
 
 **Landed.** 10 RECIPE drafts in production DB, status DRAFT: lasagne-alla-bolognese, quick-weeknight-lasagne, roast-chicken-sunday, piccalilli, coq-au-vin, buttermilk-pancakes, chicken-tikka-masala, shakshuka, air-fryer-chicken-thighs, slow-cooker-pulled-pork. Voice-check passed within 1 retry on all 10 (3 clean first pass, 7 with one retry; zero failed all 3 attempts). 13 new GlossaryTerm rows landed via the upload script. Zero new ingredients needed; the Step 4 master list covered everything. Briefs at `docs/pilot-10-briefs/`, full upload JSON at `packages/db/scripts/drafts/`, report at `docs/pilot-10-report.md`. Patterns for Step 11 prompt-refinement: em-dash overuse (most common failure), "honest" as a softener, tricolons in intros/conclusions.
 
-### Step 11 — Prompt template v3 + common-issues + auto-publish wiring
+### Step 11 — Prompt template v4 + common-issues + auto-publish wiring ✅ landed 2026-05-14
 
 **Goal.** Turn the manual-review pilot pattern into an auto-publish flow
 that scales to 28k articles without Rebecca gating every draft.
 
-**Partial — done so far:**
+**Landed.**
 
-- `docs/tutorial-author.md` bumped from v2 to v3 (commit `2f64530`,
-  2026-05-14). Tightened em-dash rule with Don't/Do table; added
+- `docs/tutorial-author.md` bumped v2 → v3 (commit `2f64530`,
+  2026-05-14): tightened em-dash rule with Don't/Do table; added
   anti-softener call-out for "honest" / "frankly" / "genuinely";
   rewrote scaling-tokens section with per-unit grammar + worked
   examples; added render-read self-critique step for tokens.
-
-**Still owed:**
-
-- Extend `docs/tutorial-author.md` so the drafter reads
-  `docs/common-issues.md` at session start and adds a check against
-  every entry to the self-critique pass.
-- `docs/common-issues.md` created (this commit) seeded with the
-  pilot-10 patterns; common-issues entries appended by future workers
-  whenever a pattern recurs 3+ times in a batch.
-- `packages/db/scripts/upload-tutorial.ts` extended with a `--status`
-  flag (default `DRAFT` for backwards compat; opt-in `PUBLISHED`).
-  Bulk authoring workers invoke with `--status published`.
-- `packages/db/scripts/voice-check.ts` extended with any new
-  deterministic rules where pilot patterns are deterministic
-  (em-dash count already covered; nothing else is deterministic yet).
+- `docs/tutorial-author.md` bumped v3 → v4 (this commit): drafter
+  reads `docs/common-issues.md` at session start; self-critique pass
+  adds a per-entry verification against every common-issues rule
+  (item 14) before writing the final JSON. `[block]` entries must be
+  cleared; `[warn]` entries are guidance and deliberate skips get
+  noted in the change log.
+- `docs/common-issues.md` seeded with the pilot-10 patterns (em-dash
+  appositives, "honest" as softener, tricolons in intros/conclusions)
+  in commit `23f34dc`. Format and append-rules documented inline.
+  Future workers append entries when a pattern recurs 3+ times in a
+  batch; Rebecca appends directly when spot-checks surface one.
+- `packages/db/scripts/upload-tutorial.ts` extended with `--status
+  DRAFT|PUBLISHED` (default `DRAFT` — preserves existing behaviour).
+  `--status PUBLISHED` flips the row to PUBLISHED and stamps
+  `publishedAt = now()` on both create and update paths. Bulk
+  authoring workers invoke with `--status PUBLISHED`. Usage / `--help`
+  text updated. `UploadResult` now carries `status` + `publishedAt`
+  so the success log surfaces the landed lifecycle state.
+- `packages/db/scripts/voice-check.ts` audit recorded: all three
+  pilot-10 patterns are already deterministic-enforced. Em-dash
+  paragraph + sentence rules block via `em-dash-paragraph` /
+  `em-dash-sentence`. Softeners ("honest" / "honestly" / "to be
+  honest" / "I'll be honest" / "frankly" / "truthfully" /
+  "genuinely") all block via `banned-phrase`. Tricolons warn via the
+  `containsTricolon` heuristic — kept as warn per the rule design.
+  No new rules added.
 
 **Out.**
 
 - The 50-recipe pilot batch from the old Step 11 is dropped — we skip
-  straight from pilot-10 to bulk auto-publish with the v3 prompt.
+  straight from pilot-10 to bulk auto-publish with the v4 prompt.
   Pilot-10 patterns are enough signal to refine.
 
 ### Step 12 — Bulk auto-publish at 100–200 per batch
@@ -1099,13 +1110,20 @@ that scales to 28k articles without Rebecca gating every draft.
 **Goal.** Standing worker pattern. Daily auto-publish, no per-draft
 manual review.
 
+**Ready to start** as of Step 11 finish (this commit): prompt v4
+wires `docs/common-issues.md` into session-start + self-critique;
+`upload-tutorial.ts --status PUBLISHED` lands rows live in one call.
+
 **Deliverable.** Each batch picks N from the backlog, drafts,
-self-critiques (including the `docs/common-issues.md` check),
-voice-checks, uploads with `--status published`. Tutorials land live on
-the site (still splash-gated pre-launch, so Rebecca-only). The worker
-session updates `docs/common-issues.md` at the end of a batch if it
-spotted a recurring pattern (3+ instances in this batch). Recipes land
-daily until the backlog is exhausted.
+self-critiques (against the voice rules **and** every
+`docs/common-issues.md` entry — item 14 of the self-critique pass),
+voice-checks via `pnpm --filter @homemade/db exec tsx scripts/voice-check.ts`,
+uploads with `pnpm --filter @homemade/db exec tsx scripts/upload-tutorial.ts
+<path> --status PUBLISHED`. Tutorials land live on the site (still
+splash-gated pre-launch, so Rebecca-only). The worker session updates
+`docs/common-issues.md` at the end of a batch if it spotted a recurring
+pattern (3+ instances in this batch). Recipes land daily until the
+backlog is exhausted.
 
 Rebecca spot-checks live on the site as she has bandwidth — not gating,
 not per-draft. If she spots a pattern that recurs across multiple

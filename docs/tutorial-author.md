@@ -5,8 +5,13 @@ tutorial body. It is the prompt template, the locked illustration
 prompts, the structural rules, and the master ingredient + tool lookup
 tables, all in one document.
 
-**Prompt version:** 3 (recipe-first + pilot-10 learnings, Phase 8 Step 11
-— 2026-05-14). Bump this when the prompt is iterated. Changelog:
+**Prompt version:** 4 (common-issues wiring, Phase 8 Step 11 finish —
+2026-05-14). Bump this when the prompt is iterated. Changelog:
+- v4: drafter reads `docs/common-issues.md` at session start; the
+  self-critique pass adds a per-entry verification against every
+  common-issues rule before writing the final JSON. Closes the loop
+  so future workers add patterns to one place and every subsequent
+  draft inherits the check automatically.
 - v3: tightened em-dash rule (banned the appositive pair outright),
   added an anti-softener call-out for "honest", added the scaling-token
   grammar table by unit family, added a render-read step to the
@@ -15,19 +20,26 @@ tables, all in one document.
 
 ## How a drafting session uses this file
 
-A worker session does three things:
+A worker session does four things:
 
-1. Reads this whole file plus `docs/voice-editor-prompt.md` and the brief
-   it was handed (one recipe at a time).
+1. Reads this whole file, `docs/voice-editor-prompt.md`,
+   `docs/common-issues.md`, and the brief it was handed (one recipe at
+   a time). `docs/common-issues.md` is a living list of recurring
+   quality issues with concrete examples and the corrective rule —
+   read every entry, you check the draft against each one in step 4.
 2. Drafts a TipTap-JSON tutorial matching `TutorialUploadInput` (see
    `packages/db/scripts/upload-tutorial-types.ts`).
 3. Self-critiques against the voice rules below, rewrites flagged
-   sentences in place, then writes the final JSON to disk.
+   sentences in place.
+4. Self-critiques against every entry in `docs/common-issues.md`,
+   rewrites any matching line, then writes the final JSON to disk.
 
 The deterministic `voice-check` CLI then gates the upload. The upload
 script (`packages/db/scripts/upload-tutorial.ts`) resolves ingredient
-slugs, syncs `RecipeIngredient` join rows, and inserts the Tutorial as
-DRAFT.
+slugs, syncs `RecipeIngredient` join rows, and inserts the Tutorial.
+Lifecycle is controlled by `--status`: omit for DRAFT (editorial pilot
+path); pass `--status PUBLISHED` to land the row live and stamp
+`publishedAt = now()` (the bulk auto-publish path from Phase 8 Step 12).
 
 Image generation is deferred. Drafts ship with `hero.localPath`
 unset; heroes are batch-generated pre-launch from the locked prompts
@@ -639,6 +651,15 @@ Checklist:
 13. Every `ingredientSlug` in `ingredientsList` matches a row in the
     INGREDIENT_LOOKUP table. Every `recipeTools[].slug` matches a row
     in TOOL_LOOKUP.
+14. Walk every entry in `docs/common-issues.md`. For each entry,
+    re-read the draft asking the single question "does this draft
+    exhibit the pattern this entry describes?" If yes, rewrite the
+    affected lines using the entry's **How to fix** guidance, then
+    re-check. `[block]` entries must be cleared before writing the
+    final JSON; `[warn]` entries are guidance — rewrite when the fix
+    is unambiguous, leave alone when the prose works as-is. Note any
+    `[warn]` entries you deliberately left in the change log so the
+    next reviewer can see the call was intentional.
 
 `docs/voice-editor-prompt.md` walks through these in more detail. The
 deterministic `voice-check` CLI is the final gate.

@@ -211,6 +211,8 @@ export interface UploadResult {
   tutorialId: string
   slug: string
   type: TutorialType
+  status: 'DRAFT' | 'IN_REVIEW' | 'PENDING_MODERATION' | 'SCHEDULED' | 'PUBLISHED' | 'ARCHIVED'
+  publishedAt: string | null
   categorySlug: string
   subCategorySlug: string | null
   heroMediaId: string | null
