@@ -1838,6 +1838,109 @@ catalogued-but-unwired (Phase 7/8 placeholder).
 
 ---
 
+## Bug fix — defensive tutorial page handler + ALB Cloudflare-only ingress (2026-05-14)
+
+Two-item session closing the gaps surfaced by Sentry event
+`17879686637e4c3fb5096420d3c392a7`. A bot scanner hit the bare ALB IP
+at `https://35.176.112.213/dist/ui.browser.js`; the URL fell through
+to the dynamic `[categorySlug]/[tutorialSlug]` route, Prisma threw,
+and the request 500'd instead of 404-ing. Same probe also exposed
+that the ALB security group accepted traffic from anywhere — every
+scanner on the internet could bypass Cloudflare's WAF, bot detection,
+and rate limits.
+
+### Defensive tutorial page handler
+
+`apps/web/src/app/(public)/[categorySlug]/[tutorialSlug]/page.tsx`:
+
+- **Slug validation:** `SLUG_RE = /^[a-z0-9][a-z0-9-]{0,79}$/` plus
+  an `isValidSlug` type guard at the top of the file. Both
+  `generateMetadata` and the page component reject invalid slugs
+  before the Prisma call — `generateMetadata` returns a `Not found`
+  title, the page calls `notFound()`. Catches `ui.browser.js` (dot),
+  pathologically long inputs, uppercase, slashes, and URL-encoded
+  characters. Genuine tutorial slugs all conform to the pattern.
+- **Prisma-error catch:** `loadTutorial` wraps the `prisma.tutorial.findFirst`
+  in a try/catch that reports the exception to Sentry at
+  `level: 'warning'` with `tags: { route: 'tutorial-page' }` and
+  returns `null`. The existing `notFound()` flow downstream handles
+  the null return — so a never-seen-before Prisma error 404s
+  cleanly with the brand 404 page instead of triggering the
+  per-tutorial error boundary's 500.
+
+The pattern mirrors `getCurrentDbUser`'s warning-level catch from the
+2026-05-13 Clerk fix.
+
+### ALB Cloudflare-only ingress
+
+- **New `infra/lib/cloudflare-ips.ts`** — readonly arrays of
+  Cloudflare's published IPv4 + IPv6 origin CIDRs (15 + 7 ranges,
+  refreshed 2026-05-14 from `cloudflare.com/ips-v4` / `ips-v6`).
+  Header comment names the source and refresh date.
+- **`infra/lib/homemade-stack.ts`** — both ALB listeners (HTTPS:443
+  and HTTP:80) flipped from `open: true` to `open: false`. A loop
+  after listener creation iterates `CLOUDFLARE_IPV4` + `CLOUDFLARE_IPV6`
+  and calls `alb.connections.allowFrom(...)` for each CIDR × both
+  ports. End state: ALB security group accepts ingress only from
+  Cloudflare CIDRs.
+- **CloudWatch alarms unchanged.** All three (`Alb5xxAlarm`,
+  `TargetUnhealthyAlarm`, `EcsRunningTaskAlarm`) pull from
+  AWS-internal metric services (`AWS/ApplicationELB` +
+  `AWS/ECS`) — they don't probe the ALB over the network, so the
+  lockdown doesn't affect them.
+- **ECS target group health check unchanged.** Inbound to the ECS
+  task SG (allowing the ALB to reach `:3000/healthz`) is separate
+  from inbound to the ALB SG.
+- **Single-deploy.** Pure SG change — no IAM grants or secret
+  references — so the two-step CFN pattern from Phase 2e / the
+  hardening pass isn't needed here.
+
+### Runbook
+
+`docs/refresh-cloudflare-ips.md` covers: signals it's time to
+refresh, the curl-and-compare procedure, the rule-count sanity check
+(44 rules currently, well under the 60-rule default SG quota),
+deploy + post-deploy validation, and the rationale for hardcoding
+vs. fetching at synth time.
+
+### Sentry trace
+
+`SENTRY_AUTH_TOKEN` in `.env.credentials` carries only the `org:ci`
+scope, which is the minimum needed for the GitHub Actions
+sourcemap-upload step. Reading individual events through the API
+returns `403 You do not have permission to perform this action`.
+The fix didn't need the exact Prisma error code — both the slug
+validation and the catch-all are correct regardless. Pre-launch
+debt: provision a Sentry token with `event:read` so future bug-fix
+sessions can pull traces without bouncing back to Rebecca.
+
+### Files touched
+
+- `apps/web/src/app/(public)/[categorySlug]/[tutorialSlug]/page.tsx` —
+  slug validation + Prisma try/catch + Sentry import
+- `infra/lib/cloudflare-ips.ts` (new)
+- `infra/lib/homemade-stack.ts` — listeners `open: false`, Cloudflare
+  CIDR ingress loop, import for the IP lists
+- `docs/refresh-cloudflare-ips.md` (new)
+
+### Things scoped out of this session
+
+- Phase 8 content-pipeline work (step 8 body-authoring prompt
+  rewrite is in flight in a parallel session — `docs/tutorial-author.md`,
+  `packages/db/scripts/`, `packages/ai/`).
+- Social strategy docs.
+- New analytics events, marketing pages, admin pages.
+- Schema changes.
+- Cloudflare SSL / ACM changes beyond reading the existing setup.
+
+### Pre-launch debt observed during this session
+
+- Provision a Sentry auth token with `event:read` (in addition to
+  the existing `org:ci`) so worker sessions can pull individual
+  event traces without permission failures.
+
+---
+
 ## Commit history milestones
 
 - `5d1b5e6` — initial monorepo scaffold
@@ -1867,4 +1970,5 @@ catalogued-but-unwired (Phase 7/8 placeholder).
 - `aadd8fd` — chore(prelaunch): pre-launch debt sweep — iOS TestFlight workflow + ESLint v9 flat-config (phase 1) + repo CLAUDE.md + SubTutorialCard dead-ref strip-and-snapshot + hard-delete cron + Typesense CDK secret-mount (gated)
 - _this session_ — fix(auth+analytics): narrow `proxy.ts` matcher + defensive `getCurrentDbUser` try/catch (kills Clerk auth() Sentry spam from bot probes) + public error boundaries + wire `tutorial_shared` (new share UI) / `search_result_clicked` / `account_data_export_downloaded` / `error_boundary_triggered` / `account_deletion_completed` (closes the last analytics loose ends from Phase B except `payment_failed`)
 - _this session_ — feat(auth): pre-launch signup allowlist — `SignupAllowlist` Prisma model + seed migration (`20260607000000_phase_signup_allowlist`), Clerk webhook + JIT rejection paths that delete the Clerk user via the Backend API on non-allowlisted signup, ADMIN-only `/admin/users/signup-allowlist` CRUD with audit-log + PostHog wiring, `docs/clerk-restrictions-setup.md` runbook for mirroring the list into Clerk's dashboard, three new analytics events
+- _this session_ — fix: defensive tutorial page handler (slug validation + Prisma try/catch → 404 instead of 500) + ALB Cloudflare-only ingress (security group locked to 15 IPv4 + 7 IPv6 Cloudflare CIDRs, listeners flipped to `open: false`, `docs/refresh-cloudflare-ips.md` runbook). Closes Sentry event `17879686637e4c3fb5096420d3c392a7`.
 - Phase 3a (earlier session): public tutorial / category / home pages, TipTap-JSON renderer with no TipTap runtime in the public bundle, admin Preview toggle

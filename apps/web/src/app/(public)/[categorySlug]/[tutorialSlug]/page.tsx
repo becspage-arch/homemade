@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
+import * as Sentry from '@sentry/nextjs'
 import { prisma, TutorialStatus, UserProjectStatus } from '@homemade/db'
 import { TutorialContent } from '@/components/public/tutorial-content/tutorial-content'
 import {
@@ -36,38 +37,60 @@ interface PageProps {
   params: Promise<{ categorySlug: string; tutorialSlug: string }>
 }
 
+// Genuine tutorial slugs are lowercase alphanumeric with optional hyphens,
+// up to 80 chars. Anything else (dots, slashes, uppercase, encoded chars) is
+// a scanner probe — reject before it reaches Prisma.
+const SLUG_RE = /^[a-z0-9][a-z0-9-]{0,79}$/
+
+function isValidSlug(s: unknown): s is string {
+  return typeof s === 'string' && SLUG_RE.test(s)
+}
+
 async function loadTutorial(categorySlug: string, tutorialSlug: string) {
-  return prisma.tutorial.findFirst({
-    where: {
-      slug: tutorialSlug,
-      status: TutorialStatus.PUBLISHED,
-      category: { slug: categorySlug },
-    },
-    include: {
-      category: { select: { name: true, slug: true } },
-      subCategory: { select: { name: true } },
-      hero: {
-        select: {
-          cloudflareId: true,
-          r2Key: true,
-          alt: true,
-          caption: true,
-          attribution: true,
+  try {
+    return await prisma.tutorial.findFirst({
+      where: {
+        slug: tutorialSlug,
+        status: TutorialStatus.PUBLISHED,
+        category: { slug: categorySlug },
+      },
+      include: {
+        category: { select: { name: true, slug: true } },
+        subCategory: { select: { name: true } },
+        hero: {
+          select: {
+            cloudflareId: true,
+            r2Key: true,
+            alt: true,
+            caption: true,
+            attribution: true,
+          },
+        },
+        creator: {
+          select: {
+            name: true,
+            displayHandle: true,
+            creatorVerifiedAt: true,
+          },
         },
       },
-      creator: {
-        select: {
-          name: true,
-          displayHandle: true,
-          creatorVerifiedAt: true,
-        },
-      },
-    },
-  })
+    })
+  } catch (err) {
+    // Unknown Prisma errors on a lookup should 404, not 500. Report as a
+    // warning so genuine regressions stay visible.
+    Sentry.captureException(err, {
+      level: 'warning',
+      tags: { route: 'tutorial-page' },
+    })
+    return null
+  }
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { categorySlug, tutorialSlug } = await params
+  if (!isValidSlug(categorySlug) || !isValidSlug(tutorialSlug)) {
+    return { title: 'Not found · homemade' }
+  }
   const tutorial = await loadTutorial(categorySlug, tutorialSlug)
   if (!tutorial) return { title: 'Not found · homemade' }
   return {
@@ -79,6 +102,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function TutorialPage({ params }: PageProps) {
   const { categorySlug, tutorialSlug } = await params
+  if (!isValidSlug(categorySlug) || !isValidSlug(tutorialSlug)) {
+    notFound()
+  }
 
   const [tutorial, currentUser] = await Promise.all([
     loadTutorial(categorySlug, tutorialSlug),

@@ -12,6 +12,7 @@ import * as logs from 'aws-cdk-lib/aws-logs'
 import * as secretsmanager from 'aws-cdk-lib/aws-secretsmanager'
 import * as sns from 'aws-cdk-lib/aws-sns'
 import * as snsSubscriptions from 'aws-cdk-lib/aws-sns-subscriptions'
+import { CLOUDFLARE_IPV4, CLOUDFLARE_IPV6 } from './cloudflare-ips'
 
 /**
  * Homemade web stack.
@@ -417,7 +418,9 @@ export class HomemadeStack extends cdk.Stack {
         protocol: elbv2.ApplicationProtocol.HTTPS,
         certificates: [originCert],
         defaultTargetGroups: [targetGroup],
-        open: true,
+        // Ingress is locked to Cloudflare IPs below — never `open: true`,
+        // which would re-add a 0.0.0.0/0 rule.
+        open: false,
       })
     }
 
@@ -432,7 +435,8 @@ export class HomemadeStack extends cdk.Stack {
     alb.addListener('HttpListener', {
       port: 80,
       protocol: elbv2.ApplicationProtocol.HTTP,
-      open: true,
+      // Ingress is locked to Cloudflare IPs below — never `open: true`.
+      open: false,
       ...(originCertArn && httpPort80Redirect
         ? {
             defaultAction: elbv2.ListenerAction.redirect({
@@ -445,6 +449,46 @@ export class HomemadeStack extends cdk.Stack {
             defaultTargetGroups: [targetGroup],
           }),
     })
+
+    // ────────────────────────────────────────────────────────────────
+    // Cloudflare-only ALB ingress.
+    //
+    // The ALB has a public IP and a public DNS name. Without this lockdown,
+    // any internet scanner can probe it directly and bypass every Cloudflare
+    // protection (WAF, bot detection, rate limits). Only Cloudflare's
+    // published origin IP ranges are allowed to reach the listener ports.
+    //
+    // Refresh procedure when Cloudflare updates its ranges:
+    // docs/refresh-cloudflare-ips.md.
+    //
+    // CloudWatch metrics (Alb5xxAlarm, TargetUnhealthyAlarm,
+    // EcsRunningTaskAlarm) pull from AWS-internal metric services, not by
+    // probing the ALB, so they continue working under this lockdown.
+    // ────────────────────────────────────────────────────────────────
+    for (const cidr of CLOUDFLARE_IPV4) {
+      alb.connections.allowFrom(
+        ec2.Peer.ipv4(cidr),
+        ec2.Port.tcp(80),
+        `Cloudflare ${cidr} → ALB:80`,
+      )
+      alb.connections.allowFrom(
+        ec2.Peer.ipv4(cidr),
+        ec2.Port.tcp(443),
+        `Cloudflare ${cidr} → ALB:443`,
+      )
+    }
+    for (const cidr of CLOUDFLARE_IPV6) {
+      alb.connections.allowFrom(
+        ec2.Peer.ipv6(cidr),
+        ec2.Port.tcp(80),
+        `Cloudflare ${cidr} → ALB:80`,
+      )
+      alb.connections.allowFrom(
+        ec2.Peer.ipv6(cidr),
+        ec2.Port.tcp(443),
+        `Cloudflare ${cidr} → ALB:443`,
+      )
+    }
 
     // ────────────────────────────────────────────────────────────────
     // Alarms — SNS topic with email subscription, three CloudWatch alarms.
