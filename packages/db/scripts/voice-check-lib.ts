@@ -526,13 +526,14 @@ function scanChunk(chunk: Chunk, report: VoiceCheckReport): void {
       })
     }
   }
-  // Genericised brands — warn only (the brand is the de facto noun).
+  // Brand names that pass — warn only. Reviewer decides per-recipe whether
+  // to rephrase. Sometimes the brand reads naturally as the noun.
   for (const b of WARN_BRANDS) {
     if (wordRegex(b.brand).test(text)) {
       report.warnings.push({
         severity: 'warn',
         kind: 'brand-trademark',
-        message: `genericised brand "${b.brand}" — generic equivalent is "${b.generic}"`,
+        message: `brand name "${b.brand}" — generic equivalent is "${b.generic}"`,
         path,
         snippet: b.brand,
       })

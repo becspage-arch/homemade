@@ -1155,36 +1155,37 @@ trademark conflicts and personal-name attributions. Resolved:
   circle): `jeanette-s-vegetable-crumble`, `vanessa-s-quiche`.
 
 **Permanent brand-trademark guardrail.** Same session shipped a
-deterministic voice-check rule that blocks any upload mentioning a
-registered trademark by name. Lives in
+deterministic voice-check rule that surfaces any registered-trademark
+mention. Lives in
 [`packages/db/scripts/voice-check-lib.ts`](packages/db/scripts/voice-check-lib.ts);
 brand list in
 [`packages/db/scripts/data/banned-brands.ts`](packages/db/scripts/data/banned-brands.ts).
 Scans title / subtitle / excerpt / sourceNotes / body. Two tiers:
 
-- `BANNED_BRANDS` (blocks): restaurant chains (Wagamama, Nando's, KFC,
-  Starbucks, Costa, …), branded food + drink (Biscoff, Oreo, Nutella,
-  Baileys, Tabasco, OXO, Marmite, Lurpak, Cathedral City, Philadelphia,
+- `BANNED_BRANDS` (blocks upload): restaurant chains only — Wagamama(s),
+  McDonald's, KFC, Nando's, Burger King, Pizza Hut, Domino's, Subway,
+  Starbucks, Costa Coffee, Pret a Manger, Caffè Nero, Greggs, Olive
+  Garden, Cheesecake Factory, Five Guys. Using one of these in a
+  recipe reads like passing off.
+- `WARN_BRANDS` (logged, doesn't block): every other registered
+  trademark. Branded food + drink (Biscoff, Oreo, Nutella, Baileys,
+  Tabasco, OXO, Marmite, Lurpak, Cathedral City, Philadelphia,
   Cadbury, Coca-Cola, …), kitchen equipment (KitchenAid, Le Creuset,
-  Vitamix, Magimix, Pyrex, Crock-Pot, Instant Pot, Ooni, Silpat, …),
-  retailers (Tesco, Sainsbury's, Waitrose, M&S, Asda, Aldi, Whole Foods,
-  Trader Joe's, …).
-- `WARN_BRANDS` (logged, doesn't block): genericised brands where the
-  brand has become the de facto noun (Sriracha, Hoover, Sellotape,
-  Velcro, Kleenex, Tupperware, Chipotle — also the chilli, Flake —
-  also the chocolate descriptor).
+  Pyrex, Crock-Pot, Vitamix, Magimix, Silpat, …), retailers (Tesco,
+  Sainsbury's, Waitrose, M&S, Whole Foods, …), and genericised
+  brands where the brand is the de facto noun (Sriracha, Hoover,
+  Sellotape, Chipotle — also the chilli, Flake — also the chocolate
+  descriptor).
 
-Docs nudges: `docs/tutorial-author.md` gains a "No brand names" section
-in the voice rules; `docs/common-issues.md` gains a `[block]` entry so
-self-critique catches the pattern before voice-check does.
+The trade-off is deliberate: forcing every "Marmite on toast" to
+"yeast extract on toast" makes the prose read clinical. The warning
+surfaces the brand so the reviewer can decide per-recipe whether to
+rephrase. Recipe titles are higher-stakes than body prose; the
+reviewer's instinct is the deciding factor.
 
-**`voice-check:all` retroactive scan** after the rule landed found 4
-PUBLISHED bulk-batch tutorials with brand violations — these slip
-through historic content and should land in a follow-up cleanup
-session: `philly-cheesesteak`, `bangers-and-mash`, `air-fryer-chicken-thighs`,
-`slow-cooker-pulled-pork`. Personal-recipe drafts: 9 surfaced, all
-fixed in this session (Nutella, Whole Foods, Crockpot, Silpat, Flake →
-generic equivalents; 4 slow-cooker briefs patched).
+Docs nudges: `docs/tutorial-author.md` gains a "Brand names" section
+in the voice rules; `docs/common-issues.md` gains a `[block]` entry
+for restaurant chains plus a `[warn]` entry for everything else.
 
 Master-slug coverage: 1973 of 2254 ingredient lines mapped (87.5%);
 175 skipped as junk / sub-section labels; 106 truly unmapped now

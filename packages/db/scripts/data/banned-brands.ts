@@ -1,27 +1,36 @@
 /**
  * Banned brand-trademark list — single source of truth.
  *
- * Used by `voice-check-lib.ts` to block uploads that mention a registered
- * trademark by name. Each entry maps a brand to the generic equivalent the
- * draft should use instead.
+ * Used by `voice-check-lib.ts` to scan title / subtitle / excerpt /
+ * sourceNotes / body for trademark mentions.
  *
- * To add a brand: append an entry to BANNED_BRANDS below. To genericise
- * something currently blocking, move it into `WARN_BRANDS` (passes upload
- * with a logged warning).
+ * Two tiers:
  *
- * The scanner does whole-word case-insensitive matching, so trailing
- * possessives ("McDonald's", "Bailey's") still match the base entry.
+ * - `BANNED_BRANDS` — uploads BLOCK. Reserved for restaurant chains
+ *   (Wagamama, McDonald's, etc.) where using the brand in a recipe reads
+ *   like passing off. Most other brands live in WARN.
  *
- * Edit this file. Then re-run `voice-check:all` to find any existing
- * drafts that newly trip the rule.
+ * - `WARN_BRANDS` — uploads pass, brand surfaces in voice-check report.
+ *   For trademarks that read naturally in British cookery prose: Marmite,
+ *   OXO, Lurpak, Cathedral City, Philadelphia, KitchenAid, Le Creuset,
+ *   Tesco, Biscoff, Nutella, etc. The reviewer can rename per-recipe if
+ *   they want; the rule doesn't force it. Genericised everyday brands
+ *   (Sriracha, Hoover, Sellotape) live here too.
+ *
+ * To add a brand: append an entry to the right list below. Re-run
+ * `voice-check:all` to find any existing drafts that newly trip it.
+ *
+ * The scanner matches whole-word, case-insensitive. Trailing possessives
+ * ("McDonald's", "Bailey's") match against the base entry — keep one
+ * canonical entry per brand.
  */
 
 export type BrandCategory =
-  | 'chain' // restaurant chains
-  | 'food' // packaged food + drink brands
-  | 'kit' // kitchen equipment brands
-  | 'retailer' // supermarkets + kitchen retailers
-  | 'generic' // genericised brand names (Hoover, Sellotape, etc.)
+  | 'chain' // restaurant chains — BANNED
+  | 'food' // packaged food + drink brands — WARN
+  | 'kit' // kitchen equipment brands — WARN
+  | 'retailer' // supermarkets + kitchen retailers — WARN
+  | 'generic' // genericised brand names (Hoover, Sellotape, etc.) — WARN
 
 export interface BannedBrand {
   /** The trademark string. Matched whole-word case-insensitive. */
@@ -32,8 +41,8 @@ export interface BannedBrand {
 }
 
 /**
- * BLOCKS upload (voice-check errors). For brands with a clear generic
- * equivalent — i.e. the brand isn't the only name people would recognise.
+ * BLOCKS upload (voice-check errors). Reserved for cases where using the
+ * brand in a recipe reads like passing off. Currently restaurant chains only.
  */
 export const BANNED_BRANDS: BannedBrand[] = [
   // ───── Restaurant chains ─────────────────────────────────────────────────
@@ -50,21 +59,25 @@ export const BANNED_BRANDS: BannedBrand[] = [
   { brand: "Domino's", generic: 'pizza chain-style', category: 'chain' },
   { brand: 'Dominos', generic: 'pizza chain-style', category: 'chain' },
   { brand: 'Subway', generic: 'submarine-sandwich-style', category: 'chain' },
-  // Chipotle moved to WARN — "chipotle" is also the dried-jalapeño chilli, used
-  // genuinely in cookery far more often than the restaurant chain. Warn rather
-  // than block; reviewer can rephrase to "Chipotle restaurant-style" or
-  // "chipotle chillies" depending on intent.
   { brand: 'Olive Garden', generic: 'Italian-American chain-style', category: 'chain' },
   { brand: 'Cheesecake Factory', generic: 'American chain-style', category: 'chain' },
   { brand: 'Starbucks', generic: 'coffee-shop-style', category: 'chain' },
-  { brand: 'Costa', generic: 'coffee-shop-style', category: 'chain' },
   { brand: 'Costa Coffee', generic: 'coffee-shop-style', category: 'chain' },
-  { brand: 'Pret', generic: 'sandwich-chain-style', category: 'chain' },
   { brand: 'Pret a Manger', generic: 'sandwich-chain-style', category: 'chain' },
   { brand: 'Caffè Nero', generic: 'coffee-shop-style', category: 'chain' },
   { brand: 'Caffe Nero', generic: 'coffee-shop-style', category: 'chain' },
   { brand: 'Greggs', generic: 'British bakery-chain-style', category: 'chain' },
+  // (Costa and Pret on their own are ambiguous — "Costa" is also a wine region,
+  //  "Pret" is also French for "ready" — so they stay out of the BANNED list.
+  //  The compound chain names above catch the clear cases.)
+]
 
+/**
+ * WARNS upload (logged, doesn't block). For brands that read naturally as
+ * nouns in British cookery prose, or that have become the de facto generic
+ * term. Reviewer can rename per-recipe if the brand-in-prose feels off.
+ */
+export const WARN_BRANDS: BannedBrand[] = [
   // ───── Branded food + drink ──────────────────────────────────────────────
   { brand: 'Biscoff', generic: 'caramelised biscuit', category: 'food' },
   { brand: 'Lotus Biscoff', generic: 'caramelised biscuit', category: 'food' },
@@ -90,7 +103,7 @@ export const BANNED_BRANDS: BannedBrand[] = [
   { brand: "Hellmann's", generic: 'mayonnaise', category: 'food' },
   { brand: 'Hellmanns', generic: 'mayonnaise', category: 'food' },
   { brand: 'Heinz', generic: '(generic brand-free name)', category: 'food' },
-  { brand: "Branston", generic: 'pickle (sweet)', category: 'food' },
+  { brand: 'Branston', generic: 'pickle (sweet)', category: 'food' },
   { brand: 'Cadbury', generic: 'milk chocolate', category: 'food' },
   { brand: "Cadbury's", generic: 'milk chocolate', category: 'food' },
   { brand: "Hershey's", generic: 'milk chocolate', category: 'food' },
@@ -110,16 +123,12 @@ export const BANNED_BRANDS: BannedBrand[] = [
   { brand: 'Snickers', generic: 'chocolate peanut-caramel bar', category: 'food' },
   { brand: 'Twix', generic: 'shortbread caramel chocolate bar', category: 'food' },
   { brand: 'Bounty', generic: 'coconut chocolate bar', category: 'food' },
-  // Flake moved to WARN — "flake" / "flaked chocolate" is a generic descriptor
-  // for crumbled chocolate pieces in many recipes; the Cadbury Flake bar is one
-  // specific product. Warn rather than block.
   { brand: 'Crunchie', generic: 'honeycomb chocolate bar', category: 'food' },
   { brand: 'Wispa', generic: 'aerated milk chocolate bar', category: 'food' },
   { brand: 'Skittles', generic: 'fruit-flavoured chewy sweets', category: 'food' },
   { brand: 'Haribo', generic: 'gummy sweets', category: 'food' },
   { brand: 'Coca-Cola', generic: 'cola', category: 'food' },
   { brand: 'Coca Cola', generic: 'cola', category: 'food' },
-  { brand: 'Coke', generic: 'cola', category: 'food' },
   { brand: 'Pepsi', generic: 'cola', category: 'food' },
   { brand: 'Sprite', generic: 'lemon-lime soda', category: 'food' },
   { brand: 'Fanta', generic: 'orange soda', category: 'food' },
@@ -181,7 +190,6 @@ export const BANNED_BRANDS: BannedBrand[] = [
   { brand: 'Ninja', generic: 'multi-cooker / air fryer', category: 'kit' },
   { brand: 'Tefal ActiFry', generic: 'air fryer', category: 'kit' },
   { brand: 'Silpat', generic: 'silicone baking mat', category: 'kit' },
-  { brand: 'KitchenWare', generic: 'kitchen equipment', category: 'kit' }, // demo placeholder; keep or trim
 
   // ───── Retailer brands ───────────────────────────────────────────────────
   { brand: 'Tesco', generic: '(any supermarket)', category: 'retailer' },
@@ -207,15 +215,8 @@ export const BANNED_BRANDS: BannedBrand[] = [
   { brand: 'Walmart', generic: '(any supermarket)', category: 'retailer' },
   { brand: 'Target', generic: '(any general-purpose shop)', category: 'retailer' },
   { brand: 'Costco', generic: '(any wholesale shop)', category: 'retailer' },
-]
 
-/**
- * WARNS upload (logged, doesn't block). For brand names that have become the
- * de facto generic noun in cookery — using the brand reads naturally to most
- * readers and rephrasing is awkward.
- */
-export const WARN_BRANDS: BannedBrand[] = [
-  // Genericised brands that read naturally as nouns
+  // ───── Genericised brands (de facto noun) ───────────────────────────────
   { brand: 'Sriracha', generic: 'fermented-chilli hot sauce', category: 'generic' },
   { brand: 'Hoover', generic: 'vacuum cleaner', category: 'generic' },
   { brand: 'Sellotape', generic: 'sticky tape', category: 'generic' },
@@ -225,7 +226,7 @@ export const WARN_BRANDS: BannedBrand[] = [
   { brand: 'Jiffy bag', generic: 'padded envelope', category: 'generic' },
   { brand: 'Post-it', generic: 'sticky note', category: 'generic' },
   { brand: 'Plimsoll', generic: 'canvas shoe', category: 'generic' },
-  // Ambiguous brand-vs-generic — warn so the reviewer can rephrase by context.
+  // Ambiguous (brand vs ingredient/descriptor) — warn so reviewer can disambiguate
   { brand: 'Chipotle', generic: 'chipotle chillies (the ingredient) or Mexican fast-casual-style (the restaurant)', category: 'generic' },
   { brand: 'Flake', generic: 'flaked chocolate (the ingredient) or Cadbury Flake (the bar)', category: 'generic' },
 ]

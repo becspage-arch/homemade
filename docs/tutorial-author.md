@@ -514,36 +514,33 @@ for ingredients or kit. Product / kit blocks describe what the tool
 does and what to look for in it — generic titles ("Roasting tin, 30
 cm") not brand names we don't have a sale relationship with.
 
-**No brand names — HARD RULE:**
-Recipe titles, ingredient lists, body prose, and source notes never
-use a registered trademark by name. The voice-check `brand-trademark`
-rule blocks any of these. Use the generic equivalent instead:
+**Brand names — be specific only when the brand isn't the noun:**
 
-| Don't | Do |
+Two tiers. Restaurant chains BLOCK the upload. Every other registered
+trademark passes but surfaces a warning, so you can spot it in
+`voice-check:all` and decide per-recipe whether to rephrase. The
+trade-off is deliberate: forcing every "OXO" to "stock cube" or every
+"Marmite on toast" to "yeast extract on toast" makes the prose read
+clinical, and "a teaspoon of Marmite" is how British home cooks talk.
+
+| Block (chains — never use) | Warn (per-recipe call) |
 |---|---|
-| Wagamamas chicken katsu curry | Chicken katsu curry |
-| Nutella stuffed cookies | Chocolate hazelnut stuffed cookies |
-| Oreo truffles | Cookies and cream truffles |
-| Biscoff truffles | Caramelised biscuit truffles |
-| Baileys cheesecake | Irish cream cheesecake |
-| Tabasco | Louisiana-style hot sauce |
-| Marmite on toast | Yeast extract on toast |
-| OXO cube | Stock cube |
-| KitchenAid stand mixer | Stand mixer |
-| Le Creuset casserole | Cast-iron casserole |
-| Crock-Pot | Slow cooker |
-| Instant Pot | Multi-cooker |
-| From Tesco | From any supermarket |
-| Coca-Cola | Cola |
+| Wagamama(s), McDonald's, KFC, Nando's | Marmite, OXO, Lurpak, Cathedral City |
+| Starbucks, Costa Coffee, Pret a Manger | Biscoff, Oreo, Nutella, Baileys |
+| Burger King, Pizza Hut, Subway, Greggs | KitchenAid, Le Creuset, Pyrex, Crock-Pot |
+| Caffè Nero, Five Guys, Olive Garden | Tesco, Sainsbury's, Waitrose, M&S |
 
-The full list lives in
+Recipe TITLES are higher-stakes than body prose — "Nutella stuffed
+cookies" reads like a brand collaboration; "chocolate hazelnut stuffed
+cookies" doesn't. The rule warns in either case; the reviewer's
+instinct is the deciding factor.
+
+The full list and the generic equivalents live in
 [`packages/db/scripts/data/banned-brands.ts`](../packages/db/scripts/data/banned-brands.ts).
-Categories: restaurant chains, branded food and drink, kitchen
-equipment, retailers. A short genericised tier (Sriracha, Hoover,
-Sellotape) only warns rather than blocks — the brand has become the
-de facto noun. Edit the list when you find a brand the corpus needs
-to avoid; `voice-check:all` will retroactively flag any draft that
-trips a new rule.
+Genericised brands where the brand is the de facto noun (Sriracha,
+Hoover, Sellotape) are in the same warn tier. Edit the list when a
+recurring brand surfaces; `voice-check:all` retroactively flags any
+draft that trips a new entry.
 
 **British English + worldwide-friendly idiom:**
 Spell colour, flavour, sieve, knob of butter, pudding basin. Name
