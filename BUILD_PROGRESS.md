@@ -1105,6 +1105,85 @@ that scales to 28k articles without Rebecca gating every draft.
   straight from pilot-10 to bulk auto-publish with the v4 prompt.
   Pilot-10 patterns are enough signal to refine.
 
+### Personal recipes ingest ✅ landed 2026-05-14
+
+**Goal.** Read Rebecca's two personal recipe docx files
+(`Downloads\RECIPES (MASTER).docx` and `Downloads\Recipes to Print.docx`)
+and ingest each unique recipe as a DRAFT `Tutorial` row of type
+`RECIPE`. Different shape from bulk authoring — her prose already
+exists; this session enriches it with structured metadata rather than
+generating it from scratch.
+
+**Landed.** 189 unique recipes ingested as DRAFT, all type=RECIPE in
+the cooking category. 188 created, 1 updated (the test upload of
+`beef-bourguignon` that ran before the batch). 0 failed. 125 passed
+voice-check clean, 63 passed with warnings only (tricolons /
+americanisms in Rebecca's own words — not rewritten, logged for her
+review). One recipe (`white-chocolate-cardamom-mousse`) needed
+`--skip-voice-check` — the word "treats" tripped the medical-claim
+rule in a non-medical sense.
+
+Master-slug mapping rate ~93% (about 130 of ~2300 ingredient lines
+left as free-text in the body for a follow-up session to add to
+`packages/db/scripts/data/ingredients.ts`; full list in the report).
+Most common gaps: italian seasoning, baguette / croissants / bagels,
+graham cracker, jalapeño, chai spice, balsamic glaze. Tool detection
+caught 25 unique tool slugs across the corpus (oven, hob,
+slow-cooker, air-fryer, frying-pan, etc.).
+
+**Pipeline.** Standalone, lives in `docs/personal-recipes-briefs/`:
+
+- `.docx-extract.mjs` — mammoth.js docx → text
+- `.parse-recipes.mjs` — text → structured-recipes JSON (title,
+  servings, ingredient groups, method lines, section context for
+  meal-type derivation)
+- `.generate-briefs.mjs` — structured-recipes → TipTap upload-tutorial
+  briefs. Includes the generic-name fallback table (UK home-cookery
+  conventions: "butter" → salted-butter, "flour" → plain-flour,
+  "milk" → whole-milk, etc.) and cuisine / meal-type / mood
+  derivation by keyword scan
+- `.precheck-slugs.ts` — queries the DB and suffixes `-rebecca` on
+  any colliding slug (0 collisions this run)
+- `.upload-all.ts` — batch-calls `packages/db/scripts/upload-tutorial.ts`
+  on each brief with default flags (DRAFT, voice-check on); falls
+  back to `--skip-voice-check` for errors in Rebecca's prose
+
+**Output.**
+
+- 189 Tutorial rows in production DB at `/admin/tutorials` filtered
+  to draft, type RECIPE
+- 189 brief JSON files in `docs/personal-recipes-briefs/` (one per
+  recipe, for reproducibility — re-run the pipeline if she edits the
+  docx)
+- `docs/personal-recipes-report.md` — per-recipe summary with
+  voice-check results, mapping notes, master-list-gap list, and
+  per-section index
+
+**Breakdown.**
+
+| Meal type | Count | Cuisine | Count |
+|---|---|---|---|
+| dinner | 69 | british | 94 |
+| snack (baking + treats) | 41 | italian | 39 |
+| side | 25 | chinese | 19 |
+| lunch | 21 | mediterranean | 11 |
+| breakfast | 19 | american | 9 |
+| dessert | 11 | french | 6 |
+| drink | 3 | mexican | 5 |
+
+**Out.**
+
+- Auto-publish — every row lands DRAFT so Rebecca reviews each one.
+- New `Ingredient` / `Tool` master rows — flagged in the report,
+  follow-up small session.
+- Rewriting Rebecca's prose — voice-check failures on her authored
+  text were logged, not fixed. Voice-check failures in AI-added text
+  would have been rewritten, but this session adds no AI prose; the
+  body is a direct conversion of her words plus structural headings.
+- Inventing sources / provenance — every brief uses
+  `sourceType: CREATOR` with the note "Rebecca's kitchen — a personal
+  favourite from her collection."
+
 ### Step 12 — Bulk auto-publish at 100–200 per batch
 
 **Goal.** Standing worker pattern. Daily auto-publish, no per-draft
