@@ -1,0 +1,222 @@
+{
+  "slug": "fish-and-chips",
+  "title": "Fish and chips",
+  "subtitle": "Beer-battered cod, twice-cooked chips.",
+  "excerpt": "Fillets of cod or haddock dipped in a cold beer batter and fried golden, alongside twice-cooked chips with crisp shells and fluffy middles. Pub-style at home. Serves four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The twice-cooked chip method appears in Auguste Escoffier, A Guide to Modern Cookery (1903), available via public-domain reprint. Mrs Beeton, Book of Household Management (1861, Project Gutenberg #10136), describes coating fillets in light flour batter before frying; the beer in the batter is a twentieth-century English chip-shop refinement.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": "Neither the batter nor the chips survive freezing well; both lose their crispness.",
+    "batchable": false,
+    "batchNotes": "Frying in domestic pans tops out at four portions; do more in waves and keep the cooked fish warm in a low oven.",
+    "makeAheadNotes": "The first chip-fry can be done up to two hours ahead and held at room temperature; the second fry happens just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "hearty", "specialOccasion"],
+    "temperatureCelsius": 190,
+    "temperatureNote": "two-stage frying: 140°C blanche, 190°C crisp",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "deep-fryer", "isOptional": true, "notes": "A wide deep saucepan with high sides works equally well." },
+    { "slug": "large-saucepan", "isOptional": false, "notes": "With a sugar or instant-read thermometer for oil temperature." },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "spider-strainer", "isOptional": false },
+    { "slug": "mixing-bowl-medium", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "blanching-chips", "term": "Blanching chips", "definition": "A first pass through 140°C oil cooks the inside of the chip without browning it. The chip is then drained and held; the second pass at 190°C crisps the shell. Two-stage frying gives the fluffy-middle, crisp-shell texture." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two thick fillets of cod or haddock per pair, peeled potatoes cut into thumb-thick chips, a bowl of cold beer batter mixed at the last moment. Chips fried twice — once gently to cook the inside, once hard to crisp the shell. Fish fried once in a hot bath until the batter is bubbled gold and the flesh inside flakes cleanly." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The trick is two-stage frying. The blanching pass cooks the chip through at 140°C without browning. The crisp pass at 190°C, after the chips have cooled, gives the chip-shop shatter. The batter wants to be cold, lumpy, and freshly mixed; resting it kills the carbonation that gives the puffed shell." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Oil safety",
+          "body": "Use a wide, heavy pan with high sides. Fill no more than a third full. Keep a metal lid within reach to smother a flare-up. Never leave hot oil unattended on the hob. Run cold water over a burn and seek medical care if needed."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "cod-fillet", "amount": 4, "unit": "each", "prepNote": "thick fillet, 180-200 g each, skinless, pin-boned", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 1200, "unit": "g", "prepNote": "Maris Piper or King Edward, peeled and cut into 1.5 cm thick chips", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vegetable-oil", "amount": 2, "unit": "l", "prepNote": "for frying", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the batter" },
+            { "ingredientSlug": "cornflour", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the batter" },
+            { "ingredientSlug": "baking-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the batter" },
+            { "ingredientSlug": "beer", "amount": 330, "unit": "ml", "prepNote": "cold pale ale or lager", "isOptional": false, "groupLabel": "For the batter" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the batter" },
+            { "ingredientSlug": "plain-flour", "amount": 50, "unit": "g", "prepNote": "for dusting the fish", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": null, "unit": null, "prepNote": "to finish", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "malt-vinegar", "amount": null, "unit": null, "prepNote": "to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soak and dry the chips" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut the {{potato}} of peeled potatoes into 1.5 cm chips. Sit them in a bowl of cold water for 30 minutes; the soak draws out surface starch and the chips fry crisper. Drain. Spread on a clean tea towel and pat dry — every drop matters for safety in hot oil." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blanch the chips at 140°C" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat {{vegetable-oil}} of vegetable oil in a wide, heavy pan to 140°C. Lower the chips in batches into the oil; don't crowd. Cook for 8 to 10 minutes — the chips soften through but stay pale. Lift onto kitchen paper. ",
+            "marks": [] },
+          { "type": "text", "text": "Blanching", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blanching-chips" } }] },
+          { "type": "text", "text": " in two stages is the chip-shop secret." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Heat the oil to frying temperature" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bring the oil up to 190°C. This is the temperature for the second chip fry and for the fish. A thermometer matters; eyeballing oil temperature is unreliable." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the batter at the last moment" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sift {{plain-flour}} of plain flour, {{cornflour}} of cornflour, {{baking-powder}} of baking powder, and {{sea-salt-fine}} of salt into a cold bowl. Pour in {{beer}} of ice-cold beer. Whisk just to combine; the batter should be lumpy and the colour of pale cream. Don't smooth it out — the lumps fry into bubbled crust." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Coat and fry the fish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pat the {{cod-fillet}} of cod fillets dry. Dust with the extra {{plain-flour}} of flour set aside for dusting; tap off the excess. Hold a fillet by the tail end, dip into the batter, lift, and let the excess run off for two seconds. Lower the fillet gently into the 190°C oil, away from you. Fry for 6 to 8 minutes, turning once, until the batter is a deep amber and crisp. The fish inside flakes when pressed gently with a fork. Lift onto kitchen paper." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Crisp the chips at 190°C" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "While the fish drains, return the blanched chips to the 190°C oil in batches. Fry for 2 to 3 minutes until the shells are gold and shatter-crisp. Lift, drain on kitchen paper, scatter with {{sea-salt-flakes}} of sea salt flakes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Plate two fillets and a generous pile of chips per portion. Malt vinegar at the table; lemon wedges; mushy peas if you have them. Eat immediately; the batter softens within five minutes off the heat." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Batter slides off the fish", "cause": "Wet fish, no flour dusting.", "fix": "Pat the fillets dry. Dust with flour. The batter clings to the flour, not the fish." },
+            { "symptom": "Batter heavy and dense", "cause": "Batter overmixed or rested too long; flat beer.", "fix": "Mix at the last moment, lumps and all. Use beer straight from the fridge." },
+            { "symptom": "Chips soggy", "cause": "Single fry, or oil too cold for the second pass.", "fix": "Blanch at 140°C; rest; crisp at 190°C. The two-stage fry is non-negotiable." },
+            { "symptom": "Oil temperature drops when food goes in", "cause": "Too much food in the pan at once.", "fix": "Fry in small batches. The thermometer should never drop more than 15°C." },
+            { "symptom": "Fish raw inside, batter dark outside", "cause": "Oil too hot, or fillet too thick.", "fix": "190°C is the ceiling. For thick loins, drop to 180°C and fry 8 to 9 minutes." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Haddock is the northern English chip-shop fish; pollock and hake work just as well and cost less. Sparkling water in place of beer gives an alcohol-free batter. A tablespoon of vinegar in the chip-soaking water makes the chips even crisper. For mushy peas: simmer dried marrowfat peas with a pinch of bicarb until they collapse." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fish and chips is the national dish of England in the way that other countries claim a moussaka or a paella. Born in the back streets of Victorian London and Lancashire, it fed mill towns through two world wars and remains the Friday-night standard in coastal towns from Whitby to Hastings. The cook who masters the home version has done something quietly impressive: replicated, on a domestic hob, what a chip-shop fryer does at industrial scale." }
+        ]
+      }
+    ]
+  }
+}

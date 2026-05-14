@@ -1,0 +1,184 @@
+{
+  "slug": "plain-scones",
+  "title": "Plain scones",
+  "subtitle": "Self-raising flour, butter, milk, light touch.",
+  "excerpt": "Self-raising flour rubbed with cold butter, bound with milk into a soft dough, stamped into rounds and baked at high heat until risen tall and golden. The classic British tea-time scone, ready in 25 minutes. Makes eight.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861, Project Gutenberg #10136), 'Plain Tea Scones'. The Scottish bannock and the English tea scone share a lineage; Beeton's recipe is the modern English baseline.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 scones",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Cooked scones freeze for two months. Refresh in a 180°C oven for 5 minutes from frozen.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly. Two trays at once in a fan oven.",
+    "makeAheadNotes": "Best eaten warm from the oven. The dough can be cut and chilled on a tray for up to two hours before baking.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["cosy", "brunchy"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "fan 200°C; high heat for tall rise",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "biscuit-cutters", "isOptional": false, "notes": "A 6 cm round cutter; a sharp-edged metal cutter gives a clean rise." },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": true, "notes": "A patting hand works too." },
+    { "slug": "oven", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "rubbing-in", "term": "Rubbing in", "definition": "The technique of combining fat with flour by lifting and dropping pinches between thumb and fingertips until the mixture resembles breadcrumbs. Keeps the fat in small lumps that melt into pockets of air when the dough bakes." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cold butter rubbed into self-raising flour with fingertips until the mix looks like breadcrumbs. Caster sugar and a pinch of salt stirred through. Cold milk poured in. The dough brought together quickly with a knife, turned out, patted to a 3 cm thickness, stamped into rounds, brushed with milk, and slid into a screaming hot oven for 12 minutes. Risen tall and golden, served warm with clotted cream and jam." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two rules. Cold ingredients; the butter stays in lumps until the oven heat melts it into pockets of air. A light touch; overworked scones come out tough, flat, and chewy. Pat the dough rather than roll, stamp with a sharp cutter pushed straight down, and slide the tray in fast." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "self-raising-flour", "amount": 350, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "baking-powder", "amount": 1, "unit": "tsp", "prepNote": "extra lift", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 85, "unit": "g", "prepNote": "cold, cubed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 175, "unit": "ml", "prepNote": "cold, plus extra for brushing", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Heat the oven hard" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the oven to 220°C (200°C fan). Line a baking tray with parchment." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rub the fat into the flour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sift {{self-raising-flour}} of self-raising flour, {{baking-powder}} of baking powder, and {{sea-salt-fine}} of salt into a large bowl. Add {{unsalted-butter}} of cold cubed butter. ",
+            "marks": [] },
+          { "type": "text", "text": "Rub in", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rubbing-in" } }] },
+          { "type": "text", "text": " with fingertips until the mixture looks like fine breadcrumbs. Stir in {{caster-sugar}} of caster sugar." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bind with milk" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour in {{whole-milk}} of cold milk in a slow stream. Stir with a butter knife until the mixture starts to come together in clumps. Bring it into a soft dough with your hands; don't knead." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pat and stamp" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Turn the dough out onto a lightly floured worktop. Pat with your hands to a 3 cm thickness, no thinner. Stamp with a 6 cm round cutter pushed straight down without twisting; lift the cutter cleanly. Re-pat the offcuts and stamp again. Eight rounds in total." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brush and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sit the scones on the lined tray, leaving a 4 cm gap between each. Brush the tops only with extra milk; milk down the sides traps the rise. Bake 12 to 14 minutes until risen tall and the tops are deep gold." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cool briefly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the scones onto a cooling rack. Rest 5 minutes; the inside finishes setting. Split with the side of a thumb (not a knife) and serve warm with clotted cream and raspberry jam." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Scones flat and dense", "cause": "Dough overworked, or stamped too thin.", "fix": "Bring together; don't knead. Pat to 3 cm thick. Re-stamping the offcuts gives slightly tougher seconds — accept it." },
+            { "symptom": "Lopsided rise", "cause": "Cutter twisted as it pressed in.", "fix": "Press straight down. Don't twist on the way out." },
+            { "symptom": "Tough chewy texture", "cause": "Too much milk, or too much mixing.", "fix": "Stop mixing as soon as the dough comes together. Add milk in a slow stream; stop before all of it is used if the dough already binds." },
+            { "symptom": "Pale on top", "cause": "Oven too cool, or no milk wash.", "fix": "220°C minimum, screaming hot. Brush the tops only with milk before they go in." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Plain scones are the centrepiece of the British cream tea, served warm from the oven in twos and threes with strawberry or raspberry jam and clotted cream. The Devon order is cream first, jam on top; the Cornish order reverses it. Both work. A pot of strong tea on the side." }
+        ]
+      }
+    ]
+  }
+}

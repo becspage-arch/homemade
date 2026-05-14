@@ -1214,6 +1214,38 @@ worker session picks it up.
 - Image generation (deferred until pre-launch budget).
 - Tester-user review (Phase 6 work; not in scope yet).
 
+#### Batch 001 — partial (2026-05-14)
+
+First real bulk PUBLISHED batch. Target was 100; **23 recipes shipped**
+in one Opus session as PUBLISHED. Full report:
+`docs/bulk-batch-001-report.md`.
+
+Spread: 10 British mains, 3 Italian (carbonara / cacio e pepe / alla
+norma), 5 preserves (raspberry / blackberry jam, lemon curd, mint jelly,
+apple chutney), 2 scones (plain / cheese), 3 air-fryer (salmon /
+halloumi / roast potatoes).
+
+Voice stats: 1 clean first pass, 19 passed with warnings only (tricolon
+mostly), 3 failed on em-dash and were rewritten, 0 dropped after retries.
+
+Common-issues append: tightened the tricolon entry with hot-spot guidance
+(excerpts + closers) and added an appositive-em-dash-in-steps sub-entry.
+
+Infra added: `packages/db/scripts/upload-batch.ts` — iterates a directory
+of TutorialUploadInput JSON files, calls upload-tutorial.ts per file with
+the chosen `--status`, writes an aggregated JSON report. Supports
+`--skip-file` for slug-collision avoidance.
+
+**Working assumption revised.** The original plan assumed ~10 articles
+drafted+uploaded per session-hour. The hourly rate holds, but the
+*session ceiling* for an Opus bulk-content session is closer to **25-35
+recipes** before output-token economics bite. Two parallel sessions
+should sustain ~60/day; the 1k/week target needs more sessions, not
+longer ones.
+
+Remaining 77 of the 100 selection list: `docs/bulk-batch-001-briefs/.selection.md`.
+Next bulk-batch worker picks any subset.
+
 ### Step 13 — Mindset pipeline scaffold ✅ landed 2026-05-14
 
 **Goal.** Open the second category in the multi-category fill plan. Get

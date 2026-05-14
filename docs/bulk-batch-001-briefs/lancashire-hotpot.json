@@ -1,0 +1,186 @@
+{
+  "slug": "lancashire-hotpot",
+  "title": "Lancashire hotpot",
+  "subtitle": "Lamb and kidney under layered potatoes.",
+  "excerpt": "Diced lamb neck and lamb's kidneys layered with onions and carrots, topped with overlapping slices of potato brushed with butter, and slow-baked until the meat is tender and the lid of potatoes is gold-brown and crisp at the edges. Serves four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861, Project Gutenberg #10136), 'Lancashire Hot Pot'. The dish belongs to nineteenth-century Lancashire mill towns, designed to cook unattended in the residual heat of a fire while the household worked.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 150,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Cool, portion, freeze up to three months. The potato lid softens on reheating; expect a slightly different texture but the same flavour.",
+    "batchable": true,
+    "batchNotes": "Double the recipe across two pots; one pot holds four portions comfortably with the potato lid as the cap.",
+    "makeAheadNotes": "Assemble the layers raw, cover, and refrigerate up to a day. Bring back to room temperature for 30 minutes before the oven.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "slowSunday", "hearty"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "fan 140°C; finished with the lid off at 200°C for the last 20 minutes",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false, "notes": "Heavy lidded casserole; the slow oven and the tight lid are the point." },
+    { "slug": "mandoline", "isOptional": true, "notes": "For even potato slices; a sharp knife works." },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "oven", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A heavy lidded pot, layers of seasoned lamb and kidney over sweated onions and carrots, a roof of overlapping potato slices brushed with butter, the whole baked slowly for two hours and finished with the lid off at high heat to crisp the top. Two and a half hours in the oven, almost all of it unattended. Plain food cooked patiently." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Neck of lamb is the cut: cheap, full of flavour, packed with connective tissue that melts to silk over a low bake. The kidneys give the dish its deep iron note; leave them out and the hotpot is still good, but it's not quite the Beeton original." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-neck", "amount": 800, "unit": "g", "prepNote": "boned, cut into 3 cm cubes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ox-kidney", "amount": 150, "unit": "g", "prepNote": "cored, cut into 2 cm pieces (or 4 lamb's kidneys)", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 30, "unit": "g", "prepNote": "for dusting", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": "each", "prepNote": "sliced thin", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 600, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 900, "unit": "g", "prepNote": "Maris Piper, peeled and sliced 3 mm", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": "melted, for brushing the top", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": null, "prepNote": "to season", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "to season", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the meat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Toss {{lamb-neck}} of lamb neck cubes and the {{ox-kidney}} of kidney pieces in {{plain-flour}} of seasoned flour. Heat the oven to 160°C (140°C fan)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sweat the onions and carrots" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Soften {{onion}} of sliced onions and {{carrot}} of sliced carrots in a knob of butter in the casserole over a low hob for 10 minutes until translucent and just colouring. Lift two-thirds onto a plate; leave a layer in the bottom of the pot." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Layer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Scatter half the meat over the onion layer. Add half the remaining vegetables, half the {{thyme}} of thyme, and one {{bay-leaves}} of bay. Season. Repeat with the rest of the meat, vegetables, herbs, and the second bay leaf. Pour over the {{worcestershire-sauce}} of Worcestershire and {{stock-beef}} of hot stock; it should come halfway up the meat layer." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Top with potatoes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Arrange {{potato}} of thinly sliced potatoes in overlapping rounds across the top, like roof tiles. Brush generously with {{unsalted-butter}} of melted butter. Season with salt and pepper." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Slow-bake covered" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lid on. Bake for 1 hour 45 minutes. The meat softens; the stock reduces a little; the bottom layer of potatoes thickens the gravy as they cook." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Crisp the top uncovered" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the lid. Raise the oven to 200°C (180°C fan). Brush the potato top with the rest of the butter. Bake for a further 20 minutes until the potatoes are deep gold and crisp at the edges. Rest 15 minutes before serving." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Top pale and steamed-looking", "cause": "Lid left on too long, or butter wash skipped.", "fix": "Brush butter on twice — once at the start, once when the lid comes off. Always finish uncovered at 200°C." },
+            { "symptom": "Meat dry", "cause": "Not enough liquid, or oven too hot.", "fix": "Stock should reach halfway up the meat layer. 160°C is the ceiling for the slow phase." },
+            { "symptom": "Gravy thin", "cause": "Skipped the flour dust on the meat.", "fix": "Toss the lamb in seasoned flour before layering. The flour thickens the gravy as it bakes." },
+            { "symptom": "Kidneys metallic", "cause": "Core membrane left in.", "fix": "Cut kidneys open, snip out the white core. Soak briefly in milk if you find the flavour strong." },
+            { "symptom": "Potatoes raw under the gold top layer", "cause": "Sliced too thick, or stock too low.", "fix": "Slice no thicker than 3 mm; a mandoline helps. Make sure liquid reaches halfway up the meat." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lancashire hotpot is mill-town food. Cottages with cast-iron ovens, families at work all day, supper waiting on a low fire. The potato lid was once a way to seal in heat without a casserole; the modern Dutch oven does the same. Served as the centrepiece of a wet-Sunday lunch with pickled red cabbage and a wedge of crusty bread, it is the kind of cooking that asks little and gives much." }
+        ]
+      }
+    ]
+  }
+}

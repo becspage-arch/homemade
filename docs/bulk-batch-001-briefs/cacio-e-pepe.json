@@ -1,0 +1,170 @@
+{
+  "slug": "cacio-e-pepe",
+  "title": "Cacio e pepe",
+  "subtitle": "Three ingredients, one of Rome's hardest pastas.",
+  "excerpt": "Tonnarelli or spaghetti tossed with grated pecorino romano, freshly cracked black pepper, and a careful glug of starchy pasta water until the cheese melts into a thick glossy sauce. Three ingredients, but the timing decides whether it works.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Roman cucina povera. The dish is older than its earliest published recipe and was perfected in the trattorie of Trastevere; the technique here matches the consensus method served at Felice a Testaccio and other long-standing Roman houses. Pre-1928 cookbooks describe similar cheese-and-pepper pastas without the specific name.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 12,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": "The sauce won't survive freezing; the cheese splits on reheating.",
+    "batchable": false,
+    "batchNotes": "Two portions at a time is the maximum a home cook can keep emulsified. Larger groups: cook in waves.",
+    "makeAheadNotes": "Nothing keeps. Make to order.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": "the heat of the pasta and the bowl is what melts the cheese",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "mixing-bowl-medium", "isOptional": false, "notes": "Warmed; a cold bowl shocks the cheese." },
+    { "slug": "microplane", "isOptional": false },
+    { "slug": "pepper-mill", "isOptional": false },
+    { "slug": "tongs", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "pasta-water-starch", "term": "Pasta-water starch", "definition": "The starch that leaches out of pasta as it cooks dissolves in the water. A spoon or two of this water is the binding agent in any oil-free pasta sauce; it lets cheese melt into a smooth coating rather than splitting into oil and protein." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cracked black pepper toasted briefly in a dry pan to wake its oils. Tonnarelli boiled in salty water until just al dente, then tongs-lifted into a warm bowl with a ladle of starchy pasta water. Finely grated pecorino romano scattered over the top and tossed until the cheese melts into the pasta water and pepper to make a glossy thick sauce." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cacio e pepe is the trick test of Roman pasta. Three ingredients, no oil, no garlic, no cream, and a knife-edge between glossy sauce and clumped split mess. The temperature of the bowl and the volume of starch in the water decide it. Warm the bowl; salt the water hard; do not rush." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "pasta-dried", "amount": 200, "unit": "g", "prepNote": "tonnarelli, spaghetti, or bucatini", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pecorino-romano", "amount": 100, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 2, "unit": "tsp", "prepNote": "coarsely cracked, freshly", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": null, "prepNote": "a heaped tablespoon in 4 L water", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Toast the pepper" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat a dry frying pan over a low hob. Add {{black-pepper}} of cracked pepper and toast for 30 seconds, swirling the pan. The pepper releases a sharp warm scent. Tip into a warm mixing bowl." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Boil the pasta in less water than usual" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bring 2 litres of water to the boil — not the usual 4. Less water means more starch dissolved into it. Salt generously. Drop in {{pasta-dried}} of pasta. Cook for 1 minute less than the packet's al dente time." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the cheese cream" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two minutes before the pasta is ready, ladle 60 ml of hot ",
+            "marks": [] },
+          { "type": "text", "text": "pasta-water starch", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pasta-water-starch" } }] },
+          { "type": "text", "text": " into the bowl with the pepper. Whisk briefly. Scatter half the {{pecorino-romano}} of grated pecorino over the surface and whisk into a thick paste that drops slowly from the whisk in ribbons. If it's too thick, add a splash more water; if too thin, more cheese." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Toss in the pasta" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the pasta from the water with tongs straight into the bowl, dragging a little more pasta water with it. Toss for 60 seconds; the pasta finishes cooking in the sauce, the cheese paste coats every strand. Scatter the rest of the cheese over and toss again. Add small splashes of pasta water if the sauce tightens." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Plate fast" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Twist onto two warm plates. Finish with a final twist of pepper. Eat at once; the sauce stiffens within a minute." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Cheese clumped into stringy lumps", "cause": "Cheese added to too-hot water or directly to the pan on the heat.", "fix": "Build the cheese paste in a warm bowl off the heat. The pasta brings the warmth; the bowl shouldn't be over a flame." },
+            { "symptom": "Sauce slid off, oily on top, watery underneath", "cause": "Not enough starch in the water, or pre-grated cheese with anti-cake added.", "fix": "Cook the pasta in 2 L of water, not 4. Grate the pecorino fresh on a microplane." },
+            { "symptom": "Sauce too thick to coat", "cause": "Too much cheese, not enough water.", "fix": "Add hot pasta water a tablespoon at a time, tossing." },
+            { "symptom": "Pepper bitter and acrid", "cause": "Toasted too long.", "fix": "30 seconds in a dry pan over low heat. Lift off as soon as you smell the warm note." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cacio e pepe is the shepherd's pasta of Lazio: a dish built from what travels well in saddlebags — dry pasta, hard cheese, peppercorns. The trattoria version standardised in the twentieth century and became Rome's most stubborn export. A glass of Frascati, a hot bowl, eaten before the kitchen quiet." }
+        ]
+      }
+    ]
+  }
+}

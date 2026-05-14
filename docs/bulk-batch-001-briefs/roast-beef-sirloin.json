@@ -1,0 +1,218 @@
+{
+  "slug": "roast-beef-sirloin",
+  "title": "Roast beef sirloin",
+  "subtitle": "Salt-rubbed, rested, served pink.",
+  "excerpt": "A whole sirloin roasted to medium-rare, rested for as long as it cooks, served pink with Yorkshire puddings, roast potatoes, and a red-wine gravy built from the pan. Sunday roast for six to eight.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136, chapter on roast beef and the doctrine of long resting. USDA Food Safety and Inspection Service guidance on beef internal temperatures (medium-rare 57°C, medium 63°C). Hannah Glasse, The Art of Cookery Made Plain and Easy (1747), public domain, on dripping and Yorkshire puddings cooked under the meat.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 70,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Cooked slices freeze up to two months wrapped tight in foil and a freezer bag. Defrost overnight in the fridge; reheat slices in a covered dish with a spoonful of beef stock at 140°C for 15 minutes, no longer or the meat overcooks.",
+    "batchable": false,
+    "batchNotes": "The cut is what it is; doubling means two joints not one bigger one, and two roasting pans. The oven needs room around each joint for the heat to circulate.",
+    "makeAheadNotes": "Salt-rub the joint up to 24 hours ahead and leave uncovered on a rack in the fridge — the surface dries and browns faster. Bring back to room temperature for an hour before it goes in the oven.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "comfortFood", "specialOccasion"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "screaming hot to start, then dropped to 160°C for the long roast",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false, "notes": "Heavy-based, big enough for the joint with a finger's width of clearance on every side." },
+    { "slug": "roasting-rack", "isOptional": false, "notes": "Lifts the meat above the fat so the underside browns." },
+    { "slug": "instant-read-thermometer", "isOptional": false, "notes": "The whole recipe rests on hitting 54°C in the centre." },
+    { "slug": "carving-knife", "isOptional": false },
+    { "slug": "chopping-board-large", "isOptional": false },
+    { "slug": "oven", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "carryover-cooking", "term": "Carryover cooking", "definition": "The continued rise in internal temperature after a roast leaves the oven — a beef joint resting on the side typically gains 3–5°C in the first ten minutes before levelling off. Pull the joint earlier than the target." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 1.8 kg boned and rolled sirloin, salt-rubbed the day before, roasted hot for fifteen minutes and then slow at 160°C until the centre reads 54°C. Rested for thirty minutes on a warm plate while the Yorkshires bake and the gravy comes together. Carved into thick slices across the grain, served pink. Six to eight." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sirloin is the cut that wants to be roasted: tight grain, a fat cap that bastes the meat as it cooks, enough internal marbling to stay tender at medium-rare. The fillet is leaner and easier to overcook; the rib is grander and asks more of the cook. The sirloin sits in the middle and rewards a careful eye on the thermometer." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Internal temperatures",
+          "body": "Pull from the oven at 54°C in the deepest part of the joint for medium-rare; the rest takes it to 58°C, the doneness Beeton calls 'pink, with the juice running clear amber'. For medium, pull at 60°C and rest to 64°C. For well done, choose a different cut: sirloin tightens past medium and loses the reason for buying it."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-sirloin", "amount": 1800, "unit": "g", "prepNote": "boned and rolled, fat cap intact", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 2, "unit": "tbsp", "prepNote": "for the dry rub", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 2, "unit": "tsp", "prepNote": "freshly cracked", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "english-mustard-powder", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": "leaves stripped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "crushed flat", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rapeseed-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "halved through the root", "isOptional": false, "groupLabel": "For the gravy" },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "cut in chunks", "isOptional": false, "groupLabel": "For the gravy" },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "cut in chunks", "isOptional": false, "groupLabel": "For the gravy" },
+            { "ingredientSlug": "red-wine", "amount": 300, "unit": "ml", "prepNote": "a sturdy red, not the cheapest", "isOptional": false, "groupLabel": "For the gravy" },
+            { "ingredientSlug": "stock-beef", "amount": 500, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": "For the gravy" },
+            { "ingredientSlug": "plain-flour", "amount": 1, "unit": "tbsp", "prepNote": "for thickening", "isOptional": true, "groupLabel": "For the gravy" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A heavy roasting pan with a rack is the only specialist kit. An instant-read thermometer is the difference between a sirloin you carve with pride and one you slice through with regret. Buy the cheapest probe thermometer the kitchen shop sells; it pays for itself on the first joint." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Salt the joint the day before" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pat the sirloin dry with kitchen paper. Mix {{sea-salt-flakes}} of sea salt flakes with {{black-pepper}} of cracked black pepper and {{english-mustard-powder}} of English mustard powder. Rub the mixture over the joint, including the fat cap. Sit the joint on a rack over a tray and leave uncovered in the fridge for at least eight hours, ideally a full day. The surface dries, the salt penetrates, and the crust browns hard in the oven." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bring to room temperature" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Take the joint out of the fridge one hour before it goes in the oven. A cold-from-the-fridge joint gives you a grey band of overcooked meat around a cold centre. An hour on the side narrows that band considerably." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sear in a hot oven" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220°C (200°C fan). Scatter the {{onion}} halved onions, {{carrot}} chunked carrots, and {{celery}} chunked celery across the base of the roasting pan with the {{garlic}} of crushed garlic and the {{thyme}} of thyme leaves. Rub the joint with {{rapeseed-oil}} of rapeseed oil. Sit it fat-side-up on the rack above the vegetables. Roast for fifteen minutes — the surface browns hard." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Drop the heat and roast slow" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Turn the oven down to 160°C (140°C fan). Roast for a further 45 to 55 minutes for a 1.8 kg joint. Start checking the centre at 40 minutes; the thermometer goes into the thickest part, away from any bone. Pull when the reading hits 54°C for medium-rare. The crust will be deep mahogany; the meat under the crust still firm but giving."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rest, then carve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the joint onto a warm plate, tent loosely with foil, and rest for 30 minutes. The juices that flooded the cut edges retreat back into the muscle fibres; the internal temperature rises another 4°C through ",
+            "marks": [] },
+          { "type": "text", "text": "carryover cooking", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "carryover-cooking" } }] },
+          { "type": "text", "text": ", arriving at a perfect 58°C in the centre. Thirty minutes is long. Use the time for the Yorkshires and the gravy. Carve into 5 mm slices, across the grain, with a long, thin-bladed knife." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the gravy in the pan" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "While the joint rests, set the roasting pan over a medium hob, vegetables and all. Pour in {{red-wine}} of red wine and scrape the brown bits off the base with a wooden spoon. Reduce by half, around five minutes. Pour in {{stock-beef}} of hot beef stock. Simmer for ten minutes. If a thicker gravy is wanted, slake {{plain-flour}} of plain flour in a little cold water, whisk it into the simmering liquid, and cook for two more minutes. Strain through a sieve into a jug, pressing the vegetables to extract every drop." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Most failures are temperature failures — either the oven, the meat, or both.",
+          "items": [
+            { "symptom": "Meat overcooked, grey throughout", "cause": "Pulled too late, or no thermometer used. Carryover cooking adds 3–5°C after the joint leaves the oven.", "fix": "Use a probe. Pull at 54°C for medium-rare and rest." },
+            { "symptom": "Crust pale and soft", "cause": "Surface still damp when it went in, or starting oven not hot enough.", "fix": "Salt-rub the day before, dry uncovered in the fridge, and start the oven at 220°C." },
+            { "symptom": "Cold raw centre", "cause": "Joint went in straight from the fridge.", "fix": "Always rest at room temperature for an hour first." },
+            { "symptom": "Gravy bland and pale", "cause": "Not enough fond on the pan base, or not enough reduction.", "fix": "Roast on a bed of vegetables that brown alongside the meat. Reduce the wine by half before adding stock." },
+            { "symptom": "Joint sliced into and bled across the board", "cause": "Carved before resting.", "fix": "Rest a full 30 minutes for a 1.8 kg joint. The board stays clean and the slices stay pink." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead, freezing, leftovers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Salt-rub the joint up to 24 hours ahead. The gravy can be made up to a day ahead from a roast-beef stock the week before; warm and finish on the day. Cooked slices freeze for two months; defrost slowly and reheat gently with a spoon of stock. Leftover beef makes the best sandwich the next day — sourdough, horseradish, watercress, a smear of mustard. Or shred and warm through the leftover gravy into a hash with fried potatoes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The roast sirloin is the centrepiece of the English Sunday lunch and has been since Henry VIII reputedly knighted a particularly fine loin at Hoghton Tower. Beeton's 1861 recipe insists on the long resting and the red gravy; Hannah Glasse a century earlier cooked the Yorkshires under the joint to catch the dripping. The combination of beef, Yorkshire, gravy, and potatoes is the architecture of a British weekend. Serve with goose-fat roast potatoes, honey-roast parsnips, a heap of seasonal greens, and the gravy in a warm jug." }
+        ]
+      }
+    ]
+  }
+}

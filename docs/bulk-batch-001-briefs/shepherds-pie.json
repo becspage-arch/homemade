@@ -1,0 +1,208 @@
+{
+  "slug": "shepherds-pie",
+  "title": "Shepherd's pie",
+  "subtitle": "Lamb mince under buttered mash.",
+  "excerpt": "Slow-cooked minced lamb in a rich gravy of onions, carrots, and Worcestershire sauce, topped with buttered mashed potato and baked until the top is forked, peaked, and gold-brown. Feeds four with seconds.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The shepherd's-and-cottage-pie distinction (lamb / beef) traces to late-Victorian English household manuals; Beeton, Book of Household Management (1861, Project Gutenberg #10136) gives the prototype as 'baked minced meat under potato'. Eliza Acton, Modern Cookery for Private Families (1845), public domain, on the importance of mash that holds its peaks under heat.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 65,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well, before or after baking. To freeze raw: assemble in a foil tray, cover, freeze up to three months. Defrost overnight; bake from cold at 180°C for 45 minutes, then crisp the top under the grill. To freeze leftovers: portion, cool, wrap.",
+    "batchable": true,
+    "batchNotes": "Double the mince base; it freezes in flat bags. Top with fresh mash on the day you want to bake it; the mash discolours and weeps if frozen on the pie.",
+    "makeAheadNotes": "Assemble up to a day ahead and refrigerate; bring back to room temperature for 30 minutes before baking, or extend the bake by 10 minutes from cold.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "kidFriendly"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven 180°C; top finished under the grill",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "saute-pan", "isOptional": false, "notes": "Wide pan so the mince browns rather than steams." },
+    { "slug": "large-saucepan", "isOptional": false, "notes": "For the potatoes." },
+    { "slug": "masher", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false, "notes": "About 24 × 30 cm." },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "oven", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Browned lamb mince cooked slowly with onion, carrot, and a deep slug of Worcestershire sauce, all built into a tomato-and-stock gravy that thickens as it reduces. Topped with mashed potato beaten with butter and a splash of milk, forked into peaks that crisp gold-brown in the oven. Forty minutes of cooking, twenty-five of baking, ten of resting." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Shepherd's pie takes lamb; cottage pie takes beef. The names settled in the late Victorian era when meat was named by the husbandry that produced it. The method is otherwise the same: long-cooked mince, mash on top, baked under heat until the surface is properly browned and the gravy bubbles through the cracks at the edges." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "The mash is the test",
+          "body": "A wet mash slumps into the meat and gives you grey mush. A stiff mash holds its peaks, crisps on top, and parts cleanly from the gravy below. Beat the boiled potatoes dry over a low hob for a minute before any butter or milk goes in; let the steam escape. Floury potatoes (Maris Piper, King Edward, Russet) hold air; waxy potatoes turn gluey under the masher."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-mince", "amount": 500, "unit": "g", "prepNote": "15-20% fat for flavour", "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": "leaves stripped", "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "rosemary", "amount": 1, "unit": "sprig", "prepNote": "leaves finely chopped", "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "plain-flour", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "potato", "amount": 1000, "unit": "g", "prepNote": "Maris Piper or King Edward, peeled and quartered", "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "whole-milk", "amount": 80, "unit": "ml", "prepNote": "warmed", "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "cheddar", "amount": 50, "unit": "g", "prepNote": "grated, for the top (optional)", "isOptional": true, "groupLabel": "For the mash" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": null, "prepNote": "to season", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "freshly ground", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A wide sauté pan, a roomy saucepan for the potatoes, a masher, and a 24 × 30 cm baking tin. Nothing else." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the mince" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat {{olive-oil}} of olive oil in a wide sauté pan over a hot hob. Break {{lamb-mince}} of lamb mince into the pan in walnut-sized pieces. Don't stir straight away. Let the underside catch and brown for three minutes, then turn and brown the other side. The fond on the pan base is the colour of the finished gravy. Lift the browned mince onto a plate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sweat the vegetables" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lower the heat. Add {{onion}} diced onion, {{carrot}} diced carrots, and {{celery}} diced celery to the same pan with the lamb fat. Cook gently for ten minutes until the onion is translucent and the carrots beginning to soften. Stir in {{garlic}} of finely chopped garlic, the {{thyme}} of thyme leaves, and the {{rosemary}} of chopped rosemary leaves. Cook for two more minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the gravy" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stir in {{tomato-puree}} of tomato purée. Cook for two minutes — it darkens from red to brick. Scatter {{plain-flour}} of plain flour over the vegetables and stir. Return the lamb to the pan with any resting juices. Add {{worcestershire-sauce}} of Worcestershire sauce. Pour in {{stock-beef}} of hot beef stock. Bring to a simmer, then reduce the heat to its lowest setting and cook gently, partly covered, for 30 minutes. The gravy thickens to coat the back of a spoon. Taste and season with salt and pepper." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook and mash the potatoes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sit {{potato}} of peeled and quartered potatoes in a roomy saucepan. Cover with cold water by two finger-widths, add a generous tablespoon of salt, and bring to the boil. Simmer for 15 to 20 minutes until a knife slides in without resistance. Drain in a colander. Return to the dry pan and set over a low hob for one minute to steam off the water. Beat in {{unsalted-butter}} of butter cut into small pieces. When the butter melts in, pour in {{whole-milk}} of warmed milk and beat with a wooden spoon or masher until smooth. Season generously." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C (180°C fan). Spread the mince mixture into a 24 × 30 cm baking tin. Spoon the mash over in dollops, then spread to the edges with the back of a spoon so the gravy is fully sealed. Drag a fork across the top to draw peaks; scatter {{cheddar}} of grated cheddar if using. Bake for 25 minutes until the top is golden, then slide under a hot grill for two minutes to crisp the peaks. Rest for 10 minutes before serving." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Gravy thin and pale", "cause": "Mince not browned hard enough, or the gravy didn't simmer long enough to reduce.", "fix": "Brown the mince in a hot pan in a single layer; simmer the gravy 30 minutes uncovered until it coats a spoon." },
+            { "symptom": "Mash slumps into the mince", "cause": "Mash too wet, or the meat layer too liquid when topped.", "fix": "Steam-dry the boiled potatoes for a minute before adding fat. Cool the mince base for 10 minutes before topping with mash." },
+            { "symptom": "Top burnt, middle still cold", "cause": "Pie assembled cold from the fridge and finished too high in the oven.", "fix": "Bring to room temperature before baking, or bake at 180°C for 40 minutes instead, then grill briefly." },
+            { "symptom": "Mash gluey", "cause": "Wrong potato variety, or overworked with a stick blender or food processor.", "fix": "Use Maris Piper, King Edward, or Russet. Mash by hand. Never blend." },
+            { "symptom": "Flavours flat", "cause": "Underseasoned, or no anchovy depth in the gravy.", "fix": "Salt the mince after browning. Add a teaspoon of anchovy paste to the gravy alongside the Worcestershire — invisible on the tongue, gives backbone." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Swap lamb for beef and you have cottage pie. Add a splash of red wine with the stock for a deeper gravy. Sweet potato or celeriac mash gives a softer top; mix both with the regular potato if you want a halfway version. A handful of frozen peas stirred through the mince in the last five minutes adds colour and sweetness. Vegetarian version: brown 400 g of Puy lentils with the soffritto and use vegetable stock; everything else is identical." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Shepherd's pie is the British kitchen's answer to the question of what to do with the Monday lamb mince after the Sunday joint has been carved. It belongs to autumn and winter, eaten with peas or buttered cabbage, perhaps a spoon of pickled red cabbage on the side. The cook who masters this dish learns to brown mince properly, build a slow gravy, and mash a potato; three of the cornerstone skills of plain British cookery." }
+        ]
+      }
+    ]
+  }
+}

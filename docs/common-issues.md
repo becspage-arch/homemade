@@ -45,10 +45,28 @@ Severity flag with the rule: `[block]` (rewrite mandatory),
   Pattern: `"warm, considered, and beautiful"` style three-item
   parallel lists, especially at the start of the intro or the end of
   the "Where this dish lives" closer. The pilot-10 voice-check flagged
-  9 of 10 drafts for this; the warnings don't block.
+  9 of 10 drafts for this; bulk-batch-001 flagged 40+ instances across
+  23 drafts. The warnings don't block.
   **How to fix:** leave alone unless a real reader complains. Tricolons
   read fine when the third item earns its place. Worker can rewrite
   proactively if the third item is obviously padding.
+  **Hot spots from observed batches:** the `excerpt` field (200-char
+  meta summary that wants to be punchy) and the closing-paragraph list
+  of pairings. If the third item is "and X", trim where it doesn't add
+  flavour. Recipes that are genuinely about three things (the British
+  weekend's "beef, Yorkshire, gravy" / Italian's "guanciale, pecorino,
+  pepper") can keep the tricolon — it earns its place.
+
+- **Appositive em-dash pairs in step prose** `[block]`
+  Sub-pattern of the em-dash rule. Specifically appears in **method
+  H3 step paragraphs** when a step has a parenthetical timing or
+  observation: `"cook for X minutes — until the Y catches — then turn
+  and Z"`. The pilot-10 saw this; bulk-batch-001 saw 3 of 23 first
+  drafts hit it. The v4 prompt's self-critique catches most, not all.
+  **How to fix:** rewrite as `"cook for X minutes; the Y catches.
+  Turn and Z."` or `"cook for X minutes until the Y catches, then
+  turn and Z."` — both work, both keep the rhythm without the
+  appositive pair.
 
 ## Structural issues
 

@@ -1,0 +1,209 @@
+{
+  "slug": "steak-and-ale-pie",
+  "title": "Steak and ale pie",
+  "subtitle": "Chuck steak braised in stout, suet-pastry lid.",
+  "excerpt": "Cubes of chuck steak browned hard and slow-braised in stout with onions, mushrooms, and thyme until the gravy is dark and the meat falls. Spooned into a pie dish, topped with a suet pastry lid, and baked until the crust is golden. Serves four to six.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861, Project Gutenberg #10136), 'Beef Steak Pie', as the suet-crust prototype. The use of stout in place of broth is a twentieth-century pub refinement; Beeton uses water and a glass of ale. USDA / NCHFP guidance on minimum braising temperatures (above 80°C for collagen breakdown).",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 165,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "The filling alone freezes for three months. Cool, portion, freeze flat. Top with fresh pastry on the day. A whole baked pie reheats from the fridge at 170°C for 25 minutes.",
+    "batchable": true,
+    "batchNotes": "Double the filling; the long braise scales well. The pie dish caps your portion size, not the cook.",
+    "makeAheadNotes": "Make the filling up to two days ahead and chill; the flavour deepens. Top and bake on the day.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "slowSunday", "hearty"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan 180°C for the pie bake; braise on the lowest hob setting",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false, "notes": "Heavy-based with a tight lid; the long braise depends on even, low heat." },
+    { "slug": "pie-dish", "isOptional": false, "notes": "Around 1.5 L capacity, deep enough for filling and a lid." },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "oven", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "suet-pastry", "term": "Suet pastry", "definition": "A simple pastry made with self-raising flour and shredded suet (beef or vegetable). Lighter and steam-puffed compared to shortcrust; the traditional lid for British steak pies and steamed puddings." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cubed chuck steak browned hard, then slow-braised for two and a half hours with onions, chestnut mushrooms, thyme, bay, and a generous pour of stout. The gravy reduces to a dark glossy sauce; the meat reaches the falling-tender state where a spoon parts it. Cooled, spooned into a deep pie dish, topped with a suet-pastry lid brushed with egg, baked until the crust is gold and the gravy bubbles through the steam slits." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Chuck is the right cut: well-marbled, full of connective tissue that breaks down to gelatine over a slow braise, making the gravy thick and silky as it cools. Cheaper cuts like shin work too with another hour added. Don't use sirloin or rump; they tighten and dry over the long cook." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-chuck", "amount": 900, "unit": "g", "prepNote": "trimmed and cut into 3 cm cubes", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 40, "unit": "g", "prepNote": "for dusting the meat", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "rapeseed-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely sliced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "mushrooms-chestnut", "amount": 300, "unit": "g", "prepNote": "halved if large", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stout", "amount": 500, "unit": "ml", "prepNote": "Guinness or another dry stout", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "self-raising-flour", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the suet pastry" },
+            { "ingredientSlug": "lard", "amount": 150, "unit": "g", "prepNote": "or 150 g shredded vegetable suet", "isOptional": false, "groupLabel": "For the suet pastry" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the suet pastry" },
+            { "ingredientSlug": "water", "amount": 150, "unit": "ml", "prepNote": "cold", "isOptional": false, "groupLabel": "For the suet pastry" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for glaze", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the meat hard" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Toss {{beef-chuck}} of cubed beef with {{plain-flour}} of flour, salt, and pepper. Heat {{rapeseed-oil}} of oil in a heavy Dutch oven over a hot hob. Brown the meat in three batches; don't crowd the pan or it steams. Each batch wants two minutes a side. Lift to a plate. The dark fond left in the pan is half the flavour of the gravy." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soften the onions and mushrooms" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drop the heat. Cook {{onion}} of sliced onions for 10 minutes until soft and golden. Add {{mushrooms-chestnut}} of mushrooms; cook 5 minutes, stirring, until they release their water and start to brown. Stir in {{garlic}} of crushed garlic; cook one more minute." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Deglaze with stout" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stir in {{tomato-puree}} of tomato purée. Cook for a minute. Pour in {{stout}} of stout and scrape the fond off the base with a wooden spoon. Reduce by a third over high heat, 4 minutes. Return the beef and any resting juices. Pour in {{stock-beef}} of hot stock and {{worcestershire-sauce}} of Worcestershire. Tuck in the {{thyme}} of thyme and the {{bay-leaves}} of bay." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise slowly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bring to a bare simmer. Cover and cook on the lowest hob setting for 2 hours, or in a 150°C oven for the same time. Check now and then; if the gravy needs thickening at the end, simmer uncovered for 10 minutes. The meat should yield to a spoon. Cool the filling for at least 30 minutes — pouring hot filling into a pastry-lined dish melts the suet pastry into the sauce." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the suet pastry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine {{self-raising-flour}} of self-raising flour, {{sea-salt-fine}} of salt, and {{lard}} of shredded suet or grated cold lard in a bowl. Stir in {{water}} of cold water with a knife to a soft dough. Bring together with your hands; don't overwork. Roll out on a floured board to 1 cm thick, big enough to cover your pie dish with overhang. ",
+            "marks": [] },
+          { "type": "text", "text": "Suet pastry", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "suet-pastry" } }] },
+          { "type": "text", "text": " puffs in the oven and tears handsomely with a spoon." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C (180°C fan). Spoon the cooled filling into a 1.5 L pie dish. Brush the rim with beaten egg. Drape the pastry over the top. Trim the overhang to a finger's width and crimp with a fork. Cut a 5 cm slit in the middle to let steam escape. Brush all over with {{eggs}} beaten egg. Bake 25 minutes until the pastry is deep gold and the filling bubbles through the slit." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rest before serving" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rest the pie for 15 minutes after it comes out of the oven. The filling thickens; the pastry stays crisp. Serve with mashed potato and buttered greens; the gravy is rich enough that nothing else is needed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Meat chewy after 2 hours", "cause": "Wrong cut, or simmer too gentle.", "fix": "Use chuck or shin. Ensure a steady simmer; chuck wants 80°C+ to break down. Add another hour if needed." },
+            { "symptom": "Gravy thin", "cause": "Lid trapped too much steam, or stock added too cold.", "fix": "Reduce uncovered for 10 minutes at the end. Always add hot stock to a hot pan." },
+            { "symptom": "Pastry soggy underneath", "cause": "Hot filling under the lid.", "fix": "Cool the filling for at least 30 minutes. Some cooks chill overnight." },
+            { "symptom": "Pastry browned, gravy not bubbling", "cause": "Pie too cold from the fridge when it went in.", "fix": "Bring to room temperature before baking, or bake at 180°C for 35 minutes from cold." },
+            { "symptom": "Filling bitter", "cause": "Stout reduced too hard.", "fix": "Reduce by a third, not half; the bitterness concentrates if you push it further." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Steak and ale is the gastropub icon of British pie cookery. Eaten on dark Friday evenings with a pint of the same stout that went into the gravy, it speaks of slow heat and patient cooking. The Victorian household manuals called it 'beef-steak pie' and used water; the stout came later, when British brewing met British baking and the two refused to part." }
+        ]
+      }
+    ]
+  }
+}

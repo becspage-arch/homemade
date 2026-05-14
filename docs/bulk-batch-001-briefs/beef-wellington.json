@@ -1,0 +1,211 @@
+{
+  "slug": "beef-wellington",
+  "title": "Beef Wellington",
+  "subtitle": "Fillet wrapped in mushroom duxelles, parma ham, and puff pastry.",
+  "excerpt": "Centre-cut beef fillet seared hard, painted with mustard, wrapped in a tight blanket of mushroom duxelles and parma ham, then sealed in puff pastry and baked until the pastry is gold and the meat is pink. The showstopper roast. Serves six to eight.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The dish is mid-twentieth-century English in its current form, drawing on French filet en croûte. Auguste Escoffier, A Guide to Modern Cookery (1903), public domain, gives the duxelles base. The name links the dish to the Duke of Wellington, though the historical attribution is shaky.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 60,
+    "cookMinutes": 45,
+    "restingMinutes": 20,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": "The assembled, unbaked Wellington can be frozen for two weeks. Bake from cold, adding 15 minutes to the bake time, and check the centre with a probe.",
+    "batchable": false,
+    "batchNotes": "One whole fillet feeds 6 to 8 comfortably. Two Wellingtons in a domestic oven crowd; they share the same shelf badly.",
+    "makeAheadNotes": "Assemble fully up to a day ahead and chill. Bring to room temperature for 30 minutes before baking, and brush with extra egg.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["specialOccasion", "showstopper", "dateNight"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "fan 200°C; high heat for crust, then a wait for the meat to come up to 52°C",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false, "notes": "Heavy-based for the sear." },
+    { "slug": "food-processor", "isOptional": false, "notes": "For the duxelles." },
+    { "slug": "muslin-cloth", "isOptional": true, "notes": "For squeezing the duxelles dry." },
+    { "slug": "cling-film", "isOptional": false, "notes": "For rolling the prosciutto cylinder." },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false, "notes": "Non-negotiable for the centre temperature." },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board-large", "isOptional": false },
+    { "slug": "oven", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "duxelles", "term": "Duxelles", "definition": "A finely chopped mushroom paste cooked down in butter until almost dry. Carries the dish's umami without making the pastry soggy; the water has to be driven off completely or the Wellington steams the meat from the inside." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 1.4 kg centre-cut beef fillet, trimmed to an even cylinder, seared hard on all sides and brushed with English mustard while warm. A duxelles of finely chopped mushrooms cooked down to almost-dry paste. A blanket of overlapping prosciutto slices, then a wrap of all-butter puff pastry, sealed and rested in the fridge. Baked at high heat until the centre reads 52°C; rested for 20 minutes; sliced into thick pink rounds inside their gold pastry shell." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Three things separate a good Wellington from a soggy disappointment. The mushroom duxelles must be cooked properly dry. The fillet must be chilled fully after searing before any pastry touches it. The pastry must be cold and the oven hot. Skip any of those and the layers won't hold." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Internal temperatures",
+          "body": "Pull at 52°C in the centre for medium-rare; the rest takes it to 56°C, the doneness most people mean by 'pink'. For medium, pull at 58°C and rest to 62°C. The pastry browns at high heat in 35–40 minutes; if the centre is still cold at that point, tent loosely with foil and continue."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-fillet", "amount": 1400, "unit": "g", "prepNote": "centre-cut, trimmed to even thickness, tied", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rapeseed-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "english-mustard", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 2, "unit": "tsp", "prepNote": "freshly cracked", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mushrooms-chestnut", "amount": 600, "unit": "g", "prepNote": "wiped clean, roughly chopped", "isOptional": false, "groupLabel": "For the duxelles" },
+            { "ingredientSlug": "shallot", "amount": 3, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the duxelles" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the duxelles" },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": "leaves stripped", "isOptional": false, "groupLabel": "For the duxelles" },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the duxelles" },
+            { "ingredientSlug": "brandy", "amount": 60, "unit": "ml", "prepNote": "optional", "isOptional": true, "groupLabel": "For the duxelles" },
+            { "ingredientSlug": "prosciutto", "amount": 12, "unit": "slice", "prepNote": "thin slices", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 50, "unit": "g", "prepNote": "for dusting", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "beaten, for glaze", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An all-butter puff pastry block (375 g) is the right buy; supermarket own-brand all-butter works perfectly. Don't use ready-rolled — it isn't thick enough." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sear the fillet hard" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pat {{beef-fillet}} of beef fillet bone-dry. Rub all over with {{sea-salt-flakes}} of salt and {{black-pepper}} of cracked pepper. Heat {{rapeseed-oil}} of oil in a heavy frying pan over a screaming hot hob until it shimmers. Sear the fillet on all four sides for 90 seconds each, plus the ends — total 7 to 8 minutes. The crust is mahogany. Lift to a tray. Brush all over with {{english-mustard}} of English mustard while still warm. Cool to room temperature, then refrigerate for 30 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the duxelles" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pulse {{mushrooms-chestnut}} of chestnut mushrooms in a food processor until very finely chopped, almost a paste. Melt {{unsalted-butter}} of butter in a wide pan over medium heat. Add {{shallot}} of chopped shallots; soften 5 minutes. Add {{garlic}} of chopped garlic and the {{thyme}} of thyme. Tip in the mushrooms. Cook, stirring often, for 25 to 30 minutes — the mushrooms first release water, then it evaporates, then the mass darkens to a deep brown paste. Splash in {{brandy}} of brandy if using and cook off. The ",
+            "marks": [] },
+          { "type": "text", "text": "duxelles", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "duxelles" } }] },
+          { "type": "text", "text": " is ready when a wooden spoon dragged through the pan leaves a clean line. Cool fully." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Wrap in prosciutto" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lay a large sheet of cling film on the work surface. Arrange {{prosciutto}} slices of prosciutto in slightly overlapping rows to make a rectangle wider and longer than the fillet. Spread the cold duxelles over the prosciutto in a thin even layer. Sit the cold fillet on the long edge nearest you. Using the cling film, roll the prosciutto and duxelles tightly around the fillet into a sealed cylinder, twisting the ends like a sweet wrapper. Refrigerate for at least 30 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Wrap in pastry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lightly dust the work surface with {{plain-flour}} of flour. Roll the puff pastry into a rectangle 4 mm thick, big enough to envelop the fillet with a 4 cm overlap on the long side. Unwrap the prosciutto cylinder and sit it along one long edge of the pastry. Brush the pastry with {{eggs}} beaten egg. Roll the pastry around the cylinder; seal the seam underneath. Tuck the ends like a parcel; trim excess and seal with egg wash. Lift onto a baking tray lined with parchment, seam-side down. Brush all over with egg wash. Score the top lightly with a knife in a crosshatch. Chill for 30 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake to the centre temperature" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220°C (200°C fan). Brush the chilled Wellington with one more coat of egg wash. Bake for 25 minutes until the pastry is golden, then drop to 200°C (180°C fan) for a further 15 to 20 minutes. Push a probe through the pastry into the centre of the fillet at the 35-minute mark; pull at 52°C for medium-rare. If the pastry browns before the meat is ready, tent loosely with foil." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rest, then slice" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rest on a board for 20 minutes. The centre carries on to 56°C; the juices redistribute. Slice into thick rounds with a long sharp knife. Serve with a red-wine jus, mashed potatoes, and a heap of buttered greens." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Soggy bottom pastry", "cause": "Duxelles not cooked dry enough, or the Wellington baked on a cold tray.", "fix": "Cook duxelles until a spoon leaves a clean line. Pre-heat the tray in the oven before sliding the Wellington on." },
+            { "symptom": "Pastry split or torn during baking", "cause": "Rolled too thin, or pastry not cold enough.", "fix": "4 mm minimum. Chill the assembled Wellington for 30 minutes before baking." },
+            { "symptom": "Meat overcooked", "cause": "No probe, or pulled too late.", "fix": "Always probe. Pull at 52°C for medium-rare; carryover takes it to 56°C." },
+            { "symptom": "Meat raw inside, pastry burnt", "cause": "Oven too hot start to finish, or fillet went in cold from fridge.", "fix": "Drop heat after the initial 25 minutes. Bring the assembled Wellington to room temperature for 20 minutes before baking." },
+            { "symptom": "Prosciutto leaks fat onto pastry", "cause": "Prosciutto sliced too thick.", "fix": "Buy the thinnest slices you can. The wrap is structural, not a layer in its own right." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Beef Wellington is the British dinner-party finale, eaten at Christmas, on important anniversaries, and at the kind of restaurant where the bill arrives in a folded card. The form is French in heritage, filet en croûte goes back to Escoffier, but the dish settled into the British canon mid-twentieth century with the duxelles-and-mustard refinement. A glass of solid Bordeaux at the table; mashed potatoes underneath." }
+        ]
+      }
+    ]
+  }
+}

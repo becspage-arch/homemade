@@ -1,0 +1,207 @@
+{
+  "slug": "cottage-pie",
+  "title": "Cottage pie",
+  "subtitle": "Beef mince under buttered mash.",
+  "excerpt": "The beef sibling of shepherd's pie. Slow-cooked minced beef in a deep gravy of onions, carrots, and a slug of red wine, topped with buttered mash and baked until the peaks are forked and gold-brown. Four with seconds.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The shepherd's / cottage pie split (lamb / beef) settled in late-Victorian English household manuals. Mrs Beeton, Book of Household Management (1861, Project Gutenberg #10136), describes 'baked minced beef under potato' as a standby of the small household. Eliza Acton, Modern Cookery for Private Families (1845), public domain, on flouring the mince to thicken its own gravy.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 65,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes raw or cooked. Raw: assemble in a foil tray, freeze up to three months, bake from cold at 180°C for 50 minutes. Cooked: portion, cool, wrap; reheat under a covered foil at 170°C for 30 minutes, then grill.",
+    "batchable": true,
+    "batchNotes": "Double the beef base; it freezes flat. Top with fresh mash on the day; mash frozen on the pie weeps and discolours.",
+    "makeAheadNotes": "Assemble up to a day ahead and refrigerate. Bring to room temperature for 30 minutes before baking.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "kidFriendly"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan 180°C; finish under the grill",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "saute-pan", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "masher", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false, "notes": "About 24 × 30 cm." },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "oven", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Beef mince browned hard and built into a slow gravy of onion, carrot, celery, tomato purée, red wine, and beef stock. A thick mash topping, beaten with butter and milk, forked into peaks that crisp gold-brown in a hot oven. Forty minutes of cooking, twenty-five of baking, ten of resting. The cottage pie is the beef sibling of shepherd's pie; the names settled in the late Victorian era when British households named their pies for the animal that gave the meat." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Beef mince behaves differently from lamb. It has less fat per gram and a leaner flavour, so the gravy needs more help: a splash of red wine, a teaspoon of anchovy paste, a hard sear on the meat to build fond on the pan base. The mash topping carries the same rules either way." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-mince", "amount": 500, "unit": "g", "prepNote": "around 15% fat", "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": "leaves stripped", "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "anchovy-paste", "amount": 1, "unit": "tsp", "prepNote": "invisible on the tongue, gives backbone", "isOptional": true, "groupLabel": "For the mince" },
+            { "ingredientSlug": "plain-flour", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "red-wine", "amount": 150, "unit": "ml", "prepNote": "a sturdy red", "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "stock-beef", "amount": 350, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the mince" },
+            { "ingredientSlug": "potato", "amount": 1000, "unit": "g", "prepNote": "Maris Piper or King Edward, peeled and quartered", "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "whole-milk", "amount": 80, "unit": "ml", "prepNote": "warmed", "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "cheddar", "amount": 50, "unit": "g", "prepNote": "grated, for the top", "isOptional": true, "groupLabel": "For the mash" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": null, "prepNote": "to season", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "freshly ground", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the mince hard" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat {{olive-oil}} of olive oil in a wide sauté pan over a hot hob until it shimmers. Crumble {{beef-mince}} of beef mince into the pan in walnut-sized clumps. Don't stir for three minutes; let the underside catch and brown deep. Turn the clumps and brown the second side. Lift the mince onto a plate and leave the fond behind." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the soffritto" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drop the heat. Add {{onion}} diced onion, {{carrot}} diced carrots, and {{celery}} diced celery to the same pan with the rendered beef fat. Cook gently for 10 minutes, stirring now and then. Stir in {{garlic}} of chopped garlic, the {{thyme}} of thyme leaves, and the {{bay-leaves}} of bay. Cook two more minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Layer in the depth" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add {{tomato-puree}} of tomato purée and {{anchovy-paste}} of anchovy paste. Cook two minutes until the purée darkens to brick. Scatter {{plain-flour}} of flour over the vegetables; stir. Return the beef and any resting juices. Pour in {{red-wine}} of red wine and let it bubble hard for two minutes — the alcohol burns off. Add {{worcestershire-sauce}} of Worcestershire and {{stock-beef}} of hot stock. Bring to a simmer." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook slowly to thicken" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cook gently, partly covered, on the lowest setting for 30 minutes. The liquid reduces by a third; the gravy coats the back of a spoon. Fish out the bay leaves. Taste and adjust salt and pepper." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mash the potatoes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cover {{potato}} of peeled, quartered potatoes with cold salted water. Bring to the boil. Simmer 18 minutes until a knife slides in cleanly. Drain. Return to the dry hot pan for one minute to steam-dry. Mash. Beat in {{unsalted-butter}} of butter, then {{whole-milk}} of warmed milk. Season generously." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C (180°C fan). Tip the mince into a 24 × 30 cm baking tin. Spoon the mash on in dollops; spread to the edges so the gravy is sealed in. Drag a fork through the top to draw peaks; scatter {{cheddar}} of grated cheddar if using. Bake 25 minutes until golden, then a minute or two under a hot grill to crisp the peaks. Rest 10 minutes before serving." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Pale, watery gravy", "cause": "Beef mince was steamed not seared, or the gravy wasn't reduced long enough.", "fix": "Brown in walnut clumps in a single layer; simmer 30 minutes until the gravy clings to a spoon." },
+            { "symptom": "Mash slumps into the meat", "cause": "Mash too wet, or the meat layer too liquid at assembly.", "fix": "Steam-dry the potatoes for a minute before fat goes in. Cool the mince base for 10 minutes before topping." },
+            { "symptom": "Top burnt, middle cold", "cause": "Cold from the fridge and baked at full heat.", "fix": "Bring to room temperature first, or bake at 180°C for 40 minutes from cold, then grill briefly." },
+            { "symptom": "Gravy bland", "cause": "Underseasoned, or no umami backbone.", "fix": "Salt after browning; the anchovy paste is invisible on the tongue but lifts the meat." },
+            { "symptom": "Cheese topping leathery", "cause": "Cheese added too early or grilled too long.", "fix": "Scatter cheese before grilling; one to two minutes under the grill, no more." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Swap beef for lamb mince and you have shepherd's pie. A handful of frozen peas stirred through the mince in the last five minutes adds colour. Sweet potato mash gives a softer, sweeter top; half-and-half with regular potato is a balanced halfway version. A vegetarian cottage pie works with 400 g of cooked Puy lentils in place of the beef and vegetable stock instead of beef." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cottage pie sits at the centre of the British weeknight repertoire. It uses Monday's leftover mince or Sunday's chopped roast, builds slowly on a winter evening, and tastes better the next day. Eat it with buttered cabbage or a heap of peas, a spoon of pickled red cabbage if there's a jar in the fridge, and a glass of the wine the gravy was built from." }
+        ]
+      }
+    ]
+  }
+}

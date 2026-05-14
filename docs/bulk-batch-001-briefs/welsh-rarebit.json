@@ -1,0 +1,177 @@
+{
+  "slug": "welsh-rarebit",
+  "title": "Welsh rarebit",
+  "subtitle": "A proper grown-up cheese on toast.",
+  "excerpt": "Mature cheddar melted with butter, flour, ale, English mustard, and Worcestershire into a thick sauce, spread on toast and grilled until bubbled and gold. Twenty minutes start to finish, the savoury supper at the heart of British pub food.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Hannah Glasse, The Art of Cookery Made Plain and Easy (1747), public domain, gives an early form as 'Welch rabbit'. Mrs Beeton, Book of Household Management (1861, Project Gutenberg #10136), settles the modern roux-based version with ale.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": "Made-up rarebit sauce freezes for a month in a small tub; defrost in the fridge, beat smooth with a teaspoon of milk, spread on toast.",
+    "batchable": true,
+    "batchNotes": "The sauce doubles or triples without trouble. The grilling is the rate-limiting step.",
+    "makeAheadNotes": "Sauce keeps three days in the fridge; let it come to room temperature and beat smooth before spreading.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["comfortFood", "cosy", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": "all done under the grill on its highest setting",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false },
+    { "slug": "box-grater", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "grill", "isOptional": false },
+    { "slug": "toaster", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "roux-cheese", "term": "Cheese roux", "definition": "A short butter-and-flour roux cooked briefly, into which milk, ale, or a mix is whisked, then cheese melted at the lowest heat. The flour stabilises the cheese so it spreads and grills without splitting into oil and protein." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two slices of sourdough toasted gold, topped with a spoonful of thick cheese sauce built on a butter roux with ale, English mustard, and a slug of Worcestershire. Slid back under a screaming hot grill until the surface puffs, blisters, and browns to caramel patches. Twenty minutes from cold hob to plate." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The English name 'rabbit' was a joke about food rarely seen on the table; over time the spelling shifted to 'rarebit' to sound more decorous. Mature cheddar is essential — supermarket mild cheese makes wet, bland rarebit. Get a strong block, grate it generously, and don't skimp on the mustard." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "cheddar", "amount": 200, "unit": "g", "prepNote": "mature, grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 25, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 25, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "beer", "amount": 100, "unit": "ml", "prepNote": "ale, stout, or porter", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "english-mustard", "amount": 1, "unit": "tsp", "prepNote": "or half a teaspoon of English mustard powder", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "egg-yolks", "amount": 1, "unit": "each", "prepNote": "optional, for a silkier sauce", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "bread", "amount": 2, "unit": "slice", "prepNote": "sourdough, 2 cm thick", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "to season", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Start a short roux" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a small saucepan over a low hob. Whisk in {{plain-flour}} of plain flour; cook for one minute, whisking, until the paste smells of biscuits. The ",
+            "marks": [] },
+          { "type": "text", "text": "cheese roux", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "roux-cheese" } }] },
+          { "type": "text", "text": " stabilises everything that follows." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Whisk in the ale" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour {{beer}} of ale into the pan in three stages, whisking smooth between each. The sauce thickens and the alcohol burns off. Cook for two minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Melt in the cheese" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Take the pan off the hob. Stir in {{cheddar}} of grated mature cheddar a handful at a time, letting each handful melt fully before adding the next. The sauce drops to thick paste. Stir in {{english-mustard}} of English mustard, {{worcestershire-sauce}} of Worcestershire, and a generous twist of black pepper. Beat in {{egg-yolks}} egg yolk if you want extra silk." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Toast the bread, top the toast" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Toast {{bread}} slices of sourdough to deep gold. Sit them on a baking tray. Spread half the rarebit mixture across each slice, generous and slightly mounded at the centre." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Grill until blistered" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Slide the tray under a hot grill, 10 cm from the heat. Grill for 3 to 4 minutes, watching closely, until the top is puffed, blistered, and gold-brown with darker patches. Eat immediately — the sauce stiffens as it cools." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Sauce splits and oils", "cause": "Cheese melted over too high a heat.", "fix": "Take the pan off the hob before any cheese goes in. The residual warmth melts; direct heat splits." },
+            { "symptom": "Topping runs off the toast", "cause": "Sauce too thin from too much liquid.", "fix": "Add cheese in stages until the paste holds a peak on the spoon. Reduce a thin sauce briefly over low heat." },
+            { "symptom": "Top pale and unappetising", "cause": "Grill not hot enough, or too far from the heat.", "fix": "Highest setting, 10 cm away, 3 to 4 minutes. Watch every second." },
+            { "symptom": "Bland", "cause": "Mild cheese or skimped mustard.", "fix": "Mature cheddar; full teaspoon of English mustard at minimum." },
+            { "symptom": "Soggy toast", "cause": "Toast not dark enough before the sauce went on.", "fix": "Toast to deep gold first. A pale soft toast can't hold the weight." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rarebit belongs to the British supper canon — what was once called a 'savoury', served after the sweet at a Victorian dinner table or eaten on its own as a late kitchen snack. Add a fried egg on top and it becomes a buck rarebit; pour over a wedge of grilled tomato and it becomes a blushing bunny. A glass of strong ale or a cup of properly stewed tea." }
+        ]
+      }
+    ]
+  }
+}

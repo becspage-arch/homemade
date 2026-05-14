@@ -1,0 +1,173 @@
+{
+  "slug": "mint-jelly",
+  "title": "Mint jelly",
+  "subtitle": "Cooking apples, mint, vinegar, sugar.",
+  "excerpt": "Bramley apples cooked down with water and white vinegar, strained through a jelly bag overnight, then boiled with sugar and a generous infusion of fresh mint to a clear gold-green set. The lamb companion. Makes four 200 ml jars.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": "preserves",
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861, Project Gutenberg #10136), 'Mint Jelly'. The two-stage extract method matches her instructions exactly: pectin pulled from windfall cooking apples, then cleared and set with sugar and herb.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "4 jars of 200 ml",
+    "prepMinutes": 20,
+    "cookMinutes": 60,
+    "restingMinutes": 720,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": "Keeps 12 months in sealed jars in a cool dark cupboard.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly; the jelly bag is the rate-limiting step (overnight drain).",
+    "makeAheadNotes": "Pulp drains overnight; the active boiling is half an hour the next day.",
+    "dietaryFlags": ["vegetarian", "vegan", "glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "side",
+    "mood": ["slowSunday"],
+    "temperatureCelsius": null,
+    "temperatureNote": "104.5°C for the setting point",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "jam-pan", "isOptional": false },
+    { "slug": "muslin-cloth", "isOptional": false, "notes": "Or a proper jelly bag suspended from a stand." },
+    { "slug": "stockpot", "isOptional": false, "notes": "For the apple cook." },
+    { "slug": "sugar-thermometer", "isOptional": true },
+    { "slug": "jam-jars", "isOptional": false, "notes": "Four 200 ml jars." },
+    { "slug": "ladle", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "jelly-bag", "term": "Jelly bag", "definition": "A fine muslin or knitted bag suspended over a bowl, into which boiled fruit pulp is tipped to drain. Don't squeeze the bag — the jelly will be cloudy. Patience over hours produces a clear set." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bramley apples, skins and cores included, simmered in water and white wine vinegar until they collapse. The pulp tipped into a muslin-lined sieve over a bowl, then left to drain overnight. The next morning, the clear apple liquid is boiled with sugar and a big bundle of mint to setting point, strained again, and jarred." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The two-stage method gives a sparkling clear jelly with no apple solids. The mint goes in at the boil so the flavour stays bright; chopped mint added at the end keeps the green colour but cooks bitter. Use the cleanest apples you have: a windfall or two is fine, but bruise marks bleed brown into the jelly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 16,
+          "items": [
+            { "ingredientSlug": "apple-bramley", "amount": 1500, "unit": "g", "prepNote": "windfall is fine; chop roughly, skins and cores included", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "white-wine-vinegar", "amount": 600, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 600, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "granulated-sugar", "amount": null, "unit": null, "prepNote": "weight to be calculated from the strained liquid yield (see method)", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mint", "amount": null, "unit": null, "prepNote": "a large bunch (~30 g) plus a smaller bunch for finishing", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the apples" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Roughly chop {{apple-bramley}} of Bramley apples without peeling or coring. Tip into a stockpot with {{water}} of water, {{white-wine-vinegar}} of white wine vinegar, and the large bunch of mint stems (save the leaves for the boil). Cover and simmer for 45 minutes until the apples collapse into pulp." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Drain through a jelly bag" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set a ",
+            "marks": [] },
+          { "type": "text", "text": "jelly bag", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "jelly-bag" } }] },
+          { "type": "text", "text": " or muslin-lined sieve over a deep bowl. Tip the apple pulp in. Cover and leave overnight, 8 to 12 hours. Don't squeeze or stir the bag, or the jelly cloudies." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Weigh the liquid and the sugar" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Measure the strained liquid. For every 600 ml, weigh out 450 g of granulated sugar. Tip the liquid into a jam pan, set on a low hob, and stir in the sugar until fully dissolved." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Boil to setting point with mint" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add a small bundle of fresh {{mint}} of mint leaves tied with kitchen twine. Bring to a rolling boil. Boil 10 to 15 minutes until the temperature hits 104.5°C, or a teaspoon dropped on a chilled saucer wrinkles when pushed. Fish out the mint bundle. Skim any green foam." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rest, then jar" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rest the pan 5 minutes. Stir in 2 tablespoons of very finely chopped fresh mint leaves for colour. Ladle into sterilised jars. Seal warm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Jelly cloudy", "cause": "Squeezed the jelly bag.", "fix": "Always let gravity do the work overnight. Cloudy jelly tastes the same but doesn't catch the light on the shelf." },
+            { "symptom": "Jelly runny", "cause": "Sugar ratio off or didn't reach setting point.", "fix": "Re-boil with the cold-saucer test guiding the end. The ratio of 450 g sugar to 600 ml apple liquid is the safe rule." },
+            { "symptom": "Brown not green", "cause": "Mint boiled too long or jelly stored in direct light.", "fix": "Add the finishing chopped mint off the heat. Store in a dark cupboard." },
+            { "symptom": "Bitter aftertaste", "cause": "Mint chopped and boiled.", "fix": "Tied bundle in, fished out; chopped leaves added only off the heat for colour." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mint jelly is the British lamb companion, sat on the Sunday-roast table in a glass dish with a small spoon. It also works alongside cold cured meats, on cheese with a sharp cheddar, or warmed and brushed over grilled lamb chops as a glaze." }
+        ]
+      }
+    ]
+  }
+}
