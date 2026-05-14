@@ -1,6 +1,7 @@
 # Personal recipes redo — report
 
-Generated 2026-05-14.
+Generated 2026-05-14. Includes the brand + personal-name rename pass
+applied later the same day.
 
 Full enrichment redo of Rebecca's two personal recipe collections from
 `Downloads\RECIPES (MASTER).docx` and `Downloads\Recipes to Print.docx`.
@@ -24,7 +25,7 @@ detail you'd get from a single-recipe authoring pass aren't there.
 
 ## Summary
 
-- **Total recipes ingested:** 216
+- **Total recipes ingested:** 215
   - Up from the first ingest's 189 — the parser improvements found 26
     additional recipes the first run missed (mostly `Ingredients:` with
     a colon, and recipes with intro-quote text between title and the
@@ -41,14 +42,14 @@ detail you'd get from a single-recipe authoring pass aren't there.
     in the body (sub-recipe references like "Basic risotto",
     one-off branded items like "Emeril's Essence creole seasoning",
     regional ingredients without a master entry)
-- **Voice-check results across all 216 briefs:** 111 clean, 104
+- **Voice-check results across all 215 briefs:** 111 clean, 104
   warn-only (tricolons + americanisms, mostly in her own prose —
   non-blocking), 0 with errors
 - **Source files re-parsed:**
   - `RECIPES (MASTER).docx` — 247 recipe slots detected, deduplicated
-    to ~216 (after merging with the print file)
+    to ~215 (after merging with the print file)
   - `Recipes to Print.docx` — 30 recipes
-  - After dedupe: **216 unique recipes**
+  - After dedupe: **215 unique recipes**
 
 ## Parsing the docx — what changed
 
@@ -193,7 +194,7 @@ keywords.
 
 ## Voice-check stats
 
-Across all 216 briefs:
+Across all 215 briefs:
 
 - **Clean:** 111
 - **Warnings only (non-blocking):** 104

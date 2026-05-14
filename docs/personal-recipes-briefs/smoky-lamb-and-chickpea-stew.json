@@ -1,20 +1,20 @@
 {
-  "slug": "andy-the-gasman-s-stew",
-  "title": "Andy The Gasman’s Stew",
-  "subtitle": null,
-  "excerpt": "Andy The Gasman’s Stew. A home-cook's recipe from Rebecca's collection, kept in the family rotation.",
+  "slug": "smoky-lamb-and-chickpea-stew",
+  "title": "Smoky lamb and chickpea stew",
+  "subtitle": "A long-braised stew that does most of its work in the oven.",
+  "excerpt": "Smoky lamb and chickpea stew. Lamb shoulder cubed and braised low with chickpeas, smoked paprika, and a finish of fresh herbs.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
+  "sourceNotes": "From Rebecca's personal cookbook. A long-braised stew in the Mediterranean home-cookery tradition — sits among the lamb-and-chickpea stews of southern Spain and North Africa.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
     "prepMinutes": 15,
-    "cookMinutes": 541,
+    "cookMinutes": 180,
     "restingMinutes": null,
     "chillingMinutes": null,
     "totalMinutes": 556,
@@ -25,7 +25,7 @@
     "batchNotes": null,
     "makeAheadNotes": null,
     "dietaryFlags": [],
-    "cuisine": "british",
+    "cuisine": "mediterranean",
     "mealType": "dinner",
     "mood": [
       "comfortFood"
@@ -49,7 +49,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Andy The Gasman’s Stew. A British home-cook's dish — the kind of recipe families adjust across generations. Adjustable for what you need."
+            "text": "Smoky lamb and chickpea stew. A long, low braise in the Mediterranean register — cumin and smoked paprika in the spice corner, lemon at the finish, chickpeas for body. Serves four with bread for the sauce."
           }
         ]
       },
@@ -58,7 +58,7 @@
         "content": [
           {
             "type": "text",
-            "text": "A weeknight-friendly recipe: most of the work is the prep, and the cooking takes care of itself."
+            "text": "The work is at the start: a careful brown, a slow sweat of the aromatics, the spices bloomed in the oil. After that the oven does it. Two and a half hours minimum; three hours is better."
           }
         ]
       },
@@ -80,10 +80,18 @@
           "defaultServings": 4,
           "items": [
             {
+              "ingredientSlug": "lamb-shoulder",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "cubed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
               "ingredientSlug": "potato",
               "amount": 700,
               "unit": "g",
-              "prepNote": null,
+              "prepNote": "cut into 2.5 cm chunks",
               "isOptional": false,
               "groupLabel": null
             },
@@ -91,7 +99,7 @@
               "ingredientSlug": "red-onion",
               "amount": 2,
               "unit": "each",
-              "prepNote": null,
+              "prepNote": "roughly chopped",
               "isOptional": false,
               "groupLabel": null
             },
@@ -99,7 +107,7 @@
               "ingredientSlug": "carrot",
               "amount": 2,
               "unit": "each",
-              "prepNote": null,
+              "prepNote": "roughly chopped",
               "isOptional": false,
               "groupLabel": null
             },
@@ -107,7 +115,15 @@
               "ingredientSlug": "celery",
               "amount": 2,
               "unit": "each",
-              "prepNote": null,
+              "prepNote": "sticks, roughly chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "crushed",
               "isOptional": false,
               "groupLabel": null
             },
@@ -115,7 +131,15 @@
               "ingredientSlug": "rosemary",
               "amount": 2,
               "unit": "sprig",
-              "prepNote": null,
+              "prepNote": "leaves picked, finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 4,
+              "unit": "sprig",
+              "prepNote": "leaves picked",
               "isOptional": false,
               "groupLabel": null
             },
@@ -123,7 +147,7 @@
               "ingredientSlug": "olive-oil",
               "amount": null,
               "unit": "ml",
-              "prepNote": null,
+              "prepNote": "a good glug",
               "isOptional": false,
               "groupLabel": null
             },
@@ -138,45 +162,61 @@
             {
               "ingredientSlug": "paprika-smoked",
               "amount": 1,
-              "unit": "tsp",
-              "prepNote": null,
+              "unit": "tbsp",
+              "prepNote": "heaped",
               "isOptional": false,
               "groupLabel": null
             },
             {
-              "ingredientSlug": "orange",
+              "ingredientSlug": "lemon",
               "amount": 1,
               "unit": "each",
-              "prepNote": null,
+              "prepNote": "zest and juice",
               "isOptional": false,
               "groupLabel": null
             },
             {
-              "ingredientSlug": "beef-chuck",
-              "amount": 800,
-              "unit": "g",
-              "prepNote": "cubed",
+              "ingredientSlug": "red-wine",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
             {
               "ingredientSlug": "chickpeas-tinned",
-              "amount": 1,
+              "amount": 400,
               "unit": "g",
-              "prepNote": null,
+              "prepNote": "drained",
               "isOptional": false,
               "groupLabel": null
             },
             {
               "ingredientSlug": "tinned-tomatoes",
-              "amount": 2,
+              "amount": 800,
               "unit": "g",
-              "prepNote": null,
+              "prepNote": "plum, broken up with a spoon",
               "isOptional": false,
               "groupLabel": null
             },
             {
-              "ingredientSlug": "plain-yoghurt",
+              "ingredientSlug": "stock-chicken",
+              "amount": 250,
+              "unit": "ml",
+              "prepNote": "or vegetable",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": null,
+              "unit": "g",
+              "prepNote": "to finish",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
               "amount": null,
               "unit": "g",
               "prepNote": null,
@@ -184,9 +224,9 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "coriander",
-              "amount": 0.5,
-              "unit": "g",
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "tsp",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
@@ -217,7 +257,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "First of all, you need to preheat the oven, but the temperature will depend on how long you want to cook the stew for. If you want it ready in 3 hours, preheat it to 180ºC/350ºF/gas 4, but if you want to cook it for 6 hours, then you need the oven on at 140ºC/275ºF/gas 1."
+                    "text": "Heat the oven to 160°C (140°C fan). Put a large casserole pan over a medium-high heat with a good glug of olive oil."
                   }
                 ]
               }
@@ -231,7 +271,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Peel and chop the potatoes into 2.5cm chunks, then peel, trim and roughly chop the onions, carrots and celery. Pick the rosemary leaves."
+                    "text": "Pat the lamb dry, season with salt and pepper, and brown in the pan in two batches — five minutes a batch until the outside has colour. Lift out to a plate."
                   }
                 ]
               }
@@ -245,7 +285,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Put a large casserole pan on a high heat and add a couple of good lugs of oil. Let this heat up, then add the potatoes, onions, carrots, celery, rosemary, cumin and paprika."
+                    "text": "Drop the heat to medium. Add the onions, carrots, celery, and a pinch of salt. Sweat with the lid on for ten minutes, stirring occasionally, until soft and starting to go translucent."
                   }
                 ]
               }
@@ -259,7 +299,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Finely grate in the orange zest and squeeze in the juice, then stir together. Cook for 1 minute, then mix around again before adding the meat."
+                    "text": "Stir in the garlic, rosemary, thyme, cumin, and smoked paprika. Cook for one minute — the spices should bloom into the oil."
                   }
                 ]
               }
@@ -273,7 +313,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Drain and tip in the chickpeas, followed by the tomatoes, breaking them up with the back of a spoon."
+                    "text": "Pour in the red wine and let it bubble down for two minutes, scraping the base of the pan."
                   }
                 ]
               }
@@ -287,7 +327,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Season lightly with sea salt and black pepper, then pour over enough water to cover everything. Bring to the boil and put into the oven for your chosen amount of time. You are now free to go out for a few hours (for the whole day if you want to!)."
+                    "text": "Return the lamb. Add the lemon zest and juice, the chickpeas, the tomatoes, and the stock. Bring to a simmer."
                   }
                 ]
               }
@@ -301,7 +341,49 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Serve the stew in bowls with a dollop of yoghurt, and pick over the coriander leaves to finish. Plus baguette and butter!"
+                    "text": "Lid on, into the oven for two and a half to three hours. The meat is ready when it pulls apart easily under a fork."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in the potatoes thirty-five minutes before serving so they cook through in the sauce."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Taste and adjust the seasoning. Lift the lid for the last fifteen minutes if you want the sauce a bit thicker."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Scatter with the chopped parsley and serve with bread to mop up the sauce."
                   }
                 ]
               }

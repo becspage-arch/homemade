@@ -17,7 +17,75 @@
  * before inserting.
  */
 
-export type TutorialType = 'RECIPE' | 'TECHNIQUE'
+export type TutorialType = 'RECIPE' | 'TECHNIQUE' | 'PRACTICE' | 'READING'
+
+/**
+ * Mindset practice metadata. Required when `type === 'PRACTICE'` or
+ * `type === 'READING'`. Mirrors the `Tutorial.practice*` columns added
+ * by the Phase 8 Step 13 schema migration. Practices don't carry
+ * recipe metadata — `recipe` should be null / omitted on PRACTICE and
+ * READING rows.
+ */
+export type PracticeType =
+  | 'TAPPING'
+  | 'ENERGY_STATEMENT'
+  | 'AFFIRMATION'
+  | 'SPELL'
+  | 'RITUAL'
+  | 'ACTIVITY'
+  | 'JOURNAL_PROMPT'
+  | 'VISUALISATION'
+  | 'MEDITATION'
+  | 'EMBODIMENT'
+  | 'READING'
+
+export type PracticeTarget =
+  | 'MONEY'
+  | 'BODY'
+  | 'RELATIONSHIPS'
+  | 'SLEEP'
+  | 'ANXIETY'
+  | 'CONFIDENCE'
+  | 'ABUNDANCE'
+  | 'STUCK'
+  | 'GRIEF'
+  | 'FEAR'
+  | 'MOTHERHOOD'
+  | 'PURPOSE'
+  | 'TIME'
+  | 'ENERGY'
+  | 'JOY'
+  | 'SPIRITUALITY'
+  | 'HEALTH'
+  | 'SELF_WORTH'
+  | 'FORGIVENESS'
+  | 'AGEING'
+
+export type TimeBand =
+  | 'THREE_MIN'
+  | 'FIVE_MIN'
+  | 'TEN_MIN'
+  | 'TWENTY_MIN'
+  | 'THIRTY_PLUS'
+
+export type BestTime = 'MORNING' | 'EVENING' | 'ANYTIME' | 'AS_NEEDED'
+
+export interface PracticeMetadata {
+  /** One of the 11 PracticeType enum values. */
+  practiceType: PracticeType
+  /** One or more PracticeTarget values — drives the "I'm feeling..." matcher. */
+  practiceTargets: PracticeTarget[]
+  timeBand: TimeBand
+  bestTime: BestTime
+  /** Reuses the Difficulty enum (BEGINNER | INTERMEDIATE | ADVANCED). */
+  practiceDepth?: 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED' | null
+  /** One-sentence matcher string ("Use when you wake up already gripped by money panic."). */
+  whenToUse?: string | null
+  /** Optional contra-indication ("Skip if you're actively dissociating; use a body practice instead."). */
+  whenNotToUse?: string | null
+  /** Slugs of sibling practices to surface as "when this isn't working" alternatives. */
+  alternativePracticeIds?: string[]
+}
 
 export interface RecipeMetadata {
   /** Default yield. Drives the "Serves N" line and the scale selector. */
@@ -124,6 +192,14 @@ export interface TutorialUploadInput {
 
   /** Recipe metadata. Required when `type === 'RECIPE'`. */
   recipe?: RecipeMetadata | null
+
+  /**
+   * Mindset practice metadata. Required when `type === 'PRACTICE'`
+   * (or `type === 'READING'` for long-form Mindset reading entries).
+   * Maps directly onto the `Tutorial.practice*` columns added by the
+   * Phase 8 Step 13 migration. Null / omitted on RECIPE + TECHNIQUE rows.
+   */
+  practice?: PracticeMetadata | null
 
   /**
    * Tools the recipe uses. The structured `equipmentList` TipTap block is
@@ -234,11 +310,46 @@ export function validateInput(input: TutorialUploadInput): void {
   if (input.subCategorySlug && !SLUG_PATTERN.test(input.subCategorySlug)) {
     throw new Error(`input.subCategorySlug "${input.subCategorySlug}" must match the slug pattern.`)
   }
-  if (input.type && input.type !== 'RECIPE' && input.type !== 'TECHNIQUE') {
-    throw new Error(`input.type "${input.type}" must be RECIPE or TECHNIQUE.`)
+  const allowedTypes = ['RECIPE', 'TECHNIQUE', 'PRACTICE', 'READING'] as const
+  if (input.type && !allowedTypes.includes(input.type)) {
+    throw new Error(
+      `input.type "${input.type}" must be one of ${allowedTypes.join(' | ')}.`,
+    )
   }
   if (!input.body || input.body.type !== 'doc' || !Array.isArray(input.body.content)) {
     throw new Error('input.body must be a TipTap document: { type: "doc", content: [...] }.')
+  }
+  if (input.practice) {
+    const validPracticeTypes: PracticeType[] = [
+      'TAPPING', 'ENERGY_STATEMENT', 'AFFIRMATION', 'SPELL', 'RITUAL',
+      'ACTIVITY', 'JOURNAL_PROMPT', 'VISUALISATION', 'MEDITATION',
+      'EMBODIMENT', 'READING',
+    ]
+    if (!validPracticeTypes.includes(input.practice.practiceType)) {
+      throw new Error(
+        `practice.practiceType "${input.practice.practiceType}" must be one of ${validPracticeTypes.join(' | ')}.`,
+      )
+    }
+    if (!Array.isArray(input.practice.practiceTargets) || input.practice.practiceTargets.length === 0) {
+      throw new Error('practice.practiceTargets must be a non-empty array.')
+    }
+    const validTimeBands: TimeBand[] = ['THREE_MIN', 'FIVE_MIN', 'TEN_MIN', 'TWENTY_MIN', 'THIRTY_PLUS']
+    if (!validTimeBands.includes(input.practice.timeBand)) {
+      throw new Error(
+        `practice.timeBand "${input.practice.timeBand}" must be one of ${validTimeBands.join(' | ')}.`,
+      )
+    }
+    const validBestTimes: BestTime[] = ['MORNING', 'EVENING', 'ANYTIME', 'AS_NEEDED']
+    if (!validBestTimes.includes(input.practice.bestTime)) {
+      throw new Error(
+        `practice.bestTime "${input.practice.bestTime}" must be one of ${validBestTimes.join(' | ')}.`,
+      )
+    }
+  }
+  if ((input.type === 'PRACTICE' || input.type === 'READING') && !input.practice) {
+    throw new Error(
+      `input.practice is required when type is "${input.type}".`,
+    )
   }
   for (const g of input.glossaryTerms ?? []) {
     if (!g.slug || !SLUG_PATTERN.test(g.slug)) {

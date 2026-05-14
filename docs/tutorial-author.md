@@ -514,6 +514,34 @@ for ingredients or kit. Product / kit blocks describe what the tool
 does and what to look for in it — generic titles ("Roasting tin, 30
 cm") not brand names we don't have a sale relationship with.
 
+**Brand names — be specific only when the brand isn't the noun:**
+
+Two tiers. Restaurant chains BLOCK the upload. Every other registered
+trademark passes but surfaces a warning, so you can spot it in
+`voice-check:all` and decide per-recipe whether to rephrase. The
+trade-off is deliberate: forcing every "OXO" to "stock cube" or every
+"Marmite on toast" to "yeast extract on toast" makes the prose read
+clinical, and "a teaspoon of Marmite" is how British home cooks talk.
+
+| Block (chains — never use) | Warn (per-recipe call) |
+|---|---|
+| Wagamama(s), McDonald's, KFC, Nando's | Marmite, OXO, Lurpak, Cathedral City |
+| Starbucks, Costa Coffee, Pret a Manger | Biscoff, Oreo, Nutella, Baileys |
+| Burger King, Pizza Hut, Subway, Greggs | KitchenAid, Le Creuset, Pyrex, Crock-Pot |
+| Caffè Nero, Five Guys, Olive Garden | Tesco, Sainsbury's, Waitrose, M&S |
+
+Recipe TITLES are higher-stakes than body prose — "Nutella stuffed
+cookies" reads like a brand collaboration; "chocolate hazelnut stuffed
+cookies" doesn't. The rule warns in either case; the reviewer's
+instinct is the deciding factor.
+
+The full list and the generic equivalents live in
+[`packages/db/scripts/data/banned-brands.ts`](../packages/db/scripts/data/banned-brands.ts).
+Genericised brands where the brand is the de facto noun (Sriracha,
+Hoover, Sellotape) are in the same warn tier. Edit the list when a
+recurring brand surfaces; `voice-check:all` retroactively flags any
+draft that trips a new entry.
+
 **British English + worldwide-friendly idiom:**
 Spell colour, flavour, sieve, knob of butter, pudding basin. Name
 courgette (not zucchini), aubergine (not eggplant), coriander (not

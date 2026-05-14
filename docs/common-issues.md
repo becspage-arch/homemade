@@ -41,6 +41,30 @@ Severity flag with the rule: `[block]` (rewrite mandatory),
   **How to fix:** swap for `"in practice"`, `"the reliable test"`, or
   drop the qualifier entirely.
 
+- **Restaurant chain names** `[block]`
+  Pattern: a recipe titled or described around a restaurant chain —
+  "Wagamamas chicken katsu curry", "Nando's-style chicken", "KFC
+  copycat". Reads like passing off. Caught in the personal-recipes
+  redo (May 2026); led to the brand-trademark rule.
+  **How to fix:** rename to a generic style descriptor.
+  Wagamamas → Japanese-style; Nando's → peri-peri-style; KFC →
+  southern fried; Burger King → flame-grilled-style; Starbucks → 
+  coffee-shop-style. Full list of blocked chains in
+  [`packages/db/scripts/data/banned-brands.ts`](../packages/db/scripts/data/banned-brands.ts).
+
+- **Other brand-trademark mentions** `[warn]`
+  Pattern: branded food, kitchen equipment, or retailer names
+  ("Marmite on toast", "in the Crock-Pot", "Lurpak butter", "from
+  Tesco", "Biscoff", "Nutella stuffed cookies"). Warns rather than
+  blocks — sometimes the brand is the de facto noun and rephrasing
+  reads clinical ("Marmite on toast" reads naturally; "yeast extract
+  on toast" doesn't). Reviewer decides per-recipe whether to keep or
+  rephrase. Recipe TITLES are higher-stakes than body prose; a recipe
+  named after a brand reads like a collaboration.
+  **How to fix:** use the generic equivalent if rephrasing doesn't
+  hurt the reading. Genericised brands (Sriracha, Hoover, Sellotape)
+  almost always read fine as-is.
+
 - **Tricolons in intros and conclusions** `[warn]`
   Pattern: `"warm, considered, and beautiful"` style three-item
   parallel lists, especially at the start of the intro or the end of

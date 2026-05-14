@@ -1,23 +1,23 @@
 {
-  "slug": "carols-soft-and-chewy-chocolate-chippies",
-  "title": "Carol's Soft and Chewy Chocolate Chippies",
-  "subtitle": null,
-  "excerpt": "Carol's Soft and Chewy Chocolate Chippies. A home-cook's recipe from Rebecca's collection, kept in the family rotation.",
+  "slug": "soft-chewy-chocolate-chip-cookies",
+  "title": "Soft chewy chocolate chip cookies",
+  "subtitle": "The chewy kind — soft middle, crisp edge, dark chocolate chunks.",
+  "excerpt": "Soft chewy chocolate chip cookies. Brown sugar for chew, cornflour for the soft middle, dark chocolate chunks, chilled before baking.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
+  "sourceNotes": "From Rebecca's personal cookbook. A chewy-cookie technique that draws on the standard American chocolate-chip canon — Nestlé Toll House (1930s, Ruth Wakefield) is the reference recipe, adapted for British ingredients and metric weights.",
   "recipe": {
-    "servings": null,
+    "servings": 24,
     "yieldDescription": null,
-    "prepMinutes": 15,
-    "cookMinutes": 9,
+    "prepMinutes": 20,
+    "cookMinutes": 12,
     "restingMinutes": null,
-    "chillingMinutes": null,
-    "totalMinutes": 24,
+    "chillingMinutes": 30,
+    "totalMinutes": 62,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -30,8 +30,8 @@
     "mood": [
       "comfortFood"
     ],
-    "temperatureCelsius": null,
-    "temperatureNote": null,
+    "temperatureCelsius": 180,
+    "temperatureNote": "fan oven",
     "foundational": false
   },
   "recipeTools": [
@@ -49,7 +49,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Carol's Soft and Chewy Chocolate Chippies. An American family-table recipe — generous, comforting, built for a crowd. Adjustable for what you need."
+            "text": "Soft chewy chocolate chip cookies. Makes around twenty-four. The chew comes from the brown-sugar-heavy ratio and a tablespoon of cornflour folded in with the flour; the soft middle from pulling them out underdone."
           }
         ]
       },
@@ -58,7 +58,7 @@
         "content": [
           {
             "type": "text",
-            "text": "A weeknight-friendly recipe: most of the work is the prep, and the cooking takes care of itself."
+            "text": "Cookies reward a chilled dough. Half an hour minimum, overnight better. Cold dough holds its shape and gives a thicker biscuit with a softer middle."
           }
         ]
       },
@@ -80,9 +80,57 @@
           "defaultServings": 4,
           "items": [
             {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 225,
+              "unit": "g",
+              "prepNote": "softened",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "light-brown-sugar",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "packed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "large, at room temperature",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vanilla-extract",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
               "ingredientSlug": "plain-flour",
-              "amount": 2.25,
-              "unit": "cup",
+              "amount": 280,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cornflour",
+              "amount": 1,
+              "unit": "tbsp",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
@@ -96,59 +144,27 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "salted-butter",
-              "amount": 1,
-              "unit": "cup",
-              "prepNote": "softened",
-              "isOptional": false,
-              "groupLabel": null
-            },
-            {
-              "ingredientSlug": "granulated-sugar",
-              "amount": 1,
-              "unit": "g",
-              "prepNote": null,
-              "isOptional": false,
-              "groupLabel": null
-            },
-            {
-              "ingredientSlug": "light-brown-sugar",
-              "amount": 3,
-              "unit": "g",
-              "prepNote": null,
-              "isOptional": false,
-              "groupLabel": null
-            },
-            {
-              "ingredientSlug": "vanilla-extract",
-              "amount": 1,
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 0.5,
               "unit": "tsp",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
             {
-              "ingredientSlug": "vanilla-extract",
-              "amount": 1,
-              "unit": "tsp",
-              "prepNote": "I use instant pudding mix",
-              "isOptional": false,
-              "groupLabel": null
-            },
-            {
-              "ingredientSlug": "eggs",
-              "amount": 2,
-              "unit": "each",
-              "prepNote": null,
-              "isOptional": false,
-              "groupLabel": null
-            },
-            {
-              "ingredientSlug": "chocolate-chips",
-              "amount": 1,
+              "ingredientSlug": "dark-chocolate",
+              "amount": 300,
               "unit": "g",
-              "prepNote": null,
+              "prepNote": "chopped into chunks",
               "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "walnuts",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "roughly chopped",
+              "isOptional": true,
               "groupLabel": null
             }
           ]
@@ -185,7 +201,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Preheat oven to 375°."
+                    "text": "Cream the butter, brown sugar, and caster sugar together until pale and fluffy — three or four minutes by stand mixer or vigorous hand whisk."
                   }
                 ]
               }
@@ -199,7 +215,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Mix flour with baking soda in a bowl and set aside."
+                    "text": "Beat in the eggs one at a time, then the vanilla. The mixture should look glossy."
                   }
                 ]
               }
@@ -213,7 +229,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "In a large bowl, combine butter, sugars and pudding mix."
+                    "text": "In a separate bowl, whisk the flour, cornflour, bicarb, and salt together. Tip into the wet mix and fold until just combined — stop the moment the flour disappears."
                   }
                 ]
               }
@@ -227,7 +243,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Beat until smooth and creamy."
+                    "text": "Fold in the chocolate chunks (and walnuts if using). The cornflour is doing the work for the chewy texture, so don't over-mix."
                   }
                 ]
               }
@@ -241,7 +257,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Beat in eggs and vanilla; gradually add flour mixture."
+                    "text": "Cover the bowl and chill in the fridge for at least 30 minutes — overnight if you have the time. Cold dough holds its shape and spreads less."
                   }
                 ]
               }
@@ -255,7 +271,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Stir in chips and nuts."
+                    "text": "Heat the oven to 180°C (fan). Line two baking trays with baking paper."
                   }
                 ]
               }
@@ -269,7 +285,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Roll into balls and flatten slightly or drop by teaspoon full on a non greased cookie sheet."
+                    "text": "Scoop heaped tablespoons of dough onto the trays, leaving a good four centimetres between each — they spread."
                   }
                 ]
               }
@@ -283,7 +299,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Bake at 375° for 8-10 minutes."
+                    "text": "Bake for 11 to 13 minutes. Pull them out when the edges look set but the middles still look slightly underdone — they finish on the hot tray."
                   }
                 ]
               }
@@ -297,7 +313,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Note: You may use instant chocolate pudding instead of vanilla pudding for a chocolate chocolate chip cookie."
+                    "text": "Leave to cool on the tray for five minutes before transferring to a wire rack."
                   }
                 ]
               }
