@@ -5,8 +5,13 @@ tutorial body. It is the prompt template, the locked illustration
 prompts, the structural rules, and the master ingredient + tool lookup
 tables, all in one document.
 
-**Prompt version:** 2 (recipe-first, Phase 8 Step 8 — 2026-05-13).
-Bump this when the prompt is iterated.
+**Prompt version:** 3 (recipe-first + pilot-10 learnings, Phase 8 Step 11
+— 2026-05-14). Bump this when the prompt is iterated. Changelog:
+- v3: tightened em-dash rule (banned the appositive pair outright),
+  added an anti-softener call-out for "honest", added the scaling-token
+  grammar table by unit family, added a render-read step to the
+  self-critique checklist. Driven by the pilot-10 batch (`docs/pilot-10-report.md`).
+- v2 (`1b31a57`, `83ad7c4`): recipe-first rewrite with scaling tokens.
 
 ## How a drafting session uses this file
 
@@ -306,12 +311,41 @@ Method prose follows via scaling tokens the renderer substitutes.
 current scaled `amount` + `unit` and substitutes the value with the
 unit in place.
 
-**Examples:**
+**The renderer's actual behaviour, by unit family:**
 
-- `{{plain-flour}}` → "140 g" at 1×, "280 g" at 2×, "560 g" at 4×.
-- `{{stock-beef}}` → "250 ml" at 1×.
-- `{{sausages-pork}}` → "8" at 1× (the `each` unit is dropped in
-  prose; the surrounding word "sausages" gives the noun).
+| Unit on the row | Renderer output at amount=N | Right prose pattern | Renders as |
+|---|---|---|---|
+| `g`, `kg`, `ml`, `l`, `tsp`, `tbsp`, `cup`, `pinch` | "N <unit>" (no pluralisation: "140 g", "2 tsp") | `{{slug}} of <ingredient>` | "140 g of plain flour", "2 tsp of cumin" |
+| `each` | "N" only (the word `each` is dropped entirely) | `{{slug}} <singular-noun>` for amount=1; `{{slug}} <plural-noun>` for amount > 1 | "1 lemon", "4 eggs", "2 onions" |
+| `clove`, `sprig`, `leaf`, `sheet`, `slice` | "N <unit-pluralised>" (renderer pluralises: "4 cloves", "2 leaves") | `{{slug}} of <ingredient>` — do NOT repeat the unit word in the prose | "4 cloves of crushed garlic", "2 leaves of bay" |
+
+**The single biggest source of bugs in the pilot-10 batch** was prose
+that ignored which family the unit belonged to. Two patterns to watch:
+
+- `{{each-ingredient}}` with no noun after — renders as a bare number.
+  "Lay slices of `{{onion}}` across the base" → "Lay slices of 1
+  across the base." Always name the noun: "Cut `{{onion}}` onion into
+  thick slices and lay across the base" → "Cut 1 onion into thick
+  slices and lay across the base."
+- `{{clove/sprig/leaf-ingredient}} <duplicate-unit>` — renders doubled.
+  "`{{garlic}}` crushed garlic cloves" → "4 cloves crushed garlic
+  cloves." The renderer already wrote "cloves"; the prose adds "of
+  crushed garlic" → "4 cloves of crushed garlic."
+
+**Worked examples to copy verbatim:**
+
+| Recipe wants to say | Write | Renders (at default) |
+|---|---|---|
+| 140 grams of plain flour | `{{plain-flour}} of plain flour` | "140 g of plain flour" |
+| 250 ml of beef stock | `{{stock-beef}} of beef stock` | "250 ml of beef stock" |
+| 8 pork sausages | `{{sausages-pork}} sausages` | "8 sausages" |
+| 4 eggs | `{{eggs}} eggs` | "4 eggs" |
+| 1 onion, halved | `{{onion}} halved onion` | "1 halved onion" |
+| 2 onions, finely chopped | `{{onion}} finely chopped onions` | "2 finely chopped onions" |
+| 4 cloves of crushed garlic | `{{garlic}} of crushed garlic` | "4 cloves of crushed garlic" |
+| 2 sprigs of thyme | `{{thyme}} of thyme` | "2 sprigs of thyme" |
+| 1 bay leaf | `{{bay-leaves}} of bay` | "1 leaf of bay" |
+| 1 lemon, juice only | `{{lemon}} lemon, juice only` | "1 lemon, juice only" |
 
 **Rules:**
 
@@ -320,11 +354,14 @@ unit in place.
   literal `{{slug}}` text (and look broken).
 - If the prose names an ingredient without a numeric quantity (a
   pinch, a turn of pepper), no token.
-- Tokens render amount + unit only — the ingredient name is in the
-  surrounding prose. Phrase as "`{{plain-flour}}` of plain flour" so
-  it reads "140 g of plain flour" at 1× and "280 g of plain flour" at
-  2×. For countable ingredients on `each`, name the noun after the
-  token: "`{{eggs}}` eggs" → "4 eggs".
+- For singular-default `each` amounts (1 onion), use a singular noun;
+  for plural defaults (2 onions), use a plural. The renderer doesn't
+  pluralise the noun — the prose carries it.
+- When a recipe uses two separate amounts of the same ingredient
+  (e.g. 80 g butter for the roux + 30 g butter for the beurre manié),
+  put both in `ingredientsList` with `groupLabel` clusters; the token
+  resolves against the first row found, which is usually fine because
+  the prose context disambiguates.
 
 ## Structured ingredients
 
@@ -406,9 +443,39 @@ said", "Having explored", "As we've seen", "It goes without saying",
 "Picture this", "Let's dive in", "Let's explore", "Let's take a look".
 
 **Em dashes:**
-Max one per paragraph. **Never two in the same sentence** ("the loaf —
-golden and crusty — sits on the board" is the strongest AI tell of
-all). British spacing — a space, an em dash, a space.
+Max one per paragraph. **Never two in the same sentence.** The
+appositive-pair pattern is the single strongest AI tell — the model
+reaches for it whenever a sentence wants a parenthetical clause. Use a
+colon, a semicolon, parentheses, or a second sentence instead. British
+spacing — a space, an em dash, a space.
+
+| Don't | Do |
+|---|---|
+| "the loaf — golden and crusty — sits on the board" | "the loaf sits on the board, golden and crusty" |
+| "Pick the bone out — it should slip free with a small twist — and discard" | "Pick the bone out; it should slip free with a small twist. Discard the bone." |
+| "the oven goes hot — 220°C — for twenty minutes" | "the oven goes hot, 220°C, for twenty minutes" |
+| "the stripe — six bands of pasta separated by five bands of ragù — that you see in the slice" | "the stripe you see in the slice: six bands of pasta separated by five bands of ragù" |
+
+Observed pattern across the pilot-10 batch (`docs/pilot-10-report.md`):
+six of ten first drafts contained at least one banned appositive pair.
+This is the #1 voice-check failure mode. Watch for it especially in
+"Where this dish lives" closers and infoPanel bodies.
+
+**Anti-softeners ("honest", "frankly", "genuinely"):**
+"Honest" is already in the banned-phrase list, but it appears as a
+voice softener — "the honest answer is", "the honest test is", "honest
+shortcuts" — even when the model knows the word is banned. Never use
+the word in this softening role, even rephrased. Replacements:
+
+| Don't | Do |
+|---|---|
+| "the honest answer is that it makes a small difference" | "in practice it makes a small difference" |
+| "the honest test is the fork" | "the reliable test is the fork" |
+| "the shortcuts are honest ones" | "the shortcuts hold up" |
+| "to be honest, the marinade matters more than the cut" | "the marinade matters more than the cut" |
+
+Same rule applies to "frankly", "truthfully", and "genuinely" used as
+filler. If the sentence works without the word, the word is filler.
 
 **Negation patterns:**
 Banned: "not just X, but Y", "it's not about X, it's about Y", "this
@@ -554,10 +621,22 @@ Checklist:
 11. Scaling tokens: every numeric ingredient amount in method prose
     is written as a `{{slug}}` token whose slug appears in the
     `ingredientsList`. Non-numeric references (a pinch, a turn of
-    pepper) stay as plain prose. Render-read the prose with the token
-    substituted to make sure it reads cleanly: "140 g of plain flour",
-    not "140 g plain flour".
-12. Every `ingredientSlug` in `ingredientsList` matches a row in the
+    pepper) stay as plain prose.
+12. Render-read every token. Voice-check doesn't catch token grammar
+    bugs; the renderer dropping `each` and pluralising
+    `clove`/`sprig`/`leaf` produces broken prose if the surrounding
+    words don't match. Walk every `{{slug}}` in the body with the
+    "What the renderer outputs" table from the Scaling-tokens section
+    in mind:
+    - `each` unit → renderer writes just the number. The prose must
+      name the noun: "`{{onion}}` onion" (singular default) or
+      "`{{onion}}` onions" (plural default), never bare "`{{onion}}`".
+    - `clove`/`sprig`/`leaf`/`sheet`/`slice` → renderer pluralises the
+      unit itself. The prose must NOT repeat the unit word: write
+      "`{{garlic}}` of garlic", never "`{{garlic}}` garlic cloves".
+    - `g`/`ml`/`tbsp`/`tsp`/`pinch` → renderer writes "N <unit>". The
+      prose adds " of <ingredient>".
+13. Every `ingredientSlug` in `ingredientsList` matches a row in the
     INGREDIENT_LOOKUP table. Every `recipeTools[].slug` matches a row
     in TOOL_LOOKUP.
 
