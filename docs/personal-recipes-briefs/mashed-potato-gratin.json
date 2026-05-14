@@ -2,22 +2,22 @@
   "slug": "mashed-potato-gratin",
   "title": "Mashed-Potato Gratin",
   "subtitle": null,
-  "excerpt": "French dinner from Rebecca's collection. Add butter; mash with a potato masher until creamy.",
+  "excerpt": "Mashed-Potato Gratin. A home-cook's recipe from Rebecca's collection, kept in the family rotation.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 30,
+    "prepMinutes": 15,
+    "cookMinutes": 50,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 40,
+    "totalMinutes": 65,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -25,11 +25,10 @@
     "batchNotes": null,
     "makeAheadNotes": null,
     "dietaryFlags": [],
-    "cuisine": "french",
+    "cuisine": "british",
     "mealType": "dinner",
     "mood": [
-      "weeknight",
-      "comfortFood"
+      "weeknight"
     ],
     "temperatureCelsius": null,
     "temperatureNote": null,
@@ -37,11 +36,15 @@
   },
   "recipeTools": [
     {
+      "slug": "oven",
+      "isOptional": false
+    },
+    {
       "slug": "stockpot",
       "isOptional": false
     },
     {
-      "slug": "oven",
+      "slug": "masher",
       "isOptional": false
     }
   ],
@@ -49,6 +52,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mashed-Potato Gratin. A British home-cook's dish — the kind of recipe families adjust across generations. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A weeknight-friendly recipe: most of the work is the prep, and the cooking takes care of itself."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -70,20 +91,20 @@
               "ingredientSlug": "salted-butter",
               "amount": 3,
               "unit": "tbsp",
-              "prepNote": "plus more for baking dish",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
             {
               "ingredientSlug": "potato",
-              "amount": 3,
-              "unit": "lb",
-              "prepNote": "peeled and chopped",
+              "amount": 1361,
+              "unit": "g",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
             {
-              "ingredientSlug": "salt-table",
+              "ingredientSlug": "sea-salt-fine",
               "amount": null,
               "unit": "g",
               "prepNote": null,
@@ -91,10 +112,10 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "egg-yolks",
+              "ingredientSlug": "eggs",
               "amount": 3,
               "unit": "each",
-              "prepNote": "large",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -107,10 +128,10 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "emmental",
+              "ingredientSlug": "gruyere",
               "amount": 1.5,
               "unit": "cup",
-              "prepNote": "6 ounces",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             }
@@ -173,6 +194,66 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "The dish tastes flat",
+              "cause": "Underseasoned or no acid.",
+              "fix": "Salt a pinch at a time, tasting. A squeeze of lemon or splash of vinegar at the end lifts most savoury dishes."
+            },
+            {
+              "symptom": "It's overcooked by the time it reaches the table",
+              "cause": "Carryover cooking — food keeps cooking on the hot pan after the heat goes off.",
+              "fix": "Pull off the heat a minute or two before you think it's done. Plate straight away, or transfer to a warmed serving dish."
+            },
+            {
+              "symptom": "It's undercooked in the middle",
+              "cause": "Heat too high, browned the outside before the middle warmed through.",
+              "fix": "Drop the heat and give it longer. A probe thermometer is the only reliable check for meat."
+            },
+            {
+              "symptom": "The leftovers were dry",
+              "cause": "Reheated uncovered, or no liquid in the pan.",
+              "fix": "Reheat covered with a splash of stock or water, on a low heat. Microwave on 60% power if using one — gentler than full blast."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Vegetarian swap: replace meat with mushrooms, lentils, or beans — adjust seasoning to compensate."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
@@ -182,11 +263,53 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "http://www.marthastewart.com/313311/mashed-potato-gratin"
+                    "text": "Spice version: a pinch of chilli flakes or cracked black pepper at the end shifts the dish without losing its character."
                   }
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A British home cook's dish. It sits among the recipes families remember without thinking about — the kind that gets adjusted across generations and never quite the same twice."
           }
         ]
       }

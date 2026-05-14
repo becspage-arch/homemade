@@ -1,23 +1,23 @@
 {
   "slug": "gouda-quesadillas-with-caramelised-apple",
   "title": "Gouda Quesadillas with Caramelised Apple",
-  "subtitle": null,
-  "excerpt": "Mexican lunch from Rebecca's collection. To make the salsa, mix together the ingredients in a bowl and set aside.",
+  "subtitle": "A thermometer pays for itself the first time.",
+  "excerpt": "Gouda Quesadillas with Caramelised Apple. A baking recipe from Rebecca's collection — straightforward, reliable, worth weighing rather than scooping.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 4,
+    "prepMinutes": 15,
+    "cookMinutes": 7,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 14,
+    "totalMinutes": 22,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -27,16 +27,41 @@
     "dietaryFlags": [],
     "cuisine": "mexican",
     "mealType": "lunch",
-    "mood": [],
+    "mood": [
+      "treat"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
-  "recipeTools": [],
+  "recipeTools": [
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    }
+  ],
   "glossaryTerms": [],
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gouda Quesadillas with Caramelised Apple. Mexican home cooking with the heat-citrus-corn triangle at the centre. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cookies bake fast and reward a chilled dough. Pull them out when the edges set and the middles still look slightly underdone."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -66,7 +91,7 @@
               "ingredientSlug": "apple-eating",
               "amount": 2,
               "unit": "each",
-              "prepNote": "cored and cut into 12 slices",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the quesadillas"
             },
@@ -74,7 +99,7 @@
               "ingredientSlug": "onion",
               "amount": 1,
               "unit": "each",
-              "prepNote": "finely sliced",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the quesadillas"
             },
@@ -87,10 +112,10 @@
               "groupLabel": "For the quesadillas"
             },
             {
-              "ingredientSlug": "plain-flour",
+              "ingredientSlug": "tortilla-wrap",
               "amount": 2,
-              "unit": "g",
-              "prepNote": "large",
+              "unit": "each",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the quesadillas"
             },
@@ -98,7 +123,7 @@
               "ingredientSlug": "vegetable-oil",
               "amount": null,
               "unit": "ml",
-              "prepNote": "for frying",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the quesadillas"
             },
@@ -114,7 +139,7 @@
               "ingredientSlug": "tomato",
               "amount": 2,
               "unit": "each",
-              "prepNote": "large, seeds removed, finely chopped",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the salsa"
             },
@@ -122,15 +147,23 @@
               "ingredientSlug": "red-onion",
               "amount": 0.5,
               "unit": "each",
-              "prepNote": "finely chopped",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the salsa"
+            },
+            {
+              "ingredientSlug": "jalapeno",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the salsa"
             },
             {
               "ingredientSlug": "coriander",
               "amount": null,
-              "unit": "handful",
-              "prepNote": "fresh, chopped",
+              "unit": "g",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the salsa"
             },
@@ -143,7 +176,7 @@
               "groupLabel": "For the salsa"
             },
             {
-              "ingredientSlug": "salt-table",
+              "ingredientSlug": "sea-salt-fine",
               "amount": 0.25,
               "unit": "tsp",
               "prepNote": null,
@@ -154,49 +187,12 @@
         }
       },
       {
-        "type": "heading",
+        "type": "infoPanel",
         "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Also"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "175g/6oz Cornish gouda, grated"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 green jalapeno chilli, seeds removed, finely chopped"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+          "tone": "info",
+          "title": "Also",
+          "body": "175g/6oz Cornish gouda, grated."
+        }
       },
       {
         "type": "heading",
@@ -268,6 +264,122 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Mixture won't set",
+              "cause": "Sugar didn't reach the right stage, or temperature was guessed.",
+              "fix": "Use a sugar thermometer. Stages: soft-ball 115°C, hard-ball 125°C, soft-crack 135°C, hard-crack 150°C. Cold-water tests work but the thermometer doesn't lie."
+            },
+            {
+              "symptom": "Sugar crystallised",
+              "cause": "Mixture stirred after it started bubbling, or a stray crystal landed on the side of the pan.",
+              "fix": "Don't stir once the sugar is dissolved. Brush the inside of the pan with a wet pastry brush to wash crystals down."
+            },
+            {
+              "symptom": "Fudge is grainy",
+              "cause": "Beaten too soon — while still too hot.",
+              "fix": "Cool to 43°C before beating. The mixture turns from glossy to matte when ready to set."
+            },
+            {
+              "symptom": "Mixture seized into a ball",
+              "cause": "Water touched melted chocolate.",
+              "fix": "Add a teaspoon of warm cream or water and stir until smooth — this is the trick. Drier seizing needs more liquid; thin seizing wants less."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Flavoured version: stir in a teaspoon of vanilla, almond, or peppermint extract once the mixture is off the heat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dip-coated: once set, dip pieces in melted dark chocolate and let drip on baking paper."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mexican home cooking trusts heat, citrus, and corn. The dish hits those notes — adjust the chilli to taste and finish with a squeeze of lime if it feels heavy."
           }
         ]
       }

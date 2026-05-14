@@ -1,7 +1,18 @@
-import mammoth from 'mammoth'
+// Extract the two docx collections to plain text. mammoth.extractRawText is
+// good enough for the parse step. Re-run idempotent — just rewrites the .txt
+// outputs.
 import { writeFileSync, mkdirSync } from 'node:fs'
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath, pathToFileURL } from 'node:url'
 
-const OUT_DIR = 'C:/Users/Rebecca/Projects/code/homemade/.claude/worktrees/keen-kare-ac9dea/docs/personal-recipes-briefs'
+// mammoth lives in packages/db/node_modules — resolve via absolute file:// URL
+// so this script runs from any cwd.
+const __dirname0 = dirname(fileURLToPath(import.meta.url))
+const REPO_ROOT = resolve(__dirname0, '..', '..')
+const mammoth = (await import(pathToFileURL(resolve(REPO_ROOT, 'packages/db/node_modules/mammoth/lib/index.js')).href)).default
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const OUT_DIR = __dirname
 mkdirSync(OUT_DIR, { recursive: true })
 
 const files = [

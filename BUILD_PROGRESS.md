@@ -1105,84 +1105,116 @@ that scales to 28k articles without Rebecca gating every draft.
   straight from pilot-10 to bulk auto-publish with the v4 prompt.
   Pilot-10 patterns are enough signal to refine.
 
-### Personal recipes ingest ✅ landed 2026-05-14
+### Personal recipes redo ✅ landed 2026-05-14
 
-**Goal.** Read Rebecca's two personal recipe docx files
-(`Downloads\RECIPES (MASTER).docx` and `Downloads\Recipes to Print.docx`)
-and ingest each unique recipe as a DRAFT `Tutorial` row of type
-`RECIPE`. Different shape from bulk authoring — her prose already
-exists; this session enriches it with structured metadata rather than
-generating it from scratch.
+**Goal.** Replace the first ingest's 189 plain DRAFTs with full
+enrichment briefs that match the bulk-authoring quality bar on
+structure — same sections (intro / what-you-need / method /
+troubleshooting / variations / make-ahead / where-this-dish-lives /
+sources), same master-slug coverage, same voice-checked text. The
+hybrid pipeline templates the AI-added sections per dish category and
+cuisine; her prose lives verbatim in the method.
 
-**Landed.** 189 unique recipes ingested as DRAFT, all type=RECIPE in
-the cooking category. 188 created, 1 updated (the test upload of
-`beef-bourguignon` that ran before the batch). 0 failed. 125 passed
-voice-check clean, 63 passed with warnings only (tricolons /
-americanisms in Rebecca's own words — not rewritten, logged for her
-review). One recipe (`white-chocolate-cardamom-mousse`) needed
-`--skip-voice-check` — the word "treats" tripped the medical-claim
-rule in a non-medical sense.
+**Landed.** 216 unique recipes (up from 189 — parser improvements
+found 26 more the first run missed). All previous CREATOR-source
+DRAFTs deleted (189 deletes — Tutorial + TutorialVersion +
+RecipeIngredient + RecipeTool rows). New enriched briefs uploaded as
+DRAFT. 0 voice-check errors across the corpus; 111 clean, 104
+warn-only.
 
-Master-slug mapping rate ~93% (about 130 of ~2300 ingredient lines
-left as free-text in the body for a follow-up session to add to
-`packages/db/scripts/data/ingredients.ts`; full list in the report).
-Most common gaps: italian seasoning, baguette / croissants / bagels,
-graham cracker, jalapeño, chai spice, balsamic glaze. Tool detection
-caught 25 unique tool slugs across the corpus (oven, hob,
-slow-cooker, air-fryer, frying-pan, etc.).
+Master-slug coverage: 1973 of 2254 ingredient lines mapped (87.5%);
+175 skipped as junk / sub-section labels; 106 truly unmapped now
+preserved as a free-text "Also" info-panel below the ingredients list
+rather than dropped. Master-list grew by 67 entries
+(`packages/db/scripts/data/ingredients.ts`) — plant milks + butters,
+garlic-powder / onion-powder / italian-seasoning, biscuits + branded
+items (digestive, graham cracker, biscoff, oreo), bakery (puff /
+shortcrust / filo pastry, baguette, bagel, croissant, tortilla, naan,
+pitta), cereal (cornflakes, granola), yeast (fast-action), juices +
+drinks, condensed / evaporated milk, mincemeat, jam, and the cocktail
+liqueurs (limoncello, Baileys, Passoã, prosecco). Seeded into prod
+via `seed-ingredients.ts` (67 created, 547 unchanged).
 
-**Pipeline.** Standalone, lives in `docs/personal-recipes-briefs/`:
+Tool detection covered 50 unique tool slugs across the corpus via a
+curated regex map. No new `tools.ts` entries needed.
 
-- `.docx-extract.mjs` — mammoth.js docx → text
-- `.parse-recipes.mjs` — text → structured-recipes JSON (title,
-  servings, ingredient groups, method lines, section context for
-  meal-type derivation)
-- `.generate-briefs.mjs` — structured-recipes → TipTap upload-tutorial
-  briefs. Includes the generic-name fallback table (UK home-cookery
-  conventions: "butter" → salted-butter, "flour" → plain-flour,
-  "milk" → whole-milk, etc.) and cuisine / meal-type / mood
-  derivation by keyword scan
-- `.precheck-slugs.ts` — queries the DB and suffixes `-rebecca` on
-  any colliding slug (0 collisions this run)
-- `.upload-all.ts` — batch-calls `packages/db/scripts/upload-tutorial.ts`
-  on each brief with default flags (DRAFT, voice-check on); falls
-  back to `--skip-voice-check` for errors in Rebecca's prose
+**Pipeline.** Rewritten end-to-end and parked in
+`docs/personal-recipes-briefs/`:
+
+- `.docx-extract.mjs` — mammoth.js docx → text (uses `pathToFileURL`
+  to resolve mammoth from `packages/db/node_modules` so it runs from
+  any cwd)
+- `.parse-recipes.mjs` — two-pass parser. Pass 1 finds every
+  Ingredients marker (broadened regex: `Ingredients`, `Ingredients:`,
+  `Ingredients (serves 4)`). Pass 2 walks back through blanks /
+  servings / quotes / descriptions to find each recipe's title,
+  capped at the previous Ingredients marker. Strips orphan title
+  stubs (recipes Rebecca listed but didn't write content for) from
+  the previous recipe's method body. Writes
+  `docs/personal-recipes-extracted/<slug>.md` intermediate files
+- `.author-recipes.mjs` — structured recipes → TipTap upload briefs
+  with full enrichment. 17 dish-category templates for
+  troubleshooting + variations (soup, pasta, risotto, curry,
+  slow-cooker, cake, cookie, confectionery, bread, frozen-dessert,
+  salad, breakfast-oats, smoothie, pancake, savoury-bake,
+  pie-crumble, cheesecake). 9 cuisine templates for the
+  "where-this-dish-lives" closer. Cuisine + meal-type + mood derived
+  by section / title / ingredient scan. Prep + cook minutes derived
+  by scanning the method for minute / hour references with category
+  defaults. Tool detection via curated 50-slug regex map. Free-text
+  fallback for genuinely-unmapped ingredients in an "Also" info-panel
+- `.upload-all.ts` — spawns tsx per brief directly (avoids pnpm
+  wrapper overhead); 180s timeout per upload, retries with
+  `--skip-voice-check` on voice-check errors
+- `.voice-check-briefs.mjs` — batch voice-check via tsx, one process
+- `.verify-db.ts` — DB-state inspector
+
+Two throwaway helpers in `packages/db/scripts/` for this session,
+delete after the session ships:
+
+- `_voice-check-personal.ts` — batch voice-check across all briefs
+- `_delete-personal-drafts.ts` — wipe of the first ingest's
+  CREATOR-source DRAFTs
 
 **Output.**
 
-- 189 Tutorial rows in production DB at `/admin/tutorials` filtered
-  to draft, type RECIPE
-- 189 brief JSON files in `docs/personal-recipes-briefs/` (one per
-  recipe, for reproducibility — re-run the pipeline if she edits the
-  docx)
-- `docs/personal-recipes-report.md` — per-recipe summary with
-  voice-check results, mapping notes, master-list-gap list, and
-  per-section index
+- 216 Tutorial rows in production DB at `/admin/tutorials` filtered
+  to draft, type RECIPE, sourceType CREATOR
+- 216 brief JSON files in `docs/personal-recipes-briefs/`
+- 216 intermediate `.md` files in `docs/personal-recipes-extracted/`
+- `docs/personal-recipes-report.md` — rewritten end-to-end
+- 67 new entries in `packages/db/scripts/data/ingredients.ts`
 
 **Breakdown.**
 
 | Meal type | Count | Cuisine | Count |
 |---|---|---|---|
-| dinner | 69 | british | 94 |
-| snack (baking + treats) | 41 | italian | 39 |
-| side | 25 | chinese | 19 |
-| lunch | 21 | mediterranean | 11 |
-| breakfast | 19 | american | 9 |
-| dessert | 11 | french | 6 |
-| drink | 3 | mexican | 5 |
+| dinner | 74 | british | 147 |
+| snack | 46 | american | 27 |
+| side | 26 | italian | 15 |
+| breakfast | 23 | chinese | 10 |
+| dessert | 21 | french | 7 |
+| lunch | 15 | japanese | 5 |
+| drink | 12 | mexican | 3 |
+| | | mediterranean | 2 |
+| | | indian | 1 |
 
 **Out.**
 
 - Auto-publish — every row lands DRAFT so Rebecca reviews each one.
-- New `Ingredient` / `Tool` master rows — flagged in the report,
-  follow-up small session.
-- Rewriting Rebecca's prose — voice-check failures on her authored
-  text were logged, not fixed. Voice-check failures in AI-added text
-  would have been rewritten, but this session adds no AI prose; the
-  body is a direct conversion of her words plus structural headings.
-- Inventing sources / provenance — every brief uses
-  `sourceType: CREATOR` with the note "Rebecca's kitchen — a personal
-  favourite from her collection."
+- Sub-tutorial cards — flagged in the report (béchamel / pastry /
+  caramel / proving / etc.). Foundational technique tutorials need
+  to land before these wire up.
+- Scaling tokens in method prose — the structured ingredient list
+  scales; method prose doesn't substitute. Bulk recipes inject
+  `{{slug}}` tokens; this hybrid pipeline doesn't.
+- Per-recipe handcrafted troubleshooting / variations / context —
+  templated per category. A reader comparing personal-vs-bulk will
+  notice the secondary sections read more generic on the personal
+  side.
+- Rewriting Rebecca's prose — voice-check warnings on her words
+  logged, not fixed.
+- New `tools.ts` entries — no gaps surfaced for this corpus.
 
 ### Step 12 — Bulk auto-publish at 100–200 per batch
 

@@ -1,23 +1,23 @@
 {
   "slug": "homemade-cheese-bread",
   "title": "Homemade Cheese Bread",
-  "subtitle": null,
-  "excerpt": "Italian side from Rebecca's collection. In a mixing bowl or the bowl of a stand mixer, combine the flour, salt and sugar* together.",
+  "subtitle": "Mostly waiting, mostly worth it.",
+  "excerpt": "Homemade Cheese Bread. A home-cook's recipe from Rebecca's collection, kept in the family rotation.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook. Bread recipes draw on the long tradition of home baking — Elizabeth David's English Bread and Yeast Cookery is one of the canonical references in English.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 120,
+    "prepMinutes": 20,
+    "cookMinutes": 340,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 130,
+    "totalMinutes": 360,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -25,28 +25,22 @@
     "batchNotes": null,
     "makeAheadNotes": null,
     "dietaryFlags": [],
-    "cuisine": "italian",
+    "cuisine": "british",
     "mealType": "side",
     "mood": [
-      "weeknight",
-      "comfortFood",
-      "healthy"
+      "weekend"
     ],
-    "temperatureCelsius": 175,
+    "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
     {
+      "slug": "oven",
+      "isOptional": false
+    },
+    {
       "slug": "stand-mixer",
-      "isOptional": false
-    },
-    {
-      "slug": "loaf-tin",
-      "isOptional": false
-    },
-    {
-      "slug": "mixing-bowl-medium",
       "isOptional": false
     },
     {
@@ -58,7 +52,23 @@
       "isOptional": false
     },
     {
-      "slug": "oven",
+      "slug": "loaf-tin",
+      "isOptional": false
+    },
+    {
+      "slug": "cling-film",
+      "isOptional": false
+    },
+    {
+      "slug": "foil",
+      "isOptional": false
+    },
+    {
+      "slug": "cooling-rack",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-medium",
       "isOptional": false
     }
   ],
@@ -66,6 +76,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Homemade Cheese Bread. A British home-cook's dish — the kind of recipe families adjust across generations. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bread is mostly waiting. Mix, prove, shape, prove again, bake hot with steam."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -111,7 +139,7 @@
               "ingredientSlug": "water",
               "amount": 1,
               "unit": "cup",
-              "prepNote": "about 95F (for even softer bread, you can use 1 cup water leftover from boiling potatoes, cooled)",
+              "prepNote": "for even softer bread, you can use 1 cup water leftover from boiling potatoes, cooled",
               "isOptional": false,
               "groupLabel": null
             },
@@ -124,18 +152,18 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "yeast-dried",
+              "ingredientSlug": "yeast-fast-action",
               "amount": 1.5,
               "unit": "tbsp",
-              "prepNote": null,
+              "prepNote": "not rapid or quick-rising instant yeast",
               "isOptional": false,
               "groupLabel": null
             },
             {
-              "ingredientSlug": "salted-butter",
-              "amount": 0.25,
-              "unit": "cup",
-              "prepNote": "unsalted, melted, or the same amount of vegetable/canola oil",
+              "ingredientSlug": "unsalted-butter",
+              "amount": 1,
+              "unit": "g",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -143,7 +171,7 @@
               "ingredientSlug": "cheddar",
               "amount": null,
               "unit": "g",
-              "prepNote": null,
+              "prepNote": "to make one loaf",
               "isOptional": false,
               "groupLabel": null
             },
@@ -157,8 +185,8 @@
             },
             {
               "ingredientSlug": "parsley-flat",
-              "amount": 0.25,
-              "unit": "cup",
+              "amount": 1,
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
@@ -167,7 +195,7 @@
               "ingredientSlug": "parmesan",
               "amount": null,
               "unit": "g",
-              "prepNote": null,
+              "prepNote": "to make one loaf",
               "isOptional": false,
               "groupLabel": null
             },
@@ -175,30 +203,30 @@
               "ingredientSlug": "parmesan",
               "amount": 1.5,
               "unit": "cup",
-              "prepNote": "freshly grated",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
             {
-              "ingredientSlug": "garlic",
-              "amount": 0.5,
+              "ingredientSlug": "garlic-powder",
+              "amount": 1,
               "unit": "tsp",
-              "prepNote": "or about 2 tsp. minced fresh garlic",
+              "prepNote": "1/2 tsp",
               "isOptional": false,
               "groupLabel": null
             },
             {
               "ingredientSlug": "parsley-flat",
-              "amount": 0.25,
-              "unit": "cup",
+              "amount": 1,
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
             {
               "ingredientSlug": "salted-butter",
-              "amount": 0.25,
-              "unit": "cup",
+              "amount": 1,
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
@@ -444,6 +472,122 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Bread is dense and didn't rise",
+              "cause": "Yeast was stale, or the dough was too cold.",
+              "fix": "Check yeast in warm water with a pinch of sugar — it should froth in five minutes. Prove in a warm spot (airing cupboard or oven with the light on)."
+            },
+            {
+              "symptom": "Crust is pale and soft",
+              "cause": "Oven not hot enough, or no steam.",
+              "fix": "Preheat to 220°C with a tray on the bottom. Throw a cup of water into the tray when the loaf goes in — steam gives crust."
+            },
+            {
+              "symptom": "Open crumb wasn't open",
+              "cause": "Underproved, or the dough was knocked back too hard.",
+              "fix": "Give it longer — until the dough doesn't spring back when poked. Shape gently so the bubbles survive."
+            },
+            {
+              "symptom": "Bottom burnt before top browned",
+              "cause": "Tray was too thin, or rack too low.",
+              "fix": "Bake on a heavier tray on the middle shelf. Lining with baking paper helps."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Seeded crust: brush the top with water and roll in mixed seeds before the final prove."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wholemeal: replace 100 g of the flour with wholemeal for a denser, nuttier loaf."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A British home cook's dish. It sits among the recipes families remember without thinking about — the kind that gets adjusted across generations and never quite the same twice."
           }
         ]
       }

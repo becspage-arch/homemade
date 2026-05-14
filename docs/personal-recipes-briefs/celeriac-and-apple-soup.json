@@ -1,34 +1,33 @@
 {
   "slug": "celeriac-and-apple-soup",
   "title": "Celeriac and Apple Soup",
-  "subtitle": null,
-  "excerpt": "Chinese lunch from Rebecca's collection. Serves 4. Heat the oil in a large saucepan.",
+  "subtitle": "A blended soup, smooth and warm.",
+  "excerpt": "Celeriac and Apple Soup. A smooth blended soup with simple components — vegetables sweated low, stock added, blitzed at the end.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
   "recipe": {
     "servings": 4,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 10,
+    "prepMinutes": 15,
+    "cookMinutes": 40,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 20,
+    "totalMinutes": 55,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
-    "batchable": false,
-    "batchNotes": null,
+    "batchable": true,
+    "batchNotes": "Doubles or triples cleanly — use a big saucepan and freeze what you don't need.",
     "makeAheadNotes": null,
     "dietaryFlags": [],
-    "cuisine": "chinese",
+    "cuisine": "british",
     "mealType": "lunch",
     "mood": [
-      "weeknight",
       "comfortFood"
     ],
     "temperatureCelsius": null,
@@ -45,7 +44,11 @@
       "isOptional": false
     },
     {
-      "slug": "small-saucepan",
+      "slug": "blender-jug",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
       "isOptional": false
     }
   ],
@@ -53,6 +56,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Celeriac and Apple Soup. A British home-cook's dish — the kind of recipe families adjust across generations. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A blended soup in the everyday register: vegetables sweated low, stock added, blitzed until smooth. The work is the dicing; everything else is patience."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -82,7 +103,7 @@
               "ingredientSlug": "onion",
               "amount": 1,
               "unit": "each",
-              "prepNote": "chopped",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -90,7 +111,7 @@
               "ingredientSlug": "leek",
               "amount": 1,
               "unit": "each",
-              "prepNote": "sliced",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -98,7 +119,7 @@
               "ingredientSlug": "ginger-root",
               "amount": 2,
               "unit": "g",
-              "prepNote": "chopped",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -106,15 +127,15 @@
               "ingredientSlug": "celeriac",
               "amount": 1,
               "unit": "each",
-              "prepNote": "peeled & chopped",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
             {
-              "ingredientSlug": "apple-bramley",
+              "ingredientSlug": "apple-eating",
               "amount": 4,
               "unit": "each",
-              "prepNote": "cored and quartered",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -122,7 +143,7 @@
               "ingredientSlug": "thyme",
               "amount": null,
               "unit": "sprig",
-              "prepNote": "large",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -143,10 +164,10 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "salt-table",
+              "ingredientSlug": "sea-salt-fine",
               "amount": null,
               "unit": "g",
-              "prepNote": "to taste",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -295,6 +316,122 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "The soup tastes flat",
+              "cause": "Underseasoned, or the aromatics weren't sweated long enough.",
+              "fix": "Add salt a pinch at a time, tasting. If still flat, finish with a squeeze of lemon or a splash of vinegar to lift it."
+            },
+            {
+              "symptom": "Cream-based soup splits",
+              "cause": "Dairy added at too high a heat, or left to simmer after.",
+              "fix": "Stir cream in off the heat, or use crème fraîche, which doesn't split. Don't reboil after adding."
+            },
+            {
+              "symptom": "Blended soup is too thick",
+              "cause": "Reduced too far, or the starch in the veg sets up on cooling.",
+              "fix": "Loosen with hot stock or water, a ladle at a time, until it pours from the spoon in a ribbon."
+            },
+            {
+              "symptom": "Blended soup is too thin",
+              "cause": "Stock-to-veg ratio too high.",
+              "fix": "Simmer uncovered to reduce, or blitz in another roasted veg (potato, parsnip) to thicken."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Vegan version: swap dairy cream for cashew cream (soak 100 g cashews in hot water, blend smooth) or oat cream."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Smokier finish: stir in a teaspoon of smoked paprika at the end, or top with crispy chorizo."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Make a day ahead; the flavour deepens overnight in the fridge."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A British home cook's dish. It sits among the recipes families remember without thinking about — the kind that gets adjusted across generations and never quite the same twice."
           }
         ]
       }

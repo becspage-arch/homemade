@@ -1,23 +1,23 @@
 {
   "slug": "fluffy-pancakes",
   "title": "Fluffy Pancakes",
-  "subtitle": null,
-  "excerpt": "American lunch from Rebecca's collection. In a large bowl add the flour, baking powder, salt and sugar.",
+  "subtitle": "A cake worth the weighing.",
+  "excerpt": "Fluffy Pancakes. A baking recipe from Rebecca's collection — straightforward, reliable, worth weighing rather than scooping.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 2,
+    "prepMinutes": 20,
+    "cookMinutes": 5,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 12,
+    "totalMinutes": 25,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -26,17 +26,16 @@
     "makeAheadNotes": null,
     "dietaryFlags": [],
     "cuisine": "american",
-    "mealType": "lunch",
-    "mood": [],
+    "mealType": "breakfast",
+    "mood": [
+      "treat",
+      "weekendBreakfast"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {
-      "slug": "small-saucepan",
-      "isOptional": false
-    },
     {
       "slug": "whisk-balloon",
       "isOptional": false
@@ -44,12 +43,46 @@
     {
       "slug": "wooden-spoon",
       "isOptional": false
+    },
+    {
+      "slug": "small-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    },
+    {
+      "slug": "cast-iron-skillet",
+      "isOptional": false
     }
   ],
   "glossaryTerms": [],
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fluffy Pancakes. An American family-table recipe — generous, comforting, built for a crowd. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cake batters reward weighing over scooping. Room-temperature butter and eggs, raised properly, tested with a skewer."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -84,9 +117,9 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "salt-table",
-              "amount": 0.5,
-              "unit": "tsp",
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
@@ -117,15 +150,15 @@
             },
             {
               "ingredientSlug": "salted-butter",
-              "amount": 0.25,
-              "unit": "cup",
+              "amount": 1,
+              "unit": "g",
               "prepNote": "or vegan butter",
               "isOptional": false,
               "groupLabel": null
             },
             {
               "ingredientSlug": "vanilla-extract",
-              "amount": 0.5,
+              "amount": 1,
               "unit": "tsp",
               "prepNote": null,
               "isOptional": false,
@@ -344,7 +377,53 @@
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Cake sinks in the middle",
+              "cause": "Underbaked, or the oven door opened too early.",
+              "fix": "Test with a skewer — it should come out with a few moist crumbs, not wet batter. Don't open the oven before three-quarters of the bake time."
+            },
+            {
+              "symptom": "Cake is dry",
+              "cause": "Overbaked, or too much flour measured by cup not weight.",
+              "fix": "Check at the minimum bake time and every five minutes after. Weigh flour for cake recipes — cup measures vary by 20% depending on how you scoop."
+            },
+            {
+              "symptom": "Top cracked or domed",
+              "cause": "Oven too hot, or batter too thick.",
+              "fix": "Drop the temperature by 10°C and check earlier. Domed cakes can be trimmed flat once cool."
+            },
+            {
+              "symptom": "Cake didn't rise",
+              "cause": "Raising agent stale or omitted, or butter and eggs cold.",
+              "fix": "Check baking powder is fresh — it loses lift after six months. Use room-temperature butter and eggs so the batter holds air."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
           {
             "type": "listItem",
             "content": [
@@ -353,7 +432,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Pancake Toppings Ideas"
+                    "text": "Citrus version: replace the vanilla with the zest of an orange or lemon."
                   }
                 ]
               }
@@ -367,109 +446,53 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Banana and Bacon"
+                    "text": "Nut-free: swap ground almonds for desiccated coconut or extra plain flour, weight for weight."
                   }
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Butter and Maple Syrup"
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Creme Fraiche and Fresh Berries"
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Salted Caramel Sauce and Whipped Cream"
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Variation Ideas"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Blueberry Pancakes - Add 1 Cup of fresh blueberries to the pancakes batter"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Chocolate Chip Pancakes - Add 1/2 Cup of chocolate chips to the dry ingredients"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Lemon Pancakes - Add the zest of 1 lemon to the wet ingredients"
-                  }
-                ]
-              }
-            ]
+            "type": "text",
+            "text": "A classic American home recipe — generous, comforting, made for a crowd. The proportions are heartier than the British equivalent; the method is built for a Sunday afternoon."
           }
         ]
       }

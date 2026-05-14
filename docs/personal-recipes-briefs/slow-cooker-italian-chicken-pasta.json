@@ -1,41 +1,46 @@
 {
   "slug": "slow-cooker-italian-chicken-pasta",
   "title": "Slow Cooker Italian Chicken Pasta",
-  "subtitle": null,
-  "excerpt": "Italian dinner from Rebecca's collection. Add diced onion, garlic, chicken breasts, cream cheese, marinara sauce, and some seasonings into a cold crockpot.",
+  "subtitle": "The kind of dinner that cooks itself.",
+  "excerpt": "Slow Cooker Italian Chicken Pasta. A slow-cooker dish that does its own work — set it in the morning, serve it at dinner.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook. The bones of the recipe sit in the Italian home-cooking tradition documented by writers like Pellegrino Artusi (La Scienza in Cucina, 1891) and Marcella Hazan.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 180,
+    "prepMinutes": 15,
+    "cookMinutes": 330,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 190,
+    "totalMinutes": 345,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
-    "batchable": false,
-    "batchNotes": null,
+    "batchable": true,
+    "batchNotes": "A double batch fits a 6-litre slow cooker. Use the second half straight away or freeze in portions.",
     "makeAheadNotes": null,
     "dietaryFlags": [],
     "cuisine": "italian",
     "mealType": "dinner",
     "mood": [
+      "lowEffort",
       "comfortFood",
-      "batchCook"
+      "weeknight"
     ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
+    {
+      "slug": "slow-cooker",
+      "isOptional": false
+    },
     {
       "slug": "hob",
       "isOptional": false
@@ -45,6 +50,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Slow Cooker Italian Chicken Pasta. The dish belongs to the Italian home-cooking register: straightforward, ingredient-led, calm at the hob. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "It runs in the slow cooker so the work is at the start of the day and the dinner cooks itself."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -80,25 +103,41 @@
             },
             {
               "ingredientSlug": "chicken-breast",
-              "amount": 1.25,
-              "unit": "lb",
+              "amount": 567,
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
             {
-              "ingredientSlug": "salt-table",
+              "ingredientSlug": "sea-salt-fine",
               "amount": null,
               "unit": "g",
-              "prepNote": "to taste",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-passata",
+              "amount": 709,
+              "unit": "g",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
             {
               "ingredientSlug": "cream-cheese",
-              "amount": 12,
-              "unit": "oz",
+              "amount": 340,
+              "unit": "g",
               "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "italian-seasoning",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "or make your own using basil, oregano and thyme",
               "isOptional": false,
               "groupLabel": null
             },
@@ -112,59 +151,14 @@
             },
             {
               "ingredientSlug": "pasta-dried",
-              "amount": 1,
-              "unit": "lb",
+              "amount": 454,
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             }
           ]
         }
-      },
-      {
-        "type": "heading",
-        "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Also"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "25 oz marinara sauce one jar"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 tsp Italian Seasoning (or make your own using basil, oregano and thyme)"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
       },
       {
         "type": "heading",
@@ -264,6 +258,122 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Sauce won't cling to the pasta",
+              "cause": "Pasta drained too thoroughly, or sauce too thin.",
+              "fix": "Reserve a ladle of starchy cooking water before draining. Toss it through with the pasta and sauce in the pan over heat — the starch binds everything."
+            },
+            {
+              "symptom": "Pasta is gummy",
+              "cause": "Overcooked, or sat in water after draining.",
+              "fix": "Cook a minute less than the packet says, drain, and finish in the sauce. Time it so the pasta meets the sauce in the pan, not the colander."
+            },
+            {
+              "symptom": "Cheese clumps when stirred in",
+              "cause": "Pan too hot, or cheese added all at once.",
+              "fix": "Lower the heat first. Add the cheese a small handful at a time, stirring continuously, with a splash of pasta water to keep the sauce loose."
+            },
+            {
+              "symptom": "Sauce tastes sharp or thin",
+              "cause": "Tomato or wine hasn't cooked down long enough.",
+              "fix": "Give the sauce another ten to fifteen minutes at a low simmer. A pinch of sugar softens an acidic tomato base."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Vegetarian: drop the meat and add 200 g mushrooms (chestnut or porcini) sautéed until they squeak."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lighter sauce: replace cream with crème fraîche stirred in off the heat — same richness, less weight."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The slow cooker is the make-ahead."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The dish sits in the Italian home-cooking tradition: a few good ingredients, a long unhurried cook, and a pan that has fed the family for years. Worth keeping its roots in mind when you taste — the silence between flavours is part of the design."
           }
         ]
       }

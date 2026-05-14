@@ -1,39 +1,38 @@
 {
   "slug": "mince-pie-cookies",
   "title": "Mince Pie Cookies",
-  "subtitle": null,
-  "excerpt": "Mediterranean snack from Rebecca's collection. \"Crumbly and fragrant with fruit, I'd say these cookies have a good shot at converting people who don’t like mince pies,\" says Jamie.",
+  "subtitle": "Crisp at the edges, soft in the middle.",
+  "excerpt": "Mince Pie Cookies. A baking recipe from Rebecca's collection — straightforward, reliable, worth weighing rather than scooping.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 10,
+    "prepMinutes": 20,
+    "cookMinutes": 23,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 20,
+    "totalMinutes": 43,
     "scalable": true,
     "freezable": true,
-    "freezeNotes": null,
+    "freezeNotes": "Wrap tightly, freeze for up to three months. Defrost at room temperature.",
     "batchable": true,
-    "batchNotes": null,
+    "batchNotes": "Doubles cleanly if you have a large enough pan.",
     "makeAheadNotes": null,
     "dietaryFlags": [],
-    "cuisine": "mediterranean",
-    "mealType": "snack",
+    "cuisine": "american",
+    "mealType": "dessert",
     "mood": [
-      "weeknight",
       "comfortFood",
-      "freezerFriendly",
-      "batchCook"
+      "treat",
+      "freezerFriendly"
     ],
-    "temperatureCelsius": 180,
+    "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
@@ -41,12 +40,38 @@
     {
       "slug": "oven",
       "isOptional": false
+    },
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    },
+    {
+      "slug": "cooling-rack",
+      "isOptional": false
     }
   ],
   "glossaryTerms": [],
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mince Pie Cookies. An American family-table recipe — generous, comforting, built for a crowd. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cookies bake fast and reward a chilled dough. Pull them out when the edges set and the middles still look slightly underdone."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -65,16 +90,16 @@
           "defaultServings": 4,
           "items": [
             {
-              "ingredientSlug": "salted-butter",
-              "amount": 250,
+              "ingredientSlug": "unsalted-butter",
+              "amount": null,
               "unit": "g",
-              "prepNote": "unsalted, softened",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
             {
               "ingredientSlug": "caster-sugar",
-              "amount": 140,
+              "amount": null,
               "unit": "g",
               "prepNote": null,
               "isOptional": false,
@@ -82,7 +107,7 @@
             },
             {
               "ingredientSlug": "egg-yolks",
-              "amount": 1,
+              "amount": null,
               "unit": "each",
               "prepNote": null,
               "isOptional": false,
@@ -98,7 +123,15 @@
             },
             {
               "ingredientSlug": "plain-flour",
-              "amount": 300,
+              "amount": null,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mincemeat",
+              "amount": null,
               "unit": "g",
               "prepNote": null,
               "isOptional": false,
@@ -106,37 +139,6 @@
             }
           ]
         }
-      },
-      {
-        "type": "heading",
-        "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Also"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "• 1 x 411g jar fruit mincemeat"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
       },
       {
         "type": "heading",
@@ -208,7 +210,53 @@
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Cookies spread too thin and crisp",
+              "cause": "Butter too soft, or oven not hot enough.",
+              "fix": "Chill the dough for 30 minutes before baking. Preheat the oven properly — 180°C means 180°C on an oven thermometer, not the dial."
+            },
+            {
+              "symptom": "Cookies came out cakey, not chewy",
+              "cause": "Over-mixed once the flour went in, or too much flour.",
+              "fix": "Stop mixing as soon as the flour disappears. For chewier cookies, replace some plain flour with bread flour for more gluten."
+            },
+            {
+              "symptom": "Cookies stuck to the tray",
+              "cause": "Tried to lift before they'd set.",
+              "fix": "Leave them on the tray for five minutes after baking — they're too soft to move when hot. Lift onto a rack with a palette knife."
+            },
+            {
+              "symptom": "Burnt bottoms, raw middles",
+              "cause": "Tray too thin, or rack too low.",
+              "fix": "Use a heavier baking tray, line with baking paper, and bake on the middle shelf."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
           {
             "type": "listItem",
             "content": [
@@ -217,7 +265,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "http://www.jamieoliver.com/recipes/fruit-recipes/mince-pie-cookies"
+                    "text": "Add-ins: 75 g dark chocolate chips, chopped walnuts, dried cranberries, or a pinch of sea salt on top before baking."
                   }
                 ]
               }
@@ -231,11 +279,53 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Mini Blueberry and Vanilla Cheesecakes"
+                    "text": "Gluten-free: replace plain flour with a 1-to-1 gluten-free blend that includes xanthan gum."
                   }
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A classic American home recipe — generous, comforting, made for a crowd. The proportions are heartier than the British equivalent; the method is built for a Sunday afternoon."
           }
         ]
       }

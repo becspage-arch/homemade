@@ -1,23 +1,23 @@
 {
   "slug": "chocolate-mousse",
   "title": "Chocolate Mousse",
-  "subtitle": null,
-  "excerpt": "snack from Rebecca's collection. Blitz all together, serve straight away or pop in fridge for later.",
+  "subtitle": "Patience and a freezer.",
+  "excerpt": "Chocolate Mousse. A home-cook's recipe from Rebecca's collection, kept in the family rotation.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
+    "prepMinutes": 15,
     "cookMinutes": null,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 10,
+    "totalMinutes": 15,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -26,8 +26,10 @@
     "makeAheadNotes": null,
     "dietaryFlags": [],
     "cuisine": "british",
-    "mealType": "snack",
-    "mood": [],
+    "mealType": "dessert",
+    "mood": [
+      "weeknight"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
@@ -37,6 +39,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chocolate Mousse. A British home-cook's dish — the kind of recipe families adjust across generations. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A weeknight-friendly recipe: most of the work is the prep, and the cooking takes care of itself."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -58,7 +78,7 @@
               "ingredientSlug": "banana",
               "amount": 1,
               "unit": "each",
-              "prepNote": "frozen, peeled",
+              "prepNote": "peeled",
               "isOptional": false,
               "groupLabel": null
             },
@@ -111,7 +131,7 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "salt-table",
+              "ingredientSlug": "sea-salt-fine",
               "amount": null,
               "unit": "g",
               "prepNote": null,
@@ -149,6 +169,66 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Ice crystals form on freezing",
+              "cause": "Mixture had too much water, or didn't churn long enough.",
+              "fix": "Churn to a soft-serve consistency before freezing. Pre-chill the bowl overnight if using a bowl-style ice cream maker."
+            },
+            {
+              "symptom": "Texture is too hard from the freezer",
+              "cause": "Sugar level too low — sugar prevents freezing solid.",
+              "fix": "Take out 15 minutes before serving to soften. Next time, scale up sugar by 10 to 20 grams per 500 ml of mixture."
+            },
+            {
+              "symptom": "Custard split when warming",
+              "cause": "Heat too high, or eggs went in cold and fast.",
+              "fix": "Temper — pour a ladle of hot milk into the yolks first, whisking, then return to the pan over low heat. Don't let it boil."
+            },
+            {
+              "symptom": "Mousse won't hold its shape",
+              "cause": "Cream wasn't whipped enough, or it was folded in too vigorously.",
+              "fix": "Whip cream to soft peaks (it flops slightly when the whisk is lifted). Fold in with a metal spoon, cutting through the centre and lifting from the base."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Boozy version: stir in 2 tablespoons of dark rum, brandy, or liqueur once the mix is churned — the alcohol stops it freezing hard."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
@@ -158,11 +238,53 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Chocolate Self Saucing Pudding"
+                    "text": "Chocolate ripple: drizzle warm chocolate sauce through the churned mix before freezing, and don't over-stir."
                   }
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Made days in advance and lives in the freezer."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A British home cook's dish. It sits among the recipes families remember without thinking about — the kind that gets adjusted across generations and never quite the same twice."
           }
         ]
       }

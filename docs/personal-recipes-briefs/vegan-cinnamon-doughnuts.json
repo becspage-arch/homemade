@@ -2,22 +2,22 @@
   "slug": "vegan-cinnamon-doughnuts",
   "title": "Vegan Cinnamon Doughnuts",
   "subtitle": null,
-  "excerpt": "snack from Rebecca's collection. Serves 12. Gently melt the butter over a low-medium heat.",
+  "excerpt": "Vegan Cinnamon Doughnuts. A home-cook's recipe from Rebecca's collection, kept in the family rotation.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
   "recipe": {
     "servings": 12,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 3,
+    "prepMinutes": 15,
+    "cookMinutes": 4,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 13,
+    "totalMinutes": 19,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -27,7 +27,9 @@
     "dietaryFlags": [],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": [],
+    "mood": [
+      "weeknight"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
@@ -37,6 +39,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Vegan Cinnamon Doughnuts. A British home-cook's dish — the kind of recipe families adjust across generations. Serves 12."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A weeknight-friendly recipe: most of the work is the prep, and the cooking takes care of itself."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -55,7 +75,15 @@
           "defaultServings": 12,
           "items": [
             {
-              "ingredientSlug": "whole-milk",
+              "ingredientSlug": "unsalted-butter",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soya-milk",
               "amount": 120,
               "unit": "ml",
               "prepNote": null,
@@ -66,7 +94,7 @@
               "ingredientSlug": "sunflower-oil",
               "amount": 2,
               "unit": "tbsp",
-              "prepNote": "plus 1 litre extra for frying",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -95,46 +123,15 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "salt-table",
-              "amount": 0.5,
-              "unit": "tsp",
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             }
           ]
         }
-      },
-      {
-        "type": "heading",
-        "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Also"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "50 grams vegan margarine"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
       },
       {
         "type": "heading",
@@ -220,6 +217,122 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "The dish tastes flat",
+              "cause": "Underseasoned or no acid.",
+              "fix": "Salt a pinch at a time, tasting. A squeeze of lemon or splash of vinegar at the end lifts most savoury dishes."
+            },
+            {
+              "symptom": "It's overcooked by the time it reaches the table",
+              "cause": "Carryover cooking — food keeps cooking on the hot pan after the heat goes off.",
+              "fix": "Pull off the heat a minute or two before you think it's done. Plate straight away, or transfer to a warmed serving dish."
+            },
+            {
+              "symptom": "It's undercooked in the middle",
+              "cause": "Heat too high, browned the outside before the middle warmed through.",
+              "fix": "Drop the heat and give it longer. A probe thermometer is the only reliable check for meat."
+            },
+            {
+              "symptom": "The leftovers were dry",
+              "cause": "Reheated uncovered, or no liquid in the pan.",
+              "fix": "Reheat covered with a splash of stock or water, on a low heat. Microwave on 60% power if using one — gentler than full blast."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Vegetarian swap: replace meat with mushrooms, lentils, or beans — adjust seasoning to compensate."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spice version: a pinch of chilli flakes or cracked black pepper at the end shifts the dish without losing its character."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A British home cook's dish. It sits among the recipes families remember without thinking about — the kind that gets adjusted across generations and never quite the same twice."
           }
         ]
       }

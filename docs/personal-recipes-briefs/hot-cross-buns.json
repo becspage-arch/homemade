@@ -1,23 +1,23 @@
 {
   "slug": "hot-cross-buns",
   "title": "Hot Cross Buns",
-  "subtitle": null,
-  "excerpt": "side from Rebecca's collection. Bring milk to boil.",
+  "subtitle": "Mostly waiting, mostly worth it.",
+  "excerpt": "Hot Cross Buns. A home-cook's recipe from Rebecca's collection, kept in the family rotation.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook. Bread recipes draw on the long tradition of home baking — Elizabeth David's English Bread and Yeast Cookery is one of the canonical references in English.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 60,
+    "prepMinutes": 20,
+    "cookMinutes": 78,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 70,
+    "totalMinutes": 98,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -28,13 +28,17 @@
     "cuisine": "british",
     "mealType": "side",
     "mood": [
-      "weeknight"
+      "weekend"
     ],
-    "temperatureCelsius": 200,
+    "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    },
     {
       "slug": "piping-bag",
       "isOptional": false
@@ -44,6 +48,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hot Cross Buns. A British home-cook's dish — the kind of recipe families adjust across generations. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bread is mostly waiting. Mix, prove, shape, prove again, bake hot with steam."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -86,9 +108,17 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "salt-table",
+              "ingredientSlug": "sea-salt-fine",
               "amount": 1,
               "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "yeast-fast-action",
+              "amount": 7,
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
@@ -105,7 +135,7 @@
               "ingredientSlug": "eggs",
               "amount": 1,
               "unit": "each",
-              "prepNote": "beaten",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -126,10 +156,10 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "apple-bramley",
+              "ingredientSlug": "apple-eating",
               "amount": 1,
               "unit": "each",
-              "prepNote": "chopped",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -169,49 +199,12 @@
         }
       },
       {
-        "type": "heading",
+        "type": "infoPanel",
         "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Also"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "7g sachet fast yeast"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Crosses"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+          "tone": "info",
+          "title": "Also",
+          "body": "Crosses."
+        }
       },
       {
         "type": "heading",
@@ -423,6 +416,122 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Bread is dense and didn't rise",
+              "cause": "Yeast was stale, or the dough was too cold.",
+              "fix": "Check yeast in warm water with a pinch of sugar — it should froth in five minutes. Prove in a warm spot (airing cupboard or oven with the light on)."
+            },
+            {
+              "symptom": "Crust is pale and soft",
+              "cause": "Oven not hot enough, or no steam.",
+              "fix": "Preheat to 220°C with a tray on the bottom. Throw a cup of water into the tray when the loaf goes in — steam gives crust."
+            },
+            {
+              "symptom": "Open crumb wasn't open",
+              "cause": "Underproved, or the dough was knocked back too hard.",
+              "fix": "Give it longer — until the dough doesn't spring back when poked. Shape gently so the bubbles survive."
+            },
+            {
+              "symptom": "Bottom burnt before top browned",
+              "cause": "Tray was too thin, or rack too low.",
+              "fix": "Bake on a heavier tray on the middle shelf. Lining with baking paper helps."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Seeded crust: brush the top with water and roll in mixed seeds before the final prove."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wholemeal: replace 100 g of the flour with wholemeal for a denser, nuttier loaf."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A British home cook's dish. It sits among the recipes families remember without thinking about — the kind that gets adjusted across generations and never quite the same twice."
           }
         ]
       }

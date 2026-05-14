@@ -1,23 +1,23 @@
 {
   "slug": "sticky-toffee-pudding",
   "title": "Sticky Toffee Pudding",
-  "subtitle": null,
-  "excerpt": "dessert from Rebecca's collection. Using an electric mixer or wooden spoon, cream the soft butter and sugar together for about 5 minutes or until very light and fluffy.",
+  "subtitle": "A thermometer pays for itself the first time.",
+  "excerpt": "Sticky Toffee Pudding. A baking recipe from Rebecca's collection — straightforward, reliable, worth weighing rather than scooping.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 40,
+    "prepMinutes": 15,
+    "cookMinutes": 110,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 50,
+    "totalMinutes": 125,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -27,14 +27,16 @@
     "dietaryFlags": [],
     "cuisine": "british",
     "mealType": "dessert",
-    "mood": [],
-    "temperatureCelsius": 180,
+    "mood": [
+      "treat"
+    ],
+    "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
     {
-      "slug": "small-saucepan",
+      "slug": "oven",
       "isOptional": false
     },
     {
@@ -42,7 +44,11 @@
       "isOptional": false
     },
     {
-      "slug": "oven",
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "cling-film",
       "isOptional": false
     }
   ],
@@ -50,6 +56,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sticky Toffee Pudding. A British home-cook's dish — the kind of recipe families adjust across generations. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cookies bake fast and reward a chilled dough. Pull them out when the edges set and the middles still look slightly underdone."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -67,6 +91,14 @@
         "attrs": {
           "defaultServings": 4,
           "items": [
+            {
+              "ingredientSlug": "dates-medjool",
+              "amount": 180,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
             {
               "ingredientSlug": "water",
               "amount": 150,
@@ -95,7 +127,7 @@
               "ingredientSlug": "eggs",
               "amount": 2,
               "unit": "each",
-              "prepNote": "large, beaten",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -124,7 +156,7 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "plain-flour",
+              "ingredientSlug": "self-raising-flour",
               "amount": 175,
               "unit": "g",
               "prepNote": null,
@@ -135,7 +167,7 @@
               "ingredientSlug": "whole-milk",
               "amount": 100,
               "unit": "ml",
-              "prepNote": "whole, or almond milk",
+              "prepNote": "or almond milk",
               "isOptional": false,
               "groupLabel": null
             },
@@ -175,49 +207,12 @@
         }
       },
       {
-        "type": "heading",
+        "type": "infoPanel",
         "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Also"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "180g soft dates"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 teaspoon bicarbonate soda"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+          "tone": "info",
+          "title": "Also",
+          "body": "1 teaspoon bicarbonate soda."
+        }
       },
       {
         "type": "heading",
@@ -331,6 +326,66 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Mixture won't set",
+              "cause": "Sugar didn't reach the right stage, or temperature was guessed.",
+              "fix": "Use a sugar thermometer. Stages: soft-ball 115°C, hard-ball 125°C, soft-crack 135°C, hard-crack 150°C. Cold-water tests work but the thermometer doesn't lie."
+            },
+            {
+              "symptom": "Sugar crystallised",
+              "cause": "Mixture stirred after it started bubbling, or a stray crystal landed on the side of the pan.",
+              "fix": "Don't stir once the sugar is dissolved. Brush the inside of the pan with a wet pastry brush to wash crystals down."
+            },
+            {
+              "symptom": "Fudge is grainy",
+              "cause": "Beaten too soon — while still too hot.",
+              "fix": "Cool to 43°C before beating. The mixture turns from glossy to matte when ready to set."
+            },
+            {
+              "symptom": "Mixture seized into a ball",
+              "cause": "Water touched melted chocolate.",
+              "fix": "Add a teaspoon of warm cream or water and stir until smooth — this is the trick. Drier seizing needs more liquid; thin seizing wants less."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Flavoured version: stir in a teaspoon of vanilla, almond, or peppermint extract once the mixture is off the heat."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
@@ -340,11 +395,53 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Ultimate Chocolate Cake"
+                    "text": "Dip-coated: once set, dip pieces in melted dark chocolate and let drip on baking paper."
                   }
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A British home cook's dish. It sits among the recipes families remember without thinking about — the kind that gets adjusted across generations and never quite the same twice."
           }
         ]
       }

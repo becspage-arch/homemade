@@ -1,23 +1,23 @@
 {
   "slug": "creamy-brie-and-mushroom-risotto",
   "title": "Creamy Brie and Mushroom Risotto",
-  "subtitle": null,
-  "excerpt": "Italian dinner from Rebecca's collection. Place oil and half the butter in a pan over medium-low heat.",
+  "subtitle": "Patience, a wooden spoon, and a ladle of warm stock.",
+  "excerpt": "Creamy Brie and Mushroom Risotto. A classic risotto built the slow way: stock warm beside you, ladle by ladle, until the grains are creamy with a bite.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook, with a method that follows the classical Italian risotto canon — stock warm beside the rice, ladled in slowly, finished with cold butter and grated parmesan.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 20,
+    "prepMinutes": 15,
+    "cookMinutes": 38,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 30,
+    "totalMinutes": 53,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -28,8 +28,7 @@
     "cuisine": "italian",
     "mealType": "dinner",
     "mood": [
-      "weeknight",
-      "comfortFood"
+      "weeknight"
     ],
     "temperatureCelsius": null,
     "temperatureNote": null,
@@ -40,6 +39,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Creamy Brie and Mushroom Risotto. The dish belongs to the Italian home-cooking register: straightforward, ingredient-led, calm at the hob. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stock kept warm beside you, rice toasted, wine in, ladle by ladle until the grains are soft with a bite at the centre. No need to stir constantly — gently, often."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -66,10 +83,10 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "salted-butter",
+              "ingredientSlug": "unsalted-butter",
               "amount": 60,
               "unit": "g",
-              "prepNote": "unsalted",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -77,7 +94,7 @@
               "ingredientSlug": "leek",
               "amount": 2,
               "unit": "each",
-              "prepNote": "finely chopped",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -85,7 +102,7 @@
               "ingredientSlug": "garlic",
               "amount": 2,
               "unit": "clove",
-              "prepNote": "finely chopped",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -99,8 +116,8 @@
             },
             {
               "ingredientSlug": "arborio-rice",
-              "amount": 1,
-              "unit": "g",
+              "amount": 1.3333333333333333,
+              "unit": "cup",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
@@ -117,7 +134,7 @@
               "ingredientSlug": "double-cream",
               "amount": 100,
               "unit": "ml",
-              "prepNote": "or vegan alternative",
+              "prepNote": "thin",
               "isOptional": false,
               "groupLabel": null
             },
@@ -133,7 +150,7 @@
               "ingredientSlug": "brie",
               "amount": 150,
               "unit": "g",
-              "prepNote": "torn (omit for vegan option)",
+              "prepNote": "omit for vegan option",
               "isOptional": false,
               "groupLabel": null
             }
@@ -141,35 +158,12 @@
         }
       },
       {
-        "type": "heading",
+        "type": "infoPanel",
         "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Also"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "3 cups (750ml) Massel vegetable liquid stock, heated"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+          "tone": "info",
+          "title": "Also",
+          "body": "3 cups (750ml) Massel vegetable liquid stock, heated."
+        }
       },
       {
         "type": "heading",
@@ -311,6 +305,122 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Risotto is gluey",
+              "cause": "Over-stirred, or too much rice for the stock.",
+              "fix": "Stir less. The agitation releases starch — you want some, but not all of it. Add a splash more stock at the end to loosen."
+            },
+            {
+              "symptom": "Rice still has a hard core",
+              "cause": "Stock added too cold, or undercooked.",
+              "fix": "Keep the stock at a simmer in a separate pan while you cook. Add another ladle and keep going — the rice tells you when it's done."
+            },
+            {
+              "symptom": "Risotto is too soupy",
+              "cause": "Last addition of stock was too much.",
+              "fix": "Take the pan off the heat, beat in cold butter (mantecare), and let it stand for two minutes. It firms up as it rests."
+            },
+            {
+              "symptom": "Tastes bland",
+              "cause": "Stock was weak, or no finishing fat.",
+              "fix": "Beat in cold butter and a fistful of grated parmesan off the heat. The fat carries the flavour."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mushroom: add 30 g dried porcini soaked in warm water; use the soaking liquid as part of the stock."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Seafood: stir through cooked prawns and a handful of peas in the last two minutes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The dish sits in the Italian home-cooking tradition: a few good ingredients, a long unhurried cook, and a pan that has fed the family for years. Worth keeping its roots in mind when you taste — the silence between flavours is part of the design."
           }
         ]
       }

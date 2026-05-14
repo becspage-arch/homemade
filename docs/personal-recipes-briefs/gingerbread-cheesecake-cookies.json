@@ -1,42 +1,46 @@
 {
   "slug": "gingerbread-cheesecake-cookies",
   "title": "Gingerbread Cheesecake Cookies",
-  "subtitle": null,
-  "excerpt": "Chinese snack from Rebecca's collection. For the Cheesecake Filling.",
+  "subtitle": "A cake worth the weighing.",
+  "excerpt": "Gingerbread Cheesecake Cookies. A baking recipe from Rebecca's collection — straightforward, reliable, worth weighing rather than scooping.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook. Bread recipes draw on the long tradition of home baking — Elizabeth David's English Bread and Yeast Cookery is one of the canonical references in English.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 11,
+    "prepMinutes": 20,
+    "cookMinutes": 26,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 21,
+    "totalMinutes": 46,
     "scalable": true,
     "freezable": true,
-    "freezeNotes": null,
+    "freezeNotes": "Wrap tightly, freeze for up to three months. Defrost at room temperature.",
     "batchable": true,
-    "batchNotes": null,
+    "batchNotes": "Doubles cleanly if you have a large enough pan.",
     "makeAheadNotes": null,
     "dietaryFlags": [],
-    "cuisine": "chinese",
-    "mealType": "snack",
+    "cuisine": "american",
+    "mealType": "dessert",
     "mood": [
-      "weeknight",
-      "freezerFriendly",
-      "batchCook"
+      "treat",
+      "weekend",
+      "freezerFriendly"
     ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
+    {
+      "slug": "oven",
+      "isOptional": false
+    },
     {
       "slug": "stand-mixer",
       "isOptional": false
@@ -46,15 +50,27 @@
       "isOptional": false
     },
     {
-      "slug": "mixing-bowl-medium",
-      "isOptional": false
-    },
-    {
       "slug": "whisk-balloon",
       "isOptional": false
     },
     {
-      "slug": "oven",
+      "slug": "silicone-spatula",
+      "isOptional": false
+    },
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    },
+    {
+      "slug": "baking-paper",
+      "isOptional": false
+    },
+    {
+      "slug": "cooling-rack",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-medium",
       "isOptional": false
     }
   ],
@@ -62,6 +78,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gingerbread Cheesecake Cookies. An American family-table recipe — generous, comforting, built for a crowd. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cake batters reward weighing over scooping. Room-temperature butter and eggs, raised properly, tested with a skewer."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -81,8 +115,8 @@
           "items": [
             {
               "ingredientSlug": "cream-cheese",
-              "amount": 6,
-              "unit": "oz",
+              "amount": 170,
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the Cheesecake Filling"
@@ -97,7 +131,7 @@
             },
             {
               "ingredientSlug": "vanilla-extract",
-              "amount": 0.5,
+              "amount": 1,
               "unit": "tsp",
               "prepNote": null,
               "isOptional": false,
@@ -113,7 +147,7 @@
             },
             {
               "ingredientSlug": "ginger-ground",
-              "amount": 0.5,
+              "amount": 1,
               "unit": "tsp",
               "prepNote": null,
               "isOptional": false,
@@ -121,7 +155,7 @@
             },
             {
               "ingredientSlug": "cinnamon-ground",
-              "amount": 0.5,
+              "amount": 1,
               "unit": "tsp",
               "prepNote": null,
               "isOptional": false,
@@ -129,7 +163,7 @@
             },
             {
               "ingredientSlug": "allspice",
-              "amount": 0.125,
+              "amount": 1,
               "unit": "tsp",
               "prepNote": null,
               "isOptional": false,
@@ -137,7 +171,7 @@
             },
             {
               "ingredientSlug": "nutmeg-ground",
-              "amount": 0.125,
+              "amount": 1,
               "unit": "tsp",
               "prepNote": null,
               "isOptional": false,
@@ -145,8 +179,8 @@
             },
             {
               "ingredientSlug": "cloves",
-              "amount": 0.125,
-              "unit": "tsp",
+              "amount": 1,
+              "unit": "each",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the Spiced Sugar"
@@ -177,7 +211,7 @@
             },
             {
               "ingredientSlug": "nutmeg-ground",
-              "amount": 0.5,
+              "amount": 1,
               "unit": "tsp",
               "prepNote": null,
               "isOptional": false,
@@ -185,7 +219,7 @@
             },
             {
               "ingredientSlug": "allspice",
-              "amount": 0.25,
+              "amount": 1,
               "unit": "tsp",
               "prepNote": null,
               "isOptional": false,
@@ -193,40 +227,40 @@
             },
             {
               "ingredientSlug": "cloves",
-              "amount": 0.25,
-              "unit": "tsp",
+              "amount": 1,
+              "unit": "each",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the Gingerbread Cookies"
             },
             {
-              "ingredientSlug": "salt-table",
-              "amount": 0.5,
-              "unit": "tsp",
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the Gingerbread Cookies"
             },
             {
               "ingredientSlug": "bicarbonate-of-soda",
-              "amount": 0.5,
+              "amount": 1,
               "unit": "tsp",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the Gingerbread Cookies"
             },
             {
-              "ingredientSlug": "salted-butter",
-              "amount": 0.75,
-              "unit": "cup",
-              "prepNote": "unsalted, softened",
+              "ingredientSlug": "unsalted-butter",
+              "amount": 3,
+              "unit": "g",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the Gingerbread Cookies"
             },
             {
               "ingredientSlug": "light-brown-sugar",
-              "amount": 0.75,
-              "unit": "cup",
+              "amount": 3,
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the Gingerbread Cookies"
@@ -249,8 +283,8 @@
             },
             {
               "ingredientSlug": "molasses",
-              "amount": 0.3333333333333333,
-              "unit": "cup",
+              "amount": 1,
+              "unit": "tbsp",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the Gingerbread Cookies"
@@ -510,6 +544,122 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Cake sinks in the middle",
+              "cause": "Underbaked, or the oven door opened too early.",
+              "fix": "Test with a skewer — it should come out with a few moist crumbs, not wet batter. Don't open the oven before three-quarters of the bake time."
+            },
+            {
+              "symptom": "Cake is dry",
+              "cause": "Overbaked, or too much flour measured by cup not weight.",
+              "fix": "Check at the minimum bake time and every five minutes after. Weigh flour for cake recipes — cup measures vary by 20% depending on how you scoop."
+            },
+            {
+              "symptom": "Top cracked or domed",
+              "cause": "Oven too hot, or batter too thick.",
+              "fix": "Drop the temperature by 10°C and check earlier. Domed cakes can be trimmed flat once cool."
+            },
+            {
+              "symptom": "Cake didn't rise",
+              "cause": "Raising agent stale or omitted, or butter and eggs cold.",
+              "fix": "Check baking powder is fresh — it loses lift after six months. Use room-temperature butter and eggs so the batter holds air."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Citrus version: replace the vanilla with the zest of an orange or lemon."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Nut-free: swap ground almonds for desiccated coconut or extra plain flour, weight for weight."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A classic American home recipe — generous, comforting, made for a crowd. The proportions are heartier than the British equivalent; the method is built for a Sunday afternoon."
           }
         ]
       }

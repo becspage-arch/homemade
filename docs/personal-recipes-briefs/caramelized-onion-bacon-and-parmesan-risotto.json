@@ -1,23 +1,23 @@
 {
   "slug": "caramelized-onion-bacon-and-parmesan-risotto",
   "title": "Caramelized Onion, Bacon, and Parmesan Risotto",
-  "subtitle": null,
-  "excerpt": "Italian dinner from Rebecca's collection. Serves 4. Caramelize the onions: Heat the olive oil in a large skillet or pot over medium heat.",
+  "subtitle": "Patience, a wooden spoon, and a ladle of warm stock.",
+  "excerpt": "Caramelized Onion, Bacon, and Parmesan Risotto. A classic risotto built the slow way: stock warm beside you, ladle by ladle, until the grains are creamy with a bite.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook, with a method that follows the classical Italian risotto canon — stock warm beside the rice, ladled in slowly, finished with cold butter and grated parmesan.",
   "recipe": {
     "servings": 4,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 20,
+    "prepMinutes": 15,
+    "cookMinutes": 48,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 30,
+    "totalMinutes": 63,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -26,20 +26,42 @@
     "makeAheadNotes": null,
     "dietaryFlags": [],
     "cuisine": "italian",
-    "mealType": "dinner",
+    "mealType": "snack",
     "mood": [
-      "weeknight",
-      "comfortFood"
+      "treat"
     ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
-  "recipeTools": [],
+  "recipeTools": [
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    }
+  ],
   "glossaryTerms": [],
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Caramelized Onion, Bacon, and Parmesan Risotto. The dish belongs to the Italian home-cooking register: straightforward, ingredient-led, calm at the hob. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stock kept warm beside you, rice toasted, wine in, ladle by ladle until the grains are soft with a bite at the centre. No need to stir constantly — gently, often."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -69,7 +91,7 @@
               "ingredientSlug": "streaky-bacon",
               "amount": 4,
               "unit": "slice",
-              "prepNote": "chopped",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -77,7 +99,7 @@
               "ingredientSlug": "onion",
               "amount": 1,
               "unit": "each",
-              "prepNote": "medium, thinly sliced",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -102,14 +124,14 @@
               "amount": 1,
               "unit": "cup",
               "prepNote": "optional, can replace with extra broth",
-              "isOptional": true,
+              "isOptional": false,
               "groupLabel": null
             },
             {
-              "ingredientSlug": "salted-butter",
+              "ingredientSlug": "unsalted-butter",
               "amount": 2,
               "unit": "tbsp",
-              "prepNote": "unsalted",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -122,10 +144,10 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "salt-table",
+              "ingredientSlug": "sea-salt-fine",
               "amount": null,
               "unit": "g",
-              "prepNote": "to taste",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -133,8 +155,8 @@
               "ingredientSlug": "parsley-flat",
               "amount": null,
               "unit": "g",
-              "prepNote": "Fresh, chopped (optional, for garnish)",
-              "isOptional": true,
+              "prepNote": "optional, for garnish",
+              "isOptional": false,
               "groupLabel": null
             }
           ]
@@ -224,6 +246,122 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Risotto is gluey",
+              "cause": "Over-stirred, or too much rice for the stock.",
+              "fix": "Stir less. The agitation releases starch — you want some, but not all of it. Add a splash more stock at the end to loosen."
+            },
+            {
+              "symptom": "Rice still has a hard core",
+              "cause": "Stock added too cold, or undercooked.",
+              "fix": "Keep the stock at a simmer in a separate pan while you cook. Add another ladle and keep going — the rice tells you when it's done."
+            },
+            {
+              "symptom": "Risotto is too soupy",
+              "cause": "Last addition of stock was too much.",
+              "fix": "Take the pan off the heat, beat in cold butter (mantecare), and let it stand for two minutes. It firms up as it rests."
+            },
+            {
+              "symptom": "Tastes bland",
+              "cause": "Stock was weak, or no finishing fat.",
+              "fix": "Beat in cold butter and a fistful of grated parmesan off the heat. The fat carries the flavour."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mushroom: add 30 g dried porcini soaked in warm water; use the soaking liquid as part of the stock."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Seafood: stir through cooked prawns and a handful of peas in the last two minutes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The dish sits in the Italian home-cooking tradition: a few good ingredients, a long unhurried cook, and a pan that has fed the family for years. Worth keeping its roots in mind when you taste — the silence between flavours is part of the design."
           }
         ]
       }

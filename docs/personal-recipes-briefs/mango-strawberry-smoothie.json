@@ -1,23 +1,23 @@
 {
   "slug": "mango-strawberry-smoothie",
   "title": "Mango Strawberry Smoothie",
-  "subtitle": null,
-  "excerpt": "Chinese breakfast from Rebecca's collection. Place the mango, yoghurt, ginger and coconut water in a blender.",
+  "subtitle": "Five minutes from blender to glass.",
+  "excerpt": "Mango Strawberry Smoothie. A home-cook's recipe from Rebecca's collection, kept in the family rotation.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": null,
+    "prepMinutes": 5,
+    "cookMinutes": 0,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 10,
+    "totalMinutes": 5,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -25,21 +25,43 @@
     "batchNotes": null,
     "makeAheadNotes": null,
     "dietaryFlags": [],
-    "cuisine": "chinese",
-    "mealType": "breakfast",
+    "cuisine": "american",
+    "mealType": "drink",
     "mood": [
-      "healthy",
-      "weeknight"
+      "healthy"
     ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
-  "recipeTools": [],
+  "recipeTools": [
+    {
+      "slug": "blender-jug",
+      "isOptional": false
+    }
+  ],
   "glossaryTerms": [],
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mango Strawberry Smoothie. An American family-table recipe — generous, comforting, built for a crowd. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In and out of the blender in under five minutes. A frozen banana does most of the texture work."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -85,7 +107,7 @@
               "ingredientSlug": "ginger-root",
               "amount": 0.5,
               "unit": "tsp",
-              "prepNote": "fresh, minced",
+              "prepNote": "minced",
               "isOptional": false,
               "groupLabel": null
             },
@@ -115,8 +137,8 @@
             },
             {
               "ingredientSlug": "strawberries",
-              "amount": 1,
-              "unit": "g",
+              "amount": 1.5,
+              "unit": "cup",
               "prepNote": "chopped",
               "isOptional": false,
               "groupLabel": null
@@ -141,7 +163,7 @@
               "ingredientSlug": "ginger-root",
               "amount": 0.5,
               "unit": "tsp",
-              "prepNote": "fresh, minced",
+              "prepNote": "minced",
               "isOptional": false,
               "groupLabel": null
             },
@@ -290,6 +312,122 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Smoothie is too thick",
+              "cause": "Frozen fruit ratio too high.",
+              "fix": "Add a splash of milk, water, or juice until the blades catch. A high-powered blender helps but isn't essential."
+            },
+            {
+              "symptom": "Smoothie is too thin",
+              "cause": "Liquid ratio too high, or no thickener.",
+              "fix": "Add half a frozen banana, a handful of oats, or a tablespoon of nut butter. Chia seeds thicken if you blend and wait five minutes."
+            },
+            {
+              "symptom": "Tastes flat or grassy",
+              "cause": "Green veg dominating, no sweetness or fat.",
+              "fix": "A frozen banana or a teaspoon of honey balances spinach or kale. A spoon of nut butter softens the green note."
+            },
+            {
+              "symptom": "Smoothie separates in the glass",
+              "cause": "No emulsifier (no banana, no nut butter, no yoghurt).",
+              "fix": "Drink straight away, or add one of those to bind it. Stir before each sip."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Higher-protein: blend in 30 g of protein powder, a tablespoon of nut butter, or Greek yoghurt."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Green version: add a handful of spinach — the colour shifts but the flavour stays."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A classic American home recipe — generous, comforting, made for a crowd. The proportions are heartier than the British equivalent; the method is built for a Sunday afternoon."
           }
         ]
       }

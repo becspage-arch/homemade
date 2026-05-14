@@ -1,26 +1,26 @@
 {
   "slug": "spaghetti-bolognaise",
   "title": "Spaghetti Bolognaise",
-  "subtitle": null,
-  "excerpt": "Italian dinner from Rebecca's collection. On a chopping board, peel and finely chop the onions, garlic and carrots, then trim and finely chop the celery.",
+  "subtitle": "A pasta dish for any night of the week.",
+  "excerpt": "Spaghetti Bolognaise. A weeknight pasta — sauce in one pan, pasta in another, finished together.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook. The bones of the recipe sit in the Italian home-cooking tradition documented by writers like Pellegrino Artusi (La Scienza in Cucina, 1891) and Marcella Hazan.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 60,
+    "prepMinutes": 15,
+    "cookMinutes": 98,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 70,
+    "totalMinutes": 113,
     "scalable": true,
     "freezable": true,
-    "freezeNotes": null,
+    "freezeNotes": "Freeze the sauce only, not the cooked pasta. Cool, portion, freeze for up to three months.",
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": null,
@@ -28,7 +28,7 @@
     "cuisine": "italian",
     "mealType": "dinner",
     "mood": [
-      "weeknight",
+      "comfortFood",
       "freezerFriendly"
     ],
     "temperatureCelsius": null,
@@ -37,11 +37,7 @@
   },
   "recipeTools": [
     {
-      "slug": "small-saucepan",
-      "isOptional": false
-    },
-    {
-      "slug": "stockpot",
+      "slug": "microplane",
       "isOptional": false
     },
     {
@@ -49,7 +45,15 @@
       "isOptional": false
     },
     {
-      "slug": "microplane",
+      "slug": "ladle",
+      "isOptional": false
+    },
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
       "isOptional": false
     },
     {
@@ -65,6 +69,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Spaghetti Bolognaise. The dish belongs to the Italian home-cooking register: straightforward, ingredient-led, calm at the hob. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pasta in a pan, sauce in another. The trick is the meeting — the noodles finish in the sauce, holding the starchy water that binds the two."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -109,7 +131,7 @@
             {
               "ingredientSlug": "celery",
               "amount": 3,
-              "unit": "stick",
+              "unit": "each",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
@@ -118,14 +140,14 @@
               "ingredientSlug": "rosemary",
               "amount": 2,
               "unit": "sprig",
-              "prepNote": "fresh",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
             {
               "ingredientSlug": "streaky-bacon",
               "amount": 2,
-              "unit": "rasher",
+              "unit": "each",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
@@ -147,9 +169,9 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "tomato",
+              "ingredientSlug": "tinned-tomatoes",
               "amount": 1,
-              "unit": "each",
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
@@ -163,7 +185,7 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "red-wine-vinegar",
+              "ingredientSlug": "balsamic-vinegar",
               "amount": 1,
               "unit": "tbsp",
               "prepNote": null,
@@ -174,15 +196,15 @@
               "ingredientSlug": "bay-leaves",
               "amount": 3,
               "unit": "leaf",
-              "prepNote": "fresh",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
             {
-              "ingredientSlug": "stock-beef",
+              "ingredientSlug": "stock-cube",
               "amount": 1,
-              "unit": "ml",
-              "prepNote": "organic",
+              "unit": "each",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -206,7 +228,7 @@
               "ingredientSlug": "pasta-dried",
               "amount": 500,
               "unit": "g",
-              "prepNote": "dried",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             }
@@ -479,7 +501,53 @@
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Sauce won't cling to the pasta",
+              "cause": "Pasta drained too thoroughly, or sauce too thin.",
+              "fix": "Reserve a ladle of starchy cooking water before draining. Toss it through with the pasta and sauce in the pan over heat — the starch binds everything."
+            },
+            {
+              "symptom": "Pasta is gummy",
+              "cause": "Overcooked, or sat in water after draining.",
+              "fix": "Cook a minute less than the packet says, drain, and finish in the sauce. Time it so the pasta meets the sauce in the pan, not the colander."
+            },
+            {
+              "symptom": "Cheese clumps when stirred in",
+              "cause": "Pan too hot, or cheese added all at once.",
+              "fix": "Lower the heat first. Add the cheese a small handful at a time, stirring continuously, with a splash of pasta water to keep the sauce loose."
+            },
+            {
+              "symptom": "Sauce tastes sharp or thin",
+              "cause": "Tomato or wine hasn't cooked down long enough.",
+              "fix": "Give the sauce another ten to fifteen minutes at a low simmer. A pinch of sugar softens an acidic tomato base."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
           {
             "type": "listItem",
             "content": [
@@ -488,7 +556,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Spaghetti Carbonara"
+                    "text": "Vegetarian: drop the meat and add 200 g mushrooms (chestnut or porcini) sautéed until they squeak."
                   }
                 ]
               }
@@ -502,179 +570,53 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Ingredients:"
+                    "text": "Lighter sauce: replace cream with crème fraîche stirred in off the heat — same richness, less weight."
                   }
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "250g spaghetti"
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "butter"
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "The sauce reheats well the next day; cook the pasta fresh."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 shallot , finely chopped"
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "2 garlic cloves , finely chopped"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "6 rashers of streaky bacon , chopped"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "2 eggs"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "142ml carton single cream"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "25g Parmesan , finely grated"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Method:"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Boil a large pan of water and cook the pasta following the packet instructions. Meanwhile, heat a knob of butter in a small frying pan and cook the shallot, garlic and bacon for 5-7 minutes until golden. Beat together the eggs, cream, most of the Parmesan and plenty of ground black pepper."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Drain the spaghetti and return to the pan, off the heat. Add the shallot and egg mixtures and toss together until the pasta is evenly coated. Divide between two bowls then scatter the rest of the Parmesan over, with a grinding of black pepper to serve."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Spinach Quiche"
-                  }
-                ]
-              }
-            ]
+            "type": "text",
+            "text": "The dish sits in the Italian home-cooking tradition: a few good ingredients, a long unhurried cook, and a pan that has fed the family for years. Worth keeping its roots in mind when you taste — the silence between flavours is part of the design."
           }
         ]
       }

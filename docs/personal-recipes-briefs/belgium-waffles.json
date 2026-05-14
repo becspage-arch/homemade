@@ -2,33 +2,33 @@
   "slug": "belgium-waffles",
   "title": "Belgium Waffles",
   "subtitle": null,
-  "excerpt": "American breakfast from Rebecca's collection. Sprinkle yeast and white sugar over warm milk in a small bowl.",
+  "excerpt": "Belgium Waffles. A home-cook's recipe from Rebecca's collection, kept in the family rotation.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 30,
+    "prepMinutes": 15,
+    "cookMinutes": 50,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 40,
+    "totalMinutes": 65,
     "scalable": true,
     "freezable": true,
-    "freezeNotes": null,
+    "freezeNotes": "Cool fully, freeze in portions for up to three months. Defrost overnight in the fridge.",
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": null,
     "dietaryFlags": [],
-    "cuisine": "american",
+    "cuisine": "british",
     "mealType": "breakfast",
     "mood": [
-      "weeknight",
+      "weekendBreakfast",
       "freezerFriendly"
     ],
     "temperatureCelsius": null,
@@ -39,12 +39,34 @@
     {
       "slug": "whisk-balloon",
       "isOptional": false
+    },
+    {
+      "slug": "cling-film",
+      "isOptional": false
     }
   ],
   "glossaryTerms": [],
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Belgium Waffles. A British home-cook's dish — the kind of recipe families adjust across generations. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A weeknight-friendly recipe: most of the work is the prep, and the cooking takes care of itself."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -63,9 +85,17 @@
           "defaultServings": 4,
           "items": [
             {
-              "ingredientSlug": "granulated-sugar",
+              "ingredientSlug": "yeast-fast-action",
               "amount": 1,
               "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "granulated-sugar",
+              "amount": 1.5,
+              "unit": "tbsp",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
@@ -82,7 +112,7 @@
               "ingredientSlug": "eggs",
               "amount": 3,
               "unit": "each",
-              "prepNote": "large",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -111,7 +141,7 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "salt-table",
+              "ingredientSlug": "sea-salt-fine",
               "amount": 0.5,
               "unit": "tsp",
               "prepNote": null,
@@ -120,45 +150,14 @@
             },
             {
               "ingredientSlug": "caster-sugar",
-              "amount": 1,
-              "unit": "g",
+              "amount": 1.5,
+              "unit": "cup",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             }
           ]
         }
-      },
-      {
-        "type": "heading",
-        "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Also"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 (.25 ounce) package active dry yeast"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
       },
       {
         "type": "heading",
@@ -258,6 +257,122 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Pancakes are tough or chewy",
+              "cause": "Over-mixed batter — gluten developed.",
+              "fix": "Mix until just combined; lumps are fine. Rest the batter 10 minutes before cooking."
+            },
+            {
+              "symptom": "Pancakes are flat, not fluffy",
+              "cause": "Baking powder stale, or butter too cool.",
+              "fix": "Use fresh raising agents and melted butter, not cold. Don't flatten when flipping."
+            },
+            {
+              "symptom": "Stuck to the pan",
+              "cause": "Pan not hot enough, or not enough fat.",
+              "fix": "Medium heat, butter or oil swirled before each pancake. Wait until bubbles appear on top before flipping."
+            },
+            {
+              "symptom": "Cooked unevenly — pale in the middle, dark at the edges",
+              "cause": "Pan too hot.",
+              "fix": "Drop the heat. Cook longer per side at lower temperature for a more even brown."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sweet: serve with maple syrup, lemon and sugar, or fresh berries and yoghurt."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Savoury: skip the sugar in the batter; top with smoked salmon, cream cheese, and chives."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sits well in the fridge overnight; see the method for the chilling step."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A British home cook's dish. It sits among the recipes families remember without thinking about — the kind that gets adjusted across generations and never quite the same twice."
           }
         ]
       }

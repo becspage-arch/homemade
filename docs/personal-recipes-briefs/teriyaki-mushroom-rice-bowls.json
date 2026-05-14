@@ -2,22 +2,22 @@
   "slug": "teriyaki-mushroom-rice-bowls",
   "title": "Teriyaki Mushroom Rice Bowls",
   "subtitle": null,
-  "excerpt": "Italian dinner from Rebecca's collection. Start with preparing the rice according to package instructions.",
+  "excerpt": "Teriyaki Mushroom Rice Bowls. A home-cook's recipe from Rebecca's collection, kept in the family rotation.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 120,
+    "prepMinutes": 15,
+    "cookMinutes": 305,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 130,
+    "totalMinutes": 320,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -25,28 +25,22 @@
     "batchNotes": null,
     "makeAheadNotes": null,
     "dietaryFlags": [],
-    "cuisine": "italian",
+    "cuisine": "japanese",
     "mealType": "dinner",
     "mood": [
-      "weeknight",
-      "comfortFood",
-      "party"
+      "weeknight"
     ],
-    "temperatureCelsius": 220,
+    "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
     {
+      "slug": "oven",
+      "isOptional": false
+    },
+    {
       "slug": "food-processor",
-      "isOptional": false
-    },
-    {
-      "slug": "small-saucepan",
-      "isOptional": false
-    },
-    {
-      "slug": "mixing-bowl-medium",
       "isOptional": false
     },
     {
@@ -54,7 +48,23 @@
       "isOptional": false
     },
     {
-      "slug": "oven",
+      "slug": "baking-tray",
+      "isOptional": false
+    },
+    {
+      "slug": "small-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    },
+    {
+      "slug": "foil",
       "isOptional": false
     }
   ],
@@ -62,6 +72,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Teriyaki Mushroom Rice Bowls. Japanese home cooking that trusts the soy, the dashi, and the patience between them. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A weeknight-friendly recipe: most of the work is the prep, and the cooking takes care of itself."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -80,7 +108,7 @@
           "defaultServings": 4,
           "items": [
             {
-              "ingredientSlug": "basmati-rice",
+              "ingredientSlug": "long-grain-rice",
               "amount": 1,
               "unit": "cup",
               "prepNote": null,
@@ -91,7 +119,7 @@
               "ingredientSlug": "mushrooms-portobello",
               "amount": 6,
               "unit": "each",
-              "prepNote": "big",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -120,7 +148,7 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "light-brown-sugar",
+              "ingredientSlug": "caster-sugar",
               "amount": 1,
               "unit": "tbsp",
               "prepNote": null,
@@ -180,42 +208,19 @@
               "amount": null,
               "unit": "g",
               "prepNote": null,
-              "isOptional": true,
+              "isOptional": false,
               "groupLabel": null
             }
           ]
         }
       },
       {
-        "type": "heading",
+        "type": "infoPanel",
         "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Also"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 tbsp miso paste"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+          "tone": "info",
+          "title": "Also",
+          "body": "1 tbsp miso paste."
+        }
       },
       {
         "type": "heading",
@@ -805,7 +810,53 @@
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "The dish tastes flat",
+              "cause": "Underseasoned or no acid.",
+              "fix": "Salt a pinch at a time, tasting. A squeeze of lemon or splash of vinegar at the end lifts most savoury dishes."
+            },
+            {
+              "symptom": "It's overcooked by the time it reaches the table",
+              "cause": "Carryover cooking — food keeps cooking on the hot pan after the heat goes off.",
+              "fix": "Pull off the heat a minute or two before you think it's done. Plate straight away, or transfer to a warmed serving dish."
+            },
+            {
+              "symptom": "It's undercooked in the middle",
+              "cause": "Heat too high, browned the outside before the middle warmed through.",
+              "fix": "Drop the heat and give it longer. A probe thermometer is the only reliable check for meat."
+            },
+            {
+              "symptom": "The leftovers were dry",
+              "cause": "Reheated uncovered, or no liquid in the pan.",
+              "fix": "Reheat covered with a splash of stock or water, on a low heat. Microwave on 60% power if using one — gentler than full blast."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
           {
             "type": "listItem",
             "content": [
@@ -814,7 +865,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "http://www.jamieoliver.com/recipes/meat-recipes/turkey-wellington"
+                    "text": "Vegetarian swap: replace meat with mushrooms, lentils, or beans — adjust seasoning to compensate."
                   }
                 ]
               }
@@ -828,459 +879,53 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Ultimate (Dairy-Free) Spaghetti Carbonara"
+                    "text": "Spice version: a pinch of chilli flakes or cracked black pepper at the end shifts the dish without losing its character."
                   }
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Ingredients:"
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "3/4 cup raw cashews"
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 cup hot water"
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "4 tbsp nutritional yeast"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 tbsp dijon mustard"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "2 tsp onion powder"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1/2 tsp garlic powder"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1/8 tsp turmeric (optional, for colour)"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1/4 tsp Kala Namak black salt (or to taste)"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "100g pancetta or bacon"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "350g spaghetti"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Directions"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Rinse the cashews"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Add them to a powerful blender together with the hot water, nutritional yeast, mustard, garlic, turmeric, onion powder and black salt."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Allow to soak for 20 minutes then process until completely smooth. Set your sauce aside until needed!"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Cook bacon or pancetta until crisp"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Meanwhile, boil the spaghetti until al dente."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Drain and add to a large mixing bowl together with the Carbonara sauce, half of the cooked bacon and half of the parsley."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Give everything a good toss to coat and adjust seasonings."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "If you prefer your Carbonara with a little tang this is the time to hit it with a squeeze of lemon. I prefer it without but you are the boss of your kitchen."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Divide between bowls and serve sprinkled with the reserved bacon, parsley and freshly cracked black pepper."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Vanessa’s Quiche"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Ingredients:"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "4 eggs"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "4 tablespoons milk"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Filling – eg spinach, ham, spring onion"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Grated cheese"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Puff pastry"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Method:"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Assemble"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Bake at 180 (gas 5) for 15mins."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Lower temperature to 150 (gas 4) for a further 15mins."
-                  }
-                ]
-              }
-            ]
+            "type": "text",
+            "text": "Japanese home cooking trusts the ingredient. Dashi, soy, mirin, sake — used in restraint, never to dominate. The dish belongs to that quiet tradition."
           }
         ]
       }

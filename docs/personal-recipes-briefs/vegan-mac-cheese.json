@@ -2,22 +2,22 @@
   "slug": "vegan-mac-cheese",
   "title": "Vegan Mac & Cheese",
   "subtitle": null,
-  "excerpt": "Indian dinner from Rebecca's collection. Add the vegan butter to a pot and let it melt.",
+  "excerpt": "Vegan Mac & Cheese. A home-cook's recipe from Rebecca's collection, kept in the family rotation.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
+    "prepMinutes": 15,
     "cookMinutes": 20,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 30,
+    "totalMinutes": 35,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -25,23 +25,18 @@
     "batchNotes": null,
     "makeAheadNotes": null,
     "dietaryFlags": [],
-    "cuisine": "indian",
+    "cuisine": "british",
     "mealType": "dinner",
     "mood": [
-      "weeknight",
-      "comfortFood"
+      "weeknight"
     ],
-    "temperatureCelsius": 200,
+    "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
     {
-      "slug": "small-saucepan",
-      "isOptional": false
-    },
-    {
-      "slug": "mixing-bowl-medium",
+      "slug": "oven",
       "isOptional": false
     },
     {
@@ -49,15 +44,11 @@
       "isOptional": false
     },
     {
-      "slug": "sieve",
+      "slug": "blender-jug",
       "isOptional": false
     },
     {
-      "slug": "rolling-pin",
-      "isOptional": false
-    },
-    {
-      "slug": "oven",
+      "slug": "mixing-bowl-medium",
       "isOptional": false
     }
   ],
@@ -65,6 +56,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Vegan Mac & Cheese. A British home-cook's dish — the kind of recipe families adjust across generations. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A weeknight-friendly recipe: most of the work is the prep, and the cooking takes care of itself."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -83,10 +92,10 @@
           "defaultServings": 4,
           "items": [
             {
-              "ingredientSlug": "salted-butter",
+              "ingredientSlug": "unsalted-butter",
               "amount": 0.5,
               "unit": "cup",
-              "prepNote": "112g",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the Cheese Sauce"
             },
@@ -110,7 +119,7 @@
               "ingredientSlug": "stock-vegetable",
               "amount": 1,
               "unit": "cup",
-              "prepNote": "240ml",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the Cheese Sauce"
             },
@@ -123,7 +132,15 @@
               "groupLabel": "For the Cheese Sauce"
             },
             {
-              "ingredientSlug": "onion",
+              "ingredientSlug": "nutritional-yeast",
+              "amount": 1,
+              "unit": "cup",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the Cheese Sauce"
+            },
+            {
+              "ingredientSlug": "onion-powder",
               "amount": 3,
               "unit": "tsp",
               "prepNote": null,
@@ -131,7 +148,7 @@
               "groupLabel": "For the Cheese Sauce"
             },
             {
-              "ingredientSlug": "garlic",
+              "ingredientSlug": "garlic-powder",
               "amount": 3,
               "unit": "tsp",
               "prepNote": null,
@@ -140,46 +157,38 @@
             },
             {
               "ingredientSlug": "paprika-smoked",
-              "amount": 1,
+              "amount": 1.5,
               "unit": "tsp",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the Cheese Sauce"
             },
             {
-              "ingredientSlug": "salt-table",
-              "amount": 1,
-              "unit": "g",
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1.5,
+              "unit": "tsp",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the Cheese Sauce"
             },
             {
               "ingredientSlug": "black-pepper",
-              "amount": 1,
+              "amount": 1.5,
               "unit": "tsp",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the Cheese Sauce"
             },
             {
-              "ingredientSlug": "pasta-dried",
-              "amount": 16,
-              "unit": "oz",
-              "prepNote": "450g",
-              "isOptional": false,
-              "groupLabel": "For the Macaroni"
-            },
-            {
-              "ingredientSlug": "panko",
+              "ingredientSlug": "bread",
               "amount": 3,
-              "unit": "g",
+              "unit": "slice",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the Breadcrumb Topping"
             },
             {
-              "ingredientSlug": "salted-butter",
+              "ingredientSlug": "unsalted-butter",
               "amount": 2,
               "unit": "tbsp",
               "prepNote": "Melted",
@@ -190,35 +199,12 @@
         }
       },
       {
-        "type": "heading",
+        "type": "infoPanel",
         "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Also"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 cup Nutritional Yeast Flakes (60g)"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+          "tone": "info",
+          "title": "Also",
+          "body": "16 ounces Elbow Macaroni (450g)."
+        }
       },
       {
         "type": "heading",
@@ -388,7 +374,53 @@
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "The dish tastes flat",
+              "cause": "Underseasoned or no acid.",
+              "fix": "Salt a pinch at a time, tasting. A squeeze of lemon or splash of vinegar at the end lifts most savoury dishes."
+            },
+            {
+              "symptom": "It's overcooked by the time it reaches the table",
+              "cause": "Carryover cooking — food keeps cooking on the hot pan after the heat goes off.",
+              "fix": "Pull off the heat a minute or two before you think it's done. Plate straight away, or transfer to a warmed serving dish."
+            },
+            {
+              "symptom": "It's undercooked in the middle",
+              "cause": "Heat too high, browned the outside before the middle warmed through.",
+              "fix": "Drop the heat and give it longer. A probe thermometer is the only reliable check for meat."
+            },
+            {
+              "symptom": "The leftovers were dry",
+              "cause": "Reheated uncovered, or no liquid in the pan.",
+              "fix": "Reheat covered with a splash of stock or water, on a low heat. Microwave on 60% power if using one — gentler than full blast."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
           {
             "type": "listItem",
             "content": [
@@ -397,7 +429,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Wagamamas Chicken Katsu Curry"
+                    "text": "Vegetarian swap: replace meat with mushrooms, lentils, or beans — adjust seasoning to compensate."
                   }
                 ]
               }
@@ -411,459 +443,53 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Ingredients (serves 2)"
+                    "text": "Spice version: a pinch of chilli flakes or cracked black pepper at the end shifts the dish without losing its character."
                   }
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "The Sauce"
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "2–3 tablespoons vegetable oil"
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 onion, finely chopped"
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 garlic clove, crushed"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "2.5cm piece of ginger, peeled + grated"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 teaspoon turmeric"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "2 heaped tablespoons mild curry powder"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 tablespoon plain flour"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "300ml chicken or veg stock"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "100ml coconut milk"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 teaspoon light soy sauce"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 teaspoon sugar, to taste"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "The Dish"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "120g rice (any rice will do!)"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 quantity katsu curry sauce"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "2 skinless chicken breasts"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "50g plain flour"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "2 eggs, lightly beaten"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "100g panko breadcrumbs"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "75ml vegetable oil, for deep-frying"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "40g mixed salad leaves"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Directions"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Place the oil in a saucepan over a medium heat, and add the chopped onion, garlic and ginger and cook until softened."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Lower the heat, add the spices and cook for 2¿3 minutes while stirring"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Add the flour and stir over the heat, then slowly add stock"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Bring to a simmer and add the coconut milk, soy sauce and sugar, to taste."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Sieve the mixture for a smooth sauce"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Cut each chicken breast in half and open it out like a book, then put under cling film and flatten out with a rolling pin until it's about 1cm thick. Then place flour, eggs and breadcrumbs in three separate bowls and dip each chicken breast first in flour, then egg and then breadcrumbs"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Place the oil on a medium-high heat. Fry one coated breast at a time for 3¿4 minutes on each side then transfer to a plate lined with baking paper"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Spoon a portion of rice, cooked to packet instructions, onto two serving plates."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Slice the deep-fried chicken breasts into strips at an angle and arrange on top of the rice."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Ladle the curry sauce over the chicken and rice and place the salad on the side with a drizzle of dressing"
-                  }
-                ]
-              }
-            ]
+            "type": "text",
+            "text": "A British home cook's dish. It sits among the recipes families remember without thinking about — the kind that gets adjusted across generations and never quite the same twice."
           }
         ]
       }

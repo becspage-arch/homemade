@@ -1,23 +1,23 @@
 {
   "slug": "boozy-bailey-s-cheesecake",
   "title": "Boozy Bailey’s Cheesecake",
-  "subtitle": null,
-  "excerpt": "dessert from Rebecca's collection. Roughly break the Oreo biscuits into a food processor.",
+  "subtitle": "A cake worth the weighing.",
+  "excerpt": "Boozy Bailey’s Cheesecake. A baking recipe from Rebecca's collection — straightforward, reliable, worth weighing rather than scooping.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 120,
+    "prepMinutes": 20,
+    "cookMinutes": 210,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 130,
+    "totalMinutes": 230,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -27,7 +27,9 @@
     "dietaryFlags": [],
     "cuisine": "british",
     "mealType": "dessert",
-    "mood": [],
+    "mood": [
+      "treat"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
@@ -38,7 +40,7 @@
       "isOptional": false
     },
     {
-      "slug": "small-saucepan",
+      "slug": "large-saucepan",
       "isOptional": false
     }
   ],
@@ -46,6 +48,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Boozy Bailey’s Cheesecake. A British home-cook's dish — the kind of recipe families adjust across generations. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cake batters reward weighing over scooping. Room-temperature butter and eggs, raised properly, tested with a skewer."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -63,6 +83,14 @@
         "attrs": {
           "defaultServings": 4,
           "items": [
+            {
+              "ingredientSlug": "oreo-biscuit",
+              "amount": 1.5,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the crust"
+            },
             {
               "ingredientSlug": "salted-butter",
               "amount": null,
@@ -82,8 +110,16 @@
             {
               "ingredientSlug": "double-cream",
               "amount": 7,
-              "unit": "fl oz",
-              "prepNote": "whipped",
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "dark-chocolate",
+              "amount": 1,
+              "unit": "g",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the filling"
             },
@@ -96,60 +132,15 @@
               "groupLabel": "For the filling"
             },
             {
-              "ingredientSlug": "double-cream",
+              "ingredientSlug": "baileys",
               "amount": 2.7,
-              "unit": "fl oz",
+              "unit": "ml",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": "For the filling"
             }
           ]
         }
-      },
-      {
-        "type": "heading",
-        "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Also"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 1/2 packets (250g) Oreos"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1/3 cup (50g) grated chocolate, plus extra for topping"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
       },
       {
         "type": "heading",
@@ -235,6 +226,122 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Cake sinks in the middle",
+              "cause": "Underbaked, or the oven door opened too early.",
+              "fix": "Test with a skewer — it should come out with a few moist crumbs, not wet batter. Don't open the oven before three-quarters of the bake time."
+            },
+            {
+              "symptom": "Cake is dry",
+              "cause": "Overbaked, or too much flour measured by cup not weight.",
+              "fix": "Check at the minimum bake time and every five minutes after. Weigh flour for cake recipes — cup measures vary by 20% depending on how you scoop."
+            },
+            {
+              "symptom": "Top cracked or domed",
+              "cause": "Oven too hot, or batter too thick.",
+              "fix": "Drop the temperature by 10°C and check earlier. Domed cakes can be trimmed flat once cool."
+            },
+            {
+              "symptom": "Cake didn't rise",
+              "cause": "Raising agent stale or omitted, or butter and eggs cold.",
+              "fix": "Check baking powder is fresh — it loses lift after six months. Use room-temperature butter and eggs so the batter holds air."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Citrus version: replace the vanilla with the zest of an orange or lemon."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Nut-free: swap ground almonds for desiccated coconut or extra plain flour, weight for weight."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A British home cook's dish. It sits among the recipes families remember without thinking about — the kind that gets adjusted across generations and never quite the same twice."
           }
         ]
       }

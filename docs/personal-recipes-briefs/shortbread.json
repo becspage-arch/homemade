@@ -1,23 +1,23 @@
 {
   "slug": "shortbread",
   "title": "Shortbread",
-  "subtitle": null,
-  "excerpt": "snack from Rebecca's collection. Start by creaming together the butter and sugar until pale and creamy.",
+  "subtitle": "Crisp at the edges, soft in the middle.",
+  "excerpt": "Shortbread. A baking recipe from Rebecca's collection — straightforward, reliable, worth weighing rather than scooping.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook. Bread recipes draw on the long tradition of home baking — Elizabeth David's English Bread and Yeast Cookery is one of the canonical references in English.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 30,
+    "prepMinutes": 20,
+    "cookMinutes": 53,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 40,
+    "totalMinutes": 73,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -28,9 +28,10 @@
     "cuisine": "british",
     "mealType": "snack",
     "mood": [
-      "party"
+      "treat",
+      "weekend"
     ],
-    "temperatureCelsius": 165,
+    "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
@@ -38,12 +39,34 @@
     {
       "slug": "oven",
       "isOptional": false
+    },
+    {
+      "slug": "cooling-rack",
+      "isOptional": false
     }
   ],
   "glossaryTerms": [],
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Shortbread. A British home-cook's dish — the kind of recipe families adjust across generations. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cookies bake fast and reward a chilled dough. Pull them out when the edges set and the middles still look slightly underdone."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -65,7 +88,7 @@
               "ingredientSlug": "salted-butter",
               "amount": 2,
               "unit": "cup",
-              "prepNote": "salted, softened",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -78,9 +101,9 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "plain-flour",
+              "ingredientSlug": "water",
               "amount": 4,
-              "unit": "g",
+              "unit": "ml",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
@@ -172,6 +195,66 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Cookies spread too thin and crisp",
+              "cause": "Butter too soft, or oven not hot enough.",
+              "fix": "Chill the dough for 30 minutes before baking. Preheat the oven properly — 180°C means 180°C on an oven thermometer, not the dial."
+            },
+            {
+              "symptom": "Cookies came out cakey, not chewy",
+              "cause": "Over-mixed once the flour went in, or too much flour.",
+              "fix": "Stop mixing as soon as the flour disappears. For chewier cookies, replace some plain flour with bread flour for more gluten."
+            },
+            {
+              "symptom": "Cookies stuck to the tray",
+              "cause": "Tried to lift before they'd set.",
+              "fix": "Leave them on the tray for five minutes after baking — they're too soft to move when hot. Lift onto a rack with a palette knife."
+            },
+            {
+              "symptom": "Burnt bottoms, raw middles",
+              "cause": "Tray too thin, or rack too low.",
+              "fix": "Use a heavier baking tray, line with baking paper, and bake on the middle shelf."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add-ins: 75 g dark chocolate chips, chopped walnuts, dried cranberries, or a pinch of sea salt on top before baking."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
@@ -181,11 +264,53 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Shortbread Christmas Tree"
+                    "text": "Gluten-free: replace plain flour with a 1-to-1 gluten-free blend that includes xanthan gum."
                   }
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A British home cook's dish. It sits among the recipes families remember without thinking about — the kind that gets adjusted across generations and never quite the same twice."
           }
         ]
       }

@@ -1,25 +1,25 @@
 {
   "slug": "cinnamon-rolls",
   "title": "Cinnamon Rolls",
-  "subtitle": null,
-  "excerpt": "snack from Rebecca's collection. Cream all ingredients for filling.",
+  "subtitle": "Mostly waiting, mostly worth it.",
+  "excerpt": "Cinnamon Rolls. A home-cook's recipe from Rebecca's collection, kept in the family rotation.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook. Bread recipes draw on the long tradition of home baking — Elizabeth David's English Bread and Yeast Cookery is one of the canonical references in English.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 25,
+    "prepMinutes": 20,
+    "cookMinutes": 23,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 35,
+    "totalMinutes": 43,
     "scalable": true,
-    "freezable": true,
+    "freezable": false,
     "freezeNotes": null,
     "batchable": false,
     "batchNotes": null,
@@ -28,24 +28,23 @@
     "cuisine": "british",
     "mealType": "snack",
     "mood": [
-      "weeknight",
-      "freezerFriendly"
+      "weekend"
     ],
-    "temperatureCelsius": 220,
+    "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
     {
-      "slug": "food-processor",
-      "isOptional": false
-    },
-    {
       "slug": "whisk-balloon",
       "isOptional": false
     },
     {
-      "slug": "oven",
+      "slug": "food-processor",
+      "isOptional": false
+    },
+    {
+      "slug": "blender-jug",
       "isOptional": false
     }
   ],
@@ -53,6 +52,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cinnamon Rolls. A British home-cook's dish — the kind of recipe families adjust across generations. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bread is mostly waiting. Mix, prove, shape, prove again, bake hot with steam."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -72,16 +89,16 @@
           "items": [
             {
               "ingredientSlug": "salted-butter",
-              "amount": 0.16666666666666666,
-              "unit": "cup",
-              "prepNote": "softened",
+              "amount": 1,
+              "unit": "g",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": "Filling"
             },
             {
               "ingredientSlug": "cream-cheese",
-              "amount": 0.16666666666666666,
-              "unit": "cup",
+              "amount": 1,
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": "Filling"
@@ -127,7 +144,7 @@
               "groupLabel": "Filling"
             },
             {
-              "ingredientSlug": "salt-table",
+              "ingredientSlug": "sea-salt-fine",
               "amount": 0.5,
               "unit": "tsp",
               "prepNote": null,
@@ -152,17 +169,17 @@
             },
             {
               "ingredientSlug": "whole-milk",
-              "amount": 0.6666666666666666,
-              "unit": "cup",
+              "amount": 2,
+              "unit": "ml",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": "Filling"
             },
             {
-              "ingredientSlug": "caster-sugar",
-              "amount": 0.5,
-              "unit": "cup",
-              "prepNote": null,
+              "ingredientSlug": "icing-sugar",
+              "amount": 1,
+              "unit": "g",
+              "prepNote": "confectioners",
               "isOptional": false,
               "groupLabel": "Filling"
             },
@@ -178,49 +195,12 @@
         }
       },
       {
-        "type": "heading",
+        "type": "infoPanel",
         "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Also"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Rolls"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Icing (optional)"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+          "tone": "info",
+          "title": "Also",
+          "body": "Rolls."
+        }
       },
       {
         "type": "heading",
@@ -320,7 +300,53 @@
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Bread is dense and didn't rise",
+              "cause": "Yeast was stale, or the dough was too cold.",
+              "fix": "Check yeast in warm water with a pinch of sugar — it should froth in five minutes. Prove in a warm spot (airing cupboard or oven with the light on)."
+            },
+            {
+              "symptom": "Crust is pale and soft",
+              "cause": "Oven not hot enough, or no steam.",
+              "fix": "Preheat to 220°C with a tray on the bottom. Throw a cup of water into the tray when the loaf goes in — steam gives crust."
+            },
+            {
+              "symptom": "Open crumb wasn't open",
+              "cause": "Underproved, or the dough was knocked back too hard.",
+              "fix": "Give it longer — until the dough doesn't spring back when poked. Shape gently so the bubbles survive."
+            },
+            {
+              "symptom": "Bottom burnt before top browned",
+              "cause": "Tray was too thin, or rack too low.",
+              "fix": "Bake on a heavier tray on the middle shelf. Lining with baking paper helps."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
           {
             "type": "listItem",
             "content": [
@@ -329,7 +355,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Classic Scones With Jam & Clotted Cream"
+                    "text": "Seeded crust: brush the top with water and roll in mixed seeds before the final prove."
                   }
                 ]
               }
@@ -343,235 +369,53 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Ingredients:"
+                    "text": "Wholemeal: replace 100 g of the flour with wholemeal for a denser, nuttier loaf."
                   }
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "350g self-raising flour , plus more for dusting"
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "¼ tsp salt"
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 tsp baking powder"
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "85g butter , cut into cubes"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "3 tbsp caster sugar"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "175ml milk"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 tsp vanilla extract"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "squeeze lemon juice (see Know-how below)"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "beaten egg , to glaze"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "jam and clotted cream , to serve"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Method:"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Heat oven to 220C/fan 200C/gas 7. Tip the flour into a large bowl with the salt and baking powder, then mix. Add the butter, then rub in with your fingers until the mix looks like fine crumbs. Stir in the sugar."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Put the milk into a jug and heat in the microwave for about 30 secs until warm, but not hot. Add the vanilla and lemon juice, then set aside for a moment. Put a baking sheet in the oven."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Make a well in the dry mix, then add the liquid and combine it quickly with a cutlery knife - it will seem pretty wet at first. Scatter some flour onto the work surface and tip the dough out. Dredge the dough and your hands with a little more flour, then fold the dough over 2-3 times until it's a little smoother. Pat into a round about 4cm deep."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Take a 5cm cutter (smooth-edged cutters tend to cut more cleanly, giving a better rise) and dip it into some flour. Plunge into the dough, then repeat until you have four scones. By this point you'll probably need to press what's left of the dough back into a round to cut out another four. Brush the tops with beaten egg, then carefully place onto the hot baking tray."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Bake for 10 mins until risen and golden on the top. Eat just warm or cold on the day of baking, generously topped with jam and clotted cream. If freezing, freeze once cool. Defrost, then put in a low oven (about 160C/fan140C/gas 3) for a few mins to refresh."
-                  }
-                ]
-              }
-            ]
+            "type": "text",
+            "text": "A British home cook's dish. It sits among the recipes families remember without thinking about — the kind that gets adjusted across generations and never quite the same twice."
           }
         ]
       }

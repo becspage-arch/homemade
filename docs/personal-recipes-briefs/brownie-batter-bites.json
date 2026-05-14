@@ -1,23 +1,23 @@
 {
   "slug": "brownie-batter-bites",
   "title": "Brownie Batter Bites",
-  "subtitle": null,
-  "excerpt": "snack from Rebecca's collection. Mix together SunButter and maple syrup until smooth.",
+  "subtitle": "A thermometer pays for itself the first time.",
+  "excerpt": "Brownie Batter Bites. A baking recipe from Rebecca's collection — straightforward, reliable, worth weighing rather than scooping.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 20,
+    "prepMinutes": 15,
+    "cookMinutes": 25,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 30,
+    "totalMinutes": 40,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -25,10 +25,10 @@
     "batchNotes": null,
     "makeAheadNotes": null,
     "dietaryFlags": [],
-    "cuisine": "british",
+    "cuisine": "american",
     "mealType": "snack",
     "mood": [
-      "healthy"
+      "treat"
     ],
     "temperatureCelsius": null,
     "temperatureNote": null,
@@ -39,6 +39,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Brownie Batter Bites. An American family-table recipe — generous, comforting, built for a crowd. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cookies bake fast and reward a chilled dough. Pull them out when the edges set and the middles still look slightly underdone."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -56,6 +74,14 @@
         "attrs": {
           "defaultServings": 4,
           "items": [
+            {
+              "ingredientSlug": "peanut-butter",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": "seed butter or peanut butter",
+              "isOptional": false,
+              "groupLabel": null
+            },
             {
               "ingredientSlug": "cocoa-powder",
               "amount": 3,
@@ -82,59 +108,14 @@
             },
             {
               "ingredientSlug": "chocolate-chips",
-              "amount": 0.5,
-              "unit": "cup",
+              "amount": 1,
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             }
           ]
         }
-      },
-      {
-        "type": "heading",
-        "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Also"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "3/4 cup organic SunButter (seed butter or peanut butter)"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Optional: scoop of collagen peptides for additional protein"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
       },
       {
         "type": "heading",
@@ -192,6 +173,122 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Mixture won't set",
+              "cause": "Sugar didn't reach the right stage, or temperature was guessed.",
+              "fix": "Use a sugar thermometer. Stages: soft-ball 115°C, hard-ball 125°C, soft-crack 135°C, hard-crack 150°C. Cold-water tests work but the thermometer doesn't lie."
+            },
+            {
+              "symptom": "Sugar crystallised",
+              "cause": "Mixture stirred after it started bubbling, or a stray crystal landed on the side of the pan.",
+              "fix": "Don't stir once the sugar is dissolved. Brush the inside of the pan with a wet pastry brush to wash crystals down."
+            },
+            {
+              "symptom": "Fudge is grainy",
+              "cause": "Beaten too soon — while still too hot.",
+              "fix": "Cool to 43°C before beating. The mixture turns from glossy to matte when ready to set."
+            },
+            {
+              "symptom": "Mixture seized into a ball",
+              "cause": "Water touched melted chocolate.",
+              "fix": "Add a teaspoon of warm cream or water and stir until smooth — this is the trick. Drier seizing needs more liquid; thin seizing wants less."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Flavoured version: stir in a teaspoon of vanilla, almond, or peppermint extract once the mixture is off the heat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dip-coated: once set, dip pieces in melted dark chocolate and let drip on baking paper."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A classic American home recipe — generous, comforting, made for a crowd. The proportions are heartier than the British equivalent; the method is built for a Sunday afternoon."
           }
         ]
       }

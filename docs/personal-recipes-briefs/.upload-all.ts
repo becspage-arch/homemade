@@ -1,13 +1,10 @@
 /**
- * Upload all personal-recipe briefs as DRAFT.
- *
- * Iterates docs/personal-recipes-briefs/*.json, calls upload-tutorial.ts on each
- * with default flags (DRAFT, voice-check on). Captures the outcome per brief
- * into _upload-report.json so the markdown report can include voice-check
- * results, skips, and any failures.
+ * Upload all personal-recipe briefs as DRAFT. Invokes upload-tutorial.ts per
+ * brief via tsx (one process at a time). Captures stdout/stderr to a report
+ * file so failures can be diagnosed afterwards.
  */
 import { spawnSync } from 'node:child_process'
-import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
+import { readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { dirname, resolve, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -17,6 +14,7 @@ const __dirname = dirname(__filename)
 const BRIEFS_DIR = __dirname
 const REPO_ROOT = resolve(__dirname, '..', '..')
 const UPLOAD_SCRIPT = join(REPO_ROOT, 'packages', 'db', 'scripts', 'upload-tutorial.ts')
+const DB_DIR = join(REPO_ROOT, 'packages', 'db')
 
 interface UploadOutcome {
   slug: string
@@ -30,14 +28,6 @@ interface UploadOutcome {
   retried?: boolean
 }
 
-const briefFiles = readdirSync(BRIEFS_DIR)
-  .filter(f => f.endsWith('.json') && !f.startsWith('_'))
-  .sort()
-
-console.log(`Uploading ${briefFiles.length} briefs...\n`)
-
-const results: UploadOutcome[] = []
-
 function parseVoiceLines(stdout: string): { warnings: string[]; errors: string[] } {
   const warnings: string[] = []
   const errors: string[] = []
@@ -50,30 +40,35 @@ function parseVoiceLines(stdout: string): { warnings: string[]; errors: string[]
   return { warnings, errors }
 }
 
+const briefFiles = readdirSync(BRIEFS_DIR)
+  .filter((f) => f.endsWith('.json') && !f.startsWith('_') && !f.startsWith('.'))
+  .sort()
+
+console.log(`Uploading ${briefFiles.length} briefs...`)
+
+const results: UploadOutcome[] = []
 let createdCount = 0
 let updatedCount = 0
 let failedCount = 0
 let skippedCount = 0
 
-for (const f of briefFiles) {
-  const path = join(BRIEFS_DIR, f)
-  const slug = JSON.parse(readFileSync(path, 'utf8')).slug
+const startMs = Date.now()
 
-  // First attempt with voice-check on
+for (const f of briefFiles) {
+  const filePath = join(BRIEFS_DIR, f)
+  const slug = (JSON.parse(readFileSync(filePath, 'utf8')) as { slug: string }).slug
+
+  // Spawn tsx directly (avoids pnpm wrapper overhead).
+  // tsx lives in packages/db/node_modules; call it via node_modules/.bin path.
+  const tsxBin = join(REPO_ROOT, 'packages', 'db', 'node_modules', '.bin', process.platform === 'win32' ? 'tsx.CMD' : 'tsx')
   const result = spawnSync(
-    'pnpm',
-    ['--filter', '@homemade/db', 'exec', 'tsx', UPLOAD_SCRIPT, path],
-    {
-      cwd: REPO_ROOT,
-      stdio: 'pipe',
-      encoding: 'utf8',
-      shell: true,
-      timeout: 90_000,
-    },
+    tsxBin,
+    [UPLOAD_SCRIPT, filePath],
+    { cwd: DB_DIR, encoding: 'utf8', shell: process.platform === 'win32', timeout: 180_000 },
   )
 
-  const stdout = result.stdout || ''
-  const stderr = result.stderr || ''
+  const stdout = result.stdout ?? ''
+  const stderr = result.stderr ?? ''
   const combined = stdout + '\n' + stderr
   const { warnings, errors } = parseVoiceLines(combined)
 
@@ -81,8 +76,9 @@ for (const f of briefFiles) {
     const tutorialMatch = stdout.match(/Tutorial id:\s+(\S+)/)
     const modeMatch = stdout.match(/\[upload-tutorial\] (CREATED|UPDATED)/)
     const created = modeMatch?.[1] === 'CREATED'
-    if (created) createdCount++; else updatedCount++
-    const outcome: UploadOutcome = {
+    if (created) createdCount++
+    else updatedCount++
+    results.push({
       slug,
       brief: f,
       status: created ? 'created' : 'updated',
@@ -91,29 +87,24 @@ for (const f of briefFiles) {
       voiceErrors: [],
       message: `${modeMatch?.[1] ?? 'OK'}`,
       tutorialId: tutorialMatch?.[1],
-    }
-    results.push(outcome)
-    console.log(`  [${results.length}/${briefFiles.length}] ${created ? 'CREATED' : 'UPDATED'}  ${slug}${warnings.length > 0 ? ` (${warnings.length} warns)` : ''}`)
+    })
+    const elapsedS = ((Date.now() - startMs) / 1000).toFixed(0)
+    console.log(`  [${results.length}/${briefFiles.length}] (${elapsedS}s) ${created ? 'CREATED' : 'UPDATED'}  ${slug}${warnings.length > 0 ? ` (${warnings.length} warns)` : ''}`)
   } else if (result.status === 2) {
-    // Voice-check error. Per the prompt: log it, retry with --skip-voice-check.
+    // Voice-check error. Retry with --skip-voice-check.
     console.log(`  [${results.length + 1}/${briefFiles.length}] VOICE-CHECK BLOCKED  ${slug} — retrying with --skip-voice-check`)
     const retry = spawnSync(
-      'pnpm',
-      ['--filter', '@homemade/db', 'exec', 'tsx', UPLOAD_SCRIPT, path, '--skip-voice-check'],
-      {
-        cwd: REPO_ROOT,
-        stdio: 'pipe',
-        encoding: 'utf8',
-        shell: true,
-        timeout: 90_000,
-      },
+      tsxBin,
+      [UPLOAD_SCRIPT, filePath, '--skip-voice-check'],
+      { cwd: DB_DIR, encoding: 'utf8', shell: process.platform === 'win32', timeout: 180_000 },
     )
-    const rstdout = retry.stdout || ''
+    const rstdout = retry.stdout ?? ''
     if (retry.status === 0) {
       const tutorialMatch = rstdout.match(/Tutorial id:\s+(\S+)/)
       const modeMatch = rstdout.match(/\[upload-tutorial\] (CREATED|UPDATED)/)
       const created = modeMatch?.[1] === 'CREATED'
-      if (created) createdCount++; else updatedCount++
+      if (created) createdCount++
+      else updatedCount++
       skippedCount++
       results.push({
         slug,
@@ -122,7 +113,7 @@ for (const f of briefFiles) {
         voiceCheckResult: 'errors',
         voiceWarnings: warnings,
         voiceErrors: errors,
-        message: `landed with --skip-voice-check (voice rules tripped on Rebecca's prose; flagged for her review, not rewritten)`,
+        message: 'landed with --skip-voice-check',
         tutorialId: tutorialMatch?.[1],
         retried: true,
       })
@@ -136,12 +127,13 @@ for (const f of briefFiles) {
         voiceCheckResult: 'errors',
         voiceWarnings: warnings,
         voiceErrors: errors,
-        message: `upload still failed after --skip-voice-check: ${retry.stderr?.slice(0, 200)}`,
+        message: `upload still failed after --skip-voice-check: ${(retry.stderr ?? '').slice(0, 400)}`,
       })
       console.log(`     RETRY FAILED  ${slug}`)
     }
   } else {
     failedCount++
+    const msg = stderr.slice(0, 400) || stdout.slice(-400) || `exit code ${result.status}, signal ${result.signal}, error ${result.error}`
     results.push({
       slug,
       brief: f,
@@ -149,9 +141,9 @@ for (const f of briefFiles) {
       voiceCheckResult: 'unknown',
       voiceWarnings: warnings,
       voiceErrors: errors,
-      message: stderr.slice(0, 300) || 'unknown error',
+      message: msg,
     })
-    console.log(`  [${results.length}/${briefFiles.length}] FAILED  ${slug} — ${stderr.slice(0, 80)}`)
+    console.log(`  [${results.length}/${briefFiles.length}] FAILED  ${slug} — ${msg.slice(0, 100)}`)
   }
 }
 
@@ -162,4 +154,4 @@ console.log(`  Failed:  ${failedCount}`)
 console.log(`  --skip-voice-check used on: ${skippedCount}`)
 
 writeFileSync(join(BRIEFS_DIR, '_upload-report.json'), JSON.stringify(results, null, 2))
-console.log(`\nWrote _upload-report.json`)
+console.log(`Wrote _upload-report.json`)

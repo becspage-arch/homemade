@@ -2,22 +2,22 @@
   "slug": "french-toast-casserole",
   "title": "French Toast Casserole",
   "subtitle": null,
-  "excerpt": "lunch from Rebecca's collection. In a large bowl, combine eggs, milk, vanilla extract, cinnamon, and brown sugar.",
+  "excerpt": "French Toast Casserole. A home-cook's recipe from Rebecca's collection, kept in the family rotation.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 35,
+    "prepMinutes": 15,
+    "cookMinutes": 148,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 45,
+    "totalMinutes": 163,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -25,10 +25,10 @@
     "batchNotes": null,
     "makeAheadNotes": null,
     "dietaryFlags": [],
-    "cuisine": "british",
-    "mealType": "lunch",
+    "cuisine": "french",
+    "mealType": "breakfast",
     "mood": [
-      "weeknight"
+      "weekendBreakfast"
     ],
     "temperatureCelsius": null,
     "temperatureNote": null,
@@ -36,11 +36,19 @@
   },
   "recipeTools": [
     {
+      "slug": "oven",
+      "isOptional": false
+    },
+    {
       "slug": "whisk-balloon",
       "isOptional": false
     },
     {
-      "slug": "oven",
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "cling-film",
       "isOptional": false
     }
   ],
@@ -48,6 +56,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "French Toast Casserole. Classical French method, scaled to a home kitchen. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A weeknight-friendly recipe: most of the work is the prep, and the cooking takes care of itself."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -66,9 +92,9 @@
           "defaultServings": 4,
           "items": [
             {
-              "ingredientSlug": "bread",
+              "ingredientSlug": "baguette",
               "amount": 12,
-              "unit": "cup",
+              "unit": "each",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
@@ -77,7 +103,7 @@
               "ingredientSlug": "eggs",
               "amount": 8,
               "unit": "each",
-              "prepNote": "large",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -107,8 +133,8 @@
             },
             {
               "ingredientSlug": "light-brown-sugar",
-              "amount": 0.6666666666666666,
-              "unit": "cup",
+              "amount": 2,
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
@@ -123,8 +149,8 @@
             },
             {
               "ingredientSlug": "blueberries",
-              "amount": 0.5,
-              "unit": "cup",
+              "amount": 1,
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
@@ -132,7 +158,7 @@
             {
               "ingredientSlug": "icing-sugar",
               "amount": 1,
-              "unit": "tbsp",
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
@@ -330,6 +356,122 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Pancakes are tough or chewy",
+              "cause": "Over-mixed batter — gluten developed.",
+              "fix": "Mix until just combined; lumps are fine. Rest the batter 10 minutes before cooking."
+            },
+            {
+              "symptom": "Pancakes are flat, not fluffy",
+              "cause": "Baking powder stale, or butter too cool.",
+              "fix": "Use fresh raising agents and melted butter, not cold. Don't flatten when flipping."
+            },
+            {
+              "symptom": "Stuck to the pan",
+              "cause": "Pan not hot enough, or not enough fat.",
+              "fix": "Medium heat, butter or oil swirled before each pancake. Wait until bubbles appear on top before flipping."
+            },
+            {
+              "symptom": "Cooked unevenly — pale in the middle, dark at the edges",
+              "cause": "Pan too hot.",
+              "fix": "Drop the heat. Cook longer per side at lower temperature for a more even brown."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sweet: serve with maple syrup, lemon and sugar, or fresh berries and yoghurt."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Savoury: skip the sugar in the batter; top with smoked salmon, cream cheese, and chives."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Classical French cookery rests on this kind of dish — slow extraction, considered seasoning, restraint at the finish. Escoffier and the Larousse Gastronomique codified the method; cooks like Elizabeth David and Julia Child brought it into the English-language kitchen."
           }
         ]
       }

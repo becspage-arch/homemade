@@ -1,44 +1,42 @@
 {
   "slug": "vegan-chocolate-cake",
   "title": "Vegan Chocolate Cake",
-  "subtitle": null,
-  "excerpt": "snack from Rebecca's collection. Stir the lemon juice (or vinegar) into the milk and set aside to thicken and 'curdle' slightly into buttermilk.",
+  "subtitle": "A cake worth the weighing.",
+  "excerpt": "Vegan Chocolate Cake. A baking recipe from Rebecca's collection — straightforward, reliable, worth weighing rather than scooping.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 30,
+    "prepMinutes": 20,
+    "cookMinutes": 38,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 40,
+    "totalMinutes": 58,
     "scalable": true,
-    "freezable": true,
+    "freezable": false,
     "freezeNotes": null,
-    "batchable": true,
+    "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": null,
     "dietaryFlags": [],
     "cuisine": "british",
     "mealType": "snack",
     "mood": [
-      "weeknight",
-      "freezerFriendly",
-      "batchCook"
+      "treat"
     ],
-    "temperatureCelsius": 180,
+    "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
     {
-      "slug": "mixing-bowl-medium",
+      "slug": "oven",
       "isOptional": false
     },
     {
@@ -46,7 +44,11 @@
       "isOptional": false
     },
     {
-      "slug": "oven",
+      "slug": "cooling-rack",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-medium",
       "isOptional": false
     }
   ],
@@ -54,6 +56,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Vegan Chocolate Cake. A British home-cook's dish — the kind of recipe families adjust across generations. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cake batters reward weighing over scooping. Room-temperature butter and eggs, raised properly, tested with a skewer."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -73,8 +93,8 @@
           "items": [
             {
               "ingredientSlug": "whole-milk",
-              "amount": 1,
-              "unit": "ml",
+              "amount": 1.25,
+              "unit": "cup",
               "prepNote": "soy, almond etc...",
               "isOptional": false,
               "groupLabel": null
@@ -88,7 +108,7 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "salted-butter",
+              "ingredientSlug": "unsalted-butter",
               "amount": 0.6666666666666666,
               "unit": "cup",
               "prepNote": null,
@@ -99,14 +119,22 @@
               "ingredientSlug": "golden-syrup",
               "amount": 3,
               "unit": "tbsp",
-              "prepNote": null,
+              "prepNote": "use your favorite liquid sweetener (maple will make a slightly less sweet cake",
               "isOptional": false,
               "groupLabel": null
             },
             {
+              "ingredientSlug": "coffee-instant",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
               "ingredientSlug": "plain-flour",
-              "amount": 2,
-              "unit": "g",
+              "amount": 2.25,
+              "unit": "cup",
               "prepNote": "plain flour",
               "isOptional": false,
               "groupLabel": null
@@ -144,7 +172,7 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "salted-butter",
+              "ingredientSlug": "unsalted-butter",
               "amount": 0.3333333333333333,
               "unit": "cup",
               "prepNote": null,
@@ -153,8 +181,8 @@
             },
             {
               "ingredientSlug": "icing-sugar",
-              "amount": 1,
-              "unit": "g",
+              "amount": 1.6666666666666665,
+              "unit": "cup",
               "prepNote": "confectioner's sugar",
               "isOptional": false,
               "groupLabel": null
@@ -179,63 +207,12 @@
         }
       },
       {
-        "type": "heading",
+        "type": "infoPanel",
         "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Also"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Cake"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 teaspoon instant coffee granules / espresso powder (OPTIONAL)"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Frosting"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+          "tone": "info",
+          "title": "Also",
+          "body": "Cake."
+        }
       },
       {
         "type": "heading",
@@ -377,7 +354,53 @@
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "Cake sinks in the middle",
+              "cause": "Underbaked, or the oven door opened too early.",
+              "fix": "Test with a skewer — it should come out with a few moist crumbs, not wet batter. Don't open the oven before three-quarters of the bake time."
+            },
+            {
+              "symptom": "Cake is dry",
+              "cause": "Overbaked, or too much flour measured by cup not weight.",
+              "fix": "Check at the minimum bake time and every five minutes after. Weigh flour for cake recipes — cup measures vary by 20% depending on how you scoop."
+            },
+            {
+              "symptom": "Top cracked or domed",
+              "cause": "Oven too hot, or batter too thick.",
+              "fix": "Drop the temperature by 10°C and check earlier. Domed cakes can be trimmed flat once cool."
+            },
+            {
+              "symptom": "Cake didn't rise",
+              "cause": "Raising agent stale or omitted, or butter and eggs cold.",
+              "fix": "Check baking powder is fresh — it loses lift after six months. Use room-temperature butter and eggs so the batter holds air."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
           {
             "type": "listItem",
             "content": [
@@ -386,7 +409,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Vegan Chocolate Chip Cookies"
+                    "text": "Citrus version: replace the vanilla with the zest of an orange or lemon."
                   }
                 ]
               }
@@ -400,81 +423,53 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "This is my children's most favorite chocolate chip cookie. It generally makes quite a large flat cookie, crisp on the edge and gooey in the middle. To make them smaller and taller, make sure to refrigerate and then freeze before baking."
+                    "text": "Nut-free: swap ground almonds for desiccated coconut or extra plain flour, weight for weight."
                   }
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "This is a vegan recipe, but as noted, it can be non-vegan if you wish to use cows milk or milk chocolate in it."
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "I’ve included ingredients for various batch sizes. Use whichever you prefer."
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "You can use almost any little treat to mix in instead of chocolate chips. M&Ms, peanuts, broken maltesers, caco nibs, dried fruit… whatever is your fav."
-                  }
-                ]
-              }
-            ]
-          },
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Makes: 6 / 12 / 24"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Prep time: 15 min"
-                  }
-                ]
-              }
-            ]
+            "type": "text",
+            "text": "A British home cook's dish. It sits among the recipes families remember without thinking about — the kind that gets adjusted across generations and never quite the same twice."
           }
         ]
       }

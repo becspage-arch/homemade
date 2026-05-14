@@ -2,22 +2,22 @@
   "slug": "yakitori-chicken",
   "title": "Yakitori Chicken",
   "subtitle": null,
-  "excerpt": "Chinese dinner from Rebecca's collection. Heat the grill.",
+  "excerpt": "Yakitori Chicken. A home-cook's recipe from Rebecca's collection, kept in the family rotation.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook — a recipe she's made many times in her own kitchen.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
-    "cookMinutes": 5,
+    "prepMinutes": 15,
+    "cookMinutes": 18,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 15,
+    "totalMinutes": 33,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
@@ -25,21 +25,43 @@
     "batchNotes": null,
     "makeAheadNotes": null,
     "dietaryFlags": [],
-    "cuisine": "chinese",
+    "cuisine": "japanese",
     "mealType": "dinner",
     "mood": [
-      "weeknight",
-      "comfortFood"
+      "weeknight"
     ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
-  "recipeTools": [],
+  "recipeTools": [
+    {
+      "slug": "grill",
+      "isOptional": false
+    }
+  ],
   "glossaryTerms": [],
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Yakitori Chicken. Japanese home cooking that trusts the soy, the dashi, and the patience between them. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A weeknight-friendly recipe: most of the work is the prep, and the cooking takes care of itself."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -57,6 +79,14 @@
         "attrs": {
           "defaultServings": 4,
           "items": [
+            {
+              "ingredientSlug": "water",
+              "amount": 8,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
             {
               "ingredientSlug": "mirin",
               "amount": 0.5,
@@ -115,9 +145,9 @@
             },
             {
               "ingredientSlug": "chicken-thigh",
-              "amount": 2,
-              "unit": "lb",
-              "prepNote": "boneless skinless, cut into bite-sized (3/4-inch) pieces",
+              "amount": 907,
+              "unit": "g",
+              "prepNote": "3/4-inch",
               "isOptional": false,
               "groupLabel": "½ cup (regular) soy sauce"
             },
@@ -125,9 +155,17 @@
               "ingredientSlug": "spring-onion",
               "amount": 1,
               "unit": "bunch",
-              "prepNote": null,
+              "prepNote": "the thicker the better",
               "isOptional": false,
               "groupLabel": "½ cup (regular) soy sauce"
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Optional garnish"
             },
             {
               "ingredientSlug": "black-pepper",
@@ -141,77 +179,12 @@
         }
       },
       {
-        "type": "heading",
+        "type": "infoPanel",
         "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Also"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "8 12-inch or 16 8-inch bamboo skewers, soaked in water for ½ hour or more"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 cup saki"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "Japanese 7 spice powder"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "* if you can't find sancho or 7 spice, you may have better luck finding szechuan pepper. In a pinch, a sprinkling of salt and fresh ground black pepper will do."
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+          "tone": "info",
+          "title": "Also",
+          "body": "1 cup saki; Japanese 7 spice powder."
+        }
       },
       {
         "type": "heading",
@@ -283,6 +256,122 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "The dish tastes flat",
+              "cause": "Underseasoned or no acid.",
+              "fix": "Salt a pinch at a time, tasting. A squeeze of lemon or splash of vinegar at the end lifts most savoury dishes."
+            },
+            {
+              "symptom": "It's overcooked by the time it reaches the table",
+              "cause": "Carryover cooking — food keeps cooking on the hot pan after the heat goes off.",
+              "fix": "Pull off the heat a minute or two before you think it's done. Plate straight away, or transfer to a warmed serving dish."
+            },
+            {
+              "symptom": "It's undercooked in the middle",
+              "cause": "Heat too high, browned the outside before the middle warmed through.",
+              "fix": "Drop the heat and give it longer. A probe thermometer is the only reliable check for meat."
+            },
+            {
+              "symptom": "The leftovers were dry",
+              "cause": "Reheated uncovered, or no liquid in the pan.",
+              "fix": "Reheat covered with a splash of stock or water, on a low heat. Microwave on 60% power if using one — gentler than full blast."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Vegetarian swap: replace meat with mushrooms, lentils, or beans — adjust seasoning to compensate."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spice version: a pinch of chilli flakes or cracked black pepper at the end shifts the dish without losing its character."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Best fresh. Leftovers keep two days in the fridge; reheat covered with a splash of liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Japanese home cooking trusts the ingredient. Dashi, soy, mirin, sake — used in restraint, never to dominate. The dish belongs to that quiet tradition."
           }
         ]
       }

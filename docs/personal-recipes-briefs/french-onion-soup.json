@@ -1,38 +1,37 @@
 {
   "slug": "french-onion-soup",
   "title": "French Onion Soup",
-  "subtitle": null,
-  "excerpt": "Italian dinner from Rebecca's collection. How to Caramelize Onions.",
+  "subtitle": "The kind of dinner that cooks itself.",
+  "excerpt": "French Onion Soup. A slow-cooker dish that does its own work — set it in the morning, serve it at dinner.",
   "type": "RECIPE",
   "categorySlug": "cooking",
   "subCategorySlug": null,
   "difficulty": "BEGINNER",
   "season": "YEAR_ROUND",
   "sourceType": "CREATOR",
-  "sourceNotes": "Rebecca's kitchen — a personal favourite from her collection.",
+  "sourceNotes": "From Rebecca's personal cookbook. The dish sits in the classical French slow-cook tradition — Escoffier, Larousse Gastronomique, and the home-cookery tradition of southwest France.",
   "recipe": {
     "servings": null,
     "yieldDescription": null,
-    "prepMinutes": 10,
+    "prepMinutes": 15,
     "cookMinutes": 600,
     "restingMinutes": null,
     "chillingMinutes": null,
-    "totalMinutes": 610,
+    "totalMinutes": 615,
     "scalable": true,
     "freezable": false,
     "freezeNotes": null,
     "batchable": true,
-    "batchNotes": null,
+    "batchNotes": "A double batch fits a 6-litre slow cooker. Use the second half straight away or freeze in portions.",
     "makeAheadNotes": null,
     "dietaryFlags": [],
-    "cuisine": "italian",
+    "cuisine": "french",
     "mealType": "dinner",
     "mood": [
-      "weeknight",
-      "comfortFood",
-      "batchCook"
+      "lowEffort",
+      "comfortFood"
     ],
-    "temperatureCelsius": 175,
+    "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
@@ -42,7 +41,11 @@
       "isOptional": false
     },
     {
-      "slug": "stockpot",
+      "slug": "oven",
+      "isOptional": false
+    },
+    {
+      "slug": "hob",
       "isOptional": false
     },
     {
@@ -50,11 +53,23 @@
       "isOptional": false
     },
     {
-      "slug": "oven",
+      "slug": "silicone-spatula",
       "isOptional": false
     },
     {
-      "slug": "hob",
+      "slug": "ladle",
+      "isOptional": false
+    },
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "mandoline",
       "isOptional": false
     }
   ],
@@ -62,6 +77,24 @@
   "body": {
     "type": "doc",
     "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "French Onion Soup. Classical French method, scaled to a home kitchen. Adjustable for what you need."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "It runs in the slow cooker so the work is at the start of the day and the dinner cooks itself."
+          }
+        ]
+      },
       {
         "type": "heading",
         "attrs": {
@@ -83,7 +116,7 @@
               "ingredientSlug": "onion",
               "amount": 4,
               "unit": "each",
-              "prepNote": "large",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -91,7 +124,7 @@
               "ingredientSlug": "onion",
               "amount": 2,
               "unit": "each",
-              "prepNote": "sweet, large",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -107,7 +140,7 @@
               "ingredientSlug": "thyme",
               "amount": 2,
               "unit": "sprig",
-              "prepNote": "fresh",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -132,13 +165,21 @@
               "amount": 3,
               "unit": "tbsp",
               "prepNote": null,
-              "isOptional": true,
+              "isOptional": false,
               "groupLabel": null
             },
             {
               "ingredientSlug": "stock-beef",
               "amount": 4,
               "unit": "cup",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "beef-mince",
+              "amount": 1,
+              "unit": "g",
               "prepNote": null,
               "isOptional": false,
               "groupLabel": null
@@ -160,10 +201,10 @@
               "groupLabel": null
             },
             {
-              "ingredientSlug": "salt-table",
-              "amount": null,
-              "unit": "g",
-              "prepNote": "to taste",
+              "ingredientSlug": "baguette",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": null,
               "isOptional": false,
               "groupLabel": null
             },
@@ -172,14 +213,14 @@
               "amount": 3,
               "unit": "tbsp",
               "prepNote": null,
-              "isOptional": true,
+              "isOptional": false,
               "groupLabel": null
             },
             {
               "ingredientSlug": "gruyere",
               "amount": 6,
               "unit": "slice",
-              "prepNote": null,
+              "prepNote": "or Comte, Emmental (Swiss",
               "isOptional": false,
               "groupLabel": null
             }
@@ -187,49 +228,12 @@
         }
       },
       {
-        "type": "heading",
+        "type": "infoPanel",
         "attrs": {
-          "level": 3
-        },
-        "content": [
-          {
-            "type": "text",
-            "text": "Also"
-          }
-        ]
-      },
-      {
-        "type": "bulletList",
-        "content": [
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 beef bouillon"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  {
-                    "type": "text",
-                    "text": "1 baguette"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+          "tone": "info",
+          "title": "Also",
+          "body": "Salt/Pepper, to taste."
+        }
       },
       {
         "type": "heading",
@@ -637,6 +641,122 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "A few of the more common issues, and what tends to fix them.",
+          "items": [
+            {
+              "symptom": "The soup tastes flat",
+              "cause": "Underseasoned, or the aromatics weren't sweated long enough.",
+              "fix": "Add salt a pinch at a time, tasting. If still flat, finish with a squeeze of lemon or a splash of vinegar to lift it."
+            },
+            {
+              "symptom": "Cream-based soup splits",
+              "cause": "Dairy added at too high a heat, or left to simmer after.",
+              "fix": "Stir cream in off the heat, or use crème fraîche, which doesn't split. Don't reboil after adding."
+            },
+            {
+              "symptom": "Blended soup is too thick",
+              "cause": "Reduced too far, or the starch in the veg sets up on cooling.",
+              "fix": "Loosen with hot stock or water, a ladle at a time, until it pours from the spoon in a ribbon."
+            },
+            {
+              "symptom": "Blended soup is too thin",
+              "cause": "Stock-to-veg ratio too high.",
+              "fix": "Simmer uncovered to reduce, or blitz in another roasted veg (potato, parsnip) to thicken."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Vegan version: swap dairy cream for cashew cream (soak 100 g cashews in hot water, blend smooth) or oat cream."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Smokier finish: stir in a teaspoon of smoked paprika at the end, or top with crispy chorizo."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead, freezing, leftovers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The slow cooker is the make-ahead. Make a day ahead; the flavour deepens overnight in the fridge."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Classical French cookery rests on this kind of dish — slow extraction, considered seasoning, restraint at the finish. Escoffier and the Larousse Gastronomique codified the method; cooks like Elizabeth David and Julia Child brought it into the English-language kitchen."
           }
         ]
       }
