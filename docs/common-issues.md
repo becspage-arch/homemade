@@ -41,6 +41,22 @@ Severity flag with the rule: `[block]` (rewrite mandatory),
   **How to fix:** swap for `"in practice"`, `"the reliable test"`, or
   drop the qualifier entirely.
 
+- **Brand-trademark mentions in titles, ingredients, or prose** `[block]`
+  Pattern: a registered trademark name used directly — "Wagamamas
+  chicken katsu curry", "Nutella stuffed cookies", "Tabasco", "Marmite
+  on toast", "KitchenAid stand mixer", "from Tesco". Caught in the
+  first ingest of Rebecca's personal recipes (May 2026), led to the
+  brand-trademark rule.
+  **How to fix:** use the generic equivalent. Wagamama → Japanese-style;
+  Nutella → chocolate hazelnut spread; Oreo → chocolate sandwich
+  biscuit; Biscoff → caramelised biscuit; Baileys → Irish cream
+  liqueur; Tabasco → Louisiana hot sauce; OXO → stock cube;
+  KitchenAid → stand mixer; Tesco → any supermarket. Full list in
+  [`packages/db/scripts/data/banned-brands.ts`](../packages/db/scripts/data/banned-brands.ts).
+  The voice-check `brand-trademark` rule blocks the upload, scanning
+  title / subtitle / excerpt / source notes / body. The narrow
+  genericised tier (Sriracha, Hoover, Sellotape) only warns.
+
 - **Tricolons in intros and conclusions** `[warn]`
   Pattern: `"warm, considered, and beautiful"` style three-item
   parallel lists, especially at the start of the intro or the end of

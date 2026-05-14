@@ -514,6 +514,37 @@ for ingredients or kit. Product / kit blocks describe what the tool
 does and what to look for in it — generic titles ("Roasting tin, 30
 cm") not brand names we don't have a sale relationship with.
 
+**No brand names — HARD RULE:**
+Recipe titles, ingredient lists, body prose, and source notes never
+use a registered trademark by name. The voice-check `brand-trademark`
+rule blocks any of these. Use the generic equivalent instead:
+
+| Don't | Do |
+|---|---|
+| Wagamamas chicken katsu curry | Chicken katsu curry |
+| Nutella stuffed cookies | Chocolate hazelnut stuffed cookies |
+| Oreo truffles | Cookies and cream truffles |
+| Biscoff truffles | Caramelised biscuit truffles |
+| Baileys cheesecake | Irish cream cheesecake |
+| Tabasco | Louisiana-style hot sauce |
+| Marmite on toast | Yeast extract on toast |
+| OXO cube | Stock cube |
+| KitchenAid stand mixer | Stand mixer |
+| Le Creuset casserole | Cast-iron casserole |
+| Crock-Pot | Slow cooker |
+| Instant Pot | Multi-cooker |
+| From Tesco | From any supermarket |
+| Coca-Cola | Cola |
+
+The full list lives in
+[`packages/db/scripts/data/banned-brands.ts`](../packages/db/scripts/data/banned-brands.ts).
+Categories: restaurant chains, branded food and drink, kitchen
+equipment, retailers. A short genericised tier (Sriracha, Hoover,
+Sellotape) only warns rather than blocks — the brand has become the
+de facto noun. Edit the list when you find a brand the corpus needs
+to avoid; `voice-check:all` will retroactively flag any draft that
+trips a new rule.
+
 **British English + worldwide-friendly idiom:**
 Spell colour, flavour, sieve, knob of butter, pudding basin. Name
 courgette (not zucchini), aubergine (not eggplant), coriander (not

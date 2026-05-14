@@ -10,6 +10,8 @@
  * direction doc. Keep this list in sync with `packages/ai/src/prompts/voice-rules.ts`.
  */
 
+import { BANNED_BRANDS, WARN_BRANDS } from './data/banned-brands.js'
+
 export type Severity = 'error' | 'warn'
 
 export type FindingKind =
@@ -23,6 +25,7 @@ export type FindingKind =
   | 'wrap-up'
   | 'americanism'
   | 'tricolon'
+  | 'brand-trademark'
 
 export interface Finding {
   severity: Severity
@@ -362,6 +365,7 @@ export function extractMetadataChunks(input: Record<string, unknown>): Chunk[] {
       out.push({ text: value, path, paragraph })
     }
   }
+  push('title', input.title)
   push('subtitle', input.subtitle)
   push('excerpt', input.excerpt, true)
   push('sourceNotes', input.sourceNotes, true)
@@ -506,6 +510,31 @@ function scanChunk(chunk: Chunk, report: VoiceCheckReport): void {
         message: `Americanism "${a.word}" — prefer "${a.british}"`,
         path,
         snippet: a.word,
+      })
+    }
+  }
+
+  // Brand trademarks — error (blocks). Use the generic equivalent instead.
+  for (const b of BANNED_BRANDS) {
+    if (wordRegex(b.brand).test(text)) {
+      report.errors.push({
+        severity: 'error',
+        kind: 'brand-trademark',
+        message: `brand-trademark "${b.brand}" — use "${b.generic}" instead`,
+        path,
+        snippet: b.brand,
+      })
+    }
+  }
+  // Genericised brands — warn only (the brand is the de facto noun).
+  for (const b of WARN_BRANDS) {
+    if (wordRegex(b.brand).test(text)) {
+      report.warnings.push({
+        severity: 'warn',
+        kind: 'brand-trademark',
+        message: `genericised brand "${b.brand}" — generic equivalent is "${b.generic}"`,
+        path,
+        snippet: b.brand,
       })
     }
   }
