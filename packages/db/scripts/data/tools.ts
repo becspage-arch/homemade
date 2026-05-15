@@ -67,6 +67,7 @@ export const TOOLS: ToolSeed[] = [
   { slug: 'steamer-pot', name: 'Steamer pot', category: 'pot', aliases: ['multi-tier steamer'], isPurchasable: true, typicalPriceGbp: 3500, notes: 'Stacking tier for veg, fish, dumplings.' },
   { slug: 'bamboo-steamer', name: 'Bamboo steamer', category: 'pot', aliases: [], isPurchasable: true, typicalPriceGbp: 2000, notes: 'Sits over a wok or saucepan. For dim sum.' },
   { slug: 'pudding-basin', name: 'Pudding basin', category: 'pot', aliases: ['Mason Cash basin', 'steam-pudding bowl'], isPurchasable: true, typicalPriceGbp: 1500, notes: 'For steamed puddings — Christmas pudding, jam roly-poly.' },
+  { slug: 'ramekins', name: 'Ramekins', category: 'pot', aliases: ['ramekin'], isPurchasable: true, typicalPriceGbp: 1500, notes: 'Small individual ceramic dishes. For baked eggs, soufflés, and crème brûlée.' },
 
   // ────────────────────────────────────────────────────────────────────────
   // OVEN (~6) — fixtures + ancillary
@@ -174,6 +175,7 @@ export const TOOLS: ToolSeed[] = [
   { slug: 'wooden-spoon', name: 'Wooden spoon', category: 'utensil', aliases: [], isPurchasable: true, typicalPriceGbp: 500 },
   { slug: 'silicone-spatula', name: 'Silicone spatula', category: 'utensil', aliases: ['rubber spatula', 'scraper'], isPurchasable: true, typicalPriceGbp: 800, notes: 'For folding and scraping bowls clean.' },
   { slug: 'fish-slice', name: 'Fish slice', category: 'utensil', aliases: ['turner', 'spatula'], isPurchasable: true, typicalPriceGbp: 800, notes: 'UK fish slice = US turner.' },
+  { slug: 'spatula', name: 'Spatula', category: 'utensil', aliases: ['turner', 'flipper'], isPurchasable: true, typicalPriceGbp: 800, notes: 'Flat metal or plastic blade for flipping and pressing food in a pan.' },
   { slug: 'slotted-spoon', name: 'Slotted spoon', category: 'utensil', aliases: [], isPurchasable: true, typicalPriceGbp: 800 },
   { slug: 'ladle', name: 'Ladle', category: 'utensil', aliases: [], isPurchasable: true, typicalPriceGbp: 1000, notes: 'For soup and risotto stock.' },
   { slug: 'soup-ladle-small', name: 'Small ladle', category: 'utensil', aliases: ['gravy ladle'], isPurchasable: true, typicalPriceGbp: 800 },

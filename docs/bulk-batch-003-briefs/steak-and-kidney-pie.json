@@ -1,0 +1,185 @@
+{
+  "slug": "steak-and-kidney-pie",
+  "title": "Steak and kidney pie",
+  "subtitle": "Chuck steak and ox kidney in dark gravy, puff pastry lid.",
+  "excerpt": "Chuck steak and ox kidney braised in a dark, glossy gravy enriched with Worcestershire sauce and stout, topped with a golden puff pastry lid that shatters at the knife. The definitive British pie.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136 — steak and kidney pie chapter with puff pastry lid. Eliza Acton, Modern Cookery for Private Families (1845), the braised beef-and-kidney filling with the Worcestershire sauce note. Traditional British pie-making practice documented across nineteenth and twentieth-century domestic cookery.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 150,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the filling separately, without the pastry lid, for up to three months. Defrost overnight, reheat until bubbling, transfer to a pie dish, and top with fresh pastry to bake.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The filling is better made a day ahead and left overnight in the fridge — the flavour deepens and any excess fat can be lifted from the surface. Top with pastry and bake on the day.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "hearty", "weekendProject"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven for the pastry lid",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The kidney is not optional: it provides a rich, mineral counterpoint to the steak that no substitute replicates. Ox kidney is the traditional choice — stronger, more assertive, and more gelatinous than lamb kidney. Those new to kidney should start here rather than avoiding it; its flavour mellows over a long braise into something deep and savoury rather than sharp. Soaking it in cold water for an hour before cooking removes any sharpness and is worth doing if you're uncertain." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The filling needs two hours of slow braising before it meets the pastry. This is a two-session recipe in practice: braise the filling the evening before, refrigerate overnight, and top with pastry on the day. The filling must be completely cold before the pastry goes on — hot filling turns the underside of the pastry to paste." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-chuck", "amount": 700, "unit": "g", "prepNote": "cut into 3 cm chunks", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "ox-kidney", "amount": 200, "unit": "g", "prepNote": "membrane and core removed, cut into 2 cm pieces, soaked in cold water 1 hour if preferred", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "mushrooms-chestnut", "amount": 200, "unit": "g", "prepNote": "halved", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stout", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "rapeseed-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 6, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 320, "unit": "g", "prepNote": "for the pastry", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "unsalted-butter", "amount": 160, "unit": "g", "prepNote": "cold, cubed", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A wide, heavy casserole is essential for browning the meat properly. A 26 to 28 cm oval or round pie dish holds the filling comfortably at the right depth — deep enough to hold the sauce, shallow enough for the pastry to be cut through cleanly. All-butter shop-bought puff pastry is a genuine shortcut here and produces an excellent lid; the rough-puff method is for those who want to make it from scratch." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the meat in batches" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Season {{beef-chuck}} of beef chuck chunks generously with {{sea-salt-flakes}} of sea salt flakes and {{black-pepper}} of black pepper. Dust with {{plain-flour}} of plain flour. Heat {{rapeseed-oil}} of rapeseed oil in a heavy casserole over high heat and brown the beef in batches, 3 to 4 minutes per side, until deeply coloured. Set aside. Add the {{ox-kidney}} of kidney pieces to the same pan — they need only 2 minutes per side at high heat to colour. Set aside with the beef." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the base and deglaze" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Reduce the heat to medium. Cook {{onion}} of roughly chopped onions in the remaining fat for six minutes until softened and beginning to colour. Add {{mushrooms-chestnut}} of halved chestnut mushrooms and cook for three minutes. Add {{tomato-puree}} of tomato purée and stir for one minute. Pour in {{stout}} of stout and scrape up the fond from the base of the pan. Reduce by half — about three minutes. Pour in {{stock-beef}} of hot beef stock and add {{worcestershire-sauce}} of Worcestershire sauce, the {{thyme}} of thyme sprigs, and the {{bay-leaves}} of bay leaves." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Return the beef and kidney to the pan. Bring to the boil, then reduce to the gentlest possible simmer. Cover and cook for 1 hour 45 minutes to 2 hours until the beef yields to gentle pressure. The kidney becomes tender and loses its sharp edge over this time. Remove the thyme sprigs and bay leaves. If the sauce is very thin, simmer uncovered for 10 minutes. Transfer the filling to the pie dish and leave to cool completely, or refrigerate overnight." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the rough-puff pastry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine {{plain-flour}} of plain flour and {{sea-salt-fine}} of fine sea salt in a bowl. Add {{unsalted-butter}} of cold cubed butter and flatten each cube into a flat flake between your fingers — work quickly. Add 80 ml of ice-cold water and mix with a table knife until the dough comes together. Press into a rectangle, fold into thirds, rotate, fold again. Wrap and refrigerate for 20 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Top and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C (180°C fan). Roll the pastry 3 mm thick, a little larger than the pie dish. Brush the rim of the dish with beaten {{eggs}} egg. Lay the pastry over the filling, pressing down around the edges to seal. Trim the excess, crimp or press the edges, and cut two steam vents in the top. Egg-wash the top. Bake for 30 to 35 minutes until the pastry is deep golden and the filling is bubbling at the vents. Rest for 10 minutes before serving." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "The filling and the pastry each have their own failure modes.",
+          "items": [
+            { "symptom": "Pastry lid collapses into the filling", "cause": "Filling was still warm when pastry was applied; the heat softened the pastry from underneath.", "fix": "The filling must be completely cold before the pastry goes on. Refrigerate the filling overnight if possible." },
+            { "symptom": "Pastry pale and dense, not flaky", "cause": "Butter too warm when incorporated, dough overworked.", "fix": "Use butter straight from the fridge. Handle the dough as little as possible. The butter flakes should still be visible when the dough is wrapped." },
+            { "symptom": "Filling too thin, sauce watery", "cause": "Not enough reduction time, or lid closed during the braise leaving too much moisture in.", "fix": "Simmer uncovered for 10 minutes before transferring to the pie dish." },
+            { "symptom": "Kidney strong and unpleasant", "cause": "Ox kidney not soaked, or cooked too quickly on the surface without a long enough braise.", "fix": "Soak the kidney in cold water for an hour. It needs the full two-hour braise to mellow." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Steak and kidney pie is one of the oldest and most consistent British dishes, a direct line from medieval pastry-coffin cookery to the Saturday night dinner at the pub. Mrs Beeton documented the pie with its pastry lid and kidney filling in 1861; the recipe has barely changed. The puff-pastry lid version sits in the country between the simpler steak and ale pie (pastry lid only) and the full raised hot-water-crust version with base and sides. It requires patience but not technique: the braise is forgiving, the pastry straightforward. Serve with mashed potato, buttered greens, and a glass of stout to match the gravy." }
+        ]
+      }
+    ]
+  }
+}

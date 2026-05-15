@@ -1369,6 +1369,32 @@ schema-additive session to add sauerkraut + kimchi.
 **Running cooking total after batch 002:** ~131 PUBLISHED + ~215
 personal-recipes DRAFT.
 
+#### Batch 003 — COMPLETE (2026-05-15)
+
+**50 cooking recipes PUBLISHED.** Sonnet 4.6 session. Full report:
+`docs/bulk-batch-003-report.md`.
+
+**Cuisine spread (batch 003):** american 14, british 12, french 12,
+italian 12. Deliberately focuses on the four core cuisines to build
+depth in each before expanding further.
+
+**Difficulty (batch 003):** beginner 34 (68%), intermediate 15 (30%),
+advanced 1 (2%, confit de canard). Beginner-heavy by design — these
+are the foundational repertoire dishes.
+
+**Voice stats:** 21 of 50 failed first-pass voice-check (42%) on
+em-dash errors; all fixed and uploaded clean. No new common-issues
+entries — all patterns already documented. No recipes dropped.
+
+**Schema fixes in this batch:** new-format briefs had three
+mismatches vs the upload script — missing `categorySlug`, `toolSlug`
+instead of `slug` in `recipeTools[]`, and invalid tool slugs.
+Fixed by script before upload. Two new tools added to master list:
+`ramekins` and `spatula`.
+
+**Running cooking total after batch 003:** ~181 PUBLISHED + ~215
+personal-recipes DRAFT.
+
 ### Step 16 — Mindset v3 polish + first magical-ritual anchor ✅ landed 2026-05-15
 
 **Goal.** Apply Rebecca's second-pass review feedback on the v2

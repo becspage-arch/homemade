@@ -1,0 +1,170 @@
+{
+  "slug": "sausage-roll",
+  "title": "Sausage roll",
+  "subtitle": "Butter-puff pastry with sage-and-onion sausagemeat.",
+  "excerpt": "Good pork sausagemeat seasoned with sage and caramelised onion, wrapped in all-butter rough-puff pastry and baked until the layers separate and shatter. The British picnic standard that is also the definitive snack.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136 — sausage rolls in the pastry and savoury chapter. Eliza Acton, Modern Cookery for Private Families (1845), small sausage rolls in puff paste. The rough-puff technique and sage-and-onion seasoning reflect traditional British practice documented through nineteenth and twentieth-century domestic cookery.",
+  "recipe": {
+    "servings": 12,
+    "yieldDescription": "12 individual sausage rolls",
+    "prepMinutes": 30,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 20,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unbaked: assemble, egg-wash, and freeze on a tray until solid, then bag. Bake from frozen at 200°C fan for 35 to 40 minutes until golden and cooked through. Already-baked sausage rolls freeze well too; reheat at 180°C for 10 minutes.",
+    "batchable": true,
+    "batchNotes": "The quantities scale well; make double and freeze half unbaked.",
+    "makeAheadNotes": "Assembled sausage rolls keep in the fridge for up to 24 hours before baking. The chilling time actually improves the pastry layers.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["weekendProject", "party", "cosy"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "mixing-bowl-medium", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The quality of a sausage roll lives or dies in the pastry and the seasoning of the filling. Ready-made all-butter puff pastry does what it promises and produces a good result. Homemade rough-puff gives you more control over the flake and the butter content, and takes about fifteen extra minutes. The filling needs to be well-seasoned, slightly sticky, and cool before it goes into the pastry — a warm filling makes the pastry collapse." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sausagemeat direct from high-quality sausages (squeezed from their skins) is the right filling. The texture is slightly coarser than pre-packaged sausagemeat and the fat content is better. Good butcher's sausages or a supermarket's premium range both work. The sage and caramelised onion are not optional: plain sausagemeat in pastry is flat; seasoned sausagemeat is a different thing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 12,
+          "items": [
+            { "ingredientSlug": "sausages-pork", "amount": 8, "unit": "each", "prepNote": "squeezed from their skins, ~500 g total sausagemeat", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "very finely diced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sage", "amount": 8, "unit": "g", "prepNote": "leaves finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "english-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": "freshly cracked", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 4, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 15, "unit": "g", "prepNote": "for cooking the onion", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 320, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the rough-puff pastry" },
+            { "ingredientSlug": "unsalted-butter", "amount": 240, "unit": "g", "prepNote": "cold, cut into 1.5 cm cubes", "isOptional": false, "groupLabel": "For the rough-puff pastry" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the rough-puff pastry" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten with a splash of water, for the egg wash", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Shortcut: bought puff pastry",
+          "body": "All-butter ready-rolled puff pastry gives an excellent result and removes 20 minutes of work. Use a 375 g sheet, roll it to about 30 × 40 cm, and cut into two long strips rather than making the rough-puff below. The technique for filling and rolling is identical."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the rough-puff pastry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Put {{plain-flour}} of plain flour and {{sea-salt-fine}} of fine sea salt in a large bowl. Add {{unsalted-butter}} of cold butter cubes and toss to coat with flour. Using your fingertips, flatten each cube of butter into a thin flake — work quickly so the butter stays cold. Add 80 to 100 ml of ice-cold water and mix with a table knife until it just clumps together. Turn onto a floured surface, press into a rough rectangle, and fold into thirds like a letter. Rotate 90°, press flat, and fold again. Wrap and refrigerate for 20 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a small frying pan. Add {{onion}} finely diced onion and cook over medium-low heat for 10 to 12 minutes until soft, golden, and sweet. Cool completely. Mix the cooled onion with the sausagemeat from {{sausages-pork}} sausages, {{sage}} of chopped sage leaves, {{english-mustard}} of English mustard, {{sea-salt-flakes}} of sea salt flakes, and {{black-pepper}} of black pepper. Fry a small pinch in the same pan to taste and adjust the seasoning." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roll the pastry and fill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C (180°C fan). Roll the chilled pastry on a lightly floured surface to about 30 × 40 cm and 3 mm thick. Cut into two long strips, each 15 × 40 cm. Divide the filling between the strips, shaping it into a sausage log along the lower third of each strip, leaving a 1 cm border at the edge. Brush the far edge of each strip with beaten egg. Roll the pastry tightly over the filling, pressing the seam firmly to seal. Place seam-side down on a lined baking tray. Cut each log into six equal rolls." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Egg-wash and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Brush the top of each roll generously with beaten {{eggs}} egg. Use a sharp knife to score two diagonal cuts across the top of each one — this lets steam escape and prevents the pastry lifting and cracking. Refrigerate for 10 minutes if there's time. Bake for 22 to 25 minutes until the pastry is a deep, even amber and the filling is cooked through. Rest for five minutes before eating: the filling is very hot." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Pastry problems are more common than filling problems.",
+          "items": [
+            { "symptom": "Pastry pale and dense, not flaky", "cause": "Butter too warm when worked in, or dough overworked. The butter emulsified into the flour rather than remaining in flakes.", "fix": "Keep everything cold. Work fast with cold hands. The butter pieces should still be visible as flat shards when the dough goes into the fridge." },
+            { "symptom": "Filling leaks out during baking", "cause": "Seam not pressed firmly enough, or filling placed too close to the edges.", "fix": "Press the seam hard with a thumb, then seal again with a little egg wash. Leave a clear 1 cm border of pastry on all sides of the filling." },
+            { "symptom": "Underside pale and soft", "cause": "Baking tray not preheated, or pastry too thick on the bottom.", "fix": "Use a thin metal baking tray. Roll the pastry to a consistent 3 mm. For extra crunch, place the tray on the lowest oven shelf." },
+            { "symptom": "Filling raw in the centre", "cause": "Filling logs too thick, or oven temperature too high and pastry browned before filling cooked.", "fix": "Keep the filling to around 3 cm in diameter. If the pastry is colouring too fast, reduce the temperature by 10°C." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The sausage roll occupies an unusual position in British food: humble enough for a child's lunchbox, considered enough to appear on a buffet table, and good enough that almost no one turns one down. Mrs Beeton's version in 1861 is nearly identical to the one made today. It travels well, holds warmth for a reasonable time, and divides by the cut without falling apart. The sage and English mustard note is what separates a homemade sausage roll from every commercially made one. Serve warm from the oven, or at room temperature on a picnic rug." }
+        ]
+      }
+    ]
+  }
+}

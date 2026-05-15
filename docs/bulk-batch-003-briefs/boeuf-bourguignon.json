@@ -1,0 +1,395 @@
+{
+  "slug": "boeuf-bourguignon",
+  "title": "Boeuf Bourguignon",
+  "categorySlug": "cooking",
+  "subtitle": "The Burgundian braise — beef, red wine, lardons, and mushrooms",
+  "description": "Boeuf bourguignon is the benchmark of French home cooking: beef braised low and slow in a full bottle of red Burgundy with lardons, button mushrooms, pearl onions, and a bouquet garni. The technique is straightforward — brown everything in stages, deglaze, braise — but the results deepen noticeably with time. Made a day ahead and reheated, the sauce becomes glossy and the beef completely tender. It is a dish for anyone who wants to understand what French braising is about.",
+  "cuisine": "French",
+  "difficulty": "INTERMEDIATE",
+  "totalTimeMinutes": 210,
+  "prepTimeMinutes": 30,
+  "cookTimeMinutes": 180,
+  "servings": 6,
+  "season": "YEAR_ROUND",
+  "mood": [
+    "slowSunday",
+    "specialOccasion",
+    "hearty",
+    "cosy"
+  ],
+  "tags": [
+    "beef",
+    "braise",
+    "red-wine",
+    "french-classic",
+    "make-ahead",
+    "freezable"
+  ],
+  "sourceNotes": "Boeuf bourguignon is the classic dish of Burgundy, France. It appears in Auguste Escoffier's Le Guide Culinaire (1903) and was popularised internationally by Julia Child's Mastering the Art of French Cooking (1961), which closely follows the Escoffier method.",
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "notes": "A heavy oven-safe casserole with a tight-fitting lid — cast iron or enamelled cast iron. Large enough to hold all the beef without crowding."
+    },
+    {
+      "slug": "tongs",
+      "notes": "For browning the beef in batches."
+    },
+    {
+      "slug": "frying-pan-26",
+      "notes": "Separate pan for browning the pearl onions and mushrooms before adding to the braise."
+    },
+    {
+      "slug": "chefs-knife",
+      "notes": null
+    },
+    {
+      "slug": "chopping-board",
+      "notes": null
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bouquet-garni",
+      "term": "Bouquet garni",
+      "definition": "A bundle of herbs (usually bay leaf, thyme, and parsley stems) tied together or wrapped in muslin and added to braises and stocks. Removed before serving."
+    },
+    {
+      "slug": "lardons",
+      "term": "Lardons",
+      "definition": "Small cubes or strips of fatty bacon or pork belly, rendered in fat to provide a smoky, savoury base for French braises and salads."
+    },
+    {
+      "slug": "braising",
+      "term": "Braising",
+      "definition": "A moist-heat method: food is browned, then cooked slowly in a covered vessel with a small amount of liquid. The liquid and steam tenderise the meat; the long cook concentrates the sauce."
+    }
+  ],
+  "recipe": {
+    "ingredientGroups": [
+      {
+        "name": "Beef and marinade",
+        "ingredients": [
+          {
+            "ingredientSlug": "beef-chuck",
+            "quantity": 1500,
+            "unit": "g",
+            "notes": "Cut into 5 cm pieces — or braising steak. Dry the pieces well before browning"
+          },
+          {
+            "ingredientSlug": "red-wine",
+            "quantity": 750,
+            "unit": "ml",
+            "notes": "A full bottle — Pinot Noir or Côtes du Rhône, something you'd drink"
+          },
+          {
+            "ingredientSlug": "beef-stock",
+            "quantity": 300,
+            "unit": "ml",
+            "notes": "Hot"
+          },
+          {
+            "ingredientSlug": "plain-flour",
+            "quantity": 30,
+            "unit": "g",
+            "notes": "For dusting the beef"
+          },
+          {
+            "ingredientSlug": "olive-oil",
+            "quantity": 3,
+            "unit": "tbsp",
+            "notes": null
+          }
+        ]
+      },
+      {
+        "name": "Aromatics and garnish",
+        "ingredients": [
+          {
+            "ingredientSlug": "lardons",
+            "quantity": 150,
+            "unit": "g",
+            "notes": "Or thick-cut streaky bacon cut into small cubes"
+          },
+          {
+            "ingredientSlug": "pearl-onions",
+            "quantity": 200,
+            "unit": "g",
+            "notes": "Or small shallots, peeled"
+          },
+          {
+            "ingredientSlug": "button-mushrooms",
+            "quantity": 250,
+            "unit": "g",
+            "notes": "Left whole if small, halved if large"
+          },
+          {
+            "ingredientSlug": "carrot",
+            "quantity": 2,
+            "unit": "each",
+            "notes": "Cut into thick rounds"
+          },
+          {
+            "ingredientSlug": "onion",
+            "quantity": 1,
+            "unit": "each",
+            "notes": "Roughly chopped"
+          },
+          {
+            "ingredientSlug": "garlic",
+            "quantity": 4,
+            "unit": "clove",
+            "notes": "Crushed"
+          },
+          {
+            "ingredientSlug": "tomato-puree",
+            "quantity": 1,
+            "unit": "tbsp",
+            "notes": null
+          },
+          {
+            "ingredientSlug": "fresh-thyme",
+            "quantity": 4,
+            "unit": "sprig",
+            "notes": null
+          },
+          {
+            "ingredientSlug": "bay-leaf",
+            "quantity": 2,
+            "unit": "each",
+            "notes": null
+          },
+          {
+            "ingredientSlug": "flat-leaf-parsley",
+            "quantity": 10,
+            "unit": "g",
+            "notes": "Stalks for the bouquet, leaves chopped for garnish"
+          },
+          {
+            "ingredientSlug": "butter-unsalted",
+            "quantity": 30,
+            "unit": "g",
+            "notes": "For the mushrooms and onions"
+          },
+          {
+            "ingredientSlug": "salt",
+            "quantity": 1,
+            "unit": "tsp",
+            "notes": null
+          },
+          {
+            "ingredientSlug": "black-pepper",
+            "quantity": 0.5,
+            "unit": "tsp",
+            "notes": null
+          }
+        ]
+      }
+    ],
+    "steps": [
+      "Heat the oven to 160 °C fan (180 °C / gas 4). Pat the beef dry with kitchen paper and season with salt and pepper. Dust lightly with flour.",
+      "In the casserole, render the lardons over a medium heat in a splash of oil for 5–6 minutes until crisp and golden. Remove with a slotted spoon and reserve.",
+      "Increase to high heat. Brown the beef in batches — 3–4 pieces at a time — for 3–4 minutes per side until deeply coloured on all sides. Do not crowd. Remove each batch to a plate.",
+      "Reduce heat to medium. In the fat remaining, soften the chopped onion and carrot for 5 minutes. Add the garlic and tomato purée and cook for 1 minute.",
+      "Pour in the red wine and bring to the boil, scraping up the fond from the base. Add the hot beef stock. Tie the thyme sprigs, bay leaves, and parsley stalks into a bouquet garni and add to the pot.",
+      "Return the beef and lardons to the pot. The liquid should come about three-quarters up the meat — top up with a splash more stock or water if needed. Bring to a simmer, then cover and transfer to the oven.",
+      "Braise for 2.5–3 hours until the beef is completely tender and pulls apart when pressed with a spoon. Check at 2 hours — timings vary with the cut.",
+      "While the beef braises, cook the pearl onions and mushrooms: melt the butter in a frying pan over a medium-high heat. Brown the pearl onions for 8–10 minutes, turning occasionally. Remove. In the same pan, sauté the mushrooms for 4–5 minutes until golden. Season both.",
+      "When the beef is ready, remove the casserole from the oven. Lift out the bouquet garni. Add the pearl onions and mushrooms to the casserole. If the sauce is thin, place the casserole over a medium hob heat uncovered and simmer for 10–15 minutes to reduce and gloss.",
+      "Taste and adjust seasoning. Scatter with parsley and serve with buttered noodles, mashed potato, or crusty bread."
+    ]
+  },
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Before you start"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a dish that demands good organisation — the browning stages must be done in sequence and the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "lardons"
+                }
+              }
+            ],
+            "text": "lardons"
+          },
+          {
+            "type": "text",
+            "text": ", beef, and garnish vegetables all need separate attention. Nothing is difficult, but cutting corners at the browning stage (undercrowded pans, too-low heat, pale rather than brown meat) produces a pale, underdeveloped sauce. The investment at the beginning is what makes the finished dish remarkable."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "groupIndex": 0
+        },
+        "content": []
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "groupIndex": 1
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown in stages"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 160 °C fan. Pat {{beef-chuck}} of beef dry, season, and dust with flour. In a large casserole, render {{lardons}} of lardons over a medium heat until crisp. Remove. Increase to high heat, add olive oil, and brown the beef in batches — 3–4 minutes per side until deeply coloured. Remove each batch. Reduce to medium heat and soften the chopped onion and carrot in the remaining fat for 5 minutes. Add the garlic and tomato purée for 1 minute."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the braise"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour in {{red-wine}} of red wine and bring to the boil, scraping the base clean. Add {{beef-stock}} of hot beef stock. Tie the thyme, bay leaves, and parsley stalks into a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bouquet-garni"
+                }
+              }
+            ],
+            "text": "bouquet garni"
+          },
+          {
+            "type": "text",
+            "text": " and add it. Return the beef and lardons, cover, and transfer to the oven."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Braise and finish"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Braise for 2.5–3 hours until the beef is completely tender. While it cooks, brown the pearl onions in butter for 8–10 minutes and sauté the mushrooms until golden. When the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "braising"
+                }
+              }
+            ],
+            "text": "braise"
+          },
+          {
+            "type": "text",
+            "text": " is done, remove the bouquet garni and add the onions and mushrooms. If the sauce is thin, simmer uncovered on the hob for 10–15 minutes. Taste, adjust seasoning, and scatter with parsley."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Cook it the day before"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Boeuf bourguignon is genuinely superior the next day. The sauce deepens and thickens as it cools, and the fat rises to the surface of the cold dish and can be skimmed off entirely — producing a cleaner, leaner sauce than you can achieve by skimming a hot liquid. Refrigerate overnight, skim the surface, and reheat gently on the hob, covered, over a low heat."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

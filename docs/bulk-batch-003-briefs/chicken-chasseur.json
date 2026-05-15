@@ -1,0 +1,169 @@
+{
+  "slug": "chicken-chasseur",
+  "title": "Chicken chasseur",
+  "subtitle": "Pub-favourite tomato, mushroom, and white-wine braise.",
+  "excerpt": "Chicken thighs browned in butter and oil, then braised with mushrooms, white wine, tomatoes, and tarragon until the sauce is glossy and the meat falls from the bone. A French bistro classic that became a British pub and home-kitchen staple.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), multiple public-domain editions — poulet chasseur is in the poultry chapter as a French bistro classic. The Anglicised version entered the British domestic kitchen in the mid-twentieth century via Elizabeth David and post-war French-inspired cookery. Traditional practice documented in British cookery writing from the 1960s onwards.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes for up to three months. Defrost overnight in the fridge and reheat gently in a wide pan. Add a splash of water or stock if the sauce has thickened on freezing.",
+    "batchable": true,
+    "batchNotes": "Doubles easily in a larger casserole. The cook time does not change significantly.",
+    "makeAheadNotes": "Better made the day before. The sauce deepens overnight and the fat can be skimmed from the surface after it has chilled.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": "hob only",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Chicken chasseur is at its best made with bone-in thighs: they take longer to cook, but the bone adds body to the sauce and the meat stays moist through a 40-minute braise without any special care. Boneless thighs are faster but the sauce is thinner and the meat can tighten if the heat runs too high. Chicken breasts should be avoided here — they are too lean to braise without drying." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The French original is poulet chasseur (hunter's chicken), in which game birds were cooked with the mushrooms and herbs found while hunting. The mushrooms were wild. In the British domestic version they are chestnut mushrooms from the supermarket, which is fine: chestnut mushrooms have enough flavour to do the job, and they hold their texture in a braise without collapsing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thigh", "amount": 8, "unit": "each", "prepNote": "bone-in, skin-on", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mushrooms-chestnut", "amount": 250, "unit": "g", "prepNote": "halved or quartered", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "shallot", "amount": 4, "unit": "each", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "white-wine-dry", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tarragon", "amount": 10, "unit": "g", "prepNote": "fresh, roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 15, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 5, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A wide casserole or sauté pan is ideal: it needs to hold all eight thighs in a single layer for the browning stage, and to braise with the lid on. A pan that is too deep traps moisture and dilutes the sauce." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the chicken" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Season {{chicken-thigh}} chicken thighs on both sides with {{sea-salt-flakes}} of sea salt flakes and {{black-pepper}} of black pepper. Heat {{unsalted-butter}} of butter with {{olive-oil}} of olive oil in a wide casserole over medium-high heat. Place the thighs skin-side down and cook without moving for 8 to 10 minutes until the skin is deep golden and releases cleanly from the pan. Turn and cook the other side for 3 minutes. Remove and set aside." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the mushrooms and aromatics" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour off most of the fat, leaving a tablespoon in the pan. Add {{mushrooms-chestnut}} of halved chestnut mushrooms and cook over high heat for 3 to 4 minutes until golden. Add {{shallot}} of finely sliced shallots and cook for 3 minutes until softened. Add {{garlic}} of finely chopped garlic and {{tomato-puree}} of tomato purée and stir for one minute." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add wine and deglaze" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour in {{white-wine-dry}} of dry white wine and scrape up any brown bits from the base of the pan. Boil for two minutes to reduce the wine slightly. Add {{tinned-tomatoes}} of tinned tomatoes, {{stock-chicken}} of chicken stock, the {{thyme}} of thyme sprigs, and the {{bay-leaves}} of bay leaves. Stir and bring to a simmer." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Nestle the browned chicken thighs back into the sauce, skin-side up. They should sit in the liquid without being submerged — the skin stays above the surface to remain crisp. Cover and simmer gently for 30 to 35 minutes until the meat is cooked through and yields easily to a fork. Remove the lid for the final five minutes to let the sauce reduce and gloss. Remove the thyme sprigs and bay leaves. Stir in half the {{tarragon}} of tarragon, taste and adjust the seasoning, and scatter the rest over the surface. Serve with egg noodles, creamy mashed potato, or rice." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "A reliable braise with few surprise failure points.",
+          "items": [
+            { "symptom": "Skin soft and pale after braising", "cause": "Skin went into the sauce rather than sitting above it.", "fix": "Ensure the thighs are skin-side up in the braising liquid. The skin should be above the sauce line, not submerged." },
+            { "symptom": "Sauce thin and watery", "cause": "Too much stock, or lid kept on throughout and sauce not reduced at the end.", "fix": "Simmer uncovered for the last five to ten minutes. The sauce should coat the back of a spoon." },
+            { "symptom": "Chicken dry", "cause": "Overcooked, or boneless thighs used which cook faster.", "fix": "Bone-in thighs are more forgiving. Check at 30 minutes: the meat should pull from the bone with gentle pressure." },
+            { "symptom": "Sauce too acidic", "cause": "Tomatoes acidic and wine not cooked out fully.", "fix": "Reduce the wine for a full two minutes before adding the tomatoes. A pinch of sugar balances a particularly sharp batch of tomatoes." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Poulet chasseur arrived in the British domestic kitchen in the late 1950s and early 1960s, part of the wave of French-inspired home cooking that Elizabeth David championed. By the 1970s it was on every pub menu and in every household compendium of dinner-party dishes. It never quite left. The tarragon is the French marker that distinguishes this from a generic tomato chicken: it brings a faint anise quality that runs through the sauce and makes it distinctly its own. Serve with thick egg noodles tossed in butter, or creamy mashed potato set alongside to catch the sauce." }
+        ]
+      }
+    ]
+  }
+}
