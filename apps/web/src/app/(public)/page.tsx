@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { prisma, TutorialStatus, UserProjectStatus } from '@homemade/db'
 import { TutorialCard } from '@/components/public/tutorial-card'
 import { Wordmark } from '@/components/wordmark'
-import { mediaUrl, mediaSrcSet } from '@/lib/media'
+import { mediaSrcSet } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import {
   emptyReaderState,
