@@ -1369,6 +1369,73 @@ schema-additive session to add sauerkraut + kimchi.
 **Running cooking total after batch 002:** ~131 PUBLISHED + ~215
 personal-recipes DRAFT.
 
+### Step 16 — Mindset v3 polish + first magical-ritual anchor ✅ landed 2026-05-15
+
+**Goal.** Apply Rebecca's second-pass review feedback on the v2
+anchor batch. Five rule fixes + one new anchor.
+
+**Deliverable.**
+
+- `docs/mindset-author.md` bumped to **v3**. Five new rules:
+  1. No safety / medical / clinical commentary anywhere in
+     body. Legal terms cover it.
+  2. No author / book references throughout body. Attribution
+     only in `sourceNotes` and the bottom "Where this practice
+     comes from" section.
+  3. Repeat-count signposts (`(repeat x3)`) in release / allow /
+     karate-chop H3 headings.
+  4. Journal prompt sets open with 1–2 warm-up prompts, 5–6
+     prompts total.
+  5. Manual em-dash sweep on title field before upload
+     (voice-check doesn't scan titles).
+- `docs/mindset-anti-tells.md` — six new entries (4 `[block]`,
+  2 `[warn]`): safety/medical commentary in body, author/book
+  references in body, "tight" overuse, "surface" as a verb,
+  em-dash in title, specific-too-fast journal prompts. Total
+  list now 22 entries.
+- **6 practice anchors re-uploaded** (UPDATED in place). All
+  cleaned of body-level author refs, Scope sections, "tight"
+  overuse, narrow-without-warm-up shapes. Energy statement +
+  ritual headings now carry `(repeat x3)` signposts. The
+  `feast-and-famine` journal set expanded from 3 to 6 prompts
+  with warm-up.
+- **5 type-intro READING entries re-uploaded** (UPDATED).
+  Scope sections cut from `how-eft-tapping-works` and
+  `body-based-meditation`. Subtitles rewritten to describe the
+  practice ("A release-and-allow method you can use in many
+  situations" rather than naming the source book). Author /
+  book references stripped from body prose; preserved in
+  `sourceNotes` and bottom attribution paragraph.
+- **1 new ACTIVITY anchor: `the-deposit-coin`** (CREATED).
+  The magical / embodied "walk to the property, leave a coin,
+  walk away as if the deposit's confirmed" pattern Rebecca
+  asked about. Sub-category `activity`. Demonstrates the shape
+  for the ~30 ACTIVITY backlog entries (and the ~12 SPELL
+  ones) that the bulk-fill worker will draft.
+- `docs/mindset-anchor-report.md` rewritten with the v3 changes.
+
+Memory updates (auto-loaded for future Mindset workers):
+
+- `feedback_mindset_voice.md` updated with the v3 rules.
+
+**Out.**
+
+- No voice-check.ts edits.
+- No new TipTap blocks.
+- No pilot-10, no bulk fill, no plan generator, no admin/public
+  UI.
+
+**Next Mindset sessions, in order.**
+
+1. Voice-check CLI extension — Mindset register-bans + the
+   "Anchor"-as-ritual-step false positive fix.
+2. Pilot-10 — auto-publish per Phase 8 Step 11–12.
+3. Bulk fill — standing pattern consuming
+   `docs/mindset-backlog.md`.
+4. Admin UI for Mindset.
+5. Public UI for Mindset.
+6. Plan generator worker.
+
 ### Step 15 — Mindset register fix + type-intro readings + sub-category seed ✅ landed 2026-05-15
 
 **Goal.** Fix the issues Rebecca raised reviewing the Step 14 anchor
@@ -1650,7 +1717,7 @@ Revise the rates here when actuals diverge from estimates.
 | 2 | Baking | 3,000 | 4 DRAFT (anchor batch landed Phase 8 Baking pipeline scaffold, 2026-05-15) | 🟡 schema + taxonomy + authoring prompt + anti-tells + 4-anchor batch landed (Phase 8 Baking pipeline scaffold, 2026-05-15). Migration `20260615000000_phase_8_baking_pipeline_scaffold` adds `PreFermentType` enum + 17 Tutorial baking-metadata columns (`flourWeightGrams`, `hydrationPercent`, `saltPercent`, `yeastPercent`, `levainPercent`, `bulkFermentMinutes`, `proofMinutes`, `retardingMinutes`, `levainBuildMinutes`, `laminationFolds`, `laminationRests`, `bakeTemperatureCelsius`, `bakeTemperatureNote`, `steamMethod`, `decoratingTechnique`, `preFermentType`). `seed-baking-taxonomy.ts` creates `baking` Category + 8 sub-categories (bread, cakes, pastries, biscuits, pies, scones, sweets-confectionery, cake-decorating). `docs/baking-author.md` v1 + `docs/baking-anti-tells.md` (11 seeded entries) drive future Baking drafting. Upload script extended to accept a `recipe.baking` block (additive — Cooking / Mindset paths unchanged). Four anchor DRAFTs (tin loaf / Victoria sandwich / shortcrust / shortbread) seeded for Rebecca's review at `/admin/tutorials?category=baking`. Voice-check Baking extension, pilot-10, backlog draft, Baking-specific TipTap blocks (baker's percentages, lamination schedule, sugar-stage panel) — still ahead. | 3 |
 | 3 | Garden | 4,000 | 0 | Not started — ~1 wk setup | 4 |
 | 4 | Herbal medicine | 2,500 | 0 | Not started — ~1 wk setup | 2.5 |
-| 5 | Mindset | 4,300 | 10 DRAFT (5 practices + 5 type-intro readings; v2 anchor batch landed Phase 8 Step 15, 2026-05-15) | ✅ schema + backlog + authoring prompt v2 + anti-tells (16 entries) + 11 sub-categories + 10-entry anchor batch ready. Migration `20260614000000_phase_8_step_13_mindset_schema` ships PRACTICE / READING TutorialType values + 11-value `PracticeType` + 20-value `PracticeTarget` + `TimeBand` + `BestTime` + `PlanTier` + `PlanStatus` + `PlanSlotSource` enums + Tutorial practice-metadata columns + the six user-side tables. `docs/mindset-backlog.md` enumerates ~2,945 specific entry titles across all 16 life categories. `docs/mindset-author.md` v2 (cooking-recipe register, per-type intro readings, sub-categories-as-types) + `docs/mindset-anti-tells.md` (16 entries, 14 [block]) drive Mindset drafting. Five type-intro READINGs cover the methodology once; five practice anchors assume them and stay tight. Mindset Category seeded with 11 SubCategory rows (one per PracticeType). Upload script extended to accept PRACTICE / READING (additive — RECIPE / TECHNIQUE unchanged). Voice-check Mindset extension, pilot of 10, bulk fill, plan generator, admin/public UI — still ahead. | 4.3 |
+| 5 | Mindset | 4,300 | 11 DRAFT (6 practices + 5 type-intro readings; v3 anchor batch landed Phase 8 Step 16, 2026-05-15) | ✅ schema + backlog + authoring prompt v3 + anti-tells (22 entries) + 11 sub-categories + 11-entry anchor batch ready. Migration `20260614000000_phase_8_step_13_mindset_schema` ships PRACTICE / READING TutorialType values + 11-value `PracticeType` + 20-value `PracticeTarget` + `TimeBand` + `BestTime` + `PlanTier` + `PlanStatus` + `PlanSlotSource` enums + Tutorial practice-metadata columns + the six user-side tables. `docs/mindset-backlog.md` enumerates ~2,945 specific entry titles across all 16 life categories. `docs/mindset-author.md` v3 (cooking-recipe register, no in-body author refs, no in-body safety frame, repeat-count signposts, warm-up prompts) + `docs/mindset-anti-tells.md` (22 entries, ~18 [block]) drive Mindset drafting. Five type-intro READINGs cover the methodology once; six practice anchors assume them. The deposit-coin activity anchor demonstrates the magical-ritual pattern for the ~30 ACTIVITY + ~12 SPELL backlog entries. Mindset Category seeded with 11 SubCategory rows (one per PracticeType). Upload script extended to accept PRACTICE / READING (additive — RECIPE / TECHNIQUE unchanged). Voice-check Mindset extension, pilot of 10, bulk fill, plan generator, admin/public UI — still ahead. | 4.3 |
 | 6 | Crochet | 1,500 | 0 | Not started — ~1 wk setup | 1.5 |
 | 7 | Knitting | 1,500 | 0 | Not started — ~1 wk setup | 1.5 |
 | 8 | Needlework | 800 | 0 | Not started — ~1 wk setup | 0.8 |

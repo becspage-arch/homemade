@@ -65,21 +65,38 @@ pilot / bulk batches surface recurring tells.
   stays — that's the source-faithful practice content. Outside
   the script, the prose stays factual.
 
-- **Defensive in-body disclaimer** `[block]`
-  Pattern: a sentence in the practice body warning the user to
-  consult a healthcare professional. "If you're working with a
-  mental-health provider for anxiety, tell them you're trying this
-  and see what they say." Inflammatory rather than reassuring —
-  reads as the publication covering itself instead of guiding
-  the user.
-  **Why:** Section-level disclaimers live in legal pages and on
-  section landing pages, not in individual practices. A practice
-  page that warns the user every time reads as anxious, not
-  authoritative. The cooking recipes don't include "consult your
-  GP before eating eggs"; Mindset shouldn't either.
-  **How to fix:** Cut the in-body disclaimer entirely. The
-  section-level safety frame lives on `/mindset` and the legal
-  pages.
+- **Safety / medical / clinical commentary in body** `[block]`
+  Pattern: any sentence in body (practice OR reading) that touches
+  safety, medical scope, or clinical positioning. "If you're
+  working with a mental-health provider for anxiety, tell them
+  you're trying this." "Not a substitute for medical care." "The
+  studies that exist are small and mostly funded by the field."
+  Any Scope section.
+  **Why:** Legal terms cover it. Users accept terms on entry; they
+  don't need the safety frame repeated on every page. The cooking
+  recipes don't include "consult your GP before eating eggs". The
+  defensive register makes the publication read as anxious about
+  itself, not as authoritative about the practice. Stripped from
+  every entry in the Step 15 review (2026-05-15).
+  **How to fix:** Cut the sentence / paragraph / section entirely.
+  Safety lives only in the legal terms.
+
+- **Author or book references throughout body** `[block]`
+  Pattern: mentioning Rebecca or her book titles in subtitle,
+  excerpt, intro paragraphs, or main body prose. "The
+  release-and-allow method from Rebecca's The Money Zone." "Day
+  1 of Rebecca's MONEY program." "Rebecca's specific version is
+  tighter than either."
+  **Why:** The user wants the content, not the credentials. The
+  bottom "Where this practice comes from" section is the right
+  place to credit Rebecca + the book. Throughout-the-body
+  references read as the publication self-promoting rather than
+  serving the user.
+  **How to fix:** Strip the names from subtitle / excerpt / body
+  prose. Keep attribution in `sourceNotes` and the bottom
+  "Where this practice comes from" section only. Subtitle
+  convention: describe the practice, not the source ("A
+  release-and-allow method you can use in many situations").
 
 - **Methodology restatement in practice scripts** `[block]`
   Pattern: every tapping script restating where the karate chop
@@ -94,7 +111,11 @@ pilot / bulk batches surface recurring tells.
   **How to fix:** Cut every methodology paragraph from the script
   body. Add a single one-line link to the type-intro READING at
   the top: "New to tapping? Read [how EFT tapping works] first."
-  Drop straight into the karate chop.
+  Drop straight into the karate chop. **Where the script uses a
+  three-fold repetition (release, allow, karate chop set-up),
+  signpost it in the H3 heading itself: `Release (repeat x3)`,
+  not just `Release`.** The methodology lives in the type-intro
+  reading; the per-script reminder lives in the heading.
 
 - **"What you might notice" lists** `[block]`
   Pattern: a section listing vague felt effects — "a yawn or two",
@@ -121,6 +142,57 @@ pilot / bulk batches surface recurring tells.
   reads as imagined depth.
   **How to fix:** Either anchor the metaphor (e.g. "a steady
   voice when you re-read the bills email") or cut it.
+
+- **"Tight" as a stock descriptor** `[warn]`
+  Pattern: "tight" used as filler — "tight question", "tight
+  library", "tight-question free-write", "tight enough to be
+  daily-life-sized". Three to five times in one article. Rebecca
+  flagged the overuse in the Step 15 review.
+  **Why:** "Tight" is a stock approving adjective that can
+  describe almost anything; that's what makes it filler. The
+  reader can't picture what makes a question "tight".
+  **How to fix:** One usage per article max, where it earns its
+  place. Rewrite the rest with specifics: "a single specific
+  question", "narrow", "five minutes against a timer", "no
+  open-ended prompts".
+
+- **"Surface" as a verb** `[block]`
+  Pattern: "the prompt surfaces a line that catches", "what
+  surfaced in the writing", "money worry has surfaced". Used
+  without an object the reader can picture, the verb is
+  opaque.
+  **Why:** Rebecca explicitly flagged this in the Step 15
+  review — the word is unclear in context. Whose surface?
+  Where? What's coming up from underneath?
+  **How to fix:** Use "show", "bring up", or "come up" with a
+  clear subject and object. "The prompt brings up a line that
+  catches you." "Money worry has come up before the day
+  starts." "The writing shows you the line worth coming back
+  to."
+
+- **Em-dash in title** `[block]`
+  Pattern: an em-dash inside the title field. Voice-check
+  doesn't scan titles, so em-dashes pass through silently and
+  surface in admin / on the rendered page.
+  **Why:** Em-dashes in titles read as the strongest AI tell
+  outside the body, and Rebecca catches them visually. Same
+  rule as body: zero em-dashes in title.
+  **How to fix:** Manually read every title for `—` before
+  upload. Replace with a colon, a comma, or split the title
+  into two sentences if a clarifier is needed.
+
+- **Specific-too-fast journal prompts** `[warn]`
+  Pattern: a journal prompt set that opens with a narrow,
+  highly specific question (e.g. "Who in my life would have
+  called a steady bank balance a problem?") with no warm-up.
+  The user hits the page and freezes.
+  **Why:** Warm-up prompts orient the writing. Going straight
+  to a sharp question is too much too fast.
+  **How to fix:** Open every prompt set with 1–2 wider
+  orienting prompts ("What does this feel like to me right
+  now?" / "Where am I in the cycle?") under an H3 "Warm-up".
+  Then the narrower questions under H3 "Closer in". 5–6
+  prompts per set total.
 
 
 - **Therapeutic-claim creep** `[block]` `[needs-voice-check]`

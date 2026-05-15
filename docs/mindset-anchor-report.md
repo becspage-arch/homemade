@@ -1,8 +1,18 @@
 # Mindset anchor batch report
 
-Ten Mindset DRAFTs landed in two passes (v1 + v2). Both visible at
-`/admin/tutorials?category=mindset` filterable by `type=PRACTICE` /
-`type=READING`.
+Eleven Mindset DRAFTs landed across three passes (v1 → v2 → v3),
+all visible at `/admin/tutorials?category=mindset` filterable by
+`type=PRACTICE` / `type=READING`.
+
+**v3 (2026-05-15, commit pending).** Rebecca's second-pass review
+flagged five further issues: missing repeat-count signposts on
+release / allow headings, author + book references throughout
+the body, the word "tight" over-used, "surface" as an unclear
+verb, em-dashes creeping back into titles, "feast and famine"
+prompts too narrow with no warm-up, Scope sections still
+present. All cleaned. Plus one new ACTIVITY anchor seeded
+(`the-deposit-coin`) demonstrating the magical / embodied
+pattern from the brainstorm doc and Rebecca's example.
 
 **v1 (2026-05-14, commit `ffc357f`).** Five anchor practices, one
 per practice type. Rebecca reviewed the v1 tapping anchor and
@@ -38,7 +48,7 @@ Methodology lives here once. The corresponding practice scripts
 link to the READING in their opening paragraph and assume it's
 been read.
 
-### Practice anchors (5, one per sub-category)
+### Practice anchors (6, across six sub-categories)
 
 | Slug | Title | Type | Sub-category | Tutorial id |
 |---|---|---|---|---|
@@ -46,10 +56,67 @@ been read.
 | `i-am-allowed-to-want-this` | I am allowed to want this | ENERGY_STATEMENT | `energy-statement` | `cmp5rhy7n000120v4ei1mh8hz` |
 | `the-calm-and-safe-money-reset` | The Calm & Safe Money Reset | RITUAL | `ritual` | `cmp5rie4c0000ccv4vuc61a6x` |
 | `body-scan-for-sleep` | Body scan for sleep | MEDITATION | `meditation` | `cmp5rikkk0001lcv4f1tm9jyx` |
-| `feast-and-famine-journal-prompts` | Feast and famine — a journal prompt set | JOURNAL_PROMPT | `journal-prompt` | `cmp5rirb20001ikv4qwigp3ot` |
+| `feast-and-famine-journal-prompts` | Feast and famine journal prompts | JOURNAL_PROMPT | `journal-prompt` | `cmp5rirb20001ikv4qwigp3ot` |
+| `the-deposit-coin` | The deposit coin | ACTIVITY | `activity` | `cmp6rsfuf0001f4v4352g26ym` |
 
-All five v1 rows were updated in place (same slugs, same Tutorial
-ids); the upload script is idempotent on re-run.
+The v3 pass updated the five original anchors in place + created
+`the-deposit-coin` as the new sixth anchor (the magical / embodied
+"walk to the property and leave a coin" pattern Rebecca asked
+about).
+
+## What changed in v3
+
+### Voice + structure
+
+- **Repeat-count signposts in headings.** Every release / allow
+  H3 in the energy-statement anchor + the ritual anchor now
+  reads `Release (repeat x3)` / `Allow (repeat x3)`. Users were
+  missing the repetition instruction otherwise. Rule landed in
+  `docs/mindset-author.md` v3 + `docs/mindset-anti-tells.md`.
+- **Author + book references stripped from body.** Subtitles,
+  excerpts, and intro paragraphs cleaned of "Rebecca's MONEY",
+  "from The Money Zone", "Rebecca uses" etc. Attribution lives
+  only in `sourceNotes` and the bottom "Where this practice
+  comes from" section. Subtitle convention is now to describe
+  the practice itself ("A release-and-allow method you can use
+  in many situations") rather than the source.
+- **Safety / Scope sections cut from readings.** The Scope
+  paragraphs in `how-eft-tapping-works` and
+  `body-based-meditation` are gone. Legal terms cover safety;
+  users accept them on entry. No defensive frame on individual
+  pages.
+- **"Tight" usage trimmed.** `journal-prompts-as-practice`
+  dropped from 4–5 "tight" usages to 1. Replaced with
+  "specific", "narrow", "single specific question", "five
+  minutes against a timer".
+- **"Surface" as a verb replaced.** `journal-prompts-as-practice`
+  reworded — "the prompt surfaces a line that catches" →
+  "the prompt will bring up a line that catches you". Same
+  treatment across other entries.
+- **Em-dash removed from `feast-and-famine` title.** Was
+  "Feast and famine — a journal prompt set"; now "Feast and
+  famine journal prompts".
+- **`feast-and-famine` expanded from 3 prompts → 6 prompts.**
+  Two warm-up prompts ("What does money feel like to me right
+  now?" / "Where am I in the cycle right now?") plus four
+  narrower ones. Total time band shifted from `TEN_MIN` to
+  `THIRTY_PLUS`.
+
+### New anchor: `the-deposit-coin`
+
+The first ACTIVITY anchor, demonstrating the magical / embodied
+pattern Rebecca asked about. The practice walks the user through:
+walk to the property → place a coin on the property line → walk
+away as if the deposit's been confirmed. Public-domain lineage
+(walk-by visualisation + energetic deposit, in long use across
+folk magic, manifesting, and embodied-cognition traditions);
+specific staged version original to homemade.education.
+
+The Mindset backlog has ~30 ACTIVITY entries on the Money arc
+plus SPELLs (bay-leaf burn, cinnamon at the threshold, the
+walk-by, etc.). The bulk-fill worker will draft them from `[PD]`
+and `[NEW]` codes per row. The deposit-coin anchor is the
+shape-reference.
 
 ## What changed in v2
 

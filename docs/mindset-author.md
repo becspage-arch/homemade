@@ -6,20 +6,44 @@ shape — `PRACTICE` / `READING` tutorials, 11 practice types, 20
 practice targets, time bands, best-time, when-to-use / when-not-to-use,
 alternative-practice cross-references, source-material grounding.
 
-**Prompt version:** 2 (2026-05-15). Changelog:
-- v2: rewrote the voice section after Rebecca reviewed the v1 anchor
-  batch and flagged the whole thing as ethereal AI-poetry. New rules:
-  Mindset prose follows the cooking-recipe register (factual,
-  specific, low-key) — not a separate "spiritual" voice. Stripped
-  imagined-feeling intros, "what you might notice" lists, defensive
-  in-body disclaimers. Added the assumed-type-intro pattern:
-  individual practice scripts assume the matching READING entry has
-  been read (`how-eft-tapping-works`, `how-rituals-work`, etc.) and
-  don't restate the methodology. Sub-category locked as practice
-  type, not life category — life categories surface through
-  `practiceTargets[]` only.
-- v1 (Mindset anchor batch, 2026-05-14): initial drop, modelled on
-  `docs/tutorial-author.md` v4.
+**Prompt version:** 3 (2026-05-15). Changelog:
+- v3: second-pass review after Rebecca read the v2 anchor batch.
+  Five additional rules landed:
+  1. **No safety / medical / clinical commentary anywhere in
+     body.** The legal terms cover it; users accept them on
+     entry. Cut every Scope section, every "consult your
+     therapist", every "studies are small". Safety statements
+     live on the legal pages only.
+  2. **No author / book references throughout body.** Subtitle,
+     excerpt, intro paragraphs, body prose all stay clean of
+     Rebecca's name and book titles. The bottom "Where this
+     practice comes from" section is the only place attribution
+     belongs. Subtitle convention: describe the practice, not
+     the source — "A release-and-allow method you can use in
+     many situations" rather than "the release-and-allow method
+     from Rebecca's The Money Zone".
+  3. **Repeat-count signposts in headings.** Where a practice
+     uses the three-fold repetition (release, allow, karate
+     chop set-up), the H3 heading is `Release (repeat x3)` not
+     just `Release`. Same for Allow and the karate chop. Users
+     miss the instruction otherwise.
+  4. **Journal prompt sets open with warm-up prompts.** 1-2
+     wider orienting questions before the narrow ones. Target
+     5-6 prompts per set. Going straight to a narrow question
+     is too much too fast.
+  5. **Em-dashes in titles.** Voice-check doesn't scan titles
+     so they slip through. Manual sweep titles before upload —
+     zero em-dashes in title field.
+
+  Other v3 cleanups: "tight" word over-use trimmed across the
+  prompt; "surface" as a verb avoided in body prose ("show",
+  "bring up", "find" instead).
+- v2 (2026-05-15): rewrote the voice section after the v1
+  anchor batch read as ethereal AI-poetry. Cooking-recipe
+  register pinned. Per-practice-type intro readings introduced.
+  Sub-category locked as practice type.
+- v1 (Mindset anchor batch, 2026-05-14): initial drop, modelled
+  on `docs/tutorial-author.md` v4.
 
 ## How a drafting session uses this file
 
@@ -108,10 +132,20 @@ What the register looks like in practice:
   Beeton (1861), Fannie Farmer (1896) with year + book title.
   Mindset cites Rebecca's books by title + year, EFT by Gary Craig
   + decade, public-domain lineages by tradition.
-- **No defensive disclaimers in body.** The global disclaimer lives
-  on the legal pages and the section landing page; the practice
-  body assumes it. Never write "tell your healthcare provider" or
-  "consult a professional" in a practice body.
+- **No safety / medical / clinical commentary anywhere in body.**
+  The legal terms cover it. Users accept them on entry. Never
+  write "tell your healthcare provider", "consult a professional",
+  "not a substitute for clinical care", "studies are small", or
+  any Scope section. Even reading entries don't carry this
+  language. Safety lives on the legal pages only.
+- **No author or book references throughout body.** Subtitle,
+  excerpt, intro paragraphs, and main body prose all stay clean
+  of Rebecca's name and her book titles. Attribution belongs only
+  in `sourceNotes` and the bottom "Where this practice comes
+  from" section. Subtitle convention: describe what the practice
+  *is*, not where it comes from — "A release-and-allow method
+  you can use in many situations" rather than "the release-and-
+  allow method from Rebecca's The Money Zone".
 - **No "what you might notice" lists.** They read as guesses at
   universality. If a single concrete observation matters (e.g.
   "the third pass of the script is where most people slow down"),
@@ -385,21 +419,26 @@ present tense. Individual practices don't restate any of that.
 
 **Required sections inside "The practice":**
 
-1. **The statements themselves.** Format as two `pullQuote` blocks,
-   one for the release, one for the allow. Both follow Rebecca's
-   pattern: "I am ready to release [what you are releasing]. I
-   release it now. I release it now. I release it now." / "I am
-   ready to align with and allow [what you are allowing]. I allow
-   it now. I allow it now. I allow it now."
-2. **One line of closing instruction.** "Say each three times, slow,
-   out loud or in your mind." Nothing more.
+1. **H3 "Release (repeat x3)"** — the release statement as a
+   `pullQuote`. Follows the standard pattern: "I am ready to
+   release [what you are releasing]. I release it now. I release
+   it now. I release it now." The `(repeat x3)` in the heading is
+   load-bearing — users miss the repetition instruction otherwise.
+2. **H3 "Allow (repeat x3)"** — the allow statement as a
+   `pullQuote`. Same standard pattern: "I am ready to align with
+   and allow [what you are allowing]. I allow it now. I allow it
+   now. I allow it now."
+3. **One line of closing instruction.** "Say each three times,
+   slow, out loud or in your mind."
 
 **Voice notes:** First-person, present tense. No future tense, no
-negation construction (see anti-tells).
+negation construction (see anti-tells). No author / book refs in
+body — attribution only in `sourceNotes` and "Where this practice
+comes from".
 
-**Source-material grounding:** Energy statements use Rebecca's
-Money Zone method. Credit *The Money Zone* (Rebecca Page, 2024) in
-`sourceNotes` when the practice uses the release / allow structure.
+**Source-material grounding:** Credit `The Money Zone` (2024) for
+the release / allow structure in `sourceNotes`. Don't reference
+the book in body prose.
 
 ### AFFIRMATION
 
@@ -455,8 +494,10 @@ restate that.
 1. **H3 "Prepare"** — one short paragraph. What to set up. The
    specific image / object the user holds in mind for this
    particular ritual.
-2. **H3 "Release"** — the release statement as a `pullQuote`.
-3. **H3 "Allow"** — the allow statement as a `pullQuote`.
+2. **H3 "Release (repeat x3)"** — the release statement as a
+   `pullQuote`. `(repeat x3)` in the heading is load-bearing.
+3. **H3 "Allow (repeat x3)"** — the allow statement as a
+   `pullQuote`. `(repeat x3)` in the heading is load-bearing.
 4. **H3 "Integrate"** — one short paragraph. The specific image
    for this ritual (golden light, warm water, a held bowl —
    whichever the source ritual uses).
@@ -504,17 +545,29 @@ that.
 
 **Required sections inside "The practice":**
 
-1. **H3 per prompt** — each H3 is the prompt itself (a single
-   specific question). Body is one short sentence of guidance on
-   what to look for in the answer. 2–4 prompts per set.
+1. **Open with H3 "Warm-up"** — 1–2 wider orienting prompts under
+   H4 sub-headings (each H4 is the prompt question itself, body
+   is one short sentence of guidance). These prompts orient the
+   user before the narrower questions land. Example warm-ups:
+   "What does X feel like to me right now?" / "Where am I in
+   the cycle right now?"
+2. **H3 "Closer in"** — 3–4 narrower prompts under H4
+   sub-headings. Each H4 is one specific question; the body is
+   one short sentence of guidance.
 
-**Voice notes:** Prompts are questions — direct, specific, slightly
-provocative. The tight-question pattern from Rebecca's *The Money
-Journal* is the model.
+Target 5–6 prompts total. Less than 5 reads as too thin; more
+than 6 doesn't fit the thirty-minute time band most users have.
+
+**Voice notes:** Prompts are direct, specific questions. Use
+"show" or "bring up" instead of "surface" when describing what
+a prompt does ("the prompt brings up a line that catches you",
+not "the prompt surfaces a line"). No author or book refs in
+body. Avoid the word "tight" as a descriptor — say "single
+specific question" or "narrow question" instead.
 
 **Source-material grounding:** The 84 prompts in *The Money
-Journal* (Rebecca J Page, 2025) are the canonical examples. Reuse
-Rebecca's prompt wording where it fits.
+Journal* (2025) are the canonical examples. Reuse the source
+wording where it fits.
 
 ### VISUALISATION
 
@@ -829,10 +882,12 @@ Checklist:
    that the type-intro reading covers (where the karate chop point
    is, why three rounds, why slow exhale)? If yes, cut. The link
    to the type-intro reading is enough.
-3. **Defensive-disclaimer check.** Scan for "consult your doctor",
-   "tell your healthcare provider", "if you're working with a
-   therapist". Zero hits in body. The global disclaimer lives on
-   the legal pages and the section landing page.
+3. **Safety / medical / clinical check.** Scan for "consult your
+   doctor", "tell your healthcare provider", "if you're working
+   with a therapist", "not a substitute for clinical care", "the
+   studies are small", any Scope section, any safety paragraph.
+   Zero hits in body, including reading bodies. Safety lives
+   only on the legal pages.
 4. **"What you might notice" check.** Scan for any list of vague
    effects — "tears, sometimes", "a yawn or two", "a loosening".
    Cut the whole list unless one concrete observation matters; if
@@ -873,7 +928,27 @@ Checklist:
     plain paragraph linking to the matching type-intro READING
     entry. The link uses the relative path or slug
     (e.g. `[how EFT tapping works](/mindset/how-eft-tapping-works)`).
-18. Source attribution: does `sourceNotes` cite the source the
+18. **Em-dash in title check.** Voice-check doesn't scan titles,
+    so em-dashes can sneak in. Read the `title` field; zero
+    em-dashes. Use a colon or a comma or split into two
+    sentences if a clarifier is needed.
+19. **Author / book-reference check.** Read subtitle, excerpt,
+    and every paragraph in the body. Scan for "Rebecca", "Page",
+    or any book title (MONEY, SLEEP, WEIGHT LOSS, MANIFESTING,
+    The Money Zone, The Money Journal). Zero hits in body /
+    subtitle / excerpt. Attribution belongs only in `sourceNotes`
+    and the bottom "Where this practice comes from" section.
+20. **Repeat-count signpost check.** For any ENERGY_STATEMENT,
+    AFFIRMATION, RITUAL practice using three-fold repetition,
+    every Release / Allow / set-up H3 heading carries the
+    `(repeat x3)` suffix.
+21. **"Tight" word check.** Scan for "tight". Allow one usage per
+    article max where it carries weight ("a tight question");
+    rewrite the rest ("specific", "narrow", "five-minute
+    against a timer").
+22. **"Surface" as a verb check.** Scan for "surface" used as a
+    verb. Replace with "show", "bring up", "find", or restate.
+23. Source attribution: does `sourceNotes` cite the source the
     brief flagged? Is the attribution honest?
 19. Walk every entry in `docs/mindset-anti-tells.md`. For each
     entry, re-read the draft asking "does this draft exhibit the
