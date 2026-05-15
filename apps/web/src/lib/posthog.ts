@@ -81,6 +81,10 @@ export type PosthogEvent =
   // Recipe authoring + scaling
   | 'ingredients_scaled'
   | 'ingredient_created_inline'
+  // Phase 8 Homepage rebuild — onboarding
+  | 'onboarding_started'
+  | 'onboarding_completed'
+  | 'onboarding_skipped'
 
 /**
  * Capture a server-side analytics event. Fire-and-forget: failures must

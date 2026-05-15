@@ -24,6 +24,7 @@ const SIDEBAR_GROUPS: SidebarGroup[] = [
     label: 'Content',
     items: [
       { href: '/admin/tutorials', label: 'Tutorials' },
+      { href: '/admin/editorial-picks', label: 'Editorial picks' },
       { href: '/admin/categories', label: 'Categories' },
       { href: '/admin/sub-categories', label: 'Sub-categories' },
       { href: '/admin/tags', label: 'Tags' },

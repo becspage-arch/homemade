@@ -2,10 +2,23 @@ import Link from 'next/link'
 import { prisma } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { UserMenu } from './user-menu'
+import { CategoryMenu } from './category-menu'
+
+/**
+ * Locked spine-category slugs for the top-level desktop nav. The first
+ * five categories the homepage rebuild promotes to header-level. Anything
+ * else slides into the "All categories" overflow.
+ */
+const SPINE_CATEGORY_SLUGS = [
+  'cooking',
+  'baking',
+  'garden',
+  'mindset',
+  'herbal',
+  'herbal-medicine',
+]
 
 export async function SiteHeader() {
-  // `getCurrentDbUser` is React-cached so when a page below also calls it
-  // (every tutorial / category / /me page does) the lookup is shared.
   const [categories, dbUser] = await Promise.all([
     prisma.category.findMany({
       orderBy: [{ order: 'asc' }, { name: 'asc' }],
@@ -13,6 +26,20 @@ export async function SiteHeader() {
     }),
     getCurrentDbUser(),
   ])
+
+  // The five spine items keep their canonical order even if `Category.order`
+  // disagrees. Everything else falls into "All categories" as already sorted.
+  const spine: { slug: string; name: string }[] = []
+  for (const slug of SPINE_CATEGORY_SLUGS) {
+    const match = categories.find((c) => c.slug === slug)
+    if (match && !spine.some((s) => s.slug === match.slug)) {
+      spine.push({ slug: match.slug, name: match.name })
+    }
+    if (spine.length === 5) break
+  }
+  const otherCategories = categories.filter(
+    (c) => !spine.some((s) => s.slug === c.slug),
+  )
 
   const greeting = dbUser?.name?.split(' ')[0] ?? null
   const initial =
@@ -24,15 +51,11 @@ export async function SiteHeader() {
         <Link href="/" className="site-header-wordmark">
           homemade
         </Link>
+
         {categories.length > 0 && (
-          <nav className="site-header-nav" aria-label="Categories">
-            {categories.map((c) => (
-              <Link key={c.slug} href={`/${c.slug}`}>
-                {c.name}
-              </Link>
-            ))}
-          </nav>
+          <CategoryMenu spine={spine} other={otherCategories} />
         )}
+
         <form
           method="GET"
           action="/search"
@@ -46,7 +69,7 @@ export async function SiteHeader() {
             id="site-search-q"
             type="search"
             name="q"
-            placeholder="Search"
+            placeholder="What are you making?"
             aria-label="Search"
             className="site-header-search-input"
           />

@@ -74,6 +74,20 @@ model User {
   country             String?
   deviceClass         String?
 
+  // Phase 8 Homepage rebuild — onboarding + personalisation. `onboardedAt`
+  // null = the onboarding card still shows on the homepage. `primaryCategoryIds`
+  // / `experienceLevel` / `dietaryFlags` come from the onboarding card and
+  // weight the personalised rails. `homeCountryCode` is captured from
+  // Cloudflare's `cf-ipcountry` header at signup and steers the seasonality
+  // engine; the user can override later from settings. `lastSeenAt` powers
+  // the "New since you last visited" rail.
+  onboardedAt        DateTime?
+  primaryCategoryIds String[]         @default([])
+  experienceLevel    ExperienceLevel?
+  homeCountryCode    String?
+  dietaryFlags       String[]         @default([])
+  lastSeenAt         DateTime?
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -120,6 +134,14 @@ model User {
   @@index([role])
   @@index([isSuspended])
   @@index([isCreator])
+  @@index([onboardedAt])
+  @@index([lastSeenAt])
+}
+
+enum ExperienceLevel {
+  BEGINNER
+  INTERMEDIATE
+  CONFIDENT
 }
 
 enum UserRole {
@@ -270,6 +292,15 @@ model Tutorial {
   hero        Media?  @relation(fields: [heroMediaId], references: [id])
   body        Json // TipTap document — the article body
 
+  // Phase 8 Homepage rebuild — heroImageStrategy tracks where the current
+  // hero came from. PROCEDURAL_CARD = the renderer should show the
+  // category-tinted SVG card built at request time from title + category.
+  // REAL_PHOTO / AI_GENERATED = there's a Media row attached (`heroMediaId`).
+  // UNSET = default for new rows until the editor / backfill resolves the
+  // strategy. The public renderer falls through to PROCEDURAL_CARD whenever
+  // no Media row exists, regardless of stored strategy, so callers stay safe.
+  heroImageStrategy HeroStrategy @default(UNSET)
+
   // Lifecycle
   status       TutorialStatus @default(DRAFT)
   publishedAt  DateTime?
@@ -294,6 +325,9 @@ model Tutorial {
   patternTests PatternTest[]
   recipeIngredients RecipeIngredient[]
   recipeTools       RecipeTool[]
+
+  weeklyEditorialPicks WeeklyEditorialPick[]
+  projectSchedule      ProjectSchedule[]
 
   // ──────────────────────────────────────────────────────────────────────────
   // Phase 8 Step 13 — Mindset practice metadata. Null on rows where
@@ -399,6 +433,14 @@ enum TutorialType {
   TECHNIQUE
   PRACTICE
   READING
+}
+
+enum HeroStrategy {
+  REAL_PHOTO
+  PROCEDURAL_CARD
+  PUBLIC_DOMAIN_PLATE
+  AI_GENERATED
+  UNSET
 }
 
 enum Difficulty {
@@ -541,12 +583,23 @@ model UserProject {
   readingProgressPercent Int      @default(0)
   lastViewedAt           DateTime @default(now())
 
+  // Phase 8 Homepage rebuild — multi-day arc tracker. Long-arc tutorials
+  // (sourdough starters, fermentation, growing) register `ProjectSchedule`
+  // rows; when the user starts a project these denormalised fields snapshot
+  // the next step that should surface so the homepage scheduled-actions
+  // rail and the hero state-machine can read without joining ProjectSchedule
+  // on every request.
+  nextScheduledStepNumber Int?
+  nextScheduledAt         DateTime?
+  scheduledStepsCompleted Int[]    @default([])
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@unique([userId, tutorialId])
   @@index([userId])
   @@index([status])
+  @@index([nextScheduledAt])
 }
 
 enum UserProjectStatus {
@@ -1632,4 +1685,92 @@ model UserFeeling {
 
   @@index([userIdHashed, feelingAt])
   @@index([targetAtTime])
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Phase 8 Homepage rebuild — WeeklyEditorialPick + ProjectSchedule.
+//
+// Editorial picks: Sunday-22:00-UTC Inngest cron seeds five AUTO_SELECTED
+// picks per (Mon 00:00 UTC) week-anchor four weeks ahead. Admins can pin a
+// row (status -> MANUALLY_PINNED) so subsequent cron runs leave it alone, or
+// replace a single position (status -> MANUALLY_REPLACED) keeping the
+// original auto-pick's id on `replacedAutoPickId` for audit.
+//
+// ProjectSchedule rows are per-tutorial multi-day step definitions for the
+// long-arc workflows (sourdough starters, fermenting, preserving, growing).
+// `surfaceAs` decides whether the user's homepage hero takes over for the
+// day, a rail card surfaces under "Today's scheduled project actions", or
+// only an in-app notification fires.
+// ────────────────────────────────────────────────────────────────────────────
+
+enum EditorialPickStatus {
+  AUTO_SELECTED
+  MANUALLY_PINNED
+  MANUALLY_REPLACED
+}
+
+enum ScheduleSurface {
+  HERO
+  RAIL_CARD
+  NOTIFICATION_ONLY
+}
+
+model WeeklyEditorialPick {
+  id String @id @default(cuid())
+
+  /// Monday 00:00 UTC of the week this pick is for. The Sunday-night cron
+  /// generates rows for the next four weeks.
+  weekStarting DateTime
+
+  /// 1..5. The first position is the hero pick.
+  position Int
+
+  tutorialId String
+  tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+
+  status EditorialPickStatus @default(AUTO_SELECTED)
+
+  /// Clerk userId (or User.id) when an admin pinned / replaced the row.
+  selectedBy String?
+  selectedAt DateTime?
+
+  /// When an admin replaces an auto-pick, store the previous WeeklyEditorialPick
+  /// id so audit-trail digging can reconstruct what was overridden.
+  replacedAutoPickId String?
+
+  /// Optional admin note when pinning / replacing.
+  reason String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([weekStarting, position])
+  @@index([weekStarting])
+}
+
+model ProjectSchedule {
+  id String @id @default(cuid())
+
+  tutorialId String
+  tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+
+  /// 1, 2, 3, … In step-display order.
+  stepNumber Int
+
+  /// Days after `UserProject.startedAt` this step fires.
+  offsetDays Int
+
+  title String
+  body  String
+
+  surfaceAs ScheduleSurface @default(RAIL_CARD)
+
+  /// Does the user need to mark this step done? When false, the step is
+  /// information-only (e.g. "Your starter should smell mildly yeasty by now").
+  requiresUserAction Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([tutorialId, stepNumber])
 }

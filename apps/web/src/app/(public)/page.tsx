@@ -1,75 +1,30 @@
 import Link from 'next/link'
-import { prisma, TutorialStatus, UserProjectStatus } from '@homemade/db'
-import { TutorialCard } from '@/components/public/tutorial-card'
+import { HomeCard } from '@/components/public/home-card'
+import { HomeRail } from '@/components/public/home-rail'
+import { OnboardingCard } from '@/components/public/onboarding-card'
 import { Wordmark } from '@/components/wordmark'
-import { mediaSrcSet } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
-import {
-  emptyReaderState,
-  loadReaderState,
-  readerStateFor,
-} from '@/lib/user-state'
+import { loadHomepageData } from '@/lib/homepage-data'
+import { readerStateFor } from '@/lib/user-state'
+import { tutorialHeroSrc } from '@/lib/tutorial-hero'
+import { prisma } from '@homemade/db'
 
 import './home-page.css'
 
 export const dynamic = 'force-dynamic'
 
-const FEATURED_LIMIT = 9
-const CONTINUE_LIMIT = 3
-
 export default async function HomePage() {
-  const [tutorials, currentUser] = await Promise.all([
-    prisma.tutorial.findMany({
-      where: { status: TutorialStatus.PUBLISHED },
-      orderBy: [{ publishedAt: 'desc' }],
-      take: FEATURED_LIMIT,
-      select: {
-        id: true,
-        slug: true,
-        title: true,
-        excerpt: true,
-        difficulty: true,
-        season: true,
-        category: { select: { slug: true, name: true } },
-        hero: { select: { cloudflareId: true, r2Key: true, alt: true } },
-      },
-    }),
-    getCurrentDbUser(),
-  ])
+  const currentUser = await getCurrentDbUser()
+  const data = await loadHomepageData(currentUser)
 
-  const inProgress = currentUser
-    ? await prisma.userProject.findMany({
-        where: {
-          userId: currentUser.id,
-          status: UserProjectStatus.IN_PROGRESS,
-        },
-        orderBy: { lastViewedAt: 'desc' },
-        take: CONTINUE_LIMIT,
-        include: {
-          tutorial: {
-            select: {
-              id: true,
-              slug: true,
-              title: true,
-              excerpt: true,
-              difficulty: true,
-              season: true,
-              category: { select: { slug: true, name: true } },
-              hero: { select: { cloudflareId: true, r2Key: true, alt: true } },
-            },
-          },
-        },
-      })
-    : []
-
-  const readerState = currentUser
-    ? await loadReaderState(currentUser.id, [
-        ...tutorials.map((t) => t.id),
-        ...inProgress.map((p) => p.tutorial.id),
-      ])
-    : emptyReaderState()
-
-  if (tutorials.length === 0) {
+  // Wordmark fallback: zero published tutorials.
+  if (
+    data.thisWeeksEditorialPicks.length === 0 &&
+    data.continueMaking.length === 0 &&
+    data.inSeasonNow.length === 0 &&
+    data.mostLovedBySpine.length === 0 &&
+    !data.isOnboardingPending
+  ) {
     return (
       <div className="home-fallback">
         <Wordmark />
@@ -79,115 +34,315 @@ export default async function HomePage() {
     )
   }
 
-  const [lead, ...rest] = tutorials
+  // Onboarding hero takes the whole stage when needed; we still load the
+  // categories list so the picker doesn't roundtrip a second time.
+  let onboardingCategories: { id: string; slug: string; name: string }[] = []
+  if (data.isOnboardingPending) {
+    onboardingCategories = await prisma.category.findMany({
+      orderBy: [{ order: 'asc' }, { name: 'asc' }],
+      select: { id: true, slug: true, name: true },
+    })
+  }
 
   return (
     <div className="home-page">
-      <section className="home-hero">
-        <Wordmark />
-        <p className="home-hero-tagline">the home of making things yourself</p>
-      </section>
+      {/* ──────────────────────────────────────────────────────────────────
+          State-aware hero
+        ────────────────────────────────────────────────────────────────── */}
+      <section className="home-hero-zone">
+        {data.hero.kind === 'ONBOARDING' && (
+          <OnboardingCard categories={onboardingCategories} />
+        )}
 
-      {inProgress.length > 0 && (
-        <section className="home-continue">
-          <header className="home-recent-header">
-            <span className="home-section-label">Continue making</span>
-          </header>
-          <div className="home-grid">
-            {inProgress.map((p) => {
-              const card = mediaSrcSet(p.tutorial.hero, 'card', ['public'])
-              return (
-                <TutorialCard
-                  key={p.id}
-                  href={`/${p.tutorial.category.slug}/${p.tutorial.slug}`}
-                  title={p.tutorial.title}
-                  excerpt={p.tutorial.excerpt}
-                  heroUrl={card?.src ?? null}
-                  heroSrcSet={card?.srcSet}
-                  difficulty={p.tutorial.difficulty}
-                  season={p.tutorial.season}
-                  categoryName={p.tutorial.category.name}
-                  state={readerStateFor(readerState, p.tutorial.id)}
-                />
-              )
-            })}
+        {data.hero.kind === 'SCHEDULED_STEP' && (
+          <HeroScheduledStep action={data.hero.action} />
+        )}
+
+        {data.hero.kind === 'CONTINUE_MAKING' && (
+          <HeroContinueMaking tutorial={data.hero.project} />
+        )}
+
+        {data.hero.kind === 'EDITORIAL_PICK' && (
+          <HeroEditorialPick tutorial={data.hero.tutorial} />
+        )}
+
+        {data.hero.kind === 'WORDMARK_FALLBACK' && (
+          <div className="home-hero-wordmark">
+            <Wordmark />
+            <p className="home-hero-tagline">the home of making things yourself</p>
           </div>
-          <p style={{ marginTop: 14 }}>
-            <Link href="/me/projects" className="home-section-link">
-              All your projects →
-            </Link>
-          </p>
-        </section>
-      )}
-
-      <section className="home-feature">
-        <span className="home-section-label">Latest</span>
-        {lead && (
-          <Link
-            href={`/${lead.category.slug}/${lead.slug}`}
-            className="home-feature-card"
-          >
-            {(() => {
-              // Feature image renders ~720px wide at the largest breakpoint
-              // (1.2fr of a 1216px grid), full-width on mobile. Cover 1x + 2x
-              // density across the public + hero variants.
-              const hero = mediaSrcSet(lead.hero, 'public', ['hero'])
-              return hero ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  className="home-feature-image"
-                  src={hero.src}
-                  srcSet={hero.srcSet}
-                  sizes="(min-width: 900px) 55vw, 100vw"
-                  alt={lead.hero?.alt ?? ''}
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
-                />
-              ) : (
-                <span className="home-feature-image placeholder" aria-hidden="true">
-                  h
-                </span>
-              )
-            })()}
-            <div className="home-feature-body">
-              <span className="home-feature-eyebrow">{lead.category.name}</span>
-              <h2 className="home-feature-title">{lead.title}</h2>
-              {lead.excerpt && (
-                <p className="home-feature-excerpt">{lead.excerpt}</p>
-              )}
-              <span className="home-feature-cta">Read the guide →</span>
-            </div>
-          </Link>
         )}
       </section>
 
-      {rest.length > 0 && (
-        <section className="home-recent">
-          <header className="home-recent-header">
-            <span className="home-section-label">More to make</span>
-          </header>
-          <div className="home-grid">
-            {rest.map((t) => {
-              const card = mediaSrcSet(t.hero, 'card', ['public'])
-              return (
-                <TutorialCard
-                  key={t.id}
-                  href={`/${t.category.slug}/${t.slug}`}
-                  title={t.title}
-                  excerpt={t.excerpt}
-                  heroUrl={card?.src ?? null}
-                  heroSrcSet={card?.srcSet}
-                  difficulty={t.difficulty}
-                  season={t.season}
-                  categoryName={t.category.name}
-                  state={readerStateFor(readerState, t.id)}
-                />
-              )
-            })}
-          </div>
-        </section>
+      {/* ──────────────────────────────────────────────────────────────────
+          Rail stack
+        ────────────────────────────────────────────────────────────────── */}
+
+      {data.todaysScheduledActions.length > 0 && (
+        <HomeRail
+          heading="Today's scheduled project actions"
+          subheading="The next step on what you're already making."
+        >
+          {data.todaysScheduledActions.map((action) => (
+            <article key={action.userProjectId} className="home-scheduled-card">
+              <Link
+                href={`/${action.tutorial.category.slug}/${action.tutorial.slug}`}
+                className="home-scheduled-card-link"
+              >
+                <span className="home-scheduled-overline">
+                  Day {action.step.stepNumber} · {action.tutorial.title}
+                </span>
+                <span className="home-scheduled-title">{action.step.title}</span>
+                <span className="home-scheduled-body">{action.step.body}</span>
+              </Link>
+            </article>
+          ))}
+        </HomeRail>
       )}
+
+      {data.continueMaking.length > 0 && (
+        <HomeRail
+          heading="Continue making"
+          seeAllHref="/me/projects"
+          seeAllLabel="All your projects →"
+        >
+          {data.continueMaking.map((t) => (
+            <HomeCard
+              key={t.id}
+              tutorial={t}
+              state={readerStateFor(data.readerState, t.id)}
+            />
+          ))}
+        </HomeRail>
+      )}
+
+      {data.inSeasonNow.length > 0 && (
+        <HomeRail
+          heading="In season right now"
+          subheading={
+            data.themes[0]
+              ? `${data.themes[0].label}, and the rest of what's growing.`
+              : null
+          }
+        >
+          {data.inSeasonNow.map((t) => (
+            <HomeCard
+              key={t.id}
+              tutorial={t}
+              state={readerStateFor(data.readerState, t.id)}
+            />
+          ))}
+        </HomeRail>
+      )}
+
+      {data.thisWeeksEditorialPicks.length > 0 && (
+        <HomeRail heading="This week's editorial picks">
+          {data.thisWeeksEditorialPicks.map((t) => (
+            <HomeCard
+              key={t.id}
+              tutorial={t}
+              state={readerStateFor(data.readerState, t.id)}
+            />
+          ))}
+        </HomeRail>
+      )}
+
+      {data.savedNotStarted.length > 0 && (
+        <HomeRail
+          heading="Saved"
+          subheading="Things you saved but haven't started yet."
+          seeAllHref="/me/bookmarks"
+        >
+          {data.savedNotStarted.map((t) => (
+            <HomeCard
+              key={t.id}
+              tutorial={t}
+              state={readerStateFor(data.readerState, t.id)}
+            />
+          ))}
+        </HomeRail>
+      )}
+
+      {data.whereYouLeftOff.length > 0 && (
+        <HomeRail
+          heading="Where you left off"
+          subheading="Projects you started a while back."
+        >
+          {data.whereYouLeftOff.map((t) => (
+            <HomeCard
+              key={t.id}
+              tutorial={t}
+              state={readerStateFor(data.readerState, t.id)}
+            />
+          ))}
+        </HomeRail>
+      )}
+
+      {data.newSinceLastVisit.length > 0 && (
+        <HomeRail heading="New since you last visited">
+          {data.newSinceLastVisit.map((t) => (
+            <HomeCard
+              key={t.id}
+              tutorial={t}
+              state={readerStateFor(data.readerState, t.id)}
+            />
+          ))}
+        </HomeRail>
+      )}
+
+      {data.mostLovedBySpine.map((group) => (
+        <HomeRail
+          key={group.categorySlug}
+          heading={`Most-loved in ${group.categoryName.toLowerCase()}`}
+          seeAllHref={`/${group.categorySlug}`}
+        >
+          {group.tutorials.map((t) => (
+            <HomeCard
+              key={t.id}
+              tutorial={t}
+              state={readerStateFor(data.readerState, t.id)}
+            />
+          ))}
+        </HomeRail>
+      ))}
+
+      <section className="home-all-categories">
+        <header className="home-rail-header">
+          <h2 className="home-rail-heading">Browse all categories</h2>
+        </header>
+        <div className="home-categories-grid">
+          {data.allCategories.map((cat) => (
+            <Link
+              key={cat.slug}
+              href={`/${cat.slug}`}
+              className="home-category-tile"
+            >
+              <span className="home-category-tile-name">{cat.name}</span>
+              {cat.description && (
+                <span className="home-category-tile-description">
+                  {cat.description}
+                </span>
+              )}
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
+  )
+}
+
+interface HeroTutorial {
+  id: string
+  slug: string
+  title: string
+  excerpt: string | null
+  category: { slug: string; name: string }
+  hero: { cloudflareId: string | null; r2Key: string | null; alt: string | null } | null
+}
+
+function HeroEditorialPick({ tutorial }: { tutorial: HeroTutorial }) {
+  const hero = tutorialHeroSrc(tutorial, 'public', ['hero'])
+  return (
+    <Link
+      href={`/${tutorial.category.slug}/${tutorial.slug}`}
+      className="home-hero-feature"
+    >
+      <span className="home-hero-image-wrap">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className={`home-hero-image${hero.isProcedural ? ' procedural' : ''}`}
+          src={hero.src}
+          srcSet={hero.srcSet}
+          sizes="(min-width: 900px) 60vw, 100vw"
+          alt={tutorial.hero?.alt ?? ''}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
+      </span>
+      <div className="home-hero-body">
+        <span className="home-hero-overline">This week&apos;s editorial pick</span>
+        <span className="home-hero-eyebrow">{tutorial.category.name}</span>
+        <h1 className="home-hero-title">{tutorial.title}</h1>
+        {tutorial.excerpt && (
+          <p className="home-hero-excerpt">{tutorial.excerpt}</p>
+        )}
+        <span className="home-hero-cta">Read the guide →</span>
+      </div>
+    </Link>
+  )
+}
+
+function HeroContinueMaking({ tutorial }: { tutorial: HeroTutorial }) {
+  const hero = tutorialHeroSrc(tutorial, 'public', ['hero'])
+  return (
+    <Link
+      href={`/${tutorial.category.slug}/${tutorial.slug}`}
+      className="home-hero-feature"
+    >
+      <span className="home-hero-image-wrap">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className={`home-hero-image${hero.isProcedural ? ' procedural' : ''}`}
+          src={hero.src}
+          srcSet={hero.srcSet}
+          sizes="(min-width: 900px) 60vw, 100vw"
+          alt={tutorial.hero?.alt ?? ''}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
+      </span>
+      <div className="home-hero-body">
+        <span className="home-hero-overline">Continue making</span>
+        <span className="home-hero-eyebrow">{tutorial.category.name}</span>
+        <h1 className="home-hero-title">{tutorial.title}</h1>
+        {tutorial.excerpt && (
+          <p className="home-hero-excerpt">{tutorial.excerpt}</p>
+        )}
+        <span className="home-hero-cta">Pick up where you left off →</span>
+      </div>
+    </Link>
+  )
+}
+
+interface ScheduledActionLike {
+  userProjectId: string
+  tutorial: HeroTutorial
+  step: { title: string; body: string; stepNumber: number }
+}
+
+function HeroScheduledStep({ action }: { action: ScheduledActionLike }) {
+  const hero = tutorialHeroSrc(action.tutorial, 'public', ['hero'])
+  return (
+    <Link
+      href={`/${action.tutorial.category.slug}/${action.tutorial.slug}`}
+      className="home-hero-feature"
+    >
+      <span className="home-hero-image-wrap">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className={`home-hero-image${hero.isProcedural ? ' procedural' : ''}`}
+          src={hero.src}
+          srcSet={hero.srcSet}
+          sizes="(min-width: 900px) 60vw, 100vw"
+          alt={action.tutorial.hero?.alt ?? ''}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
+      </span>
+      <div className="home-hero-body">
+        <span className="home-hero-overline">
+          Today on your {action.tutorial.title.toLowerCase()}
+        </span>
+        <span className="home-hero-eyebrow">
+          Day {action.step.stepNumber}
+        </span>
+        <h1 className="home-hero-title">{action.step.title}</h1>
+        <p className="home-hero-excerpt">{action.step.body}</p>
+        <span className="home-hero-cta">Open the project →</span>
+      </div>
+    </Link>
   )
 }
