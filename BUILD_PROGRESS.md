@@ -1436,6 +1436,34 @@ Memory updates (auto-loaded for future Mindset workers):
 5. Public UI for Mindset.
 6. Plan generator worker.
 
+### Phase 8 Baking — pilot-10 batch ✅ landed 2026-05-15
+
+**Goal.** Auto-publish 10 baking recipes spanning the 8 baking sub-categories, voice-checked and PUBLISHED in one session. Analogue of the cooking Step 10.
+
+**Deliverable.**
+
+- 10 RECIPE rows PUBLISHED: `soda-bread-irish`, `focaccia-dimpled`, `chocolate-layer-cake`, `lemon-drizzle-cake` (updated from DRAFT), `rough-puff-pastry`, `treacle-tart-classic`, `chocolate-chip-cookies`, `cream-tea-scones`, `dark-caramel`, `baked-vanilla-cheesecake`.
+- Difficulty spread: 3 BEGINNER / 5 INTERMEDIATE / 2 ADVANCED.
+- Voice-check: 0 errors on all 10 final uploads. 18 tricolon warnings total (none blocked). All blocking errors fixed within one edit round per recipe.
+- 7 glossary terms created: `soda-bread-cross`, `stretch-and-fold`, `ganache`, `drizzle-syrup`, `lamination`, `dough-chilling`, `caramelisation`.
+- `docs/baking-pilot-10-briefs/` — 10 source JSON files.
+- `docs/baking-pilot-10-report.md` — full batch report with error patterns and lessons.
+
+**Patterns surfaced for future Baking batches:**
+
+- Em-dash pairs in `sourceNotes` are the highest-risk location. Write as full sentences with colons, not clauses separated by em-dashes.
+- `categorySlug: "baking"` is required on every upload; include it explicitly.
+- `bakeTemperatureCelsius` is repurposed as the sugar-stage target in confectionery (e.g. 175°C = dark amber). Set `bakeTemperatureNote` accordingly.
+- Sugar-safety line is mandatory in every confectionery method.
+
+**Out.** No schema changes. No new TipTap blocks. No voice-check CLI changes.
+
+**Next Baking sessions, in order.**
+
+1. Rebecca reviews the 4 anchor DRAFTs at `/admin/tutorials?category=baking`.
+2. Bulk fill — standing pattern consuming the baking backlog.
+3. Baking-specific TipTap blocks (baker's percentages panel, lamination schedule, sugar-stage panel) — deferred until post-launch or when bulk fill surfaces the need.
+
 ### Step 15 — Mindset register fix + type-intro readings + sub-category seed ✅ landed 2026-05-15
 
 **Goal.** Fix the issues Rebecca raised reviewing the Step 14 anchor
@@ -1714,7 +1742,7 @@ Revise the rates here when actuals diverge from estimates.
 | # | Category | Target | Current | Pipeline | Fill weeks @ 1k/wk |
 |---|---|---:|---:|---|---:|
 | 1 | Cooking | 7,000 | 202 DRAFT (13 pilot + 189 personal recipes ingested 2026-05-14) | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
-| 2 | Baking | 3,000 | 4 DRAFT (anchor batch landed Phase 8 Baking pipeline scaffold, 2026-05-15) | 🟡 schema + taxonomy + authoring prompt + anti-tells + 4-anchor batch landed (Phase 8 Baking pipeline scaffold, 2026-05-15). Migration `20260615000000_phase_8_baking_pipeline_scaffold` adds `PreFermentType` enum + 17 Tutorial baking-metadata columns (`flourWeightGrams`, `hydrationPercent`, `saltPercent`, `yeastPercent`, `levainPercent`, `bulkFermentMinutes`, `proofMinutes`, `retardingMinutes`, `levainBuildMinutes`, `laminationFolds`, `laminationRests`, `bakeTemperatureCelsius`, `bakeTemperatureNote`, `steamMethod`, `decoratingTechnique`, `preFermentType`). `seed-baking-taxonomy.ts` creates `baking` Category + 8 sub-categories (bread, cakes, pastries, biscuits, pies, scones, sweets-confectionery, cake-decorating). `docs/baking-author.md` v1 + `docs/baking-anti-tells.md` (11 seeded entries) drive future Baking drafting. Upload script extended to accept a `recipe.baking` block (additive — Cooking / Mindset paths unchanged). Four anchor DRAFTs (tin loaf / Victoria sandwich / shortcrust / shortbread) seeded for Rebecca's review at `/admin/tutorials?category=baking`. Voice-check Baking extension, pilot-10, backlog draft, Baking-specific TipTap blocks (baker's percentages, lamination schedule, sugar-stage panel) — still ahead. | 3 |
+| 2 | Baking | 3,000 | 14 (4 DRAFT anchor + 10 PUBLISHED pilot, 2026-05-15) | ✅ schema + taxonomy + authoring prompt + anti-tells + 4-anchor batch + pilot-10 all landed. Migration `20260615000000_phase_8_baking_pipeline_scaffold` adds `PreFermentType` enum + 17 baking-metadata columns. `seed-baking-taxonomy.ts` seeds `baking` Category + 8 sub-categories. `docs/baking-author.md` v1 + `docs/baking-anti-tells.md` (11 entries). Pilot-10: 10 recipes PUBLISHED spanning bread (2), cakes (2), pastries (1), pies (1), biscuits (1), scones (1), sweets-confectionery (2). 3 BEGINNER / 5 INTERMEDIATE / 2 ADVANCED. Voice: 0 errors on all 10 final uploads. Report: `docs/baking-pilot-10-report.md`. Four anchor DRAFTs (tin loaf / Victoria sandwich / shortcrust / shortbread) pending Rebecca review. Bulk fill, Baking-specific TipTap blocks (baker's percentages, lamination schedule, sugar-stage panel) — still ahead. | 3 |
 | 3 | Garden | 4,000 | 0 | Not started — ~1 wk setup | 4 |
 | 4 | Herbal medicine | 2,500 | 0 | Not started — ~1 wk setup | 2.5 |
 | 5 | Mindset | 4,300 | 11 DRAFT (6 practices + 5 type-intro readings; v3 anchor batch landed Phase 8 Step 16, 2026-05-15) | ✅ schema + backlog + authoring prompt v3 + anti-tells (22 entries) + 11 sub-categories + 11-entry anchor batch ready. Migration `20260614000000_phase_8_step_13_mindset_schema` ships PRACTICE / READING TutorialType values + 11-value `PracticeType` + 20-value `PracticeTarget` + `TimeBand` + `BestTime` + `PlanTier` + `PlanStatus` + `PlanSlotSource` enums + Tutorial practice-metadata columns + the six user-side tables. `docs/mindset-backlog.md` enumerates ~2,945 specific entry titles across all 16 life categories. `docs/mindset-author.md` v3 (cooking-recipe register, no in-body author refs, no in-body safety frame, repeat-count signposts, warm-up prompts) + `docs/mindset-anti-tells.md` (22 entries, ~18 [block]) drive Mindset drafting. Five type-intro READINGs cover the methodology once; six practice anchors assume them. The deposit-coin activity anchor demonstrates the magical-ritual pattern for the ~30 ACTIVITY + ~12 SPELL backlog entries. Mindset Category seeded with 11 SubCategory rows (one per PracticeType). Upload script extended to accept PRACTICE / READING (additive — RECIPE / TECHNIQUE unchanged). Voice-check Mindset extension, pilot of 10, bulk fill, plan generator, admin/public UI — still ahead. | 4.3 |
