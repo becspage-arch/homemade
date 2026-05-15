@@ -164,11 +164,27 @@ pilot / bulk batches surface recurring tells.
   **Why:** Rebecca explicitly flagged this in the Step 15
   review — the word is unclear in context. Whose surface?
   Where? What's coming up from underneath?
-  **How to fix:** Use "show", "bring up", or "come up" with a
-  clear subject and object. "The prompt brings up a line that
-  catches you." "Money worry has come up before the day
-  starts." "The writing shows you the line worth coming back
-  to."
+  **How to fix:** Use plain English — "comes up", "shows up",
+  "you write" — with a clear subject and object. Pair with
+  the next rule.
+
+- **Inspirational paraphrasing of "you felt emotional"** `[block]`
+  Pattern: "a line that catches you", "a line that lands
+  sharper than the rest", "what wants releasing", "what's
+  asking to be heard", "the line that lands". All
+  AI-inspirational stand-ins for the plain idea "a line that
+  made you emotional / cry / feel something strong".
+  **Why:** Rebecca flagged this in the Step 16 review — "Do
+  you mean a thought or line that has you feel emotional? Just
+  normal speak please." The paraphrased version reads as the
+  publication trying to sound deep instead of saying the
+  ordinary thing.
+  **How to fix:** Say the plain thing. "Sometimes you'll write
+  a line that makes you emotional" beats "sometimes a line
+  catches you". "If a line in your writing made you emotional,
+  come back to it" beats "if a line in your writing felt
+  sharper than the others". Test: can the user picture the
+  thing without re-reading? If not, plain it up.
 
 - **Em-dash in title** `[block]`
   Pattern: an em-dash inside the title field. Voice-check
