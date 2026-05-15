@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { prisma, TutorialStatus, UserProjectStatus } from '@homemade/db'
 import { TutorialCard } from '@/components/public/tutorial-card'
 import { Wordmark } from '@/components/wordmark'
-import { mediaUrl } from '@/lib/media'
+import { mediaUrl, mediaSrcSet } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import {
   emptyReaderState,
@@ -31,7 +31,7 @@ export default async function HomePage() {
         difficulty: true,
         season: true,
         category: { select: { slug: true, name: true } },
-        hero: { select: { cloudflareId: true, r2Key: true } },
+        hero: { select: { cloudflareId: true, r2Key: true, alt: true } },
       },
     }),
     getCurrentDbUser(),
@@ -55,7 +55,7 @@ export default async function HomePage() {
               difficulty: true,
               season: true,
               category: { select: { slug: true, name: true } },
-              hero: { select: { cloudflareId: true, r2Key: true } },
+              hero: { select: { cloudflareId: true, r2Key: true, alt: true } },
             },
           },
         },
@@ -94,19 +94,23 @@ export default async function HomePage() {
             <span className="home-section-label">Continue making</span>
           </header>
           <div className="home-grid">
-            {inProgress.map((p) => (
-              <TutorialCard
-                key={p.id}
-                href={`/${p.tutorial.category.slug}/${p.tutorial.slug}`}
-                title={p.tutorial.title}
-                excerpt={p.tutorial.excerpt}
-                heroUrl={mediaUrl(p.tutorial.hero, 'card')}
-                difficulty={p.tutorial.difficulty}
-                season={p.tutorial.season}
-                categoryName={p.tutorial.category.name}
-                state={readerStateFor(readerState, p.tutorial.id)}
-              />
-            ))}
+            {inProgress.map((p) => {
+              const card = mediaSrcSet(p.tutorial.hero, 'card', ['public'])
+              return (
+                <TutorialCard
+                  key={p.id}
+                  href={`/${p.tutorial.category.slug}/${p.tutorial.slug}`}
+                  title={p.tutorial.title}
+                  excerpt={p.tutorial.excerpt}
+                  heroUrl={card?.src ?? null}
+                  heroSrcSet={card?.srcSet}
+                  difficulty={p.tutorial.difficulty}
+                  season={p.tutorial.season}
+                  categoryName={p.tutorial.category.name}
+                  state={readerStateFor(readerState, p.tutorial.id)}
+                />
+              )
+            })}
           </div>
           <p style={{ marginTop: 14 }}>
             <Link href="/me/projects" className="home-section-link">
@@ -124,13 +128,21 @@ export default async function HomePage() {
             className="home-feature-card"
           >
             {(() => {
-              const heroUrl = mediaUrl(lead.hero, 'hero')
-              return heroUrl ? (
-                <span
+              // Feature image renders ~720px wide at the largest breakpoint
+              // (1.2fr of a 1216px grid), full-width on mobile. Cover 1x + 2x
+              // density across the public + hero variants.
+              const hero = mediaSrcSet(lead.hero, 'public', ['hero'])
+              return hero ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
                   className="home-feature-image"
-                  role="img"
-                  aria-label=""
-                  style={{ backgroundImage: `url(${heroUrl})` }}
+                  src={hero.src}
+                  srcSet={hero.srcSet}
+                  sizes="(min-width: 900px) 55vw, 100vw"
+                  alt={lead.hero?.alt ?? ''}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                 />
               ) : (
                 <span className="home-feature-image placeholder" aria-hidden="true">
@@ -156,19 +168,23 @@ export default async function HomePage() {
             <span className="home-section-label">More to make</span>
           </header>
           <div className="home-grid">
-            {rest.map((t) => (
-              <TutorialCard
-                key={t.id}
-                href={`/${t.category.slug}/${t.slug}`}
-                title={t.title}
-                excerpt={t.excerpt}
-                heroUrl={mediaUrl(t.hero, 'card')}
-                difficulty={t.difficulty}
-                season={t.season}
-                categoryName={t.category.name}
-                state={readerStateFor(readerState, t.id)}
-              />
-            ))}
+            {rest.map((t) => {
+              const card = mediaSrcSet(t.hero, 'card', ['public'])
+              return (
+                <TutorialCard
+                  key={t.id}
+                  href={`/${t.category.slug}/${t.slug}`}
+                  title={t.title}
+                  excerpt={t.excerpt}
+                  heroUrl={card?.src ?? null}
+                  heroSrcSet={card?.srcSet}
+                  difficulty={t.difficulty}
+                  season={t.season}
+                  categoryName={t.category.name}
+                  state={readerStateFor(readerState, t.id)}
+                />
+              )
+            })}
           </div>
         </section>
       )}

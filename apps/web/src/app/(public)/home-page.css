@@ -46,9 +46,10 @@
 .home-feature-image {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 5 / 4;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
+  object-position: center;
   border-radius: 4px;
   filter: saturate(0.88);
   background-color: var(--color-bone);

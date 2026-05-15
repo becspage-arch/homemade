@@ -11,6 +11,7 @@ interface SearchResultHit {
   title: string
   excerpt: string | null
   heroUrl: string | null
+  heroSrcSet: string | null
   difficulty: string
   season: string | null
 }
@@ -55,6 +56,7 @@ export function SearchResults({ query, filters, totalResults, hits }: SearchResu
             title={hit.title}
             excerpt={hit.excerpt}
             heroUrl={hit.heroUrl}
+            heroSrcSet={hit.heroSrcSet}
             difficulty={hit.difficulty}
             season={hit.season}
             categoryName={hit.categoryName}

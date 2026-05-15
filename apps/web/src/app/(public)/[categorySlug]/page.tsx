@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { prisma, TutorialStatus, Difficulty } from '@homemade/db'
 import { TutorialCard } from '@/components/public/tutorial-card'
-import { mediaUrl } from '@/lib/media'
+import { mediaSrcSet } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import {
   emptyReaderState,
@@ -148,18 +148,22 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
                 </header>
               )}
               <div className="category-grid">
-                {items.map((t) => (
-                  <TutorialCard
-                    key={t.id}
-                    href={`/${category.slug}/${t.slug}`}
-                    title={t.title}
-                    excerpt={t.excerpt}
-                    heroUrl={mediaUrl(t.hero, 'card')}
-                    difficulty={t.difficulty}
-                    season={t.season}
-                    state={readerStateFor(readerState, t.id)}
-                  />
-                ))}
+                {items.map((t) => {
+                  const card = mediaSrcSet(t.hero, 'card', ['public'])
+                  return (
+                    <TutorialCard
+                      key={t.id}
+                      href={`/${category.slug}/${t.slug}`}
+                      title={t.title}
+                      excerpt={t.excerpt}
+                      heroUrl={card?.src ?? null}
+                      heroSrcSet={card?.srcSet}
+                      difficulty={t.difficulty}
+                      season={t.season}
+                      state={readerStateFor(readerState, t.id)}
+                    />
+                  )
+                })}
               </div>
             </section>
           )

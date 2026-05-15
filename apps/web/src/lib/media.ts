@@ -28,6 +28,13 @@ const VARIANT_PARAMS: Record<ImageVariant, string> = {
   hero: 'width=1600,format=auto',
 }
 
+const VARIANT_WIDTHS: Record<ImageVariant, number> = {
+  thumbnail: 200,
+  card: 400,
+  public: 1200,
+  hero: 1600,
+}
+
 function transformOrigin(): string {
   const explicit = process.env.CDN_IMAGE_TRANSFORM_ORIGIN
   if (explicit && explicit.length > 0) return explicit.replace(/\/$/, '')
@@ -95,4 +102,32 @@ export function cloudflareDeliveryUrl(
   variant: ImageVariant = 'thumbnail',
 ): string | null {
   return mediaUrl(source, variant)
+}
+
+/**
+ * Build a `srcSet` string + a default `src` for responsive images.
+ * Pass the variant the layout would normally use as `defaultVariant`; the
+ * generated srcSet adds bigger variants for Retina + larger viewports.
+ *
+ * Returns null when the row has no stored asset (matches `mediaUrl`).
+ */
+export function mediaSrcSet(
+  source: MediaLike | string | null | undefined,
+  defaultVariant: ImageVariant,
+  extraVariants: ImageVariant[] = [],
+): { src: string; srcSet: string; widths: number[] } | null {
+  const src = mediaUrl(source, defaultVariant)
+  if (!src) return null
+  const variants = Array.from(new Set([defaultVariant, ...extraVariants]))
+  const entries: { url: string; width: number }[] = []
+  for (const v of variants) {
+    const u = mediaUrl(source, v)
+    if (u) entries.push({ url: u, width: VARIANT_WIDTHS[v] })
+  }
+  entries.sort((a, b) => a.width - b.width)
+  return {
+    src,
+    srcSet: entries.map((e) => `${e.url} ${e.width}w`).join(', '),
+    widths: entries.map((e) => e.width),
+  }
 }

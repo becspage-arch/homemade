@@ -4,7 +4,7 @@ import { headers } from 'next/headers'
 import { prisma, TutorialStatus } from '@homemade/db'
 import { searchTutorials, isSearchConfigured } from '@homemade/search'
 import { TutorialCard } from '@/components/public/tutorial-card'
-import { mediaUrl } from '@/lib/media'
+import { mediaSrcSet } from '@/lib/media'
 import { captureServerEvent } from '@/lib/posthog'
 import { checkRateLimit } from '@/lib/ratelimit'
 import { getCurrentDbUser } from '@/lib/get-current-user'
@@ -142,20 +142,25 @@ export default async function SearchPage({ searchParams }: PageProps) {
                 season: season ?? undefined,
               }}
               totalResults={results.found}
-              hits={results.hits.map((hit) => ({
-                id: hit.document.id,
-                slug: hit.document.slug,
-                categorySlug: hit.document.categorySlug,
-                categoryName: hit.document.categoryName,
-                title: hit.document.title,
-                excerpt: hit.document.excerpt,
-                heroUrl: mediaUrl(
-                  { r2Key: hit.document.heroR2Key, cloudflareId: hit.document.heroCloudflareId },
-                  'card',
-                ),
-                difficulty: hit.document.difficulty,
-                season: hit.document.season,
-              }))}
+              hits={results.hits.map((hit) => {
+                const heroSource = {
+                  r2Key: hit.document.heroR2Key,
+                  cloudflareId: hit.document.heroCloudflareId,
+                }
+                const card = mediaSrcSet(heroSource, 'card', ['public'])
+                return {
+                  id: hit.document.id,
+                  slug: hit.document.slug,
+                  categorySlug: hit.document.categorySlug,
+                  categoryName: hit.document.categoryName,
+                  title: hit.document.title,
+                  excerpt: hit.document.excerpt,
+                  heroUrl: card?.src ?? null,
+                  heroSrcSet: card?.srcSet ?? null,
+                  difficulty: hit.document.difficulty,
+                  season: hit.document.season,
+                }
+              })}
             />
           ) : (
             <div className="search-no-results">
@@ -175,18 +180,22 @@ export default async function SearchPage({ searchParams }: PageProps) {
           <p className="search-summary">Recently published</p>
           {recents.length > 0 ? (
             <div className="search-grid">
-              {recents.map((t) => (
-                <TutorialCard
-                  key={t.id}
-                  href={`/${t.category.slug}/${t.slug}`}
-                  title={t.title}
-                  excerpt={t.excerpt}
-                  heroUrl={mediaUrl(t.hero, 'card')}
-                  difficulty={t.difficulty}
-                  season={t.season}
-                  categoryName={t.category.name}
-                />
-              ))}
+              {recents.map((t) => {
+                const card = mediaSrcSet(t.hero, 'card', ['public'])
+                return (
+                  <TutorialCard
+                    key={t.id}
+                    href={`/${t.category.slug}/${t.slug}`}
+                    title={t.title}
+                    excerpt={t.excerpt}
+                    heroUrl={card?.src ?? null}
+                    heroSrcSet={card?.srcSet}
+                    difficulty={t.difficulty}
+                    season={t.season}
+                    categoryName={t.category.name}
+                  />
+                )
+              })}
             </div>
           ) : (
             <p className="search-summary">No tutorials published yet.</p>

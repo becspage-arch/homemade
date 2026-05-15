@@ -3,7 +3,7 @@ import { prisma, UserProjectStatus } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { redirect } from 'next/navigation'
 import { TutorialCard } from '@/components/public/tutorial-card'
-import { mediaUrl } from '@/lib/media'
+import { mediaSrcSet } from '@/lib/media'
 import { getReaderCounts } from '@/lib/user-state'
 
 export const dynamic = 'force-dynamic'
@@ -119,24 +119,28 @@ export default async function MeDashboard() {
           </p>
         ) : (
           <div className="me-grid">
-            {bookmarks.map((b) => (
-              <TutorialCard
-                key={b.id}
-                href={`/${b.tutorial.category.slug}/${b.tutorial.slug}`}
-                title={b.tutorial.title}
-                excerpt={b.tutorial.excerpt}
-                heroUrl={mediaUrl(b.tutorial.hero, 'card')}
-                difficulty={b.tutorial.difficulty}
-                season={b.tutorial.season}
-                categoryName={b.tutorial.category.name}
-                state={{
-                  bookmarked: true,
-                  projectStatus: null,
-                  projectId: null,
-                  projectProgressPercent: null,
-                }}
-              />
-            ))}
+            {bookmarks.map((b) => {
+              const card = mediaSrcSet(b.tutorial.hero, 'card', ['public'])
+              return (
+                <TutorialCard
+                  key={b.id}
+                  href={`/${b.tutorial.category.slug}/${b.tutorial.slug}`}
+                  title={b.tutorial.title}
+                  excerpt={b.tutorial.excerpt}
+                  heroUrl={card?.src ?? null}
+                  heroSrcSet={card?.srcSet}
+                  difficulty={b.tutorial.difficulty}
+                  season={b.tutorial.season}
+                  categoryName={b.tutorial.category.name}
+                  state={{
+                    bookmarked: true,
+                    projectStatus: null,
+                    projectId: null,
+                    projectProgressPercent: null,
+                  }}
+                />
+              )
+            })}
           </div>
         )}
         {counts.bookmarks > BOOKMARK_LIMIT && (

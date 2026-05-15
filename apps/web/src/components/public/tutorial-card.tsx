@@ -3,6 +3,10 @@ import type { ReaderTutorialState } from '@/lib/user-state'
 
 import './tutorial-card.css'
 
+// Card hero size grid: ~360px (mobile 1-col) up to ~400px (3-col desktop).
+// Cover 1x + 2x DPR cleanly with card + public variants.
+const CARD_SIZES = '(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw'
+
 const DIFFICULTY_LABEL: Record<string, string> = {
   BEGINNER: 'beginner',
   INTERMEDIATE: 'intermediate',
@@ -22,6 +26,10 @@ export interface TutorialCardProps {
   title: string
   excerpt: string | null
   heroUrl: string | null
+  /** Optional srcSet covering Retina + larger viewports. Pair with `heroUrl`. */
+  heroSrcSet?: string | null
+  /** Optional alt text for the hero image. Falls back to '' (decorative). */
+  heroAlt?: string | null
   difficulty: string
   season: string | null
   categoryName?: string | null
@@ -36,6 +44,8 @@ export function TutorialCard({
   title,
   excerpt,
   heroUrl,
+  heroSrcSet,
+  heroAlt,
   difficulty,
   season,
   categoryName,
@@ -50,11 +60,15 @@ export function TutorialCard({
     <Link href={href} className="tutorial-card">
       <span className="tutorial-card-image-wrap">
         {heroUrl ? (
-          <span
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
             className="tutorial-card-image"
-            role="img"
-            aria-label=""
-            style={{ backgroundImage: `url(${heroUrl})` }}
+            src={heroUrl}
+            srcSet={heroSrcSet ?? undefined}
+            sizes={CARD_SIZES}
+            alt={heroAlt ?? ''}
+            loading="lazy"
+            decoding="async"
           />
         ) : (
           <span className="tutorial-card-image placeholder" aria-hidden="true">

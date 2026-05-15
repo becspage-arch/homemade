@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { prisma, CreatorApplicationStatus, TutorialStatus } from '@homemade/db'
 import { TutorialCard } from '@/components/public/tutorial-card'
-import { mediaUrl } from '@/lib/media'
+import { mediaSrcSet } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { emptyReaderState, loadReaderState, readerStateFor } from '@/lib/user-state'
 import { captureServerEvent } from '@/lib/posthog'
@@ -127,19 +127,23 @@ export default async function MakerProfilePage({ params }: PageProps) {
           <p className="maker-profile-empty">No published tutorials yet.</p>
         ) : (
           <div className="maker-profile-tutorials">
-            {tutorials.map((t) => (
-              <TutorialCard
-                key={t.id}
-                href={`/${t.category.slug}/${t.slug}`}
-                title={t.title}
-                excerpt={t.excerpt}
-                heroUrl={mediaUrl(t.hero, 'card')}
-                difficulty={t.difficulty}
-                season={t.season}
-                categoryName={t.category.name}
-                state={readerStateFor(readerState, t.id)}
-              />
-            ))}
+            {tutorials.map((t) => {
+              const card = mediaSrcSet(t.hero, 'card', ['public'])
+              return (
+                <TutorialCard
+                  key={t.id}
+                  href={`/${t.category.slug}/${t.slug}`}
+                  title={t.title}
+                  excerpt={t.excerpt}
+                  heroUrl={card?.src ?? null}
+                  heroSrcSet={card?.srcSet}
+                  difficulty={t.difficulty}
+                  season={t.season}
+                  categoryName={t.category.name}
+                  state={readerStateFor(readerState, t.id)}
+                />
+              )
+            })}
           </div>
         )}
       </section>
