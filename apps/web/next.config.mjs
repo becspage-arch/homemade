@@ -1,5 +1,6 @@
 import path from 'node:path'
 import { withSentryConfig } from '@sentry/nextjs'
+import bundleAnalyzer from '@next/bundle-analyzer'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -10,6 +11,8 @@ const nextConfig = {
   poweredByHeader: false,
   typedRoutes: true,
 }
+
+const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === '1' })
 
 // Sentry source-map upload is enabled only when SENTRY_AUTH_TOKEN is provided
 // (i.e. on the CI build). Local dev builds skip the upload step.
@@ -24,6 +27,8 @@ const sentryWebpackOptions = {
   tunnelRoute: '/monitoring/sentry',
 }
 
-export default process.env.NEXT_PUBLIC_SENTRY_DSN
+const finalConfig = process.env.NEXT_PUBLIC_SENTRY_DSN
   ? withSentryConfig(nextConfig, sentryWebpackOptions)
   : nextConfig
+
+export default withBundleAnalyzer(finalConfig)
