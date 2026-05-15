@@ -1,0 +1,186 @@
+{
+  "slug": "steak-frites",
+  "title": "Steak frites",
+  "subtitle": "Bistro ribeye, twice-fried chips, butter that holds.",
+  "excerpt": "The Parisian café plate: a ribeye seared in a heavy pan, twice-fried chips, and a knob of compound butter melting over the top. Hot pan, room-temperature meat, salt at the last moment. Serves two.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The bistro plate as documented in French café tradition. Twice-frying technique standard across French and Belgian frites canon. Ribeye doneness and resting times follow conventional steak guidance.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 25,
+    "restingMinutes": 8,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The compound butter can be rolled, wrapped, and chilled a day ahead. The first fry on the chips can also be done several hours ahead and the chips left on a tray ready for the second fry.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["dateNight", "comfortFood", "specialOccasion"],
+    "temperatureCelsius": null,
+    "temperatureNote": "hob — hot pan",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "cast-iron-skillet", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "tongs", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "compound-butter", "term": "Compound butter", "definition": "Softened butter mixed with chopped herbs, garlic, or other flavourings, rolled into a log, chilled, and sliced over hot meat or vegetables so it melts on contact." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A hot heavy pan, a piece of steak left at room temperature for half an hour, salt put on at the last second. Chips fried twice: once at 140°C to cook through, once at 180°C to crisp. A knob of garlic-parsley butter sitting on the meat as it rests. This is the café plate as it has been served in Paris for a hundred years." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two things matter most. The steak goes in a properly hot pan, not a warm one. The chips get a rest between fries so the steam works its way out." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "beef-ribeye", "amount": 500, "unit": "g", "prepNote": "two thick steaks, ~2.5 cm, at room temperature", "isOptional": false, "groupLabel": "For the steak" },
+            { "ingredientSlug": "vegetable-oil", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the steak" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the steak" },
+            { "ingredientSlug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": "freshly ground", "isOptional": false, "groupLabel": "For the steak" },
+            { "ingredientSlug": "potato", "amount": 700, "unit": "g", "prepNote": "Maris Piper or King Edward, peeled, cut into 1 cm batons", "isOptional": false, "groupLabel": "For the chips" },
+            { "ingredientSlug": "vegetable-oil", "amount": 1500, "unit": "ml", "prepNote": "for deep frying", "isOptional": false, "groupLabel": "For the chips" },
+            { "ingredientSlug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "For the butter" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the butter" },
+            { "ingredientSlug": "parsley-flat", "amount": 10, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the butter" },
+            { "ingredientSlug": "lemon", "amount": 0.5, "unit": "each", "prepNote": "zest only", "isOptional": true, "groupLabel": "For the butter" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "You need a heavy pan that holds heat: a cast-iron skillet is ideal. A deep saucepan or fryer for the chips, and an instant-read thermometer so the oil sits where it should." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the butter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mash {{unsalted-butter}} of softened butter with {{garlic}} of chopped garlic, {{parsley-flat}} of chopped parsley, and the lemon zest. Pile onto a square of greaseproof paper and roll into a log about as thick as your thumb. Twist the ends and put it in the freezer for ten minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "First fry the chips" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rinse {{potato}} of cut potatoes in cold water until the water runs clear. Dry thoroughly on a clean tea towel; wet chips spit in oil. Heat {{vegetable-oil}} of vegetable oil to 140°C in a deep saucepan. Lower the chips in carefully in batches and cook for 6 to 8 minutes until soft but pale. Lift out with a slotted spoon onto a tray and let them rest while you cook the steak." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sear the steak" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pat the steaks dry. Season heavily on both sides with {{sea-salt-flakes}} of salt flakes and {{black-pepper}} of pepper just before they hit the pan. Heat a cast-iron skillet over the highest setting until you can see a faint haze. Add {{vegetable-oil}} of oil; it should shimmer instantly. Lay the steaks in away from you and don't move them. Three minutes one side, then turn and three minutes the other for medium-rare on a 2.5 cm steak. Use the tongs to stand each steak on its fat edge for 30 seconds at the end so the fat browns." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift onto a warm plate. Cut a thick slice of the chilled butter and lay it on each steak. Cover loosely with foil and rest for 8 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Second fry the chips" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bring the oil back up to 180°C. Drop the chips in for 2 to 3 minutes until properly golden and crisp. Lift onto kitchen paper, season with sea salt flakes the moment they come out of the oil." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Steak grey and weeping, no crust", "cause": "Pan not hot enough or steak too cold from the fridge.", "fix": "Bring the steak to room temperature for 30 minutes. Heat the pan until you can see a faint haze before the steak goes in." },
+            { "symptom": "Chips soggy not crisp", "cause": "Oil not hot enough for the second fry, or chips not dried after rinsing.", "fix": "Use a thermometer and check the oil reads 180°C. Dry the cut potatoes thoroughly on a tea towel before they go in." },
+            { "symptom": "Chips brown outside, raw inside", "cause": "Skipped the first low-temperature fry.", "fix": "The 140°C first fry cooks the potato through. Don't go straight to 180°C." },
+            { "symptom": "Steak overcooked, no pink in the middle", "cause": "Too long in the pan, or steak too thin.", "fix": "For a 2.5 cm ribeye, 3 minutes per side gives medium-rare. Use an instant-read thermometer if unsure: 52°C in the centre is medium-rare." },
+            { "symptom": "Butter melted before serving", "cause": "Pulled out of the freezer too early.", "fix": "Keep the butter log in the freezer until the steak is resting. Slice straight from frozen." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sirloin or rump works in place of ribeye; both are leaner so the pan stays drier. The garlic-parsley butter can take half a teaspoon of Dijon mustard or chopped shallot in place of the lemon zest. For a true bistro à l'os version, use a bone-in côte de boeuf and add five minutes to the cooking time." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Steak frites is the plat du jour of every neighbourhood café from Pigalle to Saint-Germain. Order it at a brasserie like Le Relais de l'Entrecôte and the version arrives with a green salad and a herb-shallot butter that nobody will tell you the recipe for. At home it pairs with a glass of light Burgundy and a sharp dressed salad to cut the richness." }
+        ]
+      }
+    ]
+  }
+}

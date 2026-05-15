@@ -1,0 +1,190 @@
+{
+  "slug": "curry-goat",
+  "title": "Curry goat",
+  "subtitle": "Jamaican slow-braised goat with allspice and Scotch bonnet.",
+  "excerpt": "Goat shoulder rubbed with curry powder and overnight marinade, slow-braised for two hours with onion, garlic, ginger, thyme, Scotch bonnet, and a whole tin of coconut milk. The Sunday dinner of Jamaica, served with rice and peas.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Jamaican curry-goat tradition as documented in the Caribbean culinary canon, with roots in Indian-Caribbean indenture cuisine and West African slow-stew technique. The Scotch bonnet and allspice are the Jamaican signatures.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 150,
+    "restingMinutes": 10,
+    "chillingMinutes": 720,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months. Defrost overnight, reheat gently.",
+    "batchable": true,
+    "batchNotes": null,
+    "makeAheadNotes": "The goat needs an overnight marinade. The cooked stew is better the next day.",
+    "dietaryFlags": ["dairyFree"],
+    "cuisine": "caribbean",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "slowSunday", "hearty", "specialOccasion"],
+    "temperatureCelsius": null,
+    "temperatureNote": "hob — lowest setting",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "jamaican-curry-powder", "term": "Jamaican curry powder", "definition": "A bright yellow blend dominated by turmeric, with cumin, coriander, allspice, and fenugreek. Distinct from Indian curry powders by the addition of allspice (pimento) and a heavier turmeric ratio. Brand-name versions vary; look for any tin labelled \"Jamaican-style\"." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mutton or goat shoulder on the bone is the right cut. The connective tissue breaks down slowly over two hours of low simmering; the bone gives the stew body. Lamb shoulder works if goat is hard to find, with a slightly milder result." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The Scotch bonnet sits in the pot whole through the cook, ferrying its perfume and a little heat into the gravy without releasing the full charge. Lift it out at the end; for serious chilli-eaters, slit it open and stir through. Each Scotch bonnet is a different beast." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "mutton", "amount": 1500, "unit": "g", "prepNote": "goat shoulder on the bone, cut into 5 cm chunks; mutton or lamb shoulder works as substitute", "isOptional": false, "groupLabel": "For the meat" },
+            { "ingredientSlug": "curry-powder", "amount": 4, "unit": "tbsp", "prepNote": "Jamaican-style if available", "isOptional": false, "groupLabel": "For the marinade" },
+            { "ingredientSlug": "garlic", "amount": 6, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the marinade" },
+            { "ingredientSlug": "ginger-root", "amount": 30, "unit": "g", "prepNote": "peeled, finely chopped", "isOptional": false, "groupLabel": "For the marinade" },
+            { "ingredientSlug": "thyme", "amount": 6, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the marinade" },
+            { "ingredientSlug": "allspice", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the marinade" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the marinade" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the marinade" },
+            { "ingredientSlug": "vegetable-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "large, finely chopped", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "spring-onion", "amount": 6, "unit": "each", "prepNote": "white and pale green only, chopped", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "scotch-bonnet", "amount": 1, "unit": "each", "prepNote": "left whole, pricked once with a knife", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "potato", "amount": 4, "unit": "each", "prepNote": "medium, peeled and cut into 3 cm cubes", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "coconut-milk", "amount": 400, "unit": "ml", "prepNote": "one tin", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "stock-chicken", "amount": 500, "unit": "ml", "prepNote": "or water", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the braise" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A heavy lidded Dutch oven of 5 to 6 litres. The pot needs to hold the meat in a single layer for the brown, then take all the liquid for the long braise." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Marinate the meat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Put {{mutton}} of goat into a large bowl. Add {{curry-powder}} of curry powder, {{garlic}} of garlic, {{ginger-root}} of ginger, the leaves stripped from half the {{thyme}} of thyme sprigs, {{allspice}} of allspice, {{sea-salt-fine}} of salt, and {{black-pepper}} of pepper. Mix thoroughly with your hands until every piece is coated. Cover and refrigerate overnight, or for at least 4 hours." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the meat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat {{vegetable-oil}} of oil in the Dutch oven over medium-high heat. Brown the goat in batches, 3 minutes a side, until deep gold. Don't crowd the pan or the meat will stew. Lift each batch onto a plate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the gravy" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drop the heat to medium. Add {{onion}} of chopped onion to the pot. Cook 8 minutes until soft. Stir in {{spring-onion}} of chopped spring onion for 2 minutes more. Return the goat and any juices to the pot." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour in {{coconut-milk}} of coconut milk and {{stock-chicken}} of stock. Add the remaining thyme sprigs, the {{bay-leaves}} of bay leaves, and the whole pricked {{scotch-bonnet}} of Scotch bonnet. Bring to a simmer." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Slow braise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drop the heat to its lowest. Cover and cook for 90 minutes. Check every 20 minutes and stir. Add {{potato}} of cubed potato. Cook for another 35 to 45 minutes, partially covered, until the goat is fork-tender and the potato is cooked through." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift out the Scotch bonnet and the woody thyme stalks. Taste the gravy for salt. If you want more heat, slit the bonnet open and stir half a teaspoon of the chopped flesh through. Rest off the heat 10 minutes. Serve in deep bowls with rice and peas." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Goat tough and chewy", "cause": "Cooked too short, or simmered too hard.", "fix": "Goat shoulder needs 90 to 120 minutes on the lowest possible heat. The bubble should be barely visible." },
+            { "symptom": "Curry too hot", "cause": "Scotch bonnet split open in the pot.", "fix": "Always leave the bonnet whole, pricked once. Lift out before serving. If the heat is already in, add a small splash of coconut milk and a squeeze of lime to settle the burn." },
+            { "symptom": "Curry too thin", "cause": "Too much liquid, or lid kept on too long.", "fix": "Uncover for the last 30 minutes so the gravy reduces. The dish should sit thick on the spoon, not watery." },
+            { "symptom": "Curry powder tasting raw", "cause": "Marinade not given enough time, or curry powder not bloomed.", "fix": "Overnight marination is the canonical step. The browning stage at the start also activates the curry-powder flavour." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Curry goat is Jamaican Sunday dinner, brought to the island by Indian indentured workers in the nineteenth century and remade with Scotch bonnet, allspice, and thyme. The dish travels through Trinidad, Guyana, and the diaspora kitchens of London, New York, and Toronto. Serve with rice and peas (red kidney beans cooked in coconut milk) and a wedge of fried plantain on the side." }
+        ]
+      }
+    ]
+  }
+}

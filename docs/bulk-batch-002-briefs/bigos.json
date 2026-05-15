@@ -1,0 +1,188 @@
+{
+  "slug": "bigos",
+  "title": "Bigos",
+  "subtitle": "Polish hunter's stew of sauerkraut, cabbage, and three meats.",
+  "excerpt": "Sauerkraut and fresh cabbage stewed slowly with pork shoulder, smoked sausage, beef, onion, dried mushrooms, and prune. The traditional Polish winter pot, made over two days, eaten over the next week.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Bigos is the Polish national stew documented from the medieval Polish-Lithuanian Commonwealth through Adam Mickiewicz's Pan Tadeusz (1834, public domain) and into modern Polish farmhouse cookery.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 35,
+    "cookMinutes": 240,
+    "restingMinutes": 0,
+    "chillingMinutes": 720,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months and considered to taste better after each thaw and reheat.",
+    "batchable": true,
+    "batchNotes": "Bigos is designed to be made in big batches. The dish improves over 3 to 5 days of reheating; this is part of the tradition.",
+    "makeAheadNotes": "Made over 2 days minimum. Cook on day one, refrigerate overnight, reheat for an hour on day two. The flavour deepens with each reheat across the week.",
+    "dietaryFlags": [],
+    "cuisine": "easternEuropean",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "cosy", "hearty", "slowSunday"],
+    "temperatureCelsius": null,
+    "temperatureNote": "hob — lowest setting",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "kapusta-kiszona", "term": "Kapusta kiszona", "definition": "Polish sauerkraut: white cabbage fermented in salt with no vinegar, often layered with caraway and bay during the ferment. The aged, dry-fermented version sold in Polish delis has a deeper, more sour character than the supermarket bag." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bigos is a long pot. The first cook takes four hours; you eat it on day two, when it has tasted of itself overnight. The same pot then comes back to the table on day three, four, and five, each reheat adding to the depth. Polish hunters carried bigos into the forest in clay pots; the dish was as much a way of preserving meat through a long cold week as a meal." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Three things matter most. Use a mix of sauerkraut and fresh cabbage, roughly half and half. Use more than one kind of meat — pork shoulder, smoked sausage, and a piece of beef or game work classically. And cook it slowly enough that you can leave it alone for an hour at a time without burning at the bottom of the pan." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "pork-shoulder", "amount": 800, "unit": "g", "prepNote": "boned, cut into 3 cm cubes", "isOptional": false, "groupLabel": "For the meat" },
+            { "ingredientSlug": "beef-chuck", "amount": 500, "unit": "g", "prepNote": "cut into 3 cm cubes", "isOptional": false, "groupLabel": "For the meat" },
+            { "ingredientSlug": "chorizo", "amount": 400, "unit": "g", "prepNote": "or Polish kabanos / kielbasa, sliced into 1 cm rounds", "isOptional": false, "groupLabel": "For the meat" },
+            { "ingredientSlug": "streaky-bacon", "amount": 200, "unit": "g", "prepNote": "smoked, cut into lardons", "isOptional": false, "groupLabel": "For the meat" },
+            { "ingredientSlug": "cabbage-white", "amount": 1, "unit": "each", "prepNote": "medium, ~1 kg, cored and shredded", "isOptional": false, "groupLabel": "For the cabbage" },
+            { "ingredientSlug": "cabbage-white", "amount": 800, "unit": "g", "prepNote": "fermented (sauerkraut / kapusta kiszona, from a Polish deli), drained, lightly rinsed if very sharp", "isOptional": false, "groupLabel": "For the cabbage" },
+            { "ingredientSlug": "onion", "amount": 3, "unit": "each", "prepNote": "large, finely sliced", "isOptional": false, "groupLabel": "For the base" },
+            { "ingredientSlug": "garlic", "amount": 6, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the base" },
+            { "ingredientSlug": "mushrooms-porcini-dried", "amount": 30, "unit": "g", "prepNote": "soaked in 250 ml hot water for 20 minutes", "isOptional": false, "groupLabel": "For the flavour" },
+            { "ingredientSlug": "tomato-puree", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the flavour" },
+            { "ingredientSlug": "prunes", "amount": 12, "unit": "each", "prepNote": "stoned", "isOptional": false, "groupLabel": "For the flavour" },
+            { "ingredientSlug": "caraway-seeds", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the flavour" },
+            { "ingredientSlug": "juniper-berries", "amount": 8, "unit": "each", "prepNote": "lightly crushed", "isOptional": false, "groupLabel": "For the flavour" },
+            { "ingredientSlug": "bay-leaves", "amount": 3, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the flavour" },
+            { "ingredientSlug": "allspice", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the flavour" },
+            { "ingredientSlug": "red-wine", "amount": 250, "unit": "ml", "prepNote": "dry, or 150 ml plus 100 ml brandy", "isOptional": false, "groupLabel": "For the flavour" },
+            { "ingredientSlug": "stock-beef", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the flavour" },
+            { "ingredientSlug": "honey", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the flavour" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": "to taste; sauerkraut is salty", "isOptional": false, "groupLabel": "For the flavour" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the flavour" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 6 to 8 litre lidded Dutch oven. The pot needs to be wider than tall so the moisture has room to evaporate during the long cook." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Render the bacon and brown the meats" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cook {{streaky-bacon}} of lardons in the Dutch oven over medium heat for 8 minutes until the fat runs and the bacon is crisp. Lift out into a bowl with a slotted spoon. Brown {{pork-shoulder}} of pork shoulder in batches in the rendered fat, 3 minutes a side, until deeply coloured. Lift out to the bowl. Brown {{beef-chuck}} of beef in the same way. Set aside. Brown {{chorizo}} of sausage rounds, 1 minute a side, then lift out." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tip {{onion}} of sliced onions into the pot. Cook 10 minutes until soft and golden. Stir in {{garlic}} of garlic, {{caraway-seeds}} of caraway, {{juniper-berries}} of juniper, {{bay-leaves}} of bay, and {{allspice}} of allspice for 1 minute. Stir in {{tomato-puree}} of tomato purée and cook 2 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Combine everything" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Return all the browned meats to the pot. Tip in the shredded fresh cabbage and the drained sauerkraut. Drain the soaked porcini, chop roughly, and add along with their soaking liquid (strain through a sieve first to leave any grit behind). Add {{prunes}} of prunes. Pour in {{red-wine}} of red wine and {{stock-beef}} of beef stock. Stir in {{honey}} of honey and {{black-pepper}} of black pepper. Don't add salt yet; the sauerkraut and bacon both add salt." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Slow cook" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bring to a gentle simmer. Cover, drop the heat to its lowest setting, and cook for 3 hours, stirring every 30 minutes. The pot should barely bubble. Uncover and cook for another hour to reduce the liquid and concentrate the flavours. Taste and add salt only if needed. Let cool, then refrigerate overnight." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Reheat to serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "On day two, lift any fat from the surface (or stir it in for a richer dish). Bring the pot back to a gentle simmer over medium heat, then drop low and cook for 45 minutes. Taste once more for salt and pepper. Serve in deep bowls with dark rye bread and a glass of cold vodka or a bracing dry red." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Bigos too sour", "cause": "Strong sauerkraut, or no balancing sweet element.", "fix": "Rinse the sauerkraut lightly before adding, especially if the brand is very sharp. The honey and prunes balance the sour; if still too acid, add another tablespoon of honey." },
+            { "symptom": "Meat tough at the bite", "cause": "Cooked too fast.", "fix": "Bigos needs the lowest possible simmer for 3 to 4 hours. A boiling pot toughens the meat; the right heat is barely a bubble." },
+            { "symptom": "Burnt at the bottom of the pan", "cause": "Heat too high, or not enough liquid.", "fix": "Use a heat-diffuser plate if your hob runs hot. Stir every 30 minutes; add 100 ml of stock or water if the bottom looks dry." },
+            { "symptom": "Sauerkraut limp and watery", "cause": "Sauerkraut not drained before adding.", "fix": "Drain the sauerkraut in a sieve for 5 minutes before adding. Bagged sauerkraut from the supermarket carries a lot of brine; the jarred Polish-deli version is firmer." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bigos is the dish of Polish hunting parties, of Christmas Eve in Lithuanian-Polish households, of long winter Sundays in Kraków. Adam Mickiewicz devoted a passage of Pan Tadeusz to its making. Eat with thick dark rye bread, a small cold glass of vodka, and good appetite — bigos is not subtle." }
+        ]
+      }
+    ]
+  }
+}

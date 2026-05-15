@@ -1,0 +1,191 @@
+{
+  "slug": "lamb-tagine-with-apricots",
+  "title": "Lamb tagine with apricots",
+  "subtitle": "Slow-braised lamb with dried apricots, almond, and ras el hanout.",
+  "excerpt": "Lamb shoulder slow-braised with onion, ras el hanout, and a generous handful of dried apricots and toasted almond. The classic Moroccan sweet-savoury tagine, eaten with couscous and a fresh herb salad.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The Moroccan sweet-tagine tradition documented in regional cookery from Fez, Marrakech, and the Sous Valley. The dried-fruit-with-meat technique descends from the Andalusian and Berber kitchens.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 130,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months. Defrost overnight, reheat gently and add a splash of water to loosen.",
+    "batchable": true,
+    "batchNotes": null,
+    "makeAheadNotes": "Improves with a day in the fridge. Make ahead and reheat to serve.",
+    "dietaryFlags": ["dairyFree"],
+    "cuisine": "northAfrican",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "slowSunday", "specialOccasion", "hearty"],
+    "temperatureCelsius": null,
+    "temperatureNote": "hob — lowest setting",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "tagine", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "ras-el-hanout", "term": "Ras el hanout", "definition": "A Moroccan spice blend whose name means \"top of the shop\" — the best of what the seller has. The exact mix varies by family and souk, but expects cinnamon, ginger, allspice, coriander, cumin, cardamom, clove, nutmeg, and rose. A good one is fragrant and warm without being hot." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A tagine is both a vessel and a dish. The conical lid traps the steam and condenses it back over the meat, producing a tender braise from very little added liquid. A heavy lidded casserole works as well. The dish is the slow conversation between lamb shoulder, ras el hanout, sweet dried apricot, and a final scattering of toasted almond." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The apricots cook to a glossy, soft texture that almost melts into the gravy. Use unsulphured dried apricots if you can find them; the supermarket bright-orange ones are over-treated and turn the dish a similar shade." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "lamb-shoulder", "amount": 1200, "unit": "g", "prepNote": "boned, cut into 4 cm cubes", "isOptional": false, "groupLabel": "For the meat" },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "onion", "amount": 3, "unit": "each", "prepNote": "large, finely chopped", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "garlic", "amount": 5, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "ginger-root", "amount": 30, "unit": "g", "prepNote": "peeled, finely chopped", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "ras-el-hanout", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "cinnamon-stick", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "saffron", "amount": 1, "unit": "pinch", "prepNote": "soaked in 3 tbsp warm water", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 200, "unit": "g", "prepNote": "half a tin, chopped", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "stock-chicken", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "honey", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "dried-apricots", "amount": 200, "unit": "g", "prepNote": "unsulphured if possible", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "almonds-flaked", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "To finish" },
+            { "ingredientSlug": "coriander", "amount": 15, "unit": "g", "prepNote": "leaves only, chopped", "isOptional": false, "groupLabel": "To finish" },
+            { "ingredientSlug": "parsley-flat", "amount": 15, "unit": "g", "prepNote": "leaves only, chopped", "isOptional": false, "groupLabel": "To finish" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A heavy lidded Dutch oven or a proper Moroccan tagine, both around 4 to 5 litres. The flat hob underneath the tagine needs a diffuser plate to spread the heat." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the lamb" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pat {{lamb-shoulder}} of lamb dry. Heat {{olive-oil}} of olive oil in the Dutch oven over medium-high. Brown the lamb in 3 batches, 3 minutes a side, lifting each batch onto a plate. Don't crowd the pan." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drop the heat to medium. Add {{onion}} of chopped onion. Cook 10 minutes until soft and golden. Stir in {{garlic}} of garlic, {{ginger-root}} of ginger, and {{ras-el-hanout}} of ras el hanout for 1 minute. Drop in the {{cinnamon-stick}} of cinnamon stick. Pour in {{tinned-tomatoes}} of chopped tomatoes and cook 3 minutes, mashing with a wooden spoon." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Slow braise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Return the lamb to the pot with any juices. Pour in {{stock-chicken}} of stock and the saffron water. Stir in {{honey}} of honey, {{sea-salt-fine}} of salt, and {{black-pepper}} of pepper. Bring to a simmer. Cover, drop the heat to its lowest, and cook for 90 minutes." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the lid. Add {{dried-apricots}} of dried apricots. Cook uncovered for another 30 minutes until the lamb is fully tender and the sauce has reduced to a thick gravy that coats the meat. Stir occasionally to keep the bottom from catching." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Toast the almonds" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "While the tagine finishes, set a small dry frying pan over medium heat. Tip in {{almonds-flaked}} of flaked almonds and toast for 3 minutes, shaking the pan, until pale gold. Tip onto a plate at once or they will continue cooking on the hot metal." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rest the tagine 15 minutes off the heat. Lift out the cinnamon stick. Taste; the sauce should sit between savoury, warm, and softly sweet. Scatter with the toasted almonds, {{coriander}} of chopped coriander, and {{parsley-flat}} of chopped parsley. Serve with couscous, flatbread, or a herb-and-onion salad." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Sauce too thin at the end", "cause": "Lid kept on for the apricot stage.", "fix": "Uncover for the last 30 minutes so the sauce reduces. The dish should sit thick on the spoon." },
+            { "symptom": "Lamb stringy and dry", "cause": "Heat too high during the braise.", "fix": "Use the lowest possible simmer for the 90 minutes covered. The bubble should be barely perceptible. A heat-diffuser helps." },
+            { "symptom": "Sauce too sweet", "cause": "Too much honey, or apricots too dominant.", "fix": "Use unsulphured apricots; supermarket bright-orange ones are over-treated and oversweet. Adjust honey to taste; a squeeze of lemon at the end balances." },
+            { "symptom": "Ras el hanout tasting dusty", "cause": "Old spice blend, or not bloomed in fat.", "fix": "Use a fresh blend from a deli or Middle Eastern grocer. Stir into the hot onion-ginger mix for a full minute before liquid goes in." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lamb tagine with apricots is a celebration dish from Fez and Marrakech, served at Eid and at weddings, the kind of tagine that takes the proud cook a full afternoon. The sweet-savoury combination comes from the Andalusian-Berber kitchen brought across the strait centuries ago. Serve with mint tea after, never wine." }
+        ]
+      }
+    ]
+  }
+}

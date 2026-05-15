@@ -1,0 +1,187 @@
+{
+  "slug": "chicken-jalfrezi",
+  "title": "Chicken jalfrezi",
+  "subtitle": "Curry-house dry-fry with peppers, tomatoes, and green chilli.",
+  "excerpt": "Strips of chicken cooked dry-fry style over high heat with onion, pepper, ginger, fresh tomatoes, and green chilli. The British curry-house favourite, brought home in 45 minutes. Hot, dry-ish gravy and pieces of vegetable still with bite.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The dish grew out of Bengali bhuna technique adapted in the British-Asian curry-house tradition of the 1970s and 80s. The dry-fry, high-heat character is distinctive: it sits between a Chinese stir-fry and a classical Bengali bhuna.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months. Defrost overnight and reheat in a wide pan over medium heat with a splash of water to loosen.",
+    "batchable": true,
+    "batchNotes": null,
+    "makeAheadNotes": "The base masala (the spiced onion-tomato mixture) can be made up to 2 days ahead. Add the chicken and finish on the day.",
+    "dietaryFlags": ["dairyFree"],
+    "cuisine": "angloIndian",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood", "hearty"],
+    "temperatureCelsius": null,
+    "temperatureNote": "hob — high",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "bhuna", "term": "Bhuna", "definition": "A Bengali technique meaning to fry or stir-fry. In curry terms, the bhuna is the deep, dry frying-down of spice paste with onion until the oil separates and the colour darkens. The bhuna stage is where the curry's depth is built." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Jalfrezi is the curry-house plate that gets ordered when somebody wants something hot but not sweet. The technique borrows from the bhuna: spice paste fried down hard in oil until the colour deepens. What separates jalfrezi is the pepper, the chunked tomato, and the high-heat stir of the finished dish, which keeps the vegetables with bite and the gravy short." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Use thigh, not breast. Strips cooked over a fierce heat seal and brown fast; breast turns dry inside two minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thigh", "amount": 8, "unit": "each", "prepNote": "boneless, cut into 3 cm chunks", "isOptional": false, "groupLabel": "For the chicken" },
+            { "ingredientSlug": "vegetable-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the chicken" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "one finely chopped for the base, one cut into 2 cm wedges for the dry-fry", "isOptional": false, "groupLabel": "For the base" },
+            { "ingredientSlug": "garlic", "amount": 6, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the base" },
+            { "ingredientSlug": "ginger-root", "amount": 30, "unit": "g", "prepNote": "peeled, finely chopped", "isOptional": false, "groupLabel": "For the base" },
+            { "ingredientSlug": "tomato", "amount": 4, "unit": "each", "prepNote": "ripe, two chopped fine for the base, two cut into wedges", "isOptional": false, "groupLabel": "For the base" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the base" },
+            { "ingredientSlug": "chilli-green", "amount": 3, "unit": "each", "prepNote": "slit lengthways, one finely chopped, two whole", "isOptional": false, "groupLabel": "For the base" },
+            { "ingredientSlug": "cumin-seeds", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "coriander-ground", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "turmeric", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "garam-masala", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "paprika-sweet", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "cayenne", "amount": 0.5, "unit": "tsp", "prepNote": "or to taste", "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "pepper-red", "amount": 1, "unit": "each", "prepNote": "cut into 2 cm chunks", "isOptional": false, "groupLabel": "For the dry-fry" },
+            { "ingredientSlug": "pepper-green", "amount": 1, "unit": "each", "prepNote": "cut into 2 cm chunks", "isOptional": false, "groupLabel": "For the dry-fry" },
+            { "ingredientSlug": "coriander", "amount": 15, "unit": "g", "prepNote": "leaves only, chopped, to finish", "isOptional": false, "groupLabel": "For the dry-fry" },
+            { "ingredientSlug": "lemon", "amount": 0.5, "unit": "each", "prepNote": "juice only, to finish", "isOptional": false, "groupLabel": "For the dry-fry" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A wide heavy frying pan or a kadai-style curry pan. The pan needs space so the chicken sears rather than stews." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat 2 tablespoons of {{vegetable-oil}} of vegetable oil in the pan over medium-high. Add {{cumin-seeds}} of cumin seeds and let them crackle for 10 seconds. Tip in the finely chopped {{onion}} of onion and cook for 8 to 10 minutes, stirring often, until deep gold and starting to catch. Stir in {{garlic}} of garlic and {{ginger-root}} of ginger for 1 minute." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bhuna the spices" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add {{coriander-ground}} of coriander, {{turmeric}} of turmeric, {{paprika-sweet}} of paprika, {{cayenne}} of cayenne, and {{sea-salt-fine}} of salt. Stir for 30 seconds. Stir in {{tomato-puree}} of tomato purée and the 2 finely chopped tomatoes plus the chopped green chilli. Cook on medium for 8 minutes, mashing with a wooden spoon, until the mixture darkens to a deep brick red and the oil starts to separate at the edges of the pan." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sear the chicken" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Push the base to the side of the pan. Tip in the remaining 1 tablespoon of oil to the empty space and add {{chicken-thigh}} of chicken chunks in a single layer. Sear for 3 minutes without moving, then turn and cook 2 minutes more. Stir the base back through; the chicken should be browned on the outside and just cooked through." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the dry-fry vegetables" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tip in the onion wedges, {{pepper-red}} of red pepper, {{pepper-green}} of green pepper, the tomato wedges, and the two whole slit chillies. Pour in 150 ml of water. Stir, cover, and cook for 5 minutes over medium heat until the peppers are tender but still bright. Uncover and bubble for 2 minutes to reduce. Stir in {{garam-masala}} of garam masala." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Squeeze in the juice of {{lemon}} of lemon. Scatter with {{coriander}} of chopped coriander. Serve with basmati rice or naan." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Curry pale and oniony, not deep red", "cause": "Bhuna stage cut short.", "fix": "Cook the spiced tomato-onion base for the full 8 minutes until the oil separates and the colour deepens. Without this stage, the curry tastes raw." },
+            { "symptom": "Gravy too thin", "cause": "Too much water added at the dry-fry stage.", "fix": "Jalfrezi is a dry-ish dish. Use only 150 ml of water; uncover at the end to drive moisture off." },
+            { "symptom": "Peppers limp and soft", "cause": "Cooked too long at the end.", "fix": "Cover for 5 minutes, uncover for 2 more — no longer. The peppers should still have bite." },
+            { "symptom": "Spice tastes raw and dusty", "cause": "Ground spices added too late or not bloomed.", "fix": "Add ground spices to the hot onion-garlic-ginger mix and stir for 30 seconds before the tomato goes in. The brief frying activates the flavour." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Chicken jalfrezi is a British-Asian invention rooted in Bengali bhuna technique. The curry-house version codified in Bradford and East London restaurants in the 1980s sits between an Indian bhuna and a Chinese stir-fry: high heat, dry pan, peppers that snap. Serve with pilau rice and a side of cucumber raita to cool the chilli." }
+        ]
+      }
+    ]
+  }
+}

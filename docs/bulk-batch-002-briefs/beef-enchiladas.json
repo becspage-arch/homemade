@@ -1,0 +1,187 @@
+{
+  "slug": "beef-enchiladas",
+  "title": "Beef enchiladas",
+  "subtitle": "Spiced ground beef in red-chilli sauce, baked under cheese.",
+  "excerpt": "Soft tortillas rolled around a filling of cumin-spiced ground beef, laid in a baking dish, smothered in red enchilada sauce, and baked under a blanket of cheese. Tex-Mex Sunday dinner. Feeds six with a green salad.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The Tex-Mex enchilada tradition as it developed in San Antonio and the Rio Grande Valley in the late nineteenth and early twentieth centuries. Red chilli sauce technique follows the classic ancho-and-cumin Tex-Mex canon.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": "12 enchiladas",
+    "prepMinutes": 25,
+    "cookMinutes": 50,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Assembled but unbaked enchiladas freeze well for up to 2 months. Cover with foil and bake from frozen at 180°C for 50 minutes, then uncover and add the cheese for the last 15.",
+    "batchable": true,
+    "batchNotes": null,
+    "makeAheadNotes": "The sauce and the beef filling can both be made a day ahead. Refrigerate separately and assemble cold; allow an extra 10 minutes in the oven.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "kidFriendly", "party"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "enchilada", "term": "Enchilada", "definition": "From the Spanish enchilar, to season with chilli. A maize or wheat tortilla rolled around a filling and bathed in a chilli sauce, baked or eaten hot." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The Tex-Mex red enchilada lives on three components: a chilli sauce built from ancho and cumin, a spiced beef filling, and tortillas that absorb both. The sauce goes on the bottom of the dish, around the rolls, and over the top. The cheese melts as a blanket across the surface. The whole thing rests 10 minutes after the oven so the sauce settles." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Corn tortillas are the proper choice but they tear easily when cold; warm them for ten seconds either side in a dry pan first. Flour tortillas roll more forgivingly but the texture is softer in the bake." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-mince", "amount": 600, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "large, finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "cumin-ground", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "chilli-powder", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "oregano-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "vegetable-oil", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "ancho-chilli", "amount": 4, "unit": "each", "prepNote": "dried, stems removed", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": "one tin", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "oregano-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "plain-flour", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "vegetable-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "for the sauce", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "masa-harina", "amount": 12, "unit": "each", "prepNote": "12 medium corn or flour tortillas, ~15 cm", "isOptional": false, "groupLabel": "For assembly" },
+            { "ingredientSlug": "cheddar", "amount": 250, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "For assembly" },
+            { "ingredientSlug": "coriander", "amount": 15, "unit": "g", "prepNote": "chopped, to finish", "isOptional": true, "groupLabel": "For assembly" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 30 by 23 cm rectangular baking dish holds 12 rolled enchiladas neatly side by side." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soften the anchos" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tear the {{ancho-chilli}} of ancho chillies open, shake out the seeds, and tip into a small bowl. Cover with boiling water and weigh down with a saucer. Soak for 20 minutes until soft and pliable." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drain the soaked chillies. Tip into a blender with {{tinned-tomatoes}} of tinned tomatoes, {{garlic}} of garlic, {{cumin-ground}} of cumin, {{oregano-dried}} of oregano, and 200 ml of the {{stock-beef}} stock. Blend until smooth. Heat {{vegetable-oil}} of oil in a saucepan; whisk in {{plain-flour}} of flour and cook for 1 minute to a pale paste. Pour in the chilli purée and the remaining stock. Simmer for 8 minutes until glossy and slightly thickened. Taste and add salt." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the beef" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat {{vegetable-oil}} of oil in a wide frying pan over medium-high. Add {{onion}} of chopped onion and cook for 5 minutes until soft. Stir in {{garlic}} of chopped garlic for 30 seconds. Add {{beef-mince}} of beef and break apart with a wooden spoon. Cook for 8 minutes until any liquid has cooked away and the beef is starting to brown. Stir in {{cumin-ground}} of cumin, {{chilli-powder}} of chilli powder, {{oregano-dried}} of oregano, and {{sea-salt-fine}} of salt. Ladle in 4 tablespoons of the enchilada sauce to bind the filling." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 180°C. Pour a third of the enchilada sauce across the base of the dish. Warm the tortillas one by one in a dry pan, 10 seconds a side. Lay a tortilla on the worktop, spoon two tablespoons of beef across the middle, roll up tightly and place seam down in the dish. Continue with the rest. Pour the remaining sauce evenly over the top. Scatter {{cheddar}} of grated cheddar across the lot." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bake for 25 minutes until the cheese is melted, bubbling, and starting to brown at the edges. Rest 10 minutes before serving. Scatter with chopped coriander if using." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Tortillas split when rolling", "cause": "Tortillas too cold and brittle.", "fix": "Warm each tortilla in a dry pan for 10 seconds a side immediately before filling. Cold corn tortillas crack; warm ones bend." },
+            { "symptom": "Sauce too thin", "cause": "Roux step skipped, or sauce not simmered long enough.", "fix": "The flour-oil roux is what gives the sauce body. Simmer for the full 8 minutes after the purée goes in." },
+            { "symptom": "Enchiladas dry on top", "cause": "Not enough sauce poured over before the cheese.", "fix": "Use the full third of the sauce on top. The tortillas need to drink some of the sauce as they bake." },
+            { "symptom": "Filling falls out when serving", "cause": "Enchiladas not rested.", "fix": "Rest the dish 10 minutes after pulling from the oven. The cheese sets enough to hold the rolls together when lifted." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Beef enchiladas are the centre of the Tex-Mex Sunday plate, served alongside refried beans, rice, and a small heap of shredded lettuce dressed with lime. The cheese-blanketed Tex-Mex version splits from the Mexican enchiladas of Oaxaca and Puebla, which lean towards mole sauce and a lighter cheese crumble. Both are right; the Tex-Mex one is what you crave on a cold Friday night." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "slug": "pissaladiere",
+  "title": "Pissaladière",
+  "subtitle": "Niçoise onion tart with anchovy and black olive.",
+  "excerpt": "A flat bread base spread with slow-cooked onions, criss-crossed with anchovy fillets, and dotted with black olives. Provence in a tray bake. Cuts into squares for an apéritif or wedges for lunch.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Drawn from the documented Niçois tradition recorded in the Cuisine niçoise canon, with onion-confit timing and assembly following the slow-cooked method preserved through Provençal market-bakery practice.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": "One 30 x 25 cm tray, cut into 12 squares.",
+    "prepMinutes": 25,
+    "cookMinutes": 80,
+    "restingMinutes": 60,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well unbaked. Wrap the topped tray in cling film, freeze flat, then bake from frozen at 200°C, adding 8 minutes to the cooking time.",
+    "batchable": true,
+    "batchNotes": "Doubles easily for a party. Bake two trays in the same oven on different shelves; swap halfway.",
+    "makeAheadNotes": "The onion confit can be made up to three days ahead and refrigerated. The dough can be made the night before and slow-proved in the fridge.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "lunch",
+    "mood": ["picnic", "party", "summery"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "pissalat", "term": "Pissalat", "definition": "A salted anchovy paste made along the coast of Nice, whose name gave the dish its title. The modern recipe replaces the paste with whole tinned anchovies laid in a lattice." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two kilos of onions cooked down for an hour with thyme until they collapse into a sweet, dark spread. A simple olive-oil dough rolled out thin onto a baking tray. The onions spread over the dough; anchovy fillets criss-crossed in a lattice; one Niçoise olive in each diamond gap. Twenty minutes in a hot oven and you have lunch." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The dish takes its name from pissalat, the fermented anchovy paste once spread directly onto the dough. The modern version uses whole tinned anchovies, which are easier to find and give a stronger visual." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "yeast-dried", "amount": 7, "unit": "g", "prepNote": "one sachet of fast-action yeast", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "water", "amount": 180, "unit": "ml", "prepNote": "lukewarm", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "onion", "amount": 1500, "unit": "g", "prepNote": "about 8 medium, finely sliced", "isOptional": false, "groupLabel": "For the topping" },
+            { "ingredientSlug": "olive-oil", "amount": 60, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the topping" },
+            { "ingredientSlug": "thyme", "amount": 6, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the topping" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the topping" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the topping" },
+            { "ingredientSlug": "anchovies", "amount": 24, "unit": "each", "prepNote": "tinned in olive oil, drained", "isOptional": false, "groupLabel": "For the topping" },
+            { "ingredientSlug": "olives-black", "amount": 80, "unit": "g", "prepNote": "small Niçoise olives, stones in", "isOptional": false, "groupLabel": "For the topping" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A large rectangular tin around 30 by 25 cm, oiled. The onions need a wide heavy saucepan to spread out properly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Confit the onions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the saucepan over medium heat. Pour in {{olive-oil}} of olive oil, then tip in {{onion}} of sliced onions, {{thyme}} of thyme, {{bay-leaves}} of bay, and a generous pinch of salt. Stir to coat. Cook uncovered for 60 minutes, stirring every 10 minutes or so. The onions release their water, collapse, then darken to a deep amber. Stir in {{garlic}} of chopped garlic for the last 5 minutes. Pluck out the thyme stalks and bay. Let cool while the dough proves." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In a large bowl, mix {{strong-bread-flour}} of flour, {{yeast-dried}} of yeast, and {{sea-salt-fine}} of salt. Pour in {{olive-oil}} of olive oil and {{water}} of warm water. Stir with a wooden spoon until shaggy, then knead in the bowl for 5 minutes, or until smooth and elastic. Cover with a tea towel and leave in a warm spot for 60 minutes until doubled." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220°C. Oil the baking tray. Knock back the dough and stretch it out into the corners of the tray, pressing with your fingertips so the surface dimples. If it springs back, leave it for 5 minutes and try again. Spread the cooled onions across the dough in an even thick layer. Lay the anchovy fillets in a diamond lattice over the onions. Drop {{olives-black}} of olives into the gaps." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bake for 20 to 25 minutes until the dough underneath the onions is fully cooked and the edges of the dough are deep gold. Pull out and let stand 10 minutes before cutting into squares." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Onions turned mushy, not deeply caramelised", "cause": "Heat too low or the pan too crowded.", "fix": "Use a wide saucepan so the moisture evaporates. Keep the heat at medium for the full hour and stir to keep the bottom from sticking." },
+            { "symptom": "Dough soggy under the onions", "cause": "Onions too wet when spread on the dough.", "fix": "Drain the cooled onions in a sieve for 10 minutes before spreading. The juices can be reduced separately and spooned over later if you don't want to lose them." },
+            { "symptom": "Anchovies overpowering", "cause": "Too many for the size of tray.", "fix": "Use 24 fillets for a 30 by 25 cm tray, criss-crossed at the lattice spacings; don't double up." },
+            { "symptom": "Olive stones broke a tooth", "cause": "Used pitted olives, where the warning context is lost.", "fix": "Niçoise olives are sold with stones in. Tell guests, or use pitted Kalamatas as a substitute." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pissaladière is bakery food in Nice and the small towns along the Côte d'Azur. The proper version sits in a tray on the bakery counter, cut into squares with a long knife, sold by weight. At home it works as an apéritif with a glass of chilled rosé, or as the centrepiece of a picnic alongside cold roast chicken and a salad of green leaves dressed with anchovy." }
+        ]
+      }
+    ]
+  }
+}

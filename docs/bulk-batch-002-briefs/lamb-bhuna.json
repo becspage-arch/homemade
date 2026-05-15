@@ -1,0 +1,175 @@
+{
+  "slug": "lamb-bhuna",
+  "title": "Lamb bhuna",
+  "subtitle": "Slow-fried curry with deep, dry gravy.",
+  "excerpt": "Lamb shoulder cooked low and slow with an onion-tomato base that's bhuna'd down hard until the oil separates. The signature deep red-brown gravy clings to the meat. Bengali technique, curry-house plate.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Bhuna (frying) is the classical Bengali method of cooking down a spice paste until the oil rises. The lamb-bhuna version is documented in the curry-house tradition of West Bengal and East London restaurants from the 1960s onwards.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 110,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months and arguably tastes better on day two. Defrost overnight, reheat gently with a splash of water.",
+    "batchable": true,
+    "batchNotes": null,
+    "makeAheadNotes": "Improves with a day in the fridge before serving. Make a day ahead if you can, reheat to serve.",
+    "dietaryFlags": ["dairyFree"],
+    "cuisine": "angloIndian",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "slowSunday", "hearty"],
+    "temperatureCelsius": null,
+    "temperatureNote": "hob — medium to medium-low",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "bhuna", "term": "Bhuna", "definition": "A Bengali technique meaning to fry or stir-fry. In a curry, the bhuna is the slow, hard frying-down of spice paste with onion until the oil separates and the colour deepens. Without this stage, the curry tastes thin and raw." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bhuna is a method, not a name. The word means \"frying\" in Bengali, and it describes the long, hard cook of the spice base in oil until the oil separates and rises around the edges of the pan. Without that stage the curry tastes raw and watery; with it, the gravy comes out deep, dark, and clings to the meat." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cubed lamb shoulder is the right cut: enough connective tissue to soften over an hour and a half of simmering, with enough fat to stand up to the spice." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-shoulder", "amount": 800, "unit": "g", "prepNote": "boned, cut into 3 cm cubes", "isOptional": false, "groupLabel": "For the meat" },
+            { "ingredientSlug": "vegetable-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the base" },
+            { "ingredientSlug": "onion", "amount": 3, "unit": "each", "prepNote": "large, finely sliced", "isOptional": false, "groupLabel": "For the base" },
+            { "ingredientSlug": "garlic", "amount": 8, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the base" },
+            { "ingredientSlug": "ginger-root", "amount": 40, "unit": "g", "prepNote": "peeled, finely chopped", "isOptional": false, "groupLabel": "For the base" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": "one tin", "isOptional": false, "groupLabel": "For the base" },
+            { "ingredientSlug": "chilli-green", "amount": 2, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the base" },
+            { "ingredientSlug": "cumin-seeds", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "cinnamon-stick", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "cardamom-green", "amount": 4, "unit": "each", "prepNote": "lightly bruised", "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "coriander-ground", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "cumin-ground", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "turmeric", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "paprika-sweet", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "cayenne", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "garam-masala", "amount": 1, "unit": "tsp", "prepNote": "to finish", "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice" },
+            { "ingredientSlug": "coriander", "amount": 15, "unit": "g", "prepNote": "chopped, to finish", "isOptional": false, "groupLabel": "To finish" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A heavy lidded casserole or Dutch oven of 4 litres. The shape matters: wide enough that the onions caramelise, deep enough to hold a litre of stew underneath them." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Caramelise the onions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat {{vegetable-oil}} of oil in the casserole over medium heat. Add {{cumin-seeds}} of cumin seeds, the {{cinnamon-stick}} of cinnamon, {{cardamom-green}} of cardamom pods, and {{bay-leaves}} of bay leaves. Let them sizzle for 15 seconds. Tip in {{onion}} of sliced onions and a pinch of salt. Cook for 15 to 18 minutes, stirring every 2 minutes, until deep gold and lightly caramelised at the edges. Stir in {{garlic}} of garlic, {{ginger-root}} of ginger, and the chopped green chilli for 1 minute." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bhuna the spice paste" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add {{coriander-ground}} of coriander, {{cumin-ground}} of cumin, {{turmeric}} of turmeric, {{paprika-sweet}} of paprika, {{cayenne}} of cayenne, and {{sea-salt-fine}} of salt. Stir for 30 seconds. Tip in {{tinned-tomatoes}} of tinned tomatoes, breaking them up with a wooden spoon. Cook for 12 minutes over medium heat, stirring often. The mixture darkens, the water cooks away, and the oil starts to puddle around the edges of the pan; this is the bhuna point." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the lamb and braise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tip in {{lamb-shoulder}} of cubed lamb. Stir to coat every piece in the spice paste. Turn the heat to medium-high and cook for 5 minutes, stirring, until the lamb has changed colour. Pour in 400 ml of water. Bring to a simmer, lower the heat to its lowest setting, cover, and cook for 60 to 75 minutes until the lamb yields to a fork. Stir every 15 minutes to check for sticking." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Reduce and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the lid and turn the heat back up to medium. Bubble the gravy down for 8 to 10 minutes until thick and clinging to the meat. The signature of bhuna is dry-ish gravy; if there's a thin pool of liquid in the pan, keep going. Stir in {{garam-masala}} of garam masala. Rest off the heat for 10 minutes. Scatter with {{coriander}} of chopped coriander to serve." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Curry tastes thin and raw", "cause": "Bhuna stage cut short.", "fix": "Cook the tomato-spice mixture for the full 12 minutes until the oil separates and the colour deepens. The bhuna is where the curry's depth is built." },
+            { "symptom": "Lamb tough at the bite", "cause": "Braised too short, or heat too high.", "fix": "Lamb shoulder needs 60 to 75 minutes on the lowest possible heat to break down properly. Keep the simmer at a barely-perceptible bubble." },
+            { "symptom": "Curry watery at the end", "cause": "Lid kept on for the final reduction.", "fix": "Uncover for the last 8 to 10 minutes and let the gravy reduce. The dish should sit dry-ish on the plate." },
+            { "symptom": "Onions not caramelised, just soft", "cause": "Cooked too short or in a pan too small.", "fix": "Onions need 15 to 18 minutes over medium heat to take on real colour. Use a wide pan so the moisture has room to evaporate." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lamb bhuna is the deep weeknight of any British-Bangladeshi curry house, the dish that comes off best when made an evening ahead and finished off the next day. The Bengali bhuna technique it descends from is older and more austere, with simpler spice. Serve with basmati rice or a torn piece of naan and a spoonful of yoghurt to one side." }
+        ]
+      }
+    ]
+  }
+}

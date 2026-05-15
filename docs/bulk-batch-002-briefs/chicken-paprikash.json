@@ -1,0 +1,181 @@
+{
+  "slug": "chicken-paprikash",
+  "title": "Chicken paprikash",
+  "subtitle": "Hungarian braise with sweet paprika and soured cream.",
+  "excerpt": "Chicken thighs braised in a deep red sauce of slow-cooked onion, sweet Hungarian paprika, and tomato. Soured cream stirred in at the end gives the dish its pink sheen. Eaten with buttered noodles or nokedli dumplings.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The dish appears in Károly Gundel's classical Hungarian Cookery (1934, public domain in Hungary) and earlier in regional Magyar cookery manuscripts. The household ratio of paprika to onion to liquid follows that tradition.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 50,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze without the soured cream for up to 3 months. Defrost and reheat gently; stir the soured cream in just before serving.",
+    "batchable": true,
+    "batchNotes": null,
+    "makeAheadNotes": "The base can be made a day ahead. Reheat gently and add the soured cream to serve.",
+    "dietaryFlags": [],
+    "cuisine": "easternEuropean",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "hearty"],
+    "temperatureCelsius": null,
+    "temperatureNote": "hob — medium",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "noble-paprika", "term": "Édesnemes paprika", "definition": "The Hungarian classification for sweet, noble-grade paprika. Bright red, gently warming, with no bitterness. The flavour of the dish depends on the quality of the paprika; supermarket budget paprika gives a flat, dusty result." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hungarian paprika is the dish. Édesnemes (the sweet noble grade) gives a deep red colour and a soft warmth. Avoid pre-ground paprika that has sat in a supermarket aisle for months; the flavour fades quickly. A fresh tin from a Hungarian or Polish deli is worth the hunt." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The technique is straightforward. Onion cooked down soft, paprika stirred in off the heat (so it doesn't burn), chicken added back to the pan with stock, simmered for 30 minutes, finished with soured cream. The traditional accompaniment is nokedli, the small Hungarian dumpling; buttered tagliatelle or wide egg noodles also work." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thigh", "amount": 8, "unit": "each", "prepNote": "skin on, bone in", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "large, finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lard", "amount": 30, "unit": "g", "prepNote": "or 2 tbsp vegetable oil", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-sweet", "amount": 3, "unit": "tbsp", "prepNote": "fresh Hungarian édesnemes if possible", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-hot", "amount": 1, "unit": "tsp", "prepNote": "optional, for heat", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "pepper-red", "amount": 1, "unit": "each", "prepNote": "chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato", "amount": 2, "unit": "each", "prepNote": "chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soured-cream", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 10, "unit": "g", "prepNote": "chopped, to finish", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A heavy lidded casserole or Dutch oven of around 4 litres holds the chicken in a single layer." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the chicken" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pat {{chicken-thigh}} of chicken thighs dry. Season with {{sea-salt-fine}} of salt and {{black-pepper}} of pepper. Melt {{lard}} of lard in the casserole over medium-high heat. Brown the chicken skin-side down for 6 minutes until deep gold; turn and cook 2 minutes more. Lift onto a plate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soften the onions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour off all but 2 tablespoons of fat. Add {{onion}} of chopped onion and a pinch of salt. Cook over medium heat for 12 minutes, stirring often, until soft and turning gold. Add {{garlic}} of garlic and {{pepper-red}} of chopped red pepper for 2 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the paprika off the heat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pull the pan off the heat. Stir in {{paprika-sweet}} of sweet paprika and {{paprika-hot}} of hot paprika if using. The off-heat moment matters; paprika burns at high heat and turns bitter. Stir for 30 seconds, then add {{tomato}} of chopped tomato and pour in {{stock-chicken}} of stock." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Return the chicken to the pan, skin side up. Bring to a simmer, cover, and cook for 30 minutes until the chicken is tender and pulls easily at the thigh joint." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish with soured cream" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the chicken onto a warm plate. Whisk {{soured-cream}} of soured cream with {{plain-flour}} of flour in a small bowl, then stir in a ladleful of hot sauce from the pan to temper it. Pour the soured-cream mixture back into the casserole and bring to a gentle simmer for 2 minutes; the flour stops the cream splitting. Return the chicken to the pan and turn to coat. Scatter with {{parsley-flat}} of chopped parsley." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Sauce bitter and dark", "cause": "Paprika burnt at high heat.", "fix": "Always pull the pan off the heat before the paprika goes in. Stir for no more than 30 seconds before liquid is added." },
+            { "symptom": "Sauce split with white flecks", "cause": "Cold soured cream added directly to a boiling pan.", "fix": "Temper the soured cream with a ladle of hot sauce in a bowl first. Whisk with a teaspoon of flour for added insurance against splitting." },
+            { "symptom": "Paprika tastes dusty and flat", "cause": "Old or low-grade paprika.", "fix": "Use fresh Hungarian sweet paprika from a deli or specialist supplier. Supermarket budget brands lose flavour within months of grinding." },
+            { "symptom": "Sauce too thin", "cause": "Lid kept on the entire braise.", "fix": "Cover for the first 20 minutes, uncover for the last 10 to reduce. The final soured-cream stage also thickens." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Paprikás csirke is a household dinner across Hungary, served with nokedli, the country's small egg-flour dumplings pinched off the side of a board into boiling water. The American-Hungarian diaspora kept the dish alive in cities like Cleveland and Pittsburgh. A glass of Tokaji dry or a light Hungarian red sits comfortably beside it." }
+        ]
+      }
+    ]
+  }
+}

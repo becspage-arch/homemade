@@ -1,0 +1,178 @@
+{
+  "slug": "borscht",
+  "title": "Borscht",
+  "subtitle": "Beetroot soup with cabbage, dill, and soured cream.",
+  "excerpt": "A deep red bowl of beetroot, cabbage, potato, and carrot, slow-simmered in beef broth and finished with dill and soured cream. Ukrainian household soup, served hot in winter and chilled in summer.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Borshch is the Ukrainian national soup, recognised by UNESCO as Intangible Cultural Heritage. The technique here follows the canonical household version recorded in Ukrainian regional cookery and seventeenth-century monastery manuscripts.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 90,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months. Defrost overnight and reheat gently; add the soured cream and dill only when serving.",
+    "batchable": true,
+    "batchNotes": null,
+    "makeAheadNotes": "Tastes better on day two. Cook a day ahead if possible.",
+    "dietaryFlags": [],
+    "cuisine": "easternEuropean",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "cosy", "healthy"],
+    "temperatureCelsius": null,
+    "temperatureNote": "hob — gentle simmer",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "box-grater", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A beef stock built from a piece of brisket and a marrow bone. Beetroot grated coarse so the colour leaches into the broth. Cabbage, potato, carrot, and onion added in sequence so each has the right texture at the end. Dill stirred in at the last minute. Soured cream goes on the table; each guest spoons their own." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The colour is the dish. Beetroot loses its red if boiled too hard or held too long; cook gently and serve within an hour of finishing for the brightest bowl." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-brisket", "amount": 500, "unit": "g", "prepNote": "trimmed of large fat", "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "halved, skin on", "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": "peppercorns", "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "beetroot", "amount": 600, "unit": "g", "prepNote": "3 to 4 medium, peeled and coarsely grated", "isOptional": false, "groupLabel": "For the soup" },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "coarsely grated", "isOptional": false, "groupLabel": "For the soup" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped, for the soup", "isOptional": false, "groupLabel": "For the soup" },
+            { "ingredientSlug": "potato", "amount": 3, "unit": "each", "prepNote": "medium, peeled and cut into 1.5 cm cubes", "isOptional": false, "groupLabel": "For the soup" },
+            { "ingredientSlug": "cabbage-white", "amount": 200, "unit": "g", "prepNote": "finely shredded", "isOptional": false, "groupLabel": "For the soup" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the soup" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the soup" },
+            { "ingredientSlug": "white-wine-vinegar", "amount": 2, "unit": "tbsp", "prepNote": "or apple-cider vinegar", "isOptional": false, "groupLabel": "For the soup" },
+            { "ingredientSlug": "vegetable-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the soup" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the soup" },
+            { "ingredientSlug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": "for the soup, freshly ground", "isOptional": false, "groupLabel": "For the soup" },
+            { "ingredientSlug": "soured-cream", "amount": 200, "unit": "g", "prepNote": "to serve", "isOptional": false, "groupLabel": "To finish" },
+            { "ingredientSlug": "dill", "amount": 20, "unit": "g", "prepNote": "leaves only, chopped", "isOptional": false, "groupLabel": "To finish" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 5 to 6 litre stockpot for the broth. A box grater for the beetroot and carrot; the grated rather than chopped texture is what gives borscht its character." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the broth" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Put {{beef-brisket}} of brisket in the stockpot with the halved {{onion}} of onion, {{bay-leaves}} of bay leaves, and {{black-pepper}} of peppercorns. Cover with 2.5 litres of cold water. Bring to a gentle simmer and skim any foam. Cook on the lowest heat for 60 minutes, partly covered, until the beef is tender." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the beef out and let it rest. Strain the broth through a fine sieve back into the pot; discard the spent vegetables." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the soup base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat {{vegetable-oil}} of oil in a wide frying pan over medium heat. Add the chopped {{onion}} of onion and cook 6 minutes until soft. Stir in {{carrot}} of grated carrot and cook 4 minutes more. Add {{beetroot}} of grated beetroot and {{tomato-puree}} of tomato purée. Cook 5 minutes. Splash in {{white-wine-vinegar}} of vinegar; this fixes the colour. Tip the contents of the pan into the broth." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Simmer the soup" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add {{potato}} of cubed potato to the broth. Bring back to a simmer. Cook for 10 minutes. Add {{cabbage-white}} of shredded cabbage and {{garlic}} of garlic. Simmer 8 minutes more, until the potato is tender and the cabbage still has a little bite. Cut the rested beef into bite-sized pieces and return to the pot." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Season with {{sea-salt-fine}} of salt and {{black-pepper}} of black pepper. Taste and adjust the vinegar; the soup should sit between sweet, sour, and salty. Rest off the heat for 10 minutes. Ladle into deep bowls. Top each with a generous spoon of {{soured-cream}} of soured cream and scatter with {{dill}} of chopped dill." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Soup turned brown not red", "cause": "Beetroot boiled too hard, or vinegar added too late.", "fix": "Keep the heat low after the beetroot goes in. The splash of vinegar before the beetroot enters the broth fixes the red colour." },
+            { "symptom": "Soup tastes flat", "cause": "Not enough salt or acid.", "fix": "Borscht needs a clear edge of sour and salt to balance the sweetness of the beetroot. Adjust both at the end and taste again." },
+            { "symptom": "Vegetables overcooked and mushy", "cause": "Everything added at once and simmered too long.", "fix": "Stage the vegetables: potato first, cabbage 10 minutes later. Total cooking time after the potato goes in should be 18 minutes." },
+            { "symptom": "Broth weak", "cause": "Not enough beef, or simmered too short.", "fix": "Use 500 g of brisket on the bone if possible; cook the broth for the full 60 minutes." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Borshch is the national soup of Ukraine, recognised by UNESCO in 2022 as part of the country's intangible cultural heritage. Versions vary by region — the Kyiv style with more meat, the Halychyna version with white beans, the Lviv take with dried mushroom. Eat with dark rye bread and a small wedge of garlic-rubbed bread called pampushki on the side." }
+        ]
+      }
+    ]
+  }
+}

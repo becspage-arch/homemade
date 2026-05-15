@@ -1,0 +1,208 @@
+{
+  "slug": "chicken-pot-pie",
+  "title": "Chicken pot pie",
+  "subtitle": "Buttery pastry, creamy chicken, root-vegetable filling.",
+  "excerpt": "A flaky short-crust pastry top over a creamy filling of poached chicken, leek, carrot, and pea. Made from a whole chicken's worth of meat and the broth that comes off it. American Sunday-night cooking, slow on purpose.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Fannie Farmer's Boston Cooking-School Cook Book (1896, Project Gutenberg) gives the cream-and-pastry pot-pie tradition. Earlier English roots in Hannah Glasse, The Art of Cookery (1747).",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 45,
+    "cookMinutes": 90,
+    "restingMinutes": 15,
+    "chillingMinutes": 30,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well unbaked. Assemble fully, wrap the whole dish in cling film and foil, freeze for up to 2 months. Bake from frozen at 200°C for 60 to 70 minutes, covering the pastry edge if it browns too fast.",
+    "batchable": true,
+    "batchNotes": "Doubles easily; bake two pies side by side in the oven.",
+    "makeAheadNotes": "The chicken can be poached and the filling made up to 2 days ahead. Bring the filling to room temperature before topping with pastry and baking.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "slowSunday", "hearty"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "food-processor", "isOptional": true },
+    { "slug": "fine-mesh-sieve", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "roux", "term": "Roux", "definition": "A cooked paste of flour and fat used to thicken sauces and soups. A blond roux is cooked just until the raw-flour smell goes; a deep golden roux carries more nutty flavour at the cost of thickening power." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pot pie at its best starts with a whole bird. Poach the chicken in water with vegetables and herbs for an hour; you finish with a kilo of cooked meat and a litre of clean broth. The broth becomes the cream sauce. The vegetables and chicken go into the dish. A short-crust pastry top, brushed with egg, baked until the top is mahogany and the filling is bubbling at the edges." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Buying a chicken instead of pre-cooked breast meat is the difference between this dish and the one out of a box. The bones thicken the broth. The dark thigh meat balances the white." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "chicken-whole", "amount": 1, "unit": "each", "prepNote": "1.6 to 1.8 kg", "isOptional": false, "groupLabel": "For poaching" },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "one cut into chunks for the broth, one diced for the filling", "isOptional": false, "groupLabel": "For poaching" },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "stalks, one chunked, one diced", "isOptional": false, "groupLabel": "For poaching" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "halved, skin on", "isOptional": false, "groupLabel": "For poaching" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For poaching" },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For poaching" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": "peppercorns", "isOptional": false, "groupLabel": "For poaching" },
+            { "ingredientSlug": "plain-flour", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "unsalted-butter", "amount": 180, "unit": "g", "prepNote": "cold, cubed", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "water", "amount": 60, "unit": "ml", "prepNote": "ice cold", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten with a splash of milk, for glaze", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "leek", "amount": 2, "unit": "each", "prepNote": "white and pale green only, sliced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "peas-frozen", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "double-cream", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "dijon-mustard", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "tarragon", "amount": 5, "unit": "g", "prepNote": "leaves only, chopped", "isOptional": true, "groupLabel": "For the filling" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A deep 28 cm pie dish or a similar-volume oval gratin dish. A rolling pin and a sharp knife; the food processor saves a few minutes on the pastry." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Poach the chicken" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sit the chicken in the stockpot. Add the chunked carrot, chunked celery, halved onion, bay leaves, thyme sprigs, and peppercorns. Cover with cold water, about 2.5 litres. Bring to a simmer, then drop the heat so the surface barely trembles. Poach for 60 minutes, lifting any foam off the top. The chicken is done when the leg pulls easily at the thigh joint. Lift the bird out onto a plate. Strain the broth through a fine sieve and reserve a litre for the sauce." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pastry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tip {{plain-flour}} of flour and {{sea-salt-fine}} of salt into a bowl, or a food processor. Add {{unsalted-butter}} of cubed cold butter. Rub or pulse until the texture is coarse breadcrumbs with pea-sized lumps still visible. Sprinkle in {{water}} of ice water and bring together with a knife or a quick pulse. Tip onto a board, press into a flat disc, wrap in cling film, and chill 30 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pick the chicken and start the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "When the chicken is cool enough to handle, strip the meat off the bones in good-sized pieces. You should have around 1 kg of meat. Set aside. Heat {{unsalted-butter}} of butter in a wide pan. Add the diced carrot, diced celery, and {{leek}} of sliced leek. Cook gently for 10 minutes until soft. Tip into a bowl." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In the same pan, melt another knob of butter. Whisk in {{plain-flour}} of flour and cook for 2 minutes to a pale roux. Slowly pour in 600 ml of the reserved poaching broth, whisking constantly to keep it smooth. Bring to a gentle simmer until thickened to the consistency of double cream, 4 to 5 minutes. Stir in {{double-cream}} of double cream and {{dijon-mustard}} of mustard. Add the vegetables and chicken back to the pan, along with {{peas-frozen}} of peas and the tarragon if using. Season with salt and pepper. Tip into the pie dish. Let cool to lukewarm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Top with pastry and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C. Roll the pastry out on a lightly floured surface to a sheet about 3 mm thick, 2 cm bigger than the dish all round. Lift it over the filling, press down at the edges, and trim. Crimp the rim with a fork or your fingers. Cut a small steam hole in the centre. Brush with {{eggs}} of beaten egg." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bake for 35 to 45 minutes until the pastry is deep golden and the filling bubbles up through the steam hole. Rest 15 minutes before serving so the sauce settles." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Pastry soggy on the base", "cause": "Pie dish has no base layer of pastry (this is a top-crust pie). Filling too wet at assembly.", "fix": "Cool the filling to lukewarm before topping. If you want a base layer, blind-bake a separate short-crust shell first and pour the filling in." },
+            { "symptom": "Pastry tough", "cause": "Over-worked dough, or too little fat.", "fix": "Keep the butter cold and visible as pea-sized flakes. Stop mixing the moment the dough comes together; don't knead." },
+            { "symptom": "Pastry shrinks back as it bakes", "cause": "Dough not rested before rolling.", "fix": "Chill the dough for the full 30 minutes. Roll, lift over the dish, then chill the assembled pie for 15 minutes before it goes in the oven." },
+            { "symptom": "Filling too thin", "cause": "Roux under-cooked, or broth not reduced enough.", "fix": "The roux needs 2 full minutes of cooking before liquid goes in. After all the broth is in, simmer until the sauce coats the back of a spoon." },
+            { "symptom": "Pastry top burnt before filling bubbled", "cause": "Filling went into the oven cold.", "fix": "Always bring the filling to room temperature before topping. The aim is for the filling to come up to a simmer at the same time as the pastry colours." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A turkey pot pie made from leftover Christmas bird is the canonical Boxing Day dish in many American households. A chicken and ham pot pie folds in 200 g of diced cooked gammon. Use ready-rolled puff pastry on top for a quicker version; the texture is different but still good. A topping of buttermilk biscuits in place of pastry gives the Southern chicken-and-dumplings hybrid." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Chicken pot pie is the Sunday-night dinner of every American childhood from New England down through the South. It belongs to the broader pot-pie tradition Hannah Glasse documented in eighteenth-century England, brought across with the colonists and rebuilt around farmhouse chicken and dairy. Eat with a green salad sharp enough to cut the cream." }
+        ]
+      }
+    ]
+  }
+}

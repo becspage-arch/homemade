@@ -1339,6 +1339,36 @@ tools table.
 **Working assumption:** 25-35 recipes per Sonnet session is sustainable.
 Next batch picks fresh from the backlog.
 
+#### Batch 002 — COMPLETE (2026-05-15)
+
+**31 cooking recipes PUBLISHED.** Sonnet session held below the 100
+target on the working-assumption ceiling from batch 001-resume.
+Pushed to 31 to clear a balanced cuisine spread. Full report:
+`docs/bulk-batch-002-report.md`.
+
+**Cuisine spread (batch 002):** french 5, american 8 (incl. 3
+Tex-Mex), british 6, angloIndian 4, easternEuropean 3, caribbean 2,
+middleEastern 2, northAfrican 1. Deliberate diversification away
+from batch 001's british / italian / mediterranean concentration.
+
+**Difficulty (batch 002):** beginner 15 (48%), intermediate 12 (39%),
+advanced 4 (13%). Slightly heavier beginner than target 40/40/20.
+
+**Voice stats:** 19 of 31 passed first upload (warnings only); 12
+failed first-pass voice-check on em-dash errors (~39%, vs batch
+001's 13%); all 12 fixed and uploaded clean on second pass; 0
+dropped. Em-dash pattern shifted from method-step paragraphs in
+batch 001 to closing paragraphs and `sourceNotes` in batch 002. No
+new common-issues entries — existing em-dash entries cover the
+pattern.
+
+**Slug gaps surfaced:** no `sauerkraut` ingredient slug — used
+`cabbage-white` slug with a prepNote workaround for bigos. Future
+schema-additive session to add sauerkraut + kimchi.
+
+**Running cooking total after batch 002:** ~131 PUBLISHED + ~215
+personal-recipes DRAFT.
+
 ### Step 15 — Mindset register fix + type-intro readings + sub-category seed ✅ landed 2026-05-15
 
 **Goal.** Fix the issues Rebecca raised reviewing the Step 14 anchor

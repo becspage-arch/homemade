@@ -1,0 +1,192 @@
+{
+  "slug": "duck-a-lorange",
+  "title": "Duck à l'orange",
+  "subtitle": "Crisp-skinned roast duck, bitter-orange gloss.",
+  "excerpt": "A whole roast duck with a glaze built from Seville orange, caramelised sugar, and the pan drippings. Crisp skin, pink breast, gravy that sits between sweet and sharp. A dinner-party dish from the haute-cuisine canon, brought home.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Escoffier, Le Guide Culinaire (1903), public-domain text giving the canonical canard à la bigarade. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg, for earlier English-language roasting times and gravy logic.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 95,
+    "restingMinutes": 20,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The orange-caramel base can be made up to two days ahead and kept refrigerated. Reheat gently and finish with the duck pan juices on the day.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["specialOccasion", "showstopper", "slowSunday"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven; reduce to 180°C after 20 minutes",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "roasting-rack", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "carving-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "bigarade", "term": "Bigarade", "definition": "The French term for the bitter Seville orange, and by extension the classical sauce built around it. Sauce bigarade is the proper name for the orange gravy that finishes this dish." },
+    { "slug": "gastrique", "term": "Gastrique", "definition": "A sauce-base made by caramelising sugar then sharpening it with vinegar. Cooks down to a dark syrup that cuts the richness of duck, pork, or game." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The classical version of this dish uses bitter Seville oranges, which are only in the shops for six weeks in January and February. A blend of regular sweet orange juice with the juice of a lemon makes a respectable substitute at any time of year. The principle is the same: caramelised sugar, sharp citrus, the resting juices of a properly roasted duck, all whisked together into a glossy gravy that cuts through the meat." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Three techniques have to be right. Prick the skin without cutting the flesh. Roast hot first, then drop the heat. Rest the duck for 20 minutes before the sauce goes anywhere near it." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "duck-whole", "amount": 1, "unit": "each", "prepNote": "2 to 2.5 kg, giblets removed, room temperature", "isOptional": false, "groupLabel": "For the duck" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the duck" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": "freshly ground", "isOptional": false, "groupLabel": "For the duck" },
+            { "ingredientSlug": "seville-orange", "amount": 4, "unit": "each", "prepNote": "or 3 regular oranges plus 1 lemon", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "granulated-sugar", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "white-wine-vinegar", "amount": 50, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "stock-chicken", "amount": 300, "unit": "ml", "prepNote": "or duck stock if available", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "cointreau", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": true, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "cold, cubed", "isOptional": false, "groupLabel": "For the sauce" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the rack inside the roasting pan so the duck sits clear of its own fat. A fine-mesh sieve is essential for straining the sauce smooth at the end." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the duck" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C. Pat the duck dry inside and out with kitchen paper. With the tip of a sharp paring knife, prick the skin all over the breast and thighs at an angle, just deep enough to pierce the skin and the fat layer without cutting into the flesh. Rub {{sea-salt-flakes}} of salt and {{black-pepper}} of pepper all over and inside the cavity. Sit on the rack, breast up." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roast in two stages" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Roast at 200°C for 20 minutes. Drop the heat to 180°C and continue for another 60 to 70 minutes. The duck is done when the juices from the thigh run clear and an instant-read thermometer in the thickest part of the leg reads 75°C. Lift onto a board, tent loosely with foil, and rest for 20 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pare the orange zest" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "While the duck cooks, pare long strips of zest from two of the oranges using a Y-peeler, taking no white pith. Cut into the finest matchsticks. Drop into a small pan of boiling water for 30 seconds to take the harshness out, then drain. Juice all the citrus and reserve." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the gastrique" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Put {{granulated-sugar}} of sugar and a tablespoon of cold water in the small saucepan. Set over medium heat, swirling rather than stirring, until the sugar dissolves and turns the colour of a copper penny. Stand back and add {{white-wine-vinegar}} of vinegar; it will spit. Stir until smooth, then add the citrus juice, {{stock-chicken}} of stock, and the blanched zest. Simmer for 8 minutes until the sauce coats the back of a spoon." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Strain the resting juices from the duck through a fine sieve into the sauce, leaving the fat behind in the board. Stir in the Cointreau if using and bring back to a simmer. Off the heat, whisk in {{unsalted-butter}} of cold butter, a cube at a time, until the sauce is glossy. Taste and add a pinch more salt if needed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Carve and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Carve the duck breasts off the carcass in two long fillets, then slice diagonally. Take the legs off whole. Arrange on a warm platter, spoon the sauce over and around, and scatter with the candied zest threads." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Duck skin not crisp", "cause": "Skin not pricked, or duck went into the oven cold.", "fix": "Bring to room temperature for 30 minutes before roasting. Prick the skin all over without cutting the flesh, so the fat renders out as it cooks." },
+            { "symptom": "Sugar burnt and bitter", "cause": "Caramel taken too dark before the vinegar went in.", "fix": "Caramel turns from amber to mahogany to black in seconds. Watch the colour and pull the pan from the heat the moment it reaches deep copper. If burnt, start the gastrique again." },
+            { "symptom": "Sauce too sharp", "cause": "Modern sweet oranges used as the bulk acid, or vinegar overdone.", "fix": "Balance with a teaspoon of caster sugar dissolved in a tablespoon of water; whisk in gradually until the sharpness rounds out." },
+            { "symptom": "Sauce too sweet", "cause": "Wrong citrus balance, especially without bitter Sevilles.", "fix": "Add the juice of half a lemon at the end. The bitterness is what defines the dish." },
+            { "symptom": "Duck legs pink in the centre", "cause": "Undercooked at the thigh.", "fix": "Duck legs need to reach 75°C internally. Return to the oven for 15 minutes if the thermometer reads under." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Canard à l'orange, or properly canard à la bigarade, sits at the centre of the haute-cuisine repertoire codified by Escoffier in 1903. By the 1960s it had become the dinner-party set-piece of an entire generation, a high-French ambition for the English Sunday host. The bitter orange does the work the dish was built on; if you can find a Seville at the back end of January, the sauce becomes the version your grandmother might have tasted at a long French lunch." }
+        ]
+      }
+    ]
+  }
+}

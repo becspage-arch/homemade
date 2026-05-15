@@ -1,0 +1,194 @@
+{
+  "slug": "kibbeh",
+  "title": "Kibbeh",
+  "subtitle": "Stuffed bulgur-and-lamb croquettes, deep-fried.",
+  "excerpt": "Lemon-shaped croquettes of finely ground lamb and bulgur wheat, stuffed with a spiced lamb-and-pine-nut filling and deep-fried. The labour-intensive jewel of Lebanese and Syrian cookery, scored by the grandmothers who shape them perfectly.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The Levantine kibbeh tradition codified across Lebanese, Syrian, and Palestinian regional cookery. The lemon shape and pine-nut filling are the classical Beirut household pattern.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": "~18 kibbeh balls",
+    "prepMinutes": 60,
+    "cookMinutes": 30,
+    "restingMinutes": 30,
+    "chillingMinutes": 60,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the shaped uncooked kibbeh on a tray, then bag once solid. Fry from frozen, adding 2 minutes to the cooking time. Best within 2 months.",
+    "batchable": true,
+    "batchNotes": null,
+    "makeAheadNotes": "The shell mixture and filling can both be made a day ahead. The shaped kibbeh can wait, refrigerated, for several hours before frying.",
+    "dietaryFlags": ["dairyFree"],
+    "cuisine": "middleEastern",
+    "mealType": "starter",
+    "mood": ["specialOccasion", "showstopper", "party"],
+    "temperatureCelsius": null,
+    "temperatureNote": "hob — 175°C oil",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "food-processor", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "kibbeh-shape", "term": "Kibbeh shape", "definition": "The classical kibbeh is shaped like a small American football or rugby ball, pointed at both ends. A practised hand pinches a ball of dough around a finger to form a thin-walled shell, fills it, and tapers the ends closed. The thinner the shell, the more highly the cook is praised." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Kibbeh is a two-component dish. The shell is finely ground lamb pounded together with soaked bulgur and a quick spice mix until it forms a smooth, almost claylike dough. The filling is a separate mixture: more lamb fried with onion, allspice, cinnamon, and pine nuts, drained of its fat, then chilled. The shaping takes the most practice; the shell is pinched around a finger to form a hollow lemon, then a teaspoon of filling goes inside and the ends are tapered closed." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The first half-dozen will look misshapen. By the time you have made the last one, the rest will look like they came off a deli counter. This is a dish where practice produces visible improvement within one session." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "bulgur-wheat", "amount": 250, "unit": "g", "prepNote": "fine bulgur (#1), rinsed", "isOptional": false, "groupLabel": "For the shell" },
+            { "ingredientSlug": "lamb-mince", "amount": 500, "unit": "g", "prepNote": "lean, twice-ground if possible", "isOptional": false, "groupLabel": "For the shell" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "small, very finely chopped", "isOptional": false, "groupLabel": "For the shell" },
+            { "ingredientSlug": "allspice", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the shell" },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the shell" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the shell" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the shell" },
+            { "ingredientSlug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the shell" },
+            { "ingredientSlug": "ice", "amount": 50, "unit": "g", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the shell" },
+            { "ingredientSlug": "lamb-mince", "amount": 300, "unit": "g", "prepNote": "for the filling", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "large, finely chopped, for the filling", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "pine-nuts", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "allspice", "amount": 1, "unit": "tsp", "prepNote": "for the filling", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 0.5, "unit": "tsp", "prepNote": "for the filling", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sumac", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": "For the filling" },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": "for the filling", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": "for the filling", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "vegetable-oil", "amount": 1500, "unit": "ml", "prepNote": "for deep frying", "isOptional": false, "groupLabel": "For frying" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A food processor for the shell mixture is non-optional unless you have a butcher who can twice-grind the meat to a paste. A deep stockpot for the oil. A bowl of cold water beside the worktop for keeping your hands wet during shaping." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soak the bulgur" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rinse {{bulgur-wheat}} of bulgur in cold water 3 times. Drain well. Cover with fresh cold water and leave 20 minutes. Drain again, squeezing out as much water as you can in a sieve." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat {{olive-oil}} of olive oil in a wide frying pan over medium heat. Tip in the {{pine-nuts}} of pine nuts. Toss for 2 minutes until pale gold; lift out with a slotted spoon. Add the chopped {{onion}} of onion to the same pan and cook 8 minutes until soft. Tip in {{lamb-mince}} of lamb mince and break apart with a wooden spoon. Cook 8 minutes until any liquid has cooked away. Stir in {{allspice}} of allspice, {{cinnamon-ground}} of cinnamon, the sumac if using, and {{sea-salt-fine}} of salt. Tip onto a plate to cool, then stir in the toasted pine nuts. Chill 30 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the shell mixture" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In the food processor, pulse the finely chopped onion with {{allspice}} of allspice, {{cumin-ground}} of cumin, {{cinnamon-ground}} of cinnamon, {{sea-salt-fine}} of salt, and {{black-pepper}} of pepper until very fine. Add {{lamb-mince}} of lamb mince and the drained bulgur. Add the {{ice}} of crushed ice. Process for 2 to 3 minutes, scraping down twice, until the mixture forms a smooth, claylike dough. Refrigerate 30 minutes; this firms the dough for shaping." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape the kibbeh" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wet your hands. Take a walnut-sized lump of shell mixture and roll it into a ball. Hold the ball in your non-dominant hand and press into the centre with the wet forefinger of your dominant hand, rotating the ball slowly so the cavity widens into a hollow shell. Aim for walls about 5 mm thick." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drop a teaspoon of filling into the cavity. Pinch the opening closed, then taper the ends with wet fingers to form a lemon shape. Place on a lined tray. Continue until all the mixture is shaped, around 18 kibbeh." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Deep fry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour {{vegetable-oil}} of oil into the stockpot to a depth of 8 cm. Heat to 175°C. Lower 4 to 5 kibbeh in at a time with a slotted spoon. Fry for 4 to 5 minutes, turning halfway, until deep mahogany. Lift onto a rack. Repeat with the rest, letting the oil come back to temperature between batches. Eat hot with lemon wedges and a yoghurt-mint dip." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Shells cracking during shaping", "cause": "Mixture too dry, or hands not wet enough.", "fix": "Dip hands in cold water every 2 to 3 kibbeh. If the mixture still cracks, work in a tablespoon of ice water through the processor." },
+            { "symptom": "Shells burst in the oil", "cause": "Walls too thin, or oil too hot.", "fix": "Aim for 5 mm walls — thinner is harder. Keep the oil at 175°C; above 180°C and the outside cooks before the inside heats through, building pressure." },
+            { "symptom": "Filling raw inside the shell", "cause": "Filling not fully cooked before stuffing.", "fix": "Cook the filling fully before chilling. The shell needs only minutes of frying; the filling has to be ready to eat on contact." },
+            { "symptom": "Greasy and heavy", "cause": "Oil temperature dropped too low.", "fix": "Use a thermometer. Fry no more than 5 at a time, let the oil recover between batches." },
+            { "symptom": "Bulgur grittiness in the shell", "cause": "Coarse bulgur used instead of fine.", "fix": "Always use fine bulgur (#1) for kibbeh shells. Coarse bulgur is for tabbouleh and pilaf." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Kibbeh is the showpiece of Levantine cooking, with Beirut, Damascus, Aleppo, and Palestinian villages all claiming distinct regional versions. The raw kibbeh nayyeh of Lebanon, the baked kibbeh bil-saneeyeh of Syria, and the broth-poached kibbeh labanieh are siblings of this fried version. The dish is celebratory, the labour itself a marker of welcome." }
+        ]
+      }
+    ]
+  }
+}
