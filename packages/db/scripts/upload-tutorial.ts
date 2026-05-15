@@ -358,6 +358,10 @@ async function uploadTutorial(
   // 11. Upsert the Tutorial.
   const existingTutorial = await prisma.tutorial.findUnique({ where: { slug: input.slug } })
 
+  // Baking metadata. Null block on cooking recipes / mindset / techniques;
+  // populated for baking recipes per `docs/baking-author.md`.
+  const baking = recipe.baking ?? null
+
   const sharedData = {
     slug: input.slug,
     title: input.title,
@@ -406,6 +410,24 @@ async function uploadTutorial(
     whenToUse: practice?.whenToUse ?? null,
     whenNotToUse: practice?.whenNotToUse ?? null,
     alternativePracticeIds: practice?.alternativePracticeIds ?? [],
+    // Baking metadata (Phase 8 Baking pipeline scaffold). Null on rows that
+    // aren't baking recipes; populated per sub-category for the ones that are.
+    flourWeightGrams: baking?.flourWeightGrams ?? null,
+    hydrationPercent: baking?.hydrationPercent ?? null,
+    saltPercent: baking?.saltPercent ?? null,
+    yeastPercent: baking?.yeastPercent ?? null,
+    levainPercent: baking?.levainPercent ?? null,
+    bulkFermentMinutes: baking?.bulkFermentMinutes ?? null,
+    proofMinutes: baking?.proofMinutes ?? null,
+    retardingMinutes: baking?.retardingMinutes ?? null,
+    levainBuildMinutes: baking?.levainBuildMinutes ?? null,
+    laminationFolds: baking?.laminationFolds ?? null,
+    laminationRests: baking?.laminationRests ?? null,
+    bakeTemperatureCelsius: baking?.bakeTemperatureCelsius ?? null,
+    bakeTemperatureNote: baking?.bakeTemperatureNote ?? null,
+    steamMethod: baking?.steamMethod ?? null,
+    decoratingTechnique: baking?.decoratingTechnique ?? null,
+    preFermentType: baking?.preFermentType ?? null,
   }
 
   // Publish intent. --status PUBLISHED stamps publishedAt now and flips the

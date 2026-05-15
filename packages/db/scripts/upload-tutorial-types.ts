@@ -87,6 +87,50 @@ export interface PracticeMetadata {
   alternativePracticeIds?: string[]
 }
 
+export type PreFermentType =
+  | 'NONE'
+  | 'POOLISH'
+  | 'BIGA'
+  | 'LEVAIN'
+  | 'SPONGE'
+  | 'OTHER'
+
+/**
+ * Baking-specific recipe metadata. All fields nullable. Set on rows where
+ * `type === 'RECIPE'` and the recipe is in the Baking category. Cooking
+ * recipes leave the whole `baking` block null. Mirrors the columns added
+ * by the `phase_8_baking_pipeline_scaffold` migration.
+ */
+export interface BakingMetadata {
+  // Hydration metadata — baker's percentages, anchored on flour weight.
+  flourWeightGrams?: number | null
+  hydrationPercent?: number | null
+  saltPercent?: number | null
+  yeastPercent?: number | null
+  levainPercent?: number | null
+
+  // Proofing metadata. Minutes per stage.
+  bulkFermentMinutes?: number | null
+  proofMinutes?: number | null
+  retardingMinutes?: number | null
+  levainBuildMinutes?: number | null
+
+  // Lamination metadata. For puff / croissant / Danish.
+  laminationFolds?: number | null
+  laminationRests?: number | null
+
+  // Oven + steam.
+  bakeTemperatureCelsius?: number | null
+  bakeTemperatureNote?: string | null
+  steamMethod?: string | null
+
+  // Decorating.
+  decoratingTechnique?: string | null
+
+  // Pre-ferment type. NONE for straight doughs.
+  preFermentType?: PreFermentType | null
+}
+
 export interface RecipeMetadata {
   /** Default yield. Drives the "Serves N" line and the scale selector. */
   servings?: number | null
@@ -131,6 +175,14 @@ export interface RecipeMetadata {
   foundational?: boolean
   /** Slug of the recipe to suggest as "what to do with the leftovers". */
   leftoverTutorialSlug?: string | null
+  /**
+   * Baking-specific metadata. Null for cooking recipes; populated for
+   * Baking-category recipes. The columns are nullable, so within a baking
+   * recipe set only the fields that apply to the sub-category (bread sets
+   * hydration; pastry sets lamination; cake decorating sets
+   * decoratingTechnique; etc.).
+   */
+  baking?: BakingMetadata | null
 }
 
 export interface RecipeToolRef {

@@ -314,6 +314,55 @@ model Tutorial {
   whenNotToUse           String?
   alternativePracticeIds String[]            @default([])
 
+  // ──────────────────────────────────────────────────────────────────────────
+  // Phase 8 Baking pipeline — Baking-specific recipe metadata. Null on rows
+  // where `type != RECIPE` or where the recipe is not in the Baking category.
+  // Cooking recipes ignore these columns (they continue to use the existing
+  // `temperatureCelsius` / `temperatureNote` for oven cook temperatures).
+  // Bread + pastry + cake + biscuit + pie + scone + confectionery +
+  // cake-decorating live under one set of optional columns so all eight
+  // sub-categories share a single migration. See `docs/baking-author.md`.
+  // ──────────────────────────────────────────────────────────────────────────
+
+  // Hydration metadata — baker's-percentage anchored. All percentages are
+  // relative to flour weight; the flour weight itself anchors the whole
+  // recipe so the public renderer can show derived totals.
+  flourWeightGrams  Int?
+  hydrationPercent  Float?
+  saltPercent       Float?
+  yeastPercent      Float?
+  levainPercent     Float?
+
+  // Proofing metadata. All in minutes; null when the bake doesn't use that
+  // stage (a biscuit dough has no bulk ferment; a tin loaf has no levain
+  // build). `retardingMinutes` distinct from `chillingMinutes` (recipe-wide
+  // cold rest, e.g. a pastry chill) so bread workflows surface separately.
+  bulkFermentMinutes Int?
+  proofMinutes       Int?
+  retardingMinutes   Int?
+  levainBuildMinutes Int?
+
+  // Lamination metadata. Puff, croissant, and Danish carry fold + rest
+  // counts; shortcrust / filo skip these.
+  laminationFolds Int?
+  laminationRests Int?
+
+  // Oven + steam. Baking-specific oven settings: distinct from cooking's
+  // `temperatureCelsius` so bake-specific surfaces (steam method, etc.)
+  // can group together. Authors may still set the cooking field for
+  // legacy compatibility — the renderer prefers `bakeTemperatureCelsius`
+  // when the recipe is in the Baking category.
+  bakeTemperatureCelsius Int?
+  bakeTemperatureNote    String?
+  steamMethod            String?
+
+  // Decorating. Surfaces in the info bar on cake-decorating tutorials.
+  decoratingTechnique String?
+
+  // Pre-ferment type. NONE on straight doughs; one of the structured
+  // variants for breads that build flavour through a separate ferment.
+  preFermentType PreFermentType?
+
   planDayMornings       UserPlanDay[]         @relation("PlanDayMorningPractice")
   planDayEvenings       UserPlanDay[]         @relation("PlanDayEveningPractice")
   planDayAnchors        UserPlanDay[]         @relation("PlanDayAnchorPractice")
@@ -341,6 +390,8 @@ model Tutorial {
   @@index([type, timeBand])
   @@index([type, bestTime])
   @@index([practiceTargets], type: Gin)
+  @@index([type, preFermentType])
+  @@index([type, decoratingTechnique])
 }
 
 enum TutorialType {
@@ -1389,6 +1440,19 @@ enum PlanStatus {
 enum PlanSlotSource {
   LIBRARY_REF
   GENERATED
+}
+
+// Pre-ferment type for breads. Straight doughs are `NONE`; flavour-building
+// breads use one of the structured variants. `OTHER` for niche cultures
+// (rye sour, tangzhong-style scalds repurposed as flavour-build, etc.) —
+// document in the recipe body when used.
+enum PreFermentType {
+  NONE
+  POOLISH
+  BIGA
+  LEVAIN
+  SPONGE
+  OTHER
 }
 
 /// One row per user-generated plan. `inputText` is the Path A "pour it out"
