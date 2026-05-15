@@ -11,7 +11,7 @@
   "sourceType": "PUBLIC_DOMAIN",
   "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136. The four-quarters method (equal weights of butter, sugar, flour, eggs) was already the household standard. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg, gives the earliest weighted British cake recipes in wide circulation. The cake takes its name from Queen Victoria, whose afternoon tea is the cited 1860s origin; the recipe predates the name by decades.",
   "recipe": {
-    "servings": null,
+    "servings": 8,
     "yieldDescription": "1 cake (20 cm, serves 8)",
     "prepMinutes": 15,
     "cookMinutes": 22,
@@ -99,7 +99,11 @@
       { "type": "paragraph", "content": [{ "type": "text", "text": "Two 20 cm loose-bottomed tins are the standard. A 23 cm tin works for both sponges baked separately, or one deeper cake split in half; the bake time stretches by about five minutes. Grease the tins and line the bases with circles of baking paper." }] },
       { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
       { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Cream the butter and sugar, 5 minutes" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 180°C fan. Put {{unsalted-butter}} of softened unsalted butter and {{caster-sugar}} of caster sugar in a large bowl. Beat with a hand mixer on medium-high for four to five minutes; the mixture goes from yellow and dense to pale and almost double in volume. This is the cake's main rise — the air you whip in here is what holds the crumb open." }] },
+      { "type": "paragraph", "content": [
+        { "type": "text", "text": "Heat the oven to 180°C fan. Put {{unsalted-butter}} of softened unsalted butter and {{caster-sugar}} of caster sugar in a large bowl. Beat with a hand mixer on medium-high for four to five minutes (the " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "creaming-method" } }], "text": "creaming method" },
+        { "type": "text", "text": "); the mixture goes from yellow and dense to pale and almost double in volume. This is the cake's main rise; the air you whip in here is what holds the crumb open." }
+      ] },
       { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Add the eggs gradually" }] },
       { "type": "paragraph", "content": [{ "type": "text", "text": "Lightly beat {{eggs}} eggs in a jug. With the mixer running on medium, add the eggs a tablespoon at a time, letting each addition emulsify into the butter before the next. If the mixture looks curdled, add a heaped tablespoon of the weighed flour and beat for ten seconds — it brings the emulsion back. Beat in {{vanilla-extract}} of vanilla extract." }] },
       { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Fold in the flour" }] },
