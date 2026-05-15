@@ -1339,6 +1339,77 @@ tools table.
 **Working assumption:** 25-35 recipes per Sonnet session is sustainable.
 Next batch picks fresh from the backlog.
 
+### Step 15 — Mindset register fix + type-intro readings + sub-category seed ✅ landed 2026-05-15
+
+**Goal.** Fix the issues Rebecca raised reviewing the Step 14 anchor
+batch: the prose drifted into ethereal AI-poetry, every script
+restated the methodology, sub-categories were wrong (null instead
+of practice types). One follow-up session to land all four fixes
+together.
+
+**Deliverable.**
+
+- `docs/mindset-author.md` bumped to **v2** — register pinned to
+  cooking-recipe-factual (not ethereal-spiritual); methodology
+  moved to type-intro READING entries that practice scripts
+  link to and assume; sub-category locked as practice type;
+  worked example points at v2 anchor JSONs as the working
+  reference; stripped defensive in-body disclaimers from the
+  guidance.
+- `docs/mindset-anti-tells.md` — five new `[block]` entries:
+  ethereal-poetic register, defensive in-body disclaimer,
+  methodology restatement, "what you might notice" lists,
+  strange-metaphor tells. Total list now 16 entries.
+- `packages/db/scripts/seed-mindset-taxonomy.ts` extended to
+  seed **11 SubCategory rows** under `mindset` (one per
+  `PracticeType` enum value). Each carries a one-sentence
+  description. Idempotent on re-run.
+- **5 new type-intro READING entries** at sub-category `reading`:
+  `how-eft-tapping-works`, `how-energy-statements-work`,
+  `how-rituals-work`, `body-based-meditation`,
+  `journal-prompts-as-practice`. Each carries the methodology
+  for one practice type. Practice scripts in the matching
+  sub-category link to it in their opening paragraph and assume
+  it's been read.
+- **5 anchor practices re-authored.** Same slugs, same Tutorial
+  ids (idempotent upload updated them in place). Stripped the
+  imagined-felt-sensation intros, the methodology restatements,
+  the defensive in-body disclaimers, the "what you might notice"
+  lists. Sub-category set to practice type. Tapping anchor
+  dropped from ~1,000 to ~400 words; ritual from ~800 to ~350;
+  meditation from ~900 to ~500.
+- `docs/mindset-anchor-report.md` rewritten to cover v1 → v2 +
+  the v2 anchor batch.
+
+Memory updates (auto-loaded for future Mindset workers):
+
+- `feedback_mindset_voice.md` — Mindset prose follows
+  cooking-recipe-factual register, not ethereal AI-poetry.
+- `project_mindset_structure.md` — per-practice-type intro
+  readings; sub-categories are practice types, not life
+  categories.
+
+**Out.**
+
+- No voice-check.ts deterministic-rule edits (Mindset
+  register-bans live in the drafting prompt's self-critique
+  pass for now).
+- No new TipTap blocks.
+- No pilot-10, no bulk fill, no plan generator, no admin/public
+  UI.
+
+**Next Mindset sessions, in order.**
+
+1. Voice-check CLI extension — `[needs-voice-check]` entries
+   from `docs/mindset-anti-tells.md` into `voice-check-lib.ts`,
+   plus fix the "Anchor"-as-ritual-step false positive.
+2. Pilot-10 — auto-publish via the Phase 8 Step 11–12 pattern.
+3. Bulk fill — standing worker pattern consuming
+   `docs/mindset-backlog.md`.
+4. Admin UI for Mindset — type-toggle in `tutorial-form.tsx`.
+5. Public UI for Mindset.
+6. Plan generator worker.
+
 ### Step 14 — Mindset authoring prompt + anti-tells + anchor batch ✅ landed 2026-05-14
 
 **Goal.** Build the Mindset drafting prompt template (v1), seed the
@@ -1549,7 +1620,7 @@ Revise the rates here when actuals diverge from estimates.
 | 2 | Baking | 3,000 | 0 | Not started — ~1 wk setup (baker's percentages, hydration, proofing, lamination, decorating metadata) | 3 |
 | 3 | Garden | 4,000 | 0 | Not started — ~1 wk setup | 4 |
 | 4 | Herbal medicine | 2,500 | 0 | Not started — ~1 wk setup | 2.5 |
-| 5 | Mindset | 4,300 | 5 DRAFT (anchor batch landed Phase 8 Step 14, 2026-05-14) | ✅ schema + backlog + authoring prompt + anti-tells + 5-anchor batch ready (Phase 8 Step 13 → Step 14, 2026-05-14). Migration `20260614000000_phase_8_step_13_mindset_schema` ships PRACTICE / READING TutorialType values + 11-value `PracticeType` + 20-value `PracticeTarget` + `TimeBand` + `BestTime` + `PlanTier` + `PlanStatus` + `PlanSlotSource` enums + Tutorial practice-metadata columns + the six user-side tables (`UserPlan` / `UserPlanDay` / `DailyPick` / `UserPracticeFavorite` / `UserPracticeUse` / `UserFeeling`). `docs/mindset-backlog.md` enumerates ~2,945 specific entry titles across all 16 life categories. `docs/mindset-author.md` v1 + `docs/mindset-anti-tells.md` (11 seeded entries) drive future Mindset drafting. Five anchor DRAFTs across TAPPING / ENERGY_STATEMENT / RITUAL / MEDITATION / JOURNAL_PROMPT seeded for Rebecca's review at `/admin/tutorials?type=PRACTICE`. Upload script extended to accept PRACTICE / READING (additive — RECIPE / TECHNIQUE unchanged). Voice-check Mindset extension, anchor review, pilot of 10, plan generator — still ahead. | 4.3 |
+| 5 | Mindset | 4,300 | 10 DRAFT (5 practices + 5 type-intro readings; v2 anchor batch landed Phase 8 Step 15, 2026-05-15) | ✅ schema + backlog + authoring prompt v2 + anti-tells (16 entries) + 11 sub-categories + 10-entry anchor batch ready. Migration `20260614000000_phase_8_step_13_mindset_schema` ships PRACTICE / READING TutorialType values + 11-value `PracticeType` + 20-value `PracticeTarget` + `TimeBand` + `BestTime` + `PlanTier` + `PlanStatus` + `PlanSlotSource` enums + Tutorial practice-metadata columns + the six user-side tables. `docs/mindset-backlog.md` enumerates ~2,945 specific entry titles across all 16 life categories. `docs/mindset-author.md` v2 (cooking-recipe register, per-type intro readings, sub-categories-as-types) + `docs/mindset-anti-tells.md` (16 entries, 14 [block]) drive Mindset drafting. Five type-intro READINGs cover the methodology once; five practice anchors assume them and stay tight. Mindset Category seeded with 11 SubCategory rows (one per PracticeType). Upload script extended to accept PRACTICE / READING (additive — RECIPE / TECHNIQUE unchanged). Voice-check Mindset extension, pilot of 10, bulk fill, plan generator, admin/public UI — still ahead. | 4.3 |
 | 6 | Crochet | 1,500 | 0 | Not started — ~1 wk setup | 1.5 |
 | 7 | Knitting | 1,500 | 0 | Not started — ~1 wk setup | 1.5 |
 | 8 | Needlework | 800 | 0 | Not started — ~1 wk setup | 0.8 |

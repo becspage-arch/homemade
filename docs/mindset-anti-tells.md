@@ -35,6 +35,94 @@ pilot / bulk batches surface recurring tells.
 
 ## Voice issues
 
+- **Ethereal-poetic register** `[block]`
+  Pattern: prose that swaps factual description for imagined felt
+  sensations dressed as observation. The single biggest failure
+  mode in the v1 anchor batch (Rebecca's review, 2026-05-15).
+  Examples from v1:
+  - "Money panic at 6am is the tight chest before you've opened
+    your eyes. The bank-balance loop. The bracing for a day that
+    hasn't started."
+  - "...settle the nervous system enough that you can look at the
+    day with a steadier head."
+  - "A yawn or two. Tears, sometimes, on the third round. A
+    loosening in the chest."
+  Each one is the AI imagining what a felt sensation feels like
+  and pretending it's a universal observation.
+  **Why:** The audience clocks the register as AI-imagined. Real
+  authority in this space comes from being specific about the
+  practice (eight points, three rounds, five minutes) — not from
+  guessing what the reader's body is doing. The cooking-recipe
+  register works because it describes the dish, not how the eater
+  will feel. Mindset uses the same register: describe the
+  practice, not the felt experience the user might have.
+  **How to fix:** Strip imagined felt sensations from intros,
+  "what you might notice" sections, and closing paragraphs. Lead
+  with what the practice is: "A five-minute tapping practice from
+  Day 1 of *MONEY*. The script targets recurring daily money
+  worry." Where felt sensation appears inside a script line (e.g.
+  the Tapping Round naming "I'm tired of carrying this"), it
+  stays — that's the source-faithful practice content. Outside
+  the script, the prose stays factual.
+
+- **Defensive in-body disclaimer** `[block]`
+  Pattern: a sentence in the practice body warning the user to
+  consult a healthcare professional. "If you're working with a
+  mental-health provider for anxiety, tell them you're trying this
+  and see what they say." Inflammatory rather than reassuring —
+  reads as the publication covering itself instead of guiding
+  the user.
+  **Why:** Section-level disclaimers live in legal pages and on
+  section landing pages, not in individual practices. A practice
+  page that warns the user every time reads as anxious, not
+  authoritative. The cooking recipes don't include "consult your
+  GP before eating eggs"; Mindset shouldn't either.
+  **How to fix:** Cut the in-body disclaimer entirely. The
+  section-level safety frame lives on `/mindset` and the legal
+  pages.
+
+- **Methodology restatement in practice scripts** `[block]`
+  Pattern: every tapping script restating where the karate chop
+  point is, that you tap five to seven times, that you go through
+  the round three times. Same for meditations restating breath
+  technique, rituals restating the five-part shape, journal sets
+  restating free-write rules.
+  **Why:** Across ~200 tapping scripts the user reads the same
+  five paragraphs of methodology. It's content-bloat and reads
+  as defensive padding. One READING entry per practice type
+  carries the methodology; individual scripts assume it.
+  **How to fix:** Cut every methodology paragraph from the script
+  body. Add a single one-line link to the type-intro READING at
+  the top: "New to tapping? Read [how EFT tapping works] first."
+  Drop straight into the karate chop.
+
+- **"What you might notice" lists** `[block]`
+  Pattern: a section listing vague felt effects — "a yawn or two",
+  "tears, sometimes", "a sudden urge to check the bank balance,
+  or the opposite, no urge at all", "a loosening in the chest".
+  Reads as the AI guessing what's universal.
+  **Why:** Either an effect is concrete and worth stating in one
+  sentence, or it isn't worth stating. A list of "you might feel
+  X or you might feel the opposite of X" is filler — it reads as
+  scaffolding around an absent observation.
+  **How to fix:** Cut the whole section unless one observation is
+  concrete and useful (e.g. "Most people slow down on the third
+  pass of the script" — observed, specific, actionable). If you
+  can't name one such observation, skip the section.
+
+- **Strange-metaphor tells** `[warn]`
+  Pattern: metaphors that lack a literal anchor. "A steadier
+  head" (was the head wobbling?), "the bracing" (bracing for
+  what?), "the holding" (holding what?), "settling into the
+  body" (where in the body?). Each is the AI reaching for
+  emotional weight without grounding it.
+  **Why:** A metaphor needs a literal anchor — name the thing the
+  metaphor is standing in for. Without the anchor, the metaphor
+  reads as imagined depth.
+  **How to fix:** Either anchor the metaphor (e.g. "a steady
+  voice when you re-read the bills email") or cut it.
+
+
 - **Therapeutic-claim creep** `[block]` `[needs-voice-check]`
   Pattern: practices framed as "this will fix / cure / heal / treat
   / clear X". Drift toward language that implies medical or

@@ -2,17 +2,27 @@
  * One-off seed for the Mindset taxonomy.
  *
  * Inserts (or no-ops on conflict):
- *   Category   mindset    "Mindset"
+ *   Category    mindset           "Mindset"
+ *   SubCategory tapping           "Tapping"
+ *   SubCategory energy-statement  "Energy statements"
+ *   SubCategory affirmation       "Affirmations"
+ *   SubCategory spell             "Spells"
+ *   SubCategory ritual            "Rituals"
+ *   SubCategory activity          "Activities"
+ *   SubCategory journal-prompt    "Journal prompts"
+ *   SubCategory visualisation     "Visualisations"
+ *   SubCategory meditation        "Meditations"
+ *   SubCategory embodiment        "Embodiment"
+ *   SubCategory reading           "Readings"
  *
- * Mindset has no sub-categories at launch — the 16 life categories
- * (Money, Sleep, Body, Self-worth, etc.) are surfaced through
- * `PracticeTarget[]` on each Tutorial row, not through SubCategory
- * rows. If a Body sub-category is later needed for
- * Perimenopause / Menopause routing it lands here.
+ * Mindset sub-categories are practice types — that's the navigational
+ * axis the admin browse and the public library use. The 16 life
+ * categories (Money, Sleep, Body, Self-worth, etc.) surface through
+ * `practiceTargets[]` on each Tutorial row, never through SubCategory.
  *
- * The upload-tutorial script requires the Category to exist before
- * Mindset PRACTICE / READING rows can be inserted. Run once before
- * uploading the anchor batch.
+ * The upload-tutorial script requires the Category + SubCategory to
+ * exist before Mindset PRACTICE / READING rows can reference them.
+ * Run once before uploading the anchor batch.
  *
  * Run:
  *   pnpm --filter "@homemade/db" exec tsx scripts/seed-mindset-taxonomy.ts
@@ -51,6 +61,95 @@ async function main(): Promise<void> {
     update: {},
   })
   console.log(`[seed] mindset → ${mindset.id}`)
+
+  const subCategories: { slug: string; name: string; description: string; order: number }[] = [
+    {
+      slug: 'tapping',
+      name: 'Tapping',
+      description:
+        'EFT tapping scripts. Eight points, three rounds, a karate-chop set-up, and a reframe round. Five to fifteen minutes; daily use.',
+      order: 10,
+    },
+    {
+      slug: 'energy-statement',
+      name: 'Energy statements',
+      description:
+        "Short release-and-allow statements drawn from Rebecca's Money Zone method. Said three times, slow, alongside other practices.",
+      order: 20,
+    },
+    {
+      slug: 'affirmation',
+      name: 'Affirmations',
+      description:
+        'Short first-person present-tense statements paired with a single instruction for use.',
+      order: 30,
+    },
+    {
+      slug: 'spell',
+      name: 'Spells',
+      description:
+        'Folk-magic-shaped focusing rituals with simple physical objects (candle, salt, water, paper). Practical not theatrical.',
+      order: 40,
+    },
+    {
+      slug: 'ritual',
+      name: 'Rituals',
+      description:
+        'Weekly and seasonal ceremonies. Five-part shape: Prepare, Release, Allow, Integrate, Anchor.',
+      order: 50,
+    },
+    {
+      slug: 'activity',
+      name: 'Activities',
+      description:
+        'The embodied "live as if" layer. Object-based, in-the-world practices — coin rituals, wardrobe anchors, walk-by visualisations.',
+      order: 60,
+    },
+    {
+      slug: 'journal-prompt',
+      name: 'Journal prompts',
+      description:
+        'Tight-question sets for the page. One specific question per prompt, five-minute free-writes, no editing.',
+      order: 70,
+    },
+    {
+      slug: 'visualisation',
+      name: 'Visualisations',
+      description:
+        'Image-led practices walked through in second-person prose. Sensory and specific.',
+      order: 80,
+    },
+    {
+      slug: 'meditation',
+      name: 'Meditations',
+      description:
+        'Short guided meditations — body scan, breathwork, image-led. Public-domain lineages credited.',
+      order: 90,
+    },
+    {
+      slug: 'embodiment',
+      name: 'Embodiment',
+      description:
+        'Body-anchor practices pairing a physical gesture (hand on heart, palm on belly) with a spoken statement.',
+      order: 100,
+    },
+    {
+      slug: 'reading',
+      name: 'Readings',
+      description:
+        'Long-form explainers. How a method works, where a lineage comes from, what the science (or honest absence of science) says.',
+      order: 110,
+    },
+  ]
+
+  for (const sub of subCategories) {
+    const row = await prisma.subCategory.upsert({
+      where: { categoryId_slug: { categoryId: mindset.id, slug: sub.slug } },
+      create: { ...sub, categoryId: mindset.id },
+      update: { name: sub.name, description: sub.description, order: sub.order },
+    })
+    console.log(`[seed] mindset/${sub.slug} → ${row.id}`)
+  }
 
   await prisma.$disconnect()
 }

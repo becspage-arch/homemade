@@ -6,9 +6,20 @@ shape — `PRACTICE` / `READING` tutorials, 11 practice types, 20
 practice targets, time bands, best-time, when-to-use / when-not-to-use,
 alternative-practice cross-references, source-material grounding.
 
-**Prompt version:** 1 (Mindset anchor batch — 2026-05-14). Bump on
-iteration. Changelog will accumulate here as future Mindset workers
-tighten the prompt.
+**Prompt version:** 2 (2026-05-15). Changelog:
+- v2: rewrote the voice section after Rebecca reviewed the v1 anchor
+  batch and flagged the whole thing as ethereal AI-poetry. New rules:
+  Mindset prose follows the cooking-recipe register (factual,
+  specific, low-key) — not a separate "spiritual" voice. Stripped
+  imagined-feeling intros, "what you might notice" lists, defensive
+  in-body disclaimers. Added the assumed-type-intro pattern:
+  individual practice scripts assume the matching READING entry has
+  been read (`how-eft-tapping-works`, `how-rituals-work`, etc.) and
+  don't restate the methodology. Sub-category locked as practice
+  type, not life category — life categories surface through
+  `practiceTargets[]` only.
+- v1 (Mindset anchor batch, 2026-05-14): initial drop, modelled on
+  `docs/tutorial-author.md` v4.
 
 ## How a drafting session uses this file
 
@@ -67,35 +78,76 @@ source-attribution.
 
 ## Voice reference
 
-The voice is Rebecca's — from her existing books. Activation,
-Ceremony, Practice, Reset, Embodiment. Amanda Frances–coded ("Money
-Queen" is on brand — though see "Anti-tells" for where that register
-goes wrong). Spiritual and wealthy without apology. Grounded and
-aspirational at once.
+**Mindset prose follows the cooking-recipe register.** Same voice as
+the cooking pilot tutorials — factual, specific, unfussed — applied
+to a different subject. There is no separate "spiritual" or
+"Mindset" voice. The temptation to write Mindset content in an
+ethereal / emotional / poetic register is the failure mode that
+sank the v1 anchor batch; v2 of this prompt is the correction.
 
-Rebecca's actual register, from her books:
+**Before drafting:** read 2–3 cooking pilot tutorials in the admin
+(buttermilk pancakes, toad in the hole, coq au vin are good
+references). Notice the register — practical, observed,
+fact-led. That voice applies here.
+
+What the register looks like in practice:
+
+- **Lead with what the practice is, not what it feels like.**
+  - Good: "A five-minute tapping practice from Day 1 of Rebecca's
+    *MONEY* program. The script targets recurring daily money
+    worry."
+  - Bad: "Money panic at 6am is the tight chest before you've
+    opened your eyes."
+- **Concrete, not metaphorical.** Felt sensations only when they
+  carry literal meaning. No "steadier head", "the holding", "the
+  bracing" without a literal anchor.
+- **Numbers and times where they sit.** "Five to seven taps per
+  point, three times through the round" is fine. "A few taps to
+  let the body settle" is the failure register.
+- **Cite source material directly.** The cooking recipes cite Mrs
+  Beeton (1861), Fannie Farmer (1896) with year + book title.
+  Mindset cites Rebecca's books by title + year, EFT by Gary Craig
+  + decade, public-domain lineages by tradition.
+- **No defensive disclaimers in body.** The global disclaimer lives
+  on the legal pages and the section landing page; the practice
+  body assumes it. Never write "tell your healthcare provider" or
+  "consult a professional" in a practice body.
+- **No "what you might notice" lists.** They read as guesses at
+  universality. If a single concrete observation matters (e.g.
+  "the third pass of the script is where most people slow down"),
+  state it as one sentence. Otherwise skip the section entirely.
+
+Rebecca's actual register, drawn from her books:
 
 - **Direct + brief.** "Today, do this." Not "today, consider doing
   this when you feel called."
-- **Specific imagery.** "I'd sit on the floor and tap." "Money would
-  come. But then it would go." Concrete, not abstract.
+- **Specific imagery.** "I'd sit on the floor and tap." Concrete,
+  not abstract.
 - **Permission, not prescription.** "If a phrase doesn't feel like
-  you, change it." "Trust whatever comes to mind."
-- **Acknowledgement, then turn.** Acknowledge what's there
-  (tension, fear, fatigue) before reframing — don't bypass the
-  feeling.
-- **First-person from Rebecca occasionally.** She's the IP holder; her
-  voice carries the section. Don't ventriloquise — let her be the
-  voice when it's drawn from her books.
+  you, change it."
+- **Acknowledgement, then turn.** Acknowledge what's there before
+  reframing — but only when the practice script itself requires it
+  (e.g. inside a tapping karate-chop statement). Don't import that
+  pattern into the surrounding prose.
+- **First-person from Rebecca occasionally.** She's the IP holder;
+  her voice carries the section. Don't ventriloquise — let her be
+  the voice only when quoting / adapting directly from a named
+  source.
 
 What it is NOT:
 
-- Not breezy. Not "high-vibe queen". Not affirmation-shouting. Not
-  rented-yacht manifesting.
-- Not generic self-help register ("you'll feel better", "you've got
-  this", "you deserve abundance").
-- Not therapeutic-authority register ("this practice will heal X",
-  "this practice cures Y"). See "Safety voice" below.
+- Not breezy. Not "high-vibe queen". Not affirmation-shouting.
+- Not generic self-help register ("you'll feel better", "you deserve
+  abundance").
+- Not therapeutic-authority register ("this practice will heal X").
+- **Not ethereal-poetic register.** No "settling into the body", no
+  "the breath that knows what it knows", no "the body remembers".
+  These read as AI-imagined depth. The cooking-recipe register
+  rejects all of them.
+- **Not imagined-felt-sensation register.** No "the tight chest
+  before you've opened your eyes", "the bracing for a day that
+  hasn't started", "a steadier head". These are platitudes
+  dressed as observations. Cut them on sight.
 
 ## Input contract — the brief
 
@@ -169,9 +221,13 @@ Rules:
   (Yes, `PracticeType.READING` and `TutorialType.READING` overlap —
   for a READING entry both should be set.)
 - `categorySlug` is `"mindset"` for everything in this batch.
-  Sub-category defaults to null; if a Mindset sub-category exists
-  (e.g. "perimenopause" under Body in a future seed) and matches,
-  pass it. Otherwise leave null.
+- **`subCategorySlug` is the practice type, lowercased and
+  hyphenated.** `tapping`, `energy-statement`, `affirmation`,
+  `spell`, `ritual`, `activity`, `journal-prompt`, `visualisation`,
+  `meditation`, `embodiment`, `reading`. Mindset sub-categories
+  are practice types so the admin browse and the public library
+  navigate by type. Life categories surface through
+  `practiceTargets[]` only — never through SubCategory rows.
 - `sourceType` defaults to `"CREATOR"` when the practice is drawn
   from Rebecca's books (her IP), `"PUBLIC_DOMAIN"` when synthesised
   from EFT instructional material / folk magic / public-domain
@@ -190,54 +246,79 @@ Rules:
 
 ## Body structure
 
-The body is one TipTap document. Use the structure below as a default;
-practice types adjust the shape (see the per-type subsections later).
-Each heading is an H2 unless flagged.
+The body is one TipTap document. Use the structure below as a
+default; practice types adjust the shape (see the per-type
+subsections later). Each heading is an H2 unless flagged.
 
-1. **Intro** — one or two paragraphs of plain prose. No heading.
-   State what the practice is, the feeling it meets, what it leaves
-   you with. Specific. No preamble; no wind-up. "This is a five-minute
-   tapping practice for money panic." beats "Money panic is a
-   universal experience and one we'll explore together today."
+**Important: practice scripts assume the type-intro READING has been
+read.** There is one READING entry per practice type
+(`how-eft-tapping-works`, `how-rituals-work`, `how-energy-statements-work`,
+`body-based-meditation`, `journal-prompts-as-practice`, and so on).
+Those entries carry the methodology — what the eight EFT points are,
+where the karate chop point is, why rituals have a five-part shape,
+how to free-write without editing. Individual practice scripts
+**don't restate any of that**. They open with what the specific
+script targets, drop straight into the script, and finish. The
+result is a tight library where the same methodology isn't repeated
+across two hundred tapping entries.
 
-2. *(optional)* `infoPanel` — one panel between the intro and the
-   practice if there's a single thing the user needs to know up front
-   (e.g. "Tapping is acupressure on energy meridians used as a
-   self-regulation tool — not a cure for anxiety", "This is a body
-   practice — sit somewhere your feet can touch the floor", "Skip if
-   actively dissociating — use a body practice instead").
+The first link in any practice script body is to its matching
+type-intro reading (formatted as a one-line note under the intro:
+"New to tapping? Read [how EFT tapping works] first."). After that,
+the script gets on with itself.
 
-3. **What you'll need** — usually nothing, or one or two items. Skip
-   this section entirely for practices that need nothing. Where
-   relevant: a quiet five minutes, a candle, a £20 note, a journal
-   and pen, somewhere to sit. Plain prose, two sentences max.
+Default body shape:
 
-4. **The practice** — H2. The body of the practice itself. Per-type
+1. **Intro** — one short paragraph of plain prose. No heading. State
+   what the practice is in one sentence (type + length + source +
+   what it targets). One more sentence on when to use it. Done.
+   No imagined felt-sensation openings. No "money panic is the
+   tight chest before you've opened your eyes" register. The first
+   sentence is closer to the cooking-recipe excerpt than to a
+   meditation magazine.
+
+   - Good: "A five-minute tapping practice from Day 1 of Rebecca's
+     *MONEY: A 12-Week Tapping Program*. The script targets the
+     recurring daily money worry that surfaces before the day
+     starts — running numbers, checking the bank balance, the
+     feeling of being behind."
+   - Bad: "Money panic at 6am is the tight chest before you've
+     opened your eyes. The bank-balance loop. The bracing for a day
+     that hasn't started."
+
+2. **One-line link to the type-intro reading.** Plain paragraph,
+   not an `infoPanel`. "New to tapping? Read [how EFT tapping works]
+   first." Skip if the practice is itself a `READING` entry.
+
+3. *(optional)* `infoPanel` — only if there's one specific thing
+   the user must know **before this particular practice** that the
+   type-intro reading doesn't cover. Don't restate the methodology
+   here. Don't write a defensive disclaimer here. If there's nothing
+   specific to this practice, skip the panel.
+
+4. **What you'll need** — usually skipped. Include only when the
+   practice needs something out of the ordinary (a candle, a £20
+   note, a specific room). One sentence. Skip the heading entirely
+   for practices that need nothing.
+
+5. **The practice** — H2. The body of the practice itself. Per-type
    structure follows in the per-type subsections below. Use existing
-   TipTap blocks (paragraphs, lists, info panels, pull quotes,
-   supplies cards). No new blocks for the anchor batch.
-
-5. *(optional)* **What you might notice** — H2. One paragraph on the
-   normal range of responses. Tears. Yawns. Resistance. A racing mind
-   that won't settle. Acknowledge without prescribing — this is
-   permission to have whatever experience comes.
+   TipTap blocks (paragraphs, lists, info panels, pull quotes).
 
 6. *(optional)* **When this isn't working** — H2. Short paragraph
-   pointing to one or two alternative practices for the same target /
-   feeling. Reference by slug in `alternativePracticeIds` — the
-   renderer surfaces them as cards. The prose names them too so the
-   linking reads naturally.
+   pointing to one or two alternative practices for the same target.
+   Reference by slug in `alternativePracticeIds`; name the
+   alternative in the prose so the linking reads naturally.
 
-7. **Where this practice comes from** — H2. One paragraph on
-   provenance. The lineage, the book, the tradition, the original
-   teacher. One short attribution if it's drawn from a named teacher /
-   tradition; longer if it's Rebecca's own method (e.g. The Money
-   Zone). For `[PD]` entries: name the lineage honestly (EFT is Gary
-   Craig's method, breath meditation has multiple lineages, candle
-   rituals appear across folk traditions).
+7. **Where this practice comes from** — H2. One short paragraph on
+   provenance. Source + author + year for Rebecca's books. Lineage
+   credit for `[PD]` entries. "Original to homemade.education" for
+   `[NEW]` entries.
 
-Do not add other top-level structure. No "About this practice"
-heading. No "Cooking notes"-equivalent. No "Conclusion".
+Do not add other top-level structure. No "About this practice".
+No "What you might notice" lists (see the voice rules above —
+they read as AI-imagined universality). No "Conclusion". No
+sign-off.
 
 ## Per-practice-type guidance
 
@@ -246,89 +327,79 @@ above is the spine; this section is the per-type tailoring.
 
 ### TAPPING
 
-**Length:** 500–900 words. The body of a tapping practice is the
-script itself, written out. Long enough to read aloud at the pace
-the practice runs.
+**Length:** 300–600 words. The body of a tapping practice is the
+script itself plus the bare minimum framing. The type-intro reading
+(`how-eft-tapping-works`) carries everything else — what the eight
+points are, where the karate chop point is, why the script is
+repeated three times. Don't restate any of that.
 
 **Required sections inside "The practice":**
 
-1. **One short paragraph** introducing the feeling the script
-   addresses. Specific. "Money panic is the tight chest at 6am
-   before you've even checked the account." Not "Money panic is
-   stressful."
-2. **H3 "Karate chop"** — three statement lines in a bullet list
+1. **H3 "Karate chop"** — three statement lines in a bullet list
    (use a `bulletList` of three `listItem`s, each one paragraph).
    Each line follows Rebecca's pattern: "Even though I [name the
    feeling], I deeply and completely accept myself." Vary the second
    half occasionally — "I honour what this is trying to protect", "I
    am open to releasing this now" — but keep "deeply and completely
-   accept myself" as the default tail.
-3. **H3 "Tapping round"** — eight points in order, one short line
-   per point. Format as an ordered list or paragraph block (whichever
-   reads better). The eight points are always in this order:
-   - Eyebrow
-   - Side of eye
-   - Under eye
-   - Under nose
-   - Chin
-   - Collarbone
-   - Under arm
-   - Top of head
+   accept myself" as the default tail. **No prose paragraph
+   introducing the karate chop point** — the type-intro reading
+   covers it.
+2. **H3 "Tapping round"** — eight points in order, one short line
+   per point. Format as a bullet list (each list item is a paragraph
+   with the point name in bold and the line after). Order is
+   Eyebrow → Side of eye → Under eye → Under nose → Chin →
+   Collarbone → Under arm → Top of head. Each line states how it
+   currently is. Not the reframe — that's the next section.
+3. **H3 "Reframe to positive"** — same eight points, same order,
+   reframed.
+4. **One single line of closing instruction.** "Tap each round three
+   times, then move to the reframe and tap that three times." That
+   single sentence. Nothing else. Don't add "end with a breath" or
+   "sit with what comes up" — that's the AI-poetic register.
 
-   Each line states how it currently is. Not the reframe — that's
-   the next section. Example: "Eyebrow: I wake up gripped before the
-   day starts."
-4. **H3 "Reframe to positive"** — same eight points, same order,
-   reframed to where the user is moving. Example: "Eyebrow: I give
-   myself permission to breathe right now."
-5. **One short closing paragraph** with instructions: tap each round
-   three times, then move to the reframe round and tap it three
-   times. End the session with a slow breath.
+**Voice notes:** Tapping prose is first-person ("I", not "you") —
+the user reads the lines back to themselves. Use Rebecca's actual
+lines from the source book where they fit; rephrase only when the
+line trips. Don't sanitise.
 
-**Voice notes:** Tapping prose is first-person ("I", not "you") — the
-user reads the lines back to themselves. Use Rebecca's actual lines
-from the source book where they fit; rephrase only when the line
-trips. Don't sanitise — if the source line is "I'm tired of pretending
-I'm fine about money", keep that, don't soften to "I sometimes feel
-weary".
+**No imagined felt-sensation in the surrounding prose.** The set-up
+statement names a feeling, and the tapping-round lines name
+feelings — both of those are inside the script and are required.
+Outside the script, the prose stays factual.
 
 **Source-material grounding:** Tapping practices typically map onto
-one day of a tapping book. Cite the day in `sourceNotes` —
-"Adapted from Day 1 of MONEY: A 12-Week Tapping Program (Rebecca J
-Page, 2025)." If the script is reworked, say so — "Reworked from the
-Day 1 script for the homemade.education library; the original is in
-MONEY p. 29." Don't invent that EFT was invented by Rebecca — credit
-Gary Craig as the originator of EFT in the "Where this practice comes
-from" section.
+one day of a tapping book. Cite the day in `sourceNotes` — "Adapted
+from Day 1 of *MONEY: A 12-Week Tapping Program* (Rebecca J Page,
+2025)." If the script is reworked, say so. Don't invent that EFT
+was invented by Rebecca — credit Gary Craig (mid-1990s) in the
+type-intro reading and link to it; individual practice scripts
+don't need to repeat the credit unless the brief specifically calls
+for it.
 
 ### ENERGY_STATEMENT
 
-**Length:** 300–500 words. Short, dense practices.
+**Length:** 150–300 words. Short. The type-intro reading
+(`how-energy-statements-work`) carries the methodology — what
+release / allow means, why the statement is said three times, why
+present tense. Individual practices don't restate any of that.
 
 **Required sections inside "The practice":**
 
-1. **One paragraph** stating what the user is allowing.
-2. **H3 "Release"** — Rebecca's release pattern, written out: "I am
-   ready to release [what you are releasing]. I release it now. I
-   release it now. I release it now." Repeat three times. Use The
-   Money Zone method's release structure where money is the target;
-   adapt the release language to the practice target where it's not.
-3. **H3 "Allow"** — same pattern for the allowing statement: "I am
-   ready to allow [what you are allowing]. I allow it now. I allow
-   it now. I allow it now." Three times.
-4. **Closing paragraph** — one breath, hand on heart, sit with what
-   shifted.
+1. **The statements themselves.** Format as two `pullQuote` blocks,
+   one for the release, one for the allow. Both follow Rebecca's
+   pattern: "I am ready to release [what you are releasing]. I
+   release it now. I release it now. I release it now." / "I am
+   ready to align with and allow [what you are allowing]. I allow
+   it now. I allow it now. I allow it now."
+2. **One line of closing instruction.** "Say each three times, slow,
+   out loud or in your mind." Nothing more.
 
-**Voice notes:** First-person, present tense. "I am safe and steady
-with money today" — not "I will be safe with money tomorrow" (future
-tense weakens the statement) and not "I lack money panic" (negation
-in an affirmation is a tell, see anti-tells).
+**Voice notes:** First-person, present tense. No future tense, no
+negation construction (see anti-tells).
 
-**Source-material grounding:** Energy statements are the heart of
-Rebecca's Money Zone method (`The-Money-Zone-v1.txt`, chapters 2–5).
-Credit the method when the practice uses the Release / Allow
-structure. Self-worth energy statements lean on `MONEY-v2` days 15–22
-where Rebecca rewrites identity-level beliefs.
+**Source-material grounding:** Energy statements use Rebecca's
+Money Zone method. Credit *The Money Zone* (Rebecca Page, 2024) in
+`sourceNotes` when the practice uses the release / allow structure.
 
 ### AFFIRMATION
 
@@ -373,31 +444,36 @@ from a named tradition, credit it carefully — don't appropriate.
 
 ### RITUAL
 
-**Length:** 500–900 words. The 12 named ceremonies in
-`MONEY-Journal.txt` are the model.
+**Length:** 300–600 words. The 12 named ceremonies in
+`MONEY-Journal.txt` are the model. The type-intro reading
+(`how-rituals-work`) carries the methodology — the five-part shape,
+why each step exists, how to adapt it. Individual rituals don't
+restate that.
 
 **Required sections inside "The practice":**
 
-1. **What this ritual is for** — one paragraph stating the purpose.
-2. **Prepare** — H3. What to do before. Sit somewhere quiet, take
-   slow breaths, picture the thing you're working with in front of
-   you.
-3. **Release** — H3. The release statement, said three times.
-4. **Allow** — H3. The allow statement, said three times.
-5. **Integrate** — H3. A slow breath, an image (golden light /
-   warm water / a held bowl), feel it settle in the body.
-6. **Anchor** — H3. The single sentence to take from the ritual —
-   handwritten if the user has paper, said aloud otherwise.
+1. **H3 "Prepare"** — one short paragraph. What to set up. The
+   specific image / object the user holds in mind for this
+   particular ritual.
+2. **H3 "Release"** — the release statement as a `pullQuote`.
+3. **H3 "Allow"** — the allow statement as a `pullQuote`.
+4. **H3 "Integrate"** — one short paragraph. The specific image
+   for this ritual (golden light, warm water, a held bowl —
+   whichever the source ritual uses).
+5. **H3 "Anchor"** — the single take-away sentence as a
+   `pullQuote`, plus one line of instruction to write it down /
+   say it aloud.
 
 **Voice notes:** Ritual prose is second-person instructional ("Sit
 somewhere quiet"). The spoken lines inside the ritual are
-first-person ("I am ready to release…"). This dual register is
-correct — don't collapse them.
+first-person. This dual register is correct — don't collapse them.
+No "feel yourself held by the room" / "soft warm light fills the
+body" register if it isn't in the source ritual.
 
 **Source-material grounding:** Rebecca's 12 weekly rituals from
-`MONEY-Journal.txt` are the canonical examples — read the one closest
-to your target before drafting. Credit `MONEY-Journal` for the
-ritual structure in `sourceNotes`.
+*The Money Journal* (Rebecca J Page, 2025) are the canonical
+examples. Read the one closest to your target before drafting.
+Credit the source week in `sourceNotes`.
 
 ### ACTIVITY
 
@@ -420,26 +496,25 @@ the action, the time-frame. Don't drift into the abstract.
 
 ### JOURNAL_PROMPT
 
-**Length:** 400–800 words. A journal prompt SET — one practice can
-hold three or four prompts that walk a single feeling through.
+**Length:** 200–500 words. The type-intro reading
+(`journal-prompts-as-practice`) carries the free-write methodology
+— how to use a timer, why not to edit, how the unexpected line
+that surfaces is the work. Individual prompt sets don't restate
+that.
 
 **Required sections inside "The practice":**
 
-1. **What this set is for** — one paragraph.
-2. **The prompts** — H3 per prompt, body is the prompt itself plus a
-   sentence or two on what to notice. 2–4 prompts per set.
-3. **How to use the set** — one paragraph. Free-write, no editing,
-   five minutes per prompt, keep the pen moving.
+1. **H3 per prompt** — each H3 is the prompt itself (a single
+   specific question). Body is one short sentence of guidance on
+   what to look for in the answer. 2–4 prompts per set.
 
 **Voice notes:** Prompts are questions — direct, specific, slightly
-provocative. "When did 'we never get ahead' first become true for
-my family?" beats "How does your relationship with money make you
-feel?" The tight-question pattern from Rebecca's MONEY Journal is the
-model — one specific question per prompt, not blank space.
+provocative. The tight-question pattern from Rebecca's *The Money
+Journal* is the model.
 
-**Source-material grounding:** The 84 prompts in `MONEY-Journal.txt`
-are the canonical examples. Reuse Rebecca's prompt wording where it
-fits; rephrase where it trips on voice rules.
+**Source-material grounding:** The 84 prompts in *The Money
+Journal* (Rebecca J Page, 2025) are the canonical examples. Reuse
+Rebecca's prompt wording where it fits.
 
 ### VISUALISATION
 
@@ -459,28 +534,29 @@ the user sees, hears, smells, feels in the body.
 
 ### MEDITATION
 
-**Length:** 400–800 words. Short guided meditation, second-person.
+**Length:** 300–600 words. The type-intro reading
+(`body-based-meditation`) covers the wider methodology and lineage;
+the practice script is the guided meditation itself.
 
 **Required sections inside "The practice":**
 
-1. **Setting up** — one paragraph. Lie down or sit. Eyes closed or
-   soft.
-2. **The meditation** — second-person, slow-paced. Breath-led or
-   body-scan or single-image-led. Use line breaks generously — the
-   user reads it slowly.
-3. **Coming back** — one paragraph. Notice the room. Open the eyes
-   slowly.
+1. **H3 "Setting up"** — one short paragraph. Lie down or sit;
+   eyes closed or soft. Specific to this meditation.
+2. **H3 "The meditation"** (or a more specific name like "The
+   scan" / "Box breathing") — second-person guided text. Plain
+   paragraphs and bullet lists. No urgency, no promises of outcome.
+3. **H3 "Coming back"** — one short paragraph on opening the eyes.
 
-**Voice notes:** Calm, evenly-paced, second-person. No urgency.
-Don't promise outcomes ("you'll feel completely relaxed") — just
-guide the attention.
+**Voice notes:** Second-person, evenly-paced. Don't promise
+outcomes ("you'll feel completely relaxed"). Don't write the
+ethereal-poetic register ("the body remembers", "the breath that
+knows what it knows"). Plain instructional prose.
 
-**Source-material grounding:** Most meditation practices in the
-backlog are `[PD]` — synthesise from public-domain meditation
-traditions. Body scan is canonical (multiple lineages including
-Kabat-Zinn's MBSR — credit the general lineage, not Kabat-Zinn
-specifically unless directly adapting). Box breathing, 4-7-8
-breath, three-breath landing — all public domain.
+**Source-material grounding:** Body scan, 4-7-8 breath, box
+breathing — all public-domain meditation lineages. Credit the
+lineage in the type-intro reading; individual scripts cite the
+specific framing (e.g. "the bedtime adaptation of the body scan
+drawn on by Rebecca's *SLEEP*, Day 3").
 
 ### EMBODIMENT
 
@@ -741,103 +817,96 @@ what changed).
 
 Checklist:
 
-1. Scan every paragraph and heading for banned phrases (standard list
-   + Mindset-specific list). Case-insensitive. Zero hits required.
-2. Read the first sentence of the intro. If it starts "Money is one
-   of those things", "We all", "When it comes to", "Picture this",
-   "Imagine", "In a world where" — rewrite to start with a concrete
-   fact or instruction.
-3. Read the last paragraph. If it wraps up, philosophises, or signs
-   off with "Trust the process" / "And so it is" / "You've got this"
-   — cut it.
-4. Em-dash count per paragraph: at most one. Em-dash count per
+1. **Register check.** Read the intro and the first paragraph of
+   the practice. Does the prose sound like a cooking-recipe
+   tutorial — factual, specific, observed — or like a meditation
+   magazine? If it sounds magazine-y, rewrite as cooking-recipe.
+   Specific cues to remove: imagined felt sensations ("the tight
+   chest", "the bracing"), abstract-emotional metaphors ("a
+   steadier head", "the holding", "the settling"), AI-poetic
+   register ("the body remembers", "the breath that knows").
+2. **Methodology check.** Does the script restate the methodology
+   that the type-intro reading covers (where the karate chop point
+   is, why three rounds, why slow exhale)? If yes, cut. The link
+   to the type-intro reading is enough.
+3. **Defensive-disclaimer check.** Scan for "consult your doctor",
+   "tell your healthcare provider", "if you're working with a
+   therapist". Zero hits in body. The global disclaimer lives on
+   the legal pages and the section landing page.
+4. **"What you might notice" check.** Scan for any list of vague
+   effects — "tears, sometimes", "a yawn or two", "a loosening".
+   Cut the whole list unless one concrete observation matters; if
+   one does, state it as a single sentence.
+5. Scan every paragraph and heading for banned phrases (standard
+   list + Mindset-specific list). Case-insensitive. Zero hits.
+6. Read the first sentence of the intro. If it starts "Money is
+   one of those things", "We all", "When it comes to", "Picture
+   this", "Imagine", "In a world where", or with imagined felt
+   sensation — rewrite to start with a concrete fact about the
+   practice ("A five-minute tapping practice from Day X of MONEY").
+7. Read the last paragraph. If it wraps up, philosophises, or
+   signs off with "Trust the process" / "And so it is" / "You've
+   got this" — cut it.
+8. Em-dash count per paragraph: at most one. Em-dash count per
    sentence: never two.
-5. Negation patterns: scan for "not just X, but Y" / "it's not about
-   X, it's about Y" — rewrite in plain prose.
-6. Tricolons: scan for "X, Y, and Z" with three short parallel items.
-   Replace with two if the third doesn't earn it.
-7. Safety lines: if any safety beat is present, check it uses the
-   descriptive register, not the therapeutic-authority one (see
-   "Safety voice" above).
-8. Mindset register-words: scan for "queen", "boss", "high vibe",
-   "step into", "your power", "future self is", "I see you". Zero
-   hits.
-9. Therapeutic-claim creep: scan for "will heal", "will cure",
-   "fixes", "treats", "cures", "removes [a feeling] forever",
-   "guarantees [an outcome]". Rewrite to descriptive register.
-10. Spiritual-bypass watch: does any line frame the practice as a
-    replacement for real-world action? Rewrite to "use alongside",
-    not "use instead of".
-11. Cultural-lineage check: any practice drawn from a named tradition
-    (Buddhist, Indigenous, religious) — is the lineage either properly
-    credited or reframed to a general practice?
-12. Wrap-up sign-offs: zero.
-13. Source attribution: does `sourceNotes` cite the source the brief
-    flagged? Is the attribution honest (Rebecca's book + page where
-    it's hers; lineage credited where it's a tradition; "Original to
-    homemade.education" for `[NEW]`)?
-14. Walk every entry in `docs/mindset-anti-tells.md`. For each entry,
-    re-read the draft asking "does this draft exhibit the pattern
-    this entry describes?" If yes, rewrite the affected lines using
-    the entry's **How to fix** guidance. `[block]` entries must be
-    cleared before writing the final JSON; `[warn]` entries are
-    guidance — rewrite when the fix is unambiguous, leave alone when
-    the prose works as-is. Note any `[warn]` entries left in place in
-    the change log so the next reviewer sees the call was intentional.
-15. For TAPPING practices specifically: walk the karate chop / tapping
-    round / reframe round. Set-up statements name the feeling
-    explicitly. Reframe lines mirror the eight points in the same
-    order. Closing instruction names the repetition (three rounds of
-    tapping, three rounds of reframe).
-16. For ENERGY_STATEMENT / AFFIRMATION practices: every statement is
-    first-person, present tense, positive construction. No "I will be
-    safe" (future) or "I am no longer fearful" (negation).
+9. Negation patterns: scan for "not just X, but Y" / "it's not
+   about X, it's about Y" — rewrite in plain prose.
+10. Tricolons: scan for "X, Y, and Z" with three short parallel
+    items. Replace with two if the third doesn't earn it.
+11. Therapeutic-claim creep: scan for "will heal", "will cure",
+    "fixes", "treats", "cures", "removes [a feeling] forever",
+    "guarantees [an outcome]". Rewrite to descriptive register.
+12. Mindset register-words: scan for "queen", "boss", "high vibe",
+    "step into", "your power", "future self is", "I see you".
+    Zero hits.
+13. Spiritual-bypass watch: does any line frame the practice as a
+    replacement for real-world action? Rewrite.
+14. Cultural-lineage check: any practice drawn from a named
+    tradition — is the lineage properly credited or reframed?
+15. Wrap-up sign-offs: zero.
+16. **Sub-category check.** `subCategorySlug` matches the practice
+    type (`tapping`, `energy-statement`, `affirmation`, `spell`,
+    `ritual`, `activity`, `journal-prompt`, `visualisation`,
+    `meditation`, `embodiment`, `reading`). Not null. Not a life
+    category.
+17. **Type-intro link check.** Body opens (after the intro) with a
+    plain paragraph linking to the matching type-intro READING
+    entry. The link uses the relative path or slug
+    (e.g. `[how EFT tapping works](/mindset/how-eft-tapping-works)`).
+18. Source attribution: does `sourceNotes` cite the source the
+    brief flagged? Is the attribution honest?
+19. Walk every entry in `docs/mindset-anti-tells.md`. For each
+    entry, re-read the draft asking "does this draft exhibit the
+    pattern this entry describes?" If yes, rewrite using the
+    **How to fix** guidance. `[block]` entries must be cleared
+    before writing the final JSON.
+20. For TAPPING practices specifically: karate chop set-up
+    statements name the feeling explicitly. Reframe lines mirror
+    the eight points in the same order. Closing instruction is
+    one line.
+21. For ENERGY_STATEMENT / AFFIRMATION practices: every statement
+    is first-person, present tense, positive construction.
 
 `docs/voice-editor-prompt.md` walks the standard rules in more detail.
 The deterministic `voice-check` CLI is the final gate.
 
 ## A worked example
 
-For the anchor batch the worker-author wrote five anchors —
-`docs/mindset-anchor-briefs/*.json`. The tapping anchor (
-`tapping-for-daily-money-panic`) is the cleanest TAPPING example;
-the ritual anchor (`the-calm-and-safe-money-reset`) is the cleanest
-RITUAL example. Read those files for shape.
+For the v2 anchor batch the worker-author re-authored five anchors
+to the tightened register —
+`docs/mindset-anchor-briefs/*.json`. The tapping anchor
+(`tapping-for-daily-money-panic`) is the canonical TAPPING shape
+under v2; the ritual anchor (`the-calm-and-safe-money-reset`) is the
+canonical RITUAL shape. Each anchor sits alongside its matching
+type-intro READING entry — `how-eft-tapping-works`,
+`how-rituals-work`, `how-energy-statements-work`,
+`body-based-meditation`, `journal-prompts-as-practice` — which the
+script body links to and assumes.
 
----
-
-# Worked example (inline)
-
-```json
-{
-  "slug": "tapping-for-daily-money-panic",
-  "title": "Tapping for daily money panic",
-  "subtitle": "A five-minute morning practice for the moment money grips you before the day starts.",
-  "excerpt": "A short tapping practice for the kind of money panic that arrives at 6am — the tight chest, the bank-balance loop, the bracing before anything has happened. Five minutes, used as needed.",
-  "type": "PRACTICE",
-  "categorySlug": "mindset",
-  "difficulty": "BEGINNER",
-  "sourceType": "CREATOR",
-  "sourceNotes": "Adapted from Day 1 of MONEY: A 12-Week Tapping Program (Rebecca J Page, 2025). The tapping framework is Gary Craig's Emotional Freedom Technique (EFT), in use since the mid-1990s.",
-  "practice": {
-    "practiceType": "TAPPING",
-    "practiceTargets": ["MONEY", "ANXIETY"],
-    "timeBand": "FIVE_MIN",
-    "bestTime": "MORNING",
-    "practiceDepth": "BEGINNER",
-    "whenToUse": "Use when you wake up already gripped by money — the tight chest, the bank-balance loop, the bracing before anything has happened.",
-    "whenNotToUse": "Skip if you're in acute crisis or actively dissociating; use a grounding body practice first, then come back to this."
-  },
-  "body": {
-    "type": "doc",
-    "content": [ "(see anchor JSON for the full body)" ]
-  }
-}
-```
-
-The body for the worked example lives in
-`docs/mindset-anchor-briefs/tapping-for-daily-money-panic.json` — the
-v1 of this prompt produced it. Read that file for the full structure.
+**Read the v2 anchor JSONs before drafting anything new.** They are
+the working register reference. The v1 versions in git history are
+the anti-register reference — the ethereal-poetic failure mode that
+v2 corrects.
 
 ---
 

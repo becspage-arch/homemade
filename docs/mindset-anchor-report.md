@@ -1,239 +1,198 @@
 # Mindset anchor batch report
 
-Five Mindset practice DRAFTs landed against `/admin/tutorials`
-filterable by `type=PRACTICE`. Each one covers a different
-`PracticeType` so Rebecca sees the end-to-end shape before the
-pilot-10 batch fires.
+Ten Mindset DRAFTs landed in two passes (v1 + v2). Both visible at
+`/admin/tutorials?category=mindset` filterable by `type=PRACTICE` /
+`type=READING`.
+
+**v1 (2026-05-14, commit `ffc357f`).** Five anchor practices, one
+per practice type. Rebecca reviewed the v1 tapping anchor and
+flagged the whole batch as ethereal AI-poetry rather than
+cooking-recipe-factual: imagined felt sensations dressed as
+observations, methodology restated across every script, defensive
+in-body disclaimers, vague "what you might notice" lists. Sub-
+category was also wrong (null rather than the practice type).
+
+**v2 (2026-05-15).** Two structural fixes + a register rewrite.
+Five type-intro READING entries seeded so individual practice
+scripts can assume the methodology rather than restate it. Eleven
+SubCategory rows seeded so each practice maps to its practice
+type. The five anchor practices re-authored in the cooking-recipe
+register, with sub-categories set, methodology stripped, defensive
+disclaimers removed, and "what you might notice" lists deleted
+unless one concrete observation justified them.
 
 ## What's in the batch
 
-| Slug | Title | Type | Targets | Time | Best time | Source |
-|---|---|---|---|---|---|---|
-| `tapping-for-daily-money-panic` | Tapping for daily money panic | `TAPPING` | MONEY, ANXIETY | FIVE_MIN | MORNING | MONEY-v2/D1 + EFT framework |
-| `i-am-allowed-to-want-this` | I am allowed to want this | `ENERGY_STATEMENT` | SELF_WORTH, MONEY, ABUNDANCE | THREE_MIN | ANYTIME | MONEY-v2/D15 + Money-Zone Ch 2–5 |
-| `the-calm-and-safe-money-reset` | The Calm & Safe Money Reset | `RITUAL` | MONEY, ANXIETY, ABUNDANCE | TEN_MIN | EVENING | MONEY-Journal/W1 |
-| `body-scan-for-sleep` | Body scan for sleep | `MEDITATION` | SLEEP, ANXIETY, ENERGY | TEN_MIN | EVENING | [PD] secular MBSR + SLEEP-v2/D3 framing |
-| `feast-and-famine-journal-prompts` | Feast and famine — a journal prompt set | `JOURNAL_PROMPT` | MONEY, ABUNDANCE, STUCK | TEN_MIN | ANYTIME | MONEY-v2/D4 + MONEY-Journal/W1 + [NEW] |
+### Type-intro READINGs (5, all sub-category `reading`)
 
-## Tutorial IDs (for admin access)
+| Slug | Title | Tutorial id |
+|---|---|---|
+| `how-eft-tapping-works` | How EFT tapping works | `cmp6khydg00025kv41xk744xr` |
+| `how-energy-statements-work` | How energy statements work | `cmp6ki1e10001hgv4ym2nyi71` |
+| `how-rituals-work` | How rituals work | `cmp6ki4kc0001o0v41moaibb2` |
+| `body-based-meditation` | Body-based meditation | `cmp6ki7eq0002o4v4eyp1xwxv` |
+| `journal-prompts-as-practice` | Journal prompts as practice | `cmp6kia3f0002wkv4ey57xqb7` |
 
-- Tapping: `cmp5rhrfs0003vcv44aojhbl2`
-- Energy statement: `cmp5rhy7n000120v4ei1mh8hz`
-- Ritual: `cmp5rie4c0000ccv4vuc61a6x`
-- Meditation: `cmp5rikkk0001lcv4f1tm9jyx`
-- Journal prompt: `cmp5rirb20001ikv4qwigp3ot`
+Each READING is the canonical reference for its practice type.
+Methodology lives here once. The corresponding practice scripts
+link to the READING in their opening paragraph and assume it's
+been read.
 
-All five live as `DRAFT` under the `mindset` Category. Visible at
-`/admin/tutorials` filtered by `type=PRACTICE`.
+### Practice anchors (5, one per sub-category)
 
-## Sources drawn from, per anchor
+| Slug | Title | Type | Sub-category | Tutorial id |
+|---|---|---|---|---|
+| `tapping-for-daily-money-panic` | Tapping for daily money panic | TAPPING | `tapping` | `cmp5rhrfs0003vcv44aojhbl2` |
+| `i-am-allowed-to-want-this` | I am allowed to want this | ENERGY_STATEMENT | `energy-statement` | `cmp5rhy7n000120v4ei1mh8hz` |
+| `the-calm-and-safe-money-reset` | The Calm & Safe Money Reset | RITUAL | `ritual` | `cmp5rie4c0000ccv4vuc61a6x` |
+| `body-scan-for-sleep` | Body scan for sleep | MEDITATION | `meditation` | `cmp5rikkk0001lcv4f1tm9jyx` |
+| `feast-and-famine-journal-prompts` | Feast and famine — a journal prompt set | JOURNAL_PROMPT | `journal-prompt` | `cmp5rirb20001ikv4qwigp3ot` |
 
-- **Tapping.** Day 1 of *MONEY: A 12-Week Tapping Program* (Rebecca J
-  Page, 2025). The eight-point script is Rebecca's; the wider EFT
-  framework is Gary Craig's (mid-1990s). The "What tapping is"
-  infoPanel reframes Rebecca's stronger book-context claim to the
-  descriptive register the library wants.
-- **Energy statement.** Day 15 of *MONEY* + the Release / Allow
-  structure from chapters 2–5 of *The Money Zone* (Rebecca Page,
-  2024). The combination — release-and-allow applied to a self-worth
-  practice rather than only a money one — is original to the
-  homemade.education library, attributed in `sourceNotes`.
-- **Ritual.** Week 1's "Calm & Safe Money Reset" ceremony from *The
-  Money Journal* (Rebecca J Page, 2025) — the first of Rebecca's
-  twelve weekly rituals. Five-part Prepare / Release / Allow /
-  Integrate / Anchor structure preserved exactly.
-- **Meditation.** Body scan drawn from the secular MBSR adaptation
-  (Kabat-Zinn, late 1970s), framed as a sleep wind-down per Day 3 of
-  *SLEEP* (Rebecca J Page, 2025). Cited as public-domain lineage in
-  `sourceNotes`.
-- **Journal prompt.** Three-prompt set on the feast-and-famine
-  cycle — Day 4 of *MONEY* + the free-write, no-editing style
-  Rebecca uses across *The Money Journal*. The three-prompt
-  structure (action / feeling / inheritance) is original to the
-  homemade.education library.
+All five v1 rows were updated in place (same slugs, same Tutorial
+ids); the upload script is idempotent on re-run.
+
+## What changed in v2
+
+### Voice register
+
+- **Stripped imagined felt sensations from intros.** v1's
+  "Money panic at 6am is the tight chest before you've opened
+  your eyes. The bank-balance loop. The bracing for a day that
+  hasn't started." became v2's "A five-minute tapping script
+  adapted from Day 1 of Rebecca's MONEY program. The script
+  targets recurring morning money worry — checking the bank
+  balance before the day starts, running the numbers in the
+  shower, the feeling of being behind before anything has
+  happened." Factual lead. Specific examples. Same register as
+  the cooking pilot tutorials.
+- **Cut "what you might notice" lists.** The v1 tapping anchor's
+  "A yawn or two. Tears, sometimes, on the third round. A
+  loosening in the chest." section is gone. The pattern reads as
+  AI-guessed universality; either an observation is concrete and
+  worth one sentence, or it isn't worth stating.
+- **Cut defensive in-body disclaimers.** v1's "If you're working
+  with a healthcare or mental-health provider for anxiety, tell
+  them you're trying this and see what they say." is gone. The
+  section-level safety frame lives on `/mindset` and the legal
+  pages.
+- **Cut strange-metaphor tells.** "Steadier head", "the bracing",
+  "the holding", "settling into the body" — all stripped.
+
+### Structure
+
+- **Methodology pulled out into READING entries.** v1's tapping
+  anchor restated where the karate chop point is, how many
+  times to tap, the eight-point order, the three-round structure.
+  All of that now lives in `how-eft-tapping-works`. v2 tapping
+  scripts link to it in the opening paragraph and drop straight
+  into the karate chop. Same pattern for ritual (`how-rituals-work`),
+  energy statements (`how-energy-statements-work`), meditation
+  (`body-based-meditation`), and journal prompts
+  (`journal-prompts-as-practice`).
+- **Sub-categories set to practice types.** Each anchor's
+  `subCategorySlug` now matches its practice type (`tapping`,
+  `energy-statement`, `ritual`, `meditation`, `journal-prompt`).
+  Eleven sub-categories total seeded under `mindset` Category
+  (one per `PracticeType` enum value).
+
+### Length
+
+- The tapping anchor dropped from ~1,000 words (v1) to ~400
+  words (v2). The ritual anchor from ~800 to ~350. The
+  meditation from ~900 to ~500. Tighter and denser; the methodology
+  moved to the type-intro reading; the practice script is the
+  practice script.
 
 ## Voice-check pass
 
-All five drafts pass the deterministic `voice-check` gate (exit
-codes 0 or 1; no errors). Per-draft warning counts after the
-self-critique rewrites landed:
+All 10 entries pass `voice-check` (0 errors).
 
-| Slug | Errors | Warnings | Notes on warnings |
+| Slug | Errors | Warnings | Notes |
 |---|---:|---:|---|
 | `tapping-for-daily-money-panic` | 0 | 0 | Clean. |
 | `i-am-allowed-to-want-this` | 0 | 0 | Clean. |
-| `the-calm-and-safe-money-reset` | 0 | 8 | 2 tricolon warnings on Rebecca's exact pullQuote ritual lines ("I am ready to release all fear, stress, and survival energy around money" / "I am ready to align with and allow calm, peace, and safety with money"). The tricolons are intentional — each item carries weight, and the three-fold repetition is itself the structure of the rite. Per `docs/common-issues.md` § "Tricolons earn their place", left as-is. 6 brand-trademark warnings on the word "Anchor" — a false positive from the brand-trademark rule landed in commit `14e4550`. The word is the name of the fifth step in Rebecca's five-part ritual structure (Prepare / Release / Allow / Integrate / Anchor), not the UK butter brand. The voice-check Mindset extension session should add context disambiguation, or the brand entry should be moved to a stricter whole-phrase match (e.g. "anchor butter" rather than bare "anchor"). |
-| `body-scan-for-sleep` | 0 | 2 | Both flagged on the verb usage "fall asleep" — a false positive from voice-check's word-list heuristic, which doesn't disambiguate the season noun from the verb. "Fall asleep" is standard British English. Will note in `docs/mindset-anti-tells.md` and consider whether the voice-check Mindset extension should suppress the `fall`-as-verb pattern. |
-| `feast-and-famine-journal-prompts` | 0 | 0 | Clean (after one tricolon rewrite in the excerpt). |
+| `the-calm-and-safe-money-reset` | 0 | 8 | All intentional: 5 "Anchor"-the-ritual-step false positives (the word names the fifth step in Rebecca's five-part ritual structure, not the UK butter brand); 3 tricolons on Rebecca's exact ritual pullQuote lines (the three-fold repetition is the structure of the rite). |
+| `body-scan-for-sleep` | 0 | 1 | "Fall asleep" verb usage false positive. |
+| `feast-and-famine-journal-prompts` | 0 | 1 | One tricolon on a factual three-prompt summary. Intentional. |
+| `how-eft-tapping-works` | 0 | 3 | All tricolons on accurate book-title lists ("MONEY, SLEEP, WEIGHT LOSS, and MANIFESTING") and factual three-item summaries. Intentional. |
+| `how-energy-statements-work` | 0 | 0 | Clean. |
+| `how-rituals-work` | 0 | 6 | "Anchor"-the-ritual-step + intentional tricolons on Rebecca's framework. |
+| `body-based-meditation` | 0 | 4 | "Anchor"-the-ritual-step (referenced in cross-link to ritual reading) + tricolons on factual three-family / three-source lists. Intentional. |
+| `journal-prompts-as-practice` | 0 | 0 | Clean. |
 
-No upload retries needed — every anchor cleared voice-check on first
-or second pass. The brand-trademark warnings on the ritual surfaced
-only after the brand-trademark rule from `14e4550` landed on `main`
-mid-session; they appear on subsequent uploads of the same file and
-don't block.
-
-## TipTap-block gaps (for follow-up)
-
-The anchor batch was authored with the existing eight TipTap blocks
-only (paragraph, heading, bulletList, listItem, infoPanel, pullQuote,
-plus standard text marks for bold/italic). No new blocks required for
-the five anchors picked. That said, three patterns surfaced that a
-later Mindset-blocks session might want to address:
-
-1. **Tapping-script block.** The current shape — H3 "Karate chop" /
-   "Tapping round" / "Reframe to positive" with `bulletList`s under
-   each — works, but every TAPPING practice will reproduce this
-   structure. A dedicated `tappingScript` block with three slots and
-   the eight points hard-coded would simplify drafting and give the
-   public renderer something to render as a clean script card. For
-   ~200 TAPPING entries this matters.
-2. **Ritual structure block.** Same pattern as TAPPING — the
-   Prepare / Release / Allow / Integrate / Anchor structure recurs
-   across all twelve of Rebecca's ceremonies. A `ritualSteps` block
-   with five labelled slots would carry the structure better than
-   nested H3s.
-3. **Practice-statement block.** Energy statements and affirmations
-   both feature a short, called-out statement that wants visual
-   emphasis. The anchor batch used `pullQuote` for that role, which
-   works but reads as a literary quote rather than a practice
-   instruction. A dedicated `practiceStatement` block (statement,
-   repetition count, "say out loud or in your mind" hint) would
-   serve both types and ~350 entries.
-
-These are flagged for a follow-up Mindset-blocks worker session.
-The anchor batch shipped without them.
+The recurring "Anchor" false positive is the strongest argument
+for the voice-check Mindset extension session: the brand-trademark
+rule needs context-sensitive matching ("anchor butter" rather than
+bare "anchor") or a Mindset-context allowlist.
 
 ## What Rebecca should look at first
 
-In order of importance:
+1. **The cooking-recipe register.** Read the v2 tapping anchor
+   (`tapping-for-daily-money-panic`) and confirm it reads as
+   factual / observed / cooking-recipe-clean rather than as
+   ethereal AI-poetry. If it still drifts, the v2 prompt needs
+   another pass.
+2. **The type-intro readings.** `how-eft-tapping-works` is the
+   model for the other four type-intros. Read it first. The
+   shape (what the method is, how a session runs, where it comes
+   from, scope statement, lineage credit) is what `how-rituals-work`,
+   `how-energy-statements-work`, `body-based-meditation`, and
+   `journal-prompts-as-practice` follow.
+3. **The sub-category navigation.** Admin browse should now show
+   five mindset sub-categories with content
+   (Tapping / Energy statements / Ritual / Meditation / Journal
+   prompt — and `Reading` with the five type-intros). The other
+   six sub-categories (Affirmation, Spell, Activity, Visualisation,
+   Embodiment) are seeded but empty.
+4. **The cross-references.** Each practice now links to its
+   type-intro reading at the top, plus to one or two sibling
+   practices in the "When this isn't working" section. The
+   linking reads as a network rather than a tree.
 
-1. **The tapping anchor's "What tapping is" infoPanel.** The library
-   needs to land somewhere between Rebecca's book voice (which makes
-   stronger claims for self-empowerment) and the regulatory-safe
-   register the public website needs to carry. The infoPanel sets
-   that register. Read it; if it under-claims, push back.
-2. **The energy-statement framing.** The combination of "release the
-   guilt of wanting" + Money Zone Release / Allow structure is a
-   slight extension of Rebecca's book material — Day 15 of MONEY is
-   a tapping script, not a Zone Method energy statement. The anchor
-   bridges them by taking the theme from MONEY and the structure from
-   The Money Zone. Check that bridge reads as honest to both books.
-3. **The ritual's intentional tricolons.** Two voice-check warnings
-   on Rebecca's exact ritual lines. The call was to leave them
-   because each item earns its place — but if the cumulative effect
-   reads as too rhetorically heavy in the rendered page, the
-   workaround is to soften one of the three items per line. Easier
-   to confirm in the rendered admin preview than to predict.
-4. **The body scan's sleep framing.** The practice positions itself
-   as a wind-down rather than a sleep technique, with explicit
-   permission to fall asleep mid-scan and explicit reassurance that
-   "lying with a softened body is rest, even when it isn't sleep".
-   That register is closer to Rebecca's sleep voice than to most
-   bedtime-meditation content on the market. Check it reads as her.
-5. **The journal prompt set's third question.** "Who in my life
-   would have called a steady, large, sitting bank balance a
-   problem?" is the prompt the worker thought would surprise readers
-   most. It's also the most pointed. Check that it lands as
-   provocative-in-a-useful-way, not provocative-in-a-shaming-way.
+## Anti-tells doc updates
 
-## Anti-tells seeded count
+`docs/mindset-anti-tells.md` gained 5 new entries in v2, all
+flagged `[block]`:
 
-`docs/mindset-anti-tells.md` ships with **11 seeded entries** across
-three sections:
+1. **Ethereal-poetic register** — the headline failure mode.
+2. **Defensive in-body disclaimer** — the inflammatory pattern.
+3. **Methodology restatement in practice scripts** — the
+   content-bloat pattern.
+4. **"What you might notice" lists** — the AI-guessed-universality
+   pattern.
+5. **Strange-metaphor tells** — metaphors without literal anchors.
 
-- Voice issues (8 entries): therapeutic-claim creep, "queen / boss
-  / step into your power" register, "manifest" overuse, spiritual
-  bypass, future tense in affirmations, negation in affirmations,
-  false-intimacy openers, cosmic-promise framings.
-- Structural issues (3 entries): tapping eight-point order, setup
-  statement that doesn't name the feeling, reframe that doesn't
-  mirror the eight points.
-- Metadata issues (2 entries): `practiceTargets` too narrow,
-  `whenToUse` written as marketing copy.
-- Source-attribution issues (2 entries): crediting EFT to Rebecca,
-  mystifying public-domain practices.
+The full list now sits at 16 entries, 14 of them `[block]`. Eight
+are flagged `[needs-voice-check]` for the voice-check Mindset
+extension session.
 
-Six of the entries are flagged `[needs-voice-check]` — they're
-deterministic enough that the Mindset voice-check extension worker
-should pick them up into `voice-check-lib.ts` (separate session per
-the scope-out in this brief).
+## What's still out of scope
 
-## What was scoped out
-
-Per the brief's hard scope:
-
-- **No `voice-check.ts` edits.** Mindset-specific deterministic bans
-  (`queen` / `boss` / `high-vibe` / `manifest`-overuse) were captured
-  in `docs/mindset-anti-tells.md` for the drafting prompt's
-  self-critique pass instead. Voice-check.ts changes are a follow-up
-  session.
-- **No new TipTap blocks.** The anchor batch shipped using existing
-  blocks. Three block gaps flagged above for a Mindset-blocks
-  follow-up session.
-- **No pilot-10 batch.** That's the next worker after Rebecca
-  reviews the anchors.
-- **No bulk fill.** Same — next-next worker.
-- **No plan generator code.** Schema exists (`UserPlan` /
-  `UserPlanDay`); the worker that reads `PENDING_GENERATION` rows is
-  its own session.
-- **No personal-recipes work, no bulk-cooking work, no iOS work.**
-
-## In-scope work that was needed beyond the brief
-
-Two pieces of pipeline plumbing landed alongside the deliverables:
-
-1. **`packages/db/scripts/upload-tutorial-types.ts` + `upload-tutorial.ts`
-   extended** to accept `type = "PRACTICE" | "READING"` and a new
-   `practice` block carrying the Mindset metadata (`practiceType`,
-   `practiceTargets`, `timeBand`, `bestTime`, `practiceDepth`,
-   `whenToUse`, `whenNotToUse`, `alternativePracticeIds`). The
-   existing RECIPE / TECHNIQUE paths are untouched — the change is
-   purely additive. Without this, the schema (which already supports
-   the Mindset columns) couldn't be written from the upload script.
-   The brief listed upload-tutorial.ts as "existing behaviour you
-   don't change"; the recipe path is unchanged, but PRACTICE / READING
-   support was a hard prerequisite for the anchor uploads.
-2. **`packages/db/scripts/seed-mindset-taxonomy.ts`** added — a
-   one-off seed for the `mindset` Category row. The upload script
-   never creates Categories, so this needed seeding before the
-   anchors could land. No SubCategory rows yet — Mindset uses the
-   `practiceTargets[]` array on each Tutorial for the 16 life-category
-   routing, not SubCategory rows.
-
-Both changes follow the existing pattern (seed-cooking-taxonomy.ts is
-the model for the seed, the existing recipe path is the model for the
-schema extension). Both are idempotent — re-running the seed no-ops,
-re-running the upload updates in place.
+- **No voice-check.ts deterministic-rule edits** — the new v2
+  anti-tells captured for the drafting prompt's self-critique
+  pass only. Voice-check extension is the next Mindset session.
+- **No new TipTap blocks** — the v2 anchor batch shipped using
+  existing blocks. The three block gaps flagged in the v1 report
+  (`tappingScript`, `ritualSteps`, `practiceStatement`) are still
+  follow-up work; v2 made the case stronger by reducing the
+  number of paragraphs each script needs.
+- **No pilot-10, no bulk fill, no plan generator, no admin UI,
+  no public UI.**
 
 ## Next Mindset session, in order
 
-1. **Voice-check CLI extension for Mindset bans.** Add the
-   `[needs-voice-check]` patterns from `docs/mindset-anti-tells.md`
-   to `voice-check-lib.ts` as deterministic rules. Targets:
-   register-words (`queen`, `boss`, `high-vibe`, `step into your
-   power`, `your future self is`), therapeutic-claim verbs (`will
-   heal`, `will cure`, `fixes`, `treats`), cosmic-promise patterns
-   (`universe has your back`, `trust the timing of your life`), and
-   future-tense affirmation patterns (`I will be ___` in
-   ENERGY_STATEMENT / AFFIRMATION practices specifically).
-2. **Mindset-blocks gap fill.** Decide whether to ship
-   `tappingScript` / `ritualSteps` / `practiceStatement` blocks
-   before pilot-10 or after. Worker session if before.
-3. **Pilot-10 batch with auto-publish flow.** Phase 8 Step 11–12
-   pattern. Picks 10 practices across types from the backlog,
-   drafts them through the v1 prompt, voice-checks, auto-publishes.
-4. **Bulk fill standing pattern** consuming
-   `docs/mindset-backlog.md` row by row.
-5. **Admin UI for Mindset.** Type-toggle in the admin form so
-   Mindset practices can be edited there. Currently the form only
-   renders the RECIPE / TECHNIQUE toggle even though the type union
-   accepts PRACTICE / READING.
-6. **Public UI for Mindset.** Today view, Practice page, Library
-   browse, "I'm feeling..." matcher — per `docs/mindset-pipeline.md`
-   § "Page types".
-7. **Plan generator worker.** Reads `UserPlan` rows with `status =
-   PENDING_GENERATION`, runs the generator prompt, writes 30
-   `UserPlanDay` rows, flips status to `ACTIVE`.
-
-The anchor batch is the first concrete content in the Mindset
-section. Pilot-10 + bulk fill follow once Rebecca's reviewed these.
+1. **Voice-check CLI extension** — `[needs-voice-check]` entries
+   from `docs/mindset-anti-tells.md` into `voice-check-lib.ts`.
+   Also fix the bare-`anchor` false positive (match `anchor
+   butter` instead).
+2. **Pilot-10 batch with auto-publish flow.** Phase 8 Step 11–12
+   pattern. Picks 10 practices across types from the backlog.
+3. **Bulk fill standing pattern** consuming
+   `docs/mindset-backlog.md`.
+4. *(optional)* **Mindset-blocks gap fill** — `tappingScript` /
+   `ritualSteps` / `practiceStatement` TipTap blocks if the
+   pilot-10 reveals the same shape repeating enough to justify
+   them.
+5. **Admin UI** type-toggle in `tutorial-form.tsx`.
+6. **Public UI** for Mindset.
+7. **Plan generator worker.**
