@@ -246,9 +246,6 @@ export async function loadHomepageData(
     }
   >()
   if (scheduledActionRows.length > 0) {
-    const tutorialIds = Array.from(
-      new Set(scheduledActionRows.map((r) => r.tutorialId)),
-    )
     const stepNumbers = scheduledActionRows.map((r) => ({
       tutorialId: r.tutorialId,
       stepNumber: r.nextScheduledStepNumber ?? 0,
