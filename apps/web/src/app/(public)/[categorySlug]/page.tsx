@@ -1,3 +1,4 @@
+import { cache } from 'react'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { prisma, TutorialStatus, Difficulty } from '@homemade/db'
@@ -19,14 +20,14 @@ interface PageProps {
   searchParams: Promise<{ difficulty?: string }>
 }
 
-async function loadCategory(slug: string) {
+const loadCategory = cache(async (slug: string) => {
   return prisma.category.findUnique({
     where: { slug },
     include: {
       subCategories: { orderBy: [{ order: 'asc' }, { name: 'asc' }] },
     },
   })
-}
+})
 
 function parseDifficulty(raw: string | undefined): Difficulty | null {
   if (!raw) return null

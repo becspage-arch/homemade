@@ -1,4 +1,5 @@
 import 'server-only'
+import { cache } from 'react'
 import { currentUser } from '@clerk/nextjs/server'
 import * as Sentry from '@sentry/nextjs'
 import { prisma, UserRole, type User } from '@homemade/db'
@@ -27,8 +28,13 @@ function deriveRoleFromEmail(email: string): UserRole {
  * We could mirror users via a Clerk webhook instead, but JIT means the app
  * works whether or not a webhook is wired and the User row is always at most
  * one Clerk call old.
+ *
+ * Wrapped in React `cache()` so multiple calls within the same request
+ * resolve to a single Clerk + Prisma lookup. Tutorial pages call this from
+ * `SiteHeader`, `generateMetadata`, and the page render — that used to be
+ * three round-trips per render.
  */
-export async function getCurrentDbUser(): Promise<User | null> {
+export const getCurrentDbUser = cache(async (): Promise<User | null> => {
   // Clerk's `currentUser()` throws when it can't detect clerkMiddleware on
   // the request — e.g. an RSC sub-request that skipped the matcher, or a bot
   // probe hitting a path the matcher excluded. Treat that as "no user" rather
@@ -81,7 +87,7 @@ export async function getCurrentDbUser(): Promise<User | null> {
   }
 
   return created
-}
+})
 
 export function isAdmin(user: { role: UserRole } | null | undefined): boolean {
   return user?.role === UserRole.ADMIN

@@ -1,3 +1,4 @@
+import { cache } from 'react'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import * as Sentry from '@sentry/nextjs'
@@ -46,7 +47,7 @@ function isValidSlug(s: unknown): s is string {
   return typeof s === 'string' && SLUG_RE.test(s)
 }
 
-async function loadTutorial(categorySlug: string, tutorialSlug: string) {
+const loadTutorial = cache(async (categorySlug: string, tutorialSlug: string) => {
   try {
     return await prisma.tutorial.findFirst({
       where: {
@@ -84,7 +85,7 @@ async function loadTutorial(categorySlug: string, tutorialSlug: string) {
     })
     return null
   }
-}
+})
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { categorySlug, tutorialSlug } = await params

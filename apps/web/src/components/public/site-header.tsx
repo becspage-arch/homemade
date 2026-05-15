@@ -1,22 +1,17 @@
 import Link from 'next/link'
-import { auth } from '@clerk/nextjs/server'
 import { prisma } from '@homemade/db'
+import { getCurrentDbUser } from '@/lib/get-current-user'
 import { UserMenu } from './user-menu'
 
 export async function SiteHeader() {
-  const { userId } = await auth()
-
+  // `getCurrentDbUser` is React-cached so when a page below also calls it
+  // (every tutorial / category / /me page does) the lookup is shared.
   const [categories, dbUser] = await Promise.all([
     prisma.category.findMany({
       orderBy: [{ order: 'asc' }, { name: 'asc' }],
       select: { slug: true, name: true },
     }),
-    userId
-      ? prisma.user.findUnique({
-          where: { clerkId: userId },
-          select: { name: true, email: true },
-        })
-      : Promise.resolve(null),
+    getCurrentDbUser(),
   ])
 
   const greeting = dbUser?.name?.split(' ')[0] ?? null
@@ -58,7 +53,7 @@ export async function SiteHeader() {
         </form>
 
         <div className="site-header-user">
-          {userId ? (
+          {dbUser ? (
             <UserMenu initial={initial} greeting={greeting} />
           ) : (
             <Link href="/sign-in" className="site-header-signin">
