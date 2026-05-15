@@ -72,60 +72,79 @@ export async function loadTutorialUgc(
 ): Promise<TutorialUgcData> {
   const viewerId = viewer?.id ?? null
 
-  const [reviewRows, photoRows, questionRows, myHelpfulIds, myUpvoteIds] =
-    await Promise.all([
-      prisma.review.findMany({
-        where: {
-          tutorialId,
-          status: ReviewStatus.PUBLISHED,
-        },
-        orderBy: [{ helpfulCount: 'desc' }, { createdAt: 'desc' }],
-        take: 50,
-        include: {
-          user: { select: { displayHandle: true, name: true, email: true } },
-        },
-      }),
-      prisma.uGCPhoto.findMany({
-        where: { tutorialId, status: UGCPhotoStatus.APPROVED },
-        orderBy: [{ createdAt: 'desc' }],
-        take: 24,
-        include: {
-          user: { select: { displayHandle: true, name: true, email: true } },
-          media: { select: { cloudflareId: true, r2Key: true, alt: true } },
-        },
-      }),
-      prisma.question.findMany({
-        where: { tutorialId, status: UGCStatus.PUBLISHED },
-        orderBy: [{ upvoteCount: 'desc' }, { createdAt: 'desc' }],
-        take: 30,
-        include: {
-          user: { select: { displayHandle: true, name: true, email: true } },
-          answers: {
-            where: { status: UGCStatus.PUBLISHED },
-            orderBy: [{ isAuthorAnswer: 'desc' }, { createdAt: 'asc' }],
-            include: {
-              user: { select: { displayHandle: true, name: true, email: true } },
-            },
+  // First batch: the rows that drive the page (reviews + photos + questions),
+  // plus the viewer's "already reviewed this tutorial?" flag — that one needs
+  // only viewerId + tutorialId so it can run alongside the others rather than
+  // sequentially.
+  const [reviewRows, photoRows, questionRows, alreadyReviewedRow] = await Promise.all([
+    prisma.review.findMany({
+      where: {
+        tutorialId,
+        status: ReviewStatus.PUBLISHED,
+      },
+      orderBy: [{ helpfulCount: 'desc' }, { createdAt: 'desc' }],
+      take: 50,
+      include: {
+        user: { select: { displayHandle: true, name: true, email: true } },
+      },
+    }),
+    prisma.uGCPhoto.findMany({
+      where: { tutorialId, status: UGCPhotoStatus.APPROVED },
+      orderBy: [{ createdAt: 'desc' }],
+      take: 24,
+      include: {
+        user: { select: { displayHandle: true, name: true, email: true } },
+        media: { select: { cloudflareId: true, r2Key: true, alt: true } },
+      },
+    }),
+    prisma.question.findMany({
+      where: { tutorialId, status: UGCStatus.PUBLISHED },
+      orderBy: [{ upvoteCount: 'desc' }, { createdAt: 'desc' }],
+      take: 30,
+      include: {
+        user: { select: { displayHandle: true, name: true, email: true } },
+        answers: {
+          where: { status: UGCStatus.PUBLISHED },
+          orderBy: [{ isAuthorAnswer: 'desc' }, { createdAt: 'asc' }],
+          include: {
+            user: { select: { displayHandle: true, name: true, email: true } },
           },
         },
-      }),
-      viewerId
-        ? prisma.reviewHelpful
-            .findMany({
-              where: { userId: viewerId },
-              select: { reviewId: true },
-            })
-            .then((rs) => new Set(rs.map((r) => r.reviewId)))
-        : Promise.resolve(new Set<string>()),
-      viewerId
-        ? prisma.questionUpvote
-            .findMany({
-              where: { userId: viewerId },
-              select: { questionId: true },
-            })
-            .then((rs) => new Set(rs.map((r) => r.questionId)))
-        : Promise.resolve(new Set<string>()),
-    ])
+      },
+    }),
+    viewerId
+      ? prisma.review.findUnique({
+          where: { userId_tutorialId: { userId: viewerId, tutorialId } },
+          select: { id: true },
+        })
+      : Promise.resolve(null),
+  ])
+
+  // Second batch: only the per-viewer helpful / upvote flags for the rows we
+  // actually loaded. The earlier version pulled every helpful row and every
+  // upvote row the viewer had ever cast across the whole site — fine on day
+  // one, but scales linearly with the viewer's total interaction count rather
+  // than the page's review / question count.
+  const visibleReviewIds = reviewRows.map((r) => r.id)
+  const visibleQuestionIds = questionRows.map((q) => q.id)
+  const [myHelpfulIds, myUpvoteIds] = await Promise.all([
+    viewerId && visibleReviewIds.length > 0
+      ? prisma.reviewHelpful
+          .findMany({
+            where: { userId: viewerId, reviewId: { in: visibleReviewIds } },
+            select: { reviewId: true },
+          })
+          .then((rs) => new Set(rs.map((r) => r.reviewId)))
+      : Promise.resolve(new Set<string>()),
+    viewerId && visibleQuestionIds.length > 0
+      ? prisma.questionUpvote
+          .findMany({
+            where: { userId: viewerId, questionId: { in: visibleQuestionIds } },
+            select: { questionId: true },
+          })
+          .then((rs) => new Set(rs.map((r) => r.questionId)))
+      : Promise.resolve(new Set<string>()),
+  ])
 
   // Review distribution + avg are computed off PUBLISHED rows only.
   const distribution: Record<1 | 2 | 3 | 4 | 5, number> = {
@@ -146,12 +165,7 @@ export async function loadTutorialUgc(
       ? reviewRows.reduce((sum, r) => sum + r.rating, 0) / total
       : null
 
-  const alreadyReviewed = viewerId
-    ? (await prisma.review.findUnique({
-        where: { userId_tutorialId: { userId: viewerId, tutorialId } },
-        select: { id: true },
-      })) !== null
-    : false
+  const alreadyReviewed = alreadyReviewedRow !== null
 
   return {
     reviews: {
