@@ -3,15 +3,29 @@ import { prisma } from '@homemade/db'
 
 export const dynamic = 'force-dynamic'
 
-export default async function GlossaryIndexPage() {
-  const [terms, categories] = await Promise.all([
+const PAGE_SIZE = 50
+
+interface PageProps {
+  searchParams: Promise<{ page?: string }>
+}
+
+export default async function GlossaryIndexPage({ searchParams }: PageProps) {
+  const params = await searchParams
+  const pageNum = Math.max(1, parseInt(params.page ?? '1', 10) || 1)
+  const skip = (pageNum - 1) * PAGE_SIZE
+
+  const [terms, total, categories] = await Promise.all([
     prisma.glossaryTerm.findMany({
       orderBy: { term: 'asc' },
+      skip,
+      take: PAGE_SIZE,
     }),
+    prisma.glossaryTerm.count(),
     prisma.category.findMany({
       select: { id: true, name: true },
     }),
   ])
+  const pageCount = Math.max(1, Math.ceil(total / PAGE_SIZE))
 
   const categoryNameById = new Map(categories.map((c) => [c.id, c.name]))
 
@@ -40,8 +54,14 @@ export default async function GlossaryIndexPage() {
         >
           No glossary terms yet. Add one to get started.
         </p>
-      ) : (
-        <table className="mt-12 w-full border-collapse">
+      ) : (<>
+        <p
+          className="mt-8 text-xs uppercase tracking-[0.25em] text-[var(--color-warm-taupe)] opacity-70"
+          style={{ fontFamily: 'var(--font-lora)' }}
+        >
+          showing {skip + 1}–{Math.min(skip + terms.length, total)} of {total}
+        </p>
+        <table className="mt-6 w-full border-collapse">
           <thead>
             <tr className="border-b border-[var(--color-linen-grey)] text-left">
               <Th>Term</Th>
@@ -90,7 +110,33 @@ export default async function GlossaryIndexPage() {
             ))}
           </tbody>
         </table>
-      )}
+        {pageCount > 1 && (
+          <nav
+            className="mt-8 flex flex-wrap gap-2"
+            aria-label="Glossary pages"
+          >
+            {Array.from({ length: pageCount }).slice(0, 20).map((_, i) => {
+              const p = i + 1
+              const href =
+                p === 1 ? '/admin/glossary' : `/admin/glossary?page=${p}`
+              return (
+                <Link
+                  key={p}
+                  href={href}
+                  className={`rounded-full border px-3 py-1 text-xs uppercase tracking-[0.25em] transition ${
+                    p === pageNum
+                      ? 'border-[var(--color-sage)] bg-[var(--color-sage)] text-[var(--color-linen-cream)]'
+                      : 'border-[var(--color-linen-grey)] text-[var(--color-warm-taupe)] hover:border-[var(--color-sage)] hover:text-[var(--color-sage)]'
+                  }`}
+                  style={{ fontFamily: 'var(--font-lora)' }}
+                >
+                  {p}
+                </Link>
+              )
+            })}
+          </nav>
+        )}
+      </>)}
     </div>
   )
 }

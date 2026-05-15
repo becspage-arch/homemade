@@ -4,10 +4,26 @@ import { mediaUrl } from '@/lib/media'
 
 export const dynamic = 'force-dynamic'
 
-export default async function MediaIndexPage() {
-  const media = await prisma.media.findMany({
-    orderBy: { createdAt: 'desc' },
-  })
+const PAGE_SIZE = 60
+
+interface PageProps {
+  searchParams: Promise<{ page?: string }>
+}
+
+export default async function MediaIndexPage({ searchParams }: PageProps) {
+  const params = await searchParams
+  const pageNum = Math.max(1, parseInt(params.page ?? '1', 10) || 1)
+  const skip = (pageNum - 1) * PAGE_SIZE
+
+  const [media, total] = await Promise.all([
+    prisma.media.findMany({
+      orderBy: { createdAt: 'desc' },
+      skip,
+      take: PAGE_SIZE,
+    }),
+    prisma.media.count(),
+  ])
+  const pageCount = Math.max(1, Math.ceil(total / PAGE_SIZE))
 
   return (
     <div className="mx-auto max-w-5xl">
@@ -34,8 +50,14 @@ export default async function MediaIndexPage() {
         >
           No images yet. Upload one to get started.
         </p>
-      ) : (
-        <table className="mt-12 w-full border-collapse">
+      ) : (<>
+        <p
+          className="mt-8 text-xs uppercase tracking-[0.25em] text-[var(--color-warm-taupe)] opacity-70"
+          style={{ fontFamily: 'var(--font-lora)' }}
+        >
+          showing {skip + 1}–{Math.min(skip + media.length, total)} of {total}
+        </p>
+        <table className="mt-6 w-full border-collapse">
           <thead>
             <tr className="border-b border-[var(--color-linen-grey)] text-left">
               <Th />
@@ -98,7 +120,33 @@ export default async function MediaIndexPage() {
             })}
           </tbody>
         </table>
-      )}
+        {pageCount > 1 && (
+          <nav
+            className="mt-8 flex flex-wrap gap-2"
+            aria-label="Media pages"
+          >
+            {Array.from({ length: pageCount }).slice(0, 20).map((_, i) => {
+              const p = i + 1
+              const href =
+                p === 1 ? '/admin/media' : `/admin/media?page=${p}`
+              return (
+                <Link
+                  key={p}
+                  href={href}
+                  className={`rounded-full border px-3 py-1 text-xs uppercase tracking-[0.25em] transition ${
+                    p === pageNum
+                      ? 'border-[var(--color-sage)] bg-[var(--color-sage)] text-[var(--color-linen-cream)]'
+                      : 'border-[var(--color-linen-grey)] text-[var(--color-warm-taupe)] hover:border-[var(--color-sage)] hover:text-[var(--color-sage)]'
+                  }`}
+                  style={{ fontFamily: 'var(--font-lora)' }}
+                >
+                  {p}
+                </Link>
+              )
+            })}
+          </nav>
+        )}
+      </>)}
     </div>
   )
 }

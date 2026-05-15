@@ -3,6 +3,8 @@ import { prisma, TutorialStatus, type Prisma } from '@homemade/db'
 
 export const dynamic = 'force-dynamic'
 
+const PAGE_SIZE = 50
+
 type StatusFilter = 'ALL' | TutorialStatus
 
 const FILTERS: { value: StatusFilter; label: string }[] = [
@@ -27,22 +29,30 @@ function parseStatus(raw: string | undefined): StatusFilter {
 export default async function TutorialsIndexPage({
   searchParams,
 }: {
-  searchParams: Promise<{ status?: string }>
+  searchParams: Promise<{ status?: string; page?: string }>
 }) {
   const params = await searchParams
   const filter = parseStatus(params.status)
+  const pageNum = Math.max(1, parseInt(params.page ?? '1', 10) || 1)
+  const skip = (pageNum - 1) * PAGE_SIZE
 
   const where: Prisma.TutorialWhereInput =
     filter === 'ALL' ? {} : { status: filter }
 
-  const tutorials = await prisma.tutorial.findMany({
-    where,
-    orderBy: { updatedAt: 'desc' },
-    include: {
-      category: { select: { name: true } },
-      author: { select: { email: true, name: true } },
-    },
-  })
+  const [tutorials, total] = await Promise.all([
+    prisma.tutorial.findMany({
+      where,
+      orderBy: { updatedAt: 'desc' },
+      skip,
+      take: PAGE_SIZE,
+      include: {
+        category: { select: { name: true } },
+        author: { select: { email: true, name: true } },
+      },
+    }),
+    prisma.tutorial.count({ where }),
+  ])
+  const pageCount = Math.max(1, Math.ceil(total / PAGE_SIZE))
 
   return (
     <div className="mx-auto max-w-6xl">
@@ -95,7 +105,13 @@ export default async function TutorialsIndexPage({
             ? 'No tutorials yet. Create one to get started.'
             : `No ${filter.toLowerCase()} tutorials.`}
         </p>
-      ) : (
+      ) : (<>
+        <p
+          className="mt-8 text-xs uppercase tracking-[0.25em] text-[var(--color-warm-taupe)] opacity-70"
+          style={{ fontFamily: 'var(--font-lora)' }}
+        >
+          showing {skip + 1}–{Math.min(skip + tutorials.length, total)} of {total}
+        </p>
         <table className="mt-10 w-full border-collapse">
           <thead>
             <tr className="border-b border-[var(--color-linen-grey)] text-left">
@@ -149,7 +165,37 @@ export default async function TutorialsIndexPage({
             ))}
           </tbody>
         </table>
-      )}
+        {pageCount > 1 && (
+          <nav
+            className="mt-8 flex flex-wrap gap-2"
+            aria-label="Tutorial pages"
+          >
+            {Array.from({ length: pageCount }).slice(0, 20).map((_, i) => {
+              const p = i + 1
+              const sp = new URLSearchParams()
+              if (filter !== 'ALL') sp.set('status', filter)
+              if (p > 1) sp.set('page', String(p))
+              const href = sp.toString()
+                ? `/admin/tutorials?${sp.toString()}`
+                : '/admin/tutorials'
+              return (
+                <Link
+                  key={p}
+                  href={href}
+                  className={`rounded-full border px-3 py-1 text-xs uppercase tracking-[0.25em] transition ${
+                    p === pageNum
+                      ? 'border-[var(--color-sage)] bg-[var(--color-sage)] text-[var(--color-linen-cream)]'
+                      : 'border-[var(--color-linen-grey)] text-[var(--color-warm-taupe)] hover:border-[var(--color-sage)] hover:text-[var(--color-sage)]'
+                  }`}
+                  style={{ fontFamily: 'var(--font-lora)' }}
+                >
+                  {p}
+                </Link>
+              )
+            })}
+          </nav>
+        )}
+      </>)}
     </div>
   )
 }
