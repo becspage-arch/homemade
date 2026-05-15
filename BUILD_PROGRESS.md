@@ -2676,6 +2676,177 @@ sessions can pull traces without bouncing back to Rebecca.
 
 ---
 
+## Cross-category content audit + temperature unit system (planned)
+
+Surfaced from the Baking anchor batch review (2026-05-15). Two
+distinct pieces of work, planned as one session because they both
+need a sweep across every existing tutorial.
+
+### The temperature unit system
+
+Right now Tutorial carries `temperatureCelsius` (Int?) +
+`temperatureNote` (String?) for cooking, and the Baking pipeline
+added `bakeTemperatureCelsius` (Int?) + `bakeTemperatureNote` +
+`steamMethod`. The current shape stores only the °C number. Readers
+in different kitchens want different displays:
+
+- **°C, fan oven** (UK domestic default, post-2000)
+- **°C, conventional / non-fan** (older UK, EU mainland, many
+  ovens)
+- **°F** (US, parts of Canada / Latin America / Caribbean)
+- **Gas mark** (UK gas ovens, still common — "gas 4", "gas 7")
+
+The cooking-anchor approach was to write the °C in the column and
+let `temperatureNote` carry the fan/conventional disambiguation. It
+works for one display path. It doesn't scale to four.
+
+**Proposed shape** (locked in the session that ships this):
+
+- Make `temperatureCelsius` the **conventional / non-fan**
+  reference value on every recipe. One canonical number per recipe.
+- Derive everything else at render time:
+  - **Fan**: convert by subtracting 20°C (industry standard).
+  - **°F**: `C × 9/5 + 32`, rounded to the nearest 5.
+  - **Gas mark**: lookup table (120 = gas ½, 140 = gas 1, 150 = gas
+    2, 160 = gas 3, 180 = gas 4, 190 = gas 5, 200 = gas 6, 220 = gas
+    7, 230 = gas 8, 240 = gas 9). Round to nearest band.
+- User preference toggle in `/me/settings` (`oven` enum:
+  `FAN_C` / `CONVENTIONAL_C` / `FAHRENHEIT` / `GAS_MARK`). Default
+  `FAN_C` for new users. Pairs with the existing metric / imperial
+  preference (which will gain the same shape for weight + volume).
+- Public renderer reads the preference, displays the derived
+  value, shows the canonical conventional °C in a small hover
+  tooltip so a reader can always sanity-check.
+- The deprecated `temperatureNote` field stays in the schema as
+  a free-text override for the unusual case ("low and slow" /
+  "preheat then turn off" / "grill setting"). When set, it
+  appears alongside the derived display.
+- `bakeTemperatureCelsius` (Baking) follows the same rule. If the
+  baking recipe sets only `bakeTemperatureCelsius`, the renderer
+  uses that. If both are set, `bakeTemperatureCelsius` wins for
+  Baking recipes and `temperatureCelsius` wins for everything else.
+- For confectionery, `bakeTemperatureCelsius` is the **sugar
+  stage** target (115°C = soft-ball, etc.). The lookup keeps the
+  same logic for °F but skips gas mark (sugar stages don't have a
+  gas-mark equivalent). The `bakeTemperatureNote` carries the
+  stage name.
+- Recipes with two distinct bake temperatures (e.g. the tin loaf
+  drops from 230°C to 210°C after 10 minutes) carry the higher
+  number in the structured field + the drop in the note. A future
+  iteration could add `bakeTemperatureCelsiusSecondary` if the
+  shape recurs enough.
+
+Migrate by setting `temperatureCelsius` to the conventional value
+on every existing recipe — most current anchors were authored as fan
+values, so the audit pass needs to add 20°C to anything currently
+sitting under the fan assumption.
+
+**Pairs with metric / imperial weights + volumes.** Same renderer
+pattern: store canonical (grams + millilitres), derive ounces /
+fluid ounces / cups at render time, user preference picks. Cup
+measurements need the UK/US cup-volume split (250 ml vs 240 ml)
+documented in the renderer. Tablespoons + teaspoons are mercifully
+standardised. The full unit-system rule lives in
+`feedback_temperature_and_units.md`.
+
+### The inline-glossary coverage audit
+
+The Baking anchor batch first-pass shipped with `glossaryTerms`
+registered on each Tutorial but the body prose didn't mark the
+terms up inline. Hover tooltips never reached readers. The cooking
+anchors (béchamel, strawberry jam, toad in the hole) do use
+`glossaryTooltip` marks inline. The bulk-cooking batch (~189
+personal recipes ingested 2026-05-14 + the 13-recipe pilot +
+multiple Phase 8 Step 12 batches) needs auditing — every
+glossary-term registered on a Tutorial should appear at least
+once in body prose wrapped in a `glossaryTooltip` mark, or be
+deleted from `glossaryTerms` if it's unused.
+
+The rule lives in `feedback_inline_glossary_coverage.md` and is
+inherited by every drafting prompt template (`docs/tutorial-author.md`
+§ self-critique pass, `docs/baking-author.md` § self-critique
+pass, `docs/mindset-author.md` if any registered glossary terms
+slip in).
+
+### The cross-category audit session
+
+**Scope:**
+
+1. Schema migration adds the user-preference enum
+   (`OvenPreference`) + the user column. Same migration adds a
+   `WeightPreference` (`METRIC` / `IMPERIAL`) + a
+   `VolumePreference` (`METRIC` / `IMPERIAL_UK` / `IMPERIAL_US`)
+   for the metric/imperial side.
+2. Renderer helper module (`apps/web/src/lib/units.ts` or similar)
+   exports the converters: °C → fan / °F / gas mark; g → oz;
+   ml → fl oz / cup-uk / cup-us; tbsp / tsp pass through.
+3. Recipe page UI changes: the info-bar temperature pill reads
+   the user's preference, plus a hover for the canonical
+   conventional °C. The structured-ingredients block reads the
+   weight + volume preferences.
+4. `/me/settings` UI gets the three preference toggles. Anonymous
+   users get a `/proxy.ts`-set cookie with sensible defaults
+   based on `Accept-Language` (`en-US` → Fahrenheit + cup; `en-GB`
+   → fan °C + grams; everywhere else → metric).
+5. **Content sweep.** Every existing Tutorial with `type ===
+   RECIPE` gets:
+   - **Temperature audit.** Confirm `temperatureCelsius` is
+     populated with the **conventional** value. Add 20°C to any
+     recipe authored under a fan-oven assumption. The 4 Baking
+     anchors all sit on the fan number currently; they need the
+     conversion. Cooking anchors mostly sit on fan too.
+   - **Glossary tooltip audit.** Every registered `glossaryTerms`
+     entry surfaces inline at least once via `glossaryTooltip`
+     mark. Drop unused entries. Add tooltips where the body uses
+     a technical term that's not in the registry.
+   - **Servings + yieldDescription audit.** Per
+     `docs/page-design.md`: recipes that yield a portion count
+     set `servings`; recipes that yield discrete units (loaves,
+     biscuits, fingers, muffins) set `yieldDescription`; recipes
+     whose output is an ingredient for something else (a
+     shortcrust case, a pastry cream, a stock) leave both null.
+   - **Freezable / batchable / makeAhead notes audit.**
+     `freezeNotes` should describe the actual right freeze (raw
+     dough not finished biscuits; cooked-and-cooled stew not raw
+     mince; sliced loaf not whole loaf etc).
+
+**Affects:** all 202 cooking DRAFTs + 4 Baking DRAFTs + 5 Mindset
+DRAFTs (Mindset is exempt from temperature + freezable). Plus
+every bulk-batch recipe that ships before the session lands.
+
+**Timing.** Land before the splash gate comes down. Earlier is
+better — the longer bulk-fill runs without the rule, the bigger
+the audit backlog. Best fit: after the Baking pilot-10 (so the
+prompt template enforces the new rules from the start of bulk
+fill) and before any Cooking bulk-fill resumes.
+
+**Prompt template updates** (part of the same session):
+
+- `docs/tutorial-author.md` § Self-critique pass: add an item
+  "every registered glossary term is wrapped in a
+  `glossaryTooltip` mark at least once in the body".
+- `docs/tutorial-author.md` § Body structure: add the
+  conventional-°C-is-canonical rule. The author writes the
+  conventional number; the renderer derives the rest.
+- `docs/baking-author.md`: same updates.
+- `docs/baking-anti-tells.md` + `docs/common-issues.md`: add
+  entries for "fan-temperature-as-canonical" and "registered
+  glossary term not used inline".
+
+### Out of scope for the session that ships this
+
+- Auto-detecting the reader's oven type (we ask via the
+  preference toggle; we don't sniff it).
+- Per-step temperature changes encoded as structured data
+  (e.g. the tin loaf's 230 → 210 drop). The first iteration
+  carries that as prose; structured per-step temperature is a
+  future block-level feature.
+- Per-ingredient unit overrides on the same RecipeIngredient row
+  (e.g. honey in cups vs grams). The first iteration uses the
+  master `Ingredient.defaultUnit` plus the user's preference.
+
+---
+
 ## Commit history milestones
 
 - `5d1b5e6` — initial monorepo scaffold
