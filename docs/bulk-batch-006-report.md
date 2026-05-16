@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-16
 **Target:** 50 recipes auto-published (autopilot daily fire)
-**Status:** Partial — 5 PUBLISHED, halted on schema drift across parallel autopilot fires
+**Status:** Partial — 10 PUBLISHED (5 pressure-cooker + 5 Caribbean). 15 of the planned 25-recipe slice were not drafted after a mid-session schema-drift block; the block resolved post-push when the deploy applied the pending migration and the 5 voice-clean Caribbean drafts uploaded in the same session.
 
 ---
 
@@ -19,7 +19,10 @@ British / Italian / French / American distribution of batches 003-005.
 5 recipes from the pressure-cooker slice published successfully between
 16:50-16:56. The Caribbean slice (5 recipes) was drafted, voice-checked clean,
 and queued for upload at 17:00, when uploads began failing with a Prisma
-`P2022 ColumnNotFound` error against `Category.targetTutorialCount`.
+`P2022 ColumnNotFound` error against `Category.targetTutorialCount`. After
+the partial commit pushed and the deploy workflow ran the pending migration,
+the 5 voice-clean Caribbean drafts uploaded successfully at 17:27-17:28 —
+bringing the final batch total to 10 PUBLISHED.
 
 The cause is a schema drift: the parallel `autopilot-mindset-bulk` fire
 (which fired at 16:35, one minute after this cooking fire) added the migration
@@ -41,17 +44,17 @@ detail   = Parallel mindset/baking autopilot fires modified schema.prisma…
            migrations.
 ```
 
-The 20 remaining briefs in the planned slice (Caribbean: 5 / North African,
-Eastern European, Middle Eastern, Greek: 15) were not drafted or are drafted
-but not uploaded. The 5 Caribbean briefs that were drafted and voice-checked
-sit in `docs/bulk-batch-006-briefs/` for the next fire to pick up after the
-schema state is reconciled.
+The 15 remaining briefs in the planned slice (North African 4, Eastern
+European 4, Middle Eastern 4, Greek 3) were not drafted. The 5 Caribbean
+briefs that were drafted and voice-checked uploaded in the same session
+after the deploy applied the pending migration — bringing the final batch
+total to 10 PUBLISHED.
 
 ---
 
-## Recipes published (5 total)
+## Recipes published (10 total)
 
-### Pressure-cooker (5)
+### Pressure-cooker (5, first batch in the pressure-cooker section)
 | Slug | Title | Difficulty |
 |------|-------|------------|
 | pressure-cooker-chicken-stock | Pressure-cooker chicken stock | BEGINNER |
@@ -60,36 +63,29 @@ schema state is reconciled.
 | pressure-cooker-chickpea-curry | Pressure-cooker chickpea curry | BEGINNER |
 | pressure-cooker-red-lentil-dhal | Pressure-cooker red lentil dhal | BEGINNER |
 
-All 5 are the first pressure-cooker recipes in the library — a section with
-49 in-scope candidates and zero coverage across batches 003-005. The
-`pressure-cooker-chicken-stock` row is marked `foundational: true`.
+The `pressure-cooker-chicken-stock` row is marked `foundational: true`.
 
----
-
-## Drafted but not uploaded (Caribbean, 5)
-
-These briefs exist in `docs/bulk-batch-006-briefs/`, passed voice-check clean,
-and are ready to upload once the schema state is reconciled:
-
+### Caribbean (5)
 | Slug | Title | Difficulty |
 |------|-------|------------|
+| callaloo | Callaloo | BEGINNER |
 | curry-chicken | Jamaican curry chicken | BEGINNER |
 | brown-stew-chicken | Jamaican brown stew chicken | BEGINNER |
-| callaloo | Callaloo | BEGINNER |
 | ropa-vieja | Ropa vieja | INTERMEDIATE |
 | picadillo | Cuban picadillo | BEGINNER |
 
 ---
 
-## Difficulty mix (published only)
+## Difficulty mix (published)
 
-- BEGINNER: 5 (100%)
-- INTERMEDIATE: 0
+- BEGINNER: 9 (90%)
+- INTERMEDIATE: 1 (10%, ropa-vieja)
 - ADVANCED: 0
 
 The planned 25-recipe slice would have hit ~72% BEGINNER / 28% INTERMEDIATE.
-The published 5 are all BEGINNER because the pressure-cooker slice was
-beginner-weighted by design.
+The published 10 lean heavier on BEGINNER because the pressure-cooker slice
+was beginner-weighted by design and the Caribbean slice was the easier of
+the planned six cuisines.
 
 ---
 
@@ -165,15 +161,13 @@ Rules:
 
 ## What the next fire should do
 
-1. **Schema state must be reconciled before another cooking fire runs
-   meaningfully.** The migration `20260619000000_phase_categories_targets_001`
-   needs to be applied to the live database, OR the schema needs to be
-   reverted to match the deployed state. Both are outside cooking-bulk scope.
+1. **The schema state is now reconciled.** The post-push deploy applied
+   the pending migration. The next cooking fire starts on a clean schema
+   baseline.
 
-2. **The 5 Caribbean drafts in `docs/bulk-batch-006-briefs/` can be picked
-   up by the next fire** — they are clean and ready to upload. The fire's
-   no-double-fire check should detect them and incorporate them into batch
-   006 rather than starting batch 007.
+2. **The unfinished slices** (North African 4, Eastern European 4, Middle
+   Eastern 4, Greek 3) are worth picking up first in batch 007 since they
+   sit at the lightest end of last-3-batches coverage.
 
 3. **Concurrent autopilot fires across streams should be gated.** All three
    autopilot streams (cooking 02:00, baking 04:10, mindset 06:06) fired
@@ -181,7 +175,16 @@ Rules:
    moments before their daily windows. If two streams modify the schema
    concurrently and a third tries to use it, the third fails. A cross-stream
    lock — even a simple "another stream is mutating shared files" check —
-   would prevent this.
+   would prevent this. The autopilot prompt's halt-signal reason enum should
+   also include `SCHEMA_DRIFT` / `DB_MIGRATION_PENDING` as a named reason
+   rather than free-text — both cooking and mindset hit it on the same day
+   with slightly different reason strings.
+
+4. **Add the glossary-tooltip-attribute pattern to `docs/common-issues.md`**
+   as a `[block]` structural rule. Drafters writing `attrs: { slug: "x" }`
+   for the inline glossary mark when the schema expects
+   `attrs: { termSlug: "x" }`. Catches future drafters who don't reference
+   the toad-in-the-hole anchor.
 
 ---
 
@@ -194,9 +197,9 @@ Rules:
 | 003 | 50 |
 | 004 | 50 |
 | 005 | 50 |
-| **006 (partial)** | **5** |
-| Cumulative published (from raw SQL count) | **484** |
+| **006 (partial)** | **10** |
+| Cumulative published (after final upload pass) | **489** |
 
-Difference between sum-of-batches (286) and cumulative (484) is accounted
+Difference between sum-of-batches (291) and cumulative (489) is accounted
 for by anchor tutorials, the pilot-10 batch, and personal-recipes imports
 that pre-date the bulk numbering.
