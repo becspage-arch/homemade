@@ -1,0 +1,107 @@
+{
+  "slug": "berry-smoothie",
+  "title": "Berry smoothie",
+  "subtitle": "Frozen mixed berries blended with banana, oat milk, and honey.",
+  "excerpt": "Frozen mixed berries, a banana, oat milk, and honey blended until smooth. Ready in two minutes. Thick enough to eat with a spoon or thin enough to drink through a straw depending on the milk quantity.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Blended fruit drinks have been made at home since domestic blenders became affordable in the mid-twentieth century. The modern smoothie culture in Britain developed from the late 1990s, partly through juice bars and partly through the commercial success of brands selling bottled smoothies from the early 2000s. The frozen berry and banana combination became standard because frozen fruit produces a thicker, colder result than fresh fruit.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 2,
+    "cookMinutes": 0,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "drink",
+    "mood": ["light", "mealPrep"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "high-powered-blender", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Frozen berries give a better result than fresh ones in a smoothie. They are colder, which keeps the drink thick and cold without needing ice (which dilutes), and they are available year-round. Bags of frozen mixed berries are substantially cheaper than fresh." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The banana is the thickener. Without it, a berry-and-milk smoothie is thin and watery. One banana per two servings is about right; more produces a drink that tastes more of banana than berries." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "mixed-frozen-berries", "amount": 200, "unit": "g", "prepNote": "straight from frozen", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "banana", "amount": 1, "unit": "each", "prepNote": "ripe, broken into chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "oat-milk", "amount": 250, "unit": "ml", "prepNote": "or whole milk", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "honey", "amount": 1, "unit": "tbsp", "prepNote": "or to taste", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-yoghurt", "amount": 50, "unit": "g", "prepNote": "for creaminess", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A high-powered blender. A stick blender can work with softer fruit but may struggle with frozen berries." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Put {{mixed-frozen-berries}} of frozen berries, the banana, {{oat-milk}} of oat milk, and {{honey}} of honey into the blender. Add the yoghurt if using. Blend on high for 30–45 seconds until completely smooth. Taste and adjust the honey. Add more milk for a thinner consistency. Serve immediately." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Blender is struggling with frozen fruit", "cause": "Frozen berries can seize a standard blender.", "fix": "Leave the berries out for 5 minutes to start thawing, or add the milk first so it cushions the blades before the fruit." },
+            { "symptom": "Smoothie is too thin", "cause": "Too much milk or the banana was very ripe and watery.", "fix": "Add more frozen berries or another piece of banana and blend again. More frozen fruit always thickens." },
+            { "symptom": "Smoothie tastes too sharp", "cause": "The berry mix contains blackcurrants or blackberries, which are more acidic than strawberries or raspberries.", "fix": "Add more honey or an extra half banana to balance the sharpness." },
+            { "symptom": "Seeds in the smoothie", "cause": "Raspberries and blackberries have small seeds that blenders may not fully break down.", "fix": "Strain through a fine-mesh sieve for a smoother result if you find the seeds unpleasant." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The smoothie in its current British form is a product of the juice bar culture of the late 1990s. The commercial versions sold at high street chains in the early 2000s were marketed as a complete breakfast in a bottle, and the homemade equivalent followed as domestic blenders became standard kitchen equipment. The frozen berry and banana combination is the most common domestic version: inexpensive, quick, and consistent across seasons in a way that a fresh fruit version cannot be." }]
+      }
+    ]
+  }
+}

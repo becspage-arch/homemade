@@ -1458,6 +1458,22 @@ no `jam-sugar` (used `granulated-sugar` for all jam recipes).
 **Running cooking total after batch 004:** ~231 PUBLISHED + ~215
 personal-recipes DRAFT.
 
+#### Batch 005 — COMPLETE (2026-05-16)
+
+**50 cooking recipes PUBLISHED.** Sonnet 4.6 session (context overflow, two-part). Full report: `docs/bulk-batch-005-report.md`.
+
+**Territory spread (batch 005):** 10 soups, 6 salads, 7 breakfasts, 6 drinks, 7 Sunday roasts/festive (incl. bread sauce, cranberry sauce, spiced red cabbage, mince pies, roast pork belly, roast turkey, roast duck with orange), 5 weeknight quick wins (ham & cheese omelette, vegetable frittata, pork loin mustard cream, pasta aglio e olio, cheese on toast), 3 top-up depth (ribollita, pasta e fagioli, caprese). First batch with a deliberate Christmas/festive cluster.
+
+**Difficulty (batch 005):** beginner ~35 (70%), intermediate ~15 (30%), advanced 0.
+
+**Voice stats:** 15 of 50 failed first-pass voice-check (30%). All appositive em-dash pairs; all fixed. Banned phrases "genuinely" (1×, spiced-red-cabbage) and "a testament to" (1×, bread-sauce) caught. Americanism "fall" (1×, mince-pies). All fixed in one round; 0 dropped.
+
+**Slug gaps surfaced:** `frying-pan` → corrected to `frying-pan-26` (4 recipes caught at upload); `flat-leaf-parsley` → `parsley-flat`; `red-pepper` → `pepper-red`; `shallots` → `shallot`; `fresh-ginger` → `ginger-root`; `vegetable-stock` → `stock-vegetable`; `soy-sauce` → `soy-sauce-dark`; `celery` unit `stick` → `each`. No new tools added.
+
+**Substitutions:** no `elderflower-cordial` → berry-smoothie; no `suet` → christmas-pudding dropped for spiced-red-cabbage; no `cranberries-fresh` → used dried-cranberries; no `pork-chops` → used pork-loin.
+
+**Running cooking total after batch 005:** ~281 PUBLISHED + ~215 personal-recipes DRAFT.
+
 ### Step 16 — Mindset v3 polish + first magical-ritual anchor ✅ landed 2026-05-15
 
 **Goal.** Apply Rebecca's second-pass review feedback on the v2
