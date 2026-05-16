@@ -92,7 +92,11 @@ export function IngredientsList({
   if (items.length === 0) return null
 
   return (
-    <section className="ingredients-list" aria-labelledby={`ingredients-${tutorialSlug}`}>
+    <section
+      id="ingredients"
+      className="ingredients-list"
+      aria-labelledby={`ingredients-${tutorialSlug}`}
+    >
       <div className="ingredients-list-header">
         <h2 id={`ingredients-${tutorialSlug}`} className="ingredients-list-heading">
           Ingredients

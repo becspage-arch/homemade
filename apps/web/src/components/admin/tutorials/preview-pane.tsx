@@ -103,72 +103,75 @@ export function PreviewPane({
       ? `https://imagedelivery.net/${cloudflareDeliveryHash}/${heroMedia.cloudflareId}/hero`
       : null
 
-  return (
-    <div className="rounded-sm border border-dashed border-[var(--color-linen-grey)] bg-[var(--color-linen-cream)] py-8">
-      <TutorialChrome
-        title={title}
-        subtitle={subtitle || null}
-        excerpt={excerpt || null}
-        category={category}
-        subCategoryName={subCategoryName}
-        difficulty={difficulty}
-        timeMinutes={timeMinutes}
-        season={season}
-        heroUrl={heroUrl}
-        heroAlt={heroMedia?.alt ?? null}
-        publishedAt={null}
-        readingTime={estimateReadingTime(body as unknown as TipTapNode)}
-        sourceType={sourceType}
-        sourceNotes={sourceNotes || null}
-        linkBreadcrumb={false}
-        recipeMeta={
-          recipeMeta
-            ? {
-                type,
-                servings: recipeMeta.servings,
-                yieldDescription: recipeMeta.yieldDescription,
-                prepMinutes: recipeMeta.prepMinutes,
-                cookMinutes: recipeMeta.cookMinutes,
-                totalMinutes: recipeMeta.totalMinutes,
-                cuisine: recipeMeta.cuisine,
-                mealType: recipeMeta.mealType,
-                dietaryFlags: recipeMeta.dietaryFlags,
-                freezable: recipeMeta.freezable,
-                batchable: recipeMeta.batchable,
-                makeAheadSummary: recipeMeta.makeAheadSummary,
-                foundational: recipeMeta.foundational,
-              }
-            : null
-        }
-        body={
-          isRecipe ? (
-            <ScaleProvider
-              defaultServings={recipeMeta?.servings ?? null}
-              ingredients={extractScaleIngredients(body)}
-            >
-              <TutorialContent
-                content={body as TipTapNode}
-                glossary={publicGlossary}
-                subTutorials={subTutorials}
-                recipeContext={{
+  const chrome = (
+    <TutorialChrome
+      title={title}
+      subtitle={subtitle || null}
+      excerpt={excerpt || null}
+      category={category}
+      subCategoryName={subCategoryName}
+      difficulty={difficulty}
+      timeMinutes={timeMinutes}
+      season={season}
+      heroUrl={heroUrl}
+      heroAlt={heroMedia?.alt ?? null}
+      publishedAt={null}
+      readingTime={estimateReadingTime(body as unknown as TipTapNode)}
+      sourceType={sourceType}
+      sourceNotes={sourceNotes || null}
+      linkBreadcrumb={false}
+      recipeMeta={
+        recipeMeta
+          ? {
+              type,
+              servings: recipeMeta.servings,
+              yieldDescription: recipeMeta.yieldDescription,
+              prepMinutes: recipeMeta.prepMinutes,
+              cookMinutes: recipeMeta.cookMinutes,
+              totalMinutes: recipeMeta.totalMinutes,
+              cuisine: recipeMeta.cuisine,
+              mealType: recipeMeta.mealType,
+              dietaryFlags: recipeMeta.dietaryFlags,
+              freezable: recipeMeta.freezable,
+              batchable: recipeMeta.batchable,
+              makeAheadSummary: recipeMeta.makeAheadSummary,
+              foundational: recipeMeta.foundational,
+            }
+          : null
+      }
+      body={
+        <TutorialContent
+          content={body as TipTapNode}
+          glossary={publicGlossary}
+          subTutorials={subTutorials}
+          recipeContext={
+            isRecipe
+              ? {
                   // Synthetic id + slug used only for the scaler's analytics
                   // event distinct id. The preview never persists.
                   tutorialId: 'preview',
                   tutorialSlug: 'preview',
                   scalable: recipeMeta?.scalable ?? true,
-                }}
-              />
-            </ScaleProvider>
-          ) : (
-            <TutorialContent
-              content={body as TipTapNode}
-              glossary={publicGlossary}
-              subTutorials={subTutorials}
-              recipeContext={null}
-            />
-          )
-        }
-      />
+                }
+              : null
+          }
+        />
+      }
+    />
+  )
+
+  return (
+    <div className="rounded-sm border border-dashed border-[var(--color-linen-grey)] bg-[var(--color-linen-cream)] py-8">
+      {isRecipe ? (
+        <ScaleProvider
+          defaultServings={recipeMeta?.servings ?? null}
+          ingredients={extractScaleIngredients(body)}
+        >
+          {chrome}
+        </ScaleProvider>
+      ) : (
+        chrome
+      )}
     </div>
   )
 }

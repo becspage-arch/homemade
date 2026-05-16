@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { ReactNode } from 'react'
 
 import { HeroAttribution, type HeroAttributionData } from './hero-attribution'
+import { ServingsCell } from './tutorial-content/servings-cell'
 
 import './tutorial-page.css'
 
@@ -190,12 +191,6 @@ export function TutorialChrome(props: TutorialChromeProps) {
   const hasRails = Boolean(leftRail || rightRail)
   const isRecipe = recipeMeta?.type === 'RECIPE'
 
-  const servingsLabel = recipeMeta?.yieldDescription
-    ? recipeMeta.yieldDescription
-    : recipeMeta?.servings != null
-      ? `Serves ${recipeMeta.servings}`
-      : null
-
   const totalForBar =
     isRecipe && recipeMeta?.totalMinutes != null
       ? recipeMeta.totalMinutes
@@ -228,6 +223,11 @@ export function TutorialChrome(props: TutorialChromeProps) {
             ) : excerpt ? (
               <p className="tutorial-standfirst">{excerpt}</p>
             ) : null}
+            {isRecipe && (
+              <a className="tutorial-skip-to-recipe" href="#ingredients">
+                Skip to recipe ↓
+              </a>
+            )}
           </div>
 
           {heroUrl ? (
@@ -269,11 +269,12 @@ export function TutorialChrome(props: TutorialChromeProps) {
               <dd>{formatTime(totalForBar)}</dd>
             </div>
           )}
-          {isRecipe && servingsLabel && (
-            <div>
-              <dt>{recipeMeta?.mealType === 'drink' ? 'Makes' : 'Yield'}</dt>
-              <dd>{servingsLabel}</dd>
-            </div>
+          {isRecipe && recipeMeta && (
+            <ServingsCell
+              defaultServings={recipeMeta.servings}
+              yieldDescription={recipeMeta.yieldDescription}
+              mealType={recipeMeta.mealType}
+            />
           )}
           {isRecipe && recipeMeta?.cuisine && (
             <div>
@@ -364,19 +365,7 @@ export function TutorialChrome(props: TutorialChromeProps) {
           <div className="tutorial-page-body tutorial-page-body-railed">
             {body}
 
-            <aside className="tutorial-sources">
-              <span className="tutorial-sources-label">
-                {sourceType === 'TESTED'
-                  ? 'A note from Homemade'
-                  : 'Sources and provenance'}
-              </span>
-              <p className="tutorial-sources-text">
-                {SOURCE_LABEL[sourceType] ?? ''}
-              </p>
-              {sourceNotes && (
-                <p className="tutorial-sources-notes">{sourceNotes}</p>
-              )}
-            </aside>
+            <SourcesAside sourceType={sourceType} sourceNotes={sourceNotes} />
             {footerSlot}
           </div>
           <div className="tutorial-page-rail-right">{rightRail}</div>
@@ -385,19 +374,7 @@ export function TutorialChrome(props: TutorialChromeProps) {
         <div className="tutorial-page-body">
           {body}
 
-          <aside className="tutorial-sources">
-            <span className="tutorial-sources-label">
-              {sourceType === 'TESTED'
-                ? 'A note from Homemade'
-                : 'Sources and provenance'}
-            </span>
-            <p className="tutorial-sources-text">
-              {SOURCE_LABEL[sourceType] ?? ''}
-            </p>
-            {sourceNotes && (
-              <p className="tutorial-sources-notes">{sourceNotes}</p>
-            )}
-          </aside>
+          <SourcesAside sourceType={sourceType} sourceNotes={sourceNotes} />
           {footerSlot}
         </div>
       )}
@@ -440,6 +417,32 @@ function AttributionByline({ attribution }: { attribution: TutorialAttribution }
         </span>
       )}
     </span>
+  )
+}
+
+function SourcesAside({
+  sourceType,
+  sourceNotes,
+}: {
+  sourceType: string
+  sourceNotes: string | null
+}) {
+  const label =
+    sourceType === 'TESTED' ? 'A note from Homemade' : 'Sources and provenance'
+  const body = SOURCE_LABEL[sourceType] ?? ''
+  if (!body && !sourceNotes) return null
+  return (
+    <details className="tutorial-sources">
+      <summary className="tutorial-sources-summary">
+        <span className="tutorial-sources-label">{label}</span>
+      </summary>
+      <div className="tutorial-sources-content">
+        {body && <p className="tutorial-sources-text">{body}</p>}
+        {sourceNotes && (
+          <p className="tutorial-sources-notes">{sourceNotes}</p>
+        )}
+      </div>
+    </details>
   )
 }
 

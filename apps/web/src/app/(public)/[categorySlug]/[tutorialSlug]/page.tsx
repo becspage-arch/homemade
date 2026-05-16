@@ -274,6 +274,82 @@ export default async function TutorialPage({ params }: PageProps) {
     </>
   )
 
+  const isRecipe = tutorial.type === 'RECIPE'
+  const chrome = (
+    <TutorialChrome
+      title={tutorial.title}
+      subtitle={tutorial.subtitle}
+      excerpt={tutorial.excerpt}
+      category={tutorial.category}
+      subCategoryName={tutorial.subCategory?.name ?? null}
+      difficulty={tutorial.difficulty}
+      timeMinutes={tutorial.timeMinutes}
+      season={tutorial.season}
+      heroUrl={heroUrl}
+      heroAlt={tutorial.hero?.alt ?? null}
+      heroAttribution={
+        tutorial.hero?.requiresAttribution
+          ? {
+              creatorName: tutorial.hero.creatorName,
+              source: tutorial.hero.source,
+              licenceCode: tutorial.hero.licenceCode,
+              licenceUrl: tutorial.hero.licenceUrl,
+            }
+          : null
+      }
+      publishedAt={tutorial.publishedAt}
+      readingTime={estimateReadingTime(body)}
+      sourceType={tutorial.sourceType}
+      sourceNotes={tutorial.sourceNotes}
+      attribution={
+        tutorial.creator
+          ? {
+              name: tutorial.creator.name ?? tutorial.creator.displayHandle ?? 'A maker',
+              handle: tutorial.creator.displayHandle,
+              verified: Boolean(tutorial.creator.creatorVerifiedAt),
+              homemade: false,
+            }
+          : { name: null, handle: null, verified: false, homemade: true }
+      }
+      recipeMeta={{
+        type: tutorial.type,
+        servings: tutorial.servings,
+        yieldDescription: tutorial.yieldDescription,
+        prepMinutes: tutorial.prepMinutes,
+        cookMinutes: tutorial.cookMinutes,
+        totalMinutes: tutorial.totalMinutes,
+        cuisine: tutorial.cuisine,
+        mealType: tutorial.mealType,
+        dietaryFlags: tutorial.dietaryFlags,
+        freezable: tutorial.freezable,
+        batchable: tutorial.batchable,
+        makeAheadSummary: tutorial.makeAheadNotes,
+        foundational: tutorial.foundational,
+      }}
+      body={
+        <TutorialContent
+          content={body}
+          glossary={refs.glossary}
+          subTutorials={refs.subTutorials}
+          beginnerMode={beginnerMode}
+          recipeContext={
+            isRecipe
+              ? {
+                  tutorialId: tutorial.id,
+                  tutorialSlug,
+                  scalable: tutorial.scalable,
+                }
+              : null
+          }
+        />
+      }
+      actionsSlot={actionsSlot}
+      leftRail={leftRail}
+      rightRail={rightRail}
+      footerSlot={footerSlot}
+    />
+  )
+
   return (
     <>
       <ScrollDepthTracker tutorialId={tutorial.id} />
@@ -283,89 +359,16 @@ export default async function TutorialPage({ params }: PageProps) {
           initialPercent={project?.readingProgressPercent ?? 0}
         />
       )}
-      <TutorialChrome
-        title={tutorial.title}
-        subtitle={tutorial.subtitle}
-        excerpt={tutorial.excerpt}
-        category={tutorial.category}
-        subCategoryName={tutorial.subCategory?.name ?? null}
-        difficulty={tutorial.difficulty}
-        timeMinutes={tutorial.timeMinutes}
-        season={tutorial.season}
-        heroUrl={heroUrl}
-        heroAlt={tutorial.hero?.alt ?? null}
-        heroAttribution={
-          tutorial.hero?.requiresAttribution
-            ? {
-                creatorName: tutorial.hero.creatorName,
-                source: tutorial.hero.source,
-                licenceCode: tutorial.hero.licenceCode,
-                licenceUrl: tutorial.hero.licenceUrl,
-              }
-            : null
-        }
-        publishedAt={tutorial.publishedAt}
-        readingTime={estimateReadingTime(body)}
-        sourceType={tutorial.sourceType}
-        sourceNotes={tutorial.sourceNotes}
-        attribution={
-          tutorial.creator
-            ? {
-                name: tutorial.creator.name ?? tutorial.creator.displayHandle ?? 'A maker',
-                handle: tutorial.creator.displayHandle,
-                verified: Boolean(tutorial.creator.creatorVerifiedAt),
-                homemade: false,
-              }
-            : { name: null, handle: null, verified: false, homemade: true }
-        }
-        recipeMeta={{
-          type: tutorial.type,
-          servings: tutorial.servings,
-          yieldDescription: tutorial.yieldDescription,
-          prepMinutes: tutorial.prepMinutes,
-          cookMinutes: tutorial.cookMinutes,
-          totalMinutes: tutorial.totalMinutes,
-          cuisine: tutorial.cuisine,
-          mealType: tutorial.mealType,
-          dietaryFlags: tutorial.dietaryFlags,
-          freezable: tutorial.freezable,
-          batchable: tutorial.batchable,
-          makeAheadSummary: tutorial.makeAheadNotes,
-          foundational: tutorial.foundational,
-        }}
-        body={
-          tutorial.type === 'RECIPE' ? (
-            <ScaleProvider
-              defaultServings={tutorial.servings ?? null}
-              ingredients={extractScaleIngredients(body)}
-            >
-              <TutorialContent
-                content={body}
-                glossary={refs.glossary}
-                subTutorials={refs.subTutorials}
-                beginnerMode={beginnerMode}
-                recipeContext={{
-                  tutorialId: tutorial.id,
-                  tutorialSlug,
-                  scalable: tutorial.scalable,
-                }}
-              />
-            </ScaleProvider>
-          ) : (
-            <TutorialContent
-              content={body}
-              glossary={refs.glossary}
-              subTutorials={refs.subTutorials}
-              beginnerMode={beginnerMode}
-              recipeContext={null}
-            />
-          )
-        }
-        actionsSlot={actionsSlot}
-        leftRail={leftRail}
-        rightRail={rightRail}
-        footerSlot={footerSlot}
-      />
+      {isRecipe ? (
+        <ScaleProvider
+          defaultServings={tutorial.servings ?? null}
+          ingredients={extractScaleIngredients(body)}
+        >
+          {chrome}
+        </ScaleProvider>
+      ) : (
+        chrome
+      )}
     </>
   )
 }

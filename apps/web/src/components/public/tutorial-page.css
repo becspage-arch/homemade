@@ -230,9 +230,38 @@
 
 .tutorial-sources {
   margin: 48px 0 0;
-  padding: 28px 0;
   border-top: 0.5px solid var(--color-linen-grey);
   border-bottom: 0.5px solid var(--color-linen-grey);
+}
+
+.tutorial-sources-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tutorial-sources-summary::-webkit-details-marker {
+  display: none;
+}
+
+.tutorial-sources-summary::after {
+  content: '+';
+  margin-left: auto;
+  font-family: var(--font-lora);
+  font-size: 16px;
+  color: var(--color-sage);
+  line-height: 1;
+}
+
+.tutorial-sources[open] .tutorial-sources-summary::after {
+  content: '−';
+}
+
+.tutorial-sources-content {
+  padding-bottom: 24px;
 }
 
 .tutorial-sources-label {
@@ -242,7 +271,6 @@
   color: var(--color-sage);
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 12px;
 }
 
 .tutorial-sources-text {
@@ -260,6 +288,30 @@
   line-height: 1.6;
   margin: 0;
   white-space: pre-wrap;
+}
+
+.tutorial-skip-to-recipe {
+  align-self: flex-start;
+  display: inline-block;
+  font-family: var(--font-lora);
+  font-size: 12px;
+  color: var(--color-sage);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 6px 14px;
+  border: 0.5px solid var(--color-sage);
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.tutorial-skip-to-recipe:hover {
+  background-color: var(--color-sage);
+  color: var(--color-linen-cream);
+}
+
+#ingredients {
+  scroll-margin-top: 24px;
 }
 
 @media (max-width: 900px) {

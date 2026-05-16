@@ -10,6 +10,38 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   typedRoutes: true,
+  async headers() {
+    return [
+      {
+        // Static-shaped pages: legal copy + the splash page. Safe to cache at
+        // the edge for a day; revalidate every hour at the browser.
+        source: '/legal/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800',
+          },
+        ],
+      },
+      {
+        source: '/coming-soon',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800',
+          },
+        ],
+      },
+      {
+        // Health endpoint — let monitors burst-cache briefly but don't let
+        // Cloudflare hold a stale "ok" if the task goes away.
+        source: '/healthz',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=10, must-revalidate' },
+        ],
+      },
+    ]
+  },
 }
 
 const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === '1' })
