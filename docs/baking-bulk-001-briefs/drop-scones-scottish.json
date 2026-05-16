@@ -1,0 +1,111 @@
+{
+  "slug": "drop-scones-scottish",
+  "title": "Drop scones",
+  "subtitle": "Scottish dropped scones, cooked on a griddle and eaten warm with butter",
+  "excerpt": "Twenty Scottish drop scones (also called Scotch pancakes): a thick batter of self-raising flour, egg, milk, and a little sugar, dropped from a spoon onto a hot buttered griddle and cooked until bubbles appear across the surface, then flipped. Ready in 20 minutes.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "scones",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: the dropped scone chapter documents a thick flour batter dropped from a spoon onto a greased griddle, cooked on both sides until risen and golden. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: Acton's griddle cake section documents the same method for dropped scones, noting that the batter should be thick enough to hold a mound shape on the griddle before the heat begins to spread it. Dropped scones (Scotch pancakes) are documented continuously in Scottish domestic cookery from the Victorian period; the recipe here follows the public-domain method.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "20 drop scones",
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 25,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Cool completely, then freeze in a bag layered with baking paper. Reheat in a dry pan or toaster.",
+    "batchable": true,
+    "batchNotes": "The batter keeps for 2 hours at room temperature — cook in batches as you need them.",
+    "makeAheadNotes": "Make the batter and rest it for 10 minutes before cooking — the resting time lets the flour hydrate fully and produces a more even rise.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "breakfast",
+    "mood": ["brunchy", "kidFriendly", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 225,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": null,
+      "bakeTemperatureNote": "griddle or heavy frying pan, medium heat — not oven baked",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "griddle", "isOptional": false, "notes": "Or a heavy, flat-based frying pan. Non-stick makes the job easier." },
+    { "slug": "ladle", "isOptional": true, "notes": "For consistent drop size — or use a dessertspoon." },
+    { "slug": "spatula", "isOptional": false, "notes": "A thin, flexible palette knife or fish slice for flipping." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "griddle-heat-test",
+      "term": "Griddle heat test",
+      "definition": "Testing that a griddle or heavy pan is at the right temperature before dropping scone batter onto it. Drop a teaspoon of batter onto the surface: it should sizzle immediately, begin to set at the edges within 30 seconds, and develop bubbles across the surface within 90 seconds. Too cool: the batter spreads flat and takes too long to set, producing pale, thin scones. Too hot: the edges burn before the centre bubbles."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drop scones require no oven: the batter goes directly onto a hot griddle. The flip timing is the only skill. Look for bubbles across the entire surface and a matte (not glossy) appearance at the edges — both signs the batter has set enough to flip cleanly. Use the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "griddle-heat-test" } }], "text": "griddle heat test" },
+          { "type": "text", "text": " before committing a full spoonful of batter." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 20,
+          "items": [
+            { "ingredientSlug": "self-raising-flour", "amount": 225, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": "a pinch", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "baking-powder", "amount": 5, "unit": "g", "prepNote": "1 teaspoon", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "large", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 250, "unit": "ml", "prepNote": "enough to make a thick, dropping consistency", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "melted — for the batter and a little for the griddle", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make the batter" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whisk together the {{self-raising-flour}}, {{caster-sugar}}, {{sea-salt-fine}}, and {{baking-powder}} in a bowl. Make a well in the centre. Add the {{eggs}} eggs and half the {{whole-milk}} milk and whisk from the centre outward until a smooth, thick batter forms. Whisk in the melted {{unsalted-butter}}. Add the remaining milk gradually until the batter falls from a spoon in a thick, slow ribbon — it should be thicker than pancake batter and mound slightly on the spoon. Rest for 10 minutes." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Cook on the griddle" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat a griddle or heavy frying pan over medium heat. Brush with a very little butter. Test the heat with a small drop of batter — it should sizzle and set at the edges within 30 seconds. Drop dessertspoons of batter onto the griddle, spacing them 3 cm apart. Cook for 1.5–2 minutes until bubbles have formed across the entire surface and the edges look matte. Flip once with a spatula and cook for a further 1 minute until the undersides are golden. Keep warm wrapped in a clean cloth while you cook the remaining batches." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Serve" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Serve warm with salted butter and jam, golden syrup, or a thin spread of clotted cream. Drop scones are best eaten within 30 minutes of cooking." }]
+      }
+    ]
+  }
+}

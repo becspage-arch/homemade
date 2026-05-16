@@ -1,0 +1,114 @@
+{
+  "slug": "cheese-scones-cheddar",
+  "title": "Cheese scones",
+  "subtitle": "Quick scones with mature cheddar, cayenne, and mustard powder",
+  "excerpt": "Eight cheese scones made with self-raising flour, cold butter, mature cheddar, and just enough milk to bring the dough together. Mixed minimally, patted to thickness, and cut without twisting the cutter. Ready in 25 minutes.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "scones",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: the cheese scone section documents a plain scone dough enriched with grated cheese and seasoned with mustard and cayenne, baked at a high heat for a rapid rise. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: the raised scone chapter documents the rubbing-in method for scone dough and the importance of minimal working to preserve a light, open texture. The cheddar, mustard, and cayenne combination is documented in British domestic baking from the Victorian period; the recipe here follows the public-domain method.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 scones",
+    "prepMinutes": 12,
+    "cookMinutes": 13,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "totalMinutes": 30,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze baked, cooled scones in a bag. Warm in a 180°C oven for 8 minutes from frozen.",
+    "batchable": true,
+    "batchNotes": "Doubles easily. Work the dough in two separate batches — overworking doubles the quantity of scone dough in one go.",
+    "makeAheadNotes": "Best eaten warm on the day of baking. Leftover scones reheat well split and toasted.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["comfortFood", "cosy"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 225,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "fan oven, top third — high heat gives the maximum rise in the first few minutes",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "pastry-cutter", "isOptional": false, "notes": "A 6 cm plain round cutter." },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "straight-cutter",
+      "term": "Straight cutter",
+      "definition": "Pressing a round cutter straight down into scone dough without twisting or rotating. Twisting the cutter seals the cut edge of the dough, which prevents the scone rising straight up — it rises unevenly or at an angle instead. Press down firmly and lift straight up. The scone's ability to rise in a straight column in the oven depends almost entirely on this one motion being clean."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cheese scones have two rules: keep the dough cold, and do not overwork it. Once the flour and butter are rubbed together and the milk is added, the dough should be brought together in no more than eight turns. Every additional fold develops the gluten and makes the scone tougher. Use a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "straight-cutter" } }], "text": "straight cutter" },
+          { "type": "text", "text": ", pressing straight down without twisting, and the scones will rise evenly." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "self-raising-flour", "amount": 225, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "baking-powder", "amount": 5, "unit": "g", "prepNote": "1 teaspoon extra lift", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "english-mustard-powder", "amount": 5, "unit": "g", "prepNote": "1 teaspoon", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cayenne", "amount": 3, "unit": "g", "prepNote": "a good pinch", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 4, "unit": "g", "prepNote": "a pinch — the cheese is already salty", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": "cold, cut into small dice", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cheddar", "amount": 100, "unit": "g", "prepNote": "mature, coarsely grated — keep 30 g aside for the tops", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 150, "unit": "ml", "prepNote": "cold — add 120 ml first, then more as needed", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make the dough" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 220°C fan. Line a baking tray with baking paper. Combine the {{self-raising-flour}}, {{baking-powder}}, {{english-mustard-powder}}, {{cayenne}}, and {{sea-salt-fine}} in a bowl. Add the {{unsalted-butter}} cold butter and rub in with cool fingertips until the mixture resembles coarse breadcrumbs — faster and coarser than shortcrust is fine. Stir in 70 g of the {{cheddar}} grated cheddar (reserving the rest for the tops). Add 120 ml of the {{whole-milk}} cold milk and mix with a round-bladed knife until the dough just comes together. If it is too dry, add the remaining milk a tablespoon at a time. The dough should be soft but not sticky." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Pat, cut, and top" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Turn the dough onto a lightly floured surface. Pat (do not roll) to 3 cm thick. Using a 6 cm cutter, press straight down without twisting and lift cleanly. Place on the lined tray. Gather the scraps and pat once more to cut the remaining scones. Brush the tops with the remaining milk and scatter with the reserved {{cheddar}} cheddar." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 12–14 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake for 12–14 minutes until the scones have risen and the cheese on top is golden and bubbling. Cool on a rack for 5 minutes before eating. Split and eat warm — cheese scones are best within an hour of baking." }]
+      }
+    ]
+  }
+}

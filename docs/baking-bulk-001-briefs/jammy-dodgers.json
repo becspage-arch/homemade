@@ -1,0 +1,118 @@
+{
+  "slug": "jammy-dodgers",
+  "title": "Jammy dodgers",
+  "subtitle": "Buttery shortbread rounds sandwiched with raspberry jam, with a window cut through the lid",
+  "excerpt": "Sixteen jammy dodgers: a vanilla shortbread dough cut into rounds, baked pale, sandwiched with raspberry jam. The top biscuit has a smaller round cut from its centre before baking, revealing the jam underneath. The window is the whole point.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "biscuits",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: the shortbread biscuit section documents a creamed butter and sugar dough cut into rounds, baked pale, and filled with jam after cooling. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: the cream biscuit chapter documents a similar enriched butter and flour dough for sandwich biscuits. The jammy dodger format , with a window cut through the lid to reveal the jam filling, is a British domestic baking convention documented from the Victorian period onward; the recipe here follows the public-domain shortbread method.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "16 sandwich biscuits",
+    "prepMinutes": 25,
+    "cookMinutes": 14,
+    "restingMinutes": 10,
+    "chillingMinutes": 30,
+    "totalMinutes": 79,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze baked, unfilled biscuits in a bag. Fill after defrosting.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly.",
+    "makeAheadNotes": "Baked, unfilled biscuits keep in an airtight tin for 5 days. Fill on the day of serving — jam softens the biscuit if left overnight.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["kidFriendly", "party"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 250,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 170,
+      "bakeTemperatureNote": "fan oven, middle shelf — shortbread colours fast, watch carefully",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pastry-cutter", "isOptional": false, "notes": "A 6 cm round cutter for the bases, and a 2.5 cm cutter (or a bottle cap) for the window cut." },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": true },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "window-cut",
+      "term": "Window cut",
+      "definition": "Cutting a smaller shape from the centre of a biscuit lid before baking, so the filling is visible once the biscuit is assembled. The window is cut from the raw dough, not the baked biscuit — trying to cut a baked biscuit cracks it. The offcuts from window cutting are gathered and re-rolled with the rest of the scraps."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The jammy dodger is a straightforward shortbread sandwich biscuit. The base is a standard creamed butter and sugar dough, baked pale, filled with jam. What sets it apart is the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "window-cut" } }], "text": "window cut" },
+          { "type": "text", "text": " in the lid — a small round removed from the centre before baking, which reveals the jam below once sandwiched. Use a raspberry jam with a good set and enough sharpness to cut through the richness of the shortbread." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 16,
+          "items": [
+            { "ingredientSlug": "unsalted-butter", "amount": 175, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "For the shortbread" },
+            { "ingredientSlug": "icing-sugar", "amount": 80, "unit": "g", "prepNote": "sifted", "isOptional": false, "groupLabel": "For the shortbread" },
+            { "ingredientSlug": "vanilla-extract", "amount": 5, "unit": "ml", "prepNote": "1 teaspoon", "isOptional": false, "groupLabel": "For the shortbread" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 2, "unit": "g", "prepNote": "a pinch", "isOptional": false, "groupLabel": "For the shortbread" },
+            { "ingredientSlug": "plain-flour", "amount": 250, "unit": "g", "prepNote": "sifted", "isOptional": false, "groupLabel": "For the shortbread" },
+            { "ingredientSlug": "raspberry-jam", "amount": 100, "unit": "g", "prepNote": "good-quality, with a firm set — not a runny conserve", "isOptional": false, "groupLabel": "For the filling" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make the shortbread dough" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Beat the {{unsalted-butter}} softened butter and {{icing-sugar}} icing sugar together until pale and fluffy, about 3 minutes. Add {{vanilla-extract}} and {{sea-salt-fine}}. Add the {{plain-flour}} sifted flour and mix until the dough just comes together — stop as soon as it forms a cohesive dough, or it will toughen. Press into a disc, wrap, and refrigerate for 30 minutes." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Cut the bases and lids" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 170°C fan and line two baking trays with baking paper. Roll the chilled dough on a lightly floured surface to 4 mm thick. Cut 32 rounds with a 6 cm cutter — 16 will be bases, 16 will be lids. From the 16 lid rounds, use a 2.5 cm cutter (or a bottle cap) to cut a window from the centre of each. Arrange all rounds and lids on the baking trays. Gather all offcuts, including the window circles, and re-roll." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 12–14 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake for 12–14 minutes until the biscuits are pale gold at the edges and set — do not let them brown, or the shortbread will taste bitter. Leave on the tray for 5 minutes, then transfer to a rack and cool completely." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Fill and sandwich" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Spoon a heaped teaspoon of {{raspberry-jam}} raspberry jam onto each base biscuit and spread to within 5 mm of the edge. Press a lid on top, window-side up, so the jam is visible. Leave to set for 10 minutes before serving — the jam will hold the sandwich together once it has had a moment to settle." }]
+      }
+    ]
+  }
+}

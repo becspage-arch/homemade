@@ -1,0 +1,131 @@
+{
+  "slug": "fondant-covering-layer-cake",
+  "title": "Covering a layer cake with fondant",
+  "subtitle": "How to crumb-coat, roll fondant, and achieve a smooth finish on a round cake",
+  "excerpt": "A technique tutorial for covering a three-layer round cake with rolled fondant (sugarpaste): levelling the layers, filling with buttercream, crumb-coating, and rolling and draping a smooth fondant cover without air bubbles or elephant-skin creasing. Covers tools, troubleshooting, and storage.",
+  "type": "TECHNIQUE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cake-decorating",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Rolled fondant (sugarpaste) as a cake covering technique developed in the twentieth century, following the British royal icing tradition of smoothed sugar finishes on celebration cakes. No pre-1928 public-domain source covers the rolled fondant technique in the form used in contemporary domestic baking. The tutorial synthesises the established technique as documented across mid-twentieth century domestic cake decorating references, including the method of crumb-coating before applying rolled fondant to prevent crumbs breaking through the surface.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "technique for covering one 3-layer 20 cm round cake",
+    "prepMinutes": 60,
+    "cookMinutes": 0,
+    "restingMinutes": 60,
+    "chillingMinutes": 30,
+    "totalMinutes": 150,
+    "scalable": null,
+    "freezable": null,
+    "freezeNotes": null,
+    "batchable": null,
+    "batchNotes": null,
+    "makeAheadNotes": "A fondant-covered cake keeps at room temperature (not refrigerated — condensation ruins the fondant surface) for 3 days. Cover loosely with a cake box or dome, not cling film, which sticks.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": null,
+    "mood": ["specialOccasion", "showstopper"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": null,
+      "bakeTemperatureNote": null,
+      "steamMethod": null,
+      "decoratingTechnique": "fondant-covered-cake",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "cake-turntable", "isOptional": false, "notes": "Rotating turntable — smoothing fondant without one is very difficult." },
+    { "slug": "cake-smoother", "isOptional": false, "notes": "Two flat-faced smoothers are better than one — use them together to smooth sides and top simultaneously." },
+    { "slug": "rolling-pin", "isOptional": false, "notes": "A long, smooth rolling pin, lightly dusted with icing sugar. Do not use a wooden pin — it sticks." },
+    { "slug": "palette-knife", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "ruler", "isOptional": true, "notes": "For measuring the fondant diameter before draping." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "crumb-coat",
+      "term": "Crumb coat",
+      "definition": "A thin, initial layer of buttercream spread over the entire cake to seal the surface and trap any loose crumbs before the final coat or fondant is applied. The crumb coat is spread generously, then refrigerated for 30 minutes until firm. Once firm, it locks the crumbs in place so they cannot break through the fondant surface. Skipping the crumb coat almost always results in visible crumbs under the fondant. The crumb coat does not need to look perfect — it just needs to cover every surface."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fondant covering is a sequenced process. Each step needs to be complete before the next begins: the layers must be level before filling, the filling must be set before crumb-coating, and the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "crumb-coat" } }], "text": "crumb coat" },
+          { "type": "text", "text": " must be firm before the fondant goes on. Rushing any step shows on the surface of the finished cake." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Do not refrigerate a fondant cake",
+          "body": "A fondant-covered cake must be stored at room temperature. Refrigeration causes the fondant to sweat as it comes back to room temperature — condensation forms on the surface, leaving sticky patches, dull spots, and sometimes colour runs. Store under a cake dome at room temperature for up to 3 days."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "fondant-icing", "amount": 1000, "unit": "g", "prepNote": "ready-to-roll fondant / sugarpaste — 1 kg covers a 20 cm 3-layer cake with some margin", "isOptional": false, "groupLabel": "For the covering" },
+            { "ingredientSlug": "icing-sugar", "amount": 50, "unit": "g", "prepNote": "for dusting the work surface and rolling pin", "isOptional": false, "groupLabel": "For the covering" },
+            { "ingredientSlug": "unsalted-butter", "amount": 250, "unit": "g", "prepNote": "softened — for the crumb coat and filling buttercream", "isOptional": false, "groupLabel": "For the crumb coat and filling" },
+            { "ingredientSlug": "icing-sugar", "amount": 500, "unit": "g", "prepNote": "sifted — for a simple buttercream filling and crumb coat", "isOptional": false, "groupLabel": "For the crumb coat and filling" },
+            { "ingredientSlug": "whole-milk", "amount": 30, "unit": "ml", "prepNote": "to loosen the buttercream to spreading consistency", "isOptional": false, "groupLabel": "For the crumb coat and filling" },
+            { "ingredientSlug": "vanilla-extract", "amount": 5, "unit": "ml", "prepNote": "1 teaspoon", "isOptional": false, "groupLabel": "For the crumb coat and filling" },
+            { "ingredientSlug": "apricot-jam", "amount": 30, "unit": "g", "prepNote": "sieved and warmed — to brush the outside of the crumb coat before the fondant goes on; helps the fondant adhere", "isOptional": true, "groupLabel": "For the covering" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Level and fill the layers" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "If the cake layers have domed tops, level them with a serrated knife so each layer is flat. Place the first layer on a cake board or flat plate on the turntable. Spread a generous layer of buttercream over the top, then place the second layer on top and repeat. Add the final layer upside-down (flat side up) to give a level top. Press down gently to adhere all layers." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Crumb coat" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Spread a thin layer of buttercream over the entire cake (top and sides). Use a palette knife to smooth it as evenly as possible, but do not worry about perfection: this coat just needs to cover every surface. Refrigerate for 30 minutes until the buttercream is firm and no longer tacky to the touch. If using {{apricot-jam}} apricot glaze: brush a thin layer over the firm crumb coat immediately before draping the fondant — it helps the fondant adhere and fills any remaining uneven spots." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Roll the fondant" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Knead the {{fondant-icing}} fondant until it is smooth and pliable. Dust the work surface and rolling pin with {{icing-sugar}} icing sugar. Roll into a circle large enough to cover the top and sides of the cake with 5 cm to spare all the way round: for a 20 cm cake 8 cm tall, the circle should be at least 36 cm in diameter. Roll from the centre outward, rotating the fondant a quarter turn after every few passes to keep it even. Aim for 4–5 mm thickness." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Drape and smooth" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Lift the fondant by rolling it loosely around the rolling pin. Unroll it centred over the top of the cake. Lift the edges and smooth the fondant over the top, then down the sides, working outward from the top and smoothing with your palm to push out air bubbles. Do not pull the fondant — lift and guide. Once draped over the sides, use a cake smoother held flat against the side to firm and polish the surface, rotating the turntable as you go. Trim the excess fondant at the base with a sharp knife." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Troubleshooting" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Air bubble under the fondant: pierce it at an angle with a pin and smooth gently outward. Elephant skin (cracked surface): the fondant dried out during rolling. Knead in a little white vegetable shortening next time and roll faster. Tearing at the base: the fondant was rolled too thin or the cake is too cold — let the crumb coat come to room temperature before covering. Uneven sides: use two smoothers simultaneously, one flat against the side and one on top, and press gently inward as you rotate the turntable." }]
+      }
+    ]
+  }
+}

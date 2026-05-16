@@ -1,0 +1,137 @@
+{
+  "slug": "pork-pie-hot-water-crust",
+  "title": "Pork pie",
+  "subtitle": "Hand-raised hot water crust filled with seasoned pork and finished with jelly",
+  "excerpt": "One large pork pie raised in a 900 g loaf tin: a hot water crust pastry worked while warm and malleable, filled with seasoned pork shoulder and belly, baked until deep amber, then filled with a pork stock jelly through the steam vent after cooling. Slices cleanly when cold.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: the raised pork pie chapter documents hot water crust made by melting lard in boiling water, then beating into flour while hot to produce a workable paste, which is moulded by hand around a wooden dolly or pressed into a tin while still warm. The chapter documents the pork and herb filling and the practice of filling the cooled pie with a jellied stock through a hole in the lid. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: Acton's raised pie section documents the same method for hot water crust and the filling of cold pork pie with jellied broth. The recipe here follows the public-domain method.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 50,
+    "cookMinutes": 90,
+    "restingMinutes": 30,
+    "chillingMinutes": 240,
+    "totalMinutes": 410,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Pork pie must be made at least 4 hours ahead to allow the jelly to set. It keeps refrigerated for 3 days and is best eaten at room temperature on the day it is removed from the fridge.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["specialOccasion", "picnic"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 350,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven; 200°C for the first 20 minutes, then 160°C until deep amber",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "saucepan-medium", "isOptional": false },
+    { "slug": "loaf-tin", "isOptional": false, "notes": "900 g (2 lb) loaf tin, greased — or a deep 16 cm round cake tin." },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "meat-thermometer", "isOptional": false, "notes": "The filling must reach 75°C internal temperature." },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "hot-water-crust",
+      "term": "Hot water crust",
+      "definition": "A pastry made by boiling water and melted lard together, then beating the hot liquid into flour to form a smooth, pliable dough that is worked while warm. The heat gelatinises the starch and the lard coats the flour proteins, producing a dough that is mouldable and self-supporting when warm but sets hard and sturdy once cold. Unlike shortcrust (which must be kept cold), hot water crust must be used while still warm — it becomes brittle and cracks if it cools before being shaped."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hot water crust pastry behaves in the opposite way to shortcrust. Where shortcrust requires cold fat and cold hands to stay short, " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-water-crust" } }], "text": "hot water crust" },
+          { "type": "text", "text": " must be worked while warm. Once cold it becomes rigid and cracks. The window for moulding is about 15 minutes. Work quickly and have the filling ready before you start the pastry." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Food safety: pork filling temperature",
+          "body": "Check the filling temperature with a meat thermometer through the steam vent. The centre must read at least 75°C before the pie comes out of the oven. A pork pie looks done well before the filling is safe — the thick pastry insulates the centre. Do not rely on colour alone."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 350, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the hot water crust" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 6, "unit": "g", "prepNote": "1 teaspoon", "isOptional": false, "groupLabel": "For the hot water crust" },
+            { "ingredientSlug": "lard", "amount": 120, "unit": "g", "prepNote": "or 60 g lard + 60 g unsalted butter", "isOptional": false, "groupLabel": "For the hot water crust" },
+            { "ingredientSlug": "water", "amount": 120, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the hot water crust" },
+            { "ingredientSlug": "pork-shoulder", "amount": 400, "unit": "g", "prepNote": "minced or very finely chopped by hand", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "pork-belly", "amount": 200, "unit": "g", "prepNote": "minced or very finely chopped — the fat keeps the filling moist", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sage-dried", "amount": 5, "unit": "g", "prepNote": "1 teaspoon", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "nutmeg-ground", "amount": 2, "unit": "g", "prepNote": "a generous grating", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper-ground", "amount": 5, "unit": "g", "prepNote": "season generously", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 8, "unit": "g", "prepNote": "the filling needs strong seasoning to carry through the pastry", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": "To glaze" },
+            { "ingredientSlug": "gelatine-leaves", "amount": 4, "unit": "each", "prepNote": "platinum grade, for the jelly", "isOptional": false, "groupLabel": "For the jelly" },
+            { "ingredientSlug": "chicken-stock", "amount": 250, "unit": "ml", "prepNote": "good quality — the jelly flavour comes entirely from the stock", "isOptional": false, "groupLabel": "For the jelly" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Prepare the filling" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mix the {{pork-shoulder}} pork shoulder, {{pork-belly}} belly, {{sage-dried}}, {{nutmeg-ground}}, {{black-pepper-ground}}, and {{sea-salt-fine}} together in a bowl until combined. Fry a small piece in a dry pan and taste for seasoning — the filling must be well seasoned as it cools to room temperature when served and the pastry is thick. Refrigerate while you make the pastry." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make the hot water crust" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 200°C fan. Grease a 900 g loaf tin. Put the {{plain-flour}} and {{sea-salt-fine}} salt in a large bowl and make a well. Bring the {{lard}} and {{water}} to a full boil in a small saucepan — the lard must be fully melted. Pour immediately into the flour and beat with a wooden spoon until a smooth, soft dough forms. It will be warm and pliable. Work quickly: the dough is mouldable for about 15 minutes before it stiffens." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Line the tin and fill" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Reserve one quarter of the dough for the lid. Press the remaining dough into the tin while still warm, using your knuckles to push it up the sides to an even 5–6 mm thickness. Work up the sides before the base — the weight of the filling will compact the base further. Pack the cold filling tightly into the case, doming it slightly above the pastry sides (it will shrink during baking). Roll the reserved dough into a lid slightly larger than the tin. Press it on, crimp the edges together firmly with a fork. Cut a 2 cm steam vent in the centre. Brush with {{eggs}} egg wash." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 20 minutes at 200°C then 60–70 minutes at 160°C" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake at 200°C fan for 20 minutes until the pastry begins to set. Reduce to 160°C fan and bake for a further 60–70 minutes until deep amber all over and a meat thermometer pushed through the steam vent reads at least 75°C in the centre of the filling. Brush with egg wash again after 30 minutes for a deep shine. Rest in the tin for 30 minutes, then remove and cool completely on a rack — at least 2 hours." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Fill with jelly" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Soak the {{gelatine-leaves}} gelatine leaves in cold water for 5 minutes until soft. Warm the {{chicken-stock}} stock until barely simmering. Squeeze out the gelatine and stir into the warm stock until dissolved. Leave to cool until the jelly is at room temperature but still liquid. Using a small funnel or a piping bag, pour the jelly through the steam vent in small amounts, pausing between each to allow it to settle into the gaps in the filling. Refrigerate for at least 4 hours, or overnight. Slice cold." }]
+      }
+    ]
+  }
+}

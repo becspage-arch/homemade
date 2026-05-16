@@ -114,6 +114,8 @@ export const TOOLS: ToolSeed[] = [
   { slug: 'piping-tips', name: 'Piping tips', pluralName: 'piping tips', category: 'measuring', aliases: ['piping nozzles'], isPurchasable: true, typicalPriceGbp: 1500 },
   { slug: 'icing-smoother', name: 'Icing smoother', category: 'measuring', aliases: ['cake scraper'], isPurchasable: true, typicalPriceGbp: 1000 },
   { slug: 'turntable', name: 'Cake turntable', category: 'measuring', aliases: ['revolving cake stand'], isPurchasable: true, typicalPriceGbp: 3000, notes: 'For decorating layered cakes.' },
+  { slug: 'cake-turntable', name: 'Cake turntable', category: 'measuring', aliases: ['revolving cake stand', 'decorating turntable'], isPurchasable: true, typicalPriceGbp: 3000, notes: 'Rotating stand for smoothing fondant and buttercream on layered cakes.' },
+  { slug: 'cake-smoother', name: 'Cake smoother', category: 'measuring', aliases: ['fondant smoother', 'icing smoother'], isPurchasable: true, typicalPriceGbp: 800, notes: 'Flat-faced paddle for smoothing fondant to a polished finish.' },
 
   // ────────────────────────────────────────────────────────────────────────
   // BOWL (~6)
@@ -152,6 +154,7 @@ export const TOOLS: ToolSeed[] = [
   { slug: 'rectangular-baking-tin', name: 'Rectangular baking tin', category: 'tin', aliases: ['traybake tin'], isPurchasable: true, typicalPriceGbp: 2000, notes: '~30×20 cm. For lasagne, traybakes, flapjacks.' },
   { slug: 'tart-tin', name: 'Tart tin, 23 cm', category: 'tin', aliases: ['flan tin'], isPurchasable: true, typicalPriceGbp: 1500, notes: 'Loose-bottomed, fluted edge.' },
   { slug: 'pie-dish', name: 'Pie dish', category: 'tin', aliases: ['pie plate'], isPurchasable: true, typicalPriceGbp: 1500, notes: 'Enamelled or ceramic. ~23 cm.' },
+  { slug: 'bun-tin', name: 'Bun tin, 12-hole', category: 'tin', aliases: ['patty tin', 'fairy cake tin'], isPurchasable: true, typicalPriceGbp: 1200, notes: 'Shallow 12-hole tin for mince pies, jam tarts, and fairy cakes. Shallower than a muffin tin.' },
   { slug: 'muffin-tin', name: 'Muffin tin, 12-hole', category: 'tin', aliases: ['cupcake tin'], isPurchasable: true, typicalPriceGbp: 1500 },
   { slug: 'mini-muffin-tin', name: 'Mini muffin tin', category: 'tin', aliases: [], isPurchasable: true, typicalPriceGbp: 1200, notes: 'For canapés, mini quiches, financiers.' },
   { slug: 'madeleine-tin', name: 'Madeleine tin', category: 'tin', aliases: ['madeleine pan'], isPurchasable: true, typicalPriceGbp: 2000, notes: 'Shell-shaped indents.' },
@@ -206,6 +209,10 @@ export const TOOLS: ToolSeed[] = [
   { slug: 'kitchen-twine', name: 'Kitchen twine', category: 'utensil', aliases: ['butcher\'s string', 'cooking string'], isPurchasable: true, typicalPriceGbp: 500, notes: 'For tying roasts and bouquet garni.' },
   { slug: 'fish-tweezers', name: 'Fish tweezers', pluralName: 'fish tweezers', category: 'utensil', aliases: ['fish pin-bone tweezers'], isPurchasable: true, typicalPriceGbp: 1200, notes: 'For pulling pin bones from salmon and trout fillets.' },
   { slug: 'icing-spatula', name: 'Icing spatula', category: 'utensil', aliases: ['palette knife', 'offset spatula'], isPurchasable: true, typicalPriceGbp: 1200, notes: 'For lifting biscuits and smoothing icing.' },
+  { slug: 'piping-nozzle-star', name: 'Star piping nozzle', category: 'utensil', aliases: ['open star nozzle', '1M nozzle', 'star tip'], isPurchasable: true, typicalPriceGbp: 500, notes: 'Open star opening. For rosette swirls and shells on cakes and cupcakes.' },
+  { slug: 'piping-nozzle-petal', name: 'Petal piping nozzle', category: 'utensil', aliases: ['rose nozzle', 'Wilton 104', 'petal tip'], isPurchasable: true, typicalPriceGbp: 500, notes: 'Teardrop-shaped opening for building layered buttercream roses.' },
+  { slug: 'flower-nail', name: 'Flower nail', category: 'utensil', aliases: ['piping nail', 'rose nail'], isPurchasable: true, typicalPriceGbp: 400, notes: 'Rotating metal nail used as a platform when building piped sugar flowers.' },
+  { slug: 'kitchen-torch', name: 'Kitchen torch', category: 'utensil', aliases: ['blowtorch', 'crème brûlée torch', 'chef\'s torch'], isPurchasable: true, typicalPriceGbp: 2000, notes: 'For bruléeing meringue tops and caramelising sugar.' },
   { slug: 'apple-corer', name: 'Apple corer', category: 'utensil', aliases: [], isPurchasable: true, typicalPriceGbp: 800 },
   { slug: 'cherry-pitter', name: 'Cherry pitter', category: 'utensil', aliases: ['cherry stoner', 'olive pitter'], isPurchasable: true, typicalPriceGbp: 1200, notes: 'Also works for olives.' },
   { slug: 'pasta-machine', name: 'Pasta machine', category: 'utensil', aliases: ['pasta roller'], isPurchasable: true, typicalPriceGbp: 5500, notes: 'Atlas 150 is the standard. Hand-cranked.' },

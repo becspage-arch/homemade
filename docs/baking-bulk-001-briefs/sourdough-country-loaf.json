@@ -1,0 +1,173 @@
+{
+  "slug": "sourdough-country-loaf",
+  "title": "Sourdough country loaf",
+  "subtitle": "A pure-levain loaf at 75% hydration, shaped in a banneton",
+  "excerpt": "A round sourdough loaf built on a fresh levain, proofed in a floured banneton, and baked in a covered Dutch oven to trap the steam. 500 g of strong bread flour, a night's retard, and the slash that opens the ear. The loaf slices cleanly after three hours on the rack.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Sourdough bread made with a naturally fermented levain rather than commercial yeast has no single authoritative public-domain source in the British tradition. The levain-leavened country loaf described here draws on the standard San Francisco and northern European baking approach: a stiff levain build at 125% hydration, 75% total hydration on the final dough, salt at 2%, and a cold retard for flavour development. Baker's percentages: hydration 75%, salt 2%, levain 20% of the flour weight. Fermentation times are guides; the dough is the clock. The Dutch oven method, which traps steam to develop oven spring and crust, is the standard home-baker adaptation of a deck oven with injected steam.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 round loaf (about 850 g baked weight)",
+    "prepMinutes": 45,
+    "cookMinutes": 50,
+    "restingMinutes": 180,
+    "chillingMinutes": 720,
+    "totalMinutes": 1005,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice the cooled loaf and freeze. The crust loses its crack but the crumb survives freezing well; toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Build the levain the morning before. Mix the dough in the afternoon; retard overnight in the fridge. Bake the next morning.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "side",
+    "mood": ["slowSunday", "showstopper"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 75,
+      "saltPercent": 2,
+      "yeastPercent": null,
+      "levainPercent": 20,
+      "bulkFermentMinutes": 240,
+      "proofMinutes": 60,
+      "retardingMinutes": 720,
+      "levainBuildMinutes": 480,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 240,
+      "bakeTemperatureNote": "conventional oven, Dutch oven lid on for first 25 minutes; lid off for final 20–25 minutes",
+      "steamMethod": "Dutch oven lid traps the dough's own steam",
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "banneton", "isOptional": false, "notes": "Round banneton, about 22 cm, lined with cloth and dusted with rice flour." },
+    { "slug": "dutch-oven", "isOptional": false, "notes": "A heavy cast-iron casserole with a lid, large enough for a 22-cm round loaf." },
+    { "slug": "bench-scraper", "isOptional": false },
+    { "slug": "oven-thermometer", "isOptional": true },
+    { "slug": "instant-read-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "levain",
+      "term": "Levain",
+      "definition": "A naturally fermented sourdough starter, built the day before baking by refreshing the stored starter with fresh flour and water. A ripe levain doubles in volume within 4–8 hours at room temperature and has a pleasantly sour smell with a dome-shaped surface. It collapses when it is past peak."
+    },
+    {
+      "slug": "autolyse",
+      "term": "Autolyse",
+      "definition": "A rest period of 20–60 minutes given to flour and water mixed together before the other ingredients are added. During the rest, the flour hydrates and the gluten strands align, which reduces the kneading needed and improves extensibility. Salt and levain are added after the autolyse."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A sourdough country loaf is the bread that most people think of when they hear the word sourdough: a round or oval loaf with a floury crust, a blistered outer surface from the steam trapped in a Dutch oven, and an open, chewy crumb with a faint tang. It requires no commercial yeast. The leavening comes from a naturally fermented starter : the levain that you build the morning before and add to the dough in the afternoon." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The method here runs over two days. Day one: build the levain in the morning, mix the dough in the afternoon, do four rounds of stretch-and-fold during the bulk ferment, shape the dough into the banneton in the evening, and refrigerate overnight. Day two: bake from the fridge in a screaming-hot Dutch oven. The cold retard develops the flavour and makes the shaped dough firm enough to score cleanly. The Dutch oven provides the steam that a home oven can't generate on its own." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "The dough is the clock, not the timer",
+          "body": "Sourdough fermentation times vary with temperature, flour protein content, starter activity, and humidity. The times given here are guides for a kitchen at about 22°C with an active starter. In a cold kitchen, everything takes longer. Learn to read the dough: the bulk ferment is done when the dough has increased by 50–75% and feels light and gassy. The proof is done when a poke leaves a slow impression that closes halfway."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "sourdough-starter", "amount": 30, "unit": "g", "prepNote": "active starter from the fridge", "isOptional": false, "groupLabel": "For the levain (morning of day one)" },
+            { "ingredientSlug": "strong-bread-flour", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the levain (morning of day one)" },
+            { "ingredientSlug": "water", "amount": 50, "unit": "ml", "prepNote": "room temperature", "isOptional": false, "groupLabel": "For the levain (morning of day one)" },
+            { "ingredientSlug": "strong-bread-flour", "amount": 450, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough (afternoon of day one)" },
+            { "ingredientSlug": "wholemeal-bread-flour", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough (afternoon of day one)" },
+            { "ingredientSlug": "water", "amount": 375, "unit": "ml", "prepNote": "room temperature (plus 25 ml reserved)", "isOptional": false, "groupLabel": "For the dough (afternoon of day one)" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough (afternoon of day one)" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Day one, morning: build the levain" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mix 30 g of active sourdough starter with 50 g of strong bread flour and 50 ml of room-temperature water in a jar or small bowl. Stir thoroughly, cover loosely, and leave at room temperature for 4–8 hours. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "levain" } }], "text": "levain" },
+          { "type": "text", "text": " is ready when it has doubled in volume, the surface is domed and bubbly, and it smells sour and yeasty. The float test: drop a small teaspoon into water — it should float. If it sinks, it needs more time." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Day one, afternoon: autolyse" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the 450 g of strong bread flour and 50 g of wholemeal flour with 350 ml of the water (hold back 25 ml). Mix until no dry flour remains. Cover and leave for a 30-minute " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "autolyse" } }], "text": "autolyse" },
+          { "type": "text", "text": ". This gives the flour time to fully hydrate and the gluten to begin aligning before the salt and levain go in." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Add levain and salt" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add all of the ripe levain to the autolyse dough. Dissolve the 10 g of sea salt in the reserved 25 ml of water and add that too. Squeeze the dough through your fingers to incorporate everything, then fold and press for 3–4 minutes until the levain and salt are fully worked in. The dough will be shaggy at first and become more cohesive as you work. Cover and leave for 30 minutes." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bulk ferment with stretch-and-fold, 3–4 hours" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Over the next 3–4 hours, do four rounds of stretch-and-fold with about 45 minutes between each round. For each round: wet your hand, reach under one side of the dough, lift it fully, and fold it over the top. Rotate the bowl 90° and repeat three more times — that is one round. After the final round, leave the dough undisturbed. The bulk ferment is done when the dough has increased by 50–75%, has visible bubbles on the surface, and feels light and slightly jiggly when you shake the bowl gently." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Shape" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Flour your work surface lightly. Tip the dough out and use your bench scraper to fold it into a rough round. Let it rest on the bench for 20 minutes, uncovered, so the surface tightens slightly. Flour a round banneton generously with rice flour (plain flour sticks; rice flour doesn't). Using the bench scraper, flip the dough upside down and shape it into a round: pull the far edge toward you and tuck it under, rotate 45°, repeat all the way around until the dough is a taut ball with good surface tension. Place it seam-side up in the banneton." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Cold retard, 8–14 hours" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover the banneton loosely with a damp tea towel or a shower cap and refrigerate for 8–14 hours. The cold retard slows the final proof and develops the acetic acid that gives sourdough its depth. A longer retard (up to 20 hours) gives more tang." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Day two: bake, 45–50 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 240°C conventional with the Dutch oven inside. Preheat for at least 45 minutes (the Dutch oven needs to be thoroughly hot). Cut a sheet of baking paper. When ready to bake, take the Dutch oven out of the oven, invert the cold loaf from the banneton onto the baking paper, and lower both into the pot. Score the top of the loaf with a sharp blade or bread lame at a 45° angle — a single slash about 1 cm deep running from one end of the loaf to the other. The angle creates the ear; a vertical slash produces a flatter opening. Place the lid on, return to the oven, and bake for 25 minutes with the lid on. Remove the lid and bake for a further 20–25 minutes, until the crust is a deep mahogany brown. The loaf should sound hollow when tapped on the base. An internal probe reads 98°C when done." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Cool, 3 hours minimum" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Transfer to a rack and leave for at least 3 hours before slicing. The crumb continues to set as the loaf cools. Cutting into a hot sourdough produces a gummy, compressed crumb. The wait is the hardest part." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Troubleshooting" }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When things go wrong",
+          "intro": "Three common sourdough failures and their causes.",
+          "items": [
+            { "symptom": "Loaf is flat and dense, with no oven spring", "cause": "Levain was not ripe, or bulk ferment went too long and the dough over-fermented.", "fix": "The levain must be at its peak , domed, bubbly, and passing the float test, before you use it. Under-ripe levain produces a sluggish dough that never fully rises. Over-fermented dough (gone flat and sticky after the bulk) will bake flat. Shape at 50–75% increase, not 100%." },
+            { "symptom": "Dough sticks to the banneton when turned out", "cause": "Insufficient flour in the banneton, or dough was too wet.", "fix": "Rice flour is the most reliable non-stick medium — it doesn't absorb moisture the way plain flour does. Dust the banneton generously before the dough goes in. A heavily hydrated dough (above 78%) will always be harder to handle; reduce hydration to 73% if this is a recurring problem." },
+            { "symptom": "Score opens flat rather than producing an ear", "cause": "Blade angle too vertical, or dough surface not sufficiently taut.", "fix": "Hold the blade at a shallow angle to the dough (about 30° from horizontal, almost lying the blade flat) and make one confident slash in a single stroke. A score at 90° opens flat; a score at 30° lifts the flap up and out. The ear also needs the surface tension of a well-shaped loaf." }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "slug": "milk-bread-tangzhong",
+  "title": "Milk bread, tangzhong method",
+  "subtitle": "The Japanese-style enriched loaf that stays soft for days",
+  "excerpt": "A pillowy 900 g tin loaf made with a cooked flour-and-milk paste called tangzhong. The paste pre-gelatinises the starch so the baked loaf holds more moisture than a standard enriched bread. The crumb pulls apart in layers; it stays soft for three days without freezing.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The tangzhong method is a Japanese and Chinese enriched-bread technique, documented in the Taiwanese cookbook tradition from the 1990s onward. The pre-gelatinised starch approach has no British public-domain source. The recipe here draws on the standard shokupan (Japanese milk bread) formula: tangzhong at a 1:5 flour-to-liquid ratio cooked to 65°C, incorporated into a standard enriched dough at approximately 65% hydration. Baker's percentages: hydration 65% (including the tangzhong water), salt 1.8%, yeast 1.4%, butter 12%, sugar 8%. The method is synthesised from standard Japanese bakery technique rather than from any single published source.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (900 g / 2 lb tin)",
+    "prepMinutes": 30,
+    "cookMinutes": 35,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "totalMinutes": 215,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze for up to 3 months. The tangzhong structure survives freezing better than a standard enriched loaf.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The tangzhong can be made up to 48 hours ahead and refrigerated. Use cold from the fridge.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "breakfast",
+    "mood": ["slowSunday", "kidFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 65,
+      "saltPercent": 1.8,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 60,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven, middle shelf",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false, "notes": "900 g (2 lb) tin, buttered well." },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false, "notes": "For cooking the tangzhong." },
+    { "slug": "instant-read-thermometer", "isOptional": true, "notes": "For confirming the tangzhong has reached 65°C — the temperature where the starch gelatinises." },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "dough-hook", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tangzhong",
+      "term": "Tangzhong",
+      "definition": "A cooked paste of flour and liquid used in Japanese-style enriched bread baking. Cooking the paste to 65°C pre-gelatinises the starch, allowing the final dough to hold more water without feeling wet. The result is a crumb that stays soft longer than a standard enriched bread."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Milk bread built with a tangzhong starter stays fresh three to four days longer than a standard white loaf. The reason is the pre-gelatinised starch: when flour is cooked with liquid to about 65°C, the starch absorbs the water and swells into a gel. This gel allows the finished bread to hold more moisture without feeling wet, and it releases that moisture slowly as the loaf ages. The result is a crumb that is truly soft, not just fresh-baked soft." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Making the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tangzhong" } }], "text": "tangzhong" },
+          { "type": "text", "text": " takes five minutes. The rest of the method is a standard enriched tin loaf: mix, knead, bulk ferment, shape, prove, bake. The loaf comes out pale gold on the outside, pale white on the cut face, and impossibly soft when pulled apart." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 25, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the tangzhong" },
+            { "ingredientSlug": "whole-milk", "amount": 125, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the tangzhong" },
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "caster-sugar", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 9, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "whole-milk", "amount": 150, "unit": "ml", "prepNote": "lukewarm", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "large", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": "softened, cut into pieces", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten with a splash of milk, for the glaze", "isOptional": false, "groupLabel": "To glaze" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make the tangzhong" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whisk 25 g of plain flour with 125 ml of whole milk in a small saucepan until smooth. Cook over medium heat, stirring constantly, until the mixture thickens to a paste and leaves tracks when you draw a spoon through it — about 3–5 minutes. If you have a thermometer, cook to 65°C. Transfer to a bowl and allow to cool to room temperature. The tangzhong can be used warm but not hot." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Mix and knead" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Weigh {{strong-bread-flour}} strong bread flour into a large bowl. Add {{yeast-fast-action}} fast-action yeast on one side, {{sea-salt-fine}} sea salt and {{caster-sugar}} caster sugar on the other. Add the cooled tangzhong, {{whole-milk}} lukewarm milk, and the {{eggs}} egg. Mix to a rough dough, then knead by hand for 10 minutes or in a stand mixer with a dough hook for 7 minutes on medium. The dough will be soft and slightly sticky. Add the {{unsalted-butter}} softened butter a few pieces at a time with the machine running, waiting until each addition disappears before adding the next. Once all the butter is in, knead for a further 3 minutes until the dough is smooth and pulls cleanly from the bowl." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bulk ferment, 60 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover the bowl and leave at room temperature for 60 minutes, until the dough has roughly doubled. The enrichment from the butter and eggs slows the rise slightly." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Shape" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Butter the loaf tin generously. Knock back the dough and divide it into four equal pieces. Shape each piece into a smooth ball by pulling the surface taut and tucking underneath. Place the four balls in a row in the tin, seam-side down. This four-ball arrangement creates the characteristic pull-apart top on the finished loaf." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Final proof, 45–60 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover loosely with cling film and leave at room temperature for 45–60 minutes, until the dough has risen to the rim of the tin and feels airy when pressed lightly. Preheat the oven to 180°C fan." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Glaze and bake, 30–35 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Brush the surface gently with the egg glaze. Bake for 30–35 minutes, until the top is a deep golden-brown and an internal probe reads 90–92°C. The loaf should feel light for its size. Turn out onto a rack and leave for at least 45 minutes before slicing." }]
+      }
+    ]
+  }
+}

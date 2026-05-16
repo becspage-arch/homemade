@@ -1553,6 +1553,29 @@ Memory updates (auto-loaded for future Mindset workers):
 2. Bulk fill — standing pattern consuming the baking backlog.
 3. Baking-specific TipTap blocks (baker's percentages panel, lamination schedule, sugar-stage panel) — deferred until post-launch or when bulk fill surfaces the need.
 
+### Phase 8 Baking — bulk-001 batch ✅ landed 2026-05-16
+
+**Goal.** Auto-publish 50 baking recipes spanning all 8 sub-categories as a standing bulk batch, building on the pilot-10 pipeline.
+
+**Deliverable.**
+
+- 50 RECIPE rows PUBLISHED: bread (10), cakes (10), pastries (5), pies (5), biscuits (6), scones (4), sweets-confectionery (5), cake-decorating (2), other (2).
+- Difficulty: 8 BEGINNER / 31 INTERMEDIATE / 11 ADVANCED.
+- 20 new ingredients seeded: `apricot-jam`, `black-pepper-ground`, `blanched-almonds`, `chestnut-mushrooms`, `chicken-stock`, `chicken-thighs-boneless`, `dried-currants`, `flaked-almonds`, `glucose-syrup`, `lardons`, `light-muscovado-sugar`, `pear-conference`, `raspberry-jam`, `rolled-oats`, `sage-dried`, `sausage-meat`, `soft-brown-sugar`, `thyme-dried`, `thyme-fresh`, `vanilla-bean-paste`.
+- 19 new tools seeded: `deep-pie-dish`, `serrated-knife`, `pastry-cutter`, `saucepan-large`, `saucepan-medium`, `piping-nozzle-round`, `griddle`, `saucepan-small`, `palette-knife`, `square-baking-tin`, `loose-bottomed-tart-tin`, `meat-thermometer`, `cake-turntable`, `cake-smoother`, `kitchen-torch`, `bun-tin`, `piping-nozzle-star`, `piping-nozzle-petal`, `flower-nail`.
+- `docs/baking-anti-tells.md` extended to 16 entries (4 new: em-dash pairs in sourceNotes, season enum uppercase, sweets-confectionery slug, tool slug precision).
+- `docs/baking-bulk-001-report.md` — full batch report.
+
+**Patterns surfaced:**
+
+- Em-dash appositive pairs are the leading failure mode. Run a fix script before any upload attempt.
+- Season enum must be uppercase; lowercase silently passes authoring but fails upload validation.
+- `sweets-confectionery` is the correct sub-category slug for confectionery; `confectionery` alone is not seeded.
+- Tool slugs use non-obvious ordering conventions; always look up the exact slug in `tools.ts`.
+- In git worktrees, `seed-tools.ts` / `seed-ingredients.ts` read from the **worktree's** data files, not the main repo's. Both must be kept in sync.
+
+**Out.** No schema changes. No voice-check CLI changes. No new TipTap blocks.
+
 ### Step 15 — Mindset register fix + type-intro readings + sub-category seed ✅ landed 2026-05-15
 
 **Goal.** Fix the issues Rebecca raised reviewing the Step 14 anchor
@@ -1831,7 +1854,7 @@ Revise the rates here when actuals diverge from estimates.
 | # | Category | Target | Current | Pipeline | Fill weeks @ 1k/wk |
 |---|---|---:|---:|---|---:|
 | 1 | Cooking | 7,000 | 202 DRAFT (13 pilot + 189 personal recipes ingested 2026-05-14) | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
-| 2 | Baking | 3,000 | 14 (4 DRAFT anchor + 10 PUBLISHED pilot, 2026-05-15) | ✅ schema + taxonomy + authoring prompt + anti-tells + 4-anchor batch + pilot-10 all landed. Migration `20260615000000_phase_8_baking_pipeline_scaffold` adds `PreFermentType` enum + 17 baking-metadata columns. `seed-baking-taxonomy.ts` seeds `baking` Category + 8 sub-categories. `docs/baking-author.md` v1 + `docs/baking-anti-tells.md` (11 entries). Pilot-10: 10 recipes PUBLISHED spanning bread (2), cakes (2), pastries (1), pies (1), biscuits (1), scones (1), sweets-confectionery (2). 3 BEGINNER / 5 INTERMEDIATE / 2 ADVANCED. Voice: 0 errors on all 10 final uploads. Report: `docs/baking-pilot-10-report.md`. Four anchor DRAFTs (tin loaf / Victoria sandwich / shortcrust / shortbread) pending Rebecca review. Bulk fill, Baking-specific TipTap blocks (baker's percentages, lamination schedule, sugar-stage panel) — still ahead. | 3 |
+| 2 | Baking | 3,000 | 64 (4 DRAFT anchor + 60 PUBLISHED: 10 pilot + 50 bulk-001, 2026-05-16) | ✅ schema + taxonomy + authoring prompt + anti-tells + 4-anchor batch + pilot-10 + bulk-001 all landed. Bulk-001: 50 recipes PUBLISHED spanning bread (10), cakes (10), pastries (5), pies (5), biscuits (6), scones (4), sweets-confectionery (5), cake-decorating (2), other (2). 8 BEGINNER / 31 INTERMEDIATE / 11 ADVANCED. 20 new ingredients + 19 new tools seeded. `docs/baking-anti-tells.md` extended to 16 entries (4 new: em-dash pairs in sourceNotes, season enum uppercase, sweets-confectionery slug, tool slug precision). Report: `docs/baking-bulk-001-report.md`. Four anchor DRAFTs (tin loaf / Victoria sandwich / shortcrust / shortbread) pending Rebecca review. Bulk fill continues from backlog. Baking-specific TipTap blocks (baker's percentages, lamination schedule, sugar-stage panel) — still ahead. | 3 |
 | 3 | Garden | 4,000 | 0 | Not started — ~1 wk setup | 4 |
 | 4 | Herbal medicine | 2,500 | 0 | Not started — ~1 wk setup | 2.5 |
 | 5 | Mindset | 4,300 | 11 DRAFT (6 practices + 5 type-intro readings; v3 anchor batch landed Phase 8 Step 16, 2026-05-15) | ✅ schema + backlog + authoring prompt v3 + anti-tells (22 entries) + 11 sub-categories + 11-entry anchor batch ready. Migration `20260614000000_phase_8_step_13_mindset_schema` ships PRACTICE / READING TutorialType values + 11-value `PracticeType` + 20-value `PracticeTarget` + `TimeBand` + `BestTime` + `PlanTier` + `PlanStatus` + `PlanSlotSource` enums + Tutorial practice-metadata columns + the six user-side tables. `docs/mindset-backlog.md` enumerates ~2,945 specific entry titles across all 16 life categories. `docs/mindset-author.md` v3 (cooking-recipe register, no in-body author refs, no in-body safety frame, repeat-count signposts, warm-up prompts) + `docs/mindset-anti-tells.md` (22 entries, ~18 [block]) drive Mindset drafting. Five type-intro READINGs cover the methodology once; six practice anchors assume them. The deposit-coin activity anchor demonstrates the magical-ritual pattern for the ~30 ACTIVITY + ~12 SPELL backlog entries. Mindset Category seeded with 11 SubCategory rows (one per PracticeType). Upload script extended to accept PRACTICE / READING (additive — RECIPE / TECHNIQUE unchanged). Voice-check Mindset extension, pilot of 10, bulk fill, plan generator, admin/public UI — still ahead. | 4.3 |

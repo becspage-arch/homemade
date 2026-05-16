@@ -1,0 +1,125 @@
+{
+  "slug": "quiche-lorraine",
+  "title": "Quiche Lorraine",
+  "subtitle": "A blind-baked shortcrust case filled with smoked lardons and a cream and egg custard",
+  "excerpt": "A 23 cm Quiche Lorraine: a shortcrust case blind-baked until crisp, filled with smoked lardons and a poured custard of eggs, double cream, and whole milk, then baked again until just set with a slight wobble in the centre. Serves 6.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903): the tarte lorraine section documents a blind-baked pastry shell filled with smoked lardons and a cream-and-egg custard (without cheese). The blind-baking method for a filled pastry case before adding a poured custard is documented in both French and British domestic cookery of the Victorian period. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: the savoury tart section documents the technique of pre-baking pastry cases before adding a wet filling to prevent a soggy base. The recipe here follows the classic Lorraine filling without additions, consistent with the pre-1928 French culinary literature.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 50,
+    "restingMinutes": 15,
+    "chillingMinutes": 30,
+    "totalMinutes": 125,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The blind-baked case keeps at room temperature for 24 hours. Fill and bake on the day of serving.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "lunch",
+    "mood": ["slowSunday", "specialOccasion"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "fan oven; blind bake at 190°C fan, then reduce to 180°C fan for the filled bake",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "loose-bottomed-tart-tin", "isOptional": false, "notes": "23 cm loose-bottomed fluted tart tin." },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "baking-beans", "isOptional": false, "notes": "Ceramic baking beans or a handful of dried lentils." },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "blind-baking",
+      "term": "Blind baking",
+      "definition": "Baking an empty pastry case before adding a wet filling. The case is lined with baking paper, filled with baking beans or dried pulses to hold the pastry flat and stop the sides slumping, then baked for 15 minutes with the beans in (to set the sides) and a further 5–8 minutes with the beans removed (to dry the base). A properly blind-baked case is dry to the touch before the filling goes in, which prevents a soggy base."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A Quiche Lorraine is one of the most reliable things to make for a group: it serves 6 generously, it keeps for two days in the fridge, and it is as good at room temperature as it is warm. The two parts are a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blind-baking" } }], "text": "blind-baked" },
+          { "type": "text", "text": " shortcrust case and a custard of eggs, cream, and smoked lardons. The only thing that goes wrong is a soggy base, which is entirely preventable: bake the case completely before the filling goes in, and keep the custard ratio in balance — too much cream and it never fully sets." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the shortcrust case" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": "a pinch", "isOptional": false, "groupLabel": "For the shortcrust case" },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cold, cut into small dice", "isOptional": false, "groupLabel": "For the shortcrust case" },
+            { "ingredientSlug": "egg-yolks", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "For the shortcrust case" },
+            { "ingredientSlug": "water", "amount": 30, "unit": "ml", "prepNote": "ice cold, 1–2 tablespoons", "isOptional": false, "groupLabel": "For the shortcrust case" },
+            { "ingredientSlug": "lardons", "amount": 200, "unit": "g", "prepNote": "smoked", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "eggs", "amount": 3, "unit": "each", "prepNote": "large", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "double-cream", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "whole-milk", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "gruyere", "amount": 50, "unit": "g", "prepNote": "finely grated — optional; the classic Lorraine has none", "isOptional": true, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 4, "unit": "g", "prepNote": "taste — lardons are already salty", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper-ground", "amount": 2, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "nutmeg-ground", "amount": 1, "unit": "g", "prepNote": "a grating — nutmeg works into eggs and cream", "isOptional": false, "groupLabel": "For the filling" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make and chill the pastry" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the {{plain-flour}} and {{sea-salt-fine}} in a bowl. Add the {{unsalted-butter}} cold butter and rub in with your fingertips until the mixture resembles coarse breadcrumbs. Mix the {{egg-yolks}} egg yolk with the {{water}} cold water and add gradually, pressing the dough together until it just holds. Press into a disc, wrap, and refrigerate for 30 minutes." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Line the tin and blind bake" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 190°C fan. Roll the chilled pastry on a lightly floured surface to 3 mm thick and large enough to line a 23 cm loose-bottomed tart tin with 2 cm of overhang. Ease the pastry in without stretching, pressing it into the fluted sides. Roll the rolling pin over the top to cut off the excess. Prick the base all over with a fork. Line with baking paper, fill with baking beans, and bake for 15 minutes. Remove the beans and paper and bake for a further 8–10 minutes until the base is dry and lightly golden. If you spot any cracks, patch immediately with a scrap of raw pastry and return to the oven for 2 minutes. Reduce the oven to 180°C fan." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Cook the lardons" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Fry the {{lardons}} smoked lardons in a dry frying pan over medium heat until the fat has rendered and the edges are beginning to colour, about 5–6 minutes. Drain on kitchen paper. Scatter the lardons evenly over the base of the blind-baked case. Scatter {{gruyere}} Gruyère over if using." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Pour the custard and bake, 30–35 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whisk the {{eggs}} eggs, {{double-cream}}, {{whole-milk}}, {{sea-salt-fine}} salt, {{black-pepper-ground}}, and {{nutmeg-ground}} nutmeg together until smooth. Pour over the lardons in the case ; do this on the oven shelf to avoid spilling. Bake at 180°C fan for 30–35 minutes, until the custard is set at the edges but has a slight wobble in the centre when the tin is nudged — the carry-over heat in the case will finish it. Rest for 15 minutes before cutting. Serve warm or at room temperature." }]
+      }
+    ]
+  }
+}

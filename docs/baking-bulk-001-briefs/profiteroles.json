@@ -1,0 +1,136 @@
+{
+  "slug": "profiteroles",
+  "title": "Profiteroles",
+  "subtitle": "Choux puffs filled with whipped cream and served with warm chocolate sauce",
+  "excerpt": "Twenty-four profiteroles: small rounds of choux paste piped and baked until hollow, filled with whipped double cream, and served with a warm dark chocolate ganache poured over at the table. Best assembled within 30 minutes of serving.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: the cream bun section documents small choux rounds baked hollow and filled with sweetened whipped cream. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: Acton documents choux paste made on the hob by the same method as éclairs, formed into small rounds for cream buns. Serving with a poured chocolate sauce is documented in the British and French domestic cookery literature from the late Victorian period onward, as the profiterole became a standard dinner-party dessert.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "24 profiteroles",
+    "prepMinutes": 30,
+    "cookMinutes": 30,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "totalMinutes": 90,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the unfilled baked shells in a sealed bag. Re-crisp in a 180°C fan oven for 8 minutes before filling.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Bake the shells up to 6 hours ahead and store uncovered at room temperature — do not seal them or they soften. Fill within 30 minutes of serving.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["specialOccasion", "showstopper", "party"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 120,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven, top third; reduce to 170°C fan after 15 minutes to dry the shells",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "saucepan-medium", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "piping-bag", "isOptional": false },
+    { "slug": "piping-nozzle-round", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ganache",
+      "term": "Ganache",
+      "definition": "A mixture of hot cream poured over chopped chocolate, stirred from the centre outward until smooth and emulsified. The ratio of cream to chocolate determines the consistency: equal parts by weight produces a thick, pourable ganache suitable for a sauce or glaze; more cream makes it thinner; more chocolate makes it firmer and suitable for truffles. For profiteroles, equal parts produces the right viscosity to pour at the table."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Profiteroles use the same choux paste as éclairs, shaped into rounds instead of fingers. The shells are lighter work than éclairs because there is no crème pâtissière: whipped double cream goes in cold, and the chocolate sauce (a simple " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ganache" } }], "text": "ganache" },
+          { "type": "text", "text": ") is made in minutes and poured at the table while still warm. The timing constraint is real: filled profiteroles should be eaten within 30 minutes, before the cream softens the shells." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Pipe consistent rounds",
+          "body": "Consistent sizing means consistent baking. Pipe rounds about 3 cm in diameter, then use a dampened finger to smooth down any peaks — peaks burn before the rest of the shell is cooked. If your rounds are irregular, sort them onto two trays by size and bake each tray separately."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 24,
+          "items": [
+            { "ingredientSlug": "water", "amount": 125, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the choux paste" },
+            { "ingredientSlug": "whole-milk", "amount": 125, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the choux paste" },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cut into cubes", "isOptional": false, "groupLabel": "For the choux paste" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": "a pinch", "isOptional": false, "groupLabel": "For the choux paste" },
+            { "ingredientSlug": "plain-flour", "amount": 120, "unit": "g", "prepNote": "sifted", "isOptional": false, "groupLabel": "For the choux paste" },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "each", "prepNote": "large, at room temperature, beaten together", "isOptional": false, "groupLabel": "For the choux paste" },
+            { "ingredientSlug": "double-cream", "amount": 300, "unit": "ml", "prepNote": "whipped to soft peaks", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "caster-sugar", "amount": 20, "unit": "g", "prepNote": "to sweeten the cream — optional", "isOptional": true, "groupLabel": "For the filling" },
+            { "ingredientSlug": "dark-chocolate", "amount": 150, "unit": "g", "prepNote": "70% cocoa, finely chopped", "isOptional": false, "groupLabel": "For the ganache sauce" },
+            { "ingredientSlug": "double-cream", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the ganache sauce" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make the choux paste" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 200°C fan. Combine the {{water}}, {{whole-milk}} milk, {{unsalted-butter}} butter, and {{sea-salt-fine}} salt in a medium saucepan over medium-high heat. Bring to a full boil. Remove from the heat and tip in all the {{plain-flour}} sifted flour at once. Beat vigorously with a wooden spoon until the paste forms a smooth ball and pulls away from the pan. Return to low heat for 1–2 minutes to dry slightly. Cool for 5 minutes." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Beat in eggs and pipe" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add the {{eggs}} beaten egg a tablespoon at a time, beating fully after each addition, until the paste is glossy and falls from a lifted spoon in a thick V-shape. Transfer to a piping bag fitted with a plain 1 cm nozzle. Line two baking trays with baking paper. Pipe 24 rounds about 3 cm in diameter, leaving 4 cm between each. Smooth any peaks with a damp fingertip." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 28–30 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake at 200°C fan for 15 minutes — do not open the door. Reduce to 170°C fan and bake for a further 13–15 minutes until deep golden and firm when pressed. Pierce each puff with a skewer at the side to release steam. Transfer to a rack and cool completely before filling." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Whip the cream and make the ganache" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whip the {{double-cream}} cream to soft peaks, adding {{caster-sugar}} sugar if using. Refrigerate until needed. For the ganache, bring the remaining {{double-cream}} cream to a simmer, pour over the {{dark-chocolate}} chopped chocolate, leave for 2 minutes, then stir outward from the centre until smooth. Keep warm over a bowl of hot water." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Fill and serve" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cut each profiterole two-thirds of the way through with scissors or a serrated knife, leaving a hinge. Pipe or spoon whipped cream into the opening. Arrange on a serving plate and pour the warm ganache over at the table. Serve immediately." }]
+      }
+    ]
+  }
+}

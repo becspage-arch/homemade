@@ -240,3 +240,54 @@ tells.
   pattern; the structure here is Beeton's"). Stick to genuinely
   public-domain references in `sourceNotes` for the primary
   citation.
+
+- **Em-dash appositive pairs in `sourceNotes`** `[block]`
+  Pattern: `sourceNotes` prose using an em-dash pair to offset a
+  source name or clause: `"Mrs Beeton — the canonical Victorian
+  source — documents…"` or `"the recipe here — a straight dough
+  — follows Acton's method"`. The voice-check CLI treats any
+  `— text —` pattern as an ERROR regardless of field.
+  **Why:** The voice-check rule is applied across all string
+  fields, including `sourceNotes`. A pair that would read
+  naturally as prose in a book triggers a blocking error on
+  upload.
+  **How to fix:** Rewrite as colons or parentheses. `"Mrs Beeton
+  (the canonical Victorian source) documents…"` or `"Mrs Beeton
+  documents…: the cream bun section records…"`. Use
+  `fix-emdash.js` on the brief before attempting an upload.
+
+- **Season enum lowercase** `[block]`
+  Pattern: `"season": "autumn"` or `"season": "winter"` —
+  lowercase season values. Prisma rejects them at upload time
+  with a validation error.
+  **Why:** The Prisma `Season` enum is defined as
+  `AUTUMN / WINTER / SPRING / SUMMER` (uppercase). JSON values
+  must match exactly.
+  **How to fix:** Use `AUTUMN`, `WINTER`, `SPRING`, `SUMMER` or
+  `null`. Add to the brief template so the drafter never writes
+  lowercase.
+
+- **Wrong sub-category slug for confectionery** `[block]`
+  Pattern: `"subCategorySlug": "confectionery"` on sweets and
+  confectionery recipes. The upload script rejects it as unknown.
+  **Why:** The seeded sub-category slug is `sweets-confectionery`,
+  not `confectionery`. The `sweets-` prefix distinguishes it
+  from a category-level slug.
+  **How to fix:** Use `"subCategorySlug": "sweets-confectionery"`
+  on all confectionery recipes. Look up the exact slug in
+  `seed-baking-taxonomy.ts` when authoring any sub-category
+  reference.
+
+- **Guessing tool slugs** `[block]`
+  Pattern: `recipeTools` entries with tool slugs that seem
+  plausible (`"round-piping-nozzle"`, `"medium-saucepan"`,
+  `"tart-tin-loose"`) but don't match the master table.
+  The upload script rejects any unrecognised slug.
+  **Why:** Tool slugs follow a specific naming convention that
+  is not always predictable. `piping-nozzle-round` not
+  `round-piping-nozzle`. `saucepan-medium` not
+  `medium-saucepan`. The convention varies.
+  **How to fix:** Always look up the exact slug in
+  `packages/db/scripts/data/tools.ts` before writing a
+  `recipeTools` entry. If the tool is genuinely new, add it to
+  `tools.ts` and reseed before uploading.

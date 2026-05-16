@@ -1,0 +1,121 @@
+{
+  "slug": "fruit-scones-currant",
+  "title": "Currant scones",
+  "subtitle": "Classic plain scones with dried currants, for cream teas",
+  "excerpt": "Ten currant scones: a straightforward self-raising flour dough with cold butter, caster sugar, dried currants, and cold milk. Mixed just enough, patted to 3 cm thick, and baked at high heat until risen and golden. Serve warm with clotted cream and jam.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "scones",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: the currant scone chapter documents a plain scone dough with dried currant additions, baked at a high heat for a rapid rise. The instruction to rub in cold butter quickly and to work the dough minimally appears repeatedly throughout the Victorian scone literature. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: the raised scone section documents the flour, fat, milk, and dried fruit method as the standard British plain scone. Currant scones are documented continuously in British domestic baking from the Victorian period.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "10 scones",
+    "prepMinutes": 15,
+    "cookMinutes": 14,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "totalMinutes": 34,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze baked, cooled scones in a bag. Warm in a 180°C oven for 8 minutes from frozen.",
+    "batchable": true,
+    "batchNotes": "Doubles easily. Make dough in two separate batches.",
+    "makeAheadNotes": "Best on the day of baking. Day-old scones benefit from a few minutes in a 170°C oven to refresh them.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["specialOccasion", "slowSunday", "cosy"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 450,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "fan oven, top third — high heat for maximum rise",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "pastry-cutter", "isOptional": false, "notes": "A 6 cm plain round cutter." },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "milk-top",
+      "term": "Milk top",
+      "definition": "Brushing the top of unbaked scones with milk rather than egg wash. Milk produces a softer, more matte golden finish than egg, which gives a shiny glaze. For plain currant scones, the matte milk top is traditional and also gentler — an egg wash can set and seal the top of the scone before it has fully risen, creating a 'cap' that limits the oven spring."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A good scone is almost entirely about restraint: cold butter, cold milk, minimal mixing, high heat. The dough should come together in under a minute of combining. For a cream tea, serve with clotted cream first and jam on top — or jam first and clotted cream on top if you're Cornish." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Flour the cutter, not the board",
+          "body": "Flour the cutter (dip it in flour before each cut) rather than the surface. Too much flour on the board works into the dough on the re-roll and toughens it. The cut surface of a scone needs to be clean to rise straight."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 10,
+          "items": [
+            { "ingredientSlug": "self-raising-flour", "amount": 450, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "baking-powder", "amount": 8, "unit": "g", "prepNote": "2 teaspoons", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 4, "unit": "g", "prepNote": "a pinch", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cold, cut into small dice", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dried-currants", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 280, "unit": "ml", "prepNote": "cold — add most at once and use the rest to adjust", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Mix the dough" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 220°C fan. Combine the {{self-raising-flour}}, {{baking-powder}}, {{sea-salt-fine}}, and {{caster-sugar}} in a large bowl. Add the {{unsalted-butter}} cold butter and rub in quickly with cool fingertips until the mixture resembles coarse crumbs. Stir in the {{dried-currants}}. Add most of the {{whole-milk}} cold milk at once and mix with a round-bladed knife until the dough comes together. Add the remaining milk if needed — the dough should be soft but not sticky." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Pat and cut" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Turn onto a lightly floured surface. Pat (not roll) to 3 cm thick — patting is gentler than rolling and preserves the open texture. Dip a 6 cm plain round cutter in flour and press straight down without twisting. Place on a lined baking tray. Gather scraps, pat once more, and cut remaining scones. Brush the tops with {{whole-milk}} milk for a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "milk-top" } }], "text": "milk top" },
+          { "type": "text", "text": " finish." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 12–14 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake for 12–14 minutes until risen and golden at the top. The sides should look set and pale — not dark. Cool on a rack for 5 minutes. Serve warm with clotted cream and strawberry jam." }]
+      }
+    ]
+  }
+}

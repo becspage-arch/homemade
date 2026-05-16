@@ -1,0 +1,130 @@
+{
+  "slug": "bara-brith",
+  "title": "Bara brith",
+  "subtitle": "The Welsh spiced fruit bread soaked in tea",
+  "excerpt": "A 900 g Welsh tea bread made by soaking 400 g of mixed dried fruit in strong black tea overnight, then mixing into a spiced yeasted dough. The fruit stays plump and the tea turns the crumb a soft caramel colour. Eaten sliced and buttered.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Florence White, Good Things in England (1932): bara brith is documented as a traditional Welsh fruit loaf, the name translating as 'speckled bread'. White notes the tea-soaking of the fruit as the method that distinguishes it from a simple currant loaf. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: the fruit bread chapter includes several enriched yeasted loaves with dried fruit. The tea-soak method for the fruit is documented in Welsh culinary literature from at least the nineteenth century. The baker's percentages here are adapted to account for the tea-plumped fruit: 65% hydration (including the soaked fruit's moisture), 2% salt, 1.4% yeast.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (900 g / 2 lb tin)",
+    "prepMinutes": 20,
+    "cookMinutes": 55,
+    "restingMinutes": 30,
+    "chillingMinutes": 480,
+    "totalMinutes": 1005,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice the cooled loaf, freeze flat in a bag. Toasts from frozen well.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Soak the fruit in tea the night before. The dough can also be shaped and left to prove overnight in the fridge; bake in the morning.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "breakfast",
+    "mood": ["cosy", "slowSunday"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 65,
+      "saltPercent": 2,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 90,
+      "proofMinutes": 60,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven, middle shelf",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false, "notes": "900 g (2 lb) tin, buttered." },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "mixing-bowl-medium", "isOptional": false, "notes": "For soaking the fruit overnight." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tea-soaking",
+      "term": "Tea soaking",
+      "definition": "Covering dried fruit in hot strong tea and leaving it overnight to absorb the liquid. The fruit swells and plumps; the tannins in the tea add a background depth that plain water lacks. The soaked fruit carries extra moisture into the baked loaf, keeping the crumb moist longer."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bara brith (speckled bread in Welsh) is the fruit loaf that tea makes different. The dried fruit soaks overnight in strong black tea, plumping fully and absorbing the tannin, and the tea carries into the dough with the fruit. The crumb bakes to a soft caramel colour and the fruit is evenly distributed, not sunk to the bottom or dried out by the oven. It keeps for five or six days, improving slightly as the flavours settle, and is best served sliced fairly thick and buttered." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "This is the yeasted version. There is also an egg-and-butter bara brith that is mixed cold and baked without yeast, closer to a fruit cake; that version has a denser, stickier crumb. This one is a bread: lighter, with a slightly open crumb, better toasted." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "sultanas", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the fruit soak" },
+            { "ingredientSlug": "currants", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the fruit soak" },
+            { "ingredientSlug": "raisins", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the fruit soak" },
+            { "ingredientSlug": "tea-bag", "amount": 2, "unit": "each", "prepNote": "strong black tea — brewed to 300 ml, hot", "isOptional": false, "groupLabel": "For the fruit soak" },
+            { "ingredientSlug": "dark-brown-sugar", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the fruit soak" },
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "mixed-spice", "amount": 8, "unit": "g", "prepNote": "about 2 teaspoons", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "large", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "honey", "amount": 20, "unit": "g", "prepNote": "to glaze", "isOptional": false, "groupLabel": "To glaze" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Soak the fruit, overnight" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Brew two strong tea bags in 300 ml of boiling water for 5 minutes, then remove the bags. Dissolve the {{dark-brown-sugar}} dark brown sugar in the hot tea. Combine the {{sultanas}}, {{currants}}, and {{raisins}} in a bowl and pour the sweetened tea over them. Leave to " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tea-soaking" } }], "text": "tea-soak" },
+          { "type": "text", "text": " overnight, or for at least 8 hours. By morning the fruit should have absorbed most of the tea and swollen noticeably. Don't drain any remaining liquid — it goes into the dough." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Mix the dough" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Weigh the {{strong-bread-flour}} into a large bowl. Add the {{yeast-fast-action}}, {{sea-salt-fine}}, and {{mixed-spice}}. Add the {{unsalted-butter}} softened butter and rub it into the flour until no large pieces remain. Beat the {{eggs}} egg lightly and add it, along with the soaked fruit and all the remaining tea liquid. Mix to a dough — it will be quite sticky because of the fruit. Knead by hand for 8 minutes; the dough will be heavier and wetter than a plain bread dough, and that is correct. Work it as much as you can, dragging it across the surface to develop some structure." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bulk ferment, 90 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover the bowl and leave at room temperature for 90 minutes. The fruit-laden dough rises more slowly than a plain dough; in a warm kitchen it should roughly double." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Shape and final proof, 60 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Butter the loaf tin. Knock back the dough, shape it into a log, and place seam-side down in the tin. Cover loosely and leave for 60 minutes, until the dough has risen to the rim. Preheat the oven to 180°C fan." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 50–55 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake for 50–55 minutes, until the loaf is a deep brown and an internal probe reads 96°C. If the top is browning too quickly (the fruit and sugar caramelise fast), lay foil loosely over the tin after 35 minutes. When done, warm the honey in a small pan and brush it immediately over the hot loaf — it gives a shiny glaze and a faint sweetness on the crust. Turn out and cool on a rack for at least 2 hours before slicing." }]
+      }
+    ]
+  }
+}

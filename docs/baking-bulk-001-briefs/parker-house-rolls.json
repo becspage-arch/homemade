@@ -1,0 +1,128 @@
+{
+  "slug": "parker-house-rolls",
+  "title": "Parker House rolls",
+  "subtitle": "The folded butter rolls that stay soft enough to pull apart at the table",
+  "excerpt": "Twelve enriched dinner rolls shaped in the Parker House style: each piece of dough flattened, buttered down the centre, and folded. They bake touching in a tin, which keeps the sides soft. Brushed with melted butter the moment they come out.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Parker House rolls are documented in the American baking tradition from the 1870s, first associated with the Parker House Hotel in Boston. The British public-domain equivalent is the 'dinner roll' or 'bridge roll' documented in Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: an enriched yeasted roll baked close together on a tray, soft-sided from the proximity. The fold-and-butter shaping method specific to Parker House rolls is documented in pre-1928 American domestic cookery literature. The baker's percentages here : 60% hydration (low for the tender crumb), 8% butter, 8% sugar, 2% salt follow the standard American enriched roll formula as documented in public-domain sources.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "12 rolls",
+    "prepMinutes": 30,
+    "cookMinutes": 18,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "totalMinutes": 183,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze baked and cooled rolls, wrapped. Warm from frozen at 160°C fan for 8 minutes, brushed with fresh butter.",
+    "batchable": true,
+    "batchNotes": "Doubles to 24 cleanly; use two tins.",
+    "makeAheadNotes": "The shaped rolls can be refrigerated overnight before proving and baking; add 30 minutes to the final proof if baking from the fridge.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "side",
+    "mood": ["specialOccasion", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 60,
+      "saltPercent": 2,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 45,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "fan oven, middle shelf",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "dough-hook", "isOptional": true },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false, "notes": "30 × 20 cm tin, buttered." },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "enriched-dough",
+      "term": "Enriched dough",
+      "definition": "A yeasted dough made with fat (butter or oil), eggs, sugar, or milk — or a combination. The enrichment tenderises the crumb and slows staling. Enriched doughs take longer to ferment than lean doughs because the fat and sugar slow the yeast."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Parker House rolls are the dinner roll at its most considered: an enriched dough shaped into individual pieces, each one buttered and folded before proving, baked close together in a tin so the sides stay soft, then brushed again with butter the moment they come out of the oven. The butter inside the fold makes them easy to split at the table; the soft sides mean they come apart in sheets rather than crumbling." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The dough is low-hydration (60%) for an enriched bread, which makes it straightforward to handle and shape. It is soft enough to be tender but not so wet that it spreads. The whole process from mixing to table takes about 3 hours; most of that is passive fermentation time." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 12,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "caster-sugar", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "whole-milk", "amount": 240, "unit": "ml", "prepNote": "lukewarm", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "large", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": "melted, for shaping and finishing", "isOptional": false, "groupLabel": "To finish" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Mix and knead" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the {{plain-flour}}, {{yeast-fast-action}}, {{caster-sugar}}, and {{sea-salt-fine}} in a bowl, keeping the yeast and salt apart. Add the {{whole-milk}} lukewarm milk and the {{eggs}} egg. Mix to a rough dough, then knead by hand for 8 minutes or in a stand mixer with a dough hook for 6 minutes on medium. Add the {{unsalted-butter}} softened butter in small pieces and continue kneading for a further 3 minutes, until the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "enriched-dough" } }], "text": "enriched dough" },
+          { "type": "text", "text": " is smooth and soft." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bulk ferment, 60 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover and leave at room temperature for 60 minutes, until the dough has roughly doubled." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Shape the rolls" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Butter a 30 × 20 cm tin generously. Knock back the dough and divide it into 12 equal pieces, about 80 g each. For each piece: roll into a ball, then flatten with a rolling pin to an oval about 10 × 7 cm. Brush the centre of the oval lengthways with melted butter (about half a teaspoon), then fold one side over the other so the edges just overlap, like a book. Place in the prepared tin. Repeat for all 12, arranging them in three rows of four with a small gap between each roll — they will expand to fill the gap during proving." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Final proof, 40–45 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover the tin loosely and leave at room temperature for 40–45 minutes, until the rolls are touching their neighbours and have visibly puffed. Preheat the oven to 190°C fan." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 15–18 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake for 15–18 minutes, until the tops are a deep golden-brown and the sides feel set when pressed gently. The rolls should sound hollow when tapped on the top. Remove from the oven and immediately brush the tops generously with the remaining melted butter. Leave in the tin for 5 minutes, then transfer to a rack. Serve warm, within 2 hours of baking; the soft sides are the point." }]
+      }
+    ]
+  }
+}

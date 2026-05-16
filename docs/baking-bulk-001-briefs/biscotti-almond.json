@@ -1,0 +1,113 @@
+{
+  "slug": "biscotti-almond",
+  "title": "Almond biscotti",
+  "subtitle": "Twice-baked almond biscuits, dry and hard, made for dunking",
+  "excerpt": "Thirty almond biscotti: a firm dough of flour, eggs, and sugar with whole blanched almonds, shaped into two logs and baked once until set, then sliced on the diagonal and baked again until dry throughout. They keep for weeks and are designed to be dunked into coffee or dessert wine.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "biscuits",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Biscotti (twice-baked biscuits) have a documented Italian origin as a long-keeping provision biscuit: the term literally means twice-baked (bis: twice, cotti: baked). The Cantucci biscuit from Tuscany , the almond biscotti most widely recognised, is documented in Italian domestic cookery from the nineteenth century. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: the almond biscuit section documents a twice-baked hard almond biscuit with the same method — log, first bake, slice, second bake. The recipe here follows the public-domain twice-baked method with blanched almonds.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "30 biscotti",
+    "prepMinutes": 20,
+    "cookMinutes": 50,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "totalMinutes": 85,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Shape extra logs alongside the first batch and freeze unbaked. Defrost fully before the first bake.",
+    "makeAheadNotes": "Biscotti keep in an airtight tin for up to 4 weeks. They are at their best after 2–3 days once fully dried.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "snack",
+    "mood": ["specialOccasion", "slowSunday"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 250,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven for the first bake at 180°C fan; reduce to 160°C fan for the second bake",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "serrated-knife", "isOptional": false, "notes": "Essential for slicing the partially baked log without crumbling — a smooth blade will shatter it." },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "double-baking",
+      "term": "Double baking",
+      "definition": "The method of baking biscotti in two stages: first as a shaped log until firm enough to slice (about 25 minutes), then as individual slices at a lower temperature to drive out all remaining moisture (a further 20–25 minutes). The double bake produces a biscuit that is completely dry throughout with no soft centre which is what makes biscotti keep for weeks and what makes them satisfying to dunk. Slicing too early (before the log is fully set) crumbles the biscuit; slicing too late makes the crust too hard to cut cleanly."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Biscotti exist because someone wanted a biscuit that would last. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "double-baking" } }], "text": "double-baking" },
+          { "type": "text", "text": " drives out all moisture, producing a biscuit that is completely dry, hard, and keeps for up to a month in a tin. The texture is not palatably hard on its own — biscotti are made for dunking into coffee, sweet wine, or hot chocolate. The almonds stay whole through both bakes, which means each biscuit has visible chunks of nut throughout." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 30,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 175, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "baking-powder", "amount": 5, "unit": "g", "prepNote": "1 teaspoon", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": "a pinch", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 3, "unit": "each", "prepNote": "large", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vanilla-extract", "amount": 5, "unit": "ml", "prepNote": "1 teaspoon", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "almond-extract", "amount": 3, "unit": "ml", "prepNote": "½ teaspoon — do not omit", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "blanched-almonds", "amount": 175, "unit": "g", "prepNote": "whole", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make the dough" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 180°C fan. Line a large baking tray with baking paper. Whisk together the {{plain-flour}}, {{caster-sugar}}, {{baking-powder}}, and {{sea-salt-fine}} in a bowl. Beat the {{eggs}} with the {{vanilla-extract}} and {{almond-extract}}, then stir into the dry ingredients until a stiff, sticky dough forms. Work in the {{blanched-almonds}} whole almonds — the dough will be quite firm. Wet your hands to prevent sticking." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Shape and first bake, 25 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Divide the dough into two portions. Shape each into a log about 25 cm long and 7 cm wide on the baking tray, leaving room between them. With wet hands, smooth the tops and sides. Bake for 22–25 minutes until the logs are golden, set, and cracked on top — they should feel firm when pressed but not completely hard. Remove from the oven and leave to cool on the tray for 15 minutes. Reduce the oven to 160°C fan." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Slice and second bake, 20–25 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Using a serrated knife, slice each log on the diagonal into 1 cm thick slices — press firmly and use a sawing motion. Lay the slices cut-side down on the baking tray in a single layer. Bake at 160°C fan for 10–12 minutes, then flip each biscotti over and bake for a further 10–12 minutes until dry and pale gold on both cut faces. They will harden further as they cool. Transfer to a rack and cool completely before storing. Store in an airtight tin for up to 4 weeks." }]
+      }
+    ]
+  }
+}

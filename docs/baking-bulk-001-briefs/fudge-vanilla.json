@@ -1,0 +1,120 @@
+{
+  "slug": "fudge-vanilla",
+  "title": "Vanilla fudge",
+  "subtitle": "Soft, creamy fudge beaten to a smooth set",
+  "excerpt": "Thirty-six pieces of vanilla fudge: caster sugar, full-fat condensed milk, butter, and milk cooked to 116°C (soft ball stage), then beaten off the heat until the fudge thickens and loses its gloss, poured into a lined tin, and left to set. The beating stage determines the final texture.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "sweets-confectionery",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: the cream candy section documents a sugar and cream confection cooked to the soft ball stage (when a drop of syrup forms a soft, malleable ball in cold water), then beaten until set. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: the sugar confection chapter documents the soft ball stage as the correct stopping point for cream-based sweets that should set soft and smooth. Vanilla fudge using condensed milk and butter is documented in British domestic confectionery from the Edwardian period onward.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "36 pieces",
+    "prepMinutes": 10,
+    "cookMinutes": 25,
+    "restingMinutes": 120,
+    "chillingMinutes": 0,
+    "totalMinutes": 155,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze cut pieces in a bag layered with baking paper for up to 3 months.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Fudge keeps in an airtight tin at room temperature for 2 weeks.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["specialOccasion", "party", "kidFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 116,
+      "bakeTemperatureNote": "target: soft ball stage (116°C) — use a sugar thermometer",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "saucepan-large", "isOptional": false, "notes": "Heavy-based, deep saucepan — the mixture boils and foams." },
+    { "slug": "sugar-thermometer", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "square-baking-tin", "isOptional": false, "notes": "20 × 20 cm, greased and lined." },
+    { "slug": "baking-paper", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "soft-ball-stage",
+      "term": "Soft ball stage",
+      "definition": "The point in sugar cooking when the syrup reaches 112–116°C. To test without a thermometer: drop a small amount of syrup into a cup of cold water. At soft ball stage, the syrup forms a soft, pliable ball that flattens between your fingers when pressed. Below this temperature, the syrup is too soft to set; above it, the sugar will crystallise too fast during beating and produce a grainy rather than smooth fudge. A sugar thermometer is more reliable than the cold-water test."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fudge is a two-stage process: cook to temperature, then beat until set. The cooking stage brings the sugar to the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "soft-ball-stage" } }], "text": "soft ball stage" },
+          { "type": "text", "text": " at 116°C. The beating stage (done off the heat) forces the sugar to crystallise in tiny crystals that give fudge its smooth, melt-in-the-mouth texture. Beat too little and the fudge stays sticky. Beat too long and it sets in the saucepan before you can pour it into the tin." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Hot sugar is extremely dangerous",
+          "body": "Boiling sugar syrup reaches over 116°C and sticks to skin. Keep children away from the hob during cooking. Use a deep saucepan to prevent splashing. If any syrup splashes onto skin, run immediately under cold water for at least 10 minutes. Do not stir with your finger at any point."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 36,
+          "items": [
+            { "ingredientSlug": "caster-sugar", "amount": 450, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "condensed-milk", "amount": 397, "unit": "g", "prepNote": "1 standard tin (full-fat)", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cut into cubes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vanilla-extract", "amount": 10, "unit": "ml", "prepNote": "2 teaspoons", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": "a pinch — sharpens the sweetness", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Cook to 116°C" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Grease and line a 20 × 20 cm tin. Combine the {{caster-sugar}}, {{condensed-milk}}, {{unsalted-butter}}, {{whole-milk}}, and {{sea-salt-fine}} in a large, heavy-based saucepan over low heat. Stir continuously until the sugar has dissolved and the butter has melted — do not let it boil before the sugar dissolves or the fudge will be grainy. Once dissolved, bring to a steady boil over medium heat, stirring constantly to prevent the mixture catching on the base. Cook, stirring, until the temperature on a sugar thermometer reads 116°C. This takes 15–20 minutes." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Beat until set" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Remove from the heat and stir in the {{vanilla-extract}}. Leave to cool for 5 minutes without stirring. Beat vigorously with a wooden spoon for 8–12 minutes until the fudge thickens, loses its gloss, and becomes lighter in colour — the moment you notice it is difficult to stir and has taken on a slightly grainy texture, pour it immediately into the prepared tin. Work quickly." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Set and cut" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Smooth the surface with the back of a spoon. Score into 36 squares while still warm — the fudge will crack if you try to cut it once fully set. Leave at room temperature for 2 hours to set completely, then cut along the score lines and remove from the tin. Store in an airtight tin, separated by baking paper." }]
+      }
+    ]
+  }
+}

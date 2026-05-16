@@ -1,0 +1,128 @@
+{
+  "slug": "pear-frangipane-tart",
+  "title": "Pear and frangipane tart",
+  "subtitle": "A sweet shortcrust case filled with almond cream and topped with poached pear halves",
+  "excerpt": "A 23 cm tart: a sweet shortcrust case blind-baked until pale, filled with frangipane made from butter, sugar, eggs, and ground almonds, then topped with halved Conference pears and baked until the almond cream is puffed and golden around the pears. Serves 8.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: the almond pastry section documents a sweet shortcrust tart case filled with a creamed butter and ground almond mixture, topped with fruit. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: the almond cream section documents the creamed almond filling baked in a blind-baked pastry case with fresh or poached fruit arranged over it. The pear and almond combination is documented in British domestic baking literature from the Victorian period; the recipe here follows the public-domain method.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 45,
+    "restingMinutes": 20,
+    "chillingMinutes": 30,
+    "totalMinutes": 135,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The blind-baked case can be made a day ahead. The frangipane can be made and refrigerated up to 2 days ahead. Assemble and bake on the day.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["specialOccasion", "dateNight", "slowSunday"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "fan oven; blind bake at 190°C fan, then reduce to 180°C fan for the filled bake",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "loose-bottomed-tart-tin", "isOptional": false, "notes": "23 cm loose-bottomed fluted tart tin." },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "baking-beans", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": true },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "frangipane",
+      "term": "Frangipane",
+      "definition": "An almond cream filling made by beating softened butter and sugar together, adding eggs one at a time, then folding in ground almonds (and a small amount of flour to stabilise). When baked, frangipane puffs and sets around the fruit placed on top, turning golden at the edges while remaining slightly dense and moist in the centre. It should taste distinctly of almond, not sugar."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pear and almond is one of the most reliable autumn flavour combinations in baking. The pear softens as it bakes, releasing juice that soaks into the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "frangipane" } }], "text": "frangipane" },
+          { "type": "text", "text": " below it, while the almond cream puffs and turns golden around the fruit. Conference pears are the right variety here: they hold their shape during baking rather than collapsing." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sweet shortcrust" },
+            { "ingredientSlug": "icing-sugar", "amount": 50, "unit": "g", "prepNote": "sifted", "isOptional": false, "groupLabel": "For the sweet shortcrust" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 2, "unit": "g", "prepNote": "a pinch", "isOptional": false, "groupLabel": "For the sweet shortcrust" },
+            { "ingredientSlug": "unsalted-butter", "amount": 125, "unit": "g", "prepNote": "cold, cut into small dice", "isOptional": false, "groupLabel": "For the sweet shortcrust" },
+            { "ingredientSlug": "egg-yolks", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "For the sweet shortcrust" },
+            { "ingredientSlug": "water", "amount": 20, "unit": "ml", "prepNote": "ice cold, 1–2 tablespoons", "isOptional": false, "groupLabel": "For the sweet shortcrust" },
+            { "ingredientSlug": "unsalted-butter", "amount": 175, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "For the frangipane" },
+            { "ingredientSlug": "caster-sugar", "amount": 175, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the frangipane" },
+            { "ingredientSlug": "eggs", "amount": 3, "unit": "each", "prepNote": "large, at room temperature", "isOptional": false, "groupLabel": "For the frangipane" },
+            { "ingredientSlug": "almond-flour", "amount": 175, "unit": "g", "prepNote": "ground almonds", "isOptional": false, "groupLabel": "For the frangipane" },
+            { "ingredientSlug": "plain-flour", "amount": 30, "unit": "g", "prepNote": "sifted — stabilises the frangipane", "isOptional": false, "groupLabel": "For the frangipane" },
+            { "ingredientSlug": "vanilla-extract", "amount": 5, "unit": "ml", "prepNote": "1 teaspoon", "isOptional": false, "groupLabel": "For the frangipane" },
+            { "ingredientSlug": "pear-conference", "amount": 4, "unit": "each", "prepNote": "ripe but firm — peeled, halved, and cored", "isOptional": false, "groupLabel": "For the topping" },
+            { "ingredientSlug": "flaked-almonds", "amount": 30, "unit": "g", "prepNote": "to scatter over the top", "isOptional": true, "groupLabel": "For the topping" },
+            { "ingredientSlug": "apricot-jam", "amount": 30, "unit": "g", "prepNote": "melted and sieved, to glaze the finished tart", "isOptional": true, "groupLabel": "For the topping" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make and chill the pastry" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the {{plain-flour}}, {{icing-sugar}}, and {{sea-salt-fine}} in a bowl. Add the {{unsalted-butter}} cold butter and rub in until the mixture resembles coarse crumbs. Mix the {{egg-yolks}} egg yolk with the {{water}} cold water and add just enough to bring the dough together. Press into a disc, wrap, and refrigerate for 30 minutes." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Blind bake the case" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 190°C fan. Roll the chilled pastry to 3 mm thick and line a 23 cm loose-bottomed tart tin, pressing it into the fluted sides. Trim the overhang. Prick the base, line with baking paper, fill with baking beans, and bake for 15 minutes. Remove the beans and paper and bake for a further 8 minutes until the base is dry and just beginning to colour. Reduce the oven to 180°C fan." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make the frangipane" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Beat the {{unsalted-butter}} softened butter and {{caster-sugar}} until pale and fluffy, about 4 minutes. Add the {{eggs}} eggs one at a time, beating well after each. Add {{vanilla-extract}}. Fold in the {{almond-flour}} ground almonds and {{plain-flour}} sifted flour until combined. The frangipane should be smooth and hold its shape." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Fill and bake, 35–40 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Spread the frangipane evenly in the blind-baked case. Arrange the halved {{pear-conference}} Conference pears cut-side down on the frangipane, pressing them in gently. Scatter {{flaked-almonds}} flaked almonds over the top if using. Bake at 180°C fan for 35–40 minutes, until the frangipane is puffed, golden, and set firm when you gently shake the tin — no wobble. Cool in the tin for 20 minutes before releasing. If using the {{apricot-jam}} apricot glaze, brush it over the warm tart for a shine." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "slug": "brioche-loaf",
+  "title": "Brioche loaf",
+  "subtitle": "The enriched French bread, soft enough to pull apart",
+  "excerpt": "A 900 g brioche loaf made with 500 g strong flour, five eggs, and 250 g of butter worked in cold. The dough chills overnight so the butter stays in suspension; the result is the springy, golden crumb that makes brioche worth the effort.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The enriched French pain brioche is documented in Mrs Rundell, A New System of Domestic Cookery (1806), Project Gutenberg: her receipts for rich French bread use eggs, butter, and a small amount of yeast worked into a stiff dough and proved slowly. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: Acton's French rolls section develops the enriched yeasted dough with cream and butter, noting the cold-retard method for kitchen convenience. The baker's percentages here (50% egg and 50% butter relative to flour) follow the classic brioche riche formula documented across nineteenth-century French and English baking literature.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (900 g tin)",
+    "prepMinutes": 40,
+    "cookMinutes": 35,
+    "restingMinutes": 30,
+    "chillingMinutes": 480,
+    "totalMinutes": 585,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice the cooled loaf, freeze flat in a bag for up to 3 months. Toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough must be made the day before and chilled overnight before shaping and baking.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "breakfast",
+    "mood": ["slowSunday", "specialOccasion"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 50,
+      "saltPercent": 2,
+      "yeastPercent": 1.6,
+      "levainPercent": null,
+      "bulkFermentMinutes": 90,
+      "proofMinutes": 90,
+      "retardingMinutes": 480,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "conventional oven, middle shelf",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "stand-mixer", "isOptional": false, "notes": "Essential — the butter incorporation takes 15 minutes of machine mixing; by hand is not practical." },
+    { "slug": "dough-hook", "isOptional": false },
+    { "slug": "loaf-tin", "isOptional": false, "notes": "900 g (2 lb) tin, buttered." },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "cling-film", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "gluten-window",
+      "term": "Gluten window",
+      "definition": "A test for gluten development. Pull a small piece of dough thin enough to see light through without it tearing. If it stretches to a translucent membrane, the dough is ready. If it tears, keep mixing."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Brioche is the bread that keeps reappearing in classic baking literature under different names (rich French bread, pain de luxe, Vienna bread) but the idea is consistent: a yeasted dough so loaded with butter and eggs that it sits somewhere between bread and cake. The enrichment makes it difficult. The butter has to go in gradually, cold, against a dough that's already developed its gluten structure. Impatience produces a greasy mess. Patience produces a loaf with a dark, glossy crust, a soft, pillowy crumb, and a keeping quality that plain white bread can't match." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The overnight cold retard is the practical route. Mix the dough in the afternoon, incorporate the butter, let the dough rise once, then chill it overnight. Cold brioche dough is firm enough to shape cleanly. The bake takes 35 minutes in a conventional oven; the crust should be deep mahogany and the loaf should pull away from the tin sides before you consider it done." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Stand mixer is not optional",
+          "body": "The butter incorporation requires 12–15 minutes of sustained beating at medium speed. By hand this is possible in theory and exhausting in practice. If you have a stand mixer with a dough hook, use it. The machine produces a more even result."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 8, "unit": "g", "prepNote": "fast-action dried yeast", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "caster-sugar", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "eggs", "amount": 5, "unit": "each", "prepNote": "large, at room temperature", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "whole-milk", "amount": 60, "unit": "ml", "prepNote": "lukewarm", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 250, "unit": "g", "prepNote": "cold, cut into 1 cm cubes", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "egg-yolks", "amount": 1, "unit": "each", "prepNote": "beaten with a splash of milk, for the glaze", "isOptional": false, "groupLabel": "To glaze" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The butter must be cold when it goes in. Soft or melted butter turns the dough greasy and ruins the emulsification. Cut it into cubes and return it to the fridge if your kitchen is warm." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Mix and develop" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Weigh {{strong-bread-flour}} strong bread flour into the stand mixer bowl. Add {{yeast-fast-action}} fast-action yeast to one side and {{sea-salt-fine}} fine sea salt and {{caster-sugar}} caster sugar to the other side (the salt and sugar both inhibit yeast on direct contact — keep them apart until the liquids go in). Add the {{eggs}} eggs and {{whole-milk}} lukewarm milk. Mix on low with the dough hook until a shaggy dough forms, about 2 minutes, then increase to medium and knead for 8 minutes. The dough should be smooth and pulling cleanly from the bowl sides. If it sticks continuously, add a tablespoon of flour; if it looks dry, add a teaspoon of milk." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Incorporate the butter" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "With the machine running on medium, add the {{unsalted-butter}} cold butter cubes a few at a time, waiting until each addition has fully disappeared into the dough before adding the next. The whole process takes 12–15 minutes. The dough will look shaggy and greasy halfway through; keep going. When all the butter is incorporated, increase the speed to medium-high for a final 2 minutes. Check the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gluten-window" } }], "text": "gluten window" },
+          { "type": "text", "text": ": pull a small piece of dough thin. It should stretch to a translucent membrane without tearing. If it tears, knead for a further 3 minutes and check again." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bulk ferment, 90 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Transfer the dough to a lightly floured bowl, cover with cling film, and leave at room temperature for 90 minutes. The dough should increase by about half — it won't double in this time because of the butter and sugar load." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Cold retard, overnight" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Deflate the dough with a few folds, re-cover tightly with cling film, and refrigerate for 8 to 12 hours. The cold firms the butter and develops the flavour. The dough should roughly double in volume overnight in the fridge." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Shape" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Butter a 900 g (2 lb) loaf tin generously. Turn the cold dough onto a lightly floured surface and flatten gently into a rectangle roughly the width of the tin. Roll it up tightly from the short end — this tension in the roll holds the shape as it proves. Place seam-side down in the tin. The dough should fill the tin about two-thirds of the way up; it will rise to the top during proving." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Final proof, 90 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover loosely and leave at room temperature for 90 minutes, until the dough has risen to the rim of the tin and feels airy when pressed lightly. Preheat the oven to 190°C conventional (not fan — fan dries the crust too fast for brioche)." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Glaze and bake, 30–35 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Brush the surface gently with the egg-yolk glaze, being careful not to deflate the dough by pressing the brush hard. Bake for 30–35 minutes, until the crust is deep mahogany and the loaf has pulled away from the sides of the tin. An internal probe should read 92–94°C when the loaf is done. If the top is browning too fast before 25 minutes, lay a sheet of foil loosely over the top." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Cool" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Turn out onto a rack immediately and leave for at least 30 minutes before slicing. Cutting a hot brioche compresses the crumb. The loaf keeps well for 3 days wrapped at room temperature — the butter content slows staling." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Troubleshooting" }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When things go wrong",
+          "intro": "Brioche fails in three predictable ways.",
+          "items": [
+            { "symptom": "Dough is greasy and won't come together", "cause": "Butter added too quickly, or butter was too warm.", "fix": "If the dough is a greasy mass, chill it in the fridge for 20 minutes and then beat again on medium. Cold firms the butter back into emulsion. For next time: cold butter, added slowly, one or two cubes at a time." },
+            { "symptom": "Loaf didn't rise in the tin", "cause": "Dough was over-chilled and tight, or the yeast was old.", "fix": "Cold dough rises slowly. Give it 2 hours at room temperature before concluding it's failed. Check yeast expiry; fresh fast-action yeast keeps 12 months sealed." },
+            { "symptom": "Dense, heavy crumb", "cause": "Gluten underdeveloped before the butter was added, or the loaf was underproofed.", "fix": "The dough should pass the gluten window test before any butter goes in. And the proved loaf should feel well and truly airy — press it; it should spring back slowly, not snap back immediately." }
+          ]
+        }
+      }
+    ]
+  }
+}
