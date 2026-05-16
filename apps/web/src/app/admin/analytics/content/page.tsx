@@ -255,7 +255,7 @@ function RangePicker({ active }: { active: '7d' | '30d' | '90d' }) {
       {opts.map((o) => {
         const isActive = o.key === active
         return (
-          <a
+          <Link
             key={o.key}
             href={`/admin/analytics/content?range=${o.key}`}
             style={{
@@ -272,7 +272,7 @@ function RangePicker({ active }: { active: '7d' | '30d' | '90d' }) {
             }}
           >
             {o.label}
-          </a>
+          </Link>
         )
       })}
     </nav>

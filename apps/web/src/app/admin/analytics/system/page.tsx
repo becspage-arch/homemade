@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { prisma } from '@homemade/db'
 import { dailyMetric, lastRollupRun } from '@/lib/analytics-queries'
 import { ChartCard, KpiCard } from '@/components/admin/analytics/chart-card'
@@ -125,15 +126,15 @@ export default async function SystemAnalyticsPage() {
           }}
         >
           <li>
-            <a href="/admin/system/jobs" style={{ color: CHART_COLORS.text }}>
+            <Link href="/admin/system/jobs" style={{ color: CHART_COLORS.text }}>
               /admin/system/jobs
-            </a>{' '}
+            </Link>{' '}
             — re-run the analytics rollup for a date range.
           </li>
           <li>
-            <a href="/admin/system/errors" style={{ color: CHART_COLORS.text }}>
+            <Link href="/admin/system/errors" style={{ color: CHART_COLORS.text }}>
               /admin/system/errors
-            </a>{' '}
+            </Link>{' '}
             — Sentry-style error feed (existing).
           </li>
           <li>

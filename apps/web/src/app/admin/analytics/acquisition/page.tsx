@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { prisma } from '@homemade/db'
 import { ChartCard } from '@/components/admin/analytics/chart-card'
 import { BarRank } from '@/components/admin/analytics/bar-rank'
@@ -181,7 +182,7 @@ function RangePicker({ active }: { active: RangeKey }) {
       {RANGES.map((r) => {
         const isActive = r.key === active
         return (
-          <a
+          <Link
             key={r.key}
             href={`/admin/analytics/acquisition?range=${r.key}`}
             style={{
@@ -198,7 +199,7 @@ function RangePicker({ active }: { active: RangeKey }) {
             }}
           >
             {r.label}
-          </a>
+          </Link>
         )
       })}
     </nav>

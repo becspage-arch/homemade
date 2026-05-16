@@ -11,7 +11,7 @@ export default async function CreatorAnalyticsPage() {
   const since7 = daysAgo(6)
   const since30 = daysAgo(29)
   const since90 = daysAgo(89)
-  const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)
+  const thirtyDaysAgo = daysAgo(29)
 
   const [appsLast7, appsLast30, appsLast90, allDecided, activeCreators, perCreator] =
     await Promise.all([

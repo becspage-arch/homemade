@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import Link from 'next/link'
 import { CHART_FONTS, CHART_COLORS } from './chart-theme'
 
 /**
@@ -185,8 +186,8 @@ export function KpiCard({
 
   if (!href) return inner
   return (
-    <a href={href} style={{ display: 'block', textDecoration: 'none' }}>
+    <Link href={href} style={{ display: 'block', textDecoration: 'none' }}>
       {inner}
-    </a>
+    </Link>
   )
 }
