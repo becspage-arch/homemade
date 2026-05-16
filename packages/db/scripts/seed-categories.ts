@@ -300,9 +300,20 @@ async function main(): Promise<void> {
 
   for (const row of CATEGORIES) {
     const publishedCount = publishedBySlug.get(row.slug) ?? 0
-    const isPublicVisible = publishedCount >= PUBLIC_VISIBILITY_THRESHOLD
-
     const existing = existingCategories.find((c) => c.slug === row.slug)
+
+    // Visibility on seed:
+    //   - Existing shipped categories: leave the existing flag alone (so Cooking
+    //     / Baking / Mindset stay public regardless of how many tutorials are
+    //     PUBLISHED at any given moment — they're the spine).
+    //   - New categories: auto-compute from the live published count, so the
+    //     row lands private until autopilot has dropped 10 tutorials in.
+    // The publish-path auto-flip (`maybeFlipCategoryVisibility`) only ever
+    // flips false → true, so once a new category crosses the threshold it
+    // stays public even if rows get unpublished.
+    const isPublicVisible = row.isExistingShipped
+      ? existing?.isPublicVisible ?? true
+      : publishedCount >= PUBLIC_VISIBILITY_THRESHOLD
 
     if (!existing) {
       if (dryRun) {
