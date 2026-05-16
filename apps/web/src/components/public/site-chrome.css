@@ -489,3 +489,23 @@
 .public-error-boundary-link:hover {
   color: var(--color-charcoal);
 }
+
+.public-error-boundary-digest {
+  margin-top: 20px;
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--color-linen-grey);
+  text-transform: uppercase;
+}
+
+.public-error-boundary-digest code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--color-charcoal);
+  background: var(--color-linen-cream);
+  padding: 1px 6px;
+  border-radius: 3px;
+}

@@ -1,6 +1,9 @@
 'use client'
 
 import { createContext, useContext, useMemo, useState, type ReactNode } from 'react'
+import type { ScaleIngredient } from './scale-extract'
+
+export type { ScaleIngredient } from './scale-extract'
 
 /**
  * Recipe-scale context. Owns the current `multiplier` (1×, 2×, 4×, custom)
@@ -14,13 +17,13 @@ import { createContext, useContext, useMemo, useState, type ReactNode } from 're
  *
  * On technique pages (no recipe) the provider is absent and `useScale()`
  * returns `null`, so `ScaleToken` falls back to its literal text.
+ *
+ * Note: the server-side `extractScaleIngredients()` extractor lives in
+ * `./scale-extract.ts` rather than this file. Functions exported from a
+ * `'use client'` module are treated as client functions by Next 16, so
+ * server components can't invoke them; the extractor must stay in a
+ * server-safe module.
  */
-
-export interface ScaleIngredient {
-  slug: string
-  amount: number | null
-  unit: string | null
-}
 
 interface ScaleContextValue {
   multiplier: number
@@ -127,33 +130,7 @@ function formatAmount(value: number): string {
   return value.toFixed(2).replace(/\.?0+$/, '')
 }
 
-/**
- * Walks a TipTap doc and pulls every `ingredientsList` row's
- * `{ slug, amount, unit }` for the ScaleProvider. Pure data — safe to run
- * in a server component. Skips rows without a slug.
- */
-export function extractScaleIngredients(doc: unknown): ScaleIngredient[] {
-  const out: ScaleIngredient[] = []
-  function walk(node: unknown): void {
-    if (!node || typeof node !== 'object') return
-    const n = node as { type?: string; attrs?: Record<string, unknown>; content?: unknown[] }
-    if (n.type === 'ingredientsList' && n.attrs && typeof n.attrs === 'object') {
-      const attrs = n.attrs as Record<string, unknown>
-      const items = Array.isArray(attrs.items) ? (attrs.items as unknown[]) : []
-      for (const raw of items) {
-        if (!raw || typeof raw !== 'object') continue
-        const row = raw as Record<string, unknown>
-        const slug = typeof row.ingredientSlug === 'string' ? row.ingredientSlug.trim() : ''
-        if (!slug) continue
-        const amount = typeof row.amount === 'number' ? row.amount : null
-        const unit = typeof row.unit === 'string' && row.unit.trim() ? row.unit.trim() : null
-        out.push({ slug, amount, unit })
-      }
-    }
-    if (Array.isArray(n.content)) {
-      for (const child of n.content) walk(child)
-    }
-  }
-  walk(doc)
-  return out
-}
+// `extractScaleIngredients` lives in `./scale-extract.ts` so server
+// components can import it. Re-export it through that file's barrel so
+// existing client-side imports keep working too.
+export { extractScaleIngredients } from './scale-extract'

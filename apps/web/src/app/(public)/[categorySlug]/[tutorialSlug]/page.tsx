@@ -4,10 +4,11 @@ import type { Metadata } from 'next'
 import * as Sentry from '@sentry/nextjs'
 import { prisma, TutorialStatus, UserProjectStatus } from '@homemade/db'
 import { TutorialContent } from '@/components/public/tutorial-content/tutorial-content'
-import {
-  ScaleProvider,
-  extractScaleIngredients,
-} from '@/components/public/tutorial-content/scale-context'
+import { ScaleProvider } from '@/components/public/tutorial-content/scale-context'
+// Imported from the server-safe sibling module rather than `scale-context`
+// itself — that file is marked `'use client'`, which would make this
+// extractor a client-only reference and crash the server render.
+import { extractScaleIngredients } from '@/components/public/tutorial-content/scale-extract'
 import { TutorialChrome } from '@/components/public/tutorial-chrome'
 import type { TipTapNode } from '@/components/public/tutorial-content/types'
 import { loadContentRefs } from '@/lib/tutorial-refs'
