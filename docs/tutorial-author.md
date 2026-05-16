@@ -858,16 +858,19 @@ chickpea-flour | Chickpea flour | g | v,V,gf,df,nf | gram flour, besan
 coconut-flour | Coconut flour | g | v,V,gf,df,nf | -
 cornflour | Cornflour | g | v,V,gf,df,nf | cornstarch, arrowroot
 einkorn-flour | Einkorn flour | g | v,V,df,nf | -
+filo-pastry | Filo pastry | sheet | v,V,df,nf | phyllo pastry
 fine-semolina | Fine semolina | g | v,V,df,nf | semolina flour, rimacinata
 khorasan-flour | Khorasan flour | g | v,V,df,nf | Kamut flour
 masa-harina | Masa harina | g | v,V,gf,df,nf | -
 oat-flour | Oat flour | g | v,V,df,nf | -
 plain-flour | Plain flour | g | v,V,df,nf | all-purpose flour, AP flour
 polenta | Polenta | g | v,V,gf,df,nf | cornmeal, maize meal
+puff-pastry | Puff pastry | g | v,nf | ready-rolled puff pastry
 rice-flour | Rice flour | g | v,V,gf,df,nf | white rice flour
 rye-flour | Rye flour | g | v,V,df,nf | -
 self-raising-flour | Self-raising flour | g | v,V,df,nf | self-rising flour
 semolina | Semolina | g | v,V,df,nf | durum semolina
+shortcrust-pastry | Shortcrust pastry | g | v,nf | -
 spelt-flour | Spelt flour | g | v,V,df,nf | -
 strong-bread-flour | Strong bread flour | g | v,V,df,nf | bread flour, high-protein flour
 tapioca-flour | Tapioca flour | g | v,V,gf,df,nf | tapioca starch
@@ -876,18 +879,30 @@ wholemeal-flour | Wholemeal flour | g | v,V,df,nf | whole wheat flour, wholewhea
 
 ### grain
 arborio-rice | Arborio rice | g | V,v,gf,df,nf | -
+bagel | Bagel | each | v,V,df,nf | -
+baguette | Baguette | each | v,V,df,nf | french bread, french stick
 basmati-rice | Basmati rice | g | V,v,gf,df,nf | -
 bread | Bread | slice | V,v,df,nf | loaf
 breadcrumbs-dried | Dried breadcrumbs | g | V,v,df,nf | -
 brown-rice | Brown rice | g | V,v,gf,df,nf | -
 bulgur-wheat | Bulgur wheat | g | V,v,df,nf | bulgar, cracked wheat
+caramelised-biscuit | Caramelised biscuit | each | v,V,df,nf | speculoos, Biscoff, Biscoff biscuit, Lotus biscuit, speculaas
 carnaroli-rice | Carnaroli rice | g | V,v,gf,df,nf | -
+chocolate-sandwich-biscuit | Chocolate sandwich biscuit | each | v,V,df,nf | Oreo, Oreos, cookies and cream biscuit
+corn-tortilla | Corn tortilla | each | v,V,gf,df,nf | -
+cornflakes | Cornflakes | g | v,V,df,nf | -
 couscous | Couscous | g | V,v,df,nf | -
+croissant | Croissant | each | v,nf | -
+digestive-biscuit | Digestive biscuit | each | v,nf | McVities digestive
 giant-couscous | Giant couscous | g | V,v,df,nf | mograbiah, pearl couscous
+graham-cracker | Graham cracker | each | v,nf | -
+granola | Granola | g | v,V,df | -
 jasmine-rice | Jasmine rice | g | V,v,gf,df,nf | -
 jumbo-oats | Jumbo oats | g | V,v,df,nf | -
 lasagne-sheets | Lasagne sheets | sheet | V,v,df,nf | lasagna sheets
 long-grain-rice | Long-grain rice | g | V,v,gf,df,nf | -
+muesli | Muesli | g | v,V,df | -
+naan-bread | Naan bread | each | v,nf | naan
 noodles-egg | Egg noodles | g | v,df,nf | -
 noodles-rice | Rice noodles | g | V,v,gf,df,nf | rice vermicelli
 noodles-soba | Soba noodles | g | V,v,df,nf | -
@@ -897,18 +912,25 @@ panko | Panko breadcrumbs | g | V,v,df,nf | -
 pasta-dried | Dried pasta | g | V,v,df,nf | -
 pasta-fresh | Fresh pasta | g | v,df,nf | -
 pearl-barley | Pearl barley | g | V,v,df,nf | -
+pitta-bread | Pitta bread | each | v,V,df,nf | pita bread
 porridge-oats | Porridge oats | g | V,v,df,nf | rolled oats, old-fashioned oats
 quinoa | Quinoa | g | V,v,gf,df,nf | -
+rice-cake | Rice cake | each | v,V,gf,df,nf | -
+rice-krispies | Rice Krispies | g | v,V,df,nf | rice cereal, puffed rice cereal
+shortbread-biscuit | Shortbread biscuit | each | v,nf | -
 sushi-rice | Sushi rice | g | V,v,gf,df,nf | short-grain Japanese rice
+tortilla-wrap | Tortilla wrap | each | v,V,df,nf | flour tortilla, tortilla
 wild-rice | Wild rice | g | V,v,gf,df,nf | -
 
 ### dairy
+almond-milk | Almond milk | ml | v,V,df | -
 brie | Brie | g | v,gf,nf | -
 buttermilk | Buttermilk | ml | v,nf | cultured buttermilk
 camembert | Camembert | g | v,gf,nf | -
 cheddar | Cheddar | g | v,gf,nf | mature cheddar, tasty cheese
 clotted-cream | Clotted cream | g | v,gf,nf | Cornish cream, Devon cream
 comte | Comté | g | v,gf,nf | comte
+condensed-milk | Condensed milk | g | v,gf,nf | sweetened condensed milk
 cottage-cheese | Cottage cheese | g | v,gf,nf | -
 cream-cheese | Cream cheese | g | v,gf,nf | soft cheese, Philadelphia
 creme-fraiche | Crème fraîche | g | v,gf,nf | -
@@ -917,6 +939,7 @@ egg-whites | Egg whites | each | v,gf,df,nf | -
 egg-yolks | Egg yolks | each | v,gf,df,nf | -
 eggs | Eggs | each | v,gf,df,nf | hen eggs, chicken eggs
 emmental | Emmental | g | v,gf,nf | Swiss cheese
+evaporated-milk | Evaporated milk | ml | v,gf,nf | -
 feta | Feta | g | v,gf,nf | -
 ghee | Ghee | g | v,gf,nf | clarified butter
 goats-cheese | Goat's cheese | g | v,gf,nf | chèvre
@@ -928,6 +951,7 @@ halloumi | Halloumi | g | v,gf,nf | -
 mascarpone | Mascarpone | g | v,gf,nf | -
 mozzarella | Mozzarella | g | v,gf,nf | cow mozzarella
 mozzarella-di-bufala | Mozzarella di bufala | g | v,gf,nf | buffalo mozzarella, fresh mozzarella
+oat-milk | Oat milk | ml | v,V,df,nf | -
 paneer | Paneer | g | v,gf,nf | -
 parmesan | Parmesan | g | gf,nf | Parmigiano-Reggiano, parmigiano
 pecorino-romano | Pecorino Romano | g | gf,nf | pecorino
@@ -940,6 +964,7 @@ semi-skimmed-milk | Semi-skimmed milk | ml | v,nf | 2% milk, green-top milk
 single-cream | Single cream | ml | v,gf,nf | light cream, pouring cream
 skimmed-milk | Skimmed milk | ml | v,nf | skim milk, red-top milk, fat-free milk
 soured-cream | Soured cream | g | v,gf,nf | sour cream
+soya-milk | Soya milk | ml | v,V,df,nf | soy milk
 stilton | Stilton | g | v,gf,nf | blue stilton
 unsalted-butter | Unsalted butter | g | v,gf,nf | sweet butter
 whipping-cream | Whipping cream | ml | v,gf,nf | -
@@ -1125,12 +1150,16 @@ cherries | Cherries | g | v,V,gf,df,nf | -
 clementine | Clementine | each | v,V,gf,df,nf | satsuma, mandarin
 coconut-cream | Coconut cream | ml | v,V,gf,df,nf | -
 coconut-desiccated | Desiccated coconut | g | v,V,gf,df,nf | shredded coconut
+coconut-flakes | Coconut flakes | g | v,V,gf,df,nf | -
 coconut-fresh | Fresh coconut | each | v,V,gf,df,nf | -
 coconut-milk | Coconut milk | ml | v,V,gf,df,nf | -
 currants | Currants | g | v,V,gf,df,nf | -
 damsons | Damsons | g | v,V,gf,df,nf | -
 dates-medjool | Medjool dates | each | v,V,gf,df,nf | -
+desiccated-coconut | Desiccated coconut | g | v,V,gf,df,nf | shredded coconut
 dried-apricots | Dried apricots | g | v,V,gf,df | -
+dried-blueberries | Dried blueberries | g | v,V,gf,df,nf | -
+dried-cranberries | Dried cranberries | g | v,V,gf,df,nf | Craisins
 figs | Figs | each | v,V,gf,df,nf | -
 gooseberries | Gooseberries | g | v,V,gf,df,nf | -
 grapefruit | Grapefruit | each | v,V,gf,df,nf | -
@@ -1138,9 +1167,12 @@ grapes | Grapes | g | v,V,gf,df,nf | -
 lemon | Lemon | each | v,V,gf,df,nf | -
 lime | Lime | each | v,V,gf,df,nf | -
 mango | Mango | each | v,V,gf,df,nf | -
+mango-frozen | Frozen mango | g | v,V,gf,df,nf | -
+mixed-frozen-berries | Mixed frozen berries | g | v,V,gf,df,nf | frozen berry mix
 nectarines | Nectarines | each | v,V,gf,df,nf | -
 orange | Orange | each | v,V,gf,df,nf | -
 passion-fruit | Passion fruit | each | v,V,gf,df,nf | -
+passion-fruit-puree | Passion fruit purée | ml | v,V,gf,df,nf | passionfruit pulp, passionfruit purée
 peaches | Peaches | each | v,V,gf,df,nf | -
 pear | Pear | each | v,V,gf,df,nf | Conference, Comice
 pineapple | Pineapple | each | v,V,gf,df,nf | -
@@ -1196,6 +1228,7 @@ cardamom-black | Black cardamom | each | v,V,gf,df,nf | -
 cardamom-green | Green cardamom | each | v,V,gf,df,nf | cardamom pods
 cayenne | Cayenne pepper | tsp | v,V,gf,df,nf | -
 celery-salt | Celery salt | tsp | v,V,gf,df,nf | -
+chai-spice | Chai spice blend | tsp | v,V,gf,df,nf | masala chai spice
 chilli-flakes | Chilli flakes | tsp | v,V,gf,df,nf | red pepper flakes, crushed chillies
 chilli-powder | Chilli powder | tsp | v,V,gf,df,nf | chili powder
 chinese-five-spice | Chinese five spice | tsp | v,V,gf,df,nf | -
@@ -1212,7 +1245,9 @@ fennel-seeds | Fennel seeds | tsp | v,V,gf,df,nf | -
 fenugreek-leaves | Dried fenugreek leaves | tbsp | v,V,gf,df,nf | kasoori methi, kasuri methi
 fenugreek-seeds | Fenugreek seeds | tsp | v,V,gf,df,nf | methi seeds
 garam-masala | Garam masala | tsp | v,V,gf,df,nf | -
+garlic-powder | Garlic powder | tsp | v,V,gf,df,nf | granulated garlic
 ginger-ground | Ground ginger | tsp | v,V,gf,df,nf | -
+italian-seasoning | Italian seasoning | tsp | v,V,gf,df,nf | dried mixed italian herbs, mixed italian herbs, italian herb blend
 juniper-berries | Juniper berries | each | v,V,gf,df,nf | -
 kosher-salt | Kosher salt | g | v,V,gf,df,nf | -
 mace | Mace | tsp | v,V,gf,df,nf | -
@@ -1223,6 +1258,7 @@ nigella-seeds | Nigella seeds | tsp | v,V,gf,df,nf | kalonji, black onion seeds
 nutmeg-ground | Ground nutmeg | tsp | v,V,gf,df,nf | -
 nutmeg-whole | Whole nutmeg | each | v,V,gf,df,nf | -
 old-bay | Old Bay | tsp | v,V,gf,df,nf | -
+onion-powder | Onion powder | tsp | v,V,gf,df,nf | granulated onion
 paprika-hot | Hot paprika | tsp | v,V,gf,df,nf | -
 paprika-smoked | Smoked paprika | tsp | v,V,gf,df,nf | pimentón, pimenton
 paprika-sweet | Sweet paprika | tsp | v,V,gf,df,nf | Hungarian paprika
@@ -1241,8 +1277,10 @@ za-atar | Za'atar | tbsp | v,V,df,nf | zaatar
 
 ### condiment
 anchovy-paste | Anchovy paste | tsp | gf,df,nf | -
+balsamic-glaze | Balsamic glaze | tbsp | v,V,df,nf | balsamic reduction
 balsamic-vinegar | Balsamic vinegar | ml | V,v,gf,df,nf | aceto balsamico
 bouillon-powder | Bouillon powder | tsp | V,v,gf,df,nf | Marigold bouillon
+caesar-dressing | Caesar dressing | ml | - | -
 capers | Capers | tbsp | V,v,gf,df,nf | -
 cider-vinegar | Cider vinegar | ml | V,v,gf,df,nf | apple cider vinegar
 cornichons | Cornichons | each | V,v,gf,df,nf | -
@@ -1257,11 +1295,13 @@ harissa | Harissa | tbsp | V,v,gf,df,nf | -
 hoisin-sauce | Hoisin sauce | tbsp | V,v,df,nf | -
 hp-sauce | Brown sauce | tbsp | V,v,df,nf | HP sauce, daddies sauce
 ketchup | Tomato ketchup | tbsp | V,v,gf,df,nf | -
+louisiana-hot-sauce | Louisiana-style hot sauce | tsp | v,V,gf,df,nf | hot sauce, Tabasco, tabasco sauce
 malt-vinegar | Malt vinegar | ml | V,v,df,nf | brown vinegar
 marmite | Marmite | tsp | V,v,df,nf | -
 mayonnaise | Mayonnaise | tbsp | v,gf,df,nf | mayo
 miso-red | Red miso | tbsp | V,v,gf,df,nf | aka miso
 miso-white | White miso | tbsp | V,v,gf,df,nf | shiro miso
+nutritional-yeast | Nutritional yeast | g | v,V,gf,df,nf | nutritional yeast flakes, nooch
 olives-black | Black olives | g | V,v,gf,df,nf | -
 olives-green | Green olives | g | V,v,gf,df,nf | -
 olives-kalamata | Kalamata olives | g | V,v,gf,df,nf | black olives
@@ -1274,6 +1314,7 @@ soy-sauce-light | Light soy sauce | tbsp | V,v,df,nf | shoyu
 sriracha | Sriracha | tbsp | V,v,gf,df,nf | -
 stock-beef | Beef stock | ml | gf,df,nf | beef broth
 stock-chicken | Chicken stock | ml | gf,df,nf | chicken broth
+stock-cube | Stock cube | each | - | bouillon cube, OXO cube
 stock-fish | Fish stock | ml | gf,df,nf | fish fumet, fish broth
 stock-vegetable | Vegetable stock | ml | V,v,gf,df,nf | vegetable broth
 sun-dried-tomatoes | Sun-dried tomatoes | g | V,v,gf,df,nf | -
@@ -1311,6 +1352,7 @@ almonds | Almonds | g | V,v,gf,df | -
 almonds-flaked | Flaked almonds | g | V,v,gf,df | slivered almonds
 brazil-nuts | Brazil nuts | g | V,v,gf,df | -
 cashews | Cashews | g | V,v,gf,df | -
+chestnut-cooked | Cooked chestnuts | g | v,V,gf,df | vacuum-packed chestnuts
 chestnuts | Chestnuts | g | V,v,gf,df,nf | -
 hazelnuts | Hazelnuts | g | V,v,gf,df | cobnuts, filberts
 macadamia-nuts | Macadamia nuts | g | V,v,gf,df | -
@@ -1338,9 +1380,11 @@ agar-agar | Agar agar | g | V,v,gf,df,nf | -
 almond-extract | Almond extract | tsp | V,v,gf,df | -
 baking-powder | Baking powder | tsp | V,v,gf,df,nf | -
 bicarbonate-of-soda | Bicarbonate of soda | tsp | V,v,gf,df,nf | baking soda, sodium bicarbonate
+cherries-glace | Glacé cherries | g | v,V,gf,df,nf | candied cherries
 chocolate-chips | Chocolate chips | g | v,gf,nf | -
 cocoa-powder | Cocoa powder | g | V,v,gf,df,nf | unsweetened cocoa
 cream-of-tartar | Cream of tartar | tsp | V,v,gf,df,nf | potassium bitartrate
+custard-powder | Custard powder | g | v,gf,df,nf | Birds custard powder
 dark-chocolate | Dark chocolate | g | V,v,gf,nf | plain chocolate, bittersweet chocolate
 fondant-icing | Fondant icing | g | V,v,gf,df,nf | ready-to-roll icing
 food-colouring | Food colouring | tsp | V,v,gf,df,nf | gel food colour
@@ -1350,6 +1394,7 @@ glace-cherries | Glacé cherries | g | V,v,gf,df,nf | candied cherries
 icing-sugar | Icing sugar | g | V,v,gf,df,nf | powdered sugar, confectioner's sugar
 marzipan | Marzipan | g | V,v,gf,df | -
 milk-chocolate | Milk chocolate | g | v,gf,nf | -
+mincemeat | Mincemeat | g | v,nf | fruit mincemeat
 mixed-peel | Mixed peel | g | V,v,gf,df,nf | candied peel
 mixed-spice | Mixed spice | tsp | V,v,gf,df,nf | British mixed spice
 orange-blossom-water | Orange blossom water | tsp | V,v,gf,df,nf | -
@@ -1361,12 +1406,14 @@ vanilla-extract | Vanilla extract | tsp | V,v,gf,df,nf | -
 vanilla-paste | Vanilla paste | tsp | V,v,gf,df,nf | vanilla bean paste
 white-chocolate | White chocolate | g | v,gf,nf | -
 yeast-dried | Dried yeast | g | V,v,gf,df,nf | instant yeast, fast-action yeast
+yeast-fast-action | Fast-action dried yeast | g | v,V,gf,df,nf | instant yeast, easy-blend yeast, active dry yeast, rapid yeast
 yeast-fresh | Fresh yeast | g | V,v,gf,df,nf | cake yeast
 
 ### oil
 beef-dripping | Beef dripping | g | gf,df,nf | tallow
 chilli-oil | Chilli oil | tsp | V,v,gf,df,nf | rayu, chiu chow chilli oil
 coconut-oil | Coconut oil | tbsp | V,v,gf,df,nf | -
+cooking-spray | Cooking spray | ml | v,V,gf,df,nf | Frylight
 duck-fat | Duck fat | g | gf,df,nf | goose fat
 extra-virgin-olive-oil | Extra-virgin olive oil | ml | V,v,gf,df,nf | EVOO
 groundnut-oil | Groundnut oil | ml | V,v,gf,df | peanut oil
@@ -1385,11 +1432,14 @@ caster-sugar | Caster sugar | g | V,v,gf,df,nf | superfine sugar
 dark-brown-sugar | Dark brown sugar | g | V,v,gf,df,nf | soft dark brown sugar
 date-syrup | Date syrup | tbsp | V,v,gf,df,nf | silan
 demerara-sugar | Demerara sugar | g | V,v,gf,df,nf | -
+dulce-de-leche | Dulce de leche | g | v,gf,nf | boiled condensed milk, caramel sauce
 golden-syrup | Golden syrup | tbsp | V,v,gf,df,nf | Lyle's golden syrup
 granulated-sugar | Granulated sugar | g | V,v,gf,df,nf | white sugar
 honey | Honey | tbsp | v,gf,df,nf | -
+jam | Jam | g | v,V,gf,df,nf | preserve, fruit preserve
 light-brown-sugar | Light brown sugar | g | V,v,gf,df,nf | soft light brown sugar
 maple-syrup | Maple syrup | tbsp | V,v,gf,df,nf | -
+marshmallows | Marshmallows | g | gf,df,nf | -
 molasses | Molasses | tbsp | V,v,gf,df,nf | blackstrap molasses
 muscovado-dark | Dark muscovado sugar | g | V,v,gf,df,nf | -
 
@@ -1402,9 +1452,14 @@ cointreau | Cointreau | tbsp | V,v,gf,df,nf | triple sec, orange liqueur
 fortified-madeira | Madeira | ml | gf,df,nf | -
 fortified-marsala | Marsala wine | ml | gf,df,nf | -
 gin | Gin | ml | V,v,gf,df,nf | -
+irish-cream-liqueur | Irish cream liqueur | ml | v,gf,nf | Baileys, Baileys Irish Cream
+irish-whiskey | Irish whiskey | ml | v,V,gf,df,nf | -
 kirsch | Kirsch | ml | V,v,gf,df,nf | -
+limoncello | Limoncello | ml | v,V,gf,df,nf | -
 mirin | Mirin | tbsp | V,v,gf,df,nf | -
+passoa | Passoã | ml | v,V,gf,df,nf | passion fruit liqueur
 port | Port | ml | gf,df,nf | -
+prosecco | Prosecco | ml | V,v,gf,df,nf | -
 red-wine | Red wine | ml | gf,df,nf | -
 rose-wine | Rosé wine | ml | gf,df,nf | -
 rum-dark | Dark rum | ml | V,v,gf,df,nf | -
@@ -1419,14 +1474,26 @@ whisky | Whisky | ml | V,v,df,nf | whiskey, scotch
 white-wine-dry | Dry white wine | ml | gf,df,nf | -
 
 ### other
+almond-butter | Almond butter | g | v,V,gf,df | -
+apple-juice | Apple juice | ml | v,V,gf,df,nf | -
 bonito-flakes | Bonito flakes | g | gf,df,nf | katsuobushi
+caramelised-biscuit-spread | Caramelised biscuit spread | g | v,V,df,nf | Biscoff spread, Lotus spread, speculoos spread, cookie butter
+cashew-butter | Cashew butter | g | v,V,gf,df | -
+chestnut-puree | Chestnut purée | g | v,V,gf,df | sweetened chestnut spread, crème de marrons
+coffee-instant | Instant coffee | tsp | v,V,gf,df,nf | coffee granules
+cola | Cola | ml | v,V,gf,df,nf | Coca-Cola, cherry cola
+espresso-powder | Espresso powder | tsp | v,V,gf,df,nf | -
 horseradish-fresh | Fresh horseradish | g | V,v,gf,df,nf | -
 horseradish-sauce | Horseradish sauce | tsp | v,gf,nf | -
 ice | Ice | g | V,v,gf,df,nf | ice cubes
 kombu | Kombu | g | V,v,gf,df,nf | -
 nori | Nori | sheet | V,v,gf,df,nf | -
+orange-juice | Orange juice | ml | v,V,gf,df,nf | -
+pineapple-juice | Pineapple juice | ml | v,V,gf,df,nf | -
 pomegranate-molasses | Pomegranate molasses | tbsp | V,v,gf,df,nf | -
+sparkling-water | Sparkling water | ml | v,V,gf,df,nf | fizzy water, soda water
 tamarind-paste | Tamarind paste | tbsp | V,v,gf,df,nf | -
+tea-bag | Tea bag | each | v,V,gf,df,nf | -
 truffle-paste | Truffle paste | tsp | v,gf,df,nf | -
 wakame | Wakame | g | V,v,gf,df,nf | -
 wasabi | Wasabi paste | tsp | V,v,gf,df,nf | -
@@ -1483,6 +1550,7 @@ large-saucepan | Saucepan, 22 cm | large pot
 medium-saucepan | Saucepan, 18 cm | -
 pressure-cooker | Pressure cooker | -
 pudding-basin | Pudding basin | Mason Cash basin, steam-pudding bowl
+ramekins | Ramekins | ramekin
 small-saucepan | Small saucepan, 16 cm | -
 steamer-pot | Steamer pot | multi-tier steamer
 stockpot | Stockpot, 8 L | -
@@ -1606,6 +1674,7 @@ sieve | Sieve | fine-mesh sieve, strainer
 silicone-spatula | Silicone spatula | rubber spatula, scraper
 slotted-spoon | Slotted spoon | -
 soup-ladle-small | Small ladle | gravy ladle
+spatula | Spatula | turner, flipper
 spider-strainer | Spider strainer | Asian skimmer
 tin-opener | Tin opener | can opener
 tongs | Tongs | -
