@@ -1824,3 +1824,126 @@ model ProjectSchedule {
 
   @@index([tutorialId, stepNumber])
 }
+
+// ────────────────────────────────────────────────────────────────────────────
+// Self-hosted analytics — phase_analytics_self_hosted_001
+//
+// Aura-pattern adapted: every event the app fires lands here as a row, plus
+// summary tables that the nightly Inngest cron rolls up so the admin
+// dashboards never aggregate over the raw table at read time.
+//
+// Dual-fired alongside PostHog. PostHog stays for session recordings,
+// heatmaps, and ad-hoc event exploration; the dashboards under
+// /admin/analytics read from these tables.
+// ────────────────────────────────────────────────────────────────────────────
+
+model AnalyticsEvent {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+
+  /// Clerk id for signed-in events; null when the actor was signed out
+  /// at fire time. Matches the same id PostHog stores as distinctId.
+  clerkUserId String?
+
+  /// Server-issued analytics session id (homemade-session cookie). Separate
+  /// from Clerk's auth session — exists so we can stitch a single browsing
+  /// session together for funnel + drop-off views regardless of auth state.
+  sessionId String
+
+  /// Event name from `docs/analytics-taxonomy.md` — e.g. tutorial_viewed.
+  event String
+
+  /// Top-level namespace derived from the event name on insert. Cheap
+  /// pre-bucketing for category-level rollups. Examples: acquisition,
+  /// activation, engagement, content, search, creator, account, friction.
+  category String?
+
+  /// Event payload — same shape as the PostHog properties bag.
+  properties Json?
+
+  /// Page URL the event fired on (full URL).
+  url String?
+
+  /// Just the path portion of url, denormalised so per-page rollups don't
+  /// have to parse url at read time.
+  pathname String?
+
+  referrer  String?
+  userAgent String?
+
+  /// 2-letter ISO from Cloudflare CF-IPCountry header.
+  country String?
+
+  /// mobile / tablet / desktop, derived from UA at capture time.
+  deviceClass String?
+
+  /// Denormalised from User.signupCohortWeek so cohort retention queries
+  /// don't have to join across tens of millions of rows. Captured at fire
+  /// time — a cohort week is immutable once set on the user.
+  cohortWeek String?
+
+  /// Denormalised from User.acquisitionChannel / utm*. Same rationale —
+  /// channel is set once at signup and doesn't change.
+  acquisitionChannel String?
+  utmSource          String?
+  utmMedium          String?
+  utmCampaign        String?
+
+  @@index([clerkUserId, createdAt])
+  @@index([event, createdAt])
+  @@index([sessionId, createdAt])
+  @@index([category, createdAt])
+  @@index([cohortWeek, event, createdAt])
+  @@index([pathname, createdAt])
+  @@index([country, createdAt])
+  @@index([acquisitionChannel, createdAt])
+}
+
+/// Daily metric rollups. One row per (date, metric, dimension). dimension
+/// is the literal string "__total__" for the unsplit row and a "key=value"
+/// string for splits (e.g. country=GB, channel=organic, category=cooking).
+/// Using a sentinel rather than null keeps the unique constraint canonical
+/// — Postgres treats NULL as distinct in unique indexes, which would let
+/// duplicate unsplit rows slip in past Prisma's upsert path.
+model AnalyticsDailyRollup {
+  id        String   @id @default(cuid())
+  date      DateTime @db.Date
+  metric    String
+  dimension String
+  value     BigInt
+  createdAt DateTime @default(now())
+
+  @@unique([date, metric, dimension])
+  @@index([metric, date])
+}
+
+/// Per-(signupWeek, weeksAfterSignup) retention rollup. cohortSize is the
+/// total users in the cohort; retainedCount is the count active that week;
+/// retentionRate is the float ratio for fast read-side rendering of the
+/// heatmap.
+model AnalyticsCohortRollup {
+  id               String   @id @default(cuid())
+  cohortWeek       String
+  weeksAfterSignup Int
+  cohortSize       Int
+  retainedCount    Int
+  retentionRate    Float
+  createdAt        DateTime @default(now())
+
+  @@unique([cohortWeek, weeksAfterSignup])
+  @@index([cohortWeek])
+}
+
+/// Idempotency tracker for the nightly rollup cron. One row per UTC date
+/// processed; the cron skips dates already marked complete unless the
+/// admin manually triggers a backfill.
+model AnalyticsRollupRun {
+  id              String    @id @default(cuid())
+  date            DateTime  @unique @db.Date
+  startedAt       DateTime  @default(now())
+  completedAt     DateTime?
+  eventsProcessed Int       @default(0)
+  metricsWritten  Int       @default(0)
+  error           String?
+}
+

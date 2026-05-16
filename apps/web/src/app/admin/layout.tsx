@@ -72,7 +72,14 @@ const SIDEBAR_GROUPS: SidebarGroup[] = [
     items: [
       { href: '/admin/billing', label: 'Billing', minRole: UserRole.ADMIN, placeholder: true },
       { href: '/admin/marketing', label: 'Marketing', minRole: UserRole.ADMIN, placeholder: true },
-      { href: '/admin/analytics', label: 'Analytics', minRole: UserRole.ADMIN, placeholder: true },
+      { href: '/admin/analytics', label: 'Analytics — overview', minRole: UserRole.ADMIN },
+      { href: '/admin/analytics/cohorts', label: 'Analytics — cohorts', minRole: UserRole.ADMIN },
+      { href: '/admin/analytics/activation', label: 'Analytics — activation', minRole: UserRole.ADMIN },
+      { href: '/admin/analytics/content', label: 'Analytics — content', minRole: UserRole.ADMIN },
+      { href: '/admin/analytics/search', label: 'Analytics — search', minRole: UserRole.ADMIN },
+      { href: '/admin/analytics/acquisition', label: 'Analytics — acquisition', minRole: UserRole.ADMIN },
+      { href: '/admin/analytics/creator', label: 'Analytics — creator', minRole: UserRole.ADMIN },
+      { href: '/admin/analytics/system', label: 'Analytics — system', minRole: UserRole.ADMIN },
     ],
   },
   {

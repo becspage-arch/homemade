@@ -1,108 +1,215 @@
-const POSTHOG_INGEST_HOST =
-  process.env.NEXT_PUBLIC_POSTHOG_HOST ?? 'https://eu.i.posthog.com'
+import { prisma } from '@homemade/db'
+import {
+  dailyMetric,
+  metricDelta,
+  metricLatest,
+  metricByDimension,
+  daysAgo,
+  startOfUtcDay,
+  formatDelta,
+} from '@/lib/analytics-queries'
+import { KpiCard, ChartCard } from '@/components/admin/analytics/chart-card'
+import { LineTrend, Sparkline } from '@/components/admin/analytics/line-trend'
+import { BarRank } from '@/components/admin/analytics/bar-rank'
+import { CHART_COLORS } from '@/components/admin/analytics/chart-theme'
 
-// Ingestion host is `eu.i.posthog.com` / `us.i.posthog.com`; the dashboard
-// for each region drops the `.i.`.
-const POSTHOG_DASHBOARD_BASE = POSTHOG_INGEST_HOST.replace('//eu.i.', '//eu.').replace(
-  '//us.i.',
-  '//us.',
-)
+export const dynamic = 'force-dynamic'
 
-const POSTHOG_PROJECT_ID = process.env.POSTHOG_PROJECT_ID ?? null
+const COMPACT = new Intl.NumberFormat('en-GB', {
+  notation: 'compact',
+  maximumFractionDigits: 1,
+})
+const STANDARD = new Intl.NumberFormat('en-GB')
 
-const dashboardUrl = POSTHOG_PROJECT_ID
-  ? `${POSTHOG_DASHBOARD_BASE}/project/${POSTHOG_PROJECT_ID}`
-  : POSTHOG_DASHBOARD_BASE
+export default async function AnalyticsOverviewPage() {
+  // Parallel reads — every helper is a small index lookup.
+  const [
+    dau,
+    dau30d,
+    mau,
+    signups7,
+    published7,
+    bookmarks7,
+    projectsInProgress,
+    zeroResultsToday,
+    errorsThis,
+    errorsLast,
+    signupsTrend,
+    dauTrend,
+    topCategories,
+  ] = await Promise.all([
+    metricLatest('dau'),
+    dailyMetric('dau', 30),
+    metricLatest('mau'),
+    metricDelta('signups', 7),
+    metricDelta('tutorials_published', 7),
+    metricDelta('bookmarks_created', 7),
+    prisma.userProject.count({ where: { completedAt: null, abandonedAt: null } }),
+    prisma.analyticsDailyRollup.findFirst({
+      where: { metric: 'search_zero_results', dimension: '__total__', date: startOfUtcDay(new Date()) },
+    }),
+    metricDelta('errors_total', 7),
+    metricDelta('errors_total', 14).then((d) => d.previous),
+    dailyMetric('signups', 30),
+    dailyMetric('dau', 30),
+    metricByDimension(
+      'tutorials_published',
+      'category',
+      daysAgo(7),
+      startOfUtcDay(new Date()),
+      5,
+    ).catch(() => [] as Array<{ key: string; value: number }>),
+  ])
 
-const POSTHOG_CONFIGURED = Boolean(process.env.NEXT_PUBLIC_POSTHOG_KEY)
+  const zeroResultsCount = zeroResultsToday ? Number(zeroResultsToday.value) : 0
+  const errorsHighlight =
+    errorsThis.current > Math.max(1, errorsLast) * 2 ? ('warn' as const) : undefined
 
-interface Dashboard {
-  title: string
-  description: string
+  return (
+    <>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
+          gap: 14,
+          marginBottom: 32,
+        }}
+      >
+        <KpiCard
+          label="DAU today"
+          value={STANDARD.format(dau)}
+          delta={{
+            value: formatDelta(metricDeltaFromTrend(dauTrend), 7),
+            tone: deltaTone(metricDeltaFromTrend(dauTrend)),
+          }}
+        />
+        <KpiCard
+          label="MAU"
+          value={COMPACT.format(mau)}
+          delta={{ value: 'rolling 30d', tone: 'neutral' }}
+        />
+        <KpiCard
+          label="Signups (7d)"
+          value={STANDARD.format(signups7.current)}
+          delta={{ value: formatDelta(signups7.deltaPct, 7), tone: signups7.tone }}
+        />
+        <KpiCard
+          label="Published (7d)"
+          value={STANDARD.format(published7.current)}
+          delta={{ value: formatDelta(published7.deltaPct, 7), tone: published7.tone }}
+        />
+        <KpiCard
+          label="Bookmarks (7d)"
+          value={STANDARD.format(bookmarks7.current)}
+          delta={{ value: formatDelta(bookmarks7.deltaPct, 7), tone: bookmarks7.tone }}
+        />
+        <KpiCard
+          label="Projects in progress"
+          value={STANDARD.format(projectsInProgress)}
+          delta={{ value: 'live', tone: 'neutral' }}
+        />
+        <KpiCard
+          label="Zero-result searches today"
+          value={STANDARD.format(zeroResultsCount)}
+          highlight={zeroResultsCount > 50 ? 'warn' : undefined}
+          href="/admin/analytics/search"
+        />
+        <KpiCard
+          label="Errors (7d)"
+          value={STANDARD.format(errorsThis.current)}
+          delta={{ value: formatDelta(errorsThis.deltaPct, 7), tone: errorsThis.tone }}
+          highlight={errorsHighlight}
+          href="/admin/analytics/system"
+        />
+      </div>
+
+      {/* Sparkline-ish small section reusing same data — visual cue only */}
+      <section
+        style={{
+          background: CHART_COLORS.surface,
+          border: `0.5px solid ${CHART_COLORS.grid}`,
+          borderRadius: 6,
+          padding: '14px 18px',
+          marginBottom: 32,
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'baseline',
+            marginBottom: 6,
+          }}
+        >
+          <div
+            style={{
+              fontFamily: 'var(--font-lora)',
+              fontSize: 10,
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              color: CHART_COLORS.muted,
+            }}
+          >
+            DAU — last 30 days
+          </div>
+        </div>
+        <Sparkline data={dau30d} />
+      </section>
+
+      <ChartCard
+        title="Daily signups, last 30 days"
+        kpi={STANDARD.format(signupsTrend.reduce((s, p) => s + p.value, 0))}
+        delta={{ value: formatDelta(signups7.deltaPct, 7), tone: signups7.tone }}
+        description="Counts signup_completed events per UTC day."
+      >
+        <LineTrend data={signupsTrend} height={220} />
+      </ChartCard>
+
+      <ChartCard
+        title="Daily active users, last 30 days"
+        kpi={STANDARD.format(dau)}
+        description="Distinct signed-in users with any event on a UTC day."
+      >
+        <LineTrend data={dauTrend} height={220} color={CHART_COLORS.primaryDeep} />
+      </ChartCard>
+
+      {topCategories.length > 0 ? (
+        <ChartCard
+          title="Top 5 categories by content published — last 7 days"
+          description="One row per top-level category that shipped tutorials this week."
+        >
+          <BarRank data={topCategories} formatValue={(v) => STANDARD.format(v)} />
+        </ChartCard>
+      ) : null}
+
+      <p
+        style={{
+          fontFamily: 'var(--font-lora)',
+          fontSize: 11,
+          color: CHART_COLORS.muted,
+          letterSpacing: '0.15em',
+          textTransform: 'uppercase',
+          marginTop: 24,
+        }}
+      >
+        Click any KPI card to deep-dive — heatmap is on Cohorts.
+      </p>
+    </>
+  )
 }
 
-const DASHBOARDS: Dashboard[] = [
-  {
-    title: 'D1 / D7 / D30 retention by cohort week',
-    description:
-      'Retention insight on $pageview or signin_completed, broken down by signupCohortWeek.',
-  },
-  {
-    title: 'Activation funnel conversion',
-    description: 'Funnel on the activation funnel, broken down by acquisitionChannel.',
-  },
-  {
-    title: 'Tutorial performance leaderboard',
-    description:
-      'Table on tutorial_viewed with derived bookmark / completion / review rates.',
-  },
-  {
-    title: 'Search zero-results report',
-    description: 'Trend on search_query with zeroResult: true. Content-gap signal.',
-  },
-  {
-    title: 'Creator funnel',
-    description: 'Funnel from application start through first publish.',
-  },
-  {
-    title: 'Pattern test fill rate',
-    description: 'Accepted assignments vs max_testers per pattern test.',
-  },
-  {
-    title: 'Cookie consent acceptance breakdown',
-    description: 'Pie of accept-all vs necessary-only vs customised.',
-  },
-  {
-    title: 'Error boundary trigger trend',
-    description: 'Time series on error_boundary_triggered grouped by path.',
-  },
-]
+function metricDeltaFromTrend(trend: { value: number }[]): number | null {
+  if (trend.length < 14) return null
+  const half = Math.floor(trend.length / 2)
+  const first = trend.slice(0, half).reduce((s, p) => s + p.value, 0)
+  const second = trend.slice(half).reduce((s, p) => s + p.value, 0)
+  if (first === 0) return second > 0 ? 100 : null
+  return ((second - first) / first) * 100
+}
 
-export default function AdminAnalyticsPage() {
-  return (
-    <div className="admin-placeholder">
-      <h1>Analytics</h1>
-
-      {POSTHOG_CONFIGURED ? (
-        <p>
-          PostHog is live. Around fifty events flow across acquisition, activation,
-          engagement, content, search, creator program, pattern testing, project
-          lifecycle, cookie consent, account lifecycle, and friction. The full
-          catalogue lives in <code>docs/analytics-taxonomy.md</code>.
-        </p>
-      ) : (
-        <p>
-          PostHog isn’t configured in this environment yet.{' '}
-          <code>NEXT_PUBLIC_POSTHOG_KEY</code> is unset.
-        </p>
-      )}
-
-      <p style={{ marginTop: 24 }}>
-        <a
-          href={dashboardUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="admin-link"
-        >
-          Open PostHog dashboard →
-        </a>
-      </p>
-
-      <section style={{ marginTop: 32 }}>
-        <h2 style={{ fontSize: '1.1rem' }}>Dashboards to build in PostHog</h2>
-        <p style={{ marginBottom: 12 }}>
-          Events flow, but dashboards have to be built manually in the PostHog
-          UI. The pre-launch checklist tracks this. Build order isn’t strict;
-          retention and the activation funnel are the most useful first.
-        </p>
-        <ol style={{ marginTop: 12, lineHeight: 1.7, paddingLeft: 20 }}>
-          {DASHBOARDS.map((d) => (
-            <li key={d.title} style={{ marginBottom: 8 }}>
-              <strong>{d.title}</strong> — {d.description}
-            </li>
-          ))}
-        </ol>
-      </section>
-    </div>
-  )
+function deltaTone(pct: number | null): 'positive' | 'negative' | 'neutral' {
+  if (pct === null) return 'neutral'
+  if (pct > 1) return 'positive'
+  if (pct < -1) return 'negative'
+  return 'neutral'
 }

@@ -3150,3 +3150,45 @@ No schema changes. No new analytics events. No admin surface changes.
 Commit: `761e2d3` — feat(homepage): inline onboarding card, arrow-scroll rails, density compression.
 
 Out of scope: no admin overhaul beyond editorial picks (next workstream), no Capacitor / native mobile UX (next workstream), no analytics rethink, no marketing pages, no content authoring, no bulk image regeneration via paid APIs.
+
+## Self-hosted analytics — schema, dual-fire, rollups, eight admin dashboards
+
+Workstream 4 of the 2026-05-15 full UX review. Adopts the Aura pattern for our own scale: every event lands in our database alongside the existing PostHog mirror, and the admin dashboards read from summary tables a nightly Inngest cron rolls up.
+
+- **Schema migration `20260616200000_phase_analytics_self_hosted_001`** — additive. Four new tables.
+  - `AnalyticsEvent` — raw row per fired event. Columns: `clerkUserId`, `sessionId`, `event`, `category`, `properties` (JSONB), `url`, `pathname`, `referrer`, `userAgent`, `country`, `deviceClass`, `cohortWeek`, `acquisitionChannel`, `utmSource`/`utmMedium`/`utmCampaign`. Eight indexes covering the expected query shapes (per user, per event, per session, per category, per cohort+event, per path, per country, per channel).
+  - `AnalyticsDailyRollup` — one row per `(date, metric, dimension)`. `dimension` is non-null with sentinel `__total__` for the unsplit total (Postgres treats NULL as distinct in unique indexes; the sentinel keeps `prisma.upsert` honest).
+  - `AnalyticsCohortRollup` — one row per `(cohortWeek, weeksAfterSignup)` with `cohortSize`, `retainedCount`, `retentionRate`. Re-upserts on every cron run since retention can shift as data lands late.
+  - `AnalyticsRollupRun` — idempotency tracker keyed on UTC date.
+
+- **Capture pipeline.**
+  - `lib/analytics-events.ts` (new leaf module) — `EVENT_CATEGORIES` map + `categoryFor()` + `PosthogEvent` type + `ROLLUP_TOTAL_DIMENSION` sentinel. Imported by both posthog.ts and the capture API route so there's no cycle.
+  - `lib/posthog.ts` — `captureServerEvent` extended to write to `AnalyticsEvent` first, then PostHog. All ~30 existing server-side call sites dual-fire automatically with zero per-site change. New `capturePremiumServerEvent` skips PostHog (premium-feature instrumentation that should not leak to third-party tools).
+  - `lib/server-analytics.ts` — re-exports + `captureEvent` / `capturePremiumEvent` aliases for new code that wants to be explicit about intent.
+  - `lib/analytics-session.ts` — `homemade-session` cookie, sliding 30 minutes, server-issued, separate from Clerk's auth session. Used as the analytics session id so funnel + drop-off views work for signed-out visitors.
+  - `lib/client-analytics.ts` — `captureClientEvent` now dual-fires via `navigator.sendBeacon('/api/analytics/capture', …)` (with a `fetch(keepalive: true)` fallback) after the PostHog capture.
+  - `app/api/analytics/capture/route.ts` — accepts the client-side beacon. Permissive shape (analytics taxonomy lives in code, not at runtime). Server-side cohort + acquisition lookup from the User row so the client cannot fake the denormalised fields.
+
+- **Nightly rollup.** `lib/analytics-rollup.ts` exposes `rollupDay(date)` and `rollupRange(args)`. Computes DAU, MAU (rolling 30d), signups (total + by channel + by country), tutorials_published, tutorial_views, bookmarks_created, tutorials_completed, projects_started/completed, search_queries, search_zero_results, errors_total. Plus cohort retention upserts up to W12 for every (cohort, weeksAfterSignup) pair on every run. Idempotent.
+  - `inngest/functions/analytics-rollup.ts` — `analyticsRollupNightly` (cron 02:00 UTC) + `analyticsRollupBackfill` (event `analytics/rollup.backfill`).
+  - Manual trigger button at `/admin/system/jobs` — date-range picker + `force` re-run checkbox. Wraps `triggerAnalyticsRollup` server action with audit log + Inngest send.
+
+- **Eight admin dashboards under `/admin/analytics`.**
+  - `/admin/analytics` — overview. Eight KPI cards (DAU, MAU, signups 7d, published 7d, bookmarks 7d, projects in progress, zero-result searches today with red highlight at >50, errors 7d with red highlight at >2× prior). Sparkline + signups + DAU trends + top-5 categories bar.
+  - `/admin/analytics/cohorts` — flagship cohort retention heatmap. Sage-shade table W0..W12, milestone toggle (W0 / W1 / W4 / W12) that swaps to a per-cohort horizontal bar list. Renders from `AnalyticsCohortRollup`.
+  - `/admin/analytics/activation` — vertical funnel (visit → signup → onboarding → first bookmark → first project started → first project completed). Range picker (7d/30d/90d). Cohort-aware activation table.
+  - `/admin/analytics/content` — top 50 tutorials by views with bookmark + project-start conversion rates joined from matching events. Range picker.
+  - `/admin/analytics/search` — top 50 searches with CTR per query, top 50 zero-result searches (the editorial content-gap signal), 90-day search-queries trend.
+  - `/admin/analytics/acquisition` — signups by channel / country / UTM source / device class, plus W4 cohort retention split by dominant channel.
+  - `/admin/analytics/creator` — applications, approval/rejection split, application-to-decision timing (avg / p50 / p90), per-creator performance table.
+  - `/admin/analytics/system` — events stored, last rollup status, 14-day rollup-run history, error-boundary trend.
+
+- **Brand visual treatment.** Recharts-based with a single `chart-theme.ts` for palette + typography. Sage primary, soft-parchment background, sage-15% grid, Fraunces titles, Lora axis labels, monospace tabular numbers. Flat — no gradients, no 3D, no curve fills. Cohort heatmap uses `sageShade(rate)` to interpolate parchment → forest. `ChartCard` + `KpiCard` shared wrappers.
+
+- **Sidebar.** `/admin/analytics` no longer a placeholder. Growth → Analytics now expands into eight sub-items.
+
+- **Pre-launch checklist.** "PostHog dashboards build" item removed — we don't build dashboards in PostHog. PostHog stays for session recordings + heatmaps + ad-hoc event exploration.
+
+Out of scope (deliberately): no PostHog UI dashboards built, no real-time, no ClickHouse migration (raw `AnalyticsEvent` will eventually want partitioning by month or a move to ClickHouse / TimescaleDB at scale — flagged for a future session, not blocking launch), no new analytics events (the existing taxonomy was sufficient), no homepage / admin overhaul / mobile / billing surface work.
+
+Commit: `<sha>` — feat(analytics): self-hosted dual-fire + nightly rollup + eight admin dashboards.

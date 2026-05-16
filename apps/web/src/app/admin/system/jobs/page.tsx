@@ -1,4 +1,5 @@
 import { ReindexButton } from './reindex-button'
+import { AnalyticsRollupButton } from './analytics-rollup-button'
 
 const INNGEST_DASHBOARD_URL = 'https://app.inngest.com/env/production/functions'
 
@@ -29,6 +30,19 @@ export default function AdminJobsPage() {
             sink for every moderation outcome; future home of email / push
             delivery.
           </li>
+          <li>
+            <strong>hard-delete-scheduled-accounts</strong> — daily 03:00 UTC.
+            Scrubs accounts whose 30-day deletion grace period has elapsed.
+          </li>
+          <li>
+            <strong>editorial-picks-refresh</strong> — Sunday 22:00 UTC.
+            Recomputes the next four weeks of homepage editorial picks.
+          </li>
+          <li>
+            <strong>analytics-rollup-nightly</strong> — daily 02:00 UTC.
+            Rolls yesterday&apos;s events into the daily + cohort summary
+            tables that <code>/admin/analytics</code> reads from.
+          </li>
         </ul>
       </section>
 
@@ -39,6 +53,16 @@ export default function AdminJobsPage() {
           drifting from Prisma.
         </p>
         <ReindexButton />
+      </section>
+
+      <section style={{ marginTop: 32 }}>
+        <h2 style={{ fontSize: '1.1rem' }}>Analytics rollup backfill</h2>
+        <p style={{ marginBottom: 12 }}>
+          Re-run the daily + cohort rollup for a date range. Use after a
+          cron failure or to populate any historical days that pre-date the
+          self-hosted analytics rollout.
+        </p>
+        <AnalyticsRollupButton />
       </section>
 
       <section style={{ marginTop: 32 }}>

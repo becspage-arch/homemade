@@ -1,5 +1,13 @@
 import 'server-only'
 import { PostHog } from 'posthog-node'
+import { headers } from 'next/headers'
+import { prisma } from '@homemade/db'
+import * as Sentry from '@sentry/nextjs'
+import { categoryFor, type PosthogEvent } from './analytics-events'
+import { getOrCreateSessionId } from './analytics-session'
+import { deriveDeviceClass } from './acquisition'
+
+export type { PosthogEvent }
 
 let client: PostHog | null = null
 
@@ -12,90 +20,126 @@ function getPostHog(): PostHog | null {
   return client
 }
 
-export type PosthogEvent =
-  // Engagement
-  | 'tutorial_viewed'
-  | 'tutorial_started'
-  | 'tutorial_completed'
-  | 'tutorial_bookmarked'
-  | 'tutorial_unbookmarked'
-  | 'tutorial_published_scheduled'
-  | 'search_query'
-  // Account lifecycle
-  | 'signup_completed'
-  | 'signin_completed'
-  // First-* milestones
-  | 'first_bookmark'
-  | 'first_project_started'
-  | 'first_project_completed'
-  | 'first_review_submitted'
-  | 'first_photo_uploaded'
-  // Moderation outcomes
-  | 'review_submitted'
-  | 'review_published'
-  | 'photo_uploaded'
-  | 'photo_approved'
-  | 'photo_rejected'
-  | 'question_asked'
-  | 'question_answered'
-  | 'errata_submitted'
-  // Project lifecycle (server side)
-  | 'project_abandoned'
-  | 'project_progress_updated'
-  | 'project_notes_updated'
-  | 'project_supplies_checked'
-  | 'beginner_mode_toggled'
-  // Creator program
-  | 'creator_application_submitted'
-  | 'creator_application_approved'
-  | 'creator_application_rejected'
-  | 'creator_status_revoked'
-  | 'creator_tutorial_drafted'
-  | 'creator_tutorial_submitted_for_review'
-  | 'creator_tutorial_approved'
-  | 'creator_tutorial_returned_for_edits'
-  | 'creator_first_publish'
-  | 'creator_profile_viewed'
-  // Pattern testing
-  | 'pattern_test_created'
-  | 'pattern_test_recruiting_opened'
-  | 'pattern_test_completed'
-  | 'pattern_test_application_submitted'
-  | 'pattern_test_application_accepted'
-  | 'pattern_test_application_rejected'
-  | 'pattern_test_started'
-  | 'pattern_test_withdrawn'
-  | 'pattern_test_feedback_submitted'
-  // Account-rights lifecycle
-  | 'account_data_export_requested'
-  | 'account_deletion_scheduled'
-  | 'account_deletion_cancelled'
-  | 'account_deletion_completed'
-  // Friction / errors
-  | 'rate_limit_hit'
-  | 'nsfw_auto_rejected'
-  // Pre-launch signup allowlist
-  | 'signup_rejected_not_allowlisted'
-  | 'signup_allowlist_email_added'
-  | 'signup_allowlist_email_removed'
-  // Recipe authoring + scaling
-  | 'ingredients_scaled'
-  | 'ingredient_created_inline'
-  // Phase 8 Homepage rebuild — onboarding
-  | 'onboarding_started'
-  | 'onboarding_completed'
-  | 'onboarding_skipped'
+/**
+ * Server-side dual-fire: writes the event to our `AnalyticsEvent` table
+ * AND mirrors it to PostHog. Existing call sites get dual-fire for free
+ * via the legacy `captureServerEvent` shape, which is preserved.
+ *
+ * Failures on either sink never block the caller — both writes are
+ * wrapped in try/catch and surfaced to Sentry on failure.
+ */
+async function dualFireToDb(args: {
+  event: string
+  distinctId: string
+  properties?: Record<string, unknown>
+}): Promise<void> {
+  // Pull request-scoped context where available. Inngest steps / cron jobs
+  // have no `headers()` — we tolerate the throw and write a minimal row.
+  let url: string | null = null
+  let referrer: string | null = null
+  let userAgent: string | null = null
+  let country: string | null = null
+  let pathname: string | null = null
+  let sessionId = 'server'
+
+  try {
+    const h = await headers()
+    url = h.get('x-url') ?? h.get('referer') ?? null
+    referrer = h.get('referer')
+    userAgent = h.get('user-agent')
+    country = h.get('cf-ipcountry')
+  } catch {
+    // No request scope — leave the request fields null.
+  }
+  if (url) {
+    try {
+      pathname = new URL(url).pathname
+    } catch {
+      pathname = url.startsWith('/') ? url : null
+    }
+  }
+  try {
+    sessionId = await getOrCreateSessionId()
+  } catch {
+    // No request scope — use the synthetic `server` session.
+  }
+
+  // Look up cohort / channel from the User row (the source of truth)
+  // when distinctId looks like a Clerk id. Cheap — distinct on indexed col.
+  let clerkUserId: string | null = null
+  let cohortWeek: string | null = null
+  let acquisitionChannel: string | null = null
+  let utmSource: string | null = null
+  let utmMedium: string | null = null
+  let utmCampaign: string | null = null
+  if (args.distinctId && args.distinctId.startsWith('user_')) {
+    clerkUserId = args.distinctId
+    try {
+      const u = await prisma.user.findUnique({
+        where: { clerkId: clerkUserId },
+        select: {
+          signupCohortWeek: true,
+          acquisitionChannel: true,
+          utmSource: true,
+          utmMedium: true,
+          utmCampaign: true,
+        },
+      })
+      if (u) {
+        cohortWeek = u.signupCohortWeek
+        acquisitionChannel = u.acquisitionChannel
+        utmSource = u.utmSource
+        utmMedium = u.utmMedium
+        utmCampaign = u.utmCampaign
+      }
+    } catch {
+      // Ignore — the row still lands, just without the denormalised fields.
+    }
+  }
+
+  try {
+    await prisma.analyticsEvent.create({
+      data: {
+        clerkUserId,
+        sessionId,
+        event: args.event,
+        category: categoryFor(args.event),
+        properties: (args.properties ?? null) as never,
+        url,
+        pathname,
+        referrer,
+        userAgent,
+        country,
+        deviceClass: deriveDeviceClass(userAgent),
+        cohortWeek,
+        acquisitionChannel,
+        utmSource,
+        utmMedium,
+        utmCampaign,
+      },
+    })
+  } catch (err) {
+    Sentry.captureException(err, { tags: { area: 'analytics', sink: 'db' } })
+  }
+}
 
 /**
- * Capture a server-side analytics event. Fire-and-forget: failures must
- * never break the user's action. `distinctId` should be the Prisma User id
- * when known, otherwise a stable anonymous id (e.g. Clerk id or hashed ip).
+ * Capture a server-side analytics event. Dual-fires to both `AnalyticsEvent`
+ * (our own admin dashboards) and PostHog (recordings + heatmaps + ad-hoc).
+ * Fire-and-forget. Failures must never break the user's action.
+ *
+ * `distinctId` should be the Clerk id when known; otherwise a stable
+ * anonymous id (e.g. session token / hashed ip). The DB sink derives
+ * `clerkUserId` from `distinctId` when it has the Clerk shape.
  */
 export async function captureServerEvent(args: {
   event: PosthogEvent
   distinctId: string
   properties?: Record<string, unknown>
 }): Promise<void> {
+  // DB sink first — it's the canonical store; we never want a PostHog
+  // hiccup to silently drop the row from the admin dashboards.
+  await dualFireToDb(args)
   const ph = getPostHog()
   if (!ph) return
   try {
@@ -107,6 +151,23 @@ export async function captureServerEvent(args: {
   } catch {
     // swallow — analytics must never break the request path
   }
+}
+
+/**
+ * Capture a *premium-only* analytics event. Skips PostHog entirely and
+ * writes only to `AnalyticsEvent` — used for premium-feature instrumentation
+ * (mindset plan generator, personalised content) so paying-user behaviour
+ * doesn't leak to third-party tools.
+ */
+export async function capturePremiumServerEvent(args: {
+  event: PosthogEvent
+  distinctId: string
+  properties?: Record<string, unknown>
+}): Promise<void> {
+  await dualFireToDb({
+    ...args,
+    properties: { ...(args.properties ?? {}), premium: true },
+  })
 }
 
 /**
@@ -127,9 +188,9 @@ export async function identifyServerUser(args: {
 }
 
 /**
- * Flush pending events. Next's serverless model can tear down the process
- * between requests, so we flush after every fire-and-forget call rather
- * than relying on the background interval.
+ * Flush pending PostHog events. Next's serverless model can tear down the
+ * process between requests, so we flush after every fire-and-forget call
+ * rather than relying on the background interval.
  */
 export async function flushPostHog(): Promise<void> {
   if (!client) return
