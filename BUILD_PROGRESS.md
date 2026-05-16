@@ -3628,3 +3628,51 @@ changes.
 
 Commit: `<sha>` — Phase 8 autopilot wire-up: three stream prompts +
 halt-signal helper + scheduled-task plan + BUILD_PROGRESS section.
+
+## Tricolon audit — voice-tell rewrite pass (2026-05-16)
+
+Deferred task from the Phase 8 content fix-up session: the
+2026-05-16 `voice-check-all` run showed 529 tricolon warnings across
+312 tutorials. Prior session found that auto-rewriting was unsafe
+(nearly all were content lists). This session completed the deferred
+work in two passes.
+
+- **`containsTricolon()` tightened.** Added two filter sets to
+  `packages/db/scripts/voice-check-lib.ts`:
+  - `TRICOLON_BANNED_TOKENS` — prepositions, articles, verbs. Any
+    tricolon item containing one of these tokens is a structural phrase
+    (recipe step, ingredient list), not a stylistic tell. Skip.
+  - `TRICOLON_INGREDIENT_STOP` — food / herb / spice names. Tricolons
+    with an ingredient token are ingredient lists. Skip.
+  The filter left the regex unchanged and added a per-item gate
+  (`tricolonLooksStylistic`). Also skips any item containing a digit,
+  and any match where ≥2 items start with an uppercase letter (proper
+  nouns / place sequences).
+
+- **Pass 1 — 15 body rewrites** (`fixup-tricolons-manual.ts`). The
+  15 genuine adjective-descriptor tricolons identified after reading
+  the full 574-match `docs/tricolon-defer-list.md`. Each rewrite
+  drops the weakest third item where "X and Y" carries the meaning
+  better than "X, Y, and Z". TutorialVersion snapshot + AuditLog
+  per run.
+
+- **Pass 2 — 9 excerpt/body rewrites** (`fixup-tricolons-manual-2.ts`).
+  After the filter tightening, 38 warnings remained. Of those, 29
+  are accepted exceptions (recipe imperative headings like "Pat, cut,
+  and top"; content lists; multi-dimensional cooking-state descriptors).
+  Nine genuine excerpt-level voice tells fixed: `apple-chutney`,
+  `borscht`, `coronation-chicken`, `eggs-benedict`, `harira-soup`,
+  `lamb-dhansak`, `marshmallows-vanilla`, `quick-pickled-red-onions`,
+  `sweet-potato-soup`.
+
+- **Result.** `voice-check-all` after both passes:
+  - Tricolon warnings: **529 → 30** (94% reduction)
+  - Remaining 30 are all accepted content-list exceptions
+  - Total warnings: 618 → 137 (0 errors throughout)
+
+Out of scope (deliberately): no other audit-rule fixes, no new
+tutorials, no schema changes, no prompt template edits, no
+infra/web UI/admin changes.
+
+Commit: `c13c25d` — content(audit): tricolons — 24 voice-tell
+rewrites, filter tightened 529 → 30.
