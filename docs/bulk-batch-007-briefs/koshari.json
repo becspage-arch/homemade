@@ -1,0 +1,183 @@
+{
+  "slug": "koshari",
+  "title": "Koshari",
+  "subtitle": "Egyptian rice, lentils, and pasta layered with chickpeas, fried onions, and a spiced tomato sauce.",
+  "excerpt": "The national street-food bowl of Egypt. Rice, brown lentils, and small pasta are cooked separately, then layered with chickpeas, deeply fried sweet onions, and a sharp spiced tomato sauce. A vinegar-and-garlic dakka can be spooned over at the table. A peasant dish of starches that turns into a complete meal.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Koshari (also kushari or koshary) is the Egyptian national dish, sold from carts and koshari shops across Cairo and into the rest of the country. The dish is younger than it tastes; its modern form dates to the late nineteenth century, when British, Italian, and Indian influences came together in the Egyptian urban kitchen (the lentils-and-rice base is Indian khichri, the pasta is Italian, the spiced tomato sauce is North African). Variations within Egypt are small; the layering order, the spice levels, and whether to include the vinegar-garlic dakka are family-by-family decisions. A peasant dish in price and posture, koshari is the long-standing answer to feeding a family of seven with what is in the larder.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 60,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Each component freezes well separately: rice, lentils, pasta, tomato sauce, fried onions. Assemble fresh from defrosted parts. The fried onions in particular keep crisp in the freezer for two weeks.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly. The frying of onions is the slowest step; double the batch on a deeper pan with more oil and you save time on the second round.",
+    "makeAheadNotes": "All four components can be made a day ahead and refrigerated separately. Re-warm and assemble at the table.",
+    "dietaryFlags": ["vegan"],
+    "cuisine": "northAfrican",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "hearty", "mealPrep"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "saute-pan", "isOptional": false },
+    { "slug": "slotted-spoon", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "dakka", "term": "Dakka", "definition": "The vinegar-and-garlic sauce that accompanies Egyptian koshari. White wine vinegar (or any clear vinegar) is heated with cumin and grated garlic until the sharpness mellows. Spooned over the bowl at the table; the diner controls the heat and sourness." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Four cooked components and two sauces. Long-grain rice. Brown lentils. Small elbow pasta. Tinned chickpeas warmed through. A spiced tomato sauce reduced thick. A sharp " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dakka" } }], "text": "dakka" }, { "type": "text", "text": " of vinegar, garlic, and cumin. Layered in a wide bowl with deeply fried sweet onions across the top. The starches do not need to be hot; the sauce does. The bowl gets stirred together at the table." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The fried onions are the part that takes attention. The pan needs a generous depth of oil and patience: medium heat, twenty minutes, slow stirring, until the onions have given up their water and turned deep mahogany brown. Pulled too early they are pale and bitter; pushed too late they go black. The reserved onion oil flavours the rice and the sauce." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "lentils-brown", "amount": 200, "unit": "g", "prepNote": "rinsed", "isOptional": false, "groupLabel": "For the bowl" },
+            { "ingredientSlug": "long-grain-rice", "amount": 300, "unit": "g", "prepNote": "rinsed until the water runs clear", "isOptional": false, "groupLabel": "For the bowl" },
+            { "ingredientSlug": "pasta-dried", "amount": 200, "unit": "g", "prepNote": "small elbow macaroni or vermicelli", "isOptional": false, "groupLabel": "For the bowl" },
+            { "ingredientSlug": "chickpeas-tinned", "amount": 400, "unit": "g", "prepNote": "tin, drained and rinsed", "isOptional": false, "groupLabel": "For the bowl" },
+            { "ingredientSlug": "onion", "amount": 3, "unit": "each", "prepNote": "halved and finely sliced", "isOptional": false, "groupLabel": "For the fried onions" },
+            { "ingredientSlug": "vegetable-oil", "amount": 250, "unit": "ml", "prepNote": "for frying onions", "isOptional": false, "groupLabel": "For the fried onions" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the tomato sauce" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": "tin, crushed by hand", "isOptional": false, "groupLabel": "For the tomato sauce" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the tomato sauce" },
+            { "ingredientSlug": "cumin-ground", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the tomato sauce" },
+            { "ingredientSlug": "coriander-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the tomato sauce" },
+            { "ingredientSlug": "chilli-flakes", "amount": 1, "unit": "tsp", "prepNote": "more or less to taste", "isOptional": false, "groupLabel": "For the tomato sauce" },
+            { "ingredientSlug": "white-wine-vinegar", "amount": 60, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the dakka" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry the onions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Start with the onions; they take the longest. Heat the {{vegetable-oil}} of oil in a wide sauté pan over medium heat. When the oil is shimmering, add the {{onion}} of sliced onions in one go. Stir, lower the heat to medium-low, and cook for twenty to twenty-five minutes, stirring every couple of minutes. The onions go through pale gold, then deep gold, then mahogany. Pull when they are dark brown but not black; they crisp further as they cool. Lift onto kitchen paper with a slotted spoon. Reserve four tablespoons of the onion oil for the rice and the sauce; discard the rest." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the lentils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "While the onions cook, put the {{lentils-brown}} of lentils in a medium saucepan with 700 ml of water and a generous pinch of salt. Bring to a boil, then lower to a simmer and cook for twenty-five minutes, until tender but still holding shape. Drain and set aside." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the rice" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "In a large saucepan, warm two tablespoons of the reserved onion oil over medium heat. Add the {{long-grain-rice}} of rinsed rice and toast for two minutes, stirring. Add 550 ml of water, a pinch of salt, and bring to a boil. Lower to the gentlest simmer, cover, and cook for twelve minutes. Pull off the heat and let stand, covered, for ten minutes. The rice should be tender and the grains separate." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the pasta and warm the chickpeas" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bring a small pan of salted water to a boil and cook the {{pasta-dried}} of pasta to the time on the packet. Drain. Tip the {{chickpeas-tinned}} of drained chickpeas into the same pan with a splash of water and warm through for two minutes, just to take the fridge chill off." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the tomato sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Warm two tablespoons of reserved onion oil in a medium saucepan over medium heat. Add the {{garlic}} of chopped garlic and cook for thirty seconds. Stir in the {{tomato-puree}} of tomato purée and cook for one minute. Add the {{tinned-tomatoes}} of crushed tomatoes, the {{cumin-ground}} of cumin, the {{coriander-ground}} of coriander, the {{chilli-flakes}} of chilli flakes, a pinch of salt, and a turn of pepper. Simmer for fifteen minutes, stirring occasionally, until thick. Taste and adjust seasoning." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dakka" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Put the {{white-wine-vinegar}} of vinegar in a small pan with one clove of finely grated garlic and one teaspoon of cumin (from the cumin already opened for the sauce). Warm over low heat for two minutes; the sharp edge mellows but the vinegar stays bright. Tip into a small jug for the table." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Layer in wide bowls or one big platter. Rice first, then lentils, then pasta, then chickpeas. Spoon a generous ladle of tomato sauce across the top. Pile the fried onions over the sauce. Pass the dakka separately so each person can spoon over as much as they want. Eat by digging straight down through the layers." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Fried onions are pale and limp, not crisp", "cause": "Heat too low, not cooked long enough, or onions still wet when they hit the oil.", "fix": "Slice the onions thin and pat dry with kitchen paper before they go in. The whole cook is twenty-plus minutes; the depth of brown is what makes them crisp on cooling." },
+            { "symptom": "Lentils have collapsed to mush", "cause": "Over-cooked or stirred aggressively while simmering.", "fix": "Brown lentils should take twenty-five minutes for a tender-but-firm grain. Drain at that mark and let them sit; carryover finishes the cooking." },
+            { "symptom": "Tomato sauce tastes raw and harsh", "cause": "Garlic burned, or sauce not simmered long enough.", "fix": "Garlic in for only thirty seconds before the tomato purée goes in. Cook the sauce uncovered for fifteen minutes; the colour should deepen and the texture should hold its shape on a spoon." },
+            { "symptom": "Bowl tastes flat all over", "cause": "Each component under-salted on its own.", "fix": "Salt each pan as it cooks: the lentils, the rice, the pasta water, the chickpeas. A bowl with five under-seasoned starches tastes empty no matter how punchy the sauce is." },
+            { "symptom": "Dakka is too sharp at the table", "cause": "Vinegar was not warmed; the raw acid bites.", "fix": "Warm gently for the full two minutes. The cooked-down dakka has body and tang, not just sharp. A teaspoon of honey is the household tweak when the vinegar runs hot." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Black lentils or Puy lentils work in place of brown; the cooking time is roughly the same. Vermicelli broken into short lengths can replace the macaroni or be added in addition. For a richer bowl, fold a tablespoon of butter into the rice as it stands. Egyptian koshari shops vary the heat of the sauce wildly; calibrate the chilli flakes to your household." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Koshari is Egypt's most democratic meal: vegan, cheap, filling, sold from carts on every corner of Cairo and equally cooked in homes. The dish reads as several cuisines stacked into one bowl, because that is how it formed: Indian khichri brought by British traders, Italian pasta brought by Italian immigrant tradesmen, North African spice from the land it grew up on. Eaten as a single bowl for one person or stirred together on a platter for a family." }]
+      }
+    ]
+  }
+}

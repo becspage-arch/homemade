@@ -1,0 +1,170 @@
+{
+  "slug": "spaghetti-and-meatballs",
+  "title": "Spaghetti and meatballs",
+  "subtitle": "The Italian-American household supper: beef-and-pork meatballs in tomato sauce, served on spaghetti.",
+  "excerpt": "An American dish, not an Italian one. Soft beef-and-pork meatballs, bound with a milk-soaked bread panade for tenderness, fried until coloured, then finished in a long-cooked tomato sauce. Tossed with spaghetti and a heavy hand of parmesan.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Spaghetti and meatballs is an Italian-American invention from the eastern American cities of the early twentieth century, when Neapolitan and southern-Italian migrants found beef and pork cheap and abundant. In Italy meatballs (polpette) are made small and served as a course of their own, in broth, or with bread, not on pasta. The dish settled into its American form by the 1920s and was further cemented by mid-century American Italian restaurants. The milk-soaked-bread panade comes from the polpetta tradition; the long-cooked tomato sauce is the southern-Italian sugo adapted to the larger American tin of tomatoes.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Meatballs in sauce freeze excellently for up to three months. Cook the pasta fresh; cooked pasta does not freeze well. Defrost overnight and warm through.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly. Use two pans for the meatball fry stage; do not crowd one pan or the meatballs steam grey instead of browning.",
+    "makeAheadNotes": "Meatballs and sauce together are better the day after. Make a day ahead, refrigerate, reheat gently.",
+    "dietaryFlags": [],
+    "cuisine": "italianAmerican",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "kidFriendly", "hearty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "saute-pan", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "stockpot", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "panade", "term": "Panade", "definition": "A paste of bread soaked in milk (or stock, or wine) and added to ground meat in meatball or meatloaf mixtures. The starch holds onto water through cooking, so the cooked meat stays moist where a meat-only mixture would dry out." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Three things matter for the meatballs: the meat mix, the panade, and the size. Use half beef and half pork. Soak a slice of crustless bread in milk and squeeze it out before mixing in. Make the balls golf-ball-sized, not bigger; a too-large meatball cooks unevenly and breaks when turned. Brown them in a hot pan to set a crust, then drop them into the sauce to finish slowly. The sauce extracts flavour from the meat as much as the other way round." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "panade" } }], "text": "panade" }, { "type": "text", "text": " of bread soaked in milk is the difference between tender meatballs and tight grey ones. The bread starch holds water through the cooking; meat alone squeezes its water out and dries." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "bread", "amount": 2, "unit": "slice", "prepNote": "crusts off, torn into pieces", "isOptional": false, "groupLabel": "For the meatballs" },
+            { "ingredientSlug": "whole-milk", "amount": 80, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the meatballs" },
+            { "ingredientSlug": "beef-mince", "amount": 250, "unit": "g", "prepNote": "around 15% fat", "isOptional": false, "groupLabel": "For the meatballs" },
+            { "ingredientSlug": "pork-mince", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the meatballs" },
+            { "ingredientSlug": "parmesan", "amount": 50, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": "For the meatballs" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "lightly beaten", "isOptional": false, "groupLabel": "For the meatballs" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "finely grated", "isOptional": false, "groupLabel": "For the meatballs" },
+            { "ingredientSlug": "parsley-flat", "amount": 15, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the meatballs" },
+            { "ingredientSlug": "olive-oil", "amount": 45, "unit": "ml", "prepNote": "for frying meatballs", "isOptional": false, "groupLabel": "For the meatballs" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 800, "unit": "g", "prepNote": "two tins, crushed by hand", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "oregano-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "basil", "amount": 15, "unit": "g", "prepNote": "leaves, torn", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "pasta-dried", "amount": 400, "unit": "g", "prepNote": "spaghetti", "isOptional": false, "groupLabel": "To finish" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the meatballs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Tear the {{bread}} of bread into pieces in a large bowl and pour over the {{whole-milk}} of milk. Let it soak for five minutes, then squeeze the bread between your fingers until it falls apart into a paste. Add the {{beef-mince}} of beef mince, the {{pork-mince}} of pork mince, the {{parmesan}} of parmesan, the {{eggs}} egg, the {{garlic}} of grated garlic, the {{parsley-flat}} of chopped parsley, a generous pinch of salt, and a turn of pepper. Mix with your hands until just combined. Stop as soon as the mixture is uniform; over-mixing makes the meatballs tight." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Wet your hands and roll the mixture into balls about the size of a golf ball, around 50 g each. You should get sixteen meatballs. Set them on a plate." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the meatballs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat half the {{olive-oil}} in a sauté pan over medium-high heat. Working in two batches, brown the meatballs on all sides, about six to eight minutes per batch. They should be deep brown on the outside but still raw at the centre; they finish in the sauce. Lift onto a plate as they brown. Wipe the pan if any flour residue or burnt bits look bitter; otherwise leave the fond for the sauce." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Reduce the heat to medium. Add the remaining olive oil and the {{onion}} chopped onion to the pan. Cook for five minutes, scraping any meatball fond into the onions. Stir in the {{tomato-puree}} of tomato purée and the {{oregano-dried}} of oregano, and cook for one minute more. Pour in the {{tinned-tomatoes}} of crushed tomatoes and bring to a simmer. Season with salt and pepper." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish meatballs in the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Lower the meatballs gently into the sauce so they sit in a single layer. Cover and simmer over low heat for twenty-five minutes, turning the meatballs once halfway. The sauce should thicken and take on the colour and smell of the meat. Stir through the {{basil}} of basil at the end." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the spaghetti and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bring a large stockpot of well-salted water to a rolling boil. Add the {{pasta-dried}} of spaghetti and cook to the time on the packet, less one minute. Lift the spaghetti directly into the sauce with tongs, letting some pasta water come with it. Toss for thirty seconds; the starchy water emulsifies the sauce. Serve in warm bowls with the meatballs on top and extra parmesan at the table." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Meatballs are tough and bouncy", "cause": "Mixture was over-worked, or the meat was too lean.", "fix": "Mix with hands only until uniform; stop. Use beef at 15% fat or higher. Pork mince adds tenderness too." },
+            { "symptom": "Meatballs broke apart in the pan", "cause": "Pan too cool when they went in, or moved too soon.", "fix": "Wait until the underside has set golden before turning. Let the pan heat properly before the meatballs go in." },
+            { "symptom": "Sauce tastes raw and sharp", "cause": "Not simmered long enough; tomato acidity not cooked off.", "fix": "Cook the sauce uncovered for ten minutes longer. A pinch of sugar can balance very acidic tinned tomatoes but is rarely needed with good ones." },
+            { "symptom": "Pasta clumped or stuck together", "cause": "Water not at a rolling boil, or pasta added before the water returned to the boil after stirring.", "fix": "Bring the water back to a fast boil before lowering the pasta in. Stir for the first thirty seconds to keep strands apart." },
+            { "symptom": "Centre of meatball still pink at twenty-five minutes", "cause": "Meatballs were too large, or simmer was too gentle.", "fix": "Aim for 50 g balls. Probe one with a thermometer if uncertain; 70°C is done. Lift the heat slightly if the surface bubbles are barely visible." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Veal mince in place of half the pork gives a more delicate meatball, closer to the Italian polpetta. Add a pinch of chilli flakes to the sauce for a heat-leaning version. The meatballs make a sandwich on a long bread roll with extra sauce and a slice of provolone, run under the grill until the cheese melts." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Spaghetti and meatballs sits at the centre of Italian-American family supper, the dish your grandmother made on Sunday and your mother makes on Wednesday. It is not eaten in Italy, where meatballs and pasta are kept apart. The marriage of the two is American, formed in the cities where Italian families had room and meat and a wide tin of tomatoes from California. Served as one big platter or scooped onto warm plates from a heavy pot at the table." }]
+      }
+    ]
+  }
+}

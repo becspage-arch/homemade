@@ -1,0 +1,142 @@
+{
+  "slug": "piperade",
+  "title": "Piperade",
+  "subtitle": "Basque stew of slow-cooked peppers, onions, tomatoes, and eggs.",
+  "excerpt": "A Basque dish of peppers, onions, and tomatoes cooked down until soft and sweet, finished with eggs scrambled into the vegetables and served with cured ham. The seasoning is smoky paprika in place of the traditional piment d'Espelette.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "SUMMER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Piperade is the regional dish of the French Basque country (Pays Basque), where it appears in two forms: as a vegetable side or sauce (without eggs), and as a complete dish with eggs stirred in. Both are made with the local mild red pepper, piment d'Espelette, which is hard to find outside the region; smoked paprika is the standard substitute. The dish belongs to the broader family of southern European pepper stews (Spanish pisto, Italian peperonata, Hungarian lecsó) but is distinguished by the use of eggs and the colour from Espelette. Modern French cookery codifications date to the early twentieth century.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "The pepper-and-tomato base (before the eggs go in) freezes for up to three months. Add fresh eggs on reheating.",
+    "batchable": true,
+    "batchNotes": "The base doubles cleanly. Keep the eggs to single batches; scrambled eggs scale poorly.",
+    "makeAheadNotes": "Cook the base ahead and refrigerate for up to two days. Warm gently and add the eggs at the moment of serving.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "lunch",
+    "mood": ["weeknight", "summery", "hearty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "saute-pan", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "piment-d-espelette", "term": "Piment d'Espelette", "definition": "A mild red chilli grown around the village of Espelette in the French Basque country and granted protected designation of origin in 2000. Fruity and slightly smoky, with a heat level somewhere between sweet and smoked paprika. Smoked paprika is the practical substitute outside the region." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Three peppers, two onions, a tin of tomatoes, four eggs. The peppers and onions cook down slowly until they have given up their water and turned soft; then the tomatoes go in and reduce; then the eggs are stirred through in the last minute. The whole dish takes about thirty minutes from chopping board to plate." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The Basque colour comes from " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "piment-d-espelette" } }], "text": "piment d'Espelette" }, { "type": "text", "text": ", a mild red chilli grown around one village. Outside the Pays Basque the substitute is smoked paprika: not exactly the same flavour but the same role, warm and slightly fruity rather than hot. Served with a slice of dry-cured ham on the side, the dish becomes piperade Basquaise and stops being a side." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "halved and finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-red", "amount": 2, "unit": "each", "prepNote": "deseeded, cut into 1 cm strips", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-green", "amount": 1, "unit": "each", "prepNote": "deseeded, cut into 1 cm strips", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": "tin, crushed by hand", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-smoked", "amount": 2, "unit": "tsp", "prepNote": "Spanish pimentón; or piment d'Espelette if you can get it", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 2, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 1, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 6, "unit": "each", "prepNote": "lightly beaten with a pinch of salt", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "serrano-ham", "amount": 80, "unit": "g", "prepNote": "four thin slices, to serve", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soften the onions and peppers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Warm the {{olive-oil}} of olive oil in a sauté pan over medium heat. Add the {{onion}} sliced onions with a pinch of salt and cook for ten minutes, stirring often, until soft and just beginning to turn translucent at the edges. They should not colour. Add the {{pepper-red}} red pepper strips, the {{pepper-green}} green pepper strips, and the {{garlic}} of chopped garlic. Cook for ten minutes more, stirring every couple of minutes, until the peppers have collapsed and given up their water." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add tomato and paprika" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Stir in the {{paprika-smoked}} of smoked paprika and let it bloom in the oil for thirty seconds. Add the {{tinned-tomatoes}} of crushed tomatoes, the {{thyme}} of thyme, and the {{bay-leaves}} of bay. Bring to a simmer and cook for ten minutes more, uncovered, until the liquid has reduced and the mixture is thick. Taste and adjust salt and pepper." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Stir in the eggs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Reduce the heat to low. Lift out the thyme stems and bay. Pour in the {{eggs}} beaten eggs and stir slowly through the vegetables with a wooden spoon, the way you would with a soft scramble. After thirty to forty seconds the eggs will set into folds across the peppers. Pull off the heat while the eggs still look slightly underdone; they will firm in the residual heat. Serve immediately with the {{serrano-ham}} of cured ham draped across the top and a piece of country bread." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Vegetables are watery, not soft", "cause": "Too much liquid; the heat was too low to drive it off.", "fix": "Turn the heat up and cook uncovered for another five minutes. The mixture should hold its shape on the spoon." },
+            { "symptom": "Onions browned and tasted slightly burnt", "cause": "Heat too high in the first stage.", "fix": "Onions for piperade are softened, not caramelised. Medium heat, a little salt, regular stirring. Start over with fresh onions if the burnt edge is dominant." },
+            { "symptom": "Eggs went rubbery and grainy", "cause": "Pan too hot when the eggs went in, or the eggs were cooked too long.", "fix": "Reduce the heat to low before adding eggs. Pull off the heat at the soft-set stage; the eggs continue to cook in the warm vegetables." },
+            { "symptom": "Dish tastes flat", "cause": "Paprika under-bloomed, or peppers under-cooked.", "fix": "Let the paprika cook in the oil for at least thirty seconds before the tomatoes go in. The peppers should be fully soft, not still squeaky." },
+            { "symptom": "Looks pale rather than red", "cause": "Smoked paprika was old, or substituted with sweet paprika.", "fix": "Use a fresh tin of smoked Spanish pimentón. The colour and depth come from the paprika as much as the peppers." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Without the eggs, piperade is the standard Basque accompaniment to grilled meat, baked cod, or tuna steaks. Leftovers can be reheated and dropped onto toast for breakfast. For a richer plate, fry a slice of cured ham in the pan first, lift it out, and cook the vegetables in the rendered fat." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Piperade belongs to the family of southern European pepper stews (Spanish pisto, Italian peperonata, Hungarian lecsó) that take advantage of the long pepper season. What sets the Basque version apart is the eggs and the colour from Espelette. The dish travels well from lunch to supper, eats hot or warm, and is served at any time of day in the Pays Basque." }]
+      }
+    ]
+  }
+}
