@@ -48,12 +48,18 @@ export default clerkMiddleware(async (auth, req) => {
     return NextResponse.next()
   }
 
-  // Splash gate
-  const accessCookie = req.cookies.get('homemade-access')
-  if (accessCookie?.value !== '1') {
-    const url = req.nextUrl.clone()
-    url.pathname = '/coming-soon'
-    return NextResponse.rewrite(url)
+  // Splash gate — global until launch. Flip SPLASH_GATE=open in the ECS
+  // task definition env vars (or unset SPLASH_PASSWORD entirely) to take
+  // the gate down without a code deploy. Anything other than `open` keeps
+  // the cookie check in place. Default behaviour stays closed so a missing
+  // env var never accidentally exposes the site.
+  if (process.env.SPLASH_GATE !== 'open') {
+    const accessCookie = req.cookies.get('homemade-access')
+    if (accessCookie?.value !== '1') {
+      const url = req.nextUrl.clone()
+      url.pathname = '/coming-soon'
+      return NextResponse.rewrite(url)
+    }
   }
 
   // Auth gates (Clerk)

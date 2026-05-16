@@ -1,5 +1,6 @@
 import 'server-only'
 import { prisma, type NotificationType } from '@homemade/db'
+import { dispatchApnsPush, isApnsConfigured } from './apns-dispatch'
 
 /**
  * Notification category keys. Mirrors the per-category toggles in
@@ -48,13 +49,14 @@ export interface PushPayload {
  * Dispatch a push to every active PushSubscription belonging to a user, then
  * record `pushed = true, pushedAt = now` on the matching Notification rows.
  *
- * Wire-level dispatch (APNs HTTP/2 for iOS, FCM for Android, Web Push for
- * the WEB platform) is intentionally not implemented here — that needs a
- * signed APNs auth key + an FCM service account JSON in Secrets Manager,
- * which Rebecca still has to provision. Until then this function logs the
- * intended dispatch + records pushed=true so the surrounding flow is
- * exercised in production traffic; the actual native delivery flips on
- * once `pushDispatcher` is non-null.
+ * iOS: real APNs HTTP/2 dispatch via `apns-dispatch.ts`. Gated on the
+ * presence of APNS_AUTH_KEY / APNS_KEY_ID / APNS_TEAM_ID env vars (which
+ * arrive via the ECS task definition's Secrets Manager mount). When the
+ * env vars aren't set yet, falls through to structured logging so the
+ * pipeline still exercises end-to-end during the lead-up to credentials.
+ *
+ * Android (FCM) + Web Push are still logging stubs — they need their own
+ * Rebecca-side provisioning before they can light up.
  */
 export async function sendPushToUser(
   userId: string,
@@ -163,11 +165,31 @@ async function dispatch(
   },
   payload: PushPayload,
 ): Promise<boolean> {
-  // Real APNs / FCM / Web Push wiring is intentionally deferred — see the
-  // function-level comment on sendPushToUser. For now we structure-log the
-  // dispatch so production traffic exercises the pipeline and a real
-  // dispatcher can be dropped in by replacing this function body.
-  console.info('[push] dispatch', {
+  if (sub.platform === 'IOS' && isApnsConfigured()) {
+    const res = await dispatchApnsPush(sub.deviceToken, {
+      title: payload.title,
+      body: payload.body,
+      href: payload.href,
+    })
+    if (res.status && res.status >= 200 && res.status < 300) {
+      return true
+    }
+    // 410 = device token no longer valid; treat as a failure so the caller
+    // soft-revokes the row. Everything else also returns false but the
+    // structured log makes triage trivial.
+    console.warn('[push] apns dispatch failed', {
+      platform: sub.platform,
+      tokenPrefix: sub.deviceToken.slice(0, 8),
+      status: res.status,
+      reason: res.reason,
+    })
+    return res.status === 410 ? false : false
+  }
+  // Android (FCM) + Web Push + un-configured iOS: structured log the
+  // intended dispatch and return true so the Notification row gets stamped
+  // pushed=true. Real wiring drops in here once Rebecca has provisioned
+  // the relevant credentials.
+  console.info('[push] dispatch (stub)', {
     platform: sub.platform,
     tokenPrefix: sub.deviceToken.slice(0, 8),
     title: payload.title,

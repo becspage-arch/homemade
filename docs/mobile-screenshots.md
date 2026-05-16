@@ -1,10 +1,36 @@
 # Generating App Store / Play Store marketing screenshots
 
-Workflow: open the public site at the right viewport size in a headless
-browser, screenshot the framed page, then crop to platform requirements.
+There's an automated capture script at [scripts/marketing-screenshots.ts](../scripts/marketing-screenshots.ts).
 
-Until the headless screenshot job lands, capture by hand using a real
-device or a browser at the required dimensions. Required dimensions:
+## Quick start
+
+```bash
+# First-run only: install the browser binary
+pnpm exec playwright install chromium
+
+# Capture from the live site (splash gate cookie is set automatically)
+SPLASH_PASSWORD=<value> pnpm screenshots
+
+# Or hit a local dev server
+BASE_URL=http://localhost:3000 SPLASH_PASSWORD=<value> pnpm screenshots
+```
+
+Output lands in `apps/mobile/marketing/screenshots/{platform}/{device}/`
+as PNGs at the native viewport size. The folder is gitignored — re-run
+the script when you want fresh frames.
+
+Frames captured per device (6 each):
+
+1. `01-home` — the personalised home rail stack
+2. `02-recipe` — the cooking category index
+3. `03-saved` — `/me/bookmarks`
+4. `04-search` — `/search?q=pasta`
+5. `05-notifications` — `/me/notifications`
+6. `06-cooking-mode` — a recipe with cooking mode toggled on. Picks the
+   first recipe link off the home page unless you set
+   `FRAME_COOKING_MODE_PATH=/cooking/foo-bar` to lock to a specific one.
+
+Required dimensions (the script renders at these sizes natively):
 
 | Platform               | Pixel size (portrait) |
 | ---------------------- | --------------------- |
