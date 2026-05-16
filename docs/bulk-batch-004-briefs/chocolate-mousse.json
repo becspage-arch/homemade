@@ -1,0 +1,102 @@
+{
+  "slug": "chocolate-mousse",
+  "title": "Chocolate mousse",
+  "subtitle": "Dark chocolate and egg mousse",
+  "excerpt": "Dark chocolate melted with butter, beaten with egg yolks and sugar, then folded through whipped cream and beaten egg whites to a light, intensely chocolatey mousse. Set overnight and served cold. Serves four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Mousse au chocolat is a French dish documented from the 18th century, with the definitive version established by Auguste Escoffier. The technique of folding whipped cream or egg whites into a melted chocolate base is consistent across classical French recipes. Documented by Julia Child in Mastering the Art of French Cooking (1961), Elizabeth David in French Provincial Cooking (1960), and Nigella Lawson in How to Eat (1998).",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 5,
+    "restingMinutes": 0,
+    "chillingMinutes": 240,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the day before and refrigerate. Remove from the fridge 15 minutes before serving.",
+    "dietaryFlags": ["v", "gf", "nf"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["dateNight", "comfortFood", "specialOccasion"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The quality of the chocolate is the dominant flavour. Use chocolate with at least 70% cocoa solids. Anything less sweet or less intense and the mousse lacks presence. The lightness comes from folding in whipped cream first and then beaten whites: the cream provides a fat base that stabilises the chocolate, and the whites bring the air. Fold gently — a few streaks of white are fine; overworking kills the bubbles." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "dark-chocolate", "amount": 200, "unit": "g", "prepNote": "70% cocoa, broken into pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "cut into cubes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "each", "prepNote": "separated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 50, "unit": "g", "prepNote": "divided: 30 g for yolks, 20 g for whites", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whipping-cream", "amount": 100, "unit": "ml", "prepNote": "lightly whipped", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt {{dark-chocolate}} of dark chocolate and {{unsalted-butter}} of butter together in a heatproof bowl over a pan of barely simmering water, stirring until smooth. Remove from the heat and leave to cool for 5 minutes. Whisk the egg yolks with 30 g of the caster sugar until pale and thick. Fold the chocolate mixture into the yolks until combined. Lightly whip {{whipping-cream}} of whipping cream to soft peaks and fold into the chocolate base. In a separate clean bowl, whisk the 4 egg whites to soft peaks. Add the remaining 20 g of sugar and whisk to firm peaks. Fold the whites into the chocolate in three additions, cutting through firmly but gently to preserve the air. Divide between four glasses or ramekins and refrigerate for at least 4 hours." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Mousse dense and heavy rather than light", "cause": "Overworked when folding in the egg whites.", "fix": "Fold in three stages with a large metal spoon, cutting down through the centre and scooping up. Stop as soon as the whites are mostly incorporated — a few white streaks are better than deflated mousse." },
+            { "symptom": "Chocolate seizing when melted", "cause": "Water droplet got into the melted chocolate.", "fix": "Keep all equipment dry. If the chocolate seizes, add a tablespoon of warm cream and stir firmly — it often recovers." },
+            { "symptom": "Mousse grainy and split", "cause": "Chocolate mixture too hot when the yolks were added, scrambling them.", "fix": "Cool the chocolate to around 45°C (warm to the touch, not hot) before folding in the yolks." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The egg safety note" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This recipe uses raw egg whites and lightly cooked yolks. In the UK, eggs with a Lion Mark stamp are from hens vaccinated against Salmonella and are considered safe to eat raw by the Food Standards Agency. Use Lion Mark eggs and buy from a reputable source. This mousse is not suitable for pregnant people, the elderly, or anyone with a compromised immune system." }
+        ]
+      }
+    ]
+  }
+}

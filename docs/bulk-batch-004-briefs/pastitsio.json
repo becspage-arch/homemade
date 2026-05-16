@@ -1,0 +1,178 @@
+{
+  "slug": "pastitsio",
+  "title": "Pastitsio",
+  "subtitle": "Greek baked pasta with spiced lamb and béchamel",
+  "excerpt": "Thick tubular pasta layered with a cinnamon-spiced lamb sauce, topped with a rich egg-béchamel and baked until deeply golden. Greece's answer to lasagne, and better made a day ahead. Serves six.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pastitsio is a classic of Greek home cooking, documented by Claudia Roden in The Food of Italy and the Eastern Mediterranean and by Tessa Kiros in Falling Cloudberries (2004). The cinnamon-spiced lamb sauce and enriched béchamel topping are consistent across regional versions.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 45,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Assemble, cover tightly, and freeze unbaked for up to two months. Bake from frozen at 180°C fan for 55 minutes. Or freeze after baking; reheat portions at 180°C fan for 20 minutes.",
+    "batchable": true,
+    "batchNotes": "Doubles well in a larger tin. The lamb sauce can be made three days ahead and kept chilled.",
+    "makeAheadNotes": "Assemble the day before, refrigerate, and bake the next day. The flavours improve with a night's rest.",
+    "dietaryFlags": [],
+    "cuisine": "greek",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "comfortFood", "specialOccasion"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false },
+    { "slug": "colander", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bechamel",
+      "term": "Béchamel",
+      "definition": "A white sauce made from butter, flour, and milk, cooked until thick and smooth. Forms the topping of pastitsio and many other baked pasta dishes across Greek and French cooking."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pastitsio is the baked pasta dish that sits at the centre of Greek home cooking — deeper and more aromatic than its Italian cousins, with cinnamon threading through the lamb sauce and a thick egg-enriched " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bechamel" } }], "text": "béchamel" },
+          { "type": "text", "text": " that sets almost like a custard on top. The result is a dish that holds together in clean slices, travels well, and is better the next day once the layers have had time to settle." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The pasta is traditionally a thick, smooth tube — something close to penne rigate or ziti. Cook it al dente; it will continue cooking in the oven. The cinnamon in the lamb sauce should be present but not overpowering: one stick for the whole pot, simmered in, then removed. Nutmeg goes into the béchamel. Both spices are structural, not decorative." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "pasta-dried", "amount": 400, "unit": "g", "prepNote": "thick tubular shape — penne rigate or ziti", "isOptional": false, "groupLabel": "For the pasta" },
+            { "ingredientSlug": "parmesan", "amount": 40, "unit": "g", "prepNote": "finely grated, for layering", "isOptional": false, "groupLabel": "For the pasta" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for the pasta layer", "isOptional": false, "groupLabel": "For the pasta" },
+            { "ingredientSlug": "lamb-mince", "amount": 600, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the lamb sauce" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the lamb sauce" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the lamb sauce" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": "crushed by hand", "isOptional": false, "groupLabel": "For the lamb sauce" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the lamb sauce" },
+            { "ingredientSlug": "cinnamon-stick", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "For the lamb sauce" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the lamb sauce" },
+            { "ingredientSlug": "red-wine", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": true, "groupLabel": "For the lamb sauce" },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the lamb sauce" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the lamb sauce" },
+            { "ingredientSlug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the béchamel" },
+            { "ingredientSlug": "plain-flour", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the béchamel" },
+            { "ingredientSlug": "whole-milk", "amount": 800, "unit": "ml", "prepNote": "warmed", "isOptional": false, "groupLabel": "For the béchamel" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": "For the béchamel" },
+            { "ingredientSlug": "parmesan", "amount": 40, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": "For the béchamel" },
+            { "ingredientSlug": "nutmeg-ground", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the béchamel" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "You need a rectangular baking tin roughly 30 × 22 cm, 6 cm deep. A heavy-based saucepan for the béchamel — thin bases scorch the milk. A balloon whisk is essential for a smooth sauce." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the lamb sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Warm {{olive-oil}} of olive oil in a wide pan over medium-high heat. Add {{onion}} finely chopped onions and cook for 8 minutes until soft and starting to colour. Add {{garlic}} of garlic and cook for 1 minute. Add {{lamb-mince}} of lamb mince and break it apart with a spoon, stirring until browned all over, about 6 minutes. If using red wine, pour it in now and let it bubble until absorbed. Add {{tomato-puree}} of tomato purée, {{tinned-tomatoes}} of crushed tinned tomatoes, {{cinnamon-stick}} cinnamon stick, {{bay-leaves}} of bay, and {{sea-salt-fine}} of salt. Simmer uncovered for 20 minutes until the sauce is thick and the liquid largely reduced. Remove the cinnamon stick and bay leaves." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the pasta" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cook {{pasta-dried}} of pasta in well-salted boiling water for 2 minutes less than the packet says — it should be slightly underdone. Drain, spread onto a tray to cool for 5 minutes, then toss with the beaten egg and half the parmesan for the pasta layer. The egg helps the pasta hold its shape when sliced." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the béchamel" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a heavy saucepan over medium heat. Add {{plain-flour}} of flour and stir constantly for 2 minutes — the paste should smell nutty, not raw. Add the warm milk in a steady stream, whisking continuously to prevent lumps. Cook, still whisking, for 6–8 minutes until the sauce is thick enough to coat the back of a spoon. Season with {{nutmeg-ground}} of nutmeg and a pinch of salt. Remove from the heat and let it cool for 5 minutes, then whisk in the 2 beaten eggs and the remaining parmesan. The eggs will cook into the sauce as it bakes, giving the top a set, custard-like finish." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Layer and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 180°C fan. Spread half the pasta in the tin, pressing it into an even layer. Spoon the lamb sauce evenly over the pasta. Top with the remaining pasta layer. Pour the béchamel over the top, smoothing it right to the edges so it covers everything. Scatter the remaining parmesan over the surface. Bake for 40–45 minutes until the top is deeply golden and the sides are bubbling. Rest for 10 minutes before cutting — this lets the layers firm up enough to slice cleanly." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Béchamel full of lumps", "cause": "Milk added too fast to the flour-butter paste, or the roux was not stirred enough before the milk went in.", "fix": "Add warm milk gradually, whisking constantly. If lumps form, pass the sauce through a fine-mesh sieve while still hot." },
+            { "symptom": "Lamb sauce too wet; the dish collapses when cut", "cause": "Sauce not reduced enough before assembling.", "fix": "The lamb sauce should be almost dry — much drier than a Bolognese. If it looks loose, simmer for another 10 minutes with the lid off before layering." },
+            { "symptom": "Top browns too fast", "cause": "Oven too hot, or the dish placed too high.", "fix": "Move to the lower third of the oven and cover loosely with foil for the first 25 minutes, then remove for the final browning." },
+            { "symptom": "Cinnamon flavour too strong", "cause": "More than one stick used, or a very fresh stick left in too long.", "fix": "One stick for the whole sauce is the right amount. Remove it as soon as the sauce finishes simmering." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pastitsio has been on Greek Sunday tables for well over a century, a dish built for feeding a crowd from inexpensive ingredients. The name comes from the Italian pasticcio (a general word for a covered pie or baked mixture), which arrived in Greece via the Venetian presence in the Ionian islands. The cinnamon in the meat sauce is a consistent thread through Greek cooking and marks pastitsio apart from its Italian analogues; it reads as warm and subtly sweet rather than spiced in any obvious way. Serve it with a plain green salad and nothing else." }
+        ]
+      }
+    ]
+  }
+}

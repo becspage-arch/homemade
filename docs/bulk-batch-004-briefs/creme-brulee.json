@@ -1,0 +1,101 @@
+{
+  "slug": "creme-brulee",
+  "title": "Crème brûlée",
+  "subtitle": "Vanilla custard with a caramel crust",
+  "excerpt": "Rich vanilla custard baked in ramekins until set, then chilled and finished with a thin layer of sugar torched to a shattering caramel crust. The correct dessert for anyone with a kitchen blowtorch. Serves four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Crème brûlée appears in French cookery records from the 17th century, though similar dishes exist in Spanish (crema catalana) and English (Trinity burnt cream) traditions. The modern version is documented by Richard Olney in Simple French Food (1974) and by Julia Child in Mastering the Art of French Cooking (1961). The home blowtorch became the standard method from the 1990s onward, replacing the traditional salamander grill.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 240,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The custard can be made up to two days ahead and refrigerated. Brûlée just before serving.",
+    "dietaryFlags": ["v", "gf", "nf"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["dateNight", "specialOccasion", "showstopper"],
+    "temperatureCelsius": 150,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "ramekins", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A good crème brûlée has custard that barely sets: it should tremble when you tap the ramekin and hold its shape when the spoon breaks the caramel. The wobble is not underdone — it is exactly done. Baking in a bain-marie protects the custard from direct heat and prevents the surface from curdling or puffing. The water should come halfway up the sides of the ramekins." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "double-cream", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "egg-yolks", "amount": 5, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 80, "unit": "g", "prepNote": "plus 4 tsp for the brûlée crust", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vanilla-pod", "amount": 1, "unit": "each", "prepNote": "split and scraped", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 150°C fan. Pour {{double-cream}} of double cream into a saucepan. Add the vanilla pod and its scraped seeds. Heat over medium heat until the cream just begins to steam but does not boil. Remove the pod. Whisk {{egg-yolks}} egg yolks with {{caster-sugar}} of caster sugar until pale and thick. Slowly pour the warm cream into the egg mixture, stirring constantly. Do not whisk — whisking creates bubbles that give the custard a foamy surface. Strain through a fine sieve into a jug. Skim off any surface bubbles with a spoon. Place four ramekins in a roasting tin. Divide the custard between them. Pour boiling water into the tin until it reaches halfway up the ramekins. Bake for 35–40 minutes until the custards are set at the edges but still tremble in the centre. Remove from the water bath and cool, then refrigerate for at least 4 hours. To serve, sprinkle 1 teaspoon of caster sugar over each custard. Torch with a blowtorch, moving in small circles, until the sugar has melted and caramelised to a deep amber. Serve immediately." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Custard bubbled and grainy", "cause": "Cream added too hot to the eggs (scrambled them) or oven temperature too high.", "fix": "Let the cream cool for 2 minutes before adding to the yolks, and add it in a slow, thin stream while stirring. Reduce the oven to 140°C if bubbling persists." },
+            { "symptom": "Custard not setting after 40 minutes", "cause": "Water bath too full, so the ramekins are floating and tilting; or oven temperature too low.", "fix": "The water should come halfway up the ramekin sides, no more. Check with an oven thermometer — fan ovens vary." },
+            { "symptom": "Sugar not caramelising evenly", "cause": "Uneven layer of sugar, or blowtorch too far away.", "fix": "Spread the sugar in a very thin, even layer. Hold the torch 3–4 cm from the surface and keep moving. Aim for a uniform deep amber without burning any single spot." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The wobble test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The test for a done crème brûlée is a gentle tap on the side of the tin while the ramekins are still in the bain-marie. The edges should be completely set and the centre should ripple slightly like set jelly rather than liquid. A custard that is fully firm in the centre will be overcooked and lose its creaminess. Pull them from the oven at the tremble stage and trust the residual heat and the chilling to finish the job." }
+        ]
+      }
+    ]
+  }
+}

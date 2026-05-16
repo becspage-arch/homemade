@@ -1,0 +1,160 @@
+{
+  "slug": "patatas-bravas",
+  "title": "Patatas bravas",
+  "subtitle": "Spanish fried potatoes with brava sauce",
+  "excerpt": "Cubed potatoes fried until golden and crisp, served with a hot, smoky tomato sauce and a smear of aioli. The definitive Spanish bar snack — bold, satisfying, and ready in under an hour. Serves four as a starter.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Patatas bravas is one of the canonical tapas dishes of Madrid, where the sauce is notably hotter than in other Spanish regions. Documented by Claudia Roden in The Food of Spain (2011) and Penelope Casas in Tapas: The Little Dishes of Spain (1985).",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The brava sauce can be made up to three days ahead and kept refrigerated. Reheat gently before serving.",
+    "dietaryFlags": [],
+    "cuisine": "spanish",
+    "mealType": "starter",
+    "mood": ["party", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "frying-pan-30", "isOptional": true, "notes": "For a shallow-fried version rather than deep-fried." },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "slotted-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "aioli",
+      "term": "Aioli",
+      "definition": "A Catalan and Provençal garlic mayonnaise made from raw garlic, olive oil, and egg yolk. Sometimes sold as garlic mayonnaise in the UK — look for a version with real garlic rather than garlic flavouring."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The brava sauce is the point of this dish, not the potatoes. The potatoes are crisp and golden; the sauce is hot with chilli, sharp with vinegar, and smoky from pimentón. Both parts matter, but it is the sauce that earns the name — brava means fierce or brave." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "There are two schools on the sauce: the Madrid version, which is built on a tomato base with hot paprika and can include a little vinegar for sharpness; and the Catalan version, which is more of a mayonnaise-and-pimentón sauce. This is the Madrid version, which is the one most people know. A spoonful of shop-bought " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "aioli" } }], "text": "aioli" },
+          { "type": "text", "text": " alongside is standard, and the combination of hot sauce and cold garlic mayo is what makes the dish work." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "potato", "amount": 800, "unit": "g", "prepNote": "peeled and cut into 3 cm cubes — a floury variety like Maris Piper", "isOptional": false, "groupLabel": "For the potatoes" },
+            { "ingredientSlug": "sunflower-oil", "amount": 500, "unit": "ml", "prepNote": "for frying", "isOptional": false, "groupLabel": "For the potatoes" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the potatoes" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "For the brava sauce" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "For the brava sauce" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the brava sauce" },
+            { "ingredientSlug": "paprika-smoked", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the brava sauce" },
+            { "ingredientSlug": "paprika-hot", "amount": 1, "unit": "tsp", "prepNote": "or to taste", "isOptional": false, "groupLabel": "For the brava sauce" },
+            { "ingredientSlug": "cayenne", "amount": 0.25, "unit": "tsp", "prepNote": "optional extra heat", "isOptional": true, "groupLabel": "For the brava sauce" },
+            { "ingredientSlug": "sherry-vinegar", "amount": 15, "unit": "ml", "prepNote": "or red wine vinegar", "isOptional": false, "groupLabel": "For the brava sauce" },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the brava sauce" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the brava sauce" },
+            { "ingredientSlug": "mayonnaise", "amount": 4, "unit": "tbsp", "prepNote": "garlic mayonnaise or shop-bought aioli, to serve", "isOptional": false, "groupLabel": "To serve" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A saucepan with high sides is safer than a wide frying pan for shallow-frying the potatoes. Alternatively, use an air fryer at 200°C for 18 minutes, shaking halfway — the sauce is better than any aioli you'll find in a restaurant." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the brava sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Warm {{olive-oil}} of olive oil in a saucepan over medium heat. Cook {{onion}} chopped onion for 8 minutes until soft. Add {{garlic}} of garlic and cook for 1 minute. Add {{paprika-smoked}} of smoked paprika, {{paprika-hot}} of hot paprika, and cayenne if using; stir for 30 seconds. Pour in {{tinned-tomatoes}} of tinned tomatoes, season with salt, and simmer for 15 minutes until thick. Add {{sherry-vinegar}} of sherry vinegar, taste, and adjust. Blend until smooth with a stick blender. Keep warm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry the potatoes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pat the potato cubes dry with kitchen paper — damp potatoes spit violently in hot oil. Pour the sunflower oil into a heavy saucepan to a depth of about 5 cm and heat to 180°C. Fry the potatoes in batches without overcrowding the pan, about 8 minutes per batch until golden and cooked through. Drain on kitchen paper and season with {{sea-salt-fine}} of salt immediately." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pile the hot potatoes onto a serving dish, spoon the brava sauce generously over the top, and finish with a drizzle of aioli or a small bowl of mayonnaise alongside. Eat immediately." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Potatoes soggy rather than crisp", "cause": "Potatoes not dried before frying, or oil not hot enough.", "fix": "Pat completely dry. The oil must reach 180°C before the potatoes go in. Test with a cube of bread — it should sizzle immediately and brown in 30 seconds." },
+            { "symptom": "Sauce tastes raw and floury", "cause": "Paprika not cooked in the oil before the tomatoes went in.", "fix": "Add the paprika to the onion and garlic and stir for 30 seconds in the oil before adding tomatoes. This blooms the spices and removes the raw flavour." },
+            { "symptom": "Sauce too thin", "cause": "Not reduced long enough.", "fix": "Simmer uncovered until the sauce is thick enough to mound slightly on a spoon. It should not run off the potatoes when served." },
+            { "symptom": "Oil spitting dangerously", "cause": "Water on the potatoes, or overcrowded pan creating steam.", "fix": "Dry thoroughly and fry in smaller batches. Never add wet food to hot oil." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Patatas bravas is the defining tapas dish of Madrid, the one that separates the local bar from the tourist one: the local version has a proper sauce with heat and depth; the tourist version is often ketchup with a smear of mayonnaise. The dish appears sometime in the mid-20th century in Madrid's tabernas and has since become one of the most replicated and most often badly copied dishes in the Spanish canon. The combination of textures (crunchy potato, thick spiced sauce, cold creamy aioli) is what makes it work." }
+        ]
+      }
+    ]
+  }
+}

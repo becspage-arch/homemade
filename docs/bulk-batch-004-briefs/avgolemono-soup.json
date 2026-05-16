@@ -1,0 +1,144 @@
+{
+  "slug": "avgolemono-soup",
+  "title": "Avgolemono soup",
+  "subtitle": "Greek chicken, rice, and egg-lemon soup",
+  "excerpt": "A Greek soup of chicken stock and rice thickened at the last moment with beaten egg and lemon juice, giving it a silky, slightly tart finish unlike any other broth. Simple to make, impossible to replicate with shortcuts. Serves four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Avgolemono is one of the foundational preparations of Greek cooking, documented by Claudia Roden in The Food of the Eastern Mediterranean and by Diane Kochilas in The Greek Vegetarian. The egg-lemon thickening technique (avgo = egg, lemono = lemon) appears across Greek soups, stews, and sauce preparations.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the stock and shred the chicken up to two days ahead. Add the rice and do the egg-lemon finish just before serving — the tempered egg does not reheat well.",
+    "dietaryFlags": [],
+    "cuisine": "greek",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "cosy"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "ladle", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false },
+    { "slug": "mixing-bowl-medium", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tempering",
+      "term": "Tempering",
+      "definition": "Gradually raising the temperature of eggs by whisking in small ladlefuls of hot liquid before adding them to the pot. Prevents the eggs from scrambling on contact with the hot soup."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Avgolemono is the technique and the soup at the same time. The egg-lemon mixture whisked into hot chicken stock thickens it into something between a broth and a light custard — silky, rich, and sharp without any cream. It is the kind of soup that reads as complicated until you make it, at which point it is clearly one of the simplest things in the Greek kitchen." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The only technical requirement is tempering: you cannot add beaten egg directly to boiling stock or it scrambles. Ladle some of the hot soup into the egg-lemon bowl first, whisking as you go, to bring the eggs up to temperature gradually. Then pour the mixture back into the pot. Off the heat. The residual warmth does the rest." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "stock-chicken", "amount": 1500, "unit": "ml", "prepNote": "good-quality, ideally homemade", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "long-grain-rice", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chicken-breast", "amount": 2, "unit": "each", "prepNote": "cooked and shredded, or use leftover roast chicken", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 3, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 2, "unit": "each", "prepNote": "juice only — about 80 ml", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.5, "unit": "tsp", "prepNote": "taste before adding — stock varies", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 0.25, "unit": "tsp", "prepNote": "white pepper is traditional if you have it", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 10, "unit": "g", "prepNote": "finely chopped, to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The quality of the stock determines the soup. A good homemade stock from a whole chicken, boiled with onion, celery, and bay then strained, gives the best result. Good shop-bought stock works too; avoid very salty versions." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the rice" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bring {{stock-chicken}} of chicken stock to a simmer in a large saucepan. Add {{long-grain-rice}} of rice and cook for 18–20 minutes until the rice is tender. If adding shredded chicken, stir it in for the last 5 minutes to warm through. Reduce the heat to very low." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the egg-lemon mixture" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In a bowl, whisk {{eggs}} eggs with the juice of {{lemon}} lemons until combined. Ladle about 4 spoonfuls of the hot (but not boiling) stock slowly into the egg mixture, whisking constantly as you pour. This is the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tempering" } }], "text": "tempering" },
+          { "type": "text", "text": " step. Pour the tempered mixture back into the pot and stir gently. Do not boil the soup again — the eggs will curdle. Season with salt and pepper, scatter with parsley, and serve immediately." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Soup curdled with visible egg strands", "cause": "Stock was boiling when the egg mixture was added, or the soup was returned to the boil after adding the eggs.", "fix": "Remove the pot from the heat before adding the tempered egg mixture. Never boil the soup after this stage." },
+            { "symptom": "Too thin after the egg-lemon goes in", "cause": "Not enough rice, or the eggs were not properly beaten before tempering.", "fix": "The soup thickens as it cools slightly. Serve promptly rather than holding on the hob. For a thicker version, use 100 g of rice." },
+            { "symptom": "Lemon flavour too sharp", "cause": "Too much lemon juice, or lemon added before the eggs had fully integrated.", "fix": "Start with the juice of 1.5 lemons and taste before adding more. The acidity should be present but not aggressive." },
+            { "symptom": "Soup lacks depth", "cause": "Weak or salty shop-bought stock.", "fix": "Simmer the stock for 10 minutes with a piece of celery and a bay leaf before proceeding. Taste and dilute with water if too salty." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Avgolemono appears in some form across the Eastern Mediterranean and Middle East: as a sauce for stuffed vine leaves in Lebanon, as a thickening agent in Greek stews, and as this soup in Greece. The combination of egg and lemon as a thickener predates French cream-based sauces in the region by centuries, achieving a richness and acidity that cream can approximate but not replicate. It is the soup Greeks make when someone is ill, when it is cold, and when there is leftover chicken in the fridge — a dish that covers most of the occasions that require something warm and restorative." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "slug": "chicken-tikka-masala",
+  "title": "Chicken tikka masala",
+  "subtitle": "Charred chicken in creamy tomato and spice sauce",
+  "excerpt": "Yoghurt-marinated chicken, grilled until charred and smoky, then finished in a rich tomato and cream sauce spiced with cumin, coriander, and smoked paprika. The dish that became Britain's national curry. Serves four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Chicken tikka masala developed in the British-Indian restaurant tradition, with debated origins in Scotland and London in the 1970s. Documented by Camellia Panjabi in 50 Great Curries of India (1994) and Pat Chapman in The Curry Club Indian Restaurant Cookbook (1984). The dish combines the tikka marinade and grilling technique with a British-adapted tomato cream sauce.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the finished dish for up to three months. The sauce separates slightly on reheating — stir well over a gentle heat.",
+    "batchable": true,
+    "batchNotes": "The sauce doubles easily. Marinate and grill the chicken in batches.",
+    "makeAheadNotes": "Marinate the chicken overnight for a deeper flavour. The sauce can be made a day ahead and reheated.",
+    "dietaryFlags": ["gf"],
+    "cuisine": "angloIndian",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood", "hearty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": true, "notes": "For a smooth sauce. Leave chunky if you prefer." }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The key to chicken tikka masala that tastes like the restaurant version is the char. The chicken must be grilled under a very high heat until the marinade blackens at the edges and the chicken picks up some smoke. Without this step, the dish is just chicken in a tomato sauce. With it, the charred bits dissolve into the sauce and give the whole dish a smoky depth." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-breast", "amount": 4, "unit": "each", "prepNote": "cut into 4 cm cubes", "isOptional": false, "groupLabel": "For the tikka marinade" },
+            { "ingredientSlug": "plain-yoghurt", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the tikka marinade" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "grated", "isOptional": false, "groupLabel": "For the tikka marinade" },
+            { "ingredientSlug": "ginger-root", "amount": 20, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "For the tikka marinade" },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the tikka marinade" },
+            { "ingredientSlug": "coriander-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the tikka marinade" },
+            { "ingredientSlug": "turmeric", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the tikka marinade" },
+            { "ingredientSlug": "chilli-flakes", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the tikka marinade" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the tikka marinade" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "grated", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "ginger-root", "amount": 20, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": "hand-crushed", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "paprika-smoked", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "garam-masala", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "coriander", "amount": 15, "unit": "g", "prepNote": "roughly chopped, to serve", "isOptional": false, "groupLabel": "For the sauce" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Marinate and grill the chicken" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine {{plain-yoghurt}} of yoghurt with {{garlic}} of grated garlic, {{ginger-root}} of grated ginger, {{cumin-ground}} of ground cumin, {{coriander-ground}} of ground coriander, {{turmeric}} of ground turmeric, {{chilli-flakes}} of chilli flakes, and {{sea-salt-fine}} of salt. Add the chicken cubes and toss to coat. Cover and refrigerate for at least 1 hour, or overnight. When ready to cook, heat the grill to its highest setting. Thread the chicken onto skewers or place on a foil-lined tray. Grill for 10–12 minutes, turning halfway, until well charred at the edges and cooked through." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Warm {{olive-oil}} of olive oil in a large saucepan over medium heat. Cook {{onion}} finely chopped onions for 12 minutes until very soft and golden. Add {{garlic}} of garlic and {{ginger-root}} of ginger; cook for 2 minutes. Add {{paprika-smoked}} of smoked paprika, {{garam-masala}} of garam masala, and {{cumin-ground}} of ground cumin; stir for 1 minute. Add {{tomato-puree}} of tomato purée and cook for 1 minute. Add {{tinned-tomatoes}} of hand-crushed tomatoes and simmer for 15 minutes until reduced. Stir in {{double-cream}} of double cream. Add the grilled chicken (with any resting juices) and simmer for 5 minutes. Scatter with coriander and serve with basmati rice or naan." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "No char on the chicken", "cause": "Grill not hot enough, or chicken too wet from excess marinade.", "fix": "Pat off most of the marinade before grilling. The grill must be preheated to maximum — the char forms in the first 3 minutes or not at all." },
+            { "symptom": "Sauce too thin", "cause": "Tomatoes not reduced enough before the cream went in.", "fix": "The sauce should be thick enough to coat a spoon before the cream is added. Simmer uncovered until it reaches that consistency." },
+            { "symptom": "Sauce separating with orange oil around the edges", "cause": "Cream added too fast to very hot sauce, or sauce boiled hard after cream was added.", "fix": "Reduce the heat to a gentle simmer before adding the cream. Stir in slowly and do not allow the sauce to boil after that point." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Chicken tikka masala occupies an interesting position in British food history: a dish invented in Britain by South Asian cooks adapting for local tastes, which then got claimed by Indian restaurants as their own and eventually became the most popular dish in the country. The tomato cream sauce was developed to satisfy British customers who found grilled tikka too dry; the addition of the sauce created a new dish that has no direct equivalent in Indian cooking. It was called Britain's national dish by a foreign secretary in 2001, which was either a compliment or an admission, depending on your perspective." }
+        ]
+      }
+    ]
+  }
+}

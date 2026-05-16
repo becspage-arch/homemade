@@ -1,0 +1,101 @@
+{
+  "slug": "air-fryer-chips",
+  "title": "Air-fryer chips",
+  "subtitle": "Crisp, golden skin-on chips with no deep fat",
+  "excerpt": "Maris Piper potatoes cut into thick chips, tossed in a little oil and salt, and cooked in the air fryer until golden outside and fluffy inside. Proper chips without a deep fat fryer. Serves four as a side.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Air-fryer chips replicate the effect of a convection oven at high heat with a small amount of oil. The technique relies on the fan-assisted circulation of hot air to crisp the surface without submersion in fat. Maris Piper is the standard British chipping potato, valued for its high dry-matter content and fluffy interior.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Best eaten immediately. Parboil the chips up to an hour ahead and keep at room temperature before air-frying.",
+    "dietaryFlags": ["v", "V", "gf", "df", "nf"],
+    "cuisine": "british",
+    "mealType": "side",
+    "mood": ["weeknight", "kidFriendly", "comfortFood"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "air fryer",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "air-fryer", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The key to good air-fryer chips is parboiling first. A few minutes in salted boiling water roughens the surface of the potato and drives out some moisture, giving the hot air something to work with. Without it, the chips tend to steam rather than crisp. Maris Piper is the right potato: floury, high in dry matter, and the reason British chip shops taste the way they do." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "potato", "amount": 1000, "unit": "g", "prepNote": "Maris Piper, scrubbed, cut into 1.5 cm chips (skin on)", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut {{potato}} of potatoes into 1.5 cm chips, leaving the skin on. Bring a large pan of well-salted water to the boil. Parboil the chips for 4 minutes, then drain and leave to steam-dry in the colander for 5 minutes. Toss with {{olive-oil}} of olive oil, {{sea-salt-fine}} of salt, and {{black-pepper}} of black pepper. Preheat the air fryer to 200°C for 3 minutes. Spread the chips in a single layer in the basket (cook in two batches if your air fryer is small). Air-fry for 20–25 minutes, turning halfway, until deep golden and crisp on the outside. Serve immediately." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Chips soft and pale rather than crisp", "cause": "Too many chips in the basket, so steam builds up instead of escaping.", "fix": "Cook in two batches. The basket must not be more than two-thirds full, and ideally the chips should be in a single layer." },
+            { "symptom": "Outside burnt, inside still raw", "cause": "Air fryer too hot, or chips cut too thick.", "fix": "Reduce the temperature to 180°C and extend the time by 5 minutes. Check a chip at 20 minutes: the outside should be golden, not dark." },
+            { "symptom": "Chips stuck together", "cause": "Not enough oil, or chips not spread out before cooking.", "fix": "Toss thoroughly so every piece is coated. Turn the basket at the halfway point to separate any pieces that have stuck." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Why skin-on works" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Leaving the skin on is not a shortcut. The skin contains more flavour than the flesh and forms a protective layer that stops the chip from drying out and turning to powder during the parboil. Peeled chips work, but they fall apart more easily in the basket and are more prone to sticking. Scrub the potatoes well and cut them skin and all." }
+        ]
+      }
+    ]
+  }
+}

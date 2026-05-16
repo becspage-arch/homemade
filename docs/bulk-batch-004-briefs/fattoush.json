@@ -1,0 +1,133 @@
+{
+  "slug": "fattoush",
+  "title": "Fattoush",
+  "subtitle": "Lebanese bread salad with sumac dressing",
+  "excerpt": "A Lebanese salad of cucumber, tomato, radish, and herbs with crisp pieces of toasted pitta bread, dressed with sumac and lemon. The bread is the texture and the sumac is the character. Serves four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Fattoush is one of the signature salads of Lebanese home cooking, a practical use for stale bread that has become a dish in its own right. Documented by Anissa Helou in Lebanese Cuisine (1994) and Claudia Roden in A New Book of Middle Eastern Food (1968). Sumac (dried ground sumac berries) provides the characteristic sour, citrus-like flavour.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 8,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Chop all the vegetables and make the dressing up to an hour ahead. Add the bread just before serving or it goes soft.",
+    "dietaryFlags": ["v"],
+    "cuisine": "middleEastern",
+    "mealType": "lunch",
+    "mood": ["lightAndFresh", "summery", "picnic"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "frying-pan-30", "isOptional": true, "notes": "For frying the bread. Alternatively grill or oven-toast." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sumac",
+      "term": "Sumac",
+      "definition": "A dark red spice ground from the dried berries of the sumac shrub, widely used in Middle Eastern cooking. Has a sharp, lemony sourness. Available in most supermarkets and all Middle Eastern shops."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fattoush is a salad built around stale bread, but the bread should not be an afterthought. The pieces need to be crisped properly — either fried in olive oil until golden, or grilled under a high heat until charred at the edges. Soft bread makes a soggy salad. The bread goes in last, just before serving, and the whole thing is eaten immediately." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "bread", "amount": 2, "unit": "slice", "prepNote": "pitta bread or any flatbread, torn into rough pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lettuce", "amount": 1, "unit": "each", "prepNote": "cos or romaine, roughly torn", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cucumber", "amount": 1, "unit": "each", "prepNote": "deseeded and diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cherry-tomatoes", "amount": 250, "unit": "g", "prepNote": "halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "radish", "amount": 6, "unit": "each", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "leaves only, roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mint", "amount": 15, "unit": "g", "prepNote": "leaves only, roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sumac", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the dressing" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "juice only", "isOptional": false, "groupLabel": "For the dressing" },
+            { "ingredientSlug": "extra-virgin-olive-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the dressing" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the dressing" },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": "for crisping the bread", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Crisp the bread" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tear 2 pitta breads into rough pieces about 3–4 cm across. Heat {{olive-oil}} of olive oil in a frying pan over medium-high heat. Add the bread pieces and fry, turning occasionally, for 5–8 minutes until crisp and golden. Season lightly with salt. Set aside to cool." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Dress and assemble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Whisk together {{sumac}} of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sumac" } }], "text": "sumac" },
+          { "type": "text", "text": ", the juice of {{lemon}} lemons, {{extra-virgin-olive-oil}} of extra-virgin olive oil, and {{sea-salt-fine}} of salt. In a large bowl combine the torn lettuce, diced cucumber, halved cherry tomatoes, sliced radish, parsley, and mint. Pour over the dressing and toss gently. Add the crispy bread pieces and toss once more. Serve immediately." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Bread soggy within minutes of assembling", "cause": "Bread added too early, or not crisped enough initially.", "fix": "The bread must be fully crisp and golden before it goes in. Add it at the very last moment, just before serving." },
+            { "symptom": "Salad lacks punch", "cause": "Not enough sumac or lemon.", "fix": "Fattoush should taste bright and sour. Add more sumac and another squeeze of lemon. Taste before serving and adjust." },
+            { "symptom": "Watery at the bottom of the bowl", "cause": "Tomatoes releasing liquid into the dressing.", "fix": "If making ahead, keep the tomatoes unsalted until the moment of dressing. Salt draws water out of tomatoes quickly." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fattoush is the Lebanese equivalent of a panzanella or panzarella — a practical salad built around stale bread, a way of using what would otherwise be thrown away. The sumac dressing is the distinguishing element: the sourness of sumac is different from lemon or vinegar, fruitier and more complex, and it is what gives the salad its characteristic character. Fattoush appears on the meze table alongside hummus, tabbouleh, and muhammara, and is also a popular weekday lunch dish on its own." }
+        ]
+      }
+    ]
+  }
+}

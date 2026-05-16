@@ -1430,6 +1430,34 @@ Fixed by script before upload. Two new tools added to master list:
 **Running cooking total after batch 003:** ~181 PUBLISHED + ~215
 personal-recipes DRAFT.
 
+#### Batch 004 — COMPLETE (2026-05-16)
+
+**50 cooking recipes PUBLISHED.** Sonnet 4.6 session (two-part, context
+overflow between parts). Full report: `docs/bulk-batch-004-report.md`.
+
+**Territory spread (batch 004):** Greek 4, Spanish 4, Middle Eastern 6,
+Anglo-Indian 6, North African 3, Caribbean 3, Eastern European 3,
+Air-fryer 6, Slow-cooker 6, Preserves 5, Desserts (non-baking) 4.
+First time preserves and air-fryer/slow-cooker method tags appear in
+meaningful volume.
+
+**Difficulty (batch 004):** beginner 44 (88%), intermediate 6 (12%),
+advanced 0. Heaviest beginner ratio of any batch — method-focused
+recipes (air-fryer, slow-cooker) are structurally simpler.
+
+**Voice stats:** 14 of 50 failed first-pass voice-check (28% — best
+rate of any batch). All 14 were appositive em-dash pair errors; all
+fixed in one round; 0 dropped. Banned phrases "genuinely" (2×) and
+"honest" (1×) also caught. No new common-issues entries — patterns
+already documented.
+
+**Slug gaps surfaced:** no `blowtorch` tool (mentioned in prose
+only for crème brûlée); no `savoiardi` ingredient (tiramisu avoided);
+no `jam-sugar` (used `granulated-sugar` for all jam recipes).
+
+**Running cooking total after batch 004:** ~231 PUBLISHED + ~215
+personal-recipes DRAFT.
+
 ### Step 16 — Mindset v3 polish + first magical-ritual anchor ✅ landed 2026-05-15
 
 **Goal.** Apply Rebecca's second-pass review feedback on the v2
