@@ -101,9 +101,6 @@ export function OnboardingCard({ categories }: OnboardingCardProps) {
         <h2 id="onboarding-heading" className="onboarding-card-title">
           Welcome.
         </h2>
-        <p className="onboarding-card-subtitle">
-          Three questions so the homepage knows what to show you.
-        </p>
       </header>
 
       <ol className="onboarding-steps" aria-hidden="true">
