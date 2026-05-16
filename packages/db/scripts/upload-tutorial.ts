@@ -146,8 +146,15 @@ async function uploadTutorial(
 ): Promise<UploadResult> {
   validateInput(input)
 
-  const { prisma, MediaStatus, MediaType, TutorialStatus, SourceType, Difficulty } =
-    await getPrisma()
+  const {
+    prisma,
+    MediaStatus,
+    MediaType,
+    TutorialStatus,
+    SourceType,
+    Difficulty,
+    maybeFlipCategoryVisibility,
+  } = await getPrisma()
 
   // 1. Author.
   const author = await prisma.user.findUnique({
@@ -574,6 +581,12 @@ async function uploadTutorial(
     input.projectSchedule ?? [],
     prisma,
   )
+
+  // 15. Category public-visibility auto-flip. Cheap idempotent check — only
+  // fires on PUBLISHED rows, no-op once the category is already visible.
+  if (finalStatus === 'PUBLISHED') {
+    await maybeFlipCategoryVisibility(prisma, category.id)
+  }
 
   return {
     mode,

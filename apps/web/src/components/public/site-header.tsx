@@ -21,7 +21,8 @@ const SPINE_CATEGORY_SLUGS = [
 export async function SiteHeader() {
   const [categories, dbUser] = await Promise.all([
     prisma.category.findMany({
-      orderBy: [{ order: 'asc' }, { name: 'asc' }],
+      where: { isPublicVisible: true },
+      orderBy: [{ launchOrder: 'asc' }, { order: 'asc' }, { name: 'asc' }],
       select: { slug: true, name: true },
     }),
     getCurrentDbUser(),

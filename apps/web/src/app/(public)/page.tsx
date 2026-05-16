@@ -39,7 +39,8 @@ export default async function HomePage() {
   let onboardingCategories: { id: string; slug: string; name: string }[] = []
   if (data.isOnboardingPending) {
     onboardingCategories = await prisma.category.findMany({
-      orderBy: [{ order: 'asc' }, { name: 'asc' }],
+      where: { isPublicVisible: true },
+      orderBy: [{ launchOrder: 'asc' }, { order: 'asc' }, { name: 'asc' }],
       select: { id: true, slug: true, name: true },
     })
   }

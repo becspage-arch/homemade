@@ -182,6 +182,19 @@ model Category {
   introBody   Json? // Rich content (TipTap) for the editorial intro
   order       Int     @default(0)
 
+  // Multi-category fill plan (phase_categories_targets_001).
+  // `targetTutorialCount` is the eventual library size for this category from
+  // `BUILD_PROGRESS.md` § "Multi-category fill plan". Null = no target set.
+  // `isPublicVisible` controls whether the category surfaces in public nav,
+  // browse grids, and category pages. New categories with < 10 published
+  // tutorials default to false; the publish path flips it to true once the
+  // threshold is crossed. Admin sees every category regardless.
+  // `launchOrder` orders the public nav rotation (1 = first spine, …) — used
+  // by the "5 spine + overflow" header pattern.
+  targetTutorialCount Int?
+  isPublicVisible     Boolean @default(true)
+  launchOrder         Int?
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

@@ -33,9 +33,14 @@ export interface KpiCard {
 export interface CategoryPipelineRow {
   slug: string
   name: string
+  description: string | null
   published: number
   draft: number
   total: number
+  target: number | null
+  fillPercent: number | null
+  isPublicVisible: boolean
+  lastPublishedAt: string | null
 }
 
 export interface DashboardData {
@@ -192,13 +197,24 @@ async function loadDashboard(): Promise<DashboardData> {
     dayBuckets('user', 'createdAt', {}),
     dayBuckets('userProject', 'startedAt', {}),
     prisma.category.findMany({
-      orderBy: [{ order: 'asc' }, { name: 'asc' }],
-      select: { id: true, slug: true, name: true },
+      // Admin sees the full picture, including isPublicVisible:false rows that
+      // public-side queries filter out. Launch order keeps the spine at the
+      // top with the future-categories grouping below it.
+      orderBy: [{ launchOrder: 'asc' }, { order: 'asc' }, { name: 'asc' }],
+      select: {
+        id: true,
+        slug: true,
+        name: true,
+        description: true,
+        targetTutorialCount: true,
+        isPublicVisible: true,
+      },
     }),
     prisma.tutorial.groupBy({
       by: ['categoryId'],
       where: { status: TutorialStatus.PUBLISHED },
       _count: { _all: true },
+      _max: { publishedAt: true },
     }),
     prisma.tutorial.groupBy({
       by: ['categoryId'],
@@ -303,15 +319,27 @@ async function loadDashboard(): Promise<DashboardData> {
 
   const publishedMap = new Map(publishedByCategory.map((p) => [p.categoryId, p._count._all]))
   const draftMap = new Map(draftByCategory.map((p) => [p.categoryId, p._count._all]))
+  const lastPublishedMap = new Map(
+    publishedByCategory.map((p) => [p.categoryId, p._max.publishedAt ?? null]),
+  )
   const pipeline: CategoryPipelineRow[] = categoryRows.map((c) => {
     const pub = publishedMap.get(c.id) ?? 0
     const drf = draftMap.get(c.id) ?? 0
+    const target = c.targetTutorialCount
+    const fillPercent =
+      target != null && target > 0 ? Math.min(100, Math.round((pub / target) * 100)) : null
+    const lastPublishedAt = lastPublishedMap.get(c.id) ?? null
     return {
       slug: c.slug,
       name: c.name,
+      description: c.description,
       published: pub,
       draft: drf,
       total: pub + drf,
+      target,
+      fillPercent,
+      isPublicVisible: c.isPublicVisible,
+      lastPublishedAt: lastPublishedAt ? lastPublishedAt.toISOString() : null,
     }
   })
 

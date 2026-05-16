@@ -58,8 +58,8 @@ export default async function AdminDashboardPage() {
       <section className="admin-pipeline" aria-labelledby="pipeline-heading">
         <h2 id="pipeline-heading">Category pipeline</h2>
         <p className="admin-pipeline-hint">
-          Live count of published + draft tutorials per category. Bulk content
-          batches refill the queue.
+          Published / target per category. Bulk content batches refill the
+          queue; categories flip to publicly visible at 10 published.
         </p>
         <div className="admin-pipeline-table-wrap">
           <table className="admin-pipeline-table">
@@ -68,45 +68,94 @@ export default async function AdminDashboardPage() {
                 <th>Category</th>
                 <th>Published</th>
                 <th>Draft</th>
-                <th>Total</th>
+                <th>Target</th>
                 <th>Fill %</th>
+                <th>Last batch</th>
+                <th>Public</th>
               </tr>
             </thead>
             <tbody>
-              {data.pipeline.map((row) => {
-                const fill = row.total > 0
-                  ? Math.round((row.published / row.total) * 100)
-                  : 0
-                return (
-                  <tr key={row.slug}>
-                    <td>
-                      <Link
-                        href={`/admin/tutorials?category=${row.slug}`}
-                        className="admin-pipeline-link"
-                      >
-                        {row.name}
-                      </Link>
-                    </td>
-                    <td>{row.published.toLocaleString('en-GB')}</td>
-                    <td>{row.draft.toLocaleString('en-GB')}</td>
-                    <td>{row.total.toLocaleString('en-GB')}</td>
-                    <td>
-                      <span className="admin-pipeline-bar" aria-hidden="true">
-                        <span
-                          className="admin-pipeline-bar-fill"
-                          style={{ width: `${fill}%` }}
-                        />
-                      </span>
-                      <span className="admin-pipeline-bar-label">{fill}%</span>
-                    </td>
-                  </tr>
-                )
-              })}
+              {data.pipeline.map((row) => (
+                <PipelineRow key={row.slug} row={row} />
+              ))}
             </tbody>
           </table>
         </div>
       </section>
     </div>
+  )
+}
+
+function PipelineRow({
+  row,
+}: {
+  row: import('@/lib/admin-dashboard-data').CategoryPipelineRow
+}) {
+  const isEmpty = row.published === 0 && row.draft === 0
+  const hasTarget = row.target != null && row.target > 0
+  const lastBatch = row.lastPublishedAt
+    ? new Date(row.lastPublishedAt).toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: 'short',
+      })
+    : '—'
+  return (
+    <tr className={isEmpty ? 'admin-pipeline-row-empty' : undefined}>
+      <td>
+        <Link
+          href={`/admin/tutorials?category=${row.slug}`}
+          className="admin-pipeline-link"
+        >
+          {row.name}
+        </Link>
+        {isEmpty && (
+          <span className="admin-pipeline-row-tag" aria-label="Not started">
+            Not started
+          </span>
+        )}
+      </td>
+      <td>{row.published.toLocaleString('en-GB')}</td>
+      <td>{row.draft.toLocaleString('en-GB')}</td>
+      <td>
+        {hasTarget ? (
+          row.target!.toLocaleString('en-GB')
+        ) : (
+          <span className="admin-pipeline-no-target">no target</span>
+        )}
+      </td>
+      <td>
+        {hasTarget ? (
+          <>
+            <span className="admin-pipeline-bar" aria-hidden="true">
+              <span
+                className="admin-pipeline-bar-fill"
+                style={{ width: `${row.fillPercent ?? 0}%` }}
+              />
+            </span>
+            <span className="admin-pipeline-bar-label">{row.fillPercent ?? 0}%</span>
+          </>
+        ) : (
+          <span className="admin-pipeline-no-target">—</span>
+        )}
+      </td>
+      <td className="admin-pipeline-cell-soft">{lastBatch}</td>
+      <td>
+        <span
+          className={
+            row.isPublicVisible
+              ? 'admin-pipeline-visibility admin-pipeline-visibility-on'
+              : 'admin-pipeline-visibility admin-pipeline-visibility-off'
+          }
+          title={
+            row.isPublicVisible
+              ? 'Visible in public nav and browse'
+              : 'Hidden from public nav until 10 published'
+          }
+        >
+          {row.isPublicVisible ? 'Live' : 'Private'}
+        </span>
+      </td>
+    </tr>
   )
 }
 

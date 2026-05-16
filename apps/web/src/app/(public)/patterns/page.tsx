@@ -56,7 +56,8 @@ export default async function PatternsBoardPage({ searchParams }: PageProps) {
       },
     }),
     prisma.category.findMany({
-      orderBy: [{ order: 'asc' }, { name: 'asc' }],
+      where: { isPublicVisible: true },
+      orderBy: [{ launchOrder: 'asc' }, { order: 'asc' }, { name: 'asc' }],
       select: { slug: true, name: true },
     }),
     getCurrentDbUser(),

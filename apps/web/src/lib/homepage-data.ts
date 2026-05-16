@@ -225,11 +225,12 @@ export async function loadHomepageData(
     // Most-loved per spine category. Build per-category rows after — we fetch
     // category rows then per-category tutorials in parallel below.
     prisma.category.findMany({
-      where: { slug: { in: SPINE_CATEGORY_SLUGS } },
+      where: { slug: { in: SPINE_CATEGORY_SLUGS }, isPublicVisible: true },
       select: { id: true, slug: true, name: true },
     }),
     prisma.category.findMany({
-      orderBy: [{ order: 'asc' }, { name: 'asc' }],
+      where: { isPublicVisible: true },
+      orderBy: [{ launchOrder: 'asc' }, { order: 'asc' }, { name: 'asc' }],
       select: { id: true, slug: true, name: true, description: true },
     }),
   ])

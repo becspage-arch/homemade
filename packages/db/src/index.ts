@@ -7,6 +7,13 @@ export * from '@prisma/client'
 // R2 uploader for scripts that work this package directly.
 export { r2Upload } from './r2'
 
+// Category visibility helper — used by every publish path so a category
+// flips to publicly visible the moment it crosses the threshold.
+export {
+  maybeFlipCategoryVisibility,
+  PUBLIC_VISIBILITY_THRESHOLD,
+} from './category-visibility'
+
 declare global {
   // eslint-disable-next-line no-var
   var __homemade_prisma: PrismaClient | undefined

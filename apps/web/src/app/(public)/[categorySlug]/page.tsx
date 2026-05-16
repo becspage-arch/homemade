@@ -21,8 +21,11 @@ interface PageProps {
 }
 
 const loadCategory = cache(async (slug: string) => {
-  return prisma.category.findUnique({
-    where: { slug },
+  // Public category pages 404 for `isPublicVisible: false` rows — admin and
+  // worker scripts use the unfiltered helper. The auto-flip on 10 published
+  // tutorials promotes a category here automatically.
+  return prisma.category.findFirst({
+    where: { slug, isPublicVisible: true },
     include: {
       subCategories: { orderBy: [{ order: 'asc' }, { name: 'asc' }] },
     },

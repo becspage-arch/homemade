@@ -34,7 +34,8 @@ export default async function SearchPage({ searchParams }: PageProps) {
   const season = pickString(params.season) ?? null
 
   const categories = await prisma.category.findMany({
-    orderBy: [{ order: 'asc' }, { name: 'asc' }],
+    where: { isPublicVisible: true },
+    orderBy: [{ launchOrder: 'asc' }, { order: 'asc' }, { name: 'asc' }],
     select: { slug: true, name: true },
   })
 

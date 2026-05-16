@@ -3676,3 +3676,83 @@ infra/web UI/admin changes.
 
 Commit: `c13c25d` — content(audit): tricolons — 24 voice-tell
 rewrites, filter tightened 529 → 30.
+
+## Phase categories targets 001 (2026-05-16)
+
+Placeholder Category rows for the remaining 14 top-level categories +
+target counts + per-category fill % on the admin dashboard, so the
+multi-category fill plan has a real grid view in `/admin` rather than
+the static markdown table in this file.
+
+- **Schema migration** `20260619000000_phase_categories_targets_001`.
+  Additive on `Category`:
+  - `targetTutorialCount Int?` — eventual library size per the grid
+    in § "Multi-category fill plan".
+  - `isPublicVisible Boolean default true` — gates public nav, browse
+    grid, homepage rails, and the public `/[slug]` page. New empty
+    categories default to `false`; the publish path auto-flips to
+    `true` the moment a category has 10 published tutorials.
+  - `launchOrder Int?` — orders public nav rotation (1 = first
+    spine). Cooking=1, Baking=2, Garden=3, Mindset=4, Herbal
+    medicine=5, then the rest by display order.
+  - Composite index on `(isPublicVisible, launchOrder)` for the
+    public-nav query.
+
+- **Seed script** `packages/db/scripts/seed-categories.ts`. Idempotent
+  upsert of all 17 categories with their factual one-liner
+  descriptions (voice rules applied — no inspirational codas).
+  Existing rows (Cooking, Baking, Mindset) keep their description
+  but get `targetTutorialCount` + `launchOrder` set; the 14 new
+  rows are created with `isPublicVisible = false` until they cross
+  10 published. `pnpm --filter @homemade/db seed:categories` runs
+  it; `--prod` adds an explicit confirmation prompt. Reports
+  unknown rows it spotted but never deletes them.
+
+- **Auto-flip helper** `packages/db/src/category-visibility.ts`
+  exports `maybeFlipCategoryVisibility(prisma, categoryId)` —
+  idempotent, only flips false → true, never the reverse. Wired
+  into every publish-transition path:
+  - `apps/web/src/app/admin/tutorials/actions.ts` `transitionTutorial`
+    (single-row admin publish).
+  - `apps/web/src/app/admin/tutorials/bulk-actions.ts` bulk publish
+    (per-touched-category, not per-row, for efficiency).
+  - `packages/db/scripts/upload-tutorial.ts` (the bulk autopilot
+    path) — runs after the row lands as PUBLISHED.
+
+- **Public-side filtering.** Every public-side `prisma.category.findMany`
+  now adds `where: { isPublicVisible: true }` and orders by
+  `launchOrder asc` first:
+  - `apps/web/src/components/public/site-header.tsx` — nav.
+  - `apps/web/src/app/(public)/page.tsx` — onboarding picker.
+  - `apps/web/src/lib/homepage-data.ts` — rails + spine.
+  - `apps/web/src/app/(public)/search/page.tsx` — filter chips.
+  - `apps/web/src/app/(public)/patterns/page.tsx` — filter chips.
+  - `apps/web/src/app/(public)/[categorySlug]/page.tsx` — `findFirst`
+    with `isPublicVisible: true`, so an invisible category 404s.
+  Admin queries unchanged — admin sees every category.
+
+- **Admin dashboard pipeline widget** (`apps/web/src/app/admin/page.tsx`
+  + `lib/admin-dashboard-data.ts` + `dashboard.css`) extended to
+  render all 17 categories ordered by `launchOrder`. New columns:
+  Target, Fill %, Last batch, Public. Empty categories show a "Not
+  started" tag in the row + empty fill bar. The visibility cell is
+  a Live / Private pill with a tooltip explaining the auto-flip
+  threshold. Cached 60 s via `unstable_cache`.
+
+- **`category-counts` helper** extended to include Target / Fill % /
+  Public columns in the markdown output, so the BUILD_PROGRESS
+  snapshot can mirror what admin sees.
+
+Targets from the grid (recorded here so they survive a schema reset):
+Cooking 7,000 / Baking 3,000 / Garden 4,000 / Herbal medicine 2,500 /
+Mindset 1,000 / Crochet 1,500 / Knitting 1,500 / Needlework 800 /
+Sewing 1,200 / Fibre arts 800 / Wood & natural craft 800 / Paper &
+word 800 / Pottery & ceramics 500 / Animals & smallholding 700 /
+Home & repair 800 / Natural home 800 / Sustainability 700.
+
+Out of scope (deliberately): no content authoring for the new
+categories, no pipeline setup (schema additions / authoring prompts /
+anchor batches all wait on Rebecca's go-signal per category), no
+autopilot stream additions, no homepage layout changes beyond the
+empty-category graceful handling, no edits to existing Category row
+descriptions, no marketing pages, no infra changes.

@@ -1,7 +1,13 @@
 'use server'
 
 import { revalidatePath } from 'next/cache'
-import { prisma, TutorialStatus, UserRole, type Prisma } from '@homemade/db'
+import {
+  prisma,
+  TutorialStatus,
+  UserRole,
+  maybeFlipCategoryVisibility,
+  type Prisma,
+} from '@homemade/db'
 import { getCurrentDbUser, hasRoleAtLeast } from '@/lib/auth'
 import { audit } from '@/lib/audit'
 import { syncTutorialById, removeTutorialById } from '@/lib/search-sync'
@@ -57,7 +63,13 @@ export async function bulkTutorialAction(formData: FormData): Promise<void> {
   // path we still need the ids for the search-index removal sweep.
   const candidates = await prisma.tutorial.findMany({
     where,
-    select: { id: true, slug: true, status: true, publishedAt: true },
+    select: {
+      id: true,
+      slug: true,
+      status: true,
+      publishedAt: true,
+      categoryId: true,
+    },
   })
 
   if (candidates.length === 0) return
@@ -87,6 +99,11 @@ export async function bulkTutorialAction(formData: FormData): Promise<void> {
         },
       })
       await syncTutorialById(t.id)
+    }
+    // Re-check visibility once per touched category — cheaper than per row.
+    const touchedCategoryIds = new Set(toUpdate.map((t) => t.categoryId))
+    for (const categoryId of touchedCategoryIds) {
+      await maybeFlipCategoryVisibility(prisma, categoryId)
     }
     await audit({
       actorId: actor.id,

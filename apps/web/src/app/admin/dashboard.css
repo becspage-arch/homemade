@@ -256,3 +256,55 @@
   letter-spacing: 0.18em;
   color: var(--color-warm-taupe);
 }
+
+.admin-pipeline-row-empty td {
+  color: var(--color-warm-taupe);
+}
+
+.admin-pipeline-row-empty .admin-pipeline-link {
+  color: var(--color-warm-taupe);
+}
+
+.admin-pipeline-row-tag {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 6px;
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 2px;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+  vertical-align: middle;
+}
+
+.admin-pipeline-no-target {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+}
+
+.admin-pipeline-cell-soft {
+  color: var(--color-warm-taupe);
+  font-size: 12px;
+}
+
+.admin-pipeline-visibility {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.admin-pipeline-visibility-on {
+  background: rgba(122, 137, 113, 0.12);
+  color: var(--color-forest);
+}
+
+.admin-pipeline-visibility-off {
+  background: var(--color-linen-grey);
+  color: var(--color-warm-taupe);
+}
