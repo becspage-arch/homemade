@@ -1,0 +1,161 @@
+{
+  "slug": "brown-stew-chicken",
+  "title": "Jamaican brown stew chicken",
+  "subtitle": "Bone-in chicken braised in a caramel-sugar gravy with allspice, thyme, and scotch bonnet.",
+  "excerpt": "Bone-in chicken pieces marinated in green seasoning, browned in caramelised sugar for that distinctive dark gravy, then braised with onion, peppers, and a single scotch bonnet. The Sunday-pot dinner of Jamaican home cooking.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Brown stew chicken uses the Jamaican technique of burning sugar (a tablespoon of brown sugar caramelised in hot oil until almost black) to give the gravy its dark colour and bittersweet edge. The technique came to the Caribbean from West Africa via the transatlantic trade and persists across Jamaican, Trinidadian, and Bajan cooking. Helen Willinsky's Jerk: Barbecue from Jamaica documents the burnt-sugar method as the central technique of brown stew.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes very well for up to three months. The gravy holds its colour and depth.",
+    "batchable": true,
+    "batchNotes": "Doubles in a large casserole. The Sunday-pot dish that stretches across the week.",
+    "makeAheadNotes": "Marinate the chicken the night before. The cooked stew tastes better on day two.",
+    "dietaryFlags": [],
+    "cuisine": "caribbean",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "slowSunday", "mealPrep"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "green-seasoning", "term": "Green seasoning", "definition": "A blended Caribbean marinade base of fresh herbs (thyme, scallion, parsley, coriander), garlic, onion, and pepper. Used across Trinidad, Jamaica, and Guyana as the savoury foundation for stews, roasts, and braises. Made in batches and kept in the fridge for a week." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Brown stew is not a brown sauce in the European sense. The colour comes from a specific technique called burning sugar: a tablespoon of brown sugar dissolved in hot oil and cooked until almost black, which gives the stew its dark, slightly bitter foundation. Done right, the sugar tastes nothing like sweetness in the finished dish; it tastes of depth." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The marinade is a simplified " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "green-seasoning" } }], "text": "green seasoning" }, { "type": "text", "text": ". Coats the chicken, sits in the fridge for an hour minimum, ideally overnight. The marinade builds the foundation; everything else is the cooking shape." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thigh", "amount": 4, "unit": "each", "prepNote": "bone-in, skin-on", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chicken-drumsticks", "amount": 4, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the marinade" },
+            { "ingredientSlug": "spring-onion", "amount": 3, "unit": "each", "prepNote": "white and green parts, sliced", "isOptional": false, "groupLabel": "For the marinade" },
+            { "ingredientSlug": "thyme", "amount": 5, "unit": "sprig", "prepNote": "leaves picked", "isOptional": false, "groupLabel": "For the marinade" },
+            { "ingredientSlug": "allspice", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the marinade" },
+            { "ingredientSlug": "soy-sauce-light", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the marinade" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the marinade" },
+            { "ingredientSlug": "vegetable-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dark-brown-sugar", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-green", "amount": 1, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-red", "amount": 1, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "scotch-bonnet", "amount": 1, "unit": "each", "prepNote": "left whole", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 1, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 400, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ketchup", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A heavy casserole or dutch oven with a tight-fitting lid. The pot must be heavy enough to hold even heat during the sugar-burning step; thin pans scorch." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Marinate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine {{garlic}} of crushed garlic, the sliced {{spring-onion}} spring onions, {{thyme}} of thyme leaves, {{allspice}} of allspice, {{soy-sauce-light}} of light soy, and {{sea-salt-fine}} of salt in a large bowl. Add the {{chicken-thigh}} chicken thighs and {{chicken-drumsticks}} drumsticks. Massage the marinade into the meat. Cover and refrigerate for at least an hour, ideally overnight." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Burn the sugar" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat {{vegetable-oil}} of oil in the casserole over a medium-high heat. When the oil shimmers, sprinkle in {{dark-brown-sugar}} of brown sugar. Stir constantly with a wooden spoon. The sugar will melt, foam, turn amber, then very dark brown. This takes 90 seconds to 2 minutes. Stop the moment the sugar is the colour of dark espresso and just begins to smoke; one second too long and it goes bitter." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the chicken" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Immediately add the marinated chicken pieces to the burnt sugar oil, skin-side down. The chicken will sizzle dramatically. Brown for 4 minutes a side. The skin colours fast in the dark oil. Lift the chicken to a plate." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the gravy" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add the sliced {{onion}} onion, {{pepper-green}} green pepper, {{pepper-red}} red pepper, the whole {{scotch-bonnet}} scotch bonnet, and the sliced {{carrot}} carrot. Cook for 5 minutes until softened. Stir in {{tomato-puree}} of tomato purée and {{ketchup}} of ketchup; cook for one minute. Return the chicken with any resting juices. Pour in {{stock-chicken}} of hot stock." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bring to a steady simmer. Cover and cook on a low heat for 35 minutes, stirring every 10 minutes. The chicken is done when the meat starts to pull from the bone. Lift out the scotch bonnet (do not eat it whole). Taste and adjust the salt. Serve with white rice and a side of fried plantain." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Gravy is bitter", "cause": "Sugar burnt past the dark-espresso stage into truly black.", "fix": "The window is narrow. Start over: discard the burnt oil, wash the pan, try again. Watch for the first wisp of smoke and add the chicken instantly." },
+            { "symptom": "Gravy is too sweet", "cause": "Sugar was not cooked dark enough, leaving residual sweetness.", "fix": "Simmer uncovered for an additional 10 minutes to concentrate the savoury notes. Next time, push the sugar a full shade darker." },
+            { "symptom": "Chicken is dry", "cause": "Boneless or skinless cuts cooked too long in the gravy.", "fix": "Use bone-in skin-on cuts. The collagen in the bone and the fat in the skin protect the meat through a long braise." },
+            { "symptom": "Sauce is too thin", "cause": "Too much stock for the cooking time.", "fix": "Simmer uncovered for 10 minutes after the chicken is cooked to reduce. Lift the chicken to a plate first to stop it overcooking." },
+            { "symptom": "Burnt sugar splattered when chicken went in", "cause": "Normal but worth knowing about.", "fix": "Add the chicken from a low angle, skin-side down, to minimise splatter. Stand back. The smoke clears within seconds." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Brown stew chicken is the everyday Sunday-pot dinner of Jamaican home cooking. The burnt-sugar technique is the signature: West African cooks brought it to the Caribbean, where it became the defining mark of brown stew across multiple meats. The same method works for brown stew fish, beef, or oxtail; the sugar-burning step is identical and the braising time adjusts to the cut. Served with white rice, rice and peas, or hard-dough bread to mop the gravy." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "slug": "pressure-cooker-beef-stew",
+  "title": "Pressure-cooker beef stew",
+  "subtitle": "Chuck steak braised in stock and red wine under pressure for 35 minutes.",
+  "excerpt": "Chuck steak browned and then braised under pressure with onion, carrot, mushrooms, and red wine. The pressure cooker pulls in 35 minutes what a slow oven does in three hours. Same depth of flavour, weeknight time scale.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pressure-braised beef stew uses the same fundamentals as a slow-oven version (Larousse Gastronomique, Elizabeth David's French Provincial Cooking): brown the meat, deglaze with wine, cook with aromatics until the collagen yields. The pressure cooker simply accelerates the collagen-to-gelatin conversion that takes hours in an open pot. The browning step still happens at atmospheric pressure in the cooker's saute mode; the high-pressure phase does the tenderising.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 35,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes very well for up to three months. The flavour deepens after a day in the fridge; freezing has the same effect.",
+    "batchable": true,
+    "batchNotes": "Doubles easily in a 6-litre cooker. Excellent for batch-cooked weekday dinners.",
+    "makeAheadNotes": "Keeps in the fridge for four days. Reheats gently on the hob or in the microwave.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "cosy", "mealPrep"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "pressure-cooker", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Chuck steak is the right cut for braising. It has the collagen-rich connective tissue that breaks down into gelatin, giving the stew its glossy, mouth-coating body. Lean cuts dry out under pressure; chuck rewards it." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The cooker does two jobs. First, sauté mode at atmospheric pressure: brown the meat, sweat the aromatics, deglaze the pan. Then the lid goes on for the 35-minute high-pressure phase that drives the actual tenderising. Skipping the browning step costs you the flavour foundation; nothing the pressure does later replaces it." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-chuck", "amount": 750, "unit": "g", "prepNote": "cut into 4 cm cubes, patted dry", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 2, "unit": "tbsp", "prepNote": "for dusting", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vegetable-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": "each", "prepNote": "cut into 3 cm chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "thickly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mushrooms-chestnut", "amount": 250, "unit": "g", "prepNote": "quartered", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-wine", "amount": 250, "unit": "ml", "prepNote": "a robust red", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": "freshly ground", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A 6-litre pressure cooker with a sauté function. A stovetop pressure cooker works the same way; brown the meat in a separate frying pan first if your cooker base scorches easily." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the beef" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pat {{beef-chuck}} of beef cubes dry with kitchen paper. Toss them with {{plain-flour}} of flour and a generous pinch of salt and pepper. Set the pressure cooker to sauté or high heat and warm {{vegetable-oil}} of oil. Brown the beef in two batches: do not crowd the pan or the meat steams rather than colours. Each batch needs four minutes a side. Transfer to a plate." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sweat the aromatics, deglaze" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add {{onion}} chopped onions, {{carrot}} carrot chunks, and {{celery}} celery to the cooker. Cook for 5 minutes until the onions soften. Stir in {{mushrooms-chestnut}} of quartered mushrooms and cook for 3 minutes more. Add {{garlic}} of sliced garlic and {{tomato-puree}} of tomato purée; cook for one minute. Pour in {{red-wine}} of red wine and scrape the base of the pan to release any browned bits." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook under pressure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Return the beef and any resting juices to the cooker. Add {{stock-beef}} of hot beef stock, {{bay-leaves}} of bay, and {{thyme}} of thyme. The liquid should come about three-quarters of the way up the meat; it does not need to cover it. Lock the lid and cook at high pressure for 35 minutes. Let the pressure release naturally for 15 minutes, then quick-release any remaining pressure." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Open the lid carefully. If the sauce is thin, set the cooker back to sauté and reduce uncovered for 5 minutes. Taste and adjust the salt. Fish out the bay leaves and thyme stems. Serve over mashed potato, polenta, or with crusty bread to mop the sauce." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Beef is still tough", "cause": "Cooking time too short for the cut, or quick-released the pressure too soon.", "fix": "Reseal and pressure-cook for another 10 minutes, then natural-release. Chuck takes 35–45 minutes at high pressure depending on cube size." },
+            { "symptom": "Sauce is thin and watery", "cause": "Too much liquid for the cooker's evaporation rate, which is near-zero under pressure.", "fix": "Reduce uncovered on sauté mode for 5–10 minutes. Next time, cut the stock to 300 ml." },
+            { "symptom": "Cooker won't reach pressure", "cause": "Sauce too thick or not enough liquid for steam.", "fix": "Add 100 ml of hot stock and stir. The cooker needs liquid to generate steam." },
+            { "symptom": "Burnt or scorched bottom", "cause": "Tomato purée or flour stuck to the base after deglazing.", "fix": "Always deglaze thoroughly with wine and a wooden spoon before adding the stock. If burnt, lift the meat into a clean pot and transfer the sauce through a sieve." },
+            { "symptom": "Sauce tastes of raw flour", "cause": "Flour did not cook out during browning.", "fix": "Reduce on sauté for 10 minutes after pressure-cooking. The flour cooks out and the sauce thickens at the same time." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead, freezing, leftovers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The stew tastes better the next day; the flavours marry as it sits. Refrigerate for up to four days. Freeze for up to three months in single portions; defrost overnight in the fridge and reheat gently." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "British home cooking has carried beef stew through every generation since Beeton's day, usually as a low oven braise. The pressure cooker brings the long-simmered version into weeknight reach without losing the depth that long cooking gives. The technique is universal: any tough beef cut and any aromatic-and-wine combination follows the same shape." }]
+      }
+    ]
+  }
+}

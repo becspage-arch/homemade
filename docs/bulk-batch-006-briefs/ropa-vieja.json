@@ -1,0 +1,160 @@
+{
+  "slug": "ropa-vieja",
+  "title": "Ropa vieja",
+  "subtitle": "Cuban shredded beef in a tomato-pepper-onion sauce, slow-braised until the meat falls apart.",
+  "excerpt": "Beef brisket slow-braised in a stock of cumin, bay, and oregano, then shredded and finished in a pan with peppers, onions, garlic, and tomato. The Cuban national dish, named for the look of the strands on the plate.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ropa vieja means old clothes, a reference to the way the shredded beef on the plate looks like a pile of torn fabric. The dish has its origins in Sephardic Jewish cooking from the Iberian peninsula, brought to the Spanish Caribbean during the colonial period and adapted with local ingredients. Modern Cuban ropa vieja is the version most commonly found, served with white rice, black beans, and fried plantain.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 180,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes very well for up to three months. The flavour deepens on freezing and reheating.",
+    "batchable": true,
+    "batchNotes": "Doubles well in a large casserole. A natural batch-cook for the week.",
+    "makeAheadNotes": "The braise can be done the day before. Shred and finish on the day of serving for the brightest flavour.",
+    "dietaryFlags": [],
+    "cuisine": "caribbean",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "slowSunday", "mealPrep"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "tongs", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Ropa vieja is a two-stage dish. First, beef brisket simmered for three hours in a herb stock until the meat shreds. Second, the shredded beef tossed in a pan with onions, peppers, garlic, tomato, olives, and capers until the sofrito coats every strand. The two stages can happen on different days, which is often how it gets made: a Sunday afternoon braise becomes a Tuesday dinner with the second-stage finish." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Beef brisket is the most common cut, but skirt steak (the flank cut, not the diaphragm cut sold as skirt in the UK) is the most authentic. Brisket holds its texture better through the long braise and is easier to shred. Look for a piece with the fat cap intact." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-brisket", "amount": 1000, "unit": "g", "prepNote": "cut into 3 large pieces", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "halved", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "carrot", "amount": 1, "unit": "each", "prepNote": "cut into thirds", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "bay-leaves", "amount": 3, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "oregano-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "water", "amount": 2000, "unit": "ml", "prepNote": "cold, to cover", "isOptional": false, "groupLabel": "For the braise" },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sofrito" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "sliced into half-moons", "isOptional": false, "groupLabel": "For the sofrito" },
+            { "ingredientSlug": "pepper-red", "amount": 1, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": "For the sofrito" },
+            { "ingredientSlug": "pepper-green", "amount": 1, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": "For the sofrito" },
+            { "ingredientSlug": "pepper-yellow", "amount": 1, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": "For the sofrito" },
+            { "ingredientSlug": "garlic", "amount": 5, "unit": "clove", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": "For the sofrito" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sofrito" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": "chopped", "isOptional": false, "groupLabel": "For the sofrito" },
+            { "ingredientSlug": "white-wine-dry", "amount": 125, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sofrito" },
+            { "ingredientSlug": "olives-green", "amount": 100, "unit": "g", "prepNote": "pitted, halved", "isOptional": false, "groupLabel": "For the sofrito" },
+            { "ingredientSlug": "capers", "amount": 2, "unit": "tbsp", "prepNote": "drained", "isOptional": false, "groupLabel": "For the sofrito" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A heavy casserole or stockpot for the braise. A wide frying pan or sauté pan for the sofrito. Tongs for handling the brisket pieces." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise the brisket" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Put the {{beef-brisket}} of brisket pieces in a heavy pot. Add the halved {{onion}} onion, {{carrot}} carrot pieces, {{bay-leaves}} of bay, {{oregano-dried}} of oregano, {{cumin-ground}} of cumin, and {{sea-salt-fine}} of salt. Pour over {{water}} of cold water to cover. Bring to a steady simmer (do not boil), then reduce to the lowest possible heat. Cover and cook for 3 hours. The meat is done when a fork pulls strands apart with no resistance." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shred the meat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Lift the brisket onto a board with tongs. Strain the braising liquid into a jug; reserve 300 ml for the sofrito and freeze the rest as stock for soups. Using two forks, shred the brisket along the grain into long, thin strands. The strands should look like torn cloth, which is where the dish gets its name." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the sofrito" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat {{olive-oil}} of olive oil in a wide pan over a medium heat. Add the sliced {{onion}} onions and cook for 8 minutes until softened and lightly coloured. Add the {{pepper-red}} red, {{pepper-green}} green, and {{pepper-yellow}} yellow peppers. Cook for 8 minutes more until soft. Stir in {{garlic}} of sliced garlic and {{tomato-puree}} of tomato purée; cook for one minute. Pour in {{white-wine-dry}} of dry white wine and let it bubble for one minute." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Combine and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add the {{tinned-tomatoes}} of tomatoes and 300 ml of the reserved braising liquid. Bring to a simmer. Add the shredded brisket, {{olives-green}} of halved olives, and {{capers}} of capers. Stir to coat every strand of meat. Simmer uncovered for 15 minutes until the sauce thickens and clings to the beef. Taste and adjust the salt. Serve with white rice, black beans, and fried sweet plantain." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Meat will not shred", "cause": "Braise was too short.", "fix": "Return the brisket to the pot, add more water if needed, and continue simmering for another 30 minutes. Brisket needs at least 3 hours to break down; tougher pieces need 4." },
+            { "symptom": "Sauce is too watery", "cause": "Too much braising liquid added to the sofrito.", "fix": "Simmer uncovered for 10 more minutes. Next time, start with 200 ml of liquid and add more if the sauce thickens too fast." },
+            { "symptom": "Too salty", "cause": "Olives and capers brought additional salt; the braise was over-seasoned.", "fix": "Add a tablespoon of red wine vinegar and a splash of water. Rinse olives and capers before adding next time, or hold the salt during the braise stage." },
+            { "symptom": "Sofrito is wet, not soft", "cause": "Peppers cooked too fast on too high a heat.", "fix": "Cook the sofrito on a slow medium heat for the full 16 minutes. The vegetables should be soft and silky, not crunchy." },
+            { "symptom": "Meat tough on the second-day reheat", "cause": "Reheated too aggressively, which dried out the strands.", "fix": "Reheat gently with a splash of the reserved braising stock to add moisture back into the meat. Microwave on medium, not high." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead, freezing, leftovers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The fully-finished ropa vieja keeps four days in the fridge and freezes for three months. The dish is noticeably better on day two and three; the sofrito softens further and the strands fully absorb the sauce. Leftover ropa vieja makes excellent filling for an empanada or a Cuban-style sandwich." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Ropa vieja is one of the dishes most strongly identified with Cuba, served as the national dish in restaurants worldwide despite its Sephardic origins. The plate it sits on is traditional: shredded beef in the centre, a mound of white rice on one side, a ladleful of black beans on the other, and a slice or two of caramelised sweet plantain alongside. The composition is fixed; the proportions are personal." }]
+      }
+    ]
+  }
+}

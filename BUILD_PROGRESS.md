@@ -1600,6 +1600,35 @@ Memory updates (auto-loaded for future Mindset workers):
 
 **Recovery path.** Once the pending Prisma migration deploys to prod, a re-run can target `docs/mindset-bulk-001-briefs/*.json` directly. The 20 briefs are committed to that directory and ready to upload as-is. Note: the next autopilot fire's skip-list check will treat all 20 slugs as "already drafted" and won't redraft them, but the upload script is idempotent, so manual or scripted upload over the existing briefs is the natural path.
 
+### Autopilot — Cooking bulk-006 ⛔ partial 2026-05-16
+
+**Goal.** First cooking autopilot fire after the wire-up commit. Planned 25-recipe slice across six under-represented cuisines (pressure-cooker, Caribbean, North African, Eastern European, Middle Eastern, Greek) to balance the British / Italian / French / American weighting of batches 003–005.
+
+**Outcome.** 5 PUBLISHED, 5 drafted+clean but not uploaded, 15 not drafted. Halted on the same DB migration drift that blocked mindset bulk-001.
+
+- **Pre-flight gates** all passed: no double-fire, batch number = 006 (auto-detected), 2,554 in-scope backlog candidates, voice-check error trend down across batches 003 (21) → 004 (14) → 005 (~13), no consecutive autopilot-author commits (chain = 0).
+- **Pressure-cooker (5 PUBLISHED, 16:50–16:56 UTC):** `pressure-cooker-chicken-stock` (foundational stock), `pressure-cooker-beef-stew`, `pressure-cooker-pulled-pork`, `pressure-cooker-chickpea-curry`, `pressure-cooker-red-lentil-dhal`. All BEGINNER. First entries in the previously-empty pressure-cooker section (49 in-scope candidates after this batch).
+- **Caribbean (5 drafted, voice-clean, upload blocked):** `curry-chicken`, `brown-stew-chicken`, `callaloo`, `ropa-vieja`, `picadillo`. Briefs in `docs/bulk-batch-006-briefs/` ready for the next fire to upload once the schema state reconciles.
+- **Not drafted:** the planned North African (4), Eastern European (4), Middle Eastern (4), and Greek (3) slices were not started — by the time the Caribbean upload failure made the blocker clear, drafting more would have been wasted work.
+- **Voice-check pattern recap:** em-dash appositive pairs in `sourceNotes` and intro paragraphs hit 5 of 10 first drafts. "Genuinely" softener appeared in 2 of 10. "Fall" Americanism in 1. All fixed first-attempt.
+- **Glossary tooltip naming bug surfaced.** `pressure-cooker-red-lentil-dhal` first draft used `attrs: { slug: "tarka" }` for the inline glossary mark; the TipTap mark expects `termSlug` (the anchor at `packages/db/scripts/anchor-tutorials/toad-in-the-hole.json` is the canonical example). The voice-check `glossary-coverage` rule fires because the lookup never finds an inline use under the mis-named attribute. Worth adding to `docs/common-issues.md` as a `[block]` structural rule for future drafters.
+
+**Blocker.** Same as mindset bulk-001 — Prisma migration `20260619000000_phase_categories_targets_001` exists on disk (landed in commit `8975caf`) but has not been applied to the Neon production DB. Every `prisma.category.findUnique()` from `upload-tutorial.ts` throws `P2022 ColumnNotFound` once the Prisma client regenerates against the new schema. The 5 pressure-cooker uploads succeeded because they ran before the parallel schema commit landed and before the Prisma client regenerated; the Caribbean uploads ran after and failed.
+
+**Halt signal written.** `stream=cooking, reason=SCHEMA_DRIFT, id=cmp8loq7r00003kv4h9ywe39m`.
+
+**Recovery path.** Once the pending Prisma migration deploys to prod:
+
+- The 5 Caribbean briefs in `docs/bulk-batch-006-briefs/` are ready to upload. Run `pnpm --filter @homemade/db run tutorial:upload <path> --status PUBLISHED` for each.
+- A re-fire will draft and upload the remaining 15 entries from the planned slice (North African, Eastern European, Middle Eastern, Greek) — or any equivalent under-represented selection from the backlog.
+
+**Patterns to fold back into the autopilot prompt itself:**
+
+- The "no-double-firing" check looks at the **cooking** stream only. A **cross-stream** check ("is any autopilot in progress that's modifying shared schema or upload-script files?") would have caught this. Three autopilot crons firing within a minute of each other was the trigger.
+- The autopilot prompt's halt-signal enum should include `SCHEMA_DRIFT` / `DB_MIGRATION_PENDING` as a named reason rather than free-text — both cooking and mindset hit it on the same day with slightly different reason strings.
+
+**Out.** No schema changes; no migrations applied; no voice-check CLI edits; no upload-script edits; no scratch helpers left in the repo.
+
 ### Phase 8 Baking — bulk-001 batch ✅ landed 2026-05-16
 
 **Goal.** Auto-publish 50 baking recipes spanning all 8 sub-categories as a standing bulk batch, building on the pilot-10 pipeline.
