@@ -101,6 +101,8 @@ export async function startProject(tutorialId: string): Promise<
   let project
   if (existing) {
     // Resume rather than re-create — keeps notes / supplies state intact.
+    // Also keeps any in-flight schedule cursor; the user picks up where they
+    // were on the multi-day arc.
     project = await prisma.userProject.update({
       where: { id: existing.id },
       data: {
@@ -112,11 +114,28 @@ export async function startProject(tutorialId: string): Promise<
       select: { id: true },
     })
   } else {
+    // Snapshot the first ProjectSchedule step (if any) onto the new
+    // UserProject so the homepage's "Today's scheduled project actions" rail
+    // can surface the right day without re-deriving from the schedule on
+    // every request.
+    const startedAt = new Date()
+    const firstStep = await prisma.projectSchedule.findFirst({
+      where: { tutorialId },
+      orderBy: { stepNumber: 'asc' },
+      select: { stepNumber: true, offsetDays: true },
+    })
+    const nextScheduledAt = firstStep
+      ? new Date(startedAt.getTime() + firstStep.offsetDays * 86_400_000)
+      : null
+
     project = await prisma.userProject.create({
       data: {
         userId: user.id,
         tutorialId,
         status: UserProjectStatus.IN_PROGRESS,
+        startedAt,
+        nextScheduledStepNumber: firstStep?.stepNumber ?? null,
+        nextScheduledAt,
       },
       select: { id: true },
     })
@@ -191,6 +210,10 @@ export async function markProjectComplete(projectId: string): Promise<ActionResu
       status: UserProjectStatus.COMPLETED,
       completedAt,
       abandonedAt: null,
+      // Schedule cursor cleared on completion so the homepage stops surfacing
+      // step cards for a finished project.
+      nextScheduledStepNumber: null,
+      nextScheduledAt: null,
     },
   })
   await audit({
@@ -237,6 +260,8 @@ export async function abandonProject(projectId: string): Promise<ActionResult> {
       status: UserProjectStatus.ABANDONED,
       abandonedAt: new Date(),
       completedAt: null,
+      nextScheduledStepNumber: null,
+      nextScheduledAt: null,
     },
   })
   await audit({

@@ -278,6 +278,23 @@ Rules:
   Every Mindset metadata field on the Tutorial row gets set from this
   block.
 
+## `projectSchedule` does not apply to Mindset
+
+Mindset content **never** uses `projectSchedule`. The schedule field
+exists for long-arc making projects (sourdough starter, kraut, fed
+fruitcake) — see `docs/tutorial-author.md` § "Multi-day arc".
+
+Mindset has its own multi-day surface: **`UserPlan` + `UserPlanDay`**.
+The free-tier daily-pick rotation and the paid-tier 30-day custom
+plan both write `UserPlanDay` rows that point at library Tutorial
+entries (or carry generated content inline). That's the system that
+sequences mindset practices across days — not `projectSchedule`.
+
+A `READING` row can never carry a schedule anyway: the upload script
+rejects schedules on `type: "READING"`. A `PRACTICE` row could
+technically take one, but in practice the planning surface is
+`UserPlan`, so leave `projectSchedule` out of every Mindset upload.
+
 ## Body structure
 
 The body is one TipTap document. Use the structure below as a

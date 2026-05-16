@@ -96,6 +96,7 @@ const __dirname = dirname(__filename)
 import type { Prisma } from '@prisma/client'
 
 import type {
+  ProjectScheduleStep,
   RecipeToolRef,
   TutorialType,
   TutorialUploadInput,
@@ -517,6 +518,15 @@ async function uploadTutorial(
     prisma,
   )
 
+  // 14. Sync ProjectSchedule rows. Idempotent — delete-then-insert in a
+  // transaction. Authors omit this on single-day recipes / techniques; only
+  // long-arc tutorials carry one.
+  const projectScheduleRows = await syncProjectSchedule(
+    tutorialId,
+    input.projectSchedule ?? [],
+    prisma,
+  )
+
   return {
     mode,
     tutorialId,
@@ -531,6 +541,7 @@ async function uploadTutorial(
     createdGlossary,
     recipeIngredientRows,
     recipeToolRows,
+    projectScheduleRows,
   }
 }
 
@@ -746,6 +757,30 @@ async function syncRecipeIngredients(
   return filtered.length
 }
 
+async function syncProjectSchedule(
+  tutorialId: string,
+  steps: ProjectScheduleStep[],
+  prisma: PrismaModule['prisma'],
+): Promise<number> {
+  await prisma.$transaction(async (tx) => {
+    await tx.projectSchedule.deleteMany({ where: { tutorialId } })
+    if (steps.length > 0) {
+      await tx.projectSchedule.createMany({
+        data: steps.map((s) => ({
+          tutorialId,
+          stepNumber: s.stepNumber,
+          offsetDays: s.offsetDays,
+          title: s.title.trim(),
+          body: s.body.trim(),
+          surfaceAs: s.surfaceAs ?? 'RAIL_CARD',
+          requiresUserAction: s.requiresUserAction !== false,
+        })),
+      })
+    }
+  })
+  return steps.length
+}
+
 async function syncRecipeTools(
   tutorialId: string,
   refs: RecipeToolRef[],
@@ -921,6 +956,7 @@ async function main(): Promise<void> {
   console.log(`  category: ${result.categorySlug}${result.subCategorySlug ? ` / ${result.subCategorySlug}` : ''}`)
   console.log(`  RecipeIngredient rows: ${result.recipeIngredientRows}`)
   console.log(`  RecipeTool rows: ${result.recipeToolRows}`)
+  console.log(`  ProjectSchedule rows: ${result.projectScheduleRows}`)
   if (result.heroMediaId) {
     console.log(`  hero Media id: ${result.heroMediaId}${result.heroR2Key ? ` (r2Key=${result.heroR2Key})` : ''}`)
   }

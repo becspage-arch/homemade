@@ -195,6 +195,42 @@ export interface RecipeToolRef {
   position?: number
 }
 
+/**
+ * Where a ProjectSchedule step surfaces on the homepage when its day arrives.
+ *
+ *   HERO              — Takes over the homepage hero zone for the day. Reserve
+ *                       for big-moment days ("your starter is ready").
+ *   RAIL_CARD         — Shows in the "Today's scheduled project actions" rail.
+ *                       The default for periodic check-ins.
+ *   NOTIFICATION_ONLY — Fires an in-app notification but doesn't change the
+ *                       homepage. Use for don't-forget reminders that aren't
+ *                       worth a hero takeover.
+ */
+export type ScheduleSurface = 'HERO' | 'RAIL_CARD' | 'NOTIFICATION_ONLY'
+
+/**
+ * One ProjectSchedule step. Authors register these on long-arc tutorials so
+ * the homepage can resurface the project on the right day after the user
+ * clicks "I'm making this".
+ *
+ * Only register a schedule on tutorials with a real-world arc longer than a
+ * day. TECHNIQUE and READING rows must NOT carry a schedule.
+ */
+export interface ProjectScheduleStep {
+  /** 1-indexed, monotonically increasing, no duplicates. */
+  stepNumber: number
+  /** Days after `UserProject.startedAt` the step fires. >= 0, monotonic. */
+  offsetDays: number
+  /** Short imperative title — "Pinch out the bubbles", "Feed your starter". */
+  title: string
+  /** One-paragraph body explaining what to do that day. */
+  body: string
+  /** Defaults to RAIL_CARD when omitted. */
+  surfaceAs?: ScheduleSurface
+  /** Defaults to true. Set false for FYI-only steps the user doesn't tick. */
+  requiresUserAction?: boolean
+}
+
 export interface TutorialUploadInput {
   /** URL slug, lowercase letters / numbers / hyphens only. Unique across all tutorials. */
   slug: string
@@ -259,6 +295,18 @@ export interface TutorialUploadInput {
    * Each entry's `slug` must exist in the master `Tool` table.
    */
   recipeTools?: RecipeToolRef[]
+
+  /**
+   * Multi-day arc steps. Only set on tutorials whose real-world process
+   * spans more than a day (sourdough starter, fermentation, growing,
+   * fed Christmas cake, herbal tinctures, etc.). The homepage uses these
+   * to resurface the project on the right day after the user starts it.
+   *
+   * Hard rule: NEVER set on `type === 'TECHNIQUE'` or `type === 'READING'`.
+   * Validation rejects those combinations. Most RECIPE rows leave this empty
+   * — only long-arc bakes / preserves / cures use it.
+   */
+  projectSchedule?: ProjectScheduleStep[]
 
   /**
    * Hero illustration. Either `mediaId` (reuse an existing Media row) OR
@@ -348,6 +396,7 @@ export interface UploadResult {
   createdGlossary: { slug: string; term: string; id: string }[]
   recipeIngredientRows: number
   recipeToolRows: number
+  projectScheduleRows: number
 }
 
 const SLUG_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/
@@ -419,5 +468,67 @@ export function validateInput(input: TutorialUploadInput): void {
     throw new Error(
       `recipe.leftoverTutorialSlug "${input.recipe.leftoverTutorialSlug}" must match the slug pattern.`,
     )
+  }
+
+  // ProjectSchedule validation. Hard rule: schedules only make sense on
+  // long-arc RECIPE rows (and the rare long-arc PRACTICE). TECHNIQUE rows are
+  // reference how-tos and never carry a schedule; READING rows are static
+  // articles that don't have a real-world arc either. Reject those.
+  if (input.projectSchedule && input.projectSchedule.length > 0) {
+    const tutorialType = input.type ?? 'RECIPE'
+    if (tutorialType === 'TECHNIQUE' || tutorialType === 'READING') {
+      throw new Error(
+        `projectSchedule is not allowed on type "${tutorialType}". Schedules are only valid on long-arc RECIPE (or PRACTICE) tutorials.`,
+      )
+    }
+    const validSurfaces: ScheduleSurface[] = ['HERO', 'RAIL_CARD', 'NOTIFICATION_ONLY']
+    const seenStepNumbers = new Set<number>()
+    let previousStepNumber = 0
+    let previousOffsetDays = -1
+    for (const step of input.projectSchedule) {
+      if (!Number.isInteger(step.stepNumber) || step.stepNumber < 1) {
+        throw new Error(
+          `projectSchedule.stepNumber must be an integer >= 1 (got ${step.stepNumber}).`,
+        )
+      }
+      if (seenStepNumbers.has(step.stepNumber)) {
+        throw new Error(
+          `projectSchedule.stepNumber ${step.stepNumber} is duplicated. Step numbers must be unique.`,
+        )
+      }
+      if (step.stepNumber <= previousStepNumber) {
+        throw new Error(
+          `projectSchedule.stepNumber must increase monotonically (saw ${step.stepNumber} after ${previousStepNumber}).`,
+        )
+      }
+      if (!Number.isInteger(step.offsetDays) || step.offsetDays < 0) {
+        throw new Error(
+          `projectSchedule[step ${step.stepNumber}].offsetDays must be an integer >= 0 (got ${step.offsetDays}).`,
+        )
+      }
+      if (step.offsetDays < previousOffsetDays) {
+        throw new Error(
+          `projectSchedule[step ${step.stepNumber}].offsetDays must be >= the previous step's offsetDays (${previousOffsetDays}).`,
+        )
+      }
+      if (!step.title || typeof step.title !== 'string' || step.title.trim().length === 0) {
+        throw new Error(
+          `projectSchedule[step ${step.stepNumber}].title is required.`,
+        )
+      }
+      if (!step.body || typeof step.body !== 'string' || step.body.trim().length === 0) {
+        throw new Error(
+          `projectSchedule[step ${step.stepNumber}].body is required.`,
+        )
+      }
+      if (step.surfaceAs && !validSurfaces.includes(step.surfaceAs)) {
+        throw new Error(
+          `projectSchedule[step ${step.stepNumber}].surfaceAs "${step.surfaceAs}" must be one of ${validSurfaces.join(' | ')}.`,
+        )
+      }
+      seenStepNumbers.add(step.stepNumber)
+      previousStepNumber = step.stepNumber
+      previousOffsetDays = step.offsetDays
+    }
   }
 }

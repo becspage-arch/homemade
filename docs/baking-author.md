@@ -439,6 +439,31 @@ Sub-category beats:
   proper — air bubbles in royal icing, fondant cracks, mirror glaze
   setting too thick, sugarpaste tearing.
 
+## Multi-day arc — `projectSchedule`
+
+See `docs/tutorial-author.md` § "Multi-day arc" for the canonical
+rule. Baking-specific guidance:
+
+- **Sourdough starter** — schedule from day 0 (mix) through day 7-14
+  (float test, first bake). The float-test day is the natural HERO
+  step.
+- **Sourdough loaves** with overnight retard — most are single-day
+  with one fridge rest, so they don't need a schedule. Only build one
+  if the recipe runs two-day or three-day (long cold retard plus
+  shape plus bake spread over multiple sittings).
+- **Fed Christmas cake / fruit cake** — bake at day 0, brush with
+  alcohol weekly until iced. One step every 7 days for 4-8 weeks.
+  The "ready to ice" day is HERO.
+- **Croissant / Danish lamination** done over two days (dough day,
+  shape-and-bake day) — schedule with two RAIL_CARD steps.
+- **Hot cross buns / mince pies / simnel / shortbread / scones /
+  one-day enriched breads** — single-day arcs. **No schedule.**
+- **Sourdough discard recipes** — single-day. No schedule.
+
+Hard rule from the master template still applies: **never** on
+TECHNIQUE rows ("how to laminate dough" is a technique, not a
+project). The upload script rejects it.
+
 ## Body structure
 
 Same shape as the cooking template (`docs/tutorial-author.md`

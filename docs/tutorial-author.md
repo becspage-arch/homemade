@@ -242,6 +242,136 @@ Rules:
   array. Order matters (large fixtures first, small tools last). Every
   `slug` must be in the TOOL_LOOKUP at the tail of this file.
 
+## Multi-day arc — `projectSchedule`
+
+Some tutorials describe a real-world process that takes longer than a
+day. When a reader clicks "I'm making this" on one of those, the
+homepage needs to know which step to surface on which day so the
+project doesn't fall off the user's radar between sessions. That's
+what `projectSchedule` is for.
+
+### When to include one — the test
+
+Ask: **does the real-world arc from "started" to "finished eating /
+finished using" span more than a calendar day?**
+
+- **Yes →** Include a `projectSchedule`. One step per meaningful
+  moment in the arc.
+- **No →** Omit `projectSchedule` entirely. Most recipes don't have
+  one, and that's the right answer.
+
+### Hard rule — never on TECHNIQUE or READING
+
+- A technique tutorial (`type: "TECHNIQUE"`) is reference content, not
+  a project. **Never** include a schedule on a TECHNIQUE row. The
+  upload script will reject it.
+- READING tutorials don't have a real-world arc either. Same rule.
+
+### Examples — yes
+
+- **Sourdough starter** — 7 to 14 days from first flour-water to a
+  bake-ready leaven. Steps at day 1 (mix), day 2-6 (feed + watch),
+  day 7 (float test), day 8 (first bake) is a natural cadence.
+- **Lacto-fermented kraut** — 14 to 21 days. Steps at day 1 (pack),
+  day 3 (first taste / burp), day 7 (taste / decide if ready), day
+  14 (move to cold storage).
+- **Fed Christmas cake** — 4 to 8 weeks. Bake at day 0; brush with
+  alcohol weekly until iced. Step every 7 days.
+- **Herbal tincture** — 4 to 6 weeks. Macerate at day 0; shake
+  weekly; strain at day 28.
+- **Slow-cured charcuterie / preserved lemons / kimchi / vinegar /
+  miso / koji / sourdough loaves that need a cold retard, etc.**
+- **Long garden arc** (sowing → transplant → first harvest): same
+  shape, days run into weeks.
+
+### Examples — no
+
+- Weeknight pasta. Done in 30 minutes.
+- Strawberry jam. Cook + jar in one afternoon.
+- Béchamel sauce. Made and used the same hour.
+- Mince pies. Baked and eaten the same day.
+- Shortbread. Same-day.
+- A weekly mindset practice (those use `UserPlan`, not
+  `ProjectSchedule` — different system).
+
+### Picking `offsetDays`
+
+`offsetDays` is days **after the user clicked "I'm making this"**,
+not after step 1. Start at `0` for the same-day kickoff step (if
+there is one) or at the first follow-up day if the kickoff is just
+"begin the process". Each step's `offsetDays` must be greater than
+or equal to the previous step's.
+
+### Picking `surfaceAs`
+
+- `"HERO"` — the day's step takes over the homepage hero. Reserve
+  for big-moment days. **"Your starter is ready to bake with"** is
+  HERO. **"Skim the scum off the top of your jam"** is not. Use
+  one or two HERO days across the whole arc — rarely more.
+- `"RAIL_CARD"` (default) — the step appears in the "Today's
+  scheduled project actions" rail on the homepage. The right choice
+  for periodic check-ins ("Day 5: stir, taste, decide if ready").
+- `"NOTIFICATION_ONLY"` — fires an in-app notification only; doesn't
+  change the homepage. For low-stakes reminders ("Day 21: burp the
+  jar if it looks pressurised").
+
+### `requiresUserAction`
+
+Default `true` — most steps want the user to tick them off as done.
+Set `false` for FYI-only check-ins ("Your starter should smell mildly
+yeasty by now; that's normal").
+
+### JSON shape
+
+```json
+{
+  "slug": "sourdough-starter",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "recipe": { … },
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Mix flour and water",
+      "body": "Stir 50 g rye flour and 50 g warm water in a clean jar. Cover loosely. Leave on the counter out of direct sun.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "First feed",
+      "body": "Discard half. Add 50 g flour and 50 g water. Stir. You may not see bubbles yet — that's fine.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 4,
+      "title": "Check for activity",
+      "body": "By now you should see small bubbles through the side of the jar and a mild sour smell. If not, feed again and wait 24 hours.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": false
+    },
+    {
+      "stepNumber": 4,
+      "offsetDays": 7,
+      "title": "Float test",
+      "body": "Drop a spoonful of starter into water. If it floats, you have a viable leaven — bake tomorrow. If it sinks, give it another two feeds and try again.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    }
+  ],
+  "body": { "type": "doc", "content": [ … ] }
+}
+```
+
+Step bodies follow the same voice rules as the rest of the tutorial
+(see Voice rules — hard). Short, concrete, no AI tells, no "honestly"
+or "tapestry of". One paragraph per step.
+
 ## Body structure
 
 The body is one TipTap document. Use the structure below verbatim
@@ -679,7 +809,19 @@ Checklist:
 13. Every `ingredientSlug` in `ingredientsList` matches a row in the
     INGREDIENT_LOOKUP table. Every `recipeTools[].slug` matches a row
     in TOOL_LOOKUP.
-14. Walk every entry in `docs/common-issues.md`. For each entry,
+14. **Project schedule check.** Ask: does this tutorial describe a
+    real-world process that spans more than a day from "start" to
+    "done eating / done using"?
+    - If **no**, `projectSchedule` should be absent or `[]`. Move on.
+    - If **yes**, `projectSchedule` must be present with one step per
+      meaningful moment in the arc. Step numbers start at 1 and
+      increase. `offsetDays` is days from when the user starts the
+      project, non-decreasing. One or two `HERO` days at most across
+      the whole arc — reserve for big-moment days. Step bodies follow
+      the same voice rules as the recipe body.
+    - **TECHNIQUE** and **READING** rows never carry a schedule —
+      the upload script will reject them.
+15. Walk every entry in `docs/common-issues.md`. For each entry,
     re-read the draft asking the single question "does this draft
     exhibit the pattern this entry describes?" If yes, rewrite the
     affected lines using the entry's **How to fix** guidance, then
