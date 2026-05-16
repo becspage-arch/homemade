@@ -108,13 +108,17 @@ export function CommandPalette({ userRole }: { userRole: UserRole }) {
   const [search, setSearch] = useState('')
   const [results, setResults] = useState<PaletteResponse>({ tutorials: [], users: [] })
   const [loading, setLoading] = useState(false)
-  const [recent, setRecent] = useState<RecentCommand[]>([])
+  // Lazy initial state — loadRecent() returns [] on the server, so it's safe
+  // to call during render rather than synchronously inside a mount effect.
+  const [recent, setRecent] = useState<RecentCommand[]>(loadRecent)
   const router = useRouter()
   const pathname = usePathname()
   const abortRef = useRef<AbortController | null>(null)
 
-  useEffect(() => {
-    setRecent(loadRecent())
+  const closePalette = useCallback(() => {
+    setOpen(false)
+    setSearch('')
+    setResults({ tutorials: [], users: [] })
   }, [])
 
   useEffect(() => {
@@ -123,28 +127,20 @@ export function CommandPalette({ userRole }: { userRole: UserRole }) {
         e.preventDefault()
         setOpen((v) => !v)
       } else if (e.key === 'Escape' && open) {
-        setOpen(false)
+        closePalette()
       }
     }
     document.addEventListener('keydown', onKey)
     return () => document.removeEventListener('keydown', onKey)
-  }, [open])
+  }, [open, closePalette])
 
-  // Reset search whenever we open/close
-  useEffect(() => {
-    if (!open) {
-      setSearch('')
-      setResults({ tutorials: [], users: [] })
-    }
-  }, [open])
-
-  // Debounced search → /api/admin/command-palette
+  // Debounced search → /api/admin/command-palette. Only fires when the
+  // palette is open AND the user typed at least one character — the
+  // "no search text" reset path is handled by callers (closePalette /
+  // empty-string short-circuit in the input handler).
   useEffect(() => {
     if (!open) return
-    if (!search.trim()) {
-      setResults({ tutorials: [], users: [] })
-      return
-    }
+    if (!search.trim()) return
     const handle = setTimeout(async () => {
       abortRef.current?.abort()
       const ctrl = new AbortController()
@@ -201,21 +197,24 @@ export function CommandPalette({ userRole }: { userRole: UserRole }) {
         body: JSON.stringify({ command: entry.command, contextRoute: pathname }),
       }).catch(() => {})
 
-      setOpen(false)
+      closePalette()
       router.push(entry.href)
     },
-    [pathname, recent, router],
+    [closePalette, pathname, recent, router],
   )
 
   if (!open) return null
 
   return (
-    <div className="cmdk-overlay" onClick={() => setOpen(false)}>
+    <div className="cmdk-overlay" onClick={closePalette}>
       <div className="cmdk-shell" onClick={(e) => e.stopPropagation()}>
         <Command label="Admin command palette" className="cmdk-root">
           <Command.Input
             value={search}
-            onValueChange={setSearch}
+            onValueChange={(v) => {
+              setSearch(v)
+              if (!v.trim()) setResults({ tutorials: [], users: [] })
+            }}
             placeholder="Type a command, jump to a page, search content…"
             autoFocus
             className="cmdk-input"
@@ -327,7 +326,7 @@ export function CommandPalette({ userRole }: { userRole: UserRole }) {
                     command: 'action:open_public_site',
                     contextRoute: pathname,
                   })
-                  setOpen(false)
+                  closePalette()
                   window.open('/', '_blank')
                 }}
                 className="cmdk-item"

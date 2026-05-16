@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter, useSearchParams, usePathname } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import { useMemo, useState, useTransition } from 'react'
 
 interface Option {
@@ -61,7 +61,6 @@ type MultiKey =
 export function ContentFilterForm(props: ContentFilterFormProps) {
   const router = useRouter()
   const pathname = usePathname()
-  const searchParams = useSearchParams()
   const [pending, startTransition] = useTransition()
   const [q, setQ] = useState(props.q)
   const [moreOpen, setMoreOpen] = useState(false)

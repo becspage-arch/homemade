@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useRouter, useSearchParams, usePathname } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import { useState, useTransition } from 'react'
 import { captureClientEvent } from '@/lib/client-analytics'
 import { createSavedFilter, deleteSavedFilter } from '@/app/admin/tutorials/saved-filter-actions'
@@ -45,7 +45,6 @@ export function ContentListToolbar({
 }: ContentListToolbarProps) {
   const router = useRouter()
   const pathname = usePathname()
-  const searchParams = useSearchParams()
   const [bulkAction, setBulkAction] = useState('')
   const [matchAllFilter, setMatchAllFilter] = useState(false)
   const [pending, startTransition] = useTransition()
