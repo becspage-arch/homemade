@@ -3327,3 +3327,67 @@ Out of scope (deliberately): no autopilot scheduled-task creation
 (next session), no email service wiring, no mobile / iOS work, no
 automated body rewrites against the audit findings, no homepage /
 admin overhaul.
+
+## Phase 8 — Content fix-up + hero fill (2026-05-16)
+
+Follow-up to `phase_8_content_integration_001`. Consumes the audit
+report and runs three pieces of work.
+
+- **Servings / yieldDescription — 51 rows fixed.** All RECIPE rows
+  flagged by the audit's `servings-yield` rule had both fields set.
+  Per-slug decisions encoded in
+  `packages/db/scripts/fixup-servings-yield.ts`: 39 yield-description
+  (preserves / cakes / loaves / discrete-item recipes), 12 servings
+  (sit-down meals). One `TutorialVersion` snapshot per row, one summary
+  `AuditLog`. Next audit pass should report 0 `servings-yield` errors.
+
+- **Hero image fill — 536 / 536 attached.** Every PUBLISHED tutorial
+  on a procedural-card hero now has a real image. Ran the new
+  `packages/db/scripts/fixup-hero-fill.ts` against
+  `sourceHeroImage()` per category priority. Mix:
+  Pexels 237, Pixabay 213, Unsplash 39, Wikimedia 31, Flux Schnell 16.
+  AI fill cost ~£0.02 — far under the £5 cap and the £52-at-25k-tutorials
+  projection in `docs/free-image-research.md`. Wikimedia downloads
+  initially 429'd; adding a descriptive `User-Agent` on the download
+  fetch (their policy requires one) cleared all 24 throttled rows on
+  the third run. All Wikimedia images carry `requiresAttribution = true`
+  so the public renderer surfaces the discreet © tooltip.
+
+- **Tricolons — 574 deferred to manual review.** Built and dry-ran
+  `packages/db/scripts/fixup-tricolons.ts` for a deterministic "drop
+  the third item" rewrite. Found that almost every tricolon the voice-
+  check regex flags is a content list — recipe ingredients ("ground
+  ginger, allspice, and a small dried chilli"), recipe steps ("Add the
+  apple, fruit, and vinegar"), place names, section headings —
+  not a stylistic tell. Auto-rewriting deletes information. Even a
+  conservative gate (single-word adjective items, no ingredient stop-
+  list, at most one uppercase first letter) only let through ~1%, and
+  the one that passed was the heading "Pat, cut, and top". Auto-
+  rewrite abandoned. Full per-snippet list dumped to
+  `docs/tricolon-defer-list.md` (574 matches across 312 tutorials, ±60
+  chars of context each) for a future focused-review session. A second
+  follow-up — tightening `containsTricolon` in `voice-check-lib.ts` to
+  only flag adjective-pattern tricolons — would shrink the warning
+  count on the next audit. Both deferred.
+
+- **CDK image-secrets mount — deferred.** The Phase 8 IAM-grant deploy
+  is in place; `MOUNT_IMAGE_SOURCING_SECRETS=1` was not flipped from
+  this session because the local AWS user (`aura-deployer`) lacks
+  CloudFormation + Secrets Manager permissions and `cdk deploy` would
+  hit Access Denied. Needs a privileged role. The orchestrator no-ops
+  per source when env vars are missing, so the running app is
+  unaffected — this only matters for future server-side bulk-fill or
+  audit-fix jobs. Pre-launch checklist item.
+
+- **Scripts added in `packages/db/scripts/`.**
+  `fixup-servings-yield.ts`, `fixup-hero-fill.ts` (excluded from the
+  package typecheck since it imports across packages via relative
+  path — works under tsx), `fixup-tricolons.ts`,
+  `tricolon-defer-list.ts`, `_inspect-tricolon.ts` (debug helper).
+
+Out of scope (deliberately): no autopilot scheduled-task creation,
+no email service wiring, no mobile / iOS work, no homepage / admin /
+billing surface work, no schema changes, no new analytics events.
+
+Commit: `<sha>` — Phase 8 content fix-up: 51 servings/yield rows fixed,
+hero fill 536/536, tricolons deferred, CDK mount deferred.

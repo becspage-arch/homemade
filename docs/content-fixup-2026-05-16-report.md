@@ -1,0 +1,207 @@
+# Content fix-up — 2026-05-16
+
+Phase 8 follow-up after `phase_8_content_integration_001`. Three pieces:
+CDK image-secrets mount, voice-check / structural body fixes (servings vs
+yieldDescription, tricolons), and a bulk hero-image fill across every
+PUBLISHED tutorial still on a procedural card. Audit source:
+`docs/content-audit-2026-05-16.md`.
+
+## CDK image-search secrets — deferred
+
+`MOUNT_IMAGE_SOURCING_SECRETS=1` was NOT flipped from this session. The
+local AWS CLI user (`aura-deployer`) has ECS / ECR / IAM / CloudWatchLogs
+permissions but no CloudFormation or Secrets Manager access, so `cdk
+deploy` and `aws secretsmanager describe-secret` both return Access
+Denied. The Phase 8 IAM-grant deploy that landed in commit `b71ceca` is
+in place; the second-step env flag and the secrets themselves need a
+privileged role.
+
+What's still needed for the second step:
+
+1. Confirm the four secrets exist in AWS Secrets Manager (`eu-west-2`):
+   - `homemade/unsplash-access-key`
+   - `homemade/pexels-api-key`
+   - `homemade/pixabay-api-key`
+   - `homemade/fal-key`
+   Values are already in `.env.credentials`. If any are missing, paste
+   the value from `.env.credentials` into Secrets Manager first.
+2. `UNSPLASH_APPLICATION_ID` is a public identifier — set it as a
+   plain `environment` entry on the task definition (not as a secret).
+   Currently absent from the CDK stack; add it under the `environment:`
+   block in `infra/lib/homemade-stack.ts` alongside the existing
+   `NODE_ENV` / `PORT` entries.
+3. Run `MOUNT_IMAGE_SOURCING_SECRETS=1 pnpm --filter @homemade/infra
+   exec cdk deploy`. Single deploy — IAM grant is already in place.
+4. Verify with `aws ecs describe-task-definition --task-definition
+   homemade-web --query 'taskDefinition.containerDefinitions[0].secrets'`
+   — the four entries should be present.
+
+The orchestrator no-ops gracefully when env vars are missing, so the
+running app is unaffected by the deferral. Worker sessions pull the keys
+from `.env.credentials` directly, which is how this session ran the
+hero-fill below. The ECS mount is only needed for future server-side
+audit / bulk-fill jobs (e.g. if Inngest functions ever call the
+orchestrator).
+
+## Servings / yieldDescription — 51 rows fixed
+
+Audit flagged 51 RECIPE rows where both `servings` and `yieldDescription`
+were set. Per the v5 authoring rule:
+
+- portion-count yield → `servings`, null `yieldDescription`
+- discrete-item yield → `yieldDescription`, null `servings`
+- ingredient-yielding (pastry / pasta dough / starter) → null both
+
+Decisions encoded in `packages/db/scripts/fixup-servings-yield.ts`.
+Snapshots a `TutorialVersion` per row; one summary `AuditLog` written
+at end of run.
+
+Breakdown:
+
+- `yieldDescription` (discrete items: jam / loaf / cake / pasties /
+  pancakes / pierogi / brownies / etc.): **39**
+- `servings` (sit-down meals: enchiladas / fried chicken / fajitas /
+  meatloaf / risotto / tarka dal / etc.): **12**
+- `neither`: 0
+
+All 51 updated successfully. Voice-check rule should now report 0
+`servings-yield` errors on the next audit run.
+
+## Tricolons — 574 deferred to manual review
+
+Initial plan was a deterministic "drop the third item" rewrite per the
+voice-rule fix described in `feedback_homemade_voice.md`. The fixup
+script (`packages/db/scripts/fixup-tricolons.ts`) was built and dry-run.
+The conclusion: **almost none of the flagged tricolons are safe to
+auto-rewrite.**
+
+Sample of what the regex flags:
+
+| Snippet | Type |
+|---|---|
+| `cider vinegar, light brown sugar, and a warming spice mix` | recipe ingredient list |
+| `ground ginger, allspice, and a small dried chilli` | recipe ingredient list |
+| `Add the apple, fruit, and vinegar` | recipe instruction |
+| `Bay leaf, onion, and cloves` | recipe ingredient list |
+| `Syria, Jordan, and Palestine` | place names |
+| `Pat, cut, and top` | section heading (three method steps) |
+| `the sponges are golden, spring back when pressed, and a skewer comes out` | recipe doneness signal |
+| `warm, gentle, and slow` | genuine stylistic tricolon |
+
+Auto-dropping the third item from a content list deletes information
+(the spice mix vanishes, Palestine vanishes, the skewer step vanishes).
+A heading like "Pat, cut, and top" loses a method step. Even adding a
+conservative gate (single-word items, no ingredient stop-words, at most
+one uppercase first letter) only let through ~1% of matches — and the
+one that passed was a heading.
+
+The deterministic auto-rewrite is the wrong tool for this dataset. The
+voice-check regex in `voice-check-lib.ts` over-matches content lists.
+Two follow-ups, both deferred to a future session:
+
+1. **Tighten the `containsTricolon` detector** so it only flags
+   adjective-pattern tricolons (e.g. after "is", "feels", "be",
+   "looks") rather than every "X, Y, and Z" string. That would shrink
+   the warning count to the genuine voice tells.
+2. **Manual-review pass** across `docs/tricolon-defer-list.md` (574
+   matches across 312 tutorials, generated by
+   `packages/db/scripts/tricolon-defer-list.ts`). Each match listed with
+   ±60 chars of context so the reviewer can decide leave / rewrite /
+   split per-snippet. Doing this in a focused session is faster and
+   safer than batching the call into a content-fix-up worker.
+
+`fixup-tricolons.ts` is kept in the repo so the next pass can call it
+with `--slugs slug1,slug2,...` against a curated allow-list once the
+detector is tightened.
+
+## Hero image fill — 536 / 536 attached
+
+Process:
+
+1. Query every PUBLISHED tutorial where `heroMediaId IS NULL` (audit
+   count: 536).
+2. For each, call `sourceHeroImage()` with title + category slug +
+   sub-category slug + top three ingredient names.
+3. On a free-source hit, download the image bytes, push to R2 under
+   `tutorials/hero-fill/`, create a `Media` row with structured
+   attribution metadata (`source`, `sourceUrl`, `creatorName`,
+   `licenceCode`, `licenceUrl`, `requiresAttribution`), snapshot
+   `TutorialVersion`, attach as hero, flip `heroImageStrategy` to
+   `REAL_PHOTO` (or `AI_GENERATED` for Flux Schnell results).
+4. On a miss across all sources, leave the procedural card.
+
+Three runs were needed:
+
+- Run 1 (full 536): 509 attached, 27 errors. 26 of those were
+  Wikimedia `download 429` responses — the orchestrator search returned
+  a Wikimedia candidate but the asset fetch was throttled. 1 was a
+  Cloudflare R2 5xx blip.
+- Run 2 (resumed 27 candidates with `heroMediaId IS NULL`): 3
+  rescued (R2 retry succeeded; two Wikimedia 429s cleared into Pexels),
+  24 still throttled.
+- Run 3: added a descriptive `User-Agent` header to the download
+  fetch (Wikimedia requires UA per their policy — the search call
+  already had one, the download didn't). All 24 cleared.
+
+Final counts across the three runs:
+
+| Source | Count |
+|---|---:|
+| Pexels | 237 |
+| Pixabay | 213 |
+| Unsplash | 39 |
+| Wikimedia | 31 |
+| Flux Schnell (AI fill) | 16 |
+| **Total** | **536** |
+
+- Wikimedia images all have `requiresAttribution = true` (CC-BY /
+  CC-BY-SA), so they trigger the discreet © tooltip on the public
+  renderer.
+- Unsplash / Pexels / Pixabay / Flux Schnell all have
+  `requiresAttribution = false`.
+- Tutorials still on procedural cards: **0**.
+
+Total AI fill cost: ~£0.02 (16 images × £0.001 Flux Schnell pricing).
+Well under the £5 budget cap.
+
+Worth flagging for visual QC: free-source images aren't all great
+matches for specific dishes. Many Pexels results are generic
+food-photography — fine for category browse but the editorial pass may
+want to swap specific ones for closer matches.
+
+## Code added
+
+- `packages/db/scripts/fixup-servings-yield.ts` — 51-slug hardcoded
+  decision map. One-shot. Safe to leave in tree.
+- `packages/db/scripts/fixup-hero-fill.ts` — bulk orchestrator + R2
+  upload + Media insert + TutorialVersion snapshot. Resumable (skips
+  rows that already have a hero). Imports `sourceHeroImage` from
+  `apps/web/src/lib/image-sourcing/orchestrator` via relative path —
+  works under tsx at runtime but doesn't fit `packages/db typecheck`'s
+  scope. The script is excluded from the package's `tsconfig.json`
+  `include` for that reason. Added a descriptive `User-Agent` on the
+  download fetch so Wikimedia mass-downloads don't 429.
+- `packages/db/scripts/fixup-tricolons.ts` — voice-rule rewrite with
+  conservative gate. Useful for future targeted passes via `--slugs`.
+- `packages/db/scripts/tricolon-defer-list.ts` — dumps every detected
+  tricolon to `docs/tricolon-defer-list.md` with context.
+- `packages/db/scripts/_inspect-tricolon.ts` — debug helper, prefixed
+  with `_` so it's clearly one-off.
+
+No schema changes. No new migrations. No new server-side code paths.
+
+## Hand-off — what's left
+
+1. **CDK secret-mount second step** (above). Local IAM didn't allow it.
+2. **Tricolon manual review pass** against
+   `docs/tricolon-defer-list.md`. Recommend tightening the
+   `containsTricolon` regex first so the next audit narrows the list to
+   genuine voice tells.
+3. **Hero-fill resume run** for the small set of tutorials where
+   Wikimedia 429'd the download. Re-run `fixup-hero-fill.ts` an hour
+   later — it skips rows that already have a hero.
+4. **Visual QC on the hero fill** before launch. Free-source images
+   aren't all great matches — some Pexels generic-food shots may need
+   replacing for specific dishes. The discreet attribution tooltip
+   surfaces on the public renderer wherever `Media.requiresAttribution
+   = true` (currently only Wikimedia CC-BY / CC-BY-SA images).
