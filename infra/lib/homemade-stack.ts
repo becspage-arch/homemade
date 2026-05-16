@@ -399,9 +399,12 @@ export class HomemadeStack extends cdk.Stack {
 
     // Desired count is env-controllable so the very first `cdk deploy` can run
     // with 0 tasks (infra-only), then we push an image to ECR and scale up.
+    // Steady state runs at 2 — eliminates the ~90s cold-start downtime that a
+    // single task crash incurred (perf-audit-001 issue #8). The deploy
+    // workflow's `aws ecs update-service --desired-count` must match.
     const desiredCount = process.env.WEB_DESIRED_COUNT
       ? parseInt(process.env.WEB_DESIRED_COUNT, 10)
-      : 1
+      : 2
 
     const service = new ecs.FargateService(this, 'WebService', {
       serviceName: 'homemade-web',

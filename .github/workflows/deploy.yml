@@ -108,12 +108,15 @@ jobs:
           export DATABASE_URL="${DATABASE_URL/-pooler./.}"
           pnpm --filter @homemade/db migrate:deploy
 
-      - name: Update ECS service (ensures >=1 task and pulls new image)
+      - name: Update ECS service (ensures >=2 tasks and pulls new image)
+        # Steady state is 2 tasks — eliminates the ~90s cold-start downtime
+        # when a single task crashes (perf-audit-001 issue #8). Must match
+        # the CDK desiredCount default in infra/lib/homemade-stack.ts.
         run: |
           aws ecs update-service \
             --cluster ${{ env.ECS_CLUSTER }} \
             --service ${{ env.ECS_SERVICE }} \
-            --desired-count 1 \
+            --desired-count 2 \
             --force-new-deployment \
             --no-cli-pager
 
