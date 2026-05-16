@@ -27,7 +27,7 @@ export function OfflineBanner() {
   return (
     <div className="offline-banner" role="status" aria-live="polite">
       <span className="offline-banner-dot" aria-hidden />
-      You're offline. Saved recipes still work.
+      You&apos;re offline. Saved recipes still work.
     </div>
   )
 }

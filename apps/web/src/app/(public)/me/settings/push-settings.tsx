@@ -108,7 +108,7 @@ export function PushSettings({
         ) : (
           <>
             <p className="me-feedback" style={{ marginBottom: 12 }}>
-              Choose what you'd like to hear about.
+              Choose what you&apos;d like to hear about.
             </p>
             {CATEGORY_OPTIONS.map((opt) => {
               const on = categories.includes(opt.key)

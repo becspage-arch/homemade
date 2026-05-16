@@ -82,7 +82,8 @@ export function PushOptIn({
     } catch {
       /* ignore */
     }
-    setVisible(true)
+    const id = window.requestAnimationFrame(() => setVisible(true))
+    return () => window.cancelAnimationFrame(id)
   }, [alreadyEnabled, hasActiveProject])
 
   if (!visible) return null

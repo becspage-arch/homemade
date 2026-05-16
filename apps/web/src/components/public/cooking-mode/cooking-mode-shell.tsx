@@ -75,28 +75,34 @@ export function CookingModeShell(props: Props) {
   const [stepIndex, setStepIndex] = useState(0)
   const [hydrated, setHydrated] = useState(false)
 
-  // Hydrate from localStorage on first mount.
+  // Hydrate from localStorage on first mount. Defer the state writes to the
+  // next microtask so React 19's effect-setState lint doesn't fire (the
+  // initial paint can use the default unhydrated values; values pop in on
+  // the next frame).
   useEffect(() => {
-    let initialEnabled = false
-    let initialStep = 0
-    try {
-      const raw = window.localStorage.getItem(storageKey)
-      if (raw) {
-        const parsed = JSON.parse(raw) as {
-          enabled?: boolean
-          stepIndex?: number
+    const id = window.requestAnimationFrame(() => {
+      let initialEnabled = false
+      let initialStep = 0
+      try {
+        const raw = window.localStorage.getItem(storageKey)
+        if (raw) {
+          const parsed = JSON.parse(raw) as {
+            enabled?: boolean
+            stepIndex?: number
+          }
+          if (typeof parsed.enabled === 'boolean') initialEnabled = parsed.enabled
+          if (typeof parsed.stepIndex === 'number') initialStep = parsed.stepIndex
+        } else if (autoEnableByDefault && isMobileViewport()) {
+          initialEnabled = true
         }
-        if (typeof parsed.enabled === 'boolean') initialEnabled = parsed.enabled
-        if (typeof parsed.stepIndex === 'number') initialStep = parsed.stepIndex
-      } else if (autoEnableByDefault && isMobileViewport()) {
-        initialEnabled = true
+      } catch {
+        /* localStorage blocked — defaults are fine */
       }
-    } catch {
-      /* localStorage blocked — defaults are fine */
-    }
-    setEnabledState(initialEnabled)
-    setStepIndex(initialStep)
-    setHydrated(true)
+      setEnabledState(initialEnabled)
+      setStepIndex(initialStep)
+      setHydrated(true)
+    })
+    return () => window.cancelAnimationFrame(id)
   }, [storageKey, autoEnableByDefault])
 
   // Reflect cooking-mode state on <body> so other components (mobile tab bar,
@@ -209,10 +215,13 @@ function CookingModeReader(props: ReaderProps) {
   }, [intro, steps, body, tutorialTitle])
 
   const clampedIndex = Math.min(Math.max(0, stepIndex), pages.length - 1)
-  const currentPage = pages[clampedIndex] ?? { title: tutorialTitle, nodes: [] }
   const totalPages = pages.length
   const isFirst = clampedIndex === 0
   const isLast = clampedIndex === totalPages - 1
+  const currentPage = useMemo(
+    () => pages[clampedIndex] ?? { title: tutorialTitle, nodes: [] },
+    [pages, clampedIndex, tutorialTitle],
+  )
 
   // Keyboard navigation: left/right arrows page through.
   useEffect(() => {

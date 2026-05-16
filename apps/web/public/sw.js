@@ -141,7 +141,7 @@ async function cacheFirst(req, cacheName) {
     const res = await fetch(req)
     if (res.ok) cache.put(req, res.clone())
     return res
-  } catch (err) {
+  } catch {
     return new Response('Offline', { status: 503, statusText: 'Offline' })
   }
 }

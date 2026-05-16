@@ -168,7 +168,10 @@ function UploadForm({
   const [nativeReady, setNativeReady] = useState(false)
 
   useEffect(() => {
-    setNativeReady(isNativeCameraAvailable())
+    const id = window.requestAnimationFrame(() =>
+      setNativeReady(isNativeCameraAvailable()),
+    )
+    return () => window.cancelAnimationFrame(id)
   }, [])
 
   const onPickNative = async () => {

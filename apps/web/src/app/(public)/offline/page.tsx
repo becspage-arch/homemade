@@ -28,12 +28,12 @@ export default function OfflinePage() {
           color: 'var(--color-sage)',
         }}
       >
-        You're offline
+        You&apos;re offline
       </h1>
       <p style={{ fontSize: 16, lineHeight: 1.6 }}>
-        This page isn't saved for offline reading. Recipes you bookmark are
+        This page isn&apos;t saved for offline reading. Recipes you bookmark are
         kept locally so they work without a connection — open one from your
-        saved list, or come back when you're online.
+        saved list, or come back when you&apos;re online.
       </p>
       <div style={{ marginTop: 24, display: 'flex', gap: 14, flexWrap: 'wrap' }}>
         <Link
