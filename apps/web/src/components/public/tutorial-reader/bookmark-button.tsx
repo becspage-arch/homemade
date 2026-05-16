@@ -23,6 +23,17 @@ export function BookmarkButton({
       const res = await toggleBookmark(tutorialId)
       if (res.ok && typeof res.bookmarked === 'boolean') {
         setBookmarked(res.bookmarked)
+        // Pre-cache or evict the current tutorial URL so it's readable
+        // offline. The SW exposes helpers on window when registered.
+        const w = window as Window & {
+          homemadePrecache?: (urls: string[]) => void
+          homemadeEvict?: (urls: string[]) => void
+        }
+        if (res.bookmarked && w.homemadePrecache) {
+          w.homemadePrecache([window.location.pathname])
+        } else if (!res.bookmarked && w.homemadeEvict) {
+          w.homemadeEvict([window.location.pathname])
+        }
       } else if (!res.ok) {
         setBookmarked(!optimistic)
       }

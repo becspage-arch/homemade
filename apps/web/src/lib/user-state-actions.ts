@@ -413,6 +413,18 @@ export async function updateBeginnerMode(value: boolean): Promise<ActionResult> 
   return { ok: true }
 }
 
+export async function updateCookingModeAutoEnable(
+  value: boolean,
+): Promise<ActionResult> {
+  const user = await requireUser()
+  await prisma.user.update({
+    where: { id: user.id },
+    data: { cookingModeAutoEnable: Boolean(value) },
+  })
+  revalidatePath('/me/settings')
+  return { ok: true }
+}
+
 const HANDLE_RE = /^[a-z0-9](?:[a-z0-9_-]{1,30}[a-z0-9])?$/
 
 export async function updateProfile(input: {

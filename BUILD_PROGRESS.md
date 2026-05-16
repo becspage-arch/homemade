@@ -3391,3 +3391,117 @@ billing surface work, no schema changes, no new analytics events.
 
 Commit: `<sha>` — Phase 8 content fix-up: 51 servings/yield rows fixed,
 hero fill 536/536, tricolons deferred, CDK mount deferred.
+
+## Mobile rebuild — native shell, bottom tabs, cooking mode, offline, camera, push, App Store scaffolding (2026-05-16)
+
+Shipped in worker session `phase_mobile_rebuild_001`. Eight pieces of
+mobile work plus a cross-cutting responsive tuning pass.
+
+- **Schema migration `20260618000000_phase_mobile_rebuild_001`.**
+  - `User.pushNotificationsEnabled` (Boolean default false) — master
+    push toggle.
+  - `User.cookingModeAutoEnable` (Boolean default false) — pref so
+    recipes open straight into cooking mode on mobile.
+  - `Notification.pushed` + `Notification.pushedAt` — bookkeeping so we
+    can see which in-app notifications were also dispatched as a push.
+  - `PushSubscription` table (one row per registered device-token per
+    platform per install) + `PushPlatform` enum (`IOS`/`ANDROID`/`WEB`).
+    `enabledCategories` array stores the per-category opt-ins.
+
+- **Bottom tab bar.** `apps/web/src/components/public/mobile-tab-bar.tsx`
+  with five tabs (Home / Search / Saved / Alerts / Account). Visible at
+  ≤768px, hidden on desktop, hidden inside `/admin`. Notifications tab
+  carries an unread badge fed by `/api/me/notifications/unread-count`.
+  Sits above the iOS home indicator via `env(safe-area-inset-bottom)`.
+
+- **Cooking mode reader.** New wrapping client component at
+  `apps/web/src/components/public/cooking-mode/` — `CookingModeShell`
+  owns context + the overlay, `CookingModeToggle` lives in the actions
+  bar of every RECIPE-type tutorial. Method body is segmented into
+  step pages (h2 boundaries; an ordered-list-only method explodes per
+  list item). Ingredients pin to the top via `<details open>`.
+  Persistence: `localStorage:homemade:cookingMode:<slug>` stores
+  enabled + stepIndex so resume works. `useKeepAwake` hook calls
+  `@capacitor-community/keep-awake` inside the wrapper and the Web
+  WakeLock API on the open web. Keyboard arrows + Esc supported.
+
+- **Service worker + offline.** `apps/web/public/sw.js` registered by
+  `ServiceWorkerRegister`. Caches the UI shell, master ingredient/tool
+  refs, hero images (cache-first), and tutorial / category pages
+  (stale-while-revalidate). Skips admin, /api/*, search, sign-in.
+  Bookmark toggle calls `window.homemadePrecache([path])` so saved
+  recipes warm the cache proactively; unbookmark evicts. `/offline`
+  page renders as the SW fallback when neither cache nor network
+  succeeds. `OfflineBanner` watches `navigator.onLine` and shows a
+  small sage strip when offline.
+
+- **Native camera.** `apps/web/src/lib/native-camera.ts` detects
+  `Capacitor.isNativePlatform()` and routes through `@capacitor/camera`
+  on the wrapper. Web path keeps the existing file picker but adds
+  client-side compression (JPEG 85, max 2048px longest edge) via the
+  same `compressImage()` helper. `PhotosBlock` upload form picks the
+  right branch automatically + falls back gracefully.
+
+- **Push notifications.** `apps/web/src/lib/push-notifications.ts`
+  exposes `sendPushToUser()` + `notifyWithPush()`; existing
+  `notify()` was rewired to fire-and-forget a push when the
+  NotificationType maps to a known category. Categories: project
+  schedule / moderation outcome / creator application / weekly digest.
+  Three API routes: `/api/me/push/register`, `/api/me/push/unregister`,
+  `/api/me/push/categories`. Contextual opt-in card (`PushOptIn`)
+  renders only inside the Capacitor wrapper, only when the user has
+  ≥1 IN_PROGRESS UserProject, and only until dismissed.
+  `/me/settings` gains a per-category toggle pane + a master "turn off"
+  button. **Wire-level dispatch (APNs HTTP/2 + FCM) is intentionally a
+  no-op stub for now** — `dispatch()` in
+  `push-notifications.ts` logs the intended push and returns true.
+  Real APNs needs a signed `.p8` in Secrets Manager; real FCM needs
+  Rebecca to register the Homemade app in a Firebase project linked
+  to her Google Play Console account.
+
+- **Scheduled-step Inngest cron.** Daily 09:00 UTC sweep at
+  `apps/web/src/inngest/functions/scheduled-step-push.ts`. For each
+  active UserProject whose user has push enabled, finds
+  `ProjectSchedule` rows whose `offsetDays` have elapsed and dispatches
+  `notifyWithPush({ category: 'project_schedule' })` for each.
+  Idempotency keyed off a `[step:<projectId>:<stepNumber>]` marker
+  baked into the notification body. Registered in
+  `apps/web/src/app/api/inngest/route.ts`.
+
+- **Native splash + app icon.** `capacitor.config.ts` updated with
+  cream background, dark-mode variant, status bar style LIGHT, and
+  PushNotifications presentation options. New generation script
+  `apps/mobile/scripts/build-source-assets.js` renders SVG → PNG via
+  sharp (icon, foreground/background tiles for Android adaptive,
+  2732×2732 splash with the "homemade" wordmark, dark splash). Run
+  `pnpm --filter @homemade/mobile assets:source && assets:generate` to
+  regenerate every platform-specific asset. The existing source
+  `icon.png` (sage "h" on cream) was already brand-aligned and was
+  preserved.
+
+- **App Store scaffolding.** `docs/app-store-listing.md` with locked
+  bundle identity (Homemade Education / `education.homemade.app`),
+  placeholder copy slots, privacy nutrition declarations, push
+  category list. `docs/mobile-screenshots.md` with the capture
+  sequence + per-platform pixel dimensions.
+
+- **Mobile-responsive tuning pass.** New `mobile-tuning.css` imported
+  from the public layout. Touch targets ≥44px on every primary
+  interactive surface, header padding tightened on phone widths, TOC
+  + project companion sidebars hidden on mobile so the body claims the
+  column, body line-height bumped on small screens. Tutorial cards
+  switch to 3:4 portrait aspect ratio with tighter title + meta on
+  ≤768px.
+
+Plus mobile-only Capacitor plugin deps added: `@capacitor/camera`,
+`@capacitor/device`, `@capacitor/push-notifications`,
+`@capacitor-community/keep-awake`. Ambient `.d.ts` shims in
+`apps/web/src/types/capacitor-shims.d.ts` keep the dynamic imports
+type-safe without forcing apps/web to depend on the mobile-only
+modules at runtime.
+
+Out of scope (deliberately): no APNs / FCM wire-level dispatch (needs
+Rebecca-side credential provisioning), no real screenshot generation,
+no homepage redesign beyond responsive tuning, no analytics or admin
+work, no content authoring, no voice-control hooks (deferred per
+locked decision).

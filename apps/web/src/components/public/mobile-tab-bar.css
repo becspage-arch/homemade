@@ -1,0 +1,99 @@
+/* Bottom tab bar — visible only on mobile / Capacitor wrapper widths. */
+
+:root {
+  --mobile-tab-bar-height: 58px;
+}
+
+.mobile-tab-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: stretch;
+    background: rgba(245, 240, 232, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 0.5px solid var(--color-linen-grey);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    /* The bar itself is the height variable plus the iOS home-indicator
+       safe-area inset which we add via padding-bottom above. */
+    height: calc(var(--mobile-tab-bar-height) + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Reserve room above the bar so fixed content doesn't sit underneath. */
+  .public-main {
+    padding-bottom: calc(var(--mobile-tab-bar-height) + env(safe-area-inset-bottom, 0px) + 8px);
+  }
+}
+
+.mobile-tab-bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  text-decoration: none;
+  color: var(--color-warm-taupe);
+  opacity: 0.7;
+  font-family: var(--font-lora);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  padding: 6px 0 4px;
+  /* Touch target of at least 48dp tall on the smallest phones. */
+  min-height: 48px;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.mobile-tab-bar-item.active {
+  color: var(--color-sage);
+  opacity: 1;
+}
+
+.mobile-tab-bar-item.active .mobile-tab-bar-label {
+  font-family: var(--font-fraunces);
+  letter-spacing: 0.05em;
+}
+
+.mobile-tab-bar-icon {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-tab-bar-badge {
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 8px;
+  background: var(--color-warm-rust, #c2502d);
+  color: var(--color-cream);
+  font-family: var(--font-lora);
+  font-size: 10px;
+  line-height: 16px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.mobile-tab-bar-label {
+  display: block;
+}
+
+/* When the cooking-mode reader is active, hide the bar so it doesn't steal
+   the bottom-toolbar real estate. The reader sets data-cooking-mode on body. */
+body[data-cooking-mode='1'] .mobile-tab-bar {
+  display: none;
+}

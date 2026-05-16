@@ -1,0 +1,249 @@
+/* Cooking mode — stripped-down reader overlay + the trigger pill. */
+
+.cooking-mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--color-cream);
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 999px;
+  color: var(--color-sage);
+  font-family: var(--font-lora);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  min-height: 44px;
+}
+
+.cooking-mode-toggle:hover {
+  background: var(--color-soft-parchment);
+}
+
+.cooking-mode-toggle.on {
+  background: var(--color-sage);
+  color: var(--color-cream);
+  border-color: var(--color-sage);
+}
+
+.cooking-mode-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: var(--color-linen-cream);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding-top: env(safe-area-inset-top, 0px);
+  /* Status bar room on iOS — keep the header below the notch. */
+}
+
+.cooking-mode-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 12px;
+  border-bottom: 0.5px solid var(--color-linen-grey);
+  background: rgba(245, 240, 232, 0.96);
+  backdrop-filter: blur(8px);
+}
+
+.cooking-mode-exit {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: 0;
+  padding: 8px 12px 8px 0;
+  cursor: pointer;
+  color: var(--color-warm-taupe);
+  font-family: var(--font-lora);
+  font-size: 13px;
+  min-height: 44px;
+}
+
+.cooking-mode-exit:hover {
+  color: var(--color-sage);
+}
+
+.cooking-mode-title {
+  font-family: var(--font-fraunces);
+  font-size: 15px;
+  color: var(--color-espresso);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.cooking-mode-progress {
+  font-family: var(--font-lora);
+  font-size: 12px;
+  color: var(--color-warm-taupe);
+  white-space: nowrap;
+}
+
+.cooking-mode-body {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 24px 28px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 769px) {
+  .cooking-mode-body {
+    padding: 32px max(64px, calc((100vw - 760px) / 2)) 64px;
+  }
+}
+
+.cooking-mode-ingredients {
+  background: var(--color-soft-parchment);
+  border-radius: 6px;
+  padding: 14px 18px;
+  font-family: var(--font-lora);
+  border: 0.5px solid var(--color-linen-grey);
+}
+
+.cooking-mode-ingredients > summary {
+  font-family: var(--font-fraunces);
+  font-size: 15px;
+  color: var(--color-sage);
+  cursor: pointer;
+  padding: 4px 0;
+  letter-spacing: 0.04em;
+  list-style: none;
+}
+
+.cooking-mode-ingredients > summary::marker,
+.cooking-mode-ingredients > summary::-webkit-details-marker {
+  display: none;
+}
+
+.cooking-mode-ingredients > summary::after {
+  content: ' +';
+  color: var(--color-warm-taupe);
+  font-family: var(--font-lora);
+  margin-left: 6px;
+}
+
+.cooking-mode-ingredients[open] > summary::after {
+  content: ' −';
+}
+
+.cooking-mode-ingredients-content {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.cooking-mode-page {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cooking-mode-step-heading {
+  font-family: var(--font-fraunces);
+  font-weight: 500;
+  font-size: 26px;
+  color: var(--color-espresso);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+@media (min-width: 769px) {
+  .cooking-mode-step-heading {
+    font-size: 32px;
+  }
+}
+
+.cooking-mode-step-content {
+  font-family: var(--font-lora);
+  font-size: 19px;
+  line-height: 1.7;
+  color: var(--color-espresso);
+}
+
+@media (min-width: 769px) {
+  .cooking-mode-step-content {
+    font-size: 22px;
+    line-height: 1.65;
+  }
+}
+
+.cooking-mode-step-content p {
+  margin: 0 0 0.9em;
+}
+
+.cooking-mode-step-content ol,
+.cooking-mode-step-content ul {
+  padding-left: 1.6em;
+}
+
+.cooking-mode-step-content li {
+  margin-bottom: 0.6em;
+}
+
+.cooking-mode-toolbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  border-top: 0.5px solid var(--color-linen-grey);
+  background: rgba(245, 240, 232, 0.96);
+  backdrop-filter: blur(8px);
+}
+
+.cooking-mode-toolbar-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: 0.5px solid var(--color-linen-grey);
+  background: var(--color-cream);
+  color: var(--color-sage);
+  cursor: pointer;
+}
+
+.cooking-mode-toolbar-button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.cooking-mode-toolbar-indicator {
+  text-align: center;
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--color-warm-taupe);
+}
+
+.cooking-mode-toolbar-done {
+  height: 48px;
+  padding: 0 22px;
+  border-radius: 999px;
+  border: 0;
+  background: var(--color-sage);
+  color: var(--color-cream);
+  font-family: var(--font-fraunces);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.cooking-mode-toolbar-done:hover {
+  background: var(--color-forest);
+}
+
+/* Hide chrome that would conflict with the overlay. */
+body[data-cooking-mode='1'] .site-header,
+body[data-cooking-mode='1'] .site-footer,
+body[data-cooking-mode='1'] .tutorial-reading-progress {
+  display: none;
+}

@@ -88,6 +88,16 @@ model User {
   dietaryFlags       String[]         @default([])
   lastSeenAt         DateTime?
 
+  // Mobile rebuild — push + cooking mode preferences. `pushNotificationsEnabled`
+  // is the master toggle (false until the user accepts the opt-in prompt that
+  // appears after their first started UserProject). Per-category opt-outs live
+  // on the individual PushSubscription rows so a user can be opted in on iOS
+  // and not on Android, or opted in for project reminders but not the weekly
+  // digest. `cookingModeAutoEnable` makes recipe pages open straight into the
+  // stripped-down cooking-mode reader on mobile.
+  pushNotificationsEnabled Boolean @default(false)
+  cookingModeAutoEnable    Boolean @default(false)
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -134,6 +144,9 @@ model User {
   mindsetDailyPicks    DailyPick[]
   practiceFavorites    UserPracticeFavorite[]
   practiceUses         UserPracticeUse[]
+
+  // Mobile rebuild — registered push devices (one per platform per install).
+  pushSubscriptions PushSubscription[]
 
   @@index([role])
   @@index([isSuspended])
@@ -949,6 +962,14 @@ model Notification {
 
   readAt DateTime?
 
+  /// Mobile rebuild — set when this notification was also pushed to one of
+  /// the user's `PushSubscription` devices. `pushedAt` records when the
+  /// dispatch ran (may differ from `createdAt` because some categories are
+  /// batched into the daily 09:00 cron). `pushed = true && pushedAt = null`
+  /// shouldn't happen; treat it as "scheduled, not yet sent."
+  pushed   Boolean   @default(false)
+  pushedAt DateTime?
+
   createdAt DateTime @default(now())
 
   @@index([userId, readAt])
@@ -978,6 +999,43 @@ enum NotificationType {
   PATTERN_TEST_APPLICATION_REJECTED
   PATTERN_TEST_FEEDBACK_RECEIVED
   SYSTEM
+}
+
+/// Mobile rebuild — one row per registered push-token (per platform per
+/// install). When a user uninstalls and reinstalls the app, Capacitor's
+/// per-install UUID changes, so a fresh row is created and the previous one
+/// is marked `revokedAt` lazily when delivery fails. `enabledCategories`
+/// stores which notification categories the user has opted into; an empty
+/// array means "all enabled categories at registration time"; the per-category
+/// settings page rewrites this list.
+model PushSubscription {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  platform    PushPlatform
+  deviceToken String
+  deviceId    String?
+  userAgent   String?
+
+  enabledCategories String[] @default([])
+
+  lastActiveAt DateTime  @default(now())
+  revokedAt    DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, platform])
+  @@index([deviceToken])
+  @@index([revokedAt])
+}
+
+enum PushPlatform {
+  IOS
+  ANDROID
+  WEB
 }
 
 // ────────────────────────────────────────────────────────────────────────────

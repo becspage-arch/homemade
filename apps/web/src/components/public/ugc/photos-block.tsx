@@ -1,7 +1,12 @@
 'use client'
 
-import { useState, useTransition } from 'react'
+import { useEffect, useState, useTransition } from 'react'
 import { submitUgcPhoto } from '@/lib/ugc-actions'
+import {
+  captureNativePhoto,
+  compressImage,
+  isNativeCameraAvailable,
+} from '@/lib/native-camera'
 import { ReportModal } from './report-modal'
 
 export interface UgcPhotoView {
@@ -160,6 +165,36 @@ function UploadForm({
   const [progress, setProgress] = useState<number | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [submitted, setSubmitted] = useState<'pending' | 'rejected' | null>(null)
+  const [nativeReady, setNativeReady] = useState(false)
+
+  useEffect(() => {
+    setNativeReady(isNativeCameraAvailable())
+  }, [])
+
+  const onPickNative = async () => {
+    setError(null)
+    const captured = await captureNativePhoto()
+    if (!captured) {
+      setError('Camera capture cancelled or unavailable.')
+      return
+    }
+    setFile(captured)
+  }
+
+  const onPickWeb = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const picked = e.target.files?.[0] ?? null
+    if (!picked) {
+      setFile(null)
+      return
+    }
+    try {
+      const compressed = await compressImage(picked)
+      setFile(compressed)
+    } catch {
+      // Compression failed (e.g. unsupported format) — fall back to raw.
+      setFile(picked)
+    }
+  }
 
   const submit = async () => {
     if (!file) {
@@ -227,12 +262,37 @@ function UploadForm({
   return (
     <div className="ugc-form">
       <label>Photo</label>
-      <input
-        type="file"
-        accept="image/*"
-        onChange={(e) => setFile(e.target.files?.[0] ?? null)}
-        disabled={pending || progress !== null}
-      />
+      {nativeReady ? (
+        <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+          <button
+            type="button"
+            className="ugc-cta"
+            onClick={onPickNative}
+            disabled={pending || progress !== null}
+          >
+            {file ? 'Retake' : 'Open camera'}
+          </button>
+          {file && (
+            <span
+              style={{
+                fontFamily: 'var(--font-lora)',
+                fontSize: 13,
+                color: 'var(--color-warm-taupe)',
+              }}
+            >
+              Photo ready ({Math.round(file.size / 1024)} KB)
+            </span>
+          )}
+        </div>
+      ) : (
+        <input
+          type="file"
+          accept="image/*"
+          capture="environment"
+          onChange={onPickWeb}
+          disabled={pending || progress !== null}
+        />
+      )}
       <label>Caption (optional)</label>
       <input
         type="text"

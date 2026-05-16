@@ -28,6 +28,8 @@ import { ReviewsBlock } from '@/components/public/ugc/reviews-block'
 import { PhotosBlock } from '@/components/public/ugc/photos-block'
 import { QaBlock } from '@/components/public/ugc/qa-block'
 import { ErrataLink } from '@/components/public/ugc/errata-link'
+import { CookingModeShell } from '@/components/public/cooking-mode/cooking-mode-shell'
+import { CookingModeToggle } from '@/components/public/cooking-mode/cooking-mode-toggle'
 
 import '@/components/public/tutorial-reader/tutorial-reader.css'
 import '@/components/public/ugc/ugc.css'
@@ -207,9 +209,13 @@ export default async function TutorialPage({ params }: PageProps) {
         completedAt={project?.completedAt ?? null}
       />
       {shareButton}
+      {tutorial.type === 'RECIPE' && <CookingModeToggle />}
     </>
   ) : (
-    shareButton
+    <>
+      {shareButton}
+      {tutorial.type === 'RECIPE' && <CookingModeToggle />}
+    </>
   )
 
   const showRails = Boolean(currentUser)
@@ -351,7 +357,15 @@ export default async function TutorialPage({ params }: PageProps) {
   )
 
   return (
-    <>
+    <CookingModeShell
+      tutorialSlug={tutorialSlug}
+      tutorialTitle={tutorial.title}
+      body={body}
+      glossary={refs.glossary}
+      subTutorials={refs.subTutorials}
+      beginnerMode={beginnerMode}
+      autoEnableByDefault={Boolean(currentUser?.cookingModeAutoEnable)}
+    >
       <ScrollDepthTracker tutorialId={tutorial.id} />
       {currentUser && (
         <ReadingProgress
@@ -369,7 +383,7 @@ export default async function TutorialPage({ params }: PageProps) {
       ) : (
         chrome
       )}
-    </>
+    </CookingModeShell>
   )
 }
 

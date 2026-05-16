@@ -45,14 +45,24 @@ const config: CapacitorConfig = {
     SplashScreen: {
       launchShowDuration: 1500,
       launchAutoHide: true,
+      // Cream / parchment — matches --color-linen-cream in apps/web globals.
       backgroundColor: '#f5f0e8',
       androidScaleType: 'CENTER_INSIDE',
       showSpinner: false,
       splashImmersive: false,
+      // Dark-mode variant. Capacitor swaps to splash-dark.png automatically.
+      backgroundColorDark: '#3d2f22',
     },
     StatusBar: {
-      style: 'DEFAULT',
+      // Cream bar means dark glyphs.
+      style: 'LIGHT',
       backgroundColor: '#f5f0e8',
+      overlaysWebView: false,
+    },
+    // Permissions for the push opt-in flow. Categories the wrapper subscribes
+    // to are managed server-side via PushSubscription.enabledCategories.
+    PushNotifications: {
+      presentationOptions: ['badge', 'sound', 'alert'],
     },
   },
 }
