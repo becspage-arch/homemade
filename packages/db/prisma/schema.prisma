@@ -1920,9 +1920,40 @@ model AutopilotHaltSignal {
 
   notifiedAt DateTime?
 
+  /// Set by the admin "Acknowledge" button on /admin/system/autopilot, so the
+  /// page can hide acknowledged rows from the default view.
+  acknowledgedAt   DateTime?
+  acknowledgedById String?
+
   createdAt DateTime @default(now())
 
   @@index([notifiedAt, createdAt])
+  @@index([acknowledgedAt, createdAt])
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Autopilot pause state — phase_autopilot_status_001
+//
+// One row per stream (cooking / baking / mindset). When `pausedAt` is set, the
+// preflight in `.claude/scheduled-tasks/autopilot-*/SKILL.md` writes a
+// MANUAL_PAUSE halt signal and exits clean instead of running the batch. The
+// scheduled-tasks cron stays enabled — pausing is reversible from the admin
+// page without touching the MCP system.
+// ────────────────────────────────────────────────────────────────────────────
+
+model AutopilotPauseState {
+  id String @id @default(cuid())
+
+  /// Unique per stream — cooking / baking / mindset.
+  streamName String @unique
+
+  /// Null when the stream is running; set when an admin pauses it.
+  pausedAt   DateTime?
+  pausedById String?
+  reason     String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model ProjectSchedule {

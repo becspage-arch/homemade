@@ -3812,7 +3812,6 @@ autopilot stream additions, no homepage layout changes beyond the
 empty-category graceful handling, no edits to existing Category row
 descriptions, no marketing pages, no infra changes.
 
-
 ## Tutorial page bug fix + speed wins + seed run (2026-05-16)
 
 Three-piece session bundled into the worktree
@@ -3910,3 +3909,80 @@ extended it rather than duplicating.
   without a try/catch; non-form Content-Types throw a 500 instead of
   redirecting back to `/unlock?error=1`. Low priority — only triggers
   on manual probes.
+
+## Ingredients sync + admin autopilot status page (2026-05-16)
+
+Small two-piece session. Piece 1: the baking bulk-001 worker
+(commit `6183f6c`) seeded 20 ingredient slugs to prod but only
+committed `tools.ts`, leaving `packages/db/scripts/data/ingredients.ts`
+20 slugs behind the DB. Piece 2: the new `/admin/system/autopilot`
+page surfaces per-stream state + halt signals so Rebecca doesn't
+have to dig in Sentry / CloudWatch to see what the autopilot did
+overnight.
+
+- **Ingredient sync.** Re-derived the missing 20 slugs from the prod
+  DB and appended them to their category sections, alphabetised among
+  the new additions, existing curated grouping preserved. After
+  commit: 634 in file, 634 in DB, `seed:ingredients --dry-run` reports
+  0 created / 0 updated / 634 unchanged. Categories touched: meat,
+  vegetable, fruit, herb, spice, condiment, baking, grain, nut,
+  sweetener. `docs/ingredient-master.md` regenerated to match.
+
+- **Schema migration `20260620000000_phase_autopilot_status_001`.**
+  Additive. `AutopilotHaltSignal` gains `acknowledgedAt DateTime?` +
+  `acknowledgedById String?` (admin "Acknowledge" button stamps these
+  so the page can hide triaged rows from the default view). New
+  `AutopilotPauseState` table — one row per stream, `streamName`
+  unique, `pausedAt DateTime?` + `pausedById String?` + `reason
+  String?`. Admin pause / resume reads and writes this table; the
+  scheduled-tasks cron itself stays enabled. Migration applied
+  cleanly to prod via `prisma migrate deploy`.
+
+- **`/admin/system/autopilot` page.** Three stream cards (cooking /
+  baking / mindset) showing PUBLISHED count vs `targetTutorialCount`,
+  the most recent halt signal age, the next cron fire time, and the
+  current pause state. Halt signals table below — filtered by stream,
+  hides acknowledged rows by default with a "show acknowledged"
+  toggle, 50 rows per page, expandable detail column, per-row
+  "Acknowledge" button. Pause control on each card writes a row to
+  `AutopilotPauseState` and accepts a free-text reason. Audit-logged
+  via the existing `audit()` helper: actions are
+  `autopilot.paused` / `autopilot.resumed` /
+  `autopilot.halt_signal_acknowledged`. Same sage / cream / Fraunces
+  palette as the rest of admin; no urgency cues.
+
+- **Sidebar link.** Added under the System group at
+  `/admin/system/autopilot`, between Jobs and Errors. ADMIN-only.
+
+- **Pause-state helper script.**
+  `packages/db/scripts/check-autopilot-pause-state.ts` — reads
+  `AutopilotPauseState` for the named stream and exits 1 (with a
+  single-line detail on stdout) when paused, 0 when running. Designed
+  to drop into each `.claude/scheduled-tasks/autopilot-*/SKILL.md`
+  preflight right after the env-flag check. Scope of this session
+  intentionally did NOT modify the SKILL.md files — Rebecca is
+  testing the `model: claude-sonnet-4-5` frontmatter override on
+  those prompts, so the SKILL.md wire-up is deferred to a separate
+  session. Until the SKILL.md files are updated to call the helper,
+  the admin pause toggle still records the intent in DB and shows
+  the "Paused" pill on the page, but the morning cron will still
+  run. The fastest workaround is the existing
+  `AUTOPILOT_PAUSED=true` env-flag path documented in the Phase 8
+  autopilot wire-up entry.
+
+- **End-to-end smoke.** Pause cooking → resume → acknowledge most
+  recent halt signal → roll-back. All four Prisma paths the server
+  actions take were exercised against prod with the rollback leaving
+  data unchanged. The existing INAUGURAL_FIRE_COORDINATION /
+  SCHEMA_DRIFT / DB_MIGRATION_PENDING halt signals from the inaugural
+  autopilot fires render on the page; first user-action chance is the
+  next morning's cron at cooking 01:00 / baking 03:00 / mindset 05:00
+  UTC.
+
+Out of scope (deliberately): no SKILL.md edits (per scope — Rebecca's
+Sonnet override test in progress), no autopilot disabling (the
+existing crons fire tomorrow as planned), no content authoring, no
+infra changes beyond the admin page, no homepage / mobile /
+analytics work, no edits to `docs/social-strategy/`,
+`docs/recipe-backlog.md`, `docs/content-backlog.md`,
+`docs/page-design.md`.
