@@ -20,11 +20,6 @@ The 2026-05-16 cross-category audit flagged tricolon warnings (three parallel it
 - **paragraph**
   - `o steam rather than crisp. Maris Piper is the right potato: **floury, high in dry matter, and the reason British chip** shops taste the way they do.`
 
-### `air-fryer-fish-fillets` (cooking) — 1 hit
-
-- **paragraph**
-  - ` air fryer are the weeknight alternative to fish and chips: **quicker, less messy, and healthier without sacrificing the** satisfaction of a crisp crust. Serve with oven chips and ta`
-
 ### `air-fryer-french-fries` (cooking) — 1 hit
 
 - **paragraph**
@@ -77,10 +72,8 @@ The 2026-05-16 cross-category audit flagged tricolon warnings (three parallel it
 - **paragraph**
   - `e with a round-bladed knife until it begins to clump. Press **into a rough rectangle, wrap, and refrigerate for** 20 minutes.`
 
-### `avgolemono-soup` (cooking) — 4 hits
+### `avgolemono-soup` (cooking) — 3 hits
 
-- **paragraph**
-  - `ens it into something between a broth and a light custard — **silky, rich, and sharp without any cream**. It is the kind of soup that reads as complicated until you`
 - **paragraph**
   - `mines the soup. A good homemade stock from a whole chicken, **boiled with onion, celery, and bay then strained**, gives the best result. Good shop-bought stock works too; a`
 - **paragraph**
@@ -103,13 +96,10 @@ The 2026-05-16 cross-category audit flagged tricolon warnings (three parallel it
 - **troubleshooter.fix**
   - `Cook a minute less **than the packet says, drain, and finish in the sauce**. Time it so the pasta meets the sauce in the pan, not the c`
 
-### `baked-vanilla-cheesecake` (baking) — 3 hits
+### `baked-vanilla-cheesecake` (baking) — 1 hit
 
 - **paragraph**
   - `ard with a biscuit base. The filling is cream cheese, eggs, **soured cream, sugar, and vanilla**, whisked together and baked low and slow until the proteins`
-  - ` in common with a no-bake cheesecake set with gelatine; the **baked version is richer, denser, and significantly more satisfying**.`
-- **paragraph**
-  - `he eggs one at a time, mixing well after each. The finished **batter should be smooth, glossy, and completely lump-free**. Do not over-mix once the eggs are in; excessive mixing inc`
 
 ### `banana-bread-loaf` (baking) — 1 hit
 
@@ -189,11 +179,6 @@ The 2026-05-16 cross-category audit flagged tricolon warnings (three parallel it
   - `**Whisk eggs, melted butter, and vanilla into the yeast** mixture until evenly blended; set aside.`
 - **paragraph**
   - `Savoury: skip the sugar in the batter; **top with smoked salmon, cream cheese, and chives**.`
-
-### `berry-smoothie` (cooking) — 1 hit
-
-- **paragraph**
-  - `and banana combination is the most common domestic version: **inexpensive, quick, and consistent across seasons in** a way that a fresh fruit version cannot be.`
 
 ### `best-french-toast` (cooking) — 1 hit
 
@@ -528,11 +513,6 @@ The 2026-05-16 cross-category audit flagged tricolon warnings (three parallel it
 - **troubleshooter.fix**
   - `Add the clam meat only **at the final stage, after the cream, and heat very gently**. Clams become rubbery after prolonged cooking.`
 
-### `classic-brownies` (cooking) — 1 hit
-
-- **paragraph**
-  - `ownie is one of the great American contributions to baking: **simple, fast, and deeply satisfying**. The fudgy versus cakey debate is long-settled in home kitc`
-
 ### `coffee-and-walnut-cake` (baking) — 2 hits
 
 - **paragraph**
@@ -713,12 +693,10 @@ The 2026-05-16 cross-category audit flagged tricolon warnings (three parallel it
 - **paragraph**
   - `bowl over a pan of barely simmering water. Add {{egg-yolk}} **of egg yolks, the lemon juice, and white wine vinegar**. Whisk constantly for 3–4 minutes until thickened and ribbo`
 
-### `english-muffins-griddle` (baking) — 3 hits
+### `english-muffins-griddle` (baking) — 2 hits
 
 - **paragraph**
   - `in steams rather than baking, and the crust never develops. **Medium-low heat, a heavy pan, and patience produce a muffin** that is cooked all the way through with a thin, pale-gold c`
-- **paragraph**
-  - ` mixer with a dough hook for 7 minutes on medium speed. The **dough should be smooth, soft, and only faintly tacky** — it should not leave dough on your palm when you pull your`
 - **paragraph**
   - `r dipped in flour, pressing straight down without twisting. **Gather the scraps, re-roll once, and cut further rounds until** the dough is used up. Scatter the fine semolina over a baki`
 
@@ -751,10 +729,8 @@ The 2026-05-16 cross-category audit flagged tricolon warnings (three parallel it
 - **paragraph**
   - `Fill a large mixing bowl with boiling water. Leave for 1 **minute, tip out, and dry**. Cook {{fresh-fettuccine}} of fettuccine in generously salt`
 
-### `fish-and-chips` (cooking) — 2 hits
+### `fish-and-chips` (cooking) — 1 hit
 
-- **paragraph**
-  - ` chips have cooled, gives the chip-shop shatter. The batter **wants to be cold, lumpy, and freshly mixed**; resting it kills the carbonation that gives the puffed she`
 - **paragraph**
   - `dusting; tap off the excess. Hold a fillet by the tail end, **dip into the batter, lift, and let the excess run** off for two seconds. Lower the fillet gently into the 190°C`
 
@@ -949,11 +925,6 @@ The 2026-05-16 cross-category audit flagged tricolon warnings (three parallel it
 - **paragraph**
   - `**Get the prepared pan, whisk, and spatula ready when the** sugar syrup is close to 300°F. You can use an oven mitt for`
 
-### `hot-chocolate` (cooking) — 1 hit
-
-- **paragraph**
-  - `e rather than cocoa powder or sachets is a different drink. **It is thicker, richer, and less sweet**, and the salt and vanilla bring out the chocolate rather th`
-
 ### `hot-chocolate-marshmallow-suprise-cookies` (cooking) — 1 hit
 
 - **troubleshooter.fix**
@@ -1000,11 +971,6 @@ The 2026-05-16 cross-category audit flagged tricolon warnings (three parallel it
 - **paragraph**
   - `il porridge eaten across the subcontinent. The Anglo-Indian **re-invention added smoked fish, eggs, and the British breakfast clock**. It belongs to the country-house Saturday morning of Edward`
 
-### `khoresh-fesenjan` (cooking) — 1 hit
-
-- **paragraph**
-  - `il disperses into the sauce and turns it from a murky brown **paste into something dark, thick, and glossy**, with a sour-sweet depth that cannot really be described in`
-
 ### `kibbeh` (cooking) — 2 hits
 
 - **paragraph**
@@ -1038,12 +1004,10 @@ The 2026-05-16 cross-category audit flagged tricolon warnings (three parallel it
 - **paragraph**
   - `es the position of the serious Saturday curry: made slowly, **served with basmati rice, raita and flatbread, and reliably better the next** day.`
 
-### `lamb-tagine-with-apricots` (cooking) — 2 hits
+### `lamb-tagine-with-apricots` (cooking) — 1 hit
 
 - **paragraph**
   - `l. The dish is the slow conversation between lamb shoulder, **ras el hanout, sweet dried apricot, and a final scattering of** toasted almond.`
-- **paragraph**
-  - `off the heat. Lift out the cinnamon stick. Taste; the sauce **should sit between savoury, warm, and softly sweet**. Scatter with the toasted almonds, {{coriander}} of chopped`
 
 ### `lancashire-hotpot` (cooking) — 1 hit
 
@@ -1085,13 +1049,12 @@ The 2026-05-16 cross-category audit flagged tricolon warnings (three parallel it
 - **paragraph**
   - `. Continue whisking until the bowl is cool to the touch and **the meringue is stiff, glossy, and holds peaks**, about 5 minutes.`
 
-### `lemonade` (cooking) — 3 hits
+### `lemonade` (cooking) — 2 hits
 
 - **paragraph**
   - `**A small saucepan, a measuring jug, and a fine sieve**.`
 - **paragraph**
   - `Homemade lemonade is a summer ritual in Britain **that sits alongside Wimbledon, fêtes, and back-garden cricket**. The commercial versions that dominate British fridges are `
-  - `omemade lemonade tastes so different from the bottled kind: **sharper, more aromatic, and less sweet**. The version here uses a simple sugar syrup and fresh lemon`
 
 ### `lentil-and-bacon-soup` (cooking) — 1 hit
 
@@ -1155,15 +1118,13 @@ The 2026-05-16 cross-category audit flagged tricolon warnings (three parallel it
 - **troubleshooter.fix**
   - `Use **a heavier baking tray, line with baking paper, and bake on the middle** shelf.`
 
-### `mince-pies` (cooking) — 4 hits
+### `mince-pies` (cooking) — 3 hits
 
 - **paragraph**
   - `Good mince **pie pastry is rich, short, and slightly crumbly rather than** tough. The fat is kept cold, worked in quickly, and the pas`
   - `is rich, short, and slightly crumbly rather than tough. The **fat is kept cold, worked in quickly, and the pastry is chilled** before rolling to prevent shrinkage. Overmixed pastry shrin`
 - **paragraph**
   - ` into a smooth dough with a light hand. Do not overwork it. **Flatten to a disc, wrap, and refrigerate for** 30 minutes.`
-- **paragraph**
-  - ` the filling and sugar increased; by the nineteenth century **the format was small, individual, and entirely sweet**. The debate about whether shop-bought or homemade mince pie`
 
 ### `minestrone` (cooking) — 1 hit
 
@@ -1362,12 +1323,10 @@ The 2026-05-16 cross-category audit flagged tricolon warnings (three parallel it
 - **paragraph**
   - `stand mixer and whisk on high speed for 10–12 minutes until **the meringue is thick, glossy, and the bowl is completely** cool to the touch. Switch to the paddle attachment. Add the`
 
-### `plain-scones` (cooking) — 2 hits
+### `plain-scones` (cooking) — 1 hit
 
 - **paragraph**
   - `ickly with a knife, turned out, patted to a 3 cm thickness, **stamped into rounds, brushed with milk, and slid into a screaming** hot oven for 12 minutes. Risen tall and golden, served warm`
-- **paragraph**
-  - `eat melts it into pockets of air. A light touch; overworked **scones come out tough, flat, and chewy**. Pat the dough rather than roll, stamp with a sharp cutter `
 
 ### `polenta-morbida` (cooking) — 1 hit
 
@@ -1698,10 +1657,8 @@ The 2026-05-16 cross-category audit flagged tricolon warnings (three parallel it
   - `Indian lamb curry is the dish that arrived in British homes **through the spice trade, the empire, and the great postwar wave** of South Asian migration. This version is a slow-cooker ada`
   - ` Asian migration. This version is a slow-cooker adaptation: **practical, affordable, and far better on day** two. Serve for a Friday dinner or set it on a Saturday morn`
 
-### `slow-cooker-pea-and-ham-soup` (cooking) — 2 hits
+### `slow-cooker-pea-and-ham-soup` (cooking) — 1 hit
 
-- **paragraph**
-  - ` off the bone. Shred the meat back in and that is the soup: **thick, smoky, and unapologetically filling**.`
 - **paragraph**
   - `e shredded ham to the pot. Remove the bay leaves and thyme. **Stir, taste for seasoning, and add salt only if** needed. The soup should be thick and almost porridge-like; `
 
@@ -2056,4 +2013,4 @@ The 2026-05-16 cross-category audit flagged tricolon warnings (three parallel it
 
 ---
 
-Total hits: **574** across **312** tutorials.
+Total hits: **559** across **307** tutorials.

@@ -725,12 +725,73 @@ function containsPriceMention(text: string): boolean {
   return /(£|\$|€|¥)\s?\d/.test(text)
 }
 
+/**
+ * Structural words that signal a content list (ingredients, instructions,
+ * preposition phrases) rather than a voice-tell adjective tricolon.
+ * If any token in any of the three items appears here, the match is skipped.
+ */
+const TRICOLON_BANNED_TOKENS = new Set([
+  'a', 'an', 'the',
+  'of', 'with', 'in', 'on', 'for', 'to', 'from', 'by', 'as', 'than',
+  'into', 'onto', 'at', 'over', 'under', 'across', 'around',
+  'no', 'not',
+  'and', 'or', 'but', 'so', 'yet',
+  'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had',
+])
+
+/** Common food-ingredient words that indicate a content list, not a style tell. */
+const TRICOLON_INGREDIENT_STOP = new Set([
+  'salt', 'pepper', 'sugar', 'flour', 'butter', 'oil', 'milk', 'cream',
+  'water', 'wine', 'vinegar', 'honey', 'syrup', 'yeast', 'soda',
+  'lemon', 'lime', 'orange', 'apple', 'pear', 'plum', 'cherry',
+  'onion', 'garlic', 'shallot', 'leek', 'carrot', 'celery', 'potato',
+  'tomato', 'chilli', 'chili', 'ginger', 'nutmeg', 'cinnamon',
+  'cardamom', 'cumin', 'coriander', 'allspice', 'cloves', 'paprika',
+  'thyme', 'rosemary', 'parsley', 'basil', 'mint', 'sage', 'oregano',
+  'tarragon', 'dill', 'bay', 'fennel', 'fenugreek',
+  'egg', 'eggs', 'yolk', 'yolks',
+  'beef', 'pork', 'lamb', 'chicken', 'duck', 'goose', 'turkey', 'fish',
+  'cheese', 'parmesan', 'cheddar', 'mozzarella', 'ricotta',
+  'bread', 'rice', 'pasta', 'noodles', 'oats', 'beans', 'lentils',
+  'nuts', 'almonds', 'walnuts', 'pecans', 'hazelnuts', 'pistachios',
+  'cocoa', 'chocolate', 'coffee', 'tea', 'vanilla',
+  'stock', 'broth', 'sauce', 'paste',
+  'mustard', 'sultanas', 'raisins', 'currants',
+  'cucumber', 'aubergine', 'courgette', 'spinach', 'kale', 'cabbage',
+])
+
+function tricolonLooksStylistic(item: string): boolean {
+  const tokens = item.match(/[\p{L}-]+/gu) ?? []
+  if (tokens.length === 0) return false
+  for (const tok of tokens) {
+    const lower = tok.toLowerCase()
+    if (TRICOLON_BANNED_TOKENS.has(lower)) return false
+    if (TRICOLON_INGREDIENT_STOP.has(lower)) return false
+  }
+  return true
+}
+
 function containsTricolon(text: string): boolean {
   // Heuristic: a parallel list of three short items separated by commas, with
-  // "and" before the last. Catches "warm, considered, and beautiful" style.
-  // Limit each item to <= 4 words to avoid flagging genuine prose lists.
-  const pattern = /\b([\p{L}-]+(?:\s+[\p{L}-]+){0,3}),\s+([\p{L}-]+(?:\s+[\p{L}-]+){0,3}),\s+and\s+([\p{L}-]+(?:\s+[\p{L}-]+){0,3})\b/iu
-  return pattern.test(text)
+  // "and" before the last. Only flags when all three items look like
+  // stylistic descriptors — excludes ingredient lists, recipe instructions,
+  // preposition phrases, and proper-noun sequences.
+  const pattern = /\b([\p{L}-]+(?:\s+[\p{L}-]+){0,3}),\s+([\p{L}-]+(?:\s+[\p{L}-]+){0,3}),\s+and\s+([\p{L}-]+(?:\s+[\p{L}-]+){0,3})\b/giu
+  let match: RegExpExecArray | null
+  while ((match = pattern.exec(text)) !== null) {
+    const x = match[1]
+    const y = match[2]
+    const z = match[3]
+    if (!x || !y || !z) continue
+    if (!tricolonLooksStylistic(x) || !tricolonLooksStylistic(y) || !tricolonLooksStylistic(z)) continue
+    if (/\d/.test(x) || /\d/.test(y) || /\d/.test(z)) continue
+    // At most one item may start with uppercase (filters proper-noun lists like
+    // "Syria, Jordan, and Palestine")
+    const uppercaseCount = [x, y, z].filter((it) => /^[A-Z]/.test(it)).length
+    if (uppercaseCount > 1) continue
+    return true
+  }
+  return false
 }
 
 // ─── Formatting ─────────────────────────────────────────────────────────────
