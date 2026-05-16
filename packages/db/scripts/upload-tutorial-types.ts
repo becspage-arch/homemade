@@ -316,10 +316,27 @@ export interface TutorialUploadInput {
    */
   hero?: {
     mediaId?: string | null
+    /** Filesystem path — local upload pathway. */
     localPath?: string | null
+    /** Remote URL — orchestrator pathway. The script fetches, then pushes to R2. */
+    remoteUrl?: string | null
     alt?: string | null
     caption?: string | null
+    /** Legacy free-text credit. Prefer the structured fields below. */
     attribution?: string | null
+
+    // ──────────────────────────────────────────────────────────────────────
+    // Structured sourcing + attribution metadata (phase_8_content_integration_001).
+    // Set by the image-sourcing orchestrator. The script copies these onto the
+    // Media row so the public renderer can decide whether to show the discreet
+    // attribution tooltip.
+    // ──────────────────────────────────────────────────────────────────────
+    source?: string | null
+    sourceUrl?: string | null
+    creatorName?: string | null
+    licenceCode?: string | null
+    licenceUrl?: string | null
+    requiresAttribution?: boolean | null
   } | null
 
   /**

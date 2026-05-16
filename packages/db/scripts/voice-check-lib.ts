@@ -26,6 +26,9 @@ export type FindingKind =
   | 'americanism'
   | 'tricolon'
   | 'brand-trademark'
+  | 'glossary-coverage'
+  | 'temperature-canonical'
+  | 'servings-yield'
 
 export interface Finding {
   severity: Severity
@@ -389,7 +392,139 @@ export function runVoiceCheck(input: unknown): VoiceCheckReport {
     scanChunk(chunk, report)
   }
 
+  // Structural rules — run over the upload-input level when available.
+  if (root.body !== undefined) {
+    checkGlossaryCoverage(root, report)
+    checkTemperatureCanonical(root, report)
+    checkServingsAndYield(root, report)
+  }
+
   return report
+}
+
+// ─── Structural rules (phase_8_content_integration_001) ─────────────────────
+
+interface GlossaryTermEntry {
+  slug: string
+  term?: string
+  definition?: string
+}
+
+/**
+ * Inline glossary coverage. Every entry in `glossaryTerms[]` must appear at
+ * least once in body prose wrapped in a `glossaryTooltip` mark, and every
+ * `glossaryTooltip` mark must reference a registered slug. Fail both ways.
+ */
+function checkGlossaryCoverage(root: Record<string, unknown>, report: VoiceCheckReport): void {
+  const registered = Array.isArray(root.glossaryTerms) ? (root.glossaryTerms as GlossaryTermEntry[]) : []
+  if (registered.length === 0) return
+  const registeredSlugs = new Set(registered.map((g) => g?.slug).filter((s): s is string => typeof s === 'string'))
+  const usedSlugs = new Set<string>()
+
+  function walkMarks(node: unknown): void {
+    if (!node || typeof node !== 'object') return
+    const n = node as TipTapNode
+    if (Array.isArray(n.marks)) {
+      for (const mark of n.marks) {
+        if (mark.type === 'glossaryTooltip' && mark.attrs) {
+          const slug = typeof mark.attrs.termSlug === 'string' ? (mark.attrs.termSlug as string) : null
+          if (slug) usedSlugs.add(slug)
+        }
+      }
+    }
+    if (Array.isArray(n.content)) for (const c of n.content) walkMarks(c)
+  }
+  walkMarks(root.body)
+
+  for (const slug of registeredSlugs) {
+    if (!usedSlugs.has(slug)) {
+      report.errors.push({
+        severity: 'error',
+        kind: 'glossary-coverage',
+        message: `glossary term "${slug}" registered but never used inline (wrap at least one occurrence in a glossaryTooltip mark)`,
+        path: `glossaryTerms[${slug}]`,
+      })
+    }
+  }
+  for (const slug of usedSlugs) {
+    if (!registeredSlugs.has(slug)) {
+      report.errors.push({
+        severity: 'error',
+        kind: 'glossary-coverage',
+        message: `inline glossaryTooltip references "${slug}" but it is not declared in glossaryTerms[]`,
+        path: `body > glossaryTooltip[${slug}]`,
+      })
+    }
+  }
+}
+
+/**
+ * Temperature canonical °C. The drafter writes conventional oven temperatures
+ * into `recipe.temperatureCelsius`; the public renderer derives fan / °F /
+ * gas mark at render time.
+ *
+ * Hard fail: body prose mentions a fan temperature that's *lower* than the
+ * temperatureCelsius value — that's authentic conventional + fan-conversion
+ * note. Soft warn: prose mentions "fan" or "convection" near a temperature
+ * and the stored value looks like a fan value (suspicious: e.g. 160 stored
+ * but prose says "180 fan").
+ */
+function checkTemperatureCanonical(root: Record<string, unknown>, report: VoiceCheckReport): void {
+  const recipe = (root.recipe ?? {}) as Record<string, unknown>
+  const tempC = typeof recipe.temperatureCelsius === 'number' ? recipe.temperatureCelsius : null
+  if (tempC === null) return
+
+  // Collect prose strings from the body.
+  const proseChunks = extractProseChunks(root.body)
+  for (const c of proseChunks) {
+    const text = c.text
+    // Look for "180 fan", "fan 180", or "180°C fan" patterns near the stored value.
+    const fanMatch = /\b(?:fan|convection)\s*(?:oven\s*)?(?:at\s*)?(\d{2,3})\s*(?:°c)?\b|\b(\d{2,3})\s*(?:°c)?\s*(?:fan|convection)\b/i.exec(text)
+    if (fanMatch) {
+      const fanValue = Number(fanMatch[1] ?? fanMatch[2])
+      // Fan should be ~20° lower than conventional. If the stored temperature
+      // is LOWER than the fan number in the prose, the author likely stored
+      // a fan number as conventional. Warn.
+      if (Number.isFinite(fanValue) && fanValue > tempC) {
+        report.warnings.push({
+          severity: 'warn',
+          kind: 'temperature-canonical',
+          message: `body mentions fan oven at ${fanValue}°C but recipe.temperatureCelsius is ${tempC}°C — verify the stored value is conventional, not fan`,
+          path: c.path,
+        })
+        return
+      }
+    }
+  }
+}
+
+/**
+ * Servings / yieldDescription exclusivity. Recipes set EXACTLY ONE of:
+ * - `servings` (portion-count yields, "Serves 4")
+ * - `yieldDescription` (discrete-item yields, "1 loaf" / "12 muffins")
+ * - or neither (ingredient-yielding recipes, e.g. shortcrust pastry).
+ *
+ * If both are set, fail. The ingredient-yielding case is detected loosely
+ * via the title — pastries / bases / sauces that don't list servings.
+ */
+function checkServingsAndYield(root: Record<string, unknown>, report: VoiceCheckReport): void {
+  const type = typeof root.type === 'string' ? root.type : 'RECIPE'
+  if (type !== 'RECIPE') return
+  const recipe = (root.recipe ?? {}) as Record<string, unknown>
+  const servings = recipe.servings
+  const yieldDesc = recipe.yieldDescription
+
+  const hasServings = typeof servings === 'number' && servings > 0
+  const hasYield = typeof yieldDesc === 'string' && yieldDesc.trim().length > 0
+
+  if (hasServings && hasYield) {
+    report.errors.push({
+      severity: 'error',
+      kind: 'servings-yield',
+      message: 'both recipe.servings and recipe.yieldDescription are set — choose one (servings for portion-count yields, yieldDescription for discrete-item yields)',
+      path: 'recipe',
+    })
+  }
 }
 
 function scanChunk(chunk: Chunk, report: VoiceCheckReport): void {

@@ -516,13 +516,42 @@ model Media {
   filename    String?
   alt         String?
   caption     String?
-  attribution String? // Wikimedia / Unsplash / Pexels credit
+  attribution String? // Legacy free-text credit. Prefer the structured fields below.
 
   width  Int?
   height Int?
   bytes  Int?
 
   status MediaStatus @default(UPLOADING)
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Phase 8 content integration — structured sourcing + attribution metadata.
+  // Set by the image-sourcing orchestrator (`apps/web/src/lib/image-sourcing/`).
+  // The public renderer reads `requiresAttribution` to decide whether to show
+  // the discreet attribution tooltip on the hero.
+  // ──────────────────────────────────────────────────────────────────────────
+
+  /// Source identifier — unsplash / pexels / wikimedia / pixabay / usda / nlm /
+  /// flux-schnell / procedural-card / original / manual-upload.
+  source String?
+
+  /// URL of the original asset (for our records — never displayed).
+  sourceUrl String?
+
+  /// Photographer / illustrator name for attribution display.
+  creatorName String?
+
+  /// Licence code — CC-BY / CC-BY-SA / CC0 / PD / PROPRIETARY / UNSPLASH /
+  /// PEXELS / PIXABAY etc. PROPRIETARY-but-permissive licences (Unsplash /
+  /// Pexels / Pixabay) don't require attribution; CC-BY / CC-BY-SA do.
+  licenceCode String?
+
+  /// Link to the full licence text (e.g. https://creativecommons.org/licenses/by/4.0/).
+  licenceUrl String?
+
+  /// Computed at insert time from licenceCode. When true, the public renderer
+  /// surfaces a discreet attribution tooltip on the hero.
+  requiresAttribution Boolean @default(false)
 
   tutorialsHero Tutorial[]
   ugcPhotos     UGCPhoto[]
@@ -532,6 +561,7 @@ model Media {
 
   @@index([status])
   @@index([type])
+  @@index([source])
 }
 
 enum MediaType {
@@ -1796,6 +1826,32 @@ model WeeklyEditorialPick {
 
   @@unique([weekStarting, position])
   @@index([weekStarting])
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Autopilot halt signals — phase_8_content_integration_001
+//
+// Workers / scheduled tasks insert a row here when they halt mid-stream. An
+// hourly Inngest cron reads unsent signals and emails Rebecca, then stamps
+// `notifiedAt` so each signal sends once.
+//
+// Reason: BACKLOG_DRAINED | QUALITY_DRIFT | HARD_CAP_REACHED | MANUAL_PAUSE.
+// ────────────────────────────────────────────────────────────────────────────
+
+model AutopilotHaltSignal {
+  id String @id @default(cuid())
+
+  /// Stream the halt affects — cooking / baking / mindset.
+  stream String
+
+  reason String
+  detail String?
+
+  notifiedAt DateTime?
+
+  createdAt DateTime @default(now())
+
+  @@index([notifiedAt, createdAt])
 }
 
 model ProjectSchedule {

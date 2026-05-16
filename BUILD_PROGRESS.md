@@ -3208,3 +3208,122 @@ Workstream 4 of the 2026-05-15 full UX review. Adopts the Aura pattern for our o
 Out of scope (deliberately): no PostHog UI dashboards built, no real-time, no ClickHouse migration (raw `AnalyticsEvent` will eventually want partitioning by month or a move to ClickHouse / TimescaleDB at scale — flagged for a future session, not blocking launch), no new analytics events (the existing taxonomy was sufficient), no homepage / admin overhaul / mobile / billing surface work.
 
 Commit: `<sha>` — feat(analytics): self-hosted dual-fire + nightly rollup + eight admin dashboards.
+
+## Phase 8 — Content integration session (2026-05-16)
+
+Eighth pre-launch integration session. Sequenced spec: schema additions,
+image sourcing two-pass, public attribution tooltip, CDK secret-mount,
+authoring prompt v5 updates, voice-check structural rules, category
+descriptions rewrite, self-halt notification, audit report. Master
+gap-fill skipped per the 2026-05-16 personal-recipes QC report ("0
+additions needed").
+
+- **Schema migration `20260617000000_phase_8_content_integration_001`** —
+  additive. `Media.source`, `Media.sourceUrl`, `Media.creatorName`,
+  `Media.licenceCode`, `Media.licenceUrl`, `Media.requiresAttribution`
+  (default false). New `Media.source` index. The image-sourcing
+  orchestrator writes these per hero so the public renderer can decide
+  whether to show the discreet © tooltip.
+
+- **Schema migration `20260617100000_phase_8_autopilot_halt_signal`** —
+  `AutopilotHaltSignal` table (id, stream, reason, detail, notifiedAt,
+  createdAt). Index on `(notifiedAt, createdAt)`. Workers + scheduled
+  tasks write halt signals here; the hourly Inngest cron drains them.
+
+- **Image sourcing pipeline.** New module
+  `apps/web/src/lib/image-sourcing/` with per-source clients (Unsplash,
+  Pexels, Wikimedia Commons, Pixabay, Flux Schnell via fal.ai) plus an
+  `orchestrator.ts` that walks a per-category priority list per
+  `docs/free-image-research.md`. Cooking specialty paths (Middle-Eastern,
+  preserves, air-fryer) skip Wikimedia; Mindset somatic paths
+  (tapping, embodiment, ritual) skip free sources entirely and go
+  straight to Flux Schnell. Attribution rules baked in — Unsplash /
+  Pexels / Pixabay get `requiresAttribution: false`; Wikimedia CC-BY /
+  CC-BY-SA get `true`. `upload-tutorial.ts` extended with a `hero.remoteUrl`
+  pathway: the script fetches the upstream URL, pushes to R2, and
+  populates the structured attribution fields on the Media row.
+
+- **Discreet attribution tooltip.** New `HeroAttribution` client
+  component renders a 20 px © glyph at 20 % opacity in the hero's
+  bottom-right; on hover / focus it opens a single-line popover with
+  photographer / source / licence link. Public renderer at
+  `app/(public)/[categorySlug]/[tutorialSlug]/page.tsx` selects the new
+  Media fields and passes them to `TutorialChrome` only when
+  `requiresAttribution === true`. Per Rebecca's brief in
+  `project_ux_review_briefs.md`: "anything that doesn't need an
+  attribution visibly, I don't want to give one … something discrete."
+
+- **CDK secret-mount (two-step pattern).** Image-sourcing API keys
+  (`UNSPLASH_ACCESS_KEY`, `PEXELS_API_KEY`, `PIXABAY_API_KEY`, `FAL_KEY`)
+  wired into the stack at `infra/lib/homemade-stack.ts`. Deploy 1
+  (this commit) lands the IAM grant on the execution role; Deploy 2
+  (`MOUNT_IMAGE_SOURCING_SECRETS=1`) adds the env references. The
+  orchestrator no-ops per source when an env var is absent, so the app
+  boots fine without the secrets mounted. Worker sessions use the keys
+  from `.env.credentials` directly; mounting in ECS is for future
+  server-side bulk-fill / audit-fix jobs.
+
+- **Authoring prompts v5.** `docs/tutorial-author.md` (v5),
+  `docs/baking-author.md` (v2), `docs/mindset-author.md` (v4) all bumped
+  with a shared content-integration appendix:
+  - Image-sourcing two-pass — call `sourceHeroImage()` after voice-check
+    passes; set `hero.remoteUrl` + structured attribution on the draft.
+  - ProjectSchedule registration — for sourdough starter builds, long
+    ferments, cured meats, cheese ageing, preserve maturation,
+    marinades > 24 h.
+  - Cross-category audit rules — canonical °C temperatures, inline
+    glossary coverage (registered AND used), servings vs yieldDescription
+    exclusivity, freezeNotes reality.
+  - Missing-techniques logging — `subTutorialCard` blocks now accept
+    `tutorialSlug`; upload script resolves to id, logs unresolved slugs
+    to `docs/missing-techniques.md` for a future technique-authoring
+    session.
+
+- **Voice-check structural rules.** `packages/db/scripts/voice-check-lib.ts`
+  gains three deterministic rules:
+  - `glossary-coverage` — every entry in `glossaryTerms[]` must appear
+    inline in a `glossaryTooltip` mark, and every inline mark must
+    resolve to a registered slug. Both directions fail.
+  - `temperature-canonical` — warns when prose mentions a fan oven at a
+    higher temperature than `recipe.temperatureCelsius` (likely fan
+    value stored as conventional).
+  - `servings-yield` — fails when both `servings` and `yieldDescription`
+    are set on a RECIPE row.
+
+- **Category descriptions rewrite.** Old Cooking / Baking / Mindset
+  descriptions read AI ("for the parts of life that need tending",
+  "grounded gentle real"). Rebecca's brief was clear: factual,
+  recipe-led for Cooking, no inspirational coda. New descriptions live
+  in `packages/db/scripts/update-category-descriptions.ts` and shipped
+  to prod against all three rows.
+
+- **Self-halt notification.** `apps/web/src/inngest/functions/autopilot-halt-notify.ts`
+  runs hourly, drains unsent `AutopilotHaltSignal` rows, surfaces each
+  via Sentry (warning level, tagged `kind=autopilot-halt`) plus
+  CloudWatch log. No email service is wired yet, so this is the
+  fallback path; a future session swaps Sentry-capture for a real email
+  send (Postmark / Resend) without changing the table contract.
+
+- **Audit report.** `packages/db/scripts/content-audit.ts` ran against
+  538 PUBLISHED tutorials. Report-only — no rows modified. Output at
+  `docs/content-audit-2026-05-16.md`. Headline findings:
+  - 51 RECIPE rows have both `servings` and `yieldDescription` set —
+    targeted fix needed in a follow-up audit-fix session.
+  - 529 tricolon warnings, 74 Americanism warnings, 14 brand-trademark
+    warnings — already known patterns from the bulk content sessions;
+    deferred to the voice-editor pass.
+  - 1 `temperature-canonical` warning — the prose mentions fan oven
+    higher than the stored °C.
+  - 536 / 538 tutorials still on procedural-card heroes — the pre-launch
+    bulk image-fill phase consumes this list.
+  - 0 unresolved glossaryTooltip references.
+
+- **Master ingredient + tool gap-fill skipped.** The 2026-05-16
+  personal-recipes QC report (`docs/personal-recipes-qc-report.md`)
+  recorded "Master-list additions this session: 0" — every flagged
+  ingredient / tool from past batches is already in the master tables.
+
+Out of scope (deliberately): no autopilot scheduled-task creation
+(next session), no email service wiring, no mobile / iOS work, no
+automated body rewrites against the audit findings, no homepage /
+admin overhaul.

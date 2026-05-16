@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 
+import { HeroAttribution, type HeroAttributionData } from './hero-attribution'
+
 import './tutorial-page.css'
 
 const DIFFICULTY_LABEL: Record<string, string> = {
@@ -70,6 +72,8 @@ export interface TutorialChromeProps {
   season: string | null
   heroUrl: string | null
   heroAlt: string | null
+  /** When set, renders the discreet © tooltip over the hero. */
+  heroAttribution?: HeroAttributionData | null
   publishedAt: Date | null
   readingTime: string | null
   sourceType: string
@@ -169,6 +173,7 @@ export function TutorialChrome(props: TutorialChromeProps) {
     season,
     heroUrl,
     heroAlt,
+    heroAttribution,
     publishedAt,
     readingTime,
     sourceType,
@@ -231,7 +236,9 @@ export function TutorialChrome(props: TutorialChromeProps) {
               role="img"
               aria-label={heroAlt ?? title}
               style={{ backgroundImage: `url(${heroUrl})` }}
-            />
+            >
+              {heroAttribution && <HeroAttribution {...heroAttribution} />}
+            </div>
           ) : (
             <div className="tutorial-hero-image placeholder" aria-hidden="true">
               h

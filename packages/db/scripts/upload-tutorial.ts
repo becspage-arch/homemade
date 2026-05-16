@@ -58,7 +58,7 @@
  */
 
 import { config as loadEnv } from 'dotenv'
-import { existsSync, readFileSync } from 'node:fs'
+import { appendFileSync, existsSync, readFileSync } from 'node:fs'
 import { basename, dirname, isAbsolute, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -265,25 +265,45 @@ async function uploadTutorial(
   let heroMediaId: string | null = input.hero?.mediaId ?? null
   let heroR2Key: string | null = null
 
-  if (!heroMediaId && input.hero?.localPath) {
-    const heroPath = isAbsolute(input.hero.localPath)
-      ? input.hero.localPath
-      : resolve(dirname(inputFilePath), input.hero.localPath)
+  if (!heroMediaId && (input.hero?.localPath || input.hero?.remoteUrl)) {
+    let fileBytes: Buffer
+    let filename: string
+    let mimeType: string
 
-    if (!existsSync(heroPath)) {
-      throw new Error(`Hero image not found at ${heroPath}. Check the localPath field in the input JSON.`)
+    if (input.hero?.localPath) {
+      const heroPath = isAbsolute(input.hero.localPath)
+        ? input.hero.localPath
+        : resolve(dirname(inputFilePath), input.hero.localPath)
+      if (!existsSync(heroPath)) {
+        throw new Error(`Hero image not found at ${heroPath}. Check the localPath field in the input JSON.`)
+      }
+      fileBytes = readFileSync(heroPath)
+      filename = basename(heroPath)
+      const lowered = filename.toLowerCase()
+      mimeType = lowered.endsWith('.png')
+        ? 'image/png'
+        : lowered.endsWith('.jpg') || lowered.endsWith('.jpeg')
+          ? 'image/jpeg'
+          : lowered.endsWith('.webp')
+            ? 'image/webp'
+            : 'application/octet-stream'
+    } else {
+      // Remote URL pathway — fetch the bytes from the upstream image source.
+      const remoteUrl = input.hero!.remoteUrl!
+      console.log(`  [hero] fetching remote image: ${remoteUrl}`)
+      const res = await fetch(remoteUrl)
+      if (!res.ok) {
+        throw new Error(`Hero remote fetch failed (${res.status}) for ${remoteUrl}`)
+      }
+      const buf = await res.arrayBuffer()
+      fileBytes = Buffer.from(buf)
+      mimeType = res.headers.get('content-type')?.split(';')[0]?.trim() || 'image/jpeg'
+      const extFromMime =
+        mimeType === 'image/png' ? '.png' :
+        mimeType === 'image/webp' ? '.webp' :
+        mimeType === 'image/jpeg' ? '.jpg' : '.bin'
+      filename = `${input.slug}-hero${extFromMime}`
     }
-
-    const fileBytes = readFileSync(heroPath)
-    const filename = basename(heroPath)
-    const lowered = filename.toLowerCase()
-    const mimeType = lowered.endsWith('.png')
-      ? 'image/png'
-      : lowered.endsWith('.jpg') || lowered.endsWith('.jpeg')
-        ? 'image/jpeg'
-        : lowered.endsWith('.webp')
-          ? 'image/webp'
-          : 'application/octet-stream'
 
     const probe = mimeType === 'image/png' ? readPngDimensions(fileBytes) : null
 
@@ -324,6 +344,12 @@ async function uploadTutorial(
           alt: input.hero?.alt ?? null,
           caption: input.hero?.caption ?? null,
           attribution: input.hero?.attribution ?? null,
+          source: input.hero?.source ?? null,
+          sourceUrl: input.hero?.sourceUrl ?? null,
+          creatorName: input.hero?.creatorName ?? null,
+          licenceCode: input.hero?.licenceCode ?? null,
+          licenceUrl: input.hero?.licenceUrl ?? null,
+          requiresAttribution: input.hero?.requiresAttribution ?? false,
         },
       })
       heroMediaId = media.id
@@ -333,10 +359,32 @@ async function uploadTutorial(
   }
 
   // 9. Resolve glossary IDs and ingredient IDs inside the body.
+  // Resolve subTutorialCard `tutorialSlug` attrs to `tutorialId` against the
+  // published Tutorial table. Slugs that don't resolve get logged to
+  // docs/missing-techniques.md and stripped from the block (the public
+  // renderer handles absent ids gracefully).
+  const subTutorialSlugs = collectSubTutorialSlugs(input.body)
+  const subTutorialBySlug = new Map<string, string>()
+  if (subTutorialSlugs.size > 0) {
+    const rows = await prisma.tutorial.findMany({
+      where: { slug: { in: [...subTutorialSlugs] }, status: 'PUBLISHED' },
+      select: { id: true, slug: true },
+    })
+    for (const row of rows) subTutorialBySlug.set(row.slug, row.id)
+    const missing = [...subTutorialSlugs].filter((s) => !subTutorialBySlug.has(s))
+    if (missing.length > 0) {
+      logMissingTechniques(missing, input.slug)
+      console.log(
+        `  [refs] ${missing.length} subTutorial slug${missing.length === 1 ? '' : 's'} unresolved — logged to docs/missing-techniques.md`,
+      )
+    }
+  }
+
   const body = resolveBodyReferences(
     input.body,
     glossaryIdBySlug,
     ingredientBySlug,
+    subTutorialBySlug,
   ) as Prisma.InputJsonValue
 
   // 10. Tutorial type + recipe metadata.
@@ -598,6 +646,7 @@ function resolveBodyReferences(
   doc: unknown,
   slugToGlossaryId: Map<string, string>,
   ingredientBySlug: Map<string, IngredientResolution>,
+  subTutorialBySlug?: Map<string, string>,
 ): unknown {
   if (!doc || typeof doc !== 'object') return doc
   const node = doc as NodeShape
@@ -618,6 +667,26 @@ function resolveBodyReferences(
           delete attrs.termSlug
         }
       }
+    }
+  }
+
+  if (
+    node.type === 'subTutorialCard' &&
+    node.attrs &&
+    typeof node.attrs === 'object' &&
+    subTutorialBySlug
+  ) {
+    const attrs = node.attrs as Record<string, unknown>
+    const slug = typeof attrs.tutorialSlug === 'string' ? attrs.tutorialSlug : null
+    if (slug) {
+      const id = subTutorialBySlug.get(slug)
+      if (id) {
+        attrs.tutorialId = id
+      } else {
+        // Unresolved — strip the slug so the renderer treats it as missing.
+        delete attrs.tutorialId
+      }
+      delete attrs.tutorialSlug
     }
   }
 
@@ -648,10 +717,54 @@ function resolveBodyReferences(
 
   if (Array.isArray(node.content)) {
     for (const child of node.content) {
-      resolveBodyReferences(child, slugToGlossaryId, ingredientBySlug)
+      resolveBodyReferences(child, slugToGlossaryId, ingredientBySlug, subTutorialBySlug)
     }
   }
   return doc
+}
+
+/**
+ * Walk a body and collect every `tutorialSlug` referenced by a subTutorialCard
+ * block. Slugs are pulled before resolution so the upload script can look up
+ * all of them in a single Prisma query.
+ */
+function collectSubTutorialSlugs(doc: unknown): Set<string> {
+  const slugs = new Set<string>()
+  function walk(n: unknown): void {
+    if (!n || typeof n !== 'object') return
+    const node = n as NodeShape
+    if (
+      node.type === 'subTutorialCard' &&
+      node.attrs &&
+      typeof node.attrs === 'object'
+    ) {
+      const attrs = node.attrs as Record<string, unknown>
+      const slug = typeof attrs.tutorialSlug === 'string' ? attrs.tutorialSlug : null
+      if (slug) slugs.add(slug)
+    }
+    if (Array.isArray(node.content)) {
+      for (const child of node.content) walk(child)
+    }
+  }
+  walk(doc)
+  return slugs
+}
+
+/**
+ * Append one line per missing technique slug to `docs/missing-techniques.md`.
+ * A future technique-authoring session reads the file.
+ */
+function logMissingTechniques(slugs: string[], recipeSlug: string): void {
+  const file = resolve(__dirname, '..', '..', '..', 'docs', 'missing-techniques.md')
+  if (!existsSync(file)) return
+  const today = new Date().toISOString().slice(0, 10)
+  const lines = slugs
+    .map((s) => {
+      const readable = s.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
+      return `- **${s}** — referenced by recipe \`${recipeSlug}\` on ${today}. Suggested technique title: "${readable}".`
+    })
+    .join('\n')
+  appendFileSync(file, `\n${lines}`, 'utf8')
 }
 
 interface ParsedIngredientRow {

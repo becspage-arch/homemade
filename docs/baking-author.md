@@ -7,9 +7,15 @@ lamination metadata, sugar-stage precision, decorating techniques,
 and a wider source list (Beeton, Acton, Florence White, public-domain
 preservation guides).
 
-**Prompt version:** 1 (Baking anchor batch — 2026-05-15). Bump on
-iteration. Changelog accumulates here as future Baking workers tighten
-the prompt.
+**Prompt version:** 2 (content integration — 2026-05-16). Bump on
+iteration. Changelog:
+- v2: image-sourcing two-pass after voice-check; ProjectSchedule
+  registration for long bakes (sourdough builds, retarded doughs,
+  fed Christmas cake); cross-category audit rules (canonical °C,
+  glossary inline coverage, servings vs yieldDescription, freezeNotes
+  reality); missing-techniques logging. See the "v5 content
+  integration rules" appendix at the bottom of this file.
+- v1 (Baking anchor batch — 2026-05-15).
 
 ## How a drafting session uses this file
 
@@ -706,3 +712,136 @@ should fill. The body is abbreviated for the example.
 **Next session** picks up the pilot batch of 10 once Rebecca's
 reviewed the anchor batch. Append to `docs/baking-anti-tells.md`
 any patterns recurring 3+ times across the pilot.
+<!--
+  Shared v5 appendix appended to tutorial-author.md, baking-author.md, and
+  mindset-author.md. Source of truth for the cross-category content
+  integration rules that landed in phase_8_content_integration_001.
+-->
+
+---
+
+## v5 — content integration rules (cross-category)
+
+The following rules apply to every drafter (cooking, baking, mindset).
+They are deterministic — the upload pipeline checks them and the
+self-critique pass must verify each before output.
+
+### Image sourcing — two-pass
+
+After voice-check passes and before upload, call the image-sourcing
+helper to find a hero image:
+
+```ts
+import { sourceHeroImage } from '@/lib/image-sourcing'
+
+const result = await sourceHeroImage({
+  title: draftJson.title,
+  category: draftJson.categorySlug,
+  subCategory: draftJson.subCategorySlug,
+  ingredients: extractKeyIngredients(draftJson),
+})
+```
+
+`result.image` carries the URL + structured attribution metadata. Set
+on the draft's `hero` block:
+
+```json
+{
+  "hero": {
+    "remoteUrl": "<result.image.url>",
+    "alt": "<short descriptive alt text>",
+    "source": "<result.image.source>",
+    "sourceUrl": "<result.image.pageUrl>",
+    "creatorName": "<result.image.creatorName>",
+    "licenceCode": "<result.image.licenceCode>",
+    "licenceUrl": "<result.image.licenceUrl>",
+    "requiresAttribution": <result.image.requiresAttribution>
+  }
+}
+```
+
+The upload script downloads from `remoteUrl`, pushes to R2, and creates
+the Media row with the structured attribution fields populated. The
+public renderer shows the discreet © tooltip only when
+`requiresAttribution === true`.
+
+If `result.outcome === 'failed'`, leave `hero` unset — the public
+renderer falls back to the procedural card.
+
+### ProjectSchedule registration — multi-day arcs
+
+Long-arc recipes register `projectSchedule` rows so the homepage can
+resurface the project on the right day after a reader clicks
+"I'm making this". Detect a multi-day arc when:
+
+- Sourdough starter build (7–14 days)
+- Sourdough levain build (1–3 days)
+- Long ferments — sauerkraut, kimchi, kombucha, miso (3–30+ days)
+- Cured meats — cured salmon (~2 days), salt beef (~7 days),
+  dry-cured bacon (7–14 days)
+- Most cheeses (1+ weeks)
+- Preserves with ageing (pickles, vinegars, infusions)
+- Marinades > 24h
+
+Each step:
+
+```json
+{
+  "stepNumber": 1,
+  "offsetDays": 0,
+  "title": "<short imperative>",
+  "body": "<one paragraph>",
+  "surfaceAs": "RAIL_CARD",
+  "requiresUserAction": true
+}
+```
+
+`surfaceAs`:
+
+- `HERO` — takes over the homepage hero. Reserve for big-moment days
+  ("Your starter is ready").
+- `RAIL_CARD` — default. Shows in the "Today's scheduled project
+  actions" rail.
+- `NOTIFICATION_ONLY` — in-app notification, no homepage change.
+
+Single-session recipes leave `projectSchedule` empty. TECHNIQUE +
+READING rows must not carry a schedule (the validator rejects them).
+
+### Cross-category audit rules
+
+The following are hard rules the drafter checks before output.
+
+1. **Temperature canonical °C.** Always store conventional (not fan,
+   not °F, not gas mark) in `recipe.temperatureCelsius`. The public
+   renderer derives fan / °F / gas mark from the reader's preference.
+   Never write a fan temperature into `temperatureCelsius`.
+2. **Inline glossary coverage.** Every entry in `glossaryTerms[]`
+   must appear at least once in body prose wrapped in a
+   `glossaryTooltip` mark. Registered-but-not-used is wrong.
+   Used-but-not-registered is also wrong. The self-critique step
+   verifies both directions.
+3. **Servings vs yieldDescription.**
+   - Portion-count yields (4 people fed) → set `servings`, leave
+     `yieldDescription` null.
+   - Discrete-item yields (12 muffins, 1 loaf, 1 jar of jam) → set
+     `yieldDescription`, leave `servings` null.
+   - Ingredient-yielding recipes (shortcrust pastry that makes
+     "enough for one 23 cm tart base") → set neither.
+4. **freezeNotes reality.** `freezeNotes` describes the state of
+   the thing that's actually freezable — raw dough vs baked product,
+   soup once cooled, sauce in portions, etc. Descriptive, not
+   aspirational.
+
+### Missing technique logging
+
+When the body inserts a `subTutorialCard` block referencing a
+technique slug that doesn't exist in the database as a published
+`Tutorial`, the upload script appends a line to
+`docs/missing-techniques.md`:
+
+```
+- **{technique-slug}** — referenced by recipe `{recipe-slug}` on
+  {date}. Suggested technique title: "{readable name}".
+```
+
+A future technique-authoring session walks this file.

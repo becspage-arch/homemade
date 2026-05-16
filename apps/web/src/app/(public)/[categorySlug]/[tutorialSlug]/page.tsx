@@ -65,6 +65,11 @@ const loadTutorial = cache(async (categorySlug: string, tutorialSlug: string) =>
             alt: true,
             caption: true,
             attribution: true,
+            source: true,
+            creatorName: true,
+            licenceCode: true,
+            licenceUrl: true,
+            requiresAttribution: true,
           },
         },
         creator: {
@@ -289,6 +294,16 @@ export default async function TutorialPage({ params }: PageProps) {
         season={tutorial.season}
         heroUrl={heroUrl}
         heroAlt={tutorial.hero?.alt ?? null}
+        heroAttribution={
+          tutorial.hero?.requiresAttribution
+            ? {
+                creatorName: tutorial.hero.creatorName,
+                source: tutorial.hero.source,
+                licenceCode: tutorial.hero.licenceCode,
+                licenceUrl: tutorial.hero.licenceUrl,
+              }
+            : null
+        }
         publishedAt={tutorial.publishedAt}
         readingTime={estimateReadingTime(body)}
         sourceType={tutorial.sourceType}

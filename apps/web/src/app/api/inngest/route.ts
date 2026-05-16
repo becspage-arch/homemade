@@ -9,6 +9,7 @@ import {
   analyticsRollupNightly,
   analyticsRollupBackfill,
 } from '@/inngest/functions/analytics-rollup'
+import { autopilotHaltNotify } from '@/inngest/functions/autopilot-halt-notify'
 
 export const { GET, POST, PUT } = serve({
   client: inngest,
@@ -20,5 +21,6 @@ export const { GET, POST, PUT } = serve({
     editorialPicksRefresh,
     analyticsRollupNightly,
     analyticsRollupBackfill,
+    autopilotHaltNotify,
   ],
 })

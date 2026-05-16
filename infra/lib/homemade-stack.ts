@@ -195,6 +195,34 @@ export class HomemadeStack extends cdk.Stack {
       'homemade/typesense-search-only-api-key',
     )
 
+    // Image sourcing API keys (phase_8_content_integration_001). Same two-step
+    // pattern as Typesense. The orchestrator runs primarily in CLI worker
+    // sessions, but mounting in ECS keeps the option open for future server-
+    // side audit / bulk-fill jobs without code changes. Flip
+    // `MOUNT_IMAGE_SOURCING_SECRETS=1` on the second deploy to add the env
+    // references. FAL_KEY is wired the same way — set to null at the secret
+    // until Rebecca creates a fal.ai account; the client no-ops without it.
+    const unsplashAccessKeySecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'UnsplashAccessKeySecret',
+      'homemade/unsplash-access-key',
+    )
+    const pexelsApiKeySecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'PexelsApiKeySecret',
+      'homemade/pexels-api-key',
+    )
+    const pixabayApiKeySecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'PixabayApiKeySecret',
+      'homemade/pixabay-api-key',
+    )
+    const falKeySecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'FalKeySecret',
+      'homemade/fal-key',
+    )
+
     // The Clerk webhook signing secret is wired in two deploys to avoid the
     // CFN circuit breaker race (IAM grant landing in parallel with task
     // replacement to new tasks try to pull the secret before the grant exists).
@@ -218,6 +246,11 @@ export class HomemadeStack extends cdk.Stack {
     // until this is on; the @homemade/search clients no-op gracefully when
     // the env vars are missing.
     const mountTypesenseSecrets = process.env.MOUNT_TYPESENSE_SECRETS === '1'
+
+    // Image sourcing keys (phase_8_content_integration_001). Two-step pattern.
+    // The image-sourcing orchestrator no-ops per source when the env var is
+    // missing — the app boots fine without these mounted.
+    const mountImageSourcingSecrets = process.env.MOUNT_IMAGE_SOURCING_SECRETS === '1'
 
     // ────────────────────────────────────────────────────────────────
     // CloudWatch — task logs
@@ -278,6 +311,10 @@ export class HomemadeStack extends cdk.Stack {
           `${typesenseHostSecret.secretArn}-??????`,
           `${typesenseAdminApiKeySecret.secretArn}-??????`,
           `${typesenseSearchOnlyApiKeySecret.secretArn}-??????`,
+          `${unsplashAccessKeySecret.secretArn}-??????`,
+          `${pexelsApiKeySecret.secretArn}-??????`,
+          `${pixabayApiKeySecret.secretArn}-??????`,
+          `${falKeySecret.secretArn}-??????`,
         ],
       }),
     )
@@ -332,6 +369,14 @@ export class HomemadeStack extends cdk.Stack {
               TYPESENSE_HOST: ecs.Secret.fromSecretsManager(typesenseHostSecret),
               TYPESENSE_ADMIN_API_KEY: ecs.Secret.fromSecretsManager(typesenseAdminApiKeySecret),
               TYPESENSE_SEARCH_ONLY_API_KEY: ecs.Secret.fromSecretsManager(typesenseSearchOnlyApiKeySecret),
+            }
+          : {}),
+        ...(mountImageSourcingSecrets
+          ? {
+              UNSPLASH_ACCESS_KEY: ecs.Secret.fromSecretsManager(unsplashAccessKeySecret),
+              PEXELS_API_KEY: ecs.Secret.fromSecretsManager(pexelsApiKeySecret),
+              PIXABAY_API_KEY: ecs.Secret.fromSecretsManager(pixabayApiKeySecret),
+              FAL_KEY: ecs.Secret.fromSecretsManager(falKeySecret),
             }
           : {}),
       },

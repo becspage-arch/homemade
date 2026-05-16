@@ -283,3 +283,59 @@
     padding-top: 48px;
   }
 }
+
+/* ─── Discreet hero attribution (phase_8_content_integration_001) ─── */
+
+.tutorial-hero-image {
+  position: relative;
+}
+
+.hero-attribution {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  z-index: 2;
+}
+
+.hero-attribution-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font: 11px/1 var(--font-system, system-ui, sans-serif);
+  opacity: 0.2;
+  cursor: pointer;
+  transition: opacity 120ms ease;
+}
+
+.hero-attribution:hover .hero-attribution-trigger,
+.hero-attribution.is-open .hero-attribution-trigger,
+.hero-attribution-trigger:focus-visible {
+  opacity: 1;
+  outline: none;
+}
+
+.hero-attribution-popover {
+  position: absolute;
+  bottom: 28px;
+  right: 0;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.78);
+  color: #fff;
+  font: 12px/1.4 var(--font-system, system-ui, sans-serif);
+  pointer-events: auto;
+}
+
+.hero-attribution-popover a {
+  color: #fff;
+  text-decoration: underline;
+}
+
