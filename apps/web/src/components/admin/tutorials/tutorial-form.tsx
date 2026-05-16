@@ -3,6 +3,9 @@
 import { useMemo, useState } from 'react'
 import type { JSONContent } from '@tiptap/core'
 
+import './tutorial-form.css'
+
+import { captureClientEvent } from '@/lib/client-analytics'
 import { TiptapEditor } from '@/components/admin/editor/tiptap-editor'
 import type { GlossaryRef, TutorialRef } from '@/components/admin/editor/types'
 import { CategorySubCategoryFields, type CategoryOption, type SubCategoryOption } from './category-sub-category-fields'
@@ -201,7 +204,31 @@ export function TutorialForm({
   }
 
   return (
-    <form action={handleSubmit} className="space-y-10">
+    <form
+      action={handleSubmit}
+      className={`space-y-10 tutorial-form${showPreview ? ' tutorial-form-preview-open' : ''}`}
+    >
+      <div className="tutorial-form-top-bar">
+        <button
+          type="button"
+          className="tutorial-form-preview-toggle"
+          onClick={() => {
+            setShowPreview((v) => {
+              const next = !v
+              if (next) {
+                captureClientEvent('admin_preview_drawer_opened', {
+                  tutorialSlug: defaults.slug,
+                })
+              }
+              return next
+            })
+          }}
+          aria-pressed={showPreview}
+        >
+          {showPreview ? 'Close preview' : 'Open preview'}
+        </button>
+      </div>
+
       <div className="grid gap-6 sm:grid-cols-[1fr_2fr]">
         <label className="block">
           <Label>Type</Label>
@@ -541,39 +568,6 @@ export function TutorialForm({
       <div>
         <div className="mb-3 flex items-center justify-between">
           <Label>Body</Label>
-          <div
-            className="inline-flex overflow-hidden rounded-full border border-[var(--color-linen-grey)] text-[10px] uppercase tracking-[0.2em]"
-            style={{ fontFamily: 'var(--font-lora)' }}
-            role="tablist"
-            aria-label="Editor view"
-          >
-            <button
-              type="button"
-              role="tab"
-              aria-selected={!showPreview}
-              onClick={() => setShowPreview(false)}
-              className={`px-4 py-1.5 transition ${
-                !showPreview
-                  ? 'bg-[var(--color-sage)] text-[var(--color-linen-cream)]'
-                  : 'text-[var(--color-warm-taupe)] hover:text-[var(--color-sage)]'
-              }`}
-            >
-              edit
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={showPreview}
-              onClick={() => setShowPreview(true)}
-              className={`px-4 py-1.5 transition ${
-                showPreview
-                  ? 'bg-[var(--color-sage)] text-[var(--color-linen-cream)]'
-                  : 'text-[var(--color-warm-taupe)] hover:text-[var(--color-sage)]'
-              }`}
-            >
-              preview
-            </button>
-          </div>
         </div>
         <p
           className="mb-3 text-xs italic text-[var(--color-warm-taupe)] opacity-70"
@@ -581,7 +575,7 @@ export function TutorialForm({
         >
           Insert custom blocks from the toolbar. Hit save when you&apos;re done — there&apos;s no autosave.
         </p>
-        <div style={{ display: showPreview ? 'none' : 'block' }}>
+        <div>
           <TiptapEditor
             initialContent={defaults.body}
             glossary={glossary}
@@ -592,6 +586,19 @@ export function TutorialForm({
           />
         </div>
         {showPreview && (
+          <aside className="tutorial-preview-drawer" aria-label="Live preview">
+            <header className="tutorial-preview-drawer-header">
+              <span>Live preview</span>
+              <button
+                type="button"
+                className="tutorial-preview-drawer-close"
+                onClick={() => setShowPreview(false)}
+                aria-label="Close preview drawer"
+              >
+                ×
+              </button>
+            </header>
+            <div className="tutorial-preview-drawer-body">
           <PreviewPane
             body={previewBody}
             glossary={glossary}
@@ -634,6 +641,8 @@ export function TutorialForm({
               foundational,
             }}
           />
+            </div>
+          </aside>
         )}
       </div>
 

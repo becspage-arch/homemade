@@ -31,7 +31,7 @@ export default async function NewPatternTestPage() {
           <p className="me-empty">
             You need at least one tutorial of your own before running a pattern test.
             <br />
-            <Link href="/me/creator/tutorials/new" className="me-nav-link">
+            <Link href="/admin/tutorials/new" className="me-nav-link">
               Start a tutorial →
             </Link>
           </p>

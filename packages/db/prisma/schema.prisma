@@ -125,6 +125,10 @@ model User {
   dmcaResolutions          DmcaTakedownRequest[]   @relation("DmcaResolver")
   signupAllowlistAdded     SignupAllowlist[]       @relation("SignupAllowlistAddedBy")
 
+  // Admin overhaul — saved filters + cmd-K command history.
+  savedFilters         SavedFilter[]         @relation("SavedFilterOwner")
+  adminCommandHistory  AdminCommandHistory[] @relation("AdminCommandActor")
+
   // Phase 8 Step 13 — Mindset
   mindsetPlans         UserPlan[]
   mindsetDailyPicks    DailyPick[]
@@ -1229,6 +1233,52 @@ model SignupAllowlist {
   updatedAt DateTime @updatedAt
 
   @@index([addedById])
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Admin overhaul — SavedFilter + AdminCommandHistory. SavedFilter persists
+// the content-list filter chips an editor wants to reuse (e.g. "RECIPE drafts
+// with no hero"). AdminCommandHistory feeds the cmd-K palette's "recent
+// commands" rail.
+// ────────────────────────────────────────────────────────────────────────────
+
+model SavedFilter {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation("SavedFilterOwner", fields: [userId], references: [id], onDelete: Cascade)
+
+  name        String
+  description String?
+
+  /// JSON blob mirroring the URL query string the content list uses. Shape
+  /// is owned by the content-list page; persisted opaquely so we can iterate
+  /// the filter UI without migrations.
+  filterQuery Json
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, updatedAt])
+}
+
+model AdminCommandHistory {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation("AdminCommandActor", fields: [userId], references: [id], onDelete: Cascade)
+
+  /// Free-form command identifier — "publish_current", "goto_glossary",
+  /// "search_tutorial:<id>", etc. The palette decides how to interpret it
+  /// when surfacing it back in the Recent rail.
+  command String
+
+  /// Optional context (current route, tutorialId, etc.) captured at fire time.
+  context Json?
+
+  executedAt DateTime @default(now())
+
+  @@index([userId, executedAt])
 }
 
 // ────────────────────────────────────────────────────────────────────────────

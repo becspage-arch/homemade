@@ -185,6 +185,20 @@ analytics).
 | `payment_failed` | Phase 7 / 8 placeholder — no firing path yet. | (TBD) |
 | `error_boundary_triggered` | React error boundary catches a render error in the `(public)` route group (root + tutorial-scoped boundaries). Client-side. Also reported to Sentry via `Sentry.captureException`. | `path`, `errorName`, `errorMessage` (truncated to 120 chars), `digest` (Next.js error digest, nullable), `scope` (`tutorial` for the per-tutorial boundary, omitted for the root one) |
 
+### Admin overhaul (cmd-K + saved filters + bulk + dashboard)
+
+Wired during the admin overhaul (`feedback_model_choice.md` Opus session,
+phase_admin_overhaul_001). All consent-aware via `lib/client-analytics.ts`.
+
+| Event | Properties |
+|---|---|
+| `admin_command_invoked` | cmd-K palette executed a command. `command` (action key), `contextRoute` (pathname when invoked) |
+| `admin_saved_filter_created` | Editor saved a filter on the content list. `filterName`, `filterKeys[]` |
+| `admin_bulk_action` | Bulk row action applied. `action` (publish / unpublish / archive / delete), `rowCount`, `byFilterCriteria` (bool — false = explicit IDs, true = whole-filter selector) |
+| `admin_preview_drawer_opened` | Editor opened the sticky preview drawer. `tutorialSlug` |
+| `admin_dashboard_kpi_clicked` | Editor clicked a KPI card. `kpi` |
+| `admin_attention_inbox_action` | Editor clicked an "attention inbox" row. `inboxItemType`, `count` |
+
 ### Moderation outcomes (existing)
 
 Already wired by Phase 5 / services-activation; properties expanded here.

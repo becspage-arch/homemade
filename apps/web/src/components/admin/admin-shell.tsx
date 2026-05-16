@@ -1,20 +1,34 @@
 'use client'
 
 import { useState, type ReactNode } from 'react'
-import { AdminSidebar, type SidebarGroup } from './admin-sidebar'
+import { AdminSidebar, type SidebarGroup, type UserRole } from './admin-sidebar'
+import { CommandPalette } from './command-palette'
 
 interface AdminShellProps {
   groups: SidebarGroup[]
-  isAdmin: boolean
+  userRole: UserRole
+  userEmail: string
+  userName: string | null
   children: ReactNode
 }
 
-export function AdminShell({ groups, isAdmin, children }: AdminShellProps) {
+export function AdminShell({
+  groups,
+  userRole,
+  userEmail,
+  userName,
+  children,
+}: AdminShellProps) {
   const [open, setOpen] = useState(false)
 
   return (
     <div className="admin-shell" data-sidebar-open={open ? 'true' : 'false'}>
-      <AdminSidebar groups={groups} isAdmin={isAdmin} />
+      <AdminSidebar
+        groups={groups}
+        userRole={userRole}
+        userEmail={userEmail}
+        userName={userName}
+      />
       <div className="admin-main">
         <div className="admin-main-bar">
           <button
@@ -31,6 +45,7 @@ export function AdminShell({ groups, isAdmin, children }: AdminShellProps) {
           {children}
         </main>
       </div>
+      <CommandPalette userRole={userRole} />
     </div>
   )
 }

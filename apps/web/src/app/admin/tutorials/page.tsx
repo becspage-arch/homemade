@@ -1,246 +1,244 @@
 import Link from 'next/link'
-import { prisma, TutorialStatus, type Prisma } from '@homemade/db'
+import {
+  prisma,
+  Difficulty,
+  Season,
+  TutorialStatus,
+  TutorialType,
+  UserRole,
+} from '@homemade/db'
+import { getCurrentDbUser, hasRoleAtLeast } from '@/lib/auth'
+import {
+  parseFilters,
+  buildWhere,
+  buildOrderBy,
+  serialiseFilters,
+  SORT_OPTIONS,
+  PAGE_SIZE_OPTIONS,
+  HERO_OPTIONS,
+} from './filters'
+import {
+  CUISINE_LABEL,
+  CUISINES,
+  DIETARY_FLAGS,
+  DIETARY_LABEL,
+  MEAL_TYPE_LABEL,
+  MEAL_TYPES,
+  MOOD_FLAGS,
+  MOOD_LABEL,
+} from './ingredient-constants'
+import { mediaUrl } from '@/lib/media'
+import { ContentFilterForm } from '@/components/admin/tutorials/content-filter-form'
+import {
+  ContentListClient,
+  type ContentRow,
+  type SavedFilterChip,
+} from '@/components/admin/tutorials/content-list-client'
+
+import './tutorials-list.css'
 
 export const dynamic = 'force-dynamic'
 
-const PAGE_SIZE = 50
+type SearchParamsShape = Record<string, string | string[] | undefined>
 
-type StatusFilter = 'ALL' | TutorialStatus
-
-const FILTERS: { value: StatusFilter; label: string }[] = [
-  { value: 'ALL', label: 'all' },
-  { value: TutorialStatus.DRAFT, label: 'draft' },
-  { value: TutorialStatus.PENDING_MODERATION, label: 'pending moderation' },
-  { value: TutorialStatus.SCHEDULED, label: 'scheduled' },
-  { value: TutorialStatus.PUBLISHED, label: 'published' },
-  { value: TutorialStatus.ARCHIVED, label: 'archived' },
-]
-
-function parseStatus(raw: string | undefined): StatusFilter {
-  if (!raw) return 'ALL'
-  const upper = raw.toUpperCase()
-  if (upper === 'ALL') return 'ALL'
-  if ((Object.values(TutorialStatus) as string[]).includes(upper)) {
-    return upper as TutorialStatus
-  }
-  return 'ALL'
-}
-
-export default async function TutorialsIndexPage({
+export default async function TutorialsContentListPage({
   searchParams,
 }: {
-  searchParams: Promise<{ status?: string; page?: string }>
+  searchParams: Promise<SearchParamsShape>
 }) {
+  const user = await getCurrentDbUser()
+  if (!user) return null
+
   const params = await searchParams
-  const filter = parseStatus(params.status)
-  const pageNum = Math.max(1, parseInt(params.page ?? '1', 10) || 1)
-  const skip = (pageNum - 1) * PAGE_SIZE
+  const filters = parseFilters(params)
+  const where = buildWhere(filters, { id: user.id, role: user.role })
+  const orderBy = buildOrderBy(filters)
+  const skip = (filters.page - 1) * filters.pageSize
 
-  const where: Prisma.TutorialWhereInput =
-    filter === 'ALL' ? {} : { status: filter }
-
-  const [tutorials, total] = await Promise.all([
+  const [rows, total, categoryRows, creatorRows, savedFilters] = await Promise.all([
     prisma.tutorial.findMany({
       where,
-      orderBy: { updatedAt: 'desc' },
+      orderBy,
       skip,
-      take: PAGE_SIZE,
+      take: filters.pageSize,
       include: {
-        category: { select: { name: true } },
-        author: { select: { email: true, name: true } },
+        category: { select: { name: true, slug: true } },
+        hero: {
+          select: { cloudflareId: true, r2Key: true },
+        },
+        creator: { select: { displayHandle: true, name: true } },
       },
     }),
     prisma.tutorial.count({ where }),
+    prisma.category.findMany({
+      orderBy: [{ order: 'asc' }, { name: 'asc' }],
+      select: { slug: true, name: true },
+    }),
+    hasRoleAtLeast(user, UserRole.EDITOR)
+      ? prisma.user.findMany({
+          where: { isCreator: true },
+          orderBy: { name: 'asc' },
+          select: { id: true, name: true, email: true, displayHandle: true },
+        })
+      : Promise.resolve([]),
+    prisma.savedFilter.findMany({
+      where: { userId: user.id },
+      orderBy: { updatedAt: 'desc' },
+      take: 20,
+    }),
   ])
-  const pageCount = Math.max(1, Math.ceil(total / PAGE_SIZE))
+
+  const pageCount = Math.max(1, Math.ceil(total / filters.pageSize))
+
+  const contentRows: ContentRow[] = rows.map((r) => {
+    const heroUrl = mediaUrl(r.hero ?? null, 'thumbnail')
+    return {
+      id: r.id,
+      slug: r.slug,
+      title: r.title,
+      status: r.status,
+      categoryName: r.category?.name ?? null,
+      categorySlug: r.category?.slug ?? null,
+      publishedAt: r.publishedAt?.toISOString() ?? null,
+      updatedAt: r.updatedAt.toISOString(),
+      heroUrl,
+      type: r.type,
+      creatorHandle: r.creator?.displayHandle ?? r.creator?.name ?? null,
+    }
+  })
+
+  const savedFilterChips: SavedFilterChip[] = savedFilters
+    .map((sf) => {
+      const raw = sf.filterQuery as { search?: string } | null
+      return {
+        id: sf.id,
+        name: sf.name,
+        search: raw?.search ?? '',
+      }
+    })
+    .filter((sf) => sf.search)
+
+  const authorOptions = [
+    { value: 'any', label: 'Anyone' },
+    { value: 'homemade', label: 'Homemade' },
+    ...creatorRows.map((c) => ({
+      value: c.id,
+      label: c.displayHandle ?? c.name ?? c.email,
+    })),
+  ]
+
+  const currentSearchString = serialiseFilters(filters)
+
+  const canBulk = hasRoleAtLeast(user, UserRole.EDITOR)
+  const canDelete = hasRoleAtLeast(user, UserRole.ADMIN)
 
   return (
-    <div className="mx-auto max-w-6xl">
-      <div className="flex items-center justify-between">
-        <h1
-          className="text-4xl text-[var(--color-espresso)]"
-          style={{ fontFamily: 'var(--font-fraunces)', fontWeight: 400 }}
-        >
-          Tutorials
-        </h1>
-        <Link
-          href="/admin/tutorials/new"
-          className="bg-[var(--color-sage)] px-5 py-2 text-xs uppercase tracking-[0.25em] text-[var(--color-linen-cream)] hover:bg-[var(--color-forest)]"
-          style={{ fontFamily: 'var(--font-lora)' }}
-        >
-          new tutorial
+    <div className="content-list-page">
+      <header className="content-list-header">
+        <div>
+          <h1>Content</h1>
+          <p className="content-list-subtitle">
+            {user.role === UserRole.CREATOR
+              ? 'Your tutorials only — submit for review when ready.'
+              : 'Every tutorial in the library — recipes, techniques, articles, practices.'}
+          </p>
+        </div>
+        <Link href="/admin/tutorials/new" className="content-list-new">
+          + new tutorial
         </Link>
-      </div>
+      </header>
 
-      <nav className="mt-8 flex flex-wrap gap-2">
-        {FILTERS.map((f) => {
-          const active = filter === f.value
-          const href =
-            f.value === 'ALL'
-              ? '/admin/tutorials'
-              : `/admin/tutorials?status=${f.value}`
-          return (
-            <Link
-              key={f.value}
-              href={href}
-              className={`rounded-full border px-4 py-1.5 text-xs uppercase tracking-[0.25em] transition ${
-                active
-                  ? 'border-[var(--color-sage)] bg-[var(--color-sage)] text-[var(--color-linen-cream)]'
-                  : 'border-[var(--color-linen-grey)] text-[var(--color-warm-taupe)] hover:border-[var(--color-sage)] hover:text-[var(--color-sage)]'
-              }`}
-              style={{ fontFamily: 'var(--font-lora)' }}
-            >
-              {f.label}
-            </Link>
-          )
-        })}
-      </nav>
+      <ContentFilterForm
+        q={filters.q}
+        statuses={filters.statuses}
+        types={filters.types}
+        categorySlugs={filters.categorySlugs}
+        cuisines={filters.cuisines}
+        mealTypes={filters.mealTypes}
+        moods={filters.moods}
+        dietaries={filters.dietaries}
+        difficulties={filters.difficulties}
+        seasons={filters.seasons}
+        hero={filters.hero}
+        author={filters.author}
+        sort={filters.sort}
+        view={filters.view}
+        pageSize={filters.pageSize}
+        statusOptions={Object.values(TutorialStatus).map((s) => ({
+          value: s,
+          label: s.toLowerCase().replace('_', ' '),
+        }))}
+        typeOptions={Object.values(TutorialType).map((t) => ({
+          value: t,
+          label: t.toLowerCase(),
+        }))}
+        categoryOptions={categoryRows}
+        cuisineOptions={CUISINES.map((c) => ({ value: c, label: CUISINE_LABEL[c] }))}
+        mealTypeOptions={MEAL_TYPES.map((m) => ({ value: m, label: MEAL_TYPE_LABEL[m] }))}
+        moodOptions={MOOD_FLAGS.map((m) => ({ value: m, label: MOOD_LABEL[m] }))}
+        dietaryOptions={DIETARY_FLAGS.map((d) => ({ value: d, label: DIETARY_LABEL[d] }))}
+        difficultyOptions={Object.values(Difficulty).map((d) => ({
+          value: d,
+          label: d.toLowerCase(),
+        }))}
+        seasonOptions={Object.values(Season).map((s) => ({
+          value: s,
+          label: s.toLowerCase().replace('_', ' '),
+        }))}
+        heroOptions={HERO_OPTIONS.map((h) => ({ value: h.value, label: h.label }))}
+        authorOptions={authorOptions}
+        sortOptions={SORT_OPTIONS.map((s) => ({ value: s.value, label: s.label }))}
+        pageSizeOptions={[...PAGE_SIZE_OPTIONS]}
+        canFilterAuthor={hasRoleAtLeast(user, UserRole.EDITOR)}
+      />
 
-      {tutorials.length === 0 ? (
-        <p
-          className="mt-12 text-[var(--color-warm-taupe)]"
-          style={{ fontFamily: 'var(--font-lora)' }}
-        >
-          {filter === 'ALL'
-            ? 'No tutorials yet. Create one to get started.'
-            : `No ${filter.toLowerCase()} tutorials.`}
-        </p>
-      ) : (<>
-        <p
-          className="mt-8 text-xs uppercase tracking-[0.25em] text-[var(--color-warm-taupe)] opacity-70"
-          style={{ fontFamily: 'var(--font-lora)' }}
-        >
-          showing {skip + 1}–{Math.min(skip + tutorials.length, total)} of {total}
-        </p>
-        <table className="mt-10 w-full border-collapse">
-          <thead>
-            <tr className="border-b border-[var(--color-linen-grey)] text-left">
-              <Th>Title</Th>
-              <Th>Category</Th>
-              <Th>Status</Th>
-              <Th>Last edited</Th>
-              <Th>Published</Th>
-              <Th />
-            </tr>
-          </thead>
-          <tbody>
-            {tutorials.map((t) => (
-              <tr key={t.id} className="border-b border-[var(--color-linen-grey)]">
-                <Td>
-                  <div
-                    className="text-[var(--color-espresso)]"
-                    style={{ fontFamily: 'var(--font-fraunces)', fontSize: '1.15rem' }}
-                  >
-                    {t.title}
-                  </div>
-                  <div className="mt-1 text-xs text-[var(--color-warm-taupe)] opacity-70">
-                    <code>{t.slug}</code>
-                  </div>
-                </Td>
-                <Td>{t.category.name}</Td>
-                <Td>
-                  <StatusBadge status={t.status} />
-                  {t.status === TutorialStatus.SCHEDULED && t.scheduledFor && (
-                    <div className="mt-1 text-xs italic text-[var(--color-warm-taupe)] opacity-70">
-                      for {t.scheduledFor.toLocaleDateString('en-GB')}
-                    </div>
-                  )}
-                </Td>
-                <Td>{t.updatedAt.toLocaleDateString('en-GB')}</Td>
-                <Td>
-                  {t.publishedAt
-                    ? t.publishedAt.toLocaleDateString('en-GB')
-                    : '—'}
-                </Td>
-                <Td>
-                  <Link
-                    href={`/admin/tutorials/${t.id}`}
-                    className="text-xs uppercase tracking-[0.25em] text-[var(--color-sage)] hover:text-[var(--color-forest)]"
-                    style={{ fontFamily: 'var(--font-lora)' }}
-                  >
-                    edit
-                  </Link>
-                </Td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        {pageCount > 1 && (
-          <nav
-            className="mt-8 flex flex-wrap gap-2"
-            aria-label="Tutorial pages"
-          >
-            {Array.from({ length: pageCount }).slice(0, 20).map((_, i) => {
-              const p = i + 1
-              const sp = new URLSearchParams()
-              if (filter !== 'ALL') sp.set('status', filter)
-              if (p > 1) sp.set('page', String(p))
-              const href = sp.toString()
-                ? `/admin/tutorials?${sp.toString()}`
-                : '/admin/tutorials'
-              return (
-                <Link
-                  key={p}
-                  href={href}
-                  className={`rounded-full border px-3 py-1 text-xs uppercase tracking-[0.25em] transition ${
-                    p === pageNum
-                      ? 'border-[var(--color-sage)] bg-[var(--color-sage)] text-[var(--color-linen-cream)]'
-                      : 'border-[var(--color-linen-grey)] text-[var(--color-warm-taupe)] hover:border-[var(--color-sage)] hover:text-[var(--color-sage)]'
-                  }`}
-                  style={{ fontFamily: 'var(--font-lora)' }}
-                >
-                  {p}
-                </Link>
-              )
-            })}
-          </nav>
-        )}
-      </>)}
+      <p className="content-list-summary">
+        {total === 0
+          ? 'No tutorials match the current filter.'
+          : `Showing ${skip + 1}–${Math.min(skip + contentRows.length, total)} of ${total.toLocaleString('en-GB')}`}
+      </p>
+
+      <ContentListClient
+        rows={contentRows}
+        savedFilters={savedFilterChips}
+        currentSearchString={currentSearchString}
+        totalMatching={total}
+        canBulk={canBulk}
+        canDelete={canDelete}
+        view={filters.view}
+      />
+
+      {pageCount > 1 && <Pagination pageCount={pageCount} filters={filters} />}
     </div>
   )
 }
 
-function StatusBadge({ status }: { status: TutorialStatus }) {
-  const tone =
-    status === TutorialStatus.PUBLISHED
-      ? 'bg-[var(--color-forest)] text-[var(--color-linen-cream)]'
-      : status === TutorialStatus.SCHEDULED
-        ? 'bg-[var(--color-honey)] text-[var(--color-espresso)]'
-        : status === TutorialStatus.ARCHIVED
-          ? 'bg-[var(--color-stone)] text-[var(--color-espresso)]'
-          : status === TutorialStatus.PENDING_MODERATION
-            ? 'bg-[var(--color-burnt-sienna)] text-[var(--color-linen-cream)]'
-            : status === TutorialStatus.IN_REVIEW
-              ? 'bg-[var(--color-dusty-blush)] text-[var(--color-espresso)]'
-              : 'border border-[var(--color-linen-grey)] text-[var(--color-warm-taupe)]'
+function Pagination({
+  pageCount,
+  filters,
+}: {
+  pageCount: number
+  filters: ReturnType<typeof parseFilters>
+}) {
+  const cap = Math.min(pageCount, 30)
   return (
-    <span
-      className={`inline-block rounded-full px-3 py-0.5 text-[10px] uppercase tracking-[0.25em] ${tone}`}
-      style={{ fontFamily: 'var(--font-lora)' }}
-    >
-      {status.toLowerCase().replace('_', ' ')}
-    </span>
-  )
-}
-
-function Th({ children }: { children?: React.ReactNode }) {
-  return (
-    <th
-      className="py-3 text-xs uppercase text-[var(--color-warm-taupe)]"
-      style={{ fontFamily: 'var(--font-lora)', letterSpacing: '0.18em', fontWeight: 500 }}
-    >
-      {children}
-    </th>
-  )
-}
-
-function Td({ children }: { children?: React.ReactNode }) {
-  return (
-    <td
-      className="py-4 align-top text-[var(--color-warm-taupe)]"
-      style={{ fontFamily: 'var(--font-lora)' }}
-    >
-      {children}
-    </td>
+    <nav className="content-pagination" aria-label="Content pages">
+      {Array.from({ length: cap }).map((_, i) => {
+        const p = i + 1
+        const search = serialiseFilters({ ...filters, page: p })
+        return (
+          <Link
+            key={p}
+            href={`/admin/tutorials${search}`}
+            className={`content-pagination-page${p === filters.page ? ' active' : ''}`}
+          >
+            {p}
+          </Link>
+        )
+      })}
+      {pageCount > cap && (
+        <span className="content-pagination-ellipsis">… {pageCount} pages</span>
+      )}
+    </nav>
   )
 }

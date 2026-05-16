@@ -9,9 +9,10 @@ import {
   SourceType,
   TutorialStatus,
   TutorialType,
+  UserRole,
   type Prisma,
 } from '@homemade/db'
-import { getCurrentDbUser, isAdmin } from '@/lib/auth'
+import { getCurrentDbUser, isAdmin, hasRoleAtLeast } from '@/lib/auth'
 import { audit } from '@/lib/audit'
 import { isValidSlug, slugify } from '@/lib/slug'
 import { syncTutorialById, removeTutorialById } from '@/lib/search-sync'
@@ -275,6 +276,34 @@ async function requireAdminActor() {
   return user
 }
 
+/**
+ * Editor-tier actor for actions a CREATOR can also perform on their own rows
+ * (edit, save, submit for review). Caller must subsequently check creator
+ * ownership on the affected row when role === CREATOR.
+ */
+async function requireContentActor() {
+  const user = await getCurrentDbUser()
+  if (!user || !hasRoleAtLeast(user, UserRole.CREATOR)) {
+    throw new Error('Not authorised.')
+  }
+  return user
+}
+
+async function assertRowAccessible(
+  tutorialId: string,
+  user: { id: string; role: UserRole },
+): Promise<void> {
+  if (hasRoleAtLeast(user, UserRole.EDITOR)) return
+  // CREATOR — only their own rows
+  const row = await prisma.tutorial.findUnique({
+    where: { id: tutorialId },
+    select: { creatorId: true },
+  })
+  if (!row || row.creatorId !== user.id) {
+    throw new Error('Not authorised for this tutorial.')
+  }
+}
+
 async function assertCategoryExists(id: string): Promise<void> {
   const c = await prisma.category.findUnique({ where: { id } })
   if (!c) throw new Error('Selected category not found.')
@@ -345,7 +374,7 @@ async function snapshotVersion(
 // ────────────────────────────────────────────────────────────────────────────
 
 export async function createTutorial(formData: FormData): Promise<void> {
-  const actor = await requireAdminActor()
+  const actor = await requireContentActor()
   const input = parseFull(formData)
   const err = validateMetadata(input)
   if (err) throw new Error(err)
@@ -358,6 +387,10 @@ export async function createTutorial(formData: FormData): Promise<void> {
   await assertHeroMediaExists(input.heroMediaId)
 
   const totalMinutes = computeTotalMinutes(input)
+
+  // CREATOR-authored rows attach a creatorId so the byline + RBAC scoping work.
+  const isCreator = actor.role === UserRole.CREATOR
+  const creatorId = isCreator ? actor.id : null
 
   const created = await prisma.tutorial.create({
     data: {
@@ -377,6 +410,7 @@ export async function createTutorial(formData: FormData): Promise<void> {
       body: input.body,
       status: TutorialStatus.DRAFT,
       authorId: actor.id,
+      creatorId,
 
       type: input.type,
       servings: input.servings,
@@ -433,7 +467,8 @@ export async function createTutorial(formData: FormData): Promise<void> {
 }
 
 export async function updateTutorial(id: string, formData: FormData): Promise<void> {
-  const actor = await requireAdminActor()
+  const actor = await requireContentActor()
+  await assertRowAccessible(id, actor)
   const input = parseFull(formData)
   const err = validateMetadata(input)
   if (err) throw new Error(err)
@@ -523,15 +558,25 @@ export async function transitionTutorialStatus(
   id: string,
   formData: FormData,
 ): Promise<void> {
-  const actor = await requireAdminActor()
+  const actor = await requireContentActor()
+  await assertRowAccessible(id, actor)
   const targetRaw = String(formData.get('target') ?? '')
   const target = pickEnumOrNull(targetRaw, [
     TutorialStatus.DRAFT,
     TutorialStatus.SCHEDULED,
     TutorialStatus.PUBLISHED,
     TutorialStatus.ARCHIVED,
+    TutorialStatus.PENDING_MODERATION,
   ])
   if (!target) throw new Error('Invalid target status.')
+
+  // CREATOR can only submit drafts for review. Publish / schedule / archive
+  // are editor-and-above-only.
+  if (actor.role === UserRole.CREATOR) {
+    if (target !== TutorialStatus.PENDING_MODERATION && target !== TutorialStatus.DRAFT) {
+      throw new Error('Creators can only submit drafts for review.')
+    }
+  }
 
   const scheduledRaw = String(formData.get('scheduledFor') ?? '').trim()
 

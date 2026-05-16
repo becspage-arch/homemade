@@ -75,17 +75,17 @@ export default async function CreatorHomePage() {
           <DashCard
             label="Drafts"
             value={countFor(TutorialStatus.DRAFT)}
-            href="/me/creator/tutorials?status=DRAFT"
+            href="/admin/tutorials?status=DRAFT"
           />
           <DashCard
             label="In review"
             value={countFor(TutorialStatus.PENDING_MODERATION)}
-            href="/me/creator/tutorials?status=PENDING_MODERATION"
+            href="/admin/tutorials?status=PENDING_MODERATION"
           />
           <DashCard
             label="Published"
             value={countFor(TutorialStatus.PUBLISHED)}
-            href="/me/creator/tutorials?status=PUBLISHED"
+            href="/admin/tutorials?status=PUBLISHED"
           />
           <DashCard
             label="Active pattern tests"
@@ -99,7 +99,7 @@ export default async function CreatorHomePage() {
         <span className="me-section-label">Quick actions</span>
         <h2 className="me-section-title">Make something</h2>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
-          <Link href="/me/creator/tutorials/new" className="me-button">
+          <Link href="/admin/tutorials/new" className="me-button">
             New tutorial
           </Link>
           <Link href="/me/creator/patterns/new" className="me-button secondary">
@@ -145,7 +145,7 @@ export default async function CreatorHomePage() {
             {recentActivity.map((t) => (
               <li key={t.id} style={{ marginBottom: 8 }}>
                 <Link
-                  href={`/me/creator/tutorials/${t.id}`}
+                  href={`/admin/tutorials/${t.id}`}
                   style={{ color: 'var(--color-sage)' }}
                 >
                   {t.title}

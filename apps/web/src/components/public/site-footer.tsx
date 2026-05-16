@@ -1,11 +1,15 @@
 import Link from 'next/link'
-import { auth } from '@clerk/nextjs/server'
+import { UserRole } from '@homemade/db'
+import { getCurrentDbUser, hasRoleAtLeast } from '@/lib/auth'
 import { LEGAL_ENTITY, legalField } from '@/lib/legal-entity'
 import { CookiePreferencesButton } from './cookie-banner'
 
 export async function SiteFooter() {
-  const { userId } = await auth()
-  const signedIn = !!userId
+  const dbUser = await getCurrentDbUser()
+  const signedIn = !!dbUser
+  // CREATOR / EDITOR / ADMIN — creators administer their own content via the
+  // unified /admin surface, so they get the link too.
+  const canSeeAdmin = hasRoleAtLeast(dbUser, UserRole.CREATOR)
 
   return (
     <footer className="site-footer">
@@ -30,6 +34,11 @@ export async function SiteFooter() {
           {signedIn && (
             <Link href="/me/data-rights" className="site-footer-link">
               Data rights
+            </Link>
+          )}
+          {canSeeAdmin && (
+            <Link href="/admin" className="site-footer-link">
+              Admin
             </Link>
           )}
         </nav>
