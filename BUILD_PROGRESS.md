@@ -3370,14 +3370,24 @@ report and runs three pieces of work.
   only flag adjective-pattern tricolons — would shrink the warning
   count on the next audit. Both deferred.
 
-- **CDK image-secrets mount — deferred.** The Phase 8 IAM-grant deploy
-  is in place; `MOUNT_IMAGE_SOURCING_SECRETS=1` was not flipped from
-  this session because the local AWS user (`aura-deployer`) lacks
-  CloudFormation + Secrets Manager permissions and `cdk deploy` would
-  hit Access Denied. Needs a privileged role. The orchestrator no-ops
-  per source when env vars are missing, so the running app is
-  unaffected — this only matters for future server-side bulk-fill or
-  audit-fix jobs. Pre-launch checklist item.
+- **CDK image-secrets mount — deployed.** Four secrets created in AWS
+  Secrets Manager (`homemade/unsplash-access-key`,
+  `homemade/pexels-api-key`, `homemade/pixabay-api-key`,
+  `homemade/fal-key`) from `.env.credentials` values. CDK stack updated
+  to add `UNSPLASH_APPLICATION_ID` as a plain env var (public id, not a
+  secret — gated on the same mount flag). Two-step deploy from the
+  local `claude-deploy` user: Deploy 1 landed the IAM grant on the
+  execution role with no task replacement (26 s); Deploy 2
+  (`MOUNT_IMAGE_SOURCING_SECRETS=1`) rolled the task definition with
+  the four secret refs + the `UNSPLASH_APPLICATION_ID` env (6 min, ECS
+  circuit-breaker waited for healthy tasks). `aws ecs describe-task-
+  definition` shows all five values; `/healthz` returns 200. Server-
+  side bulk-fill / audit jobs can now call `sourceHeroImage()` without
+  `.env.credentials`. (The first attempt at this from the previous
+  session used the shell's default AWS profile — `aura-deployer` on
+  the Aura account — and hit Access Denied; loading `.env.credentials`
+  explicitly resolves to `claude-deploy` on account `213615929920`,
+  the actual Homemade account, which has the right policy attached.)
 
 - **Scripts added in `packages/db/scripts/`.**
   `fixup-servings-yield.ts`, `fixup-hero-fill.ts` (excluded from the

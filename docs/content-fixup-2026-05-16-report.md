@@ -6,42 +6,44 @@ yieldDescription, tricolons), and a bulk hero-image fill across every
 PUBLISHED tutorial still on a procedural card. Audit source:
 `docs/content-audit-2026-05-16.md`.
 
-## CDK image-search secrets — deferred
+## CDK image-search secrets — deployed
 
-`MOUNT_IMAGE_SOURCING_SECRETS=1` was NOT flipped from this session. The
-local AWS CLI user (`aura-deployer`) has ECS / ECR / IAM / CloudWatchLogs
-permissions but no CloudFormation or Secrets Manager access, so `cdk
-deploy` and `aws secretsmanager describe-secret` both return Access
-Denied. The Phase 8 IAM-grant deploy that landed in commit `b71ceca` is
-in place; the second-step env flag and the secrets themselves need a
-privileged role.
+Four `homemade/...` secrets created in AWS Secrets Manager
+(`eu-west-2`) — `unsplash-access-key`, `pexels-api-key`,
+`pixabay-api-key`, `fal-key` — values pulled from `.env.credentials`,
+tagged `Project=Homemade Phase=8-content-integration`.
 
-What's still needed for the second step:
+`UNSPLASH_APPLICATION_ID` added to the CDK env block in
+`infra/lib/homemade-stack.ts`, gated on the same
+`MOUNT_IMAGE_SOURCING_SECRETS=1` flag so Deploy 1 can land the IAM
+grant without replacing the task.
 
-1. Confirm the four secrets exist in AWS Secrets Manager (`eu-west-2`):
-   - `homemade/unsplash-access-key`
-   - `homemade/pexels-api-key`
-   - `homemade/pixabay-api-key`
-   - `homemade/fal-key`
-   Values are already in `.env.credentials`. If any are missing, paste
-   the value from `.env.credentials` into Secrets Manager first.
-2. `UNSPLASH_APPLICATION_ID` is a public identifier — set it as a
-   plain `environment` entry on the task definition (not as a secret).
-   Currently absent from the CDK stack; add it under the `environment:`
-   block in `infra/lib/homemade-stack.ts` alongside the existing
-   `NODE_ENV` / `PORT` entries.
-3. Run `MOUNT_IMAGE_SOURCING_SECRETS=1 pnpm --filter @homemade/infra
-   exec cdk deploy`. Single deploy — IAM grant is already in place.
-4. Verify with `aws ecs describe-task-definition --task-definition
-   homemade-web --query 'taskDefinition.containerDefinitions[0].secrets'`
-   — the four entries should be present.
+Two-step CDK deploy followed the same pattern as the earlier Clerk-
+webhook / Typesense / Phase-1 services migrations:
 
-The orchestrator no-ops gracefully when env vars are missing, so the
-running app is unaffected by the deferral. Worker sessions pull the keys
-from `.env.credentials` directly, which is how this session ran the
-hero-fill below. The ECS mount is only needed for future server-side
-audit / bulk-fill jobs (e.g. if Inngest functions ever call the
-orchestrator).
+1. **Deploy 1** (`MOUNT_IMAGE_SOURCING_SECRETS` unset): IAM grant only —
+   `WebTask/ExecutionRole/DefaultPolicy` picked up the four new ARNs
+   from `addToExecutionRolePolicy`. No task replacement. 26 s deploy.
+2. **Deploy 2** (`MOUNT_IMAGE_SOURCING_SECRETS=1`): task definition
+   replaced with the four secret references + the
+   `UNSPLASH_APPLICATION_ID` plain env. ECS service circuit-breaker
+   waited for the new task to pass health checks before swinging
+   traffic. 6 min total.
+
+Both deploys ran from the local `claude-deploy` user on AWS account
+`213615929920` (the Homemade account — separate from `aura-deployer`
+on the Aura account that the shell's default profile uses).
+
+Verified post-deploy:
+- `aws ecs describe-task-definition --task-definition homemade-web`
+  shows the four secret refs in `containerDefinitions[0].secrets`.
+- `UNSPLASH_APPLICATION_ID=952768` shows in
+  `containerDefinitions[0].environment`.
+- `/healthz` returns 200.
+
+The orchestrator now has the env vars available server-side too, so
+future Inngest-driven bulk-fill or audit-fix jobs can call
+`sourceHeroImage()` without needing `.env.credentials`.
 
 ## Servings / yieldDescription — 51 rows fixed
 

@@ -340,6 +340,12 @@ export class HomemadeStack extends cdk.Stack {
         R2_BUCKET: 'homemade-media',
         R2_PUBLIC_BASE_URL: 'https://media.homemade.education',
         CDN_IMAGE_TRANSFORM_ORIGIN: 'https://homemade.education',
+        // Unsplash application id — public identifier (not a secret).
+        // Sits next to the secrets mounted below; gated on the same flag so
+        // that Deploy 1 (IAM grant only) doesn't replace the task.
+        ...(mountImageSourcingSecrets
+          ? { UNSPLASH_APPLICATION_ID: requireEnv('UNSPLASH_APPLICATION_ID') }
+          : {}),
       },
       secrets: {
         SPLASH_PASSWORD: ecs.Secret.fromSecretsManager(splashSecret),
