@@ -39,13 +39,31 @@ type Candidate = Tutorial & {
 
 interface ScoreContext {
   weekStart: Date
-  recentlyFeaturedTutorialIds: Map<string, Date> // tutorialId -> last featured date
-  lastWeekTopPickCategoryId: string | null
+  /** Map of tutorialId -> most-recent featured date. Includes picks chosen
+   *  earlier in the same regenerate-run so cross-week diversity holds. */
+  recentlyFeaturedTutorialIds: Map<string, Date>
+  /** Category id -> number of picks already chosen for this week. Drives the
+   *  within-week diversity penalty. */
+  categoryCountsThisWeek: Map<string, number>
+  /** Category id -> number of times this category has taken position 1 across
+   *  the most recent two weeks. Avoids the same spine category leading two
+   *  weeks in a row. */
+  recentLeadCategoryCounts: Map<string, number>
 }
+
+const WITHIN_WEEK_CATEGORY_CAP = 2 // hard cap — never 3+ of the same category
+const WITHIN_WEEK_FIRST_REPEAT_PENALTY = 5
+const WITHIN_WEEK_SECOND_REPEAT_PENALTY = 12
+const RECENT_FEATURE_VERY_HOT_PENALTY = 15 // featured within 14 days
+const RECENT_FEATURE_HOT_PENALTY = 8 // featured 14-60 days
+const RECENT_FEATURE_WARM_PENALTY = 3 // featured 60-120 days
+const RECENT_LEAD_CATEGORY_PENALTY = 4 // category already led a recent week
 
 /**
  * Score a tutorial for the given week. Higher = better. Negative values are
- * possible (recently featured off-season tutorials sink).
+ * possible (recently featured off-season tutorials sink). The scoring is
+ * deliberately greedy + position-aware: callers re-score for each of the
+ * five positions as the within-week category counts evolve.
  */
 export function scoreCandidate(
   tutorial: Candidate,
@@ -70,9 +88,6 @@ export function scoreCandidate(
   })
   if (seasonal >= 0.5) score += 10
   else if (seasonal >= 0.2) score += 3
-  else if (seasonal === 0) score += 0
-  // We don't have a clean off-season signal yet (tutorials aren't tagged
-  // anti-season). Keep the structure for the future.
 
   // 3. Engagement. Aggregated bookmark + project counts over the lifetime
   // of the tutorial as a low-cost proxy until per-30-day rollups exist.
@@ -83,22 +98,39 @@ export function scoreCandidate(
     score += Math.log10(engagement + 1) * 2
   }
 
-  // 4. Recently-featured penalty.
+  // 4. Recently-featured penalty. Tighter than the original brief — at
+  // weekly cadence we want a featured tutorial to disappear from picks for
+  // at least 8 weeks (60 days) and stay lightly suppressed for another
+  // 8 weeks (60-120 days).
   const lastFeatured = context.recentlyFeaturedTutorialIds.get(tutorial.id)
   if (lastFeatured) {
     const daysSince =
       (context.weekStart.getTime() - lastFeatured.getTime()) /
       (1000 * 60 * 60 * 24)
-    if (daysSince <= 60) score -= 8
-    else if (daysSince <= 120) score -= 3
+    if (daysSince <= 14) score -= RECENT_FEATURE_VERY_HOT_PENALTY
+    else if (daysSince <= 60) score -= RECENT_FEATURE_HOT_PENALTY
+    else if (daysSince <= 120) score -= RECENT_FEATURE_WARM_PENALTY
   }
 
-  // 5. Same-as-last-week's-#1 penalty (category-level).
-  if (
-    context.lastWeekTopPickCategoryId &&
-    tutorial.categoryId === context.lastWeekTopPickCategoryId
-  ) {
-    score -= 4
+  // 5. Within-week category diversity. Hard-cap at 2 per category; first
+  // repeat costs WITHIN_WEEK_FIRST_REPEAT_PENALTY, second the larger one.
+  const categoryCount =
+    context.categoryCountsThisWeek.get(tutorial.categoryId) ?? 0
+  if (categoryCount >= WITHIN_WEEK_CATEGORY_CAP) {
+    score -= 9999 // effectively unselectable; safety net
+  } else if (categoryCount === 1) {
+    score -= WITHIN_WEEK_FIRST_REPEAT_PENALTY
+  } else if (categoryCount >= 2) {
+    score -= WITHIN_WEEK_SECOND_REPEAT_PENALTY
+  }
+
+  // 6. Cross-week lead-category diversity. Penalise tutorials whose
+  // category took position 1 in either of the last two weeks. Stacks
+  // when both weeks led with the same category.
+  const recentLead =
+    context.recentLeadCategoryCounts.get(tutorial.categoryId) ?? 0
+  if (recentLead > 0) {
+    score -= RECENT_LEAD_CATEGORY_PENALTY * recentLead
   }
 
   return score
@@ -157,15 +189,21 @@ export async function regenerateUpcomingEditorialPicks(
     }
   }
 
-  // Find last week's top pick category (for the same-cat penalty).
+  // Seed recent-lead-category counts from the two weeks just past. Stacks
+  // when both weeks led with the same category.
   const currentWeek = isoWeekStartUtc(now)
-  const lastWeek = addWeeks(currentWeek, -1)
-  const lastWeekTop = await prisma.weeklyEditorialPick.findFirst({
-    where: { weekStarting: lastWeek, position: 1 },
-    include: { tutorial: { select: { categoryId: true } } },
-  })
-  const lastWeekTopPickCategoryId =
-    lastWeekTop?.tutorial?.categoryId ?? null
+  const recentLeadCategoryCounts = new Map<string, number>()
+  for (const offset of [-1, -2]) {
+    const w = addWeeks(currentWeek, offset)
+    const top = await prisma.weeklyEditorialPick.findFirst({
+      where: { weekStarting: w, position: 1 },
+      include: { tutorial: { select: { categoryId: true } } },
+    })
+    const id = top?.tutorial?.categoryId
+    if (id) {
+      recentLeadCategoryCounts.set(id, (recentLeadCategoryCounts.get(id) ?? 0) + 1)
+    }
+  }
 
   const weeksProcessed: {
     weekStarting: Date
@@ -190,63 +228,97 @@ export async function regenerateUpcomingEditorialPicks(
         )
         .map((r) => r.position),
     )
-    const lockedTutorialIds = new Set(
-      existing
-        .filter(
-          (r) =>
-            r.status === EditorialPickStatus.MANUALLY_PINNED ||
-            r.status === EditorialPickStatus.MANUALLY_REPLACED,
+    const lockedRows = existing.filter(
+      (r) =>
+        r.status === EditorialPickStatus.MANUALLY_PINNED ||
+        r.status === EditorialPickStatus.MANUALLY_REPLACED,
+    )
+    const lockedTutorialIds = new Set(lockedRows.map((r) => r.tutorialId))
+
+    // Seed the within-week category counts from any locked rows — pinned
+    // / replaced picks count toward the diversity cap.
+    const categoryCountsThisWeek = new Map<string, number>()
+    for (const row of lockedRows) {
+      const cand = candidates.find((c) => c.id === row.tutorialId)
+      if (cand) {
+        categoryCountsThisWeek.set(
+          cand.categoryId,
+          (categoryCountsThisWeek.get(cand.categoryId) ?? 0) + 1,
         )
-        .map((r) => r.tutorialId),
-    )
+      }
+    }
 
-    // Score every candidate against this week's seasonal calendar.
-    const scored = candidates
-      .filter((c) => !lockedTutorialIds.has(c.id))
-      .map((c) => ({
-        candidate: c,
-        score: scoreCandidate(
-          c,
-          {
-            weekStart,
-            recentlyFeaturedTutorialIds,
-            lastWeekTopPickCategoryId,
-          },
-          null,
-        ),
-      }))
-      .sort((a, b) => b.score - a.score)
+    const usedThisWeek = new Set<string>(lockedTutorialIds)
 
-    // Walk positions 1..5; for each one not locked, take the next candidate
-    // not already used in this week's auto-picks.
-    const usedThisWeek = new Set<string>(
-      existing
-        .filter((r) => lockedPositions.has(r.position))
-        .map((r) => r.tutorialId),
-    )
+    // Greedy per-position pick. Re-score remaining candidates each turn so
+    // the within-week category diversity penalty applies as the picks roll
+    // in. Tutorials picked earlier in this same regenerate-run are filtered
+    // out via recentlyFeaturedTutorialIds (stamped below).
     const inserts: {
       weekStarting: Date
       position: number
       tutorialId: string
+      categoryId: string
     }[] = []
-    let cursor = 0
+
     for (let pos = 1; pos <= PICKS_PER_WEEK; pos += 1) {
       if (lockedPositions.has(pos)) continue
-      while (
-        cursor < scored.length &&
-        usedThisWeek.has(scored[cursor]!.candidate.id)
-      ) {
-        cursor += 1
+
+      const pool = candidates.filter(
+        (c) =>
+          !usedThisWeek.has(c.id) &&
+          (categoryCountsThisWeek.get(c.categoryId) ?? 0) <
+            WITHIN_WEEK_CATEGORY_CAP,
+      )
+      if (pool.length === 0) break
+
+      let best: { candidate: Candidate; score: number } | null = null
+      for (const candidate of pool) {
+        const score = scoreCandidate(
+          candidate,
+          {
+            weekStart,
+            recentlyFeaturedTutorialIds,
+            categoryCountsThisWeek,
+            recentLeadCategoryCounts,
+          },
+          null,
+        )
+        if (!best || score > best.score) best = { candidate, score }
       }
-      if (cursor >= scored.length) break
-      const chosen = scored[cursor]!.candidate
-      cursor += 1
+      if (!best) break
+
+      const chosen = best.candidate
       usedThisWeek.add(chosen.id)
+      categoryCountsThisWeek.set(
+        chosen.categoryId,
+        (categoryCountsThisWeek.get(chosen.categoryId) ?? 0) + 1,
+      )
+      // Stamp the in-run picked tutorial as "featured at this week's start"
+      // so subsequent weeks treat it as very-recently-featured.
+      recentlyFeaturedTutorialIds.set(chosen.id, weekStart)
       inserts.push({
         weekStarting: weekStart,
         position: pos,
         tutorialId: chosen.id,
+        categoryId: chosen.categoryId,
       })
+    }
+
+    // The position-1 pick (or the first slot we filled if pos-1 was locked)
+    // counts toward the lead-category history that future weeks within this
+    // run will see.
+    const leadId =
+      lockedRows.find((r) => r.position === 1)?.tutorialId ??
+      inserts.find((i) => i.position === 1)?.tutorialId
+    if (leadId) {
+      const leadCand = candidates.find((c) => c.id === leadId)
+      if (leadCand) {
+        recentLeadCategoryCounts.set(
+          leadCand.categoryId,
+          (recentLeadCategoryCounts.get(leadCand.categoryId) ?? 0) + 1,
+        )
+      }
     }
 
     // Drop previous auto-rows for unlocked positions before inserting fresh
