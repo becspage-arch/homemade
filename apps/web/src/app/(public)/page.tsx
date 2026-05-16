@@ -47,32 +47,39 @@ export default async function HomePage() {
   return (
     <div className="home-page">
       {/* ──────────────────────────────────────────────────────────────────
-          State-aware hero
+          Inline onboarding card — shown above rails for new users only
         ────────────────────────────────────────────────────────────────── */}
-      <section className="home-hero-zone">
-        {data.hero.kind === 'ONBOARDING' && (
+      {data.isOnboardingPending && (
+        <section className="home-onboarding-zone">
           <OnboardingCard categories={onboardingCategories} />
-        )}
+        </section>
+      )}
 
-        {data.hero.kind === 'SCHEDULED_STEP' && (
-          <HeroScheduledStep action={data.hero.action} />
-        )}
+      {/* ──────────────────────────────────────────────────────────────────
+          State-aware hero (non-onboarding users)
+        ────────────────────────────────────────────────────────────────── */}
+      {!data.isOnboardingPending && (
+        <section className="home-hero-zone">
+          {data.hero.kind === 'SCHEDULED_STEP' && (
+            <HeroScheduledStep action={data.hero.action} />
+          )}
 
-        {data.hero.kind === 'CONTINUE_MAKING' && (
-          <HeroContinueMaking tutorial={data.hero.project} />
-        )}
+          {data.hero.kind === 'CONTINUE_MAKING' && (
+            <HeroContinueMaking tutorial={data.hero.project} />
+          )}
 
-        {data.hero.kind === 'EDITORIAL_PICK' && (
-          <HeroEditorialPick tutorial={data.hero.tutorial} />
-        )}
+          {data.hero.kind === 'EDITORIAL_PICK' && (
+            <HeroEditorialPick tutorial={data.hero.tutorial} />
+          )}
 
-        {data.hero.kind === 'WORDMARK_FALLBACK' && (
-          <div className="home-hero-wordmark">
-            <Wordmark />
-            <p className="home-hero-tagline">the home of making things yourself</p>
-          </div>
-        )}
-      </section>
+          {data.hero.kind === 'WORDMARK_FALLBACK' && (
+            <div className="home-hero-wordmark">
+              <Wordmark />
+              <p className="home-hero-tagline">the home of making things yourself</p>
+            </div>
+          )}
+        </section>
+      )}
 
       {/* ──────────────────────────────────────────────────────────────────
           Rail stack

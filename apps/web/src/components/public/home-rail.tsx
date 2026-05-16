@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
+import { RailScroll } from './rail-scroll'
 
 interface HomeRailProps {
   heading: string
@@ -13,8 +14,8 @@ interface HomeRailProps {
 
 /**
  * Horizontal rail with a brand-register heading. Cards inside scroll
- * horizontally on mobile (touch + native momentum) and wrap into a grid on
- * desktop. Empty rails should not call this — the caller guards.
+ * horizontally with arrow controls and swipe on mobile. Empty rails should
+ * not call this — the caller guards.
  */
 export function HomeRail({
   heading,
@@ -34,9 +35,9 @@ export function HomeRail({
           </Link>
         )}
       </header>
-      <div className="home-rail-scroll">
+      <RailScroll>
         <div className="home-rail-track">{children}</div>
-      </div>
+      </RailScroll>
     </section>
   )
 }

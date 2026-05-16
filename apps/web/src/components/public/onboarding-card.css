@@ -1,251 +1,149 @@
-.onboarding-card {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 56px 48px 40px;
+/* ── Inline onboarding card ──────────────────────────────────────────────── */
+
+.ob-card {
   background: var(--color-soft-parchment);
-  border: 0.5px solid var(--color-linen-grey);
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.onboarding-card-header {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  text-align: center;
-}
-
-.onboarding-card-title {
-  font-family: var(--font-fraunces);
-  font-weight: 400;
-  font-size: 40px;
-  color: var(--color-espresso);
-  margin: 0;
-  letter-spacing: -0.005em;
-}
-
-.onboarding-steps {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.onboarding-step-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: var(--color-linen-grey);
-  transition: background 0.2s ease;
-}
-
-.onboarding-step-dot.active {
-  background: var(--color-sage);
-}
-
-.onboarding-step-dot.done {
-  background: var(--color-warm-taupe);
-}
-
-.onboarding-step-body {
+  border: 1px solid rgba(107, 127, 108, 0.15); /* sage 15% */
+  border-radius: 12px;
+  padding: 24px 24px 20px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-height: 200px;
 }
 
-.onboarding-step-label {
-  font-family: var(--font-lora);
-  font-size: 12px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--color-sage);
-  margin: 0;
-}
-
-.onboarding-step-hint {
-  font-family: var(--font-fraunces);
-  font-style: italic;
-  font-size: 14px;
-  color: var(--color-warm-taupe);
-  margin: 0;
-}
-
-.onboarding-category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 10px;
-}
-
-.onboarding-category-button {
-  font-family: var(--font-lora);
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  color: var(--color-espresso);
-  background: var(--color-cream);
-  border: 0.5px solid var(--color-linen-grey);
-  border-radius: 4px;
-  padding: 14px 16px;
-  cursor: pointer;
-  text-align: left;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-}
-
-.onboarding-category-button:hover {
-  border-color: var(--color-sage);
-}
-
-.onboarding-category-button.picked {
-  background: var(--color-sage);
-  color: var(--color-linen-cream);
-  border-color: var(--color-sage);
-}
-
-.onboarding-dietary-grid {
+.ob-header {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.onboarding-chip {
-  font-family: var(--font-lora);
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  color: var(--color-espresso);
-  background: var(--color-cream);
-  border: 0.5px solid var(--color-linen-grey);
-  border-radius: 999px;
-  padding: 8px 16px;
-  cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-}
-
-.onboarding-chip:hover {
-  border-color: var(--color-sage);
-}
-
-.onboarding-chip.picked {
-  background: var(--color-sage);
-  color: var(--color-linen-cream);
-  border-color: var(--color-sage);
-}
-
-.onboarding-experience-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.onboarding-experience-card {
-  font-family: var(--font-lora);
-  color: var(--color-espresso);
-  background: var(--color-cream);
-  border: 0.5px solid var(--color-linen-grey);
-  border-radius: 4px;
-  padding: 18px 22px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  text-align: left;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.onboarding-experience-card:hover {
-  border-color: var(--color-sage);
-}
-
-.onboarding-experience-card.picked {
-  background: var(--color-sage);
-  color: var(--color-linen-cream);
-  border-color: var(--color-sage);
-}
-
-.onboarding-experience-label {
-  font-family: var(--font-fraunces);
-  font-size: 18px;
-  letter-spacing: -0.005em;
-}
-
-.onboarding-experience-caption {
-  font-size: 13px;
-  color: inherit;
-  opacity: 0.9;
-}
-
-.onboarding-card-footer {
-  display: flex;
+  align-items: flex-start;
   justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  padding-top: 8px;
+  gap: 16px;
 }
 
-.onboarding-skip,
-.onboarding-back {
+.ob-question {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  color: var(--color-espresso);
+  margin: 0;
+}
+
+.ob-skip {
   font-family: var(--font-lora);
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-warm-taupe);
+  font-size: 14px;
+  color: var(--color-sage);
+  opacity: 0.5;
   background: transparent;
   border: 0;
-  padding: 8px 12px;
+  padding: 4px 0;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.15s ease;
 }
 
-.onboarding-skip:hover,
-.onboarding-back:hover {
-  color: var(--color-sage);
+.ob-skip:hover {
+  opacity: 0.8;
 }
 
-.onboarding-card-cta-row {
+.ob-skip:disabled {
+  cursor: default;
+}
+
+/* ── Tile row (via RailScroll) ───────────────────────────────────────────── */
+
+.ob-tiles-wrap {
+  flex: 1;
+}
+
+.ob-rail-scroll .rs-track {
+  /* Override default rail-track behaviour — no grid, just flex */
+  display: flex !important;
+  gap: 10px;
+  padding-bottom: 4px;
+}
+
+.ob-tile-row {
   display: flex;
-  gap: 12px;
-  align-items: center;
+  gap: 10px;
 }
 
-.onboarding-next {
+.ob-tile {
   font-family: var(--font-lora);
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-linen-cream);
-  background: var(--color-sage);
-  border: 0;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: var(--color-espresso);
+  background: var(--color-cream);
+  border: 0.5px solid var(--color-linen-grey);
   border-radius: 999px;
-  padding: 12px 24px;
+  padding: 9px 18px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  white-space: nowrap;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
-.onboarding-next:hover {
-  background: var(--color-forest, var(--color-sage));
+.ob-tile:hover {
+  border-color: var(--color-sage);
 }
 
-.onboarding-next:disabled,
-.onboarding-skip:disabled,
-.onboarding-back:disabled {
+.ob-tile.picked {
+  background: var(--color-sage);
+  color: var(--color-linen-cream, #f8f5ee);
+  border-color: var(--color-sage);
+}
+
+.ob-tile-experience {
+  font-family: var(--font-fraunces);
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 14px 22px;
+}
+
+.ob-tile-experience:disabled {
   opacity: 0.5;
   cursor: default;
 }
 
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+
+.ob-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ob-continue {
+  font-family: var(--font-fraunces);
+  font-size: 15px;
+  letter-spacing: -0.005em;
+  color: var(--color-linen-cream, #f8f5ee);
+  background: var(--color-sage);
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 24px;
+  height: 36px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.ob-continue:hover {
+  background: var(--color-forest, var(--color-sage));
+}
+
+.ob-continue:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────────── */
+
 @media (max-width: 640px) {
-  .onboarding-card {
-    padding: 40px 24px 28px;
-    border-radius: 0;
-    border-left: 0;
-    border-right: 0;
-    margin: 0 -20px;
-    min-height: 70vh;
+  .ob-card {
+    border-radius: 8px;
+    padding: 20px 16px 16px;
+    min-height: 180px;
   }
-  .onboarding-card-title {
-    font-size: 32px;
-  }
-  .onboarding-category-grid {
-    grid-template-columns: 1fr 1fr;
+
+  .ob-question {
+    font-size: 19px;
   }
 }

@@ -6,13 +6,21 @@
 .home-page {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 24px;
+}
+
+/* ── Onboarding zone (inline card above rails) ─────────────────────────── */
+
+.home-onboarding-zone {
+  padding: 32px 0 24px;
 }
 
 /* ── Hero zone ─────────────────────────────────────────────────────────── */
 
 .home-hero-zone {
-  padding: 64px 0 56px;
+  padding: 40px 0 32px;
+  max-height: 60vh;
+  overflow: hidden;
 }
 
 .home-hero-wordmark {
@@ -33,7 +41,7 @@
 .home-hero-feature {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
-  gap: 56px;
+  gap: 48px;
   align-items: center;
   text-decoration: none;
   color: inherit;
@@ -58,14 +66,14 @@
 }
 
 .home-hero-image.procedural {
-  filter: none; /* Procedural cards are already brand-toned. */
+  filter: none;
   background-color: transparent;
 }
 
 .home-hero-body {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .home-hero-overline {
@@ -87,7 +95,7 @@
 .home-hero-title {
   font-family: var(--font-fraunces);
   font-weight: 400;
-  font-size: 52px;
+  font-size: 48px;
   line-height: 1.05;
   letter-spacing: -0.01em;
   color: var(--color-espresso);
@@ -97,7 +105,7 @@
 .home-hero-excerpt {
   font-family: var(--font-fraunces);
   font-style: italic;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.55;
   color: var(--color-warm-taupe);
   margin: 0;
@@ -119,22 +127,22 @@
 /* ── Rails ─────────────────────────────────────────────────────────────── */
 
 .home-rail {
-  padding: 80px 0;
+  padding: 40px 0;
   border-top: 0.5px solid var(--color-linen-grey);
 }
 
 .home-rail-header {
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 16px;
+  gap: 12px;
 }
 
 .home-rail-heading {
   font-family: var(--font-fraunces);
   font-weight: 400;
-  font-size: 28px;
+  font-size: 20px;
   letter-spacing: -0.005em;
   color: var(--color-sage);
   margin: 0;
@@ -143,7 +151,7 @@
 .home-rail-subheading {
   font-family: var(--font-fraunces);
   font-style: italic;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--color-warm-taupe);
   margin: 0;
 }
@@ -162,36 +170,95 @@
   color: var(--color-forest, var(--color-sage));
 }
 
-.home-rail-scroll {
+/* ── RailScroll wrapper ────────────────────────────────────────────────── */
+
+.rs-wrap {
   position: relative;
 }
+
+/* Arrow buttons — hidden by default, visible on hover (desktop) */
+.rs-arrow {
+  display: none; /* mobile: never show */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: var(--color-sage);
+  color: var(--color-cream);
+  border: 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+}
+
+.rs-arrow svg {
+  flex-shrink: 0;
+}
+
+.rs-arrow-left {
+  left: -18px;
+}
+
+.rs-arrow-right {
+  right: -18px;
+}
+
+/* Show arrows on hover of the parent rs-wrap */
+.rs-wrap:hover .rs-arrow.rs-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Disabled (at scroll extremes) */
+.rs-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* Scrollable track */
+.rs-track {
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -webkit-overflow-scrolling: touch;
+}
+
+.rs-track::-webkit-scrollbar {
+  display: none; /* WebKit / Chrome / Safari */
+}
+
+/* Edge fade — right side */
+.rs-fade-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 48px;
+  background: linear-gradient(to right, transparent, var(--color-cream, #f9f6f0));
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 1;
+}
+
+/* ── Home card rail track ──────────────────────────────────────────────── */
 
 .home-rail-track {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(280px, 1fr);
-  gap: 28px;
-  overflow-x: auto;
+  grid-auto-columns: minmax(240px, 1fr);
+  gap: 14px;
   scroll-snap-type: x mandatory;
-  scroll-padding-left: 0;
-  padding-bottom: 8px;
-  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
 }
 
 .home-rail-track > * {
   scroll-snap-align: start;
-}
-
-@media (min-width: 900px) {
-  .home-rail-track {
-    grid-auto-columns: minmax(260px, 1fr);
-    grid-auto-flow: column;
-  }
-  /* On a comfortable desktop width let the rail behave like a tight grid
-     wrapping to a second line rather than scrolling forever. */
-  .home-rail-track {
-    overflow-x: auto;
-  }
 }
 
 /* ── Home card ────────────────────────────────────────────────────────── */
@@ -199,7 +266,7 @@
 .home-card {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
   text-decoration: none;
   color: inherit;
   min-width: 0;
@@ -231,13 +298,13 @@
 
 .home-card-saved {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 8px;
+  right: 8px;
   color: var(--color-sage);
   background: var(--color-cream);
   border-radius: 999px;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -246,8 +313,8 @@
 
 .home-card-dietary {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 8px;
+  right: 8px;
   display: flex;
   gap: 4px;
 }
@@ -268,7 +335,7 @@
 .home-card-body {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .home-card-overline {
@@ -290,7 +357,7 @@
 .home-card-title {
   font-family: var(--font-fraunces);
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.2;
   color: var(--color-espresso);
   display: -webkit-box;
@@ -302,7 +369,7 @@
 .home-card-excerpt {
   font-family: var(--font-fraunces);
   font-style: italic;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--color-warm-taupe);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -312,7 +379,7 @@
 
 .home-card-meta {
   font-family: var(--font-lora);
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.04em;
   color: var(--color-warm-taupe);
   display: flex;
@@ -326,7 +393,7 @@
   background: var(--color-soft-parchment);
   border: 0.5px solid var(--color-linen-grey);
   border-radius: 4px;
-  padding: 24px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -337,7 +404,7 @@
   color: inherit;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .home-scheduled-overline {
@@ -351,7 +418,7 @@
 .home-scheduled-title {
   font-family: var(--font-fraunces);
   font-weight: 400;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.2;
   color: var(--color-espresso);
 }
@@ -366,26 +433,26 @@
 /* ── All categories ───────────────────────────────────────────────────── */
 
 .home-all-categories {
-  padding: 80px 0 96px;
+  padding: 40px 0 56px;
   border-top: 0.5px solid var(--color-linen-grey);
 }
 
 .home-categories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
 }
 
 .home-category-tile {
   background: var(--color-soft-parchment);
   border: 0.5px solid var(--color-linen-grey);
   border-radius: 4px;
-  padding: 24px;
+  padding: 18px 20px;
   text-decoration: none;
   color: inherit;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   transition: border-color 0.2s ease, background 0.2s ease;
 }
 
@@ -397,7 +464,7 @@
 .home-category-tile-name {
   font-family: var(--font-fraunces);
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   color: var(--color-espresso);
 }
 
@@ -441,43 +508,64 @@
   color: var(--color-warm-taupe);
 }
 
+/* ── Desktop — enable arrow buttons ──────────────────────────────────── */
+
+@media (min-width: 769px) {
+  .rs-arrow {
+    display: flex;
+  }
+
+  .home-rail-track {
+    grid-auto-columns: minmax(220px, 1fr);
+  }
+}
+
 /* ── Mobile ───────────────────────────────────────────────────────────── */
 
 @media (max-width: 900px) {
   .home-page {
-    padding: 0 20px;
+    padding: 0 16px;
   }
   .home-hero-zone {
-    padding: 32px 0 24px;
+    padding: 24px 0 20px;
+    max-height: none;
+    overflow: visible;
+  }
+  .home-onboarding-zone {
+    padding: 20px 0 16px;
   }
   .home-hero-feature {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
   .home-hero-title {
-    font-size: 36px;
+    font-size: 34px;
   }
   .home-rail {
-    padding: 48px 0;
+    padding: 28px 0;
   }
   .home-rail-heading {
-    font-size: 22px;
+    font-size: 18px;
   }
   .home-all-categories {
-    padding: 48px 0 64px;
+    padding: 28px 0 40px;
   }
   .home-rail-track {
-    grid-auto-columns: minmax(220px, 70vw);
-    margin: 0 -20px;
-    padding: 0 20px 8px;
+    grid-auto-columns: minmax(180px, 68vw);
+    margin: 0 -16px;
+    padding: 0 16px 4px;
+  }
+  /* Edge fade not needed on mobile (native swipe gives the cue) */
+  .rs-fade-right {
+    display: none;
   }
 }
 
 @media (max-width: 640px) {
   .home-hero-title {
-    font-size: 32px;
+    font-size: 28px;
   }
   .home-card-title {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
