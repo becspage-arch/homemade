@@ -3515,3 +3515,116 @@ Rebecca-side credential provisioning), no real screenshot generation,
 no homepage redesign beyond responsive tuning, no analytics or admin
 work, no content authoring, no voice-control hooks (deferred per
 locked decision).
+
+## Phase 8 — Autopilot wire-up (2026-05-16)
+
+Standing infrastructure that fires the content pipeline for cooking,
+baking, and mindset on a daily cron without a per-batch prompt from
+Rebecca. Each fire is one Claude Code worker session reading its
+stream's autopilot prompt; the prompt's pre-flight gates decide
+whether the fire skips, halts, or runs.
+
+- **Three autopilot prompt templates.** Self-contained worker prompts
+  at `docs/autopilot-prompts/cooking.md`, `docs/autopilot-prompts/baking.md`,
+  `docs/autopilot-prompts/mindset.md`. Per-fire procedure (shared
+  shape, per-stream content):
+  1. **Environment pause** — exit clean if `AUTOPILOT_PAUSED=true`.
+  2. **No-double-firing check** — exit clean if a `claude/*` branch
+     has committed to the stream's briefs / report files in the last
+     2 hours.
+  3. **Auto-determine batch number** — N+1 from existing
+     `<stream>-bulk-*-report.md` (cooking is `bulk-batch-*`).
+  4. **Backlog-drain check** — count in-scope candidates (backlog
+     minus skip-list of anchors + pilot + personal + prior batches);
+     halt + disable cron if fewer than the per-stream threshold
+     remain (50 for cooking / baking, 100 for mindset).
+  5. **Quality-drift check** — if voice-check error counts across
+     the last 3 batch reports trended up by more than 50%, skip the
+     fire without disabling the cron.
+  6. **Hard chain cap** — if 10+ consecutive autopilot batches have
+     landed since the last human commit, halt + disable cron.
+  7. **Auto-determine slice** — pick a 50-entry slice that
+     under-represents the running cuisine / sub-category /
+     practice-type distribution from the last 3 batch reports.
+  8. **Run the standard pipeline** — for each entry: brief →
+     draft → self-critique → voice-check (3-retry cap, drop + log
+     on failure) → upload `--status PUBLISHED` (3-retry cap, drop +
+     log).
+  9. **Close the batch** — write the batch report, append
+     anti-tells / common-issues entries for any pattern recurring
+     3+ times, update the Multi-category fill plan grid, append a
+     short autopilot entry to BUILD_PROGRESS, commit + push to
+     main, run the deploy verification block.
+
+- **Halt-signal helper.** New `packages/db/scripts/write-halt-signal.ts`
+  writes a row to `AutopilotHaltSignal`. Pre-flight failures and the
+  3rd-retry deploy failure both invoke it. The hourly Inngest cron
+  (`autopilot-halt-notify`, registered in
+  `apps/web/src/app/api/inngest/route.ts`) drains the rows and
+  surfaces them via Sentry (warning, tag `kind=autopilot-halt`) +
+  CloudWatch. Reason codes documented inline:
+  `ENV_PAUSED`, `SKIPPED_DOUBLE_FIRE`, `BACKLOG_DRAINED`,
+  `QUALITY_DRIFT`, `HARD_CAP_REACHED`, `DEPLOY_FAILED`.
+
+- **Three scheduled tasks (one per stream).** Created via the
+  ScheduledTasks MCP — `autopilot-cooking-bulk` (cron `0 2 * * *`,
+  early-morning local time), `autopilot-baking-bulk` (`0 4 * * *`,
+  2h after cooking), `autopilot-mindset-bulk` (`0 6 * * *`, 2h after
+  baking). All Sonnet, all notify-on-completion. The 2h stagger
+  prevents three concurrent worker sessions banging on the same
+  ECS task / Inngest queue / git remote at once.
+
+  > **Note on creation.** The scheduled-task MCP tool requires
+  > interactive approval per call (each create / update fires a
+  > confirmation dialog). The autopilot-wire-up worker session ran
+  > unsupervised, so the three crons were not created from inside
+  > the session — Rebecca creates them in an interactive Claude
+  > Code session using the prompt-file contents loaded verbatim
+  > as the `prompt` field. Task IDs (`autopilot-cooking-bulk` /
+  > `autopilot-baking-bulk` / `autopilot-mindset-bulk`) and cron
+  > expressions are fixed; the autopilot prompts reference those
+  > IDs directly for the self-disable path. Re-record the actual
+  > task IDs here when the crons land.
+
+- **Pause flag.** `AUTOPILOT_PAUSED=true` set in the local
+  environment (or the scheduled-task launch env) causes every
+  fire to write an `ENV_PAUSED` halt signal and exit clean
+  without drafting or uploading anything. No code change in
+  `apps/web` is needed — the autopilot prompt reads the env var
+  at preflight (step 0). To pause:
+
+  ```bash
+  # Either:
+  export AUTOPILOT_PAUSED=true            # bash / linux
+  $env:AUTOPILOT_PAUSED = "true"          # PowerShell
+
+  # Or per-task — disable the scheduled task entirely:
+  mcp__scheduled-tasks__update_scheduled_task \
+    taskId=autopilot-cooking-bulk enabled=false
+  ```
+
+  The env-flag path is preferred for short pauses (a session or
+  two); the scheduled-task-disable path is preferred for longer
+  pauses where the daily fire shouldn't even start a session.
+
+- **First fires.** Cooking 02:00 local, baking 04:00 local, mindset
+  06:00 local — the morning after the three scheduled tasks land
+  via the interactive create step. The first mindset fire takes a
+  smaller slice (target 20 rather than 50) since the pilot-10 step
+  hasn't run yet — it serves as both pilot and bulk-001.
+
+- **Halt signal monitoring.** `autopilot-halt-notify` (Inngest,
+  hourly, `0 * * * *`) was wired in the prior content-integration
+  session (`apps/web/src/inngest/functions/autopilot-halt-notify.ts`).
+  Verified registered in `apps/web/src/app/api/inngest/route.ts`.
+  Surface path is Sentry + CloudWatch until Resend email lands.
+
+Out of scope (deliberately): no content authoring this session
+(infrastructure only); no schema changes; no email service wiring;
+no edits to the authoring prompts (`docs/tutorial-author.md` v5,
+`docs/baking-author.md` v2, `docs/mindset-author.md` v4 stay as-is);
+no mobile / UI / admin / analytics work; no Inngest cron schedule
+changes.
+
+Commit: `<sha>` — Phase 8 autopilot wire-up: three stream prompts +
+halt-signal helper + scheduled-task plan + BUILD_PROGRESS section.
