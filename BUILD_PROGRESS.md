@@ -3811,3 +3811,102 @@ anchor batches all wait on Rebecca's go-signal per category), no
 autopilot stream additions, no homepage layout changes beyond the
 empty-category graceful handling, no edits to existing Category row
 descriptions, no marketing pages, no infra changes.
+
+
+## Tutorial page bug fix + speed wins + seed run (2026-05-16)
+
+Three-piece session bundled into the worktree
+`reverent-goldberg-a57407`. Categories-work from the parallel
+session above had landed on `main` mid-session, so this branch
+extended it rather than duplicating.
+
+- **Tutorial page crash on every RECIPE — fixed.**
+  `https://homemade.education/baking/carrot-cake-layered` (and every
+  other recipe tutorial) was throwing the error boundary with digest
+  `3492158675`. CloudWatch unmasked the stack: `Attempted to call
+  extractScaleIngredients() from the server but
+  extractScaleIngredients is on the client.` The extractor lived in
+  `scale-context.tsx`, which carries a `'use client'` directive — Next
+  16 treats every export from such a module as a client function, so
+  the server `page.tsx` couldn't invoke it before passing the result
+  into `<ScaleProvider>`. Moved the extractor into a new
+  `apps/web/src/components/public/tutorial-content/scale-extract.ts`
+  (no directive). `scale-context.tsx` re-exports it through the
+  client-side barrel so the admin preview pane keeps working.
+  Scope: hit every RECIPE tutorial since the recipe-scale work
+  landed; technique pages were unaffected because they don't render
+  the `ScaleProvider` branch. Verified post-deploy by hitting 7
+  tutorial URLs (cooking / baking / mindset) — all render with their
+  titles, no error boundary in HTML.
+
+- **Tutorial error boundary enriched.** `error.tsx` now tags Sentry
+  events with `route: 'tutorial-page'`, `scope: 'error-boundary'`,
+  `categorySlug`, `tutorialSlug`, and the Next.js error `digest`, plus
+  carries the same fields through a `tutorial` context block. The
+  reader-facing fallback surfaces a small "Reference {digest}" line so
+  support can correlate a reader report to a CloudWatch row without
+  asking for a screenshot.
+
+- **ECS steady state 1 → 2 tasks.** Deferred speed item #8 in
+  `docs/perf-audit-001.md`. Bumped both the CDK `desiredCount` default
+  in `infra/lib/homemade-stack.ts` and the deploy workflow's
+  `aws ecs update-service --desired-count` in
+  `.github/workflows/deploy.yml` so they don't drift — the workflow is
+  the live source of truth (it doesn't run `cdk deploy`), but the CDK
+  default needs to match for any future infra change. Memory
+  utilisation steady at 25–40 % of the 512 MB / 256 CPU sizing, so no
+  CPU / memory bump alongside.
+
+- **Cache-Control headers verified.** `/legal/privacy`, `/coming-soon`,
+  `/healthz` all return the expected `Cache-Control` values, and
+  Next.js's own cache reports `x-nextjs-cache: HIT` on the
+  static-shaped pages. Cloudflare still serves them as
+  `cf-cache-status: DYNAMIC` because there's no Cache Rule for HTML
+  yet — that belongs to the deferred edge-caching workstream and is
+  out of scope here.
+
+- **Perf snapshot for future regression checks.** Production build
+  succeeded under Turbopack (1 known noisy warning re: `@prisma/client`
+  CJS star export — pre-existing). Bundle picture captured in
+  `docs/perf-followup-001.md`: no public-route bloat, Recharts stays
+  scoped to `/admin/analytics`, Sentry shared chunk ~209 K. No
+  code-split shipped — nothing in the public surface tree crossed the
+  "grew by > 200 K in the last week" threshold from the brief.
+
+- **`seed-categories.ts` run against prod, then reverted.** The first
+  run (against the pre-fix seed script) was idempotent: `0 created,
+  1 updated, 16 unchanged` — the update flipped Mindset's
+  `isPublicVisible` from `true` to `false` because Mindset sits at 0
+  PUBLISHED and the auto-compute threshold is 10. While this session
+  was still running, a parallel session shipped 8575cad
+  (`fix(categories): seed preserves visibility for existing shipped
+  rows`) — explicitly making Cooking / Baking / Mindset keep their
+  stored flag regardless of PUBLISHED count, since those three are
+  the launch spine. Restored Mindset to `isPublicVisible = true`
+  with a one-off `prisma.category.update`, re-verified it's back in
+  the public nav. The 14 new placeholder categories were already at
+  the correct private state from the earlier landing; nothing else
+  moved.
+
+### Out of scope (deliberately)
+
+- No edge-caching architecture work — flagged for its own workstream.
+- No content authoring.
+- No autopilot changes.
+- No mobile / admin overhaul beyond what already landed via the
+  categories session.
+- No edits to `docs/social-strategy/`, `docs/recipe-backlog.md`,
+  `docs/content-backlog.md`, `docs/page-design.md`, or marketing pages.
+
+### Worth looking at next session
+
+- Cloudflare Cache Rules for `/legal/*`, `/coming-soon`, and any other
+  static-shaped HTML — flips the cache accounting from
+  `x-nextjs-cache` to `cf-cache-status` and removes the ALB round-trip
+  for cold visitors.
+- The `proxy.ts` bot-scanner noise floor (existing entry in pre-launch
+  debt) is still throwing Sentry warnings — separate small session.
+- `apps/web/src/app/api/unlock/route.ts` still does `req.formData()`
+  without a try/catch; non-form Content-Types throw a 500 instead of
+  redirecting back to `/unlock?error=1`. Low priority — only triggers
+  on manual probes.
