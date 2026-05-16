@@ -1281,6 +1281,41 @@ delete after the session ships:
   logged, not fixed.
 - New `tools.ts` entries — no gaps surfaced for this corpus.
 
+### Personal recipes QC + publish ✅ landed 2026-05-16
+
+**Goal.** Pass all 215 personal recipe DRAFTs through the full QC rubric
+(schema, metadata, body structure, voice, coherence), apply auto-fixes,
+and transition every recipe DRAFT → PUBLISHED.
+
+**Result.** 215 of 215 published. 0 flagged for review. 0 upload
+failures. Full report in `docs/personal-recipes-qc-report.md`.
+
+**Auto-fixes applied (457 total):**
+
+- **servings** (193 recipes): `recipe.servings` was null on all hybrid-
+  pipeline recipes. Extracted `defaultServings` from each body's
+  `ingredientsList` block and set as `recipe.servings`. 22 already had
+  servings or yieldDescription set.
+- **makeAheadNotes** (215 recipes): field was null on all redo-session
+  recipes. Populated by extracting the first sentence of each body's
+  "Make ahead, freezing, leftovers" section.
+- **temperatureCelsius** (47 recipes): oven recipes with no canonical °C
+  value. Extracted from method prose ("180C / 350F / Gas 4" → 180,
+  "200°C" → 200, etc.).
+- **cuisine** (1 recipe): `chicken-katsu-curry` had `cuisine: "chinese"`.
+  Corrected to `"japanese"` (confirmed by sourceNotes: "Japanese-style
+  mild curry"). All other cuisine assignments verified correct.
+
+**Voice-check:** 0 blocking errors across the corpus. 107 recipes carry
+non-blocking warnings (tricolons in her prose, Americanisms from US-
+sourced recipes). Her prose preserved verbatim per the rules.
+
+**No master-list changes:** All 215 uploaded against existing master
+ingredient + tool tables. No new entries needed.
+
+**Pipeline artifact:** `docs/personal-recipes-briefs/.qc-and-publish.ts`
+— idempotent QC + publish script; reruns safely.
+
 ### Step 12 — Bulk auto-publish at 100–200 per batch
 
 **Goal.** Standing worker pattern. Daily auto-publish, no per-draft
