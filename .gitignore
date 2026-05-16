@@ -33,6 +33,13 @@ Thumbs.db
 .claude/worktrees/
 .claude/scheduled_tasks.lock
 
+# Intermediate checkpoint files written by one-off fixup scripts in
+# packages/db/scripts. Canonical records live in the database (AuditLog
+# rows) — these JSONs are recovery state if a long script is interrupted
+# mid-run, not committed artefacts.
+docs/hero-fill-progress.json
+docs/tricolon-fixup-progress.json
+
 # Caches
 .cache/
 .eslintcache
