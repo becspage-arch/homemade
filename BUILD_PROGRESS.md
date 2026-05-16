@@ -3112,4 +3112,18 @@ Bundle impact: `cmdk` adds ~12 kB gzipped to the shared admin chunk; the rest of
 
 Commit: `<sha>` — feat(admin): dashboard rebuild + content list + preview drawer + cmd-K palette + categories tree + RBAC unification.
 
+## Homepage polish — inline onboarding card, arrow-scroll rails, density compression
+
+Workstream 2b of the 2026-05-15 full UX review. Three targeted changes to the homepage shipped at `0b29ccf`.
+
+- **OnboardingCard rewrite** (`apps/web/src/components/public/onboarding-card.tsx` + `.css`). Replaced the large centred-card screen takeover with a compact inline card (~200-260px desktop) that sits between the site header and the first rail, visible only when `onboardedAt === null`. New question phrasing: "What are you drawn to?" / "Anything you'd rather skip?" / "Where are you at?". Step indicator ("Step X of 3") and Back button removed. "Skip for now" link top-right, always visible. "Continue" pill (sage fill, Fraunces, 36px tall) bottom-right — appears only when ≥1 tile is selected on Q1, always on Q2, absent on Q3 (Q3 single-select auto-completes on tile tap). Experience level labels updated: "Just starting out" / "Making things for a while" / "I know my way around". Tile row uses the same `RailScroll` component as the homepage rails. Server actions (`completeOnboardingAction`, `skipOnboardingAction`) and analytics events (`onboarding_completed`, `onboarding_skipped`) unchanged.
+
+- **RailScroll component** (`apps/web/src/components/public/rail-scroll.tsx`). New client component wrapping every horizontal rail and the onboarding card tile row. Native scrollbar hidden (`scrollbar-width: none` / `::-webkit-scrollbar { display: none }`). 36px sage-circle arrow buttons with cream chevron SVG sit at the rail's left and right edges, overlapping the first/last card. On desktop: arrows are invisible by default and fade in (150ms opacity transition) when the `.rs-wrap` container is hovered. On mobile (≤768px): arrows are `display: none`; native touch-swipe handles scrolling. Click scrolls by ~85% of the container's `offsetWidth` via `scrollBy({ behavior: 'smooth' })`. Each scroll event updates disabled state — arrows fade to 30% opacity and `pointer-events: none` at start/end. Right-side 48px cream gradient fade acts as a "more →" cue; disappears when fully scrolled. `HomeRail` updated to use `RailScroll` as its scroll wrapper.
+
+- **Density compression** (`apps/web/src/app/(public)/home-page.css`). Between-rail padding: 80px → 40px desktop, 28px mobile. Card gap within rails: 28px → 14px. Hero zone: 64px/56px padding → 40px/32px + `max-height: 60vh` cap on desktop. Rail heading: 28px → 20px. Page side padding: 32px → 24px desktop, 16px mobile. Card body gap: 14px → 10px. Category tile grid gap: 16px → 12px. All-categories section padding: 80px/96px → 40px/56px. `home-hero-zone` hidden for onboarding users (card renders in new `home-onboarding-zone` section above the rail stack).
+
+No schema changes. No new analytics events. No admin surface changes.
+
+Commit: `761e2d3` — feat(homepage): inline onboarding card, arrow-scroll rails, density compression.
+
 Out of scope: no admin overhaul beyond editorial picks (next workstream), no Capacitor / native mobile UX (next workstream), no analytics rethink, no marketing pages, no content authoring, no bulk image regeneration via paid APIs.
