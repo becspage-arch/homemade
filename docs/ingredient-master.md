@@ -5,7 +5,7 @@ source of truth, the database upsert reads it directly. Run
 `pnpm --filter "@homemade/db" exec tsx scripts/generate-ingredient-master-md.ts`
 to regenerate this view after editing.
 
-Counts: 547 ingredients across 18 categories.
+Counts: 634 ingredients across 18 categories.
 
 UK conventions throughout — "plain flour" not "all-purpose flour",
 "coriander" not "cilantro". US and regional names live in the aliases column.
@@ -17,7 +17,7 @@ and are set on the recipe by the author.
 
 ## Flours
 
-23 entries.
+26 entries.
 
 | Name | Slug | Aliases | Unit | Dietary | Allergen | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -29,16 +29,19 @@ and are set on the recipe by the author.
 | Coconut flour | `coconut-flour` | — | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Highly absorbent — never swap 1:1 for wheat flour. Recipes are written specifically for it. |
 | Cornflour | `cornflour` | cornstarch, arrowroot | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | UK "cornflour" = US "cornstarch". Not US "corn flour", which is finely milled cornmeal. |
 | Einkorn flour | `einkorn-flour` | — | g | vegetarian, vegan, dairyFree, nutFree | gluten |  |
+| Filo pastry | `filo-pastry` | phyllo pastry | sheet | vegetarian, vegan, dairyFree, nutFree | gluten | Paper-thin sheets. Keep covered with a damp cloth as you work — it dries fast. |
 | Fine semolina | `fine-semolina` | semolina flour, rimacinata | g | vegetarian, vegan, dairyFree, nutFree | gluten |  |
 | Khorasan flour | `khorasan-flour` | Kamut flour | g | vegetarian, vegan, dairyFree, nutFree | gluten |  |
 | Masa harina | `masa-harina` | — | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Nixtamalised corn flour for tortillas and tamales. Not polenta, not cornmeal — both will fail. |
 | Oat flour | `oat-flour` | — | g | vegetarian, vegan, dairyFree, nutFree | — | Naturally gluten-free if certified — otherwise oats are often cross-contaminated. Not flagged glutenFree here for that reason. |
 | Plain flour | `plain-flour` | all-purpose flour, AP flour | g | vegetarian, vegan, dairyFree, nutFree | gluten | UK plain flour is roughly equivalent to US AP flour. Slightly lower protein than US AP. |
 | Polenta | `polenta` | cornmeal, maize meal | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Coarse-ground yellow corn. Buy quick-cook for weeknights, the slow kind for proper texture. |
+| Puff pastry | `puff-pastry` | ready-rolled puff pastry | g | vegetarian, nutFree | gluten | Buy ready-made unless you have an afternoon. All-butter brands taste better. |
 | Rice flour | `rice-flour` | white rice flour | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Rye flour | `rye-flour` | — | g | vegetarian, vegan, dairyFree, nutFree | gluten | Lower gluten than wheat; makes denser, sourer breads. |
 | Self-raising flour | `self-raising-flour` | self-rising flour | g | vegetarian, vegan, dairyFree, nutFree | gluten | Plain flour with baking powder and salt added. Add 2 tsp baking powder + ½ tsp salt per 200 g plain flour to make your own. |
 | Semolina | `semolina` | durum semolina | g | vegetarian, vegan, dairyFree, nutFree | gluten | Coarse durum wheat. Used for pasta, dusting pizza peels, and gnocchi alla romana. |
+| Shortcrust pastry | `shortcrust-pastry` | — | g | vegetarian, nutFree | gluten | Buy ready-made or rub butter into flour 1:2 by weight, bind with cold water. |
 | Spelt flour | `spelt-flour` | — | g | vegetarian, vegan, dairyFree, nutFree | gluten | Ancient wheat relative. Still contains gluten despite the "easier to digest" reputation. |
 | Strong bread flour | `strong-bread-flour` | bread flour, high-protein flour | g | vegetarian, vegan, dairyFree, nutFree | gluten | Higher protein (12-14%) for gluten structure in bread. |
 | Tapioca flour | `tapioca-flour` | tapioca starch | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
@@ -47,16 +50,18 @@ and are set on the recipe by the author.
 
 ## Dairy and eggs
 
-41 entries.
+46 entries.
 
 | Name | Slug | Aliases | Unit | Dietary | Allergen | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
+| Almond milk | `almond-milk` | — | ml | vegetarian, vegan, dairyFree | nuts | Plant milk; the staple for dairy-free baking. Check for added sugar. |
 | Brie | `brie` | — | g | vegetarian, glutenFree, nutFree | milk |  |
 | Buttermilk | `buttermilk` | cultured buttermilk | ml | vegetarian, nutFree | milk | Make at a pinch: 250 ml milk + 1 tbsp lemon juice or white vinegar, rest 10 minutes. |
 | Camembert | `camembert` | — | g | vegetarian, glutenFree, nutFree | milk |  |
 | Cheddar | `cheddar` | mature cheddar, tasty cheese | g | vegetarian, glutenFree, nutFree | milk | British block cheese. "Mature" means aged for sharpness. |
 | Clotted cream | `clotted-cream` | Cornish cream, Devon cream | g | vegetarian, glutenFree, nutFree | milk | ~55% fat. For scones with jam. |
 | Comté | `comte` | comte | g | vegetarian, glutenFree, nutFree | milk |  |
+| Condensed milk | `condensed-milk` | sweetened condensed milk | g | vegetarian, glutenFree, nutFree | milk | For caramel, fudge, banoffee pie. |
 | Cottage cheese | `cottage-cheese` | — | g | vegetarian, glutenFree, nutFree | milk |  |
 | Cream cheese | `cream-cheese` | soft cheese, Philadelphia | g | vegetarian, glutenFree, nutFree | milk | Philadelphia is the supermarket default in the UK. |
 | Crème fraîche | `creme-fraiche` | — | g | vegetarian, glutenFree, nutFree | milk | Higher fat than soured cream so it won't split in a hot sauce. |
@@ -65,6 +70,7 @@ and are set on the recipe by the author.
 | Egg yolks | `egg-yolks` | — | each | vegetarian, glutenFree, dairyFree, nutFree | eggs | Roughly 18 g each from a large UK egg. |
 | Eggs | `eggs` | hen eggs, chicken eggs | each | vegetarian, glutenFree, dairyFree, nutFree | eggs | Default is large free-range UK (~58 g). US "large" is ~57 g — close enough. |
 | Emmental | `emmental` | Swiss cheese | g | vegetarian, glutenFree, nutFree | milk |  |
+| Evaporated milk | `evaporated-milk` | — | ml | vegetarian, glutenFree, nutFree | milk | Unsweetened; reduces in fat from a fresh milk by about 60%. |
 | Feta | `feta` | — | g | vegetarian, glutenFree, nutFree | milk | PDO Greek brined sheep's/goat's cheese. Vegetarian rennet. |
 | Ghee | `ghee` | clarified butter | g | vegetarian, glutenFree, nutFree | milk | Cooked-out clarified butter. Higher smoke point than butter, lactose-very-low. |
 | Goat's cheese | `goats-cheese` | chèvre | g | vegetarian, glutenFree, nutFree | milk |  |
@@ -76,6 +82,7 @@ and are set on the recipe by the author.
 | Mascarpone | `mascarpone` | — | g | vegetarian, glutenFree, nutFree | milk |  |
 | Mozzarella | `mozzarella` | cow mozzarella | g | vegetarian, glutenFree, nutFree | milk | Cow-milk block mozzarella for pizza. Different beast from fresh buffalo. |
 | Mozzarella di bufala | `mozzarella-di-bufala` | buffalo mozzarella, fresh mozzarella | g | vegetarian, glutenFree, nutFree | milk | Wet ball, water-packed. Tear, don't slice. |
+| Oat milk | `oat-milk` | — | ml | vegetarian, vegan, dairyFree, nutFree | — | Plant milk; the barista versions foam best for coffee. |
 | Paneer | `paneer` | — | g | vegetarian, glutenFree, nutFree | milk | Fresh Indian cheese. Doesn't melt — cubes hold their shape in curries. |
 | Parmesan | `parmesan` | Parmigiano-Reggiano, parmigiano | g | glutenFree, nutFree | milk | Not vegetarian — made with animal rennet. Look for "vegetarian hard cheese" if you need that. |
 | Pecorino Romano | `pecorino-romano` | pecorino | g | glutenFree, nutFree | milk | Sheep's-milk, saltier and punchier than parmesan. Animal rennet too. |
@@ -88,6 +95,7 @@ and are set on the recipe by the author.
 | Single cream | `single-cream` | light cream, pouring cream | ml | vegetarian, glutenFree, nutFree | milk | ~18% fat. Won't whip. Will split if boiled. |
 | Skimmed milk | `skimmed-milk` | skim milk, red-top milk, fat-free milk | ml | vegetarian, nutFree | milk |  |
 | Soured cream | `soured-cream` | sour cream | g | vegetarian, glutenFree, nutFree | milk |  |
+| Soya milk | `soya-milk` | soy milk | ml | vegetarian, vegan, dairyFree, nutFree | soybeans | Highest-protein plant milk. Curdles with acidic ingredients. |
 | Stilton | `stilton` | blue stilton | g | vegetarian, glutenFree, nutFree | milk |  |
 | Unsalted butter | `unsalted-butter` | sweet butter | g | vegetarian, glutenFree, nutFree | milk | Default for baking — lets you control salt independently. |
 | Whipping cream | `whipping-cream` | — | ml | vegetarian, glutenFree, nutFree | milk | ~36% fat. Closest UK equivalent to US "heavy cream". |
@@ -95,7 +103,7 @@ and are set on the recipe by the author.
 
 ## Meat
 
-52 entries.
+55 entries.
 
 | Name | Slug | Aliases | Unit | Dietary | Allergen | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -109,6 +117,7 @@ and are set on the recipe by the author.
 | Beef shin | `beef-shin` | beef shank, osso buco cut | g | glutenFree, dairyFree, nutFree | — | Crossed-cut bone-in shin makes osso buco. |
 | Beef sirloin | `beef-sirloin` | sirloin joint, striploin | g | glutenFree, dairyFree, nutFree | — | UK sirloin = US strip steak / striploin. UK "rump" ≠ US "sirloin". |
 | Black pudding | `black-pudding` | blood pudding | g | dairyFree | gluten | Stornoway and Bury are the heritage British styles. Contains oatmeal — usually gluten-containing. |
+| Boneless chicken thighs | `chicken-thighs-boneless` | skinless chicken thighs | each | glutenFree, dairyFree, nutFree | — | Skin and bone removed. More forgiving than breast — stays moist with longer cooking. |
 | Chicken breast | `chicken-breast` | chicken supreme | each | glutenFree, dairyFree, nutFree | — |  |
 | Chicken drumsticks | `chicken-drumsticks` | — | each | glutenFree, dairyFree, nutFree | — |  |
 | Chicken livers | `chicken-livers` | — | g | glutenFree, dairyFree, nutFree | — | For pâté and ragù. Cook through to pink-just. |
@@ -126,6 +135,7 @@ and are set on the recipe by the author.
 | Lamb neck | `lamb-neck` | neck of lamb, middle neck | g | glutenFree, dairyFree, nutFree | — | Cheap, fatty, perfect for Lancashire hotpot. |
 | Lamb shanks | `lamb-shanks` | — | each | glutenFree, dairyFree, nutFree | — | Bone-in stewing piece. One per person. |
 | Lamb shoulder | `lamb-shoulder` | — | g | glutenFree, dairyFree, nutFree | — | Slow-roast cut. Seven hours at low temperature for pull-apart. |
+| Lardons | `lardons` | bacon lardons, pancetta lardons | g | glutenFree, dairyFree, nutFree | — | Short cuts of cured pork belly, smoked or unsmoked. For quiche Lorraine and lentil dishes. |
 | Merguez | `merguez` | — | each | glutenFree, dairyFree, nutFree | — | North African spiced lamb sausage. |
 | Mutton | `mutton` | — | g | glutenFree, dairyFree, nutFree | — | Older sheep. Stronger flavour. Slow-cook. |
 | Ox cheek | `ox-cheek` | beef cheek | g | glutenFree, dairyFree, nutFree | — | Cooks down to glossy, sticky strands in stew. Six-hour minimum braise. |
@@ -143,6 +153,7 @@ and are set on the recipe by the author.
 | Rabbit | `rabbit` | — | each | glutenFree, dairyFree, nutFree | — | Wild = stronger, farmed = milder. Slow-cook for stews. |
 | Rack of lamb | `lamb-rack` | french-trimmed rack | each | glutenFree, dairyFree, nutFree | — | Eight ribs per rack, three to four per person. |
 | Ribeye steak | `beef-ribeye` | rib-eye, scotch fillet | g | glutenFree, dairyFree, nutFree | — |  |
+| Sausage meat | `sausage-meat` | pork sausage meat | g | dairyFree | gluten | Raw seasoned pork mince for sausage rolls, stuffing, and scotch eggs. Usually contains rusk (gluten). |
 | Serrano ham | `serrano-ham` | jamón serrano | g | glutenFree, dairyFree, nutFree | — |  |
 | Streaky bacon | `streaky-bacon` | American bacon, side bacon | g | glutenFree, dairyFree, nutFree | sulphites | UK streaky = US bacon. Cures crisp. |
 | Turkey crown | `turkey-crown` | — | kg | glutenFree, dairyFree, nutFree | — | Boneless breast-only roast for smaller numbers. |
@@ -191,7 +202,7 @@ and are set on the recipe by the author.
 
 ## Vegetables
 
-78 entries.
+79 entries.
 
 | Name | Slug | Aliases | Unit | Dietary | Allergen | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -212,6 +223,7 @@ and are set on the recipe by the author.
 | Chard | `chard` | Swiss chard, rainbow chard | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Stems take longer than leaves — slice stems first. |
 | Cherry tomatoes | `cherry-tomatoes` | — | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Chestnut mushrooms | `mushrooms-chestnut` | cremini | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
+| Chestnut mushrooms | `chestnut-mushrooms` | cremini, brown cap mushrooms | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Cos lettuce | `cos-lettuce` | romaine | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Courgette | `courgette` | zucchini | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Courgette flowers | `courgette-flower` | zucchini flowers | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Stuff with ricotta and fry. Use the same day. |
@@ -276,7 +288,7 @@ and are set on the recipe by the author.
 
 ## Fruit
 
-43 entries.
+52 entries.
 
 | Name | Slug | Aliases | Unit | Dietary | Allergen | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -291,14 +303,21 @@ and are set on the recipe by the author.
 | Cherries | `cherries` | — | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | British Kent cherries June–July; Morello sour cherries best for cooking. |
 | Clementine | `clementine` | satsuma, mandarin | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Coconut cream | `coconut-cream` | — | ml | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
+| Coconut flakes | `coconut-flakes` | — | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Coconut milk | `coconut-milk` | — | ml | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Full-fat tinned for curries. Don't shake the tin if you want to split the thick top off. |
+| Conference pear | `pear-conference` | — | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Long, slender variety. Best for tarts as it holds its shape when poached or baked. |
 | Currants | `currants` | — | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Small dried Zante currants. Not the same as fresh redcurrants. |
 | Damsons | `damsons` | — | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Wild plum cousin. Tart enough that they need cooking. |
 | Desiccated coconut | `coconut-desiccated` | shredded coconut | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
+| Desiccated coconut | `desiccated-coconut` | shredded coconut | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Unsweetened, finely shredded. |
 | Dried apricots | `dried-apricots` | — | g | vegetarian, vegan, glutenFree, dairyFree | sulphites | Sulphured for bright orange — flagged as a sulphite allergen. |
+| Dried blueberries | `dried-blueberries` | — | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
+| Dried cranberries | `dried-cranberries` | Craisins | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Often sweetened. Reads great in salads, granola, baking. |
+| Dried currants | `dried-currants` | Zante currants | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Small dried Zante currants. For scones, fruit cakes, and buns. |
 | Eating apple | `apple-eating` | dessert apples, Cox, Gala, Braeburn | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Figs | `figs` | — | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Use within two days of buying. |
 | Fresh coconut | `coconut-fresh` | — | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
+| Frozen mango | `mango-frozen` | — | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Pre-cut chunks. For smoothies and quick sorbet. |
 | Gooseberries | `gooseberries` | — | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Grapefruit | `grapefruit` | — | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Grapes | `grapes` | — | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
@@ -306,9 +325,11 @@ and are set on the recipe by the author.
 | Lime | `lime` | — | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Mango | `mango` | — | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Alphonso (April–May) is the standout — short season. |
 | Medjool dates | `dates-medjool` | — | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
+| Mixed frozen berries | `mixed-frozen-berries` | frozen berry mix | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Nectarines | `nectarines` | — | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Orange | `orange` | — | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Passion fruit | `passion-fruit` | — | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
+| Passion fruit purée | `passion-fruit-puree` | passionfruit pulp, passionfruit purée | ml | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Peaches | `peaches` | — | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Pear | `pear` | Conference, Comice | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Pineapple | `pineapple` | — | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
@@ -326,7 +347,7 @@ and are set on the recipe by the author.
 
 ## Herbs
 
-26 entries.
+29 entries.
 
 | Name | Slug | Aliases | Unit | Dietary | Allergen | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -340,9 +361,12 @@ and are set on the recipe by the author.
 | Curry leaves | `curry-leaves` | — | leaf | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Bloom in hot oil to release the aroma. Not curry powder — completely different. |
 | Dill | `dill` | — | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Dried oregano | `oregano-dried` | — | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Stronger than fresh; halve the quantity. |
+| Dried sage | `sage-dried` | — | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | For stuffing and sausage rolls. Use half the quantity of fresh sage called for. |
+| Dried thyme | `thyme-dried` | — | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Use half the quantity of fresh thyme called for. |
 | Fennel fronds | `fennel-fronds` | — | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Flat-leaf parsley | `parsley-flat` | Italian parsley | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | More flavour than curly. Default for cooking. |
 | Fresh oregano | `oregano-fresh` | — | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
+| Fresh thyme | `thyme-fresh` | thyme sprigs | sprig | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Lemon thyme | `lemon-thyme` | — | sprig | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Lovage | `lovage` | — | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Garden herb with intense celery-and-anise flavour. |
 | Makrut lime leaves | `kaffir-lime-leaves` | kaffir lime leaves | leaf | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Tear or fine-shred to release the oil. Freeze leftovers up to six months. |
@@ -359,7 +383,7 @@ and are set on the recipe by the author.
 
 ## Spices
 
-53 entries.
+58 entries.
 
 | Name | Slug | Aliases | Unit | Dietary | Allergen | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -374,6 +398,7 @@ and are set on the recipe by the author.
 | Caraway seeds | `caraway-seeds` | — | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Cayenne pepper | `cayenne` | — | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Celery salt | `celery-salt` | — | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | celery |  |
+| Chai spice blend | `chai-spice` | masala chai spice | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Cinnamon, cardamom, ginger, cloves, black pepper. Make your own or buy pre-mixed. |
 | Chilli flakes | `chilli-flakes` | red pepper flakes, crushed chillies | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Chilli powder | `chilli-powder` | chili powder | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | UK chilli powder is pure dried chilli. US "chili powder" is usually a blend with cumin and oregano — different beast. |
 | Chinese five spice | `chinese-five-spice` | — | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
@@ -388,7 +413,9 @@ and are set on the recipe by the author.
 | Fenugreek seeds | `fenugreek-seeds` | methi seeds | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Fine sea salt | `sea-salt-fine` | — | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Garam masala | `garam-masala` | — | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Stir in at the end of a curry — it's a finishing blend, not a base. |
+| Garlic powder | `garlic-powder` | granulated garlic | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | For dry rubs and seasonings where fresh would burn. |
 | Green cardamom | `cardamom-green` | cardamom pods | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Bash to crack, fish out before serving, or grind the seeds for baking. |
+| Ground black pepper | `black-pepper-ground` | ground pepper, black pepper | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Ground cinnamon | `cinnamon-ground` | — | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Ground coriander | `coriander-ground` | — | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Ground cumin | `cumin-ground` | — | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
@@ -396,12 +423,14 @@ and are set on the recipe by the author.
 | Ground nutmeg | `nutmeg-ground` | — | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Ground turmeric | `turmeric` | haldi | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Stains everything yellow. Bloom in fat first to mellow the raw edge. |
 | Hot paprika | `paprika-hot` | — | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
+| Italian seasoning | `italian-seasoning` | dried mixed italian herbs, mixed italian herbs, italian herb blend | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Dried oregano, basil, thyme, rosemary blend. |
 | Juniper berries | `juniper-berries` | — | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | For game, sauerkraut, and brining pork. |
 | Kosher salt | `kosher-salt` | — | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | US recipe staple. Diamond Crystal weighs roughly half what UK fine sea salt weighs by volume — use weight not volume. |
 | Mace | `mace` | — | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | The outer husk of nutmeg. Lighter and more floral than nutmeg itself. |
 | MSG | `msg` | monosodium glutamate, Ajinomoto | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Pure umami. A pinch lifts savoury dishes; the long-debunked allergy panic was a myth. |
 | Nigella seeds | `nigella-seeds` | kalonji, black onion seeds | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Old Bay | `old-bay` | — | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Chesapeake seasoning for crab and seafood boils. |
+| Onion powder | `onion-powder` | granulated onion | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Ras el hanout | `ras-el-hanout` | — | tbsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | North African house blend — up to 30 spices in the best examples. |
 | Saffron | `saffron` | saffron strands | pinch | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Steep in warm water for ten minutes to extract the colour. |
 | Sea salt flakes | `sea-salt-flakes` | Maldon, flaky salt | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | For finishing. Maldon is the British standard. |
@@ -419,18 +448,22 @@ and are set on the recipe by the author.
 
 ## Condiments, sauces, and vinegars
 
-42 entries.
+50 entries.
 
 | Name | Slug | Aliases | Unit | Dietary | Allergen | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
 | Anchovy paste | `anchovy-paste` | — | tsp | glutenFree, dairyFree, nutFree | fish |  |
+| Apricot jam | `apricot-jam` | apricot preserve, apricot conserve | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Sieved and warmed, used as a glaze on cakes and to adhere fondant. |
+| Balsamic glaze | `balsamic-glaze` | balsamic reduction | tbsp | vegetarian, vegan, dairyFree, nutFree | sulphites | Reduced balsamic vinegar, thicker and sweeter than the vinegar itself. For drizzling. |
 | Balsamic vinegar | `balsamic-vinegar` | aceto balsamico | ml | vegan, vegetarian, glutenFree, dairyFree, nutFree | sulphites | Supermarket-grade is fine for dressings. Save aged tradizionale for finishing. |
 | Beef stock | `stock-beef` | beef broth | ml | glutenFree, dairyFree, nutFree | — |  |
 | Black olives | `olives-black` | — | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — |  |
 | Bouillon powder | `bouillon-powder` | Marigold bouillon | tsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Marigold Swiss Vegetable Bouillon is the British standard. |
 | Brown sauce | `hp-sauce` | HP sauce, daddies sauce | tbsp | vegan, vegetarian, dairyFree, nutFree | gluten | British brown sauce. For bacon sandwiches. |
+| Caesar dressing | `caesar-dressing` | — | ml | — | eggs | Classical Caesar contains anchovies and parmesan; vegan versions use cashew/miso. |
 | Capers | `capers` | — | tbsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Salt-packed beat brine. Rinse before using. |
 | Chicken stock | `stock-chicken` | chicken broth | ml | glutenFree, dairyFree, nutFree | — | Homemade beats a cube. The two-hour simmer is worth it. |
+| Chicken stock | `chicken-stock` | chicken broth | ml | glutenFree, dairyFree, nutFree | — | Homemade beats a cube. |
 | Cider vinegar | `cider-vinegar` | apple cider vinegar | ml | vegan, vegetarian, glutenFree, dairyFree, nutFree | sulphites |  |
 | Cornichons | `cornichons` | — | each | vegan, vegetarian, glutenFree, dairyFree, nutFree | sulphites |  |
 | Dark soy sauce | `soy-sauce-dark` | — | tbsp | vegan, vegetarian, dairyFree, nutFree | soybeans | Aged, thicker, less salty. For colour in stews and stir-fries. |
@@ -447,15 +480,19 @@ and are set on the recipe by the author.
 | Hoisin sauce | `hoisin-sauce` | — | tbsp | vegan, vegetarian, dairyFree, nutFree | soybeans | Sweet, dark, soy-based. For duck pancakes. |
 | Kalamata olives | `olives-kalamata` | black olives | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Greek purple-black olive. For Greek salad and tapenade. |
 | Light soy sauce | `soy-sauce-light` | shoyu | tbsp | vegan, vegetarian, dairyFree, nutFree | soybeans | For seasoning. Most contain wheat — buy tamari if coeliac. |
+| Louisiana-style hot sauce | `louisiana-hot-sauce` | hot sauce, Tabasco, tabasco sauce | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Vinegar-based fermented-chilli hot sauce. |
 | Malt vinegar | `malt-vinegar` | brown vinegar | ml | vegan, vegetarian, dairyFree, nutFree | gluten | For chips. Made from barley — contains gluten. |
 | Marmite | `marmite` | — | tsp | vegan, vegetarian, dairyFree, nutFree | gluten | Yeast extract. Hidden umami in stews and gravies. |
 | Mayonnaise | `mayonnaise` | mayo | tbsp | vegetarian, glutenFree, dairyFree, nutFree | eggs |  |
+| Nutritional yeast | `nutritional-yeast` | nutritional yeast flakes, nooch | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Deactivated yeast flakes; savoury, cheesy, vegan parmesan stand-in. |
 | Oyster sauce | `oyster-sauce` | — | tbsp | dairyFree, nutFree | molluscs | Most contain wheat. Vegetarian "mushroom oyster sauce" is the standard swap. |
+| Raspberry jam | `raspberry-jam` | raspberry preserve | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | For Swiss rolls, jammy dodgers, and Victoria sponges. |
 | Red miso | `miso-red` | aka miso | tbsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | soybeans | Longer-aged, saltier, deeper. For braises and aubergine glazes. |
 | Red wine vinegar | `red-wine-vinegar` | — | ml | vegan, vegetarian, glutenFree, dairyFree, nutFree | sulphites |  |
 | Rice vinegar | `rice-vinegar` | rice wine vinegar | ml | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Mild and slightly sweet. Use the unseasoned kind for sushi rice — add sugar and salt yourself. |
 | Sherry vinegar | `sherry-vinegar` | vinagre de Jerez | ml | vegan, vegetarian, glutenFree, dairyFree, nutFree | sulphites |  |
 | Sriracha | `sriracha` | — | tbsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — |  |
+| Stock cube | `stock-cube` | bouillon cube, OXO cube | each | — | — | Concentrated stock. One cube usually makes 500 ml of stock. |
 | Sun-dried tomatoes | `sun-dried-tomatoes` | — | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | sulphites | Buy in oil for direct use; dry for rehydrating. |
 | Tahini | `tahini` | sesame paste | tbsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | sesame | Lebanese or Palestinian brands tend to be smoother than industrial ones. Stir the oil back in before using. |
 | Tamari | `tamari` | — | tbsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | soybeans | Japanese wheat-free soy. Coeliac-safe by default — but always check the label. |
@@ -468,7 +505,7 @@ and are set on the recipe by the author.
 
 ## Baking
 
-28 entries.
+33 entries.
 
 | Name | Slug | Aliases | Unit | Dietary | Allergen | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -479,16 +516,20 @@ and are set on the recipe by the author.
 | Chocolate chips | `chocolate-chips` | — | g | vegetarian, glutenFree, nutFree | milk |  |
 | Cocoa powder | `cocoa-powder` | unsweetened cocoa | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Dutch-process for darker cakes; natural for soda-bread brownies. |
 | Cream of tartar | `cream-of-tartar` | potassium bitartrate | tsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Stabilises egg whites. For meringues and soda bread. |
+| Custard powder | `custard-powder` | Birds custard powder | g | vegetarian, glutenFree, dairyFree, nutFree | — | Cornflour-based instant custard mix. |
 | Dark chocolate | `dark-chocolate` | plain chocolate, bittersweet chocolate | g | vegan, vegetarian, glutenFree, nutFree | milk | 70% cocoa is the workhorse for baking. Check the label — most contains milk traces. |
 | Dried yeast | `yeast-dried` | instant yeast, fast-action yeast | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Sachet = 7 g. Add direct to flour. UK fast-action ≈ US instant. |
+| Fast-action dried yeast | `yeast-fast-action` | instant yeast, easy-blend yeast, active dry yeast, rapid yeast | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | The default supermarket yeast — 7 g sachets. 1 sachet = 14 g fresh yeast. |
 | Fondant icing | `fondant-icing` | ready-to-roll icing | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — |  |
 | Food colouring | `food-colouring` | gel food colour | tsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Gel beats liquid — won't water down icing or batter. |
 | Fresh yeast | `yeast-fresh` | cake yeast | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Ask at the supermarket bakery counter — usually free. |
 | Gelatine leaves | `gelatine-leaves` | leaf gelatin | sheet | glutenFree, dairyFree, nutFree | — | Soak in cold water until floppy; squeeze out before dissolving. |
 | Glacé cherries | `glace-cherries` | candied cherries | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Rinse the syrup off and pat dry so they don't sink in a cake batter. |
+| Glacé cherries | `cherries-glace` | candied cherries | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | For fruitcakes and bakewells. |
 | Icing sugar | `icing-sugar` | powdered sugar, confectioner's sugar | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Sift before using — clumps are inevitable. |
 | Marzipan | `marzipan` | — | g | vegan, vegetarian, glutenFree, dairyFree | nuts |  |
 | Milk chocolate | `milk-chocolate` | — | g | vegetarian, glutenFree, nutFree | milk |  |
+| Mincemeat | `mincemeat` | fruit mincemeat | g | vegetarian, nutFree | sulphites | Spiced dried-fruit and suet mix for mince pies. Modern jars use vegetable suet. |
 | Mixed peel | `mixed-peel` | candied peel | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — |  |
 | Mixed spice | `mixed-spice` | British mixed spice | tsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | For mince pies, hot cross buns, simnel cake. Not the same as US pumpkin spice. |
 | Orange blossom water | `orange-blossom-water` | — | tsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — |  |
@@ -497,6 +538,7 @@ and are set on the recipe by the author.
 | Pumpkin spice | `pumpkin-spice` | — | tsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | US blend leaning on cinnamon, ginger, nutmeg, clove. Not interchangeable with UK mixed spice. |
 | Rose water | `rose-water` | — | tsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — |  |
 | Sourdough starter | `sourdough-starter` | levain | g | vegan, vegetarian, dairyFree, nutFree | gluten | Wild-yeast wheat-flour culture. Feed weekly in the fridge, daily on the counter. |
+| Vanilla bean paste | `vanilla-bean-paste` | vanilla paste | tsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Thick paste with visible seeds. One teaspoon equals one vanilla pod. |
 | Vanilla extract | `vanilla-extract` | — | tsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Real extract, not "essence" — the latter is synthetic. |
 | Vanilla paste | `vanilla-paste` | vanilla bean paste | tsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — |  |
 | White chocolate | `white-chocolate` | — | g | vegetarian, glutenFree, nutFree | milk |  |
@@ -531,48 +573,69 @@ and are set on the recipe by the author.
 
 ## Grains and pasta
 
-26 entries.
+44 entries.
 
 | Name | Slug | Aliases | Unit | Dietary | Allergen | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
 | Arborio rice | `arborio-rice` | — | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | For risotto. Do not rinse. |
+| Bagel | `bagel` | — | each | vegetarian, vegan, dairyFree, nutFree | gluten |  |
+| Baguette | `baguette` | french bread, french stick | each | vegetarian, vegan, dairyFree, nutFree | gluten | French stick. About 250 g. |
 | Basmati rice | `basmati-rice` | — | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Rinse until the water runs clear. For Indian and Persian dishes. |
 | Bread | `bread` | loaf | slice | vegan, vegetarian, dairyFree, nutFree | gluten | Bread is bread. Default is a white sandwich loaf for breadcrumbs. |
 | Brown rice | `brown-rice` | — | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | 40-minute cook time. Soak for an hour first to speed it up. |
 | Bulgur wheat | `bulgur-wheat` | bulgar, cracked wheat | g | vegan, vegetarian, dairyFree, nutFree | gluten | For tabbouleh and kibbeh. |
+| Caramelised biscuit | `caramelised-biscuit` | speculoos, Biscoff, Biscoff biscuit, Lotus biscuit, speculaas | each | vegetarian, vegan, dairyFree, nutFree | gluten | Belgian caramelised spiced biscuit. The Lotus Biscoff brand is the British supermarket default. |
 | Carnaroli rice | `carnaroli-rice` | — | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Higher amylose than arborio — more forgiving for risotto. |
+| Chocolate sandwich biscuit | `chocolate-sandwich-biscuit` | Oreo, Oreos, cookies and cream biscuit | each | vegetarian, vegan, dairyFree, nutFree | gluten | Two dark chocolate biscuits sandwiching a white cream filling. The Oreo brand is the British supermarket default. |
+| Corn tortilla | `corn-tortilla` | — | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Smaller and stiffer than flour. Warm before serving so they bend without cracking. |
+| Cornflakes | `cornflakes` | — | g | vegetarian, vegan, dairyFree, nutFree | — | For coatings and crispy toppings as well as breakfast. |
 | Couscous | `couscous` | — | g | vegan, vegetarian, dairyFree, nutFree | gluten | Just pour boiling water over and cover for five minutes. |
+| Croissant | `croissant` | — | each | vegetarian, nutFree | gluten |  |
+| Digestive biscuit | `digestive-biscuit` | McVities digestive | each | vegetarian, nutFree | gluten | British biscuit base for cheesecakes and tarts. Close US equivalent: graham cracker. |
 | Dried breadcrumbs | `breadcrumbs-dried` | — | g | vegan, vegetarian, dairyFree, nutFree | gluten |  |
 | Dried pasta | `pasta-dried` | — | g | vegan, vegetarian, dairyFree, nutFree | gluten | Bronze-die for sauce-holding texture. De Cecco or Rummo are reliable supermarket choices. |
 | Egg noodles | `noodles-egg` | — | g | vegetarian, dairyFree, nutFree | gluten |  |
 | Fresh pasta | `pasta-fresh` | — | g | vegetarian, dairyFree, nutFree | gluten | Cook in 2-3 minutes. Egg-based — not vegan unless labelled. |
 | Giant couscous | `giant-couscous` | mograbiah, pearl couscous | g | vegan, vegetarian, dairyFree, nutFree | gluten |  |
+| Graham cracker | `graham-cracker` | — | each | vegetarian, nutFree | gluten | US biscuit base. UK equivalent: digestive biscuit. |
+| Granola | `granola` | — | g | vegetarian, vegan, dairyFree | — | Toasted oat cereal with nuts and sweetener. Use the cinnamon or honey kind for breakfast bowls. |
 | Jasmine rice | `jasmine-rice` | — | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | For Thai food. |
 | Jumbo oats | `jumbo-oats` | — | g | vegan, vegetarian, dairyFree, nutFree | — | Bigger flakes. For granola and flapjacks. |
 | Lasagne sheets | `lasagne-sheets` | lasagna sheets | sheet | vegan, vegetarian, dairyFree, nutFree | gluten |  |
 | Long-grain rice | `long-grain-rice` | — | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — |  |
+| Muesli | `muesli` | — | g | vegetarian, vegan, dairyFree | — |  |
+| Naan bread | `naan-bread` | naan | each | vegetarian, nutFree | gluten | Buttery Indian flatbread. |
 | Paella rice | `paella-rice` | bomba rice, calasparra | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Short stubby Spanish rice. Absorbs three times its volume. |
 | Panko breadcrumbs | `panko` | — | g | vegan, vegetarian, dairyFree, nutFree | gluten | Japanese-style flake. Crispier than regular dried crumbs. |
 | Pearl barley | `pearl-barley` | — | g | vegan, vegetarian, dairyFree, nutFree | gluten | For Scotch broth and beef and barley stews. |
+| Pitta bread | `pitta-bread` | pita bread | each | vegetarian, vegan, dairyFree, nutFree | gluten |  |
 | Porridge oats | `porridge-oats` | rolled oats, old-fashioned oats | g | vegan, vegetarian, dairyFree, nutFree | — | Naturally gluten-free if certified — otherwise oats are often cross-contaminated. |
 | Quinoa | `quinoa` | — | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Rinse first to remove the bitter saponin coating. |
+| Rice cake | `rice-cake` | — | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
+| Rice Krispies | `rice-krispies` | rice cereal, puffed rice cereal | g | vegetarian, vegan, dairyFree, nutFree | — |  |
 | Rice noodles | `noodles-rice` | rice vermicelli | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Soak in just-boiled water, don't boil — they go gluey. |
+| Rolled oats | `rolled-oats` | old-fashioned oats, oat flakes | g | vegan, vegetarian, dairyFree, nutFree | — | Steamed and rolled. For flapjacks, crumbles, and oat cookies. Gluten-free if certified. |
+| Shortbread biscuit | `shortbread-biscuit` | — | each | vegetarian, nutFree | gluten |  |
 | Soba noodles | `noodles-soba` | — | g | vegan, vegetarian, dairyFree, nutFree | gluten | Buckwheat — most brands also contain wheat. Check the label if coeliac. |
 | Sushi rice | `sushi-rice` | short-grain Japanese rice | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — |  |
+| Tortilla wrap | `tortilla-wrap` | flour tortilla, tortilla | each | vegetarian, vegan, dairyFree, nutFree | gluten | Soft flour tortillas for fajitas and wraps. |
 | Udon noodles | `noodles-udon` | — | g | vegan, vegetarian, dairyFree, nutFree | gluten |  |
 | Wild rice | `wild-rice` | — | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — |  |
 
 ## Nuts
 
-13 entries.
+16 entries.
 
 | Name | Slug | Aliases | Unit | Dietary | Allergen | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
 | Almonds | `almonds` | — | g | vegan, vegetarian, glutenFree, dairyFree | nuts |  |
+| Blanched almonds | `blanched-almonds` | — | g | vegan, vegetarian, glutenFree, dairyFree | nuts | Skin removed by blanching in boiling water. For nougat, marzipan, and Bakewell tart. |
 | Brazil nuts | `brazil-nuts` | — | g | vegan, vegetarian, glutenFree, dairyFree | nuts |  |
 | Cashews | `cashews` | — | g | vegan, vegetarian, glutenFree, dairyFree | nuts | Soak in boiling water for an hour to blend into vegan cream. |
 | Chestnuts | `chestnuts` | — | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Vacuum-packed cooked is fine — roasting fresh is a winter ritual but slow. |
+| Cooked chestnuts | `chestnut-cooked` | vacuum-packed chestnuts | g | vegetarian, vegan, glutenFree, dairyFree | nuts | Vacuum-packed, ready to use. For stuffing and side dishes. |
 | Flaked almonds | `almonds-flaked` | slivered almonds | g | vegan, vegetarian, glutenFree, dairyFree | nuts | Toast in a dry pan to bring out the flavour. |
+| Flaked almonds | `flaked-almonds` | slivered almonds | g | vegan, vegetarian, glutenFree, dairyFree | nuts | For Dundee cake tops and tart decoration. Toast first. |
 | Hazelnuts | `hazelnuts` | cobnuts, filberts | g | vegan, vegetarian, glutenFree, dairyFree | nuts | British cobnuts late August through October. |
 | Macadamia nuts | `macadamia-nuts` | — | g | vegan, vegetarian, glutenFree, dairyFree | nuts |  |
 | Peanut butter | `peanut-butter` | — | tbsp | vegan, vegetarian, glutenFree, dairyFree | peanuts | For satay sauce and biscuits. Smooth or crunchy by recipe. |
@@ -601,13 +664,14 @@ and are set on the recipe by the author.
 
 ## Oils and fats
 
-13 entries.
+14 entries.
 
 | Name | Slug | Aliases | Unit | Dietary | Allergen | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
 | Beef dripping | `beef-dripping` | tallow | g | glutenFree, dairyFree, nutFree | — | The proper fat for roast potatoes and Yorkshire puddings. |
 | Chilli oil | `chilli-oil` | rayu, chiu chow chilli oil | tsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — |  |
 | Coconut oil | `coconut-oil` | — | tbsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Solid below ~25°C. For Sri Lankan and Caribbean cooking, and as a dairy-free fat in baking. |
+| Cooking spray | `cooking-spray` | Frylight | ml | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Aerosol oil for greasing tins and pans. |
 | Duck fat | `duck-fat` | goose fat | g | glutenFree, dairyFree, nutFree | — | Goose fat is the Christmas standard for roasties. Save the rendered fat from a duck roast. |
 | Extra-virgin olive oil | `extra-virgin-olive-oil` | EVOO | ml | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | For dressing and finishing. Buy single-estate if you can. |
 | Groundnut oil | `groundnut-oil` | peanut oil | ml | vegan, vegetarian, glutenFree, dairyFree | peanuts | High smoke point for deep-frying and stir-fries. |
@@ -621,7 +685,7 @@ and are set on the recipe by the author.
 
 ## Sweeteners
 
-13 entries.
+19 entries.
 
 | Name | Slug | Aliases | Unit | Dietary | Allergen | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -632,16 +696,22 @@ and are set on the recipe by the author.
 | Dark muscovado sugar | `muscovado-dark` | — | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Sticky, treacly. For Christmas cake and parkin. |
 | Date syrup | `date-syrup` | silan | tbsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — |  |
 | Demerara sugar | `demerara-sugar` | — | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Coarse golden crystals. For sprinkling on top of cakes and biscuits. |
+| Dulce de leche | `dulce-de-leche` | boiled condensed milk, caramel sauce | g | vegetarian, glutenFree, nutFree | milk | Long-cooked condensed milk caramel. The Argentine version. |
+| Glucose syrup | `glucose-syrup` | corn syrup, liquid glucose | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Prevents crystallisation in sugar work. Essential for nougat, marshmallows, and hard candies. |
 | Golden syrup | `golden-syrup` | Lyle's golden syrup | tbsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | British. Lyle's is the standard. For flapjacks and treacle tart. |
 | Granulated sugar | `granulated-sugar` | white sugar | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | For sweetening tea and coffee, jam-making, and crusts. |
 | Honey | `honey` | — | tbsp | vegetarian, glutenFree, dairyFree, nutFree | — | Not vegan. UK supermarket honey is usually blended — local single-source for the real flavour. |
+| Jam | `jam` | preserve, fruit preserve | g | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Any flavour. Strawberry, raspberry, apricot for baking. |
 | Light brown sugar | `light-brown-sugar` | soft light brown sugar | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — |  |
+| Light muscovado sugar | `light-muscovado-sugar` | unrefined light brown sugar | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Unrefined cane sugar with a delicate toffee flavour. Less treacly than dark muscovado. |
 | Maple syrup | `maple-syrup` | — | tbsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Grade A amber is the everyday; Grade B darker for cooking. |
+| Marshmallows | `marshmallows` | — | g | glutenFree, dairyFree, nutFree | — |  |
 | Molasses | `molasses` | blackstrap molasses | tbsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — |  |
+| Soft brown sugar | `soft-brown-sugar` | soft brown sugar | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Moist soft sugar with a gentle molasses note. Light or dark depending on the brand. |
 
 ## Alcohol
 
-23 entries.
+28 entries.
 
 | Name | Slug | Aliases | Unit | Dietary | Allergen | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -654,11 +724,16 @@ and are set on the recipe by the author.
 | Dry sherry | `sherry-dry` | fino, manzanilla | ml | glutenFree, dairyFree, nutFree | sulphites | For Spanish food and Chinese cooking. |
 | Dry white wine | `white-wine-dry` | — | ml | glutenFree, dairyFree, nutFree | sulphites | For risotto and beurre blanc. Sauvignon blanc is reliable. |
 | Gin | `gin` | — | ml | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | For curing salmon (gin and dill) and sloe gin. |
+| Irish cream liqueur | `irish-cream-liqueur` | Baileys, Baileys Irish Cream | ml | vegetarian, glutenFree, nutFree | milk | Cream liqueur. Baileys is the supermarket default. |
+| Irish whiskey | `irish-whiskey` | — | ml | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Kirsch | `kirsch` | — | ml | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Cherry eau-de-vie. For fondue, Black Forest gâteau, cherry desserts. |
+| Limoncello | `limoncello` | — | ml | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Italian lemon liqueur. Best served ice-cold. |
 | Madeira | `fortified-madeira` | — | ml | glutenFree, dairyFree, nutFree | sulphites |  |
 | Marsala wine | `fortified-marsala` | — | ml | glutenFree, dairyFree, nutFree | sulphites | For zabaglione and chicken Marsala. Buy dry (secco) for savoury, sweet (dolce) for puddings. |
 | Mirin | `mirin` | — | tbsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Sweet Japanese rice wine for glazes and dipping sauces. |
+| Passoã | `passoa` | passion fruit liqueur | ml | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Port | `port` | — | ml | glutenFree, dairyFree, nutFree | sulphites | Ruby for cooking, vintage for the cheese course. |
+| Prosecco | `prosecco` | — | ml | vegan, vegetarian, glutenFree, dairyFree, nutFree | sulphites |  |
 | Red wine | `red-wine` | — | ml | glutenFree, dairyFree, nutFree | sulphites | Cook with what you'd drink. Not always vegan — fining agents can be animal-derived. |
 | Rosé wine | `rose-wine` | — | ml | glutenFree, dairyFree, nutFree | sulphites |  |
 | Sake | `sake` | — | ml | vegan, vegetarian, glutenFree, dairyFree, nutFree | — |  |
@@ -671,18 +746,30 @@ and are set on the recipe by the author.
 
 ## Other
 
-12 entries.
+24 entries.
 
 | Name | Slug | Aliases | Unit | Dietary | Allergen | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
+| Almond butter | `almond-butter` | — | g | vegetarian, vegan, glutenFree, dairyFree | nuts | Smooth or crunchy. Stir before using — the oil separates. |
+| Apple juice | `apple-juice` | — | ml | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Bonito flakes | `bonito-flakes` | katsuobushi | g | glutenFree, dairyFree, nutFree | fish | For dashi. Steep, don't boil. |
+| Caramelised biscuit spread | `caramelised-biscuit-spread` | Biscoff spread, Lotus spread, speculoos spread, cookie butter | g | vegetarian, vegan, dairyFree, nutFree | gluten | Spreadable caramelised biscuit paste. Lotus Biscoff is the British supermarket default. |
+| Cashew butter | `cashew-butter` | — | g | vegetarian, vegan, glutenFree, dairyFree | nuts |  |
+| Chestnut purée | `chestnut-puree` | sweetened chestnut spread, crème de marrons | g | vegetarian, vegan, glutenFree, dairyFree | nuts | Sweetened or unsweetened. For Mont Blanc, yule logs, baking. |
+| Cola | `cola` | Coca-Cola, cherry cola | ml | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
+| Espresso powder | `espresso-powder` | — | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | Concentrated coffee for baking and tiramisu. |
 | Fresh horseradish | `horseradish-fresh` | — | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Grate fresh — the heat dies within an hour. |
 | Horseradish sauce | `horseradish-sauce` | — | tsp | vegetarian, glutenFree, nutFree | milk | For roast beef. |
 | Ice | `ice` | ice cubes | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — |  |
+| Instant coffee | `coffee-instant` | coffee granules | tsp | vegetarian, vegan, glutenFree, dairyFree, nutFree | — | For mocha bakes and quick coffees. Espresso powder is stronger. |
 | Kombu | `kombu` | — | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | For dashi. Wipe — don't rinse — before steeping. |
 | Nori | `nori` | — | sheet | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Dried seaweed sheet for sushi. |
+| Orange juice | `orange-juice` | — | ml | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
+| Pineapple juice | `pineapple-juice` | — | ml | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Pomegranate molasses | `pomegranate-molasses` | — | tbsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Levantine staple. Sticky, sour, deep red. |
+| Sparkling water | `sparkling-water` | fizzy water, soda water | ml | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Tamarind paste | `tamarind-paste` | — | tbsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | For pad Thai, sambar, Worcestershire-style sauces. |
+| Tea bag | `tea-bag` | — | each | vegetarian, vegan, glutenFree, dairyFree, nutFree | — |  |
 | Truffle paste | `truffle-paste` | — | tsp | vegetarian, glutenFree, dairyFree, nutFree | — | A spoonful is plenty. Check the label — many contain truffle "flavour" oil rather than real truffle. |
 | Wakame | `wakame` | — | g | vegan, vegetarian, glutenFree, dairyFree, nutFree | — | Dried seaweed. Rehydrates to ten times its volume. |
 | Wasabi paste | `wasabi` | — | tsp | vegan, vegetarian, glutenFree, dairyFree, nutFree | mustard | Supermarket "wasabi" is usually horseradish coloured green. Real wasabi is rare and expensive. |
