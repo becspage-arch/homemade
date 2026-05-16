@@ -323,6 +323,33 @@ pilot / bulk batches surface recurring tells.
   knowing when the next thing arrives — and the practice you do in
   the meantime."
 
+- **Em-dash pairs in source-attribution paragraphs** `[block]`
+  Pattern: the "Where this practice comes from" paragraph at the
+  bottom of a brief reaches for `— X, Y, Z — does Q` to set off
+  a lineage clause. Easy to write without noticing; the appositive
+  pair is the strongest AI tell.
+  **Why:** Voice-check `em-dash-paragraph` + `em-dash-sentence`
+  errors block upload. Spotted 8 times across mindset-bulk-001
+  (Rebecca's review of the run, 2026-05-16).
+  **How to fix:** Default to parentheses for parenthetical clauses
+  in provenance prose: `(X, Y, Z)`. Reserve em-dash for single-
+  clause use only. Same rule applies in subtitle and excerpt — both
+  are voice-checked.
+
+- **Registering a glossary term you don't tooltip inline** `[block]`
+  Pattern: a type-intro READING registers `glossaryTerms[]` entries
+  (e.g. `affirmation`, `present-tense-construction`) so the term is
+  "defined" alongside the article. The body never wraps the term in
+  a `glossaryTooltip` mark, so voice-check fires
+  `glossary-coverage: registered but never used inline`.
+  **Why:** Type-intro READINGs ARE the canonical definition for
+  the term they describe — the article body defines it in prose.
+  Registering the same term as a separate glossary entry duplicates
+  the definition and creates a coverage requirement.
+  **How to fix:** Drop the `glossaryTerms[]` block entirely on
+  type-intro READINGs. If a sub-section in a practice script needs
+  a tooltip, register it on that practice (not on the READING).
+
 ## Structural issues
 
 - **Tapping script missing the eight-point order** `[block]`
