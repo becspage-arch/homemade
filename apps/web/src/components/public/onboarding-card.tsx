@@ -102,7 +102,7 @@ export function OnboardingCard({ categories }: OnboardingCardProps) {
           Welcome.
         </h2>
         <p className="onboarding-card-subtitle">
-          Three quiet questions so the homepage knows what to show you.
+          Three questions so the homepage knows what to show you.
         </p>
       </header>
 
@@ -118,9 +118,8 @@ export function OnboardingCard({ categories }: OnboardingCardProps) {
       {step === 1 && (
         <div className="onboarding-step-body">
           <p className="onboarding-step-label">
-            Step 1 of 3 · What you&apos;re drawn to
+            Step 1 of 3 · What you&apos;re interested in
           </p>
-          <p className="onboarding-step-hint">Pick any. Or skip.</p>
           <div className="onboarding-category-grid">
             {categories.map((cat) => {
               const picked = pickedCategories.includes(cat.id)

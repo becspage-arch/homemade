@@ -117,14 +117,7 @@ export default async function HomePage() {
       )}
 
       {data.inSeasonNow.length > 0 && (
-        <HomeRail
-          heading="In season right now"
-          subheading={
-            data.themes[0]
-              ? `${data.themes[0].label}, and the rest of what's growing.`
-              : null
-          }
-        >
+        <HomeRail heading="In season right now">
           {data.inSeasonNow.map((t) => (
             <HomeCard
               key={t.id}
