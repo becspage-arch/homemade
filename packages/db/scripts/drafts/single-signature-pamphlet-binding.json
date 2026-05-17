@@ -1,0 +1,402 @@
+{
+  "slug": "single-signature-pamphlet-binding",
+  "title": "Make a single-signature pamphlet binding",
+  "subtitle": "A three-hole stitch and the foundational hand-bound book",
+  "excerpt": "The starter binding every hand-bookbinder learns first. One folded signature of inner pages, one folded cover sheet around it, three holes pierced down the fold, a length of waxed linen thread sewn through. Twenty minutes from cutting to a finished pamphlet that lies flat, opens cleanly, and lasts indefinitely.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), § Pamphlet Binding (Project Gutenberg #14921): the three-hole pamphlet stitch as the foundation hand-binding, with the modern thread-tension and station-spacing conventions intact. The 5-hole and 7-hole variants are noted by Cockerell as the same construction scaled up for taller signatures. The method itself is centuries older than Cockerell; his manual is the canonical English public-domain reference.",
+  "recipeTools": [
+    { "slug": "bookbinding-awl", "isOptional": false, "notes": "Sharp piercing awl for the sewing stations." },
+    { "slug": "bookbinding-needle", "isOptional": false, "notes": "Blunt-tip needle large enough for 4-cord linen thread." },
+    { "slug": "bookbinding-thread-linen", "isOptional": false, "notes": "Waxed 4-cord linen thread. About 60 cm per pamphlet." },
+    { "slug": "bone-folder", "isOptional": false, "notes": "For scoring the spine fold and burnishing the final crease. The bookbinder's most-used tool." }
+  ],
+  "glossaryTerms": [
+    { "slug": "signature", "term": "Signature", "definition": "A group of pages folded together as a single unit. A pamphlet binding uses one signature; a case-bound book uses many signatures sewn together." },
+    { "slug": "sewing-station", "term": "Sewing station", "definition": "A piercing point along the spine of a signature where the thread passes through. The three-hole pamphlet has three stations: one at the centre and one near each head and tail." },
+    { "slug": "head-and-tail", "term": "Head and tail", "definition": "Bookbinder's terms for the top and bottom edges of a book. The head is the top (the edge nearest the title page when standing upright); the tail is the bottom." },
+    { "slug": "kettle-stitch", "term": "Kettle stitch", "definition": "The lock that finishes a sewing pass at the head or tail of the spine. In multi-signature binding, the kettle stitch links signatures; on a single-signature pamphlet, the equivalent is the knot tied around the long centre-stitch on the inside of the fold." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The single-signature pamphlet is the foundation hand-bound book. One folded " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "signature" } }], "text": "signature" },
+          { "type": "text", "text": " of inner pages tucked inside one folded cover sheet, three holes pierced down the spine fold, and a length of waxed linen thread sewn through in a single pass. The thread holds the cover and the signature together along the spine; the fold provides the natural opening. Open flat, lies flat, lasts as long as the paper does. Douglas Cockerell, in Bookbinding and the Care of Books (1901), calls this binding the starter for any hand-bookbinder, and the construction has not changed since." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Twenty minutes from a stack of cut paper to a finished pamphlet. The same construction scales to a notebook (32 pages), a chapbook (16 pages), or a one-fold sketchbook (8 pages); the only adjustment is the thread length and possibly stepping up from three to five sewing stations on a taller book." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Before you start",
+          "body": "Workspace. A flat cutting surface (a self-healing cutting mat, or several layers of cardboard underneath the work) so the awl pierces cleanly into the surface beneath. Good light overhead; a daylight task lamp is helpful but a south-facing window will do.\n\nAwl safety. The piercing awl is sharp at the point and stays hand-held. Always pierce away from the body; brace the signature against the cutting surface so the awl drives down into the mat, not toward a finger. Never use the awl as a marking tool — that dulls the point and is a common cause of slipped strikes.\n\nNeedle storage. Park the blunt needle in a pincushion or a needle-minder magnet between stitches. The needle is blunt-tipped but the eye is sharp enough to scratch furniture.\n\nThread tension. Waxed linen thread cuts paper if pulled too hard at the sewing stations. Snug, not tight; the thread holds by friction at the holes, not by force."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Inner pages" },
+                  { "type": "text", "text": ". 8 sheets of A4 cartridge paper at 90 gsm. Folded in half, this gives a 16-page signature in A5. For a journal, swap the cartridge for 120-130 gsm to take ink without bleed; for a sketchbook, 130-220 gsm." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Cover sheet" },
+                  { "type": "text", "text": ". 1 sheet of cover-weight stock around 200-250 gsm, the same A4 dimension as the inner pages. Plain coloured card, marbled paper, or a sheet of decorative endpaper — any reasonably stiff paper that will fold cleanly." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Waxed linen bookbinding thread" },
+                  { "type": "text", "text": ", 4-cord weight. About 60 cm per pamphlet — three times the spine length plus a working margin." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Bookbinder's awl, blunt needle, bone folder" },
+                  { "type": "text", "text": ". The full kit fits in a small pencil case. The bone folder doubles as a paper knife if you don't have a sharp craft knife to hand." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "marks": [{ "type": "bold" }], "text": "A ruler and a pencil" },
+                  { "type": "text", "text": ", and ideally a small clip or two heavy books to weight the folded signature while you mark the sewing stations." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "1. Fold the signature" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stack the 8 cartridge sheets neatly with all four edges aligned. Fold the stack in half short-edge to short-edge, so the spine fold runs along the long edge of each finished page. Run the bone folder firmly along the fold from end to end on both sides to crease cleanly. The folded signature is now an A5 booklet with 32 inner pages (16 leaves, 4 per fold-pair on each sheet)." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fold the cover sheet the same way. The cover should wrap around the signature with the inner pages tucked snugly inside; allow a 1-2 mm reveal of cover beyond the signature edges (or trim the inner pages slightly if the cover is undersized). Set the cover and signature together; weight under a heavy book for five minutes so the folds settle." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "2. Mark the sewing stations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Open the cover-and-signature assembly to the centre fold (the middle two pages of the signature). With a pencil and ruler, mark three points along the spine fold:" }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Station 1: 2 cm down from the head (top edge)." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Station 2: the centre of the spine (10.5 cm from the head on an A5 signature)." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Station 3: 2 cm up from the tail (bottom edge)." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The three " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sewing-station" } }], "text": "sewing stations" },
+          { "type": "text", "text": " divide the spine into roughly equal lengths. On a taller book (A4 signature, 32 cm spine), step up to five stations spaced evenly between the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "head-and-tail" } }], "text": "head and tail" },
+          { "type": "text", "text": "; the construction is identical." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "3. Pierce the stations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "With the cover-and-signature assembly still open at the centre, lay it spine-up over a cutting mat or a folded towel. Drive the awl vertically down through each marked station — the awl must pierce through every sheet of paper AND the cover in a single push, so the holes line up. Push firmly with the awl held perpendicular to the spine; if the awl wanders sideways, the hole will be cleaner on one face and ragged on the other. Twist the awl gently as you withdraw to leave a clean round hole." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pierce all three stations before moving to the sewing. The order: station 2 first (centre — easiest to land), then station 1 (head), then station 3 (tail). The centre hole acts as the registration anchor for the other two." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "4. Cut and thread" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut 60 cm of waxed linen thread. Thread the blunt needle and pull a short tail through the eye (no knot at the end; the kettle-stitch finish anchors the thread, not a knot)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "5. Sew the three-hole stitch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The thread path is one continuous pass through all three holes and back to the centre, with both ends finishing inside the centre fold. With the book open at the centre fold and the spine away from you:" }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Pass the needle from INSIDE the centre fold OUT through station 2 (the centre hole). Pull the thread through, leaving a 6-7 cm tail dangling inside the fold." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "On the outside of the spine, take the thread up to station 1 (the head hole). Pass the needle from OUTSIDE IN through station 1; pull the thread snug." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "From inside the fold, the thread now runs from station 1 (head) along the inside of the spine down to station 2. Pass the needle from INSIDE OUT through station 3 (the tail hole) — meaning the thread runs from station 1 along the inside, jumping past station 2, down to station 3. Pull snug." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "On the outside of the spine, take the thread from station 3 up to station 2 (the centre hole again). Pass the needle from OUTSIDE IN through station 2. Pull the thread snug." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Inside the centre fold, both ends of the thread now meet at station 2. The long thread passing inside the fold from station 1 to station 3 sits between you and the centre hole — the new working thread came out on top of this long thread. Tie a square knot around this long thread (the equivalent of a single-signature " },
+                  { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kettle-stitch" } }], "text": "kettle stitch" },
+                  { "type": "text", "text": "). The knot anchors both ends." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Trim each tail to about 1 cm; the cut ends sit invisibly tucked against the inside of the spine." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "6. Finish — burnish and rest" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Close the pamphlet. Run the bone folder firmly along the spine fold from head to tail on both faces, burnishing the crease so it sits flat and the cover hugs the signature. Weight the pamphlet under a heavy book overnight; the fold settles permanently and the binding tightens as the linen thread relaxes against the paper. Open the book the next day to check the spine — the pages should sit flat with no spring-back at the fold." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Five-hole stitch (taller book)" },
+                  { "type": "text", "text": ". On an A4 signature or any spine longer than about 25 cm, step up to five stations spaced evenly (one at 2 cm from each end and three between, equally spaced). Sewing path: in-out, out-in, in-out, out-in, in-out — same alternating rhythm as the three-hole, with the kettle-stitch knot still made around the long centre thread inside the fold." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Decorative outer thread" },
+                  { "type": "text", "text": ". Linen thread is the traditional choice and the strongest; for a decorative version, two strands of stranded cotton (waxed by drawing through a beeswax block) make a softer, coloured stitch line. Less durable for a working notebook; fine for a one-off gift pamphlet." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Decorative cover" },
+                  { "type": "text", "text": ". Replace the plain cover stock with marbled paper, hand-printed cartridge, or a sheet of book cloth backed with kozo washi. The construction is identical; the cover's heavier weight may need a deeper score along the fold to crease cleanly." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A well-bound pamphlet on cartridge paper lasts decades. Store flat on a shelf rather than spine-down (the weight on a single-signature binding's narrow spine over years can cause the cover to start splitting at the fold). Keep out of direct sun; cartridge paper yellows. If a sewing station hole begins to enlarge over years of use, re-sew with fresh thread; the rest of the binding usually outlasts the original thread by decades." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "If the binding went sideways" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common first-pamphlet problems",
+          "intro": "Five things that go wrong on first pamphlet bindings and the fix for each.",
+          "items": [
+            { "symptom": "Sewing stations don't line up — the awl pierced the inner pages and the cover at different points", "cause": "Awl wandered sideways during piercing, or the assembly wasn't held still while marking and piercing.", "fix": "Clip the cover and signature together with two clothes pegs before marking and piercing — one at the head, one at the tail. The pegs hold the assembly aligned. If the stations are already mis-pierced, you can pierce a second matching set 5 mm above the original, ignore the first set, and sew through the new ones." },
+            { "symptom": "Thread cuts the paper at the sewing stations after a few openings", "cause": "Thread tension too high during the sew — waxed linen will tear paper if pulled hard at a small hole.", "fix": "Re-sew the pamphlet with snugger-not-tighter tension. The thread should hold the cover to the signature without indenting the paper around the holes. If the tear is small, a dab of PVA on the inside of the fold reinforces the hole." },
+            { "symptom": "Pamphlet won't lie flat — spine springs back when opened", "cause": "Fold not burnished firmly enough with the bone folder, or the pamphlet wasn't weighted overnight.", "fix": "Open the pamphlet flat at the centre fold. Lay it spine-up and run the bone folder firmly along the spine from end to end on both faces for a count of ten. Weight under a heavy book overnight. Most spring-back resolves with one good burnish and 12 hours of weight." },
+            { "symptom": "Kettle-stitch knot won't sit flat against the centre fold — it bulges", "cause": "Knot was tied around just one of the two tail ends rather than around the long thread inside the fold.", "fix": "Untie the knot. Both ends should sit at station 2 inside the fold. The knot is tied around the long thread that runs the full inside length of the spine from station 1 to station 3 — that's what anchors the kettle. If the long thread isn't visible, the sew path was wrong; start the sew over." },
+            { "symptom": "Cover and signature feel loose after a week — the binding has slackened", "cause": "Linen thread relaxes slightly during the first week as the fibres settle. A pamphlet that felt taut on day one may feel slightly loose by day seven.", "fix": "The kettle stitch holds; the slack is cosmetic, not structural. If the looseness bothers you, re-sew with a snugger tension on the next pamphlet. The original is still functional." }
+          ]
+        }
+      }
+    ]
+  }
+}
