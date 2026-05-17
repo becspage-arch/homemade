@@ -31,6 +31,7 @@ Live at https://homemade.education behind splash gate (cookie `homemade-access=1
 - Categories targets + visibility (17 categories live in DB, 14 private until threshold; admin pipeline widget).
 - Self-hosted analytics, admin overhaul (dashboard / content list / preview drawer / cmd-K / RBAC unification), homepage rebuild (state-aware rails, procedural cards, editorial picks, seasonality, onboarding) + homepage polish.
 - Mobile rebuild (Capacitor native shell + cooking mode + offline + camera + push stub + App Store scaffolding).
+- Image verification sweep — first 3 batches landed 2026-05-17 (61 hero Media rows verified, 89 re-sourced). Stopped at batch 3 pending a fix to `apply-media-verdicts.ts` source-exclusion cycle. See § "Image verification sweep — batches 001-003".
 
 **Open / queued**
 
@@ -909,6 +910,47 @@ Memory updates (auto-loaded for future Mindset workers):
 **Scope respected.** No paid AI API. No schema changes beyond the additive Media columns. No content authoring. No homepage / mobile / non-admin UI work. No edits to feedback memory files or page-design docs.
 
 **Out.** No recurring cron — the sweep clears the backlog once and stays clean because every new authoring run verifies its own image. No edits to upload-tutorial.ts (new Media rows default to UNVERIFIED at DB level). Hero-attribution component unchanged — verificationStatus is admin-only, not public.
+
+### Image verification sweep — batches 001-003 ◎ partial 2026-05-17
+
+**Goal.** Walk the ~537 UNVERIFIED hero Media rows the pipeline wire-up left behind, viewing each image via Claude Code's multimodal Read tool and applying VERIFIED / REJECTED + re-source verdicts in 50-row batches until the queue drained.
+
+**Outcome.** Three batches landed cleanly. **61 hero Media rows stamped VERIFIED** in production, **89 rows stamped REJECTED + a new UNVERIFIED Media row attached** to each tutorial via the orchestrator's free-provider chain. 0 deploy failures, `/healthz` 200 each round. Sweep halted at batch 003 because of a source-exclusion cycle in `apply-media-verdicts.ts` (details below). Coverage on `/admin/system/autopilot` should now read ~11-12% (61 / 537); the remaining ~476 entries are still UNVERIFIED.
+
+| Batch | Commit | Verified | Re-sourced |
+|-------|--------|----------|------------|
+| 001 | `a8af46d` | 26 | 24 |
+| 002 | `caf99d7` | 18 | 32 |
+| 003 | `bd1f253` | 17 | 33 |
+
+**Stop reason — source-exclusion cycle.** `apply-media-verdicts.ts` builds `excludeSources` from `media.source` only — the single most-recent rejected Media row's source. After a tutorial cycles through both `pexels` and `unsplash` (the two providers indexed for most generic recipe search terms), subsequent sweep rounds cycle back to the original rejected image. 17 of the 32 batch-2 rejections in batch 003 were byte-identical to images batch 001 already rejected.
+
+**Fix needed before next sweep.** Patch `apply-media-verdicts.ts` to either (a) accumulate `excludeSources` across all prior rejections for the same tutorial (via TutorialVersion history or a rejection-history field on Media), or (b) cap attempts per tutorial at N (say 3) free-source rejections, then force `flux-schnell` directly so each stuck slug terminates as either a Flux fallback or `REJECTED_USED_PROCEDURAL` rather than spinning forever. Option (b) is the simplest landing and aligns with the existing terminal state.
+
+**Miss patterns worth knowing before the fix lands.** Recurring rejection clusters across the 89 rejected rows:
+
+- Ingredient-shot tropes for dishes whose name closely matches a single raw ingredient: apple chutney → whole apples, bara brith → raw raisins, banana cake → bunch of bananas, battenberg cake → butter cubes on flour, brownies → butter cubes on flour, cacio e pepe → raw pasta shells.
+- Wrong-cuisine matches: albondigas en salsa → Italian spaghetti and meatballs, avgolemono → Vietnamese pho, beef goulash (first attempt) → Chinese dark-braised beef.
+- Specific named dishes with weak stock coverage: battenberg, blanquette de veau, bourbon biscuits, brioche, boeuf bourguignon (one attempt literally returned a French bistro window with the dish name painted on the glass).
+- Completely off-topic text-match misses: halloumi → a hot-air balloon labelled "Halei", french toast → a handwritten manuscript page, bbq ribs → catering staff in BBQ-branded shirts at a military mess hall.
+- Identical stock photos returned for adjacent slugs: same raw-courgettes photo for `air-fryer-courgette-fries` and the same raw-beef-on-board photo for both `bigos` and `blanquette-de-veau`.
+
+The shape of the misses suggests force-Flux fallback (option b) is the right call — even a mediocre AI illustration beats a hot-air balloon for halloumi.
+
+**Patterns that worked.** Where free-stock coverage is term-specific, the verifier landed first try: caesar salad, caprese, biscuits and gravy, cassoulet, butternut squash soup, broccoli and Stilton soup, carrot and coriander soup, borscht, cinnamon rolls, biscotti, brownies (second attempt), pancakes, banana bread, beef wellington, buffalo wings, burger patties. Verify rate on fresh slugs ~50-60%; on slugs already cycling ~25-30%.
+
+**Files landed.**
+
+- `docs/image-verification-queue.json` (last batch's manifest).
+- `docs/image-verification-verdicts.json` (last batch's verdicts).
+- `docs/image-verification-apply-2026-05-17.json` (apply report, overwritten per-run).
+- `docs/image-verification-sweep-2026-05-17.md` — full sweep report including resume scope, miss-pattern analysis, and the apply-script fix proposal.
+- `scripts/build-verdicts.mjs` — small reusable helper that builds a verdicts JSON from a per-batch slug-→-verdict map.
+- `.gitignore` updated to ignore `.claude/tmp/` (the worker session writes per-batch verdict maps and cached image downloads there).
+
+**Resume scope for the next sweep.** After the `apply-media-verdicts.ts` fix lands: enqueue a fresh batch, author a `.claude/tmp/verdict-map-batch-004.json` slug map, run `node scripts/build-verdicts.mjs docs/image-verification-queue.json .claude/tmp/verdict-map-batch-004.json` to emit the verdicts file, then `pnpm --filter @homemade/db exec tsx scripts/apply-media-verdicts.ts`. Repeat until `verify-media-batch.ts` returns an empty manifest. With the cumulative-exclude or attempt-cap fix, the stubborn slugs should terminate on this round rather than cycling.
+
+**Scope respected.** No paid AI API. No changes to image-sourcing orchestrator or verification logic. No schema changes. No content authoring. No homepage / autopilot SKILL.md / non-admin UI work.
 
 ### Autopilot — Baking bulk-002 ✅ landed 2026-05-17
 
