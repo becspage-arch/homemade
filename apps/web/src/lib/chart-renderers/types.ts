@@ -1,7 +1,7 @@
 /**
- * Shared types for the Paper & word chart renderers.
+ * Shared types for the chart-renderers family.
  *
- * Two diagram families live here:
+ * Four diagram families live here:
  *
  *   - `CalligraphyExemplarDefinition` — one letter exemplar showing the
  *     outline, the numbered stroke order, the optional skeletal ductus,
@@ -12,6 +12,17 @@
  *     with straight or curved arrows. Advanced manoeuvres (inside reverse,
  *     petal, squash, sink, swivel, 3D collapse) are on the deferred-work
  *     list and aren't expressible here.
+ *
+ *   - `WeavingDraftDefinition` — a standard four-block weaving draft
+ *     (threading × shafts, shafts × treadles tie-up, treadles × picks
+ *     treadling, plus a computed drawdown). Renders the same shape for
+ *     frame / rigid-heddle / four-shaft / tapestry / inkle / card looms;
+ *     the renderer relabels the columns per loom type.
+ *
+ *   - `MacrameKnotDefinition` — one knot from the ten-knot fundamental
+ *     library, drawn as a cord-path diagram with optional multi-step
+ *     build-up. Renders cord routes, over/under crossings, and the
+ *     final tied state.
  *
  * Definitions are stored in the TipTap node's `attrs.definition` and
  * rendered server-side — no client hooks, no canvas. SSG / RSC-safe.
@@ -155,4 +166,132 @@ export interface OrigamiFoldDefinition {
 
   /** Ordered list of steps. The renderer stacks them vertically. */
   steps: OrigamiStep[]
+}
+
+// ───────────────────────────────────────────────────────────────────────
+// Weaving draft
+// ───────────────────────────────────────────────────────────────────────
+
+/** Loom types the weaving-draft renderer relabels for. The four-block
+ *  draft layout is identical across all of them; only the column /
+ *  treadle-label vocabulary changes (`shaft` for floor looms, `card`
+ *  for tablet weaving, `pick-up` for inkle, `slot/hole` for
+ *  rigid-heddle, `weft-pass` for frame / tapestry).
+ *
+ *  Card weaving (tablet weaving) uses the same draft shape — each
+ *  "shaft" maps to one card, each "treadle" maps to one
+ *  card-rotation; the renderer relabels the headers but the layout
+ *  stays the standard four-block draft. */
+export type WeavingLoomType =
+  | 'frame'
+  | 'rigid-heddle'
+  | 'four-shaft'
+  | 'tapestry'
+  | 'inkle'
+  | 'card'
+
+/**
+ * Weaving draft — the standard four-block layout used by every
+ * weaving-pattern publication from late-Victorian manuals onwards.
+ *
+ *   - `threading[]` is the warp-thread sequence. Each entry is the
+ *     shaft (1-indexed) the warp thread passes through. Length
+ *     equals the warp-repeat width.
+ *   - `tieUp[treadle-1][shaft-1]` is the tie-up matrix. `1` means
+ *     the treadle lifts that shaft when pressed; `0` means it does
+ *     not. Outer length = treadle count; inner length = shaft count.
+ *   - `treadling[]` is the pick-by-pick sequence of treadles
+ *     pressed. Each entry is the treadle (1-indexed) used for that
+ *     pick. Length equals the weft-repeat height.
+ *   - The drawdown grid is computed by the renderer from the three
+ *     fields above; authors do not specify it.
+ *
+ * Validation:
+ *   - Every entry in `threading` must be ≥ 1 and ≤ `shaftCount`
+ *     (derived from the tie-up width).
+ *   - Every entry in `treadling` must be ≥ 1 and ≤ `treadleCount`
+ *     (derived from the tie-up height).
+ *   - Every cell in `tieUp` must be 0 or 1.
+ *   - Plain-weave on a frame loom or tapestry is expressible as a
+ *     2-shaft / 2-treadle straight-draw draft.
+ */
+export interface WeavingDraftDefinition {
+  /** Title of the draft — "Plain weave on four shafts, straight
+   *  draw", "Rosepath twill, 4-shaft". Surfaced as the figure
+   *  caption. */
+  title?: string
+
+  /** Loom this draft is dressed for. Drives the header labels. */
+  loomType: WeavingLoomType
+
+  /** Threading sequence. One entry per warp thread; value is the
+   *  shaft (or card) the thread passes through, 1-indexed. */
+  threading: number[]
+
+  /** Tie-up matrix: `tieUp[treadleIndex][shaftIndex]` is `1` when
+   *  that treadle lifts that shaft, `0` otherwise. The matrix
+   *  height is the treadle count; the width is the shaft count. */
+  tieUp: Array<Array<0 | 1>>
+
+  /** Treadling sequence. One entry per pick (weft row); value is
+   *  the treadle (or card-rotation) used for that pick, 1-indexed. */
+  treadling: number[]
+
+  /** Optional plain-prose caption shown beneath the drawdown.
+   *  Keep short — the draft speaks for itself. */
+  caption?: string
+}
+
+// ───────────────────────────────────────────────────────────────────────
+// Macramé knot
+// ───────────────────────────────────────────────────────────────────────
+
+/** The ten fundamental macramé knots the renderer can draw. Every
+ *  macramé tutorial draws from this set; the renderer holds the
+ *  cord-path geometry for each knot. Adding a knot is a matter of
+ *  widening this union and adding a case to the renderer's switch. */
+export type MacrameKnotType =
+  | 'square'
+  | 'half-hitch-left'
+  | 'half-hitch-right'
+  | 'larks-head'
+  | 'double-half-hitch-left'
+  | 'double-half-hitch-right'
+  | 'alternating-square'
+  | 'gathering'
+  | 'overhand'
+  | 'figure-8'
+
+/**
+ * Macramé knot diagram definition.
+ *
+ *   - `knotType` selects the cord-path geometry the renderer draws.
+ *   - `cordCount` controls how many working / filler cords appear.
+ *     `2` is the half-hitch / lark's-head / overhand / figure-8
+ *     family (one cord over one). `4` is the square-knot family
+ *     (two working cords over two filler cords). Some knots only
+ *     accept one of the two values — the renderer falls back to the
+ *     knot-canonical default if a mismatched value is passed.
+ *   - `showSteps` toggles between a single final-state diagram
+ *     (default — for PATTERN bodies that reference a knot already
+ *     taught) and a multi-step diagram showing the cord positions
+ *     at each stage of the knot (for the TECHNIQUE entry that
+ *     teaches the knot for the first time).
+ */
+export interface MacrameKnotDefinition {
+  /** The knot to draw. */
+  knotType: MacrameKnotType
+
+  /** Working-cord count. `2` for half-hitch family, `4` for
+   *  square-knot family. Defaults to the knot-canonical value
+   *  if omitted. */
+  cordCount?: 2 | 4
+
+  /** Whether to render the multi-step build-up (default false:
+   *  single final-state diagram). Set true on the TECHNIQUE entry
+   *  that teaches the knot. */
+  showSteps?: boolean
+
+  /** Optional caption shown beneath the diagram. Keep short. */
+  caption?: string
 }

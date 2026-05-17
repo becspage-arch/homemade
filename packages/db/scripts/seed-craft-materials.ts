@@ -1,8 +1,10 @@
 /**
  * Idempotent upsert of the master craft-materials list from
  * `packages/db/scripts/data/craft-materials.ts` into the CraftMaterial
- * table. Pottery is the first craft pipeline to populate this master;
- * future jewellery / paper / wood-finishing pipelines will append rows.
+ * table. Pottery seeded this table first; the fibre-arts pipeline
+ * widens the `craft` vocabulary to include `fibre-arts` and appends
+ * wool roving / dye plant / mordant / macramé cord / rug-yarn rows.
+ * Future jewellery / paper / wood-finishing pipelines will append more.
  *
  * Re-runs cleanly. Validates each entry up-front before any DB writes.
  *
@@ -40,7 +42,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 import { CRAFT_MATERIALS } from './data/craft-materials.js'
 import type { CraftMaterialSeed } from './data/types.js'
 
-const VALID_CRAFTS = new Set(['pottery', 'jewellery', 'paper', 'wood-finishing'])
+const VALID_CRAFTS = new Set([
+  'pottery',
+  'jewellery',
+  'paper',
+  'wood-finishing',
+  'fibre-arts',
+])
 
 const VALID_POTTERY_CATEGORIES = new Set([
   'clay-tool-attached',
@@ -49,6 +57,17 @@ const VALID_POTTERY_CATEGORIES = new Set([
   'glaze-premixed',
   'underglaze',
   'kiln-furniture',
+])
+
+const VALID_FIBRE_ARTS_CATEGORIES = new Set([
+  'fibre-roving',
+  'fibre-prepared',
+  'warp-thread',
+  'dye-plant',
+  'mordant',
+  'felting-aid',
+  'macrame-cord',
+  'rug-yarn',
 ])
 
 function validate(rows: CraftMaterialSeed[]): void {
@@ -69,6 +88,13 @@ function validate(rows: CraftMaterialSeed[]): void {
 
     if (row.craft === 'pottery' && !VALID_POTTERY_CATEGORIES.has(row.category)) {
       errors.push(`${row.slug}: invalid pottery category "${row.category}"`)
+    }
+
+    if (
+      row.craft === 'fibre-arts' &&
+      !VALID_FIBRE_ARTS_CATEGORIES.has(row.category)
+    ) {
+      errors.push(`${row.slug}: invalid fibre-arts category "${row.category}"`)
     }
 
     if (row.trainedEnvironmentOnly && !row.hazardNotes) {

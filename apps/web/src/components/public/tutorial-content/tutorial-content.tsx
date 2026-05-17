@@ -14,9 +14,13 @@ import { CraftChart } from '@/lib/craft-charts/svg-chart'
 import type { ChartDefinition } from '@/lib/craft-charts/types'
 import { CalligraphyExemplar } from '@/lib/chart-renderers/calligraphy-exemplar'
 import { OrigamiFoldBasic } from '@/lib/chart-renderers/origami-fold-basic'
+import { WeavingDraft } from '@/lib/chart-renderers/weaving-draft'
+import { MacrameKnot } from '@/lib/chart-renderers/macrame-knot'
 import type {
   CalligraphyExemplarDefinition,
+  MacrameKnotDefinition,
   OrigamiFoldDefinition,
+  WeavingDraftDefinition,
 } from '@/lib/chart-renderers/types'
 import { ScaleToken } from './scale-context'
 import type {
@@ -283,6 +287,33 @@ function RenderNode({
         return <div className="craft-chart-missing">Fold diagram not yet attached.</div>
       }
       return <OrigamiFoldBasic definition={def} />
+    }
+
+    case 'weavingDraft': {
+      // Fibre arts — weaving draft (threading × shafts, tie-up,
+      // treadling, computed drawdown). Renderer at
+      // `apps/web/src/lib/chart-renderers/weaving-draft.tsx`. The
+      // `loomType` field on the definition switches the column
+      // labels so frame / rigid-heddle / four-shaft / tapestry /
+      // inkle / card all render off the same shape.
+      const def = attrs.definition as WeavingDraftDefinition | undefined
+      if (!def || typeof def !== 'object') {
+        return <div className="craft-chart-missing">Draft not yet attached.</div>
+      }
+      return <WeavingDraft definition={def} />
+    }
+
+    case 'macrameKnot': {
+      // Fibre arts — macramé knot diagram. Ten fundamental knots
+      // covered (square / alternating-square / half-hitch L+R /
+      // double-half-hitch L+R / lark's head / gathering / overhand /
+      // figure-8). Renderer at
+      // `apps/web/src/lib/chart-renderers/macrame-knot.tsx`.
+      const def = attrs.definition as MacrameKnotDefinition | undefined
+      if (!def || typeof def !== 'object') {
+        return <div className="craft-chart-missing">Knot diagram not yet attached.</div>
+      }
+      return <MacrameKnot definition={def} />
     }
 
     case 'ingredientsList': {

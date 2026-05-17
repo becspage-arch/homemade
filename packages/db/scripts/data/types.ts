@@ -361,6 +361,7 @@ export type CraftMaterialCraft =
   | 'jewellery'
   | 'paper'
   | 'wood-finishing'
+  | 'fibre-arts'
 
 export type PotteryMaterialCategory =
   | 'clay-tool-attached'
@@ -369,6 +370,39 @@ export type PotteryMaterialCategory =
   | 'glaze-premixed'
   | 'underglaze'
   | 'kiln-furniture'
+
+/**
+ * Fibre-arts sub-category vocabulary for the CraftMaterial.category
+ * column. Each row in data/craft-materials.ts with craft = 'fibre-arts'
+ * picks one of these:
+ *
+ *   'fibre-roving'    — washed, prepared wool / silk / alpaca / mohair
+ *                       roving and top, ready for spinning or felting
+ *   'fibre-prepared'  — pre-felt batts, silk hankies, mohair locks —
+ *                       fibre forms one step further along than roving
+ *   'warp-thread'     — linen / cotton / silk warp threads for weaving
+ *                       (and the bookbinding crossover does not apply
+ *                       here — these are dressed-loom warps)
+ *   'dye-plant'       — fresh + dried dye plants (cross-ref Garden
+ *                       Plant table for living-plant tutorials)
+ *   'mordant'         — alum / iron / copper salts + cream of tartar
+ *                       + soda ash. The trainedEnvironmentOnly flag
+ *                       gates how the body surfaces these.
+ *   'felting-aid'     — olive-oil soap, carrageenan size (for nuno
+ *                       + marbling overlap), tulle nets
+ *   'macrame-cord'    — cotton + jute + hemp + linen cord at named
+ *                       working diameters
+ *   'rug-yarn'        — strip yarns, latch-hook bundles, hooking wool
+ */
+export type FibreArtsMaterialCategory =
+  | 'fibre-roving'
+  | 'fibre-prepared'
+  | 'warp-thread'
+  | 'dye-plant'
+  | 'mordant'
+  | 'felting-aid'
+  | 'macrame-cord'
+  | 'rug-yarn'
 
 export interface CraftMaterialSeed {
   /** lower-kebab slug, unique across the craft-material master list. */

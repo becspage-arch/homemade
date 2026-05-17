@@ -422,4 +422,368 @@ export const CRAFT_MATERIALS: CraftMaterialSeed[] = [
     notes:
       'Refractory tripods that hold a low-fire glazed piece off the kiln shelf so the glaze can run to the foot without sticking. Only for low-fire (cone 06 - 04) — stoneware temperatures collapse the stilt and ruin the shelf.',
   },
+
+  // ───────────────────────────────────────────────────────────────────────
+  // FIBRE ARTS — wool roving, prepared fibre, warp threads, dye plants,
+  // mordants, felting aids, macramé cords, rug yarns. Added with the
+  // fibre-arts pipeline scaffold (phase_fibre_arts_pipeline_setup).
+  //
+  // The single most important field for the fibre-arts rows is the
+  // `trainedEnvironmentOnly` flag on the **mordants**. Iron and copper
+  // sulphate at studio quantity require long gloves, ventilation, and
+  // dedicated dye-work space; the dyeing prompt drops the safety
+  // preamble verbatim into every dyeing body. Plant-dye rows have
+  // `category: 'dye-plant'` and cross-link the Garden Plant table for
+  // the growing-and-harvesting tutorial.
+  // ───────────────────────────────────────────────────────────────────────
+
+  // ─── Wool roving — by breed. The basic raw material for spinning,
+  //     felting, and many weaving wefts. All untrained-OK (no chronic
+  //     hazard at hand-spinning quantity; wool dust is an irritant for
+  //     sensitive lungs, surfaced in the prompt's safety preamble).
+  {
+    slug: 'wool-roving-merino',
+    name: 'Wool roving, Merino',
+    craft: 'fibre-arts',
+    category: 'fibre-roving',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Fine, soft, short-stapled roving (typically 64s-80s grade). The default felting roving and the easiest fibre for new spinners on the wheel. Felts readily — useful for wet felting, less useful for next-to-skin spun yarn that needs to resist felting in the wash.',
+  },
+  {
+    slug: 'wool-roving-romney',
+    name: 'Wool roving, Romney',
+    craft: 'fibre-arts',
+    category: 'fibre-roving',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Long-stapled English Romney roving (~48s grade). Lustrous, hard-wearing, less felt-prone than Merino. Good rug yarn, good outerwear yarn. The classical British medium-wool fibre.',
+  },
+  {
+    slug: 'wool-roving-bfl',
+    name: 'Wool roving, Bluefaced Leicester (BFL)',
+    craft: 'fibre-arts',
+    category: 'fibre-roving',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Long-stapled lustrous fine roving (~56s grade) from the Bluefaced Leicester sheep. Drafts smoothly on the wheel; takes dye beautifully. A favourite handspinning fibre.',
+  },
+  {
+    slug: 'wool-roving-shetland',
+    name: 'Wool roving, Shetland',
+    craft: 'fibre-arts',
+    category: 'fibre-roving',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Short-to-medium stapled fine wool (~56s-60s grade) in the natural Shetland fleece colours (moorit, fawn, grey, mioget, white). Spins fine; underpins Fair Isle and Shetland lace knitting traditions.',
+  },
+  {
+    slug: 'wool-roving-corriedale',
+    name: 'Wool roving, Corriedale',
+    craft: 'fibre-arts',
+    category: 'fibre-roving',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Medium-stapled medium-fine roving (~58s grade) from the New-Zealand-developed Corriedale sheep. Versatile workhorse fibre — spins well, felts well, drafts smoothly for new spinners.',
+  },
+
+  // ─── Other animal + plant fibres — prepared forms.
+  {
+    slug: 'pre-felt-batt',
+    name: 'Pre-felt batt',
+    craft: 'fibre-arts',
+    category: 'fibre-prepared',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Wool that has been lightly felted into a flat batt — partially shrunk and stable enough to cut into shapes, but not fully fulled. The base layer for nuno felting and pictorial wet-felted work.',
+  },
+  {
+    slug: 'mohair-locks',
+    name: 'Mohair locks',
+    craft: 'fibre-arts',
+    category: 'fibre-prepared',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Curly silky locks shorn from Angora goats. Decorative for needle-felted hair / fur / fleece textures; spun straight for lustrous singles.',
+  },
+  {
+    slug: 'alpaca-top',
+    name: 'Alpaca top',
+    craft: 'fibre-arts',
+    category: 'fibre-roving',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Combed alpaca top — fibres aligned in parallel for worsted spinning. Slick, dense, warm; less elastic than wool, so often blended with wool for memory.',
+  },
+  {
+    slug: 'silk-hankies',
+    name: 'Silk hankies (mawata)',
+    craft: 'fibre-arts',
+    category: 'fibre-prepared',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Stretched-out silk cocoons laid in stacked squares. Pulled apart to spin or knit directly from the hankie. Lustrous, strong, takes dye richly.',
+  },
+  {
+    slug: 'linen-weaving-warp',
+    name: 'Linen weaving warp thread',
+    craft: 'fibre-arts',
+    category: 'warp-thread',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Strong, low-stretch warp thread spun from flax fibre. The classical warp for tabby weaving; less elastic than cotton so needs careful, even tensioning during beaming.',
+  },
+  {
+    slug: 'cotton-weaving-warp',
+    name: 'Cotton weaving warp thread (8/2, 10/2)',
+    craft: 'fibre-arts',
+    category: 'warp-thread',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Mercerised cotton warp thread in the standard handweaving sizes (8/2 medium, 10/2 fine). Strong, washable, takes dye well. The all-purpose warp for tabby, twill, overshot, rosepath.',
+  },
+
+  // ─── Dye plants — the working fibre-arts list. Each row cross-links
+  //     a Plant table entry in Garden for the growing + harvesting
+  //     tutorial; the dye-plant row here is the fibre-arts-facing
+  //     "this much dried material gives this much colour" reference.
+  {
+    slug: 'dye-plant-weld',
+    name: 'Weld (dried)',
+    craft: 'fibre-arts',
+    category: 'dye-plant',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Reseda luteola — the classical European yellow dye. Bright, fast yellow on alum-mordanted wool. Cross-link the Garden weld-growing tutorial for the source.',
+  },
+  {
+    slug: 'dye-plant-madder',
+    name: 'Madder root (dried)',
+    craft: 'fibre-arts',
+    category: 'dye-plant',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Rubia tinctorum — the classical European red. Orange-red on alum-mordanted wool; brick / brown shifts with iron after-bath. The roots are harvested at three to four years; cross-link the Garden madder tutorial.',
+  },
+  {
+    slug: 'dye-plant-woad',
+    name: 'Woad leaves (dried)',
+    craft: 'fibre-arts',
+    category: 'dye-plant',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Isatis tinctoria — the European blue, predecessor to indigo. Works via the same indigotin chemistry as Indigofera tinctoria but at lower yield. Vat-dyed (no mordant needed); see indigo for the vat method.',
+  },
+  {
+    slug: 'dye-plant-indigo',
+    name: 'Indigo (dried, powdered)',
+    craft: 'fibre-arts',
+    category: 'dye-plant',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Indigofera tinctoria — the tropical blue. Pre-powdered natural indigo, vat-reduced before dyeing. The blue runs deeper than woad and at higher concentration. No mordant needed; the chemistry is reductive vat dyeing.',
+  },
+  {
+    slug: 'dye-plant-walnut-hulls',
+    name: 'Walnut hulls (dried)',
+    craft: 'fibre-arts',
+    category: 'dye-plant',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Juglans regia hulls — high in juglone tannin. Substantive brown dye on wool with no mordant; iron after-bath deepens to a dark grey-black. Harvest the green outer husks before they fall in autumn.',
+  },
+  {
+    slug: 'dye-plant-onion-skins',
+    name: 'Onion skins (dried)',
+    craft: 'fibre-arts',
+    category: 'dye-plant',
+    trainedEnvironmentOnly: false,
+    notes:
+      'The papery outer skins from yellow (or red) onions. Strong yellow-gold on alum-mordanted wool; copper-gold with iron after-bath. A kitchen-byproduct dye that gives substantial colour with no specialist source.',
+  },
+  {
+    slug: 'dye-plant-oak-galls',
+    name: 'Oak galls (dried, ground)',
+    craft: 'fibre-arts',
+    category: 'dye-plant',
+    trainedEnvironmentOnly: false,
+    notes:
+      'High-tannin growths from Quercus species. Used as a tannin pre-mordant on cellulose fibres (cotton, linen) before alum, or with iron as a black ink / dye on wool.',
+  },
+  {
+    slug: 'dye-plant-logwood',
+    name: 'Logwood chips (dried)',
+    craft: 'fibre-arts',
+    category: 'dye-plant',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Haematoxylum campechianum heartwood. Purples and deep blacks on alum-mordanted wool; varies dramatically with mordant and pH. Historically the European "black" dye for naval uniforms.',
+  },
+
+  // ─── Mordants. Alum is the safe everyday mordant; iron and copper
+  //     sulphate are trained-environment-only at studio quantity
+  //     (long gloves, dedicated space, ventilation).
+  {
+    slug: 'mordant-alum-potash',
+    name: 'Alum (potash, KAl(SO4)2·12H2O)',
+    craft: 'fibre-arts',
+    category: 'mordant',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Potassium aluminium sulphate — the everyday mordant for natural dyeing on wool. Used at 10-15% of fibre weight. Low chronic toxicity at handling quantity; still wear gloves and avoid breathing the powder. The starter mordant for every dyeing pipeline.',
+  },
+  {
+    slug: 'mordant-alum-acetate',
+    name: 'Alum acetate',
+    craft: 'fibre-arts',
+    category: 'mordant',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Aluminium acetate — the everyday mordant for cellulose fibres (cotton, linen, hemp). Lower-temperature mordant than potash alum; the cellulose-fibre dyer\'s alum.',
+  },
+  {
+    slug: 'mordant-iron-sulphate',
+    name: 'Iron sulphate (ferrous sulphate)',
+    craft: 'fibre-arts',
+    category: 'mordant',
+    trainedEnvironmentOnly: true,
+    hazardNotes:
+      'Iron sulphate at studio quantity is a respiratory + skin irritant. Long gloves to mid-forearm mandatory; ventilate the workspace. Iron after-baths "sadden" colours toward grey-brown — small additions only (1-2% of fibre weight). Never returned to food prep utensils. Wastewater: small home quantities down a foul drain only — never into a storm drain, stream, or compost heap.',
+    notes:
+      'After-bath modifier that shifts plant-dye colours toward darker greys, olives, and browns. The classical iron-sad after-bath. Use sparingly — over-mordanting with iron weakens wool fibre over time.',
+  },
+  {
+    slug: 'mordant-copper-sulphate',
+    name: 'Copper sulphate',
+    craft: 'fibre-arts',
+    category: 'mordant',
+    trainedEnvironmentOnly: true,
+    hazardNotes:
+      'Copper sulphate is toxic if ingested and a skin / lung irritant. Long gloves + ventilation + dedicated copper-only utensils mandatory. Never use copper sulphate in a pot that will later see food. Wastewater: small home quantities down a foul drain only — never into a storm drain, stream, or compost heap.',
+    notes:
+      'After-bath modifier that shifts plant-dye colours toward warmer greens and golds. Less aggressive than iron on fibre, but the same wastewater disposal rules apply. Used sparingly.',
+  },
+  {
+    slug: 'mordant-cream-of-tartar',
+    name: 'Cream of tartar',
+    craft: 'fibre-arts',
+    category: 'mordant',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Potassium bitartrate — added to alum mordant baths at 5-7% of fibre weight to brighten the resulting colour and keep wool soft. Food-safe (the same product as the kitchen-cupboard ingredient), but once mixed with alum the bath is no longer food-grade.',
+  },
+  {
+    slug: 'mordant-soda-ash',
+    name: 'Soda ash (sodium carbonate)',
+    craft: 'fibre-arts',
+    category: 'mordant',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Alkali used in scouring fibre before dyeing (raising pH of the wash bath) and in indigo vat construction. Wear gloves; avoid eye contact. Not a mordant in the classical sense, but lives in this category as a chemistry-modifying salt.',
+  },
+
+  // ─── Felting + nuno aids — soaps, sizes, gentle surfactants.
+  {
+    slug: 'olive-oil-soap',
+    name: 'Olive-oil soap (felting)',
+    craft: 'fibre-arts',
+    category: 'felting-aid',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Mild olive-oil bar soap (Aleppo, castile, or equivalent). The traditional wet-felting soap — gentler on the fibre than dish detergent and effective at raising the surface scales for felting. Rub the bar across the wet roving or grate into hot water to make a soapy bath.',
+  },
+  {
+    slug: 'carrageenan-fibre-arts',
+    name: 'Carrageenan (nuno-felting + marbling)',
+    craft: 'fibre-arts',
+    category: 'felting-aid',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Seaweed-derived gel used as a size in nuno felting (to slow the felt-set on silk) and in paper-marbling (Paper & word category overlap). The same dry powder serves both; mix with cold water and let it hydrate overnight before use.',
+  },
+
+  // ─── Macramé cords — by working diameter + fibre.
+  {
+    slug: 'macrame-cord-cotton-3mm',
+    name: 'Macramé cord, cotton, 3 mm',
+    craft: 'fibre-arts',
+    category: 'macrame-cord',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Single-twist or 3-ply cotton macramé cord at 3 mm working diameter. The everyday cord for small plant hangers and wall hangings. Soft, fringes easily.',
+  },
+  {
+    slug: 'macrame-cord-cotton-5mm',
+    name: 'Macramé cord, cotton, 5 mm',
+    craft: 'fibre-arts',
+    category: 'macrame-cord',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Heavier 5 mm cotton macramé cord. Holds knot shape with more presence; suits larger wall hangings + heavier plant hangers. Knots up faster than 3 mm at the cost of fringing softness.',
+  },
+  {
+    slug: 'macrame-cord-jute',
+    name: 'Macramé cord, jute',
+    craft: 'fibre-arts',
+    category: 'macrame-cord',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Coarse natural-fibre cord at 4-6 mm. Holds knots tightly; sheds fibre as you work. The garden-and-utility macramé cord — plant hangers that will live outdoors do better in jute than cotton.',
+  },
+  {
+    slug: 'macrame-cord-hemp',
+    name: 'Macramé cord, hemp',
+    craft: 'fibre-arts',
+    category: 'macrame-cord',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Fine-to-medium hemp cord at 1-3 mm. Smaller-scale macramé — jewellery and friendship-bracelet work. Stiffer than cotton; holds intricate patterns clearly.',
+  },
+  {
+    slug: 'macrame-cord-linen',
+    name: 'Macramé cord, linen',
+    craft: 'fibre-arts',
+    category: 'macrame-cord',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Linen cord at 2-4 mm. Smooth, low-stretch, takes natural dye well. The cord for the heirloom-quality wall hanging that should last decades.',
+  },
+
+  // ─── Rug yarns — bundles and pre-cut.
+  {
+    slug: 'rug-yarn-wool-strips',
+    name: 'Rug-hooking wool strips',
+    craft: 'fibre-arts',
+    category: 'rug-yarn',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Wool fabric cut into 6 mm strips for traditional rug hooking. Recycled wool fabric (old suit lengths, blankets) is the historical material; commercial pre-cut strips also available in dyed colours.',
+  },
+  {
+    slug: 'rug-yarn-latch-hook-bundles',
+    name: 'Latch-hook yarn bundles',
+    craft: 'fibre-arts',
+    category: 'rug-yarn',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Pre-cut yarn pieces (typically 6 cm acrylic or wool, sold in colour packs) for latch-hook rugs. The kit-rug-making material; one bundle ties one row of knots.',
+  },
+  {
+    slug: 'rug-yarn-hooking-wool',
+    name: 'Hooking wool yarn',
+    craft: 'fibre-arts',
+    category: 'rug-yarn',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Robust 3- or 4-ply wool yarn intended for punch-needle and traditional rug-hooking work. Heavier than knitting yarn; takes wear and abrasion in floor use.',
+  },
+  {
+    slug: 'rug-yarn-rag-strips',
+    name: 'Rag-rug fabric strips',
+    craft: 'fibre-arts',
+    category: 'rug-yarn',
+    trainedEnvironmentOnly: false,
+    notes:
+      'Strip-cut cotton or linen fabric (from old sheets, shirts, dresses) at 10-15 mm width. The rag-rug material — re-use of worn cloth into a hard-wearing floor textile.',
+  },
 ]
