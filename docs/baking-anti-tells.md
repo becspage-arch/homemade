@@ -291,3 +291,35 @@ tells.
   `packages/db/scripts/data/tools.ts` before writing a
   `recipeTools` entry. If the tool is genuinely new, add it to
   `tools.ts` and reseed before uploading.
+
+- **Em-dash appositive pairs in `excerpt`** `[block]`
+  Pattern: `"excerpt"` text using a pair of em dashes to offset
+  an appositive phrase: `"Soft amaretti — the chewy Italian
+  almond biscuit — made with…"`. Voice-check applies the
+  em-dash-paragraph and em-dash-sentence rules to all string
+  fields including `excerpt`.
+  **Why:** Appositive phrases in em-dash pairs are a natural
+  writing register but the voice-check rule limits each
+  paragraph (and each sentence) to one em dash. The excerpt
+  counts as a paragraph for these purposes.
+  **How to fix:** Replace the em-dash pair with commas or
+  parentheses: `"Soft amaretti, the chewy Italian almond
+  biscuit, made with…"`. Use a single em dash only if the
+  phrase genuinely needs the stronger pause.
+
+- **Em-dash across multi-text-node body paragraphs** `[block]`
+  Pattern: A body paragraph that contains a `glossaryTooltip`
+  mark splits into three text nodes (pre-tooltip text,
+  tooltip text, post-tooltip text). If the pre-tooltip text
+  node already contains one em dash and the post-tooltip text
+  node contains a second, the voice-checker concatenates all
+  three and detects two em dashes in one paragraph.
+  **Why:** The voice-check walks the full concatenated text of
+  each paragraph, not individual text nodes. The glossary mark
+  does not create a paragraph boundary, so both em dashes
+  count against the same paragraph limit.
+  **How to fix:** Ensure the post-tooltip continuation text uses
+  a semicolon, period, or comma rather than an em dash when the
+  pre-tooltip node already carries one. Review each method step
+  that introduces a glossaryTooltip to check the surrounding
+  punctuation.
