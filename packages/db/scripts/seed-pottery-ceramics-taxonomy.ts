@@ -2,24 +2,20 @@
  * One-off seed for the Pottery & ceramics taxonomy.
  *
  * Inserts (or no-ops on conflict):
- *   Category   pottery-ceramics  "Pottery & ceramics"  (pipelineStatus → READY)
- *   SubCat     hand-building-no-equipment        "Hand-building (no equipment)"
- *   SubCat     surface-decoration                "Surface decoration"
- *   SubCat     throwing                          "Throwing"
- *   SubCat     glazing                           "Glazing"
- *   SubCat     firing                            "Firing"
- *   SubCat     clay-fundamentals                 "Clay fundamentals"
+ *   Category   pottery-ceramics                  "Pottery & ceramics"
+ *   SubCat     hand-building-no-equipment        "Hand-building (no equipment)"  (under pottery-ceramics)
+ *   SubCat     surface-decoration                "Surface decoration"            (under pottery-ceramics)
+ *   SubCat     throwing                          "Throwing"                      (under pottery-ceramics)
+ *   SubCat     glazing                           "Glazing"                       (under pottery-ceramics)
+ *   SubCat     firing                            "Firing"                        (under pottery-ceramics)
+ *   SubCat     clay-fundamentals                 "Clay fundamentals"             (under pottery-ceramics)
  *
- * The Category itself was seeded earlier by `seed-categories.ts` with
- * `pipelineStatus: NOT_READY`. This script:
- *   1. Flips Category.pipelineStatus → READY so the single-queue round-
- *      robin autopilot picks Pottery up on its next fire.
- *   2. Owns the six sub-category list. The 70 / 30 weighting between the
- *      no-equipment track and the wheel + kiln track is enforced by the
- *      authoring prompt; the sub-categories themselves are equipment-
- *      neutral (a "surface decoration" tutorial could be sgraffito on
- *      bisque earthenware — kiln-required — or polymer-clay carving —
- *      no kiln).
+ * Category itself was seeded earlier by `seed-categories.ts`. This script
+ * is idempotent and slug-keyed; it never re-creates the category and
+ * never touches `pipelineStatus`. The READY flip lives in
+ * `flip-pottery-ceramics-ready.ts` and is run as a separate auditable
+ * step after the rest of the pipeline scaffolding is committed and
+ * deployed green.
  *
  * Run:
  *   pnpm --filter "@homemade/db" exec tsx scripts/seed-pottery-ceramics-taxonomy.ts
@@ -96,48 +92,57 @@ const SUB_CATEGORIES: SubCatSpec[] = [
   },
 ]
 
+const DRY_RUN = process.argv.includes('--dry-run')
+
 async function main(): Promise<void> {
-  const dryRun = process.argv.includes('--dry-run')
   console.log(
-    `[seed-pottery-ceramics-taxonomy] starting${dryRun ? ' (dry-run)' : ''}`,
+    `[seed-pottery-ceramics-taxonomy] starting${DRY_RUN ? ' (dry-run)' : ''}`,
   )
 
   const { prisma } = await import('../src/index.js')
 
-  const pottery = await prisma.category.upsert({
-    where: { slug: 'pottery-ceramics' },
-    create: {
-      slug: 'pottery-ceramics',
-      name: 'Pottery & ceramics',
-      description: 'Hand-building, throwing, glazing, and firing.',
-      order: 130,
-      pipelineStatus: 'READY',
-    },
-    update: { pipelineStatus: 'READY' },
-  })
-  console.log(
-    `[seed] pottery-ceramics → ${pottery.id} (pipelineStatus=READY)`,
-  )
+  const pottery = await prisma.category.findUnique({ where: { slug: 'pottery-ceramics' } })
+  if (!pottery) {
+    console.error(
+      '[seed] pottery-ceramics category not found. Run seed-categories.ts first.',
+    )
+    process.exit(2)
+  }
+  console.log(`[seed] pottery-ceramics → ${pottery.id}`)
+
+  let created = 0
+  let unchanged = 0
 
   for (const spec of SUB_CATEGORIES) {
-    const sub = await prisma.subCategory.upsert({
+    const existing = await prisma.subCategory.findUnique({
       where: { categoryId_slug: { categoryId: pottery.id, slug: spec.slug } },
-      create: {
-        slug: spec.slug,
-        name: spec.name,
-        description: spec.description,
-        order: spec.order,
-        categoryId: pottery.id,
-      },
-      update: {
-        name: spec.name,
-        description: spec.description,
-        order: spec.order,
-      },
     })
-    console.log(`[seed] pottery-ceramics/${spec.slug} → ${sub.id}`)
+
+    if (!existing) {
+      if (DRY_RUN) {
+        console.log(`  [would create] pottery-ceramics/${spec.slug}`)
+      } else {
+        const sub = await prisma.subCategory.create({
+          data: {
+            slug: spec.slug,
+            name: spec.name,
+            description: spec.description,
+            order: spec.order,
+            categoryId: pottery.id,
+          },
+        })
+        console.log(`[seed] pottery-ceramics/${spec.slug} → ${sub.id}`)
+      }
+      created += 1
+      continue
+    }
+
+    unchanged += 1
   }
 
+  console.log(
+    `\n[seed] pottery-ceramics-taxonomy: created=${created} unchanged=${unchanged} total=${SUB_CATEGORIES.length}${DRY_RUN ? ' (dry-run)' : ''}`,
+  )
   await prisma.$disconnect()
 }
 

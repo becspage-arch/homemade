@@ -2,32 +2,32 @@
  * One-off seed for the Sewing taxonomy.
  *
  * Inserts (or no-ops on conflict):
- *   Category   sewing  "Sewing"               (pipelineStatus flipped to READY)
- *   SubCat     techniques                      "Techniques"
- *   SubCat     aprons-pinafores                "Aprons & pinafores"
- *   SubCat     bags-storage                    "Bags & storage"
- *   SubCat     homewares-soft-furnishing       "Homewares & soft furnishing"
- *   SubCat     curtains-blinds                 "Curtains & blinds"
- *   SubCat     baby-children                   "Baby & children"
- *   SubCat     soft-toys                       "Soft toys"
- *   SubCat     kitchen-table-linens            "Kitchen & table linens"
- *   SubCat     mending-visible-mending         "Mending & visible mending"
- *   SubCat     quilting                        "Quilting"
- *   SubCat     reusable-household              "Reusable household"
- *   SubCat     christmas-seasonal              "Christmas & seasonal"
- *   SubCat     simple-clothing-rectangles      "Simple clothing from rectangles"
- *   SubCat     accessories-small-projects      "Accessories & small projects"
- *   SubCat     pet-items                       "Pet items"
+ *   Category   sewing                          "Sewing"
+ *   SubCat     techniques                      "Techniques"                    (under sewing)
+ *   SubCat     aprons-pinafores                "Aprons & pinafores"            (under sewing)
+ *   SubCat     bags-storage                    "Bags & storage"                (under sewing)
+ *   SubCat     homewares-soft-furnishing       "Homewares & soft furnishing"   (under sewing)
+ *   SubCat     curtains-blinds                 "Curtains & blinds"             (under sewing)
+ *   SubCat     baby-children                   "Baby & children"               (under sewing)
+ *   SubCat     soft-toys                       "Soft toys"                     (under sewing)
+ *   SubCat     kitchen-table-linens            "Kitchen & table linens"        (under sewing)
+ *   SubCat     mending-visible-mending         "Mending & visible mending"     (under sewing)
+ *   SubCat     quilting                        "Quilting"                      (under sewing)
+ *   SubCat     reusable-household              "Reusable household"            (under sewing)
+ *   SubCat     christmas-seasonal              "Christmas & seasonal"          (under sewing)
+ *   SubCat     simple-clothing-rectangles      "Simple clothing from rectangles" (under sewing)
+ *   SubCat     accessories-small-projects      "Accessories & small projects"  (under sewing)
+ *   SubCat     pet-items                       "Pet items"                     (under sewing)
  *
- * The Category itself was seeded earlier by `seed-categories.ts`. This
- * script:
- *   1. Flips `Category.pipelineStatus` for `sewing` from NOT_READY → READY,
- *      so the round-robin autopilot picks Sewing up on its next fire.
- *   2. Owns the sub-category list, so the upload-tutorial script has
- *      somewhere to land PATTERN + TECHNIQUE rows.
+ * The Category itself was seeded earlier by `seed-categories.ts`. This script
+ * is idempotent and slug-keyed; it never re-creates the category and
+ * never touches `pipelineStatus`. The READY flip lives in
+ * `flip-sewing-ready.ts` and is run as a separate auditable step after
+ * the rest of the pipeline scaffolding is committed and deployed green.
  *
  * Run:
  *   pnpm --filter "@homemade/db" exec tsx scripts/seed-sewing-taxonomy.ts
+ *   pnpm --filter "@homemade/db" exec tsx scripts/seed-sewing-taxonomy.ts --dry-run
  */
 
 import { config as loadEnv } from 'dotenv'
@@ -163,38 +163,53 @@ const SUB_CATEGORIES: SubCatSpec[] = [
   },
 ]
 
+const DRY_RUN = process.argv.includes('--dry-run')
+
 async function main(): Promise<void> {
   const { prisma } = await import('../src/index.js')
 
-  const sewing = await prisma.category.upsert({
-    where: { slug: 'sewing' },
-    create: {
-      slug: 'sewing',
-      name: 'Sewing',
-      description:
-        'Dressmaking, quilting, mending, and visible mending. UK-first; rectangle and gathered-rectangle projects + foundational techniques.',
-      order: 60,
-      pipelineStatus: 'READY',
-    },
-    update: { pipelineStatus: 'READY' },
-  })
-  console.log(`[seed] sewing → ${sewing.id} (pipelineStatus=READY)`)
+  const sewing = await prisma.category.findUnique({ where: { slug: 'sewing' } })
+  if (!sewing) {
+    console.error(
+      '[seed] sewing category not found. Run seed-categories.ts first.',
+    )
+    process.exit(2)
+  }
+  console.log(`[seed] sewing → ${sewing.id}`)
+
+  let created = 0
+  let unchanged = 0
 
   for (const spec of SUB_CATEGORIES) {
-    const sub = await prisma.subCategory.upsert({
+    const existing = await prisma.subCategory.findUnique({
       where: { categoryId_slug: { categoryId: sewing.id, slug: spec.slug } },
-      create: {
-        slug: spec.slug,
-        name: spec.name,
-        description: spec.description,
-        order: spec.order,
-        categoryId: sewing.id,
-      },
-      update: {},
     })
-    console.log(`[seed] sewing/${spec.slug} → ${sub.id}`)
+
+    if (!existing) {
+      if (DRY_RUN) {
+        console.log(`  [would create] sewing/${spec.slug}`)
+      } else {
+        const sub = await prisma.subCategory.create({
+          data: {
+            slug: spec.slug,
+            name: spec.name,
+            description: spec.description,
+            order: spec.order,
+            categoryId: sewing.id,
+          },
+        })
+        console.log(`[seed] sewing/${spec.slug} → ${sub.id}`)
+      }
+      created += 1
+      continue
+    }
+
+    unchanged += 1
   }
 
+  console.log(
+    `\n[seed] sewing-taxonomy: created=${created} unchanged=${unchanged} total=${SUB_CATEGORIES.length}${DRY_RUN ? ' (dry-run)' : ''}`,
+  )
   await prisma.$disconnect()
 }
 

@@ -2,24 +2,23 @@
  * One-off seed for the Paper & word taxonomy.
  *
  * Inserts (or no-ops on conflict):
- *   Category   paper-word                     "Paper & word"  (pipelineStatus flipped to READY)
- *   SubCat     bookbinding                    "Bookbinding"
- *   SubCat     calligraphy                    "Calligraphy"
- *   SubCat     papermaking                    "Papermaking"
- *   SubCat     marbling                       "Marbling"
- *   SubCat     papercutting                   "Papercutting"
- *   SubCat     journalling-craft              "Journalling as craft"
- *   SubCat     zines                          "Zines"
- *   SubCat     scrapbooking                   "Scrapbooking"
- *   SubCat     origami                        "Origami"
+ *   Category   paper-word                     "Paper & word"
+ *   SubCat     bookbinding                    "Bookbinding"                (under paper-word)
+ *   SubCat     calligraphy                    "Calligraphy"                (under paper-word)
+ *   SubCat     papermaking                    "Papermaking"                (under paper-word)
+ *   SubCat     marbling                       "Marbling"                   (under paper-word)
+ *   SubCat     papercutting                   "Papercutting"               (under paper-word)
+ *   SubCat     journalling-craft              "Journalling as craft"       (under paper-word)
+ *   SubCat     zines                          "Zines"                      (under paper-word)
+ *   SubCat     scrapbooking                   "Scrapbooking"               (under paper-word)
+ *   SubCat     origami                        "Origami"                    (under paper-word)
  *
- * The Category itself was seeded earlier by `seed-categories.ts`. This
- * script:
- *   1. Flips `Category.pipelineStatus` for `paper-word` from
- *      NOT_READY → READY, so the round-robin autopilot picks Paper &
- *      word up on its next fire.
- *   2. Owns the sub-category list, so the upload-tutorial script has
- *      somewhere to land PATTERN + READING + TECHNIQUE rows.
+ * Category itself was seeded earlier by `seed-categories.ts`. This script
+ * is idempotent and slug-keyed; it never re-creates the category and
+ * never touches `pipelineStatus`. The READY flip lives in
+ * `flip-paper-word-ready.ts` and is run as a separate auditable step
+ * after the rest of the pipeline scaffolding is committed and deployed
+ * green.
  *
  * Run:
  *   pnpm --filter "@homemade/db" exec tsx scripts/seed-paper-word-taxonomy.ts
@@ -122,62 +121,48 @@ const SUB_CATEGORIES: SubCatSpec[] = [
 async function main(): Promise<void> {
   const { prisma } = await import('../src/index.js')
 
-  if (DRY_RUN) {
-    console.log('[seed] paper-word: dry-run — no writes')
-  }
-
-  const paperWord = DRY_RUN
-    ? await prisma.category.findUnique({ where: { slug: 'paper-word' } })
-    : await prisma.category.upsert({
-        where: { slug: 'paper-word' },
-        create: {
-          slug: 'paper-word',
-          name: 'Paper & word',
-          description:
-            'Paper crafts, bookbinding, calligraphy, scrapbooking, and journalling as craft.',
-          order: 120,
-          pipelineStatus: 'READY',
-        },
-        update: { pipelineStatus: 'READY' },
-      })
-
+  const paperWord = await prisma.category.findUnique({ where: { slug: 'paper-word' } })
   if (!paperWord) {
     console.error(
-      '[seed] paper-word: Category row not found. Run seed-categories.ts first or remove --dry-run.',
+      '[seed] paper-word category not found. Run seed-categories.ts first.',
     )
-    await prisma.$disconnect()
-    process.exit(1)
+    process.exit(2)
   }
+  console.log(`[seed] paper-word → ${paperWord.id}`)
 
-  console.log(`[seed] paper-word → ${paperWord.id} (pipelineStatus=READY)`)
+  let created = 0
+  let unchanged = 0
 
   for (const spec of SUB_CATEGORIES) {
-    if (DRY_RUN) {
-      const existing = await prisma.subCategory.findUnique({
-        where: { categoryId_slug: { categoryId: paperWord.id, slug: spec.slug } },
-      })
-      console.log(
-        `[seed] paper-word/${spec.slug} → ${existing ? `${existing.id} (exists)` : 'would create'}`,
-      )
+    const existing = await prisma.subCategory.findUnique({
+      where: { categoryId_slug: { categoryId: paperWord.id, slug: spec.slug } },
+    })
+
+    if (!existing) {
+      if (DRY_RUN) {
+        console.log(`  [would create] paper-word/${spec.slug}`)
+      } else {
+        const sub = await prisma.subCategory.create({
+          data: {
+            slug: spec.slug,
+            name: spec.name,
+            description: spec.description,
+            order: spec.order,
+            categoryId: paperWord.id,
+          },
+        })
+        console.log(`[seed] paper-word/${spec.slug} → ${sub.id}`)
+      }
+      created += 1
       continue
     }
-    const sub = await prisma.subCategory.upsert({
-      where: { categoryId_slug: { categoryId: paperWord.id, slug: spec.slug } },
-      create: {
-        slug: spec.slug,
-        name: spec.name,
-        description: spec.description,
-        order: spec.order,
-        categoryId: paperWord.id,
-      },
-      // Leave existing sub-category rows alone on re-run so any post-seed
-      // tweaks Rebecca makes in admin aren't overwritten. Matches the
-      // sewing-taxonomy seed pattern.
-      update: {},
-    })
-    console.log(`[seed] paper-word/${spec.slug} → ${sub.id}`)
+
+    unchanged += 1
   }
 
+  console.log(
+    `\n[seed] paper-word-taxonomy: created=${created} unchanged=${unchanged} total=${SUB_CATEGORIES.length}${DRY_RUN ? ' (dry-run)' : ''}`,
+  )
   await prisma.$disconnect()
 }
 

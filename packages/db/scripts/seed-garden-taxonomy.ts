@@ -1,29 +1,31 @@
 /**
  * One-off seed for the Garden taxonomy.
  *
- * Pairs with migration `20260622000000_phase_garden_pipeline_001`. Sets up:
- *   Category   garden       (flips pipelineStatus NOT_READY → READY)
- *   SubCat     vegetables
- *   SubCat     fruit
- *   SubCat     herbs
- *   SubCat     flowers
- *   SubCat     permaculture
- *   SubCat     microgreens
- *   SubCat     hydroponics
- *   SubCat     mushroom-growing
- *   SubCat     foraging
+ * Inserts (or no-ops on conflict):
+ *   Category   garden                     "Garden"
+ *   SubCat     vegetables                 "Vegetables"               (under garden)
+ *   SubCat     fruit                      "Fruit"                    (under garden)
+ *   SubCat     herbs                      "Herbs"                    (under garden)
+ *   SubCat     flowers                    "Flowers"                  (under garden)
+ *   SubCat     permaculture               "Permaculture"             (under garden)
+ *   SubCat     microgreens                "Microgreens"              (under garden)
+ *   SubCat     hydroponics                "Hydroponics"              (under garden)
+ *   SubCat     mushroom-growing           "Mushroom growing"         (under garden)
+ *   SubCat     foraging                   "Foraging"                 (under garden)
  *
  * Sub-categories match the description seeded in `seed-categories.ts`. The
  * upload-tutorial script requires both the Category and any referenced
- * SubCategory to exist before Garden growing-guide rows can be inserted.
+ * SubCategory to exist before Garden rows can be inserted.
  *
- * Flipping pipelineStatus to READY is the final step — the autopilot
- * single-queue cron picks Garden up on its next fire. Run after
- * `seed-plants.ts` so the master `PlantVariety` rows exist before any
- * bulk authoring batch references them.
+ * Category itself was seeded earlier by `seed-categories.ts`. This script
+ * is idempotent and slug-keyed; it never re-creates the category and
+ * never touches `pipelineStatus`. The READY flip lives in
+ * `flip-garden-ready.ts` and is run as a separate auditable step after
+ * the rest of the pipeline scaffolding is committed and deployed green.
  *
  * Run:
  *   pnpm --filter "@homemade/db" exec tsx scripts/seed-garden-taxonomy.ts
+ *   pnpm --filter "@homemade/db" exec tsx scripts/seed-garden-taxonomy.ts --dry-run
  */
 
 import { config as loadEnv } from 'dotenv'
@@ -125,60 +127,57 @@ const SUB_CATEGORIES: SubCatSpec[] = [
   },
 ]
 
+const DRY_RUN = process.argv.includes('--dry-run')
+
 async function main(): Promise<void> {
   const { prisma } = await import('../src/index.js')
 
-  // The Garden Category row is already seeded by `seed-categories.ts` with
-  // pipelineStatus = NOT_READY. The pipeline-setup session flips it to READY
-  // now that the schema + author docs + master plant table + anchor batch
-  // are all in place. We never touch description / target / launchOrder
-  // here — those live in `seed-categories.ts`.
-  const existing = await prisma.category.findUnique({
-    where: { slug: 'garden' },
-    select: { id: true, name: true, pipelineStatus: true },
-  })
-
-  if (!existing) {
-    throw new Error(
-      'Category "garden" not found. Run `seed-categories.ts` first to create the row.',
+  const garden = await prisma.category.findUnique({ where: { slug: 'garden' } })
+  if (!garden) {
+    console.error(
+      '[seed] garden category not found. Run seed-categories.ts first.',
     )
+    process.exit(2)
   }
+  console.log(`[seed] garden → ${garden.id}`)
 
-  const wasNotReady = existing.pipelineStatus === 'NOT_READY'
-  if (wasNotReady) {
-    await prisma.category.update({
-      where: { id: existing.id },
-      data: { pipelineStatus: 'READY' },
-    })
-    console.log(`[seed-garden-taxonomy] garden pipeline: NOT_READY → READY`)
-  } else {
-    console.log(
-      `[seed-garden-taxonomy] garden pipelineStatus already ${existing.pipelineStatus} — left as-is`,
-    )
-  }
+  let created = 0
+  let unchanged = 0
 
   for (const spec of SUB_CATEGORIES) {
-    const sub = await prisma.subCategory.upsert({
-      where: { categoryId_slug: { categoryId: existing.id, slug: spec.slug } },
-      create: {
-        slug: spec.slug,
-        name: spec.name,
-        description: spec.description,
-        order: spec.order,
-        categoryId: existing.id,
-      },
-      update: {
-        description: spec.description,
-        order: spec.order,
-      },
+    const existing = await prisma.subCategory.findUnique({
+      where: { categoryId_slug: { categoryId: garden.id, slug: spec.slug } },
     })
-    console.log(`[seed-garden-taxonomy] garden/${spec.slug} → ${sub.id}`)
+
+    if (!existing) {
+      if (DRY_RUN) {
+        console.log(`  [would create] garden/${spec.slug}`)
+      } else {
+        const sub = await prisma.subCategory.create({
+          data: {
+            slug: spec.slug,
+            name: spec.name,
+            description: spec.description,
+            order: spec.order,
+            categoryId: garden.id,
+          },
+        })
+        console.log(`[seed] garden/${spec.slug} → ${sub.id}`)
+      }
+      created += 1
+      continue
+    }
+
+    unchanged += 1
   }
 
+  console.log(
+    `\n[seed] garden-taxonomy: created=${created} unchanged=${unchanged} total=${SUB_CATEGORIES.length}${DRY_RUN ? ' (dry-run)' : ''}`,
+  )
   await prisma.$disconnect()
 }
 
 main().catch((err) => {
-  console.error('[seed-garden-taxonomy] failed:', err)
+  console.error('[seed] failed:', err)
   process.exit(1)
 })
