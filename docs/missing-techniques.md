@@ -15,3 +15,6 @@ Each entry:
 ## Entries
 
 <!-- Auto-appended below this line -->
+
+- **coppicing-lime-tilia** — referenced by recipe `carved-lime-butter-knife` on 2026-05-17. Suggested technique title: "Coppicing Lime Tilia".
+- **coppicing-hazel-corylus** — referenced by recipe `carved-hazel-tent-peg` on 2026-05-17. Suggested technique title: "Coppicing Hazel Corylus".
