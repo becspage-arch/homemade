@@ -22,7 +22,7 @@ Live at https://homemade.education behind splash gate (cookie `homemade-access=1
 
 **Library counts (PUBLISHED)** — full grid in § Multi-category fill plan below.
 
-- Cooking 527 (anchors + pilot-10 + personal-recipe ingest + bulks 001–011). Baking 308 (pilot-10 + bulks 001–005 + bulk-004b). Mindset 104 (bulks 001–004 — 99 PRACTICE + 5 type-intro READING). The other 14 categories are private placeholders until each crosses 10 published rows.
+- Cooking 527 (anchors + pilot-10 + personal-recipe ingest + bulks 001–011). Baking 308 (pilot-10 + bulks 001–005 + bulk-004b). Mindset 142 (bulks 001–005 — 137 PRACTICE + 5 type-intro READING). The other 14 categories are private placeholders until each crosses 10 published rows.
 
 **This week's notable landings**
 
@@ -34,6 +34,7 @@ Live at https://homemade.education behind splash gate (cookie `homemade-access=1
 - Image verification sweep — 10 batches landed 2026-05-17 (119 / 527 = 22.6% verified, 32 PROCEDURAL_CARD = 6.1%, 375 UNVERIFIED remain). Cycle bug in `apply-media-verdicts.ts` fixed via a new `Tutorial.excludedImageSources` accumulator + 3-rejection cap, and the retroactive sweep now uses a new `--no-ai-fallback` flag so cap-fired slugs land as procedural cards instead of Flux outputs (per Rebecca's editorial line: AI-feeling Flux images contradict the brand register on long-tail-miss British recipes). Default behaviour unchanged for the autopilot pipeline. 27 cap-fired procedurals + 5 regen-failed procedurals so far. See `docs/image-verification-sweep-2026-05-17-cycle-fix.md`.
 - Baking bulk-004b (2026-05-17): 50 entries published across 7 sub-categories (scones ×3, biscuits ×10, cakes ×10, sweets ×8, bread ×6, pastries ×5, pies ×8). Distinct slugs from the parallel bulk-004 session. Baking 208 → 258. Fixed pre-existing `carrot-walnut-cake` missing oil ingredient. See `docs/baking-bulk-004b-report.md`.
 - Baking bulk-005 (2026-05-17): 50 entries published across 7 sub-categories (bread ×7, cakes ×11, pastries ×11, pies ×5, scones ×5, biscuits ×7, sweets ×4). Fixes applied: difficulty enum `EASY`→`BEGINNER` / `HARD`→`ADVANCED` (21 files), `sourceType: "ORIGINAL"`→`"CLASSIC"` (2 files), missing tool slugs `round-cake-tin-22`→`round-cake-tin-23` + `electric-mixer`→`hand-mixer` (2 files), `glossaryTooltip` `slug`→`termSlug` attr bulk fix (all 50), em-dash pair rewrites (22 files). Baking 258 → 308. See `docs/baking-bulk-005-report.md`.
+- Mindset bulk-005 (2026-05-17): 40 entries PUBLISHED — MONEY Days 13–16 (19 entries) + SLEEP Days 6–10 (21 entries). Mindset 104 → 142. See `docs/mindset-bulk-005-report.md`.
 
 **Open / queued**
 
