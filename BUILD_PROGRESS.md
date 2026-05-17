@@ -31,7 +31,7 @@ Live at https://homemade.education behind splash gate (cookie `homemade-access=1
 - Categories targets + visibility (17 categories live in DB, 14 private until threshold; admin pipeline widget).
 - Self-hosted analytics, admin overhaul (dashboard / content list / preview drawer / cmd-K / RBAC unification), homepage rebuild (state-aware rails, procedural cards, editorial picks, seasonality, onboarding) + homepage polish.
 - Mobile rebuild (Capacitor native shell + cooking mode + offline + camera + push stub + App Store scaffolding).
-- Image verification sweep — 4 batches landed 2026-05-17 (64 / 537 = 11.9% coverage, 118 re-sourced). Cycle bug in `apply-media-verdicts.ts` fixed via a new `Tutorial.excludedImageSources` accumulator + 3-rejection cap → force Flux. Halted at batch 004 on QUALITY_DRIFT (29/32 rejected — all cycle-broken slugs from prior batches). 473 UNVERIFIED rows remain. See § "Image verification sweep — batches 001-004 + cycle-fix".
+- Image verification sweep — 10 batches landed 2026-05-17 (119 / 527 = 22.6% verified, 32 PROCEDURAL_CARD = 6.1%, 375 UNVERIFIED remain). Cycle bug in `apply-media-verdicts.ts` fixed via a new `Tutorial.excludedImageSources` accumulator + 3-rejection cap, and the retroactive sweep now uses a new `--no-ai-fallback` flag so cap-fired slugs land as procedural cards instead of Flux outputs (per Rebecca's editorial line: AI-feeling Flux images contradict the brand register on long-tail-miss British recipes). Default behaviour unchanged for the autopilot pipeline. 27 cap-fired procedurals + 5 regen-failed procedurals so far. See `docs/image-verification-sweep-2026-05-17-cycle-fix.md`.
 
 **Open / queued**
 
