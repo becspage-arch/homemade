@@ -399,6 +399,23 @@ async function uploadTutorial(
   const tutorialType: TutorialType = input.type ?? 'RECIPE'
   const recipe = input.recipe ?? {}
   const practice = input.practice ?? null
+  const garden = input.garden ?? null
+
+  // Resolve garden.plantSlug against the master `PlantVariety` table. Unknown
+  // slugs fail up-front rather than silently inserting a tutorial with a
+  // dangling plant reference.
+  if (garden) {
+    const plantRow = await prisma.plantVariety.findUnique({
+      where: { slug: garden.plantSlug },
+      select: { slug: true },
+    })
+    if (!plantRow) {
+      throw new Error(
+        `garden.plantSlug "${garden.plantSlug}" is not in the master PlantVariety table. ` +
+        `Add it to packages/db/scripts/data/plants.ts and reseed before uploading.`,
+      )
+    }
+  }
 
   // Compute totalMinutes if not given. Falls back to the explicit
   // `timeMinutes` if a recipe author already set that.
@@ -485,6 +502,18 @@ async function uploadTutorial(
     steamMethod: baking?.steamMethod ?? null,
     decoratingTechnique: baking?.decoratingTechnique ?? null,
     preFermentType: baking?.preFermentType ?? null,
+    // Garden growing-guide metadata (phase_garden_pipeline_001). Null on rows
+    // that aren't growing guides; populated per sub-topic for the ones that
+    // are. Regions defaults to ['UK'] when the author leaves it empty.
+    plantingMonths: garden?.plantingMonths ?? [],
+    harvestMonths: garden?.harvestMonths ?? [],
+    containerFriendly: garden?.containerFriendly ?? null,
+    indoorFriendly: garden?.indoorFriendly ?? null,
+    regionsApplicable: garden
+      ? (garden.regionsApplicable && garden.regionsApplicable.length > 0
+          ? (garden.regionsApplicable as string[])
+          : ['UK'])
+      : [],
   }
 
   // Publish intent. --status PUBLISHED stamps publishedAt now and flips the

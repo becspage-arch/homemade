@@ -17,7 +17,7 @@
  * before inserting.
  */
 
-export type TutorialType = 'RECIPE' | 'TECHNIQUE' | 'PRACTICE' | 'READING'
+export type TutorialType = 'RECIPE' | 'TECHNIQUE' | 'PRACTICE' | 'READING' | 'GROWING_GUIDE'
 
 /**
  * Mindset practice metadata. Required when `type === 'PRACTICE'` or
@@ -129,6 +129,71 @@ export interface BakingMetadata {
 
   // Pre-ferment type. NONE for straight doughs.
   preFermentType?: PreFermentType | null
+}
+
+/**
+ * Regions a growing-guide schedule applies to. The author writes a UK-default
+ * schedule; this flag expands readership where the same schedule applies
+ * (frost dates / day-length / soil temperatures translate well to similar
+ * latitudes). Free-form additions are fine — the upload script validates
+ * the values are non-empty strings, not against a fixed set, so authors can
+ * refine the geography without a migration.
+ */
+export type GardenRegion =
+  | 'UK'
+  | 'EU'
+  | 'US_NORTH'
+  | 'US_SOUTH'
+  | 'AU_NZ'
+  | 'ZA'
+
+/**
+ * Garden-specific growing-guide metadata. Required when `type === 'GROWING_GUIDE'`.
+ * Mirrors the Garden-specific columns added by the
+ * `phase_garden_pipeline_001` migration. Garden tutorials don't carry the
+ * full recipe block — `recipe` should be null / omitted on GROWING_GUIDE rows.
+ */
+export interface GardenMetadata {
+  /**
+   * Slug of the canonical PlantVariety this guide covers. Must exist in
+   * the master `PlantVariety` table. Required.
+   */
+  plantSlug: string
+
+  /**
+   * Sub-topic within the growing guide. The author docs describe what each
+   * sub-topic emphasises in body shape (sowing covers when / depth / spacing;
+   * harvesting covers when / how / signs of readiness; etc.).
+   * One of:
+   *   sowing | growing | harvesting | saving-seed | pruning |
+   *   pest-management | season-extension | variety-selection
+   */
+  subTopic:
+    | 'sowing'
+    | 'growing'
+    | 'harvesting'
+    | 'saving-seed'
+    | 'pruning'
+    | 'pest-management'
+    | 'season-extension'
+    | 'variety-selection'
+
+  /** Months when the plant is sown / planted ('march', 'april', ...). */
+  plantingMonths?: string[]
+  /** Months when the plant is harvested / picked. */
+  harvestMonths?: string[]
+
+  /** True if the plant grows happily in a container / pot. */
+  containerFriendly?: boolean | null
+  /** True if the plant grows happily indoors / on a windowsill. */
+  indoorFriendly?: boolean | null
+
+  /**
+   * Regions the schedule applies to. Defaults to ['UK'] at upload time when
+   * omitted. Add EU / US_NORTH / US_SOUTH / AU_NZ / ZA when the schedule
+   * translates cleanly.
+   */
+  regionsApplicable?: GardenRegion[] | string[]
 }
 
 export interface RecipeMetadata {
@@ -290,6 +355,16 @@ export interface TutorialUploadInput {
   practice?: PracticeMetadata | null
 
   /**
+   * Garden growing-guide metadata. Required when `type === 'GROWING_GUIDE'`.
+   * Maps onto the `Tutorial.plantingMonths / harvestMonths / containerFriendly /
+   * indoorFriendly / regionsApplicable` columns added by the
+   * `phase_garden_pipeline_001` migration. The `plantSlug` must exist in the
+   * master `PlantVariety` table — the upload script validates this.
+   * Null / omitted on every other tutorial type.
+   */
+  garden?: GardenMetadata | null
+
+  /**
    * Tools the recipe uses. The structured `equipmentList` TipTap block is
    * deferred; until then we accept tool references as a top-level array.
    * Each entry's `slug` must exist in the master `Tool` table.
@@ -428,7 +503,7 @@ export function validateInput(input: TutorialUploadInput): void {
   if (input.subCategorySlug && !SLUG_PATTERN.test(input.subCategorySlug)) {
     throw new Error(`input.subCategorySlug "${input.subCategorySlug}" must match the slug pattern.`)
   }
-  const allowedTypes = ['RECIPE', 'TECHNIQUE', 'PRACTICE', 'READING'] as const
+  const allowedTypes = ['RECIPE', 'TECHNIQUE', 'PRACTICE', 'READING', 'GROWING_GUIDE'] as const
   if (input.type && !allowedTypes.includes(input.type)) {
     throw new Error(
       `input.type "${input.type}" must be one of ${allowedTypes.join(' | ')}.`,
@@ -468,6 +543,50 @@ export function validateInput(input: TutorialUploadInput): void {
     throw new Error(
       `input.practice is required when type is "${input.type}".`,
     )
+  }
+  if (input.garden) {
+    if (!input.garden.plantSlug || !SLUG_PATTERN.test(input.garden.plantSlug)) {
+      throw new Error(
+        `garden.plantSlug "${input.garden.plantSlug}" must match the slug pattern (looked up against the PlantVariety master table).`,
+      )
+    }
+    const validSubTopics = [
+      'sowing', 'growing', 'harvesting', 'saving-seed', 'pruning',
+      'pest-management', 'season-extension', 'variety-selection',
+    ]
+    if (!validSubTopics.includes(input.garden.subTopic)) {
+      throw new Error(
+        `garden.subTopic "${input.garden.subTopic}" must be one of ${validSubTopics.join(' | ')}.`,
+      )
+    }
+    const validMonths = new Set([
+      'january', 'february', 'march', 'april', 'may', 'june',
+      'july', 'august', 'september', 'october', 'november', 'december',
+    ])
+    for (const m of input.garden.plantingMonths ?? []) {
+      if (!validMonths.has(m)) {
+        throw new Error(
+          `garden.plantingMonths "${m}" must be a lower-case month name.`,
+        )
+      }
+    }
+    for (const m of input.garden.harvestMonths ?? []) {
+      if (!validMonths.has(m)) {
+        throw new Error(
+          `garden.harvestMonths "${m}" must be a lower-case month name.`,
+        )
+      }
+    }
+    for (const r of input.garden.regionsApplicable ?? []) {
+      if (typeof r !== 'string' || r.length === 0) {
+        throw new Error(
+          `garden.regionsApplicable entries must be non-empty strings (got "${r}").`,
+        )
+      }
+    }
+  }
+  if (input.type === 'GROWING_GUIDE' && !input.garden) {
+    throw new Error('input.garden is required when type is "GROWING_GUIDE".')
   }
   for (const g of input.glossaryTerms ?? []) {
     if (!g.slug || !SLUG_PATTERN.test(g.slug)) {

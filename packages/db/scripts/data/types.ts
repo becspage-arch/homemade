@@ -142,3 +142,68 @@ export interface ToolSeed {
   /** Notes — sizing, what to look for, when nothing useful skip. */
   notes?: string
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// PlantVariety — Garden master entity. Free-form strings for category /
+// sunRequirement / waterRequirement / soilType so authors can add values
+// without a schema migration, with the literal unions below as a spelling
+// gate at seed time.
+// ─────────────────────────────────────────────────────────────────────────────
+
+export type PlantCategory =
+  | 'vegetable'
+  | 'fruit'
+  | 'herb'
+  | 'flower'
+  | 'shrub'
+  | 'tree'
+  | 'other'
+
+export type SunRequirement = 'full-sun' | 'partial-shade' | 'shade'
+
+export type WaterRequirement = 'low' | 'moderate' | 'high'
+
+export type SoilType =
+  | 'clay'
+  | 'sandy'
+  | 'loamy'
+  | 'chalky'
+  | 'well-drained'
+  | 'boggy'
+
+export type EdiblePart = 'fruit' | 'leaf' | 'root' | 'stem' | 'flower' | 'seed'
+
+export interface PlantSeed {
+  /** lower-kebab, unique across the master list. */
+  slug: string
+  /** Plain-English common name ("Tomato", "Rosemary"). */
+  commonName: string
+  /** Botanical binomial ("Solanum lycopersicum"). Optional. */
+  latinBinomial?: string
+  /**
+   * Slug of the parent species when this row is a named variety
+   * ("brandywine" → parent "tomato"). Must resolve against another entry in
+   * this list. Null on species-level rows.
+   */
+  parentSpeciesSlug?: string
+  category: PlantCategory
+  /** RHS zones — H1a..H7. Array because plants tolerate a range. */
+  rhsHardinessZone?: string[]
+  /** USDA zones — '1'..'13' as strings. */
+  usdaHardinessZone?: string[]
+  sunRequirement?: SunRequirement
+  waterRequirement?: WaterRequirement
+  soilType?: SoilType[]
+  daysToMaturity?: number
+  seedingDepthCm?: number
+  spacingCm?: number
+  heightCm?: number
+  edibleParts?: EdiblePart[]
+  notes?: string
+  /** Starter-plot flag — true for the most-grown UK garden subjects. */
+  isStaple: boolean
+  /** Perennial vs annual. */
+  isPerennial: boolean
+  /** Lower-case month names — when in season (sown / harvested / blooming). */
+  seasonality?: string[]
+}

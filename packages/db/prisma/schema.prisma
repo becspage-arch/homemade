@@ -444,6 +444,33 @@ model Tutorial {
   // variants for breads that build flavour through a separate ferment.
   preFermentType PreFermentType?
 
+  // ──────────────────────────────────────────────────────────────────────────
+  // Phase Garden pipeline — Garden-specific growing-guide metadata. Null on
+  // rows where `type != GROWING_GUIDE`. Growing difficulty reuses the existing
+  // `difficulty` column (BEGINNER / INTERMEDIATE / ADVANCED ladder is shared
+  // across categories). See `docs/garden-author.md` for per-sub-topic guidance
+  // on which fields to set.
+  // ──────────────────────────────────────────────────────────────────────────
+
+  // Months when the plant is sown / planted (lower-case 'march',
+  // 'april', ...). Drives the "what to sow in April" public filter.
+  plantingMonths String[] @default([])
+
+  // Months when the plant is harvested / picked.
+  harvestMonths String[] @default([])
+
+  // Container + indoor friendliness — drive the "grows on a balcony" and
+  // "windowsill-friendly" filters. Nullable on purpose: null means "not a
+  // growing guide" / not applicable, distinct from explicit false.
+  containerFriendly Boolean?
+  indoorFriendly    Boolean?
+
+  // Regional applicability. The author writes UK-default schedules; this flag
+  // expands readership where the same schedule applies. Values:
+  // 'UK' / 'EU' / 'US_NORTH' / 'US_SOUTH' / 'AU_NZ' / 'ZA'.
+  // Defaults to ['UK'] at upload time when the author leaves it empty.
+  regionsApplicable String[] @default([])
+
   planDayMornings    UserPlanDay[]          @relation("PlanDayMorningPractice")
   planDayEvenings    UserPlanDay[]          @relation("PlanDayEveningPractice")
   planDayAnchors     UserPlanDay[]          @relation("PlanDayAnchorPractice")
@@ -473,6 +500,11 @@ model Tutorial {
   @@index([practiceTargets], type: Gin)
   @@index([type, preFermentType])
   @@index([type, decoratingTechnique])
+  @@index([type, containerFriendly])
+  @@index([type, indoorFriendly])
+  @@index([plantingMonths], type: Gin)
+  @@index([harvestMonths], type: Gin)
+  @@index([regionsApplicable], type: Gin)
 }
 
 enum TutorialType {
@@ -480,6 +512,7 @@ enum TutorialType {
   TECHNIQUE
   PRACTICE
   READING
+  GROWING_GUIDE
 }
 
 enum HeroStrategy {
@@ -2148,4 +2181,140 @@ model AnalyticsRollupRun {
   eventsProcessed Int       @default(0)
   metricsWritten  Int       @default(0)
   error           String?
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Garden — master taxonomy (phase_garden_pipeline_001)
+//
+// PlantVariety is the Garden master entity (analogous to Ingredient for
+// Cooking / Baking). PlantPest + CompanionPlanting are reference tables that
+// growing-guide tutorials cross-link. Tutorials reference plants by slug in
+// body prose rather than through a structured relation — same pattern as
+// the existing ingredient / tool master tables.
+// ────────────────────────────────────────────────────────────────────────────
+
+/// Companion-planting relationship between two plant varieties.
+enum CompanionRelationship {
+  BENEFICIAL
+  NEUTRAL
+  HARMFUL
+}
+
+model PlantVariety {
+  id            String  @id @default(cuid())
+  slug          String  @unique
+  commonName    String
+  latinBinomial String?
+
+  /// Self-referential pointer to the parent species when this row is a
+  /// named variety ("Brandywine" → "tomato"). Null on species-level rows.
+  parentSpeciesId String?
+  parentSpecies   PlantVariety?  @relation("PlantVarietyChildren", fields: [parentSpeciesId], references: [id], onDelete: SetNull)
+  varieties       PlantVariety[] @relation("PlantVarietyChildren")
+
+  /// vegetable / fruit / herb / flower / shrub / tree / other. Free-form
+  /// string so authors can add categories without a follow-up migration —
+  /// same pattern as `Ingredient.category`.
+  category String
+
+  /// RHS hardiness — strings H1a..H7. Multi-valued because a single plant
+  /// typically tolerates a range.
+  rhsHardinessZone  String[] @default([])
+  /// USDA zones '1'..'13' as strings.
+  usdaHardinessZone String[] @default([])
+
+  /// full-sun / partial-shade / shade.
+  sunRequirement   String?
+  /// low / moderate / high.
+  waterRequirement String?
+
+  /// clay / sandy / loamy / chalky / well-drained / boggy. Array because
+  /// most plants tolerate more than one soil type.
+  soilType String[] @default([])
+
+  daysToMaturity Int?
+  seedingDepthCm Float?
+  spacingCm      Int?
+  heightCm       Int?
+
+  /// Which parts the kitchen uses: 'fruit' / 'leaf' / 'root' / 'stem' /
+  /// 'flower' / 'seed'. Empty on purely ornamental rows; multi-valued where
+  /// more than one part is edible.
+  edibleParts String[] @default([])
+
+  notes String?
+
+  /// Cupboard-mode equivalent — true for plants the average UK garden
+  /// already grows (tomato, strawberry, mint, ...). Surfaces in the
+  /// "starter plot" filter.
+  isStaple    Boolean @default(false)
+  /// True for perennials (rosemary, asparagus, fruit trees, ...).
+  isPerennial Boolean @default(false)
+
+  /// Months when in season (sown / harvested / blooming depending on
+  /// category). Lower-case month names matching `Ingredient.seasonality`.
+  seasonality String[] @default([])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  asPlant     CompanionPlanting[] @relation("CompanionAsPlant")
+  asCompanion CompanionPlanting[] @relation("CompanionAsCompanion")
+
+  @@index([category])
+  @@index([isStaple])
+  @@index([isPerennial])
+  @@index([parentSpeciesId])
+}
+
+/// Common garden pest or disease. Reference table; the public
+/// pest-management surfaces cross-link these rows from growing-guide
+/// tutorials. `affectedPlants` is a free-form string array of PlantVariety
+/// slugs (same pattern as `Ingredient.commonSubstitutes`).
+model PlantPest {
+  id   String @id @default(cuid())
+  slug String @unique
+  name String
+
+  /// PlantVariety slugs the pest affects.
+  affectedPlants String[] @default([])
+
+  symptoms             String?
+  /// Plain-text controls. The renderer prefers organic; the conventional
+  /// column is shown factually with a "follow manufacturer instructions"
+  /// voice line, not as endorsement.
+  organicControls      String?
+  conventionalControls String?
+
+  /// low / moderate / high / catastrophic.
+  severity String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([severity])
+}
+
+/// Pairwise companion-planting relationship. The seed enforces symmetry
+/// where it exists ("tomato → basil = BENEFICIAL" implies the reverse).
+/// HARMFUL pairs are folklore-strength claims; the author docs require a
+/// citation in `notes` rather than a bare assertion.
+model CompanionPlanting {
+  id String @id @default(cuid())
+
+  plantId String
+  plant   PlantVariety @relation("CompanionAsPlant", fields: [plantId], references: [id], onDelete: Cascade)
+
+  companionId String
+  companion   PlantVariety @relation("CompanionAsCompanion", fields: [companionId], references: [id], onDelete: Cascade)
+
+  relationship CompanionRelationship
+  notes        String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([plantId, companionId])
+  @@index([plantId])
+  @@index([companionId])
 }
