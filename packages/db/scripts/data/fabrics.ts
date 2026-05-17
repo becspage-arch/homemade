@@ -404,4 +404,154 @@ export const FABRICS: FabricSeed[] = [
     notes:
       'Premium quilting batting; very warm, drapes softly, expensive. The wool retains a small amount of natural lanolin so the finished quilt resists creasing.',
   },
+
+  // ───────────────────────────────────────────────────────────────────────
+  // Needlework grounds — Aida, evenweave, embroidery linen, needlepoint
+  // canvas. The fabric the stitch counts onto. `weightCategory` is the
+  // closest browse bucket; what readers care about is the count (stitches
+  // per inch), surfaced as `count` in the notes line.
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'aida-11',
+    name: 'Aida cloth, 11-count',
+    weightCategory: 'medium',
+    fibreContent: ['cotton'],
+    drape: 'structured',
+    suitableFor: ['cross-stitch'],
+    category: 'specialty',
+    notes:
+      '11 stitches per inch. The largest commonly-stocked Aida — for big stitching, children learning, or low-vision stitchers. Each cross-stitch shows clearly; designs come out larger than the same chart at 14-count.',
+  },
+  {
+    slug: 'aida-14',
+    name: 'Aida cloth, 14-count',
+    weightCategory: 'medium',
+    fibreContent: ['cotton'],
+    drape: 'structured',
+    suitableFor: ['cross-stitch'],
+    category: 'specialty',
+    notes:
+      '14 stitches per inch. The default beginner Aida — the count most kits and PD chart books were drafted for. Two strands of stranded cotton cover the cloth cleanly.',
+  },
+  {
+    slug: 'aida-16',
+    name: 'Aida cloth, 16-count',
+    weightCategory: 'medium',
+    fibreContent: ['cotton'],
+    drape: 'structured',
+    suitableFor: ['cross-stitch'],
+    category: 'specialty',
+    notes:
+      '16 stitches per inch. A step finer than 14-count; the same chart shrinks by about 12%. Two strands still cover; some stitchers drop to one.',
+  },
+  {
+    slug: 'aida-18',
+    name: 'Aida cloth, 18-count',
+    weightCategory: 'medium',
+    fibreContent: ['cotton'],
+    drape: 'structured',
+    suitableFor: ['cross-stitch'],
+    category: 'specialty',
+    notes:
+      '18 stitches per inch. Detailed work — small motifs, miniatures, finely-shaded portrait charts. One or two strands depending on the floss. A magnifier loupe helps.',
+  },
+  {
+    slug: 'evenweave-25',
+    name: 'Evenweave, 25-count',
+    weightCategory: 'light',
+    fibreContent: ['cotton'],
+    drape: 'flowing',
+    suitableFor: ['cross-stitch'],
+    category: 'specialty',
+    notes:
+      '25 threads per inch — cross-stitched over two threads for an effective 12.5 stitches per inch. Softer drape than Aida. The traditional ground for Hardanger and counted-thread work.',
+  },
+  {
+    slug: 'evenweave-28',
+    name: 'Evenweave, 28-count',
+    weightCategory: 'light',
+    fibreContent: ['cotton'],
+    drape: 'flowing',
+    suitableFor: ['cross-stitch'],
+    category: 'specialty',
+    notes:
+      '28 threads per inch — stitched over two threads for 14 effective stitches per inch (matches 14-count Aida in scale, with smoother finish). The most popular evenweave count.',
+  },
+  {
+    slug: 'evenweave-32',
+    name: 'Evenweave, 32-count',
+    weightCategory: 'light',
+    fibreContent: ['cotton'],
+    drape: 'flowing',
+    suitableFor: ['cross-stitch'],
+    category: 'specialty',
+    notes:
+      '32 threads per inch — over two threads for 16 effective stitches per inch. A fine even-weave for detailed charts and miniature work.',
+  },
+  {
+    slug: 'embroidery-linen-28',
+    name: 'Embroidery linen, 28-count',
+    weightCategory: 'light',
+    fibreContent: ['linen'],
+    drape: 'flowing',
+    suitableFor: ['cross-stitch'],
+    category: 'specialty',
+    notes:
+      '28 threads per inch on pure linen. The Victorian needlework canon was largely linen — the cloth ages well, takes overdye gracefully, and softens with washing. Surface slubs are part of the look, not a fault.',
+  },
+  {
+    slug: 'embroidery-linen-32',
+    name: 'Embroidery linen, 32-count',
+    weightCategory: 'light',
+    fibreContent: ['linen'],
+    drape: 'flowing',
+    suitableFor: ['cross-stitch'],
+    category: 'specialty',
+    notes:
+      '32 threads per inch on pure linen. The most popular linen count for the British and continental sampler tradition. Stitched over two threads (16 effective stitches per inch).',
+  },
+  {
+    slug: 'embroidery-linen-36',
+    name: 'Embroidery linen, 36-count',
+    weightCategory: 'light',
+    fibreContent: ['linen'],
+    drape: 'flowing',
+    suitableFor: ['cross-stitch'],
+    category: 'specialty',
+    notes:
+      '36 threads per inch on linen. A finer ground for detailed reproduction samplers and miniature work.',
+  },
+  {
+    slug: 'embroidery-linen-40',
+    name: 'Embroidery linen, 40-count',
+    weightCategory: 'light',
+    fibreContent: ['linen'],
+    drape: 'flowing',
+    suitableFor: ['cross-stitch'],
+    category: 'specialty',
+    notes:
+      '40 threads per inch on linen. Fine work — miniatures, antique-sampler reproductions. One strand of floss, daylight bulb, magnifier loupe.',
+  },
+  {
+    slug: 'needlepoint-canvas-mono-13',
+    name: 'Needlepoint canvas, mono 13-count',
+    weightCategory: 'heavy',
+    fibreContent: ['cotton'],
+    drape: 'structured',
+    suitableFor: ['needlepoint-canvas'],
+    category: 'specialty',
+    notes:
+      '13 holes per inch on single-thread (mono) cotton canvas. The default ground for traditional canvaswork — cushion fronts, chair seats, samplers. Worked with tapestry wool or six strands of stranded cotton.',
+  },
+  {
+    slug: 'needlepoint-canvas-mono-18',
+    name: 'Needlepoint canvas, mono 18-count',
+    weightCategory: 'medium',
+    fibreContent: ['cotton'],
+    drape: 'structured',
+    suitableFor: ['needlepoint-canvas'],
+    category: 'specialty',
+    notes:
+      '18 holes per inch on mono canvas. Petit-point fineness; for detailed reproductions, miniature work, and small finished pieces. Worked with two or three strands of stranded cotton.',
+  },
 ]

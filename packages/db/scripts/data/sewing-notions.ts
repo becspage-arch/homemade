@@ -58,6 +58,75 @@ export const SEWING_NOTIONS: SewingNotionSeed[] = [
       'Six-strand cotton thread for hand embroidery, sashiko-style visible mending, and decorative running stitch on light cottons. Separate strands as needed (one or two strands for fine work, all six for bold stitch).',
   },
 
+  // ──────────────────────── Needlework threads ────────────────────────
+  // Stranded cotton, perle, tatting and bobbin-lace threads. Generic
+  // entries; specific colours are not seeded because the colour catalogue
+  // is many hundreds of shades per maker. The cross-stitch chart palette
+  // names DMC + Anchor codes inline at the per-tutorial level.
+  {
+    slug: 'dmc-stranded-cotton',
+    name: 'DMC stranded cotton',
+    category: 'thread',
+    notes:
+      'Six-strand divisible cotton floss, the canonical cross-stitch + embroidery thread for the British market. 500+ colours. Patterns name a DMC number; the renderer also surfaces the nearest Anchor equivalent. Strands separate cleanly for fine work (one strand) up to bold work (all six).',
+  },
+  {
+    slug: 'anchor-stranded-cotton',
+    name: 'Anchor stranded cotton',
+    category: 'thread',
+    notes:
+      'Six-strand divisible cotton floss. The other dominant stranded-cotton range; conversion charts cross-reference Anchor numbers to DMC numbers. Interchangeable for almost all charts.',
+  },
+  {
+    slug: 'perle-cotton-5',
+    name: 'Perle cotton size 5',
+    category: 'thread',
+    notes:
+      'Twisted (non-divisible) mercerised cotton, size 5 — the thickest perle commonly stocked. For redwork, sashiko, and bold surface embroidery on medium ground. Used as a single strand straight off the skein.',
+  },
+  {
+    slug: 'perle-cotton-8',
+    name: 'Perle cotton size 8',
+    category: 'thread',
+    notes:
+      'Twisted mercerised cotton, size 8. The middle weight — for finer redwork, blackwork, and Hardanger filling stitches. Single strand.',
+  },
+  {
+    slug: 'perle-cotton-12',
+    name: 'Perle cotton size 12',
+    category: 'thread',
+    notes:
+      'Twisted mercerised cotton, size 12 — the finest commonly-stocked perle. For fine blackwork, tatting (with a finer feel than the size-8), and detail outlines on linen. Single strand.',
+  },
+  {
+    slug: 'tatting-thread-20',
+    name: 'Tatting thread size 20',
+    category: 'thread',
+    notes:
+      'Mercerised cotton tatting thread, size 20 (the largest of the common tatting sizes). For learners and for tatting with visible texture. Works comfortably on a standard shuttle.',
+  },
+  {
+    slug: 'tatting-thread-40',
+    name: 'Tatting thread size 40',
+    category: 'thread',
+    notes:
+      'Mercerised cotton tatting thread, size 40 — the middle weight. The default for traditional tatted edgings and motifs.',
+  },
+  {
+    slug: 'tatting-thread-80',
+    name: 'Tatting thread size 80',
+    category: 'thread',
+    notes:
+      'Mercerised cotton tatting thread, size 80 — fine. For fine motifs, edgings on handkerchief linen, doilies in the Edwardian convention.',
+  },
+  {
+    slug: 'bobbin-lace-linen-thread',
+    name: 'Bobbin lace linen thread',
+    category: 'thread',
+    notes:
+      'Fine linen thread on small bobbins for traditional bobbin lace. Sized by Belgian or Czech convention rather than a single international standard — the lace pattern names the specific count. Linen for the historical canon; cotton bobbin-lace thread substitutes where linen is unavailable.',
+  },
+
   // ──────────────────────── Elastic ────────────────────────
   {
     slug: 'elastic-knit',

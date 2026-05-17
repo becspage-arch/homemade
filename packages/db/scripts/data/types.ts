@@ -276,6 +276,9 @@ export type FabricSuitability =
   | 'interfacing-sew-in'
   | 'upholstery'
   | 'rainwear'
+  | 'cross-stitch'
+  | 'needlepoint-canvas'
+  | 'lace-ground'
 
 export interface FabricSeed {
   /** lower-kebab slug, unique across the fabric master list. */
