@@ -25,6 +25,7 @@ export type TutorialType =
   | 'GROWING_GUIDE'
   | 'REMEDY'
   | 'HERB_PROFILE'
+  | 'PATTERN'
 
 /**
  * Mindset practice metadata. Required when `type === 'PRACTICE'` or
@@ -258,6 +259,76 @@ export interface HerbalMetadata {
   requiresMedicalDisclaimer?: boolean
 }
 
+/**
+ * Sewing-specific tutorial metadata. Required when `type === 'PATTERN'` and
+ * for `type === 'TECHNIQUE'` rows that sit under the Sewing category.
+ * Null / omitted on every other type.
+ *
+ * Maps onto the `Tutorial.craftType / projectShape / requiredFabricTypes /
+ * requiredNotions / sewingMethod / fabricYardageMetres / finishedDimensionsCm /
+ * bodyMeasurementsRequired` columns added by `phase_sewing_pipeline_001`.
+ *
+ * `craftType` is the shared discriminator across craft pipelines — set to
+ * 'sewing' for every entry under this prompt. Future craft pipelines
+ * (knitting / crochet / fibre-arts / wood / pottery / paper) will reuse
+ * the same column with their own value.
+ *
+ * `projectShape` is required on PATTERN rows and gates the scope rule:
+ * fitted-garment patterns are out of launch scope. Valid values are
+ * `rectangle | gathered-rectangle | panel-construction | circle |
+ * from-measurements | unconstructed` — explicitly no `fitted-pattern`
+ * value at launch.
+ *
+ * `requiredFabricTypes` are slugs from the master `Fabric` table; the
+ * upload script validates them. `requiredNotions` are slugs from the
+ * master `SewingNotion` table; same validation.
+ *
+ * `sewingMethod` drives the "machine required?" filter — a chunk of the
+ * audience has no machine, and the public browse surfaces a hand-sewn-only
+ * filter.
+ */
+export type ProjectShape =
+  | 'rectangle'
+  | 'gathered-rectangle'
+  | 'panel-construction'
+  | 'circle'
+  | 'from-measurements'
+  | 'unconstructed'
+
+export type SewingMethod = 'hand-sewn' | 'machine' | 'mixed'
+
+export type BodyMeasurement =
+  | 'bust'
+  | 'waist'
+  | 'hip'
+  | 'inseam'
+  | 'desired-length'
+  | 'desired-width'
+  | 'shoulder-to-waist'
+  | 'shoulder-to-hem'
+  | 'head-circumference'
+  | 'wrist-circumference'
+  | 'thigh'
+  | 'upper-arm'
+
+export interface SewingMetadata {
+  /** 'sewing' for every entry under the Sewing pipeline. */
+  craftType: 'sewing'
+  /** Required on PATTERN rows; omit on TECHNIQUE rows. */
+  projectShape?: ProjectShape | null
+  /** Master Fabric slugs. Validated on upload. */
+  requiredFabricSlugs?: string[]
+  /** Master SewingNotion slugs. Validated on upload. */
+  requiredNotionSlugs?: string[]
+  sewingMethod?: SewingMethod | null
+  /** Rough yardage at the base size, metres, standard 112 cm fabric width. */
+  fabricYardageMetres?: number | null
+  /** Free-form JSON. Typical shape {widthCm, heightCm} or {widthCm, heightCm, depthCm}. */
+  finishedDimensionsCm?: Record<string, unknown> | null
+  /** Body measurements the pattern depends on. Empty on bag / cushion / curtain / etc. */
+  bodyMeasurementsRequired?: BodyMeasurement[] | string[]
+}
+
 export interface RecipeMetadata {
   /** Default yield. Drives the "Serves N" line and the scale selector. */
   servings?: number | null
@@ -436,6 +507,18 @@ export interface TutorialUploadInput {
   herbal?: HerbalMetadata | null
 
   /**
+   * Sewing metadata. Required when `type === 'PATTERN'` and for
+   * sewing-discipline TECHNIQUE rows. Null / omitted on every non-sewing
+   * tutorial. Maps onto the `Tutorial.craftType / projectShape /
+   * requiredFabricTypes / requiredNotions / sewingMethod /
+   * fabricYardageMetres / finishedDimensionsCm / bodyMeasurementsRequired`
+   * columns added by `phase_sewing_pipeline_001`. Fabric and notion
+   * slugs are validated against the master `Fabric` / `SewingNotion`
+   * tables at upload time.
+   */
+  sewing?: SewingMetadata | null
+
+  /**
    * Tools the recipe uses. The structured `equipmentList` TipTap block is
    * deferred; until then we accept tool references as a top-level array.
    * Each entry's `slug` must exist in the master `Tool` table.
@@ -576,7 +659,7 @@ export function validateInput(input: TutorialUploadInput): void {
   }
   const allowedTypes = [
     'RECIPE', 'TECHNIQUE', 'PRACTICE', 'READING', 'GROWING_GUIDE',
-    'REMEDY', 'HERB_PROFILE',
+    'REMEDY', 'HERB_PROFILE', 'PATTERN',
   ] as const
   if (input.type && !allowedTypes.includes(input.type)) {
     throw new Error(

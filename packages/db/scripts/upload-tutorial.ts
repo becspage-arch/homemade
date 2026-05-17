@@ -401,6 +401,7 @@ async function uploadTutorial(
   const practice = input.practice ?? null
   const garden = input.garden ?? null
   const herbal = input.herbal ?? null
+  const sewing = input.sewing ?? null
 
   // Resolve garden.plantSlug against the master `PlantVariety` table. Unknown
   // slugs fail up-front rather than silently inserting a tutorial with a
@@ -453,6 +454,46 @@ async function uploadTutorial(
       )
     }
     relatedConditionIds = condRows.map((r) => r.id)
+  }
+
+  // Resolve `sewing.requiredFabricSlugs` against the master Fabric table.
+  // Same loud-fail policy — a typo here would silently drop the fabric
+  // reference and leave a PATTERN tutorial without the "what fabric to
+  // buy" sidebar.
+  let requiredFabricTypes: string[] = []
+  if (sewing?.requiredFabricSlugs && sewing.requiredFabricSlugs.length > 0) {
+    const fabricRows = await prisma.fabric.findMany({
+      where: { slug: { in: sewing.requiredFabricSlugs } },
+      select: { slug: true },
+    })
+    const found = new Set(fabricRows.map((r) => r.slug))
+    const missing = sewing.requiredFabricSlugs.filter((s) => !found.has(s))
+    if (missing.length > 0) {
+      throw new Error(
+        `[sewing] requiredFabricSlugs not in master Fabric table: ${missing.join(', ')}. ` +
+        `Seed via seed-fabrics.ts or add to scripts/data/fabrics.ts first.`,
+      )
+    }
+    requiredFabricTypes = sewing.requiredFabricSlugs
+  }
+
+  // Resolve `sewing.requiredNotionSlugs` against the master SewingNotion
+  // table. Same loud-fail policy.
+  let requiredNotions: string[] = []
+  if (sewing?.requiredNotionSlugs && sewing.requiredNotionSlugs.length > 0) {
+    const notionRows = await prisma.sewingNotion.findMany({
+      where: { slug: { in: sewing.requiredNotionSlugs } },
+      select: { slug: true },
+    })
+    const found = new Set(notionRows.map((r) => r.slug))
+    const missing = sewing.requiredNotionSlugs.filter((s) => !found.has(s))
+    if (missing.length > 0) {
+      throw new Error(
+        `[sewing] requiredNotionSlugs not in master SewingNotion table: ${missing.join(', ')}. ` +
+        `Seed via seed-sewing-notions.ts or add to scripts/data/sewing-notions.ts first.`,
+      )
+    }
+    requiredNotions = sewing.requiredNotionSlugs
   }
 
   // Compute totalMinutes if not given. Falls back to the explicit
@@ -559,6 +600,17 @@ async function uploadTutorial(
     preparationType: herbal?.preparationType ?? null,
     safetyFlags: herbal?.safetyFlags ?? [],
     requiresMedicalDisclaimer: herbal?.requiresMedicalDisclaimer ?? true,
+    // Sewing metadata (phase_sewing_pipeline_001). Null on rows that
+    // aren't PATTERN or sewing-discipline TECHNIQUE.
+    craftType: sewing?.craftType ?? null,
+    projectShape: sewing?.projectShape ?? null,
+    requiredFabricTypes,
+    requiredNotions,
+    sewingMethod: sewing?.sewingMethod ?? null,
+    fabricYardageMetres: sewing?.fabricYardageMetres ?? null,
+    finishedDimensionsCm:
+      (sewing?.finishedDimensionsCm as Prisma.InputJsonValue | undefined) ?? undefined,
+    bodyMeasurementsRequired: (sewing?.bodyMeasurementsRequired as string[] | undefined) ?? [],
   }
 
   // Publish intent. --status PUBLISHED stamps publishedAt now and flips the

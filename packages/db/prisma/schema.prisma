@@ -505,6 +505,32 @@ model Tutorial {
   safetyFlags               String[] @default([])
   requiresMedicalDisclaimer Boolean  @default(true)
 
+  // ──────────────────────────────────────────────────────────────────────────
+  // Phase Sewing pipeline — sewing-specific metadata.
+  //
+  // Set on rows where `type IN (PATTERN, TECHNIQUE)` and `craftType` is
+  // 'sewing'. `craftType` is the shared discriminator across the craft
+  // categories — knitting / crochet / fibre-arts / wood / pottery /
+  // paper pipelines will reuse the same column when their pipelines
+  // land. `projectShape` documents what the construction looks like
+  // (rectangle / gathered-rectangle / panel-construction / circle /
+  // from-measurements / unconstructed). `requiredFabricTypes` +
+  // `requiredNotions` are slug references validated against the
+  // master `Fabric` / `SewingNotion` tables at upload time.
+  // `bodyMeasurementsRequired` is only meaningful on PATTERN rows
+  // where the cut sizes to the body — empty on bag / cushion /
+  // curtain / soft-toy / homewares patterns.
+  // ──────────────────────────────────────────────────────────────────────────
+
+  craftType                String?
+  projectShape             String?
+  requiredFabricTypes      String[] @default([])
+  requiredNotions          String[] @default([])
+  sewingMethod             String?
+  fabricYardageMetres      Float?
+  finishedDimensionsCm     Json?
+  bodyMeasurementsRequired String[] @default([])
+
   planDayMornings    UserPlanDay[]          @relation("PlanDayMorningPractice")
   planDayEvenings    UserPlanDay[]          @relation("PlanDayEveningPractice")
   planDayAnchors     UserPlanDay[]          @relation("PlanDayAnchorPractice")
@@ -541,6 +567,12 @@ model Tutorial {
   @@index([regionsApplicable], type: Gin)
   @@index([primaryHerbId])
   @@index([type, preparationType])
+  @@index([craftType])
+  @@index([type, craftType])
+  @@index([type, projectShape])
+  @@index([type, sewingMethod])
+  @@index([requiredFabricTypes], type: Gin)
+  @@index([requiredNotions], type: Gin)
 }
 
 enum TutorialType {
@@ -554,6 +586,11 @@ enum TutorialType {
   // steam). HERB_PROFILE is a single-herb materia-medica entry.
   REMEDY
   HERB_PROFILE
+  // Phase Sewing pipeline — PATTERN is a rectangle / gathered-rectangle /
+  // panel / circle / from-measurements project tutorial. Fitted-garment
+  // patterns (requiring pattern pieces, grading, digitisation) are out of
+  // scope at launch and use a separate workstream when added.
+  PATTERN
 }
 
 enum HeroStrategy {
@@ -2472,4 +2509,76 @@ model HerbConditionUse {
   @@unique([herbId, conditionId, preparationType])
   @@index([herbId])
   @@index([conditionId])
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Phase Sewing pipeline — master reference tables.
+//
+// Two additive tables underpin PATTERN and sewing-discipline TECHNIQUE
+// tutorials:
+//
+//   Fabric       — master fabric reference (~30 starter rows seeded via
+//                  `seed-fabrics.ts`). Slug-keyed; tutorials cross-link
+//                  fabrics via `Tutorial.requiredFabricTypes` String[].
+//   SewingNotion — haberdashery items: threads, elastics, bindings,
+//                  closures, stuffing, wadding, trims (~25 starter rows
+//                  via `seed-sewing-notions.ts`).
+//
+// See `docs/sewing-author.md` for the authoring shape and the locked
+// scope rule (no fitted-garment patterns at launch — rectangles, gathered
+// rectangles, panel construction, simple circles, and from-measurements
+// only).
+// ────────────────────────────────────────────────────────────────────────────
+
+model Fabric {
+  id   String @id @default(cuid())
+  slug String @unique
+  name String
+
+  /// 'light' | 'medium' | 'heavy' | 'upholstery'.
+  weightCategory String
+
+  /// Fibre tags. Multi-valued for blends.
+  /// 'cotton' | 'linen' | 'wool' | 'silk' | 'polyester' | 'nylon'
+  /// | 'viscose' | 'acrylic' | 'hemp' | 'bamboo' | 'rayon' | 'jute'.
+  fibreContent String[] @default([])
+
+  /// 'crisp' | 'flowing' | 'structured'.
+  drape String?
+
+  /// Grams per square metre. Optional — only when manufacturer-standard
+  /// is well-known (calico ~150-170, denim ~340-400).
+  gsm Int?
+
+  /// Project shapes the fabric suits. Free-form tags.
+  suitableFor String[] @default([])
+
+  /// 'woven-natural' | 'woven-synthetic' | 'knit' | 'non-woven'
+  /// | 'interfacing' | 'lining' | 'batting' | 'specialty'.
+  category String?
+
+  notes String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([weightCategory])
+  @@index([category])
+}
+
+model SewingNotion {
+  id   String @id @default(cuid())
+  slug String @unique
+  name String
+
+  /// 'closure' | 'interfacing' | 'thread' | 'binding' | 'elastic'
+  /// | 'stuffing' | 'trim' | 'fastener' | 'cord' | 'lining'.
+  category String
+
+  notes String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([category])
 }

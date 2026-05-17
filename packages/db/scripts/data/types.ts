@@ -207,3 +207,114 @@ export interface PlantSeed {
   /** Lower-case month names — when in season (sown / harvested / blooming). */
   seasonality?: string[]
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Fabric — Sewing master entity. Same free-form-string-with-literal-union
+// spelling-gate pattern as Ingredient + PlantVariety.
+// ─────────────────────────────────────────────────────────────────────────────
+
+export type FabricWeightCategory = 'light' | 'medium' | 'heavy' | 'upholstery'
+
+export type FabricFibre =
+  | 'cotton'
+  | 'linen'
+  | 'wool'
+  | 'silk'
+  | 'polyester'
+  | 'nylon'
+  | 'viscose'
+  | 'acrylic'
+  | 'hemp'
+  | 'bamboo'
+  | 'rayon'
+  | 'jute'
+
+export type FabricDrape = 'crisp' | 'flowing' | 'structured'
+
+export type FabricCategory =
+  | 'woven-natural'
+  | 'woven-synthetic'
+  | 'knit'
+  | 'non-woven'
+  | 'interfacing'
+  | 'lining'
+  | 'batting'
+  | 'specialty'
+
+/**
+ * Project-shape tags a fabric is suitable for. Drive the "what could I make
+ * from this fabric?" surface and the "what fabric should I buy?" sidebar on
+ * PATTERN tutorials. Free-form, with the documented vocabulary below.
+ */
+export type FabricSuitability =
+  | 'apron'
+  | 'bag'
+  | 'cushion'
+  | 'curtain-light'
+  | 'curtain-blackout'
+  | 'curtain-lined'
+  | 'quilt-top'
+  | 'quilt-back'
+  | 'quilt-batting'
+  | 'clothing-light'
+  | 'clothing-medium'
+  | 'clothing-heavy'
+  | 'soft-toy'
+  | 'tablecloth'
+  | 'tea-towel'
+  | 'napkin'
+  | 'pillowcase'
+  | 'baby-light'
+  | 'baby-medium'
+  | 'mending-patch'
+  | 'oven-mitt'
+  | 'pot-holder'
+  | 'reusable-kitchen'
+  | 'eye-mask'
+  | 'lining'
+  | 'interfacing-fusible'
+  | 'interfacing-sew-in'
+  | 'upholstery'
+  | 'rainwear'
+
+export interface FabricSeed {
+  /** lower-kebab slug, unique across the fabric master list. */
+  slug: string
+  /** Display name. UK terminology where the UK + US terms differ. */
+  name: string
+  weightCategory: FabricWeightCategory
+  fibreContent: FabricFibre[]
+  drape?: FabricDrape
+  /** Grams per square metre. Optional. */
+  gsm?: number
+  /** Project shapes the fabric suits. */
+  suitableFor: FabricSuitability[]
+  /** High-level browse category. Optional. */
+  category?: FabricCategory
+  /** UK sourcing + handling notes. Null when nothing useful. */
+  notes?: string
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SewingNotion — Sewing master haberdashery reference. Slug-keyed; same
+// free-form-string-with-literal-union pattern.
+// ─────────────────────────────────────────────────────────────────────────────
+
+export type SewingNotionCategory =
+  | 'closure'
+  | 'interfacing'
+  | 'thread'
+  | 'binding'
+  | 'elastic'
+  | 'stuffing'
+  | 'trim'
+  | 'fastener'
+  | 'cord'
+  | 'lining'
+
+export interface SewingNotionSeed {
+  slug: string
+  name: string
+  category: SewingNotionCategory
+  notes?: string
+}
