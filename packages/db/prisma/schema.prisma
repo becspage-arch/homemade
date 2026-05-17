@@ -348,6 +348,14 @@ model Tutorial {
   // no Media row exists, regardless of stored strategy, so callers stay safe.
   heroImageStrategy HeroStrategy @default(UNSET)
 
+  // Image-verification sweep accumulates rejected hero image sources here
+  // so re-sourcing across runs never reaches for a slot we've already
+  // burned. Values are ImageSource slugs (pexels / unsplash / wikimedia /
+  // pixabay / flux-schnell). After 3 distinct real-photo rejections the
+  // sweep forces the next attempt to Flux. See
+  // `packages/db/scripts/apply-media-verdicts.ts`.
+  excludedImageSources String[] @default([])
+
   // Lifecycle
   status       TutorialStatus @default(DRAFT)
   publishedAt  DateTime?

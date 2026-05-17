@@ -126,9 +126,12 @@ interface ApplySummary {
   rejectedNoRegen: number
   rejectedRegenerated: number
   rejectedRegenFailed: number
+  rejectedForcedToFlux: number
   notFound: number
   errors: string[]
 }
+
+const REAL_PHOTO_SOURCES: ImageSource[] = ['unsplash', 'pexels', 'wikimedia', 'pixabay']
 
 async function main(): Promise<void> {
   const flags = parseCliFlags(process.argv.slice(2))
@@ -160,6 +163,7 @@ async function main(): Promise<void> {
     rejectedNoRegen: 0,
     rejectedRegenerated: 0,
     rejectedRegenFailed: 0,
+    rejectedForcedToFlux: 0,
     notFound: 0,
     errors: [],
   }
@@ -183,6 +187,7 @@ async function main(): Promise<void> {
             excerpt: true,
             body: true,
             status: true,
+            excludedImageSources: true,
             category: { select: { slug: true } },
             subCategory: { select: { slug: true } },
           },
@@ -238,7 +243,33 @@ async function main(): Promise<void> {
 
     try {
       const ingredients = await topIngredients(tutorial.id)
-      const excludeSources: ImageSource[] = media.source ? [media.source as ImageSource] : []
+
+      // Accumulate the set of sources already rejected for this tutorial,
+      // both from prior sweep runs (stored on Tutorial.excludedImageSources)
+      // and the verdict we just stamped. Persist the new rejection before
+      // calling the orchestrator so a mid-run crash still records progress.
+      const priorExcluded = (tutorial.excludedImageSources ?? []) as ImageSource[]
+      const thisRejected: ImageSource | null = (media.source as ImageSource | null) ?? null
+      const accumulated = new Set<ImageSource>([
+        ...priorExcluded,
+        ...(thisRejected ? [thisRejected] : []),
+      ])
+      if (!flags.dryRun && thisRejected && !priorExcluded.includes(thisRejected)) {
+        await prisma.tutorial.update({
+          where: { id: tutorial.id },
+          data: { excludedImageSources: { push: thisRejected } },
+        })
+      }
+
+      // Cap: after 3 distinct real-photo rejections, force the next attempt
+      // to Flux by explicitly excluding every remaining real-photo source.
+      const realPhotoRejected = REAL_PHOTO_SOURCES.filter((s) => accumulated.has(s))
+      const forcedToFlux = realPhotoRejected.length >= 3
+      if (forcedToFlux) summary.rejectedForcedToFlux += 1
+      const excludeSources: ImageSource[] = forcedToFlux
+        ? Array.from(new Set<ImageSource>([...accumulated, ...REAL_PHOTO_SOURCES]))
+        : Array.from(accumulated)
+
       const result = await sourceHeroImage(
         {
           title: tutorial.title,
@@ -372,6 +403,7 @@ async function main(): Promise<void> {
   console.log(`  rejected (regen):  ${summary.rejectedRegenerated}`)
   console.log(`  rejected (failed): ${summary.rejectedRegenFailed}`)
   console.log(`  rejected (skip):   ${summary.rejectedNoRegen}`)
+  console.log(`  forced→Flux (cap): ${summary.rejectedForcedToFlux}`)
   console.log(`  not found:         ${summary.notFound}`)
   if (summary.errors.length) {
     console.log(`  errors (${summary.errors.length}):`)
