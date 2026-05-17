@@ -1,0 +1,116 @@
+{
+  "slug": "paris-brest",
+  "title": "Paris-Brest",
+  "subtitle": "Choux pastry ring filled with hazelnut praline cream",
+  "excerpt": "A classic French pastry of choux piped into a ring, baked hollow, then split and filled with a hazelnut praline cream. Created in 1910 to celebrate the Paris–Brest bicycle race. Serves eight.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Paris-Brest was created in 1910 by patissier Louis Durand in Maisons-Laffitte to celebrate the Paris–Brest–Paris bicycle race. The recipe is documented in French patisserie literature from the early twentieth century, placing it firmly in the public domain. Durand's original used a choux ring (to represent a wheel) filled with a praline mousseline cream. The recipe appears in numerous pre-1928 French professional patisserie guides in its modern form.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 45,
+    "cookMinutes": 35,
+    "restingMinutes": 30,
+    "chillingMinutes": 30,
+    "totalMinutes": 140,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The choux ring can be baked a day ahead and stored in an airtight tin. Fill no more than 2 hours before serving or the pastry will soften.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 125,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "fan oven; the ring needs 30–35 minutes until deeply golden and hollow when tapped; do not open the oven in the first 20 minutes",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "piping-bag", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "choux-pastry",
+      "term": "Choux pastry",
+      "definition": "A cooked paste of flour, butter, water, and egg that produces hollow shells when baked. The butter and water are brought to a boil, the flour is beaten in over the heat to form a stiff paste called the panade, then eggs are beaten in one at a time until the paste falls in a thick ribbon from the spoon. The high water content turns to steam in the oven and puffs the shells hollow from the inside. Choux contains no raising agent; the steam does all the work. Underbaking causes the shells to collapse when removed from the oven."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The two difficult stages are making the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "choux-pastry" } }], "text": "choux pastry" },
+          { "type": "text", "text": " and making the praline. The choux fails if underbaked; the ring must be fully dried in the oven before it comes out. The praline is caramel over toasted hazelnuts: it looks alarming when the sugar seizes, but keep stirring and it will come through." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 125, "unit": "g", "prepNote": "sifted", "isOptional": false, "groupLabel": "Choux" },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cubed", "isOptional": false, "groupLabel": "Choux" },
+            { "ingredientSlug": "whole-milk", "amount": 125, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Choux" },
+            { "ingredientSlug": "caster-sugar", "amount": 5, "unit": "g", "prepNote": "about 1 tsp", "isOptional": false, "groupLabel": "Choux" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": "a pinch", "isOptional": false, "groupLabel": "Choux" },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "each", "prepNote": "at room temperature", "isOptional": false, "groupLabel": "Choux" },
+            { "ingredientSlug": "hazelnuts", "amount": 100, "unit": "g", "prepNote": "blanched, toasted until golden", "isOptional": false, "groupLabel": "Praline" },
+            { "ingredientSlug": "caster-sugar", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Praline" },
+            { "ingredientSlug": "whipping-cream", "amount": 350, "unit": "ml", "prepNote": "cold", "isOptional": false, "groupLabel": "Cream" },
+            { "ingredientSlug": "icing-sugar", "amount": 30, "unit": "g", "prepNote": "plus extra for dusting", "isOptional": false, "groupLabel": "Cream" },
+            { "ingredientSlug": "blanched-almonds", "amount": 30, "unit": "g", "prepNote": "flaked or slivered, for scattering", "isOptional": true, "groupLabel": "Topping" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make and pipe the choux" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 190°C fan. Line a baking tray with paper and draw a 20 cm circle on the underside as a guide. Bring the {{whole-milk}}, 125 ml water, {{unsalted-butter}}, {{caster-sugar}} (choux portion), and {{sea-salt-fine}} to a boil in a medium saucepan. Remove from the heat and add the {{plain-flour}} all at once. Beat vigorously with a wooden spoon until the mixture forms a smooth ball that pulls away from the sides. Return to medium heat and stir for 2 minutes to dry the paste slightly. Transfer to a bowl and cool for 5 minutes. Beat in the {{eggs}} one at a time, each time waiting until the previous egg is fully incorporated; the paste is ready when it falls from the spoon in a thick, reluctant ribbon. Fit a piping bag with a 1.5 cm plain nozzle and pipe two concentric rings on the template line, then a third ring on top of the join. Scatter flaked {{blanched-almonds}} over the rings if using. Bake for 30 to 35 minutes until deeply golden and hollow when tapped. Poke several holes in the base with a skewer to release steam. Leave to cool completely on a rack." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make the praline" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Put the {{caster-sugar}} (praline portion) in a dry frying pan over medium heat. Do not stir until the edges begin to melt, then stir gently until all the sugar has dissolved and turned amber. Add the warm {{hazelnuts}} and stir to coat. Pour onto a sheet of lightly oiled baking paper and leave to set hard; about 20 minutes. Break into pieces and grind to a coarse powder in a food processor. It should have a sandy texture with some visible hazelnut pieces." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Fill and assemble" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whip the {{whipping-cream}} and {{icing-sugar}} to firm peaks. Fold in most of the praline, reserving 2 tablespoons for the top. Slice the choux ring in half horizontally. Pipe or spoon the praline cream into the bottom half generously. Replace the lid, dust with icing sugar, and scatter the reserved praline. Serve within 2 hours." }]
+      }
+    ]
+  }
+}

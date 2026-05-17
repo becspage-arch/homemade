@@ -1,0 +1,108 @@
+{
+  "slug": "madeleines",
+  "title": "Madeleines",
+  "subtitle": "French butter cakes in the shell mould",
+  "excerpt": "Classic French shell-shaped cakes made with browned butter, lemon zest, and honey, with the characteristic hump that comes from resting the batter cold before baking. Makes about twenty.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "biscuits",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Madeleines are a French baking preparation documented from the early eighteenth century, traditionally associated with Commercy in the Lorraine region. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: small shell-shaped cakes made with flour, butter, sugar, and eggs are documented in the French baking chapter. The beurre noisette version (browned butter) is recorded in the late nineteenth-century French domestic baking tradition. The distinctive hump produced by chilling the batter before baking is documented in interwar French cookbooks as the marker of a correctly made madeleine.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "20 madeleines",
+    "prepMinutes": 20,
+    "cookMinutes": 12,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "totalMinutes": 92,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The batter keeps covered in the fridge for up to 24 hours. Bake in batches as needed. Best eaten within 2 hours of baking.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "snack",
+    "mood": ["weekendBake", "cosy"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 130,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven, middle shelf; the hump forms in the first 4 minutes, after which the oven temperature can be dropped to 180°C to finish cooking through without over-browning the base",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "madeleine-tin", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "beurre-noisette",
+      "term": "Beurre noisette",
+      "definition": "Brown butter — butter cooked over medium heat until the milk solids turn golden and the aroma is nutty. Beurre noisette literally means hazelnut butter, named for the colour. In cake and biscuit baking it adds a caramelised depth that plain melted butter lacks. The process takes 5–7 minutes; watch it continuously once the foaming starts, as it goes from brown to burnt in under a minute. Remove from the heat as soon as the solids are amber and pour immediately into a cool bowl to stop the cooking."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The hump is the test of a madeleine. It forms because the cold batter hits the hot oven and the edges set before the centre has risen, forcing the rise upward. Chill the batter for at least an hour; overnight is better. The other requirement is " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "beurre-noisette" } }], "text": "beurre noisette" },
+          { "type": "text", "text": ": the nutty, caramelised flavour it adds is the point of a madeleine." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 130, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "baking-powder", "amount": 4, "unit": "g", "prepNote": "about ¾ tsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 2, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 3, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 130, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "honey", "amount": 20, "unit": "g", "prepNote": "about 1 tbsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "zest only", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 130, "unit": "g", "prepNote": "plus extra for the tin", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Brown the butter and make the batter" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Melt the {{unsalted-butter}} in a small saucepan over medium heat until the foam subsides and the solids turn amber and smell nutty; 5–7 minutes. Pour into a bowl and cool to room temperature. Whisk the {{eggs}}, {{caster-sugar}}, and {{honey}} together in a large bowl until pale and thick; about 3 minutes by hand. Add the {{lemon}} zest, the cooled brown butter, and the {{plain-flour}}, {{baking-powder}}, and {{sea-salt-fine}}, then fold gently until no flour streaks remain. Cover and refrigerate for at least 1 hour." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake in batches, 10–12 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 200°C fan. Brush the madeleine tin thoroughly with softened butter and dust with flour; invert and tap out the excess. Fill each shell mould two-thirds full with cold batter; do not overfill. Bake for 4 minutes at 200°C, then reduce to 180°C and bake for a further 6–8 minutes until the hump has formed, the edges are pulling away from the mould, and the tops spring back to a light touch. Unmould immediately onto a rack; wait 5 minutes before re-buttering the tin for the next batch." }]
+      }
+    ]
+  }
+}

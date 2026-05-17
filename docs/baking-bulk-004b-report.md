@@ -1,15 +1,17 @@
-# Baking bulk-004 — batch report
+# Baking bulk-004b — batch report
 
 **Date:** 2026-05-17  
 **Model:** claude-sonnet-4-6  
 **Status:** All 50 entries uploaded PUBLISHED  
-**Baking total (PUBLISHED):** 208 (was 158)
+**Baking total (PUBLISHED):** 258 (was 208 after bulk-004)
+
+This is the continuation batch for baking bulk-004. The parallel batch (`baking-bulk-004-report.md`) covered cake-decorating, sweets, pies, pastries, bread, cakes. This batch covers the remaining sub-categories.
 
 ---
 
 ## What was written
 
-50 entries across 7 sub-categories. This batch completed the baking backlog through the fourth bulk pass.
+50 entries across 7 sub-categories.
 
 ### Scones (3)
 `cathead-biscuits-southern`, `cheddar-chive-biscuits`, `singin-hinnies`
@@ -44,7 +46,7 @@
 
 - **Hokkaido milk bread:** `preFermentType: "NONE"` — tangzhong is a hydration technique, not a pre-ferment. Documented in glossaryTerms and method prose only.
 - **Vollkornbrot:** `bulkFermentMinutes: 720` (overnight rye ferment). `totalMinutes: 865`. German cuisine.
-- **Paris-Brest / éclairs / cream puffs:** `preFermentType: null` (choux; no yeast). Consistent with other non-yeasted pastry entries.
+- **Paris-Brest / éclairs / cream puffs:** `preFermentType: null` (choux; no yeast).
 - **Bakewell pudding:** traditional almond-egg-custard form (not frangipane tart). `dietaryFlags: ["glutenFree"]`.
 - **Chess pie:** uses `polenta` slug (aliases cornmeal) and `cider-vinegar`.
 - **Laminated pastries (pain-aux-raisins, kouign-amann):** `chillingMinutes` captures lamination resting time; `laminationFolds: 3`, `laminationRests: 3`.
@@ -53,7 +55,7 @@
 
 ## Voice check
 
-All 50 briefs passed `voice-check.ts` without failures. No em-dash pairs, no banned phrases, no tricolons found.
+All 50 briefs passed `voice-check.ts` without failures.
 
 ---
 

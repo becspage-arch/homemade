@@ -1,0 +1,97 @@
+{
+  "slug": "vollkornbrot",
+  "title": "Vollkornbrot",
+  "subtitle": "Dense German whole-grain rye loaf leavened with sourdough",
+  "excerpt": "A dense, moist German rye bread made almost entirely from whole rye flour and leavened with sourdough. Mixed the night before and baked slowly the next day. The crumb is close-grained and sliceable; the flavour is sour, earthy, and deeply satisfying. Seeds are mixed through the dough. Makes one loaf.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Vollkornbrot (whole grain bread) is a central part of the German baking tradition, documented in German cookery literature from the nineteenth century onward. The USDA public-domain publications on grain fermentation and rye bread chemistry document the high-acid sourdough fermentation required for rye breads, which degrades the starch-binding pentosans in rye and prevents gumminess. The formula — predominantly whole rye flour, long overnight fermentation, loaf tin bake — is consistent with the German Brotordnung (bread order) standards documented in public-domain German food regulation texts.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (about 1.1 kg)",
+    "prepMinutes": 20,
+    "cookMinutes": 65,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 865,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice the cooled loaf and freeze in a bag. Slices defrost in 20 minutes at room temperature.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The flavour deepens significantly on day 2 and 3. Wrap in beeswax cloth and keep at room temperature for up to 5 days.",
+    "dietaryFlags": ["vegan", "dairyFree"],
+    "cuisine": "german",
+    "mealType": "side",
+    "mood": ["weekendBake", "slowSunday"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 90,
+      "saltPercent": 2,
+      "yeastPercent": null,
+      "levainPercent": 30,
+      "bulkFermentMinutes": 720,
+      "proofMinutes": 60,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven; the loaf bakes covered for 30 minutes, then uncovered for 35 minutes; the internal temperature should reach 96°C",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rye dough is not kneadable in the usual sense: rye contains almost no gluten-forming proteins, so the dough behaves more like a thick batter than a bread dough. It is stirred, not stretched. The high-acid sourdough fermentation is essential — it activates enzymes that break down the pentosans in rye, which would otherwise make the crumb gummy. Do not cut the loaf for at least 24 hours after baking; it needs time for the crumb to set." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "rye-flour", "amount": 400, "unit": "g", "prepNote": "whole rye (dark rye)", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "strong-bread-flour", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sourdough-starter", "amount": 150, "unit": "g", "prepNote": "rye-fed if possible, active", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 450, "unit": "ml", "prepNote": "room temperature", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sunflower-seeds", "amount": 75, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pumpkin-seeds", "amount": 75, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caraway-seeds", "amount": 10, "unit": "g", "prepNote": "about 2 tsp", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Mix and overnight ferment" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the {{rye-flour}}, {{strong-bread-flour}}, {{sourdough-starter}}, {{sea-salt-fine}}, and {{water}} in a large bowl. Stir vigorously with a sturdy wooden spoon or spatula until thoroughly combined; it will look and feel like a very thick porridge. Stir in the {{sunflower-seeds}}, {{pumpkin-seeds}}, and {{caraway-seeds}}. Oil a 2 lb loaf tin, pack the dough in firmly with wet hands, and smooth the top. Cover tightly with clingfilm and leave at room temperature for 8 to 12 hours overnight. The surface should look slightly risen and show small cracks or bubbles." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 60–65 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 200°C fan. Cover the tin tightly with foil and bake for 30 minutes. Remove the foil and bake for a further 30 to 35 minutes until the loaf has shrunk slightly from the sides, feels firm when pressed, and reaches 96°C internally on a probe thermometer. Turn out onto a rack. Leave to cool completely, then wrap and rest for at least 24 hours before cutting; the crumb sets and the flavour mellows during this rest." }]
+      }
+    ]
+  }
+}

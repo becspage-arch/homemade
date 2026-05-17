@@ -1,0 +1,120 @@
+{
+  "slug": "macaron-chocolate",
+  "title": "Chocolate macarons",
+  "subtitle": "French almond meringue shells with chocolate ganache",
+  "excerpt": "French macaron shells made with almond flour, icing sugar, and an Italian meringue, sandwiched with a dark chocolate ganache. Sensitive to moisture and technique. Makes about twenty-four sandwich pairs.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "biscuits",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The French macaron in its sandwich form is a twentieth-century patisserie development, not documented in the nineteenth-century public-domain baking literature that covers the plain almond meringue biscuit (macaron simple). Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: almond meringue biscuits made with egg white, sugar, and ground almonds are documented in the biscuit chapter as the foundational preparation from which the sandwiched macaron derives. The Italian meringue method (hot sugar syrup poured into egg whites) is documented in multiple European pastry references from the late nineteenth century. This recipe synthesises the Italian meringue shell technique with a standard dark chocolate ganache filling.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "24 sandwich pairs",
+    "prepMinutes": 45,
+    "cookMinutes": 14,
+    "restingMinutes": 60,
+    "chillingMinutes": 0,
+    "totalMinutes": 119,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze filled macarons in a single layer, then bag once solid, for up to 1 month. Thaw in the fridge overnight.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Filled macarons improve overnight in the fridge; the shell softens slightly and the flavour integrates.",
+    "dietaryFlags": ["glutenFree", "dairyFree"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 150,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 150,
+      "bakeTemperatureNote": "fan oven, one tray at a time, middle shelf; the shells should have a dry, matt surface and a distinct foot (the ruffled base) before they are removed",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "piping-bag", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false },
+    { "slug": "sugar-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "macaronage",
+      "term": "Macaronage",
+      "definition": "The folding stage of macaron-making in which the dry almond mixture is worked into the meringue to deflate it partially and produce a batter with the correct consistency. The target is a batter that falls from the spatula in a thick, slow ribbon and settles flat within 10 seconds. Under-macaronaged batter produces shells with a peak that doesn't sink; over-macaronaged batter is too liquid and spreads flat without rising. The fold uses a figure-of-eight motion against the side of the bowl, pressing the batter against the bowl wall to knock out the large air bubbles."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Macarons fail for three reasons: incorrect meringue stiffness, incorrect " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "macaronage" } }], "text": "macaronage" },
+          { "type": "text", "text": ", and humidity. Dry weather makes the bake more reliable. The resting period (30–60 minutes after piping) is not optional — it forms a skin on the shell that creates the foot during baking." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "almond-flour", "amount": 150, "unit": "g", "prepNote": "sifted; discard any large pieces", "isOptional": false, "groupLabel": "Shells" },
+            { "ingredientSlug": "icing-sugar", "amount": 150, "unit": "g", "prepNote": "sifted", "isOptional": false, "groupLabel": "Shells" },
+            { "ingredientSlug": "cocoa-powder", "amount": 15, "unit": "g", "prepNote": "sifted", "isOptional": false, "groupLabel": "Shells" },
+            { "ingredientSlug": "egg-whites", "amount": 110, "unit": "g", "prepNote": "aged (left uncovered in the fridge for 24 hours)", "isOptional": false, "groupLabel": "Shells" },
+            { "ingredientSlug": "caster-sugar", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Italian meringue" },
+            { "ingredientSlug": "dark-chocolate", "amount": 120, "unit": "g", "prepNote": "70% cocoa, finely chopped", "isOptional": false, "groupLabel": "Ganache" },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Ganache" },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "cubed", "isOptional": false, "groupLabel": "Ganache" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make the Italian meringue" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Place the {{caster-sugar}} in a small saucepan with 40 ml cold water. Bring to a boil over medium heat without stirring. When the syrup reaches 110°C, begin whisking half the {{egg-whites}} in the stand mixer on medium speed. When the syrup reaches 118°C, pour it in a thin, steady stream down the side of the bowl into the whisking egg whites, avoiding the whisk. Increase to high speed and whisk until the meringue is thick, glossy, and the bowl feels cool to the touch. If hot syrup touches skin, run cold water over it for at least ten minutes and seek medical care if needed." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Macaronage and rest" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the sifted {{almond-flour}}, {{icing-sugar}}, and {{cocoa-powder}} in a bowl. Stir the remaining {{egg-whites}} (unwhipped) through the dry mix to form a stiff paste. Fold in the meringue in three additions, using a wide spatula with a figure-of-eight motion against the bowl wall. After the third addition, press the batter firmly against the side of the bowl with each stroke to deflate it. The correct consistency is a thick ribbon that falls from the spatula and sinks flat within 10 seconds. Pipe 3.5 cm rounds on lined trays (a template drawn on paper under the baking paper helps). Tap the trays firmly on the worktop twice to release air bubbles. Leave uncovered at room temperature for 30–60 minutes until the surface is dry to a light touch." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake one tray at a time, 12–14 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 150°C fan. Bake one tray at a time for 12–14 minutes. The shells should have a distinct ruffled foot and a dry, matt surface. Gently lift one shell; the base should peel cleanly without sticking. Leave to cool fully on the tray before filling." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make the ganache and fill" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bring the {{double-cream}} to a simmer in a small saucepan, then pour over the {{dark-chocolate}} in a bowl. Leave for 1 minute, then stir from the centre outward until smooth. Stir in the {{unsalted-butter}}. Leave to cool to room temperature, then refrigerate for 20 minutes until the ganache holds its shape when piped. Pipe a small dome of ganache onto the flat side of half the shells and sandwich with the remaining shells. Refrigerate overnight before serving." }]
+      }
+    ]
+  }
+}

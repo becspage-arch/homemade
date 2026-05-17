@@ -1,0 +1,111 @@
+{
+  "slug": "new-york-cheesecake",
+  "title": "New York cheesecake",
+  "subtitle": "Dense baked cream cheese cheesecake with a plain pastry base",
+  "excerpt": "A dense, tall American baked cheesecake made with full-fat cream cheese and baked low and slow in a water bath for an even, crack-free set. Serves ten to twelve.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Baked cream cheese cake is documented in US domestic cookbooks from the late nineteenth century. Lettice Bryan, The Kentucky Housewife (1839), public domain: a baked curd cheese cake using eggs, cream, and sugar is documented as a domestic preparation. The New York cream cheese style developed through the twentieth century; the dense, smooth result is achieved through the water bath baking method and extended cold chilling. USDA Cooperative Extension Service publications on dairy baking document the cream cheese cheesecake as one of the most widely reproduced American domestic cake recipes.",
+  "recipe": {
+    "servings": 12,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 75,
+    "restingMinutes": 60,
+    "chillingMinutes": 480,
+    "totalMinutes": 645,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Must be made at least 8 hours ahead; overnight is better. Keep refrigerated. Remove 20 minutes before serving.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 100,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 160,
+      "bakeTemperatureNote": "fan oven, middle shelf, water bath; the cheesecake is done when the edges are set and the centre has a slight wobble — it firms during the overnight refrigeration",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": false },
+    { "slug": "springform-tin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "water-bath",
+      "term": "Water bath",
+      "definition": "A bain-marie baking method in which the tin sits in a larger tray of hot water during baking. The water moderates the oven temperature around the tin, producing a gentle, even heat that prevents the exterior of a cheesecake or custard from setting faster than the centre. The result is a smooth surface rather than a cracked or sunken one. Wrap the outside of a springform tin in two layers of foil before using a water bath to prevent water seeping through the base join."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A New York cheesecake needs two things: full-fat cream cheese and patience. Bake it in a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "water-bath" } }], "text": "water bath" },
+          { "type": "text", "text": " for an even set without cracks, and refrigerate it overnight. Slicing while the cheesecake is still warm produces a gluey, sunken result." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 12,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Base" },
+            { "ingredientSlug": "caster-sugar", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Base" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": "cold, cubed", "isOptional": false, "groupLabel": "Base" },
+            { "ingredientSlug": "egg-yolks", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "Base" },
+            { "ingredientSlug": "cream-cheese", "amount": 900, "unit": "g", "prepNote": "full-fat, at room temperature", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "caster-sugar", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "plain-flour", "amount": 25, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "each", "prepNote": "at room temperature", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "soured-cream", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "vanilla-bean-paste", "amount": 5, "unit": "ml", "prepNote": "about 1 tsp", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 2, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Filling" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make and bake the base" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 180°C fan. Wrap the outside of a 23 cm springform tin in two layers of foil (to prevent the water bath leaking in). Rub the base {{unsalted-butter}} into the base {{plain-flour}} and {{caster-sugar}} until crumbs form, then stir in the {{egg-yolks}} to bind. Press evenly into the base of the tin. Blind-bake for 12 minutes until pale gold. Remove and cool while you make the filling. Reduce the oven to 160°C fan." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make the filling and bake, 65–75 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Beat the {{cream-cheese}} and filling {{caster-sugar}} on low speed until smooth; do not introduce air by beating on high. Beat in the filling {{plain-flour}}, then add the {{eggs}} one at a time on low speed. Finally beat in the {{soured-cream}}, {{vanilla-bean-paste}}, and {{sea-salt-fine}}. Pour the batter over the cooled base. Place the foil-wrapped tin in a deep roasting tin and pour in enough boiling water to come 3 cm up the side of the springform. Bake for 65–75 minutes until the edges are set and the centre wobbles gently when the tin is nudged; like set jelly. Turn off the oven, prop the door open 5 cm, and leave for 1 hour. Remove from the water bath and cool to room temperature, then refrigerate overnight before unmoulding." }]
+      }
+    ]
+  }
+}

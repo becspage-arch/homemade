@@ -1,0 +1,119 @@
+{
+  "slug": "sourdough-ciabatta",
+  "title": "Sourdough ciabatta",
+  "subtitle": "Open-crumb Italian loaf leavened with a ripe levain",
+  "excerpt": "Ciabatta made with a naturally leavened starter and a very wet dough. The high hydration produces the characteristic open, irregular crumb; the shape is rustic and flat, hence the name. Requires four sets of coil folds during bulk fermentation. Makes two loaves.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ciabatta was developed in the Veneto region of Italy in the 1980s and is first documented in Italian baking literature from that period. The sourdough version substitutes commercial yeast for a naturally fermented levain. The technique — high-hydration dough, minimal shaping, coil folds during bulk fermentation — is synthesised from established artisan bread-making practices documented in professional baker literature (Hamelman, Bread, 2004; Robertson, Tartine Bread, 2010), which are widely cited in the public domain.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "2 loaves",
+    "prepMinutes": 30,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 355,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze fully cooled loaves whole or sliced. Reheat from frozen in a hot oven for 10 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "After shaping, cold-prove in the fridge overnight (8–12 hours) and bake straight from cold, adding 3 minutes to the bake time.",
+    "dietaryFlags": ["vegan", "dairyFree"],
+    "cuisine": "italian",
+    "mealType": "side",
+    "mood": ["weekendBake", "slowSunday"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 80,
+      "saltPercent": 2,
+      "yeastPercent": null,
+      "levainPercent": 20,
+      "bulkFermentMinutes": 240,
+      "proofMinutes": 60,
+      "retardingMinutes": null,
+      "levainBuildMinutes": 240,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 250,
+      "bakeTemperatureNote": "fan oven at maximum temperature; the loaves need 22–25 minutes until deeply coloured and hollow-sounding when tapped on the base",
+      "steamMethod": "water tray on the oven floor for the first 10 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "autolyse",
+      "term": "Autolyse",
+      "definition": "A rest period of 20 to 60 minutes after mixing flour and water, before adding the starter or yeast and salt. During the autolyse, the flour hydrates fully and gluten begins to develop passively through the natural rearrangement of protein molecules. The result is a more extensible dough that is easier to fold and shape. The autolyse is particularly useful for high-hydration doughs such as ciabatta and baguette, where a shorter mixing time reduces oxidation and preserves the wheaty flavour of the flour."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Build your levain 4 hours before you want to mix: combine 50 g of your active {{sourdough-starter}} with 50 g {{strong-bread-flour}} and 50 g water. Cover and leave at room temperature until doubled and bubbly. This wet dough is handled entirely in the bowl; there is no kneading. The open crumb comes from the combination of high hydration, adequate gluten development through folding, and a fully active levain. An " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "autolyse" } }], "text": "autolyse" },
+          { "type": "text", "text": " starts the gluten before the starter goes in." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sourdough-starter", "amount": 100, "unit": "g", "prepNote": "ripe levain, built 4 hours before mixing", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 400, "unit": "ml", "prepNote": "room temperature; 375 ml for mixing, 25 ml for dissolving salt", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Autolyse, 30 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the {{strong-bread-flour}} and 375 ml of the {{water}} in a large bowl. Mix until no dry flour remains. Cover and leave for 30 minutes." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Add levain and salt" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour the ripe {{sourdough-starter}} over the autolysed dough. Dissolve the {{sea-salt-fine}} in the remaining 25 ml of {{water}} and add that too. Work everything in with wet hands, squeezing the dough through your fingers until the starter is fully incorporated and no streaks remain." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bulk fermentation, 4 hours" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover the bowl. During the first 2 hours, perform 4 sets of coil folds, one set every 30 minutes: wet your hand, reach under the dough at one end, lift and stretch it up, then fold it over the centre. Rotate and repeat on all four sides. The dough will feel loose at first and progressively tighter with each set. Leave undisturbed for the remaining 2 hours. The dough is ready when it has grown by about 50%, looks airy, and jiggles when you shake the bowl." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Divide, shape, and proof" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Flour the work surface generously with rice flour or plain flour. Tip the dough out gently without degassing. Use a bench scraper and floured hands to divide it in two. Shape each piece loosely into a rough rectangle by folding the sides in; do not tension the dough tightly. Lift onto a well-floured cloth or two floured baking trays, seam-side down. Proof at room temperature for 60 minutes until puffy but not fully risen." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 22–25 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 250°C fan with a roasting tray on the bottom shelf. When the oven is hot, pour 200 ml of boiling water into the tray for steam. Flour the loaves, then flip each one onto a baking tray so it is seam-side up. Slide into the oven and bake for 22 to 25 minutes until deeply coloured and hollow-sounding when tapped. Cool on a rack for at least 45 minutes before cutting." }]
+      }
+    ]
+  }
+}

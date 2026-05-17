@@ -1,0 +1,110 @@
+{
+  "slug": "nyc-cookies",
+  "title": "New York chocolate chip cookies",
+  "subtitle": "Thick, chewy bakery-style cookies with dark chocolate",
+  "excerpt": "Thick, bakery-style chocolate chip cookies made with browned butter, dark brown sugar, and rested cold dough. Baked at high heat for crisp edges and a fudgy centre. Makes about sixteen.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "biscuits",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The thick, chewy American bakery-style chocolate chip cookie is a late twentieth-century development. The foundational chocolate chip cookie recipe was developed by Ruth Wakefield at the Toll House restaurant in the 1930s and entered the public domain; the Nestlé Toll House recipe is widely reproduced. The New York bakery style (browned butter, high brown-sugar proportion, cold-rested dough, high initial oven temperature) is a modern refinement synthesised from the public-domain base. USDA publications on baking chemistry document the effect of cold-resting on cookie spread and texture.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "16 cookies",
+    "prepMinutes": 20,
+    "cookMinutes": 14,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "totalMinutes": 94,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze portioned raw dough balls on a tray, then bag once solid, for up to 3 months. Bake from frozen, adding 3 minutes.",
+    "batchable": true,
+    "batchNotes": "Double easily; portion and freeze half the dough for a later batch.",
+    "makeAheadNotes": "The dough improves with 24–48 hours in the fridge; the flavour deepens and the edges crisp better.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "snack",
+    "mood": ["weekendBake", "cosy"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 280,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "fan oven, middle shelf; the edges should be set and golden and the centre should look slightly underdone — it firms as it cools on the tray",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "brown-butter",
+      "term": "Brown butter",
+      "definition": "Butter that has been cooked over medium heat until the milk solids turn golden and the aroma becomes nutty. The French term is beurre noisette (hazelnut butter). The process drives off water and caramelises the milk solids, producing a more complex flavour than plain melted butter. In baking, brown butter adds a deeper, toffee-like note to biscuits, cakes, and madeleines. The key is to watch it constantly and remove from the heat as soon as the foam subsides and the solids are amber — the residual heat will darken it further in the pan."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two things make these different from a standard cookie: " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brown-butter" } }], "text": "brown butter" },
+          { "type": "text", "text": " for depth, and cold-rested dough for thickness. The cold rest firms the fat and reduces spread; without it the cookies flatten into discs. Bake until the edges are set and the centre still looks soft — it firms completely on the tray in under 5 minutes." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 280, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bicarbonate-of-soda", "amount": 5, "unit": "g", "prepNote": "about 1 tsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 5, "unit": "g", "prepNote": "about 1 tsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 230, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dark-brown-sugar", "amount": 220, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vanilla-extract", "amount": 10, "unit": "ml", "prepNote": "about 2 tsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chocolate-chips", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 3, "unit": "g", "prepNote": "for finishing", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Brown the butter and mix" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Melt the {{unsalted-butter}} in a small saucepan over medium heat, stirring occasionally. Continue cooking until the foam subsides and the milk solids turn amber and smell nutty; 5–7 minutes. Pour immediately into a large bowl and cool for 10 minutes. Whisk in the {{dark-brown-sugar}} and {{caster-sugar}} until smooth. Add the {{eggs}} one at a time, whisking after each, then whisk in the {{vanilla-extract}}. Fold in the {{plain-flour}}, {{bicarbonate-of-soda}}, and {{sea-salt-fine}} with a spatula until no flour streaks remain. Fold in the {{chocolate-chips}}. Cover and refrigerate for at least 1 hour." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Portion and bake, 12–14 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 190°C fan. Line two baking trays with baking paper. Scoop balls of about 70 g each (a large ice-cream scoop) and space 7 cm apart; the cookies spread considerably. Scatter a pinch of {{sea-salt-flakes}} over each if using. Bake for 12–14 minutes until the edges are set and golden and the centres look slightly underdone. Leave on the tray for 5 minutes before transferring; they firm completely as they cool." }]
+      }
+    ]
+  }
+}

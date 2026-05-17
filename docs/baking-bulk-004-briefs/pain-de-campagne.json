@@ -1,0 +1,121 @@
+{
+  "slug": "pain-de-campagne",
+  "title": "Pain de campagne",
+  "subtitle": "French country sourdough with a proportion of rye",
+  "excerpt": "A French country loaf made with a blend of strong white flour and rye flour, leavened with a mature levain. The rye adds a mild earthiness and keeps the crumb moist; the long bulk fermentation develops flavour. Shaped as a boule and baked in a covered pot. Makes one large loaf.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Pain de campagne is the traditional French country loaf, made with a blend of white and darker flour and naturally fermented. French breadmaking laws and guild records document naturally leavened country breads from the medieval period onward. The USDA public-domain publications on grain fermentation document wild-yeast leavening techniques consistent with this recipe. The specific formula — a levain of 20% flour weight, mixed white and rye flour, long bulk fermentation — is consistent with the published tradition of the French Compagnons Boulangers.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 large loaf (about 900 g)",
+    "prepMinutes": 30,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 430,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Cool completely, slice, and freeze in a bag for up to 2 months. Toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "After shaping and placing in the banneton, cover and cold-prove in the fridge overnight (8–12 hours). Bake straight from the fridge, adding 5 minutes to the bake time.",
+    "dietaryFlags": ["vegan", "dairyFree"],
+    "cuisine": "french",
+    "mealType": "side",
+    "mood": ["weekendBake", "slowSunday"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 73,
+      "saltPercent": 2,
+      "yeastPercent": null,
+      "levainPercent": 20,
+      "bulkFermentMinutes": 240,
+      "proofMinutes": 120,
+      "retardingMinutes": 480,
+      "levainBuildMinutes": 240,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 240,
+      "bakeTemperatureNote": "fan oven, lid on for first 20 minutes; remove lid and continue until the crust is a deep mahogany",
+      "steamMethod": "dutch-oven lid for first 20 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "banneton", "isOptional": false },
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": true },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "levain",
+      "term": "Levain",
+      "definition": "A portion of active sourdough starter refreshed with fresh flour and water and left to ferment for several hours before use. Building a fresh levain concentrates the wild yeast and bacteria activity and ensures a predictable, vigorous rise. A levain is ready when it has roughly doubled in volume, looks domed and bubbly, and a small spoonful dropped into water floats. The percentage given in a bread formula refers to the levain weight as a proportion of the total flour weight."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Build your " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "levain" } }], "text": "levain" },
+          { "type": "text", "text": " 4 hours before mixing: combine 50 g of your active {{sourdough-starter}} with 50 g {{strong-bread-flour}} and 50 g water. Cover and leave at room temperature. The levain is ready when doubled, domed, and a spoonful floats in water. The rye flour makes the dough slightly stickier than a pure white sourdough; resist adding more flour." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rye-flour", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sourdough-starter", "amount": 100, "unit": "g", "prepNote": "ripe levain — see intro", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 365, "unit": "ml", "prepNote": "room temperature; 340 ml for mixing, 25 ml for dissolving salt", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Mix and autolyse, 30 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the {{strong-bread-flour}}, {{rye-flour}}, and 340 ml of the {{water}} in a large bowl. Mix until no dry flour remains. Cover and rest for 30 minutes." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Add levain and salt" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour the ripe {{sourdough-starter}} over the autolysed dough. Dissolve the {{sea-salt-fine}} in the remaining 25 ml {{water}} and add that too. Incorporate with wet hands until no streaks remain." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bulk fermentation, 4 hours" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover the bowl. During the first 2 hours, perform 4 sets of stretch-and-fold, one set every 30 minutes: reach under one side of the dough, stretch it up, and fold it over the top; turn the bowl 90 degrees and repeat four times. The dough will become smoother and more elastic with each set. Leave undisturbed for the remaining 2 hours until airy and increased by about 50%." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Shape and prove" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Flour the work surface lightly. Turn the dough out and pre-shape into a rough round; bench-rest for 20 minutes. Then shape into a tight boule: fold the edges into the centre, flip the dough over, and use cupped hands to drag it toward you to build surface tension. Place seam-side up in a well-floured banneton. Cover and prove at room temperature for 2 hours, or refrigerate overnight." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 38–40 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 240°C fan with a dutch oven inside for at least 45 minutes. Tip the loaf from the banneton onto a square of baking paper. Score the surface with a sharp knife or lame. Lift carefully into the hot pot, replace the lid, and bake for 20 minutes. Remove the lid and bake for a further 18 to 20 minutes until the crust is deeply coloured. Cool on a rack for at least 1 hour before cutting." }]
+      }
+    ]
+  }
+}
