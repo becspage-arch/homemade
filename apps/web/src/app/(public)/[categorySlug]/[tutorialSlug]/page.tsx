@@ -333,6 +333,8 @@ export default async function TutorialPage({ params }: PageProps) {
         makeAheadSummary: tutorial.makeAheadNotes,
         foundational: tutorial.foundational,
       }}
+      requiresKiln={tutorial.requiresKiln}
+      requiresWheel={tutorial.requiresWheel}
       body={
         <TutorialContent
           content={body}

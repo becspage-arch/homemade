@@ -61,6 +61,32 @@
   border-bottom-color: var(--color-forest);
 }
 
+.category-equipment-filter {
+  margin: 24px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 12px;
+}
+
+.category-equipment-filter-link {
+  font-family: var(--font-lora);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  text-decoration: none;
+  padding: 6px 14px;
+  border: 0.5px solid var(--color-sage);
+  border-radius: 999px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.category-equipment-filter-link:hover {
+  background: var(--color-sage);
+  color: var(--color-linen-cream);
+}
+
 .category-empty {
   margin: 48px auto 0;
   max-width: 540px;

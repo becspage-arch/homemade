@@ -44,6 +44,21 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
+.tutorial-card-equipment-badge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  font-family: var(--font-lora);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(74, 56, 40, 0.85);
+  color: var(--color-linen-cream);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
 .tutorial-card-progress {
   font-family: var(--font-lora);
   font-size: 11px;

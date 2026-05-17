@@ -321,3 +321,72 @@ export interface SewingNotionSeed {
   category: SewingNotionCategory
   notes?: string
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// ClayBody — Pottery & ceramics master clay-body registry.
+// CraftMaterial — Pottery & ceramics master raw-materials registry (also
+// reusable across future jewellery / paper / wood-finishing pipelines).
+// Same free-form-string-with-literal-union spelling-gate pattern as the
+// Sewing tables.
+// ─────────────────────────────────────────────────────────────────────────────
+
+export type ClayBodyType =
+  | 'earthenware'
+  | 'stoneware'
+  | 'porcelain'
+  | 'paper-clay'
+  | 'polymer'
+  | 'air-dry'
+  | 'raku'
+  | 'terracotta'
+
+export interface ClayBodySeed {
+  /** lower-kebab slug, unique across the clay-body master list. */
+  slug: string
+  /** Display name. UK terminology. */
+  name: string
+  bodyType: ClayBodyType
+  /** Cone range ("06-04", "6", "9-10"). Null on no-fire bodies. */
+  firingRangeCones?: string
+  /** True when a kiln is required to vitrify the body. */
+  requiresKiln: boolean
+  /** Shrinkage range ("12-14%"). Null on no-fire bodies. */
+  shrinkagePercent?: string
+  /** Plasticity / hand-building / wheel notes. */
+  notes?: string
+}
+
+export type CraftMaterialCraft =
+  | 'pottery'
+  | 'jewellery'
+  | 'paper'
+  | 'wood-finishing'
+
+export type PotteryMaterialCategory =
+  | 'clay-tool-attached'
+  | 'glaze-raw'
+  | 'glaze-colourant'
+  | 'glaze-premixed'
+  | 'underglaze'
+  | 'kiln-furniture'
+
+export interface CraftMaterialSeed {
+  /** lower-kebab slug, unique across the craft-material master list. */
+  slug: string
+  /** Display name. UK terminology. */
+  name: string
+  craft: CraftMaterialCraft
+  /** Sub-category within the craft. */
+  category: string
+  /**
+   * True for raw silica, heavy-metal oxides at studio quantity, and any
+   * material requiring respirator + dedicated mixing space. The upload
+   * script refuses no-equipment-track tutorials referencing rows where
+   * this is true.
+   */
+  trainedEnvironmentOnly: boolean
+  /** Hazard summary surfaced verbatim by the renderer. Null when none. */
+  hazardNotes?: string
+  /** Sourcing / handling / typical-use notes. */
+  notes?: string
+}

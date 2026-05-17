@@ -92,6 +92,10 @@ export interface TutorialChromeProps {
   attribution?: TutorialAttribution | null
   /** Recipe-side metadata for the info bar — null for techniques. */
   recipeMeta?: TutorialRecipeMeta | null
+  /** Pottery equipment-barrier flag. Set true on tutorials needing a kiln. */
+  requiresKiln?: boolean
+  /** Pottery equipment-barrier flag. Set true on tutorials needing a wheel. */
+  requiresWheel?: boolean
   /** The rendered tutorial body. */
   body: ReactNode
   /**
@@ -190,6 +194,8 @@ export function TutorialChrome(props: TutorialChromeProps) {
     sourceNotes,
     attribution,
     recipeMeta,
+    requiresKiln,
+    requiresWheel,
     body,
     linkBreadcrumb = true,
     actionsSlot,
@@ -197,6 +203,14 @@ export function TutorialChrome(props: TutorialChromeProps) {
     rightRail,
     footerSlot,
   } = props
+  const equipmentLabel =
+    requiresKiln && requiresWheel
+      ? 'Kiln + wheel'
+      : requiresKiln
+        ? 'Requires a kiln'
+        : requiresWheel
+          ? 'Requires a wheel'
+          : null
   const hasRails = Boolean(leftRail || rightRail)
   const isRecipe = recipeMeta?.type === 'RECIPE'
 
@@ -260,6 +274,12 @@ export function TutorialChrome(props: TutorialChromeProps) {
             <dt>Difficulty</dt>
             <dd>{DIFFICULTY_LABEL[difficulty] ?? difficulty.toLowerCase()}</dd>
           </div>
+          {equipmentLabel && (
+            <div>
+              <dt>Equipment</dt>
+              <dd>{equipmentLabel}</dd>
+            </div>
+          )}
           {isRecipe && recipeMeta?.prepMinutes != null && (
             <div>
               <dt>Prep</dt>

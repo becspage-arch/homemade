@@ -17,7 +17,7 @@ export const dynamic = 'force-dynamic'
 
 interface PageProps {
   params: Promise<{ categorySlug: string }>
-  searchParams: Promise<{ difficulty?: string }>
+  searchParams: Promise<{ difficulty?: string; equipment?: string }>
 }
 
 const loadCategory = cache(async (slug: string) => {
@@ -41,6 +41,18 @@ function parseDifficulty(raw: string | undefined): Difficulty | null {
   return null
 }
 
+// Equipment-barrier filter (Pottery + future kiln/wheel-bearing crafts).
+//   'none'       — only tutorials needing neither a kiln nor a wheel.
+//   'no-kiln'    — hide kiln-only tutorials; allow wheel-only.
+//   'no-wheel'   — hide wheel-only tutorials; allow kiln-only.
+// All other values fall through to no filter.
+type EquipmentFilter = 'none' | 'no-kiln' | 'no-wheel' | null
+
+function parseEquipment(raw: string | undefined): EquipmentFilter {
+  if (raw === 'none' || raw === 'no-kiln' || raw === 'no-wheel') return raw
+  return null
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { categorySlug } = await params
   const category = await loadCategory(categorySlug)
@@ -54,11 +66,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function CategoryPage({ params, searchParams }: PageProps) {
   const { categorySlug } = await params
-  const { difficulty: difficultyRaw } = await searchParams
+  const { difficulty: difficultyRaw, equipment: equipmentRaw } = await searchParams
   const difficulty = parseDifficulty(difficultyRaw)
+  const equipment = parseEquipment(equipmentRaw)
 
   const category = await loadCategory(categorySlug)
   if (!category) notFound()
+
+  // Equipment-barrier filter is only meaningful for craft categories whose
+  // tutorials carry the `requiresKiln` / `requiresWheel` flags. Today that
+  // is pottery-ceramics; future kiln-bearing or wheel-bearing crafts pick
+  // it up automatically by setting the flags on their tutorial rows.
+  const equipmentWhere =
+    equipment === 'none'
+      ? { requiresKiln: false, requiresWheel: false }
+      : equipment === 'no-kiln'
+        ? { requiresKiln: false }
+        : equipment === 'no-wheel'
+          ? { requiresWheel: false }
+          : {}
 
   const [tutorials, currentUser] = await Promise.all([
     prisma.tutorial.findMany({
@@ -66,6 +92,7 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
         categoryId: category.id,
         status: TutorialStatus.PUBLISHED,
         ...(difficulty ? { difficulty } : {}),
+        ...equipmentWhere,
       },
       orderBy: [{ publishedAt: 'desc' }],
       select: {
@@ -76,6 +103,8 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
         difficulty: true,
         season: true,
         subCategoryId: true,
+        requiresKiln: true,
+        requiresWheel: true,
         hero: { select: { cloudflareId: true, r2Key: true } },
       },
     }),
@@ -122,13 +151,47 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
             <a href={`/${category.slug}`}>show all</a>
           </p>
         )}
+        {equipment && (
+          <p className="category-filter-note">
+            {equipment === 'none'
+              ? 'Showing tutorials needing neither a kiln nor a wheel.'
+              : equipment === 'no-kiln'
+                ? 'Hiding tutorials that need a kiln.'
+                : 'Hiding tutorials that need a wheel.'}{' '}
+            <a href={`/${category.slug}`}>show all</a>
+          </p>
+        )}
+        {category.slug === 'pottery-ceramics' && !equipment && (
+          <nav className="category-equipment-filter" aria-label="Equipment filter">
+            <a
+              href={`/${category.slug}?equipment=none`}
+              className="category-equipment-filter-link"
+            >
+              No kiln, no wheel
+            </a>
+            <a
+              href={`/${category.slug}?equipment=no-kiln`}
+              className="category-equipment-filter-link"
+            >
+              No kiln
+            </a>
+            <a
+              href={`/${category.slug}?equipment=no-wheel`}
+              className="category-equipment-filter-link"
+            >
+              No wheel
+            </a>
+          </nav>
+        )}
       </header>
 
       {tutorials.length === 0 ? (
         <p className="category-empty">
-          {difficulty
-            ? `No ${difficulty.toLowerCase()} tutorials in ${category.name.toLowerCase()} yet.`
-            : `Nothing published in ${category.name.toLowerCase()} just yet. New tutorials are added each week.`}
+          {equipment
+            ? `No tutorials in ${category.name.toLowerCase()} match that equipment filter yet.`
+            : difficulty
+              ? `No ${difficulty.toLowerCase()} tutorials in ${category.name.toLowerCase()} yet.`
+              : `Nothing published in ${category.name.toLowerCase()} just yet. New tutorials are added each week.`}
         </p>
       ) : (
         orderedKeys.map((key) => {
@@ -163,6 +226,8 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
                       heroSrcSet={card?.srcSet}
                       difficulty={t.difficulty}
                       season={t.season}
+                      requiresKiln={t.requiresKiln}
+                      requiresWheel={t.requiresWheel}
                       state={readerStateFor(readerState, t.id)}
                     />
                   )

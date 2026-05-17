@@ -551,41 +551,65 @@ model Tutorial {
   // stitch tutorials that benefit from a glyph chart.
   // ──────────────────────────────────────────────────────────────────────────
 
-  primaryYarnWeightId    String?
-  primaryYarnWeight      YarnWeight?  @relation("TutorialPrimaryYarnWeight", fields: [primaryYarnWeightId], references: [id], onDelete: SetNull)
-  primaryHookId          String?
-  primaryHook            CrochetHook? @relation("TutorialPrimaryHook", fields: [primaryHookId], references: [id], onDelete: SetNull)
+  primaryYarnWeightId String?
+  primaryYarnWeight   YarnWeight?  @relation("TutorialPrimaryYarnWeight", fields: [primaryYarnWeightId], references: [id], onDelete: SetNull)
+  primaryHookId       String?
+  primaryHook         CrochetHook? @relation("TutorialPrimaryHook", fields: [primaryHookId], references: [id], onDelete: SetNull)
 
   /// Stated gauge as the author wrote it — e.g. "18 dc × 10 rows = 10 × 10 cm
   /// in 4 mm hook, after blocking". Plain text; the renderer surfaces it
   /// verbatim in the pattern info bar. Null on STITCH rows.
-  gaugeText              String?
+  gaugeText String?
 
   /// Stated finished size — e.g. "30 × 30 cm", "Adult medium: 92 cm chest /
   /// 56 cm length". Plain text; renderer surfaces it verbatim.
-  finishedSizeText       String?
+  finishedSizeText String?
 
   /// 'uk' | 'us'. Drives the abbreviation set the renderer shows in the
   /// stitch-abbreviation legend and the chart-symbol key. UK-first
   /// publication policy: default 'uk' on every crochet row unless the
   /// source pattern is American. Null on non-crochet/knitting rows.
-  terminologyConvention  String?
+  terminologyConvention String?
 
   /// Generic chart definition consumed by the shared SVG chart renderer.
   /// Shape documented in `apps/web/src/lib/craft-charts/types.ts`.
-  chartDefinition        Json?
+  chartDefinition Json?
 
   /// Slugs of stitches this tutorial features. STITCH rows carry one slug
   /// (the stitch being taught); PATTERN rows carry every stitch the pattern
   /// uses. Slugs reference the master `Stitch` table; the upload script
   /// validates that each exists.
-  craftStitchSlugs       String[] @default([])
+  craftStitchSlugs String[] @default([])
 
   /// Technique tags surfaced in the info bar and filterable on the public
   /// browse — e.g. 'magic-ring', 'joining-as-you-go', 'tapestry-crochet',
   /// 'blocking', 'invisible-finish', 'chainless-foundation'. Free-form
   /// strings so authors can add without a migration.
-  craftTechniqueTags     String[] @default([])
+  craftTechniqueTags String[] @default([])
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Phase Pottery & ceramics pipeline — equipment-barrier flags + master-
+  // table slug references. Set on rows where `craftType = 'pottery-ceramics'`
+  // (the discriminator pulls double-duty across the craft pipelines).
+  //
+  // `requiresKiln` + `requiresWheel` drive the public list-page equipment-
+  // barrier badge and filter. The 70 / 30 weighting between the no-equipment
+  // sub-track and the wheel + kiln sub-track is enforced by the authoring
+  // prompt; these flags are the runtime gate readers see.
+  //
+  // `requiredClayBodies` + `requiredCraftMaterials` are String[] (no Prisma
+  // relation) mirroring `requiredFabricTypes` + `requiredNotions` on sewing.
+  // The upload script validates each slug against the master `ClayBody` /
+  // `CraftMaterial` tables at upload time. A no-equipment-track tutorial
+  // referencing a CraftMaterial with `trainedEnvironmentOnly = true` is
+  // rejected at upload — the silica / heavy-metal materials never end up on
+  // a kiln-less reader's screen by accident.
+  // ──────────────────────────────────────────────────────────────────────────
+
+  requiresKiln           Boolean  @default(false)
+  requiresWheel          Boolean  @default(false)
+  requiredClayBodies     String[] @default([])
+  requiredCraftMaterials String[] @default([])
 
   planDayMornings    UserPlanDay[]          @relation("PlanDayMorningPractice")
   planDayEvenings    UserPlanDay[]          @relation("PlanDayEveningPractice")
@@ -634,6 +658,10 @@ model Tutorial {
   @@index([craftStitchSlugs], type: Gin)
   @@index([craftTechniqueTags], type: Gin)
   @@index([type, terminologyConvention])
+  @@index([type, requiresKiln])
+  @@index([type, requiresWheel])
+  @@index([requiredClayBodies], type: Gin)
+  @@index([requiredCraftMaterials], type: Gin)
 }
 
 enum TutorialType {
@@ -2779,4 +2807,100 @@ model CrochetHook {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Phase Pottery & ceramics pipeline scaffold — ClayBody + CraftMaterial.
+//
+// ClayBody is the master clay-body registry. One row per canonical body
+// (earthenware-red, stoneware-smooth, porcelain, paper-clay, polymer-clay,
+// air-dry-clay). Tutorials reference rows by slug via
+// `Tutorial.requiredClayBodies`.
+//
+// CraftMaterial is the master raw-materials registry for craft pipelines
+// beyond the Ingredient / Fabric tables. Pottery is the first pipeline to
+// land here; future jewellery / paper / wood-finishing pipelines will reuse
+// the same shape by setting `craft` to the appropriate slug. The single
+// most important field is `trainedEnvironmentOnly`, which the upload
+// script reads to refuse no-equipment-track tutorials referencing raw
+// silica / heavy-metal materials.
+// ────────────────────────────────────────────────────────────────────────────
+
+model ClayBody {
+  id   String @id @default(cuid())
+  slug String @unique
+  name String
+
+  /// 'earthenware' | 'stoneware' | 'porcelain' | 'paper-clay' | 'polymer'
+  /// | 'air-dry' | 'raku' | 'terracotta'. Free-form string for forwards
+  /// compatibility (raku-specific bodies, ball-clay-heavy mixes).
+  bodyType String
+
+  /// Cone range as plain text ("06-04" for low-fire earthenware, "6" for
+  /// mid-fire stoneware, "9-10" for high-fire stoneware/porcelain). Null
+  /// on no-fire bodies (polymer, air-dry, paper-clay used without firing).
+  firingRangeCones String?
+
+  /// True when a kiln is required to vitrify the body. Mirrors the
+  /// tutorial-level `requiresKiln` flag; the list-page filter ORs the
+  /// two so a stoneware tutorial that forgot to set the tutorial flag
+  /// still badges correctly.
+  requiresKiln Boolean @default(false)
+
+  /// Shrinkage from wet → bisque → fired, as percent range ("12-14%").
+  /// Null when the body doesn't fire.
+  shrinkagePercent String?
+
+  /// Plasticity / wedging / hand-building / wheel notes.
+  notes String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([bodyType])
+  @@index([requiresKiln])
+}
+
+model CraftMaterial {
+  id   String @id @default(cuid())
+  slug String @unique
+  name String
+
+  /// 'pottery' | 'jewellery' | 'paper' | 'wood-finishing'. Future craft
+  /// pipelines widen this vocabulary.
+  craft String
+
+  /// Sub-category within the craft. Pottery values:
+  ///   'clay-tool-attached' (slip, engobe, wax / latex resist)
+  ///   'glaze-raw'           (raw glaze ingredients — silica, kaolin,
+  ///                          feldspar, frits, fluxes, modifiers)
+  ///   'glaze-colourant'     (oxides + stains)
+  ///   'glaze-premixed'      (commercial pre-mixed glazes safe for
+  ///                          home use)
+  ///   'underglaze'          (commercial under-glaze decoration)
+  ///   'kiln-furniture'      (kiln wash, stilts, posts in
+  ///                          consumable form)
+  category String
+
+  /// True for raw silica, heavy-metal oxides at studio quantity, and
+  /// any material requiring respirator + dedicated mixing space. False
+  /// for pre-mixed glazes + low-toxicity rutile / iron-oxide
+  /// colourants. The upload script refuses no-equipment-track
+  /// tutorials referencing rows with this set to true.
+  trainedEnvironmentOnly Boolean @default(false)
+
+  /// Hazard summary surfaced verbatim by the renderer in the materials
+  /// list when present. Null when the material has no special handling.
+  hazardNotes String?
+
+  /// Sourcing / handling / typical-use notes.
+  notes String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([craft])
+  @@index([category])
+  @@index([craft, category])
+  @@index([trainedEnvironmentOnly])
 }

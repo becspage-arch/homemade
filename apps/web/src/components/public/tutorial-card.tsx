@@ -37,6 +37,10 @@ export interface TutorialCardProps {
   state?: ReaderTutorialState
   /** Optional byline — "By {name}" or "By Homemade". */
   byline?: string | null
+  /** Pottery equipment-barrier flag. Set true on tutorials that need a kiln. */
+  requiresKiln?: boolean
+  /** Pottery equipment-barrier flag. Set true on tutorials that need a wheel. */
+  requiresWheel?: boolean
 }
 
 export function TutorialCard({
@@ -51,10 +55,14 @@ export function TutorialCard({
   categoryName,
   state,
   byline,
+  requiresKiln,
+  requiresWheel,
 }: TutorialCardProps) {
   const inProgress =
     state?.projectStatus === 'IN_PROGRESS' &&
     typeof state.projectProgressPercent === 'number'
+
+  const showEquipmentBadge = Boolean(requiresKiln || requiresWheel)
 
   return (
     <Link href={href} className="tutorial-card">
@@ -82,6 +90,15 @@ export function TutorialCard({
             title="Saved"
           >
             <BookmarkGlyph filled />
+          </span>
+        )}
+        {showEquipmentBadge && (
+          <span className="tutorial-card-equipment-badge">
+            {requiresKiln && requiresWheel
+              ? 'Kiln + wheel'
+              : requiresKiln
+                ? 'Requires a kiln'
+                : 'Requires a wheel'}
           </span>
         )}
       </span>
