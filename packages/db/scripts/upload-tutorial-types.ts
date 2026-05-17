@@ -892,15 +892,18 @@ export function validateInput(input: TutorialUploadInput): void {
       )
     }
   }
-  // PATTERN dispatch: a PATTERN must carry either a `crochet` block
-  // (Crochet Category) or a `sewing` block (Sewing Category). The future
-  // knitting + needlework pipelines extend this by adding their own
-  // metadata blocks; the dispatch stays the same shape.
+  // PATTERN dispatch: crochet PATTERN rows require a `crochet` block;
+  // sewing PATTERN rows require a `sewing` block. Wood-natural-craft,
+  // pottery-ceramics, and other craft-category PATTERN rows carry only
+  // `recipeTools` and no additional metadata block.
   if (input.type === 'PATTERN') {
-    if (!input.crochet && !input.sewing) {
-      throw new Error(
-        'input.crochet or input.sewing is required when type is "PATTERN".',
-      )
+    const isCrochetPattern = input.categorySlug === 'crochet'
+    const isSewingPattern = input.categorySlug === 'sewing'
+    if (isCrochetPattern && !input.crochet) {
+      throw new Error('input.crochet is required when type is "PATTERN" under the crochet category.')
+    }
+    if (isSewingPattern && !input.sewing) {
+      throw new Error('input.sewing is required when type is "PATTERN" under the sewing category.')
     }
     if (input.crochet) {
       if (!input.crochet.primaryYarnWeightSlug) {

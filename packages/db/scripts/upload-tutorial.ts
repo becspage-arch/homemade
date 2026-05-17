@@ -650,7 +650,14 @@ async function uploadTutorial(
     requiresMedicalDisclaimer: herbal?.requiresMedicalDisclaimer ?? true,
     // Sewing metadata (phase_sewing_pipeline_001). Null on rows that
     // aren't PATTERN or sewing-discipline TECHNIQUE.
-    craftType: sewing?.craftType ?? null,
+    // craftType is set explicitly from the sewing block for sewing PATTERN/TECHNIQUE
+    // rows. For other craft-category PATTERN rows (wood-natural-craft,
+    // pottery-ceramics, etc.) we derive it from the categorySlug so the browse
+    // filter index is populated without each pipeline needing its own metadata block.
+    craftType: sewing?.craftType
+      ?? ((input.type === 'PATTERN' || input.type === 'TECHNIQUE') && !input.crochet && !input.sewing
+        ? input.categorySlug
+        : null),
     projectShape: sewing?.projectShape ?? null,
     requiredFabricTypes,
     requiredNotions,
