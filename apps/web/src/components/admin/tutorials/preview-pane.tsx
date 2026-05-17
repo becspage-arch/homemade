@@ -35,8 +35,8 @@ interface PreviewPaneProps {
   sourceNotes: string
   /** Cloudflare Images delivery hash, passed down from the server page. */
   cloudflareDeliveryHash: string | null
-  /** RECIPE / TECHNIQUE / PRACTICE / READING — controls which info-bar variant + body renderer fires. */
-  type: 'RECIPE' | 'TECHNIQUE' | 'PRACTICE' | 'READING'
+  /** RECIPE / TECHNIQUE / PRACTICE / READING / GROWING_GUIDE — controls which info-bar variant + body renderer fires. */
+  type: 'RECIPE' | 'TECHNIQUE' | 'PRACTICE' | 'READING' | 'GROWING_GUIDE'
   /** Recipe metadata mirrored from form state. Read only when type === 'RECIPE'. */
   recipeMeta?: {
     servings: number | null
