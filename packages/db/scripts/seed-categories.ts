@@ -64,6 +64,13 @@ interface CategorySeed {
   isExistingShipped: boolean
 }
 
+// Single-queue autopilot (phase_autopilot_single_queue_001).
+// Existing shipped categories are the only ones with authoring prompts +
+// master entities, so they're the only ones the round-robin queue should
+// pick from on landing. Placeholder categories flip to READY in the
+// per-category pipeline-setup session that lands their authoring prompt.
+type PipelineSeedStatus = 'READY' | 'NOT_READY'
+
 const CATEGORIES: CategorySeed[] = [
   // Existing shipped categories — descriptions handled by
   // update-category-descriptions.ts; we only set target + launchOrder here.
@@ -285,7 +292,16 @@ async function main(): Promise<void> {
     _count: { _all: true },
   })
   const existingCategories = await prisma.category.findMany({
-    select: { id: true, slug: true, name: true, description: true, targetTutorialCount: true, launchOrder: true, isPublicVisible: true },
+    select: {
+      id: true,
+      slug: true,
+      name: true,
+      description: true,
+      targetTutorialCount: true,
+      launchOrder: true,
+      isPublicVisible: true,
+      pipelineStatus: true,
+    },
   })
   const idBySlug = new Map(existingCategories.map((c) => [c.slug, c.id]))
   const publishedBySlug = new Map<string, number>()
@@ -315,10 +331,22 @@ async function main(): Promise<void> {
       ? existing?.isPublicVisible ?? true
       : publishedCount >= PUBLIC_VISIBILITY_THRESHOLD
 
+    // Single-queue autopilot seed status. Shipped spine categories land
+    // READY so the queue picks them on first fire; the 14 placeholders stay
+    // NOT_READY until their pipeline-setup session lands. The seed only
+    // touches pipelineStatus when it would advance NOT_READY → desired —
+    // never overrides PAUSED or COMPLETE state set by the publish hook /
+    // admin.
+    const desiredPipelineStatus: PipelineSeedStatus = row.isExistingShipped
+      ? 'READY'
+      : 'NOT_READY'
+    const shouldAdvancePipelineStatus =
+      existing?.pipelineStatus === 'NOT_READY' && desiredPipelineStatus !== 'NOT_READY'
+
     if (!existing) {
       if (dryRun) {
         console.log(
-          `  [would create] ${row.slug} — target ${row.targetTutorialCount}, launchOrder ${row.launchOrder}, public ${isPublicVisible}`,
+          `  [would create] ${row.slug} — target ${row.targetTutorialCount}, launchOrder ${row.launchOrder}, public ${isPublicVisible}, pipeline ${desiredPipelineStatus}`,
         )
         created++
         continue
@@ -331,6 +359,7 @@ async function main(): Promise<void> {
           targetTutorialCount: row.targetTutorialCount,
           launchOrder: row.launchOrder,
           isPublicVisible,
+          pipelineStatus: desiredPipelineStatus,
           // `order` keeps its default 0; admin UI uses launchOrder for the
           // public rotation. Existing admin sorts that rely on `order` still
           // tie-break by `name asc`.
@@ -338,7 +367,7 @@ async function main(): Promise<void> {
         },
       })
       console.log(
-        `  [create] ${row.slug} — target ${row.targetTutorialCount}, launchOrder ${row.launchOrder}, public ${isPublicVisible}`,
+        `  [create] ${row.slug} — target ${row.targetTutorialCount}, launchOrder ${row.launchOrder}, public ${isPublicVisible}, pipeline ${desiredPipelineStatus}`,
       )
       created++
       continue
@@ -350,6 +379,7 @@ async function main(): Promise<void> {
       existing.targetTutorialCount === row.targetTutorialCount &&
       existing.launchOrder === row.launchOrder &&
       existing.isPublicVisible === isPublicVisible &&
+      !shouldAdvancePipelineStatus &&
       (row.isExistingShipped || existing.description === row.description)
 
     if (fieldsEqual) {
@@ -359,7 +389,7 @@ async function main(): Promise<void> {
 
     if (dryRun) {
       console.log(
-        `  [would update] ${row.slug} — target ${existing.targetTutorialCount} → ${row.targetTutorialCount}, launchOrder ${existing.launchOrder} → ${row.launchOrder}, public ${existing.isPublicVisible} → ${isPublicVisible}`,
+        `  [would update] ${row.slug} — target ${existing.targetTutorialCount} → ${row.targetTutorialCount}, launchOrder ${existing.launchOrder} → ${row.launchOrder}, public ${existing.isPublicVisible} → ${isPublicVisible}${shouldAdvancePipelineStatus ? `, pipeline ${existing.pipelineStatus} → ${desiredPipelineStatus}` : ''}`,
       )
       updated++
       continue
@@ -373,6 +403,7 @@ async function main(): Promise<void> {
         targetTutorialCount: row.targetTutorialCount,
         launchOrder: row.launchOrder,
         isPublicVisible,
+        ...(shouldAdvancePipelineStatus ? { pipelineStatus: desiredPipelineStatus } : {}),
       },
     })
     console.log(

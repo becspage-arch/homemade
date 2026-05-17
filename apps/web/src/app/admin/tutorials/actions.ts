@@ -11,6 +11,7 @@ import {
   TutorialType,
   UserRole,
   maybeFlipCategoryVisibility,
+  maybeFlipCategoryPipelineComplete,
   type Prisma,
 } from '@homemade/db'
 import { getCurrentDbUser, isAdmin, hasRoleAtLeast } from '@/lib/auth'
@@ -622,6 +623,7 @@ export async function transitionTutorialStatus(
 
   if (target === TutorialStatus.PUBLISHED) {
     await maybeFlipCategoryVisibility(prisma, existing.categoryId)
+    await maybeFlipCategoryPipelineComplete(prisma, existing.categoryId)
   }
 
   await syncTutorialById(id)

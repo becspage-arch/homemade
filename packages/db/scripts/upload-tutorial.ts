@@ -154,6 +154,7 @@ async function uploadTutorial(
     SourceType,
     Difficulty,
     maybeFlipCategoryVisibility,
+    maybeFlipCategoryPipelineComplete,
   } = await getPrisma()
 
   // 1. Author.
@@ -582,10 +583,14 @@ async function uploadTutorial(
     prisma,
   )
 
-  // 15. Category public-visibility auto-flip. Cheap idempotent check — only
-  // fires on PUBLISHED rows, no-op once the category is already visible.
+  // 15. Category publish-path hooks. Both are idempotent — only fire on
+  // PUBLISHED rows, no-op once their condition is settled.
+  //   - public-visibility auto-flip (private → public at 10 published rows)
+  //   - pipeline-status auto-flip (READY → COMPLETE at targetTutorialCount,
+  //     removes the category from the single-queue autopilot's pool)
   if (finalStatus === 'PUBLISHED') {
     await maybeFlipCategoryVisibility(prisma, category.id)
+    await maybeFlipCategoryPipelineComplete(prisma, category.id)
   }
 
   return {

@@ -6,6 +6,7 @@ import {
   TutorialStatus,
   UserRole,
   maybeFlipCategoryVisibility,
+  maybeFlipCategoryPipelineComplete,
   type Prisma,
 } from '@homemade/db'
 import { getCurrentDbUser, hasRoleAtLeast } from '@/lib/auth'
@@ -100,10 +101,12 @@ export async function bulkTutorialAction(formData: FormData): Promise<void> {
       })
       await syncTutorialById(t.id)
     }
-    // Re-check visibility once per touched category — cheaper than per row.
+    // Re-check visibility + pipeline-status once per touched category —
+    // cheaper than per row.
     const touchedCategoryIds = new Set(toUpdate.map((t) => t.categoryId))
     for (const categoryId of touchedCategoryIds) {
       await maybeFlipCategoryVisibility(prisma, categoryId)
+      await maybeFlipCategoryPipelineComplete(prisma, categoryId)
     }
     await audit({
       actorId: actor.id,

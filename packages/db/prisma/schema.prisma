@@ -64,15 +64,15 @@ model User {
   // Analytics — acquisition + cohort plumbing. All nullable: existing users
   // pre-date the capture and that's fine. Captured client-side on first visit
   // (localStorage) and persisted here on first signup (Clerk webhook).
-  utmSource           String?
-  utmMedium           String?
-  utmCampaign         String?
-  utmContent          String?
-  utmTerm             String?
-  acquisitionChannel  String?
-  signupCohortWeek    String?
-  country             String?
-  deviceClass         String?
+  utmSource          String?
+  utmMedium          String?
+  utmCampaign        String?
+  utmContent         String?
+  utmTerm            String?
+  acquisitionChannel String?
+  signupCohortWeek   String?
+  country            String?
+  deviceClass        String?
 
   // Phase 8 Homepage rebuild — onboarding + personalisation. `onboardedAt`
   // null = the onboarding card still shows on the homepage. `primaryCategoryIds`
@@ -130,20 +130,20 @@ model User {
   patternTests     PatternTest[]
   testAssignments  TestAssignment[]
 
-  dataExportRequests       DataExportRequest[]
-  accountDeletionRequest   AccountDeletionRequest?
-  dmcaResolutions          DmcaTakedownRequest[]   @relation("DmcaResolver")
-  signupAllowlistAdded     SignupAllowlist[]       @relation("SignupAllowlistAddedBy")
+  dataExportRequests     DataExportRequest[]
+  accountDeletionRequest AccountDeletionRequest?
+  dmcaResolutions        DmcaTakedownRequest[]   @relation("DmcaResolver")
+  signupAllowlistAdded   SignupAllowlist[]       @relation("SignupAllowlistAddedBy")
 
   // Admin overhaul — saved filters + cmd-K command history.
-  savedFilters         SavedFilter[]         @relation("SavedFilterOwner")
-  adminCommandHistory  AdminCommandHistory[] @relation("AdminCommandActor")
+  savedFilters        SavedFilter[]         @relation("SavedFilterOwner")
+  adminCommandHistory AdminCommandHistory[] @relation("AdminCommandActor")
 
   // Phase 8 Step 13 — Mindset
-  mindsetPlans         UserPlan[]
-  mindsetDailyPicks    DailyPick[]
-  practiceFavorites    UserPracticeFavorite[]
-  practiceUses         UserPracticeUse[]
+  mindsetPlans      UserPlan[]
+  mindsetDailyPicks DailyPick[]
+  practiceFavorites UserPracticeFavorite[]
+  practiceUses      UserPracticeUse[]
 
   // Mobile rebuild — registered push devices (one per platform per install).
   pushSubscriptions PushSubscription[]
@@ -195,11 +195,28 @@ model Category {
   isPublicVisible     Boolean @default(true)
   launchOrder         Int?
 
+  // Single-queue autopilot (phase_autopilot_single_queue_001).
+  // `pipelineStatus` gates whether the round-robin queue cron picks this
+  // category. NOT_READY = no authoring prompt / master entities yet;
+  // READY = the queue may fire batches against it; PAUSED = temporarily
+  // skipped without disabling the cron; COMPLETE = published count has
+  // hit `targetTutorialCount` and the publish path auto-flipped it.
+  // `lastAutopilotRunAt` is set to now() at the start of each batch so
+  // the round-robin sort picks the least-recently-fired READY category
+  // next. `autopilotWeight` is reserved for future weighted round-robin
+  // (each weight unit = one slot per cycle); default 1 means strict
+  // round-robin.
+  pipelineStatus     PipelineStatus @default(NOT_READY)
+  lastAutopilotRunAt DateTime?
+  autopilotWeight    Int            @default(1)
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   subCategories SubCategory[]
   tutorials     Tutorial[]
+
+  @@index([pipelineStatus, lastAutopilotRunAt])
 }
 
 model SubCategory {
@@ -285,25 +302,25 @@ model Tutorial {
   // values in the info bar + footer asides when `type === RECIPE`.
   // ──────────────────────────────────────────────────────────────────────────
 
-  servings             Int? // Default yield (4 → "Serves 4")
-  yieldDescription     String? // "1 loaf" / "12 muffins" — overrides "Serves N" when set
-  prepMinutes          Int?
-  cookMinutes          Int?
-  restingMinutes       Int? // Dough rising, marinating
-  chillingMinutes      Int? // Fridge / freezer rests (distinct from resting for filters)
-  totalMinutes         Int? // Denormalised: prep + cook + resting + chilling. Recomputed on save.
-  scalable             Boolean @default(true)
-  freezable            Boolean @default(false)
-  freezeNotes          String?
-  batchable            Boolean @default(false)
-  batchNotes           String?
-  makeAheadNotes       String?
-  dietaryFlags         String[] // vegetarian / vegan / glutenFree / dairyFree / halal / kosher / nutFree / pescatarian
-  cuisine              String? // Italian / British / French / etc. Single-valued.
-  mealType             String? // breakfast / lunch / dinner / snack / dessert / drink / side
-  mood                 String[] // multi: comfortFood / weeknight / party / kidFriendly / freezerFriendly / healthy
-  temperatureCelsius   Int?
-  temperatureNote      String? // "fan oven", "low and slow"
+  servings                  Int? // Default yield (4 → "Serves 4")
+  yieldDescription          String? // "1 loaf" / "12 muffins" — overrides "Serves N" when set
+  prepMinutes               Int?
+  cookMinutes               Int?
+  restingMinutes            Int? // Dough rising, marinating
+  chillingMinutes           Int? // Fridge / freezer rests (distinct from resting for filters)
+  totalMinutes              Int? // Denormalised: prep + cook + resting + chilling. Recomputed on save.
+  scalable                  Boolean  @default(true)
+  freezable                 Boolean  @default(false)
+  freezeNotes               String?
+  batchable                 Boolean  @default(false)
+  batchNotes                String?
+  makeAheadNotes            String?
+  dietaryFlags              String[] // vegetarian / vegan / glutenFree / dairyFree / halal / kosher / nutFree / pescatarian
+  cuisine                   String? // Italian / British / French / etc. Single-valued.
+  mealType                  String? // breakfast / lunch / dinner / snack / dessert / drink / side
+  mood                      String[] // multi: comfortFood / weeknight / party / kidFriendly / freezerFriendly / healthy
+  temperatureCelsius        Int?
+  temperatureNote           String? // "fan oven", "low and slow"
   nutritionalInfoPerServing Json?
 
   // Foundational technique flag — drives the "Foundational technique" info-bar
@@ -345,14 +362,14 @@ model Tutorial {
   creatorId String?
   creator   User?   @relation("TutorialCreator", fields: [creatorId], references: [id])
 
-  versions     TutorialVersion[]
-  bookmarks    Bookmark[]
-  projects     UserProject[]
-  reviews      Review[]
-  ugcPhotos    UGCPhoto[]
-  questions    Question[]
-  errata       Errata[]
-  patternTests PatternTest[]
+  versions          TutorialVersion[]
+  bookmarks         Bookmark[]
+  projects          UserProject[]
+  reviews           Review[]
+  ugcPhotos         UGCPhoto[]
+  questions         Question[]
+  errata            Errata[]
+  patternTests      PatternTest[]
   recipeIngredients RecipeIngredient[]
   recipeTools       RecipeTool[]
 
@@ -370,13 +387,13 @@ model Tutorial {
   // ──────────────────────────────────────────────────────────────────────────
 
   practiceType           PracticeType?
-  practiceTargets        PracticeTarget[]    @default([])
+  practiceTargets        PracticeTarget[] @default([])
   timeBand               TimeBand?
   bestTime               BestTime?
   practiceDepth          Difficulty?
   whenToUse              String?
   whenNotToUse           String?
-  alternativePracticeIds String[]            @default([])
+  alternativePracticeIds String[]         @default([])
 
   // ──────────────────────────────────────────────────────────────────────────
   // Phase 8 Baking pipeline — Baking-specific recipe metadata. Null on rows
@@ -391,11 +408,11 @@ model Tutorial {
   // Hydration metadata — baker's-percentage anchored. All percentages are
   // relative to flour weight; the flour weight itself anchors the whole
   // recipe so the public renderer can show derived totals.
-  flourWeightGrams  Int?
-  hydrationPercent  Float?
-  saltPercent       Float?
-  yeastPercent      Float?
-  levainPercent     Float?
+  flourWeightGrams Int?
+  hydrationPercent Float?
+  saltPercent      Float?
+  yeastPercent     Float?
+  levainPercent    Float?
 
   // Proofing metadata. All in minutes; null when the bake doesn't use that
   // stage (a biscuit dough has no bulk ferment; a tin loaf has no levain
@@ -427,14 +444,14 @@ model Tutorial {
   // variants for breads that build flavour through a separate ferment.
   preFermentType PreFermentType?
 
-  planDayMornings       UserPlanDay[]         @relation("PlanDayMorningPractice")
-  planDayEvenings       UserPlanDay[]         @relation("PlanDayEveningPractice")
-  planDayAnchors        UserPlanDay[]         @relation("PlanDayAnchorPractice")
-  planDayReflections    UserPlanDay[]         @relation("PlanDayReflectionPrompt")
-  dailyPicks            DailyPick[]
-  practiceFavorites     UserPracticeFavorite[]
-  practiceUses          UserPracticeUse[]
-  feelingMatches        UserFeeling[]
+  planDayMornings    UserPlanDay[]          @relation("PlanDayMorningPractice")
+  planDayEvenings    UserPlanDay[]          @relation("PlanDayEveningPractice")
+  planDayAnchors     UserPlanDay[]          @relation("PlanDayAnchorPractice")
+  planDayReflections UserPlanDay[]          @relation("PlanDayReflectionPrompt")
+  dailyPicks         DailyPick[]
+  practiceFavorites  UserPracticeFavorite[]
+  practiceUses       UserPracticeUse[]
+  feelingMatches     UserFeeling[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -477,6 +494,15 @@ enum Difficulty {
   BEGINNER
   INTERMEDIATE
   ADVANCED
+}
+
+/// Single-queue autopilot (phase_autopilot_single_queue_001).
+/// Gates whether the round-robin queue cron picks the category.
+enum PipelineStatus {
+  NOT_READY // No authoring prompt / master entities yet; queue skips.
+  READY // Queue may fire bulk batches against this category.
+  PAUSED // Temporarily skipped (e.g. quality drift) without disabling cron.
+  COMPLETE // Published count has reached targetTutorialCount.
 }
 
 enum Season {
@@ -670,7 +696,7 @@ model UserProject {
   // on every request.
   nextScheduledStepNumber Int?
   nextScheduledAt         DateTime?
-  scheduledStepsCompleted Int[]    @default([])
+  scheduledStepsCompleted Int[]     @default([])
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -1264,7 +1290,7 @@ model AccountDeletionRequest {
   /// 30 days after `requestedAt`. A scheduled hard-delete job picks up rows
   /// past this date; until then the user can cancel.
   scheduledFor DateTime
-  requestedAt  DateTime @default(now())
+  requestedAt  DateTime  @default(now())
   cancelledAt  DateTime?
   completedAt  DateTime?
 
@@ -1287,9 +1313,9 @@ enum DeletionStatus {
 model DmcaTakedownRequest {
   id String @id @default(cuid())
 
-  claimantName     String
-  claimantEmail    String
-  claimantAddress  String?
+  claimantName    String
+  claimantEmail   String
+  claimantAddress String?
 
   /// The URL or location of the allegedly infringing content. Free text
   /// because claimants don't always send a clean URL.
@@ -1306,10 +1332,10 @@ model DmcaTakedownRequest {
 
   actionTakenNote String?
 
-  createdAt DateTime @default(now())
-  resolvedAt DateTime?
+  createdAt    DateTime  @default(now())
+  resolvedAt   DateTime?
   resolvedById String?
-  resolvedBy   User?   @relation("DmcaResolver", fields: [resolvedById], references: [id])
+  resolvedBy   User?     @relation("DmcaResolver", fields: [resolvedById], references: [id])
 
   @@index([status, createdAt])
 }
@@ -2123,4 +2149,3 @@ model AnalyticsRollupRun {
   metricsWritten  Int       @default(0)
   error           String?
 }
-

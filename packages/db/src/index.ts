@@ -14,6 +14,11 @@ export {
   PUBLIC_VISIBILITY_THRESHOLD,
 } from './category-visibility'
 
+// Category pipeline-status helper — flips a category's pipelineStatus to
+// COMPLETE once its PUBLISHED count reaches targetTutorialCount. Paired
+// with maybeFlipCategoryVisibility on every publish path.
+export { maybeFlipCategoryPipelineComplete } from './category-pipeline-status'
+
 declare global {
   // eslint-disable-next-line no-var
   var __homemade_prisma: PrismaClient | undefined

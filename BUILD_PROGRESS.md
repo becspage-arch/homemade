@@ -18,7 +18,7 @@ Live at https://homemade.education behind splash gate (cookie `homemade-access=1
 - Neon Postgres + Prisma 7. Clerk auth. Cloudflare R2 + Cloudflare Images for hero media. Typesense scaffolded (cluster + secret mount pending).
 - Sentry (errors) + PostHog (UX) + self-hosted analytics dashboards in `/admin/analytics` reading from `AnalyticsEvent` / `AnalyticsDailyRollup` / `AnalyticsCohortRollup` (rolled up nightly by Inngest).
 - Inngest crons: `hard-delete-scheduled-accounts`, `scheduled-publish-tutorial`, `typesense-reindex`, `moderation-outcome-notify`, `autopilot-halt-notify`, `analytics-rollup-nightly`, `editorial-picks-refresh`, `scheduled-step-push`.
-- Three autopilot streams fire daily via the ScheduledTasks MCP — cooking 01:00 UTC, baking 03:09 UTC, mindset 05:06 UTC. Pause via the `AUTOPILOT_PAUSED` env flag or the `/admin/system/autopilot` admin page (per-stream).
+- Single autopilot queue fires every 2 hours via the ScheduledTasks MCP — picks the next READY-and-not-COMPLETE category from a round-robin (least-recently-fired wins). Old per-stream daily crons disabled 2026-05-17 (cooking 01:00 / baking 03:09 / mindset 05:06 UTC). Pause via the `AUTOPILOT_PAUSED` env flag or an `AutopilotPauseState` row on `streamName = 'queue'` or `'global'`.
 
 **Library counts (PUBLISHED)** — full grid in § Multi-category fill plan below.
 
@@ -2477,8 +2477,123 @@ analytics work, no edits to `docs/social-strategy/`,
 
 ---
 
+## Phase autopilot single-queue 001 (2026-05-17)
+
+Switch the autopilot from three per-stream daily crons (cooking, baking,
+mindset) to a single round-robin queue cron that fires every 2 hours and
+picks the next READY-and-not-COMPLETE category from a fair least-recently-
+fired rotation. Same per-batch authoring shape; just one cron and one
+SKILL.md driving every category.
+
+- **Schema migration** `20260621000000_phase_autopilot_single_queue_001`.
+  Additive on `Category`:
+  - `pipelineStatus PipelineStatus` (new enum: `NOT_READY`, `READY`,
+    `PAUSED`, `COMPLETE`). Default `NOT_READY`. The single-queue cron
+    only picks `READY` rows; `NOT_READY` rows wait for their pipeline-
+    setup session; `PAUSED` is admin intent; `COMPLETE` is terminal.
+  - `lastAutopilotRunAt DateTime?` — set to now() at the start of each
+    batch. The round-robin sort uses this to pick the least-recently-
+    fired READY category.
+  - `autopilotWeight Int default 1` — reserved for future weighted
+    round-robin (each weight unit = one slot per cycle); not used in
+    v1 (strict round-robin via the `1` default).
+  - Index `(pipelineStatus, lastAutopilotRunAt)` for the queue picker.
+  - Migration also flips Cooking + Baking + Mindset to `READY` in-place
+    so the new cron has work to pick up on its first fire. The 14
+    placeholder categories stay at the column default `NOT_READY` until
+    their per-category pipeline-setup session lands.
+
+- **Publish-path auto-flip hook.** New helper
+  `packages/db/src/category-pipeline-status.ts` exports
+  `maybeFlipCategoryPipelineComplete(prisma, categoryId)`. Only flips
+  `READY` → `COMPLETE` and only when `published_count >= targetTutorialCount`.
+  Wired into every publish path next to `maybeFlipCategoryVisibility`:
+  - `packages/db/scripts/upload-tutorial.ts` (bulk auto-publish path)
+  - `apps/web/src/app/admin/tutorials/actions.ts`
+    (`setTutorialStatus` PUBLISHED transition)
+  - `apps/web/src/app/admin/tutorials/bulk-actions.ts` (admin bulk
+    publish — re-checks once per touched category)
+  The result: the queue cron stops picking a category the moment it
+  hits its target.
+
+- **`seed-categories.ts` extended.** Carries a desired `pipelineStatus`
+  per row (`READY` for the three existing shipped categories,
+  `NOT_READY` for the 14 placeholders) and only advances NOT_READY →
+  READY on subsequent runs. Never overrides PAUSED or COMPLETE state
+  set by admin / publish hook.
+
+- **New single-queue SKILL.md** at
+  `C:\Users\Rebecca\.claude\scheduled-tasks\autopilot-queue\SKILL.md`
+  (same on-disk convention as the per-stream SKILLs — outside the repo,
+  user-level). Frontmatter `model: claude-sonnet-4-5`. Pre-flight gates:
+  0. Manual pause check (`AutopilotPauseState` rows where `streamName`
+     ∈ `{queue, global}` AND `pausedAt != null`) + env pause.
+  1. Round-robin pick (SQL ORDER BY `lastAutopilotRunAt ASC NULLS FIRST,
+     launchOrder ASC` over `pipelineStatus = 'READY'`). Halt if no row
+     matches; disable the cron only when every category is genuinely
+     `COMPLETE`.
+  2. Claim the slot (`lastAutopilotRunAt = now()`) before drafting —
+     this is the no-double-firing guard.
+  3. Locate authoring prompt by convention `docs/{categorySlug}-author.md`
+     (cooking falls back to `docs/tutorial-author.md`). Missing file →
+     flip the category to NOT_READY + halt-signal.
+  4. Standard per-category preflight ported from the per-stream SKILLs
+     (no-double-firing within window, backlog drain, quality drift,
+     hard chain cap).
+  5. Auto-determine batch number + run the batch per the category's
+     authoring prompt (40–50 entries, brief → self-critique → voice-check
+     → upload PUBLISHED with the 3-retry cap).
+
+- **Per-stream crons disabled via MCP.** All three (`autopilot-cooking-bulk`,
+  `autopilot-baking-bulk`, `autopilot-mindset-bulk`) flipped to
+  `enabled: false`. SKILL.md files left in place so reverting is one
+  re-enable per task.
+
+  > **Queue cron creation needs Rebecca.** The `create_scheduled_task`
+  > MCP tool requires interactive approval and is blocked under
+  > unsupervised mode. Worker disabled the three per-stream crons (the
+  > `update_scheduled_task` call works fine) and wrote the queue
+  > SKILL.md to disk, but the queue cron itself isn't registered in
+  > the scheduled-tasks index yet — `list_scheduled_tasks` doesn't
+  > show it. To finish the switchover, Rebecca runs this from a
+  > supervised session:
+  >
+  > ```
+  > mcp__scheduled-tasks__create_scheduled_task
+  >   taskId          = "autopilot-queue"
+  >   description     = "Homemade content autopilot — single round-robin queue, every 2 hours."
+  >   cronExpression  = "0 */2 * * *"
+  >   prompt          = <contents of ~/.claude/scheduled-tasks/autopilot-queue/SKILL.md body, without the frontmatter block>
+  > ```
+  >
+  > If the tool overwrites the SKILL.md frontmatter, re-add
+  > `model: claude-sonnet-4-5` so the runner picks Sonnet for bulk
+  > authoring.
+
+- **Admin pause page parity (deferred).** `apps/web/src/app/admin/system/autopilot/`
+  hard-codes the three streams (`cooking`, `baking`, `mindset`) in
+  `STREAMS` + `assertStream()`. The new queue cron honours pause rows
+  on `streamName ∈ {queue, global}` — admin needs a `queue` entry +
+  `assertStream` widening + a single `queue` toggle in the UI. Out of
+  scope for this session (no admin work) — flag for a small follow-up
+  bundle.
+
+Out of scope (deliberately): no content authoring, no image sourcing
+changes, no admin / homepage / mobile work, no edits to authoring
+prompts (`docs/tutorial-author.md`, `docs/baking-author.md`,
+`docs/mindset-author.md` stay as-is), no deletion of the per-stream
+SKILL.md files (only disabled, so revert is one MCP call per task),
+no edits to `docs/social-strategy/`, `docs/recipe-backlog.md`,
+`docs/content-backlog.md`, `docs/page-design.md`.
+
+Commit: `<sha>` — Phase autopilot single-queue 001: round-robin schema +
+publish-hook flip + queue SKILL.md + per-stream crons disabled.
+
+---
+
 ## Commit history milestones (last 20)
 
+- `<sha>` — feat(autopilot): single-queue switchover — round-robin schema + COMPLETE flip + queue SKILL.md
 - `b71ceca` — feat(content): phase_8_content_integration_001 — image two-pass + audit rules + halt signals
 - `5b12e6e` — fix(public): followup-queue sweep — recipe page UX + Sentry tracing off + cache headers
 - `5854e2b` — feat(content): phase_8 fix-up — servings/yield + hero fill 536/536 + tricolons deferred
@@ -2498,6 +2613,5 @@ analytics work, no edits to `docs/social-strategy/`,
 - `5008a2c` — content(cooking): bulk-006 — 5 more PUBLISHED, total 10
 - `5030d8f` — content(cooking): bulk-006 — 5 PUBLISHED, halted on schema drift
 - `2e2ac5e` — content(mindset): bulk-001 — 20 briefs drafted, voice-checked, upload blocked by DB drift
-- `6183f6c` — content(baking): bulk-001 — 50 recipes auto-published, report + anti-tells + BUILD_PROGRESS
 
 Earlier milestones → [docs/archive/build-progress-history.md](docs/archive/build-progress-history.md).
