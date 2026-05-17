@@ -1,0 +1,125 @@
+{
+  "slug": "spanakopita-spinach-feta",
+  "title": "Spanakopita",
+  "subtitle": "Greek spinach and feta pie in crisp buttered filo layers",
+  "excerpt": "A Greek spinach and feta pie built from many layers of filo pastry, each brushed with melted butter, filled with wilted spinach, feta, and egg. The layers shatter when cut. Serves 8.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Spanakopita is a traditional Greek pastry documented throughout Greek regional cookery from the nineteenth century and earlier. The combination of spinach, feta, and egg encased in filo is documented across Greek household recipes as a standard mezze and main course. The layered filo technique, in which each sheet is brushed with olive oil or butter before layering, is standard across Greek and wider Eastern Mediterranean baking traditions.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "one 30 × 20 cm tray, 8 portions",
+    "prepMinutes": 30,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 70,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unbaked. Bake from frozen at 190°C fan, adding 15 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Can be assembled and refrigerated for up to 24 hours before baking.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "greek",
+    "mealType": "lunch",
+    "mood": ["weekendBake", "special"],
+    "temperatureCelsius": 190,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "fan oven; 200°C in a conventional oven",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "buttering-filo",
+      "term": "Buttering filo",
+      "definition": "Filo pastry dries out and cracks within seconds of being exposed to air. Keep the unused sheets covered with a clean damp cloth at all times. When brushing each sheet with butter or oil, work quickly and don't worry about perfect coverage — some dry patches between sheets are fine. The fat between layers serves two purposes: it keeps the sheets separate during baking so each one can crisp independently, and it conducts heat to brown the layers. Under-buttered filo bakes pale; properly buttered filo bakes to a deep, even gold."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The spinach must be dry. Watery filling makes soggy pastry and pale, limp layers that never crisp. Wilt the spinach, then squeeze it in a cloth until it stops dripping. Once the filling is dry, the rest is straightforward. Keep unused filo covered with a damp cloth — " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "buttering-filo" } }], "text": "buttering filo" },
+          { "type": "text", "text": " quickly is the main skill to develop." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "filo-pastry", "amount": 270, "unit": "g", "prepNote": "one standard pack, about 10 sheets", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "melted", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "spinach", "amount": 500, "unit": "g", "prepNote": "fresh, or 250 g frozen defrosted and squeezed dry", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "feta", "amount": 300, "unit": "g", "prepNote": "crumbled", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "eggs", "amount": 3, "unit": "large", "prepNote": "beaten", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "nutmeg-whole", "amount": 1, "unit": "each", "prepNote": "a few gratings", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": "freshly ground", "isOptional": false, "groupLabel": "Filling" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Soften the {{onion}} and {{garlic}} in a little oil in a wide pan. Add the {{spinach}} and stir until wilted and the liquid has cooked away completely. Tip into a clean cloth and squeeze out all remaining moisture. Cool. Combine in a bowl with the crumbled {{feta}}, beaten {{eggs}}, a grating of {{nutmeg-whole}}, and the {{black-pepper}}. Do not add salt — the feta is salty." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Layer and bake — 35–40 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 190°C fan. Brush a 30 × 20 cm tin with melted {{unsalted-butter}}. Lay one sheet of {{filo-pastry}} in the tin, letting it overhang, and brush with butter. Layer five sheets this way, brushing each. Spread the filling evenly over the pastry. Top with the remaining five sheets, brushing each. Fold in the overhanging edges and brush the top. Score the surface into portions with a sharp knife — this makes it easier to cut cleanly when baked. Bake for 35–40 minutes until deep golden and the layers are visibly separated and crisp. Rest for 10 minutes before cutting." }]
+      }
+    ]
+  }
+}

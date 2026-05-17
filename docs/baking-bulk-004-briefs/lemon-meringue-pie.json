@@ -1,0 +1,136 @@
+{
+  "slug": "lemon-meringue-pie",
+  "title": "Lemon meringue pie",
+  "subtitle": "Sharp lemon filling under a tall, toasted meringue",
+  "excerpt": "A baked shortcrust case filled with a thick, sharp lemon curd thickened with cornflour, topped with soft meringue and baked until golden. Serve the same day. Makes one 23 cm pie.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Lemon meringue pie is an American household dessert documented from the mid-nineteenth century. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: a lemon custard tart with meringue topping is recorded in the tart and pie entries. The combination of a cornflour-thickened lemon curd with a soft baked meringue topping is documented in American household baking guides from the 1860s onwards and became a British household standard during the twentieth century.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "one 23 cm pie, 8 slices",
+    "prepMinutes": 30,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "totalMinutes": 110,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pastry case can be blind baked a day ahead. The filled pie is best eaten on the day it is made.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": ["cosy", "weekendBake"],
+    "temperatureCelsius": 180,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven; 190°C in a conventional oven. Meringue baked at 160°C fan",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "tart-tin", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "soft-meringue",
+      "term": "Soft meringue",
+      "definition": "A meringue made with less sugar than a hard or baked meringue, applied while the filling is still hot, then briefly baked at a moderate temperature. The residual heat from the filling cooks the underside, while the oven crisps and colours the outside. Soft meringue weeps more readily than hard meringue — a day or more, and the sugar dissolves back out. Eat it the day it is made."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The filling must be hot when the meringue goes on. The heat from below cooks the base of the meringue and prevents the layer between filling and meringue from weeping. If the filling cools before you top it, you will have a watery gap. Keep the filling hot in the pan while you whisk the meringue." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cold, cubed", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "icing-sugar", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "large", "prepNote": "yolk only", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "lemon", "amount": 4, "unit": "each", "prepNote": "zest and juice — about 120 ml juice", "isOptional": false, "groupLabel": "Lemon filling" },
+            { "ingredientSlug": "caster-sugar", "amount": 175, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Lemon filling" },
+            { "ingredientSlug": "cornflour", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Lemon filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": "cubed", "isOptional": false, "groupLabel": "Lemon filling" },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "large", "prepNote": "yolks only (keep whites for meringue)", "isOptional": false, "groupLabel": "Lemon filling" },
+            { "ingredientSlug": "caster-sugar", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Meringue" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and blind bake the pastry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rub the cold {{unsalted-butter}} (pastry amount) into the {{plain-flour}} and {{icing-sugar}} until the mixture resembles fine crumbs. Add the {{eggs}} (pastry yolk) and 1–2 tbsp cold water and press together. Wrap and chill for 30 minutes. Preheat the oven to 180°C fan. Line a 23 cm tart tin, prick the base, and blind bake with paper and beans for 15 minutes. Remove the beans and paper and bake for 5 more minutes. Lower the oven to 160°C fan." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the lemon filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whisk the {{cornflour}} and {{caster-sugar}} (filling amount) with the {{lemon}} juice and 200 ml cold water in a saucepan. Heat over medium heat, stirring constantly, until the mixture thickens and bubbles. Remove from the heat. Beat the {{eggs}} (filling yolks) with a fork and whisk into the hot filling. Return to the heat for 1–2 minutes, stirring. Remove from the heat and stir in the {{unsalted-butter}} (filling amount) and {{lemon}} zest. Pour immediately into the warm pastry case." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the meringue and bake — 15–20 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Whisk the egg whites from the saved {{eggs}} (filling step) to soft peaks. Add the {{caster-sugar}} (meringue amount) one tablespoon at a time, whisking until thick and glossy. Spoon immediately over the hot filling, spreading to the pastry edges to seal. Swirl the surface with the back of a spoon. Bake at 160°C fan for 15–20 minutes, until the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "soft-meringue" } }], "text": "soft meringue" },
+          { "type": "text", "text": " is golden on top. Cool for 30 minutes before serving." }
+        ]
+      }
+    ]
+  }
+}

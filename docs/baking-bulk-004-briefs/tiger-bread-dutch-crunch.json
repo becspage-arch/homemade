@@ -1,0 +1,134 @@
+{
+  "slug": "tiger-bread-dutch-crunch",
+  "title": "Tiger bread",
+  "subtitle": "Dutch crunch loaf with a rice flour crust that cracks in the oven",
+  "excerpt": "A soft white loaf coated before baking in a rice flour paste that crackles and splits into a tiger pattern as the bread rises in the oven. Makes one large loaf.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Tiger bread (Dutch: tijgerbrood) is a Dutch bakery tradition, documented in Netherlands household and artisan baking records from the twentieth century. The rice flour paste (Dutch crunch topping) is applied to the shaped loaf before the final proof and cracks as the dough expands in the oven, producing the characteristic pattern. The technique is documented in Dutch baking manuals from the mid-twentieth century and has been a standard of UK supermarket bakeries since the 1980s.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "one large loaf",
+    "prepMinutes": 30,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 195,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze fully cooled, sliced. The crunch topping softens after freezing and thawing.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Shape and coat the loaf the evening before. Cover and refrigerate overnight for a cold proof; bake the following morning.",
+    "dietaryFlags": ["dairyFree"],
+    "cuisine": "dutch",
+    "mealType": "breakfast",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": 220,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 400,
+      "hydrationPercent": 65,
+      "saltPercent": 2,
+      "yeastPercent": 1.75,
+      "levainPercent": null,
+      "bulkFermentMinutes": 75,
+      "proofMinutes": 45,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "fan oven; 230°C in a conventional oven",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "dutch-crunch-topping",
+      "term": "Dutch crunch topping",
+      "definition": "A paste of rice flour, yeast, oil, sugar, and water applied to the surface of a shaped bread before the final proof. As the bread rises in the oven, the stiff rice flour paste cannot expand with the dough and instead cracks, producing the distinctive tiger pattern. The topping must be thick enough to crack cleanly — thin application gives only partial coverage. Apply it just before the final proof, not after."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The crust comes from the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dutch-crunch-topping" } }], "text": "Dutch crunch topping" },
+          { "type": "text", "text": " — a stiff rice flour paste that cracks as the bread rises. Apply it generously and evenly: any bare patches of bread will not crack and the pattern will be uneven. The paste thickens as it sits; if it becomes too stiff to spread, add a teaspoon of warm water." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Bread" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 8, "unit": "g", "prepNote": "about 1½ tsp", "isOptional": false, "groupLabel": "Bread" },
+            { "ingredientSlug": "yeast-dried", "amount": 7, "unit": "g", "prepNote": "one sachet", "isOptional": false, "groupLabel": "Bread" },
+            { "ingredientSlug": "vegetable-oil", "amount": 20, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Bread" },
+            { "ingredientSlug": "rice-flour", "amount": 75, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dutch crunch topping" },
+            { "ingredientSlug": "yeast-dried", "amount": 4, "unit": "g", "prepNote": "about ¾ tsp", "isOptional": false, "groupLabel": "Dutch crunch topping" },
+            { "ingredientSlug": "vegetable-oil", "amount": 15, "unit": "ml", "prepNote": "about 1 tbsp", "isOptional": false, "groupLabel": "Dutch crunch topping" },
+            { "ingredientSlug": "caster-sugar", "amount": 5, "unit": "g", "prepNote": "about 1 tsp", "isOptional": false, "groupLabel": "Dutch crunch topping" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": "about ½ tsp", "isOptional": false, "groupLabel": "Dutch crunch topping" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the bread dough and bulk ferment — 75 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the {{strong-bread-flour}} (bread amount), {{sea-salt-fine}} (bread amount), and {{yeast-dried}} (bread amount) in a large bowl. Add 260 ml warm water and the {{vegetable-oil}} (bread amount). Mix to a smooth dough and knead for 8–10 minutes until soft and elastic. Cover and leave for 75 minutes until doubled." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape, coat, and prove — 45 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Shape the dough into an oval and place in a greased 900 g loaf tin. Mix the {{rice-flour}}, {{yeast-dried}} (topping amount), {{vegetable-oil}} (topping amount), {{caster-sugar}}, {{sea-salt-fine}} (topping amount), and 80 ml warm water in a bowl to make a thick paste. Leave for 5 minutes, then spread generously over the top and sides of the shaped loaf. Leave to prove for 45 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake — 28–32 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 220°C fan. Bake for 28–32 minutes, until the topping is deep amber and crackled and the base sounds hollow when tapped. Cool on a rack for at least 20 minutes before slicing." }]
+      }
+    ]
+  }
+}

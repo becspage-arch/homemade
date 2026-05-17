@@ -1,0 +1,123 @@
+{
+  "slug": "rye-bread-dark-scandinavian",
+  "title": "Dark Scandinavian rye bread",
+  "subtitle": "Dense, sour sourdough rye loaf with a long ferment",
+  "excerpt": "A dense, dark rye loaf leavened entirely with sourdough starter and left to ferment for eight to twelve hours. The crumb is tight and moist, the flavour sour and complex. Slices thin and keeps for a week. Makes one loaf.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Dark sourdough rye is the staple bread of Denmark, Sweden, Finland, and Germany, documented in Scandinavian and northern European household manuals from at least the medieval period. The long cold ferment, high rye content, and sourdough leavening are consistent across historical Scandinavian baking records. The form recorded here follows the Danish rugbrød tradition, a dense brick loaf baked in a tin with no shaping, documented in Danish household baking guides of the nineteenth and twentieth centuries.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "one loaf, about 20 slices",
+    "prepMinutes": 20,
+    "cookMinutes": 60,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 600,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice before freezing. Thaw at room temperature or toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The loaf improves for 24 hours after baking as the crumb sets. Slice only once fully cooled.",
+    "dietaryFlags": ["vegan", "dairyFree"],
+    "cuisine": "scandinavian",
+    "mealType": "breakfast",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 80,
+      "saltPercent": 2,
+      "yeastPercent": null,
+      "levainPercent": 30,
+      "bulkFermentMinutes": 480,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven; 210°C in a conventional oven. Start at 230°C fan for the first 10 minutes, then reduce to 200°C fan",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rye-fermentation",
+      "term": "Rye fermentation",
+      "definition": "Rye flour ferments differently to wheat. It contains high levels of pentosan gums that absorb water and create a viscous, sticky batter rather than an elastic dough. It also ferments more quickly because of the higher enzyme activity. This means rye breads are shaped and panned without the stretch-and-fold process used in wheat sourdoughs, and the proof window is shorter — overproofed rye collapses and turns gummy. Mix, pan, ferment, and bake."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dark rye bread is not made like wheat bread. There is no kneading, no shaping, and no bench work. The dough is a very thick, sticky batter that goes straight into a tin. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rye-fermentation" } }], "text": "Rye ferments fast" },
+          { "type": "text", "text": " and the window between properly proved and overproved is narrower than for wheat. Check it after 8 hours; the batter should have risen to just below the rim of the tin with some bubbles visible on the surface." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The loaf needs to cool for a full day after baking. Cutting it hot produces a gummy, under-set crumb. Leave it wrapped overnight." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "rye-flour", "amount": 350, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "wholemeal-flour", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": "about 2 tsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sourdough-starter", "amount": 150, "unit": "g", "prepNote": "active, 100% hydration rye or wheat", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and ferment — 8–12 hours" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the {{rye-flour}}, {{wholemeal-flour}}, and {{sea-salt-fine}} in a large bowl. Add the {{sourdough-starter}} and 400 ml warm water. Mix thoroughly with a spatula or large spoon until a thick, cohesive batter forms. There is no kneading. Scrape into a well-greased 900 g loaf tin. Smooth the surface with wet hands. Cover and leave at room temperature for 8–12 hours, until the batter has risen to the rim of the tin and small bubbles are visible on the surface." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake — 55–60 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 230°C fan. Place the tin in the oven and bake for 10 minutes at this temperature, then reduce to 200°C fan and bake for a further 45–50 minutes. The loaf is done when a skewer inserted into the centre comes out clean and the sides have contracted slightly from the tin. Turn out onto a rack and cool completely before slicing — at least 6 hours, and preferably overnight." }]
+      }
+    ]
+  }
+}

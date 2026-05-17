@@ -1,0 +1,142 @@
+{
+  "slug": "brown-butter-chocolate-chip-cookies",
+  "title": "Brown butter chocolate chip cookies",
+  "subtitle": "Crisp-edged, chewy-centred cookies with nutty browned butter",
+  "excerpt": "Chocolate chip cookies where the butter is browned before mixing, which adds a nutty, toasted depth to the finished biscuit. Crisp at the edges and chewy in the centre. Makes sixteen large cookies.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "biscuits",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The chocolate chip cookie as a category originates with Ruth Wakefield's Toll House recipe (1930s, US), which is out of copyright. The browned-butter variation is a widely reproduced modern kitchen technique for deepening flavour in drop cookies, appearing across American baking guides from the 1990s onwards. No single public-domain text documents this combination; the recipe draws on standard American cookie ratios and the browned-butter method documented in twentieth-century American household baking literature.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "16 large cookies",
+    "prepMinutes": 20,
+    "cookMinutes": 13,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "totalMinutes": 63,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze unbaked dough balls on a tray, then bag. Bake from frozen at 180°C fan for 15–17 minutes.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly. Bake in batches of eight so the cookies have room to spread.",
+    "makeAheadNotes": "The dough can be refrigerated, covered, for up to 72 hours. Chilling improves the flavour and texture.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "snack",
+    "mood": ["cosy", "weekendBake", "kidFriendly"],
+    "temperatureCelsius": 180,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 250,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven; 190°C in a conventional oven",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "brown-butter",
+      "term": "Brown butter",
+      "definition": "Unsalted butter cooked over medium heat until the water evaporates, the milk solids settle, and those solids begin to colour from pale gold to deep amber. The flavour shifts from creamy to nutty and toasted. Remove from the heat as soon as the solids turn amber; they continue cooking in the residual heat. Pour into a bowl immediately to stop the process. Also called beurre noisette."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Browning the butter takes about five minutes and makes a noticeable difference. The finished cookie tastes richer and more complex than one made with melted or creamed butter. The browning step also removes some of the water from the butter, which produces a crispier edge and a slightly chewier centre." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Chilling the dough before baking is worth it. The rested dough spreads more slowly, giving the edges time to set before the centre is done." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "unsalted-butter", "amount": 170, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dark-brown-sugar", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "large", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vanilla-extract", "amount": 8, "unit": "ml", "prepNote": "about 1½ tsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bicarbonate-of-soda", "amount": 5, "unit": "g", "prepNote": "about 1 tsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 5, "unit": "g", "prepNote": "about 1 tsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chocolate-chips", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the butter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt the {{unsalted-butter}} in a small saucepan over medium heat. Continue cooking, swirling the pan occasionally, until the foam subsides and the milk solids on the base turn amber and smell nutty. This takes 4–6 minutes. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brown-butter" } }], "text": "Brown butter" },
+          { "type": "text", "text": " can turn to burnt butter quickly at the end — watch it closely. Pour into a large mixing bowl and cool for 10 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and chill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whisk the {{dark-brown-sugar}} and {{caster-sugar}} into the cooled brown butter until combined. Beat in the {{eggs}} and {{vanilla-extract}}. Stir in the {{plain-flour}}, {{bicarbonate-of-soda}}, and {{sea-salt-fine}} until just combined. Fold in the {{chocolate-chips}}. Cover and refrigerate for 30 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake — 11–13 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 180°C fan. Line a large baking tray with baking paper. Scoop the dough into balls about 55 g each and arrange eight per tray, spaced well apart. Bake for 11–13 minutes, until the edges are set and the centres still look slightly underdone and glossy. The cookies will continue to cook on the hot tray. Leave for 5 minutes before moving to a rack." }]
+      }
+    ]
+  }
+}

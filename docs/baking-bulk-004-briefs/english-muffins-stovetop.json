@@ -1,0 +1,127 @@
+{
+  "slug": "english-muffins-stovetop",
+  "title": "English muffins",
+  "subtitle": "Yeasted griddle muffins with a soft crumb and a nook-filled interior",
+  "excerpt": "Yeasted dough rings cooked in a dry pan over a low heat, then split with a fork to reveal an open, nook-filled crumb. The fork-split matters: a knife would compress the texture that makes them worth making. Makes twelve.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "English muffins are documented in British household baking records from the eighteenth century. They are distinct from American muffins (which are quick-baked, cake-like items) and from the crumpet. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: muffins are documented as a griddle-cooked yeasted bread dusted with semolina or flour before cooking, sold by street muffin men and also made at home. The semolina dusting and the griddle cooking method are consistent across nineteenth-century British household baking records.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "12 muffins",
+    "prepMinutes": 25,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 145,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze fully cooled. Split from frozen and toast directly.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly. Cook in batches of four.",
+    "makeAheadNotes": "The dough can be refrigerated overnight after the bulk ferment. Bring to room temperature for 1 hour before shaping.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "breakfast",
+    "mood": ["weekendBake", "cosy"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 68,
+      "saltPercent": 1.8,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 75,
+      "proofMinutes": 30,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": null,
+      "bakeTemperatureNote": "cooked in a dry frying pan or griddle over medium-low heat, about 6–7 minutes per side",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "griddle", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "fork-split",
+      "term": "Fork-splitting",
+      "definition": "Pulling an English muffin apart with a fork rather than cutting it with a knife. The fork tears along the natural fault lines of the crumb rather than compressing them, leaving a rough, uneven surface full of nooks and crannies. These irregular surfaces hold butter and absorb it unevenly, which is part of the point. A knife cut produces a smooth surface that behaves more like sliced bread."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "English muffins need to be cooked low and slow. The pan must be hot enough to colour the base but not so hot that it burns before the interior is cooked through. Test the heat with a single muffin first: the base should take about 6 minutes to turn deep gold. If it colours in 3, the pan is too hot. Always " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fork-split" } }], "text": "fork-split" },
+          { "type": "text", "text": " them; a knife will flatten the crumb." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 9, "unit": "g", "prepNote": "about 1½ tsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 10, "unit": "g", "prepNote": "about 2 tsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "yeast-dried", "amount": 7, "unit": "g", "prepNote": "one sachet", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 200, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "melted", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "semolina", "amount": 40, "unit": "g", "prepNote": "for dusting", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dough and bulk ferment — 75 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the {{strong-bread-flour}}, {{sea-salt-fine}}, {{caster-sugar}}, and {{yeast-dried}} in a large bowl. Add the warm {{whole-milk}}, 140 ml warm water, and melted {{unsalted-butter}}. Mix to a soft, slightly sticky dough. Knead for 8–10 minutes until smooth and elastic. Cover and leave for 75 minutes until doubled." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and cook — 12–14 minutes per batch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Scatter {{semolina}} generously over a clean surface. Roll the dough to 1.5 cm thick and cut into rounds using a 9 cm cutter. Place on a semolina-dusted tray. Dust the tops with more semolina. Leave for 30 minutes." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat a dry frying pan or griddle over medium-low heat. Cook the muffins four at a time for 6–7 minutes per side, until deep gold on each face and the sides no longer look raw and doughy. Pressing the side should feel firm, not soft. Cool on a rack. To serve, insert a fork around the edge and pull the two halves apart." }]
+      }
+    ]
+  }
+}
