@@ -471,6 +471,32 @@ model Tutorial {
   // Defaults to ['UK'] at upload time when the author leaves it empty.
   regionsApplicable String[] @default([])
 
+  // ──────────────────────────────────────────────────────────────────────────
+  // Phase 8 Herbal pipeline — herbal-medicine recipe metadata.
+  //
+  // Set on rows where `type IN (REMEDY, HERB_PROFILE)`. Null on every
+  // non-herbal row. `primaryHerb` is the FK to the Herb master table —
+  // SetNull so deleting a master row doesn't cascade away authored
+  // remedies. `relatedConditionIds` is a free-form String[] (not a
+  // Prisma relation) so a remedy can reference conditions without a
+  // join row — same pattern as `alternativePracticeIds` on Mindset.
+  // `preparationType` is the preparation taxonomy (tincture / decoction
+  // / infusion / oil / salve / balm / syrup / compress / poultice /
+  // bath / steam / inhalation / gargle / capsule). `safetyFlags`
+  // inherits from the primary herb's flags and may extend with
+  // tutorial-specific cautions ("pregnancy-caution-third-trimester").
+  // `requiresMedicalDisclaimer` defaults true; the renderer surfaces
+  // the canonical "Not medical advice…" line on every herbal page
+  // unless an editor explicitly clears it.
+  // ──────────────────────────────────────────────────────────────────────────
+
+  primaryHerbId             String?
+  primaryHerb               Herb?    @relation("TutorialPrimaryHerb", fields: [primaryHerbId], references: [id], onDelete: SetNull)
+  relatedConditionIds       String[] @default([])
+  preparationType           String?
+  safetyFlags               String[] @default([])
+  requiresMedicalDisclaimer Boolean  @default(true)
+
   planDayMornings    UserPlanDay[]          @relation("PlanDayMorningPractice")
   planDayEvenings    UserPlanDay[]          @relation("PlanDayEveningPractice")
   planDayAnchors     UserPlanDay[]          @relation("PlanDayAnchorPractice")
@@ -505,6 +531,8 @@ model Tutorial {
   @@index([plantingMonths], type: Gin)
   @@index([harvestMonths], type: Gin)
   @@index([regionsApplicable], type: Gin)
+  @@index([primaryHerbId])
+  @@index([type, preparationType])
 }
 
 enum TutorialType {
@@ -513,6 +541,11 @@ enum TutorialType {
   PRACTICE
   READING
   GROWING_GUIDE
+  // Phase 8 Herbal pipeline — REMEDY is a preparation tutorial (tincture,
+  // decoction, infusion, oil, salve, balm, syrup, compress, poultice, bath,
+  // steam). HERB_PROFILE is a single-herb materia-medica entry.
+  REMEDY
+  HERB_PROFILE
 }
 
 enum HeroStrategy {
@@ -2317,4 +2350,118 @@ model CompanionPlanting {
   @@unique([plantId, companionId])
   @@index([plantId])
   @@index([companionId])
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Phase 8 Herbal Medicine pipeline — master reference tables.
+//
+// Three additive tables underpin REMEDY and HERB_PROFILE tutorials:
+//
+//   Herb              — master materia-medica row. ~40 starter herbs
+//                       seeded via `seed-herbs.ts`. Slug-keyed so
+//                       authoring briefs can reference a herb by slug.
+//   Condition         — body-system-tagged condition reference (~30
+//                       starter rows via `seed-conditions.ts`).
+//   HerbConditionUse  — relation table; one row per
+//                       (herb, condition, preparationType). Powers the
+//                       "what helps for X" surface and the herb-profile
+//                       "traditional uses" block.
+//
+// See `docs/herbal-author.md` for the safety voice rules — herbal
+// medicine carries the strictest safety stakes of any category.
+// ────────────────────────────────────────────────────────────────────────────
+
+model Herb {
+  id            String  @id @default(cuid())
+  slug          String  @unique
+  commonName    String
+  latinBinomial String
+  family        String?
+
+  /// 'leaf' | 'root' | 'flower' | 'bark' | 'seed' | 'berry' | 'rhizome'
+  /// | 'bulb' | 'aerial-parts' | 'whole' | 'resin'.
+  partsUsed String[] @default([])
+
+  /// nervine | adaptogen | carminative | demulcent | expectorant
+  /// | anti-inflammatory | digestive-bitter | astringent | diuretic
+  /// | antimicrobial | circulatory-stimulant | hepatic | diaphoretic
+  /// | emmenagogue | analgesic | sedative | tonic.
+  primaryActions String[] @default([])
+
+  keyConstituents String[] @default([])
+
+  /// 'western-herbal' | 'chinese-medicine' | 'ayurveda' | 'folk-european'
+  /// | 'native-american' | 'eclectic-american' | etc.
+  traditionsCited String[] @default([])
+
+  /// 'pregnancy-caution' | 'breastfeeding-caution' | 'not-with-anticoagulants'
+  /// | 'not-with-ssri' | 'not-with-contraceptives' | 'not-long-term'
+  /// | 'liver-caution' | 'kidney-caution' | 'photosensitising'
+  /// | 'external-use-only' | 'paediatric-caution' | 'allergen-asteraceae'
+  /// | 'hypotensive' | 'hypertensive'.
+  safetyFlags String[] @default([])
+
+  drugInteractionNotes String?
+  notes                String?
+
+  tutorials     Tutorial[]         @relation("TutorialPrimaryHerb")
+  conditionUses HerbConditionUse[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([commonName])
+  @@index([latinBinomial])
+}
+
+model Condition {
+  id   String @id @default(cuid())
+  slug String @unique
+  name String
+
+  /// 'digestive' | 'respiratory' | 'nervous' | 'musculoskeletal' | 'skin'
+  /// | 'womens-health' | 'mental-emotional' | 'immune' | 'circulatory'
+  /// | 'urinary' | 'endocrine'.
+  bodySystem String
+
+  commonSymptoms        String[] @default([])
+  /// When the reader must see a doctor rather than self-treat. Surfaced
+  /// in the public renderer at the top of every related remedy page.
+  redFlagsRequireDoctor String?
+  notes                 String?
+
+  herbUses HerbConditionUse[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([bodySystem])
+}
+
+model HerbConditionUse {
+  id String @id @default(cuid())
+
+  herbId String
+  herb   Herb   @relation(fields: [herbId], references: [id], onDelete: Cascade)
+
+  conditionId String
+  condition   Condition @relation(fields: [conditionId], references: [id], onDelete: Cascade)
+
+  /// 'tincture' | 'decoction' | 'infusion' | 'oil' | 'salve' | 'balm'
+  /// | 'syrup' | 'compress' | 'poultice' | 'bath' | 'steam' | 'inhalation'
+  /// | 'gargle' | 'capsule'.
+  preparationType     String
+  traditionalUseNotes String?
+
+  /// 'traditional' | 'case-based' | 'clinical-trial-supported'
+  /// | 'well-established'. Conservative — see `docs/herbal-author.md`
+  /// § "Evidence levels".
+  evidenceLevel String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([herbId, conditionId, preparationType])
+  @@index([herbId])
+  @@index([conditionId])
 }

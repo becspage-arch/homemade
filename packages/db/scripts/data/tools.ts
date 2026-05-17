@@ -274,4 +274,15 @@ export const TOOLS: ToolSeed[] = [
   { slug: 'spray-bottle', name: 'Spray bottle', category: 'other', aliases: [], isPurchasable: true, typicalPriceGbp: 500, notes: 'For misting bread doughs in the oven for a crustier loaf.' },
   { slug: 'banneton', name: 'Banneton', category: 'other', aliases: ['proving basket', 'brotform'], isPurchasable: true, typicalPriceGbp: 1500, notes: 'For proving sourdough. Linen-lined to stop sticking.' },
   { slug: 'baking-beans', name: 'Baking beans', pluralName: 'baking beans', category: 'other', aliases: ['pie weights'], isPurchasable: true, typicalPriceGbp: 800, notes: 'Ceramic or metal. For blind-baking pastry. Dried rice or chickpeas work too.' },
+
+  // ── Herbal-medicine pipeline (phase_herbal_pipeline_scaffold).
+  // Apothecary kit for tinctures, infusions, decoctions, oils, salves.
+  { slug: 'teapot', name: 'Teapot', category: 'other', aliases: [], isPurchasable: true, typicalPriceGbp: 1500, notes: 'Any teapot with a lid. The lid matters for infusions — it keeps the volatile oils in.' },
+  { slug: 'tea-infuser', name: 'Tea infuser', category: 'utensil', aliases: ['tea ball', 'tea strainer'], isPurchasable: true, typicalPriceGbp: 600, notes: 'Mesh basket or ball that holds loose-leaf herbs inside a cup or pot.' },
+  { slug: 'double-boiler', name: 'Double boiler', category: 'pot', aliases: ['bain-marie'], isPurchasable: true, typicalPriceGbp: 2500, notes: 'For melting chocolate, warming oils, infused-oil maceration. Or rig one from a heatproof bowl over a pan of simmering water.' },
+  { slug: 'dropper-bottle-amber', name: 'Amber dropper bottle, 30 ml', category: 'other', aliases: ['tincture bottle'], isPurchasable: true, typicalPriceGbp: 300, notes: 'Dark glass with pipette dropper. For tinctures and oils — light degrades the actives.' },
+  { slug: 'salve-tin', name: 'Salve tin, 30-60 ml', category: 'other', aliases: ['lip-balm tin', 'cosmetic tin'], isPurchasable: true, typicalPriceGbp: 200, notes: 'Small tin or jar with screw lid for finished salves and balms.' },
+  { slug: 'thermometer-probe', name: 'Probe thermometer', category: 'measuring', aliases: ['digital thermometer'], isPurchasable: true, typicalPriceGbp: 1500, notes: 'For oil maceration (hold at 60-65°C), candy work, meat. Avoid the cheap analogue dials.' },
+  { slug: 'funnel-small', name: 'Funnel, small', category: 'utensil', aliases: [], isPurchasable: true, typicalPriceGbp: 400, notes: 'For decanting tinctures and oils into bottles.' },
+  { slug: 'maceration-jar', name: 'Maceration jar', category: 'other', aliases: ['large kilner jar'], isPurchasable: true, typicalPriceGbp: 1200, notes: '500 ml-1 L glass jar with a tight lid, for 4-6-week tincture and oil macerations.' },
 ]

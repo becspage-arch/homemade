@@ -17,7 +17,14 @@
  * before inserting.
  */
 
-export type TutorialType = 'RECIPE' | 'TECHNIQUE' | 'PRACTICE' | 'READING' | 'GROWING_GUIDE'
+export type TutorialType =
+  | 'RECIPE'
+  | 'TECHNIQUE'
+  | 'PRACTICE'
+  | 'READING'
+  | 'GROWING_GUIDE'
+  | 'REMEDY'
+  | 'HERB_PROFILE'
 
 /**
  * Mindset practice metadata. Required when `type === 'PRACTICE'` or
@@ -196,6 +203,61 @@ export interface GardenMetadata {
   regionsApplicable?: GardenRegion[] | string[]
 }
 
+/**
+ * Herbal preparation taxonomy. Set on REMEDY rows. The `Herb`-keyed
+ * relations in `HerbConditionUse` carry the same string set.
+ */
+export type HerbalPreparationType =
+  | 'tincture'
+  | 'decoction'
+  | 'infusion'
+  | 'oil'
+  | 'salve'
+  | 'balm'
+  | 'syrup'
+  | 'compress'
+  | 'poultice'
+  | 'bath'
+  | 'steam'
+  | 'inhalation'
+  | 'gargle'
+  | 'capsule'
+
+/**
+ * Herbal-medicine-specific tutorial metadata. Required when
+ * `type === 'REMEDY'` or `type === 'HERB_PROFILE'`. Null / omitted on
+ * every other type. Maps directly onto the `Tutorial.primaryHerbId` etc.
+ * columns added by `phase_herbal_pipeline_scaffold`.
+ *
+ * REMEDY tutorials always set `preparationType` AND `primaryHerbSlug`;
+ * `relatedConditionSlugs` is optional but typical (a peppermint
+ * infusion is "for indigestion + nausea"). HERB_PROFILE tutorials set
+ * only `primaryHerbSlug` — no preparation, no related conditions
+ * (the herb's own `HerbConditionUse` rows surface that data).
+ *
+ * `safetyFlags` extends the primary herb's master flags with any
+ * tutorial-specific cautions (e.g. "pregnancy-caution-third-trimester"
+ * when the master flag is the broader "pregnancy-caution"). The upload
+ * script accepts either the inherited flags as-is or an explicit
+ * extension list — it does not auto-merge.
+ *
+ * `requiresMedicalDisclaimer` defaults true. Leave it true unless the
+ * tutorial is a pure-historical materia-medica reading where the
+ * disclaimer is handled inline in the body.
+ */
+export interface HerbalMetadata {
+  /** Slug of a row in the master `Herb` table. Required for REMEDY + HERB_PROFILE. */
+  primaryHerbSlug: string
+  /** Slugs in the master `Condition` table. Optional; typical for REMEDY. */
+  relatedConditionSlugs?: string[]
+  /** Required for REMEDY; null / omitted for HERB_PROFILE. */
+  preparationType?: HerbalPreparationType | null
+  /** Master herb flags + any tutorial-specific extensions. */
+  safetyFlags?: string[]
+  /** Defaults true. Editor override only. */
+  requiresMedicalDisclaimer?: boolean
+}
+
 export interface RecipeMetadata {
   /** Default yield. Drives the "Serves N" line and the scale selector. */
   servings?: number | null
@@ -365,6 +427,15 @@ export interface TutorialUploadInput {
   garden?: GardenMetadata | null
 
   /**
+   * Herbal-medicine metadata. Required when `type === 'REMEDY'` or
+   * `type === 'HERB_PROFILE'`. Null / omitted on every other type.
+   * Maps directly onto the `Tutorial.primaryHerbId` / `preparationType`
+   * / `safetyFlags` / `requiresMedicalDisclaimer` columns added by
+   * `phase_herbal_pipeline_scaffold`.
+   */
+  herbal?: HerbalMetadata | null
+
+  /**
    * Tools the recipe uses. The structured `equipmentList` TipTap block is
    * deferred; until then we accept tool references as a top-level array.
    * Each entry's `slug` must exist in the master `Tool` table.
@@ -503,7 +574,10 @@ export function validateInput(input: TutorialUploadInput): void {
   if (input.subCategorySlug && !SLUG_PATTERN.test(input.subCategorySlug)) {
     throw new Error(`input.subCategorySlug "${input.subCategorySlug}" must match the slug pattern.`)
   }
-  const allowedTypes = ['RECIPE', 'TECHNIQUE', 'PRACTICE', 'READING', 'GROWING_GUIDE'] as const
+  const allowedTypes = [
+    'RECIPE', 'TECHNIQUE', 'PRACTICE', 'READING', 'GROWING_GUIDE',
+    'REMEDY', 'HERB_PROFILE',
+  ] as const
   if (input.type && !allowedTypes.includes(input.type)) {
     throw new Error(
       `input.type "${input.type}" must be one of ${allowedTypes.join(' | ')}.`,
@@ -539,11 +613,47 @@ export function validateInput(input: TutorialUploadInput): void {
       )
     }
   }
-  if ((input.type === 'PRACTICE' || input.type === 'READING') && !input.practice) {
+  if (input.type === 'PRACTICE' && !input.practice) {
     throw new Error(
-      `input.practice is required when type is "${input.type}".`,
+      `input.practice is required when type is "PRACTICE".`,
     )
   }
+
+  // Herbal-medicine validation.
+  if (input.herbal) {
+    if (!input.herbal.primaryHerbSlug || !SLUG_PATTERN.test(input.herbal.primaryHerbSlug)) {
+      throw new Error(
+        `herbal.primaryHerbSlug "${input.herbal.primaryHerbSlug}" must match the slug pattern.`,
+      )
+    }
+    for (const condSlug of input.herbal.relatedConditionSlugs ?? []) {
+      if (!SLUG_PATTERN.test(condSlug)) {
+        throw new Error(
+          `herbal.relatedConditionSlugs entry "${condSlug}" must match the slug pattern.`,
+        )
+      }
+    }
+    const validPrepTypes: HerbalPreparationType[] = [
+      'tincture', 'decoction', 'infusion', 'oil', 'salve', 'balm', 'syrup',
+      'compress', 'poultice', 'bath', 'steam', 'inhalation', 'gargle', 'capsule',
+    ]
+    if (input.herbal.preparationType && !validPrepTypes.includes(input.herbal.preparationType)) {
+      throw new Error(
+        `herbal.preparationType "${input.herbal.preparationType}" must be one of ${validPrepTypes.join(' | ')}.`,
+      )
+    }
+  }
+  if ((input.type === 'REMEDY' || input.type === 'HERB_PROFILE') && !input.herbal) {
+    throw new Error(
+      `input.herbal is required when type is "${input.type}".`,
+    )
+  }
+  if (input.type === 'REMEDY' && !input.herbal?.preparationType) {
+    throw new Error(
+      `herbal.preparationType is required when type is "REMEDY".`,
+    )
+  }
+
   if (input.garden) {
     if (!input.garden.plantSlug || !SLUG_PATTERN.test(input.garden.plantSlug)) {
       throw new Error(
@@ -612,9 +722,13 @@ export function validateInput(input: TutorialUploadInput): void {
   // articles that don't have a real-world arc either. Reject those.
   if (input.projectSchedule && input.projectSchedule.length > 0) {
     const tutorialType = input.type ?? 'RECIPE'
-    if (tutorialType === 'TECHNIQUE' || tutorialType === 'READING') {
+    if (
+      tutorialType === 'TECHNIQUE' ||
+      tutorialType === 'READING' ||
+      tutorialType === 'HERB_PROFILE'
+    ) {
       throw new Error(
-        `projectSchedule is not allowed on type "${tutorialType}". Schedules are only valid on long-arc RECIPE (or PRACTICE) tutorials.`,
+        `projectSchedule is not allowed on type "${tutorialType}". Schedules are only valid on long-arc RECIPE / REMEDY / PRACTICE tutorials.`,
       )
     }
     const validSurfaces: ScheduleSurface[] = ['HERO', 'RAIL_CARD', 'NOTIFICATION_ONLY']

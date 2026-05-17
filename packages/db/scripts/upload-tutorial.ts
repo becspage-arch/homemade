@@ -400,6 +400,7 @@ async function uploadTutorial(
   const recipe = input.recipe ?? {}
   const practice = input.practice ?? null
   const garden = input.garden ?? null
+  const herbal = input.herbal ?? null
 
   // Resolve garden.plantSlug against the master `PlantVariety` table. Unknown
   // slugs fail up-front rather than silently inserting a tutorial with a
@@ -415,6 +416,43 @@ async function uploadTutorial(
         `Add it to packages/db/scripts/data/plants.ts and reseed before uploading.`,
       )
     }
+  }
+
+  // Resolve `herbal.primaryHerbSlug` against the master Herb table. Fail
+  // loudly on a missing slug — the master table is the source of truth and
+  // a typo there would silently NULL the FK on upload.
+  let primaryHerbId: string | null = null
+  if (herbal) {
+    const herbRow = await prisma.herb.findUnique({
+      where: { slug: herbal.primaryHerbSlug },
+      select: { id: true },
+    })
+    if (!herbRow) {
+      throw new Error(
+        `[herbal] primaryHerbSlug "${herbal.primaryHerbSlug}" not in master Herb table. ` +
+        `Seed via seed-herbs.ts or add it to scripts/data/herbs.ts first.`,
+      )
+    }
+    primaryHerbId = herbRow.id
+  }
+
+  // Resolve `herbal.relatedConditionSlugs` against the master Condition
+  // table. Same loud-fail policy.
+  let relatedConditionIds: string[] = []
+  if (herbal?.relatedConditionSlugs && herbal.relatedConditionSlugs.length > 0) {
+    const condRows = await prisma.condition.findMany({
+      where: { slug: { in: herbal.relatedConditionSlugs } },
+      select: { id: true, slug: true },
+    })
+    const found = new Set(condRows.map((r) => r.slug))
+    const missing = herbal.relatedConditionSlugs.filter((s) => !found.has(s))
+    if (missing.length > 0) {
+      throw new Error(
+        `[herbal] relatedConditionSlugs not in master Condition table: ${missing.join(', ')}. ` +
+        `Seed via seed-conditions.ts or add to scripts/data/conditions.ts first.`,
+      )
+    }
+    relatedConditionIds = condRows.map((r) => r.id)
   }
 
   // Compute totalMinutes if not given. Falls back to the explicit
@@ -514,6 +552,13 @@ async function uploadTutorial(
           ? (garden.regionsApplicable as string[])
           : ['UK'])
       : [],
+    // Herbal metadata (Phase 8 Herbal pipeline scaffold). Null on rows
+    // that aren't REMEDY / HERB_PROFILE.
+    primaryHerbId,
+    relatedConditionIds,
+    preparationType: herbal?.preparationType ?? null,
+    safetyFlags: herbal?.safetyFlags ?? [],
+    requiresMedicalDisclaimer: herbal?.requiresMedicalDisclaimer ?? true,
   }
 
   // Publish intent. --status PUBLISHED stamps publishedAt now and flips the

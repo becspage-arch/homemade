@@ -1,0 +1,117 @@
+{
+  "slug": "calendula-salve-for-skin",
+  "title": "Calendula salve for skin",
+  "subtitle": "A small tin to keep on the windowsill",
+  "excerpt": "An infused-oil salve of dried calendula flowers, beeswax, and olive oil. Traditionally applied to minor cuts, grazes, mild skin irritation, and dry patches. External use only.",
+  "type": "REMEDY",
+  "categorySlug": "herbal-medicine",
+  "subCategorySlug": "skin",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Maud Grieve, A Modern Herbal (1931), Calendula officinalis entry — the vulnerary action, the external preparations, the lymphatic note. King's American Dispensatory (Felter & Lloyd, 1898) — the calendula infused-oil method and the 1:5 herb-to-oil ratio. EMA HMPC monograph on Calendulae flos (2008) — modern conservative dosing for external preparations.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 small tin (~50 g salve)",
+    "prepMinutes": 15,
+    "cookMinutes": 240,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "totalMinutes": 285,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Triples cleanly to 3-4 tins at one go — useful for gifting. The oil-to-beeswax ratio holds at any batch from 30 g to 500 g salve.",
+    "makeAheadNotes": "The infused oil keeps 12 months in a dark glass bottle, cool and dark. Salve takes 10 minutes to make from already-infused oil.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "herbal": {
+    "primaryHerbSlug": "calendula",
+    "relatedConditionSlugs": ["minor-cut", "skin-irritation", "mild-eczema"],
+    "preparationType": "salve",
+    "safetyFlags": ["allergen-asteraceae", "external-use-only"],
+    "requiresMedicalDisclaimer": true
+  },
+  "recipeTools": [
+    { "slug": "double-boiler", "isOptional": false, "notes": "Or a heatproof bowl over a saucepan of simmering water." },
+    { "slug": "thermometer-probe", "isOptional": false, "notes": "Hold the oil at 60-65°C. Eyeballing the temperature is the most common failure mode." },
+    { "slug": "muslin-cloth", "isOptional": false, "notes": "For straining the spent flowers out of the infused oil." },
+    { "slug": "measuring-jug", "isOptional": false },
+    { "slug": "funnel-small", "isOptional": false },
+    { "slug": "salve-tin", "isOptional": false, "notes": "30-60 ml capacity. A clean jam jar with a screw lid works as a stand-in." }
+  ],
+  "glossaryTerms": [
+    { "slug": "vulnerary", "term": "Vulnerary", "definition": "A herb that supports the skin in healing. Traditional terminology; not a medical claim." },
+    { "slug": "infused-oil", "term": "Infused oil", "definition": "A carrier oil that has been macerated with dried herb material so the oil-soluble constituents leach into the oil. The base for salves and balms." },
+    { "slug": "patch-test", "term": "Patch test", "definition": "Dab a small amount on the inside of the forearm and wait 24-48 hours before wider use. Catches allergic reactions before they spread." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [{ "type": "text", "text": "A small tin of calendula salve. Fifteen minutes of active work spread over an afternoon: a long, low maceration of dried calendula flowers in olive oil, then a quick beeswax melt to thicken the strained oil into a salve. The result keeps a year in a cool cupboard and lives on the windowsill or in the bathroom cabinet — the household's go-to for minor cuts, grazes, and dry patches." }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Calendula is the traditional " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vulnerary" } }], "text": "vulnerary" }, { "type": "text", "text": " of western herbal practice — Maud Grieve calls it \"a wound-herb of the old country medicine\" and the King's American Dispensatory (1898) records the same use across the Atlantic. The plant's triterpenes and flavonoids are the constituents traditionally associated with the anti-inflammatory and skin-supportive action; the oil pulls them out of the dried flowers at low heat over a few hours." }] },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Important safety notes",
+          "body": "Not medical advice. Consult a qualified herbalist or doctor for ongoing or serious symptoms.\n\nExternal use only. Don't apply to deep wounds or broken skin where the salve would seal in dirt — keep it for closed minor cuts, dry patches, and irritation that hasn't broken the skin.\n\nAsteraceae allergy. Calendula is in the daisy family, alongside chamomile, yarrow, ragweed, and chrysanthemum. If you've reacted to any daisy-family plant before, patch-test first: dab a small amount on the inside of your forearm and wait 24-48 hours before wider use.\n\nNot a substitute for medical care. See your doctor or A&E for deep cuts, cuts that will not stop bleeding after fifteen minutes of pressure, cuts over a joint, cuts on the face or hand with possible nerve or tendon involvement, animal or human bites, or any wound showing spreading redness, warmth, pus, or fever. For burns, see A&E for any burn larger than the size of your palm, any burn on the face, hands, feet, joints, or genitals, and any burn that goes through the skin layer. Run cool running water over a fresh burn for at least twenty minutes before applying anything at all."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "dried-calendula-flowers", "amount": 40, "unit": "g", "prepNote": "whole flowers, not just petals — both work; petals alone steep faster", "isOptional": false, "groupLabel": "For the infused oil" },
+            { "ingredientSlug": "olive-oil", "amount": 200, "unit": "ml", "prepNote": "good-quality olive oil — not the cheapest blended kind", "isOptional": false, "groupLabel": "For the infused oil" },
+            { "ingredientSlug": "beeswax-pellets", "amount": 25, "unit": "g", "prepNote": "cosmetic-grade pellets — easier to measure than block beeswax", "isOptional": false, "groupLabel": "For the salve" }
+          ]
+        }
+      },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "The ratios are 1 part dried herb to 5 parts oil by weight, then 1 part beeswax to 4 parts strained oil to set into a salve that's firm at room temperature but soft to the fingertip. A firmer balm uses 1:3 beeswax-to-oil; a softer cream uses 1:6. The 1:4 here is the household standard." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Macerate the oil, 2-4 hours at 60-65°C" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Set up a " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "infused-oil" } }], "text": "infused oil" }, { "type": "text", "text": " maceration. In the top of a double boiler or a heatproof bowl over a saucepan of barely simmering water, combine {{dried-calendula-flowers}} of dried calendula flowers and {{olive-oil}} of olive oil. Clip the probe thermometer to the side of the bowl with its tip in the oil but not touching the bottom." }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Hold the oil at 60-65°C for 2-4 hours. The lower water bath heat is the rule — above 70°C the volatile constituents start to break down; below 55°C the oil doesn't extract well. The probe is the only way to be sure; eyeballing the heat is the most common failure mode and the reason a salve sometimes comes out smelling thin and oily rather than richly herbal. Stir once an hour. The oil should turn deep gold and smell strongly of calendula by hour 2; hour 4 is the deep end of the extraction." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Strain the oil, press the flowers" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Take the bowl off the heat. Set a fine sieve over a measuring jug, line the sieve with muslin cloth folded double. Pour the warm oil through the muslin; gather the corners and squeeze the spent flowers firmly to press out the last of the oil they hold (this is where ~5-10% of the yield hides — don't skip the squeeze)." }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "You should end up with around 180 ml of deep-gold strained oil — the flowers absorb and lose about 10% of the original volume. If the oil looks cloudy with bits of plant matter, strain a second time through fresh muslin. Cloudiness shortens the shelf life." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Melt the beeswax into the strained oil" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Return the strained oil to the double-boiler bowl. Add {{beeswax-pellets}} of beeswax pellets. Heat gently — 70-75°C is plenty — and stir until the wax has melted completely and the mixture is uniformly translucent. About 5 minutes." }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Test the set: drip a small spoon of the warm mixture onto a cold saucer and let it sit for 30 seconds. The drop should set firm to a fingertip touch but feel soft and yielding, not waxy and hard. If it's too soft, melt in another 5 g of beeswax; if it's too firm, add 10 ml more strained oil. Adjust now while the mixture is still in the bowl." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Pour into the tin, set 30 minutes" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Off the heat. Pour the warm mixture through the small funnel into a clean salve tin (or a sterilised jam jar). Leave the lid off for the first 10 minutes so the steam can escape — a sealed lid traps condensation and shortens the shelf life. Once the surface has dulled from glossy to matte, lid the tin and label it with the date and the herb." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Dosing" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Apply a thin layer (a pea-sized dab covers the back of a hand) to clean, intact skin two or three times a day. The thin-layer rule is important — a thick coat seals the skin under a film of beeswax, which slows rather than supports the natural healing. For dry patches and minor irritation, expect to use the salve daily for 5-7 days before judging whether it suits the skin. For minor cuts and grazes (closed, not bleeding), apply once the wound has scabbed; not on broken bleeding skin." }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Course length: continue for up to 4 weeks. If the patch hasn't responded in that time, the salve isn't the right tool — see a herbalist or your GP. Paediatric use: small dabs on intact skin from school age are widely tolerated, but " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "patch-test" } }], "text": "patch-test" }, { "type": "text", "text": " first owing to the Asteraceae cross-reactivity. Infant and toddler use is not adult-divided-by-half — consult a herbalist who specialises in children's herbal medicine first." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Storage" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Salve keeps 12 months in the sealed tin, in a cool dark cupboard or the bathroom cabinet away from direct sunlight. If the surface develops white spots (mould) or smells rancid (sharp, paint-like, distinctly not-herbal), discard the tin and start a new batch — the carrier oil has gone off. Heat above 30°C softens the salve; a tin left in a hot car melts and re-solidifies with an oily layer on top, which is harmless but unsightly." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "When NOT to use this salve" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "See your doctor or A&E for deep cuts, cuts that will not stop bleeding after fifteen minutes of pressure, cuts over a joint, cuts on the face or hand with possible nerve or tendon involvement, animal or human bites, or any wound showing spreading redness, warmth, pus, or fever — these are infections that need antibiotics rather than herbs. For burns, run cool running water over a fresh burn for at least twenty minutes before any treatment, and see A&E for any burn larger than the size of your palm, any burn on the face, hands, feet, joints, or genitals, or any burn that goes through the skin layer." }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "For mild eczema, see your GP for eczema that is weeping, crusted, infected (gold-coloured crust), spreading rapidly, or interfering with sleep. Calendula salve sits alongside a GP's treatment plan, not in place of it. Eczema in infants warrants GP review before any home preparation." }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Skip the salve entirely if you have a known daisy-family allergy and patch-testing hasn't been cleared. If a patch-test (small dab on the forearm, 24-48 hours) produces redness, itch, or swelling, don't use the salve. Reactions to calendula are not common but they happen, and they're easier to head off in a patch-test than in a full application." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If the salve went sideways",
+          "intro": "The four ways a calendula salve goes wrong, and what to fix.",
+          "items": [
+            { "symptom": "Salve too soft — doesn't hold its shape in the tin", "cause": "Not enough beeswax for the volume of oil, or the beeswax didn't fully melt.", "fix": "Re-melt the salve, stir in 5-10 g more beeswax pellets, test the set on a cold saucer before re-pouring." },
+            { "symptom": "Salve too hard — won't pick up on a fingertip", "cause": "Too much beeswax for the volume of oil.", "fix": "Re-melt, add 20 ml more strained infused oil (or plain olive oil if you've run out of infused), test the set, re-pour." },
+            { "symptom": "Salve smells thin and oily, not herbal", "cause": "Oil ran too cool (under 55°C) during the maceration, or the dried flowers were stale.", "fix": "Source fresh dried calendula from a herbalist supplier — the smell from the bag should be strong, not faint. Re-do the maceration with the probe thermometer holding the oil at 60-65°C." },
+            { "symptom": "White spots on the surface after a few weeks", "cause": "Water made it into the tin — either from un-dried flowers, condensation under a too-soon-sealed lid, or a damp bathroom.", "fix": "Discard the tin. Next batch: make sure the flowers are fully dry, leave the lid off the warm-pour for 10 minutes before sealing, store somewhere drier." }
+          ]
+        }
+      }
+    ]
+  }
+}

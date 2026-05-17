@@ -35,8 +35,15 @@ interface PreviewPaneProps {
   sourceNotes: string
   /** Cloudflare Images delivery hash, passed down from the server page. */
   cloudflareDeliveryHash: string | null
-  /** RECIPE / TECHNIQUE / PRACTICE / READING / GROWING_GUIDE — controls which info-bar variant + body renderer fires. */
-  type: 'RECIPE' | 'TECHNIQUE' | 'PRACTICE' | 'READING' | 'GROWING_GUIDE'
+  /** RECIPE / TECHNIQUE / PRACTICE / READING / GROWING_GUIDE / REMEDY / HERB_PROFILE — controls which info-bar variant + body renderer fires. */
+  type:
+    | 'RECIPE'
+    | 'TECHNIQUE'
+    | 'PRACTICE'
+    | 'READING'
+    | 'GROWING_GUIDE'
+    | 'REMEDY'
+    | 'HERB_PROFILE'
   /** Recipe metadata mirrored from form state. Read only when type === 'RECIPE'. */
   recipeMeta?: {
     servings: number | null
