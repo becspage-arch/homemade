@@ -1111,3 +1111,81 @@
   color: var(--color-warm-taupe);
 }
 
+/* ──────────────────────────────────────────────────────────────────────
+   Calligraphy exemplar — single-letter exemplar with numbered ductus.
+   Rendered by `apps/web/src/lib/chart-renderers/calligraphy-exemplar.tsx`. */
+
+.tutorial-content .calligraphy-exemplar {
+  margin: 32px auto;
+  padding: 20px;
+  background: #fbf7f1;
+  border: 1px solid rgba(48, 42, 36, 0.12);
+  border-radius: 4px;
+  max-width: 360px;
+}
+
+.tutorial-content .calligraphy-exemplar__svg-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.tutorial-content .calligraphy-exemplar__caption {
+  text-align: center;
+  margin: 12px 0 0;
+  font-size: 0.85em;
+  color: var(--color-warm-taupe);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tutorial-content .calligraphy-exemplar__letter {
+  font-family: var(--font-fraunces, var(--font-lora));
+  font-size: 1.4em;
+  color: var(--color-espresso);
+}
+
+.tutorial-content .calligraphy-exemplar__alphabet {
+  font-style: italic;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Origami fold diagram — vertically stacked step diagrams (v1 basic).
+   Rendered by `apps/web/src/lib/chart-renderers/origami-fold-basic.tsx`. */
+
+.tutorial-content .origami-fold {
+  margin: 32px 0;
+  padding: 24px 20px;
+  background: #fbf7f1;
+  border: 1px solid rgba(48, 42, 36, 0.12);
+  border-radius: 4px;
+}
+
+.tutorial-content .origami-fold__title {
+  font-family: var(--font-fraunces, var(--font-lora));
+  font-size: 1.05em;
+  font-weight: 500;
+  color: var(--color-espresso);
+  margin: 0 0 16px;
+}
+
+.tutorial-content .origami-fold__svg-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.tutorial-content .origami-fold__legend {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin: 12px 0 0;
+  font-size: 0.8em;
+  color: var(--color-warm-taupe);
+}
+
+.tutorial-content .origami-fold__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+

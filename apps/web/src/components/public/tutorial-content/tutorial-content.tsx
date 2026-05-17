@@ -12,6 +12,12 @@ import { IngredientsList } from './blocks/ingredients-list'
 import type { IngredientsListItem } from './blocks/ingredients-list'
 import { CraftChart } from '@/lib/craft-charts/svg-chart'
 import type { ChartDefinition } from '@/lib/craft-charts/types'
+import { CalligraphyExemplar } from '@/lib/chart-renderers/calligraphy-exemplar'
+import { OrigamiFoldBasic } from '@/lib/chart-renderers/origami-fold-basic'
+import type {
+  CalligraphyExemplarDefinition,
+  OrigamiFoldDefinition,
+} from '@/lib/chart-renderers/types'
 import { ScaleToken } from './scale-context'
 import type {
   GlossaryRef,
@@ -252,6 +258,31 @@ function RenderNode({
         return <div className="craft-chart-missing">Chart not yet attached.</div>
       }
       return <CraftChart definition={def} />
+    }
+
+    case 'calligraphyExemplar': {
+      // Paper & word — per-glyph calligraphy exemplar. Outline, numbered
+      // ductus, guide-lines, nib-angle chip. Definition is inline in the
+      // block; the renderer lives at
+      // `apps/web/src/lib/chart-renderers/calligraphy-exemplar.tsx`.
+      const def = attrs.definition as CalligraphyExemplarDefinition | undefined
+      if (!def || typeof def !== 'object') {
+        return <div className="craft-chart-missing">Exemplar not yet attached.</div>
+      }
+      return <CalligraphyExemplar definition={def} />
+    }
+
+    case 'origamiFoldDiagram': {
+      // Paper & word — origami fold sequence (v1 basic-folds renderer).
+      // Mountain + valley folds only. Inline-reverse / petal / squash /
+      // sink / swivel / 3D collapse require the deferred advanced
+      // renderer. Renderer at
+      // `apps/web/src/lib/chart-renderers/origami-fold-basic.tsx`.
+      const def = attrs.definition as OrigamiFoldDefinition | undefined
+      if (!def || typeof def !== 'object') {
+        return <div className="craft-chart-missing">Fold diagram not yet attached.</div>
+      }
+      return <OrigamiFoldBasic definition={def} />
     }
 
     case 'ingredientsList': {
