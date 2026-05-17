@@ -22,7 +22,7 @@ Live at https://homemade.education behind splash gate (cookie `homemade-access=1
 
 **Library counts (PUBLISHED)** — full grid in § Multi-category fill plan below.
 
-- Cooking 518 (anchors + pilot-10 + personal-recipe ingest + bulks 001–008). Baking 109 (pilot-10 + bulks 001–002). Mindset 20 (bulk-001 — 15 PRACTICE + 5 type-intro READING; first row across the 10-row public threshold). The other 14 categories are private placeholders until each crosses 10 published rows.
+- Cooking 536 (anchors + pilot-10 + personal-recipe ingest + bulks 001–010). Baking 109 (pilot-10 + bulks 001–002). Mindset 20 (bulk-001 — 15 PRACTICE + 5 type-intro READING; first row across the 10-row public threshold). The other 14 categories are private placeholders until each crosses 10 published rows.
 
 **This week's notable landings**
 
@@ -1009,6 +1009,20 @@ Verified working in production after batch 004:
 
 **Report.** `docs/bulk-batch-009-report.md` for the full account.
 
+### Autopilot — Cooking bulk-010 ✅ landed 2026-05-17 (parallel-burner loop, quota burn-down)
+
+**Goal.** Weekly Max quota burn-down before reset. Parallel-burner loop session pinned to cooking (not round-robin). Target: 15 recipes, multi-cuisine spread.
+
+**Outcome.** 15 PUBLISHED, 0 dropped. Cooking moved from 521 → 536. Five cuisine families covered: caribbean (3), easternEuropean (3), turkish (2), levantine (1), northAfrican (4), persian (2). Difficulty mix: 10 BEGINNER (67%) / 5 INTERMEDIATE (33%).
+
+- **Pre-flight gates** all passed: AutopilotPauseState not paused on cooking or global streams; no double-fire (slot claimed by setting `Category.lastAutopilotRunAt` before drafting).
+- **Recipes published (15):** jerk-chicken, brown-stew-chicken, rice-and-peas (caribbean); borscht, beef-stroganoff, goulash (easternEuropean); menemen, mercimek-corbasi (turkish); tabbouleh (levantine); shakshuka, harira, zaalouk, kefta-skewers (northAfrican); khoresh-fesenjan, joojeh-kebab (persian).
+- **Voice-check.** 5 of 15 clean on first pass (33%). All 10 that needed fixes cleared on first retry. Errors: 6 em-dash appositive pairs, 2 banned phrases ("genuinely"), 1 americanism ("stove" → "hob"), 6 invalid ingredient slugs. 4 WARNs accepted (all false positives or policy-accepted token slugs).
+- **Slug corrections logged.** Wrong guesses: rice-long-grain → long-grain-rice; kidney-beans-tin → kidney-beans; tomato-paste → tomato-puree; butter → unsalted-butter; flat-leaf-parsley → parsley-flat; chicken-drumstick (not in master table).
+- **Master-list additions.** None. Glossary terms created: jerk, joojeh, khoresh, fesenjan, browning-technique, menemen, tabbouleh, shakshuka, harira, kefta (10 new terms).
+
+**Report.** `docs/bulk-batch-010-report.md` for the full account.
+
 **Out.** No schema changes; no voice-check CLI edits; no master-table additions; no admin/UI work; no edits to `docs/tutorial-author.md`, `docs/voice-editor-prompt.md`, or `docs/common-issues.md` (no patterns recurred 3+ times in this batch).
 
 ### Phase 8 Baking — bulk-001 batch ✅ landed 2026-05-16
@@ -1311,7 +1325,7 @@ Revise the rates here when actuals diverge from estimates.
 
 | # | Category | Target | Current | Pipeline | Fill weeks @ 1k/wk |
 |---|---|---:|---:|---|---:|
-| 1 | Cooking | 7,000 | 521 PUBLISHED (anchors + pilot-10 + personal-recipe ingest + bulks 001-009 across cuisines, methods, soups/salads/breakfasts/drinks/preserves/desserts). **bulk-009 (autopilot-queue first fire, 2026-05-17):** 3 PUBLISHED Anglo-Indian (aloo-gobi, saag-paneer, chicken-dopiaza) — deliberate small slice flagged as an Opus-model concession (SKILL.md says Sonnet; runner ran Opus). Cooking 518 → 521. Round-robin pipeline validated end-to-end. | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
+| 1 | Cooking | 7,000 | 536 PUBLISHED (anchors + pilot-10 + personal-recipe ingest + bulks 001-010 across cuisines, methods, soups/salads/breakfasts/drinks/preserves/desserts). **bulk-010 (parallel-burner loop, 2026-05-17):** 15 PUBLISHED across caribbean, easternEuropean, turkish, levantine, northAfrican, persian. Cooking 521 → 536. | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
 | 2 | Baking | 3,000 | 109 PUBLISHED (10 pilot + 50 bulk-001 + 50 bulk-002, 2026-05-17) + 4 DRAFT anchor | ✅ schema + taxonomy + authoring prompt v2 + anti-tells + pilot-10 + bulk-001 + bulk-002 all landed. **bulk-002 (autopilot, 2026-05-17):** 50 PUBLISHED across 6 under-represented sub-categories: pies (13), pastries (11), biscuits (10), scones (7), sweets-confectionery (6), cake-decorating (3). 19 BEGINNER / 24 INTERMEDIATE / 7 ADVANCED. Zero new ingredients or tools seeded (all resolved against existing master tables, 633 ingredients + 188 tools). Clean upload pass on first try (50/50 ok run-1) — a step up from bulk-001's 4-run iteration. Report: `docs/baking-bulk-002-report.md`. Cumulative sub-category fill: bread 13, cakes 13, pies 19, pastries 20, biscuits 18, scones 12, sweets-confectionery 13, cake-decorating 5. Next bulk should rotate bread + cakes back in. Four anchor DRAFTs pending Rebecca review. Baking-specific TipTap blocks (baker's percentages, lamination schedule, sugar-stage panel) still ahead. | 3 |
 | 3 | Garden | 4,000 | 0 | Not started — ~1 wk setup | 4 |
 | 4 | Herbal medicine | 2,500 | 0 | Not started — ~1 wk setup | 2.5 |

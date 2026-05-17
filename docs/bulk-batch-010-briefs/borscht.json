@@ -1,0 +1,293 @@
+{
+  "slug": "borscht",
+  "title": "Borscht",
+  "subtitle": "Ukrainian beetroot and cabbage soup",
+  "excerpt": "Borscht is the great beetroot soup of Eastern Europe: a vivid, deeply flavoured broth built on roasted or boiled beet, cabbage, potato, and carrot, finished with vinegar for sharpness and a spoonful of soured cream at the table. The colour is the giveaway — that particular dark crimson comes only from beetroot.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "• Olia Hercules, *Mamushka* (2015). Principal reference for the Ukrainian home kitchen version and the vinegar-finishing technique.\n• Darra Goldstein, *A Taste of Russia* (1983). Cross-reference for the beetroot-to-cabbage ratio and the broth base.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the soup without the soured cream for up to 3 months. Defrost overnight in the fridge and reheat on the hob. The beetroot colour may deepen on freezing but the flavour holds well.",
+    "batchable": true,
+    "batchNotes": "The recipe scales well. Make a double batch and freeze half without soured cream.",
+    "makeAheadNotes": "Borscht improves overnight as the flavours deepen. Make ahead and reheat gently on the hob, adding a splash of water if the soup has thickened.",
+    "dietaryFlags": ["vegetarian", "glutenFree"],
+    "cuisine": "easternEuropean",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "box-grater", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Borscht is one of the most recognisable soups in the world, and the colour is why. That particular dark crimson comes from beetroot and nothing else, and a bowl of it (especially with the swirl of soured cream) is immediately legible as itself. The soup is also good: earthy, slightly sweet from the beetroot, sharp from the vinegar, and hearty from the cabbage and potato."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is the vegetarian version, built on a simple vegetable stock base rather than beef broth. It is the everyday home kitchen version and needs no apology. The beetroot is grated and softened in the pot rather than roasted separately, which keeps the preparation simple and preserves the colour in the soup. A splash of white wine vinegar at the end sharpens the whole thing — without it, the soup can taste flat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beetroot",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "raw, peeled and coarsely grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cabbage-white",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "finely shredded",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "medium, peeled and cut into 1 cm cubes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "large, peeled and coarsely grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-vegetable",
+              "amount": 1200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "white-wine-vinegar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "or to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dill",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "roughly chopped, to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soured-cream",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": null,
+              "unit": "g",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "g",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wear an apron when grating the beetroot. The juice stains immediately and does not wash out easily. A box grater works well; a food processor with a grating disc is faster. A large, heavy pot gives even heat for the long simmer."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soften the aromatics" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat {{vegetable-oil}} of vegetable oil in a large, heavy pot over a medium heat. Add {{onion}} diced onion and {{carrot}} grated carrot. Cook, stirring occasionally, for 8 to 10 minutes until softened. Add {{garlic}} of garlic and {{tomato-puree}} of tomato purée; stir for 1 minute until the paste darkens slightly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add beetroot and stock" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add {{beetroot}} of grated beetroot and stir to coat in the oil. Pour in {{stock-vegetable}} of vegetable stock. Bring to a gentle boil, then reduce to a simmer and cook for 15 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add cabbage and potato" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add {{cabbage-white}} of shredded cabbage and {{potato}} of cubed potato. Return to a simmer and cook for 20 to 25 minutes until the potato is completely tender and the cabbage has softened into the broth."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Season and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stir in {{white-wine-vinegar}} of white wine vinegar. Taste: the soup should be earthy, a little sweet, and sharp. Add more vinegar, a few drops at a time, if it tastes flat. Season with salt and pepper. Ladle into bowls and serve with a spoonful of soured cream and a scatter of dill."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Soup has lost its bright crimson colour",
+              "cause": "The beetroot was cooked at too high a heat for too long, or the soup sat on the heat after the vinegar was added.",
+              "fix": "Keep the heat at a gentle simmer throughout. Add the vinegar only just before serving, and remove from the heat immediately. High heat and alkali break down the pigment in beetroot."
+            },
+            {
+              "symptom": "Soup tastes flat despite seasoning",
+              "cause": "Not enough vinegar, or the vinegar was added early and its sharpness cooked off.",
+              "fix": "Add another teaspoon of white wine vinegar and stir in just before serving. Taste after each addition. The vinegar does not make the soup taste sour at the right amount — it just sharpens everything."
+            },
+            {
+              "symptom": "Potato has broken down into the broth",
+              "cause": "The potato was cut too small, or the simmer ran too long after it was added.",
+              "fix": "Cut potato into 1 cm cubes and check at 20 minutes. It should be just tender — if it is ready, remove the soup from the heat even if the cabbage is not quite there."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Borscht is made across Ukraine, Russia, Poland, Lithuania, and Belarus in dozens of regional variations. The Ukrainian version, considered the most fully developed, can include pork or beef stock, kidney beans, and a wider array of vegetables. In Britain the soup arrived with Jewish and Eastern European emigrant communities in the early twentieth century and was served in Ashkenazi cafes and delicatessens from the East End of London outward. The vegetarian version is traditional in Jewish cooking, where dairy and meat cannot be combined at the same meal. The soured cream goes in at the table, not during cooking."
+          }
+        ]
+      }
+    ]
+  }
+}
