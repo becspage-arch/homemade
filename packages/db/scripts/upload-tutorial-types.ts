@@ -25,6 +25,7 @@ export type TutorialType =
   | 'GROWING_GUIDE'
   | 'REMEDY'
   | 'HERB_PROFILE'
+  | 'STITCH'
   | 'PATTERN'
 
 /**
@@ -329,6 +330,64 @@ export interface SewingMetadata {
   bodyMeasurementsRequired?: BodyMeasurement[] | string[]
 }
 
+/**
+ * Crochet (and the knitting pipeline that follows) terminology convention.
+ * Drives the abbreviation set the renderer shows in the stitch legend and
+ * the chart-symbol key. UK-first publication policy: default 'uk'.
+ */
+export type CraftTerminologyConvention = 'uk' | 'us'
+
+/**
+ * Crochet-specific tutorial metadata. Required when `type === 'PATTERN'`
+ * and the tutorial sits under the `crochet` Category. Recommended (though
+ * not required) when `type === 'STITCH'`. Null / omitted on every other
+ * type and on sewing PATTERN rows (which set `sewing` instead). Maps onto
+ * the `Tutorial.primaryYarnWeightId` / `primaryHookId` / `gaugeText` /
+ * `finishedSizeText` / `terminologyConvention` / `chartDefinition` /
+ * `craftStitchSlugs` / `craftTechniqueTags` columns added by
+ * `phase_crochet_pipeline_scaffold`.
+ *
+ * PATTERN tutorials set every field except optionally `chartDefinition`
+ * (simple-dishcloth has no chart). STITCH tutorials carry `craftStitchSlugs`
+ * (the one slug for the stitch being taught) and may add `chartDefinition`
+ * if a one-symbol chart helps; they typically omit yarn / hook / gauge /
+ * finished-size because the tutorial demonstrates the stitch, not a piece.
+ *
+ * `chartDefinition` is the inline JSON the SVG chart renderer reads. Shape
+ * documented in `apps/web/src/lib/craft-charts/types.ts`.
+ */
+export interface CrochetMetadata {
+  /** Slug in the master `YarnWeight` table. Required for PATTERN. */
+  primaryYarnWeightSlug?: string | null
+  /** Slug in the master `CrochetHook` table. Required for PATTERN. */
+  primaryHookSlug?: string | null
+  /** Author-written gauge text — '18 dc × 10 rows = 10 × 10 cm in 4 mm hook'. */
+  gaugeText?: string | null
+  /** Author-written finished size — '30 × 30 cm', 'Adult medium: 92 cm chest'. */
+  finishedSizeText?: string | null
+  /** UK-first default; 'us' only when the source pattern is American. */
+  terminologyConvention?: CraftTerminologyConvention
+  /**
+   * Generic chart definition consumed by the shared SVG renderer. Shape
+   * matches `apps/web/src/lib/craft-charts/types.ts`. Optional — patterns
+   * without a chart leave it null.
+   */
+  chartDefinition?: Record<string, unknown> | null
+  /**
+   * Slugs of stitches featured in this tutorial. Every slug must exist in
+   * the master `Stitch` table; the upload script validates. STITCH rows
+   * carry one slug (the stitch being taught); PATTERN rows carry every
+   * stitch the pattern uses.
+   */
+  craftStitchSlugs?: string[]
+  /**
+   * Free-form technique tags surfaced in the info bar and on the public
+   * browse — e.g. 'magic-ring', 'joining-as-you-go', 'tapestry-crochet',
+   * 'blocking', 'invisible-finish', 'chainless-foundation'.
+   */
+  craftTechniqueTags?: string[]
+}
+
 export interface RecipeMetadata {
   /** Default yield. Drives the "Serves N" line and the scale selector. */
   servings?: number | null
@@ -507,16 +566,28 @@ export interface TutorialUploadInput {
   herbal?: HerbalMetadata | null
 
   /**
-   * Sewing metadata. Required when `type === 'PATTERN'` and for
-   * sewing-discipline TECHNIQUE rows. Null / omitted on every non-sewing
-   * tutorial. Maps onto the `Tutorial.craftType / projectShape /
-   * requiredFabricTypes / requiredNotions / sewingMethod /
-   * fabricYardageMetres / finishedDimensionsCm / bodyMeasurementsRequired`
-   * columns added by `phase_sewing_pipeline_001`. Fabric and notion
-   * slugs are validated against the master `Fabric` / `SewingNotion`
-   * tables at upload time.
+   * Sewing metadata. Required when `type === 'PATTERN'` under the Sewing
+   * Category, and for sewing-discipline TECHNIQUE rows. Null / omitted on
+   * every non-sewing tutorial (crochet PATTERN rows set `crochet` instead).
+   * Maps onto the `Tutorial.craftType / projectShape / requiredFabricTypes
+   * / requiredNotions / sewingMethod / fabricYardageMetres /
+   * finishedDimensionsCm / bodyMeasurementsRequired` columns added by
+   * `phase_sewing_pipeline_001`. Fabric and notion slugs are validated
+   * against the master `Fabric` / `SewingNotion` tables at upload time.
    */
   sewing?: SewingMetadata | null
+
+  /**
+   * Crochet metadata. Required when `type === 'PATTERN'` under the Crochet
+   * Category; recommended on `type === 'STITCH'`. Null / omitted on every
+   * non-crochet tutorial (sewing PATTERN rows set `sewing` instead). Maps
+   * onto the `Tutorial.primaryYarnWeightId` / `primaryHookId` / `gaugeText`
+   * / `finishedSizeText` / `terminologyConvention` / `chartDefinition` /
+   * `craftStitchSlugs` / `craftTechniqueTags` columns added by
+   * `phase_crochet_pipeline_scaffold`. The knitting + needlework pipelines
+   * will reuse this block; only the hook-vs-needle FK differs.
+   */
+  crochet?: CrochetMetadata | null
 
   /**
    * Tools the recipe uses. The structured `equipmentList` TipTap block is
@@ -659,7 +730,8 @@ export function validateInput(input: TutorialUploadInput): void {
   }
   const allowedTypes = [
     'RECIPE', 'TECHNIQUE', 'PRACTICE', 'READING', 'GROWING_GUIDE',
-    'REMEDY', 'HERB_PROFILE', 'PATTERN',
+    'REMEDY', 'HERB_PROFILE',
+    'STITCH', 'PATTERN',
   ] as const
   if (input.type && !allowedTypes.includes(input.type)) {
     throw new Error(
@@ -781,6 +853,75 @@ export function validateInput(input: TutorialUploadInput): void {
   if (input.type === 'GROWING_GUIDE' && !input.garden) {
     throw new Error('input.garden is required when type is "GROWING_GUIDE".')
   }
+
+  // Crochet validation.
+  if (input.crochet) {
+    const c = input.crochet
+    if (c.primaryYarnWeightSlug && !SLUG_PATTERN.test(c.primaryYarnWeightSlug)) {
+      throw new Error(
+        `crochet.primaryYarnWeightSlug "${c.primaryYarnWeightSlug}" must match the slug pattern (looked up against the YarnWeight master table).`,
+      )
+    }
+    if (c.primaryHookSlug && !SLUG_PATTERN.test(c.primaryHookSlug)) {
+      throw new Error(
+        `crochet.primaryHookSlug "${c.primaryHookSlug}" must match the slug pattern (looked up against the CrochetHook master table).`,
+      )
+    }
+    for (const stitch of c.craftStitchSlugs ?? []) {
+      if (!SLUG_PATTERN.test(stitch)) {
+        throw new Error(
+          `crochet.craftStitchSlugs entry "${stitch}" must match the slug pattern.`,
+        )
+      }
+    }
+    for (const tag of c.craftTechniqueTags ?? []) {
+      if (typeof tag !== 'string' || tag.length === 0) {
+        throw new Error(
+          `crochet.craftTechniqueTags entries must be non-empty strings (got "${tag}").`,
+        )
+      }
+    }
+    if (c.terminologyConvention && c.terminologyConvention !== 'uk' && c.terminologyConvention !== 'us') {
+      throw new Error(
+        `crochet.terminologyConvention "${c.terminologyConvention}" must be 'uk' or 'us'.`,
+      )
+    }
+    if (c.chartDefinition !== undefined && c.chartDefinition !== null && typeof c.chartDefinition !== 'object') {
+      throw new Error(
+        'crochet.chartDefinition must be an object matching the ChartDefinition shape (or null when no chart).',
+      )
+    }
+  }
+  // PATTERN dispatch: a PATTERN must carry either a `crochet` block
+  // (Crochet Category) or a `sewing` block (Sewing Category). The future
+  // knitting + needlework pipelines extend this by adding their own
+  // metadata blocks; the dispatch stays the same shape.
+  if (input.type === 'PATTERN') {
+    if (!input.crochet && !input.sewing) {
+      throw new Error(
+        'input.crochet or input.sewing is required when type is "PATTERN".',
+      )
+    }
+    if (input.crochet) {
+      if (!input.crochet.primaryYarnWeightSlug) {
+        throw new Error('crochet.primaryYarnWeightSlug is required on a crochet PATTERN.')
+      }
+      if (!input.crochet.primaryHookSlug) {
+        throw new Error('crochet.primaryHookSlug is required on a crochet PATTERN.')
+      }
+      if (!input.crochet.gaugeText) {
+        throw new Error('crochet.gaugeText is required on a crochet PATTERN.')
+      }
+      if (!input.crochet.finishedSizeText) {
+        throw new Error('crochet.finishedSizeText is required on a crochet PATTERN.')
+      }
+    }
+  }
+  if (input.type === 'STITCH' && !input.crochet) {
+    throw new Error(
+      'input.crochet is required when type is "STITCH" (carries the stitch slug + optional chart definition).',
+    )
+  }
   for (const g of input.glossaryTerms ?? []) {
     if (!g.slug || !SLUG_PATTERN.test(g.slug)) {
       throw new Error(`glossaryTerms[].slug "${g.slug}" must match the slug pattern.`)
@@ -808,10 +949,11 @@ export function validateInput(input: TutorialUploadInput): void {
     if (
       tutorialType === 'TECHNIQUE' ||
       tutorialType === 'READING' ||
-      tutorialType === 'HERB_PROFILE'
+      tutorialType === 'HERB_PROFILE' ||
+      tutorialType === 'STITCH'
     ) {
       throw new Error(
-        `projectSchedule is not allowed on type "${tutorialType}". Schedules are only valid on long-arc RECIPE / REMEDY / PRACTICE tutorials.`,
+        `projectSchedule is not allowed on type "${tutorialType}". Schedules are only valid on long-arc RECIPE / REMEDY / PRACTICE / PATTERN tutorials.`,
       )
     }
     const validSurfaces: ScheduleSurface[] = ['HERO', 'RAIL_CARD', 'NOTIFICATION_ONLY']

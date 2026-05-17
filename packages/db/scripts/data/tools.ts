@@ -285,4 +285,17 @@ export const TOOLS: ToolSeed[] = [
   { slug: 'thermometer-probe', name: 'Probe thermometer', category: 'measuring', aliases: ['digital thermometer'], isPurchasable: true, typicalPriceGbp: 1500, notes: 'For oil maceration (hold at 60-65°C), candy work, meat. Avoid the cheap analogue dials.' },
   { slug: 'funnel-small', name: 'Funnel, small', category: 'utensil', aliases: [], isPurchasable: true, typicalPriceGbp: 400, notes: 'For decanting tinctures and oils into bottles.' },
   { slug: 'maceration-jar', name: 'Maceration jar', category: 'other', aliases: ['large kilner jar'], isPurchasable: true, typicalPriceGbp: 1200, notes: '500 ml-1 L glass jar with a tight lid, for 4-6-week tincture and oil macerations.' },
+
+  // ── Crochet pipeline (phase_crochet_pipeline_scaffold).
+  // Yarn-craft basics. Hooks live in the master CrochetHook table as
+  // their own size-specific rows; the generic "crochet hook" entry here
+  // is the catch-all when a pattern doesn't specify a hook size.
+  { slug: 'crochet-hook', name: 'Crochet hook', category: 'other', aliases: ['hook'], isPurchasable: true, typicalPriceGbp: 400, notes: 'A single hook. Most British patterns name a metric size (e.g. 4 mm); see the CrochetHook reference for the full UK/US/JP conversion table.' },
+  { slug: 'tapestry-needle', name: 'Tapestry needle', category: 'other', aliases: ['darning needle', 'yarn needle', 'wool needle'], isPurchasable: true, typicalPriceGbp: 300, notes: 'Blunt large-eyed needle for sewing in yarn ends and joining motifs. A pack of three sizes covers everything from 4-ply to chunky.' },
+  { slug: 'stitch-marker', name: 'Stitch marker', pluralName: 'stitch markers', category: 'other', aliases: ['locking stitch marker'], isPurchasable: true, typicalPriceGbp: 400, notes: 'Locking or split-ring markers for keeping track of round starts, repeats, and increases. A handful is enough — a paperclip works in a pinch.' },
+  { slug: 'craft-scissors', name: 'Craft scissors', pluralName: 'scissors', category: 'knife', aliases: ['snips', 'embroidery scissors'], isPurchasable: true, typicalPriceGbp: 600, notes: 'Sharp small scissors kept off the kitchen knife block. Used for clean yarn cuts when sewing in ends.' },
+  { slug: 'blocking-mat', name: 'Blocking mat', category: 'other', aliases: ['foam mat', 'blocking board'], isPurchasable: true, typicalPriceGbp: 1500, notes: 'Foam tiles (or a folded towel) for pinning damp finished crochet to shape. A child\'s soft-play tile substitutes well.' },
+  { slug: 'blocking-pins', name: 'Blocking pins', pluralName: 'blocking pins', category: 'other', aliases: ['T-pins', 'lace pins'], isPurchasable: true, typicalPriceGbp: 800, notes: 'Rust-proof T-pins or lace pins for pinning damp pieces to a blocking mat. Standard sewing pins corrode and stain the yarn.' },
+  { slug: 'measuring-tape-soft', name: 'Soft measuring tape', category: 'measuring', aliases: ['dressmaker\'s tape', 'tailor\'s tape'], isPurchasable: true, typicalPriceGbp: 300, notes: 'Flexible 150 cm tape for measuring gauge, finished pieces, and bodies for garments.' },
+  { slug: 'row-counter', name: 'Row counter', category: 'other', aliases: ['stitch counter', 'click counter'], isPurchasable: true, typicalPriceGbp: 500, notes: 'Mechanical click counter that sits on the hook handle, or a free phone app. For keeping count on long pattern repeats.' },
 ]

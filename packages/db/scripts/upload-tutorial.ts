@@ -402,6 +402,7 @@ async function uploadTutorial(
   const garden = input.garden ?? null
   const herbal = input.herbal ?? null
   const sewing = input.sewing ?? null
+  const crochet = input.crochet ?? null
 
   // Resolve garden.plantSlug against the master `PlantVariety` table. Unknown
   // slugs fail up-front rather than silently inserting a tutorial with a
@@ -435,6 +436,53 @@ async function uploadTutorial(
       )
     }
     primaryHerbId = herbRow.id
+  }
+
+  // Resolve crochet master references (YarnWeight, CrochetHook, Stitch).
+  // Same loud-fail policy: every slug must exist before the tutorial inserts.
+  let primaryYarnWeightId: string | null = null
+  let primaryHookId: string | null = null
+  if (crochet) {
+    if (crochet.primaryYarnWeightSlug) {
+      const row = await prisma.yarnWeight.findUnique({
+        where: { slug: crochet.primaryYarnWeightSlug },
+        select: { id: true },
+      })
+      if (!row) {
+        throw new Error(
+          `[crochet] primaryYarnWeightSlug "${crochet.primaryYarnWeightSlug}" not in master YarnWeight table. ` +
+          `Seed via seed-yarn-weights.ts or add it to scripts/data/yarn-weights.ts first.`,
+        )
+      }
+      primaryYarnWeightId = row.id
+    }
+    if (crochet.primaryHookSlug) {
+      const row = await prisma.crochetHook.findUnique({
+        where: { slug: crochet.primaryHookSlug },
+        select: { id: true },
+      })
+      if (!row) {
+        throw new Error(
+          `[crochet] primaryHookSlug "${crochet.primaryHookSlug}" not in master CrochetHook table. ` +
+          `Seed via seed-crochet-hooks.ts or add it to scripts/data/crochet-hooks.ts first.`,
+        )
+      }
+      primaryHookId = row.id
+    }
+    if (crochet.craftStitchSlugs && crochet.craftStitchSlugs.length > 0) {
+      const stitchRows = await prisma.stitch.findMany({
+        where: { slug: { in: crochet.craftStitchSlugs } },
+        select: { slug: true },
+      })
+      const found = new Set(stitchRows.map((r) => r.slug))
+      const missing = crochet.craftStitchSlugs.filter((s) => !found.has(s))
+      if (missing.length > 0) {
+        throw new Error(
+          `[crochet] craftStitchSlugs not in master Stitch table: ${missing.join(', ')}. ` +
+          `Seed via seed-stitches.ts or add to scripts/data/stitches.ts first.`,
+        )
+      }
+    }
   }
 
   // Resolve `herbal.relatedConditionSlugs` against the master Condition
@@ -611,6 +659,17 @@ async function uploadTutorial(
     finishedDimensionsCm:
       (sewing?.finishedDimensionsCm as Prisma.InputJsonValue | undefined) ?? undefined,
     bodyMeasurementsRequired: (sewing?.bodyMeasurementsRequired as string[] | undefined) ?? [],
+    // Crochet metadata (Phase 8 Crochet pipeline scaffold). Null on rows
+    // that aren't STITCH / PATTERN. Knitting + needlework pipelines reuse
+    // the same columns (only the hook FK is crochet-specific).
+    primaryYarnWeightId,
+    primaryHookId,
+    gaugeText: crochet?.gaugeText ?? null,
+    finishedSizeText: crochet?.finishedSizeText ?? null,
+    terminologyConvention: crochet?.terminologyConvention ?? null,
+    chartDefinition: (crochet?.chartDefinition ?? null) as Prisma.InputJsonValue,
+    craftStitchSlugs: crochet?.craftStitchSlugs ?? [],
+    craftTechniqueTags: crochet?.craftTechniqueTags ?? [],
   }
 
   // Publish intent. --status PUBLISHED stamps publishedAt now and flips the

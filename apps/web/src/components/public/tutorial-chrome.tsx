@@ -55,6 +55,7 @@ export interface TutorialRecipeMeta {
     | 'GROWING_GUIDE'
     | 'REMEDY'
     | 'HERB_PROFILE'
+    | 'STITCH'
     | 'PATTERN'
   servings: number | null
   yieldDescription: string | null

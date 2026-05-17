@@ -531,6 +531,62 @@ model Tutorial {
   finishedDimensionsCm     Json?
   bodyMeasurementsRequired String[] @default([])
 
+  // ──────────────────────────────────────────────────────────────────────────
+  // Phase 8 Crochet pipeline — Crochet-specific tutorial metadata.
+  //
+  // Set on rows where `type IN (STITCH, PATTERN)` and the tutorial sits
+  // under the `crochet` Category. The knitting + needlework pipelines that
+  // follow reuse most of these columns unchanged; only `primaryHookId` is
+  // crochet-specific (knitting adds `primaryNeedleId` on the same shape).
+  //
+  // `primaryYarnWeightId` / `primaryHookId` are SetNull FKs so deleting a
+  // master row never cascades away an authored pattern. `craftStitchSlugs`
+  // is a String[] (not a Prisma relation) — patterns cross-reference a
+  // handful of stitches and the renderer fetches them in one batched query,
+  // same pattern as `relatedConditionIds` on herbal rows.
+  //
+  // `chartDefinition` is a JSONB column the SVG chart renderer in
+  // `apps/web/src/lib/craft-charts/svg-chart.tsx` reads. Null on patterns
+  // that don't have a chart; populated on in-the-round motifs and on
+  // stitch tutorials that benefit from a glyph chart.
+  // ──────────────────────────────────────────────────────────────────────────
+
+  primaryYarnWeightId    String?
+  primaryYarnWeight      YarnWeight?  @relation("TutorialPrimaryYarnWeight", fields: [primaryYarnWeightId], references: [id], onDelete: SetNull)
+  primaryHookId          String?
+  primaryHook            CrochetHook? @relation("TutorialPrimaryHook", fields: [primaryHookId], references: [id], onDelete: SetNull)
+
+  /// Stated gauge as the author wrote it — e.g. "18 dc × 10 rows = 10 × 10 cm
+  /// in 4 mm hook, after blocking". Plain text; the renderer surfaces it
+  /// verbatim in the pattern info bar. Null on STITCH rows.
+  gaugeText              String?
+
+  /// Stated finished size — e.g. "30 × 30 cm", "Adult medium: 92 cm chest /
+  /// 56 cm length". Plain text; renderer surfaces it verbatim.
+  finishedSizeText       String?
+
+  /// 'uk' | 'us'. Drives the abbreviation set the renderer shows in the
+  /// stitch-abbreviation legend and the chart-symbol key. UK-first
+  /// publication policy: default 'uk' on every crochet row unless the
+  /// source pattern is American. Null on non-crochet/knitting rows.
+  terminologyConvention  String?
+
+  /// Generic chart definition consumed by the shared SVG chart renderer.
+  /// Shape documented in `apps/web/src/lib/craft-charts/types.ts`.
+  chartDefinition        Json?
+
+  /// Slugs of stitches this tutorial features. STITCH rows carry one slug
+  /// (the stitch being taught); PATTERN rows carry every stitch the pattern
+  /// uses. Slugs reference the master `Stitch` table; the upload script
+  /// validates that each exists.
+  craftStitchSlugs       String[] @default([])
+
+  /// Technique tags surfaced in the info bar and filterable on the public
+  /// browse — e.g. 'magic-ring', 'joining-as-you-go', 'tapestry-crochet',
+  /// 'blocking', 'invisible-finish', 'chainless-foundation'. Free-form
+  /// strings so authors can add without a migration.
+  craftTechniqueTags     String[] @default([])
+
   planDayMornings    UserPlanDay[]          @relation("PlanDayMorningPractice")
   planDayEvenings    UserPlanDay[]          @relation("PlanDayEveningPractice")
   planDayAnchors     UserPlanDay[]          @relation("PlanDayAnchorPractice")
@@ -573,6 +629,11 @@ model Tutorial {
   @@index([type, sewingMethod])
   @@index([requiredFabricTypes], type: Gin)
   @@index([requiredNotions], type: Gin)
+  @@index([primaryYarnWeightId])
+  @@index([primaryHookId])
+  @@index([craftStitchSlugs], type: Gin)
+  @@index([craftTechniqueTags], type: Gin)
+  @@index([type, terminologyConvention])
 }
 
 enum TutorialType {
@@ -590,6 +651,13 @@ enum TutorialType {
   // panel / circle / from-measurements project tutorial. Fitted-garment
   // patterns (requiring pattern pieces, grading, digitisation) are out of
   // scope at launch and use a separate workstream when added.
+  //
+  // Phase 8 Crochet pipeline adds STITCH (single-stitch tutorial — chain,
+  // double crochet, treble, magic ring, slip stitch). PATTERN is shared
+  // with sewing for finished-item patterns (granny square, dishcloth);
+  // knitting + needlework pipelines will reuse both values. The
+  // Tutorial's category + craft-keyed Stitch references disambiguate.
+  STITCH
   PATTERN
 }
 
@@ -2511,7 +2579,6 @@ model HerbConditionUse {
   @@index([conditionId])
 }
 
-// ────────────────────────────────────────────────────────────────────────────
 // Phase Sewing pipeline — master reference tables.
 //
 // Two additive tables underpin PATTERN and sewing-discipline TECHNIQUE
@@ -2581,4 +2648,135 @@ model SewingNotion {
   updatedAt DateTime @updatedAt
 
   @@index([category])
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Phase 8 Crochet pipeline scaffold — Stitch / YarnWeight / CrochetHook.
+//
+// Stitch is craft-keyed so the knitting + needlework pipelines that follow
+// extend the same master without parallel tables. CrochetHook stays crochet-
+// specific; the knitting pipeline will add KnittingNeedle on the same shape.
+// See `docs/crochet-author.md` for how patterns reference these.
+// ────────────────────────────────────────────────────────────────────────────
+
+model Stitch {
+  id   String @id @default(cuid())
+  slug String @unique
+
+  /// 'crochet' | 'knitting' | 'cross-stitch' | 'tatting'. Drives the
+  /// browse + filter and lets the same slug ("treble") collide across
+  /// crafts without conflict (slugs are craft-prefixed: 'crochet-treble').
+  craft String
+
+  /// Display name the publication uses by default. Crochet rows authored
+  /// UK-first set the UK name ("treble") here.
+  canonicalName String
+
+  ukName         String?
+  usName         String?
+  ukAbbreviation String?
+  usAbbreviation String?
+
+  /// 'basic' | 'foundation' | 'textured' | 'lace' | 'colourwork' | 'edging'
+  /// | 'joining' | 'special'. Free-form string for future categories.
+  category String
+
+  /// Symbol key the SVG chart renderer reads. Matches one of the keys in
+  /// `apps/web/src/lib/craft-charts/chart-symbols.ts`. Null on stitches
+  /// whose chart glyph is built per-pattern.
+  chartSymbol String?
+
+  /// 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED'. Free-form string mirrors
+  /// the Tutorial difficulty axis without coupling enums.
+  difficulty String?
+
+  parentStitchId String?
+  parentStitch   Stitch?  @relation("StitchParent", fields: [parentStitchId], references: [id], onDelete: SetNull)
+  childStitches  Stitch[] @relation("StitchParent")
+
+  notes String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([craft])
+  @@index([category])
+  @@index([parentStitchId])
+}
+
+model YarnWeight {
+  id   String @id @default(cuid())
+  slug String @unique
+
+  /// British convention name ("DK", "Aran", "Chunky").
+  canonicalName String
+
+  /// Craft Yarn Council standard weight 0..7. INT so the renderer can
+  /// sort weights without parsing strings. Unique across rows.
+  standardCategory Int @unique
+
+  /// Alternative names readers will see on yarn labels and in older
+  /// pattern books. e.g. UK "DK" = US "light worsted".
+  ukNames String[] @default([])
+  usNames String[] @default([])
+
+  /// Traditional fibre-artist measurement for substituting yarn at the
+  /// same weight without a label. Text "14-18" so a range fits.
+  wrapsPerInch String?
+
+  /// Recommended hook + needle ranges in millimetres ("3.0-3.5mm").
+  /// Both populated on every row so the renderer can show needle
+  /// equivalents beside hook sizes and vice versa.
+  recommendedHookRangeMm   String?
+  recommendedNeedleRangeMm String?
+
+  /// 'drapey' | 'stable' | 'firm' | 'stiff'. Surfaces in the yarn-
+  /// substitution helper.
+  typicalDrape String?
+
+  /// Plain-prose hint ("Garments, blankets at scale.").
+  typicalProjects String?
+
+  notes String?
+
+  tutorials Tutorial[] @relation("TutorialPrimaryYarnWeight")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CrochetHook {
+  id   String @id @default(cuid())
+  slug String @unique
+
+  /// Canonical sort key. Unique — there is one CrochetHook row per
+  /// millimetre size (4.0, 4.5, 5.0, ...).
+  mmSize Float @unique
+
+  /// Display name — "4 mm hook (G/6)".
+  canonicalName String
+
+  /// Old UK steel-and-imperial number ("8" for 4 mm). Modern UK patterns
+  /// use mm. May be empty when the size has no UK number equivalent.
+  ukSize String?
+
+  /// US letter+number ("G/6", "H/8", "I/9"). Empty when the mm size has
+  /// no exact US equivalent.
+  usSize String?
+
+  /// Japanese hook sizes ("2/0", "3/0", ...). Surfaces because many
+  /// translated patterns from Japanese yarn-craft books use these.
+  jpSize String?
+
+  /// YarnWeight slugs this hook is recommended for. String[] (no FK)
+  /// mirrors PlantPest.affectedPlants — small list, frequent renderer
+  /// access, no join benefit.
+  suitableYarnWeightSlugs String[] @default([])
+
+  notes String?
+
+  tutorials Tutorial[] @relation("TutorialPrimaryHook")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

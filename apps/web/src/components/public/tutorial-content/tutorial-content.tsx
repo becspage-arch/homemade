@@ -10,6 +10,8 @@ import { VarietiesPanel } from './blocks/varieties-panel'
 import { Troubleshooter } from './blocks/troubleshooter'
 import { IngredientsList } from './blocks/ingredients-list'
 import type { IngredientsListItem } from './blocks/ingredients-list'
+import { CraftChart } from '@/lib/craft-charts/svg-chart'
+import type { ChartDefinition } from '@/lib/craft-charts/types'
 import { ScaleToken } from './scale-context'
 import type {
   GlossaryRef,
@@ -237,6 +239,20 @@ function RenderNode({
           items={Array.isArray(attrs.items) ? (attrs.items as never[]) : []}
         />
       )
+
+    case 'craftChart': {
+      // Crochet / knitting / needlework chart. The block carries either an
+      // inline `definition` object or a `useTutorialChart: true` flag — in
+      // which case the renderer page is expected to pass the Tutorial's
+      // `chartDefinition` JSON into the body before render. The inline
+      // pathway is used by anchor briefs that don't need cross-block reuse;
+      // the tutorial-column pathway covers the bulk pipeline.
+      const def = attrs.definition as ChartDefinition | undefined
+      if (!def || typeof def !== 'object') {
+        return <div className="craft-chart-missing">Chart not yet attached.</div>
+      }
+      return <CraftChart definition={def} />
+    }
 
     case 'ingredientsList': {
       // Renders nothing on a technique page (no recipe context). Bodies that
