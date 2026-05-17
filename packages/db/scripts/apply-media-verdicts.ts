@@ -25,14 +25,24 @@
  *
  * Run:
  *   pnpm --filter @homemade/db exec tsx scripts/apply-media-verdicts.ts \
- *     [--verdicts PATH] [--skip-regen] [--dry-run]
+ *     [--verdicts PATH] [--skip-regen] [--dry-run] [--no-ai-fallback]
  *
  * Flags:
- *   --verdicts PATH  Path to the verdict file. Default
- *                    docs/image-verification-verdicts.json.
- *   --skip-regen     Apply verdicts but don't re-source replacement images
- *                    for rejected entries. Useful for partial passes.
- *   --dry-run        Print what would change without writing to the DB.
+ *   --verdicts PATH    Path to the verdict file. Default
+ *                      docs/image-verification-verdicts.json.
+ *   --skip-regen       Apply verdicts but don't re-source replacement images
+ *                      for rejected entries. Useful for partial passes.
+ *   --dry-run          Print what would change without writing to the DB.
+ *   --no-ai-fallback   When the 3-rejection cap fires, skip the Flux attempt
+ *                      entirely. Excludes 'flux-schnell' from sourceHeroImage
+ *                      so it returns 'failed' immediately and the existing
+ *                      failed branch stamps Media.verificationStatus =
+ *                      REJECTED_USED_PROCEDURAL + Tutorial.heroImageStrategy
+ *                      = PROCEDURAL_CARD. Used by the retroactive sweep so
+ *                      long-tail-miss recipes land as procedural cards rather
+ *                      than AI-generated heroes. New tutorials authored via
+ *                      the autopilot pipeline still get the Flux-as-fallback
+ *                      flow (this flag is opt-in).
  */
 
 import { config as loadEnv } from 'dotenv'
@@ -75,23 +85,26 @@ interface CliFlags {
   verdictsPath: string
   skipRegen: boolean
   dryRun: boolean
+  noAiFallback: boolean
 }
 
 function parseCliFlags(argv: string[]): CliFlags {
   let verdictsPath = ''
   let skipRegen = false
   let dryRun = false
+  let noAiFallback = false
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i]!
     if (a === '--verdicts') verdictsPath = argv[++i]!
     else if (a.startsWith('--verdicts=')) verdictsPath = a.slice('--verdicts='.length)
     else if (a === '--skip-regen') skipRegen = true
     else if (a === '--dry-run') dryRun = true
+    else if (a === '--no-ai-fallback') noAiFallback = true
   }
   if (!verdictsPath) {
     verdictsPath = resolve(__dirname, '..', '..', '..', 'docs', 'image-verification-verdicts.json')
   }
-  return { verdictsPath, skipRegen, dryRun }
+  return { verdictsPath, skipRegen, dryRun, noAiFallback }
 }
 
 function extFromContentType(ct: string | null): { ext: string; mime: string } {
@@ -127,6 +140,9 @@ interface ApplySummary {
   rejectedRegenerated: number
   rejectedRegenFailed: number
   rejectedForcedToFlux: number
+  /** Cap fired with --no-ai-fallback set: Flux skipped, slug stamped
+   *  REJECTED_USED_PROCEDURAL + PROCEDURAL_CARD by design (not a failure). */
+  cappedToProcedural: number
   notFound: number
   errors: string[]
 }
@@ -137,7 +153,8 @@ async function main(): Promise<void> {
   const flags = parseCliFlags(process.argv.slice(2))
   console.log(
     `apply-media-verdicts: verdicts=${flags.verdictsPath}, ` +
-      `skipRegen=${flags.skipRegen}, dryRun=${flags.dryRun}`,
+      `skipRegen=${flags.skipRegen}, dryRun=${flags.dryRun}, ` +
+      `noAiFallback=${flags.noAiFallback}`,
   )
 
   if (!existsSync(flags.verdictsPath)) {
@@ -164,6 +181,7 @@ async function main(): Promise<void> {
     rejectedRegenerated: 0,
     rejectedRegenFailed: 0,
     rejectedForcedToFlux: 0,
+    cappedToProcedural: 0,
     notFound: 0,
     errors: [],
   }
@@ -261,13 +279,23 @@ async function main(): Promise<void> {
         })
       }
 
-      // Cap: after 3 distinct real-photo rejections, force the next attempt
-      // to Flux by explicitly excluding every remaining real-photo source.
+      // Cap: after 3 distinct real-photo rejections, the next attempt skips
+      // free sources by excluding every real-photo source. Normally it then
+      // falls through to Flux; with --no-ai-fallback set we also exclude
+      // flux-schnell so the orchestrator returns outcome='failed' and the
+      // existing failed branch stamps PROCEDURAL_CARD by design.
       const realPhotoRejected = REAL_PHOTO_SOURCES.filter((s) => accumulated.has(s))
       const forcedToFlux = realPhotoRejected.length >= 3
       if (forcedToFlux) summary.rejectedForcedToFlux += 1
+      const capSkipFlux = forcedToFlux && flags.noAiFallback
       const excludeSources: ImageSource[] = forcedToFlux
-        ? Array.from(new Set<ImageSource>([...accumulated, ...REAL_PHOTO_SOURCES]))
+        ? Array.from(
+            new Set<ImageSource>([
+              ...accumulated,
+              ...REAL_PHOTO_SOURCES,
+              ...(capSkipFlux ? (['flux-schnell'] as ImageSource[]) : []),
+            ]),
+          )
         : Array.from(accumulated)
 
       const result = await sourceHeroImage(
@@ -291,8 +319,13 @@ async function main(): Promise<void> {
             data: { heroImageStrategy: 'PROCEDURAL_CARD' },
           })
         }
-        summary.rejectedRegenFailed += 1
-        console.log(`${tag} REJECTED + regen FAILED → PROCEDURAL_CARD`)
+        if (capSkipFlux) {
+          summary.cappedToProcedural += 1
+          console.log(`${tag} REJECTED + cap-fired → PROCEDURAL_CARD (no-ai-fallback)`)
+        } else {
+          summary.rejectedRegenFailed += 1
+          console.log(`${tag} REJECTED + regen FAILED → PROCEDURAL_CARD`)
+        }
         continue
       }
 
@@ -398,13 +431,14 @@ async function main(): Promise<void> {
   writeFileSync(reportPath, JSON.stringify(summary, null, 2), 'utf8')
 
   console.log('\nDONE')
-  console.log(`  total:             ${summary.total}`)
-  console.log(`  verified:          ${summary.verified}`)
-  console.log(`  rejected (regen):  ${summary.rejectedRegenerated}`)
-  console.log(`  rejected (failed): ${summary.rejectedRegenFailed}`)
-  console.log(`  rejected (skip):   ${summary.rejectedNoRegen}`)
-  console.log(`  forced→Flux (cap): ${summary.rejectedForcedToFlux}`)
-  console.log(`  not found:         ${summary.notFound}`)
+  console.log(`  total:               ${summary.total}`)
+  console.log(`  verified:            ${summary.verified}`)
+  console.log(`  rejected (regen):    ${summary.rejectedRegenerated}`)
+  console.log(`  rejected (failed):   ${summary.rejectedRegenFailed}`)
+  console.log(`  rejected (skip):     ${summary.rejectedNoRegen}`)
+  console.log(`  forced→Flux (cap):   ${summary.rejectedForcedToFlux}`)
+  console.log(`  capped→procedural:   ${summary.cappedToProcedural}`)
+  console.log(`  not found:           ${summary.notFound}`)
   if (summary.errors.length) {
     console.log(`  errors (${summary.errors.length}):`)
     for (const e of summary.errors) console.log(`    - ${e}`)
