@@ -1,0 +1,142 @@
+{
+  "slug": "galette-des-rois",
+  "title": "Galette des rois",
+  "subtitle": "French Epiphany almond cream tart for January",
+  "excerpt": "The French Epiphany cake: two discs of puff pastry filled with almond cream, with a hidden charm inside and a crown on the outside. Baked on the 6th of January, or any time in winter. The person who finds the charm is crowned for the day.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "ADVANCED",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Galette des rois is documented in French domestic and pâtisserie cookery from the medieval period, associated with the feast of the Epiphany on January 6. The almond cream (frangipane) filling and puff pastry case are the standard Parisian version; regional variants use brioche or other pastries. The fève (a hidden charm) has been included since at least the fourteenth century.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 galette (about 8 slices)",
+    "prepMinutes": 30,
+    "cookMinutes": 30,
+    "restingMinutes": 10,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Best eaten within 2 hours of baking. The pastry softens on standing.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["weekendBake", "festive"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven, middle shelf — puff pastry needs high heat",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "feve", "term": "fève", "definition": "A small ceramic or plastic charm hidden inside a galette des rois. Traditionally a dried broad bean (fève in French), it has been replaced in modern times with a small ceramic figure. The person whose slice contains the fève wears a paper crown. Any small oven-safe object can substitute — a dried almond or a raw broad bean works." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The galette des rois is functionally identical to a pithivier, with one crucial addition: the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "feve" } }], "text": "fève" },
+          { "type": "text", "text": " hidden in the filling before the pastry is sealed. Whoever finds it in their slice is crowned for the day. In France, January without a galette des rois is not done. Push the charm in before the top disc goes on — not after, or you will make a hole that lets the filling out." }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Pastry" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "puff-pastry", "quantity": 750, "unit": "g", "prepNote": "2 sheets ready-made (375 g each), chilled", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "free-range-eggs", "quantity": 1, "unit": null, "prepNote": "beaten, for egg wash", "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Almond cream filling" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 100, "unit": "g", "prepNote": "softened", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 100, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "ground-almonds", "quantity": 100, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "free-range-eggs", "quantity": 2, "unit": null, "prepNote": "large (for the filling)", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "plain-flour", "quantity": 2, "unit": "tbsp", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "vanilla-extract", "quantity": 1, "unit": "tsp", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "dark-rum", "quantity": 1, "unit": "tbsp", "prepNote": null, "isOptional": true } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the almond cream" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Beat the {{unsalted-butter}} and {{caster-sugar}} until pale. Beat in the {{free-range-eggs}} (for the filling) and {{vanilla-extract}}. Fold in the {{ground-almonds}} and {{plain-flour}}. Add the {{dark-rum}} if using. Refrigerate for 20 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cut the pastry discs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Unroll the first sheet of {{puff-pastry}} and cut a 24 cm disc using a plate as a guide. Place on a lined baking tray. Cut a 26 cm disc from the second sheet." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill and hide the fève" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mound the cold almond cream in the centre of the base disc, leaving a 4 cm border. Push a small oven-safe ceramic charm or a dried broad bean into the filling — not near the centre, where it might be cut by a knife. Brush the border with the beaten {{free-range-eggs}} (for egg wash). Lay the larger disc over the top and press the edges together firmly. Refrigerate for 30 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Score, glaze, and bake, 28–32 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 200°C fan. Brush the top of the galette with egg wash. Using the tip of a very sharp knife, score curved arcs from the centre outward — 8 arcs, curving in the same direction, cutting only 2–3 mm deep. Do not cut through. Bake for 28–32 minutes until deep golden and puffed. Serve warm with a paper crown." }]
+      }
+    ]
+  }
+}

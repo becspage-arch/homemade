@@ -1,0 +1,146 @@
+{
+  "slug": "cherry-bakewell-traybake",
+  "title": "Cherry Bakewell traybake",
+  "subtitle": "Shortcrust base with almond frangipane and glacé cherries",
+  "excerpt": "A traybake of thin shortcrust pastry, a layer of cherry jam, almond frangipane, and halved glacé cherries. Cut into squares. The frangipane sets firm and slightly crusty on top.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The Bakewell tart is documented as a Derbyshire speciality, named after the town of Bakewell. The traybake format (a rectangular tin rather than a round tart tin) is a practical domestic adaptation. The glacé cherry is a twentieth-century addition to the traditional almond and jam combination.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "16 squares (20×30 cm tin)",
+    "prepMinutes": 35,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze cut squares in a sealed box. Thaw at room temperature.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Keeps for 4 days in a tin. The pastry stays crisp for 2 days.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 170,
+      "bakeTemperatureNote": "fan oven, middle shelf — the pastry base is blind-baked first at 190°C fan before adding the filling",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "baking-beans", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "frangipane", "term": "frangipane", "definition": "An almond cream filling made from ground almonds, butter, sugar, and eggs. When baked, it sets into a dense, moist layer with a slightly crusty surface. Distinct from marzipan (raw, not baked) and almond sponge (contains more flour). It is the filling in Bakewell tart, pithivier, and galette des rois." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This traybake has three layers: a thin shortcrust base, a layer of cherry jam, and an almond " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "frangipane" } }], "text": "frangipane" },
+          { "type": "text", "text": " filling. The pastry is blind-baked first to keep the base from going soggy. The frangipane bakes into a firm, slightly crusty layer that cuts cleanly." }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Shortcrust pastry" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "plain-flour", "quantity": 200, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 100, "unit": "g", "prepNote": "cold, cubed", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "icing-sugar", "quantity": 30, "unit": "g", "prepNote": "sifted", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "free-range-eggs", "quantity": 1, "unit": null, "prepNote": "large, yolk only", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "fine-sea-salt", "quantity": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Filling" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "cherry-jam", "quantity": 4, "unit": "tbsp", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 175, "unit": "g", "prepNote": "softened", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 175, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "free-range-eggs", "quantity": 3, "unit": null, "prepNote": "large", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "ground-almonds", "quantity": 175, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "almond-extract", "quantity": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "glace-cherries", "quantity": 100, "unit": "g", "prepNote": "halved", "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and chill the pastry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rub the cold {{unsalted-butter}} (for the pastry) into the {{plain-flour}}, {{icing-sugar}}, and {{fine-sea-salt}} until the mixture resembles coarse sand. Add the egg yolk and 1–2 tablespoons of cold water; mix until the dough just comes together. Flatten into a disc, wrap, and refrigerate for 30 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blind bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 190°C fan. Roll the pastry to fit the 20×30 cm tin, press into the base and sides, and trim the excess. Line with baking paper and fill with {{baking-beans}}. Bake for 12 minutes, then remove the beans and paper and bake for a further 5 minutes until the base is dry and just beginning to colour. Reduce the oven to 170°C fan." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add jam and frangipane" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Spread the {{cherry-jam}} over the warm pastry base. Beat the {{unsalted-butter}} (for the filling) and {{caster-sugar}} until pale. Beat in the {{free-range-eggs}} and {{almond-extract}}. Fold in the {{ground-almonds}}. Spread over the jam in an even layer. Press the halved {{glace-cherries}} into the surface." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake, 30–35 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake at 170°C fan for 30–35 minutes until the frangipane is set, golden, and a skewer inserted in the centre comes out clean. Cool completely in the tin before cutting." }]
+      }
+    ]
+  }
+}

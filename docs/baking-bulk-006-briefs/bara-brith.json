@@ -1,0 +1,124 @@
+{
+  "slug": "bara-brith",
+  "title": "Bara brith",
+  "subtitle": "Welsh tea loaf with dried fruit",
+  "excerpt": "A dark, dense Welsh fruit loaf made without yeast or fat. Dried fruit soaks overnight in strong tea, which swells the sultanas and raisins and darkens the crumb. Sliced thick and spread with cold salted butter.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Florence White, Good Things in England (1932) — bara brith documented as a Welsh regional speciality. The no-yeast tea-soaked version became the standard domestic recipe in the twentieth century, distinct from the older yeasted loaf baked at hearths and in bread ovens.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (900 g tin)",
+    "prepMinutes": 15,
+    "cookMinutes": 60,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze. Thaw individual slices at room temperature.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The flavour improves on day two as the fruit continues to hydrate into the crumb. Keeps for 5 days wrapped.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 300,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 160,
+      "bakeTemperatureNote": "fan oven, middle shelf",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "soaking-dried-fruit", "term": "soaking the fruit", "definition": "Covering dried fruit in hot liquid — typically tea, juice, or alcohol — and leaving it overnight. The fruit absorbs the liquid, swelling and softening. The remaining soaking liquid goes into the batter; it carries dissolved sugars and flavour from the fruit and tea." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bara brith (literally 'speckled bread' in Welsh) is not a bread in any modern sense: no yeast, no fat, no shaping. The technique is " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "soaking-dried-fruit" } }], "text": "soaking the fruit" },
+          { "type": "text", "text": " overnight in strong tea, then mixing the swollen fruit and its liquid with egg, flour, and spice. The result is a dense, dark loaf that slices cleanly and improves by the next day." }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": null },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "sultanas", "quantity": 175, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "raisins", "quantity": 100, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "currants", "quantity": 75, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "light-brown-sugar", "quantity": 150, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "black-tea", "quantity": 300, "unit": "ml", "prepNote": "strong, freshly brewed", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "free-range-eggs", "quantity": 1, "unit": null, "prepNote": "large, beaten", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "self-raising-flour", "quantity": 300, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "mixed-spice", "quantity": 1, "unit": "tsp", "prepNote": null, "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soak the fruit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the {{sultanas}}, {{raisins}}, {{currants}}, and {{light-brown-sugar}} in a large bowl. Pour over the hot {{black-tea}}, stir, and cover. Leave overnight or for at least 8 hours. Do not drain — the remaining liquid goes into the batter." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 160°C fan. Grease and line a 900 g loaf tin. Beat the {{free-range-eggs}} into the soaked fruit and all its liquid. Stir in the {{self-raising-flour}} and {{mixed-spice}} until just combined. The batter will be thick and very dark." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake, 55–60 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Spoon the batter into the prepared tin. Bake for 55–60 minutes until a skewer inserted in the centre comes out clean. The top will crack slightly as it bakes. Cool in the tin for 30 minutes, then transfer to a rack." }]
+      }
+    ]
+  }
+}

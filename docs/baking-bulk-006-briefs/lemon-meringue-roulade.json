@@ -1,0 +1,139 @@
+{
+  "slug": "lemon-meringue-roulade",
+  "title": "Lemon meringue roulade",
+  "subtitle": "Rolled meringue filled with lemon curd and cream",
+  "excerpt": "A chewy, marshmallow meringue rolled around lemon curd and lightly whipped cream. The meringue is baked in a rectangular tin, peeled from the paper, and rolled while still slightly warm. The outside cracks decoratively as it curls.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The meringue roulade is a British dessert of the late twentieth century — lighter than a traditional pavlova, the meringue is baked thinner in a rectangular tin to allow rolling. The lemon and cream filling is documented across British domestic cookery from the 1980s onwards.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 roulade (about 10 slices)",
+    "prepMinutes": 25,
+    "cookMinutes": 20,
+    "restingMinutes": 15,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make up to 4 hours ahead and refrigerate, uncovered. It is at its best within 2 hours of rolling.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": ["weekendBake", "festive"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 160,
+      "bakeTemperatureNote": "fan oven, middle shelf — meringue bakes low and slow to stay chewy",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "stiff-peaks", "term": "stiff peaks", "definition": "The stage at which whipped egg white stands upright when the beaters are lifted, without the tips curling over. At stiff peaks the meringue is dense and glossy. Dry or grainy meringue has been over-whipped — it will weep during baking. Even a trace of fat (yolk, grease) prevents egg whites from reaching stiff peaks." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A meringue roulade cracks when you roll it, and that is correct. The cracks are part of the texture. The meringue is marshmallowy inside and crisp outside; the lemon curd cuts through the sweetness. The only failure mode is a weeping meringue — which almost always comes from grease in the bowl or traces of yolk in the whites." }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Meringue" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "free-range-eggs", "quantity": 5, "unit": null, "prepNote": "large, whites only", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 275, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "cornflour", "quantity": 2, "unit": "tsp", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "white-wine-vinegar", "quantity": 1, "unit": "tsp", "prepNote": null, "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Filling" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "double-cream", "quantity": 200, "unit": "ml", "prepNote": "lightly whipped", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "lemon-curd", "quantity": 200, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "icing-sugar", "quantity": 1, "unit": "tbsp", "prepNote": "to dust", "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 160°C fan. Line a 23×33 cm rectangular tin with baking paper, leaving an overhang on the long sides. Lay a second sheet of baking paper on the worktop and dust with icing sugar." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the meringue" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Make sure your bowl is completely clean and grease-free. Whisk the egg whites from the {{free-range-eggs}} to " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stiff-peaks" } }], "text": "stiff peaks" },
+          { "type": "text", "text": ". Add the {{caster-sugar}} a tablespoon at a time, whisking well between each addition. Whisk until the meringue is very thick and glossy. Fold in the {{cornflour}} and {{white-wine-vinegar}}." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake, 18–20 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Spread the meringue evenly in the tin. Bake for 18–20 minutes until the surface is set and very lightly coloured. It will still feel soft inside. Remove from the oven and leave for 5 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill and roll" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Invert the meringue onto the sugared paper and peel off the lining. Spread the {{lemon-curd}} over the surface, then spread the lightly whipped {{double-cream}} on top. Roll the meringue from the short end, using the paper to help. It will crack — this is expected. Place seam-side down on a serving plate. Refrigerate for at least 1 hour. Dust with {{icing-sugar}} before serving." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "slug": "pithivier-almond",
+  "title": "Pithivier",
+  "subtitle": "Domed almond cream pastry with a scored spiral",
+  "excerpt": "A classic French pastry: two discs of puff pastry encasing a rich almond cream filling, with a scored spiral pattern on top. The scoring is the signature. Made from ready-made puff pastry.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The pithivier takes its name from the town of Pithiviers in the Loiret, documented in French pâtisserie from the nineteenth century. The recipe (laminated pastry encasing almond cream) is fixed: there is no regional variation in the fundamental formula. This version uses ready-made puff pastry in place of the traditional hand-laminated feuilletage.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 pithivier (about 8 slices)",
+    "prepMinutes": 30,
+    "cookMinutes": 30,
+    "restingMinutes": 10,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Best eaten within 2 hours of baking. The pastry softens on standing.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["weekendBake", "festive"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven, middle shelf — puff pastry needs high heat",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "scoring-puff-pastry", "term": "scoring pastry", "definition": "Drawing a decorative pattern on the surface of puff pastry with the tip of a sharp knife, cutting only 2–3 mm deep into the top layer without going all the way through. The score marks open as the pastry puffs and bakes, creating a decorative pattern. Cutting too deep breaks the lamination and prevents even rising." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A pithivier is assembled from two discs of pastry sandwiching a mound of almond cream. The top disc is " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scoring-puff-pastry" } }], "text": "scored" },
+          { "type": "text", "text": " in a curved spiral before baking — the pattern is the visual signature of the pastry. The knife must be cold and very sharp, and the scoring done after the egg wash, not before." }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Pastry" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "puff-pastry", "quantity": 750, "unit": "g", "prepNote": "2 sheets ready-made (375 g each), chilled", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "free-range-eggs", "quantity": 1, "unit": null, "prepNote": "beaten, for egg wash", "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Almond cream filling" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 100, "unit": "g", "prepNote": "softened", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 100, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "ground-almonds", "quantity": 100, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "free-range-eggs", "quantity": 2, "unit": null, "prepNote": "large", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "plain-flour", "quantity": 2, "unit": "tbsp", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "vanilla-extract", "quantity": 1, "unit": "tsp", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "almond-extract", "quantity": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the almond cream" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Beat the {{unsalted-butter}} and {{caster-sugar}} until pale. Beat in the {{free-range-eggs}} (for the filling) and {{vanilla-extract}}. Fold in the {{ground-almonds}}, {{plain-flour}}, and {{almond-extract}}. Refrigerate for 20 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cut the pastry discs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Unroll the first sheet of {{puff-pastry}} and cut a 24 cm disc using a plate as a guide. Place on a lined baking tray. Unroll the second sheet and cut a 26 cm disc — slightly larger for the domed top." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and chill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mound the cold almond cream in the centre of the base disc, leaving a 4 cm border. Brush the border with the beaten {{free-range-eggs}} (for egg wash). Lay the larger disc over the top and press the edges together firmly. Trim to neaten if needed. Refrigerate for 30 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Score, glaze, and bake, 28–32 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 200°C fan. Brush the top of the pithivier with egg wash. Using the tip of a very sharp knife, score curved lines from the centre outward in a spiral — 8 arcs, each curving from the centre to the edge, cutting 2–3 mm deep. Do not cut through. Bake for 28–32 minutes until deep golden and fully puffed. Serve warm." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "slug": "baked-vanilla-cheesecake",
+  "title": "Baked vanilla cheesecake",
+  "subtitle": "New York-style baked cheesecake in a water bath",
+  "excerpt": "A dense, creamy New York-style cheesecake baked low and slow in a water bath to prevent cracking. A thick digestive base, a vanilla cream cheese filling, and a cool overnight in the fridge before slicing.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The baked cream cheese cheesecake is an American tradition of the early twentieth century, distinct from the no-bake version by its use of eggs as the setting agent. The New York style is very dense, cream-cheese-heavy, and baked low in a water bath; it became the dominant format in British domestic cookery during the late twentieth century.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 cheesecake (23 cm springform tin, 12 slices)",
+    "prepMinutes": 30,
+    "cookMinutes": 70,
+    "restingMinutes": 60,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the day before. Refrigerate overnight and unmould just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 150,
+      "bakeTemperatureNote": "fan oven, middle shelf — low temperature in a water bath prevents cracking",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "springform-tin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "cheesecake-water-bath", "term": "water bath", "definition": "A method of baking the cheesecake inside a larger tin filled with hot water. The water moderates the oven temperature around the cheesecake, preventing the edges from overcooking before the centre sets. Wrap the springform tin in two layers of foil first to stop water seeping into the base through the tin seam." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A baked cheesecake is set by eggs, not gelatine or whipped cream. It is baked in a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cheesecake-water-bath" } }], "text": "water bath" },
+          { "type": "text", "text": " at a low temperature to prevent the surface cracking. The cheesecake is done when it is set at the edges but wobbles like jelly in the centre — it continues to firm as it cools in the turned-off oven and overnight in the fridge." }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Base" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "digestive-biscuits", "quantity": 200, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 75, "unit": "g", "prepNote": "melted", "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Filling" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "full-fat-cream-cheese", "quantity": 900, "unit": "g", "prepNote": "room temperature", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 200, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "vanilla-extract", "quantity": 2, "unit": "tsp", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "free-range-eggs", "quantity": 4, "unit": null, "prepNote": "large, room temperature", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "double-cream", "quantity": 200, "unit": "ml", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "plain-flour", "quantity": 2, "unit": "tbsp", "prepNote": null, "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Crush the {{digestive-biscuits}} to fine crumbs. Mix with the melted {{unsalted-butter}}. Press into the base of the springform tin. Bake at 160°C fan for 10 minutes to set the base. Remove and leave to cool." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Reduce the oven to 150°C fan. Beat the {{full-fat-cream-cheese}}, {{caster-sugar}}, {{vanilla-extract}}, and {{plain-flour}} together until smooth — do not incorporate too much air. Add the {{free-range-eggs}} one at a time on a low speed. Add the {{double-cream}} and mix until just combined." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake in a water bath, 65–70 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Wrap the outside of the springform tin in two layers of foil. Pour the filling over the base. Place the tin inside a deep roasting tin and pour in enough hot water to come halfway up the side of the springform tin. Bake for 65–70 minutes until the edges are set and the centre wobbles like jelly. Turn off the oven, prop the door open slightly, and leave the cheesecake inside for 1 hour. Refrigerate for at least 8 hours before unmoulding." }]
+      }
+    ]
+  }
+}

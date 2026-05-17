@@ -1,0 +1,133 @@
+{
+  "slug": "rocky-road-slice",
+  "title": "Rocky road slice",
+  "subtitle": "Chocolate, marshmallow, and biscuit",
+  "excerpt": "A traybake of dark chocolate, butter, golden syrup, broken biscuits, miniature marshmallows, and raisins. No oven required. Set in the fridge and sliced into rectangles.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Rocky road is an American confection of the 1920s, originally an ice cream flavour. The British traybake version (fridge-set rather than baked) entered domestic cookery in the mid-twentieth century. This version follows the standard British domestic formula.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "16 pieces (20×30 cm tin)",
+    "prepMinutes": 15,
+    "cookMinutes": 0,
+    "restingMinutes": 0,
+    "chillingMinutes": 120,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze wrapped individual pieces. Thaw in the fridge for 2 hours.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Keeps in the fridge for up to a week. The chocolate sets harder on day two.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["weekendBake", "kidFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": null,
+      "bakeTemperatureNote": null,
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "metal-bowl", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "bain-marie", "term": "bain-marie", "definition": "A method of melting or cooking over indirect heat: a heatproof bowl set over a pan of barely simmering water, without the bowl touching the water. Used for chocolate, custard, and delicate sauces that would scorch over direct heat." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rocky road needs no oven and almost no skill, but the ratio of chocolate to filler still matters. Too much biscuit and the slice crumbles and tastes floury; too little and it is pure confectionery. This recipe keeps the biscuit and marshmallow at 60% of the total weight, leaving the chocolate as the structure and flavour." }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": null },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "dark-chocolate", "quantity": 300, "unit": "g", "prepNote": "70% cocoa, broken into pieces", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 100, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "golden-syrup", "quantity": 2, "unit": "tbsp", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "digestive-biscuits", "quantity": 200, "unit": "g", "prepNote": "broken into 1–2 cm pieces", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "mini-marshmallows", "quantity": 150, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "raisins", "quantity": 75, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "fine-sea-salt", "quantity": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Line the tin" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Line a 20×30 cm tin with baking paper." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Melt chocolate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt the {{dark-chocolate}}, {{unsalted-butter}}, and {{golden-syrup}} in a heatproof bowl set over a pan of barely simmering water using the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bain-marie" } }], "text": "bain-marie" },
+          { "type": "text", "text": " method. Stir until smooth, then remove from the heat and stir in the {{fine-sea-salt}}. Allow to cool for 5 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fold in the fillings" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Fold the broken {{digestive-biscuits}}, {{mini-marshmallows}}, and {{raisins}} into the chocolate mixture until everything is evenly coated. Tip into the tin and press into an even layer." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Chill and cut" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Refrigerate for at least 2 hours until completely set. Lift out by the paper, place on a board, and cut into 16 pieces. Store in the fridge." }]
+      }
+    ]
+  }
+}
