@@ -211,6 +211,42 @@ const KNITTING_SYMBOLS: ChartSymbolDefinition[] = [
     label: 'ssk — slip slip knit',
     svg: '<line x1="7" y1="-7" x2="-7" y2="7" stroke="currentColor" stroke-width="2"/>',
   },
+  {
+    craft: 'knitting',
+    key: 'make-1',
+    label: 'm1 — make 1',
+    // Capital M-style glyph: two slanted strokes meeting at the centre.
+    svg: '<path d="M -7 7 L -3 -7 L 0 0 L 3 -7 L 7 7" fill="none" stroke="currentColor" stroke-width="2"/>',
+  },
+  {
+    craft: 'knitting',
+    key: 'slip-stitch',
+    label: 'sl1 — slip 1',
+    // V glyph — the standard slip-stitch chart symbol.
+    svg: '<path d="M -6 -7 L 0 7 L 6 -7" fill="none" stroke="currentColor" stroke-width="2"/>',
+  },
+  {
+    craft: 'knitting',
+    key: 'knit-tbl',
+    label: 'k1tbl — knit through back loop',
+    // Circle-with-dot glyph: the twisted-stitch symbol convention.
+    svg: '<circle cx="0" cy="0" r="6" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="0" cy="0" r="1.5" fill="currentColor"/>',
+  },
+  {
+    craft: 'knitting',
+    key: 'cable-4-front',
+    label: 'c4f — cable 4 front (left-leaning)',
+    // Two crossed lines leaning left across a 4-wide cell strip. The
+    // renderer pads in either direction; the glyph indicates the lean.
+    svg: '<path d="M -9 -7 Q -9 0 0 0 Q 9 0 9 7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M 9 -7 Q 9 0 0 0 Q -9 0 -9 7" fill="none" stroke="currentColor" stroke-width="2"/>',
+  },
+  {
+    craft: 'knitting',
+    key: 'cable-4-back',
+    label: 'c4b — cable 4 back (right-leaning)',
+    // Mirror of cable-4-front. The two crossing arcs swap dominance.
+    svg: '<path d="M 9 -7 Q 9 0 0 0 Q -9 0 -9 7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M -9 -7 Q -9 0 0 0 Q 9 0 9 7" fill="none" stroke="currentColor" stroke-width="2"/>',
+  },
 ]
 
 const ALL_SYMBOLS = [...CROCHET_SYMBOLS, ...KNITTING_SYMBOLS]

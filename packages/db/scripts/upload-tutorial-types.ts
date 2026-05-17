@@ -388,6 +388,65 @@ export interface CrochetMetadata {
   craftTechniqueTags?: string[]
 }
 
+/**
+ * Knitting-specific tutorial metadata. Required when `type === 'PATTERN'`
+ * and the tutorial sits under the `knitting` Category. Recommended (though
+ * not required) when `type === 'STITCH'`. Null / omitted on every other
+ * type.
+ *
+ * Knitting harmonises with the Crochet pipeline scaffold — it writes
+ * through to the same `Tutorial.primaryYarnWeightId / gaugeText /
+ * finishedSizeText / terminologyConvention / chartDefinition /
+ * craftStitchSlugs / craftTechniqueTags` columns. The one knitting-
+ * specific field is `primaryNeedleSlug`, which resolves against the
+ * master `KnittingNeedle` table and writes through to
+ * `Tutorial.primaryNeedleId`.
+ *
+ * Conventions for the knitting pipeline:
+ *
+ *   - `craftStitchSlugs` carry `knitting-*` prefixed slugs
+ *     (`knitting-knit`, `knitting-c4f`, ...).
+ *   - `craftTechniqueTags` includes the knitting-specific filter values
+ *     `cabling` / `lacework` / `colorwork` / `in-the-round` /
+ *     `flat-construction` alongside the generic ones.
+ *   - `chartDefinition` follows the shared `ChartDefinition` shape with
+ *     `craft: 'knitting'` and `layout: 'flat'` (knitting in-the-round is
+ *     charted as a flat repeat per knitting publishing convention).
+ *     Multi-chart pattern bodies inline `craftChart` TipTap nodes for
+ *     additional charts; the Tutorial-level `chartDefinition` is the
+ *     canonical chart for the pattern.
+ */
+export interface KnittingMetadata {
+  /** Slug in the master `YarnWeight` table. Required for PATTERN. */
+  primaryYarnWeightSlug?: string | null
+  /** Slug in the master `KnittingNeedle` table. Required for PATTERN. */
+  primaryNeedleSlug?: string | null
+  /** Author-written gauge — '18 sts × 28 rows = 10 × 10 cm in 5 mm needles, blocked'. */
+  gaugeText?: string | null
+  /** Author-written finished size — '180 × 22 cm', 'Adult head 56 cm'. */
+  finishedSizeText?: string | null
+  /** UK-first default; 'us' only when the source pattern is American. */
+  terminologyConvention?: CraftTerminologyConvention
+  /**
+   * Generic chart definition consumed by the shared SVG renderer. Knitting
+   * uses `craft: 'knitting'` + `layout: 'flat'`. Optional — patterns
+   * without a chart leave it null.
+   */
+  chartDefinition?: Record<string, unknown> | null
+  /**
+   * Slugs of stitches featured in this tutorial. Every slug must exist in
+   * the master `Stitch` table with `craft = 'knitting'`. STITCH rows carry
+   * one slug; PATTERN rows carry every stitch the pattern uses.
+   */
+  craftStitchSlugs?: string[]
+  /**
+   * Free-form technique tags. Knitting-specific values:
+   * `cabling` / `lacework` / `colorwork` / `in-the-round` /
+   * `flat-construction` / `magic-loop` / `kitchener` / `short-rows`.
+   */
+  craftTechniqueTags?: string[]
+}
+
 export interface RecipeMetadata {
   /** Default yield. Drives the "Serves N" line and the scale selector. */
   servings?: number | null
@@ -588,6 +647,19 @@ export interface TutorialUploadInput {
    * will reuse this block; only the hook-vs-needle FK differs.
    */
   crochet?: CrochetMetadata | null
+
+  /**
+   * Knitting metadata. Required when `type === 'PATTERN'` under the Knitting
+   * Category; recommended on `type === 'STITCH'`. Null / omitted on every
+   * non-knitting tutorial. Writes through to the same
+   * `Tutorial.primaryYarnWeightId / gaugeText / finishedSizeText /
+   * terminologyConvention / chartDefinition / craftStitchSlugs /
+   * craftTechniqueTags` columns the crochet block writes to. The one
+   * knitting-specific column is `Tutorial.primaryNeedleId`, resolved from
+   * `knitting.primaryNeedleSlug` against the master `KnittingNeedle` table
+   * added by `phase_knitting_pipeline_001`.
+   */
+  knitting?: KnittingMetadata | null
 
   /**
    * Tools the recipe uses. The structured `equipmentList` TipTap block is
@@ -892,15 +964,62 @@ export function validateInput(input: TutorialUploadInput): void {
       )
     }
   }
+  // Knitting block validation. Mirrors the crochet block — the two share
+  // the same shape almost field-for-field; only the hook/needle slug
+  // differs. Knitting `craftStitchSlugs` are validated lightly here
+  // (slug pattern only); the upload script resolves them against the
+  // master Stitch table.
+  if (input.knitting) {
+    const k = input.knitting
+    if (k.primaryYarnWeightSlug && !SLUG_PATTERN.test(k.primaryYarnWeightSlug)) {
+      throw new Error(
+        `knitting.primaryYarnWeightSlug "${k.primaryYarnWeightSlug}" must match the slug pattern (looked up against the YarnWeight master table).`,
+      )
+    }
+    if (k.primaryNeedleSlug && !SLUG_PATTERN.test(k.primaryNeedleSlug)) {
+      throw new Error(
+        `knitting.primaryNeedleSlug "${k.primaryNeedleSlug}" must match the slug pattern (looked up against the KnittingNeedle master table).`,
+      )
+    }
+    for (const stitch of k.craftStitchSlugs ?? []) {
+      if (!SLUG_PATTERN.test(stitch)) {
+        throw new Error(
+          `knitting.craftStitchSlugs entry "${stitch}" must match the slug pattern.`,
+        )
+      }
+    }
+    for (const tag of k.craftTechniqueTags ?? []) {
+      if (typeof tag !== 'string' || tag.length === 0) {
+        throw new Error(
+          `knitting.craftTechniqueTags entries must be non-empty strings (got "${tag}").`,
+        )
+      }
+    }
+    if (k.terminologyConvention && k.terminologyConvention !== 'uk' && k.terminologyConvention !== 'us') {
+      throw new Error(
+        `knitting.terminologyConvention "${k.terminologyConvention}" must be 'uk' or 'us'.`,
+      )
+    }
+    if (k.chartDefinition !== undefined && k.chartDefinition !== null && typeof k.chartDefinition !== 'object') {
+      throw new Error(
+        'knitting.chartDefinition must be an object matching the ChartDefinition shape (or null when no chart).',
+      )
+    }
+  }
   // PATTERN dispatch: crochet PATTERN rows require a `crochet` block;
-  // sewing PATTERN rows require a `sewing` block. Wood-natural-craft,
-  // pottery-ceramics, and other craft-category PATTERN rows carry only
-  // `recipeTools` and no additional metadata block.
+  // knitting PATTERN rows require a `knitting` block; sewing PATTERN rows
+  // require a `sewing` block. Wood-natural-craft, pottery-ceramics, and
+  // other craft-category PATTERN rows carry only `recipeTools` and no
+  // additional metadata block.
   if (input.type === 'PATTERN') {
     const isCrochetPattern = input.categorySlug === 'crochet'
+    const isKnittingPattern = input.categorySlug === 'knitting'
     const isSewingPattern = input.categorySlug === 'sewing'
     if (isCrochetPattern && !input.crochet) {
       throw new Error('input.crochet is required when type is "PATTERN" under the crochet category.')
+    }
+    if (isKnittingPattern && !input.knitting) {
+      throw new Error('input.knitting is required when type is "PATTERN" under the knitting category.')
     }
     if (isSewingPattern && !input.sewing) {
       throw new Error('input.sewing is required when type is "PATTERN" under the sewing category.')
@@ -919,10 +1038,24 @@ export function validateInput(input: TutorialUploadInput): void {
         throw new Error('crochet.finishedSizeText is required on a crochet PATTERN.')
       }
     }
+    if (input.knitting) {
+      if (!input.knitting.primaryYarnWeightSlug) {
+        throw new Error('knitting.primaryYarnWeightSlug is required on a knitting PATTERN.')
+      }
+      if (!input.knitting.primaryNeedleSlug) {
+        throw new Error('knitting.primaryNeedleSlug is required on a knitting PATTERN.')
+      }
+      if (!input.knitting.gaugeText) {
+        throw new Error('knitting.gaugeText is required on a knitting PATTERN.')
+      }
+      if (!input.knitting.finishedSizeText) {
+        throw new Error('knitting.finishedSizeText is required on a knitting PATTERN.')
+      }
+    }
   }
-  if (input.type === 'STITCH' && !input.crochet) {
+  if (input.type === 'STITCH' && !input.crochet && !input.knitting) {
     throw new Error(
-      'input.crochet is required when type is "STITCH" (carries the stitch slug + optional chart definition).',
+      'input.crochet or input.knitting is required when type is "STITCH" (carries the stitch slug + optional chart definition).',
     )
   }
   for (const g of input.glossaryTerms ?? []) {

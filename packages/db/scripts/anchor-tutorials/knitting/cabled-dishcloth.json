@@ -1,0 +1,284 @@
+{
+  "slug": "cabled-dishcloth",
+  "title": "Cabled dishcloth",
+  "subtitle": "A 24 cm cotton square with a single c4f cable column.",
+  "excerpt": "A 24 cm × 24 cm cotton dishcloth with a single c4f cable column down the centre, framed by stocking-stitch panels and garter borders. The dishcloth that introduces cables without committing a whole jumper to them — and a useful washcloth at the end.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "dishcloths-homewares",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Drawn from public-domain and out-of-UK-copyright references:\n\n• Public-domain dishcloth pattern tradition — cabled dishcloths appear in the Weldon's Practical Knitting series from the 1890s onward, framed as 'fancy dishcloths' or 'kitchen squares'.\n• Mary Thomas's Knitting Book (1938), §Cables — the c4f structure follows Thomas. Thomas died 1948; her work is out of UK and EU copyright from 2019 onwards.\n• Public-domain USDA / state-extension home-economics pamphlets from the WPA era (1930s–early 1940s) covering home-knit cotton dishcloths — the cotton-yarn framing here follows their practical guidance.",
+  "knitting": {
+    "primaryYarnWeightSlug": "aran",
+    "primaryNeedleSlug": "knitting-needle-4-5mm",
+    "gaugeText": "20 sts × 28 rows = 10 × 10 cm in stocking stitch on 4.5 mm needles.",
+    "finishedSizeText": "24 × 24 cm.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["knitting-cable-4-front", "knitting-stocking-stitch", "knitting-garter-stitch", "knitting-knit", "knitting-purl"],
+    "craftTechniqueTags": ["cabling", "flat-construction"],
+    "chartDefinition": {
+      "title": "Centre cable repeat — 4 rows × 14 stitches",
+      "layout": "flat",
+      "craft": "knitting",
+      "terminologyConvention": "uk",
+      "rows": [
+        { "rowNumber": 1, "rightSide": true,  "stitches": [ {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"} ] },
+        { "rowNumber": 2, "rightSide": false, "stitches": [ {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"} ] },
+        { "rowNumber": 3, "rightSide": true,  "stitches": [ {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "cable-4-front", "count": 4, "label": "c4f"}, {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"}, {"symbol": "knit"} ] },
+        { "rowNumber": 4, "rightSide": false, "stitches": [ {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"}, {"symbol": "purl"} ] }
+      ],
+      "caption": "Row 1 (bottom) is RS; row 3 carries the c4f cross. The garter borders along the sides of the dishcloth sit on either side of this 14-stitch centre — see the written pattern."
+    }
+  },
+  "recipe": { "scalable": false },
+  "recipeTools": [
+    { "slug": "knitting-needles", "isOptional": false, "notes": "4.5 mm (UK 7 / US 7) straight needles" },
+    { "slug": "cable-needle", "isOptional": false, "notes": "short J-hook or U-shape, approximately 4 mm" },
+    { "slug": "scissors", "isOptional": false },
+    { "slug": "darning-needle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "c4f",
+      "term": "c4f (cable 4 front)",
+      "definition": "A left-leaning four-stitch cable. Slip 2 stitches onto a cable needle and hold to the front; knit the next 2 from the left needle; knit the 2 from the cable needle."
+    },
+    {
+      "slug": "stocking-stitch",
+      "term": "Stocking stitch",
+      "definition": "Knit on the right side, purl on the wrong side. The smooth-V fabric the cable sits inside. US: stockinette."
+    },
+    {
+      "slug": "garter-stitch",
+      "term": "Garter stitch",
+      "definition": "Knit every row, every side. The bumpy ridge fabric used here for the borders so the dishcloth doesn't curl."
+    },
+    {
+      "slug": "wet-block",
+      "term": "Wet-block",
+      "definition": "Soaking a finished knit in cool water, squeezing out, and laying flat to dry to even out tension and set the finished dimensions. Skipped here because cotton dishcloths don't benefit from blocking."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 24 cm × 24 cm cotton dishcloth with a single " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "c4f" } }], "text": "c4f" },
+          { "type": "text", "text": " cable column down the centre, framed by panels of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stocking-stitch" } }], "text": "stocking stitch" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "garter-stitch" } }], "text": "garter-stitch" },
+          { "type": "text", "text": " borders to keep the edges flat. The dishcloth that introduces cables without committing a whole jumper to them — and a useful washcloth at the end of an evening or two." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This pattern is the natural next project after the cable basics tutorial. The single cable column is worked over 4 stitches at the centre of the cloth, crossed every 4 rows. The cable repeats about ten times over the height of the dishcloth — enough to make the crossing automatic without committing to a 200-row jumper panel." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Materials" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "For one 24 cm × 24 cm dishcloth",
+          "items": [
+            { "name": "Yarn", "qty": "50 g (about 85 m / 95 yards) of aran-weight cotton or cotton-linen yarn", "substitutions": "Pure mercerised cotton holds its shape best for a dishcloth; cotton-linen blends work too. Avoid anything with acrylic or merino — neither dries quickly enough for kitchen use." },
+            { "name": "Needles", "qty": "4.5 mm (UK 7 / US 7) straight needles", "substitutions": "Cotton has no spring; use a slightly smaller needle than you would for wool at the same gauge. If your gauge runs loose, drop to 4 mm." },
+            { "name": "Cable needle", "qty": "1, short J-hook or U-shape, around 4 mm", "substitutions": "A spare double-pointed needle in a similar size works in a pinch — slower to handle but the same effect." },
+            { "name": "Darning needle", "qty": "1, blunt-tipped" },
+            { "name": "Scissors", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Gauge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "20 stitches and 28 rows to 10 cm over stocking stitch on 4.5 mm needles. Cotton fabric doesn't spring back like wool, so the gauge you knit is roughly the gauge you keep — skipping the swatch on a cabled cotton dishcloth means committing to whatever finished size your tension produces. A tight gauge (24 stitches to 10 cm) shrinks the dishcloth to about 20 cm square; a loose gauge (16 stitches to 10 cm) gives a 30 cm square that takes longer to dry between uses." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Swatch in stocking stitch over 24 stitches × 30 rows. Measure on the needle without stretching; cotton doesn't relax with rest the way wool does." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Abbreviations" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Used in this pattern",
+          "items": [
+            { "name": "k", "qty": "knit" },
+            { "name": "p", "qty": "purl" },
+            { "name": "c4f", "qty": "slip 2 onto cable needle, hold to front; knit 2 from left needle; knit 2 from cable needle (left-leaning 4-stitch cable)" },
+            { "name": "co", "qty": "cast on" },
+            { "name": "bo", "qty": "cast off (US: bind off)" },
+            { "name": "RS", "qty": "right side" },
+            { "name": "WS", "qty": "wrong side" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The chart" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The dishcloth is worked from this 14-stitch repeat. The chart shows the centre cable column with 5 stitches of stocking stitch on either side; the garter-stitch borders along the sides of the cloth are added on either end of the repeat in the written pattern below. Charts read bottom-to-top; right-side rows read right-to-left." }
+        ]
+      },
+      {
+        "type": "craftChart",
+        "attrs": { "useTutorialChart": true }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pattern" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cast on and bottom border" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cast on 48 stitches using the long-tail cast-on. Pull off about 300 cm of yarn as the tail; cotton's slick texture means the cast-on uses slightly more yarn than wool." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rows 1–6: knit every stitch across the row. This is the bottom garter-stitch border (6 rows of garter, about 1.5 cm)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Body of the dishcloth" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The body works the cable repeat between two narrow garter-stitch side borders (4 stitches each) and two panels of stocking stitch (13 stitches each, with the cable column at the centre). The 48-stitch row breaks down: 4 garter + 13 stocking stitch + 4 cable + 13 stocking stitch + 4 garter = 48 stitches." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Row 1 (RS, no cable cross): k4, k13, k4, k13, k4. (All knit across.)" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Row 2 (WS): k4, p13, k4, p13, k4. (Knit the garter borders, purl the stocking-stitch + cable sections.)" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Row 3 (RS, cable cross row): k4, k13, c4f, k13, k4. The c4f sits at the centre 4 stitches; the cable needle holds 2 stitches to the front while you knit the next 2 from the left needle, then you knit the 2 from the cable needle. 48 stitches remain." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Row 4 (WS): repeat row 2." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Repeat rows 1–4 ten times in total (40 rows). The cable crosses every 4 rows, so 10 repeats means 10 cable crosses." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Top border and cast-off" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work 6 more rows of garter stitch (knit every row). This is the top garter-stitch border." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cast off all 48 stitches knitwise. The standard cast-off: knit two stitches, pass the first over the second; knit one more, pass the previous over; continue until one stitch remains, cut the yarn leaving a 15 cm tail and pull through." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Aim for a cast-off that matches the cast-on in tension. Cotton's lack of stretch makes the contrast more visible than on wool; a tight cast-off pulls the top of the dishcloth in noticeably." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Weave in the cast-on and cast-off tails through the wrong side of the garter borders for about 5 cm each, then trim. The garter ridges hide the tails cleanly." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Do not " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wet-block" } }], "text": "wet-block" },
+          { "type": "text", "text": " a cotton dishcloth. Blocking opens up wool and silk, but cotton loses shape — a blocked cotton dishcloth comes out the same dimensions it went in, just damp for longer. Wash the finished cloth on its first kitchen use; that's the only conditioning it needs." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Double cable: place a second cable column 8 stitches in from the first, by changing the body breakdown to 4 garter + 8 stocking + 4 cable + 8 stocking + 4 cable + 8 stocking + 4 garter (40 stitches), then casting on 40 stitches instead of 48. The two cables can both lean left (both c4f) or mirror (one c4f, one c4b)." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Larger cable: replace the c4f with a c6f over 6 stitches, crossing every 6 rows. Change the centre breakdown to 4 garter + 12 stocking + 6 cable + 12 stocking + 4 garter (38 stitches), then cast on 38 stitches. The 6-stitch cable produces a more prominent column suited to a face cloth or hand towel rather than a kitchen cloth." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "DK cotton: substitute a DK cotton yarn and 4 mm needles. Cast on 56 stitches and adjust the body breakdown proportionally (4 + 17 + 4 + 17 + 4). The finished dishcloth is the same size with a finer fabric." }
+        ]
+      }
+    ]
+  }
+}

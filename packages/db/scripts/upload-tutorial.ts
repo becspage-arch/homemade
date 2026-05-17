@@ -403,6 +403,7 @@ async function uploadTutorial(
   const herbal = input.herbal ?? null
   const sewing = input.sewing ?? null
   const crochet = input.crochet ?? null
+  const knitting = input.knitting ?? null
 
   // Resolve garden.plantSlug against the master `PlantVariety` table. Unknown
   // slugs fail up-front rather than silently inserting a tutorial with a
@@ -480,6 +481,55 @@ async function uploadTutorial(
         throw new Error(
           `[crochet] craftStitchSlugs not in master Stitch table: ${missing.join(', ')}. ` +
           `Seed via seed-stitches.ts or add to scripts/data/stitches.ts first.`,
+        )
+      }
+    }
+  }
+
+  // Resolve knitting master references (YarnWeight, KnittingNeedle, Stitch).
+  // Knitting reuses the same YarnWeight + Stitch tables as crochet — only
+  // the per-craft hook/needle FK differs. The first match below (yarn
+  // weight) deliberately re-resolves even when crochet already resolved
+  // it; the slugs cannot both be set on the same tutorial in practice.
+  let primaryNeedleId: string | null = null
+  if (knitting) {
+    if (knitting.primaryYarnWeightSlug) {
+      const row = await prisma.yarnWeight.findUnique({
+        where: { slug: knitting.primaryYarnWeightSlug },
+        select: { id: true },
+      })
+      if (!row) {
+        throw new Error(
+          `[knitting] primaryYarnWeightSlug "${knitting.primaryYarnWeightSlug}" not in master YarnWeight table. ` +
+          `Seed via seed-yarn-weights.ts or add it to scripts/data/yarn-weights.ts first.`,
+        )
+      }
+      primaryYarnWeightId = row.id
+    }
+    if (knitting.primaryNeedleSlug) {
+      const row = await prisma.knittingNeedle.findUnique({
+        where: { slug: knitting.primaryNeedleSlug },
+        select: { id: true },
+      })
+      if (!row) {
+        throw new Error(
+          `[knitting] primaryNeedleSlug "${knitting.primaryNeedleSlug}" not in master KnittingNeedle table. ` +
+          `Seed via seed-knitting-needles.ts or add it to scripts/data/knitting-needles.ts first.`,
+        )
+      }
+      primaryNeedleId = row.id
+    }
+    if (knitting.craftStitchSlugs && knitting.craftStitchSlugs.length > 0) {
+      const stitchRows = await prisma.stitch.findMany({
+        where: { slug: { in: knitting.craftStitchSlugs } },
+        select: { slug: true },
+      })
+      const found = new Set(stitchRows.map((r) => r.slug))
+      const missing = knitting.craftStitchSlugs.filter((s) => !found.has(s))
+      if (missing.length > 0) {
+        throw new Error(
+          `[knitting] craftStitchSlugs not in master Stitch table: ${missing.join(', ')}. ` +
+          `Seed via seed-stitches.ts or add knitting rows to scripts/data/stitches.ts first.`,
         )
       }
     }
@@ -650,11 +700,15 @@ async function uploadTutorial(
     requiresMedicalDisclaimer: herbal?.requiresMedicalDisclaimer ?? true,
     // Sewing metadata (phase_sewing_pipeline_001). Null on rows that
     // aren't PATTERN or sewing-discipline TECHNIQUE.
-    // craftType is set explicitly from the sewing block for sewing PATTERN/TECHNIQUE
-    // rows. For other craft-category PATTERN rows (wood-natural-craft,
-    // pottery-ceramics, etc.) we derive it from the categorySlug so the browse
-    // filter index is populated without each pipeline needing its own metadata block.
+    // craftType: set from the sewing block explicitly when present;
+    // otherwise hard-set to 'knitting' for knitting PATTERN/STITCH rows
+    // (the knitting block presence is the signal); otherwise derived from
+    // categorySlug for other craft-category PATTERN/TECHNIQUE rows
+    // (wood-natural-craft, pottery-ceramics, etc.). Crochet rows leave
+    // craftType null because crochet uses the per-craft Stitch slug prefix
+    // to disambiguate without needing the column.
     craftType: sewing?.craftType
+      ?? (input.knitting ? 'knitting' : null)
       ?? ((input.type === 'PATTERN' || input.type === 'TECHNIQUE') && !input.crochet && !input.sewing
         ? input.categorySlug
         : null),
@@ -666,17 +720,23 @@ async function uploadTutorial(
     finishedDimensionsCm:
       (sewing?.finishedDimensionsCm as Prisma.InputJsonValue | undefined) ?? undefined,
     bodyMeasurementsRequired: (sewing?.bodyMeasurementsRequired as string[] | undefined) ?? [],
-    // Crochet metadata (Phase 8 Crochet pipeline scaffold). Null on rows
-    // that aren't STITCH / PATTERN. Knitting + needlework pipelines reuse
-    // the same columns (only the hook FK is crochet-specific).
+    // Crochet + Knitting metadata (Phase 8 Crochet pipeline scaffold +
+    // Phase Knitting pipeline). Both pipelines write through to the same
+    // textile-craft columns; only the per-craft hook/needle FK differs.
+    // A tutorial cannot be both crochet and knitting at once — the
+    // PATTERN dispatch in `validateInput` enforces a single block per
+    // category — so the ?? chain reads either-or without ambiguity.
     primaryYarnWeightId,
     primaryHookId,
-    gaugeText: crochet?.gaugeText ?? null,
-    finishedSizeText: crochet?.finishedSizeText ?? null,
-    terminologyConvention: crochet?.terminologyConvention ?? null,
-    chartDefinition: (crochet?.chartDefinition ?? null) as Prisma.InputJsonValue,
-    craftStitchSlugs: crochet?.craftStitchSlugs ?? [],
-    craftTechniqueTags: crochet?.craftTechniqueTags ?? [],
+    primaryNeedleId,
+    gaugeText: crochet?.gaugeText ?? knitting?.gaugeText ?? null,
+    finishedSizeText: crochet?.finishedSizeText ?? knitting?.finishedSizeText ?? null,
+    terminologyConvention:
+      crochet?.terminologyConvention ?? knitting?.terminologyConvention ?? null,
+    chartDefinition: (crochet?.chartDefinition ?? knitting?.chartDefinition ?? null) as Prisma.InputJsonValue,
+    craftStitchSlugs: crochet?.craftStitchSlugs ?? knitting?.craftStitchSlugs ?? [],
+    craftTechniqueTags:
+      crochet?.craftTechniqueTags ?? knitting?.craftTechniqueTags ?? [],
   }
 
   // Publish intent. --status PUBLISHED stamps publishedAt now and flips the

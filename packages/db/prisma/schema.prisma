@@ -555,6 +555,10 @@ model Tutorial {
   primaryYarnWeight   YarnWeight?  @relation("TutorialPrimaryYarnWeight", fields: [primaryYarnWeightId], references: [id], onDelete: SetNull)
   primaryHookId       String?
   primaryHook         CrochetHook? @relation("TutorialPrimaryHook", fields: [primaryHookId], references: [id], onDelete: SetNull)
+  /// Knitting analogue of `primaryHookId` — set on knitting PATTERN rows.
+  /// Same SetNull policy.
+  primaryNeedleId     String?
+  primaryNeedle       KnittingNeedle? @relation("TutorialPrimaryNeedle", fields: [primaryNeedleId], references: [id], onDelete: SetNull)
 
   /// Stated gauge as the author wrote it — e.g. "18 dc × 10 rows = 10 × 10 cm
   /// in 4 mm hook, after blocking". Plain text; the renderer surfaces it
@@ -655,6 +659,7 @@ model Tutorial {
   @@index([requiredNotions], type: Gin)
   @@index([primaryYarnWeightId])
   @@index([primaryHookId])
+  @@index([primaryNeedleId])
   @@index([craftStitchSlugs], type: Gin)
   @@index([craftTechniqueTags], type: Gin)
   @@index([type, terminologyConvention])
@@ -2804,6 +2809,47 @@ model CrochetHook {
   notes String?
 
   tutorials Tutorial[] @relation("TutorialPrimaryHook")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+/// Knitting needle reference table. Mirrors `CrochetHook` shape exactly
+/// so the renderer and authoring scripts treat hook and needle the same
+/// way (only the per-craft FK on Tutorial differs).
+///
+/// Covers 2.0–15 mm sizes with UK + US + JP conversions and the YarnWeight
+/// slugs the needle suits. The same mm size is seeded once even though
+/// physically the needle ships as straight / double-pointed / circular /
+/// interchangeable variants — needle "type" is part of the pattern's
+/// instructions, not part of the master row identity.
+model KnittingNeedle {
+  id   String @id @default(cuid())
+  slug String @unique
+
+  /// Canonical sort key. Unique — one KnittingNeedle row per mm size.
+  mmSize Float @unique
+
+  /// Display name — "4 mm needle (UK 8 / US 6)".
+  canonicalName String
+
+  /// Old UK numbering (14 = 2 mm; 000 = 10 mm; inverse of US).
+  ukSize String?
+
+  /// Modern US numbering (0 = 2 mm; 50 = 25 mm).
+  usSize String?
+
+  /// Japanese needle sizes (0..14 with their own conversion). Surfaces
+  /// for translated patterns from Japanese knitting books.
+  jpSize String?
+
+  /// YarnWeight slugs this needle is recommended for. Same shape as
+  /// `CrochetHook.suitableYarnWeightSlugs`.
+  suitableYarnWeightSlugs String[] @default([])
+
+  notes String?
+
+  tutorials Tutorial[] @relation("TutorialPrimaryNeedle")
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

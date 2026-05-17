@@ -54,6 +54,12 @@ export interface StitchSeed {
     | 'edging'
     | 'joining'
     | 'special'
+    // Knitting-specific categories. The DB column is free-form String; these
+    // sit in the TypeScript union as a spelling gate for the seed file.
+    | 'increase'
+    | 'decrease'
+    | 'cable'
+    | 'bind-off'
   chartSymbol?: string
   difficulty?: 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED'
   parentStitchSlug?: string
@@ -380,5 +386,324 @@ export const STITCHES: StitchSeed[] = [
     parentStitchSlug: 'crochet-slip-stitch',
     notes:
       'Joining two pieces with a row of slip stitches through the matching edges. Visible from the public side; used for granny-square seams when the seam itself should show.',
+  },
+
+  // ── Knitting basics ─────────────────────────────────────────────────
+  {
+    slug: 'knitting-knit',
+    craft: 'knitting',
+    canonicalName: 'Knit',
+    ukName: 'Knit',
+    usName: 'Knit',
+    ukAbbreviation: 'k',
+    usAbbreviation: 'k',
+    category: 'basic',
+    chartSymbol: 'knit',
+    difficulty: 'BEGINNER',
+    notes:
+      'The right-side stitch. Empty cell in the standard knitting chart convention; the renderer draws a thin outlined cell.',
+  },
+  {
+    slug: 'knitting-purl',
+    craft: 'knitting',
+    canonicalName: 'Purl',
+    ukName: 'Purl',
+    usName: 'Purl',
+    ukAbbreviation: 'p',
+    usAbbreviation: 'p',
+    category: 'basic',
+    chartSymbol: 'purl',
+    difficulty: 'BEGINNER',
+    notes:
+      'The wrong-side stitch. Standard chart symbol is a filled centred dot.',
+  },
+
+  // ── Knitting pattern stitches (built from k + p) ────────────────────
+  {
+    slug: 'knitting-stocking-stitch',
+    craft: 'knitting',
+    canonicalName: 'Stocking stitch',
+    ukName: 'Stocking stitch',
+    usName: 'Stockinette stitch',
+    ukAbbreviation: 'st st',
+    usAbbreviation: 'st st',
+    category: 'textured',
+    difficulty: 'BEGINNER',
+    parentStitchSlug: 'knitting-knit',
+    notes:
+      'Knit one row, purl the next. Smooth V columns on the right side; horizontal bumps on the wrong side. The fabric of every shop-bought jumper. UK / US naming diverges.',
+  },
+  {
+    slug: 'knitting-garter-stitch',
+    craft: 'knitting',
+    canonicalName: 'Garter stitch',
+    ukName: 'Garter stitch',
+    usName: 'Garter stitch',
+    ukAbbreviation: 'gtr',
+    usAbbreviation: 'gtr',
+    category: 'textured',
+    difficulty: 'BEGINNER',
+    parentStitchSlug: 'knitting-knit',
+    notes:
+      'Knit every row, every side. Bumpy ridges identical on both faces; the canonical beginner-scarf fabric.',
+  },
+  {
+    slug: 'knitting-rib-1x1',
+    craft: 'knitting',
+    canonicalName: '1×1 ribbing',
+    ukName: '1×1 rib',
+    usName: '1×1 rib',
+    ukAbbreviation: 'k1, p1 rib',
+    usAbbreviation: 'k1, p1 rib',
+    category: 'textured',
+    difficulty: 'BEGINNER',
+    notes:
+      'Knit one, purl one across the row; on subsequent rows knit the knits and purl the purls. Stretchy; the classic cuff and brim.',
+  },
+  {
+    slug: 'knitting-rib-2x2',
+    craft: 'knitting',
+    canonicalName: '2×2 ribbing',
+    ukName: '2×2 rib',
+    usName: '2×2 rib',
+    ukAbbreviation: 'k2, p2 rib',
+    usAbbreviation: 'k2, p2 rib',
+    category: 'textured',
+    difficulty: 'BEGINNER',
+    notes:
+      'Knit two, purl two across the row. Slightly more stretch than 1×1 with a clearer column. The standard hat-brim rib.',
+  },
+  {
+    slug: 'knitting-seed-stitch',
+    craft: 'knitting',
+    canonicalName: 'Seed stitch',
+    ukName: 'Moss stitch',
+    usName: 'Seed stitch',
+    ukAbbreviation: 'seed',
+    usAbbreviation: 'seed',
+    category: 'textured',
+    difficulty: 'BEGINNER',
+    notes:
+      'Knit one purl one with the columns staggered each row. UK calls this moss stitch; US calls it seed — the most-cited UK / US confusion.',
+  },
+  {
+    slug: 'knitting-double-moss',
+    craft: 'knitting',
+    canonicalName: 'Double moss stitch',
+    ukAbbreviation: 'dbl moss',
+    usAbbreviation: 'dbl moss',
+    category: 'textured',
+    difficulty: 'BEGINNER',
+    notes:
+      'Four-row variation of moss / seed; holds the pattern across larger plain panels.',
+  },
+  {
+    slug: 'knitting-basket-weave',
+    craft: 'knitting',
+    canonicalName: 'Basket-weave',
+    ukAbbreviation: 'basket-w',
+    usAbbreviation: 'basket-w',
+    category: 'textured',
+    difficulty: 'INTERMEDIATE',
+    notes:
+      'Alternating blocks of stocking and reverse-stocking that swap every four rows. Reads like woven basket; common on cushions and dishcloths.',
+  },
+  {
+    slug: 'knitting-fishermans-rib',
+    craft: 'knitting',
+    canonicalName: "Fisherman's rib",
+    ukAbbreviation: 'fish rib',
+    usAbbreviation: 'fish rib',
+    category: 'textured',
+    difficulty: 'INTERMEDIATE',
+    notes:
+      'A deep, lofty rib produced by knitting into the row below. Cosy; uses about a third more yarn than plain 1×1 ribbing.',
+  },
+  {
+    slug: 'knitting-brioche',
+    craft: 'knitting',
+    canonicalName: 'Brioche stitch',
+    ukAbbreviation: 'brk / brp',
+    usAbbreviation: 'brk / brp',
+    category: 'textured',
+    difficulty: 'ADVANCED',
+    notes:
+      'A reversible stitch family built on slip-yarnovers. Lofty, plush, famously easy to mis-count.',
+  },
+
+  // ── Knitting increases + decreases ──────────────────────────────────
+  {
+    slug: 'knitting-yarn-over',
+    craft: 'knitting',
+    canonicalName: 'Yarn over',
+    ukAbbreviation: 'yo',
+    usAbbreviation: 'yo',
+    category: 'increase',
+    chartSymbol: 'yarn-over',
+    difficulty: 'BEGINNER',
+    notes:
+      'An increase that also creates a small eyelet — the lace basic. UK pattern books may write "yfwd" (yarn forward) between knit stitches.',
+  },
+  {
+    slug: 'knitting-make-1',
+    craft: 'knitting',
+    canonicalName: 'Make 1',
+    ukAbbreviation: 'm1',
+    usAbbreviation: 'm1',
+    category: 'increase',
+    chartSymbol: 'make-1',
+    difficulty: 'BEGINNER',
+    notes:
+      'Invisible increase made by lifting the strand between two stitches and knitting into the back of it. Authors note M1L vs M1R when direction matters.',
+  },
+  {
+    slug: 'knitting-k2tog',
+    craft: 'knitting',
+    canonicalName: 'Knit two together',
+    ukAbbreviation: 'k2tog',
+    usAbbreviation: 'k2tog',
+    category: 'decrease',
+    chartSymbol: 'k2tog',
+    difficulty: 'BEGINNER',
+    notes:
+      'Right-leaning single decrease. Standard chart symbol leans the way the stitch sits.',
+  },
+  {
+    slug: 'knitting-ssk',
+    craft: 'knitting',
+    canonicalName: 'Slip slip knit',
+    ukAbbreviation: 'ssk',
+    usAbbreviation: 'ssk',
+    category: 'decrease',
+    chartSymbol: 'ssk',
+    difficulty: 'BEGINNER',
+    notes:
+      'Left-leaning single decrease, the mirror of k2tog. UK books may write "sl1, k1, psso".',
+  },
+
+  // ── Knitting cables ─────────────────────────────────────────────────
+  {
+    slug: 'knitting-cable-4-front',
+    craft: 'knitting',
+    canonicalName: 'Cable 4 front',
+    ukAbbreviation: 'c4f',
+    usAbbreviation: 'c4f',
+    category: 'cable',
+    chartSymbol: 'cable-4-front',
+    difficulty: 'INTERMEDIATE',
+    notes:
+      'Slip 2 onto cable needle, hold to front; knit next 2 from left needle; knit 2 from cable needle. Leans the cable to the left.',
+  },
+  {
+    slug: 'knitting-cable-4-back',
+    craft: 'knitting',
+    canonicalName: 'Cable 4 back',
+    ukAbbreviation: 'c4b',
+    usAbbreviation: 'c4b',
+    category: 'cable',
+    chartSymbol: 'cable-4-back',
+    difficulty: 'INTERMEDIATE',
+    notes:
+      'Slip 2 onto cable needle, hold to back; knit next 2; knit 2 from cable needle. Mirror of c4f — leans right.',
+  },
+  {
+    slug: 'knitting-cable-6-front',
+    craft: 'knitting',
+    canonicalName: 'Cable 6 front',
+    ukAbbreviation: 'c6f',
+    usAbbreviation: 'c6f',
+    category: 'cable',
+    chartSymbol: 'cable-4-front',
+    difficulty: 'INTERMEDIATE',
+    parentStitchSlug: 'knitting-cable-4-front',
+    notes:
+      'Six-stitch left-leaning cable; same method as c4f over three stitches each instead of two.',
+  },
+  {
+    slug: 'knitting-cable-6-back',
+    craft: 'knitting',
+    canonicalName: 'Cable 6 back',
+    ukAbbreviation: 'c6b',
+    usAbbreviation: 'c6b',
+    category: 'cable',
+    chartSymbol: 'cable-4-back',
+    difficulty: 'INTERMEDIATE',
+    parentStitchSlug: 'knitting-cable-4-back',
+    notes:
+      'Six-stitch right-leaning cable; mirror of c6f.',
+  },
+
+  // ── Knitting colourwork ─────────────────────────────────────────────
+  {
+    slug: 'knitting-fair-isle',
+    craft: 'knitting',
+    canonicalName: 'Fair Isle',
+    ukAbbreviation: 'FI',
+    usAbbreviation: 'FI',
+    category: 'colourwork',
+    difficulty: 'INTERMEDIATE',
+    notes:
+      'Two-colour stranded knitting in repeating motifs, usually no more than two colours per row. The yarn not in use is carried (stranded) across the back of the work.',
+  },
+  {
+    slug: 'knitting-intarsia',
+    craft: 'knitting',
+    canonicalName: 'Intarsia',
+    ukAbbreviation: 'int',
+    usAbbreviation: 'int',
+    category: 'colourwork',
+    difficulty: 'INTERMEDIATE',
+    notes:
+      'Working blocks of colour by twisting yarns at the colour change. No strands carried across the back; suited to flat-knitted motifs and pictures.',
+  },
+
+  // ── Knitting edges, special, bind-off ───────────────────────────────
+  {
+    slug: 'knitting-slip-stitch',
+    craft: 'knitting',
+    canonicalName: 'Slip stitch',
+    ukAbbreviation: 'sl1',
+    usAbbreviation: 'sl1',
+    category: 'edging',
+    chartSymbol: 'slip-stitch',
+    difficulty: 'BEGINNER',
+    notes:
+      'Move a stitch from the left needle to the right without working it. Used to create chained selvedges and to set up many decreases.',
+  },
+  {
+    slug: 'knitting-knit-tbl',
+    craft: 'knitting',
+    canonicalName: 'Knit through the back loop',
+    ukAbbreviation: 'k1tbl',
+    usAbbreviation: 'k1tbl',
+    category: 'textured',
+    chartSymbol: 'knit-tbl',
+    difficulty: 'BEGINNER',
+    notes:
+      'Knit into the back leg of the stitch — produces a twisted stitch with a tighter, slanted column.',
+  },
+  {
+    slug: 'knitting-wrap-and-turn',
+    craft: 'knitting',
+    canonicalName: 'Wrap and turn',
+    ukAbbreviation: 'w&t',
+    usAbbreviation: 'w&t',
+    category: 'special',
+    difficulty: 'INTERMEDIATE',
+    notes:
+      'Short-row technique that shapes fabric by wrapping a stitch with the working yarn and turning the work mid-row. Heel turns, sock toes, bust darts.',
+  },
+  {
+    slug: 'knitting-three-needle-bind-off',
+    craft: 'knitting',
+    canonicalName: 'Three-needle bind-off',
+    ukName: 'Three-needle cast-off',
+    usName: 'Three-needle bind-off',
+    ukAbbreviation: '3-ndl bo',
+    usAbbreviation: '3-ndl bo',
+    category: 'bind-off',
+    difficulty: 'INTERMEDIATE',
+    notes:
+      'Joins two live edges into a single seam by knitting matched stitches together and binding off as you go. UK pattern books call it "cast-off".',
   },
 ]
