@@ -113,6 +113,33 @@ export default async function AdminAutopilotPage({ searchParams }: PageProps) {
     ),
   )
 
+  // Image verification coverage — Media rows attached as a Tutorial hero.
+  // Counts by verificationStatus across all such rows. Lets Rebecca eyeball
+  // how much of the published library has been reviewed.
+  const verificationGroups = await prisma.media.groupBy({
+    by: ['verificationStatus'],
+    where: { tutorialsHero: { some: { status: TutorialStatus.PUBLISHED } } },
+    _count: { _all: true },
+  })
+  const verificationCounts: {
+    VERIFIED: number
+    UNVERIFIED: number
+    REJECTED: number
+    REJECTED_USED_PROCEDURAL: number
+  } = { VERIFIED: 0, UNVERIFIED: 0, REJECTED: 0, REJECTED_USED_PROCEDURAL: 0 }
+  for (const g of verificationGroups) {
+    verificationCounts[g.verificationStatus] = g._count._all
+  }
+  const verificationTotal =
+    verificationCounts.VERIFIED +
+    verificationCounts.UNVERIFIED +
+    verificationCounts.REJECTED +
+    verificationCounts.REJECTED_USED_PROCEDURAL
+  const verificationCoverage =
+    verificationTotal > 0
+      ? Math.round((verificationCounts.VERIFIED / verificationTotal) * 100)
+      : 0
+
   const categoryBySlug = new Map(categories.map((c) => [c.slug, c]))
   const pauseByStream = new Map(pauseStates.map((p) => [p.streamName, p]))
   const lastHaltDateByStream = new Map<string, Date | null>()
@@ -264,6 +291,77 @@ export default async function AdminAutopilotPage({ searchParams }: PageProps) {
             </article>
           )
         })}
+      </section>
+
+      <section style={{ marginBottom: 32 }}>
+        <header
+          style={{
+            display: 'flex',
+            alignItems: 'baseline',
+            justifyContent: 'space-between',
+            gap: 12,
+            marginBottom: 12,
+          }}
+        >
+          <h2 style={{ fontFamily: 'var(--font-fraunces)', fontSize: 22, margin: 0, color: 'var(--color-espresso)' }}>
+            Image verification
+          </h2>
+          <span style={{ fontFamily: 'var(--font-lora)', fontSize: 12, color: 'var(--color-warm-taupe)' }}>
+            Hero coverage on PUBLISHED tutorials —{' '}
+            <strong style={{ color: 'var(--color-espresso)' }}>{verificationCoverage}%</strong>{' '}
+            verified
+          </span>
+        </header>
+
+        <article
+          className="admin-kpi-card"
+          style={{
+            padding: 18,
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
+            gap: 18,
+            fontFamily: 'var(--font-lora)',
+            fontSize: 13,
+            color: 'var(--color-espresso)',
+          }}
+        >
+          {[
+            { label: 'Verified', value: verificationCounts.VERIFIED },
+            { label: 'Unverified', value: verificationCounts.UNVERIFIED },
+            { label: 'Rejected', value: verificationCounts.REJECTED },
+            { label: 'Used procedural', value: verificationCounts.REJECTED_USED_PROCEDURAL },
+          ].map((cell) => (
+            <div key={cell.label}>
+              <div
+                style={{
+                  fontFamily: 'var(--font-lora)',
+                  fontSize: 11,
+                  letterSpacing: '0.25em',
+                  textTransform: 'uppercase',
+                  color: 'var(--color-warm-taupe)',
+                  marginBottom: 4,
+                }}
+              >
+                {cell.label}
+              </div>
+              <div style={{ fontFamily: 'var(--font-fraunces)', fontSize: 28, fontWeight: 400 }}>
+                {cell.value}
+              </div>
+            </div>
+          ))}
+        </article>
+        <p
+          style={{
+            fontFamily: 'var(--font-lora)',
+            fontSize: 12,
+            color: 'var(--color-warm-taupe)',
+            marginTop: 8,
+          }}
+        >
+          Rejected rows need manual review or a fresh sweep pass.{' '}
+          Run <code>verify-media-batch.ts</code> + <code>apply-media-verdicts.ts</code> to
+          clear the unverified backlog.
+        </p>
       </section>
 
       <section style={{ marginBottom: 32 }}>

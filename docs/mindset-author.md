@@ -1133,6 +1133,24 @@ public renderer shows the discreet © tooltip only when
 If `result.outcome === 'failed'`, leave `hero` unset — the public
 renderer falls back to the procedural card.
 
+### Image verification — match the candidate against the practice
+
+Every candidate (Unsplash atmospheric, Pexels lifestyle, or Flux botanical)
+goes through verification before it's accepted. The authoring worker (you)
+is the verifier — no paid AI API; Claude Code reads the image itself.
+Full instructions in `tutorial-author.md` ("Image verification — match the
+candidate against the dish") apply to Mindset with the rubric adjusted:
+
+- **Accept** atmospheric / contemplative imagery that reads slow-living
+  and matches the practice register (a single candle for a ritual, an
+  open notebook for journaling, hands in soft light for tapping).
+- **Reject** glossy stock-wellness scenes, gym aesthetics, faces, harsh
+  blue light, or anything that reads as commercial-fitness rather than
+  quiet practice.
+
+Use `verify-media-batch.ts` + `apply-media-verdicts.ts` for the sweep
+path, or pass `verify` to `sourceHeroImage` for inline verification.
+
 ### ProjectSchedule registration — multi-day arcs
 
 Long-arc recipes register `projectSchedule` rows so the homepage can

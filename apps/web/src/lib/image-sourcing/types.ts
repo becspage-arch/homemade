@@ -72,11 +72,24 @@ export interface SourceHeroInput {
 
 export type SourceOutcome = 'free' | 'ai-generated' | 'failed'
 
+export interface SourceRejection {
+  source: ImageSource
+  reason: string
+}
+
 export interface SourceHeroResult {
   image: ImageSearchResult | null
   outcome: SourceOutcome
   /** Ordered list of sources we tried before settling. */
   triedSources: ImageSource[]
+  /** Verdicts produced by the verification step, in order of attempts. */
+  rejections?: SourceRejection[]
+  /** Final verification status to stamp on the Media row when persisted. */
+  verificationStatus?:
+    | 'UNVERIFIED'
+    | 'VERIFIED'
+    | 'REJECTED'
+    | 'REJECTED_USED_PROCEDURAL'
 }
 
 /** Licences that require visible attribution in the public renderer. */

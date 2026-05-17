@@ -10,6 +10,14 @@
  * Priority lists are taken from `docs/free-image-research.md`. Cooking
  * Middle-Eastern / preserves / specialty paths skip Wikimedia (low hit rate);
  * Mindset somatic paths skip free sources entirely and go straight to AI.
+ *
+ * Verification: callers may pass a `verify` callback. When provided, every
+ * candidate (free or AI) is run through verification; on rejection the
+ * orchestrator advances to the next source, and on rejection of the Flux
+ * fallback returns `failed` so the caller falls back to the procedural card.
+ * Without a callback the orchestrator returns the first quality-passing
+ * candidate (legacy behaviour) and stamps `verificationStatus = UNVERIFIED`
+ * so a later sweep can fill it in.
  */
 
 import { searchUnsplash } from './unsplash'
@@ -17,6 +25,7 @@ import { searchPexels } from './pexels'
 import { searchWikimedia } from './wikimedia'
 import { searchPixabay } from './pixabay'
 import { generateWithFluxSchnell } from './flux-schnell'
+import type { VerifyImageFn } from './verify'
 import {
   MAX_RATIO,
   MIN_HEIGHT,
@@ -26,6 +35,7 @@ import {
   type ImageSource,
   type SourceHeroInput,
   type SourceHeroResult,
+  type SourceRejection,
 } from './types'
 
 type FreeSourceFn = (q: string, opts?: { limit?: number }) => Promise<ImageSearchResult[]>
@@ -62,7 +72,7 @@ function priorityFor(input: SourceHeroInput): { freeOrder: ImageSource[]; skipFr
     }
     return { freeOrder: ['unsplash', 'pexels', 'wikimedia', 'pixabay'], skipFreeForAi: false }
   }
-  if (category === 'baking') {
+  if (input.category === 'baking') {
     return { freeOrder: ['unsplash', 'pexels', 'wikimedia', 'pixabay'], skipFreeForAi: false }
   }
   // Garden / herbal-medicine and anything else: same as cooking generic.
@@ -87,32 +97,121 @@ function passesQuality(r: ImageSearchResult): boolean {
   return true
 }
 
-export async function sourceHeroImage(input: SourceHeroInput): Promise<SourceHeroResult> {
+export interface SourceHeroOptions {
+  /** Sources to skip — used to retry after a rejection. */
+  excludeSources?: ImageSource[]
+  /** Optional verification callback. When provided, each candidate is verified
+   *  and the orchestrator advances on rejection. Without it, the first
+   *  quality-passing candidate is returned with verificationStatus UNVERIFIED. */
+  verify?: VerifyImageFn
+}
+
+export async function sourceHeroImage(
+  input: SourceHeroInput,
+  options: SourceHeroOptions = {},
+): Promise<SourceHeroResult> {
   const { freeOrder, skipFreeForAi } = priorityFor(input)
   const query = buildQuery(input)
+  const exclude = new Set<ImageSource>(options.excludeSources ?? [])
   const triedSources: ImageSource[] = []
+  const rejections: SourceRejection[] = []
 
   if (!skipFreeForAi) {
     for (const source of freeOrder) {
+      if (exclude.has(source)) continue
       triedSources.push(source)
       const fn = FREE_SOURCES[source as keyof typeof FREE_SOURCES]
       if (!fn) continue
       const results = await fn(query, { limit: 3 })
       for (const r of results) {
-        if (passesQuality(r)) {
-          return { image: r, outcome: 'free', triedSources }
+        if (!passesQuality(r)) continue
+        if (options.verify) {
+          const verdict = await runVerify(options.verify, r, input)
+          if (verdict.verdict === 'rejected') {
+            rejections.push({ source, reason: verdict.reason })
+            continue
+          }
+          return {
+            image: r,
+            outcome: 'free',
+            triedSources,
+            rejections,
+            verificationStatus: 'VERIFIED',
+          }
+        }
+        return {
+          image: r,
+          outcome: 'free',
+          triedSources,
+          rejections,
+          verificationStatus: 'UNVERIFIED',
         }
       }
     }
   }
 
-  triedSources.push('flux-schnell')
-  const ai = await generateWithFluxSchnell(input)
-  if (ai) {
-    return { image: ai, outcome: 'ai-generated', triedSources }
+  if (!exclude.has('flux-schnell')) {
+    triedSources.push('flux-schnell')
+    const ai = await generateWithFluxSchnell(input)
+    if (ai) {
+      if (options.verify) {
+        const verdict = await runVerify(options.verify, ai, input)
+        if (verdict.verdict === 'rejected') {
+          rejections.push({ source: 'flux-schnell', reason: verdict.reason })
+          return {
+            image: null,
+            outcome: 'failed',
+            triedSources,
+            rejections,
+            verificationStatus: 'REJECTED_USED_PROCEDURAL',
+          }
+        }
+        return {
+          image: ai,
+          outcome: 'ai-generated',
+          triedSources,
+          rejections,
+          verificationStatus: 'VERIFIED',
+        }
+      }
+      return {
+        image: ai,
+        outcome: 'ai-generated',
+        triedSources,
+        rejections,
+        verificationStatus: 'UNVERIFIED',
+      }
+    }
   }
 
-  return { image: null, outcome: 'failed', triedSources }
+  return {
+    image: null,
+    outcome: 'failed',
+    triedSources,
+    rejections,
+    verificationStatus: 'REJECTED_USED_PROCEDURAL',
+  }
 }
 
-export type { SourceHeroInput, SourceHeroResult, ImageSearchResult } from './types'
+async function runVerify(
+  verify: VerifyImageFn,
+  image: ImageSearchResult,
+  input: SourceHeroInput,
+): Promise<{ verdict: 'verified' | 'rejected'; reason: string }> {
+  try {
+    return await verify({
+      imageUrl: image.url,
+      imageSource: image.source,
+      tutorialTitle: input.title,
+      keyIngredients: input.ingredients?.slice(0, 5) ?? [],
+      cuisine: input.subCategory ?? null,
+      mealType: null,
+      category: input.category,
+    })
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err)
+    return { verdict: 'rejected', reason: `verify-threw: ${message}` }
+  }
+}
+
+export type { SourceHeroInput, SourceHeroResult, ImageSearchResult, SourceRejection } from './types'

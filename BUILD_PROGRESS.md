@@ -880,6 +880,36 @@ Memory updates (auto-loaded for future Mindset workers):
 
 **Out.** No schema changes; no voice-check CLI edits; no edits to `docs/mindset-author.md`; no new TipTap blocks; no plan-generator work.
 
+### AI image verification — pipeline wire-up + sweep scaffolding ✅ landed 2026-05-17
+
+**Goal.** Every hero image (free-source or AI-generated) gets compared against its tutorial before going live. Wrong-dish images get caught and re-sourced; correct ones get stamped `VERIFIED`. The judgement runs inside the worker session itself (Claude Code's built-in multimodal Read) — no paid AI API.
+
+**Outcome.** Schema + orchestrator hook + sweep CLI + admin KPI all landed. The retroactive sweep on the existing ~500 PUBLISHED tutorials is deferred to a follow-up worker (resume scope captured below) because (a) the migration needs to land on prod before the sweep runs, and (b) image-viewing burns context fast — 50 per batch is realistic, not 500 in one go.
+
+**What landed:**
+
+- **Schema** (`phase_image_verification_001`, additive). `Media.verificationStatus` enum (`UNVERIFIED | VERIFIED | REJECTED | REJECTED_USED_PROCEDURAL`, default UNVERIFIED), `verificationReason` (Text), `verifiedAt` (DateTime). Index on `verificationStatus`. Existing rows default to UNVERIFIED so the sweep picks them up.
+- **Orchestrator hook.** `sourceHeroImage` gains a `verify` callback option + `excludeSources`. With a callback, the orchestrator iterates sources, verifies each candidate, advances on rejection, falls through to Flux Schnell, and returns `REJECTED_USED_PROCEDURAL` when even Flux fails verification. Without a callback (legacy callers), behaviour is unchanged and `verificationStatus` defaults to `UNVERIFIED` so the sweep cleans it up later.
+- **Verify helper** (`apps/web/src/lib/image-sourcing/verify.ts`). `VerifyImageInput` / `VerifyImageResult` / `VerifyImageFn` contract, `downloadToCache` for local image caching, `buildVerificationPromptHints` that turns the tutorial metadata into a verdict rubric for the worker.
+- **Sweep CLI**, two scripts in `packages/db/scripts/`:
+  - `verify-media-batch.ts` — pulls N UNVERIFIED Media rows, downloads each image to `.claude/tmp/verify-cache/`, writes a manifest to `docs/image-verification-queue.json` with prompt hints. The worker reads the manifest, opens each `imagePath` with the Read tool, judges, writes verdicts.
+  - `apply-media-verdicts.ts` — reads the worker's verdicts file, stamps VERIFIED rows, marks rejected ones and re-sources a replacement (excluding the rejected source). Snapshots a TutorialVersion before each mutation. Writes an AuditLog + a per-run JSON report.
+- **Authoring prompts.** `docs/tutorial-author.md` gets the verification rubric inline (accept criteria, reject criteria, two integration paths — `verify` callback for inline, sweep CLI for batch). `docs/baking-author.md` + `docs/mindset-author.md` reference the same rubric with category-specific reject criteria (sourdough vs supermarket loaf for baking; quiet practice vs glossy gym-wellness for mindset).
+- **Admin KPI.** `/admin/system/autopilot` gains an "Image verification" panel — 4 KPIs (verified / unverified / rejected / used procedural) + a coverage % so Rebecca can eyeball how much of the published library has been reviewed.
+
+**Resume scope for the sweep.** Next worker (Sonnet, model per `feedback_model_choice.md`):
+
+1. After this migration has landed on prod (`gh run watch` green), pull origin/main fresh.
+2. `pnpm --filter @homemade/db exec tsx scripts/verify-media-batch.ts --batch-size 50` to enqueue.
+3. Read `docs/image-verification-queue.json`. For each `entries[i]`, open `entries[i].imagePath` with Read, evaluate against the `promptHints`, accumulate a verdict.
+4. Write `docs/image-verification-verdicts.json` of shape `{ "verdicts": [{ "mediaId", "verdict", "reason" }] }`.
+5. `pnpm --filter @homemade/db exec tsx scripts/apply-media-verdicts.ts` to commit.
+6. Repeat until `verify-media-batch.ts` returns 0 entries.
+
+**Scope respected.** No paid AI API. No schema changes beyond the additive Media columns. No content authoring. No homepage / mobile / non-admin UI work. No edits to feedback memory files or page-design docs.
+
+**Out.** No recurring cron — the sweep clears the backlog once and stays clean because every new authoring run verifies its own image. No edits to upload-tutorial.ts (new Media rows default to UNVERIFIED at DB level). Hero-attribution component unchanged — verificationStatus is admin-only, not public.
+
 ### Autopilot — Baking bulk-002 ✅ landed 2026-05-17
 
 **Goal.** Second autopilot fire of the baking stream. Drain under-represented sub-categories in baking — pies, pastries, biscuits, scones, sweets-confectionery and cake-decorating — and rest the heavier bread + cakes from bulk-001.

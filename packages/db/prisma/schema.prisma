@@ -579,6 +579,17 @@ model Media {
   /// surfaces a discreet attribution tooltip on the hero.
   requiresAttribution Boolean @default(false)
 
+  /// Verification verdict from the image-sourcing pipeline. A worker session
+  /// (Claude Code, using its built-in multimodal Read capability) compares the
+  /// image against the tutorial title / key ingredients / cuisine and decides
+  /// whether the image is a plausible match. UNVERIFIED rows are picked up by
+  /// the sweep script. REJECTED_USED_PROCEDURAL means the orchestrator could
+  /// not find a plausible image even from Flux fallback and the tutorial fell
+  /// back to its procedural card.
+  verificationStatus MediaVerificationStatus @default(UNVERIFIED)
+  verificationReason String?
+  verifiedAt         DateTime?
+
   tutorialsHero Tutorial[]
   ugcPhotos     UGCPhoto[]
 
@@ -588,6 +599,7 @@ model Media {
   @@index([status])
   @@index([type])
   @@index([source])
+  @@index([verificationStatus])
 }
 
 enum MediaType {
@@ -601,6 +613,13 @@ enum MediaStatus {
   UPLOADING
   READY
   FAILED
+}
+
+enum MediaVerificationStatus {
+  UNVERIFIED
+  VERIFIED
+  REJECTED
+  REJECTED_USED_PROCEDURAL
 }
 
 // ────────────────────────────────────────────────────────────────────────────

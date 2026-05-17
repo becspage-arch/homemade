@@ -768,6 +768,19 @@ public renderer shows the discreet © tooltip only when
 If `result.outcome === 'failed'`, leave `hero` unset — the public
 renderer falls back to the procedural card.
 
+### Image verification — match the candidate against the bake
+
+Every candidate goes through a verification check. The authoring worker
+(you) is the verifier — Claude Code's built-in image-reading capability
+is the rubric, not a paid AI API. Full instructions in
+`tutorial-author.md` ("Image verification — match the candidate against
+the dish") apply unchanged to baking. The reject criteria are the same:
+wrong dish, wrong format, off-brand. Sourdough that looks like a
+machine-made supermarket loaf when the recipe is a hand-shaped country
+sourdough is a rejection. Use `verify-media-batch.ts` +
+`apply-media-verdicts.ts` for the sweep path, or pass `verify` to
+`sourceHeroImage` for inline verification.
+
 ### ProjectSchedule registration — multi-day arcs
 
 Long-arc recipes register `projectSchedule` rows so the homepage can

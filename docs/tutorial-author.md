@@ -1914,6 +1914,64 @@ public renderer shows the discreet © tooltip only when
 If `result.outcome === 'failed'`, leave `hero` unset — the public
 renderer falls back to the procedural card.
 
+### Image verification — match the candidate against the dish
+
+After sourcing, every candidate goes through a verification check before
+it's accepted as the hero. You — the authoring worker — are the verifier:
+Claude Code's built-in image-reading capability is the rubric, not a paid
+AI API.
+
+Two ways to wire it.
+
+**A. Pass `verify` to the orchestrator (inline path).** The orchestrator
+takes a callback option. When provided, it iterates sources internally,
+asks for a verdict on each candidate, and advances on rejection:
+
+```ts
+import { sourceHeroImage } from '@/lib/image-sourcing'
+
+const result = await sourceHeroImage(
+  {
+    title: draftJson.title,
+    category: draftJson.categorySlug,
+    subCategory: draftJson.subCategorySlug,
+    ingredients: extractKeyIngredients(draftJson),
+  },
+  {
+    verify: async (input) => {
+      // Download bytes, open with Read tool, decide.
+      // Return { verdict: 'verified' | 'rejected', reason }.
+    },
+  },
+)
+```
+
+The orchestrator returns `result.verificationStatus = 'VERIFIED'` when the
+callback accepts, and falls through to the next source on rejection. After
+3 free sources fail it tries Flux Schnell; if Flux also fails verification
+the result is `outcome: 'failed'` and the tutorial falls back to its
+procedural card.
+
+**B. Verify after the fact (sweep path).** When you batch-author and want
+to verify in a separate pass, leave `result.verificationStatus` as
+`UNVERIFIED` and let the sweep pick it up:
+
+```
+pnpm --filter @homemade/db exec tsx scripts/verify-media-batch.ts --batch-size 50
+# worker views the queued images, writes verdicts
+pnpm --filter @homemade/db exec tsx scripts/apply-media-verdicts.ts
+```
+
+The verdict rubric is the same in both paths:
+
+- **Accept** if the image shows the correct dish category, key ingredients
+  are visible or consistent with the title, the cuisine matches, and the
+  format is editorial (not a vertical phone snap). A generic "creamy
+  pasta" image is fine for a carbonara if it looks right.
+- **Reject** if the dish is wrong (tomato salad for carbonara), the
+  cuisine is wrong (Thai curry for a British roast), or the format is
+  off-brand (harsh light, plastic-looking, obvious stock).
+
 ### ProjectSchedule registration — multi-day arcs
 
 Long-arc recipes register `projectSchedule` rows so the homepage can
