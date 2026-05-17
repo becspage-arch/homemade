@@ -258,8 +258,10 @@ All 3 PUBLISHED drafts written to the Anti-AI Voice Rules:
 
 ## Deploy status
 
-Commit pending; deploy verification will run after the BUILD_PROGRESS
-update + commit lands.
+Commit `975b4eb` (rebased onto remote at `d37e458` before push) pushed
+to `main`. GitHub Actions run `25992165555` exited green; `curl
+https://homemade.education/healthz` returned `200`. Deploy verification
+complete.
 
 ---
 
