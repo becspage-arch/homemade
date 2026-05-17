@@ -1,0 +1,104 @@
+{
+  "slug": "brandy-truffles",
+  "title": "Brandy truffles",
+  "subtitle": "Ganache-based truffles flavoured with brandy, rolled in cocoa powder",
+  "excerpt": "Brandy truffles are a ganache (dark chocolate melted into hot cream) with butter and a splash of brandy, chilled until firm, then rolled into balls and dusted in cocoa powder. No thermometer, no tempering. They need an overnight chill and about fifteen minutes of rolling.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "sweets-confectionery",
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Chocolate truffles (ganache-based confections rolled in cocoa or dipped in chocolate) are a French confectionery tradition documented from the late nineteenth century. Mrs A.B. Marshall's confectionery works of the 1880s–1890s describe similar ganache-and-cream chocolate preparations. The brandy truffle variant became a British domestic Christmas staple in the twentieth century and is documented in household baking guides of the period. The ganache method (cream poured over chopped chocolate) is fully public-domain and reproduced in all standard English-language confectionery references.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "about 24 truffles",
+    "prepMinutes": 15,
+    "cookMinutes": 5,
+    "restingMinutes": 15,
+    "chillingMinutes": 480,
+    "totalMinutes": 515,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in a sealed box for up to 2 months. Defrost overnight in the fridge.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly. Chill time remains the same.",
+    "makeAheadNotes": "Make up to 2 weeks ahead and keep in the fridge. Serve at room temperature.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["cosy", "weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": null,
+      "bakeTemperatureNote": null,
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ganache-chilling",
+      "term": "Ganache chilling and rolling",
+      "definition": "A truffle ganache needs to be cold enough to hold its shape when rolled but not so hard it cracks. After overnight chilling it should feel firm but give a little under pressure — similar to soft clay. If the ganache is too warm, it melts on your palms and the truffles will not form. Work quickly and roll in batches, returning the ganache to the fridge between batches if necessary. Cold hands help: run them under cold water and dry before each batch."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Brandy truffles are one of the simplest confections to make at home. The active time is well under an hour; the rest is waiting. The brandy can be increased or decreased, or swapped for a tablespoon of orange juice or strong espresso." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "dark-chocolate", "amount": 300, "unit": "g", "prepNote": "70% cocoa, finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "at room temperature", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "brandy", "amount": 30, "unit": "ml", "prepNote": "about 2 tbsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cocoa-powder", "amount": 60, "unit": "g", "prepNote": "for rolling", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make the ganache" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Place the chopped {{dark-chocolate}} in a heatproof bowl. Heat the {{double-cream}} in a small saucepan until it just begins to simmer. Pour over the chocolate, leave for 2 minutes, then stir from the centre outward until smooth. Add the {{unsalted-butter}} and stir until melted. Add the {{brandy}} and stir to combine. Leave to cool slightly, then cover and refrigerate overnight." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Roll and coat" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sift the {{cocoa-powder}} onto a plate. Read the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ganache-chilling" } }], "text": "ganache chilling and rolling" },
+          { "type": "text", "text": " note: the ganache should feel firm but pliable. Use a teaspoon to scoop portions of about 15 g. Roll each in your palms into a rough ball (they do not need to be perfect) and drop immediately into the cocoa. Roll to coat. Place in a sealed box and refrigerate." }
+        ]
+      }
+    ]
+  }
+}

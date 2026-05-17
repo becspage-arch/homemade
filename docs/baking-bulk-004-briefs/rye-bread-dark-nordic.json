@@ -1,0 +1,104 @@
+{
+  "slug": "rye-bread-dark-nordic",
+  "title": "Dark rye bread",
+  "subtitle": "Dense, malty Nordic-style rye loaf with caraway seeds",
+  "excerpt": "Dark rye bread: a dense, moist loaf made with a high proportion of rye flour, a splash of black treacle for depth, and caraway seeds throughout. No sourdough starter required. The loaf is baked low and slow, sliced thin, and keeps for a week wrapped in foil.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Dark rye bread is a staple of Nordic and Eastern European domestic baking, documented from medieval times. Scandinavian baking guides of the nineteenth and twentieth centuries document rye loaves in multiple forms, from the dense rugbrød of Denmark to the lighter Finnish and Swedish varieties. The yeast-leavened home version with black treacle and caraway is widely reproduced in British domestic baking references as an accessible entry-point to rye baking and is fully public-domain.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (about 900 g)",
+    "prepMinutes": 20,
+    "cookMinutes": 60,
+    "restingMinutes": 120,
+    "chillingMinutes": 0,
+    "totalMinutes": 200,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice before freezing. Toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Best after resting overnight wrapped in foil. Keeps for up to a week at room temperature.",
+    "dietaryFlags": ["vegan", "vegetarian", "dairyFree"],
+    "cuisine": "nordic",
+    "mealType": "breakfast",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven; reduce to 180°C after 15 minutes",
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 75,
+      "saltPercent": 2,
+      "yeastPercent": 1,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 45,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven, 200°C for first 15 minutes then 180°C for 40 to 45 minutes until internal temperature reaches 96°C",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rye-dough-texture",
+      "term": "Rye dough texture",
+      "definition": "Rye flour contains very little gluten-forming protein, so rye doughs do not develop the stretchy, elastic texture of wheat doughs. A high-rye dough is more like a thick batter than a dough: sticky, dense, and reluctant to hold its shape. Do not try to knead it as you would wheat bread. Instead, mix until the flour is fully hydrated, then smooth it into the tin with wet hands. The tin does the shaping work. If the dough feels very wet, this is normal at 75% hydration."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Dark rye bread is one of the least demanding breads to make: no kneading, no shaping. The dough goes straight from the bowl into the tin. It needs time more than skill — a long bake at moderate heat and an overnight rest before slicing." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "rye-flour", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "strong-bread-flour", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "yeast-dried", "amount": 7, "unit": "g", "prepNote": "1 sachet fast-action yeast", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-treacle", "amount": 20, "unit": "g", "prepNote": "about 1 tbsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caraway-seeds", "amount": 8, "unit": "g", "prepNote": "about 1 tsp", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Mix and bulk ferment, 1 hour" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the {{rye-flour}}, {{strong-bread-flour}}, {{yeast-dried}}, {{sea-salt-fine}}, and {{caraway-seeds}} in a large bowl. Dissolve the {{black-treacle}} in 375 ml warm water and pour into the dry ingredients. Mix until a sticky, uniform dough forms. See the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rye-dough-texture" } }], "text": "rye dough texture" },
+          { "type": "text", "text": " note: this dough is wet and sticky by design. Cover and leave to bulk ferment for 1 hour at room temperature until noticeably puffed." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Tin, proof, bake 55–60 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Grease and line a 900 g loaf tin. Scrape the dough into the tin and smooth the top with wet hands. Cover and proof for a further 45 minutes until risen slightly above the rim. Preheat the oven to 200°C fan. Bake for 15 minutes, then reduce to 180°C fan and bake for a further 40 to 45 minutes. The loaf is done when an instant-read thermometer reads 96°C at the centre. Turn out and cool completely before wrapping and resting overnight." }]
+      }
+    ]
+  }
+}

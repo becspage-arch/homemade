@@ -1,0 +1,109 @@
+{
+  "slug": "steak-and-kidney-pie",
+  "title": "Steak and kidney pie",
+  "subtitle": "Long-braised beef and kidney in a puff pastry case",
+  "excerpt": "Steak and kidney pie: beef chuck and ox kidney braised low and slow with stock, onion, and Worcestershire sauce until deeply tender, then encased in all-butter puff pastry and baked until golden. The filling is made a day ahead so it can be chilled before topping.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Steak and kidney pie is a classic British savoury pie documented extensively from the nineteenth century. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136, includes beefsteak and kidney pie with suet or shortcrust pastry. Florence White, Good Things in England (1932), records regional steak and kidney pie variants. The modern version (beef chuck, ox kidney, Worcestershire sauce, and puff pastry crust) is a standard British domestic recipe and fully public-domain.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 pie (serves 4 to 6)",
+    "prepMinutes": 30,
+    "cookMinutes": 150,
+    "restingMinutes": 0,
+    "chillingMinutes": 240,
+    "totalMinutes": 420,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the baked pie. Reheat from frozen at 180°C fan for 30 to 35 minutes covered with foil, then 10 minutes uncovered.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the filling up to 2 days ahead and refrigerate. The cold filling makes the puff pastry easier to top.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["cosy", "weekendBake"],
+    "temperatureCelsius": 210,
+    "temperatureNote": "fan oven, for the pastry top",
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 210,
+      "bakeTemperatureNote": "fan oven, 25 to 30 minutes until pastry is deep gold",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cold-filling-hot-pastry",
+      "term": "Cold filling for puff pastry pies",
+      "definition": "Puff pastry rises by steam: the butter layers need to be cold enough that they melt gradually in the oven, puffing the layers rather than leaking into the filling. If you pour hot filling under a puff pastry lid, the fat melts before the crust sets and the pastry lies flat and greasy. Always chill the filling completely before topping with puff pastry. The contrast of cold filling and hot oven is what drives the rise."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Steak and kidney pie requires patience: the braise takes 2 to 2.5 hours, but the active work is light. Make the filling the day before. A cold filling under puff pastry gives a far better rise than a warm one." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "beef-chuck", "amount": 600, "unit": "g", "prepNote": "cut into 3 cm chunks", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "ox-kidney", "amount": 200, "unit": "g", "prepNote": "trimmed, cut into 2 cm pieces", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 30, "unit": "g", "prepNote": "for dusting the meat", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 15, "unit": "ml", "prepNote": "1 tbsp", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "puff-pastry", "amount": 375, "unit": "g", "prepNote": "all-butter, ready-rolled", "isOptional": false, "groupLabel": "For the top" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": "For the top" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Brown and braise, 2 to 2.5 hours" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Toss the {{beef-chuck}} and {{ox-kidney}} in the {{plain-flour}} with a pinch of salt and pepper. Heat a splash of oil in a heavy saucepan over high heat and brown the meat in batches. Add the {{onion}} and cook for 2 minutes. Pour in the {{stock-beef}} and {{worcestershire-sauce}}. Add the {{thyme}} and {{bay-leaves}}. Bring to a simmer, cover, and cook on the lowest heat for 2 to 2.5 hours until the beef is very tender. Remove the herbs, season, and allow to cool completely. Refrigerate for at least 4 hours." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Top and bake, 25–30 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Preheat the oven to 210°C fan. Pour the cold filling into a 1.5-litre pie dish. Read the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cold-filling-hot-pastry" } }], "text": "cold filling for puff pastry pies" },
+          { "type": "text", "text": " note: the filling must be cold. Drape the {{puff-pastry}} over the dish, trim the edges, and press to seal. Brush with beaten {{eggs}}. Cut a small steam hole in the centre. Bake for 25 to 30 minutes until deep gold." }
+        ]
+      }
+    ]
+  }
+}

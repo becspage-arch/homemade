@@ -1,0 +1,114 @@
+{
+  "slug": "tres-leches-cake",
+  "title": "Tres leches cake",
+  "subtitle": "Light sponge soaked in three milks, topped with whipped cream",
+  "excerpt": "Tres leches cake: a light, fat-free sponge baked in a deep tin, pierced all over, and drenched in a mixture of condensed milk, whole milk, and double cream. The sponge absorbs the liquid as it chills overnight. The result is a rich, moist cake that holds its shape. Topped with lightly sweetened whipped cream.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Tres leches cake (Spanish: 'three milks cake') is a Latin American dessert widely documented in Mexican and Central American domestic cookery from the twentieth century. The technique of soaking a sponge in a sweetened milk mixture is also found in Italian tiramisù and British trifle traditions. The modern tres leches recipe appears in twentieth-century Mexican domestic cookbooks and has been widely reproduced in English-language baking guides. The recipe as given is fully public-domain.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 × 30 cm × 20 cm cake (serves 12)",
+    "prepMinutes": 25,
+    "cookMinutes": 35,
+    "restingMinutes": 30,
+    "chillingMinutes": 480,
+    "totalMinutes": 570,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Must be made the day before to allow the sponge to fully absorb the milk soak. Keeps refrigerated for up to 3 days.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "mexican",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "fan oven, middle shelf",
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 150,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven, 30 to 35 minutes until a skewer comes out clean",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "milk-soak-absorption",
+      "term": "Milk soak absorption",
+      "definition": "Tres leches sponge works because the baked cake is pierced all over with a skewer and then drenched in liquid while still warm. The warm sponge absorbs the soak quickly through the holes. The soak must be poured in two or three stages, waiting between pours for the cake to absorb each addition. If you pour the full soak at once, much of it will pool at the edges and the centre will be dry. Refrigerate overnight: the sponge continues to absorb the liquid as it cools and sets to a dense, custardy texture by morning."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Tres leches is a make-ahead cake — it needs to chill overnight before serving. The sponge is deliberately plain and without butter so it can absorb the maximum milk soak without becoming greasy. The cream topping goes on just before serving." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "eggs", "amount": 5, "unit": "each", "prepNote": "separated", "isOptional": false, "groupLabel": "For the sponge" },
+            { "ingredientSlug": "caster-sugar", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sponge" },
+            { "ingredientSlug": "plain-flour", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sponge" },
+            { "ingredientSlug": "baking-powder", "amount": 5, "unit": "g", "prepNote": "1 tsp", "isOptional": false, "groupLabel": "For the sponge" },
+            { "ingredientSlug": "vanilla-extract", "amount": 5, "unit": "ml", "prepNote": "1 tsp", "isOptional": false, "groupLabel": "For the sponge" },
+            { "ingredientSlug": "condensed-milk", "amount": 397, "unit": "g", "prepNote": "1 tin", "isOptional": false, "groupLabel": "For the milk soak" },
+            { "ingredientSlug": "whole-milk", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the milk soak" },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": "for the soak", "isOptional": false, "groupLabel": "For the milk soak" },
+            { "ingredientSlug": "double-cream", "amount": 300, "unit": "ml", "prepNote": "for the topping", "isOptional": false, "groupLabel": "For the topping" },
+            { "ingredientSlug": "icing-sugar", "amount": 30, "unit": "g", "prepNote": "for the topping", "isOptional": false, "groupLabel": "For the topping" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake the sponge" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 180°C fan. Grease and line a 30 × 20 cm tin. Separate the {{eggs}}. Whisk the yolks with the {{caster-sugar}} until thick and pale. Fold in the sifted {{plain-flour}} and {{baking-powder}}, then the {{vanilla-extract}}. In a clean bowl, whisk the whites to stiff peaks. Fold a third of the whites into the batter to loosen it, then fold in the remainder. Pour into the tin and bake for 30 to 35 minutes until a skewer comes out clean." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Soak and chill overnight" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mix the {{condensed-milk}}, {{whole-milk}}, and 100 ml {{double-cream}} (soak portion) together. While the sponge is still warm, pierce it all over with a skewer. See the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "milk-soak-absorption" } }], "text": "milk soak absorption" },
+          { "type": "text", "text": " note: pour the soak over in 3 stages, waiting between each pour. Leave at room temperature for 30 minutes, then cover and refrigerate overnight." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Top and serve" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whip 300 ml {{double-cream}} (topping portion) with the {{icing-sugar}} to soft peaks. Spread over the cold cake and serve directly from the tin." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "slug": "custard-tart-british",
+  "title": "Custard tart",
+  "subtitle": "Shortcrust pastry case with a baked vanilla custard filling",
+  "excerpt": "British custard tart: a blind-baked shortcrust case filled with a simple egg yolk and double cream custard, flavoured with vanilla and finished with freshly grated nutmeg. The custard sets to a just-trembling, silky texture. The skill is reading the set point correctly.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Custard tarts (baked egg and cream custard in pastry cases) are documented in British baking from the medieval period, where they appeared as 'doucets' or spiced egg custard pies. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136, includes plain and flavoured custard tarts. Florence White, Good Things in England (1932), documents regional custard tart variants. The vanilla and nutmeg combination in a shortcrust case is the canonical modern British form and is fully public-domain.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 × 23 cm tart (serves 8)",
+    "prepMinutes": 30,
+    "cookMinutes": 55,
+    "restingMinutes": 60,
+    "chillingMinutes": 30,
+    "totalMinutes": 175,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Bake the day before and refrigerate. Return to room temperature for 30 minutes before serving.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": ["cosy", "weekendBake"],
+    "temperatureCelsius": 150,
+    "temperatureNote": "fan oven for the custard, after blind-baking at 190°C",
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 150,
+      "bakeTemperatureNote": "custard bakes at 150°C fan, 40 to 45 minutes; blind-bake case at 190°C fan, 15 minutes",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "tart-tin", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "custard-set-point",
+      "term": "Custard set point",
+      "definition": "Baked custard is done when the edges are set and the centre has a distinct wobble — like a just-set jelly. At this stage the internal temperature is around 82°C. Pull it from the oven while the wobble is still there; it will firm as it cools. If the centre is completely still, the custard is overcooked and will be rubbery or curdled. The bake time is 40 to 45 minutes at 150°C fan; check at 40 minutes and look for the edge-firm, centre-wobble signal."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A good custard tart is very nearly a science experiment in egg protein. The custard should be silky, barely set, and cool — not a stiff yellow block. Blind-baking the case first keeps the base crisp and prevents the dreaded soggy bottom." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "shortcrust-pastry", "amount": 300, "unit": "g", "prepNote": "shop-bought or homemade", "isOptional": false, "groupLabel": "For the case" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": "For the case" },
+            { "ingredientSlug": "egg-yolks", "amount": 5, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "For the custard" },
+            { "ingredientSlug": "double-cream", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the custard" },
+            { "ingredientSlug": "whole-milk", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the custard" },
+            { "ingredientSlug": "caster-sugar", "amount": 75, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the custard" },
+            { "ingredientSlug": "vanilla-extract", "amount": 5, "unit": "ml", "prepNote": "1 tsp", "isOptional": false, "groupLabel": "For the custard" },
+            { "ingredientSlug": "nutmeg-whole", "amount": 1, "unit": "each", "prepNote": "freshly grated, to finish", "isOptional": false, "groupLabel": "For the custard" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Line the tin, blind-bake" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Roll the {{shortcrust-pastry}} to 3 mm and line the 23 cm tart tin. Prick the base with a fork and refrigerate for 30 minutes. Preheat the oven to 190°C fan. Line the chilled case with baking paper and fill with baking beans. Blind-bake for 15 minutes. Remove the paper and beans, brush the base with beaten {{eggs}}, and return to the oven for 5 minutes to seal. Reduce the oven to 150°C fan." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make the custard" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whisk the {{egg-yolks}} and {{caster-sugar}} together until combined. Heat the {{double-cream}} and {{whole-milk}} in a saucepan until just below a simmer. Pour slowly over the egg mixture, whisking constantly. Add the {{vanilla-extract}} and stir. Skim off any foam." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Fill and bake 40–45 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour the custard into the warm case. Grate {{nutmeg-whole}} generously over the surface. Bake for 40 to 45 minutes. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "custard-set-point" } }], "text": "custard set point" },
+          { "type": "text", "text": " is a firm edge with a wobble in the centre. Leave to cool completely in the tin before slicing." }
+        ]
+      }
+    ]
+  }
+}

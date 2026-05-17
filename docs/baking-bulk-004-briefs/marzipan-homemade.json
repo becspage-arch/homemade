@@ -1,0 +1,102 @@
+{
+  "slug": "marzipan-homemade",
+  "title": "Homemade marzipan",
+  "subtitle": "Ground almonds, icing sugar, and egg white — better than the shop version",
+  "excerpt": "Marzipan made at home is softer and more almond-forward than the commercial kind. Almond flour, icing sugar, and a little egg white bound with a splash of rose water. Ready in ten minutes, firmer than raw paste after an hour's rest. Use for covering Christmas cake, shaping Simnel cake balls, or eating as-is.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "sweets-confectionery",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Marzipan made from ground almonds and sugar is one of the oldest European confectionery preparations, documented in medieval recipe collections and widely reproduced in domestic baking guides from the nineteenth century. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136, includes a recipe for almond paste using ground almonds, caster sugar, and egg white, describing it as a standard preparation for covering wedding and Christmas cakes. Florence White, Good Things in England (1932), records similar almond paste preparations in the British regional tradition. The technique is fully public-domain.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "about 500 g marzipan",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "restingMinutes": 60,
+    "chillingMinutes": 0,
+    "totalMinutes": 70,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Wrap tightly in cling film and freeze for up to 3 months. Defrost overnight in the fridge.",
+    "batchable": true,
+    "batchNotes": "Scales directly. Keep the ratio of almond flour to icing sugar at 1:1 by weight.",
+    "makeAheadNotes": "Keeps wrapped in cling film in the fridge for up to 2 weeks. The flavour improves after a day.",
+    "dietaryFlags": ["vegetarian", "glutenFree"],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": null,
+      "bakeTemperatureNote": null,
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "marzipan-consistency",
+      "term": "Marzipan consistency",
+      "definition": "Good marzipan should be smooth, pliable, and just slightly tacky to the touch — close to the texture of modelling clay. If it is too dry it crumbles and cracks when rolled; if it is too wet it sticks to surfaces and will not hold a shape. Dryness is corrected with a few drops of cold water or a little extra egg white; stickiness is corrected with more sifted icing sugar. The rest period allows the icing sugar to absorb the moisture from the egg white, which firms the paste. Refrigerating also firms it significantly."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Commercial marzipan is good, but home-made is better: the almond flavour is fresher, the texture is softer, and you can control the sweetness. The ratio below gives a marzipan that is distinctly almond-forward rather than sweetness-forward." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "almond-flour", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "icing-sugar", "amount": 250, "unit": "g", "prepNote": "sifted", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "egg-whites", "amount": 1, "unit": "each", "prepNote": "lightly beaten", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "almond-extract", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rose-water", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Combine and work to a dough" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the {{almond-flour}}, sifted {{icing-sugar}}, and {{almond-extract}} in a large bowl. Add the {{rose-water}} if using. Pour in half the {{egg-whites}} and work the mixture together with your hands. Add egg white a little at a time until the mixture comes together into a smooth, pliable paste. Read the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "marzipan-consistency" } }], "text": "marzipan consistency" },
+          { "type": "text", "text": " note: you may not need all the egg white." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Knead and rest" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Knead briefly on a clean surface dusted with a little icing sugar until smooth. Form into a ball, wrap tightly in cling film, and rest at room temperature for 1 hour before using. The paste will firm as it rests." }]
+      }
+    ]
+  }
+}

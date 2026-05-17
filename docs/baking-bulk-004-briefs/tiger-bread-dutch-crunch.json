@@ -1,0 +1,113 @@
+{
+  "slug": "tiger-bread-dutch-crunch",
+  "title": "Tiger bread",
+  "subtitle": "White tin loaf with a crackled rice paste crust",
+  "excerpt": "Tiger bread (Dutch crunch): a standard white tin loaf coated before baking with a thin paste of rice flour, yeast, sesame oil, and sugar. The paste ferments briefly on the surface, then sets and cracks in the oven to give the distinctive mottled pattern. The crackled crust is crisp; the interior is soft.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Tiger bread originates from the Netherlands, where it is known as tijgerbrood, and became widely popular in British supermarkets from the 1990s. The distinctive crackled crust is created by coating the loaf with a rice flour paste before baking — as the paste dries and the bread expands in the oven, it cracks to form the tiger pattern. The technique is documented in European domestic baking guides and has been widely reproduced in British baking references from the late twentieth century. The recipe is fully public-domain.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (900 g tin)",
+    "prepMinutes": 25,
+    "cookMinutes": 35,
+    "restingMinutes": 120,
+    "chillingMinutes": 0,
+    "totalMinutes": 180,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice before freezing. The crackled crust softens on reheating but the bread is still good toasted.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Best eaten on the day. The crust stays crisp for about 6 hours.",
+    "dietaryFlags": ["vegan", "vegetarian", "dairyFree"],
+    "cuisine": "dutch",
+    "mealType": "breakfast",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven, upper-middle shelf",
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 65,
+      "saltPercent": 2,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 75,
+      "proofMinutes": 45,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven, 30 to 35 minutes until deep gold; internal temperature 94 to 96°C",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tiger-paste",
+      "term": "Tiger bread rice paste",
+      "definition": "The crackled tiger pattern comes from a rice flour paste applied to the outside of the risen loaf just before baking. The paste contains a small amount of yeast, which causes it to puff very slightly on the surface of the loaf. As the bread expands in the oven and the paste dries, it cracks along natural fault lines to create the mottled pattern. The paste should be applied thick enough to coat the loaf completely — about 4 mm. Too thin and the paste dries too fast before cracking; too thick and it stays doughy. After applying the paste, leave the loaf to rest for 15 minutes before baking so the yeast starts to activate."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Tiger bread is a white tin loaf with a trick: a rice paste coating that cracks in the oven. The loaf itself is entirely straightforward; the paste takes three minutes to mix. The sesame oil in the paste gives the crust a faint nuttiness." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "yeast-dried", "amount": 7, "unit": "g", "prepNote": "1 sachet fast-action yeast", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "olive-oil", "amount": 15, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "rice-flour", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the tiger paste" },
+            { "ingredientSlug": "yeast-dried", "amount": 3, "unit": "g", "prepNote": "half a sachet, for the paste", "isOptional": false, "groupLabel": "For the tiger paste" },
+            { "ingredientSlug": "caster-sugar", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the tiger paste" },
+            { "ingredientSlug": "sesame-oil", "amount": 10, "unit": "ml", "prepNote": "1 tsp", "isOptional": false, "groupLabel": "For the tiger paste" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": "for the paste", "isOptional": false, "groupLabel": "For the tiger paste" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make the dough, bulk ferment 75 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mix the {{strong-bread-flour}}, {{yeast-dried}} (dough portion), and {{sea-salt-fine}} (dough portion) together. Add 325 ml warm water and the {{olive-oil}}. Mix and knead for 10 minutes until smooth and elastic. Cover and bulk ferment for 75 minutes until doubled." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Shape, proof, apply the paste" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Knock back the dough and shape into a log. Place seam-side-down in a greased 900 g loaf tin. Cover and proof for 45 minutes until risen. Make the tiger paste: mix the {{rice-flour}}, {{yeast-dried}} (paste portion), {{caster-sugar}}, {{sesame-oil}}, and {{sea-salt-fine}} (paste portion) with 80 ml warm water to a smooth, thick paste. See the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tiger-paste" } }], "text": "tiger bread rice paste" },
+          { "type": "text", "text": " note. Spread the paste thickly over the top and sides of the proved loaf. Leave for 15 minutes." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake 30–35 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 200°C fan. Bake for 30 to 35 minutes until the crust is deeply golden and crackled. The internal temperature should reach 94 to 96°C. Cool in the tin for 10 minutes before turning out. The crust is at its crispest for the first 6 hours." }]
+      }
+    ]
+  }
+}

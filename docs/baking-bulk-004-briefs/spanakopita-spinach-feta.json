@@ -1,0 +1,106 @@
+{
+  "slug": "spanakopita-spinach-feta",
+  "title": "Spanakopita",
+  "subtitle": "Greek filo pie with spinach, feta, and egg filling",
+  "excerpt": "Spanakopita: layers of filo pastry brushed with olive oil, filled with wilted spinach, crumbled feta, and egg, baked until the pastry is crisp and golden. The filling needs to be thoroughly squeezed dry — excess moisture is what makes filo soggy.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Spanakopita (Greek: σπανακόπιτα, 'spinach pie') is a Greek pita documented in Greek domestic cookery from the nineteenth century, with roots in Ottoman layered pastry traditions. Rena Salaman, Greek Food (1983), and Nicholas Stavroulakis, Cookbook of the Jews of Greece (1986), document the canonical form. The combination of spinach, feta, egg, and filo layered and baked is widely reproduced in English-language Mediterranean cooking guides and is fully public-domain.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 large pie (serves 8)",
+    "prepMinutes": 30,
+    "cookMinutes": 45,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "totalMinutes": 90,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unbaked. Bake from frozen at 180°C fan for 55 to 60 minutes, covering loosely with foil if the top browns too fast.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Bake the day before. Reheat at 170°C fan for 15 minutes until the filo is crisp again.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "greek",
+    "mealType": "lunch",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "fan oven, middle shelf",
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven, 40 to 45 minutes until filo is deep gold and crisp",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "spinach-draining",
+      "term": "Draining spinach for filo pastry",
+      "definition": "Spinach releases a large amount of water when cooked — roughly ten times its raw volume condenses down, but the water remains. For filo pastry dishes, this water must be removed completely or the bottom layers will be soggy. After wilting the spinach, tip it into a colander and press firmly with the back of a spoon. Then squeeze it in handfuls, wringing out as much liquid as possible. The goal is a compacted, dry mass. Do not add the spinach to the filling until it has been squeezed at least twice."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The key to good spanakopita is a dry filling. Wet spinach wrecks the base filo layers. Squeeze it twice (once in a colander, once by hand) before mixing with the feta and egg." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "filo-pastry", "amount": 270, "unit": "g", "prepNote": "1 standard pack, about 12 sheets", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "olive-oil", "amount": 80, "unit": "ml", "prepNote": "for brushing", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "spinach", "amount": 500, "unit": "g", "prepNote": "fresh or defrosted frozen, squeezed very dry", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "feta", "amount": 300, "unit": "g", "prepNote": "crumbled", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "eggs", "amount": 3, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped, softened in olive oil", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "nutmeg-whole", "amount": 1, "unit": "each", "prepNote": "freshly grated, a pinch", "isOptional": true, "groupLabel": "For the filling" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Prepare the filling" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wilt the {{spinach}} in a large pan over medium heat. See the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "spinach-draining" } }], "text": "spinach draining" },
+          { "type": "text", "text": " note: squeeze it thoroughly twice. Soften the {{onion}} in a little {{olive-oil}} until translucent. Mix the drained spinach, softened onion, crumbled {{feta}}, beaten {{eggs}}, and a grating of {{nutmeg-whole}} together. Season lightly — feta is salty, so taste before adding salt." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Layer and bake, 40–45 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 180°C fan. Brush a 30 × 20 cm baking tin with {{olive-oil}}. Layer 6 sheets of {{filo-pastry}}, brushing each with olive oil. Spread the filling evenly. Top with the remaining filo sheets, brushing each layer. Brush the top generously, tuck in the edges, and score the top into portions with a sharp knife (do not cut all the way through). Bake for 40 to 45 minutes until deep golden and crisp. Rest for 15 minutes before cutting and serving." }]
+      }
+    ]
+  }
+}
