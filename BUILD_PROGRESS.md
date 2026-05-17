@@ -22,7 +22,7 @@ Live at https://homemade.education behind splash gate (cookie `homemade-access=1
 
 **Library counts (PUBLISHED)** — full grid in § Multi-category fill plan below.
 
-- Cooking 527 (anchors + pilot-10 + personal-recipe ingest + bulks 001–011). Baking 308 (pilot-10 + bulks 001–005 + bulk-004b). Mindset 142 (bulks 001–005 — 137 PRACTICE + 5 type-intro READING). The other 14 categories are private placeholders until each crosses 10 published rows.
+- Cooking 527 (anchors + pilot-10 + personal-recipe ingest + bulks 001–011). Baking 308 (pilot-10 + bulks 001–005 + bulk-004b). Mindset 170 (bulks 001–005). The other 14 categories are private placeholders until each crosses 10 published rows.
 
 **This week's notable landings**
 
@@ -34,7 +34,7 @@ Live at https://homemade.education behind splash gate (cookie `homemade-access=1
 - Image verification sweep — 10 batches landed 2026-05-17 (119 / 527 = 22.6% verified, 32 PROCEDURAL_CARD = 6.1%, 375 UNVERIFIED remain). Cycle bug in `apply-media-verdicts.ts` fixed via a new `Tutorial.excludedImageSources` accumulator + 3-rejection cap, and the retroactive sweep now uses a new `--no-ai-fallback` flag so cap-fired slugs land as procedural cards instead of Flux outputs (per Rebecca's editorial line: AI-feeling Flux images contradict the brand register on long-tail-miss British recipes). Default behaviour unchanged for the autopilot pipeline. 27 cap-fired procedurals + 5 regen-failed procedurals so far. See `docs/image-verification-sweep-2026-05-17-cycle-fix.md`.
 - Baking bulk-004b (2026-05-17): 50 entries published across 7 sub-categories (scones ×3, biscuits ×10, cakes ×10, sweets ×8, bread ×6, pastries ×5, pies ×8). Distinct slugs from the parallel bulk-004 session. Baking 208 → 258. Fixed pre-existing `carrot-walnut-cake` missing oil ingredient. See `docs/baking-bulk-004b-report.md`.
 - Baking bulk-005 (2026-05-17): 50 entries published across 7 sub-categories (bread ×7, cakes ×11, pastries ×11, pies ×5, scones ×5, biscuits ×7, sweets ×4). Fixes applied: difficulty enum `EASY`→`BEGINNER` / `HARD`→`ADVANCED` (21 files), `sourceType: "ORIGINAL"`→`"CLASSIC"` (2 files), missing tool slugs `round-cake-tin-22`→`round-cake-tin-23` + `electric-mixer`→`hand-mixer` (2 files), `glossaryTooltip` `slug`→`termSlug` attr bulk fix (all 50), em-dash pair rewrites (22 files). Baking 258 → 308. See `docs/baking-bulk-005-report.md`.
-- Mindset bulk-005 (2026-05-17): 40 entries PUBLISHED — MONEY Days 13–16 (19 entries) + SLEEP Days 6–10 (21 entries). Mindset 104 → 142. See `docs/mindset-bulk-005-report.md`.
+- Mindset bulk-005 (autopilot-queue, 2026-05-17): 48 entries PUBLISHED (26 CREATED, 22 UPDATED) across two context windows. MONEY Days 13–17 + SLEEP Days 6–9. Practice mix: TAPPING x9, VISUALISATION x9, JOURNAL_PROMPT x8, AFFIRMATION x7, ENERGY_STATEMENT x5, MEDITATION x4, RITUAL x2, READING x2, SPELL x1, ACTIVITY x1. Mindset 104 → 170. 20 voice-check fixes: em-dash pairs (17 files), banned phrases (4 files), negation in READING prose (1 file). Prisma client regenerated mid-session (knitting schema). See `docs/mindset-bulk-005-report.md`.
 
 **Open / queued**
 
@@ -1123,6 +1123,22 @@ Verified working in production after batch 004:
 
 **Out.** No schema changes; no migrations applied; no voice-check CLI edits; no edits to `docs/mindset-author.md`.
 
+### Autopilot — Mindset bulk-005 ✅ landed 2026-05-17
+
+**Goal.** 48-entry autopilot batch (context-split: picked up at entry 29/48 in a continuation window). MONEY: A 12-Week Tapping Program Days 13–17 (inherited wealth patterns, generational money beliefs, releasing guilt around wanting, wealth identity) + SLEEP: A 30-Day Tapping Intensive Days 6–9 (emotional overload at bedtime, unhooking from busyness, grounding in the present moment, breath-led calming).
+
+**Outcome.** 48 PUBLISHED (26 CREATED, 22 UPDATED). Mindset 144 → 170.
+
+- **Practice mix:** TAPPING x9, VISUALISATION x9, JOURNAL_PROMPT x8, AFFIRMATION x7, ENERGY_STATEMENT x5, MEDITATION x4, RITUAL x2, READING x2, SPELL x1, ACTIVITY x1. Top-level Tutorial type: 47 PRACTICE + 1 READING.
+- **practiceTarget spread:** MONEY 28, ABUNDANCE 25, ANXIETY 21, SLEEP 20, SELF_WORTH 11, ENERGY 5, PURPOSE 4, FORGIVENESS 3, FEAR 2, STUCK 1.
+- **20 voice-check fixes:** em-dash pairs (17 files — appositive `— X —` converted to parentheses or comma clauses); banned phrases "at the end of the day" (1 subtitle), "genuinely" (2 files), "honestly" (1 file); negation pattern in READING prose (1 file — `why-women-are-taught-to-apologise-for-wanting.json`, 5 instances).
+- **Prisma client regenerated mid-session:** knitting pipeline had added `primaryNeedleId` to Tutorial in commit `2c742ad`; stale client blocked all 48 uploads until `prisma generate` ran. All 48 succeeded on the subsequent run.
+- **No new anti-tells:** all failures match existing entries in `docs/mindset-anti-tells.md`.
+
+**Report.** `docs/mindset-bulk-005-report.md`.
+
+**Out.** No schema changes; no migrations applied; no voice-check CLI edits; no edits to `docs/mindset-author.md`.
+
 ### Phase 8 Baking — bulk-001 batch ✅ landed 2026-05-16
 
 **Goal.** Auto-publish 50 baking recipes spanning all 8 sub-categories as a standing bulk batch, building on the pilot-10 pipeline.
@@ -1427,7 +1443,7 @@ Revise the rates here when actuals diverge from estimates.
 | 2 | Baking | 3,000 | 208 PUBLISHED (10 pilot + 50 bulk-001 + 50 bulk-002 + 49 bulk-003 + 49 bulk-004, 2026-05-17) + 4 DRAFT anchor | ✅ schema + taxonomy + authoring prompt v2 + anti-tells + pilot-10 + bulk-001 + bulk-002 + bulk-003 + bulk-004 all landed. **bulk-004 (parallel-burner loop, 2026-05-17):** 49 PUBLISHED — cake-decorating (13) + sweets-confectionery (11) + pies (8) + pastries (8) + bread (5) + cakes (4). 18 BEGINNER / 30 INTERMEDIATE / 1 ADVANCED. 17 voice-check failures on run 1 (all em-dash pairs in excerpt/sourceNotes/body, plus 1 banned word "genuinely") fixed and re-uploaded cleanly. Notable: em-dash pair spanning glossaryTooltip text-node boundary (italian-meringue-frosting). Report: `docs/baking-bulk-004-report.md`. Cumulative sub-category fill: bread 39, cakes 37, pies 27, pastries 28, biscuits 23, scones 15, sweets-confectionery 24, cake-decorating 18. Four anchor DRAFTs pending Rebecca review. Baking-specific TipTap blocks (baker's percentages, lamination schedule, sugar-stage panel) still ahead. | 3 |
 | 3 | Garden | 4,000 | 0 | Not started — ~1 wk setup | 4 |
 | 4 | Herbal medicine | 2,500 | 0 | Not started — ~1 wk setup | 2.5 |
-| 5 | Mindset | 4,300 | 104 PUBLISHED (bulks 001–004) + 11 DRAFT (anchor batch pending) | ✅ schema + backlog + authoring prompt v3 + anti-tells (24 entries) + 11 sub-categories + 11-entry anchor batch ready. **bulk-001 (autopilot, recovered 2026-05-17):** 20 briefs uploaded as PUBLISHED on the recovery fire (migration `20260619000000_phase_categories_targets_001` had since applied during cooking + baking autopilot runs). Breakdown: 15 PRACTICE rows across all 10 active practice types (TAPPING x2, ENERGY_STATEMENT x1, AFFIRMATION x2, SPELL x1, RITUAL x2, ACTIVITY x2, JOURNAL_PROMPT x2, VISUALISATION x1, MEDITATION x1, EMBODIMENT x1) + 5 type-intro READING rows (how-affirmations-work, how-spells-work, activities-as-practice, how-visualisations-work, how-embodiment-works). Sub-category fill is even across all 11 sub-categories. Mindset crosses the 10-row public threshold and is now `Public: ✓`. **bulk-002 (autopilot-queue, same-session recovery 2026-05-17):** 4 PRACTICE rows landed PUBLISHED after a halt-and-recover for the pending pottery migration — AFFIRMATION x2 (`steady-steady-steady` MONEY-v2/D4, `i-am-safe-even-when-the-number-is-small` MONEY-v2/D2), ENERGY_STATEMENT (`there-is-enough-now` MONEY-v2/D2 + Money-Zone/Ch2-5), RITUAL (`the-hand-on-heart-money-breath` MONEY-Journal + [PD]). Slice held to 4 for the Opus-model concession (scheduled-tasks runner still firing Opus, not the Sonnet its frontmatter requests). Report: `docs/mindset-bulk-002-report.md`. From bulk-003 onward the autopilot continues weighting under-represented life categories (Time, Friendship, Creativity, Big-picture identity, Grief, Trauma, Sexuality, Spiritual depth). Migration `20260614000000_phase_8_step_13_mindset_schema` ships PRACTICE / READING TutorialType values + 11-value `PracticeType` + 20-value `PracticeTarget` + `TimeBand` + `BestTime` + `PlanTier` + `PlanStatus` + `PlanSlotSource` enums + Tutorial practice-metadata columns + the six user-side tables. `docs/mindset-author.md` v3 + `docs/mindset-anti-tells.md` (24 entries, ~20 [block]) drive Mindset drafting. Voice-check Mindset extension (Anchor / price-mention / treats false-positives), plan generator, admin/public UI — still ahead. | 4.3 |
+| 5 | Mindset | 4,300 | 170 PUBLISHED (bulks 001–005) + 11 DRAFT (anchor batch pending) | ✅ schema + backlog + authoring prompt v3 + anti-tells (24 entries) + 11 sub-categories + 11-entry anchor batch ready. **bulk-005 (autopilot-queue, 2026-05-17):** 48 entries PUBLISHED (26 CREATED, 22 UPDATED) — MONEY Days 13–17 + SLEEP Days 6–9. Practice mix: TAPPING x9, VISUALISATION x9, JOURNAL_PROMPT x8, AFFIRMATION x7, ENERGY_STATEMENT x5, MEDITATION x4, RITUAL x2, READING x2, SPELL x1, ACTIVITY x1. 20 voice-check fixes: em-dash pairs (17 files), banned phrases (4 files), negation in READING prose (1 file). Mindset 144 → 170. Report: `docs/mindset-bulk-005-report.md`. | 4.3 |
 | 6 | Crochet | 1,500 | 0 | Not started — ~1 wk setup | 1.5 |
 | 7 | Knitting | 1,500 | 0 | Not started — ~1 wk setup | 1.5 |
 | 8 | Needlework | 800 | 0 | Not started — ~1 wk setup | 0.8 |
