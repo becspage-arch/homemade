@@ -1,0 +1,186 @@
+{
+  "slug": "babka-cinnamon",
+  "title": "Cinnamon babka",
+  "subtitle": "The swirled Polish enriched loaf with cinnamon and brown sugar",
+  "excerpt": "A pillowy enriched loaf rolled around a cinnamon and brown sugar filling, cut lengthways, twisted, and baked in a tin. A Polish-Jewish bakery classic that looks harder to make than it is.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Enriched yeast-bread tradition documented in Maria Disslowa, Jak Gotować (1931), and in the general Eastern European sweet bread canon. The twisting shaping method is widely attested in Polish-Jewish baking literature. Florence White, Good Things in England (1932), Project Gutenberg, provides the brioche-style enriched dough framework used here.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf, 900 g tin",
+    "prepMinutes": 35,
+    "cookMinutes": 40,
+    "restingMinutes": 120,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice the cooled loaf before freezing. Wrap individual slices and freeze for up to one month. Toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "After shaping and placing in the tin, cover and refrigerate overnight. Bring to room temperature for one hour before baking.",
+    "dietaryFlags": [],
+    "cuisine": "polish",
+    "mealType": "breakfast",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 60,
+      "saltPercent": 1.8,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 45,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven; conventional 200°C",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "dough-hook", "isOptional": true },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "enriched-dough",
+      "term": "Enriched dough",
+      "definition": "A dough made richer with eggs, butter, or milk, which slows fermentation and produces a tender, soft crumb."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "About cinnamon babka" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Babka is a Polish and Ashkenazi Jewish baked good with deep roots in Eastern European home baking. The word means grandmother in Polish. The loaf's characteristic swirled cross-section, visible when sliced, comes from rolling the dough around a filling, cutting the roll lengthways, and twisting the two halves together before lowering them into the tin. It looks intricate; the shaping itself takes about three minutes once you have done it once." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The dough is a straightforward " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "enriched-dough" } }], "text": "enriched dough" },
+          { "type": "text", "text": ": strong flour, eggs, milk, butter, and yeast. A 30-minute chill before rolling firms the butter in the dough and makes it easier to cut cleanly without the filling oozing. The filling here is cinnamon and dark brown sugar, spread over the rolled-out dough. Finely chopped dark chocolate stirred into the filling is optional but very good." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "strong-bread-flour", "quantity": 500, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "caster-sugar", "quantity": 50, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "sea-salt-fine", "quantity": 9, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "yeast-dried", "quantity": 7, "unit": "g", "prepNote": "one 7 g sachet", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "whole-milk", "quantity": 200, "unit": "ml", "prepNote": "warm, about 35°C", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "eggs", "quantity": 2, "unit": "each", "prepNote": "large, beaten", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "unsalted-butter", "quantity": 100, "unit": "g", "prepNote": "softened, cut into cubes, for the dough", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "unsalted-butter", "quantity": 40, "unit": "g", "prepNote": "melted, for the filling", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "light-brown-sugar", "quantity": 90, "unit": "g", "prepNote": "for the filling", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "cinnamon-ground", "quantity": 2, "unit": "tsp", "prepNote": "for the filling", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "dark-chocolate", "quantity": 50, "unit": "g", "prepNote": "finely chopped", "isOptional": true } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and knead the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Dissolve {{yeast-dried}} in {{whole-milk}} and leave for two minutes. Combine {{strong-bread-flour}}, {{caster-sugar}}, and {{sea-salt-fine}} in a large bowl. Add the milk mixture and {{eggs}} and mix to a rough dough. Knead for eight minutes by hand or six minutes on a stand mixer with the dough hook. The dough will be soft and a little sticky. Add the dough-quantity {{unsalted-butter}} a few cubes at a time, kneading each addition in before adding the next. Continue for another four minutes until the dough is smooth and pulls cleanly from the bowl." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment, 60 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Shape the dough into a ball, transfer to a lightly oiled bowl, and cover. Leave in a warm place for about 60 minutes until roughly doubled." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Chill, 30 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Press the dough gently to deflate it, wrap in cling film, and refrigerate for 30 minutes. This firms the butter and makes the dough easier to roll without tearing." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill and shape" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Line a 900 g loaf tin with baking paper. Mix {{light-brown-sugar}} and {{cinnamon-ground}} together. Roll the dough out on a lightly floured surface to a rectangle roughly 40 cm x 30 cm. Brush the melted {{unsalted-butter}} over the surface, scatter the cinnamon sugar evenly, and add the {{dark-chocolate}} if using. Roll the dough up tightly from the long edge to form a log. Cut the log in half lengthways with a sharp knife. Lay the two halves cut-side up, pinch the tops together, and twist them around each other twice. Lift the twist into the prepared tin." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prove and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover the tin loosely and prove at room temperature for 45 minutes until the dough crowns above the rim. Heat the oven to 180°C fan (200°C conventional); an oven thermometer takes the guessing out. Bake for 35–40 minutes until deep brown and the loaf sounds hollow when turned out and tapped on the base. Cool in the tin for 15 minutes, then transfer to a rack." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Notes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If the dough tears when you cut it, the butter is too warm. Return to the fridge for another 15 minutes before continuing." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A simple sugar syrup (equal parts sugar and water, simmered for two minutes) brushed over the hot loaf gives a glossy crust and keeps the crumb moist for longer." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For the overnight method: after shaping in the tin, cover with cling film and refrigerate overnight. The next morning, bring to room temperature for one hour before baking." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

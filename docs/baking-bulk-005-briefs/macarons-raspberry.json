@@ -1,0 +1,178 @@
+{
+  "slug": "macarons-raspberry",
+  "title": "Raspberry macarons",
+  "subtitle": "French almond meringue shells sandwiched with raspberry buttercream",
+  "excerpt": "Almond meringue shells with smooth, slightly chewy feet sandwiched around a sharp raspberry buttercream. The most technically demanding French biscuit, but the method is teachable.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "biscuits",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The French macaron in its modern sandwich form is documented from the early twentieth century in French patisserie. Auguste Escoffier, Le Guide Culinaire (1903), Project Gutenberg, records the macaron as a small almond-meringue biscuit. The paired, filled macaron became the standard form in Parisian patisserie through the twentieth century. The Italian meringue method used here is the most reliable for consistent results at home.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "24 macarons (48 shells)",
+    "prepMinutes": 45,
+    "cookMinutes": 30,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze filled macarons in a single layer. Thaw in the fridge overnight, then at room temperature for 30 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Unfilled shells keep in an airtight tin for two days. Fill no more than 24 hours before serving; the filling softens the shell pleasantly.",
+    "dietaryFlags": ["glutenFree", "dairyFree"],
+    "cuisine": "french",
+    "mealType": "snack",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 150,
+      "bakeTemperatureNote": "fan oven; conventional 160°C — oven accuracy is critical",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "piping-bag", "isOptional": false },
+    { "slug": "piping-tips", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "whisk-balloon", "isOptional": false },
+    { "slug": "probe-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "macaronage",
+      "term": "Macaronage",
+      "definition": "The folding and pressing technique used to mix macaron batter. The aim is to deflate the meringue slightly and combine it with the almond flour to a batter that flows slowly and falls from the spatula in a thick ribbon."
+    },
+    {
+      "slug": "feet",
+      "term": "Feet",
+      "definition": "The frilled, ruffled edge that appears at the base of a macaron shell during baking. Feet are a sign of correct hydration, resting, and oven temperature."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "About raspberry macarons" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Macarons are the most technically demanding biscuit in French patisserie. The shells require precise weighing, accurate oven temperature, correct " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "macaronage" } }], "text": "macaronage" },
+          { "type": "text", "text": ", a 30-minute skin-forming rest before baking, and an oven that holds its temperature evenly. None of these steps is difficult individually; the difficulty is doing all of them right in sequence. The reward, when it works, is a shell with a smooth top, a defined " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "feet" } }], "text": "feet" },
+          { "type": "text", "text": ", and a slightly chewy interior." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "This recipe uses the Italian meringue method, in which a hot sugar syrup is poured over the egg whites as they whisk. It is more reliable than the French method (uncooked whites) and produces a more stable foam that is less sensitive to humidity. The filling is a raspberry buttercream made sharp enough to cut through the sweetness of the shell." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "almond-flour", "quantity": 150, "unit": "g", "prepNote": "finely ground; sifted", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "icing-sugar", "quantity": 150, "unit": "g", "prepNote": "sifted", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "egg-whites", "quantity": 110, "unit": "g", "prepNote": "aged (left uncovered in the fridge for 24–48 hours), divided: 55 g for the paste, 55 g for the meringue", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "caster-sugar", "quantity": 150, "unit": "g", "prepNote": "for the Italian meringue syrup", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "food-colouring", "quantity": 1, "unit": "drop", "prepNote": "pink or red gel colour", "isOptional": true } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "unsalted-butter", "quantity": 100, "unit": "g", "prepNote": "softened, for the buttercream", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "icing-sugar", "quantity": 150, "unit": "g", "prepNote": "for the buttercream", "isOptional": false } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the almond paste" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Sift {{almond-flour}} and the shell quantity of {{icing-sugar}} together twice. Add 55 g of the {{egg-whites}} and mix to a thick paste. Add {{food-colouring}} if using." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the Italian meringue" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Place {{caster-sugar}} and 50 ml of water in a small saucepan. Cook over medium-high heat to 118°C on a probe thermometer; do not stir. Meanwhile, whisk the remaining 55 g of {{egg-whites}} on medium speed until foamy. When the syrup reaches temperature, pour it in a slow, steady stream down the side of the bowl into the whites, whisking constantly on medium speed. Increase to high speed and whisk until the meringue is stiff, glossy, and cooled to just above room temperature, about five minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Macaronage and pipe" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Fold one third of the meringue into the almond paste to loosen it. Add the remaining meringue and fold using a flat spatula, pressing the batter against the sides of the bowl as you go. The batter is ready when it flows slowly off the spatula in a thick ribbon and a figure-eight can be drawn without the ribbon breaking. Pipe 3 cm rounds onto baking-paper-lined trays, spacing them well apart. Tap the trays on the counter twice to release air bubbles. Leave to rest at room temperature for 30 minutes until a dry skin forms; the tops should not stick when touched lightly." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake, fill, and mature" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 150°C fan (160°C conventional). Bake for 12–14 minutes until the shells are set, move slightly on the paper when nudged, and have developed visible feet. Cool completely on the trays before removing. For the buttercream: beat {{unsalted-butter}} until pale, beat in the buttercream quantity of {{icing-sugar}}, then add 2–3 teaspoons of raspberry jam or freeze-dried raspberry powder to taste. Pipe a small mound onto the flat side of half the shells and sandwich with the matching shell. Refrigerate for at least two hours before serving." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Notes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Aged whites (left uncovered 24–48 hours in the fridge) are lower in moisture than fresh whites. This reduces the risk of hollow shells. The difference is meaningful on humid days." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hollow shells are the most common failure. Causes: under-mixed batter (too much air retained), oven too hot, or under-baked. A well-macaronaged batter and an oven thermometer address all three." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "No feet usually means the oven was too cold or the shells were not dried long enough before baking." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

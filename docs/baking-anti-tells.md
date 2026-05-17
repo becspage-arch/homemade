@@ -206,6 +206,15 @@ tells.
   bake takes a 2× linear scale (most biscuits do; most caramels
   do up to a pan-size limit).
 
+- **Wrong difficulty enum values** `[block]`
+  Pattern: `"difficulty": "EASY"` or `"difficulty": "HARD"`. Uploads
+  fail at `prisma.tutorial.create` with `Invalid value for argument
+  'difficulty'. Expected Difficulty.` Hit 21 of 50 files in bulk-005.
+  **Why:** The Prisma `Difficulty` enum is `BEGINNER | INTERMEDIATE |
+  ADVANCED`. EASY and HARD are not defined.
+  **How to fix:** Use `BEGINNER` (not EASY), `INTERMEDIATE`, or
+  `ADVANCED` (not HARD). Never write EASY or HARD in a brief.
+
 - **`baking.preFermentType: "NONE"` not set on bread recipes** `[warn]`
   Pattern: a bread recipe that leaves `preFermentType` null when
   it should be `NONE`. Null is read as "field doesn't apply"; on

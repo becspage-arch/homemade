@@ -1,0 +1,184 @@
+{
+  "slug": "baguette-homemade",
+  "title": "Homemade baguette",
+  "subtitle": "The classic French stick, shaped and slashed at home",
+  "excerpt": "A proper baguette made in a home oven: long fermentation for flavour, careful shaping for the ear, and a blast of steam for the crust. Not fast, but the result is better than most bought loaves.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The baguette in its modern form emerged in Paris in the early twentieth century, standardised under a 1993 French decree (le décret pain) defining the baguette de tradition française. The baking method here follows the principle of the poolish pre-ferment described in Raymond Calvel, Le Goût du Pain (1990), a foundational French baking text. The home-oven steam technique is widely documented in professional bread literature.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "3 baguettes",
+    "prepMinutes": 30,
+    "cookMinutes": 25,
+    "restingMinutes": 60,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze fully cooled baguettes whole, wrapped tightly. Reheat from frozen in a 200°C oven for 12 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "After shaping, the baguettes can be retarded in the fridge for up to 16 hours. Bake straight from the fridge.",
+    "dietaryFlags": ["vegan"],
+    "cuisine": "french",
+    "mealType": "snack",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 72,
+      "saltPercent": 2.0,
+      "yeastPercent": 0.6,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 30,
+      "retardingMinutes": 480,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 240,
+      "bakeTemperatureNote": "fan oven; conventional 260°C or maximum",
+      "steamMethod": "tray of boiling water on the oven floor for the first 10 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "POOLISH"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "poolish",
+      "term": "Poolish",
+      "definition": "A pre-ferment made from equal weights of flour and water with a small amount of yeast, left to ferment for several hours or overnight. It contributes flavour and extensibility to the final dough."
+    },
+    {
+      "slug": "scoring",
+      "term": "Scoring",
+      "definition": "Cuts made across a dough surface just before baking to control where the loaf expands and to create an ear on the crust."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "About homemade baguette" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Making a baguette at home requires accepting some differences from a professional bakery. A home oven cannot generate the sustained fierce heat of a deck oven, and a domestic shelf will never behave exactly like a stone. What a home baker can control is fermentation time and shaping — and these matter more than equipment. This recipe uses a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "poolish" } }], "text": "poolish" },
+          { "type": "text", "text": " made the night before. The overnight fermentation develops a depth of flavour that a same-day straight dough cannot match, and it gives the crumb a more open, irregular structure." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The shaping and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scoring" } }], "text": "scoring" },
+          { "type": "text", "text": " steps are where most home bakers struggle on first attempts. Both improve sharply with repetition. The aim on the first bake is to understand the dough's feel; the ear and the crumb improve from the second bake on." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "strong-bread-flour", "quantity": 250, "unit": "g", "prepNote": "for the poolish", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "yeast-dried", "quantity": 0.5, "unit": "g", "prepNote": "a small pinch, for the poolish", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "strong-bread-flour", "quantity": 250, "unit": "g", "prepNote": "for the final dough", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "sea-salt-fine", "quantity": 10, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "yeast-dried", "quantity": 2.5, "unit": "g", "prepNote": "for the final dough", "isOptional": false } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the poolish (night before)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mix 250 g of the {{strong-bread-flour}} with the poolish quantity of {{yeast-dried}} and 250 ml of cool water until no dry flour remains. Cover and leave at room temperature for 12–16 hours. By morning the poolish should be bubbly, domed, and smell faintly of beer. If it has collapsed flat in the centre, it has over-fermented; it will still work but the flavour will be more acidic." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the final dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add the remaining 250 g of {{strong-bread-flour}}, the final-dough {{yeast-dried}}, and 110 ml of cool water to the poolish. Mix until just combined, then rest for 20 minutes (autolyse). Add {{sea-salt-fine}} and work it in by squeezing the dough between your fingers. Knead for four minutes by hand; the dough is quite wet but should feel extensible and slightly resistant rather than tearing." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment with folds, 60 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Place the dough in a lightly oiled bowl. Perform three sets of stretch-and-folds at 15-minute intervals, then leave undisturbed for the final 15 minutes. The dough should feel noticeably stronger and hold its shape loosely when tipped." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Divide, pre-shape, rest, and shape" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Turn the dough onto an unfloured surface. Divide into three equal pieces, about 290 g each. Pre-shape each piece into a loose oval by folding the edges in and rolling gently. Cover and rest for 20 minutes. To shape into baguettes: working with one piece at a time, pat flat gently, fold the top third down and seal, fold the bottom third up and seal, then roll under your palms from the centre outward to a length of about 40 cm. Tension should come from gripping the surface, not from pressing down." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Retard, score, and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Place the shaped baguettes on a lightly floured cloth or parchment, seam-side up, cover with a damp cloth, and refrigerate for at least four hours or overnight. When ready to bake, heat the oven to 240°C fan (as hot as possible conventionally) with a baking tray on the middle shelf and a deep tray on the floor. Transfer the baguettes seam-side down onto the hot shelf tray. Pour 200 ml of boiling water into the floor tray and close the oven immediately. Score each baguette with three to five shallow diagonal cuts using a sharp blade held at 30 degrees. Bake for 22–25 minutes until the crust is a deep reddish-brown and the baguettes sound hollow when tapped on the base. Cool on a rack for at least 20 minutes before cutting." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Notes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "An oven thermometer is important here. Home ovens regularly run 20–30°C below the set temperature; at baguette temperatures this matters. If the oven runs low, the crust goes pale and the crumb is dense." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The scoring must be done quickly and with confidence. A hesitant cut drags the dough. A blade or lame held at a shallow angle (not straight down) creates the ear; a vertical cut gives a flat, split surface." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Baguettes are at their best within three hours of baking. After that the crust softens and the crumb compresses." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

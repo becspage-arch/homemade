@@ -1,0 +1,173 @@
+{
+  "slug": "cornish-saffron-cake",
+  "title": "Cornish saffron cake",
+  "subtitle": "The golden yeasted loaf from the tin-mining parishes of West Cornwall",
+  "excerpt": "A richly coloured yeasted loaf made with saffron-steeped milk, currants, mixed peel, and lard. Baked in a round tin and sliced thickly, it is the oldest surviving regional bread of Cornwall.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Cornish saffron cake is documented in Florence White, Good Things in England (1932), Project Gutenberg, which records the lard-and-saffron loaf as a West Cornwall specialty tied to the tin-mining parishes. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136, includes a saffron bread recipe consistent with the regional tradition. The use of saffron in Cornwall is traced to medieval Phoenician spice trade routes through the port of St Ives.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf",
+    "prepMinutes": 25,
+    "cookMinutes": 45,
+    "restingMinutes": 105,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze on the day it is made. Toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Shape, place in the tin, cover, and refrigerate overnight. Bring to room temperature for 90 minutes before baking.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "breakfast",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 56,
+      "saltPercent": 1.4,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 75,
+      "proofMinutes": 30,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven; conventional 200°C",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "round-cake-tin-20", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "dough-hook", "isOptional": true },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "enriched-dough",
+      "term": "Enriched dough",
+      "definition": "A dough made richer with eggs, butter, or milk, which slows fermentation and produces a tender, soft crumb."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "About Cornish saffron cake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Despite the name, Cornish saffron cake is a yeasted loaf rather than a cake. It is a dense, close-crumbed " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "enriched-dough" } }], "text": "enriched dough" },
+          { "type": "text", "text": " made with lard, a small amount of butter, currants, mixed peel, and a generous quantity of saffron dissolved in warm milk. The loaf is baked in a round tin, sliced thickly, and eaten buttered. The saffron gives it an unmistakable golden colour and a faint floral bitterness that no other spice can substitute." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Saffron came to West Cornwall through the medieval spice trade. The tin-mining parishes of the Penwith peninsula still bake it today. Bought versions tend to be pale and barely saffron-scented; a properly made home loaf is a different thing entirely. This recipe uses 0.5 g of saffron, which is about one small packet." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "saffron", "quantity": 0.5, "unit": "g", "prepNote": "steeped in warm milk overnight or for at least 30 minutes", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "whole-milk", "quantity": 250, "unit": "ml", "prepNote": "warm, about 40°C", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "plain-flour", "quantity": 500, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "caster-sugar", "quantity": 60, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "sea-salt-fine", "quantity": 7, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "yeast-dried", "quantity": 7, "unit": "g", "prepNote": "one 7 g sachet", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "lard", "quantity": 75, "unit": "g", "prepNote": "cold, cut into pieces", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "unsalted-butter", "quantity": 50, "unit": "g", "prepNote": "cold, cut into pieces", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "currants", "quantity": 100, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "lemon", "quantity": 1, "unit": "each", "prepNote": "finely grated zest only", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "orange", "quantity": 1, "unit": "each", "prepNote": "finely grated zest only", "isOptional": false } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Infuse the saffron and mix the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Steep {{saffron}} in {{whole-milk}} for at least 30 minutes; overnight in the fridge gives a deeper colour. Warm the steeped milk to about 35°C and dissolve {{yeast-dried}} in it. Rub {{lard}} and {{unsalted-butter}} into {{plain-flour}} with {{caster-sugar}} and {{sea-salt-fine}} until the mixture resembles coarse breadcrumbs. Pour in the saffron milk and mix to a firm dough." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Knead and add fruit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Knead for eight minutes by hand until the dough is smooth and slightly elastic; it is firmer than most bread doughs. Press in the {{currants}}, folding the dough over itself several times to distribute them evenly." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment, 75 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Shape into a ball, cover, and leave in a warm place for about 75 minutes. The dough rises more slowly than a plainer loaf because of the fat and fruit. It should increase by about half again; a full double is not expected." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape, prove, and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Grease a 20 cm round cake tin. Shape the dough into a round and press it into the tin. Cover and prove for 30 minutes; the dough will puff but not dramatically. Heat the oven to 180°C fan (200°C conventional). Bake for 40–45 minutes until deep gold and firm. A skewer inserted into the centre should come out clean. Cool in the tin for 15 minutes, then transfer to a rack. Slice when fully cold." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Notes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lard is traditional and gives the characteristic dense, short crumb. All butter works but the texture is slightly different: softer, less close-grained." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The loaf is best eaten the following day, sliced thick and buttered. The flavour of the saffron intensifies as the loaf rests." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Traditional versions add candied mixed peel alongside the currants; stir 50 g of finely chopped peel into the dough with the currants if you want the older flavour profile." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

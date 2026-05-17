@@ -1,0 +1,150 @@
+{
+  "slug": "devonshire-splits",
+  "title": "Devonshire splits",
+  "subtitle": "Soft yeasted buns filled with clotted cream and jam",
+  "excerpt": "Light, slightly sweet yeasted buns from Devon, split open and filled generously with clotted cream and strawberry jam. Softer and richer than a scone, with a finer crumb. The traditional Devon cream tea alternative.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "scones",
+  "difficulty": "BEGINNER",
+  "season": "SUMMER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Devonshire splits are documented in Florence White, Good Things in England (1932), Project Gutenberg, as a Devon regional specialty served as an alternative to the cream-tea scone. The soft yeasted bun, split and filled with cream and jam, is attested across Devon and Somerset cookery literature of the nineteenth and early twentieth centuries. The recipe is fully public domain.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "12 buns",
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "restingMinutes": 60,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the baked, unfilled buns. Reheat from frozen at 180°C fan for 8 minutes. Fill after reheating.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The buns are best eaten on the day. Bake them in the morning and fill just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 450,
+      "hydrationPercent": 58,
+      "saltPercent": 1.3,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven; conventional 220°C",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "enriched-dough",
+      "term": "Enriched dough",
+      "definition": "A yeasted dough that contains fat, eggs, or dairy in addition to the standard flour, water, and yeast. Enriched doughs produce softer, richer crumbs than lean bread doughs."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "About Devonshire splits" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Devonshire splits are the yeasted answer to the scone. Made from a soft " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "enriched-dough" } }], "text": "enriched dough" },
+          { "type": "text", "text": " with butter and milk, they bake to a pale, pillowy bun with a finer crumb than any scone. The bun is split across the top and filled with clotted cream and jam — the Devon tradition puts cream on first, then jam, the opposite of the Cornish arrangement, though the difference in flavour is imperceptible." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The dough is not as rich as a brioche and requires minimal kneading. The buns are baked pale and soft — overbaked splits are dry and lose their characteristic yielding texture. Aim for buns that are just set with barely any colour on the base and none on the sides." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "plain-flour", "quantity": 450, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "fast-action-yeast", "quantity": 6, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "caster-sugar", "quantity": 40, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "sea-salt-fine", "quantity": 6, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "unsalted-butter", "quantity": 50, "unit": "g", "prepNote": "softened", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "whole-milk", "quantity": 260, "unit": "ml", "prepNote": "warm", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "clotted-cream", "quantity": 200, "unit": "g", "prepNote": "to serve", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "strawberry-jam", "quantity": 150, "unit": "g", "prepNote": "to serve", "isOptional": false } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine {{plain-flour}}, {{fast-action-yeast}}, {{caster-sugar}}, and {{sea-salt-fine}} in a large bowl. Add {{unsalted-butter}} and rub in until the mixture resembles coarse crumbs. Pour in {{whole-milk}} and mix to a soft, slightly sticky dough. Knead for 8 minutes until smooth and elastic. Place in a lightly greased bowl, cover, and leave to rise for 60 minutes until doubled." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 200°C fan (220°C conventional) and line two baking trays with baking paper. Knock back the risen dough and divide into 12 equal pieces of about 60 g each. Shape each into a tight ball and place on the prepared trays with 3 cm between them. Cover loosely and prove for 20–25 minutes until visibly puffed. Bake for 12–14 minutes until just set and very pale — the base should be barely coloured when lifted. Do not wait for the tops to brown. Transfer to a cooling rack immediately. When cool enough to handle, split each bun across the top and fill generously with {{clotted-cream}} and {{strawberry-jam}}." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Notes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Splits must be pale. A deeply coloured split is too dry and crusty; the appeal is the tender, pull-apart crumb." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "In the Devon tradition, clotted cream goes on first, then jam. In Cornwall, the order reverses. This distinction is taken seriously in both counties." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A plain split without filling is good sliced and buttered, or used as a base for sandwiches." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

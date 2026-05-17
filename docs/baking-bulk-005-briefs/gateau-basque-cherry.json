@@ -1,0 +1,152 @@
+{
+  "slug": "gateau-basque-cherry",
+  "title": "Gâteau Basque",
+  "subtitle": "The dense Basque butter cake filled with black cherry jam",
+  "excerpt": "A thick, rich Basque cake made from a sweet almond-scented dough pressed into a tin and filled with black cherry jam. More pastry than cake in texture: dense, buttery, and fragrant, baked until deep golden and crisp on the surface.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Gâteau Basque is documented as a traditional Basque Country pastry from the border region of France and Spain. The recipe appears in French regional cookery literature and in Elizabeth David, French Provincial Cooking (1960), as a characteristic pastry of the Pays Basque. The traditional fillings are either black cherry jam (confiture de cerises noires) or pastry cream; both are historically attested. The recipe is public domain.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 cake, 22 cm",
+    "prepMinutes": 30,
+    "cookMinutes": 50,
+    "restingMinutes": 30,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The gâteau keeps well for two days at room temperature, wrapped. The dough can be made and refrigerated up to two days ahead.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 175,
+      "bakeTemperatureNote": "fan oven; conventional 195°C",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "round-cake-tin-23", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sable-dough",
+      "term": "Sablé dough",
+      "definition": "A rich, buttery pastry dough with a crumbly, almost sandy texture. Made by creaming butter and sugar before adding flour, producing a dough that bakes to a crisp, tender bite."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "About gâteau Basque" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Gâteau Basque is made from a thick " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sable-dough" } }], "text": "sablé dough" },
+          { "type": "text", "text": " pressed into a tin in two layers (base and lid) around a filling of black cherry jam. It bakes to a deep golden crust with a characteristic crosshatch pattern scored across the top. The inside is dense and buttery, somewhere between a pastry and a cake, very different from the light crumb of a sponge." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The dough uses ground almonds alongside plain flour, which contributes to the characteristic slightly sandy crumb. The dough is too soft to roll conventionally; chill it well before working with it, and press or pat it into the tin rather than trying to roll a cold slab." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "plain-flour", "quantity": 200, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "ground-almonds", "quantity": 50, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "unsalted-butter", "quantity": 150, "unit": "g", "prepNote": "softened", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "caster-sugar", "quantity": 150, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "eggs", "quantity": 2, "unit": "each", "prepNote": "large", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "egg-yolks", "quantity": 1, "unit": "each", "prepNote": "for the glaze", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "baking-powder", "quantity": 5, "unit": "g", "prepNote": "1 tsp", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "vanilla-extract", "quantity": 1, "unit": "tsp", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "lemon", "quantity": 1, "unit": "each", "prepNote": "finely grated zest only", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "cherry-jam", "quantity": 250, "unit": "g", "prepNote": "black cherry; or use a good sour cherry jam", "isOptional": false } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Beat {{unsalted-butter}} and {{caster-sugar}} together until pale and combined. Beat in {{eggs}} one at a time, then add {{vanilla-extract}} and the zest from {{lemon}}. Fold in {{plain-flour}}, {{ground-almonds}}, and {{baking-powder}} until a soft dough forms. Divide into two equal pieces, wrap both in cling film, and refrigerate for 60 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 175°C fan (195°C conventional). Grease a 22 cm loose-bottomed cake tin and line the base with baking paper. Press one portion of dough evenly across the base and up the sides of the tin to about 1 cm depth. Spread {{cherry-jam}} across the base, leaving a 1 cm border. Pat or roll the second portion of dough into a round and lay it over the jam to form a lid; press the edges to seal. Beat {{egg-yolks}} with a teaspoon of water and brush over the top. Use the tines of a fork to score a crosshatch pattern across the surface. Bake for 45–50 minutes until deep golden on top and firm to the touch; a skewer inserted into the dough layer at the edge should come out clean. Cool in the tin for 30 minutes before turning out." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Notes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The gâteau is eaten at room temperature, not warm. Cut into wedges with a sharp knife — it slices cleanly when cooled." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pastry cream is the other traditional filling. Spread a layer of thick vanilla custard (about 300 g) in place of the jam." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A dense cake is correct. If the centre feels undercooked after 50 minutes, add another 5–10 minutes: the filling insulates the centre and it takes longer than expected." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

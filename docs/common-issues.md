@@ -111,9 +111,26 @@ generic claims rather than concrete facts, etc.)
 
 ## Metadata issues
 
-(empty initially — populated as workers spot recurring metadata
-patterns, e.g. dietary flags missed, wrong cuisine, missing
-freeze/batch notes for obvious candidates.)
+- **Wrong difficulty enum values** `[block]`
+  Pattern: `"difficulty": "EASY"` or `"difficulty": "HARD"` in a
+  brief JSON file. Neither is a valid Prisma enum value. Uploads fail
+  with `Invalid value for argument 'difficulty'. Expected Difficulty.`
+  **Why:** The schema defines `Difficulty` as `BEGINNER | INTERMEDIATE
+  | ADVANCED`. The common shorthand EASY and HARD have no schema
+  equivalent. This hit 21 of 50 files in baking bulk-005.
+  **How to fix:** Use only `BEGINNER`, `INTERMEDIATE`, or `ADVANCED`.
+  Map: EASY → `BEGINNER`, HARD → `ADVANCED`.
+
+- **Invalid sourceType "ORIGINAL"** `[block]`
+  Pattern: `"sourceType": "ORIGINAL"` on a recipe without a named
+  public-domain or external source. Uploads fail with a Prisma
+  validation error on the `sourceType` field.
+  **Why:** The valid enum values are `TESTED / CLASSIC / SYNTHESISED /
+  PUBLIC_DOMAIN / CREATOR`. "ORIGINAL" is not defined.
+  **How to fix:** For a recipe derived from British/classic baking
+  tradition without a single canonical source, use `"CLASSIC"` (classic
+  precedent, cross-referenced across multiple sources). For a recipe
+  tested in the Homemade kitchen from scratch, use `"TESTED"`.
 
 ## Cross-category issues
 

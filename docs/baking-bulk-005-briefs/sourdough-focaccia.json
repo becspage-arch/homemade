@@ -1,0 +1,165 @@
+{
+  "slug": "sourdough-focaccia",
+  "title": "Sourdough focaccia",
+  "subtitle": "Deeply dimpled olive oil flatbread made with a sourdough levain",
+  "excerpt": "A thick, pillowy focaccia leavened entirely with sourdough starter. High hydration, long cold proof, and a generous pour of olive oil give it an open crumb, a crisp-bottomed crust, and a complexity that commercial yeast versions can't match.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Focaccia genovese is documented as a regional Ligurian bread in Pellegrino Artusi, La Scienza in Cucina e l'Arte di Mangiar Bene (1891), Project Gutenberg, which records the olive-oil dimpled flatbread as an everyday bread of the Ligurian coast. The sourdough variant follows the natural-leavened tradition of northern Italian breadmaking predating commercial yeast.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 large focaccia (32 × 22 cm tin)",
+    "prepMinutes": 20,
+    "cookMinutes": 25,
+    "restingMinutes": 60,
+    "chillingMinutes": 720,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The cold retard is part of the recipe. The dough must rest in the fridge for at least 8 hours after the bulk ferment.",
+    "dietaryFlags": ["vegan"],
+    "cuisine": "italian",
+    "mealType": "snack",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 80,
+      "saltPercent": 2.0,
+      "yeastPercent": null,
+      "levainPercent": 20,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 60,
+      "retardingMinutes": 720,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "fan oven; conventional 240°C",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "levain",
+      "term": "Levain",
+      "definition": "An active sourdough starter used as the sole leavening agent, built from a portion of maintained starter and fed flour and water before use."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "About sourdough focaccia" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Focaccia is one of the more forgiving shapes to make with sourdough. Unlike a batard or boule, it does not require precise shaping: you pour the high-hydration dough into an oiled tin, dimple it with your fingers, and bake it flat. The challenge is fermentation timing. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "levain" } }], "text": "levain" },
+          { "type": "text", "text": " must be active enough to leaven the dough over a long cold proof without over-acidifying it. A levain fed 4–6 hours before mixing, at peak activity, is what you want." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "This recipe uses 80% hydration — wet enough for an open, airy crumb, but still manageable without any special equipment. The overnight retard in the fridge develops flavour and makes the bake easy to schedule around a morning. The olive oil goes in twice: once into the tin before the dough, once poured over the dimpled surface just before it goes into the oven." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "sourdough-starter", "quantity": 100, "unit": "g", "prepNote": "active, fed 4–6 hours before use", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "strong-bread-flour", "quantity": 500, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "sea-salt-fine", "quantity": 10, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "olive-oil", "quantity": 60, "unit": "ml", "prepNote": "divided: 30 ml for the tin, 30 ml for the topping", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "sea-salt-flakes", "quantity": 1, "unit": "tsp", "prepNote": "for finishing", "isOptional": false } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine {{sourdough-starter}}, {{strong-bread-flour}}, and 400 ml of cool water in a large bowl. Mix until no dry flour remains, then rest for 30 minutes (autolyse). Add {{sea-salt-fine}} and squeeze it through the dough thoroughly. The dough will be very wet; this is correct." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment with folds, 60 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Perform four sets of stretch-and-folds, one every 15 minutes. After the final fold, the dough should feel significantly stronger and hold a loose shape when the bowl is tilted. Leave undisturbed for the remaining time." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cold retard, 8–16 hours" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour half the {{olive-oil}} into a 32 × 22 cm roasting tin and tilt to coat. Slide the dough into the tin, turning to coat the underside in oil. Cover tightly with cling film and refrigerate for at least eight hours." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Room temperature proof, then dimple and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Remove the tin from the fridge and leave at room temperature for about 60 minutes until the dough looks puffy and buoyant. Heat the oven to 220°C fan (240°C conventional). Drizzle the remaining {{olive-oil}} over the surface. Press your fingers in firmly to create deep dimples all over the dough, pushing them almost to the base of the tin. Scatter {{sea-salt-flakes}} across the top. Bake for 22–25 minutes until the surface is a rich golden-brown and the sides pull slightly from the tin. The base should be crisp when you lift a corner. Cool on a rack for 15 minutes before cutting." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Notes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The starter must be at peak activity. A sluggish starter will under-ferment the dough during the cold retard; the result will be dense and slightly gummy. Float-test the starter: a spoonful dropped in water should float." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Toppings pressed in before baking: halved cherry tomatoes, sliced olives, rosemary sprigs, or thinly sliced red onion all work. Press them into the dimples so they don't fall off." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Focaccia is best eaten within a few hours of baking. Leftover pieces are good split and toasted the next day." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

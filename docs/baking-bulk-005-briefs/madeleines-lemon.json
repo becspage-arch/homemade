@@ -1,0 +1,157 @@
+{
+  "slug": "madeleines-lemon",
+  "title": "Lemon madeleines",
+  "subtitle": "The French butter cakes with a warm lemon note and a soft, shell-shaped crumb",
+  "excerpt": "Small shell-shaped French cakes with a tender, buttery crumb, a distinctive hump from a cold rest before baking, and lemon zest running through. Best eaten within the hour of leaving the oven.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "biscuits",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Madeleines are documented in French culinary literature from the eighteenth century. Auguste Escoffier, Le Guide Culinaire (1903), Project Gutenberg, gives the génoise-based madeleine batter and notes the shell mould as the defining form. The cold-rest technique for producing the characteristic hump is a standard professional method widely documented in French patisserie texts.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "24 madeleines",
+    "prepMinutes": 15,
+    "cookMinutes": 12,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The batter keeps in the fridge for up to two days. Bake in batches as needed.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "snack",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 150,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven; conventional 220°C",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-medium", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "beurre-noisette",
+      "term": "Beurre noisette",
+      "definition": "Butter cooked in a pan until the milk solids brown and the butter develops a toasted, nutty aroma. French for hazelnut butter, referring to the colour."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "About lemon madeleines" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A madeleine is a small, shell-shaped French cake (technically a biscuit by trade classification) with a dense, moist crumb and a buttery flavour deepened by " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "beurre-noisette" } }], "text": "beurre noisette" },
+          { "type": "text", "text": ". The characteristic hump on the flat side is not decorative; it is produced by the thermal shock of cold batter hitting a hot tin. The hump tells you the oven was hot enough and the batter was cold enough." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Madeleines require a shell-shaped tin. Without it, the batter can be baked in a mini muffin tin — the result will lack the shell ridges but taste identical. The cold rest is not optional: an unchilled batter produces flat, dense cakes without the dome. One hour in the fridge is the minimum; overnight gives the most reliable hump." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "unsalted-butter", "quantity": 150, "unit": "g", "prepNote": "browned to beurre noisette; plus extra for the tin", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "eggs", "quantity": 3, "unit": "each", "prepNote": "large", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "caster-sugar", "quantity": 150, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "plain-flour", "quantity": 150, "unit": "g", "prepNote": "sifted; plus extra for dusting the tin", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "baking-powder", "quantity": 5, "unit": "g", "prepNote": "1 tsp", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "lemon", "quantity": 2, "unit": "each", "prepNote": "finely grated zest only", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "honey", "quantity": 15, "unit": "g", "prepNote": "1 tbsp", "isOptional": true } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the butter and make the batter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Melt {{unsalted-butter}} in a small saucepan over medium heat. Continue cooking until the foam subsides and the butter turns golden-brown and smells of toasted nuts, about four minutes. Pour into a bowl and leave to cool until just warm. Whisk {{eggs}} and {{caster-sugar}} together in a bowl until pale and slightly thickened, about three minutes. Fold in the sifted {{plain-flour}} and {{baking-powder}}, then the zest from {{lemon}}. Fold in the warm {{unsalted-butter}} and {{honey}} if using. Cover the batter and refrigerate for at least one hour." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the tin and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 200°C fan (220°C conventional). Brush the madeleine moulds generously with softened butter and dust lightly with flour, tapping out any excess. Spoon the cold batter into the moulds, filling each about three-quarters full. Do not spread it; it will find its own level. Bake for 10–12 minutes until the humps are risen and the edges are golden and pulling from the tin. The humps should be firm to a gentle touch. Turn out onto a rack immediately." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Eat madeleines within an hour of baking. They are at their peak when just barely cooled — the crumb still moist, the edges still crisp, the lemon fragrant. A light dusting of icing sugar is optional." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Notes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The beurre noisette is not decorative — it contributes significant flavour. Plain melted butter gives a noticeably less interesting result." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The cold batter can be held in the fridge for up to two days and baked in batches. This works well if you want to serve them truly fresh each time." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For an orange variation: replace the lemon zest with the zest of two oranges and add half a teaspoon of orange blossom water." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

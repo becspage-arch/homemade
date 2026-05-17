@@ -1,0 +1,171 @@
+{
+  "slug": "multiseed-loaf",
+  "title": "Multiseed loaf",
+  "subtitle": "A yeasted sandwich loaf with five seeds throughout",
+  "excerpt": "A reliably good everyday loaf with a mix of five seeds in the dough and scattered on the crust. Uses wholemeal and white flour for a slight nuttiness without the density of a 100% wholemeal loaf.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Original recipe. The multiseed loaf is a category of British everyday bread rather than a specific named dish; there is no single canonical source. The method follows standard yeasted tin-bread technique as documented across British baking literature.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf",
+    "prepMinutes": 20,
+    "cookMinutes": 35,
+    "restingMinutes": 105,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze on the day it is made. Slices toast well from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "After shaping, place in the tin, cover, and refrigerate overnight. Bring to room temperature for one hour before baking.",
+    "dietaryFlags": ["vegan"],
+    "cuisine": "british",
+    "mealType": "breakfast",
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 65,
+      "saltPercent": 1.8,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 75,
+      "proofMinutes": 30,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven; conventional 220°C",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "dough-hook", "isOptional": true },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "windowpane-test",
+      "term": "Windowpane test",
+      "definition": "A test for gluten development in bread dough: a small piece of dough is stretched gently between the fingers. If it stretches thin enough to let light through without tearing, the dough is sufficiently developed."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "About this loaf" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A multiseed loaf is a reliable weekday bread: straightforward to make, keeps for several days, and tastes better than most sliced bread from a supermarket. This version uses 350 g of strong white flour and 150 g of wholemeal, which gives a slight nuttiness without the heaviness or density of a full wholemeal loaf. The seeds go into the dough and onto the crust — sunflower, pumpkin, sesame, poppy, and linseeds are the five used here, though any combination in similar proportions works." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Kneading to the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "windowpane-test" } }], "text": "windowpane test" },
+          { "type": "text", "text": " takes eight to ten minutes by hand. A stand mixer does it in six. The two rises give a good flavour and a slightly open crumb that is still firm enough to slice and hold its shape under a thick spread of butter." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "strong-bread-flour", "quantity": 350, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "wholemeal-bread-flour", "quantity": 150, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "sea-salt-fine", "quantity": 9, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "yeast-dried", "quantity": 7, "unit": "g", "prepNote": "one 7 g sachet", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "sunflower-oil", "quantity": 20, "unit": "ml", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "poppy-seeds", "quantity": 15, "unit": "g", "prepNote": "plus extra to scatter on top", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "sesame-seeds", "quantity": 20, "unit": "g", "prepNote": "plus extra to scatter on top", "isOptional": false } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and knead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Dissolve {{yeast-dried}} in 325 ml of warm water and leave for two minutes. Combine {{strong-bread-flour}}, {{wholemeal-bread-flour}}, and {{sea-salt-fine}} in a large bowl. Add the yeast water and {{sunflower-oil}} and mix to a rough dough. Knead for eight to ten minutes by hand on a lightly floured surface, or six minutes on a stand mixer with the dough hook. The dough is ready when it passes the windowpane test: stretch a small piece between your fingers; it should become translucent without tearing." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the seeds and bulk ferment, 75 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Flatten the dough, scatter {{poppy-seeds}} and {{sesame-seeds}} over it, and fold the dough over itself several times to incorporate them. Shape into a ball, place in an oiled bowl, cover, and leave in a warm spot for about 75 minutes until doubled." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and prove, 30 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Lightly oil a 900 g loaf tin. Turn the dough onto a floured surface and shape into an oblong by pressing flat, folding the two short sides inward, then rolling tightly from the near long edge away from you. Lower seam-side down into the tin. Scatter a little extra sesame and poppy seed on top and press them gently into the surface. Cover loosely and prove for 30 minutes until the dough crowns 2–3 cm above the rim of the tin." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 200°C fan (220°C conventional). An oven thermometer is useful for tin loaves; a low oven gives a pale, soft crust. Bake for 30–35 minutes until the crust is a deep, even brown. Turn the loaf out of the tin; the sides and base should be firm and the base should sound hollow when tapped. Cool on a rack for at least 45 minutes before slicing." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Notes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Use any combination of seeds in the same total weight: linseed, pumpkin seeds, and sunflower seeds add more texture alongside sesame and poppy. Avoid very large seeds on the crust; they can burn before the loaf is baked through." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Adding 1 tablespoon of honey to the dough water gives a slightly sweeter flavour and a better shelf life; sugar is mildly hygroscopic." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The loaf keeps well for three days wrapped in a cloth. Refrigeration dries it out faster." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

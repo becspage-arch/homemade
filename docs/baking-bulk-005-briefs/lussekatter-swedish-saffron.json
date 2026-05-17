@@ -1,0 +1,180 @@
+{
+  "slug": "lussekatter-swedish-saffron",
+  "title": "Lussekatter",
+  "subtitle": "Swedish saffron buns for St Lucia Day",
+  "excerpt": "Bright golden buns scented with saffron, shaped into the traditional S-curl and studded with raisins. Baked on the 13th of December for St Lucia Day throughout Scandinavia.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Lussekatter (also lussebullar) are documented in Swedish culinary literature from at least the seventeenth century as a Lucia-season bread. The traditional S-shape and saffron-milk dough appear consistently across Swedish regional cookbooks. Cajsa Warg, Hjelpreda i Hushållningen (1755), records the enriched saffron bread form that persists in modern versions.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "18 buns",
+    "prepMinutes": 25,
+    "cookMinutes": 10,
+    "restingMinutes": 90,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze on the day of baking. Thaw at room temperature for one hour; warm in a low oven for five minutes to refresh.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Shaped buns can be refrigerated overnight. Bring to room temperature for 45 minutes before baking.",
+    "dietaryFlags": [],
+    "cuisine": "swedish",
+    "mealType": "breakfast",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 58,
+      "saltPercent": 1.2,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 30,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven; conventional 220°C",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "dough-hook", "isOptional": true },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "enriched-dough",
+      "term": "Enriched dough",
+      "definition": "A dough made richer with eggs, butter, or milk, which slows fermentation and produces a tender, soft crumb."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "About lussekatter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lussekatter, known as St Lucia cats, are the small saffron buns baked across Sweden, Norway, and Finland on and around the 13th of December for St Lucia Day. The name refers to their traditional S-shape, thought to resemble a curled cat. They are a rich, soft " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "enriched-dough" } }], "text": "enriched dough" },
+          { "type": "text", "text": " coloured bright gold by saffron dissolved in warm milk, each curl marked with two raisins. Eaten warm with coffee, they taste of celebration, of winter dark, of something specifically Scandinavian." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Saffron is the dominant flavour and the quality of the saffron matters. Steeping the saffron threads in warm milk for at least 15 minutes is not optional; the colour and aroma both come out in the steep, not in the bake. The dough itself takes about 25 minutes of active work. The shaping requires practice on the first batch; it becomes quick on the second." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "saffron", "quantity": 0.5, "unit": "g", "prepNote": "about 1 tsp threads; steep in warm milk", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "whole-milk", "quantity": 250, "unit": "ml", "prepNote": "warm, about 40°C", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "plain-flour", "quantity": 500, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "caster-sugar", "quantity": 80, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "sea-salt-fine", "quantity": 6, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "yeast-dried", "quantity": 7, "unit": "g", "prepNote": "one 7 g sachet", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "eggs", "quantity": 1, "unit": "each", "prepNote": "large, beaten; plus 1 for egg wash", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "unsalted-butter", "quantity": 100, "unit": "g", "prepNote": "softened", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "raisins", "quantity": 36, "unit": "each", "prepNote": "for decorating, 2 per bun", "isOptional": false } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Infuse the saffron" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Crumble {{saffron}} into {{whole-milk}} and leave to steep for at least 15 minutes. The milk should turn a rich, deep gold. The deeper the colour, the stronger the flavour in the finished buns." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and knead the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Sprinkle {{yeast-dried}} into the saffron milk and stir briefly. Combine {{plain-flour}}, {{caster-sugar}}, and {{sea-salt-fine}} in a large bowl. Add the saffron milk, {{eggs}}, and {{unsalted-butter}} and mix to a dough. Knead for eight minutes by hand or six minutes on a stand mixer with the dough hook until the dough is smooth and elastic. It will have a gentle give without sticking." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment, 60 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Place the dough in a lightly oiled bowl, cover, and leave in a warm spot for about 60 minutes until doubled." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Divide the dough into eighteen pieces, about 50 g each. Roll each piece under your palm to a rope about 25 cm long. Coil each end inward in opposite directions to form an S-shape; the two spirals should be equal in size. Place on lined baking trays and press one {{raisins}} into the centre of each spiral. Cover loosely." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prove and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Prove for 30 minutes until noticeably puffed. Heat the oven to 200°C fan (220°C conventional). Brush each bun with beaten egg. Bake for 8–10 minutes until deep gold and the bases sound hollow when tapped. Cool on a rack. Eat warm; lussekatter dry out quickly and are best on the day they are made." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Notes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Powdered saffron dissolves faster than threads but threads give better colour. If using threads, a gentle crush in a mortar before adding to the milk releases more colour." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The S-shape is traditional but not mandatory. Some Swedish bakers make figure-of-eight knots; others press the ropes flat and make a simple scroll. All taste the same." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Day-old lussekatter are good split and toasted in a dry pan." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

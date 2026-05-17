@@ -1,0 +1,160 @@
+{
+  "slug": "lemon-poppyseed-loaf",
+  "title": "Lemon and poppy seed loaf",
+  "subtitle": "A zesty, tender butter cake with poppy seeds and lemon drizzle",
+  "excerpt": "A simple, reliable butter cake made with lemon zest and poppy seeds throughout, finished with a sharp lemon drizzle that soaks into the warm loaf and sets to a thin crust.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Original recipe. The lemon drizzle loaf is a British baking staple without a single canonical source; the drizzle technique of soaking a still-hot cake with sugar syrup or lemon sugar appears in British baking literature from the mid-twentieth century. The poppy seed combination follows the Central European tradition of lemon-poppy seed baking.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf, about 10 slices",
+    "prepMinutes": 15,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze undrizzled. Drizzle after thawing.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The loaf keeps well for three days at room temperature in an airtight tin, and improves on the second day.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 160,
+      "bakeTemperatureNote": "fan oven; conventional 180°C",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "paddle-attachment", "isOptional": true },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "drizzle-cake",
+      "term": "Drizzle cake",
+      "definition": "A cake soaked with a sugar-and-citrus liquid while still warm, which penetrates the crumb and sets to a faintly crunchy glaze on the surface."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "About lemon and poppy seed loaf" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The lemon drizzle loaf is one of the most reliable things to bake: a straightforward butter cake that requires no special skill and turns out well from the first attempt. The poppy seeds add texture throughout the crumb; the lemon zest in the batter and the sharp lemon-sugar " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "drizzle-cake" } }], "text": "drizzle" },
+          { "type": "text", "text": " poured over the warm loaf give it a clear, bright acidity." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The drizzle step is important: it must be poured over the hot loaf while still in the tin. The syrup sinks into the crumb and the sugar crystals at the surface set as the loaf cools, forming the characteristic faintly gritty top crust. Pouring it over a cold loaf leaves the glaze sitting on top rather than penetrating." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "unsalted-butter", "quantity": 175, "unit": "g", "prepNote": "softened", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "caster-sugar", "quantity": 175, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "eggs", "quantity": 3, "unit": "each", "prepNote": "large", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "self-raising-flour", "quantity": 200, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "lemon", "quantity": 2, "unit": "each", "prepNote": "finely grated zest of both, juice of both for the drizzle", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "poppy-seeds", "quantity": 30, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "granulated-sugar", "quantity": 80, "unit": "g", "prepNote": "for the drizzle", "isOptional": false } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 160°C fan (180°C conventional). Grease and line a 900 g loaf tin with baking paper. Beat {{unsalted-butter}} and {{caster-sugar}} together until pale and fluffy, about four minutes. Beat in {{eggs}} one at a time. If the mixture curdles, add a spoonful of flour. Fold in {{self-raising-flour}}, the lemon zest from {{lemon}}, and {{poppy-seeds}} until just combined. Spoon into the prepared tin and level the surface." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake for 45–50 minutes until a skewer inserted into the centre comes out clean and the surface is a uniform golden-brown with a crack down the centre. An oven thermometer helps; an oven that runs hot will dome and crack the top before the centre is set." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Drizzle while hot" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "As soon as the loaf comes out of the oven, prick the surface all over with a skewer. Mix the juice from both {{lemon}} with {{granulated-sugar}} and stir briefly. Pour the mixture slowly over the hot loaf still in its tin. Leave to cool completely in the tin before turning out; this lets the syrup distribute evenly and the top crust set." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Notes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Granulated sugar in the drizzle (not caster) gives a slightly coarser texture on the top crust. Both work; granulated is more pronounced." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Adding 2 tablespoons of natural yoghurt to the batter gives a slightly more tender, moist crumb." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The loaf improves on the second day after baking; the drizzle distributes more evenly through the crumb." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "slug": "dorset-knobs-biscuit",
+  "title": "Dorset knobs",
+  "subtitle": "The triple-baked Dorset rusk biscuit",
+  "excerpt": "Small, hard, intensely crisp biscuits from Dorset, made from a sweet enriched dough shaped into balls and baked three times at progressively lower temperatures until completely dried through. Traditionally eaten with Dorset Blue Vinney cheese or spread with butter and marmalade.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "scones",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Dorset knobs are documented as a regional specialty of Dorset in Florence White, Good Things in England (1932), Project Gutenberg, which records the triple-baking method as the defining production technique of the traditional Dorset biscuit. The method is a form of rusk production: baking a leavened dough multiple times to remove all moisture, attested in English baking literature from the seventeenth century. The Dorset version uses a sweet enriched dough specific to the county.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "30–36 knobs",
+    "prepMinutes": 30,
+    "cookMinutes": 90,
+    "restingMinutes": 60,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Fully baked knobs keep for two weeks in an airtight tin.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 400,
+      "hydrationPercent": 50,
+      "saltPercent": 1.5,
+      "yeastPercent": 1.5,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "first bake at 220°C fan; second at 150°C fan; third at 120°C fan",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rusk",
+      "term": "Rusk",
+      "definition": "A hard, dry bread or biscuit made by baking a leavened dough twice or more at low temperature to remove all moisture. Rusks keep for weeks without refrigeration."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "About Dorset knobs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dorset knobs are a form of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rusk" } }], "text": "rusk" },
+          { "type": "text", "text": ": a leavened dough baked repeatedly at decreasing temperatures until every trace of moisture is gone. The result is a biscuit that is uniformly, almost comically hard — it will resist a confident bite and requires tea or cheese as a counterpoint. The dough itself is a simple sweet enriched bread, lightly buttered and sugared, which gives the knob a faint sweetness underneath the bone-dry exterior." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The three-bake method takes patience and a full afternoon, but the actual work at each stage is minimal. Make the dough, shape into small balls, do the first bake until risen and pale. Split them open; they should be moist and bread-like inside. Bake again at lower heat to set the crumb. A final bake at very low heat drives out the remaining moisture and produces the characteristic snap." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "plain-flour", "quantity": 400, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "fast-action-yeast", "quantity": 6, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "caster-sugar", "quantity": 30, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "sea-salt-fine", "quantity": 6, "unit": "g", "prepNote": null, "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "unsalted-butter", "quantity": 30, "unit": "g", "prepNote": "softened", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "whole-milk", "quantity": 80, "unit": "ml", "prepNote": "warm", "isOptional": false } },
+          { "type": "ingredientItem", "attrs": { "ingredientSlug": "water", "quantity": 120, "unit": "ml", "prepNote": "warm", "isOptional": false } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dough and first bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine {{plain-flour}}, {{fast-action-yeast}}, {{caster-sugar}}, and {{sea-salt-fine}} in a large bowl. Rub in {{unsalted-butter}} until no lumps remain. Mix {{whole-milk}} and {{water}} together and add to the flour; mix to a smooth, firm dough. Knead for 8–10 minutes until smooth and elastic. Cover and leave to rise for 60 minutes until doubled. Heat the oven to 220°C fan (240°C conventional). Knock back the dough and divide into pieces of about 20 g each. Roll into smooth balls and place on lined baking trays. Bake for 10–12 minutes until just risen and very pale — they should look under-baked. Cool completely." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Second and third bakes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Reduce the oven to 150°C fan (170°C conventional). Split each cooled knob in half across the middle with a sharp knife or by tearing — the inside will be soft and doughy. Place cut-side up on the baking trays and bake for 25–30 minutes until the cut surfaces are dry, pale, and beginning to firm. Remove and cool for 20 minutes. Reduce the oven to 120°C fan (140°C conventional). Return all the knobs to the oven and bake for a further 30–40 minutes until completely dried through and very hard when tested; they should produce a hollow knock when tapped against the tray. Cool completely on a rack before storing in an airtight tin." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Notes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The knobs are correctly made when they are impenetrably hard throughout. Any soft or chewy centre means they need more time in the third bake." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Traditionally eaten with Dorset Blue Vinney cheese, which provides the moisture and richness the knob lacks. Butter and marmalade is the sweet pairing." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Knobs keep for two weeks in a sealed tin. They do not improve; eat within a week for the best flavour." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}
