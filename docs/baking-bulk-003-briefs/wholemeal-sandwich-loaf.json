@@ -1,0 +1,143 @@
+{
+  "slug": "wholemeal-sandwich-loaf",
+  "title": "Wholemeal sandwich loaf",
+  "subtitle": "A soft, even-crumbed everyday loaf",
+  "excerpt": "A 900 g wholemeal loaf that slices cleanly and holds together for sandwiches. Kneaded well and proved twice, it has a tender crumb and a crust that gives without shattering. Baked in a standard 2 lb tin.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: the wholemeal bread chapter recommends a higher water proportion than for white bread (the bran absorbs more) and notes that the crumb sets firmer. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: documents the twice-proving method for enriched and wholemeal breads as giving a better open crumb than a single long rise. The baker's percentages here (68% hydration, 2% salt, 1.4% yeast on wholemeal bread flour) are adapted from the standard British domestic wholemeal loaf tradition.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (900 g / 2 lb tin), about 12 slices",
+    "prepMinutes": 20,
+    "cookMinutes": 38,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 208,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice the cooled loaf and freeze in a bag. Individual slices toast from frozen in 3–4 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Shape and place in the tin, cover, and cold-prove overnight in the fridge. Bring back to room temperature for 30 minutes before baking.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "side",
+    "mood": ["weekendBake", "freezerFriendly", "everyday"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 68,
+      "saltPercent": 2,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 90,
+      "proofMinutes": 60,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven, middle shelf. Conventional oven: 220°C",
+      "steamMethod": "small ovenproof dish of boiling water on the oven floor for the first 10 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "dough-hook", "isOptional": true },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "windowpane-test",
+      "term": "Windowpane test",
+      "definition": "A check for gluten development. Stretch a small piece of dough between your fingers. When fully developed, it stretches to a thin translucent membrane without tearing. If it tears immediately, keep kneading."
+    },
+    {
+      "slug": "bulk-fermentation",
+      "term": "Bulk fermentation",
+      "definition": "The first rise after mixing. Yeast converts sugars to carbon dioxide, which inflates the dough. The dough roughly doubles and develops flavour during this period."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Wholemeal bread asks for a little more patience than white — the bran in the flour cuts gluten strands as they form, so you need to knead longer to build enough structure. The reward is a loaf with more depth of flavour and a denser but still yielding crumb that holds a sandwich without collapsing. This recipe uses 100% wholemeal bread flour at 68% hydration: the dough will feel stickier than white dough and that is right. Resist the urge to add more flour." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Two hours from mixing to oven, with two rises. Bake time is 35–38 minutes." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "wholemeal-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": "1 sachet", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 300, "unit": "ml", "prepNote": "tepid (around 35°C)", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 40, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Mix the dough" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Weigh the {{wholemeal-bread-flour}} into a large bowl. Add the {{yeast-fast-action}} on one side of the bowl and the {{sea-salt-fine}} on the other side — they should not touch directly before mixing, as concentrated salt can slow the yeast. Rub the {{unsalted-butter}} through the flour until no visible pieces remain. Combine the {{water}} and {{whole-milk}} and pour three-quarters of the liquid into the flour. Mix with your hand until the dough begins to come together, then add the remaining liquid. The dough will be sticky and rough." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Knead, 10 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Turn out onto a lightly floured surface and knead for 10 minutes by hand, or 7 minutes on medium speed with a dough hook. Wholemeal dough is softer and more resistant to shaping than white; keep going even when it seems reluctant. At the end of 10 minutes, do the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "windowpane-test" } }], "text": "windowpane test" },
+          { "type": "text", "text": ". If the dough tears immediately, knead for another 3 minutes. A small amount of bran interference is normal; a very clean windowpane is unrealistic with 100% wholemeal." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bulk fermentation, 90 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Form the dough into a rough ball, return it to the bowl, and cover with a damp cloth or clingfilm. Leave at room temperature for 90 minutes until roughly doubled. This is the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bulk-fermentation" } }], "text": "bulk fermentation" },
+          { "type": "text", "text": ". In a warm kitchen (above 22°C) the dough may be ready in 75 minutes. In a cool kitchen (18°C) it may take 2 hours. Look at the dough, not the clock." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Shape and final proof, 60 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Butter the loaf tin. Tip the dough onto a lightly floured surface and knock it back, pressing out the gas. Flatten into a rough rectangle slightly narrower than the tin. Fold the short edges in to the middle, then roll the dough tightly into a log. Place seam-side down in the tin. Cover loosely and leave for 60 minutes, until the dough has risen to 1–2 cm above the rim. Preheat the oven to 200°C fan (220°C conventional) with a small ovenproof dish on the floor." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 35–38 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour boiling water into the dish on the oven floor to create steam. Load the tin on the middle shelf and bake for 35–38 minutes. The loaf is done when the top is a deep brown, the sides have pulled away from the tin, and the base sounds hollow when you tap it. An internal probe should read 96°C. Turn out onto a rack and cool for at least 45 minutes before slicing — the crumb is still setting inside and will be gummy if cut too soon." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Troubleshooting" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Dense crumb: the dough was under-proved or over-floured. Wholemeal absorbs water more slowly than white; if the dough felt right after mixing but tightened up during kneading, the flour absorbed the liquid gradually and the dough is now stiffer than intended. Reduce the extra flour on the surface next time, or rest the dough covered for 10 minutes mid-knead (autolysis) before continuing." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Collapsed top: the loaf over-proved in the tin. The dome that forms during proving should still be a slight curve upward when it goes into the oven. If it has started to flatten or wrinkle, it has gone too far. Bake it anyway — it will be denser but still edible. Set a timer for 45 minutes next time." }]
+      }
+    ]
+  }
+}

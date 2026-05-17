@@ -1,0 +1,109 @@
+{
+  "slug": "banana-loaf-classic",
+  "title": "Banana loaf",
+  "subtitle": "Moist one-bowl loaf with very ripe bananas",
+  "excerpt": "A deeply moist banana loaf made with overripe bananas, brown sugar, and melted butter — all mixed in one bowl. The riper the bananas, the sweeter and more flavourful the crumb. Walnuts are optional but add texture. Best on day two.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Banana bread is documented in American domestic cookbooks from the 1930s onward, coinciding with the introduction of chemical leaveners to home baking. American household manuals from the early twentieth century, available through the Internet Archive, document quick loaves made with overripe fruit as a method of using fruit past its prime. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: the sweet loaf chapter documents the technique of mashing overripe fruit into a batter as a way of replacing some of the fat content while adding flavour and moisture.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (900 g tin)",
+    "prepMinutes": 10,
+    "cookMinutes": 58,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 68,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice the cooled loaf and freeze in a bag. Slices defrost at room temperature in 30 minutes or toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Keeps wrapped at room temperature for 4 days. The crumb is more moist and flavourful on day two than day one.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "breakfast",
+    "mood": ["cosy", "weekendBake", "kidFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true,
+    "baking": {
+      "flourWeightGrams": 250,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 175,
+      "bakeTemperatureNote": "fan oven, middle shelf. The loaf takes longer than most quick breads because the banana provides so much moisture — test with a skewer at 50 minutes",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "overripe-banana",
+      "term": "Overripe banana",
+      "definition": "A banana with a heavily freckled or fully blackened skin. As bananas ripen past yellow, starch converts to sugar and pectin breaks down, making the flesh sweeter, softer, and wetter. In a banana loaf, overripe bananas contribute significantly more sweetness and moisture than yellow ones, producing a darker, more flavourful, and more moist crumb. Three days past prime is not too far."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The banana loaf depends on one thing: the bananas. They must be overripe — the skin should be mostly or entirely black. Yellow bananas produce a pale, damp, bland loaf. Black-skinned bananas produce the dark, intensely flavoured crumb this recipe is built around. If your bananas are not ripe enough, leave them out for another day or two. Once they are right, the rest of the recipe takes 10 minutes." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "banana", "amount": 4, "unit": "each", "prepNote": "very ripe (heavily freckled or blackened skin), peeled — about 350 g flesh", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "light-brown-sugar", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "large", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "melted and cooled", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vanilla-extract", "amount": 5, "unit": "ml", "prepNote": "1 tsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bicarbonate-of-soda", "amount": 7, "unit": "g", "prepNote": "about 1.5 tsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "baking-powder", "amount": 5, "unit": "g", "prepNote": "about 1 tsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 4, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "walnuts", "amount": 80, "unit": "g", "prepNote": "roughly chopped", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Mix" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Preheat the oven to 175°C fan. Butter and line the loaf tin. In a large bowl, mash the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "overripe-banana" } }], "text": "overripe" },
+          { "type": "text", "text": " {{banana}}s thoroughly with a fork until no large lumps remain. Beat in the {{light-brown-sugar}}, {{eggs}}, melted {{unsalted-butter}}, and {{vanilla-extract}}. Add the {{plain-flour}}, {{bicarbonate-of-soda}}, {{baking-powder}}, and {{sea-salt-fine}} and fold until just combined. Fold in the {{walnuts}} if using." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 55–58 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour the batter into the tin. Bake for 55–58 minutes until the top is deeply coloured and cracked, and a skewer inserted into the centre comes out clean. If the top is browning before the centre is set, lay a piece of foil loosely over the tin. Cool in the tin for 15 minutes, then turn out onto a rack. Wait until completely cold before slicing — the crumb sets as it cools." }]
+      }
+    ]
+  }
+}

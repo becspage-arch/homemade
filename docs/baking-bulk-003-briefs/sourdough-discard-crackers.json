@@ -1,0 +1,115 @@
+{
+  "slug": "sourdough-discard-crackers",
+  "title": "Sourdough discard crackers",
+  "subtitle": "Thin, crisp crackers from unfed starter",
+  "excerpt": "Crisp, tangy crackers made from sourdough discard with a small amount of flour and oil. The discard provides the sour flavour and most of the structure; baking powder gives a brief lift that keeps the crackers light rather than dense. One baking tray, 20 minutes in the oven.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The practice of using fermented flour-and-water mixtures for flatbreads and crackers predates modern bread-baking by centuries. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: the chapter on bread notes that the discarded portion of a flour-and-water starter, being already acidulated, can be used directly in thin baked products where chemical leavening provides sufficient lift. The cracker form is documented in nineteenth-century American and British domestic manuals as an economical use of fermented dough scraps.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "About 30 crackers",
+    "prepMinutes": 10,
+    "cookMinutes": 18,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 28,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Double the recipe and bake on two trays in sequence. The crackers store well in a tin for a week.",
+    "makeAheadNotes": "The baked crackers keep in an airtight tin for up to 7 days and re-crisp in a 160°C oven for 3 minutes if they soften.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["cosy"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven, middle shelf. The crackers should be pale gold, not deeply coloured — they continue to crisp as they cool",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sourdough-discard",
+      "term": "Sourdough discard",
+      "definition": "The portion of a sourdough starter removed before feeding. It retains the developed organic acids and complex flavour of the starter but lacks the vigour to leaven bread. In crackers and flatbreads, where steam or chemical leavening provides lift, the discard contributes a distinct tang without the need for long fermentation."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Sourdough discard crackers are the fastest thing you can make with a starter. The discard goes straight into a bowl with flour, oil, and a little salt; the mixture is rolled thin, cut, and baked. The baking powder added to the mix drives a brief expansion in the oven that keeps the crackers light rather than tough. The sour flavour from the discard makes them taste as though they took considerably longer." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use discard that has been in the fridge for up to a week. Older discard is more acidic and gives a more pronounced sour flavour. Fresh discard from a recently fed starter will give a milder result." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 30,
+          "items": [
+            { "ingredientSlug": "sourdough-starter", "amount": 200, "unit": "g", "prepNote": "unfed discard", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rapeseed-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 5, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "baking-powder", "amount": 3, "unit": "g", "prepNote": "about half a tsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 5, "unit": "g", "prepNote": "for scattering", "isOptional": true, "groupLabel": "To finish" },
+            { "ingredientSlug": "sesame-seeds", "amount": 20, "unit": "g", "prepNote": null, "isOptional": true, "groupLabel": "To finish" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Mix" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 180°C fan. Combine the {{sourdough-starter}} discard, {{plain-flour}}, {{rapeseed-oil}}, {{sea-salt-fine}}, and {{baking-powder}} in a bowl. Mix until a soft, slightly sticky dough forms. This is the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sourdough-discard" } }], "text": "sourdough discard" },
+          { "type": "text", "text": " doing the work: no proving time needed." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Roll and cut" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Line a baking tray with baking paper. Tip the dough onto the paper and place another sheet on top. Roll out between the two sheets to an even thickness of about 2 mm. Remove the top sheet. Score the dough into crackers: use a knife or pizza cutter to mark into rectangles or squares (do not separate them). Scatter with {{sea-salt-flakes}} and {{sesame-seeds}} if using, then press them in lightly with the rolling pin." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 16–18 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake for 16–18 minutes until pale gold at the edges and set in the centre — they will be slightly soft straight from the oven but will firm as they cool. Transfer the whole sheet of crackers to a rack and leave to cool completely before breaking apart along the score lines. They keep in a tin for up to a week." }]
+      }
+    ]
+  }
+}

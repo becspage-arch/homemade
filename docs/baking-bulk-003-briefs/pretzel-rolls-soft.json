@@ -1,0 +1,124 @@
+{
+  "slug": "pretzel-rolls-soft",
+  "title": "Soft pretzel rolls",
+  "subtitle": "German rolls with a bicarbonate dip for the dark, chewy crust",
+  "excerpt": "Eight soft rolls with the shiny, dark, chewy crust of a pretzel, achieved by briefly simmering the shaped rolls in a bicarbonate of soda solution before baking. Topped with sea salt flakes. The crumb is soft; the crust is the whole point.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The pretzel is a documented German bread form from the early medieval period, with the distinctive alkaline dip technique described in German domestic cooking manuals of the nineteenth century. The alkaline bath gelatinises the outer starch and produces the characteristic Maillard browning and chewy texture that is impossible to achieve without it. For home bakers, a baked bicarbonate of soda solution (or a concentrated bicarbonate solution) substitutes for the traditional food-grade lye used commercially. This technique is documented in German-language household manuals of the late nineteenth century available through the Internet Archive, as well as in English translations of German domestic cooking texts.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 rolls",
+    "prepMinutes": 30,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 170,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the cooled rolls in a bag. Reheat from frozen in a 180°C oven for 10 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Shape the rolls, arrange on the tray, cover and refrigerate overnight. Boil and bake straight from the fridge the following morning.",
+    "dietaryFlags": [],
+    "cuisine": "german",
+    "mealType": "side",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 60,
+      "saltPercent": 2,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 20,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 210,
+      "bakeTemperatureNote": "fan oven, upper-middle shelf. The alkaline crust colours very fast — watch closely after 15 minutes",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "alkaline-dip",
+      "term": "Alkaline dip",
+      "definition": "The brief simmer in a bicarbonate of soda solution that gives pretzel-style bread its dark, shiny, chewy crust. The alkaline water raises the pH of the outer dough, which accelerates the Maillard browning reaction during baking and gelatinises the surface starch into the characteristic tough, translucent layer. Commercial pretzels use food-grade lye; bicarbonate of soda produces a similar effect at home."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The crust on a pretzel roll is not the same as the crust on any other bread. The alkaline dip changes the chemistry of the surface: it browns darker and faster than ordinary bread, sets into a chew that crackles when you bite through it, and develops a mild bitterness that pairs with coarse salt. Without the dip, you have a soft roll with a different colour. With it, you have something that cannot be mistaken for anything else." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": "1 sachet", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "caster-sugar", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "water", "amount": 300, "unit": "ml", "prepNote": "tepid", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "bicarbonate-of-soda", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dip" },
+            { "ingredientSlug": "water", "amount": 1500, "unit": "ml", "prepNote": "for the dip", "isOptional": false, "groupLabel": "For the dip" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 15, "unit": "g", "prepNote": "for topping", "isOptional": false, "groupLabel": "To finish" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Mix and knead" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the {{strong-bread-flour}}, {{yeast-fast-action}}, {{sea-salt-fine}}, and {{caster-sugar}} in a large bowl. Rub in the {{unsalted-butter}} until no visible pieces remain. Add the {{water}} for the dough and mix to a firm, smooth dough — firmer than a sandwich loaf dough. Knead for 8–10 minutes until elastic. The dough should hold its shape when placed on the surface without spreading." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "First rise, 60 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover and leave in a warm place for 60 minutes until roughly doubled." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Shape" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Line a baking tray with baking paper and oil lightly. Divide the dough into 8 equal pieces (about 105 g each). Shape each into a tight round ball, then place on the prepared tray seam-side down. Leave space between them — they will not grow much during the second prove." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Second prove, 20 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover loosely and leave for 20 minutes. Preheat the oven to 210°C fan." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Dip and bake, 18–20 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bring the {{water}} for the dip and the {{bicarbonate-of-soda}} to a rolling boil in the large saucepan. This is the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "alkaline-dip" } }], "text": "alkaline dip" },
+          { "type": "text", "text": ": working in batches of 2–3, lower each roll into the simmering water for 20 seconds on each side, then remove with a slotted spoon back to the lined tray. While still wet, slash the top of each roll with a sharp knife and scatter with {{sea-salt-flakes}}. Bake for 18–20 minutes until very dark brown and firm. The crust should feel hard when tapped. Cool on a rack for at least 5 minutes before eating." }
+        ]
+      }
+    ]
+  }
+}

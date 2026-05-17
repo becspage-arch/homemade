@@ -1,0 +1,114 @@
+{
+  "slug": "date-and-walnut-loaf",
+  "title": "Date and walnut loaf",
+  "subtitle": "Moist British tea loaf with soaked dates and walnuts",
+  "excerpt": "A dense, dark, sticky loaf made by pouring boiling water over chopped dates and butter, then mixing in the remaining ingredients. The dates soften completely and sweeten the crumb without tasting jammy. Slice thick and spread with butter.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Date and walnut loaf is a documented British tea loaf tradition. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: the sweet bread chapter documents fruit loaves made by soaking dried fruit in hot liquid before mixing the batter, noting that the soaking produces a more evenly moistened crumb than adding fruit dry. Florence White, Good Things in England (1932): the date-and-nut loaf is documented as a standard British kitchen tea loaf, with the soaking of dates in boiling water identified as the defining preparation step.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (900 g tin)",
+    "prepMinutes": 15,
+    "cookMinutes": 55,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "totalMinutes": 80,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice the cooled loaf and freeze in a bag. Slices defrost at room temperature in 30 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Keeps wrapped at room temperature for 5 days. Improves after a day as the moisture distributes through the crumb.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "breakfast",
+    "mood": ["cosy", "slowSunday"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 225,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 170,
+      "bakeTemperatureNote": "fan oven, middle shelf. The dates and dark sugar mean this loaf colours fast — reduce to 160°C if the top is browning before the centre is set",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "fruit-soaking",
+      "term": "Fruit soaking",
+      "definition": "The technique of pouring boiling liquid over dried or semi-dried fruit before incorporating it into a batter. The heat softens the fruit, allowing it to absorb the liquid and swell. In a loaf or cake, soaked fruit releases its moisture slowly during baking, keeping the crumb moist, and distributes more evenly than hard, unsoaked fruit."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "This is a one-bowl loaf built around soaked dates. Boiling water goes over the chopped dates and butter in the mixing bowl; they sit for 10 minutes while the dates soften and the butter melts into the liquid. Everything else goes in from there: sugar, treacle, egg, then the dry ingredients. The walnuts go in last. There is no creaming, no beating — just stirring." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "dates-medjool", "amount": 200, "unit": "g", "prepNote": "stoned and roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": "cut into small pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 200, "unit": "ml", "prepNote": "boiling", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dark-brown-sugar", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-treacle", "amount": 30, "unit": "g", "prepNote": "about 1 tbsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "large, beaten", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 225, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bicarbonate-of-soda", "amount": 5, "unit": "g", "prepNote": "about 1 tsp", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "walnuts", "amount": 100, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Soak the dates, 10 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Preheat the oven to 170°C fan. Butter and line the loaf tin. Put the {{dates-medjool}} and {{unsalted-butter}} in a large bowl. Pour the boiling {{water}} over them and stir briefly. Leave for 10 minutes. This is the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fruit-soaking" } }], "text": "fruit soaking" },
+          { "type": "text", "text": ": the dates will absorb the water and partially dissolve; the butter will melt into the liquid." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Mix" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add the {{dark-brown-sugar}}, {{black-treacle}}, and beaten {{eggs}} to the date mixture and stir to combine. Add the {{plain-flour}}, {{bicarbonate-of-soda}}, and {{sea-salt-fine}} and stir until just smooth. Fold in the {{walnuts}}." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 50–55 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour the batter into the prepared tin. Bake for 50–55 minutes until a skewer inserted into the centre comes out clean. The top will be very dark — this is expected. If it is browning too quickly before the centre is set, lay a piece of foil loosely over the top. Cool in the tin for 15 minutes before turning out. Slice thick." }]
+      }
+    ]
+  }
+}

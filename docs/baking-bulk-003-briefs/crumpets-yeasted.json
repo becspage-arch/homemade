@@ -1,0 +1,130 @@
+{
+  "slug": "crumpets-yeasted",
+  "title": "Crumpets",
+  "subtitle": "Yeasted griddle cakes with the characteristic holey top",
+  "excerpt": "Eight crumpets cooked in crumpet rings on a griddle. The batter is thin and yeasted; baking powder gives an extra lift that opens the bubbles into the signature holes. Eaten hot with a thick spread of butter that melts through.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: the crumpet section describes a batter made with warm milk, yeast, and flour, poured into rings set on a greased griddle. Florence White, Good Things in England (1932): documents crumpets as a regional English tradition, noting the importance of the ring in producing the characteristic disc shape and the thin, porous top. The addition of bicarbonate of soda (or baking powder) to the batter as a secondary leavener, producing the distinctive surface holes, is documented in Victorian domestic-cooking manuals.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 crumpets",
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 100,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Cool fully, stack with paper between each, freeze in a bag. Toast from frozen.",
+    "batchable": true,
+    "batchNotes": "Doubles to 16 with no changes to the batter. Cook in two batches.",
+    "makeAheadNotes": "The batter can rest (covered) in the fridge overnight after the first rise. Bring to room temperature before cooking.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "breakfast",
+    "mood": ["cosy", "slowSunday", "kidFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 225,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": null,
+      "bakeTemperatureNote": "Griddle-cooked — no oven temperature. Medium heat throughout",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "griddle", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "crumpet-ring",
+      "term": "Crumpet ring",
+      "definition": "A metal ring placed on the griddle surface to contain the batter while it cooks. Standard crumpet rings are 8–9 cm in diameter and about 2 cm tall. Egg rings or individual baking rings work as substitutes."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A crumpet is a griddle cake built from a pourable batter rather than a dough. The batter ferments with yeast for an hour, then baking powder is folded in just before cooking — the double leavening is what produces the holes. The batter cooks from the bottom through the ring, the bubbles rising and popping at the surface to leave the porous top that is the whole point of a crumpet." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The batter is more liquid than any bread dough: it should pour off a spoon slowly, like a slightly thickened pancake batter. If it is too thick, the holes will not form. If it is too thin, it will run out under the ring." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 225, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "yeast-fast-action", "amount": 5, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 5, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 5, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 200, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 100, "unit": "ml", "prepNote": "tepid", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "baking-powder", "amount": 4, "unit": "g", "prepNote": "about 1 tsp", "isOptional": false, "groupLabel": "Added before cooking" },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "for greasing the rings and griddle", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Mix the batter and leave to ferment, 60 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the {{strong-bread-flour}}, {{yeast-fast-action}}, {{sea-salt-fine}}, and {{caster-sugar}} in a large bowl. Whisk the {{whole-milk}} and {{water}} into the flour until you have a smooth, thick batter with no lumps. It should pour slowly off the whisk. Cover the bowl with a damp cloth and leave in a warm place for 60 minutes. The surface should look bubbly and the batter will have risen and then relaxed." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Add the baking powder" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Stir the {{baking-powder}} into the fermented batter. The mixture will fizz gently. This secondary leavening is the trigger for the holes: the baking powder reacts in the heat of the griddle, driving bubbles upward through the set batter." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Cook the crumpets" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Grease the griddle and four " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "crumpet-ring" } }], "text": "crumpet rings" },
+          { "type": "text", "text": " with {{unsalted-butter}}. Set the griddle over medium heat. Place the rings on the surface and leave for 2 minutes for both to reach temperature. Pour enough batter into each ring to fill it about 1 cm deep. Cook for 8–10 minutes without moving. The edges will set first; the surface will bubble and the bubbles will begin to pop and leave holes. When the surface looks mostly set (matte rather than wet) and only the very centre has any moisture, use tongs to lift the rings and flip each crumpet. Cook on the second side for 1–2 minutes until pale gold. The classic crumpet is pale on top and golden underneath — the underside is the base. Rest on a rack while you cook the remaining batter in two more batches." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Serve" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Crumpets are best eaten immediately, hot enough that butter melts as soon as it hits the holes. If you need to hold them, toast under the grill for 2 minutes on each side: this re-crisps the base and opens the holes again. Serve with salted butter." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Troubleshooting" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "No holes forming: the batter is too thick, the baking powder is old, or the griddle is too hot and the base set before the bubbles could rise. Thin the batter by 2 tablespoons of warm water, use fresh baking powder, and cook on a lower heat for longer." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Batter running under the rings: the batter is too thin. Stir in a tablespoon of flour and rest for 10 minutes before trying again." }]
+      }
+    ]
+  }
+}

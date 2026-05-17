@@ -1,0 +1,124 @@
+{
+  "slug": "bagels-new-york",
+  "title": "New York bagels",
+  "subtitle": "Boiled, then baked — the proper chewy crust",
+  "excerpt": "Twelve bagels with the characteristic dense, chewy crumb and shiny crust that comes from boiling in water before baking. A lean dough with a long chill gives flavour; a short boil sets the crust; a hot oven finishes the colour. Plain, or topped with sesame or poppy seeds.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Hannah Glasse, The Art of Cookery Made Plain and Easy (1747), Project Gutenberg: documents a boiled-bread-ring method in the chapter on Jewish cookery. Mrs Rundell, A New System of Domestic Cookery (1806), Project Gutenberg: the bagel as a boiled bread roll is documented in sections on Jewish household food. The boil-then-bake technique is the distinguishing feature of all bagel traditions and is documented in domestic American Jewish cookbooks from the early twentieth century, many now in the public domain via the Internet Archive.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "12 bagels",
+    "prepMinutes": 30,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 480,
+    "totalMinutes": 655,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the cooled bagels whole in a bag. Defrost at room temperature or split and toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The cold prove overnight is part of the recipe, not an option — it develops the flavour and the chew.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "breakfast",
+    "mood": ["weekendBake", "freezerFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 55,
+      "saltPercent": 2,
+      "yeastPercent": 0.7,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 30,
+      "retardingMinutes": 480,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "fan oven, upper shelf. High heat sets the shiny crust",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": true },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "boil-before-bake",
+      "term": "Boil before baking",
+      "definition": "A method used for bagels and pretzels where the shaped dough is briefly poached in simmering water before going into the oven. The boil gelatinises the outer starch layer, producing the characteristic shiny, chewy crust that is impossible to achieve with baking alone."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A real bagel is the product of three separate processes: mixing and shaping, a cold overnight rest, and the boil-then-bake sequence that makes it unmistakably different from any other roll. The cold rest slows fermentation and builds complexity; the boil sets the outer skin into a shell that crisps in the oven. The result is dense, chewy, and satisfying in a way that a simple baked roll cannot match." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bagel dough is stiffer than most bread doughs at 55% hydration. It should feel firm and resist pulling. That stiffness is intentional: it holds the ring shape through the boil without collapsing." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 12,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 3.5, "unit": "g", "prepNote": "about half a 7 g sachet", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "caster-sugar", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "water", "amount": 275, "unit": "ml", "prepNote": "tepid", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "rapeseed-oil", "amount": 15, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "caster-sugar", "amount": 15, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the boiling water" },
+            { "ingredientSlug": "sesame-seeds", "amount": 20, "unit": "g", "prepNote": null, "isOptional": true, "groupLabel": "For topping (optional)" },
+            { "ingredientSlug": "poppy-seeds", "amount": 20, "unit": "g", "prepNote": null, "isOptional": true, "groupLabel": "For topping (optional)" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Mix and knead" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the {{strong-bread-flour}}, {{yeast-fast-action}}, {{sea-salt-fine}}, and {{caster-sugar}} in a large bowl. Mix the {{water}} and {{rapeseed-oil}} and pour into the flour. The dough will be stiff — use your knuckles to bring it together rather than your fingers. Knead for 10 minutes by hand. Bagel dough is firmer and denser than a sandwich-loaf dough; it should feel like putty and resist pulling, not bounce back elastically the way a wet dough does." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "First rise, then cold overnight" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover the bowl and leave at room temperature for 60 minutes. The dough will rise only slightly. Divide into 12 pieces (about 70 g each). To shape a bagel, roll each piece into a rope about 25 cm long. Wrap the rope around your hand, overlapping the ends by 3 cm, then press the overlap against the work surface and roll back and forth to seal. Transfer to two lightly oiled, lined trays. Cover with clingfilm and refrigerate overnight (8–12 hours)." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Boil the bagels" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The next morning: preheat the oven to 220°C fan. Fill a large saucepan with water, add the second quantity of {{caster-sugar}}, and bring to a rolling boil. The sugar gives the crust a faint sweetness. Take the bagels directly from the fridge. Working in batches of 3 or 4, drop each bagel into the boiling water. This is the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "boil-before-bake" } }], "text": "boil before baking" },
+          { "type": "text", "text": ": boil for 30 seconds on each side, then remove with a slotted spoon and return to the lined tray." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Top and bake, 22–25 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "While the bagels are still wet from the water, scatter with {{sesame-seeds}} or {{poppy-seeds}} if using — the seeds adhere without an egg wash because the boiled surface is sticky. Bake for 22–25 minutes until deep amber and firm. The base should be dry to the touch. Cool on a rack for at least 10 minutes before splitting." }]
+      }
+    ]
+  }
+}

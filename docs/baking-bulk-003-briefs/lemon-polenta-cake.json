@@ -1,0 +1,115 @@
+{
+  "slug": "lemon-polenta-cake",
+  "title": "Lemon polenta cake",
+  "subtitle": "Gluten-free almond and polenta cake with lemon syrup",
+  "excerpt": "A moist, densely textured cake made with ground almonds and polenta, fragrant with lemon zest and soaked with a hot lemon syrup after baking. Gluten-free. The polenta gives the crumb a slightly coarse grain that is the whole texture of the cake.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Almond-flour cakes are documented in English and Italian domestic cooking from the seventeenth century onward. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: the chapter on cakes documents ground almond cakes as a distinct category from flour cakes, noting their dense, moist crumb and tendency to keep well. The combination of ground almonds with polenta for texture, soaked in a citrus syrup after baking, is documented in Italian domestic cookbooks of the nineteenth century available through the Internet Archive.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 cake (23 cm tin)",
+    "prepMinutes": 15,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 60,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the unsoaked cake. Defrost at room temperature and soak with the lemon syrup before serving.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The cake keeps wrapped at room temperature for 4 days. The crumb becomes more moist and lemon-infused the day after baking.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "snack",
+    "mood": ["weekendBake", "celebratory"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 175,
+      "bakeTemperatureNote": "fan oven, middle shelf. The almonds can burn at high heat — reduce to 165°C if the surface darkens before 35 minutes",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "round-cake-tin-23", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": true },
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "polenta-crumb",
+      "term": "Polenta crumb",
+      "definition": "The slightly coarse, grainy texture produced when polenta is used in a cake instead of flour. Polenta does not form gluten and does not soften fully during baking, leaving a pleasant grit in the crumb. Paired with ground almonds, it gives a cake that is moist and dense but with perceptible texture on the tongue."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "This cake is built from almond flour and polenta rather than wheat flour, which makes it naturally gluten-free and gives it a character quite different from a sponge: dense, moist, grainy in a good way. The lemon syrup soaks in while the cake is still warm, so the flavour intensifies as it cools. It keeps for four days and improves over the first day." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "unsalted-butter", "amount": 200, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "For the cake" },
+            { "ingredientSlug": "caster-sugar", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the cake" },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "each", "prepNote": "large", "isOptional": false, "groupLabel": "For the cake" },
+            { "ingredientSlug": "almond-flour", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the cake" },
+            { "ingredientSlug": "polenta", "amount": 100, "unit": "g", "prepNote": "fine polenta gives a softer crumb; coarse gives more texture", "isOptional": false, "groupLabel": "For the cake" },
+            { "ingredientSlug": "baking-powder", "amount": 5, "unit": "g", "prepNote": "about 1 tsp", "isOptional": false, "groupLabel": "For the cake" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the cake" },
+            { "ingredientSlug": "lemon", "amount": 3, "unit": "each", "prepNote": "zest of 3, juice of 2 for the syrup", "isOptional": false, "groupLabel": "For the cake" },
+            { "ingredientSlug": "caster-sugar", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the syrup" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make the batter" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 175°C fan. Butter and line the tin. Beat the {{unsalted-butter}} and the {{caster-sugar}} for the cake together until pale and fluffy, about 3 minutes with a hand mixer or 5 minutes by hand. Add the {{eggs}} one at a time, beating well after each. Fold in the {{almond-flour}}, {{polenta}}, {{baking-powder}}, {{sea-salt-fine}}, and the zest from all three {{lemon}}s until just combined." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 40–45 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour the batter into the tin and smooth the top. Bake for 40–45 minutes until the cake is deep golden at the edges, pulling away from the tin, and a skewer inserted into the centre comes out clean. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "polenta-crumb" } }], "text": "polenta crumb" },
+          { "type": "text", "text": " will feel slightly firmer than a flour-based cake when pressed — this is correct." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Soak with lemon syrup" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "While the cake bakes, dissolve the {{caster-sugar}} for the syrup in the juice of 2 lemons in a small saucepan over low heat. Do not let it boil — just dissolve. As soon as the cake comes out of the oven, poke 15–20 holes in the surface with a skewer and pour the warm syrup slowly over the top. Let it soak in fully before pouring more. Leave to cool completely in the tin before turning out." }]
+      }
+    ]
+  }
+}
