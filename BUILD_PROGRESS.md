@@ -31,6 +31,7 @@ Live at https://homemade.education behind splash gate (cookie `homemade-access=1
 - Categories targets + visibility (17 categories live in DB, 14 private until threshold; admin pipeline widget).
 - Self-hosted analytics, admin overhaul (dashboard / content list / preview drawer / cmd-K / RBAC unification), homepage rebuild (state-aware rails, procedural cards, editorial picks, seasonality, onboarding) + homepage polish.
 - Mobile rebuild (Capacitor native shell + cooking mode + offline + camera + push stub + App Store scaffolding).
+- Image verification sweep — 4 batches landed 2026-05-17 (64 / 537 = 11.9% coverage, 118 re-sourced). Cycle bug in `apply-media-verdicts.ts` fixed via a new `Tutorial.excludedImageSources` accumulator + 3-rejection cap → force Flux. Halted at batch 004 on QUALITY_DRIFT (29/32 rejected — all cycle-broken slugs from prior batches). 473 UNVERIFIED rows remain. See § "Image verification sweep — batches 001-004 + cycle-fix".
 
 **Open / queued**
 
@@ -910,6 +911,52 @@ Memory updates (auto-loaded for future Mindset workers):
 **Scope respected.** No paid AI API. No schema changes beyond the additive Media columns. No content authoring. No homepage / mobile / non-admin UI work. No edits to feedback memory files or page-design docs.
 
 **Out.** No recurring cron — the sweep clears the backlog once and stays clean because every new authoring run verifies its own image. No edits to upload-tutorial.ts (new Media rows default to UNVERIFIED at DB level). Hero-attribution component unchanged — verificationStatus is admin-only, not public.
+
+### Image verification sweep — batches 001-004 + cycle-fix ◎ partial 2026-05-17
+
+**Goal.** Drain the ~537 UNVERIFIED hero Media rows the pipeline wire-up left behind by walking 50-row batches: open each cached image with Claude Code's multimodal Read, decide VERIFIED / REJECTED, write a verdicts file, and run `apply-media-verdicts.ts` to commit.
+
+**Outcome.** Four batches landed (commits `a8af46d`, `caf99d7`, `bd1f253`, `c3f0dd3`). **64 hero Media rows stamped VERIFIED**, **118 stamped REJECTED + a new UNVERIFIED Media row attached** via the orchestrator's free-provider chain. 0 deploy failures, `/healthz` 200 each round. Coverage on `/admin/system/autopilot`: **11.9%** (64 / 537). Remaining queue: **473 UNVERIFIED** rows.
+
+| Batch | Commit | Verified | Re-sourced |
+|-------|--------|----------|------------|
+| 001 | `a8af46d` | 26 | 24 |
+| 002 | `caf99d7` | 18 | 32 |
+| 003 | `bd1f253` | 17 | 33 |
+| 004 | `c3f0dd3` |  3 | 29 |
+
+**Cycle-fix (`05b8a3a`).** Batches 001-003 stalled because `apply-media-verdicts.ts` built `excludeSources` from `media.source` only — the single most-recent rejected slot. After a tutorial cycled through pexels and unsplash in successive batches, the next round excluded only the latest and the orchestrator happily returned the original rejected image. 17 / 32 re-source attempts in batch 003 were byte-identical to batch 001's rejected images.
+
+Fix is two pieces:
+
+- **Schema** (`20260624000000_tutorial_excluded_image_sources`). Adds `Tutorial.excludedImageSources String[] @default([])` — a Postgres native array holding ImageSource slugs the sweep has already rejected for this tutorial across all runs. Default `[]` covers existing rows; no backfill needed.
+- **Script.** `apply-media-verdicts.ts` now reads `tutorial.excludedImageSources` before re-sourcing, pushes the just-rejected slot onto the array *before* calling `sourceHeroImage` (so a mid-run crash still records progress), and caps at 3 distinct real-photo rejections (`unsplash` / `pexels` / `wikimedia` / `pixabay`). After 3 rejections the script explicitly excludes every remaining real-photo source so the orchestrator falls straight through to `flux-schnell`. New `rejectedForcedToFlux` counter on the apply summary surfaces how many slugs hit the cap each run.
+
+Verified working in production after batch 004:
+
+    afghan-cookies               excludedImageSources=["pexels"]
+    air-fryer-cauliflower-steaks excludedImageSources=["pexels"]
+    air-fryer-courgette-fries    excludedImageSources=["pixabay"]
+    bara-brith                   excludedImageSources=["pexels"]
+    battenberg-cake              excludedImageSources=["pixabay"]
+    bourbon-biscuits             excludedImageSources=["pexels"]
+    buttermilk-fried-chicken     excludedImageSources=[]   (verified)
+    baked-vanilla-cheesecake     excludedImageSources=[]   (verified)
+
+**Halt reason — QUALITY_DRIFT.** Batch 004 verified 3 / rejected 29 (90.6%). All 32 entries were cycled slugs from batches 001-003 (afghan-cookies, air-fryer-*, apple-*, bara-brith, battenberg-cake, bourbon-biscuits, bread-*, brioche-loaf, brownie-batter-bites, bubble-and-squeak, cacio-e-pepe, caramelized-onion-bacon-and-parmesan-risotto, etc.). The rejection rate is structural — these are slugs the free stocks reliably mis-index (ingredient-shot tropes, raw-prep shots, wrong-cuisine matches, off-topic text-matches) — not a regression. None hit the 3-rejection cap yet because the column only just landed; each slug has exactly one recorded rejection going into the next sweep.
+
+**Resume scope.** Next worker (Sonnet) runs batches 005-007 to keep accumulating rejections. By batch 006-007 the worst offenders should have 3 distinct real-photo sources in `excludedImageSources` and the next pass forces them to Flux. Verified coverage is likely to plateau around 30-50% with the residue going AI-illustrated or `PROCEDURAL_CARD` depending on which path Rebecca prefers (both options analysed in `docs/image-verification-sweep-2026-05-17-cycle-fix.md`).
+
+**Files landed.**
+
+- `packages/db/prisma/schema.prisma` — `Tutorial.excludedImageSources`.
+- `packages/db/prisma/migrations/20260624000000_tutorial_excluded_image_sources/migration.sql`.
+- `packages/db/scripts/apply-media-verdicts.ts` — accumulator + 3-rejection cap + `rejectedForcedToFlux` counter.
+- `docs/image-verification-sweep-2026-05-17.md` (batches 001-003 report, prior worker).
+- `docs/image-verification-sweep-2026-05-17-cycle-fix.md` (cycle-fix + batch 004 report, this session).
+- `docs/image-verification-queue.json` / `image-verification-verdicts.json` / `image-verification-apply-2026-05-17.json` — batch 004 manifest, verdicts and apply summary.
+
+**Scope respected.** No paid AI API (verification still runs inside the Claude Code session via multimodal Read). No changes to the orchestrator. No changes to authoring rubric. No new image sources. No autopilot SKILL.md touches.
 
 ### Autopilot — Baking bulk-002 ✅ landed 2026-05-17
 
