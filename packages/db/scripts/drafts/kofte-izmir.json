@@ -1,0 +1,170 @@
+{
+  "slug": "kofte-izmir",
+  "title": "İzmir köfte",
+  "subtitle": "Turkish meatballs simmered in a tomato and pepper sauce.",
+  "excerpt": "İzmir köfte are the classic Turkish braised meatball — browned lamb-and-beef patties simmered in a thick tomato sauce with potato slices and green peppers. The meatballs finish cooking in the sauce and absorb it, becoming deeply savoury. The dish is straightforward to make and reheats very well.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Named for the Aegean city of İzmir. A standard Turkish home-cooking dish, widely documented in Turkish culinary literature throughout the twentieth century. The combination of köfte, tomato, potato, and green pepper in a single baked or simmered dish is the defining preparation.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the finished dish for up to three months. Defrost overnight in the fridge and reheat gently in a covered pan with a splash of water.",
+    "batchable": true,
+    "batchNotes": "Doubles well in a wide sauté pan or shallow casserole dish.",
+    "makeAheadNotes": "Shape the köfte and refrigerate for up to 24 hours before browning. The finished dish keeps in the fridge for three days and reheats well.",
+    "dietaryFlags": [],
+    "cuisine": "middleEastern",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood", "hearty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "saute-pan", "isOptional": false, "notes": "Wide, heavy-based pan with a lid. The meatballs brown and the dish simmers in the same pan." },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "İzmir köfte is the braised meatball of Turkish home cooking. Unlike the pan-fried versions eaten at room temperature on a mezze table, these köfte are browned and then finished in a thick tomato sauce alongside potato slices and green peppers. By the time the dish is ready, the meatballs have absorbed the sauce and everything in the pan has softened together into something deeply savoury." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The meatball mix is simple: lamb and beef mince, grated onion, a little bread as a binder, and a modest spice mix of cumin and allspice. Some versions include a grating of nutmeg or a pinch of cinnamon; neither is wrong. Shape them into oval patties roughly the size of a cork — flatter than a round meatball, which allows them to brown in less time and nestle flat in the sauce." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The sauce is straightforward: softened onion, tomato purée, tinned tomatoes, and a little water. The potato slices go in part-cooked (or raw if thinly sliced) and finish in the sauce. The dish is done when the potatoes are tender and the sauce has reduced to coat the meatballs. Serve with bread or rice to catch the sauce." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-mince", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Köfte" },
+            { "ingredientSlug": "beef-mince", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Köfte" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "half finely grated for the mince, half sliced for the sauce", "isOptional": false, "groupLabel": "Köfte" },
+            { "ingredientSlug": "bread", "amount": 1, "unit": "slice", "prepNote": "soaked in water, squeezed dry", "isOptional": false, "groupLabel": "Köfte" },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Köfte" },
+            { "ingredientSlug": "allspice", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Köfte" },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "potato", "amount": 3, "unit": "each", "prepNote": "peeled, cut into 1 cm slices", "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "chilli-green", "amount": 2, "unit": "each", "prepNote": "mild, split lengthways", "isOptional": true, "groupLabel": "Sauce" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape the köfte" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine {{lamb-mince}} of lamb mince, {{beef-mince}} of beef mince, the grated half of the onion, the squeezed bread, cumin, and allspice in a bowl with a generous pinch of salt and black pepper. Mix thoroughly with your hands. Shape into twelve oval patties, each about 6 cm long, pressing them flat." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the köfte" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat {{olive-oil}} of olive oil in a wide, heavy pan over medium-high heat. Working in batches, brown the köfte for two minutes on each side until a dark crust forms. Transfer to a plate. Pour off all but one tablespoon of the oil from the pan." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add the sliced half of the onion to the pan and cook over medium heat for five minutes until softened. Stir in {{tomato-puree}} of tomato purée and cook for one minute. Add {{tinned-tomatoes}} of tinned tomatoes and 150 ml of water. Season with salt and bring to a simmer." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Simmer with the potatoes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Nestle the browned köfte into the sauce. Tuck the {{potato}} potato slices and split green chillies around and between them. The sauce should come about halfway up the köfte; add a little more water if needed. Cover and simmer over low heat for twenty minutes until the potatoes are tender and the sauce has thickened. Taste and adjust salt." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The köfte break apart when browning",
+              "cause": "The mix was not worked enough, or too little bread binder.",
+              "fix": "Knead the meat mixture for two full minutes before shaping. Add another slice of soaked bread if the mix feels loose."
+            },
+            {
+              "symptom": "The potatoes are still firm when the sauce is done",
+              "cause": "The slices were too thick, or the pan temperature too low.",
+              "fix": "Slice potatoes to 1 cm maximum. Add another 100 ml of water, cover tightly, and cook for a further ten minutes."
+            },
+            {
+              "symptom": "Sauce is too liquid",
+              "cause": "Simmered with the lid on for too long.",
+              "fix": "Remove the lid for the final five minutes of cooking to reduce the sauce."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "İzmir köfte carries the name of Turkey's third-largest city on the Aegean coast, though variations of the dish appear across the country under different names. The braised meatball with potatoes and tomato is everyday Turkish home cooking at its most practical: a single-pan dish that takes forty minutes, reheats perfectly, and feeds a family from a small quantity of mince. It is the Turkish equivalent of the Italian polpette al sugo or the Greek soutzoukakia." }
+        ]
+      }
+    ]
+  }
+}

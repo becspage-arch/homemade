@@ -1,0 +1,176 @@
+{
+  "slug": "moussaka",
+  "title": "Moussaka",
+  "subtitle": "Greek layered dish of aubergine, spiced lamb mince, and béchamel.",
+  "excerpt": "Moussaka is the Greek layered bake: fried aubergine slices, a spiced lamb and tomato sauce, and a thick béchamel poured over the top and baked until golden. Each component is straightforward; the dish takes time because each layer is cooked separately before assembling. Make it the day before — it cuts and reheats better cold.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Moussaka in its current layered form with béchamel is associated with the Greek chef Nikolaos Tselementes, who codified a version using French béchamel in the 1930s. The underlying combination of aubergine and spiced meat is much older, appearing across the Ottoman culinary tradition. The béchamel-topped version became the canonical Greek restaurant and home-cooking standard throughout the twentieth century.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 90,
+    "restingMinutes": 20,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze before the final bake, well wrapped, for up to three months. Defrost overnight in the fridge and bake from cold for fifty-five minutes at 180°C.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the full dish the day before, cool, and refrigerate. Reheat portions in a 180°C oven for twenty minutes. Moussaka cuts more cleanly when cold.",
+    "dietaryFlags": [],
+    "cuisine": "greek",
+    "mealType": "dinner",
+    "mood": ["weekend", "comfortFood", "dateNight"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "Conventional oven. Fan 160°C, gas mark 4.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "rectangular-baking-tin", "isOptional": false, "notes": "A deep 30 × 20 cm tin or dish. The moussaka needs depth for three layers." },
+    { "slug": "saute-pan", "isOptional": false, "notes": "For the lamb sauce." },
+    { "slug": "saucepan-medium", "isOptional": false, "notes": "For the béchamel." },
+    { "slug": "frying-pan-30", "isOptional": false, "notes": "For frying the aubergine slices. Or use a griddle pan." },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Moussaka is a dish of components. The aubergine is fried separately. The lamb sauce is cooked down with wine and tomato. The béchamel is made last and poured over everything before the dish goes into the oven. None of the steps is difficult; the dish takes time because each layer needs to be ready before the next can start. Plan for two hours from kitchen to table, though most of that is unattended cooking." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The aubergines need salting and drying before frying. Skipping this step produces a sodden base that makes the finished moussaka watery. Salt the slices, leave them for twenty minutes, and dry thoroughly with kitchen paper before they go into the pan. They should be deeply golden at the edges before they are set aside." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The béchamel for moussaka is thicker than a standard white sauce — it needs to hold its shape when cut. The egg yolks stirred in at the end help set it in the oven and give the top its characteristic golden colour. Let the finished moussaka rest for twenty minutes before cutting, or the layers will slide." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "aubergine", "amount": 2, "unit": "each", "prepNote": "large, cut into 1 cm rounds", "isOptional": false, "groupLabel": "Aubergine layer" },
+            { "ingredientSlug": "olive-oil", "amount": 4, "unit": "tbsp", "prepNote": "for frying", "isOptional": false, "groupLabel": "Aubergine layer" },
+            { "ingredientSlug": "lamb-mince", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Lamb sauce" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Lamb sauce" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Lamb sauce" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Lamb sauce" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Lamb sauce" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Lamb sauce" },
+            { "ingredientSlug": "allspice", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Lamb sauce" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Béchamel" },
+            { "ingredientSlug": "plain-flour", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Béchamel" },
+            { "ingredientSlug": "whole-milk", "amount": 600, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": "Béchamel" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "yolks only", "isOptional": false, "groupLabel": "Béchamel" },
+            { "ingredientSlug": "parmesan", "amount": 40, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": "Béchamel" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Salt and fry the aubergines" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Arrange the {{aubergine}} aubergine slices in a single layer on a board and sprinkle both sides with salt. Leave for twenty minutes. Pat very dry with kitchen paper. Heat {{olive-oil}} of olive oil in a wide frying pan over medium-high heat. Working in batches, fry the aubergine slices for three to four minutes on each side until deeply golden. Transfer to a plate lined with kitchen paper. Add more oil between batches as needed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the lamb sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In a separate pan, cook the {{onion}} onion in a little olive oil over medium heat for seven minutes until soft. Add the {{garlic}} garlic and cook for one minute. Increase the heat, add {{lamb-mince}} of lamb mince, and cook for eight minutes, breaking up the meat, until well browned. Stir in {{tomato-puree}} of tomato purée, then add {{tinned-tomatoes}} of tinned tomatoes, the cinnamon, and allspice. Season with salt and pepper. Simmer uncovered for twenty minutes until thick. Taste and adjust seasoning." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the béchamel" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a medium saucepan over medium heat. Add {{plain-flour}} of flour and stir constantly for two minutes. Remove from the heat and gradually whisk in the warm {{whole-milk}}, a ladleful at a time, whisking until smooth between each addition. Return to medium heat and cook, stirring, for eight minutes until thick enough to coat the back of a spoon heavily. Remove from the heat and season with salt and white pepper. Stir in the egg yolks and most of the parmesan, reserving a little for the top." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 180°C. Arrange half the fried aubergine in a single layer across the base of a deep baking dish. Spoon all the lamb sauce over in an even layer. Arrange the remaining aubergine over the meat. Pour the béchamel over the top and smooth it flat. Scatter the reserved parmesan over. Bake for forty minutes until the top is golden and set. Remove from the oven and rest for twenty minutes before cutting." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The moussaka is watery when cut",
+              "cause": "The aubergines were not dried and salted properly, or the lamb sauce was not reduced enough.",
+              "fix": "Salt and dry the aubergines thoroughly before frying. Reduce the lamb sauce until no liquid pools — it should look like a thick ragu. Rest the cooked moussaka for at least twenty minutes before cutting."
+            },
+            {
+              "symptom": "The béchamel has lumps",
+              "cause": "The milk was added too quickly before the roux was smooth.",
+              "fix": "Add the milk off the heat in small amounts, whisking until smooth each time before adding more. If lumps persist, push through a sieve before pouring."
+            },
+            {
+              "symptom": "The layers slide when serving",
+              "cause": "Not rested long enough after baking.",
+              "fix": "Rest for a full twenty minutes — or make the day before and refrigerate. Cold moussaka cuts cleanly and reheats well in portions."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Moussaka in its current form with béchamel is a twentieth-century creation, though it draws on a much older tradition of layered aubergine and meat dishes across the eastern Mediterranean. The Greek chef Nikolaos Tselementes is widely credited with introducing the béchamel top in the 1930s, codifying what had been a looser tradition into a formal recipe that then became the standard. The dish is now so associated with Greek cooking internationally that it appears on every Greek restaurant menu in the UK, and yet in Greece itself it is first and foremost a home-cooking dish — made on Sundays, portioned generously, and eaten the next day just as often as fresh." }
+        ]
+      }
+    ]
+  }
+}

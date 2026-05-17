@@ -1069,6 +1069,23 @@ Verified working in production after batch 004:
 
 **Out.** No schema changes; no admin/UI work.
 
+### Cooking bulk-012 ✅ landed 2026-05-17
+
+**Goal.** Parallel-burner loop session targeting under-represented v1 cuisines: middleEastern, northAfrican, greek, spanish, easternEuropean.
+
+**Outcome.** 15 recipes PUBLISHED. Cooking 527 → 542.
+
+- **Cuisine split:** middleEastern 5 (hummus, cacık, shish taouk, İzmir köfte, İmam bayıldı), northAfrican 4 (kefta tagine, lamb tagine with prunes and almonds, chicken tagine with preserved lemon and olives, couscous with chicken and chickpeas), greek 2 (keftedes, moussaka), spanish 1 (pollo al ajillo), easternEuropean 3 (pierogi ruskie, pierogi z mięsem, chicken Kiev).
+- **Difficulty:** 12 BEGINNER / 3 INTERMEDIATE (moussaka, pierogi ruskie, pierogi z mięsem, chicken Kiev).
+- **Voice-check:** 7 of 15 clean on first pass. 8 needed fixes (em-dash pairs × 6, banned phrase "genuinely" × 2, Americanism "fall apart" × 3, servings-yield conflict × 2). All cleared on first retry.
+- **Slug corrections:** `coriander-fresh` → `coriander`, `sour-cream` → `soured-cream`, `mushrooms` → `mushrooms-porcini-dried`, `breadcrumbs` → `breadcrumbs-dried`, `milk` → `whole-milk`, `butter` → `unsalted-butter`, `baking-dish` → `rectangular-baking-tin`, `whisk` → `whisk-balloon`.
+- **New glossary terms:** allspice, ajillo (2 new).
+- **Note:** `preserved-lemon` has no ingredient slug. Tagine-of-chicken recipe references preserved lemon as plain text (not a scaling token) with a prose note on sourcing. Flag for ingredient-seed session.
+
+**Report.** `docs/bulk-batch-012-report.md`.
+
+**Out.** No schema changes; no admin/UI work.
+
 ### Autopilot — Mindset bulk-002 ✅ landed (same-session recovery) 2026-05-17
 
 **Goal.** Second mindset autopilot fire (first since bulk-001 recovered). Small slice sized for the Opus-model concession (the scheduled-tasks runner is still firing Opus despite the `model: claude-sonnet-4-5` frontmatter — same self-identification pattern as cooking bulk-009).
@@ -1404,7 +1421,7 @@ Revise the rates here when actuals diverge from estimates.
 
 | # | Category | Target | Current | Pipeline | Fill weeks @ 1k/wk |
 |---|---|---:|---:|---|---:|
-| 1 | Cooking | 7,000 | 527 PUBLISHED (anchors + pilot-10 + personal-recipe ingest + bulks 001-011 across cuisines, methods, soups/salads/breakfasts/drinks/preserves/desserts). **bulk-011 (loop continuation, 2026-05-17):** 15 recipes PUBLISHED — Italian (5: pasta + risotto), French (4: boeuf bourguignon, coq au vin, moules marinières, ratatouille), British-Indian (3: korma, tarka dhal, chana masala), British (3: cottage pie, shepherd's pie, fish and chips). 3 CREATED, 12 content refreshes. DB count post-batch: 527. | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
+| 1 | Cooking | 7,000 | 542 PUBLISHED (anchors + pilot-10 + personal-recipe ingest + bulks 001-012 across cuisines, methods, soups/salads/breakfasts/drinks/preserves/desserts). **bulk-012 (parallel-burner loop, 2026-05-17):** 15 recipes PUBLISHED — middleEastern (5: hummus, cacık, shish taouk, İzmir köfte, İmam bayıldı), northAfrican (4: kefta tagine, lamb tagine with prunes and almonds, chicken tagine with preserved lemon and olives, couscous with chicken and chickpeas), greek (2: keftedes, moussaka), spanish (1: pollo al ajillo), easternEuropean (3: pierogi ruskie, pierogi z mięsem, chicken Kiev). All 15 BEGINNER/INTERMEDIATE, all voice-check clean. DB count post-batch: 542. | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
 | 2 | Baking | 3,000 | 208 PUBLISHED (10 pilot + 50 bulk-001 + 50 bulk-002 + 49 bulk-003 + 49 bulk-004, 2026-05-17) + 4 DRAFT anchor | ✅ schema + taxonomy + authoring prompt v2 + anti-tells + pilot-10 + bulk-001 + bulk-002 + bulk-003 + bulk-004 all landed. **bulk-004 (parallel-burner loop, 2026-05-17):** 49 PUBLISHED — cake-decorating (13) + sweets-confectionery (11) + pies (8) + pastries (8) + bread (5) + cakes (4). 18 BEGINNER / 30 INTERMEDIATE / 1 ADVANCED. 17 voice-check failures on run 1 (all em-dash pairs in excerpt/sourceNotes/body, plus 1 banned word "genuinely") fixed and re-uploaded cleanly. Notable: em-dash pair spanning glossaryTooltip text-node boundary (italian-meringue-frosting). Report: `docs/baking-bulk-004-report.md`. Cumulative sub-category fill: bread 39, cakes 37, pies 27, pastries 28, biscuits 23, scones 15, sweets-confectionery 24, cake-decorating 18. Four anchor DRAFTs pending Rebecca review. Baking-specific TipTap blocks (baker's percentages, lamination schedule, sugar-stage panel) still ahead. | 3 |
 | 3 | Garden | 4,000 | 0 | Not started — ~1 wk setup | 4 |
 | 4 | Herbal medicine | 2,500 | 0 | Not started — ~1 wk setup | 2.5 |
@@ -1421,7 +1438,7 @@ Revise the rates here when actuals diverge from estimates.
 | 15 | Home & repair | 800 | 0 | Not started — ~1 wk setup | 0.8 |
 | 16 | Natural home | 800 | 0 | Not started — ~1 wk setup | 0.8 |
 | 17 | Sustainability | 700 | 0 | Not started — ~1 wk setup | 0.7 |
-| | **Total** | **31,700** | **647** | ~16 wks setup outstanding (new categories) + ~3 wks Cooking sub-extensions | ~32 weeks fill |
+| | **Total** | **31,700** | **662** | ~16 wks setup outstanding (new categories) + ~3 wks Cooking sub-extensions | ~32 weeks fill |
 
 #### Sub-categories per top-level
 
