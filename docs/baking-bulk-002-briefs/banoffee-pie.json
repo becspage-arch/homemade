@@ -1,0 +1,94 @@
+{
+  "slug": "banoffee-pie",
+  "title": "Banoffee pie",
+  "subtitle": "Banana, toffee and cream on a digestive base",
+  "excerpt": "The British 1970s classic: a digestive-biscuit base, a thick layer of dulce de leche, sliced banana, and whipped cream on top. No-bake after the biscuit base sets, and ready to serve in under an hour.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Banoffee was invented at the Hungry Monk restaurant in Jevington, East Sussex, in the early 1970s. The form is recent and not in the public domain. The base technique (digestive biscuit and butter, pressed and set) is documented in pre-1928 British household manuals for cheesecake bases. The recipe synthesises the modern form with the older biscuit-base method.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "totalMinutes": 95,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": "The bananas turn brown and the cream weeps; this is a same-day pie.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the base the day before; assemble within 2 hours of serving.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": ["comfortFood", "kidFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 0,
+      "bakeTemperatureCelsius": 160,
+      "bakeTemperatureNote": "fan oven — for the biscuit base only",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "tart-tin", "isOptional": false, "notes": "23 cm loose-bottomed." },
+    { "slug": "food-processor", "isOptional": true, "notes": "Or crush biscuits with a rolling pin." },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Banoffee pie has four parts and four layers: a digestive-biscuit base, a thick layer of dulce de leche (or boiled-condensed-milk caramel), sliced banana, and softly whipped cream. The base is baked briefly to set; the rest of the pie is assembled cold and chilled. There is no skill in it beyond patience between layers." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Ready-made dulce de leche is widely sold; if you want to make it yourself, simmer an unopened tin of condensed milk in water for 3 hours. Never let the pan boil dry — the tin will rupture." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "digestive-biscuit", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the base" },
+            { "ingredientSlug": "unsalted-butter", "amount": 120, "unit": "g", "prepNote": "melted", "isOptional": false, "groupLabel": "For the base" },
+            { "ingredientSlug": "dulce-de-leche", "amount": 400, "unit": "g", "prepNote": "one tin", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "banana", "amount": 4, "unit": "each", "prepNote": "medium, ripe but firm; sliced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "double-cream", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the top" },
+            { "ingredientSlug": "icing-sugar", "amount": 25, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the top" },
+            { "ingredientSlug": "dark-chocolate", "amount": 25, "unit": "g", "prepNote": "for grating over", "isOptional": false, "groupLabel": "For the top" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Biscuit base, set" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 160°C fan. Blitz the {{digestive-biscuit}} to fine crumbs. Mix with the melted {{unsalted-butter}}. Press evenly into the base and 2 cm up the sides of a 23 cm tart tin. Bake for 10 minutes to set. Cool fully." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Caramel and banana layers" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Spread the {{dulce-de-leche}} evenly over the cooled base; the layer should be 5 mm thick. Slice the {{banana}} into 5 mm rounds and arrange in a single layer over the caramel." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Whipped cream top, chill" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whip the {{double-cream}} with the {{icing-sugar}} to soft peaks. Spoon over the bananas in soft swirls; do not flatten. Grate the {{dark-chocolate}} over the cream. Chill for at least an hour before slicing." }]
+      }
+    ]
+  }
+}

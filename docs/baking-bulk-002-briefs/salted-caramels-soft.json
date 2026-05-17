@@ -1,0 +1,110 @@
+{
+  "slug": "salted-caramels-soft",
+  "title": "Soft salted caramels",
+  "subtitle": "Cream-and-butter caramels at soft-ball stage",
+  "excerpt": "Soft, chewy salted caramels made by boiling sugar to soft-ball stage with cream and butter, then setting in a tin and cutting into squares. Sixty caramels from one batch.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "sweets-confectionery",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: documents the cream-and-butter caramel in the confectionery chapter. F. Marian McNeill, The Scots Kitchen (1929): documents the closely-related Scottish tablet form. The use of flaked salt as a finish is modern but the soft-ball stage and cream-and-butter ratio are pre-1928 standards.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "60 caramels (20×20 cm tin, cut 6×10)",
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 240,
+    "chillingMinutes": 0,
+    "totalMinutes": 280,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Wrap each caramel in baking paper; freeze in a sealed box for up to 3 months.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make and set in the tin a day ahead; cut and wrap on the day of giving.",
+    "dietaryFlags": ["vegetarian", "glutenFree"],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["festive", "specialOccasion"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "bakeTemperatureCelsius": 118,
+      "bakeTemperatureNote": "soft-ball stage, 118°C target sugar temperature",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false, "notes": "Tall and heavy — the cream foams up when added." },
+    { "slug": "sugar-thermometer", "isOptional": false },
+    { "slug": "square-cake-tin", "isOptional": false, "notes": "20 cm square, lined with baking paper." },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "soft-ball-stage",
+      "term": "Soft-ball stage",
+      "definition": "The sugar-cooking stage at 115–118°C where the syrup, dropped into ice water, forms a soft pliable ball that flattens between the fingers. Soft-ball gives chewy caramels and the fondant family of confections. Firm-ball (120°C) gives marshmallow; hard-ball (127°C) gives nougat. The exact temperature affects the final texture; a 2°C overshoot turns soft caramels firm and chewy into hard."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Soft salted caramels are a two-step boil: sugar and golden syrup are first cooked with a little water to a deep amber colour; warm cream and butter are then stirred in, and the whole mixture is cooked to soft-ball stage (118°C). The cooled slab cuts cleanly into 60 squares; a finish of flaked sea salt sits on each one." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The pan needs to be tall — the cream foams up dramatically when it hits the hot sugar. Use a saucepan at least three times the volume of the ingredients to be safe." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Hot syrup is dangerous",
+          "body": "The syrup reaches 118°C. If hot syrup touches skin, run cold water over it for at least ten minutes and seek medical care if needed."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 60,
+          "items": [
+            { "ingredientSlug": "caster-sugar", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "golden-syrup", "amount": 150, "unit": "g", "prepNote": "5 tablespoons", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 250, "unit": "ml", "prepNote": "warm but not hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 75, "unit": "g", "prepNote": "cubed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vanilla-extract", "amount": 10, "unit": "ml", "prepNote": "2 teaspoons", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 5, "unit": "g", "prepNote": "1 teaspoon, plus extra for the top", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Caramelise the sugar" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Line a 20 cm square tin with baking paper. Combine the {{caster-sugar}}, {{golden-syrup}} and {{water}} in a tall, heavy saucepan over a low heat. Stir until the sugar dissolves. Stop stirring. Bring to a boil and cook until the syrup turns a deep amber and reads about 165°C on the thermometer — about 10 minutes." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [
+        { "type": "text", "text": "Cream in, cook to " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "soft-ball-stage" } }], "text": "soft ball, 118°C" }
+      ] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Take the pan off the heat. Pour in the warm {{double-cream}} slowly, with a wooden spoon already in the pan: the mixture will foam dramatically. Whisk in the {{unsalted-butter}} cubes, the {{vanilla-extract}} and the first {{sea-salt-flakes}}. Return to a medium heat and cook, stirring occasionally with a wooden spoon, until the thermometer reads 118°C; about 15 minutes. Pour into the lined tin and leave to set at cool room temperature for 4 hours." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Cut, salt, wrap" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Lift the slab out of the tin. Cut into 60 squares (6 across, 10 down) with an oiled knife. Sprinkle the cut tops with the remaining {{sea-salt-flakes}}. Wrap each caramel in a small square of baking paper or cellophane. Store in an airtight tin." }]
+      }
+    ]
+  }
+}

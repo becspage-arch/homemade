@@ -1,0 +1,114 @@
+{
+  "slug": "millionaires-shortbread",
+  "title": "Millionaire's shortbread",
+  "subtitle": "Shortbread base, caramel layer, chocolate top",
+  "excerpt": "The three-layer slice: a shortbread base baked golden, a thick caramel of butter and condensed milk poured over and set, and a dark chocolate top scored into squares. Forty pieces from one 20 cm square tin.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "biscuits",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "F. Marian McNeill, The Scots Kitchen (1929): the millionaire's shortbread (originally 'caramel shortbread') is documented as a Scottish tea-table standard. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: the caramel-with-condensed-milk method appears in the sweets chapter. USDA dairy bulletin (1920s, public domain): documents the use of sweetened condensed milk in caramel-making as the household standard.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "20 squares (20 cm square tin)",
+    "prepMinutes": 25,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 90,
+    "totalMinutes": 145,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Cut, freeze in a box layered with baking paper; defrost at room temperature for 2 hours.",
+    "batchable": true,
+    "batchNotes": "Doubles into a larger tin or two square tins.",
+    "makeAheadNotes": "Make a day ahead — the caramel sets firmer overnight and the slices cut more cleanly.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["weekendBake", "kidFriendly", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "bakeTemperatureCelsius": 160,
+      "bakeTemperatureNote": "fan oven, middle shelf",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "square-cake-tin", "isOptional": false, "notes": "20 cm square, lined with baking paper with overhang." },
+    { "slug": "medium-saucepan", "isOptional": false, "notes": "For the caramel." },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "metal-bowl", "isOptional": false, "notes": "For melting the chocolate over simmering water." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "condensed-milk-caramel",
+      "term": "Condensed-milk caramel",
+      "definition": "A British shortcut for caramel that uses tinned sweetened condensed milk in place of slowly cooked sugar. Butter, sugar and condensed milk are heated together in a heavy pan, stirred constantly, until the mixture thickens, darkens to a deep amber-tan, and pulls away from the sides of the pan. The condensed milk's milk solids brown alongside the sugar; the result sets firm at room temperature and slices cleanly."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Millionaire's shortbread is three layers built one on top of the other in the same tin: a baked shortbread base, a poured-over caramel that sets firm, and a chocolate top scored into squares before cutting. The trick is patience between layers — the shortbread must cool completely before the caramel goes on; the caramel must set firm before the chocolate; and the chocolate must score-and-then-cool before the slice is portioned." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Worth making a day ahead; the caramel firms up overnight and the cut edges stay clean rather than tearing." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Caramel is hot",
+          "body": "The caramel reaches around 110°C as it thickens. If hot caramel touches skin, run cold water over it for at least ten minutes and seek medical care if needed."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 20,
+          "items": [
+            { "ingredientSlug": "unsalted-butter", "amount": 150, "unit": "g", "prepNote": "softened, for the shortbread base", "isOptional": false, "groupLabel": "For the shortbread base" },
+            { "ingredientSlug": "caster-sugar", "amount": 75, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the shortbread base" },
+            { "ingredientSlug": "plain-flour", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the shortbread base" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 2, "unit": "g", "prepNote": "a pinch", "isOptional": false, "groupLabel": "For the shortbread base" },
+            { "ingredientSlug": "unsalted-butter", "amount": 150, "unit": "g", "prepNote": "for the caramel", "isOptional": false, "groupLabel": "For the caramel" },
+            { "ingredientSlug": "soft-brown-sugar", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the caramel" },
+            { "ingredientSlug": "golden-syrup", "amount": 100, "unit": "g", "prepNote": "3 tablespoons", "isOptional": false, "groupLabel": "For the caramel" },
+            { "ingredientSlug": "condensed-milk", "amount": 397, "unit": "g", "prepNote": "one standard tin", "isOptional": false, "groupLabel": "For the caramel" },
+            { "ingredientSlug": "dark-chocolate", "amount": 200, "unit": "g", "prepNote": "70% cocoa, broken into pieces", "isOptional": false, "groupLabel": "For the chocolate top" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Shortbread base" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 160°C fan. Line a 20 cm square tin with baking paper, leaving overhang on two sides. Beat the {{unsalted-butter}} and {{caster-sugar}} until pale and creamed. Sift in the {{plain-flour}} and {{sea-salt-fine}} and bring together to a soft dough. Press evenly into the tin. Prick all over with a fork. Bake for 20 minutes; the base should be pale gold all over. Cool completely in the tin before moving on." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Caramel layer" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Put the second portion of {{unsalted-butter}}, the {{soft-brown-sugar}}, the {{golden-syrup}} and the {{condensed-milk}} into a heavy saucepan over a low heat. Stir constantly with a wooden spoon. As the mixture comes together, increase the heat to medium-low and continue stirring (the caramel will burn on the base of the pan if you stop). Cook for about 8–10 minutes; the caramel should darken from cream to a deep amber-tan and feel thicker on the spoon. This is the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "condensed-milk-caramel" } }], "text": "condensed-milk caramel" },
+          { "type": "text", "text": " stage. Pour the hot caramel over the cooled shortbread base, level with a palette knife, and cool to room temperature; then chill in the fridge until firm, about 45 minutes." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Chocolate top, score, cut" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Melt the {{dark-chocolate}} in a heatproof bowl over barely simmering water. Pour over the firm caramel, tilt the tin to level, and leave at cool room temperature until the chocolate is almost set but still a little soft on top (about 15 minutes). Score the chocolate into a 4×5 grid with a long sharp knife pressed lightly into the surface. Once the chocolate is fully set, lift the slab out of the tin using the paper overhang, and cut along the score lines for twenty clean squares." }]
+      }
+    ]
+  }
+}

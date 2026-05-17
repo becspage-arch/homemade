@@ -1,0 +1,111 @@
+{
+  "slug": "choux-pastry-base",
+  "title": "Choux pastry, the base recipe",
+  "subtitle": "The foundational paste for éclairs, profiteroles, gougères",
+  "excerpt": "The foundational French choux pastry: water, butter and salt brought to the boil; flour stirred in to a tight paste; eggs beaten in to a glossy pipeable dough. Bakes into hollow puffs ready for any sweet or savoury filling. Makes 24 puffs or 12 éclairs.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Marie-Antoine Carême (1833) and Urbain Dubois, La Cuisine Classique (1856): document the classical French pâte à choux method. Pellaprat, L'Art Culinaire Moderne (pre-1928, public domain): documents the household pipeable form. Eliza Acton, Modern Cookery for Private Families (1845): documents the British adoption.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "24 small puffs or 12 éclairs",
+    "prepMinutes": 25,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 55,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Bake the empty shells, cool, freeze in a sealed box; refresh in a 160°C oven for 5 minutes before filling.",
+    "batchable": true,
+    "batchNotes": "Doubles to 48 puffs or 24 éclairs across two trays.",
+    "makeAheadNotes": "Bake the shells on the day; the unfilled shells keep crisp in an airtight box for a day.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true,
+    "baking": {
+      "flourWeightGrams": 125,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven, middle shelf — drops to 170°C for the last 10 minutes",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true, "notes": "Or beat the eggs in by hand." },
+    { "slug": "piping-bag", "isOptional": false },
+    { "slug": "piping-tips", "isOptional": false, "notes": "A round 12 mm for puffs, a star or round 12 mm for éclairs." },
+    { "slug": "baking-tray", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cook-out-the-flour",
+      "term": "Cook out the flour",
+      "definition": "The first stage of choux pastry: flour is added to boiling butter-and-water and beaten with a wooden spoon over a low heat until the paste pulls cleanly from the sides of the pan and forms a smooth ball, with a thin film of starch on the base of the pan. This cooks the flour out — gelatinising the starch so it can absorb the eggs that come next. Skip this stage and the dough is gritty; overcook it and the dough dries out."
+    },
+    {
+      "slug": "choux-egg-test",
+      "term": "Choux egg test",
+      "definition": "The cue for when enough egg has been beaten into a choux paste: lift the spoon out of the bowl. The dough should drop in a slow ribbon and the ribbon should hold a 'V' shape briefly before settling. Too stiff (no V) and the eggs are not all in; too soft (no shape at all) and you have gone too far. Add the egg gradually — the last egg goes in by the tablespoon."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Choux pastry is one of the four foundational French pastries (alongside shortcrust, puff and brioche). The method runs in three stages: bring water, butter and salt to the boil; add the flour and cook it out over a low heat until the paste leaves the pan clean; beat in the eggs one at a time until the paste flows in a slow ribbon. Pipe and bake immediately." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Both the cook-out stage and the egg-test stage matter. Underdone, the dough collapses in the oven; overdone, it bakes solid rather than hollow." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 24,
+          "items": [
+            { "ingredientSlug": "water", "amount": 125, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 125, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 110, "unit": "g", "prepNote": "cubed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 5, "unit": "g", "prepNote": "1 teaspoon", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": "½ teaspoon", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 125, "unit": "g", "prepNote": "sifted", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "each", "prepNote": "large, beaten in a jug; use to the egg-test cue (you may not need all four)", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Boil, " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cook-out-the-flour" } }], "text": "cook out the flour" }
+      ] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 200°C fan and line two baking trays. Combine the {{water}}, {{whole-milk}}, {{unsalted-butter}}, {{caster-sugar}} and {{sea-salt-fine}} in a saucepan. Bring to a rolling boil. Take off the heat. Tip the sifted {{plain-flour}} in all at once and beat hard with a wooden spoon to a smooth paste. Return to a low heat and beat for 2 minutes; the paste should pull cleanly from the sides of the pan and form a smooth ball, with a thin starch film on the base." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Beat in the eggs to the " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "choux-egg-test" } }], "text": "egg-test" }
+      ] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Tip the paste into a stand-mixer bowl (or a wide mixing bowl). Beat on medium for 2 minutes to cool. Add the beaten {{eggs}} a quarter at a time, beating until each addition is fully incorporated before adding the next. After the third egg, check the texture: when the paste flows in a slow ribbon and holds a brief V on the spoon, you have the right consistency. You may not need the fourth egg; add the last by the tablespoon." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Pipe, bake" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Fill a piping bag fitted with a 12 mm round tip. Pipe 24 walnut-sized puffs (or 12 éclairs, 10 cm long) onto the lined trays, leaving 4 cm between each. Wet a finger and press down any peaks so they do not burn. Bake at 200°C fan for 20 minutes, then drop to 170°C and bake another 10 minutes. The puffs should be deep gold, light when lifted, and feel firm. Pierce each with a skewer to release steam. Cool fully before filling." }]
+      }
+    ]
+  }
+}

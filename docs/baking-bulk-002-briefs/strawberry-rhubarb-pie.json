@@ -1,0 +1,111 @@
+{
+  "slug": "strawberry-rhubarb-pie",
+  "title": "Strawberry-rhubarb pie",
+  "subtitle": "Sweet strawberries cut by sharp rhubarb under a lattice",
+  "excerpt": "An early-summer pie of strawberries and forced rhubarb thickened with cornflour and lemon. A lattice top lets the moisture escape and shows the deep red of the fruit beneath. One 23 cm pie, serving eight.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: documents the British rhubarb pie tradition in the spring-and-summer fruit chapter. Fannie Farmer, The Boston Cooking-School Cook Book (1896), Project Gutenberg: documents the American strawberry-rhubarb combination as a late-spring household standard. New England household manuals (pre-1928, public domain): the lattice-top technique.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 45,
+    "cookMinutes": 55,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "totalMinutes": 160,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": "Strawberries weep on defrost; this pie is best fresh.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the pastry up to 2 days ahead.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dessert",
+    "mood": ["summer", "weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 400,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven — drops to 180°C after 20 minutes",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false, "notes": "23 cm." },
+    { "slug": "ruler", "isOptional": true, "notes": "For even lattice strips." },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "lattice-weave",
+      "term": "Lattice weave",
+      "definition": "A pastry top woven from strips of dough rather than laid flat. The strips are cut even (1.5 cm is standard), then half are laid parallel across the pie. Every other strip is folded back, a perpendicular strip is laid, and the folded strips are released over it. Repeat across the pie, alternating which strips fold back each time. The result is an over-and-under weave that vents the filling and shows the fruit beneath."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The strawberry-rhubarb combination is older than either fruit's commercial supply chain: a sweet fruit and a sharp one together carry each other better than either alone. Strawberries bring softness and colour; rhubarb brings the acid that keeps the pie from cloying. The classic ratio is roughly equal weights — neither dominates." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A lattice top is more decorative than a full top, and gives a longer route for the moisture to escape during the bake. Strawberries throw a lot of juice; the lattice helps the pie set up rather than weep." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "unsalted-butter", "amount": 200, "unit": "g", "prepNote": "very cold, cubed", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "caster-sugar", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 4, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "water", "amount": 90, "unit": "ml", "prepNote": "ice-cold", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "strawberries", "amount": 400, "unit": "g", "prepNote": "hulled, halved if large", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "rhubarb", "amount": 400, "unit": "g", "prepNote": "trimmed, cut into 2 cm pieces", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "caster-sugar", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "cornflour", "amount": 40, "unit": "g", "prepNote": "4 tablespoons", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "juice and a little zest", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "vanilla-extract", "amount": 5, "unit": "ml", "prepNote": "1 teaspoon", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for the wash", "isOptional": false, "groupLabel": "For the top" },
+            { "ingredientSlug": "demerara-sugar", "amount": 15, "unit": "g", "prepNote": "for the top", "isOptional": false, "groupLabel": "For the top" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Pastry, chill" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rub the {{unsalted-butter}} into the {{plain-flour}}, first {{caster-sugar}} and {{sea-salt-fine}}. Bind with the {{water}} a tablespoon at a time. Divide in two equal discs, wrap, chill an hour." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Filling and lattice" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C fan. Mix the {{strawberries}}, {{rhubarb}}, second {{caster-sugar}}, {{cornflour}}, juice of the {{lemon}} and {{vanilla-extract}} in a bowl. Roll one pastry disc and line the pie dish. Tip the filling in. Roll the second disc to a rectangle 3 mm thick and cut into 1.5 cm wide strips with a ruler. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lattice-weave" } }], "text": "Weave a lattice top" },
+          { "type": "text", "text": "; seal the strip ends to the base rim." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, two stages" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Brush the lattice with the beaten {{eggs}} and scatter with {{demerara-sugar}}. Set on a tray. Bake at 200°C fan for 20 minutes, then drop to 180°C fan for another 30–35 minutes; the pastry should be deep gold and the filling should bubble visibly through the gaps. Cool an hour before slicing." }]
+      }
+    ]
+  }
+}

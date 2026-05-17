@@ -1,0 +1,110 @@
+{
+  "slug": "tarte-aux-pommes",
+  "title": "Tarte aux pommes",
+  "subtitle": "French open-face apple tart on sweet shortcrust",
+  "excerpt": "The French open-face apple tart: a sweet shortcrust shell, a thin layer of apple compote, and overlapping slices of fresh apple on top, brushed with apricot glaze. One 23 cm tart, serving eight.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Marie-Antoine Carême, L'Art de la cuisine française (1833), Project Gutenberg: documents the French apple tart with compote base and sliced-apple fan. Urbain Dubois, La Cuisine Classique (1856), Project Gutenberg (French): gives the apricot-glaze finish. The form is a standard French pâtisserie shape from the early nineteenth century.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 35,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "totalMinutes": 140,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": "Fresh apple slices weep on defrost; serve fresh.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Pastry and compote both hold 2 days in the fridge.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["autumn", "weekendBake", "specialOccasion"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven, middle shelf",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "tart-tin", "isOptional": false, "notes": "23 cm loose-bottomed, fluted." },
+    { "slug": "small-saucepan", "isOptional": false, "notes": "For the compote." },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "apple-fan",
+      "term": "The apple fan",
+      "definition": "Apple slices arranged in overlapping concentric circles across the surface of an open tart. The slices are cut even (3 mm thick), laid with each slice covering half the one beneath, working from the rim toward the centre in a spiral. A neat fan reads like a flower; an uneven fan reads like a child's drawing of one. Slow hands, even slices."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Tarte aux pommes is a French pâtisserie standard: a sweet shortcrust base, a soft apple compote, and a fan of overlapping fresh apple slices on top, finished with a brush of warm apricot glaze. The base is blind-baked, the compote is cooked on the hob, and the bake is brief — just enough to soften the top slices and let the pastry colour at the edges." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bramley apples cook to a smooth compote and are the choice for the lower layer; firm eating apples (Cox, Braeburn) hold their shape on the top fan. Use both. The contrast is deliberate." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cold, cubed", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "icing-sugar", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 2, "unit": "g", "prepNote": "a pinch", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "yolk for the pastry", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "water", "amount": 15, "unit": "ml", "prepNote": "ice-cold", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "apple-bramley", "amount": 500, "unit": "g", "prepNote": "peeled, cored, chopped — for the compote", "isOptional": false, "groupLabel": "For the compote" },
+            { "ingredientSlug": "caster-sugar", "amount": 75, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the compote" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "juice only", "isOptional": false, "groupLabel": "For the compote" },
+            { "ingredientSlug": "unsalted-butter", "amount": 25, "unit": "g", "prepNote": "for the compote", "isOptional": false, "groupLabel": "For the compote" },
+            { "ingredientSlug": "apple-eating", "amount": 3, "unit": "each", "prepNote": "Cox or Braeburn — for the fan, peeled, cored, thinly sliced", "isOptional": false, "groupLabel": "For the top" },
+            { "ingredientSlug": "apricot-jam", "amount": 80, "unit": "g", "prepNote": "for the glaze, warmed and strained", "isOptional": false, "groupLabel": "For the top" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Pastry, blind bake" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rub the cold first {{unsalted-butter}} into the {{plain-flour}}, {{icing-sugar}} and {{sea-salt-fine}}. Bind with the yolk of the {{eggs}} and the {{water}}. Wrap and chill an hour. Heat the oven to 180°C fan. Roll, line a 23 cm tart tin, trim, prick. Blind-bake with baking beans for 15 minutes; remove beans and bake another 8 minutes until pale gold." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Apple compote" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cook the {{apple-bramley}} with the {{caster-sugar}}, juice of the {{lemon}} and the second {{unsalted-butter}} in a covered saucepan over a low heat for 10–12 minutes, stirring once or twice; the apples should collapse to a smooth compote. Take off the heat and cool slightly." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [
+        { "type": "text", "text": "Compote in, " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "apple-fan" } }], "text": "apple fan" },
+        { "type": "text", "text": ", glaze" }
+      ] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Spread the warm compote into the pastry shell. Slice the {{apple-eating}} into 3 mm slices and arrange in overlapping concentric circles from the rim inward. Bake for 20–25 minutes; the apple slices should be tender and slightly burnished at the edges. Warm the {{apricot-jam}} with 1 tablespoon of water and strain through a sieve. Brush the warm glaze generously over the apples. Cool to room temperature." }]
+      }
+    ]
+  }
+}

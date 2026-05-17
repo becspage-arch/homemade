@@ -1,0 +1,111 @@
+{
+  "slug": "cinnamon-morning-buns-laminated",
+  "title": "Laminated cinnamon morning buns",
+  "subtitle": "Laminated croissant dough rolled with cinnamon sugar",
+  "excerpt": "Cinnamon morning buns built on laminated croissant dough rolled with cinnamon sugar, sliced and proofed in a muffin tin, and finished with a hot sugar glaze. Twelve buns from a two-day schedule.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The morning bun is a Bay Area bakery form (popularised by Tartine in the early 2000s) that uses laminated croissant dough rolled with cinnamon sugar. No single pre-1928 public-domain source documents the exact form. The recipe synthesises the established laminated-dough method from Escoffier and the cinnamon-sugar-and-roll technique from Hannah Glasse (1747).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "12 buns",
+    "prepMinutes": 90,
+    "cookMinutes": 30,
+    "restingMinutes": 720,
+    "chillingMinutes": 480,
+    "totalMinutes": 1320,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Shaped, unproofed buns freeze well; defrost overnight in the fridge and proof from cold.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Same two-day schedule as croissants.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "breakfast",
+    "mood": ["weekendBake", "specialOccasion"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 55,
+      "saltPercent": 2,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 120,
+      "retardingMinutes": 480,
+      "levainBuildMinutes": null,
+      "laminationFolds": 3,
+      "laminationRests": 4,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "fan oven, middle shelf",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "ruler", "isOptional": false },
+    { "slug": "muffin-tin", "isOptional": false, "notes": "12-hole, well-greased." },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A morning bun is laminated croissant dough rolled with cinnamon sugar instead of plain. The technique starts from the croissant recipe (which see for the lamination steps); on shaping day, the rested dough is rolled out, sprinkled with cinnamon sugar, rolled into a sausage, cut into 12 spirals, and pressed into a muffin tin to proof and bake." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The muffin tin forces the spiral to puff upward into a tall layered bun. A hot sugar glaze brushed over the buns straight from the oven gives the characteristic sticky shell." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 12,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "caster-sugar", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "whole-milk", "amount": 280, "unit": "ml", "prepNote": "cold", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": "softened, for the dough", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 250, "unit": "g", "prepNote": "for the butter block", "isOptional": false, "groupLabel": "For lamination" },
+            { "ingredientSlug": "soft-brown-sugar", "amount": 150, "unit": "g", "prepNote": "for the filling", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 18, "unit": "g", "prepNote": "3 tablespoons", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "caster-sugar", "amount": 100, "unit": "g", "prepNote": "for tossing the warm buns", "isOptional": false, "groupLabel": "To finish" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 6, "unit": "g", "prepNote": "for tossing the warm buns", "isOptional": false, "groupLabel": "To finish" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Day 1: dough and lamination" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Follow the croissant dough method: mix the {{strong-bread-flour}}, {{caster-sugar}}, {{sea-salt-fine}}, {{yeast-fast-action}}, cold {{whole-milk}} and first {{unsalted-butter}} in a stand mixer for 6 minutes. Shape, wrap, chill 1 hour. Beat the second {{unsalted-butter}} into a 20×15 cm rectangle and chill. Lock the butter into the dough; do three single folds with 30-minute rests between each. Chill overnight." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Day 2: roll with cinnamon sugar, shape" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mix the {{soft-brown-sugar}} with the first 18 g of {{cinnamon-ground}}. Roll the laminated dough to a 45×30 cm rectangle, 4 mm thick. Brush lightly with water. Scatter the cinnamon sugar evenly over. From a long edge, roll up tightly into a sausage. Slice into 12 spirals. Press each cut-side-up into a well-greased muffin tin hole. Proof at room temperature for 2 hours until puffed and the spirals are pressing against the sides of the tin." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, toss in cinnamon sugar" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 190°C fan. Bake for 25–30 minutes; the buns should be deep gold all over and the cinnamon-sugar layers should be visible. Mix the second {{caster-sugar}} with the second {{cinnamon-ground}} in a shallow bowl. While the buns are still hot, lift each from the tin and toss in the cinnamon-sugar to coat. Cool on a rack." }]
+      }
+    ]
+  }
+}

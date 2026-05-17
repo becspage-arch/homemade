@@ -1,0 +1,103 @@
+{
+  "slug": "gingerbread-biscuits-cutter",
+  "title": "Gingerbread biscuits, cookie-cutter",
+  "subtitle": "Crisp spiced biscuits, rolled and cut into shapes",
+  "excerpt": "Crisp, spiced gingerbread biscuits rolled to 4 mm thick and cut with a fluted or shaped cutter. Plain flour, butter, brown sugar, golden syrup and a heavy hand with ground ginger. Thirty biscuits from one batch, ready for icing.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "biscuits",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: the rolled-and-cut gingerbread biscuit recipe in the cakes-and-biscuits chapter gives the golden-syrup and brown-sugar base. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: an earlier spiced biscuit form with the same dry-then-syrup mixing order. Florence White, Good Things in England (1932): the cookie-cutter shapes (men, hearts, stars) appear in the Christmas-baking chapter.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "30 biscuits (7 cm cutter)",
+    "prepMinutes": 25,
+    "cookMinutes": 12,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "totalMinutes": 97,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Bake, cool, freeze in a tin with baking paper between layers for up to 3 months.",
+    "batchable": true,
+    "batchNotes": "Doubles to 60 across multiple trays.",
+    "makeAheadNotes": "Make the dough up to 3 days ahead and chill wrapped; let it warm 10 minutes at room temperature before rolling.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["weekendBake", "kidFriendly", "festive"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 350,
+      "bakeTemperatureCelsius": 170,
+      "bakeTemperatureNote": "fan oven, middle shelf",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false, "notes": "For melting the butter and syrup." },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "biscuit-cutters", "isOptional": false, "notes": "A fluted 7 cm round, or shaped cutters." },
+    { "slug": "baking-tray", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "melt-and-mix",
+      "term": "Melt-and-mix",
+      "definition": "A biscuit-making method where butter, sugar and syrup are melted together in a small pan, then poured into the dry ingredients. The warmth helps the sugar dissolve and the syrup distribute evenly, and the dough rolls out smoothly without crumbling. The opposite of the rubbing-in method, which keeps the butter cold and gives a flakier crumb."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cookie-cutter gingerbread biscuits use the melt-and-mix method: butter, brown sugar and golden syrup are warmed together in a pan, poured into a bowl of spiced flour and bicarbonate, mixed quickly, and chilled. The chilled dough rolls cleanly to four millimetres and holds its shape in the cutter." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The same dough handles iced gingerbread men, cookie-cutter shapes, and hanging tree decorations. Pierce a hole near the top of each biscuit before baking with the end of a skewer if you want to thread ribbon through after cooling." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 30,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 350, "unit": "g", "prepNote": "plus extra for rolling", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bicarbonate-of-soda", "amount": 5, "unit": "g", "prepNote": "1 teaspoon", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-ground", "amount": 12, "unit": "g", "prepNote": "2 tablespoons — a heavy hand", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cinnamon-ground", "amount": 5, "unit": "g", "prepNote": "1 teaspoon", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mixed-spice", "amount": 3, "unit": "g", "prepNote": "½ teaspoon", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": "a pinch", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 125, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dark-brown-sugar", "amount": 175, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "golden-syrup", "amount": 100, "unit": "g", "prepNote": "3 tablespoons", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Melt and mix" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sift the {{plain-flour}}, {{bicarbonate-of-soda}}, {{ginger-ground}}, {{cinnamon-ground}}, {{mixed-spice}} and {{sea-salt-fine}} into a wide bowl. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "melt-and-mix" } }], "text": "Melt the {{unsalted-butter}}, {{dark-brown-sugar}} and {{golden-syrup}}" },
+          { "type": "text", "text": " in a small pan over a low heat, stirring, until smooth. Cool for 5 minutes. Pour into the flour, add the beaten {{eggs}}, and mix to a soft dough. Wrap and chill for at least an hour, or overnight." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Roll, cut, bake" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 170°C fan and line two baking trays. Roll the chilled dough on a floured surface to 4 mm thick. Cut shapes with a fluted 7 cm round or shaped cutter, pressing straight down. Lift onto the trays with a palette knife, leaving 2 cm between biscuits. Re-roll the trimmings once. Bake for 10–12 minutes; the edges should be deep gold and the centres should be set but still soft. Cool on the tray for 5 minutes (they crisp as they cool), then transfer to a rack." }]
+      }
+    ]
+  }
+}

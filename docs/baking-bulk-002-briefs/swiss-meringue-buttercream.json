@@ -1,0 +1,111 @@
+{
+  "slug": "swiss-meringue-buttercream",
+  "title": "Swiss meringue buttercream",
+  "subtitle": "Stable, silky buttercream cooked over a bain-marie",
+  "excerpt": "A technique tutorial for Swiss meringue buttercream: egg whites and sugar whisked over a pan of simmering water to 71°C, beaten to stiff glossy meringue, then beaten with cubed butter to a smooth pipeable buttercream. Covers temperature, recovery from curdle, and storage.",
+  "type": "TECHNIQUE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cake-decorating",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The Swiss meringue method (egg whites and sugar warmed together over a bain-marie before whipping) is documented in Auguste Escoffier, Le Guide Culinaire (1903), Project Gutenberg, and in earlier French confectionery sources. The combination of Swiss meringue with butter to make a buttercream is documented across pre-1928 French pâtisserie sources.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "About 800 g — enough to fill and frost a 23 cm layer cake",
+    "prepMinutes": 30,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 40,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in an airtight container for up to 2 months; defrost overnight in the fridge and rebeat smooth.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly if you have a large enough mixer bowl.",
+    "makeAheadNotes": "Keeps in the fridge for 5 days; bring back to room temperature and rebeat smooth before use.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "french",
+    "mealType": null,
+    "mood": ["specialOccasion"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true,
+    "baking": {
+      "decoratingTechnique": "swiss-meringue-buttercream",
+      "bakeTemperatureCelsius": null,
+      "bakeTemperatureNote": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": false, "notes": "The quantity is too large for a hand mixer to handle efficiently." },
+    { "slug": "metal-bowl", "isOptional": false, "notes": "The stand-mixer bowl works." },
+    { "slug": "large-saucepan", "isOptional": false, "notes": "For the bain-marie water." },
+    { "slug": "whisk-balloon", "isOptional": false, "notes": "For the bain-marie stage." },
+    { "slug": "instant-read-thermometer", "isOptional": false, "notes": "Or a sugar thermometer reading low." },
+    { "slug": "icing-spatula", "isOptional": true, "notes": "For spreading and smoothing on cakes." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bain-marie-meringue",
+      "term": "Bain-marie meringue",
+      "definition": "The first stage of Swiss meringue: egg whites and sugar are warmed together in a metal bowl over a pan of simmering water, whisked by hand constantly, until the temperature reads 71°C on a thermometer and the sugar has fully dissolved. The 71°C target both melts the sugar and pasteurises the egg whites. Test by rubbing a little of the mixture between your fingers; smooth means done, grainy means not yet."
+    },
+    {
+      "slug": "curdled-buttercream-recovery",
+      "term": "Curdled-buttercream recovery",
+      "definition": "Swiss meringue buttercream sometimes looks curdled at one point during the butter-incorporation stage: broken and oily. Keep beating; it will come together within 2–3 minutes as the butter and meringue emulsify. If after 5 minutes of beating it still looks broken, the meringue base was too warm (above 25°C); chill the bowl for 10 minutes and beat again. If it looks soupy rather than curdled, the meringue base was still warm. Same recovery."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Swiss meringue buttercream is more stable, silkier and less sweet than American buttercream. The method runs in two stages: egg whites and caster sugar are warmed together over a bain-marie to 71°C, whisked to a thick glossy meringue once cool, then beaten with cubed soft butter to a smooth piping consistency." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The buttercream may go through a curdled-looking stage when the butter first goes in — that is normal. Keep beating and it will come together. The thermometer matters; 71°C both pasteurises the eggs and dissolves the sugar." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "egg-whites", "amount": 200, "unit": "g", "prepNote": "from about 6 large eggs", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 350, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": "a pinch", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 450, "unit": "g", "prepNote": "at cool room temperature, cubed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vanilla-bean-paste", "amount": 10, "unit": "ml", "prepNote": "2 teaspoons", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [
+        { "type": "text", "text": "Warm to 71°C — the " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bain-marie-meringue" } }], "text": "bain-marie meringue" }
+      ] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the {{egg-whites}}, {{caster-sugar}} and {{sea-salt-fine}} in the bowl of a stand mixer. Set over a saucepan of simmering water (the bowl should not touch the water). Whisk constantly by hand until the thermometer reads 71°C and the sugar has fully dissolved. Rub a little between your fingers; smooth, not grainy, means done." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Whip to stiff glossy meringue" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Move the bowl to the stand mixer fitted with a whisk attachment. Whisk on high speed for 10–12 minutes until the meringue is thick, glossy, and the bowl is completely cool to the touch on the outside. If the meringue is still warm when you add the butter the butter will melt and the buttercream will not emulsify." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [
+        { "type": "text", "text": "Beat in the butter, " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "curdled-buttercream-recovery" } }], "text": "ride out the curdle" }
+      ] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Switch to the paddle attachment. Add the cubed {{unsalted-butter}} a piece at a time with the mixer on medium speed, letting each piece incorporate before adding the next. The mixture may look broken or curdled at one point — keep beating, it will come together within 2–3 minutes. Beat in the {{vanilla-bean-paste}}. The finished buttercream should be smooth, glossy, and pipeable; thick enough to hold a peak but soft enough to spread cleanly. Use immediately or refrigerate in an airtight container for 5 days." }]
+      }
+    ]
+  }
+}

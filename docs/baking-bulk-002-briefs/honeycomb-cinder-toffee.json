@@ -1,0 +1,107 @@
+{
+  "slug": "honeycomb-cinder-toffee",
+  "title": "Honeycomb (cinder toffee)",
+  "subtitle": "Aerated boiled sugar with bicarbonate",
+  "excerpt": "British cinder toffee: caster sugar and golden syrup boiled to hard crack, lifted with bicarbonate of soda for the characteristic airy honeycomb structure, poured into a tin to set hard. One slab, broken into shards for a sweet jar.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "sweets-confectionery",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: documents 'sponge sugar' in the confectionery chapter with the bicarbonate aeration method. Florence White, Good Things in England (1932): documents the regional names (honeycomb, cinder toffee, hokey pokey). The Crunchie bar (Cadbury, 1929) standardised the modern form.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 large slab (about 500 g)",
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "totalMinutes": 45,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": "Honeycomb absorbs moisture and goes sticky; keep in a dry airtight tin.",
+    "batchable": false,
+    "batchNotes": "Do not double — the aeration foams up enormously and a doubled batch overflows a standard pan.",
+    "makeAheadNotes": "Make ahead and store in an airtight tin for up to 1 week; it loses crispness in humid weather.",
+    "dietaryFlags": ["vegetarian", "glutenFree"],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["kidFriendly", "festive"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "bakeTemperatureCelsius": 150,
+      "bakeTemperatureNote": "hard-crack stage, 150°C target sugar temperature",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false, "notes": "Tall and heavy — the syrup foams up to 4× volume when the bicarb hits." },
+    { "slug": "sugar-thermometer", "isOptional": false, "notes": "Clip to the side, tip not touching the base." },
+    { "slug": "square-cake-tin", "isOptional": false, "notes": "20 cm square, lined with baking paper." },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "hard-crack-stage",
+      "term": "Hard-crack stage",
+      "definition": "The sugar-cooking stage at 150°C where the syrup, dropped into ice water, hardens into brittle threads that snap cleanly. Above hard crack the sugar begins to caramelise (165°C+ for light caramel; 175°C+ for dark amber). Honeycomb is pulled at hard crack so it sets brittle without darkening into bitter caramel."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Honeycomb is one of the easier sugar confections: caster sugar and golden syrup are boiled together to hard-crack (150°C), then bicarbonate of soda is whisked in. The bicarb releases carbon dioxide on contact with the hot acidic syrup; the syrup foams up to four times its volume and sets full of fine bubbles. The result is a brittle, airy slab that breaks into shards." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use a tall, heavy pan — the foaming-up is dramatic and a small pan overflows. A sugar thermometer is essential; the 5°C between soft-crack (135°C) and hard-crack (150°C) is the difference between chewy and brittle." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Hot syrup is dangerous",
+          "body": "The syrup reaches 150°C — well above boiling water. If hot syrup touches skin, run cold water over it for at least ten minutes and seek medical care if needed."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "caster-sugar", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "golden-syrup", "amount": 100, "unit": "g", "prepNote": "3 tablespoons", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 60, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bicarbonate-of-soda", "amount": 10, "unit": "g", "prepNote": "2 teaspoons, sifted", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [
+        { "type": "text", "text": "Boil to " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hard-crack-stage" } }], "text": "hard crack, 150°C" }
+      ] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Line a 20 cm square tin with baking paper. Combine the {{caster-sugar}}, {{golden-syrup}} and {{water}} in a tall, heavy saucepan. Set over medium heat and stir gently until the sugar dissolves. Stop stirring. Clip the sugar thermometer to the side. Bring to a boil and cook until the temperature reads 150°C — this takes 5–7 minutes. The colour will go from clear to pale gold to deep amber. The colour cue: deep gold, not dark mahogany; pull it before it darkens further." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Whisk in the bicarb, pour, do not stir" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Take the pan off the heat. Add the sifted {{bicarbonate-of-soda}} all at once and whisk for 5 seconds; the syrup will foam up dramatically. As soon as the bicarb is incorporated, pour the foaming mixture into the lined tin — do not scrape, do not spread, do not stir. Let the bubbles set as they are. Leave to set hard at room temperature for 30 minutes." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Break, store" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Lift the slab out of the tin using the paper. Break into rough shards by hitting with the back of a heavy spoon. Store in an airtight tin in a dry cupboard; honeycomb absorbs moisture and goes sticky if left exposed." }]
+      }
+    ]
+  }
+}

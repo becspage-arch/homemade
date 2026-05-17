@@ -1,0 +1,101 @@
+{
+  "slug": "ganache-drip-finish",
+  "title": "Ganache drip finish",
+  "subtitle": "Even-dropped chocolate drips on a frosted cake",
+  "excerpt": "A technique tutorial for the ganache drip finish on a frosted cake: a 2:1 chocolate-to-cream ganache cooled to the right temperature, applied with a squeezy bottle around the top edge so the drips fall in even rounds without running to the base. Covers temperature, consistency, and recovery from over-runs.",
+  "type": "TECHNIQUE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cake-decorating",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The ganache drip finish is a modern cake-decorating technique (Instagram-era) that does not appear in pre-1928 sources. The underlying ganache method (warm cream over chocolate, stirred to a smooth emulsion) is documented in Auguste Escoffier, Le Guide Culinaire (1903), Project Gutenberg, and earlier French confectionery sources. The recipe synthesises the established ganache emulsion with the modern application technique.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "Enough drip ganache for one 23 cm frosted cake",
+    "prepMinutes": 15,
+    "cookMinutes": 5,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "totalMinutes": 50,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": "The drip is best applied on the day of serving; the ganache itself keeps in the fridge for 5 days and rewarms.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the ganache up to 5 days ahead; rewarm gently before applying.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": null,
+    "mood": ["specialOccasion"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "decoratingTechnique": "ganache-drip",
+      "bakeTemperatureCelsius": null,
+      "bakeTemperatureNote": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "metal-bowl", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false, "notes": "For checking the ganache temperature before the drip." },
+    { "slug": "icing-spatula", "isOptional": false, "notes": "For the top of the cake." },
+    { "slug": "cake-turntable", "isOptional": true, "notes": "Makes the drip walk much easier." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "drip-test",
+      "term": "The drip test",
+      "definition": "Before committing to the cake, test the ganache on the side of an upturned glass at room temperature. Pour a single drip; let it fall. The drip should fall 3–4 cm and stop, leaving a teardrop shape with a clear stop point. If the drip runs all the way to the base of the glass, the ganache is too warm: let it cool another minute. If the drip stops at 1 cm, it is too cool; gently warm it for 10 seconds and test again."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The ganache drip finish is one of the most photographed cake-decorating moves of the last decade: even, glossy dark-chocolate drips falling from the top edge of a frosted cake. The technique is more about temperature than about hand control — once the ganache is at the right temperature, the drips behave consistently and the work is straightforward." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The cake must be cold and the frosted surface must be set. Pull the cake from the fridge straight before the drip — a warm cake means the drips will keep running and pool at the base of the cake." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "dark-chocolate", "amount": 200, "unit": "g", "prepNote": "55–70% cocoa, finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "golden-syrup", "amount": 20, "unit": "g", "prepNote": "2 teaspoons; for a glossier finish (optional)", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Make the ganache" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Put the chopped {{dark-chocolate}} into a metal bowl. Heat the {{double-cream}} and {{golden-syrup}} in a small pan until just steaming. Pour over the chocolate and let it sit for 1 minute. Whisk small circles from the centre outward until smooth and glossy. The ganache will start hot — around 50°C. Set aside to cool to room temperature, stirring occasionally. The target temperature for dripping is 28–32°C (warm to the back of the hand, but not hot)." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [
+        { "type": "text", "text": "Run the " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "drip-test" } }], "text": "drip test" }
+      ] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour the cooled ganache into a small squeezy bottle (or use a teaspoon if you prefer). Hold the bottle above an upturned glass at room temperature. Squeeze a small drip onto the side of the glass; let it fall. It should fall about 3–4 cm and stop, leaving a clean teardrop. If it falls to the base, cool the ganache another minute and retest." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Drip the cake" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pull the cold frosted cake from the fridge. Work around the top edge, applying the drips one at a time — a single squeeze to start the drip, lifting away when the teardrop reaches the desired length (about 3 cm). Space the drips evenly around the rim, varying the length slightly so the result reads natural rather than stamped. When all the drips are in place, pour or spoon the remaining ganache onto the top of the cake and spread to the inner edge of the drip line with a palette knife. Chill 30 minutes to set the drips firm before serving." }]
+      }
+    ]
+  }
+}

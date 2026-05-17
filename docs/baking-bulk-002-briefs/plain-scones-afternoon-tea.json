@@ -1,0 +1,136 @@
+{
+  "slug": "plain-scones-afternoon-tea",
+  "title": "Plain afternoon-tea scones",
+  "subtitle": "Twelve light scones for the tea tray",
+  "excerpt": "The plain British scone for an afternoon tea tray. Self-raising flour, cold butter rubbed in, brought together with cold milk in a few strokes. Twenty minutes from bowl to oven.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "scones",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: the household-baking chapter records the British plain scone shape. Florence White, Good Things in England (1932): the regional variations across the West Country and the North establish milk as the canonical liquid for a plain scone (as distinct from a buttermilk biscuit). Eliza Acton, Modern Cookery for Private Families (1845): the rubbing-in method for short bakes is laid out as a household standard.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "12 scones (5 cm cutter)",
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 22,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Open-freeze unbaked scones on a tray; bag once solid; bake from frozen on a hot tray, adding 3 minutes.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly to 24 across two trays.",
+    "makeAheadNotes": "Rub butter into the flour the day before and chill the dry mix; bring together with cold milk on the morning.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "breakfast",
+    "mood": ["weekendBake", "kidFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "fan oven, top shelf",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "biscuit-cutters", "isOptional": false, "notes": "5 cm round, dipped in flour between cuts." },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false, "notes": "For the egg or milk wash." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rubbing-in",
+      "term": "Rubbing in",
+      "definition": "Working cold butter into flour with the fingertips until the mixture looks like coarse breadcrumbs. The aim is small pea-sized pieces of butter coated in flour, not a smooth paste. Cold butter is essential; warm butter blends into the flour and gives a tight, biscuit-like crumb rather than the light shortened texture a scone wants."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A plain scone is a quick weekend bake: twenty minutes from bowl to oven, twelve scones from a single round of dough. The flour is self-raising, the butter cold, the milk cold, and the handling brief. The whole secret is in the rubbing-in stage and in stopping as soon as the dough comes together." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Serve with butter, clotted cream and jam. The order of cream and jam on the scone is a Devon-versus-Cornwall argument with no resolution; either is correct." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Cold ingredients, brief handling",
+          "body": "The butter wants to be straight from the fridge; the milk wants to be cold. Handling the dough as little as possible keeps the texture light. Bring it together in around eight strokes, not eighty."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 12,
+          "items": [
+            { "ingredientSlug": "self-raising-flour", "amount": 500, "unit": "g", "prepNote": "plus extra for dusting", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "baking-powder", "amount": 5, "unit": "g", "prepNote": "1 teaspoon", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": "a generous pinch", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cold from the fridge, cubed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 280, "unit": "ml", "prepNote": "cold, plus extra for brushing", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for the wash (optional, gives a glossier top)", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Rub in the butter" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220°C fan. Line a baking tray with baking paper. Sift the {{self-raising-flour}}, {{baking-powder}}, and {{sea-salt-fine}} into a wide bowl. Add the {{unsalted-butter}} in cubes. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rubbing-in" } }], "text": "Rub the butter in" },
+          { "type": "text", "text": " with cold fingertips until the mixture looks like coarse breadcrumbs with a few small pieces still visible. Stir in the {{caster-sugar}}." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bring together with cold milk" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour in the {{whole-milk}} all at once. Mix with a palette knife in figure-of-eight strokes until the dough just comes together; it should look rough and shaggy, not smooth. Tip onto a lightly floured surface and pat (do not roll) to a slab about 3 cm thick. Cut twelve rounds with a floured 5 cm cutter, pressing straight down without twisting." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 10–12 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Set the rounds on the tray with about 3 cm between each. Brush the tops with the beaten {{eggs}} or with a little more {{whole-milk}}. Bake for 10–12 minutes; the tops should be deep gold, the sides risen and dry, and the scones should sound hollow when tapped on the base. Cool on a rack for at least 5 minutes before splitting." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "Three things that catch the plain scone out, and how to read them.",
+          "items": [
+            { "symptom": "The scones rose poorly and feel heavy.", "cause": "The butter warmed up during rubbing-in, or the dough was overworked.", "fix": "Use cold butter, work fast, and stop as soon as the dough comes together. A few visible flecks of butter at the edges is the right look." },
+            { "symptom": "The tops are pale and the sides are pale.", "cause": "The oven was below 220°C, or the tray was too low.", "fix": "Check the oven with an oven thermometer; place the tray near the top of the oven." },
+            { "symptom": "The scones leaned sideways.", "cause": "The cutter was twisted on the way down.", "fix": "Press the cutter straight down. Twisting seals the layered edges and stops the rise on that side." }
+          ]
+        }
+      }
+    ]
+  }
+}

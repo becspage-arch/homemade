@@ -1,0 +1,104 @@
+{
+  "slug": "sourdough-scones",
+  "title": "Sourdough discard scones",
+  "subtitle": "Tangy scones from active or discard starter",
+  "excerpt": "Scones that use sourdough discard as both liquid and flavour. The tang of the starter sits well against butter and jam, and the discard puts unfed starter to use without wasting flour. Twelve scones from the bowl in under half an hour.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "scones",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Sourdough discard recipes are a modern adaptation; no single pre-1928 public-domain source covers the form. The recipe synthesises the British scone shape (Beeton, Acton, White) with the principle of using unfed sourdough starter as a flavour-and-liquid substitute (modern bakery practice). The chemistry (starter acidity reacts with bicarbonate of soda for additional rise) is consistent with the buttermilk-and-bicarbonate principle documented in pre-1928 American household manuals.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "12 scones (5 cm cutter)",
+    "prepMinutes": 12,
+    "cookMinutes": 14,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "totalMinutes": 26,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Open-freeze unbaked scones on a tray; bag once solid; bake from frozen, adding 3 minutes.",
+    "batchable": true,
+    "batchNotes": "Doubles to 24.",
+    "makeAheadNotes": "Use discard from a feed up to 5 days old; older than that and the tang turns sharp.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "breakfast",
+    "mood": ["weekendBake", "thrifty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 400,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "fan oven, top shelf",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "biscuit-cutters", "isOptional": false, "notes": "5 cm round." },
+    { "slug": "baking-tray", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sourdough-discard",
+      "term": "Sourdough discard",
+      "definition": "The portion of sourdough starter removed before a feed, to keep the working starter at a manageable size. Discard is fermented flour-and-water at the same hydration as the starter (usually 100%, equal weights of flour and water). It is acidic, tangy, and inactive (the yeasts have eaten the available sugars). Used in scones, pancakes, crackers, and quick breads as a flavour-and-liquid substitute that puts the discarded starter to use."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "If you keep a sourdough starter, you accumulate discard every time you feed it. Rather than throw it away, it folds into scones cleanly. The acid in the discard reacts with the bicarbonate of soda for an additional lift, and the tang sits well against butter and jam." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The recipe works equally well with active starter (just risen, before a bake) or with unfed discard from the fridge. Discard up to five days old is fine; older discard turns acetic and the flavour gets sharp." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 12,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 400, "unit": "g", "prepNote": "plus extra for dusting", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "baking-powder", "amount": 8, "unit": "g", "prepNote": "2 teaspoons", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bicarbonate-of-soda", "amount": 3, "unit": "g", "prepNote": "½ teaspoon", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 5, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cold, cubed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sourdough-starter", "amount": 200, "unit": "g", "prepNote": "discard at 100% hydration", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 120, "unit": "ml", "prepNote": "cold", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Rub in the butter" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220°C fan. Whisk the {{plain-flour}}, {{baking-powder}}, {{bicarbonate-of-soda}}, {{sea-salt-fine}} and {{caster-sugar}} in a bowl. Rub in the {{unsalted-butter}} until the mix looks like coarse breadcrumbs. Whisk the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sourdough-discard" } }], "text": "sourdough discard" },
+          { "type": "text", "text": " into the {{whole-milk}} until smooth." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bring together and cut" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour the {{sourdough-starter}}-and-milk mixture into the flour. Stir with a palette knife in figure-of-eight strokes until the dough comes together. It will feel a touch wetter than a plain scone dough. Tip onto a floured surface and pat to a 3 cm slab. Cut twelve rounds with a 5 cm cutter pressed straight down." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 12–14 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Set on a lined tray. Bake for 12–14 minutes; the tops should be deep gold and the sides should look risen and dry. Cool on a rack 5 minutes before splitting." }]
+      }
+    ]
+  }
+}

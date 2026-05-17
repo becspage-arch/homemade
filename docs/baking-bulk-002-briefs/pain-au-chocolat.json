@@ -1,0 +1,119 @@
+{
+  "slug": "pain-au-chocolat",
+  "title": "Pain au chocolat",
+  "subtitle": "Chocolate-batoned laminated French pastries",
+  "excerpt": "Pain au chocolat made from the same laminated croissant dough, cut into rectangles around two thin chocolate batons and rolled. Twelve pastries from a two-day schedule.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), Project Gutenberg (French): documents the laminated yeasted dough on which pain au chocolat is built. The pain au chocolat shape (rectangle with two chocolate batons) was established in early-twentieth-century Parisian boulangeries as a variant of the croissant.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "12 pastries",
+    "prepMinutes": 90,
+    "cookMinutes": 18,
+    "restingMinutes": 720,
+    "chillingMinutes": 480,
+    "totalMinutes": 1308,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Shaped, unproofed pastries freeze well; defrost overnight in the fridge and proof from cold.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Two-day schedule like croissants: dough and lamination day 1, shape and bake day 2.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "breakfast",
+    "mood": ["weekendBake", "specialOccasion"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 55,
+      "saltPercent": 2,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 120,
+      "retardingMinutes": 480,
+      "levainBuildMinutes": null,
+      "laminationFolds": 3,
+      "laminationRests": 4,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven, middle shelf — drops to 180°C after 8 minutes",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "ruler", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "chocolate-batons",
+      "term": "Chocolate batons",
+      "definition": "Long thin sticks of dark chocolate (around 8 cm long, 8 mm thick) sold specifically for laminated pastries — they hold their shape in the bake without leaking through the dough. If unavailable, snap a chocolate bar into thin batons of similar dimensions, using a chocolate of at least 55% cocoa so it does not run."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pain au chocolat uses the same laminated yeasted dough as croissants, cut and shaped differently: a rectangle of rolled dough wrapping two chocolate batons. The lamination work and the schedule are identical; only the cutting and shaping change. Treat this recipe as a continuation of the croissant method." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Dark chocolate batons are sold in baking-supply shops specifically for this use; they hold their shape through the bake. A standard chocolate bar broken into similarly-sized batons works in a pinch — use at least 55% cocoa so the chocolate stays firm rather than running through the dough." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 12,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "caster-sugar", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "whole-milk", "amount": 280, "unit": "ml", "prepNote": "cold", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": "softened, for the dough", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 250, "unit": "g", "prepNote": "for the butter block", "isOptional": false, "groupLabel": "For lamination" },
+            { "ingredientSlug": "dark-chocolate", "amount": 200, "unit": "g", "prepNote": "in batons; or broken from a bar at 55%+ cocoa", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for the wash", "isOptional": false, "groupLabel": "For finishing" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Day 1: dough, butter, lamination" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mix the {{strong-bread-flour}}, {{caster-sugar}}, {{sea-salt-fine}} and {{yeast-fast-action}} in a stand mixer. Add the cold {{whole-milk}} and softened first {{unsalted-butter}}. Mix on low for 6 minutes to a smooth dough. Shape into a 20×15 cm rectangle, wrap, chill 1 hour. Beat the second {{unsalted-butter}} between baking paper into a 20×15 cm rectangle and chill 30 minutes. Roll the dough to 40×20 cm, place the butter on one half and fold the other half over. Roll out to 60×20 cm and make a single fold (letter fold). Wrap and rest 30 minutes in the fridge. Repeat the roll-and-fold twice more, resting 30 minutes between each. Chill overnight after the third fold." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [
+        { "type": "text", "text": "Day 2: cut, shape with " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chocolate-batons" } }], "text": "chocolate batons" }
+      ] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Roll the rested dough to a 45×30 cm rectangle, 4 mm thick. Trim square. Cut into 12 rectangles, each 11×10 cm. Place a baton of {{dark-chocolate}} along one short edge of each rectangle. Roll the dough over the baton once. Place a second baton against the first roll. Continue rolling tightly to the other end. Set seam-down on lined trays with 5 cm between each." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Proof, glaze, bake" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Proof at warm room temperature for about 2 hours until puffed and the layers are visible from the side. Heat the oven to 200°C fan. Brush with the beaten {{eggs}}. Bake at 200°C for 8 minutes, drop to 180°C, bake another 10 minutes; the pastries should be deep gold all over and the chocolate should be visible at the cut ends but not running out." }]
+      }
+    ]
+  }
+}

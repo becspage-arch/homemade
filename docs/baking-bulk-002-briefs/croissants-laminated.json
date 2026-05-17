@@ -1,0 +1,139 @@
+{
+  "slug": "croissants-laminated",
+  "title": "Laminated croissants",
+  "subtitle": "Butter-laminated French breakfast pastries, three folds, two days",
+  "excerpt": "Proper French croissants by the classical laminated-dough method: a yeasted dough with a butter block worked through three single folds, retarded between each, then shaped and proofed for a final bake. Twelve croissants from a two-day schedule.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), Project Gutenberg (French): documents the classical croissant lamination as a hotel-pâtisserie technique. Marie-Antoine Carême's earlier nineteenth-century books document the laminated puff-pastry method that croissants share. The yeast-and-butter laminated form (as distinct from straight puff) was established in early-twentieth-century Parisian boulangeries.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "12 croissants",
+    "prepMinutes": 90,
+    "cookMinutes": 18,
+    "restingMinutes": 720,
+    "chillingMinutes": 480,
+    "totalMinutes": 1308,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Shaped, unproofed croissants freeze well; defrost overnight in the fridge and proof from cold.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The schedule runs across two days: mix and rest on day 1, shape and bake on day 2 (early). Shape can be done evening of day 1 and proofed in the fridge overnight, baked first thing.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "breakfast",
+    "mood": ["weekendBake", "specialOccasion"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 55,
+      "saltPercent": 2,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 120,
+      "retardingMinutes": 480,
+      "levainBuildMinutes": null,
+      "laminationFolds": 3,
+      "laminationRests": 4,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven, middle shelf — drops to 180°C after 8 minutes",
+      "steamMethod": "none — domestic ovens; croissants need air, not steam",
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": false, "notes": "Dough hook." },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "ruler", "isOptional": false, "notes": "For even rectangles and slicing." },
+    { "slug": "bench-scraper", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false, "notes": "Two trays." },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "beurre-de-tourage",
+      "term": "Beurre de tourage",
+      "definition": "The butter block worked into croissant dough through the lamination folds. The butter is beaten flat between two sheets of baking paper to a rectangle of fixed size (about 20×15 cm for this recipe), then chilled to a pliable solid. It must be cold but flexible — not crumbly cold, not warm and soft. The dough wraps around the butter block at the start of the lamination; the folds then layer butter and dough together into hundreds of fine sheets."
+    },
+    {
+      "slug": "single-fold",
+      "term": "Single fold",
+      "definition": "One of the three lamination folds in a croissant schedule. The dough is rolled to a long rectangle three times as long as it is wide; the top third is folded down and the bottom third is folded up over it, like folding a letter. The dough then rests in the fridge for 30 minutes before the next fold. Three single folds in succession produce 81 layers — fewer than puff pastry but the yeast in the dough does additional lift work in the proof and bake."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Croissants are a laminated yeasted dough: a soft yeasted dough is rolled out, a flat slab of cold butter is laid over it, and the dough is folded and rolled three times over a day, with rests in the fridge between each fold. The folding builds layers of butter and dough; the proof and bake then puff those layers apart into the airy crisp-flaked structure that defines the croissant." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The schedule runs across two days. Mix the dough, prepare the butter block, and do the first lamination on day one. Shape and proof on day two, baking first thing in the morning. The lamination depends on the butter staying cold and the dough staying relaxed; rushing either step compresses the layers and gives a bread-like result instead of a croissant." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Domestic ovens drift",
+          "body": "Domestic ovens drift by 20°C or more. An oven thermometer takes the guessing out, and croissants live on a hot oven for the first eight minutes."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 12,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": "plus extra for rolling", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "caster-sugar", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": "1 sachet", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "whole-milk", "amount": 280, "unit": "ml", "prepNote": "cold from the fridge", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": "softened, for the dough", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 250, "unit": "g", "prepNote": "in a single block, for the lamination", "isOptional": false, "groupLabel": "For the butter block" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for the wash", "isOptional": false, "groupLabel": "For finishing" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Day 1: dough and butter block" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mix the {{strong-bread-flour}}, {{caster-sugar}}, {{sea-salt-fine}} and {{yeast-fast-action}} in the bowl of a stand mixer. Add the cold {{whole-milk}} and the first 50 g of softened {{unsalted-butter}}. Mix with a dough hook on low for 6 minutes; the dough should be smooth and supple, not sticky. Tip onto a lightly floured surface, shape into a flat 20×15 cm rectangle, wrap and chill for 1 hour." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [
+        { "type": "text", "text": "Prepare the " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "beurre-de-tourage" } }], "text": "beurre de tourage" }
+      ] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Lay the second 250 g of {{unsalted-butter}} between two sheets of baking paper. Beat with a rolling pin into a 20×15 cm rectangle, matching the dough. Chill 30 minutes — the butter should be cold but pliable, not crumbly cold." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [
+        { "type": "text", "text": "Lock in, three " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "single-fold" } }], "text": "single folds" }
+      ] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Roll the chilled dough to a 40×20 cm rectangle on a floured surface. Set the butter block on one half, dough wrapping the other half over to seal — this locks the butter in. Roll out to a 60×20 cm long rectangle. Fold into thirds like a letter: top down, bottom up. This is the first single fold. Wrap and rest 30 minutes in the fridge. Repeat the roll-and-fold twice more, resting 30 minutes between each. After the third fold, wrap and chill at least 2 hours, or overnight." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Day 2: shape, proof, bake" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Roll the rested dough to a 45×30 cm rectangle, 4 mm thick. Trim the edges square. Cut along the long dimension into 12 triangles (each with a 7.5 cm base). Make a 1 cm cut in the centre of each triangle's base. Stretch each triangle slightly long, then roll up tightly from the base toward the point. Set on lined trays seam-down, tucking the point underneath. Proof at warm room temperature for about 2 hours until visibly puffed; the layers should be just visible from the side. Brush with the beaten {{eggs}}. Bake at 200°C fan for 8 minutes, drop to 180°C, bake another 10 minutes; the croissants should be deep gold and the layers should be clearly visible on the sides." }]
+      }
+    ]
+  }
+}

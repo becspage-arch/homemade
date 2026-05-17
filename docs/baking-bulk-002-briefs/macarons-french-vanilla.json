@@ -1,0 +1,153 @@
+{
+  "slug": "macarons-french-vanilla",
+  "title": "French vanilla macarons",
+  "subtitle": "Almond-meringue shells with vanilla buttercream",
+  "excerpt": "French macarons made by the French-meringue method: ground almonds and icing sugar folded into an egg-white meringue, piped into smooth domes, rested until skinned, and baked low until the feet rise without browning. Twenty-four sandwiched macarons.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "biscuits",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pierre Hermé and Ladurée have established the modern Parisian macaron form; pre-1928 references include Marie-Antoine Carême and Urbain Dubois on early French confiserie. No single pre-1928 public-domain source describes the modern almond-and-egg-white macaron exactly as documented here. The recipe synthesises the established French-meringue method (egg whites whipped with caster sugar, then folded with sifted ground almonds and icing sugar) from the family of late nineteenth-century French patisserie sources.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "24 sandwiched macarons",
+    "prepMinutes": 40,
+    "cookMinutes": 16,
+    "restingMinutes": 45,
+    "chillingMinutes": 0,
+    "totalMinutes": 101,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Sandwich, freeze in a sealed box; defrost 30 minutes at room temperature before serving. Macarons freeze better than they fridge.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Macarons mature in flavour after 24 hours sandwiched and refrigerated. Pipe one day, fill and eat the next.",
+    "dietaryFlags": ["glutenFree"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["weekendBake", "specialOccasion"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 0,
+      "bakeTemperatureCelsius": 150,
+      "bakeTemperatureNote": "fan oven, middle shelf — domestic ovens drift by 20°C or more; an oven thermometer takes the guessing out, especially on macarons.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "precision-scales", "isOptional": true, "notes": "For weighing the egg whites to the gram." },
+    { "slug": "sieve", "isOptional": false, "notes": "For sifting the almond-and-icing-sugar mix." },
+    { "slug": "stand-mixer", "isOptional": false, "notes": "A clean dry bowl for the meringue." },
+    { "slug": "silicone-spatula", "isOptional": false },
+    { "slug": "piping-bag", "isOptional": false },
+    { "slug": "piping-tips", "isOptional": false, "notes": "A round 10 mm tip." },
+    { "slug": "baking-mat", "isOptional": false, "notes": "Two silicone mats, or baking paper." },
+    { "slug": "baking-tray", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "macaronage",
+      "term": "Macaronage",
+      "definition": "The folding stage where the sifted almond-and-icing-sugar mix is folded into the meringue until the batter flows in a slow ribbon. Underdone, the batter is stiff and the macarons stay tall and rough; overdone, the batter slumps and spreads. The check: lift the spatula and let the batter fall back; a ribbon that settles back into the bowl in about ten seconds is right. Stop folding as soon as the ribbon flows."
+    },
+    {
+      "slug": "macaron-feet",
+      "term": "Macaron feet",
+      "definition": "The ruffled lower edge on a baked macaron shell, formed when the trapped moisture in the rested skin escapes upward as the shell cooks. Feet are the visual sign that the meringue was stable, the macaronage was correct, the skin formed in the rest, and the oven heat lifted cleanly. No feet means one of those four steps fell short."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Macarons are not difficult to bake well, but they are unforgiving: the recipe runs on four exact ratios (ground almond, icing sugar, egg white, caster sugar) and three exact stages (meringue, macaronage, rest). Each stage has a single right answer. Read the macaronage by sight, rest the piped shells until the surface skins over, and bake low so the feet rise without the shell browning." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Domestic ovens drift by 20°C or more. An oven thermometer takes the guessing out — and macarons are the bake that punishes a drifting oven hardest." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Age the egg whites",
+          "body": "Egg whites separated the day before and kept covered in the fridge whisk to a stiffer meringue than fresh whites. Bring them back to cool room temperature before whisking."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 24,
+          "items": [
+            { "ingredientSlug": "almond-flour", "amount": 150, "unit": "g", "prepNote": "very finely ground; sift before weighing", "isOptional": false, "groupLabel": "For the shells" },
+            { "ingredientSlug": "icing-sugar", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the shells" },
+            { "ingredientSlug": "egg-whites", "amount": 110, "unit": "g", "prepNote": "aged 24 hours in the fridge; from about 4 large eggs", "isOptional": false, "groupLabel": "For the shells" },
+            { "ingredientSlug": "caster-sugar", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the shells" },
+            { "ingredientSlug": "unsalted-butter", "amount": 150, "unit": "g", "prepNote": "softened, for the buttercream", "isOptional": false, "groupLabel": "For the buttercream" },
+            { "ingredientSlug": "icing-sugar", "amount": 200, "unit": "g", "prepNote": "sifted, for the buttercream", "isOptional": false, "groupLabel": "For the buttercream" },
+            { "ingredientSlug": "vanilla-bean-paste", "amount": 5, "unit": "ml", "prepNote": "1 teaspoon", "isOptional": false, "groupLabel": "For the buttercream" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Sift, weigh, mark trays" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 150°C fan. Sift the {{almond-flour}} and the first 150 g of {{icing-sugar}} together twice into a wide bowl; discard any larger almond pieces that will not pass the sieve. Weigh the {{egg-whites}} to 110 g — precision matters. Mark out 4 cm circles on baking paper or a silicone mat as a guide, spacing them 3 cm apart on two trays." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Meringue" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whisk the egg whites in a spotlessly clean dry bowl on medium speed until they form soft peaks. With the mixer running, add the {{caster-sugar}} a tablespoon at a time, then increase to high speed and whisk for 3–4 minutes until the meringue is thick, glossy, and holds a stiff peak that does not droop when the whisk is lifted." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Macaronage" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add a third of the sifted almond-and-icing-sugar to the meringue and fold in firmly to deflate; this loosens the batter. Fold in the remaining two-thirds gently, pressing the batter against the side of the bowl and lifting it back through. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "macaronage" } }], "text": "Check the macaronage by sight" },
+          { "type": "text", "text": ": lift the spatula and let the batter fall back into the bowl. A ribbon that settles in about ten seconds is right. Stop folding as soon as the ribbon flows." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Pipe and rest" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Fill a piping bag fitted with a 10 mm round tip. Pipe 4 cm discs onto the trays using the marked circles as a guide. Tap each tray firmly on the worktop twice to release air bubbles. Let the piped discs rest at room temperature for 30–45 minutes; the surface should skin over and feel dry to a fingertip test. Without this rest, the shells crack in the oven and no feet form." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Bake, 14–16 minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bake the trays one at a time for 14–16 minutes; the shells should rise cleanly, the surface should stay pale, and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "macaron-feet" } }], "text": "feet should form" },
+          { "type": "text", "text": " at the base. A baked shell should lift cleanly off the paper or mat without sticking; if any catch, give them another minute. Cool fully on the trays." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Buttercream, sandwich" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Beat the {{unsalted-butter}} with the sifted {{icing-sugar}} and {{vanilla-bean-paste}} for the buttercream until smooth and pale. Pipe a teaspoon of buttercream onto the flat side of half the shells. Sandwich with the remaining shells. Refrigerate, sealed, for 24 hours before serving; the flavours mature." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If something goes wrong",
+          "intro": "Four common faults and what they tell you about which stage went off.",
+          "items": [
+            { "symptom": "The shells cracked.", "cause": "Either the rest was too short and the surface had not skinned, or the oven was too hot.", "fix": "Rest a full 30–45 minutes until the surface is dry to the touch. Check the oven with a thermometer." },
+            { "symptom": "No feet formed.", "cause": "The macaronage was overdone (batter too loose) or the meringue was unstable (not stiff enough).", "fix": "Stop folding at the ten-second ribbon. Whisk the meringue to a clear stiff peak that holds its point when the whisk is lifted." },
+            { "symptom": "The shells are hollow inside.", "cause": "The macaronage was overdone, or the bake was too long at too low a temperature.", "fix": "Read the ribbon by sight; bake at 150°C for a clean 14–16 minutes." },
+            { "symptom": "The shells stuck to the paper.", "cause": "Underbaked.", "fix": "Give them another 1–2 minutes; a baked shell should lift cleanly when nudged." }
+          ]
+        }
+      }
+    ]
+  }
+}

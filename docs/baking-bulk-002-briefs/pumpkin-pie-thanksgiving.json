@@ -1,0 +1,121 @@
+{
+  "slug": "pumpkin-pie-thanksgiving",
+  "title": "Thanksgiving pumpkin pie",
+  "subtitle": "Spiced pumpkin custard in a shortcrust shell",
+  "excerpt": "The American Thanksgiving classic: a shortcrust pastry base blind-baked, filled with a spiced pumpkin custard, and baked low until the centre is just set with a slight wobble. One 23 cm pie, serving eight.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Amelia Simmons, American Cookery (1796), Project Gutenberg: the earliest documented American pumpkin pie recipe. Fannie Farmer, The Boston Cooking-School Cook Book (1896), Project Gutenberg: gives the canonical spice profile (cinnamon, ginger, cloves) and the custard ratio used here. USDA Bureau of Home Economics (1920s, public domain): pumpkin-pie filling guidance establishes the bake-at-low-temperature rule that keeps the custard smooth.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 75,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "totalMinutes": 175,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the baked pie whole, wrapped twice, for up to 1 month. Defrost overnight in the fridge.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Blind-bake the pastry the day before; fill and bake the next morning.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dessert",
+    "mood": ["festive", "autumn", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 250,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven, middle shelf — drops to 160°C after blind-bake for the custard fill",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "tart-tin", "isOptional": false, "notes": "23 cm loose-bottomed, or a pie dish." },
+    { "slug": "baking-beans", "isOptional": false, "notes": "Or dried rice for blind-baking." },
+    { "slug": "baking-paper", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "blind-baking",
+      "term": "Blind baking",
+      "definition": "A shortcrust pastry case is baked partially (or fully) before its wet filling goes in, to set the base and prevent a soggy bottom. The chilled pastry is lined with baking paper and weighted with baking beans (ceramic, metal, or dried rice/beans). It is baked for 15 minutes weighted, then the paper and beans are removed and the base is baked another 5 minutes to dry the surface."
+    },
+    {
+      "slug": "custard-wobble",
+      "term": "The custard wobble",
+      "definition": "A baked custard pie is done when the centre still wobbles slightly under a gentle shake of the pan, while the edges look set. The residual heat carries the centre the last few degrees as the pie cools. Baked until the centre is firm, the custard cracks; pulled at the wobble, it sets to a smooth velvet texture."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pumpkin pie is a spiced custard baked in a shortcrust shell. The pumpkin is cooked and puréed (or taken straight from a tin); the custard is eggs, brown sugar, double cream and a heavy hand of cinnamon, ginger and cloves; the base is a sweet shortcrust blind-baked until pale gold so the wet filling does not seep through." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Worked at a low temperature once the filling goes in, the custard sets smoothly without cracking. The cue at the end is the wobble — the edges look set, the centre still moves slightly under a shake of the tin. Pull the pie at that point and the residual heat carries it the rest of the way." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "unsalted-butter", "amount": 125, "unit": "g", "prepNote": "very cold, cubed", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "caster-sugar", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": "a pinch", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten — yolk for the pastry, white reserved for sealing", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "water", "amount": 30, "unit": "ml", "prepNote": "ice-cold, 1–2 tablespoons", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "pumpkin", "amount": 425, "unit": "g", "prepNote": "puréed and drained (one standard tin of pumpkin purée works)", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "soft-brown-sugar", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "double-cream", "amount": 240, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "eggs", "amount": 3, "unit": "each", "prepNote": "large, beaten", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 6, "unit": "g", "prepNote": "1 tablespoon", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "ginger-ground", "amount": 3, "unit": "g", "prepNote": "½ teaspoon", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "cloves", "amount": 1, "unit": "g", "prepNote": "ground, ¼ teaspoon", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 2, "unit": "g", "prepNote": "a pinch", "isOptional": false, "groupLabel": "For the filling" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Pastry, chill" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rub the {{unsalted-butter}} into the {{plain-flour}}, first {{sea-salt-fine}} and {{caster-sugar}} until the mixture looks like coarse breadcrumbs. Beat the yolk of the {{eggs}} with the {{water}} and stir into the flour with a knife until the dough just comes together — add another teaspoon of water if it is dry. Form to a flat disc, wrap, and chill for an hour." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Blind bake" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 180°C fan. Roll the chilled pastry on a floured surface to a 30 cm round, about 3 mm thick. Lift into the 23 cm tin and press into the corners; trim the overhang to 2 cm and tuck under for a double-thickness rim. Prick the base with a fork. Line with baking paper and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blind-baking" } }], "text": "blind-bake" },
+          { "type": "text", "text": " with baking beans for 15 minutes; remove the paper and beans and bake another 5 minutes. Brush the warm pastry with the reserved egg white to seal." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Filling, low bake" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drop the oven to 160°C fan. Whisk the {{pumpkin}}, {{soft-brown-sugar}}, {{double-cream}}, the beaten three {{eggs}}, {{cinnamon-ground}}, {{ginger-ground}}, {{cloves}} and the second {{sea-salt-fine}} in a bowl until smooth. Pour into the pastry case. Bake on the middle shelf for 50–55 minutes; the edges should be set and the centre should still " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "custard-wobble" } }], "text": "wobble slightly" },
+          { "type": "text", "text": ". Cool fully in the tin before slicing." }
+        ]
+      }
+    ]
+  }
+}

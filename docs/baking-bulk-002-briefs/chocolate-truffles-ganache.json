@@ -1,0 +1,95 @@
+{
+  "slug": "chocolate-truffles-ganache",
+  "title": "Chocolate ganache truffles",
+  "subtitle": "Dark chocolate truffles rolled in cocoa",
+  "excerpt": "The simplest chocolate truffles: warm cream poured over dark chocolate to form a smooth ganache, chilled until firm, rolled into balls, and tossed in cocoa powder. Twenty-four truffles from one batch.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "sweets-confectionery",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The ganache (warm cream poured over chopped chocolate, stirred to a smooth emulsion) is documented in Auguste Escoffier, Le Guide Culinaire (1903) and earlier French sources. The truffle-rolled-in-cocoa form was popularised in late nineteenth-century Parisian chocolatiers; pre-1928 French confectionery manuals document the technique.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "24 truffles",
+    "prepMinutes": 20,
+    "cookMinutes": 5,
+    "restingMinutes": 0,
+    "chillingMinutes": 180,
+    "totalMinutes": 205,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Roll, dust in cocoa, freeze in a sealed box; defrost at fridge temperature for 30 minutes before serving.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly.",
+    "makeAheadNotes": "The ganache holds in the fridge for 5 days before rolling; rolled truffles keep 2 weeks.",
+    "dietaryFlags": ["vegetarian", "glutenFree"],
+    "cuisine": "french",
+    "mealType": "snack",
+    "mood": ["festive", "specialOccasion"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "bakeTemperatureCelsius": null,
+      "bakeTemperatureNote": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "mixing-bowl-medium", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ganache-emulsion",
+      "term": "Ganache emulsion",
+      "definition": "Ganache is an emulsion: warm cream and melted chocolate held together as a smooth, glossy paste. Start in the centre of the bowl, whisking small circles; the emulsion forms there first and the rest follows as you widen the circles. A broken ganache (oily and split) usually means the cream was too hot, or the chocolate too cold to melt cleanly. Save it by whisking in a tablespoon of cool cream and starting again from the centre."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Chocolate truffles are ganache (warm cream poured over chocolate, stirred to a smooth glossy emulsion), chilled until firm, rolled into balls and tossed in cocoa powder. The recipe takes ten minutes of work plus three hours in the fridge; the chilling does most of the labour." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use a good dark chocolate at 65–70% cocoa. The truffles inherit the chocolate's flavour directly; cheap chocolate gives cheap truffles." }]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 24,
+          "items": [
+            { "ingredientSlug": "dark-chocolate", "amount": 250, "unit": "g", "prepNote": "65–70% cocoa, finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 25, "unit": "g", "prepNote": "cubed, softened", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vanilla-extract", "amount": 5, "unit": "ml", "prepNote": "1 teaspoon", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "g", "prepNote": "a small pinch", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cocoa-powder", "amount": 50, "unit": "g", "prepNote": "for rolling", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [
+        { "type": "text", "text": "Make the " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ganache-emulsion" } }], "text": "ganache emulsion" }
+      ] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Put the finely chopped {{dark-chocolate}} into a medium bowl. Heat the {{double-cream}} in a small saucepan until just steaming (do not let it boil). Pour the warm cream over the chocolate and let it sit for 1 minute. Start whisking small circles from the centre of the bowl outward; the emulsion forms first in the middle and spreads as you widen the circles. When the mixture is smooth and glossy, whisk in the {{unsalted-butter}}, {{vanilla-extract}} and {{sea-salt-fine}}." }]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Chill, roll, dust" }] },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Press cling film onto the surface of the ganache and chill for 3 hours, or until firm enough to scoop. Sift the {{cocoa-powder}} into a shallow bowl. Scoop teaspoonfuls of ganache, roll quickly between cold palms into rough balls, then drop into the cocoa and roll to coat. Set on baking paper. Chill until firm. Keep refrigerated in an airtight box." }]
+      }
+    ]
+  }
+}
