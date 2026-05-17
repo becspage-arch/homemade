@@ -5,9 +5,9 @@ import { prisma } from '@homemade/db'
 import { audit } from '@/lib/audit'
 import { requireAdminRole } from '@/lib/auth'
 
-export type StreamName = 'cooking' | 'baking' | 'mindset'
+export type StreamName = 'queue' | 'global'
 
-const STREAMS: ReadonlySet<StreamName> = new Set(['cooking', 'baking', 'mindset'])
+const STREAMS: ReadonlySet<StreamName> = new Set(['queue', 'global'])
 
 type Result = { ok: true } | { ok: false; error: string }
 

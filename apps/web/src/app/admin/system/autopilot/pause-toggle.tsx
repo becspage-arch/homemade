@@ -4,7 +4,7 @@ import { useState, useTransition } from 'react'
 import { pauseStream, resumeStream } from './actions'
 
 interface Props {
-  streamName: 'cooking' | 'baking' | 'mindset'
+  streamName: 'queue' | 'global'
   paused: boolean
 }
 
