@@ -3,7 +3,7 @@
 **Date:** 2026-05-17
 **Session model:** claude-opus-4-7 — scheduled task fired Opus, not Sonnet per `feedback_model_choice.md`. **Verification flag:** the `autopilot-queue` scheduled task's `model: claude-sonnet-4-5` frontmatter is still not being honoured by the runner. Same self-identification pattern as cooking bulk-009 ("Opus-model concession").
 **Briefs directory:** `docs/mindset-bulk-002-briefs/` (also archived to `docs/archive/mindset-bulk-002-briefs/`)
-**Status on landing:** ⛔ blocked at upload — DB_MIGRATION_PENDING
+**Status on landing:** ✅ recovered same-session — 4 PUBLISHED after the post-halt deploy applied the pending pottery migration
 **Driver:** scheduled task `autopilot-queue` (single-queue round-robin)
 
 ---
@@ -76,39 +76,34 @@ The other three briefs (`steady-steady-steady`,
 | Run | OK | FAIL | Notes |
 |---|---|---|---|
 | 1 | 0 | 1 | First upload (`steady-steady-steady`) failed P2022 ColumnNotFound on `Tutorial.requiresKiln`. Aborted the remaining 3 uploads to avoid noise — same failure mode. |
+| 2 (post-deploy recovery) | 4 | 0 | After the halt-commit push (cf610b4) deploy succeeded and applied the pending pottery migration, all 4 briefs re-uploaded as PUBLISHED on the first attempt — same shape as cooking bulk-006's same-session recovery. |
 
 The pottery migration adds `requiresKiln` + `requiresWheel` boolean
-columns to `Tutorial`. Local Prisma client (regenerated from the
-schema in commit 27d95cc which is on this checkout) expects the
-columns; prod doesn't have them yet.
+columns to `Tutorial`. The first upload attempt failed because prod
+hadn't yet applied the migration; the second run succeeded after the
+halt-commit push triggered a deploy that landed it.
+
+**Tutorial IDs landed:**
+
+- `cmp9zyn9v0000ywv4w1hyw19v` — `steady-steady-steady` (AFFIRMATION)
+- `cmp9zyvia0000zwv4xe5zz3ce` — `i-am-safe-even-when-the-number-is-small` (AFFIRMATION)
+- `cmp9zz0iw0000c4v4y09j1h21` — `there-is-enough-now` (ENERGY_STATEMENT)
+- `cmp9zz52w0000ugv4u2ylcke1` — `the-hand-on-heart-money-breath` (RITUAL)
+
+Cumulative mindset position: 20 → 24 PUBLISHED.
 
 ---
 
-## Recovery path
+## Recovery — completed in-session
 
-Same shape as bulk-001's recovery, documented for the next fire:
+Cooking bulk-006's same-session recovery pattern played out here too:
 
-1. Deploy run 25995805194 (commit `3734b9d`, currently `in_progress`
-   at fire time) deploys the tree through `3734b9d` which includes
-   `27d95cc`'s pottery migration. Once that run completes
-   successfully, prod has `Tutorial.requiresKiln`.
-2. The downstream queued deploys (61386b6 `pending`, 7a09a3b
-   `cancelled`) also include the migration if 3734b9d for any
-   reason doesn't land it.
-3. The next autopilot fire that picks mindset reads this report,
-   sees the recovery path, restores the four briefs from
-   `docs/archive/mindset-bulk-002-briefs/` into
-   `docs/mindset-bulk-002-briefs/` (no-op if already present —
-   the originals are kept in place this time), re-runs
-   voice-check (should still pass), and uploads them with
-   `--status PUBLISHED`.
-4. If the recovery fire is the same scheduled task on a later
-   tick (autopilot-queue), it will auto-pick mindset again only
-   once mindset reaches the head of the round-robin queue. If
-   the auto-pick lands a different category, that category runs
-   instead, and mindset's recovery happens on the following
-   mindset turn.
-5. No re-drafting required. The briefs are voice-check-clean.
+1. Halt signal `cmp9z957c0000b8v4g3jui7lv` was written and the four briefs archived to `docs/archive/mindset-bulk-002-briefs/`.
+2. BUILD_PROGRESS + the bulk-002 report were committed and pushed (commit `cf610b4`).
+3. The cf610b4 push triggered deploy run `25996150839`. That deploy bundles all migrations through `27d95cc`, including the pottery migration. The run completed `success` and `/healthz` returned 200.
+4. Mindset bulk-002's four uploads were re-run against the now-current prod schema. All four landed PUBLISHED on the first attempt, same upload-script path the autopilot would have run on the next fire.
+
+The archived briefs at `docs/archive/mindset-bulk-002-briefs/` are kept as a mirror — they match the live briefs at `docs/mindset-bulk-002-briefs/` byte-for-byte — so a manual replay path stays available if anything needs re-running. The halt signal stays in the AutopilotHaltSignal table as a record of the drift; it can be acknowledged in `/admin/system/autopilot` once Rebecca picks the entry up.
 
 ---
 
