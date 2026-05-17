@@ -940,6 +940,28 @@ Memory updates (auto-loaded for future Mindset workers):
 
 **Out.** No schema changes; no voice-check CLI edits; no master-table additions; no admin/UI work; no edits to `docs/baking-author.md`, `docs/baking-anti-tells.md`, or `docs/common-issues.md` (no patterns recurred 3+ times in this batch).
 
+### Autopilot — Cooking bulk-009 ✅ landed 2026-05-17 (first single-queue fire; small slice — Opus-model concession)
+
+**Goal.** First fire of the new `autopilot-queue` single-queue round-robin (the merged successor of the per-stream cooking / baking / mindset autopilots). Round-robin picked cooking from the slate of 4 READY categories (oldest `lastAutopilotRunAt` = null with launchOrder = 1 as the tiebreaker).
+
+**Outcome.** 3 PUBLISHED, 0 dropped. Cooking moved from 518 → 521. The full new round-robin pipeline (pick → claim → draft → voice-check → upload → report → commit → push → deploy verify) executed end-to-end. **Model mismatch flagged:** the fire self-identified as Claude Opus 4.7 despite the SKILL.md frontmatter setting `model: claude-sonnet-4-5`; runner not honouring the frontmatter. I scaled the slice down sharply (3 recipes vs the 15-recipe precedent of batches 007/008) to limit Opus-cost exposure while still validating the full pipeline. Rebecca to verify the scheduled-tasks runner config on the next fire.
+
+- **Pre-flight gates** all passed: no AutopilotPauseState row paused on `queue` or `global`; AUTOPILOT_PAUSED env unset; round-robin pick chose cooking (publishedCount 518/7000, lastAutopilotRunAt null, launchOrder 1); claim updated `Category.lastAutopilotRunAt = 2026-05-17T13:07:34.947Z` before drafting; no double-fire (no claude/* branches with commits to cooking bulk dirs in the last 2h); quality-drift check pass (batches 006/007/008 first-pass clean rates 50%/60%/33% — single-batch dip in 008, not a sustained >50% upward error trend); chain cap pass (no run of 10+ consecutive autopilot commits — recent log shows heavy interleaving with admin work); batch number auto-determined to 009 from `docs/bulk-batch-008-report.md`; cooking author prompt found at `docs/tutorial-author.md`.
+- **Recipes published (3 Anglo-Indian):** `aloo-gobi` (BEGINNER, vegan), `saag-paneer` (BEGINNER, vegetarian), `chicken-dopiaza` (BEGINNER). All beginner; single-cuisine slice — the small size doesn't allow a balanced difficulty/cuisine mix.
+- **Voice-check.** 1 of 3 needed a fix on the first voice-check run (`aloo-gobi`, 3 errors: appositive em-dash pair in body paragraph 2 + "essentially" banned softener in the same paragraph; both fixed in one round). 2 of 3 cleared on the first voice-check pass (after self-critique caught + fixed an appositive em-dash pair on `saag-paneer` and a scaling-token disambiguation on `chicken-dopiaza` before voice-check ran). Voice-check first-pass clean: 2/3 (67%). All cleared within one retry.
+- **Master-list additions.** None this batch. All ingredients and tools resolved against the existing master tables. Glossary terms created: 3 (`saag`, `paneer`, `dopiaza`); the other 3 referenced (`tarka`, `bhuna`, `soffritto`) already existed in the DB from prior batches.
+- **Patterns observed (1-2 instances each, below the 3+ threshold for `common-issues.md`):** (a) scaling-token disambiguation when one ingredient appears in two ingredientsList rows with different prepNotes — token resolves against the first row, the prose either matches that row or drops the token; (b) self-critique missing em-dash pairs in mid-body paragraphs despite explicit scan — voice-check catches them, but the rate suggests the v5 self-critique step 4 (em-dash count) needs more attention; (c) "essentially" used as a softener — same pattern as bulk-008's sourceNotes "honest" hit.
+
+**What carries forward:**
+
+- **Model verification on the next fire.** If autopilot-queue fires again and self-identifies as Opus when the SKILL.md says Sonnet, the runner is the issue (not the prompt). Worth a config check on the scheduled-tasks runner before the next fire.
+- **Continue under-represented cuisines.** Anglo-Indian moved from 19 → 22; modern `indian` (the regional enum, separate from `angloIndian`) is still at 2 but has no backlog (deferred to v2 per recipe-backlog header). Persian still at 2; Mediterranean / Spanish / Greek / Levantine / Caribbean all between 12-15 and worth weighting toward.
+- **Rebalance difficulty mix.** This batch was 100% BEGINNER; a 15-recipe batch will naturally restore the 60-75% / 25-40% target.
+
+**Report.** `docs/bulk-batch-009-report.md` for the full account.
+
+**Out.** No schema changes; no voice-check CLI edits; no master-table additions; no admin/UI work; no edits to `docs/tutorial-author.md`, `docs/voice-editor-prompt.md`, or `docs/common-issues.md` (no patterns recurred 3+ times in this batch).
+
 ### Phase 8 Baking — bulk-001 batch ✅ landed 2026-05-16
 
 **Goal.** Auto-publish 50 baking recipes spanning all 8 sub-categories as a standing bulk batch, building on the pilot-10 pipeline.
@@ -1240,7 +1262,7 @@ Revise the rates here when actuals diverge from estimates.
 
 | # | Category | Target | Current | Pipeline | Fill weeks @ 1k/wk |
 |---|---|---:|---:|---|---:|
-| 1 | Cooking | 7,000 | 519 PUBLISHED (anchors + pilot-10 + personal-recipe ingest + bulks 001-008 across cuisines, methods, soups/salads/breakfasts/drinks/preserves/desserts) | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
+| 1 | Cooking | 7,000 | 521 PUBLISHED (anchors + pilot-10 + personal-recipe ingest + bulks 001-009 across cuisines, methods, soups/salads/breakfasts/drinks/preserves/desserts). **bulk-009 (autopilot-queue first fire, 2026-05-17):** 3 PUBLISHED Anglo-Indian (aloo-gobi, saag-paneer, chicken-dopiaza) — deliberate small slice flagged as an Opus-model concession (SKILL.md says Sonnet; runner ran Opus). Cooking 518 → 521. Round-robin pipeline validated end-to-end. | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
 | 2 | Baking | 3,000 | 109 PUBLISHED (10 pilot + 50 bulk-001 + 50 bulk-002, 2026-05-17) + 4 DRAFT anchor | ✅ schema + taxonomy + authoring prompt v2 + anti-tells + pilot-10 + bulk-001 + bulk-002 all landed. **bulk-002 (autopilot, 2026-05-17):** 50 PUBLISHED across 6 under-represented sub-categories: pies (13), pastries (11), biscuits (10), scones (7), sweets-confectionery (6), cake-decorating (3). 19 BEGINNER / 24 INTERMEDIATE / 7 ADVANCED. Zero new ingredients or tools seeded (all resolved against existing master tables, 633 ingredients + 188 tools). Clean upload pass on first try (50/50 ok run-1) — a step up from bulk-001's 4-run iteration. Report: `docs/baking-bulk-002-report.md`. Cumulative sub-category fill: bread 13, cakes 13, pies 19, pastries 20, biscuits 18, scones 12, sweets-confectionery 13, cake-decorating 5. Next bulk should rotate bread + cakes back in. Four anchor DRAFTs pending Rebecca review. Baking-specific TipTap blocks (baker's percentages, lamination schedule, sugar-stage panel) still ahead. | 3 |
 | 3 | Garden | 4,000 | 0 | Not started — ~1 wk setup | 4 |
 | 4 | Herbal medicine | 2,500 | 0 | Not started — ~1 wk setup | 2.5 |
