@@ -1,0 +1,335 @@
+{
+  "slug": "chicken-korma",
+  "title": "Chicken korma",
+  "subtitle": "A mild, creamy Anglo-Indian curry of yoghurt, cream, and aromatic spice",
+  "excerpt": "Chicken korma is a mild, gently spiced curry where the sauce is built from onion, yoghurt, and cream rather than tomato. It is aromatic (cardamom, cinnamon, bay) rather than hot. The richness comes from the slow reduction of yoghurt into the onion base, not from adding cream at the end.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "• The korma tradition originates in the Mughal court cuisine of northern India, documented in sixteenth and seventeenth-century Persian cookbooks. The dish in this form, a British-Indian restaurant mild chicken curry with cream, is a British-Indian restaurant adaptation rather than a direct Mughal descendant.\n• Madhur Jaffrey, *Indian Cookery* (1982). Reference for the yoghurt-reduction technique and the importance of cooking out the spice paste before adding liquid. Jaffrey's approach to korma, building the sauce from onion rather than tomato, informs the method here.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months. The cream sauce may split slightly on defrosting — reheat gently and stir.",
+    "batchable": true,
+    "batchNotes": "Doubles without adjustment.",
+    "makeAheadNotes": "The curry keeps in the fridge for 3 days and improves on the second day. Reheat gently.",
+    "dietaryFlags": [],
+    "cuisine": "british-indian",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "korma",
+      "term": "Korma",
+      "definition": "A style of curry characterised by a mild, creamy sauce built from yoghurt and/or cream, with aromatic spices rather than chilli heat. The word derives from the Urdu 'qorma', meaning braised. The British-Indian restaurant version is typically the mildest curry on the menu."
+    },
+    {
+      "slug": "bhunao",
+      "term": "Bhunao",
+      "definition": "A cooking technique in Indian cooking where the spice paste is fried hard in oil, with liquid added a little at a time and cooked off repeatedly, until the paste darkens and the oil separates at the edges. This develops the depth of flavour that distinguishes a properly made curry from a stew with spices added."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "korma" } }],
+            "text": "Korma"
+          },
+          {
+            "type": "text",
+            "text": " is not difficult, but it requires patience in the early stages. The onion base must cook until properly golden — this takes 20 minutes over a medium heat, not 5. The yoghurt goes in tablespoon by tablespoon, cooked off between additions, which is the step that gives the sauce its body. The cream at the end is for richness, not the sauce itself."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The spicing is aromatic and warm: cardamom, cinnamon, bay, coriander, cumin. No chilli beyond a pinch. The dish should smell floral, not fiery. Use full-fat yoghurt — low-fat splits on contact with the heat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thighs-boneless",
+              "amount": 700,
+              "unit": "g",
+              "prepNote": "cut into 4 cm pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "grated or finely crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-root",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-yoghurt",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "full-fat",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-ground",
+              "amount": 1.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spices"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spices"
+            },
+            {
+              "ingredientSlug": "cardamom-green",
+              "amount": 6,
+              "unit": "each",
+              "prepNote": "lightly crushed",
+              "isOptional": false,
+              "groupLabel": "Spices"
+            },
+            {
+              "ingredientSlug": "cinnamon-stick",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spices"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spices"
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spices"
+            },
+            {
+              "ingredientSlug": "chilli-powder",
+              "amount": 0.25,
+              "unit": "tsp",
+              "prepNote": "optional",
+              "isOptional": true,
+              "groupLabel": "Spices"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": null,
+              "unit": "g",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "almonds-flaked",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "toasted, to serve",
+              "isOptional": true,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Serve with basmati rice and naan. Remove the whole spices (cardamom pods, cinnamon stick, bay leaves) before serving."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the onion base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat {{vegetable-oil}} of oil in a large, wide pan over a medium heat. Add the {{cardamom-green}}, {{cinnamon-stick}}, and {{bay-leaves}} and fry for 30 seconds until fragrant. Add {{onion}} diced onion and a pinch of salt. Cook for 18 to 20 minutes, stirring regularly, until a deep golden colour. Don't rush this step — pale onions produce a weak sauce."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add garlic, ginger, and spices" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add {{garlic}} of garlic and {{ginger-root}} of grated ginger. Cook for 2 minutes. Add {{coriander-ground}}, {{cumin-ground}}, {{turmeric}}, and chilli if using. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bhunao" } }],
+            "text": "Bhunao"
+          },
+          {
+            "type": "text",
+            "text": " the spice paste for 2 minutes — fry hard, stirring constantly, until the paste darkens and the oil begins to separate at the edges."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add yoghurt and chicken" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add {{plain-yoghurt}} of yoghurt one large spoonful at a time, stirring well and cooking each addition until absorbed before adding the next. This takes about 5 minutes. Add {{chicken-thighs-boneless}} of chicken pieces and stir to coat. Cook over a medium heat for 8 minutes, turning once or twice."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish with cream" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add {{double-cream}} of double cream and 100 ml of water. Stir and bring to a gentle simmer. Cook uncovered for 12 to 15 minutes until the chicken is cooked through and the sauce has thickened. Taste and season with salt. Scatter with toasted almonds if using."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Yoghurt has split into grainy white flecks",
+              "cause": "Added all at once rather than spoon by spoon, or the heat was too high.",
+              "fix": "Always add yoghurt gradually, allowing each spoonful to cook into the sauce before adding the next. If it splits, lower the heat and stir vigorously — in most cases it will come back together once the sauce cools slightly."
+            },
+            {
+              "symptom": "Sauce tastes bland and watery",
+              "cause": "Onions were not cooked long enough, or the spice paste was not fried hard.",
+              "fix": "The flavour of a korma lives in a properly caramelised onion base and a well-cooked spice paste. Both take longer than expected. Pale onions and briefly-cooked spice produce a thin, flavourless result."
+            },
+            {
+              "symptom": "Sauce is too sweet",
+              "cause": "Onions overcooked to the point of caramelising rather than just browning.",
+              "fix": "The onion colour you want is deep golden, not brown-black. Stir regularly and keep the heat at medium to slow the process. If they go too dark, there's no correction — start the onion again."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Korma in its Mughal form was a braised meat dish (lamb or chicken) slow-cooked in yoghurt with aromatic spice. The British-Indian restaurant version that became familiar across the UK is a considerable departure: milder, creamier, and designed for an audience that wanted the flavour of Indian spicing without the heat. It is no less worth cooking for that. The cream-and-yoghurt sauce with cardamom and cinnamon is very good, and the dish has earned its place on the menu regardless of its pedigree."
+          }
+        ]
+      }
+    ]
+  }
+}

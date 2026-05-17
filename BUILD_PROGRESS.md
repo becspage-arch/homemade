@@ -22,7 +22,7 @@ Live at https://homemade.education behind splash gate (cookie `homemade-access=1
 
 **Library counts (PUBLISHED)** — full grid in § Multi-category fill plan below.
 
-- Cooking 536 (anchors + pilot-10 + personal-recipe ingest + bulks 001–010). Baking 208 (pilot-10 + bulks 001–004). Mindset 64 (bulks 001–003 — 59 PRACTICE + 5 type-intro READING). The other 14 categories are private placeholders until each crosses 10 published rows.
+- Cooking 527 (anchors + pilot-10 + personal-recipe ingest + bulks 001–011). Baking 208 (pilot-10 + bulks 001–004). Mindset 64 (bulks 001–003 — 59 PRACTICE + 5 type-intro READING). The other 14 categories are private placeholders until each crosses 10 published rows.
 
 **This week's notable landings**
 
@@ -1050,6 +1050,23 @@ Verified working in production after batch 004:
 
 **Out.** No schema changes; no voice-check CLI edits; no master-table additions; no admin/UI work; no edits to `docs/tutorial-author.md`, `docs/voice-editor-prompt.md`, or `docs/common-issues.md` (no patterns recurred 3+ times in this batch).
 
+### Autopilot — Cooking bulk-011 ✅ landed 2026-05-17 (loop continuation)
+
+**Goal.** Loop continuation (context overflow from prior bulk-010 session). 15 recipes across four underserved classic-cuisine families: Italian pasta canon, French bistro, British-Indian, British comfort.
+
+**Outcome.** 15 PUBLISHED, 0 dropped. DB count after batch: **527 PUBLISHED** (per `category-counts.ts` live query). 3 net-new entries (spaghetti-aglio-olio, moules-marinieres, tarka-dhal); 12 existing entries refreshed with voice-checked content.
+
+- **Cuisine split:** Italian 5 (carbonara, aglio e olio, puttanesca, risotto porcini, al pomodoro), French 4 (boeuf bourguignon, coq au vin, moules marinières, ratatouille), British-Indian 3 (chicken korma, tarka dhal, chana masala), British 3 (cottage pie, shepherd's pie, fish and chips).
+- **Difficulty:** 12 BEGINNER (80%) / 3 INTERMEDIATE (risotto, boeuf bourguignon, fish and chips).
+- **Voice-check:** 4 of 15 clean on first pass. 9 needed em-dash pair fixes; 3 needed "genuinely" removal. All cleared on first retry within session.
+- **New ingredients seeded:** `dried-chilli`, `amchur` (641 total after seed).
+- **New glossary terms:** amchur, chana, dhal, beer-batter, blanching-chips, cottage-pie, shepherds-pie (7 new; several others pre-existed).
+- **Slug corrections:** `bay-leaf` → `bay-leaves`, `flaked-almonds` → `almonds-flaked`, `large-casserole` → `dutch-oven`, `large-frying-pan` → `frying-pan-30`, `potato-masher` → `masher`, `baking-dish` → `rectangular-baking-tin`, `digital-thermometer` → `instant-read-thermometer`, plus multiple ingredient slug normalisation (ground-cumin → cumin-ground etc).
+
+**Report.** `docs/bulk-batch-011-report.md`.
+
+**Out.** No schema changes; no admin/UI work.
+
 ### Autopilot — Mindset bulk-002 ✅ landed (same-session recovery) 2026-05-17
 
 **Goal.** Second mindset autopilot fire (first since bulk-001 recovered). Small slice sized for the Opus-model concession (the scheduled-tasks runner is still firing Opus despite the `model: claude-sonnet-4-5` frontmatter — same self-identification pattern as cooking bulk-009).
@@ -1385,7 +1402,7 @@ Revise the rates here when actuals diverge from estimates.
 
 | # | Category | Target | Current | Pipeline | Fill weeks @ 1k/wk |
 |---|---|---:|---:|---|---:|
-| 1 | Cooking | 7,000 | 536 PUBLISHED (anchors + pilot-10 + personal-recipe ingest + bulks 001-010 across cuisines, methods, soups/salads/breakfasts/drinks/preserves/desserts). **bulk-010 (parallel-burner loop, 2026-05-17):** 15 PUBLISHED across caribbean, easternEuropean, turkish, levantine, northAfrican, persian. Cooking 521 → 536. | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
+| 1 | Cooking | 7,000 | 527 PUBLISHED (anchors + pilot-10 + personal-recipe ingest + bulks 001-011 across cuisines, methods, soups/salads/breakfasts/drinks/preserves/desserts). **bulk-011 (loop continuation, 2026-05-17):** 15 recipes PUBLISHED — Italian (5: pasta + risotto), French (4: boeuf bourguignon, coq au vin, moules marinières, ratatouille), British-Indian (3: korma, tarka dhal, chana masala), British (3: cottage pie, shepherd's pie, fish and chips). 3 CREATED, 12 content refreshes. DB count post-batch: 527. | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
 | 2 | Baking | 3,000 | 208 PUBLISHED (10 pilot + 50 bulk-001 + 50 bulk-002 + 49 bulk-003 + 49 bulk-004, 2026-05-17) + 4 DRAFT anchor | ✅ schema + taxonomy + authoring prompt v2 + anti-tells + pilot-10 + bulk-001 + bulk-002 + bulk-003 + bulk-004 all landed. **bulk-004 (parallel-burner loop, 2026-05-17):** 49 PUBLISHED — cake-decorating (13) + sweets-confectionery (11) + pies (8) + pastries (8) + bread (5) + cakes (4). 18 BEGINNER / 30 INTERMEDIATE / 1 ADVANCED. 17 voice-check failures on run 1 (all em-dash pairs in excerpt/sourceNotes/body, plus 1 banned word "genuinely") fixed and re-uploaded cleanly. Notable: em-dash pair spanning glossaryTooltip text-node boundary (italian-meringue-frosting). Report: `docs/baking-bulk-004-report.md`. Cumulative sub-category fill: bread 39, cakes 37, pies 27, pastries 28, biscuits 23, scones 15, sweets-confectionery 24, cake-decorating 18. Four anchor DRAFTs pending Rebecca review. Baking-specific TipTap blocks (baker's percentages, lamination schedule, sugar-stage panel) still ahead. | 3 |
 | 3 | Garden | 4,000 | 0 | Not started — ~1 wk setup | 4 |
 | 4 | Herbal medicine | 2,500 | 0 | Not started — ~1 wk setup | 2.5 |

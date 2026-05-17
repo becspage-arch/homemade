@@ -1,0 +1,277 @@
+{
+  "slug": "fish-and-chips",
+  "title": "Fish and chips",
+  "subtitle": "Beer-battered cod or haddock with thick oven-fried chips",
+  "excerpt": "Fish and chips at home means a beer batter that fries to a light, shattering crust around fresh white fish, with thick chips cooked in the oven until golden and crisp. It is not as fast as the chippy, but it is considerably better. The batter is the work; the chips mostly look after themselves.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "• Fish and chips as a combined dish dates to the 1860s in Britain, with the Jewish frying tradition (battered fried fish from the Sephardic community in London's East End) combining with the northern English chip shops that sold fried potatoes. The dish spread nationally with the railway network.\n• The beer batter recipe draws on the standard approach documented in British cookery writing: plain flour, baking powder, and cold beer producing a light batter that fries without heaviness. The oven chip method (parboiling before roasting) is the home standard for producing chips without a deep-fryer.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 55,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The batter can be made up to 1 hour ahead and kept cold. The chips can be parboiled and left to steam-dry up to 2 hours ahead. Fry the fish at the last moment.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "fan 200°C / gas 7",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "tongs", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "beer-batter",
+      "term": "Beer batter",
+      "definition": "A frying batter made with flour, baking powder, and cold beer. The carbonation in the beer creates a light, airy texture when fried, and the beer flavour adds depth. The batter must be kept cold and not overmixed — lumps are acceptable."
+    },
+    {
+      "slug": "blanching-chips",
+      "term": "Parboiling (chips)",
+      "definition": "Cooking cut potatoes in boiling water until just tender before finishing them in the oven or a fryer. Parboiling gelatinises the outer starch, which then crisps in the dry heat. The technique produces chips with a soft interior and a genuinely crisp exterior without a deep-fryer."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The two components of fish and chips require different timing. The chips go into the oven first and take 40 minutes. The fish takes 10 minutes in the pan. Make the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "beer-batter" } }],
+            "text": "beer batter"
+          },
+          {
+            "type": "text",
+            "text": " while the chips cook and keep it cold. The sequence matters: start the chips, make the batter, rest the batter, fry the fish when the chips are nearly done."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use cold beer — the colder the batter, the lighter the crust. The fish should be properly dried before going into the batter, or the coating will slide off during frying. A digital thermometer is the only reliable way to know when the oil is at temperature."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            {
+              "ingredientSlug": "cod-fillet",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "2 thick fillets, skin off",
+              "isOptional": false,
+              "groupLabel": "For the fish"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 120,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the batter"
+            },
+            {
+              "ingredientSlug": "baking-powder",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the batter"
+            },
+            {
+              "ingredientSlug": "beer",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": "cold",
+              "isOptional": false,
+              "groupLabel": "For the batter"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": null,
+              "unit": "g",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": "For the batter"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": "for frying",
+              "isOptional": false,
+              "groupLabel": "For frying"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "for dusting the fish",
+              "isOptional": false,
+              "groupLabel": "For frying"
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "peeled, cut into thick chips",
+              "isOptional": false,
+              "groupLabel": "For the chips"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": "for the chips",
+              "isOptional": false,
+              "groupLabel": "For the chips"
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Serve with malt vinegar, salt, and mushy peas or tartare sauce. Cod and haddock are the traditional choices; pollock and coley are good, more sustainable alternatives."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the chips" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the oven to 220°C (fan 200°C / gas 7). "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blanching-chips" } }],
+            "text": "Parboil"
+          },
+          {
+            "type": "text",
+            "text": " {{potato}} of thick-cut chips in boiling salted water for 8 minutes until just tender at the edges. Drain and leave in the colander to steam dry for 5 minutes. Toss with oil, season, and spread in a single layer on a large baking tray. Roast for 35 to 40 minutes, turning once halfway, until deep golden and crisp."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the batter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "While the chips cook, make the batter. Whisk {{plain-flour}} of flour (for the batter) with {{baking-powder}} of baking powder and a pinch of salt. Add {{beer}} of cold beer and whisk briefly — a few lumps are fine, do not overmix. Refrigerate for 20 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry the fish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pat {{cod-fillet}} of fish fillets dry with kitchen paper and season. Dust in the remaining plain flour, shaking off the excess. Heat {{vegetable-oil}} of oil in a deep frying pan to 180°C. Dip each fillet in the batter and lower carefully into the oil. Fry for 4 to 5 minutes per side until the batter is a deep golden brown and the fish flakes easily. Drain briefly on kitchen paper. Serve immediately alongside the chips."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Batter is thick and heavy, not light and crisp",
+              "cause": "Batter was overmixed or the oil was not hot enough.",
+              "fix": "Mix the batter as little as possible — just enough to combine. Oil at 180°C is essential: lower than this and the batter absorbs oil rather than crisping. Use a thermometer."
+            },
+            {
+              "symptom": "Batter has slid off the fish during frying",
+              "cause": "The fish was wet, or not dusted in flour first.",
+              "fix": "Pat the fish completely dry before dusting in flour. The flour creates a surface for the batter to grip. Wet fish generates steam in the hot oil and the batter lifts off."
+            },
+            {
+              "symptom": "Chips are soft and don't crisp",
+              "cause": "Not dried after parboiling, or the oven was not hot enough.",
+              "fix": "Steam-drying is essential: let the chips sit in the colander until the surface is visibly dry before oiling and roasting. A single layer on the baking tray is also critical — overlapping chips steam rather than roast."
+            },
+            {
+              "symptom": "Fish is overcooked and dry inside the batter",
+              "cause": "Fillets were too thin, or cooked too long.",
+              "fix": "Use thick fillets — 2 cm or more. Thin fillets overcook in the time the batter takes to colour. Test by pressing the fish through the batter: it should flake easily under gentle pressure."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fish and chips became a national dish through the chip shops that spread across Britain in the late nineteenth century, feeding an industrial workforce quickly and cheaply. The battered fried fish came from London's Jewish community — a Sephardic tradition of frying fish in batter that had been practised in Britain since the seventeenth century. The combination of the two, in a newspaper wrapper for a penny, was the defining fast food of industrial Britain. The home version is a different proposition: thicker fish, a properly made batter, oven chips instead of deep-fried, and served at the table rather than the street corner. It takes more effort and tastes considerably better."
+          }
+        ]
+      }
+    ]
+  }
+}

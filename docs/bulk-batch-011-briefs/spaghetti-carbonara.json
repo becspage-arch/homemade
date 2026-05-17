@@ -1,0 +1,289 @@
+{
+  "slug": "spaghetti-carbonara",
+  "title": "Spaghetti carbonara",
+  "subtitle": "The Roman pasta of cured pork, egg, and aged cheese",
+  "excerpt": "Spaghetti carbonara is a Roman pasta where rendered guanciale fat and starchy pasta water create the emulsion that coats every strand. No cream. The eggs and cheese go in off the heat, with constant movement keeping them from scrambling. Rich, coating, and done in 30 minutes.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "• No pre-1928 public-domain source for carbonara exists — the dish emerged in Rome in the 1940s and 1950s, with the earliest reliable printed recipes from that decade. Synthesis draws on the canonical Roman method as documented in Italian food writing and the work of Marcella Hazan (*Essentials of Classic Italian Cooking*, 1992) and Ada Boni (*Il Talismano della Felicità*, 1927 first edition, which predates the cream additions and American-influence adaptations). Proportion guidance reflects the consensus among Italian cooking authorities on the egg-yolk-to-whole-egg ratio and the pecorino-to-parmesan split.\n• The guanciale-over-pancetta position is held by the Accademia Italiana della Cucina, which registered the dish in 2005.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "colander", "isOptional": false },
+    { "slug": "tongs", "isOptional": false },
+    { "slug": "microplane", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "guanciale",
+      "term": "Guanciale",
+      "definition": "Cured Italian pork cheek, salt-rubbed and air-dried for several weeks. Fattier and more gelatinous than pancetta, it renders into something between crisp and silky rather than chewy. Used in carbonara and amatriciana. Pancetta is the acceptable substitute, though the flavour and texture differ."
+    },
+    {
+      "slug": "carbonara",
+      "term": "Carbonara",
+      "definition": "A Roman pasta sauce made from egg yolks, aged cheese, cured pork fat, and black pepper. No cream. The emulsion is formed by the fat from the cured pork, the starch in the pasta water, and the egg and cheese mixture combined off the heat with constant movement."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "carbonara" } }],
+            "text": "Carbonara"
+          },
+          {
+            "type": "text",
+            "text": " divides cooks on two questions: guanciale or pancetta, and whether to use whole eggs or yolks only. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "guanciale" } }],
+            "text": "Guanciale"
+          },
+          {
+            "type": "text",
+            "text": " is the correct choice — it is the cured cheek of the pig, fattier and more gelatinous than pancetta, and it renders into something between crisp and silky. Four egg yolks plus one whole egg gives enough protein to set the sauce without tipping it into claggy territory."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The technique is temperature management. The fat from the guanciale, the starchy pasta water, and the egg and cheese mixture combine off the heat to form an emulsion. Too much heat and the eggs scramble; too little, and the sauce stays thin and watery rather than coating the strands. A warm bowl and residual heat from the drained pasta are usually enough. The move from water to pan to bowl happens quickly — everything should be ready before the pasta goes in."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pasta-dried",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "spaghetti",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "guanciale",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "cut into lardons about 1 cm thick",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "egg-yolks",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "room temperature",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "whole, room temperature",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pecorino-romano",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "finely grated, plus extra to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "finely grated; or use all pecorino",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": 1.5,
+              "unit": "tsp",
+              "prepNote": "freshly cracked, generous",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": null,
+              "unit": "g",
+              "prepNote": "for the pasta water",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A large saucepan for the pasta and a wide frying pan for the guanciale — you will combine them in the pan. A large bowl keeps everything warm during the final off-heat combine. A microplane or fine grater makes the difference between cheese that dissolves into the sauce and cheese that sits in clumps."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Render the guanciale" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put {{guanciale}} of guanciale lardons in a cold 26 cm frying pan. Set it over a medium-low heat. As the pan warms, the fat begins to render slowly, coating the pan. Cook for 8 to 10 minutes until the lardons are golden and the fat is clear. Turn the heat to the lowest setting and leave in the pan."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the egg and cheese" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "While the guanciale cooks, whisk {{egg-yolks}} egg yolks and {{eggs}} whole egg together in a large bowl. Add {{pecorino-romano}} of finely grated pecorino and 20 g of parmesan if using. Season with {{black-pepper}} of cracked black pepper. Whisk to a thick, pale paste. Set the bowl aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the pasta" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bring a large saucepan of water to a rolling boil. Salt it heavily — it should taste of the sea. Cook {{pasta-dried}} of spaghetti according to the packet, but pull it 1 minute before the stated time. Before draining, scoop out a large mugful of pasta water (about 200 ml). Drain."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Combine off the heat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the drained pasta to the frying pan with the guanciale. Toss to coat in the fat. Turn the heat off completely. Add 3 tablespoons of pasta water to the egg and cheese mixture and stir. Pour the egg mixture over the pasta, tossing constantly with tongs and a spoon. Add pasta water a tablespoon at a time as you toss — the sauce will loosen and begin to coat the strands. Stop when the pasta is glossy and the sauce flows rather than sits in puddles. This takes about 1 minute of constant movement."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Serve immediately in warm bowls. Finish with extra pecorino and a crack of black pepper."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Eggs have scrambled into yellow flecks",
+              "cause": "The pan was too hot when the egg mixture went in, or the pasta was too hot.",
+              "fix": "Turn the heat off before adding the eggs. Add a splash of pasta water first to cool the pasta slightly. Move quickly and keep tossing — movement distributes the heat and prevents the eggs setting in one spot."
+            },
+            {
+              "symptom": "Sauce is thin and runs off the pasta",
+              "cause": "Too much pasta water or not enough cheese and egg to bind it.",
+              "fix": "Add pasta water very gradually. The sauce thickens as it cools — give it 30 seconds of tossing before adding more liquid. If the pasta has cooled, a brief return to the lowest heat while tossing will help the sauce tighten."
+            },
+            {
+              "symptom": "Sauce is thick and sticky, not coating",
+              "cause": "Not enough pasta water added, or the pasta was left standing before saucing.",
+              "fix": "Add pasta water a tablespoon at a time while tossing vigorously. Always sauce the pasta immediately after draining — carbonara waits for no one."
+            },
+            {
+              "symptom": "Guanciale is chewy rather than silky",
+              "cause": "The heat was too high or the cooking time too short.",
+              "fix": "Start the guanciale in a cold pan over medium-low heat. The slow render is what softens the fat. At high heat the outside chars before the interior fat renders."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Carbonara is a Roman dish from the mid-twentieth century. The earliest written recipes date from the 1950s, and the dish probably emerged in the immediate post-war period — though whether American soldiers' rations of bacon and egg powder played a role is debated. The name's origin is equally contested: most likely from the charcoal workers (carbonari) who cooked over wood fires, though the evidence is circumstantial. The dish has since been copied, adapted, and debated across the world, with cream the most persistent foreign addition. In Rome, cream is considered a basic misunderstanding of what the dish is."
+          }
+        ]
+      }
+    ]
+  }
+}

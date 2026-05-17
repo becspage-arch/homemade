@@ -1,0 +1,304 @@
+{
+  "slug": "shepherds-pie",
+  "title": "Shepherd's pie",
+  "subtitle": "Slow-cooked minced lamb in rosemary gravy, topped with golden mash",
+  "excerpt": "Shepherd's pie is minced lamb (not beef) cooked with rosemary and a rich lamb or chicken stock until the gravy is thick and deeply savoury, then covered with buttered mash and baked. The rosemary is what distinguishes it from cottage pie and gives the filling its particular character.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "• Mrs Beeton, *Book of Household Management* (1861, public domain). Reference for the established British potato-topped mince pie tradition, which applied to both beef and mutton versions. The distinction between shepherd's pie (lamb or mutton) and cottage pie (beef) was formalised in food writing from the late nineteenth century.\n• The combination of rosemary, Worcestershire sauce, and lamb stock as the flavour base of the filling is the consensus of twentieth-century British recipe writing.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 65,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before or after the final bake. Defrost overnight in the fridge and reheat in a 180°C oven for 25 minutes until piping hot throughout.",
+    "batchable": true,
+    "batchNotes": "Doubles without adjustment. Divide between two dishes or use a large roasting tin.",
+    "makeAheadNotes": "Assemble up to 2 days ahead, cover, and refrigerate. Bake from cold, adding 10 minutes to the oven time.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan 180°C / gas 6",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "masher", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "shepherds-pie",
+      "term": "Shepherd's pie",
+      "definition": "A British baked dish of minced lamb or mutton in a savoury gravy, topped with mashed potato and baked until golden. The name refers to the shepherd who tends sheep — lamb or mutton is the defining ingredient. The beef version is cottage pie."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "shepherds-pie" } }],
+            "text": "Shepherd's pie"
+          },
+          {
+            "type": "text",
+            "text": " is the lamb version of cottage pie, and the difference matters: lamb mince has a different fat and a different flavour, and the rosemary that goes with it would be wrong in a beef filling. Use good lamb mince, cook the filling until it is properly thick, and season the mash properly."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lamb mince has a higher fat content than beef mince and benefits from draining after browning — tip the browned meat into a sieve over a bowl and discard the fat that pools. Left in, it makes the filling greasy and the topping slides."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "lamb-mince",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "worcestershire-sauce",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 350,
+              "unit": "ml",
+              "prepNote": "or chicken stock",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "rosemary",
+              "amount": 2,
+              "unit": "sprig",
+              "prepNote": "leaves picked and finely chopped",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "thyme-fresh",
+              "amount": 2,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 1000,
+              "unit": "g",
+              "prepNote": "peeled and quartered",
+              "isOptional": false,
+              "groupLabel": "For the topping"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the topping"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": "warm",
+              "isOptional": false,
+              "groupLabel": "For the topping"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": null,
+              "unit": "g",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "tsp",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat {{olive-oil}} of oil in a large frying pan over a high heat. Brown {{lamb-mince}} of lamb mince in batches, breaking up with a spoon, until coloured all over. Tip into a sieve over a bowl to drain the excess fat."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Reduce to medium heat. Cook {{onion}} diced onion and {{carrot}} diced carrot for 8 minutes until soft. Add {{garlic}} of garlic, {{rosemary}} chopped rosemary, and {{tomato-puree}} of tomato purée. Cook for 2 minutes. Return the drained mince to the pan. Add {{worcestershire-sauce}} of Worcestershire sauce, {{stock-chicken}} of stock, {{thyme-fresh}} of thyme, and {{bay-leaves}}. Simmer uncovered for 25 minutes until the gravy is thick. Remove the herbs and season."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the mash and assemble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Boil {{potato}} of quartered potatoes in salted water for 15 to 18 minutes until completely tender. Drain and return to the pan over a low heat for 1 minute to dry. Mash with {{unsalted-butter}} of butter and {{whole-milk}} of warm milk. Season well."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the oven to 200°C (fan 180°C / gas 6). Transfer the filling to a large baking dish. Spoon the mash over the top, spreading to the edges and roughing up the surface with a fork. Bake for 25 to 30 minutes until golden and bubbling at the edges. Rest for 5 minutes before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Filling is greasy with a layer of fat under the mash",
+              "cause": "Excess lamb fat was not drained after browning.",
+              "fix": "Lamb mince is fattier than beef mince. Always drain it after browning — the fat that renders out is considerable and will pool under the mash if left in."
+            },
+            {
+              "symptom": "Rosemary is harsh and dominant",
+              "cause": "Too much rosemary, or it was added at the end rather than cooked in from the start.",
+              "fix": "Rosemary mellows considerably with cooking. Added early, it becomes a background note. Added late, it tastes raw and overpowering. Two sprigs is enough for four portions."
+            },
+            {
+              "symptom": "Filling is watery",
+              "cause": "Not reduced long enough.",
+              "fix": "The filling must be thick before it goes under the mash. Continue reducing uncovered until it holds its shape in a spoon. A wet filling makes the mash sink during baking."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Shepherd's pie belongs to the same tradition as cottage pie: a potato-crusted baked dish of mince, descended from the use of leftover roast meat under a potato topping. The distinction between the two dishes by meat type was formalised in late Victorian food writing, though the underlying logic is clear enough: shepherds kept sheep, dairy farmers kept cows. The lamb version has a particular character (the fat, the rosemary, the slightly gamey depth) that makes it a different dish in practice, not just in name. It is one of the reliable recipes of British autumn and winter cooking."
+          }
+        ]
+      }
+    ]
+  }
+}

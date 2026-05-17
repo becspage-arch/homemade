@@ -1,0 +1,314 @@
+{
+  "slug": "cottage-pie",
+  "title": "Cottage pie",
+  "subtitle": "Minced beef in a rich gravy, topped with buttered mashed potato",
+  "excerpt": "Cottage pie is minced beef cooked low and slow in beef stock with Worcestershire sauce and vegetables, then covered in a thick layer of buttered mash and baked until the top is golden and the filling is bubbling at the edges. It is the most straightforward kind of British cooking: deeply satisfying, completely unfussy, and better the next day.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "• The term 'cottage pie' appears in print from 1791, when it referred to the practice of using leftover cooked meat under a potato crust — potato being the new affordable crop available to labouring families. The modern version using raw mince cooked in gravy emerged through the nineteenth century.\n• The method here draws on the tradition documented in Mrs Beeton, *Book of Household Management* (1861, public domain): the combination of mince, stock, Worcestershire sauce, and a mashed potato crust is the English standard against which all versions are compared.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 60,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before or after the final bake. Defrost overnight in the fridge and reheat in a 180°C oven for 25 minutes from cold until piping hot throughout.",
+    "batchable": true,
+    "batchNotes": "Doubles without adjustment. Use a larger baking dish or divide between two.",
+    "makeAheadNotes": "Assemble up to 2 days ahead, cover, and refrigerate. Bake from cold, adding 10 minutes to the oven time.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan 180°C / gas 6",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "masher", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cottage-pie",
+      "term": "Cottage pie",
+      "definition": "A British baked dish of minced beef in a savoury gravy, topped with mashed potato and baked until the top is golden. Distinguished from shepherd's pie by the use of beef rather than lamb or mutton."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cottage-pie" } }],
+            "text": "Cottage pie"
+          },
+          {
+            "type": "text",
+            "text": " requires no technique beyond patience: the mince needs to cook long enough for the stock to reduce into something glossy and savoury, and the potato needs to be well-seasoned and properly mashed before it goes on top. Both are simple. Neither should be hurried."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use beef mince with at least 20% fat — leaner mince dries out and packs into tight clumps that won't absorb the sauce. The Worcestershire sauce and a small amount of tomato purée are the flavour anchors: don't omit them."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-mince",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "20% fat",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "celery",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "worcestershire-sauce",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "thyme-fresh",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 1000,
+              "unit": "g",
+              "prepNote": "peeled and quartered",
+              "isOptional": false,
+              "groupLabel": "For the topping"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the topping"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": "warm",
+              "isOptional": false,
+              "groupLabel": "For the topping"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": null,
+              "unit": "g",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "tsp",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat {{olive-oil}} of oil in a large frying pan over a medium-high heat. Brown {{beef-mince}} of mince in batches, breaking it up with a spoon. Don't stir too early — let the meat colour on the base before breaking it apart. Remove the browned mince and set aside."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Reduce the heat to medium. Cook {{onion}} diced onion, {{carrot}} diced carrot, and {{celery}} diced celery in the same pan for 8 minutes until softened. Add {{garlic}} of garlic and {{tomato-puree}} of tomato purée. Cook for 2 minutes. Return the mince to the pan. Add {{worcestershire-sauce}} of Worcestershire sauce, {{stock-beef}} of beef stock, {{thyme-fresh}} of thyme, and {{bay-leaves}}. Bring to a simmer and cook uncovered for 25 minutes until the gravy has reduced and thickened. Remove the herbs and season."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the mash" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook {{potato}} of potato quarters in a large saucepan of salted water for 15 to 18 minutes until completely tender. Drain well. Return to the pan over a low heat for 1 minute to dry out any remaining water. Mash with {{unsalted-butter}} of butter and {{whole-milk}} of warm milk until smooth. Season generously."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the oven to 200°C (fan 180°C / gas 6). Tip the filling into a large baking dish. Spoon the mash over the top and spread to the edges, making sure to seal the filling in completely. Use a fork to rough up the surface. Bake for 25 to 30 minutes until the top is golden and the filling is bubbling at the edges. Rest for 5 minutes before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Filling is watery and pools under the mash",
+              "cause": "The gravy was not reduced long enough before assembling.",
+              "fix": "The filling should be thick enough to mound slightly in a spoon before it goes under the mash. Continue reducing until the gravy coats the meat rather than pooling. A watery filling makes the mash sink and turn soggy."
+            },
+            {
+              "symptom": "Mash has sunk into the filling during baking",
+              "cause": "Filling too wet, or the mash was too thin.",
+              "fix": "Reduce the filling further and make sure the mash is stiff enough to hold its shape. It should be spreadable but not pourable."
+            },
+            {
+              "symptom": "Mince has clumped into large, dense chunks",
+              "cause": "The pan was overcrowded during browning and the meat steamed rather than browned.",
+              "fix": "Brown in batches over high heat. The meat should sizzle loudly on contact with the pan. Once browned, the clumps break up during simmering in the gravy."
+            },
+            {
+              "symptom": "Potato topping is gluey and heavy",
+              "cause": "The potatoes were overworked — too much beating or use of a food processor.",
+              "fix": "Mash with a potato masher, not a food processor. Over-worked potato releases starch and becomes gluey. Mash until smooth, no further."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cottage pie is named for the cottage-dwellers (rural labourers) who made it from the scraps of the week: leftover cooked meat, vegetables from the garden, and the potato that had become a staple crop by the late eighteenth century. The original was a resourceful dish. The modern version, made with fresh mince and a proper beef stock, is considerably better than the original and has long since escaped its origins to become a standard of British home cooking across every social class. It is one of those dishes that nobody makes to impress anyone, and that is exactly the point."
+          }
+        ]
+      }
+    ]
+  }
+}

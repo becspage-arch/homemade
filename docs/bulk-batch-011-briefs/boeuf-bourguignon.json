@@ -1,0 +1,351 @@
+{
+  "slug": "boeuf-bourguignon",
+  "title": "Boeuf bourguignon",
+  "subtitle": "Beef braised in Burgundy wine with lardons, mushrooms, and pearl onions",
+  "excerpt": "Boeuf bourguignon is a Burgundian braise: braising beef cooked low and slow in red wine until it collapses into something rich and deeply savoury. The lardons and mushrooms added towards the end give the sauce body and texture. It is weekend cooking — long-haul, hands-off, and worth every hour.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "• Auguste Escoffier, *Le Guide Culinaire* (1903, public domain). Principal reference for the classic Burgundian braise technique, including the marinade option, the browning sequence, and the role of the bouquet garni.\n• Julia Child, *Mastering the Art of French Cooking* (1961). The method here follows Child's widely cited approach of browning beef in batches and finishing with mushrooms and onions separately — the version that introduced the dish to English-speaking home cooks.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 180,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months. Defrost overnight in the fridge and reheat gently over a low heat, adding a splash of water or stock if needed.",
+    "batchable": true,
+    "batchNotes": "Doubles without adjustment. Use the largest casserole you have and allow extra time for browning.",
+    "makeAheadNotes": "Improves made a day ahead: refrigerate overnight and reheat gently. The fat sets on the surface and lifts off cleanly before reheating.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["comfortFood"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "fan 140°C / gas 3",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "slotted-spoon", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bourguignon",
+      "term": "Bourguignon",
+      "definition": "In the style of Burgundy. In French cooking, à la bourguignonne denotes a dish cooked with red wine, often from the Burgundy region, along with lardons, mushrooms, and onions. The term applies to both the braise and the garnish of those three elements."
+    },
+    {
+      "slug": "bouquet-garni",
+      "term": "Bouquet garni",
+      "definition": "A bundle of herbs used to flavour braises, stocks, and soups. The classic combination is bay leaf, thyme, and parsley stalks, tied together or wrapped in muslin so they can be removed before serving."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bourguignon" } }],
+            "text": "Bourguignon"
+          },
+          {
+            "type": "text",
+            "text": " is a braise, which means the beef needs time rather than attention. The work comes in the first 30 minutes — browning the meat in batches until deeply coloured, building the base with lardons and vegetables, deglazing with wine. After that, it goes in the oven and you leave it alone for two and a half hours."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use a full bottle of wine and a wine you would drink. The dish has nowhere to hide a thin, acidic bottle — the wine is the cooking liquid and becomes the sauce. Côtes du Rhône, Merlot, or any medium-bodied red works. Actual Burgundy is not required."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-chuck",
+              "amount": 1000,
+              "unit": "g",
+              "prepNote": "cut into 5 cm chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lardons",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 750,
+              "unit": "ml",
+              "prepNote": "a medium-bodied red",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mushrooms-chestnut",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": "halved if large",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": "For the braise"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": "For the braise"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme-fresh",
+              "amount": 4,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": null,
+              "unit": "g",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "tsp",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Serve with mashed potato, egg noodles, or crusty bread to catch the sauce. The dish only improves the next day."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the lardons and beef" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the oven to 160°C (fan 140°C / gas 3). Heat a large casserole over a medium heat. Add {{lardons}} of lardons and cook for 5 minutes until the fat renders and the edges colour. Remove with a slotted spoon and set aside."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pat {{beef-chuck}} of beef chunks dry with kitchen paper and season well. Working in batches with space between each piece, brown the beef in the lardon fat for 2 to 3 minutes per side until deeply coloured on all surfaces. Remove each batch and set aside. Crowding the pan steams rather than browns."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add {{olive-oil}} of olive oil to the casserole. Cook {{onion}} chopped onion and {{carrot}} chopped carrot over a medium heat for 8 minutes until softened. Add {{garlic}} of crushed garlic and {{tomato-puree}} of tomato purée and cook for 2 minutes. Sprinkle over {{plain-flour}} of flour and stir for 1 minute."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Return the beef and lardons to the casserole. Pour in {{red-wine}} of red wine and {{stock-beef}} of beef stock. Add the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bouquet-garni" } }],
+            "text": "bouquet garni"
+          },
+          {
+            "type": "text",
+            "text": " of {{bay-leaves}} bay leaves and {{thyme-fresh}} of thyme. Bring to a simmer, then cover and transfer to the oven. Cook for 2 hours 30 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the mushrooms and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fry {{mushrooms-chestnut}} of mushrooms in {{unsalted-butter}} of butter in a frying pan over a high heat for 4 minutes until golden. Add to the casserole for the final 30 minutes of braising. Remove the herbs, taste, and adjust the seasoning before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Beef is tough after the full cooking time",
+              "cause": "The braise was at too high a temperature, or the beef was not the right cut.",
+              "fix": "The oven should be low — the liquid should barely tremble. A hard simmer toughens braising meat. Chuck or shin are the cuts for this dish; lean cuts will not tenderise in the same way."
+            },
+            {
+              "symptom": "Sauce is thin and watery",
+              "cause": "The flour was insufficient to thicken the liquid, or the casserole was not covered tightly.",
+              "fix": "If the sauce is thin at the end, remove the beef and reduce the liquid on the hob over a medium-high heat for 10 to 15 minutes until it coats a spoon. Return the beef to warm through."
+            },
+            {
+              "symptom": "Beef did not brown — it steamed in the pan",
+              "cause": "The pan was overcrowded, or the beef was wet.",
+              "fix": "Always pat meat dry before browning. Brown in batches with space between each piece. If the pan looks crowded, move to a frying pan and brown in stages."
+            },
+            {
+              "symptom": "Sauce tastes sharp and vinous",
+              "cause": "The wine was not reduced enough during the braise, or the bottle was particularly acidic.",
+              "fix": "A long braise should mellow the wine. If it's still sharp at the end, a small knob of butter stirred in off the heat rounds the flavour. Avoid wines labelled 'cooking wine' — they are often higher in acid and salt."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Boeuf bourguignon comes from Burgundy, where the combination of beef cattle and the region's red wine made the braise a natural. Escoffier codified it in the early twentieth century, and Julia Child's 1961 version in *Mastering the Art of French Cooking* introduced the dish to a generation of American and British home cooks. It has remained on rotation ever since — a dish that manages to feel both entirely classic and entirely relevant, because the technique is sound and the result is hard to argue with."
+          }
+        ]
+      }
+    ]
+  }
+}

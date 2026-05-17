@@ -1,0 +1,329 @@
+{
+  "slug": "risotto-ai-funghi-porcini",
+  "title": "Risotto ai funghi porcini",
+  "subtitle": "Porcini and Arborio rice, slow-stirred to a loose, creamy finish",
+  "excerpt": "Risotto ai funghi porcini uses dried porcini soaked in hot water to build a stock with concentrated mushroom flavour, which then becomes the cooking liquid for the rice. The result is deeply savoury with the earthy intensity that only dried porcini provide. Patience with the ladle is the only real skill required.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "• Marcella Hazan, *Essentials of Classic Italian Cooking* (1992). Principal reference for the risotto technique — the gradual addition of hot stock, the mantecatura finishing step, and the Lombardy tradition of porcini as the primary flavouring.\n• The Silver Spoon (*Il Cucchiaio d'Argento*, 1950, first edition; English translation 2005). Cross-reference for the porcini-stock method and the role of dried versus fresh porcini.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "restingMinutes": 2,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "ladle", "isOptional": false },
+    { "slug": "measuring-jug", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mantecatura",
+      "term": "Mantecatura",
+      "definition": "The finishing step in risotto-making where cold butter and grated cheese are beaten vigorously into the cooked rice off the heat. The movement emulsifies the butter into the starchy cooking liquid, creating the characteristic creamy, flowing texture. The risotto should 'wave' when the plate is tilted."
+    },
+    {
+      "slug": "porcini",
+      "term": "Porcini",
+      "definition": "Boletus edulis, the cep or penny bun mushroom. Dried porcini are the most commonly available form in the UK: soaked in hot water, they release an intense, earthy, savoury stock that is used as part of the cooking liquid in risotti and braises. The soaking liquid is always used — it holds most of the flavour."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dried "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "porcini" } }],
+            "text": "porcini"
+          },
+          {
+            "type": "text",
+            "text": " have a concentration of flavour that fresh mushrooms rarely match. Soaking them in hot water for 20 minutes produces a deep, murky stock: use every last drop of it, poured in slowly to avoid the grit at the bottom. That liquid, combined with vegetable stock, becomes the cooking medium for the rice, and the flavour builds incrementally with each ladle."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The finishing step is "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mantecatura" } }],
+            "text": "mantecatura"
+          },
+          {
+            "type": "text",
+            "text": ": cold butter beaten into the hot rice off the heat, vigorously, until the whole thing becomes a single creamy mass. This step is what separates a risotto that flows from one that sits in a lump. Serve within 2 minutes — risotto waits for no one."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "arborio-rice",
+              "amount": 320,
+              "unit": "g",
+              "prepNote": "or Carnaroli",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mushrooms-porcini-dried",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "soaked in 300 ml hot water for 20 minutes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-vegetable",
+              "amount": 900,
+              "unit": "ml",
+              "prepNote": "hot",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "white-wine-dry",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "cold, cut into cubes — for the mantecatura",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "for cooking",
+              "isOptional": false,
+              "groupLabel": "For cooking"
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": null,
+              "unit": "g",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "tsp",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Carnaroli rice gives a slightly firmer, more forgiving risotto than Arborio and is worth using if you can find it. The cold butter for the mantecatura must be cold — warm butter will not emulsify the same way."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the porcini stock" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Soak {{mushrooms-porcini-dried}} of dried porcini in 300 ml of hot water for 20 minutes. Lift the porcini out with a slotted spoon. Chop them roughly and set aside. Pour the soaking liquid carefully into the hot vegetable stock, stopping when you reach the grit at the bottom. Discard the last few tablespoons with the grit. Keep the combined stock hot in a saucepan over a low heat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Start the soffritto" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat {{olive-oil}} of olive oil and 20 g of butter in a large, wide saucepan over a medium-low heat. Add {{onion}} finely diced onion and a pinch of salt. Cook for 8 minutes, stirring occasionally, until soft and translucent. Add {{garlic}} of garlic and the chopped porcini. Cook for 2 minutes more."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Toast the rice and add the wine" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add {{arborio-rice}} of rice to the pan. Stir for 2 minutes over a medium heat until the grains look slightly translucent at the edges. Pour in {{white-wine-dry}} of dry white wine. It will sizzle and steam. Stir until the wine has been absorbed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the stock, ladle by ladle" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the hot stock a ladleful at a time, stirring after each addition and waiting until the liquid is absorbed before adding the next. Keep the heat at medium and stir frequently — every 30 seconds or so. This process takes 18 to 22 minutes. After 16 minutes, start tasting: the rice should be tender to the centre with just the faintest resistance. Stop adding stock when this point is reached, leaving the risotto slightly loose."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish with butter and cheese" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Take the pan off the heat. Add {{unsalted-butter}} of cold butter cubes and {{parmesan}} of grated parmesan. Beat vigorously with a wooden spoon for 1 to 2 minutes until the butter has emulsified into the rice and the whole thing flows. Season, rest for 2 minutes with the lid on, then serve at once in warm bowls."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Risotto is stodgy and thick rather than flowing",
+              "cause": "Too much stock was absorbed before serving, or the mantecatura was skipped.",
+              "fix": "The risotto should be slightly looser than seems right when it comes off the heat — it will tighten in the bowl. Add a splash of hot stock at the mantecatura stage if needed. The butter beating is not optional."
+            },
+            {
+              "symptom": "Rice grains have a chalky, undercooked centre",
+              "cause": "Not enough stock added, or added too quickly so the outside gelatinised before the centre cooked.",
+              "fix": "Add stock slowly, one ladle at a time. Each ladle should be nearly fully absorbed before the next goes in. If the rice is still chalky after 22 minutes, add more stock and continue cooking."
+            },
+            {
+              "symptom": "Porcini flavour is faint",
+              "cause": "The soaking liquid was not used, or was poured in too quickly, including the grit.",
+              "fix": "The soaking liquid holds most of the porcini flavour. Add it carefully to the stock, leaving the last tablespoon (the gritty residue) behind. 30 g of dried porcini is a reasonable minimum for four portions."
+            },
+            {
+              "symptom": "Butter has split and the surface is oily",
+              "cause": "The butter was not cold, or the pan was too hot during the mantecatura.",
+              "fix": "Always use cold butter, cut small. Remove the pan from the heat before adding it. Beat continuously and quickly. If it splits, a splash of cold stock beaten in vigorously will often bring it back."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Risotto is a Lombardy and Piedmont tradition, built around the short-grain rice varieties that grow in the Po Valley. Porcini are the prestige mushroom of northern Italy: expensive fresh in season, but available year-round dried, and with a depth that makes them worth seeking out. The pairing of dried porcini and risotto is one of the most satisfying relationships in Italian cooking — the concentrated stock from the soaking liquid transforms an ordinary weeknight supper into something that tastes like considerably more effort went into it."
+          }
+        ]
+      }
+    ]
+  }
+}

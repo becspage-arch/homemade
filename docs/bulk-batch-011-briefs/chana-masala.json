@@ -1,0 +1,322 @@
+{
+  "slug": "chana-masala",
+  "title": "Chana masala",
+  "subtitle": "Chickpeas in a tangy, deeply spiced tomato gravy",
+  "excerpt": "Chana masala is chickpeas simmered in a tomato-onion gravy spiced with cumin, coriander, and dried mango powder. The sauce is darker and more tangy than most Indian tomato gravies — the dried mango (amchur) is what gives it its characteristic sourness. It is one of those dishes that tastes as if it has been cooking all day.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "• Madhur Jaffrey, *Indian Cookery* (1982). Reference for the spice composition of the masala and the role of amchur (dried mango powder) in providing the characteristic sourness of North Indian chana masala.\n• Chana masala is a North Indian Punjabi dish and one of the most widely eaten vegetarian dishes in the subcontinent. It is also one of the most common British-Indian restaurant dishes, typically labelled chole bhature when served with fried bread.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months. Defrost overnight and reheat gently.",
+    "batchable": true,
+    "batchNotes": "Doubles without adjustment. A good freezer staple.",
+    "makeAheadNotes": "The flavour deepens significantly over 24 hours. Make the day before for best results.",
+    "dietaryFlags": ["VEGAN"],
+    "cuisine": "british-indian",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "amchur",
+      "term": "Amchur",
+      "definition": "Dried unripe mango powder, used as a souring agent in North Indian cooking. It adds tartness without moisture. Used in chana masala, chaat, and spice rubs. Sold in jars in South Asian grocery stores; tamarind paste is a workable substitute."
+    },
+    {
+      "slug": "chana",
+      "term": "Chana",
+      "definition": "Chickpeas (Cicer arietinum). In Indian cooking, chana refers to both chickpeas (chole or kabuli chana) and Bengal gram (chana dal). In chana masala the whole chickpea is used, not the split form."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chana" } }],
+            "text": "Chana"
+          },
+          {
+            "type": "text",
+            "text": " masala uses tinned chickpeas, which cuts the cooking time from several hours to forty minutes. The key is in the gravy: the onion base must cook until properly dark, the spice paste must fry hard before the tomatoes go in, and the whole thing must simmer long enough for the chickpeas to absorb the sauce."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "amchur" } }],
+            "text": "amchur"
+          },
+          {
+            "type": "text",
+            "text": " is the ingredient that makes this dish. Dried mango powder adds a sharp, fruity sourness that cannot be replaced by lemon juice — the flavour is different. Find it in any South Asian grocery store. If unavailable, a teaspoon of tamarind paste works reasonably well."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chickpeas-tinned",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "2 tins, drained and rinsed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "1 tin, chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-root",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spices"
+            },
+            {
+              "ingredientSlug": "coriander-ground",
+              "amount": 1.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spices"
+            },
+            {
+              "ingredientSlug": "garam-masala",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spices"
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spices"
+            },
+            {
+              "ingredientSlug": "chilli-powder",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": "or more to taste",
+              "isOptional": false,
+              "groupLabel": "Spices"
+            },
+            {
+              "ingredientSlug": "amchur",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "dried mango powder",
+              "isOptional": false,
+              "groupLabel": "Spices"
+            },
+            {
+              "ingredientSlug": "cumin-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": null,
+              "unit": "g",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "roughly chopped, to serve",
+              "isOptional": true,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Serve with basmati rice, chapati, or bhatura. A squeeze of lemon over the top before serving adds brightness."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the onion and spice paste" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat {{vegetable-oil}} of oil in a large frying pan over a medium heat. Add {{cumin-seeds}} and fry for 30 seconds until they crackle. Add {{onion}} diced onion and cook for 15 minutes until a rich brown. Add {{garlic}} of garlic and {{ginger-root}} of ginger. Cook for 2 minutes."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add {{cumin-ground}}, {{coriander-ground}}, {{turmeric}}, {{chilli-powder}}, and {{garam-masala}}. Fry the spice paste hard for 2 minutes, stirring constantly, until it darkens and the oil begins to separate at the edges. If it threatens to stick, add a splash of water."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add tomatoes and chickpeas" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add {{tinned-tomatoes}} of tinned tomatoes. Cook over a medium-high heat for 8 minutes, stirring often, until the tomatoes have broken down and the oil re-separates at the edges. Add {{chickpeas-tinned}} of drained chickpeas and 200 ml of water. Stir to combine. Bring to a simmer."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Simmer and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook uncovered over a medium heat for 12 to 15 minutes, until the gravy has thickened and the chickpeas have absorbed the flavour of the sauce. Add {{amchur}} of amchur and stir through. Taste and season with salt. Add coriander before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Chickpeas taste separate from the gravy",
+              "cause": "Not simmered long enough together.",
+              "fix": "The chickpeas need at least 12 minutes in the gravy to absorb its flavour. A longer simmer of 20 minutes improves the dish further. Add water to keep the consistency right."
+            },
+            {
+              "symptom": "Sauce lacks depth and tastes flat",
+              "cause": "Onion was undercooked, or the spice paste was not fried hard.",
+              "fix": "The dark-brown onion base is the foundation. Pale onions produce a thin, raw-tasting gravy. Fry the spice paste until it visibly changes colour and the oil separates — this is non-negotiable."
+            },
+            {
+              "symptom": "Dish lacks the characteristic sharp tang",
+              "cause": "Amchur was not used, or insufficient quantity.",
+              "fix": "Amchur is the ingredient that distinguishes chana masala from other chickpea dishes. Lemon juice is not an equivalent substitute — the flavour is different in kind, not just degree. Add more amchur to taste."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chana masala is Punjabi in origin and one of the most eaten dishes in North India. It is sold as street food, cooked at home daily, and served in restaurants. The British-Indian version is closely faithful to the Punjabi original — the spice combination and the amchur sourness translate without modification. It has none of the cream or butter of the more well-known British-Indian curries, which gives it a leaner, sharper flavour that rewards being made a day ahead."
+          }
+        ]
+      }
+    ]
+  }
+}
