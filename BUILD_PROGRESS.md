@@ -22,7 +22,7 @@ Live at https://homemade.education behind splash gate (cookie `homemade-access=1
 
 **Library counts (PUBLISHED)** — full grid in § Multi-category fill plan below.
 
-- Cooking ~241 (bulk-001 → bulk-006). Baking 60 (pilot-10 + bulk-001). Mindset 0 (20 bulk-001 drafted, upload blocked by migration drift). The other 14 categories are private placeholders until each crosses 10 published rows.
+- Cooking 519 (anchors + pilot-10 + personal-recipe ingest + bulks 001–008). Baking 60 (pilot-10 + bulk-001). Mindset 0 (20 bulk-001 drafted, upload blocked by migration drift). The other 14 categories are private placeholders until each crosses 10 published rows.
 
 **This week's notable landings**
 
@@ -833,6 +833,34 @@ Memory updates (auto-loaded for future Mindset workers):
 
 **Out.** No schema changes; no voice-check CLI edits; no master-table additions; no admin/UI work.
 
+### Autopilot — Cooking bulk-008 ✅ landed 2026-05-17
+
+**Goal.** Third autopilot fire of the cooking stream. Continue draining under-represented enum cuisines (spanish, greek, middleEastern, persian, caribbean, angloIndian) that the DB still shows under 15 each.
+
+**Outcome.** 15 PUBLISHED, 0 dropped. Scaled fire — 15 recipes rather than the nominal 50, following batch 007 precedent. Cooking now sits at 519 PUBLISHED, up from 504.
+
+- **Pre-flight gates** all passed: no double-fire, batch number = 008 (auto-detected from existing reports plus archived 001–006), 1,778 in-scope backlog candidates remaining, voice-check error trend flat across batches 005 (13) → 006 (13 / 10 recipes) → 007 (5 / 15) — not trending up, no autopilot-chain (chain = 0 — multiple human commits since bulk-007).
+- **Spanish (3 PUBLISHED):** `pan-con-tomate` (BEGINNER), `salmorejo` (BEGINNER), `fabada-asturiana` (INTERMEDIATE).
+- **Greek (3 PUBLISHED):** `greek-salad` (BEGINNER), `briam` (BEGINNER), `saganaki` (BEGINNER). Distinct from batch 007's three Greek picks.
+- **Levantine / Middle Eastern (3 PUBLISHED):** `mutabal` (BEGINNER), `labneh` (BEGINNER), `foul-medames` (BEGINNER — first Egyptian breakfast dish).
+- **Persian (2 PUBLISHED):** `ash-e-reshteh` (INTERMEDIATE), `salad-e-shirazi` (BEGINNER). First Persian additions beyond `khoresh-fesenjan`.
+- **Caribbean (2 PUBLISHED):** `cuban-black-beans` (BEGINNER), `arroz-con-pollo` (INTERMEDIATE).
+- **Anglo-Indian (2 PUBLISHED):** `country-captain` (INTERMEDIATE), `vegetarian-kedgeree` (INTERMEDIATE).
+- **Difficulty mix:** 10 BEGINNER (67%) / 5 INTERMEDIATE (33%) / 0 ADVANCED. Inside the 60–75% / 25–40% target.
+- **Voice-check.** 5 of 15 (33%) clean on first pass; 10 needed one fix; every fix landed first try. Blocking errors fixed: 1 "honest" softener in sourceNotes (`greek-salad`), 1 "genuinely" filler (`labneh`), 2 em-dash pairs in sourceNotes (`foul-medames`, `cuban-black-beans`), 1 "stove" americanism (`foul-medames`), 1 "molasses" americanism on the pomegranate-molasses ingredient name (`mutabal`), 1 bad ingredient slug `flaked-almonds` → `almonds-flaked` on upload (`country-captain` — same slug-naming inconsistency pattern as batch 007's `brown-lentils` → `lentils-brown`).
+- **15 new glossary terms** created: `ramallet`, `salmorejo-cordobes`, `fabes-de-la-granja`, `horiatiki`, `ladera`, `kefalograviera`, `tahini`, `whey`, `foul-bean`, `kashk`, `reshteh`, `lime-persian`, `sofrito`, `adobo`, `khichdi`.
+- **No master-table additions.** All ingredients and tools resolved against existing master tables. One slug-correction (`flaked-almonds` → `almonds-flaked`); not an addition.
+
+**Patterns observed but not yet at 3+ threshold for `docs/common-issues.md`:**
+
+- Banned-phrase softeners ("honest", "genuinely") in sourceNotes (2 drafts). The model writes sourceNotes in a slightly more conversational register and reaches for banned softeners there even when the body is clean.
+- Adjective-set tricolons in cuisine-positioning closers (4 drafts). Already covered by the `[warn]`-level tricolon rule; rate is consistent with prior batches.
+- Brand-warn false-positives on common verbs (1 draft, "flake" in `vegetarian-kedgeree`). Same shape as batch 007's "target" false-positive; rule-tightening would help but is outside autopilot scope.
+
+**Report.** `docs/bulk-batch-008-report.md` for the full account.
+
+**Out.** No schema changes; no voice-check CLI edits; no master-table additions; no admin/UI work.
+
 ### Phase 8 Baking — bulk-001 batch ✅ landed 2026-05-16
 
 **Goal.** Auto-publish 50 baking recipes spanning all 8 sub-categories as a standing bulk batch, building on the pilot-10 pipeline.
@@ -1133,7 +1161,7 @@ Revise the rates here when actuals diverge from estimates.
 
 | # | Category | Target | Current | Pipeline | Fill weeks @ 1k/wk |
 |---|---|---:|---:|---|---:|
-| 1 | Cooking | 7,000 | 504 PUBLISHED (anchors + pilot-10 + personal-recipe ingest + bulks 001-007 across cuisines, methods, soups/salads/breakfasts/drinks/preserves/desserts) | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
+| 1 | Cooking | 7,000 | 519 PUBLISHED (anchors + pilot-10 + personal-recipe ingest + bulks 001-008 across cuisines, methods, soups/salads/breakfasts/drinks/preserves/desserts) | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
 | 2 | Baking | 3,000 | 64 (4 DRAFT anchor + 60 PUBLISHED: 10 pilot + 50 bulk-001, 2026-05-16) | ✅ schema + taxonomy + authoring prompt + anti-tells + 4-anchor batch + pilot-10 + bulk-001 all landed. Bulk-001: 50 recipes PUBLISHED spanning bread (10), cakes (10), pastries (5), pies (5), biscuits (6), scones (4), sweets-confectionery (5), cake-decorating (2), other (2). 8 BEGINNER / 31 INTERMEDIATE / 11 ADVANCED. 20 new ingredients + 19 new tools seeded. `docs/baking-anti-tells.md` extended to 16 entries (4 new: em-dash pairs in sourceNotes, season enum uppercase, sweets-confectionery slug, tool slug precision). Report: `docs/baking-bulk-001-report.md`. Four anchor DRAFTs (tin loaf / Victoria sandwich / shortcrust / shortbread) pending Rebecca review. Bulk fill continues from backlog. Baking-specific TipTap blocks (baker's percentages, lamination schedule, sugar-stage panel) — still ahead. | 3 |
 | 3 | Garden | 4,000 | 0 | Not started — ~1 wk setup | 4 |
 | 4 | Herbal medicine | 2,500 | 0 | Not started — ~1 wk setup | 2.5 |

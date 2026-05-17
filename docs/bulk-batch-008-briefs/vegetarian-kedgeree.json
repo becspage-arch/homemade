@@ -1,0 +1,225 @@
+{
+  "slug": "vegetarian-kedgeree",
+  "title": "Vegetarian kedgeree",
+  "subtitle": "Curried rice with eggs, parsley, and lemon — the meat-free Raj breakfast.",
+  "excerpt": "The vegetarian cousin of the Anglo-Indian breakfast classic. Basmati rice cooked with mild curry spices, folded with hard-boiled eggs, peas, and butter, finished with chopped parsley and a squeeze of lemon. Forty-five minutes, mostly on the hob; serves four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Anglo-Indian Raj-era home cookery, brought to Britain by returning colonial families in the nineteenth century. Documented in Mrs Beeton's Book of Household Management (1861) and in earlier British cookery manuals.\n\nThe dish originates from the Indian khichdi, a simple rice-and-lentil pot that British colonial families took and refashioned with eggs, smoked fish, and mild curry spice for the breakfast table. The vegetarian version drops the fish and lets the eggs and peas carry the protein.\n\nKedgeree is a brunch dish in modern British kitchens; the Beeton-era version was firmly a breakfast. Either works.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Doubles cleanly for a brunch crowd. A wide pan is better than a deep one; the rice and eggs need to fold rather than mash.",
+    "makeAheadNotes": "Best eaten fresh. The eggs can be boiled the day before; the rice and spice base can be made earlier in the morning and folded together when the table is sitting down.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "angloIndian",
+    "mealType": "breakfast",
+    "mood": ["comfortFood", "weekend", "brunch"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "medium-saucepan", "isOptional": false, "notes": "For boiling the eggs." },
+    { "slug": "large-saucepan", "isOptional": false, "notes": "Wide and shallow rather than deep; the rice and eggs fold better in width than depth." },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": false, "notes": "For rinsing the rice." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "khichdi",
+      "term": "Khichdi",
+      "definition": "The Indian rice-and-lentil dish that kedgeree descends from. Khichdi is simple, savoury, and was a daily home meal in many Indian kitchens; British colonial cooks added eggs, smoked fish, and mild curry spice to make the breakfast we now call kedgeree."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Kedgeree without the fish; the vegetarian version of the Anglo-Indian breakfast classic. Basmati rice cooked with mild curry spices, folded with hard-boiled eggs and peas, finished with a knob of butter, chopped parsley, and a squeeze of lemon. The dish that comes off the Sunday-brunch table in long careful spoonfuls onto warm plates." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The dish descends from Indian " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "khichdi" } }], "text": "khichdi" },
+          { "type": "text", "text": ", a rice-and-lentil pot that British colonial families recast for the breakfast table with the addition of eggs and smoked fish. The vegetarian version we make today drops the fish and lets the eggs and peas carry the protein; the spicing stays the same." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Basmati rice rather than long-grain; the dish wants slightly aromatic rice with distinct grains. The spicing is mild and curry-house-friendly; this is breakfast, not a vindaloo. Eggs go in soft enough that the yolk threads through the rice but firm enough that the white holds shape." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "basmati-rice", "amount": 300, "unit": "g", "prepNote": "rinsed under cold water until the water runs clear", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "salted-butter", "amount": 50, "unit": "g", "prepNote": "divided", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "curry-powder", "amount": 2, "unit": "tsp", "prepNote": "mild Anglo-Indian style", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "turmeric", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "cardamom-green", "amount": 4, "unit": "each", "prepNote": "lightly crushed", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "stock-vegetable", "amount": 500, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "eggs", "amount": 6, "unit": "each", "prepNote": "large, at room temperature", "isOptional": false, "groupLabel": "For the egg" },
+            { "ingredientSlug": "peas-frozen", "amount": 150, "unit": "g", "prepNote": "thawed", "isOptional": false, "groupLabel": "For the finish" },
+            { "ingredientSlug": "parsley-flat", "amount": 3, "unit": "tbsp", "prepNote": "leaves picked and chopped", "isOptional": false, "groupLabel": "For the finish" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "juice and zest", "isOptional": false, "groupLabel": "For the finish" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "freshly ground", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Boil the eggs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bring a small pan of water to a steady simmer. Lower {{eggs}} eggs in carefully on a slotted spoon. Cook for seven and a half minutes for an almost-set yolk; eight minutes for a fully firm one. Lift into a bowl of cold water for two minutes, then peel under a thin stream of running water; the shells slip off cleanly. Halve or quarter the peeled eggs depending on size." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the spice base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt half of {{salted-butter}} of butter in the wide saucepan over a medium heat. Add {{onion}} of finely chopped onion and cook for eight minutes, stirring often, until soft and translucent. Stir in {{garlic}} of garlic and cook for one minute until fragrant." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add {{curry-powder}} of curry powder and {{turmeric}} of turmeric. Stir for thirty seconds until the spices bloom in the butter and the kitchen smells of warm cumin. Tip in {{basmati-rice}} of rinsed basmati rice and stir for one minute so the grains coat in the spiced butter." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the rice covered" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour in {{stock-vegetable}} of hot vegetable stock. Add {{bay-leaves}} of bay and {{cardamom-green}} of crushed green cardamom pods. Bring to a steady simmer, drop the heat to low, cover tightly, and cook for twelve minutes without lifting the lid. After twelve minutes, lift the lid and check; the rice should have absorbed the liquid and steam holes should be visible on the surface. If wetter, replace the lid for two more minutes." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Off the heat, fold in {{peas-frozen}} of thawed peas. Replace the lid and rest for five minutes; the peas warm through and the rice settles. Fish out the bay and cardamom pods if you can spot them." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fold in the eggs and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut the rest of the butter into small dice and dot through the rice. Squeeze the juice of {{lemon}} lemon over the top and add the zest. Scatter {{parsley-flat}} of chopped parsley. Fork through gently to fluff the rice and distribute the butter and lemon, then arrange the boiled eggs on top so the yolks are visible. Salt and pepper. Bring to the table in the pan." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "Kedgeree turns on the rice and the egg cooking. The two failure modes are mushy rice and bad eggs.",
+          "items": [
+            { "symptom": "Rice mushy or sticky.", "cause": "Rice not rinsed, or too much stock.", "fix": "Rinse basmati under cold running water until the water runs clear; this washes off surface starch. The 300 g rice to 500 ml stock ratio is the right one for fluffy basmati; more stock turns it sticky." },
+            { "symptom": "Egg yolks chalky and grey-rimmed.", "cause": "Overcooked.", "fix": "Seven and a half to eight minutes is the window for a just-set yolk; ten minutes turns yolks chalky. Cool eggs immediately in cold water to stop the carryover cooking." },
+            { "symptom": "Egg shells stuck to the white.", "cause": "Eggs too fresh, or peeled hot.", "fix": "Eggs more than a week old peel cleaner than very fresh ones. Peel under running water; the stream gets between the shell and the white." },
+            { "symptom": "Spices taste raw or harsh.", "cause": "Curry powder not bloomed in butter.", "fix": "The curry powder needs thirty seconds in the hot butter to bloom the flavour. If the rice tastes raw at the end, push the heat up for two minutes uncovered before adding the eggs." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For the classic smoked-haddock version, poach 300 g of smoked haddock in 200 ml of milk for five minutes while the rice cooks. Flake the cooked fish into the rice with the peas. The vegetarian version omits both and adds an extra egg or two." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add a handful of toasted flaked almonds for crunch, or a tablespoon of mango chutney stirred through at the end for sweetness. A spoon of single cream folded in just before serving turns the dish richer; not Beeton-era but a kitchen-friendly variant." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead, freezing, leftovers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Best eaten fresh. The eggs can be boiled the day before and kept peeled in the fridge; the spiced rice base can be made earlier in the morning and the dish assembled when the table is sitting down. Leftover kedgeree reheats in a low oven, covered, with a small splash of water." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Kedgeree does not freeze well; the rice texture suffers and the eggs go rubbery. Make for the day rather than batch-cooking." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Kedgeree is one of the central dishes of the Anglo-Indian breakfast canon; alongside devilled kidneys, kippers, and mulligatawny, the dishes that returning colonial families brought back to Britain and folded into Victorian breakfast spreads. Mrs Beeton's 1861 Book of Household Management gives a kedgeree close to the smoked-fish version; earlier British cookery manuals have plainer versions closer to the Indian khichdi original." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Modern British kedgeree drifted from breakfast to brunch over the twentieth century, and the dish appears on Sunday menus across the country alongside eggs Benedict and full English plates. The vegetarian version reads as a quieter cousin: the same gentle spice, the same fluffy rice, with the eggs alone carrying the protein where smoked haddock once led." }
+        ]
+      }
+    ]
+  }
+}

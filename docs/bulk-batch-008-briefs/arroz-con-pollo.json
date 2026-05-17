@@ -1,0 +1,240 @@
+{
+  "slug": "arroz-con-pollo",
+  "title": "Arroz con pollo",
+  "subtitle": "Caribbean chicken and yellow rice with saffron, olives, and peas.",
+  "excerpt": "The cousin of Spanish paella that crossed the Atlantic and settled across the Caribbean and Latin America. Chicken thighs braised with a sofrito and tomato, then rice and stock added to the pan, finished with saffron, capers, olives, and peas. Forty-five minutes on the hob; serves six.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Caribbean-Spanish home cookery, with variants across Cuba, Puerto Rico, the Dominican Republic, and the wider Latin American mainland. Documented in twentieth-century Caribbean cookbooks. The dish traces back to Spanish paella, recast with Caribbean produce and the achiote-and-saffron yellow that defines the regional variant.\n\nIn Cuba the version leans on green olives and capers; in Puerto Rico, on adobo seasoning; in the Dominican Republic, on stewed beans alongside; in Latin America more broadly, on aji peppers. The structural shape (sofrito, browned chicken, rice cooked in stock with the chicken) holds across all of them.\n\nLong-grain rice rather than short-grain Spanish bomba; the dish wants fluffy rice that absorbs the broth, not the toothsome bite of paella.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 50,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to two months. The rice softens further on freezing, so the dish is best fresh. Defrost in the fridge overnight and reheat gently with a splash of stock or water.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly. A wide deep pan or large Dutch oven is needed; the rice and stock together expand significantly.",
+    "makeAheadNotes": "Build the sofrito and brown the chicken the day before; cool, refrigerate. Reheat gently, add stock and rice, and finish the same day. The rice does not hold well overnight.",
+    "dietaryFlags": ["halal"],
+    "cuisine": "caribbean",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weekend", "festive"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "saute-pan", "isOptional": false, "notes": "A wide 30 cm deep sauté pan with a lid, or a paella pan with a lid improvised over the top." },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "tongs", "isOptional": false, "notes": "For turning the chicken without losing the skin." },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "adobo",
+      "term": "Adobo",
+      "definition": "A Caribbean and Latin American dry spice rub for chicken and fish, built from garlic powder, dried oregano, ground cumin, salt, and pepper. Mixed in advance and stored in a jar. A homemade version takes ninety seconds and beats the supermarket blend."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Arroz con pollo is the Caribbean cousin of Spanish paella that crossed the Atlantic with the colonial kitchen and settled across Cuba, Puerto Rico, the Dominican Republic, and the wider Latin mainland. Chicken thighs seared until the skin is dark, then a sofrito of onion, pepper, and garlic built in the rendered fat, rice and stock added, saffron and bay folded in. Capers, green olives, and peas at the end. Forty-five minutes on the hob, one pan, six full bowls." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Chicken thighs rather than breasts. Bone-in if you can get them, skin-on either way; the skin renders fat for the sofrito and crisps under a hot lid. The dry rub is the canonical " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "adobo" } }], "text": "adobo" },
+          { "type": "text", "text": ", a blend of garlic powder, oregano, cumin, salt, and pepper that takes ninety seconds to mix at home." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Long-grain rather than short-grain rice; this dish wants fluffy rice that absorbs the broth, not the chewy bite of paella. Saffron carries the yellow; a pinch of turmeric supplements it on tight budgets. The brand of olive does not matter; capers should be the small ones in vinegar." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "chicken-thigh", "amount": 1200, "unit": "g", "prepNote": "6 thighs, bone-in and skin-on if possible", "isOptional": false, "groupLabel": "For the chicken" },
+            { "ingredientSlug": "garlic-powder", "amount": 1, "unit": "tsp", "prepNote": "for the adobo rub", "isOptional": false, "groupLabel": "For the chicken" },
+            { "ingredientSlug": "oregano-dried", "amount": 1, "unit": "tsp", "prepNote": "for the adobo rub", "isOptional": false, "groupLabel": "For the chicken" },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": "for the adobo rub", "isOptional": false, "groupLabel": "For the chicken" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1.5, "unit": "tsp", "prepNote": "for the adobo rub, divided", "isOptional": false, "groupLabel": "For the chicken" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "freshly ground, for the rub", "isOptional": false, "groupLabel": "For the chicken" },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sofrito" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the sofrito" },
+            { "ingredientSlug": "pepper-red", "amount": 1, "unit": "each", "prepNote": "deseeded and finely chopped", "isOptional": false, "groupLabel": "For the sofrito" },
+            { "ingredientSlug": "pepper-green", "amount": 1, "unit": "each", "prepNote": "deseeded and finely chopped", "isOptional": false, "groupLabel": "For the sofrito" },
+            { "ingredientSlug": "garlic", "amount": 5, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the sofrito" },
+            { "ingredientSlug": "tomato-passata", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "long-grain-rice", "amount": 400, "unit": "g", "prepNote": "rinsed under cold water until the water runs clear", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "stock-chicken", "amount": 750, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "saffron", "amount": null, "unit": null, "prepNote": "a generous pinch, bloomed in 2 tbsp warm water", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "olives-green", "amount": 80, "unit": "g", "prepNote": "stoned and halved", "isOptional": false, "groupLabel": "For the finish" },
+            { "ingredientSlug": "capers", "amount": 2, "unit": "tbsp", "prepNote": "drained", "isOptional": false, "groupLabel": "For the finish" },
+            { "ingredientSlug": "peas-frozen", "amount": 150, "unit": "g", "prepNote": "thawed", "isOptional": false, "groupLabel": "For the finish" },
+            { "ingredientSlug": "parsley-flat", "amount": 2, "unit": "tbsp", "prepNote": "leaves picked and chopped, to finish", "isOptional": false, "groupLabel": "For the finish" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rub and rest the chicken" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mix {{garlic-powder}} of garlic powder, {{oregano-dried}} of oregano, {{cumin-ground}} of cumin, half of {{sea-salt-fine}} of salt, and a few grinds of black pepper in a small bowl. Pat {{chicken-thigh}} of chicken thighs dry with kitchen paper and rub the spice mix all over each piece. Leave on a board for fifteen minutes while the sofrito vegetables come together; longer is fine, up to two hours in the fridge." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the chicken hard" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the sauté pan over a medium-high heat with {{olive-oil}} of olive oil. Lay the chicken thighs in skin-side down and leave alone for six to seven minutes. The skin should go dark gold and release cleanly when you lift a corner with tongs. Turn and brown the second side for three minutes. Lift onto a plate; the chicken finishes in the rice. Pour off all but two tablespoons of fat." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the sofrito" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lower the heat to medium. Add {{onion}} of onion, {{pepper-red}} of red pepper, and {{pepper-green}} of green pepper to the pan. Cook for ten minutes, stirring often, until soft and translucent. Stir in {{garlic}} of garlic and cook for one minute until fragrant. Pour in {{tomato-passata}} of tomato passata and cook for five minutes until the sauce darkens and the oil starts to separate at the edges." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Toast the rice, add stock" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tip in {{long-grain-rice}} of rinsed long-grain rice. Stir for two minutes so the grains coat in the sofrito oil; they should look slightly translucent. Pour in {{stock-chicken}} of hot stock, the saffron with its soaking water, and the rest of the salt. Add {{bay-leaves}} of bay. Stir once to settle the rice. Nestle the browned chicken thighs into the rice skin-side up, with the gold skin clear of the liquid. The stock should sit roughly 1 cm above the rice." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Simmer covered, then rest" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bring to a steady simmer. Drop the heat to low, cover tightly, and cook for twenty minutes. Do not stir, do not lift the lid. After twenty minutes, lift the lid and check that the rice has absorbed the liquid and the chicken is cooked through (the juices at the thigh joint should run clear). Scatter {{olives-green}} of green olives, {{capers}} of capers, and {{peas-frozen}} of peas across the top. Replace the lid, pull off the heat, and rest for ten minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Scatter {{parsley-flat}} of chopped parsley over the top. Bring the pan to the table. Serve with a wedge of lime if you have one and a green salad on the side." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "Arroz con pollo turns on the rice-to-stock ratio and the no-stirring discipline once the rice is in.",
+          "items": [
+            { "symptom": "Rice still firm in the centre.", "cause": "Not enough stock, or heat too high.", "fix": "If the rice is undercooked after twenty minutes, add another 100 ml of hot stock or water, replace the lid, and give five more minutes on the lowest heat. Keep the lid sealed; lifting it loses steam and rice cooks unevenly." },
+            { "symptom": "Rice mushy or sticky.", "cause": "Rice not rinsed, or stock-to-rice ratio too high.", "fix": "Rinse the rice under cold running water until the water runs clear before cooking; this washes off surface starch. For 400 g of long-grain rice, 750 ml of stock is right; more and the rice turns sticky." },
+            { "symptom": "Chicken skin lost its crisp.", "cause": "Chicken nestled too deep in the liquid.", "fix": "The skin needs to sit above the stock line so the steam crisps it rather than poaches it. If you have already started cooking, lift the lid in the last five minutes to let the moisture escape and the skin firm up." },
+            { "symptom": "Soggy bottom, burnt edges.", "cause": "Heat too high or pan too thin.", "fix": "A heavy pan and a low steady heat are the answer. If the rice has caught at the bottom, lift the chicken off the top, scrape gently, and rest covered off the heat. A little socarrón (caramelised crust) at the bottom is canonical and worth keeping." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The Puerto Rican version uses sazón seasoning (annatto, garlic, oregano, cumin, salt) instead of straight saffron, which gives a deeper orange-yellow rather than a saffron-yellow. Some Cuban cooks add a splash of dry white wine to the sofrito; some Dominicans add red beans cooked separately and ladled alongside." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a richer version, swap a quarter of the stock for a measure of dry sherry, which goes in with the tomato passata stage. The dish moves toward the Spanish paella original. For a Latin-mainland variant, replace the green peas with diced carrot and corn." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead, freezing, leftovers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Best fresh. The sofrito and chicken-brown stages can be done a day ahead; complete the dish the same day you eat it. Leftovers reheat best in a low oven, covered with foil with a splash of stock to keep the rice moist." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Freezes well for up to two months in portioned containers, though the rice softens further on freezing. Defrost in the fridge overnight; reheat slowly in a covered pan with a splash of stock or water." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Arroz con pollo is the Caribbean and Latin American descendant of Spanish paella, recast over four centuries with the produce and pantry of the new world. Cuban, Puerto Rican, Dominican, and Latin American versions vary in seasoning detail but share the spine: sofrito, browned chicken, rice cooked in stock with the chicken on top. Sunday-lunch territory across the Caribbean diaspora." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The dish is one of the cleanest examples of how Iberian cookery travelled, mutated, and settled into Caribbean and Latin American kitchens. Paella's bomba rice became Caribbean long-grain; its rabbit and chicken stayed but the snail dropped out; the saffron came along but got supplemented by achiote and turmeric when budgets were tight. The result is a dish that reads instantly as Caribbean even when the ingredient list looks Spanish." }
+        ]
+      }
+    ]
+  }
+}

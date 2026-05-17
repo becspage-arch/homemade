@@ -1,0 +1,243 @@
+{
+  "slug": "country-captain",
+  "title": "Country captain",
+  "subtitle": "Anglo-Indian spiced chicken stew with raisins, almonds, and rice.",
+  "excerpt": "A Raj-era curry of slow-cooked chicken in a mild spiced tomato sauce, finished with raisins and toasted almonds, served over rice. The dish sits between an Indian curry and an old-fashioned British casserole; gentle, fragrant, kid-friendly. An hour on the hob; serves four to six.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Anglo-Indian Raj-era home cookery, brought back to Britain in the eighteenth and nineteenth centuries by returning colonial families. Documented in Mrs Beeton's Book of Household Management (1861) as a curried chicken dish and in earlier British cookery manuals.\n\nThe name has several plausible origins. The most common attribution links it to country captains in the British East India Company merchant marine, who picked up the dish in southern Indian ports and brought it home; another links it to American Charleston, where the recipe arrived through the same Atlantic shipping route.\n\nThe canonical British version is mild-spiced and curry-house-friendly; American Southern versions add bell pepper and bacon. The Beeton-era recipe sits closer to the British end.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 60,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to three months. Cool fully and freeze in portioned containers. Defrost in the fridge overnight and reheat gently with a splash of water. The almonds soften on freezing; add fresh toasted almonds when serving.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly for a crowd. Use a wide deep pan so the chicken sits in a single layer for the brown.",
+    "makeAheadNotes": "Better on day two. Make the sauce and chicken the day before; chill overnight; reheat gently and toast fresh almonds for the top.",
+    "dietaryFlags": ["halal"],
+    "cuisine": "angloIndian",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weekend", "kidFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false, "notes": "A heavy 4-litre Dutch oven or sauté pan with a lid. Cast-iron holds heat for the chicken brown." },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "tongs", "isOptional": false },
+    { "slug": "small-frying-pan", "isOptional": false, "notes": "For toasting the almonds." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "curry-powder-anglo",
+      "term": "Anglo-Indian curry powder",
+      "definition": "A Raj-era pre-mixed spice blend, brought back to British kitchens and codified by Mrs Beeton and the spice merchants of the nineteenth century. Built around turmeric, coriander, cumin, fenugreek, mustard, ginger, and a touch of chilli. The Beeton-era version is milder than modern hot curry powder."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Country captain is the Raj-era Anglo-Indian curry that came back to Britain with returning colonial families in the nineteenth century. Chicken thighs browned in butter, simmered slowly in a mildly spiced tomato sauce, finished with raisins and toasted almonds, served over plain rice. The dish sits between an Indian curry and an old-fashioned British casserole; gentle, fragrant, the curry your grandmother might have made before vindaloo arrived on the high street." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The spicing leans on " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "curry-powder-anglo" } }], "text": "Anglo-Indian curry powder" },
+          { "type": "text", "text": ", milder than modern hot curry blends and built around turmeric, coriander, cumin, and ginger. Mrs Beeton's 1861 version uses this blend; modern shop-bought mild curry powder works fine in its place." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bone-in chicken thighs hold their shape and stay moist through the long simmer better than breasts. Skin off; the dish wants a clean sauce, not a fatty one. An hour on the hob, mostly unattended. Serve with plain basmati or pilau rice." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "chicken-thigh", "amount": 1200, "unit": "g", "prepNote": "6 thighs, bone-in, skin removed", "isOptional": false, "groupLabel": "For the chicken" },
+            { "ingredientSlug": "plain-flour", "amount": 2, "unit": "tbsp", "prepNote": "for dusting the chicken", "isOptional": false, "groupLabel": "For the chicken" },
+            { "ingredientSlug": "salted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the chicken" },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the chicken" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "ginger-root", "amount": 30, "unit": "g", "prepNote": "fresh, peeled and finely grated", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "curry-powder", "amount": 2, "unit": "tbsp", "prepNote": "mild Anglo-Indian style", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": "one tin, chopped", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "stock-chicken", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "raisins", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the finish" },
+            { "ingredientSlug": "almonds-flaked", "amount": 40, "unit": "g", "prepNote": "toasted, to scatter over", "isOptional": false, "groupLabel": "For the finish" },
+            { "ingredientSlug": "parsley-flat", "amount": 1, "unit": "tbsp", "prepNote": "leaves picked and chopped", "isOptional": false, "groupLabel": "For the finish" },
+            { "ingredientSlug": "lemon", "amount": 0.5, "unit": "each", "prepNote": "juice only", "isOptional": false, "groupLabel": "For the finish" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "freshly ground", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Serve with plain basmati rice or with pilau on a more leisurely evening. The slug for almonds-flaked in the master list resolves to the standard ingredient; this is the toasted version. Toast in a dry pan before scattering." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Dust and brown the chicken" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pat {{chicken-thigh}} of chicken thighs dry with kitchen paper. Tip {{plain-flour}} of plain flour into a wide dish with a pinch of salt and a few grinds of pepper; turn each thigh in the flour until lightly coated. Shake off the excess." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat {{salted-butter}} of butter and {{olive-oil}} of olive oil in the Dutch oven over a medium-high heat. Lay the chicken in, presentation-side down, and brown for five minutes until the surface is deep gold. Turn and brown the second side for three minutes. Lift onto a plate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soften the onion, build the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lower the heat to medium and tip in {{onion}} of thinly sliced onion. Cook for ten minutes, stirring often, until soft and golden at the edges. Stir in {{garlic}} of garlic and {{ginger-root}} of ginger; cook for one minute until fragrant. Add {{curry-powder}} of curry powder and stir for thirty seconds until the spices bloom in the fat and the kitchen smells of warm cumin." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour in {{tinned-tomatoes}} of chopped tinned tomatoes and {{stock-chicken}} of chicken stock. Bring to a gentle simmer and cook for ten minutes until the sauce thickens slightly and the colour deepens from red to rust." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Return chicken, simmer slow" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Nestle the browned chicken thighs back into the sauce, along with any juices on the plate. Add {{raisins}} of raisins. Cover with the lid, drop the heat to low, and simmer for forty minutes. The chicken cooks through, the sauce thickens, the raisins plump in the spiced liquid." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Toast the almonds" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "While the chicken simmers, set a small dry frying pan over a medium heat. Tip {{almonds-flaked}} of flaked almonds in and toast for two to three minutes, shaking the pan often, until they turn pale gold and smell nutty. Watch them; flaked almonds turn from gold to burnt in seconds. Tip out onto a plate the moment they colour." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish with lemon and herbs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the lid; the chicken should be coming away from the bone with a fork. Stir in the juice of half a {{lemon}} lemon and adjust salt and pepper. Rest the pan, covered, off the heat for ten minutes; this lets the sauce settle and the spice depth come through. Scatter the toasted almonds and {{parsley-flat}} of chopped parsley over the top. Serve over plain basmati rice." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "Country captain is forgiving once the chicken is in the sauce. The two failure modes are dry chicken and a thin sauce.",
+          "items": [
+            { "symptom": "Chicken dry, stringy at the bone.", "cause": "Overcooked, or breast meat used instead of thighs.", "fix": "Bone-in thighs hold up to an hour of simmering; breasts dry out by forty minutes. If you have started with breasts, drop the simmer time to twenty-five minutes." },
+            { "symptom": "Sauce too thin and watery.", "cause": "Too much stock, or lid kept on the whole time.", "fix": "Lift the lid for the last ten minutes of simmering and let the sauce reduce. A small sprinkle of flour stirred into the sauce after the chicken is lifted thickens it further; cook three minutes to clear the raw flour taste." },
+            { "symptom": "Curry powder tastes raw or harsh.", "cause": "Spices not bloomed in fat.", "fix": "Curry powder needs to cook in the fat for thirty seconds to bloom the flavour. If the sauce tastes raw at the end, push the heat up for two minutes uncovered, stirring; the flavour rounds." },
+            { "symptom": "Sauce broke and turned greasy.", "cause": "Too much butter and stock combined.", "fix": "Skim the surface with a spoon to lift off the fat. A spoonful of cold yoghurt stirred through at the end pulls the sauce back together; Greek yoghurt is firmer than natural and holds better." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The American Southern version, particularly the Charleston recipe, adds diced bell pepper and bacon at the sofrito stage. The result is a different dish; the British version is leaner and lets the chicken and the spice carry it. Both have their merits." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a richer evening version, swap the chicken stock for half stock and half coconut milk. The sauce turns creamier and the spice warmth softens; not strictly canonical but a kitchen-friendly variant. A spoon of mango chutney stirred in at the end is the curry-house gesture." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead, freezing, leftovers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Better on day two. Cool, refrigerate, reheat gently. The spices settle through the chicken overnight. Three to four days in the fridge is the safe window." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Freezes well for up to three months in portioned containers. Defrost in the fridge overnight and reheat slowly with a splash of water if the sauce has gelled. Toast fresh almonds on serving; the frozen ones soften and lose their bite." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Country captain belongs to the Anglo-Indian canon, the cooking that returning colonial families brought back from India and folded into British home cookery during the nineteenth century. The recipe sits alongside kedgeree, mulligatawny, and Major Grey's chutney as one of the dishes that bridges the British and Indian repertoires. Mrs Beeton gives it in her 1861 Book of Household Management; earlier British cookery manuals have versions of curried chicken close to this one." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The name itself is contested. One reading links it to country captains in the East India Company merchant marine who carried the recipe between Indian ports and Atlantic seaports; another links it to American Charleston, where the dish surfaces in nineteenth-century plantation cookery. Both readings have merit and the dish made the journey through both routes." }
+        ]
+      }
+    ]
+  }
+}

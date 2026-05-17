@@ -1,0 +1,220 @@
+{
+  "slug": "labneh",
+  "title": "Labneh",
+  "subtitle": "Strained yoghurt cheese with olive oil, dried mint, and salt.",
+  "excerpt": "Yoghurt strained through muslin overnight until it firms into a soft, tangy cheese. Spread on a plate, anointed with olive oil and dried mint, eaten with warm flatbread for breakfast or as part of a mezze spread. Five minutes of work and one night of patience.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Levantine and eastern Mediterranean home cookery, particularly Lebanese, Syrian, and Palestinian kitchens where labneh is a daily breakfast and mezze staple. Documented in Claudia Roden's Book of Middle Eastern Food and in twentieth-century Arabic cookbooks.\n\nThe technique predates written recipes. Yoghurt strained of whey was a way of extending dairy in warm climates before refrigeration. Modern versions sit somewhere between fresh cheese and thick yoghurt; the longer the drain, the firmer the labneh.\n\nKept in olive oil, labneh balls last weeks in the fridge and turn into a small pantry resource for breakfasts and lunches.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "restingMinutes": 720,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Doubles cleanly. Use a larger sieve or two smaller ones; the yoghurt needs room for the whey to drain.",
+    "makeAheadNotes": "Start the day before you want to eat it. Twelve to twenty-four hours of straining is the right window; longer produces a firmer cheese.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "lebanese",
+    "mealType": "snack",
+    "mood": ["mezze", "breakfast", "quick"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "muslin-cloth", "isOptional": false, "notes": "Or a clean tea towel. The cloth has to be fine enough to hold the curds without letting them through." },
+    { "slug": "sieve", "isOptional": false },
+    { "slug": "mixing-bowl-medium", "isOptional": false, "notes": "Goes under the sieve to catch the whey." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "whey",
+      "term": "Whey",
+      "definition": "The watery yellowish liquid that separates from yoghurt as it strains. Strained off and discarded for plain labneh; tipped back to thin the cheese later if needed. Some bakers keep the whey for bread dough; it is a mild leaven."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Labneh is yoghurt strained until it firms up into a soft, tangy cheese, somewhere between Greek yoghurt and ricotta. Spread on a plate, drizzled with olive oil, sprinkled with dried mint and a little salt, mopped up with warm flatbread. The breakfast that holds up Levantine kitchens; the cold mezze that arrives next to hummus." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Five minutes of work. The rest is the cloth, the sieve, and the night. Twelve to twenty-four hours of straining lets the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "whey" } }], "text": "whey" },
+          { "type": "text", "text": " separate from the curds; the cheese that remains is two-thirds the volume of the yoghurt you started with." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The only piece of kit that matters is a fine cloth. Muslin is cleanest; a thin tea towel works. Cheesecloth is fine if you double it up." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "greek-yoghurt", "amount": 1000, "unit": "g", "prepNote": "full-fat Greek-style; do not use low-fat", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "extra-virgin-olive-oil", "amount": 3, "unit": "tbsp", "prepNote": "to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mint", "amount": 1, "unit": "tsp", "prepNote": "dried, crumbled — or 1 tbsp fresh chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 0.5, "unit": "each", "prepNote": "zest only, optional", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Salt the yoghurt" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tip {{greek-yoghurt}} of Greek yoghurt into a bowl. Add {{sea-salt-fine}} of fine salt and stir through. The salt draws water out of the yoghurt and speeds the strain by a couple of hours; it also seasons the cheese as it forms." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Set up the strain" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Line a sieve with a double layer of muslin or a clean thin tea towel. Set the sieve over a deep bowl, leaving at least 5 cm of clearance between the sieve base and the bottom of the bowl. Scrape the yoghurt into the lined sieve, gather the corners of the cloth, and twist gently to form a bag." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tie the gathered cloth with kitchen string, leaving a long tail. Suspend the bag over the bowl by hooking the string over a wooden spoon laid across the bowl, so the cheese hangs in the sieve without touching the bottom. The whey drips into the bowl below." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Strain in the fridge overnight" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Slide the bowl and sieve into the fridge for twelve hours minimum, eighteen to twenty-four for a firmer cheese. Tip the whey out of the bowl halfway through if it climbs close to the sieve; the cheese should sit out of any liquid." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After twelve hours, the labneh holds a soft cream-cheese shape. After twenty-four, it is firm enough to hold a clean spoon-line. After thirty-six, firm enough to roll into balls for storing in oil. Choose the texture that suits the meal." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Plate and dress" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Scrape the labneh out of the cloth onto a wide flat plate. Spread to a shallow disc with the back of a spoon, leaving the surface a little rough. Drizzle {{extra-virgin-olive-oil}} of olive oil across the top in a slow spiral. Crumble {{mint}} of dried mint between your fingers and scatter over. Add lemon zest if using." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Serve with warm pitta, flatbread, or sourdough. A handful of olives and a sliced tomato turn it into breakfast; a longer mezze spread sits the labneh next to hummus and mutabal." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "Labneh is forgiving. The two failure modes are watery cheese and sour cheese.",
+          "items": [
+            { "symptom": "Labneh still wet after twelve hours.", "cause": "Yoghurt was thin, or strain did not have room.", "fix": "Some yoghurts (particularly cheaper supermarket brands) are stabilised and drain slowly. Press the cloth gently to squeeze out more whey, then return to the fridge for a few more hours. Thin yoghurt may need 24 to 30 hours." },
+            { "symptom": "Sour or unpleasantly sharp.", "cause": "Yoghurt was too tangy to begin with, or strained too long at room temperature.", "fix": "Use a good-quality full-fat Greek yoghurt; cheaper yoghurts can be acidic. Always strain in the fridge, never on the counter; the cheese sours fast at warmer temperatures." },
+            { "symptom": "Curds slipped through the cloth.", "cause": "Cloth too coarse or a tear.", "fix": "Double up the cloth if using a thin tea towel; muslin can be doubled too. Check for holes before lining the sieve." },
+            { "symptom": "Yoghurt clumped on the cloth and the centre stayed wet.", "cause": "The bag did not have room for the whey to escape.", "fix": "Untie the bag, fold the labneh back on itself once, and re-tie. Suspended bags drain more evenly than yoghurt sitting flat in a sieve." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Strain for thirty-six to forty-eight hours and the cheese will be firm enough to roll into walnut-sized balls between oiled palms. Drop the balls into a sterilised jar of olive oil with a sprig of thyme and a few peppercorns; refrigerated, they keep for two to three weeks and turn into a small store-cupboard resource." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sweeten the cheese with a spoon of honey, a sprinkle of crushed pistachios, and a drizzle of pomegranate syrup for an unconventional dessert that sits between cheesecake and yoghurt. Or fold chopped fresh mint and grated garlic through for a dip closer to a Greek tzatziki." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead, freezing, leftovers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Plain labneh keeps four to five days in a covered container in the fridge. Stir before using if surface moisture has risen. Labneh balls in oil keep two to three weeks in a sealed jar in the fridge; pour off the oil to top up the salads they go into." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Labneh does not freeze; the texture breaks when defrosted. Make smaller batches rather than freezing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Labneh is one of the older dairy preparations of the eastern Mediterranean, recorded in Arabic and Levantine cookery long before refrigeration. The technique of straining yoghurt extended a perishable into a soft cheese that could be kept for days or, with the oil-and-jar treatment, for weeks. In Lebanon, Syria, Palestine, and Jordan, labneh is a daily breakfast; in Greek and Turkish kitchens, very similar cheeses appear under different names." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The dressing varies. Lebanese kitchens favour olive oil and dried mint; Syrian ones add za'atar; Palestinian breakfasts often add a sliced fresh tomato and a clutch of olives. Each version is a small statement of place. The strained cheese underneath is the same." }
+        ]
+      }
+    ]
+  }
+}
