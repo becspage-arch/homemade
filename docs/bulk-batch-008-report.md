@@ -263,7 +263,7 @@ patterns maintained:
 
 ## Deploy status
 
-(To be filled in after the post-push deploy verification block runs.)
+Commit `5898c40` pushed to `main`. GitHub Actions run `25978301708` exited green; `curl https://homemade.education/healthz` returned `200`. Deploy verification complete.
 
 ---
 
