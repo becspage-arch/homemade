@@ -1,0 +1,385 @@
+{
+  "slug": "running-and-backstitch-by-hand",
+  "title": "Hand-sew a running stitch and a backstitch",
+  "subtitle": "The two foundation stitches for every hand seam",
+  "excerpt": "The two hand-sewing stitches every other hand seam builds on. Running stitch for low-load seams, gathering, basting, and visible-mending sashiko. Backstitch for load-bearing seams that need to hold like a machine seam. One short practice piece teaches both in twenty minutes.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sewing",
+  "subCategorySlug": "mending-visible-mending",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Beeton's Book of Needlework (1870), opening chapter on plain stitching (Project Gutenberg #25640): the running stitch and backstitch as the two starter hand stitches, with the spacing and tension guidance carried through to modern hand-sewing practice. WWII Make Do and Mend pamphlet (UK Board of Trade, 1943): the practical application of backstitch as a machine substitute for repair work when machines were unavailable. Both methods are unchanged since.",
+  "sewing": {
+    "craftType": "sewing",
+    "projectShape": null,
+    "requiredFabricSlugs": ["calico"],
+    "requiredNotionSlugs": ["thread-cotton"],
+    "sewingMethod": "hand-sewn",
+    "fabricYardageMetres": 0.1,
+    "finishedDimensionsCm": null,
+    "bodyMeasurementsRequired": []
+  },
+  "recipeTools": [
+    { "slug": "embroidery-scissors", "isOptional": false, "notes": "Small sharp-pointed scissors for thread." },
+    { "slug": "needle-minder", "isOptional": true, "notes": "Helpful for parking the needle between passes; otherwise a pincushion serves." }
+  ],
+  "glossaryTerms": [
+    { "slug": "running-stitch", "term": "Running stitch", "definition": "The foundational hand stitch: the needle passes in and out of the cloth in a continuous line, picking up small even bites at regular spacing. The simplest hand stitch and the basis of basting, gathering, and most decorative hand-stitching." },
+    { "slug": "backstitch-hand", "term": "Backstitch (hand-sewing)", "definition": "A stronger hand-sewing seam stitch than running stitch. Each new stitch goes back to meet the end of the previous one before advancing under the cloth, producing a continuous unbroken line on the right side that holds like a machine seam." },
+    { "slug": "basting", "term": "Basting", "definition": "Temporary long running stitches (8-10 mm spacing) used to hold two pieces of fabric together before the final stitching. Basting threads are pulled out after the final seam is in." },
+    { "slug": "stitch-length", "term": "Stitch length", "definition": "The distance from one needle-insertion to the next, measured on the right side of the fabric. Shorter stitches give more control and a stronger seam; longer stitches gather and baste." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two hand stitches do most of the work in every hand-sewn project: the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "running-stitch" } }], "text": "running stitch" },
+          { "type": "text", "text": " and the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "backstitch-hand" } }], "text": "backstitch" },
+          { "type": "text", "text": ". Running stitch is the basic up-and-down stitch every child learns first; it underlies " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "basting" } }], "text": "basting" },
+          { "type": "text", "text": ", gathering, visible-mending sashiko, and the casing stitching on a drawstring bag. Backstitch is the load-bearing equivalent; on the right side it reads as a continuous unbroken line, and a backstitched seam holds as well as a machine seam. Together they cover most hand-sewing situations a homemade project needs." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This tutorial walks both stitches on a small practice swatch. Twenty minutes from cutting the cloth to a finished sample piece with both stitches side by side. Keep the swatch in the sewing basket for reference: when the stitch falters mid-project, the practice piece is a quicker check than the manual." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Before you start",
+          "body": "Lighting. Eye-level daylight on the cloth — a window or a daylight task lamp. Working in dim light is the fastest path to crooked stitches and a sore neck after twenty minutes.\n\nPosture. Sit upright with the cloth held off the lap. Forearms supported on the work surface; shoulders down; both hands free to pass the needle from one side of the cloth to the other.\n\nNeedle safety. The sharp hand-sewing needle is small and easy to lose. Park it in a needle minder, a pincushion, or pinned through the practice cloth itself between attempts. Never lose it in the lap or the sofa cushion. Take a five-minute break every twenty minutes and look at something further than the cloth to rest the eyes.\n\nScissors. Embroidery scissors are surgical-sharp and pointed. Cap them between uses; dedicate them to cloth and thread (paper dulls the blade quickly)."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "marks": [{ "type": "bold" }], "text": "A small piece of medium-weight cotton" },
+                  { "type": "text", "text": ", around 20 × 15 cm. Calico, quilting cotton, or any plain woven cotton with a clear weave grain. Plain colour helps; the stitches show against a solid ground." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "marks": [{ "type": "bold" }], "text": "All-purpose cotton hand-sewing thread" },
+                  { "type": "text", "text": " in a contrasting colour to the cloth. Cotton holds a knot better than polyester for hand stitching." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "marks": [{ "type": "bold" }], "text": "A sharp hand-sewing needle, size 7 or 8" },
+                  { "type": "text", "text": ". The sharp tip pierces the cloth cleanly; the eye takes one strand of all-purpose thread comfortably. Size 7 is the everyday default; size 8 is finer for very lightweight cottons." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Embroidery scissors and a thimble" },
+                  { "type": "text", "text": ". The thimble sits on the middle finger of the sewing hand and protects the fingertip when pushing the needle through heavier fabric. Optional for cottons; essential for denim, canvas, and wool." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Running stitch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The simplest hand stitch. The needle passes in and out of the cloth in a continuous wave; each stitch is the same length as the gap that follows it. The right side of the cloth shows a dashed line; the wrong side shows the same dashed line, offset by half a stitch." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Working a sample row" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Cut a 50 cm length of cotton thread (longer threads tangle). Thread the needle; tie a small overhand knot at the free end. The other end of the thread runs free." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Bring the needle up from the wrong side of the cloth at the start of the row. The knot anchors against the back. Pull the thread through until the knot is snug." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Take the needle down through the cloth 3 mm ahead (toward the end of the row). Pull the thread through until it sits snug against the cloth but doesn't pucker the weave." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Bring the needle back up 3 mm further along (so the gap between the two stitches matches the length of the stitch). Continue in this rhythm: down-3 mm-up-3 mm-down-3 mm-up." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "After the first dozen stitches, check the tension on the back of the cloth. The thread should lie flat — not loose enough to catch a finger, not tight enough to pucker the cloth into ridges. If puckering shows, loosen the next dozen stitches; if the stitches look slack, tighten slightly." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "To end the row, take the needle to the wrong side and weave it under the last four or five stitches on the back, parallel to the cloth. Pull through and snip the tail close. No knot — the woven tail holds." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Reading the stitch length. Running stitch at 3 mm spacing is the everyday default — strong enough for low-load seams, fine enough to read tidy on a plain woven. Drop to 2 mm for tighter control on lightweight cottons or curved hems; go up to 5-6 mm for basting (where the stitches will be pulled out after the final seam is in) or for sashiko-style visible mending." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Loading multiple stitches. On a long straight row, the needle can pick up three or four stitches' worth of cloth at once before the thread is pulled through. Push the needle in-and-out-and-in-and-out across a 12 mm stretch of cloth without pulling the thread until all four stitches are loaded, then pull the thread through all four together. This is faster than one-stitch-at-a-time and gives more even spacing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Backstitch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Backstitch is the load-bearing hand stitch. Each new stitch goes back to meet the end of the previous one on the right side of the cloth, then advances under the cloth a stitch-and-a-half before coming up. The right side reads as a continuous unbroken line; the wrong side shows a longer overlapping doubled thread. The seam holds like a machine seam." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Working a sample row" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Start the same way as running stitch: knot at the back, needle up at the start of the row. The first stitch is the only stitch worked forward — take the needle down 3 mm ahead, then up again 3 mm further on, so the needle has advanced 6 mm under the cloth." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Take the needle down again at the end of the FIRST stitch (3 mm back from where the needle just came up). This is the backwards motion; it closes the gap and creates the continuous line on the right side." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Bring the needle up again 3 mm ahead of where the second stitch ended (so the needle has advanced 6 mm under the cloth)." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Repeat: down at the end of the previous stitch, up 3 mm ahead. The rhythm is back-up-back-up; each stitch on the right side touches the previous stitch's end to make the continuous line." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "End the row with the same woven-tail finish: weave the thread under four or five completed stitches on the back, parallel to the cloth, and snip the tail close." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Reading the stitch length on backstitch. 3 mm stitches give a load-bearing seam suitable for everything up to medium-weight cotton; 2 mm stitches give a stronger seam on lightweight cottons or for visible top-stitching. 4-5 mm reads loose and is rarely the right call for a backstitch row." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tension reads on the right side. A correctly tensioned backstitch row sits flat against the cloth with no puckering; the stitches are even in length and touch end-to-end. A loose row gaps slightly between stitches; a tight row puckers the cloth into a small ridge under the stitching." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to use which stitch" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Running stitch" },
+                  { "type": "text", "text": " — basting, gathering, decorative top-stitching, sashiko-style visible mending, casing edges on bags or curtains, light-load hand seams on lightweight cottons. Faster than backstitch; the seam holds adequately when the load is low. Not the right choice for the seam of a working bag bottom, a child's clothing seam, or any seam under tension." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Backstitch" },
+                  { "type": "text", "text": " — load-bearing seams, the side and bottom of a hand-sewn bag, repair seams on torn clothing, the joining of pieces in patchwork or quilt construction by hand. Slower than running stitch; the seam holds like a machine seam. The right default for any hand seam that will see use." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Mixed" },
+                  { "type": "text", "text": " — baste with long running stitches to hold the pieces in place, then sew the final seam with backstitch over the basting. Pull the basting threads out at the end. This is the classic hand-sewing two-pass: a fast guide first, a strong finish second." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "If the stitching went sideways" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common hand-stitch problems",
+          "intro": "Five things that go wrong on first hand-sewing attempts and the fix for each.",
+          "items": [
+            { "symptom": "Cloth puckers along the stitched row", "cause": "Thread tension too tight as it was pulled through; or the stitches were too long for the cloth weight.", "fix": "Loosen the next dozen stitches deliberately — pull the thread through firmly but not snugly. The thread should sit flat against the cloth without indenting it. Drop stitch length to 2 mm if the puckering persists on lightweight cottons." },
+            { "symptom": "Stitches are different lengths across the row", "cause": "Eyeballing the spacing rather than measuring the first stitch and matching to it.", "fix": "On the first stitch, lay the needle alongside the previous stitch to confirm the new stitch will be the same length. After ten stitches, the eye usually settles on the right rhythm; until then, measure every fourth or fifth stitch deliberately." },
+            { "symptom": "Backstitch row shows gaps between stitches on the right side", "cause": "The 'down' end of the new stitch landed forward of the previous stitch's end rather than touching it.", "fix": "Look at where the previous stitch ended on the right side. The needle must go DOWN at exactly that point, not 1 mm forward. The line reads continuous only when the stitches touch end-to-end." },
+            { "symptom": "Thread is twisting up on itself as the row progresses", "cause": "The needle was rolled the same direction at each stitch, building twist into the thread.", "fix": "Every twenty stitches, let the needle dangle off the back of the cloth so the thread untwists itself. Reverse the direction of the needle pull periodically." },
+            { "symptom": "Woven-tail finish pulls free during washing", "cause": "Tail was woven under only two or three stitches.", "fix": "Re-do the finish with four or five stitches; the friction of the woven stitches multiplies with each additional stitch the tail passes under. Stub the snipped tail close (2-3 mm) so it doesn't have a long end to unravel from." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Related tutorials" }]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": {
+          "tutorialSlug": "simple-drawstring-bag"
+        }
+      }
+    ]
+  }
+}
