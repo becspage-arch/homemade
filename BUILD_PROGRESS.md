@@ -1046,6 +1046,29 @@ Verified working in production after batch 004:
 
 **Out.** No schema changes; no voice-check CLI edits; no master-table additions; no admin/UI work; no edits to `docs/tutorial-author.md`, `docs/voice-editor-prompt.md`, or `docs/common-issues.md` (no patterns recurred 3+ times in this batch).
 
+### Autopilot — Mindset bulk-002 ⛔ blocked at upload 2026-05-17
+
+**Goal.** Second mindset autopilot fire (first since bulk-001 recovered). Small slice sized for the Opus-model concession (the scheduled-tasks runner is still firing Opus despite the `model: claude-sonnet-4-5` frontmatter — same self-identification pattern as cooking bulk-009).
+
+**Outcome.** 4 briefs drafted and voice-checked clean — but upload blocked by DB schema drift (`Tutorial.requiresKiln` ColumnNotFound). Same shape of halt as bulk-001 24 hours earlier; same recovery path.
+
+- **4 PRACTICE briefs across 3 sub-categories:** AFFIRMATION x2 (`steady-steady-steady` from MONEY-v2/D4, `i-am-safe-even-when-the-number-is-small` from MONEY-v2/D2), ENERGY_STATEMENT (`there-is-enough-now` from MONEY-v2/D2 + Money-Zone/Ch2-5), RITUAL (`the-hand-on-heart-money-breath` from MONEY-Journal structure + [PD] hand-on-heart anchor). All four target the early MONEY Phase 1 work (Days 2 + 4), continuing the spread bulk-001 started at Day 1.
+- Life-category spread (across `practiceTargets`): MONEY 4 (all), ANXIETY 4 (all), ABUNDANCE 3, FEAR 1.
+- All 4 briefs cleared voice-check **errors**. Only one (`the-hand-on-heart-money-breath`) carries warnings, all the same `brand-trademark "Anchor"` false positive bulk-001 already documented (mindset somatic / ritual / sensory-anchor sense — voice-check needs a mindset-category exception, still out of scope for the autopilot stream).
+
+**Blocker.** Prisma migration `20260625000000_phase_pottery_pipeline_001` adds `Tutorial.requiresKiln` + `Tutorial.requiresWheel` (added in commit `27d95cc` ~12 minutes before this fire's pre-flight). Migration not yet applied to Neon prod. Local Prisma client expects the columns; `upload-tutorial.ts` throws `P2022 ColumnNotFound`. Same root cause class as bulk-001 (a Prisma migration landed in code but hadn't yet deployed when the autopilot fired).
+
+**Halt signal written.** `stream=queue, reason=DB_MIGRATION_PENDING, id=cmp9z957c0000b8v4g3jui7lv`. The autopilot-halt-notify cron will surface it.
+
+**Recovery path.** Deploy run `25995805194` (commit `3734b9d`, in_progress at fire time) deploys the tree through `3734b9d` which includes the pottery migration; once that run completes, prod has `requiresKiln`. The next mindset round-robin fire reads this entry + `docs/mindset-bulk-002-report.md`, sees the briefs are voice-check-clean (kept in `docs/mindset-bulk-002-briefs/` + mirrored to `docs/archive/mindset-bulk-002-briefs/`), and re-runs the four uploads. No re-drafting required.
+
+**Patterns surfaced** (not yet folded back into prompts — flagged here for a follow-up):
+
+- The schema-drift halt is now happening on a second migration class within 24 hours. Pre-flight could check `prisma migrate status` against prod to spot a pending migration before drafting — saving the draft work when the prod schema is behind.
+- Cross-stream migrations are landing during autopilot fires more often than expected. Worth adding a "if the most recent main commit modified `prisma/migrations/` and the corresponding deploy hasn't finished, halt with `DB_MIGRATION_PENDING` immediately" check to pre-flight.
+
+**Out.** No schema changes; no migrations applied; no voice-check CLI edits; no edits to `docs/mindset-author.md`.
+
 ### Phase 8 Baking — bulk-001 batch ✅ landed 2026-05-16
 
 **Goal.** Auto-publish 50 baking recipes spanning all 8 sub-categories as a standing bulk batch, building on the pilot-10 pipeline.
