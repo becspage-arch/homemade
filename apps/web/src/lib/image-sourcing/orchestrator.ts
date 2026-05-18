@@ -75,6 +75,14 @@ function priorityFor(input: SourceHeroInput): { freeOrder: ImageSource[]; skipFr
   if (input.category === 'baking') {
     return { freeOrder: ['unsplash', 'pexels', 'wikimedia', 'pixabay'], skipFreeForAi: false }
   }
+  if (input.category === 'animals-smallholding') {
+    // Pexels first — livestock photography on Pexels is consistently
+    // strong (hens, hives, lambs in pasture). Wikimedia second because
+    // there's deep public-domain agricultural and vintage-husbandry
+    // material there (USDA plates, RHS-era illustrations). Pixabay
+    // and Unsplash as the tail catch-all before Flux fallback.
+    return { freeOrder: ['pexels', 'wikimedia', 'unsplash', 'pixabay'], skipFreeForAi: false }
+  }
   // Garden / herbal-medicine and anything else: same as cooking generic.
   return { freeOrder: ['unsplash', 'pexels', 'wikimedia', 'pixabay'], skipFreeForAi: false }
 }
