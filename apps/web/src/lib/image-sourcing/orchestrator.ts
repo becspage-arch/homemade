@@ -83,6 +83,15 @@ function priorityFor(input: SourceHeroInput): { freeOrder: ImageSource[]; skipFr
     // and Unsplash as the tail catch-all before Flux fallback.
     return { freeOrder: ['pexels', 'wikimedia', 'unsplash', 'pixabay'], skipFreeForAi: false }
   }
+  if (input.category === 'sustainability') {
+    // Sustainability content leans on technical diagrams (insulation
+    // cross-sections, solar wiring) more than lifestyle photography.
+    // Wikimedia carries the canonical Building Regs / energy diagrams.
+    // Unsplash + Pexels supply the practical-skills photography for
+    // composting / draughtproofing / water work. Pixabay is the
+    // pragmatic last-free fallback before Flux.
+    return { freeOrder: ['unsplash', 'pexels', 'wikimedia', 'pixabay'], skipFreeForAi: false }
+  }
   // Garden / herbal-medicine and anything else: same as cooking generic.
   return { freeOrder: ['unsplash', 'pexels', 'wikimedia', 'pixabay'], skipFreeForAi: false }
 }

@@ -212,7 +212,7 @@ const CATEGORIES: CategorySeed[] = [
     slug: 'sustainability',
     name: 'Sustainability',
     description:
-      'Solar, water reduction, composting, waste reduction, energy efficiency, and off-grid basics.',
+      'Composting, water, solar and energy, insulation and draughtproofing, waste reduction, and off-grid.',
     targetTutorialCount: 700,
     launchOrder: 17,
     isExistingShipped: false,

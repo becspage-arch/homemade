@@ -763,6 +763,22 @@ export interface TutorialUploadInput {
   aliases?: string[]
 
   /**
+   * Approximate setup cost in whole £ GBP (sustainability + likely Home &
+   * repair). Order-of-magnitude budgeting — £40 for a draught-proofing kit,
+   * £8000 for a heat pump. NULL on tutorials where cost is not the deciding
+   * variable (composting, foraging, lifestyle adjustments).
+   */
+  approximateCostGbp?: number | null
+
+  /**
+   * Years for the saving to recoup `approximateCostGbp`. 0 = pays back
+   * inside the first year. NULL = no financial payback to compute (e.g.
+   * composting saves council fees indirectly, not as a quantified return),
+   * or unknown / depends on usage.
+   */
+  paybackYears?: number | null
+
+  /**
    * TipTap document. The top-level node is always `{ type: 'doc', content: [...] }`.
    *
    * Node types supported (StarterKit + custom blocks):
@@ -1140,6 +1156,20 @@ export function validateInput(input: TutorialUploadInput): void {
     if (typeof alias !== 'string' || alias.trim().length === 0) {
       throw new Error(
         `aliases entries must be non-empty strings (got "${alias}").`,
+      )
+    }
+  }
+  if (input.approximateCostGbp != null) {
+    if (!Number.isFinite(input.approximateCostGbp) || input.approximateCostGbp < 0) {
+      throw new Error(
+        `approximateCostGbp must be a non-negative number in whole £ (got ${input.approximateCostGbp}).`,
+      )
+    }
+  }
+  if (input.paybackYears != null) {
+    if (!Number.isFinite(input.paybackYears) || input.paybackYears < 0) {
+      throw new Error(
+        `paybackYears must be a non-negative number (got ${input.paybackYears}).`,
       )
     }
   }

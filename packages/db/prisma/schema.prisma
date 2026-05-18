@@ -552,9 +552,9 @@ model Tutorial {
   // ──────────────────────────────────────────────────────────────────────────
 
   primaryYarnWeightId String?
-  primaryYarnWeight   YarnWeight?  @relation("TutorialPrimaryYarnWeight", fields: [primaryYarnWeightId], references: [id], onDelete: SetNull)
+  primaryYarnWeight   YarnWeight?     @relation("TutorialPrimaryYarnWeight", fields: [primaryYarnWeightId], references: [id], onDelete: SetNull)
   primaryHookId       String?
-  primaryHook         CrochetHook? @relation("TutorialPrimaryHook", fields: [primaryHookId], references: [id], onDelete: SetNull)
+  primaryHook         CrochetHook?    @relation("TutorialPrimaryHook", fields: [primaryHookId], references: [id], onDelete: SetNull)
   /// Knitting analogue of `primaryHookId` — set on knitting PATTERN rows.
   /// Same SetNull policy.
   primaryNeedleId     String?
@@ -647,7 +647,31 @@ model Tutorial {
   // "pre-bake the pastry" for the `blind-bake` technique) that the
   // canonical title doesn't already cover. See
   // `apps/web/src/lib/technique-sweep.ts` for the matching contract.
-  aliases            String[] @default([])
+  aliases String[] @default([])
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Phase Sustainability pipeline — cost + payback metadata.
+  //
+  // Set on sustainability tutorials (solar, insulation, heat pump, water
+  // tanks) where the reader's decision turns on "what does this cost and
+  // when does it pay back". Likely to be re-used on Home & repair when
+  // that pipeline lands. NULL on every other category and on sustainability
+  // tutorials where the question doesn't apply (composting, foraging-style
+  // reuse — no cash outlay, no payback to compute).
+  //
+  //   approximateCostGbp — typical setup cost in whole £. Order-of-magnitude
+  //                        budgeting, not till receipts (£40 draught kit,
+  //                        £8000 heat pump).
+  //   paybackYears        — years for the saving to recoup the cost. 0 = pays
+  //                        back inside a year. NULL = no financial payback
+  //                        to compute, or unknown.
+  //
+  // Indexes on (type, approximateCostGbp) and (type, paybackYears) drive
+  // the future "cheap upgrades" + "fast-payback upgrades" public filters.
+  // ──────────────────────────────────────────────────────────────────────────
+
+  approximateCostGbp Int?
+  paybackYears       Int?
 
   planDayMornings    UserPlanDay[]          @relation("PlanDayMorningPractice")
   planDayEvenings    UserPlanDay[]          @relation("PlanDayEveningPractice")
@@ -702,6 +726,8 @@ model Tutorial {
   @@index([requiredClayBodies], type: Gin)
   @@index([requiredCraftMaterials], type: Gin)
   @@index([techniqueSlugs], type: Gin)
+  @@index([type, approximateCostGbp])
+  @@index([type, paybackYears])
 }
 
 enum TutorialType {

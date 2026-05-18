@@ -749,6 +749,13 @@ async function uploadTutorial(
     aliases: Array.from(
       new Set((input.aliases ?? []).map((a) => a.trim()).filter((a) => a.length > 0)),
     ),
+    // Sustainability pipeline — cost + payback. NULL on every other
+    // category by author convention. Round both down to integers; the
+    // public renderer treats NULL as "not applicable".
+    approximateCostGbp:
+      input.approximateCostGbp == null ? null : Math.trunc(input.approximateCostGbp),
+    paybackYears:
+      input.paybackYears == null ? null : Math.trunc(input.paybackYears),
   }
 
   // Publish intent. --status PUBLISHED stamps publishedAt now and flips the
