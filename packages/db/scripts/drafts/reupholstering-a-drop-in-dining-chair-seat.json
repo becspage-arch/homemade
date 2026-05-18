@@ -1,0 +1,652 @@
+{
+  "slug": "reupholstering-a-drop-in-dining-chair-seat",
+  "title": "Reupholstering a drop-in dining chair seat",
+  "subtitle": "Strip, restuff, and recover a removable chair seat",
+  "excerpt": "A project for a single drop-in dining chair seat with a 25 mm or 32 mm hardwood frame: strip the old cover and foam, replace the foam with new CMHR, wrap with dacron, stretch and staple a new top cover. One seat takes an afternoon; a full dining set runs across a weekend.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "upholstery-and-leather",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": 180,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Method is the traditional UK upholsterers' drop-in seat technique taught in the City & Guilds Furniture and Upholstery syllabus and in the long-running Association of Master Upholsterers and Soft Furnishers training. Newey & Drage, Practical Carpentry and Joinery (c. 1905) for the underlying chair-frame anatomy. Modern CMHR foam regulations post-date the PD canon — the technique survives unchanged; the regulated material is what fills the frame now.",
+  "recipeTools": [
+    { "slug": "staple-gun-manual", "isOptional": false },
+    { "slug": "t50-staples", "isOptional": false, "notes": "8 mm length for the top cover; 10 mm for any webbing repair." },
+    { "slug": "staple-remover-upholstery", "isOptional": false },
+    { "slug": "upholstery-shears", "isOptional": false },
+    { "slug": "upholstery-regulator", "isOptional": true, "notes": "Useful for working out corner lumps but not essential on a drop-in seat." },
+    { "slug": "tack-hammer", "isOptional": true, "notes": "If the frame is held with traditional tacks rather than staples." },
+    { "slug": "upholstery-foam-sheets", "isOptional": false, "notes": "50 mm thick CMHR foam, medium-firm density, cut to seat-frame size." },
+    { "slug": "dacron-wrap", "isOptional": false },
+    { "slug": "utility-knife", "isOptional": false, "notes": "For trimming foam — a sharp blade makes a single clean pass." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "glossaryTerms": [
+    {
+      "slug": "cmhr-foam",
+      "term": "CMHR foam",
+      "definition": "Combustion-modified high-resilience polyurethane foam. UK regulations require CMHR foam in any upholstered furniture sold or repaired since 1988. Density and firmness graded; medium-firm for dining-chair seats."
+    },
+    {
+      "slug": "dacron-wrap-glossary",
+      "term": "Dacron wrap",
+      "definition": "A polyester-fibre wadding wrapped around upholstery foam before the top cover. Softens the edge of the foam and gives the finished cushion a slightly upholstered roundness."
+    },
+    {
+      "slug": "regulator-upholstery",
+      "term": "Regulator",
+      "definition": "A long single-prong upholsterer's needle for moving filling around under the cover fabric, eliminating lumps without re-opening the work."
+    },
+    {
+      "slug": "drop-in-seat",
+      "term": "Drop-in seat",
+      "definition": "A removable upholstered seat that sits in a rebate in the chair frame. The seat is upholstered as a separate panel and dropped into the chair when finished. The most beginner-friendly upholstery shape."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "drop-in-seat" } }],
+            "text": "drop-in dining chair seat"
+          },
+          {
+            "type": "text",
+            "text": " is the first reupholstery project for a reason. The seat lifts straight out of the chair frame, so every step happens at the bench rather than around the legs of an inverted armchair. The shape is rectangular or gently trapezoidal, the cover is one panel of fabric, and the work is honest — when you finish, you can see whether it is tight, square, and lump-free. A set of six seats, done one after the other, develops the hand for the next-step project."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The afternoon runs roughly: strip (forty minutes), prepare and place the new foam (twenty minutes), stretch and staple the top cover (forty minutes), fit a clean dust cover underneath (ten minutes), drop the seat back into the chair. The materials are inexpensive — one seat in a moderate-grade fabric is twelve to twenty pounds — and the working area is a kitchen table cleared and covered with a dust sheet."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you'll need — materials" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "bold" }],
+                    "text": "Top-cover fabric. "
+                  },
+                  {
+                    "type": "text",
+                    "text": "For a typical 400 × 400 mm drop-in seat, you need roughly 600 × 600 mm of fabric per seat — the seat panel plus 100 mm on each side to wrap and staple. Upholstery-grade fabric (rub-test rated for 25,000 cycles or more, Martindale) is the right register. Choose a fabric with a small or no pattern; matching a large repeat across six chair seats is a separate skill."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      { "type": "bold" },
+                      { "type": "glossaryTooltip", "attrs": { "termSlug": "cmhr-foam" } }
+                    ],
+                    "text": "CMHR foam"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", 50 mm thick, medium-firm density. Cut to the size of the seat frame (the wooden panel, not the chair opening). UK regulations require CMHR foam on any upholstered piece sold or repaired since 1988 — non-CMHR foam in a kitchen reupholstery is a regulatory and a fire-safety failure. Upholstery suppliers (J & C Joel, Calico Laine, eBay specialist sellers) cut foam to size for a modest fee."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      { "type": "bold" },
+                      { "type": "glossaryTooltip", "attrs": { "termSlug": "dacron-wrap-glossary" } }
+                    ],
+                    "text": "Dacron wrap"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (polyester wadding), 200 g or 300 g grade. Cut to wrap around the foam top and sides, with about 50 mm to fold over each edge under the bottom of the foam. One metre of 1.5 m-wide dacron does six seats."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "bold" }],
+                    "text": "Black calico or upholstery weed (dust cover)."
+                  },
+                  {
+                    "type": "text",
+                    "text": " 500 × 500 mm per seat. Hides the staple line and the foam from below — visible the moment anyone tips the chair to move it. Half a metre of standard width covers a dining set."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you'll need — tools" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "bold" }],
+                    "text": "Manual staple gun"
+                  },
+                  {
+                    "type": "text",
+                    "text": " and T50 staples in 8 mm. A squeeze-grip manual is the upholstery standard for one or two seats; for a full dining set, an electric tacker saves the hand."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "bold" }],
+                    "text": "Staple remover"
+                  },
+                  {
+                    "type": "text",
+                    "text": " or a screwdriver and pliers as a substitute. The old staples come out one at a time — slow but unavoidable."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "bold" }],
+                    "text": "Heavy-duty upholstery shears, 250 mm,"
+                  },
+                  {
+                    "type": "text",
+                    "text": " for cutting the fabric and the dacron. A standard kitchen scissor is not up to a tightly-woven upholstery fabric."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "bold" }],
+                    "text": "Sharp utility knife"
+                  },
+                  {
+                    "type": "text",
+                    "text": " for trimming the foam — a single clean pass through 50 mm foam needs a blade that has been changed recently. A dull blade compresses the foam ahead of the cut and leaves a ragged edge."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "bold" }],
+                    "text": "Upholstery regulator"
+                  },
+                  {
+                    "type": "text",
+                    "text": " — optional on a drop-in seat. Useful if a corner pulls into a lump; the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "regulator-upholstery" } }],
+                    "text": "regulator"
+                  },
+                  {
+                    "type": "text",
+                    "text": " worked under the cover smooths it without re-opening the staple line."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "bold" }],
+                    "text": "Nitrile gloves and a P2 dust mask"
+                  },
+                  {
+                    "type": "text",
+                    "text": " for the strip. See step 1."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The work — step by step" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 1 — Glove up and ventilate before you strip. "
+          },
+          {
+            "type": "text",
+            "text": "Put on nitrile gloves and a P2 dust mask before lifting the seat. Pre-1988 foam — almost any seat older than that — can contain brominated flame-retardants, and the foam crumbles into fine dust the moment it's disturbed. Pre-1970 fabric in cot or pram pieces may contain asbestos fibre; if the chair is that old, the strip is a different job and the strip-and-disposal goes to a specialist. For a normal mid-century to modern dining chair, work outdoors or in a ventilated space — the back garden or a workshop with the door open."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 2 — Lift the seat out and remove the old dust cover. "
+          },
+          {
+            "type": "text",
+            "text": "The seat lifts straight out of the chair frame. Turn it over on the bench, face down. Peel back the black dust cover from underneath — it's stapled along the perimeter. Tip the staples up with the staple remover and pull them out. Bag the dust cover."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 3 — Strip the top cover. "
+          },
+          {
+            "type": "text",
+            "text": "Work outward from the centre of one long side, lifting staples and peeling the cover off the foam. Old fabric tears at the staple line — pull straight rather than at an angle to keep the line of staples accessible. The cover comes off in one piece. Save it as a pattern for cutting the new cover."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 4 — Lift off the old foam. "
+          },
+          {
+            "type": "text",
+            "text": "The foam is glued or sat free on the wooden panel. If it lifts off cleanly, brilliant. If a foam-glue line resists, work a wide putty knife in between the foam and the wood and lever gently — the goal is to remove the foam without splitting the wooden panel. Bag the old foam in a sealed bag; most local-authority household-waste sites take small quantities of foam (confirm first)."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 5 — Inspect the wooden panel. "
+          },
+          {
+            "type": "text",
+            "text": "Brush the loose foam dust off the panel. Run a hand across the wood; if there's a crack or a split rail, the seat panel is repaired before the foam goes on (a different tutorial — re-gluing a chair rail). Old wood may have residual staples and tacks; pull any that remain with the staple remover so the panel is clean to receive the new foam."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 6 — Cut and place the new CMHR foam. "
+          },
+          {
+            "type": "text",
+            "text": "If you bought the foam pre-cut to size, skip the cut. Otherwise mark the foam against the wooden panel with a marker pen, leaving 5 mm of overhang on each side — the foam compresses to the panel size once the cover stretches over it. Cut with a single sharp pass of the utility knife held vertically. The foam sits free on the panel; no glue is needed for a drop-in seat — the stretched cover holds it in place."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 7 — Wrap with dacron. "
+          },
+          {
+            "type": "text",
+            "text": "Cut a piece of dacron 100 mm larger than the foam on every side. Lay it over the foam, smooth and centred. Fold the dacron down over the foam edges and under the wooden panel, smoothing as you go. The dacron softens the foam's sharp edge so the finished cover reads as a slightly upholstered curve rather than a hard square. Don't staple yet — the dacron is held by the top-cover stapling that follows."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 8 — Lay out and cut the new top cover. "
+          },
+          {
+            "type": "text",
+            "text": "Lay the new fabric face-down on the bench, with the long grain of the fabric running along the long grain of the seat (front-to-back on a deep seat, side-to-side on a wide one). Place the old cover on top as a pattern, or measure 100 mm beyond each edge of the seat panel for the wrap allowance. Cut with the upholstery shears in single clean strokes. Set the fabric face-up under the seat — the seat sits foam-side-down on the fabric."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 9 — Centre and tension-staple the long sides. "
+          },
+          {
+            "type": "text",
+            "text": "Pull the front-edge fabric up and around the seat foam to the underside, leaving the fabric taut but not overstretched — fabric pulled too hard distorts the foam shape underneath. Place a single staple in the centre of the front edge, on the underside of the wooden panel. Repeat on the back edge: pull, tension, single centre staple. Now the two long sides: pull, tension, single centre staple each. The cover is held in place by four staples; the seat is rough-tensioned and the cover sits square."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 10 — Staple outward from each centre. "
+          },
+          {
+            "type": "text",
+            "text": "Working outward from each of the four centre staples, place staples at 30-40 mm intervals along the perimeter, alternating from one side to the other to keep the tension even. Stop 30 mm short of each corner — the corners are folded last. Run your hand across the seat-top as you work; the surface should remain flat and even, with no visible pull-marks travelling from one staple to the next."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 11 — Fold and staple the corners. "
+          },
+          {
+            "type": "text",
+            "text": "Each corner takes a small pleat. Pull the corner fabric up and under; fold one side flat against the underside of the panel and staple; fold the other side over the top to make a 45° mitre; staple. The corner should sit flat against the chair-frame side rather than bulge outward — a bulged corner won't drop back into the chair frame. If the corner reads as too thick, trim out the inner layer of the pleat with the shears before the final staple."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 12 — Trim the surplus and fit the dust cover. "
+          },
+          {
+            "type": "text",
+            "text": "Trim the fabric inside the staple line, leaving about 15 mm of fabric beyond the staples — too little and the cover frays; too much and the dust cover sits proud and bulges when the seat drops into the chair. Lay the black calico dust cover over the underside, smooth and square, with 20 mm of overlap on every side. Staple along the perimeter inside the previous staple line, working outward from the centre of each side as before. Trim the overlap close to the staples. The underside is now clean and finished."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 13 — Drop the seat into the chair. "
+          },
+          {
+            "type": "text",
+            "text": "Lift the finished seat and lower it into the chair frame. It should sit square, level, and fully home — the seat-frame rebate carries the panel. If the seat sits proud of the chair-frame top, the corners are too thick; lift the seat back out and re-trim the corner pleats. If the seat rocks, the chair-frame rebate has worn; a thin strip of felt or a fold of dacron in the rebate corner takes up the slack."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What it looks like when it's right" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A successful drop-in seat sits flat and even in the chair frame, with the fabric taut but unstretched on the top surface, no visible staple lumps, no visible foam-edge shadow, and clean mitred corners that don't bulge above the chair rail. Run a hand across the seat top: the surface should feel uniformly resilient with no soft spots or hard ridges. Press straight down on each corner in turn: the foam should compress evenly and recover when released."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Patterned fabric. "
+          },
+          {
+            "type": "text",
+            "text": "For a printed or woven pattern, lay the fabric on the bench and place the seat panel over the chosen part of the pattern before cutting. For a dining set, position the panel so the same motif lands centrally on every seat — repeat-match the cut, don't trust the eye."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Slightly different foam density. "
+          },
+          {
+            "type": "text",
+            "text": "Medium-firm 32-36 oz/ft³ is the dining-chair default. A firmer 36-41 oz/ft³ holds up to longer wear (a kitchen seat used three meals a day for a decade). Softer than 32 oz feels like sitting on a marshmallow — avoid for seats; reserve for occasional-use lounge seating."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Leather top cover. "
+          },
+          {
+            "type": "text",
+            "text": "Leather stretches less than fabric and shows tension lines that fabric absorbs. Pre-condition the leather by leaving it flat at room temperature overnight; staple at slightly looser tension than fabric; expect to use 10 mm staples rather than 8 mm because leather is harder to penetrate. Skive the corners (thin the leather along the fold line with a leatherwork knife) so the corner pleat does not bulge."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A reupholstered drop-in seat lasts ten to fifteen years in a normal dining-room with a quality fabric, longer with a hard-wearing wool blend. Vacuum the seat every couple of weeks to lift food crumbs out of the weave; spot-clean spills with a damp cloth and a mild detergent rather than soaking the fabric. Re-fluff the dacron under the cover after a few years if the seat reads as flatter than when it was made — lift the dust cover, pat the dacron back into shape, restaple."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Humidity changes the foam's resilience slightly — a damp summer week makes the seat feel softer; a dry winter week makes it firm up. The fabric weave moves with the seasons too; a fabric that reads as drum-tight in November will give a millimetre or two of slack by August. Both are normal; the seat returns to shape as the weather turns."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "The seat won't drop back into the chair frame. "
+          },
+          {
+            "type": "text",
+            "text": "The corners are too thick — most likely cause. Lift the seat, trim the inner layer of the corner pleats with the shears, and restaple. Less commonly, the dust cover has bulged at the perimeter; trim the dust cover closer to the staple line."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "The top surface reads as lumpy or uneven. "
+          },
+          {
+            "type": "text",
+            "text": "The dacron is wrinkled under the cover. Lift the seat onto the bench, smooth the dacron by working a regulator or a butter knife under the cover from the underside, and re-test. If the lump persists, the foam itself has an uneven edge; trim or re-cut the foam."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "The fabric has visible pull-marks running between staples. "
+          },
+          {
+            "type": "text",
+            "text": "Over-stretched, or stapled with too much variance between adjacent staples. Lift one side of staples at the affected edge, re-tension to a softer pull, and re-staple at slightly closer intervals (25 mm rather than 35 mm). The marks settle out as the fabric relaxes overnight."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "The corner pleat bulges above the chair rail. "
+          },
+          {
+            "type": "text",
+            "text": "Classic first-seat failure. Lift the corner staples, trim a triangle out of the inner fold (15-20 mm at the corner point, tapering to nothing 30 mm back from the corner), re-fold the pleat tighter, and restaple. A clean corner sits flat against the chair-frame side."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "The seat rocks slightly when sat on. "
+          },
+          {
+            "type": "text",
+            "text": "Either the chair-frame rebate has worn (lift the seat and pad the rebate with a thin felt strip or a fold of dacron) or the wooden seat panel has warped (uncommon on a thick hardwood panel, more common on plywood or MDF panels — replace the panel if the warp is more than 2-3 mm)."
+          }
+        ]
+      }
+    ]
+  }
+}

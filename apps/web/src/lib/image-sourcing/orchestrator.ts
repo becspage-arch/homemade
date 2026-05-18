@@ -101,7 +101,15 @@ function priorityFor(input: SourceHeroInput): { freeOrder: ImageSource[]; skipFr
     // libraries skip.
     return { freeOrder: ['pexels', 'unsplash', 'wikimedia', 'pixabay'], skipFreeForAi: false }
   }
-  // Garden / herbal-medicine and anything else: same as cooking generic.
+  if (input.category === 'home-repair') {
+    // Pexels first — modern workshop and trade photography reads cleaner
+    // for hands-on process shots than Unsplash's lifestyle bias. Wikimedia
+    // covers vintage plumbing / joinery manuals (good when the technique
+    // is unchanged; rejected when the era's fittings differ from modern
+    // kit — verified in the orchestrator's verify callback).
+    return { freeOrder: ['pexels', 'unsplash', 'wikimedia', 'pixabay'], skipFreeForAi: false }
+  }
+  // Garden / herbal-medicine / bushcraft and anything else: same as cooking generic.
   return { freeOrder: ['unsplash', 'pexels', 'wikimedia', 'pixabay'], skipFreeForAi: false }
 }
 

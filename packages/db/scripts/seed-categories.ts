@@ -1,12 +1,12 @@
 /**
- * Idempotent upsert of the full 17-category set with target counts +
+ * Idempotent upsert of the full 18-category set with target counts +
  * visibility + launch order. Pairs with migration
  * `20260619000000_phase_categories_targets_001`.
  *
  * - New categories (Garden, Herbal medicine, Crochet, Knitting, Needlework,
  *   Sewing, Fibre arts, Wood & natural craft, Paper & word, Pottery &
  *   ceramics, Animals & smallholding, Home & repair, Natural home,
- *   Sustainability) are created with their factual one-liner description,
+ *   Sustainability, Bushcraft) are created with their factual one-liner description,
  *   target count from BUILD_PROGRESS.md § "Multi-category fill plan",
  *   isPublicVisible auto-computed (true if at least 10 published already,
  *   otherwise false), and a launchOrder.
@@ -195,7 +195,7 @@ const CATEGORIES: CategorySeed[] = [
   {
     slug: 'home-repair',
     name: 'Home & repair',
-    description: 'Building, upholstery, furniture restoration, and bushcraft.',
+    description: 'Woodwork, plumbing, electrical, walls & floors, upholstery & leather, and furniture restoration.',
     targetTutorialCount: 800,
     launchOrder: 15,
     isExistingShipped: false,
@@ -215,6 +215,15 @@ const CATEGORIES: CategorySeed[] = [
       'Composting, water, solar and energy, insulation and draughtproofing, waste reduction, and off-grid.',
     targetTutorialCount: 700,
     launchOrder: 17,
+    isExistingShipped: false,
+  },
+  {
+    slug: 'bushcraft',
+    name: 'Bushcraft',
+    description:
+      'Knots, fire-by-friction and fire-by-strike, shelter, camp-cookery rigging, foraging for craft, and basic field skills.',
+    targetTutorialCount: 500,
+    launchOrder: 18,
     isExistingShipped: false,
   },
 ]

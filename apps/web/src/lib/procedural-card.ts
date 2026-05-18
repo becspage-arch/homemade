@@ -31,6 +31,7 @@ export type ProceduralCardCategoryKey =
   | 'home-repair'
   | 'natural-home'
   | 'sustainability'
+  | 'bushcraft'
   | 'default'
 
 interface Palette {
@@ -58,6 +59,7 @@ const PALETTES: Record<ProceduralCardCategoryKey, Palette> = {
   'home-repair': { start: '#C4C9C0', end: '#A5AC9D', ink: '#3D423B', wordmark: '#737a6c' },
   'natural-home': { start: '#E8E2D0', end: '#D2CAB0', ink: '#494E3A', wordmark: '#7a826b' },
   sustainability: { start: '#C7B89A', end: '#A89878', ink: '#4A3F2A', wordmark: '#7a6b4e' },
+  bushcraft: { start: '#B8C0A8', end: '#94A084', ink: '#3A4030', wordmark: '#6f7559' },
   default: { start: '#E8E2D0', end: '#C6CDB4', ink: '#494E3A', wordmark: '#7a826b' },
 }
 
@@ -90,6 +92,9 @@ export function paletteKeyForCategory(
   if (s.includes('natural')) return 'natural-home'
   if (s.includes('sustain') || s.includes('off-grid') || s.includes('energy')) {
     return 'sustainability'
+  }
+  if (s.includes('bushcraft') || s.includes('wilderness') || s.includes('outdoor')) {
+    return 'bushcraft'
   }
   return 'default'
 }
