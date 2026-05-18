@@ -323,18 +323,23 @@ pilot / bulk batches surface recurring tells.
   knowing when the next thing arrives — and the practice you do in
   the meantime."
 
-- **Em-dash pairs in source-attribution paragraphs** `[block]`
-  Pattern: the "Where this practice comes from" paragraph at the
-  bottom of a brief reaches for `— X, Y, Z — does Q` to set off
-  a lineage clause. Easy to write without noticing; the appositive
-  pair is the strongest AI tell.
+- **Em-dash appositive pairs anywhere in a brief** `[block]`
+  Pattern: two em-dashes in one sentence used to set off a phrase:
+  `The bed — the physical object, the sheets — becomes a stimulus.`
+  Appears in body paragraphs, excerpt, whenToUse, and provenance
+  ("Where this comes from") alike. The appositive pair is the
+  strongest AI tell in Mindset drafts — voice-check catches every
+  instance and blocks upload.
   **Why:** Voice-check `em-dash-paragraph` + `em-dash-sentence`
-  errors block upload. Spotted 8 times across mindset-bulk-001
-  (Rebecca's review of the run, 2026-05-16).
-  **How to fix:** Default to parentheses for parenthetical clauses
-  in provenance prose: `(X, Y, Z)`. Reserve em-dash for single-
-  clause use only. Same rule applies in subtitle and excerpt — both
-  are voice-checked.
+  errors block upload. Spotted 8 times across mindset-bulk-001;
+  15 recurrences across mindset-bulk-007 (2026-05-18) in body,
+  excerpt, and whenToUse — the pattern generalises beyond provenance
+  prose.
+  **How to fix:** Replace the em-dash pair with parentheses or a
+  comma clause. `The bed (the physical object, the sheets) becomes
+  a stimulus.` Or: `The bed, with its specific textures and
+  temperature, becomes a stimulus.` Reserve a single em-dash for
+  a genuine break — never use two in one sentence.
 
 - **Registering a glossary term you don't tooltip inline** `[block]`
   Pattern: a type-intro READING registers `glossaryTerms[]` entries
