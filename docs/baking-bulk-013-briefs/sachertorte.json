@@ -1,0 +1,137 @@
+{
+  "slug": "sachertorte",
+  "title": "Sachertorte",
+  "subtitle": "Viennese chocolate cake with apricot glaze and dark chocolate icing",
+  "excerpt": "The Viennese chocolate cake with a layer of apricot jam and a mirror-smooth dark chocolate glaze. Dense and not particularly sweet, it is built to be eaten with a spoonful of unsweetened whipped cream. The recipe requires care but no specialist equipment.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The Sachertorte was created in Vienna in 1832 by Franz Sacher, and its basic composition of chocolate sponge, apricot jam, and chocolate glaze has been documented in Viennese confectionery literature from the mid-nineteenth century onwards. The formula here draws on nineteenth-century Viennese patisserie manuals in the public domain and the recipe as described in Katharina Prato, Süddeutsche Küche (1858, widely reprinted), which captures the proportions that predated the legal disputes over the 'original' recipe between the Hotel Sacher and Demel in the twentieth century.",
+  "recipe": {
+    "servings": 12,
+    "yieldDescription": null,
+    "prepMinutes": 45,
+    "cookMinutes": 55,
+    "restingMinutes": 120,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unglazed. Thaw at room temperature overnight, then glaze before serving.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The cake improves after a day; bake the day before and glaze on the day of serving. Once glazed, keep at room temperature for up to three days.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "austrian",
+    "mealType": "dessert",
+    "mood": ["celebration", "weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 150,
+      "bakeTemperatureCelsius": 170,
+      "bakeTemperatureNote": "conventional oven. Fan at 150°C. The low temperature gives the dense chocolate sponge time to set without the outside over-baking. Domestic ovens drift by 20°C or more; use an oven thermometer.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "hand-mixer", "isOptional": true },
+    { "slug": "round-cake-tin-23", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "sachertorte-ribbon", "term": "ribbon stage for Sachertorte batter", "definition": "The point at which eggs beaten with sugar fall from the whisk in a thick, pale, continuous ribbon that holds its shape on the surface of the batter for a few seconds before sinking. For a Sachertorte, reaching ribbon stage before the flour is added is what gives the sponge its fine, even texture despite the relatively small amount of flour. Under-beaten eggs produce a heavy, greasy cake." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A Sachertorte is a restrained cake. It is not sweet in the way of a supermarket gateau; the chocolate dominates, the apricot cuts through, and the glaze is barely sugared. The sponge is dense and moist rather than airy, built on separated eggs beaten to the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sachertorte-ribbon", "term": "ribbon stage for Sachertorte batter" } }], "text": "ribbon stage for Sachertorte batter" },
+          { "type": "text", "text": " before the flour and chocolate are folded in. The Viennese eat it with a large spoonful of unsweetened schlagobers (whipped cream), which is not optional. It completes the cake." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sponge" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "dark-chocolate", "amount": 150, "unit": "g", "prepNote": "70% cocoa, chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 150, "unit": "g", "prepNote": "softened" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-yolks", "amount": 6, "unit": "large" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-whites", "amount": 6, "unit": "large" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 60, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 150, "unit": "g" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Filling and glaze" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "apricot-jam", "amount": 200, "unit": "g", "prepNote": "smooth, warmed and sieved" } },
+          { "type": "ingredientItem", "attrs": { "slug": "dark-chocolate", "amount": 200, "unit": "g", "prepNote": "70% cocoa, chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "double-cream", "amount": 150, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "golden-syrup", "amount": 20, "unit": "g", "prepNote": "for shine and flexibility in the glaze" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the sponge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 170°C conventional. Grease a 23 cm round tin and line the base with baking paper. Melt the chocolate in a heatproof bowl set over a pan of barely simmering water; do not let the bowl touch the water. Stir until smooth, then remove from the heat and leave to cool for 10 minutes." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Beat the butter and icing sugar until pale and soft, about 4 minutes with an electric mixer. Beat in the egg yolks one at a time, then stir in the cooled chocolate. In a separate clean bowl, whisk the egg whites to soft peaks, then add the caster sugar gradually and whisk to firm, glossy peaks. Sift the flour over the chocolate mixture, add one-third of the egg whites, and fold in with a spatula to loosen. Fold in the remaining whites in two additions, cutting down through the batter and scooping up from the base, until just combined with no white streaks. Pour into the prepared tin and bake for 50 to 55 minutes, until the top is set and a skewer through the centre comes out with moist (not wet) crumbs. Leave in the tin for 10 minutes, then turn onto a rack and cool completely." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Apricot glaze and chocolate icing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Split the cooled cake horizontally into two layers. Spread half the warm sieved apricot jam on the cut surface of the base, replace the top, and brush the remaining jam over the top and sides of the whole cake. Leave to set for 30 minutes. Bring the cream and golden syrup to a bare simmer in a small saucepan; do not boil. Pour over the chopped chocolate in a bowl and stir gently until completely smooth. Leave to cool and thicken slightly, stirring occasionally, until the glaze coats the back of a spoon — around 30 minutes at room temperature, or speed this up by setting the bowl over ice. Place the jam-glazed cake on a rack set over a tray. Pour the chocolate glaze over the centre of the cake and tilt gently so it flows to the edges and down the sides. Do not spread with a spatula; let it find its own level. Leave to set at room temperature for at least 1 hour before slicing." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Domestic ovens drift by 20°C or more. An oven thermometer is particularly useful for Sachertorte, where the moderate temperature is what keeps the sponge moist." }]
+      }
+    ]
+  }
+}

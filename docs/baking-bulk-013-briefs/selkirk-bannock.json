@@ -1,0 +1,130 @@
+{
+  "slug": "selkirk-bannock",
+  "title": "Selkirk bannock",
+  "subtitle": "Scottish yeasted fruit loaf enriched with butter and sultanas",
+  "excerpt": "Selkirk bannock is a rich, yeasted Scottish fruit loaf, dense with sultanas and enriched with butter, with a close crumb that slices cleanly and keeps well for a week. Originally made in the Borders town of Selkirk, it is baked in a round and glazed to a deep mahogany.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The Selkirk bannock is a Scottish yeasted loaf with documented roots in Selkirk in the Scottish Borders from at least the mid-nineteenth century, attributed in regional food history to a baker named Robbie Douglas who is said to have supplied the loaf to Queen Victoria. Florence White, Good Things in England (1932), records the bannock among regional British breads distinguished by their enrichment with butter and dried fruit. The recipe here follows the traditional form: strong flour, butter, sugar, sultanas, yeasted and proved slowly for a close crumb. The method is documented in early twentieth-century Scottish domestic baking manuals.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 round loaf, about 800 g baked",
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "restingMinutes": 180,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze. Thaw at room temperature for an hour or toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Bakes well the day before and improves overnight. Keeps wrapped for up to a week.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["weekendBake", "makeAhead"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 58,
+      "saltPercent": 1.6,
+      "yeastPercent": 1.2,
+      "levainPercent": null,
+      "bulkFermentMinutes": 120,
+      "proofMinutes": 60,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "conventional oven. Fan at 170°C. The low-moderate heat gives the enriched loaf time to cook through before the crust over-browns. A deep mahogany glaze is normal and correct.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "bannock-enriched", "term": "enriched bannock dough", "definition": "A bannock dough that contains butter and sugar in addition to flour, water, and yeast. The enrichment slows fermentation (fat coats the gluten strands and impedes yeast activity) which is why an enriched bannock needs a longer bulk ferment than a plain bread dough. The reward is a close, soft crumb that slices cleanly and keeps well because the fat retains moisture." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A Selkirk bannock sits between a fruit bread and a rich tea-loaf. It is yeasted and kneaded like a bread, but the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bannock-enriched", "term": "enriched bannock dough" } }], "text": "enriched bannock dough" },
+          { "type": "text", "text": " is dense with butter and sultanas, which gives it the keeping quality and slicing texture of a good fruit loaf. Baked in a free-form round on a tray, it has no tin to define its shape — it spreads slightly into the traditional flattish wheel. The glaze deepens the crust to mahogany; the interior stays soft and close." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "strong-bread-flour", "amount": 500, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "yeast-fast-action", "amount": 6, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "sea-salt-fine", "amount": 8, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 60, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "softened, cut into pieces" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 200, "unit": "ml", "prepNote": "warm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 90, "unit": "ml", "prepNote": "warm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "sultanas", "amount": 350, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 1, "unit": "large", "prepNote": "beaten, for glaze" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and knead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the flour, yeast, salt, and sugar in a large bowl or the bowl of a stand mixer, keeping salt and yeast apart before mixing. Add the warm milk and water and mix to a rough dough. Add the butter a few pieces at a time, working each piece in before adding the next. Knead for 10 minutes by hand or 7 minutes with a dough hook until smooth and elastic. The dough will be slightly tacky from the butter. Add the sultanas and knead briefly to distribute them evenly." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment, 2 hours" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Shape into a ball, return to the bowl, cover, and leave at room temperature for 2 hours. The enrichment slows the yeast; the dough should grow by about half. It will feel soft and pillowy when pressed." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape, prove, and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Line a baking tray with baking paper. Turn the dough out and shape it into a tight round — press it into a disc about 20 cm across and 5 cm high, tucking the edges underneath to build tension on the surface. Place on the tray, cover loosely, and leave to prove for 45 to 60 minutes until the dough feels light and springs back slowly when pressed. Heat the oven to 190°C conventional. Brush all over with beaten egg. Bake for 40 to 45 minutes until deep mahogany brown. An internal probe should read 94°C. Transfer to a rack. Resist cutting until the loaf has cooled for at least an hour; the crumb is still setting." }]
+      }
+    ]
+  }
+}

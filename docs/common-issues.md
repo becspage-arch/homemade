@@ -78,6 +78,16 @@ Severity flag with the rule: `[block]` (rewrite mandatory),
   **How to fix:** drop the intensifier, or use a specific equivalent:
   `"properly golden"`, `"properly crisp"`, `"more interesting than it looks"`.
 
+- **"Essentially" as a hedging word** `[block]`
+  Pattern: `"has remained essentially unchanged"`, `"essentially the
+  same formula"`, `"essentially a shortcrust"`. Flagged as a vague
+  hedger; banned per voice rules. Recurs in `sourceNotes` historical
+  summary sentences. First seen in baking bulk-013 (scottish-oatcakes,
+  potato-scones).
+  **How to fix:** drop the word entirely: `"has remained unchanged"`,
+  `"the same formula"`, `"a shortcrust"`. The sentence reads more
+  direct without it.
+
 - **"Treats" as a medical watchword false positive** `[warn]`
   Pattern: `"Escoffier treats it as axiomatic"`, `"the dish treats onions as
   the main event"` — non-medical usage of the word "treats" triggering

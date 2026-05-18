@@ -1,0 +1,153 @@
+{
+  "slug": "sfogliatelle",
+  "title": "Sfogliatelle",
+  "subtitle": "Neapolitan layered shell pastries with ricotta and semolina",
+  "excerpt": "Naples' most famous pastry: a cone of many-layered crunchy pastry, opened like a shell, filled with a cooked ricotta and semolina filling perfumed with orange and cinnamon. The dough is rolled extremely thin, stretched, and wound into a cylinder before slicing. Advanced but achievable.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Sfogliatelle riccia is the flaky, many-layered version of the Neapolitan sfogliatelle, documented in Neapolitan confectionery records from the eighteenth century. The pastry was reputedly created at the Convent of Santa Rosa near Salerno in the seventeenth century and spread to Naples through commercial bakers. The filling of semolina cooked with milk, then mixed with ricotta, eggs, and candied orange peel, is recorded in nineteenth-century Neapolitan pastry literature. Pellegrino Artusi, La scienza in cucina e l'arte di mangiar bene (1891, first edition; widely reprinted), mentions sfogliatelle among the classic Neapolitan pastries. The method here follows the traditional rolled-and-layered dough technique.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "12 sfogliatelle",
+    "prepMinutes": 90,
+    "cookMinutes": 25,
+    "restingMinutes": 120,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze assembled unbaked sfogliatelle on a tray, then bag once solid. Bake from frozen, adding 5 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The filling can be made two days ahead and refrigerated. The dough can rest overnight in the fridge after the first roll.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "italian",
+    "mealType": "breakfast",
+    "mood": ["weekendBake", "showpiece"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 300,
+      "hydrationPercent": 50,
+      "saltPercent": 1.7,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": 2,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "conventional oven. Fan at 180°C. Sfogliatelle bake quickly; the layers begin to separate and brown in 20 to 25 minutes. Watch the oven in the final 5 minutes. Domestic ovens drift by 20°C or more; an oven thermometer is particularly useful here.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": false },
+    { "slug": "icing-spatula", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "sfogliatelle-layering", "term": "sfogliatelle rolling and coiling", "definition": "The layered structure of sfogliatelle is created by rolling the dough into a long, almost paper-thin sheet, spreading it with lard, then rolling the sheet tightly into a cylinder. When slices of the cylinder are shaped into cones and filled, the concentric rings of dough separate in the oven to form the characteristic shell-like layers. The number of layers depends on how thin the dough is rolled and how tightly the cylinder is wound." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sfogliatelle are made in two stages: a cooked ricotta-semolina filling, and a dough that is rolled paper-thin, coated with fat, and wound into a cylinder. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sfogliatelle-layering", "term": "sfogliatelle rolling and coiling" } }], "text": "sfogliatelle rolling and coiling" },
+          { "type": "text", "text": " is the technical heart of the recipe. The dough needs to be strong enough to stretch without tearing — strong bread flour and resting time help. Make the filling the day before so it is cold and firm when you assemble." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pastry dough" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "strong-bread-flour", "amount": 300, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "sea-salt-fine", "amount": 5, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "honey", "amount": 20, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 150, "unit": "ml", "prepNote": "warm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "lard", "amount": 150, "unit": "g", "prepNote": "very soft, for layering" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Ricotta filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 300, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "semolina", "amount": 80, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ricotta", "amount": 250, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 1, "unit": "large" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cinnamon-ground", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "mixed-peel", "amount": 50, "unit": "g", "prepNote": "finely chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 1, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the filling (can do ahead)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bring the milk to a simmer in a medium saucepan. Whisk in the semolina and sugar and stir over medium heat for 5 to 7 minutes, until the mixture is very thick and pulls away from the sides. Remove from the heat, beat in the ricotta and egg, then add the cinnamon, mixed peel, and vanilla. Transfer to a bowl, press cling film onto the surface, and refrigerate until cold and firm — at least 2 hours, or overnight." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pastry dough, roll, and coil" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mix the flour, salt, and honey in a bowl. Gradually add the warm water, kneading until you have a stiff, smooth dough. It will be considerably stiffer than bread dough. Knead for 10 minutes, then wrap and rest for 30 minutes. On an unfloured surface, roll the dough into a long, thin sheet — as thin as you can get it, ideally 1 to 2 mm. Spread the softened lard generously over the surface. Stretch the dough further by hand, lifting and pulling gently from the edges until it is almost transparent in places. Starting from the short end, roll the sheet tightly into a cylinder. Wrap in cling film and refrigerate for 1 hour." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Slice, fill, and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 200°C conventional. Line a baking tray with baking paper. Slice the cold cylinder into 12 rounds of about 1.5 cm each. Working one at a time, press a round between your palms and then use your thumbs to open it from the centre, pushing outward in a spiral to form a cone shape. Hold the cone in one hand and fill with a tablespoon of the cold ricotta mixture. Pinch the opening shut and place on the lined tray. Repeat with the remaining rounds. Brush the surfaces lightly with softened lard. Bake for 20 to 25 minutes until the layers have separated, the pastry is deep gold, and the underside sounds hollow when tapped. Dust with icing sugar and serve warm." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Domestic ovens drift by 20°C or more. An oven thermometer is particularly useful for sfogliatelle, where the layered pastry needs steady heat to separate without burning." }]
+      }
+    ]
+  }
+}

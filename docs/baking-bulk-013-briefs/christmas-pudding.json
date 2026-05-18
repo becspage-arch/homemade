@@ -1,0 +1,155 @@
+{
+  "slug": "christmas-pudding",
+  "title": "Christmas pudding",
+  "subtitle": "Traditional steamed British fruit pudding, made weeks ahead",
+  "excerpt": "A dark, rich steamed pudding of dried fruit, suet, spices, and brandy, made at least a week before Christmas and steamed for several hours. Dense, self-basting, and long-keeping, it is flamed at the table and served with brandy butter or cream.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Christmas pudding in its modern steamed form dates from the Victorian era, when its forerunner, plum porridge, had gradually solidified into a suet pudding with dried fruit and spice. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136, documents a 'Christmas Plum Pudding' requiring 3 to 4 hours of steaming and the same ratio of dried fruit to suet that characterises the recipe today. Hannah Glasse, The Art of Cookery (1747), records earlier plum pudding and boiled pudding preparations. The Victorian recipe for a basin-steamed, cloth-covered Christmas pudding is fully described in Beeton and forms the basis of this recipe.",
+  "recipe": {
+    "servings": 10,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 480,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Steam the pudding fully, cool, and freeze in the basin covered with a double layer of cling film. Thaw overnight in the fridge, then steam for a further 2 hours before serving.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make at least 1 week ahead and up to 3 months. Feed with brandy every 2 weeks: pierce the cooled pudding all over with a skewer, spoon over 2 tbsp of brandy, re-cover, and store.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": ["celebration", "seasonal"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 100,
+      "bakeTemperatureCelsius": null,
+      "bakeTemperatureNote": "Steamed in a covered basin over simmering water for 6 to 8 hours on the first cook, and 2 hours to reheat on the day of serving. The water level must never fall below a third of the way up the basin; check every 30 minutes and top up with boiling water.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "cling-film", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "christmas-pudding-feeding", "term": "feeding a Christmas pudding", "definition": "The practice of piercing a cooked Christmas pudding with a skewer and spooning brandy (or rum) over it at intervals during storage. The alcohol soaks into the fruit and suet, continuing to mature the pudding's flavour and acting as a preservative. A pudding made in October and fed fortnightly will have a more integrated, rounded flavour than one made a week before Christmas. Two tablespoons per feeding is enough; more makes the pudding wet rather than spirited." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Make and steam the pudding",
+      "body": "Mix the batter, fill the basin, and steam for 6 to 8 hours. Cool, cover, and store in a cool, dark cupboard.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 14,
+      "title": "Feed the pudding",
+      "body": "Pierce all over with a skewer and spoon 2 tbsp brandy over the surface. Re-cover and return to storage.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 28,
+      "title": "Feed again",
+      "body": "A second feeding of 2 tbsp brandy, then re-cover. The pudding is now mature enough to serve, or keep feeding fortnightly.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A Christmas pudding is the result of time as much as technique. The batter is a simple mix; the 6 to 8 hour steam is the event. Made weeks ahead and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "christmas-pudding-feeding", "term": "feeding a Christmas pudding" } }], "text": "feeding a Christmas pudding" },
+          { "type": "text", "text": " with brandy each fortnight, it matures into something with a depth that a week-old pudding never achieves. The pudding will keep for up to a year if stored cool and dry. On Christmas Day it needs only 2 hours of resteaming." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "raisins", "amount": 200, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "sultanas", "amount": 200, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "currants", "amount": 150, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "mixed-peel", "amount": 80, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "brandy", "amount": 60, "unit": "ml", "prepNote": "plus extra for feeding" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 125, "unit": "g", "prepNote": "cold, grated" } },
+          { "type": "ingredientItem", "attrs": { "slug": "dark-brown-sugar", "amount": 125, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "breadcrumbs-fresh", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "mixed-spice", "amount": 2, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cinnamon-ground", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "black-treacle", "amount": 30, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 3, "unit": "large" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 50, "unit": "ml" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soak the fruit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The night before, combine the raisins, sultanas, currants, and mixed peel in a large bowl. Pour over the brandy, stir well, cover, and leave overnight at room temperature. The fruit will absorb most of the brandy." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and fill the basin" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add the grated butter, sugar, flour, breadcrumbs, spices, and treacle to the soaked fruit and stir to combine. Beat the eggs with the milk and add to the mix; stir until thoroughly combined. The batter is very stiff. Butter a 1.2 litre pudding basin and press the mixture in; the basin should be about three-quarters full. Cover the surface with a disc of baking paper, then cover the top of the basin with a double layer of baking paper and a layer of foil, pleating the centre of each layer to allow for expansion. Secure with kitchen string around the rim." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Steam, 6 to 8 hours" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Place the basin in a large saucepan and pour in boiling water to come halfway up the sides. Cover the pan, bring to a steady simmer, and cook for 6 to 8 hours. Check the water level every 30 minutes and top up with boiling water as needed; never let the pan run dry. The pudding is done when a skewer pushed through the covering and into the centre comes out clean. Remove the basin, leave to cool completely, remove the papers, and cover with fresh baking paper and foil. Store in a cool, dark cupboard." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "To serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Steam for a further 2 hours on Christmas Day. Turn out onto a warmed plate. To flame: warm 3 to 4 tablespoons of brandy in a small ladle over a gas flame or in the microwave until just smoking, pour over the pudding, and ignite with a match. The flame is low and blue and burns out in 30 seconds. Serve with brandy butter, crème fraîche, or double cream." }]
+      }
+    ]
+  }
+}

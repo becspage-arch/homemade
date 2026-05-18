@@ -1,0 +1,163 @@
+{
+  "slug": "opera-cake",
+  "title": "Opéra cake",
+  "subtitle": "French layered coffee and chocolate cake on joconde sponge",
+  "excerpt": "The classic Parisian patisserie cake: three layers of almond joconde sponge soaked in coffee syrup, sandwiched with coffee buttercream and dark chocolate ganache, finished with a chocolate glaze. Time-consuming, precise, and deeply satisfying to assemble.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The Opéra cake is associated with the Parisian patisserie Dalloyau, which claims to have introduced it in the 1960s. The component techniques (joconde sponge, Italian meringue buttercream, and ganache) are documented in French patisserie manuals from the late nineteenth century. The cake is named after the Paris Opéra (or the dancer Cécile Morestin, according to some accounts). The construction method here draws on nineteenth-century French patisserie literature including Jules Gouffé, Le Livre de Cuisine (1867), which documents the almond sponge and coffee-flavoured cream components in the French classical kitchen.",
+  "recipe": {
+    "servings": 12,
+    "yieldDescription": null,
+    "prepMinutes": 90,
+    "cookMinutes": 15,
+    "restingMinutes": 180,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unglazed, covered. Thaw overnight in the fridge. Glaze and bring to room temperature for 1 hour before serving.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The assembled but unglazed cake keeps in the fridge for three days. Glaze on the day of serving.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["celebration", "showpiece"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 60,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "conventional oven. Fan at 200°C. The joconde sponge is thin and bakes quickly; 10 to 12 minutes is enough. It should be pale gold and spring back when pressed. Domestic ovens drift by 20°C or more; an oven thermometer is useful.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": true },
+    { "slug": "half-sheet-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "icing-spatula", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "joconde-sponge", "term": "joconde sponge", "definition": "A thin almond sponge made by folding whipped whole eggs and ground almonds together with whipped egg whites. The name is thought to refer to the Mona Lisa (La Joconde in French), though the connection is never fully explained in patisserie literature. Joconde is baked in a very thin layer, typically 5 to 7 mm, and soaked with flavoured syrup before assembly. Its elasticity — from the almond fat and the whole eggs — means it can be soaked heavily without becoming soggy." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An Opéra cake is an assembly problem as much as a baking one. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "joconde-sponge", "term": "joconde sponge" } }], "text": "joconde sponge" },
+          { "type": "text", "text": " is thin and quick to bake; the coffee buttercream and chocolate ganache each need to be at the right temperature to spread without tearing the sponge. Make all three components before you start assembling. The finished cake is built in a frame, chilled between layers, and glazed at the end. Plan for a half-day." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Joconde sponge" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "almond-flour", "amount": 120, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 120, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 3, "unit": "large" } },
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 60, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "melted" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-whites", "amount": 4, "unit": "large" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 30, "unit": "g" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Coffee syrup" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 80, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 80, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "coffee-instant", "amount": 2, "unit": "tbsp", "prepNote": "dissolved in the hot syrup" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Coffee buttercream" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 250, "unit": "g", "prepNote": "softened" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 200, "unit": "g", "prepNote": "sifted" } },
+          { "type": "ingredientItem", "attrs": { "slug": "coffee-instant", "amount": 2, "unit": "tsp", "prepNote": "dissolved in 1 tbsp hot water" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Chocolate ganache and glaze" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "dark-chocolate", "amount": 250, "unit": "g", "prepNote": "70% cocoa, chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "double-cream", "amount": 200, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "golden-syrup", "amount": 20, "unit": "g" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Joconde sponge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 220°C conventional. Line a half-sheet tray (about 30×40 cm) with baking paper. Beat the almond flour, icing sugar, and whole eggs on high speed for 5 minutes until pale and thick. Sift over the flour and fold in, then stir in the melted butter. In a clean bowl, whisk the egg whites to soft peaks, add the caster sugar, and whisk to firm, glossy peaks. Fold one-third of the whites into the almond batter to loosen, then fold in the remainder in two additions, cutting down and lifting through until just smooth. Spread over the lined tray in an even layer, about 5 to 7 mm thick. Bake for 10 to 12 minutes until pale gold and just set when pressed. Leave to cool on the tray, then peel off the paper." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Coffee syrup, buttercream, and ganache" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Syrup: bring the sugar and water to a simmer, stir until the sugar dissolves, remove from the heat, and stir in the instant coffee. Cool to room temperature. Buttercream: beat the butter until pale, add the icing sugar and dissolved coffee, and beat until smooth and fluffy. Ganache: bring the cream and golden syrup to a bare simmer, pour over the chopped chocolate, and stir until smooth. Leave to cool until it spreads like soft butter — around 30 to 40 minutes at room temperature." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assembly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cut the sponge into three equal rectangles. Lay the first on a lined tray. Brush generously with coffee syrup. Spread a thin, even layer of ganache over the surface. Chill for 10 minutes to firm. Add the second sponge layer, brush with syrup, and spread with coffee buttercream. Chill for 10 minutes. Add the third sponge layer, brush with syrup, and spread a final thin layer of ganache over the top. Chill for 30 minutes. Pour the remaining ganache, now warmed slightly to a pourable consistency, over the top to form the mirror glaze. Spread to the edges with a straight icing spatula, working in one pass to avoid marks. Chill for at least 1 hour before trimming the edges and cutting into portions." }]
+      }
+    ]
+  }
+}

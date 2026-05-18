@@ -332,3 +332,34 @@ tells.
   pre-tooltip node already carries one. Review each method step
   that introduces a glossaryTooltip to check the surrounding
   punctuation.
+
+- **`sourceNotes` em-dash parenthetical pair** `[block]`
+  Pattern: `"The formula — X, Y, and Z — has remained unchanged"`
+  or `"Subject — description of subject — verb"` in the
+  `sourceNotes` field. This is the single most common voice-check
+  failure in baking batches — it appeared in ~25 of 40 files in
+  bulk-013 alone.
+  **Why:** Historical sourcing language naturally uses em-dash
+  parentheticals to explain a formula or ingredient list inline.
+  Voice-check applies the max-1-em-dash-per-paragraph rule to
+  all string fields including `sourceNotes`.
+  **How to fix:** Convert `"formula — X, Y, Z — has remained"`
+  to `"formula of X, Y, and Z has remained"`, or use parentheses:
+  `"formula (X, Y, and Z) has remained"`. If the subject is a
+  name with an appositive, use parentheses: `"Potato scones
+  (tattie scones) are…"` instead of `"Potato scones — tattie
+  scones — are…"`.
+
+- **Two separate em dashes in a single method paragraph** `[block]`
+  Pattern: A method step that uses one em dash for a result clause
+  (`"cook for 4 minutes — the caramel will deepen"`) and a second
+  em dash later in the same paragraph (`"stir in the soda — it
+  will foam"`). Neither dash is a pair around an appositive, but
+  both are in the same paragraph.
+  **Why:** The voice-check counts all em dashes in a paragraph,
+  not just paired ones. Two individually valid dashes still fail
+  the max-1 rule.
+  **How to fix:** Change one dash to a semicolon or period:
+  `"stir in the soda; it will foam"` or `"stir in the soda. It
+  will foam."` Keep the more informative dash and convert the
+  other.

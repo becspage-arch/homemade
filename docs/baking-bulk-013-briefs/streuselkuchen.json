@@ -1,0 +1,122 @@
+{
+  "slug": "streuselkuchen",
+  "title": "Streuselkuchen",
+  "subtitle": "German yeasted cake with buttery crumble topping",
+  "excerpt": "A German yeast-raised cake baked in a rectangular tin and blanketed with a thick, buttery crumble. The base is a light enriched dough — soft, slightly sweet, flavoured with vanilla. The streusel is rubbed together from cold butter, flour, and sugar until it forms irregular clumps, then piled generously on top before baking.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Streuselkuchen (crumble cake) is one of the most widely documented cakes in the German Kaffee und Kuchen tradition. Recipes for yeast-based Kuchen with crumble toppings appear in nineteenth-century German domestic cookbooks. The Rheinische Streuselkuchen, from the Rhineland, is the most commonly cited regional variant. The recipe here follows the established formula of a yeasted enriched base under a thick butter-flour-sugar crumble, as documented in German domestic baking literature from the late nineteenth century onwards.",
+  "recipe": {
+    "servings": 12,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 30,
+    "restingMinutes": 90,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze in slabs once cool, wrapped tightly. Thaw at room temperature for 2 hours.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Best on the day. The crumble softens by day two but the cake remains good for eating for three days.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "german",
+    "mealType": "snack",
+    "mood": ["weekendBake", "makeAhead"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 400,
+      "hydrationPercent": 50,
+      "saltPercent": 1.0,
+      "yeastPercent": 1.75,
+      "bulkFermentMinutes": 60,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "conventional oven. Fan at 160°C. The cake is done when the crumble is pale gold and the centre does not wobble when the tin is nudged.",
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "streusel", "term": "streusel", "definition": "A crumble topping of cold butter, flour, and sugar rubbed together until the mixture forms irregular clumps ranging from fine crumbs to hazelnut-sized lumps. On a Streuselkuchen the crumble should be thick enough that the base beneath is barely visible. If the streusel bakes flat and merges into the surface, the butter was too soft or the mixture was overworked into a paste." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The key to a good streuselkuchen is a thick, uneven " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "streusel", "term": "streusel" } }], "text": "streusel" },
+          { "type": "text", "text": ": formed from cold butter, rubbed quickly so it stays clumped rather than merging into a paste. Make the streusel while the dough is proving, so the butter has no time to soften." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Yeasted base" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 400, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "yeast-fast-action", "amount": 7, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 60, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "sea-salt-fine", "amount": 4, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 200, "unit": "ml", "prepNote": "warm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": "melted and cooled" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 2, "unit": "large" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 1, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Streusel topping" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 200, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 120, "unit": "g", "prepNote": "cold, cut into cubes" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cinnamon-ground", "amount": 1, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the flour, yeast, sugar, and salt in a large bowl. Add the warm milk, melted butter, eggs, and vanilla and mix to a soft, slightly sticky dough. Knead for 8 to 10 minutes until smooth and elastic. Place in a lightly oiled bowl, cover, and leave to rise in a warm place for 1 hour until roughly doubled. Grease a 30 x 20 cm rectangular tin. Press the dough evenly into the tin, cover loosely, and leave to prove for 30 minutes." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Meanwhile, heat the oven to 180°C conventional. Make the streusel: rub the cold butter into the flour and sugar with your fingertips until the mixture forms clumps from pea-sized to hazelnut-sized, then mix through the cinnamon. Scatter the streusel thickly and evenly over the proved dough, covering the surface almost completely." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake for 28 to 32 minutes until the streusel is pale gold and the base is set — press the centre of the dough through the streusel; it should feel firm, not soft and spongy. Cool in the tin for 10 minutes before cutting into squares." }]
+      }
+    ]
+  }
+}
