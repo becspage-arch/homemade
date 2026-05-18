@@ -1,0 +1,123 @@
+{
+  "slug": "harira",
+  "title": "Harira",
+  "subtitle": "Moroccan spiced tomato, lentil, and chickpea soup",
+  "excerpt": "A thick, nourishing Moroccan soup made with tomatoes, red lentils, chickpeas, onion, celery, and a blend of warm spices including cinnamon, cumin, and ginger. Finished with fresh coriander and lemon, and thickened at the end with a flour and water paste called tedouira. The soup eaten to break the fast during Ramadan, and made throughout the year.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Harira is Morocco's national soup, documented in Paula Wolfert's 'Couscous and Other Good Food from Morocco' (1973) and in Claudia Roden's 'A Book of Middle Eastern Food' (1968). It is the traditional soup eaten to break the daily fast during Ramadan and is eaten throughout the year as a substantial meal. Regional variations differ in the amount of meat, the choice of legumes, and the thickness of the soup.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 55,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before adding the flour paste. Add the tedouira after reheating from frozen.",
+    "batchable": true,
+    "batchNotes": "Double the batch easily. Harira improves the next day.",
+    "makeAheadNotes": "Make a day ahead without the fresh coriander and lemon — add them when reheating.",
+    "dietaryFlags": ["vegetarian", "vegan", "dairyFree", "nutFree"],
+    "cuisine": "middle-eastern",
+    "mealType": "lunch",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The distinguishing feature of harira, compared to other tomato-lentil soups, is the tedouira — a paste of plain flour mixed with water that is stirred in at the end of cooking. It thickens the soup suddenly, turning it from a broth into something velvety and substantial. The flour is mixed to a smooth paste before adding, a tablespoon at a time, to prevent lumps. The soup should be stirred constantly while the tedouira goes in." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cinnamon and ginger are the spices that make harira distinctive among tomato-based soups. They add warmth without heat, giving the soup a depth that is different from the cumin-forward soups of the eastern Levant. The fresh coriander and lemon go in at the very end — both should be added with generosity. Serve with bread for dipping and dates on the side if following the Ramadan tradition." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lentils-red", "amount": 100, "unit": "g", "prepNote": "rinsed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chickpeas-tinned", "amount": 400, "unit": "g", "prepNote": "drained and rinsed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "stalk", "prepNote": "finely chopped, including leaves", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Spices" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Spices" },
+            { "ingredientSlug": "coriander-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Spices" },
+            { "ingredientSlug": "turmeric", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Spices" },
+            { "ingredientSlug": "extra-virgin-olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 2, "unit": "tbsp", "prepNote": "for the tedouira", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coriander", "amount": 30, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "juice only", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the {{extra-virgin-olive-oil}} in a large pot over medium heat. Add the {{onion}} and {{celery}} and cook for 10 minutes until soft. Add the {{garlic}}, {{cumin-ground}}, {{cinnamon-ground}}, {{coriander-ground}}, and {{turmeric}}, and cook for 1 minute. Add the {{tomato-puree}} and stir for 1 minute. Pour in the {{tinned-tomatoes}} and 1.2 litres of water. Add the {{lentils-red}} and season with salt. Bring to the boil, reduce to a simmer, and cook for 20 minutes until the lentils have dissolved." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add chickpeas and thicken" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add the {{chickpeas-tinned}} and simmer for a further 15 minutes. Mix the {{plain-flour}} with 4 tablespoons of cold water to a smooth paste. Stir into the simmering soup a tablespoon at a time, stirring constantly. Simmer for 5 minutes until thickened. Add the {{coriander}}, {{lemon}} juice, and check seasoning. Serve immediately." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Soup has lumps after adding the flour paste", "cause": "Flour paste added too fast or not mixed smoothly", "fix": "Mix the flour with cold water until completely lump-free before adding. Add one tablespoon at a time, stirring vigorously. A small whisk helps" },
+            { "symptom": "Soup is too thin even after the flour paste", "cause": "Too much water or flour paste insufficient", "fix": "Make a second flour paste (1 tablespoon flour mixed to 3 tablespoons water) and add gradually. Or simmer uncovered for 10 minutes to reduce" },
+            { "symptom": "Cinnamon taste is too prominent", "cause": "Too much or ground cinnamon rather than a lighter hand", "fix": "Start with less cinnamon next time. For this batch, a squeeze of extra lemon and more cumin can rebalance the spice profile" },
+            { "symptom": "Lentils still whole after 20 minutes", "cause": "Red lentils should dissolve — check they are red split lentils", "fix": "Red split lentils dissolve in 15 to 20 minutes. Green or brown lentils take much longer and don't dissolve. Check the packet: 'red lentils' or 'red split lentils'" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Harira is the defining soup of Moroccan cuisine — made every day during Ramadan and eaten with chebakia (sesame pastries) and dates to break the fast at sunset. Paula Wolfert documented it as a complex and deeply satisfying soup made in enormous pots in Moroccan households. Regional and family variations are significant: some versions include lamb, some add vermicelli or broken pasta, some are thinner, some denser. The constant elements are the spiced tomato-lentil base, the chickpeas, the fresh herb finish, and the tedouira. It crosses the boundary between soup and stew and, served with good bread, constitutes a complete meal." }]
+      }
+    ]
+  }
+}
