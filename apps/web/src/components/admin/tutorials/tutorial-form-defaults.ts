@@ -30,6 +30,7 @@ export const EMPTY_RECIPE_DEFAULTS: Pick<
   | 'temperatureNote'
   | 'foundational'
   | 'leftoverTutorialId'
+  | 'aliases'
 > = {
   type: 'TECHNIQUE',
   servings: '',
@@ -52,6 +53,7 @@ export const EMPTY_RECIPE_DEFAULTS: Pick<
   temperatureNote: '',
   foundational: false,
   leftoverTutorialId: null,
+  aliases: '',
 }
 
 export const EMPTY_TUTORIAL_BODY: JSONContent = {

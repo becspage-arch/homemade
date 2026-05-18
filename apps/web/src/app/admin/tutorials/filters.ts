@@ -59,6 +59,13 @@ export interface ContentFilters {
   view: ContentView
   page: number
   pageSize: PageSize
+  /**
+   * URL-only filter (no UI checkbox) surfaced by the technique tutorial
+   * edit page so an editor can click the reverse-sweep count and land
+   * on the list of rows annotated with that technique slug. Empty
+   * string = no filter applied.
+   */
+  techniqueSlug: string
 }
 
 const ALL_STATUS = Object.values(TutorialStatus) as TutorialStatus[]
@@ -129,6 +136,7 @@ export function parseFilters(
     view,
     page,
     pageSize,
+    techniqueSlug: getOne(raw, 'techniqueSlug').trim(),
   }
 }
 
@@ -167,6 +175,11 @@ export function buildWhere(
   else if (f.hero === 'procedural') where.heroImageStrategy = HeroStrategy.PROCEDURAL_CARD
   else if (f.hero === 'plate') where.heroImageStrategy = HeroStrategy.PUBLIC_DOMAIN_PLATE
   else if (f.hero === 'none') where.heroMediaId = null
+
+  // Reverse-sweep audit filter (phase_technique_linking_002). Surface
+  // every row that carries this technique's slug in its `techniqueSlugs`
+  // array. The technique-tutorial admin page links here.
+  if (f.techniqueSlug) where.techniqueSlugs = { has: f.techniqueSlug }
 
   // Author filter is ignored for CREATOR — they only see their own anyway.
   if (viewer.role !== UserRole.CREATOR) {
@@ -218,6 +231,7 @@ export function serialiseFilters(f: Partial<ContentFilters>): string {
   if (f.view && f.view !== 'table') sp.set('view', f.view)
   if (f.page && f.page !== 1) sp.set('page', String(f.page))
   if (f.pageSize && f.pageSize !== 50) sp.set('pageSize', String(f.pageSize))
+  if (f.techniqueSlug) sp.set('techniqueSlug', f.techniqueSlug)
   const out = sp.toString()
   return out ? `?${out}` : ''
 }

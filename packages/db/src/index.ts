@@ -19,6 +19,18 @@ export {
 // with maybeFlipCategoryVisibility on every publish path.
 export { maybeFlipCategoryPipelineComplete } from './category-pipeline-status'
 
+// Reverse-sweep helpers (phase_technique_linking_002). The Inngest function
+// and the backfill script both call into `sweepForTechnique`; the pure
+// matcher helpers ship alongside for unit-testing without a database.
+export {
+  buildSearchTerms,
+  extractTextForSweep,
+  bodyMentionsAnyTerm,
+  sweepForTechnique,
+  type TechniqueForSweep,
+  type SweepResult,
+} from './technique-sweep'
+
 declare global {
   // eslint-disable-next-line no-var
   var __homemade_prisma: PrismaClient | undefined

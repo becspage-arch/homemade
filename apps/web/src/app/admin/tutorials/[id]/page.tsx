@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { prisma } from '@homemade/db'
+import { prisma, TutorialStatus, TutorialType } from '@homemade/db'
 import type { JSONContent } from '@tiptap/core'
 import { TutorialForm } from '@/components/admin/tutorials/tutorial-form'
 import { StatusControls } from '@/components/admin/tutorials/status-controls'
@@ -27,6 +27,7 @@ export default async function EditTutorialPage({
       where: { id },
       include: {
         tags: { select: { id: true } },
+        category: { select: { slug: true } },
         _count: { select: { versions: true } },
       },
     }),
@@ -34,6 +35,26 @@ export default async function EditTutorialPage({
   ])
 
   if (!tutorial) notFound()
+
+  // Reverse-sweep visibility (phase_technique_linking_002). On a
+  // PUBLISHED TECHNIQUE row, count how many same-Category tutorials
+  // have already been annotated with this technique's slug, so an
+  // editor can eyeball whether the sweep landed the way they expected.
+  const annotatedCount =
+    tutorial.type === TutorialType.TECHNIQUE &&
+    tutorial.status === TutorialStatus.PUBLISHED
+      ? await prisma.tutorial.count({
+          where: {
+            categoryId: tutorial.categoryId,
+            status: TutorialStatus.PUBLISHED,
+            techniqueSlugs: { has: tutorial.slug },
+            id: { not: tutorial.id },
+          },
+        })
+      : null
+  const annotatedListHref = `/admin/tutorials?category=${encodeURIComponent(
+    tutorial.category.slug,
+  )}&techniqueSlug=${encodeURIComponent(tutorial.slug)}`
 
   const updateAction = updateTutorial.bind(null, id)
   const transitionAction = transitionTutorialStatus.bind(null, id)
@@ -78,6 +99,22 @@ export default async function EditTutorialPage({
           transitionAction={transitionAction}
         />
       </div>
+
+      {annotatedCount !== null && (
+        <div
+          className="mb-10 border-l-2 border-[var(--color-sage)] pl-4 text-sm text-[var(--color-warm-taupe)]"
+          style={{ fontFamily: 'var(--font-lora)' }}
+        >
+          Reverse-sweep:{' '}
+          <Link
+            href={annotatedListHref}
+            className="text-[var(--color-sage)] hover:text-[var(--color-forest)]"
+          >
+            {annotatedCount} recipe{annotatedCount === 1 ? '' : 's'} annotated
+          </Link>{' '}
+          with this technique slug across the same category.
+        </div>
+      )}
 
       <TutorialForm
         action={updateAction}
@@ -127,6 +164,7 @@ export default async function EditTutorialPage({
           temperatureNote: tutorial.temperatureNote ?? '',
           foundational: tutorial.foundational,
           leftoverTutorialId: tutorial.leftoverTutorialId,
+          aliases: tutorial.aliases.join(', '),
         }}
         cloudflareDeliveryHash={process.env.CLOUDFLARE_IMAGES_DELIVERY_HASH ?? null}
         {...formData}

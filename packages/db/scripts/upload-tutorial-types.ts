@@ -750,6 +750,19 @@ export interface TutorialUploadInput {
   criticalTechniques?: string[]
 
   /**
+   * Common phrasings the reverse-sweep should match when this is a
+   * TECHNIQUE row (e.g. `blind-baking` aliases ["blind baking",
+   * "pre-bake the pastry"]). Ignored on every other tutorial type. The
+   * sweep adds these to its search-term set alongside the canonical
+   * title and the slug-with-spaces. Empty / omitted is fine — most
+   * techniques have a title phrasing that's already what authors write
+   * inline, so the alias list only covers the cases where authors
+   * habitually use a different phrasing. See
+   * `apps/web/src/lib/technique-sweep.ts` for the matching contract.
+   */
+  aliases?: string[]
+
+  /**
    * TipTap document. The top-level node is always `{ type: 'doc', content: [...] }`.
    *
    * Node types supported (StarterKit + custom blocks):
@@ -1120,6 +1133,13 @@ export function validateInput(input: TutorialUploadInput): void {
       throw new Error(
         `criticalTechniques entry "${slug}" must also appear in techniqueSlugs. ` +
           `Every critical technique must be in the full set.`,
+      )
+    }
+  }
+  for (const alias of input.aliases ?? []) {
+    if (typeof alias !== 'string' || alias.trim().length === 0) {
+      throw new Error(
+        `aliases entries must be non-empty strings (got "${alias}").`,
       )
     }
   }

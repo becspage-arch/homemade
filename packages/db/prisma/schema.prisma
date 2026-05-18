@@ -638,6 +638,17 @@ model Tutorial {
   techniqueSlugs     String[] @default([])
   criticalTechniques String[] @default([])
 
+  // Free-form search aliases used by the reverse-sweep Inngest function
+  // (`on-technique-publish`) to find this technique inside already-
+  // published recipes. Only meaningful on TECHNIQUE rows; ignored on
+  // every other type. The sweep builds its search-term set from
+  // `title + slug-with-spaces + aliases`, so this column captures the
+  // common phrasings authors actually use ("blind baking",
+  // "pre-bake the pastry" for the `blind-bake` technique) that the
+  // canonical title doesn't already cover. See
+  // `apps/web/src/lib/technique-sweep.ts` for the matching contract.
+  aliases            String[] @default([])
+
   planDayMornings    UserPlanDay[]          @relation("PlanDayMorningPractice")
   planDayEvenings    UserPlanDay[]          @relation("PlanDayEveningPractice")
   planDayAnchors     UserPlanDay[]          @relation("PlanDayAnchorPractice")

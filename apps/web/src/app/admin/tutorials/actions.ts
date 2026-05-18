@@ -19,6 +19,7 @@ import { audit } from '@/lib/audit'
 import { isValidSlug, slugify } from '@/lib/slug'
 import { syncTutorialById, removeTutorialById } from '@/lib/search-sync'
 import { syncRecipeIngredientsFromBody } from '@/lib/recipe-ingredients-sync'
+import { notifyTechniquePublished } from '@/lib/technique-sweep-events'
 import {
   DIETARY_FLAGS,
   MEAL_TYPES,
@@ -67,6 +68,12 @@ interface TutorialMetadataInput {
   temperatureNote: string | null
   foundational: boolean
   leftoverTutorialId: string | null
+  /**
+   * Free-form search aliases for the reverse-sweep
+   * (phase_technique_linking_002). Comma-separated in the admin form;
+   * empty by default. Ignored on non-TECHNIQUE rows at runtime.
+   */
+  aliases: string[]
 }
 
 interface TutorialFullInput extends TutorialMetadataInput {
@@ -198,6 +205,16 @@ function parseMetadata(formData: FormData): TutorialMetadataInput {
   const leftoverRaw = String(formData.get('leftoverTutorialId') ?? '').trim()
   const leftoverTutorialId = leftoverRaw || null
 
+  // Aliases — admin form posts a single comma-separated string. Split,
+  // trim, drop empties, dedupe.
+  const aliasesRaw = String(formData.get('aliases') ?? '')
+  const aliasesSet = new Set<string>()
+  for (const part of aliasesRaw.split(',')) {
+    const trimmed = part.trim()
+    if (trimmed) aliasesSet.add(trimmed)
+  }
+  const aliases = Array.from(aliasesSet)
+
   return {
     title,
     slug,
@@ -242,6 +259,7 @@ function parseMetadata(formData: FormData): TutorialMetadataInput {
     temperatureNote,
     foundational: parseBool(formData, 'foundational'),
     leftoverTutorialId,
+    aliases,
   }
 }
 
@@ -436,6 +454,7 @@ export async function createTutorial(formData: FormData): Promise<void> {
       temperatureNote: input.temperatureNote,
       foundational: input.foundational,
       leftoverTutorialId: input.leftoverTutorialId,
+      aliases: input.aliases,
     },
   })
 
@@ -534,6 +553,7 @@ export async function updateTutorial(id: string, formData: FormData): Promise<vo
       temperatureNote: input.temperatureNote,
       foundational: input.foundational,
       leftoverTutorialId: input.leftoverTutorialId,
+      aliases: input.aliases,
     },
   })
 
@@ -551,9 +571,34 @@ export async function updateTutorial(id: string, formData: FormData): Promise<vo
 
   await syncTutorialById(updated.id)
 
+  // Reverse-sweep (phase_technique_linking_002). A PUBLISHED TECHNIQUE
+  // whose title / slug / aliases just widened should re-fire the sweep
+  // so existing recipes pick up newly-matching language. We skip when
+  // the matcher fields didn't change, so a typo fix to the body doesn't
+  // burn an Inngest run.
+  if (
+    updated.type === TutorialType.TECHNIQUE &&
+    updated.status === TutorialStatus.PUBLISHED
+  ) {
+    const matcherChanged =
+      updated.title !== existing.title ||
+      updated.slug !== existing.slug ||
+      !arraysEqual(updated.aliases, existing.aliases)
+    if (matcherChanged) {
+      await notifyTechniquePublished(updated.id)
+    }
+  }
+
   revalidatePath('/admin/tutorials')
   revalidatePath(`/admin/tutorials/${id}`)
   redirect(`/admin/tutorials/${id}`)
+}
+
+function arraysEqual(a: string[], b: string[]): boolean {
+  if (a.length !== b.length) return false
+  const sortedA = [...a].sort()
+  const sortedB = [...b].sort()
+  return sortedA.every((v, i) => v === sortedB[i])
 }
 
 export async function transitionTutorialStatus(
@@ -624,6 +669,12 @@ export async function transitionTutorialStatus(
   if (target === TutorialStatus.PUBLISHED) {
     await maybeFlipCategoryVisibility(prisma, existing.categoryId)
     await maybeFlipCategoryPipelineComplete(prisma, existing.categoryId)
+    // Reverse-sweep (phase_technique_linking_002). A TECHNIQUE that
+    // just went live should re-annotate every same-Category recipe
+    // whose body already mentions it.
+    if (existing.type === TutorialType.TECHNIQUE) {
+      await notifyTechniquePublished(id)
+    }
   }
 
   await syncTutorialById(id)

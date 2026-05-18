@@ -743,6 +743,12 @@ async function uploadTutorial(
     // with a duplicate in the array.
     techniqueSlugs: Array.from(new Set(input.techniqueSlugs ?? [])),
     criticalTechniques: Array.from(new Set(input.criticalTechniques ?? [])),
+    // Reverse-sweep aliases (phase_technique_linking_002). Trimmed +
+    // deduplicated so a typo at authoring doesn't leak a "blind baking "
+    // (trailing space) entry into the search-term set.
+    aliases: Array.from(
+      new Set((input.aliases ?? []).map((a) => a.trim()).filter((a) => a.length > 0)),
+    ),
   }
 
   // Publish intent. --status PUBLISHED stamps publishedAt now and flips the

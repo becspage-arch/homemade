@@ -66,6 +66,7 @@ export default async function NewTutorialPage() {
           temperatureNote: '',
           foundational: false,
           leftoverTutorialId: null,
+          aliases: '',
         }}
         cloudflareDeliveryHash={process.env.CLOUDFLARE_IMAGES_DELIVERY_HASH ?? null}
         {...data}

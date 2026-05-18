@@ -69,6 +69,13 @@ export interface TutorialFormDefaults {
   temperatureNote: string
   foundational: boolean
   leftoverTutorialId: string | null
+  /**
+   * Comma-separated alias phrases for the reverse-sweep
+   * (phase_technique_linking_002). Only meaningful on TECHNIQUE rows;
+   * the form submits the raw string and the server-side parser splits +
+   * trims into a String[]. Empty / "" round-trips as no aliases.
+   */
+  aliases: string
 }
 
 interface TutorialFormProps {
@@ -193,6 +200,7 @@ export function TutorialForm({
   const [leftoverTutorialId, setLeftoverTutorialId] = useState<string>(
     defaults.leftoverTutorialId ?? '',
   )
+  const [aliases, setAliases] = useState(defaults.aliases)
 
   function toggleFlag(value: string, list: string[], set: (next: string[]) => void) {
     set(list.includes(value) ? list.filter((v) => v !== value) : [...list, value])
@@ -616,6 +624,14 @@ export function TutorialForm({
             checked={foundational}
             onChange={setFoundational}
             hint="Surfaces a 'Foundational technique' badge on the page. For the ~500–700 core entries."
+          />
+          <Field
+            label="Aliases"
+            hint="Comma-separated phrases the reverse-sweep should match alongside the title (e.g. 'blind baking, pre-bake the pastry'). Leave empty if the title alone covers how authors write it."
+            name="aliases"
+            value={aliases}
+            onChange={setAliases}
+            multiline
           />
         </fieldset>
       )}

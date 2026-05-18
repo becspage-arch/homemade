@@ -4,6 +4,7 @@ import { revalidatePath } from 'next/cache'
 import {
   prisma,
   TutorialStatus,
+  TutorialType,
   UserRole,
   maybeFlipCategoryVisibility,
   maybeFlipCategoryPipelineComplete,
@@ -12,6 +13,7 @@ import {
 import { getCurrentDbUser, hasRoleAtLeast } from '@/lib/auth'
 import { audit } from '@/lib/audit'
 import { syncTutorialById, removeTutorialById } from '@/lib/search-sync'
+import { notifyTechniquePublished } from '@/lib/technique-sweep-events'
 import { buildWhere, parseFilters } from './filters'
 
 export type BulkAction = 'publish' | 'unpublish' | 'archive' | 'delete'
@@ -70,6 +72,7 @@ export async function bulkTutorialAction(formData: FormData): Promise<void> {
       status: true,
       publishedAt: true,
       categoryId: true,
+      type: true,
     },
   })
 
@@ -100,6 +103,12 @@ export async function bulkTutorialAction(formData: FormData): Promise<void> {
         },
       })
       await syncTutorialById(t.id)
+      // Reverse-sweep (phase_technique_linking_002). A TECHNIQUE that
+      // just went live should re-annotate every same-Category recipe
+      // whose body already mentions it.
+      if (t.type === TutorialType.TECHNIQUE) {
+        await notifyTechniquePublished(t.id)
+      }
     }
     // Re-check visibility + pipeline-status once per touched category —
     // cheaper than per row.

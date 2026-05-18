@@ -11,6 +11,7 @@ import {
 } from '@/inngest/functions/analytics-rollup'
 import { autopilotHaltNotify } from '@/inngest/functions/autopilot-halt-notify'
 import { scheduledStepPush } from '@/inngest/functions/scheduled-step-push'
+import { techniquePublishSweep } from '@/inngest/functions/technique-publish-sweep'
 
 export const { GET, POST, PUT } = serve({
   client: inngest,
@@ -24,5 +25,6 @@ export const { GET, POST, PUT } = serve({
     analyticsRollupBackfill,
     autopilotHaltNotify,
     scheduledStepPush,
+    techniquePublishSweep,
   ],
 })

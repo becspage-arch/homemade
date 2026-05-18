@@ -1,9 +1,10 @@
 import 'server-only'
-import { prisma, TutorialStatus } from '@homemade/db'
+import { prisma, TutorialStatus, TutorialType } from '@homemade/db'
 import { inngest } from '../client'
 import { audit } from '@/lib/audit'
 import { syncTutorialById } from '@/lib/search-sync'
 import { captureServerEvent, flushPostHog } from '@/lib/posthog'
+import { notifyTechniquePublished } from '@/lib/technique-sweep-events'
 
 /**
  * Flip Tutorial.SCHEDULED → PUBLISHED for any row whose scheduledFor has
@@ -22,7 +23,7 @@ export const scheduledPublishTutorial = inngest.createFunction(
           status: TutorialStatus.SCHEDULED,
           scheduledFor: { lte: new Date() },
         },
-        select: { id: true, slug: true, authorId: true, categoryId: true },
+        select: { id: true, slug: true, authorId: true, categoryId: true, type: true },
       }),
     )
 
@@ -49,6 +50,13 @@ export const scheduledPublishTutorial = inngest.createFunction(
           },
         })
         await syncTutorialById(t.id)
+        // Reverse-sweep (phase_technique_linking_002). A TECHNIQUE that
+        // just flipped from SCHEDULED → PUBLISHED triggers the sweep so
+        // existing recipes pick up the new technique without a manual
+        // backfill step.
+        if (t.type === TutorialType.TECHNIQUE) {
+          await notifyTechniquePublished(t.id)
+        }
         await captureServerEvent({
           event: 'tutorial_published_scheduled',
           distinctId: t.authorId,
