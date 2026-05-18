@@ -1,0 +1,148 @@
+{
+  "slug": "bouillabaisse",
+  "title": "Bouillabaisse",
+  "subtitle": "Provençal fish and seafood stew",
+  "excerpt": "A Provençal stew of multiple fish and shellfish cooked in a saffron-and-fennel broth, served with rouille on toasted bread. The defining dish of Marseille — lavish, aromatic, and better at home than in most restaurants.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Bouillabaisse originates in Marseille, where fishermen cooked their unsellable catch in a saffron broth. The canonical recipe is documented in Julia Child, Louisette Bertholle, and Simone Beck, Mastering the Art of French Cooking (1961) and Elizabeth David, French Provincial Cooking (1960). A 1980 Marseille charter specified which fish must be included in a 'true' bouillabaisse.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The broth base can be made up to 1 day ahead. Add fish only when ready to serve — do not reheat with fish already in it.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["showStopper", "summery", "party", "feedACrowd"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bouillabaisse requires variety — at least three kinds of fish, and ideally some shellfish alongside. The interplay of different textures and flavours is what makes it a bouillabaisse rather than a fish soup. The saffron-and-fennel broth is the constant; the fish changes according to what the market has." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The traditional accompaniment is rouille — a thick, garlicky, saffron-scented mayonnaise spread on rounds of toasted bread that float in the bowl. A simplified rouille can be made by blending good mayonnaise with a crushed garlic clove, a pinch of saffron, and a squeeze of lemon. Serve the broth first, then the fish and bread separately, or bring everything to the table at once." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "cod-fillet", "amount": 400, "unit": "g", "prepNote": "cut into large chunks", "isOptional": false, "groupLabel": "Fish and seafood" },
+            { "ingredientSlug": "sea-bass", "amount": 2, "unit": "each", "prepNote": "filleted and cut into large pieces", "isOptional": false, "groupLabel": "Fish and seafood" },
+            { "ingredientSlug": "prawns-raw", "amount": 300, "unit": "g", "prepNote": "shell-on", "isOptional": false, "groupLabel": "Fish and seafood" },
+            { "ingredientSlug": "mussels", "amount": 500, "unit": "g", "prepNote": "scrubbed and debearded", "isOptional": false, "groupLabel": "Fish and seafood" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "garlic", "amount": 6, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "fennel", "amount": 2, "unit": "each", "prepNote": "fronds reserved, bulb thinly sliced", "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "tomato", "amount": 4, "unit": "each", "prepNote": "ripe, roughly chopped", "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "potato", "amount": 4, "unit": "each", "prepNote": "peeled and thinly sliced", "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "saffron", "amount": 2, "unit": "pinch", "prepNote": "steeped in 100 ml warm water", "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "fennel-seeds", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "bay-leaves", "amount": 3, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "extra-virgin-olive-oil", "amount": 80, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "to serve", "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "parsley-flat", "amount": 30, "unit": "g", "prepNote": "to serve", "isOptional": true, "groupLabel": "Broth" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the broth base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the olive oil in a large pot over medium heat. Add the onion, fennel, and garlic and cook for 10 minutes until soft. Add the tomatoes, fennel seeds, bay leaves, and thyme and cook for 5 minutes. Add 1.5 litres of cold water, the saffron water, and the potatoes. Bring to a boil and cook at a rapid simmer for 15 minutes until the potatoes are just tender. Season well." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the fish and shellfish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add the firmest fish first (cod) and cook for 2 minutes. Add the sea bass and prawns and cook for 2 more minutes. Add the mussels, cover the pot, and cook for 3 to 4 minutes until the mussels have opened and all the fish is just cooked through. Do not overcook — remove from the heat as soon as everything is done." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Ladle into large warm bowls, making sure each person gets a mix of fish and shellfish. Scatter with parsley and fennel fronds. Serve with rouille on toasted bread placed in or alongside the bowl, and lemon wedges. A plain rouille: mash 2 garlic cloves to a paste with salt, mix with 4 tablespoons of good mayonnaise, a large pinch of saffron, and a squeeze of lemon." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Fish is overcooked and falling apart",
+              "cause": "Added too early or broth was boiling when fish went in",
+              "fix": "Add fish to a simmering (not boiling) broth; total cooking time for fish is 6 to 8 minutes from the point of adding the first fish"
+            },
+            {
+              "symptom": "Broth lacks depth",
+              "cause": "Not enough saffron or fennel; or potatoes absorbed too much flavour",
+              "fix": "Add a second large pinch of saffron steeped in warm water; the fennel is also essential — don't omit it"
+            },
+            {
+              "symptom": "Mussels have not opened",
+              "cause": "Not enough heat, or insufficient time",
+              "fix": "Cover the pot and cook at a full simmer for 4 to 5 minutes; discard any mussels that remain closed after 6 minutes"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bouillabaisse belongs to Marseille the way cassoulet belongs to Toulouse. The word describes both a dish and a method (bouillir, to boil, and abaisser, to reduce), and the traditional version was made from the unsellable fish left after market: rockfish, rascasse, grondin. The home version uses whatever good fish is available. The Marseille charter of 1980, which defined which fish were obligatory, was aimed at tourist restaurants claiming authenticity — at home, use the best fish you can find." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "slug": "paella-mixta",
+  "title": "Paella Mixta",
+  "subtitle": "Spanish mixed paella with chicken, chorizo, and prawns",
+  "excerpt": "The classic mixed paella: chicken, chorizo, and prawns cooked together in saffron-scented stock over paella rice until the base forms the prized socarrat — a crust of caramelised, almost-burnt rice.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Paella mixta (mixed paella with meat and seafood) is the most widely cooked form outside Valencia, where the original paella valenciana uses rabbit and chicken only. Documented in Claudia Roden, The Food of Spain (2011) and Penelope Casas, The Foods and Wines of Spain (1982).",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "spanish",
+    "mealType": "dinner",
+    "mood": ["summery", "party", "feedACrowd", "showStopper"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "paella-pan", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A good paella has one non-negotiable: the socarrat. This is the thin layer of caramelised, crispy rice that forms on the base of the pan in the final minutes of cooking. You can tell it is forming when you hear the rice begin to crackle and smell a faint, toasty note. To get it, the last 2 minutes of cooking happen over higher heat — but it is a narrow window between socarrat and scorched." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The other rule is never stir. Once the stock goes in, the rice cooks undisturbed. Stirring develops the starch and makes it sticky — the opposite of what paella should be. The paella pan's wide, shallow shape accelerates evaporation and promotes even cooking; a deep pan is a poor substitute." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "paella-rice", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chicken-thigh", "amount": 500, "unit": "g", "prepNote": "bone-in, cut into 3 pieces each", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chorizo", "amount": 150, "unit": "g", "prepNote": "cooking chorizo, cut into thick rounds", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "prawns-raw", "amount": 300, "unit": "g", "prepNote": "shell-on, if possible", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mussels", "amount": 400, "unit": "g", "prepNote": "scrubbed and debearded, optional", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato", "amount": 2, "unit": "each", "prepNote": "ripe, grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-red", "amount": 1, "unit": "each", "prepNote": "cut into strips", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-smoked", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "saffron", "amount": 2, "unit": "pinch", "prepNote": "steeped in 100 ml warm water for 15 minutes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 1200, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "extra-virgin-olive-oil", "amount": 60, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "roughly chopped, to serve", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "cut into wedges, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sear the meat and build the sofrito" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oil in the paella pan over medium-high heat. Season the chicken and brown on all sides, about 5 minutes. Push to the edges. Add the chorizo and cook until the orange fat runs out, about 3 minutes. Push to the edges. Add the onion, garlic, and red pepper to the centre and cook, stirring, for 8 minutes until soft. Add the grated tomato and paprika, stir for 2 minutes until the tomato darkens slightly." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the rice and stock" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add the rice and stir for 1 minute so it coats in the fat. Add the saffron water and the hot stock all at once. Season with salt. Spread everything into an even layer. Do not stir again. Cook over medium heat for 15 minutes until the stock is almost absorbed." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the seafood and form the socarrat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Push the prawns and mussels (if using) into the rice. Cook for 5 minutes until the prawns turn pink and the mussels open. For the socarrat, increase the heat to medium-high for the final 2 minutes — listen for a crackling sound and watch for a faint smoky scent. Remove from the heat, cover loosely with foil, and rest for 5 minutes. Scatter with parsley and serve with lemon wedges." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Rice is still wet and undercooked when the stock is gone",
+              "cause": "Too much liquid or heat too low",
+              "fix": "Increase heat slightly and cook for 3 to 5 more minutes; add no more stock — the steam trapped in the rice will finish it"
+            },
+            {
+              "symptom": "Rice burns before it is cooked",
+              "cause": "Heat too high or pan too small causing thick layer of rice",
+              "fix": "A wider pan prevents thick layers; control the socarrat by staying at medium heat for the main cook and only increasing at the very end"
+            },
+            {
+              "symptom": "Mussels are not opening",
+              "cause": "Not enough heat or cooked too briefly",
+              "fix": "Cover the pan briefly to trap steam — mussels need 3 to 5 minutes of consistent heat; discard any that remain closed"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Paella is from Valencia and its original form uses only rabbit, chicken, and green beans. Paella mixta, the combined meat-and-seafood version, developed as the dish spread beyond its region. It is now the most internationally recognised form, cooked at Sunday lunches and fiestas across Spain. The pan gives the dish its name: paella is the Valencian word for frying pan." }]
+      }
+    ]
+  }
+}
