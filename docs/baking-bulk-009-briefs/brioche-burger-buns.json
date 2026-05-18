@@ -1,0 +1,152 @@
+{
+  "slug": "brioche-burger-buns",
+  "title": "Brioche burger buns",
+  "subtitle": "Eggy, golden, soft-crumbed buns for burgers",
+  "excerpt": "Enriched buns made with eggs and butter for a tender, slightly sweet crumb and a deep golden crust. The brioche ratio (lower butter than classic Parisian brioche) keeps them stable enough to hold a burger without collapsing.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Enriched bun doughs using eggs and butter are documented in English baking from the seventeenth century onward. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136 — the enriched dinner roll chapter provides the base ratio of eggs and butter to flour. The burger-bun application is a twentieth-century development popularised through American diners.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 buns",
+    "prepMinutes": 30,
+    "cookMinutes": 18,
+    "restingMinutes": 120,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze baked and cooled. Wrap individually in cling film and bag. Defrost at room temperature for 1 hour or warm in a 160°C oven for 6 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the dough the night before and cold-retard in the fridge overnight. Shape and prove from cold the next morning.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "side",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 400,
+      "hydrationPercent": 58,
+      "saltPercent": 1.75,
+      "yeastPercent": 1.75,
+      "levainPercent": null,
+      "bulkFermentMinutes": 90,
+      "proofMinutes": 45,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "190°C conventional / 170°C fan",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "dough-hook", "isOptional": true },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "enriched-dough-brioche",
+      "term": "Enriched dough",
+      "definition": "A bread dough that contains butter, eggs, or both in significant quantities alongside the standard flour, water, yeast, and salt. The fat and protein from the enrichment produce a tender, fine-crumbed loaf with a longer shelf life than a lean dough."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "text": "enriched dough", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "enriched-dough-brioche" } }] },
+          { "type": "text", "text": " bun is softer and richer than a standard white roll but firmer than classic Parisian brioche, which would soak through in minutes. The butter content here sits at 20% of flour weight — enough for a golden, tender crumb without the collapse that comes with a higher enrichment. The buns prove touching on the tray so they pull apart at the table with a slight tear.", "marks": [] }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "strong-bread-flour", "quantity": 400, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "yeast-fast-action", "quantity": 7, "unit": "g", "prepNote": "1 sachet", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "salt-table", "quantity": 7, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 25, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "whole-milk", "quantity": 120, "unit": "ml", "prepNote": "lukewarm", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "eggs", "quantity": 2, "unit": "each", "prepNote": "large, plus 1 for egg wash", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 80, "unit": "g", "prepNote": "softened, cut into pieces", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "sesame-seeds", "quantity": 2, "unit": "tbsp", "prepNote": "for topping", "isOptional": true } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine {{strong-bread-flour}}, {{yeast-fast-action}}, {{salt-table}}, and {{caster-sugar}} in a large bowl or stand mixer bowl. Add the lukewarm {{whole-milk}} and {{eggs}} and mix to a rough dough. If kneading by hand, work for 8 minutes until smooth. If using a stand mixer, run on medium with the dough hook for 6 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the butter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add the {{unsalted-butter}} in 4–5 additions, incorporating each piece fully before adding the next. This takes patience — the dough will look greasy and broken at first, then come back together to a smooth, slightly tacky ball. Knead by hand for a further 4 minutes or 3 minutes in the stand mixer until fully incorporated. The dough should feel soft and pull cleanly from the bowl sides." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment, 90 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover and leave in a warm spot until doubled, about 90 minutes. Enriched doughs rise more slowly than lean doughs — the fat slows the yeast activity." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and prove, 45 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Divide the dough into 8 equal pieces (about 90 g each). Shape each into a tight, smooth ball by pulling the surface down and pinching underneath. Place in a 2×4 arrangement on a lined baking tray, leaving about 3 cm between each bun. Cover with oiled cling film and prove for 45 minutes until visibly puffed and the edges are just touching. Heat the oven to 190°C (170°C fan)." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Beat the remaining egg with a pinch of salt and brush gently over the buns. Scatter over {{sesame-seeds}} if using. Bake for 16–18 minutes until deep golden. The undersides should be golden too — lift one to check. Cool on the tray for 5 minutes, then transfer to a wire rack. Split and use warm, or cool completely before storing." }]
+      }
+    ]
+  }
+}

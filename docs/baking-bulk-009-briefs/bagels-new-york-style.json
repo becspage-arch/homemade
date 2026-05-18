@@ -1,0 +1,138 @@
+{
+  "slug": "bagels-new-york-style",
+  "title": "New York bagels",
+  "subtitle": "Boiled-then-baked with a chewy crust",
+  "excerpt": "Bagels with the chewy, dense crumb and shiny crust that comes from boiling in a malt or honey water bath before baking. The boiling step is non-negotiable for the texture — it sets the crust before the oven spring.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The bagel is an Ashkenazi Jewish bread with roots in sixteenth-century Poland; the New York style was established by Eastern European immigrant bakers from the 1880s onward. The boil-then-bake method, the high-gluten flour, and the relatively lean dough are the defining characteristics of the New York version. Documented in American domestic cookery from the 1950s onward.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 bagels",
+    "prepMinutes": 40,
+    "cookMinutes": 25,
+    "restingMinutes": 90,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze. Toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Shaped bagels can cold-retard overnight in the fridge; boil and bake from the fridge the next morning, adding 2 minutes to the bake time.",
+    "dietaryFlags": [],
+    "cuisine": "jewish",
+    "mealType": "breakfast",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 56,
+      "saltPercent": 1.8,
+      "yeastPercent": 1.0,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 30,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "220°C conventional / 200°C fan",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bagel-boil",
+      "term": "Bagel boil",
+      "definition": "The step that defines bagel texture: shaped rings are dropped into simmering water (with honey or malt syrup added) for 30–60 seconds per side before baking. The boil gelatinises the outer starch and sets a dense skin, which produces the characteristic chewy crust and prevents the bagel from rising as dramatically as a standard roll."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "text": "bagel boil", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bagel-boil" } }] },
+          { "type": "text", "text": " is what separates a bagel from a ring-shaped roll. The dough is stiffer than a standard bread dough (lower hydration) so the bagels hold their ring shape during the boil. The honey or golden syrup in the water contributes to the shiny glaze.", "marks": [] }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Dough" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "strong-bread-flour", "quantity": 500, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "yeast-fast-action", "quantity": 5, "unit": "g", "prepNote": "¾ sachet", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "salt-table", "quantity": 9, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 10, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "water", "quantity": 280, "unit": "ml", "prepNote": "lukewarm", "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Boiling water" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "water", "quantity": 2000, "unit": "ml", "prepNote": "for the pan", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "golden-syrup", "quantity": 2, "unit": "tbsp", "prepNote": "or honey", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "bicarbonate-of-soda", "quantity": 1, "unit": "tbsp", "prepNote": "optional — improves browning", "isOptional": true } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix, knead, and bulk ferment, 1 hour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mix {{strong-bread-flour}}, {{yeast-fast-action}}, {{salt-table}}, and {{caster-sugar}}. Add the {{water}} gradually — the dough should be stiff, not sticky. Knead for 10 minutes until very smooth and firm; it should feel noticeably stiffer than a standard bread dough. Cover and bulk ferment for 1 hour until risen but not necessarily doubled." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and prove, 30 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Divide into 8 pieces (about 100 g each). Shape each into a smooth ball, then poke a finger through the centre and stretch the ring to about 10 cm across. The hole should be generous — it will close up during the boil and bake. Place on a floured tray, cover, and prove for 30 minutes. Heat the oven to 220°C (200°C fan). Line two baking trays with oiled baking paper (not dry parchment, which sticks)." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Boil and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bring a large, wide pan of {{water}} to a rolling boil. Add the {{golden-syrup}} and {{bicarbonate-of-soda}} if using. Drop the bagels in 2 or 3 at a time — they will sink then float. Boil for 45 seconds per side. Lift out with a slotted spoon, drain briefly, and place on the oiled trays. Top with seeds or toppings of your choice, pressing them in gently. Bake for 20–22 minutes until deep golden with a shiny surface. Cool on a wire rack." }]
+      }
+    ]
+  }
+}

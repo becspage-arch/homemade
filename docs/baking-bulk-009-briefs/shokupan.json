@@ -1,0 +1,147 @@
+{
+  "slug": "shokupan",
+  "title": "Shokupan",
+  "subtitle": "Japanese milk bread made with tangzhong",
+  "excerpt": "Shokupan is a Japanese-style milk bread with a pillowy, cloud-soft crumb that comes from the tangzhong technique — a cooked flour-and-milk paste stirred into the dough. The result keeps its softness for longer than a standard enriched loaf.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Shokupan is a Japanese white bread introduced during the Meiji era under Western influence and refined throughout the twentieth century. The tangzhong (water roux) technique was popularised in the English-language baking world through Yvonne Chen's 65°C Bread Doctor (2003) and is now widely documented in domestic cookery.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (about 12 slices)",
+    "prepMinutes": 30,
+    "cookMinutes": 35,
+    "restingMinutes": 120,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze. Toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the tangzhong the night before and refrigerate — bring to room temperature before use.",
+    "dietaryFlags": [],
+    "cuisine": "japanese",
+    "mealType": "breakfast",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 450,
+      "hydrationPercent": 67,
+      "saltPercent": 1.6,
+      "yeastPercent": 1.3,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 60,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "190°C conventional / 170°C fan",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tangzhong",
+      "term": "Tangzhong",
+      "definition": "A cooked paste made by stirring flour and liquid over heat until the mixture reaches about 65°C, at which point the starch gelatinises. Added to the main dough, it increases moisture retention without making the dough wetter to handle, and produces a crumb that stays soft for longer than a standard enriched loaf."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The softness of shokupan comes from the " },
+          { "type": "text", "text": "tangzhong", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tangzhong" } }] },
+          { "type": "text", "text": " — a small amount of flour cooked with milk to a thick paste, then cooled and added to the main dough. It adds moisture to the crumb without making the dough slack. The finished loaf has a cotton-wool texture that slices cleanly and stays soft for two days without going stale.", "marks": [] }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Tangzhong" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "strong-bread-flour", "quantity": 30, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "whole-milk", "quantity": 150, "unit": "ml", "prepNote": null, "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Main dough" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "strong-bread-flour", "quantity": 420, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "yeast-fast-action", "quantity": 6, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "salt-table", "quantity": 7, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 30, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "whole-milk", "quantity": 100, "unit": "ml", "prepNote": "lukewarm", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "eggs", "quantity": 1, "unit": "each", "prepNote": "large, lightly beaten", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 40, "unit": "g", "prepNote": "softened", "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the tangzhong" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whisk the tangzhong {{strong-bread-flour}} and {{whole-milk}} together in a small saucepan until smooth. Set over medium heat and stir constantly for 3–4 minutes until the mixture thickens to a paste that trails off the spoon in ribbons. Transfer to a bowl and leave to cool completely — the paste should be room temperature before it goes into the dough." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix, knead, and bulk ferment, 1 hour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the main dough {{strong-bread-flour}}, {{yeast-fast-action}}, {{salt-table}}, and {{caster-sugar}}. Add the cooled tangzhong paste, the {{whole-milk}}, and the {{eggs}}. Mix to a rough dough, then add the {{unsalted-butter}} a little at a time, kneading it in as you go. Knead for 10–12 minutes until the dough is very smooth and elastic — it should pass the windowpane test, stretching thin without tearing. Cover and leave until doubled, about 1 hour." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and prove, 1 hour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Grease a 900 g (2 lb) loaf tin. Divide the dough into 4 equal pieces. Roll each into a ball, flatten gently into a rough oval, then fold the sides in and roll into a short cylinder. Lay them seam-side down in the tin in a row. Cover and prove for about 1 hour until the dough crowns 2 cm above the tin edge. Heat the oven to 190°C (170°C fan). Brush the top with beaten egg or milk." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake for 30–35 minutes until deep gold on top. The internal temperature should reach 93°C. Tip out immediately onto a wire rack — leaving it in the tin makes the crust steam and go soft. Cool completely before slicing; the crumb is too delicate to cut when hot." }]
+      }
+    ]
+  }
+}

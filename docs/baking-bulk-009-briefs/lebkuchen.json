@@ -1,0 +1,136 @@
+{
+  "slug": "lebkuchen",
+  "title": "Lebkuchen",
+  "subtitle": "German spiced honey biscuits with a sugar glaze",
+  "excerpt": "Lebkuchen are soft-centred German spiced biscuits made with honey and a blend of warming spices. They are traditionally a Christmas biscuit, iced with a thin white sugar glaze or dipped in dark chocolate. The dough benefits from resting overnight.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "biscuits",
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Lebkuchen is a German gingerbread tradition documented from the fourteenth century, originating in the monasteries of Franconia. The honey-spice biscuit in various forms (soft Elisenlebkuchen with ground nuts, harder cut varieties with icing) is documented comprehensively in German domestic cookery and has been adapted widely in British domestic baking, particularly around Christmas.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "30–36 biscuits",
+    "prepMinutes": 30,
+    "cookMinutes": 14,
+    "restingMinutes": 0,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unglazed. Defrost at room temperature and glaze before serving.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "These biscuits improve significantly with a few days in an airtight tin after baking — the texture softens and the spices deepen.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "german",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 300,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "180°C conventional / 160°C fan",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "biscuit-cutters", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sugar-glaze-lebkuchen",
+      "term": "Sugar glaze",
+      "definition": "A thin, set glaze made from icing sugar dissolved in a small amount of water or lemon juice. Brushed over warm biscuits immediately after baking, it dries to a white, slightly opaque coating as the biscuits cool. It is applied hot so the glaze bonds to the surface — if the biscuits are cold the glaze sits on top and flakes off."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lebkuchen dough is sticky and needs to rest — at least 8 hours in the fridge, overnight is better. Chilling firms the dough and develops the spice flavour. The " },
+          { "type": "text", "text": "sugar glaze", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sugar-glaze-lebkuchen" } }] },
+          { "type": "text", "text": " goes on the moment the biscuits come out of the oven while they are still hot. The heat from the biscuits sets the glaze as they cool.", "marks": [] }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Dough" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "plain-flour", "quantity": 300, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "almond-flour", "quantity": 75, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "honey", "quantity": 150, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 75, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "dark-brown-sugar", "quantity": 75, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "eggs", "quantity": 1, "unit": "each", "prepNote": "large, beaten", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "cinnamon-ground", "quantity": 2, "unit": "tsp", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "ginger-ground", "quantity": 1, "unit": "tsp", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "mixed-spice", "quantity": 1, "unit": "tsp", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "bicarbonate-of-soda", "quantity": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "mixed-peel", "quantity": 50, "unit": "g", "prepNote": "finely chopped", "isOptional": true } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Sugar glaze" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "icing-sugar", "quantity": 150, "unit": "g", "prepNote": "sifted", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "water", "quantity": 2, "unit": "tbsp", "prepNote": "or lemon juice", "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make dough and rest overnight" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Melt {{honey}}, {{unsalted-butter}}, and {{dark-brown-sugar}} together in a saucepan until the sugar dissolves. Leave to cool for 10 minutes. Combine {{plain-flour}}, {{almond-flour}}, {{cinnamon-ground}}, {{ginger-ground}}, {{mixed-spice}}, and {{bicarbonate-of-soda}} in a large bowl. Pour in the honey mixture and the {{eggs}}. Stir in {{mixed-peel}} if using. Mix to a soft, sticky dough. Cover and refrigerate for at least 8 hours." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roll, cut, bake, and glaze" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 180°C (160°C fan). Roll the dough on a generously floured surface to 5–6 mm thick. Cut into rounds or stars and place on lined trays, leaving 2 cm between them. Bake for 12–14 minutes until set and lightly coloured — they should still feel slightly soft. Make the glaze by stirring {{icing-sugar}} and {{water}} together until smooth. Brush immediately over the hot biscuits. Leave on the tray to cool completely; the glaze sets as they cool. Store in an airtight tin for up to 3 weeks." }]
+      }
+    ]
+  }
+}
