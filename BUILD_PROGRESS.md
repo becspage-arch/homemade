@@ -8,7 +8,7 @@ Updated each working session.
 
 ---
 
-## Current state (2026-05-17)
+## Current state (2026-05-18)
 
 Live at https://homemade.education behind splash gate (cookie `homemade-access=1`). The splash flips off at launch — pre-launch checklist of Rebecca-action items lives in `memory/project_pre_launch_checklist.md`.
 
@@ -22,7 +22,7 @@ Live at https://homemade.education behind splash gate (cookie `homemade-access=1
 
 **Library counts (PUBLISHED)** — full grid in § Multi-category fill plan below.
 
-- Cooking 582 (anchors + pilot-10 + personal-recipe ingest + bulks 001–013). Baking 348 (pilot-10 + bulks 001–006 + bulk-004b). Mindset 170 (bulks 001–005). The other 14 categories are private placeholders until each crosses 10 published rows.
+- Cooking 582 (anchors + pilot-10 + personal-recipe ingest + bulks 001–013). Baking 348 (pilot-10 + bulks 001–006 + bulk-004b). Mindset 208 (bulks 001–006). The other 14 categories are private placeholders until each crosses 10 published rows.
 
 **This week's notable landings**
 
@@ -35,6 +35,7 @@ Live at https://homemade.education behind splash gate (cookie `homemade-access=1
 - Baking bulk-004b (2026-05-17): 50 entries published across 7 sub-categories (scones ×3, biscuits ×10, cakes ×10, sweets ×8, bread ×6, pastries ×5, pies ×8). Distinct slugs from the parallel bulk-004 session. Baking 208 → 258. Fixed pre-existing `carrot-walnut-cake` missing oil ingredient. See `docs/baking-bulk-004b-report.md`.
 - Baking bulk-005 (2026-05-17): 50 entries published across 7 sub-categories (bread ×7, cakes ×11, pastries ×11, pies ×5, scones ×5, biscuits ×7, sweets ×4). Fixes applied: difficulty enum `EASY`→`BEGINNER` / `HARD`→`ADVANCED` (21 files), `sourceType: "ORIGINAL"`→`"CLASSIC"` (2 files), missing tool slugs `round-cake-tin-22`→`round-cake-tin-23` + `electric-mixer`→`hand-mixer` (2 files), `glossaryTooltip` `slug`→`termSlug` attr bulk fix (all 50), em-dash pair rewrites (22 files). Baking 258 → 308. See `docs/baking-bulk-005-report.md`.
 - Baking bulk-006 (autopilot-queue, 2026-05-18): 40 entries published across 6 sub-categories (cakes ×19, bread ×7, biscuits ×6, pies ×3, pastries ×3, scones ×2). Approx 20 BEGINNER / 18 INTERMEDIATE / 2 ADVANCED. Fixes: `glossaryTooltip` `slug`→`termSlug` attr bulk fix (all 40), BOM stripped after PowerShell rewrite, 8 malformed content-array paragraphs repaired (JSON-invalid), em-dash pairs converted to parentheses / colons (22 files). Baking 308 → 348. See `docs/baking-bulk-006-report.md`.
+- Mindset bulk-006 (autopilot-queue, 2026-05-18): 38 entries PUBLISHED (37 CREATED, 1 UPDATED) across two context windows. MONEY Days 18–21 (Phase 1 close) + SLEEP Days 11–14. Practice mix: TAPPING x8, AFFIRMATION x8, JOURNAL_PROMPT x8, VISUALISATION x7, ENERGY_STATEMENT x5, RITUAL x1, MEDITATION x1. Mindset 170 → 208. Fixes: em-dash pairs (6 files, 7 instances → parentheses), invalid `STRESS` practiceTarget on 9 files (→ `ANXIETY`), banned phrases "honest"/"honestly" (3 files), negation pattern (1 file). See `docs/mindset-bulk-006-report.md`.
 - Mindset bulk-005 (autopilot-queue, 2026-05-17): 48 entries PUBLISHED (26 CREATED, 22 UPDATED) across two context windows. MONEY Days 13–17 + SLEEP Days 6–9. Practice mix: TAPPING x9, VISUALISATION x9, JOURNAL_PROMPT x8, AFFIRMATION x7, ENERGY_STATEMENT x5, MEDITATION x4, RITUAL x2, READING x2, SPELL x1, ACTIVITY x1. Mindset 104 → 170. 20 voice-check fixes: em-dash pairs (17 files), banned phrases (4 files), negation in READING prose (1 file). Prisma client regenerated mid-session (knitting schema). See `docs/mindset-bulk-005-report.md`.
 
 **Open / queued**
