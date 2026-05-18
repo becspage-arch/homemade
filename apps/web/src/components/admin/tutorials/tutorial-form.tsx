@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { JSONContent } from '@tiptap/core'
 
 import './tutorial-form.css'
@@ -139,6 +139,16 @@ export function TutorialForm({
   const [submitting, setSubmitting] = useState(false)
   const [previewBody, setPreviewBody] = useState<JSONContent>(defaults.body)
   const [showPreview, setShowPreview] = useState(false)
+  const [showFullPreview, setShowFullPreview] = useState(false)
+
+  useEffect(() => {
+    if (!showFullPreview) return
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') setShowFullPreview(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [showFullPreview])
 
   // Live state for everything the preview reflects. The form's controlled
   // inputs still drive submission so the server sees current values without
@@ -209,12 +219,61 @@ export function TutorialForm({
     }
   }
 
+  const previewProps = {
+    body: previewBody,
+    glossary,
+    tutorials,
+    techniques,
+    title,
+    subtitle,
+    excerpt,
+    category: selectedCategory
+      ? { slug: '#preview', name: selectedCategory.name }
+      : null,
+    subCategoryName: selectedSubCategory?.name ?? null,
+    difficulty,
+    timeMinutes: parseTime(timeMinutes),
+    season: season || null,
+    heroMedia,
+    sourceType,
+    sourceNotes,
+    cloudflareDeliveryHash,
+    type,
+    recipeMeta: {
+      servings: parseTime(servings),
+      yieldDescription: yieldDescription || null,
+      prepMinutes: parseTime(prepMinutes),
+      cookMinutes: parseTime(cookMinutes),
+      totalMinutes: sumOrNull([
+        parseTime(prepMinutes),
+        parseTime(cookMinutes),
+        parseTime(restingMinutes),
+        parseTime(chillingMinutes),
+      ]),
+      scalable,
+      freezable,
+      batchable,
+      makeAheadSummary: makeAheadNotes || null,
+      cuisine: cuisine || null,
+      mealType: mealType || null,
+      dietaryFlags,
+      foundational,
+    },
+  }
+
   return (
     <form
       action={handleSubmit}
       className={`space-y-10 tutorial-form${showPreview ? ' tutorial-form-preview-open' : ''}`}
     >
       <div className="tutorial-form-top-bar">
+        <button
+          type="button"
+          className="tutorial-form-fullpreview-btn"
+          onClick={() => setShowFullPreview(true)}
+        >
+          Full preview
+        </button>
         <button
           type="button"
           className="tutorial-form-preview-toggle"
@@ -606,51 +665,30 @@ export function TutorialForm({
               </button>
             </header>
             <div className="tutorial-preview-drawer-body">
-          <PreviewPane
-            body={previewBody}
-            glossary={glossary}
-            tutorials={tutorials}
-            techniques={techniques}
-            title={title}
-            subtitle={subtitle}
-            excerpt={excerpt}
-            category={
-              selectedCategory
-                ? { slug: '#preview', name: selectedCategory.name }
-                : null
-            }
-            subCategoryName={selectedSubCategory?.name ?? null}
-            difficulty={difficulty}
-            timeMinutes={parseTime(timeMinutes)}
-            season={season || null}
-            heroMedia={heroMedia}
-            sourceType={sourceType}
-            sourceNotes={sourceNotes}
-            cloudflareDeliveryHash={cloudflareDeliveryHash}
-            type={type}
-            recipeMeta={{
-              servings: parseTime(servings),
-              yieldDescription: yieldDescription || null,
-              prepMinutes: parseTime(prepMinutes),
-              cookMinutes: parseTime(cookMinutes),
-              totalMinutes: sumOrNull([
-                parseTime(prepMinutes),
-                parseTime(cookMinutes),
-                parseTime(restingMinutes),
-                parseTime(chillingMinutes),
-              ]),
-              scalable,
-              freezable,
-              batchable,
-              makeAheadSummary: makeAheadNotes || null,
-              cuisine: cuisine || null,
-              mealType: mealType || null,
-              dietaryFlags,
-              foundational,
-            }}
-          />
+              <PreviewPane {...previewProps} />
             </div>
           </aside>
+        )}
+        {showFullPreview && (
+          <div
+            className="tutorial-full-preview-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Full preview"
+          >
+            <header className="tutorial-full-preview-modal-header">
+              <button
+                type="button"
+                className="tutorial-full-preview-modal-close"
+                onClick={() => setShowFullPreview(false)}
+              >
+                × Back to edit
+              </button>
+            </header>
+            <div className="tutorial-full-preview-modal-body">
+              <PreviewPane {...previewProps} />
+            </div>
+          </div>
         )}
       </div>
 

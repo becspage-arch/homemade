@@ -106,3 +106,62 @@
     max-width: none;
   }
 }
+
+.tutorial-form-fullpreview-btn {
+  background: transparent;
+  color: var(--color-espresso);
+  border: 0.5px solid var(--color-linen-grey);
+  padding: 8px 18px;
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: border-color 0.15s ease;
+}
+
+.tutorial-form-fullpreview-btn:hover {
+  border-color: var(--color-espresso);
+}
+
+.tutorial-full-preview-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--color-linen-cream);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tutorial-full-preview-modal-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-bottom: 0.5px solid var(--color-linen-grey);
+  background: var(--color-soft-parchment);
+}
+
+.tutorial-full-preview-modal-close {
+  background: transparent;
+  border: none;
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+  cursor: pointer;
+  padding: 0;
+}
+
+.tutorial-full-preview-modal-close:hover {
+  color: var(--color-burnt-sienna);
+}
+
+.tutorial-full-preview-modal-body {
+  flex: 1;
+  overflow-y: auto;
+}
