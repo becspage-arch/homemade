@@ -78,7 +78,7 @@ const CATEGORIES: CategorySeed[] = [
     slug: 'cooking',
     name: 'Cooking',
     description:
-      'Recipes, sauces, breads, preserves, ferments, and the techniques that support them. British and European canon plus air-fryer and slow-cooker.',
+      'Recipes, sauces, soups, stews, salads, breads, preserves, ferments, air-fryer, slow-cooker.',
     targetTutorialCount: 7000,
     launchOrder: 1,
     isExistingShipped: true,
@@ -87,7 +87,7 @@ const CATEGORIES: CategorySeed[] = [
     slug: 'baking',
     name: 'Baking',
     description:
-      'Bread, cakes, pastries, biscuits, pies, scones, and confectionery. Weights in grams, conventional °C temperatures, classical and modern methods.',
+      'Bread, cakes, pastries, biscuits, pies, scones, sweets, confectionery, cake decorating.',
     targetTutorialCount: 3000,
     launchOrder: 2,
     isExistingShipped: true,
@@ -105,7 +105,7 @@ const CATEGORIES: CategorySeed[] = [
     slug: 'mindset',
     name: 'Mindset',
     description:
-      'Tapping, energy statements, rituals, journal prompts, meditations, and readings. Practical, non-medical, drawn from multiple traditions.',
+      'Tapping, energy statements, affirmations, rituals, journal prompts, meditations, readings.',
     targetTutorialCount: 1000,
     launchOrder: 4,
     isExistingShipped: true,
@@ -114,7 +114,7 @@ const CATEGORIES: CategorySeed[] = [
     slug: 'herbal-medicine',
     name: 'Herbal medicine',
     description:
-      'Remedies, tinctures, infusions, decoctions, oils, balms, salves, and syrups. Home apothecary basics; not medical advice.',
+      'Remedies, tinctures, infusions, decoctions, oils, balms, salves, syrups.',
     targetTutorialCount: 2500,
     launchOrder: 5,
     isExistingShipped: false,
@@ -122,7 +122,7 @@ const CATEGORIES: CategorySeed[] = [
   {
     slug: 'crochet',
     name: 'Crochet',
-    description: 'Stitches, techniques, and patterns. Public-domain pattern reference.',
+    description: 'Stitches, techniques, and patterns.',
     targetTutorialCount: 1500,
     launchOrder: 6,
     isExistingShipped: false,
@@ -130,7 +130,7 @@ const CATEGORIES: CategorySeed[] = [
   {
     slug: 'knitting',
     name: 'Knitting',
-    description: 'Stitches, techniques, and patterns. Public-domain pattern reference.',
+    description: 'Stitches, techniques, and patterns.',
     targetTutorialCount: 1500,
     launchOrder: 7,
     isExistingShipped: false,

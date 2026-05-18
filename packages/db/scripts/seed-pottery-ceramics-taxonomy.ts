@@ -52,42 +52,42 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     slug: 'hand-building-no-equipment',
     name: 'Hand-building (no equipment)',
     description:
-      'Pinch, coil, slab, drape, hump, and sprig-moulded work in air-dry, polymer, paper-clay, and kiln-fired bodies that can be built without a wheel. The no-equipment-track home of the pipeline; the largest single sub-category.',
+      'Pinch, coil, slab, drape, hump, and sprig-moulded work in air-dry, polymer, paper-clay, and kiln-fired bodies that can be built without a wheel.',
     order: 10,
   },
   {
     slug: 'surface-decoration',
     name: 'Surface decoration',
     description:
-      'Sgraffito, mishima inlay, slip-trailing, terra sigillata, burnishing, carving, stamping, and impressed work on greenware and bisque. Works across no-equipment and kiln-fired bodies; the technique is the same whether the body is polymer or stoneware.',
+      'Sgraffito, mishima inlay, slip-trailing, terra sigillata, burnishing, carving, stamping, and impressed work on greenware and bisque.',
     order: 20,
   },
   {
     slug: 'throwing',
     name: 'Throwing',
     description:
-      'Wheel work — centring, opening, pulling walls, trimming foot rings, lidded forms, throwing off the hump. Requires a potter\'s wheel. The wheel + kiln track.',
+      'Wheel work — centring, opening, pulling walls, trimming foot rings, lidded forms, throwing off the hump. Requires a potter\'s wheel.',
     order: 30,
   },
   {
     slug: 'glazing',
     name: 'Glazing',
     description:
-      'Dipping, brushing, pouring, spraying, and layering glazes on bisqueware. Both raw-material chemistry and pre-mixed commercial glazes. The no-equipment-track tutorials lean on commercial pre-mixed glazes; the studio track lands the raw chemistry.',
+      'Dipping, brushing, pouring, spraying, and layering glazes on bisqueware. Both raw-material chemistry and pre-mixed commercial glazes.',
     order: 40,
   },
   {
     slug: 'firing',
     name: 'Firing',
     description:
-      'Bisque and glaze firing schedules at cone 06, 04, 6, and 9-10. Electric kiln cycles, pyrometric-cone witness firings, raku and pit-fire methods. Kiln-required; the studio sub-category most heavily safety-loaded.',
+      'Bisque and glaze firing schedules at cone 06, 04, 6, and 9-10. Electric kiln cycles, pyrometric-cone witness firings, raku and pit-fire methods.',
     order: 50,
   },
   {
     slug: 'clay-fundamentals',
     name: 'Clay fundamentals',
     description:
-      'Choosing a clay body, wedging, reclaim, drying stages (wet → leather-hard → bone-dry → greenware), bisque vs. glazeware, the differences between earthenware, stoneware, and porcelain. Foundational reading the other sub-categories cross-link back to.',
+      'Choosing a clay body, wedging, reclaim, drying stages (wet → leather-hard → bone-dry → greenware), bisque vs. glazeware, the differences between earthenware, stoneware, and porcelain.',
     order: 60,
   },
 ]

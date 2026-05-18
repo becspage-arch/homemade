@@ -60,7 +60,7 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     slug: 'techniques',
     name: 'Techniques',
     description:
-      'Hand-stitch types, machine-stitch fundamentals, seam + hem + edge finishes, closures, gathering and pleating, fabric prep and pattern marking. The foundational skills every PATTERN tutorial cross-links back to.',
+      'Hand-stitch types, machine-stitch fundamentals, seam and hem and edge finishes, closures, gathering and pleating, fabric prep and pattern marking.',
     order: 10,
   },
   {
@@ -81,77 +81,77 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     slug: 'homewares-soft-furnishing',
     name: 'Homewares & soft furnishing',
     description:
-      'Cushion covers (envelope, zip, button-back), bolster covers, hot-water-bottle covers, oven mitts, pot holders, draught excluders. Rectangle bodies with simple closures.',
+      'Cushion covers (envelope, zip, button-back), bolster covers, hot-water-bottle covers, oven mitts, pot holders, draught excluders.',
     order: 40,
   },
   {
     slug: 'curtains-blinds',
     name: 'Curtains & blinds',
     description:
-      'Rod-pocket, tab-top, eyelet-headed, and café-curtain styles. Lining and blackout-lining methods. All measurements-led; no curve pieces.',
+      'Rod-pocket, tab-top, eyelet-headed, and café-curtain styles. Lining and blackout-lining methods.',
     order: 50,
   },
   {
     slug: 'baby-children',
     name: 'Baby & children',
     description:
-      'Bibs, simple swaddles, cot bumpers, baby blankets, simple baby trousers, kid aprons, child pinafores from gathered rectangles. Soft, washable, no small parts.',
+      'Bibs, simple swaddles, cot bumpers, baby blankets, simple baby trousers, kid aprons, child pinafores from gathered rectangles.',
     order: 60,
   },
   {
     slug: 'soft-toys',
     name: 'Soft toys',
     description:
-      'Stuffed rabbits, simple bears, fabric dolls, fish-shaped pillows, snake draught-excluders, simple amigurumi-adjacent shapes. Rectangle and panel construction, machine or hand sewn.',
+      'Stuffed rabbits, simple bears, fabric dolls, fish-shaped pillows, snake draught-excluders, simple amigurumi-adjacent shapes.',
     order: 70,
   },
   {
     slug: 'kitchen-table-linens',
     name: 'Kitchen & table linens',
     description:
-      'Tea towels, napkins, table runners, tablecloths, placemats, bread bags. The everyday rectangle work the home sewing tradition rests on.',
+      'Tea towels, napkins, table runners, tablecloths, placemats, bread bags.',
     order: 80,
   },
   {
     slug: 'mending-visible-mending',
     name: 'Mending & visible mending',
     description:
-      'Patch mending, sashiko-style visible repair, darning (woven and Swiss), invisible mending, button replacement, tear repair, hem rescue. Hand-stitch first; the most life-extending sewing skills.',
+      'Patch mending, sashiko-style visible repair, darning (woven and Swiss), invisible mending, button replacement, tear repair, hem rescue.',
     order: 90,
   },
   {
     slug: 'quilting',
     name: 'Quilting',
     description:
-      'Patchwork basics, binding, basting, straight-line and free-motion quilting, hand quilting, simple block-and-strip designs. Wholecloth and patchwork starting points.',
+      'Patchwork basics, binding, basting, straight-line and free-motion quilting, hand quilting, simple block-and-strip designs.',
     order: 100,
   },
   {
     slug: 'reusable-household',
     name: 'Reusable household',
     description:
-      'Reusable kitchen roll, snack bags, beeswax-wrap replacements, breast pads, sanitary pads, makeup-removal pads, produce bags. The single-use replacement set.',
+      'Reusable kitchen roll, snack bags, beeswax-wrap replacements, breast pads, sanitary pads, makeup-removal pads, produce bags.',
     order: 110,
   },
   {
     slug: 'christmas-seasonal',
     name: 'Christmas & seasonal',
     description:
-      'Christmas stockings, advent calendars, fabric tree ornaments, bunting and flags, lavender bags, Easter chicks, Hallowe`en decorations. Small project surface, seasonal browse.',
+      'Christmas stockings, advent calendars, fabric tree ornaments, bunting and flags, lavender bags, Easter chicks, Hallowe\'en decorations.',
     order: 120,
   },
   {
     slug: 'simple-clothing-rectangles',
     name: 'Simple clothing from rectangles',
     description:
-      'Drawstring and elastic-waist trousers and shorts, gathered-rectangle peasant tops, simple A-line skirts (rectangle plus pleat), gathered sundresses and nightdresses. No fitted-pattern pieces.',
+      'Drawstring and elastic-waist trousers and shorts, gathered-rectangle peasant tops, simple A-line skirts (rectangle plus pleat), gathered sundresses and nightdresses.',
     order: 130,
   },
   {
     slug: 'accessories-small-projects',
     name: 'Accessories & small projects',
     description:
-      'Eye masks, hair scrunchies, headbands, fabric flowers, brooches, lavender hearts, the small make-in-an-hour items.',
+      'Eye masks, hair scrunchies, headbands, fabric flowers, brooches, lavender hearts.',
     order: 140,
   },
   {

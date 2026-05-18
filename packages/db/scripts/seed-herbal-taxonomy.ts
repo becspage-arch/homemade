@@ -52,7 +52,7 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     slug: 'materia-medica',
     name: 'Materia medica',
     description:
-      'Single-herb profiles. Latin binomial, parts used, primary actions, key constituents, traditional uses, safety. Not preparation tutorials — the herb itself.',
+      'Single-herb profiles. Latin binomial, parts used, primary actions, key constituents, traditional uses, safety.',
     order: 10,
   },
   {
@@ -94,14 +94,14 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     slug: 'womens-health',
     name: "Women's health",
     description:
-      'Remedies for period discomfort, perimenopausal symptoms, mild cycle support. Pregnancy-specific cautions on every entry.',
+      'Remedies for period discomfort, perimenopausal symptoms, mild cycle support.',
     order: 70,
   },
   {
     slug: 'mental-emotional',
     name: 'Mental & emotional',
     description:
-      'Mild-mood remedies. Distinct from nervous-system in framing — supportive rather than calming. Strict no-medical-claim voice.',
+      'Mild-mood remedies.',
     order: 80,
   },
   {
@@ -115,7 +115,7 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     slug: 'immune-support',
     name: 'Immune support',
     description:
-      'Remedies for the seasonal cold, mild flu support, immune-tonic herbs. Voice avoids therapeutic claims about prevention or cure.',
+      'Remedies for the seasonal cold, mild flu support, immune-tonic herbs.',
     order: 100,
   },
 ]
@@ -129,7 +129,7 @@ async function main(): Promise<void> {
       slug: 'herbal-medicine',
       name: 'Herbal medicine',
       description:
-        'Remedies, tinctures, infusions, decoctions, oils, balms, salves, and syrups. Home apothecary basics; not medical advice.',
+        'Remedies, tinctures, infusions, decoctions, oils, balms, salves, syrups.',
       order: 50,
     },
     update: {},

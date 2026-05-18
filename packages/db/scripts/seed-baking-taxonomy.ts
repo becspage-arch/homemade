@@ -51,57 +51,50 @@ const SUB_CATEGORIES: SubCatSpec[] = [
   {
     slug: 'bread',
     name: 'Bread',
-    description:
-      'Tin loaves, sourdough, focaccia, soda bread, enriched doughs. Baker’s percentages, hydration, proof times.',
+    description: ‘Tin loaves, sourdough, focaccia, soda bread, enriched doughs.’,
     order: 10,
   },
   {
     slug: 'cakes',
     name: 'Cakes',
-    description:
-      'Sponges, Madeira cakes, layer cakes, fruit cakes. Tin sizes in cm, weights in grams, decorating optional.',
+    description: 'Sponges, Madeira cakes, layer cakes, fruit cakes.',
     order: 20,
   },
   {
     slug: 'pastries',
     name: 'Pastries',
-    description:
-      'Shortcrust, puff, rough puff, choux, filo, laminated doughs. Fold counts, rest counts, chilling discipline.',
+    description: 'Shortcrust, puff, rough puff, choux, filo, laminated doughs.',
     order: 30,
   },
   {
     slug: 'biscuits',
     name: 'Biscuits',
-    description:
-      'Shortbread, ginger biscuits, oat biscuits, sablés, savoury biscuits. Chilled doughs, sheet thickness, even bakes.',
+    description: 'Shortbread, ginger biscuits, oat biscuits, sablés, savoury biscuits.',
     order: 40,
   },
   {
     slug: 'pies',
     name: 'Pies',
-    description:
-      'Sweet and savoury pies, tarts, quiches. Blind-baking, vent strategy, lattice work.',
+    description: 'Sweet and savoury pies, tarts, quiches.',
     order: 50,
   },
   {
     slug: 'scones',
     name: 'Scones',
-    description:
-      'Sweet scones, cheese scones, fruit scones, drop scones. Liquid-to-flour precision, minimal handling.',
+    description: 'Sweet scones, cheese scones, fruit scones, drop scones.',
     order: 60,
   },
   {
     slug: 'sweets-confectionery',
     name: 'Sweets & confectionery',
-    description:
-      'Caramels, fudge, honeycomb, marshmallows, tempered chocolate. Sugar-stage temperatures, safety voice.',
+    description: 'Caramels, fudge, honeycomb, marshmallows, tempered chocolate.',
     order: 70,
   },
   {
     slug: 'cake-decorating',
     name: 'Cake decorating',
     description:
-      'Buttercream piping, fondant work, royal icing, mirror glazes, sugarpaste figures. Technique-style tutorials.',
+      'Buttercream piping, fondant work, royal icing, mirror glazes, sugarpaste figures.',
     order: 80,
   },
 ]
@@ -115,7 +108,7 @@ async function main(): Promise<void> {
       slug: 'baking',
       name: 'Baking',
       description:
-        'Bread, cakes, pastries, biscuits, pies, scones, sweets and confectionery, cake decorating. Weights in grams, precision in temperatures, the craft a kitchen learns over years.',
+        'Bread, cakes, pastries, biscuits, pies, scones, sweets, confectionery, cake decorating.',
       order: 20,
     },
     update: {},

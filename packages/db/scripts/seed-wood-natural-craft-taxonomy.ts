@@ -57,42 +57,42 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     slug: 'whittling',
     name: 'Whittling',
     description:
-      'Knife-only projects worked from a small blank — birds, butter knives, pot stirrers, simple figures, walking-stick details. Push cuts, thumb-pivot cuts, stop cuts, chip cuts. The accessible starting point of the hand-tool register.',
+      'Knife-only projects worked from a small blank — birds, butter knives, pot stirrers, simple figures, walking-stick details.',
     order: 10,
   },
   {
     slug: 'spoon-carving',
     name: 'Spoon carving',
     description:
-      'Green-wood eating spoons, cooking spoons, ladles, kuksas, scoops. Axe-to-knife progression: carving axe rough-shapes the blank, sloyd knife refines the handle and back, hook knife hollows the bowl. Sycamore, birch, lime, cherry. Kolrosing finish optional.',
+      'Green-wood eating spoons, cooking spoons, ladles, kuksas, scoops. Sycamore, birch, lime, cherry.',
     order: 20,
   },
   {
     slug: 'green-woodwork',
     name: 'Green-woodwork',
     description:
-      'Chairs, stools, mallets, tool handles, riven-blank work at the shaving horse. Drawknife and spokeshave shaping, froe-and-beetle riving, scorp and travisher hollowing. Hazel, ash, oak, beech. The bench-and-horse register.',
+      'Chairs, stools, mallets, tool handles, riven-blank work at the shaving horse. Hazel, ash, oak, beech.',
     order: 30,
   },
   {
     slug: 'seasoned-wood',
     name: 'Seasoned-wood projects',
     description:
-      'Boxes, frames, picture frames, small furniture, joinery basics. Mortise-and-tenon, dovetails, finger joints at the simple end. Kiln-dried or air-dried board stock. No power tools beyond a cordless drill for pilot holes.',
+      'Boxes, frames, picture frames, small furniture, joinery basics. Kiln-dried or air-dried board stock.',
     order: 40,
   },
   {
     slug: 'basketry-willow',
     name: 'Basketry & willow weaving',
     description:
-      'Round baskets, square baskets, hurdles, garden structures, willow-rod fencing. Randing, slewing, waling, pairing. Salix triandra, viminalis, purpurea — soaking schedules and seasonal harvesting. Rush and reed work covered under the same sub-category.',
+      'Round baskets, square baskets, hurdles, garden structures, willow-rod fencing. Salix triandra, viminalis, purpurea.',
     order: 50,
   },
   {
     slug: 'pyrography',
     name: 'Pyrography',
     description:
-      'Wood burning, design transfer, shading techniques. Solid-tip and nichrome-wire burners, interchangeable tips. Strict allowed-woods list (birch, lime, sycamore, maple, beech, poplar, untreated pine — never yew, oleander, walnut, or treated lumber). Ventilation non-negotiable.',
+      'Wood burning, design transfer, shading techniques. Birch, lime, sycamore, maple, beech, poplar, untreated pine only; ventilation required.',
     order: 60,
   },
 ]

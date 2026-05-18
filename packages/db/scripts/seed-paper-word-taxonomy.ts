@@ -57,21 +57,21 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     slug: 'bookbinding',
     name: 'Bookbinding',
     description:
-      'Coptic, long-stitch, Japanese stab, pamphlet, accordion, dos-à-dos, and perfect-bound book structures. From signatures and end-papers up to covered boards. The biggest sub-category in Paper & word (~25%).',
+      'Coptic, long-stitch, Japanese stab, pamphlet, accordion, dos-à-dos, and perfect-bound book structures. From signatures and end-papers up to covered boards.',
     order: 10,
   },
   {
     slug: 'calligraphy',
     name: 'Calligraphy',
     description:
-      'Broad-edge and pointed-pen calligraphy traditions — Foundational, Roman capitals, Italic, Spencerian, Copperplate, uncial. Tool-led, stroke-order-led, history-led. Anglicised period vocabulary.',
+      'Broad-edge and pointed-pen calligraphy traditions — Foundational, Roman capitals, Italic, Spencerian, Copperplate, uncial.',
     order: 20,
   },
   {
     slug: 'papermaking',
     name: 'Papermaking',
     description:
-      'Sheet-forming from cotton linter and recycled fibre, embedded inclusions, watermarks, sized paper, and the Japanese washi tradition (kozo, gampi, mitsumata). Equipment-light home setups.',
+      'Sheet-forming from cotton linter and recycled fibre, embedded inclusions, watermarks, sized paper, and the Japanese washi tradition (kozo, gampi, mitsumata).',
     order: 30,
   },
   {
@@ -92,28 +92,28 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     slug: 'journalling-craft',
     name: 'Journalling as craft',
     description:
-      'The making of journals and journal pages — page layouts, spreads, hand-lettered headers, washi-tape techniques, ephemera collage, traveller\'s notebooks, signature binding for journals. Strict scope boundary: no journal prompts or reflective-writing content (that belongs to Mindset).',
+      'The making of journals and journal pages — page layouts, spreads, hand-lettered headers, washi-tape techniques, ephemera collage, traveller\'s notebooks, signature binding for journals.',
     order: 60,
   },
   {
     slug: 'zines',
     name: 'Zines',
     description:
-      'Folded mini-zines (the eight-page from one A4), perfect-bound zines, photocopy aesthetics, accordion-fold zines. Cousins of bookbinding for short-form self-publishing.',
+      'Folded mini-zines (the eight-page from one A4), perfect-bound zines, photocopy aesthetics, accordion-fold zines.',
     order: 70,
   },
   {
     slug: 'scrapbooking',
     name: 'Scrapbooking',
     description:
-      'Page layouts, ephemera collage, mixed-media techniques, photo-corner mounting. The shared craft tradition with journalling-craft, with a more photo-led focus.',
+      'Page layouts, ephemera collage, mixed-media techniques, photo-corner mounting.',
     order: 80,
   },
   {
     slug: 'origami',
     name: 'Origami',
     description:
-      'Public-domain canonical origami models — pre-1928 published folds from Kindergarten Gifts and Occupations literature, Friedrich Fröbel folds, and late-Meiji Japanese primers. v1 capped at ~30 models that use only the basic-fold renderer. Advanced manoeuvres (inside reverse, petal, squash, sink, swivel, 3D collapse) require the deferred advanced renderer.',
+      'Origami models from pre-1928 published folds — Kindergarten Gifts and Occupations, Friedrich Fröbel, and late-Meiji Japanese primers.',
     order: 90,
   },
 ]

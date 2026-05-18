@@ -122,7 +122,7 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     slug: 'foraging',
     name: 'Foraging',
     description:
-      'Wild food identification — UK hedgerow, woodland, coastline. Identification beats yield; absolute beginner safety rules.',
+      'Wild food identification — UK hedgerow, woodland, coastline. Absolute-beginner safety rules.',
     order: 90,
   },
 ]

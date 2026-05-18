@@ -17,19 +17,17 @@ import { prisma } from '../src'
 
 const DESCRIPTIONS: Record<string, string> = {
   cooking:
-    'Recipes, sauces, breads, preserves, ferments, and the techniques that support them. British and European canon plus air-fryer and slow-cooker.',
+    'Recipes, sauces, soups, stews, salads, breads, preserves, ferments, air-fryer, slow-cooker.',
   baking:
-    'Bread, cakes, pastries, biscuits, pies, scones, and confectionery. Weights in grams, conventional °C temperatures, classical and modern methods.',
+    'Bread, cakes, pastries, biscuits, pies, scones, sweets, confectionery, cake decorating.',
   mindset:
-    'Tapping, energy statements, rituals, journal prompts, meditations, and readings. Practical, non-medical, drawn from multiple traditions.',
+    'Tapping, energy statements, affirmations, rituals, journal prompts, meditations, readings.',
   garden:
     'Vegetables, fruit, herbs, flowers, permaculture, mushroom growing, and foraging. UK-zone focused with hemisphere-aware adjustments.',
   'herbal-medicine':
-    'Remedies, tinctures, infusions, decoctions, oils, balms, salves, and syrups. Home apothecary basics; not medical advice.',
-  crochet:
-    'Patterns, stitches, edgings, and finishing techniques. Standard UK terminology with US conversions where they differ.',
-  knitting:
-    'Patterns, stitches, increases, decreases, and finishing techniques. Standard UK terminology with US conversions where they differ.',
+    'Remedies, tinctures, infusions, decoctions, oils, balms, salves, syrups.',
+  crochet: 'Stitches, techniques, and patterns.',
+  knitting: 'Stitches, techniques, and patterns.',
   sewing:
     'Patterns, seams, hems, hand-stitches, and machine techniques. Garment, household, and mending work.',
   papercraft:

@@ -55,7 +55,7 @@ async function main(): Promise<void> {
       slug: 'mindset',
       name: 'Mindset',
       description:
-        'Practices, rituals, journal prompts, meditations, and readings for the parts of life that need tending — money, body, sleep, motherhood, fear, joy, grief. Grounded, gentle, real.',
+        'Tapping, energy statements, affirmations, rituals, journal prompts, meditations, readings.',
       order: 50,
     },
     update: {},
@@ -66,15 +66,13 @@ async function main(): Promise<void> {
     {
       slug: 'tapping',
       name: 'Tapping',
-      description:
-        'EFT tapping scripts. Eight points, three rounds, a karate-chop set-up, and a reframe round. Five to fifteen minutes; daily use.',
+      description: 'EFT tapping scripts.',
       order: 10,
     },
     {
       slug: 'energy-statement',
       name: 'Energy statements',
-      description:
-        "Short release-and-allow statements drawn from Rebecca's Money Zone method. Said three times, slow, alongside other practices.",
+      description: 'Short release-and-allow statements.',
       order: 20,
     },
     {
@@ -88,42 +86,38 @@ async function main(): Promise<void> {
       slug: 'spell',
       name: 'Spells',
       description:
-        'Folk-magic-shaped focusing rituals with simple physical objects (candle, salt, water, paper). Practical not theatrical.',
+        'Folk-magic-shaped focusing rituals with simple physical objects (candle, salt, water, paper).',
       order: 40,
     },
     {
       slug: 'ritual',
       name: 'Rituals',
-      description:
-        'Weekly and seasonal ceremonies. Five-part shape: Prepare, Release, Allow, Integrate, Anchor.',
+      description: 'Weekly and seasonal ceremonies.',
       order: 50,
     },
     {
       slug: 'activity',
       name: 'Activities',
       description:
-        'The embodied "live as if" layer. Object-based, in-the-world practices — coin rituals, wardrobe anchors, walk-by visualisations.',
+        'Object-based, in-the-world practices — coin rituals, wardrobe anchors, walk-by visualisations.',
       order: 60,
     },
     {
       slug: 'journal-prompt',
       name: 'Journal prompts',
-      description:
-        'Tight-question sets for the page. One specific question per prompt, five-minute free-writes, no editing.',
+      description: 'Question sets for the page.',
       order: 70,
     },
     {
       slug: 'visualisation',
       name: 'Visualisations',
-      description:
-        'Image-led practices walked through in second-person prose. Sensory and specific.',
+      description: 'Image-led practices walked through in second-person prose.',
       order: 80,
     },
     {
       slug: 'meditation',
       name: 'Meditations',
-      description:
-        'Short guided meditations — body scan, breathwork, image-led. Public-domain lineages credited.',
+      description: 'Short guided meditations — body scan, breathwork, image-led.',
       order: 90,
     },
     {
@@ -137,7 +131,7 @@ async function main(): Promise<void> {
       slug: 'reading',
       name: 'Readings',
       description:
-        'Long-form explainers. How a method works, where a lineage comes from, what the science (or honest absence of science) says.',
+        'Long-form explainers on how a method works, where a lineage comes from, and what the evidence says.',
       order: 110,
     },
   ]

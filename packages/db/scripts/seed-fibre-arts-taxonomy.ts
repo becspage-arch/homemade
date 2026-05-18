@@ -60,42 +60,42 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     slug: 'felting',
     name: 'Felting',
     description:
-      'Wet felting, needle felting, nuno felting, hat-shaping, wet-felted vessels. The lowest-barrier sub-category — a piece of merino roving, olive-oil soap, and a kitchen counter is the starter kit.',
+      'Wet felting, needle felting, nuno felting, hat-shaping, wet-felted vessels.',
     order: 10,
   },
   {
     slug: 'spinning',
     name: 'Spinning',
     description:
-      'Drop spindle (top-whorl, bottom-whorl), supported spindle, spinning wheel (Saxony / castle / e-spinner), fibre preparation (carding, combing, blending). Wheel and spindle paired throughout.',
+      'Drop spindle (top-whorl, bottom-whorl), supported spindle, spinning wheel (Saxony, castle, e-spinner), fibre preparation (carding, combing, blending).',
     order: 20,
   },
   {
     slug: 'weaving',
     name: 'Weaving',
     description:
-      'Frame loom, rigid heddle, four-shaft, tapestry, inkle, card weaving. Standard four-block drafts (threading, tie-up, treadling, drawdown) for the patterns; the renderer handles the layout.',
+      'Frame loom, rigid heddle, four-shaft, tapestry, inkle, card weaving.',
     order: 30,
   },
   {
     slug: 'natural-dyeing',
     name: 'Natural dyeing',
     description:
-      'Plant dyes, mineral mordants, indigo, eco-printing. Every entry cross-links the dye-plant source in Garden and the mordant-safety reference in Herbal medicine.',
+      'Plant dyes, mineral mordants, indigo, eco-printing.',
     order: 40,
   },
   {
     slug: 'macrame',
     name: 'Macramé',
     description:
-      'The ten fundamental knots (square, alternating square, half-hitch L+R, double half-hitch L+R, lark’s head, gathering, overhand, figure-8) plus the projects built from them — plant hangers, wall hangings, belts.',
+      ‘Square, alternating square, half-hitch, double half-hitch, lark\’s head, gathering, overhand, and figure-8 knots, plus plant hangers, wall hangings, and belts.’,
     order: 50,
   },
   {
     slug: 'rug-making',
     name: 'Rug making',
     description:
-      'Hooked, latch-hook, rag rugs, locker hook. Slower-to-publish than the other sub-categories because the source canon is thinner and finished pieces are harder to photograph well.',
+      'Hooked, latch-hook, rag rugs, locker hook.',
     order: 60,
   },
 ]

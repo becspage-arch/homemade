@@ -63,35 +63,35 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     slug: 'stitches',
     name: 'Stitches',
     description:
-      'Individual named stitch tutorials — chain, slip stitch, double crochet, half treble, treble, double treble, and textured stitches (bobble, shell, V-stitch, cluster, puff, popcorn). The foundational reference layer every PATTERN tutorial cross-links back to.',
+      'Individual named stitch tutorials — chain, slip stitch, double crochet, half treble, treble, double treble, and textured stitches (bobble, shell, V-stitch, cluster, puff, popcorn).',
     order: 10,
   },
   {
     slug: 'motifs',
     name: 'Motifs',
     description:
-      'In-the-round repeating shapes — granny squares, hexagons, circles, mandalas, flowers, and the joining techniques that turn individual motifs into finished pieces. The richest single sub-category in the Victorian and Edwardian public-domain canon.',
+      'In-the-round repeating shapes — granny squares, hexagons, circles, mandalas, flowers, and the joining techniques that turn individual motifs into finished pieces.',
     order: 20,
   },
   {
     slug: 'homewares',
     name: 'Homewares',
     description:
-      'Finished-item patterns for the home — dishcloths, facecloths, pot holders, blankets, cushion covers, baskets, and storage vessels. The everyday domestics the Weldon\'s Practical Crochet tradition centres on.',
+      'Finished-item patterns for the home — dishcloths, facecloths, pot holders, blankets, cushion covers, baskets, and storage vessels.',
     order: 30,
   },
   {
     slug: 'garments',
     name: 'Garments',
     description:
-      'Wearable patterns — shawls, scarves, hats, mittens, socks, and simple top-down or granny-square-construction garments. Gauge is non-negotiable in this sub-category; every pattern states it.',
+      'Wearable patterns — shawls, scarves, hats, mittens, socks, and simple top-down or granny-square-construction garments.',
     order: 40,
   },
   {
     slug: 'foundations',
     name: 'Foundations',
     description:
-      'Long-form READING articles on the craft itself — gauge swatching, blocking, joining methods, reading a pattern chart, choosing yarn for a project, understanding tension. The sub-category for readers who want the why as well as the how.',
+      'Long-form articles on the craft — gauge swatching, blocking, joining methods, reading a pattern chart, choosing yarn, understanding tension.',
     order: 50,
   },
 ]

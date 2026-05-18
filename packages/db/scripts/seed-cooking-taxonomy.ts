@@ -40,7 +40,7 @@ async function main(): Promise<void> {
       slug: 'cooking',
       name: 'Cooking',
       description:
-        'Sauces, breads, preserves, pastries, ferments. Technique-first cookery, written for someone learning the craft.',
+        'Recipes, sauces, soups, stews, salads, breads, preserves, ferments, air-fryer, slow-cooker.',
       order: 10,
     },
     update: {},
@@ -52,7 +52,7 @@ async function main(): Promise<void> {
     create: {
       slug: 'sauces',
       name: 'Sauces',
-      description: 'The mother sauces and the family of derivatives that flow from each.',
+      description: 'Mother sauces and their derivatives.',
       order: 10,
       categoryId: cooking.id,
     },
@@ -65,7 +65,7 @@ async function main(): Promise<void> {
     create: {
       slug: 'preserves',
       name: 'Preserves',
-      description: 'Jams, jellies, chutneys, pickles. Putting the summer in a jar.',
+      description: 'Jams, jellies, chutneys, pickles.',
       order: 20,
       categoryId: cooking.id,
     },

@@ -55,28 +55,28 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     slug: 'cross-stitch',
     name: 'Cross-stitch',
     description:
-      'Counted cross-stitch on Aida, evenweave, and linen, plus stamped cross-stitch on pre-printed cloth. Includes blackwork, Assisi, and miniature work. The largest and most accessible needlework sub-category.',
+      'Counted cross-stitch on Aida, evenweave, and linen, plus stamped cross-stitch on pre-printed cloth. Includes blackwork, Assisi, and miniature work.',
     order: 10,
   },
   {
     slug: 'needlepoint',
     name: 'Needlepoint',
     description:
-      'Worked on canvas with wool or stranded cotton — canvaswork, bargello flame stitch, and petit point. Heavier ground than cross-stitch; the canvas is fully covered by the stitching.',
+      'Worked on canvas with wool or stranded cotton — canvaswork, bargello flame stitch, and petit point.',
     order: 20,
   },
   {
     slug: 'tatting',
     name: 'Tatting',
     description:
-      'Knotted lace worked with a shuttle or a tatting needle. Rings and chains build edgings, doilies, motifs. Notation-based rather than chart-based.',
+      'Knotted lace worked with a shuttle or a tatting needle. Rings and chains build edgings, doilies, motifs.',
     order: 30,
   },
   {
     slug: 'lacemaking',
     name: 'Lacemaking',
     description:
-      'Bobbin lace worked on a pillow with bobbins, pricked patterns, and pins; needle lace built up from a couched thread skeleton. Slow craft, traditional ground for the British and continental lace canon.',
+      'Bobbin lace worked on a pillow with bobbins, pricked patterns, and pins; needle lace built up from a couched thread skeleton.',
     order: 40,
   },
 ]

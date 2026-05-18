@@ -44,63 +44,63 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     slug: 'stitches',
     name: 'Stitches',
     description:
-      'Single-stitch tutorials — knit, purl, k2tog, cables, lace. The reference layer that PATTERN tutorials lean on.',
+      'Single-stitch tutorials — knit, purl, k2tog, cables, lace.',
     order: 10,
   },
   {
     slug: 'foundations',
     name: 'Foundations',
     description:
-      'Casting on, casting off, reading a chart, choosing yarn and needles, gauge swatching, blocking. The skills before the first pattern.',
+      'Casting on, casting off, reading a chart, choosing yarn and needles, gauge swatching, blocking.',
     order: 20,
   },
   {
     slug: 'scarves-shawls',
     name: 'Scarves & shawls',
     description:
-      'Garter scarves, ribbed scarves, lace shawls, triangular shawls. The classic beginner-to-intermediate progression.',
+      'Garter scarves, ribbed scarves, lace shawls, triangular shawls.',
     order: 30,
   },
   {
     slug: 'hats',
     name: 'Hats',
     description:
-      'Ribbed hats, watch caps, slouch hats, berets, baby bonnets. Sized by head circumference, knit in the round on circulars or DPNs.',
+      'Ribbed hats, watch caps, slouch hats, berets, baby bonnets.',
     order: 40,
   },
   {
     slug: 'dishcloths-homewares',
     name: 'Dishcloths & homewares',
     description:
-      'Dishcloths, washcloths, tea cosies, coasters, cushion covers. Quick, cotton-yarn projects that double as gauge-swatch practice.',
+      'Dishcloths, washcloths, tea cosies, coasters, cushion covers.',
     order: 50,
   },
   {
     slug: 'baby',
     name: 'Baby',
     description:
-      'Baby blankets, booties, bonnets, cardigans. Smaller scale, softer yarn, finished objects that work as gifts.',
+      'Baby blankets, booties, bonnets, cardigans.',
     order: 60,
   },
   {
     slug: 'blankets',
     name: 'Blankets',
     description:
-      'Throws, lap blankets, modular blankets, mitred-square projects. Long-arc projects suited to the home-evening rhythm.',
+      'Throws, lap blankets, modular blankets, mitred-square projects.',
     order: 70,
   },
   {
     slug: 'socks',
     name: 'Socks',
     description:
-      'Cuff-down and toe-up socks, fingering-weight + worsted-weight variants, heel constructions. The sock-knitter library.',
+      'Cuff-down and toe-up socks, fingering-weight and worsted-weight variants, heel constructions.',
     order: 80,
   },
   {
     slug: 'garments',
     name: 'Garments',
     description:
-      'Jumpers, cardigans, vests. Graded patterns deferred to a later phase — placeholder so future graded-pattern work has a home.',
+      'Jumpers, cardigans, vests.',
     order: 90,
   },
 ]
@@ -113,8 +113,7 @@ async function main(): Promise<void> {
     create: {
       slug: 'knitting',
       name: 'Knitting',
-      description:
-        'Stitches, techniques, and patterns. Public-domain pattern reference; UK terminology primary with US in brackets.',
+      description: 'Stitches, techniques, and patterns.',
       order: 70,
     },
     update: {},
