@@ -3,6 +3,7 @@ import { prisma } from '@homemade/db'
 import { mediaUrl } from '@/lib/media'
 import type {
   GlossaryRef,
+  TechniqueRef,
   TutorialRef,
 } from '@/components/admin/editor/types'
 import type { MediaOption } from '@/components/admin/tutorials/hero-media-picker'
@@ -18,6 +19,7 @@ export interface TutorialFormSourceData {
   tags: TagOption[]
   glossary: GlossaryRef[]
   tutorials: TutorialRef[]
+  techniques: TechniqueRef[]
   media: MediaOption[]
 }
 
@@ -63,6 +65,7 @@ export async function loadTutorialFormData(
           slug: true,
           title: true,
           excerpt: true,
+          type: true,
           category: { select: { name: true, slug: true } },
         },
       }),
@@ -95,6 +98,19 @@ export async function loadTutorialFormData(
     categorySlug: t.category.slug,
   }))
 
+  // Filter the same result set down to TECHNIQUE rows for the technique-link
+  // picker. Picking up STITCH or PATTERN as a "technique" link would muddle
+  // the semantics — only TECHNIQUE rows are foundational how-tos the inline
+  // mark is meant to point at.
+  const techniques: TechniqueRef[] = tutorialRows
+    .filter((t) => t.type === 'TECHNIQUE')
+    .map((t) => ({
+      slug: t.slug,
+      title: t.title,
+      categorySlug: t.category.slug,
+      categoryName: t.category.name,
+    }))
+
   const media: MediaOption[] = mediaRows.map((m) => ({
     id: m.id,
     alt: m.alt,
@@ -110,6 +126,7 @@ export async function loadTutorialFormData(
     tags: tagRows,
     glossary,
     tutorials,
+    techniques,
     media,
   }
 }

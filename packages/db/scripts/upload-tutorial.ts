@@ -737,6 +737,12 @@ async function uploadTutorial(
     craftStitchSlugs: crochet?.craftStitchSlugs ?? knitting?.craftStitchSlugs ?? [],
     craftTechniqueTags:
       crochet?.craftTechniqueTags ?? knitting?.craftTechniqueTags ?? [],
+    // Technique linking (phase_technique_linking_001). Deduplicated at
+    // persistence so an author who lists the same slug twice (e.g. one
+    // critical entry plus the same slug in the full set) doesn't end up
+    // with a duplicate in the array.
+    techniqueSlugs: Array.from(new Set(input.techniqueSlugs ?? [])),
+    criticalTechniques: Array.from(new Set(input.criticalTechniques ?? [])),
   }
 
   // Publish intent. --status PUBLISHED stamps publishedAt now and flips the

@@ -10,10 +10,12 @@ import { TutorialChrome } from '@/components/public/tutorial-chrome'
 import type {
   GlossaryRef as PublicGlossaryRef,
   SubTutorialRef,
+  TechniqueRef as PublicTechniqueRef,
   TipTapNode,
 } from '@/components/public/tutorial-content/types'
 import type {
   GlossaryRef,
+  TechniqueRef,
   TutorialRef,
 } from '@/components/admin/editor/types'
 import type { MediaOption } from './hero-media-picker'
@@ -22,6 +24,7 @@ interface PreviewPaneProps {
   body: JSONContent
   glossary: GlossaryRef[]
   tutorials: TutorialRef[]
+  techniques: TechniqueRef[]
   title: string
   subtitle: string
   excerpt: string
@@ -74,6 +77,7 @@ export function PreviewPane({
   body,
   glossary,
   tutorials,
+  techniques,
   title,
   subtitle,
   excerpt,
@@ -105,6 +109,14 @@ export function PreviewPane({
     categorySlug: t.categorySlug,
     categoryName: t.categoryName,
     heroThumbnailUrl: null,
+  }))
+
+  // Forward the same shape the public renderer expects. The admin form's
+  // TechniqueRef is already structurally compatible — just narrow the type.
+  const publicTechniques: PublicTechniqueRef[] = techniques.map((t) => ({
+    slug: t.slug,
+    title: t.title,
+    categorySlug: t.categorySlug,
   }))
 
   const heroUrl =
@@ -153,6 +165,7 @@ export function PreviewPane({
           content={body as TipTapNode}
           glossary={publicGlossary}
           subTutorials={subTutorials}
+          techniques={publicTechniques}
           recipeContext={
             isRecipe
               ? {

@@ -724,13 +724,44 @@ export interface TutorialUploadInput {
   }>
 
   /**
+   * Technique tutorial slugs this row references inline. Every slug here
+   * should correspond to a `techniqueLink` mark somewhere in the body. The
+   * script persists the deduplicated list onto `Tutorial.techniqueSlugs`
+   * for the future "Recipes using this technique" rail (see
+   * `phase_technique_linking_001`). Slugs are NOT validated against the
+   * `Tutorial` table at upload — the rail tolerates dangling slugs (the
+   * link falls back to plain text), and rejecting on a missing technique
+   * row would block authors from wrapping technique words before the
+   * matching technique tutorial is published.
+   *
+   * Empty / omitted is fine — most rows will be empty at first; the
+   * Mindset pipeline never sets this (mindset techniques are sub-
+   * categories, not tutorials).
+   */
+  techniqueSlugs?: string[]
+
+  /**
+   * Subset of `techniqueSlugs` whose techniques the recipe genuinely
+   * depends on — without which the recipe doesn't work. Used by the rail
+   * to rank "recipes that depend on this technique" above "recipes that
+   * mention it in passing". Every slug here MUST also appear in
+   * `techniqueSlugs`; the validator checks that.
+   */
+  criticalTechniques?: string[]
+
+  /**
    * TipTap document. The top-level node is always `{ type: 'doc', content: [...] }`.
    *
    * Node types supported (StarterKit + custom blocks):
    *   StarterKit: paragraph, heading (attrs.level 1-6), bulletList, orderedList,
    *               listItem, blockquote, codeBlock, horizontalRule, hardBreak, image
    *   Marks:      bold, italic, underline, strike, code, link (attrs.href),
-   *               glossaryTooltip (attrs.termSlug — swapped for termId on upload)
+   *               glossaryTooltip (attrs.termSlug — swapped for termId on upload),
+   *               techniqueLink (attrs.techniqueSlug, attrs.label — see
+   *                 `phase_technique_linking_001`. Wraps a span of text with
+   *                 a pointer to a technique tutorial by slug; renderer falls
+   *                 back to plain text if the slug doesn't resolve to a
+   *                 published TECHNIQUE row yet.)
    *   Custom blocks (suppliesCard kept for legacy technique tutorials; new
    *   recipes use ingredientsList instead):
    *                  infoPanel (attrs: tone, title, body),
@@ -1064,6 +1095,33 @@ export function validateInput(input: TutorialUploadInput): void {
     }
     if (!g.term) throw new Error(`glossaryTerms entry "${g.slug}" missing term.`)
     if (!g.definition) throw new Error(`glossaryTerms entry "${g.slug}" missing definition.`)
+  }
+  // Technique-linking validation (phase_technique_linking_001). Slugs are
+  // not cross-checked against the Tutorial table — see the type comment for
+  // the reason — but each must match the slug pattern, and every entry in
+  // `criticalTechniques` must also appear in `techniqueSlugs` so the
+  // "critical-subset" semantic stays intact.
+  const techniqueSlugSet = new Set<string>()
+  for (const slug of input.techniqueSlugs ?? []) {
+    if (!SLUG_PATTERN.test(slug)) {
+      throw new Error(
+        `techniqueSlugs entry "${slug}" must match the slug pattern (lowercase letters, numbers, hyphens).`,
+      )
+    }
+    techniqueSlugSet.add(slug)
+  }
+  for (const slug of input.criticalTechniques ?? []) {
+    if (!SLUG_PATTERN.test(slug)) {
+      throw new Error(
+        `criticalTechniques entry "${slug}" must match the slug pattern.`,
+      )
+    }
+    if (!techniqueSlugSet.has(slug)) {
+      throw new Error(
+        `criticalTechniques entry "${slug}" must also appear in techniqueSlugs. ` +
+          `Every critical technique must be in the full set.`,
+      )
+    }
   }
   for (const t of input.recipeTools ?? []) {
     if (!t.slug || !SLUG_PATTERN.test(t.slug)) {

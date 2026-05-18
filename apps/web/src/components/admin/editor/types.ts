@@ -19,9 +19,23 @@ export interface TutorialRef {
   excerpt: string | null
 }
 
+/**
+ * Lightweight reference to a technique tutorial — fed into the toolbar's
+ * technique-link picker and seeded into the editor's storage so the picker
+ * can render its lookup list without a live fetch. Slug is the stable id
+ * used by the `techniqueLink` mark; the title shows in the picker list.
+ */
+export interface TechniqueRef {
+  slug: string
+  title: string
+  categorySlug: string
+  categoryName: string
+}
+
 export interface EditorPickers {
   glossary: GlossaryRef[]
   tutorials: TutorialRef[]
+  techniques: TechniqueRef[]
 }
 
 // Augment TipTap's per-editor Storage so each extension's storage slot is
@@ -30,5 +44,6 @@ declare module '@tiptap/core' {
   interface Storage {
     subTutorialCard: { tutorials: TutorialRef[] }
     glossaryTooltip: { glossary: GlossaryRef[] }
+    techniqueLink: { techniques: TechniqueRef[] }
   }
 }

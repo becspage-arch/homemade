@@ -207,6 +207,8 @@ and `macrameKnot` body blocks:
   "glossaryTerms": [
     { "slug": "warp", "term": "Warp", "definition": "The threads tensioned on the loom that run lengthways through the finished cloth — set up first, beat down by weft, the warp gives the cloth its length." }
   ],
+  "techniqueSlugs": ["weaving-warp-tensioning", "weaving-beating"],
+  "criticalTechniques": ["weaving-warp-tensioning"],
   "body": { "type": "doc", "content": [ … ] }
 }
 ```
@@ -1036,3 +1038,28 @@ walks this file. This is especially important for natural-dyeing
 cross-links to Garden dye-plant tutorials and the Herbal
 mordant-safety reference, both of which the dyeing pipeline needs
 in place before the dyeing autopilot fires at scale.
+
+## Technique linking
+
+Tutorials reference foundational technique tutorials inline so a reader
+who needs to learn the underlying technique can step into it without
+leaving the page. Two surfaces work together:
+
+- **Inline `techniqueLink` mark** on a span of body text. Set
+  `attrs.techniqueSlug` to the technique tutorial's slug and
+  `attrs.label` to the wrapped text. The renderer turns it into a
+  hover-popover + click-through anchor, or falls back to plain text
+  when the technique tutorial isn't authored yet (the link goes live
+  the moment it does — wrap the words anyway).
+- **Top-level arrays** on the JSON: `techniqueSlugs[]` carries every
+  technique slug referenced in the body, deduplicated.
+  `criticalTechniques[]` is the subset without which the tutorial
+  doesn't work; every entry must also appear in `techniqueSlugs[]`.
+
+The self-critique pass must check coverage: every `techniqueLink` mark's
+slug appears in `techniqueSlugs[]`, every entry in `techniqueSlugs[]`
+appears at least once in the body inside a `techniqueLink` mark, and
+every `criticalTechniques[]` entry is also in `techniqueSlugs[]`.
+
+See `docs/tutorial-author.md` § "Technique linking" for the full mark
+shape and when-to-wrap rules.

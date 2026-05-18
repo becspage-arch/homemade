@@ -5,6 +5,7 @@ import { SuppliesCard } from './blocks/supplies-card'
 import { PullQuote } from './blocks/pull-quote'
 import { SubTutorialCard } from './blocks/sub-tutorial-card'
 import { GlossaryTooltip } from './blocks/glossary-tooltip'
+import { TechniqueLink } from './blocks/technique-link'
 import { ProductCard } from './blocks/product-card'
 import { VarietiesPanel } from './blocks/varieties-panel'
 import { Troubleshooter } from './blocks/troubleshooter'
@@ -26,6 +27,7 @@ import { ScaleToken } from './scale-context'
 import type {
   GlossaryRef,
   SubTutorialRef,
+  TechniqueRef,
   TipTapMark,
   TipTapNode,
 } from './types'
@@ -36,6 +38,14 @@ interface TutorialContentProps {
   content: TipTapNode | null | undefined
   glossary: GlossaryRef[]
   subTutorials: SubTutorialRef[]
+  /**
+   * Technique tutorials referenced inline via the `techniqueLink` mark.
+   * Resolved once at page-render time by `loadContentRefs` from the slugs
+   * collected out of the body. The renderer falls back to plain text when
+   * a slug isn't in this list — the matching technique hasn't been
+   * authored yet, but the link will go live the moment it is.
+   */
+  techniques?: TechniqueRef[]
   /** When true, glossary terms inline-expand and info panels get extra weight. */
   beginnerMode?: boolean
   /**
@@ -64,6 +74,7 @@ export function TutorialContent({
   content,
   glossary,
   subTutorials,
+  techniques = [],
   beginnerMode = false,
   recipeContext = null,
 }: TutorialContentProps): ReactNode {
@@ -83,6 +94,7 @@ export function TutorialContent({
           node={node}
           glossary={glossary}
           subTutorials={subTutorials}
+          techniques={techniques}
           beginnerMode={beginnerMode}
           recipeContext={recipeContext}
         />
@@ -94,6 +106,7 @@ export function TutorialContent({
 interface RenderContext {
   glossary: GlossaryRef[]
   subTutorials: SubTutorialRef[]
+  techniques: TechniqueRef[]
   beginnerMode: boolean
   recipeContext: RecipeRenderContext | null
 }
@@ -102,6 +115,7 @@ interface RenderNodeProps {
   node: TipTapNode
   glossary: GlossaryRef[]
   subTutorials: SubTutorialRef[]
+  techniques: TechniqueRef[]
   beginnerMode: boolean
   recipeContext: RecipeRenderContext | null
 }
@@ -110,10 +124,11 @@ function RenderNode({
   node,
   glossary,
   subTutorials,
+  techniques,
   beginnerMode,
   recipeContext,
 }: RenderNodeProps): ReactNode {
-  const ctx: RenderContext = { glossary, subTutorials, beginnerMode, recipeContext }
+  const ctx: RenderContext = { glossary, subTutorials, techniques, beginnerMode, recipeContext }
   const attrs = (node.attrs ?? {}) as Record<string, unknown>
 
   switch (node.type) {
@@ -367,6 +382,7 @@ function renderChildren(
       node={n}
       glossary={ctx.glossary}
       subTutorials={ctx.subTutorials}
+      techniques={ctx.techniques}
       beginnerMode={ctx.beginnerMode}
       recipeContext={ctx.recipeContext}
     />
@@ -414,14 +430,18 @@ function splitTokenSegments(text: string): TextSegment[] {
 }
 
 // Sort marks to a deterministic outer-to-inner order so nesting is stable.
+// `techniqueLink` and `glossaryTooltip` both render anchor-like wrappers and
+// can't legally nest inside each other in HTML; the author UI only allows
+// one or the other on a given selection, but the sort order pins the rule.
 const MARK_ORDER: Record<string, number> = {
   link: 0,
-  glossaryTooltip: 1,
-  bold: 2,
-  italic: 3,
-  underline: 4,
-  strike: 5,
-  code: 6,
+  techniqueLink: 1,
+  glossaryTooltip: 2,
+  bold: 3,
+  italic: 4,
+  underline: 5,
+  strike: 6,
+  code: 7,
 }
 
 function sortMarks(marks: TipTapMark[]): TipTapMark[] {
@@ -468,6 +488,19 @@ function wrapMark(mark: TipTapMark, children: ReactNode, ctx: RenderContext): Re
         >
           {children}
         </GlossaryTooltip>
+      )
+    }
+    case 'techniqueLink': {
+      const techniqueSlug = stringOrUndef(attrs.techniqueSlug)
+      if (!techniqueSlug) return <>{children}</>
+      return (
+        <TechniqueLink
+          techniqueSlug={techniqueSlug}
+          label={stringOrUndef(attrs.label) ?? ''}
+          techniques={ctx.techniques}
+        >
+          {children}
+        </TechniqueLink>
       )
     }
     default:

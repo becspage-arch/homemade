@@ -13,6 +13,7 @@ import { TutorialContent } from '../tutorial-content/tutorial-content'
 import type {
   GlossaryRef,
   SubTutorialRef,
+  TechniqueRef,
   TipTapNode,
 } from '../tutorial-content/types'
 import { extractCookingSteps } from './extract-steps'
@@ -43,6 +44,7 @@ interface Props {
   body: TipTapNode | null
   glossary: GlossaryRef[]
   subTutorials: SubTutorialRef[]
+  techniques: TechniqueRef[]
   beginnerMode: boolean
   autoEnableByDefault: boolean
   children: ReactNode
@@ -65,6 +67,7 @@ export function CookingModeShell(props: Props) {
     body,
     glossary,
     subTutorials,
+    techniques,
     beginnerMode,
     autoEnableByDefault,
     children,
@@ -147,6 +150,7 @@ export function CookingModeShell(props: Props) {
           body={body}
           glossary={glossary}
           subTutorials={subTutorials}
+          techniques={techniques}
           beginnerMode={beginnerMode}
           stepIndex={stepIndex}
           setStepIndex={setStepIndex}
@@ -167,6 +171,7 @@ interface ReaderProps {
   body: TipTapNode | null
   glossary: GlossaryRef[]
   subTutorials: SubTutorialRef[]
+  techniques: TechniqueRef[]
   beginnerMode: boolean
   stepIndex: number
   setStepIndex: (v: number) => void
@@ -179,6 +184,7 @@ function CookingModeReader(props: ReaderProps) {
     body,
     glossary,
     subTutorials,
+    techniques,
     beginnerMode,
     stepIndex,
     setStepIndex,
@@ -288,6 +294,7 @@ function CookingModeReader(props: ReaderProps) {
                 content={ingredientsNode}
                 glossary={glossary}
                 subTutorials={subTutorials}
+                techniques={techniques}
                 beginnerMode={beginnerMode}
                 recipeContext={null}
               />
@@ -302,6 +309,7 @@ function CookingModeReader(props: ReaderProps) {
               content={pageBodyNode}
               glossary={glossary}
               subTutorials={subTutorials}
+              techniques={techniques}
               beginnerMode={beginnerMode}
               recipeContext={null}
             />

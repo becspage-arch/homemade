@@ -7,7 +7,11 @@ import './tutorial-form.css'
 
 import { captureClientEvent } from '@/lib/client-analytics'
 import { TiptapEditor } from '@/components/admin/editor/tiptap-editor'
-import type { GlossaryRef, TutorialRef } from '@/components/admin/editor/types'
+import type {
+  GlossaryRef,
+  TechniqueRef,
+  TutorialRef,
+} from '@/components/admin/editor/types'
 import { CategorySubCategoryFields, type CategoryOption, type SubCategoryOption } from './category-sub-category-fields'
 import { SlugField } from './slug-field'
 import { TagPicker, type TagOption } from './tag-picker'
@@ -76,6 +80,7 @@ interface TutorialFormProps {
   tags: TagOption[]
   glossary: GlossaryRef[]
   tutorials: TutorialRef[]
+  techniques: TechniqueRef[]
   media: MediaOption[]
   cloudflareDeliveryHash: string | null
 }
@@ -127,6 +132,7 @@ export function TutorialForm({
   tags,
   glossary,
   tutorials,
+  techniques,
   media,
   cloudflareDeliveryHash,
 }: TutorialFormProps) {
@@ -580,6 +586,7 @@ export function TutorialForm({
             initialContent={defaults.body}
             glossary={glossary}
             tutorials={tutorials}
+            techniques={techniques}
             hiddenInputName="body"
             onChange={setPreviewBody}
             defaultServings={parseTime(servings)}
@@ -603,6 +610,7 @@ export function TutorialForm({
             body={previewBody}
             glossary={glossary}
             tutorials={tutorials}
+            techniques={techniques}
             title={title}
             subtitle={subtitle}
             excerpt={excerpt}

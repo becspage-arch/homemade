@@ -2,18 +2,21 @@
 
 import { useState, useMemo } from 'react'
 import type { Editor } from '@tiptap/core'
-import type { GlossaryRef } from './types'
+import type { GlossaryRef, TechniqueRef } from './types'
 
 interface ToolbarProps {
   editor: Editor
   glossary: GlossaryRef[]
+  techniques: TechniqueRef[]
   /** Default servings to seed onto a freshly inserted ingredients-list block. */
   defaultServings?: number | null
 }
 
-export function Toolbar({ editor, glossary, defaultServings }: ToolbarProps) {
+export function Toolbar({ editor, glossary, techniques, defaultServings }: ToolbarProps) {
   const [glossaryOpen, setGlossaryOpen] = useState(false)
   const [glossarySearch, setGlossarySearch] = useState('')
+  const [techniqueOpen, setTechniqueOpen] = useState(false)
+  const [techniqueSearch, setTechniqueSearch] = useState('')
 
   const filtered = useMemo(() => {
     if (!glossarySearch.trim()) return glossary.slice(0, 30)
@@ -27,7 +30,21 @@ export function Toolbar({ editor, glossary, defaultServings }: ToolbarProps) {
       .slice(0, 30)
   }, [glossary, glossarySearch])
 
+  const filteredTechniques = useMemo(() => {
+    if (!techniqueSearch.trim()) return techniques.slice(0, 30)
+    const q = techniqueSearch.trim().toLowerCase()
+    return techniques
+      .filter(
+        (t) =>
+          t.title.toLowerCase().includes(q) ||
+          t.slug.toLowerCase().includes(q) ||
+          t.categoryName.toLowerCase().includes(q),
+      )
+      .slice(0, 30)
+  }, [techniques, techniqueSearch])
+
   const isGlossaryActive = editor.isActive('glossaryTooltip')
+  const isTechniqueActive = editor.isActive('techniqueLink')
 
   return (
     <div className="sticky top-0 z-20 -mx-1 mb-3 flex flex-wrap items-center gap-1 border-b border-[var(--color-linen-grey)] bg-[var(--color-linen-cream)] px-1 py-2">
@@ -197,6 +214,22 @@ export function Toolbar({ editor, glossary, defaultServings }: ToolbarProps) {
           }}
           active={isGlossaryActive}
         />
+        <Btn
+          label={isTechniqueActive ? 'technique ✓' : 'technique'}
+          onClick={() => {
+            if (isTechniqueActive) {
+              editor.chain().focus().unsetTechniqueLink().run()
+              return
+            }
+            const { from, to } = editor.state.selection
+            if (from === to) {
+              alert('Select the technique word(s) you want to link, then click technique.')
+              return
+            }
+            setTechniqueOpen(true)
+          }}
+          active={isTechniqueActive}
+        />
       </Group>
 
       <Group>
@@ -258,6 +291,93 @@ export function Toolbar({ editor, glossary, defaultServings }: ToolbarProps) {
           }
         />
       </Group>
+
+      {techniqueOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-start justify-center bg-black/30 px-4 pt-24"
+          onClick={() => setTechniqueOpen(false)}
+        >
+          <div
+            className="w-full max-w-lg rounded-sm border border-[var(--color-linen-grey)] bg-[var(--color-linen-cream)] p-5 shadow-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="mb-3 flex items-center justify-between">
+              <h3
+                className="text-lg text-[var(--color-espresso)]"
+                style={{ fontFamily: 'var(--font-fraunces)' }}
+              >
+                Link to a technique
+              </h3>
+              <button
+                type="button"
+                onClick={() => setTechniqueOpen(false)}
+                className="text-xs uppercase tracking-[0.25em] text-[var(--color-warm-taupe)] hover:text-[var(--color-sage)]"
+                style={{ fontFamily: 'var(--font-lora)' }}
+              >
+                close
+              </button>
+            </div>
+            <input
+              type="search"
+              autoFocus
+              value={techniqueSearch}
+              onChange={(e) => setTechniqueSearch(e.target.value)}
+              placeholder="Search by title, slug or category…"
+              className="block w-full border-b border-[var(--color-linen-grey)] bg-transparent px-1 py-2 outline-none focus:border-[var(--color-sage)]"
+              style={{ fontFamily: 'var(--font-lora)' }}
+            />
+            <ul className="mt-3 max-h-72 overflow-y-auto divide-y divide-[var(--color-linen-grey)]">
+              {filteredTechniques.length === 0 && (
+                <li
+                  className="py-3 text-sm italic text-[var(--color-warm-taupe)]"
+                  style={{ fontFamily: 'var(--font-lora)' }}
+                >
+                  {techniques.length === 0
+                    ? 'No technique tutorials published yet. Wrap the words anyway — the link goes live once the technique is authored.'
+                    : 'No matches.'}
+                </li>
+              )}
+              {filteredTechniques.map((t) => (
+                <li key={t.slug}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const { from, to } = editor.state.selection
+                      const label = from !== to
+                        ? editor.state.doc.textBetween(from, to, ' ')
+                        : t.title
+                      editor
+                        .chain()
+                        .focus()
+                        .setTechniqueLink({
+                          techniqueSlug: t.slug,
+                          label,
+                        })
+                        .run()
+                      setTechniqueOpen(false)
+                      setTechniqueSearch('')
+                    }}
+                    className="block w-full py-2 text-left hover:bg-[var(--color-soft-parchment)]"
+                  >
+                    <span
+                      className="block text-[var(--color-espresso)]"
+                      style={{ fontFamily: 'var(--font-fraunces)' }}
+                    >
+                      {t.title}
+                    </span>
+                    <span
+                      className="block text-xs italic text-[var(--color-warm-taupe)]"
+                      style={{ fontFamily: 'var(--font-lora)' }}
+                    >
+                      {t.categoryName} · {t.slug}
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
 
       {glossaryOpen && (
         <div

@@ -34,7 +34,20 @@ export interface SubTutorialRef {
   heroThumbnailUrl: string | null
 }
 
+/**
+ * Reference to a technique tutorial pointed at by a `techniqueLink` mark.
+ * Resolved at page-render time from the slugs collected out of the body
+ * by `loadContentRefs`. Slug is the stable id; title shows in the hover
+ * popover; categorySlug builds the href.
+ */
+export interface TechniqueRef {
+  slug: string
+  title: string
+  categorySlug: string
+}
+
 export interface TutorialContentRefs {
   glossary: GlossaryRef[]
   subTutorials: SubTutorialRef[]
+  techniques: TechniqueRef[]
 }

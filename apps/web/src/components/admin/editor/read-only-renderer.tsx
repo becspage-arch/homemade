@@ -10,6 +10,7 @@ import { SuppliesCard } from './extensions/supplies-card'
 import { SubTutorialCard } from './extensions/sub-tutorial-card'
 import { PullQuote } from './extensions/pull-quote'
 import { GlossaryTooltip } from './extensions/glossary-tooltip'
+import { TechniqueLink } from './extensions/technique-link'
 import type { GlossaryRef, TutorialRef } from './types'
 
 import './editor.css'
@@ -41,6 +42,7 @@ export function ReadOnlyRenderer({
       SubTutorialCard,
       PullQuote,
       GlossaryTooltip,
+      TechniqueLink,
     ],
     content,
     editorProps: {

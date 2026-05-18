@@ -43,7 +43,16 @@ const KNOWN_NODES = new Set([
   'troubleshooter',
   'ingredientsList',
 ])
-const KNOWN_MARKS = new Set(['bold', 'italic', 'underline', 'strike', 'code', 'link', 'glossaryTooltip'])
+const KNOWN_MARKS = new Set([
+  'bold',
+  'italic',
+  'underline',
+  'strike',
+  'code',
+  'link',
+  'glossaryTooltip',
+  'techniqueLink',
+])
 
 interface Node {
   type: string

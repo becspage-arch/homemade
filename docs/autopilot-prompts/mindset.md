@@ -236,6 +236,12 @@ Use `TodoWrite` to chunk the run. For each entry:
    - **Journal prompt sets open with 1–2 warm-up prompts** before the
      narrow ones. Target 5–6 prompts per set.
    - **Zero em-dashes in titles.** Voice-check doesn't scan titles.
+   - **Technique linking does not apply to Mindset.** Leave
+     `techniqueSlugs[]` and `criticalTechniques[]` empty (or omit) and
+     never wrap practice-type words in `techniqueLink` marks. Mindset
+     "techniques" are practice types — sub-categories on the Tutorial
+     row, not separate technique tutorials. See
+     `docs/mindset-author.md` for the full rationale.
 3. Self-critique against the voice rules AND every entry in
    `docs/common-issues.md` AND `docs/mindset-anti-tells.md`. Write to
    `docs/mindset-bulk-${BATCH_ID}-briefs/<slug>.json`.

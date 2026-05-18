@@ -219,6 +219,12 @@ recipe in the slice:
 2. Draft the brief JSON following `docs/tutorial-author.md` v5. Self-critique
    against the voice rules AND every entry in `docs/common-issues.md`.
    Write the JSON to `docs/bulk-batch-${BATCH_ID}-briefs/<slug>.json`.
+   Populate the new `techniqueSlugs[]` and `criticalTechniques[]` arrays
+   per `docs/tutorial-author.md` § "Technique linking", and wrap the
+   technique words in the body with `techniqueLink` marks (the link
+   gracefully falls back to plain text when the technique tutorial
+   isn't authored yet — wrap the words anyway so the link goes live
+   automatically once it is).
 3. Voice-check the draft:
    `pnpm --filter "@homemade/db" run tutorial:voice-check -- docs/bulk-batch-${BATCH_ID}-briefs/<slug>.json`.
    On errors, rewrite — up to **3 retries**. On the 3rd failure, drop the

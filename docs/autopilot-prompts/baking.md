@@ -218,6 +218,12 @@ Use `TodoWrite` to chunk the run. For each recipe:
    - Em-dash pairs in `sourceNotes` are the leading failure mode —
      rewrite as colons or split sentences. Never two em-dashes in one
      paragraph; never two in one sentence.
+   - Populate `techniqueSlugs[]` and `criticalTechniques[]` per
+     `docs/tutorial-author.md` § "Technique linking", and wrap the
+     technique words in the body with `techniqueLink` marks (link
+     falls back to plain text when the technique tutorial isn't
+     authored yet — wrap anyway, the link goes live automatically
+     once it is).
 3. Voice-check:
    `pnpm --filter "@homemade/db" run tutorial:voice-check -- docs/baking-bulk-${BATCH_ID}-briefs/<slug>.json`.
    3-retry cap on errors; drop and log on the 3rd failure.

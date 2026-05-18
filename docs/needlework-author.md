@@ -232,6 +232,8 @@ to need it. For now:
   "glossaryTerms": [
     { "slug": "away-knot", "term": "Away knot", "definition": "A starting knot tied 8-10 cm from where the first stitch lands; the tail is later worked into the back of the cloth and the knot is snipped off." }
   ],
+  "techniqueSlugs": ["needlework-away-knot", "needlework-thread-burying"],
+  "criticalTechniques": ["needlework-away-knot"],
   "body": { "type": "doc", "content": [ /* … */ ] }
 }
 ```
@@ -850,3 +852,28 @@ technique slug that doesn't exist in the database as a published
 `Tutorial`, the upload script appends a line to
 `docs/missing-techniques.md`. A future technique-authoring session
 walks this file.
+
+## Technique linking
+
+Tutorials reference foundational technique tutorials inline so a reader
+who needs to learn the underlying technique can step into it without
+leaving the page. Two surfaces work together:
+
+- **Inline `techniqueLink` mark** on a span of body text. Set
+  `attrs.techniqueSlug` to the technique tutorial's slug and
+  `attrs.label` to the wrapped text. The renderer turns it into a
+  hover-popover + click-through anchor, or falls back to plain text
+  when the technique tutorial isn't authored yet (the link goes live
+  the moment it does — wrap the words anyway).
+- **Top-level arrays** on the JSON: `techniqueSlugs[]` carries every
+  technique slug referenced in the body, deduplicated.
+  `criticalTechniques[]` is the subset without which the tutorial
+  doesn't work; every entry must also appear in `techniqueSlugs[]`.
+
+The self-critique pass must check coverage: every `techniqueLink` mark's
+slug appears in `techniqueSlugs[]`, every entry in `techniqueSlugs[]`
+appears at least once in the body inside a `techniqueLink` mark, and
+every `criticalTechniques[]` entry is also in `techniqueSlugs[]`.
+
+See `docs/tutorial-author.md` § "Technique linking" for the full mark
+shape and when-to-wrap rules.

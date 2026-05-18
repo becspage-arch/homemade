@@ -159,6 +159,8 @@ The knitting-specific shape on top of the cooking template:
   "glossaryTerms": [
     { "slug": "long-tail-cast-on", "term": "Long-tail cast-on", "definition": "…" }
   ],
+  "techniqueSlugs": ["knitting-long-tail-cast-on", "knitting-kitchener-stitch"],
+  "criticalTechniques": ["knitting-long-tail-cast-on"],
   "body": { "type": "doc", "content": [ … ] }
 }
 ```
@@ -448,3 +450,28 @@ hat, dishcloth) leave the schedule empty — none are long enough arcs.
 2. **Servings vs yieldDescription.** Knitting doesn't carry servings.
    PATTERN's finished-size goes in `finishedSizeText`.
 3. **freezeNotes reality.** Always `false` for knitting.
+
+## Technique linking
+
+Tutorials reference foundational technique tutorials inline so a reader
+who needs to learn the underlying technique can step into it without
+leaving the page. Two surfaces work together:
+
+- **Inline `techniqueLink` mark** on a span of body text. Set
+  `attrs.techniqueSlug` to the technique tutorial's slug and
+  `attrs.label` to the wrapped text. The renderer turns it into a
+  hover-popover + click-through anchor, or falls back to plain text
+  when the technique tutorial isn't authored yet (the link goes live
+  the moment it does — wrap the words anyway).
+- **Top-level arrays** on the JSON: `techniqueSlugs[]` carries every
+  technique slug referenced in the body, deduplicated.
+  `criticalTechniques[]` is the subset without which the tutorial
+  doesn't work; every entry must also appear in `techniqueSlugs[]`.
+
+The self-critique pass must check coverage: every `techniqueLink` mark's
+slug appears in `techniqueSlugs[]`, every entry in `techniqueSlugs[]`
+appears at least once in the body inside a `techniqueLink` mark, and
+every `criticalTechniques[]` entry is also in `techniqueSlugs[]`.
+
+See `docs/tutorial-author.md` § "Technique linking" for the full mark
+shape and when-to-wrap rules.

@@ -10,12 +10,13 @@ import { SuppliesCard } from './extensions/supplies-card'
 import { SubTutorialCard } from './extensions/sub-tutorial-card'
 import { PullQuote } from './extensions/pull-quote'
 import { GlossaryTooltip } from './extensions/glossary-tooltip'
+import { TechniqueLink } from './extensions/technique-link'
 import { ProductCard } from './extensions/product-card'
 import { VarietiesPanel } from './extensions/varieties-panel'
 import { Troubleshooter } from './extensions/troubleshooter'
 import { IngredientsList } from './extensions/ingredients-list'
 import { Toolbar } from './toolbar'
-import type { GlossaryRef, TutorialRef } from './types'
+import type { GlossaryRef, TechniqueRef, TutorialRef } from './types'
 
 import './editor.css'
 
@@ -23,6 +24,13 @@ interface TiptapEditorProps {
   initialContent: JSONContent
   glossary: GlossaryRef[]
   tutorials: TutorialRef[]
+  /**
+   * Published technique tutorials available to wrap inline via the
+   * `techniqueLink` mark. Loaded by the form server component, seeded into
+   * the editor storage and used by the toolbar's technique picker. Empty
+   * lists are fine — the toolbar shows "no techniques yet" in that case.
+   */
+  techniques: TechniqueRef[]
   /** Name of the hidden input that stays in sync with the editor JSON. */
   hiddenInputName: string
   /** Fires on every editor update with the latest JSON. Optional. */
@@ -43,6 +51,7 @@ export function TiptapEditor({
   initialContent,
   glossary,
   tutorials,
+  techniques,
   hiddenInputName,
   onChange,
   defaultServings,
@@ -73,6 +82,7 @@ export function TiptapEditor({
       SubTutorialCard,
       PullQuote,
       GlossaryTooltip,
+      TechniqueLink,
       ProductCard,
       VarietiesPanel,
       Troubleshooter,
@@ -102,7 +112,8 @@ export function TiptapEditor({
     // eslint-disable-next-line react-hooks/immutability
     editor.storage.subTutorialCard = { tutorials }
     editor.storage.glossaryTooltip = { glossary }
-  }, [editor, tutorials, glossary])
+    editor.storage.techniqueLink = { techniques }
+  }, [editor, tutorials, glossary, techniques])
 
   return (
     <div className="rounded-sm border border-[var(--color-linen-grey)] bg-[var(--color-linen-cream)]">
@@ -110,6 +121,7 @@ export function TiptapEditor({
         <Toolbar
           editor={editor}
           glossary={glossary}
+          techniques={techniques}
           defaultServings={defaultServings ?? null}
         />
       )}

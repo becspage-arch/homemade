@@ -75,6 +75,13 @@
   cursor: help;
 }
 
+.ProseMirror .technique-link {
+  border-bottom: 1px solid var(--color-sage);
+  background: rgba(107, 117, 88, 0.05);
+  padding: 0 0.1em;
+  cursor: pointer;
+}
+
 .ProseMirror p.is-editor-empty:first-child::before {
   content: attr(data-placeholder);
   color: var(--color-warm-taupe);

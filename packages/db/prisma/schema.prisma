@@ -615,6 +615,29 @@ model Tutorial {
   requiredClayBodies     String[] @default([])
   requiredCraftMaterials String[] @default([])
 
+  // ──────────────────────────────────────────────────────────────────────────
+  // Technique linking (phase_technique_linking_001). Set on every tutorial
+  // that references one or more technique tutorials inline (via the
+  // `techniqueLink` mark in the body). Indexed so the future "Recipes using
+  // this technique" rail can resolve `WHERE :slug = ANY(techniqueSlugs)` in
+  // a single cheap query against the GIN index.
+  //
+  // `techniqueSlugs` is the full set — every technique slug the body
+  // references, deduplicated. `criticalTechniques` is the subset without
+  // which the recipe doesn't work (a shortcrust recipe references
+  // `blind-baking`, `creaming-method-fat-and-sugar`, `rubbing-in`; only
+  // `blind-baking` is critical — the others are incidental). The split
+  // lets the rail rank "recipes that genuinely depend on this technique"
+  // above "recipes that mention it in passing".
+  //
+  // Empty on technique tutorials themselves and on rows whose author hasn't
+  // wrapped any technique words yet — the inline link infrastructure ships
+  // before the backfill, and pre-launch rows land an empty array.
+  // ──────────────────────────────────────────────────────────────────────────
+
+  techniqueSlugs     String[] @default([])
+  criticalTechniques String[] @default([])
+
   planDayMornings    UserPlanDay[]          @relation("PlanDayMorningPractice")
   planDayEvenings    UserPlanDay[]          @relation("PlanDayEveningPractice")
   planDayAnchors     UserPlanDay[]          @relation("PlanDayAnchorPractice")
@@ -667,6 +690,7 @@ model Tutorial {
   @@index([type, requiresWheel])
   @@index([requiredClayBodies], type: Gin)
   @@index([requiredCraftMaterials], type: Gin)
+  @@index([techniqueSlugs], type: Gin)
 }
 
 enum TutorialType {

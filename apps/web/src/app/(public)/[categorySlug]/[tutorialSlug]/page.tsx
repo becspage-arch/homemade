@@ -340,6 +340,7 @@ export default async function TutorialPage({ params }: PageProps) {
           content={body}
           glossary={refs.glossary}
           subTutorials={refs.subTutorials}
+          techniques={refs.techniques}
           beginnerMode={beginnerMode}
           recipeContext={
             isRecipe
@@ -366,6 +367,7 @@ export default async function TutorialPage({ params }: PageProps) {
       body={body}
       glossary={refs.glossary}
       subTutorials={refs.subTutorials}
+      techniques={refs.techniques}
       beginnerMode={beginnerMode}
       autoEnableByDefault={Boolean(currentUser?.cookingModeAutoEnable)}
     >

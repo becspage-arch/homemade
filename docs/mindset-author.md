@@ -280,6 +280,17 @@ Rules:
   worth defining (e.g. `eft-tapping`, `meridian-point`, `karate-chop-point`,
   `setup-statement`, `tapping-round`, `reframe`). Create them once;
   later practices reuse the slug.
+- **Technique linking does not apply to Mindset.** The schema fields
+  `techniqueSlugs` and `criticalTechniques` and the `techniqueLink`
+  body mark exist for recipes that point at foundational technique
+  *tutorials* (blind-baking, deglazing, brunoise, etc.). Mindset
+  "techniques" are practice *types* — sub-categories on the Tutorial
+  row, not separate technique tutorials. Leave both arrays empty (or
+  omit) and never wrap practice-type names in `techniqueLink` marks.
+  The dedicated per-practice-type intro readings (see
+  `project_mindset_structure`) handle methodology, and those are
+  surfaced by `subCategorySlug` + `subTutorialCard`, not by
+  technique-linking infrastructure.
 - `practice` is required when `type` is `PRACTICE` or `READING`.
   Every Mindset metadata field on the Tutorial row gets set from this
   block.

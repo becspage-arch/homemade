@@ -218,6 +218,8 @@ shape, with every field a recipe should fill:
   "glossaryTerms": [
     { "slug": "deglaze", "term": "Deglaze", "definition": "…" }
   ],
+  "techniqueSlugs": ["blind-baking", "creaming-method-fat-and-sugar"],
+  "criticalTechniques": ["blind-baking"],
   "body": { "type": "doc", "content": [ … ] }
 }
 ```
@@ -449,6 +451,74 @@ unless the brief says otherwise. Each heading is an H2 unless flagged.
 
 Do not add other top-level structure. No "About this recipe" heading.
 No "Cooking notes" sub-section. No "Conclusion".
+
+## Technique linking
+
+Recipes link to technique tutorials inline so a reader who needs to learn
+the supporting technique can step into it without leaving the page. Two
+surfaces:
+
+1. **Inline `techniqueLink` mark on the body.** Wrap technique words in a
+   `techniqueLink` mark whose `attrs.techniqueSlug` matches the technique
+   tutorial's slug. The renderer turns it into a hover-popover + click-
+   through anchor. Falls back to plain text when the technique tutorial
+   isn't published yet — the link goes live the moment it lands, no
+   re-edit needed. Wrap the technique words even when the technique
+   doesn't exist yet, so the link auto-activates.
+
+2. **Top-level `techniqueSlugs` + `criticalTechniques` arrays.**
+   `techniqueSlugs` is every technique slug the body references,
+   deduplicated. `criticalTechniques` is the subset without which the
+   recipe doesn't work (a shortcrust recipe references blind-baking,
+   creaming-method, rubbing-in — only blind-baking is critical, the
+   others are incidental). Every `criticalTechniques` entry must also
+   appear in `techniqueSlugs`.
+
+Mark shape inside the body:
+
+```json
+{
+  "type": "text",
+  "text": "blind bake",
+  "marks": [
+    { "type": "techniqueLink",
+      "attrs": { "techniqueSlug": "blind-baking", "label": "blind bake" } }
+  ]
+}
+```
+
+When to wrap:
+
+- Wrap the first prose mention of a foundational technique (blind bake,
+  brunoise, fold, deglaze, sweat, temper, laminate, cream, rub in).
+- Wrap each distinct technique once per body. Don't re-wrap the same
+  technique in every paragraph — readers get the link from the first
+  mention.
+- Don't wrap a passing reference that doesn't earn a tutorial (e.g.
+  "stir", "season", "rest" on their own — those are basic actions, not
+  techniques).
+- Don't wrap inside an `ingredientsList` `prepNote` — those render
+  outside the body renderer.
+
+`techniqueSlugs` rules:
+
+- One entry per distinct technique referenced anywhere in the body.
+  Deduplicate.
+- Slug pattern: lowercase letters, numbers, hyphens. Match the published
+  technique tutorial's slug; check `/admin/tutorials` for the canonical
+  spelling.
+- Empty array is fine when the recipe doesn't lean on any tagged
+  technique.
+
+`criticalTechniques` rules:
+
+- The narrow subset whose tutorials the reader genuinely needs to follow
+  the recipe. Typically 0–3 entries per recipe.
+- The test: "if a reader skipped the technique tutorial, would the
+  recipe still produce a good result?" If no, it's critical. If yes,
+  it's incidental — keep it in `techniqueSlugs`, leave it out of
+  `criticalTechniques`.
+- Every entry must also be in `techniqueSlugs`.
 
 ## Scaling tokens in method prose
 
@@ -828,7 +898,15 @@ Checklist:
       the same voice rules as the recipe body.
     - **TECHNIQUE** and **READING** rows never carry a schedule —
       the upload script will reject them.
-15. Walk every entry in `docs/common-issues.md`. For each entry,
+15. **Technique linking coverage.** Walk every `techniqueLink` mark in
+    the body and check its `attrs.techniqueSlug` appears in the top-
+    level `techniqueSlugs[]` array. Walk every entry in
+    `techniqueSlugs[]` and check it appears at least once in the body
+    inside a `techniqueLink` mark. Walk every entry in
+    `criticalTechniques[]` and check it also appears in
+    `techniqueSlugs[]`. Registered-but-not-marked-inline and marked-
+    inline-but-not-registered are both wrong.
+16. Walk every entry in `docs/common-issues.md`. For each entry,
     re-read the draft asking the single question "does this draft
     exhibit the pattern this entry describes?" If yes, rewrite the
     affected lines using the entry's **How to fix** guidance, then
