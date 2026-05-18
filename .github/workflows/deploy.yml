@@ -3,6 +3,20 @@ name: Deploy
 on:
   push:
     branches: [main]
+    paths:
+      - 'apps/**'
+      - 'packages/**'
+      - 'infra/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+      - 'turbo.json'
+      - 'tsconfig.json'
+      - 'Dockerfile'
+      - 'Dockerfile.*'
+      - 'next.config.*'
+      - 'prisma.config.ts'
+      - '.github/workflows/deploy.yml'
   workflow_dispatch:
 
 env:

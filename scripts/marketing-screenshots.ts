@@ -4,7 +4,7 @@
  * fixtures, and writes PNGs into apps/mobile/marketing/screenshots/.
  *
  * Usage:
- *   SPLASH_PASSWORD=518491 pnpm screenshots
+ *   SPLASH_PASSWORD=your-password pnpm screenshots
  *   BASE_URL=http://localhost:3000 SPLASH_PASSWORD=... pnpm screenshots
  *
  * The script is fail-soft per-frame — if one route 500s or the cooking-mode
