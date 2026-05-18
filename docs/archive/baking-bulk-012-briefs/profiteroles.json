@@ -1,0 +1,146 @@
+{
+  "slug": "profiteroles",
+  "title": "Profiteroles",
+  "subtitle": "Choux buns filled with cream and finished with chocolate sauce",
+  "excerpt": "Choux pastry piped into small rounds and baked hollow. Filled with lightly sweetened whipped cream and served with warm chocolate sauce poured over. The choux puffs in the oven by steam alone.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Profiteroles appear in Escoffier, A Guide to Modern Cookery (1907), Project Gutenberg, as a classic of French pâtisserie. Choux pastry (pâte à choux) was developed in France in the 16th century and has been used for cream-filled buns, eclairs, and gougères since the 18th century. The chocolate sauce accompaniment is documented in late 19th century French confectionery sources. The baked choux shell technique is consistent across French and British pâtisserie guides from before 1928.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "20 to 24 profiteroles",
+    "prepMinutes": 25,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The unfilled choux shells keep in an airtight tin for 1 day. Recrisp in a 180°C oven for 5 minutes. Fill and sauce within 1 hour of serving.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["specialOccasion", "weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 125,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "conventional oven. Fan at 180°C. Do not open the oven in the first 20 minutes; the steam inside the buns must set the structure before they are disturbed.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "saucepan-medium", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "piping-bag", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "choux-steam", "term": "choux steam expansion", "definition": "Choux pastry bakes hollow because the high water content in the dough (from the water and eggs) converts to steam in the hot oven. The steam inflates the bun, while the egg proteins and flour set into a rigid shell around the air pocket. The oven door must remain closed for the first 20 minutes; opening it early releases the steam, and the buns collapse and cannot recover." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Profiteroles rely on " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "choux-steam", "term": "choux steam expansion" } }], "text": "choux steam expansion" },
+          { "type": "text", "text": " to create the hollow shell. The dough is made by cooking flour into a boiling butter-and-water mixture, which gelatinises the starch and allows it to absorb far more egg than a raw flour dough. Beat in the eggs gradually; the dough must be smooth and glossy before it goes into the piping bag." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The choux" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 250, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cut into cubes" } },
+          { "type": "ingredientItem", "attrs": { "slug": "fine-sea-salt", "amount": 0.25, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 125, "unit": "g", "prepNote": "sifted" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg", "amount": 4, "unit": "large" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The cream filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "double-cream", "amount": 300, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 1, "unit": "tbsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 0.5, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The chocolate sauce" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "dark-chocolate", "amount": 150, "unit": "g", "prepNote": "70% cocoa, roughly chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "double-cream", "amount": 150, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "golden-syrup", "amount": 1, "unit": "tbsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the choux pastry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 200°C conventional. Line two baking trays with baking paper. Bring the water, butter, salt, and sugar to a rolling boil in a saucepan. Remove from the heat and immediately tip in all the flour at once. Beat vigorously with a wooden spoon until the mixture forms a smooth ball that pulls away from the sides of the pan. Return to low heat and stir for 1 minute to dry the paste slightly. Transfer to a bowl and leave to cool for 5 minutes. Add the eggs one at a time, beating thoroughly after each addition until the dough is smooth, glossy, and falls from the spoon in a slow, heavy ribbon. If it is too stiff, add a little extra beaten egg." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pipe and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Transfer the dough to a piping bag fitted with a 1 cm plain nozzle. Pipe rounds of about 3 cm diameter onto the trays, leaving 5 cm between each. Dip a finger in water and smooth the tip of each mound. Bake for 25 to 30 minutes without opening the oven, until the buns are deep golden brown and feel hollow when tapped on the base. Pierce each bun with a skewer immediately after removing from the oven to release steam. Cool on a rack." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill and sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whip the cream with the icing sugar and vanilla to firm peaks. Transfer to a piping bag. Push the nozzle into the base of each bun and fill with cream. For the chocolate sauce, heat the cream and golden syrup in a saucepan until just below simmering, remove from the heat, and add the chopped chocolate. Leave for 1 minute, then stir until smooth. Pour warm over the filled profiteroles and serve immediately." }]
+      }
+    ]
+  }
+}

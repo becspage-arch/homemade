@@ -1,0 +1,126 @@
+{
+  "slug": "apple-pie-double-crust",
+  "title": "Apple pie",
+  "subtitle": "Double-crust shortcrust with spiced Bramley filling",
+  "excerpt": "A deep-dish apple pie with a shortcrust double crust: lid and base made from the same butter pastry, filled with sharp Bramley apples, sugar, and spice. The pastry bakes golden and crisp while the apples soften inside.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Apple pie appears in British recipe collections from the 16th century onward. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136, documents apple pie with a double crust. The Bramley apple, developed in Nottinghamshire in the early 19th century, is the standard British cooking apple for pies; its high acidity and rapid breakdown under heat are the defining characteristics. Hannah Glasse, The Art of Cookery (1747), Project Gutenberg, also includes apple pies.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 pie, 23 cm, serves 6",
+    "prepMinutes": 30,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unbaked: assemble the pie, wrap tightly, and freeze for up to 3 months. Bake from frozen at 200°C for 55 to 60 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pastry dough keeps refrigerated for 2 days. The assembled unbaked pie keeps refrigerated for 1 day before baking.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": ["weekendBake", "specialOccasion"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 350,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "conventional oven. Fan at 180°C. High heat is needed to crisp the double pastry layer; lower heat leaves the base undercooked.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "double-crust-steam-vent", "term": "steam vent", "definition": "A double-crust pie traps moisture from the fruit as it cooks. Without a steam vent, the pressure of the steam lifts and splits the lid, flooding it with juice. Before baking, cut two or three slashes in the centre of the pastry lid with a sharp knife to allow steam to escape cleanly." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A double-crust apple pie needs a pastry that stays crisp under a juicy filling. All-butter shortcrust at a 2:1 flour-to-fat ratio does this. Bramley apples break down quickly in the oven, which is what the pie needs; dessert apples stay too firm. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "double-crust-steam-vent", "term": "steam vent" } }], "text": "steam vent" },
+          { "type": "text", "text": " in the lid is not optional." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The pastry" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 350, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 175, "unit": "g", "prepNote": "cold, cut into cubes" } },
+          { "type": "ingredientItem", "attrs": { "slug": "fine-sea-salt", "amount": 0.25, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 1, "unit": "tbsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg", "amount": 1, "unit": "large", "prepNote": "beaten, for glaze" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 1, "unit": "tbsp", "prepNote": "for sprinkling" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "bramley-apple", "amount": 1000, "unit": "g", "prepNote": "peeled, cored, and sliced 5 mm thick" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "soft-brown-sugar", "amount": 50, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ground-cinnamon", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ground-nutmeg", "amount": 0.25, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 2, "unit": "tbsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "juice-lemon", "amount": 1, "unit": "tbsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pastry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rub the cold butter into the flour, salt, and sugar until the mixture resembles coarse breadcrumbs. Add 4 to 5 tablespoons of cold water, one at a time, mixing with a knife until the dough just comes together. Divide into two thirds (for the base) and one third (for the lid). Flatten each into a disc, wrap, and refrigerate for 30 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the filling and assemble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 200°C conventional. Toss the sliced apples with both sugars, the spices, flour, and lemon juice. Roll the larger pastry disc to 3 mm thick and use it to line a 23 cm pie dish, leaving an overhang. Fill with the apple mixture, mounding slightly in the centre. Roll out the smaller disc and lay it over the filling. Trim the overhang to 1 cm, fold it under, and crimp the edges to seal. Brush with beaten egg and sprinkle with caster sugar. Cut two or three slashes in the centre as a steam vent. Bake for 35 to 40 minutes until deep golden brown and the filling is bubbling through the vents. Leave for 15 minutes before serving." }]
+      }
+    ]
+  }
+}

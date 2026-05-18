@@ -182,6 +182,23 @@ generic claims rather than concrete facts, etc.)
   **Why:** The size suffix is not part of the slug.
   **How to fix:** Use `pie-dish`.
 
+- **Baking sweets sub-category slug is `sweets-confectionery`** `[block]`
+  Pattern: `"subCategorySlug": "sweets"` on a baking sweets/confectionery entry.
+  **Why:** The sub-category for baking sweets was created as `sweets-confectionery`
+  (not `sweets`). This mismatch has blocked uploads in at least 3 batches (bulk-001,
+  bulk-012, likely others).
+  **How to fix:** Always use `"subCategorySlug": "sweets-confectionery"` for baking
+  confectionery entries (fudge, honeycomb, toffee, marzipan, etc.).
+
+- **`frying-pan` not a valid tool slug** `[block]`
+  Pattern: `{ "slug": "frying-pan", ... }` in `recipeTools`.
+  **Why:** The master tool slugs include a size suffix: `frying-pan-26` (26 cm, default),
+  `frying-pan-30` (large, 30 cm), `small-frying-pan` (20 cm). The bare slug `frying-pan`
+  does not exist. First seen in baking bulk-012 (welsh-cakes).
+  **How to fix:** Use `frying-pan-26` for standard-size recipes. For anything needing
+  a flat cast-iron surface (Welsh cakes, griddle pancakes), `frying-pan-26` or
+  `cast-iron-skillet` are both valid.
+
 - **`servings` and `yieldDescription` are mutually exclusive** `[block]`
   Pattern: a recipe with both `"servings": 6` and `"yieldDescription": "one
   30 cm × 20 cm pie"` set simultaneously. Upload fails or silently sets

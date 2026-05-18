@@ -1,0 +1,158 @@
+{
+  "slug": "croissants",
+  "title": "Croissants",
+  "subtitle": "Laminated yeasted pastry with 27 flaky layers",
+  "excerpt": "The classic French laminated pastry: a yeasted dough layered with butter through three sets of folds, shaped into crescents, proved overnight, and baked until shatteringly crisp. The process takes two days but most of it is resting time.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Croissants derive from the Austrian kipferl, brought to France in the early 19th century and adapted into the laminated butter pastry form by Viennese bakers in Paris. Escoffier, A Guide to Modern Cookery (1907), Project Gutenberg, documents the laminated yeast pastry technique. The crescent shape and the full lamination with a butter block are documented in French baking literature from before 1928. The characteristic 27-layer structure comes from three single folds (letter folds), each tripling the number of layers.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "12 croissants",
+    "prepMinutes": 60,
+    "cookMinutes": 22,
+    "restingMinutes": 180,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze shaped unbaked croissants after the overnight retard. Prove from frozen at room temperature for 3 to 4 hours, then bake.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The shaped croissants retard overnight in the refrigerator (step 4); this is integral to the recipe, not optional. Bake fresh the next morning.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "french",
+    "mealType": "breakfast",
+    "mood": ["weekendBake", "specialOccasion"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "conventional oven. Fan at 180°C. The initial high heat is essential for the pastry to shatter and colour before the butter melts out.",
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "croissant-lamination", "term": "croissant lamination", "definition": "Lamination is the process of layering cold butter into yeasted dough through repeated rolling and folding. The butter block is enclosed in the dough, then the combined piece is rolled out and folded like a letter three times, chilling for 30 minutes between folds. Each fold multiplies the layers: after three folds the dough has 27 distinct alternating layers of dough and butter. When baked, the water in the butter converts to steam, pushing the layers apart to create the flaky, airy structure of a croissant." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Croissants are a two-day project with long, passive resting times between short active steps. The skill is not speed but temperature control: the butter must remain cold throughout " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "croissant-lamination", "term": "croissant lamination" } }], "text": "croissant lamination" },
+          { "type": "text", "text": " so it stays in distinct layers rather than blending into the dough. If the butter begins to feel greasy or the dough tears, return everything to the refrigerator for 20 minutes before continuing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The dough" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 500, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "fast-action-dried-yeast", "amount": 7, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "fine-sea-salt", "amount": 10, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 50, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 300, "unit": "ml", "prepNote": "lukewarm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": "softened, for the dough" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The butter block" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 250, "unit": "g", "prepNote": "cold, preferably 84% fat or higher" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The glaze" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "egg", "amount": 1, "unit": "large", "prepNote": "beaten with a pinch of salt" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Day 1: make the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mix the flour, yeast, salt, and sugar in a large bowl. Add the warm milk and softened butter and mix to a smooth dough. Knead for 5 minutes until the dough is smooth and elastic. Shape into a rectangle, wrap tightly, and refrigerate for 1 hour." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the butter block" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Beat the cold butter with a rolling pin between two sheets of baking paper until it forms a pliable but still cold 15 by 15 cm square. The butter should bend without cracking; if it snaps, beat it a little more. Keep refrigerated until ready to use." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "First, second, and third fold" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Roll the chilled dough into a 30 by 20 cm rectangle. Place the butter block in the centre. Fold the dough over the butter to enclose it completely, pinching the edges to seal. Turn the package 90 degrees and roll out to 60 by 20 cm. Fold the bottom third up and the top third down, like a letter. This is the first fold. Wrap and refrigerate for 30 minutes. Repeat the rolling and folding twice more, chilling for 30 minutes between each fold. After the third fold, the dough has 27 butter layers. Wrap and refrigerate for 1 hour or overnight." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and overnight retard" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Roll the laminated dough into a 40 by 30 cm rectangle, 4 mm thick. Cut 12 long triangles. Roll each triangle from the wide base toward the tip, stretching the tip slightly as you roll, and curve the ends inward into a crescent shape. Place on lined baking trays, spaced well apart. Cover loosely with oiled cling film and refrigerate overnight." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Day 2: prove and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Remove the croissants from the refrigerator and leave to prove at room temperature for 2 to 3 hours until visibly puffed and jiggly when the tray is shaken. Preheat the oven to 200°C conventional. Brush the croissants gently with beaten egg, taking care not to press down or let the glaze pool in the folds. Bake for 18 to 22 minutes until deep amber and shatteringly crisp. Leave on the tray for 5 minutes before serving." }]
+      }
+    ]
+  }
+}
