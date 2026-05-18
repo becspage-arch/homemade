@@ -706,4 +706,43 @@ export const STITCHES: StitchSeed[] = [
     notes:
       'Joins two live edges into a single seam by knitting matched stitches together and binding off as you go. UK pattern books call it "cast-off".',
   },
+  {
+    slug: 'knitting-long-tail-cast-on',
+    craft: 'knitting',
+    canonicalName: 'Long-tail cast on',
+    ukName: 'Long-tail cast on',
+    usName: 'Long-tail cast on',
+    ukAbbreviation: 'lt-co',
+    usAbbreviation: 'lt-co',
+    category: 'foundation',
+    difficulty: 'BEGINNER',
+    notes:
+      'Two-strand cast-on worked with a measured tail and the working yarn — produces the first row and the cast-on edge in one pass. The default starting method in most modern UK knitting patterns.',
+  },
+  {
+    slug: 'knitting-knit-cast-on',
+    craft: 'knitting',
+    canonicalName: 'Knitted cast on',
+    ukName: 'Knitted cast on',
+    usName: 'Knitted cast on',
+    ukAbbreviation: 'k-co',
+    usAbbreviation: 'k-co',
+    category: 'foundation',
+    difficulty: 'BEGINNER',
+    notes:
+      'A single-strand cast-on worked by knitting into the previous stitch and slipping the new loop back onto the left needle. Slower than the long-tail; useful for casting on mid-row.',
+  },
+  {
+    slug: 'knitting-cast-off',
+    craft: 'knitting',
+    canonicalName: 'Cast off',
+    ukName: 'Cast off',
+    usName: 'Bind off',
+    ukAbbreviation: 'co',
+    usAbbreviation: 'bo',
+    category: 'bind-off',
+    difficulty: 'BEGINNER',
+    notes:
+      'The standard finished edge — knit two, pass the first stitch over the second and off the needle, continue. UK "cast off" equals US "bind off".',
+  },
 ]
