@@ -27,15 +27,18 @@ import { config as loadEnv } from 'dotenv'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-// Repo root is three levels up from packages/db/scripts
-loadEnv({ path: resolve(__dirname, '../../..', '.env.credentials') })
+import {
+  prisma,
+  TutorialStatus,
+  TutorialType,
+  sweepForTechnique,
+} from '../src/index.js'
 
-// Imports that touch process.env (via the Prisma adapter) must run *after*
-// loadEnv. Same pattern as `typesense-backfill.ts`.
-const { prisma, TutorialStatus, TutorialType, sweepForTechnique } = await import(
-  '../src/index.js'
-)
+const __dirname = dirname(fileURLToPath(import.meta.url))
+// Repo root is three levels up from packages/db/scripts. dotenv silently
+// no-ops when the file isn't there — the operator can also `export
+// DATABASE_URL=...` inline before invoking the script.
+loadEnv({ path: resolve(__dirname, '../../..', '.env.credentials') })
 
 interface PerTechnique {
   slug: string
