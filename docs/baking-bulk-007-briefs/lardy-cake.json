@@ -1,0 +1,141 @@
+{
+  "slug": "lardy-cake",
+  "title": "Lardy cake",
+  "subtitle": "Wiltshire enriched bread layered with lard, sugar and spice",
+  "excerpt": "A traditional Wiltshire lardy cake built on a yeasted dough rolled and layered with lard, sugar, sultanas, and mixed spice. The layers caramelise during baking into a sticky, flaky crumb unlike any other bread.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Lardy cake is a regional English speciality associated with Wiltshire and Oxfordshire, historically made on pig-killing day when lard was plentiful. The layering technique is unique in the British bread tradition and produces a layered, almost flaky crumb without laminated pastry. Jane Grigson's English Food (1974) and Elizabeth David's English Bread and Yeast Cookery (1977) are the primary documentary sources for the Wiltshire method.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 tin (about 600 g baked weight), 9 pieces",
+    "prepMinutes": 30,
+    "cookMinutes": 30,
+    "restingMinutes": 105,
+    "chillingMinutes": null,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Cool completely. Freeze individual pieces for up to 2 months. Reheat in a 160°C oven for 8 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough can be made and left to bulk ferment overnight in the fridge. Roll and layer in the morning and prove at room temperature before baking.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 450,
+      "hydrationPercent": 55,
+      "saltPercent": 2,
+      "yeastPercent": 1.5,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 45,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": 3,
+      "laminationRests": 3,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven, middle shelf",
+      "steamMethod": null,
+      "decoratingTechnique": "sugar sprinkled over the top before baking",
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "square-cake-tin", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "enriched-dough", "term": "enriched dough", "definition": "A bread dough containing fat (here lard), sugar, and sometimes egg in addition to flour, water, and yeast. Fat coats the gluten strands, making the crumb softer and richer than a lean bread." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Lardy cake is neither bread nor pastry but something between the two. The layering of lard into the proved dough creates pockets that open during baking, while the sugar caramelises against the tin base. Turn it out upside down while still hot: the sticky base becomes the glistening top." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "tip" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Keep the lard cold and firm when layering. If it melts into the dough during rolling, put the tin in the fridge for 10 minutes before continuing. The layers need to stay distinct to create the characteristic flaky pull." }]
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Dough" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "strong-bread-flour", "quantity": 450, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "yeast-fast-action", "quantity": 7, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "fine-sea-salt", "quantity": 8, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "whole-milk", "quantity": 250, "unit": "ml", "prepNote": "lukewarm", "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Filling and top" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "lard", "quantity": 100, "unit": "g", "prepNote": "cold, cut into small pieces", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 100, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "sultanas", "quantity": 100, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "mixed-spice", "quantity": 5, "unit": "g", "prepNote": "1 tsp", "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dough and bulk ferment, 1 hour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the {{strong-bread-flour}}, {{yeast-fast-action}}, and {{fine-sea-salt}} in a large bowl. Add the {{whole-milk}} and mix to a dough. This is an " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "enriched-dough" } }], "text": "enriched dough" },
+          { "type": "text", "text": " that will be soft but not sticky. Knead for 8 minutes until smooth. Cover and leave at room temperature for 1 hour until roughly doubled." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Layer and second prove, 45 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Grease a 20 x 20 cm square tin generously with lard. Turn the dough onto a lightly floured surface and roll it to a rectangle roughly 30 x 40 cm. Scatter one-third of the {{lard}} pieces, one-third of the {{caster-sugar}}, one-third of the {{sultanas}}, and a pinch of {{mixed-spice}} over two-thirds of the dough. Fold the untopped third over the centre, then fold the bottom third up (like a letter). Roll again to the same rectangle and repeat the layering twice more, using all the filling. Fold the dough one final time and press it gently into the tin. Scatter a little extra {{caster-sugar}} over the top. Prove uncovered for 45 minutes until puffed." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake, 28–32 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 200°C fan. Bake for 28 to 32 minutes until the top is deep golden and the cake has shrunk slightly from the sides. The sugar at the edges will have caramelised. While still hot, run a knife around the edges and turn the tin upside down onto a board or rack. Leave the tin in place for 2 minutes so the caramelised base drips back over the top, then lift the tin away. Eat warm." }]
+      }
+    ]
+  }
+}

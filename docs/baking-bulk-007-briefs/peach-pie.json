@@ -1,0 +1,151 @@
+{
+  "slug": "peach-pie",
+  "title": "Peach pie",
+  "subtitle": "Double-crust summer pie with spiced peach filling",
+  "excerpt": "A classic double-crust American peach pie with a buttery shortcrust pastry and a lightly spiced filling of fresh peaches thickened with cornflour. The fruit slumps during baking and the juices bubble through the vents.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Peach pie is one of the canonical American summer pies, associated with Southern states where white and yellow peaches are grown commercially. It appears in virtually every American general cookbook from the nineteenth century onward. This version follows the double-crust method documented in Joy of Cooking (Rombauer, Becker and Becker, 2006) and the pastry ratio used by Dorie Greenspan in Baking from My Home to Yours (2006).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 x 23 cm pie, 8 slices",
+    "prepMinutes": 40,
+    "cookMinutes": 50,
+    "restingMinutes": 60,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the fully assembled, unbaked pie. Bake from frozen, adding 15 to 20 minutes to the bake time. Or freeze the baked pie; reheat in a 160°C oven for 20 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pastry can be made 3 days ahead and refrigerated. Assemble and bake on the day of serving for the best pastry texture.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 350,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven; start at 200°C for 20 minutes, reduce to 180°C for the remaining time",
+      "steamMethod": null,
+      "decoratingTechnique": "egg wash brushed over the top crust, with vents cut before baking",
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "blind-baking", "term": "blind baking", "definition": "Baking an unfilled pastry case with weights (dried beans or ceramic baking beans) to prevent the base from puffing up and the sides from collapsing. The weights are removed partway through baking to allow the base to dry out and colour." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Peaches release a lot of juice during baking. The cornflour thickens those juices into a glossy gel that holds the filling together when sliced. Too little cornflour and the filling is watery; too much and it becomes gluey. The amount here is calibrated for ripe, fresh fruit. Overripe peaches release more liquid: add an extra teaspoon of cornflour." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "tip" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Use ripe peaches that smell sweet. Underripe peaches bake into a mealy, acidic filling. If all you can find are hard peaches, leave them at room temperature for 1 to 2 days before making the pie. The pie is not a recipe for rescuing poor fruit." }]
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Shortcrust pastry (makes enough for top and base)" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "plain-flour", "quantity": 350, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 175, "unit": "g", "prepNote": "cold, cut into small cubes", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 20, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "fine-sea-salt", "quantity": 4, "unit": "g", "prepNote": "half a tsp", "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Peach filling" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "peaches", "quantity": 900, "unit": "g", "prepNote": "ripe, peeled, stoned, sliced (about 7 medium peaches)", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 150, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "cornflour", "quantity": 30, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "lemon-juice", "quantity": 1, "unit": "tbsp", "prepNote": "freshly squeezed", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "cinnamon-ground", "quantity": 3, "unit": "g", "prepNote": "half a tsp", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "fine-sea-salt", "quantity": 2, "unit": "g", "prepNote": "a pinch", "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Egg wash" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "eggs", "quantity": 1, "unit": null, "prepNote": "beaten with 1 tbsp milk", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "demerara-sugar", "quantity": 15, "unit": "g", "prepNote": "to scatter", "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pastry and chill, 1 hour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rub the cold {{unsalted-butter}} into the {{plain-flour}}, {{caster-sugar}}, and {{fine-sea-salt}} until the mixture resembles coarse breadcrumbs with some pea-sized pieces of butter remaining. Add 5 to 7 tablespoons of ice-cold water, a tablespoon at a time, mixing with a fork until the dough just comes together. Divide into two discs (one slightly larger). Wrap and refrigerate for at least 1 hour. This pastry does not use " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blind-baking" } }], "text": "blind baking" },
+          { "type": "text", "text": ": it bakes through under the hot fruit filling." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the filling and assemble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Toss the sliced {{peaches}} with the {{caster-sugar}}, {{cornflour}}, {{lemon-juice}}, {{cinnamon-ground}}, and {{fine-sea-salt}}. Leave to macerate for 15 minutes. Roll the larger pastry disc on a lightly floured surface to a circle about 30 cm in diameter. Line the pie dish, leaving overhang. Fill with the peach mixture. Roll the second disc and lay it over the filling. Trim to 2 cm overhang, crimp the edges together, and cut 5 vents in the top crust." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake, 45–55 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 200°C fan. Brush the top crust with the {{eggs}} wash and scatter the {{demerara-sugar}} over. Bake for 20 minutes at 200°C, then reduce to 180°C and bake for a further 25 to 30 minutes until the crust is deep golden and the juices are bubbling through the vents. Cool on a rack for at least 1 hour before slicing." }]
+      }
+    ]
+  }
+}

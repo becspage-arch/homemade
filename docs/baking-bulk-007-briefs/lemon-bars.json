@@ -1,0 +1,128 @@
+{
+  "slug": "lemon-bars",
+  "title": "Lemon bars",
+  "subtitle": "Shortbread base with a sharp lemon curd topping",
+  "excerpt": "A crisp shortbread base supporting a tart, set lemon curd. The curd layer is thicker than a lemon tart filling and sets firmly enough to cut clean. Finished with a dusting of icing sugar.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Lemon bars are an American baking classic of the mid-twentieth century, documented in the first Joy of Cooking editions to include bar cookies and standardised in Betty Crocker's Cookbook (1969). The ratio of curd to shortbread base, and the use of lemon juice (rather than zest alone) to flavour the topping, distinguish the American lemon bar from the British lemon tart tradition. Dorie Greenspan's Baking from My Home to Yours (2006) contains the most studied contemporary version.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 tin (20 x 20 cm), 16 bars",
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "restingMinutes": 30,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze cut bars in a single layer, then bag. Thaw in the fridge overnight. Re-dust with icing sugar before serving.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The bars keep in the fridge for up to 4 days. The shortbread stays crisp. Dust with icing sugar only when ready to serve.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 175,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 160,
+      "bakeTemperatureNote": "fan oven; shortbread first at 170°C, then reduce to 160°C for the curd",
+      "steamMethod": null,
+      "decoratingTechnique": "icing sugar dusted over the chilled bars just before serving",
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "square-cake-tin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The curd layer must go onto a freshly baked, hot shortbread base. If the base cools first, the curd will form a visible boundary layer rather than bonding to the shortbread. Pour the curd over the base as soon as it comes out of the oven." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "tip" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Use freshly squeezed lemon juice, not bottled. Bottled juice is pasteurised and has a flatter, more acidic flavour without the fragrant top notes. Four large lemons give about 120 ml of juice for this recipe." }]
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Shortbread base" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "plain-flour", "quantity": 175, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 115, "unit": "g", "prepNote": "cold, cut into cubes", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "icing-sugar", "quantity": 40, "unit": "g", "prepNote": "sifted", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "fine-sea-salt", "quantity": 3, "unit": "g", "prepNote": "a pinch", "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Lemon curd topping" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "eggs", "quantity": 3, "unit": null, "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 200, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "lemon-juice", "quantity": 120, "unit": "ml", "prepNote": "freshly squeezed (about 4 large lemons)", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "lemon", "quantity": 2, "unit": null, "prepNote": "zest only", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "plain-flour", "quantity": 30, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "icing-sugar", "quantity": 20, "unit": "g", "prepNote": "to dust", "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and bake the shortbread, 20 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 170°C fan. Grease and line a 20 x 20 cm square tin. Rub the cold {{unsalted-butter}} into the {{plain-flour}}, {{icing-sugar}}, and {{fine-sea-salt}} until the mixture resembles fine breadcrumbs. Press firmly and evenly into the base of the tin. Bake for 18 to 20 minutes until the shortbread is pale golden. Do not turn off the oven; reduce to 160°C." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pour the curd and finish baking, 22–25 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "While the base bakes, whisk the {{eggs}}, {{caster-sugar}}, {{lemon-juice}}, {{lemon}} zest, and {{plain-flour}} together until smooth. As soon as the shortbread comes out of the oven, pour the curd evenly over the hot base. Bake at 160°C for 22 to 25 minutes until the curd is just set and does not wobble when shaken. Cool in the tin to room temperature, then refrigerate for at least 1 hour. Dust with {{icing-sugar}} and cut into 16 bars." }]
+      }
+    ]
+  }
+}

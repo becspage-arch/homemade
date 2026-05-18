@@ -1,0 +1,141 @@
+{
+  "slug": "soft-pretzel-soda",
+  "title": "Soft pretzels",
+  "subtitle": "Chewy baked pretzels with a baking soda crust",
+  "excerpt": "Bavarian-style soft pretzels built on a straight yeasted dough, briefly dipped in alkaline solution before baking. The soda bath gives the characteristic mahogany gloss and chewy bite without lye.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Soft pretzels (Brezeln) originate in southern Germany and Alsace, where they remain a staple of bakeries and beer halls. The traditional lye (sodium hydroxide) bath is replaced here with baking soda solution for home safety. This method follows the technique documented in The German Kitchen (Teresa Grassl, 2020) and Peter Reinhart's The Bread Baker's Apprentice (2001).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 pretzels",
+    "prepMinutes": 30,
+    "cookMinutes": 15,
+    "restingMinutes": 60,
+    "chillingMinutes": null,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze baked pretzels in a bag for up to 1 month. Reheat from frozen in a 180°C oven for 8 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The shaped, unbaked pretzels can be refrigerated overnight on the baking tray before the soda dip and baking the following day.",
+    "dietaryFlags": [],
+    "cuisine": "german",
+    "mealType": "side",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 56,
+      "saltPercent": 2,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 15,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "fan oven, baking stone or heavy tray preheated",
+      "steamMethod": null,
+      "decoratingTechnique": "coarse sea salt scattered before baking",
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "alkaline-wash", "term": "alkaline wash", "definition": "A solution of baking soda and water in which pretzels are briefly dipped before baking. The high pH gelatinises the outer starch, producing the characteristic dark brown crust and chewy bite that a plain water wash cannot achieve." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The pretzel shape is a skill worth practising. The dough is stiffer than most bread doughs, which makes it easy to roll and hold a shape. The shaping step is quick once the motion is understood: roll to a long rope, loop the ends up and cross them twice, press the ends down onto the base of the loop." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "tip" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Work quickly when dipping in the soda bath and let each pretzel drain for a few seconds before placing it on the tray. A slotted spatula makes this easier. Do not skip the coarse salt: it is structural, not decorative." }]
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Dough" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "strong-bread-flour", "quantity": 500, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "yeast-fast-action", "quantity": 7, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "fine-sea-salt", "quantity": 10, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 10, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 30, "unit": "g", "prepNote": "softened", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "whole-milk", "quantity": 280, "unit": "ml", "prepNote": "lukewarm", "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Soda bath and topping" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "bicarbonate-of-soda", "quantity": 50, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "flaked-sea-salt", "quantity": 10, "unit": "g", "prepNote": "coarse, for topping", "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and bulk ferment, 1 hour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the {{strong-bread-flour}}, {{yeast-fast-action}}, {{fine-sea-salt}}, and {{caster-sugar}} in a large bowl. Add the {{unsalted-butter}} and {{whole-milk}}. Mix until a dough forms, then knead by hand or in a stand mixer on medium for 8 minutes. The dough should be smooth, stiff, and only slightly tacky. Cover and leave to bulk ferment at room temperature for 1 hour until roughly doubled." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape the pretzels" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Divide the dough into 8 equal pieces (about 110 g each). Roll each piece into a rope about 60 cm long, thicker in the centre and tapered at the ends. Form a U shape, cross the ends over each other twice, fold the ends down onto the base of the U, and press firmly to seal. Place on a lightly oiled baking tray lined with baking paper. Rest for 15 minutes while you prepare the soda bath." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soda bath and bake, 12–15 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Preheat the oven to 220°C fan with a heavy baking tray inside. Bring 1 litre of water to the boil in a wide saucepan, add the {{bicarbonate-of-soda}} (it will foam briefly), and reduce to a gentle simmer. This is the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "alkaline-wash" } }], "text": "alkaline wash" },
+          { "type": "text", "text": ". Using a slotted spatula, lower each pretzel into the bath for 30 seconds, then lift, drain briefly, and return to the lined tray. Scatter {{flaked-sea-salt}} over the thick centre of each pretzel. Bake for 12 to 15 minutes until deep mahogany brown all over. Cool on a rack and eat within a few hours." }]
+      }
+    ]
+  }
+}

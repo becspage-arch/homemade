@@ -1,0 +1,132 @@
+{
+  "slug": "pane-di-casa",
+  "title": "Pane di casa",
+  "subtitle": "Simple Italian house bread with a crisp crust",
+  "excerpt": "A plain Italian white loaf with a thin, crackly crust and an even, soft crumb. Straight dough, no pre-ferment, baked hot. Everyday bread for the table.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Pane di casa (house bread) describes the everyday loaf baked in Italian homes across regions. The recipe varies by region (Puglia, Tuscany, Lazio each have their own proportions) but the principle is the same: a simple yeasted white dough baked at high heat. This version follows central Italian proportions documented in Carol Field's The Italian Baker (1985), the foundational English-language source on Italian bread.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (about 800 g baked weight)",
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "restingMinutes": 90,
+    "chillingMinutes": null,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Cool completely. Freeze whole or in thick slices for up to 2 months. Refresh in a 200°C oven for 5 minutes from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough can be made and left to prove overnight in the fridge. Bring to room temperature for 30 minutes before baking.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "side",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 64,
+      "saltPercent": 2,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 30,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "fan oven, baking stone or heavy tray preheated for 30 minutes",
+      "steamMethod": "ice cubes on a tray beneath for the first 10 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "autolyse", "term": "autolyse", "definition": "A short rest of 20 to 30 minutes after combining flour and water, before adding yeast or salt. Water absorbs into the flour and gluten begins to form without any kneading. The resulting dough needs less kneading and has better extensibility." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pane di casa rewards heat. The oven needs to be fully preheated and the baking surface properly hot before the loaf goes in. That burst of heat from below is what sets the crust quickly and forces a last rise in the first few minutes of baking." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "tip" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Score the loaf generously before it goes in: one deep cut along the length, or two diagonal slashes. An unscored loaf will burst at a weak point and bake lopsided. A lame or a sharp serrated knife both work." }]
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Dough" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "strong-bread-flour", "quantity": 500, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "yeast-fast-action", "quantity": 7, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "fine-sea-salt", "quantity": 10, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "olive-oil", "quantity": 2, "unit": "tbsp", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "whole-milk", "quantity": 320, "unit": "ml", "prepNote": "lukewarm", "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix, autolyse, and knead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the {{strong-bread-flour}} and {{whole-milk}} in a large bowl. Mix until no dry flour remains, then cover and rest for 20 minutes. This " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "autolyse" } }], "text": "autolyse" },
+          { "type": "text", "text": " lets the gluten develop with minimal effort. Add the {{yeast-fast-action}}, {{fine-sea-salt}}, and {{olive-oil}}. Knead by hand for 8 to 10 minutes until the dough is smooth, elastic, and passes the windowpane test: a small piece should stretch thin enough to see light through without tearing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment and shape, 1 hour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Shape the dough into a ball and place in a lightly oiled bowl. Cover and leave to bulk ferment at room temperature for 1 hour until doubled. Turn out onto a lightly floured surface. Knock back gently, then shape into an oval (batard): fold the sides to the centre, roll toward you to create surface tension, and seal the seam. Place seam-side down on a lined baking tray. Cover loosely and prove for 30 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Score and bake, 28–32 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 220°C fan with a heavy baking tray inside and a roasting tin on the shelf below. Score the top of the loaf with one deep cut along its length. Slide the tray into the oven, throw four ice cubes into the lower tin, and close the door. Bake for 28 to 32 minutes until the crust is golden-brown and the loaf sounds hollow when tapped on the base. Cool on a rack for at least 30 minutes before cutting." }]
+      }
+    ]
+  }
+}

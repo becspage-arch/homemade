@@ -1,0 +1,141 @@
+{
+  "slug": "polish-sernik",
+  "title": "Polish sernik",
+  "subtitle": "Classic Polish baked cheesecake with quark and a pastry base",
+  "excerpt": "The classic Polish baked cheesecake made with quark (twaróg) rather than cream cheese. Denser and less sweet than the American version, with a thin shortcrust pastry base and a gently set, slightly granular filling.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Sernik (from ser, meaning cheese) is one of the defining cakes of Polish cuisine and appears on every festive table at Easter and Christmas. It differs from American cheesecake in using twaróg (Polish quark), a drained fresh curd cheese with a slightly grainy texture and mild acidity, rather than cream cheese. The pastry base is always a short, sweet pastry rather than a biscuit crumb. This recipe follows the classic method documented in Aniela Gniewkowska's Traditional Polish Cooking (1996) and Malgorzata Caprari's Polish Cooking (2001).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 x 23 cm round cheesecake, 10 slices",
+    "prepMinutes": 30,
+    "cookMinutes": 60,
+    "restingMinutes": 60,
+    "chillingMinutes": 240,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Cool and chill completely, then wrap tightly and freeze for up to 2 months. Thaw overnight in the fridge.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Sernik is better the next day. Make it the day before, refrigerate overnight, and serve at room temperature.",
+    "dietaryFlags": [],
+    "cuisine": "polish",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 150,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 160,
+      "bakeTemperatureNote": "fan oven; low and slow prevents cracking",
+      "steamMethod": null,
+      "decoratingTechnique": "icing sugar dusted over once cooled; raisins or sultanas optional through filling",
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "springform-tin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "twarog", "term": "twaróg", "definition": "A Polish fresh curd cheese made by acidifying and draining whole milk. It has a slightly grainy texture and mild lactic acidity. Quark is the closest widely available substitute in the UK; full-fat quark gives the nearest result to the traditional sernik filling." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Sernik is denser and less sweet than American cheesecake. The filling should set firm rather than creamy, and it will have a slightly grainy texture from the quark: that is characteristic, not a fault. If you can find proper twaróg at a Polish delicatessen, use it. If not, full-fat quark is the correct substitute." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "tip" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Do not open the oven door during baking. The sudden temperature drop can cause the top to crack. Once baked, turn the oven off and leave the sernik inside with the door ajar for 30 minutes before removing. This reduces the rate of cooling and keeps the surface intact." }]
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Pastry base" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "plain-flour", "quantity": 150, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 75, "unit": "g", "prepNote": "cold, cubed", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 30, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "eggs", "quantity": 1, "unit": null, "prepNote": "yolk only", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "fine-sea-salt", "quantity": 2, "unit": "g", "prepNote": "a pinch", "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Filling" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "quark", "quantity": 750, "unit": "g", "prepNote": "full-fat", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 175, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "eggs", "quantity": 4, "unit": null, "prepNote": "separated", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 75, "unit": "g", "prepNote": "melted", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "plain-flour", "quantity": 30, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "vanilla-extract", "quantity": 2, "unit": "tsp", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "lemon-juice", "quantity": 1, "unit": "tbsp", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "sultanas", "quantity": 60, "unit": "g", "prepNote": null, "isOptional": true } },
+              { "type": "ingredient", "attrs": { "slug": "icing-sugar", "quantity": 20, "unit": "g", "prepNote": "to dust", "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and blind-bake the pastry base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 180°C fan. Rub the cold {{unsalted-butter}} into the {{plain-flour}}, {{caster-sugar}}, and {{fine-sea-salt}}. Mix in the egg yolk and enough cold water (1 to 2 teaspoons) for the dough to come together. Press into the base of a 23 cm springform tin (no need to roll). Line with baking paper and fill with baking weights. Bake for 15 minutes, then remove the weights and bake for 5 more minutes. This is the base only; the sides of the sernik are set by the filling. Reduce the oven to 160°C." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the filling and bake, 55–65 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Beat the {{quark}} (the closest available substitute for " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "twarog" } }], "text": "twaróg" },
+          { "type": "text", "text": ") with 150 g of the {{caster-sugar}}, the egg yolks, melted {{unsalted-butter}}, {{plain-flour}}, {{vanilla-extract}}, and {{lemon-juice}} until smooth. Fold in the {{sultanas}} if using. In a separate clean bowl, beat the egg whites to soft peaks, then add the remaining 25 g of {{caster-sugar}} and beat to firm peaks. Fold one-third of the egg whites into the quark mixture to loosen it, then fold in the remaining two-thirds. Pour over the pre-baked pastry base. Bake at 160°C for 55 to 65 minutes until the edges are set but the centre still has a slight wobble. Turn the oven off, open the door ajar, and leave for 30 minutes. Cool completely, then refrigerate for at least 4 hours. Dust with {{icing-sugar}} and serve at room temperature." }
+        ]
+      }
+    ]
+  }
+}

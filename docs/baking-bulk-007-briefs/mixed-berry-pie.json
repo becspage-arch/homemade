@@ -1,0 +1,146 @@
+{
+  "slug": "mixed-berry-pie",
+  "title": "Mixed berry pie",
+  "subtitle": "Double-crust pie with blueberries, strawberries, and raspberries",
+  "excerpt": "A double-crust pie with three summer berries thickened with cornflour and scented with lemon. The filling stays juicy without being runny. A lattice top is optional but shows the deep purple filling.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Mixed berry pie is a modern American composition rather than a single regional tradition: older American pies typically use a single fruit. The three-berry combination (blueberry, strawberry, raspberry) became common in American bakeries in the 1990s. This recipe synthesises the double-crust pie method from Joy of Cooking (Rombauer, Becker and Becker, 2006) with the three-berry filling ratio developed in Rose Levy Beranbaum's The Pie and Pastry Bible (1998).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 x 23 cm pie, 8 slices",
+    "prepMinutes": 40,
+    "cookMinutes": 55,
+    "restingMinutes": 60,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unbaked, assembled pie for up to 3 months. Bake from frozen, adding 20 minutes to the total bake time.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Pastry can be made 3 days ahead. Assemble and bake on the day.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 350,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven; start at 200°C for 20 minutes, reduce to 180°C for remaining time",
+      "steamMethod": null,
+      "decoratingTechnique": "lattice top or solid crust with vents, egg washed and scattered with demerara sugar",
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Strawberries have more water than blueberries and raspberries. Halve them rather than leaving them whole: smaller pieces release their liquid faster into the filling during baking, where the cornflour can catch it. Large whole strawberries steam in a pocket of liquid and can make the adjacent pastry soggy." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "tip" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Wait for the filling to cool and set before cutting. A hot pie will have a runny filling; a completely cooled pie (at least 1 hour) will cut cleanly. For the neatest slices, refrigerate overnight and bring to room temperature for 30 minutes before serving." }]
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Shortcrust pastry" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "plain-flour", "quantity": 350, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 175, "unit": "g", "prepNote": "cold, cubed", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 20, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "fine-sea-salt", "quantity": 4, "unit": "g", "prepNote": "half a tsp", "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Berry filling" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "blueberries", "quantity": 300, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "strawberries", "quantity": 250, "unit": "g", "prepNote": "hulled and halved", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "raspberries", "quantity": 200, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 150, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "cornflour", "quantity": 40, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "lemon-juice", "quantity": 2, "unit": "tbsp", "prepNote": "freshly squeezed", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "lemon", "quantity": 1, "unit": null, "prepNote": "zest only", "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Finish" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "eggs", "quantity": 1, "unit": null, "prepNote": "beaten with 1 tbsp milk, for egg wash", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "demerara-sugar", "quantity": 15, "unit": "g", "prepNote": "to scatter", "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pastry and chill, 1 hour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rub the cold {{unsalted-butter}} into the {{plain-flour}}, {{caster-sugar}}, and {{fine-sea-salt}} until the mixture resembles coarse crumbs. Add 5 to 7 tablespoons of ice-cold water, a tablespoon at a time, until the dough just comes together. Divide into two discs (one slightly larger). Wrap and refrigerate for at least 1 hour." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the filling and assemble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Toss the {{blueberries}}, halved {{strawberries}}, and {{raspberries}} with the {{caster-sugar}}, {{cornflour}}, {{lemon-juice}}, and {{lemon}} zest. Leave to macerate for 10 minutes. Roll the larger pastry disc to a 30 cm circle and line the pie dish. Fill with the berry mixture. Roll the second disc and lay it over the top, or cut into strips for a lattice. Trim to 2 cm overhang and crimp the edges. Cut vents if using a solid top." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake, 50–55 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 200°C fan. Brush the top crust with {{eggs}} wash and scatter {{demerara-sugar}} over. Bake for 20 minutes at 200°C, then reduce to 180°C for a further 30 to 35 minutes until the crust is deep golden and the filling is bubbling visibly through the vents or lattice. Cool on a rack for at least 1 hour before cutting." }]
+      }
+    ]
+  }
+}
