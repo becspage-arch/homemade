@@ -86,6 +86,34 @@ export default async function HomePage() {
           Rail stack
         ────────────────────────────────────────────────────────────────── */}
 
+      {data.thisWeeksEditorialPicks.length > 0 && (
+        <HomeRail heading="This week's editorial picks">
+          {data.thisWeeksEditorialPicks.map((t) => (
+            <HomeCard
+              key={t.id}
+              tutorial={t}
+              state={readerStateFor(data.readerState, t.id)}
+            />
+          ))}
+        </HomeRail>
+      )}
+
+      {data.continueMaking.length > 0 && (
+        <HomeRail
+          heading="Continue making"
+          seeAllHref="/me/projects"
+          seeAllLabel="All your projects →"
+        >
+          {data.continueMaking.map((t) => (
+            <HomeCard
+              key={t.id}
+              tutorial={t}
+              state={readerStateFor(data.readerState, t.id)}
+            />
+          ))}
+        </HomeRail>
+      )}
+
       {data.todaysScheduledActions.length > 0 && (
         <HomeRail
           heading="Today's scheduled project actions"
@@ -108,37 +136,13 @@ export default async function HomePage() {
         </HomeRail>
       )}
 
-      {data.continueMaking.length > 0 && (
+      {data.whereYouLeftOff.length > 0 && (
         <HomeRail
-          heading="Continue making"
-          seeAllHref="/me/projects"
-          seeAllLabel="All your projects →"
+          heading="Where you left off"
+          subheading="Projects you started a while back."
+          seeAllHref="/me/projects?status=in-progress"
         >
-          {data.continueMaking.map((t) => (
-            <HomeCard
-              key={t.id}
-              tutorial={t}
-              state={readerStateFor(data.readerState, t.id)}
-            />
-          ))}
-        </HomeRail>
-      )}
-
-      {data.inSeasonNow.length > 0 && (
-        <HomeRail heading="In season right now">
-          {data.inSeasonNow.map((t) => (
-            <HomeCard
-              key={t.id}
-              tutorial={t}
-              state={readerStateFor(data.readerState, t.id)}
-            />
-          ))}
-        </HomeRail>
-      )}
-
-      {data.thisWeeksEditorialPicks.length > 0 && (
-        <HomeRail heading="This week's editorial picks">
-          {data.thisWeeksEditorialPicks.map((t) => (
+          {data.whereYouLeftOff.map((t) => (
             <HomeCard
               key={t.id}
               tutorial={t}
@@ -152,7 +156,7 @@ export default async function HomePage() {
         <HomeRail
           heading="Saved"
           subheading="Things you saved but haven't started yet."
-          seeAllHref="/me/bookmarks"
+          seeAllHref="/me/projects?status=saved"
         >
           {data.savedNotStarted.map((t) => (
             <HomeCard
@@ -164,12 +168,9 @@ export default async function HomePage() {
         </HomeRail>
       )}
 
-      {data.whereYouLeftOff.length > 0 && (
-        <HomeRail
-          heading="Where you left off"
-          subheading="Projects you started a while back."
-        >
-          {data.whereYouLeftOff.map((t) => (
+      {data.inSeasonNow.length > 0 && (
+        <HomeRail heading="In season right now">
+          {data.inSeasonNow.map((t) => (
             <HomeCard
               key={t.id}
               tutorial={t}

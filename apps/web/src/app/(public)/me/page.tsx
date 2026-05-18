@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { prisma, UserProjectStatus } from '@homemade/db'
+import { prisma, TutorialType, UserProjectStatus } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { redirect } from 'next/navigation'
 import { TutorialCard } from '@/components/public/tutorial-card'
@@ -12,11 +12,28 @@ const IN_PROGRESS_LIMIT = 3
 const BOOKMARK_LIMIT = 6
 const COMPLETED_LIMIT = 3
 
+interface CompletedRow {
+  completedAt: Date | null
+  tutorial: {
+    type: TutorialType
+    category: { slug: string; name: string }
+  }
+}
+
+interface Stats {
+  recipesCookedThisMonth: number
+  longestStreak: number
+  mostCookedCategory: { name: string; slug: string; count: number } | null
+}
+
 export default async function MeDashboard() {
   const user = await getCurrentDbUser()
   if (!user) redirect('/sign-in')
 
-  const [counts, inProgress, bookmarks, completed] = await Promise.all([
+  // One COMPLETED query covers both the "Recently completed" rail and the
+  // stats strip — sort by completedAt desc, slice for the rail, fold the
+  // whole set for stats. Userid+status index covers it.
+  const [counts, inProgress, bookmarks, allCompleted] = await Promise.all([
     getReaderCounts(user.id),
     prisma.userProject.findMany({
       where: { userId: user.id, status: UserProjectStatus.IN_PROGRESS },
@@ -59,12 +76,14 @@ export default async function MeDashboard() {
     prisma.userProject.findMany({
       where: { userId: user.id, status: UserProjectStatus.COMPLETED },
       orderBy: { completedAt: 'desc' },
-      take: COMPLETED_LIMIT,
-      include: {
+      select: {
+        id: true,
+        completedAt: true,
         tutorial: {
           select: {
             slug: true,
             title: true,
+            type: true,
             category: { select: { slug: true, name: true } },
           },
         },
@@ -72,8 +91,49 @@ export default async function MeDashboard() {
     }),
   ])
 
+  const completed = allCompleted.slice(0, COMPLETED_LIMIT)
+  const stats = computeStats(allCompleted)
+
   return (
     <>
+      <section className="me-stats-strip" aria-label="Cooking stats">
+        <div className="me-stat">
+          <span className="me-stat-label">Recipes this month</span>
+          <span className="me-stat-value">{stats.recipesCookedThisMonth}</span>
+          <span className="me-stat-detail">
+            {stats.recipesCookedThisMonth === 0
+              ? 'Nothing finished yet this month'
+              : stats.recipesCookedThisMonth === 1
+                ? '1 recipe completed'
+                : `${stats.recipesCookedThisMonth} recipes completed`}
+          </span>
+        </div>
+        <div className="me-stat">
+          <span className="me-stat-label">Longest streak</span>
+          <span className="me-stat-value">
+            {stats.longestStreak === 0
+              ? '–'
+              : `${stats.longestStreak} day${stats.longestStreak === 1 ? '' : 's'}`}
+          </span>
+          <span className="me-stat-detail">
+            {stats.longestStreak === 0
+              ? 'Start a project to begin one'
+              : 'Consecutive days you finished something'}
+          </span>
+        </div>
+        <div className="me-stat">
+          <span className="me-stat-label">Most-cooked category</span>
+          <span className="me-stat-value">
+            {stats.mostCookedCategory ? stats.mostCookedCategory.name : '–'}
+          </span>
+          <span className="me-stat-detail">
+            {stats.mostCookedCategory
+              ? `${stats.mostCookedCategory.count} completed`
+              : 'Complete a project to see this'}
+          </span>
+        </div>
+      </section>
+
       <section>
         <span className="me-section-label">Continue making</span>
         <h2 className="me-section-title">In progress</h2>
@@ -185,6 +245,82 @@ export default async function MeDashboard() {
       </section>
     </>
   )
+}
+
+function computeStats(rows: CompletedRow[]): Stats {
+  const now = new Date()
+  const monthStart = new Date(
+    Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1),
+  )
+
+  let recipesCookedThisMonth = 0
+  const categoryTallies = new Map<
+    string,
+    { slug: string; name: string; count: number }
+  >()
+  const completionDays = new Set<string>()
+
+  for (const row of rows) {
+    if (!row.completedAt) continue
+
+    if (
+      row.tutorial.type === TutorialType.RECIPE &&
+      row.completedAt >= monthStart
+    ) {
+      recipesCookedThisMonth += 1
+    }
+
+    const cat = row.tutorial.category
+    const existing = categoryTallies.get(cat.slug)
+    if (existing) {
+      existing.count += 1
+    } else {
+      categoryTallies.set(cat.slug, { slug: cat.slug, name: cat.name, count: 1 })
+    }
+
+    completionDays.add(dayKey(row.completedAt))
+  }
+
+  const longestStreak = computeLongestStreak(completionDays)
+
+  let mostCookedCategory: Stats['mostCookedCategory'] = null
+  for (const cat of categoryTallies.values()) {
+    if (!mostCookedCategory || cat.count > mostCookedCategory.count) {
+      mostCookedCategory = cat
+    }
+  }
+
+  return { recipesCookedThisMonth, longestStreak, mostCookedCategory }
+}
+
+function dayKey(d: Date): string {
+  // UTC date key so streak logic doesn't drift with timezone-local renders.
+  return `${d.getUTCFullYear()}-${d.getUTCMonth()}-${d.getUTCDate()}`
+}
+
+function computeLongestStreak(days: Set<string>): number {
+  if (days.size === 0) return 0
+  const sorted = Array.from(days)
+    .map((k) => {
+      const [y, m, d] = k.split('-').map((n) => Number.parseInt(n, 10))
+      return Date.UTC(y!, m!, d!)
+    })
+    .sort((a, b) => a - b)
+
+  let longest = 1
+  let current = 1
+  const oneDay = 24 * 60 * 60 * 1000
+  for (let i = 1; i < sorted.length; i += 1) {
+    const prev = sorted[i - 1]!
+    const cur = sorted[i]!
+    if (cur - prev === oneDay) {
+      current += 1
+      if (current > longest) longest = current
+    } else {
+      current = 1
+    }
+  }
+  return longest
 }
 
 function formatShortDate(d: Date): string {
