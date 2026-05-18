@@ -1,0 +1,123 @@
+{
+  "slug": "solyanka",
+  "title": "Solyanka",
+  "subtitle": "Russian sour and smoky meat soup",
+  "excerpt": "A thick, sharply sour soup of smoked meat, gherkins, olives, capers, and tomato — one of the most distinctive soups in Russian cooking. Briny, rich, and not remotely like anything else.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Solyanka (from the word for salt, or from the word for village depending on the derivation) is a Russian soup in three forms: meat (myasnaya), fish (rybnaya), and mushroom (gribovaya). The meat version is the most popular, made with an assortment of smoked and cured meats, pickled cucumbers, olives, and capers in a tomato and stock base. The defining characteristic is its sourness, provided by the gherkins and their brine. The dish was popular in Soviet-era restaurants and has remained a fixture on Russian menus.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": "The texture of the gherkins and olives suffers on freezing. The broth base (before adding pickles and olives) can be frozen.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Make the tomato-meat base in bulk; add pickles and olives per batch when reheating.",
+    "makeAheadNotes": "Improves overnight. Make the full soup the day before and refrigerate; the flavours deepen considerably.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "easternEuropean",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Solyanka is an argument for sourness as a defining flavour in soup. The gherkins, their brine, and the capers provide an acid sharpness that cuts through the smokiness of the meat and the richness of the tomato broth. The olives are an unusual addition — they add depth and a subtle bitterness that you would miss if they were absent. A slice of lemon floated on top at the end is the final gesture: more acid, this time fresh." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Solyanka can absorb many kinds of smoked or cured meat. The version below uses smoked sausage and bacon; you can add leftover cooked beef or ham. More meat makes a richer soup; the flavour profile stays the same." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "stock-beef", "amount": 1200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "smoked-pork-sausage", "amount": 200, "unit": "g", "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "streaky-bacon", "amount": 150, "unit": "g", "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "gherkins", "amount": 4, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olives-black", "amount": 80, "unit": "g", "prepNote": "pitted and halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "capers", "amount": 2, "unit": "tbsp", "prepNote": "rinsed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sunflower-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper-ground", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dill", "amount": 15, "unit": "g", "prepNote": "chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soured-cream", "amount": 150, "unit": "ml", "prepNote": "to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Warm the {{sunflower-oil}} in a large saucepan over medium heat. Add the {{onion}} and cook for 6 minutes until soft. Add the {{streaky-bacon}} and cook for 3 minutes until the fat begins to render. Stir in the {{tomato-puree}} and cook for 2 minutes. Pour in the {{stock-beef}} and bring to a simmer. Add the {{smoked-pork-sausage}} and {{bay-leaves}}. Simmer for 15 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the sour elements and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add the {{gherkins}}, {{olives-black}}, and {{capers}}. Simmer for 10 minutes more. Remove the bay leaves. Taste and season with {{sea-salt-fine}} and {{black-pepper-ground}} — the soup is already quite salty from the smoked meats and pickles, so add salt carefully. Ladle into bowls, float a slice of {{lemon}} on each, scatter with {{dill}}, and add a spoonful of {{soured-cream}} if using." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Soup too salty after adding smoked meats", "cause": "Bacon and sausage already heavily salted before additional seasoning", "fix": "Add no salt until the very end, after tasting. If oversalted, add a raw potato cut in half and simmer for 10 minutes — the potato absorbs some salt. Remove before serving" },
+            { "symptom": "Soup not sour enough despite the gherkins", "cause": "Gherkins too mild, or brine not added", "fix": "Add 2 tablespoons of the gherkin brine from the jar directly to the soup. This is the most direct and effective way to increase sourness" },
+            { "symptom": "Olives dominating the flavour", "cause": "Too many olives or particularly strong variety", "fix": "Reduce to 50 g of olives and rinse them before using to remove excess salt and brine. They should be present but not dominant" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Solyanka was a fixture of Soviet restaurant culture — listed on the menu of every stolovaya (canteen) and restoran (restaurant) from Vladivostok to Kaliningrad, it was one of the few dishes that could be relied upon anywhere in the Soviet Union. The combination of smoked meat with pickled cucumbers and olives seems unlikely to be a committee's idea of a national soup, but it works: the flavours are decisive and the soup is satisfying in the way only a very salty, very sour, very rich soup can be." }]
+      }
+    ]
+  }
+}

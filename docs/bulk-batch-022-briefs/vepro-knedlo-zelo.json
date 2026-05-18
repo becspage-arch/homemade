@@ -1,0 +1,134 @@
+{
+  "slug": "vepro-knedlo-zelo",
+  "title": "Vepřo knedlo zelo",
+  "subtitle": "Czech roast pork with bread dumplings and sauerkraut",
+  "excerpt": "Slow-roasted pork shoulder with caraway and garlic, served with sliced bread dumplings and braised sauerkraut. The Czech national dish — three components, one plate, eaten with a fork and a great deal of satisfaction.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Vepřo knedlo zelo (pork-dumpling-cabbage) is the dish most widely identified as the Czech national meal. Roast pork, houskové knedlíky (bread dumplings), and braised sauerkraut each exist independently in Czech cooking but are rarely served apart in this combination. The dish is a Sunday lunch staple across the country. The pork is typically cooked low and slow until the fat is rendered and the meat pulls apart; the dumplings are sliced rather than served whole; the sauerkraut is braised with onion, caraway, and a pinch of sugar.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 150,
+    "restingMinutes": 20,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": "The pork and sauerkraut can be frozen separately. Dumplings do not freeze well.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pork can be roasted up to a day ahead and reheated covered. Make the dumplings and sauerkraut fresh on the day.",
+    "dietaryFlags": [],
+    "cuisine": "easternEuropean",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "cosy"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "fan 140°C / gas 3",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Vepřo knedlo zelo requires organisation more than skill. The pork goes into the oven first and takes 2 to 2.5 hours; the bread dumplings are boiled while the pork rests; the sauerkraut is braised in the last 30 minutes. Timed correctly, all three components are ready within a few minutes of each other." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The bread dumplings (knedlíky) are made from a thick batter of flour, egg, milk, and breadcrumbs that is shaped into a log and boiled. They should be sliced into rounds about 1.5 cm thick for serving — not broken apart. Slice them while warm." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pork-shoulder", "amount": 1000, "unit": "g", "prepNote": "bone-in if possible", "isOptional": false, "groupLabel": "Pork" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "Pork" },
+            { "ingredientSlug": "caraway-seeds", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Pork" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Pork" },
+            { "ingredientSlug": "sunflower-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Pork" },
+            { "ingredientSlug": "plain-flour", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dumplings" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "Dumplings" },
+            { "ingredientSlug": "whole-milk", "amount": 180, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": "Dumplings" },
+            { "ingredientSlug": "breadcrumbs-dried", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dumplings" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dumplings" },
+            { "ingredientSlug": "baking-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dumplings" },
+            { "ingredientSlug": "sauerkraut", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Sauerkraut" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Sauerkraut" },
+            { "ingredientSlug": "caraway-seeds", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Sauerkraut" },
+            { "ingredientSlug": "granulated-sugar", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Sauerkraut" },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Sauerkraut" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roast the pork" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 220°C. Mix the {{garlic}}, {{caraway-seeds}}, {{sea-salt-fine}}, and {{sunflower-oil}} into a paste and rub all over the {{pork-shoulder}}. Sear in a hot roasting tin on the hob for 4 minutes per side until coloured. Add 200 ml of water, cover tightly with foil, and transfer to the oven. Reduce the oven to 160°C and roast for 2 to 2.5 hours until the meat is very tender and pulls apart easily. Remove the foil for the last 20 minutes to crisp the fat. Rest for 20 minutes before serving." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dumplings" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mix the {{plain-flour}}, {{eggs}}, warm {{whole-milk}}, {{breadcrumbs-dried}}, {{sea-salt-fine}}, and {{baking-powder}} into a soft, sticky dough. With wet hands, shape into a log 6 cm in diameter and 25 cm long. Lower gently into a large pot of boiling salted water. Boil for 18 to 20 minutes, turning once halfway, until firm throughout (a skewer comes out clean). Remove and leave to cool for 5 minutes, then slice into 1.5 cm rounds." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise the sauerkraut" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Melt the {{unsalted-butter}} in a saucepan over medium heat. Cook the {{onion}} for 7 minutes until soft. Add the {{sauerkraut}}, {{caraway-seeds}}, {{granulated-sugar}}, and 150 ml of water. Simmer covered for 25 to 30 minutes until the sauerkraut is very soft. Serve the pork sliced, with dumpling rounds and sauerkraut alongside, with the roasting juices spooned over." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Dumplings collapsing or falling apart in the water", "cause": "Dough too loose, or boiled too vigorously", "fix": "Boil at a steady simmer, not a rolling boil. If the dough was too wet, refrigerate for 30 minutes before shaping — it firms up considerably when cold" },
+            { "symptom": "Pork still tough after 2.5 hours", "cause": "Shoulder cut too large or oven temperature too low", "fix": "Continue cooking — pork shoulder needs to reach the point where the collagen has fully converted. Check every 20 minutes and add water if the tin is dry" },
+            { "symptom": "Sauerkraut too sour", "cause": "Very acidic batch of sauerkraut", "fix": "Add a little more sugar. The caramelised onion also helps balance acidity; extend the onion-cooking time if needed" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Vepřo knedlo zelo is Sunday lunch in the Czech Republic. It is the meal that Czech families eat after church, at the table with everyone present, with beer. Restaurants in Prague serve it every day; pubs and canteens have it on the weekly rotation. It is not a dish for a rushed weeknight; each component takes time, but the time is mostly unsupervised. The pork cooks itself; the dumplings take twenty minutes; the sauerkraut looks after itself in a covered pan. The cook's attention is needed only for the timing." }]
+      }
+    ]
+  }
+}

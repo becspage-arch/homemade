@@ -1,0 +1,122 @@
+{
+  "slug": "meat-piroshki",
+  "title": "Fried meat piroshki",
+  "subtitle": "Russian fried buns with beef mince filling",
+  "excerpt": "Soft yeasted dough pockets filled with seasoned beef mince and dill, pan-fried in oil until golden and puffed. The fried counterpart to baked piroshki — crispier, fattier, and best eaten immediately.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Fried piroshki (zharenyye piroshki) are made from the same enriched yeasted dough as baked piroshki but cooked in oil rather than the oven, producing a softer, crispier result. They are a popular street food in Russia and a home-cooking staple, made in large batches and eaten warm. The meat filling (myasny pirog) is one of the most common, made with fried beef mince, onion, and dill. Unlike the baked version, fried piroshki are sealed on the sides and fried seam-side down first so the seal cooks shut.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 30,
+    "restingMinutes": 60,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze cooked and cooled. Reheat in a dry frying pan over medium heat for 3 minutes per side.",
+    "batchable": true,
+    "batchNotes": "Doubles well. A large batch of dough makes both the fried and baked versions on the same day.",
+    "makeAheadNotes": "The filling keeps refrigerated for 2 days. Shaped, uncooked piroshki can rest at room temperature for 20 minutes before frying.",
+    "dietaryFlags": [],
+    "cuisine": "easternEuropean",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-26", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Fried piroshki use the same dough as the baked version but the frying changes the texture completely. The outside becomes golden and slightly crisp; the inside stays soft and doughy, absorbing a little of the oil during frying. They should be smaller than baked ones (8 to 9 cm long) so the dough cooks through before the exterior burns." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cook the filling until all the moisture from the mince has evaporated before using it. Wet filling causes the dough to steam rather than fry, and can cause the seal to open. The oil temperature matters: too hot and the outside colours before the dough is cooked; too cool and the piroshki absorb oil and become greasy." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 350, "unit": "g", "prepNote": "plus extra for dusting", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "yeast-dried", "amount": 7, "unit": "g", "prepNote": "1 sachet", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "whole-milk", "amount": 180, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "granulated-sugar", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.75, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "sunflower-oil", "amount": 2, "unit": "tbsp", "prepNote": "for the dough", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "beef-mince", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "dill", "amount": 15, "unit": "g", "prepNote": "chopped", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.75, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "black-pepper-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "sunflower-oil", "amount": 400, "unit": "ml", "prepNote": "for frying", "isOptional": false, "groupLabel": "Frying" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dough and filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Activate the {{yeast-dried}} in the warm {{whole-milk}} with the {{granulated-sugar}} for 5 minutes. Mix with the {{plain-flour}}, {{eggs}}, {{sea-salt-fine}}, and 2 tablespoons of {{sunflower-oil}}. Knead for 8 minutes until smooth. Cover and rise for 1 hour. Meanwhile, cook the {{onion}} in a dry frying pan over medium heat for 5 minutes. Add the {{beef-mince}} and {{garlic}} and cook, breaking up, until the mince is cooked through and all liquid has evaporated, 10 to 12 minutes. Season with {{sea-salt-fine}} and {{black-pepper-ground}}. Stir in the {{dill}}. Cool completely." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and fry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Divide the dough into 14 to 16 pieces. Flatten each into a round about 9 cm across. Place a tablespoon of filling in the centre. Bring the edges up over the filling and pinch firmly to seal into an oval. Heat the {{sunflower-oil}} for frying to 170°C in a wide pan — the oil should be at least 2 cm deep. Fry the piroshki in batches of 4 to 5, seam-side down first, for 3 to 4 minutes per side until deep golden. Drain on kitchen paper. Eat warm." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Piroshki opening during frying", "cause": "Seal not pressed firmly, or filling too wet", "fix": "Press the seal very firmly with dampened fingers. Frying seam-side down first uses the weight of the dough and the heat to fuse the seal shut before turning" },
+            { "symptom": "Exterior golden but dough raw inside", "cause": "Oil too hot or piroshki too large", "fix": "Reduce the oil temperature and make the piroshki smaller. At the correct temperature (170°C), a piroshki 3 cm thick should cook through in 3 to 4 minutes per side" },
+            { "symptom": "Dough greasy and oil-sodden", "cause": "Oil temperature too low", "fix": "The oil must be hot enough to fry, not just warm. Test with a small piece of dough: it should sizzle immediately and float to the surface" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Fried piroshki are market food and home food. They are sold at outdoor markets across Russia, Ukraine, and Central Asia from large flat pans kept warm over kerosene burners, wrapped in paper, and eaten standing up. At home they are made for company or for a relaxed weekend lunch when the dough-making and shaping is spread across a morning. They are best eaten within an hour of frying — the dough softens and loses its crispness as they cool." }]
+      }
+    ]
+  }
+}
