@@ -1,0 +1,96 @@
+{
+  "slug": "air-fryer-chips-fresh-cut",
+  "title": "Air-fryer chips",
+  "subtitle": "Fresh-cut chips without deep-frying",
+  "excerpt": "Potatoes cut into chips, soaked in cold water, dried, tossed in a small amount of oil, and cooked in the air fryer at 200°C for 25 to 30 minutes. The soaking step removes surface starch, which is the main cause of chips that stick together and stay soft.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Chips (french fries in American terminology) are traditionally deep-fried in oil at 160°C for the first cook and 180°C for the final crisp. The air fryer replicates the two-temperature approach through a low-temperature first phase (cooking through) and a high-temperature second phase (crisping). The result is close to oven chips in texture, not deep-fried chips, but uses far less oil than either.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegan", "vegetarian"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood", "kidFriendly"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "Air fryer: 180°C for 15 minutes to cook through, then 200°C for 10 to 15 minutes to crisp.",
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "air-fryer", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Soak the cut chips in cold water for at least 30 minutes. This removes surface starch, which is what causes chips to stick together and turn soft rather than crisp in the air fryer. After soaking, dry them as thoroughly as possible before adding oil: water and oil on the surface creates steam, which is the opposite of what makes chips crisp." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "potato", "amount": 800, "unit": "g", "prepNote": "Maris Piper or King Edward, peeled and cut into 1 cm thick chips", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vegetable-oil", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": "to season after cooking", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soak, dry, cook" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Place the cut {{potato}} chips in a large bowl, cover with cold water, and leave to soak for 30 minutes. Drain and dry thoroughly with a clean tea towel or kitchen paper; spread them on a tray and pat them until they look dry, not just damp. Toss the dried chips with {{vegetable-oil}} until evenly coated. Preheat the air fryer to 180°C for 3 minutes. Cook the chips at 180°C for 15 minutes, shaking the basket every 5 minutes to prevent sticking. Increase the temperature to 200°C and cook for a further 10 to 15 minutes, shaking every 5 minutes, until golden and crisp on the outside. Season immediately with {{sea-salt-fine}} and serve." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Chips soft and not crisping after 25 minutes", "cause": "Chips not dried thoroughly enough after soaking, or too much oil", "fix": "The drying step is the most important part of this recipe. Chips with any surface moisture will steam rather than crisp. Use only 1 tablespoon of oil for 800g of chips; more oil produces a fried texture rather than crisp" },
+            { "symptom": "Chips sticking together in the basket", "cause": "Not shaken frequently enough, or surface starch not fully removed", "fix": "Shake the basket every 5 minutes throughout cooking. If chips are very starchy despite soaking, rinse under cold water after soaking and dry again" },
+            { "symptom": "Chips cooked through but pale and soft even at 200°C", "cause": "Basket overcrowded", "fix": "Cook in a single layer with some space between chips. Chips piled on top of each other steam rather than crisp. Cook in two batches for a full 800g quantity in smaller air fryers" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Air-fryer chips are the companion to almost everything British: fish, burgers, sausages, steak, or just with ketchup. The result sits between oven chips and deep-fried chips in texture: crispier than oven chips, slightly less oily than the deep-fried version, and produced with a fraction of the oil." }]
+      }
+    ]
+  }
+}

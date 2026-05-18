@@ -1,0 +1,97 @@
+{
+  "slug": "air-fryer-hash-browns",
+  "title": "Air-fryer hash browns",
+  "subtitle": "Crisp shredded potato patties for a full English",
+  "excerpt": "Grated raw potato, squeezed completely dry and formed into patties, cooked in the air fryer at 200°C for 15 minutes. The drying step is everything: potato is mostly water, and any moisture left in the patty produces steam that prevents the hash brown from crisping.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Hash browns are an American invention that became part of the British full English breakfast through American diner culture and fast-food chains in the 1980s. The fast-food chain hash brown in particular popularised the compressed, disc-shaped patty that is now the standard form. Homemade versions use raw grated potato rather than the processed product and are crispier when dried properly.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "4 hash browns",
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze shaped uncooked patties separated by baking paper. Cook from frozen at 200°C for 18 to 20 minutes.",
+    "batchable": true,
+    "batchNotes": "Make a large batch and freeze before cooking.",
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegan", "vegetarian"],
+    "cuisine": "american",
+    "mealType": "breakfast",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "Air fryer at 200°C.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "air-fryer", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Squeeze as much moisture from the grated potato as physically possible. Potato is approximately 80% water by weight. Any moisture left in the patty will produce steam during cooking, preventing the surface from crisping. Wring the grated potato in a clean tea towel until no more liquid comes out, then squeeze again." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "potato", "amount": 400, "unit": "g", "prepNote": "Maris Piper, coarsely grated, moisture squeezed out", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vegetable-oil", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Grate, dry, shape, cook" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Grate the {{potato}} coarsely. Wrap in a clean tea towel and wring out firmly over the sink until no more liquid comes out. Transfer to a bowl and mix with {{sea-salt-fine}}, {{black-pepper}}, and {{vegetable-oil}}. Divide into 4 equal portions and press each firmly into a compact patty about 1 cm thick. The tighter the patty, the better it holds together. Preheat the air fryer to 200°C for 3 minutes. Spray the basket with oil. Place the patties in the basket. Spray the tops with oil. Cook at 200°C for 8 minutes, then flip carefully with a spatula and cook for a further 7 minutes until deep golden and crisp on both sides." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Hash browns soft and steaming rather than crisping", "cause": "Insufficient moisture removed, or oil spray missed", "fix": "The wringing step must be very thorough. If the grated potato still feels damp after the first squeeze, repeat. Spray both sides with oil before cooking and again after flipping" },
+            { "symptom": "Patties falling apart when flipped", "cause": "Potato too wet to bind, or not pressed firmly enough", "fix": "Press the patty as firmly as possible before cooking. A dry, compact patty will hold together. If the mixture is still wet and will not hold shape, add a teaspoon of plain flour as a binder" },
+            { "symptom": "Exterior dark before the shredded potato inside is cooked through", "cause": "Patty too thick, or temperature too high", "fix": "Keep patties to 1 cm thick. Thicker patties need a lower temperature: reduce to 180°C and cook for 10 minutes per side" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Air-fryer hash browns are a full English breakfast staple. They cook in the same time as the sausages and bacon, making it practical to run multiple components simultaneously. They also work as a side dish for eggs or as part of a brunch plate." }]
+      }
+    ]
+  }
+}

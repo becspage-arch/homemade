@@ -1,0 +1,98 @@
+{
+  "slug": "air-fryer-steak",
+  "title": "Air-fryer steak",
+  "subtitle": "Ribeye or sirloin, medium-rare in 10 minutes",
+  "excerpt": "A ribeye or sirloin steak cooked in the air fryer at 200°C for 10 minutes total for medium-rare. The air fryer produces a browned, slightly textured crust without a pan and without smoke. The steak must rest for the same time it cooked: 5 minutes per side.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Steak cooked in an air fryer became popular as a smoke-free alternative to pan-frying at high heat. The air fryer does not replicate the Maillard crust of a very hot cast-iron pan, but it produces an evenly browned surface with minimal equipment and no ventilation issues. The ribeye is the best choice because the fat cap self-bastes the meat during cooking.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "Air fryer at 200°C.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "air-fryer", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bring the steak to room temperature before cooking. A steak straight from the fridge has a cold centre that takes longer to reach the target temperature, meaning the outside overcooks while the inside catches up. Twenty minutes at room temperature fixes this entirely." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "beef-ribeye", "amount": 2, "unit": "each", "prepNote": "at least 2.5 cm thick, at room temperature", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.5, "unit": "tsp", "prepNote": "per steak", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 0.25, "unit": "tsp", "prepNote": "per steak", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vegetable-oil", "amount": 1, "unit": "tsp", "prepNote": "to coat", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "to rest with", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook and rest" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Take the {{beef-ribeye}} out of the fridge 20 minutes before cooking. Pat dry, rub with {{vegetable-oil}}, and season generously with {{sea-salt-fine}} and {{black-pepper}} on all sides including the fat cap. Preheat the air fryer to 200°C for 5 minutes. Place the steaks in the basket, fat-cap side down first for 1 minute, then lay flat. Cook at 200°C for 5 minutes on the first side, flip, and cook for a further 4 to 5 minutes for medium-rare (internal temperature 54–57°C). Remove and rest on a warm plate for 5 minutes, placing the {{unsalted-butter}} on top if using. The carry-over heat will bring the internal temperature up by 3 to 4°C during the rest." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Steak grey throughout with no visible crust", "cause": "Air fryer not preheated, or steak cooked straight from the fridge", "fix": "Always preheat the air fryer for at least 5 minutes before the steak goes in. A hot basket produces a more definite crust. Room temperature steak is essential for even cooking" },
+            { "symptom": "Steak very dry and chewy after resting", "cause": "Cooked past 65°C internal (well done)", "fix": "Use a thermometer. Medium-rare is 54 to 57°C; medium is 60 to 63°C. Ribeye has enough fat to stay palatable at medium but becomes noticeably tougher at well done" },
+            { "symptom": "Steak smells burnt but looks fine", "cause": "Fat dripping onto the heating element", "fix": "A small amount of smoke from fat drips is normal in the air fryer. Ensure the drip tray is clean before cooking. Ribeye produces more smoke than leaner cuts; a well-ventilated kitchen helps" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Air-fryer steak is the weeknight alternative to a cast-iron pan and extractor fan. The result is not identical to pan-fried: the Maillard crust is less intense, but it produces far less smoke. Serve with air-fryer chips, roast tomatoes, and a watercress salad." }]
+      }
+    ]
+  }
+}
