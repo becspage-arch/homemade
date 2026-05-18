@@ -1,0 +1,134 @@
+{
+  "slug": "sufganiyot",
+  "title": "Sufganiyot",
+  "subtitle": "Israeli Hanukkah jam doughnuts",
+  "excerpt": "The Israeli Hanukkah doughnut: a soft, enriched yeasted dough fried in oil (the mitzvah is the oil), filled with strawberry jam, and dusted with icing sugar. Made in enormous quantities in Israeli bakeries during the eight days of Hanukkah.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Sufganiyot are the Israeli adaptation of the Central European jam-filled doughnut (pfannkuchen in German, ponczki in Polish), introduced to Israel by Eastern European Jewish immigrants in the early twentieth century. The connection to Hanukkah is through the use of oil for frying, which mirrors the miracle of the Temple oil lasting eight days. The sufganiyot as a Hanukkah tradition became widespread in Israel through the Israel Bakery Workers' Union campaign in the 1920s, documented in Israeli food history sources. The recipe follows the standard enriched dough formula documented in Israeli and Jewish-American cookbooks from the twentieth century.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "About 18 sufganiyot",
+    "prepMinutes": 30,
+    "cookMinutes": 25,
+    "restingMinutes": 90,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Sufganiyot are best within 2–3 hours of frying. The dough can be proved overnight in the fridge; shape and fry the following day.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "israeli",
+    "mealType": "snack",
+    "mood": ["comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "bakeTemperatureCelsius": 0,
+      "bakeTemperatureNote": "Deep-fried at 170°C — slightly lower than most doughnuts. Sufganiyot are thick and need more time for the centre to cook through without the outside burning.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "dough-hook", "isOptional": true },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "sugar-thermometer", "isOptional": false },
+    { "slug": "piping-bag", "isOptional": false },
+    { "slug": "piping-tips", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "sufganiyot-fill", "term": "filling sufganiyot", "definition": "Sufganiyot are filled after frying, not before. Once fried and cooled enough to handle, a thin nozzle is pushed through the side and jam is piped in until the doughnut feels full but not about to burst. The side entry is traditional; some recipes fill through the base." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Sufganiyot are slightly sweeter and enriched than a plain doughnut, with vanilla in the dough. The frying oil is the religious significance: Hanukkah marks the miracle of oil. " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sufganiyot-fill", "term": "Filling sufganiyot" } }], "text": "Filling sufganiyot" }, { "type": "text", "text": " after frying is the correct method. The jam inside should be just warm from the residual heat of the doughnut — this is part of the appeal." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The dough" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "strong-white-flour", "amount": 500, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 80, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 8, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "instant-yeast", "amount": 7, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 200, "unit": "ml", "prepNote": "lukewarm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg", "amount": 2, "unit": "" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-yolk", "amount": 1, "unit": "" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": "softened" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 1, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "For frying and filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "sunflower-oil", "amount": 1500, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "strawberry-jam", "amount": 300, "unit": "g", "prepNote": "smooth, seeds strained out" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 100, "unit": "g", "prepNote": "for dusting" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the flour, sugar, salt, and yeast. Add the milk, eggs, egg yolk, and vanilla and mix to a shaggy dough. Knead for 8 minutes. Add the softened butter in additions and continue kneading until the dough is smooth and passes the window-pane test, about 8 more minutes. The dough will be soft. Prove in an oiled bowl for 1–1.5 hours until doubled." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and prove" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "On a lightly floured surface, roll the proved dough to 1.5 cm thick. Cut into rounds using a 7 cm cutter. Place on baking-paper squares on trays, cover loosely, and prove for 45–60 minutes until puffed and light." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry and fill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oil to 170°C. Slide 3 sufganiyot at a time into the oil using the baking-paper squares. Fry for 2 minutes per side until deep amber. Drain on a rack. While still warm, insert a thin nozzle into the side of each and pipe in about 20 g of strained jam. Dust generously with icing sugar and serve within 2 hours." }]
+      }
+    ]
+  }
+}

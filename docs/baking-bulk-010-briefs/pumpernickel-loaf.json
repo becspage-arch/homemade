@@ -1,0 +1,143 @@
+{
+  "slug": "pumpernickel-loaf",
+  "title": "Pumpernickel",
+  "subtitle": "The long-baked German rye loaf",
+  "excerpt": "True pumpernickel is baked at low heat for 16–24 hours in a sealed tin, emerging almost black, moist to the edge of gumminess, and faintly sweet from the Maillard reaction that runs through the night. No sourdough is needed — time and heat do the work.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Pumpernickel from Westphalia, Germany. The name is documented from at least the seventeenth century. Traditional pumpernickel uses rye chops or cracked rye rather than rye flour and is baked in sealed tins at 120–130°C for up to 24 hours — a process described in German baking guild records and in nineteenth-century German household encyclopaedias. This home adaptation uses rye flour and rye chops with a 16-hour bake.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (900 g / 2 lb tin)",
+    "prepMinutes": 30,
+    "cookMinutes": 960,
+    "restingMinutes": 120,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Cool for at least 24 hours before cutting (the crumb sets fully on standing). Slice thinly and freeze in a bag for up to 3 months.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Mix and tin the evening before, then start the long bake overnight. The loaf needs at least 24 hours of resting after baking before it is cut.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "german",
+    "mealType": "side",
+    "mood": ["makesAhead"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 400,
+      "hydrationPercent": 95,
+      "saltPercent": 1.8,
+      "yeastPercent": 1.0,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 60,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 120,
+      "bakeTemperatureNote": "very low — 120°C conventional for 14–16 hours in a sealed tin. Fan at 110°C. The low long heat is the method.",
+      "steamMethod": "sealed tin lid holds steam internally — do not open during baking",
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "silicone-spatula", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "maillard-reaction", "term": "Maillard reaction", "definition": "The chemical reaction between amino acids and reducing sugars at heat, responsible for the browning and complex flavour development in bread crusts, roasted meat, and — at its most extreme — the near-black colour of long-baked pumpernickel." },
+    { "slug": "rye-chops", "term": "rye chops", "definition": "Cracked or coarsely milled rye kernels, giving texture and a nutty flavour to dense rye breads. Used alongside rye flour in traditional pumpernickel." }
+  ],
+  "techniqueSlugs": ["rye-bread-baking"],
+  "criticalTechniques": ["rye-bread-baking"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pumpernickel is the extreme end of rye baking. The " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "maillard-reaction", "term": "Maillard reaction" } }], "text": "Maillard reaction" }, { "type": "text", "text": " runs for 14–16 hours at low heat, converting starches and sugars slowly into the almost-black, faintly sweet flavour that distinguishes it from every other bread. There is no crust in the usual sense — the entire loaf is soft and moist. It slices at 5 mm and should be able to hold a smear of butter without tearing." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rye-chops", "term": "rye chops" } }], "text": "rye chops" }, { "type": "text", "text": " (cracked rye) give texture; rye flour holds the dough together. Both are mixed with boiling water, sweetened with treacle, leavened with a small amount of commercial yeast (traditional pumpernickel uses sourdough, but yeast simplifies the home version), and baked in a tightly covered tin. The key practical point: the tin must be sealed with a lid or foil and the seal must not be broken during the bake." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "dark-rye-flour", "amount": 300, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "rye-chops", "amount": 100, "unit": "g", "prepNote": "cracked rye; substitute with extra dark rye flour if unavailable" } },
+          { "type": "ingredientItem", "attrs": { "slug": "boiling-water", "amount": 380, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "dried-yeast", "amount": 4, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "treacle", "amount": 30, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 7, "unit": "g" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soak and mix" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour the boiling water over the rye chops and leave to soak for 20 minutes; this softens them so the loaf doesn't have an unpleasant gritty texture. Let the mixture cool to hand-hot (below 40°C), then stir in the yeast, treacle, and salt. Add the rye flour and mix until fully combined — no dry pockets. The dough will be very wet, more paste than dough." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Proof, 1 hour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover the bowl and leave at room temperature for 1 hour. There will be some rise but not dramatic; the high rye content limits gluten development." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Tin and final proof, 1 hour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Grease a 900 g loaf tin generously. Scrape the paste in, smooth the top with a wet spatula, and cover tightly with the lid or a double layer of foil, pressing to seal. Proof for another hour at room temperature." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake, 14–16 hours" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 120°C conventional (110°C fan). Place the sealed tin in the oven and bake for 14–16 hours. Do not open the tin during baking; the steam inside is part of the process. After 14 hours, remove the lid and check the surface — it should be very dark, almost black, and the edges should have pulled slightly from the tin." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rest before cutting" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Turn the loaf out and leave to cool completely on a rack, then wrap in baking paper and rest for at least 24 hours before cutting. The crumb continues to set on standing; cut too early and it will be gummy and tear rather than slice. At its best after 48 hours." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "slug": "danish-pastry-plain",
+  "title": "Danish pastry dough",
+  "subtitle": "Laminated enriched dough for all Danish shapes",
+  "excerpt": "The laminated enriched dough behind every Danish pastry: a yeasted détrempe folded around a butter block and turned three times to build 27 layers. The result is flakier and richer than croissant dough, less chewy, and sweetened through the dough itself. Use it for snails, twists, or filled pockets.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Danish pastry (wienerbrød) was introduced to Denmark by Viennese bakers in the mid-nineteenth century. The original Viennese technique of laminating enriched dough with butter was adapted into a sweeter, more tender format by Danish bakers. The modern Danish pastry tradition is documented in Danish and Scandinavian baking literature from the late nineteenth century onward, and the technique spread internationally through Scandinavian immigrant communities, particularly in the United States.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "12–16 pastries depending on shape",
+    "prepMinutes": 60,
+    "cookMinutes": 18,
+    "restingMinutes": 480,
+    "chillingMinutes": 120,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze shaped, unbaked pastries on a tray. Bake from frozen at 200°C adding 5 minutes to the bake time.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough can be made to the end of the lamination stage, then refrigerated overnight before shaping. Shape the following morning and bake.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "scandinavian",
+    "mealType": "breakfast",
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true,
+    "baking": {
+      "flourWeightGrams": 500,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "conventional oven; fan at 180°C. High heat is required to create steam between the layers and lift the pastry. Do not open the oven before 12 minutes.",
+      "chillingMinutes": 120,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "dough-hook", "isOptional": true },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-mat", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "detrempe", "term": "détrempe", "definition": "The yeasted base dough in a laminated pastry before the butter is incorporated. In Danish pastry the détrempe is enriched with eggs and sugar and mixed only until smooth, not developed. Overdeveloped gluten fights the folding process and prevents the layers separating cleanly." },
+    { "slug": "beurrage", "term": "beurrage", "definition": "The butter block folded into the détrempe during lamination. For Danish pastry, the butter is worked to a pliable consistency before encasing — it should bend without cracking. Cold, brittle butter shatters and breaks through the dough layers." },
+    { "slug": "lamination-turn", "term": "turn", "definition": "A single fold in the lamination process. A double turn (book fold) folds the dough into quarters; a single turn (letter fold) folds it into thirds. Three single turns produce 27 layers of butter in Danish pastry dough." }
+  ],
+  "techniqueSlugs": ["laminated-dough"],
+  "criticalTechniques": ["laminated-dough"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Danish pastry lamination shares the same logic as croissant dough but starts from a richer, sweeter " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "detrempe", "term": "détrempe" } }], "text": "détrempe" }, { "type": "text", "text": ". The " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "beurrage", "term": "beurrage" } }], "text": "beurrage" }, { "type": "text", "text": " must be at the same pliability as the dough when you begin folding — too cold and it shatters, too warm and it melts into the dough rather than layering. Three single " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lamination-turn", "term": "turns" } }], "text": "turns" }, { "type": "text", "text": " give 27 layers. Work quickly and keep everything cold." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "title": "Temperature is the variable" },
+        "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The butter should flex without cracking when you press it with a rolling pin. If it shatters, return to room temperature for 5 minutes. If the dough becomes greasy or the butter starts to break through during rolling, stop, cover, and refrigerate for 20 minutes before continuing. You cannot rush lamination." }] }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The détrempe" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "strong-white-flour", "amount": 500, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 60, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 10, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "instant-yeast", "amount": 7, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 200, "unit": "ml", "prepNote": "cool, not warm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg", "amount": 2, "unit": "" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": "softened" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The butter block" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 250, "unit": "g", "prepNote": "European-style, 82% fat or higher" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The egg wash" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "egg", "amount": 1, "unit": "", "prepNote": "beaten with 1 tbsp milk" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the détrempe" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the flour, sugar, salt, and yeast in a large bowl (or the bowl of a stand mixer). Add the milk and eggs and mix until a shaggy dough forms. Add the softened butter and mix until the dough comes together and is smooth but not fully developed — about 5 minutes by hand or 3 minutes with a dough hook on medium. Do not develop the gluten fully; the dough should look smooth but not springy. Shape into a flat rectangle, wrap, and refrigerate for 1 hour." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the butter block" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Place the butter between two sheets of baking paper and beat with a rolling pin to flatten into a rectangle approximately 15 × 20 cm. Fold the paper edges over to square off the sides. The butter should be pliable but not soft: it should flex without cracking. Refrigerate if needed." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "First turn" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "On a lightly floured surface, roll the chilled détrempe into a rectangle roughly twice the size of the butter block. Place the butter in the centre and fold the dough over to enclose it completely, pressing the edges to seal. Roll out gently and evenly into a long rectangle three times longer than it is wide. Fold into thirds (letter fold) — this is the first turn. Wrap and refrigerate for 30 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Second and third turns" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Repeat the rolling and letter fold twice more, resting the dough for 30 minutes between each turn. Mark the number of turns with finger indentations so you do not lose count. After the third turn, wrap and refrigerate for at least 1 hour before shaping." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and prove" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Roll the rested dough to 4 mm and cut into the shapes required. For snails, cut rectangles and roll with a filling; for twists, cut strips and twist; for pockets, cut squares and fold over a filling with the corners tucked. Place on lined trays, brush with egg wash, and prove at room temperature for 1–2 hours until the pastries have puffed visibly and feel airy when prodded. Do not prove in a warm spot; a cool kitchen is better." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 200°C conventional (180°C fan). Brush proved pastries with a second coat of egg wash. Bake for 16–18 minutes until deep amber and the layers are visible and open at the sides. Cool on a rack for at least 15 minutes before eating — the interior is still steaming and collapsing hot." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "slug": "ring-doughnuts-classic",
+  "title": "Classic ring doughnuts",
+  "subtitle": "Yeasted, fried, glazed or sugared",
+  "excerpt": "Yeasted ring doughnuts with a light, pillowy crumb. The dough is enriched with egg and butter, fried at 175°C until deeply golden on both sides, then glazed with a thin vanilla glaze or rolled in caster sugar while still warm. The texture depends entirely on correctly proofed dough and stable oil temperature.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Yeasted fried doughnuts are documented across northern European and American culinary traditions from the seventeenth century onward. The ring form, created by removing the centre to ensure even cooking, is attributed to American bakers in the mid-nineteenth century. American ring doughnuts are described in cookbooks from the 1850s onward and the industrial doughnut cutter is patented in 1872. The recipe here follows the standard enriched-yeasted formula documented across twentieth-century American and British home-baking texts.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "About 12 doughnuts plus 12 doughnut holes",
+    "prepMinutes": 30,
+    "cookMinutes": 30,
+    "restingMinutes": 120,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unglazed. Thaw at room temperature and glaze before serving.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Doughnuts are best eaten within 2–3 hours of frying. The dough can be made and shaped the evening before, then refrigerated overnight at the final proof stage and fried in the morning.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "american",
+    "mealType": "breakfast",
+    "mood": ["comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "bakeTemperatureCelsius": 0,
+      "bakeTemperatureNote": "Deep-fried, not oven-baked. Oil temperature: 175°C. Below 170°C the doughnuts absorb oil and are greasy; above 185°C the outside colours before the dough cooks through. A sugar thermometer is essential.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "dough-hook", "isOptional": true },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "sugar-thermometer", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "window-pane-test", "term": "window-pane test", "definition": "A test for gluten development in enriched doughs: take a small piece of dough and stretch it slowly between your fingers. If the dough can be stretched thin enough to be translucent without tearing, the gluten is sufficiently developed. Undertested dough tears immediately; correctly developed dough forms a thin, membrane-like sheet." },
+    { "slug": "oil-temperature-doughnuts", "term": "oil temperature", "definition": "The critical variable in frying doughnuts. At 175°C, the dough cooks through in 60–90 seconds per side. A sugar thermometer, not visual cues alone, is required to maintain accurate temperature — the oil cools when doughnuts go in and needs time to recover between batches." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The dough is enriched and fully developed — the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "window-pane-test", "term": "window-pane test" } }], "text": "window-pane test" }, { "type": "text", "text": " confirms it. Under-kneaded dough fries to a dense, bready crumb rather than a light one. " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "oil-temperature-doughnuts", "term": "Oil temperature" } }], "text": "Oil temperature" }, { "type": "text", "text": " is the second variable: too low produces greasy doughnuts that have absorbed oil, too high produces doughnuts that are raw inside. Don't crowd the pan; fry 3 doughnuts at a time in a large saucepan and let the oil recover temperature between batches." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The dough" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "strong-white-flour", "amount": 500, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 60, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 8, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "instant-yeast", "amount": 7, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 220, "unit": "ml", "prepNote": "lukewarm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg", "amount": 2, "unit": "" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": "softened, added after initial mix" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "For frying" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "sunflower-oil", "amount": 1500, "unit": "ml", "prepNote": "or other neutral oil with a high smoke point" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Vanilla glaze" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 200, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 4, "unit": "tbsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 1, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and develop the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the flour, sugar, salt, and yeast. Add the milk and eggs and mix to a shaggy dough. Knead by hand for 10 minutes or with a dough hook on medium for 6 minutes until the dough is smooth. Add the softened butter in 3 additions, fully incorporating each before adding the next. Continue kneading until the dough passes the window-pane test, 5–8 minutes more by hand. The dough will be soft and slightly tacky but not sticky. Place in an oiled bowl, cover, and prove at room temperature for 1–1.5 hours until doubled." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and prove" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Turn out onto a lightly floured surface and roll to 1.5 cm thick. Cut rounds using a 9 cm cutter, then cut the centre from each using a 3 cm cutter. Re-roll the scraps. Place the rings and holes on floured trays or squares of baking paper, cover loosely, and prove for 45–60 minutes until visibly puffed and airy to the touch." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oil in a large, deep saucepan to 175°C. Fry 2–3 doughnuts at a time: slide them in using the baking paper squares to avoid deflating the proved dough. Fry for 60–90 seconds per side until deep amber. Remove with a slotted spoon and drain on a rack. Let the oil return to temperature between batches." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Glaze" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whisk the icing sugar, milk, and vanilla together to a smooth, pourable glaze. Dip the warm doughnuts into the glaze, letting the excess run off, and return to the rack. The glaze sets in about 5 minutes. Alternatively, toss doughnuts in caster sugar while still warm." }]
+      }
+    ]
+  }
+}

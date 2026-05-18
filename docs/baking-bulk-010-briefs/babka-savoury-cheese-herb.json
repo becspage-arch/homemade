@@ -1,0 +1,154 @@
+{
+  "slug": "babka-savoury-cheese-herb",
+  "title": "Savoury babka with cheese and herbs",
+  "subtitle": "A twisted enriched loaf for the cheese course",
+  "excerpt": "The babka format applied to a savoury filling of mature cheddar, parmesan, and fresh herbs. The filling melts into the layers during baking, leaving ribbons of cheese through the crumb.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The sweet babka is a Jewish-Eastern European enriched loaf documented from the nineteenth century. The savoury adaptation using cheese and herb fillings follows a well-established home-baking tradition that applies the same enriched-dough-and-twist method to savoury fillings. No single public-domain source governs this variant; the dough ratios are derived from the sweet babka canon.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (900 g / 2 lb tin)",
+    "prepMinutes": 45,
+    "cookMinutes": 35,
+    "restingMinutes": 180,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice cold and freeze. Reheat at 180°C for 8 minutes from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough can be made a day ahead and cold-fermented overnight. Roll, fill, and twist the morning of baking.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "jewish",
+    "mealType": "side",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 300,
+      "hydrationPercent": 58,
+      "saltPercent": 1.5,
+      "yeastPercent": 1.5,
+      "levainPercent": null,
+      "bulkFermentMinutes": 120,
+      "proofMinutes": 75,
+      "retardingMinutes": 480,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "conventional oven; fan at 160°C. The cheese filling can cause hot spots; watch the top after 20 minutes.",
+      "steamMethod": "none",
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "dough-hook", "isOptional": true },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "babka-twist", "term": "babka twist", "definition": "The shaping technique where a filled cylinder of enriched dough is cut lengthways through the centre to expose the filling, then the two halves are twisted together and placed in the tin. The exposed cut surfaces rise and pull apart during baking to create the layered look." }
+  ],
+  "techniqueSlugs": ["enriched-bread-shaping"],
+  "criticalTechniques": ["enriched-bread-shaping"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The sweet babka's logic translates exactly to a savoury filling: an enriched dough is rolled into a rectangle, covered with filling, rolled into a cylinder, and then cut and twisted to reveal the layers. Use a bold filling of aged cheddar and parmesan with plenty of fresh thyme or rosemary, because the flavour mutes somewhat inside the dough. The " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "babka-twist", "term": "babka twist" } }], "text": "babka twist" }, { "type": "text", "text": " is simpler than it looks and can be done with some confidence once you have done it once." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The dough" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 300, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "dried-yeast", "amount": 4.5, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 15, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 4.5, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg", "amount": 2, "unit": "", "prepNote": "medium" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 80, "unit": "ml", "prepNote": "lukewarm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": "cold, cubed" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "mature-cheddar", "amount": 120, "unit": "g", "prepNote": "grated" } },
+          { "type": "ingredientItem", "attrs": { "slug": "parmesan", "amount": 40, "unit": "g", "prepNote": "finely grated" } },
+          { "type": "ingredientItem", "attrs": { "slug": "fresh-thyme", "amount": 2, "unit": "tsp", "prepNote": "leaves picked, or fresh rosemary finely chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": "coarsely ground" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "melted, to brush the dough before filling" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dough and cold ferment" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mix the flour, yeast, sugar, and salt in the bowl of a stand mixer. Add the eggs and lukewarm milk and knead with the dough hook for 8 minutes on medium until smooth. Add the cold butter cube by cube over 10 minutes. Beat until the dough is elastic and comes away from the bowl sides. Bulk ferment at room temperature for 2 hours, then refrigerate overnight." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roll and fill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "On a lightly floured surface, roll the cold dough into a 30 × 25 cm rectangle about 5 mm thick. Brush the surface with the melted butter, leaving a 1 cm border at one long edge. Combine the grated cheeses, thyme, and pepper and spread evenly over the buttered surface." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Twist and tin" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Starting from the long edge opposite the border, roll the dough tightly into a cylinder. With a sharp knife, cut the cylinder in half lengthways from one end to the other, exposing the layers. Twist the two halves together, keeping the cut surfaces facing up. Lower the twisted loaf into a greased 900 g tin, tucking the ends under. Cover loosely and proof for 75 minutes at room temperature until puffed and risen to the tin rim." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake at 180°C conventional (160°C fan) for 32–38 minutes, until the top is a deep golden brown and an internal probe reads 90°C. If the top colours quickly due to the cheese, lay foil over the tin after 20 minutes. Cool in the tin for 10 minutes before turning out. Serve warm or at room temperature." }]
+      }
+    ]
+  }
+}

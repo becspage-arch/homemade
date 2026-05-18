@@ -1,0 +1,145 @@
+{
+  "slug": "shoofly-pie",
+  "title": "Shoofly pie",
+  "subtitle": "Pennsylvania Dutch molasses pie with crumb topping",
+  "excerpt": "A Pennsylvania Dutch classic: shortcrust pastry filled with a treacle-and-molasses mixture, topped with a soft crumb of flour, butter, and brown sugar. The wet bottom layer stays dense and sticky; the crumb top bakes into a soft crust.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Shoofly pie is documented in Pennsylvania German (Pennsylvania Dutch) communities from the late nineteenth century. The name is commonly attributed to the practice of waving flies away from the cooling pie, which attracted insects with its molasses filling. Early printed recipes appear in Pennsylvania community cookbooks from the 1880s and are collected in works on American regional foodways such as William Woys Weaver, Pennsylvania Dutch Country Cooking (1993).",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze baked and cooled. Thaw at room temperature for 3–4 hours.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pie keeps at room temperature for up to 3 days. The filling firms slightly as it cools but remains dense and moist.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "american",
+    "mealType": "dessert",
+    "mood": ["comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "conventional oven; fan at 170°C. Start hot to set the pastry; reduce to 175°C conventional (155°C fan) after 10 minutes if the crumb top is colouring too quickly.",
+      "chillingMinutes": 30,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "tart-tin", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "mixing-bowl-medium", "isOptional": false },
+    { "slug": "baking-beans", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "wet-bottom", "term": "wet bottom", "definition": "The characteristic dense, sticky layer at the base of a shoofly pie where the molasses filling has not been fully absorbed into the crumb topping. A wet-bottom pie is intentional and authentic; a fully dry filling is the result of excess crumb or overbaking." },
+    { "slug": "black-treacle", "term": "black treacle", "definition": "The UK equivalent of American blackstrap molasses: a dark, intensely flavoured by-product of sugar refining. Stronger and more bitter than golden syrup, it gives shoofly pie its characteristic dark colour and depth. Blackstrap molasses is an identical substitute." }
+  ],
+  "techniqueSlugs": ["blind-baking"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Shoofly pie divides into two camps: wet-bottom and dry-bottom. This recipe is " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wet-bottom", "term": "wet bottom" } }], "text": "wet bottom" }, { "type": "text", "text": ", which is the more common Pennsylvania Dutch tradition. The " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "black-treacle", "term": "black treacle" } }], "text": "black treacle" }, { "type": "text", "text": " gives the filling its colour and depth; brown sugar softens the bitterness. The crumb topping absorbs the steam from the filling and bakes to a soft, not crunchy, crust." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The shortcrust pastry" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 200, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cold, cubed" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 0.25, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cold-water", "amount": 3, "unit": "tbsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The wet filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "black-treacle", "amount": 180, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "hot-water", "amount": 180, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "bicarbonate-of-soda", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg", "amount": 1, "unit": "", "prepNote": "beaten" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The crumb topping" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 160, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "light-brown-sugar", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 70, "unit": "g", "prepNote": "cold, cubed" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ground-cinnamon", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 0.25, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and line the pastry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rub the cold butter into the flour and salt until the mixture resembles breadcrumbs. Add cold water a tablespoon at a time and mix until the dough just comes together. Wrap and refrigerate for 30 minutes. Preheat the oven to 190°C conventional (170°C fan). Roll the pastry to 3 mm and line a 23 cm tart tin or pie dish. Chill for 10 minutes, then blind-bake with baking beans for 12 minutes. Remove beans and bake for 5 more minutes. The base should be pale but dry." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the filling and crumb" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Dissolve the bicarbonate of soda in the hot water. Add the treacle and beaten egg and stir until combined. The mixture will foam slightly. Make the crumb by rubbing the cold butter into the flour, brown sugar, cinnamon, and salt until the mixture forms coarse, irregular crumbs." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour the treacle filling into the part-baked shell. Scatter the crumb topping evenly over the surface — it will sink slightly as the filling is liquid. Bake for 30–35 minutes until the crumb top is set and the filling is no longer liquid at the edges. The centre will still wobble; it sets fully as it cools. Cool completely before slicing. Serve at room temperature, with or without cream." }]
+      }
+    ]
+  }
+}

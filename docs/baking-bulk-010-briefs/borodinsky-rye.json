@@ -1,0 +1,178 @@
+{
+  "slug": "borodinsky-rye",
+  "title": "Borodinsky — Russian dark rye",
+  "subtitle": "Coriander-scented, molasses-dark sourdough loaf",
+  "excerpt": "The distinctive Russian bread of Moscow bakeries: a dense, moist, deeply flavoured dark rye loaf leavened with a rye sourdough and sweetened with treacle, scented with coriander seeds. Slices thin and keeps for days.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Borodinsky is a Russian bread with a documented history from the early nineteenth century, linked to the battle of Borodino in 1812. Early recipes appear in Russian household manuals of the 1860s-1880s. The coriander-seed topping and molasses (treacle) sweetening are both characteristic of the original Moscow formula. The method here follows a scald-and-sour two-stage structure documented in Russian baking literature.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (700 g tin)",
+    "prepMinutes": 45,
+    "cookMinutes": 60,
+    "restingMinutes": 720,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Cool completely, slice, and freeze. Defrost at room temperature or toast from frozen. The high rye content keeps it moist for at least 4 days unrefrigerated.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The scald (zakvaska) is prepared 12 hours before baking. An active rye sourdough starter is needed — feed it 12 hours before to ensure it is at peak.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "eastern-european",
+    "mealType": "side",
+    "mood": ["makesAhead"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 400,
+      "hydrationPercent": 90,
+      "saltPercent": 2.0,
+      "yeastPercent": null,
+      "levainPercent": 25,
+      "bulkFermentMinutes": 180,
+      "proofMinutes": 60,
+      "retardingMinutes": null,
+      "levainBuildMinutes": 720,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "conventional oven, then reduce to 180°C after 15 minutes. Fan at 200°C reducing to 160°C.",
+      "steamMethod": "water tray on the oven floor for the first 10 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "silicone-spatula", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "scald", "term": "scald", "definition": "In Russian rye baking, a portion of the rye flour is poured over with boiling water and mixed with malt or coriander, then left to cool and saccharify before mixing into the main dough. The scald deepens the colour and adds sweetness." },
+    { "slug": "rye-levain", "term": "rye levain", "definition": "A sourdough starter fed exclusively or predominantly on rye flour. Rye levains are more acidic and more active than white flour starters; they ferment faster and tolerate higher hydration." }
+  ],
+  "techniqueSlugs": ["rye-bread-baking", "sourdough-levain-build"],
+  "criticalTechniques": ["rye-bread-baking"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Borodinsky is not a weekend project to rush. It asks for an active " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rye-levain", "term": "rye levain" } }], "text": "rye levain" }, { "type": "text", "text": " that has been fed the day before, a " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scald", "term": "scald" } }], "text": "scald" }, { "type": "text", "text": " prepared 12 hours ahead, and a baking window of around 5 hours from mixing to the oven. The result is a loaf that slices thin without crumbling, keeps moist for 4 or 5 days, and pairs with herring, butter, or hard cheese in the way the bread was always intended." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "title": "What you need before you start" },
+        "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "An active rye sourdough starter (100% rye, fed 12 hours before mixing). Dark rye flour, the coarser the better. Treacle (not molasses — the word is used interchangeably in American recipes but UK treacle is the right product here). Ground coriander and whole coriander seeds for the topping. Red rye malt (optional but traditional — adds the mahogany colour)." }] }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The scald (12 hours ahead)" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "dark-rye-flour", "amount": 80, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "boiling-water", "amount": 200, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "treacle", "amount": 20, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ground-coriander", "amount": 1, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The main dough" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "dark-rye-flour", "amount": 320, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 160, "unit": "ml", "prepNote": "warm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "rye-sourdough-starter", "amount": 100, "unit": "g", "prepNote": "active, 100% hydration rye" } },
+          { "type": "ingredientItem", "attrs": { "slug": "treacle", "amount": 30, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 8, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "coriander-seeds", "amount": 1, "unit": "tbsp", "prepNote": "lightly crushed, for the top" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the scald (evening before)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour the boiling water over 80 g of dark rye flour, the treacle, and the ground coriander and stir until smooth. The mixture will look like a thick paste. Cover and leave at room temperature for at least 12 hours. This activates enzymes in the rye that break down starches to sugars, giving the loaf its characteristic mild sweetness and dark colour." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The following day, combine the scald with the remaining 320 g of dark rye flour, the warm water, sourdough starter, remaining treacle, and salt. Stir thoroughly — rye dough does not knead like wheat dough. There is no gluten network to develop in the same way; stir until fully combined. The dough will be very sticky, more like a thick batter than a bread dough." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment, 3 hours" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover the bowl and leave at 24–26°C for 3 hours. Rye ferments faster than wheat and at higher acidity; the dough is ready when it has risen by about a third and small bubbles are visible at the surface. It will not double." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Tin and proof, 1 hour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Grease a 700 g (or 900 g / 2 lb) loaf tin generously with oil. Scrape the dough into the tin with a wet spatula, smoothing the top to a flat surface. Scatter the crushed coriander seeds over the top and press them lightly in. Cover and proof for 1 hour at room temperature until the dough has domed slightly above the tin rim." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 220°C conventional with a water tray on the floor. Bake for 15 minutes, then reduce to 180°C and bake for a further 45 minutes. The loaf is done when an internal probe reads 96–98°C and the sides have pulled slightly away from the tin. Turn out and cool on a wire rack for at least 2 hours before cutting — rye crumb continues to set as it cools, and cutting too early makes it gummy. Domestic ovens drift by 20°C or more; an oven thermometer gives a reliable reading." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Gummy crumb when sliced: cut too early. Rye must cool for a minimum of 2 hours; overnight is better. The crumb firms as it cools." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dough not rising: the levain may not be active enough. Feed it 12 hours before at a ratio of 1:2:2 (starter:flour:water) to ensure peak activity." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Too dense: all 100% rye loaves are dense compared to wheat bread. Some additional wheat flour (up to 20% of the total flour weight) opens the crumb without compromising the flavour." }] }] }
+        ]
+      }
+    ]
+  }
+}

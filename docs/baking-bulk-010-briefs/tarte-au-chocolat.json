@@ -1,0 +1,141 @@
+{
+  "slug": "tarte-au-chocolat",
+  "title": "Tarte au chocolat",
+  "subtitle": "Set dark chocolate ganache in a crisp sablée case",
+  "excerpt": "A thin, set ganache poured into a fully blind-baked chocolate sablée shell. The filling is pourable at room temperature and sets to a sliceable consistency with a glassy surface. Dark, barely sweet, and clean on the finish.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The set chocolate ganache tart is a French patisserie standard documented extensively in twentieth-century French pastry literature. The combination of a pâte sablée shell with a ganache filling appears in Pierre Hermé's published work and in foundational patisserie texts. The specific formulation here follows the proportions standard in contemporary French patisserie: dark chocolate and cream in a 2:1 or 1.5:1 ratio for a sliceable set.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 120,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The blind-baked shell keeps for up to 2 days in a tin. The ganache should be made and poured on the day of serving. The assembled tart keeps refrigerated for up to 2 days but the gloss dulls; bring to room temperature for 30 minutes before serving.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 180,
+      "bakeTemperatureCelsius": 170,
+      "bakeTemperatureNote": "conventional oven; fan at 150°C. Lower than standard shortcrust because the chocolate sablée browns faster.",
+      "chillingMinutes": 120,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "tart-tin", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "baking-beans", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "pate-sablee", "term": "pâte sablée", "definition": "A rich, crumbly pastry made with butter creamed into the flour and sugar rather than rubbed in. Sandier and more fragile than shortcrust; it holds its shape when baked but breaks cleanly. The cream-together method produces a more uniform, cookie-like texture." },
+    { "slug": "ganache", "term": "ganache", "definition": "A chocolate and cream emulsion. At a 2:1 chocolate-to-cream ratio it sets firm enough to slice when cold. At 1:1 it stays soft and spreadable. The gloss depends on emulsifying the two components properly while the cream is hot enough to melt the chocolate completely." }
+  ],
+  "techniqueSlugs": ["blind-baking"],
+  "criticalTechniques": ["blind-baking"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The chocolate sablée is the right base here: the extra cocoa in the pastry reinforces the flavour from the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ganache", "term": "ganache" } }], "text": "ganache" }, { "type": "text", "text": " without competing with it. The " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pate-sablee", "term": "pâte sablée" } }], "text": "pâte sablée" }, { "type": "text", "text": " is more fragile than shortcrust — handle it gently when lining the tin, and patch any cracks before blind-baking. Use the best dark chocolate available; at 70% cocoa the flavour will be clean and not sweet." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The chocolate sablée" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 170, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cocoa-powder", "amount": 20, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 60, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "softened" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-yolk", "amount": 2, "unit": "" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cold-water", "amount": 1, "unit": "tbsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The ganache filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "dark-chocolate", "amount": 300, "unit": "g", "prepNote": "70% cocoa, finely chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "double-cream", "amount": 200, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "cubed" } },
+          { "type": "ingredientItem", "attrs": { "slug": "flaky-sea-salt", "amount": 1, "unit": "pinch", "prepNote": "to finish" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and rest the pastry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Sift the flour, cocoa, and icing sugar into a bowl. Add the softened butter and rub or beat together until the mixture resembles damp crumbs. Add the egg yolks and water and bring together into a dough. The dough will be slightly soft. Press into a disc, wrap, and refrigerate for 30 minutes until firm enough to roll." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Line and blind-bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 170°C conventional (150°C fan). Roll the chilled pastry between two sheets of baking paper to 3 mm. Peel off the top sheet and use the bottom sheet to flip the pastry into a 23 cm tart tin; peel off the paper and press in gently. The sablée is fragile — patch any cracks with spare pastry. Chill for 20 minutes. Line with baking paper, fill with baking beans, and bake for 15 minutes. Remove beans and paper and bake for a further 8 minutes until the base is dry and the edges are set. Do not overbake: chocolate pastry darkens before it looks burnt. Cool completely." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the ganache" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Place the chopped chocolate in a heatproof bowl. Bring the cream to just below a simmer and pour over the chocolate. Leave for 2 minutes without stirring, then stir from the centre outward until smooth and glossy. Add the butter and stir until melted in. Do not whisk — air bubbles will dull the surface." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pour and set" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour the ganache into the cooled shell while it is still pourable. Scatter a pinch of flaky sea salt over the surface. Leave at room temperature for 30 minutes, then refrigerate for at least 1.5 hours until fully set. Slice with a warm knife wiped between cuts. Serve at room temperature — straight from the fridge the ganache is too firm." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "slug": "pastiera-napoletana",
+  "title": "Pastiera napoletana",
+  "subtitle": "Neapolitan Easter wheat-and-ricotta tart",
+  "excerpt": "The Neapolitan Easter tart: a pasta frolla case filled with a mixture of cooked wheat berries, sheep's milk ricotta, eggs, orange blossom water, and candied peel. Dense, fragrant, and better after two days of resting. Made in the days before Easter and improved by the wait.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "ADVANCED",
+  "season": "SPRING",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Pastiera napoletana is one of the oldest documented Italian baked goods, with references to a wheat-and-ricotta preparation in Neapolitan festive tradition traced to the sixteenth century. The modern form with orange blossom water and a pasta frolla case is described in Ippolito Cavalcanti, Cucina teorico-pratica (1837), and appears consistently in Neapolitan cookbooks through the twentieth century. Grano cotto (pre-cooked wheat) is the authentic base; canned grano cotto (Chirico brand or similar) is sold in Italian grocery shops.",
+  "recipe": {
+    "servings": 12,
+    "yieldDescription": null,
+    "prepMinutes": 60,
+    "cookMinutes": 55,
+    "restingMinutes": 2880,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Pastiera must be made at least 48 hours ahead. It improves markedly on days two and three as the filling and pastry reach the correct texture. Do not refrigerate; store covered at cool room temperature.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "italian",
+    "mealType": "dessert",
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 300,
+      "bakeTemperatureCelsius": 170,
+      "bakeTemperatureNote": "conventional oven; fan at 150°C. Low, slow bake to set the custard filling without cracking. The top should be a deep amber but not dark brown.",
+      "chillingMinutes": 60,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "tart-tin", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "sieve", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "grano-cotto", "term": "grano cotto", "definition": "Pre-cooked wheat berries, sold in cans or jars in Italian grocery shops, ready to use in pastiera filling. Cooking raw wheat berries from scratch is the traditional method (soak 24 hours, then simmer for 2–3 hours until tender) but canned grano cotto produces an identical result and is the standard home-cook shortcut." },
+    { "slug": "orange-blossom-water", "term": "orange blossom water", "definition": "A distillate of orange blossom, used as a flavouring in Italian, French, and Middle Eastern baking. Intensely floral; the quantity used in pastiera is significant — do not substitute orange extract. Available in specialist food shops and Middle Eastern grocery stores." },
+    { "slug": "pasta-frolla", "term": "pasta frolla", "definition": "Italian sweet shortcrust pastry, made with butter, sugar, eggs, and sometimes lemon zest. Richer than French pâte sucrée; slightly softer and more cookie-like. The base for crostata, pastiera, and many Italian tarts." }
+  ],
+  "techniqueSlugs": ["blind-baking"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pastiera is not a same-day bake. The filling and " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pasta-frolla", "term": "pasta frolla" } }], "text": "pasta frolla" }, { "type": "text", "text": " case need 48 hours to reach the correct texture: the filling firms, the fragrance of the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "orange-blossom-water", "term": "orange blossom water" } }], "text": "orange blossom water" }, { "type": "text", "text": " rounds out, and the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "grano-cotto", "term": "grano cotto" } }], "text": "grano cotto" }, { "type": "text", "text": " softens into the custard. Use canned grano cotto (Chirico or similar) to avoid a 3-hour wheat berry cook." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "title": "Plan ahead" },
+        "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make this on Thursday or Friday for Easter Sunday. The pastry dough can be made up to 3 days ahead and refrigerated. The assembled tart rests uncovered at cool room temperature for 48 hours after baking." }] }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The pasta frolla" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 300, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 150, "unit": "g", "prepNote": "softened" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg", "amount": 2, "unit": "" } },
+          { "type": "ingredientItem", "attrs": { "slug": "lemon", "amount": 1, "unit": "", "prepNote": "zest only" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 0.25, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "canned-grano-cotto", "amount": 400, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 80, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 20, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 30, "unit": "g", "prepNote": "for cooking the wheat" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ricotta", "amount": 400, "unit": "g", "prepNote": "well-drained" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 200, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg", "amount": 3, "unit": "" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-yolk", "amount": 2, "unit": "" } },
+          { "type": "ingredientItem", "attrs": { "slug": "orange-blossom-water", "amount": 2, "unit": "tbsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "mixed-candied-peel", "amount": 80, "unit": "g", "prepNote": "finely chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cinnamon", "amount": 0.5, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pasta frolla" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Beat the softened butter, sugar, lemon zest, and salt until smooth. Beat in the eggs one at a time. Add the flour and mix until a soft dough forms. Wrap and refrigerate for at least 1 hour." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the wheat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Drain the canned grano cotto and put it in a small saucepan with the milk, butter, and 30 g sugar. Cook over low heat, stirring, for 10–12 minutes until the mixture thickens and the wheat absorbs the milk. The texture should be like thick porridge. Remove from the heat and cool completely." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pass the ricotta through a sieve into a large bowl. Add the 200 g sugar and beat until smooth. Beat in the eggs and yolks one at a time. Add the orange blossom water, vanilla, cinnamon, and candied peel and stir to combine. Fold in the cooled wheat mixture. The filling will be quite liquid." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Line the tin" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 170°C conventional (150°C fan). On a floured surface, roll two-thirds of the chilled pasta frolla to 4 mm and line a 26–28 cm tart tin or springform tin (pastiera is traditionally a deeper dish than a standard tart tin). Press into the base and sides. The dough is fragile; patch any tears." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill and decorate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour the filling into the lined tin. Roll the remaining dough to 3 mm and cut into strips about 1.5 cm wide. Lay the strips in a lattice pattern over the filling, pressing the ends against the pastry sides. Bake for 50–55 minutes until the lattice is deep amber and the filling is set at the edges but still slightly wobbly in the centre. Cool completely in the tin, then leave uncovered at cool room temperature for 48 hours before serving." }]
+      }
+    ]
+  }
+}

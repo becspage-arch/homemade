@@ -1,0 +1,172 @@
+{
+  "slug": "maamoul-date-pistachio",
+  "title": "Maamoul",
+  "subtitle": "Levantine semolina cookies with date and pistachio fillings",
+  "excerpt": "Levantine pressed semolina and flour cookies filled with either spiced date paste or ground pistachio. Moulded in a carved wooden mould (tabaa) or shaped by hand, baked until just set and still pale. Dusted with icing sugar before serving.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "biscuits",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Maamoul are documented in Arab culinary tradition from medieval cookbooks including the thirteenth-century Iraqi manuscript Kitab al-Tabikh by Muhammad bin Hasan al-Baghdadi. They are a traditional celebration cookie across Lebanon, Syria, Palestine, and Jordan, prepared for Eid, Easter, and Diwali depending on the community. The carved wooden mould (tabaa or tabi) is a specialist tool; the pattern identifies the filling: dome for date, flatter for pistachio or walnut. The recipe here is in the public domain and reproduced across generations of Arab household cookbooks.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "About 30 cookies",
+    "prepMinutes": 50,
+    "cookMinutes": 20,
+    "restingMinutes": 60,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze baked and cooled maamoul before dusting. Thaw at room temperature and dust with icing sugar before serving.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly. Bake on two trays.",
+    "makeAheadNotes": "Maamoul keep in an airtight tin for up to 2 weeks. They improve over the first few days as the flavour of the resting dough develops.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "levantine",
+    "mealType": "snack",
+    "mood": ["makesAhead"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 300,
+      "bakeTemperatureCelsius": 170,
+      "bakeTemperatureNote": "conventional oven; fan at 150°C. Maamoul should be pale to very light blond on top, with a slightly more coloured base. They do not brown dramatically.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "food-processor", "isOptional": true },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "semolina-dough", "term": "semolina dough", "definition": "A dough made with a proportion of fine semolina (smeed), which gives maamoul their characteristic slightly sandy, crumbly texture. The semolina must rest with the butter to hydrate and soften before mixing in the other ingredients; rushing this step produces a coarse-textured cookie." },
+    { "slug": "mahlab", "term": "mahlab", "definition": "Ground cherry kernels used as a spice in Levantine baking, giving a faint marzipan-cherry flavour. Available in Middle Eastern grocery shops. Omit if unavailable; the cookies are still correct without it." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "semolina-dough", "term": "semolina dough" } }], "text": "semolina dough" }, { "type": "text", "text": " needs time. The semolina must absorb the butter before the liquid is added — rushing produces a hard-textured cookie. The rest can be anywhere from 1 hour to overnight in the fridge. " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mahlab", "term": "Mahlab" } }], "text": "Mahlab" }, { "type": "text", "text": " is the traditional spice; rose water is the traditional liquid. If a carved wooden mould is not available, shape by hand: roll the dough into a ball, push a thumb in to form a cup, fill, and close the top, then flatten slightly and pattern the surface with a fork." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The dough" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "fine-semolina", "amount": 300, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 150, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 60, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 200, "unit": "g", "prepNote": "melted and cooled to lukewarm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "rose-water", "amount": 3, "unit": "tbsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 3, "unit": "tbsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "mahlab", "amount": 0.5, "unit": "tsp", "prepNote": "ground (optional)" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The date filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "medjool-dates", "amount": 250, "unit": "g", "prepNote": "pitted" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 1, "unit": "tbsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ground-cinnamon", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ground-cardamom", "amount": 0.25, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The pistachio filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "pistachio-kernels", "amount": 200, "unit": "g", "prepNote": "unsalted, finely ground" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 60, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "rose-water", "amount": 2, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "To finish" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 3, "unit": "tbsp", "prepNote": "for dusting" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rest the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the semolina, flour, icing sugar, and mahlab (if using) in a large bowl. Pour the lukewarm melted butter over and work through with your fingers until the mixture resembles damp sand. Cover and leave to rest for at least 1 hour at room temperature." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the fillings" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For the date filling: process the pitted dates, butter, cinnamon, and cardamom in a food processor until a smooth paste forms. If without a processor, knead together by hand until uniform. For the pistachio filling: combine the ground pistachios, icing sugar, and rose water and work together until the mixture holds when pressed." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "After resting, add the rose water and milk to the semolina mixture and bring together into a soft, pliable dough. It should hold its shape when pressed but not be sticky. If it crumbles, add more milk a teaspoon at a time." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and fill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 170°C conventional (150°C fan). Pinch off a piece of dough the size of a walnut (about 25 g). Roll into a ball and press your thumb into the centre to form a deep cup. Place a teaspoon of filling inside, close the dough over the top and roll between your palms to seal. If using a maamoul mould, press the filled ball into the mould and tap out. Otherwise, flatten slightly and mark with fork tines. Place on ungreased baking trays, spaced 3 cm apart." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake for 18–22 minutes until the bases are pale gold and the top is set but still light in colour. Do not overbake — maamoul are dry and hard if overcooked. Cool completely on the tray. Dust heavily with icing sugar before serving." }]
+      }
+    ]
+  }
+}

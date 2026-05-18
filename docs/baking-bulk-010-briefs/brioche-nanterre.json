@@ -1,0 +1,160 @@
+{
+  "slug": "brioche-nanterre",
+  "title": "Brioche Nanterre",
+  "subtitle": "The pull-apart tin brioche",
+  "excerpt": "Eight balls of enriched dough pressed side by side in a loaf tin, rising to a pull-apart brioche with a feathered top and a crumb that is rich without being heavy. The tin gives it its name and its shape.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Brioche Nanterre is named for the Parisian suburb and is documented in classic French baking literature from the nineteenth century. Auguste Escoffier, Le Guide Culinaire (1903), records the enriched dough ratios. The method here follows the traditional slow-addition butter technique that characterises proper brioche.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (900 g / 2 lb tin)",
+    "prepMinutes": 30,
+    "cookMinutes": 30,
+    "restingMinutes": 180,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Cool completely, slice, and freeze in a sealed bag for up to 2 months. Toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough benefits from an overnight cold retard after shaping. Mix in the evening, bulk ferment at room temperature for 2 hours, shape into balls, and refrigerate overnight. Bake in the morning.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "breakfast",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 300,
+      "hydrationPercent": 60,
+      "saltPercent": 1.8,
+      "yeastPercent": 1.5,
+      "levainPercent": null,
+      "bulkFermentMinutes": 120,
+      "proofMinutes": 90,
+      "retardingMinutes": 480,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "conventional oven; fan at 170°C. A lower temperature than plain bread — the egg and butter in the dough brown quickly.",
+      "steamMethod": "none",
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "stand-mixer", "isOptional": false },
+    { "slug": "dough-hook", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "enriched-dough", "term": "enriched dough", "definition": "A bread dough that contains fat (butter), eggs, and often sugar in addition to the standard flour, water, yeast, and salt. Enrichment slows fermentation and produces a soft, feathered crumb." },
+    { "slug": "window-pane-test", "term": "windowpane test", "definition": "Stretching a small piece of dough against the light to check gluten development. If the dough stretches thin enough to see light through without tearing, the gluten network is ready." }
+  ],
+  "techniqueSlugs": ["enriched-bread-shaping", "slow-butter-incorporation"],
+  "criticalTechniques": ["slow-butter-incorporation"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Brioche Nanterre is the everyday brioche of French boulangeries: eight rounds of " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "enriched-dough", "term": "enriched dough" } }], "text": "enriched dough" }, { "type": "text", "text": " placed side by side in a loaf tin and baked until the humps of each round push up against each other, creating a pull-apart top that is as useful for toast as it is for tearing at the table. The butter goes in last, added cold and in pieces, which takes patience but gives the dough its characteristic fine crumb." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A stand mixer is strongly recommended. The dough starts stiff and becomes very soft and sticky as the butter incorporates; working it by hand for the 15–20 minutes required is possible but tiring. Plan for about 30 minutes of active work and 3 hours of resting before the oven, or make the dough the evening before and refrigerate overnight." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 300, "unit": "g", "prepNote": "strong bread flour preferred" } },
+          { "type": "ingredientItem", "attrs": { "slug": "dried-yeast", "amount": 4.5, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 30, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 5.5, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg", "amount": 3, "unit": "", "prepNote": "medium, at room temperature" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 60, "unit": "ml", "prepNote": "lukewarm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 150, "unit": "g", "prepNote": "cold, cut into 1 cm cubes" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg", "amount": 1, "unit": "", "prepNote": "beaten, for the egg wash" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "In the bowl of the stand mixer fitted with the dough hook, combine the flour, yeast, sugar, and salt. Add the 3 eggs and the lukewarm milk. Mix on low for 3 minutes until the dough comes together, then increase to medium and work for 8 minutes. The dough will be stiff and slightly rough at this stage." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the butter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "With the mixer on medium-low, add the cold butter cube by cube, waiting until each piece has been absorbed before adding the next. This takes around 15 minutes. The dough will soften considerably and may look greasy and broken halfway through; keep adding and it will come back together. When all the butter is in, increase to medium-high and beat for 3 minutes until the dough is smooth, shiny, and passes the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "window-pane-test", "term": "windowpane test" } }], "text": "windowpane test" }, { "type": "text", "text": ". The butter must be cold so it stays in distinct flakes rather than melting into the dough all at once." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment, 2 hours" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Scrape the dough into a clean bowl, cover, and leave at room temperature for 2 hours until noticeably risen. Then press gently to deflate, cover tightly with cling film, and refrigerate for at least 4 hours or overnight. The cold rest firms the butter-enriched dough and makes it manageable to shape." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and proof" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Lightly butter the loaf tin. Turn the cold dough onto a lightly floured surface and divide into 8 equal pieces (about 65–70 g each). Shape each into a tight round — the " }, { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "enriched-bread-shaping", "label": "enriched-bread-shaping" } }], "text": "enriched bread shaping" }, { "type": "text", "text": " technique applies here. Arrange the rounds in two rows of four in the prepared tin. Cover loosely and proof at room temperature for 1½ hours, until the rounds have risen to the rim of the tin and the surface looks slightly domed." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Glaze and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Brush the surface gently with beaten egg. Take care not to press — the dough is delicate at this stage. Bake at 190°C conventional (170°C fan) for 28–32 minutes, until the top is a deep, even amber and an instant-read thermometer inserted into the centre reads 93–95°C. If the top browns too quickly, lay a piece of baking paper loosely over it. Cool in the tin for 10 minutes, then turn out onto a wire rack." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dough won't come together after butter: keep mixing. It always looks broken halfway through; another 5 minutes usually resolves it." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Top cracks unevenly: the proof was slightly short. Give it the full 1½ hours — the rounds should be touching and domed before the oven." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pale crumb after baking: the internal temperature is the reliable test. Pull it at 93°C and the crumb will be fully set." }] }] }
+        ]
+      }
+    ]
+  }
+}

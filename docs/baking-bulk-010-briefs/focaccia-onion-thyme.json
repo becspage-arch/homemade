@@ -1,0 +1,168 @@
+{
+  "slug": "focaccia-onion-thyme",
+  "title": "Focaccia with caramelised onion and thyme",
+  "subtitle": "A slow-fermented Ligurian slab with savoury topping",
+  "excerpt": "A high-hydration focaccia, dimpled and oiled, topped with onion slowly cooked to a sweet tangle and scattered with fresh thyme. The overnight ferment deepens the flavour; the generous olive oil ensures a crust that is crisp on the underside and soft on top.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Focaccia methods derived from Ligurian baking tradition documented in Italian agricultural extension material (early twentieth century) and in Ada Boni, Il Talismano della Felicità (1925). The caramelised onion topping follows the Genovese cipolla bianca tradition. The overnight cold ferment is a widely practised domestic adaptation of the commercial long-proofing method.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 25,
+    "restingMinutes": 60,
+    "chillingMinutes": 720,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Cut into squares, cool completely, and freeze in a bag for up to 1 month. Reheat in a hot oven (200°C) for 8–10 minutes from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough is mixed the evening before and cold-fermented overnight. The onions can also be cooked the day before and stored in the fridge.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "italian",
+    "mealType": "side",
+    "mood": ["weekendBake", "makesAhead"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 80,
+      "saltPercent": 2.0,
+      "yeastPercent": 0.5,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 60,
+      "retardingMinutes": 720,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "conventional oven; fan at 200°C. A dark, heavy baking tin gives the crispest underside.",
+      "steamMethod": "none — the olive oil in the tin provides the crust",
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "silicone-spatula", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "coil-fold", "term": "coil fold", "definition": "A stretch-and-fold technique used on high-hydration doughs: lift the centre of the dough, let the sides drop and fold beneath, then rotate 180° and repeat. Builds gluten without degassing." },
+    { "slug": "dimpling", "term": "dimpling", "definition": "Pressing fingertips firmly into risen focaccia dough to create the characteristic craters before baking. The dimples hold oil and prevent the surface from ballooning in the oven." }
+  ],
+  "techniqueSlugs": ["high-hydration-dough-handling"],
+  "criticalTechniques": ["high-hydration-dough-handling"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "At 80% hydration this dough is more pourable than kneadable — a wet, cohesive mass that the overnight cold ferment transforms into something bubbly and alive. The onion topping is cooked slowly in olive oil until completely soft and sweet, which takes around 40 minutes but can be done a day ahead. " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dimpling", "term": "Dimpling" } }], "text": "Dimpling" }, { "type": "text", "text": " the dough firmly before baking is important: shallow pokes produce a flat focaccia; confident fingertip impressions hold oil and give the characteristic open surface." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "For the dough" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 500, "unit": "g", "prepNote": "strong bread flour" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 400, "unit": "ml", "prepNote": "lukewarm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "dried-yeast", "amount": 2.5, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 10, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "olive-oil", "amount": 4, "unit": "tbsp", "prepNote": "plus extra for the tin" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "For the topping" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "onion", "amount": 3, "unit": "", "prepNote": "large, thinly sliced" } },
+          { "type": "ingredientItem", "attrs": { "slug": "olive-oil", "amount": 3, "unit": "tbsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "fresh-thyme", "amount": 8, "unit": "sprigs" } },
+          { "type": "ingredientItem", "attrs": { "slug": "flaky-salt", "amount": 1, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the dough — evening" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whisk the yeast into the lukewarm water and leave for 5 minutes. Add the flour and salt and stir until the dough is shaggy and no dry flour remains. Add the olive oil and work it in with a few strokes. The dough will be very wet. Cover and leave at room temperature for 30 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Folds, then cold ferment overnight" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "With wet hands, perform three sets of " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "coil-fold", "term": "coil fold" } }], "text": "coil folds" }, { "type": "text", "text": " at 30-minute intervals. After the third fold, the dough should feel more elastic and hold its shape briefly. Cover tightly and refrigerate overnight (8–16 hours)." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the onions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat 3 tablespoons of olive oil in a wide frying pan over a medium-low heat. Add the sliced onions with a pinch of salt and cook, stirring occasionally, for 35–40 minutes until completely soft, sweet, and golden but not browned or crisp. Set aside to cool." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Tin and proof, 1 hour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour a generous film of olive oil into a 30 × 20 cm baking tin. Tip the cold dough into the tin and, with oiled hands, gently coax it to fill the corners. Do not force it; if it springs back, cover and rest 10 minutes then try again. Cover and proof at room temperature for 1 hour until the dough is puffed and jiggly." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Dimple and top" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 220°C conventional (200°C fan). Press your fingers firmly into the dough to create deep dimples across the surface. Drizzle with a little more olive oil so the dimples fill with oil. Spread the caramelised onions evenly over the top, press the thyme sprigs into the dough, and scatter the flaky salt." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake for 22–26 minutes until the top is golden and the edges are visibly crisping away from the tin. Lift a corner to check the underside — it should be a deep gold. Cool in the tin for 5 minutes, then slide onto a board to serve." }]
+      }
+    ]
+  }
+}

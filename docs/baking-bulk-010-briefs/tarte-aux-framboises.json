@@ -1,0 +1,155 @@
+{
+  "slug": "tarte-aux-framboises",
+  "title": "Tarte aux framboises",
+  "subtitle": "French raspberry tart with crème pâtissière",
+  "excerpt": "A classic French tart: pâte sucrée case blind-baked until golden, filled with vanilla crème pâtissière, and topped with fresh raspberries arranged in tight concentric rows. No glaze required if the fruit is good.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The French fruit tart in its modern form, with crème pâtissière and arranged fresh fruit, is a patisserie standard documented in French confectionery literature from the nineteenth century. Auguste Escoffier, Le Guide Culinaire (1903), and later Carême's publications document both the pâte sucrée and crème pâtissière as foundational preparations. The tarte aux framboises is among the most common seasonal variations.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 90,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The blind-baked shell keeps in a tin for up to 2 days. The crème pâtissière keeps refrigerated for up to 3 days. Assemble and top with raspberries no more than 2 hours before serving.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "conventional oven; fan at 160°C. The shell needs full heat to colour properly.",
+      "chillingMinutes": 90,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "tart-tin", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false },
+    { "slug": "baking-beans", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "pate-sucree", "term": "pâte sucrée", "definition": "Sweetened shortcrust pastry made with icing sugar rather than caster sugar, producing a finer, more biscuit-like crumb. Richer than plain shortcrust; the egg yolks add colour and structure. Used for tarts that require a crisp, sliceable base." },
+    { "slug": "creme-patissiere", "term": "crème pâtissière", "definition": "French pastry cream: a thick, set custard of milk, egg yolks, sugar, and cornflour (or plain flour), cooked on the hob until it thickens. The base filling for fruit tarts, éclairs, and mille-feuille." }
+  ],
+  "techniqueSlugs": ["blind-baking"],
+  "criticalTechniques": ["blind-baking"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The quality of a fruit tart is almost entirely in the pastry and the cream. The " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pate-sucree", "term": "pâte sucrée" } }], "text": "pâte sucrée" }, { "type": "text", "text": " should be thin, even, and fully baked through — a soggy base ruins the tart. The " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "creme-patissiere", "term": "crème pâtissière" } }], "text": "crème pâtissière" }, { "type": "text", "text": " should be smooth and set firm enough to hold a clean slice. The raspberries go on cold, just before serving." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The pâte sucrée" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 200, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cold, cubed" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 40, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-yolk", "amount": 2, "unit": "" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cold-water", "amount": 1, "unit": "tbsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The crème pâtissière" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 500, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-yolk", "amount": 4, "unit": "" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 30, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cornflour", "amount": 20, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-pod", "amount": 1, "unit": "", "prepNote": "split and scraped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "cubed, to finish" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The topping" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "fresh-raspberries", "amount": 400, "unit": "g" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pastry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rub the cold butter into the flour and icing sugar until the mixture resembles fine breadcrumbs. Add the egg yolks and just enough cold water to bring the dough together. Press into a disc, wrap, and chill for 30 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Line and blind-bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 180°C conventional (160°C fan). Roll the pastry to 3 mm and line a 23 cm loose-bottomed tart tin. Trim the edges flush, press into the flutes, and chill for 20 minutes. Line with baking paper, fill with baking beans, and bake for 15 minutes. Remove beans and paper and bake for a further 8–10 minutes until the base is pale gold and the sides are dry. Cool completely in the tin." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the crème pâtissière" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the milk with the split vanilla pod to just below a simmer; remove the pod. Whisk the egg yolks, sugar, flour, and cornflour together in a bowl until smooth and pale. Pour a third of the hot milk into the egg mixture while whisking, then return everything to the pan. Cook over medium heat, stirring constantly, until the cream boils and thickens, about 3–4 minutes. Remove from heat and beat in the butter until incorporated. Transfer to a bowl, press cling film directly onto the surface, and refrigerate until fully cold and set, at least 1 hour." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill and top" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Beat the chilled crème pâtissière briefly with a spatula to loosen it. Spread it evenly into the cooled tart shell to about 5 mm below the rim. Arrange the raspberries in tight concentric rows, pointed-end up. Serve within 2 hours." }]
+      }
+    ]
+  }
+}

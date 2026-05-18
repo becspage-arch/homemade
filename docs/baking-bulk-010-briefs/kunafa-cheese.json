@@ -1,0 +1,146 @@
+{
+  "slug": "kunafa-cheese",
+  "title": "Kunafa with cheese",
+  "subtitle": "Levantine kataifi pastry over a melting cheese filling",
+  "excerpt": "Shredded kataifi pastry pressed into a tray over a mild melting cheese filling, baked until deeply crisp, then flooded with orange blossom sugar syrup. Served hot with the pastry crackling and the cheese still molten. A Levantine celebration pastry.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Kunafa (also knafeh, kanafeh) is documented in Levantine and Palestinian culinary tradition from at least the tenth century in Arab culinary texts. The version with a cheese filling and kataifi (shredded filo) crust is a central tradition in Palestinian and Syrian festive baking. It appears in a wide range of Middle Eastern culinary sources and is reproduced in public-domain Palestinian and Arab cookbooks. The cheese used in the original is akkawi or nabulsi; low-moisture mozzarella is the widely available substitute.",
+  "recipe": {
+    "servings": 12,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Kunafa is best served immediately from the oven. The pastry loses its crunch as it cools and the cheese firms as it sets. Make and bake to order.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "levantine",
+    "mealType": "dessert",
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 0,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "conventional oven; fan at 170°C. The kataifi must colour deeply to develop crunch; pale kataifi will be soft and flavourless.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "kataifi-pastry", "term": "kataifi pastry", "definition": "Shredded filo pastry sold as a nest of thin, hair-like strands. Available fresh or frozen from Middle Eastern grocery shops. The strands are separated before use and coated in butter; they bake to an extremely crisp, crunchy texture with a nutty flavour." },
+    { "slug": "akkawi-cheese", "term": "akkawi", "definition": "A mild, white brined cheese from the Levant with good melting properties and low acidity. It becomes molten when heated. Low-moisture mozzarella is the closest widely available substitute; fresh mozzarella contains too much water and makes the pastry soggy." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Kunafa is eaten hot: the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kataifi-pastry", "term": "kataifi pastry" } }], "text": "kataifi pastry" }, { "type": "text", "text": " crackling, the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "akkawi-cheese", "term": "akkawi" } }], "text": "akkawi" }, { "type": "text", "text": " (or mozzarella) molten beneath. The syrup goes on immediately after baking and absorbs in 2–3 minutes. The dish must be inverted onto a serving board while the cheese is still liquid enough to release cleanly from the tin. If you let it cool, the cheese sets and the flip is messier." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The pastry layer" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "kataifi-pastry", "amount": 400, "unit": "g", "prepNote": "thawed if frozen, strands separated" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 150, "unit": "g", "prepNote": "melted" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The cheese filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "low-moisture-mozzarella", "amount": 500, "unit": "g", "prepNote": "grated (or akkawi, soaked in cold water for 30 minutes and crumbled)" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ricotta", "amount": 100, "unit": "g", "prepNote": "drained" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The syrup" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 300, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 200, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "lemon", "amount": 0.5, "unit": "", "prepNote": "juice only" } },
+          { "type": "ingredientItem", "attrs": { "slug": "orange-blossom-water", "amount": 1, "unit": "tbsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the syrup" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine sugar and water in a saucepan, bring to a boil, stirring until dissolved. Simmer for 5 minutes. Add lemon juice and orange blossom water. Keep warm over very low heat." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the kataifi layer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 190°C conventional (170°C fan). Separate the kataifi strands well in a large bowl and pour the melted butter over. Work the butter through the strands with your hands until every strand is coated. Butter a 30 × 20 cm tin. Press half the kataifi into an even, compact layer in the base — pack it firmly, about 1.5 cm deep." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill and top" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mix the mozzarella and ricotta together and spread evenly over the kataifi base, pressing to a level layer. Spread the remaining kataifi evenly on top and press down firmly. The kataifi should be compact and level, not loose." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake and invert" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake for 30–35 minutes until the kataifi is deep amber all over — press the top layer; it should be firm and very crisp. Pour the warm syrup evenly over the surface the moment it comes out of the oven. Leave for 2–3 minutes to absorb. Place a large board or tray over the tin and invert in one motion. Lift the tin away. The caramelised underside (now the top) should release cleanly. Garnish with ground pistachios if liked. Serve immediately." }]
+      }
+    ]
+  }
+}

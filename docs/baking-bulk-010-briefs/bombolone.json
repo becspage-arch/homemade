@@ -1,0 +1,159 @@
+{
+  "slug": "bombolone",
+  "title": "Bomboloni",
+  "subtitle": "Italian filled doughnuts with pastry cream",
+  "excerpt": "Italian yeasted doughnuts: no hole, filled after frying with vanilla crème pâtissière or jam, and rolled in caster sugar. Slightly brioche-like in flavour from lemon zest and vanilla in the dough. The classic Italian breakfast.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Bomboloni are documented in Italian, particularly Tuscan, culinary tradition from the eighteenth century. They are a standard product of Italian pasticcerie and are particularly associated with seaside bar culture. The name derives from bomba (bomb), referring to the round, filled shape. Pellegrino Artusi, La Scienza in Cucina e l'Arte di Mangiar Bene (1891), includes fried doughnut preparations that are precursors to the modern bombolone. The crème pâtissière-filled version is the most common Florentine style.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "About 16 bomboloni",
+    "prepMinutes": 40,
+    "cookMinutes": 30,
+    "restingMinutes": 90,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Bomboloni are best within 2 hours of frying. The dough can be made the evening before and refrigerated after the first prove. Shape and fry in the morning.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "italian",
+    "mealType": "breakfast",
+    "mood": ["comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "bakeTemperatureCelsius": 0,
+      "bakeTemperatureNote": "Deep-fried at 175°C. Below 170°C the doughnuts absorb oil; above 185°C the outside is set before the centre cooks through. A sugar thermometer is required.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "dough-hook", "isOptional": true },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "sugar-thermometer", "isOptional": false },
+    { "slug": "piping-bag", "isOptional": false },
+    { "slug": "piping-tips", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "filling-doughnuts", "term": "filling after frying", "definition": "Bomboloni are filled through a hole poked in the side after frying, not before. A piping bag fitted with a long thin nozzle is inserted 2 cm into the hole and the filling is piped in until the doughnut feels slightly resistant. Filling before frying causes the filling to leak into the oil." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The bombolone dough is closer to brioche than a plain doughnut dough: lemon zest and vanilla in the dough, slightly more butter, and a longer knead. The crème pâtissière needs to be chilled and firm before " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "filling-doughnuts", "term": "filling after frying" } }], "text": "filling after frying" }, { "type": "text", "text": " — a warm or soft cream will simply flow out. Make the crème pâtissière first and chill it while the dough proves." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The dough" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "strong-white-flour", "amount": 500, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 70, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 8, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "instant-yeast", "amount": 7, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 200, "unit": "ml", "prepNote": "lukewarm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg", "amount": 3, "unit": "" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": "softened" } },
+          { "type": "ingredientItem", "attrs": { "slug": "lemon", "amount": 1, "unit": "", "prepNote": "zest only" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 1, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The vanilla crème pâtissière filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 500, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-yolk", "amount": 4, "unit": "" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cornflour", "amount": 50, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-pod", "amount": 1, "unit": "", "prepNote": "split and scraped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 20, "unit": "g" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "For frying and finishing" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "sunflower-oil", "amount": 1500, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 100, "unit": "g", "prepNote": "for rolling" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the crème pâtissière" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the milk with the vanilla pod to just below a simmer. Whisk the egg yolks, sugar, and cornflour until smooth. Pour a third of the hot milk into the egg mixture while whisking, then return to the pan. Cook over medium heat, stirring constantly, until thick and boiling, about 3 minutes. Beat in the butter. Press film directly onto the surface and refrigerate until cold and firm, at least 1 hour." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the flour, sugar, salt, and yeast. Add the milk, eggs, lemon zest, and vanilla and mix until a shaggy dough forms. Knead for 8 minutes by hand or 5 minutes with a dough hook. Add the softened butter in additions and continue kneading until the dough is very smooth and passes the window-pane test, 8–10 minutes more. It will be soft. Prove in an oiled bowl for 1–1.5 hours until doubled." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and prove" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Turn the proved dough onto a floured surface and divide into 16 equal pieces (about 60 g each). Roll each into a smooth ball. Place on squares of baking paper on trays, cover, and prove for 45–60 minutes until puffy." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry and fill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oil to 175°C. Fry 3–4 bomboloni at a time for 90 seconds per side until deep amber. Drain on a rack. Roll in caster sugar while warm. When just cool enough to handle, poke a skewer into the side of each to create a cavity. Beat the chilled crème pâtissière smooth and transfer to a piping bag with a long plain nozzle. Insert the nozzle into each hole and pipe until the bombolone feels slightly resistant — about 35–40 g of cream. Serve within 2 hours." }]
+      }
+    ]
+  }
+}

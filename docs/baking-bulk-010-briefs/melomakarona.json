@@ -1,0 +1,129 @@
+{
+  "slug": "melomakarona",
+  "title": "Melomakarona",
+  "subtitle": "Greek honey-walnut Christmas biscuits",
+  "excerpt": "Oval orange-and-olive-oil biscuits baked crisp, then dipped while still warm into a thin honey syrup and scattered with finely chopped walnuts. The honey soaks in as they cool to a fragrant, faintly sticky finish.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "biscuits",
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Melomakarona are the traditional Greek Christmas biscuits, documented in Greek baking literature from the nineteenth century and described as a honey-dipped pastry associated with the twelve days of Christmas. The recipe here follows the standard Greek home version using olive oil, orange, and honey syrup.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "About 35 biscuits",
+    "prepMinutes": 25,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Doubles cleanly. Shape in batches; dip all at once in the warm syrup.",
+    "makeAheadNotes": "Make 2–3 days ahead; they improve in flavour as the honey syrup is absorbed. Store in a single layer.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "greek",
+    "mealType": "snack",
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 400,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "conventional oven; fan at 160°C.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "honey-syrup-dip", "term": "honey syrup dip", "definition": "Thin warm syrup of honey, water, and sometimes sugar in which freshly baked biscuits are briefly submerged. The hot biscuit absorbs the syrup as it cools, becoming fragrant and faintly sticky." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Melomakarona are olive-oil biscuits — not unusual in Greek baking, where butter is often absent and olive oil provides the fat. The orange flavour in the dough (zest and juice) gives them their characteristic freshness, which balances the rich " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "honey-syrup-dip", "term": "honey syrup dip" } }], "text": "honey syrup dip" }, { "type": "text", "text": ". Dip them immediately while hot; the pores in the warm biscuit absorb the syrup. Cold biscuits take much less in and stay dry at the centre." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The biscuits" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 400, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "semolina", "amount": 50, "unit": "g", "prepNote": "fine" } },
+          { "type": "ingredientItem", "attrs": { "slug": "baking-powder", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "bicarbonate-of-soda", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ground-cinnamon", "amount": 1.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ground-cloves", "amount": 0.25, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "olive-oil", "amount": 150, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 80, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "orange", "amount": 1, "unit": "", "prepNote": "zest and 80 ml juice" } },
+          { "type": "ingredientItem", "attrs": { "slug": "brandy", "amount": 2, "unit": "tbsp", "prepNote": "or orange juice" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The honey syrup" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "honey", "amount": 250, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 150, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 50, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cinnamon-stick", "amount": 1, "unit": "" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "To finish" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "walnuts", "amount": 100, "unit": "g", "prepNote": "very finely chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ground-cinnamon", "amount": 0.5, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 180°C conventional (160°C fan). Whisk together the olive oil, sugar, orange zest, orange juice, and brandy. Add the flour, semolina, baking powder, bicarbonate of soda, and spices and mix to a soft, non-sticky dough. If the dough is sticky, add flour by the tablespoon. Shape into small oval patties about 4 cm long (20–22 g each), pressing a fork along the top to mark a pattern, and place on lined baking trays." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake for 20–25 minutes until firm and deep golden. While they bake, make the syrup: combine the honey, water, sugar, and cinnamon stick in a saucepan, bring to a boil, and simmer for 5 minutes. Keep warm." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Working in batches, dip the hot biscuits into the warm syrup for 20–30 seconds, turning once. Lift out with a slotted spoon and place on a rack. Scatter the finely chopped walnuts and a pinch of cinnamon over each while the syrup is still tacky. Leave to cool completely before storing. They keep for 10–14 days at room temperature." }]
+      }
+    ]
+  }
+}

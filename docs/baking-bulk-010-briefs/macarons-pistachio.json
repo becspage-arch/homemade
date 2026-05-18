@@ -1,0 +1,167 @@
+{
+  "slug": "macarons-pistachio",
+  "title": "Pistachio macarons",
+  "subtitle": "French shell, pistachio buttercream",
+  "excerpt": "French macarons with ground pistachio incorporated into the almond shell and filled with a pistachio buttercream. The shell is thin, crisp, and meringue-light; the filling is rich and nutty. The pistachio is pale green, not artificially vivid.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "biscuits",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "French macarons in their modern sandwich form are attributed to Pierre Desfontaines of Ladurée, Paris, in the early twentieth century. The pistachio variation follows the standard French macaron technique with a portion of the ground almonds replaced by ground pistachios, a well-established patisserie variation documented in French confectionery literature.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "About 20 assembled macarons",
+    "prepMinutes": 45,
+    "cookMinutes": 14,
+    "restingMinutes": 60,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze assembled macarons in a single layer. Thaw in the fridge for 2 hours — the shell softens slightly as it comes to temperature, which is the correct eating texture.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Macarons benefit from 24 hours in the fridge after assembly — the shell softens against the buttercream to the characteristic slightly chewy texture.",
+    "dietaryFlags": ["vegetarian", "gluten-free"],
+    "cuisine": "french",
+    "mealType": "snack",
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 0,
+      "bakeTemperatureCelsius": 150,
+      "bakeTemperatureNote": "conventional oven; fan at 130°C. Lower temperatures than most baking — macarons are heat-sensitive. Domestic ovens drift significantly; an oven thermometer is essential here.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-mat", "isOptional": false },
+    { "slug": "piping-bag", "isOptional": false },
+    { "slug": "piping-tips", "isOptional": false },
+    { "slug": "food-processor", "isOptional": false },
+    { "slug": "sugar-thermometer", "isOptional": true },
+    { "slug": "oven-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "tant-pour-tant", "term": "tant pour tant", "definition": "Equal weights of ground nuts and icing sugar, sifted together to form the dry base of a macaron shell. The ratio is the starting point of all French macaron shells." },
+    { "slug": "macaronage", "term": "macaronage", "definition": "The folding stage in macaron-making where the dry tant-pour-tant is folded into the meringue using a specific technique that deliberately deflates the meringue to the correct consistency. The batter should flow like lava and fall from the spatula in a continuous ribbon." },
+    { "slug": "skin-forming", "term": "skin-forming", "definition": "The rest period after piping macaron shells when the surface dries to a thin skin before baking. The skin is what creates the smooth, uncracked top and the signature pied (foot) that rises at the base." }
+  ],
+  "techniqueSlugs": ["french-macaron-shells", "italian-meringue"],
+  "criticalTechniques": ["french-macaron-shells"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Macarons are the most technically demanding shell in French patisserie home baking. Humidity, oven calibration, and the precision of the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "macaronage", "term": "macaronage" } }], "text": "macaronage" }, { "type": "text", "text": " all affect the outcome. The pistachio version adds the variable of moisture from the pistachios (more oil than almonds); sift the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tant-pour-tant", "term": "tant pour tant" } }], "text": "tant pour tant" }, { "type": "text", "text": " carefully and discard any large pieces that don't pass through. An oven thermometer is not optional — 10°C makes the difference between a correctly baked shell and a foot-less, hollow, or cracked one." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "title": "Before you start" },
+        "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Age the egg whites: separate 24–48 hours ahead and store uncovered in the fridge. Aged whites are less elastic and beat to a more stable meringue. Allow them to come to room temperature before use. Preheat the oven at least 30 minutes before baking, and verify the temperature with an oven thermometer." }] }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The shell (tant pour tant)" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "ground-almonds", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ground-pistachios", "amount": 50, "unit": "g", "prepNote": "blitzed in a food processor from unsalted shelled pistachios" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 150, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-white", "amount": 75, "unit": "g", "prepNote": "aged 24–48 hours" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 75, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "green-food-colouring-gel", "amount": 1, "unit": "small drop", "prepNote": "optional — natural pistachio colour is a muted green" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The pistachio buttercream" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 120, "unit": "g", "prepNote": "softened" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 180, "unit": "g", "prepNote": "sifted" } },
+          { "type": "ingredientItem", "attrs": { "slug": "pistachio-paste", "amount": 40, "unit": "g", "prepNote": "or very finely ground pistachios" } },
+          { "type": "ingredientItem", "attrs": { "slug": "double-cream", "amount": 1, "unit": "tbsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the tant pour tant" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Process the ground almonds and ground pistachios together in a food processor for 30 seconds to ensure even texture. Sift together with the icing sugar, discarding any pieces that won't pass through a medium sieve. Repeat the sift twice. The mixture must be completely smooth to produce shells without lumps." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Beat the meringue" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Beat the aged egg whites on medium speed until frothy. Gradually add the caster sugar and beat to a firm, glossy meringue. The whites should hold a stiff peak and look smooth rather than dry. Add the food colouring gel now if using." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Macaronage" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add the tant pour tant to the meringue all at once. Begin folding with a silicone spatula — cut through the centre, press against the bowl wall, and rotate. The macaronage is complete when the batter flows off the spatula in a slow, continuous ribbon and settles back into the bowl within 10 seconds. Undermixed batter produces lumpy shells; overmixed batter is too liquid and spread flat without feet. This stage typically takes 30–50 folding strokes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pipe and rest" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Transfer the batter to a piping bag fitted with a plain 1 cm round tip. Pipe 3 cm circles onto silicone mat-lined trays, holding the bag perpendicular and lifting sharply at the end of each. Rap the trays firmly on the work surface three times to release any air bubbles. Leave uncovered at room temperature for 45–60 minutes until a " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "skin-forming", "term": "skin-forming" } }], "text": "skin-forming" }, { "type": "text", "text": " dry surface forms — the shell should no longer stick to a fingertip when gently touched." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake at 150°C conventional (130°C fan) for 12–14 minutes. The macaron is done when it is firm to a very light touch and the foot (the frilly ring at the base) is fully developed. Do not open the oven before 10 minutes. Cool completely on the mat before peeling off. Domestic ovens drift by 20°C or more; check with an oven thermometer before every batch." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Buttercream and assemble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Beat the softened butter until pale, then beat in the sifted icing sugar gradually. Add the pistachio paste and cream and beat until smooth and fluffy. Match macaron shells by size. Pipe a generous teaspoon of buttercream on one half and sandwich with a matched shell. Refrigerate assembled macarons for 24 hours before serving — this is when the shell and filling reach the correct eating texture." }]
+      }
+    ]
+  }
+}

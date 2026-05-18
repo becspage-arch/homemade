@@ -1,0 +1,153 @@
+{
+  "slug": "apple-pie-dutch-streusel",
+  "title": "Dutch apple pie with streusel top",
+  "subtitle": "Shortcrust base, cinnamon apple, crumble lid",
+  "excerpt": "Bramley or Cox apples in a spiced filling, set in a shortcrust pastry case and topped with a buttery oat-and-cinnamon streusel instead of a pastry lid. The streusel crisps to a deep golden crumble and needs no lattice work.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Dutch apple pie (appeltaart) is the signature pastry of the Netherlands, documented from at least the seventeenth century in Dutch household literature. The American streusel-top version is a distinct tradition documented in Pennsylvania Dutch communities from the nineteenth century and in American home-economics textbooks. This recipe follows the American streusel-top format.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze baked and cooled. Thaw overnight at room temperature and reheat at 180°C for 15 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pastry case can be blind-baked a day ahead. The streusel can be made ahead and refrigerated. Assemble and bake on the day.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "american",
+    "mealType": "dessert",
+    "mood": ["comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "conventional oven; fan at 170°C.",
+      "chillingMinutes": 30,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "round-cake-tin-23", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "streusel", "term": "streusel", "definition": "A German-derived crumble topping of flour, butter, sugar, and spice, often with oats or nuts added. Rubbed together to a clumpy, sandy texture and scattered over pies or coffee cakes before baking." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "streusel", "term": "streusel" } }], "text": "streusel" }, { "type": "text", "text": " removes the technical challenge of a pastry lid and replaces it with something quicker, more forgiving, and arguably better — a buttery oat crumble that browns more evenly than pastry and adds a contrasting crunch. Use Bramley apples for flavour and body; Cox or Braeburn if you prefer a firmer, less tart filling." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The shortcrust pastry" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 200, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cold, cubed" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 20, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-yolk", "amount": 1, "unit": "" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cold-water", "amount": 2, "unit": "tbsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The apple filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "bramley-apple", "amount": 800, "unit": "g", "prepNote": "peeled, cored, sliced 5 mm thick (about 4 large apples)" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 80, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ground-cinnamon", "amount": 1.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "lemon", "amount": 0.5, "unit": "", "prepNote": "juice only" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cornflour", "amount": 1, "unit": "tbsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The streusel" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 120, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "rolled-oats", "amount": 60, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "light-brown-sugar", "amount": 80, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ground-cinnamon", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": "cold, cubed" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and rest the pastry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rub the cold butter into the flour and icing sugar until the mixture resembles fine breadcrumbs. Add the egg yolk and enough cold water to bring the dough together. Press into a disc, wrap, and refrigerate for 30 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Line and blind-bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 190°C conventional (170°C fan). Roll the pastry to 3 mm thick and line a 23 cm round cake tin or pie dish. Trim and crimp the edge. Line with baking paper, fill with baking beans, and blind-bake for 15 minutes. Remove the beans and paper and bake for a further 5 minutes until the base is pale and matte." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Toss the apple slices with the sugar, cinnamon, lemon juice, and cornflour. Pile into the pastry case — the filling should mound above the tin rim as the apples compress during baking." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Streusel and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Make the streusel by rubbing the cold butter into the flour, oats, sugar, and cinnamon until the mixture forms clumps. Scatter evenly over the apple filling. Bake for 45–50 minutes until the streusel is deep golden and the filling is bubbling at the edges. If the streusel browns too quickly, cover loosely with foil. Cool for 20 minutes before slicing; the filling needs to set slightly." }]
+      }
+    ]
+  }
+}
