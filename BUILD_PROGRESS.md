@@ -86,7 +86,7 @@ and what unblocks expanding the affected catalogue.
 
 Single source of truth lives in `memory/project_pre_launch_checklist.md`. The summary of items still owed:
 
-- **Rebecca-action:** ICO registration, DMCA designated agent, email aliases (privacy@/dpo@/legal@), postal address decision, Google Play account, credential rotation.
+- **Rebecca-action:** ICO registration, DMCA designated agent, email aliases (privacy@/dpo@/legal@), postal address decision, Google Play account, credential rotation, **flip homemade repo back to private** (was flipped public 2026-05-18 for unlimited Actions minutes during content build — `gh repo edit becspage-arch/homemade --visibility private --accept-visibility-change-consequences` before the splash gate comes down).
 - **Code-action remaining:** analytics consent wiring (`apps/web/src/instrumentation-client.ts` + `apps/web/src/components/posthog-provider.tsx`), splash gate flip, signup allowlist flip, `TODO(legal)` sweep.
 - **Per-session rule:** every code-pushing worker runs the deploy-verify block + `/healthz` smoke (`feedback_deploy_verification.md`).
 
