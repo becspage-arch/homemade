@@ -28,17 +28,12 @@ const STREAMS: ReadonlyArray<{ name: StreamName; label: string; description: str
 
 const PAGE_SIZE = 50
 
-// Queue cron fires at minute 0 of every even hour UTC: 0 */2 * * *
+// Queue cron fires at minute 0 of every hour UTC: 0 * * * *
 function nextQueueFireUtc(): Date {
   const now = new Date()
-  const h = now.getUTCHours()
-  const nextHour = h % 2 === 0 ? h + 2 : h + 1
-  const next = new Date(
-    Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), nextHour, 0, 0),
-  )
-  if (next.getTime() <= now.getTime()) {
-    next.setUTCHours(next.getUTCHours() + 2)
-  }
+  const next = new Date(now)
+  next.setUTCMinutes(0, 0, 0)
+  next.setUTCHours(next.getUTCHours() + 1)
   return next
 }
 
@@ -216,7 +211,7 @@ export default async function AdminAutopilotPage({ searchParams }: PageProps) {
         <div>
           <h1>Autopilot</h1>
           <p>
-            Single-queue content autopilot — fires every 2 hours, picks the least-recently-fired
+            Single-queue content autopilot — fires every hour, picks the least-recently-fired
             READY category, and runs a bulk batch. Use the pause toggles to stop the queue
             without disabling the scheduled task.
           </p>
@@ -249,7 +244,7 @@ export default async function AdminAutopilotPage({ searchParams }: PageProps) {
           }}
         >
           {[
-            { label: 'Schedule', value: 'Every 2 hours', sub: '0 */2 * * * UTC' },
+            { label: 'Schedule', value: 'Every hour', sub: '0 * * * * UTC' },
             {
               label: 'Last fire',
               value: lastQueueFire ? relativeTime(lastQueueFire) : '—',
