@@ -1,0 +1,405 @@
+{
+  "slug": "tagliatelle-al-ragu-bolognese",
+  "title": "Tagliatelle al ragù bolognese",
+  "subtitle": "The proper slow-cooked meat ragù of Bologna, served with egg tagliatelle",
+  "excerpt": "Bolognese is not a tomato sauce with meat. It is a meat sauce with tomato: beef and pork braised slowly in white wine and milk, with very little tomato. The process takes 2 to 3 hours, and it shows. Served with egg tagliatelle, never spaghetti.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The Accademia Italiana della Cucina registered a canonical recipe for ragù alla bolognese in 1982, deposited with the Bologna Chamber of Commerce. The original ragù appears in Pellegrino Artusi, La scienza in cucina e l'arte di mangiar bene (1891, public domain), under 'Maccheroni alla bolognese'; Artusi's version uses chicken livers and is served over dried pasta. The modern canonical version uses beef, pork, and milk-cooking technique documented from the early twentieth century.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 160,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Ragù freezes very well, for up to 4 months. Freeze the sauce without the pasta. Thaw overnight in the fridge and reheat gently.",
+    "batchable": true,
+    "batchNotes": "Double or triple the sauce and freeze in meal-sized portions.",
+    "makeAheadNotes": "The ragù improves significantly over 2 to 3 days in the fridge as the flavours meld.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "sundayLunch"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "colander",
+      "isOptional": false
+    },
+    {
+      "slug": "wooden-spoon",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "soffritto",
+      "term": "Soffritto",
+      "definition": "The Italian flavour base of finely diced onion, carrot, and celery cooked slowly in fat until soft. The equivalent of a French mirepoix. It forms the foundation of most braises and long-cooked sauces."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A genuine bolognese is not a quick weeknight sauce. It requires 2 to 3 hours of very low simmering, during which the meat slowly breaks down, the milk tenderises the proteins, and the tomato fades from dominant to supporting. What you get at the end has a richness that no quick version can replicate."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The foundation is a "
+          },
+          {
+            "type": "text",
+            "text": "soffritto",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "soffritto"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " cooked until deeply soft and sweet (at least 15 minutes) before any meat touches the pan. The meat then browns in stages. Then white wine, then milk, then a very small amount of tomato. The ratio is not what most people expect."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "The tagliatelle rule",
+          "body": "In Bologna, bolognese is served exclusively with egg tagliatelle. Not spaghetti, not penne. The Accademia Italiana della Cucina specifies this formally. Fresh tagliatelle works best; good dried egg tagliatelle is a close second. Plain dried wheat pasta without egg is a different dish."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "pasta-dried",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "egg tagliatelle",
+              "isOptional": false,
+              "groupLabel": "For serving"
+            },
+            {
+              "ingredientSlug": "beef-mince",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "coarsely minced, not lean",
+              "isOptional": false,
+              "groupLabel": "For the ragù"
+            },
+            {
+              "ingredientSlug": "pork-mince",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "or use all beef mince (500 g total)",
+              "isOptional": false,
+              "groupLabel": "For the ragù"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": "For the ragù"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": "For the ragù"
+            },
+            {
+              "ingredientSlug": "celery",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": "For the ragù"
+            },
+            {
+              "ingredientSlug": "white-wine-dry",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the ragù"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the ragù"
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "crushed by hand, or 2 tablespoons tomato purée",
+              "isOptional": false,
+              "groupLabel": "For the ragù"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the ragù"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the ragù"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the ragù"
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the ragù"
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "freshly grated, to serve",
+              "isOptional": false,
+              "groupLabel": "For serving"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the soffritto"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Warm the {{olive-oil}} of olive oil and the {{unsalted-butter}} of butter in a heavy casserole over medium-low heat. Add the {{onion}} onion, {{carrot}} carrot, and {{celery}} celery. Cook for 15 minutes, stirring occasionally, until completely softened and turning pale gold at the edges."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the meat"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Raise the heat to medium-high. Add the {{beef-mince}} of beef mince. Stir and press until no pink remains and the meat has developed some colour — about 5 minutes. Add the {{pork-mince}} of pork mince and repeat. Season with salt and black pepper."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Add wine and milk"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour in the {{white-wine-dry}} of white wine. Stir and cook until the wine has fully evaporated — about 5 minutes. Pour in the {{whole-milk}} of milk. Cook until the milk has evaporated, about 10 minutes. The meat should look pale and coated in a slightly dry film; this is correct."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Long simmer"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the {{tinned-tomatoes}} of tomatoes. Stir to combine. Reduce the heat to the lowest possible setting. The ragù should bubble very gently, just shuddering, not simmering actively. Cook uncovered for 2 to 3 hours, stirring every 30 minutes and adding a ladleful of hot water whenever the sauce looks dry. By the end it should be a thick, dark, intensely savoury mass with very little liquid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the pasta and serve"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bring a large pan of generously salted water to a boil. Cook the {{pasta-dried}} of tagliatelle until al dente — usually 3 to 4 minutes for dried egg pasta. Scoop out 100 ml of pasta water. Drain. Toss the pasta through the ragù with a splash of pasta water, adding enough sauce to coat every strand without drowning it. Serve with the {{parmesan}} of Parmesan."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Ragù is watery and lacks depth",
+              "cause": "Insufficient simmering time, or heat too high causing the liquid to boil off before the meat breaks down",
+              "fix": "The ragù needs at least 2 hours at the lowest possible heat; resist raising the temperature"
+            },
+            {
+              "symptom": "Meat tastes grainy and dry",
+              "cause": "Milk step skipped, or the mince was very lean",
+              "fix": "The milk tenderises the proteins; use mince with at least 15% fat content; include the milk step"
+            },
+            {
+              "symptom": "Tomato flavour dominates",
+              "cause": "Too much tomato, or high-tomato passata used instead of crushed tinned tomatoes",
+              "fix": "Use only 200 g of tomato; this is a meat sauce with tomato, not a tomato sauce with meat"
+            },
+            {
+              "symptom": "Pasta drowns in sauce",
+              "cause": "Too much sauce ladled over; ragù should be used sparingly",
+              "fix": "Add the pasta to the sauce and toss; the ratio should be roughly 4:1 pasta to sauce by weight"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bologna has been Italy's food capital for at least five centuries, and the ragù named after it is the city's most exported product after its famous mortadella. The version most people outside Italy know (spaghetti bolognese with a red tomato sauce) is a distortion that emerged in mid-twentieth-century emigrant cooking and bears little resemblance to what is served in Bologna. The registered recipe uses very little tomato, plenty of milk, and egg tagliatelle. The difference is material: the slow-cooked, milk-finished ragù is something else entirely."
+          }
+        ]
+      }
+    ]
+  }
+}

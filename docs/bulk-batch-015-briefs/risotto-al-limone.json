@@ -1,0 +1,320 @@
+{
+  "slug": "risotto-al-limone",
+  "title": "Risotto al limone",
+  "subtitle": "Bright lemon and Parmesan risotto",
+  "excerpt": "A risotto built around a single flavour: lemon. Zest goes in during cooking and again at the end; juice is added only at the very last moment to keep the acidity bright rather than cooked out. Parmesan provides the savoury anchor. Clean, fast, and surprising for how good it is.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Risotto al limone is a Ligurian and Campanian preparation, reflecting the lemon-growing traditions of both the Italian Riviera and the Amalfi coast. Artusi includes lemon-flavoured preparations in his risotto section of La scienza in cucina (1891, public domain). The technique of adding fresh lemon juice at the very end rather than during cooking is documented in post-war Ligurian cookbooks to preserve the acidity.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 28,
+    "restingMinutes": 2,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "dateNight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "saute-pan",
+      "isOptional": false
+    },
+    {
+      "slug": "wooden-spoon",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mantecatura",
+      "term": "Mantecatura",
+      "definition": "The final step of risotto-making: cold butter and grated cheese beaten vigorously into the hot rice off the heat. The rapid agitation emulsifies the fat with the starchy cooking liquid, creating the characteristic creamy, flowing texture of a properly made risotto."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The lemon goes in twice. Zest added during cooking fades into the background and becomes the underlying flavour of the risotto. A second addition of zest at the mantecatura stage brings the brightness back to the surface. The juice goes in last of all: lemon juice cooked for more than a minute becomes flat and sour; added at the end it is sharp and clean."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use unwaxed lemons. The zest of a waxed lemon has an off flavour that is particularly noticeable here, where lemon is the point of the dish rather than a background note. The Parmesan should be freshly grated — the pre-grated variety dries out and does not emulsify as smoothly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "arborio-rice",
+              "amount": 320,
+              "unit": "g",
+              "prepNote": "Carnaroli or Arborio",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "unwaxed; zest of both, juice of 1",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "white-wine-dry",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-vegetable",
+              "amount": 1000,
+              "unit": "ml",
+              "prepNote": "hot",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 70,
+              "unit": "g",
+              "prepNote": "freshly grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "20 g for cooking, 40 g cold for mantecatura",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Start the risotto"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Warm the {{olive-oil}} of olive oil and 20 g of the {{unsalted-butter}} in a wide, heavy pan over medium heat. Add the {{shallot}} shallots and cook for 5 minutes until soft and translucent. Add the {{arborio-rice}} of risotto rice and stir for 2 minutes. Add the zest of one {{lemon}} and stir to combine."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build with stock"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour in the {{white-wine-dry}} of white wine. Stir until absorbed. Add the hot {{stock-vegetable}} a ladleful at a time, stirring constantly and waiting for each addition to absorb before adding the next. Cook for 16 to 18 minutes until the rice is creamy and almost done, with a faint bite at the centre."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finish and serve"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove from the heat. Add the remaining cold butter in pieces and the {{parmesan}} of Parmesan. Beat vigorously for 60 seconds: this is the "
+          },
+          {
+            "type": "text",
+            "text": "mantecatura",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "mantecatura"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". The risotto should be glossy and flow loosely. Add the zest of the second lemon and the juice of one lemon. Stir quickly, taste for salt and pepper, and cover for 2 minutes. Serve in warm bowls with an extra grating of Parmesan and a few extra strips of zest if you like."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Lemon flavour is flat and sour rather than bright",
+              "cause": "Lemon juice added during cooking rather than at the very end",
+              "fix": "Add juice only after removing from heat, in the last 30 seconds before serving"
+            },
+            {
+              "symptom": "Risotto tastes bitter",
+              "cause": "White pith included when zesting, or waxed lemons used",
+              "fix": "Zest lightly using only the outermost yellow layer; use unwaxed lemons"
+            },
+            {
+              "symptom": "Parmesan does not emulsify, remains grainy",
+              "cause": "Pan still on heat during mantecatura, or pre-grated dried Parmesan used",
+              "fix": "Remove from heat completely; use freshly grated Parmesan from a block"
+            },
+            {
+              "symptom": "Risotto is too sharp",
+              "cause": "Too much lemon juice, or very acidic lemons",
+              "fix": "Add juice gradually, tasting as you go; start with half and adjust"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Risotto al limone is associated with two Italian lemon-growing regions: Liguria, whose Riviera coast produces the Riviera Ligure lemon, and Campania, where the Amalfi coast Sfusato lemon is among Italy's most prized citrus fruits. Both regions have long traditions of using lemon in savoury cooking rather than treating it purely as a dessert flavouring. The risotto carries this tradition into a northern Italian form: it is not a southern Italian dish in its technique, but it is southern Italian in its flavour instinct."
+          }
+        ]
+      }
+    ]
+  }
+}

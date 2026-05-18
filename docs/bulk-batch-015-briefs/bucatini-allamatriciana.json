@@ -1,0 +1,308 @@
+{
+  "slug": "bucatini-allamatriciana",
+  "title": "Bucatini all'amatriciana",
+  "subtitle": "Guanciale, San Marzano tomato, and pecorino — the Roman trattoria standard",
+  "excerpt": "All'amatriciana is built on guanciale rendered in its own fat, then tomato, then pecorino. No onion in the Roman version. No cream. The sauce is short, red, and intense over hollow bucatini that hold the sauce inside and out.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Amatriciana takes its name from Amatrice, a town in the Lazio Apennines. Its origins are traced to the late eighteenth century in gricia (the egg- and tomato-free version), to which tomatoes were added after they became common in Lazio cooking. Artusi documents a related preparation in La scienza in cucina (1891, public domain). Rome claims the dish as its own canonical preparation; Amatrice disputes this annually.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The sauce can be made up to 2 days ahead and refrigerated. Reheat gently while the pasta cooks.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "comfortFood"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    },
+    {
+      "slug": "colander",
+      "isOptional": false
+    },
+    {
+      "slug": "tongs",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "guanciale",
+      "term": "Guanciale",
+      "definition": "Dry-cured pig's cheek, essential to Roman pasta dishes. Richer and fattier than pancetta, with a deeper porcine flavour. Not interchangeable in amatriciana or carbonara, though pancetta works in a pinch."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Three things separate a good amatriciana from a mediocre one: "
+          },
+          {
+            "type": "text",
+            "text": "guanciale",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "guanciale"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " instead of pancetta, San Marzano tinned tomatoes instead of fresh, and no onion. The Roman version is strict about all three. Use them and the sauce will be right; deviate and you have something else, which may be perfectly good but is not amatriciana."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bucatini (hollow spaghetti with a channel down the centre) is the traditional pasta. The hollow holds sauce inside while the ridged exterior holds sauce outside. Rigatoni works almost as well. Spaghetti works if you have nothing else."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pasta-dried",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "bucatini or rigatoni",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "guanciale",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "cut into lardons 1 cm thick",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "San Marzano if possible, crushed by hand",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pecorino-romano",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "finely grated, plus extra to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "white-wine-dry",
+              "amount": 60,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-flakes",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": "for the pasta water",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": "to finish",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Render the guanciale"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put the guanciale in a cold frying pan. Set over medium-low heat and render for 10 to 12 minutes until the fat is translucent and the meat is golden at the edges. If using white wine, pour it in and let it bubble for 1 minute. Remove the guanciale with a slotted spoon and set aside. Add the chilli flakes to the fat in the pan if using."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the sauce"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the {{tinned-tomatoes}} of crushed tomatoes to the pan. Cook over medium heat for 12 to 15 minutes until the sauce reduces and concentrates, darkening slightly. Return the guanciale to the pan. Taste and adjust salt — pecorino adds a great deal of salt, so be cautious."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the pasta and finish"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bring a large pan of generously salted water to a boil. Cook the {{pasta-dried}} of bucatini until 2 minutes short of al dente. Scoop out 150 ml of pasta water. Drain. Add the drained pasta to the sauce pan over medium heat. Toss with 2 to 3 tablespoons of pasta water for 2 minutes. Take off the heat, add most of the {{pecorino-romano}} of pecorino and toss again. Serve with the remaining pecorino on top."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is too thin and watery",
+              "cause": "Tomatoes not reduced enough; San Marzano tomatoes have less water than other varieties but still need time",
+              "fix": "Cook the sauce for at least 15 minutes; it should reduce by about a third"
+            },
+            {
+              "symptom": "Dish is too salty",
+              "cause": "Pecorino added generously before tasting the sauce; guanciale is already salty",
+              "fix": "Under-salt the pasta water and add pecorino in stages, tasting between additions"
+            },
+            {
+              "symptom": "Guanciale is chewy",
+              "cause": "Heat too high during rendering; the fat needs time to melt slowly",
+              "fix": "Start in a cold pan, medium-low heat; allow 10 to 12 minutes of patient rendering"
+            },
+            {
+              "symptom": "Sauce is bitter",
+              "cause": "Tomatoes were not San Marzano or similarly low-acid variety, or the sauce was over-reduced",
+              "fix": "Add a pinch of sugar; choose good tinned tomatoes"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Amatriciana's birthplace is Amatrice, a mountain town in the Apennines destroyed by an earthquake in 2016. The dish (and the associated sauce, now sold internationally as sugo all'amatriciana) has been a vehicle for rebuilding fundraising ever since. In Rome it appears on every trattoria menu without apology. The strict no-onion rule is a point of culinary identity among Roman cooks: the Amatrice version traditionally includes onion, and the debate between the two camps has a rigour that outsiders find startling."
+          }
+        ]
+      }
+    ]
+  }
+}
