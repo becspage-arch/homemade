@@ -642,6 +642,11 @@ async function uploadTutorial(
     batchable: recipe.batchable ?? false,
     batchNotes: recipe.batchNotes ?? null,
     makeAheadNotes: recipe.makeAheadNotes ?? null,
+    // Finished-product shelf life (phase_natural_home_pipeline_001). Set on
+    // natural-home recipes and optionally on herbal REMEDY rows; null on
+    // every cooking + baking recipe.
+    shelfLifeDays: recipe.shelfLifeDays ?? null,
+    shelfLifeNotes: recipe.shelfLifeNotes ?? null,
     dietaryFlags: recipe.dietaryFlags ?? [],
     cuisine: recipe.cuisine ?? null,
     mealType: recipe.mealType ?? null,

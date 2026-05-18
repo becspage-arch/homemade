@@ -673,6 +673,23 @@ model Tutorial {
   approximateCostGbp Int?
   paybackYears       Int?
 
+  // ──────────────────────────────────────────────────────────────────────────
+  // Phase Natural-home pipeline — finished-product shelf life. Set on
+  // natural-home RECIPE rows (soap, candle, balm, lotion, deodorant,
+  // surface spray, etc.) and on herbal REMEDY rows where a structured
+  // integer makes sense alongside the existing `recipe.makeAheadNotes`.
+  // Null on every TECHNIQUE row, every READING row, every Cooking +
+  // Baking recipe (food shelf life lives in `freezeNotes` /
+  // `makeAheadNotes` where it already does).
+  //
+  // `shelfLifeDays` matches the name + unit on `Ingredient.shelfLifeDays`.
+  // `shelfLifeNotes` carries the human-readable storage caveat ("Store in
+  // a cool dark cupboard; discard if the surface develops white spots or
+  // the salve smells rancid.") that a single integer can't capture.
+  // ──────────────────────────────────────────────────────────────────────────
+  shelfLifeDays  Int?
+  shelfLifeNotes String?
+
   planDayMornings    UserPlanDay[]          @relation("PlanDayMorningPractice")
   planDayEvenings    UserPlanDay[]          @relation("PlanDayEveningPractice")
   planDayAnchors     UserPlanDay[]          @relation("PlanDayAnchorPractice")
@@ -728,6 +745,7 @@ model Tutorial {
   @@index([techniqueSlugs], type: Gin)
   @@index([type, approximateCostGbp])
   @@index([type, paybackYears])
+  @@index([shelfLifeDays])
 }
 
 enum TutorialType {

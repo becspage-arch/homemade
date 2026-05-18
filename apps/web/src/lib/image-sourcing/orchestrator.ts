@@ -92,6 +92,15 @@ function priorityFor(input: SourceHeroInput): { freeOrder: ImageSource[]; skipFr
     // pragmatic last-free fallback before Flux.
     return { freeOrder: ['unsplash', 'pexels', 'wikimedia', 'pixabay'], skipFreeForAi: false }
   }
+  if (input.category === 'natural-home') {
+    // Pexels-first: hand-poured soap, candles, balm tins, and amber-bottle
+    // styling are over-represented on Pexels relative to Unsplash. Wikimedia
+    // earns a slot for the botanical-ingredient hero variant (a calendula
+    // flower close-up doing the work for a calendula balm). Pixabay catches
+    // commodity beeswax / lye / pipette product shots that the lifestyle
+    // libraries skip.
+    return { freeOrder: ['pexels', 'unsplash', 'wikimedia', 'pixabay'], skipFreeForAi: false }
+  }
   // Garden / herbal-medicine and anything else: same as cooking generic.
   return { freeOrder: ['unsplash', 'pexels', 'wikimedia', 'pixabay'], skipFreeForAi: false }
 }

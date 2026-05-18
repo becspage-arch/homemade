@@ -203,7 +203,7 @@ const CATEGORIES: CategorySeed[] = [
   {
     slug: 'natural-home',
     name: 'Natural home',
-    description: 'Soap, candles, DIY beauty, DIY cleaning, and home fragrance.',
+    description: 'Soap, candles, beauty, cleaning, and home fragrance.',
     targetTutorialCount: 800,
     launchOrder: 16,
     isExistingShipped: false,

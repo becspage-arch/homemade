@@ -499,6 +499,25 @@ export interface RecipeMetadata {
    * decoratingTechnique; etc.).
    */
   baking?: BakingMetadata | null
+
+  /**
+   * Finished-product shelf life in days. Set on natural-home recipes
+   * (anhydrous balm ~365, water-containing lotion without preservative
+   * ~90, cured cold-process soap ~730) and on herbal REMEDY rows where
+   * a structured integer adds value alongside `makeAheadNotes`. Leave
+   * null on every cooking + baking recipe — food shelf life lives in
+   * `freezeNotes` / `makeAheadNotes`. Maps onto `Tutorial.shelfLifeDays`.
+   */
+  shelfLifeDays?: number | null
+
+  /**
+   * Human-readable shelf-life caveat. The integer can't carry the
+   * storage condition or the spoilage cue, so this string does. Example:
+   * "Store in a cool dark cupboard; discard if the surface develops
+   * white spots or the salve smells rancid." Maps onto
+   * `Tutorial.shelfLifeNotes`.
+   */
+  shelfLifeNotes?: string | null
 }
 
 export interface RecipeToolRef {
