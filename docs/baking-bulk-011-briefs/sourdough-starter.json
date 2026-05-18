@@ -1,0 +1,203 @@
+{
+  "slug": "sourdough-starter",
+  "title": "Sourdough starter",
+  "subtitle": "Building a wild-yeast culture from flour and water",
+  "excerpt": "How to cultivate a sourdough starter from scratch: flour, water, time, and daily feeding over ten to fourteen days until the culture is reliably active and ready for baking.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Wild-yeast culture methods are documented in early-twentieth-century baking literature. The basic two-flour approach (wheat plus a proportion of rye to accelerate fermentation) follows guidance in UK agricultural extension service material on traditional yeast cultivation. The float test as a readiness indicator appears in bread-baking manuals of the 1930s.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 starter (ongoing)",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "restingMinutes": 20160,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The starter is itself a make-ahead ingredient — once established it lives in the fridge and needs a weekly feed.",
+    "dietaryFlags": ["vegan", "vegetarian"],
+    "cuisine": "british",
+    "mealType": "side",
+    "mood": ["makesAhead"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true,
+    "baking": {
+      "flourWeightGrams": 100,
+      "hydrationPercent": 100,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": null,
+      "bakeTemperatureNote": null,
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-medium", "isOptional": false },
+    { "slug": "measuring-jug", "isOptional": false }
+  ],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Mix the first feed",
+      "body": "Combine 50 g strong white flour, 10 g wholemeal rye flour, and 60 g lukewarm water in a clean jar or bowl. Stir vigorously until no dry flour remains. Cover loosely and leave at 22–26°C. The rye accelerates the initial fermentation; it can be reduced or dropped entirely once the culture is active.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Check and discard",
+      "body": "The starter may show a few small bubbles or nothing visible. Either is normal at this stage. Discard all but 20 g, then add 50 g strong white flour and 50 g lukewarm water. Stir well and cover loosely.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 2,
+      "title": "Daily discard and feed",
+      "body": "Discard all but 20 g. Add 50 g strong white flour and 50 g water. Stir well and cover. Repeat this discard-and-feed routine daily. By day 3 or 4 you should see consistent bubbling and a slight sour smell developing.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 4,
+      "offsetDays": 5,
+      "title": "First signs of activity",
+      "body": "By day 5 or 6 the starter should be visibly active: bubbles throughout, a domed top between feeds, and a sour-yeasty smell. If it is not yet active, continue daily feeding, ensuring the ambient temperature stays above 20°C. A cooler kitchen will slow things by 2 to 3 days.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 5,
+      "offsetDays": 7,
+      "title": "Float test",
+      "body": "Drop a small spoonful of the starter into a glass of water. If it floats, the culture contains enough gas to leaven bread. If it sinks, continue feeding for 2 to 3 more days. Do the test when the starter is at its peak — roughly 4 to 8 hours after feeding when it has risen and is still domed.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 6,
+      "offsetDays": 10,
+      "title": "Starter is ready to bake with",
+      "body": "A starter passing the float test consistently over 3 or 4 consecutive feeds is ready for its first sourdough loaf. Transition to fridge storage: feed once, allow it to peak, then refrigerate. Feed weekly and bring to room temperature 12 hours before baking.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    }
+  ],
+  "glossaryTerms": [
+    { "slug": "float-test", "term": "float test", "definition": "A readiness check for sourdough starters: a small spoonful dropped into water should float when the culture is sufficiently gassy to leaven bread. A starter that sinks needs more feeding time." },
+    { "slug": "discard", "term": "discard", "definition": "The portion of starter removed before each feed. Discarding prevents the culture from becoming too large and too acidic. The removed portion can be used in pancakes, crackers, and flat breads." }
+  ],
+  "techniqueSlugs": ["sourdough-levain-build"],
+  "criticalTechniques": ["sourdough-levain-build"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A sourdough starter is a living culture of wild yeasts and lactic acid bacteria captured from flour and the surrounding air. Once established, it will last indefinitely with weekly feeding. The build takes ten to fourteen days; most of that time is waiting, not work. Each day's feed takes five minutes." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "title": "Before you start" },
+        "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Use strong white bread flour for the main feeds. A small proportion of wholemeal rye flour in the early feeds accelerates the fermentation — rye carries a higher wild-yeast population than refined white flour. Temperature matters: 22–26°C is ideal. A cold kitchen (below 18°C) will slow the build considerably. A spot near a boiler cupboard or on top of the fridge often works well." }] }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Per feed (after the first)" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "strong-white-bread-flour", "amount": 50, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 50, "unit": "g", "prepNote": "lukewarm, 22–26°C" } },
+          { "type": "ingredientItem", "attrs": { "slug": "wholemeal-rye-flour", "amount": 10, "unit": "g", "prepNote": "for the first 3 days only, then optional" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Day 1: the first mix" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "In a clean jar or bowl, combine 50 g strong white flour, 10 g wholemeal rye flour, and 60 g lukewarm water. Stir vigorously until no dry flour remains and the mixture is smooth. Cover loosely (a piece of cloth or a lid left slightly ajar) so the culture can breathe without drying out. Leave at 22–26°C." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Days 2–6: daily discard and feed" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Each morning, remove and set aside all but 20 g of the starter — this is the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "discard", "term": "discard" } }], "text": "discard" }, { "type": "text", "text": ". Add 50 g strong white flour and 50 g lukewarm water to the 20 g left in the jar. Stir until smooth, cover loosely, and return to the warm spot. The discard can be used in crackers or pancakes from day 3 onwards." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "By day 3 or 4, the mixture should show signs of fermentation: bubbles throughout, a slightly domed surface a few hours after feeding, and an emerging sour smell. If there is no activity by day 4, check the temperature. A cold kitchen is the most common reason for a slow start." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Days 7–14: building consistency" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Continue the daily discard-and-feed routine. The starter is ready when it passes the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "float-test", "term": "float test" } }], "text": "float test" }, { "type": "text", "text": " consistently over three or four consecutive feeds. Do the test when the starter is at its peak — risen, domed, and still actively bubbling, typically 4 to 8 hours after a feed at room temperature." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Moving to fridge storage" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Once the starter passes the float test reliably, give it a regular 1:1:1 feed (20 g starter, 50 g flour, 50 g water), let it peak, then refrigerate. Cold storage slows the fermentation to a weekly rhythm. To bake, remove the starter from the fridge 12 hours before use, feed it at room temperature, and use it at peak activity." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Liquid layer on top (hooch): the starter is hungry. Pour off the hooch, discard, and feed twice a day until the culture is more active. Hooch means fermentation has progressed beyond the available food." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pink or orange streaks: contamination. Discard the entire culture, sterilise the jar, and start again. This is uncommon but worth acting on immediately." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Starter passes float test but loaves are flat: the culture may be active enough to pass the test but not yet robust enough for a full loaf. Continue building for another 3 to 5 days, feeding twice daily." }] }] }
+        ]
+      }
+    ]
+  }
+}

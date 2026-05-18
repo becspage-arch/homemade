@@ -1,0 +1,133 @@
+{
+  "slug": "leek-and-gruyere-quiche",
+  "title": "Leek and Gruyère quiche",
+  "subtitle": "Blind-baked shortcrust case with slow-cooked leeks and a Gruyère custard",
+  "excerpt": "Leeks softened slowly in butter until sweet and silky, layered into a blind-baked case and covered with a rich egg and Gruyère custard. Served warm or at room temperature.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "The quiche originates in the Lorraine region of France, where quiche Lorraine (eggs, cream, and bacon in a pastry case) was documented in the nineteenth century. Vegetable and cheese variations, including leek and Gruyère, were widely published in French and British cookbooks from the mid-twentieth century. Elizabeth David covers egg-and-cream tart variations in French Provincial Cooking (1960). The recipe here follows the classic French approach with shortcrust pastry, a double-cream custard, and Gruyère.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 50,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The baked quiche reheats well. Make the day before and reheat at 160°C for 15 minutes.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "french",
+    "mealType": "lunch",
+    "mood": ["weekendBake", "autumnAndWinter", "makesAhead"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "conventional oven, after blind baking the case at 190°C. Fan: 160°C for the filled quiche.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "loose-bottomed-tart-tin", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "baking-beans", "isOptional": false },
+    { "slug": "saute-pan", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "quiche-custard", "term": "quiche custard", "definition": "The set filling of a quiche is a savoury custard: eggs whisked with double cream (or single cream and milk), seasoned and poured over the filling. The ratio of egg to cream determines the texture — more egg gives a firmer, sliceable set; more cream gives a softer, richer result. It should be just set in the centre: quivering but not liquid when the tin is moved." },
+    { "slug": "leek-sweating", "term": "sweating leeks", "definition": "Cooking sliced leeks slowly in butter over low heat with a lid on, until they are completely soft, sweet, and collapsed but not browned. This can take 20 minutes or more. Rushed leeks stay slightly raw and release too much water into the quiche during baking." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The leeks must be fully cooked before going into the tart — " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "leek-sweating", "term": "sweating leeks" } }], "text": "sweating leeks" }, { "type": "text", "text": " to a soft, sweet collapse takes time and should not be hurried. Raw or undercooked leeks release too much water into the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "quiche-custard", "term": "quiche custard" } }], "text": "quiche custard" }, { "type": "text", "text": " and produce a soggy quiche. A fully blind-baked pastry case is also essential: the base should be dry and cooked before any filling is added." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shortcrust pastry" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 200, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cold, cubed" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 1, "unit": "pinch" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cold-water", "amount": 3, "unit": "tbsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "leeks", "amount": 600, "unit": "g", "prepNote": "trimmed, thinly sliced" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 40, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "gruyere", "amount": 120, "unit": "g", "prepNote": "grated" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 3, "unit": "whole" } },
+          { "type": "ingredientItem", "attrs": { "slug": "double-cream", "amount": 250, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "black-pepper", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "nutmeg", "amount": 1, "unit": "pinch", "prepNote": "freshly grated" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pastry and blind bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rub the butter into the flour and salt until the mixture resembles breadcrumbs. Add the water and bring together. Wrap and rest for 30 minutes. Preheat the oven to 190°C conventional. Roll to 3 mm thick and line a 23 cm loose-bottomed fluted tart tin. Line with baking paper and fill with baking beans. Bake for 20 minutes. Remove beans and paper, brush the base with a little beaten egg (from the filling), and bake for a further 8 minutes until dry and pale gold." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sweat the leeks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Melt the butter in a wide pan over low heat. Add the leeks and salt, stir to coat, and cover with a lid. Cook for 20 to 25 minutes, stirring occasionally, until completely soft and sweet but not coloured. Remove the lid for the last 5 minutes to drive off any excess moisture. Spread on a plate to cool." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Reduce the oven to 180°C conventional. Scatter half the Gruyère over the base of the pastry case. Spread the cooled leeks evenly over the cheese. Whisk the eggs, cream, pepper, and nutmeg together and pour over the leeks. Scatter the remaining Gruyère on top. Bake for 25 to 30 minutes until the custard is just set with the slightest quiver in the centre. Allow to cool in the tin for 10 minutes before removing." }]
+      }
+    ]
+  }
+}

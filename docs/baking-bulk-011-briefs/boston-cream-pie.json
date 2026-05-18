@@ -1,0 +1,156 @@
+{
+  "slug": "boston-cream-pie",
+  "title": "Boston cream pie",
+  "subtitle": "Vanilla sponge filled with pastry cream and topped with chocolate ganache",
+  "excerpt": "Despite the name, this is a cake: two layers of light vanilla sponge sandwiched with thick vanilla pastry cream and finished with a chocolate ganache glaze that sets to a glossy shell.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Boston cream pie originated at the Parker House hotel in Boston in the 1850s. The original recipe used a cream filling and chocolate glaze, applied to a génoise-style sponge. It became the official dessert of Massachusetts in 1996. The formula here follows the traditional hotel approach: a butter sponge (easier to make domestically than a génoise) with vanilla pastry cream filling and a ganache glaze, documented in American culinary literature of the late nineteenth century. Early versions are in the public domain.",
+  "recipe": {
+    "servings": 10,
+    "yieldDescription": null,
+    "prepMinutes": 45,
+    "cookMinutes": 30,
+    "restingMinutes": 120,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pastry cream can be made 24 hours ahead and kept refrigerated. The sponge layers can be baked a day ahead and wrapped at room temperature.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "american",
+    "mealType": "dessert",
+    "mood": ["weekendBake", "makesAhead"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "conventional oven. Fan at 160°C.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "round-cake-tin-23", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "metal-bowl", "isOptional": false },
+    { "slug": "icing-spatula", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "creme-patissiere", "term": "pastry cream", "definition": "A thick custard cooked on the hob with egg yolks, sugar, flour or cornflour, and milk. Used as a filling for éclairs, choux, and layer cakes. It sets firmly when cold, unlike poured custard, which remains fluid." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Boston cream pie is called a pie because it was originally baked in a pie tin, as layer cake tins were not yet standard kitchen equipment in the 1850s. The name stuck. The " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "creme-patissiere", "term": "pastry cream" } }], "text": "pastry cream" }, { "type": "text", "text": " must be made first and chilled before the assembly; it cannot be spread until it has fully set." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The pastry cream" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 500, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-yolks", "amount": 4, "unit": "whole" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cornflour", "amount": 40, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 2, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 25, "unit": "g" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The sponge" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 175, "unit": "g", "prepNote": "softened" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 175, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 3, "unit": "whole" } },
+          { "type": "ingredientItem", "attrs": { "slug": "self-raising-flour", "amount": 200, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "baking-powder", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 60, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 1, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The chocolate glaze" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "dark-chocolate", "amount": 100, "unit": "g", "prepNote": "finely chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "double-cream", "amount": 100, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "golden-syrup", "amount": 10, "unit": "g" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pastry cream" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whisk the egg yolks, sugar, and cornflour together in a bowl until smooth. Bring the milk to a simmer in a saucepan. Pour a third of the hot milk over the egg mixture, whisking constantly to temper it, then return the whole mixture to the pan. Cook over medium heat, stirring constantly with a silicone spatula, until the cream thickens and large bubbles begin to plop at the surface, about 3 to 4 minutes. Remove from heat, stir in the vanilla and butter, then press cling film directly onto the surface to prevent a skin forming. Refrigerate until fully set, at least 2 hours." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake the sponge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 180°C conventional. Grease and line two 23 cm round tins. Beat the butter and sugar until pale and fluffy. Add the eggs one at a time, beating well after each. Fold in the flour and baking powder in two additions, alternating with the milk. Add the vanilla. Divide between the tins and bake for 25 to 30 minutes until golden, the sides pulling away from the tin, and a skewer comes out clean. Cool in the tins for 10 minutes, then transfer to a rack." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the chocolate glaze" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the cream and golden syrup together until just at the simmer. Pour over the chopped chocolate and leave for 1 minute, then stir from the centre outward until smooth. Allow to cool at room temperature for 10 to 15 minutes until slightly thickened but still pourable." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Place one sponge layer on a serving plate. Beat the chilled pastry cream briefly to loosen it, then spread it over the sponge in a thick, even layer, going close to the edge. Place the second sponge layer on top and press gently. Pour the warm chocolate glaze over the top, allowing it to run down the sides naturally. Refrigerate for 30 minutes before slicing." }]
+      }
+    ]
+  }
+}

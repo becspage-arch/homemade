@@ -1,0 +1,193 @@
+{
+  "slug": "panettone",
+  "title": "Panettone",
+  "subtitle": "The Milanese Christmas bread, rich with citrus and dried fruit",
+  "excerpt": "A tall, domed Italian Christmas bread built on a rich enriched dough: candied orange peel, raisins, and real butter layered into a light, airy crumb by two slow fermentations. Requires a panettone mould and patience.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "ADVANCED",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Panettone is a Milanese enriched bread documented from at least the late nineteenth century, with probable earlier origins. The structure here follows the traditional two-dough method (first dough plus second dough with extended fermentation) documented in Italian baking literature of the early twentieth century. Public-domain Italian household cooking manuals from the 1900s-1920s describe the enriched sweet bread of Milan and confirm the dried fruit and candied peel combination.",
+  "recipe": {
+    "servings": 10,
+    "yieldDescription": null,
+    "prepMinutes": 90,
+    "cookMinutes": 45,
+    "restingMinutes": 1200,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Cool completely, wrap tightly in cling film then foil, and freeze for up to 2 months. Defrost at room temperature overnight.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The first dough is mixed the night before and ferments overnight. The second dough and final shaping happen the following morning.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "italian",
+    "mealType": "breakfast",
+    "mood": ["weekendBake", "christmasAndFestive", "makesAhead"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 58,
+      "saltPercent": 1.6,
+      "yeastPercent": 1.0,
+      "levainPercent": null,
+      "bulkFermentMinutes": 480,
+      "proofMinutes": 360,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 175,
+      "bakeTemperatureNote": "conventional oven, bottom third. Fan at 155°C.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "SPONGE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "stand-mixer", "isOptional": false },
+    { "slug": "dough-hook", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "sponge-starter", "term": "sponge", "definition": "A pre-ferment made by mixing a portion of the flour, water, and all of the yeast, then leaving it to ferment for several hours before incorporating it into the main dough. The sponge develops flavour and improves the final dough's strength." },
+    { "slug": "windowpane-test-bread", "term": "windowpane test", "definition": "A gluten development check: a small piece of dough stretched slowly between the fingers should stretch thin enough to be translucent without tearing. If it tears, the gluten needs more development." }
+  ],
+  "techniqueSlugs": ["enriched-dough-method"],
+  "criticalTechniques": ["enriched-dough-method"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Panettone is not a quick bake. The traditional method requires two separate doughs, each fermented over many hours, which is what gives the bread its characteristic open, stringy crumb and delicate flavour. Made at home, it is worth the effort: the commercial versions rarely reach the same lightness. This recipe uses dried yeast with a " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sponge-starter", "term": "sponge" } }], "text": "sponge" }, { "type": "text", "text": " pre-ferment to approximate the long fermentation of a traditional madre starter." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "title": "Equipment note" },
+        "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A stand mixer is not optional here — the dough requires very long mixing to develop sufficient gluten, and the high butter content makes hand-kneading impractical. You also need a panettone mould (a paper or metal one, 17–20 cm diameter). Tall round tins can substitute; line them with baking paper extending 10 cm above the rim. Domestic ovens drift by 20°C or more; an oven thermometer is recommended." }] }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "First dough (evening before)" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "strong-white-bread-flour", "amount": 250, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "fast-action-yeast", "amount": 5, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 50, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 100, "unit": "ml", "prepNote": "lukewarm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-yolks", "amount": 2, "unit": "whole" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": "softened, cubed" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Second dough (next day)" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "strong-white-bread-flour", "amount": 250, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 80, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 8, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-yolks", "amount": 3, "unit": "whole" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 120, "unit": "g", "prepNote": "softened, cubed" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "orange-zest", "amount": 1, "unit": "whole", "prepNote": "zest only" } },
+          { "type": "ingredientItem", "attrs": { "slug": "lemon-zest", "amount": 1, "unit": "whole", "prepNote": "zest only" } },
+          { "type": "ingredientItem", "attrs": { "slug": "candied-orange-peel", "amount": 100, "unit": "g", "prepNote": "chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "raisins", "amount": 150, "unit": "g" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the first dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "In the stand mixer bowl, combine the 250 g flour, yeast, sugar, and water. Mix on low with the dough hook for 2 minutes, then add the egg yolks. Increase to medium and mix for 5 minutes until a smooth dough forms. Add the softened butter a few cubes at a time, waiting for each addition to be incorporated before adding more. The dough will become smooth, glossy, and slightly tacky. Cover the bowl and leave at room temperature (20–22°C) for 8 to 10 hours, or overnight." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the second dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The next day, the first dough should have grown considerably and smell yeasty. Add the second dough ingredients in this order: flour, sugar, salt, then egg yolks one at a time, then vanilla and zest. Mix on medium for 10 minutes. The dough needs to reach the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "windowpane-test-bread", "term": "windowpane test" } }], "text": "windowpane test" }, { "type": "text", "text": " — stretch a small piece thinly between your fingers; it should be translucent without tearing. This can take 15 to 20 minutes of mixing." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add butter and fruit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add the 120 g softened butter in small amounts, fully incorporating each addition. The dough will go loose and sticky, then gradually come back together. Once all the butter is in, add the candied peel and raisins and mix briefly on low to distribute. Transfer to a lightly oiled bowl, cover, and leave at 22–26°C for 3 to 4 hours until doubled." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and final proof" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Turn the dough out onto a very lightly oiled surface. Fold the edges into the centre, turn upside down, and roll gently to create surface tension. Place seam-side down in the panettone mould. Cover loosely and prove at room temperature for 4 to 6 hours; the dough should rise just above the rim of the mould." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Score and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 175°C conventional. Use a sharp blade or scissors to score a cross in the top of the dough, and place a small knob of butter in the centre of the cross (this opens the top and bastes it during baking). Bake in the lower third of the oven for 40 to 45 minutes, until an internal probe reads 92–95°C and the top is deep golden brown. If the top colours too quickly, cover loosely with foil after 25 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cool upside down" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "As soon as the panettone comes from the oven, skewer it horizontally through the base with two knitting needles or long skewers, and hang it upside down between two tall pots or across the top of a roasting tin so the dome hangs free. The dough must cool inverted; the warm crumb is too fragile to support its own weight and will collapse inward if allowed to cool upright. Leave to hang for at least 3 hours before turning upright." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dough not passing windowpane test after 20 minutes: check the butter was fully softened, not melted. Cold butter stops the gluten from developing; melted butter saturates the network. Continue mixing in short bursts, resting 5 minutes between to cool the dough." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Very slow rise on the second proof: enriched doughs proof slowly at room temperature. Move the mould somewhere warmer (25–28°C) or extend the time. Rushing with heat above 30°C will melt the butter out of the dough." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Crumb collapsed on cooling right-side up: next time, hang inverted immediately. The structure does not set firmly until the crumb has cooled completely." }] }] }
+        ]
+      }
+    ]
+  }
+}

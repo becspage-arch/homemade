@@ -1,0 +1,155 @@
+{
+  "slug": "religieuse-au-chocolat",
+  "title": "Religieuse au chocolat",
+  "subtitle": "Two choux balls stacked and piped to resemble a nun's habit",
+  "excerpt": "A French patisserie classic: a large choux ball on the bottom, a small one on top, both filled with chocolate pastry cream and joined with a chocolate ganache collar piped to look like a nun's habit.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The religieuse (meaning 'nun') is a French patisserie creation attributed to Frascati, a famous Paris pastry shop, in the mid-nineteenth century. The two-sphere shape iced to resemble a nun's habit in black-and-white chocolate was well established by the 1880s. The recipe appears in French patisserie manuals of the late nineteenth century and is documented in the public domain. The method follows the classic approach: choux paste baked twice, filled with chocolate crème pâtissière, and glazed with chocolate fondant icing.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "6 religieuses",
+    "prepMinutes": 60,
+    "cookMinutes": 40,
+    "restingMinutes": 60,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pastry cream can be made a day ahead and refrigerated. Fill and assemble the religieuses no more than 2 hours before serving.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 150,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "conventional oven, reducing to 180°C after the initial puff. Fan at 180°C reducing to 160°C.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "piping-bag", "isOptional": false },
+    { "slug": "piping-tips", "isOptional": false },
+    { "slug": "piping-nozzle-star", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "choux-paste", "term": "choux paste", "definition": "A cooked pastry dough made by bringing butter and water to a boil, adding flour and cooking the mixture until it forms a smooth paste, then beating in eggs until the paste reaches a consistency that holds its shape when piped. The paste puffs dramatically in the oven as steam expands inside the dough." },
+    { "slug": "creme-patissiere-chocolate", "term": "chocolate crème pâtissière", "definition": "A chocolate-flavoured pastry cream: the standard vanilla custard base with dark chocolate melted into it while still hot. Thicker than ganache, it sets firm enough to pipe and hold its shape inside a choux bun." }
+  ],
+  "techniqueSlugs": ["choux-paste-technique"],
+  "criticalTechniques": ["choux-paste-technique"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Religieuses require a good " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "choux-paste", "term": "choux paste" } }], "text": "choux paste" }, { "type": "text", "text": " and a well-set " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "creme-patissiere-chocolate", "term": "chocolate crème pâtissière" } }], "text": "chocolate crème pâtissière" }, { "type": "text", "text": ". Both can be made the day before. The visual effect depends on piping the ganache collar with a star nozzle in a clean, even ring where the two spheres meet; take your time over it. Domestic ovens drift by 20°C or more; if the choux doesn't puff in the first 10 minutes, the oven is too cool." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The choux paste" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 250, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 150, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 1, "unit": "pinch" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 4, "unit": "whole", "prepNote": "at room temperature" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The chocolate pastry cream" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 500, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-yolks", "amount": 4, "unit": "whole" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 80, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cornflour", "amount": 40, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "dark-chocolate", "amount": 100, "unit": "g", "prepNote": "finely chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 20, "unit": "g" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The ganache glaze and collar" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "dark-chocolate", "amount": 150, "unit": "g", "prepNote": "finely chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "double-cream", "amount": 150, "unit": "ml" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the chocolate pastry cream" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whisk the egg yolks, sugar, and cornflour together. Bring the milk to a simmer. Pour a third over the egg mixture while whisking to temper, then return to the pan and cook over medium heat, stirring constantly, until very thick and large bubbles appear. Remove from heat, stir in the chopped chocolate and butter until melted and smooth. Press cling film directly onto the surface and refrigerate until set." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and pipe the choux paste" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 200°C conventional. Bring the water and butter to a rolling boil. Add the flour and salt all at once and stir vigorously over the heat until the paste pulls away from the sides of the pan and forms a smooth ball that leaves a slight film on the base of the pan, about 2 minutes. Remove from heat and allow to cool for 5 minutes. Beat in the eggs one at a time — the paste must be fully smooth between each addition. The finished paste should drop from a spoon in a 'V' shape; if it's too stiff, beat in a little of the last egg." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pipe and bake the choux balls" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Line two baking trays with baking paper. Using a plain 1.5 cm nozzle, pipe 6 rounds of about 6 cm diameter and 6 smaller rounds of about 4 cm diameter. Wet your finger and smooth any peaks. Bake for 10 minutes until puffed, then reduce to 180°C and bake for a further 20 to 25 minutes until deep golden and hollow-sounding when tapped. Do not open the oven during the first 15 minutes or the choux will collapse. Cut a small hole in the base of each bun and leave to cool on a rack." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill, glaze, and assemble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Beat the cold pastry cream to loosen it and fill a piping bag. Fill each bun through the hole in the base until the bun feels heavy. Make the ganache: heat the cream until simmering, pour over the chopped chocolate, and stir until smooth. Allow to cool until slightly thickened but still dippable. Dip the tops of each filled bun into the ganache, let excess drip back, and place on a rack. When set, position a small ball on top of each large ball. Allow the ganache to cool until firm enough to pipe. Pipe the collar using a star nozzle in a ring around the join where the two balls meet." }]
+      }
+    ]
+  }
+}

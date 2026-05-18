@@ -1,0 +1,152 @@
+{
+  "slug": "macarons-coffee",
+  "title": "Coffee macarons",
+  "subtitle": "French almond shells with a coffee buttercream filling",
+  "excerpt": "French macarons with a pale brown shell flavoured with espresso powder, sandwiched with a smooth coffee buttercream. The method follows the Italian meringue approach for consistent shells.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "sweets-confectionery",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "French macarons in their modern sandwiched form are associated with Parisian patisserie — specifically with Ladurée and Pierre Hermé in the twentieth century, though the almond macaron as a biscuit has French roots from the Renaissance. The Italian meringue method (using a hot sugar syrup to cook the egg whites before folding in almond flour and icing sugar) gives more stable, consistent shells than the French meringue method and is the standard approach in professional patisserie. The method here follows the Italian meringue approach.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "24 macarons",
+    "prepMinutes": 60,
+    "cookMinutes": 15,
+    "restingMinutes": 30,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze filled macarons in an airtight container. Thaw in the fridge overnight and bring to room temperature for 30 minutes before serving.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Filled macarons mature overnight in the fridge — the shell softens slightly and the flavour develops. Make a day ahead for best results.",
+    "dietaryFlags": ["vegetarian", "gluten-free"],
+    "cuisine": "french",
+    "mealType": "snack",
+    "mood": ["weekendBake", "makesAhead"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 150,
+      "bakeTemperatureCelsius": 150,
+      "bakeTemperatureNote": "conventional oven, with the oven door slightly ajar for the last 5 minutes. Fan at 140°C. Macarons require precise oven temperature; use an oven thermometer.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": false },
+    { "slug": "food-processor", "isOptional": false },
+    { "slug": "piping-bag", "isOptional": false },
+    { "slug": "piping-tips", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "sugar-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "macaronage", "term": "macaronage", "definition": "The folding technique used to combine the meringue with the almond and icing sugar mixture (tant pour tant). The paste is folded and pressed against the sides of the bowl repeatedly until it flows slowly like lava when the spatula is lifted. Too little folding produces lumpy shells that crack; too much produces flat, spreading shells. The paste is ready when it falls from the spatula in a continuous ribbon and the ribbon disappears back into the bowl in 10 seconds." },
+    { "slug": "italian-meringue-macarons", "term": "Italian meringue method", "definition": "A more stable approach to macaron shells than the French method. A hot sugar syrup cooked to 118°C is poured into softly whipped egg whites, cooking them as the mixer runs. The resulting meringue is stiffer, more stable, and more tolerant of humidity than French meringue made with uncooked whites." },
+    { "slug": "macaron-feet", "term": "macaron feet", "definition": "The characteristic ruffled skirt or 'foot' that forms at the base of a properly baked macaron shell as steam from the interior pushes outward under the set surface crust. Feet form when the shell has been rested long enough to develop a skin before going into the oven, and when the oven temperature is correct." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Macarons require an oven thermometer. Domestic ovens drift by 20°C or more and the baking window for macarons is narrow. A thermometer is not optional." }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Coffee macarons follow the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "italian-meringue-macarons", "term": "Italian meringue method" } }], "text": "Italian meringue method" }, { "type": "text", "text": " for stability. The critical step is " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "macaronage", "term": "macaronage" } }], "text": "macaronage" }, { "type": "text", "text": ": under-folded paste produces cracked shells; over-folded paste produces flat, footless ones. Resting the piped shells until a dry skin forms is what creates the characteristic " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "macaron-feet", "term": "macaron feet" } }], "text": "macaron feet" }, { "type": "text", "text": " during baking." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The shells" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "ground-almonds", "amount": 150, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 150, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "instant-espresso-powder", "amount": 8, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-whites", "amount": 55, "unit": "g", "prepNote": "aged (left uncovered overnight in the fridge), for the almond paste" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-whites", "amount": 55, "unit": "g", "prepNote": "aged, for the meringue" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 150, "unit": "g", "prepNote": "for the Italian meringue syrup" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 38, "unit": "ml", "prepNote": "for the syrup" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The coffee buttercream" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 150, "unit": "g", "prepNote": "softened" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "instant-espresso-powder", "amount": 6, "unit": "g", "prepNote": "dissolved in 1 tbsp hot water, cooled" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the tant pour tant" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Process the ground almonds, icing sugar, and espresso powder in a food processor until very fine. Sift through a fine sieve, discarding any lumps that don't pass through. Mix with the first 55 g of egg whites until a smooth, stiff paste forms." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the Italian meringue" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the caster sugar and water to 118°C in a small saucepan. Meanwhile, whip the second 55 g of egg whites in the stand mixer to soft peaks. With the mixer running, pour the hot syrup in a thin, steady stream down the inside of the bowl. Whip on high until the meringue is stiff, glossy, and cooled to about 40°C." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Macaronage, pipe, and rest" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Fold the meringue into the almond paste in three additions, pressing the mixture against the sides of the bowl. Continue until the batter falls from the spatula in a slow, continuous ribbon. Do not overwork. Transfer to a piping bag fitted with a 1 cm round nozzle. Pipe 4 cm rounds onto lined baking trays, spacing 3 cm apart. Tap the trays firmly on the work surface to release air bubbles. Leave the shells to rest, uncovered, at room temperature for 30 to 60 minutes until a dry skin forms and the surface is not tacky when touched lightly." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake and fill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 150°C conventional. Bake for 13 to 15 minutes until the shells have feet and lift cleanly off the paper. Open the oven door slightly for the last 5 minutes. Cool completely on the trays. Beat the butter, icing sugar, and dissolved espresso together until pale and smooth. Pipe a round of filling on the flat side of half the shells and sandwich with the remaining shells. Refrigerate overnight before serving." }]
+      }
+    ]
+  }
+}

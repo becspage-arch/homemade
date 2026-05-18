@@ -1,0 +1,123 @@
+{
+  "slug": "cornish-pasty",
+  "title": "Cornish pasty",
+  "subtitle": "Shortcrust pastry filled with beef skirt, swede, potato, and onion",
+  "excerpt": "The traditional Cornish pasty: a D-shaped shortcrust parcel filled with raw beef skirt, sliced swede, potato, and onion, seasoned generously and crimped along the top edge. The filling cooks inside the sealed pastry. Served hot or cold.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The Cornish pasty is a protected food with PGI (Protected Geographical Indication) status in the UK, granted 2011. The traditional recipe (beef skirt, potato, swede (not turnip), and onion, no carrot, raw filling crimped at the top) is documented in Cornish cookery literature from the eighteenth century. Eliza Acton describes similar meat-and-vegetable pastry parcels in Modern Cookery for Private Families (1845). The crimped edge runs along the top of the D-shape, not the curved base — a diagnostic marker of the Cornish tradition. This recipe follows the traditional approach.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "4 pasties",
+    "prepMinutes": 40,
+    "cookMinutes": 45,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze unbaked pasties individually wrapped. Bake from frozen, adding 15 minutes to the baking time.",
+    "batchable": true,
+    "batchNotes": "Doubles easily.",
+    "makeAheadNotes": "The pastry dough can be made the day before and refrigerated. Assembled unbaked pasties can be refrigerated for up to 24 hours before baking.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["makesAhead"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 400,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "conventional oven, reducing to 180°C after 20 minutes. Fan: 180°C reducing to 160°C.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "cornish-crimp", "term": "Cornish crimp", "definition": "The seam of the traditional Cornish pasty runs along the top of the D-shape, not the curved base. The pastry edge is folded over and twisted or crimped by hand in a series of overlapping folds. This position — the crimp at the top — distinguishes the Cornish pasty from other regional British pasties." },
+    { "slug": "beef-skirt-cut", "term": "beef skirt", "definition": "A thin, flat cut from the inside of the lower rib and flank area. It has good flavour and becomes tender when cooked long enough, but sliced thinly it cooks through inside a pasty. Do not substitute with mince: the texture is entirely different." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The filling for a Cornish pasty goes in raw. Potato, swede, onion, and " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "beef-skirt-cut", "term": "beef skirt" } }], "text": "beef skirt" }, { "type": "text", "text": " are all sliced thin and seasoned well; they cook together inside the sealed pastry in the steam of their own moisture. Slice the vegetables to no more than 3 mm thick or the centre will be underdone by the time the pastry is cooked. The " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cornish-crimp", "term": "Cornish crimp" } }], "text": "Cornish crimp" }, { "type": "text", "text": " runs along the top, not the curved side." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shortcrust pastry" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 400, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "lard", "amount": 80, "unit": "g", "prepNote": "cold, cubed" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": "cold, cubed" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cold-water", "amount": 6, "unit": "tbsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "beef-skirt", "amount": 400, "unit": "g", "prepNote": "thinly sliced (no thicker than 3 mm)" } },
+          { "type": "ingredientItem", "attrs": { "slug": "swede", "amount": 200, "unit": "g", "prepNote": "peeled and thinly sliced" } },
+          { "type": "ingredientItem", "attrs": { "slug": "potato", "amount": 300, "unit": "g", "prepNote": "peeled and thinly sliced" } },
+          { "type": "ingredientItem", "attrs": { "slug": "onion", "amount": 150, "unit": "g", "prepNote": "thinly sliced" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 1.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "black-pepper", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "cut into small pieces" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 1, "unit": "whole", "prepNote": "beaten, for egg wash" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pastry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rub the cold lard and butter into the flour and salt until the mixture resembles coarse breadcrumbs. Add the cold water, a tablespoon at a time, cutting it in with a knife until the dough just comes together. Do not overwork. Wrap and rest at room temperature for 30 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 200°C conventional. Divide the dough into 4 equal pieces. Roll each into a round approximately 25 cm in diameter and 4 mm thick. Layer the filling on one half of each round: potato first, then swede, then onion, then beef. Season each layer with salt and pepper and dot with a few pieces of butter. Brush the pastry edge with egg wash. Fold the pastry over the filling to form a D-shape and press the edges firmly together. Crimp along the top edge by folding and pressing the pastry in overlapping folds. Brush all over with egg wash and place on lined baking trays. Bake for 20 minutes at 200°C, then reduce to 180°C and bake for a further 25 minutes." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "slug": "saint-honore-gateau",
+  "title": "Gâteau Saint-Honoré",
+  "subtitle": "Caramelised choux puffs on a puff pastry base with Chiboust cream",
+  "excerpt": "The classic Parisian patisserie: a round of puff pastry with a ring of choux paste baked on top, filled with lightened Chiboust cream, and crowned with choux puffs dipped in hard caramel and fixed in a ring.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The Gâteau Saint-Honoré was created in the mid-nineteenth century at Chiboust's patisserie on the Rue Saint-Honoré in Paris, and named in honour of the patron saint of bakers and pastry chefs. Chiboust himself invented the cream that bears his name — a pastry cream lightened with Italian meringue. The recipe was published in Urbain Dubois and Emile Bernard's La Cuisine Classique (1856, third edition 1876), now in the public domain. The method follows this classic approach.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 90,
+    "cookMinutes": 45,
+    "restingMinutes": 60,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The puff pastry base and choux puffs can be baked the day before and stored in an airtight tin. Fill and assemble on the day.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 250,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "conventional oven. Fan at 180°C.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": false },
+    { "slug": "piping-bag", "isOptional": false },
+    { "slug": "piping-tips", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "sugar-thermometer", "isOptional": true },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "chiboust-cream", "term": "Chiboust cream", "definition": "A lightened pastry cream made by folding Italian meringue into a warm pastry cream while both are still soft. The meringue gives a mousse-like texture that is firmer than whipped cream but lighter than plain pastry cream. Named after the Paris patissier who invented it." },
+    { "slug": "caramel-puff-glaze", "term": "hard caramel", "definition": "A caramel cooked to 150–155°C (hard-crack stage) until it sets hard and glassy on cooling. Used to glaze choux puffs by dipping them quickly — the caramel sets in seconds and gives a brittle, translucent shell. If hot caramel touches skin, run cold water over it for at least ten minutes and seek medical care if needed." }
+  ],
+  "techniqueSlugs": ["choux-paste-technique", "caramel-making"],
+  "criticalTechniques": ["choux-paste-technique"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Saint-Honoré is a cake assembled from three separate preparations: choux paste," }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chiboust-cream", "term": "Chiboust cream" } }], "text": "Chiboust cream" }, { "type": "text", "text": ", and " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "caramel-puff-glaze", "term": "hard caramel" } }], "text": "hard caramel" }, { "type": "text", "text": " — each one straightforward in isolation. Work from a mise en place: bake the base and puffs first, make the cream while they cool, and cook the caramel last because it must be used immediately. The caramel reaches 155°C; if hot caramel touches skin, run cold water over it for at least ten minutes and seek medical care if needed. Domestic ovens drift by 20°C or more; use an oven thermometer for the pastry stages." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Puff pastry base" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "ready-made-puff-pastry", "amount": 200, "unit": "g", "prepNote": "or one sheet, all-butter" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Choux paste" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 200, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 80, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 120, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 1, "unit": "pinch" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 3, "unit": "whole" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Chiboust cream" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 400, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-yolks", "amount": 4, "unit": "whole" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 80, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cornflour", "amount": 35, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "leaf-gelatine", "amount": 4, "unit": "sheets", "prepNote": "soaked in cold water" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-whites", "amount": 4, "unit": "whole" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 120, "unit": "g", "prepNote": "for the Italian meringue" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 40, "unit": "ml", "prepNote": "for the Italian meringue syrup" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Hard caramel" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 200, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 60, "unit": "ml" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the puff pastry base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 200°C conventional. Roll the puff pastry to a 24 cm round and place on a lined baking tray. Prick all over with a fork to prevent the base rising unevenly. Pipe a ring of choux paste around the edge using a 1 cm plain nozzle, pressing it onto the pastry so it adheres. Pipe the remaining choux paste into 8 to 10 small puffs on a separate lined tray. Bake both trays for 25 to 30 minutes until the choux is golden and the base is cooked through. Cool on racks." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the Chiboust cream" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Make a vanilla pastry cream: whisk yolks, 80 g sugar, and cornflour; bring milk to simmer; temper and cook until thick. Squeeze the gelatine dry and stir into the hot pastry cream until dissolved. Keep warm. Make an Italian meringue: dissolve the 120 g sugar in 40 ml water and boil to 121°C. Whip the egg whites to soft peaks in the stand mixer, then pour the hot syrup in a thin stream with the mixer running on medium. Continue on high until glossy and cooled. Fold the warm (not hot) pastry cream into the meringue in two additions. Use the Chiboust cream immediately; it sets as it cools." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the caramel and assemble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Dissolve the 200 g sugar in 60 ml water in a pan, then cook to 155°C without stirring. Working quickly, dip the top of each small puff into the caramel and immediately press the caramelised top against the choux ring on the pastry base, spacing them evenly around the ring. Fill the centre of the Saint-Honoré with the Chiboust cream, using a Saint-Honoré piping nozzle (a flat nozzle with a 'V' cut) for the traditional striped effect, or use a star nozzle for wavy rosettes. Refrigerate for 30 minutes before serving." }]
+      }
+    ]
+  }
+}

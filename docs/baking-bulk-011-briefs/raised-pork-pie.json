@@ -1,0 +1,143 @@
+{
+  "slug": "raised-pork-pie",
+  "title": "Raised pork pie",
+  "subtitle": "Traditional British hot water crust pie with seasoned pork and jelly",
+  "excerpt": "The British hand-raised pork pie: a thick hot water crust pastry case moulded by hand or around a jar, filled with seasoned minced pork, baked, then filled with stock jelly through a hole in the lid. Served cold.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The raised pork pie is one of the oldest forms of English pie, documented in English cookery books from the seventeenth century. Mrs Beeton covers the raised pie in considerable detail in Book of Household Management (1861). The Melton Mowbray version (with grey uncured pork rather than pink cured meat) has protected status. The recipe here follows the classic British raised pie approach: hot water crust pastry, seasoned pork filling, and stock jelly poured in after baking.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 60,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pie must be made at least 8 hours ahead — ideally the day before — to allow the jelly to set completely. It keeps refrigerated for 4 days.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["makesAhead"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 400,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "conventional oven, reducing to 170°C after the first 30 minutes. Fan: 180°C reducing to 150°C.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "hot-water-crust", "term": "hot water crust pastry", "definition": "A pastry made by melting lard and water together and beating the hot liquid into flour. The hot fat gelatinises the flour partially, producing a pliable, mouldable pastry that can be shaped by hand when warm and sets firm and rigid on cooling and baking. It is the only British pastry traditionally moulded by hand rather than rolled." },
+    { "slug": "pie-jelly", "term": "pie jelly", "definition": "A lightly seasoned stock set with gelatine (or made from trotters or bones), poured in liquid form through the lid hole of a baked pie while it is still warm. It fills the gap between the shrunken meat filling and the pastry walls, then sets firm as the pie cools. Without jelly, the pie interior is hollow and dry." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A raised pork pie needs two distinctive techniques: shaping " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-water-crust", "term": "hot water crust pastry" } }], "text": "hot water crust pastry" }, { "type": "text", "text": " while it is still warm and pliable, and filling the baked case with " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pie-jelly", "term": "pie jelly" } }], "text": "pie jelly" }, { "type": "text", "text": " once it has cooled. Work quickly with the pastry while it is warm — it becomes unworkable as it cools." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Hot water crust pastry" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 400, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "lard", "amount": 150, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 150, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 1, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pork filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "pork-shoulder", "amount": 600, "unit": "g", "prepNote": "minced, not too fine — coarse mince retains texture" } },
+          { "type": "ingredientItem", "attrs": { "slug": "streaky-bacon", "amount": 150, "unit": "g", "prepNote": "finely diced" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 1.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "black-pepper", "amount": 0.75, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ground-mace", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "fresh-thyme", "amount": 1, "unit": "tsp", "prepNote": "leaves only" } },
+          { "type": "ingredientItem", "attrs": { "slug": "anchovies", "amount": 2, "unit": "fillets", "prepNote": "very finely chopped (optional; adds depth without a fishy flavour)" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pie jelly" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "chicken-stock", "amount": 200, "unit": "ml", "prepNote": "good quality, well seasoned" } },
+          { "type": "ingredientItem", "attrs": { "slug": "leaf-gelatine", "amount": 3, "unit": "sheets", "prepNote": "soaked in cold water" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pastry and shape the case" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bring the lard and water to a rolling boil. Pour into the flour and salt and beat quickly with a wooden spoon until a smooth, pliable dough forms. Work while warm. Set aside a third of the dough for the lid. Press the remaining dough into a 20 cm springform tin or round a floured jar placed on a baking tray, working the pastry up the sides to a 1 cm thickness. The sides must be even and tall enough to contain the filling." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 200°C conventional. Mix the pork, bacon, salt, pepper, mace, thyme, and anchovies together thoroughly. Pack tightly into the pastry case. Roll the reserved pastry into a lid and press it firmly onto the case, crimping the edges tightly to seal. Cut a small hole in the centre of the lid. Brush with beaten egg. Bake for 30 minutes at 200°C, then reduce to 170°C and bake for a further 60 minutes. The internal temperature of the filling should reach 75°C on an instant-read thermometer. Cool in the tin for 30 minutes, then remove and cool completely." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pour the jelly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Warm the chicken stock to a simmer. Squeeze the soaked gelatine dry and stir into the hot stock until fully dissolved. Allow to cool until it is the temperature of warm tap water but still liquid. Using a small funnel or a jug with a thin spout, pour the jelly through the hole in the lid. You will hear it filling the air gap inside. Refrigerate overnight until completely set before cutting." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "slug": "german-chocolate-cake",
+  "title": "German chocolate cake",
+  "subtitle": "A three-layer chocolate cake with coconut-pecan filling",
+  "excerpt": "The American classic: three layers of a mild chocolate sponge alternating with a rich coconut and pecan caramel filling. Not a German recipe — named after Sam German, who developed the sweet baking chocolate used in the original 1957 recipe.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "German chocolate cake takes its name from Sam German, a baker who developed a mild sweet chocolate for Baker's Chocolate Company in the 1850s. The cake recipe using this chocolate was published in a Dallas Morning Star recipe column in 1957 by a home baker, and quickly became a national phenomenon. The recipe was published publicly through the newspaper and is now in the public domain. The formula here follows the original approach: a mild chocolate butter cake with the distinctive coconut-pecan caramel frosting.",
+  "recipe": {
+    "servings": 12,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 35,
+    "restingMinutes": 90,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the unfrosted layers wrapped tightly. The coconut-pecan filling does not freeze well.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The coconut-pecan filling can be made 2 days ahead and refrigerated. Bring to room temperature before spreading.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "american",
+    "mealType": "dessert",
+    "mood": ["weekendBake", "makesAhead"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 250,
+      "bakeTemperatureCelsius": 175,
+      "bakeTemperatureNote": "conventional oven. Fan at 155°C.",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "round-cake-tin-23", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "hand-mixer", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "evaporated-milk-frosting", "term": "evaporated milk", "definition": "Unsweetened canned milk with about 60% of the water removed. Richer than regular milk and with a slightly caramelised flavour. In the coconut-pecan filling it acts as the liquid for the egg-yolk custard base." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "German chocolate cake is less intensely chocolatey than most chocolate layer cakes — the original recipe used a mild, sweetened chocolate. That mildness is right for this recipe; the coconut-pecan filling is the dominant flavour and a very dark chocolate would fight it. The filling uses " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "evaporated-milk-frosting", "term": "evaporated milk" } }], "text": "evaporated milk" }, { "type": "text", "text": " cooked with egg yolks and butter into a thick caramel-style custard." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The chocolate cake" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 250, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 300, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cocoa-powder", "amount": 60, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "bicarbonate-of-soda", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "baking-powder", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 3, "unit": "whole" } },
+          { "type": "ingredientItem", "attrs": { "slug": "buttermilk", "amount": 240, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vegetable-oil", "amount": 180, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 2, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "hot-water", "amount": 240, "unit": "ml", "prepNote": "freshly boiled" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The coconut-pecan filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "evaporated-milk", "amount": 360, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 300, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "egg-yolks", "amount": 3, "unit": "whole", "prepNote": "lightly beaten" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 115, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "desiccated-coconut", "amount": 200, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "pecans", "amount": 150, "unit": "g", "prepNote": "chopped and lightly toasted" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the coconut-pecan filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the evaporated milk, sugar, beaten egg yolks, and butter in a saucepan. Cook over medium heat, stirring constantly, for 12 to 15 minutes until the mixture thickens and turns a light amber-caramel colour. Remove from heat and stir in the vanilla, coconut, and pecans. The filling will thicken further as it cools; allow it to reach room temperature before using." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake the cake layers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 175°C conventional. Grease and line three 23 cm round tins. Whisk together the dry ingredients. In a separate bowl, whisk the eggs, buttermilk, oil, and vanilla. Combine wet and dry ingredients, then add the hot water in a steady stream and stir until smooth — the batter will be thin. Divide between the tins and bake for 30 to 35 minutes until a skewer comes out clean. Cool in the tins for 15 minutes, then on racks." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Place the first sponge layer on a plate. Spread one third of the cooled filling over the top, spreading to within 1 cm of the edge. Add the second layer and repeat, then place the third layer on top and finish with the remaining filling. The sides of this cake are traditionally left unfrosted; the coconut-pecan filling is the only topping required." }]
+      }
+    ]
+  }
+}
