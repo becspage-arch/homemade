@@ -175,6 +175,7 @@ export const TOOLS: ToolSeed[] = [
   // ────────────────────────────────────────────────────────────────────────
   // UTENSIL (~25)
   // ────────────────────────────────────────────────────────────────────────
+  { slug: 'skewers', name: 'Skewers', category: 'utensil', aliases: ['metal skewers', 'wooden skewers', 'kebab skewers'], isPurchasable: true, typicalPriceGbp: 500, notes: 'Metal skewers are reusable and conduct heat to the centre of the meat. Wooden skewers need soaking in water for 30 minutes before use to prevent scorching.' },
   { slug: 'wooden-spoon', name: 'Wooden spoon', category: 'utensil', aliases: [], isPurchasable: true, typicalPriceGbp: 500 },
   { slug: 'silicone-spatula', name: 'Silicone spatula', category: 'utensil', aliases: ['rubber spatula', 'scraper'], isPurchasable: true, typicalPriceGbp: 800, notes: 'For folding and scraping bowls clean.' },
   { slug: 'fish-slice', name: 'Fish slice', category: 'utensil', aliases: ['turner', 'spatula'], isPurchasable: true, typicalPriceGbp: 800, notes: 'UK fish slice = US turner.' },

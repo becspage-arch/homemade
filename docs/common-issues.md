@@ -65,6 +65,27 @@ Severity flag with the rule: `[block]` (rewrite mandatory),
   hurt the reading. Genericised brands (Sriracha, Hoover, Sellotape)
   almost always read fine as-is.
 
+- **"Fundamentally" as an intensifier** `[block]`
+  Pattern: `"changes the texture fundamentally"`, `"fundamentally about"`,
+  `"fundamentally different"`. Catches as a vague intensifier per the voice
+  rules; blocked by voice-check.
+  **How to fix:** drop the intensifier entirely, or substitute a precise
+  verb: `"transforms the texture entirely"`, `"is about"`, `"is distinct from"`.
+
+- **"Genuinely" as an intensifier** `[block]`
+  Pattern: `"genuinely golden"`, `"genuinely crisp"`, `"genuinely surprising"`.
+  Banned per voice rules. Recurs in step prose and conclusions.
+  **How to fix:** drop the intensifier, or use a specific equivalent:
+  `"properly golden"`, `"properly crisp"`, `"more interesting than it looks"`.
+
+- **"Treats" as a medical watchword false positive** `[warn]`
+  Pattern: `"Escoffier treats it as axiomatic"`, `"the dish treats onions as
+  the main event"` — non-medical usage of the word "treats" triggering
+  the medical-claim watchword check.
+  **How to fix:** replace the verb: `"Escoffier takes it as axiomatic"`,
+  `"the dish uses onions as the main event"`. Or accept the flag with
+  `--skip-voice-check` if the reviewer confirms it is non-medical.
+
 - **Tricolons in intros and conclusions** `[warn]`
   Pattern: `"warm, considered, and beautiful"` style three-item
   parallel lists, especially at the start of the intro or the end of
@@ -160,3 +181,14 @@ generic claims rather than concrete facts, etc.)
   Pattern: `{ "slug": "pie-dish-23cm", ... }` in `recipeTools`.
   **Why:** The size suffix is not part of the slug.
   **How to fix:** Use `pie-dish`.
+
+- **`servings` and `yieldDescription` are mutually exclusive** `[block]`
+  Pattern: a recipe with both `"servings": 6` and `"yieldDescription": "one
+  30 cm × 20 cm pie"` set simultaneously. Upload fails or silently sets
+  yieldDescription when servings is also present.
+  **Why:** The schema treats these as alternatives. Recipes that serve N people
+  use `servings`. Recipes with a fixed-unit yield (a loaf, a jar, a tray)
+  use `yieldDescription` and set `servings: null`.
+  **How to fix:** Pick one. Pies and cakes that feed a known number of
+  servings: use `servings`. Loaves, jars, and batches with no natural
+  per-person count: use `yieldDescription` and set `servings: null`.
