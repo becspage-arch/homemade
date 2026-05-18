@@ -134,6 +134,29 @@ generic claims rather than concrete facts, etc.)
 
 ## Cross-category issues
 
-(empty initially — populated once we have more than one category in
-production. Things like "method prose loses scaling tokens on bake-time
-references" or "garden tutorials forget zone metadata".)
+- **Season enum must be UPPERCASE** `[block]`
+  Pattern: `"season": "winter"` or `"season": "summer"`.
+  **Why:** Prisma Season enum values are SPRING, SUMMER, AUTUMN, WINTER,
+  YEAR_ROUND. Lowercase strings fail with `Invalid value for argument 'season'.`
+  **How to fix:** Always write `"WINTER"`, `"SUMMER"`, `"SPRING"`, `"AUTUMN"`,
+  `"YEAR_ROUND"` or `null`. Never lowercase.
+
+- **`baking-dish` not a valid tool slug** `[block]`
+  Pattern: `{ "slug": "baking-dish", ... }` in `recipeTools`.
+  **Why:** No tool with this slug exists in the master table.
+  **How to fix:** Use `rectangular-baking-tin` (~30×20 cm for casseroles and traybakes).
+
+- **`kitchen-thermometer` not a valid tool slug** `[block]`
+  Pattern: `{ "slug": "kitchen-thermometer", ... }` in `recipeTools`.
+  **Why:** No tool with this slug exists in the master table.
+  **How to fix:** Use `instant-read-thermometer` (the generic meat/probe thermometer).
+
+- **`cast-iron-casserole` not a valid tool slug** `[block]`
+  Pattern: `{ "slug": "cast-iron-casserole", ... }` in `recipeTools`.
+  **Why:** No tool with this slug exists. The casserole dish is `dutch-oven`.
+  **How to fix:** Use `dutch-oven` (aliases: Dutch oven, Le Creuset, cocotte).
+
+- **`pie-dish-23cm` not a valid tool slug** `[block]`
+  Pattern: `{ "slug": "pie-dish-23cm", ... }` in `recipeTools`.
+  **Why:** The size suffix is not part of the slug.
+  **How to fix:** Use `pie-dish`.
