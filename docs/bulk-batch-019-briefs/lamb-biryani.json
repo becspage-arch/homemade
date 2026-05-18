@@ -1,0 +1,131 @@
+{
+  "slug": "lamb-biryani",
+  "title": "Lamb biryani",
+  "subtitle": "Slow-braised lamb layered with saffron rice",
+  "excerpt": "Lamb shoulder pieces slow-braised in a rich spiced sauce until tender, then layered with parboiled saffron basmati and sealed for the dum finish. The longer braise required for lamb (compared to chicken) produces a deeper, darker sauce that soaks into the rice from below, giving lamb biryani a richer, meatier character than its chicken counterpart.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Lamb biryani is the original meat biryani — historically lamb was the Mughal court meat of choice. The dum technique (sealed-pot oven cooking) originates in Lucknow and Hyderabad. Documented in British-Indian restaurant menus and cookbooks throughout the 1970s and 1980s.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 105,
+    "restingMinutes": 10,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Marinate the lamb overnight. Braise the lamb a day ahead and refrigerate; complete the rice and dum on the day.",
+    "dietaryFlags": ["glutenFree", "nutFree"],
+    "cuisine": "indian-anglo",
+    "mealType": "dinner",
+    "mood": ["weekend"],
+    "temperatureCelsius": 150,
+    "temperatureNote": "Oven temperature for the dum stage",
+    "foundational": false
+  },
+  "recipeTools": [],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Lamb biryani requires more time than chicken biryani because the lamb needs a full braise (at least 75 minutes) before it is tender enough to layer. The advantage is that the braising sauce that forms around the lamb is richer than a chicken marinade, and that sauce soaks into the rice during the dum stage, producing a more deeply flavoured result." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Unlike chicken biryani, where the chicken partially cooks in its marinade before layering, here the lamb braises with onion, spices, and liquid to create a properly sauced layer. There should be enough liquid in the lamb layer to produce steam during the dum stage — this is what cooks and separates the rice above. If the lamb layer is dry, the rice will not finish correctly." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-shoulder", "amount": 700, "unit": "g", "prepNote": "cut into large pieces", "isOptional": false, "groupLabel": "Lamb layer" },
+            { "ingredientSlug": "plain-yoghurt", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Lamb layer" },
+            { "ingredientSlug": "ghee", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Lamb layer" },
+            { "ingredientSlug": "onion", "amount": 3, "unit": "each", "prepNote": "2 finely sliced for the lamb, 1 thinly sliced for crispy topping", "isOptional": false, "groupLabel": "Lamb layer" },
+            { "ingredientSlug": "garlic", "amount": 5, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "Lamb layer" },
+            { "ingredientSlug": "ginger-root", "amount": 30, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "Lamb layer" },
+            { "ingredientSlug": "garam-masala", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Lamb layer" },
+            { "ingredientSlug": "chilli-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Lamb layer" },
+            { "ingredientSlug": "turmeric", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Lamb layer" },
+            { "ingredientSlug": "cardamom-black", "amount": 2, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "Lamb layer" },
+            { "ingredientSlug": "basmati-rice", "amount": 300, "unit": "g", "prepNote": "rinsed and soaked 20 minutes", "isOptional": false, "groupLabel": "Rice" },
+            { "ingredientSlug": "cardamom-green", "amount": 4, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "Rice" },
+            { "ingredientSlug": "cinnamon-stick", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "Rice" },
+            { "ingredientSlug": "cloves", "amount": 4, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "Rice" },
+            { "ingredientSlug": "saffron", "amount": 0.25, "unit": "tsp", "prepNote": "soaked in 3 tbsp warm milk for 15 minutes", "isOptional": false, "groupLabel": "Assembly" },
+            { "ingredientSlug": "vegetable-oil", "amount": 3, "unit": "tbsp", "prepNote": "for frying onions", "isOptional": false, "groupLabel": "Assembly" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise the lamb" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the {{ghee}} in a large heavy pan over high heat. Brown the {{lamb-shoulder}} in batches for 3 minutes per batch. Remove. Reduce heat to medium. Add the finely sliced {{onion}} and cook for 15 minutes until deep golden. Add the {{garlic}}, {{ginger-root}}, {{garam-masala}}, {{chilli-powder}}, {{turmeric}}, and {{cardamom-black}} and stir for 1 minute. Return the lamb, stir in the {{plain-yoghurt}}, and add 200 ml water. Cover and cook on a low simmer for 75 minutes until the lamb is tender. The sauce should be thick; remove the lid and reduce for 5 minutes if too liquid." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Parboil the rice and fry the topping onions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 150°C. Fry the thin-sliced onion in the {{vegetable-oil}} over medium-high heat for 15 minutes until golden and crisp. Drain and set aside. Boil well-salted water with the {{cardamom-green}}, {{cinnamon-stick}}, and {{cloves}}. Add the drained {{basmati-rice}} and cook for 5 minutes until 70% done. Drain immediately." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Layer, seal, and dum-cook" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Transfer the lamb and its sauce to the base of a heavy casserole dish. Layer the parboiled rice evenly over the top. Scatter the crispy onions over the rice. Drizzle the saffron milk over the surface. Cover with foil then the lid. Bake for 25 minutes. Rest, still sealed, for 10 minutes before serving." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Rice at the top is dry and uncooked", "cause": "Lamb layer too dry, insufficient steam", "fix": "Ensure the lamb has enough sauce before layering — add 50 ml water to the lamb if needed. The moisture from the lamb layer steams the rice above" },
+            { "symptom": "Lamb is tough", "cause": "Insufficient braise time", "fix": "Lamb shoulder needs 75 to 90 minutes at a real simmer. Add more water if the pan runs dry and continue until the meat yields easily to a fork" },
+            { "symptom": "Rice mushy throughout", "cause": "Parboiled too long", "fix": "The rice must be undercooked at the parboiling stage. Pull it at 5 minutes — it should have a firm, chalky core" },
+            { "symptom": "No layered appearance when served", "cause": "Mixed during assembly", "fix": "Do not stir the biryani before serving. Serve by scooping through all layers so each portion includes both rice and lamb" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Lamb biryani is the heavier, more complex sibling of chicken biryani: the braised lamb sauce gives the rice a depth of flavour that lighter meat cannot. It is a weekend dish: the timing of the braise and the parboiling requires attention and sequence, and it rewards the effort with something that is qualitatively different from a curry-with-rice. In restaurant service it is often assembled and held, then finished to order — the dum stage is forgiving of timing variation, which makes it practical at scale." }]
+      }
+    ]
+  }
+}
