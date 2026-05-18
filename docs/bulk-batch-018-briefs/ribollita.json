@@ -1,0 +1,321 @@
+{
+  "slug": "ribollita",
+  "title": "Ribollita",
+  "subtitle": "Tuscan bread and bean soup with cavolo nero",
+  "excerpt": "A thick Tuscan soup of cannellini beans, cavolo nero, and day-old bread, with a soffritto of onion, carrot, celery, and garlic, a parmesan rind in the broth, and finished with a pour of good extra-virgin olive oil at the table. The soup is deliberately substantial: bread thickens it to porridge consistency, and it is eaten with a spoon from a bowl, not drunk.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Ribollita (re-boiled) is a Tuscan peasant soup, named for the tradition of making it on one day and re-boiling it on the next, when the bread has thickened the soup into an even denser consistency. It is associated with the contado (countryside) around Florence and Siena. The bread was originally the unsalted Tuscan pane sciocco; a day-old ciabatta or sourdough works well in its place. The dish appears in its current form in sixteenth-century Tuscan household cooking manuscripts.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 60,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well without the bread. Add fresh bread on reheating.",
+    "batchable": true,
+    "batchNotes": "Doubles easily. Improves significantly on day 2.",
+    "makeAheadNotes": "Make a day ahead and reheat (re-boil) for better flavour and texture — the name refers to this very practice.",
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "comfortFood"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ribollita is not a soup you eat the day you make it — the whole point is the re-boiling. On day one it is a fine bean and vegetable soup with bread floating in it. On day two, after a night in the fridge, the bread has absorbed all the liquid and swollen into a dense, almost solid mass that re-boiling turns into a thick, porridge-like consistency. Day-two ribollita is what the dish is supposed to be."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The extra-virgin olive oil drizzled at the table is not optional and not a garnish: it provides about a third of the fat and flavour in the finished bowl. Use the best olive oil you have — a grassy, peppery Tuscan oil if possible. The soup is deliberately unseasoned at the table with anything other than olive oil and pepper."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "cannellini-beans",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "tinned, drained and rinsed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cavolo-nero",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "stems removed, leaves roughly torn",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ciabatta",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "day-old, torn into large chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "celery",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "rosemary",
+              "amount": 1,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 2,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 1500,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 50,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 60,
+              "unit": "ml",
+              "prepNote": "best quality, to pour at table",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "grated to serve, rind added to the broth",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the soffritto and beans"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the {{olive-oil}} in a large casserole over medium heat. Add the {{onion}}, {{carrot}}, and {{celery}} and cook for 10 minutes until very soft. Add the {{garlic}}, {{rosemary}}, and {{thyme}} and cook for 2 minutes. Add the {{tinned-tomatoes}} and cook for 5 minutes. Add the {{cannellini-beans}}, {{stock-chicken}}, and the parmesan rind if using. Season well. Simmer for 15 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the cavolo nero and bread"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the {{cavolo-nero}} leaves and simmer for 15 minutes until tender. Mash about a quarter of the beans with the back of a spoon against the side of the pot to thicken the broth. Add the {{ciabatta}} pieces, pressing them down into the soup. Simmer for a further 10 minutes until the bread has swollen and absorbed the surrounding liquid. Remove the herb sprigs and parmesan rind. Rest for 10 minutes. Ladle into deep bowls, drizzle generously with {{extra-virgin-olive-oil}}, add a grind of {{black-pepper}}, and scatter grated {{parmesan}} over."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Soup is too liquid and thin",
+              "cause": "Bread not old enough to absorb liquid, or too little bread",
+              "fix": "Use properly stale bread — at least one day old; press it firmly into the soup so it soaks rather than floats"
+            },
+            {
+              "symptom": "Cavolo nero is tough and stringy",
+              "cause": "Stems not removed, or not cooked long enough",
+              "fix": "Strip the leaves from the central stem — the stems need twice the cooking time of the leaves; 15 minutes for leaves is correct"
+            },
+            {
+              "symptom": "Ribollita tastes flat and bland",
+              "cause": "Underseasoning or olive oil skipped at the table",
+              "fix": "Beans need more salt than you think; the olive oil at the table is structural, not optional — it provides half the flavour"
+            },
+            {
+              "symptom": "Bread has disintegrated into mush rather than soft chunks",
+              "cause": "Too fresh, or stirred too aggressively after adding",
+              "fix": "Use day-old bread; once added, don't stir — let the bread absorb and press it gently; it should swell and soften without dissolving"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ribollita is the signature soup of the Tuscan contado (the farmland and small towns that surround Florence) and is one of the great examples of Italian cucina povera: a dish that turns the remains of yesterday's bread and the contents of the bean pot into something better than either ingredient alone. The re-boiling that gives the dish its name is not merely a reheating but a second cooking that changes the texture considerably. In Florentine households it is made on Monday from the leftover bean soup of Sunday, and Monday's ribollita is thicker and better than Sunday's original — which is the practical wisdom the dish encodes."
+          }
+        ]
+      }
+    ]
+  }
+}

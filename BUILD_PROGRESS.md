@@ -22,7 +22,7 @@ Live at https://homemade.education behind splash gate (cookie `homemade-access=1
 
 **Library counts (PUBLISHED)** — full grid in § Multi-category fill plan below.
 
-- Cooking 681 (anchors + pilot-10 + personal-recipe ingest + bulks 001–016). Baking 423 (pilot-10 + bulks 001–008 + bulk-004b). Mindset 302 (bulks 001–008). The other 14 categories are private placeholders until each crosses 10 published rows.
+- Cooking 743 (anchors + pilot-10 + personal-recipe ingest + bulks 001–018). Baking 423 (pilot-10 + bulks 001–008 + bulk-004b). Mindset 351 (bulks 001–009 + editorial pass). The other 14 categories are private placeholders until each crosses 10 published rows.
 
 **This week's notable landings**
 
@@ -1089,6 +1089,17 @@ Verified working in production after batch 004:
 - **New ingredients seeded:** bbq-sauce, salsa, pepperoncini.
 - **Report:** `docs/bulk-batch-016-report.md`.
 
+### Cooking bulk-018 ✅ landed 2026-05-18
+
+**Goal.** Autopilot-queue loop (parallel burner session). European — Greek, French, Italian, Spanish, Flemish.
+
+**Outcome.** 40 recipes uploaded PUBLISHED (all updates to existing records, 13 newly PUBLISHED). Cooking 730 → 743 (+13 net new).
+
+- **Composition:** French × 12 (poulet-chasseur, poulet-a-la-creme, poulet-a-lestragon, canard-aux-cerises, magret-de-canard, lapin-a-la-moutarde, poule-au-pot, boeuf-en-daube, moules-a-la-creme, coquilles-saint-jacques, carbonnade-flamande, truite-aux-amandes) / Italian × 8 (ossobuco-alla-milanese, saltimbocca-alla-romana, pollo-alla-cacciatore, cacio-e-pepe, pasta-e-fagioli, risotto-ai-funghi, ribollita, choucroute-garnie) / Greek × 10 (bifteki, grilled-octopus-greek, gyros-pork, kakavia, lamb-fricassee-greek, souvlaki-chicken, souvlaki-lamb, souvlaki-pork, tiropita, whole-grilled-bream-greek) / Spanish × 10 (arroz-caldoso-marisco, cordero-al-chilindron, espinacas-con-garbanzos, huevos-a-la-flamenca, merluza-en-salsa-verde, migas-extremenas, pinchitos-morunos, pollo-en-pepitoria, sopa-de-ajo, steak-tartare).
+- **Difficulty:** 32 BEGINNER / 8 INTERMEDIATE.
+- **New ingredients seeded:** none.
+- **Report:** `docs/bulk-batch-018-report.md`.
+
 ### Cooking bulk-017 ✅ landed 2026-05-18
 
 **Goal.** Autopilot-queue loop (parallel burner session). Middle Eastern, Levantine, and Persian cuisine.
@@ -1515,7 +1526,7 @@ Revise the rates here when actuals diverge from estimates.
 
 | # | Category | Target | Current | Pipeline | Fill weeks @ 1k/wk |
 |---|---|---:|---:|---|---:|
-| 1 | Cooking | 7,000 | 721 PUBLISHED (anchors + pilot-10 + personal-recipe ingest + bulks 001-017 across cuisines, methods, soups/salads/breakfasts/drinks/preserves/desserts). **bulk-017 (autopilot-queue, 2026-05-18):** 40 recipes PUBLISHED — Middle Eastern / Levantine / Persian. Cooking 681 → 721. **bulk-016 (autopilot-queue, 2026-05-18):** 40 recipes PUBLISHED — American comfort food + breakfasts + sandwiches + BBQ. Cooking 656 → 681. **bulk-015 (autopilot-queue, 2026-05-18):** 40 recipes PUBLISHED — Italian pasta × 12, risotto × 6, chicken × 3, fish × 4, other Italian × 6, Turkish × 9. Cooking 616 → 656. **bulk-014 (autopilot-queue, 2026-05-18):** 40 recipes PUBLISHED — Greek × 10, Spanish × 10, Eastern European × 10, French × 10. Cooking 582 → 616. **bulk-013 (autopilot-queue, 2026-05-18):** 40 recipes PUBLISHED — all british. Classical cooking: gravies (onion, red-wine), condiments (mint sauce, apple sauce, horseradish cream), pies (steak-and-kidney, chicken-and-mushroom, chicken-and-leek, steak-and-mushroom), stews/braises/soups (beef-and-Guinness, welsh cawl, cock-a-leekie, scotch broth, Irish stew, oxtail stew, vegan cottage pie, vegetarian shepherd's pie, smoked haddock chowder), stuffings (sage-and-onion, chestnut-and-sausagemeat), accompaniments (braised red cabbage, honey-roast carrots and parsnips, hasselback potatoes, boulangère potatoes, pigs in blankets), offal (devilled kidneys, liver and onions), pork (pork chops cider/apples, pork chops mustard cream, gammon parsley sauce, boiled bacon and cabbage), fish (scampi, devilled mackerel, potted shrimp), chicken (goujons, spatchcock), lamb (rack of lamb), vegetarian (glamorgan sausages), Scottish (stovies). DB count post-batch: 582. | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
+| 1 | Cooking | 7,000 | 743 PUBLISHED (anchors + pilot-10 + personal-recipe ingest + bulks 001-018 across cuisines, methods, soups/salads/breakfasts/drinks/preserves/desserts). **bulk-018 (autopilot-queue, 2026-05-18):** 40 recipes PUBLISHED — European (French, Italian, Greek, Spanish). Cooking 730 → 743. **bulk-017 (autopilot-queue, 2026-05-18):** 40 recipes PUBLISHED — Middle Eastern / Levantine / Persian. Cooking 681 → 721. **bulk-016 (autopilot-queue, 2026-05-18):** 40 recipes PUBLISHED — American comfort food + breakfasts + sandwiches + BBQ. Cooking 656 → 681. **bulk-015 (autopilot-queue, 2026-05-18):** 40 recipes PUBLISHED — Italian pasta × 12, risotto × 6, chicken × 3, fish × 4, other Italian × 6, Turkish × 9. Cooking 616 → 656. **bulk-014 (autopilot-queue, 2026-05-18):** 40 recipes PUBLISHED — Greek × 10, Spanish × 10, Eastern European × 10, French × 10. Cooking 582 → 616. **bulk-013 (autopilot-queue, 2026-05-18):** 40 recipes PUBLISHED — all british. Classical cooking: gravies (onion, red-wine), condiments (mint sauce, apple sauce, horseradish cream), pies (steak-and-kidney, chicken-and-mushroom, chicken-and-leek, steak-and-mushroom), stews/braises/soups (beef-and-Guinness, welsh cawl, cock-a-leekie, scotch broth, Irish stew, oxtail stew, vegan cottage pie, vegetarian shepherd's pie, smoked haddock chowder), stuffings (sage-and-onion, chestnut-and-sausagemeat), accompaniments (braised red cabbage, honey-roast carrots and parsnips, hasselback potatoes, boulangère potatoes, pigs in blankets), offal (devilled kidneys, liver and onions), pork (pork chops cider/apples, pork chops mustard cream, gammon parsley sauce, boiled bacon and cabbage), fish (scampi, devilled mackerel, potted shrimp), chicken (goujons, spatchcock), lamb (rack of lamb), vegetarian (glamorgan sausages), Scottish (stovies). DB count post-batch: 582. | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
 | 2 | Baking | 3,000 | 384 PUBLISHED (bulks 001–007, 2026-05-18) + 4 DRAFT anchor | ✅ schema + taxonomy + authoring prompt v2 + anti-tells + pilot-10 + bulks 001–007 all landed. **bulk-007 (autopilot-queue, 2026-05-18):** 40 PUBLISHED (36 CREATED, 4 UPDATED) — cakes ×16, pies ×8, biscuits ×8, bread ×7, pastries ×1. 20 BEGINNER / 19 INTERMEDIATE / 1 ADVANCED. Voice-check fix: pane-di-casa (2 banned phrases). 5 new glossary terms. Baking 348 → 384. Report: `docs/baking-bulk-007-report.md`. Four anchor DRAFTs pending Rebecca review. | 3 |
 | 3 | Garden | 4,000 | 0 | Not started — ~1 wk setup | 4 |
 | 4 | Herbal medicine | 2,500 | 0 | Not started — ~1 wk setup | 2.5 |

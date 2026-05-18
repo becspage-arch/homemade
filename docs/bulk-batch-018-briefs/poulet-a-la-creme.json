@@ -1,0 +1,310 @@
+{
+  "slug": "poulet-a-la-creme",
+  "title": "Poulet à la crème",
+  "subtitle": "Normandy cream chicken braised in cider and cream",
+  "excerpt": "Chicken thighs browned and then braised in dry cider and chicken stock, finished with a generous pour of double cream and a scatter of fresh tarragon. A dish from the apple-and-dairy heartland of Normandy that takes under an hour.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Poulet à la crème is the central chicken dish of Normandy cooking, exploiting the region's two great products: cider and cream. It appears throughout French regional cookbooks and is a close relative of poulet Vallée d'Auge, which includes calvados. This version uses cider only, making it approachable without specialist spirits.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The braise can be made to the point before adding cream, then refrigerated for 24 hours and finished with cream on reheating.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "comfortFood"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "saute-pan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "braising"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is Normandy in a pan: cider where the wine would go, cream where leaner regions would use stock alone, and apples in the background if you want them. The cream goes in at the end; add it too early and it breaks under sustained heat. Stir it in off the boil, return to a gentle simmer for five minutes, and it will thicken smoothly around the chicken without splitting."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bone-in skin-on thighs carry more flavour than boneless and stay moist through the braise. If you use chicken breasts, reduce the covered braise to 15 minutes and watch them closely — they dry out fast past 72°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "bone-in, skin-on",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cider-dry",
+              "amount": 250,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tarragon",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "leaves picked",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 2,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 25,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 15,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the chicken"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Season the {{chicken-thigh}} thighs generously on both sides. Heat the olive oil and {{unsalted-butter}} of butter in a wide sauté pan over medium-high heat. Lay the thighs skin-side down and cook without moving for 6 to 8 minutes until the skin is deep golden. Turn and cook the other side for 3 minutes. Remove and set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the sauce and braise"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour off excess fat, leaving a thin film. Add the {{shallot}} and {{garlic}} and soften over medium heat for 3 minutes. Pour in the {{cider-dry}} of dry cider, let it bubble for 2 minutes, and scrape up the browned bits from the base. Add the {{stock-chicken}} of chicken stock and {{thyme}} of thyme. Return the chicken skin-side up, cover, and cook over low heat for 20 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finish with cream"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the chicken. Remove the thyme. Stir the {{double-cream}} of cream into the pan liquid and simmer uncovered for 5 minutes until slightly thickened. Return the chicken, scatter the {{tarragon}} leaves over, and serve straight from the pan."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Cream has split into a greasy film",
+              "cause": "Added to a boiling pan, or simmered too hard",
+              "fix": "Remove from heat, let cool for 30 seconds, whisk firmly; use double cream rather than single as it is more heat-stable"
+            },
+            {
+              "symptom": "Cider flavour is harsh and vinegary",
+              "cause": "Cider not reduced enough before adding stock",
+              "fix": "Let the cider simmer for at least 2 minutes before adding stock; most of the sharpness cooks off quickly"
+            },
+            {
+              "symptom": "Sauce is too thin",
+              "cause": "Too much liquid for the pan size",
+              "fix": "Remove the chicken and reduce the sauce uncovered over medium heat until it coats a spoon"
+            },
+            {
+              "symptom": "Chicken skin has gone soft under the lid",
+              "cause": "Skin submerged in the braising liquid",
+              "fix": "Keep the thighs skin-side up so the skin sits above the liquid level; remove the lid for the last 5 minutes to re-crisp"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Normandy sits in the north-west of France: Atlantic coast, apple orchards, dairy farms. The cooking reflects what the land produces. Cider replaces the wine of Burgundy; cream replaces the olive oil of Provence. Poulet à la crème, poulet Vallée d'Auge, and their variants are all iterations of the same logic — chicken braised in something acidic (cider or calvados) and finished with something rich (cream). It is domestic cooking from an agricultural region that happened to produce world-class dairy and fruit. Serve with boiled new potatoes or steamed rice."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "slug": "poulet-a-lestragon",
+  "title": "Poulet à l'estragon",
+  "subtitle": "French braised chicken in tarragon cream sauce",
+  "excerpt": "Chicken thighs braised in dry white wine and chicken stock with fresh tarragon, finished with crème fraîche. A bistro classic that takes 45 minutes and produces a pale, herb-forward sauce sharp enough to cut through the richness of the cream.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Poulet à l'estragon is a staple of the French bistro canon. Tarragon's particular affinity with chicken is documented across Escoffier's 'Le Guide Culinaire' (1903) and Larousse Gastronomique. The cream-and-tarragon combination belongs to the Normandy and Île-de-France tradition of cream-finished chicken dishes.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The sauce can be made up to the cream stage and refrigerated for 24 hours; add the fresh tarragon only on reheating.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "dinnerParty"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "saute-pan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "French tarragon (the narrow-leafed anise variety, not the coarser Russian kind) has a particular affinity with chicken that the French kitchen has exploited for at least two centuries. The sauce here is pale and clean: white wine, stock, and crème fraîche, with the tarragon added twice — once early for depth and once at the end for brightness. The result is elegant, weeknight-fast, and far more interesting than it looks."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bone-in thighs hold moisture through the braise far better than breasts, which dry out in the time the sauce needs to reduce. If you use breasts, reduce the cooking time to 20 minutes total and monitor carefully. A sauté pan with a lid is the ideal vessel; a wide, heavy frying pan with a loose foil tent will work."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "bone-in, skin-on",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dry-white-wine",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "creme-fraiche",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "full-fat",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tarragon",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "leaves picked",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 15,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the chicken"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Season the {{chicken-thigh}} thighs well on both sides. Heat the olive oil and {{unsalted-butter}} of butter in a wide sauté pan over medium-high heat. Lay the thighs skin-side down and cook without moving for 6 to 8 minutes until the skin is deep golden and crisp. Turn and cook the other side for 3 minutes. Remove and set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the sauce"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour off all but a thin film of fat from the pan. Add the {{shallot}} and {{garlic}} and soften over medium heat for 3 minutes. Pour in the {{dry-white-wine}} of white wine and let it bubble for 2 minutes, scraping up the browned bits. Add the {{stock-chicken}} of chicken stock and half the tarragon leaves. Return the chicken skin-side up, cover, and cook over low heat for 20 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finish with cream"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the chicken. Stir the {{creme-fraiche}} of crème fraîche into the pan liquid and simmer uncovered for 5 minutes until the sauce is thick enough to coat the back of a spoon. Return the chicken to the pan, scatter the remaining tarragon over, and serve straight from the pan."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce splits into a greasy puddle",
+              "cause": "Crème fraîche overcooked or boiled too hard",
+              "fix": "Remove from heat, let cool slightly, then whisk vigorously; crème fraîche is more stable than double cream but will split if held at a rolling boil for too long"
+            },
+            {
+              "symptom": "Tarragon flavour is muddy rather than fresh",
+              "cause": "All the tarragon added early and overcooked",
+              "fix": "Always split the tarragon: half in with the stock for depth, half at the end for brightness; overcooking drives off the volatile oils"
+            },
+            {
+              "symptom": "Chicken skin has lost its crispness by serving",
+              "cause": "Skin submerged in the sauce during braising",
+              "fix": "Keep the thighs skin-side up throughout the covered braise; the skin steams but stays above the liquid and crisps again if returned briefly to a hot pan"
+            },
+            {
+              "symptom": "Sauce is too thin",
+              "cause": "Too much liquid for the pan size",
+              "fix": "Remove the chicken and reduce the sauce uncovered over medium heat until it coats a spoon; return the chicken to warm through"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Poulet à l'estragon sits at the lighter, more refined end of the French bistro chicken repertoire, alongside poulet à la crème and poulet rôti aux herbes. It is bistro cooking in the truest sense: a dish that requires good technique over a short time rather than the long, slow work of the braises. Tarragon grows easily in France (it's a garden herb rather than a special-occasion purchase) and the chicken-and-tarragon pairing is so ingrained in French cooking that Escoffier regarded it as axiomatic rather than a combination worth justifying."
+          }
+        ]
+      }
+    ]
+  }
+}
