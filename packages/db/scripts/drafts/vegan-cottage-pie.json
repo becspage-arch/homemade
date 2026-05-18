@@ -1,0 +1,186 @@
+{
+  "slug": "vegan-cottage-pie",
+  "title": "Vegan cottage pie",
+  "subtitle": "Red lentil and mushroom filling, olive oil mash",
+  "excerpt": "A deeply seasoned red lentil and mushroom filling in a dark tomato sauce, topped with smooth olive oil mashed potato and baked until the top is golden. A vegan cottage pie that does not apologise for what it is.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Recipe synthesised from the British vegan-cooking tradition of the 2010s, drawing on lentil-based mince alternatives developed by British vegetarian and vegan cooks. Olive oil mash in place of butter and milk is a well-established technique in Mediterranean and modern British cooking.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 60,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before or after baking for up to 3 months. Defrost overnight and reheat covered at 180°C for 25 minutes.",
+    "batchable": true,
+    "batchNotes": "Doubles easily into two dishes. Eat one, freeze one.",
+    "makeAheadNotes": "Assemble up to 2 days ahead. Cover and refrigerate. Add 10 minutes to the baking time from cold.",
+    "dietaryFlags": ["vegan", "dairyFree"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "mealPrep", "cosy"],
+    "temperatureCelsius": 190,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "masher", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The vegan cottage pie earns its place on the table only if the filling has genuine depth. Red lentils provide the body and protein; dried porcini or a tablespoon of dark soy sauce and Marmite provide the umami that replaces the flavour of beef fat. The mash must be properly seasoned and smooth: olive oil replaces butter without compromise, and the result has a lighter, slightly silkier texture."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Red lentils break down during cooking and thicken the sauce naturally. This is deliberate: the filling should be cohesive rather than loose, holding its shape when cut. If using green or Puy lentils instead, expect a more textured result and a slightly longer cook time."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lentils-red", "amount": 200, "unit": "g", "prepNote": "rinsed", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "mushrooms-chestnut", "amount": 300, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "peeled, finely diced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "sticks, finely diced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-vegetable", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "soy-sauce-dark", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "marmite", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "rosemary", "amount": 1, "unit": "sprig", "prepNote": "needles finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "potato", "amount": 5, "unit": "each", "prepNote": "Maris Piper, about 1 kg, peeled and quartered", "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "olive-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "salt-table", "amount": null, "unit": "g", "prepNote": "to taste", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to taste", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat a little olive oil in a Dutch oven over medium heat. Cook {{onion}} finely chopped onion, {{carrot}} diced carrot, and {{celery}} celery sticks for 10 minutes until soft. Add {{garlic}} of crushed garlic, the chopped rosemary, and {{tomato-puree}} of tomato purée. Cook for 1 minute."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Raise the heat to high and add the mushrooms. Cook for 5 minutes until their moisture has evaporated. Add {{tinned-tomatoes}} of tinned tomatoes, {{stock-vegetable}} of vegetable stock, {{lentils-red}} of rinsed red lentils, {{soy-sauce-dark}} of dark soy sauce, {{marmite}} of Marmite, and the thyme sprigs. Season well. Bring to a simmer, then reduce the heat and cook, partially covered, for 25 to 30 minutes until the lentils have broken down and thickened the sauce. Remove the thyme. Taste and adjust."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the mash and assemble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the oven to 190°C fan. Boil {{potato}} potato quarters in generously salted water for 20 minutes until tender. Drain well and leave to steam-dry for 2 minutes. Mash thoroughly until smooth. Beat in {{olive-oil}} of good olive oil gradually until the mash is creamy and smooth. Season generously with salt and pepper."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Spoon the lentil filling into a baking dish. Spread the mash evenly over the top to the edges. Rough up the surface with a fork to create ridges. Bake for 25 to 30 minutes until the top is golden and the filling is bubbling at the edges. Rest for 10 minutes before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Filling is too loose under the mash",
+              "cause": "Lentils did not cook down fully or the sauce was not reduced enough",
+              "fix": "Cook uncovered for a further 10 minutes before assembling. The filling should be thick enough to hold a spoon shape."
+            },
+            {
+              "symptom": "Mash is stiff and cracks during baking",
+              "cause": "Not enough olive oil, or the potatoes were not drained well enough before mashing",
+              "fix": "Add another tablespoon of olive oil and a splash of hot water. Beat until smooth and spreadable before topping."
+            },
+            {
+              "symptom": "Dish lacks depth of flavour",
+              "cause": "Insufficient umami — soy sauce or Marmite was omitted or undersized",
+              "fix": "Add a teaspoon more Marmite and taste again. Dark soy sauce and Marmite together replicate the meaty depth of the beef version."
+            },
+            {
+              "symptom": "Lentils are still whole and firm after 30 minutes",
+              "cause": "Red lentils vary in age; older lentils take longer to break down",
+              "fix": "Continue cooking until the lentils soften and collapse. Add a splash more stock if the sauce becomes too dry."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The vegan cottage pie is a product of the 2010s, when plant-based eating moved from a fringe dietary choice into mainstream British cooking. Its lineage runs through the vegetarian shepherd's pie of the 1980s, but the vegan version removes the dairy from both the filling and the mash. The challenge, identified early by plant-based cooks, was replicating the umami depth that comes from beef fat and browning. Dark soy sauce and Marmite together achieve it reliably; neither is a compromise but a straightforward route to flavour."
+          }
+        ]
+      }
+    ]
+  }
+}

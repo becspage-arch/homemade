@@ -1,0 +1,196 @@
+{
+  "slug": "steak-and-kidney-pie",
+  "title": "Steak and kidney pie",
+  "subtitle": "The proper version: ox kidney, suet pastry lid",
+  "excerpt": "Chuck steak and ox kidney braised in ale and beef stock until tender, topped with a thick shortcrust lid and baked until golden. The uncompromised version of a British pub classic.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Classic British recipe documented in Isabella Beeton, Book of Household Management (1861), Project Gutenberg #10136 — 'Beefsteak and Kidney Pie', which includes the combination of beef and kidney under a pastry lid. Further reference: Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg, on braised beef-kidney combinations.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 180,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the filling separately for up to 3 months. Defrost overnight, top with pastry, and bake fresh. Do not freeze a fully assembled baked pie.",
+    "batchable": true,
+    "batchNotes": "Double the filling and freeze half. The filling improves with a day's rest in the fridge before topping with pastry.",
+    "makeAheadNotes": "The filling can be made 1 to 2 days ahead and refrigerated. Cold filling under pastry gives better results than hot.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "slowSunday", "cosy"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "braise",
+      "term": "Braise",
+      "definition": "To cook food slowly in a small amount of liquid in a covered pot, allowing the steam and liquid to tenderise the ingredients over an extended time."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steak and kidney pie requires patience in two stages: the long "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "braise" } }],
+            "text": "braise"
+          },
+          {
+            "type": "text",
+            "text": " that converts tough chuck steak and ox kidney into something gelatinous and yielding, and the rest in the fridge before the pastry goes on. Cold filling beneath a pastry lid bakes better than hot: the pastry has time to set and crisp before the filling begins to bubble through."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ox kidney has a stronger flavour than lamb's kidney and is the traditional choice for this pie. If the intensity seems too much, soak the kidney pieces in cold water for 30 minutes before use; this draws out some of the sharpness without eliminating the characteristic flavour that makes the dish what it is."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-chuck", "amount": 700, "unit": "g", "prepNote": "cut into 3 cm pieces", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "ox-kidney", "amount": 250, "unit": "g", "prepNote": "trimmed of core and cut into 2 cm pieces", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "mushrooms-chestnut", "amount": 150, "unit": "g", "prepNote": "quartered", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 30, "unit": "g", "prepNote": "seasoned, for dusting", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "beer", "amount": 250, "unit": "ml", "prepNote": "dark ale or stout", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-beef", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "shortcrust-pastry", "amount": 375, "unit": "g", "prepNote": "shop-bought or homemade", "isOptional": false, "groupLabel": "For the lid" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": "For the lid" },
+            { "ingredientSlug": "salt-table", "amount": null, "unit": "g", "prepNote": "to taste", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to taste", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the meat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Toss {{beef-chuck}} of chuck steak pieces in the seasoned flour. Heat {{olive-oil}} of olive oil in a large Dutch oven over high heat. Brown the beef in batches without crowding the pot, 2 to 3 minutes per side, until deep brown on all surfaces. Transfer to a plate. Quickly brown {{ox-kidney}} of kidney pieces in the same pot, 1 minute per side, and set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build and braise the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Reduce the heat to medium and add the onion to the pot with a splash more oil if needed. Cook for 5 minutes until softened. Add the mushrooms and cook for 3 minutes. Stir in the tomato purée and cook for 1 minute. Return the beef and kidney to the pot. Pour in {{beer}} of dark ale and {{stock-beef}} of beef stock. Add the Worcestershire sauce, thyme, and bay leaves. Bring to a simmer, cover, and braise over very low heat for 2 hours until the beef is very tender. Remove the lid for the last 20 minutes to thicken the sauce. Leave to cool completely — ideally overnight in the fridge."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Top and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the oven to 200°C fan. Spoon the cold filling into a pie dish. Roll out the shortcrust pastry on a lightly floured surface to 4 mm thick. Lay over the filling and trim the edges, pressing to seal against the rim of the dish. Brush with beaten egg. Cut a small steam vent in the centre. Bake for 30 to 35 minutes until the pastry is deep golden. Rest for 10 to 15 minutes before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Pastry is soggy on the base",
+              "cause": "Filling was too hot when the pastry went on, causing steam to soften the base",
+              "fix": "Always use cold filling. The filling should be refrigerator-cold for the best pastry result."
+            },
+            {
+              "symptom": "Filling has too much sauce and the pastry is lifting",
+              "cause": "Sauce was not reduced enough during the braise",
+              "fix": "Reduce the filling uncovered on the hob before using. The sauce should cling to the meat, not pool at the base of the dish."
+            },
+            {
+              "symptom": "Kidney flavour is too strong",
+              "cause": "Ox kidney has a robust character that not all palates enjoy at full strength",
+              "fix": "Soak kidney pieces in cold water for 30 minutes before cooking. Alternatively, reduce the kidney proportion and increase the beef."
+            },
+            {
+              "symptom": "Beef is still chewy after 2 hours",
+              "cause": "Cut into pieces that were too large, or the heat was not low enough",
+              "fix": "Continue braising for another 30 to 45 minutes. The collagen in chuck steak needs sustained low heat to convert to gelatin."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steak and kidney pie is one of the canonical dishes of the British table, mentioned in Dickens and depicted on pub menus from the Victorian era onwards. Beeton's 1861 recipe calls for rump steak, kidney, and a thick pastry lid — the same architecture appears here, though chuck steak replaced the more expensive rump in the twentieth-century domestic version. The dish has never really gone out of fashion; it has simply moved from restaurant menus to home kitchens, where it is valued for exactly the qualities that make it a slow-cook classic: the way the kidney seasons the sauce without overwhelming it, and the way the pastry traps the steam from the filling and bakes into something dense and satisfying."
+          }
+        ]
+      }
+    ]
+  }
+}

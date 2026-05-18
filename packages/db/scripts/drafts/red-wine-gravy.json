@@ -1,0 +1,181 @@
+{
+  "slug": "red-wine-gravy",
+  "title": "Red-wine gravy",
+  "subtitle": "Built on the roast pan drippings",
+  "excerpt": "Made from the caramelised drippings left in the roasting tin, deglazed with red wine and finished with stock. It takes 10 minutes while the joint rests and produces the kind of gravy that makes the rest of the meal better.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Pan gravy technique documented in Isabella Beeton, Book of Household Management (1861), Project Gutenberg #10136. The use of wine to deglaze roasting tins is documented in Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg, and is standard in French and British home cooking.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "side",
+    "mood": ["slowSunday", "specialOccasion", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "whisk-flat", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "deglaze",
+      "term": "Deglaze",
+      "definition": "To add liquid to a hot pan to dissolve the caramelised residue on the base, incorporating its flavour into a sauce."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The sticky, dark deposit left on the base of a roasting tin after a joint has cooked is what makes this gravy worth the trouble. It cannot be faked. Those browned solids are concentrated, complex, and almost impossible to recreate without a proper roast. The wine lifts them off the tin; the stock gives the gravy body; the flour thickens it."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the gravy while the joint rests. Transfer the rested meat to a warm board, cover with foil, and go directly to the tin. Everything here depends on speed and attention: a gravy that sits in a corner while you finish the vegetables will have reduced too far and tasted of burnt wine."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "red-wine", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 15, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 2, "unit": "sprig", "prepNote": null, "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "salt-table", "amount": null, "unit": "g", "prepNote": "to taste", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to taste", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use whatever drippings remain in the roasting tin after the joint has been removed. If there is a large pool of fat, pour off most of it, leaving about 2 tablespoons, but keep the browned solids in the tin."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Deglaze the tin" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Set the roasting tin directly over two hob burners on medium-high heat. Scatter {{plain-flour}} of plain flour over the drippings and stir with a flat whisk for 1 minute to cook out the raw flour. Pour in {{red-wine}} of red wine — it will hiss and steam immediately. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deglaze" } }],
+            "text": "Deglaze"
+          },
+          {
+            "type": "text",
+            "text": " by scraping the base of the tin vigorously with the whisk, dissolving every dark deposit into the liquid. Let the wine bubble and reduce by half, about 2 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add stock and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour in {{stock-beef}} of hot beef stock in a steady stream, whisking constantly. Add the thyme sprigs and Worcestershire sauce if using. Cook over medium heat, whisking occasionally, for 5 to 6 minutes until the gravy has thickened to a consistency that coats the back of a spoon. Remove the thyme. Taste and adjust seasoning. For a very smooth gravy, pour through a fine-mesh sieve into a warm jug."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Gravy tastes of raw wine",
+              "cause": "Wine did not reduce sufficiently before the stock was added",
+              "fix": "Cook the wine down until the harsh smell has gone before adding stock. It should smell of cooked wine, not sharp alcohol."
+            },
+            {
+              "symptom": "Gravy is too thin after 5 minutes",
+              "cause": "Too much stock, or drippings were very lean",
+              "fix": "Mix a teaspoon of plain flour with a little cold stock to a smooth paste, whisk into the gravy, and cook for 2 more minutes."
+            },
+            {
+              "symptom": "Gravy is bitter",
+              "cause": "Drippings scorched during the roast",
+              "fix": "Pour off and discard the scorched drippings. Use a stock-only gravy instead, with a small amount of tomato purée to add colour."
+            },
+            {
+              "symptom": "Gravy has lumps",
+              "cause": "Flour was not worked into the drippings evenly before the wine was added",
+              "fix": "Press through a fine-mesh sieve. Whisk vigorously while adding liquid next time."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pan gravy made from roast drippings has been the standard British Sunday gravy since cookery first made use of the caramelised residue beneath a roasting joint. The wine addition became common in British home cooking during the twentieth century as table wine became an everyday kitchen ingredient. Acton's 1845 manual already notes that 'the gravy from the pan' is the basis of every good sauce, a principle that holds here without modification."
+          }
+        ]
+      }
+    ]
+  }
+}

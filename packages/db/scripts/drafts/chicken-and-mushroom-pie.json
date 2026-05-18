@@ -1,0 +1,194 @@
+{
+  "slug": "chicken-and-mushroom-pie",
+  "title": "Chicken and mushroom pie",
+  "subtitle": "White-sauce filling, puff-pastry lid",
+  "excerpt": "Chicken and chestnut mushrooms in a creamy white sauce, topped with a thick puff-pastry lid and baked until puffed and golden. The weeknight pie that eats like Sunday.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Classic British home-cooking recipe, documented in the British household-cooking tradition from the twentieth century. Chicken pie with white sauce and pastry lid appears in multiple twentieth-century British cookery books including Delia Smith's Complete Cookery Course (1978-82), used here as a general reference for method.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 50,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the filling before the pastry stage for up to 3 months. Top with fresh pastry and bake straight from the fridge.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the filling up to 2 days ahead. Cold filling under pastry produces the best result.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "kidFriendly", "cosy"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bechamel",
+      "term": "Béchamel",
+      "definition": "A classic white sauce made from butter, flour, and milk, used as the base for many creamy British and French dishes."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A good chicken and mushroom pie is straightforward to build: a well-seasoned white sauce thick enough to hold the filling in the dish, cooked chicken, sautéed mushrooms, and a puff pastry lid that bakes into something properly layered and golden. The filling should be slightly thicker than you think it needs to be before going under the pastry — it will thin slightly as it heats."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Shop-bought ready-rolled puff pastry is a sensible choice here. Making rough puff from scratch is worthwhile for a celebration pie; for a weeknight dish, the difference does not justify the effort."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thigh", "amount": 6, "unit": "each", "prepNote": "boneless and skinless, cut into 3 cm pieces", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "mushrooms-chestnut", "amount": 250, "unit": "g", "prepNote": "sliced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "leek", "amount": 1, "unit": "each", "prepNote": "white and pale green parts, sliced into rounds", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "whole-milk", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-chicken", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "double-cream", "amount": 50, "unit": "ml", "prepNote": null, "isOptional": true, "groupLabel": "For the filling" },
+            { "ingredientSlug": "tarragon", "amount": 10, "unit": "g", "prepNote": "leaves only, roughly chopped", "isOptional": true, "groupLabel": "For the filling" },
+            { "ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": "For the filling" },
+            { "ingredientSlug": "puff-pastry", "amount": 320, "unit": "g", "prepNote": "ready-rolled", "isOptional": false, "groupLabel": "For the lid" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": "For the lid" },
+            { "ingredientSlug": "salt-table", "amount": null, "unit": "g", "prepNote": "to taste", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to taste", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the chicken and mushrooms" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Season {{chicken-thigh}} chicken thigh pieces and brown in a wide pan with a little oil over medium-high heat, 2 to 3 minutes per side. They do not need to cook through at this stage. Remove and set aside. In the same pan, cook the sliced mushrooms over high heat until they release their moisture and it evaporates, about 5 minutes. Add the leek and cook for 3 minutes until softened. Set aside with the chicken."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the white sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In the same pan, melt {{unsalted-butter}} of unsalted butter over medium heat. Add {{plain-flour}} of plain flour and stir for 2 minutes to cook the roux. Gradually add {{whole-milk}} of whole milk and {{stock-chicken}} of chicken stock, whisking constantly to keep the sauce smooth. This is the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bechamel" } }],
+            "text": "béchamel"
+          },
+          {
+            "type": "text",
+            "text": " base. Cook, stirring, until the sauce is thick enough to coat the back of a spoon heavily. Stir in the double cream if using, the mustard if using, and the tarragon. Season well."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the oven to 200°C fan. Combine the chicken, mushrooms, and leek with the sauce and pour into a deep pie dish. Leave to cool to room temperature or refrigerate until cold. Unroll the puff pastry and lay over the filling. Trim to the edge of the dish, pressing to seal, and brush with beaten egg. Cut a small steam vent in the centre. Bake for 30 to 35 minutes until the pastry is deep golden and puffed. Rest for 10 minutes before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Pastry is undercooked in the centre",
+              "cause": "Filling was too deep, preventing heat from reaching the pastry underside",
+              "fix": "Use a wide, shallow pie dish rather than a deep one. The larger surface area means more pastry is exposed to hot air."
+            },
+            {
+              "symptom": "Filling is liquid and floods the plate when cut",
+              "cause": "Sauce was not thick enough before the filling went into the dish",
+              "fix": "Cook the white sauce for longer before adding the fillings — it should be very thick. Ensure the filling is cold before topping with pastry."
+            },
+            {
+              "symptom": "Pastry has not risen or is dense",
+              "cause": "Ready-rolled puff pastry was over-handled or was warm",
+              "fix": "Keep pastry cold until the moment it goes on the pie. Do not stretch it when laying over the dish."
+            },
+            {
+              "symptom": "Chicken is dry",
+              "cause": "Browning stage was too long, cooking the thigh meat through before the filling stage",
+              "fix": "Brown lightly rather than cook through during the initial stage — the residual heat in the sauce will complete the cooking."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chicken pie in various forms has appeared in British cookery since the mediaeval period, when poultry was enclosed in raised pastry cases. The white-sauce filling is a twentieth-century development: as refrigeration made chicken an everyday ingredient rather than a luxury, the dish shifted from celebration food to weeknight comfort. The combination of chestnut mushrooms and chicken in a cream-enriched béchamel, under a puff pastry lid, is the version that settled into British domestic cooking through the 1970s and has not changed much since."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -22,7 +22,7 @@ Live at https://homemade.education behind splash gate (cookie `homemade-access=1
 
 **Library counts (PUBLISHED)** — full grid in § Multi-category fill plan below.
 
-- Cooking 527 (anchors + pilot-10 + personal-recipe ingest + bulks 001–011). Baking 348 (pilot-10 + bulks 001–006 + bulk-004b). Mindset 170 (bulks 001–005). The other 14 categories are private placeholders until each crosses 10 published rows.
+- Cooking 582 (anchors + pilot-10 + personal-recipe ingest + bulks 001–013). Baking 348 (pilot-10 + bulks 001–006 + bulk-004b). Mindset 170 (bulks 001–005). The other 14 categories are private placeholders until each crosses 10 published rows.
 
 **This week's notable landings**
 
@@ -1072,6 +1072,23 @@ Verified working in production after batch 004:
 
 **Out.** No schema changes; no admin/UI work.
 
+### Cooking bulk-013 ✅ landed 2026-05-18
+
+**Goal.** Autopilot-queue cron (context-resumed continuation from prior session). British cooking classics — gravies, condiments, pies, braises, stews, broths, offal, pork, fish, Christmas accompaniments, regional dishes.
+
+**Outcome.** 40 recipes PUBLISHED. Cooking 542 → 582.
+
+- **Cuisine split:** all 40 british.
+- **Difficulty:** 36 BEGINNER / 4 INTERMEDIATE (steak-and-kidney-pie, steak-and-mushroom-pie, oxtail-stew, roast-rack-of-lamb).
+- **Voice-check:** ~12 of 40 clean on first pass. Issues fixed: em-dash parenthetical pairs (15 files), banned phrases "genuinely" (2) + "essentially" (3), servings-yield conflict (6 files — 2 nulled yieldDescription, 4 nulled servings for discrete-item yields), season values lowercase → uppercase (8 files).
+- **New ingredients seeded:** 31 ingredients added to master table (`braising-steak`, `oxtail`, `pork-chop`, `rack-of-lamb`, `whole-chicken`, `lamb-kidneys`, `calves-liver`, `gammon-joint`, `gammon-steak`, `sausagemeat`, `chipolata-sausages`, `leftover-roast-beef`, `langoustine-tails`, `brown-shrimp`, `mackerel-fillets`, `caerphilly-cheese`, `lentils-red`, `apple`, `lemon-juice`, `smoked-paprika`, `cayenne-pepper`, `mace-ground`, `mustard-powder`, `nutmeg`, `peppercorns-black`, `breadcrumbs-panko`, `breadcrumbs-fresh`, `bread-white`, `guinness`, `dry-cider`, `dry-white-wine`).
+- **Tool slug corrections:** `frying-pan` → `frying-pan-26`, `roasting-tin` → `roasting-pan`, `kitchen-shears` → `kitchen-scissors`.
+- **Ingredient slug correction:** `chestnuts-cooked` → `chestnut-cooked`.
+
+**Report.** `docs/bulk-batch-013-report.md`.
+
+**Out.** No schema changes; no admin/UI work.
+
 ### Cooking bulk-012 ✅ landed 2026-05-17
 
 **Goal.** Parallel-burner loop session targeting under-represented v1 cuisines: middleEastern, northAfrican, greek, spanish, easternEuropean.
@@ -1440,7 +1457,7 @@ Revise the rates here when actuals diverge from estimates.
 
 | # | Category | Target | Current | Pipeline | Fill weeks @ 1k/wk |
 |---|---|---:|---:|---|---:|
-| 1 | Cooking | 7,000 | 542 PUBLISHED (anchors + pilot-10 + personal-recipe ingest + bulks 001-012 across cuisines, methods, soups/salads/breakfasts/drinks/preserves/desserts). **bulk-012 (parallel-burner loop, 2026-05-17):** 15 recipes PUBLISHED — middleEastern (5: hummus, cacık, shish taouk, İzmir köfte, İmam bayıldı), northAfrican (4: kefta tagine, lamb tagine with prunes and almonds, chicken tagine with preserved lemon and olives, couscous with chicken and chickpeas), greek (2: keftedes, moussaka), spanish (1: pollo al ajillo), easternEuropean (3: pierogi ruskie, pierogi z mięsem, chicken Kiev). All 15 BEGINNER/INTERMEDIATE, all voice-check clean. DB count post-batch: 542. | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
+| 1 | Cooking | 7,000 | 582 PUBLISHED (anchors + pilot-10 + personal-recipe ingest + bulks 001-013 across cuisines, methods, soups/salads/breakfasts/drinks/preserves/desserts). **bulk-013 (autopilot-queue, 2026-05-18):** 40 recipes PUBLISHED — all british. Classical cooking: gravies (onion, red-wine), condiments (mint sauce, apple sauce, horseradish cream), pies (steak-and-kidney, chicken-and-mushroom, chicken-and-leek, steak-and-mushroom), stews/braises/soups (beef-and-Guinness, welsh cawl, cock-a-leekie, scotch broth, Irish stew, oxtail stew, vegan cottage pie, vegetarian shepherd's pie, smoked haddock chowder), stuffings (sage-and-onion, chestnut-and-sausagemeat), accompaniments (braised red cabbage, honey-roast carrots and parsnips, hasselback potatoes, boulangère potatoes, pigs in blankets), offal (devilled kidneys, liver and onions), pork (pork chops cider/apples, pork chops mustard cream, gammon parsley sauce, boiled bacon and cabbage), fish (scampi, devilled mackerel, potted shrimp), chicken (goujons, spatchcock), lamb (rack of lamb), vegetarian (glamorgan sausages), Scottish (stovies). DB count post-batch: 582. | ✅ ready for savoury; preserves + fermenting + charcuterie + cheese + brewing each need ~3–4 days schema/prompt extension | 7 |
 | 2 | Baking | 3,000 | 208 PUBLISHED (10 pilot + 50 bulk-001 + 50 bulk-002 + 49 bulk-003 + 49 bulk-004, 2026-05-17) + 4 DRAFT anchor | ✅ schema + taxonomy + authoring prompt v2 + anti-tells + pilot-10 + bulk-001 + bulk-002 + bulk-003 + bulk-004 all landed. **bulk-004 (parallel-burner loop, 2026-05-17):** 49 PUBLISHED — cake-decorating (13) + sweets-confectionery (11) + pies (8) + pastries (8) + bread (5) + cakes (4). 18 BEGINNER / 30 INTERMEDIATE / 1 ADVANCED. 17 voice-check failures on run 1 (all em-dash pairs in excerpt/sourceNotes/body, plus 1 banned word "genuinely") fixed and re-uploaded cleanly. Notable: em-dash pair spanning glossaryTooltip text-node boundary (italian-meringue-frosting). Report: `docs/baking-bulk-004-report.md`. Cumulative sub-category fill: bread 39, cakes 37, pies 27, pastries 28, biscuits 23, scones 15, sweets-confectionery 24, cake-decorating 18. Four anchor DRAFTs pending Rebecca review. Baking-specific TipTap blocks (baker's percentages, lamination schedule, sugar-stage panel) still ahead. | 3 |
 | 3 | Garden | 4,000 | 0 | Not started — ~1 wk setup | 4 |
 | 4 | Herbal medicine | 2,500 | 0 | Not started — ~1 wk setup | 2.5 |

@@ -1,0 +1,215 @@
+{
+  "slug": "onion-gravy",
+  "title": "Onion gravy",
+  "subtitle": "Slow-caramelised, rich enough to carry a meal",
+  "excerpt": "Onions cooked long and low until they collapse into a deep, sweet-savoury gravy. The kind that makes bangers and mash the dish it's supposed to be, not the sidekick version.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Classic British gravy tradition, documented in Isabella Beeton, Book of Household Management (1861), Project Gutenberg #10136, and in Nigel Slater's Kitchen Diaries (used as a general reference for proportions and method). The slow-caramelised onion base is a standard technique of British home cooking.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months. Defrost overnight in the fridge and reheat gently, adding a splash of stock if it has thickened.",
+    "batchable": true,
+    "batchNotes": "Doubles or triples without issue. Make a large batch and portion into small containers for the freezer.",
+    "makeAheadNotes": "The onions can be caramelised up to 2 days ahead and kept in the fridge. Add the stock and finish the gravy when needed.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "side",
+    "mood": ["comfortFood", "slowSunday", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "measuring-jug", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "caramelise",
+      "term": "Caramelise",
+      "definition": "To cook food slowly over low heat until its natural sugars break down and turn golden brown, developing a deep, sweet flavour."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The difference between a gravy that tastes of stock and one that tastes of something is usually about forty minutes of patience with an onion. The method is simple: low heat, a good amount of butter, and enough time for the onions to properly "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "caramelise" } }],
+            "text": "caramelise"
+          },
+          {
+            "type": "text",
+            "text": ". Rushed, they stay sharp and pale. Given time, they become soft, sweet, and deep-coloured — the base of a gravy worth making."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is the standard British onion gravy: the one that goes with bangers and mash, with toad in the hole, with a sausage casserole that needs something to pull it together. It is not a jus. It is not a reduction. It is an onion gravy, which is to say it should taste primarily of onions, supported by stock and a little Worcestershire."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "onion", "amount": 3, "unit": "each", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 15, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 15, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 500, "unit": "ml", "prepNote": "or vegetable stock", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 2, "unit": "sprig", "prepNote": null, "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "salt-table", "amount": null, "unit": "g", "prepNote": "to taste", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to taste", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A large frying pan or wide sauté pan gives the onions room to spread and lose moisture faster than a cramped saucepan. The wider the surface, the quicker they caramelise."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the onions low and slow" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt {{unsalted-butter}} unsalted butter with {{olive-oil}} of olive oil in a wide frying pan over the lowest heat you can manage. Add {{onion}} thinly sliced onions and the thyme sprigs if using. Stir to coat, then let them sit undisturbed for 5 minutes before stirring again. The goal is heat low enough that the onions steam gently in their own moisture before they begin to colour."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Continue cooking for 35 to 40 minutes, stirring every 5 minutes or so, until the onions are very soft, golden brown, and sweet-smelling. If the pan threatens to catch, add a splash of water and scrape the base. Do not rush this step; pale, undercooked onions produce a sharp, thin gravy."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the gravy" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Scatter {{plain-flour}} of plain flour over the onions and stir for 1 minute on the heat to cook out the raw flour. Remove the thyme sprigs. Pour in {{stock-beef}} of beef stock (or vegetable stock) in a steady stream, stirring constantly to prevent lumps. Add {{worcestershire-sauce}} of Worcestershire sauce and a good grinding of pepper."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Raise the heat to medium and cook, stirring occasionally, for 5 to 8 minutes until the gravy has thickened to a consistency that coats the back of a spoon. Taste and adjust salt. For a smoother result, press a ladle through a sieve — though leaving the onion strands in is the traditional finish and gives more body."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Gravy is pale and thin",
+              "cause": "Onions were not caramelised fully before adding the flour and stock",
+              "fix": "Return to low heat with the onions and cook for another 15 minutes before proceeding. The colour and body come from the onions, not the stock."
+            },
+            {
+              "symptom": "Gravy is too thick",
+              "cause": "Stock has reduced too far, or too much flour was used",
+              "fix": "Stir in extra stock a splash at a time until the consistency is right. It should flow freely when poured."
+            },
+            {
+              "symptom": "Gravy is lumpy",
+              "cause": "Flour was added to wet onions and not stirred through evenly before the stock went in",
+              "fix": "Press the gravy through a fine-mesh sieve, pressing the onions through with the back of a ladle. Reheat gently."
+            },
+            {
+              "symptom": "Gravy tastes bitter",
+              "cause": "Onions scorched rather than caramelised; heat was too high",
+              "fix": "Avoid this by keeping the heat very low throughout. If it has happened, the bitterness cannot be rescued. Start again."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead and storage" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The caramelised onions keep in the fridge for 2 days — make them ahead and add the stock on the day. Finished gravy keeps refrigerated for 3 days; reheat in a saucepan over medium heat, stirring, with a splash of extra stock if needed. For the freezer, cool completely, pour into small containers, and freeze for up to 3 months. Defrost overnight in the fridge."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Onion gravy is one of the oldest elements of British home cooking: wherever there were onions and dripping, there was a gravy. Mrs Beeton's 1861 manual describes several onion sauces for roast meat, their logic unchanged from what appears here. The slow-cooked version became the standard accompaniment to sausages during the twentieth century, when bangers and mash evolved from a wartime economy meal into a dish with its own following."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "slug": "oxtail-stew",
+  "title": "Oxtail stew",
+  "subtitle": "Slow-braised oxtail in red wine and root vegetables",
+  "excerpt": "Oxtail pieces braised very slowly in red wine and beef stock until the meat falls from the bone and the sauce becomes thick and deeply gelatinous. One of the richest and most flavourful British braises.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Oxtail stew is a classic of the British braising tradition. Mrs Beeton's Book of Household Management (1861), Project Gutenberg #10136, includes braised oxtail as a standard dish. The dish was common in British working-class and middle-class cooking through the nineteenth and early twentieth centuries and has seen a revival in nose-to-tail cooking.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 240,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes very well for up to 3 months. The collagen in the oxtail makes the sauce set to a jelly when cold — this is correct and desirable.",
+    "batchable": true,
+    "batchNotes": "Better the second day when the fat has been skimmed and the flavour has settled.",
+    "makeAheadNotes": "Essential to make a day ahead. Refrigerate overnight so the fat solidifies and can be lifted off. The flavour deepens considerably.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "cosy", "hearty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "ladle", "isOptional": false },
+    { "slug": "slotted-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oxtail is one of the most flavourful cuts of beef and also one of the most demanding. It needs three to four hours at the lowest possible heat to release its collagen and fat into the braising liquid. The result, when done properly, is a sauce of extraordinary richness: deeply gelatinous, glossy, and self-thickening from all the collagen the bone and connective tissue gave up. There is no shortcut."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Make it a day ahead: the fat rises to the surface and sets overnight, allowing you to lift it off cleanly before reheating. The flavour is also noticeably better after a night in the fridge. Oxtail stew served straight from the pot is perfectly good; oxtail stew made yesterday is substantially better."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "oxtail", "amount": 1500, "unit": "g", "prepNote": "cut into sections by your butcher", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-wine", "amount": 300, "unit": "ml", "prepNote": "something robust", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": "each", "prepNote": "peeled, cut into 3 cm pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 3, "unit": "each", "prepNote": "sticks, roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 3, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 15, "unit": "g", "prepNote": "chopped, to finish", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "salt-table", "amount": null, "unit": "g", "prepNote": "to taste", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to taste", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown and build" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Season {{oxtail}} of oxtail pieces generously and dust lightly in flour. Heat a Dutch oven over high heat with a layer of oil and brown the oxtail pieces all over in batches until deeply coloured. This will take 10 to 15 minutes. Set aside. Reduce the heat to medium and cook {{onion}} roughly chopped onion, {{carrot}} carrot pieces, and {{celery}} celery sticks for 8 minutes until softened. Add {{garlic}} of crushed garlic and {{tomato-puree}} of tomato purée. Cook for 1 minute."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour in {{red-wine}} of red wine and bubble for 3 minutes, scraping the base. Add {{stock-beef}} of beef stock and {{worcestershire-sauce}} of Worcestershire sauce. Return the oxtail to the pot with the thyme and bay leaves. The liquid should come about halfway up the meat — oxtail braises better when not fully submerged. Bring to a simmer, cover tightly, and cook over the lowest possible heat for 3.5 to 4 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish the next day" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Allow to cool, then refrigerate overnight. The fat will solidify on the surface; lift it off with a spoon. Reheat gently over medium-low heat for 20 minutes until the sauce is flowing again and the oxtail is heated through. Remove the thyme and bay leaves. Taste and adjust the seasoning. Scatter with parsley if using. Serve with mashed potato or bread to absorb the sauce."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Meat is not falling from the bone after 4 hours",
+              "cause": "Heat was too high or the pieces were very large",
+              "fix": "Continue at the lowest heat for another 30 to 60 minutes. Oxtail cannot be rushed — the collagen dissolves only over very long, very gentle cooking."
+            },
+            {
+              "symptom": "Sauce is very fatty",
+              "cause": "Oxtail is an inherently fatty cut",
+              "fix": "Refrigerate overnight and lift the solidified fat off the surface. Skimming a warm braise removes some fat but not as completely as chilling."
+            },
+            {
+              "symptom": "Sauce sets solid in the fridge",
+              "cause": "The collagen from the oxtail bones has gelled the sauce",
+              "fix": "This is correct and desirable — it shows the braise was done properly. It will flow again when reheated."
+            },
+            {
+              "symptom": "Sauce is thin",
+              "cause": "Too much liquid added, or the braise boiled rather than simmered",
+              "fix": "Remove the lid and reduce the sauce over medium heat until glossy and coating. If needed, remove the oxtail pieces first to prevent overcooking."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oxtail stew has been a fixture in British cookery since at least the eighteenth century, when braised oxtail appears in recipe collections including those of Hannah Glasse and Mrs Beeton. It was a dish of economy: oxtail was cheap because it required long cooking and significant effort to eat, but the quality of the braising liquid it produced was out of proportion to its price. The nose-to-tail revival of the late 1990s and 2000s brought oxtail back into restaurant and domestic cooking after a period of neglect, and its reputation as one of the finest braising cuts is now widely acknowledged."
+          }
+        ]
+      }
+    ]
+  }
+}
