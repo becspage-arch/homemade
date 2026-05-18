@@ -890,12 +890,16 @@ bagel | Bagel | each | v,V,df,nf | -
 baguette | Baguette | each | v,V,df,nf | french bread, french stick
 basmati-rice | Basmati rice | g | V,v,gf,df,nf | -
 bread | Bread | slice | V,v,df,nf | loaf
+bread-white | White bread | each | v,V,df,nf | white sandwich bread, sliced white bread
 breadcrumbs-dried | Dried breadcrumbs | g | V,v,df,nf | -
+breadcrumbs-fresh | Fresh breadcrumbs | g | v,V,df,nf | homemade breadcrumbs
+breadcrumbs-panko | Panko breadcrumbs | g | v,V,df,nf | Japanese breadcrumbs, panko
 brown-rice | Brown rice | g | V,v,gf,df,nf | -
 bulgur-wheat | Bulgur wheat | g | V,v,df,nf | bulgar, cracked wheat
 caramelised-biscuit | Caramelised biscuit | each | v,V,df,nf | speculoos, Biscoff, Biscoff biscuit, Lotus biscuit, speculaas
 carnaroli-rice | Carnaroli rice | g | V,v,gf,df,nf | -
 chocolate-sandwich-biscuit | Chocolate sandwich biscuit | each | v,V,df,nf | Oreo, Oreos, cookies and cream biscuit
+ciabatta | Ciabatta | each | v,V,df,nf | Italian bread
 corn-tortilla | Corn tortilla | each | v,V,gf,df,nf | -
 cornflakes | Cornflakes | g | v,V,df,nf | -
 couscous | Couscous | g | V,v,df,nf | -
@@ -924,6 +928,7 @@ porridge-oats | Porridge oats | g | V,v,df,nf | rolled oats, old-fashioned oats
 quinoa | Quinoa | g | V,v,gf,df,nf | -
 rice-cake | Rice cake | each | v,V,gf,df,nf | -
 rice-krispies | Rice Krispies | g | v,V,df,nf | rice cereal, puffed rice cereal
+rolled-oats | Rolled oats | g | V,v,df,nf | old-fashioned oats, oat flakes
 shortbread-biscuit | Shortbread biscuit | each | v,nf | -
 sushi-rice | Sushi rice | g | V,v,gf,df,nf | short-grain Japanese rice
 tortilla-wrap | Tortilla wrap | each | v,V,df,nf | flour tortilla, tortilla
@@ -933,6 +938,7 @@ wild-rice | Wild rice | g | V,v,gf,df,nf | -
 almond-milk | Almond milk | ml | v,V,df | -
 brie | Brie | g | v,gf,nf | -
 buttermilk | Buttermilk | ml | v,nf | cultured buttermilk
+caerphilly-cheese | Caerphilly cheese | g | v,gf,nf | Caerphilly
 camembert | Camembert | g | v,gf,nf | -
 cheddar | Cheddar | g | v,gf,nf | mature cheddar, tasty cheese
 clotted-cream | Clotted cream | g | v,gf,nf | Cornish cream, Devon cream
@@ -989,33 +995,44 @@ beef-rump | Beef rump steak | g | gf,df,nf | rump
 beef-shin | Beef shin | g | gf,df,nf | beef shank, osso buco cut
 beef-sirloin | Beef sirloin | g | gf,df,nf | sirloin joint, striploin
 black-pudding | Black pudding | g | df | blood pudding
+braising-steak | Braising steak | g | - | chuck steak, feather steak, beef chuck
+calves-liver | Calves' liver | g | - | calf's liver, veal liver
 chicken-breast | Chicken breast | each | gf,df,nf | chicken supreme
 chicken-drumsticks | Chicken drumsticks | each | gf,df,nf | -
 chicken-livers | Chicken livers | g | gf,df,nf | -
 chicken-mince | Chicken mince | g | gf,df,nf | ground chicken
 chicken-thigh | Chicken thigh | each | gf,df,nf | -
+chicken-thighs-boneless | Boneless chicken thighs | each | gf,df,nf | skinless chicken thighs
 chicken-whole | Whole chicken | each | gf,df,nf | roasting chicken
 chicken-wings | Chicken wings | g | gf,df,nf | -
+chipolata-sausages | Chipolata sausages | each | - | chipolatas
 chorizo | Chorizo | g | gf,df,nf | -
 duck-breast | Duck breast | each | gf,df,nf | magret
 duck-legs | Duck legs | each | gf,df,nf | -
 duck-whole | Whole duck | each | gf,df,nf | -
 gammon | Gammon | g | gf,df,nf | raw ham
+gammon-joint | Gammon joint | g | - | gammon roast
+gammon-steak | Gammon steak | each | - | ham steak
 guanciale | Guanciale | g | gf,df,nf | -
 ham-hock | Ham hock | each | gf,df,nf | -
+lamb-kidneys | Lamb kidneys | each | - | lamb kidney
 lamb-leg | Lamb leg | g | gf,df,nf | leg of lamb
 lamb-mince | Lamb mince | g | gf,df,nf | ground lamb, minced lamb
 lamb-neck | Lamb neck | g | gf,df,nf | neck of lamb, middle neck
 lamb-rack | Rack of lamb | each | gf,df,nf | french-trimmed rack
 lamb-shanks | Lamb shanks | each | gf,df,nf | -
 lamb-shoulder | Lamb shoulder | g | gf,df,nf | -
+lardons | Lardons | g | gf,df,nf | bacon lardons, pancetta lardons
+leftover-roast-beef | Leftover roast beef | g | - | cold roast beef, cooked roast beef
 merguez | Merguez | each | gf,df,nf | -
 mutton | Mutton | g | gf,df,nf | -
 ox-cheek | Ox cheek | g | gf,df,nf | beef cheek
 ox-kidney | Ox kidney | g | gf,df,nf | beef kidney
+oxtail | Oxtail | g | - | -
 pancetta | Pancetta | g | gf,df,nf | -
 pheasant | Pheasant | each | gf,df,nf | -
 pork-belly | Pork belly | g | gf,df,nf | -
+pork-chop | Pork chop | each | - | -
 pork-loin | Pork loin | g | gf,df,nf | loin of pork
 pork-mince | Pork mince | g | gf,df,nf | ground pork, minced pork
 pork-ribs | Pork ribs | g | gf,df,nf | baby back ribs, spare ribs
@@ -1023,16 +1040,22 @@ pork-shoulder | Pork shoulder | g | gf,df,nf | Boston butt, pork butt
 pork-tenderloin | Pork tenderloin | g | gf,df,nf | pork fillet
 prosciutto | Prosciutto | g | gf,df,nf | prosciutto crudo, Parma ham
 rabbit | Rabbit | each | gf,df,nf | -
+rack-of-lamb | Rack of lamb | each | - | French-trimmed rack
+sausage-meat | Sausage meat | g | df | pork sausage meat
+sausagemeat | Pork sausagemeat | g | - | sausage meat, pork mince
 sausages-pork | Pork sausages | each | df | bangers, links
 serrano-ham | Serrano ham | g | gf,df,nf | jamón serrano
+smoked-pork-sausage | Smoked pork sausage | g | gf,df,nf | kielbasa, kabanos, Polish sausage, frankfurter
 streaky-bacon | Streaky bacon | g | gf,df,nf | American bacon, side bacon
 turkey-crown | Turkey crown | kg | gf,df,nf | -
 turkey-mince | Turkey mince | g | gf,df,nf | ground turkey
 turkey-whole | Whole turkey | kg | gf,df,nf | -
 venison | Venison | g | gf,df,nf | -
+whole-chicken | Whole chicken | each | - | roasting chicken
 
 ### fish
 anchovies | Anchovies | each | gf,df,nf | -
+brown-shrimp | Brown shrimp | g | gf,df,nf | Morecambe Bay shrimp, cooked brown shrimp
 clams | Clams | g | gf,df,nf | palourdes, vongole
 cod-fillet | Cod fillet | each | gf,df,nf | -
 crab-meat | Crab meat | g | gf,df,nf | white crab, brown crab
@@ -1040,8 +1063,10 @@ haddock-fillet | Haddock fillet | each | gf,df,nf | -
 herring | Herring | each | gf,df,nf | -
 king-prawns | King prawns | each | gf,df,nf | jumbo shrimp, tiger prawns
 kippers | Kippers | each | gf,df,nf | -
+langoustine-tails | Langoustine tails | g | gf,df,nf | Dublin Bay prawn tails, Norway lobster tails, scampi tails
 lobster | Lobster | each | gf,df,nf | -
 mackerel | Mackerel | each | gf,df,nf | -
+mackerel-fillets | Mackerel fillets | each | gf,df,nf | fresh mackerel
 mussels | Mussels | g | gf,df,nf | -
 octopus | Octopus | kg | gf,df,nf | -
 pollock | Pollock | g | gf,df,nf | saithe, coley
@@ -1058,10 +1083,13 @@ smoked-haddock | Smoked haddock | g | gf,df,nf | Arbroath smokies, finnan haddie
 smoked-mackerel | Smoked mackerel | g | gf,df,nf | -
 smoked-salmon | Smoked salmon | g | gf,df,nf | lox
 smoked-trout | Smoked trout | g | gf,df,nf | -
+sole-fillet | Sole fillet | each | gf,df,nf | dover sole fillet, lemon sole fillet, megrim sole
 squid | Squid | g | gf,df,nf | calamari
+tarama | Tarama | g | gf,df,nf | smoked cod roe, cod roe paste, grey mullet roe
 trout-fillet | Trout fillet | each | gf,df,nf | rainbow trout, sea trout
 tuna-steak | Tuna steak | each | gf,df,nf | yellowfin tuna
 tuna-tinned | Tinned tuna | g | gf,df,nf | canned tuna
+whitebait | Whitebait | g | gf,df,nf | -
 
 ### vegetable
 artichoke-hearts | Artichoke hearts | g | v,V,gf,df,nf | -
@@ -1082,6 +1110,7 @@ celeriac | Celeriac | each | v,V,gf,df,nf | celery root
 celery | Celery | each | v,V,gf,df,nf | -
 chard | Chard | g | v,V,gf,df,nf | Swiss chard, rainbow chard
 cherry-tomatoes | Cherry tomatoes | g | v,V,gf,df,nf | -
+chestnut-mushrooms | Chestnut mushrooms | g | v,V,gf,df,nf | cremini, brown cap mushrooms
 chilli-green | Green chilli | each | v,V,gf,df,nf | green chili pepper
 chilli-red | Red chilli | each | v,V,gf,df,nf | red chili pepper
 cos-lettuce | Cos lettuce | each | v,V,gf,df,nf | romaine
@@ -1110,6 +1139,7 @@ mushrooms-shiitake | Shiitake mushrooms | g | v,V,gf,df,nf | -
 napa-cabbage | Napa cabbage | each | v,V,gf,df,nf | Chinese leaf, wombok
 okra | Okra | g | v,V,gf,df,nf | ladies' fingers, bhindi
 onion | Onion | each | v,V,gf,df,nf | brown onion, yellow onion
+padron-pepper | Padrón pepper | g | v,V,gf,df,nf | pimientos de Padrón, Spanish peppers
 pak-choi | Pak choi | each | v,V,gf,df,nf | bok choy
 parsnip | Parsnip | each | v,V,gf,df,nf | -
 peas-frozen | Frozen peas | g | v,V,gf,df,nf | garden peas, petits pois
@@ -1124,9 +1154,11 @@ red-onion | Red onion | each | v,V,gf,df,nf | Spanish onion
 rocket | Rocket | g | v,V,gf,df,nf | arugula
 runner-beans | Runner beans | g | v,V,gf,df,nf | -
 samphire | Samphire | g | v,V,gf,df,nf | marsh samphire
+sauerkraut | Sauerkraut | g | v,V,gf,df,nf | fermented cabbage, pickled cabbage, kapusta kiszona
 scotch-bonnet | Scotch bonnet | each | v,V,gf,df,nf | habanero
 shallot | Shallot | each | v,V,gf,df,nf | échalote
 spinach | Spinach | g | v,V,gf,df,nf | baby spinach
+spinach-frozen | Frozen spinach | g | v,V,gf,df,nf | frozen chopped spinach
 spring-greens | Spring greens | g | v,V,gf,df,nf | collard greens
 spring-onion | Spring onion | each | v,V,gf,df,nf | scallion, green onion
 sugar-snap-peas | Sugar snap peas | g | v,V,gf,df,nf | -
@@ -1140,10 +1172,12 @@ tomato | Tomato | each | v,V,gf,df,nf | -
 tomato-passata | Tomato passata | ml | v,V,gf,df,nf | strained tomatoes
 tomato-puree | Tomato purée | tbsp | v,V,gf,df,nf | tomato paste
 turnip | Turnip | each | v,V,gf,df,nf | -
+vine-leaves | Vine leaves | each | v,V,gf,df,nf | grape leaves, preserved vine leaves
 watercress | Watercress | g | v,V,gf,df,nf | -
 wild-garlic | Wild garlic | g | v,V,gf,df,nf | ramsons, bear garlic
 
 ### fruit
+apple | Apple | each | v,V,gf,df,nf | eating apple, dessert apple
 apple-bramley | Bramley apple | each | v,V,gf,df,nf | cooking apples
 apple-eating | Eating apple | each | v,V,gf,df,nf | dessert apples, Cox, Gala, Braeburn
 apricots | Apricots | each | v,V,gf,df,nf | -
@@ -1167,11 +1201,13 @@ desiccated-coconut | Desiccated coconut | g | v,V,gf,df,nf | shredded coconut
 dried-apricots | Dried apricots | g | v,V,gf,df | -
 dried-blueberries | Dried blueberries | g | v,V,gf,df,nf | -
 dried-cranberries | Dried cranberries | g | v,V,gf,df,nf | Craisins
+dried-currants | Dried currants | g | v,V,gf,df,nf | Zante currants
 figs | Figs | each | v,V,gf,df,nf | -
 gooseberries | Gooseberries | g | v,V,gf,df,nf | -
 grapefruit | Grapefruit | each | v,V,gf,df,nf | -
 grapes | Grapes | g | v,V,gf,df,nf | -
 lemon | Lemon | each | v,V,gf,df,nf | -
+lemon-juice | Lemon juice | tsp | v,V,gf,df,nf | fresh lemon juice
 lime | Lime | each | v,V,gf,df,nf | -
 mango | Mango | each | v,V,gf,df,nf | -
 mango-frozen | Frozen mango | g | v,V,gf,df,nf | -
@@ -1182,6 +1218,7 @@ passion-fruit | Passion fruit | each | v,V,gf,df,nf | -
 passion-fruit-puree | Passion fruit purée | ml | v,V,gf,df,nf | passionfruit pulp, passionfruit purée
 peaches | Peaches | each | v,V,gf,df,nf | -
 pear | Pear | each | v,V,gf,df,nf | Conference, Comice
+pear-conference | Conference pear | each | v,V,gf,df,nf | -
 pineapple | Pineapple | each | v,V,gf,df,nf | -
 plums | Plums | each | v,V,gf,df,nf | Victoria plums
 pomegranate | Pomegranate | each | v,V,gf,df,nf | -
@@ -1204,12 +1241,17 @@ chives-chinese | Chinese chives | g | v,V,gf,df,nf | garlic chives
 coriander | Coriander | g | v,V,gf,df,nf | cilantro, Chinese parsley
 curry-leaves | Curry leaves | leaf | v,V,gf,df,nf | -
 dill | Dill | g | v,V,gf,df,nf | -
+dried-calendula-flowers | Dried calendula flowers | g | v,V,gf,df,nf | dried marigold petals
+dried-chamomile-flowers | Dried chamomile flowers | g | v,V,gf,df,nf | chamomile tea (loose)
+dried-elderberries | Dried elderberries | g | v,V,gf,df,nf | -
+dried-peppermint-leaves | Dried peppermint leaves | g | v,V,gf,df,nf | peppermint tea (loose)
 fennel-fronds | Fennel fronds | g | v,V,gf,df,nf | -
 kaffir-lime-leaves | Makrut lime leaves | leaf | v,V,gf,df,nf | kaffir lime leaves
 lemon-thyme | Lemon thyme | sprig | v,V,gf,df,nf | -
 lovage | Lovage | g | v,V,gf,df,nf | -
 marjoram | Marjoram | g | v,V,gf,df,nf | -
 mint | Mint | g | v,V,gf,df,nf | spearmint
+mint-dried | Dried mint | tsp | v,V,gf,df,nf | kuru nane
 oregano-dried | Dried oregano | tsp | v,V,gf,df,nf | -
 oregano-fresh | Fresh oregano | g | v,V,gf,df,nf | -
 pandan-leaves | Pandan leaves | leaf | v,V,gf,df,nf | -
@@ -1217,23 +1259,29 @@ parsley-curly | Curly parsley | g | v,V,gf,df,nf | -
 parsley-flat | Flat-leaf parsley | g | v,V,gf,df,nf | Italian parsley
 rosemary | Rosemary | sprig | v,V,gf,df,nf | -
 sage | Sage | g | v,V,gf,df,nf | -
+sage-dried | Dried sage | tsp | v,V,gf,df,nf | -
 shiso | Shiso | leaf | v,V,gf,df,nf | perilla
 sorrel | Sorrel | g | v,V,gf,df,nf | -
 tarragon | Tarragon | g | v,V,gf,df,nf | French tarragon
 thai-basil | Thai basil | g | v,V,gf,df,nf | holy basil
 thyme | Thyme | sprig | v,V,gf,df,nf | -
+thyme-dried | Dried thyme | tsp | v,V,gf,df,nf | -
+thyme-fresh | Fresh thyme | sprig | v,V,gf,df,nf | thyme sprigs
 
 ### spice
 aleppo-pepper | Aleppo pepper | tsp | v,V,gf,df,nf | pul biber
 allspice | Allspice | tsp | v,V,gf,df,nf | Jamaican pepper, pimento
+amchur | Amchur | tsp | v,V,gf,df,nf | dried mango powder, aamchur
 ancho-chilli | Ancho chilli | each | v,V,gf,df,nf | dried poblano
 asafoetida | Asafoetida | pinch | V,v,df,nf | hing
 baharat | Baharat | tsp | v,V,gf,df,nf | -
 black-pepper | Black pepper | tsp | v,V,gf,df,nf | peppercorns
+black-pepper-ground | Ground black pepper | tsp | v,V,gf,df,nf | ground pepper, black pepper
 caraway-seeds | Caraway seeds | tsp | v,V,gf,df,nf | -
 cardamom-black | Black cardamom | each | v,V,gf,df,nf | -
 cardamom-green | Green cardamom | each | v,V,gf,df,nf | cardamom pods
 cayenne | Cayenne pepper | tsp | v,V,gf,df,nf | -
+cayenne-pepper | Cayenne pepper | tsp | v,V,gf,df,nf | ground cayenne, cayenne
 celery-salt | Celery salt | tsp | v,V,gf,df,nf | -
 chai-spice | Chai spice blend | tsp | v,V,gf,df,nf | masala chai spice
 chilli-flakes | Chilli flakes | tsp | v,V,gf,df,nf | red pepper flakes, crushed chillies
@@ -1248,6 +1296,7 @@ coriander-seeds | Coriander seeds | tsp | v,V,gf,df,nf | -
 cumin-ground | Ground cumin | tsp | v,V,gf,df,nf | -
 cumin-seeds | Cumin seeds | tsp | v,V,gf,df,nf | -
 curry-powder | Curry powder | tsp | v,V,gf,df,nf | mild curry powder, Madras curry powder
+dried-chilli | Dried red chilli | each | v,V,gf,df,nf | whole dried chilli
 fennel-seeds | Fennel seeds | tsp | v,V,gf,df,nf | -
 fenugreek-leaves | Dried fenugreek leaves | tbsp | v,V,gf,df,nf | kasoori methi, kasuri methi
 fenugreek-seeds | Fenugreek seeds | tsp | v,V,gf,df,nf | methi seeds
@@ -1258,10 +1307,13 @@ italian-seasoning | Italian seasoning | tsp | v,V,gf,df,nf | dried mixed italian
 juniper-berries | Juniper berries | each | v,V,gf,df,nf | -
 kosher-salt | Kosher salt | g | v,V,gf,df,nf | -
 mace | Mace | tsp | v,V,gf,df,nf | -
+mace-ground | Ground mace | tsp | v,V,gf,df,nf | mace, ground mace spice
 msg | MSG | tsp | v,V,gf,df,nf | monosodium glutamate, Ajinomoto
+mustard-powder | Mustard powder | tsp | v,V,gf,df,nf | dry mustard, English mustard powder, Coleman's mustard powder
 mustard-seeds-black | Black mustard seeds | tsp | v,V,gf,df,nf | rai
 mustard-seeds-yellow | Yellow mustard seeds | tsp | v,V,gf,df,nf | -
 nigella-seeds | Nigella seeds | tsp | v,V,gf,df,nf | kalonji, black onion seeds
+nutmeg | Nutmeg | tsp | v,V,gf,df,nf | ground nutmeg, whole nutmeg
 nutmeg-ground | Ground nutmeg | tsp | v,V,gf,df,nf | -
 nutmeg-whole | Whole nutmeg | each | v,V,gf,df,nf | -
 old-bay | Old Bay | tsp | v,V,gf,df,nf | -
@@ -1269,12 +1321,14 @@ onion-powder | Onion powder | tsp | v,V,gf,df,nf | granulated onion
 paprika-hot | Hot paprika | tsp | v,V,gf,df,nf | -
 paprika-smoked | Smoked paprika | tsp | v,V,gf,df,nf | pimentón, pimenton
 paprika-sweet | Sweet paprika | tsp | v,V,gf,df,nf | Hungarian paprika
+peppercorns-black | Black peppercorns | each | v,V,gf,df,nf | whole black peppercorns
 ras-el-hanout | Ras el hanout | tbsp | v,V,gf,df,nf | -
 saffron | Saffron | pinch | v,V,gf,df,nf | saffron strands
 salt-table | Table salt | g | v,V,gf,df,nf | fine salt
 sea-salt-fine | Fine sea salt | g | v,V,gf,df,nf | -
 sea-salt-flakes | Sea salt flakes | g | v,V,gf,df,nf | Maldon, flaky salt
 sichuan-pepper | Sichuan pepper | tsp | v,V,gf,df,nf | Szechuan pepper
+smoked-paprika | Smoked paprika | tsp | v,V,gf,df,nf | pimentón, pimentón de la Vera, smoked Spanish paprika
 star-anise | Star anise | each | v,V,gf,df,nf | -
 sumac | Sumac | tsp | v,V,gf,df,nf | -
 turmeric | Ground turmeric | tsp | v,V,gf,df,nf | haldi
@@ -1284,11 +1338,13 @@ za-atar | Za'atar | tbsp | v,V,df,nf | zaatar
 
 ### condiment
 anchovy-paste | Anchovy paste | tsp | gf,df,nf | -
+apricot-jam | Apricot jam | g | V,v,gf,df,nf | apricot preserve, apricot conserve
 balsamic-glaze | Balsamic glaze | tbsp | v,V,df,nf | balsamic reduction
 balsamic-vinegar | Balsamic vinegar | ml | V,v,gf,df,nf | aceto balsamico
 bouillon-powder | Bouillon powder | tsp | V,v,gf,df,nf | Marigold bouillon
 caesar-dressing | Caesar dressing | ml | - | -
 capers | Capers | tbsp | V,v,gf,df,nf | -
+chicken-stock | Chicken stock | ml | gf,df,nf | chicken broth
 cider-vinegar | Cider vinegar | ml | V,v,gf,df,nf | apple cider vinegar
 cornichons | Cornichons | each | V,v,gf,df,nf | -
 dijon-mustard | Dijon mustard | tsp | V,v,gf,df,nf | -
@@ -1313,6 +1369,7 @@ olives-black | Black olives | g | V,v,gf,df,nf | -
 olives-green | Green olives | g | V,v,gf,df,nf | -
 olives-kalamata | Kalamata olives | g | V,v,gf,df,nf | black olives
 oyster-sauce | Oyster sauce | tbsp | df,nf | -
+raspberry-jam | Raspberry jam | g | V,v,gf,df,nf | raspberry preserve
 red-wine-vinegar | Red wine vinegar | ml | V,v,gf,df,nf | -
 rice-vinegar | Rice vinegar | ml | V,v,gf,df,nf | rice wine vinegar
 sherry-vinegar | Sherry vinegar | ml | V,v,gf,df,nf | vinagre de Jerez
@@ -1345,6 +1402,7 @@ kidney-beans | Kidney beans | g | V,v,gf,df,nf | red kidney beans
 lentils-black-beluga | Black beluga lentils | g | V,v,gf,df,nf | -
 lentils-brown | Brown lentils | g | V,v,gf,df,nf | -
 lentils-green | Green lentils | g | V,v,gf,df,nf | -
+lentils-red | Red lentils | g | v,V,gf,df,nf | split red lentils, masoor dal
 pinto-beans | Pinto beans | g | V,v,gf,df,nf | -
 puy-lentils | Puy lentils | g | V,v,gf,df,nf | French green lentils
 red-lentils | Red lentils | g | V,v,gf,df,nf | masoor dal
@@ -1357,6 +1415,7 @@ tofu-silken | Silken tofu | g | V,v,gf,df,nf | -
 ### nut
 almonds | Almonds | g | V,v,gf,df | -
 almonds-flaked | Flaked almonds | g | V,v,gf,df | slivered almonds
+blanched-almonds | Blanched almonds | g | V,v,gf,df | -
 brazil-nuts | Brazil nuts | g | V,v,gf,df | -
 cashews | Cashews | g | V,v,gf,df | -
 chestnut-cooked | Cooked chestnuts | g | v,V,gf,df | vacuum-packed chestnuts
@@ -1409,6 +1468,7 @@ pectin | Pectin | g | V,v,gf,df,nf | jam sugar pectin
 pumpkin-spice | Pumpkin spice | tsp | V,v,gf,df,nf | -
 rose-water | Rose water | tsp | V,v,gf,df,nf | -
 sourdough-starter | Sourdough starter | g | V,v,df,nf | levain
+vanilla-bean-paste | Vanilla bean paste | tsp | V,v,gf,df,nf | vanilla paste
 vanilla-extract | Vanilla extract | tsp | V,v,gf,df,nf | -
 vanilla-paste | Vanilla paste | tsp | V,v,gf,df,nf | vanilla bean paste
 white-chocolate | White chocolate | g | v,gf,nf | -
@@ -1440,15 +1500,18 @@ dark-brown-sugar | Dark brown sugar | g | V,v,gf,df,nf | soft dark brown sugar
 date-syrup | Date syrup | tbsp | V,v,gf,df,nf | silan
 demerara-sugar | Demerara sugar | g | V,v,gf,df,nf | -
 dulce-de-leche | Dulce de leche | g | v,gf,nf | boiled condensed milk, caramel sauce
+glucose-syrup | Glucose syrup | g | V,v,gf,df,nf | corn syrup, liquid glucose
 golden-syrup | Golden syrup | tbsp | V,v,gf,df,nf | Lyle's golden syrup
 granulated-sugar | Granulated sugar | g | V,v,gf,df,nf | white sugar
 honey | Honey | tbsp | v,gf,df,nf | -
 jam | Jam | g | v,V,gf,df,nf | preserve, fruit preserve
 light-brown-sugar | Light brown sugar | g | V,v,gf,df,nf | soft light brown sugar
+light-muscovado-sugar | Light muscovado sugar | g | V,v,gf,df,nf | unrefined light brown sugar
 maple-syrup | Maple syrup | tbsp | V,v,gf,df,nf | -
 marshmallows | Marshmallows | g | gf,df,nf | -
 molasses | Molasses | tbsp | V,v,gf,df,nf | blackstrap molasses
 muscovado-dark | Dark muscovado sugar | g | V,v,gf,df,nf | -
+soft-brown-sugar | Soft brown sugar | g | V,v,gf,df,nf | soft brown sugar
 
 ### alcohol
 amaretto | Amaretto | tbsp | V,v,gf,df | Disaronno
@@ -1456,9 +1519,12 @@ beer | Beer | ml | V,v,df,nf | ale
 brandy | Brandy | ml | V,v,gf,df,nf | cognac
 cider-dry | Dry cider | ml | V,v,gf,df,nf | -
 cointreau | Cointreau | tbsp | V,v,gf,df,nf | triple sec, orange liqueur
+dry-cider | Dry cider | ml | v,V,gf,df,nf | dry apple cider, still dry cider
+dry-white-wine | Dry white wine | ml | v,V,gf,df,nf | white wine, cooking white wine
 fortified-madeira | Madeira | ml | gf,df,nf | -
 fortified-marsala | Marsala wine | ml | gf,df,nf | -
 gin | Gin | ml | V,v,gf,df,nf | -
+guinness | Guinness | ml | v,V,df,nf | Irish stout, dark stout, stout
 irish-cream-liqueur | Irish cream liqueur | ml | v,gf,nf | Baileys, Baileys Irish Cream
 irish-whiskey | Irish whiskey | ml | v,V,gf,df,nf | -
 kirsch | Kirsch | ml | V,v,gf,df,nf | -
@@ -1477,12 +1543,14 @@ sherry-dry | Dry sherry | ml | gf,df,nf | fino, manzanilla
 sherry-sweet | Sweet sherry | ml | gf,df,nf | Pedro Ximenez, PX
 stout | Stout | ml | V,v,df,nf | Guinness
 vodka | Vodka | ml | V,v,gf,df,nf | -
+vodka-40-percent | Vodka (40% ABV) | ml | v,V,gf,df,nf | plain vodka
 whisky | Whisky | ml | V,v,df,nf | whiskey, scotch
 white-wine-dry | Dry white wine | ml | gf,df,nf | -
 
 ### other
 almond-butter | Almond butter | g | v,V,gf,df | -
 apple-juice | Apple juice | ml | v,V,gf,df,nf | -
+beeswax-pellets | Beeswax pellets | g | v,gf,df,nf | cosmetic beeswax
 bonito-flakes | Bonito flakes | g | gf,df,nf | katsuobushi
 caramelised-biscuit-spread | Caramelised biscuit spread | g | v,V,df,nf | Biscoff spread, Lotus spread, speculoos spread, cookie butter
 cashew-butter | Cashew butter | g | v,V,gf,df | -
@@ -1523,13 +1591,27 @@ boning-knife | Boning knife | -
 bread-knife | Bread knife | serrated knife
 carving-knife | Carving knife | slicing knife
 chefs-knife | Chef's knife | cook's knife, French knife, 8-inch knife
+chip-carving-knife | Chip-carving knife | -
 cleaver | Cleaver | Chinese chef's knife
+craft-knife | Craft knife | X-Acto knife, scalpel
+craft-knife-blades-11 | Craft knife blades, No. 11 | No. 11 blades, X-Acto blades
+craft-scissors | Craft scissors | snips, embroidery scissors
+detail-knife | Detail knife | fine carving knife
+embroidery-scissors | Embroidery scissors | stork scissors, snips, thread scissors
+fettling-knife | Fettling knife | potter's knife
 filleting-knife | Filleting knife | fish knife
+hook-knife-large | Hook knife, large | spoon knife large, crook knife large, bowl knife
+hook-knife-medium | Hook knife, medium | spoon knife medium, crook knife medium
+hook-knife-small | Hook knife, small | spoon knife small, crook knife small
 kitchen-scissors | Kitchen scissors | kitchen shears, poultry shears
+marking-knife | Marking knife | striking knife
 mezzaluna | Mezzaluna | rocking blade
 oyster-knife | Oyster knife | -
 paring-knife | Paring knife | vegetable knife
 santoku-knife | Santoku knife | -
+scalpel-10a | Scalpel, 10A | surgical scalpel
+sloyd-knife | Sloyd knife | Swedish carving knife, whittling knife
+twca-cam | Twca cam | Welsh spoon knife, curved drawknife
 
 ### pan
 cast-iron-skillet | Cast-iron skillet | Lodge skillet, cast-iron frying pan
@@ -1551,7 +1633,10 @@ wok | Wok | carbon-steel wok
 
 ### pot
 bamboo-steamer | Bamboo steamer | -
+double-boiler | Double boiler | bain-marie
 dutch-oven | Casserole dish | Dutch oven, Le Creuset, cocotte
+dye-pot-enamelled | Dye-pot, enamelled steel (dedicated) | -
+dye-pot-stainless | Dye-pot, stainless steel (dedicated) | dye pot
 jam-pan | Jam pan | preserving pan, maslin pan
 large-saucepan | Saucepan, 22 cm | large pot
 medium-saucepan | Saucepan, 18 cm | -
@@ -1589,15 +1674,32 @@ spice-grinder | Spice grinder | electric coffee grinder
 stick-blender | Stick blender | immersion blender, hand blender
 
 ### measuring
+cake-smoother | Cake smoother | fondant smoother, icing smoother
+cake-turntable | Cake turntable | revolving cake stand, decorating turntable
+calipers | Calipers | Vernier calipers, digital calipers
+combination-square | Combination square | combo square
 cooks-tape | Cook's tape | masking tape
+cord-measuring-tape | Cord measuring tape (macramé) | -
+dividers-pair | Dividers | pair of dividers, compass
+eyedropper | Eyedropper / pipette | pipette
+hydrometer | Glaze hydrometer | specific-gravity meter
 icing-smoother | Icing smoother | cake scraper
+marking-gauge | Marking gauge | mortise gauge
 measuring-cups | Measuring cups | -
 measuring-jug | Measuring jug, 1 L | -
 measuring-spoons | Measuring spoons | -
+measuring-tape-soft | Soft measuring tape | dressmaker's tape, tailor's tape
+metal-ruler-15cm | Metal ruler, 15 cm | stainless ruler, 15 cm
+metal-ruler-30cm | Metal ruler, 30 cm | stainless ruler, 30 cm
+metal-ruler-60cm | Metal ruler, 60 cm | steel rule, 60 cm
+ph-strips | pH strips | pH paper
 piping-bag | Piping bag | pastry bag
 piping-tips | Piping tips | piping nozzles
+pottery-calipers | Pottery calipers | callipers, lid calipers
 ruler | Ruler | -
+sliding-bevel | Sliding bevel | bevel gauge, T-bevel
 spirit-level | Spirit level | -
+thermometer-probe | Probe thermometer | digital thermometer
 turntable | Cake turntable | revolving cake stand
 
 ### bowl
@@ -1614,6 +1716,7 @@ baking-tray | Baking tray | baking sheet, rimmed sheet pan
 cooling-rack | Cooling rack | wire rack
 grill-tray | Grill tray | broiler pan
 half-sheet-tray | Half-sheet tray | -
+marbling-tray | Marbling tray | marbling bath
 oven-rack | Wire oven rack | -
 pizza-peel | Pizza peel | -
 roasting-rack | Roasting rack | V-rack
@@ -1621,6 +1724,7 @@ serving-platter | Serving platter | -
 trivet | Trivet | pot stand
 
 ### tin
+bun-tin | Bun tin, 12-hole | patty tin, fairy cake tin
 bundt-tin | Bundt tin | bundt pan
 kugelhopf-tin | Kugelhopf tin | -
 loaf-tin | Loaf tin, 2 lb | bread pan
@@ -1642,15 +1746,21 @@ yorkshire-pudding-tin | Yorkshire pudding tin | popover pan
 
 ### board
 bench-scraper | Bench scraper | dough scraper
+board-cutter-guillotine | Board cutter / guillotine (optional) | paper cutter, guillotine cutter
 chopping-board | Chopping board | cutting board
 chopping-board-large | Large chopping board | butcher block
+cutting-mat-a2 | Self-healing cutting mat, A2 | cutting mat A2
+cutting-mat-a3 | Self-healing cutting mat, A3 | cutting mat A3
+cutting-mat-a4 | Self-healing cutting mat, A4 | cutting mat A4
 pastry-board | Pastry board | marble pastry slab
+wooden-board | Wooden board | ware board
 
 ### utensil
 apple-corer | Apple corer | -
 biscuit-cutters | Biscuit cutters | cookie cutters
 bottle-opener | Bottle opener | -
 box-grater | Box grater | -
+brush-pen | Brush pen | -
 cherry-pitter | Cherry pitter | cherry stoner, olive pitter
 citrus-juicer-mexican | Mexican lemon press | hand citrus press
 colander | Colander | -
@@ -1658,21 +1768,39 @@ corkscrew | Corkscrew | wine opener
 fine-mesh-sieve | Fine-mesh sieve | chinois
 fish-slice | Fish slice | turner, spatula
 fish-tweezers | Fish tweezers | fish pin-bone tweezers
+flower-nail | Flower nail | piping nail, rose nail
+fude-brush | Fude brush | Japanese brush, shodo brush
+funnel-small | Funnel, small | -
 garlic-press | Garlic press | garlic crusher
+glaze-whisk | Glaze whisk | drill mixer, paint mixer
 icing-spatula | Icing spatula | palette knife, offset spatula
 julienne-peeler | Julienne peeler | -
+kitchen-torch | Kitchen torch | blowtorch, crème brûlée torch, chef's torch
 kitchen-twine | Kitchen twine | butcher's string, cooking string
 ladle | Ladle | -
 lemon-squeezer | Lemon squeezer | citrus reamer
 mandoline | Mandoline | -
+marbling-stylus | Marbling stylus | turkey-baster nib, marbling pick
 masher | Potato masher | -
 meat-mallet | Meat mallet | meat tenderiser
 microplane | Microplane | fine grater, rasp grater
+nib-brause-bandzug | Brause Bandzug nib | Bandzug
+nib-brause-ef66 | Brause EF66 nib | EF66
+nib-gillott-303 | Gillott 303 nib | -
+nib-hunt-101 | Hunt 101 nib | Hunt Imperial 101
+nib-mitchell-roundhand-0 | Mitchell Roundhand nib, 0 (broadest) | Mitchell 0
+nib-mitchell-roundhand-3 | Mitchell Roundhand nib, 3 (medium) | Mitchell 3
+nib-mitchell-roundhand-6 | Mitchell Roundhand nib, 6 (finest) | Mitchell 6
+nib-nikko-g | Nikko G nib | Nikko-G, manga nib
+oblique-pen-holder | Oblique pen holder | oblique holder
+papermaking-sponge | Papermaking sponge | -
 pasta-machine | Pasta machine | pasta roller
 pasta-server | Pasta server | spaghetti spoon
 pastry-brush | Pastry brush | basting brush
 peeler-y | Y-peeler | vegetable peeler
 pepper-mill | Pepper mill | pepper grinder
+piping-nozzle-petal | Petal piping nozzle | rose nozzle, Wilton 104, petal tip
+piping-nozzle-star | Star piping nozzle | open star nozzle, 1M nozzle, star tip
 ravioli-stamp | Ravioli stamp | pastry cutter
 ricer | Potato ricer | -
 rolling-pin | Rolling pin | -
@@ -1683,14 +1811,18 @@ slotted-spoon | Slotted spoon | -
 soup-ladle-small | Small ladle | gravy ladle
 spatula | Spatula | turner, flipper
 spider-strainer | Spider strainer | Asian skimmer
+straight-pen-holder | Straight pen holder | holder
+tea-infuser | Tea infuser | tea ball, tea strainer
 tin-opener | Tin opener | can opener
 tongs | Tongs | -
 wooden-spoon | Wooden spoon | -
 
 ### thermometer
+dye-thermometer | Dye-pot thermometer (dedicated) | -
 instant-read-thermometer | Instant-read thermometer | Thermapen, meat thermometer
 oven-thermometer | Oven thermometer | -
 probe-thermometer | Probe thermometer | leave-in thermometer
+pyrometer | Pyrometer with thermocouple | kiln thermocouple
 sugar-thermometer | Sugar thermometer | jam thermometer, candy thermometer
 
 ### scale
@@ -1699,13 +1831,18 @@ precision-scales | Precision scales | gram scales
 
 ### appliance
 air-fryer | Air fryer | Ninja, Tefal ActiFry
+ball-mill | Ball mill | -
 bread-maker | Bread maker | breadmaker
 dehydrator | Dehydrator | -
+electric-kiln-medium | Electric kiln, medium | -
+electric-kiln-small | Electric kiln, small | top-loader kiln, studio kiln
 ice-cream-maker | Ice cream maker | -
 instant-pot | Instant Pot | multi-cooker, electric pressure cooker
 kettle | Kettle | electric kettle
 microwave | Microwave | -
+papermaking-blender | Papermaking blender (dedicated) | pulp blender
 rice-cooker | Rice cooker | -
+slab-roller | Slab roller | -
 slow-cooker | Slow cooker | Crock-Pot
 sous-vide-circulator | Sous-vide circulator | immersion circulator, Anova
 toaster | Toaster | -
@@ -1714,24 +1851,279 @@ toaster | Toaster | -
 deep-fryer | Deep fryer | -
 griddle-electric | Electric griddle | -
 induction-hob | Induction hob | induction cooktop
+potters-wheel-electric | Electric potter's wheel | potter's wheel, pottery wheel
+pyrography-nichrome-wire-burner | Pyrography nichrome-wire burner | professional pyrography, wire-tip pyrography
+pyrography-solid-tip-burner | Pyrography solid-tip burner | entry pyrography, soldering-iron burner
+pyrography-tip-ball-stylus | Pyrography ball stylus | ball tip
+pyrography-tip-calligraphy | Pyrography calligraphy nib | calligraphy tip, flat-edge nib
+pyrography-tip-shading | Pyrography shading tip | shader tip, spoon-point shading tip
+pyrography-tip-writing | Pyrography writing tip | writing point, fine-line tip
 sandwich-toaster | Sandwich toaster | toastie maker, panini press
+spinning-wheel-e-spinner | E-spinner (electric spinning wheel) | electric spinner
 stand-blender | Smoothie blender | NutriBullet
 waffle-iron | Waffle iron | waffle maker
 
 ### other
+alum-potash | Alum, potash (mordant) | potassium aluminium sulphate
 apron | Apron | -
 baking-beans | Baking beans | pie weights
 baking-paper | Baking paper | parchment paper, greaseproof paper
+ball-winder | Ball winder | yarn winder
+bamboo-rolling-mat | Bamboo rolling mat | felting rolling mat
+banding-wheel | Banding wheel | decorating wheel, turntable
 banneton | Banneton | proving basket, brotform
+beeswax-block | Beeswax block | thread wax
+beetle-mallet | Beetle | club, wooden mallet, maul
+bevel-edge-chisel-12mm | Bevel-edge chisel, 12 mm | paring chisel 12 mm
+bevel-edge-chisel-25mm | Bevel-edge chisel, 25 mm | paring chisel 25 mm
+bevel-edge-chisel-6mm | Bevel-edge chisel, 6 mm | paring chisel 6 mm
+billhook-devon | Billhook, Devon pattern | Devon hook
+billhook-kent | Billhook, Kent pattern | Kent hook
+billhook-yorkshire | Billhook, Yorkshire pattern | Yorkshire hook
+blending-board | Blending board | -
+blocking-mat | Blocking mat | foam mat, blocking board
+blocking-pins | Blocking pins | T-pins, lace pins
+boat-shuttle | Boat shuttle | -
+bodkin | Bodkin | basketry bodkin
+bone-folder | Bone folder | folder
+book-cloth | Book cloth | buckram
+book-press | Book press / nipping press | nipping press
+bookbinding-awl | Bookbinding awl | piercing awl, pricking awl
+bookbinding-board-1-5mm | Bookbinding board, 1.5 mm | grey board, 1.5 mm
+bookbinding-board-2mm | Bookbinding board, 2 mm | grey board, 2 mm
+bookbinding-board-3mm | Bookbinding board, 3 mm | grey board, 3 mm
+bookbinding-needle | Bookbinding needle | blunt needle, binders needle
+bookbinding-thread-linen | Bookbinding thread, linen (waxed) | waxed linen
+broad-axe | Broad axe | hewing axe
+calligraphy-gouache | Calligraphy gouache | designers gouache
+card-scraper | Card scraper | cabinet scraper
+carrageenan | Carrageenan (marbling size) | Irish moss
+cartridge-paper-130 | Cartridge paper, 130 gsm | -
+cartridge-paper-220 | Cartridge paper, 220 gsm | heavyweight cartridge
+cartridge-paper-90 | Cartridge paper, 90 gsm | drawing paper
+carving-axe | Carving axe | Hultafors axe, Gransfors carving axe, spoon axe
 cling-film | Cling film | plastic wrap, Saran wrap
+cotton-tape-headband | Cotton tape (headband) | headband cloth
+couching-cloth | Couching cloth | j-cloth, felt couch
+crochet-hook | Crochet hook | hook
+daylight-task-lamp | Daylight task lamp | craft lamp, sewing lamp
+drape-mould-bowl | Drape mould (bowl) | -
+drawknife-curved | Drawknife, curved | hollow drawknife
+drawknife-straight | Drawknife, straight | -
+drop-spindle-bottom-whorl | Drop spindle, bottom-whorl | bottom-whorl spindle
+drop-spindle-top-whorl | Drop spindle, top-whorl | top-whorl spindle
+dropper-bottle-amber | Amber dropper bottle, 30 ml | tincture bottle
+drum-carder | Drum carder | -
+dyeing-apron | Apron (dyeing-dedicated) | -
+dyeing-gloves-long | Long rubber gloves (dyeing) | gauntlet gloves
+eco-print-bundling-cord | Eco-print bundling cord | bundling string
+embroidery-hoop-10 | Embroidery hoop, 10 inch | 25 cm hoop
+embroidery-hoop-4 | Embroidery hoop, 4 inch | 10 cm hoop
+embroidery-hoop-5 | Embroidery hoop, 5 inch | 13 cm hoop
+embroidery-hoop-6 | Embroidery hoop, 6 inch | 15 cm hoop
+embroidery-hoop-8 | Embroidery hoop, 8 inch | 20 cm hoop
+embroidery-needle-10 | Embroidery needle, size 10 | sharps 10
+embroidery-needle-5 | Embroidery needle, size 5 | sharps 5
+embroidery-needle-7 | Embroidery needle, size 7 | sharps 7
+end-feed-shuttle | End-feed shuttle | -
+endpaper-stock | Endpaper stock | endsheets
+felting-mat | Felting mat (foam pad) | felting pad, foam felting block
+felting-needles-36 | Felting needles, size 36 (coarse) | -
+felting-needles-38 | Felting needles, size 38 (medium) | -
+felting-needles-40 | Felting needles, size 40 (fine) | -
+felting-net | Felting net | tulle (felting)
+finishing-press | Finishing press | lying press
+fire-extinguisher-a | Fire extinguisher, Class A | fire extinguisher
+firmer-chisel-12mm | Firmer chisel, 12 mm | -
+firmer-chisel-25mm | Firmer chisel, 25 mm | -
+fishtail-gouge-12mm | Fishtail gouge, 12 mm | fishtail 12 mm
+floor-loom-4-shaft | Four-shaft floor loom | four-harness loom, jack loom
 foil | Aluminium foil | tinfoil
+foot-ring-chuck | Foot-ring chuck | trimming chuck
+frame-loom | Frame loom (weaving) | tapestry frame loom, lap loom
+froe | Froe | riving froe, cleaving froe
+glaze-bucket | Glaze bucket | dipping bucket
+glaze-sieve | Glaze sieve | lawn sieve
+glaze-tongs | Glaze tongs | -
+gouge-sweep-11-6mm | Gouge, No. 11 sweep, 6 mm | veiner 6 mm
+gouge-sweep-3-12mm | Gouge, No. 3 sweep, 12 mm | shallow gouge 12 mm
+gouge-sweep-5-12mm | Gouge, No. 5 sweep, 12 mm | medium gouge 12 mm
+gouge-sweep-7-12mm | Gouge, No. 7 sweep, 12 mm | deep gouge 12 mm
+gouge-sweep-7-20mm | Gouge, No. 7 sweep, 20 mm | deep gouge 20 mm
+gouge-sweep-9-12mm | Gouge, No. 9 sweep, 12 mm | deep U gouge 12 mm
+gum-sandarac | Gum sandarac | -
+hackle | Hackle (spinning) | fibre hackle
+hand-cards | Hand cards | carders
+hatchet-small | Hatchet, small | kindling hatchet
+headband-form | Headband form | -
+hole-punch-single | Hole punch, single | paper punch
+indigo-vat | Indigo vat (large bucket) | fermentation vat
+inkle-loom | Inkle loom | -
+inshave | Inshave | scorp
+iron-gall-ink | Iron-gall ink (modern formulation) | -
 jam-jars | Jam jars | preserving jars
+japanese-folding-bone | Japanese folding bone | hera
+japanese-rice-paste | Japanese rice paste | nori paste
+japanese-waterstone-1000 | Japanese waterstone, 1000 grit | medium waterstone
+japanese-waterstone-4000 | Japanese waterstone, 4000 grit | fine waterstone
+japanese-waterstone-8000 | Japanese waterstone, 8000 grit | polishing waterstone
+kami-15cm | Kami origami paper, 15 cm | origami paper
+kami-20cm | Kami origami paper, 20 cm | -
+kiln-post | Kiln post | kiln furniture post
+kiln-shelf | Kiln shelf | cordierite shelf
 kilner-jar | Kilner jar | Mason jar, ball jar
+lace-bobbins | Lace bobbins | bobbin pair
+lace-pillow | Lace pillow | cookie pillow, bolster pillow
+lace-pricker | Lace pricker | pricking pin
+latch-hook | Latch hook | -
+leather-strop | Leather strop | stropping leather
+locker-hook | Locker hook | -
+loop-tool | Loop tool | kemper loop tool, trimming loop
+maceration-jar | Maceration jar | large kilner jar
+macrame-board | Macramé board | knotting board
+macrame-clipboard | Clipboard (macramé starter) | -
+macrame-fringe-comb | Macramé fringe comb | cord comb
+macrame-t-pins | T-pins, macramé | blocking T-pins
+magnifier-loupe | Magnifier loupe | magnifying glass, stand magnifier, clip-on magnifier
+marbling-acrylic-liquid | Marbling acrylic, liquid | Boku-undo, liquid acrylic
+marbling-comb | Marbling comb | -
+marbling-paper-alum | Marbling paper, alum-mordanted | mordanted paper
+metal-rib | Metal rib | kidney rib
+methyl-cellulose | Methyl cellulose | -
+mixing-bucket-dedicated | Mixing bucket (dedicated) | -
+monks-cloth | Monks-cloth (rug backing) | -
+mordant-jar | Mordant storage jar | -
+mortise-chisel-9mm | Mortise chisel, 9 mm | pigsticker 9 mm
 muslin-cloth | Muslin cloth | cheesecloth
+n95-mask | N95 mask | dust mask, P2 mask
+needle-minder | Needle minder magnet | needle magnet, parking magnet
+needle-tool | Needle tool | pin tool, fettling needle
+niddy-noddy | Niddy-noddy | -
+oil-marbling-turpentine | Turpentine + linseed oil (marbling thinner) | -
+oilstone-india | India combination oilstone | combination oilstone, India stone
+olive-oil-soap-felting | Olive-oil soap bar (felting) | Aleppo soap, castile bar
+origami-bone-folder-mini | Mini bone folder (origami) | -
+origami-duo-paper | Duo origami paper | two-sided origami paper
+origami-foil-backed | Foil-backed origami paper | -
+origami-washi | Origami washi | washi origami paper
 oven-gloves | Oven gloves | oven mitts
+ox-gall | Ox-gall (marbling) | surfactant
+p100-respirator | P100 respirator | half-face respirator, silica mask
+palm-fitter-felting | Palm fitter (felting) | -
+paper-mould-deckle-a3 | Paper mould + deckle, A3 | mould and deckle, A3
+paper-mould-deckle-a4 | Paper mould + deckle, A4 | mould and deckle, A4
+paper-mould-deckle-a5 | Paper mould + deckle, A5 | mould and deckle, A5
+papermaking-press-boards | Press boards | -
+papermaking-vat | Papermaking vat | pulp vat
+plaster-bat | Plaster bat | plaster slab
+plough-cutter | Plough (board cutter) | bookbinder's plough
+pole-lathe | Pole lathe | -
+potters-wheel-kick | Kick wheel | treadle wheel
+pottery-brush-hake | Pottery brush, hake | hake brush
+pottery-brush-liner | Pottery brush, liner | liner brush, detail brush
+pottery-brush-mop | Pottery brush, mop | glaze mop
+pottery-chamois | Pottery chamois | leather rim chamois
+pottery-rolling-pin | Pottery rolling pin | slab rolling pin
+pottery-sponge | Pottery sponge | throwing sponge
+pottery-stamp | Pottery stamp | clay stamp
+pva-acid-free | PVA, acid-free | archival PVA
+pva-regular | PVA, regular | white glue
+pyrography-cooling-stand | Pyrography cooling stand | burner stand, pen stand
+pyrometric-cone | Pyrometric cone | cone
+raddle | Raddle | -
+rag-rug-strip-cutter | Rag-rug strip cutter | -
+rapping-iron | Rapping iron | -
+rigid-heddle-loom | Rigid heddle loom | rigid heddle
+row-counter | Row counter | stitch counter, click counter
+rug-binding-tape | Rug binding tape | -
+rug-canvas | Rug canvas (latch-hook) | latch-hook canvas
+rug-frame | Rug frame (gripper-edge) | hooking frame
+rug-hook | Rug hook (traditional) | traditional rug hook
+rug-punch-needle | Punch needle (rug-making) | rug punch
+salve-tin | Salve tin, 30-60 ml | lip-balm tin, cosmetic tin
+sandpaper-120 | Sandpaper, 120 grit | medium sandpaper
+sandpaper-180 | Sandpaper, 180 grit | fine sandpaper
+sandpaper-240 | Sandpaper, 240 grit | very fine sandpaper
+sandpaper-320 | Sandpaper, 320 grit | extra-fine sandpaper
+sandpaper-400 | Sandpaper, 400 grit | polishing sandpaper
+sandpaper-600 | Sandpaper, 600 grit | fine polishing sandpaper
+sandpaper-80 | Sandpaper, 80 grit | coarse sandpaper
+scoring-tool | Scoring tool | -
+scroll-frame | Scroll frame | embroidery frame, roller frame
+secateurs | Secateurs | pruning shears, secaters
+sgraffito-tool | Sgraffito tool | linoleum cutter, carving tool
+shaving-horse | Shaving horse | shave horse, bodger horse
+side-axe | Side axe | hand axe
+side-axe-block | Side-axe block | hewing block, chopping block
 sink | Sink | -
+skew-chisel-12mm | Skew chisel, 12 mm | corner chisel
+slip-trailer | Slip trailer | rubber bulb, slip bottle
+slipstones-set | Slipstones, set | gouge slipstones
+soaking-trough | Soaking trough | willow soaking tank
+spinning-wheel-castle | Castle spinning wheel | upright spinning wheel
+spinning-wheel-saxony | Saxony spinning wheel | horizontal spinning wheel
+splash-pan | Splash pan | -
+splitting-axe | Splitting axe | splitting maul
+splitting-wedges | Splitting wedges | gluts, wedges
+spokeshave-flat | Spokeshave, flat-bottomed | -
+spokeshave-round | Spokeshave, round-bottomed | concave spokeshave
+spoon-gouge-12mm | Spoon gouge, 12 mm | bent gouge 12 mm
 spray-bottle | Spray bottle | -
+sprig-mould | Sprig mould | press mould
+steel-wool-000 | Steel wool, 000 | fine steel wool
+steel-wool-0000 | Steel wool, 0000 | extra-fine steel wool
+stick-shuttle | Stick shuttle | flat shuttle
+stitch-marker | Stitch marker | locking stitch marker
+studio-apron | Studio apron | pottery apron
+sumi-ink | Sumi ink | Japanese ink, bokuju
+supported-spindle | Supported spindle | Tibetan spindle, tahkli
+swift | Yarn swift | umbrella swift
+tablet-weaving-cards | Tablet-weaving cards | cards, tablets
+tapestry-comb | Tapestry comb | beater
+tapestry-loom-upright | Upright tapestry loom | high-warp tapestry loom
+tapestry-needle | Tapestry needle | darning needle, yarn needle, wool needle
+tapestry-needle-18 | Tapestry needle, size 18 | -
+tapestry-needle-20 | Tapestry needle, size 20 | -
+tapestry-needle-22 | Tapestry needle, size 22 | -
+tapestry-needle-24 | Tapestry needle, size 24 | -
+tapestry-needle-26 | Tapestry needle, size 26 | -
+tapestry-needle-28 | Tapestry needle, size 28 | -
+tapestry-shuttle | Tapestry shuttle | butterfly shuttle
+tatting-needle-5 | Tatting needle, size 5 | -
+tatting-needle-7 | Tatting needle, size 7 | -
+tatting-shuttle | Tatting shuttle | -
 tea-towel | Tea towel | dish towel
+teapot | Teapot | -
+teflon-folder | Teflon folder | -
+throwing-stick | Throwing stick | rib stick, bottle bender
+tracing-paper | Tracing paper | -
+travisher | Travisher | -
+v-tool-60 | V-tool, 60° | parting tool 60
+v-tool-90 | V-tool, 90° | parting tool 90
+vellum-paper | Vellum paper | -
+walnut-ink | Walnut ink | -
+warping-board | Warping board | warping mill
+washi-gampi | Washi — gampi | gampi paper
+washi-kozo | Washi — kozo | kozo paper, mulberry paper
+washi-mitsumata | Washi — mitsumata | mitsumata paper
+watercolour-paper-coldpress | Watercolour paper, cold-press (NOT) | NOT paper
+watercolour-paper-hotpress | Watercolour paper, hot-press | HP paper
+weaving-heddles | Weaving heddles | string heddles, metal heddles
+weaving-reed | Weaving reed | weaving comb, rigid heddle reed
+wet-cleanup-kit | Wet cleanup kit | -
+wheat-paste | Wheat-paste (cooked) | flour paste
+wheel-bat | Wheel bat | throwing bat
+wire-cutter | Wire cutter | cut-off wire, cheese wire
+wood-finish-board-butter | Board butter | cutting-board conditioner, wax-and-oil paste
+wood-finish-boiled-linseed-oil | Boiled linseed oil (BLO) | BLO
+wood-finish-danish-oil | Danish oil | -
+wood-finish-polyurethane | Polyurethane | poly varnish
+wood-finish-pure-tung-oil | Pure tung oil | tung-nut oil
+wood-finish-raw-linseed-oil | Raw linseed oil (wood finish) | flax oil finish
+wood-finish-shellac | Shellac | French polish
+wood-finish-walnut-oil | Walnut oil (wood finish) | -
+wooden-rib | Wooden rib | rib tool
+wool-combs | Wool combs | English combs, mini combs
 <!-- END TOOL_LOOKUP -->
 
 ---

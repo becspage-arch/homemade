@@ -1,0 +1,143 @@
+{
+  "slug": "tarte-tatin",
+  "title": "Tarte tatin",
+  "subtitle": "Upside-down caramelised apple tart",
+  "excerpt": "Apples cooked in butter and caramel directly in the pan, then covered with a pastry lid and baked, before being inverted so the caramel becomes the top. The classic French upside-down tart from the Hotel Tatin.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The tarte tatin is credited to the Tatin sisters (Caroline and Stéphanie Tatin) of the Hotel Tatin in Lamotte-Beuvron, France, in the late nineteenth century. The recipe was popularised by Auguste Escoffier and is documented in French culinary literature from the early twentieth century. The recipe here follows the standard French method: direct caramelisation in the pan, short-crust or puff pastry lid, and inversion after baking.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "one 23 cm tart (serves 6-8)",
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "restingMinutes": 10,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Best eaten on the day. Can be baked up to 2 hours ahead and kept warm. Reheat at 180°C for 10 minutes before inverting.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "200°C conventional / 180°C fan",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "round-cake-tin-23", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "beurre-noisette",
+      "term": "Beurre noisette",
+      "definition": "French for 'brown butter'. Butter heated past the point of melting until the milk solids brown and the fat smells of toasted hazelnuts. Used as the starting fat for tarte tatin and many other French bakes to add a deeper caramel note."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tarte tatin relies on a direct caramel: butter and sugar cooked together in the baking vessel until the sugar starts to colour, then apple halves arranged over it, a pastry lid pressed on top, and the whole thing baked until the pastry is golden and the caramel is deep amber. The inversion reveals the lacquered fruit beneath. The fat you start with matters: " },
+          { "type": "text", "text": "beurre noisette", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "beurre-noisette" } }] },
+          { "type": "text", "text": " (butter cooked to hazelnut) adds a depth that plain melted butter doesn't. Use an oven-safe heavy-based frying pan or a 23 cm round cake tin.", "marks": [] }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "tip" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Cox or Braeburn apples work better than Bramley here: they hold their shape during caramelising and baking rather than collapsing to purée. Peel and halve the apples, remove the core, and pat them dry before arranging so they don't add water to the caramel." }]
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Pastry" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "plain-flour", "quantity": 200, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 100, "unit": "g", "prepNote": "cold, cut into pieces", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 1, "unit": "tbsp", "prepNote": null, "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Filling" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "eating-apples", "quantity": 1200, "unit": "g", "prepNote": "about 6 medium apples, peeled, halved, cored", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 75, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 150, "unit": "g", "prepNote": null, "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pastry and chill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rub 100 g {{unsalted-butter}} into 200 g {{plain-flour}} with 1 tbsp {{caster-sugar}} until the mixture resembles breadcrumbs. Add 2-3 tbsp cold water, one at a time, and bring together into a disc. Wrap and chill for 30 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the caramel and arrange the apples" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 200°C (180°C fan). Melt 75 g {{unsalted-butter}} in a 23 cm oven-safe frying pan or heavy cake tin over a medium heat until the milk solids turn brown. Add 150 g {{caster-sugar}} and cook, swirling occasionally, until you have a deep amber caramel (about 5-7 minutes). Remove from the heat and arrange the apple halves, cut-side up and tightly packed, in the caramel. They will shrink during cooking." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the lid and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Roll the pastry to a circle slightly larger than the pan (about 25 cm). Lay it over the apples and tuck the edges down inside the rim. Bake for 30-35 minutes until the pastry is deep golden and the caramel is bubbling at the edges. Leave to rest in the pan for 10 minutes. Place a plate or board larger than the pan firmly over the top, then invert quickly and cleanly. Leave the pan in place for a minute to let any caramel drip onto the tart, then remove." }]
+      }
+    ]
+  }
+}

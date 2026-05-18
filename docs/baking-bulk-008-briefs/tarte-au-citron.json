@@ -1,0 +1,136 @@
+{
+  "slug": "tarte-au-citron",
+  "title": "Tarte au citron",
+  "subtitle": "French lemon tart with a sharp, barely-set custard filling",
+  "excerpt": "A blind-baked sweet pastry case filled with a lemon curd mixture of eggs, cream, and lemon juice baked until just set. The filling should tremble slightly at the centre when the tart comes out of the oven.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Tarte au citron is a standard of the French patisserie repertoire. The recipe form, sweet shortcrust (pâte sucrée) blind-baked and filled with an egg, cream, and lemon juice mixture, is documented in French culinary writing from the early twentieth century. The barely-set texture that distinguishes a French lemon tart from a firmer English lemon curd tart is achieved by baking at a low temperature (160°C) and pulling the tart while the centre still trembles.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "one 23 cm tart (serves 8)",
+    "prepMinutes": 30,
+    "cookMinutes": 55,
+    "restingMinutes": 60,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Keeps refrigerated for 2 days. Bring to room temperature before serving.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 160,
+      "bakeTemperatureNote": "160°C conventional / 140°C fan for the filling; blind-bake pastry at 180°C",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "tart-tin", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "blind-baking",
+      "term": "Blind baking",
+      "definition": "Baking a pastry case without its filling to set the base before adding a wet filling. The pastry is lined with baking paper and filled with ceramic baking beans (or rice or dried pulses) to prevent the sides from collapsing and the base from puffing. The beans are removed for the final few minutes so the base can colour and dry."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The tart has two components: a sweet shortcrust case that must be fully baked before the filling goes in, and a lemon custard that sets to a trembling, just-firm consistency in a low oven. " },
+          { "type": "text", "text": "Blind baking", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blind-baking" } }] },
+          { "type": "text", "text": " the pastry case fully before filling prevents a wet, undercooked base. The filling is done when the outer 2 cm is set and the centre still wobbles as a single mass when the tin is gently shaken: the residual heat finishes it after the oven.", "marks": [] }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Sweet shortcrust pastry (pâte sucrée)" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "plain-flour", "quantity": 200, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 100, "unit": "g", "prepNote": "cold, cut into pieces", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "icing-sugar", "quantity": 50, "unit": "g", "prepNote": "sifted", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "egg-yolks", "quantity": 1, "unit": "each", "prepNote": "from a large egg", "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Lemon filling" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "whole-eggs", "quantity": 4, "unit": "each", "prepNote": "large", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 150, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "double-cream", "quantity": 150, "unit": "ml", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "lemon-juice", "quantity": 150, "unit": "ml", "prepNote": "about 4-5 lemons, freshly squeezed", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "lemon-zest", "quantity": 2, "unit": "tsp", "prepNote": "finely grated", "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and chill the pastry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rub the {{unsalted-butter}} into the {{plain-flour}} and {{icing-sugar}} until the mixture resembles fine breadcrumbs. Mix in the {{egg-yolks}} and 1-2 tbsp of cold water until the pastry just comes together. Press into a disc and chill for 30 minutes. Roll out on a lightly floured surface to 3 mm thick and line a 23 cm loose-based tart tin, pressing into the fluted edges. Trim the excess and chill for a further 20 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blind bake the case" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 180°C (160°C fan). Line the chilled pastry case with baking paper, fill with baking beans, and bake for 20 minutes. Remove the paper and beans and bake for a further 8-10 minutes until the base is golden and dry. Brush the inside with a little beaten egg and return to the oven for 2 minutes to seal any cracks. Reduce the oven to 160°C (140°C fan)." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and bake the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whisk together the {{whole-eggs}}, {{caster-sugar}}, {{double-cream}}, {{lemon-juice}}, and {{lemon-zest}} until smooth. Do not aerate: you want a dense, smooth custard rather than a foamy one. Pour the filling through a sieve into the hot pastry case while it is in the oven on the pulled-out shelf, to avoid spilling. Bake for 25-30 minutes until the outer edges are set and the centre trembles when the tin is nudged. Cool in the tin completely before removing." }]
+      }
+    ]
+  }
+}

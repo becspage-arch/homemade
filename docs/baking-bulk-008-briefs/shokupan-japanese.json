@@ -1,0 +1,145 @@
+{
+  "slug": "shokupan-japanese",
+  "title": "Shokupan",
+  "subtitle": "Japanese milk bread loaf with a tangzhong water roux",
+  "excerpt": "Japanese sandwich bread made with a tangzhong water roux for an exceptionally soft, pillowy crumb that stays fresh for days longer than a standard enriched loaf. Baked in a covered tin for a straight-sided square slice.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Shokupan (食パン, literally 'eating bread') is the Japanese standard white sandwich loaf developed during the Meiji period (1868-1912) from Western-influenced baking. The tangzhong technique (water roux, or yu-dane method in Japanese) of cooking a small portion of the flour and water before adding it to the dough was documented in Japanese baking guides from the mid-twentieth century and later popularised in English-language baking writing by Yvonne Chen, 65°C Tangzhong Bread (2007).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "one 900 g / 2 lb loaf",
+    "prepMinutes": 30,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice before freezing. Toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Stays fresh for 3-4 days wrapped at room temperature — notably longer than a standard loaf.",
+    "dietaryFlags": [],
+    "cuisine": "japanese",
+    "mealType": "snack",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 340,
+      "hydrationPercent": 70,
+      "saltPercent": 1.5,
+      "yeastPercent": 1.5,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 60,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "180°C conventional / 160°C fan (baked with lid on for the first 20 minutes, then lid off to colour)",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tangzhong",
+      "term": "Tangzhong",
+      "definition": "A water roux made by cooking flour and water (or milk) together to around 65°C until the mixture thickens to a paste. When incorporated into bread dough, the pre-gelatinised starch in the tangzhong retains extra moisture during baking, producing a softer, more pillowy crumb that stays fresh significantly longer than a standard loaf."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Shokupan's extraordinary softness comes from the " },
+          { "type": "text", "text": "tangzhong", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tangzhong" } }] },
+          { "type": "text", "text": ": a small portion of flour cooked with milk to a thick paste before being added to the main dough. The pre-gelatinised starch in the tangzhong absorbs extra water and holds it through the bake, giving the crumb its characteristic pillow-soft texture. The covered tin bake produces the straight sides and square cross-section of a traditional shokupan loaf.", "marks": [] }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Tangzhong" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "strong-white-flour", "quantity": 25, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "whole-milk", "quantity": 125, "unit": "ml", "prepNote": null, "isOptional": false } }
+            ]
+          },
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "Dough" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "strong-white-flour", "quantity": 315, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "fast-action-yeast", "quantity": 5, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "fine-salt", "quantity": 5, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 40, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "whole-milk", "quantity": 100, "unit": "ml", "prepNote": "lukewarm", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "whole-eggs", "quantity": 1, "unit": "each", "prepNote": "large", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 30, "unit": "g", "prepNote": "softened", "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the tangzhong" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Whisk 25 g {{strong-white-flour}} and 125 ml {{whole-milk}} together in a small saucepan until smooth. Cook over a medium-low heat, stirring constantly, until the mixture thickens to a paste and pulls away from the sides of the pan (about 65°C if you have a thermometer). Remove from the heat and leave to cool to room temperature." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix, knead, and bulk ferment, 1 hour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine 315 g {{strong-white-flour}}, {{fast-action-yeast}}, {{fine-salt}}, and {{caster-sugar}} in a large bowl. Add the cooled tangzhong, lukewarm {{whole-milk}}, and {{whole-eggs}}. Mix until a rough dough forms, then add the {{unsalted-butter}} and knead by hand for 12 minutes or in a stand mixer for 8 minutes until smooth, elastic, and slightly sticky. Cover and bulk ferment until doubled, about 1 hour." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and prove, 1 hour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Grease a 900 g loaf tin. Divide the dough into four equal pieces. Roll each piece into a ball, then roll each ball into a rough oval. Fold the sides in and roll up into a cylinder. Place the four cylinders side by side in the tin, seam-side down. Cover and prove until the dough domes 2 cm above the rim of the tin, about 1 hour. If you have a lidded Pullman tin, fit the lid on when the dough reaches the rim." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 180°C (160°C fan). Place the covered tin (or cover with greased foil) in the oven and bake for 20 minutes. Remove the lid or foil and bake for a further 15-18 minutes until deep golden. The loaf should read 94-96°C internally. Cool in the tin for 10 minutes, then turn out onto a rack and cool completely before slicing." }]
+      }
+    ]
+  }
+}

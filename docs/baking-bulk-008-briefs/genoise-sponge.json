@@ -1,0 +1,129 @@
+{
+  "slug": "genoise-sponge",
+  "title": "Génoise sponge",
+  "subtitle": "French whole-egg sponge for layered gateaux",
+  "excerpt": "A light, dry sponge made by whisking whole eggs and sugar over heat until thick and pale, then folding in flour and melted butter. The foundational French sponge used as the base for layered gateaux, petit fours, and trifles.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The génoise takes its name from Genoa and appears in French culinary literature from the early nineteenth century. Auguste Escoffier's Le Guide Culinaire (1903) defines it as the standard French sponge for layered cakes and petits fours. Carême documents a whole-egg sponge base in Le Pâtissier Royal Parisien (1815). The method of whisking eggs over heat (bain-marie) to dissolve the sugar and build volume is consistent across all French classical sources.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "two 20 cm rounds or one 30 cm x 20 cm sheet",
+    "prepMinutes": 20,
+    "cookMinutes": 25,
+    "restingMinutes": 20,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Wrap tightly in cling film before freezing. Thaw at room temperature for 2 hours.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Best used the day after baking: the crumb sets slightly and takes soaking syrups better. Keeps for 3 days wrapped at room temperature.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "snack",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true,
+    "baking": {
+      "flourWeightGrams": 125,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "180°C conventional / 160°C fan",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "round-cake-tin-20", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": true },
+    { "slug": "mixing-bowl-medium", "isOptional": false },
+    { "slug": "silicone-spatula", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ribbon-stage",
+      "term": "Ribbon stage",
+      "definition": "The point in egg and sugar whisking at which the mixture has tripled in volume, become very pale, and falls from the whisk in a thick, slow ribbon that holds its shape on the surface for several seconds before dissolving. This indicates sufficient aeration for a génoise sponge. Under-whisked eggs produce a dense, heavy sponge; correctly whisked eggs produce a light, open crumb."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Génoise differs from Victoria sponge in method: it uses whole eggs (not separated), whisked with sugar over heat until they reach " },
+          { "type": "text", "text": "ribbon stage", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ribbon-stage" } }] },
+          { "type": "text", "text": ". The result is a drier, tighter crumb that takes soaking syrups (kirsch, sugar syrup) without collapsing — which is why it is the foundation of most classical French layered gateaux. It contains very little butter and no chemical leavener: the air beaten into the eggs is the only leavening.", "marks": [] }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "tip" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Fold the flour in with a large metal spoon or silicone spatula in slow, full cuts from bottom to top: the batter is fragile and over-folding collapses the air. Add the melted butter down the side of the bowl, not into the centre, and fold it in last and quickly. A few streaks of butter are better than an over-mixed batter." }]
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredientsGroup",
+            "attrs": { "title": "" },
+            "content": [
+              { "type": "ingredient", "attrs": { "slug": "whole-eggs", "quantity": 4, "unit": "each", "prepNote": "large, at room temperature", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "caster-sugar", "quantity": 125, "unit": "g", "prepNote": null, "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "plain-flour", "quantity": 125, "unit": "g", "prepNote": "sifted twice", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "unsalted-butter", "quantity": 40, "unit": "g", "prepNote": "melted and cooled", "isOptional": false } },
+              { "type": "ingredient", "attrs": { "slug": "vanilla-extract", "quantity": 1, "unit": "tsp", "prepNote": null, "isOptional": false } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Whisk eggs to ribbon stage over heat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 180°C (160°C fan). Grease and line two 20 cm tins with baking paper. Put the {{whole-eggs}} and {{caster-sugar}} in the bowl of a stand mixer (or a large heatproof bowl) and set over a pan of barely simmering water. Whisk by hand until the sugar dissolves and the mixture is warm to the touch (about 45°C). Transfer to the stand mixer and whisk on high for 8-10 minutes until the mixture is very pale, tripled in volume, and falls from the whisk in a thick, slow ribbon that holds its shape on the surface for 3-4 seconds before dissolving." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fold in flour and butter, then bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Sift the {{plain-flour}} over the egg mixture in three additions, folding gently after each addition with a large silicone spatula. Use full, slow cuts from the bottom of the bowl upward. Add the {{vanilla-extract}} to the cooled melted {{unsalted-butter}} and pour it down the side of the bowl. Fold in immediately and swiftly. Divide the batter between the prepared tins and bake for 20-25 minutes, until the sponge springs back when pressed in the centre, has pulled from the sides, and a skewer comes out clean. Cool in the tins for 10 minutes, then invert onto a rack and cool completely before filling." }]
+      }
+    ]
+  }
+}
