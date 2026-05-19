@@ -46,7 +46,6 @@ export function buildWebSiteSchema(): JsonLd {
         '@type': 'EntryPoint',
         urlTemplate: `${siteOrigin()}/search?q={search_term_string}`,
       },
-      // eslint-disable-next-line @typescript-eslint/naming-convention
       'query-input': 'required name=search_term_string',
     },
   }

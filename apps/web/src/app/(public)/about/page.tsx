@@ -54,7 +54,7 @@ export default function AboutPage() {
           Every tutorial passes through one editorial pass before it goes live.
           The pass checks the recipe scales, the times are realistic, the
           technique cross-references resolve to genuine technique tutorials,
-          and the sources line up with what's claimed. Where a tutorial draws on
+          and the sources line up with what&apos;s claimed. Where a tutorial draws on
           a specific text — a classic recipe, an extension service guide, a
           herbal materia medica — that source is cited at the bottom of the
           tutorial.

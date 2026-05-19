@@ -142,7 +142,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   })
 }
 
-function ogTypeForTutorial(type: TutorialType): OpenGraphType {
+function ogTypeForTutorial(_type: TutorialType): OpenGraphType {
+  // All tutorial types are long-form content — OG article fits across
+  // recipe, technique, practice, reading, growing guide, remedy, stitch,
+  // pattern and herb profile. Distinction kicked down to schema.org JSON-LD.
   return 'article'
 }
 
