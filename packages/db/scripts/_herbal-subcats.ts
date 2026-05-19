@@ -5,12 +5,10 @@ loadEnv()
 import { prisma } from '../src'
 
 async function main() {
-  const updated = await prisma.category.update({
+  const cat = await prisma.category.findUnique({
     where: { slug: 'herbal-medicine' },
-    data: { lastAutopilotRunAt: new Date() },
-    select: { slug: true, lastAutopilotRunAt: true },
+    select: { id: true, subCategories: { select: { slug: true, name: true }, orderBy: { slug: 'asc' } } }
   })
-  console.log('CLAIMED:', JSON.stringify(updated))
+  console.log(JSON.stringify(cat, null, 2))
 }
-
 main().catch(e => { console.error(e); process.exit(1) })

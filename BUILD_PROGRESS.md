@@ -22,7 +22,9 @@ Live at https://homemade.education behind splash gate (cookie `homemade-access=1
 
 **Library counts (PUBLISHED)** — full grid in § Multi-category fill plan below.
 
-- Cooking 1105 (anchors + pilot-10 + personal-recipe ingest + bulks 001–029). Baking 552 (pilot-10 + bulks 001–014 + bulk-004b). Mindset 724 (bulks 001–018 + editorial pass). The other 14 categories are private placeholders until each crosses 10 published rows.
+- Cooking 1105 (anchors + pilot-10 + personal-recipe ingest + bulks 001–029). Baking 552 (pilot-10 + bulks 001–014 + bulk-004b). Mindset 724 (bulks 001–018 + editorial pass). Herbal-medicine 40 (bulk-001). The other 13 categories are private placeholders until each crosses 10 published rows.
+
+- Herbal-medicine bulk-001 (autopilot-queue, 2026-05-19): 40 entries PUBLISHED — 31 REMEDY + 6 HERB_PROFILE + 3 READING across all 10 herbal sub-categories. Remedies span digestive (5), respiratory (5), nervous-system (5), skin (6), immune-support (4), musculoskeletal (3), womens-health (2), mental-emotional (1). Profiles: chamomile, elderberry, ginger, lavender, nettle, St John's Wort. Foundation readings: how-herbal-infusions-work, pregnancy-and-herbal-medicine, when-not-to-use-home-herbal-remedies. New ingredient seeded: epsom-salts. Fix log: em-dash batch, infoPanel tone warning→info (safety-block rule), 5 invalid preparationType values, primaryHerbSlug null in READING files, 6 voice-check errors. 0 upload failures. See docs/herbal-bulk-001-report.md.
 
 **This week's notable landings**
 
