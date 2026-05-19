@@ -1,0 +1,644 @@
+{
+  "slug": "carved-sycamore-eating-spoon",
+  "title": "Carved sycamore eating spoon",
+  "subtitle": "Green-wood spoon-carving from a riven billet with axe and knife",
+  "excerpt": "The sycamore eating spoon is the starting point for spoon-carving: a small oval bowl, a handle that fits the hand, and a wood species that carves beautifully green and dries food-safe and pale. This tutorial covers the axe-to-knife progression, reading grain at each stage, hollowing the bowl with a hook knife, and finishing with raw linseed oil.",
+  "type": "PATTERN",
+  "categorySlug": "wood-natural-craft",
+  "subCategorySlug": "spoon-carving",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Cassell's Cyclopaedia of Mechanics vol. III (1885) for the axe-to-knife progression in spoon-carving. Newey & Drage, Practical Carpentry and Joinery (1898) for grain-reading in green broadleaf timber.",
+  "recipeTools": [
+    {
+      "slug": "carving-axe",
+      "isOptional": false
+    },
+    {
+      "slug": "sloyd-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "hook-knife-medium",
+      "isOptional": false
+    },
+    {
+      "slug": "leather-strop",
+      "isOptional": false
+    },
+    {
+      "slug": "japanese-waterstone-1000",
+      "isOptional": true
+    },
+    {
+      "slug": "sandpaper-240",
+      "isOptional": true
+    },
+    {
+      "slug": "wood-finish-raw-linseed-oil",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "green-wood",
+      "term": "Green wood",
+      "definition": "Freshly felled or recently riven wood, still high in moisture content. Spoon-carving green is much faster than seasoning first; the wet wood cuts easily under hand tools."
+    },
+    {
+      "slug": "riven",
+      "term": "Riven",
+      "definition": "Split along the grain with a froe and maul rather than sawn across it. A riven spoon blank follows the grain and is stronger along its length than a sawn section."
+    },
+    {
+      "slug": "billet",
+      "term": "Billet",
+      "definition": "A short length of round or split timber ready to be worked into a blank."
+    },
+    {
+      "slug": "blank",
+      "term": "Blank",
+      "definition": "The rough-shaped piece of wood from which the finished spoon is carved."
+    },
+    {
+      "slug": "hook-knife",
+      "term": "Hook knife",
+      "definition": "A curved-bladed knife for hollowing the bowl of a spoon or kuksa. Available in small, medium, and large radii."
+    },
+    {
+      "slug": "push-cut",
+      "term": "Push cut",
+      "definition": "A carving cut in which the blade travels away from the body. The default carving cut throughout the shaping stages of a spoon."
+    },
+    {
+      "slug": "strop",
+      "term": "Strop",
+      "definition": "A leather strap charged with abrasive compound for maintaining a sharp edge between honings."
+    }
+  ],
+  "aliases": [
+    "spoon carving beginner",
+    "green wood spoon",
+    "sycamore spoon carving"
+  ],
+  "techniqueSlugs": [
+    "push-cut-technique",
+    "thumb-pivot-cut-technique",
+    "riving-with-a-froe"
+  ],
+  "criticalTechniques": [
+    "push-cut-technique"
+  ],
+  "woodState": "green",
+  "recommendedSpecies": [
+    "sycamore",
+    "birch",
+    "lime"
+  ],
+  "finishSlug": "wood-finish-raw-linseed-oil",
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Rough out with the axe and shape with the sloyd knife",
+      "body": "Axe to rough spoon shape, sloyd knife for profile and handle. One to two hours.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 0,
+      "title": "Hollow the bowl with the hook knife",
+      "body": "The hook-knife hollow takes thirty minutes to an hour. Work slowly at the bowl walls.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 7,
+      "title": "Dry the spoon for a week",
+      "body": "Leave the carved spoon to dry for a week before sanding and oiling. Even walls minimise warping.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": false
+    },
+    {
+      "stepNumber": 4,
+      "offsetDays": 7,
+      "title": "Light sand and first oil coat",
+      "body": "Light 240-grit sand to remove raised grain; apply first coat of raw linseed oil. Wipe off after one hour.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 5,
+      "offsetDays": 21,
+      "title": "Oil cured: food-safe",
+      "body": "Two weeks after oiling, the spoon is food-safe. Ready for kitchen use.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": false
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Spoon-carving begins with "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "green-wood"
+                }
+              }
+            ],
+            "text": "green wood"
+          },
+          {
+            "type": "text",
+            "text": " for a simple reason: a freshly riven sycamore "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "billet"
+                }
+              }
+            ],
+            "text": "billet"
+          },
+          {
+            "type": "text",
+            "text": " carved with an axe and a knife takes a quarter of the effort of the same project in seasoned timber. Sycamore is the standard first spoon species because it is widespread in Britain and Europe, grows to carving diameter quickly, carves exceptionally cleanly, and dries to a pale, food-safe surface. The birch alternatives serve well wherever sycamore is not accessible; birch has similar working properties and the same pale finish, making it the traditional Scandinavian spoon wood. Lime (basswood) carves more easily still but is harder to source as green billets outside specialist suppliers."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need: wood"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A freshly "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "riven"
+                }
+              }
+            ],
+            "text": "riven"
+          },
+          {
+            "type": "text",
+            "text": " sycamore "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "billet"
+                }
+              }
+            ],
+            "text": "billet"
+          },
+          {
+            "type": "text",
+            "text": ", 25 to 30 cm long, 6 to 8 cm across the widest face. A riven billet has a flat radial face on one side (the split face) and a curved outer face on the other. The spoon is carved with the flat face of the billet becoming the back of the spoon bowl. Source from a coppice stool, a fallen branch at least 15 cm in diameter, or windfall. Tree surgeons frequently have sycamore offcuts; a polite request usually produces more material than is needed."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "How to know the wood is green: cut across the end grain with the axe. The cut surface will darken within seconds as it oxidises. The chips from the knife will be glossy and slightly translucent, not dry and opaque. Green sycamore smells faintly sweet on a fresh cut. If the billet has been sitting indoors for more than two weeks, the outer surface may have begun to dry; a quick test push cut along the face will confirm whether the interior is still wet and soft."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need: tools"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A carving axe (a Gransfors or Hultafors pattern, or equivalent): short-handled, with a curved bit ground convex for slicing rather than splitting. A sloyd knife that will take a hair off the forearm. A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "hook-knife"
+                }
+              }
+            ],
+            "text": "hook knife"
+          },
+          {
+            "type": "text",
+            "text": " in medium radius for the bowl hollow. A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "strop"
+                }
+              }
+            ],
+            "text": "strop"
+          },
+          {
+            "type": "text",
+            "text": " for both knives. A 1,000-grit waterstone for the hook knife if the edge needs rebuilding mid-project. Raw linseed oil for the finish."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Workspace"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The axe work is done outdoors or in a workshop with a solid end-grain chopping block at knee height. The knife work can be done seated indoors or outdoors. Good light is critical for the hook-knife bowl work, where the wall thickness is hard to assess in poor light. Keep the strop on the knee or immediately to hand."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The work"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 1: Rough out the profile with the axe"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the billet flat-face up on the chopping block and pencil a rough spoon profile on it: a rounded bowl at one end, a neck taper, and a handle. The bowl is roughly oval, 10 to 12 cm long and 5 to 6 cm wide. The handle is 12 to 14 cm long. The hatchet or carving axe removes the bulk of material outside the pencil line. Work across the grain of the end of the billet to split away the corners, then along the profile edges to take the billet toward the pencilled outline. Axe work is rough; stay 1 to 2 cm outside the final line at this stage."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 2: Refine the profile with the sloyd knife"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Take the axed "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "blank"
+                }
+              }
+            ],
+            "text": "blank"
+          },
+          {
+            "type": "text",
+            "text": " and work it with the sloyd knife to the final side-view profile. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "push-cut"
+                }
+              }
+            ],
+            "text": "Push cuts"
+          },
+          {
+            "type": "text",
+            "text": " along the sides bring the outline to the pencilled line. On the bowl end, the sides of the bowl curve up gently; take cuts that follow this curve from the rim down toward the back of the bowl. The grain at this stage runs from handle tip to bowl tip; push cuts from handle toward bowl travel with the grain. Push cuts from bowl toward handle go against the grain and will tear; always cut in the correct direction."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 3: Shape the back of the bowl"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The back of the bowl is the convex outer face. Shape it with the sloyd knife to a smooth, even dome. The bowl walls should be roughly 4 to 5 mm thick at this stage; final thinning comes from the hook-knife hollow. Work the dome by taking push cuts that approach from the rim toward the centre of the bowl back, all the way around the circumference of the bowl. The goal is a smooth convex shape with no flat spots or ridges."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 4: Hollow the bowl with the hook knife"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hold the spoon bowl-up in the non-dominant hand and the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "hook-knife"
+                }
+              }
+            ],
+            "text": "hook knife"
+          },
+          {
+            "type": "text",
+            "text": " in the dominant hand with the curved blade inside the bowl. The hook knife cuts on the pull stroke: the blade travels toward the body with a rotating wrist motion that rolls the edge through the wood. Hook-knife work requires the chest-brace position: the elbow of the knife arm is braced against the chest, limiting the arc of the blade so it cannot reach the body. Begin at the centre of the bowl and work toward the rim in a series of short, controlled pulls. Aim for even wall thickness of 3 to 4 mm throughout."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The most common mistake at this stage is hollowing too deep at the centre while the rim walls stay thick. Check the wall thickness regularly by holding the spoon up to a light: even walls appear translucent without bright spots at the rim. If one wall is noticeably thicker (darker when backlit), work that wall more before continuing toward the centre."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 5: Refine the handle"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The handle is shaped last. A comfortable eating-spoon handle is oval in cross-section and slightly narrower at the neck taper than at the grip. Take push cuts along the handle edges to bring it to an oval section, then refine with the thumb-pivot cut. The handle tip can be rounded or left with a flat chamfered end, depending on preference."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 6: Dry the spoon"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Leave the finished green-carved spoon to dry for a week in a warm, ventilated place, away from direct heat or sun. A gradual drying prevents the checking (surface cracking) that fast drying can cause on uneven walls. After a week, the spoon will have lightened in colour and the wood surface will have developed a slight raised grain texture."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After drying, a light 240-grit sanding along the grain removes the raised grain fibres. Apply raw linseed oil generously, working it into the bowl interior with a cloth or fingertip. Allow to penetrate for one hour, then wipe off every trace of surface oil. Cure for two weeks before food contact. The finished spoon will be lighter in colour than it was when green and carved; sycamore dries to a near-white."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the bowl longer and wider (14 cm by 7 cm) for a serving spoon. The hook-knife hollow takes longer on a larger bowl; take this as a subsequent project after the eating spoon is complete."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add a kolrosing border around the neck taper: fine incised lines rubbed with ground coffee give the neck a decorative ring before the oil coat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Left-handed variant: the hook knife comes in right-handed and left-handed versions. A left-handed maker using a right-handed hook knife will find the blade pulling away from the natural wrist rotation rather than into it. Check the hook direction before ordering."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hand wash in warm water, dry immediately with a towel. Never dishwasher, never soak. Re-oil with raw linseed when the wood looks or feels dry, every three to six months for a spoon in daily use."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Problems in spoon-carving.",
+          "items": [
+            {
+              "symptom": "The spoon has a twist in the handle when dry",
+              "cause": "The billet had slight spiral grain that was not apparent while the wood was wet. As the wood dried, the grain lines contracted unevenly and twisted the handle.",
+              "fix": "A slight twist in the handle is functionally acceptable on an eating spoon. For future projects, check the billet for spiral grain before starting by looking along the face in good light; any twist in the visible grain lines is the warning."
+            },
+            {
+              "symptom": "The bowl wall is too thin and translucent at one point",
+              "cause": "The hook knife removed too much material in one area before the maker checked the wall thickness.",
+              "fix": "A very thin wall will not crack unless it is less than 2 mm. Leave it; the spoon is still functional. For future bowls, check the wall thickness by backlighting every few minutes of hook-knife work."
+            },
+            {
+              "symptom": "The surface tears when cut with the sloyd knife",
+              "cause": "The cut is going against the grain, or the billet has interlocked grain in the transition from bowl to handle.",
+              "fix": "At any point where the surface is tearing, try the cut from the opposite direction. If tearing persists, the grain is interlocked in that section; take very light passes and rotate the piece to find the direction of least resistance."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

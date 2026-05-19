@@ -1,0 +1,510 @@
+{
+  "slug": "riven-ash-axe-handle",
+  "title": "Riven ash axe handle",
+  "subtitle": "Replacing an axe haft from a riven ash billet on the shaving horse",
+  "excerpt": "A broken or worn axe handle can be replaced with a new haft riven from straight-grained ash and shaped on a shaving horse. A riven handle is stronger than a sawn one because the fibres run continuously along its length. The process is to split the billet to a rough profile, drawknife it to dimension, fit the eye, and wedge tight. A practical green-woodwork project with immediate use.",
+  "type": "PATTERN",
+  "categorySlug": "wood-natural-craft",
+  "subCategorySlug": "green-woodwork",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Riven ash handle-making documented in Cassell's Cyclopaedia of Mechanics vol. III (1885) and in British toolmaking craft traditions; ash haft forms consistent across centuries of documented use.",
+  "recipeTools": [
+    {
+      "slug": "froe",
+      "isOptional": true
+    },
+    {
+      "slug": "beetle-mallet",
+      "isOptional": true
+    },
+    {
+      "slug": "carving-axe",
+      "isOptional": false
+    },
+    {
+      "slug": "drawknife-straight",
+      "isOptional": false
+    },
+    {
+      "slug": "shaving-horse",
+      "isOptional": false
+    },
+    {
+      "slug": "spokeshave-flat",
+      "isOptional": true
+    },
+    {
+      "slug": "leather-strop",
+      "isOptional": false
+    },
+    {
+      "slug": "sandpaper-180",
+      "isOptional": true
+    },
+    {
+      "slug": "sandpaper-240",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "riven",
+      "term": "Riven",
+      "definition": "Split along the grain using a froe or axe. A riven haft has fibres running continuously along its length; a sawn haft may have grain that runs out at an angle, which creates a weak point."
+    },
+    {
+      "slug": "green-wood",
+      "term": "Green wood",
+      "definition": "Freshly felled wood still high in moisture content. Green ash is significantly easier to rive and shape than seasoned. A green haft fitted to the axe head will shrink slightly as it dries and can tighten in the eye naturally before a wedge is added."
+    },
+    {
+      "slug": "drawknife",
+      "term": "Drawknife",
+      "definition": "A two-handled blade pulled toward the body to shave material from green-wood stock. The primary shaping tool for bringing a riven billet to handle dimensions."
+    },
+    {
+      "slug": "eye",
+      "term": "Eye",
+      "definition": "The hole in the axe head through which the handle passes. The handle must fit the eye precisely in taper and shape for the head to be seated securely."
+    },
+    {
+      "slug": "billet",
+      "term": "Billet",
+      "definition": "A short section of timber prepared for working. The haft billet must be straight-grained and free of knots for the full length of the handle."
+    }
+  ],
+  "aliases": [
+    "axe handle replacement",
+    "ash haft riven",
+    "axe haft green woodwork",
+    "new axe handle"
+  ],
+  "techniqueSlugs": [
+    "drawknife-shaping-technique",
+    "riving-with-a-froe"
+  ],
+  "criticalTechniques": [
+    "drawknife-shaping-technique"
+  ],
+  "woodState": "green",
+  "recommendedSpecies": [
+    "ash",
+    "hickory",
+    "elm"
+  ],
+  "finishSlug": null,
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Rive, shape, and rough-fit the handle",
+      "body": "Rive the billet, drawknife to profile, rough-fit the eye. Half a day to a full day depending on experience.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 7,
+      "title": "Final fit and wedge after drying",
+      "body": "After a week of initial drying, the handle may have tightened or loosened in the eye; final trim and drive the head to its final seat, then wedge.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 14,
+      "title": "Handle seasoned: ready for use",
+      "body": "Two weeks of drying at the correct fit. The axe is ready for use.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": false
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "riven"
+                }
+              }
+            ],
+            "text": "riven"
+          },
+          {
+            "type": "text",
+            "text": " ash haft is stronger than any bought sawn replacement. The fibres run along the full length without running out at an angle, which is what a sawn haft often produces when the plank was not cut perfectly along the grain. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "green-wood"
+                }
+              }
+            ],
+            "text": "Green"
+          },
+          {
+            "type": "text",
+            "text": " ash is the traditional material; it rives cleanly, shapes quickly on the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "drawknife"
+                }
+              }
+            ],
+            "text": "drawknife"
+          },
+          {
+            "type": "text",
+            "text": ", and tightens in the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "eye"
+                }
+              }
+            ],
+            "text": "eye"
+          },
+          {
+            "type": "text",
+            "text": " as it dries."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need: wood"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A green ash "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "billet"
+                }
+              }
+            ],
+            "text": "billet"
+          },
+          {
+            "type": "text",
+            "text": " at least 10 cm longer than the finished haft, straight-grained, and free of knots for the whole length. Typical axes need a haft of 50 to 70 cm; hatchets need 35 to 45 cm. The billet should be riven from a straight section of ash trunk or large branch with a minimum diameter of 8 cm. A riven billet from a quarter of the trunk round is ideal. Hickory is an excellent alternative; elm will also do but is harder to rive."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Before starting: trace the old handle"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the broken handle is still accessible, trace its profile on card to use as a template. Measure the length from eye to grip end, the diameter at the grip, the swell of the knob at the grip end if there is one, and crucially, the exact shape of the section that passes through the eye. The eye fit is the most critical dimension in the whole process."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The work"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 1: Rive the billet to a rough handle section"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If starting from a full trunk section, rive it with froe and beetle to produce a quarter section, then rive the quarter to a piece slightly oversize for the handle profile. The billet should be about 3 to 4 cm square in section at the thickest point and slightly oversize in length. Use the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "techniqueLink",
+                "attrs": {
+                  "techniqueSlug": "riving-with-a-froe",
+                  "label": "froe technique"
+                }
+              }
+            ],
+            "text": "froe technique"
+          },
+          {
+            "type": "text",
+            "text": " for clean splits that follow the grain."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 2: Drawknife the rough profile"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Clamp the billet on the shaving horse and use the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "techniqueLink",
+                "attrs": {
+                  "techniqueSlug": "drawknife-shaping-technique",
+                  "label": "drawknife"
+                }
+              }
+            ],
+            "text": "drawknife"
+          },
+          {
+            "type": "text",
+            "text": " to bring it to the handle profile using the card template as a guide. Work from the eye end toward the grip, checking the profile against the template every few passes. The eye section is worked last and to closer tolerances; the grip section can be left slightly oversize at this stage."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 3: Fit the eye"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The eye section of the haft must match the eye of the axe head in cross-section shape (usually oval) and taper. Offer the handle to the eye frequently during shaping. The handle should be able to enter the eye from below to about half depth when pushed by hand; it must not drop through freely, and it must not be so tight that it cannot be driven at all."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove material from the high spots with the spokeshave or sloyd knife in fine passes. A piece of chalk rubbed on the eye will transfer to the high spots on the handle when offered up; remove those spots. Repeat until the handle enters the eye to within 5 mm of the shoulder line."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 4: Drive and wedge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Drive the axe head onto the handle by tapping the grip end on a solid surface; the head's weight will drive it onto the taper. Check depth: the head should be seated with the shoulder flush against the top of the eye. If the head is not fully seated, saw a kerf into the top of the handle 2 to 3 cm deep, in line with the axe bit. Drive a hardwood or steel wedge into the kerf; the wedge expands the handle inside the eye and locks the head in place."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 5: Dry and test"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Leave the re-hafted axe to dry for seven to fourteen days. The green ash in the eye section will shrink onto the eye walls as it dries, tightening the fit. After drying, test by tapping the butt on the ground: no movement should be felt. If the head moves, drive the wedge further or add a second wedge crosswise."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing the handle"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lightly sand the grip section with 180 and 240 grit if a smooth surface is wanted. Apply a thin coat of raw linseed oil to the handle only (not the head), wipe off after one hour. This protects the wood from drying out and cracking; re-apply annually."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Apply the same process to a hatchet, adze, or froe: any tool with a mortised head can be re-hafted by the same method. The eye shape and taper vary; trace the original carefully."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Use seasoned ash if green is not available: the process is identical but the wood is harder and the drawknife work will take longer. The eye fit will not tighten as the wood dries, so the wedge carries all the securing force."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Problems with eye fit and head security.",
+          "items": [
+            {
+              "symptom": "The handle will not enter the eye at all",
+              "cause": "The eye section is oversize. The handle was not reduced enough during fitting.",
+              "fix": "Mark the contact points with chalk transferred from the eye and remove material from those spots with the spokeshave. Offer up and repeat."
+            },
+            {
+              "symptom": "The head tilts to one side when driven on",
+              "cause": "The eye section is not symmetric; one side is thicker than the other.",
+              "fix": "Remove the head and sight along the handle from the eye end. Identify which face is thicker and take corrective passes on that face until the eye section is symmetric in cross-section."
+            },
+            {
+              "symptom": "The head loosens after a week of use",
+              "cause": "The initial dry-tightening was insufficient or the wedge was not fully driven.",
+              "fix": "Remove the head, check the handle has shrunk into the eye evenly, and drive an additional wedge crosswise to the first."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
