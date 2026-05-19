@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { TutorialCard } from '@/components/public/tutorial-card'
 import { mediaSrcSet } from '@/lib/media'
-import { BookmarkRemove } from './bookmark-remove'
+import { BookmarkControls } from './bookmark-controls'
 
 export const dynamic = 'force-dynamic'
 
@@ -30,14 +30,23 @@ export default async function MeBookmarksPage() {
     },
   })
 
+  const publicCount = bookmarks.filter((b) => b.isPublic).length
+  const privateCount = bookmarks.length - publicCount
+
   return (
     <section>
-      <span className="me-section-label">Saved</span>
-      <h2 className="me-section-title">Your bookmarks</h2>
+      <span className="me-section-label">Make it list</span>
+      <h2 className="me-section-title">Tutorials you want to make</h2>
+      {bookmarks.length > 0 && (
+        <p className="me-section-description">
+          {privateCount} private · {publicCount} public on your Maker profile.
+          Tap a bookmark&apos;s label to flip its visibility.
+        </p>
+      )}
       {bookmarks.length === 0 ? (
         <p className="me-empty">
-          Nothing saved yet. The bookmark icon on any tutorial keeps it here
-          for later.
+          Your Make it list is empty. Hit &ldquo;Add to Make it&rdquo; on any
+          tutorial to keep it here.
         </p>
       ) : (
         <div className="me-grid">
@@ -61,7 +70,11 @@ export default async function MeBookmarksPage() {
                     projectProgressPercent: null,
                   }}
                 />
-                <BookmarkRemove tutorialId={b.tutorial.id} />
+                <BookmarkControls
+                  bookmarkId={b.id}
+                  tutorialId={b.tutorial.id}
+                  initialIsPublic={b.isPublic}
+                />
               </div>
             )
           })}

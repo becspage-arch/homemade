@@ -1,9 +1,11 @@
+import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { SignOutButton } from '@clerk/nextjs'
 import { prisma } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { SettingsForm } from './settings-form'
 import { PushSettings } from './push-settings'
+import { MakerProfileSettings } from './maker-profile-settings'
 
 export const dynamic = 'force-dynamic'
 
@@ -31,6 +33,31 @@ export default async function MeSettingsPage() {
           initialBeginnerMode={user.beginnerMode}
           initialHandle={user.displayHandle}
           initialBio={user.bio}
+        />
+      </section>
+
+      <section>
+        <span className="me-section-label">Maker profile</span>
+        <h2 className="me-section-title">Your public page</h2>
+        <p className="me-section-description">
+          Your Maker profile lives at{' '}
+          {user.displayHandle ? (
+            <>
+              <Link href={`/m/${user.displayHandle}`} className="me-nav-link">
+                /m/{user.displayHandle}
+              </Link>
+            </>
+          ) : (
+            <em>—</em>
+          )}
+          . It shows your Made it log, your public Make it list, and (if
+          you&apos;re a Creator) your published tutorials. Off by default —
+          flip it on when you want others to see your work.
+        </p>
+        <MakerProfileSettings
+          initialIsPublic={user.isPublicMakerProfile}
+          initialHeaderMediaId={user.makerHeaderImageId}
+          handle={user.displayHandle}
         />
       </section>
 

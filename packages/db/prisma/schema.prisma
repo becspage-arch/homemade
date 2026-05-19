@@ -98,6 +98,18 @@ model User {
   pushNotificationsEnabled Boolean @default(false)
   cookingModeAutoEnable    Boolean @default(false)
 
+  // Maker profile (Session A — language rebrand + public profile). Every user
+  // is a Maker; `isPublicMakerProfile` opts the account into the public
+  // `/m/{handle}` page. `displayHandle` (above) is reused as the URL handle —
+  // it predates the rebrand and is already unique-indexed. `bio` (above) is
+  // the public profile bio. `makerHeaderImageId` is an optional cover image
+  // (Media row). `makerJoinedAt` is the public "Maker since" stamp; defaults
+  // to createdAt at backfill and at row insert.
+  isPublicMakerProfile Boolean   @default(false)
+  makerHeaderImageId   String?
+  makerHeaderImage     Media?    @relation("UserMakerHeader", fields: [makerHeaderImageId], references: [id])
+  makerJoinedAt        DateTime?
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -153,6 +165,7 @@ model User {
   @@index([isCreator])
   @@index([onboardedAt])
   @@index([lastSeenAt])
+  @@index([isPublicMakerProfile])
 }
 
 enum ExperienceLevel {
@@ -907,8 +920,9 @@ model Media {
   verificationReason String?
   verifiedAt         DateTime?
 
-  tutorialsHero Tutorial[]
-  ugcPhotos     UGCPhoto[]
+  tutorialsHero    Tutorial[]
+  ugcPhotos        UGCPhoto[]
+  makerHeaderUsers User[]     @relation("UserMakerHeader")
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -952,6 +966,11 @@ model Bookmark {
   tutorialId String
   tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
 
+  // Maker profile (Session A). Per-bookmark public-on-profile toggle; default
+  // false. When true, this bookmark renders on the Maker's public Make it list
+  // at /m/{handle} (provided the Maker has isPublicMakerProfile=true).
+  isPublic Boolean @default(false)
+
   createdAt DateTime @default(now())
 
   @@unique([userId, tutorialId])
@@ -989,6 +1008,24 @@ model UserProject {
   nextScheduledAt         DateTime?
   scheduledStepsCompleted Int[]     @default([])
 
+  // Maker profile (Session A) — the Made it log. `isPublic` opts a single
+  // project into the public Maker profile at /m/{handle}/made/{projectId};
+  // defaults false so private/legacy rows never leak. `publishedAt` is set
+  // the first time isPublic flips true (and never cleared). `publicNote` is
+  // separate from `notes` (private) so the Maker can write commentary for
+  // public view without leaking private notes. `whatIUsed` is a JSON array
+  // of { name, note?, productId?, productUrl? } — productId/productUrl are
+  // reserved for Session K (marketplace) and stay null for now. `heroPhotoId`
+  // overrides which UGCPhoto displays as the hero on the Made it detail page;
+  // null = pick the most recent approved UGCPhoto, or fall back to tutorial
+  // hero.
+  isPublic    Boolean   @default(false)
+  publicNote  String?
+  whatIUsed   Json?
+  publishedAt DateTime?
+  heroPhotoId String?
+  heroPhoto   UGCPhoto? @relation("UserProjectHeroPhoto", fields: [heroPhotoId], references: [id], onDelete: SetNull)
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -996,6 +1033,7 @@ model UserProject {
   @@index([userId])
   @@index([status])
   @@index([nextScheduledAt])
+  @@index([isPublic, publishedAt])
 }
 
 enum UserProjectStatus {
@@ -1102,6 +1140,11 @@ model UGCPhoto {
   moderatedAt   DateTime?
   moderatedById String?
   moderatedBy   User?     @relation("PhotoModerator", fields: [moderatedById], references: [id])
+
+  // Back-relation: UserProjects that have picked this photo as their public
+  // Made it hero. SET NULL on delete so deleting a moderated photo doesn't
+  // cascade the project.
+  pickedAsHeroBy UserProject[] @relation("UserProjectHeroPhoto")
 
   createdAt DateTime @default(now())
 

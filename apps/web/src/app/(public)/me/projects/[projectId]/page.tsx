@@ -1,12 +1,14 @@
 import Link from 'next/link'
 import { notFound, redirect } from 'next/navigation'
-import { prisma, UserProjectStatus } from '@homemade/db'
+import { prisma, UGCPhotoStatus, UserProjectStatus } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { harvestSupplies } from '@/lib/supplies'
+import { mediaUrl } from '@/lib/media'
 import type { TipTapNode } from '@/components/public/tutorial-content/types'
 import { ProjectSupplies } from './project-supplies'
 import { ProjectNotes } from './project-notes'
 import { ProjectStatusControls } from './project-status-controls'
+import { ProjectPublish } from './project-publish'
 
 export const dynamic = 'force-dynamic'
 
@@ -21,9 +23,29 @@ const STATUS_PILL_CLASS: Record<UserProjectStatus, string> = {
 }
 
 const STATUS_LABEL: Record<UserProjectStatus, string> = {
-  IN_PROGRESS: 'In progress',
-  COMPLETED: 'Completed',
+  IN_PROGRESS: 'Making',
+  COMPLETED: 'Made it',
   ABANDONED: 'Abandoned',
+}
+
+interface WhatIUsedRow {
+  name: string
+  note?: string | null
+}
+
+function readWhatIUsedRows(raw: unknown): WhatIUsedRow[] {
+  if (!Array.isArray(raw)) return []
+  const out: WhatIUsedRow[] = []
+  for (const item of raw) {
+    if (!item || typeof item !== 'object') continue
+    const r = item as Record<string, unknown>
+    if (typeof r.name !== 'string') continue
+    out.push({
+      name: r.name,
+      note: typeof r.note === 'string' ? r.note : null,
+    })
+  }
+  return out
 }
 
 export default async function MeProjectDetailPage({ params }: PageProps) {
@@ -36,6 +58,7 @@ export default async function MeProjectDetailPage({ params }: PageProps) {
     include: {
       tutorial: {
         select: {
+          id: true,
           slug: true,
           title: true,
           subtitle: true,
@@ -49,10 +72,34 @@ export default async function MeProjectDetailPage({ params }: PageProps) {
   })
   if (!project) notFound()
 
+  // Approved UGC photos this Maker has uploaded for this tutorial — used as
+  // hero-photo options on the publish form.
+  const ownedPhotos = await prisma.uGCPhoto.findMany({
+    where: {
+      userId: user.id,
+      tutorialId: project.tutorial.id,
+      status: UGCPhotoStatus.APPROVED,
+    },
+    orderBy: { createdAt: 'desc' },
+    select: {
+      id: true,
+      caption: true,
+      media: { select: { cloudflareId: true, r2Key: true } },
+    },
+  })
+
   const supplies = harvestSupplies(project.tutorial.body as TipTapNode | null)
   const checked = Array.isArray(project.suppliesChecked)
     ? (project.suppliesChecked as string[]).filter((s) => typeof s === 'string')
     : []
+
+  const initialWhatIUsed: WhatIUsedRow[] = readWhatIUsedRows(project.whatIUsed)
+
+  const photoOptions = ownedPhotos.map((p) => ({
+    id: p.id,
+    thumbUrl: mediaUrl(p.media, 'thumbnail'),
+    caption: p.caption ?? null,
+  }))
 
   return (
     <section className="me-project-page">
@@ -97,6 +144,27 @@ export default async function MeProjectDetailPage({ params }: PageProps) {
             you type.
           </p>
           <ProjectNotes projectId={project.id} initialNotes={project.notes} />
+        </div>
+
+        <div style={{ marginTop: 32 }}>
+          <span className="me-section-label">Made it</span>
+          <h3 className="me-section-title" style={{ fontSize: 18 }}>
+            On your Maker profile
+          </h3>
+          <p className="me-section-description">
+            Add a note, list what you used, and pick a hero photo. Toggle the
+            switch to publish — your Made it page goes live on your public
+            Maker profile.
+          </p>
+          <ProjectPublish
+            projectId={project.id}
+            initialIsPublic={project.isPublic}
+            initialPublicNote={project.publicNote}
+            initialWhatIUsed={initialWhatIUsed}
+            initialHeroPhotoId={project.heroPhotoId}
+            ownerHandle={user.displayHandle}
+            photos={photoOptions}
+          />
         </div>
       </div>
 

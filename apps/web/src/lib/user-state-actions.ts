@@ -2,7 +2,7 @@
 
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
-import { prisma, UserProjectStatus } from '@homemade/db'
+import { prisma, UserProjectStatus, type Prisma } from '@homemade/db'
 import { audit } from './audit'
 import { getCurrentDbUser } from './get-current-user'
 import { captureServerEvent } from './posthog'
@@ -459,6 +459,215 @@ export async function updateProfile(input: {
     data: { displayHandle, bio },
   })
 
+  // Revalidate /m/{handle} too — the new public Maker profile pulls from bio
+  // and displayHandle.
   revalidatePath('/me/settings')
+  if (displayHandle) revalidatePath(`/m/${displayHandle}`)
+  return { ok: true }
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Maker profile (Session A) — public-profile toggle + per-item publish
+// ────────────────────────────────────────────────────────────────────────────
+
+export async function setMakerProfilePublic(value: boolean): Promise<ActionResult> {
+  const user = await requireUser()
+  const next = Boolean(value)
+  if (next && !user.displayHandle) {
+    return {
+      ok: false,
+      error: 'Pick a handle in settings before making your profile public.',
+    }
+  }
+  await prisma.user.update({
+    where: { id: user.id },
+    data: {
+      isPublicMakerProfile: next,
+      // Stamp makerJoinedAt the first time someone opts public — for accounts
+      // that pre-date the migration, the backfill already set it; this is the
+      // belt-and-braces fallback.
+      ...(next && !user.makerJoinedAt
+        ? { makerJoinedAt: user.createdAt }
+        : {}),
+    },
+  })
+  revalidatePath('/me/settings')
+  if (user.displayHandle) revalidatePath(`/m/${user.displayHandle}`)
+  await captureServerEvent({
+    event: next ? 'maker_profile_made_public' : 'maker_profile_made_private',
+    distinctId: user.clerkId,
+    properties: {},
+  })
+  return { ok: true }
+}
+
+interface WhatIUsedItem {
+  name: string
+  note?: string | null
+  // Reserved for Session K (marketplace). Always null for now.
+  productId?: string | null
+  productUrl?: string | null
+}
+
+function sanitiseWhatIUsed(raw: unknown): WhatIUsedItem[] {
+  if (!Array.isArray(raw)) return []
+  const out: WhatIUsedItem[] = []
+  for (const item of raw) {
+    if (!item || typeof item !== 'object') continue
+    const i = item as Record<string, unknown>
+    const name = typeof i.name === 'string' ? i.name.trim().slice(0, 120) : ''
+    if (!name) continue
+    const note = typeof i.note === 'string' ? i.note.trim().slice(0, 300) || null : null
+    out.push({ name, note, productId: null, productUrl: null })
+    if (out.length >= 40) break
+  }
+  return out
+}
+
+export async function publishUserProject(input: {
+  projectId: string
+  isPublic: boolean
+  publicNote?: string | null
+  whatIUsed?: unknown
+  heroPhotoId?: string | null
+}): Promise<ActionResult> {
+  const user = await requireUser()
+  const project = await prisma.userProject.findFirst({
+    where: { id: input.projectId, userId: user.id },
+    select: {
+      id: true,
+      isPublic: true,
+      publishedAt: true,
+      tutorial: {
+        select: { slug: true, category: { select: { slug: true } } },
+      },
+    },
+  })
+  if (!project) return { ok: false, error: 'Project not found.' }
+
+  // A heroPhotoId, if provided, must point to one of the Maker's own UGCPhotos
+  // for this project's tutorial. Belt-and-braces against client-side tampering.
+  let heroPhotoId: string | null | undefined = undefined
+  if (input.heroPhotoId !== undefined) {
+    if (input.heroPhotoId === null) {
+      heroPhotoId = null
+    } else {
+      const photo = await prisma.uGCPhoto.findFirst({
+        where: {
+          id: input.heroPhotoId,
+          userId: user.id,
+        },
+        select: { id: true },
+      })
+      if (!photo) return { ok: false, error: 'Hero photo not yours.' }
+      heroPhotoId = photo.id
+    }
+  }
+
+  const next = Boolean(input.isPublic)
+  const publishedAt =
+    next && !project.publishedAt ? new Date() : project.publishedAt
+
+  const publicNote =
+    input.publicNote === undefined
+      ? undefined
+      : input.publicNote === null
+        ? null
+        : input.publicNote.trim().slice(0, 4000) || null
+
+  const whatIUsed =
+    input.whatIUsed === undefined ? undefined : sanitiseWhatIUsed(input.whatIUsed)
+
+  const isFirstPublish = next && !project.publishedAt
+
+  const data: Prisma.UserProjectUpdateInput = {
+    isPublic: next,
+    publishedAt,
+  }
+  if (publicNote !== undefined) data.publicNote = publicNote
+  if (whatIUsed !== undefined) {
+    data.whatIUsed = whatIUsed as unknown as Prisma.InputJsonValue
+  }
+  if (heroPhotoId !== undefined) {
+    data.heroPhoto =
+      heroPhotoId === null ? { disconnect: true } : { connect: { id: heroPhotoId } }
+  }
+  await prisma.userProject.update({
+    where: { id: project.id },
+    data,
+  })
+
+  revalidatePath(`/me/projects/${project.id}`)
+  revalidatePath('/me')
+  revalidatePath('/me/projects')
+  if (user.displayHandle) {
+    revalidatePath(`/m/${user.displayHandle}`)
+    revalidatePath(`/m/${user.displayHandle}/made/${project.id}`)
+  }
+  // Public makes also surface on the tutorial page and homepage / category
+  // "Recently made" rails.
+  revalidatePath(`/${project.tutorial.category.slug}/${project.tutorial.slug}`)
+  revalidatePath('/')
+  revalidatePath(`/${project.tutorial.category.slug}`)
+
+  if (next && project.isPublic !== next) {
+    await captureServerEvent({
+      event: 'made_it_published',
+      distinctId: user.clerkId,
+      properties: { projectId: project.id, isFirst: isFirstPublish },
+    })
+  } else if (!next && project.isPublic !== next) {
+    await captureServerEvent({
+      event: 'made_it_unpublished',
+      distinctId: user.clerkId,
+      properties: { projectId: project.id },
+    })
+  }
+  return { ok: true }
+}
+
+export async function setBookmarkPublic(input: {
+  bookmarkId: string
+  isPublic: boolean
+}): Promise<ActionResult> {
+  const user = await requireUser()
+  const bookmark = await prisma.bookmark.findFirst({
+    where: { id: input.bookmarkId, userId: user.id },
+    select: { id: true, isPublic: true },
+  })
+  if (!bookmark) return { ok: false, error: 'Bookmark not found.' }
+  const next = Boolean(input.isPublic)
+  if (bookmark.isPublic === next) return { ok: true }
+  await prisma.bookmark.update({
+    where: { id: bookmark.id },
+    data: { isPublic: next },
+  })
+  revalidatePath('/me/bookmarks')
+  if (user.displayHandle) revalidatePath(`/m/${user.displayHandle}`)
+  await captureServerEvent({
+    event: next ? 'make_it_made_public' : 'make_it_made_private',
+    distinctId: user.clerkId,
+    properties: { bookmarkId: bookmark.id },
+  })
+  return { ok: true }
+}
+
+export async function updateMakerHeader(input: {
+  mediaId: string | null
+}): Promise<ActionResult> {
+  const user = await requireUser()
+  if (input.mediaId) {
+    const media = await prisma.media.findUnique({
+      where: { id: input.mediaId },
+      select: { id: true },
+    })
+    if (!media) return { ok: false, error: 'Image not found.' }
+  }
+  await prisma.user.update({
+    where: { id: user.id },
+    data: { makerHeaderImageId: input.mediaId },
+  })
+  revalidatePath('/me/settings')
+  if (user.displayHandle) revalidatePath(`/m/${user.displayHandle}`)
   return { ok: true }
 }

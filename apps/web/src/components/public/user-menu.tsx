@@ -60,7 +60,7 @@ export function UserMenu({ initial, greeting }: UserMenuProps) {
             className="user-menu-item"
             onClick={() => setOpen(false)}
           >
-            My projects
+            Making
           </Link>
           <Link
             href="/me/bookmarks"
@@ -68,7 +68,7 @@ export function UserMenu({ initial, greeting }: UserMenuProps) {
             className="user-menu-item"
             onClick={() => setOpen(false)}
           >
-            My bookmarks
+            Make it list
           </Link>
           <Link
             href="/me/settings"

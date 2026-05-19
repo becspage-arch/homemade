@@ -20,8 +20,8 @@ const STATUS_PILL_CLASS: Record<UserProjectStatus, string> = {
 }
 
 const STATUS_LABEL: Record<UserProjectStatus, string> = {
-  IN_PROGRESS: 'In progress',
-  COMPLETED: 'Completed',
+  IN_PROGRESS: 'Making',
+  COMPLETED: 'Made it',
   ABANDONED: 'Abandoned',
 }
 
@@ -34,9 +34,9 @@ interface StatusFilterDef {
 
 const STATUS_FILTERS: StatusFilterDef[] = [
   { value: 'all', label: 'All' },
-  { value: 'in-progress', label: 'In progress' },
-  { value: 'completed', label: 'Completed' },
-  { value: 'saved', label: 'Saved' },
+  { value: 'in-progress', label: 'Making' },
+  { value: 'completed', label: 'Made it' },
+  { value: 'saved', label: 'Make it list' },
   { value: 'abandoned', label: 'Abandoned' },
 ]
 
@@ -200,7 +200,7 @@ export default async function MeProjectsPage({ searchParams }: PageProps) {
 
   return (
     <section>
-      <span className="me-section-label">Projects</span>
+      <span className="me-section-label">Making</span>
       <h2 className="me-section-title">What you&apos;re making</h2>
 
       <nav className="me-filters" aria-label="Filter projects by status">
@@ -310,7 +310,7 @@ export default async function MeProjectsPage({ searchParams }: PageProps) {
                 </span>
                 <span className="me-project-title">{item.tutorial.title}</span>
                 <span className="me-project-meta">
-                  <span className="me-status-pill">Saved</span>
+                  <span className="me-status-pill">On Make it list</span>
                   <span>· {formatShortDate(item.createdAt)}</span>
                 </span>
               </Link>
@@ -354,15 +354,15 @@ function emptyCopy(filter: StatusFilter, category: string | null): string {
   const cat = category ? ' in this category' : ''
   switch (filter) {
     case 'in-progress':
-      return `No projects in progress${cat}.`
+      return `Nothing being made${cat} right now.`
     case 'completed':
-      return `No completed projects${cat}.`
+      return `Nothing in your Made it log${cat} yet.`
     case 'saved':
-      return `Nothing saved-but-not-started${cat}.`
+      return `Nothing on your Make it list${cat} yet.`
     case 'abandoned':
-      return `No abandoned projects${cat}.`
+      return `No abandoned makes${cat}.`
     default:
-      return `Nothing here yet${cat}. Save tutorials with the bookmark icon, or hit "Start making" on any tutorial to begin a project.`
+      return `Nothing here yet${cat}. Add tutorials to your Make it list, or hit "Start making" on any tutorial to begin.`
   }
 }
 

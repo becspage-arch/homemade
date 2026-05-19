@@ -34,7 +34,89 @@ function clampLength(value: string, max: number): string {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
-// Creator application — submit
+// Creator application — submit-from-profile (Session A rewire)
+// ────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Session A — the Maker profile IS the creator application. This action
+ * writes (or refreshes) a CreatorProfile row in APPLIED state for the
+ * current Maker. No form fields: the reviewer reads /m/{handle} directly.
+ *
+ * Validates the readiness gate server-side: handle + bio + public-profile
+ * are required before the row can be created. Specialty + bio still get
+ * populated on the CreatorProfile row from the User.bio so the existing
+ * admin review surface keeps working without a schema change.
+ */
+export async function submitCreatorApplicationFromProfile(): Promise<ActionResult> {
+  const user = await getCurrentDbUser()
+  if (!user) return { ok: false, error: 'Sign in to apply.' }
+  if (user.isSuspended) return { ok: false, error: 'Suspended accounts can’t apply.' }
+
+  if (!user.displayHandle) {
+    return { ok: false, error: 'Pick a Maker handle first.' }
+  }
+  if (!user.bio || user.bio.trim().length < 20) {
+    return { ok: false, error: 'Add a bio in settings before applying.' }
+  }
+  if (!user.isPublicMakerProfile) {
+    return { ok: false, error: 'Make your profile public so reviewers can read it.' }
+  }
+
+  const existing = await prisma.creatorProfile.findUnique({ where: { userId: user.id } })
+  if (existing && existing.applicationStatus === CreatorApplicationStatus.APPLIED) {
+    return { ok: false, error: 'Your application is already in review.' }
+  }
+  if (existing && existing.applicationStatus === CreatorApplicationStatus.APPROVED) {
+    return { ok: false, error: 'You’re already a creator.' }
+  }
+
+  // CreatorProfile.bio + specialty are still required by the schema (Phase 6
+  // pre-dates the rebrand). We copy User.bio over and use a sensible
+  // placeholder for specialty — the admin reviewer reads the Maker profile,
+  // not the form fields, so the values are mostly for the admin list view.
+  const bio = user.bio.trim().slice(0, 4000)
+  const specialty =
+    existing?.specialty?.trim() || 'See Maker profile for what they make.'
+
+  const data = {
+    bio,
+    specialty,
+    applicationStatus: CreatorApplicationStatus.APPLIED,
+    appliedAt: new Date(),
+    decidedAt: null,
+    decidedById: null,
+    rejectionReason: null,
+  }
+
+  if (existing) {
+    await prisma.creatorProfile.update({ where: { id: existing.id }, data })
+  } else {
+    await prisma.creatorProfile.create({
+      data: { ...data, userId: user.id },
+    })
+  }
+
+  await audit({
+    actorId: user.id,
+    action: 'creator.application_submitted',
+    resource: `User:${user.id}`,
+    metadata: { fromMakerProfile: true, handle: user.displayHandle },
+  })
+
+  await captureServerEvent({
+    event: 'creator_application_submitted',
+    distinctId: user.clerkId,
+    properties: { fromMakerProfile: true },
+  })
+
+  revalidatePath('/me/creator')
+  revalidatePath('/me/creator/apply')
+  revalidatePath('/admin/creators')
+  return { ok: true }
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Creator application — submit (legacy form path — kept for compat)
 // ────────────────────────────────────────────────────────────────────────────
 
 interface CreatorApplicationInput {

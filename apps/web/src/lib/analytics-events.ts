@@ -58,6 +58,14 @@ export type PosthogEvent =
   | 'creator_tutorial_returned_for_edits'
   | 'creator_first_publish'
   | 'creator_profile_viewed'
+  // Maker profile (Session A)
+  | 'maker_profile_viewed'
+  | 'maker_profile_made_public'
+  | 'maker_profile_made_private'
+  | 'made_it_published'
+  | 'made_it_unpublished'
+  | 'make_it_made_public'
+  | 'make_it_made_private'
   // Pattern testing
   | 'pattern_test_created'
   | 'pattern_test_recruiting_opened'
@@ -131,6 +139,13 @@ const EVENT_CATEGORIES: Record<string, string> = {
   creator_tutorial_returned_for_edits: 'creator',
   creator_first_publish: 'creator',
   creator_profile_viewed: 'creator',
+  maker_profile_viewed: 'maker',
+  maker_profile_made_public: 'maker',
+  maker_profile_made_private: 'maker',
+  made_it_published: 'maker',
+  made_it_unpublished: 'maker',
+  make_it_made_public: 'maker',
+  make_it_made_private: 'maker',
   pattern_test_created: 'creator',
   pattern_test_recruiting_opened: 'creator',
   pattern_test_completed: 'creator',

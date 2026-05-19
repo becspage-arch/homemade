@@ -57,7 +57,7 @@ const TABS: Tab[] = [
   },
   {
     href: '/me/bookmarks',
-    label: 'Saved',
+    label: 'Make it',
     matchPrefix: ['/me/bookmarks', '/me/projects'],
     icon: (active) => (
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden>
@@ -97,7 +97,7 @@ const TABS: Tab[] = [
   },
   {
     href: '/me',
-    label: 'Account',
+    label: 'Maker',
     matchPrefix: ['/me$', '/me/settings', '/me/reviews', '/me/photos', '/me/questions', '/me/data-rights', '/me/creator', '/me/tester'],
     icon: (active) => (
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden>

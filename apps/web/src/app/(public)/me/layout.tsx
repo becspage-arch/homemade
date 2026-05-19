@@ -16,8 +16,8 @@ interface NavItem {
 
 const BASE_NAV: NavItem[] = [
   { href: '/me', label: 'Overview' },
-  { href: '/me/projects', label: 'Projects' },
-  { href: '/me/bookmarks', label: 'Bookmarks' },
+  { href: '/me/projects', label: 'Making' },
+  { href: '/me/bookmarks', label: 'Make it list' },
   { href: '/me/reviews', label: 'Reviews' },
   { href: '/me/photos', label: 'Photos' },
   { href: '/me/questions', label: 'Questions' },

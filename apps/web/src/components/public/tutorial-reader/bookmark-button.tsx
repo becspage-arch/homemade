@@ -47,7 +47,11 @@ export function BookmarkButton({
       onClick={onClick}
       disabled={pending}
       aria-pressed={bookmarked}
-      aria-label={bookmarked ? 'Remove bookmark' : 'Bookmark this tutorial'}
+      aria-label={
+        bookmarked
+          ? 'Remove from your Make it list'
+          : 'Add to your Make it list'
+      }
     >
       <svg viewBox="0 0 16 20" width="14" height="18" aria-hidden="true">
         <path
@@ -58,7 +62,7 @@ export function BookmarkButton({
           strokeLinejoin="round"
         />
       </svg>
-      <span>{bookmarked ? 'Saved' : 'Save'}</span>
+      <span>{bookmarked ? 'On Make it list' : 'Add to Make it'}</span>
     </button>
   )
 }

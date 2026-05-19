@@ -35,7 +35,7 @@ export function ProjectStatusControls({
           disabled={pending}
           onClick={() => run(() => markProjectComplete(projectId))}
         >
-          Mark complete
+          Log as Made it
         </button>
         <button
           type="button"

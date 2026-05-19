@@ -31,6 +31,7 @@ import { QaBlock } from '@/components/public/ugc/qa-block'
 import { ErrataLink } from '@/components/public/ugc/errata-link'
 import { CookingModeShell } from '@/components/public/cooking-mode/cooking-mode-shell'
 import { CookingModeToggle } from '@/components/public/cooking-mode/cooking-mode-toggle'
+import { MadeByMakers } from '@/components/public/tutorial-reader/made-by-makers'
 
 import '@/components/public/tutorial-reader/tutorial-reader.css'
 import '@/components/public/ugc/ugc.css'
@@ -181,6 +182,51 @@ export default async function TutorialPage({ params }: PageProps) {
   const inProgressId =
     project?.status === UserProjectStatus.IN_PROGRESS ? project.id : null
   const supplies = inProgressId ? harvestSupplies(body) : []
+
+  // "Made by Homemade Makers" — public UserProjects from Makers with public
+  // profiles, capped at 6 + a count of any beyond. This is the E-E-A-T
+  // signal mentioned in the Master Plan SEO section.
+  const MADE_BY_LIMIT = 6
+  const [madeByTiles, madeByTotal] = await Promise.all([
+    prisma.userProject.findMany({
+      where: {
+        tutorialId: tutorial.id,
+        isPublic: true,
+        user: {
+          isPublicMakerProfile: true,
+          displayHandle: { not: null },
+        },
+      },
+      orderBy: [{ publishedAt: 'desc' }, { startedAt: 'desc' }],
+      take: MADE_BY_LIMIT,
+      select: {
+        id: true,
+        publishedAt: true,
+        heroPhoto: {
+          select: { media: { select: { cloudflareId: true, r2Key: true } } },
+        },
+        user: { select: { name: true, displayHandle: true } },
+      },
+    }),
+    prisma.userProject.count({
+      where: {
+        tutorialId: tutorial.id,
+        isPublic: true,
+        user: {
+          isPublicMakerProfile: true,
+          displayHandle: { not: null },
+        },
+      },
+    }),
+  ])
+
+  const madeByMakers = madeByTiles.map((t) => ({
+    projectId: t.id,
+    publishedAt: t.publishedAt,
+    heroSource: t.heroPhoto?.media ?? null,
+    makerName: t.user.name ?? t.user.displayHandle ?? 'A maker',
+    makerHandle: t.user.displayHandle!,
+  }))
   const initialChecked =
     project && Array.isArray(project.suppliesChecked)
       ? (project.suppliesChecked as string[]).filter((s) => typeof s === 'string')
@@ -252,6 +298,13 @@ export default async function TutorialPage({ params }: PageProps) {
           subCategoryName={tutorial.subCategory?.name ?? null}
         />
       )}
+
+      <MadeByMakers
+        tiles={madeByMakers}
+        totalCount={madeByTotal}
+        tutorialCategorySlug={tutorial.category.slug}
+        tutorialSlug={tutorialSlug}
+      />
 
       <PhotosBlock
         tutorialId={tutorial.id}

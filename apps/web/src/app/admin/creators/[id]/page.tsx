@@ -23,6 +23,7 @@ export default async function CreatorApplicationPage({ params }: PageProps) {
           displayHandle: true,
           isCreator: true,
           isSuspended: true,
+          isPublicMakerProfile: true,
           createdAt: true,
           _count: {
             select: {
@@ -79,6 +80,52 @@ export default async function CreatorApplicationPage({ params }: PageProps) {
         <Link href="/admin/creators" className="admin-btn secondary">
           ← All applications
         </Link>
+      </div>
+
+      <div className="admin-card">
+        <div className="admin-card-eyebrow">Maker profile</div>
+        {profile.user.displayHandle ? (
+          profile.user.isPublicMakerProfile ? (
+            <>
+              <p>
+                <Link
+                  href={`/m/${profile.user.displayHandle}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="admin-btn"
+                >
+                  Open /m/{profile.user.displayHandle} ↗
+                </Link>{' '}
+                — this is the applicant&apos;s actual pitch. Read it before
+                deciding.
+              </p>
+              <div
+                style={{
+                  marginTop: 12,
+                  border: '0.5px solid var(--color-warm-taupe)',
+                  borderRadius: 8,
+                  overflow: 'hidden',
+                  height: 600,
+                }}
+              >
+                <iframe
+                  src={`/m/${profile.user.displayHandle}`}
+                  title={`Maker profile: ${profile.user.displayHandle}`}
+                  style={{ width: '100%', height: '100%', border: 0 }}
+                />
+              </div>
+            </>
+          ) : (
+            <p style={{ color: 'var(--color-burnt-sienna)' }}>
+              Applicant&apos;s profile is private — flip the public toggle to
+              preview it.
+            </p>
+          )
+        ) : (
+          <p style={{ color: 'var(--color-burnt-sienna)' }}>
+            Applicant has no handle yet.
+          </p>
+        )}
       </div>
 
       <div className="admin-card">

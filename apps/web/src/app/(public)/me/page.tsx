@@ -136,11 +136,11 @@ export default async function MeDashboard() {
 
       <section>
         <span className="me-section-label">Continue making</span>
-        <h2 className="me-section-title">In progress</h2>
+        <h2 className="me-section-title">Making</h2>
         {inProgress.length === 0 ? (
           <p className="me-empty">
-            Nothing in progress. When you start a tutorial it lands here so
-            you can pick it back up later.
+            Nothing being made right now. When you start a tutorial it lands
+            here so you can pick it back up later.
           </p>
         ) : (
           <div className="me-grid">
@@ -171,11 +171,12 @@ export default async function MeDashboard() {
       </section>
 
       <section>
-        <span className="me-section-label">Saved for later</span>
-        <h2 className="me-section-title">Recent bookmarks</h2>
+        <span className="me-section-label">Make it list</span>
+        <h2 className="me-section-title">On your Make it list</h2>
         {bookmarks.length === 0 ? (
           <p className="me-empty">
-            No bookmarks yet. Save tutorials from any page to come back to.
+            Nothing on your Make it list yet. Add tutorials with the
+            &ldquo;Add to Make it&rdquo; button.
           </p>
         ) : (
           <div className="me-grid">
@@ -206,19 +207,19 @@ export default async function MeDashboard() {
         {counts.bookmarks > BOOKMARK_LIMIT && (
           <p style={{ marginTop: 16 }}>
             <Link href="/me/bookmarks" className="me-nav-link">
-              All {counts.bookmarks} bookmarks →
+              All {counts.bookmarks} on your Make it list →
             </Link>
           </p>
         )}
       </section>
 
       <section>
-        <span className="me-section-label">Finished work</span>
-        <h2 className="me-section-title">Recently completed</h2>
+        <span className="me-section-label">Made it</span>
+        <h2 className="me-section-title">Recently made</h2>
         {completed.length === 0 ? (
           <p className="me-empty">
-            Once you mark a project complete it lands here as a small record
-            of what you&apos;ve made.
+            Once you log a make it lands here as a small record of what
+            you&apos;ve made.
           </p>
         ) : (
           <div className="me-grid">
@@ -233,7 +234,7 @@ export default async function MeDashboard() {
                 </span>
                 <span className="me-project-title">{p.tutorial.title}</span>
                 <span className="me-project-meta">
-                  <span className="me-status-pill completed">Completed</span>
+                  <span className="me-status-pill completed">Made it</span>
                   {p.completedAt && (
                     <span>· {formatShortDate(p.completedAt)}</span>
                   )}

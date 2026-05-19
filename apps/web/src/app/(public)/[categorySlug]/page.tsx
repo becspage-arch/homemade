@@ -3,8 +3,10 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { prisma, TutorialStatus, Difficulty } from '@homemade/db'
 import { TutorialCard } from '@/components/public/tutorial-card'
+import { RecentlyMadeRail } from '@/components/public/recently-made-rail'
 import { mediaSrcSet } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { loadRecentlyMade } from '@/lib/recently-made'
 import {
   emptyReaderState,
   loadReaderState,
@@ -86,7 +88,7 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
           ? { requiresWheel: false }
           : {}
 
-  const [tutorials, currentUser] = await Promise.all([
+  const [tutorials, currentUser, recentlyMade] = await Promise.all([
     prisma.tutorial.findMany({
       where: {
         categoryId: category.id,
@@ -109,6 +111,7 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
       },
     }),
     getCurrentDbUser(),
+    loadRecentlyMade({ limit: 10, categorySlug: category.slug }),
   ])
 
   const readerState = currentUser
@@ -184,6 +187,13 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
           </nav>
         )}
       </header>
+
+      {recentlyMade.length > 0 && (
+        <RecentlyMadeRail
+          heading={`Recent makes in ${category.name.toLowerCase()}`}
+          tiles={recentlyMade}
+        />
+      )}
 
       {tutorials.length === 0 ? (
         <p className="category-empty">

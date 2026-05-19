@@ -2,9 +2,11 @@ import Link from 'next/link'
 import { HomeCard } from '@/components/public/home-card'
 import { HomeRail } from '@/components/public/home-rail'
 import { OnboardingCard } from '@/components/public/onboarding-card'
+import { RecentlyMadeRail } from '@/components/public/recently-made-rail'
 import { Wordmark } from '@/components/wordmark'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { loadHomepageData } from '@/lib/homepage-data'
+import { loadRecentlyMade } from '@/lib/recently-made'
 import { readerStateFor } from '@/lib/user-state'
 import { tutorialHeroSrc } from '@/lib/tutorial-hero'
 import { prisma } from '@homemade/db'
@@ -15,7 +17,10 @@ export const dynamic = 'force-dynamic'
 
 export default async function HomePage() {
   const currentUser = await getCurrentDbUser()
-  const data = await loadHomepageData(currentUser)
+  const [data, recentlyMade] = await Promise.all([
+    loadHomepageData(currentUser),
+    loadRecentlyMade({ limit: 12 }),
+  ])
 
   // Wordmark fallback: zero published tutorials.
   if (
@@ -154,8 +159,8 @@ export default async function HomePage() {
 
       {data.savedNotStarted.length > 0 && (
         <HomeRail
-          heading="Saved"
-          subheading="Things you saved but haven't started yet."
+          heading="On your Make it list"
+          subheading="Tutorials you've added but haven't started yet."
           seeAllHref="/me/projects?status=saved"
         >
           {data.savedNotStarted.map((t) => (
@@ -207,6 +212,14 @@ export default async function HomePage() {
           ))}
         </HomeRail>
       ))}
+
+      {recentlyMade.length > 0 && (
+        <RecentlyMadeRail
+          heading="Recently made by the community"
+          subheading="Real makes from real Makers on Homemade."
+          tiles={recentlyMade}
+        />
+      )}
 
       <section className="home-all-categories">
         <header className="home-rail-header">

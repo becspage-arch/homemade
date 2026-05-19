@@ -53,14 +53,14 @@ export function ProjectButton({
   if (status === 'IN_PROGRESS' && projectId) {
     return (
       <div className="reader-action-group">
-        <span className="reader-action-label">In progress</span>
+        <span className="reader-action-label">Making</span>
         <button
           type="button"
           className="reader-action"
           onClick={() => run(() => markProjectComplete(projectId))}
           disabled={pending}
         >
-          Mark complete
+          Log as Made it
         </button>
         <button
           type="button"
@@ -79,8 +79,8 @@ export function ProjectButton({
       <div className="reader-action-group">
         <span className="reader-action-label">
           {completedAt
-            ? `Completed ${formatShortDate(completedAt)}`
-            : 'Completed'}
+            ? `Made it ${formatShortDate(completedAt)}`
+            : 'Made it'}
         </span>
         <button
           type="button"
