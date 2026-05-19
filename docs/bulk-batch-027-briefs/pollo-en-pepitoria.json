@@ -1,0 +1,326 @@
+{
+  "slug": "pollo-en-pepitoria",
+  "title": "Pollo en pepitoria",
+  "subtitle": "Spanish chicken braised in almond and egg yolk sauce",
+  "excerpt": "Chicken pieces braised in white wine and chicken stock, the sauce finished with a paste of toasted almonds, garlic, hard-boiled egg yolk, saffron, and parsley. An old Castilian dish with a sauce that is nutty, slightly thickened, and deeply savoury — unlike anything in French or Italian cooking.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Pepitoria is one of the oldest documented Spanish chicken dishes, appearing in cookbooks from the sixteenth century. The sauce (thickened with a paste of almonds, hard-boiled egg yolk, and saffron) reflects the Moorish influence on Spanish medieval cooking, where nut-thickened sauces were standard. The dish appears in Ruperto de Nola's 'Llibre de Coch' (1520) as 'polla en pepitoria'.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The braise can be made a day ahead and reheated gently; prepare and add the picada sauce fresh on reheating.",
+    "dietaryFlags": [],
+    "cuisine": "spanish",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "dinnerParty"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "braising"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The picada (the paste of almonds, garlic, egg yolk, saffron, and parsley) is the defining element. It is stirred into the braising liquid at the end and transformed the sauce instantly, thickening it while adding a complex, nutty depth. The almonds must be toasted before grinding; raw almonds give a pale, floury result rather than the rounded, slightly caramelised flavour the dish needs."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The egg yolk in the picada is hard-boiled and pressed through a sieve, not raw. It acts as an emulsifier and thickener, giving the sauce its slightly creamy, cohesive quality. The dish is an ancestor of the Spanish picada tradition (a technique of finishing sauces with a mortar paste) that runs through Catalan and Castilian cooking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "bone-in, skin-on",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dry-white-wine",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "2 for the braise, 2 for the picada",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "almonds",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "blanched, toasted in a dry pan until golden",
+              "isOptional": false,
+              "groupLabel": "Picada"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "hard-boiled, yolks only",
+              "isOptional": false,
+              "groupLabel": "Picada"
+            },
+            {
+              "ingredientSlug": "saffron",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": "steeped in 2 tbsp warm water",
+              "isOptional": false,
+              "groupLabel": "Picada"
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "leaves",
+              "isOptional": false,
+              "groupLabel": "Picada"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Picada"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the chicken and build the braise"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Season the {{chicken-thigh}} thighs well. Heat the {{olive-oil}} in a casserole over medium-high heat. Brown the thighs skin-side down for 6 to 7 minutes until golden, then turn and brown the other side for 3 minutes. Remove. Add the {{onion}} and 2 cloves of the {{garlic}} and cook for 5 minutes over medium heat. Pour in the {{dry-white-wine}} and let it bubble for 2 minutes, scraping up the base. Add the {{stock-chicken}} and {{bay-leaves}}. Return the chicken skin-side up, cover, and braise over low heat for 30 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the picada"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "While the chicken braises, grind the toasted {{almonds}} in a food processor or mortar until they form a rough paste. Add the sieved hard-boiled {{eggs}} yolks, the remaining {{garlic}}, and the {{parsley-flat}} leaves. Add the {{saffron}} with its soaking water and blend or pound until you have a smooth, thick paste. Season lightly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finish the sauce"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the chicken. Remove the bay leaves. Stir the picada into the braising liquid. Simmer over medium heat for 5 minutes, stirring, until the sauce thickens and becomes cohesive. Taste and adjust seasoning. Return the chicken, spoon the sauce over, and serve with crusty bread or boiled potatoes."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is grainy and separated",
+              "cause": "Picada added to a boiling liquid",
+              "fix": "Remove the pan from heat, stir in the picada off the boil, then return to a gentle simmer"
+            },
+            {
+              "symptom": "Almond flavour is flat and raw",
+              "cause": "Almonds not toasted before grinding",
+              "fix": "Toast in a dry pan until golden-brown and fragrant; the toasting is not optional"
+            },
+            {
+              "symptom": "Sauce is too thick and pasty",
+              "cause": "Too much picada for the quantity of liquid",
+              "fix": "Add a splash of warm chicken stock to loosen; stir well to incorporate"
+            },
+            {
+              "symptom": "Saffron is invisible in the finished dish",
+              "cause": "Not steeped long enough in warm water",
+              "fix": "Steep for at least 10 minutes in warm (not boiling) water; the colour releases slowly"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pollo en pepitoria is a Castilian classic with documented history stretching back 500 years, making it one of the oldest surviving Spanish recipes still cooked in recognisably the same form. The almond-and-egg-yolk thickener reflects the Moorish culinary influence on medieval Castilian cooking: nut sauces (known in Arabic as sikbāj) were the standard way to enrich and thicken broths before the cream traditions of northern European cooking reached Spain. The saffron connects the dish to the spice-trade economy of medieval Iberia. It is no longer everyday cooking, but it belongs on any serious Spanish table."
+          }
+        ]
+      }
+    ]
+  }
+}

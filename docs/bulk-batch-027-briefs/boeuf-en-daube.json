@@ -1,0 +1,346 @@
+{
+  "slug": "boeuf-en-daube",
+  "title": "Boeuf en daube",
+  "subtitle": "Provençal red-wine beef braise with orange, olives, and anchovies",
+  "excerpt": "A slow Provençal braise of beef shin in red wine with orange peel, olives, anchovies, and a bouquet garni. Cooked in a sealed pot for three hours, it produces a rich, deeply coloured sauce that clings to the meat. Made a day ahead, it improves overnight.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Boeuf en daube is documented in J.-B. Reboul's 'La cuisinière provençale' (1897), a foundational Provençal cookery text. Elizabeth David's 'French Provincial Cooking' (1960) popularised the dish in Britain, drawing on Reboul and regional practice. The orange peel, anchovies, and olives are characteristic of the Provençal version; the Niçoise daube adds tomato.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 180,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months. The sauce thickens on freezing; add a splash of stock or water when reheating.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Better the next day. Cool completely, refrigerate overnight, then skim the congealed fat before reheating gently.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "comfortFood"
+    ],
+    "temperatureCelsius": 150,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "braising"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The daube is the Provençal answer to the braise: cheaper than the boeuf bourguignon from the north, more aromatic because of the olive oil and orange, and darker because of the long, slow reduction. Beef shin is the right cut — the bone contributes gelatin that enriches the sauce, and the connective tissue dissolves over three hours into silk. Avoid topside or rump; they will dry out."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The anchovies are not optional and they do not make the dish taste of fish. Dissolved into the oil at the beginning, they provide depth and a faint saline edge that rounds out the wine. The orange peel is equally important: a single long strip added to the pot gives the sauce a faint bitter-citrus note that lifts it out of ordinary braised-beef territory. Both disappear by the time the dish is done."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "beef-shin",
+              "amount": 1500,
+              "unit": "g",
+              "prepNote": "cut into 4 cm chunks across the bone, or boneless",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 500,
+              "unit": "ml",
+              "prepNote": "a Rhône or Languedoc variety",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 250,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "peeled, cut into chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 5,
+              "unit": "clove",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "anchovies",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "from a tin",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olives-black",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "stoned",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "orange",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "peel only, one long strip",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 4,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "for dusting",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the beef"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 150°C fan. Pat the {{beef-shin}} of beef shin dry, season well, and dust lightly with {{plain-flour}} of plain flour. Heat the {{olive-oil}} of olive oil in a large casserole over high heat and brown the meat in two or three batches without crowding — 3 to 4 minutes per side to develop a dark crust. Remove and set aside. Lower the heat to medium."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the base"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the {{anchovies}} anchovy fillets to the casserole and stir for 1 minute until they dissolve into the oil. Add the {{onion}} and {{carrot}} and cook for 5 minutes. Add the {{garlic}} and cook for 1 minute more. Pour in the {{red-wine}} of red wine and let it bubble for 2 minutes, scraping up the browned bits from the base. Add the {{stock-beef}} of beef stock, {{tinned-tomatoes}} of tinned tomatoes, the orange peel strip, {{thyme}} of thyme, and {{bay-leaves}} of bay."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Braise low and long"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Return the beef to the pot, tucking the {{olives-black}} of black olives around the meat. The liquid should come about two-thirds of the way up the beef — top up with stock or water if needed. Bring to a simmer, then cover tightly and transfer to the oven. Cook for 3 hours without lifting the lid. At the end, the beef should pull apart with a fork and the sauce should be dark and glossy. Remove the herb sprigs, orange peel, and any visible bones. Taste and adjust the seasoning."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is thin after 3 hours",
+              "cause": "Lid not tight enough; too much liquid at the start",
+              "fix": "Remove the beef, then simmer the sauce uncovered on the hob for 10 to 15 minutes to reduce; return the beef to warm through"
+            },
+            {
+              "symptom": "Beef is still tough at the 3-hour mark",
+              "cause": "Older or thicker pieces of shin need longer",
+              "fix": "Return to the oven for another 30 to 45 minutes; the connective tissue transition from tough to tender can happen in a narrow window"
+            },
+            {
+              "symptom": "Sauce tastes too sour",
+              "cause": "Wine too acidic or reduction too sharp",
+              "fix": "Stir in a pinch of sugar or a small knob of butter to round it; avoid a heavy-handed wine next time"
+            },
+            {
+              "symptom": "Anchovies are detectable as a fish note",
+              "cause": "Added too late or cooked too briefly",
+              "fix": "The anchovies must dissolve fully before the other ingredients go in; stir over medium heat for a full minute until no solid pieces remain"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The daube is from the Provençal word 'daubière', the heavy earthenware pot in which it was traditionally cooked sealed with a flour-and-water paste. The shape of the daubière (narrower at the top than at the base) concentrated steam and returned it to the pot, keeping the meat moist over the long, slow cook. The modern version uses a cast-iron casserole with a heavy lid and produces the same result. It is the dish of the Provençal winter table: made on Sunday, eaten on Monday, and demonstrably better for the wait."
+          }
+        ]
+      }
+    ]
+  }
+}

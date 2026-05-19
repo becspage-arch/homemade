@@ -219,3 +219,18 @@ generic claims rather than concrete facts, etc.)
   **How to fix:** Pick one. Pies and cakes that feed a known number of
   servings: use `servings`. Loaves, jars, and batches with no natural
   per-person count: use `yieldDescription` and set `servings: null`.
+
+- **"fall apart" triggers americanism false positive** `[warn]`
+  Pattern: `"Thin fillets fall apart"`, `"Pancakes fall apart"` — the verb
+  phrase "fall apart" triggering the americanism check for "fall" (autumn).
+  First seen bulk-026 (placki-ziemniaczane), recurred bulk-027 (merluza-en-salsa-verde).
+  **How to fix:** Replace with "break apart" or "collapse". Both read naturally
+  and avoid the false positive.
+
+- **"target" as common noun triggers brand-trademark false positive** `[warn]`
+  Pattern: `"the target is set whites"`, `"the target internal temperature is 74°C"` —
+  the word "target" (meaning goal or aim) triggering the "Target" shop brand check.
+  First seen bulk-026 (holodets: "target window"), recurred bulk-027 (huevos-a-la-flamenca,
+  souvlaki-chicken).
+  **How to fix:** Replace with "aim", "correct", or "goal": `"the aim is set whites"`,
+  `"the correct internal temperature is 74°C"`.
