@@ -257,6 +257,33 @@ pilot / bulk batches surface recurring tells.
   (the MANIFESTING book material), use it — but once, not as the
   refrain.
 
+- **Em-dash parenthetical pairs in body text** `[block]`
+  Pattern: a clarifying phrase enclosed by two em-dashes in a single
+  sentence: "Picture a space — your home, your finances, your life —
+  held in steady light." Voice-check blocks on this (two em-dashes
+  per paragraph). Occurred in 15 of 17 failing files in bulk-017.
+  **Why:** The double-em-dash appositive is a strong AI tell and
+  disrupts the cooking-recipe register. Voice-check catches it, so
+  self-critique should catch it first.
+  **How to fix:** Replace the first em-dash with a colon and drop
+  the second: "Picture a space: your home, your finances, your life,
+  all held in steady light." Or restructure into two short sentences.
+  One em-dash per paragraph is allowed; the second triggers the error.
+
+- **"genuinely" as filler intensifier** `[block]`
+  Pattern: "building an identity that's genuinely comfortable at a
+  higher level", "in places where money was genuinely limited", "I
+  want you to genuinely believe this." Appeared in 3 files in
+  bulk-017; voice-check catches it as a banned phrase.
+  **Why:** "Genuinely" is a padding word that adds register without
+  adding meaning. The cooking-recipe prose test: would a recipe say
+  "genuinely roast the chicken"? No. The Mindset prose should pass
+  the same test.
+  **How to fix:** Cut it. Rewrite the sentence without the intensifier.
+  "An identity that is at ease with a higher level of income" needs no
+  qualifier. If the sentence feels weaker without "genuinely", the
+  underlying claim needs strengthening, not the adverb.
+
 - **Spiritual bypass — practice as replacement for action** `[block]`
   Pattern: practices framed as a way to avoid a real-world problem.
   "Tap until the debt goes away." "Visualise the money and don't
