@@ -1,0 +1,113 @@
+{
+  "slug": "how-to-read-a-weaving-draft",
+  "title": "How to read a weaving draft",
+  "subtitle": "Threading, tie-up, treadling, and drawdown: the four parts of a shaft loom pattern",
+  "excerpt": "A weaving draft is a shorthand diagram that shows how a shaft loom is threaded, how the shafts are connected to the treadles, and in what order the treadles are depressed. Reading a draft correctly lets you reproduce any published weave structure on your own loom.",
+  "type": "READING",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Weaving draft notation is a standard system described in handweaving texts including Ashenhurst, Oelsner, and the contemporary Handwoven magazine format. The WIF (Weaving Information Format) is the digital equivalent. Observation-led.",
+  "recipeTools": [],
+  "glossaryTerms": [
+    { "slug": "threading-draft", "term": "Threading draft", "definition": "The top section of a weaving draft diagram showing which shaft each warp thread is threaded through. Read from right to left (the first thread entered on the loom is at the right)." },
+    { "slug": "tie-up", "term": "Tie-up", "definition": "The grid in the upper-right corner of a weaving draft showing which shafts are connected to which treadles. A filled square means that shaft rises when that treadle is pressed." },
+    { "slug": "treadling", "term": "Treadling", "definition": "The right-hand column of a weaving draft showing the order in which treadles are pressed to produce the pattern. Each row in the treadling column corresponds to one weft pick." },
+    { "slug": "drawdown", "term": "Drawdown", "definition": "The simulated fabric image in the lower-left corner of a weaving draft, produced by combining the threading, tie-up, and treadling. A filled square in the drawdown indicates where the warp thread floats over the weft." }
+  ],
+  "aliases": ["weaving draft notation", "reading a weaving pattern", "threading treadling tie-up"],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A weaving draft uses a grid system to encode all the information needed to set up and weave a pattern on a shaft loom. It has four parts: the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "threading-draft" } }], "text": "threading draft" },
+          { "type": "text", "text": " (top left), the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tie-up" } }], "text": "tie-up" },
+          { "type": "text", "text": " (top right), the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "treadling" } }], "text": "treadling" },
+          { "type": "text", "text": " (right column), and the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "drawdown" } }], "text": "drawdown" },
+          { "type": "text", "text": " (bottom left). Once you understand each part, any published draft for your number of shafts is reproducible on your loom." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Plain weave on two shafts: an example draft" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The simplest weave structure is plain weave: weft over one warp thread, under the next, repeated across the width. On a two-shaft loom, this is achieved by threading alternating threads on shaft 1 and shaft 2, then alternately pressing treadle 1 (raising shaft 1) and treadle 2 (raising shaft 2)." }
+        ]
+      },
+      {
+        "type": "weavingDraft",
+        "attrs": {
+          "shafts": 2,
+          "treadles": 2,
+          "threading": [1, 2, 1, 2, 1, 2, 1, 2],
+          "treadling": [1, 2, 1, 2],
+          "tieUp": [[1, 0], [0, 1]]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Reading this draft: the threading shows threads alternating between shaft 1 and shaft 2 (read right to left). The tie-up shows treadle 1 connected to shaft 1 only, and treadle 2 connected to shaft 2 only. The treadling shows treadle 1 then treadle 2 alternating. The drawdown shows the resulting fabric: a simple over-one under-one interlacement." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How the threading is read" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Threading drafts are read right to left because the threading process on a shaft loom begins at the right selvedge. The rightmost square in the draft is the first thread you will thread on the loom. A filled square in row 1 means that thread goes through a heddle on shaft 1. A filled square in row 2 means shaft 2. A thread can only be on one shaft at a time: each column of the threading draft has exactly one filled square." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How the tie-up works" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The tie-up grid is in the upper right. Rows represent shafts (shaft 1 at bottom, shaft 4 at top on a four-shaft loom); columns represent treadles. A filled square means: when this treadle is pressed, this shaft rises. A blank square means the shaft stays down. On a rising-shed loom (most floor looms), a filled square lifts the warp thread over the weft. On a sinking-shed loom (counterbalance), filled squares lower the shaft." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How the treadling is read" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The treadling column is read from top to bottom: the top row is the first weft pick, the second row is the second pick, and so on. Each filled square in a row indicates which treadle to press for that pick. If two squares are filled in one row, you press two treadles simultaneously." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reading the drawdown" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The drawdown shows where warp floats over weft (filled squares) and where weft floats over warp (blank squares). In plain weave, the filled and blank squares alternate in every row and column: a perfect checkerboard. In twill, the filled squares form diagonal lines. In overshot, long weft floats create pattern blocks between plain weave tabby rows. Reading the drawdown tells you immediately what the cloth surface will look like before you thread the loom." }
+        ]
+      }
+    ]
+  }
+}

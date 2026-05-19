@@ -1,0 +1,99 @@
+{
+  "slug": "overhand-knot-macrame",
+  "title": "The overhand knot in macramé",
+  "subtitle": "A stopper knot for fringe ends, spacing, and decorative clusters",
+  "excerpt": "The overhand knot is the simplest knot: a loop tightened around itself. In macramé it appears at fringe ends to prevent unravelling, as a decorative element along single cords, and as a spacing knot between pattern sections. Tied in groups around bundles of cords it becomes a gathering knot.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "macrame",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The overhand knot is documented in all macramé and rope knotting references. Its application as a fringe terminator and gathering knot in textile work is standard. Observation-led.",
+  "recipeTools": [
+    { "slug": "macrame-board", "isOptional": true },
+    { "slug": "macrame-t-pins", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "overhand-knot", "term": "Overhand knot", "definition": "The simplest knot: form a loop in a cord and pass the end through the loop, then tighten. On a single cord, the knot is a stopper. On a bundle of cords, it gathers them into one mass." },
+    { "slug": "stopper-knot", "term": "Stopper knot", "definition": "A knot tied at the end of a cord to prevent fringe ends from unravelling or to prevent a cord from pulling through a hole or loop." },
+    { "slug": "gathering-knot", "term": "Gathering knot", "definition": "An overhand knot (or wrapped knot) tied around a bundle of cords to bring them together into a single mass at a specific point, typically at the top of a plant hanger or at a decorative transition." }
+  ],
+  "aliases": ["overhand knot macrame", "fringe knot macrame", "gathering knot macrame"],
+  "techniqueSlugs": ["larks-head-knot-macrame"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "overhand-knot" } }], "text": "overhand knot" },
+          { "type": "text", "text": " is the most used finishing knot in macramé. As a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stopper-knot" } }], "text": "stopper knot" },
+          { "type": "text", "text": " at fringe ends it prevents the cord from unravelling. As a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gathering-knot" } }], "text": "gathering knot" },
+          { "type": "text", "text": " around a bundle it creates the characteristic gathered transition of a plant hanger or tassel top." }
+        ]
+      },
+      {
+        "type": "macrameKnot",
+        "attrs": {
+          "knotName": "Overhand knot (single cord)",
+          "steps": [
+            "Form a loop in the cord by crossing the working end over the standing part.",
+            "Pass the working end up through the loop from below.",
+            "Pull the working end and the standing part in opposite directions to tighten.",
+            "Slide the knot to the desired position along the cord before fully tightening."
+          ]
+        }
+      },
+      {
+        "type": "macrameKnot",
+        "attrs": {
+          "knotName": "Gathering overhand knot (bundle of cords)",
+          "steps": [
+            "Gather all the cords you want to join into a single bundle, holding them parallel.",
+            "Treat the whole bundle as a single thick cord.",
+            "Form a loop with the bundle by crossing the ends over the standing portion.",
+            "Pass all ends through the loop together.",
+            "Pull tightly and position at the gathering point. Use a T-pin to hold the position while tightening if needed."
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Positioning before tightening" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The overhand knot is very difficult to move once it is fully tightened, especially in cotton cord. Before you tighten, slide the loose knot to the exact position you need. For fringe ends, measure all cords to the same length from the last knotted row before tying stopper knots so the fringe hangs evenly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Wrapped gathering knot" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a neater gathering knot than a bundle overhand: fold one long separate cord in half and lay the fold against the bundle at the gathering point. Wind the working end of this cord tightly around the bundle multiple times, covering 1-2 cm of bundle. Thread the working end through the fold at the base, then pull the top end of the fold upward so the fold pulls the working end inside the wrapping and locks it. Trim the ends flush." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "One problem in overhand knotting.",
+          "items": [
+            { "symptom": "Knot is in the wrong position and cannot be moved", "cause": "The knot was fully tightened before being positioned.", "fix": "Push a pin, scissor tip, or a blunt darning needle into the knot from the side and wiggle to loosen it, then slide to the correct position before re-tightening. Prevention is better: always position before you pull tight." }
+          ]
+        }
+      }
+    ]
+  }
+}

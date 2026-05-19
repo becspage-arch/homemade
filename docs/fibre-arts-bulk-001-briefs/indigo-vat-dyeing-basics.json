@@ -1,0 +1,317 @@
+{
+  "slug": "indigo-vat-dyeing-basics",
+  "title": "Indigo vat dyeing basics",
+  "subtitle": "Setting up and maintaining a fructose-lime reduction vat for blue",
+  "excerpt": "Indigo is insoluble in water and cannot be used as a standard dye bath. It must be reduced to its soluble, colourless form in an alkaline vat, then reoxidised on the fibre to become permanent blue. The fructose-lime vat is a reliable, low-toxicity method suitable for home use. No mordant is needed.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "natural-dyeing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Indigo reduction chemistry and the fructose-lime (iron-free) vat method are documented in natural dyeing texts including Michel Garcia's vat documentation and Jenny Dean's 'Wild Colour'. The chemistry of leuco-indigo and oxidation on fibre is standard. Observation-led.",
+  "recipeTools": [
+    {
+      "slug": "dye-pot-stainless",
+      "isOptional": false
+    },
+    {
+      "slug": "dye-thermometer",
+      "isOptional": false
+    },
+    {
+      "slug": "dyeing-gloves-long",
+      "isOptional": false
+    },
+    {
+      "slug": "ph-strips",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "reduction-vat",
+      "term": "Reduction vat",
+      "definition": "An alkaline, oxygen-depleted solution in which insoluble indigo pigment is converted to its soluble yellow-green 'leuco' form. Fibre dipped into the vat absorbs leuco-indigo, which oxidises to blue on contact with air."
+    },
+    {
+      "slug": "leuco-indigo",
+      "term": "Leuco-indigo",
+      "definition": "The soluble, yellow-green reduced form of indigo that forms inside the vat. Leuco-indigo absorbs onto fibre while it is in the vat; it turns blue when the fibre is removed and exposed to oxygen."
+    },
+    {
+      "slug": "oxidation",
+      "term": "Oxidation (indigo)",
+      "definition": "The colour-development stage of indigo dyeing: as the fibre is removed from the vat and exposed to air, leuco-indigo oxidises and reverts to the permanent blue insoluble pigment locked into the fibre."
+    },
+    {
+      "slug": "vat-maintenance",
+      "term": "Vat maintenance",
+      "definition": "The ongoing process of keeping the indigo vat reduced and active by adding small amounts of reducing agent and alkali when needed. A well-maintained vat can be used for days or weeks."
+    }
+  ],
+  "aliases": [
+    "indigo vat",
+    "natural indigo dyeing",
+    "fructose lime indigo"
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Indigo requires a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "reduction-vat"
+                }
+              }
+            ],
+            "text": "reduction vat"
+          },
+          {
+            "type": "text",
+            "text": ": an alkaline, oxygen-free environment where the insoluble pigment converts to its soluble "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "leuco-indigo"
+                }
+              }
+            ],
+            "text": "leuco"
+          },
+          {
+            "type": "text",
+            "text": " form. When fibre is removed from the vat, "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "oxidation"
+                }
+              }
+            ],
+            "text": "oxidation"
+          },
+          {
+            "type": "text",
+            "text": " turns the leuco-indigo back to blue, permanently bound to the fibre. No mordant is needed: indigo does not require a mordant to bond to protein fibres."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Alkali and gloves",
+          "body": "Slaked lime is strongly alkaline. Wear gloves throughout and wash any skin contact immediately in cold water."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            {
+              "name": "Indigo powder (natural or synthetic grade)",
+              "qty": "10-20 g"
+            },
+            {
+              "name": "Slaked lime (calcium hydroxide, not quicklime)",
+              "qty": "15-30 g"
+            },
+            {
+              "name": "Fructose (fruit sugar, from supermarket or pharmacy)",
+              "qty": "15-20 g"
+            },
+            {
+              "name": "Warm water (30-35°C)",
+              "qty": "5 litres"
+            },
+            {
+              "name": "Stainless steel or plastic container, minimum 8 litre",
+              "qty": "1"
+            },
+            {
+              "name": "Dye thermometer",
+              "qty": "1"
+            },
+            {
+              "name": "pH strips",
+              "qty": "1 pack"
+            },
+            {
+              "name": "Long rubber gloves",
+              "qty": "1 pair"
+            },
+            {
+              "name": "Fibre: wool, silk, or cotton (pre-wetted, no mordant needed)",
+              "qty": "as needed"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 1: Build the vat"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In a separate cup, mix the indigo powder with a small amount of warm water to form a smooth paste. In another cup, dissolve the fructose in a little warm water. In the main container, add 5 litres of warm water (30-35°C). Carefully stir in the slaked lime, then the fructose solution, then the indigo paste. Stir very gently in a circle without splashing: introducing air at this stage will consume the reducing agent. Cover the vat and leave undisturbed for 30-60 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 2: Check the vat is ready"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A ready vat looks yellow-green to olive-green below the surface, with a blue-purple surface film (the flower). Gently press the film aside and look at the liquid: it should be translucent yellow-green, not opaque blue. Check the pH with strips: the vat should be pH 9-11. Dip a white fabric scrap briefly into the vat: it should come out yellow-green and turn blue within 30 seconds of air exposure. If it comes out blue in the vat, the reduction is incomplete."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 3: Dye in multiple dips"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lower the pre-wetted fibre slowly into the vat, avoiding splashing. Move gently in the vat for 2-3 minutes, then lift slowly and allow to drip back into the vat. Hang the fibre in air for 10-15 minutes, watching it turn from yellow-green to blue. Each dip adds one layer of colour. Repeat for deeper blues: 3-4 dips gives a medium blue; 8-10 dips gives a deep indigo."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 4: Rinse and neutralise"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After the final dip, rinse the fibre in warm water until the rinse runs clear. Add a small splash of white vinegar to the final rinse (enough to slightly acidify) to neutralise residual lime. Dry in the air. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "vat-maintenance"
+                }
+              }
+            ],
+            "text": "Vat maintenance"
+          },
+          {
+            "type": "text",
+            "text": ": a well-built vat can be reactivated the following day by gently warming to 30-35°C and adding a small amount of additional fructose and lime if the pH has dropped below 9."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Two problems in indigo vat dyeing.",
+          "items": [
+            {
+              "symptom": "Fibre comes out blue in the vat rather than yellow-green",
+              "cause": "The vat is not reduced: the indigo has not been converted to leuco-indigo. The fructose reduction may need more time or the pH may be too low.",
+              "fix": "Cover the vat and wait another 30-60 minutes. Check pH and add a small amount of lime if below 9. Do not dye until the vat colour is yellow-green below the surface."
+            },
+            {
+              "symptom": "Blue turns patchy or rubbed off when dry",
+              "cause": "The indigo did not fully oxidise between dips, or the vat was too concentrated for the number of dips used.",
+              "fix": "Allow full oxidation time (15 minutes minimum) between each dip. A very dark, heavy indigo deposit from too few dips in a very strong vat can feel powdery and rub off: multiple shorter dips in a weaker vat gives more durable colour."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

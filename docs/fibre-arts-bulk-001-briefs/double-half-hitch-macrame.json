@@ -1,0 +1,89 @@
+{
+  "slug": "double-half-hitch-macrame",
+  "title": "The double half hitch",
+  "subtitle": "Knotting rows, diagonal lines, and curves with a carrier cord",
+  "excerpt": "The double half hitch (DHH) knots one working cord twice around a carrier cord held taut at an angle. A row of double half hitches along a horizontal carrier creates a solid bar; along a diagonal carrier it creates a diagonal line. Combining directions builds chevrons, curves, and geometric shapes.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "macrame",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The double half hitch (also called the clove hitch knot row) is documented in macramé instruction texts and knotting manuals. Observation-led.",
+  "recipeTools": [
+    { "slug": "macrame-board", "isOptional": false },
+    { "slug": "macrame-t-pins", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "double-half-hitch", "term": "Double half hitch (DHH)", "definition": "A knot formed by tying one working cord twice around a carrier cord held at the target angle. The two loops sit beside each other, locking the working cord to the carrier at that angle." },
+    { "slug": "carrier-cord", "term": "Carrier cord", "definition": "In double half hitch rows, the cord held taut at an angle that all other cords are knotted around. The carrier determines the direction of the row (horizontal, diagonal, or curved)." },
+    { "slug": "horizontal-bar", "term": "Horizontal bar", "definition": "A solid row of double half hitches tied across all working cords with the carrier held horizontally. Horizontal bars separate sections of pattern or add structural strength to a piece." }
+  ],
+  "aliases": ["double half hitch knot", "DHH macrame", "clove hitch row macrame"],
+  "techniqueSlugs": ["larks-head-knot-macrame"],
+  "criticalTechniques": ["larks-head-knot-macrame"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "double-half-hitch" } }], "text": "double half hitch" },
+          { "type": "text", "text": " knots each working cord twice around a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "carrier-cord" } }], "text": "carrier cord" },
+          { "type": "text", "text": " held taut. The carrier can be held horizontally to produce a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "horizontal-bar" } }], "text": "horizontal bar" },
+          { "type": "text", "text": ", diagonally for diagonal lines, or pinned in a curve for curved rows. The carrier can be any of the existing working cords: no separate cord is needed." }
+        ]
+      },
+      {
+        "type": "macrameKnot",
+        "attrs": {
+          "knotName": "Double half hitch (left to right row)",
+          "steps": [
+            "Hold the leftmost cord taut horizontally at the height where the bar will sit. This is the carrier cord. Pin it at the left selvedge.",
+            "Take the second cord (the first working cord). Cross it over the carrier cord, loop it under the carrier, and bring it back through the loop it has formed. Pull to tighten. This is the first half hitch.",
+            "With the same working cord, repeat: cross over the carrier, loop under, bring through the loop, and tighten. This is the second half hitch.",
+            "One double half hitch is complete: two loops of the working cord sit snugly on the carrier.",
+            "Move to the third cord and repeat both half hitches on the same carrier cord.",
+            "Continue across all working cords from left to right. Pin the carrier at the right selvedge when the row is complete."
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Diagonal double half hitch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a diagonal line going from top-left to bottom-right: hold the leftmost cord diagonally downward to the right as the carrier, pinning it in position at both ends. Tie double half hitches along it with each of the other cords in sequence. For a chevron, use two carriers meeting in the centre from each side." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tension is everything" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The most common problem in DHH rows is uneven tension. The carrier must be held firmly taut at a consistent angle as each working cord knots around it. If the carrier bends or drops, the finished bar will curve. Use T-pins to pin the carrier at both ends before knotting, and keep firm downward pressure on the already-knotted section with your non-dominant hand as you tie each new knot." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Two problems in double half hitch rows.",
+          "items": [
+            { "symptom": "The horizontal bar curves or dips in the middle", "cause": "The carrier cord was not held taut, or it was pinned at both ends but allowed to sag between them.", "fix": "Pin the carrier at both ends and also in the middle with a T-pin. Use a ruler or dowel as a guide behind the carrier to keep it straight." },
+            { "symptom": "Knots are uneven: some sit high on the carrier, others low", "cause": "The second half hitch of each pair was not pulled up to sit directly beside the first before moving to the next working cord.", "fix": "After each double half hitch, use your thumbnail to push both loops up snugly against the previous knot before moving on." }
+          ]
+        }
+      }
+    ]
+  }
+}

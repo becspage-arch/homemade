@@ -1,0 +1,96 @@
+{
+  "slug": "overshot-weave-basics",
+  "title": "Overshot weave basics",
+  "subtitle": "How pattern blocks, tabby ties, and float length define a classic four-shaft structure",
+  "excerpt": "Overshot is a four-shaft weave structure built on alternating pattern picks (which create long weft floats forming geometric blocks) and plain weave tabby picks (which anchor the floats and provide structural integrity). This reading explains how overshot works before you sit at the loom.",
+  "type": "READING",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Overshot weave structure is documented extensively in historical American coverlet weaving records and in handweaving texts including Davison's 'A Handweaver's Pattern Book'. The structural principles are consistent across sources. Observation-led.",
+  "recipeTools": [],
+  "glossaryTerms": [
+    { "slug": "overshot", "term": "Overshot", "definition": "A four-shaft weave structure in which a thick pattern weft floats over two or more warp threads to form geometric blocks, interspersed with plain weave tabby picks of a finer weft that lock the floats in place." },
+    { "slug": "tabby-tie", "term": "Tabby pick", "definition": "In overshot, a plain weave pick woven between each pattern pick using a finer weft. The tabby structurally anchors the long floats of the pattern weft without contributing visible pattern." },
+    { "slug": "block", "term": "Block (overshot)", "definition": "A rectangular area of weft floats in an overshot pattern. Each block corresponds to a specific treadling sequence. The arrangement and sizing of blocks creates the overall pattern." },
+    { "slug": "profile-draft", "term": "Profile draft", "definition": "A simplified weaving draft in which each square represents a full block of threading rather than a single warp thread. Profile drafts give an overview of a pattern's structure without the full threading detail." }
+  ],
+  "aliases": ["overshot weaving", "four shaft overshot", "overshot structure explained"],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Overshot is a four-shaft weave structure with two wefts: a thick pattern weft and a fine structural weft. The thick weft floats over grouped warp threads to form geometric " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "block" } }], "text": "blocks" },
+          { "type": "text", "text": ". Between each pattern pick, a thin " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tabby-tie" } }], "text": "tabby pick" },
+          { "type": "text", "text": " locks the floats in place. The resulting fabric has a pattern layer (visible on the front) and a structural layer (providing durability). " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "overshot" } }], "text": "Overshot" },
+          { "type": "text", "text": " was the dominant floor loom pattern weave in colonial America, used for coverlets and table linen." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The threading unit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Overshot threading always uses four shafts, and the threading is always a sequence of overlapping pairs: 1-2, 2-3, 3-4, or 4-1. Each pair constitutes a block. Threads are threaded in groups of 4-8 on successive pairs to define the size of each block. A typical threading for a star-and-diamond pattern might run: block A (threads on shafts 1-2), block B (threads on shafts 2-3), block C (threads on shafts 3-4), block B (2-3), block A (1-2). Reading a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "profile-draft" } }], "text": "profile draft" },
+          { "type": "text", "text": " shows the block sequence without listing every thread." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The treadling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Overshot treadling follows the same block sequence as the threading: to weave block A, you press the treadle that raises shafts 1 and 2 together. The thick pattern weft floats over all the threads on shafts 1 and 2 in that shed. Between every pattern pick, weave one tabby pick alternating between treadle A (shafts 1 and 3) and treadle B (shafts 2 and 4). The tabby treadles are the same for all overshot structures on four shafts." }
+        ]
+      },
+      {
+        "type": "weavingDraft",
+        "attrs": {
+          "shafts": 4,
+          "treadles": 6,
+          "threading": [1, 2, 1, 2, 2, 3, 2, 3, 3, 4, 3, 4, 2, 3, 2, 3, 1, 2, 1, 2],
+          "treadling": [5, 1, 5, 2, 6, 2, 6, 3, 5, 3, 5, 4, 6, 4, 6, 1],
+          "tieUp": [[1,0,1,0,1,0],[0,1,0,1,0,1],[1,1,0,0,0,0],[0,0,1,1,0,0],[0,0,0,0,1,1],[1,0,0,1,0,0]]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Float length and sett" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The longer the float (more threads per block), the more visible the pattern block and the more vulnerable the float is to snagging. A well-balanced overshot keeps most floats under 6 threads long. The sett must be calculated to produce a balanced tabby with the structural weft, while accepting that the pattern picks will pack down somewhat more than the tabby picks." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing yarns" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Traditional overshot uses a fine linen or cotton warp with a cotton or wool pattern weft approximately twice the weight of the warp, and the tabby weft matching the warp in weight. The contrast between fine structural weft and thick pattern weft produces the characteristic raised, textured look of the pattern blocks." }
+        ]
+      }
+    ]
+  }
+}

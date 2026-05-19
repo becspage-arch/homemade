@@ -1,0 +1,105 @@
+{
+  "slug": "warping-a-rigid-heddle-loom",
+  "title": "Warping a rigid heddle loom",
+  "subtitle": "Direct and indirect warping methods for a rigid heddle",
+  "excerpt": "A rigid heddle loom is warped either directly from a yarn ball (passing through the heddle while winding around the back peg) or indirectly via a warping board or peg. Direct warping is faster for simple projects; indirect warping gives a more evenly tensioned warp for longer or more complex work.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Rigid heddle warping methods are documented in rigid heddle weaving texts including those by Ashford and Kromski. The two-method comparison is observation-led.",
+  "recipeTools": [
+    { "slug": "rigid-heddle-loom", "isOptional": false },
+    { "slug": "warping-board", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "heddle", "term": "Heddle (rigid heddle)", "definition": "A rigid plastic or wooden strip with alternating slots and holes. Threads in the holes rise when the heddle is lifted and fall when it is lowered; threads in the slots remain in the neutral position. Toggling creates the two sheds for plain weave." },
+    { "slug": "direct-warping", "term": "Direct warping", "definition": "A rigid heddle warping method in which yarn is wound directly from the yarn ball, back and forth through the heddle slots and holes, with the loom set up on a table or clamp-stand. Faster than indirect warping." },
+    { "slug": "lease-cross", "term": "Lease cross", "definition": "A cross formed in the warp where the threads alternate over and under a pair of sticks. The lease cross preserves the threading order when transferring a warp from a warping board to the loom." },
+    { "slug": "warp-peg", "term": "Warp peg", "definition": "A peg attached to the front of a rigid heddle loom or clamped to a table, used as the turning point when direct warping. Each length of warp wraps around this peg at the front and the heddle at the back." }
+  ],
+  "aliases": ["rigid heddle warping", "direct warping rigid heddle", "setting up rigid heddle loom"],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A rigid " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heddle" } }], "text": "heddle" },
+          { "type": "text", "text": " has alternating slots and holes. Each warp thread goes through either a slot or a hole: slot threads stay in the neutral position; hole threads move up or down with the heddle. For plain weave, threads alternate slot-hole-slot-hole across the full width. This tutorial covers " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "direct-warping" } }], "text": "direct warping" },
+          { "type": "text", "text": " (faster, for most projects) and notes where indirect warping is preferable." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Direct warping method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Set up the loom" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Clamp the loom to a table at a comfortable working height. Attach the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warp-peg" } }], "text": "warp peg" },
+          { "type": "text", "text": " at the front of the table at a distance equal to the desired warp length plus 30 cm loom waste. Set the heddle in the neutral (middle) position." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Wind the warp" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tie the yarn to the back beam apron rod. Bring the yarn forward and thread it down through the first slot of the heddle. Continue to the warp peg, loop around it, and bring the yarn back through the same slot from below (this gives two threads in the slot). Return the yarn to the back beam, loop around the apron rod, and bring forward again to thread the next hole with a single thread. Continue: two per slot, one per hole, across the width. Each pass forward and back adds two slot threads and one hole thread." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Tie onto the front beam" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "When the full width is warped, cut the yarn and remove the warp peg. Spread the warp threads across the front apron rod in small groups and tie each group with an overhand knot around the rod. Check tension by pressing your hand flat across all the warp threads: they should all spring back with the same resistance. Adjust any slack groups by untying and re-tying." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to use indirect warping" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For warps longer than 2 m, for sectional beaming, or when multiple colours or yarn types need to be wound in a specific order, wind the warp on a warping board first to create a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lease-cross" } }], "text": "lease cross" },
+          { "type": "text", "text": ", then thread the heddle from the chained warp. The lease cross keeps threads in order through the threading process and produces more even tension on long warps." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Two problems in rigid heddle warping.",
+          "items": [
+            { "symptom": "Threading order is wrong: threads alternate incorrectly between slots and holes", "cause": "A thread was passed through a hole when it should have been in a slot, or vice versa, during the winding pass.", "fix": "Run a finger slowly across the heddle and check each thread against the intended pattern. Use a threading hook to move misplaced threads into the correct slot or hole without rethreading the full warp." },
+            { "symptom": "Warp tension is very uneven when tied to the front beam", "cause": "The warp peg moved during winding, or groups were wound at different speeds.", "fix": "Retie the worst groups. For future warps, clamp the warp peg firmly and wind at a consistent, steady pace without letting the yarn ball freewheel." }
+          ]
+        }
+      }
+    ]
+  }
+}
