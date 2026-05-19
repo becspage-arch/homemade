@@ -1,0 +1,190 @@
+{
+  "slug": "arancini",
+  "title": "Arancini",
+  "subtitle": "Sicilian saffron-rice balls with a beef ragù centre, fried until golden",
+  "excerpt": "Cold saffron risotto shaped into large balls around a pocket of slow-cooked beef ragù, coated in breadcrumbs, and deep-fried until crisp and golden outside with a tender, molten centre. The classic Palermo street food, made from leftover risotto alla milanese.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Arancini are documented in Sicilian cookery literature from at least the tenth century, with the saffron-rice tradition attributed to Arab influence during Sicily's Arab period. The modern form (fried, with a filling) is described in nineteenth-century Sicilian household accounts. Multiple cross-referenced Italian regional sources; no single public-domain text.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze before frying. Fry from frozen, adding 4 to 5 minutes to the cooking time.",
+    "batchable": true,
+    "batchNotes": "Make a large batch of the rice base and use it for multiple arancini sessions.",
+    "makeAheadNotes": "The rice must be cold before shaping — cook it at least 2 hours ahead or use leftover risotto.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "snack",
+    "mood": ["party", "slowSunday"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "dutch-oven", "isOptional": true },
+    { "slug": "instant-read-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Arancini are best made from leftover risotto. If you make the rice specifically for arancini, cook it a couple of hours ahead and spread it on a tray to cool completely before shaping. Warm rice breaks apart when you try to form it into balls. The egg and the starchy, sticky risotto rice are what hold the shape; do not add extra binders."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The frying oil should sit at 170 to 175°C. Too hot and the outside chars before the centre heats through; too cool and the arancini absorb oil and come out heavy. Use a thermometer if you have one. Otherwise, a small cube of bread should brown in 35 seconds at the correct temperature."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "arborio-rice", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "saffron", "amount": null, "unit": "pinch", "prepNote": "soaked in 2 tbsp warm water for 10 minutes", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "stock-chicken", "amount": 800, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "parmesan", "amount": 60, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "dry-white-wine", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "beef-mince", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "red-wine", "amount": 50, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "peas-frozen", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": "For coating" },
+            { "ingredientSlug": "plain-flour", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For coating" },
+            { "ingredientSlug": "breadcrumbs-dried", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For coating" },
+            { "ingredientSlug": "vegetable-oil", "amount": 1000, "unit": "ml", "prepNote": "for deep frying", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the risotto base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Soften the {{onion}} onion in the {{unsalted-butter}} of butter over medium heat for 8 minutes. Add the {{arborio-rice}} of rice and stir for 2 minutes. Add the {{dry-white-wine}} of white wine and stir until absorbed. Add the saffron water and the warm {{stock-chicken}} of stock, a ladleful at a time, stirring constantly and allowing each addition to absorb before adding the next — about 20 minutes total. Remove from the heat and stir in the {{parmesan}} of Parmesan. Season with salt. Spread on a tray and refrigerate for at least 2 hours until completely cold."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the ragù filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the {{beef-mince}} of beef mince in a dry frying pan over high heat until no pink remains. Add the {{tomato-puree}} of tomato purée and stir for 1 minute. Add the {{red-wine}} of red wine and cook until reduced by half. Season with salt and pepper. Stir in the {{peas-frozen}} of frozen peas. Remove from the heat and allow to cool completely."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and coat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Take a golf-ball-sized handful of cold rice and flatten it in your palm. Place a teaspoon of ragù filling in the centre. Close the rice around the filling, pressing firmly to form a smooth ball about 6 cm across. Roll in the {{plain-flour}} of flour, then in the beaten {{eggs}} egg, then in the {{breadcrumbs-dried}} of dried breadcrumbs. Press the crumbs firmly onto the surface. Repeat for all the arancini. Refrigerate for 30 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the {{vegetable-oil}} of vegetable oil in a deep saucepan to 170 to 175°C. Fry the arancini in batches of 3 or 4 for 4 to 5 minutes, turning gently, until deep golden brown all over. Drain on kitchen paper. Serve immediately."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Arancini break apart in the oil",
+              "cause": "Rice was warm when shaped, or not chilled before frying",
+              "fix": "The rice must be completely cold before shaping; refrigerate for 2 hours minimum; refrigerate again after coating before frying"
+            },
+            {
+              "symptom": "Outside is dark before the centre is hot",
+              "cause": "Oil too hot",
+              "fix": "Keep the oil at 170 to 175°C; use a thermometer; reduce the heat between batches if the oil climbs"
+            },
+            {
+              "symptom": "Coating is greasy and dense",
+              "cause": "Oil too cool",
+              "fix": "Do not add the arancini before the oil reaches 170°C; cool oil means the coating absorbs oil rather than crisping immediately"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Arancini are the street food of Palermo and a point of Sicilian culinary pride. The name means little oranges, from their shape and the colour the saffron rice gives them. They are sold in bars and rosticcerie from early morning as a substantial breakfast, at lunch, and through the afternoon. In Palermo they are typically conical rather than spherical; in Catania and eastern Sicily the ball shape is more common. The debate about the correct form is local, unresolved, and entirely the right kind of disagreement to have."
+          }
+        ]
+      }
+    ]
+  }
+}

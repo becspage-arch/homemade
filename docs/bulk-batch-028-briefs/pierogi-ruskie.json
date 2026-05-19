@@ -1,0 +1,189 @@
+{
+  "slug": "pierogi-ruskie",
+  "title": "Pierogi ruskie",
+  "subtitle": "Polish potato and cheddar dumplings, boiled then fried in butter",
+  "excerpt": "Polish dumplings filled with mashed potato and cheddar, boiled until cooked through, then pan-fried in butter until golden on both sides. Served with fried onions and soured cream. The two-stage cooking (boil then fry) gives a soft interior and a lightly crisp, buttery exterior. Ruskie means Ruthenian, referring to the eastern regions of historical Poland.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Pierogi are documented in Polish cookery manuscripts from the fourteenth century. The ruskie filling (potato and curd cheese) is named after the Ruthenian region of eastern historical Poland (present-day western Ukraine) and is the most widely consumed filling in contemporary Poland. The boil-then-fry technique is described in nineteenth-century Polish household cookery accounts.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 50,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze after boiling, before frying. Arrange in a single layer on a tray, freeze until solid, then transfer to a bag. Cook from frozen: fry in butter for 6 to 8 minutes per side.",
+    "batchable": true,
+    "batchNotes": "Make a large batch and freeze for up to 3 months.",
+    "makeAheadNotes": "The filling can be made a day ahead. The dough must rest for 30 minutes before rolling.",
+    "dietaryFlags": ["V"],
+    "cuisine": "easternEuropean",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "slowSunday"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "masher", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pierogi ruskie are the most popular filling in Poland and the most forgiving to make at home. The dough is simple: flour, eggs, soured cream, water. It rolls easily to a smooth, slightly elastic sheet. The filling is mashed potato with cheddar (or twaróg, the traditional Polish curd cheese; cheddar is a practical substitute with the right salt and fat level), fried onion, and black pepper."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The filling must be cold before assembling — warm filling melts the dough and makes sealing difficult. The boiling takes 3 to 4 minutes from fresh or 5 to 6 from frozen; the pierogi are cooked when they float and stay on the surface. The pan-fry in butter after boiling is optional but gives a much better result than serving them straight from the water."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 400, "unit": "g", "prepNote": "plus extra for dusting", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "soured-cream", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "water", "amount": 80, "unit": "ml", "prepNote": "lukewarm", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 5, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "potato", "amount": 6, "unit": "each", "prepNote": "large, floury variety", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "cheddar", "amount": 200, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": "half for filling, half for frying", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 8, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "thinly sliced, to fry for serving", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "soured-cream", "amount": 150, "unit": "g", "prepNote": "to serve", "isOptional": false, "groupLabel": "To serve" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Boil the {{potato}} potatoes in salted water until completely tender, about 20 minutes. Drain and mash until smooth. Meanwhile, melt 40 g of the {{unsalted-butter}} butter in a frying pan over medium heat and fry the diced {{onion}} onion for 10 minutes until soft and golden. Combine the mashed potato, fried onion, and {{cheddar}} of cheddar. Season with the {{sea-salt-fine}} of salt and {{black-pepper}} of pepper. Spread on a tray and cool completely before filling."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and rest the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix the {{plain-flour}} of flour, {{eggs}} beaten eggs, {{soured-cream}} of soured cream, {{water}} of lukewarm water, and {{sea-salt-fine}} of salt in a bowl until a shaggy dough forms. Turn out and knead for 5 minutes until smooth and elastic. Cover and rest for 30 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roll, fill, and seal" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Roll the dough out on a lightly floured surface to about 3 mm thickness. Cut out circles about 8 cm in diameter using a glass or cutter. Place a heaped teaspoon of cold filling in the centre of each circle. Fold the dough over to form a half-moon shape. Press the edges together firmly, then crimp or fold to create a firm seal. Place on a floured tray. Repeat until the dough and filling are used."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Boil, then fry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bring a large pot of well-salted water to the boil. Cook the pierogi in batches (do not overcrowd the pot) for 3 to 4 minutes until they float and stay on the surface for 1 minute. Remove with a slotted spoon. Meanwhile, melt the remaining 40 g of butter in a wide frying pan over medium heat and fry the sliced {{onion}} onions for 15 minutes until golden. Set aside. Add the boiled pierogi to the buttery pan in batches and fry for 2 to 3 minutes per side until golden. Serve topped with the fried onions and {{soured-cream}} of soured cream."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Pierogi are bursting during boiling",
+              "cause": "Poor seal, filling too wet, or water boiling too vigorously",
+              "fix": "Press and crimp the edges very firmly; use cold, dry filling; maintain a moderate boil rather than a rolling boil"
+            },
+            {
+              "symptom": "Dough is too elastic and springs back when rolling",
+              "cause": "Not rested for long enough",
+              "fix": "Rest the dough for at least 30 minutes; if still springy, cover and rest for 10 more minutes"
+            },
+            {
+              "symptom": "Filling is leaking a pool of water when cutting",
+              "cause": "Filling not cooled before use, or too much moisture in the potato",
+              "fix": "Cool the filling completely before assembling; for very wet potatoes, spread on a tray and allow to dry slightly before mixing with the cheese"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pierogi are the national dish of Poland — or close enough that no other dish seriously competes for the title. The filling types vary by region and season: sauerkraut and mushroom, meat and onion, sweet cherry, blueberry. The ruskie filling is named not after Russia but after Ruthenia, the historical borderland region of eastern Poland and western Ukraine where the potato and dairy-based filling developed. Pierogi ruskie became the most popular filling in contemporary Poland partly because potatoes arrived later than the older grain and meat fillings, and partly because the combination is very good. The boil-and-fry technique is described in nineteenth-century Polish household cookery guides as standard practice."
+          }
+        ]
+      }
+    ]
+  }
+}

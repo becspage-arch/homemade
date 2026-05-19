@@ -1,0 +1,192 @@
+{
+  "slug": "macaroni-cheese",
+  "title": "Macaroni cheese",
+  "subtitle": "Short pasta baked in a sharp cheddar béchamel with a crisp breadcrumb top",
+  "excerpt": "Macaroni coated in a thick, well-seasoned cheese sauce, poured into a dish, topped with breadcrumbs, and baked until the top is golden and the edges bubble. The sauce needs more cheese than feels reasonable, mustard powder, and enough black pepper to cut through the richness.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "A version of macaroni cheese appears in Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: macaroni with Parmesan and cream. The British béchamel-and-cheddar version became standard from the late nineteenth century. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: macaroni recipe 357.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 40,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before the final bake. Defrost overnight in the fridge. Add an extra 10 minutes in the oven from cold.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble up to 24 hours ahead, cover, and refrigerate. Bake from cold, adding 10 minutes to the oven time.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "kidFriendly"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan 180°C",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false },
+    { "slug": "colander", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": ["bechamel-sauce"],
+  "criticalTechniques": ["bechamel-sauce"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The most common mistake in macaroni cheese is not enough cheese. The sauce needs 200 g of cheddar per 400 ml of milk; anything less and the sauce tastes of flour with a suggestion of dairy. Use mature cheddar for flavour. Mustard powder sharpens the sauce without announcing itself. Black pepper goes in generously — the pasta and the cheese absorb a great deal of it."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the pasta two minutes short of the packet time. It will finish cooking in the oven. If you cook it all the way through first, the finished dish is soft in the wrong way: no contrast between the pasta and the sauce."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pasta-dried", "amount": 350, "unit": "g", "prepNote": "macaroni or short pasta", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cheddar", "amount": 200, "unit": "g", "prepNote": "mature, grated", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "plain-flour", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "whole-milk", "amount": 700, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "mustard-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "nutmeg", "amount": null, "unit": "pinch", "prepNote": "freshly grated", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "pinch", "prepNote": "generous", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "breadcrumbs-fresh", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the top" },
+            { "ingredientSlug": "cheddar", "amount": 50, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "For the top" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the pasta" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the {{pasta-dried}} of macaroni in well-salted boiling water for two minutes less than the packet time. Drain and set aside. Heat the oven to 200°C (fan 180°C)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the béchamel" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the {{unsalted-butter}} of butter in a saucepan over a medium heat. Add the {{plain-flour}} of plain flour and stir for two minutes until the mixture smells faintly biscuity and pulls away from the pan. Remove from the heat and add the {{whole-milk}} of milk in a slow, steady stream, whisking constantly. Return to the heat and cook, stirring, until the sauce thickens to a consistency that coats the back of a spoon — about 8 minutes. Add the {{mustard-powder}} of mustard powder, a grating of nutmeg, and a generous quantity of black pepper."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the cheese and combine" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the pan from the heat and stir in the 200 g of grated {{cheddar}} until melted and smooth. Taste and add salt if needed. Stir the drained pasta into the sauce. Pour into a baking dish. Mix the breadcrumbs and remaining 50 g of cheddar together and scatter over the top."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bake for 20 to 25 minutes until the top is golden and the sauce bubbles at the edges. Rest for 5 minutes before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is lumpy",
+              "cause": "Milk added too quickly to the hot roux, or roux not cooked long enough",
+              "fix": "Remove from the heat before adding the milk; add it in a slow stream, whisking constantly; if lumps persist, pass the sauce through a fine sieve before adding the cheese"
+            },
+            {
+              "symptom": "Finished dish is stodgy and heavy",
+              "cause": "Pasta fully cooked before baking, or too much flour in the roux",
+              "fix": "Undercook the pasta by two minutes; use equal weights of butter and flour and cook the roux properly before adding the milk"
+            },
+            {
+              "symptom": "Top is pale after 25 minutes",
+              "cause": "Oven temperature too low, or breadcrumbs not spread evenly",
+              "fix": "Switch to the grill for the final 3 to 4 minutes; watch closely"
+            },
+            {
+              "symptom": "Sauce has split or looks grainy",
+              "cause": "Cheese added while sauce was too hot, or wrong type of cheese",
+              "fix": "Remove from the heat before stirring in the cheese; avoid pre-grated cheese with anti-caking agents, which can make the sauce grainy"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Macaroni cheese arrived in Britain in the eighteenth century as an Italian fashion, appearing first in the tables of the aristocracy before filtering down into the everyday kitchen by the mid-Victorian period. Eliza Acton's 1845 version used Parmesan and cream; Mrs Beeton's 1861 version pulled it firmly into the British domestic register with a flour-thickened white sauce. The breadcrumb top came later, sometime in the twentieth century, and is now so standard that a macaroni cheese without it reads as unfinished."
+          }
+        ]
+      }
+    ]
+  }
+}

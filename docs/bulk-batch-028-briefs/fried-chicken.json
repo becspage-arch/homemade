@@ -1,0 +1,177 @@
+{
+  "slug": "fried-chicken",
+  "title": "Southern fried chicken",
+  "subtitle": "Buttermilk-brined chicken fried in a spiced flour crust",
+  "excerpt": "Chicken pieces soaked in seasoned buttermilk for at least 8 hours, then dredged in a spiced flour and cornflour coating and fried in deep oil at 170°C until the crust is shatteringly crisp and the meat is cooked through. The buttermilk brine both seasons the meat and produces a coating that adheres during frying.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Southern fried chicken is documented in American cookery literature from the early nineteenth century, with variations appearing in period editions of household recipe collections from Virginia and the Carolinas. The technique of soaking in buttermilk is described in multiple mid-nineteenth-century American domestic texts. Multiple cross-referenced regional American sources.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "restingMinutes": 5,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Soak the chicken in buttermilk for 8 to 24 hours before frying. The longer the soak, the more seasoned the meat.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "tongs", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The buttermilk soak is not optional. It tenderises the surface of the meat and the acidity carries seasoning deeper into the flesh than a dry brine can. Eight hours is the minimum; overnight is better. The coating goes on in two stages: the chicken comes out of the buttermilk and straight into the flour mixture, which forms a thick paste where the buttermilk meets the dry ingredients. That paste is what becomes the crust."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oil temperature is the main variable in deep frying. Start at 170°C and expect it to drop when the chicken goes in. Keep the heat up so the temperature recovers between batches. Too cool and the crust absorbs oil before it crisps; too hot and the outside burns before the bone-in pieces cook through. A thermometer makes this straightforward."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-drumsticks", "amount": 4, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "For the chicken" },
+            { "ingredientSlug": "chicken-thigh", "amount": 4, "unit": "each", "prepNote": "bone-in, skin-on", "isOptional": false, "groupLabel": "For the chicken" },
+            { "ingredientSlug": "buttermilk", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the brine" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the brine" },
+            { "ingredientSlug": "garlic-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the brine" },
+            { "ingredientSlug": "cayenne", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the brine" },
+            { "ingredientSlug": "plain-flour", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the coating" },
+            { "ingredientSlug": "cornflour", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the coating" },
+            { "ingredientSlug": "paprika-smoked", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the coating" },
+            { "ingredientSlug": "garlic-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the coating" },
+            { "ingredientSlug": "onion-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the coating" },
+            { "ingredientSlug": "cayenne", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the coating" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": "coarsely ground", "isOptional": false, "groupLabel": "For the coating" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the coating" },
+            { "ingredientSlug": "vegetable-oil", "amount": 1500, "unit": "ml", "prepNote": "for deep frying", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brine the chicken" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Combine the {{buttermilk}} of buttermilk, brine {{sea-salt-fine}} of salt, brine {{garlic-powder}} of garlic powder, and brine {{cayenne}} of cayenne in a large bowl. Add the {{chicken-drumsticks}} drumsticks and {{chicken-thigh}} thighs. Cover and refrigerate for at least 8 hours or overnight."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the coating and coat the chicken" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Combine the {{plain-flour}} of plain flour, {{cornflour}} of cornflour, {{paprika-smoked}} of smoked paprika, coating {{garlic-powder}} of garlic powder, {{onion-powder}} of onion powder, coating {{cayenne}} of cayenne, coating {{black-pepper}} of black pepper, and coating {{sea-salt-fine}} of salt in a wide shallow bowl. Remove a piece of chicken from the buttermilk and allow the excess to drip for a few seconds. Press the chicken firmly into the flour mixture, turning and pressing to build up a thick coating. Place on a wire rack and repeat with all pieces. Leave to sit for 10 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry the chicken" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the {{vegetable-oil}} of vegetable oil in a large deep saucepan to 170°C. Fry the chicken in batches of 3 or 4 pieces for 12 to 15 minutes for thighs and drumsticks, turning once halfway through, until the crust is deep golden and the internal temperature reads 75°C. Drain on kitchen paper and rest for 5 minutes before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Coating has a pale, greasy crust",
+              "cause": "Oil temperature too low, or too many pieces added at once",
+              "fix": "Keep the oil at 170°C; use a thermometer; fry in batches of 3 to 4 pieces maximum and allow the oil to return to temperature between batches"
+            },
+            {
+              "symptom": "Coating is dark outside but the chicken is still raw inside",
+              "cause": "Oil too hot",
+              "fix": "Reduce the heat; bone-in chicken takes 12 to 15 minutes and the oil must not be so hot that the crust is done in 5"
+            },
+            {
+              "symptom": "Coating has not adhered and is falling off in the oil",
+              "cause": "Coating not pressed firmly enough, or chicken wet when coated",
+              "fix": "Press the coating firmly onto the surface; the buttermilk paste between the meat and the flour is the glue — allow 10 minutes of resting on the rack before frying"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fried chicken is one of the defining dishes of the American South, with documented origins in the cooking traditions of both Scottish and West African settlers in the colonial period. The Scottish frying-in-fat tradition met the West African seasoning tradition in the plantations of the antebellum South, and what emerged is one of the most widely copied dishes in global cooking. The versions sold in chain restaurants are a distant simplification of the home-cooked original, which varies by state, by county, and by family."
+          }
+        ]
+      }
+    ]
+  }
+}

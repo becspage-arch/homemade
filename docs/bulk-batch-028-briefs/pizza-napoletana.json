@@ -1,0 +1,206 @@
+{
+  "slug": "pizza-napoletana",
+  "title": "Pizza napoletana",
+  "subtitle": "Slow-risen Neapolitan dough baked at the highest heat your oven can produce",
+  "excerpt": "The Neapolitan pizza: a thin, soft, leopard-spotted base with a puffy, charred cornicione, San Marzano tomato sauce, and fresh mozzarella. The dough uses a cold, slow fermentation over 24 to 48 hours, which develops flavour and produces a light, open crumb.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Neapolitan pizza is documented from Naples from the late eighteenth century. The Associazione Verace Pizza Napoletana (AVPN) codified the rules in 1984; the specification became a European TSG (Traditional Speciality Guaranteed) in 2010. Method follows the standard AVPN cold-fermentation approach adapted for a domestic oven.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 1440,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough improves between 24 and 48 hours of cold fermentation. Begin at least 24 hours before you plan to bake.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "slowSunday"],
+    "temperatureCelsius": 280,
+    "temperatureNote": "maximum oven heat; use a pizza steel or stone if you have one",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "pizza-stone", "isOptional": true },
+    { "slug": "pizza-peel", "isOptional": true },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Mix and rest the dough",
+      "body": "Mix the flour and water and rest for 30 minutes (autolyse). Add the yeast and salt, knead for 10 minutes, then ball and refrigerate.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Bake the pizzas",
+      "body": "Remove the dough balls from the fridge 2 hours before baking to come to room temperature. Shape, top, and bake at maximum heat.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Neapolitan pizza is not defined by toppings. It is defined by the dough: cold-fermented over 24 to 48 hours, made from high-protein flour, stretched by hand until it is almost transparent at the centre, and baked in under 90 seconds in a proper wood-fired oven at 480°C. A domestic oven at its maximum heat takes longer (8 to 10 minutes) but produces a reasonable approximation, especially with a pizza steel that gets ripping hot before the pizza goes on."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The tomato sauce is uncooked: crushed San Marzano tomatoes, a pinch of salt, and nothing else. Cooking the sauce before it goes on the pizza risks reducing it too much in the oven. The mozzarella, fior di latte or (if you can find it) mozzarella di bufala, is torn rather than sliced, dried on kitchen paper for 10 minutes before using."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "00-flour", "amount": 500, "unit": "g", "prepNote": "or strong bread flour", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "water", "amount": 325, "unit": "ml", "prepNote": "cold", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 2, "unit": "g", "prepNote": "about half a sachet", "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 12, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": "best quality, crushed by hand", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "mozzarella", "amount": 300, "unit": "g", "prepNote": "drained and torn, dried on kitchen paper", "isOptional": false, "groupLabel": "For the topping" },
+            { "ingredientSlug": "extra-virgin-olive-oil", "amount": 30, "unit": "ml", "prepNote": "to drizzle", "isOptional": false, "groupLabel": "For the topping" },
+            { "ingredientSlug": "basil", "amount": 20, "unit": "g", "prepNote": "leaves, to finish", "isOptional": false, "groupLabel": "For the topping" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and rest the dough (day before)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Combine the {{00-flour}} of flour and {{water}} of cold water in a large bowl and mix until no dry flour remains. Cover and rest for 30 minutes. Add the {{yeast-fast-action}} of yeast and {{sea-salt-fine}} of salt and knead for 10 minutes until smooth and elastic. Divide into 4 equal balls (about 210 g each). Place each ball in a lightly oiled container with a lid and refrigerate for 24 to 48 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bring to room temperature and heat the oven" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the dough balls from the fridge 2 hours before baking. Place a pizza steel or stone on the top shelf of the oven and heat to the maximum temperature — 270 to 300°C if your oven allows. Allow at least 45 minutes for the steel or stone to get fully hot."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape the pizza" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Crush the {{tinned-tomatoes}} of tinned tomatoes by hand and season with a pinch of salt. Flour a work surface generously. Flatten a dough ball with your palm, then use your fingertips to press outward from the centre, leaving a 2 cm border for the cornicione. Pick the dough up and stretch it over your fists, rotating gently, until it is about 28 cm across and almost translucent at the centre. Lay on a floured pizza peel or the back of a baking tray."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Top and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Spread 80 ml of the tomato sauce over the base with the back of a spoon, leaving the rim bare. Scatter over a quarter of the {{mozzarella}} mozzarella. Drizzle with a little of the {{extra-virgin-olive-oil}} of olive oil. Slide the pizza onto the hot steel or stone and bake for 8 to 10 minutes until the base is blistered and the edges are charred in places. Tear {{basil}} of basil leaves over the top and serve immediately."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Dough tears when stretched",
+              "cause": "Not rested long enough after coming out of the fridge, or gluten not fully developed",
+              "fix": "Allow the dough to rest at room temperature for the full 2 hours; if it tears, cover it and rest it for 15 more minutes before trying again"
+            },
+            {
+              "symptom": "Base is pale and doughy",
+              "cause": "Oven not hot enough, or steel not preheated for long enough",
+              "fix": "Use the maximum oven temperature; preheat the steel for at least 45 to 60 minutes; bake on the highest shelf"
+            },
+            {
+              "symptom": "Mozzarella has released a pool of water",
+              "cause": "Mozzarella not dried before use",
+              "fix": "Drain and tear the mozzarella, then lay it on kitchen paper for 10 minutes before topping the pizza"
+            },
+            {
+              "symptom": "Pizza has stuck to the peel",
+              "cause": "Not enough flour on the peel, or too long sitting before going in the oven",
+              "fix": "Flour the peel generously; once the pizza is on the peel, work quickly — it should go in the oven within 2 minutes"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pizza from Naples is one of the most specific dishes in the world, with a formal specification that covers the flour type, the fermentation time, the oven temperature, and the diameter of the finished disc. The Associazione Verace Pizza Napoletana, founded in 1984, guards the definition. Whether this matters for a home cook is a separate question, but the cold fermentation and the screaming-hot oven do produce a meaningfully different pizza from the same-day, low-temperature approach. The difference is in the texture of the crust: open, slightly chewy, with a proper char."
+          }
+        ]
+      }
+    ]
+  }
+}

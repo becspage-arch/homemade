@@ -1,0 +1,225 @@
+{
+  "slug": "bastilla-chicken",
+  "title": "Chicken bastilla",
+  "subtitle": "Moroccan filo pie with spiced chicken, eggs, and almonds, dusted with icing sugar",
+  "excerpt": "A Moroccan sweet-savoury pastry pie: spiced, saffron-scented chicken simmered until tender and shredded, combined with curds of spiced scrambled egg and a layer of cinnamon-dusted toasted almonds, all wrapped in crisp buttered filo pastry and finished with a dusting of icing sugar. One of the most complex and rewarding dishes in the Moroccan kitchen.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Bastilla (also pastilla or b'stilla) is documented in fourteenth-century Andalusian cookery manuscripts and is associated with the Fassi culinary tradition of Fez, Morocco. The original version used pigeon (squab). Chicken became the standard domestic version. The combination of savoury meat, sweet spices, and icing sugar is characteristic of the medieval Arab culinary tradition that influenced Moroccan cooking. Multiple cross-referenced Moroccan culinary sources.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 75,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The chicken filling can be made a day ahead and refrigerated. Assemble and bake on the day.",
+    "dietaryFlags": [],
+    "cuisine": "northAfrican",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "showstopper"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan 180°C",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "springform-tin", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Make the chicken filling",
+      "body": "Simmer the spiced chicken, shred the meat, cook the egg curds, toast the almonds. The filling can be refrigerated overnight.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Assemble and bake",
+      "body": "Layer the filo, fill, fold, brush with egg, and bake at 200°C for 25 minutes. Dust with icing sugar and cinnamon.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bastilla is a demanding dish to make and a remarkable one to eat. The combination of sweet, savoury, crispy, and soft in a single pie is not one most Western kitchens encounter, and the first experience of it tends to produce genuine surprise. The icing sugar on top is not decorative — it is a flavour element, part of the medieval Arabic culinary tradition of combining sweet and savoury in a single dish."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The dish has three components: the spiced, shredded chicken; the scrambled egg curds cooked in the reduced chicken sauce; and the layer of toasted almonds mixed with cinnamon and icing sugar. These are assembled in sequence between sheets of buttered filo. The most common mistake is making the filling too wet. The chicken sauce must be reduced until almost dry before the eggs are added."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "chicken-thigh", "amount": 8, "unit": "each", "prepNote": "bone-in", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "ginger-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "turmeric", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "saffron", "amount": null, "unit": "pinch", "prepNote": "soaked in 2 tbsp warm water", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-chicken", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "parsley-flat", "amount": 30, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "coriander", "amount": 20, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "eggs", "amount": 5, "unit": "each", "prepNote": "4 beaten for filling, 1 for the egg wash", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "almonds-flaked", "amount": 150, "unit": "g", "prepNote": "toasted", "isOptional": false, "groupLabel": "For the almond layer" },
+            { "ingredientSlug": "icing-sugar", "amount": 30, "unit": "g", "prepNote": "plus more to dust", "isOptional": false, "groupLabel": "For the almond layer" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 0.5, "unit": "tsp", "prepNote": "to mix with almonds, plus more to dust", "isOptional": false, "groupLabel": "For the almond layer" },
+            { "ingredientSlug": "filo-pastry", "amount": 12, "unit": "sheet", "prepNote": "thawed if frozen, kept covered", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "unsalted-butter", "amount": 120, "unit": "g", "prepNote": "melted", "isOptional": false, "groupLabel": "For the pastry" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Simmer and shred the chicken" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the {{chicken-thigh}} chicken thighs in a dutch oven with the {{onion}} onions, {{garlic}} of garlic, {{ginger-ground}} of ginger, {{cinnamon-ground}} of cinnamon, {{turmeric}} of turmeric, the saffron water, and {{stock-chicken}} of stock. Season with the {{sea-salt-fine}} of salt and {{black-pepper}} of pepper. Bring to the boil, cover, and simmer over low heat for 40 minutes until the chicken is completely tender. Remove the chicken, discard the skin and bones, and shred the meat finely. Stir in the {{parsley-flat}} of parsley and {{coriander}} of coriander."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the egg curds" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Return the pot with the cooking liquid to high heat and boil, uncovered, for 10 to 15 minutes until the liquid has reduced to about 4 tablespoons of thick sauce. Reduce the heat to medium-low. Beat 4 of the {{eggs}} eggs and pour into the pot. Stir constantly until the eggs form soft, slightly dry curds — about 3 minutes. They should not be wet. Remove from the heat. Combine with the shredded chicken and herbs. Set aside to cool."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the almond layer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Toast the {{almonds-flaked}} of flaked almonds in a dry frying pan over medium heat for 3 to 4 minutes until golden. Leave to cool, then roughly chop and mix with 25 g of the {{icing-sugar}} of icing sugar and the extra {{cinnamon-ground}} of cinnamon. Set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble the bastilla" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 200°C (fan 180°C). Brush the base and sides of a 23 cm springform tin with the {{unsalted-butter}} of melted butter. Lay one sheet of {{filo-pastry}} filo in the tin, letting it overhang the edges. Brush with butter. Repeat with 5 more sheets, overlapping them to cover the base and all sides with overhanging filo. Spread the almond mixture over the base. Top with the chicken-egg filling, pressing it down gently into an even layer. Fold the overhanging filo sheets over the filling, brushing each one with butter as you fold. Top with the remaining 6 filo sheets, tucking them down the sides. Brush the top with the remaining beaten egg. Bake for 22 to 25 minutes until deep golden all over."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove from the oven and rest for 5 minutes. Carefully remove the springform tin. Dust the top generously with the remaining {{icing-sugar}} icing sugar and a little extra cinnamon. Serve immediately — the pastry softens as it stands."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Filling is wet and the pastry is soggy",
+              "cause": "Cooking liquid not reduced enough before adding the eggs",
+              "fix": "Reduce the cooking liquid to a very small amount of thick sauce (it should look almost like a glaze) before adding the beaten eggs"
+            },
+            {
+              "symptom": "Filo tears when folding",
+              "cause": "Dried out during assembly",
+              "fix": "Keep unused filo sheets covered with a damp tea towel; work quickly; brush each sheet with butter immediately after placing"
+            },
+            {
+              "symptom": "Top is dark but filling inside is cold",
+              "cause": "Oven too hot, or filling not at room temperature when assembled",
+              "fix": "Assemble with filling that is at room temperature, not straight from the fridge; reduce the oven temperature to 180°C if the top colours before 20 minutes"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bastilla is the showpiece of the Fassi kitchen — the cooking tradition of Fez, which is considered the apex of Moroccan haute cuisine. The original version used pigeon, not chicken, and the technique of combining sweet and savoury in a single pastry is characteristic of the Arab culinary tradition that shaped Moroccan cooking after the Muslim conquest of the Iberian Peninsula and the subsequent exchange of ingredients, spices, and techniques between Al-Andalus and North Africa. It is documented in fourteenth-century Andalusian cookery manuscripts and has been made in roughly the same form since. The icing sugar is not a concession: it is part of the dish."
+          }
+        ]
+      }
+    ]
+  }
+}

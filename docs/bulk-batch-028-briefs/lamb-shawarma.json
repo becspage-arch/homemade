@@ -1,0 +1,192 @@
+{
+  "slug": "lamb-shawarma",
+  "title": "Lamb shawarma",
+  "subtitle": "Overnight-marinated lamb shoulder slow-roasted until falling apart",
+  "excerpt": "A bone-in lamb shoulder coated in a paste of warm spices, garlic, and lemon, marinated overnight and then slow-roasted covered for four hours until the meat pulls apart with no resistance. Served in warm pittas with yoghurt, tomato, and parsley. The spice paste does most of the work.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Shawarma derives from the Turkish çevirme (turning), referring to the rotating vertical spit on which meat is cooked in the street. The home-oven version slow-roasts a whole shoulder until the meat pulls apart, replicating the result if not the method. Documented as a Levantine street food from the eighteenth century onward.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 240,
+    "restingMinutes": 20,
+    "chillingMinutes": 720,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the pulled meat without the accompaniments. Defrost overnight and reheat covered at 160°C with a splash of water.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The lamb must marinate for at least 12 hours, ideally overnight. Start it the evening before.",
+    "dietaryFlags": ["GF", "DF", "NF"],
+    "cuisine": "middleEastern",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "party"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "covered for 4 hours; remove lid and increase to 220°C for a final 20 minutes",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Marinate the lamb",
+      "body": "Make the spice paste and rub all over the lamb shoulder. Cover and refrigerate overnight.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Roast and serve",
+      "body": "Bring the lamb to room temperature for 1 hour. Roast covered at 160°C for 4 hours, then uncovered at 220°C for 20 minutes. Rest and shred.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Street shawarma is cooked on a vertical rotating spit over hours; a bone-in shoulder in a covered roasting pan achieves a similar result by a different route. The meat braises in its own fat and juices, the spice paste penetrates overnight, and after four hours at 160°C the shoulder pulls apart with a fork without any effort. The final 20 minutes uncovered, temperature raised to 220°C, caramelises the outside."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The spice paste is the key preparation. Cumin, coriander, turmeric, smoked paprika, cinnamon, and a little cayenne, loosened with lemon juice and olive oil, rubbed into every surface of the lamb and left to penetrate overnight. Without the overnight marinade the flavour sits on the surface rather than running through the meat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "lamb-shoulder", "amount": 1800, "unit": "g", "prepNote": "bone-in", "isOptional": false, "groupLabel": "For the lamb" },
+            { "ingredientSlug": "cumin-ground", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice paste" },
+            { "ingredientSlug": "coriander-ground", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice paste" },
+            { "ingredientSlug": "turmeric", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice paste" },
+            { "ingredientSlug": "paprika-smoked", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice paste" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice paste" },
+            { "ingredientSlug": "cayenne-pepper", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the spice paste" },
+            { "ingredientSlug": "garlic", "amount": 6, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the spice paste" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "juiced", "isOptional": false, "groupLabel": "For the spice paste" },
+            { "ingredientSlug": "extra-virgin-olive-oil", "amount": 60, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the spice paste" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 14, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the spice paste" },
+            { "ingredientSlug": "pitta-bread", "amount": 6, "unit": "each", "prepNote": "warmed", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "greek-yoghurt", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "tomato", "amount": 4, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "To serve" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the spice paste and marinate (the night before)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Combine the {{cumin-ground}} of cumin, {{coriander-ground}} of coriander, {{turmeric}} of turmeric, {{paprika-smoked}} of smoked paprika, {{cinnamon-ground}} of cinnamon, {{cayenne-pepper}} of cayenne, {{garlic}} of crushed garlic, lemon juice from the {{lemon}} lemon, {{extra-virgin-olive-oil}} of olive oil, and {{sea-salt-fine}} of salt in a small bowl. Mix to a paste. Score the {{lamb-shoulder}} of lamb shoulder deeply on both sides and rub the paste all over, pushing it into the cuts. Place in a roasting pan, cover tightly with foil, and refrigerate for at least 12 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roast the lamb" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the lamb from the fridge 1 hour before cooking. Heat the oven to 160°C (fan 140°C). Cover the roasting pan tightly with foil and roast for 4 hours until the meat is completely tender and pulling away from the bone. Remove the foil, increase the heat to 220°C (fan 200°C), and roast for a further 20 minutes until the outside is caramelised. Rest for 20 minutes before shredding with two forks."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pile the pulled lamb into warm {{pitta-bread}} pittas. Add a spoon of {{greek-yoghurt}} yoghurt, {{tomato}} sliced tomato, and {{parsley-flat}} of parsley. Spoon over any pan juices."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Meat is not pulling apart after 4 hours",
+              "cause": "Oven temperature too low, or shoulder cut thicker than expected",
+              "fix": "Cover and return to the oven for another 30 to 60 minutes; the meat must be completely falling apart, not just cooked through"
+            },
+            {
+              "symptom": "Spice flavour is on the surface only",
+              "cause": "Marinade time too short, or lamb not scored",
+              "fix": "Score the meat deeply (cuts 2 to 3 cm deep) and marinate for at least 12 hours; overnight is better"
+            },
+            {
+              "symptom": "Outside is not caramelised",
+              "cause": "Foil not fully removed for the final stage, or temperature not raised",
+              "fix": "Remove the foil completely for the final 20 minutes at 220°C; the juices in the pan help char the surface"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Shawarma is the Levantine street food that shares a technique with Turkish döner kebab and Greek gyros: meat stacked on a vertical spit and shaved as it rotates against a heat source. All three derive from a Turkish technique documented in the nineteenth century. The home-oven version gives up the rotisserie but keeps everything else — the overnight spice paste, the long slow cook, the shredded texture, the pitta and yoghurt. It is not the same experience as standing outside a shawarma stall at midnight, but it is the same flavour."
+          }
+        ]
+      }
+    ]
+  }
+}
