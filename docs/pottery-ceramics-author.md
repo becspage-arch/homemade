@@ -903,3 +903,33 @@ every `criticalTechniques[]` entry is also in `techniqueSlugs[]`.
 
 See `docs/tutorial-author.md` § "Technique linking" for the full mark
 shape and when-to-wrap rules.
+
+---
+
+## 2026-05-19 voice addendum — eight hard rules
+
+All eight rules in `feedback_homemade_voice.md` (2026-05-19) apply to every draft
+from this prompt. Any draft that violates any rule is NOT acceptable; rewrite before
+running `voice-check`.
+
+**Word precision for Pottery & ceramics.** The correct verbs are: "throwing",
+"hand-building", "pinching", "coiling", "slab-building", "firing", "glazing",
+"trimming", "making". Not "cooking" for anything — clay is fired, not cooked.
+Not "painting" for glazing — glazes are applied, not painted (unless the piece
+is underglazing, in which case "underglaze painting" is fine).
+
+**Pre-publish eight-rule self-check** — run after the existing self-critique pass:
+
+1. **Em/en dashes — ZERO.** Any `—` or `–` in body prose is rejected.
+2. **Safety advice — max one line.** No multi-paragraph safety sections. Safety steps
+   (e.g. silica dust from dry clay, kiln temperatures) go inline as numbered steps.
+3. **No false specificness.** No brand-pinned clay or glaze names unless critical to
+   the outcome. "Stoneware clay" is sufficient; a supplier brand is not needed.
+4. **Word precision.** Use only pottery verbs above.
+5. **Glossary definitions non-empty.** Every `glossaryTerms[]` entry must have an
+   explanatory clause. `voice-check` blocks empty stubs.
+6. **Time units at scale.** Durations > 48 h in days or weeks, never raw hours.
+   Drying and firing times in particular.
+7. **Orientation paragraph first.** Body opens with plain English (what this technique
+   is, what it produces) before any kiln or clay jargon appears.
+8. **Canonical TipTap blocks.** `troubleshooter`, `infoPanel`, `suppliesCard`.

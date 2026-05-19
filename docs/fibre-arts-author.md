@@ -1063,3 +1063,36 @@ every `criticalTechniques[]` entry is also in `techniqueSlugs[]`.
 
 See `docs/tutorial-author.md` § "Technique linking" for the full mark
 shape and when-to-wrap rules.
+
+---
+
+## 2026-05-19 voice addendum — eight hard rules
+
+All eight rules in `feedback_homemade_voice.md` (2026-05-19) apply to every draft
+from this prompt. Any draft that violates any rule is NOT acceptable; rewrite before
+running `voice-check`.
+
+**Word precision for Fibre arts.** The correct verbs by sub-category:
+- Felting: "felting", "needling", "wet-felting", "making"
+- Spinning: "spinning", "drafting", "plying", "making"
+- Weaving: "weaving", "warping", "threading", "making"
+- Natural dyeing: "dyeing", "mordanting", "making" — NOT "cooking" for dye baths
+- Macramé: "tying", "knotting", "making"
+- Rug-making: "tufting", "hooking", "making"
+
+"Batch cooking a dye bath" is wrong. "Preparing a dye bath" or "batch dyeing" is right.
+
+**Pre-publish eight-rule self-check** — run after the existing self-critique pass:
+
+1. **Em/en dashes — ZERO.** Any `—` or `–` in body prose is rejected.
+2. **Safety advice — max one line.** No multi-paragraph safety blocks, no PPE lists.
+   Safety steps (mordant handling, hot dye bath) go inline as numbered steps.
+3. **No false specificness.** No brand-pinned fibre or dye names unless critical to
+   the outcome. "Merino" (fibre type) is specific enough; a brand name is not needed.
+4. **Word precision.** Use only the sub-category verbs above.
+5. **Glossary definitions non-empty.** Every `glossaryTerms[]` entry needs an
+   explanatory clause. `voice-check` blocks empty stubs.
+6. **Time units at scale.** Durations > 48 h in days or weeks, never raw hours.
+7. **Orientation paragraph first.** Body opens with plain English before sub-category
+   jargon (mordant, warp, heddle, navajo ply, etc.) appears.
+8. **Canonical TipTap blocks.** `troubleshooter`, `infoPanel`, `suppliesCard`.

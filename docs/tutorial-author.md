@@ -661,12 +661,10 @@ as filler.
 said", "Having explored", "As we've seen", "It goes without saying",
 "Picture this", "Let's dive in", "Let's explore", "Let's take a look".
 
-**Em dashes:**
-Max one per paragraph. **Never two in the same sentence.** The
-appositive-pair pattern is the single strongest AI tell — the model
-reaches for it whenever a sentence wants a parenthetical clause. Use a
-colon, a semicolon, parentheses, or a second sentence instead. British
-spacing — a space, an em dash, a space.
+**Em dashes and en dashes — ZERO in body content. Hard stop (strengthened 2026-05-19):**
+Any `—` (em dash) or `–` (en dash) in body content is rejected. The previous "max
+one per paragraph" rule was too lenient; autopilot consistently produced em-dash-heavy
+prose. Use brackets, commas, colons, semicolons, full stops, or rewording instead.
 
 | Don't | Do |
 |---|---|
@@ -674,11 +672,6 @@ spacing — a space, an em dash, a space.
 | "Pick the bone out — it should slip free with a small twist — and discard" | "Pick the bone out; it should slip free with a small twist. Discard the bone." |
 | "the oven goes hot — 220°C — for twenty minutes" | "the oven goes hot, 220°C, for twenty minutes" |
 | "the stripe — six bands of pasta separated by five bands of ragù — that you see in the slice" | "the stripe you see in the slice: six bands of pasta separated by five bands of ragù" |
-
-Observed pattern across the pilot-10 batch (`docs/pilot-10-report.md`):
-six of ten first drafts contained at least one banned appositive pair.
-This is the #1 voice-check failure mode. Watch for it especially in
-"Where this dish lives" closers and infoPanel bodies.
 
 **Anti-softeners ("honest", "frankly", "genuinely"):**
 "Honest" is already in the banned-phrase list, but it appears as a
@@ -720,6 +713,110 @@ The marketplace doesn't exist yet. Body copy never quotes £ or $ prices
 for ingredients or kit. Product / kit blocks describe what the tool
 does and what to look for in it — generic titles ("Roasting tin, 30
 cm") not brand names we don't have a sale relationship with.
+
+**No safety advice blocks. Hard stop (added 2026-05-19):**
+Body content stays focused on the craft. No "Before you start" safety sections, no
+PPE lists in the body, no first-aid advice, no A&E/hospital-threshold guidance.
+Site-wide terms cover liability. The maximum acceptable safety mention is ONE
+compressed line if genuinely necessary for the craft (lye handling, hot wax, etc.).
+
+If a safety action is genuinely a step in the craft, write it as a numbered step
+in the body — not a callout, not a preamble, not a warning panel.
+
+❌ A multi-sentence "Before you start: Eye protection. Gloves. Workspace. First aid kit" block.
+✅ "Wear protective gloves and work in a ventilated space." (one line, if the craft demands it)
+
+**No false specificness. Hard stop (added 2026-05-19):**
+Don't pin detail the Maker could vary without affecting the outcome.
+
+❌ "Keep it on the windowsill" → ✅ no location instruction needed
+❌ "Nitrile gloves" → ✅ "protective gloves"
+❌ "Dacron upholstery wadding" → ✅ "upholstery wadding"
+❌ "A small tin for the windowsill" → ✅ "one small tin"
+❌ Brand-specific tool or material names where generic would do
+
+Pin specificity ONLY when it materially affects the outcome (e.g. "conventional °C
+not fan", "weights in grams not cups", "lye not soda crystals"). If a specific
+material is genuinely required, explain why and name the closest substitute.
+
+**Word precision per category. Hard stop (added 2026-05-19):**
+Each category has its correct verbs. Never borrow from an adjacent category.
+
+- Cooking: "cooking", "preparing", "making", "preserving"
+- Baking: "baking", "proving", "shaping", "mixing"
+- Natural home: "making" (NOT "cooking" — soap is made, not cooked)
+- Sewing: "sewing", "stitching", "making"
+- Knitting / crochet: "knitting", "crocheting", "working", "making"
+- Pottery: "throwing", "hand-building", "firing", "making"
+- Mindset: "practising", "doing", "working with" (NOT "exercising", NOT "performing")
+- Garden: "growing", "sowing", "planting", "harvesting"
+- Home & repair: "building", "repairing", "fixing", "working"
+- Animals & smallholding: "keeping", "raising", "tending"
+- Sustainability: context-specific
+- Fibre arts: "felting", "spinning", "weaving", "dyeing", "tying", "making"
+- Needlework: "stitching", "working", "embroidering", "making"
+- Paper & word: "binding", "making", "writing", "lettering"
+- Herbal: "making", "preparing", "formulating" (NOT "cooking")
+- Wood & natural craft: "carving", "making", "working"
+
+The category prompt names the specific verbs for that pipeline. Apply them.
+
+**Glossary coverage — strengthened (updated 2026-05-19):**
+Three hard requirements (all enforced by `voice-check`):
+
+1. Every entry in `glossaryTerms[]` must appear at least once in body prose
+   wrapped in a `glossaryTooltip` mark. Registered-but-not-used is an error.
+2. Every `glossaryTooltip` mark in the body must reference a slug registered in
+   `glossaryTerms[]`. Used-but-not-registered is an error.
+3. Every `glossaryTerms[]` definition must be a minimum of one explanatory clause
+   (at least 20 characters). An empty or stub definition ("A young hen.") is an
+   error. Write: "A young hen, typically under one year old and not yet laying."
+
+No unflagged domain jargon. Every domain-specific term in the body must be EITHER
+in plain English OR wrapped in a tooltip that genuinely explains it.
+
+**Sensible time units. Hard stop (added 2026-05-19):**
+Time durations must be expressed at the right scale.
+
+- Under 48 hours: hours ("45 minutes", "6 hours", "36 hours")
+- 48 hours to 7 days: days, or days + hours where hours add real precision ("3 days")
+- 7 days to 28 days: days only ("14 days") — never raw hours
+- Over 28 days: weeks + days ("6 weeks", "4 weeks, 2 days") — never raw hours
+
+"1009 hours" is unreadable. "6 weeks" is readable. Convert before submitting.
+The `voice-check` CLI catches raw-hours values over 48.
+
+**Orientation before depth. Hard stop (added 2026-05-19):**
+Every tutorial opens with a plain-English orientation paragraph BEFORE any domain
+terminology. The reader may never have done this craft before.
+
+❌ "Inspecting a beehive in summer. Smoke the entrance, lift the crown board,
+check each frame for queen cells and supersedure signs."
+
+✅ "A beehive inspection in summer means opening the hive to check the bees are
+healthy, have space to grow, and aren't preparing to swarm. You'll need a smoker
+(which calms the bees), a hive tool (to ease apart frames stuck with propolis),
+and protective clothing. Smoke the entrance, lift the crown board, then check
+each frame for queen cells and supersedure signs."
+
+The orientation paragraph is NOT the intro heading. It is a plain-prose paragraph
+at the very top of the body that states what this is and why you'd do it. No jargon
+without an immediate plain-English gloss in the same sentence.
+
+**Consistent formatting across categories. Hard stop (added 2026-05-19):**
+Use canonical TipTap block types across every category. Do not invent category-local
+variants or fall back to free-form H2+prose for structured content.
+
+- Troubleshooter: `troubleshooter` block only
+- Supply/tool lists: `suppliesCard` (craft) or `ingredientsList` (recipes)
+- Variations / "how it adapts": `varietiesPanel` or H2 + prose (per template)
+- Sources: `sourceNotes` top-level field (not a body block)
+- Callouts: `infoPanel` block only (tone: "info", "tip", "warning", or "caution")
+- Product / kit recommendations: `productCard` block (no prices until marketplace)
+
+If you're about to write a bullet list to fill in for a missing structured block,
+stop. Use the block. The `troubleshooter` and `suppliesCard` shapes are in
+`packages/db/scripts/upload-tutorial-types.ts`.
 
 **Brand names — be specific only when the brand isn't the noun:**
 
@@ -849,8 +946,10 @@ Checklist:
    or instruction.
 3. Read the last paragraph. If it wraps up, philosophises, or signs
    off, cut it.
-4. Em-dash count per paragraph: at most one. Em-dash count per
-   sentence: never two.
+4. Em/en dash count: ZERO. Any `—` or `–` in body prose must be
+   replaced with brackets, commas, colons, semicolons, or reworded
+   sentences. Check every paragraph; check infoPanel bodies; check
+   pullQuote text.
 5. Negation patterns: scan for "not just X, but Y" / "it's not about
    X, it's about Y" — rewrite in plain prose.
 6. Tricolons: scan for "X, Y, and Z" with three short parallel items.
@@ -915,6 +1014,39 @@ Checklist:
     is unambiguous, leave alone when the prose works as-is. Note any
     `[warn]` entries you deliberately left in the change log so the
     next reviewer can see the call was intentional.
+
+17. **Safety advice blocks (2026-05-19).** Scan every paragraph for
+    "Before you start", "eye protection", "gloves", "PPE", "first aid",
+    "fire watch", "ventilate", "seek medical" + similar safety-block
+    keywords. If 3+ appear in one paragraph it is a safety-advice block
+    — not a craft step. Rewrite: either compress to one line or make it
+    a numbered step in the body.
+18. **False specificness (2026-05-19).** Scan for: brand-named materials
+    ("nitrile", "dacron"), location-pinned storage ("on the windowsill"),
+    and brand-name tools where generic would do. Replace with generic
+    equivalents unless the specific material/brand materially affects the
+    outcome. If it must be specific, add a one-sentence explanation and
+    name the closest substitute.
+19. **Word precision (2026-05-19).** Confirm every craft verb is correct
+    for this category (see the word-precision table in Voice rules — hard).
+    Rewrite any borrowed verb.
+20. **Time units (2026-05-19).** Search for numbers followed by "hours"
+    or "hrs". Any value > 48 must be converted: days/weeks format.
+    "1009 hours" must become "6 weeks". The CLI catches this but do it
+    here first.
+21. **Orientation paragraph (2026-05-19).** Read the first paragraph of
+    the body. Does it state in plain English what this tutorial is and why
+    you'd do it, before any domain jargon? If it opens with jargon or
+    immediately into steps, add a plain-English orientation paragraph at
+    the top.
+22. **Glossary definitions (2026-05-19).** Walk every entry in
+    `glossaryTerms[]`. Is each `definition` at least one explanatory
+    clause (not a stub)? "A young hen." is a stub. "A young hen, typically
+    under one year old and not yet laying." is correct.
+23. **Consistent formatting (2026-05-19).** Check troubleshooter content
+    uses the `troubleshooter` block (not a bullet list). Check callouts
+    use `infoPanel` (not a blockquote). Check supply lists use
+    `suppliesCard` or `ingredientsList` (not a prose bullet list).
 
 `docs/voice-editor-prompt.md` walks through these in more detail. The
 deterministic `voice-check` CLI is the final gate.

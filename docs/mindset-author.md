@@ -1313,3 +1313,34 @@ technique slug that doesn't exist in the database as a published
 ```
 
 A future technique-authoring session walks this file.
+
+---
+
+## 2026-05-19 voice addendum — eight hard rules
+
+All eight rules in `feedback_homemade_voice.md` (2026-05-19) apply to every draft
+from this prompt. Any draft that violates any rule is NOT acceptable; rewrite before
+running `voice-check`.
+
+**Word precision for Mindset.** The correct verbs are: "practising", "doing",
+"working with", "sitting with". NOT "exercising" (gym connotation), NOT "performing"
+(theatrical), NOT "executing". A tapping practice is "practised" or "done", not
+"performed" or "exercised".
+
+**Pre-publish eight-rule self-check** — run after the existing self-critique pass:
+
+1. **Em/en dashes — ZERO.** Any `—` or `–` in body prose is rejected. Replace with
+   brackets, commas, full stops, or rewording.
+2. **Safety advice — max one line.** No multi-paragraph disclaimers or safety sections.
+   Mindset entries never diagnose, prescribe, or refer clinical conditions. Where a
+   genuine caution is needed (e.g. "this practice is intense — if you feel overwhelmed,
+   stop and ground yourself") write it as one sentence, inline.
+3. **No false specificness.** No brand-pinned apps, timer brands, or cushion brands.
+   Name the type: "a timer", "a comfortable cushion".
+4. **Word precision.** "Practising" or "doing". Never "exercising" or "performing".
+5. **Glossary definitions non-empty.** Every `glossaryTerms[]` entry must have an
+   explanatory clause. `voice-check` blocks empty stubs.
+6. **Time units at scale.** Durations > 48 h in days or weeks, never raw hours.
+7. **Orientation paragraph first.** Body opens with plain English (what this practice
+   is, what it involves) before any technique name or jargon appears.
+8. **Canonical TipTap blocks.** `troubleshooter`, `infoPanel`, `suppliesCard`.

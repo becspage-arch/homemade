@@ -885,3 +885,34 @@ every `criticalTechniques[]` entry is also in `techniqueSlugs[]`.
 
 See `docs/tutorial-author.md` § "Technique linking" for the full mark
 shape and when-to-wrap rules.
+
+---
+
+## 2026-05-19 voice addendum — eight hard rules
+
+All eight rules in `feedback_homemade_voice.md` (2026-05-19) apply to every draft
+from this prompt. Any draft that violates any rule is NOT acceptable; rewrite before
+running `voice-check`.
+
+**Word precision for Baking.** The correct verbs are: "baking", "proving", "shaping",
+"mixing", "laminating", "enriching". Never "cooking" — baked goods are baked, not
+cooked, even when heat is involved.
+
+**Pre-publish eight-rule self-check** — run after the existing self-critique pass:
+
+1. **Em/en dashes — ZERO.** Any `—` or `–` in body prose is rejected. Replace with
+   brackets, commas, full stops, or rewording.
+2. **Safety advice — max one line.** No multi-paragraph safety sections. No PPE lists
+   or first-aid blocks in the body. Safety steps go inline as numbered steps.
+3. **No false specificness.** No brand-pinned materials ("nitrile gloves" → "protective
+   gloves"; specific flour brands → flour category). Pin only when the brand materially
+   affects the outcome.
+4. **Word precision.** Use only baking verbs above. Rewrite any borrowed verb.
+5. **Glossary definitions non-empty.** Every `glossaryTerms[]` entry must have an
+   explanatory definition of at least one clause. `voice-check` blocks empty stubs.
+6. **Time units at scale.** Durations > 48 h in days or weeks, never raw hours.
+   "72 hours" → "3 days". "1009 hours" → "6 weeks".
+7. **Orientation paragraph first.** Body opens with plain English (what this is, why
+   you'd make it) before any domain term appears unflagged.
+8. **Canonical TipTap blocks.** `troubleshooter` for troubleshooters, `infoPanel` for
+   callouts, `ingredientsList` for ingredients, `suppliesCard` for kit.

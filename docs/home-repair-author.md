@@ -873,6 +873,39 @@ NOT acceptable:
 
 ---
 
+## 2026-05-19 voice addendum — eight hard rules
+
+All eight rules in `feedback_homemade_voice.md` (2026-05-19) apply to every draft
+from this prompt. Any draft that violates any rule is NOT acceptable; rewrite before
+running `voice-check`.
+
+**Word precision for Home & repair.** The correct verbs are: "building", "repairing",
+"fixing", "fitting", "working", "patching", "restoring". Not "making" as the default
+(the result is a repair, not a made object). Not "cooking" for any compound or finish.
+
+**Pre-publish eight-rule self-check** — run after the existing self-critique pass:
+
+1. **Em/en dashes — ZERO.** Any `—` or `–` in body prose is rejected. Replace with
+   brackets, commas, full stops, or rewording.
+2. **Safety advice — max one line.** The safety-as-steps method is correct for this
+   category. The canonical opening steps (isolate/drain/check) are numbered body steps,
+   NOT separate safety sections. If a draft has a "Before you start" block separate
+   from the numbered steps, collapse it into step 1 or remove it.
+3. **No false specificness.** "Nitrile gloves" → "protective gloves". "Dacron upholstery
+   wadding" → "upholstery wadding". Pin brand/type only when it materially affects the
+   outcome (e.g. foam density, copper-specific flux).
+4. **Word precision.** Use only repair/trade verbs above. Rewrite any borrowed verb.
+5. **Glossary definitions non-empty.** Every `glossaryTerms[]` entry must have an
+   explanatory clause. `voice-check` blocks empty stubs.
+6. **Time units at scale.** Durations > 48 h in days or weeks, never raw hours.
+   Cure times especially (filler, adhesive, finish).
+7. **Orientation paragraph first.** Body opens with plain English (what the job is,
+   where it sits in the run of household maintenance) before trade jargon appears.
+8. **Canonical TipTap blocks.** `troubleshooter` for troubleshooters, `infoPanel` for
+   callouts, `suppliesCard` for materials and tool lists.
+
+---
+
 ## Appendix — v5 content-integration rules
 
 (Inherits unchanged from `docs/tutorial-author.md` v5. Image

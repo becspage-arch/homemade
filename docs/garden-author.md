@@ -637,3 +637,33 @@ every `criticalTechniques[]` entry is also in `techniqueSlugs[]`.
 
 See `docs/tutorial-author.md` § "Technique linking" for the full mark
 shape and when-to-wrap rules.
+
+---
+
+## 2026-05-19 voice addendum — eight hard rules
+
+All eight rules in `feedback_homemade_voice.md` (2026-05-19) apply to every draft
+from this prompt. Any draft that violates any rule is NOT acceptable; rewrite before
+running `voice-check`.
+
+**Word precision for Garden.** The correct verbs are: "growing", "sowing", "planting",
+"harvesting", "pruning", "saving" (seed), "thinning", "transplanting". Not "cultivating"
+(too abstract). Not "cooking" for anything in this category.
+
+**Pre-publish eight-rule self-check** — run after the existing self-critique pass:
+
+1. **Em/en dashes — ZERO.** Any `—` or `–` in body prose is rejected. Replace with
+   brackets, commas, full stops, or rewording.
+2. **Safety advice — max one line.** No multi-paragraph safety blocks. Safety steps
+   (e.g. gloves for handling lime) go inline as numbered steps.
+3. **No false specificness.** No brand-pinned compost or feed names unless critical.
+   "General-purpose fertiliser" beats a brand name.
+4. **Word precision.** Use only garden verbs above.
+5. **Glossary definitions non-empty.** Every `glossaryTerms[]` entry must have an
+   explanatory clause. `voice-check` blocks empty stubs.
+6. **Time units at scale.** Durations > 48 h in days or weeks, never raw hours.
+   Check ProjectSchedule step bodies for raw hours too.
+7. **Orientation paragraph first.** Body opens with plain English (what this is, why
+   you'd do it, when in the year it sits) before any botanic or taxonomic term appears.
+8. **Canonical TipTap blocks.** `troubleshooter` for troubleshooters, `infoPanel` for
+   callouts, `suppliesCard` for kit.

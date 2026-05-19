@@ -475,3 +475,32 @@ every `criticalTechniques[]` entry is also in `techniqueSlugs[]`.
 
 See `docs/tutorial-author.md` § "Technique linking" for the full mark
 shape and when-to-wrap rules.
+
+---
+
+## 2026-05-19 voice addendum — eight hard rules
+
+All eight rules in `feedback_homemade_voice.md` (2026-05-19) apply to every draft
+from this prompt. Any draft that violates any rule is NOT acceptable; rewrite before
+running `voice-check`.
+
+**Word precision for Knitting.** The correct verbs are: "knitting", "working",
+"casting on", "casting off", "making", "decreasing", "increasing". Not "crocheting".
+Stitches are "worked", not "crocheted". UK terminology is canonical (cast off, not
+bind off; tension, not gauge).
+
+**Pre-publish eight-rule self-check** — run after the existing self-critique pass:
+
+1. **Em/en dashes — ZERO.** Any `—` or `–` in body prose is rejected. Replace with
+   brackets, commas, full stops, or rewording.
+2. **Safety advice — max one line.** No multi-paragraph safety sections in the body.
+3. **No false specificness.** No brand-pinned needle or yarn brands unless the
+   material type matters. "4 mm needles" is sufficient; brand name is not needed.
+4. **Word precision.** Use only knitting verbs above.
+5. **Glossary definitions non-empty.** Every `glossaryTerms[]` entry must have an
+   explanatory clause. `voice-check` blocks empty stubs.
+6. **Time units at scale.** Durations > 48 h in days or weeks, never raw hours.
+7. **Orientation paragraph first.** Body opens with plain English (what this is, why
+   you'd make it) before any notation or abbreviation appears.
+8. **Canonical TipTap blocks.** `troubleshooter` for troubleshooters, `infoPanel` for
+   callouts, `suppliesCard` for yarn and needle lists.

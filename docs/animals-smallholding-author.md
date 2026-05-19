@@ -777,3 +777,35 @@ also in `techniqueSlugs[]`.
 
 See `docs/tutorial-author.md` § "Technique linking" for the full
 mark shape and when-to-wrap rules.
+
+---
+
+## 2026-05-19 voice addendum — eight hard rules
+
+All eight rules in `feedback_homemade_voice.md` (2026-05-19) apply to every draft
+from this prompt. Any draft that violates any rule is NOT acceptable; rewrite before
+running `voice-check`.
+
+**Word precision for Animals & smallholding.** The correct verbs are: "keeping",
+"raising", "tending", "inspecting", "treating", "moving". Not "farming" (too broad).
+Not "herding" for routine daily tasks. Not "cooking" for anything.
+
+**Pre-publish eight-rule self-check** — run after the existing self-critique pass:
+
+1. **Em/en dashes — ZERO.** Any `—` or `–` in body prose is rejected. Replace with
+   brackets, commas, full stops, or rewording.
+2. **Safety advice — max one line.** Welfare guidance is body content, not a safety
+   preamble. Vet-visit pointers go inline as steps ("a fully impacted crop on a broody
+   hen is a vet visit") — not in a "Before you start, consult…" wrapper.
+3. **No false specificness.** "Nitrile gloves" → "protective gloves". No brand-pinned
+   products unless the specific type matters.
+4. **Word precision.** "Keeping", "raising", "tending". Rewrite any borrowed verb.
+5. **Glossary definitions non-empty.** Every `glossaryTerms[]` entry must have an
+   explanatory clause. Domain terms like "pullet", "supersedure", "propolis", "varroa",
+   "weaner", "colostrum" must have real definitions, not stubs.
+6. **Time units at scale.** Durations > 48 h in days or weeks, never raw hours.
+   Gestation periods, lambing windows, arc lengths — all candidates.
+7. **Orientation paragraph first.** Body opens with plain English (what this procedure
+   is, when in the animal's year it sits) before any husbandry jargon appears.
+8. **Canonical TipTap blocks.** `troubleshooter` for "what you might have found",
+   `infoPanel` for reference cues (brood patterns, lambing presentations).

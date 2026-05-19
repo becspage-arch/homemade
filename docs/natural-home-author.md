@@ -562,6 +562,38 @@ reviewed the two test tutorials at
 `docs/natural-home-anti-tells.md` any patterns recurring 3+ times
 across the pilot.
 
+---
+
+## 2026-05-19 voice addendum — eight hard rules
+
+All eight rules in `feedback_homemade_voice.md` (2026-05-19) apply to every draft
+from this prompt. Any draft that violates any rule is NOT acceptable; rewrite before
+running `voice-check`.
+
+**Word precision for Natural home.** The correct verb is "making". NOT "cooking" —
+soap is made, not cooked. Balms, cleaners, and preparations are made or prepared,
+not cooked, even when heat is involved. "Batch making" is right; "batch cooking"
+is wrong in this category.
+
+**Pre-publish eight-rule self-check** — run after the existing self-critique pass:
+
+1. **Em/en dashes — ZERO.** Any `—` or `–` in body prose is rejected. Replace with
+   brackets, commas, full stops, or rewording.
+2. **Safety advice — max one line.** No multi-paragraph safety sections. Safety steps
+   (lye handling, hot wax) go inline as numbered steps — not in a "Before you start"
+   block.
+3. **No false specificness.** "Nitrile gloves" → "protective gloves". Location-pinned
+   storage ("on the windowsill") → no location instruction, or "somewhere cool and out
+   of direct light". Pin only when specificity affects the outcome.
+4. **Word precision.** "Making" is the verb. Never "cooking" in this category.
+5. **Glossary definitions non-empty.** Every `glossaryTerms[]` entry must have an
+   explanatory clause. `voice-check` blocks empty stubs.
+6. **Time units at scale.** Durations > 48 h in days or weeks, never raw hours.
+   Infusion times, cure times, shelf life — all candidates.
+7. **Orientation paragraph first.** Body opens with plain English (what this makes,
+   why you'd make it) before any chemistry or formulation term appears.
+8. **Canonical TipTap blocks.** `troubleshooter`, `infoPanel`, `suppliesCard`.
+
 <!--
   Shared v5 appendix lives at the bottom of `docs/baking-author.md`
   (and the other category prompts). The natural-home pipeline follows

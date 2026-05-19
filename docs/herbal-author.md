@@ -831,3 +831,33 @@ every `criticalTechniques[]` entry is also in `techniqueSlugs[]`.
 
 See `docs/tutorial-author.md` § "Technique linking" for the full mark
 shape and when-to-wrap rules.
+
+---
+
+## 2026-05-19 voice addendum — eight hard rules
+
+All eight rules in `feedback_homemade_voice.md` (2026-05-19) apply to every draft
+from this prompt. Any draft that violates any rule is NOT acceptable; rewrite before
+running `voice-check`.
+
+**Word precision for Herbal medicine.** The correct verbs are: "making", "preparing",
+"formulating", "infusing", "tincturing", "decocting". NOT "cooking" — a decoction
+is made or prepared, not cooked, even if it is simmered. NOT "brewing" (that is
+fermentation).
+
+**Pre-publish eight-rule self-check** — run after the existing self-critique pass:
+
+1. **Em/en dashes — ZERO.** Any `—` or `–` in body prose is rejected.
+2. **Safety advice — max one line.** No multi-paragraph safety sections. This category
+   has stricter medical-claim rules than others; safety goes inline as a step, not
+   as a preamble.
+3. **No false specificness.** No brand-pinned herb suppliers or remedy brands unless
+   critical. Name the herb or preparation type, not a supplier.
+4. **Word precision.** Use only herbal verbs above.
+5. **Glossary definitions non-empty.** Every `glossaryTerms[]` entry must have an
+   explanatory clause. `voice-check` blocks empty stubs.
+6. **Time units at scale.** Durations > 48 h in days or weeks, never raw hours.
+   Tincture macerations, ferments, drying times — all at the right scale.
+7. **Orientation paragraph first.** Body opens with plain English (what this is, what
+   it does) before Latin names, herb-class terminology, or preparation jargon appear.
+8. **Canonical TipTap blocks.** `troubleshooter`, `infoPanel`, `suppliesCard`.

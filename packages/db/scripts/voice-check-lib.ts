@@ -29,6 +29,10 @@ export type FindingKind =
   | 'glossary-coverage'
   | 'temperature-canonical'
   | 'servings-yield'
+  | 'safety-block'
+  | 'raw-hours'
+  | 'unflagged-jargon'
+  | 'empty-glossary-def'
 
 export interface Finding {
   severity: Severity
@@ -44,6 +48,56 @@ export interface VoiceCheckReport {
   errors: Finding[]
   warnings: Finding[]
 }
+
+/**
+ * Safety-adjacent keywords used to detect multi-line safety-advice blocks.
+ * If a paragraph-level chunk contains 3+ of these the checker warns.
+ */
+const SAFETY_KEYWORDS = [
+  'eye protection',
+  'goggles',
+  'gloves',
+  'ppe',
+  'first aid',
+  'first-aid',
+  'ventilat',
+  'fire watch',
+  'fire-watch',
+  'a&e',
+  'accident and emergency',
+  'seek medical',
+  'consult a',
+  'consult your',
+  'dust mask',
+  'respirator',
+  'fire extinguisher',
+  'safety glasses',
+  'face shield',
+  'protective clothing',
+  'hazard',
+  'risk assessment',
+  'before you start',
+]
+
+/**
+ * Jargon words that are either false-specific (a brand/material when generic
+ * would do) or domain jargon that must be explained via a glossaryTooltip.
+ * These fire on plain body text even when the slug is not in glossaryTerms[].
+ */
+const JARGON_WATCHLIST: { word: string; note: string }[] = [
+  { word: 'nitrile', note: 'use "protective gloves" unless the specific material is critical to the outcome' },
+  { word: 'dacron', note: 'use "upholstery wadding" unless the specific brand/material is critical' },
+  { word: 'pullet', note: 'domain jargon — register in glossaryTerms[] with a definition, or write "young hen" in plain English' },
+  { word: 'supersedure', note: 'domain jargon — register in glossaryTerms[] with a definition' },
+  { word: 'propolis', note: 'domain jargon — register in glossaryTerms[] with a definition' },
+  { word: 'varroa', note: 'domain jargon — register in glossaryTerms[] with a definition' },
+  { word: 'weaner', note: 'domain jargon — register in glossaryTerms[] with a definition' },
+  { word: 'fenbendazole', note: 'domain jargon — register in glossaryTerms[] with a definition' },
+  { word: 'colostrum', note: 'domain jargon — register in glossaryTerms[] with a definition' },
+  { word: 'drenching', note: 'domain jargon — register in glossaryTerms[] with a definition' },
+  { word: 'standstill', note: 'domain jargon in animal husbandry context — register in glossaryTerms[]' },
+  { word: 'tare', note: 'domain jargon — register in glossaryTerms[] or write "the empty container weight" in plain English' },
+]
 
 /** Banned phrases — block. Case-insensitive, whole-word. */
 const BANNED_PHRASES: { phrase: string; whole?: boolean }[] = [
@@ -418,6 +472,21 @@ interface GlossaryTermEntry {
 function checkGlossaryCoverage(root: Record<string, unknown>, report: VoiceCheckReport): void {
   const registered = Array.isArray(root.glossaryTerms) ? (root.glossaryTerms as GlossaryTermEntry[]) : []
   if (registered.length === 0) return
+
+  // Check each entry has a non-empty, explanatory definition (>= 20 chars / ~5 words).
+  for (const entry of registered) {
+    if (!entry?.slug) continue
+    const def = (entry.definition ?? '').trim()
+    if (def.length < 20) {
+      report.errors.push({
+        severity: 'error',
+        kind: 'empty-glossary-def',
+        message: `glossary term "${entry.slug}" has an empty or stub definition ("${def.slice(0, 30)}") — must be at least one explanatory clause`,
+        path: `glossaryTerms[${entry.slug}]`,
+      })
+    }
+  }
+
   const registeredSlugs = new Set(registered.map((g) => g?.slug).filter((s): s is string => typeof s === 'string'))
   const usedSlugs = new Set<string>()
 
@@ -558,31 +627,17 @@ function scanChunk(chunk: Chunk, report: VoiceCheckReport): void {
     }
   }
 
-  // Em-dash count — paragraph-level.
+  // Em/en dash — paragraph-level. Rule (2026-05-19): ZERO in body content.
   if (paragraph) {
-    const total = (text.match(/—/g) ?? []).length
-    if (total > 1) {
+    const dashTotal = (text.match(/[—–]/g) ?? []).length
+    if (dashTotal > 0) {
       report.errors.push({
         severity: 'error',
         kind: 'em-dash-paragraph',
-        message: `${total} em dashes in one paragraph (max 1)`,
+        message: `${dashTotal} em/en dash${dashTotal > 1 ? 'es' : ''} in body content (must be zero — use brackets, commas, full stops, or rewording instead)`,
         path,
+        snippet: text.slice(0, 140).replace(/\n/g, ' '),
       })
-    }
-    // Two em dashes in the same sentence — the strongest AI tell.
-    const sentences = splitSentences(text)
-    for (const sentence of sentences) {
-      const count = (sentence.match(/—/g) ?? []).length
-      if (count >= 2) {
-        report.errors.push({
-          severity: 'error',
-          kind: 'em-dash-sentence',
-          message: `${count} em dashes in one sentence`,
-          path,
-          snippet: sentence.trim(),
-        })
-        break
-      }
     }
   }
 
@@ -683,6 +738,60 @@ function scanChunk(chunk: Chunk, report: VoiceCheckReport): void {
       message: 'tricolon (three parallel items) — two adjectives almost always beats three',
       path,
     })
+  }
+
+  // Safety-block detection — warn when a paragraph reads like a safety-advice
+  // block rather than a craft step. Flag if 3+ safety keywords appear.
+  if (paragraph) {
+    const lower = text.toLowerCase()
+    const hits = SAFETY_KEYWORDS.filter((kw) => lower.includes(kw))
+    if (hits.length >= 3) {
+      report.warnings.push({
+        severity: 'warn',
+        kind: 'safety-block',
+        message: `possible safety-advice block (${hits.length} safety keywords: ${hits.slice(0, 4).join(', ')}). Body content is craft steps — move safety actions inline as numbered steps or compress to one line`,
+        path,
+      })
+    }
+  }
+
+  // Raw-hours detection — error when a duration > 48 h is expressed as raw
+  // hours. Rule (2026-05-19): over 48 h must be expressed in days or weeks.
+  {
+    const rawHoursRe = /\b(\d+)\s*(?:hours?|hrs?)\b/gi
+    let match: RegExpExecArray | null
+    while ((match = rawHoursRe.exec(text)) !== null) {
+      const hours = parseInt(match[1], 10)
+      if (hours > 48) {
+        const approxWeeks = Math.floor(hours / 168)
+        const approxDays = Math.floor((hours % 168) / 24)
+        const suggestion =
+          approxWeeks > 0
+            ? `${approxWeeks} week${approxWeeks > 1 ? 's' : ''}${approxDays > 0 ? `, ${approxDays} day${approxDays > 1 ? 's' : ''}` : ''}`
+            : `${Math.round(hours / 24)} days`
+        report.errors.push({
+          severity: 'error',
+          kind: 'raw-hours',
+          message: `"${match[0]}" — durations over 48 h must be expressed in days or weeks (try "${suggestion}")`,
+          path,
+          snippet: match[0],
+        })
+      }
+    }
+  }
+
+  // Jargon watchlist — warn when a false-specific or domain-jargon word
+  // appears in plain body text without being wrapped in a glossaryTooltip.
+  for (const entry of JARGON_WATCHLIST) {
+    if (wordRegex(entry.word).test(text)) {
+      report.warnings.push({
+        severity: 'warn',
+        kind: 'unflagged-jargon',
+        message: `"${entry.word}" — ${entry.note}`,
+        path,
+        snippet: entry.word,
+      })
+    }
   }
 }
 

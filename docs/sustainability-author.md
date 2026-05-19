@@ -1114,3 +1114,32 @@ also in `techniqueSlugs[]`.
 
 See `docs/tutorial-author.md` § "Technique linking" for the full
 mark shape and when-to-wrap rules.
+
+---
+
+## 2026-05-19 voice addendum — eight hard rules
+
+All eight rules in `feedback_homemade_voice.md` (2026-05-19) apply to every draft
+from this prompt. Any draft that violates any rule is NOT acceptable; rewrite before
+running `voice-check`.
+
+**Word precision for Sustainability.** Verbs are context-specific by sub-category:
+"reducing", "repairing", "repurposing", "composting", "growing", "making",
+"preserving", "storing", "managing". Use the verb that matches the specific action.
+Not "cooking" for composting or fermentation.
+
+**Pre-publish eight-rule self-check** — run after the existing self-critique pass:
+
+1. **Em/en dashes — ZERO.** Any `—` or `–` in body prose is rejected.
+2. **Safety advice — max one line.** No multi-paragraph safety sections. Safety steps
+   (e.g. compost heat, raw materials handling) go inline as numbered steps.
+3. **No false specificness.** No brand-pinned product names unless critical to the
+   outcome. "A compost thermometer" is sufficient; a brand name is not needed.
+4. **Word precision.** Use only the context-appropriate verbs above.
+5. **Glossary definitions non-empty.** Every `glossaryTerms[]` entry must have an
+   explanatory clause. `voice-check` blocks empty stubs.
+6. **Time units at scale.** Durations > 48 h in days or weeks, never raw hours.
+   Composting timelines, fermentation cycles — especially watch these.
+7. **Orientation paragraph first.** Body opens with plain English (what this is, why
+   it reduces impact) before any technical term appears.
+8. **Canonical TipTap blocks.** `troubleshooter`, `infoPanel`, `suppliesCard`.
