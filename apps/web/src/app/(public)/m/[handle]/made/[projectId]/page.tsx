@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { prisma, UGCPhotoStatus } from '@homemade/db'
 import { mediaUrl } from '@/lib/media'
+import { getCurrentDbUser } from '@/lib/get-current-user'
+import { MakerReportLink } from '@/components/public/maker-report-link'
 
 import '../../maker-profile.css'
 
@@ -83,8 +85,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function MakerMadeDetailPage({ params }: PageProps) {
   const { handle, projectId } = await params
-  const project = await loadProject(handle, projectId)
+  const [project, viewer] = await Promise.all([
+    loadProject(handle, projectId),
+    getCurrentDbUser(),
+  ])
   if (!project) notFound()
+  const isOwner = viewer?.id === project.user.id
 
   // Other approved photos from this UserProject — keyed off (userId, tutorialId)
   // since the UGCPhoto schema doesn't link directly to UserProject. Sort by
@@ -151,6 +157,15 @@ export default async function MakerMadeDetailPage({ params }: PageProps) {
         <section className="maker-made-section">
           <span className="maker-made-section-label">Notes</span>
           <p className="maker-made-note">{project.publicNote}</p>
+          {viewer && !isOwner && (
+            <div style={{ marginTop: 6 }}>
+              <MakerReportLink
+                targetType="MAKER_PROJECT_PUBLIC_NOTE"
+                targetId={project.id}
+                label="Report note"
+              />
+            </div>
+          )}
         </section>
       )}
 
@@ -167,6 +182,15 @@ export default async function MakerMadeDetailPage({ params }: PageProps) {
               </li>
             ))}
           </ul>
+          {viewer && !isOwner && (
+            <div style={{ marginTop: 6 }}>
+              <MakerReportLink
+                targetType="MAKER_PROJECT_WHAT_I_USED"
+                targetId={project.id}
+                label="Report list"
+              />
+            </div>
+          )}
         </section>
       )}
 

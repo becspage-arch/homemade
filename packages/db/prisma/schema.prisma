@@ -110,6 +110,13 @@ model User {
   makerHeaderImage     Media?    @relation("UserMakerHeader", fields: [makerHeaderImageId], references: [id])
   makerJoinedAt        DateTime?
 
+  // Session A addendum — handle change rate-limit (one change per 90 days
+  // after first set) + the "Did you make this?" prompt dismissal map.
+  // `dismissedDidYouMakeThis` is `{ tutorialId: ISO-8601 string }`; entries
+  // older than 7 days are ignored at read time, no write-side cleanup needed.
+  lastHandleChangeAt      DateTime?
+  dismissedDidYouMakeThis Json      @default("{}")
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -159,6 +166,16 @@ model User {
 
   // Mobile rebuild — registered push devices (one per platform per install).
   pushSubscriptions PushSubscription[]
+
+  // Session A addendum — Maker of the Month editorial picks (a User can be
+  // featured many times; an admin User can pick many MOTM rows).
+  makerOfTheMonthEntries MakerOfTheMonth[] @relation("MakerOfTheMonthFeatured")
+  makerOfTheMonthPicks   MakerOfTheMonth[] @relation("MakerOfTheMonthPicker")
+
+  // Session A addendum — tutorial-visit tracker for the "Did you make this?"
+  // smart prompt. Counts page-views per (user, tutorial); only rows for
+  // signed-in Makers exist.
+  tutorialVisits TutorialVisit[]
 
   @@index([role])
   @@index([isSuspended])
@@ -396,6 +413,9 @@ model Tutorial {
 
   weeklyEditorialPicks WeeklyEditorialPick[]
   projectSchedule      ProjectSchedule[]
+
+  // Session A addendum — visit counter for the "Did you make this?" prompt.
+  tutorialVisits TutorialVisit[]
 
   // ──────────────────────────────────────────────────────────────────────────
   // Phase 8 Step 13 — Mindset practice metadata. Null on rows where
@@ -1288,6 +1308,17 @@ enum ReportTargetType {
   QUESTION
   ANSWER
   USER
+  // Session A addendum — Maker profile content moderation. `MAKER_BIO`,
+  // `MAKER_HANDLE`, and `MAKER_HEADER_IMAGE` target the User row directly
+  // (targetId = User.id). `MAKER_PROJECT_PUBLIC_NOTE` and
+  // `MAKER_PROJECT_WHAT_I_USED` target a UserProject (targetId =
+  // UserProject.id). Admin upholding clears the specific field rather than
+  // hiding the whole row.
+  MAKER_BIO
+  MAKER_HANDLE
+  MAKER_HEADER_IMAGE
+  MAKER_PROJECT_PUBLIC_NOTE
+  MAKER_PROJECT_WHAT_I_USED
 }
 
 enum ReportReason {
@@ -1390,6 +1421,11 @@ enum NotificationType {
   PATTERN_TEST_APPLICATION_ACCEPTED
   PATTERN_TEST_APPLICATION_REJECTED
   PATTERN_TEST_FEEDBACK_RECEIVED
+  // Session A addendum — fired when a moderator clears a field on the
+  // Maker's public profile after an upheld report (bio, handle, header,
+  // publicNote, or a What-I-used entry). Body explains which field was
+  // removed; href points the Maker to /me/settings or the project edit.
+  MAKER_PROFILE_CONTENT_REMOVED
   SYSTEM
 }
 
@@ -3071,4 +3107,67 @@ model CraftMaterial {
   @@index([category])
   @@index([craft, category])
   @@index([trainedEnvironmentOnly])
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Session A addendum — Maker of the Month + tutorial-visit tracker
+// ────────────────────────────────────────────────────────────────────────────
+
+/// One row per editorial pick for a calendar month. The admin pastes a Maker
+/// handle, the form looks them up, the row is written here with a small
+/// internal reason note. The public surfaces (badge on profile, homepage
+/// tile) read `monthStart <= now() <= monthEnd` to auto-expire.
+model MakerOfTheMonth {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation("MakerOfTheMonthFeatured", fields: [userId], references: [id], onDelete: Cascade)
+
+  /// First day of the featured month at 00:00 UTC.
+  monthStart DateTime
+  /// Last day of the featured month at 23:59:59 UTC. Renderer checks both
+  /// bounds so a single misconfigured row doesn't take over indefinitely.
+  monthEnd   DateTime
+
+  /// Admin's internal note — why this Maker was picked. Not surfaced
+  /// publicly. Visible in the admin list view.
+  featuredReason String
+
+  createdByUserId String
+  createdBy       User   @relation("MakerOfTheMonthPicker", fields: [createdByUserId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  /// Only one Maker per month — admin form replaces an existing pick rather
+  /// than allowing duplicates. Composite unique on (monthStart, monthEnd)
+  /// would technically allow overlap; the unique on monthStart is enough
+  /// because months don't overlap when monthStart is always the first of
+  /// the month.
+  @@unique([monthStart])
+  @@index([monthStart, monthEnd])
+}
+
+/// Per-Maker, per-tutorial visit counter for the "Did you make this?"
+/// smart prompt. Incremented server-side every time `tutorial_viewed`
+/// fires for a signed-in Maker. Only rows for signed-in Makers exist —
+/// anonymous visits never reach this table.
+///
+/// Composite primary key keeps inserts cheap and avoids a sweeper job; the
+/// row count is bounded by (Makers × tutorials they've viewed) which is
+/// orders of magnitude smaller than AnalyticsEvent.
+model TutorialVisit {
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  tutorialId String
+  tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+
+  count         Int      @default(0)
+  lastVisitedAt DateTime @default(now())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@id([userId, tutorialId])
+  @@index([userId, count])
 }

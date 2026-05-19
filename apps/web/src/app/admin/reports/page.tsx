@@ -19,6 +19,11 @@ const TARGET_FILTERS: { label: string; value: ReportTargetType | 'all' }[] = [
   { label: 'Questions', value: ReportTargetType.QUESTION },
   { label: 'Answers', value: ReportTargetType.ANSWER },
   { label: 'Users', value: ReportTargetType.USER },
+  { label: 'Maker bio', value: ReportTargetType.MAKER_BIO },
+  { label: 'Maker handle', value: ReportTargetType.MAKER_HANDLE },
+  { label: 'Maker header', value: ReportTargetType.MAKER_HEADER_IMAGE },
+  { label: 'Made it note', value: ReportTargetType.MAKER_PROJECT_PUBLIC_NOTE },
+  { label: 'What I used', value: ReportTargetType.MAKER_PROJECT_WHAT_I_USED },
 ]
 
 interface PageProps {
@@ -51,30 +56,61 @@ export default async function AdminReportsPage({ searchParams }: PageProps) {
   const photoIds = reports.filter((r) => r.targetType === 'PHOTO').map((r) => r.targetId)
   const questionIds = reports.filter((r) => r.targetType === 'QUESTION').map((r) => r.targetId)
   const answerIds = reports.filter((r) => r.targetType === 'ANSWER').map((r) => r.targetId)
-  const userIds = reports.filter((r) => r.targetType === 'USER').map((r) => r.targetId)
+  // USER and the 3 USER-keyed Maker target types all index into the User table.
+  const userKeyedIds = reports
+    .filter((r) =>
+      ['USER', 'MAKER_BIO', 'MAKER_HANDLE', 'MAKER_HEADER_IMAGE'].includes(
+        r.targetType,
+      ),
+    )
+    .map((r) => r.targetId)
+  const projectIds = reports
+    .filter((r) =>
+      ['MAKER_PROJECT_PUBLIC_NOTE', 'MAKER_PROJECT_WHAT_I_USED'].includes(
+        r.targetType,
+      ),
+    )
+    .map((r) => r.targetId)
 
-  const [reviews, photos, questions, answers, users] = await Promise.all([
-    prisma.review.findMany({
-      where: { id: { in: reviewIds } },
-      select: { id: true, body: true, rating: true, status: true },
-    }),
-    prisma.uGCPhoto.findMany({
-      where: { id: { in: photoIds } },
-      select: { id: true, caption: true, status: true, media: { select: { cloudflareId: true } } },
-    }),
-    prisma.question.findMany({
-      where: { id: { in: questionIds } },
-      select: { id: true, body: true, status: true },
-    }),
-    prisma.answer.findMany({
-      where: { id: { in: answerIds } },
-      select: { id: true, body: true, status: true },
-    }),
-    prisma.user.findMany({
-      where: { id: { in: userIds } },
-      select: { id: true, email: true, name: true, displayHandle: true, isSuspended: true },
-    }),
-  ])
+  const [reviews, photos, questions, answers, users, makerProjects] =
+    await Promise.all([
+      prisma.review.findMany({
+        where: { id: { in: reviewIds } },
+        select: { id: true, body: true, rating: true, status: true },
+      }),
+      prisma.uGCPhoto.findMany({
+        where: { id: { in: photoIds } },
+        select: { id: true, caption: true, status: true, media: { select: { cloudflareId: true } } },
+      }),
+      prisma.question.findMany({
+        where: { id: { in: questionIds } },
+        select: { id: true, body: true, status: true },
+      }),
+      prisma.answer.findMany({
+        where: { id: { in: answerIds } },
+        select: { id: true, body: true, status: true },
+      }),
+      prisma.user.findMany({
+        where: { id: { in: userKeyedIds } },
+        select: {
+          id: true,
+          email: true,
+          name: true,
+          displayHandle: true,
+          isSuspended: true,
+          bio: true,
+        },
+      }),
+      prisma.userProject.findMany({
+        where: { id: { in: projectIds } },
+        select: {
+          id: true,
+          publicNote: true,
+          whatIUsed: true,
+          user: { select: { displayHandle: true } },
+        },
+      }),
+    ])
 
   const enriched: ReportWithTarget[] = reports.map((r) => ({
     ...r,
@@ -87,9 +123,15 @@ export default async function AdminReportsPage({ searchParams }: PageProps) {
             ? questions.find((x) => x.id === r.targetId)
             : r.targetType === 'ANSWER'
               ? answers.find((x) => x.id === r.targetId)
-              : r.targetType === 'USER'
+              : r.targetType === 'USER' ||
+                  r.targetType === 'MAKER_BIO' ||
+                  r.targetType === 'MAKER_HANDLE' ||
+                  r.targetType === 'MAKER_HEADER_IMAGE'
                 ? users.find((x) => x.id === r.targetId)
-                : undefined,
+                : r.targetType === 'MAKER_PROJECT_PUBLIC_NOTE' ||
+                    r.targetType === 'MAKER_PROJECT_WHAT_I_USED'
+                  ? makerProjects.find((x) => x.id === r.targetId)
+                  : undefined,
   }))
 
   return (

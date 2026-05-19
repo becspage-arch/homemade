@@ -32,6 +32,11 @@ import { ErrataLink } from '@/components/public/ugc/errata-link'
 import { CookingModeShell } from '@/components/public/cooking-mode/cooking-mode-shell'
 import { CookingModeToggle } from '@/components/public/cooking-mode/cooking-mode-toggle'
 import { MadeByMakers } from '@/components/public/tutorial-reader/made-by-makers'
+import { DidYouMakeThisPrompt } from '@/components/public/tutorial-reader/did-you-make-this-prompt'
+import {
+  recordTutorialVisit,
+  shouldShowDidYouMakeThisPrompt,
+} from '@/lib/did-you-make-this'
 
 import '@/components/public/tutorial-reader/tutorial-reader.css'
 import '@/components/public/ugc/ugc.css'
@@ -182,6 +187,23 @@ export default async function TutorialPage({ params }: PageProps) {
   const inProgressId =
     project?.status === UserProjectStatus.IN_PROGRESS ? project.id : null
   const supplies = inProgressId ? harvestSupplies(body) : []
+
+  // "Did you make this?" — signed-in Makers only. Record the visit, then
+  // ask the helper whether the prompt should render. Anonymous visitors
+  // never reach this branch, so we never write to TutorialVisit for them.
+  let didYouMakeThis: { show: boolean; visitCount: number } | null = null
+  if (currentUser) {
+    const { count } = await recordTutorialVisit({
+      userId: currentUser.id,
+      tutorialId: tutorial.id,
+    })
+    didYouMakeThis = await shouldShowDidYouMakeThisPrompt({
+      userId: currentUser.id,
+      tutorialId: tutorial.id,
+      visitCount: count,
+      dismissedDidYouMakeThis: currentUser.dismissedDidYouMakeThis,
+    })
+  }
 
   // "Made by Homemade Makers" — public UserProjects from Makers with public
   // profiles, capped at 6 + a count of any beyond. This is the E-E-A-T
@@ -389,22 +411,30 @@ export default async function TutorialPage({ params }: PageProps) {
       requiresKiln={tutorial.requiresKiln}
       requiresWheel={tutorial.requiresWheel}
       body={
-        <TutorialContent
-          content={body}
-          glossary={refs.glossary}
-          subTutorials={refs.subTutorials}
-          techniques={refs.techniques}
-          beginnerMode={beginnerMode}
-          recipeContext={
-            isRecipe
-              ? {
-                  tutorialId: tutorial.id,
-                  tutorialSlug,
-                  scalable: tutorial.scalable,
-                }
-              : null
-          }
-        />
+        <>
+          {didYouMakeThis?.show && (
+            <DidYouMakeThisPrompt
+              tutorialId={tutorial.id}
+              visitCount={didYouMakeThis.visitCount}
+            />
+          )}
+          <TutorialContent
+            content={body}
+            glossary={refs.glossary}
+            subTutorials={refs.subTutorials}
+            techniques={refs.techniques}
+            beginnerMode={beginnerMode}
+            recipeContext={
+              isRecipe
+                ? {
+                    tutorialId: tutorial.id,
+                    tutorialSlug,
+                    scalable: tutorial.scalable,
+                  }
+                : null
+            }
+          />
+        </>
       }
       actionsSlot={actionsSlot}
       leftRail={leftRail}

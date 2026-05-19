@@ -6,6 +6,11 @@ import { prisma, UserProjectStatus, type Prisma } from '@homemade/db'
 import { audit } from './audit'
 import { getCurrentDbUser } from './get-current-user'
 import { captureServerEvent } from './posthog'
+import {
+  nextHandleChangeAllowedAt,
+  validateHandle,
+  type HandleValidationFail,
+} from './handle-rules'
 
 /**
  * Caller-facing result shape. Server actions return a plain object so client
@@ -425,45 +430,108 @@ export async function updateCookingModeAutoEnable(
   return { ok: true }
 }
 
-const HANDLE_RE = /^[a-z0-9](?:[a-z0-9_-]{1,30}[a-z0-9])?$/
+// Reject copy is intentionally uniform across every rule — bad actors
+// shouldn't be able to probe the filter by varying input. The audit-log
+// metadata (in moderation-actions) keeps the internal reason code for
+// admin debugging.
+const HANDLE_NEUTRAL_REJECT = "That handle isn't available."
+
+export type ProfileUpdateResult =
+  | { ok: true }
+  | {
+      ok: false
+      error: string
+      /** Only set on `reason === 'impersonation-soft-prompt'` so the form
+          can present an "Are you {name}?" override. The form re-submits
+          with `confirmImpersonationOverride: true`. */
+      impersonationOf?: { handle: string; name: string | null }
+    }
 
 export async function updateProfile(input: {
   displayHandle: string | null
   bio: string | null
-}): Promise<ActionResult> {
+  /** When the user has been shown the soft-prompt and confirmed they're not
+      impersonating the similar creator, the next submit passes this to
+      bypass the soft prompt. The hard-block path can never be bypassed. */
+  confirmImpersonationOverride?: boolean
+}): Promise<ProfileUpdateResult> {
   const user = await requireUser()
 
   let displayHandle: string | null = null
   if (input.displayHandle !== null) {
     const raw = input.displayHandle.trim().toLowerCase()
     if (raw.length > 0) {
-      if (!HANDLE_RE.test(raw)) {
-        return {
-          ok: false,
-          error: 'Handle must be 2-32 characters: lowercase letters, numbers, dashes or underscores.',
+      // 90-day rate limit. First-set always allowed (lastHandleChangeAt
+      // is null). Subsequent changes wait the cooldown out — except when
+      // the new value matches the existing one (no-op).
+      if (raw !== user.displayHandle) {
+        const nextAllowed = nextHandleChangeAllowedAt(user.lastHandleChangeAt)
+        if (nextAllowed) {
+          return {
+            ok: false,
+            error: `You can change your handle again on ${nextAllowed.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}.`,
+          }
         }
       }
-      const clash = await prisma.user.findFirst({
-        where: { displayHandle: raw, NOT: { id: user.id } },
-        select: { id: true },
+
+      const result = await validateHandle({
+        candidate: raw,
+        currentUserId: user.id,
       })
-      if (clash) return { ok: false, error: 'That handle is taken.' }
+      if (!result.ok) {
+        // Soft-prompt is the one reason the user can override.
+        if (
+          result.reason === 'impersonation-soft-prompt' &&
+          input.confirmImpersonationOverride
+        ) {
+          // Fall through to write.
+        } else {
+          return mapHandleFailToActionResult(result)
+        }
+      }
       displayHandle = raw
     }
   }
 
   const bio = input.bio?.trim().slice(0, 280) || null
 
+  const handleChanged =
+    displayHandle !== null && displayHandle !== user.displayHandle
+
   await prisma.user.update({
     where: { id: user.id },
-    data: { displayHandle, bio },
+    data: {
+      displayHandle,
+      bio,
+      ...(handleChanged ? { lastHandleChangeAt: new Date() } : {}),
+    },
   })
 
   // Revalidate /m/{handle} too — the new public Maker profile pulls from bio
   // and displayHandle.
   revalidatePath('/me/settings')
   if (displayHandle) revalidatePath(`/m/${displayHandle}`)
+  // If the handle changed, the OLD /m/{handle} URL also needs revalidating
+  // so it stops surfacing this Maker's content.
+  if (user.displayHandle && user.displayHandle !== displayHandle) {
+    revalidatePath(`/m/${user.displayHandle}`)
+  }
   return { ok: true }
+}
+
+function mapHandleFailToActionResult(
+  fail: HandleValidationFail,
+): ProfileUpdateResult {
+  if (fail.reason === 'impersonation-soft-prompt') {
+    return {
+      ok: false,
+      error: fail.similarTo
+        ? `This handle is similar to @${fail.similarTo.handle}. Are you ${fail.similarTo.name ?? 'that Maker'}? If not, please pick a different handle.`
+        : HANDLE_NEUTRAL_REJECT,
+      impersonationOf: fail.similarTo,
+    }
+  }
+  return { ok: false, error: HANDLE_NEUTRAL_REJECT }
 }
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -648,6 +716,94 @@ export async function setBookmarkPublic(input: {
     event: next ? 'make_it_made_public' : 'make_it_made_private',
     distinctId: user.clerkId,
     properties: { bookmarkId: bookmark.id },
+  })
+  return { ok: true }
+}
+
+/**
+ * "Did you make this?" prompt — Maker confirms they've made the tutorial.
+ * Creates (or upserts) a UserProject with status=COMPLETED and a
+ * completedAt set to now. The Maker is then redirected client-side into
+ * the project-edit flow at /me/projects/{id} where they can add a photo
+ * + publicNote + What I used.
+ */
+export async function confirmMadeFromPrompt(input: {
+  tutorialId: string
+}): Promise<ActionResult & { projectId?: string }> {
+  const user = await requireUser()
+  const tutorial = await prisma.tutorial.findUnique({
+    where: { id: input.tutorialId },
+    select: { id: true, slug: true, category: { select: { slug: true } } },
+  })
+  if (!tutorial) return { ok: false, error: 'Tutorial not found.' }
+
+  const now = new Date()
+  const project = await prisma.userProject.upsert({
+    where: {
+      userId_tutorialId: { userId: user.id, tutorialId: tutorial.id },
+    },
+    update: {
+      status: UserProjectStatus.COMPLETED,
+      completedAt: now,
+      abandonedAt: null,
+    },
+    create: {
+      userId: user.id,
+      tutorialId: tutorial.id,
+      status: UserProjectStatus.COMPLETED,
+      startedAt: now,
+      completedAt: now,
+    },
+    select: { id: true },
+  })
+
+  await audit({
+    actorId: user.id,
+    action: 'project.confirmed_from_prompt',
+    resource: `UserProject:${project.id}`,
+    metadata: { tutorialId: tutorial.id },
+  })
+
+  await captureServerEvent({
+    event: 'did_you_make_this_confirmed',
+    distinctId: user.clerkId,
+    properties: { tutorialId: tutorial.id, projectId: project.id },
+  })
+
+  revalidatePath(`/${tutorial.category.slug}/${tutorial.slug}`)
+  revalidatePath('/me')
+  return { ok: true, projectId: project.id }
+}
+
+/**
+ * "Did you make this?" prompt — Maker dismisses the prompt for 7 days.
+ * Writes the dismissal timestamp into User.dismissedDidYouMakeThis under
+ * the tutorial id. Old entries in the map are tolerated; the read-path
+ * filter (in did-you-make-this.ts) expires them by age, so write-side
+ * cleanup is unnecessary.
+ */
+export async function dismissDidYouMakeThisPrompt(input: {
+  tutorialId: string
+}): Promise<ActionResult> {
+  const user = await requireUser()
+  const current =
+    user.dismissedDidYouMakeThis &&
+    typeof user.dismissedDidYouMakeThis === 'object' &&
+    !Array.isArray(user.dismissedDidYouMakeThis)
+      ? (user.dismissedDidYouMakeThis as Record<string, string>)
+      : {}
+  const next: Record<string, string> = {
+    ...current,
+    [input.tutorialId]: new Date().toISOString(),
+  }
+  await prisma.user.update({
+    where: { id: user.id },
+    data: { dismissedDidYouMakeThis: next as unknown as Prisma.InputJsonValue },
+  })
+  await captureServerEvent({
+    event: 'did_you_make_this_dismissed',
+    distinctId: user.clerkId,
+    properties: { tutorialId: input.tutorialId },
   })
   return { ok: true }
 }

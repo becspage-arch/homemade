@@ -24,7 +24,9 @@ export function SettingsForm({
   const [profileStatus, setProfileStatus] = useState<{
     state: 'idle' | 'saving' | 'saved' | 'error'
     message?: string
+    impersonationOf?: { handle: string; name: string | null }
   }>({ state: 'idle' })
+  const [overrideImpersonation, setOverrideImpersonation] = useState(false)
   const [, startBeginner] = useTransition()
   const [, startProfile] = useTransition()
 
@@ -44,9 +46,18 @@ export function SettingsForm({
       const res = await updateProfile({
         displayHandle: handle.trim() || null,
         bio: bio.trim() || null,
+        confirmImpersonationOverride: overrideImpersonation,
       })
-      if (res.ok) setProfileStatus({ state: 'saved' })
-      else setProfileStatus({ state: 'error', message: res.error })
+      if (res.ok) {
+        setProfileStatus({ state: 'saved' })
+        setOverrideImpersonation(false)
+      } else {
+        setProfileStatus({
+          state: 'error',
+          message: res.error,
+          impersonationOf: res.impersonationOf,
+        })
+      }
     })
   }
 
@@ -106,7 +117,25 @@ export function SettingsForm({
         )}
         {profileStatus.state === 'saved' && <p className="me-feedback">saved.</p>}
         {profileStatus.state === 'error' && (
-          <p className="me-feedback error">{profileStatus.message}</p>
+          <>
+            <p className="me-feedback error">{profileStatus.message}</p>
+            {profileStatus.impersonationOf && (
+              <label
+                className="me-toggle"
+                style={{ marginTop: 8, fontSize: 13 }}
+              >
+                <input
+                  type="checkbox"
+                  checked={overrideImpersonation}
+                  onChange={(e) => setOverrideImpersonation(e.target.checked)}
+                />
+                <span>
+                  I&apos;m not @{profileStatus.impersonationOf.handle} — use
+                  this handle anyway.
+                </span>
+              </label>
+            )}
+          </>
         )}
       </form>
     </div>

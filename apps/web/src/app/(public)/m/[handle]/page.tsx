@@ -9,6 +9,9 @@ import {
 import { mediaSrcSet, mediaUrl } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { captureServerEvent } from '@/lib/posthog'
+import { MakerReportLink } from '@/components/public/maker-report-link'
+import { MakerOfTheMonthBadge } from '@/components/public/maker-of-the-month-badge'
+import { currentMonthBadgeFor } from '@/lib/maker-of-the-month'
 
 import './maker-profile.css'
 
@@ -98,6 +101,8 @@ export default async function MakerProfilePage({ params }: PageProps) {
     maker.isCreator &&
     maker.creatorProfile?.applicationStatus === CreatorApplicationStatus.APPROVED
 
+  const motmBadge = await currentMonthBadgeFor(maker.id)
+
   const [madeItProjects, publicBookmarks, creatorTutorials] = await Promise.all([
     prisma.userProject.findMany({
       where: { userId: maker.id, isPublic: true },
@@ -176,10 +181,27 @@ export default async function MakerProfilePage({ params }: PageProps) {
   return (
     <div className="maker-public-profile">
       {headerCover && (
-        <div className="maker-public-cover" aria-hidden="true">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={headerCover} alt="" />
-        </div>
+        <>
+          <div className="maker-public-cover" aria-hidden="true">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={headerCover} alt="" />
+          </div>
+          {viewer && !isOwner && (
+            <div
+              style={{
+                marginTop: -16,
+                marginBottom: 16,
+                textAlign: 'right',
+              }}
+            >
+              <MakerReportLink
+                targetType="MAKER_HEADER_IMAGE"
+                targetId={maker.id}
+                label="Report image"
+              />
+            </div>
+          )}
+        </>
       )}
 
       <header className="maker-public-header">
@@ -192,7 +214,23 @@ export default async function MakerProfilePage({ params }: PageProps) {
           {joinedMonth && (
             <div className="maker-public-since">Maker since {joinedMonth}</div>
           )}
-          {maker.bio && <p className="maker-public-bio">{maker.bio}</p>}
+          {motmBadge && (
+            <div>
+              <MakerOfTheMonthBadge monthStart={motmBadge.monthStart} />
+            </div>
+          )}
+          {maker.bio && (
+            <div>
+              <p className="maker-public-bio">{maker.bio}</p>
+              {viewer && !isOwner && (
+                <MakerReportLink
+                  targetType="MAKER_BIO"
+                  targetId={maker.id}
+                  label="Report bio"
+                />
+              )}
+            </div>
+          )}
           {isApprovedCreator && maker.creatorProfile && (
             <CreatorSocials profile={maker.creatorProfile} />
           )}
@@ -330,6 +368,24 @@ export default async function MakerProfilePage({ params }: PageProps) {
           Make-a-thon history coming soon.
         </p>
       </section>
+
+      {viewer && !isOwner && (
+        <p
+          style={{
+            marginTop: 32,
+            textAlign: 'center',
+            fontSize: 12,
+            color: 'var(--color-warm-taupe, #b3a48d)',
+          }}
+        >
+          Concerned about this Maker (handle, impersonation, abuse)?{' '}
+          <MakerReportLink
+            targetType="MAKER_HANDLE"
+            targetId={maker.id}
+            label="Report this Maker"
+          />
+        </p>
+      )}
 
       {isApprovedCreator && (
         <section className="maker-public-section">

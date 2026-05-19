@@ -60,6 +60,7 @@ const SIDEBAR_GROUPS: SidebarGroup[] = [
       { href: '/admin/errata', label: 'Errata', minRole: UserRole.EDITOR },
       { href: '/admin/reports', label: 'Reports', minRole: UserRole.EDITOR },
       { href: '/admin/community/dmca', label: 'DMCA queue', minRole: UserRole.EDITOR },
+      { href: '/admin/community/maker-of-the-month', label: 'Maker of the Month', minRole: UserRole.EDITOR },
       { href: '/admin/creators', label: 'Creator applications', minRole: UserRole.EDITOR },
       { href: '/admin/creators/moderation', label: 'Creator moderation', minRole: UserRole.EDITOR },
       { href: '/admin/patterns', label: 'Pattern tests', minRole: UserRole.EDITOR },

@@ -7,6 +7,8 @@ import { Wordmark } from '@/components/wordmark'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { loadHomepageData } from '@/lib/homepage-data'
 import { loadRecentlyMade } from '@/lib/recently-made'
+import { loadActiveMakerOfTheMonth } from '@/lib/maker-of-the-month'
+import { MakerOfTheMonthTile } from '@/components/public/maker-of-the-month-tile'
 import { readerStateFor } from '@/lib/user-state'
 import { tutorialHeroSrc } from '@/lib/tutorial-hero'
 import { prisma } from '@homemade/db'
@@ -17,9 +19,10 @@ export const dynamic = 'force-dynamic'
 
 export default async function HomePage() {
   const currentUser = await getCurrentDbUser()
-  const [data, recentlyMade] = await Promise.all([
+  const [data, recentlyMade, motm] = await Promise.all([
     loadHomepageData(currentUser),
     loadRecentlyMade({ limit: 12 }),
+    loadActiveMakerOfTheMonth(),
   ])
 
   // Wordmark fallback: zero published tutorials.
@@ -212,6 +215,8 @@ export default async function HomePage() {
           ))}
         </HomeRail>
       ))}
+
+      {motm && <MakerOfTheMonthTile motm={motm} />}
 
       {recentlyMade.length > 0 && (
         <RecentlyMadeRail

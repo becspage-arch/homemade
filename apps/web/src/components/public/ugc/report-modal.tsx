@@ -3,7 +3,17 @@
 import { useState, useTransition } from 'react'
 import { submitReport } from '@/lib/ugc-actions'
 
-type TargetType = 'REVIEW' | 'PHOTO' | 'QUESTION' | 'ANSWER' | 'USER'
+type TargetType =
+  | 'REVIEW'
+  | 'PHOTO'
+  | 'QUESTION'
+  | 'ANSWER'
+  | 'USER'
+  | 'MAKER_BIO'
+  | 'MAKER_HANDLE'
+  | 'MAKER_HEADER_IMAGE'
+  | 'MAKER_PROJECT_PUBLIC_NOTE'
+  | 'MAKER_PROJECT_WHAT_I_USED'
 type Reason = 'SPAM' | 'ABUSE' | 'MISINFORMATION' | 'COPYRIGHT' | 'NSFW' | 'OTHER'
 
 const REASONS: { value: Reason; label: string }[] = [
@@ -42,10 +52,27 @@ export function ReportModal({ targetType, targetId, onClose }: Props) {
     })
   }
 
+  function humaniseTargetType(t: TargetType): string {
+    switch (t) {
+      case 'MAKER_BIO':
+        return "Maker's bio"
+      case 'MAKER_HANDLE':
+        return "Maker's handle"
+      case 'MAKER_HEADER_IMAGE':
+        return "Maker's header image"
+      case 'MAKER_PROJECT_PUBLIC_NOTE':
+        return "Maker's note on this make"
+      case 'MAKER_PROJECT_WHAT_I_USED':
+        return "Maker's What I used list"
+      default:
+        return t.toLowerCase()
+    }
+  }
+
   return (
     <div className="ugc-modal-backdrop" onClick={onClose} role="dialog" aria-modal="true">
       <div className="ugc-modal" onClick={(e) => e.stopPropagation()}>
-        <h3>Report this {targetType.toLowerCase()}</h3>
+        <h3>Report this {humaniseTargetType(targetType)}</h3>
         {done ? (
           <>
             <p className="ugc-success">Thanks — a moderator will take a look.</p>

@@ -66,6 +66,9 @@ export type PosthogEvent =
   | 'made_it_unpublished'
   | 'make_it_made_public'
   | 'make_it_made_private'
+  | 'did_you_make_this_shown'
+  | 'did_you_make_this_confirmed'
+  | 'did_you_make_this_dismissed'
   // Pattern testing
   | 'pattern_test_created'
   | 'pattern_test_recruiting_opened'
@@ -146,6 +149,9 @@ const EVENT_CATEGORIES: Record<string, string> = {
   made_it_unpublished: 'maker',
   make_it_made_public: 'maker',
   make_it_made_private: 'maker',
+  did_you_make_this_shown: 'maker',
+  did_you_make_this_confirmed: 'maker',
+  did_you_make_this_dismissed: 'maker',
   pattern_test_created: 'creator',
   pattern_test_recruiting_opened: 'creator',
   pattern_test_completed: 'creator',

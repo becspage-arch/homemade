@@ -8,6 +8,7 @@ import {
   UGCStatus,
   ErrataStatus,
   ReportStatus,
+  ReportTargetType,
   NotificationType,
   SuspensionStatus,
   UserRole,
@@ -488,8 +489,155 @@ export async function resolveReport(input: {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
-// User role changes + suspensions
+// Maker profile field-level moderation (Session A addendum)
 // ────────────────────────────────────────────────────────────────────────────
+
+const MAKER_REPORT_TARGETS = new Set<ReportTargetType>([
+  ReportTargetType.MAKER_BIO,
+  ReportTargetType.MAKER_HANDLE,
+  ReportTargetType.MAKER_HEADER_IMAGE,
+  ReportTargetType.MAKER_PROJECT_PUBLIC_NOTE,
+  ReportTargetType.MAKER_PROJECT_WHAT_I_USED,
+])
+
+/**
+ * Admin upholds a report against a Maker's profile content. Clears the
+ * specific field, fires a notification, and resolves the underlying Report
+ * row. Wraps the clear + resolve in one transaction so a partial failure
+ * doesn't leave the report queue and the data out of sync.
+ *
+ * Field clears:
+ *   MAKER_BIO                  → User.bio = null
+ *   MAKER_HANDLE               → User.displayHandle = null +
+ *                                  User.isPublicMakerProfile = false
+ *                                  (Maker prompted to pick a new one)
+ *   MAKER_HEADER_IMAGE         → User.makerHeaderImageId = null
+ *   MAKER_PROJECT_PUBLIC_NOTE  → UserProject.publicNote = null
+ *   MAKER_PROJECT_WHAT_I_USED  → UserProject.whatIUsed = null
+ *
+ * Repeat-offender suspension is delegated to the existing UserSuspension
+ * flow — call `suspendUser` separately from the admin UI.
+ */
+export async function removeMakerProfileField(input: {
+  reportId: string
+  resolutionNote?: string | null
+}): Promise<ActionResult> {
+  const actor = await requireAdminRole({ minimum: 'EDITOR' })
+
+  const report = await prisma.report.findUnique({
+    where: { id: input.reportId },
+  })
+  if (!report) return { ok: false, error: 'Report not found.' }
+  if (!MAKER_REPORT_TARGETS.has(report.targetType)) {
+    return {
+      ok: false,
+      error: 'This action is only valid for Maker-profile reports.',
+    }
+  }
+  if (report.status !== ReportStatus.OPEN) {
+    return { ok: false, error: 'Report is already resolved.' }
+  }
+
+  // Resolve the target row to whichever User the notification should go to.
+  // For USER-keyed targets, targetId === User.id. For UserProject-keyed
+  // targets, look up the owning userId via UserProject row.
+  let targetUserId: string | null = null
+  let bodyDetail = ''
+
+  if (
+    report.targetType === ReportTargetType.MAKER_BIO ||
+    report.targetType === ReportTargetType.MAKER_HANDLE ||
+    report.targetType === ReportTargetType.MAKER_HEADER_IMAGE
+  ) {
+    const target = await prisma.user.findUnique({
+      where: { id: report.targetId },
+      select: { id: true, displayHandle: true },
+    })
+    if (!target) return { ok: false, error: 'Target Maker not found.' }
+    targetUserId = target.id
+
+    if (report.targetType === ReportTargetType.MAKER_BIO) {
+      bodyDetail = 'your bio'
+      await prisma.user.update({
+        where: { id: target.id },
+        data: { bio: null },
+      })
+    } else if (report.targetType === ReportTargetType.MAKER_HANDLE) {
+      bodyDetail = 'your handle'
+      await prisma.user.update({
+        where: { id: target.id },
+        data: {
+          displayHandle: null,
+          isPublicMakerProfile: false,
+        },
+      })
+      // Old /m/{handle} stops existing.
+      if (target.displayHandle) revalidatePath(`/m/${target.displayHandle}`)
+    } else {
+      bodyDetail = 'your header image'
+      await prisma.user.update({
+        where: { id: target.id },
+        data: { makerHeaderImageId: null },
+      })
+    }
+  } else {
+    const project = await prisma.userProject.findUnique({
+      where: { id: report.targetId },
+      select: { id: true, userId: true },
+    })
+    if (!project) return { ok: false, error: 'Target project not found.' }
+    targetUserId = project.userId
+
+    if (report.targetType === ReportTargetType.MAKER_PROJECT_PUBLIC_NOTE) {
+      bodyDetail = 'a note on one of your Made it entries'
+      await prisma.userProject.update({
+        where: { id: project.id },
+        data: { publicNote: null },
+      })
+    } else {
+      bodyDetail = 'a What-I-used list on one of your Made it entries'
+      await prisma.userProject.update({
+        where: { id: project.id },
+        data: { whatIUsed: null as never },
+      })
+    }
+  }
+
+  await prisma.report.update({
+    where: { id: report.id },
+    data: {
+      status: ReportStatus.RESOLVED_ACTION_TAKEN,
+      resolvedAt: new Date(),
+      resolvedById: actor.id,
+      resolutionAction:
+        input.resolutionNote?.trim() ||
+        `Cleared ${report.targetType.toLowerCase().replace(/_/g, ' ')}.`,
+    },
+  })
+
+  await audit({
+    actorId: actor.id,
+    action: 'report.maker_field_cleared',
+    resource: `Report:${report.id}`,
+    metadata: {
+      targetType: report.targetType,
+      targetId: report.targetId,
+      targetUserId,
+    },
+  })
+
+  if (targetUserId) {
+    await notify({
+      userId: targetUserId,
+      type: NotificationType.MAKER_PROFILE_CONTENT_REMOVED,
+      body: `A moderator removed ${bodyDetail} after a report. Open your settings to update it.`,
+      href: '/me/settings',
+    })
+  }
+
+  revalidatePath('/admin/reports')
+  return { ok: true }
+}
 
 export async function changeUserRole(input: {
   userId: string

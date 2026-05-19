@@ -85,6 +85,20 @@ export async function hardDeleteAccount(input: {
       where: { userId },
     })
 
+    // Session A addendum — Maker profile cascade. The Bookmark + UserProject
+    // deletes above already vanish all the public Make-it / Made-it content
+    // from /m/{handle} and the homepage rails. These additions clear the
+    // remaining Maker-profile state on the User row, drop the per-Maker
+    // smart-prompt visit counter, and remove any MakerOfTheMonth entries
+    // (the row's user FK would prevent the scrub otherwise — CASCADE only
+    // fires on User row DELETE, not on a scrub-and-keep).
+    const tutorialVisits = await tx.tutorialVisit.deleteMany({
+      where: { userId },
+    })
+    const motm = await tx.makerOfTheMonth.deleteMany({
+      where: { userId },
+    })
+
     // Scrub the User row. The unique-email constraint means we can't all
     // collapse to one literal placeholder; suffix with the user id to keep
     // every scrubbed row distinct without retaining the original address.
@@ -103,6 +117,12 @@ export async function hardDeleteAccount(input: {
       deletionScheduledFor: null,
       deletedAt: new Date(),
       hardDeletedAt: new Date(),
+      // Session A addendum — Maker profile fields.
+      isPublicMakerProfile: false,
+      makerHeaderImage: { disconnect: true },
+      makerJoinedAt: null,
+      lastHandleChangeAt: null,
+      dismissedDidYouMakeThis: {},
     }
     await tx.user.update({ where: { id: userId }, data: scrubData })
 
@@ -130,6 +150,9 @@ export async function hardDeleteAccount(input: {
       patternTests: patternTests.count,
       creatorProfile: creatorProfile.count,
       suspensions: suspensions.count,
+      // Session A addendum — Maker profile cleanup.
+      tutorialVisits: tutorialVisits.count,
+      makerOfTheMonthRows: motm.count,
     }
   })
 

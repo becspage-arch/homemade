@@ -1,7 +1,18 @@
 'use client'
 
 import { useState, useTransition } from 'react'
-import { resolveReport } from '@/lib/moderation-actions'
+import {
+  removeMakerProfileField,
+  resolveReport,
+} from '@/lib/moderation-actions'
+
+const MAKER_TARGETS = new Set([
+  'MAKER_BIO',
+  'MAKER_HANDLE',
+  'MAKER_HEADER_IMAGE',
+  'MAKER_PROJECT_PUBLIC_NOTE',
+  'MAKER_PROJECT_WHAT_I_USED',
+])
 
 export interface ReportWithTarget {
   id: string
@@ -50,6 +61,61 @@ function describeTarget(report: ReportWithTarget): { title: string; snippet: str
         snippet: (t as { isSuspended: boolean }).isSuspended ? 'Currently suspended' : 'Active',
         link: `/admin/users/${(t as { id: string }).id}`,
       }
+    case 'MAKER_BIO': {
+      const u = t as { id: string; displayHandle?: string; bio?: string }
+      return {
+        title: `Maker bio: @${u.displayHandle ?? '?'}`,
+        snippet: u.bio ?? '(empty)',
+        link: u.displayHandle ? `/m/${u.displayHandle}` : null,
+      }
+    }
+    case 'MAKER_HANDLE': {
+      const u = t as { id: string; displayHandle?: string; name?: string }
+      return {
+        title: `Maker handle: @${u.displayHandle ?? '?'}`,
+        snippet: u.name ? `Name on file: ${u.name}` : '(no display name)',
+        link: u.displayHandle ? `/m/${u.displayHandle}` : null,
+      }
+    }
+    case 'MAKER_HEADER_IMAGE': {
+      const u = t as { id: string; displayHandle?: string }
+      return {
+        title: `Maker header: @${u.displayHandle ?? '?'}`,
+        snippet: '(image — open profile to view)',
+        link: u.displayHandle ? `/m/${u.displayHandle}` : null,
+      }
+    }
+    case 'MAKER_PROJECT_PUBLIC_NOTE': {
+      const p = t as {
+        id: string
+        publicNote?: string
+        user: { displayHandle?: string }
+      }
+      return {
+        title: `Made it note: @${p.user.displayHandle ?? '?'}`,
+        snippet: p.publicNote ?? '(cleared)',
+        link: p.user.displayHandle
+          ? `/m/${p.user.displayHandle}/made/${p.id}`
+          : null,
+      }
+    }
+    case 'MAKER_PROJECT_WHAT_I_USED': {
+      const p = t as {
+        id: string
+        whatIUsed?: Array<{ name: string }> | null
+        user: { displayHandle?: string }
+      }
+      const items = Array.isArray(p.whatIUsed)
+        ? p.whatIUsed.map((i) => i.name).slice(0, 3).join(', ')
+        : ''
+      return {
+        title: `Made it What I used: @${p.user.displayHandle ?? '?'}`,
+        snippet: items || '(empty)',
+        link: p.user.displayHandle
+          ? `/m/${p.user.displayHandle}/made/${p.id}`
+          : null,
+      }
+    }
     default:
       return { title: report.targetType, snippet: '', link: null }
   }
@@ -64,6 +130,7 @@ export function ReportCard({ report }: { report: ReportWithTarget }) {
   const reporter =
     report.reporter.displayHandle ?? report.reporter.name ?? report.reporter.email
   const isOpen = report.status === 'OPEN'
+  const isMakerTarget = MAKER_TARGETS.has(report.targetType)
 
   const run = (action: 'RESOLVED_ACTION_TAKEN' | 'RESOLVED_NO_ACTION' | 'DISMISSED') => {
     setError(null)
@@ -72,6 +139,17 @@ export function ReportCard({ report }: { report: ReportWithTarget }) {
         reportId: report.id,
         action,
         resolutionAction: note,
+      })
+      if (!res.ok) setError(res.error)
+    })
+  }
+
+  const clearField = () => {
+    setError(null)
+    start(async () => {
+      const res = await removeMakerProfileField({
+        reportId: report.id,
+        resolutionNote: note,
       })
       if (!res.ok) setError(res.error)
     })
@@ -124,6 +202,16 @@ export function ReportCard({ report }: { report: ReportWithTarget }) {
             onChange={(e) => setNote(e.target.value)}
             disabled={pending}
           />
+          {isMakerTarget && (
+            <button
+              className="admin-btn"
+              disabled={pending}
+              onClick={clearField}
+              title="Clear the offending field + notify the Maker"
+            >
+              Clear field
+            </button>
+          )}
           <button className="admin-btn" disabled={pending} onClick={() => run('RESOLVED_ACTION_TAKEN')}>
             Action taken
           </button>

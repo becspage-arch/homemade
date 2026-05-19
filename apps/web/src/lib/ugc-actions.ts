@@ -516,6 +516,12 @@ const ALLOWED_TARGETS = new Set<ReportTargetType>([
   ReportTargetType.QUESTION,
   ReportTargetType.ANSWER,
   ReportTargetType.USER,
+  // Session A addendum — Maker profile field-level moderation.
+  ReportTargetType.MAKER_BIO,
+  ReportTargetType.MAKER_HANDLE,
+  ReportTargetType.MAKER_HEADER_IMAGE,
+  ReportTargetType.MAKER_PROJECT_PUBLIC_NOTE,
+  ReportTargetType.MAKER_PROJECT_WHAT_I_USED,
 ])
 
 export async function submitReport(input: {
