@@ -1,10 +1,6 @@
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
-import {
-  prisma,
-  CreatorApplicationStatus,
-  UserProjectStatus,
-} from '@homemade/db'
+import { prisma, CreatorApplicationStatus } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { CreatorApplyChecklist } from './creator-apply-checklist'
 
