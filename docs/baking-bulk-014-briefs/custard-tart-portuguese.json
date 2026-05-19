@@ -1,0 +1,115 @@
+{
+  "slug": "custard-tart-portuguese",
+  "title": "Portuguese custard tarts",
+  "subtitle": "Flaky puff pastry cases with a charred egg custard filling",
+  "excerpt": "Individual pastry cases made from rolled puff pastry pressed into a muffin tin, filled with a thin egg custard of milk, cream, sugar, and flour, then baked at maximum oven heat until the custard is blistered and dark in patches. The char is deliberate and essential: it gives a bitter counterpoint to the sweet, wobbly custard. Eaten warm from the oven.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Pastéis de nata (singular: pastel de nata) originate from the Jerónimos Monastery in Belém, Lisbon, where monks made them in the early 19th century using egg yolks left over from starching laundry (where egg whites were used). After the Liberal revolution closed the monastery in 1834, the monks sold the recipe to a sugar refinery that became the Fábrica de Pastéis de Belém. The original pasteis de Belém recipe remains a trade secret; the pastéis de nata sold elsewhere in Portugal and internationally are closely related but not identical. The recipe reached Britain through Portuguese and Brazilian communities and became widely known through coffee shops and bakeries from the 2000s onward.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "12 tarts",
+    "prepMinutes": 30,
+    "cookMinutes": 20,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pastry cases can be prepared in the tin and refrigerated for up to 24 hours before filling and baking. Bake fresh; the custard does not reheat well.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "portuguese",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 250,
+      "bakeTemperatureNote": "conventional oven at maximum heat (250°C or as hot as the oven goes). Fan at the same temperature if available. The very high heat is essential for the characteristic dark patches on the custard. Do not reduce the temperature. Use a non-stick muffin tin.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "muffin-tin", "isOptional": false, "notes": "12-hole muffin tin, lightly greased" },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pastel-de-nata-char",
+      "term": "Pastel de nata char",
+      "definition": "The dark blistered patches on the surface of a correctly baked pastel de nata. They form when the maximum oven temperature causes the sugars in the custard to caramelise and char locally before the rest of the custard overcooks. A pale, smooth custard tart is a different product (the British custard tart, baked at 160°C). The char provides bitter flavour notes that balance the very sweet custard. The temperature must genuinely be as high as possible: a domestic oven at 230°C will produce some patching but not the full effect of a professional pastry oven at 300°C or higher."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pastel-de-nata-char", "term": "Pastel de nata char" } }], "text": "dark charred patches" },
+          { "type": "text", "text": " are not a mistake. Set the oven as hot as it will go and do not open the door during baking. The pastry cases must come up the full height of the muffin tin cavities to hold the custard. Press the pastry in with your thumb working from the base upward, thinning it gradually. The custard should fill the cases almost to the brim." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "puff-pastry", "amount": 320, "unit": "g", "groupLabel": "For the cases", "prepNote": "all-butter, chilled" } },
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 30, "unit": "g", "groupLabel": "For the custard" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 200, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 180, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 480, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 6, "unit": "large", "prepNote": "yolks only" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "lemon", "amount": 0.5, "unit": "each", "prepNote": "zest only" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cinnamon-ground", "amount": 0.5, "unit": "tsp", "prepNote": "to dust over the finished tarts" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For the custard, mix the flour and 60 ml of the milk together until smooth. Dissolve the sugar in the water in a saucepan over medium heat and cook until slightly syrupy (about 2 minutes after dissolving). Heat the remaining milk until steaming. Whisk the yolks into the flour-milk paste, then stir in the hot sugar syrup and the hot milk. Return to the pan and cook over medium heat, stirring, until the custard thickens and barely simmers. Stir in the vanilla and lemon zest. Press clingfilm to the surface and leave to cool." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Roll the puff pastry into a tight log about 30 cm long. Slice into 12 equal rounds, about 2.5 cm thick. Press each round into a greased muffin tin cavity, working the pastry up the sides to the rim with your thumb. The pastry should be thin (3 to 4 mm) and even. Refrigerate for 15 minutes. Heat the oven to 250°C (or as hot as it will go)." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Fill each pastry case almost to the brim with custard (it should reach 3 to 4 mm below the top). Bake for 15 to 18 minutes until the pastry is golden and the custard is set with dark blistered patches on the surface. Leave in the tin for 5 minutes, then remove carefully. Dust with cinnamon and eat warm." }]
+      }
+    ]
+  }
+}

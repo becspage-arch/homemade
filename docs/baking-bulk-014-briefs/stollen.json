@@ -1,0 +1,135 @@
+{
+  "slug": "stollen",
+  "title": "Stollen",
+  "subtitle": "German Christmas bread with marzipan and rum-soaked fruit",
+  "excerpt": "A dense, richly flavoured yeasted German bread filled with rum-soaked dried fruit, whole almonds, and a marzipan core, brushed with butter while hot and dusted thickly with icing sugar. Improves over two to three weeks wrapped in foil, which is why it is made in late November.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Stollen (Christstollen) is a protected geographical indication in Germany, with Dresden Christstollen being the most celebrated. The loaf dates to at least the 15th century as a fasting bread permitted during Advent. The enriched dough formula of flour, yeast, butter, eggs, and dried fruit, wrapped around a marzipan core and dusted with icing sugar, is documented across German baking texts of the 19th and 20th centuries. The recipe here follows the classic Dresden style proportions: high butter content, spirits-soaked fruit, and a substantial resting period after baking.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 large loaf (serves 10 to 12)",
+    "prepMinutes": 45,
+    "cookMinutes": 45,
+    "restingMinutes": 90,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make at least 1 week ahead; ideally 2 to 3 weeks. Wrap tightly in foil and keep in a cool place. The fruit flavour develops and the crumb softens.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "german",
+    "mealType": "breakfast",
+    "mood": ["weekendBake", "comfortFood"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 40,
+      "saltPercent": 1.0,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 90,
+      "proofMinutes": 45,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "conventional oven. Fan at 160°C. The loaf is large; check at 40 minutes that the top is not over-browning.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "stollen-resting",
+      "term": "Stollen resting period",
+      "definition": "The period after baking during which a stollen is stored wrapped in foil before cutting. During this time, the butter and icing sugar form a protective seal around the loaf, the fruit flavour migrates into the crumb, and the texture softens from a just-baked firmness to the characteristic moist, slightly dense crumb. A minimum of one week is standard; two to three weeks gives the best result."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stollen is built to age. Made in November, wrapped tight, and cut at Christmas, it is a planned event rather than a spontaneous bake. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stollen-resting", "term": "Stollen resting period" } }],
+            "text": "resting period"
+          },
+          {
+            "type": "text",
+            "text": " is not optional. A fresh stollen is fine; a rested stollen is a different and better thing. The brandy-soaked fruit, the marzipan centre, and the icing sugar crust all need time to settle together. Start the fruit soaking at least the night before you bake."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "raisins", "amount": 150, "unit": "g", "groupLabel": "Fruit soak (night before)" } },
+          { "type": "ingredientItem", "attrs": { "slug": "sultanas", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "mixed-peel", "amount": 75, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "brandy", "amount": 60, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "strong-bread-flour", "amount": 500, "unit": "g", "groupLabel": "For the dough" } },
+          { "type": "ingredientItem", "attrs": { "slug": "yeast-dried", "amount": 7, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 75, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt-table", "amount": 5, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "mixed-spice", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cardamom-ground", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "nutmeg-ground", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 200, "unit": "ml", "prepNote": "warm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 125, "unit": "g", "prepNote": "softened" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 1, "unit": "large" } },
+          { "type": "ingredientItem", "attrs": { "slug": "blanched-almonds", "amount": 75, "unit": "g", "prepNote": "roughly chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "marzipan", "amount": 200, "unit": "g", "groupLabel": "Filling" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 50, "unit": "g", "groupLabel": "Finish", "prepNote": "melted" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 100, "unit": "g", "prepNote": "for dusting, sifted" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The night before, combine the raisins, sultanas, and mixed peel with the brandy in a bowl. Stir, cover, and leave overnight. Mix flour, yeast, sugar, salt, mixed spice, cardamom, and nutmeg together. Make a well and add the warm milk, softened butter, and egg. Mix to a soft dough and knead for 8 minutes until smooth. Leave to rise in a covered bowl for 90 minutes." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Knock back the dough. Drain any excess brandy from the fruit (the fruit should be plump and moist, not wet). Work the soaked fruit and chopped almonds into the dough until evenly distributed. Roll the marzipan into a log about 35 cm long. Roll the dough out to a 30 × 35 cm oval, about 1.5 cm thick. Place the marzipan log along the centre. Fold one side of the dough over the marzipan to within 2 cm of the other edge (the traditional offset shape). Press the join firmly. Transfer to a lined baking tray and prove for 45 minutes until puffed." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake at 180°C conventional (160°C fan) for 40 to 45 minutes until deep gold and a skewer inserted into the bread part (not the marzipan) comes out clean. While still hot, brush all over with the melted butter twice. Leave to cool completely, then dust generously with sifted icing sugar. Wrap in foil and store in a cool place for at least a week before cutting." }]
+      }
+    ]
+  }
+}

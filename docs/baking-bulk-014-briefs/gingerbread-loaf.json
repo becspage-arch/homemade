@@ -1,0 +1,128 @@
+{
+  "slug": "gingerbread-loaf",
+  "title": "Gingerbread loaf",
+  "subtitle": "Dark, sticky loaf cake with treacle and ground ginger",
+  "excerpt": "A slow-baked loaf with black treacle, golden syrup, dark brown sugar, and a strong hit of ground ginger. The crumb is very dark, slightly sticky, and improves markedly after a day wrapped in foil. Dense enough to cut into slices without crumbling.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Gingerbread as a category of British baking has a documented history going back to medieval spiced breads. The loaf or parkin-adjacent style made with black treacle and ground ginger appears in Victorian baking literature. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg, includes a gingerbread recipe with treacle and mixed spice. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136, gives several gingerbread variations including a rich boiled gingerbread and a simpler baked version. The recipe here is the simple loaf style: melted fat, treacle, syrup, and spice added to flour and bicarbonate of soda.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 55,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze in slices for up to 3 months. Defrost at room temperature.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Gingerbread loaf improves significantly after 24 to 48 hours wrapped in foil. Make 1 to 2 days ahead.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": ["weekendBake", "comfortFood"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 225,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 160,
+      "bakeTemperatureNote": "conventional oven. Fan at 140°C. The low temperature is deliberate: the treacle burns easily, and the loaf needs time for the centre to set. Check at 45 minutes with a skewer.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false, "notes": "900 g (2 lb) loaf tin, greased and fully lined" },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "black-treacle-role",
+      "term": "Black treacle in baking",
+      "definition": "Black treacle (British) is a thick, dark, intensely flavoured by-product of sugar refining. In baking it contributes colour (making cakes very dark), a slightly bitter depth, and hygroscopic properties that keep the crumb moist after baking. It is less bitter than American blackstrap molasses. Weigh it directly into the pan rather than measuring by spoon: it clings."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The thing that makes this gingerbread is "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "black-treacle-role", "term": "Black treacle in baking" } }],
+            "text": "black treacle"
+          },
+          {
+            "type": "text",
+            "text": ". It gives the loaf its deep colour, its sticky crumb, and its slightly bitter depth. The loaf bakes at a low temperature because treacle burns. It comes out of the oven looking set on top but slightly soft inside; it firms and improves as it cools and then again as it rests. A day-old gingerbread loaf is better than a fresh one."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 225, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "bicarbonate-of-soda", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ginger-ground", "amount": 2.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cinnamon-ground", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "mixed-spice", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt-table", "amount": 0.25, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "black-treacle", "amount": 100, "unit": "g", "prepNote": "about 3 level tablespoons" } },
+          { "type": "ingredientItem", "attrs": { "slug": "golden-syrup", "amount": 75, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "dark-brown-sugar", "amount": 75, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 125, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 200, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 2, "unit": "large", "prepNote": "beaten" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 160°C conventional (140°C fan). Grease and fully line a 900 g loaf tin. Sift together the flour, bicarbonate, spices, and salt into a large bowl. In a saucepan, gently melt the treacle, golden syrup, dark brown sugar, and butter together over a low heat, stirring until the sugar has dissolved. Do not allow it to boil. Remove from the heat and stir in the milk." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour the warm treacle mixture into the flour, add the beaten eggs, and stir everything together to a smooth, pourable batter. It will be quite liquid. Pour into the prepared tin and bake for 50 to 60 minutes until a skewer inserted into the centre comes out clean and the top feels set. The loaf will still be dark and moist-looking; that is correct." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Leave to cool in the tin for 20 minutes, then transfer to a rack. Once completely cool, wrap tightly in foil. The gingerbread is good after 4 hours and better the next day." }]
+      }
+    ]
+  }
+}

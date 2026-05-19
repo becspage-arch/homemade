@@ -1,0 +1,118 @@
+{
+  "slug": "black-forest-cake",
+  "title": "Black Forest cake",
+  "subtitle": "Layered chocolate sponge with kirsch cherries and whipped cream",
+  "excerpt": "A three-layer chocolate sponge soaked in kirsch, filled with whipped cream and morello cherries, and finished with cream, chocolate shavings, and a ring of cherries on top. Named after Schwarzwälder Kirschwasser, the cherry eau-de-vie essential to the recipe. The sponge bakes in three thin layers that cool quickly and assemble without crumbling.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "The Schwarzwälder Kirschtorte (Black Forest cherry cake) is a German regional confection associated with Baden-Württemberg. Patissier Josef Keller is sometimes credited with an early written version around 1915, though the combination of chocolate sponge, cream, and morello cherries with kirschwasser was established in German pastry culture before that date. The cake reached Britain through restaurant menus and became a home-baking staple from the 1970s. The recipe here uses a hot-milk sponge method for a moist crumb that absorbs the kirsch without becoming waterlogged.",
+  "recipe": {
+    "servings": 10,
+    "yieldDescription": null,
+    "prepMinutes": 45,
+    "cookMinutes": 25,
+    "restingMinutes": 60,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unfrosted sponge layers wrapped individually for up to 2 months. Do not freeze the assembled cake.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Bake and cool the sponge layers a day ahead. Soak and assemble on the day of serving. Keep refrigerated for up to 2 days.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "german",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 175,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "conventional oven. Fan at 160°C. Three shallow layers bake faster than one deep cake; check at 20 minutes. If baking in two batches, cover the waiting batter loosely.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "round-cake-tin-20", "isOptional": false, "notes": "three 20 cm round tins; bake in two batches if needed" },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": true },
+    { "slug": "icing-spatula", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "kirsch-soaking",
+      "term": "Kirsch soaking",
+      "definition": "Brushing a spirit (here kirsch, a clear cherry eau-de-vie) onto a sponge layer before assembly. The alcohol carries the cherry aroma into the crumb and keeps the texture moist during refrigeration. A small amount of dissolved sugar can be added to the kirsch to balance the spirit heat. Soak at room temperature: hot sponge absorbs too quickly and becomes dense, while cold sponge resists absorption."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Black Forest cake is a three-layer assembly. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kirsch-soaking", "term": "Kirsch soaking" } }], "text": "kirsch soaking" },
+          { "type": "text", "text": " happens at room temperature after the sponges have fully cooled. Do not rush this step: a warm sponge absorbs the kirsch too fast and becomes heavy. The morello cherries should be well drained; their juice weakens the whipped cream if it leaks in. Whip the cream to soft peaks only; stiff cream tears when spread." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 175, "unit": "g", "groupLabel": "For the sponge" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cocoa-powder", "amount": 50, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "baking-powder", "amount": 1.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "bicarbonate-of-soda", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 225, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 3, "unit": "large" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 150, "unit": "g", "prepNote": "melted" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 150, "unit": "ml", "prepNote": "hot (just boiled)" } },
+          { "type": "ingredientItem", "attrs": { "slug": "kirsch", "amount": 60, "unit": "ml", "groupLabel": "For the soak" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 1, "unit": "tbsp", "prepNote": "dissolved in the kirsch" } },
+          { "type": "ingredientItem", "attrs": { "slug": "double-cream", "amount": 500, "unit": "ml", "groupLabel": "For the filling and finish" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 2, "unit": "tbsp", "prepNote": "sifted" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cherries", "amount": 400, "unit": "g", "prepNote": "morello cherries, drained (jarred or tinned)" } },
+          { "type": "ingredientItem", "attrs": { "slug": "dark-chocolate", "amount": 75, "unit": "g", "prepNote": "for chocolate shavings" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 180°C conventional (160°C fan). Grease and base-line three 20 cm round tins (or bake in two batches). Sift the flour, cocoa, baking powder, and bicarbonate into a bowl. In a large bowl, whisk the sugar, eggs, melted butter, and vanilla together. Whisk in the hot milk. Fold in the flour mixture until just combined; the batter will be thin. Divide evenly between the tins and bake for 20 to 25 minutes until the surface springs back to a light press. Cool completely on racks." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Stir the caster sugar into the kirsch until dissolved. Brush each cooled sponge layer evenly with the kirsch mixture. Whip the double cream with the icing sugar to soft peaks. Place one sponge on a serving plate. Spread with a generous layer of cream and scatter half the drained cherries over. Add the second sponge, press gently, and repeat the cream and cherries. Top with the third sponge and spread the remaining cream over the top. Using a swivel peeler, shave the dark chocolate directly over the cream. Refrigerate for at least 1 hour before serving." }]
+      }
+    ]
+  }
+}

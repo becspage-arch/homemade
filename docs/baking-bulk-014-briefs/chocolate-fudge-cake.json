@@ -1,0 +1,132 @@
+{
+  "slug": "chocolate-fudge-cake",
+  "title": "Chocolate fudge cake",
+  "subtitle": "Dense dark chocolate layer cake with ganache frosting",
+  "excerpt": "A deeply chocolatey two-layer cake using both cocoa and dark chocolate in the ganache. Hot milk is added to the batter to develop the cocoa and give a close, moist crumb. The ganache sets to a fudgy finish that cuts cleanly and holds at room temperature.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "The chocolate fudge cake is a 20th-century British baking standard, combining the American devil's food cake tradition (hot liquid added to activate cocoa) with the British preference for a dense, fudgy finish. The ganache frosting, a technique from French pâtisserie, became widely used in British home baking from the 1970s onward. The recipe here is a classic home-baking version without specialist equipment.",
+  "recipe": {
+    "servings": 10,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 30,
+    "restingMinutes": 45,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unfrosted layers individually for up to 2 months. The assembled cake can be frozen for up to 1 month.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The frosted cake improves overnight. Cover loosely and store at room temperature for up to 3 days.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": ["weekendBake", "comfortFood"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "conventional oven. Fan at 160°C. The batter is loose; the cakes bake to a slight dome that can be trimmed level for stacking.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "round-cake-tin-20", "isOptional": false, "notes": "two 20 cm round tins, greased and base-lined" },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "metal-bowl", "isOptional": false, "notes": "for the ganache" },
+    { "slug": "icing-spatula", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ganache",
+      "term": "Ganache",
+      "definition": "A mixture of chocolate and cream made by pouring hot cream over chopped chocolate and stirring until smooth. The ratio of cream to chocolate determines the consistency: equal weights gives a pourable sauce; two parts chocolate to one part cream gives a thick, spreadable frosting once cooled. A small amount of butter added at the end gives the ganache a gloss."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The chocolate fudge cake uses hot milk in the batter to develop the cocoa and create a closer, moister crumb than you get from a creamed cake alone. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ganache", "term": "Ganache" } }],
+            "text": "ganache"
+          },
+          {
+            "type": "text",
+            "text": " needs to reach the right consistency before spreading: poured warm it will run; left in the fridge it will go too stiff to spread cleanly. Leave it at room temperature for 30 to 45 minutes after cooling, then test it by pressing with a finger; it should hold a fingerprint without being wet."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 200, "unit": "g", "groupLabel": "For the cake" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cocoa-powder", "amount": 50, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "bicarbonate-of-soda", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "baking-powder", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 200, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "dark-brown-sugar", "amount": 75, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 2, "unit": "large" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 125, "unit": "g", "prepNote": "melted" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vegetable-oil", "amount": 60, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 200, "unit": "ml", "prepNote": "hot (just boiled)" } },
+          { "type": "ingredientItem", "attrs": { "slug": "dark-chocolate", "amount": 200, "unit": "g", "groupLabel": "For the ganache", "prepNote": "70% cocoa, finely chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "double-cream", "amount": 200, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "softened" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 75, "unit": "g", "prepNote": "sifted, to adjust consistency if needed" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 180°C conventional (160°C fan). Grease and base-line two 20 cm round tins. Sift together the flour, cocoa, bicarbonate, and baking powder. In a large bowl, whisk the caster sugar, dark brown sugar, eggs, melted butter, oil, and vanilla together. Whisk in the hot milk. Add the flour mixture and stir until just combined; the batter will be quite loose." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Divide between the two tins and bake for 28 to 32 minutes until the surface springs back to a light press and a skewer comes out clean. Cool in the tins for 10 minutes, then cool completely on a rack. If the cakes have risen to a dome, trim level with a serrated knife." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For the ganache, put the chopped chocolate in a bowl. Heat the cream until barely simmering, pour over the chocolate, and leave for 2 minutes. Stir from the centre out until completely smooth. Add the softened butter and stir until it disappears. Leave at room temperature for 30 to 45 minutes until the ganache is spreadable but not running. Sandwich the two cake layers with a third of the ganache; spread the remainder over the top and sides." }]
+      }
+    ]
+  }
+}

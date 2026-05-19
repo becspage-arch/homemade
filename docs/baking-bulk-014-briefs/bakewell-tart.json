@@ -1,0 +1,114 @@
+{
+  "slug": "bakewell-tart",
+  "title": "Bakewell tart",
+  "subtitle": "Shortcrust pastry with raspberry jam and almond frangipane",
+  "excerpt": "A blind-baked shortcrust case spread with raspberry jam, filled with an almond frangipane, topped with flaked almonds, and baked until the frangipane is just set. The tart is a descendant of the original Bakewell pudding, which is an older and rather different egg-and-butter creation. The modern tart form, with its frangipane filling, has been the dominant version since the mid-20th century.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "The Bakewell pudding, not tart, is the original: an open pastry case filled with a runny mixture of eggs, butter, sugar, and jam, created in the town of Bakewell in Derbyshire, first documented in cookbooks from the early 19th century. Florence White, Good Things in England (1932, Project Gutenberg), records the pudding version. The tart form with almond frangipane (ground almonds, butter, sugar, eggs) appears in British recipe books from the mid-20th century and is now the more widely known version. The recipe here follows the tart form.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 45,
+    "restingMinutes": 30,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the baked tart for up to 2 months. Defrost at room temperature.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pastry case can be blind-baked a day ahead. Fill and bake on the day. The finished tart keeps at room temperature for 3 days.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 175,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "conventional oven. Fan at 160°C. The frangipane should be golden on top and just set in the centre — a skewer should come out with a few moist crumbs, not liquid.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "tart-tin", "isOptional": false, "notes": "23 cm loose-bottomed tart tin" },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bakewell-tart-versus-pudding",
+      "term": "Bakewell tart vs Bakewell pudding",
+      "definition": "The Bakewell pudding and the Bakewell tart are two different recipes that share a name and a town. The pudding is the older: an open tart case spread with jam and filled with a rich, runny mixture of eggs, butter, and sugar that sets to a smooth, glossy custard-like finish. The tart is the later development: the filling is a dry-mix frangipane of ground almonds, butter, sugar, and eggs that bakes to a firmer, more cake-like texture. The tart form is the one most people recognise today."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This recipe makes the tart form, not the original Bakewell pudding. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bakewell-tart-versus-pudding", "term": "Bakewell tart vs Bakewell pudding" } }], "text": "difference" },
+          { "type": "text", "text": " is the filling: a frangipane of ground almonds that bakes firm and cake-like, over a layer of raspberry jam. Blind-bake the pastry first so the base stays crisp when the wet jam goes in. Spread the jam while the case is still warm so it softens and seeps slightly into the pastry." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 175, "unit": "g", "groupLabel": "For the pastry" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 90, "unit": "g", "prepNote": "cold, diced" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 2, "unit": "tbsp", "prepNote": "sifted" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 1, "unit": "large", "prepNote": "yolk only, mixed with 2 tbsp cold water" } },
+          { "type": "ingredientItem", "attrs": { "slug": "raspberry-jam", "amount": 4, "unit": "tbsp", "groupLabel": "For the filling" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 125, "unit": "g", "prepNote": "softened" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 125, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 2, "unit": "large" } },
+          { "type": "ingredientItem", "attrs": { "slug": "almond-flour", "amount": 125, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 25, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "almond-extract", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "almonds-flaked", "amount": 30, "unit": "g", "prepNote": "to scatter on top" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rub the cold butter into the flour and icing sugar until the mixture resembles breadcrumbs. Add the egg yolk and water, bring together into a smooth pastry, wrap, and refrigerate for 30 minutes. Roll out to 3 mm, line a 23 cm tart tin, and refrigerate for 15 minutes. Heat the oven to 180°C conventional (160°C fan). Blind-bake (lined with baking paper and baking beans) for 15 minutes, remove the paper and beans, and bake for 5 more minutes until pale gold." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For the frangipane, beat the softened butter and caster sugar until light. Beat in the eggs one at a time. Fold in the ground almonds, flour, and almond extract. Spread the raspberry jam over the warm blind-baked case. Spoon the frangipane over the jam and level the surface. Scatter the flaked almonds over the top. Bake for 25 to 30 minutes until the frangipane is golden and a skewer comes out with just a few moist crumbs. Leave to cool in the tin before removing." }]
+      }
+    ]
+  }
+}
