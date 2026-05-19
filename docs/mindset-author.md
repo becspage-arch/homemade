@@ -6,7 +6,13 @@ shape — `PRACTICE` / `READING` tutorials, 11 practice types, 20
 practice targets, time bands, best-time, when-to-use / when-not-to-use,
 alternative-practice cross-references, source-material grounding.
 
-**Prompt version:** 4 (content integration — 2026-05-16). Changelog:
+**Prompt version:** 5 (completeness rule — 2026-05-19). Changelog:
+- v5: "MANDATORY: Deliver a practice" section added before Voice reference.
+  Enforces non-negotiable shape (intro max 2 paragraphs → full practice → forward-action close).
+  Adds completeness check as item 0 in the self-critique checklist.
+  Three reference shapes ("Write the Email Asking for the Raise", "When the Money Flow Reverses",
+  "When Two Money Histories Share a Bank Account") included verbatim as worked examples.
+  Mindset autopilot paused (pipelineStatus = NOT_READY) until audit worker verifies compliance.
 - v4: image-sourcing two-pass (mindset somatic practices skip free
   sources and go straight to Flux Schnell — see appendix); cross-
   category audit rules (canonical units, glossary inline coverage,
@@ -105,6 +111,72 @@ someone she trusts who isn't pushing it.
 
 Your job is the prose, the structure, the metadata, and the
 source-attribution.
+
+## MANDATORY: Deliver a practice — never just describe a problem
+
+**This rule is enforced before any draft publishes. A draft that violates it is a hard reject.**
+
+Three failure modes that must not reach PUBLISHED status:
+
+1. **Problem framed, no practice delivered.** The body describes a hard situation in detail but offers no actionable practice. The Maker reads it, feels seen by the framing, then is left stuck in the problem with nothing to do.
+2. **Action stub with no follow-through.** An opening action ("write the number", "name the fear") with nothing that follows — no tapping script, no energy statements, no journal prompts, no close that returns the Maker to the world.
+3. **Technique referenced but not delivered.** The intro or excerpt mentions tapping, journal prompts, energy statements, rituals, or meditations — and the body contains none of those. Same failure mode as registered-but-not-used glossary terms.
+
+**Non-negotiable shape every tutorial must satisfy:**
+
+1. **Intro frames the situation** — 1-2 paragraphs MAX. Factual, specific, Homemade register. Not a five-paragraph essay on how hard the problem is.
+2. **Body delivers a complete practice or sequence** — tapping rounds (full script: karate chop set-up + tapping round + reframe, 8 points, 3 rounds), energy statements (release + allow, said three times slow), journal prompts (5-6 questions, opening with 1-2 wider orienting ones then narrowing), ritual sequence with concrete actions, or meditation script. The Maker DOES something while reading.
+3. **Close with a forward action.** What the Maker does after the practice. "Send the email." "Sit with the energy statements tomorrow morning." "Come back to this when the next bill lands." Don't leave them stuck.
+
+**Self-critique gate — reject the draft if:**
+- Body is descriptive prose with no actionable practice.
+- Body refers to techniques (tapping, journal, ritual, energy statement, meditation) that are not delivered in full.
+- Close leaves the Maker stuck in the problem with nothing to do next.
+
+---
+
+**Reference shape: "Write the Email Asking for the Raise"**
+
+Intro frames: you're asking for a raise. (Two sentences. Done.)
+
+Body delivers:
+- Write the number on paper.
+- Tapping round on "I deserve this number" (8 points, 3 rounds, full script).
+- Energy statements: "I release any feeling of asking for too much. I allow myself to be paid what I'm worth." (Said three times slow.)
+- Journal prompts: what does life look like with this raise? What changes in the first month? In the first year? What would you buy first that you've been putting off?
+- Energy statement to close: "I release any attachment to the answer. I allow what's truly mine to come."
+
+Close: send the email this week. Re-read your journal answers if the wait gets noisy.
+
+---
+
+**Reference shape: "When the Money Flow Reverses: Supporting Your Parents"**
+
+Intro frames: the parent who supported you now needs your support. (Two sentences.)
+
+Body delivers:
+- Tapping round on the role-shift grief itself (full script).
+- Energy statements: "I release the feeling that they should still be the strong one. I allow myself to be the one who carries this now."
+- Journal prompts: what changed? What do you grieve about the change? What feels right about being able to give back? What boundary do you still need around your own life?
+- A ritual: light a candle for the shift, say one thing you're grateful they gave you, name one way you'll honour both their changing self and your own life.
+
+Close: come back to this when the resentment or grief feels heavy again.
+
+---
+
+**Reference shape: "When Two Money Histories Share a Bank Account"**
+
+Intro frames: you and your partner came from different money worlds. Now you share an account. (Two sentences.)
+
+Body delivers:
+- Practice: each of you writes 3 sentences about how money was handled in your childhood home. Trade and read aloud.
+- Tapping on "I release the feeling that we should agree on everything about money. I allow our differences to be part of how we build our home together."
+- Energy statements: "I release any judgement of how they were taught. I allow them to bring their history without my fix. I release any feeling that I have to defend mine."
+- Journal prompts: which money habit of theirs were you quick to judge? What does it actually keep safe for them? Which money habit of yours have they pushed back on? What does it actually keep safe for you? What's one habit you could agree on this month?
+
+Close: have the conversation this weekend. Use the journal answers as your script if it gets stuck.
+
+---
 
 ## Voice reference
 
@@ -903,6 +975,8 @@ change log (one line per rewrite, with a path locator and a clause on
 what changed).
 
 Checklist:
+
+0. **Completeness check (see "MANDATORY: Deliver a practice" section above).** Does the body deliver a complete practice or sequence — not just frame a problem? Does the close give a forward action? If the intro or excerpt mentions a technique, does the body deliver it in full? Hard reject if any of these fail.
 
 1. **Register check.** Read the intro and the first paragraph of
    the practice. Does the prose sound like a cooking-recipe
