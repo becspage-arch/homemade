@@ -7,6 +7,33 @@ energy statements, journal prompts, ritual steps, meditation script,
 or embodied activity). Reading entries are exempt — they're reference
 articles by design.
 
+## Pre-rewrite snapshot (audit run at 2026-05-19 11:30)
+
+Before the rewriter ran, the audit caught **13 violators (1.9%)** out of
+684 PUBLISHED rows. Verdict breakdown:
+
+| Verdict | Count |
+| --- | ---: |
+| VIOLATES_A (no practice) | 2 |
+| VIOLATES_B (technique mentioned, not delivered) | 0 |
+| VIOLATES_C (action stub, no follow-through) | 0 |
+| VIOLATES_MULTIPLE | 2 |
+| VIOLATES_READING_SITUATIONAL (mis-classified as READING) | 9 |
+
+All 13 were rewritten by `packages/db/scripts/rewrite-mindset-violators.ts`
+and moved to DRAFT for Rebecca's review. Pre-rewrite body snapshots are
+captured in `Tutorial.revisedFrom` for each row. Rewrite manifest:
+`docs/mindset-completeness-rewrite-report-2026-05-19.json`.
+
+Detector calibration history (for future tuning): the first pass flagged
+233 rows (35.5%) — mostly false positives caused by the walker missing
+pullQuote/blockquote text, missing orderedList-based ritual steps, and
+overly strict VIOLATES_B mentions. Four detector-tuning passes brought
+the count down to 13 genuine violators, validated by spot-checks against
+the references in feedback_mindset_voice.md.
+
+## Post-rewrite state (current — audit run at 2026-05-19 11:36)
+
 ## Verdict counts
 
 | Verdict | Count |
