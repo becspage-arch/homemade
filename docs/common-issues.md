@@ -227,6 +227,27 @@ generic claims rather than concrete facts, etc.)
   **How to fix:** Replace with "break apart" or "collapse". Both read naturally
   and avoid the false positive.
 
+- **`pnpm run tutorial:upload -- <file>` passes literal `--` as a flag** `[block]`
+  Pattern: `pnpm run tutorial:upload -- path/to/file.json --status PUBLISHED` exits
+  with code 1 and shows the USAGE/help text for every file.
+  **Why:** pnpm passes the `--` separator through to the script as a literal argument.
+  The upload script's arg parser sees `--` as an unknown flag starting with `--` and
+  returns null (prints help and exits 1).
+  **How to fix:** Use `pnpm exec tsx scripts/upload-tutorial.ts path/to/file.json --status PUBLISHED`
+  directly (no `pnpm run`, no `--` separator). Or loop from `packages/db/` and use
+  `pnpm exec tsx scripts/upload-tutorial.ts "$f" --status PUBLISHED`.
+
+- **New PracticeTarget enum values not in generated Prisma client** `[block]`
+  Pattern: Upload fails with `Invalid value for argument 'practiceTargets'. Expected PracticeTarget.`
+  even though the value is present in `schema.prisma`.
+  **Why:** The Prisma client is generated from the schema at build time. If an enum value
+  is added to the schema (e.g. `HOME`) without running `prisma generate`, the generated
+  client won't know about it.
+  **How to fix:** Run `pnpm --filter "@homemade/db" exec prisma generate` before uploading
+  any batch that uses newly-added enum values. Check the generated client at
+  `node_modules/.pnpm/@prisma+client@7.8.0_*/node_modules/.prisma/client/index.d.ts`
+  to confirm the value is present before relying on it.
+
 - **"target" as common noun triggers brand-trademark false positive** `[warn]`
   Pattern: `"the target is set whites"`, `"the target internal temperature is 74°C"` —
   the word "target" (meaning goal or aim) triggering the "Target" shop brand check.

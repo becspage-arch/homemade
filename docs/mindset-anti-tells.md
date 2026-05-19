@@ -485,3 +485,18 @@ pilot / bulk batches surface recurring tells.
 
 (empty initially — populated once Mindset content runs alongside
 Cooking content in the library and patterns emerge that cross both.)
+
+- **`honest`/`honestly` in journaling CTAs and body text** `[block]`
+  Pattern: "Be honest with yourself about this." "Write an honest
+  description of the feeling." "Honestly, what is the guilt asking
+  for?" Appeared 4+ times across bulk-018 journal prompts and reading
+  body paragraphs; voice-check catches `honest` as a banned phrase.
+  **Why:** "Honest" implies there's a default dishonest state the user
+  needs to be warned about. The prompt should simply ask the question
+  directly. The cooking-recipe test: a recipe doesn't say "honestly,
+  season to taste."
+  **How to fix:** Cut the word and rewrite the CTA as a direct question
+  or instruction. "Be honest with yourself about what this asks you
+  to give up" → "What is this asking you to give up?" "Write an honest
+  description" → "Write a direct description" or "Write what is real
+  for you right now."
