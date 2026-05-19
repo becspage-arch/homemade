@@ -10,33 +10,107 @@
   "season": "SPRING",
   "timeMinutes": 240,
   "sourceType": "SYNTHESISED",
-  "sourceNotes": "Drawn from current UK keepers' references:\n\n• DEFRA Animal Welfare Code of Practice for the welfare of laying hens and pullets (2018, current). Public domain UK Crown copyright. https://www.gov.uk/government/publications/laying-hens-on-farm-welfare\n• British Hen Welfare Trust resettlement guidance — coop sizing, perch requirements, dust-bath provision. https://www.bhwt.org.uk\n• Andy Cawthray, The Right-Hand Rooster columns (Country Smallholding magazine, 2018-2023). Modern UK back-garden poultry reference.\n• Carla Emery, Encyclopedia of Country Living (1974, updated 2019), poultry chapters. The unfussy reference for small-flock care.\n• Lewis Wright, The Practical Poultry Keeper (1867) — Internet Archive. Foundational late-Victorian reference; the principles of perch height, nest box siting, and dust-bathing have not changed.",
+  "sourceNotes": "Drawn from current UK keepers' references: • DEFRA Animal Welfare Code of Practice for the welfare of laying hens and pullets (2018, current). Public domain UK Crown copyright. https://www.gov.uk/government/publications/laying-hens-on-farm-welfare\n• British Hen Welfare Trust resettlement guidance, coop sizing, perch requirements, dust-bath provision. https://www.bhwt.org.uk\n• Andy Cawthray, The Right-Hand Rooster columns (Country Smallholding magazine, 2018-2023). Modern UK back-garden poultry reference.\n• Carla Emery, Encyclopedia of Country Living (1974, updated 2019), poultry chapters. The unfussy reference for small-flock care.\n• Lewis Wright, The Practical Poultry Keeper (1867), Internet Archive. Foundational late-Victorian reference; the principles of perch height, nest box siting, and dust-bathing have not changed.",
   "glossaryTerms": [
-    { "slug": "pullet", "term": "Pullet", "definition": "A female chicken before her first laying year. Typically point-of-lay (POL) at 18–22 weeks for a hybrid layer; 24–28 weeks for a heritage breed." },
-    { "slug": "point-of-lay", "term": "Point of lay", "definition": "The stage at which a pullet is about to begin laying — combs reddened, pelvic bones widening, squatting behaviour. Usually 18–22 weeks for hybrids." },
-    { "slug": "layer-pellets", "term": "Layer pellets", "definition": "A 16–17% protein compounded ration formulated for laying hens, calcium-fortified. The standard daily feed for chickens in lay." },
-    { "slug": "scratch", "term": "Scratch", "definition": "Mixed whole grains (often wheat, maize, oats) thrown on the ground for chickens to forage. A scratch ration is treat-level, not a replacement for layer feed." },
-    { "slug": "grit", "term": "Grit", "definition": "Hard insoluble particles (flint or granite) chickens swallow to grind food in the gizzard. Separate from soluble oyster-shell grit, which supplies calcium for shell formation." },
-    { "slug": "dust-bath", "term": "Dust bath", "definition": "A shallow scrape of dry earth, sand, or wood ash that chickens roll in to smother parasites and condition feathers. A coop without one is incomplete." },
-    { "slug": "nesting-box", "term": "Nesting box", "definition": "An enclosed, darkened cubicle inside the coop where hens lay eggs. One box per 3–4 hens; lined with clean straw or wood shavings." },
-    { "slug": "perch", "term": "Perch", "definition": "A horizontal bar inside the coop where chickens roost overnight. Chickens prefer to sleep above the floor; a perch keeps them off droppings." },
-    { "slug": "pop-hole", "term": "Pop-hole", "definition": "The small opening, usually 30 × 30 cm, between the coop and the run that birds use to come and go. Closed at dusk against foxes." },
-    { "slug": "broody", "term": "Broody", "definition": "A hen in the hormonal state that drives her to sit on eggs continuously and refuse to leave the nest. Some breeds (Silkie, Buff Orpington) go broody readily; hybrid layers rarely do." },
-    { "slug": "vent", "term": "Vent", "definition": "The single external opening through which a chicken passes eggs and droppings. A clean, pale-pink vent is a quick health check." },
-    { "slug": "moult", "term": "Moult", "definition": "The annual feather replacement, usually in autumn. Egg production typically pauses for 4–8 weeks while feathers regrow." }
+    {
+      "slug": "pullet",
+      "term": "Pullet",
+      "definition": "A female chicken before her first laying year. Typically point-of-lay (POL) at 18, 22 weeks for a hybrid layer; 24, 28 weeks for a heritage breed."
+    },
+    {
+      "slug": "point-of-lay",
+      "term": "Point of lay",
+      "definition": "The stage at which a pullet is about to begin laying, combs reddened, pelvic bones widening, squatting behaviour. Usually 18, 22 weeks for hybrids."
+    },
+    {
+      "slug": "layer-pellets",
+      "term": "Layer pellets",
+      "definition": "A 16, 17% protein compounded ration formulated for laying hens, calcium-fortified. The standard daily feed for chickens in lay."
+    },
+    {
+      "slug": "scratch",
+      "term": "Scratch",
+      "definition": "Mixed whole grains (often wheat, maize, oats) thrown on the ground for chickens to forage. A scratch ration is treat-level, not a replacement for layer feed."
+    },
+    {
+      "slug": "grit",
+      "term": "Grit",
+      "definition": "Hard insoluble particles (flint or granite) chickens swallow to grind food in the gizzard. Separate from soluble oyster-shell grit, which supplies calcium for shell formation."
+    },
+    {
+      "slug": "dust-bath",
+      "term": "Dust bath",
+      "definition": "A shallow scrape of dry earth, sand, or wood ash that chickens roll in to smother parasites and condition feathers. A coop without one is incomplete."
+    },
+    {
+      "slug": "nesting-box",
+      "term": "Nesting box",
+      "definition": "An enclosed, darkened cubicle inside the coop where hens lay eggs. One box per 3, 4 hens; lined with clean straw or wood shavings."
+    },
+    {
+      "slug": "perch",
+      "term": "Perch",
+      "definition": "A horizontal bar inside the coop where chickens roost overnight. Chickens prefer to sleep above the floor; a perch keeps them off droppings."
+    },
+    {
+      "slug": "pop-hole",
+      "term": "Pop-hole",
+      "definition": "The small opening, usually 30 × 30 cm, between the coop and the run that birds use to come and go. Closed at dusk against foxes."
+    },
+    {
+      "slug": "broody",
+      "term": "Broody",
+      "definition": "A hen in the hormonal state that drives her to sit on eggs continuously and refuse to leave the nest. Some breeds (Silkie, Buff Orpington) go broody readily; hybrid layers rarely do."
+    },
+    {
+      "slug": "vent",
+      "term": "Vent",
+      "definition": "The single external opening through which a chicken passes eggs and droppings. A clean, pale-pink vent is a quick health check."
+    },
+    {
+      "slug": "moult",
+      "term": "Moult",
+      "definition": "The annual feather replacement, usually in autumn. Egg production typically pauses for 4, 8 weeks while feathers regrow."
+    }
   ],
-  "techniqueSlugs": ["fitting-electric-poultry-netting"],
+  "techniqueSlugs": [
+    "fitting-electric-poultry-netting"
+  ],
   "criticalTechniques": [],
   "recipeTools": [
-    { "slug": "chicken-feeder", "notes": "Treadle feeder strongly preferred over open hanging types for rat-proofing." },
-    { "slug": "chicken-drinker-bucket" },
-    { "slug": "nesting-box-standard" },
-    { "slug": "coop-perch" },
-    { "slug": "pop-hole-auto-opener", "isOptional": true, "notes": "Optional but transformative for working-hours owners." },
-    { "slug": "dust-bath-box" },
-    { "slug": "chicken-grit-feeder" },
-    { "slug": "electric-poultry-netting", "isOptional": true, "notes": "Add if the garden boundary is not already fox-proof." },
-    { "slug": "electric-fence-energiser", "isOptional": true }
+    {
+      "slug": "chicken-feeder",
+      "notes": "Treadle feeder strongly preferred over open hanging types for rat-proofing."
+    },
+    {
+      "slug": "chicken-drinker-bucket"
+    },
+    {
+      "slug": "nesting-box-standard"
+    },
+    {
+      "slug": "coop-perch"
+    },
+    {
+      "slug": "pop-hole-auto-opener",
+      "isOptional": true,
+      "notes": "Optional but transformative for working-hours owners."
+    },
+    {
+      "slug": "dust-bath-box"
+    },
+    {
+      "slug": "chicken-grit-feeder"
+    },
+    {
+      "slug": "electric-poultry-netting",
+      "isOptional": true,
+      "notes": "Add if the garden boundary is not already fox-proof."
+    },
+    {
+      "slug": "electric-fence-energiser",
+      "isOptional": true
+    }
   ],
   "body": {
     "type": "doc",
@@ -44,59 +118,111 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Three to six hens fit comfortably in a small UK back garden, lay enough eggs for a household of two to four, and ask for around ten minutes of your time a day. They are also the most reliable gateway to keeping anything else. Get the coop right at the start and everything else — the daily routine, the predator-proofing, the feed plan — follows naturally." }
+          {
+            "type": "text",
+            "text": "Three to six hens fit comfortably in a small UK back garden, lay enough eggs for a household of two to four, and ask for around ten minutes of your time a day. They are also the most reliable gateway to keeping anything else. Get the coop right at the start and everything else, the daily routine, the predator-proofing, the feed plan, follows naturally."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "This is a setup tutorial, not a build plan. You will end the weekend with a coop sited, fenced, fitted out, and ready for birds to move in at dusk on the Sunday. The hens themselves come from a local breeder, a rescue centre, or a feed shop — buy " },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "point-of-lay" } }],
+            "text": "This is a setup tutorial, not a build plan. You will end the weekend with a coop sited, fenced, fitted out, and ready for birds to move in at dusk on the Sunday. The hens themselves come from a local breeder, a rescue centre, or a feed shop, buy "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "point-of-lay"
+                }
+              }
+            ],
             "text": "point of lay"
           },
-          { "type": "text", "text": " " },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pullet" } }],
+            "text": " "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pullet"
+                }
+              }
+            ],
             "text": "pullets"
           },
-          { "type": "text", "text": " your first time round, not day-old chicks. Chicks are a separate project that doubles your kit list." }
+          {
+            "type": "text",
+            "text": " your first time round, not day-old chicks. Chicks are a separate project that doubles your kit list."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "How many birds, and what breed" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Three hens is the smallest social group that works. Two will pair off and bully a third introduced later; one alone is unhappy. Six is the comfortable upper end for a 4 × 3 metre back-garden patch with a walk-in coop and run. Plan for the bigger number than the smaller; you will end up with seven by the third spring." }
+          {
+            "type": "text",
+            "text": "How many birds, and what breed"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "For a first flock, take a hybrid layer like a Lohmann Brown, an ISA Brown, or a Bovans Brown. They are bred for egg output, lay 280–300 eggs in their first year, and have temperaments designed for hands-on keepers. Heritage breeds — Orpingtons, Sussex, Wyandottes, Marans — are slower to lay, produce 150–200 eggs a year, and are more interesting once you know what you are doing. Mix breeds only after the first flock has settled; a mixed start is a pecking-order project on top of a setup project." }
+          {
+            "type": "text",
+            "text": "Three hens is the smallest social group that works. Two will pair off and bully a third introduced later; one alone is unhappy. Six is the comfortable upper end for a 4 × 3 metre back-garden patch with a walk-in coop and run. Plan for the bigger number than the smaller; you will end up with seven by the third spring."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a first flock, take a hybrid layer like a Lohmann Brown, an ISA Brown, or a Bovans Brown. They are bred for egg output, lay 280, 300 eggs in their first year, and have temperaments designed for hands-on keepers. Heritage breeds, Orpingtons, Sussex, Wyandottes, Marans, are slower to lay, produce 150, 200 eggs a year, and are more interesting once you know what you are doing. Mix breeds only after the first flock has settled; a mixed start is a pecking-order project on top of a setup project."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where the coop goes" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Site the coop on level, well-drained ground with morning sun and afternoon shade. Hens cope well with cold and badly with damp; a permanently soggy patch breeds parasites and respiratory trouble. If the obvious spot in the garden floods after rain, pick the second-best spot." }
+          {
+            "type": "text",
+            "text": "Where the coop goes"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Three boundary rules:" }
+          {
+            "type": "text",
+            "text": "Site the coop on level, well-drained ground with morning sun and afternoon shade. Hens cope well with cold and badly with damp; a permanently soggy patch breeds parasites and respiratory trouble. If the obvious spot in the garden floods after rain, pick the second-best spot."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Three boundary rules:"
+          }
         ]
       },
       {
@@ -108,7 +234,10 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "text": "At least three metres from the house if you can. Hens are tidy creatures but they will scratch up the bedding plant under the kitchen window, and the run will smell stronger in August than you currently expect." }
+                  {
+                    "type": "text",
+                    "text": "At least three metres from the house if you can. Hens are tidy creatures but they will scratch up the bedding plant under the kitchen window, and the run will smell stronger in August than you currently expect."
+                  }
                 ]
               }
             ]
@@ -119,7 +248,10 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "text": "Away from the back fence the urban fox uses as a corridor. Where you see fox tracks in a hard frost, the fox sees a route in. Set the coop ten or fifteen metres inside that line if the garden allows it." }
+                  {
+                    "type": "text",
+                    "text": "Away from the back fence the urban fox uses as a corridor. Where you see fox tracks in a hard frost, the fox sees a route in. Set the coop ten or fifteen metres inside that line if the garden allows it."
+                  }
                 ]
               }
             ]
@@ -130,7 +262,10 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "text": "Where you can carry feed bags, water buckets, and a wheelbarrow of bedding without crossing the lawn. A path you already walk is the path you will keep using; one you have to invent will not get walked when it rains." }
+                  {
+                    "type": "text",
+                    "text": "Where you can carry feed bags, water buckets, and a wheelbarrow of bedding without crossing the lawn. A path you already walk is the path you will keep using; one you have to invent will not get walked when it rains."
+                  }
                 ]
               }
             ]
@@ -147,19 +282,32 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Predator-proofing the run" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "In a UK back garden the threats are foxes (year-round, nocturnal, opportunistic), rats (year-round, after feed not birds), and occasionally a sparrowhawk on a pullet. Badgers will take eggs and chicks; corvids will take eggs from open nests." }
+          {
+            "type": "text",
+            "text": "Predator-proofing the run"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "A run is fox-proof when it has three layers:" }
+          {
+            "type": "text",
+            "text": "In a UK back garden the threats are foxes (year-round, nocturnal, opportunistic), rats (year-round, after feed not birds), and occasionally a sparrowhawk on a pullet. Badgers will take eggs and chicks; corvids will take eggs from open nests."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A run is fox-proof when it has three layers:"
+          }
         ]
       },
       {
@@ -171,7 +319,10 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "text": "Buried barrier. Either dig a 30 cm trench around the run perimeter and bury the bottom of the wire in it, or lay a 60 cm horizontal apron of weldmesh flat on the ground around the outside of the run, pegged down and grassed over. The apron is easier and works as well; foxes dig down at the line, not out from it." }
+                  {
+                    "type": "text",
+                    "text": "Buried barrier. Either dig a 30 cm trench around the run perimeter and bury the bottom of the wire in it, or lay a 60 cm horizontal apron of weldmesh flat on the ground around the outside of the run, pegged down and grassed over. The apron is easier and works as well; foxes dig down at the line, not out from it."
+                  }
                 ]
               }
             ]
@@ -182,7 +333,10 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "text": "Wire — weldmesh, not chicken wire. Chicken-wire hexagonal netting is for keeping chickens in; it will not keep a fox out. Use 25 × 25 mm welded mesh, 2 mm wire, on all four sides up to at least 1.8 m." }
+                  {
+                    "type": "text",
+                    "text": "Wire, weldmesh, not chicken wire. Chicken-wire hexagonal netting is for keeping chickens in; it will not keep a fox out. Use 25 × 25 mm welded mesh, 2 mm wire, on all four sides up to at least 1.8 m."
+                  }
                 ]
               }
             ]
@@ -193,7 +347,10 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "text": "A solid roof or roofed netting. Foxes climb where the perimeter is climbable, and sparrowhawks need no climb at all. A covered run is the only run that lets you sleep easy." }
+                  {
+                    "type": "text",
+                    "text": "A solid roof or roofed netting. Foxes climb where the perimeter is climbable, and sparrowhawks need no climb at all. A covered run is the only run that lets you sleep easy."
+                  }
                 ]
               }
             ]
@@ -203,209 +360,1134 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "If the garden boundary is already 1.8 m solid timber on all four sides, the run itself can be lighter — but the coop pop-hole still closes at dusk and opens at dawn, every day, no exceptions. " },
+          {
+            "type": "text",
+            "text": "If the garden boundary is already 1.8 m solid timber on all four sides, the run itself can be lighter, but the coop pop-hole still closes at dusk and opens at dawn, every day, no exceptions. "
+          },
           {
             "type": "text",
             "marks": [
-              { "type": "techniqueLink", "attrs": { "techniqueSlug": "fitting-electric-poultry-netting", "label": "Electric poultry netting" } }
+              {
+                "type": "techniqueLink",
+                "attrs": {
+                  "techniqueSlug": "fitting-electric-poultry-netting",
+                  "label": "Electric poultry netting"
+                }
+              }
             ],
             "text": "Electric poultry netting"
           },
-          { "type": "text", "text": " around the outside of the run is the belt-and-braces answer for gardens with a recent fox sighting." }
+          {
+            "type": "text",
+            "text": " around the outside of the run is the belt-and-braces answer for gardens with a recent fox sighting."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Inside the coop" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "The coop is a sleeping and laying box, not a hangout. Hens spend daylight hours in the run; the coop earns its keep at night and during egg-laying. Five things go inside it, in this order of importance." }
+          {
+            "type": "text",
+            "text": "Inside the coop"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "First, a " },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "perch" } }],
+            "text": "The coop is a sleeping and laying box, not a hangout. Hens spend daylight hours in the run; the coop earns its keep at night and during egg-laying. Five things go inside it, in this order of importance."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "First, a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "perch"
+                }
+              }
+            ],
             "text": "perch"
           },
-          { "type": "text", "text": ". A round-edged hardwood bar, around 40 mm thick, runs horizontally across the back of the coop at least 60 cm off the floor. Allow 25–30 cm of perch length per bird. Chickens settle for the night by walking up to the highest point in the coop and shuffling along the perch; one perch the right size is better than two competing for the top spot." }
+          {
+            "type": "text",
+            "text": ". A round-edged hardwood bar, around 40 mm thick, runs horizontally across the back of the coop at least 60 cm off the floor. Allow 25, 30 cm of perch length per bird. Chickens settle for the night by walking up to the highest point in the coop and shuffling along the perch; one perch the right size is better than two competing for the top spot."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Second, " },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nesting-box" } }],
+            "text": "Second, "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "nesting-box"
+                }
+              }
+            ],
             "text": "nesting boxes"
           },
-          { "type": "text", "text": ". One enclosed box per three or four hens, sized around 30 × 30 × 30 cm, sited lower than the perch (otherwise the birds roost in the nest box and you collect dirty eggs every morning). Line with clean straw or wood shavings. Hens prefer dim, enclosed boxes; a curtain across the front is not necessary but does help with shy first-time layers." }
+          {
+            "type": "text",
+            "text": ". One enclosed box per three or four hens, sized around 30 × 30 × 30 cm, sited lower than the perch (otherwise the birds roost in the nest box and you collect dirty eggs every morning). Line with clean straw or wood shavings. Hens prefer dim, enclosed boxes; a curtain across the front is not necessary but does help with shy first-time layers."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Third, the " },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pop-hole" } }],
+            "text": "Third, the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pop-hole"
+                }
+              }
+            ],
             "text": "pop-hole"
           },
-          { "type": "text", "text": ". The opening between coop and run, around 30 × 30 cm, with a sliding or hinged door. The pop-hole opens at dawn and closes at dusk every day of the year. An automatic opener takes the work off you and is the single best non-essential piece of kit a back-garden keeper can buy." }
+          {
+            "type": "text",
+            "text": ". The opening between coop and run, around 30 × 30 cm, with a sliding or hinged door. The pop-hole opens at dawn and closes at dusk every day of the year. An automatic opener takes the work off you and is the single best non-essential piece of kit a back-garden keeper can buy."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Fourth, ventilation high above the perch. Coops need air movement, not draughts; a couple of mesh-covered openings near the ridge let warm damp air out without blowing on roosting birds. Coops without ventilation grow respiratory disease quickly." }
+          {
+            "type": "text",
+            "text": "Fourth, ventilation high above the perch. Coops need air movement, not draughts; a couple of mesh-covered openings near the ridge let warm damp air out without blowing on roosting birds. Coops without ventilation grow respiratory disease quickly."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Fifth, bedding on the coop floor. Wood shavings (not cedar — too strong-scented; pine or aspen) or chopped straw work; sawdust holds too much moisture. Aim for 5 cm depth, replace once a fortnight or when it stops smelling clean." }
+          {
+            "type": "text",
+            "text": "Fifth, bedding on the coop floor. Wood shavings (not cedar, too strong-scented; pine or aspen) or chopped straw work; sawdust holds too much moisture. Aim for 5 cm depth, replace once a fortnight or when it stops smelling clean."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Feed, water, and grit" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Feed, water, and grit"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The daily ration is " },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "layer-pellets" } }],
+            "text": "The daily ration is "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "layer-pellets"
+                }
+              }
+            ],
             "text": "layer pellets"
           },
-          { "type": "text", "text": " in a treadle feeder. The treadle plate keeps rats and wild birds out; an open hanging feeder will lose half the ration to the local sparrow flock. Hens self-regulate intake; a feeder kept full at all times is the simplest approach." }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "Water from a sealed bucket drinker with horizontal nipple drinkers in the side. Open trough drinkers get fouled with bedding within an hour; nipples stay clean for a week and freeze less readily in a cold snap. Refill weekly in winter, every few days in summer." }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "A separate free-choice " },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "grit" } }],
+            "text": " in a treadle feeder. The treadle plate keeps rats and wild birds out; an open hanging feeder will lose half the ration to the local sparrow flock. Hens self-regulate intake; a feeder kept full at all times is the simplest approach."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Water from a sealed bucket drinker with horizontal nipple drinkers in the side. Open trough drinkers get fouled with bedding within an hour; nipples stay clean for a week and freeze less readily in a cold snap. Refill weekly in winter, every few days in summer."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A separate free-choice "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "grit"
+                }
+              }
+            ],
             "text": "grit"
           },
-          { "type": "text", "text": " feeder, with insoluble flint grit on one side and crushed oyster shell on the other, lets the birds take what they need for the gizzard and for shell strength. " },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scratch" } }],
+            "text": " feeder, with insoluble flint grit on one side and crushed oyster shell on the other, lets the birds take what they need for the gizzard and for shell strength. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "scratch"
+                }
+              }
+            ],
             "text": "Scratch"
           },
-          { "type": "text", "text": " grain (mixed wheat and maize) is a treat, not a daily ration: a small handful tossed in the run mid-afternoon keeps the birds occupied for an hour and encourages turning of the litter." }
+          {
+            "type": "text",
+            "text": " grain (mixed wheat and maize) is a treat, not a daily ration: a small handful tossed in the run mid-afternoon keeps the birds occupied for an hour and encourages turning of the litter."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The dust bath" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The dust bath"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Every coop has a " },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dust-bath" } }],
+            "text": "Every coop has a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "dust-bath"
+                }
+              }
+            ],
             "text": "dust bath"
           },
-          { "type": "text", "text": " in the run. A shallow open-topped box (or a repurposed cat-litter tray), filled with dry earth, wood ash, and a handful of food-grade diatomaceous earth. Hens roll, scrabble, fluff, and shake the mix through their feathers; the dust smothers feather lice and red mite. Refresh the mix every couple of months and after heavy rain reaches it." }
+          {
+            "type": "text",
+            "text": " in the run. A shallow open-topped box (or a repurposed cat-litter tray), filled with dry earth, wood ash, and a handful of food-grade diatomaceous earth. Hens roll, scrabble, fluff, and shake the mix through their feathers; the dust smothers feather lice and red mite. Refresh the mix every couple of months and after heavy rain reaches it."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Without a dust bath, hens will dig their own in the corner of the run that gets the most sun, usually where you do not want a thirty-centimetre hole. The provided box redirects the behaviour." }
+          {
+            "type": "text",
+            "text": "Without a dust bath, hens will dig their own in the corner of the run that gets the most sun, usually where you do not want a thirty-centimetre hole. The provided box redirects the behaviour."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Moving birds in" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Collect the pullets at the end of the day. Birds picked up in the evening, transported in the dark, and lifted into a strange coop at last light will go straight up to the perch and sleep where they wake — the new coop is then home. Birds released into a strange run in daylight scatter, hide, and have to be hand-caught at dusk; a stressful day for everyone." }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "For the first 24 hours, keep food and water inside the coop, not out in the run. The birds will not leave the coop until they are hungry enough; food inside means they eat without venturing out, which gives them another night of confirming that this is home. On day two, move food and water into the run." }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "Eggs will not arrive immediately. The stress of the move pauses laying for one to three weeks. The first eggs will be small, sometimes thin-shelled, sometimes laid in odd places, the corner of the run or the gap behind the feeder. By the fourth week the birds will be laying in the nesting box, on a routine, and the size will be normal. A bird who sits tight in the box from morning to dusk for two days running has likely gone " },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "broody" } }],
+            "text": "Moving birds in"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Collect the pullets in the evening. Birds picked up in the evening, transported in the dark, and lifted into a strange coop at last light will go straight up to the perch and sleep where they wake, the new coop is then home. Birds released into a strange run in daylight scatter, hide, and have to be hand-caught at dusk; a stressful day for everyone."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For the first 24 hours, keep food and water inside the coop, not out in the run. The birds will not leave the coop until they are hungry enough; food inside means they eat without venturing out, which gives them another night of confirming that this is home. On day two, move food and water into the run."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Eggs will not arrive immediately. The stress of the move pauses laying for one to three weeks. The first eggs will be small, sometimes thin-shelled, sometimes laid in odd places, the corner of the run or the gap behind the feeder. By the fourth week the birds will be laying in the nesting box, on a routine, and the size will be normal. A bird who sits tight in the box from morning to dusk for two days running has likely gone "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "broody"
+                }
+              }
+            ],
             "text": "broody"
           },
-          { "type": "text", "text": "; rare in a hybrid layer, more likely in heritage breeds." }
+          {
+            "type": "text",
+            "text": "; rare in a hybrid layer, more likely in heritage breeds."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The daily and weekly routine" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Daily, ten minutes total. Pop-hole open at dawn (automatic) or by 7 am. Top up feed and water if low. Look at every bird; one quick scan tells you whether anyone is hunched, breathing through an open beak, or hanging back at the door. Collect eggs once or twice. Close the pop-hole at dusk." }
+          {
+            "type": "text",
+            "text": "The daily and weekly routine"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Weekly, twenty minutes. Empty and refresh the bedding under the perch (the area that collects the overnight droppings). Top up the nesting box straw. Check the " },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vent" } }],
+            "text": "Daily, ten minutes total. Pop-hole open at dawn (automatic) or by 7 am. Top up feed and water if low. Look at every bird; one quick scan tells you whether anyone is hunched, breathing through an open beak, or hanging back at the door. Collect eggs once or twice. Close the pop-hole at dusk."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weekly, twenty minutes. Empty and refresh the bedding under the perch (the area that collects the overnight droppings). Top up the nesting box straw. Check the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "vent"
+                }
+              }
+            ],
             "text": "vent"
           },
-          { "type": "text", "text": " of any bird whose laying has dropped. Refresh the dust bath if it has been rained on." }
+          {
+            "type": "text",
+            "text": " of any bird whose laying has dropped. Refresh the dust bath if it has been rained on."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Monthly, an hour. Full coop strip — all bedding out, scrub the perch and floor with hot water and a poultry-safe disinfectant, dust the corners and the underside of the perch with a mite powder, dry, replace bedding. The monthly clean is the single most effective parasite-management step." },
-          { "type": "text", "text": " From October through November the flock will go into the annual " },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "moult" } }],
+            "text": "Monthly, an hour. Full coop strip, all bedding out, scrub the perch and floor with hot water and a poultry-safe disinfectant, dust the corners and the underside of the perch with a mite powder, dry, replace bedding. The monthly clean is the single most effective parasite-management step."
+          },
+          {
+            "type": "text",
+            "text": " From October through November the flock will go into the annual "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "moult"
+                }
+              }
+            ],
             "text": "moult"
           },
-          { "type": "text", "text": ", egg production will pause for four to eight weeks, and the coop will look like the aftermath of a pillow fight; that is normal and not a sign of trouble." }
+          {
+            "type": "text",
+            "text": ", egg production will pause for four to eight weeks, and the coop will look like the aftermath of a pillow fight; that is normal and not a sign of trouble."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What to watch in the first month" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to watch in the first month"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "First-month observations",
+          "intro": "Common findings in the first four weeks and what to do about them.",
+          "items": [
+            {
+              "symptom": "One hen is bottom of the pecking order, pushed away from the feeder, slower to perch at night, fewer back feathers.",
+              "cause": "Normal flock hierarchy. Always present in any group of more than two birds; rarely a welfare issue at this level.",
+              "fix": "Add a second feeder at the opposite end of the run so the bottom bird can eat without crossing the dominant ones. If she loses condition over two weeks, separate temporarily and reintroduce at dusk."
+            },
+            {
+              "symptom": "A hen sits in the nesting box all day, fluffed up, refusing to leave, hissing when lifted.",
+              "cause": "She has gone broody, the hormonal drive to sit on eggs.",
+              "fix": "Hybrid layers rarely go broody; the trait is bred out. If she is broody and you don't want chicks, lift her off the nest several times a day; put her on a wire-floored broody coop in a cool spot for two or three days. The cool airflow under her resets the hormone trigger."
+            },
+            {
+              "symptom": "Feathers around the base of the tail look ragged or missing; sometimes pin-feathers visible underneath.",
+              "cause": "Feather-pecking from another bird, or the early autumn moult.",
+              "fix": "If it's October, November and only one or two birds at a time, it's the moult, egg production will pause for 4, 8 weeks and resume with fresh feathers. If it's the rest of the year, or several birds have bare patches in the same spot, look for over-stocking, boredom, or red mite under the perch and address the underlying cause."
+            },
+            {
+              "symptom": "An egg with a soft, leathery shell, or no shell at all, found in the nesting box.",
+              "cause": "Calcium shortage, common in newly-laying pullets adjusting their physiology.",
+              "fix": "Free-choice oyster-shell grit always available; layer pellets (not growers pellets) as the main ration. The problem usually resolves within two weeks of the first soft-shelled egg."
+            },
+            {
+              "symptom": "A scratch corridor of feathers and droppings along the outside of the run perimeter overnight.",
+              "cause": "Fox investigating the perimeter. The birds inside are fine for tonight; you have until tomorrow night to act.",
+              "fix": "Walk the perimeter and find the dig point. Add a 60 cm weldmesh apron pegged flat on the outside, or set up electric poultry netting around the run that evening. Foxes test the same perimeter for two or three nights before they commit."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to read next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once the flock has settled, the next three tutorials worth reading are: the weekly health check (vent, crop, feet, feathers), the seasonal feed shift from spring to autumn, and the predator-proofing audit done before the clocks go back. Hatching and raising chicks is a separate project; come back to that in the second year, after a full cycle of the seasonal moult, the winter slow-down, and the spring laying pickup."
+          }
+        ]
+      }
+    ]
+  },
+  "revisedFrom": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Three to six hens fit comfortably in a small UK back garden, lay enough eggs for a household of two to four, and ask for around ten minutes of your time a day. They are also the most reliable gateway to keeping anything else. Get the coop right at the start and everything else — the daily routine, the predator-proofing, the feed plan — follows naturally."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a setup tutorial, not a build plan. You will end the weekend with a coop sited, fenced, fitted out, and ready for birds to move in at dusk on the Sunday. The hens themselves come from a local breeder, a rescue centre, or a feed shop — buy "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "point-of-lay"
+                }
+              }
+            ],
+            "text": "point of lay"
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pullet"
+                }
+              }
+            ],
+            "text": "pullets"
+          },
+          {
+            "type": "text",
+            "text": " your first time round, not day-old chicks. Chicks are a separate project that doubles your kit list."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "How many birds, and what breed"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Three hens is the smallest social group that works. Two will pair off and bully a third introduced later; one alone is unhappy. Six is the comfortable upper end for a 4 × 3 metre back-garden patch with a walk-in coop and run. Plan for the bigger number than the smaller; you will end up with seven by the third spring."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a first flock, take a hybrid layer like a Lohmann Brown, an ISA Brown, or a Bovans Brown. They are bred for egg output, lay 280–300 eggs in their first year, and have temperaments designed for hands-on keepers. Heritage breeds — Orpingtons, Sussex, Wyandottes, Marans — are slower to lay, produce 150–200 eggs a year, and are more interesting once you know what you are doing. Mix breeds only after the first flock has settled; a mixed start is a pecking-order project on top of a setup project."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where the coop goes"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Site the coop on level, well-drained ground with morning sun and afternoon shade. Hens cope well with cold and badly with damp; a permanently soggy patch breeds parasites and respiratory trouble. If the obvious spot in the garden floods after rain, pick the second-best spot."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Three boundary rules:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "At least three metres from the house if you can. Hens are tidy creatures but they will scratch up the bedding plant under the kitchen window, and the run will smell stronger in August than you currently expect."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Away from the back fence the urban fox uses as a corridor. Where you see fox tracks in a hard frost, the fox sees a route in. Set the coop ten or fifteen metres inside that line if the garden allows it."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Where you can carry feed bags, water buckets, and a wheelbarrow of bedding without crossing the lawn. A path you already walk is the path you will keep using; one you have to invent will not get walked when it rains."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "How much space",
+          "body": "DEFRA's small-flock guidance is one square metre of coop floor space per three birds, plus four square metres of secure run per bird. For three hens that is roughly a 1 × 1 m coop and a 3 × 4 m run; for six hens, a 2 × 1 m coop and a 4 × 6 m run. Under-spacing is the single biggest predictor of feather-pecking and bullying. Over-spacing causes no problems."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Predator-proofing the run"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In a UK back garden the threats are foxes (year-round, nocturnal, opportunistic), rats (year-round, after feed not birds), and occasionally a sparrowhawk on a pullet. Badgers will take eggs and chicks; corvids will take eggs from open nests."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A run is fox-proof when it has three layers:"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Buried barrier. Either dig a 30 cm trench around the run perimeter and bury the bottom of the wire in it, or lay a 60 cm horizontal apron of weldmesh flat on the ground around the outside of the run, pegged down and grassed over. The apron is easier and works as well; foxes dig down at the line, not out from it."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wire — weldmesh, not chicken wire. Chicken-wire hexagonal netting is for keeping chickens in; it will not keep a fox out. Use 25 × 25 mm welded mesh, 2 mm wire, on all four sides up to at least 1.8 m."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A solid roof or roofed netting. Foxes climb where the perimeter is climbable, and sparrowhawks need no climb at all. A covered run is the only run that lets you sleep easy."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the garden boundary is already 1.8 m solid timber on all four sides, the run itself can be lighter — but the coop pop-hole still closes at dusk and opens at dawn, every day, no exceptions. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "techniqueLink",
+                "attrs": {
+                  "techniqueSlug": "fitting-electric-poultry-netting",
+                  "label": "Electric poultry netting"
+                }
+              }
+            ],
+            "text": "Electric poultry netting"
+          },
+          {
+            "type": "text",
+            "text": " around the outside of the run is the belt-and-braces answer for gardens with a recent fox sighting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Inside the coop"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The coop is a sleeping and laying box, not a hangout. Hens spend daylight hours in the run; the coop earns its keep at night and during egg-laying. Five things go inside it, in this order of importance."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "First, a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "perch"
+                }
+              }
+            ],
+            "text": "perch"
+          },
+          {
+            "type": "text",
+            "text": ". A round-edged hardwood bar, around 40 mm thick, runs horizontally across the back of the coop at least 60 cm off the floor. Allow 25–30 cm of perch length per bird. Chickens settle for the night by walking up to the highest point in the coop and shuffling along the perch; one perch the right size is better than two competing for the top spot."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Second, "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "nesting-box"
+                }
+              }
+            ],
+            "text": "nesting boxes"
+          },
+          {
+            "type": "text",
+            "text": ". One enclosed box per three or four hens, sized around 30 × 30 × 30 cm, sited lower than the perch (otherwise the birds roost in the nest box and you collect dirty eggs every morning). Line with clean straw or wood shavings. Hens prefer dim, enclosed boxes; a curtain across the front is not necessary but does help with shy first-time layers."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Third, the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pop-hole"
+                }
+              }
+            ],
+            "text": "pop-hole"
+          },
+          {
+            "type": "text",
+            "text": ". The opening between coop and run, around 30 × 30 cm, with a sliding or hinged door. The pop-hole opens at dawn and closes at dusk every day of the year. An automatic opener takes the work off you and is the single best non-essential piece of kit a back-garden keeper can buy."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fourth, ventilation high above the perch. Coops need air movement, not draughts; a couple of mesh-covered openings near the ridge let warm damp air out without blowing on roosting birds. Coops without ventilation grow respiratory disease quickly."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fifth, bedding on the coop floor. Wood shavings (not cedar — too strong-scented; pine or aspen) or chopped straw work; sawdust holds too much moisture. Aim for 5 cm depth, replace once a fortnight or when it stops smelling clean."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Feed, water, and grit"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The daily ration is "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "layer-pellets"
+                }
+              }
+            ],
+            "text": "layer pellets"
+          },
+          {
+            "type": "text",
+            "text": " in a treadle feeder. The treadle plate keeps rats and wild birds out; an open hanging feeder will lose half the ration to the local sparrow flock. Hens self-regulate intake; a feeder kept full at all times is the simplest approach."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Water from a sealed bucket drinker with horizontal nipple drinkers in the side. Open trough drinkers get fouled with bedding within an hour; nipples stay clean for a week and freeze less readily in a cold snap. Refill weekly in winter, every few days in summer."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A separate free-choice "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "grit"
+                }
+              }
+            ],
+            "text": "grit"
+          },
+          {
+            "type": "text",
+            "text": " feeder, with insoluble flint grit on one side and crushed oyster shell on the other, lets the birds take what they need for the gizzard and for shell strength. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "scratch"
+                }
+              }
+            ],
+            "text": "Scratch"
+          },
+          {
+            "type": "text",
+            "text": " grain (mixed wheat and maize) is a treat, not a daily ration: a small handful tossed in the run mid-afternoon keeps the birds occupied for an hour and encourages turning of the litter."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The dust bath"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every coop has a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "dust-bath"
+                }
+              }
+            ],
+            "text": "dust bath"
+          },
+          {
+            "type": "text",
+            "text": " in the run. A shallow open-topped box (or a repurposed cat-litter tray), filled with dry earth, wood ash, and a handful of food-grade diatomaceous earth. Hens roll, scrabble, fluff, and shake the mix through their feathers; the dust smothers feather lice and red mite. Refresh the mix every couple of months and after heavy rain reaches it."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Without a dust bath, hens will dig their own in the corner of the run that gets the most sun, usually where you do not want a thirty-centimetre hole. The provided box redirects the behaviour."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Moving birds in"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Collect the pullets at the end of the day. Birds picked up in the evening, transported in the dark, and lifted into a strange coop at last light will go straight up to the perch and sleep where they wake — the new coop is then home. Birds released into a strange run in daylight scatter, hide, and have to be hand-caught at dusk; a stressful day for everyone."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For the first 24 hours, keep food and water inside the coop, not out in the run. The birds will not leave the coop until they are hungry enough; food inside means they eat without venturing out, which gives them another night of confirming that this is home. On day two, move food and water into the run."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Eggs will not arrive immediately. The stress of the move pauses laying for one to three weeks. The first eggs will be small, sometimes thin-shelled, sometimes laid in odd places, the corner of the run or the gap behind the feeder. By the fourth week the birds will be laying in the nesting box, on a routine, and the size will be normal. A bird who sits tight in the box from morning to dusk for two days running has likely gone "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "broody"
+                }
+              }
+            ],
+            "text": "broody"
+          },
+          {
+            "type": "text",
+            "text": "; rare in a hybrid layer, more likely in heritage breeds."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The daily and weekly routine"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Daily, ten minutes total. Pop-hole open at dawn (automatic) or by 7 am. Top up feed and water if low. Look at every bird; one quick scan tells you whether anyone is hunched, breathing through an open beak, or hanging back at the door. Collect eggs once or twice. Close the pop-hole at dusk."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weekly, twenty minutes. Empty and refresh the bedding under the perch (the area that collects the overnight droppings). Top up the nesting box straw. Check the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "vent"
+                }
+              }
+            ],
+            "text": "vent"
+          },
+          {
+            "type": "text",
+            "text": " of any bird whose laying has dropped. Refresh the dust bath if it has been rained on."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Monthly, an hour. Full coop strip — all bedding out, scrub the perch and floor with hot water and a poultry-safe disinfectant, dust the corners and the underside of the perch with a mite powder, dry, replace bedding. The monthly clean is the single most effective parasite-management step."
+          },
+          {
+            "type": "text",
+            "text": " From October through November the flock will go into the annual "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "moult"
+                }
+              }
+            ],
+            "text": "moult"
+          },
+          {
+            "type": "text",
+            "text": ", egg production will pause for four to eight weeks, and the coop will look like the aftermath of a pillow fight; that is normal and not a sign of trouble."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to watch in the first month"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -443,13 +1525,23 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What to read next" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to read next"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Once the flock has settled, the next three tutorials worth reading are: the weekly health check (vent, crop, feet, feathers), the seasonal feed shift from spring to autumn, and the predator-proofing audit done before the clocks go back. Hatching and raising chicks is a separate project; come back to that in the second year, after a full cycle of the seasonal moult, the winter slow-down, and the spring laying pickup." }
+          {
+            "type": "text",
+            "text": "Once the flock has settled, the next three tutorials worth reading are: the weekly health check (vent, crop, feet, feathers), the seasonal feed shift from spring to autumn, and the predator-proofing audit done before the clocks go back. Hatching and raising chicks is a separate project; come back to that in the second year, after a full cycle of the seasonal moult, the winter slow-down, and the spring laying pickup."
+          }
         ]
       }
     ]

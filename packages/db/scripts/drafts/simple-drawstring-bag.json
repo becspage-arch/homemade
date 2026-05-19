@@ -2,7 +2,7 @@
   "slug": "simple-drawstring-bag",
   "title": "Sew a simple drawstring bag",
   "subtitle": "Two rectangles, one casing, one cord",
-  "excerpt": "The starter sewing project: two rectangles of cotton stitched on three sides, a single casing folded along the top, a cord drawn through. Sized for a shoe bag, a swimming bag, or a fabric gift bag. Twenty-five centimetres wide and thirty-five tall when finished. Machine or hand-sewn — the same construction works both ways.",
+  "excerpt": "The starter sewing project: two rectangles of cotton stitched on three sides, a single casing folded along the top, a cord drawn through. Sized for a shoe bag, a swimming bag, or a fabric gift bag. Twenty-five centimetres wide and thirty-five tall when finished. Machine or hand-sewn, the same construction works both ways.",
   "type": "PATTERN",
   "categorySlug": "sewing",
   "subCategorySlug": "accessories-small-projects",
@@ -13,18 +13,45 @@
   "sewing": {
     "craftType": "sewing",
     "projectShape": "rectangle",
-    "requiredFabricSlugs": ["cotton-canvas", "cotton-drill", "quilting-cotton", "calico"],
-    "requiredNotionSlugs": ["thread-polyester", "drawstring-cord"],
+    "requiredFabricSlugs": [
+      "cotton-canvas",
+      "cotton-drill",
+      "quilting-cotton",
+      "calico"
+    ],
+    "requiredNotionSlugs": [
+      "thread-polyester",
+      "drawstring-cord"
+    ],
     "sewingMethod": "mixed",
     "fabricYardageMetres": 0.5,
-    "finishedDimensionsCm": { "widthCm": 25, "heightCm": 35 },
+    "finishedDimensionsCm": {
+      "widthCm": 25,
+      "heightCm": 35
+    },
     "bodyMeasurementsRequired": []
   },
   "glossaryTerms": [
-    { "slug": "casing", "term": "Casing", "definition": "A folded-over channel of fabric stitched along the top edge of a bag or waistband to carry a drawstring or elastic. Made by folding the raw edge under once, then under again to enclose it, and stitching close to the inner fold." },
-    { "slug": "french-seam", "term": "French seam", "definition": "A self-enclosing seam for light wovens where raw edges would fray. Sewn twice: first with wrong sides together at a narrow allowance, then folded right-sides-together and sewn again to enclose the raw edges inside the seam." },
-    { "slug": "running-stitch", "term": "Running stitch", "definition": "The foundational hand stitch: the needle passes in and out of the cloth in a continuous line, picking up small even bites at regular spacing. Used for seams that don't take heavy tension and for the gathering stitch." },
-    { "slug": "backstitch-hand", "term": "Backstitch (hand-sewing)", "definition": "A stronger hand-sewing seam stitch than running stitch. Each new stitch goes back to meet the previous one before advancing, producing a continuous line on the right side of the cloth." }
+    {
+      "slug": "casing",
+      "term": "Casing",
+      "definition": "A folded-over channel of fabric stitched along the top edge of a bag or waistband to carry a drawstring or elastic. Made by folding the raw edge under once, then under again to enclose it, and stitching close to the inner fold."
+    },
+    {
+      "slug": "french-seam",
+      "term": "French seam",
+      "definition": "A self-enclosing seam for light wovens where raw edges would fray. Sewn twice: first with wrong sides together at a narrow allowance, then folded right-sides-together and sewn again to enclose the raw edges inside the seam."
+    },
+    {
+      "slug": "running-stitch",
+      "term": "Running stitch",
+      "definition": "The foundational hand stitch: the needle passes in and out of the cloth in a continuous line, picking up small even bites at regular spacing. Used for seams that don't take heavy tension and for the gathering stitch."
+    },
+    {
+      "slug": "backstitch-hand",
+      "term": "Backstitch (hand-sewing)",
+      "definition": "A stronger hand-sewing seam stitch than running stitch. Each new stitch goes back to meet the previous one before advancing, producing a continuous line on the right side of the cloth."
+    }
   ],
   "body": {
     "type": "doc",
@@ -32,15 +59,638 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The drawstring bag is the canonical first sewing project. Two rectangles of cotton stitched on three sides, a single fold-over casing along the top edge, a cord threaded through to close the bag. Twenty-five centimetres wide by thirty-five tall is the working size for a shoe bag, a small wash bag, a swimming bag, or a fabric wrapping for a wedding-shower gift. The same construction scales down to a phone bag or up to a laundry bag." }
+          {
+            "type": "text",
+            "text": "The drawstring bag is the canonical first sewing project. Two rectangles of cotton stitched on three sides, a single fold-over casing along the top edge, a cord threaded through to close the bag. Twenty-five centimetres wide by thirty-five tall is the working size for a shoe bag, a small wash bag, a swimming bag, or a fabric wrapping for a wedding-shower gift. The same construction scales down to a phone bag or up to a laundry bag."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Built from rectangles, no pattern pieces, no curves. The machine version takes about an hour from cutting to thread-through. The hand-sewn version takes a long afternoon — same construction, every machine line replaced with " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "backstitch-hand" } }], "text": "backstitch" },
-          { "type": "text", "text": " by hand. The finished bag is no weaker either way." }
+          {
+            "type": "text",
+            "text": "Built from rectangles, no pattern pieces, no curves. The machine version takes about an hour from cutting to thread-through. The hand-sewn version takes a long afternoon, same construction, every machine line replaced with "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "backstitch-hand"
+                }
+              }
+            ],
+            "text": "backstitch"
+          },
+          {
+            "type": "text",
+            "text": " by hand. The finished bag is no weaker either way."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Before you start",
+          "body": "Pre-wash the fabric. Cotton canvas shrinks 5-7% on a first hot wash; quilting cotton shrinks 2-3%. Wash on the cycle the finished bag will be washed at and iron before cutting. Workspace. A flat surface for cutting, a daylight task lamp or a window for stitching, sharp dressmaking scissors. Pins go in a tomato or a magnetic dish; never on the lap. Sewing-machine safety. Eye-level light at the needle. Keep fingers a centimetre clear of the foot. Stop the machine completely before reaching under the foot to adjust fabric. Iron safety. The iron stays on its heel between presses, cord-side away from the table edge so it can't be pulled down."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "0.5 metres of cotton fabric"
+                  },
+                  {
+                    "type": "text",
+                    "text": " at standard 112 cm fabric width. Cotton canvas (around 330 gsm) for a market or shoe bag; cotton drill (around 270 gsm) for a medium-weight everyday bag; quilting cotton (around 115 gsm) or calico (around 160 gsm) for a lighter gift bag or sleep-bag."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "All-purpose polyester thread"
+                  },
+                  {
+                    "type": "text",
+                    "text": " in a matching or contrasting colour, Tex 27 (size 50). One reel covers the project several times over."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "1 metre of drawstring cord or ribbon"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", 4-6 mm diameter. Cotton or polyester braided cord for a working bag; satin ribbon for a gift bag (less hard-wearing but reads softer). Avoid leather lace, which doesn't slide cleanly through a cotton casing."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Sewing equipment"
+                  },
+                  {
+                    "type": "text",
+                    "text": ": sewing machine with a size 90 universal needle (machine version), OR a size 7 sharp hand-sewing needle (hand version); iron and pressing cloth; tape measure; dressmaking scissors; pins; tailor's chalk or a fabric-marking pen; a large safety pin (4 cm or longer) for threading the drawstring."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cutting plan"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cut two rectangles, each 28 × 43 cm. The 28 cm dimension is the bag's width (25 cm finished plus a 1.5 cm seam allowance on each side); the 43 cm dimension is the height including the casing fold (35 cm finished plus 1 cm bottom-seam allowance plus 7 cm for the double fold of the casing). Lay the rectangles with the 43 cm side parallel to the selvedge, this gives the bag the most strength along its load-bearing axis."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "All seam allowances 1 cm unless noted."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Construction, machine version"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "1. Mark the channel gaps in the side seams"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "On each rectangle, measure down 7 cm from the top short edge along both long sides and mark with chalk. Then measure down 9 cm and mark again. The 2 cm gap between the two marks is where the drawstring cord will exit the side seam; the side seam will be stitched up to the lower mark, skipped over the 2 cm gap, then continued from the upper mark to the top."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "2. Sew the side and bottom seams"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the two rectangles right sides together with raw edges aligned. Pin along both long sides and the bottom short edge. Machine straight-stitch at 2.5 mm stitch length up the right side from the bottom corner to the 9 cm mark, backstitch, lift the foot, jump the 2 cm gap, lower the foot at the 7 cm mark, backstitch, and continue to the top. Repeat on the left side. Stitch the bottom seam continuously from corner to corner, backstitching at both ends."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For light cotton (quilting cotton, calico) where raw edges fray, the heritage finish is a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "french-seam"
+                }
+              }
+            ],
+            "text": "French seam"
+          },
+          {
+            "type": "text",
+            "text": ": stitch the side seams wrong sides together at a 5 mm seam allowance first, trim to 3 mm, press, fold right sides together, and stitch again at 7 mm to enclose the raw edges inside the seam. The casing then sits cleanly on a fully-enclosed seam. For canvas and drill, a plain seam with a zigzag finish over the seam allowances is faster and reads no worse on a working bag."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "3. Reinforce the channel openings"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Each 2 cm gap takes pulling load every time the drawstring is closed. With the bag still inside out, stitch a small rectangle of reinforcement around each gap: a 4-5 mm-wide box around the 2 cm opening, through both fabric layers, anchoring the seam allowances. This stops the gap edges from fraying or splitting under load."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "4. Make the casing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Press the side seams open above and below the channel gaps so the drawstring will slide through cleanly. Then fold the top raw edge of the bag under by 1 cm all the way around and press. Fold again by 3 cm and press; this double fold creates a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "casing"
+                }
+              }
+            ],
+            "text": "casing"
+          },
+          {
+            "type": "text",
+            "text": " 3 cm deep, comfortably wide enough for a 4-6 mm cord with a little slack to gather smoothly."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pin the casing flat all the way around. Machine straight-stitch around the bottom edge of the casing, 2 mm above the inner folded edge. Backstitch at the start and finish (overlap by 1-2 cm) so the casing doesn't pull open. A second decorative line of stitching 2 mm down from the top folded edge is optional; it holds the casing flatter against the bag body but is not structural."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "5. Turn right side out and thread the cord"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Turn the bag right side out, pushing out the bottom corners with a finger or a chopstick. Press the side seams and the casing flat from the right side, using a pressing cloth on canvas and drill to protect the iron-shine from showing."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Attach the large safety pin to one end of the cord. Push the pin into the right-side channel gap, work it around the inside of the casing all the way around the bag, and out through the left-side channel gap. Tie a single overhand knot at each end of the cord to stop it pulling back into the channel; trim any frayed ends. The bag closes by pulling both knot-ends outwards on either side, the casing gathers around the cord and the top of the bag draws shut."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Construction, hand-sewn version"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The hand-sewn version uses the same cutting plan and the same five construction stages. Replace every machine line with one of two hand stitches:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Backstitch"
+                  },
+                  {
+                    "type": "text",
+                    "text": " for the side and bottom seams (these take load). 3 mm stitch length on the right side. See the hand-stitch foundations tutorial for the stitch path."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Running stitch",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      },
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "running-stitch"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " for the casing's lower edge (this does not take load; the casing only needs to hold its shape). 4 mm spacing."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Reinforce the channel gaps with three or four overlapping backstitches at the start and end of each side seam at the gap. The hand-sewn bag takes about three to four hours total; the finished construction is identical."
+          }
+        ]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": {
+          "tutorialSlug": "running-and-backstitch-by-hand"
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Smaller (phone bag, jewellery pouch)"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". 15 × 20 cm rectangles, 50 cm of cord, otherwise identical. The casing depth drops to 2 cm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Larger (small laundry, weekend wash bag)"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". 40 × 55 cm rectangles, 1.5 m of cord. Reinforce the channel openings with a second box of stitching and consider a heavier 5-6 mm cord."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Two-cord closure (closes from both sides)"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". Add a second cord, threaded in the opposite direction through a 4 cm-deep casing divided into two channels with a stitched ridge. This is the canonical drawstring tote pattern; see the related drawstring-tote tutorial for the two-channel construction."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cotton bags wash on a normal cycle at the temperature the fabric was pre-washed at. The drawstring cord is the wear point; replace it when the ends fray or the knots loosen, rather than the whole bag. Cut the knots off, pull the old cord through, thread fresh cord with the safety pin."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "If the bag went sideways"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common first-bag troubles",
+          "intro": "Four failures that recur on first drawstring bags and the fix for each.",
+          "items": [
+            {
+              "symptom": "Drawstring won't thread through the casing, gets stuck partway",
+              "cause": "Seam allowances at the channel gaps were not pressed open before the casing was sewn.",
+              "fix": "Turn the bag inside out at the channel area. Press the seam allowances open above and below each channel gap so the cord has a clear path through the casing tunnel. A small dab of fabric glue at each side of the gap holds the press."
+            },
+            {
+              "symptom": "Casing rolls inwards after the first wash",
+              "cause": "Casing stitch line was too close to the inner fold (less than 2 mm above it).",
+              "fix": "Add a second stitch line 5 mm above the original. The two-line tacks the casing flat against the bag body and stops the roll."
+            },
+            {
+              "symptom": "Channel gap fraying after the first few closures",
+              "cause": "Reinforcement stitching skipped at step 3, or stitched too close to the gap edge.",
+              "fix": "Stitch a 4-5 mm-wide box around each gap, through both fabric layers and both seam allowance edges. Trim any frayed threads back close."
+            },
+            {
+              "symptom": "Bottom seam ripping under a heavy load",
+              "cause": "Stitch length too long (default 3 mm rather than 2.5 mm) on a heavyweight canvas; or seam allowance too narrow.",
+              "fix": "Re-stitch the bottom seam at stitch length 2.0 mm and a second parallel line 3 mm above the first for a double-reinforced base."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "revisedFrom": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The drawstring bag is the canonical first sewing project. Two rectangles of cotton stitched on three sides, a single fold-over casing along the top edge, a cord threaded through to close the bag. Twenty-five centimetres wide by thirty-five tall is the working size for a shoe bag, a small wash bag, a swimming bag, or a fabric wrapping for a wedding-shower gift. The same construction scales down to a phone bag or up to a laundry bag."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Built from rectangles, no pattern pieces, no curves. The machine version takes about an hour from cutting to thread-through. The hand-sewn version takes a long afternoon — same construction, every machine line replaced with "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "backstitch-hand"
+                }
+              }
+            ],
+            "text": "backstitch"
+          },
+          {
+            "type": "text",
+            "text": " by hand. The finished bag is no weaker either way."
+          }
         ]
       },
       {
@@ -53,170 +703,14 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
-      },
-      {
-        "type": "bulletList",
+        "attrs": {
+          "level": 2
+        },
         "content": [
           {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "0.5 metres of cotton fabric" },
-                  { "type": "text", "text": " at standard 112 cm fabric width. Cotton canvas (around 330 gsm) for a market or shoe bag; cotton drill (around 270 gsm) for a medium-weight everyday bag; quilting cotton (around 115 gsm) or calico (around 160 gsm) for a lighter gift bag or sleep-bag." }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "All-purpose polyester thread" },
-                  { "type": "text", "text": " in a matching or contrasting colour, Tex 27 (size 50). One reel covers the project several times over." }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "1 metre of drawstring cord or ribbon" },
-                  { "type": "text", "text": ", 4-6 mm diameter. Cotton or polyester braided cord for a working bag; satin ribbon for a gift bag (less hard-wearing but reads softer). Avoid leather lace, which doesn't slide cleanly through a cotton casing." }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "listItem",
-            "content": [
-              {
-                "type": "paragraph",
-                "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Sewing equipment" },
-                  { "type": "text", "text": ": sewing machine with a size 90 universal needle (machine version), OR a size 7 sharp hand-sewing needle (hand version); iron and pressing cloth; tape measure; dressmaking scissors; pins; tailor's chalk or a fabric-marking pen; a large safety pin (4 cm or longer) for threading the drawstring." }
-                ]
-              }
-            ]
+            "type": "text",
+            "text": "What you need"
           }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Cutting plan" }]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "Cut two rectangles, each 28 × 43 cm. The 28 cm dimension is the bag's width (25 cm finished plus a 1.5 cm seam allowance on each side); the 43 cm dimension is the height including the casing fold (35 cm finished plus 1 cm bottom-seam allowance plus 7 cm for the double fold of the casing). Lay the rectangles with the 43 cm side parallel to the selvedge — this gives the bag the most strength along its load-bearing axis." }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "All seam allowances 1 cm unless noted." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Construction — machine version" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "1. Mark the channel gaps in the side seams" }]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "On each rectangle, measure down 7 cm from the top short edge along both long sides and mark with chalk. Then measure down 9 cm and mark again. The 2 cm gap between the two marks is where the drawstring cord will exit the side seam; the side seam will be stitched up to the lower mark, skipped over the 2 cm gap, then continued from the upper mark to the top." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "2. Sew the side and bottom seams" }]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "Place the two rectangles right sides together with raw edges aligned. Pin along both long sides and the bottom short edge. Machine straight-stitch at 2.5 mm stitch length up the right side from the bottom corner to the 9 cm mark, backstitch, lift the foot, jump the 2 cm gap, lower the foot at the 7 cm mark, backstitch, and continue to the top. Repeat on the left side. Stitch the bottom seam continuously from corner to corner, backstitching at both ends." }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "For light cotton (quilting cotton, calico) where raw edges fray, the heritage finish is a " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "french-seam" } }], "text": "French seam" },
-          { "type": "text", "text": ": stitch the side seams wrong sides together at a 5 mm seam allowance first, trim to 3 mm, press, fold right sides together, and stitch again at 7 mm to enclose the raw edges inside the seam. The casing then sits cleanly on a fully-enclosed seam. For canvas and drill, a plain seam with a zigzag finish over the seam allowances is faster and reads no worse on a working bag." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "3. Reinforce the channel openings" }]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "Each 2 cm gap takes pulling load every time the drawstring is closed. With the bag still inside out, stitch a small rectangle of reinforcement around each gap: a 4-5 mm-wide box around the 2 cm opening, through both fabric layers, anchoring the seam allowances. This stops the gap edges from fraying or splitting under load." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "4. Make the casing" }]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "Press the side seams open above and below the channel gaps so the drawstring will slide through cleanly. Then fold the top raw edge of the bag under by 1 cm all the way around and press. Fold again by 3 cm and press; this double fold creates a " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "casing" } }], "text": "casing" },
-          { "type": "text", "text": " 3 cm deep, comfortably wide enough for a 4-6 mm cord with a little slack to gather smoothly." }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "Pin the casing flat all the way around. Machine straight-stitch around the bottom edge of the casing, 2 mm above the inner folded edge. Backstitch at the start and finish (overlap by 1-2 cm) so the casing doesn't pull open. A second decorative line of stitching 2 mm down from the top folded edge is optional; it holds the casing flatter against the bag body but is not structural." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "5. Turn right side out and thread the cord" }]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "Turn the bag right side out, pushing out the bottom corners with a finger or a chopstick. Press the side seams and the casing flat from the right side, using a pressing cloth on canvas and drill to protect the iron-shine from showing." }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "Attach the large safety pin to one end of the cord. Push the pin into the right-side channel gap, work it around the inside of the casing all the way around the bag, and out through the left-side channel gap. Tie a single overhand knot at each end of the cord to stop it pulling back into the channel; trim any frayed ends. The bag closes by pulling both knot-ends outwards on either side — the casing gathers around the cord and the top of the bag draws shut." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Construction — hand-sewn version" }]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "The hand-sewn version uses the same cutting plan and the same five construction stages. Replace every machine line with one of two hand stitches:" }
         ]
       },
       {
@@ -228,8 +722,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Backstitch" },
-                  { "type": "text", "text": " for the side and bottom seams (these take load). 3 mm stitch length on the right side. See the hand-stitch foundations tutorial for the stitch path." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "0.5 metres of cotton fabric"
+                  },
+                  {
+                    "type": "text",
+                    "text": " at standard 112 cm fabric width. Cotton canvas (around 330 gsm) for a market or shoe bag; cotton drill (around 270 gsm) for a medium-weight everyday bag; quilting cotton (around 115 gsm) or calico (around 160 gsm) for a lighter gift bag or sleep-bag."
+                  }
                 ]
               }
             ]
@@ -240,8 +745,343 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Running stitch" },
-                  { "type": "text", "text": " for the casing's lower edge (this does not take load; the casing only needs to hold its shape). 4 mm spacing." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "All-purpose polyester thread"
+                  },
+                  {
+                    "type": "text",
+                    "text": " in a matching or contrasting colour, Tex 27 (size 50). One reel covers the project several times over."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "1 metre of drawstring cord or ribbon"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", 4-6 mm diameter. Cotton or polyester braided cord for a working bag; satin ribbon for a gift bag (less hard-wearing but reads softer). Avoid leather lace, which doesn't slide cleanly through a cotton casing."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Sewing equipment"
+                  },
+                  {
+                    "type": "text",
+                    "text": ": sewing machine with a size 90 universal needle (machine version), OR a size 7 sharp hand-sewing needle (hand version); iron and pressing cloth; tape measure; dressmaking scissors; pins; tailor's chalk or a fabric-marking pen; a large safety pin (4 cm or longer) for threading the drawstring."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cutting plan"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cut two rectangles, each 28 × 43 cm. The 28 cm dimension is the bag's width (25 cm finished plus a 1.5 cm seam allowance on each side); the 43 cm dimension is the height including the casing fold (35 cm finished plus 1 cm bottom-seam allowance plus 7 cm for the double fold of the casing). Lay the rectangles with the 43 cm side parallel to the selvedge — this gives the bag the most strength along its load-bearing axis."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "All seam allowances 1 cm unless noted."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Construction — machine version"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "1. Mark the channel gaps in the side seams"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "On each rectangle, measure down 7 cm from the top short edge along both long sides and mark with chalk. Then measure down 9 cm and mark again. The 2 cm gap between the two marks is where the drawstring cord will exit the side seam; the side seam will be stitched up to the lower mark, skipped over the 2 cm gap, then continued from the upper mark to the top."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "2. Sew the side and bottom seams"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the two rectangles right sides together with raw edges aligned. Pin along both long sides and the bottom short edge. Machine straight-stitch at 2.5 mm stitch length up the right side from the bottom corner to the 9 cm mark, backstitch, lift the foot, jump the 2 cm gap, lower the foot at the 7 cm mark, backstitch, and continue to the top. Repeat on the left side. Stitch the bottom seam continuously from corner to corner, backstitching at both ends."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For light cotton (quilting cotton, calico) where raw edges fray, the heritage finish is a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "french-seam"
+                }
+              }
+            ],
+            "text": "French seam"
+          },
+          {
+            "type": "text",
+            "text": ": stitch the side seams wrong sides together at a 5 mm seam allowance first, trim to 3 mm, press, fold right sides together, and stitch again at 7 mm to enclose the raw edges inside the seam. The casing then sits cleanly on a fully-enclosed seam. For canvas and drill, a plain seam with a zigzag finish over the seam allowances is faster and reads no worse on a working bag."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "3. Reinforce the channel openings"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Each 2 cm gap takes pulling load every time the drawstring is closed. With the bag still inside out, stitch a small rectangle of reinforcement around each gap: a 4-5 mm-wide box around the 2 cm opening, through both fabric layers, anchoring the seam allowances. This stops the gap edges from fraying or splitting under load."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "4. Make the casing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Press the side seams open above and below the channel gaps so the drawstring will slide through cleanly. Then fold the top raw edge of the bag under by 1 cm all the way around and press. Fold again by 3 cm and press; this double fold creates a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "casing"
+                }
+              }
+            ],
+            "text": "casing"
+          },
+          {
+            "type": "text",
+            "text": " 3 cm deep, comfortably wide enough for a 4-6 mm cord with a little slack to gather smoothly."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pin the casing flat all the way around. Machine straight-stitch around the bottom edge of the casing, 2 mm above the inner folded edge. Backstitch at the start and finish (overlap by 1-2 cm) so the casing doesn't pull open. A second decorative line of stitching 2 mm down from the top folded edge is optional; it holds the casing flatter against the bag body but is not structural."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "5. Turn right side out and thread the cord"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Turn the bag right side out, pushing out the bottom corners with a finger or a chopstick. Press the side seams and the casing flat from the right side, using a pressing cloth on canvas and drill to protect the iron-shine from showing."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Attach the large safety pin to one end of the cord. Push the pin into the right-side channel gap, work it around the inside of the casing all the way around the bag, and out through the left-side channel gap. Tie a single overhand knot at each end of the cord to stop it pulling back into the channel; trim any frayed ends. The bag closes by pulling both knot-ends outwards on either side — the casing gathers around the cord and the top of the bag draws shut."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Construction — hand-sewn version"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The hand-sewn version uses the same cutting plan and the same five construction stages. Replace every machine line with one of two hand stitches:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Backstitch"
+                  },
+                  {
+                    "type": "text",
+                    "text": " for the side and bottom seams (these take load). 3 mm stitch length on the right side. See the hand-stitch foundations tutorial for the stitch path."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Running stitch"
+                  },
+                  {
+                    "type": "text",
+                    "text": " for the casing's lower edge (this does not take load; the casing only needs to hold its shape). 4 mm spacing."
+                  }
                 ]
               }
             ]
@@ -251,7 +1091,10 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Reinforce the channel gaps with three or four overlapping backstitches at the start and end of each side seam at the gap. The hand-sewn bag takes about three to four hours total; the finished construction is identical." }
+          {
+            "type": "text",
+            "text": "Reinforce the channel gaps with three or four overlapping backstitches at the start and end of each side seam at the gap. The hand-sewn bag takes about three to four hours total; the finished construction is identical."
+          }
         ]
       },
       {
@@ -262,8 +1105,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Variations" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
       },
       {
         "type": "bulletList",
@@ -274,8 +1124,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Smaller (phone bag, jewellery pouch)" },
-                  { "type": "text", "text": ". 15 × 20 cm rectangles, 50 cm of cord, otherwise identical. The casing depth drops to 2 cm." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Smaller (phone bag, jewellery pouch)"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". 15 × 20 cm rectangles, 50 cm of cord, otherwise identical. The casing depth drops to 2 cm."
+                  }
                 ]
               }
             ]
@@ -286,8 +1147,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Larger (small laundry, weekend wash bag)" },
-                  { "type": "text", "text": ". 40 × 55 cm rectangles, 1.5 m of cord. Reinforce the channel openings with a second box of stitching and consider a heavier 5-6 mm cord." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Larger (small laundry, weekend wash bag)"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". 40 × 55 cm rectangles, 1.5 m of cord. Reinforce the channel openings with a second box of stitching and consider a heavier 5-6 mm cord."
+                  }
                 ]
               }
             ]
@@ -298,8 +1170,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Two-cord closure (closes from both sides)" },
-                  { "type": "text", "text": ". Add a second cord, threaded in the opposite direction through a 4 cm-deep casing divided into two channels with a stitched ridge. This is the canonical drawstring tote pattern; see the related drawstring-tote tutorial for the two-channel construction." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Two-cord closure (closes from both sides)"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". Add a second cord, threaded in the opposite direction through a 4 cm-deep casing divided into two channels with a stitched ridge. This is the canonical drawstring tote pattern; see the related drawstring-tote tutorial for the two-channel construction."
+                  }
                 ]
               }
             ]
@@ -308,19 +1191,36 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Care" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Cotton bags wash on a normal cycle at the temperature the fabric was pre-washed at. The drawstring cord is the wear point; replace it when the ends fray or the knots loosen, rather than the whole bag. Cut the knots off, pull the old cord through, thread fresh cord with the safety pin." }
+          {
+            "type": "text",
+            "text": "Cotton bags wash on a normal cycle at the temperature the fabric was pre-washed at. The drawstring cord is the wear point; replace it when the ends fray or the knots loosen, rather than the whole bag. Cut the knots off, pull the old cord through, thread fresh cord with the safety pin."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "If the bag went sideways" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "If the bag went sideways"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -328,10 +1228,26 @@
           "heading": "Common first-bag troubles",
           "intro": "Four failures that recur on first drawstring bags and the fix for each.",
           "items": [
-            { "symptom": "Drawstring won't thread through the casing — gets stuck partway", "cause": "Seam allowances at the channel gaps were not pressed open before the casing was sewn.", "fix": "Turn the bag inside out at the channel area. Press the seam allowances open above and below each channel gap so the cord has a clear path through the casing tunnel. A small dab of fabric glue at each side of the gap holds the press." },
-            { "symptom": "Casing rolls inwards after the first wash", "cause": "Casing stitch line was too close to the inner fold (less than 2 mm above it).", "fix": "Add a second stitch line 5 mm above the original. The two-line tacks the casing flat against the bag body and stops the roll." },
-            { "symptom": "Channel gap fraying after the first few closures", "cause": "Reinforcement stitching skipped at step 3, or stitched too close to the gap edge.", "fix": "Stitch a 4-5 mm-wide box around each gap, through both fabric layers and both seam allowance edges. Trim any frayed threads back close." },
-            { "symptom": "Bottom seam ripping under a heavy load", "cause": "Stitch length too long (default 3 mm rather than 2.5 mm) on a heavyweight canvas; or seam allowance too narrow.", "fix": "Re-stitch the bottom seam at stitch length 2.0 mm and a second parallel line 3 mm above the first for a double-reinforced base." }
+            {
+              "symptom": "Drawstring won't thread through the casing — gets stuck partway",
+              "cause": "Seam allowances at the channel gaps were not pressed open before the casing was sewn.",
+              "fix": "Turn the bag inside out at the channel area. Press the seam allowances open above and below each channel gap so the cord has a clear path through the casing tunnel. A small dab of fabric glue at each side of the gap holds the press."
+            },
+            {
+              "symptom": "Casing rolls inwards after the first wash",
+              "cause": "Casing stitch line was too close to the inner fold (less than 2 mm above it).",
+              "fix": "Add a second stitch line 5 mm above the original. The two-line tacks the casing flat against the bag body and stops the roll."
+            },
+            {
+              "symptom": "Channel gap fraying after the first few closures",
+              "cause": "Reinforcement stitching skipped at step 3, or stitched too close to the gap edge.",
+              "fix": "Stitch a 4-5 mm-wide box around each gap, through both fabric layers and both seam allowance edges. Trim any frayed threads back close."
+            },
+            {
+              "symptom": "Bottom seam ripping under a heavy load",
+              "cause": "Stitch length too long (default 3 mm rather than 2.5 mm) on a heavyweight canvas; or seam allowance too narrow.",
+              "fix": "Re-stitch the bottom seam at stitch length 2.0 mm and a second parallel line 3 mm above the first for a double-reinforced base."
+            }
           ]
         }
       }

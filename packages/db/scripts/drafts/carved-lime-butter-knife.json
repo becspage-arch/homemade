@@ -2,7 +2,7 @@
   "slug": "carved-lime-butter-knife",
   "title": "Carved lime butter knife",
   "subtitle": "A first whittling project in seasoned lime",
-  "excerpt": "A small butter knife carved from a seasoned lime blank — the classic first whittling project. The narrow blade and short handle let a beginner work all four fundamental cuts on a single piece. Finished with raw linseed oil; food-safe after a two-week cure.",
+  "excerpt": "A small butter knife carved from a seasoned lime blank, the classic first whittling project. The narrow blade and short handle let a beginner work all four fundamental cuts on a single piece. Finished with raw linseed oil; food-safe after a two-week cure.",
   "type": "PATTERN",
   "categorySlug": "wood-natural-craft",
   "subCategorySlug": "whittling",
@@ -22,19 +22,37 @@
     "requiresAttribution": false
   },
   "recipeTools": [
-    { "slug": "sloyd-knife", "isOptional": false },
-    { "slug": "leather-strop", "isOptional": false },
-    { "slug": "sandpaper-240", "isOptional": false },
-    { "slug": "sandpaper-400", "isOptional": false },
-    { "slug": "sandpaper-600", "isOptional": false },
-    { "slug": "wood-finish-raw-linseed-oil", "isOptional": false }
+    {
+      "slug": "sloyd-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "leather-strop",
+      "isOptional": false
+    },
+    {
+      "slug": "sandpaper-240",
+      "isOptional": false
+    },
+    {
+      "slug": "sandpaper-400",
+      "isOptional": false
+    },
+    {
+      "slug": "sandpaper-600",
+      "isOptional": false
+    },
+    {
+      "slug": "wood-finish-raw-linseed-oil",
+      "isOptional": false
+    }
   ],
   "projectSchedule": [
     {
       "stepNumber": 1,
       "offsetDays": 0,
       "title": "Carve and sand the knife",
-      "body": "Today you shape the blank, work through the sanding ladder, and apply the first coat of raw linseed oil. The oil needs to soak in for an hour before you wipe off the surplus — leave it somewhere warm overnight.",
+      "body": "Today you shape the blank, work through the sanding ladder, and apply the first coat of raw linseed oil. The oil needs to soak in for an hour before you wipe off the surplus, leave it somewhere warm overnight.",
       "surfaceAs": "RAIL_CARD",
       "requiresUserAction": true
     },
@@ -42,7 +60,7 @@
       "stepNumber": 2,
       "offsetDays": 1,
       "title": "Apply second oil coat",
-      "body": "Wipe a second thin coat of raw linseed oil onto the knife. Let it soak for an hour, then wipe off any surplus with a clean cloth. Spread the cloth flat to dry outdoors — oil-soaked rags can heat as the oil cures.",
+      "body": "Wipe a second thin coat of raw linseed oil onto the knife. Let it soak for an hour, then wipe off any surplus with a clean cloth. Spread the cloth flat to dry outdoors, oil-soaked rags can heat as the oil cures.",
       "surfaceAs": "RAIL_CARD",
       "requiresUserAction": true
     },
@@ -50,7 +68,7 @@
       "stepNumber": 3,
       "offsetDays": 14,
       "title": "Your butter knife is food-safe",
-      "body": "Raw linseed oil needs two weeks to reach a full food-safe cure. Give the knife a sniff — the slightly nutty smell will have faded to almost nothing. It is ready for the table.",
+      "body": "Raw linseed oil needs two weeks to reach a full food-safe cure. Give the knife a sniff, the slightly nutty smell will have faded to almost nothing. It is ready for the table.",
       "surfaceAs": "HERO",
       "requiresUserAction": false
     }
@@ -59,12 +77,12 @@
     {
       "slug": "seasoned-wood",
       "term": "Seasoned wood",
-      "definition": "Timber that has been air-dried or kiln-dried to a stable moisture content. For indoor woodwork, the target is 8–12%. Seasoned wood does not move appreciably once carved."
+      "definition": "Timber that has been air-dried or kiln-dried to a stable moisture content. For indoor woodwork, the target is 8, 12%. Seasoned wood does not move appreciably once carved."
     },
     {
       "slug": "sloyd-knife",
       "term": "Sloyd knife",
-      "definition": "A short straight-bladed knife with a stout handle, developed in the Swedish slöjd school-craft tradition. 75–85 mm blade, scandi grind. The all-round whittling knife."
+      "definition": "A short straight-bladed knife with a stout handle, developed in the Swedish slöjd school-craft tradition. 75, 85 mm blade, scandi grind. The all-round whittling knife."
     },
     {
       "slug": "push-cut",
@@ -109,7 +127,780 @@
           },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "seasoned-wood" } }],
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "seasoned-wood"
+                }
+              }
+            ],
+            "text": "seasoned"
+          },
+          {
+            "type": "text",
+            "text": " lime (Tilia × europaea / basswood), the sculptor's standard for fine detail work. Lime is soft, close-grained, and undemanding; it will not split ahead of the blade or fight a push cut. The project takes thirty to forty-five minutes to carve, plus the finishing and cure."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lime is the right species for a first carving because it forgives a blade that is not quite sharp and a grain-reading mistake that would split a harder wood. Once you have carved this knife, the same cuts (push cut, thumb-pivot cut, pull cut, stop cut) transfer directly to harder species and more complex shapes."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Before you start cutting",
+          "body": "Grip: four-finger grip on the work; thumb-push grip on the knife. Never make a cut whose blade-path can reach a body part. Cut direction: push cuts (blade away from body) and thumb-pivot cuts are the default. Pull cuts only with the work braced against the chest and the blade-arc unable to reach anything vital. Sharpening: a dull tool is more dangerous than a sharp one, the dull tool slips. Strop every fifteen minutes of carving, hone weekly, oilstone monthly. First aid: keep a styptic pencil, gauze, and a clean dressing within reach. Apply firm pressure, elevate, and dress. A cut that shows fat or won't close with pressure goes to A&E, not a plaster. Workspace: stable seat, good light, no children or pets within arm-and-blade reach."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need, wood"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "One seasoned lime "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "blank"
+                }
+              }
+            ],
+            "text": "blank"
+          },
+          {
+            "type": "text",
+            "text": ", approximately 22 cm long, 3 cm wide, and 1.5 cm thick. Timber merchants who supply carvers sell lime in small blanks; online carving suppliers (Dictum, Sculpture House) stock it specifically for first-knife projects. Look for straight, even grain, if the blank has a wavy grain line, set it aside for a project where the grain shape adds character."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lime is food-safe when finished with a curing oil. It will not impart flavour or colour to butter or soft cheese. An alternative species with identical working properties is basswood (the North American name for the same genus): the two are interchangeable for this project."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need, tools"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Sloyd knife"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "sloyd-knife"
+                        }
+                      }
+                    ],
+                    "text": "the 75, 85 mm scandi-grind knife"
+                  },
+                  {
+                    "type": "text",
+                    "text": " is the only cutting tool this project needs. Mora 120 and Mora 122 are the reference beginner knives; either works."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Leather strop"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", charged with green stropping compound. The "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "strop"
+                        }
+                      }
+                    ],
+                    "text": "strop"
+                  },
+                  {
+                    "type": "text",
+                    "text": " is not optional. Use it every fifteen minutes of carving."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Sandpaper"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", 240, 400, and 600 grit. Folded into quarters, the paper fits the tight concavity of the handle neck."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Raw linseed oil"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", the traditional food-safe treen finish. Allow two full weeks for the cure before the knife touches food."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Workspace"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sit on a low stool or a carving stool so your knees are lower than your hips, this puts the work in a natural working position rather than craning your neck down. Good overhead or side light is more important than most carvers realise: shadows in the surface tell you where the high and low spots are. Clear the bench of anything that could catch a blade."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The four cuts"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before you touch the blank, sit with the knife and rehearse the grips. The knife hand grips the handle loosely, a tight grip tires the hand quickly and reduces sensitivity to what the blade is doing. The off hand wraps around the blank with four fingers underneath and the thumb on top."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Push cut"
+          },
+          {
+            "type": "text",
+            "text": ": "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "push-cut"
+                }
+              }
+            ],
+            "text": "blade travelling away from the body"
+          },
+          {
+            "type": "text",
+            "text": ", driven by the forearm. Hold the blank in the four-finger grip, blade above the work. Push the knife along the surface at approximately 30° to the long axis of the blank. The cut exits into open air off the end of the workpiece. Never drive the blade toward your off-hand fingers. A clean push cut on lime lifts a thin pale curl that falls away cleanly. If the chip lifts and stays attached, the blade is travelling against the grain; reverse direction."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Thumb-pivot cut"
+          },
+          {
+            "type": "text",
+            "text": ", "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "thumb-pivot-cut"
+                }
+              }
+            ],
+            "text": "off-hand thumb on the back of the blade"
+          },
+          {
+            "type": "text",
+            "text": ", pivoting the knife through a small arc. Used for fine shaping and for situations where there is not enough run-out for a push cut. The thumb provides the power; the blade travels only a centimetre or two per stroke. Good for rounding the edges of the handle and refining the shoulder where the blade meets the neck."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Pull cut"
+          },
+          {
+            "type": "text",
+            "text": ": "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pull-cut"
+                }
+              }
+            ],
+            "text": "blade moving toward the body"
+          },
+          {
+            "type": "text",
+            "text": ". Brace the blank against your breastbone first. The blade arc must be visually clear of your chest before you pull. Forearm motion only; no shoulder follow-through. Used sparingly here; the push cut handles most of this project."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Stop cut"
+          },
+          {
+            "type": "text",
+            "text": ": "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "stop-cut"
+                }
+              }
+            ],
+            "text": "a short vertical cut into the surface"
+          },
+          {
+            "type": "text",
+            "text": " that marks a boundary. Make a stop cut at the shoulder line (the junction between the blade taper and the neck) before making any paring cuts toward it. Without the stop cut, a push cut at the neck will run past the shoulder line and notch the handle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step by step"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "1. Draw the profile"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "With a pencil, mark the knife profile on the flat face of the blank. A butter knife blade is roughly 10, 12 cm long and tapers from about 2.5 cm wide at the shoulder to a rounded tip. The neck runs 2, 3 cm, and the handle takes the remaining length. Keep the taper gradual, a sharp shoulder angle is harder to carve cleanly than a long gentle taper. Mark both faces identically so you can carve symmetrically from both sides."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "2. Rough-shape the blade taper (push cuts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hold the blank in the four-finger grip. Using push cuts at 30° to the surface, take material off the top face of the blade area, working from the middle of the blade toward the tip. Work with the grain, on most lime blanks this means cutting toward the tip; the surface will tell you quickly if you have the direction wrong (the wood lifts in rough chips rather than smooth curls). Rotate and work the other face. Remove material evenly from both faces so the blade stays centred in the blank thickness."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After roughly 10 minutes of work, stop and strop the knife. Four or five strokes per side on the leather. The blade should take a clean shaving off the back of your forearm after stropping."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "3. Define the shoulder (stop cut + push cuts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Make a stop cut across the shoulder line on both faces and both edges, the four lines together form a ring around the blank at the blade-to-neck junction. Press the knife straight down into the wood to a depth of about 3 mm. Now make push cuts angled toward the stop cut from the blade side, lifting thin chips to the stop-cut line. The stop cut prevents the grain from tearing into the neck. Work around the perimeter of the shoulder until the blade taper meets the stop cut cleanly on all four faces."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "4. Round the handle (thumb-pivot cuts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The handle cross-section should be oval in the hand, not square. Using thumb-pivot cuts, work around the four long edges of the handle, rounding each to a slight chamfer. Take shallow cuts, you are removing the corners, not reshaping the whole handle. The pivot cut is well-suited to this because it stays local: you can sit the off-hand thumb directly beside the area you want to shape. Remove equal material from all four corners so the oval stays symmetrical."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "5. Taper the blade edges (push cuts and pull cuts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A butter knife does not need a sharp cutting edge, it needs a smooth, rounded working edge thin enough to spread. Work the two long edges of the blade with push cuts, reducing the edge thickness gradually from the shoulder to the tip. Aim for about 2 mm at the thickest point just inside the edge. Where the push cut cannot reach near the tip, brace the blank against your chest and use a pull cut, blade moving toward your body but the blank braced so the blade path clears your chest by a clear 10 cm at least."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "6. Refine and fair the shape"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hold the knife by its tip and sight along the length of the blank. You will see any high spots immediately, the surface will not catch the light evenly. Use thumb-pivot cuts on the high spots to bring the surface level. The blade face should be flat or very gently convex when viewed from the edge; any hollow will fill with butter and be difficult to clean. Strop the knife again before the final round of refining cuts."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When the shape looks right to the eye, it is ready for sanding. The knife-marks left by the sloyd knife are part of the finish, you do not need to sand them out if you prefer a hand-tooled look. If you want a smooth finish, proceed to step 7."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "7. Sand and finish"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Begin with 240 grit, folded into a small pad. Work with the grain along the length of the knife. Do not use circular motions, cross-grain scratches show through the oil finish. Move through 400 grit and 600 grit in the same way. After 600 grit, run a finger along the surface: it should feel glassy. Wipe away the sanding dust with a barely damp cloth."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Apply raw linseed oil liberally with a clean cloth, working it into the end grain of the handle and the tip of the blade where the oil will soak in fastest. Let it stand for one hour, then wipe off the surplus. Spread the used cloth flat to dry outdoors or submerge it in water and bag it, oil-soaked rags can heat as the oil hardens and represent a fire risk. Apply a second thin coat the following day. The knife is food-safe after two full weeks, not before."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Jam spreader"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", widen the blade to 3.5 cm and shorten the taper so the blade is almost spatula-shaped. The wider surface picks up more jam per stroke."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Left-handed handle"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", the knife as described is symmetrical and works in either hand. If the recipient strongly favours a right- or left-handed grip, bias the handle oval slightly: remove a touch more material from the upper-left edge (for a right-handed grip) to create a natural index-finger rest."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Cherry or birch"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", both are food-safe and harder than lime. A cherry blank of the same dimensions will take longer to carve but will hold its edge better and darken beautifully over time. Birch is similarly food-safe and widely available seasoned from carving suppliers."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wash by hand in warm water immediately after use. Dry with a cloth at once, do not leave it in a pool of water or put it in a dishwasher. Re-oil with raw linseed oil or board butter once a month during the first year, then whenever the surface looks dry or matt. A well-maintained carved butter knife will last decades."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What can go wrong"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooter",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The wood tears rather than cutting clean",
+              "cause": "Cutting against the grain. The blade is travelling uphill into the fibres, lifting them rather than slicing them.",
+              "fix": "Reverse the cut direction. On straight-grained lime, the clean direction is toward the tip of the knife blank on the flat face. Test with a single push cut from the middle of the blade toward the tip, if the chip lifts and releases cleanly, you have the right direction."
+            },
+            {
+              "symptom": "The shoulder junction is ragged or notched",
+              "cause": "A push cut overshot the shoulder line because no stop cut was made first.",
+              "fix": "Make a definite stop cut across the shoulder on all four faces before making any paring cuts toward it. The stop cut is not optional on this transition; without it the grain will always tear past the line."
+            },
+            {
+              "symptom": "The blade is wavy along its length when viewed on edge",
+              "cause": "Uneven material removal, more was taken from one section than another.",
+              "fix": "Sight along the blade from the handle end. Mark the high spots with a pencil line and remove them with shallow thumb-pivot cuts. Work the high spots only, not the whole blade."
+            },
+            {
+              "symptom": "The knife dulls quickly and the cut surface is furry",
+              "cause": "The blade was not stropped frequently enough. Lime is soft but abrades an edge faster than harder, denser species.",
+              "fix": "Strop every fifteen minutes. If the knife has gone past the point where stropping recovers the edge, take it to the oilstone for five minutes before continuing."
+            },
+            {
+              "symptom": "The oil finish has sticky patches after the first coat",
+              "cause": "Surplus oil was not wiped off after the soak time, or the environment is too cold.",
+              "fix": "Wipe down firmly with a clean lint-free cloth. Raw linseed oil hardens slowly below 15°C, a warm room accelerates the process. The two-week period assumes a room at 18, 20°C."
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lime coppices well and is a traditional hedgerow and parkland tree in Britain. If you have access to a lime tree (in a garden, a coppice plot, or through a local tree surgeon), the timber from spring coppicing (when the sap is running) can be worked green for larger projects; seasoned off-cuts from a drier cut suit this knife. For growing your own lime for coppiced timber, see the Garden coppice guide."
+          }
+        ]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": {
+          "tutorialSlug": "coppicing-lime-tilia"
+        }
+      }
+    ]
+  },
+  "revisedFrom": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A butter knife is the first whittling project for a reason. The blank is small enough to work in one hand, the blade is flat and narrow so there is no tricky hollowing, and the shape gives a beginner the opportunity to use all four fundamental cuts in a single session. This version is carved from "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "seasoned-wood"
+                }
+              }
+            ],
             "text": "seasoned"
           },
           {
@@ -137,8 +928,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need — wood" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need — wood"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -149,7 +947,14 @@
           },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blank" } }],
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "blank"
+                }
+              }
+            ],
             "text": "blank"
           },
           {
@@ -169,8 +974,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need — tools" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need — tools"
+          }
+        ]
       },
       {
         "type": "bulletList",
@@ -183,7 +995,11 @@
                 "content": [
                   {
                     "type": "text",
-                    "marks": [{ "type": "bold" }],
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
                     "text": "Sloyd knife"
                   },
                   {
@@ -192,7 +1008,14 @@
                   },
                   {
                     "type": "text",
-                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sloyd-knife" } }],
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "sloyd-knife"
+                        }
+                      }
+                    ],
                     "text": "the 75–85 mm scandi-grind knife"
                   },
                   {
@@ -211,7 +1034,11 @@
                 "content": [
                   {
                     "type": "text",
-                    "marks": [{ "type": "bold" }],
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
                     "text": "Leather strop"
                   },
                   {
@@ -220,7 +1047,14 @@
                   },
                   {
                     "type": "text",
-                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "strop" } }],
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "strop"
+                        }
+                      }
+                    ],
                     "text": "strop"
                   },
                   {
@@ -239,7 +1073,11 @@
                 "content": [
                   {
                     "type": "text",
-                    "marks": [{ "type": "bold" }],
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
                     "text": "Sandpaper"
                   },
                   {
@@ -258,7 +1096,11 @@
                 "content": [
                   {
                     "type": "text",
-                    "marks": [{ "type": "bold" }],
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
                     "text": "Raw linseed oil"
                   },
                   {
@@ -273,8 +1115,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Workspace" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Workspace"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -287,8 +1136,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The four cuts" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The four cuts"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -304,7 +1160,11 @@
         "content": [
           {
             "type": "text",
-            "marks": [{ "type": "bold" }],
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
             "text": "Push cut"
           },
           {
@@ -313,7 +1173,14 @@
           },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "push-cut" } }],
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "push-cut"
+                }
+              }
+            ],
             "text": "blade travelling away from the body"
           },
           {
@@ -327,7 +1194,11 @@
         "content": [
           {
             "type": "text",
-            "marks": [{ "type": "bold" }],
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
             "text": "Thumb-pivot cut"
           },
           {
@@ -336,7 +1207,14 @@
           },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thumb-pivot-cut" } }],
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "thumb-pivot-cut"
+                }
+              }
+            ],
             "text": "off-hand thumb on the back of the blade"
           },
           {
@@ -350,7 +1228,11 @@
         "content": [
           {
             "type": "text",
-            "marks": [{ "type": "bold" }],
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
             "text": "Pull cut"
           },
           {
@@ -359,7 +1241,14 @@
           },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pull-cut" } }],
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pull-cut"
+                }
+              }
+            ],
             "text": "blade moving toward the body"
           },
           {
@@ -373,7 +1262,11 @@
         "content": [
           {
             "type": "text",
-            "marks": [{ "type": "bold" }],
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
             "text": "Stop cut"
           },
           {
@@ -382,7 +1275,14 @@
           },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stop-cut" } }],
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "stop-cut"
+                }
+              }
+            ],
             "text": "a short vertical cut into the surface"
           },
           {
@@ -393,13 +1293,27 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Step by step" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step by step"
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "1. Draw the profile" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "1. Draw the profile"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -412,8 +1326,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "2. Rough-shape the blade taper (push cuts)" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "2. Rough-shape the blade taper (push cuts)"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -435,8 +1356,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "3. Define the shoulder (stop cut + push cuts)" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "3. Define the shoulder (stop cut + push cuts)"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -449,8 +1377,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "4. Round the handle (thumb-pivot cuts)" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "4. Round the handle (thumb-pivot cuts)"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -463,8 +1398,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "5. Taper the blade edges (push cuts and pull cuts)" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "5. Taper the blade edges (push cuts and pull cuts)"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -477,8 +1419,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "6. Refine and fair the shape" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "6. Refine and fair the shape"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -500,8 +1449,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "7. Sand and finish" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "7. Sand and finish"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -523,8 +1479,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Variations" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
       },
       {
         "type": "bulletList",
@@ -537,7 +1500,11 @@
                 "content": [
                   {
                     "type": "text",
-                    "marks": [{ "type": "bold" }],
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
                     "text": "Jam spreader"
                   },
                   {
@@ -556,7 +1523,11 @@
                 "content": [
                   {
                     "type": "text",
-                    "marks": [{ "type": "bold" }],
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
                     "text": "Left-handed handle"
                   },
                   {
@@ -575,7 +1546,11 @@
                 "content": [
                   {
                     "type": "text",
-                    "marks": [{ "type": "bold" }],
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
                     "text": "Cherry or birch"
                   },
                   {
@@ -590,8 +1565,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Care" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -604,8 +1586,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What can go wrong" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What can go wrong"
+          }
+        ]
       },
       {
         "type": "troubleshooter",

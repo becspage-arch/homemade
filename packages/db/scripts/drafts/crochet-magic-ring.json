@@ -1,57 +1,123 @@
 {
   "slug": "crochet-magic-ring",
-  "title": "Magic ring — the adjustable starting loop",
+  "title": "Magic ring, the adjustable starting loop",
   "subtitle": "The closed-centre alternative to a chain-loop start",
-  "excerpt": "An adjustable starting loop that pulls closed after the first round is anchored. The magic ring opens every in-the-round crochet motif — granny squares, hexagons, mandalas, amigurumi heads — without the open hole a chain-loop start leaves behind.",
+  "excerpt": "An adjustable starting loop that pulls closed after the first round is anchored. The magic ring opens every in-the-round crochet motif, granny squares, hexagons, mandalas, amigurumi heads, without the open hole a chain-loop start leaves behind.",
   "type": "STITCH",
   "categorySlug": "crochet",
   "subCategorySlug": "foundations",
   "difficulty": "BEGINNER",
   "season": null,
   "sourceType": "PUBLIC_DOMAIN",
-  "sourceNotes": "Therese de Dillmont, Encyclopedia of Needlework (1886), crochet chapter — describes the looped start that the modern magic ring formalises. Pauline Turner, How to Crochet (HarperCollins, in copyright — referenced as substance, not quoted) for the contemporary studio convention. The slip-knot-on-the-tail variant is documented in Weldon's Practical Crochet (1880s–1900s); the open-loop variant in this tutorial is the version most modern UK crocheters learn first.",
+  "sourceNotes": "Therese de Dillmont, Encyclopedia of Needlework (1886), crochet chapter, describes the looped start that the modern magic ring formalises. Pauline Turner, How to Crochet (HarperCollins, in copyright, referenced as substance, not quoted) for the contemporary studio convention. The slip-knot-on-the-tail variant is documented in Weldon's Practical Crochet (1880s, 1900s); the open-loop variant in this tutorial is the version most modern UK crocheters learn first.",
   "crochet": {
     "primaryYarnWeightSlug": "dk",
     "primaryHookSlug": "crochet-hook-4-0mm",
     "terminologyConvention": "uk",
-    "craftStitchSlugs": ["crochet-magic-ring"],
-    "craftTechniqueTags": ["magic-ring"]
+    "craftStitchSlugs": [
+      "crochet-magic-ring"
+    ],
+    "craftTechniqueTags": [
+      "magic-ring"
+    ]
   },
   "recipeTools": [
-    { "slug": "craft-scissors", "isOptional": false },
-    { "slug": "tapestry-needle", "isOptional": false, "notes": "For weaving in the tail once the first project on a magic ring is finished." }
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false,
+      "notes": "For weaving in the tail once the first project on a magic ring is finished."
+    }
   ],
   "glossaryTerms": [
-    { "slug": "magic-ring", "term": "Magic ring", "definition": "An adjustable starting loop made by wrapping the working yarn over the hand and crocheting the first round into the loop itself. The tail end pulls the loop closed once the round is anchored — no central hole. Also called an adjustable ring or magic circle." },
-    { "slug": "working-yarn", "term": "Working yarn", "definition": "The strand of yarn coming from the ball. The hand holds the yarn against the off-hand fingers; the hook pulls a loop of working yarn through the previous stitch on each move." },
-    { "slug": "yarn-over", "term": "Yarn over (yo)", "definition": "The standard crochet move of looping the working yarn over the hook from back to front before pulling through. Most crochet stitches are built from one or more yarn-overs followed by pull-throughs." },
-    { "slug": "anchor-the-ring", "term": "Anchor the ring", "definition": "The first stitch worked into the magic ring's loop that holds the loop in place. Until the ring is anchored, the loop slides freely and the work falls apart; once anchored, the next stitches build the round." },
-    { "slug": "first-round", "term": "First round", "definition": "The opening round of an in-the-round crochet pattern. The number of stitches in the first round (typically six, eight, or twelve) sets the rate at which the motif expands and is the starting count for every increase calculation that follows." }
+    {
+      "slug": "magic-ring",
+      "term": "Magic ring",
+      "definition": "An adjustable starting loop made by wrapping the working yarn over the hand and crocheting the first round into the loop itself. The tail end pulls the loop closed once the round is anchored, no central hole. Also called an adjustable ring or magic circle."
+    },
+    {
+      "slug": "working-yarn",
+      "term": "Working yarn",
+      "definition": "The strand of yarn coming from the ball. The hand holds the yarn against the off-hand fingers; the hook pulls a loop of working yarn through the previous stitch on each move."
+    },
+    {
+      "slug": "yarn-over",
+      "term": "Yarn over (yo)",
+      "definition": "The standard crochet move of looping the working yarn over the hook from back to front before pulling through. Most crochet stitches are built from one or more yarn-overs followed by pull-throughs."
+    },
+    {
+      "slug": "anchor-the-ring",
+      "term": "Anchor the ring",
+      "definition": "The first stitch worked into the magic ring's loop that holds the loop in place. Until the ring is anchored, the loop slides freely and the work falls apart; once anchored, the next stitches build the round."
+    },
+    {
+      "slug": "first-round",
+      "term": "First round",
+      "definition": "The opening round of an in-the-round crochet pattern. The number of stitches in the first round (typically six, eight, or twelve) sets the rate at which the motif expands and is the starting count for every increase calculation that follows."
+    }
   ],
-  "techniqueSlugs": ["crochet-magic-ring"],
-  "criticalTechniques": ["crochet-magic-ring"],
-  "aliases": ["adjustable ring", "magic circle", "magic loop"],
+  "techniqueSlugs": [
+    "crochet-magic-ring"
+  ],
+  "criticalTechniques": [
+    "crochet-magic-ring"
+  ],
+  "aliases": [
+    "adjustable ring",
+    "magic circle",
+    "magic loop"
+  ],
   "body": {
     "type": "doc",
     "content": [
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Most crochet motifs start in the round. The classic Victorian starting method is a chain of four or six stitches joined into a loop with a slip stitch, then the first round worked into the centre of that loop. The chain-loop opens the centre of the motif to a visible hole the size of the chain. For pieces where the centre should close — granny squares with a neat middle, amigurumi heads, mandalas with a tight rosette — the " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "magic-ring" } }], "text": "magic ring" },
-          { "type": "text", "text": " replaces the chain-loop. The ring stays adjustable until the round is anchored, then the tail pulls it shut." }
+          {
+            "type": "text",
+            "text": "Most crochet motifs start in the round. The classic Victorian starting method is a chain of four or six stitches joined into a loop with a slip stitch, then the first round worked into the centre of that loop. The chain-loop opens the centre of the motif to a visible hole the size of the chain. For pieces where the centre should close, granny squares with a neat middle, amigurumi heads, mandalas with a tight rosette, the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "magic-ring"
+                }
+              }
+            ],
+            "text": "magic ring"
+          },
+          {
+            "type": "text",
+            "text": " replaces the chain-loop. The ring stays adjustable until the round is anchored, then the tail pulls it shut."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The trade-off is one small step the chain-loop method does not need: the tail end has to be woven in carefully because the ring depends on it for the close. A loose tail-end on a magic ring works free and the centre re-opens. A chain-loop start has no such risk. For finished pieces the magic ring is worth the extra moment; for sampler swatches a chain-loop is fine." }
+          {
+            "type": "text",
+            "text": "The trade-off is one small step the chain-loop method does not need: the tail end has to be woven in carefully because the ring depends on it for the close. A loose tail-end on a magic ring works free and the centre re-opens. A chain-loop start has no such risk. For finished pieces the magic ring is worth the extra moment; for sampler swatches a chain-loop is fine."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "bulletList",
@@ -62,8 +128,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "DK-weight yarn." },
-                  { "type": "text", "text": " A smooth light-coloured DK in any fibre — cotton, wool, or acrylic — makes the ring legible while learning. Avoid fluffy or dark yarns for the first attempts; the loops blur and the centre is hard to read." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "DK-weight yarn."
+                  },
+                  {
+                    "type": "text",
+                    "text": " A smooth light-coloured DK in any fibre, cotton, wool, or acrylic, makes the ring legible while learning. Avoid fluffy or dark yarns for the first attempts; the loops blur and the centre is hard to read."
+                  }
                 ]
               }
             ]
@@ -74,8 +151,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "A 4 mm hook." },
-                  { "type": "text", "text": " The standard DK hook size in UK pattern conventions. Any hook from 3.5 mm to 5 mm will work for practice." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "A 4 mm hook."
+                  },
+                  {
+                    "type": "text",
+                    "text": " The standard DK hook size in UK pattern conventions. Any hook from 3.5 mm to 5 mm will work for practice."
+                  }
                 ]
               }
             ]
@@ -86,8 +174,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Sharp scissors and the tapestry needle." },
-                  { "type": "text", "text": " The tapestry needle is for weaving in the tail once a finished piece comes off the ring." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Sharp scissors and the tapestry needle."
+                  },
+                  {
+                    "type": "text",
+                    "text": " The tapestry needle is for weaving in the tail once a finished piece comes off the ring."
+                  }
                 ]
               }
             ]
@@ -96,80 +195,234 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Working the ring" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 1 — Form the loop. " },
-          { "type": "text", "text": "Hold the cut end of the yarn against the palm of the off-hand (the hand that does not hold the hook). Loop the " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "working-yarn" } }], "text": "working yarn" },
-          { "type": "text", "text": " over the index and middle fingers, around the back of those fingers, and across the palm again, so the working yarn lies on top of the tail. A free loop sits around the two fingers. Pinch the crossing of the two strands between the off-hand thumb and ring finger to hold the loop steady." }
+          {
+            "type": "text",
+            "text": "Working the ring"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 2 — Slip the hook through the loop. " },
-          { "type": "text", "text": "Push the hook under the front strand of the loop and over the back strand. The hook is now inside the loop with both strands of the loop sitting on the shaft of the hook. The working yarn drapes down behind the hook." }
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 1, Form the loop. "
+          },
+          {
+            "type": "text",
+            "text": "Hold the cut end of the yarn against the palm of the off-hand (the hand that does not hold the hook). Loop the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "working-yarn"
+                }
+              }
+            ],
+            "text": "working yarn"
+          },
+          {
+            "type": "text",
+            "text": " over the index and middle fingers, around the back of those fingers, and across the palm again, so the working yarn lies on top of the tail. A free loop sits around the two fingers. Pinch the crossing of the two strands between the off-hand thumb and ring finger to hold the loop steady."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 3 — Yarn over and pull through. " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "yarn-over" } }], "text": "Yarn over" },
-          { "type": "text", "text": " — catch the working yarn under the hook from front to back — and pull a loop back through the magic ring. A single loop now sits on the hook. The ring is on the off-hand fingers; the hook holds the new loop." }
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 2, Slip the hook through the loop. "
+          },
+          {
+            "type": "text",
+            "text": "Push the hook under the front strand of the loop and over the back strand. The hook is now inside the loop with both strands of the loop sitting on the shaft of the hook. The working yarn drapes down behind the hook."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 4 — Chain one. " },
-          { "type": "text", "text": "Yarn over and pull through the loop on the hook. This single chain stitch anchors the ring loosely. Some pattern conventions call this a turning chain that counts as a stitch; for a magic ring the chain does not count as a stitch in the first round — it sits to one side. The pattern will tell you which convention to follow." }
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 3, Yarn over and pull through. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "yarn-over"
+                }
+              }
+            ],
+            "text": "Yarn over"
+          },
+          {
+            "type": "text",
+            "text": ", catch the working yarn under the hook from front to back, and pull a loop back through the magic ring. A single loop now sits on the hook. The ring is on the off-hand fingers; the hook holds the new loop."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 5 — Work the first round. " },
-          { "type": "text", "text": "Slip the hook out of the loop briefly, then re-insert it inside the magic ring (under both strands of the original loop). Yarn over, pull up a loop, and complete the first stitch of the round (a double crochet, treble, or whatever the pattern calls for). The stitch sits around both strands of the magic ring. This first stitch is the move that " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "anchor-the-ring" } }], "text": "anchors the ring" },
-          { "type": "text", "text": " — until it lands the loop slides freely and the work falls apart. Continue working stitches into the ring until the pattern's " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "first-round" } }], "text": "first round" },
-          { "type": "text", "text": " count is reached — six trebles for a granny square's opening, twelve for a tight hexagon centre, eight for amigurumi crown shaping." }
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 4, Chain one. "
+          },
+          {
+            "type": "text",
+            "text": "Yarn over and pull through the loop on the hook. This single chain stitch anchors the ring loosely. Some pattern conventions call this a turning chain that counts as a stitch; for a magic ring the chain does not count as a stitch in the first round, it sits to one side. The pattern will tell you which convention to follow."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 6 — Close the ring. " },
-          { "type": "text", "text": "Slide the off-hand fingers out from inside the loop. The ring sits between the first and last stitches as two visible strands. Find the cut tail end — it sits on top of the original loop — and pull it firmly. One of the two strands of the loop will tighten; the other follows as you keep pulling. The ring closes down to a tight centre with no visible hole." }
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 5, Work the first round. "
+          },
+          {
+            "type": "text",
+            "text": "Slip the hook out of the loop briefly, then re-insert it inside the magic ring (under both strands of the original loop). Yarn over, pull up a loop, and complete the first stitch of the round (a double crochet, treble, or whatever the pattern calls for). The stitch sits around both strands of the magic ring. This first stitch is the move that "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "anchor-the-ring"
+                }
+              }
+            ],
+            "text": "anchors the ring"
+          },
+          {
+            "type": "text",
+            "text": ", until it lands the loop slides freely and the work falls apart. Continue working stitches into the ring until the pattern's "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "first-round"
+                }
+              }
+            ],
+            "text": "first round"
+          },
+          {
+            "type": "text",
+            "text": " count is reached, six trebles for a granny square's opening, twelve for a tight hexagon centre, eight for amigurumi crown shaping."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 7 — Join to start the next round. " },
-          { "type": "text", "text": "Slip stitch into the top of the first stitch of the round to close it into a circle. The pattern continues with the next round's turning chain or first stitch as written. The magic ring is finished; from here the project is a normal in-the-round build." }
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 6, Close the ring. "
+          },
+          {
+            "type": "text",
+            "text": "Slide the off-hand fingers out from inside the loop. The ring sits between the first and last stitches as two visible strands. Find the cut tail end, it sits on top of the original loop, and pull it firmly. One of the two strands of the loop will tighten; the other follows as you keep pulling. The ring closes down to a tight centre with no visible hole."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 7, Join to start the next round. "
+          },
+          {
+            "type": "text",
+            "text": "Slip stitch into the top of the first stitch of the round to close it into a circle. The pattern continues with the next round's turning chain or first stitch as written. The magic ring is finished; from here the project is a normal in-the-round build."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "How to know it's right" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "How to know it's right"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "A correctly closed magic ring looks like a single point of yarn at the centre of the motif. There is no visible hole; the stitches of the first round meet cleanly in the middle. Held to the light, no daylight passes through the centre. Turn the motif over: the back shows the same closed point. If a thin gap remains, the tail was not pulled all the way — return the hook and pull the tail again." }
+          {
+            "type": "text",
+            "text": "A correctly closed magic ring looks like a single point of yarn at the centre of the motif. There is no visible hole; the stitches of the first round meet cleanly in the middle. Held to the light, no daylight passes through the centre. Turn the motif over: the back shows the same closed point. If a thin gap remains, the tail was not pulled all the way, return the hook and pull the tail again."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Common mistakes" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
       },
       {
         "type": "bulletList",
@@ -180,8 +433,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Only one strand closes when the tail is pulled." },
-                  { "type": "text", "text": " The first-round stitches were worked around only one of the two strands of the loop, not both. Frog the round and start again, this time pushing the hook all the way through to catch both strands when working each first-round stitch." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Only one strand closes when the tail is pulled."
+                  },
+                  {
+                    "type": "text",
+                    "text": " The first-round stitches were worked around only one of the two strands of the loop, not both. Frog the round and start again, this time pushing the hook all the way through to catch both strands when working each first-round stitch."
+                  }
                 ]
               }
             ]
@@ -192,8 +456,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "The ring re-opens after a few rows of working." },
-                  { "type": "text", "text": " The tail was not woven in securely. Re-thread the tail onto the tapestry needle, weave it through three to four stitches in the back of the work, take a small backstitch to lock, then weave another two stitches in the opposite direction. A magic ring tail needs more weaving in than a normal yarn end." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "The ring re-opens after a few rows of working."
+                  },
+                  {
+                    "type": "text",
+                    "text": " The tail was not woven in securely. Re-thread the tail onto the tapestry needle, weave it through three to four stitches in the back of the work, take a small backstitch to lock, then weave another two stitches in the opposite direction. A magic ring tail needs more weaving in than a normal yarn end."
+                  }
                 ]
               }
             ]
@@ -204,8 +479,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "The centre puckers into a bump rather than lying flat." },
-                  { "type": "text", "text": " Too many stitches were worked into the first round, or the tail was pulled too tight. Loosen the tail slightly so the first round sits flat; if the count was too high, the next round needs more increases to compensate." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "The centre puckers into a bump rather than lying flat."
+                  },
+                  {
+                    "type": "text",
+                    "text": " Too many stitches were worked into the first round, or the tail was pulled too tight. Loosen the tail slightly so the first round sits flat; if the count was too high, the next round needs more increases to compensate."
+                  }
                 ]
               }
             ]
@@ -216,8 +502,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "The loop slides off the fingers before the first stitch is anchored." },
-                  { "type": "text", "text": " The off-hand grip released too early. Keep the thumb-and-ring-finger pinch on the crossing strands until the first full stitch (not just the anchoring chain) is completed and the hook is inside the new stitch." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "The loop slides off the fingers before the first stitch is anchored."
+                  },
+                  {
+                    "type": "text",
+                    "text": " The off-hand grip released too early. Keep the thumb-and-ring-finger pinch on the crossing strands until the first full stitch (not just the anchoring chain) is completed and the hook is inside the new stitch."
+                  }
                 ]
               }
             ]
@@ -226,13 +523,497 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this stitch goes next" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this stitch goes next"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Every in-the-round pattern that wants a closed centre starts on a magic ring. The granny square's traditional opening is six trebles into a magic ring; the hexagon's opening is twelve trebles or six pairs of trebles; the amigurumi head's opening is six double crochets. Once the technique is in the hands, the magic ring stops being a separate skill and becomes the silent first move of every motif." }
+          {
+            "type": "text",
+            "text": "Every in-the-round pattern that wants a closed centre starts on a magic ring. The granny square's traditional opening is six trebles into a magic ring; the hexagon's opening is twelve trebles or six pairs of trebles; the amigurumi head's opening is six double crochets. Once the technique is in the hands, the magic ring stops being a separate skill and becomes the silent first move of every motif."
+          }
+        ]
+      }
+    ]
+  },
+  "revisedFrom": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most crochet motifs start in the round. The classic Victorian starting method is a chain of four or six stitches joined into a loop with a slip stitch, then the first round worked into the centre of that loop. The chain-loop opens the centre of the motif to a visible hole the size of the chain. For pieces where the centre should close — granny squares with a neat middle, amigurumi heads, mandalas with a tight rosette — the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "magic-ring"
+                }
+              }
+            ],
+            "text": "magic ring"
+          },
+          {
+            "type": "text",
+            "text": " replaces the chain-loop. The ring stays adjustable until the round is anchored, then the tail pulls it shut."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The trade-off is one small step the chain-loop method does not need: the tail end has to be woven in carefully because the ring depends on it for the close. A loose tail-end on a magic ring works free and the centre re-opens. A chain-loop start has no such risk. For finished pieces the magic ring is worth the extra moment; for sampler swatches a chain-loop is fine."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "DK-weight yarn."
+                  },
+                  {
+                    "type": "text",
+                    "text": " A smooth light-coloured DK in any fibre — cotton, wool, or acrylic — makes the ring legible while learning. Avoid fluffy or dark yarns for the first attempts; the loops blur and the centre is hard to read."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "A 4 mm hook."
+                  },
+                  {
+                    "type": "text",
+                    "text": " The standard DK hook size in UK pattern conventions. Any hook from 3.5 mm to 5 mm will work for practice."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Sharp scissors and the tapestry needle."
+                  },
+                  {
+                    "type": "text",
+                    "text": " The tapestry needle is for weaving in the tail once a finished piece comes off the ring."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Working the ring"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 1 — Form the loop. "
+          },
+          {
+            "type": "text",
+            "text": "Hold the cut end of the yarn against the palm of the off-hand (the hand that does not hold the hook). Loop the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "working-yarn"
+                }
+              }
+            ],
+            "text": "working yarn"
+          },
+          {
+            "type": "text",
+            "text": " over the index and middle fingers, around the back of those fingers, and across the palm again, so the working yarn lies on top of the tail. A free loop sits around the two fingers. Pinch the crossing of the two strands between the off-hand thumb and ring finger to hold the loop steady."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 2 — Slip the hook through the loop. "
+          },
+          {
+            "type": "text",
+            "text": "Push the hook under the front strand of the loop and over the back strand. The hook is now inside the loop with both strands of the loop sitting on the shaft of the hook. The working yarn drapes down behind the hook."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 3 — Yarn over and pull through. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "yarn-over"
+                }
+              }
+            ],
+            "text": "Yarn over"
+          },
+          {
+            "type": "text",
+            "text": " — catch the working yarn under the hook from front to back — and pull a loop back through the magic ring. A single loop now sits on the hook. The ring is on the off-hand fingers; the hook holds the new loop."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 4 — Chain one. "
+          },
+          {
+            "type": "text",
+            "text": "Yarn over and pull through the loop on the hook. This single chain stitch anchors the ring loosely. Some pattern conventions call this a turning chain that counts as a stitch; for a magic ring the chain does not count as a stitch in the first round — it sits to one side. The pattern will tell you which convention to follow."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 5 — Work the first round. "
+          },
+          {
+            "type": "text",
+            "text": "Slip the hook out of the loop briefly, then re-insert it inside the magic ring (under both strands of the original loop). Yarn over, pull up a loop, and complete the first stitch of the round (a double crochet, treble, or whatever the pattern calls for). The stitch sits around both strands of the magic ring. This first stitch is the move that "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "anchor-the-ring"
+                }
+              }
+            ],
+            "text": "anchors the ring"
+          },
+          {
+            "type": "text",
+            "text": " — until it lands the loop slides freely and the work falls apart. Continue working stitches into the ring until the pattern's "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "first-round"
+                }
+              }
+            ],
+            "text": "first round"
+          },
+          {
+            "type": "text",
+            "text": " count is reached — six trebles for a granny square's opening, twelve for a tight hexagon centre, eight for amigurumi crown shaping."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 6 — Close the ring. "
+          },
+          {
+            "type": "text",
+            "text": "Slide the off-hand fingers out from inside the loop. The ring sits between the first and last stitches as two visible strands. Find the cut tail end — it sits on top of the original loop — and pull it firmly. One of the two strands of the loop will tighten; the other follows as you keep pulling. The ring closes down to a tight centre with no visible hole."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 7 — Join to start the next round. "
+          },
+          {
+            "type": "text",
+            "text": "Slip stitch into the top of the first stitch of the round to close it into a circle. The pattern continues with the next round's turning chain or first stitch as written. The magic ring is finished; from here the project is a normal in-the-round build."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "How to know it's right"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A correctly closed magic ring looks like a single point of yarn at the centre of the motif. There is no visible hole; the stitches of the first round meet cleanly in the middle. Held to the light, no daylight passes through the centre. Turn the motif over: the back shows the same closed point. If a thin gap remains, the tail was not pulled all the way — return the hook and pull the tail again."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Only one strand closes when the tail is pulled."
+                  },
+                  {
+                    "type": "text",
+                    "text": " The first-round stitches were worked around only one of the two strands of the loop, not both. Frog the round and start again, this time pushing the hook all the way through to catch both strands when working each first-round stitch."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "The ring re-opens after a few rows of working."
+                  },
+                  {
+                    "type": "text",
+                    "text": " The tail was not woven in securely. Re-thread the tail onto the tapestry needle, weave it through three to four stitches in the back of the work, take a small backstitch to lock, then weave another two stitches in the opposite direction. A magic ring tail needs more weaving in than a normal yarn end."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "The centre puckers into a bump rather than lying flat."
+                  },
+                  {
+                    "type": "text",
+                    "text": " Too many stitches were worked into the first round, or the tail was pulled too tight. Loosen the tail slightly so the first round sits flat; if the count was too high, the next round needs more increases to compensate."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "The loop slides off the fingers before the first stitch is anchored."
+                  },
+                  {
+                    "type": "text",
+                    "text": " The off-hand grip released too early. Keep the thumb-and-ring-finger pinch on the crossing strands until the first full stitch (not just the anchoring chain) is completed and the hook is inside the new stitch."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this stitch goes next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every in-the-round pattern that wants a closed centre starts on a magic ring. The granny square's traditional opening is six trebles into a magic ring; the hexagon's opening is twelve trebles or six pairs of trebles; the amigurumi head's opening is six double crochets. Once the technique is in the hands, the magic ring stops being a separate skill and becomes the silent first move of every motif."
+          }
         ]
       }
     ]

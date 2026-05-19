@@ -1,0 +1,455 @@
+[
+  {
+    "file": "docs/garden-anchor-briefs/growing-calendula.json",
+    "slug": "growing-calendula",
+    "title": "Growing calendula",
+    "category": "garden",
+    "verdict": "PASS",
+    "violations": [],
+    "violationKinds": [],
+    "errorCount": 0,
+    "warnCount": 0
+  },
+  {
+    "file": "docs/garden-anchor-briefs/growing-rosemary-from-cuttings.json",
+    "slug": "growing-rosemary-from-cuttings",
+    "title": "Growing rosemary from cuttings",
+    "category": "garden",
+    "verdict": "PASS",
+    "violations": [],
+    "violationKinds": [],
+    "errorCount": 0,
+    "warnCount": 0
+  },
+  {
+    "file": "docs/garden-anchor-briefs/growing-strawberries.json",
+    "slug": "growing-strawberries",
+    "title": "Growing strawberries",
+    "category": "garden",
+    "verdict": "PASS",
+    "violations": [],
+    "violationKinds": [],
+    "errorCount": 0,
+    "warnCount": 0
+  },
+  {
+    "file": "docs/garden-anchor-briefs/growing-tomatoes-from-seed.json",
+    "slug": "growing-tomatoes-from-seed",
+    "title": "Growing tomatoes from seed",
+    "category": "garden",
+    "verdict": "PASS",
+    "violations": [],
+    "violationKinds": [],
+    "errorCount": 0,
+    "warnCount": 0
+  },
+  {
+    "file": "docs/natural-home-anchor-briefs/cold-process-oatmeal-soap.json",
+    "slug": "cold-process-oatmeal-soap",
+    "title": "Cold-process oatmeal soap",
+    "category": "natural-home",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] brand-trademark: brand name \"Pyrex\" — generic equivalent is \"heatproof glass dish\"",
+      "[warn] unflagged-jargon: \"nitrile\" — use \"protective gloves\" unless the specific material is critical to the outcome",
+      "[warn] brand-trademark: brand name \"Pyrex\" — generic equivalent is \"heatproof glass dish\"",
+      "[warn] unflagged-jargon: \"tare\" — domain jargon — register in glossaryTerms[] or write \"the empty container weight\" in plain ",
+      "[warn] brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\""
+    ],
+    "violationKinds": [
+      "brand-trademark",
+      "unflagged-jargon"
+    ],
+    "errorCount": 0,
+    "warnCount": 5
+  },
+  {
+    "file": "docs/natural-home-anchor-briefs/lavender-beeswax-balm.json",
+    "slug": "lavender-beeswax-balm",
+    "title": "Lavender beeswax balm",
+    "category": "natural-home",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] unflagged-jargon: \"tare\" — domain jargon — register in glossaryTerms[] or write \"the empty container weight\" in plain ",
+      "[warn] unflagged-jargon: \"tare\" — domain jargon — register in glossaryTerms[] or write \"the empty container weight\" in plain "
+    ],
+    "violationKinds": [
+      "unflagged-jargon"
+    ],
+    "errorCount": 0,
+    "warnCount": 2
+  },
+  {
+    "file": "packages/db/scripts/drafts/calculating-loft-insulation-depth.json",
+    "slug": "calculating-loft-insulation-depth",
+    "title": "Calculating how much loft insulation you need",
+    "category": "sustainability",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "[warn] brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "[warn] brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "[warn] brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "[warn] brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "[warn] brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "[warn] brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "[warn] safety-block: possible safety-advice block (3 safety keywords: eye protection, gloves, dust mask). Body content is"
+    ],
+    "violationKinds": [
+      "brand-trademark",
+      "safety-block"
+    ],
+    "errorCount": 0,
+    "warnCount": 8
+  },
+  {
+    "file": "packages/db/scripts/drafts/three-bin-hot-compost-system.json",
+    "slug": "three-bin-hot-compost-system",
+    "title": "Building a three-bin hot compost system",
+    "category": "sustainability",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "[warn] tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "[warn] safety-block: possible safety-advice block (5 safety keywords: eye protection, gloves, first aid, a&e). Body conte",
+      "[warn] tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "[warn] brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\""
+    ],
+    "violationKinds": [
+      "brand-trademark",
+      "tricolon",
+      "safety-block"
+    ],
+    "errorCount": 0,
+    "warnCount": 5
+  },
+  {
+    "file": "packages/db/scripts/drafts/calendula-infused-oil.json",
+    "slug": "calendula-infused-oil",
+    "title": "Calendula-infused oil",
+    "category": "herbal-medicine",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "[warn] americanism: Americanism \"stove\" — prefer \"hob\""
+    ],
+    "violationKinds": [
+      "tricolon",
+      "americanism"
+    ],
+    "errorCount": 0,
+    "warnCount": 2
+  },
+  {
+    "file": "packages/db/scripts/drafts/elderberry-syrup.json",
+    "slug": "elderberry-syrup",
+    "title": "Elderberry syrup",
+    "category": "herbal-medicine",
+    "verdict": "PASS",
+    "violations": [],
+    "violationKinds": [],
+    "errorCount": 0,
+    "warnCount": 0
+  },
+  {
+    "file": "packages/db/scripts/drafts/cross-stitch-alphabet-sampler-border.json",
+    "slug": "cross-stitch-alphabet-sampler-border",
+    "title": "Cross-stitch a simple alphabet sampler border",
+    "category": "needlework",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+      "[warn] brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+      "[warn] brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\""
+    ],
+    "violationKinds": [
+      "brand-trademark"
+    ],
+    "errorCount": 0,
+    "warnCount": 3
+  },
+  {
+    "file": "packages/db/scripts/drafts/start-and-end-a-thread-cleanly.json",
+    "slug": "start-and-end-a-thread-cleanly",
+    "title": "How to start and end a thread cleanly",
+    "category": "needlework",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+      "[warn] brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+      "[warn] brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+      "[warn] brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\""
+    ],
+    "violationKinds": [
+      "brand-trademark"
+    ],
+    "errorCount": 0,
+    "warnCount": 4
+  },
+  {
+    "file": "packages/db/scripts/drafts/running-and-backstitch-by-hand.json",
+    "slug": "running-and-backstitch-by-hand",
+    "title": "Hand-sew a running stitch and a backstitch",
+    "category": "sewing",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] tricolon: tricolon (three parallel items) — two adjectives almost always beats three"
+    ],
+    "violationKinds": [
+      "tricolon"
+    ],
+    "errorCount": 0,
+    "warnCount": 1
+  },
+  {
+    "file": "packages/db/scripts/drafts/simple-drawstring-bag.json",
+    "slug": "simple-drawstring-bag",
+    "title": "Sew a simple drawstring bag",
+    "category": "sewing",
+    "verdict": "PASS",
+    "violations": [],
+    "violationKinds": [],
+    "errorCount": 0,
+    "warnCount": 0
+  },
+  {
+    "file": "packages/db/scripts/drafts/foundational-hand-basic-strokes.json",
+    "slug": "foundational-hand-basic-strokes",
+    "title": "Foundational hand, the basic strokes",
+    "category": "paper-word",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\""
+    ],
+    "violationKinds": [
+      "brand-trademark"
+    ],
+    "errorCount": 0,
+    "warnCount": 1
+  },
+  {
+    "file": "packages/db/scripts/drafts/single-signature-pamphlet-binding.json",
+    "slug": "single-signature-pamphlet-binding",
+    "title": "Make a single-signature pamphlet binding",
+    "category": "paper-word",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "[warn] brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\""
+    ],
+    "violationKinds": [
+      "tricolon",
+      "brand-trademark"
+    ],
+    "errorCount": 0,
+    "warnCount": 2
+  },
+  {
+    "file": "packages/db/scripts/drafts/pinch-pot.json",
+    "slug": "pinch-pot",
+    "title": "Make a pinch pot",
+    "category": "pottery-ceramics",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "[warn] brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\""
+    ],
+    "violationKinds": [
+      "tricolon",
+      "brand-trademark"
+    ],
+    "errorCount": 0,
+    "warnCount": 2
+  },
+  {
+    "file": "packages/db/scripts/drafts/wedging-clay-spiral-method.json",
+    "slug": "wedging-clay-spiral-method",
+    "title": "Wedging clay, the spiral method",
+    "category": "pottery-ceramics",
+    "verdict": "PASS",
+    "violations": [],
+    "violationKinds": [],
+    "errorCount": 0,
+    "warnCount": 0
+  },
+  {
+    "file": "packages/db/scripts/drafts/crochet-magic-ring.json",
+    "slug": "crochet-magic-ring",
+    "title": "Magic ring, the adjustable starting loop",
+    "category": "crochet",
+    "verdict": "PASS",
+    "violations": [],
+    "violationKinds": [],
+    "errorCount": 0,
+    "warnCount": 0
+  },
+  {
+    "file": "packages/db/scripts/drafts/granny-square-basic-three-round.json",
+    "slug": "granny-square-basic-three-round",
+    "title": "Granny square, basic three rounds",
+    "category": "crochet",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "[warn] americanism: Americanism \"colors\" — prefer \"colours\""
+    ],
+    "violationKinds": [
+      "tricolon",
+      "americanism"
+    ],
+    "errorCount": 0,
+    "warnCount": 2
+  },
+  {
+    "file": "packages/db/scripts/drafts/long-tail-cast-on.json",
+    "slug": "long-tail-cast-on",
+    "title": "Long-tail cast on",
+    "category": "knitting",
+    "verdict": "PASS",
+    "violations": [],
+    "violationKinds": [],
+    "errorCount": 0,
+    "warnCount": 0
+  },
+  {
+    "file": "packages/db/scripts/drafts/stocking-stitch-dishcloth.json",
+    "slug": "stocking-stitch-dishcloth",
+    "title": "Stocking-stitch dishcloth, beginner",
+    "category": "knitting",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] americanism: Americanism \"colors\" — prefer \"colours\""
+    ],
+    "violationKinds": [
+      "americanism"
+    ],
+    "errorCount": 0,
+    "warnCount": 1
+  },
+  {
+    "file": "packages/db/scripts/drafts/plain-weave-on-a-cardboard-loom.json",
+    "slug": "plain-weave-on-a-cardboard-loom",
+    "title": "Plain weave on a cardboard loom",
+    "category": "fibre-arts",
+    "verdict": "PASS",
+    "violations": [],
+    "violationKinds": [],
+    "errorCount": 0,
+    "warnCount": 0
+  },
+  {
+    "file": "packages/db/scripts/drafts/wet-felting-a-soap-covering.json",
+    "slug": "wet-felting-a-soap-covering",
+    "title": "Wet-felting a soap covering",
+    "category": "fibre-arts",
+    "verdict": "PASS",
+    "violations": [],
+    "violationKinds": [],
+    "errorCount": 0,
+    "warnCount": 0
+  },
+  {
+    "file": "packages/db/scripts/drafts/carved-hazel-tent-peg.json",
+    "slug": "carved-hazel-tent-peg",
+    "title": "Carved hazel tent peg",
+    "category": "wood-natural-craft",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] tricolon: tricolon (three parallel items) — two adjectives almost always beats three"
+    ],
+    "violationKinds": [
+      "tricolon"
+    ],
+    "errorCount": 0,
+    "warnCount": 1
+  },
+  {
+    "file": "packages/db/scripts/drafts/carved-lime-butter-knife.json",
+    "slug": "carved-lime-butter-knife",
+    "title": "Carved lime butter knife",
+    "category": "wood-natural-craft",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] tricolon: tricolon (three parallel items) — two adjectives almost always beats three"
+    ],
+    "violationKinds": [
+      "tricolon"
+    ],
+    "errorCount": 0,
+    "warnCount": 1
+  },
+  {
+    "file": "packages/db/scripts/drafts/inspecting-a-beehive-in-summer.json",
+    "slug": "inspecting-a-beehive-in-summer",
+    "title": "Inspecting a beehive in summer",
+    "category": "animals-smallholding",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] unflagged-jargon: \"varroa\" — domain jargon — register in glossaryTerms[] with a definition",
+      "[warn] unflagged-jargon: \"nitrile\" — use \"protective gloves\" unless the specific material is critical to the outcome",
+      "[warn] unflagged-jargon: \"propolis\" — domain jargon — register in glossaryTerms[] with a definition",
+      "[warn] unflagged-jargon: \"supersedure\" — domain jargon — register in glossaryTerms[] with a definition",
+      "[warn] unflagged-jargon: \"supersedure\" — domain jargon — register in glossaryTerms[] with a definition",
+      "[warn] unflagged-jargon: \"varroa\" — domain jargon — register in glossaryTerms[] with a definition"
+    ],
+    "violationKinds": [
+      "unflagged-jargon"
+    ],
+    "errorCount": 0,
+    "warnCount": 6
+  },
+  {
+    "file": "packages/db/scripts/drafts/setting-up-a-chicken-coop-for-first-time-keepers.json",
+    "slug": "setting-up-a-chicken-coop-for-first-time-keepers",
+    "title": "Setting up a chicken coop for first-time keepers",
+    "category": "animals-smallholding",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] unflagged-jargon: \"pullet\" — domain jargon — register in glossaryTerms[] with a definition, or write \"young hen\" in pl"
+    ],
+    "violationKinds": [
+      "unflagged-jargon"
+    ],
+    "errorCount": 0,
+    "warnCount": 1
+  },
+  {
+    "file": "packages/db/scripts/drafts/patching-a-small-plasterboard-hole.json",
+    "slug": "patching-a-small-plasterboard-hole",
+    "title": "Patching a small plasterboard hole",
+    "category": "home-repair",
+    "verdict": "PASS",
+    "violations": [],
+    "violationKinds": [],
+    "errorCount": 0,
+    "warnCount": 0
+  },
+  {
+    "file": "packages/db/scripts/drafts/reupholstering-a-drop-in-dining-chair-seat.json",
+    "slug": "reupholstering-a-drop-in-dining-chair-seat",
+    "title": "Reupholstering a drop-in dining chair seat",
+    "category": "home-repair",
+    "verdict": "PASS",
+    "violations": [
+      "[warn] unflagged-jargon: \"dacron\" — use \"upholstery wadding\" unless the specific brand/material is critical",
+      "[warn] unflagged-jargon: \"dacron\" — use \"upholstery wadding\" unless the specific brand/material is critical",
+      "[warn] unflagged-jargon: \"dacron\" — use \"upholstery wadding\" unless the specific brand/material is critical",
+      "[warn] unflagged-jargon: \"nitrile\" — use \"protective gloves\" unless the specific material is critical to the outcome",
+      "[warn] safety-block: possible safety-advice block (3 safety keywords: gloves, ventilat, dust mask). Body content is craft",
+      "[warn] unflagged-jargon: \"nitrile\" — use \"protective gloves\" unless the specific material is critical to the outcome",
+      "[warn] unflagged-jargon: \"dacron\" — use \"upholstery wadding\" unless the specific brand/material is critical",
+      "[warn] tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "[warn] unflagged-jargon: \"dacron\" — use \"upholstery wadding\" unless the specific brand/material is critical",
+      "[warn] unflagged-jargon: \"dacron\" — use \"upholstery wadding\" unless the specific brand/material is critical",
+      "[warn] unflagged-jargon: \"dacron\" — use \"upholstery wadding\" unless the specific brand/material is critical",
+      "[warn] unflagged-jargon: \"dacron\" — use \"upholstery wadding\" unless the specific brand/material is critical"
+    ],
+    "violationKinds": [
+      "unflagged-jargon",
+      "safety-block",
+      "tricolon"
+    ],
+    "errorCount": 0,
+    "warnCount": 12
+  }
+]

@@ -22,7 +22,7 @@
     "freezable": false,
     "freezeNotes": null,
     "batchable": true,
-    "batchNotes": "Doubles or triples cleanly. The 1:5 herb-to-oil ratio holds at any batch size from 20 g of herb upward. Glass maceration jars come in 500 ml and 1 L sizes — match the jar to the batch so the oil covers the flowers with no air gap.",
+    "batchNotes": "Doubles or triples cleanly. The 1:5 herb-to-oil ratio holds at any batch size from 20 g of herb upward. Glass maceration jars come in 500 ml and 1 L sizes, match the jar to the batch so the oil covers the flowers with no air gap.",
     "makeAheadNotes": "Strained infused oil keeps 12 months in a dark glass bottle in a cool dark cupboard. Make one large summer batch from the year's dried calendula and the household has its base preparation for the next twelve months.",
     "dietaryFlags": [],
     "cuisine": null,
@@ -34,25 +34,75 @@
   },
   "herbal": {
     "primaryHerbSlug": "calendula",
-    "relatedConditionSlugs": ["skin-irritation", "minor-cut"],
+    "relatedConditionSlugs": [
+      "skin-irritation",
+      "minor-cut"
+    ],
     "preparationType": "oil",
-    "safetyFlags": ["allergen-asteraceae", "external-use-only"],
+    "safetyFlags": [
+      "allergen-asteraceae",
+      "external-use-only"
+    ],
     "requiresMedicalDisclaimer": true
   },
   "recipeTools": [
-    { "slug": "double-boiler", "isOptional": true, "notes": "For the heat method. A heatproof bowl set over a saucepan of simmering water works in place of a purpose-made double boiler." },
-    { "slug": "thermometer-probe", "isOptional": false, "notes": "Essential for the heat method. Hold the oil at 60-65°C; eyeballing the temperature is the most common failure mode." },
-    { "slug": "maceration-jar", "isOptional": false, "notes": "500 ml or 1 L glass jar with a tight-fitting lid. Used for the solar method and for storing the strained oil before bottling." },
-    { "slug": "muslin-cloth", "isOptional": false, "notes": "For straining the spent flowers out of the finished oil." },
-    { "slug": "measuring-jug", "isOptional": false, "notes": "1 L Pyrex for the strain." },
-    { "slug": "funnel-small", "isOptional": false, "notes": "For decanting into the storage bottle." },
-    { "slug": "dropper-bottle-amber", "isOptional": false, "notes": "30 ml or 100 ml amber glass bottle for the strained oil. Dark glass keeps the oil from going rancid in light." }
+    {
+      "slug": "double-boiler",
+      "isOptional": true,
+      "notes": "For the heat method. A heatproof bowl set over a saucepan of simmering water works in place of a purpose-made double boiler."
+    },
+    {
+      "slug": "thermometer-probe",
+      "isOptional": false,
+      "notes": "Essential for the heat method. Hold the oil at 60-65°C; eyeballing the temperature is the most common failure mode."
+    },
+    {
+      "slug": "maceration-jar",
+      "isOptional": false,
+      "notes": "500 ml or 1 L glass jar with a tight-fitting lid. Used for the solar method and for storing the strained oil before bottling."
+    },
+    {
+      "slug": "muslin-cloth",
+      "isOptional": false,
+      "notes": "For straining the spent flowers out of the finished oil."
+    },
+    {
+      "slug": "measuring-jug",
+      "isOptional": false,
+      "notes": "1 L Pyrex for the strain."
+    },
+    {
+      "slug": "funnel-small",
+      "isOptional": false,
+      "notes": "For decanting into the storage bottle."
+    },
+    {
+      "slug": "dropper-bottle-amber",
+      "isOptional": false,
+      "notes": "30 ml or 100 ml amber glass bottle for the strained oil. Dark glass keeps the oil from going rancid in light."
+    }
   ],
   "glossaryTerms": [
-    { "slug": "vulnerary", "term": "Vulnerary", "definition": "A herb that supports the skin in healing. Traditional western herbal terminology; not a medical claim." },
-    { "slug": "infused-oil", "term": "Infused oil", "definition": "A carrier oil that has been macerated with dried herb material so the oil-soluble constituents leach into the oil. The base for salves, balms, and direct external preparations." },
-    { "slug": "maceration", "term": "Maceration", "definition": "The process of steeping a dried herb in a carrier (oil, alcohol, water) over hours or weeks so the carrier extracts the herb's active constituents." },
-    { "slug": "patch-test", "term": "Patch test", "definition": "Dab a small amount of a new preparation on the inside of the forearm and wait 24-48 hours before wider use. Catches allergic reactions before they spread." }
+    {
+      "slug": "vulnerary",
+      "term": "Vulnerary",
+      "definition": "A herb that supports the skin in healing. Traditional western herbal terminology; not a medical claim."
+    },
+    {
+      "slug": "infused-oil",
+      "term": "Infused oil",
+      "definition": "A carrier oil that has been macerated with dried herb material so the oil-soluble constituents leach into the oil. The base for salves, balms, and direct external preparations."
+    },
+    {
+      "slug": "maceration",
+      "term": "Maceration",
+      "definition": "The process of steeping a dried herb in a carrier (oil, alcohol, water) over hours or weeks so the carrier extracts the herb's active constituents."
+    },
+    {
+      "slug": "patch-test",
+      "term": "Patch test",
+      "definition": "Dab a small amount of a new preparation on the inside of the forearm and wait 24-48 hours before wider use. Catches allergic reactions before they spread."
+    }
   ],
   "body": {
     "type": "doc",
@@ -60,15 +110,57 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Calendula-infused oil is the household's base external preparation. A 1:5 ratio of dried calendula flowers to extra-virgin olive oil, macerated either over hours on a low stovetop heat or over weeks on a sunny windowsill, gives a deep-gold oil with the carotenoid colour and the warm, slightly resinous smell that tells you the extraction worked. The oil sits in a dark bottle in the cupboard until it's needed: a few drops on a dry patch of skin, a base for a salve or balm, or a carrier for a stronger herbal blend." }
+          {
+            "type": "text",
+            "text": "Calendula-"
+          },
+          {
+            "type": "text",
+            "text": "infused oil",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "infused-oil"
+                }
+              },
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "infused-oil"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is the household's base external preparation. A 1:5 ratio of dried calendula flowers to extra-virgin olive oil, macerated either over hours on a low stovetop heat or over weeks on a sunny windowsill, gives a deep-gold oil with the carotenoid colour and the warm, slightly resinous smell that tells you the extraction worked. The oil sits in a dark bottle in the cupboard until it's needed: a few drops on a dry patch of skin, a base for a salve or balm, or a carrier for a stronger herbal blend."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Calendula is the traditional " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vulnerary" } }], "text": "vulnerary" },
-          { "type": "text", "text": " of western herbal practice. Maud Grieve, in A Modern Herbal (1931), names it among the wound-herbs of old country medicine. The flowers' triterpenes, flavonoids, and carotenoids are the constituents traditionally associated with the anti-inflammatory and skin-supportive action; the oil extracts them at low heat over a few hours, or at sun-warmth over a few weeks. This tutorial covers both methods. Pick the one that suits the season and the kit you have." }
+          {
+            "type": "text",
+            "text": "Calendula is the traditional "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "vulnerary"
+                }
+              }
+            ],
+            "text": "vulnerary"
+          },
+          {
+            "type": "text",
+            "text": " of western herbal practice. Maud Grieve, in A Modern Herbal (1931), names it among the wound-herbs of old country medicine. The flowers' triterpenes, flavonoids, and carotenoids are the constituents traditionally associated with the anti-inflammatory and skin-supportive action; the oil extracts them at low heat over a few hours, or at sun-warmth over a few weeks. This tutorial covers both methods. Pick the one that suits the season and the kit you have."
+          }
         ]
       },
       {
@@ -76,181 +168,344 @@
         "attrs": {
           "tone": "warning",
           "title": "Important safety notes",
-          "body": "Not medical advice. Consult a qualified herbalist or doctor for ongoing or serious symptoms.\n\nExternal use only. This oil is for application to intact skin. Do not take internally; do not apply to deep wounds or broken bleeding skin, where the oil would seal in dirt rather than support healing.\n\nAsteraceae allergy. Calendula is in the daisy family (Asteraceae), alongside chamomile, yarrow, ragweed, and chrysanthemum. If you have reacted to any daisy-family plant before, patch-test before any wider use: dab a small amount on the inside of the forearm and wait 24-48 hours.\n\nNot a substitute for medical care. See your doctor or A&E for deep cuts, cuts that will not stop bleeding after fifteen minutes of pressure, animal or human bites, or any wound showing spreading redness, warmth, pus, or fever. Those are infections that need antibiotics rather than herbs. For burns, run cool running water over a fresh burn for at least twenty minutes before applying anything at all, and see A&E for any burn larger than the size of the palm, any burn on the face, hands, feet, joints, or genitals, or any burn that goes through the skin layer.\n\nPaediatric use. Small dabs on intact skin from school age are widely tolerated, but patch-test first owing to the Asteraceae cross-reactivity. Infant and toddler use is not adult-divided-by-half. Consult a herbalist who specialises in children's herbal medicine before any use in children under twelve."
+          "body": "Not medical advice. Consult a qualified herbalist or doctor for ongoing or serious symptoms. External use only. This oil is for application to intact skin. Do not take internally; do not apply to deep wounds or broken bleeding skin, where the oil would seal in dirt rather than support healing. Asteraceae allergy. Calendula is in the daisy family (Asteraceae), alongside chamomile, yarrow, ragweed, and chrysanthemum. If you have reacted to any daisy-family plant before, patch-test before any wider use: dab a small amount on the inside of the forearm and wait 24-48 hours. Not a substitute for medical care. See your doctor or A&E for deep cuts, cuts that will not stop bleeding after fifteen minutes of pressure, animal or human bites, or any wound showing spreading redness, warmth, pus, or fever. Those are infections that need antibiotics rather than herbs. For burns, run cool running water over a fresh burn for at least twenty minutes before applying anything at all, and see A&E for any burn larger than the size of the palm, any burn on the face, hands, feet, joints, or genitals, or any burn that goes through the skin layer. Paediatric use. Small dabs on intact skin from school age are widely tolerated, but patch-test first owing to the Asteraceae cross-reactivity. Infant and toddler use is not adult-divided-by-half. Consult a herbalist who specialises in children's herbal medicine before any use in children under twelve."
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Ingredients" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            { "ingredientSlug": "dried-calendula-flowers", "amount": 40, "unit": "g", "prepNote": "whole flowers or petals only — both work; petals alone steep slightly faster but cost more per gram from herbal suppliers", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "extra-virgin-olive-oil", "amount": 200, "unit": "ml", "prepNote": "good-quality single-estate or supermarket extra-virgin; the cheaper blended kind goes rancid faster and dulls the finished oil's colour", "isOptional": false, "groupLabel": null }
+            {
+              "ingredientSlug": "dried-calendula-flowers",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "whole flowers or petals only, both work; petals alone steep slightly faster but cost more per gram from herbal suppliers",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": "good-quality single-estate or supermarket extra-virgin; the cheaper blended kind goes rancid faster and dulls the finished oil's colour",
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The ratio is 1 part dried herb to 5 parts oil by weight. State the ratio so a reader scaling up has the rule rather than the numbers: 40 g of flowers needs 200 g (about 220 ml) of oil to cover them with no air gap. Cover-the-herb is the structural constraint — flowers exposed above the oil-line will grow mould and spoil the whole batch." }
+          {
+            "type": "text",
+            "text": "The ratio is 1 part dried herb to 5 parts oil by weight. State the ratio so a reader scaling up has the rule rather than the numbers: 40 g of flowers needs 200 g (about 220 ml) of oil to cover them with no air gap. Cover-the-herb is the structural constraint, flowers exposed above the oil-line will grow mould and spoil the whole batch."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method 1 — Heat maceration (2-4 hours)" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method 1, Heat maceration (2-4 hours)"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The heat method is the working herbalist's default when a batch is needed in an afternoon. The oil sits in a water bath at 60-65°C for two to four hours; the constituents extract; the oil strains. The result is ready to bottle the same day." }
+          {
+            "type": "text",
+            "text": "The heat method is the working herbalist's default when a batch is needed in an afternoon. The oil sits in a water bath at 60-65°C for two to four hours; the constituents extract; the oil strains. The result is ready to bottle the same day."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "1. Set up the water bath" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "1. Set up the water bath"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "In the top of a double boiler, or a heatproof bowl set over a saucepan with two or three centimetres of barely simmering water, combine the dried calendula flowers and the extra-virgin olive oil. The water in the lower pan must not touch the underside of the bowl — a direct touch transfers heat too aggressively and the oil overshoots. Clip the probe thermometer to the side of the bowl with the tip in the oil but not resting on the bottom." }
+          {
+            "type": "text",
+            "text": "In the top of a double boiler, or a heatproof bowl set over a saucepan with two or three centimetres of barely simmering water, combine the dried calendula flowers and the extra-virgin olive oil. The water in the lower pan must not touch the underside of the bowl, a direct touch transfers heat too aggressively and the oil overshoots. Clip the probe thermometer to the side of the bowl with the tip in the oil but not resting on the bottom."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "2. Hold at 60-65°C for 2-4 hours" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 3
+        },
         "content": [
-          { "type": "text", "text": "Bring the water bath up to a slow simmer and let the oil temperature drift up to 62-63°C. Adjust the burner down to the lowest setting that holds the simmer. Above 70°C the volatile constituents break down and the carotenoid colour shifts from gold to greenish-brown; below 55°C the extraction stalls and the finished oil smells thin and oily rather than herbal. The probe is the only way to be sure. Stir gently once an hour with a clean dry wooden spoon — this redistributes flowers that have floated to the surface." }
+          {
+            "type": "text",
+            "text": "2. Hold at 60-65°C for 2-4 hours"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Read the oil as it works. By hour 2, the oil should be the deep gold of old honey and smell strongly of calendula — a warm, slightly resinous, faintly sweet smell. Hour 4 is the deep end of the extraction. Take it off the heat at any point in that window once the colour and smell have arrived." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "3. Strain and press" }]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "Take the bowl off the heat and let the oil cool to hand-warm (about 40-45°C) before straining. Set a fine sieve over the measuring jug and line it with muslin cloth folded double. Pour the warm oil through the muslin. Gather the corners of the muslin and squeeze the spent flowers firmly to press out the last of the oil they hold; five to ten per cent of the yield hides here, so the squeeze is not optional. Wear thin rubber gloves if the oil is still warm." }
+          {
+            "type": "text",
+            "text": "Bring the water bath up to a slow simmer and let the oil temperature drift up to 62-63°C. Adjust the burner down to the lowest setting that holds the simmer. Above 70°C the volatile constituents break down and the carotenoid colour shifts from gold to greenish-brown; below 55°C the extraction stalls and the finished oil smells thin and oily rather than herbal. The probe is the only way to be sure. Stir gently once an hour with a clean dry wooden spoon, this redistributes flowers that have floated to the surface."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "You should end up with around 180 ml of clear deep-gold oil. The flowers absorb and lose roughly 10 per cent of the original volume. If the oil looks cloudy or shows specks of plant matter, strain a second time through a clean piece of muslin — cloudiness shortens the shelf life. Discard the spent flowers on the compost." }
+          {
+            "type": "text",
+            "text": "Read the oil as it works. By hour 2, the oil should be the deep gold of old honey and smell strongly of calendula, a warm, slightly resinous, faintly sweet smell. Hour 4 is the deep end of the extraction. Take it off the heat at any point in that window once the colour and smell have arrived."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method 2 — Solar maceration (4-6 weeks)" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "3. Strain and press"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The solar method is the traditional Mediterranean approach. The flowers and oil sit together in a closed glass jar on a sunny windowsill for four to six weeks; the gentle warmth of sun-through-glass drives the same extraction the water bath drives faster. The advantage is gentleness: solar oils tend to hold their colour and smell longer in storage because the constituents haven't been pushed by direct heat. The disadvantage is time, and the slightly higher mould risk if the flowers shift above the oil-line." }
+          {
+            "type": "text",
+            "text": "Take the bowl off the heat and let the oil cool to hand-warm (about 40-45°C) before straining. Set a fine sieve over the measuring jug and line it with muslin cloth folded double. Pour the warm oil through the muslin. Gather the corners of the muslin and squeeze the spent flowers firmly to press out the last of the oil they hold; five to ten per cent of the yield hides here, so the squeeze is not optional. Wear thin rubber gloves if the oil is still warm."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You should end up with around 180 ml of clear deep-gold oil. The flowers absorb and lose roughly 10 per cent of the original volume. If the oil looks cloudy or shows specks of plant matter, strain a second time through a clean piece of muslin, cloudiness shortens the shelf life. Discard the spent flowers on the compost."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "1. Pack the jar" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Take the 500 ml " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "maceration" } }], "text": "maceration" },
-          { "type": "text", "text": " jar — clean, dry, no water droplets clinging to the inside. Add the dried calendula flowers. Pour the extra-virgin olive oil over them slowly, letting it work its way down between the flowers. Tap the jar on the counter to release any air bubbles. Top up with more oil if necessary until the flowers are covered by at least one centimetre of oil with no flower poking above the surface." }
+          {
+            "type": "text",
+            "text": "Method 2, Solar maceration (4-6 weeks)"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Lid the jar tightly. Label with the date, the herb, and the carrier. Wipe down the outside of the jar so no oil residue traps dust on the windowsill." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "2. Set on a sunny windowsill" }]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "Place the jar on a sunny windowsill where it gets four to six hours of direct sun a day. South-facing in the northern hemisphere, north-facing in the southern. The oil's temperature inside the jar will run 30-40°C in summer sun, which is enough for the slow extraction. A kitchen windowsill is the traditional position; a greenhouse shelf works too. Avoid an east- or west-facing window where direct afternoon sun can heat the jar too sharply and crack it." }
+          {
+            "type": "text",
+            "text": "The solar method is the traditional Mediterranean approach. The flowers and oil sit together in a closed glass jar on a sunny windowsill for four to six weeks; the gentle warmth of sun-through-glass drives the same extraction the water bath drives faster. The advantage is gentleness: solar oils tend to hold their colour and smell longer in storage because the constituents haven't been pushed by direct heat. The disadvantage is time, and the slightly higher mould risk if the flowers shift above the oil-line."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "3. Check weekly" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "1. Pack the jar"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Once a week, lift the jar and tilt it gently to redistribute the flowers and check the oil-line. Any flower that has floated above the oil needs pushing back down — a clean dry chopstick or skewer works for the prod. Look for condensation on the inside of the lid. A few droplets is normal in the first week; a steady film of water means the flowers were not fully dry, and the batch is at risk of mould. If the oil ever smells sharp or paint-like, or if you see a fuzzy patch on a flower, discard the whole jar and start over with drier flowers." }
+          {
+            "type": "text",
+            "text": "Take the 500 ml "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "maceration"
+                }
+              }
+            ],
+            "text": "maceration"
+          },
+          {
+            "type": "text",
+            "text": " jar, clean, dry, no water droplets clinging to the inside. Add the dried calendula flowers. Pour the extra-virgin olive oil over them slowly, letting it work its way down between the flowers. Tap the jar on the counter to release any air bubbles. Top up with more oil if necessary until the flowers are covered by at least one centimetre of oil with no flower poking above the surface."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lid the jar tightly. Label with the date, the herb, and the carrier. Wipe down the outside of the jar so no oil residue traps dust on the windowsill."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "4. Strain after 4-6 weeks" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "2. Set on a sunny windowsill"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "After four weeks, lift the jar and look at the oil. Deep gold colour with a strong herbal smell means it is ready. Pale yellow with a faint smell means give it another week or two. Six weeks is the upper limit; beyond that the oil starts to take on a slightly tannic edge from prolonged contact with the plant matter. Strain through double muslin as for the heat method, squeeze the flowers firmly, and decant into the amber bottle." }
+          {
+            "type": "text",
+            "text": "Place the jar on a sunny windowsill where it gets four to six hours of direct sun a day. South-facing in the northern hemisphere, north-facing in the southern. The oil's temperature inside the jar will run 30-40°C in summer sun, which is enough for the slow extraction. A kitchen windowsill is the traditional position; a greenhouse shelf works too. Avoid an east- or west-facing window where direct afternoon sun can heat the jar too sharply and crack it."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Dosing" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 3
+        },
         "content": [
-          { "type": "text", "text": "External use only. For direct application to intact skin: a few drops rubbed into a clean dry patch of dry or irritated skin one to three times a day. The oil sinks in over five to ten minutes; if it still feels greasy after that, the dab was too much. For minor closed grazes or healing scabs (not bleeding, not broken), apply once a day until the skin has knitted." }
+          {
+            "type": "text",
+            "text": "3. Check weekly"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Course length: up to 4 weeks of daily use on a single patch. If the skin has not responded in that time, the oil is not the right tool, so see a herbalist or your GP. Patch-test before any first use: dab a small amount on the inside of the forearm, leave for 24-48 hours, and watch for redness, itch, or swelling. Stop use if a reaction develops. Paediatric use: from school age in small amounts on intact skin; for infants and toddlers, herbal preparations are not adult-divided-by-half, so consult a herbalist who specialises in children's herbal medicine first." }
+          {
+            "type": "text",
+            "text": "Once a week, lift the jar and tilt it gently to redistribute the flowers and check the oil-line. Any flower that has floated above the oil needs pushing back down, a clean dry chopstick or skewer works for the prod. Look for condensation on the inside of the lid. A few droplets is normal in the first week; a steady film of water means the flowers were not fully dry, and the batch is at risk of mould. If the oil ever smells sharp or paint-like, or if you see a fuzzy patch on a flower, discard the whole jar and start over with drier flowers."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Storage" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 3
+        },
         "content": [
-          { "type": "text", "text": "Bottle the strained oil in a 30 ml or 100 ml amber dropper bottle. Dark glass is not decorative: daylight oxidises the carrier oil and shortens the shelf life noticeably. A clean jam jar in a dark cupboard works as a stand-in for the amber bottle. Store the bottle in a cool dark cupboard or the bottom of a kitchen cabinet, away from the stovetop and the kettle. Shelf life is 12 months. Discard at any sign of rancidity (a sharp, paint-like, distinctly not-herbal smell), because rancid oil on skin is irritating and the antioxidant action has gone." }
+          {
+            "type": "text",
+            "text": "4. Strain after 4-6 weeks"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "If the oil is being made for use as a salve or balm base, see the calendula salve tutorial — the strained oil at 1:4 with beeswax sets into a firm salve, or at 1:3 into a stiffer balm. The oil itself is the foundation; the wax-thickened forms are the next step." }
+          {
+            "type": "text",
+            "text": "After four weeks, lift the jar and look at the oil. Deep gold colour with a strong herbal smell means it is ready. Pale yellow with a faint smell means give it another week or two. Six weeks is the upper limit; beyond that the oil starts to take on a slightly tannic edge from prolonged contact with the plant matter. Strain through double muslin as for the heat method, squeeze the flowers firmly, and decant into the amber bottle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Dosing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "External use only. For direct application to intact skin: a few drops rubbed into a clean dry patch of dry or irritated skin one to three times a day. The oil sinks in over five to ten minutes; if it still feels greasy after that, the dab was too much. For minor closed grazes or healing scabs (not bleeding, not broken), apply once a day until the skin has knitted."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Course length: up to 4 weeks of daily use on a single patch. If the skin has not responded in that time, the oil is not the right tool, so see a herbalist or your GP. Patch-test before any first use: dab a small amount on the inside of the forearm, leave for 24-48 hours, and watch for redness, itch, or swelling. Stop use if a reaction develops. Paediatric use: from school age in small amounts on intact skin; for infants and toddlers, herbal preparations are not adult-divided-by-half, so consult a herbalist who specialises in children's herbal medicine first."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Storage"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bottle the strained oil in a 30 ml or 100 ml amber dropper bottle. Dark glass is not decorative: daylight oxidises the carrier oil and shortens the shelf life noticeably. A clean jam jar in a dark cupboard works as a stand-in for the amber bottle. Store the bottle in a cool dark cupboard or the bottom of a kitchen cabinet, away from the stovetop and the kettle. Shelf life is 12 months. Discard at any sign of rancidity (a sharp, paint-like, distinctly not-herbal smell), because rancid oil on skin is irritating and the antioxidant action has gone."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the oil is being made for use as a salve or balm base, see the calendula salve tutorial, the strained oil at 1:4 with beeswax sets into a firm salve, or at 1:3 into a stiffer balm. The oil itself is the foundation; the wax-thickened forms are the next step."
+          }
         ]
       },
       {
@@ -261,13 +516,23 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Sourcing the flowers" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Sourcing the flowers"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Calendula (Calendula officinalis) is the pot marigold of cottage gardens. Distinct from Tagetes (French and African marigolds), which are not interchangeable — the bedding-plant marigolds are not the traditional vulnerary herb. Buy dried calendula from a herbal supplier (Baldwins, Neal's Yard, Starwest Botanicals), or grow your own. The Garden calendula growing guide covers seed timing and harvest." }
+          {
+            "type": "text",
+            "text": "Calendula (Calendula officinalis) is the pot marigold of cottage gardens. Distinct from Tagetes (French and African marigolds), which are not interchangeable, the bedding-plant marigolds are not the traditional vulnerary herb. Buy dried calendula from a herbal supplier (Baldwins, Neal's Yard, Starwest Botanicals), or grow your own. The Garden calendula growing guide covers seed timing and harvest."
+          }
         ]
       },
       {
@@ -278,21 +543,48 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "When NOT to use this oil" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "See your doctor or A&E for deep cuts, cuts that will not stop bleeding after fifteen minutes of pressure, cuts over a joint, cuts on the face or hand with possible nerve or tendon involvement, animal or human bites, or any wound showing spreading redness, warmth, pus, or fever. For burns, run cool running water over a fresh burn for at least twenty minutes before any treatment, and see A&E for any burn larger than the size of the palm, on the face, hands, feet, joints, or genitals, or that goes through the skin layer." }
+          {
+            "type": "text",
+            "text": "When NOT to use this oil"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Skip the oil entirely if a daisy-family allergy is known and " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "patch-test" } }], "text": "patch-test" },
-          { "type": "text", "text": " has not been cleared. If a patch test produces redness, itch, or swelling, do not use the oil. Asteraceae reactions are not common but they happen, and they are easier to head off in a 24-hour patch test than in a full application." }
+          {
+            "type": "text",
+            "text": "See your doctor or A&E for deep cuts, cuts that will not stop bleeding after fifteen minutes of pressure, cuts over a joint, cuts on the face or hand with possible nerve or tendon involvement, animal or human bites, or any wound showing spreading redness, warmth, pus, or fever. For burns, run cool running water over a fresh burn for at least twenty minutes before any treatment, and see A&E for any burn larger than the size of the palm, on the face, hands, feet, joints, or genitals, or that goes through the skin layer."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Skip the oil entirely if a daisy-family allergy is known and "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "patch-test"
+                }
+              }
+            ],
+            "text": "patch-test"
+          },
+          {
+            "type": "text",
+            "text": " has not been cleared. If a patch test produces redness, itch, or swelling, do not use the oil. Asteraceae reactions are not common but they happen, and they are easier to head off in a 24-hour patch test than in a full application."
+          }
         ]
       },
       {
@@ -301,10 +593,26 @@
           "heading": "If the maceration went sideways",
           "intro": "The four common failure modes for a calendula-infused oil.",
           "items": [
-            { "symptom": "Heat-method oil smells thin and oily, not herbal", "cause": "Oil ran below 55°C (extraction stalled) or above 70°C (volatile constituents broken down). Or the dried flowers were stale and had lost their volatile oils to a year on the shelf.", "fix": "Source fresh dried calendula from a herbalist supplier — the smell from the bag should be strong and slightly sweet. Re-do the maceration with the probe thermometer clipped firmly to the bowl and the temperature held in the 60-65°C window." },
-            { "symptom": "Solar-method jar develops white fuzz or mould on a flower", "cause": "A flower floated above the oil-line, or the flowers were not fully dry when packed, or condensation in the lid dripped water back into the oil.", "fix": "Discard the whole jar. Mould spores spread through the oil even if the visible patch looks contained, and the batch is unsafe for skin contact. Next jar: confirm the flowers are crisp-dry before packing, top up the oil so flowers are submerged by 1 cm or more, and wipe the inside of the lid weekly." },
-            { "symptom": "Finished oil cloudy with specks of plant matter", "cause": "The strain went through too coarse a muslin, or the muslin was not folded double.", "fix": "Re-strain through a fresh piece of muslin folded double, ideally with a coffee filter underneath for a final pass. Cloudiness drops the shelf life from 12 months to about 6, so a second strain is worth the extra five minutes." },
-            { "symptom": "Oil goes rancid (sharp, paint-like smell) within a few months", "cause": "Carrier oil was too old when the maceration started, or the bottle was stored in light or warmth.", "fix": "Discard the bottle — rancid oil on skin is irritating. Next batch: start with fresh extra-virgin olive oil with at least 18 months left on its best-before; store the finished oil in amber glass in a dark cupboard, not on the windowsill or near the stove." }
+            {
+              "symptom": "Heat-method oil smells thin and oily, not herbal",
+              "cause": "Oil ran below 55°C (extraction stalled) or above 70°C (volatile constituents broken down). Or the dried flowers were stale and had lost their volatile oils to a year on the shelf.",
+              "fix": "Source fresh dried calendula from a herbalist supplier, the smell from the bag should be strong and slightly sweet. Re-do the maceration with the probe thermometer clipped firmly to the bowl and the temperature held in the 60-65°C window."
+            },
+            {
+              "symptom": "Solar-method jar develops white fuzz or mould on a flower",
+              "cause": "A flower floated above the oil-line, or the flowers were not fully dry when packed, or condensation in the lid dripped water back into the oil.",
+              "fix": "Discard the whole jar. Mould spores spread through the oil even if the visible patch looks contained, and the batch is unsafe for skin contact. Next jar: confirm the flowers are crisp-dry before packing, top up the oil so flowers are submerged by 1 cm or more, and wipe the inside of the lid weekly."
+            },
+            {
+              "symptom": "Finished oil cloudy with specks of plant matter",
+              "cause": "The strain went through too coarse a muslin, or the muslin was not folded double.",
+              "fix": "Re-strain through a fresh piece of muslin folded double, ideally with a coffee filter underneath for a final pass. Cloudiness drops the shelf life from 12 months to about 6, so a second strain is worth the extra five minutes."
+            },
+            {
+              "symptom": "Oil goes rancid (sharp, paint-like smell) within a few months",
+              "cause": "Carrier oil was too old when the maceration started, or the bottle was stored in light or warmth.",
+              "fix": "Discard the bottle, rancid oil on skin is irritating. Next batch: start with fresh extra-virgin olive oil with at least 18 months left on its best-before; store the finished oil in amber glass in a dark cupboard, not on the windowsill or near the stove."
+            }
           ]
         }
       }
@@ -315,30 +623,30 @@
       "stepNumber": 1,
       "offsetDays": 0,
       "title": "Pack the solar maceration jar",
-      "body": "If you have chosen the solar method, today is day zero. Pack 40 g of dried calendula flowers into a 500 ml clean dry maceration jar, cover with 200 ml of extra-virgin olive oil so the flowers are submerged by at least 1 cm, lid tightly, label with the date and the herb, and set on a sunny windowsill. Heat-method makers can skip this schedule — the heat method finishes in an afternoon.",
+      "body": "If you have chosen the solar method, today is day zero. Pack 40 g of dried calendula flowers into a 500 ml clean dry maceration jar, cover with 200 ml of extra-virgin olive oil so the flowers are submerged by at least 1 cm, lid tightly, label with the date and the herb, and set on a sunny windowsill. Heat-method makers can skip this schedule, the heat method finishes in an afternoon.",
       "surfaceAs": "RAIL_CARD",
       "requiresUserAction": true
     },
     {
       "stepNumber": 2,
       "offsetDays": 7,
-      "title": "Week 1 check — oil-line and condensation",
-      "body": "Lift the jar and tilt to redistribute the flowers. Push back down any flower that has floated above the oil-line — a clean dry chopstick is the easiest prod. A few droplets of condensation on the inside of the lid is normal; a steady water film is a sign the flowers were not fully dry. Look at the oil's colour — it should already be tinged gold by week 1.",
+      "title": "Week 1 check, oil-line and condensation",
+      "body": "Lift the jar and tilt to redistribute the flowers. Push back down any flower that has floated above the oil-line, a clean dry chopstick is the easiest prod. A few droplets of condensation on the inside of the lid is normal; a steady water film is a sign the flowers were not fully dry. Look at the oil's colour, it should already be tinged gold by week 1.",
       "surfaceAs": "RAIL_CARD",
       "requiresUserAction": true
     },
     {
       "stepNumber": 3,
       "offsetDays": 14,
-      "title": "Week 2 check — smell test",
-      "body": "Uncap briefly and smell. The oil should smell warm and resinous — the start of calendula proper. Recap and return to the windowsill. If you see any white fuzz on a flower or a sharp paint-like smell instead, discard the jar — mould or rancidity have set in and the batch is no longer safe to use externally.",
+      "title": "Week 2 check, smell test",
+      "body": "Uncap briefly and smell. The oil should smell warm and resinous, the start of calendula proper. Recap and return to the windowsill. If you see any white fuzz on a flower or a sharp paint-like smell instead, discard the jar, mould or rancidity have set in and the batch is no longer safe to use externally.",
       "surfaceAs": "RAIL_CARD",
       "requiresUserAction": true
     },
     {
       "stepNumber": 4,
       "offsetDays": 28,
-      "title": "Week 4 check — is the oil ready?",
+      "title": "Week 4 check, is the oil ready?",
       "body": "Lift the jar against the light. Deep-gold colour and strong herbal smell mean the oil is ready to strain. Pale yellow with a faint smell means give it another one or two weeks. Six weeks is the upper limit before the oil starts to take on a tannic edge from prolonged contact with the plant matter.",
       "surfaceAs": "RAIL_CARD",
       "requiresUserAction": true
@@ -351,5 +659,497 @@
       "surfaceAs": "HERO",
       "requiresUserAction": true
     }
-  ]
+  ],
+  "revisedFrom": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Calendula-infused oil is the household's base external preparation. A 1:5 ratio of dried calendula flowers to extra-virgin olive oil, macerated either over hours on a low stovetop heat or over weeks on a sunny windowsill, gives a deep-gold oil with the carotenoid colour and the warm, slightly resinous smell that tells you the extraction worked. The oil sits in a dark bottle in the cupboard until it's needed: a few drops on a dry patch of skin, a base for a salve or balm, or a carrier for a stronger herbal blend."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Calendula is the traditional "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "vulnerary"
+                }
+              }
+            ],
+            "text": "vulnerary"
+          },
+          {
+            "type": "text",
+            "text": " of western herbal practice. Maud Grieve, in A Modern Herbal (1931), names it among the wound-herbs of old country medicine. The flowers' triterpenes, flavonoids, and carotenoids are the constituents traditionally associated with the anti-inflammatory and skin-supportive action; the oil extracts them at low heat over a few hours, or at sun-warmth over a few weeks. This tutorial covers both methods. Pick the one that suits the season and the kit you have."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Important safety notes",
+          "body": "Not medical advice. Consult a qualified herbalist or doctor for ongoing or serious symptoms.\n\nExternal use only. This oil is for application to intact skin. Do not take internally; do not apply to deep wounds or broken bleeding skin, where the oil would seal in dirt rather than support healing.\n\nAsteraceae allergy. Calendula is in the daisy family (Asteraceae), alongside chamomile, yarrow, ragweed, and chrysanthemum. If you have reacted to any daisy-family plant before, patch-test before any wider use: dab a small amount on the inside of the forearm and wait 24-48 hours.\n\nNot a substitute for medical care. See your doctor or A&E for deep cuts, cuts that will not stop bleeding after fifteen minutes of pressure, animal or human bites, or any wound showing spreading redness, warmth, pus, or fever. Those are infections that need antibiotics rather than herbs. For burns, run cool running water over a fresh burn for at least twenty minutes before applying anything at all, and see A&E for any burn larger than the size of the palm, any burn on the face, hands, feet, joints, or genitals, or any burn that goes through the skin layer.\n\nPaediatric use. Small dabs on intact skin from school age are widely tolerated, but patch-test first owing to the Asteraceae cross-reactivity. Infant and toddler use is not adult-divided-by-half. Consult a herbalist who specialises in children's herbal medicine before any use in children under twelve."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "dried-calendula-flowers",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "whole flowers or petals only — both work; petals alone steep slightly faster but cost more per gram from herbal suppliers",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": "good-quality single-estate or supermarket extra-virgin; the cheaper blended kind goes rancid faster and dulls the finished oil's colour",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The ratio is 1 part dried herb to 5 parts oil by weight. State the ratio so a reader scaling up has the rule rather than the numbers: 40 g of flowers needs 200 g (about 220 ml) of oil to cover them with no air gap. Cover-the-herb is the structural constraint — flowers exposed above the oil-line will grow mould and spoil the whole batch."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method 1 — Heat maceration (2-4 hours)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The heat method is the working herbalist's default when a batch is needed in an afternoon. The oil sits in a water bath at 60-65°C for two to four hours; the constituents extract; the oil strains. The result is ready to bottle the same day."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "1. Set up the water bath"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In the top of a double boiler, or a heatproof bowl set over a saucepan with two or three centimetres of barely simmering water, combine the dried calendula flowers and the extra-virgin olive oil. The water in the lower pan must not touch the underside of the bowl — a direct touch transfers heat too aggressively and the oil overshoots. Clip the probe thermometer to the side of the bowl with the tip in the oil but not resting on the bottom."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "2. Hold at 60-65°C for 2-4 hours"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bring the water bath up to a slow simmer and let the oil temperature drift up to 62-63°C. Adjust the burner down to the lowest setting that holds the simmer. Above 70°C the volatile constituents break down and the carotenoid colour shifts from gold to greenish-brown; below 55°C the extraction stalls and the finished oil smells thin and oily rather than herbal. The probe is the only way to be sure. Stir gently once an hour with a clean dry wooden spoon — this redistributes flowers that have floated to the surface."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Read the oil as it works. By hour 2, the oil should be the deep gold of old honey and smell strongly of calendula — a warm, slightly resinous, faintly sweet smell. Hour 4 is the deep end of the extraction. Take it off the heat at any point in that window once the colour and smell have arrived."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "3. Strain and press"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Take the bowl off the heat and let the oil cool to hand-warm (about 40-45°C) before straining. Set a fine sieve over the measuring jug and line it with muslin cloth folded double. Pour the warm oil through the muslin. Gather the corners of the muslin and squeeze the spent flowers firmly to press out the last of the oil they hold; five to ten per cent of the yield hides here, so the squeeze is not optional. Wear thin rubber gloves if the oil is still warm."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You should end up with around 180 ml of clear deep-gold oil. The flowers absorb and lose roughly 10 per cent of the original volume. If the oil looks cloudy or shows specks of plant matter, strain a second time through a clean piece of muslin — cloudiness shortens the shelf life. Discard the spent flowers on the compost."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method 2 — Solar maceration (4-6 weeks)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The solar method is the traditional Mediterranean approach. The flowers and oil sit together in a closed glass jar on a sunny windowsill for four to six weeks; the gentle warmth of sun-through-glass drives the same extraction the water bath drives faster. The advantage is gentleness: solar oils tend to hold their colour and smell longer in storage because the constituents haven't been pushed by direct heat. The disadvantage is time, and the slightly higher mould risk if the flowers shift above the oil-line."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "1. Pack the jar"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Take the 500 ml "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "maceration"
+                }
+              }
+            ],
+            "text": "maceration"
+          },
+          {
+            "type": "text",
+            "text": " jar — clean, dry, no water droplets clinging to the inside. Add the dried calendula flowers. Pour the extra-virgin olive oil over them slowly, letting it work its way down between the flowers. Tap the jar on the counter to release any air bubbles. Top up with more oil if necessary until the flowers are covered by at least one centimetre of oil with no flower poking above the surface."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lid the jar tightly. Label with the date, the herb, and the carrier. Wipe down the outside of the jar so no oil residue traps dust on the windowsill."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "2. Set on a sunny windowsill"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the jar on a sunny windowsill where it gets four to six hours of direct sun a day. South-facing in the northern hemisphere, north-facing in the southern. The oil's temperature inside the jar will run 30-40°C in summer sun, which is enough for the slow extraction. A kitchen windowsill is the traditional position; a greenhouse shelf works too. Avoid an east- or west-facing window where direct afternoon sun can heat the jar too sharply and crack it."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "3. Check weekly"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once a week, lift the jar and tilt it gently to redistribute the flowers and check the oil-line. Any flower that has floated above the oil needs pushing back down — a clean dry chopstick or skewer works for the prod. Look for condensation on the inside of the lid. A few droplets is normal in the first week; a steady film of water means the flowers were not fully dry, and the batch is at risk of mould. If the oil ever smells sharp or paint-like, or if you see a fuzzy patch on a flower, discard the whole jar and start over with drier flowers."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "4. Strain after 4-6 weeks"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After four weeks, lift the jar and look at the oil. Deep gold colour with a strong herbal smell means it is ready. Pale yellow with a faint smell means give it another week or two. Six weeks is the upper limit; beyond that the oil starts to take on a slightly tannic edge from prolonged contact with the plant matter. Strain through double muslin as for the heat method, squeeze the flowers firmly, and decant into the amber bottle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Dosing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "External use only. For direct application to intact skin: a few drops rubbed into a clean dry patch of dry or irritated skin one to three times a day. The oil sinks in over five to ten minutes; if it still feels greasy after that, the dab was too much. For minor closed grazes or healing scabs (not bleeding, not broken), apply once a day until the skin has knitted."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Course length: up to 4 weeks of daily use on a single patch. If the skin has not responded in that time, the oil is not the right tool, so see a herbalist or your GP. Patch-test before any first use: dab a small amount on the inside of the forearm, leave for 24-48 hours, and watch for redness, itch, or swelling. Stop use if a reaction develops. Paediatric use: from school age in small amounts on intact skin; for infants and toddlers, herbal preparations are not adult-divided-by-half, so consult a herbalist who specialises in children's herbal medicine first."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Storage"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bottle the strained oil in a 30 ml or 100 ml amber dropper bottle. Dark glass is not decorative: daylight oxidises the carrier oil and shortens the shelf life noticeably. A clean jam jar in a dark cupboard works as a stand-in for the amber bottle. Store the bottle in a cool dark cupboard or the bottom of a kitchen cabinet, away from the stovetop and the kettle. Shelf life is 12 months. Discard at any sign of rancidity (a sharp, paint-like, distinctly not-herbal smell), because rancid oil on skin is irritating and the antioxidant action has gone."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the oil is being made for use as a salve or balm base, see the calendula salve tutorial — the strained oil at 1:4 with beeswax sets into a firm salve, or at 1:3 into a stiffer balm. The oil itself is the foundation; the wax-thickened forms are the next step."
+          }
+        ]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": {
+          "tutorialSlug": "calendula-salve-for-skin"
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Sourcing the flowers"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Calendula (Calendula officinalis) is the pot marigold of cottage gardens. Distinct from Tagetes (French and African marigolds), which are not interchangeable — the bedding-plant marigolds are not the traditional vulnerary herb. Buy dried calendula from a herbal supplier (Baldwins, Neal's Yard, Starwest Botanicals), or grow your own. The Garden calendula growing guide covers seed timing and harvest."
+          }
+        ]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": {
+          "tutorialSlug": "growing-calendula-officinalis"
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When NOT to use this oil"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "See your doctor or A&E for deep cuts, cuts that will not stop bleeding after fifteen minutes of pressure, cuts over a joint, cuts on the face or hand with possible nerve or tendon involvement, animal or human bites, or any wound showing spreading redness, warmth, pus, or fever. For burns, run cool running water over a fresh burn for at least twenty minutes before any treatment, and see A&E for any burn larger than the size of the palm, on the face, hands, feet, joints, or genitals, or that goes through the skin layer."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Skip the oil entirely if a daisy-family allergy is known and "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "patch-test"
+                }
+              }
+            ],
+            "text": "patch-test"
+          },
+          {
+            "type": "text",
+            "text": " has not been cleared. If a patch test produces redness, itch, or swelling, do not use the oil. Asteraceae reactions are not common but they happen, and they are easier to head off in a 24-hour patch test than in a full application."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If the maceration went sideways",
+          "intro": "The four common failure modes for a calendula-infused oil.",
+          "items": [
+            {
+              "symptom": "Heat-method oil smells thin and oily, not herbal",
+              "cause": "Oil ran below 55°C (extraction stalled) or above 70°C (volatile constituents broken down). Or the dried flowers were stale and had lost their volatile oils to a year on the shelf.",
+              "fix": "Source fresh dried calendula from a herbalist supplier — the smell from the bag should be strong and slightly sweet. Re-do the maceration with the probe thermometer clipped firmly to the bowl and the temperature held in the 60-65°C window."
+            },
+            {
+              "symptom": "Solar-method jar develops white fuzz or mould on a flower",
+              "cause": "A flower floated above the oil-line, or the flowers were not fully dry when packed, or condensation in the lid dripped water back into the oil.",
+              "fix": "Discard the whole jar. Mould spores spread through the oil even if the visible patch looks contained, and the batch is unsafe for skin contact. Next jar: confirm the flowers are crisp-dry before packing, top up the oil so flowers are submerged by 1 cm or more, and wipe the inside of the lid weekly."
+            },
+            {
+              "symptom": "Finished oil cloudy with specks of plant matter",
+              "cause": "The strain went through too coarse a muslin, or the muslin was not folded double.",
+              "fix": "Re-strain through a fresh piece of muslin folded double, ideally with a coffee filter underneath for a final pass. Cloudiness drops the shelf life from 12 months to about 6, so a second strain is worth the extra five minutes."
+            },
+            {
+              "symptom": "Oil goes rancid (sharp, paint-like smell) within a few months",
+              "cause": "Carrier oil was too old when the maceration started, or the bottle was stored in light or warmth.",
+              "fix": "Discard the bottle — rancid oil on skin is irritating. Next batch: start with fresh extra-virgin olive oil with at least 18 months left on its best-before; store the finished oil in amber glass in a dark cupboard, not on the windowsill or near the stove."
+            }
+          ]
+        }
+      }
+    ]
+  }
 }

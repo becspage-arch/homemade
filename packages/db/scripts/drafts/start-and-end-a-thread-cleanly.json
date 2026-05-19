@@ -13,23 +13,54 @@
   "sewing": {
     "craftType": "needlework",
     "projectShape": null,
-    "requiredFabricSlugs": ["aida-14"],
-    "requiredNotionSlugs": ["dmc-stranded-cotton"],
+    "requiredFabricSlugs": [
+      "aida-14"
+    ],
+    "requiredNotionSlugs": [
+      "dmc-stranded-cotton"
+    ],
     "sewingMethod": "hand-sewn",
     "fabricYardageMetres": null,
     "finishedDimensionsCm": null,
     "bodyMeasurementsRequired": []
   },
   "recipeTools": [
-    { "slug": "tapestry-needle-24", "isOptional": false, "notes": "Size 24 for 14-count Aida; the practice ground in this tutorial." },
-    { "slug": "embroidery-hoop-6", "isOptional": true, "notes": "A 15 cm hoop holds the practice cloth taut enough that the strand count is easier to see on the back." },
-    { "slug": "embroidery-scissors", "isOptional": false }
+    {
+      "slug": "tapestry-needle-24",
+      "isOptional": false,
+      "notes": "Size 24 for 14-count Aida; the practice ground in this tutorial."
+    },
+    {
+      "slug": "embroidery-hoop-6",
+      "isOptional": true,
+      "notes": "A 15 cm hoop holds the practice cloth taut enough that the strand count is easier to see on the back."
+    },
+    {
+      "slug": "embroidery-scissors",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [
-    { "slug": "loop-start", "term": "Loop start", "definition": "A start used with an even strand count. One length of floss is folded in half; the two cut ends are threaded through the needle's eye; the looped end sits on the back of the cloth and the first stitch catches it to anchor the thread. No knot involved." },
-    { "slug": "away-knot", "term": "Away knot", "definition": "A start used with an odd strand count, where a loop start won't work. A knot is tied at the end of the thread; the needle goes down through the cloth well clear of the pattern area (8-10 cm away); the first stitch pulls the held tail snug; the knot is snipped off when the working thread reaches it on the back." },
-    { "slug": "woven-tail-finish", "term": "Woven-tail finish", "definition": "The standard end for a worked thread. The needle passes under four to five completed stitches on the back of the cloth, pulls the thread through, and the remaining tail is snipped close. No knot; the friction of the woven stitches holds the tail in place." },
-    { "slug": "waste-knot", "term": "Waste knot", "definition": "A start related to the away knot but tied directly above where the first stitch lands. The knot's tail is overstitched on the back of the cloth as the work progresses; the knot itself is snipped off when reached. Used when the away knot's 8-10 cm tail would be inconvenient (small pieces, single motifs)." }
+    {
+      "slug": "loop-start",
+      "term": "Loop start",
+      "definition": "A start used with an even strand count. One length of floss is folded in half; the two cut ends are threaded through the needle's eye; the looped end sits on the back of the cloth and the first stitch catches it to anchor the thread. No knot involved."
+    },
+    {
+      "slug": "away-knot",
+      "term": "Away knot",
+      "definition": "A start used with an odd strand count, where a loop start won't work. A knot is tied at the end of the thread; the needle goes down through the cloth well clear of the pattern area (8-10 cm away); the first stitch pulls the held tail snug; the knot is snipped off when the working thread reaches it on the back."
+    },
+    {
+      "slug": "woven-tail-finish",
+      "term": "Woven-tail finish",
+      "definition": "The standard end for a worked thread. The needle passes under four to five completed stitches on the back of the cloth, pulls the thread through, and the remaining tail is snipped close. No knot; the friction of the woven stitches holds the tail in place."
+    },
+    {
+      "slug": "waste-knot",
+      "term": "Waste knot",
+      "definition": "A start related to the away knot but tied directly above where the first stitch lands. The knot's tail is overstitched on the back of the cloth as the work progresses; the knot itself is snipped off when reached. Used when the away knot's 8-10 cm tail would be inconvenient (small pieces, single motifs)."
+    }
   ],
   "body": {
     "type": "doc",
@@ -37,13 +68,575 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Every counted-thread project starts the same way: a needle, a length of stranded cotton, a piece of cloth, and the decision about how to anchor the thread before the first stitch. The wrong start (a hard knot on the back of the cloth) leaves bumps that show through the front, snags later stitches, and sometimes pulls free entirely. The right start is one of three methods chosen by the strand count: a loop start for two or four strands, an away knot for one or three or five, a waste knot when the away knot's tail is inconvenient. Every working thread ends the same way: woven through four or five completed stitches on the back, no knot." }
+          {
+            "type": "text",
+            "text": "Every counted-thread project starts the same way: a needle, a length of stranded cotton, a piece of cloth, and the decision about how to anchor the thread before the first stitch. The wrong start (a hard knot on the back of the cloth) leaves bumps that show through the front, snags later stitches, and sometimes pulls free entirely. The right start is one of three methods chosen by the strand count: a loop start for two or four strands, an away knot for one or three or five, a waste knot when the away knot's tail is inconvenient. Every working thread ends the same way: woven through four or five completed stitches on the back, no knot."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "This is a foundations reading. The methods apply to cross-stitch, blackwork, needlepoint, surface embroidery on plainweave, and most stitched-on-counted-cloth work. Tatting and bobbin lacemaking have their own thread-start conventions that don't translate; those live in their own tutorials." }
+          {
+            "type": "text",
+            "text": "This is a foundations reading. The methods apply to cross-stitch, blackwork, needlepoint, surface embroidery on plainweave, and most stitched-on-counted-cloth work. Tatting and bobbin lacemaking have their own thread-start conventions that don't translate; those live in their own tutorials."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Before you practise",
+          "body": "Set up a practice swatch the way you would set up a finished piece. 14-count Aida, two strands of stranded cotton in any colour, a size 24 tapestry needle, a 15 cm hoop. Eye-level light from a daylight task lamp or a window. Embroidery scissors capped on the table beside you. A needle-minder magnet on the cloth so the needle has somewhere safe to park between attempts. The three methods below take about ten minutes to practise once each; practise the loop start ten times in a row until it lands automatically, then the away knot, then the woven finish. Muscle memory is the goal; thinking-about-the-start at every project start slows the stitching down for the next ten years."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The loop start (even strand count)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "loop-start"
+                }
+              }
+            ],
+            "text": "loop start"
+          },
+          {
+            "type": "text",
+            "text": " is the cleanest method on 14-count Aida (and every count that takes an even strand count). No knot, no held tail, the thread is anchored by the cloth and the first stitch."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step by step"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cut a 50 cm length of stranded cotton from the skein. Separate one strand from the six (pinch the cut end and pull one strand free; the remaining five will resettle). Take that one strand and the rest of the six-strand skein-length is not used. Fold the single strand in half so you have a 25 cm piece doubled. Thread the two cut ends through the eye of the size 24 needle, this gives a working length of two strands on the needle and a loop at the end."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Decide where the first stitch lands on the cloth. Bring the needle up through the cloth from back to front at the bottom-left corner of the first cross-stitch square, leaving the looped end of the thread on the back of the cloth, about 4-5 cm of loop hanging."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Take the needle down through the cloth at the top-right corner of the same square (laying the diagonal that is the bottom leg of the first cross). On the back of the cloth, before pulling the thread through fully, pass the needle tip through the loop hanging on the back. Pull the thread snug; the loop closes against the back of the cloth and anchors the start."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Continue with the rest of the cross or move to the next stitch as the pattern dictates. The start is finished; no further securing needed."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "How it looks on the back: a small horizontal bar where the loop has closed against two strands. Nothing protrudes; nothing knot-shaped. The front of the cloth is clean."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The away knot (odd strand count or one-off)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "away-knot"
+                }
+              }
+            ],
+            "text": "away knot"
+          },
+          {
+            "type": "text",
+            "text": " covers the cases where a loop start won't work: one strand of stranded cotton on a fine count (18-count Aida or finer), three strands on a heavier cloth, or any odd count. The knot does the holding; the held tail is woven in later."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step by step"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cut a 50 cm length of stranded cotton. Separate the strand count you need (one, three, five), thread the needle, and tie a small knot at the cut end. A single overhand knot is plenty; bulky knots have to be snipped off later anyway."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Take the needle down through the front of the cloth 8-10 cm away from where the first stitch will land, in a direction the working thread will travel later. The knot sits on the front of the cloth; the thread comes through to the back."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring the needle up at the first stitch position and proceed with the pattern. As the working thread crosses over the held tail on the back of the cloth, the tail is overstitched and held in place."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "When the working thread arrives within a few centimetres of the knot, lift the cloth, snip the knot off close to the front, and the held tail is anchored on the back by the overstitching that has happened in between. If the tail extends past the snipped-off knot's position, weave it under four to five back-of-cloth stitches and snip the remainder close."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "How to choose the away direction. The held tail wants to be covered by working thread as the stitching progresses, so the away knot is placed in the direction the pattern is moving. For a pattern worked left-to-right, place the knot to the right of the first stitch. For centre-out stitching, place the knot in the direction of the first row of stitches that will be worked."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variation: the waste knot"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "waste-knot"
+                }
+              }
+            ],
+            "text": "waste knot"
+          },
+          {
+            "type": "text",
+            "text": " is the away knot tied directly above the first stitch (rather than 8-10 cm away). The held tail is overstitched on the back of the cloth across the first few stitches; the knot is snipped off when the working thread reaches it. Useful on small motifs where the 8-10 cm clearance of the away knot would overflow the pattern area. The risk is that the knot's position is fixed at the start, so if the first stitch lands wrong, the knot is harder to relocate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The woven-tail finish (every working thread)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every working thread ends the same way: a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "woven-tail-finish"
+                }
+              }
+            ],
+            "text": "woven-tail finish"
+          },
+          {
+            "type": "text",
+            "text": " through four or five completed stitches on the back of the cloth. No knot. Knots show through, snag on later stitches, and look untidy when the back is on display (which it sometimes is, on linen and on pieces backed with see-through fabric)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step by step"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Take the working needle down through the cloth at the last stitch in the sequence. On the back, find four or five completed stitches near the end-point that run in the same direction as each other (the back of a cross-stitch row of bottom legs gives a series of parallel diagonals on the back; perfect for weaving)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Slide the needle under those four or five completed stitches, parallel to the cloth. Don't pierce the cloth or the stitches themselves; the needle only goes under the stitches' floats on the back."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pull the thread all the way through. Snip the remaining tail close to the cloth (a 2-3 mm stub is plenty; a longer stub catches on later stitching)."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Why four or five stitches. Three is enough to hold under ordinary handling but pulls free occasionally; six and over is wasteful of thread and bulks the back of the cloth. Four to five is the working compromise every public-domain manual converges on."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When colours change. If the next thread will be a different colour, weave the old tail under stitches of the OLD colour (matching colour shows less from the front than weaving a dark thread under pale stitches, where the dark might shadow through)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When the loop start won't work and the away knot is awkward"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Two situations where the standard methods need a small adaptation:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Single isolated motif"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (one initial, one flower, no surrounding stitches). The away knot's held tail won't be overstitched by surrounding work. Use the waste knot directly above the motif and accept that the first three stitches will overstitch the tail; or use a knotless slip-start (bring the needle up at the first stitch, leave a 4 cm tail on the back, hold the tail under the back of the first two or three stitches as you work them, the friction holds)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Single strand on fine linen"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (36-count or finer, one strand). The thread is too thin for the waste-knot's tail to anchor cleanly. Use an away knot 8-10 cm clear and accept the held tail; weave the tail under stitches when the working thread reaches it. The fine-count requires more setup than 14-count Aida, but the methods are the same."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If a thread won't sit right",
+          "intro": "Five thread-start and thread-end failures that recur on first counted-thread pieces.",
+          "items": [
+            {
+              "symptom": "Loop on the back pulls all the way through the cloth on the first stitch, leaving no anchor",
+              "cause": "The needle didn't catch the loop before the thread was pulled tight, or the loop was held too close to the cloth and slipped past the needle eye on the way through.",
+              "fix": "On the next attempt, hold the loop down with the off-hand thumb against the back of the cloth as the needle goes down through the cloth, so the loop stays open. Bring the needle tip through the loop deliberately before pulling the thread snug."
+            },
+            {
+              "symptom": "Knot on a hard-start shows through the front of the cloth as a visible bump",
+              "cause": "A knot was tied directly behind the first stitch, with no surrounding stitches to absorb the bulk.",
+              "fix": "Pick out the start, use a loop start (even strand count) or away knot (odd) instead. Knots directly on the back of a single stitch always show; the methods above are designed to put the anchor where it doesn't show."
+            },
+            {
+              "symptom": "Woven-tail finish pulls free on the next session's stitching",
+              "cause": "Tail was woven under only two or three stitches, or the stitches were too short to grip.",
+              "fix": "Re-do the finish with four or five stitches and check the tail is parallel to the woven stitches, not crossing them at right angles (a right-angle weave grips less). Stub the snipped tail to 2-3 mm; long stubs unravel out from under their woven stitches more easily."
+            },
+            {
+              "symptom": "The held tail of an away knot has bunched on the back of the cloth",
+              "cause": "Tail wasn't laid flat as the working thread overstitched it.",
+              "fix": "Lift the cloth, work the tail flat with the needle so it sits under the stitches in a single direction. The tail is invisible from the front as long as it's flat; bunched, it can show through as a shadow on pale cloth."
+            },
+            {
+              "symptom": "Strands twist around each other while stitching, getting tighter and frayed-looking",
+              "cause": "The needle was rolled the same direction at every stitch, building twist into the thread.",
+              "fix": "Every dozen stitches or so, let the needle and thread dangle off the back of the cloth so the thread untwists itself. Some stitchers reverse the direction of needle-pull periodically; either method works."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Related tutorials"
+          }
+        ]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": {
+          "tutorialSlug": "cross-stitch-alphabet-sampler-border"
+        }
+      }
+    ]
+  },
+  "revisedFrom": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every counted-thread project starts the same way: a needle, a length of stranded cotton, a piece of cloth, and the decision about how to anchor the thread before the first stitch. The wrong start (a hard knot on the back of the cloth) leaves bumps that show through the front, snags later stitches, and sometimes pulls free entirely. The right start is one of three methods chosen by the strand count: a loop start for two or four strands, an away knot for one or three or five, a waste knot when the away knot's tail is inconvenient. Every working thread ends the same way: woven through four or five completed stitches on the back, no knot."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a foundations reading. The methods apply to cross-stitch, blackwork, needlepoint, surface embroidery on plainweave, and most stitched-on-counted-cloth work. Tatting and bobbin lacemaking have their own thread-start conventions that don't translate; those live in their own tutorials."
+          }
         ]
       },
       {
@@ -56,21 +649,52 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The loop start (even strand count)" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The loop start (even strand count)"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "loop-start" } }], "text": "loop start" },
-          { "type": "text", "text": " is the cleanest method on 14-count Aida (and every count that takes an even strand count). No knot, no held tail, the thread is anchored by the cloth and the first stitch." }
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "loop-start"
+                }
+              }
+            ],
+            "text": "loop start"
+          },
+          {
+            "type": "text",
+            "text": " is the cleanest method on 14-count Aida (and every count that takes an even strand count). No knot, no held tail, the thread is anchored by the cloth and the first stitch."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Step by step" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step by step"
+          }
+        ]
       },
       {
         "type": "orderedList",
@@ -81,7 +705,10 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "text": "Cut a 50 cm length of stranded cotton from the skein. Separate one strand from the six (pinch the cut end and pull one strand free; the remaining five will resettle). Take that one strand and the rest of the six-strand skein-length is not used. Fold the single strand in half so you have a 25 cm piece doubled. Thread the two cut ends through the eye of the size 24 needle — this gives a working length of two strands on the needle and a loop at the end." }
+                  {
+                    "type": "text",
+                    "text": "Cut a 50 cm length of stranded cotton from the skein. Separate one strand from the six (pinch the cut end and pull one strand free; the remaining five will resettle). Take that one strand and the rest of the six-strand skein-length is not used. Fold the single strand in half so you have a 25 cm piece doubled. Thread the two cut ends through the eye of the size 24 needle — this gives a working length of two strands on the needle and a loop at the end."
+                  }
                 ]
               }
             ]
@@ -92,7 +719,10 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "text": "Decide where the first stitch lands on the cloth. Bring the needle up through the cloth from back to front at the bottom-left corner of the first cross-stitch square, leaving the looped end of the thread on the back of the cloth, about 4-5 cm of loop hanging." }
+                  {
+                    "type": "text",
+                    "text": "Decide where the first stitch lands on the cloth. Bring the needle up through the cloth from back to front at the bottom-left corner of the first cross-stitch square, leaving the looped end of the thread on the back of the cloth, about 4-5 cm of loop hanging."
+                  }
                 ]
               }
             ]
@@ -103,7 +733,10 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "text": "Take the needle down through the cloth at the top-right corner of the same square (laying the diagonal that is the bottom leg of the first cross). On the back of the cloth, before pulling the thread through fully, pass the needle tip through the loop hanging on the back. Pull the thread snug; the loop closes against the back of the cloth and anchors the start." }
+                  {
+                    "type": "text",
+                    "text": "Take the needle down through the cloth at the top-right corner of the same square (laying the diagonal that is the bottom leg of the first cross). On the back of the cloth, before pulling the thread through fully, pass the needle tip through the loop hanging on the back. Pull the thread snug; the loop closes against the back of the cloth and anchors the start."
+                  }
                 ]
               }
             ]
@@ -114,7 +747,10 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "text": "Continue with the rest of the cross or move to the next stitch as the pattern dictates. The start is finished; no further securing needed." }
+                  {
+                    "type": "text",
+                    "text": "Continue with the rest of the cross or move to the next stitch as the pattern dictates. The start is finished; no further securing needed."
+                  }
                 ]
               }
             ]
@@ -124,26 +760,60 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "How it looks on the back: a small horizontal bar where the loop has closed against two strands. Nothing protrudes; nothing knot-shaped. The front of the cloth is clean." }
+          {
+            "type": "text",
+            "text": "How it looks on the back: a small horizontal bar where the loop has closed against two strands. Nothing protrudes; nothing knot-shaped. The front of the cloth is clean."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The away knot (odd strand count or one-off)" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The away knot (odd strand count or one-off)"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "away-knot" } }], "text": "away knot" },
-          { "type": "text", "text": " covers the cases where a loop start won't work: one strand of stranded cotton on a fine count (18-count Aida or finer), three strands on a heavier cloth, or any odd count. The knot does the holding; the held tail is woven in later." }
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "away-knot"
+                }
+              }
+            ],
+            "text": "away knot"
+          },
+          {
+            "type": "text",
+            "text": " covers the cases where a loop start won't work: one strand of stranded cotton on a fine count (18-count Aida or finer), three strands on a heavier cloth, or any odd count. The knot does the holding; the held tail is woven in later."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Step by step" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step by step"
+          }
+        ]
       },
       {
         "type": "orderedList",
@@ -154,7 +824,10 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "text": "Cut a 50 cm length of stranded cotton. Separate the strand count you need (one, three, five), thread the needle, and tie a small knot at the cut end. A single overhand knot is plenty; bulky knots have to be snipped off later anyway." }
+                  {
+                    "type": "text",
+                    "text": "Cut a 50 cm length of stranded cotton. Separate the strand count you need (one, three, five), thread the needle, and tie a small knot at the cut end. A single overhand knot is plenty; bulky knots have to be snipped off later anyway."
+                  }
                 ]
               }
             ]
@@ -165,7 +838,10 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "text": "Take the needle down through the front of the cloth 8-10 cm away from where the first stitch will land, in a direction the working thread will travel later. The knot sits on the front of the cloth; the thread comes through to the back." }
+                  {
+                    "type": "text",
+                    "text": "Take the needle down through the front of the cloth 8-10 cm away from where the first stitch will land, in a direction the working thread will travel later. The knot sits on the front of the cloth; the thread comes through to the back."
+                  }
                 ]
               }
             ]
@@ -176,7 +852,10 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "text": "Bring the needle up at the first stitch position and proceed with the pattern. As the working thread crosses over the held tail on the back of the cloth, the tail is overstitched and held in place." }
+                  {
+                    "type": "text",
+                    "text": "Bring the needle up at the first stitch position and proceed with the pattern. As the working thread crosses over the held tail on the back of the cloth, the tail is overstitched and held in place."
+                  }
                 ]
               }
             ]
@@ -187,7 +866,10 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "text": "When the working thread arrives within a few centimetres of the knot, lift the cloth, snip the knot off close to the front, and the held tail is anchored on the back by the overstitching that has happened in between. If the tail extends past the snipped-off knot's position, weave it under four to five back-of-cloth stitches and snip the remainder close." }
+                  {
+                    "type": "text",
+                    "text": "When the working thread arrives within a few centimetres of the knot, lift the cloth, snip the knot off close to the front, and the held tail is anchored on the back by the overstitching that has happened in between. If the tail extends past the snipped-off knot's position, weave it under four to five back-of-cloth stitches and snip the remainder close."
+                  }
                 ]
               }
             ]
@@ -197,39 +879,97 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "How to choose the away direction. The held tail wants to be covered by working thread as the stitching progresses, so the away knot is placed in the direction the pattern is moving. For a pattern worked left-to-right, place the knot to the right of the first stitch. For centre-out stitching, place the knot in the direction of the first row of stitches that will be worked." }
+          {
+            "type": "text",
+            "text": "How to choose the away direction. The held tail wants to be covered by working thread as the stitching progresses, so the away knot is placed in the direction the pattern is moving. For a pattern worked left-to-right, place the knot to the right of the first stitch. For centre-out stitching, place the knot in the direction of the first row of stitches that will be worked."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Variation: the waste knot" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variation: the waste knot"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "A " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "waste-knot" } }], "text": "waste knot" },
-          { "type": "text", "text": " is the away knot tied directly above the first stitch (rather than 8-10 cm away). The held tail is overstitched on the back of the cloth across the first few stitches; the knot is snipped off when the working thread reaches it. Useful on small motifs where the 8-10 cm clearance of the away knot would overflow the pattern area. The risk is that the knot's position is fixed at the start, so if the first stitch lands wrong, the knot is harder to relocate." }
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "waste-knot"
+                }
+              }
+            ],
+            "text": "waste knot"
+          },
+          {
+            "type": "text",
+            "text": " is the away knot tied directly above the first stitch (rather than 8-10 cm away). The held tail is overstitched on the back of the cloth across the first few stitches; the knot is snipped off when the working thread reaches it. Useful on small motifs where the 8-10 cm clearance of the away knot would overflow the pattern area. The risk is that the knot's position is fixed at the start, so if the first stitch lands wrong, the knot is harder to relocate."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The woven-tail finish (every working thread)" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The woven-tail finish (every working thread)"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Every working thread ends the same way: a " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "woven-tail-finish" } }], "text": "woven-tail finish" },
-          { "type": "text", "text": " through four or five completed stitches on the back of the cloth. No knot. Knots show through, snag on later stitches, and look untidy when the back is on display (which it sometimes is, on linen and on pieces backed with see-through fabric)." }
+          {
+            "type": "text",
+            "text": "Every working thread ends the same way: a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "woven-tail-finish"
+                }
+              }
+            ],
+            "text": "woven-tail finish"
+          },
+          {
+            "type": "text",
+            "text": " through four or five completed stitches on the back of the cloth. No knot. Knots show through, snag on later stitches, and look untidy when the back is on display (which it sometimes is, on linen and on pieces backed with see-through fabric)."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Step by step" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step by step"
+          }
+        ]
       },
       {
         "type": "orderedList",
@@ -240,7 +980,10 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "text": "Take the working needle down through the cloth at the last stitch in the sequence. On the back, find four or five completed stitches near the end-point that run in the same direction as each other (the back of a cross-stitch row of bottom legs gives a series of parallel diagonals on the back; perfect for weaving)." }
+                  {
+                    "type": "text",
+                    "text": "Take the working needle down through the cloth at the last stitch in the sequence. On the back, find four or five completed stitches near the end-point that run in the same direction as each other (the back of a cross-stitch row of bottom legs gives a series of parallel diagonals on the back; perfect for weaving)."
+                  }
                 ]
               }
             ]
@@ -251,7 +994,10 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "text": "Slide the needle under those four or five completed stitches, parallel to the cloth. Don't pierce the cloth or the stitches themselves; the needle only goes under the stitches' floats on the back." }
+                  {
+                    "type": "text",
+                    "text": "Slide the needle under those four or five completed stitches, parallel to the cloth. Don't pierce the cloth or the stitches themselves; the needle only goes under the stitches' floats on the back."
+                  }
                 ]
               }
             ]
@@ -262,7 +1008,10 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "text": "Pull the thread all the way through. Snip the remaining tail close to the cloth (a 2-3 mm stub is plenty; a longer stub catches on later stitching)." }
+                  {
+                    "type": "text",
+                    "text": "Pull the thread all the way through. Snip the remaining tail close to the cloth (a 2-3 mm stub is plenty; a longer stub catches on later stitching)."
+                  }
                 ]
               }
             ]
@@ -272,24 +1021,40 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Why four or five stitches. Three is enough to hold under ordinary handling but pulls free occasionally; six and over is wasteful of thread and bulks the back of the cloth. Four to five is the working compromise every public-domain manual converges on." }
+          {
+            "type": "text",
+            "text": "Why four or five stitches. Three is enough to hold under ordinary handling but pulls free occasionally; six and over is wasteful of thread and bulks the back of the cloth. Four to five is the working compromise every public-domain manual converges on."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "When colours change. If the next thread will be a different colour, weave the old tail under stitches of the OLD colour (matching colour shows less from the front than weaving a dark thread under pale stitches, where the dark might shadow through)." }
+          {
+            "type": "text",
+            "text": "When colours change. If the next thread will be a different colour, weave the old tail under stitches of the OLD colour (matching colour shows less from the front than weaving a dark thread under pale stitches, where the dark might shadow through)."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "When the loop start won't work and the away knot is awkward" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When the loop start won't work and the away knot is awkward"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Two situations where the standard methods need a small adaptation:" }
+          {
+            "type": "text",
+            "text": "Two situations where the standard methods need a small adaptation:"
+          }
         ]
       },
       {
@@ -301,8 +1066,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Single isolated motif" },
-                  { "type": "text", "text": " (one initial, one flower, no surrounding stitches). The away knot's held tail won't be overstitched by surrounding work. Use the waste knot directly above the motif and accept that the first three stitches will overstitch the tail; or use a knotless slip-start (bring the needle up at the first stitch, leave a 4 cm tail on the back, hold the tail under the back of the first two or three stitches as you work them — the friction holds)." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Single isolated motif"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (one initial, one flower, no surrounding stitches). The away knot's held tail won't be overstitched by surrounding work. Use the waste knot directly above the motif and accept that the first three stitches will overstitch the tail; or use a knotless slip-start (bring the needle up at the first stitch, leave a 4 cm tail on the back, hold the tail under the back of the first two or three stitches as you work them — the friction holds)."
+                  }
                 ]
               }
             ]
@@ -313,8 +1089,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Single strand on fine linen" },
-                  { "type": "text", "text": " (36-count or finer, one strand). The thread is too thin for the waste-knot's tail to anchor cleanly. Use an away knot 8-10 cm clear and accept the held tail; weave the tail under stitches when the working thread reaches it. The fine-count requires more setup than 14-count Aida, but the methods are the same." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Single strand on fine linen"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (36-count or finer, one strand). The thread is too thin for the waste-knot's tail to anchor cleanly. Use an away knot 8-10 cm clear and accept the held tail; weave the tail under stitches when the working thread reaches it. The fine-count requires more setup than 14-count Aida, but the methods are the same."
+                  }
                 ]
               }
             ]
@@ -323,8 +1110,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Common mistakes" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -332,18 +1126,45 @@
           "heading": "If a thread won't sit right",
           "intro": "Five thread-start and thread-end failures that recur on first counted-thread pieces.",
           "items": [
-            { "symptom": "Loop on the back pulls all the way through the cloth on the first stitch, leaving no anchor", "cause": "The needle didn't catch the loop before the thread was pulled tight, or the loop was held too close to the cloth and slipped past the needle eye on the way through.", "fix": "On the next attempt, hold the loop down with the off-hand thumb against the back of the cloth as the needle goes down through the cloth, so the loop stays open. Bring the needle tip through the loop deliberately before pulling the thread snug." },
-            { "symptom": "Knot on a hard-start shows through the front of the cloth as a visible bump", "cause": "A knot was tied directly behind the first stitch, with no surrounding stitches to absorb the bulk.", "fix": "Pick out the start, use a loop start (even strand count) or away knot (odd) instead. Knots directly on the back of a single stitch always show; the methods above are designed to put the anchor where it doesn't show." },
-            { "symptom": "Woven-tail finish pulls free on the next session's stitching", "cause": "Tail was woven under only two or three stitches, or the stitches were too short to grip.", "fix": "Re-do the finish with four or five stitches and check the tail is parallel to the woven stitches, not crossing them at right angles (a right-angle weave grips less). Stub the snipped tail to 2-3 mm; long stubs unravel out from under their woven stitches more easily." },
-            { "symptom": "The held tail of an away knot has bunched on the back of the cloth", "cause": "Tail wasn't laid flat as the working thread overstitched it.", "fix": "Lift the cloth, work the tail flat with the needle so it sits under the stitches in a single direction. The tail is invisible from the front as long as it's flat; bunched, it can show through as a shadow on pale cloth." },
-            { "symptom": "Strands twist around each other while stitching, getting tighter and frayed-looking", "cause": "The needle was rolled the same direction at every stitch, building twist into the thread.", "fix": "Every dozen stitches or so, let the needle and thread dangle off the back of the cloth so the thread untwists itself. Some stitchers reverse the direction of needle-pull periodically; either method works." }
+            {
+              "symptom": "Loop on the back pulls all the way through the cloth on the first stitch, leaving no anchor",
+              "cause": "The needle didn't catch the loop before the thread was pulled tight, or the loop was held too close to the cloth and slipped past the needle eye on the way through.",
+              "fix": "On the next attempt, hold the loop down with the off-hand thumb against the back of the cloth as the needle goes down through the cloth, so the loop stays open. Bring the needle tip through the loop deliberately before pulling the thread snug."
+            },
+            {
+              "symptom": "Knot on a hard-start shows through the front of the cloth as a visible bump",
+              "cause": "A knot was tied directly behind the first stitch, with no surrounding stitches to absorb the bulk.",
+              "fix": "Pick out the start, use a loop start (even strand count) or away knot (odd) instead. Knots directly on the back of a single stitch always show; the methods above are designed to put the anchor where it doesn't show."
+            },
+            {
+              "symptom": "Woven-tail finish pulls free on the next session's stitching",
+              "cause": "Tail was woven under only two or three stitches, or the stitches were too short to grip.",
+              "fix": "Re-do the finish with four or five stitches and check the tail is parallel to the woven stitches, not crossing them at right angles (a right-angle weave grips less). Stub the snipped tail to 2-3 mm; long stubs unravel out from under their woven stitches more easily."
+            },
+            {
+              "symptom": "The held tail of an away knot has bunched on the back of the cloth",
+              "cause": "Tail wasn't laid flat as the working thread overstitched it.",
+              "fix": "Lift the cloth, work the tail flat with the needle so it sits under the stitches in a single direction. The tail is invisible from the front as long as it's flat; bunched, it can show through as a shadow on pale cloth."
+            },
+            {
+              "symptom": "Strands twist around each other while stitching, getting tighter and frayed-looking",
+              "cause": "The needle was rolled the same direction at every stitch, building twist into the thread.",
+              "fix": "Every dozen stitches or so, let the needle and thread dangle off the back of the cloth so the thread untwists itself. Some stitchers reverse the direction of needle-pull periodically; either method works."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Related tutorials" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Related tutorials"
+          }
+        ]
       },
       {
         "type": "subTutorialCard",

@@ -2,7 +2,7 @@
   "slug": "elderberry-syrup",
   "title": "Elderberry syrup",
   "subtitle": "The kitchen winter standby",
-  "excerpt": "A spiced decoction of dried elderberries finished with raw honey and a splash of brandy. Traditionally taken at the first sign of a winter cold. Always cook the berries — raw Sambucus nigra is not for eating.",
+  "excerpt": "A spiced decoction of dried elderberries finished with raw honey and a splash of brandy. Traditionally taken at the first sign of a winter cold. Always cook the berries, raw Sambucus nigra is not for eating.",
   "type": "REMEDY",
   "categorySlug": "herbal-medicine",
   "subCategorySlug": "immune-support",
@@ -20,37 +20,82 @@
     "totalMinutes": 60,
     "scalable": true,
     "freezable": true,
-    "freezeNotes": "Freezes well in ice-cube trays (10 ml per cube — one adult dose). Pop frozen cubes into a sealed bag and use straight from frozen — drop one into a small mug of warm water for a quick dose. Frozen, the syrup keeps 12 months.",
+    "freezeNotes": "Freezes well in ice-cube trays (10 ml per cube, one adult dose). Pop frozen cubes into a sealed bag and use straight from frozen, drop one into a small mug of warm water for a quick dose. Frozen, the syrup keeps 12 months.",
     "batchable": true,
     "batchNotes": "Doubles and triples cleanly. Decoct in a larger pan; the honey-to-strained-decoction ratio (1:1 by volume) holds at any batch. Gift in 100 ml sterilised bottles labelled with the cook date.",
     "makeAheadNotes": "Refrigerated, the syrup keeps 6 months in a sterilised sealed bottle. Once opened, use within 6 weeks. Make a batch in autumn from the year's dried elderberries and the household has its winter standby.",
-    "dietaryFlags": ["vegetarian", "glutenFree", "dairyFree", "nutFree"],
+    "dietaryFlags": [
+      "vegetarian",
+      "glutenFree",
+      "dairyFree",
+      "nutFree"
+    ],
     "cuisine": null,
     "mealType": null,
     "mood": [],
     "temperatureCelsius": null,
-    "temperatureNote": "The decoction simmers at a slow rolling-bubble (around 95-100°C) for 30 minutes. The honey is stirred in only after the decoction has cooled to hand-warm (about 40°C) — added to hot liquid the honey's enzymes break down and you lose part of what makes raw honey distinct.",
+    "temperatureNote": "The decoction simmers at a slow rolling-bubble (around 95-100°C) for 30 minutes. The honey is stirred in only after the decoction has cooled to hand-warm (about 40°C), added to hot liquid the honey's enzymes break down and you lose part of what makes raw honey distinct.",
     "foundational": false
   },
   "herbal": {
     "primaryHerbSlug": "elderberry",
-    "relatedConditionSlugs": ["common-cold"],
+    "relatedConditionSlugs": [
+      "common-cold"
+    ],
     "preparationType": "syrup",
-    "safetyFlags": ["cook-before-eating", "autoimmune-caution"],
+    "safetyFlags": [
+      "cook-before-eating",
+      "autoimmune-caution"
+    ],
     "requiresMedicalDisclaimer": true
   },
   "recipeTools": [
-    { "slug": "medium-saucepan", "isOptional": false, "notes": "18 cm stainless or enamelled saucepan with a lid. Not aluminium — the acidic decoction picks up metal taste from bare aluminium." },
-    { "slug": "muslin-cloth", "isOptional": false, "notes": "For straining the spent berries out of the decoction." },
-    { "slug": "measuring-jug", "isOptional": false, "notes": "1 L Pyrex for measuring the strained decoction before adding honey." },
-    { "slug": "wooden-spoon", "isOptional": false },
-    { "slug": "funnel-small", "isOptional": false, "notes": "For decanting the finished syrup into bottles." },
-    { "slug": "jam-jars", "isOptional": false, "notes": "Two sterilised 250 ml jam jars or one 500 ml jar with a tight lid. Sterilise in a 140°C oven for 15 minutes; let cool before filling." }
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false,
+      "notes": "18 cm stainless or enamelled saucepan with a lid. Not aluminium, the acidic decoction picks up metal taste from bare aluminium."
+    },
+    {
+      "slug": "muslin-cloth",
+      "isOptional": false,
+      "notes": "For straining the spent berries out of the decoction."
+    },
+    {
+      "slug": "measuring-jug",
+      "isOptional": false,
+      "notes": "1 L Pyrex for measuring the strained decoction before adding honey."
+    },
+    {
+      "slug": "wooden-spoon",
+      "isOptional": false
+    },
+    {
+      "slug": "funnel-small",
+      "isOptional": false,
+      "notes": "For decanting the finished syrup into bottles."
+    },
+    {
+      "slug": "jam-jars",
+      "isOptional": false,
+      "notes": "Two sterilised 250 ml jam jars or one 500 ml jar with a tight lid. Sterilise in a 140°C oven for 15 minutes; let cool before filling."
+    }
   ],
   "glossaryTerms": [
-    { "slug": "decoction", "term": "Decoction", "definition": "A simmered preparation of roots, barks, or hard berries in water — distinct from an infusion of softer leaves or flowers, which is steeped off the heat. The simmer extracts constituents that wouldn't release from a hot-water steep." },
-    { "slug": "diaphoretic", "term": "Diaphoretic", "definition": "A herb traditionally taken to encourage a mild sweat. Western herbal practice uses diaphoretic herbs at the early stage of a feverish cold to support the body's own response." },
-    { "slug": "cyanogenic-glycoside", "term": "Cyanogenic glycoside", "definition": "A class of compounds present in raw elderberries (and apple pips, almond stones, and several other plants) that release small amounts of hydrogen cyanide on digestion. Heat destroys them — which is why elderberries are always cooked before eating or preserving." }
+    {
+      "slug": "decoction",
+      "term": "Decoction",
+      "definition": "A simmered preparation of roots, barks, or hard berries in water, distinct from an infusion of softer leaves or flowers, which is steeped off the heat. The simmer extracts constituents that wouldn't release from a hot-water steep."
+    },
+    {
+      "slug": "diaphoretic",
+      "term": "Diaphoretic",
+      "definition": "A herb traditionally taken to encourage a mild sweat. Western herbal practice uses diaphoretic herbs at the early stage of a feverish cold to support the body's own response."
+    },
+    {
+      "slug": "cyanogenic-glycoside",
+      "term": "Cyanogenic glycoside",
+      "definition": "A class of compounds present in raw elderberries (and apple pips, almond stones, and several other plants) that release small amounts of hydrogen cyanide on digestion. Heat destroys them, which is why elderberries are always cooked before eating or preserving."
+    }
   ],
   "body": {
     "type": "doc",
@@ -58,17 +103,513 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Elderberry syrup is the kitchen's winter standby. A short " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "decoction" } }], "text": "decoction" },
-          { "type": "text", "text": " of dried elderberries with cinnamon, cloves, and ginger, strained and stirred together with raw honey at the 1:1 ratio that takes the syrup from a pourable decoction to a thick spoonable one. A splash of brandy at the end raises the alcohol enough for a six-month fridge life. The result lives in a sterilised jar on the door of the fridge from autumn through winter; a teaspoon at the first sniffle is the traditional use." }
+          {
+            "type": "text",
+            "text": "Elderberry syrup is the kitchen's winter standby. A short "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "decoction"
+                }
+              }
+            ],
+            "text": "decoction"
+          },
+          {
+            "type": "text",
+            "text": " of dried elderberries with cinnamon, cloves, and ginger, strained and stirred together with raw honey at the 1:1 ratio that takes the syrup from a pourable decoction to a thick spoonable one. A splash of brandy at the end raises the alcohol enough for a six-month fridge life. The result lives in a sterilised jar on the door of the fridge from autumn through winter; a teaspoon at the first sniffle is the traditional use."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Elderberry (Sambucus nigra) is the dark blue-black berry of the common elder, harvested in late summer and dried for winter use. Maud Grieve, in A Modern Herbal (1931), records the berry's centuries-long use as a " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "diaphoretic" } }], "text": "diaphoretic" },
-          { "type": "text", "text": " in cold and feverish conditions — taken hot, the syrup encourages a mild sweat at the start of a chill. The 2014 EMA monograph on Sambuci fructus places the herb's traditional use at the start of a cold, with the dosing the syrup below works to." }
+          {
+            "type": "text",
+            "text": "Elderberry (Sambucus nigra) is the dark blue-black berry of the common elder, harvested in late summer and dried for winter use. Maud Grieve, in A Modern Herbal (1931), records the berry's centuries-long use as a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "diaphoretic"
+                }
+              }
+            ],
+            "text": "diaphoretic"
+          },
+          {
+            "type": "text",
+            "text": " in cold and feverish conditions, taken hot, the syrup encourages a mild sweat at the start of a chill. The 2014 EMA monograph on Sambuci fructus places the herb's traditional use at the start of a cold, with the dosing the syrup below works to."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Important safety notes",
+          "body": "Not medical advice. Consult a qualified herbalist or doctor for ongoing or serious symptoms. Never eat raw elderberries. Raw Sambucus nigra berries (and the leaves, bark, and unripe berries of every elder species) contain cyanogenic glycosides that release small amounts of cyanide on digestion. Cooking destroys them. The syrup below cooks the berries for 30 minutes, which is more than enough. Even so: never nibble a raw berry while you are preparing the decoction, never use unstrained decoction, and never serve a raw-berry preparation to anyone. Foraging caution. Common elder (Sambucus nigra) is distinct from dwarf elder (Sambucus ebulus), which is not safe to use in any preparation. Dwarf elder is a low-growing herbaceous plant that dies back each winter; common elder is a tall woody shrub or small tree. If you can't positively identify the plant, use cultivated dried berries from a reputable herbal supplier (Baldwins, Neal's Yard, Hedgerow Wines). Autoimmune conditions. Elderberry modulates immune activity. Traditional western herbal practice advises readers with autoimmune conditions (lupus, rheumatoid arthritis, multiple sclerosis, Hashimoto's, Crohn's, ulcerative colitis) to consult a herbalist before continuous use. Short courses of a few days at the start of a cold are generally fine; daily preventive use over weeks needs a personalised conversation. Diabetes. The syrup is roughly 50 per cent honey by weight; one teaspoon contains around 7 g of sugar. Readers managing blood-sugar should factor this in. Infants under one year. Honey is not given to infants under twelve months owing to the risk of infant botulism. This is a categorical rule for any honey-containing preparation, not specific to herbal syrups. A honey-free elderberry syrup is possible (replace the honey with maple syrup or vegetable glycerine), but the shelf life drops to 4 weeks refrigerated. Paediatric use beyond infancy. Paediatric dosing is not adult-divided-by-half. For children one to twelve, consult a herbalist who specialises in children's herbal medicine, or use a paediatric syrup the herbalist has scaled. The Maud Grieve traditional paediatric dose (5 ml twice a day for a child of five and above) is the conservative reference."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "dried-elderberries",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "Sambucus nigra. Whole dried berries from a herbal supplier, the supermarket dried berries sold as a baking ingredient work equally well as long as they are pure berry with no added sweetener",
+              "isOptional": false,
+              "groupLabel": "Decoction"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 500,
+              "unit": "ml",
+              "prepNote": "filtered if your tap water is heavily chlorinated",
+              "isOptional": false,
+              "groupLabel": "Decoction"
+            },
+            {
+              "ingredientSlug": "cinnamon-stick",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "broken in half, the surface area helps the extraction",
+              "isOptional": false,
+              "groupLabel": "Decoction"
+            },
+            {
+              "ingredientSlug": "cloves",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "whole cloves",
+              "isOptional": false,
+              "groupLabel": "Decoction"
+            },
+            {
+              "ingredientSlug": "ginger-root",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "fresh, sliced into 3-4 thin rounds, skin on",
+              "isOptional": false,
+              "groupLabel": "Decoction"
+            },
+            {
+              "ingredientSlug": "honey",
+              "amount": 180,
+              "unit": "ml",
+              "prepNote": "raw local honey for preference, supermarket clear honey works but has lost the enzymes the slow stir-in is meant to preserve. Do not use for any preparation served to infants under twelve months",
+              "isOptional": false,
+              "groupLabel": "Sweeten and preserve"
+            },
+            {
+              "ingredientSlug": "brandy",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": "optional, extends the fridge shelf life from 3 to 6 months. Omit for a syrup that will be used within 8 weeks, or for a non-alcoholic version (paediatric, recovery, pregnancy)",
+              "isOptional": true,
+              "groupLabel": "Sweeten and preserve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The ratio is 1 part dried berries to 8-9 parts water by weight (60 g of berries to 500 ml of water sits at the standard end of that range), then 1 part raw honey to 1 part strained decoction by volume. A higher honey ratio gives a thicker, sweeter syrup with a longer shelf life; a lower ratio gives a thinner more tonic-style preparation but won't keep past a month. State the ratio rather than the precise numbers when you scale."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "1. Decoct the berries, 30 minutes"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Combine the dried elderberries, water, cinnamon stick, cloves, and sliced ginger in the saucepan. Bring to a gentle simmer over a medium heat (a slow rolling bubble, not a furious boil) and clap the lid on. Hold the simmer for 30 minutes. The water will reduce by roughly a third; the berries will plump up and split, releasing their colour into the liquid. The decoction should be deep purple-black with a strong fruity-spiced smell."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The 30 minutes is both extraction time and food safety: the simmer is well beyond the heat and duration that destroys the "
+          },
+          {
+            "type": "text",
+            "text": "cyanogenic glycosides",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cyanogenic-glycoside"
+                }
+              },
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cyanogenic-glycoside"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " in raw elderberries. Do not be tempted to cut it short. If the saucepan goes dry before time, top up with another 100 ml of water and continue, the syrup won't suffer."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "2. Strain and press"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Take the pan off the heat. Set the muslin in a fine sieve over the measuring jug. Pour the decoction through; let it drain freely for two or three minutes, then gather the corners of the muslin and squeeze the spent berries and spice firmly. The squeeze gives up another 30-50 ml of dense, dark, fully-extracted liquid that you don't want to lose. You should end up with around 350 ml of strained decoction; top up with hot water to 350 ml if you got less, or set aside any excess to cool and dilute as a hot drink."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Discard the spent berries on the compost. The decoction at this point is technically usable: a hot mugful with a spoonful of honey is the traditional working herbalist's quick remedy for a chill. But it won't keep more than 24 hours in the fridge. The honey-finish is what makes it the winter standby."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "3. Cool to hand-warm, stir in the honey"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Let the decoction cool in the measuring jug to hand-warm, around 40°C. A clean fingertip dipped into the side of the jug should feel pleasant, not hot. 15 minutes on the worktop usually does it. Cooling matters: raw honey holds enzymes and aromatic compounds that break down above about 50°C. Stirring honey into still-hot decoction strips out the part of the raw honey that makes the difference to a supermarket clear honey."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once the decoction is hand-warm, pour in the honey, 180 ml is the rule for 350 ml of decoction. Stir gently with a clean wooden spoon until the honey has dissolved completely and the liquid is uniformly glossy and dark. Stir in the brandy if you are using it."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "4. Bottle and label"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Funnel the syrup into the sterilised jars. Leave a centimetre of head-space at the top so the lid screws on without overflow. Cap tightly and label the jars with the herb, the cook date, and the use-by date (six months from cooking with brandy; three months without). Refrigerate immediately."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Dosing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Adult dose: 10 ml (two teaspoons) up to three times a day at the first sign of a cold, taken straight or stirred into a small mug of warm water. Continue for the duration of the acute episode, typically three to five days; up to seven days at the outside. Long preventive courses (a daily teaspoon all winter) are common in popular use but sit outside the conservative traditional pattern, short acute courses are the documented use."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Paediatric use is not adult-divided-by-half. Consult a herbalist who specialises in children's herbal medicine, or a paediatric doctor, before using any herbal preparation in children under twelve. The Maud Grieve traditional paediatric dose for elderberry syrup is 5 ml twice a day for a child of five and above; below five, the syrup is not used. Never given to infants under twelve months because of the honey."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If symptoms have not started easing within three days, or if they get worse, the syrup is not the right tool, see your GP. A persistent cold is the body asking for assessment, not a stronger remedy."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Storage"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Refrigerated in the sealed sterilised jar: 6 months with the brandy, 3 months without. Once opened, use within 6 weeks regardless. Discard at any sign of mould (fuzzy patch on the surface, white film, off smell), at any sign of fermentation (active bubbling, hissing on opening, pressure on the lid), or if the syrup separates and won't recombine on a stir."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a longer-life store, freeze the syrup in ice-cube trays: 10 ml per cube is one adult dose. Pop frozen cubes into a sealed freezer bag and use straight from frozen, drop one into a small mug of just-boiled water for a quick warm drink. Frozen, the syrup keeps 12 months without quality loss."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Sourcing the berries"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Foraged elderberries are the traditional source. Pick from a confirmed common elder (Sambucus nigra) in late August or September, when the berries are fully ripe, deep blue-black, and hanging in heavy clusters. Strip the berries from the stalks with a fork; the stalks contain higher concentrations of the same cyanogenic glycosides as raw berries, and a stalky decoction is more taxing on the liver. Then either use fresh in the recipe above (no need to dry first; just cook the same way), or dry on a tray in a low oven (50°C with the door cracked open) for 4-6 hours until they rattle when shaken."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Identification matters. Common elder is a tall woody shrub or small tree, four to ten metres, with compound leaves and flat sprays of small cream-white flowers in early summer that ripen into hanging clusters of blue-black berries. Dwarf elder (Sambucus ebulus) is a low herbaceous plant, less than two metres, dying back each winter, with red-purple stems and a sour smell when crushed. Dwarf elder berries should not be used in any preparation. If the identification is at all uncertain, buy dried berries from a herbal supplier, the cultivated dried trade is reliably Sambucus nigra. The Garden elder growing guide covers planting and harvest for the household elder hedge."
+          }
+        ]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": {
+          "tutorialSlug": "growing-elder-sambucus-nigra"
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When NOT to use this syrup"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "See your doctor if cold symptoms last more than ten days, if the fever rises above 39°C, if breathing is laboured, or if symptoms worsen after initially improving. Elderberry syrup is for the early stage of an uncomplicated common cold; a persistent or deepening illness needs assessment, not a stronger herbal."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Skip the syrup in autoimmune conditions without first consulting a herbalist; the immune-modulating action makes long courses unpredictable in lupus, rheumatoid arthritis, MS, Hashimoto's, and other conditions where the immune balance is medication-controlled. Skip in infants under twelve months because of the honey. Pregnancy: elderberry syrup is widely tolerated and broadly used in pregnancy at small acute doses, but the publication does not assert pregnancy safety, so consult a herbalist or your midwife before any continuous use."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If the syrup went sideways",
+          "intro": "The five common failure modes for an elderberry syrup.",
+          "items": [
+            {
+              "symptom": "Syrup ferments after a few weeks, bubbles, pressure on the lid, fizzy on the tongue",
+              "cause": "Wild yeasts from the raw honey have started a slow fermentation. The cooking destroys yeasts on the berries but raw honey is itself a slow live medium. With the brandy included, fermentation is rare; without it, more likely in a warm fridge or near the door.",
+              "fix": "Discard the jar. Fermented syrup is no longer the same preparation, and the alcohol content can climb above safe assumptions for paediatric dosing or for anyone driving. Next batch: include the brandy splash, store deep in the fridge not in the door, and refrigerate within 30 minutes of bottling."
+            },
+            {
+              "symptom": "Syrup separates into a watery top and a thicker bottom",
+              "cause": "Honey was stirred in while the decoction was still too hot, or the stir was incomplete and the honey settled.",
+              "fix": "Stir vigorously to recombine; if it re-separates within hours, the honey didn't dissolve fully. Pour back into a clean pan, warm gently to 40°C, stir until uniform, return to a fresh sterilised jar."
+            },
+            {
+              "symptom": "Syrup tastes thin and unspiced",
+              "cause": "Dried berries were old (a year or more on the shelf) or the simmer was too brief.",
+              "fix": "Source fresh dried berries, the smell from the bag should be tart and fruity, not papery. Re-do the decoction with a full 30-minute simmer; the longer extraction is more important than a stronger heat."
+            },
+            {
+              "symptom": "White fuzzy patch on the surface within the first month",
+              "cause": "A non-sterilised jar, or jar contents poured in while the syrup was still warm, condensing water back onto the surface.",
+              "fix": "Discard the jar, surface mould on a sweetened preparation means the bottling step failed. Next batch: sterilise jars in a 140°C oven for 15 minutes and let them cool to room temperature before filling; cap only after the syrup has fully cooled."
+            },
+            {
+              "symptom": "Strong alcohol burn at the back of the throat on a teaspoon dose",
+              "cause": "Brandy ratio too high for the batch.",
+              "fix": "The 30 ml in 350 ml of decoction works out at under 4 per cent ABV in the finished syrup, barely a wine. If the burn is significant, you used more brandy than the recipe, or measured by jigger rather than ml. Next batch: measure the brandy in a marked jug."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "revisedFrom": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Elderberry syrup is the kitchen's winter standby. A short "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "decoction"
+                }
+              }
+            ],
+            "text": "decoction"
+          },
+          {
+            "type": "text",
+            "text": " of dried elderberries with cinnamon, cloves, and ginger, strained and stirred together with raw honey at the 1:1 ratio that takes the syrup from a pourable decoction to a thick spoonable one. A splash of brandy at the end raises the alcohol enough for a six-month fridge life. The result lives in a sterilised jar on the door of the fridge from autumn through winter; a teaspoon at the first sniffle is the traditional use."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Elderberry (Sambucus nigra) is the dark blue-black berry of the common elder, harvested in late summer and dried for winter use. Maud Grieve, in A Modern Herbal (1931), records the berry's centuries-long use as a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "diaphoretic"
+                }
+              }
+            ],
+            "text": "diaphoretic"
+          },
+          {
+            "type": "text",
+            "text": " in cold and feverish conditions — taken hot, the syrup encourages a mild sweat at the start of a chill. The 2014 EMA monograph on Sambuci fructus places the herb's traditional use at the start of a cold, with the dosing the syrup below works to."
+          }
         ]
       },
       {
@@ -81,152 +622,309 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Ingredients" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            { "ingredientSlug": "dried-elderberries", "amount": 60, "unit": "g", "prepNote": "Sambucus nigra. Whole dried berries from a herbal supplier — the supermarket dried berries sold as a baking ingredient work equally well as long as they are pure berry with no added sweetener", "isOptional": false, "groupLabel": "Decoction" },
-            { "ingredientSlug": "water", "amount": 500, "unit": "ml", "prepNote": "filtered if your tap water is heavily chlorinated", "isOptional": false, "groupLabel": "Decoction" },
-            { "ingredientSlug": "cinnamon-stick", "amount": 1, "unit": "each", "prepNote": "broken in half — the surface area helps the extraction", "isOptional": false, "groupLabel": "Decoction" },
-            { "ingredientSlug": "cloves", "amount": 4, "unit": "each", "prepNote": "whole cloves", "isOptional": false, "groupLabel": "Decoction" },
-            { "ingredientSlug": "ginger-root", "amount": 15, "unit": "g", "prepNote": "fresh, sliced into 3-4 thin rounds, skin on", "isOptional": false, "groupLabel": "Decoction" },
-            { "ingredientSlug": "honey", "amount": 180, "unit": "ml", "prepNote": "raw local honey for preference — supermarket clear honey works but has lost the enzymes the slow stir-in is meant to preserve. Do not use for any preparation served to infants under twelve months", "isOptional": false, "groupLabel": "Sweeten and preserve" },
-            { "ingredientSlug": "brandy", "amount": 30, "unit": "ml", "prepNote": "optional — extends the fridge shelf life from 3 to 6 months. Omit for a syrup that will be used within 8 weeks, or for a non-alcoholic version (paediatric, recovery, pregnancy)", "isOptional": true, "groupLabel": "Sweeten and preserve" }
+            {
+              "ingredientSlug": "dried-elderberries",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "Sambucus nigra. Whole dried berries from a herbal supplier — the supermarket dried berries sold as a baking ingredient work equally well as long as they are pure berry with no added sweetener",
+              "isOptional": false,
+              "groupLabel": "Decoction"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 500,
+              "unit": "ml",
+              "prepNote": "filtered if your tap water is heavily chlorinated",
+              "isOptional": false,
+              "groupLabel": "Decoction"
+            },
+            {
+              "ingredientSlug": "cinnamon-stick",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "broken in half — the surface area helps the extraction",
+              "isOptional": false,
+              "groupLabel": "Decoction"
+            },
+            {
+              "ingredientSlug": "cloves",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "whole cloves",
+              "isOptional": false,
+              "groupLabel": "Decoction"
+            },
+            {
+              "ingredientSlug": "ginger-root",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "fresh, sliced into 3-4 thin rounds, skin on",
+              "isOptional": false,
+              "groupLabel": "Decoction"
+            },
+            {
+              "ingredientSlug": "honey",
+              "amount": 180,
+              "unit": "ml",
+              "prepNote": "raw local honey for preference — supermarket clear honey works but has lost the enzymes the slow stir-in is meant to preserve. Do not use for any preparation served to infants under twelve months",
+              "isOptional": false,
+              "groupLabel": "Sweeten and preserve"
+            },
+            {
+              "ingredientSlug": "brandy",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": "optional — extends the fridge shelf life from 3 to 6 months. Omit for a syrup that will be used within 8 weeks, or for a non-alcoholic version (paediatric, recovery, pregnancy)",
+              "isOptional": true,
+              "groupLabel": "Sweeten and preserve"
+            }
           ]
         }
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The ratio is 1 part dried berries to 8-9 parts water by weight (60 g of berries to 500 ml of water sits at the standard end of that range), then 1 part raw honey to 1 part strained decoction by volume. A higher honey ratio gives a thicker, sweeter syrup with a longer shelf life; a lower ratio gives a thinner more tonic-style preparation but won't keep past a month. State the ratio rather than the precise numbers when you scale." }
+          {
+            "type": "text",
+            "text": "The ratio is 1 part dried berries to 8-9 parts water by weight (60 g of berries to 500 ml of water sits at the standard end of that range), then 1 part raw honey to 1 part strained decoction by volume. A higher honey ratio gives a thicker, sweeter syrup with a longer shelf life; a lower ratio gives a thinner more tonic-style preparation but won't keep past a month. State the ratio rather than the precise numbers when you scale."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "1. Decoct the berries, 30 minutes" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Combine the dried elderberries, water, cinnamon stick, cloves, and sliced ginger in the saucepan. Bring to a gentle simmer over a medium heat (a slow rolling bubble, not a furious boil) and clap the lid on. Hold the simmer for 30 minutes. The water will reduce by roughly a third; the berries will plump up and split, releasing their colour into the liquid. The decoction should be deep purple-black with a strong fruity-spiced smell." }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "The 30 minutes is both extraction time and food safety: the simmer is well beyond the heat and duration that destroys the cyanogenic glycosides in raw elderberries. Do not be tempted to cut it short. If the saucepan goes dry before time, top up with another 100 ml of water and continue — the syrup won't suffer." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "2. Strain and press" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 3
+        },
         "content": [
-          { "type": "text", "text": "Take the pan off the heat. Set the muslin in a fine sieve over the measuring jug. Pour the decoction through; let it drain freely for two or three minutes, then gather the corners of the muslin and squeeze the spent berries and spice firmly. The squeeze gives up another 30-50 ml of dense, dark, fully-extracted liquid that you don't want to lose. You should end up with around 350 ml of strained decoction; top up with hot water to 350 ml if you got less, or set aside any excess to cool and dilute as a hot drink." }
+          {
+            "type": "text",
+            "text": "1. Decoct the berries, 30 minutes"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Discard the spent berries on the compost. The decoction at this point is technically usable: a hot mugful with a spoonful of honey is the traditional working herbalist's quick remedy for a chill. But it won't keep more than 24 hours in the fridge. The honey-finish is what makes it the winter standby." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "3. Cool to hand-warm, stir in the honey" }]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "Let the decoction cool in the measuring jug to hand-warm — around 40°C. A clean fingertip dipped into the side of the jug should feel pleasant, not hot. 15 minutes on the worktop usually does it. Cooling matters: raw honey holds enzymes and aromatic compounds that break down above about 50°C. Stirring honey into still-hot decoction strips out the part of the raw honey that makes the difference to a supermarket clear honey." }
+          {
+            "type": "text",
+            "text": "Combine the dried elderberries, water, cinnamon stick, cloves, and sliced ginger in the saucepan. Bring to a gentle simmer over a medium heat (a slow rolling bubble, not a furious boil) and clap the lid on. Hold the simmer for 30 minutes. The water will reduce by roughly a third; the berries will plump up and split, releasing their colour into the liquid. The decoction should be deep purple-black with a strong fruity-spiced smell."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Once the decoction is hand-warm, pour in the honey — 180 ml is the rule for 350 ml of decoction. Stir gently with a clean wooden spoon until the honey has dissolved completely and the liquid is uniformly glossy and dark. Stir in the brandy if you are using it." }
+          {
+            "type": "text",
+            "text": "The 30 minutes is both extraction time and food safety: the simmer is well beyond the heat and duration that destroys the cyanogenic glycosides in raw elderberries. Do not be tempted to cut it short. If the saucepan goes dry before time, top up with another 100 ml of water and continue — the syrup won't suffer."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "4. Bottle and label" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "2. Strain and press"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Funnel the syrup into the sterilised jars. Leave a centimetre of head-space at the top so the lid screws on without overflow. Cap tightly and label the jars with the herb, the cook date, and the use-by date (six months from cooking with brandy; three months without). Refrigerate immediately." }
+          {
+            "type": "text",
+            "text": "Take the pan off the heat. Set the muslin in a fine sieve over the measuring jug. Pour the decoction through; let it drain freely for two or three minutes, then gather the corners of the muslin and squeeze the spent berries and spice firmly. The squeeze gives up another 30-50 ml of dense, dark, fully-extracted liquid that you don't want to lose. You should end up with around 350 ml of strained decoction; top up with hot water to 350 ml if you got less, or set aside any excess to cool and dilute as a hot drink."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Discard the spent berries on the compost. The decoction at this point is technically usable: a hot mugful with a spoonful of honey is the traditional working herbalist's quick remedy for a chill. But it won't keep more than 24 hours in the fridge. The honey-finish is what makes it the winter standby."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Dosing" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 3
+        },
         "content": [
-          { "type": "text", "text": "Adult dose: 10 ml (two teaspoons) up to three times a day at the first sign of a cold, taken straight or stirred into a small mug of warm water. Continue for the duration of the acute episode, typically three to five days; up to seven days at the outside. Long preventive courses (a daily teaspoon all winter) are common in popular use but sit outside the conservative traditional pattern — short acute courses are the documented use." }
+          {
+            "type": "text",
+            "text": "3. Cool to hand-warm, stir in the honey"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Paediatric use is not adult-divided-by-half. Consult a herbalist who specialises in children's herbal medicine, or a paediatric doctor, before using any herbal preparation in children under twelve. The Maud Grieve traditional paediatric dose for elderberry syrup is 5 ml twice a day for a child of five and above; below five, the syrup is not used. Never given to infants under twelve months because of the honey." }
+          {
+            "type": "text",
+            "text": "Let the decoction cool in the measuring jug to hand-warm — around 40°C. A clean fingertip dipped into the side of the jug should feel pleasant, not hot. 15 minutes on the worktop usually does it. Cooling matters: raw honey holds enzymes and aromatic compounds that break down above about 50°C. Stirring honey into still-hot decoction strips out the part of the raw honey that makes the difference to a supermarket clear honey."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "If symptoms have not started easing within three days, or if they get worse, the syrup is not the right tool — see your GP. A persistent cold is the body asking for assessment, not a stronger remedy." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Storage" }]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "Refrigerated in the sealed sterilised jar: 6 months with the brandy, 3 months without. Once opened, use within 6 weeks regardless. Discard at any sign of mould (fuzzy patch on the surface, white film, off smell), at any sign of fermentation (active bubbling, hissing on opening, pressure on the lid), or if the syrup separates and won't recombine on a stir." }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "For a longer-life store, freeze the syrup in ice-cube trays: 10 ml per cube is one adult dose. Pop frozen cubes into a sealed freezer bag and use straight from frozen — drop one into a small mug of just-boiled water for a quick warm drink. Frozen, the syrup keeps 12 months without quality loss." }
+          {
+            "type": "text",
+            "text": "Once the decoction is hand-warm, pour in the honey — 180 ml is the rule for 350 ml of decoction. Stir gently with a clean wooden spoon until the honey has dissolved completely and the liquid is uniformly glossy and dark. Stir in the brandy if you are using it."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Sourcing the berries" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 3
+        },
         "content": [
-          { "type": "text", "text": "Foraged elderberries are the traditional source. Pick from a confirmed common elder (Sambucus nigra) in late August or September, when the berries are fully ripe, deep blue-black, and hanging in heavy clusters. Strip the berries from the stalks with a fork; the stalks contain higher concentrations of the same cyanogenic glycosides as raw berries, and a stalky decoction is more taxing on the liver. Then either use fresh in the recipe above (no need to dry first; just cook the same way), or dry on a tray in a low oven (50°C with the door cracked open) for 4-6 hours until they rattle when shaken." }
+          {
+            "type": "text",
+            "text": "4. Bottle and label"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Identification matters. Common elder is a tall woody shrub or small tree, four to ten metres, with compound leaves and flat sprays of small cream-white flowers in early summer that ripen into hanging clusters of blue-black berries. Dwarf elder (Sambucus ebulus) is a low herbaceous plant, less than two metres, dying back each winter, with red-purple stems and a sour smell when crushed. Dwarf elder berries should not be used in any preparation. If the identification is at all uncertain, buy dried berries from a herbal supplier — the cultivated dried trade is reliably Sambucus nigra. The Garden elder growing guide covers planting and harvest for the household elder hedge." }
+          {
+            "type": "text",
+            "text": "Funnel the syrup into the sterilised jars. Leave a centimetre of head-space at the top so the lid screws on without overflow. Cap tightly and label the jars with the herb, the cook date, and the use-by date (six months from cooking with brandy; three months without). Refrigerate immediately."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Dosing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Adult dose: 10 ml (two teaspoons) up to three times a day at the first sign of a cold, taken straight or stirred into a small mug of warm water. Continue for the duration of the acute episode, typically three to five days; up to seven days at the outside. Long preventive courses (a daily teaspoon all winter) are common in popular use but sit outside the conservative traditional pattern — short acute courses are the documented use."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Paediatric use is not adult-divided-by-half. Consult a herbalist who specialises in children's herbal medicine, or a paediatric doctor, before using any herbal preparation in children under twelve. The Maud Grieve traditional paediatric dose for elderberry syrup is 5 ml twice a day for a child of five and above; below five, the syrup is not used. Never given to infants under twelve months because of the honey."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If symptoms have not started easing within three days, or if they get worse, the syrup is not the right tool — see your GP. A persistent cold is the body asking for assessment, not a stronger remedy."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Storage"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Refrigerated in the sealed sterilised jar: 6 months with the brandy, 3 months without. Once opened, use within 6 weeks regardless. Discard at any sign of mould (fuzzy patch on the surface, white film, off smell), at any sign of fermentation (active bubbling, hissing on opening, pressure on the lid), or if the syrup separates and won't recombine on a stir."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a longer-life store, freeze the syrup in ice-cube trays: 10 ml per cube is one adult dose. Pop frozen cubes into a sealed freezer bag and use straight from frozen — drop one into a small mug of just-boiled water for a quick warm drink. Frozen, the syrup keeps 12 months without quality loss."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Sourcing the berries"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Foraged elderberries are the traditional source. Pick from a confirmed common elder (Sambucus nigra) in late August or September, when the berries are fully ripe, deep blue-black, and hanging in heavy clusters. Strip the berries from the stalks with a fork; the stalks contain higher concentrations of the same cyanogenic glycosides as raw berries, and a stalky decoction is more taxing on the liver. Then either use fresh in the recipe above (no need to dry first; just cook the same way), or dry on a tray in a low oven (50°C with the door cracked open) for 4-6 hours until they rattle when shaken."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Identification matters. Common elder is a tall woody shrub or small tree, four to ten metres, with compound leaves and flat sprays of small cream-white flowers in early summer that ripen into hanging clusters of blue-black berries. Dwarf elder (Sambucus ebulus) is a low herbaceous plant, less than two metres, dying back each winter, with red-purple stems and a sour smell when crushed. Dwarf elder berries should not be used in any preparation. If the identification is at all uncertain, buy dried berries from a herbal supplier — the cultivated dried trade is reliably Sambucus nigra. The Garden elder growing guide covers planting and harvest for the household elder hedge."
+          }
         ]
       },
       {
@@ -237,19 +935,32 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "When NOT to use this syrup" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "See your doctor if cold symptoms last more than ten days, if the fever rises above 39°C, if breathing is laboured, or if symptoms worsen after initially improving. Elderberry syrup is for the early stage of an uncomplicated common cold; a persistent or deepening illness needs assessment, not a stronger herbal." }
+          {
+            "type": "text",
+            "text": "When NOT to use this syrup"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Skip the syrup in autoimmune conditions without first consulting a herbalist; the immune-modulating action makes long courses unpredictable in lupus, rheumatoid arthritis, MS, Hashimoto's, and other conditions where the immune balance is medication-controlled. Skip in infants under twelve months because of the honey. Pregnancy: elderberry syrup is widely tolerated and broadly used in pregnancy at small acute doses, but the publication does not assert pregnancy safety, so consult a herbalist or your midwife before any continuous use." }
+          {
+            "type": "text",
+            "text": "See your doctor if cold symptoms last more than ten days, if the fever rises above 39°C, if breathing is laboured, or if symptoms worsen after initially improving. Elderberry syrup is for the early stage of an uncomplicated common cold; a persistent or deepening illness needs assessment, not a stronger herbal."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Skip the syrup in autoimmune conditions without first consulting a herbalist; the immune-modulating action makes long courses unpredictable in lupus, rheumatoid arthritis, MS, Hashimoto's, and other conditions where the immune balance is medication-controlled. Skip in infants under twelve months because of the honey. Pregnancy: elderberry syrup is widely tolerated and broadly used in pregnancy at small acute doses, but the publication does not assert pregnancy safety, so consult a herbalist or your midwife before any continuous use."
+          }
         ]
       },
       {
@@ -258,11 +969,31 @@
           "heading": "If the syrup went sideways",
           "intro": "The five common failure modes for an elderberry syrup.",
           "items": [
-            { "symptom": "Syrup ferments after a few weeks — bubbles, pressure on the lid, fizzy on the tongue", "cause": "Wild yeasts from the raw honey have started a slow fermentation. The cooking destroys yeasts on the berries but raw honey is itself a slow live medium. With the brandy included, fermentation is rare; without it, more likely in a warm fridge or near the door.", "fix": "Discard the jar. Fermented syrup is no longer the same preparation, and the alcohol content can climb above safe assumptions for paediatric dosing or for anyone driving. Next batch: include the brandy splash, store deep in the fridge not in the door, and refrigerate within 30 minutes of bottling." },
-            { "symptom": "Syrup separates into a watery top and a thicker bottom", "cause": "Honey was stirred in while the decoction was still too hot, or the stir was incomplete and the honey settled.", "fix": "Stir vigorously to recombine; if it re-separates within hours, the honey didn't dissolve fully. Pour back into a clean pan, warm gently to 40°C, stir until uniform, return to a fresh sterilised jar." },
-            { "symptom": "Syrup tastes thin and unspiced", "cause": "Dried berries were old (a year or more on the shelf) or the simmer was too brief.", "fix": "Source fresh dried berries — the smell from the bag should be tart and fruity, not papery. Re-do the decoction with a full 30-minute simmer; the longer extraction is more important than a stronger heat." },
-            { "symptom": "White fuzzy patch on the surface within the first month", "cause": "A non-sterilised jar, or jar contents poured in while the syrup was still warm, condensing water back onto the surface.", "fix": "Discard the jar — surface mould on a sweetened preparation means the bottling step failed. Next batch: sterilise jars in a 140°C oven for 15 minutes and let them cool to room temperature before filling; cap only after the syrup has fully cooled." },
-            { "symptom": "Strong alcohol burn at the back of the throat on a teaspoon dose", "cause": "Brandy ratio too high for the batch.", "fix": "The 30 ml in 350 ml of decoction works out at under 4 per cent ABV in the finished syrup — barely a wine. If the burn is significant, you used more brandy than the recipe, or measured by jigger rather than ml. Next batch: measure the brandy in a marked jug." }
+            {
+              "symptom": "Syrup ferments after a few weeks — bubbles, pressure on the lid, fizzy on the tongue",
+              "cause": "Wild yeasts from the raw honey have started a slow fermentation. The cooking destroys yeasts on the berries but raw honey is itself a slow live medium. With the brandy included, fermentation is rare; without it, more likely in a warm fridge or near the door.",
+              "fix": "Discard the jar. Fermented syrup is no longer the same preparation, and the alcohol content can climb above safe assumptions for paediatric dosing or for anyone driving. Next batch: include the brandy splash, store deep in the fridge not in the door, and refrigerate within 30 minutes of bottling."
+            },
+            {
+              "symptom": "Syrup separates into a watery top and a thicker bottom",
+              "cause": "Honey was stirred in while the decoction was still too hot, or the stir was incomplete and the honey settled.",
+              "fix": "Stir vigorously to recombine; if it re-separates within hours, the honey didn't dissolve fully. Pour back into a clean pan, warm gently to 40°C, stir until uniform, return to a fresh sterilised jar."
+            },
+            {
+              "symptom": "Syrup tastes thin and unspiced",
+              "cause": "Dried berries were old (a year or more on the shelf) or the simmer was too brief.",
+              "fix": "Source fresh dried berries — the smell from the bag should be tart and fruity, not papery. Re-do the decoction with a full 30-minute simmer; the longer extraction is more important than a stronger heat."
+            },
+            {
+              "symptom": "White fuzzy patch on the surface within the first month",
+              "cause": "A non-sterilised jar, or jar contents poured in while the syrup was still warm, condensing water back onto the surface.",
+              "fix": "Discard the jar — surface mould on a sweetened preparation means the bottling step failed. Next batch: sterilise jars in a 140°C oven for 15 minutes and let them cool to room temperature before filling; cap only after the syrup has fully cooled."
+            },
+            {
+              "symptom": "Strong alcohol burn at the back of the throat on a teaspoon dose",
+              "cause": "Brandy ratio too high for the batch.",
+              "fix": "The 30 ml in 350 ml of decoction works out at under 4 per cent ABV in the finished syrup — barely a wine. If the burn is significant, you used more brandy than the recipe, or measured by jigger rather than ml. Next batch: measure the brandy in a marked jug."
+            }
           ]
         }
       }

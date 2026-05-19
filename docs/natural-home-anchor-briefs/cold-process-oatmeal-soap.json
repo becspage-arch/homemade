@@ -9,7 +9,7 @@
   "difficulty": "ADVANCED",
   "season": null,
   "sourceType": "SYNTHESISED",
-  "sourceNotes": "Susan Miller Cavitch, The Soapmaker's Companion (1997), Ch. 3 + Ch. 5 — cold-process method, superfat reference, cure timeline. Kevin Dunn, Caveman Chemistry (2003), Ch. 9 — saponification chemistry and the role of unsaponified oil. SoapCalc SAP-value tables (v2024) — per-oil NaOH SAP values used in the lye calculation. EU Cosmetics Regulation (EC) No 1223/2009 — the legal framing for home-batch soap sold or gifted.",
+  "sourceNotes": "Susan Miller Cavitch, The Soapmaker's Companion (1997), Ch. 3 + Ch. 5, cold-process method, superfat reference, cure timeline. Kevin Dunn, Caveman Chemistry (2003), Ch. 9, saponification chemistry and the role of unsaponified oil. SoapCalc SAP-value tables (v2024), per-oil NaOH SAP values used in the lye calculation. EU Cosmetics Regulation (EC) No 1223/2009, the legal framing for home-batch soap sold or gifted.",
   "recipe": {
     "servings": null,
     "yieldDescription": "1 kg bar soap (~7 × 130 g bars after cure)",
@@ -22,7 +22,7 @@
     "freezable": false,
     "freezeNotes": null,
     "batchable": true,
-    "batchNotes": "Doubles cleanly to 2 kg if the silicone mould and the stick blender both have the headroom. Beyond 2 kg, batch in 1 kg lots — larger batches gel unevenly in a home mould and the centre overheats.",
+    "batchNotes": "Doubles cleanly to 2 kg if the silicone mould and the stick blender both have the headroom. Beyond 2 kg, batch in 1 kg lots, larger batches gel unevenly in a home mould and the centre overheats.",
     "makeAheadNotes": "No make-ahead. The active work is one 90-minute session; the bars rest in the mould 24-48 hours, then cure 6 weeks before first use. Once cured, the bars keep 2 years or more.",
     "dietaryFlags": [],
     "cuisine": null,
@@ -32,39 +32,117 @@
     "temperatureNote": null,
     "foundational": false,
     "shelfLifeDays": 730,
-    "shelfLifeNotes": "Stable 2 years or more in a cool dark cupboard once fully cured. The longer the cure, the milder and harder the bar. Discard if the bar develops orange flecks (DOS — dreaded orange spots, rancid superfat oil) or a sharp paint-like smell rather than a clean soap smell."
+    "shelfLifeNotes": "Stable 2 years or more in a cool dark cupboard once fully cured. The longer the cure, the milder and harder the bar. Discard if the bar develops orange flecks (DOS, dreaded orange spots, rancid superfat oil) or a sharp paint-like smell rather than a clean soap smell."
   },
   "recipeTools": [
-    { "slug": "digital-scale-precision", "isOptional": false, "notes": "0.1 g precision. Lye is calculated to the gram; a 1 g kitchen-scale tolerance turns a 5% superfat into anything from 3% to 7%." },
-    { "slug": "safety-goggles", "isOptional": false, "notes": "Splash-rated indirectly-vented goggles. Standard safety glasses do not block lye splashes around the edges." },
-    { "slug": "nitrile-gloves", "isOptional": false, "notes": "8-mil or thicker nitrile. Latex is not lye-resistant; washing-up gloves are too thin." },
-    { "slug": "lye-pitcher-hdpe", "isOptional": false, "notes": "HDPE (recycling symbol #2) only. Never glass — lye + water hits 90°C in seconds and thermal shock can crack the vessel." },
-    { "slug": "measuring-jug", "isOptional": false, "notes": "1 L Pyrex for weighing distilled water. Tare on the precision scale; water at room temperature is approximately 1 g per ml for the household batch." },
-    { "slug": "stick-blender", "isOptional": false, "notes": "Dedicated to soap work — once used for soap, retire from food. Look for a 200 W or larger motor; underpowered blenders overheat at thick trace." },
-    { "slug": "thermometer-probe", "isOptional": false, "notes": "For matching the lye solution and the warmed oils both at 38-42°C before blending." },
-    { "slug": "silicone-loaf-mould", "isOptional": false, "notes": "Food-grade silicone, ~1 kg capacity. The standard cold-process household batch size." },
-    { "slug": "silicone-spatula", "isOptional": false, "notes": "For scraping the batter clean into the mould and folding in the colloidal oatmeal at trace." },
-    { "slug": "soap-cutter-wire", "isOptional": false, "notes": "Single-wire cutter, multi-bar mitre box, or a sharp chef's knife. A multi-bar cutter gets even bars in one pass." },
-    { "slug": "ph-test-strips", "isOptional": true, "notes": "Narrow-range (3-12 pH) strips for the cure-test at 4 weeks. A cured cold-process bar reads 9-10 on the strip; anything above 11 means the bar needs another two weeks of cure." }
+    {
+      "slug": "digital-scale-precision",
+      "isOptional": false,
+      "notes": "0.1 g precision. Lye is calculated to the gram; a 1 g kitchen-scale tolerance turns a 5% superfat into anything from 3% to 7%."
+    },
+    {
+      "slug": "safety-goggles",
+      "isOptional": false,
+      "notes": "Splash-rated indirectly-vented goggles. Standard safety glasses do not block lye splashes around the edges."
+    },
+    {
+      "slug": "nitrile-gloves",
+      "isOptional": false,
+      "notes": "8-mil or thicker nitrile. Latex is not lye-resistant; washing-up gloves are too thin."
+    },
+    {
+      "slug": "lye-pitcher-hdpe",
+      "isOptional": false,
+      "notes": "HDPE (recycling symbol #2) only. Never glass, lye + water hits 90°C in seconds and thermal shock can crack the vessel."
+    },
+    {
+      "slug": "measuring-jug",
+      "isOptional": false,
+      "notes": "1 L Pyrex for weighing distilled water. Tare on the precision scale; water at room temperature is approximately 1 g per ml for the household batch."
+    },
+    {
+      "slug": "stick-blender",
+      "isOptional": false,
+      "notes": "Dedicated to soap work, once used for soap, retire from food. Look for a 200 W or larger motor; underpowered blenders overheat at thick trace."
+    },
+    {
+      "slug": "thermometer-probe",
+      "isOptional": false,
+      "notes": "For matching the lye solution and the warmed oils both at 38-42°C before blending."
+    },
+    {
+      "slug": "silicone-loaf-mould",
+      "isOptional": false,
+      "notes": "Food-grade silicone, ~1 kg capacity. The standard cold-process household batch size."
+    },
+    {
+      "slug": "silicone-spatula",
+      "isOptional": false,
+      "notes": "For scraping the batter clean into the mould and folding in the colloidal oatmeal at trace."
+    },
+    {
+      "slug": "soap-cutter-wire",
+      "isOptional": false,
+      "notes": "Single-wire cutter, multi-bar mitre box, or a sharp chef's knife. A multi-bar cutter gets even bars in one pass."
+    },
+    {
+      "slug": "ph-test-strips",
+      "isOptional": true,
+      "notes": "Narrow-range (3-12 pH) strips for the cure-test at 4 weeks. A cured cold-process bar reads 9-10 on the strip; anything above 11 means the bar needs another two weeks of cure."
+    }
   ],
   "glossaryTerms": [
-    { "slug": "saponification", "term": "Saponification", "definition": "The reaction between fat and lye that produces soap and glycerine. Each oil has a SAP value — the grams of lye needed to fully saponify a gram of that oil." },
-    { "slug": "sap-value", "term": "SAP value", "definition": "Saponification value. The grams of NaOH (or KOH) needed to fully saponify one gram of a given oil. Olive oil sits at ~0.135; coconut oil ~0.190; castor oil ~0.128. Soap calculators do the per-recipe arithmetic." },
-    { "slug": "superfat", "term": "Superfat", "definition": "The percentage of oil left unsaponified — extra oil for skin feel. Typically 5-7% in a household bar. Higher superfat makes a softer, more conditioning bar; lower makes a harder, more cleansing one." },
-    { "slug": "lye-discount", "term": "Lye discount", "definition": "The water percentage in cold-process soap, expressed as a percentage of total oil weight. 33% is the household default. Lower percentages (28-30%) give a harder, faster-curing bar; higher percentages give a softer batter that traces more slowly." },
-    { "slug": "trace", "term": "Trace", "definition": "The point where soap batter thickens to the consistency of warm custard and a drizzle from the stick blender leaves a brief trail on the surface. Light trace is pourable; medium trace holds a swirl; thick trace stiffens like pudding." },
-    { "slug": "gel-phase", "term": "Gel phase", "definition": "The exothermic stage of cold-process soap where the batter heats internally to 80-90°C as saponification proceeds, turning translucent and gel-like before cooling and hardening. Insulated moulds gel; uninsulated moulds skip gel and stay opaque." },
-    { "slug": "cure", "term": "Cure", "definition": "The 4-6 weeks of resting time after cold-process soap is unmoulded and cut. Excess water evaporates and any residual saponification completes. A cured bar is harder, milder, and longer-lasting than a freshly cut one." },
-    { "slug": "dos", "term": "DOS (dreaded orange spots)", "definition": "Orange flecks that appear on a soap bar when the superfat oil has gone rancid. Smells sharp and paint-like rather than herbal. The bar is finished — discard, don't recut." }
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The reaction between fat and lye that produces soap and glycerine. Each oil has a SAP value, the grams of lye needed to fully saponify a gram of that oil."
+    },
+    {
+      "slug": "sap-value",
+      "term": "SAP value",
+      "definition": "Saponification value. The grams of NaOH (or KOH) needed to fully saponify one gram of a given oil. Olive oil sits at ~0.135; coconut oil ~0.190; castor oil ~0.128. Soap calculators do the per-recipe arithmetic."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oil left unsaponified, extra oil for skin feel. Typically 5-7% in a household bar. Higher superfat makes a softer, more conditioning bar; lower makes a harder, more cleansing one."
+    },
+    {
+      "slug": "lye-discount",
+      "term": "Lye discount",
+      "definition": "The water percentage in cold-process soap, expressed as a percentage of total oil weight. 33% is the household default. Lower percentages (28-30%) give a harder, faster-curing bar; higher percentages give a softer batter that traces more slowly."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point where soap batter thickens to the consistency of warm custard and a drizzle from the stick blender leaves a brief trail on the surface. Light trace is pourable; medium trace holds a swirl; thick trace stiffens like pudding."
+    },
+    {
+      "slug": "gel-phase",
+      "term": "Gel phase",
+      "definition": "The exothermic stage of cold-process soap where the batter heats internally to 80-90°C as saponification proceeds, turning translucent and gel-like before cooling and hardening. Insulated moulds gel; uninsulated moulds skip gel and stay opaque."
+    },
+    {
+      "slug": "cure",
+      "term": "Cure",
+      "definition": "The 4-6 weeks of resting time after cold-process soap is unmoulded and cut. Excess water evaporates and any residual saponification completes. A cured bar is harder, milder, and longer-lasting than a freshly cut one."
+    },
+    {
+      "slug": "dos",
+      "term": "DOS (dreaded orange spots)",
+      "definition": "Orange flecks that appear on a soap bar when the superfat oil has gone rancid. Smells sharp and paint-like rather than herbal. The bar is finished, discard, don't recut."
+    }
   ],
-  "techniqueSlugs": ["double-boiler-method"],
+  "techniqueSlugs": [
+    "double-boiler-method"
+  ],
   "criticalTechniques": [],
   "projectSchedule": [
     {
       "stepNumber": 1,
       "offsetDays": 1,
       "title": "Unmould and cut the loaf",
-      "body": "Twenty-four hours in. The soap loaf is firm enough to unmould but soft enough to cut cleanly. Lift the loaf from the silicone mould by inverting onto a board lined with greaseproof paper. Cut into seven 130 g bars with the wire cutter or a sharp chef's knife. The fresh-cut surfaces are wet — that's saponification finishing. Stand each bar on its long edge on a wire rack with air space around all six faces; this is the start of cure.",
+      "body": "Twenty-four hours in. The soap loaf is firm enough to unmould but soft enough to cut cleanly. Lift the loaf from the silicone mould by inverting onto a board lined with greaseproof paper. Cut into seven 130 g bars with the wire cutter or a sharp chef's knife. The fresh-cut surfaces are wet, that's saponification finishing. Stand each bar on its long edge on a wire rack with air space around all six faces; this is the start of cure.",
       "surfaceAs": "HERO",
       "requiresUserAction": true
     },
@@ -80,15 +158,15 @@
       "stepNumber": 3,
       "offsetDays": 28,
       "title": "Cure-test a sliver",
-      "body": "Four weeks in. Slice a thin sliver off the corner of one bar and wet it under the tap. The lather should be rich and stable — not thin, not pinprick-bubbly, not still slimy in the way a fresh-cut bar is. If you have pH test strips, the sliver wetted to a thin film should read 9-10. Anything above 11 means the bar needs another two weeks. Use this test bar as the household soap; the rest finishes cure.",
+      "body": "Four weeks in. Slice a thin sliver off the corner of one bar and wet it under the tap. The lather should be rich and stable, not thin, not pinprick-bubbly, not still slimy in the way a fresh-cut bar is. If you have pH test strips, the sliver wetted to a thin film should read 9-10. Anything above 11 means the bar needs another two weeks. Use this test bar as the household soap; the rest finishes cure.",
       "surfaceAs": "HERO",
       "requiresUserAction": true
     },
     {
       "stepNumber": 4,
       "offsetDays": 42,
-      "title": "Cure complete — bars are ready",
-      "body": "Six weeks in. The cure is complete. Bars are firm, mild, and long-lasting; cured cold-process soap takes 2-3× the showers per gram that a fresh-cut bar does. Store the six remaining bars in a paper-lined wooden box or wrapped loosely in paper — not airtight plastic, which traps any residual moisture. Date-stamp the batch in the household soap ledger if you keep one.",
+      "title": "Cure complete, bars are ready",
+      "body": "Six weeks in. The cure is complete. Bars are firm, mild, and long-lasting; cured cold-process soap takes 2-3× the showers per gram that a fresh-cut bar does. Store the six remaining bars in a paper-lined wooden box or wrapped loosely in paper, not airtight plastic, which traps any residual moisture. Date-stamp the batch in the household soap ledger if you keep one.",
       "surfaceAs": "HERO",
       "requiresUserAction": false
     }
@@ -96,64 +174,1102 @@
   "body": {
     "type": "doc",
     "content": [
-      { "type": "paragraph", "content": [{ "type": "text", "text": "A household cold-process oatmeal soap. Olive oil at 60% of the oil weight for the long-lasting mild bar, coconut oil at 30% for the lather, castor oil at 10% to bind the lather into a creamy bubble. Colloidal oatmeal stirred in at trace for the gentle exfoliation and the soothing skin feel. One kilogram of oils yields seven 130 g bars after the six-week cure." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "The numbers, in plain prose. " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }], "text": "Superfat" }, { "type": "text", "text": " at 5% — the bar is built with 5% more oil than the lye can saponify, so the spare oil sits in the bar as a conditioning layer. " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lye-discount" } }], "text": "Lye discount" }, { "type": "text", "text": " at 33% — the water phase is 330 g (one third of the oil weight). The lye weight (143 g of " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }], "text": "sodium hydroxide" }, { "type": "text", "text": ") comes from running the oil blend through a " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sap-value" } }], "text": "SAP-value" }, { "type": "text", "text": " calculator at 5% superfat — see the calculator-output line below." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A household cold-process oatmeal soap. Olive oil at 60% of the oil weight for the long-lasting mild bar, coconut oil at 30% for the lather, castor oil at 10% to bind the lather into a creamy bubble. Colloidal oatmeal stirred in at trace for the gentle exfoliation and the soothing skin feel. One kilogram of oils yields seven 130 g bars after the six-week cure."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The numbers, in plain prose. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "superfat"
+                }
+              }
+            ],
+            "text": "Superfat"
+          },
+          {
+            "type": "text",
+            "text": " at 5%, the bar is built with 5% more oil than the lye can saponify, so the spare oil sits in the bar as a conditioning layer. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "lye-discount"
+                }
+              }
+            ],
+            "text": "Lye discount"
+          },
+          {
+            "type": "text",
+            "text": " at 33%, the water phase is 330 g (one third of the oil weight). The lye weight (143 g of "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "saponification"
+                }
+              }
+            ],
+            "text": "sodium hydroxide"
+          },
+          {
+            "type": "text",
+            "text": ") comes from running the oil blend through a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sap-value"
+                }
+              }
+            ],
+            "text": "SAP-value"
+          },
+          {
+            "type": "text",
+            "text": " calculator at 5% superfat, see the calculator-output line below."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            { "ingredientSlug": "olive-oil", "amount": 600, "unit": "g", "prepNote": "regular refined olive oil — extra-virgin is wasted in soap; the lye saponifies the flavour out anyway. 60% of the oil weight.", "isOptional": false, "groupLabel": "Oil phase (1 kg total)" },
-            { "ingredientSlug": "coconut-oil", "amount": 300, "unit": "g", "prepNote": "76°F-melt-point coconut oil (the standard supermarket kind). 30% of the oil weight. Gives the lather.", "isOptional": false, "groupLabel": "Oil phase (1 kg total)" },
-            { "ingredientSlug": "castor-oil", "amount": 100, "unit": "g", "prepNote": "cold-pressed castor oil. 10% of the oil weight. Holds the lather together — without castor, the bar lathers but the bubbles burst quickly.", "isOptional": false, "groupLabel": "Oil phase (1 kg total)" },
-            { "ingredientSlug": "distilled-water", "amount": 330, "unit": "g", "prepNote": "garage-bought distilled or pharmacy-bought deionised — not boiled tap water. Tap-water minerals react with the lye and seed mould.", "isOptional": false, "groupLabel": "Lye solution" },
-            { "ingredientSlug": "sodium-hydroxide", "amount": 143, "unit": "g", "prepNote": "99% pure cosmetic-grade NaOH. Calculated at 5% superfat against the 1 kg oil blend. The exact weight matters — round to 0.1 g on the precision scale.", "isOptional": false, "groupLabel": "Lye solution" },
-            { "ingredientSlug": "colloidal-oatmeal", "amount": 30, "unit": "g", "prepNote": "stirred in at light trace. 3% of the oil weight; provides gentle exfoliation and a soothing skin feel.", "isOptional": false, "groupLabel": "Add at trace" },
-            { "ingredientSlug": "essential-oil-lavender", "amount": 20, "unit": "ml", "prepNote": "2% of the oil weight by weight (~20 g). Lavandula angustifolia for the household; folded in at light trace just before pouring. Optional — unscented bars are equally valid.", "isOptional": true, "groupLabel": "Add at trace" }
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "regular refined olive oil, extra-virgin is wasted in soap; the lye saponifies the flavour out anyway. 60% of the oil weight.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "coconut-oil",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "76°F-melt-point coconut oil (the standard supermarket kind). 30% of the oil weight. Gives the lather.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "castor-oil",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "cold-pressed castor oil. 10% of the oil weight. Holds the lather together, without castor, the bar lathers but the bubbles burst quickly.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 330,
+              "unit": "g",
+              "prepNote": "garage-bought distilled or pharmacy-bought deionised, not boiled tap water. Tap-water minerals react with the lye and seed mould.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "sodium-hydroxide",
+              "amount": 143,
+              "unit": "g",
+              "prepNote": "99% pure cosmetic-grade NaOH. Calculated at 5% superfat against the 1 kg oil blend. The exact weight matters, round to 0.1 g on the precision scale.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "colloidal-oatmeal",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "stirred in at light trace. 3% of the oil weight; provides gentle exfoliation and a soothing skin feel.",
+              "isOptional": false,
+              "groupLabel": "Add at trace"
+            },
+            {
+              "ingredientSlug": "essential-oil-lavender",
+              "amount": 20,
+              "unit": "ml",
+              "prepNote": "2% of the oil weight by weight (~20 g). Lavandula angustifolia for the household; folded in at light trace just before pouring. Optional, unscented bars are equally valid.",
+              "isOptional": true,
+              "groupLabel": "Add at trace"
+            }
           ]
         }
       },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Calculator-output line for the lye: 600 × 0.135 + 300 × 0.190 + 100 × 0.128 = 81.0 + 57.0 + 12.8 = 150.8 g NaOH at 0% superfat. At 5% superfat: 150.8 × 0.95 = 143.3 g NaOH. Round to 143 g for the working weight." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
-      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Mise en place — kit out before any chemistry starts" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Open the kitchen window. Move children, pets, and bare-armed onlookers out of the room. Lay out the HDPE lye pitcher, the precision scale, the Pyrex jug for distilled water, the saucepan for melting the oils, the silicone mould lined ready on the counter, and the stick blender with its bowl. Put on the splash-rated safety goggles and the nitrile gloves before you open the lye container. Keep a vinegar bottle within reach — vinegar neutralises lye if a splash lands on skin, and a fast rinse with cool running water followed by a vinegar wipe is the household protocol." }] },
-      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Mix the lye solution — lye into water, never water into lye" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Weigh 330 g of distilled water into the Pyrex jug and pour into the HDPE pitcher. Tare the precision scale. Weigh 143 g of sodium hydroxide into a small dish — 0.1 g precision, no rounding up. With the lye pitcher in a clear sink or on a heat-safe tray, pour the NaOH into the water in a steady stream, stirring continuously with a stainless-steel spoon. Never the other way round — water poured into lye flashes off in a violent boil." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "The reaction is exothermic. The pitcher heats to 80-90°C in under a minute and fumes off briefly; do not lean over the pitcher and do not breathe in the vapour. Stir until the lye has fully dissolved — the solution turns clear within 30-60 seconds. Set the pitcher aside on the heat-safe tray to cool. The lye solution needs to come down to 38-42°C before it meets the oils, which takes 40-60 minutes at room temperature." }] },
-      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Melt and warm the oils to 38-42°C" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Weigh the olive, coconut, and castor oils into a stainless steel saucepan in any order. The coconut oil is solid at room temperature; warm the pan on a low hob until the coconut oil has melted and the mixture is clear, then take off the heat. Stir to combine and check the temperature on the probe. If the oils are above 42°C, set the pan aside to cool; if below 38°C, return briefly to a very low heat. Target the same window the lye is cooling toward — 38-42°C — so the two can meet at the same temperature." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Matching the temperatures is the rule. Lye much hotter than oils, or oils much hotter than lye, throws the saponification rhythm off — the batter either traces in seconds (too hot) or refuses to thicken (too cold). Within a 4°C window of each other is the practical tolerance." }] },
-      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Pour the lye into the oils, blend to light trace" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Both vessels in the 38-42°C window. Pour the lye solution slowly into the oils through a fine-mesh sieve (the sieve catches any undissolved NaOH grains; rare with cosmetic-grade lye but worth the safety net). Lower the stick blender into the oil + lye mixture; tap it on the bottom of the bowl to release any trapped air bubbles. With the head below the surface, pulse on for 10-second bursts and stir between pulses." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Within 2-3 minutes the batter thickens. Light " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }], "text": "trace" }, { "type": "text", "text": " is the point you're aiming for — a drizzle from the lifted blender leaves a brief trail on the surface that holds 1-2 seconds before sinking. Past light trace and you have less time to fold in the oatmeal and pour into the mould before the batter stiffens past pour-able. Stop at light trace — you can always blend back up if needed; you can't un-blend a thick trace." }] },
-      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Fold in the oatmeal and the essential oil, pour into the mould" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "At light trace, off the blender. Tip the 30 g of colloidal oatmeal into the bowl in a steady sprinkle, stirring with the silicone spatula as you go — pouring it all in at once gives lumps. Fold for 30 seconds until evenly distributed. If you're scenting the bar, weigh 20 ml of lavender essential oil and fold through next; the temperature is below the flash-point at this stage, so the top-notes don't evaporate." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Pour the batter into the silicone mould in a steady stream from one end of the mould to the other. Tap the mould on the counter several times to settle the surface and burst air bubbles. Smooth the top with the silicone spatula. Cover the mould loosely with a clean tea towel — light insulation encourages a clean " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gel-phase" } }], "text": "gel phase" }, { "type": "text", "text": ", which gives a more translucent finished bar; heavy insulation can overheat the centre. A tea towel is the household sweet spot." }] },
-      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Rest 24-48 hours, then unmould" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Leave the mould undisturbed at room temperature 24-48 hours. Within the first 8 hours the batter heats internally to 80-90°C as saponification proceeds, turning translucent and gel-like; this is the gel phase, and it works through the loaf from the centre outward. By 12 hours the loaf has cooled and started to harden. By 24 hours the loaf is firm enough to unmould — pressing the surface should leave a fingernail mark but no sticky residue." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Unmould by inverting the silicone onto a board lined with greaseproof paper. The loaf releases cleanly from food-grade silicone. Cut into seven 130 g bars with the wire cutter — the fresh-cut surfaces are wet, that's saponification finishing. Stand each bar on its long edge on a wire rack with air space around all six faces. The " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cure" } }], "text": "cure" }, { "type": "text", "text": " starts now." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Cure milestones over six weeks" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Day 1 — unmould and cut into bars (see Method above). Day 14 — turn each bar 90 degrees so a different face is upward; the rack-facing face cures slowest and the turn evens that out. Day 28 — cure-test by slicing a thin sliver off one corner, wetting it under the tap, and checking the lather (rich and stable) and the pH (9-10 on a narrow-range strip; anything above 11 means another two weeks). Use this test bar as the household soap; the rest finishes cure. Day 42 — cure complete. Cured bars are firm, mild, and long-lasting; store six in a paper-lined wooden box or wrapped loosely in paper." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "The homepage rail surfaces each cure milestone on the right day after you click \"I'm making this\" — the four scheduled steps above. Bars cure faster in dry conditions (a centrally heated home in winter); slower in humid conditions (a damp British autumn). The 6-week window assumes a steady 18-22°C, 40-60% humidity; outside that, judge by the cure-test rather than the calendar." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Patch test and skin notes" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Patch-test a sliver of the cured bar on the inside of the forearm before regular use, 24-48 hours before judging. Cured cold-process soap is mild but not hypoallergenic; the saponified coconut and castor oils can be drying for very sensitive skin, in which case the olive-heavy 80/15/5 Castile variant suits better. The colloidal oatmeal in this recipe contains gluten — readers with broken-skin coeliac sensitivity should swap the 30 g of oatmeal for the same weight of finely milled rice flour." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Pregnant readers can use the unscented version of the bar — the lavender essential oil is the only ingredient with a pregnancy-caution flag, and it's the optional one. Pets in the household are not at risk from the cured bar (the saponified oils are inert), but the raw lye and raw essential oils are toxic to pets and must be stored well out of reach during the make session and after." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Storage and shelf life" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "A cured cold-process bar keeps two years or more in a cool dark cupboard. Store the bars on a wire rack or in a paper-lined wooden box — not airtight plastic, which traps moisture and shortens the shelf life. The longer the bar cures, the milder and harder it gets; a one-year-old bar is the same recipe as a six-week-old bar but a noticeably better wash." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "The failure mode to watch for is " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dos" } }], "text": "DOS (dreaded orange spots)" }, { "type": "text", "text": " — orange flecks on the bar surface meaning the superfat oil has gone rancid. Smell-check confirms: a rancid bar smells sharp and paint-like, not clean. Discard the affected bars; next batch, swap any high-iodine-value oil (sweet almond, sunflower) out for a lower-iodine alternative or drop the superfat from 5% to 3%." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Date-stamp the loaf at unmould — \"2026-05-18-A\" on a sticker on the wooden storage box. Knowing the batch date matters if you trace back from a DOS bar or if you gift the bars and want the recipient to know when the bar was cut." }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Calculator-output line for the lye: 600 × 0.135 + 300 × 0.190 + 100 × 0.128 = 81.0 + 57.0 + 12.8 = 150.8 g NaOH at 0% superfat. At 5% superfat: 150.8 × 0.95 = 143.3 g NaOH. Round to 143 g for the working weight."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mise en place, kit out before any chemistry starts"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Open the kitchen window. Move children, pets, and bare-armed onlookers out of the room. Lay out the HDPE lye pitcher, the precision scale, the Pyrex jug for distilled water, the saucepan for melting the oils, the silicone mould lined ready on the counter, and the stick blender with its bowl. Put on the splash-rated safety goggles and the nitrile gloves before you open the lye container. Keep a vinegar bottle within reach, vinegar neutralises lye if a splash lands on skin, and a fast rinse with cool running water followed by a vinegar wipe is the household protocol."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix the lye solution, lye into water, never water into lye"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh 330 g of distilled water into the Pyrex jug and pour into the HDPE pitcher. Tare the precision scale. Weigh 143 g of sodium hydroxide into a small dish, 0.1 g precision, no rounding up. With the lye pitcher in a clear sink or on a heat-safe tray, pour the NaOH into the water in a steady stream, stirring continuously with a stainless-steel spoon. Never the other way round, water poured into lye flashes off in a violent boil."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The reaction is exothermic. The pitcher heats to 80-90°C in under a minute and fumes off briefly; do not lean over the pitcher and do not breathe in the vapour. Stir until the lye has fully dissolved, the solution turns clear within 30-60 seconds. Set the pitcher aside on the heat-safe tray to cool. The lye solution needs to come down to 38-42°C before it meets the oils, which takes 40-60 minutes at room temperature."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt and warm the oils to 38-42°C"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh the olive, coconut, and castor oils into a stainless steel saucepan in any order. The coconut oil is solid at room temperature; warm the pan on a low hob until the coconut oil has melted and the mixture is clear, then take off the heat. Stir to combine and check the temperature on the probe. If the oils are above 42°C, set the pan aside to cool; if below 38°C, return briefly to a very low heat. Target the same window the lye is cooling toward, 38-42°C, so the two can meet at the same temperature."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Matching the temperatures is the rule. Lye much hotter than oils, or oils much hotter than lye, throws the saponification rhythm off, the batter either traces in seconds (too hot) or refuses to thicken (too cold). Within a 4°C window of each other is the practical tolerance."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye into the oils, blend to light trace"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Both vessels in the 38-42°C window. Pour the lye solution slowly into the oils through a fine-mesh sieve (the sieve catches any undissolved NaOH grains; rare with cosmetic-grade lye but worth the safety net). Lower the stick blender into the oil + lye mixture; tap it on the bottom of the bowl to release any trapped air bubbles. With the head below the surface, pulse on for 10-second bursts and stir between pulses."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Within 2-3 minutes the batter thickens. Light "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "trace"
+                }
+              }
+            ],
+            "text": "trace"
+          },
+          {
+            "type": "text",
+            "text": " is the point you're aiming for, a drizzle from the lifted blender leaves a brief trail on the surface that holds 1-2 seconds before sinking. Past light trace and you have less time to fold in the oatmeal and pour into the mould before the batter stiffens past pour-able. Stop at light trace, you can always blend back up if needed; you can't un-blend a thick trace."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fold in the oatmeal and the essential oil, pour into the mould"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "At light trace, off the blender. Tip the 30 g of colloidal oatmeal into the bowl in a steady sprinkle, stirring with the silicone spatula as you go, pouring it all in at once gives lumps. Fold for 30 seconds until evenly distributed. If you're scenting the bar, weigh 20 ml of lavender essential oil and fold through next; the temperature is below the flash-point at this stage, so the top-notes don't evaporate."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the batter into the silicone mould in a steady stream from one end of the mould to the other. Tap the mould on the counter several times to settle the surface and burst air bubbles. Smooth the top with the silicone spatula. Cover the mould loosely with a clean tea towel, light insulation encourages a clean "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "gel-phase"
+                }
+              }
+            ],
+            "text": "gel phase"
+          },
+          {
+            "type": "text",
+            "text": ", which gives a more translucent finished bar; heavy insulation can overheat the centre. A tea towel is the household sweet spot."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Rest 24-48 hours, then unmould"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Leave the mould undisturbed at room temperature 24-48 hours. Within the first 8 hours the batter heats internally to 80-90°C as saponification proceeds, turning translucent and gel-like; this is the gel phase, and it works through the loaf from the centre outward. By 12 hours the loaf has cooled and started to harden. By 24 hours the loaf is firm enough to unmould, pressing the surface should leave a fingernail mark but no sticky residue."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Unmould by inverting the silicone onto a board lined with greaseproof paper. The loaf releases cleanly from food-grade silicone. Cut into seven 130 g bars with the wire cutter, the fresh-cut surfaces are wet, that's saponification finishing. Stand each bar on its long edge on a wire rack with air space around all six faces. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cure"
+                }
+              }
+            ],
+            "text": "cure"
+          },
+          {
+            "type": "text",
+            "text": " starts now."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cure milestones over six weeks"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Day 1, unmould and cut into bars (see Method above). Day 14, turn each bar 90 degrees so a different face is upward; the rack-facing face sets slowest and the turn evens that out. Day 28, set-test by slicing a thin sliver off one corner, wetting it under the tap, and checking the lather (rich and stable) and the pH (9-10 on a narrow-range strip; anything above 11 means another two weeks). Use this test bar as the household soap; the rest finishes cure. Day 42, cure complete. Cured bars are firm, mild, and long-lasting; store six in a paper-lined wooden box or wrapped loosely in paper."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The homepage rail surfaces each cure milestone on the right day after you click \"I'm making this\", the four scheduled steps above. Bars cure faster in dry conditions (a centrally heated home in winter); slower in humid conditions (a damp British autumn). The 6-week window assumes a steady 18-22°C, 40-60% humidity; outside that, judge by the set-test rather than the calendar."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Patch test and skin notes"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Patch-test a sliver of the set bar on the inside of the forearm before regular use, 24-48 hours before judging. Cured cold-process soap is mild but not hypoallergenic; the saponified coconut and castor oils can be drying for very sensitive skin, in which case the olive-heavy 80/15/5 Castile variant suits better. The colloidal oatmeal in this recipe contains gluten, readers with broken-skin coeliac sensitivity should swap the 30 g of oatmeal for the same weight of finely milled rice flour."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pregnant readers can use the unscented version of the bar, the lavender essential oil is the only ingredient with a pregnancy-caution flag, and it's the optional one. Pets in the household are not at risk from the set bar (the saponified oils are inert), but the raw lye and raw essential oils are toxic to pets and must be stored well out of reach during the make session and after."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Storage and shelf life"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A set cold-process bar keeps two years or more in a cool dark cupboard. Store the bars on a wire rack or in a paper-lined wooden box, not airtight plastic, which traps moisture and shortens the shelf life. The longer the bar sets, the milder and harder it gets; a one-year-old bar is the same recipe as a six-week-old bar but a noticeably better wash."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The failure mode to watch for is "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "dos"
+                }
+              }
+            ],
+            "text": "DOS (dreaded orange spots)"
+          },
+          {
+            "type": "text",
+            "text": ", orange flecks on the bar surface meaning the superfat oil has gone rancid. Smell-check confirms: a rancid bar smells sharp and paint-like, not clean. Discard the affected bars; next batch, swap any high-iodine-value oil (sweet almond, sunflower) out for a lower-iodine alternative or drop the superfat from 5% to 3%."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Date-stamp the loaf at unmould, \"2026-05-18-A\" on a sticker on the wooden storage box. Knowing the batch date matters if you trace back from a DOS bar or if you gift the bars and want the recipient to know when the bar was cut."
+          }
+        ]
+      },
       {
         "type": "troubleshooter",
         "attrs": {
           "heading": "If the soap went sideways",
           "intro": "The five ways a cold-process bar goes wrong, and what to fix.",
           "items": [
-            { "symptom": "Batter never traces — still pourable after 10 minutes of blending", "cause": "Lye solution and oils were too cool when combined (below ~30°C), or the recipe is heavy on slow-tracing oils (very high olive-oil content) and the temperature window was off.", "fix": "Don't add more lye — that breaks the recipe. Warm the bowl gently (set it on a heating pad, or in a sink of warm water) and pulse-blend in 30-second bursts. Trace will come with patience." },
-            { "symptom": "Batter seizes — turns to thick pudding in 30 seconds and won't pour", "cause": "Lye and oils were too hot (above 50°C), the recipe contains a heavy fragrance oil that accelerates trace, or the stick blender ran continuously rather than in pulses.", "fix": "Quickly spoon the batter into the mould; you'll have a rustic finish but the bar still saponifies. Next batch, cool both phases to 35-38°C and pulse the blender." },
-            { "symptom": "Loaf has wet white patches on the surface 24 hours in", "cause": "Soda ash — sodium carbonate that forms when fresh soap meets ambient CO2. Cosmetic-harmless but visually distinct.", "fix": "Wipe the surface with a cloth dampened with rubbing alcohol or trim the affected layer with a vegetable peeler. Next batch, cover the mould more tightly with cling film for the first 12 hours so CO2 can't reach the surface." },
-            { "symptom": "Centre of the loaf is darker / orange / oily after gel phase", "cause": "Overheated gel — the centre got too hot and the oils partially separated. Sometimes called a volcano if it bubbles up.", "fix": "If the loaf is structurally intact, the bars cure normally; the colour evens out over 4-6 weeks. If the loaf split or the surface erupted, the bars are not safe — discard and try again with a less-insulated rest." },
-            { "symptom": "Cure-test sliver reads pH 11+ at week 4", "cause": "Lye-heavy bar — either the lye was over-measured at the start or the recipe was miscalculated.", "fix": "Cure another 2 weeks and re-test. If still above 11, the bar is harsh for skin use; relabel as laundry soap (where high pH is fine) and start a fresh batch with a re-checked lye weight." }
+            {
+              "symptom": "Batter never traces, still pourable after 10 minutes of blending",
+              "cause": "Lye solution and oils were too cool when combined (below ~30°C), or the recipe is heavy on slow-tracing oils (very high olive-oil content) and the temperature window was off.",
+              "fix": "Don't add more lye, that breaks the recipe. Warm the bowl gently (set it on a heating pad, or in a sink of warm water) and pulse-blend in 30-second bursts. Trace will come with patience."
+            },
+            {
+              "symptom": "Batter seizes, turns to thick pudding in 30 seconds and won't pour",
+              "cause": "Lye and oils were too hot (above 50°C), the recipe contains a heavy fragrance oil that accelerates trace, or the stick blender ran continuously rather than in pulses.",
+              "fix": "Quickly spoon the batter into the mould; you'll have a rustic finish but the bar still saponifies. Next batch, cool both phases to 35-38°C and pulse the blender."
+            },
+            {
+              "symptom": "Loaf has wet white patches on the surface 24 hours in",
+              "cause": "Soda ash, sodium carbonate that forms when fresh soap meets ambient CO2. Cosmetic-harmless but visually distinct.",
+              "fix": "Wipe the surface with a cloth dampened with rubbing alcohol or trim the affected layer with a vegetable peeler. Next batch, cover the mould more tightly with cling film for the first 12 hours so CO2 can't reach the surface."
+            },
+            {
+              "symptom": "Centre of the loaf is darker / orange / oily after gel phase",
+              "cause": "Overheated gel, the centre got too hot and the oils partially separated. Sometimes called a volcano if it bubbles up.",
+              "fix": "If the loaf is structurally intact, the bars cure normally; the colour evens out over 4-6 weeks. If the loaf split or the surface erupted, the bars are not safe, discard and try again with a less-insulated rest."
+            },
+            {
+              "symptom": "Cure-test sliver reads pH 11+ at week 4",
+              "cause": "Lye-heavy bar, either the lye was over-measured at the start or the recipe was miscalculated.",
+              "fix": "Cure another 2 weeks and re-test. If still above 11, the bar is harsh for skin use; relabel as laundry soap (where high pH is fine) and start a fresh batch with a re-checked lye weight."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "revisedFrom": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A household cold-process oatmeal soap. Olive oil at 60% of the oil weight for the long-lasting mild bar, coconut oil at 30% for the lather, castor oil at 10% to bind the lather into a creamy bubble. Colloidal oatmeal stirred in at trace for the gentle exfoliation and the soothing skin feel. One kilogram of oils yields seven 130 g bars after the six-week cure."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The numbers, in plain prose. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "superfat"
+                }
+              }
+            ],
+            "text": "Superfat"
+          },
+          {
+            "type": "text",
+            "text": " at 5% — the bar is built with 5% more oil than the lye can saponify, so the spare oil sits in the bar as a conditioning layer. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "lye-discount"
+                }
+              }
+            ],
+            "text": "Lye discount"
+          },
+          {
+            "type": "text",
+            "text": " at 33% — the water phase is 330 g (one third of the oil weight). The lye weight (143 g of "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "saponification"
+                }
+              }
+            ],
+            "text": "sodium hydroxide"
+          },
+          {
+            "type": "text",
+            "text": ") comes from running the oil blend through a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sap-value"
+                }
+              }
+            ],
+            "text": "SAP-value"
+          },
+          {
+            "type": "text",
+            "text": " calculator at 5% superfat — see the calculator-output line below."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "regular refined olive oil — extra-virgin is wasted in soap; the lye saponifies the flavour out anyway. 60% of the oil weight.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "coconut-oil",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "76°F-melt-point coconut oil (the standard supermarket kind). 30% of the oil weight. Gives the lather.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "castor-oil",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "cold-pressed castor oil. 10% of the oil weight. Holds the lather together — without castor, the bar lathers but the bubbles burst quickly.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 330,
+              "unit": "g",
+              "prepNote": "garage-bought distilled or pharmacy-bought deionised — not boiled tap water. Tap-water minerals react with the lye and seed mould.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "sodium-hydroxide",
+              "amount": 143,
+              "unit": "g",
+              "prepNote": "99% pure cosmetic-grade NaOH. Calculated at 5% superfat against the 1 kg oil blend. The exact weight matters — round to 0.1 g on the precision scale.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "colloidal-oatmeal",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "stirred in at light trace. 3% of the oil weight; provides gentle exfoliation and a soothing skin feel.",
+              "isOptional": false,
+              "groupLabel": "Add at trace"
+            },
+            {
+              "ingredientSlug": "essential-oil-lavender",
+              "amount": 20,
+              "unit": "ml",
+              "prepNote": "2% of the oil weight by weight (~20 g). Lavandula angustifolia for the household; folded in at light trace just before pouring. Optional — unscented bars are equally valid.",
+              "isOptional": true,
+              "groupLabel": "Add at trace"
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Calculator-output line for the lye: 600 × 0.135 + 300 × 0.190 + 100 × 0.128 = 81.0 + 57.0 + 12.8 = 150.8 g NaOH at 0% superfat. At 5% superfat: 150.8 × 0.95 = 143.3 g NaOH. Round to 143 g for the working weight."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mise en place — kit out before any chemistry starts"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Open the kitchen window. Move children, pets, and bare-armed onlookers out of the room. Lay out the HDPE lye pitcher, the precision scale, the Pyrex jug for distilled water, the saucepan for melting the oils, the silicone mould lined ready on the counter, and the stick blender with its bowl. Put on the splash-rated safety goggles and the nitrile gloves before you open the lye container. Keep a vinegar bottle within reach — vinegar neutralises lye if a splash lands on skin, and a fast rinse with cool running water followed by a vinegar wipe is the household protocol."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix the lye solution — lye into water, never water into lye"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh 330 g of distilled water into the Pyrex jug and pour into the HDPE pitcher. Tare the precision scale. Weigh 143 g of sodium hydroxide into a small dish — 0.1 g precision, no rounding up. With the lye pitcher in a clear sink or on a heat-safe tray, pour the NaOH into the water in a steady stream, stirring continuously with a stainless-steel spoon. Never the other way round — water poured into lye flashes off in a violent boil."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The reaction is exothermic. The pitcher heats to 80-90°C in under a minute and fumes off briefly; do not lean over the pitcher and do not breathe in the vapour. Stir until the lye has fully dissolved — the solution turns clear within 30-60 seconds. Set the pitcher aside on the heat-safe tray to cool. The lye solution needs to come down to 38-42°C before it meets the oils, which takes 40-60 minutes at room temperature."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt and warm the oils to 38-42°C"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh the olive, coconut, and castor oils into a stainless steel saucepan in any order. The coconut oil is solid at room temperature; warm the pan on a low hob until the coconut oil has melted and the mixture is clear, then take off the heat. Stir to combine and check the temperature on the probe. If the oils are above 42°C, set the pan aside to cool; if below 38°C, return briefly to a very low heat. Target the same window the lye is cooling toward — 38-42°C — so the two can meet at the same temperature."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Matching the temperatures is the rule. Lye much hotter than oils, or oils much hotter than lye, throws the saponification rhythm off — the batter either traces in seconds (too hot) or refuses to thicken (too cold). Within a 4°C window of each other is the practical tolerance."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye into the oils, blend to light trace"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Both vessels in the 38-42°C window. Pour the lye solution slowly into the oils through a fine-mesh sieve (the sieve catches any undissolved NaOH grains; rare with cosmetic-grade lye but worth the safety net). Lower the stick blender into the oil + lye mixture; tap it on the bottom of the bowl to release any trapped air bubbles. With the head below the surface, pulse on for 10-second bursts and stir between pulses."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Within 2-3 minutes the batter thickens. Light "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "trace"
+                }
+              }
+            ],
+            "text": "trace"
+          },
+          {
+            "type": "text",
+            "text": " is the point you're aiming for — a drizzle from the lifted blender leaves a brief trail on the surface that holds 1-2 seconds before sinking. Past light trace and you have less time to fold in the oatmeal and pour into the mould before the batter stiffens past pour-able. Stop at light trace — you can always blend back up if needed; you can't un-blend a thick trace."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fold in the oatmeal and the essential oil, pour into the mould"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "At light trace, off the blender. Tip the 30 g of colloidal oatmeal into the bowl in a steady sprinkle, stirring with the silicone spatula as you go — pouring it all in at once gives lumps. Fold for 30 seconds until evenly distributed. If you're scenting the bar, weigh 20 ml of lavender essential oil and fold through next; the temperature is below the flash-point at this stage, so the top-notes don't evaporate."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the batter into the silicone mould in a steady stream from one end of the mould to the other. Tap the mould on the counter several times to settle the surface and burst air bubbles. Smooth the top with the silicone spatula. Cover the mould loosely with a clean tea towel — light insulation encourages a clean "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "gel-phase"
+                }
+              }
+            ],
+            "text": "gel phase"
+          },
+          {
+            "type": "text",
+            "text": ", which gives a more translucent finished bar; heavy insulation can overheat the centre. A tea towel is the household sweet spot."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Rest 24-48 hours, then unmould"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Leave the mould undisturbed at room temperature 24-48 hours. Within the first 8 hours the batter heats internally to 80-90°C as saponification proceeds, turning translucent and gel-like; this is the gel phase, and it works through the loaf from the centre outward. By 12 hours the loaf has cooled and started to harden. By 24 hours the loaf is firm enough to unmould — pressing the surface should leave a fingernail mark but no sticky residue."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Unmould by inverting the silicone onto a board lined with greaseproof paper. The loaf releases cleanly from food-grade silicone. Cut into seven 130 g bars with the wire cutter — the fresh-cut surfaces are wet, that's saponification finishing. Stand each bar on its long edge on a wire rack with air space around all six faces. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cure"
+                }
+              }
+            ],
+            "text": "cure"
+          },
+          {
+            "type": "text",
+            "text": " starts now."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cure milestones over six weeks"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Day 1 — unmould and cut into bars (see Method above). Day 14 — turn each bar 90 degrees so a different face is upward; the rack-facing face cures slowest and the turn evens that out. Day 28 — cure-test by slicing a thin sliver off one corner, wetting it under the tap, and checking the lather (rich and stable) and the pH (9-10 on a narrow-range strip; anything above 11 means another two weeks). Use this test bar as the household soap; the rest finishes cure. Day 42 — cure complete. Cured bars are firm, mild, and long-lasting; store six in a paper-lined wooden box or wrapped loosely in paper."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The homepage rail surfaces each cure milestone on the right day after you click \"I'm making this\" — the four scheduled steps above. Bars cure faster in dry conditions (a centrally heated home in winter); slower in humid conditions (a damp British autumn). The 6-week window assumes a steady 18-22°C, 40-60% humidity; outside that, judge by the cure-test rather than the calendar."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Patch test and skin notes"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Patch-test a sliver of the cured bar on the inside of the forearm before regular use, 24-48 hours before judging. Cured cold-process soap is mild but not hypoallergenic; the saponified coconut and castor oils can be drying for very sensitive skin, in which case the olive-heavy 80/15/5 Castile variant suits better. The colloidal oatmeal in this recipe contains gluten — readers with broken-skin coeliac sensitivity should swap the 30 g of oatmeal for the same weight of finely milled rice flour."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pregnant readers can use the unscented version of the bar — the lavender essential oil is the only ingredient with a pregnancy-caution flag, and it's the optional one. Pets in the household are not at risk from the cured bar (the saponified oils are inert), but the raw lye and raw essential oils are toxic to pets and must be stored well out of reach during the make session and after."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Storage and shelf life"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A cured cold-process bar keeps two years or more in a cool dark cupboard. Store the bars on a wire rack or in a paper-lined wooden box — not airtight plastic, which traps moisture and shortens the shelf life. The longer the bar cures, the milder and harder it gets; a one-year-old bar is the same recipe as a six-week-old bar but a noticeably better wash."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The failure mode to watch for is "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "dos"
+                }
+              }
+            ],
+            "text": "DOS (dreaded orange spots)"
+          },
+          {
+            "type": "text",
+            "text": " — orange flecks on the bar surface meaning the superfat oil has gone rancid. Smell-check confirms: a rancid bar smells sharp and paint-like, not clean. Discard the affected bars; next batch, swap any high-iodine-value oil (sweet almond, sunflower) out for a lower-iodine alternative or drop the superfat from 5% to 3%."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Date-stamp the loaf at unmould — \"2026-05-18-A\" on a sticker on the wooden storage box. Knowing the batch date matters if you trace back from a DOS bar or if you gift the bars and want the recipient to know when the bar was cut."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "If the soap went sideways",
+          "intro": "The five ways a cold-process bar goes wrong, and what to fix.",
+          "items": [
+            {
+              "symptom": "Batter never traces — still pourable after 10 minutes of blending",
+              "cause": "Lye solution and oils were too cool when combined (below ~30°C), or the recipe is heavy on slow-tracing oils (very high olive-oil content) and the temperature window was off.",
+              "fix": "Don't add more lye — that breaks the recipe. Warm the bowl gently (set it on a heating pad, or in a sink of warm water) and pulse-blend in 30-second bursts. Trace will come with patience."
+            },
+            {
+              "symptom": "Batter seizes — turns to thick pudding in 30 seconds and won't pour",
+              "cause": "Lye and oils were too hot (above 50°C), the recipe contains a heavy fragrance oil that accelerates trace, or the stick blender ran continuously rather than in pulses.",
+              "fix": "Quickly spoon the batter into the mould; you'll have a rustic finish but the bar still saponifies. Next batch, cool both phases to 35-38°C and pulse the blender."
+            },
+            {
+              "symptom": "Loaf has wet white patches on the surface 24 hours in",
+              "cause": "Soda ash — sodium carbonate that forms when fresh soap meets ambient CO2. Cosmetic-harmless but visually distinct.",
+              "fix": "Wipe the surface with a cloth dampened with rubbing alcohol or trim the affected layer with a vegetable peeler. Next batch, cover the mould more tightly with cling film for the first 12 hours so CO2 can't reach the surface."
+            },
+            {
+              "symptom": "Centre of the loaf is darker / orange / oily after gel phase",
+              "cause": "Overheated gel — the centre got too hot and the oils partially separated. Sometimes called a volcano if it bubbles up.",
+              "fix": "If the loaf is structurally intact, the bars cure normally; the colour evens out over 4-6 weeks. If the loaf split or the surface erupted, the bars are not safe — discard and try again with a less-insulated rest."
+            },
+            {
+              "symptom": "Cure-test sliver reads pH 11+ at week 4",
+              "cause": "Lye-heavy bar — either the lye was over-measured at the start or the recipe was miscalculated.",
+              "fix": "Cure another 2 weeks and re-test. If still above 11, the bar is harsh for skin use; relabel as laundry soap (where high pH is fine) and start a fresh batch with a re-checked lye weight."
+            }
           ]
         }
       }

@@ -2,7 +2,7 @@
   "slug": "cross-stitch-alphabet-sampler-border",
   "title": "Cross-stitch a simple alphabet sampler border",
   "subtitle": "Three colours, three rows, a Victorian samp letter",
-  "excerpt": "A starter cross-stitch border worked on 14-count Aida in three colours. The pattern is a short row of capital letters in the samp-letter style of Therese de Dillmont and Weldon's Practical Needlework — twenty-five centimetres long and eight centimetres deep when finished. A first finished piece a new stitcher can complete in an evening or two.",
+  "excerpt": "A starter cross-stitch border worked on 14-count Aida in three colours. The pattern is a short row of capital letters in the samp-letter style of Therese de Dillmont and Weldon's Practical Needlework, twenty-five centimetres long and eight centimetres deep when finished. A first finished piece a new stitcher can complete in an evening or two.",
   "type": "PATTERN",
   "categorySlug": "needlework",
   "subCategorySlug": "cross-stitch",
@@ -13,24 +13,64 @@
   "sewing": {
     "craftType": "needlework",
     "projectShape": "unconstructed",
-    "requiredFabricSlugs": ["aida-14"],
-    "requiredNotionSlugs": ["dmc-stranded-cotton", "anchor-stranded-cotton"],
+    "requiredFabricSlugs": [
+      "aida-14"
+    ],
+    "requiredNotionSlugs": [
+      "dmc-stranded-cotton",
+      "anchor-stranded-cotton"
+    ],
     "sewingMethod": "hand-sewn",
     "fabricYardageMetres": null,
-    "finishedDimensionsCm": { "widthCm": 25, "heightCm": 8 },
+    "finishedDimensionsCm": {
+      "widthCm": 25,
+      "heightCm": 8
+    },
     "bodyMeasurementsRequired": []
   },
   "recipeTools": [
-    { "slug": "tapestry-needle-24", "isOptional": false, "notes": "Size 24 is the standard needle for 14-count Aida." },
-    { "slug": "embroidery-hoop-6", "isOptional": false, "notes": "15 cm hoop. Comfortable for one section of the sampler at a time; reposition as the work progresses." },
-    { "slug": "embroidery-scissors", "isOptional": false, "notes": "Small sharp-pointed scissors for thread; keep capped when not in use." },
-    { "slug": "needle-minder", "isOptional": true, "notes": "A two-piece magnet that parks the needle safely between stitches. Strongly recommended around children or pets." }
+    {
+      "slug": "tapestry-needle-24",
+      "isOptional": false,
+      "notes": "Size 24 is the standard needle for 14-count Aida."
+    },
+    {
+      "slug": "embroidery-hoop-6",
+      "isOptional": false,
+      "notes": "15 cm hoop. Comfortable for one section of the sampler at a time; reposition as the work progresses."
+    },
+    {
+      "slug": "embroidery-scissors",
+      "isOptional": false,
+      "notes": "Small sharp-pointed scissors for thread; keep capped when not in use."
+    },
+    {
+      "slug": "needle-minder",
+      "isOptional": true,
+      "notes": "A two-piece magnet that parks the needle safely between stitches. Strongly recommended around children or pets."
+    }
   ],
   "glossaryTerms": [
-    { "slug": "samp-letter", "term": "Samp letter", "definition": "A block-letter alphabet stitched on a Victorian sampler. Letters are simple geometric forms designed to read clearly at small scales; the convention dates to seventeenth-century European needle-girls' work and was canonical by the Victorian era." },
-    { "slug": "stranded-cotton", "term": "Stranded cotton", "definition": "Six-strand mercerised cotton floss, the standard cross-stitch thread. Sold in skeins; pulled apart and used in counts matched to the cloth (two strands for 14-count Aida, one for 18-count and above)." },
-    { "slug": "loop-start", "term": "Loop start", "definition": "A way to start a cross-stitch with an even strand count (two, four) and no knot. Fold one length in half, thread the cut ends through the needle, leave the looped end on the back of the cloth, and the first stitch catches the loop to anchor the thread." },
-    { "slug": "away-knot", "term": "Away knot", "definition": "A starting knot tied 8-10 cm from the first stitch, well clear of the pattern area. The tail is later worked into the back of the cloth and the knot snipped off. Used when the strand count is odd (three, five), which won't take a loop start." }
+    {
+      "slug": "samp-letter",
+      "term": "Samp letter",
+      "definition": "A block-letter alphabet stitched on a Victorian sampler. Letters are simple geometric forms designed to read clearly at small scales; the convention dates to seventeenth-century European needle-girls' work and was canonical by the Victorian era."
+    },
+    {
+      "slug": "stranded-cotton",
+      "term": "Stranded cotton",
+      "definition": "Six-strand mercerised cotton floss, the standard cross-stitch thread. Sold in skeins; pulled apart and used in counts matched to the cloth (two strands for 14-count Aida, one for 18-count and above)."
+    },
+    {
+      "slug": "loop-start",
+      "term": "Loop start",
+      "definition": "A way to start a cross-stitch with an even strand count (two, four) and no knot. Fold one length in half, thread the cut ends through the needle, leave the looped end on the back of the cloth, and the first stitch catches the loop to anchor the thread."
+    },
+    {
+      "slug": "away-knot",
+      "term": "Away knot",
+      "definition": "A starting knot tied 8-10 cm from the first stitch, well clear of the pattern area. The tail is later worked into the back of the cloth and the knot snipped off. Used when the strand count is odd (three, five), which won't take a loop start."
+    }
   ],
   "body": {
     "type": "doc",
@@ -38,17 +78,51 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "A first finished cross-stitch is more useful as a confidence-builder than as a wall hanging. This sampler border is the standard starter piece: a row of capital letters in the " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "samp-letter" } }], "text": "samp-letter" },
-          { "type": "text", "text": " style worked on 14-count Aida cloth in three colours of " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stranded-cotton" } }], "text": "stranded cotton" },
-          { "type": "text", "text": ". The design is 88 stitches wide and 28 stitches tall, which works out at about 16 by 5 centimetres of stitched area. A 4 cm margin all round gives a 25 by 8 cm finished piece ready to mount in a hoop frame or stitch into a small cushion front. Allow an evening or two." }
+          {
+            "type": "text",
+            "text": "A first finished cross-stitch is more useful as a confidence-builder than as a wall hanging. This sampler border is the standard starter piece: a row of capital letters in the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "samp-letter"
+                }
+              }
+            ],
+            "text": "samp-letter"
+          },
+          {
+            "type": "text",
+            "text": " style worked on 14-count Aida cloth in three colours of "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "stranded-cotton"
+                }
+              }
+            ],
+            "text": "stranded cotton"
+          },
+          {
+            "type": "text",
+            "text": ". The design is 88 stitches wide and 28 stitches tall, which works out at about 16 by 5 centimetres of stitched area. A 4 cm margin all round gives a 25 by 8 cm finished piece ready to mount in a hoop frame or stitch into a small cushion front. Allow an evening or two."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The letter forms are unchanged from the originals in Therese de Dillmont's Encyclopedia of Needlework (1886) and Weldon's Practical Needlework volume 2. The three-colour palette (a deep red, a soft sage, a muted gold) is a synthesis: any three contrasting stranded-cotton shades will work, and the design reads equally well in a single colour for a more austere historical look." }
+          {
+            "type": "text",
+            "text": "The letter forms are unchanged from the originals in Therese de Dillmont's Encyclopedia of Needlework (1886) and Weldon's Practical Needlework volume 2. The three-colour palette (a deep red, a soft sage, a muted gold) is a synthesis: any three contrasting stranded-cotton shades will work, and the design reads equally well in a single colour for a more austere historical look."
+          }
         ]
       },
       {
@@ -56,13 +130,20 @@
         "attrs": {
           "tone": "warning",
           "title": "Before you start",
-          "body": "Eye fatigue. Cross-stitch on 14-count Aida is gentle on the eyes, but any extended session benefits from a daylight task lamp (5,000-6,500 K) at the work and a five-minute break every 30 minutes to stretch the hands and look at something further than the cloth.\n\nNeedle storage. The tapestry needle parks on a needle-minder magnet between stitches — one half on the front of the cloth, one half behind. Never leave the needle on the sofa arm or in soft furnishing where it can be sat on. Especially important around children and pets.\n\nScissors. Embroidery scissors are surgical-sharp. Keep them capped or sheathed when not in use; dedicate them to cloth and thread (not paper, which dulls the edge quickly).\n\nPosture. The hoop holds the cloth taut so the stitcher doesn't crush it in a fist. Shoulders down, cloth off the lap, both hands free to pass the needle from front to back."
+          "body": "Eye fatigue. Cross-stitch on 14-count Aida is gentle on the eyes, but any extended session benefits from a daylight task lamp (5,000-6,500 K) at the work and a five-minute break every 30 minutes to stretch the hands and look at something further than the cloth. Needle storage. The tapestry needle parks on a needle-minder magnet between stitches, one half on the front of the cloth, one half behind. Never leave the needle on the sofa arm or in soft furnishing where it can be sat on. Especially important around children and pets. Scissors. Embroidery scissors are surgical-sharp. Keep them capped or sheathed when not in use; dedicate them to cloth and thread (not paper, which dulls the edge quickly). Posture. The hoop holds the cloth taut so the stitcher doesn't crush it in a fist. Shoulders down, cloth off the lap, both hands free to pass the needle from front to back."
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "bulletList",
@@ -73,8 +154,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "14-count Aida cloth" },
-                  { "type": "text", "text": ", a 30 by 13 cm piece. White or cream is the conventional ground; the chart works equally well on a dyed cloth (sage, oatmeal, navy) if the floss palette is adjusted for contrast. Allow 4 cm of margin on every side." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "14-count Aida cloth"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", a 30 by 13 cm piece. White or cream is the conventional ground; the chart works equally well on a dyed cloth (sage, oatmeal, navy) if the floss palette is adjusted for contrast. Allow 4 cm of margin on every side."
+                  }
                 ]
               }
             ]
@@ -85,8 +177,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Stranded cotton in three colours" },
-                  { "type": "text", "text": ", one skein each. The pattern uses deep red (DMC 815 / Anchor 43), soft sage (DMC 522 / Anchor 859), and muted gold (DMC 832 / Anchor 907). Substitute any contrasting three; the chart legend below carries the colour assignments." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Stranded cotton in three colours"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", one skein each. The pattern uses deep red (DMC 815 / Anchor 43), soft sage (DMC 522 / Anchor 859), and muted gold (DMC 832 / Anchor 907). Substitute any contrasting three; the chart legend below carries the colour assignments."
+                  }
                 ]
               }
             ]
@@ -97,8 +200,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Size 24 tapestry needle" },
-                  { "type": "text", "text": ". Blunt-tipped; the eye is large enough to take two strands of stranded cotton comfortably." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Size 24 tapestry needle"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". Blunt-tipped; the eye is large enough to take two strands of stranded cotton comfortably."
+                  }
                 ]
               }
             ]
@@ -109,8 +223,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "15 cm embroidery hoop" },
-                  { "type": "text", "text": ". The whole design fits inside a 15 cm hoop in two repositions. A larger hoop (20 cm) holds the work in a single setup but is heavier on the wrist." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "15 cm embroidery hoop"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". The whole design fits inside a 15 cm hoop in two repositions. A larger hoop (20 cm) holds the work in a single setup but is heavier on the wrist."
+                  }
                 ]
               }
             ]
@@ -121,8 +246,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Embroidery scissors and a needle-minder magnet" },
-                  { "type": "text", "text": ". Scissors capped between uses; magnet attached to the cloth." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Embroidery scissors and a needle-minder magnet"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". Scissors capped between uses; magnet attached to the cloth."
+                  }
                 ]
               }
             ]
@@ -131,41 +267,95 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Working method" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Start at the centre of the cloth and work outwards. Find the centre of the cloth by folding it in half lengthways and again widthways; the intersection of the two folds is the centre. Find the centre of the chart at the intersection of the bold rules at column 44 and row 14. The first stitch on the cloth corresponds to the chart's centre. Working outwards from the middle means any cumulative miscount is split across two halves and stays manageable." }
+          {
+            "type": "text",
+            "text": "Working method"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Use two strands of stranded cotton. Cut a 50 cm length from the skein, separate two strands (gently pull one strand free at a time, then put two back together), and thread the needle. For an even strand count, the cleanest start is a " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "loop-start" } }], "text": "loop start" },
-          { "type": "text", "text": ": fold the two strands in half, thread the cut ends, leave the loop on the back of the cloth, and the first stitch catches the loop to anchor the thread. If you prefer a knot-based start, use an " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "away-knot" } }], "text": "away knot" },
-          { "type": "text", "text": ": tie the knot, take the needle down through the cloth 8-10 cm clear of the pattern, work the first stitch over the held tail, and snip the knot off when you reach it later." }
+          {
+            "type": "text",
+            "text": "Start at the centre of the cloth and work outwards. Find the centre of the cloth by folding it in half lengthways and again widthways; the intersection of the two folds is the centre. Find the centre of the chart at the intersection of the bold rules at column 44 and row 14. The first stitch on the cloth corresponds to the chart's centre. Working outwards from the middle means any cumulative miscount is split across two halves and stays manageable."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Cross-stitch convention: the bottom leg of every cross runs from bottom-left to top-right (south-west to north-east), and the top leg crosses the same way (bottom-right to top-left) — every stitch on the finished piece. The top legs all running the same direction is what makes a finished cross-stitch read as crisp rather than scrappy from across the room. A row's worth of bottom legs are typically worked first across a stretch of one colour, then the top legs are added on the return pass. This is the half-cross approach; it is faster than working each cross individually and looks the same once complete." }
+          {
+            "type": "text",
+            "text": "Use two strands of stranded cotton. Cut a 50 cm length from the skein, separate two strands (gently pull one strand free at a time, then put two back together), and thread the needle. For an even strand count, the cleanest start is a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "loop-start"
+                }
+              }
+            ],
+            "text": "loop start"
+          },
+          {
+            "type": "text",
+            "text": ": fold the two strands in half, thread the cut ends, leave the loop on the back of the cloth, and the first stitch catches the loop to anchor the thread. If you prefer a knot-based start, use an "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "away-knot"
+                }
+              }
+            ],
+            "text": "away knot"
+          },
+          {
+            "type": "text",
+            "text": ": tie the knot, take the needle down through the cloth 8-10 cm clear of the pattern, work the first stitch over the held tail, and snip the knot off when you reach it later."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "End a thread by passing the needle under four to five completed stitches on the back of the cloth, pulling through, and snipping. Never tie a knot on the back — knots show through, snag the needle on later stitches, and look untidy. The woven-tail finish is the convention." }
+          {
+            "type": "text",
+            "text": "Cross-stitch convention: the bottom leg of every cross runs from bottom-left to top-right (south-west to north-east), and the top leg crosses the same way (bottom-right to top-left), every stitch on the finished piece. The top legs all running the same direction is what makes a finished cross-stitch read as crisp rather than scrappy from across the room. A row's worth of bottom legs are typically worked first across a stretch of one colour, then the top legs are added on the return pass. This is the half-cross approach; it is faster than working each cross individually and looks the same once complete."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "End a thread by passing the needle under four to five completed stitches on the back of the cloth, pulling through, and snipping. Never tie a knot on the back, knots show through, snag the needle on later stitches, and look untidy. The woven-tail finish is the convention."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Chart" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Chart"
+          }
+        ]
       },
       {
         "type": "crossStitchChart",
@@ -178,76 +368,1047 @@
             "fabricCount": 14,
             "finishedSizeText": "16 × 5 cm on 14-count Aida; 12.5 × 4 cm on 18-count Aida",
             "palette": [
-              { "key": "red", "name": "Deep red", "hex": "#8E1F2D", "dmcCode": "815", "anchorCode": "43", "skeinEstimate": "1 skein" },
-              { "key": "sage", "name": "Soft sage", "hex": "#7E8B5E", "dmcCode": "522", "anchorCode": "859", "skeinEstimate": "1 skein" },
-              { "key": "gold", "name": "Muted gold", "hex": "#B89B4E", "dmcCode": "832", "anchorCode": "907", "skeinEstimate": "1 skein" }
+              {
+                "key": "red",
+                "name": "Deep red",
+                "hex": "#8E1F2D",
+                "dmcCode": "815",
+                "anchorCode": "43",
+                "skeinEstimate": "1 skein"
+              },
+              {
+                "key": "sage",
+                "name": "Soft sage",
+                "hex": "#7E8B5E",
+                "dmcCode": "522",
+                "anchorCode": "859",
+                "skeinEstimate": "1 skein"
+              },
+              {
+                "key": "gold",
+                "name": "Muted gold",
+                "hex": "#B89B4E",
+                "dmcCode": "832",
+                "anchorCode": "907",
+                "skeinEstimate": "1 skein"
+              }
             ],
             "cells": [
-              { "x": 4, "y": 4, "paletteKey": "sage" }, { "x": 5, "y": 4, "paletteKey": "sage" }, { "x": 6, "y": 4, "paletteKey": "sage" }, { "x": 7, "y": 4, "paletteKey": "sage" }, { "x": 8, "y": 4, "paletteKey": "sage" }, { "x": 9, "y": 4, "paletteKey": "sage" }, { "x": 10, "y": 4, "paletteKey": "sage" },
-              { "x": 4, "y": 5, "paletteKey": "red" }, { "x": 8, "y": 5, "paletteKey": "red" },
-              { "x": 4, "y": 6, "paletteKey": "red" }, { "x": 8, "y": 6, "paletteKey": "red" },
-              { "x": 4, "y": 7, "paletteKey": "red" }, { "x": 5, "y": 7, "paletteKey": "red" }, { "x": 6, "y": 7, "paletteKey": "red" }, { "x": 7, "y": 7, "paletteKey": "red" }, { "x": 8, "y": 7, "paletteKey": "red" },
-              { "x": 4, "y": 8, "paletteKey": "red" }, { "x": 8, "y": 8, "paletteKey": "red" },
-              { "x": 4, "y": 9, "paletteKey": "red" }, { "x": 8, "y": 9, "paletteKey": "red" },
-              { "x": 4, "y": 10, "paletteKey": "red" }, { "x": 8, "y": 10, "paletteKey": "red" },
-
-              { "x": 14, "y": 4, "paletteKey": "red" }, { "x": 15, "y": 4, "paletteKey": "red" }, { "x": 16, "y": 4, "paletteKey": "red" }, { "x": 17, "y": 4, "paletteKey": "red" },
-              { "x": 14, "y": 5, "paletteKey": "red" }, { "x": 18, "y": 5, "paletteKey": "red" },
-              { "x": 14, "y": 6, "paletteKey": "red" }, { "x": 18, "y": 6, "paletteKey": "red" },
-              { "x": 14, "y": 7, "paletteKey": "red" }, { "x": 15, "y": 7, "paletteKey": "red" }, { "x": 16, "y": 7, "paletteKey": "red" }, { "x": 17, "y": 7, "paletteKey": "red" },
-              { "x": 14, "y": 8, "paletteKey": "red" }, { "x": 18, "y": 8, "paletteKey": "red" },
-              { "x": 14, "y": 9, "paletteKey": "red" }, { "x": 18, "y": 9, "paletteKey": "red" },
-              { "x": 14, "y": 10, "paletteKey": "red" }, { "x": 15, "y": 10, "paletteKey": "red" }, { "x": 16, "y": 10, "paletteKey": "red" }, { "x": 17, "y": 10, "paletteKey": "red" },
-
-              { "x": 23, "y": 4, "paletteKey": "gold" }, { "x": 24, "y": 4, "paletteKey": "gold" }, { "x": 25, "y": 4, "paletteKey": "gold" }, { "x": 26, "y": 4, "paletteKey": "gold" },
-              { "x": 22, "y": 5, "paletteKey": "gold" }, { "x": 27, "y": 5, "paletteKey": "gold" },
-              { "x": 22, "y": 6, "paletteKey": "gold" },
-              { "x": 22, "y": 7, "paletteKey": "gold" },
-              { "x": 22, "y": 8, "paletteKey": "gold" },
-              { "x": 22, "y": 9, "paletteKey": "gold" }, { "x": 27, "y": 9, "paletteKey": "gold" },
-              { "x": 23, "y": 10, "paletteKey": "gold" }, { "x": 24, "y": 10, "paletteKey": "gold" }, { "x": 25, "y": 10, "paletteKey": "gold" }, { "x": 26, "y": 10, "paletteKey": "gold" },
-
-              { "x": 31, "y": 4, "paletteKey": "sage" }, { "x": 32, "y": 4, "paletteKey": "sage" }, { "x": 33, "y": 4, "paletteKey": "sage" }, { "x": 34, "y": 4, "paletteKey": "sage" },
-              { "x": 31, "y": 5, "paletteKey": "sage" }, { "x": 35, "y": 5, "paletteKey": "sage" },
-              { "x": 31, "y": 6, "paletteKey": "sage" }, { "x": 35, "y": 6, "paletteKey": "sage" },
-              { "x": 31, "y": 7, "paletteKey": "sage" }, { "x": 35, "y": 7, "paletteKey": "sage" },
-              { "x": 31, "y": 8, "paletteKey": "sage" }, { "x": 35, "y": 8, "paletteKey": "sage" },
-              { "x": 31, "y": 9, "paletteKey": "sage" }, { "x": 35, "y": 9, "paletteKey": "sage" },
-              { "x": 31, "y": 10, "paletteKey": "sage" }, { "x": 32, "y": 10, "paletteKey": "sage" }, { "x": 33, "y": 10, "paletteKey": "sage" }, { "x": 34, "y": 10, "paletteKey": "sage" },
-
-              { "x": 39, "y": 4, "paletteKey": "red" }, { "x": 40, "y": 4, "paletteKey": "red" }, { "x": 41, "y": 4, "paletteKey": "red" }, { "x": 42, "y": 4, "paletteKey": "red" }, { "x": 43, "y": 4, "paletteKey": "red" },
-              { "x": 39, "y": 5, "paletteKey": "red" },
-              { "x": 39, "y": 6, "paletteKey": "red" },
-              { "x": 39, "y": 7, "paletteKey": "red" }, { "x": 40, "y": 7, "paletteKey": "red" }, { "x": 41, "y": 7, "paletteKey": "red" },
-              { "x": 39, "y": 8, "paletteKey": "red" },
-              { "x": 39, "y": 9, "paletteKey": "red" },
-              { "x": 39, "y": 10, "paletteKey": "red" }, { "x": 40, "y": 10, "paletteKey": "red" }, { "x": 41, "y": 10, "paletteKey": "red" }, { "x": 42, "y": 10, "paletteKey": "red" }, { "x": 43, "y": 10, "paletteKey": "red" },
-
-              { "x": 47, "y": 4, "paletteKey": "gold" }, { "x": 48, "y": 4, "paletteKey": "gold" }, { "x": 49, "y": 4, "paletteKey": "gold" }, { "x": 50, "y": 4, "paletteKey": "gold" }, { "x": 51, "y": 4, "paletteKey": "gold" },
-              { "x": 47, "y": 5, "paletteKey": "gold" },
-              { "x": 47, "y": 6, "paletteKey": "gold" },
-              { "x": 47, "y": 7, "paletteKey": "gold" }, { "x": 48, "y": 7, "paletteKey": "gold" }, { "x": 49, "y": 7, "paletteKey": "gold" },
-              { "x": 47, "y": 8, "paletteKey": "gold" },
-              { "x": 47, "y": 9, "paletteKey": "gold" },
-              { "x": 47, "y": 10, "paletteKey": "gold" },
-
-              { "x": 56, "y": 4, "paletteKey": "sage" }, { "x": 57, "y": 4, "paletteKey": "sage" }, { "x": 58, "y": 4, "paletteKey": "sage" }, { "x": 59, "y": 4, "paletteKey": "sage" },
-              { "x": 55, "y": 5, "paletteKey": "sage" }, { "x": 60, "y": 5, "paletteKey": "sage" },
-              { "x": 55, "y": 6, "paletteKey": "sage" },
-              { "x": 55, "y": 7, "paletteKey": "sage" }, { "x": 58, "y": 7, "paletteKey": "sage" }, { "x": 59, "y": 7, "paletteKey": "sage" }, { "x": 60, "y": 7, "paletteKey": "sage" },
-              { "x": 55, "y": 8, "paletteKey": "sage" }, { "x": 60, "y": 8, "paletteKey": "sage" },
-              { "x": 55, "y": 9, "paletteKey": "sage" }, { "x": 60, "y": 9, "paletteKey": "sage" },
-              { "x": 56, "y": 10, "paletteKey": "sage" }, { "x": 57, "y": 10, "paletteKey": "sage" }, { "x": 58, "y": 10, "paletteKey": "sage" }, { "x": 59, "y": 10, "paletteKey": "sage" },
-
-              { "x": 12, "y": 16, "paletteKey": "sage" }, { "x": 13, "y": 16, "paletteKey": "sage" }, { "x": 14, "y": 16, "paletteKey": "sage" }, { "x": 15, "y": 16, "paletteKey": "sage" }, { "x": 16, "y": 16, "paletteKey": "sage" }, { "x": 17, "y": 16, "paletteKey": "sage" }, { "x": 18, "y": 16, "paletteKey": "sage" }, { "x": 19, "y": 16, "paletteKey": "sage" }, { "x": 20, "y": 16, "paletteKey": "sage" }, { "x": 21, "y": 16, "paletteKey": "sage" }, { "x": 22, "y": 16, "paletteKey": "sage" }, { "x": 23, "y": 16, "paletteKey": "sage" }, { "x": 24, "y": 16, "paletteKey": "sage" }, { "x": 25, "y": 16, "paletteKey": "sage" }, { "x": 26, "y": 16, "paletteKey": "sage" }, { "x": 27, "y": 16, "paletteKey": "sage" }, { "x": 28, "y": 16, "paletteKey": "sage" }, { "x": 29, "y": 16, "paletteKey": "sage" }, { "x": 30, "y": 16, "paletteKey": "sage" }, { "x": 31, "y": 16, "paletteKey": "sage" }, { "x": 32, "y": 16, "paletteKey": "sage" }, { "x": 33, "y": 16, "paletteKey": "sage" }, { "x": 34, "y": 16, "paletteKey": "sage" }, { "x": 35, "y": 16, "paletteKey": "sage" }, { "x": 36, "y": 16, "paletteKey": "sage" }, { "x": 37, "y": 16, "paletteKey": "sage" }, { "x": 38, "y": 16, "paletteKey": "sage" }, { "x": 39, "y": 16, "paletteKey": "sage" }, { "x": 40, "y": 16, "paletteKey": "sage" }, { "x": 41, "y": 16, "paletteKey": "sage" }, { "x": 42, "y": 16, "paletteKey": "sage" }, { "x": 43, "y": 16, "paletteKey": "sage" },
-
-              { "x": 18, "y": 19, "paletteKey": "gold" }, { "x": 19, "y": 19, "paletteKey": "gold" }, { "x": 20, "y": 19, "paletteKey": "gold" },
-              { "x": 22, "y": 19, "paletteKey": "gold" }, { "x": 23, "y": 19, "paletteKey": "gold" }, { "x": 24, "y": 19, "paletteKey": "gold" },
-              { "x": 26, "y": 19, "paletteKey": "gold" }, { "x": 27, "y": 19, "paletteKey": "gold" }, { "x": 28, "y": 19, "paletteKey": "gold" },
-              { "x": 30, "y": 19, "paletteKey": "gold" }, { "x": 31, "y": 19, "paletteKey": "gold" }, { "x": 32, "y": 19, "paletteKey": "gold" },
-              { "x": 34, "y": 19, "paletteKey": "gold" }, { "x": 35, "y": 19, "paletteKey": "gold" }, { "x": 36, "y": 19, "paletteKey": "gold" },
-
-              { "x": 12, "y": 22, "paletteKey": "sage" }, { "x": 13, "y": 22, "paletteKey": "sage" }, { "x": 14, "y": 22, "paletteKey": "sage" }, { "x": 15, "y": 22, "paletteKey": "sage" }, { "x": 16, "y": 22, "paletteKey": "sage" }, { "x": 17, "y": 22, "paletteKey": "sage" }, { "x": 18, "y": 22, "paletteKey": "sage" }, { "x": 19, "y": 22, "paletteKey": "sage" }, { "x": 20, "y": 22, "paletteKey": "sage" }, { "x": 21, "y": 22, "paletteKey": "sage" }, { "x": 22, "y": 22, "paletteKey": "sage" }, { "x": 23, "y": 22, "paletteKey": "sage" }, { "x": 24, "y": 22, "paletteKey": "sage" }, { "x": 25, "y": 22, "paletteKey": "sage" }, { "x": 26, "y": 22, "paletteKey": "sage" }, { "x": 27, "y": 22, "paletteKey": "sage" }, { "x": 28, "y": 22, "paletteKey": "sage" }, { "x": 29, "y": 22, "paletteKey": "sage" }, { "x": 30, "y": 22, "paletteKey": "sage" }, { "x": 31, "y": 22, "paletteKey": "sage" }, { "x": 32, "y": 22, "paletteKey": "sage" }, { "x": 33, "y": 22, "paletteKey": "sage" }, { "x": 34, "y": 22, "paletteKey": "sage" }, { "x": 35, "y": 22, "paletteKey": "sage" }, { "x": 36, "y": 22, "paletteKey": "sage" }, { "x": 37, "y": 22, "paletteKey": "sage" }, { "x": 38, "y": 22, "paletteKey": "sage" }, { "x": 39, "y": 22, "paletteKey": "sage" }, { "x": 40, "y": 22, "paletteKey": "sage" }, { "x": 41, "y": 22, "paletteKey": "sage" }, { "x": 42, "y": 22, "paletteKey": "sage" }, { "x": 43, "y": 22, "paletteKey": "sage" }
+              {
+                "x": 4,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 5,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 6,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 7,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 8,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 9,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 10,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 4,
+                "y": 5,
+                "paletteKey": "red"
+              },
+              {
+                "x": 8,
+                "y": 5,
+                "paletteKey": "red"
+              },
+              {
+                "x": 4,
+                "y": 6,
+                "paletteKey": "red"
+              },
+              {
+                "x": 8,
+                "y": 6,
+                "paletteKey": "red"
+              },
+              {
+                "x": 4,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 5,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 6,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 7,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 8,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 4,
+                "y": 8,
+                "paletteKey": "red"
+              },
+              {
+                "x": 8,
+                "y": 8,
+                "paletteKey": "red"
+              },
+              {
+                "x": 4,
+                "y": 9,
+                "paletteKey": "red"
+              },
+              {
+                "x": 8,
+                "y": 9,
+                "paletteKey": "red"
+              },
+              {
+                "x": 4,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 8,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 14,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 15,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 16,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 17,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 14,
+                "y": 5,
+                "paletteKey": "red"
+              },
+              {
+                "x": 18,
+                "y": 5,
+                "paletteKey": "red"
+              },
+              {
+                "x": 14,
+                "y": 6,
+                "paletteKey": "red"
+              },
+              {
+                "x": 18,
+                "y": 6,
+                "paletteKey": "red"
+              },
+              {
+                "x": 14,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 15,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 16,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 17,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 14,
+                "y": 8,
+                "paletteKey": "red"
+              },
+              {
+                "x": 18,
+                "y": 8,
+                "paletteKey": "red"
+              },
+              {
+                "x": 14,
+                "y": 9,
+                "paletteKey": "red"
+              },
+              {
+                "x": 18,
+                "y": 9,
+                "paletteKey": "red"
+              },
+              {
+                "x": 14,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 15,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 16,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 17,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 23,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 24,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 25,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 26,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 22,
+                "y": 5,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 27,
+                "y": 5,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 22,
+                "y": 6,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 22,
+                "y": 7,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 22,
+                "y": 8,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 22,
+                "y": 9,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 27,
+                "y": 9,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 23,
+                "y": 10,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 24,
+                "y": 10,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 25,
+                "y": 10,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 26,
+                "y": 10,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 31,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 32,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 33,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 34,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 31,
+                "y": 5,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 35,
+                "y": 5,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 31,
+                "y": 6,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 35,
+                "y": 6,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 31,
+                "y": 7,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 35,
+                "y": 7,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 31,
+                "y": 8,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 35,
+                "y": 8,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 31,
+                "y": 9,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 35,
+                "y": 9,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 31,
+                "y": 10,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 32,
+                "y": 10,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 33,
+                "y": 10,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 34,
+                "y": 10,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 39,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 40,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 41,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 42,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 43,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 39,
+                "y": 5,
+                "paletteKey": "red"
+              },
+              {
+                "x": 39,
+                "y": 6,
+                "paletteKey": "red"
+              },
+              {
+                "x": 39,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 40,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 41,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 39,
+                "y": 8,
+                "paletteKey": "red"
+              },
+              {
+                "x": 39,
+                "y": 9,
+                "paletteKey": "red"
+              },
+              {
+                "x": 39,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 40,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 41,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 42,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 43,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 47,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 48,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 49,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 50,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 51,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 47,
+                "y": 5,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 47,
+                "y": 6,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 47,
+                "y": 7,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 48,
+                "y": 7,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 49,
+                "y": 7,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 47,
+                "y": 8,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 47,
+                "y": 9,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 47,
+                "y": 10,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 56,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 57,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 58,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 59,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 55,
+                "y": 5,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 60,
+                "y": 5,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 55,
+                "y": 6,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 55,
+                "y": 7,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 58,
+                "y": 7,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 59,
+                "y": 7,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 60,
+                "y": 7,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 55,
+                "y": 8,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 60,
+                "y": 8,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 55,
+                "y": 9,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 60,
+                "y": 9,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 56,
+                "y": 10,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 57,
+                "y": 10,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 58,
+                "y": 10,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 59,
+                "y": 10,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 12,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 13,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 14,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 15,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 16,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 17,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 18,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 19,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 20,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 21,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 22,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 23,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 24,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 25,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 26,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 27,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 28,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 29,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 30,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 31,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 32,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 33,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 34,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 35,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 36,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 37,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 38,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 39,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 40,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 41,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 42,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 43,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 18,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 19,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 20,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 22,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 23,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 24,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 26,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 27,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 28,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 30,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 31,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 32,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 34,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 35,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 36,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 12,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 13,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 14,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 15,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 16,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 17,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 18,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 19,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 20,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 21,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 22,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 23,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 24,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 25,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 26,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 27,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 28,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 29,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 30,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 31,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 32,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 33,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 34,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 35,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 36,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 37,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 38,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 39,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 40,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 41,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 42,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 43,
+                "y": 22,
+                "paletteKey": "sage"
+              }
             ]
           }
         }
@@ -255,24 +1416,44 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Reading the chart. Bold rules at every ten stitches help keep count. The legend names each colour with its DMC and Anchor cross-reference and a unique symbol for monochrome readability. Each cell on the chart represents one cross-stitch over one square of 14-count Aida. The two horizontal sage lines on rows 16 and 22, separated by the dotted gold tick row at row 19, are decorative borders below the alphabet — historically used in Victorian samplers to separate alphabet rows from date and maker's initials below." }
+          {
+            "type": "text",
+            "text": "Reading the chart. Bold rules at every ten stitches help keep count. The legend names each colour with its DMC and Anchor cross-reference and a unique symbol for monochrome readability. Each cell on the chart represents one cross-stitch over one square of 14-count Aida. The two horizontal sage lines on rows 16 and 22, separated by the dotted gold tick row at row 19, are decorative borders below the alphabet, historically used in Victorian samplers to separate alphabet rows from date and maker's initials below."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Finishing" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Wash the finished piece in cool water with a small drop of mild detergent. Roll between two clean towels to remove the water. Press face-down on a soft folded towel with a steam iron on the silk setting; the towel cushion stops the back's bobbles from flattening the front's stitches. Mount in the 15 cm or 20 cm hoop as a finished frame, or pass to a Sewing tutorial for backing as a cushion front or framing on board." }
+          {
+            "type": "text",
+            "text": "Wash the finished piece in cool water with a small drop of mild detergent. Roll between two clean towels to remove the water. Press face-down on a soft folded towel with a steam iron on the silk setting; the towel cushion stops the back's bobbles from flattening the front's stitches. Mount in the 15 cm or 20 cm hoop as a finished frame, or pass to a Sewing tutorial for backing as a cushion front or framing on board."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What to try next" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
       },
       {
         "type": "bulletList",
@@ -283,8 +1464,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Add the rest of the alphabet" },
-                  { "type": "text", "text": ". The samp letters H through Z follow the same construction rules; Therese de Dillmont's Encyclopedia carries the full alphabet on a single plate. Doubling the chart width adds about an hour of stitching per row of letters." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Add the rest of the alphabet"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". The samp letters H through Z follow the same construction rules; Therese de Dillmont's Encyclopedia carries the full alphabet on a single plate. Doubling the chart width adds about an hour of stitching per row of letters."
+                  }
                 ]
               }
             ]
@@ -295,8 +1487,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Stitch your own initials below" },
-                  { "type": "text", "text": ". The Victorian convention was a row of capitals, a decorative band, then the maker's monogram, then the year. Add initials and a year in the same palette to make the piece a record of the household it was stitched in." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Stitch your own initials below"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". The Victorian convention was a row of capitals, a decorative band, then the maker's monogram, then the year. Add initials and a year in the same palette to make the piece a record of the household it was stitched in."
+                  }
                 ]
               }
             ]
@@ -307,8 +1510,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Try the same chart on 18-count Aida" },
-                  { "type": "text", "text": ". The design shrinks to about 12.5 by 4 cm. Drop the strand count to one strand and step up to a size 26 tapestry needle. A daylight bulb helps." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Try the same chart on 18-count Aida"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". The design shrinks to about 12.5 by 4 cm. Drop the strand count to one strand and step up to a size 26 tapestry needle. A daylight bulb helps."
+                  }
                 ]
               }
             ]
@@ -317,8 +1531,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "If the stitching goes sideways" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "If the stitching goes sideways"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -326,11 +1547,1536 @@
           "heading": "Common first-sampler troubles",
           "intro": "Five things that usually go wrong on a first cross-stitch and how to spot them.",
           "items": [
-            { "symptom": "Cross-stitch tops are running different directions — the finished piece looks scrappy from across the room", "cause": "One row was worked left-to-right and the next right-to-left without flipping the top-leg direction, OR cross-stitches were worked individually with inconsistent top-leg direction.", "fix": "Pick a single direction for the top legs (the convention is south-west to north-east, but consistency matters more than the specific direction) and check every stitch matches as you go. If the inconsistency is small, pick out the offending crosses with the eye of a second needle and re-stitch. If it's widespread, the piece is the practice piece you needed; start over and the next one will be clean." },
-            { "symptom": "Stitches are getting tighter as the work progresses — the cloth puckers around the design", "cause": "Thread tension built up as the needle was rolled the same way through each stitch.", "fix": "Let the needle dangle every dozen stitches so the thread untwists. If the puckering is mild, a careful steam-press at the finishing stage will pull most of it out. If severe, the cloth wasn't held taut enough in the hoop — tighten the hoop's screw and re-tension the cloth between repositions." },
-            { "symptom": "A miscounted block sits one row higher or one square left of where it should", "cause": "A cumulative count error from too long a stretch without referencing the chart's bold-rule grid.", "fix": "Frog (unpick) back to the closest correct ten-stitch grid line, re-check against the chart's bold rules, and restart from the corrected position. Working in ten-stitch blocks and pausing to count against the chart's bold rules at each block stops the error from accumulating further." },
-            { "symptom": "Knots are showing through the front of the cloth as bumps", "cause": "Thread was started with a knot on the back rather than a loop start or away knot.", "fix": "If the piece is early, pick out the offending start and use the away-knot or loop-start method instead. If it's late, leave the knot where it is and learn for the next piece — knots on the back are an aesthetic issue more than a structural one, and the finished piece will still look fine once mounted." },
-            { "symptom": "The Aida is slipping out of the hoop as you stitch", "cause": "Hoop tension is too loose, or the cloth has stretched with the hoop's screw at its current position.", "fix": "Pull the cloth taut in all directions while tightening the screw incrementally; the cloth should feel drum-tight, not sponge-soft. Reposition the hoop and re-tension every 30-45 minutes of stitching to prevent slippage." }
+            {
+              "symptom": "Cross-stitch tops are running different directions, the finished piece looks scrappy from across the room",
+              "cause": "One row was worked left-to-right and the next right-to-left without flipping the top-leg direction, OR cross-stitches were worked individually with inconsistent top-leg direction.",
+              "fix": "Pick a single direction for the top legs (the convention is south-west to north-east, but consistency matters more than the specific direction) and check every stitch matches as you go. If the inconsistency is small, pick out the offending crosses with the eye of a second needle and re-stitch. If it's widespread, the piece is the practice piece you needed; start over and the next one will be clean."
+            },
+            {
+              "symptom": "Stitches are getting tighter as the work progresses, the cloth puckers around the design",
+              "cause": "Thread tension built up as the needle was rolled the same way through each stitch.",
+              "fix": "Let the needle dangle every dozen stitches so the thread untwists. If the puckering is mild, a careful steam-press at the finishing stage will pull most of it out. If severe, the cloth wasn't held taut enough in the hoop, tighten the hoop's screw and re-tension the cloth between repositions."
+            },
+            {
+              "symptom": "A miscounted block sits one row higher or one square left of where it should",
+              "cause": "A cumulative count error from too long a stretch without referencing the chart's bold-rule grid.",
+              "fix": "Frog (unpick) back to the closest correct ten-stitch grid line, re-check against the chart's bold rules, and restart from the corrected position. Working in ten-stitch blocks and pausing to count against the chart's bold rules at each block stops the error from accumulating further."
+            },
+            {
+              "symptom": "Knots are showing through the front of the cloth as bumps",
+              "cause": "Thread was started with a knot on the back rather than a loop start or away knot.",
+              "fix": "If the piece is early, pick out the offending start and use the away-knot or loop-start method instead. If it's late, leave the knot where it is and learn for the next piece, knots on the back are an aesthetic issue more than a structural one, and the finished piece will still look fine once mounted."
+            },
+            {
+              "symptom": "The Aida is slipping out of the hoop as you stitch",
+              "cause": "Hoop tension is too loose, or the cloth has stretched with the hoop's screw at its current position.",
+              "fix": "Pull the cloth taut in all directions while tightening the screw incrementally; the cloth should feel drum-tight, not sponge-soft. Reposition the hoop and re-tension every 30-45 minutes of stitching to prevent slippage."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "revisedFrom": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A first finished cross-stitch is more useful as a confidence-builder than as a wall hanging. This sampler border is the standard starter piece: a row of capital letters in the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "samp-letter"
+                }
+              }
+            ],
+            "text": "samp-letter"
+          },
+          {
+            "type": "text",
+            "text": " style worked on 14-count Aida cloth in three colours of "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "stranded-cotton"
+                }
+              }
+            ],
+            "text": "stranded cotton"
+          },
+          {
+            "type": "text",
+            "text": ". The design is 88 stitches wide and 28 stitches tall, which works out at about 16 by 5 centimetres of stitched area. A 4 cm margin all round gives a 25 by 8 cm finished piece ready to mount in a hoop frame or stitch into a small cushion front. Allow an evening or two."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The letter forms are unchanged from the originals in Therese de Dillmont's Encyclopedia of Needlework (1886) and Weldon's Practical Needlework volume 2. The three-colour palette (a deep red, a soft sage, a muted gold) is a synthesis: any three contrasting stranded-cotton shades will work, and the design reads equally well in a single colour for a more austere historical look."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Before you start",
+          "body": "Eye fatigue. Cross-stitch on 14-count Aida is gentle on the eyes, but any extended session benefits from a daylight task lamp (5,000-6,500 K) at the work and a five-minute break every 30 minutes to stretch the hands and look at something further than the cloth.\n\nNeedle storage. The tapestry needle parks on a needle-minder magnet between stitches — one half on the front of the cloth, one half behind. Never leave the needle on the sofa arm or in soft furnishing where it can be sat on. Especially important around children and pets.\n\nScissors. Embroidery scissors are surgical-sharp. Keep them capped or sheathed when not in use; dedicate them to cloth and thread (not paper, which dulls the edge quickly).\n\nPosture. The hoop holds the cloth taut so the stitcher doesn't crush it in a fist. Shoulders down, cloth off the lap, both hands free to pass the needle from front to back."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "14-count Aida cloth"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", a 30 by 13 cm piece. White or cream is the conventional ground; the chart works equally well on a dyed cloth (sage, oatmeal, navy) if the floss palette is adjusted for contrast. Allow 4 cm of margin on every side."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Stranded cotton in three colours"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", one skein each. The pattern uses deep red (DMC 815 / Anchor 43), soft sage (DMC 522 / Anchor 859), and muted gold (DMC 832 / Anchor 907). Substitute any contrasting three; the chart legend below carries the colour assignments."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Size 24 tapestry needle"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". Blunt-tipped; the eye is large enough to take two strands of stranded cotton comfortably."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "15 cm embroidery hoop"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". The whole design fits inside a 15 cm hoop in two repositions. A larger hoop (20 cm) holds the work in a single setup but is heavier on the wrist."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Embroidery scissors and a needle-minder magnet"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". Scissors capped between uses; magnet attached to the cloth."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Working method"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Start at the centre of the cloth and work outwards. Find the centre of the cloth by folding it in half lengthways and again widthways; the intersection of the two folds is the centre. Find the centre of the chart at the intersection of the bold rules at column 44 and row 14. The first stitch on the cloth corresponds to the chart's centre. Working outwards from the middle means any cumulative miscount is split across two halves and stays manageable."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use two strands of stranded cotton. Cut a 50 cm length from the skein, separate two strands (gently pull one strand free at a time, then put two back together), and thread the needle. For an even strand count, the cleanest start is a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "loop-start"
+                }
+              }
+            ],
+            "text": "loop start"
+          },
+          {
+            "type": "text",
+            "text": ": fold the two strands in half, thread the cut ends, leave the loop on the back of the cloth, and the first stitch catches the loop to anchor the thread. If you prefer a knot-based start, use an "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "away-knot"
+                }
+              }
+            ],
+            "text": "away knot"
+          },
+          {
+            "type": "text",
+            "text": ": tie the knot, take the needle down through the cloth 8-10 cm clear of the pattern, work the first stitch over the held tail, and snip the knot off when you reach it later."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cross-stitch convention: the bottom leg of every cross runs from bottom-left to top-right (south-west to north-east), and the top leg crosses the same way (bottom-right to top-left) — every stitch on the finished piece. The top legs all running the same direction is what makes a finished cross-stitch read as crisp rather than scrappy from across the room. A row's worth of bottom legs are typically worked first across a stretch of one colour, then the top legs are added on the return pass. This is the half-cross approach; it is faster than working each cross individually and looks the same once complete."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "End a thread by passing the needle under four to five completed stitches on the back of the cloth, pulling through, and snipping. Never tie a knot on the back — knots show through, snag the needle on later stitches, and look untidy. The woven-tail finish is the convention."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Chart"
+          }
+        ]
+      },
+      {
+        "type": "crossStitchChart",
+        "attrs": {
+          "definition": {
+            "title": "Alphabet sampler border",
+            "caption": "ABCDEFG in samp-letter style. 88 × 28 stitches on 14-count Aida. Three-colour palette.",
+            "width": 88,
+            "height": 28,
+            "fabricCount": 14,
+            "finishedSizeText": "16 × 5 cm on 14-count Aida; 12.5 × 4 cm on 18-count Aida",
+            "palette": [
+              {
+                "key": "red",
+                "name": "Deep red",
+                "hex": "#8E1F2D",
+                "dmcCode": "815",
+                "anchorCode": "43",
+                "skeinEstimate": "1 skein"
+              },
+              {
+                "key": "sage",
+                "name": "Soft sage",
+                "hex": "#7E8B5E",
+                "dmcCode": "522",
+                "anchorCode": "859",
+                "skeinEstimate": "1 skein"
+              },
+              {
+                "key": "gold",
+                "name": "Muted gold",
+                "hex": "#B89B4E",
+                "dmcCode": "832",
+                "anchorCode": "907",
+                "skeinEstimate": "1 skein"
+              }
+            ],
+            "cells": [
+              {
+                "x": 4,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 5,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 6,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 7,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 8,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 9,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 10,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 4,
+                "y": 5,
+                "paletteKey": "red"
+              },
+              {
+                "x": 8,
+                "y": 5,
+                "paletteKey": "red"
+              },
+              {
+                "x": 4,
+                "y": 6,
+                "paletteKey": "red"
+              },
+              {
+                "x": 8,
+                "y": 6,
+                "paletteKey": "red"
+              },
+              {
+                "x": 4,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 5,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 6,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 7,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 8,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 4,
+                "y": 8,
+                "paletteKey": "red"
+              },
+              {
+                "x": 8,
+                "y": 8,
+                "paletteKey": "red"
+              },
+              {
+                "x": 4,
+                "y": 9,
+                "paletteKey": "red"
+              },
+              {
+                "x": 8,
+                "y": 9,
+                "paletteKey": "red"
+              },
+              {
+                "x": 4,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 8,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 14,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 15,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 16,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 17,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 14,
+                "y": 5,
+                "paletteKey": "red"
+              },
+              {
+                "x": 18,
+                "y": 5,
+                "paletteKey": "red"
+              },
+              {
+                "x": 14,
+                "y": 6,
+                "paletteKey": "red"
+              },
+              {
+                "x": 18,
+                "y": 6,
+                "paletteKey": "red"
+              },
+              {
+                "x": 14,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 15,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 16,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 17,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 14,
+                "y": 8,
+                "paletteKey": "red"
+              },
+              {
+                "x": 18,
+                "y": 8,
+                "paletteKey": "red"
+              },
+              {
+                "x": 14,
+                "y": 9,
+                "paletteKey": "red"
+              },
+              {
+                "x": 18,
+                "y": 9,
+                "paletteKey": "red"
+              },
+              {
+                "x": 14,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 15,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 16,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 17,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 23,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 24,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 25,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 26,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 22,
+                "y": 5,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 27,
+                "y": 5,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 22,
+                "y": 6,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 22,
+                "y": 7,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 22,
+                "y": 8,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 22,
+                "y": 9,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 27,
+                "y": 9,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 23,
+                "y": 10,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 24,
+                "y": 10,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 25,
+                "y": 10,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 26,
+                "y": 10,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 31,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 32,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 33,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 34,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 31,
+                "y": 5,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 35,
+                "y": 5,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 31,
+                "y": 6,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 35,
+                "y": 6,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 31,
+                "y": 7,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 35,
+                "y": 7,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 31,
+                "y": 8,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 35,
+                "y": 8,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 31,
+                "y": 9,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 35,
+                "y": 9,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 31,
+                "y": 10,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 32,
+                "y": 10,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 33,
+                "y": 10,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 34,
+                "y": 10,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 39,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 40,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 41,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 42,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 43,
+                "y": 4,
+                "paletteKey": "red"
+              },
+              {
+                "x": 39,
+                "y": 5,
+                "paletteKey": "red"
+              },
+              {
+                "x": 39,
+                "y": 6,
+                "paletteKey": "red"
+              },
+              {
+                "x": 39,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 40,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 41,
+                "y": 7,
+                "paletteKey": "red"
+              },
+              {
+                "x": 39,
+                "y": 8,
+                "paletteKey": "red"
+              },
+              {
+                "x": 39,
+                "y": 9,
+                "paletteKey": "red"
+              },
+              {
+                "x": 39,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 40,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 41,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 42,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 43,
+                "y": 10,
+                "paletteKey": "red"
+              },
+              {
+                "x": 47,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 48,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 49,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 50,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 51,
+                "y": 4,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 47,
+                "y": 5,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 47,
+                "y": 6,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 47,
+                "y": 7,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 48,
+                "y": 7,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 49,
+                "y": 7,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 47,
+                "y": 8,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 47,
+                "y": 9,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 47,
+                "y": 10,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 56,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 57,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 58,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 59,
+                "y": 4,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 55,
+                "y": 5,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 60,
+                "y": 5,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 55,
+                "y": 6,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 55,
+                "y": 7,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 58,
+                "y": 7,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 59,
+                "y": 7,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 60,
+                "y": 7,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 55,
+                "y": 8,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 60,
+                "y": 8,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 55,
+                "y": 9,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 60,
+                "y": 9,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 56,
+                "y": 10,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 57,
+                "y": 10,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 58,
+                "y": 10,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 59,
+                "y": 10,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 12,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 13,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 14,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 15,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 16,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 17,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 18,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 19,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 20,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 21,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 22,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 23,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 24,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 25,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 26,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 27,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 28,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 29,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 30,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 31,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 32,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 33,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 34,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 35,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 36,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 37,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 38,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 39,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 40,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 41,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 42,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 43,
+                "y": 16,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 18,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 19,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 20,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 22,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 23,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 24,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 26,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 27,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 28,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 30,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 31,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 32,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 34,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 35,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 36,
+                "y": 19,
+                "paletteKey": "gold"
+              },
+              {
+                "x": 12,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 13,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 14,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 15,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 16,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 17,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 18,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 19,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 20,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 21,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 22,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 23,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 24,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 25,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 26,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 27,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 28,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 29,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 30,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 31,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 32,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 33,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 34,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 35,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 36,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 37,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 38,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 39,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 40,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 41,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 42,
+                "y": 22,
+                "paletteKey": "sage"
+              },
+              {
+                "x": 43,
+                "y": 22,
+                "paletteKey": "sage"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Reading the chart. Bold rules at every ten stitches help keep count. The legend names each colour with its DMC and Anchor cross-reference and a unique symbol for monochrome readability. Each cell on the chart represents one cross-stitch over one square of 14-count Aida. The two horizontal sage lines on rows 16 and 22, separated by the dotted gold tick row at row 19, are decorative borders below the alphabet — historically used in Victorian samplers to separate alphabet rows from date and maker's initials below."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wash the finished piece in cool water with a small drop of mild detergent. Roll between two clean towels to remove the water. Press face-down on a soft folded towel with a steam iron on the silk setting; the towel cushion stops the back's bobbles from flattening the front's stitches. Mount in the 15 cm or 20 cm hoop as a finished frame, or pass to a Sewing tutorial for backing as a cushion front or framing on board."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Add the rest of the alphabet"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". The samp letters H through Z follow the same construction rules; Therese de Dillmont's Encyclopedia carries the full alphabet on a single plate. Doubling the chart width adds about an hour of stitching per row of letters."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Stitch your own initials below"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". The Victorian convention was a row of capitals, a decorative band, then the maker's monogram, then the year. Add initials and a year in the same palette to make the piece a record of the household it was stitched in."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Try the same chart on 18-count Aida"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". The design shrinks to about 12.5 by 4 cm. Drop the strand count to one strand and step up to a size 26 tapestry needle. A daylight bulb helps."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "If the stitching goes sideways"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common first-sampler troubles",
+          "intro": "Five things that usually go wrong on a first cross-stitch and how to spot them.",
+          "items": [
+            {
+              "symptom": "Cross-stitch tops are running different directions — the finished piece looks scrappy from across the room",
+              "cause": "One row was worked left-to-right and the next right-to-left without flipping the top-leg direction, OR cross-stitches were worked individually with inconsistent top-leg direction.",
+              "fix": "Pick a single direction for the top legs (the convention is south-west to north-east, but consistency matters more than the specific direction) and check every stitch matches as you go. If the inconsistency is small, pick out the offending crosses with the eye of a second needle and re-stitch. If it's widespread, the piece is the practice piece you needed; start over and the next one will be clean."
+            },
+            {
+              "symptom": "Stitches are getting tighter as the work progresses — the cloth puckers around the design",
+              "cause": "Thread tension built up as the needle was rolled the same way through each stitch.",
+              "fix": "Let the needle dangle every dozen stitches so the thread untwists. If the puckering is mild, a careful steam-press at the finishing stage will pull most of it out. If severe, the cloth wasn't held taut enough in the hoop — tighten the hoop's screw and re-tension the cloth between repositions."
+            },
+            {
+              "symptom": "A miscounted block sits one row higher or one square left of where it should",
+              "cause": "A cumulative count error from too long a stretch without referencing the chart's bold-rule grid.",
+              "fix": "Frog (unpick) back to the closest correct ten-stitch grid line, re-check against the chart's bold rules, and restart from the corrected position. Working in ten-stitch blocks and pausing to count against the chart's bold rules at each block stops the error from accumulating further."
+            },
+            {
+              "symptom": "Knots are showing through the front of the cloth as bumps",
+              "cause": "Thread was started with a knot on the back rather than a loop start or away knot.",
+              "fix": "If the piece is early, pick out the offending start and use the away-knot or loop-start method instead. If it's late, leave the knot where it is and learn for the next piece — knots on the back are an aesthetic issue more than a structural one, and the finished piece will still look fine once mounted."
+            },
+            {
+              "symptom": "The Aida is slipping out of the hoop as you stitch",
+              "cause": "Hoop tension is too loose, or the cloth has stretched with the hoop's screw at its current position.",
+              "fix": "Pull the cloth taut in all directions while tightening the screw incrementally; the cloth should feel drum-tight, not sponge-soft. Reposition the hoop and re-tension every 30-45 minutes of stitching to prevent slippage."
+            }
           ]
         }
       }

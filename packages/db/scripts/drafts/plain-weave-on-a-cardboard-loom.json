@@ -1,7 +1,7 @@
 {
   "slug": "plain-weave-on-a-cardboard-loom",
   "title": "Plain weave on a cardboard loom",
-  "subtitle": "The kitchen-table first weave — every weft passes over and under every warp",
+  "subtitle": "The kitchen-table first weave, every weft passes over and under every warp",
   "excerpt": "A cardboard rectangle, scissors to notch the ends, a length of cotton warp, and any weft you like. Plain weave (tabby) is the most basic woven structure: every weft thread passes over and under alternating warp threads. The cardboard loom strips weaving down to first principles; the result is a small coaster-sized mat or a length of trim. About three hours of work for a finished piece.",
   "type": "TECHNIQUE",
   "categorySlug": "fibre-arts",
@@ -9,54 +9,153 @@
   "difficulty": "BEGINNER",
   "season": null,
   "sourceType": "PUBLIC_DOMAIN",
-  "sourceNotes": "Luther Hooper, Hand-Loom Weaving (1910, public domain, Internet Archive) — describes plain weave (tabby) as the foundational structure underlying all woven cloth. Mary E. Black, The Key to Weaving (1945, in copyright — used here as the structural reference, not quoted; described in this author's own words). The cardboard-loom variant is folk pedagogy rather than book pedagogy: documented across countless community workshop manuals and Forest School curricula in roughly identical form. The technique itself — notched rectangle, threaded warp, simple shed by hand or shed stick — is documented from medieval and earlier European peasant weaving and across multiple Indigenous Andean traditions.",
+  "sourceNotes": "Luther Hooper, Hand-Loom Weaving (1910, public domain, Internet Archive), describes plain weave (tabby) as the foundational structure underlying all woven cloth. Mary E. Black, The Key to Weaving (1945, in copyright, used here as the structural reference, not quoted; described in this author's own words). The cardboard-loom variant is folk pedagogy rather than book pedagogy: documented across countless community workshop manuals and Forest School curricula in roughly identical form. The technique itself, notched rectangle, threaded warp, simple shed by hand or shed stick, is documented from medieval and earlier European peasant weaving and across multiple Indigenous Andean traditions.",
   "recipeTools": [
-    { "slug": "craft-scissors", "isOptional": false, "notes": "For cutting the cardboard, notching the ends, and cutting the warp and weft." },
-    { "slug": "ruler", "isOptional": false, "notes": "For marking the notch spacing along the cardboard ends — accurate spacing keeps the sett even." },
-    { "slug": "tapestry-needle", "isOptional": false, "notes": "For threading the weft and weaving in the tails at the end. A blunt large-eyed needle is needed; a sewing needle is too sharp and splits the warp." }
+    {
+      "slug": "craft-scissors",
+      "isOptional": false,
+      "notes": "For cutting the cardboard, notching the ends, and cutting the warp and weft."
+    },
+    {
+      "slug": "ruler",
+      "isOptional": false,
+      "notes": "For marking the notch spacing along the cardboard ends, accurate spacing keeps the sett even."
+    },
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false,
+      "notes": "For threading the weft and weaving in the tails at the end. A blunt large-eyed needle is needed; a sewing needle is too sharp and splits the warp."
+    }
   ],
   "glossaryTerms": [
-    { "slug": "warp", "term": "Warp", "definition": "The threads tensioned on the loom that run lengthways through the finished cloth — set up first, beat down by weft, the warp gives the cloth its length. The warp threads are usually the stronger of the two thread families because they take the loom's tension." },
-    { "slug": "weft", "term": "Weft", "definition": "The thread that passes across the warp, alternating over and under to build the cloth. Weft can be any yarn — the warp does the structural work, the weft fills the surface. \"Woof\" is an older spelling of weft." },
-    { "slug": "plain-weave", "term": "Plain weave (tabby)", "definition": "The simplest woven structure — every weft thread passes over one warp, under the next, over the next, under the next, all the way across. The next weft does the opposite. Half the threads up, half the threads down; every cell of the resulting cloth carries one warp and one weft crossing each other. \"Tabby\" is the traditional UK weaving term for the same structure." },
-    { "slug": "shed", "term": "Shed (weaving)", "definition": "The triangular gap between the raised and lowered warp threads — the space through which the weft passes. On a floor loom a shed is opened by treadles lifting shafts; on a cardboard loom the shed is opened by a hand or a shed stick lifting alternate threads. Every weft pick goes through one shed." },
-    { "slug": "sett", "term": "Sett (weaving)", "definition": "The spacing of the warp threads — how many threads per centimetre (or per inch in older texts). Tight sett gives a dense cloth that hides the weft; loose sett gives an open cloth where weft and warp show equally. On a cardboard loom the sett is set by the notch spacing." },
-    { "slug": "beating-the-weft", "term": "Beating the weft", "definition": "Pushing each new weft pick down firmly against the previous one so the cloth has no daylight between rows. On a floor loom this is done by a heavy reed. On a cardboard loom, by hand or with a hair comb or fork. Even beating gives even cloth; uneven beating gives a wavy weft line." }
+    {
+      "slug": "warp",
+      "term": "Warp",
+      "definition": "The threads tensioned on the loom that run lengthways through the finished cloth, set up first, beat down by weft, the warp gives the cloth its length. The warp threads are usually the stronger of the two thread families because they take the loom's tension."
+    },
+    {
+      "slug": "weft",
+      "term": "Weft",
+      "definition": "The thread that passes across the warp, alternating over and under to build the cloth. Weft can be any yarn, the warp does the structural work, the weft fills the surface. \"Woof\" is an older spelling of weft."
+    },
+    {
+      "slug": "plain-weave",
+      "term": "Plain weave (tabby)",
+      "definition": "The simplest woven structure, every weft thread passes over one warp, under the next, over the next, under the next, all the way across. The next weft does the opposite. Half the threads up, half the threads down; every cell of the resulting cloth carries one warp and one weft crossing each other. \"Tabby\" is the traditional UK weaving term for the same structure."
+    },
+    {
+      "slug": "shed",
+      "term": "Shed (weaving)",
+      "definition": "The triangular gap between the raised and lowered warp threads, the space through which the weft passes. On a floor loom a shed is opened by treadles lifting shafts; on a cardboard loom the shed is opened by a hand or a shed stick lifting alternate threads. Every weft pick goes through one shed."
+    },
+    {
+      "slug": "sett",
+      "term": "Sett (weaving)",
+      "definition": "The spacing of the warp threads, how many threads per centimetre (or per inch in older texts). Tight sett gives a dense cloth that hides the weft; loose sett gives an open cloth where weft and warp show equally. On a cardboard loom the sett is set by the notch spacing."
+    },
+    {
+      "slug": "beating-the-weft",
+      "term": "Beating the weft",
+      "definition": "Pushing each new weft pick down firmly against the previous one so the cloth has no daylight between rows. On a floor loom this is done by a heavy reed. On a cardboard loom, by hand or with a hair comb or fork. Even beating gives even cloth; uneven beating gives a wavy weft line."
+    }
   ],
   "techniqueSlugs": [],
   "criticalTechniques": [],
-  "aliases": ["plain weave", "tabby weave", "cardboard loom weaving", "cardboard loom plain weave"],
+  "aliases": [
+    "plain weave",
+    "tabby weave",
+    "cardboard loom weaving",
+    "cardboard loom plain weave"
+  ],
   "body": {
     "type": "doc",
     "content": [
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Every woven cloth in the world is built from the same simple alternation: " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warp" } }], "text": "warp" },
-          { "type": "text", "text": " threads tensioned in one direction, " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "weft" } }], "text": "weft" },
-          { "type": "text", "text": " threads crossing them at right angles. The simplest version of the cross is " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "plain-weave" } }], "text": "plain weave" },
-          { "type": "text", "text": ", also called tabby — every weft over one warp and under the next, the following weft doing the opposite. Linen sheets, calico, wool tweed, tartan, your tea towel: all plain weave, with various yarns and densities." }
+          {
+            "type": "text",
+            "text": "Every woven cloth in the world is built from the same simple alternation: "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "warp"
+                }
+              }
+            ],
+            "text": "warp"
+          },
+          {
+            "type": "text",
+            "text": " threads tensioned in one direction, "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "weft"
+                }
+              }
+            ],
+            "text": "weft"
+          },
+          {
+            "type": "text",
+            "text": " threads crossing them at right angles. The simplest version of the cross is "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "plain-weave"
+                }
+              }
+            ],
+            "text": "plain weave"
+          },
+          {
+            "type": "text",
+            "text": ", also called tabby, every weft over one warp and under the next, the following weft doing the opposite. Linen sheets, calico, wool tweed, tartan, your tea towel: all plain weave, with various yarns and densities."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The cardboard loom is the cheapest possible way to learn the move. A rectangle of stiff cardboard, two rows of notches, a length of cotton warp wound back and forth between them, and a hand or a shed stick to lift alternate threads. The finished piece is small (around 15 × 15 cm at most, limited by the size of cardboard rectangle that holds tension without bending), but the move is the same as on every loom that exists." }
+          {
+            "type": "text",
+            "text": "The cardboard loom is the cheapest possible way to learn the move. A rectangle of stiff cardboard, two rows of notches, a length of cotton warp wound back and forth between them, and a hand or a shed stick to lift alternate threads. The finished piece is small (around 15 × 15 cm at most, limited by the size of cardboard rectangle that holds tension without bending), but the move is the same as on every loom that exists."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "This tutorial covers everything from cutting the cardboard to weaving in the tails. The first weave on a cardboard loom takes about three hours including the setup; subsequent weaves take less than an hour once the loom is built and the rhythm is in." }
+          {
+            "type": "text",
+            "text": "This tutorial covers everything from cutting the cardboard to weaving in the tails. The first weave on a cardboard loom takes about three hours including the setup; subsequent weaves take less than an hour once the loom is built and the rhythm is in."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "bulletList",
@@ -67,8 +166,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "A piece of stiff corrugated cardboard, about 20 × 25 cm. " },
-                  { "type": "text", "text": "Off-cut from a shipping box is ideal; the corrugated ribs running along the long axis give the rigidity that keeps the warp tensioned. Single-wall cardboard from a cereal box is too thin; double-wall packing cardboard is right. Avoid bowed or damp cardboard — it twists under tension." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "A piece of stiff corrugated cardboard, about 20 × 25 cm. "
+                  },
+                  {
+                    "type": "text",
+                    "text": "Off-cut from a shipping box is ideal; the corrugated ribs running along the long axis give the rigidity that keeps the warp tensioned. Single-wall cardboard from a cereal box is too thin; double-wall packing cardboard is right. Avoid bowed or damp cardboard, it twists under tension."
+                  }
                 ]
               }
             ]
@@ -79,8 +189,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Cotton warp thread — 5/2 or 8/2 weight, about 5 m. " },
-                  { "type": "text", "text": "Standard weaver's cotton (Bockens 8/2, Yeoman 5/2, or any unmercerised cotton at a similar weight). Plain cotton string from a hardware store also works for practice. The warp needs to be smooth and strong; fluffy yarns shed fibres as they slide across the notches and weaken." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Cotton warp thread, 5/2 or 8/2 weight, about 5 m. "
+                  },
+                  {
+                    "type": "text",
+                    "text": "Standard weaver's cotton (Bockens 8/2, Yeoman 5/2, or any unmercerised cotton at a similar weight). Plain cotton string from a hardware store also works for practice. The warp needs to be smooth and strong; fluffy yarns shed fibres as they slide across the notches and weaken."
+                  }
                 ]
               }
             ]
@@ -91,8 +212,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Weft yarn — any yarn you like, about 10 g for a small piece. " },
-                  { "type": "text", "text": "DK wool, cotton, linen — any. Weft is where colour and texture come into the weaving; it can be matt, fluffy, hand-spun, slubby. A first piece with one or two colours of DK wool gives a clear plain-weave surface. Multiple weft yarns let you stripe the piece by changing colour every few centimetres." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Weft yarn, any yarn you like, about 10 g for a small piece. "
+                  },
+                  {
+                    "type": "text",
+                    "text": "DK wool, cotton, linen, any. Weft is where colour and texture come into the weaving; it can be matt, fluffy, hand-spun, slubby. A first piece with one or two colours of DK wool gives a clear plain-weave surface. Multiple weft yarns let you stripe the piece by changing colour every few centimetres."
+                  }
                 ]
               }
             ]
@@ -103,8 +235,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Scissors, a ruler, and the tapestry needle. " },
-                  { "type": "text", "text": "Scissors that cut cardboard cleanly (kitchen scissors are usually fine); a ruler for marking notch spacing; a blunt tapestry needle for threading the weft and weaving in the tails." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Scissors, a ruler, and the tapestry needle. "
+                  },
+                  {
+                    "type": "text",
+                    "text": "Scissors that cut cardboard cleanly (kitchen scissors are usually fine); a ruler for marking notch spacing; a blunt tapestry needle for threading the weft and weaving in the tails."
+                  }
                 ]
               }
             ]
@@ -115,8 +258,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "Optional — a stick for the shed, a comb for beating. " },
-                  { "type": "text", "text": "A small wooden stick (a ruler, a chopstick, a knitting needle) lifts alternate warp threads more easily than fingers. A hair comb or a kitchen fork beats the weft down neatly. Neither is essential; both are useful." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Optional, a stick for the shed, a comb for beating. "
+                  },
+                  {
+                    "type": "text",
+                    "text": "A small wooden stick (a ruler, a chopstick, a knitting needle) lifts alternate warp threads more easily than fingers. A hair comb or a kitchen fork beats the weft down neatly. Neither is essential; both are useful."
+                  }
                 ]
               }
             ]
@@ -125,118 +279,315 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Building the loom" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 1 — Cut and notch the cardboard. " },
-          { "type": "text", "text": "Cut a rectangle of cardboard 20 × 25 cm with the corrugated ribs running along the 25 cm dimension. Mark a line 1 cm in from each of the two short (20 cm) ends. Along each marked line, mark notch positions every 0.5 cm — for a 20 cm-wide loom that's about 40 notches per end. Cut each mark as a small triangular notch (about 5 mm deep) with the scissors. The notches need to be deep enough to hold a warp thread firmly but shallow enough not to weaken the cardboard. Two rows of evenly-spaced notches face each other across the loom." }
+          {
+            "type": "text",
+            "text": "Building the loom"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "0.5 cm notch spacing gives 2 warps per cm — a comfortable " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sett" } }], "text": "sett" },
-          { "type": "text", "text": " for plain weave with DK weft on cotton warp. For finer cloth, mark notches every 0.3 cm (about 3 warps per cm); for chunkier cloth, every 0.8 cm. The notch spacing is the sett, and the sett determines how the finished cloth feels." }
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 1, Cut and notch the cardboard. "
+          },
+          {
+            "type": "text",
+            "text": "Cut a rectangle of cardboard 20 × 25 cm with the corrugated ribs running along the 25 cm dimension. Mark a line 1 cm in from each of the two short (20 cm) ends. Along each marked line, mark notch positions every 0.5 cm, for a 20 cm-wide loom that's about 40 notches per end. Cut each mark as a small triangular notch (about 5 mm deep) with the scissors. The notches need to be deep enough to hold a warp thread firmly but shallow enough not to weaken the cardboard. Two rows of evenly-spaced notches face each other across the loom."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 2 — Wind the warp. " },
-          { "type": "text", "text": "Tie the end of the warp thread to the first notch on one short end of the cardboard. Run the warp straight up the cardboard to the first notch on the opposite end, slip it into the notch, run it across to the second notch on the same end, then back down to the second notch on the opposite end, and so on — zig-zagging back and forth, one notch at a time, all the way across the cardboard. The warp lies in straight parallel lines across the front of the cardboard, with the same threads continuing across the back of the cardboard between notches. Tie the cut end of the warp to the final notch. The cardboard now has a fully tensioned warp across its front face." }
+          {
+            "type": "text",
+            "text": "0.5 cm notch spacing gives 2 warps per cm, a comfortable "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sett"
+                }
+              }
+            ],
+            "text": "sett"
+          },
+          {
+            "type": "text",
+            "text": " for plain weave with DK weft on cotton warp. For finer cloth, mark notches every 0.3 cm (about 3 warps per cm); for chunkier cloth, every 0.8 cm. The notch spacing is the sett, and the sett determines how the finished cloth feels."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Check the warp tension by pressing a finger against the warp in the middle of the cardboard — the threads should give about a centimetre under firm pressure, not be so tight they twang or so loose they sag. Adjust by re-winding more tightly or pulling threads back through notches one at a time." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Weaving the plain weave" }]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 3 — Thread the tapestry needle with weft. " },
-          { "type": "text", "text": "Cut a length of weft about 1.5 m and thread it onto the tapestry needle. Don't try to weave with a hank longer than 1.5 m — it tangles. When the weft runs short, simply start a new length; the joins are handled later." }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 4 — First weft pick. " },
-          { "type": "text", "text": "Pick a side to start from. Pass the needle (with weft following) under the first warp thread, over the second, under the third, over the fourth — alternating over-and-under all the way across the loom. The needle leaves the weft draped through the alternating warps. Leave a 10 cm tail of weft hanging off the starting edge — that tail gets woven in later. Push the weft pick down with the fingers or the comb until it lies flat against the bottom edge of the warp." }
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 2, Wind the warp. "
+          },
+          {
+            "type": "text",
+            "text": "Tie the end of the warp thread to the first notch on one short end of the cardboard. Run the warp straight up the cardboard to the first notch on the opposite end, slip it into the notch, run it across to the second notch on the same end, then back down to the second notch on the opposite end, and so on, zig-zagging back and forth, one notch at a time, all the way across the cardboard. The warp lies in straight parallel lines across the front of the cardboard, with the same threads continuing across the back of the cardboard between notches. Tie the cut end of the warp to the final notch. The cardboard now has a fully tensioned warp across its front face."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 5 — Second weft pick. " },
-          { "type": "text", "text": "Turn around at the side. Bring the needle back across the loom in the opposite direction, this time going OVER the warps you went under, and UNDER the warps you went over. Where the first pick was under-over-under-over, the second pick is over-under-over-under — opposite. " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "beating-the-weft" } }], "text": "Beat the weft" },
-          { "type": "text", "text": " down so the two picks sit firmly together with no gap." }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 6 — Continue. " },
-          { "type": "text", "text": "Every weft pick alternates with the one before it. The whole cloth builds row by row: pick, beat, pick, beat. Keep the edges (the selvedges) even by leaving the weft slightly slack at the turn — pulling the weft tight at each turn pulls the warp inward and gives a waist-shaped piece. The right amount of weft slack to leave at each turn is about 5 mm; this is the standard practice for all hand-weaving on small looms. After ten or twenty picks the rhythm settles into the hands." }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 7 — Open the shed with a stick (optional, faster). " },
-          { "type": "text", "text": "Once the technique is in the hands, threading the needle through forty warps one at a time gets slow. Slip a thin stick (a chopstick, a long knitting needle) under every other warp thread — the same set that the next pick should go under. Turn the stick on its edge to lift the threads into a " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "shed" } }], "text": "shed" },
-          { "type": "text", "text": " — a triangular gap. Pass the needle straight through the shed in one pass. Turn the stick flat again and lift the opposite set of threads for the next pick. The shed stick changes the weave from a one-thread-at-a-time process to a row-at-a-time process, and is the move that unlocks faster weaving on every loom that exists." }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 8 — Change weft colour or run a new length. " },
-          { "type": "text", "text": "When the current weft runs short, leave a 10 cm tail hanging off the side where it ran out. Start a new length the same way as the first — tail hanging off the starting side, alternating with the previous pick. The tails get woven in at the end of the piece. For a colour change, just cut the old colour and start the new — no special join is needed." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Finishing" }]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 9 — Cut off the loom. " },
-          { "type": "text", "text": "When the weave reaches near the top edge of the cardboard (leave 2 cm of unwoven warp at each end for finishing), it's time to cut off. Flip the cardboard over. Cut the warp threads where they cross the back of the cardboard between notches — each cut releases two warp threads at once. As each pair is cut, the front warp threads come free of the loom, leaving short cut ends at the top and bottom edges of the finished weave." }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 10 — Secure the ends. " },
-          { "type": "text", "text": "The cut warp ends will unravel the cloth if not secured. Two methods: hemstitch the cut edges with a sewing needle and thread (slower but invisible); or twist pairs of cut warp threads together and tie a tight overhand knot 5 mm from the cloth edge (faster but visible — gives a knotted fringe). The knotted fringe is the simpler beginner option and the traditional finish for woven-on-frame tapestries." }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 11 — Weave in the weft tails. " },
-          { "type": "text", "text": "Thread each weft tail onto the tapestry needle and weave it back into the cloth along the row it came from for 2-3 cm, then trim close. The tails disappear into the cloth body and the piece becomes a single continuous fabric." }
+          {
+            "type": "text",
+            "text": "Check the warp tension by pressing a finger against the warp in the middle of the cardboard, the threads should give about a centimetre under firm pressure, not be so tight they twang or so loose they sag. Adjust by re-winding more tightly or pulling threads back through notches one at a time."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Common mistakes" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Weaving the plain weave"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 3, Thread the tapestry needle with weft. "
+          },
+          {
+            "type": "text",
+            "text": "Cut a length of weft about 1.5 m and thread it onto the tapestry needle. Don't try to weave with a hank longer than 1.5 m, it tangles. When the weft runs short, simply start a new length; the joins are handled later."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 4, First weft pick. "
+          },
+          {
+            "type": "text",
+            "text": "Pick a side to start from. Pass the needle (with weft following) under the first warp thread, over the second, under the third, over the fourth, alternating over-and-under all the way across the loom. The needle leaves the weft draped through the alternating warps. Leave a 10 cm tail of weft hanging off the starting edge, that tail gets woven in later. Push the weft pick down with the fingers or the comb until it lies flat against the bottom edge of the warp."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 5, Second weft pick. "
+          },
+          {
+            "type": "text",
+            "text": "Turn around at the side. Bring the needle back across the loom in the opposite direction, this time going OVER the warps you went under, and UNDER the warps you went over. Where the first pick was under-over-under-over, the second pick is over-under-over-under, opposite. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "beating-the-weft"
+                }
+              }
+            ],
+            "text": "Beat the weft"
+          },
+          {
+            "type": "text",
+            "text": " down so the two picks sit firmly together with no gap."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 6, Continue. "
+          },
+          {
+            "type": "text",
+            "text": "Every weft pick alternates with the one before it. The whole cloth builds row by row: pick, beat, pick, beat. Keep the edges (the selvedges) even by leaving the weft slightly slack at the turn, pulling the weft tight at each turn pulls the warp inward and gives a waist-shaped piece. The right amount of weft slack to leave at each turn is about 5 mm; this is the standard practice for all hand-weaving on small looms. After ten or twenty picks the rhythm settles into the hands."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 7, Open the shed with a stick (optional, faster). "
+          },
+          {
+            "type": "text",
+            "text": "Once the technique is in the hands, threading the needle through forty warps one at a time gets slow. Slip a thin stick (a chopstick, a long knitting needle) under every other warp thread, the same set that the next pick should go under. Turn the stick on its edge to lift the threads into a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "shed"
+                }
+              }
+            ],
+            "text": "shed"
+          },
+          {
+            "type": "text",
+            "text": ", a triangular gap. Pass the needle straight through the shed in one pass. Turn the stick flat again and lift the opposite set of threads for the next pick. The shed stick changes the weave from a one-thread-at-a-time process to a row-at-a-time process, and is the move that unlocks faster weaving on every loom that exists."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 8, Change weft colour or run a new length. "
+          },
+          {
+            "type": "text",
+            "text": "When the current weft runs short, leave a 10 cm tail hanging off the side where it ran out. Start a new length the same way as the first, tail hanging off the starting side, alternating with the previous pick. The tails get woven in at the end of the piece. For a colour change, just cut the old colour and start the new, no special join is needed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 9, Cut off the loom. "
+          },
+          {
+            "type": "text",
+            "text": "When the weave reaches near the top edge of the cardboard (leave 2 cm of unwoven warp at each end for finishing), it's time to cut off. Flip the cardboard over. Cut the warp threads where they cross the back of the cardboard between notches, each cut releases two warp threads at once. As each pair is cut, the front warp threads come free of the loom, leaving short cut ends at the top and bottom edges of the finished weave."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 10, Secure the ends. "
+          },
+          {
+            "type": "text",
+            "text": "The cut warp ends will unravel the cloth if not secured. Two methods: hemstitch the cut edges with a sewing needle and thread (slower but invisible); or twist pairs of cut warp threads together and tie a tight overhand knot 5 mm from the cloth edge (faster but visible, gives a knotted fringe). The knotted fringe is the simpler beginner option and the traditional finish for woven-on-frame tapestries."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 11, Weave in the weft tails. "
+          },
+          {
+            "type": "text",
+            "text": "Thread each weft tail onto the tapestry needle and weave it back into the cloth along the row it came from for 2-3 cm, then trim close. The tails disappear into the cloth body and the piece becomes a single continuous fabric."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
       },
       {
         "type": "bulletList",
@@ -247,8 +598,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "The piece narrows in the middle." },
-                  { "type": "text", "text": " The weft was pulled tight at each selvedge turn, drawing the warp inwards. Leave more slack at each turn — about 5 mm of extra weft draped at the edge before beating down." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "The piece narrows in the middle."
+                  },
+                  {
+                    "type": "text",
+                    "text": " The weft was pulled tight at each selvedge turn, drawing the warp inwards. Leave more slack at each turn, about 5 mm of extra weft draped at the edge before beating down."
+                  }
                 ]
               }
             ]
@@ -259,8 +621,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "The weft pattern reads as horizontal stripes of one over-under direction, not as plain weave." },
-                  { "type": "text", "text": " Two consecutive picks went over the same warps — the alternation broke. Frog back to the error and re-weave. The rule is absolute: every pick is the inverse of the one before it." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "The weft pattern reads as horizontal stripes of one over-under direction, not as plain weave."
+                  },
+                  {
+                    "type": "text",
+                    "text": " Two consecutive picks went over the same warps, the alternation broke. Frog back to the error and re-weave. The rule is absolute: every pick is the inverse of the one before it."
+                  }
                 ]
               }
             ]
@@ -271,8 +644,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "The cardboard bows or the warp threads pop out of notches." },
-                  { "type": "text", "text": " The cardboard is too thin or the notches are too shallow. Use thicker cardboard for the next loom; deepen the notches; if mid-piece, slide a strip of stiff card behind the warp at the back of the loom for extra support." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "The cardboard bows or the warp threads pop out of notches."
+                  },
+                  {
+                    "type": "text",
+                    "text": " The cardboard is too thin or the notches are too shallow. Use thicker cardboard for the next loom; deepen the notches; if mid-piece, slide a strip of stiff card behind the warp at the back of the loom for extra support."
+                  }
                 ]
               }
             ]
@@ -283,8 +667,19 @@
               {
                 "type": "paragraph",
                 "content": [
-                  { "type": "text", "marks": [{ "type": "bold" }], "text": "The cloth has visible gaps between rows after beating." },
-                  { "type": "text", "text": " The weft wasn't beaten down firmly enough, or the warp tension is too tight. Beat more firmly; check the warp tension and re-string slightly looser if needed." }
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "The cloth has visible gaps between rows after beating."
+                  },
+                  {
+                    "type": "text",
+                    "text": " The weft wasn't beaten down firmly enough, or the warp tension is too tight. Beat more firmly; check the warp tension and re-string slightly looser if needed."
+                  }
                 ]
               }
             ]
@@ -293,13 +688,665 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this technique goes next" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this technique goes next"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Plain weave on a cardboard loom is the lowest-barrier entry into weaving. The same move scales up directly to a frame loom (a wooden frame with notched cross-bars instead of a cardboard rectangle), to a rigid heddle loom (which adds a heddle that lifts alternate warps automatically), and to four-shaft floor looms (which can lift any combination of warps to produce twill, tabby, overshot, and the rest of the woven-pattern library). The same move also scales sideways into tapestry weaving, where the weft doesn't go all the way across but builds shapes section by section. Once the over-under move is settled into the hands, the rest of weaving is variation on a theme." }
+          {
+            "type": "text",
+            "text": "Plain weave on a cardboard loom is the lowest-barrier entry into weaving. The same move scales up directly to a frame loom (a wooden frame with notched cross-bars instead of a cardboard rectangle), to a rigid heddle loom (which adds a heddle that lifts alternate warps automatically), and to four-shaft floor looms (which can lift any combination of warps to produce twill, tabby, overshot, and the rest of the woven-pattern library). The same move also scales sideways into tapestry weaving, where the weft doesn't go all the way across but builds shapes section by section. Once the over-under move is settled into the hands, the rest of weaving is variation on a theme."
+          }
+        ]
+      }
+    ]
+  },
+  "revisedFrom": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every woven cloth in the world is built from the same simple alternation: "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "warp"
+                }
+              }
+            ],
+            "text": "warp"
+          },
+          {
+            "type": "text",
+            "text": " threads tensioned in one direction, "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "weft"
+                }
+              }
+            ],
+            "text": "weft"
+          },
+          {
+            "type": "text",
+            "text": " threads crossing them at right angles. The simplest version of the cross is "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "plain-weave"
+                }
+              }
+            ],
+            "text": "plain weave"
+          },
+          {
+            "type": "text",
+            "text": ", also called tabby — every weft over one warp and under the next, the following weft doing the opposite. Linen sheets, calico, wool tweed, tartan, your tea towel: all plain weave, with various yarns and densities."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The cardboard loom is the cheapest possible way to learn the move. A rectangle of stiff cardboard, two rows of notches, a length of cotton warp wound back and forth between them, and a hand or a shed stick to lift alternate threads. The finished piece is small (around 15 × 15 cm at most, limited by the size of cardboard rectangle that holds tension without bending), but the move is the same as on every loom that exists."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This tutorial covers everything from cutting the cardboard to weaving in the tails. The first weave on a cardboard loom takes about three hours including the setup; subsequent weaves take less than an hour once the loom is built and the rhythm is in."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "A piece of stiff corrugated cardboard, about 20 × 25 cm. "
+                  },
+                  {
+                    "type": "text",
+                    "text": "Off-cut from a shipping box is ideal; the corrugated ribs running along the long axis give the rigidity that keeps the warp tensioned. Single-wall cardboard from a cereal box is too thin; double-wall packing cardboard is right. Avoid bowed or damp cardboard — it twists under tension."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Cotton warp thread — 5/2 or 8/2 weight, about 5 m. "
+                  },
+                  {
+                    "type": "text",
+                    "text": "Standard weaver's cotton (Bockens 8/2, Yeoman 5/2, or any unmercerised cotton at a similar weight). Plain cotton string from a hardware store also works for practice. The warp needs to be smooth and strong; fluffy yarns shed fibres as they slide across the notches and weaken."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Weft yarn — any yarn you like, about 10 g for a small piece. "
+                  },
+                  {
+                    "type": "text",
+                    "text": "DK wool, cotton, linen — any. Weft is where colour and texture come into the weaving; it can be matt, fluffy, hand-spun, slubby. A first piece with one or two colours of DK wool gives a clear plain-weave surface. Multiple weft yarns let you stripe the piece by changing colour every few centimetres."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Scissors, a ruler, and the tapestry needle. "
+                  },
+                  {
+                    "type": "text",
+                    "text": "Scissors that cut cardboard cleanly (kitchen scissors are usually fine); a ruler for marking notch spacing; a blunt tapestry needle for threading the weft and weaving in the tails."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "Optional — a stick for the shed, a comb for beating. "
+                  },
+                  {
+                    "type": "text",
+                    "text": "A small wooden stick (a ruler, a chopstick, a knitting needle) lifts alternate warp threads more easily than fingers. A hair comb or a kitchen fork beats the weft down neatly. Neither is essential; both are useful."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Building the loom"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 1 — Cut and notch the cardboard. "
+          },
+          {
+            "type": "text",
+            "text": "Cut a rectangle of cardboard 20 × 25 cm with the corrugated ribs running along the 25 cm dimension. Mark a line 1 cm in from each of the two short (20 cm) ends. Along each marked line, mark notch positions every 0.5 cm — for a 20 cm-wide loom that's about 40 notches per end. Cut each mark as a small triangular notch (about 5 mm deep) with the scissors. The notches need to be deep enough to hold a warp thread firmly but shallow enough not to weaken the cardboard. Two rows of evenly-spaced notches face each other across the loom."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "0.5 cm notch spacing gives 2 warps per cm — a comfortable "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sett"
+                }
+              }
+            ],
+            "text": "sett"
+          },
+          {
+            "type": "text",
+            "text": " for plain weave with DK weft on cotton warp. For finer cloth, mark notches every 0.3 cm (about 3 warps per cm); for chunkier cloth, every 0.8 cm. The notch spacing is the sett, and the sett determines how the finished cloth feels."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 2 — Wind the warp. "
+          },
+          {
+            "type": "text",
+            "text": "Tie the end of the warp thread to the first notch on one short end of the cardboard. Run the warp straight up the cardboard to the first notch on the opposite end, slip it into the notch, run it across to the second notch on the same end, then back down to the second notch on the opposite end, and so on — zig-zagging back and forth, one notch at a time, all the way across the cardboard. The warp lies in straight parallel lines across the front of the cardboard, with the same threads continuing across the back of the cardboard between notches. Tie the cut end of the warp to the final notch. The cardboard now has a fully tensioned warp across its front face."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Check the warp tension by pressing a finger against the warp in the middle of the cardboard — the threads should give about a centimetre under firm pressure, not be so tight they twang or so loose they sag. Adjust by re-winding more tightly or pulling threads back through notches one at a time."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Weaving the plain weave"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 3 — Thread the tapestry needle with weft. "
+          },
+          {
+            "type": "text",
+            "text": "Cut a length of weft about 1.5 m and thread it onto the tapestry needle. Don't try to weave with a hank longer than 1.5 m — it tangles. When the weft runs short, simply start a new length; the joins are handled later."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 4 — First weft pick. "
+          },
+          {
+            "type": "text",
+            "text": "Pick a side to start from. Pass the needle (with weft following) under the first warp thread, over the second, under the third, over the fourth — alternating over-and-under all the way across the loom. The needle leaves the weft draped through the alternating warps. Leave a 10 cm tail of weft hanging off the starting edge — that tail gets woven in later. Push the weft pick down with the fingers or the comb until it lies flat against the bottom edge of the warp."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 5 — Second weft pick. "
+          },
+          {
+            "type": "text",
+            "text": "Turn around at the side. Bring the needle back across the loom in the opposite direction, this time going OVER the warps you went under, and UNDER the warps you went over. Where the first pick was under-over-under-over, the second pick is over-under-over-under — opposite. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "beating-the-weft"
+                }
+              }
+            ],
+            "text": "Beat the weft"
+          },
+          {
+            "type": "text",
+            "text": " down so the two picks sit firmly together with no gap."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 6 — Continue. "
+          },
+          {
+            "type": "text",
+            "text": "Every weft pick alternates with the one before it. The whole cloth builds row by row: pick, beat, pick, beat. Keep the edges (the selvedges) even by leaving the weft slightly slack at the turn — pulling the weft tight at each turn pulls the warp inward and gives a waist-shaped piece. The right amount of weft slack to leave at each turn is about 5 mm; this is the standard practice for all hand-weaving on small looms. After ten or twenty picks the rhythm settles into the hands."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 7 — Open the shed with a stick (optional, faster). "
+          },
+          {
+            "type": "text",
+            "text": "Once the technique is in the hands, threading the needle through forty warps one at a time gets slow. Slip a thin stick (a chopstick, a long knitting needle) under every other warp thread — the same set that the next pick should go under. Turn the stick on its edge to lift the threads into a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "shed"
+                }
+              }
+            ],
+            "text": "shed"
+          },
+          {
+            "type": "text",
+            "text": " — a triangular gap. Pass the needle straight through the shed in one pass. Turn the stick flat again and lift the opposite set of threads for the next pick. The shed stick changes the weave from a one-thread-at-a-time process to a row-at-a-time process, and is the move that unlocks faster weaving on every loom that exists."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 8 — Change weft colour or run a new length. "
+          },
+          {
+            "type": "text",
+            "text": "When the current weft runs short, leave a 10 cm tail hanging off the side where it ran out. Start a new length the same way as the first — tail hanging off the starting side, alternating with the previous pick. The tails get woven in at the end of the piece. For a colour change, just cut the old colour and start the new — no special join is needed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 9 — Cut off the loom. "
+          },
+          {
+            "type": "text",
+            "text": "When the weave reaches near the top edge of the cardboard (leave 2 cm of unwoven warp at each end for finishing), it's time to cut off. Flip the cardboard over. Cut the warp threads where they cross the back of the cardboard between notches — each cut releases two warp threads at once. As each pair is cut, the front warp threads come free of the loom, leaving short cut ends at the top and bottom edges of the finished weave."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 10 — Secure the ends. "
+          },
+          {
+            "type": "text",
+            "text": "The cut warp ends will unravel the cloth if not secured. Two methods: hemstitch the cut edges with a sewing needle and thread (slower but invisible); or twist pairs of cut warp threads together and tie a tight overhand knot 5 mm from the cloth edge (faster but visible — gives a knotted fringe). The knotted fringe is the simpler beginner option and the traditional finish for woven-on-frame tapestries."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 11 — Weave in the weft tails. "
+          },
+          {
+            "type": "text",
+            "text": "Thread each weft tail onto the tapestry needle and weave it back into the cloth along the row it came from for 2-3 cm, then trim close. The tails disappear into the cloth body and the piece becomes a single continuous fabric."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "The piece narrows in the middle."
+                  },
+                  {
+                    "type": "text",
+                    "text": " The weft was pulled tight at each selvedge turn, drawing the warp inwards. Leave more slack at each turn — about 5 mm of extra weft draped at the edge before beating down."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "The weft pattern reads as horizontal stripes of one over-under direction, not as plain weave."
+                  },
+                  {
+                    "type": "text",
+                    "text": " Two consecutive picks went over the same warps — the alternation broke. Frog back to the error and re-weave. The rule is absolute: every pick is the inverse of the one before it."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "The cardboard bows or the warp threads pop out of notches."
+                  },
+                  {
+                    "type": "text",
+                    "text": " The cardboard is too thin or the notches are too shallow. Use thicker cardboard for the next loom; deepen the notches; if mid-piece, slide a strip of stiff card behind the warp at the back of the loom for extra support."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "text": "The cloth has visible gaps between rows after beating."
+                  },
+                  {
+                    "type": "text",
+                    "text": " The weft wasn't beaten down firmly enough, or the warp tension is too tight. Beat more firmly; check the warp tension and re-string slightly looser if needed."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this technique goes next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Plain weave on a cardboard loom is the lowest-barrier entry into weaving. The same move scales up directly to a frame loom (a wooden frame with notched cross-bars instead of a cardboard rectangle), to a rigid heddle loom (which adds a heddle that lifts alternate warps automatically), and to four-shaft floor looms (which can lift any combination of warps to produce twill, tabby, overshot, and the rest of the woven-pattern library). The same move also scales sideways into tapestry weaving, where the weft doesn't go all the way across but builds shapes section by section. Once the over-under move is settled into the hands, the rest of weaving is variation on a theme."
+          }
         ]
       }
     ]
