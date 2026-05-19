@@ -2,11 +2,14 @@ import type { Metadata } from 'next'
 import { LegalHeader } from '../legal-header'
 import { ContactBlock } from '../contact-block'
 import { LEGAL_ENTITY } from '@/lib/legal-entity'
+import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPublicMetadata({
   title: 'DMCA / Takedown Policy — Homemade',
-  description: 'How to report copyright infringement on Homemade.',
-}
+  description: 'How to report copyright infringement on Homemade and how counter-notices work.',
+  path: '/legal/dmca',
+  ogType: 'article',
+})
 
 /* TODO(legal): file the formal DMCA designated agent registration with the
  * US Copyright Office (https://www.copyright.gov/dmca-directory/) so the

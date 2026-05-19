@@ -1,12 +1,15 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { LegalHeader } from './legal-header'
+import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPublicMetadata({
   title: 'Legal — Homemade',
   description:
-    'Privacy, terms, cookies, acceptable use, takedowns, subscription terms.',
-}
+    'Privacy, terms, cookies, acceptable use, takedowns and subscription terms for Homemade.',
+  path: '/legal',
+  ogType: 'website',
+})
 
 const PAGES = [
   {

@@ -1,0 +1,50 @@
+.about-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.about-header {
+  margin: 24px 0 32px;
+}
+
+.about-eyebrow {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe, #8a7d68);
+  margin-bottom: 6px;
+}
+
+.about-title {
+  font-family: var(--font-fraunces);
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-charcoal, #2b2b2b);
+  margin: 0;
+}
+
+.about-body {
+  font-family: var(--font-lora);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-charcoal, #2b2b2b);
+}
+
+.about-body h2 {
+  font-family: var(--font-fraunces);
+  font-size: 24px;
+  font-weight: 500;
+  margin: 32px 0 10px;
+}
+
+.about-body p {
+  margin: 0 0 16px;
+}
+
+.about-body a {
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+}

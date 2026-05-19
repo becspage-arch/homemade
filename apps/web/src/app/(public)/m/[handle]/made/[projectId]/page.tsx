@@ -5,6 +5,16 @@ import { prisma, UGCPhotoStatus } from '@homemade/db'
 import { mediaUrl } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { MakerReportLink } from '@/components/public/maker-report-link'
+import { Breadcrumbs } from '@/components/public/breadcrumbs'
+import { JsonLd } from '@/components/seo/json-ld'
+import {
+  buildBreadcrumbSchema,
+  buildCreativeWorkSchema,
+} from '@/lib/seo/schema-builders'
+import {
+  buildPublicMetadata,
+  notFoundMetadata,
+} from '@/lib/seo/metadata-helpers'
 
 import '../../maker-profile.css'
 
@@ -74,13 +84,26 @@ async function loadProject(handle: string, projectId: string) {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { handle, projectId } = await params
   const project = await loadProject(handle, projectId)
-  if (!project) return { title: 'Not found · homemade' }
+  if (!project) return notFoundMetadata()
   const name = project.user.name ?? project.user.displayHandle ?? 'A maker'
-  return {
-    title: `${project.tutorial.title} · Made by ${name} · homemade`,
-    description: project.publicNote ?? project.tutorial.excerpt ?? undefined,
-    robots: { index: false, follow: false },
-  }
+  const heroSource =
+    (project.heroPhoto?.status === UGCPhotoStatus.APPROVED
+      ? project.heroPhoto.media
+      : null) ?? project.tutorial.hero
+  const heroUrlForOg = mediaUrl(heroSource, 'hero')
+  return buildPublicMetadata({
+    title: `${project.tutorial.title} — made by ${name}`,
+    description:
+      project.publicNote
+        ?? project.tutorial.excerpt
+        ?? `${name} made ${project.tutorial.title} on Homemade.`,
+    path: `/m/${project.user.displayHandle}/made/${project.id}`,
+    ogType: 'article',
+    imageUrl: heroUrlForOg,
+    imageAlt: heroSource?.alt ?? project.tutorial.title,
+    publishedTime: project.publishedAt,
+    author: name,
+  })
 }
 
 export default async function MakerMadeDetailPage({ params }: PageProps) {
@@ -120,8 +143,30 @@ export default async function MakerMadeDetailPage({ params }: PageProps) {
 
   const whatIUsed = readWhatIUsedRows(project.whatIUsed)
 
+  const tutorialUrl = `/${project.tutorial.category.slug}/${project.tutorial.slug}`
+  const projectUrl = `/m/${project.user.displayHandle}/made/${project.id}`
+  const breadcrumbs = [
+    { name: 'Home', href: '/' },
+    { name: 'Makers', href: '/makers' },
+    { name: makerName, href: `/m/${project.user.displayHandle}` },
+    { name: project.tutorial.title, href: projectUrl },
+  ]
+  const creativeWork = buildCreativeWorkSchema({
+    handle: project.user.displayHandle ?? '',
+    projectId: project.id,
+    makerName,
+    publishedAt: project.publishedAt,
+    description: project.publicNote,
+    imageUrl: heroUrl,
+    tutorialTitle: project.tutorial.title,
+    tutorialUrl,
+  })
+  const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbs)
+
   return (
     <div className="maker-made-page">
+      <JsonLd data={[creativeWork, breadcrumbSchema]} />
+      <Breadcrumbs items={breadcrumbs} />
       <Link href={`/m/${project.user.displayHandle}`} className="maker-made-back">
         ← {makerName}&apos;s profile
       </Link>

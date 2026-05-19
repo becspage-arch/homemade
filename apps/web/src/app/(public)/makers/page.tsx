@@ -1,9 +1,22 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { prisma, CreatorApplicationStatus, TutorialStatus } from '@homemade/db'
+import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
+import { Breadcrumbs } from '@/components/public/breadcrumbs'
+import { JsonLd } from '@/components/seo/json-ld'
+import { buildBreadcrumbSchema } from '@/lib/seo/schema-builders'
 
 import './makers.css'
 
 export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = buildPublicMetadata({
+  title: 'Makers on Homemade — independent creators',
+  description:
+    'Independent makers writing tutorials in their own voice. Verified by the Homemade editorial team.',
+  path: '/makers',
+  ogType: 'website',
+})
 
 interface PageProps {
   searchParams: Promise<{ sort?: string }>
@@ -43,8 +56,15 @@ export default async function MakersIndexPage({ searchParams }: PageProps) {
     },
   })
 
+  const breadcrumbs = [
+    { name: 'Home', href: '/' },
+    { name: 'Makers', href: '/makers' },
+  ]
+
   return (
     <div className="makers-page">
+      <JsonLd data={buildBreadcrumbSchema(breadcrumbs)} />
+      <Breadcrumbs items={breadcrumbs} />
       <header className="makers-header">
         <span className="makers-eyebrow">The makers</span>
         <h1 className="makers-title">People who make things at Homemade</h1>

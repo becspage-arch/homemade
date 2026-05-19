@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
@@ -8,6 +9,12 @@ import { identifyCurrentUser } from '@/lib/identify'
 import './me.css'
 
 export const dynamic = 'force-dynamic'
+
+// Account surface — never indexed. Explicit override of any per-page metadata
+// further down the tree that might accidentally set index: true.
+export const metadata: Metadata = {
+  robots: { index: false, follow: false, nocache: true, noarchive: true },
+}
 
 interface NavItem {
   href: string

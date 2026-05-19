@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { HomeCard } from '@/components/public/home-card'
 import { HomeRail } from '@/components/public/home-rail'
 import { OnboardingCard } from '@/components/public/onboarding-card'
@@ -11,11 +12,20 @@ import { loadActiveMakerOfTheMonth } from '@/lib/maker-of-the-month'
 import { MakerOfTheMonthTile } from '@/components/public/maker-of-the-month-tile'
 import { readerStateFor } from '@/lib/user-state'
 import { tutorialHeroSrc } from '@/lib/tutorial-hero'
+import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import { prisma } from '@homemade/db'
 
 import './home-page.css'
 
 export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = buildPublicMetadata({
+  title: 'Homemade — the home of making things yourself',
+  description:
+    'Cooking, baking, growing, herbal medicine, sewing, knitting, pottery and more — tested recipes and clear techniques from independent makers.',
+  path: '/',
+  ogType: 'website',
+})
 
 export default async function HomePage() {
   const currentUser = await getCurrentDbUser()

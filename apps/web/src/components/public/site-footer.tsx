@@ -22,6 +22,7 @@ export async function SiteFooter() {
         </div>
 
         <nav className="site-footer-nav" aria-label="Legal">
+          <Link href="/about" className="site-footer-link">About</Link>
           <Link href="/legal/privacy" className="site-footer-link">Privacy</Link>
           <Link href="/legal/terms" className="site-footer-link">Terms</Link>
           <Link href="/legal/cookies" className="site-footer-link">Cookies</Link>

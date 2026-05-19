@@ -3,11 +3,14 @@ import Link from 'next/link'
 import { LegalHeader } from '../legal-header'
 import { ContactBlock } from '../contact-block'
 import { LEGAL_ENTITY } from '@/lib/legal-entity'
+import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPublicMetadata({
   title: 'Subscription Terms — Homemade',
-  description: 'Billing, cancellation, refunds and price changes.',
-}
+  description: 'Billing, cancellation, refunds and price changes for the planned premium tier.',
+  path: '/legal/subscription-terms',
+  ogType: 'article',
+})
 
 export default function SubscriptionTermsPage() {
   return (

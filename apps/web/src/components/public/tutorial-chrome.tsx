@@ -85,6 +85,8 @@ export interface TutorialChromeProps {
   /** When set, renders the discreet © tooltip over the hero. */
   heroAttribution?: HeroAttributionData | null
   publishedAt: Date | null
+  /** Last-reviewed signal for Google freshness. Renders next to publish date. */
+  updatedAt?: Date | null
   readingTime: string | null
   sourceType: string
   sourceNotes: string | null
@@ -189,6 +191,7 @@ export function TutorialChrome(props: TutorialChromeProps) {
     heroAlt,
     heroAttribution,
     publishedAt,
+    updatedAt,
     readingTime,
     sourceType,
     sourceNotes,
@@ -341,6 +344,19 @@ export function TutorialChrome(props: TutorialChromeProps) {
               <dd>
                 <time dateTime={publishedAt.toISOString()}>
                   {publishedAt.toLocaleDateString('en-GB', {
+                    month: 'long',
+                    year: 'numeric',
+                  })}
+                </time>
+              </dd>
+            </div>
+          )}
+          {updatedAt && publishedAt && updatedAt.getTime() > publishedAt.getTime() + 24 * 60 * 60 * 1000 && (
+            <div>
+              <dt>Last reviewed</dt>
+              <dd>
+                <time dateTime={updatedAt.toISOString()}>
+                  {updatedAt.toLocaleDateString('en-GB', {
                     month: 'long',
                     year: 'numeric',
                   })}

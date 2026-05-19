@@ -2,11 +2,14 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { LegalHeader } from '../legal-header'
 import { ContactBlock } from '../contact-block'
+import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPublicMetadata({
   title: 'Cookie Policy — Homemade',
-  description: 'What cookies Homemade sets and how to manage them.',
-}
+  description: 'What cookies Homemade sets, what they do and how to manage them.',
+  path: '/legal/cookies',
+  ogType: 'article',
+})
 
 interface CookieRow {
   name: string

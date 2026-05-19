@@ -6,6 +6,16 @@ import { mediaSrcSet } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { emptyReaderState, loadReaderState, readerStateFor } from '@/lib/user-state'
 import { captureServerEvent } from '@/lib/posthog'
+import { Breadcrumbs } from '@/components/public/breadcrumbs'
+import { JsonLd } from '@/components/seo/json-ld'
+import {
+  buildBreadcrumbSchema,
+  buildPersonSchema,
+} from '@/lib/seo/schema-builders'
+import {
+  buildPublicMetadata,
+  notFoundMetadata,
+} from '@/lib/seo/metadata-helpers'
 
 import '../makers.css'
 
@@ -33,12 +43,18 @@ async function loadCreator(handle: string) {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { handle } = await params
   const creator = await loadCreator(handle)
-  if (!creator) return { title: 'Not found · homemade' }
-  return {
-    title: `${creator.name ?? creator.displayHandle} · homemade`,
-    description: creator.creatorProfile?.specialty ?? undefined,
-    robots: { index: false, follow: false },
-  }
+  if (!creator) return notFoundMetadata()
+  const name = creator.name ?? creator.displayHandle ?? 'Maker'
+  return buildPublicMetadata({
+    title: `${name} on Homemade`,
+    description:
+      creator.creatorProfile?.bio
+        ?? creator.creatorProfile?.specialty
+        ?? `${name} — verified Maker writing tutorials on Homemade.`,
+    path: `/makers/${creator.displayHandle}`,
+    ogType: 'profile',
+    author: name,
+  })
 }
 
 export default async function MakerProfilePage({ params }: PageProps) {
@@ -87,8 +103,23 @@ export default async function MakerProfilePage({ params }: PageProps) {
   const profile = creator.creatorProfile
   const socials = buildSocials(profile)
 
+  const breadcrumbs = [
+    { name: 'Home', href: '/' },
+    { name: 'Makers', href: '/makers' },
+    { name: creator.name ?? creator.displayHandle ?? 'Maker', href: `/makers/${creator.displayHandle}` },
+  ]
+  const personSchema = buildPersonSchema({
+    handle: creator.displayHandle ?? '',
+    name: creator.name ?? creator.displayHandle ?? 'Maker',
+    bio: creator.creatorProfile?.bio ?? null,
+    imageUrl: null,
+    sameAs: socials.map((s) => s.href),
+  })
+
   return (
     <div className="maker-profile">
+      <JsonLd data={[personSchema, buildBreadcrumbSchema(breadcrumbs)]} />
+      <Breadcrumbs items={breadcrumbs} />
       <header className="maker-profile-header">
         <div className="maker-profile-avatar" aria-hidden="true">
           {(creator.name ?? creator.displayHandle ?? 'h').slice(0, 1).toUpperCase()}

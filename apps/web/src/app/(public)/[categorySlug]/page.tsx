@@ -4,9 +4,19 @@ import type { Metadata } from 'next'
 import { prisma, TutorialStatus, Difficulty } from '@homemade/db'
 import { TutorialCard } from '@/components/public/tutorial-card'
 import { RecentlyMadeRail } from '@/components/public/recently-made-rail'
+import { Breadcrumbs } from '@/components/public/breadcrumbs'
+import { JsonLd } from '@/components/seo/json-ld'
 import { mediaSrcSet } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { loadRecentlyMade } from '@/lib/recently-made'
+import {
+  buildBreadcrumbSchema,
+  buildCollectionPageSchema,
+} from '@/lib/seo/schema-builders'
+import {
+  buildPublicMetadata,
+  notFoundMetadata,
+} from '@/lib/seo/metadata-helpers'
 import {
   emptyReaderState,
   loadReaderState,
@@ -55,15 +65,30 @@ function parseEquipment(raw: string | undefined): EquipmentFilter {
   return null
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: PageProps): Promise<Metadata> {
   const { categorySlug } = await params
+  const { difficulty, equipment } = await searchParams
   const category = await loadCategory(categorySlug)
-  if (!category) return { title: 'Not found · homemade' }
-  return {
-    title: `${category.name} · homemade`,
-    description: category.description ?? undefined,
-    robots: { index: false, follow: false },
-  }
+  if (!category) return notFoundMetadata()
+  const filtered = Boolean(difficulty) || Boolean(equipment)
+  const title = `${category.name} recipes, techniques and tutorials`
+  const description =
+    category.description
+      ? category.description
+      : `Browse every published ${category.name.toLowerCase()} tutorial on Homemade.`
+  return buildPublicMetadata({
+    title,
+    description,
+    path: `/${categorySlug}`,
+    ogType: 'website',
+    // Filtered / query-paginated views consolidate to the canonical unfiltered
+    // category URL — `buildPublicMetadata` always sets the canonical to the
+    // path passed in, so the filtered view's canonical points at `/{slug}`.
+    index: !filtered,
+  })
 }
 
 export default async function CategoryPage({ params, searchParams }: PageProps) {
@@ -140,8 +165,25 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
     ...(grouped.has(null) ? [null] : []),
   ]
 
+  const breadcrumbs = [
+    { name: 'Home', href: '/' },
+    { name: category.name, href: `/${category.slug}` },
+  ]
+  const collectionSchema = buildCollectionPageSchema({
+    url: `/${category.slug}`,
+    name: category.name,
+    description: category.description,
+    items: tutorials.map((t) => ({
+      name: t.title,
+      url: `/${category.slug}/${t.slug}`,
+    })),
+  })
+  const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbs)
+
   return (
     <div className="category-page">
+      <JsonLd data={[collectionSchema, breadcrumbSchema]} />
+      <Breadcrumbs items={breadcrumbs} />
       <header className="category-header">
         <span className="category-eyebrow">Category</span>
         <h1 className="category-title">{category.name}</h1>

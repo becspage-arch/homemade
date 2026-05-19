@@ -3,11 +3,14 @@ import Link from 'next/link'
 import { LegalHeader } from '../legal-header'
 import { ContactBlock } from '../contact-block'
 import { LEGAL_ENTITY } from '@/lib/legal-entity'
+import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPublicMetadata({
   title: 'Acceptable Use Policy — Homemade',
   description: 'What is welcome on Homemade, and what is not.',
-}
+  path: '/legal/acceptable-use',
+  ogType: 'article',
+})
 
 export default function AcceptableUsePage() {
   return (

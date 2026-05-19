@@ -2,7 +2,7 @@ import { cache } from 'react'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import * as Sentry from '@sentry/nextjs'
-import { prisma, TutorialStatus, UserProjectStatus } from '@homemade/db'
+import { prisma, TutorialStatus, UserProjectStatus, TutorialType } from '@homemade/db'
 import { TutorialContent } from '@/components/public/tutorial-content/tutorial-content'
 import { ScaleProvider } from '@/components/public/tutorial-content/scale-context'
 // Imported from the server-safe sibling module rather than `scale-context`
@@ -17,6 +17,21 @@ import { getCurrentDbUser } from '@/lib/get-current-user'
 import { harvestSupplies } from '@/lib/supplies'
 import { loadTutorialUgc } from '@/lib/ugc-loader'
 import { captureServerEvent } from '@/lib/posthog'
+import { JsonLd } from '@/components/seo/json-ld'
+import { RelatedTutorials } from '@/components/public/related-tutorials'
+import {
+  buildArticleSchema,
+  buildBreadcrumbSchema,
+  buildHowToSchema,
+  buildRecipeSchema,
+  type BreadcrumbItem,
+} from '@/lib/seo/schema-builders'
+import {
+  buildPublicMetadata,
+  notFoundMetadata,
+  type OpenGraphType,
+} from '@/lib/seo/metadata-helpers'
+import { extractRecipeInstructions, extractPlainText } from '@/lib/seo/extract-recipe-instructions'
 import { BookmarkButton } from '@/components/public/tutorial-reader/bookmark-button'
 import { ProjectButton } from '@/components/public/tutorial-reader/project-button'
 import { ReadingProgress } from '@/components/public/tutorial-reader/reading-progress'
@@ -104,15 +119,49 @@ const loadTutorial = cache(async (categorySlug: string, tutorialSlug: string) =>
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { categorySlug, tutorialSlug } = await params
   if (!isValidSlug(categorySlug) || !isValidSlug(tutorialSlug)) {
-    return { title: 'Not found · homemade' }
+    return notFoundMetadata()
   }
   const tutorial = await loadTutorial(categorySlug, tutorialSlug)
-  if (!tutorial) return { title: 'Not found · homemade' }
-  return {
-    title: `${tutorial.title} · homemade`,
-    description: tutorial.excerpt ?? undefined,
-    robots: { index: false, follow: false },
+  if (!tutorial) return notFoundMetadata()
+  const heroUrl = mediaUrl(tutorial.hero, 'hero')
+  const authorName = tutorial.creator?.name ?? tutorial.creator?.displayHandle ?? 'Homemade Editorial'
+  const description =
+    tutorial.excerpt
+      ?? extractPlainText(tutorial.body as TipTapNode | null, 160)
+  return buildPublicMetadata({
+    title: `${tutorial.title} | ${tutorial.category.name}`,
+    description,
+    path: `/${categorySlug}/${tutorialSlug}`,
+    ogType: ogTypeForTutorial(tutorial.type),
+    imageUrl: heroUrl,
+    imageAlt: tutorial.hero?.alt ?? tutorial.title,
+    publishedTime: tutorial.publishedAt,
+    modifiedTime: tutorial.updatedAt,
+    author: authorName,
+    keywords: tutorialKeywords(tutorial),
+  })
+}
+
+function ogTypeForTutorial(type: TutorialType): OpenGraphType {
+  return 'article'
+}
+
+function tutorialKeywords(tutorial: {
+  category: { name: string }
+  subCategory: { name: string } | null
+  techniqueSlugs: string[]
+  cuisine: string | null
+  mealType: string | null
+}): string[] {
+  const keys = new Set<string>()
+  keys.add(tutorial.category.name.toLowerCase())
+  if (tutorial.subCategory?.name) keys.add(tutorial.subCategory.name.toLowerCase())
+  if (tutorial.cuisine) keys.add(tutorial.cuisine)
+  if (tutorial.mealType) keys.add(tutorial.mealType)
+  for (const slug of tutorial.techniqueSlugs) {
+    keys.add(slug.replace(/-/g, ' '))
   }
+  return Array.from(keys).slice(0, 12)
 }
 
 export default async function TutorialPage({ params }: PageProps) {
@@ -249,6 +298,106 @@ export default async function TutorialPage({ params }: PageProps) {
     makerName: t.user.name ?? t.user.displayHandle ?? 'A maker',
     makerHandle: t.user.displayHandle!,
   }))
+
+  // Schema-only ingredient pull. Recipe schema needs structured ingredient
+  // rows; the visible ingredients list is rendered separately from TipTap.
+  const recipeIngredients =
+    tutorial.type === TutorialType.RECIPE
+      ? await prisma.recipeIngredient.findMany({
+          where: { tutorialId: tutorial.id },
+          orderBy: [{ position: 'asc' }],
+          select: {
+            amount: true,
+            unit: true,
+            prepNote: true,
+            ingredient: { select: { name: true } },
+          },
+        })
+      : []
+
+  // For HowTo supplies we already harvest from the body; tools come from the
+  // RecipeTool join. Both are no-ops on Article-type tutorials.
+  const recipeTools =
+    tutorial.type === TutorialType.TECHNIQUE
+      ? await prisma.recipeTool.findMany({
+          where: { tutorialId: tutorial.id },
+          orderBy: [{ position: 'asc' }],
+          select: { tool: { select: { name: true } } },
+        })
+      : []
+
+  const recipeInstructions = extractRecipeInstructions(body)
+  const schemaAuthor = {
+    name: tutorial.creator?.name ?? tutorial.creator?.displayHandle ?? 'Homemade Editorial',
+    handle: tutorial.creator?.displayHandle ?? null,
+  }
+  const tutorialUrl = `/${categorySlug}/${tutorialSlug}`
+  const keywords = tutorialKeywords(tutorial)
+  const breadcrumbItems: BreadcrumbItem[] = [
+    { name: 'Home', href: '/' },
+    { name: tutorial.category.name, href: `/${tutorial.category.slug}` },
+    { name: tutorial.title, href: tutorialUrl },
+  ]
+
+  let tutorialSchema: Record<string, unknown>
+  if (tutorial.type === TutorialType.RECIPE) {
+    tutorialSchema = buildRecipeSchema({
+      tutorialSlug,
+      categorySlug,
+      title: tutorial.title,
+      excerpt: tutorial.excerpt,
+      heroUrl,
+      author: schemaAuthor,
+      publishedAt: tutorial.publishedAt,
+      updatedAt: tutorial.updatedAt,
+      prepMinutes: tutorial.prepMinutes,
+      cookMinutes: tutorial.cookMinutes,
+      totalMinutes: tutorial.totalMinutes,
+      servings: tutorial.servings,
+      yieldDescription: tutorial.yieldDescription,
+      cuisine: tutorial.cuisine,
+      mealType: tutorial.mealType,
+      dietaryFlags: tutorial.dietaryFlags,
+      ingredients: recipeIngredients,
+      instructions: recipeInstructions,
+      keywords,
+      rating:
+        ugc.reviews.avg != null && ugc.reviews.total > 0
+          ? { avg: ugc.reviews.avg, total: ugc.reviews.total }
+          : null,
+    })
+  } else if (tutorial.type === TutorialType.TECHNIQUE) {
+    tutorialSchema = buildHowToSchema({
+      tutorialSlug,
+      categorySlug,
+      title: tutorial.title,
+      excerpt: tutorial.excerpt,
+      heroUrl,
+      author: schemaAuthor,
+      publishedAt: tutorial.publishedAt,
+      updatedAt: tutorial.updatedAt,
+      totalMinutes: tutorial.totalMinutes ?? tutorial.timeMinutes,
+      supplies: harvestSupplies(body).map((s) =>
+        s.qty ? `${s.qty} ${s.name}`.trim() : s.name,
+      ),
+      tools: recipeTools.map((r) => r.tool.name),
+      instructions: recipeInstructions,
+      keywords,
+    })
+  } else {
+    tutorialSchema = buildArticleSchema({
+      url: tutorialUrl,
+      title: tutorial.title,
+      excerpt: tutorial.excerpt,
+      heroUrl,
+      author: schemaAuthor,
+      publishedAt: tutorial.publishedAt,
+      updatedAt: tutorial.updatedAt,
+      articleSection: tutorial.category.name,
+      keywords,
+    })
+  }
+  const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbItems)
   const initialChecked =
     project && Array.isArray(project.suppliesChecked)
       ? (project.suppliesChecked as string[]).filter((s) => typeof s === 'string')
@@ -328,6 +477,13 @@ export default async function TutorialPage({ params }: PageProps) {
         tutorialSlug={tutorialSlug}
       />
 
+      <RelatedTutorials
+        currentTutorialId={tutorial.id}
+        categoryId={tutorial.categoryId}
+        subCategoryId={tutorial.subCategoryId ?? null}
+        techniqueSlugs={tutorial.techniqueSlugs}
+      />
+
       <PhotosBlock
         tutorialId={tutorial.id}
         signedIn={Boolean(currentUser)}
@@ -380,6 +536,7 @@ export default async function TutorialPage({ params }: PageProps) {
           : null
       }
       publishedAt={tutorial.publishedAt}
+      updatedAt={tutorial.updatedAt}
       readingTime={estimateReadingTime(body)}
       sourceType={tutorial.sourceType}
       sourceNotes={tutorial.sourceNotes}
@@ -454,6 +611,7 @@ export default async function TutorialPage({ params }: PageProps) {
       beginnerMode={beginnerMode}
       autoEnableByDefault={Boolean(currentUser?.cookingModeAutoEnable)}
     >
+      <JsonLd data={[tutorialSchema, breadcrumbSchema]} />
       <ScrollDepthTracker tutorialId={tutorial.id} />
       {currentUser && (
         <ReadingProgress

@@ -12,6 +12,16 @@ import { captureServerEvent } from '@/lib/posthog'
 import { MakerReportLink } from '@/components/public/maker-report-link'
 import { MakerOfTheMonthBadge } from '@/components/public/maker-of-the-month-badge'
 import { currentMonthBadgeFor } from '@/lib/maker-of-the-month'
+import { Breadcrumbs } from '@/components/public/breadcrumbs'
+import { JsonLd } from '@/components/seo/json-ld'
+import {
+  buildBreadcrumbSchema,
+  buildPersonSchema,
+} from '@/lib/seo/schema-builders'
+import {
+  buildPublicMetadata,
+  notFoundMetadata,
+} from '@/lib/seo/metadata-helpers'
 
 import './maker-profile.css'
 
@@ -49,12 +59,20 @@ async function loadMaker(handle: string) {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { handle } = await params
   const maker = await loadMaker(handle)
-  if (!maker) return { title: 'Not found · homemade' }
-  return {
-    title: `${maker.name ?? maker.displayHandle} · Maker profile · homemade`,
-    description: maker.bio ?? undefined,
-    robots: { index: false, follow: false },
-  }
+  if (!maker) return notFoundMetadata()
+  const name = maker.name ?? maker.displayHandle ?? 'A Maker'
+  const description =
+    maker.bio
+      ?? `${name} on Homemade — a Maker sharing what they've made and what they're working on.`
+  const avatar = mediaUrl(maker.makerHeaderImage, 'hero')
+  return buildPublicMetadata({
+    title: `${name} on Homemade`,
+    description,
+    path: `/m/${maker.displayHandle}`,
+    ogType: 'profile',
+    imageUrl: avatar,
+    imageAlt: maker.makerHeaderImage?.alt ?? name,
+  })
 }
 
 interface WhatIUsedRow {
@@ -178,8 +196,25 @@ export default async function MakerProfilePage({ params }: PageProps) {
     : null
   const isOwner = viewer?.id === maker.id
 
+  const breadcrumbs = [
+    { name: 'Home', href: '/' },
+    { name: 'Makers', href: '/makers' },
+    { name: makerName, href: `/m/${maker.displayHandle}` },
+  ]
+  const personSchema = buildPersonSchema({
+    handle: maker.displayHandle ?? '',
+    name: makerName,
+    bio: maker.bio,
+    imageUrl: headerCover,
+    sameAs: buildSameAsForMaker(maker),
+  })
+
   return (
     <div className="maker-public-profile">
+      <JsonLd
+        data={[personSchema, buildBreadcrumbSchema(breadcrumbs)]}
+      />
+      <Breadcrumbs items={breadcrumbs} />
       {headerCover && (
         <>
           <div className="maker-public-cover" aria-hidden="true">
@@ -524,4 +559,31 @@ function formatShortDate(d: Date): string {
 
 function formatJoinedMonth(d: Date): string {
   return d.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })
+}
+
+/**
+ * Builds the Person.sameAs array for schema. Pulls verified external social
+ * URLs from the CreatorProfile if present — gives Google a trail of
+ * external presence for entity disambiguation.
+ */
+function buildSameAsForMaker(maker: {
+  creatorProfile?: {
+    websiteUrl: string | null
+    instagramHandle: string | null
+    youtubeHandle: string | null
+    tiktokHandle: string | null
+    substackUrl: string | null
+    pinterestHandle: string | null
+  } | null
+}): string[] {
+  const p = maker.creatorProfile
+  if (!p) return []
+  const out: string[] = []
+  if (p.websiteUrl) out.push(normaliseUrl(p.websiteUrl))
+  if (p.instagramHandle) out.push(`https://instagram.com/${stripAt(p.instagramHandle)}`)
+  if (p.youtubeHandle) out.push(`https://youtube.com/${ensureYouTubeHandle(p.youtubeHandle)}`)
+  if (p.tiktokHandle) out.push(`https://tiktok.com/@${stripAt(p.tiktokHandle)}`)
+  if (p.pinterestHandle) out.push(`https://pinterest.com/${stripAt(p.pinterestHandle)}`)
+  if (p.substackUrl) out.push(normaliseUrl(p.substackUrl))
+  return out
 }

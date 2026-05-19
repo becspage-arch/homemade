@@ -36,6 +36,26 @@ const isAccountRoute = createRouteMatcher(['/me(.*)'])
 export default clerkMiddleware(async (auth, req) => {
   const { pathname } = req.nextUrl
 
+  // Canonical URL hygiene — applies to any GET that isn't a Next internal or
+  // a known infra path. Strips trailing slashes and lower-cases the path so
+  // /Cooking/Sourdough/ and /cooking/sourdough resolve to one canonical URL.
+  // Skips POST / PUT / etc. so form posts aren't redirected away from their
+  // handlers, and skips API + monitoring routes which need to retain casing.
+  if (
+    req.method === 'GET' &&
+    !pathname.startsWith('/_next') &&
+    !pathname.startsWith('/api/') &&
+    !pathname.startsWith('/monitoring/')
+  ) {
+    const lowered = pathname.toLowerCase()
+    const stripped = lowered.length > 1 ? lowered.replace(/\/+$/, '') : lowered
+    if (stripped !== pathname) {
+      const redirectUrl = req.nextUrl.clone()
+      redirectUrl.pathname = stripped
+      return NextResponse.redirect(redirectUrl, 308)
+    }
+  }
+
   // Always allow Next internals + public splash paths
   if (
     pathname.startsWith('/_next') ||

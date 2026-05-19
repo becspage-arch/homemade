@@ -3,11 +3,14 @@ import Link from 'next/link'
 import { LegalHeader } from '../legal-header'
 import { ContactBlock } from '../contact-block'
 import { LEGAL_ENTITY } from '@/lib/legal-entity'
+import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPublicMetadata({
   title: 'Privacy Policy — Homemade',
   description: 'How Homemade collects, uses, stores and shares your data.',
-}
+  path: '/legal/privacy',
+  ogType: 'article',
+})
 
 export default function PrivacyPage() {
   return (

@@ -3,11 +3,14 @@ import Link from 'next/link'
 import { LegalHeader } from '../legal-header'
 import { ContactBlock } from '../contact-block'
 import { LEGAL_ENTITY } from '@/lib/legal-entity'
+import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPublicMetadata({
   title: 'Terms of Service — Homemade',
-  description: 'The rules of using Homemade.',
-}
+  description: 'The rules of using Homemade — accounts, content licence and the agreement both sides make.',
+  path: '/legal/terms',
+  ogType: 'article',
+})
 
 export default function TermsPage() {
   return (

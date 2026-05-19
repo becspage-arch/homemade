@@ -11,14 +11,22 @@ import { getCurrentDbUser } from '@/lib/get-current-user'
 import { SearchForm } from './search-form'
 import { SearchResults } from './search-results'
 
+import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
+
 import './search-page.css'
 
 export const dynamic = 'force-dynamic'
 
-export const metadata: Metadata = {
-  title: 'Search · homemade',
-  robots: { index: false, follow: false },
-}
+// Search-results pages are intentionally noindex — Google's "soft 404"
+// guideline. The canonical / hreflang still point at /search so any
+// crawlable links back to /search resolve to the unfiltered surface.
+export const metadata: Metadata = buildPublicMetadata({
+  title: 'Search Homemade tutorials',
+  description: 'Find recipes, techniques, growing guides and patterns across the Homemade library.',
+  path: '/search',
+  ogType: 'website',
+  index: false,
+})
 
 interface PageProps {
   searchParams: Promise<Record<string, string | string[] | undefined>>
