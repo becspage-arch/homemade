@@ -348,7 +348,7 @@ model Tutorial {
   dietaryFlags              String[] // vegetarian / vegan / glutenFree / dairyFree / halal / kosher / nutFree / pescatarian
   cuisine                   String? // Italian / British / French / etc. Single-valued.
   mealType                  String? // breakfast / lunch / dinner / snack / dessert / drink / side
-  mood                      String[] // multi: comfortFood / weeknight / party / kidFriendly / freezerFriendly / healthy
+  mood                      String[] // multi-tag — genre / register / vibe. Cooking values: comfortFood / weeknight / party / kidFriendly / freezerFriendly / healthy. Mindset values (Phase 8 Step 13 rebalance): manifesting / magical / playful / symbolic. Use the canonical strings exactly. Filterable via the GIN index.
   temperatureCelsius        Int?
   temperatureNote           String? // "fan oven", "low and slow"
   nutritionalInfoPerServing Json?
@@ -758,6 +758,7 @@ model Tutorial {
   @@index([type, timeBand])
   @@index([type, bestTime])
   @@index([practiceTargets], type: Gin)
+  @@index([mood], type: Gin)
   @@index([type, preFermentType])
   @@index([type, decoratingTechnique])
   @@index([type, containerFriendly])
@@ -2034,6 +2035,7 @@ enum PracticeTarget {
   SELF_WORTH
   FORGIVENESS
   AGEING
+  HOME
 }
 
 enum TimeBand {

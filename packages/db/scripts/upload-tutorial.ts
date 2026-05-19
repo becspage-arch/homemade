@@ -650,7 +650,11 @@ async function uploadTutorial(
     dietaryFlags: recipe.dietaryFlags ?? [],
     cuisine: recipe.cuisine ?? null,
     mealType: recipe.mealType ?? null,
-    mood: recipe.mood ?? [],
+    // mood is a cross-cutting genre tag. Cooking / baking authors set it
+    // under `recipe.mood`; Mindset authors set it at the top level
+    // (`input.mood`) since PRACTICE rows have no `recipe` block. Top-level
+    // wins when both are present.
+    mood: input.mood ?? recipe.mood ?? [],
     temperatureCelsius: recipe.temperatureCelsius ?? null,
     temperatureNote: recipe.temperatureNote ?? null,
     nutritionalInfoPerServing:

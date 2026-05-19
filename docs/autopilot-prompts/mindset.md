@@ -176,37 +176,126 @@ pnpm --filter @homemade/db exec tsx scripts/write-halt-signal.ts \
 
 Disable the scheduled task and exit clean.
 
-### 6. Auto-determine slice
+### 6. Auto-determine slice — weighted by gap-to-target
 
-Mindset spans 16 life categories (Money, Sleep, Body, Self-worth,
-Relationships, Motherhood, Business & purpose, Home & lifestyle, Grief,
-Trauma, Sexuality, Spiritual, Time, Creativity, Friendship, Big-picture
-identity) and 11 practice types (TAPPING, ENERGY_STATEMENT, AFFIRMATION,
-SPELL, RITUAL, ACTIVITY, JOURNAL_PROMPT, VISUALISATION, MEDITATION,
-EMBODIMENT, READING).
+Mindset spans **16 life categories** (Money, Body, Sleep & rest,
+Self-worth & identity, Relationships, Motherhood, Business & purpose,
+Home & lifestyle, Fear / blocks / trauma, Time & overwhelm, Joy &
+pleasure & play, Spirituality & intuition, Health, Grief & loss,
+Forgiveness, Ageing & seasons) and **11 practice types** (TAPPING,
+ENERGY_STATEMENT, AFFIRMATION, SPELL, RITUAL, ACTIVITY,
+JOURNAL_PROMPT, VISUALISATION, MEDITATION, EMBODIMENT, READING).
 
-Read the slice breakdowns from the last 3 batch reports if they exist
-(life category × practice type tables). On the first run, take a
-balanced spread across all 11 practice types (1–3 per type) and at least
-4 life categories.
+A 17th **cross-cutting genre** sits on top of those 16: the
+**manifesting / magical genre** (Section 17 of
+`docs/mindset-backlog.md`). The genre is a `mood`-tag layer — not a
+life category — that overlays on entries from any of the 16 primary
+categories. See `docs/mindset-author.md` § "Voice rules — the
+manifesting / magical genre" for the deposit-coin shape and the
+hard exclusions.
 
-Target spread for a 50-entry slice (or 20 on the first run):
+#### Step 6a — Compute the gap-to-target weight per life category
 
-- 8–11 practice types represented, no single type over ~25% of the batch.
-- 4–8 life categories represented, no single category over ~30%.
+The 2026-05-19 rebalance fixes the queue starvation that left 80%
+of PUBLISHED entries pointed at Money / Abundance / Anxiety. Every
+fire computes:
+
+```text
+weight[CAT] = max(0, (planned[CAT] - published[CAT]) / planned[CAT])
+```
+
+where `planned[CAT]` is the planned library size per
+`docs/mindset-brainstorm.md` § "Library entry totals":
+
+| Life category (PracticeTarget enum) | planned |
+|---|---:|
+| MONEY                | 600 |
+| BODY                 | 1,000 |
+| SLEEP                | 290 |
+| SELF_WORTH           | 400 |
+| RELATIONSHIPS        | 210 |
+| MOTHERHOOD           | 215 |
+| PURPOSE (Business)   | 195 |
+| HOME                 | 150 |
+| FEAR                 | 180 |
+| TIME                 | 150 |
+| JOY                  | 135 |
+| SPIRITUALITY         | 140 |
+| HEALTH               | 165 |
+| GRIEF                | 190 |
+| FORGIVENESS          | 125 |
+| AGEING               | 175 |
+
+`published[CAT]` is the live count — query directly:
+
+```bash
+pnpm --filter "@homemade/db" exec tsx packages/db/scripts/_mindset-by-target.ts
+```
+
+The script prints per-target PUBLISHED counts. Use those numbers
+verbatim. A category at or above its plan gets `weight = 0` and is
+skipped for this fire. Money currently runs ~90% of plan, so on
+most fires it will get a small slice or be skipped entirely until
+the others catch up.
+
+#### Step 6b — Pick categories for this batch
+
+Normalise the weights so they sum to 1.0. For a 50-entry slice (or
+20 on the first run) the number of entries per category is
+`round(weight[CAT] * BATCH_SIZE)`, with two hard rules:
+
+- **Cap rule.** No single category gets more than **30% of the
+  batch** (so 15 entries on a 50-batch, 6 on a 20-batch). If the
+  raw weight would put it higher, cap and redistribute the
+  remainder across the next-highest-weighted categories.
+- **Floor rule.** Any category with `weight > 0.4` (more than 40%
+  short of plan) gets a guaranteed **minimum of 2 entries** per
+  fire — so neglected categories don't get rounded down to zero
+  when several mid-weighted categories take the slice.
+
+Aim for 6–10 categories represented per batch (target +/- 2). With
+those rules in place, the autopilot will spend the next ~20 fires
+draining the BODY / GRIEF / FORGIVENESS / JOY / SPIRITUALITY / TIME
+/ AGEING / HOME / MOTHERHOOD / HEALTH / RELATIONSHIPS gap before
+returning to balanced fires.
+
+#### Step 6c — Apply the practice-type spread on top
+
+Inside the chosen category slice:
+
+- 8–11 practice types represented across the batch, no single type
+  over ~25%.
 - Mix of `PRACTICE` (the main type) and `READING` (long-form library
   entries — see `docs/mindset-backlog.md` "reading entries" sections).
   Aim for ~80% PRACTICE / ~20% READING on a typical batch.
-- Skew under-served life categories — if `Money` has been heavy and
-  `Time` light, weight `Time` and the under-represented sub-categories.
+- Practice scripts go in the matching sub-category
+  (`mindset/tapping`, `mindset/ritual`, etc.). Look up the right
+  `practiceType` for the backlog section each entry came from.
 
-For each entry, look up the right `practiceType` for the backlog
-section it came from. The mapping is in `docs/mindset-author.md` and
-the per-section context. Practice scripts go in the matching sub-category
-(`mindset/tapping`, `mindset/ritual`, etc.).
+#### Step 6d — Genre slice (manifesting / magical) is optional, not weighted
 
-Write down the slice — list of titles, derived slugs, practice type,
-life category — before drafting.
+If 2–4 entries in the chosen slice fall under Section 17 of the
+backlog (or under sub-categories `activity` / `ritual` / `spell` /
+`visualisation` with a natural deposit-coin shape), populate
+`mood: ["manifesting", "magical"]` per the author prompt rule. Do
+not force the genre — leave `mood: []` on the practical-clinical
+entries (the majority).
+
+**Hard exclusion for the genre — never auto-populate `mood` with
+`manifesting` or `magical` on entries that target GRIEF, trauma
+(FEAR § specific past event / sexual / medical / birth / loss /
+body-held / generational), chronic illness or pain (HEALTH §
+chronic illness; BODY § pain), depression / suicidal ideation, or
+anything aimed at bending another person's will.** Author judgement
+inside Section 17's own entries (where the genre fits by design).
+
+#### Step 6e — Write down the slice
+
+Before drafting, write the slice — list of titles, derived slugs,
+practice type, life category, mood tags (where applied) — into the
+batch report header. The slice table is the audit trail for the
+rebalance; a future weighting check reads back through these tables
+to verify the bias correction is holding.
 
 ---
 

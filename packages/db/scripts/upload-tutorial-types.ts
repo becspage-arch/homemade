@@ -613,6 +613,27 @@ export interface TutorialUploadInput {
   /** Reference list / attribution notes (rendered in the sources aside). */
   sourceNotes?: string | null
 
+  /**
+   * Cross-cutting genre / register / vibe tag. Multi-valued.
+   *
+   * Cooking / baking values: weeknight, comfortFood, kidFriendly,
+   * freezerFriendly, healthy, weekendBake, party, etc. Cooking + baking
+   * authors traditionally set this under `recipe.mood` — both locations
+   * are honoured for backwards compatibility, with top-level winning.
+   *
+   * Mindset values (Phase 8 Step 13 rebalance):
+   *   - "manifesting" — outward-asking-shaped (raise / launch / new home /
+   *     new chapter).
+   *   - "magical" — folk-magical staging (candle / salt / bay leaf /
+   *     threshold / kitchen object).
+   *   - "playful" — deliberate light register.
+   *   - "symbolic" — heavy symbolic claiming without folk-magical staging.
+   *
+   * Leave empty / omit on rows that don't carry a genre register.
+   * Indexed via the Tutorial mood GIN index for fast filtering.
+   */
+  mood?: string[]
+
   /** Recipe metadata. Required when `type === 'RECIPE'`. */
   recipe?: RecipeMetadata | null
 

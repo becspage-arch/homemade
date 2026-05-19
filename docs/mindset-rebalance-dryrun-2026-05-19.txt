@@ -1,0 +1,147 @@
+
+
+Mindset autopilot — rebalance dry-run
+=====================================
+
+Starting state (PUBLISHED per life-category target):
+
+Category        Planned  Published  Weight  GapTo%
+---             ------- ----------  ------  ------
+MONEY               600        545    0.09      9%
+BODY               1000         30    0.97     97%
+SLEEP               290        137    0.53     53%
+SELF_WORTH          400        162    0.59     60%
+RELATIONSHIPS       210         22    0.90     90%
+MOTHERHOOD          215          7    0.97     97%
+PURPOSE             195         45    0.77     77%
+HOME                150          0    1.00    100%
+FEAR                180         69    0.62     62%
+TIME                150          2    0.99     99%
+JOY                 135         17    0.87     87%
+SPIRITUALITY        140          3    0.98     98%
+HEALTH              165          8    0.95     95%
+GRIEF               190          4    0.98     98%
+FORGIVENESS         125         17    0.86     86%
+AGEING              175          0    1.00    100%
+
+
+Batch 1 (size 50):
+Category        Entries
+---             -------
+  BODY                4
+  MOTHERHOOD          4
+  HOME                4
+  TIME                4
+  SPIRITUALITY        4
+  HEALTH              4
+  GRIEF               4
+  AGEING              4
+  RELATIONSHIPS       3
+  PURPOSE             3
+  JOY                 3
+  FORGIVENESS         3
+  SLEEP               2
+  SELF_WORTH          2
+  FEAR                2
+  (total)            50
+
+Batch 2 (size 50):
+Category        Entries
+---             -------
+  BODY                4
+  MOTHERHOOD          4
+  HOME                4
+  TIME                4
+  SPIRITUALITY        4
+  HEALTH              4
+  GRIEF               4
+  AGEING              4
+  RELATIONSHIPS       3
+  PURPOSE             3
+  JOY                 3
+  FORGIVENESS         3
+  SLEEP               2
+  SELF_WORTH          2
+  FEAR                2
+  (total)            50
+
+Batch 3 (size 50):
+Category        Entries
+---             -------
+  BODY                4
+  MOTHERHOOD          4
+  HOME                4
+  TIME                4
+  SPIRITUALITY        4
+  HEALTH              4
+  GRIEF               4
+  AGEING              4
+  RELATIONSHIPS       3
+  PURPOSE             3
+  JOY                 3
+  FORGIVENESS         3
+  SLEEP               2
+  SELF_WORTH          2
+  FEAR                2
+  (total)            50
+
+Batch 4 (size 50):
+Category        Entries
+---             -------
+  BODY                4
+  MOTHERHOOD          4
+  HOME                4
+  TIME                4
+  SPIRITUALITY        4
+  HEALTH              4
+  GRIEF               4
+  AGEING              4
+  RELATIONSHIPS       3
+  PURPOSE             3
+  JOY                 3
+  FORGIVENESS         3
+  SLEEP               2
+  SELF_WORTH          2
+  FEAR                2
+  (total)            50
+
+Batch 5 (size 50):
+Category        Entries
+---             -------
+  BODY                4
+  MOTHERHOOD          4
+  HOME                4
+  TIME                4
+  SPIRITUALITY        4
+  HEALTH              4
+  GRIEF               4
+  AGEING              4
+  RELATIONSHIPS       3
+  PURPOSE             3
+  JOY                 3
+  FORGIVENESS         3
+  SLEEP               2
+  SELF_WORTH          2
+  FEAR                2
+  (total)            50
+
+End-state snapshot after 5 batches (PUBLISHED projected):
+
+Category        Planned  Published  Weight  GapTo%
+---             ------- ----------  ------  ------
+MONEY               600        545    0.09      9%
+BODY               1000         50    0.95     95%
+SLEEP               290        147    0.49     49%
+SELF_WORTH          400        172    0.57     57%
+RELATIONSHIPS       210         37    0.82     82%
+MOTHERHOOD          215         27    0.87     87%
+PURPOSE             195         60    0.69     69%
+HOME                150         20    0.87     87%
+FEAR                180         79    0.56     56%
+TIME                150         22    0.85     85%
+JOY                 135         32    0.76     76%
+SPIRITUALITY        140         23    0.84     84%
+HEALTH              165         28    0.83     83%
+GRIEF               190         24    0.87     87%
+FORGIVENESS         125         32    0.74     74%
+AGEING              175         20    0.89     89%

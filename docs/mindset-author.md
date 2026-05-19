@@ -6,7 +6,18 @@ shape — `PRACTICE` / `READING` tutorials, 11 practice types, 20
 practice targets, time bands, best-time, when-to-use / when-not-to-use,
 alternative-practice cross-references, source-material grounding.
 
-**Prompt version:** 5 (completeness rule — 2026-05-19). Changelog:
+**Prompt version:** 6 (manifesting / magical genre + mood tagging — 2026-05-19). Changelog:
+- v6: Adds the manifesting / magical genre section under voice rules.
+  Defines the deposit-coin shape (concrete physical action + symbolic
+  intent + playful folk-magical register + forward-action close), the
+  mood-tag auto-population rule (`mood: ["manifesting", "magical"]` and
+  permitted variants `playful` / `symbolic`), and the hard exclusion
+  list (no genre frame on grief / trauma / chronic illness / mental-
+  health-crisis-adjacent / will-bending). Adds `mood` to the output
+  contract example and documents its permitted Mindset values. Paired
+  with backlog Section 17 (cross-cutting genre catalogue, 103 entries)
+  and the rebalanced autopilot weighting in
+  `docs/autopilot-prompts/mindset.md`.
 - v5: "MANDATORY: Deliver a practice" section added before Voice reference.
   Enforces non-negotiable shape (intro max 2 paragraphs → full practice → forward-action close).
   Adds completeness check as item 0 in the self-critique checklist.
@@ -307,6 +318,7 @@ The Mindset shape, with every field a PRACTICE row should fill:
   "difficulty": "BEGINNER",
   "sourceType": "CREATOR",
   "sourceNotes": "<plain-text attribution — see the Sources section>",
+  "mood": [],
   "practice": {
     "practiceType": "TAPPING",
     "practiceTargets": ["MONEY", "ANXIETY"],
@@ -366,6 +378,25 @@ Rules:
 - `practice` is required when `type` is `PRACTICE` or `READING`.
   Every Mindset metadata field on the Tutorial row gets set from this
   block.
+- **`mood` is the genre / register tag**, a string array. For Mindset
+  rows the permitted values are exactly:
+  - `"manifesting"` — the practice is pointed at an outward shift the
+    user is calling in (a sale, a contract, a raise, a new home, a
+    new chapter). Forward-looking, asking-shaped.
+  - `"magical"` — the practice has a folk-magical staging (candle,
+    salt, bay leaf, threshold, oil, written slip, kitchen object as
+    symbolic vessel). Honours the lineage without claiming a specific
+    closed-tradition framing.
+  - `"playful"` — the practice leans into a deliberately light register
+    (silly, child-like, mood-lift shape). Use sparingly.
+  - `"symbolic"` — the practice is heavily symbolic but neither folk-
+    magical-staged nor asking-shaped (e.g. a dressing practice, a
+    seat-of-the-table claiming). Use sparingly.
+  Leave `mood: []` (or omit) on practices that don't carry one of
+  those registers — the common case for Money / Sleep / Body /
+  Health / Grief etc. clinical-practical entries. See "Voice rules —
+  the manifesting / magical genre" below for the auto-population rule
+  and the hard exclusions.
 
 ## `projectSchedule` does not apply to Mindset
 
@@ -880,6 +911,101 @@ attribution or reframing to a non-claimed lineage. Default to
 general lineage ("breath meditation", "candle ritual") over specific
 tradition-claims unless the practice is explicitly adapted from a
 specific tradition and properly credited.
+
+## Voice rules — the manifesting / magical genre
+
+Some Mindset entries belong to the **manifesting / magical genre** —
+a register the audience recognises and asks for. The reference shape
+is the deposit-coin pattern from `feedback_mindset_voice.md` and the
+existing **bay-leaf burn**, **bless-and-pay**, and **cinnamon at the
+threshold** practices already PUBLISHED.
+
+**The deposit-coin shape.** Four parts, in order:
+
+1. **A specific, concrete physical action.** Not "imagine X" — actually
+   do something with your hands, a kitchen object, a doorway, a slip
+   of paper, a candle, a bowl of salt. The body is the lever.
+2. **A symbolic / energetic intent.** The action carries a meaning —
+   an asking, a release, a sealing, a welcoming, a fixing-into-place.
+   The user knows what they're doing it *for*. State the symbolism
+   plainly and briefly; don't belabour it.
+3. **Playful, folk-magical register.** Closer to a wise-grandmother
+   kitchen ritual than a wellness-app reel. Quiet, practical, ancestral
+   without claiming a specific closed tradition. Avoid both the
+   earnest-clinical voice and the cosmic-promise voice.
+4. **A forward-action close.** The practice ends pointing at the next
+   real-world move (do the thing, walk into the room, send the email,
+   ring back, sit at the table) — not on a cosmic promise or an
+   amplification claim.
+
+**When to apply the genre — author judgement.** The genre fits the
+**activities / rituals / spells / visualisations** sub-categories
+naturally; it does not fit tapping, energy statements, affirmations,
+journal prompts, meditations, embodiment, or reading entries. Inside
+those four sub-categories the genre is a choice, not a default — many
+activities are practical-physical without a symbolic frame, and that
+shape stays as it is. Apply the genre when:
+
+- The backlog entry sits under Section 17 (cross-cutting manifesting /
+  magical genre) of `docs/mindset-backlog.md`, OR
+- A backlog entry in any of Sections 1–16 has a natural deposit-coin
+  shape in its title or working description (e.g. "Bay-leaf burn for
+  the asking number" — already shaped).
+
+**Mood auto-population.** When the genre applies, populate `mood`:
+
+- Default genre tag set: `mood: ["manifesting", "magical"]`.
+- Asking / contract / launch / call-in shape without folk-magical
+  staging: `mood: ["manifesting"]`.
+- Folk-magical staging without a specific outward asking (a closing
+  ritual, a hearth blessing, a doorway blessing): `mood: ["magical"]`.
+- Deliberately silly / mood-lift shape on top of either of the above:
+  add `"playful"`.
+- Heavy symbolic claiming without folk-magical staging (dressing-for,
+  seat-claiming): `mood: ["symbolic"]` (or `["manifesting", "symbolic"]`
+  if it also asks).
+
+Leave `mood: []` (or omit) on every other Mindset row — the common
+case. Mood is opt-in genre tagging, not a required field.
+
+**Hard exclusion — never apply the genre to these topics, regardless
+of which sub-category the entry sits in:**
+
+- Grief and loss (Section 14) — every entry stays respectful,
+  grounded, body-first. No candles-for-bringing-them-back, no
+  asking-shape framings.
+- Trauma, abuse, clinical PTSD (Section 9 § specific past event you
+  can't shake, sexual / medical / birth / loss / body-held / generational
+  trauma) — same.
+- Chronic illness and chronic pain (Section 13 § chronic illness;
+  Body § pain) — same.
+- Mental-health-crisis adjacent (Section 13 § depression, suicidal
+  ideation) — same.
+- Anything pointed at bending another person's will. Practices land
+  on the practitioner's state, never on "make him come back" /
+  "make her say yes" / "love spell" shapes. The Section 17 §
+  Relationships entries are deliberately self-anchored — calling in
+  aligned partners, tending an existing partnership, closing what's
+  done — not coercive.
+
+If the topic falls into any of these zones, draft the practice in the
+practical / clinical register (intro → practice → forward-action
+close, no folk-magical staging), and leave `mood: []`.
+
+**Register guard-rails inside genre entries:**
+
+- Avoid "energy", "frequency", "vibration", "vibe" as the *primary*
+  causal verbs ("raise your vibration to receive"). The genre is
+  folk-magical, not high-vibe-wellness.
+- Avoid "the universe / source / spirit will bring you" as the
+  delivery mechanism. Keep the agency with the practitioner —
+  "you've put the asking number where you see it, now you walk into
+  the meeting and say it".
+- Avoid claim language about the action's effect on the world. The
+  practice anchors *you*; what happens after is the work the
+  practitioner does next, with the practice as the steadying.
+- The forward-action close is non-negotiable. End by pointing at the
+  real-world move.
 
 ## Voice rules — soft
 

@@ -1,9 +1,12 @@
 # Mindset backlog
 
-The Mindset map. ~4,300 library entries organised by life category,
-sub-category where applicable, and stuck-on point. Drives bulk authoring
-in Phase 8 (Step 13 sets this up; Step 12-pattern bulk authoring sessions
-consume it).
+The Mindset map. ~4,400 library entries organised by 16 life categories,
+sub-category where applicable, and stuck-on point — plus a 17th
+cross-cutting genre section (Section 17: Manifesting & magical) that
+overlays mood tags onto entries from any of the 16 life categories.
+Drives bulk authoring in Phase 8 (Step 13 sets this up; Step 12-pattern
+bulk authoring sessions consume it, with the autopilot prompt at
+`docs/autopilot-prompts/mindset.md` doing weighted category selection).
 
 Each entry is a single bullet:
 
@@ -5666,6 +5669,266 @@ mid-life writing, plus Rebecca-original framing.
 
 ---
 
+## 17. Manifesting & magical — cross-cutting genre
+
+~110 entries across the activities / rituals / spells / visualisations
+sub-categories, written in the **deposit-coin shape**:
+
+- Specific, concrete physical action (something you actually do with
+  your hands, a kitchen object, a doorway, a wallet).
+- Symbolic / energetic intent — the action carries a meaning, an
+  asking, a release, a fixing-into-place.
+- Playful, folk-magical register — not earnest / not clinical / not
+  therapeutic-claim-y. Closer to a wise grandmother's quiet ritual
+  than a wellness reel.
+- Forward action close — the practice points at a next move (do the
+  thing, ask, walk back into the room) rather than ending on a
+  cosmic-promise.
+
+The reference shape is the **bay-leaf burn** and **bless-and-pay**
+entries already in Money (both PUBLISHED) and the **deposit-coin**
+shape from `feedback_mindset_voice.md` — concrete object, symbolic
+weight, body-anchored, no big claims.
+
+The authoring worker auto-populates `mood: ["manifesting", "magical"]`
+on these entries (or just one of the two if more appropriate — e.g.
+`["manifesting"]` for a contract / launch / asking practice with no
+candle-and-salt physical staging; `["magical"]` for a folk-spell
+shaped entry that isn't pointed at a specific outward outcome).
+`playful` and `symbolic` are also permitted mood values for entries
+that lean into either register specifically (a deliberately silly
+ritual; a heavily symbolic-but-not-folk-magical one).
+
+**Hard exclusion.** No magical / manifesting frame on:
+- Grief (Section 14) — keep respectful, grounded, body-first.
+- Trauma / abuse / clinical PTSD (Section 9 § specific past event,
+  sexual / medical / birth trauma, generational trauma) — same.
+- Chronic illness and pain (Section 13 § chronic illness; Body §
+  pain) — same.
+- Mental-health-crisis adjacent (Section 13 § depression, suicidal
+  ideation if any) — same.
+- Anything specifically about another person's behaviour where the
+  practice would read as a "love spell" or "make him come back"
+  shape. Practices land on the *practitioner's* state, never on
+  bending someone else's will.
+
+Cross-tag each entry with its primary life category so the autopilot
+still picks it under that category's slice — the genre is a `mood`
+tag layered on top, not a sub-category replacement.
+
+### Money — manifesting / magical
+
+##### Asking, raises, pricing
+
+- [ACTIVITY] Pin your asking number on the inside of the wardrobe door — see it as you dress for the meeting — [NEW] — cross-tag MONEY + BUSINESS
+- [ACTIVITY] Write the cheque to yourself for the amount you're asking — tuck it in the back of your bank card — [NEW] — cross-tag MONEY
+- [RITUAL] Bay-leaf burn for the asking number — write the figure, light it, ash into the sink — [NEW] — cross-tag MONEY
+- [RITUAL] Sleep one night on the email draft before sending the rate increase — [NEW] — cross-tag MONEY + BUSINESS
+- [SPELL] Rosemary in the wallet — for the week of the negotiation — [NEW] — cross-tag MONEY
+- [ACTIVITY] Practise your asking number out loud in the kitchen three mornings running — [NEW] — cross-tag MONEY + CONFIDENCE
+- [SPELL] Cinnamon on the doorframe of the room you negotiate in — [NEW] — cross-tag MONEY
+- [VISUALISATION] The "yes" already given — walk into the meeting having already heard it — [NEW] — cross-tag MONEY + CONFIDENCE
+
+##### Contracts, launches, big deposits
+
+- [ACTIVITY] Sleep on the printed contract you want to win — under the pillow for one night — [NEW] — cross-tag MONEY + BUSINESS
+- [RITUAL] Oil at the entrance of a new venture — a drop on the threshold the morning the offer goes live — [NEW] — cross-tag BUSINESS + MONEY
+- [SPELL] Salt at the threshold for a launch week — protective, simple, kitchen salt is fine — [NEW] — cross-tag BUSINESS + MONEY
+- [RITUAL] Tied red string by the front door for the duration of a launch — untie and bin when launch closes — [NEW] — cross-tag BUSINESS
+- [ACTIVITY] Write the deposit number on a slip, fold it into a kitchen jar with a bay leaf, on the counter for one week — [NEW] — cross-tag MONEY
+- [SPELL] Light a candle at the start of every workday during the launch — same candle, until it's done — [NEW] — cross-tag BUSINESS
+- [RITUAL] The "first sale" ceremony — write down what you'll do when it lands, before it lands — [NEW] — cross-tag BUSINESS + MONEY
+- [VISUALISATION] The full inbox of payment-received notifications — your body steady through it — [NEW] — cross-tag MONEY + ABUNDANCE
+
+##### Debt release, money clearing
+
+- [RITUAL] Bless-and-pay each bill aloud — already exists, link the deposit-coin shape — [NEW] — cross-tag MONEY
+- [SPELL] Write the debt number on water-soluble paper; rinse it in the kitchen sink — release without denial — [NEW] — cross-tag MONEY
+- [ACTIVITY] Bury a written wish about the debt cleared, in the garden or a pot, at the new moon — [NEW] — cross-tag MONEY
+- [RITUAL] Wash hands of the old debt story at the kitchen sink — water + name what you release — [NEW] — cross-tag MONEY
+- [SPELL] Cinnamon stick in the bill drawer for one month — sweet, warm, friendly — [NEW] — cross-tag MONEY
+
+##### Daily money magic
+
+- [ACTIVITY] Five-pence piece in the left shoe for the working day — anchor — [NEW] — cross-tag MONEY
+- [RITUAL] Greet the bank balance with a hand on the screen before checking the number — [NEW] — cross-tag MONEY
+- [SPELL] Coin under the welcome mat — a small magnet, kitchen-style — [NEW] — cross-tag MONEY + HOME
+- [ACTIVITY] One coin saved in the same jar every day — symbolic, small, on the windowsill — [NEW] — cross-tag MONEY
+
+### Business & purpose — manifesting / magical
+
+##### Visibility and being seen
+
+- [RITUAL] Stand on the threshold of your studio / desk / shop for thirty seconds before opening for the day — [NEW] — cross-tag BUSINESS + PURPOSE
+- [ACTIVITY] Photograph your workspace in the morning light — every morning of the launch — [NEW] — cross-tag BUSINESS
+- [SPELL] Bay leaf with your offer's name on it, in the jar with your business pens — [NEW] — cross-tag BUSINESS
+- [VISUALISATION] The studio full, the inbox full, your body still — [NEW] — cross-tag BUSINESS + PURPOSE
+- [ACTIVITY] Wear one piece of clothing that says "owner" — every working day for the launch week — [NEW] — cross-tag BUSINESS + CONFIDENCE
+
+##### Clients, customers, collaborators
+
+- [SPELL] Honey on a fingertip when sending the first email of the day — sweet first contact — [NEW] — cross-tag BUSINESS
+- [RITUAL] Light a candle for each new collaborator the day they sign — name them aloud — [NEW] — cross-tag BUSINESS
+- [ACTIVITY] Write the names of three aligned clients you're calling in, tuck in your diary — [NEW] — cross-tag BUSINESS
+
+##### The launch / the offer
+
+- [SPELL] Sigil on the back of the offer page — small, hand-drawn, your own — [NEW] — cross-tag BUSINESS
+- [RITUAL] Pour out a glass of water on the kitchen window-sill at launch hour — flow as practice — [NEW] — cross-tag BUSINESS
+- [ACTIVITY] Print the sales page and sleep one night with it folded under the pillow — [NEW] — cross-tag BUSINESS
+
+### Home & lifestyle — manifesting / magical
+
+##### Thresholds and doorways
+
+- [SPELL] Salt at the front door threshold for the move-in week — protective, welcoming — [NEW] — cross-tag HOME
+- [RITUAL] Greet the house aloud on returning each evening — by name if it has one — [NEW] — cross-tag HOME
+- [ACTIVITY] Stand at the front door for thirty seconds in the morning, hand on the frame — [NEW] — cross-tag HOME
+- [SPELL] Cinnamon on the doorframe — sweet welcome, household magic — [NEW] — cross-tag HOME
+- [RITUAL] The "welcome the house" tea — one cup at the kitchen table, first morning of a new month — [NEW] — cross-tag HOME
+
+##### The new home / the wanted home
+
+- [ACTIVITY] Eat dinner from the plate you want to use when the new house is yours — once a week — [NEW] — cross-tag HOME + MONEY
+- [VISUALISATION] Walking the rooms of the wanted house — known step by step — [NEW] — cross-tag HOME + ABUNDANCE
+- [ACTIVITY] Tape a printed picture of the wanted house inside a kitchen cupboard you open daily — [NEW] — cross-tag HOME
+- [RITUAL] Write the address of the wanted house on a slip, in the kitchen herb jar — [NEW] — cross-tag HOME
+- [SPELL] Coin from your current home in the pocket on every viewing — [NEW] — cross-tag HOME
+
+##### Hosting, gathering, the kitchen
+
+- [RITUAL] Light a candle on the kitchen table while you cook for guests — "welcome" said aloud once — [NEW] — cross-tag HOME + RELATIONSHIPS
+- [SPELL] Bay leaf under the dinner plate of an honoured guest — quiet, kitchen-magical — [NEW] — cross-tag HOME
+- [ACTIVITY] Set the table the morning of the dinner — let the room hold it for the day — [NEW] — cross-tag HOME
+
+### Body — hormonal, perimenopause, menopause — manifesting / magical
+
+##### The cycle and seasons of the body
+
+- [RITUAL] One drop of oil on the wrist at each phase shift — known, named, body-marked — [NEW] — cross-tag BODY
+- [ACTIVITY] Sleep on a written list of three things your body asks for this cycle — [NEW] — cross-tag BODY
+- [VISUALISATION] The cycle as a year — four seasons, your body as the orchard — [NEW] — cross-tag BODY + AGEING
+- [SPELL] Bay leaf with the symptom-name on it, in the herb tin until it eases — [NEW] — cross-tag BODY
+
+##### Perimenopause, menopause — symbolic claiming
+
+- [RITUAL] Light a candle on the morning of each new hot flush — name what it's burning off — [NEW] — cross-tag BODY + AGEING
+- [ACTIVITY] Write what the cycle gave you on a slip, before it ends, and tuck in the dresser — [NEW] — cross-tag BODY + AGEING
+- [VISUALISATION] The new agency on the other side — known step by step — [NEW] — cross-tag BODY + AGEING + ABUNDANCE
+- [SPELL] Rose petal in a jar of salt for the cycle-ending months — quiet honouring — [NEW] — cross-tag BODY + AGEING
+
+##### Body knowing
+
+- [ACTIVITY] Wash your face with intention every morning for the launch week — anchor — [NEW] — cross-tag BODY + CONFIDENCE
+- [RITUAL] Hand on the belly, a question, an answer — three times before bed — [NEW] — cross-tag BODY
+
+### Relationships — manifesting / magical (only the self-anchored shapes)
+
+> No "love spells" or "make-them-come-back" framings. Every entry
+> here lands on the practitioner's state, not on bending another's
+> will.
+
+##### Calling in aligned partners / friends
+
+- [ACTIVITY] Write a list of the qualities — three of them, no more — and seal in an envelope on the dresser — [NEW] — cross-tag RELATIONSHIPS
+- [RITUAL] Set a place for the aligned friend at Sunday dinner — once, at the start of looking — [NEW] — cross-tag RELATIONSHIPS
+- [VISUALISATION] The dinner with the friend you haven't met yet — see the kitchen, the laugh, the tea — [NEW] — cross-tag RELATIONSHIPS
+
+##### Tending an existing partnership
+
+- [RITUAL] Light a candle for the marriage on each anniversary of a hard thing survived — [NEW] — cross-tag RELATIONSHIPS
+- [ACTIVITY] Write three things you want for the partnership, fold into a kitchen jar — [NEW] — cross-tag RELATIONSHIPS
+- [SPELL] Honey under both your morning cups for the week of a hard conversation coming — [NEW] — cross-tag RELATIONSHIPS
+
+##### Closing what's done
+
+- [RITUAL] Wash hands at the kitchen sink, name what is finished — [NEW] — cross-tag RELATIONSHIPS + FORGIVENESS
+- [ACTIVITY] Burn or bury a slip with the relationship's name and "done with my hands open" — [NEW] — cross-tag RELATIONSHIPS + FORGIVENESS
+
+### Self-worth & identity — manifesting / magical
+
+##### Stepping into a bigger version of you
+
+- [ACTIVITY] Wash hands of an old role at the kitchen sink — name what you release — [NEW] — cross-tag SELF_WORTH + FORGIVENESS
+- [RITUAL] Dress as the next-year version of you one morning a week — [NEW] — cross-tag SELF_WORTH + CONFIDENCE
+- [SPELL] Sigil for the next chapter — drawn on the inside of the wardrobe door, only you see it — [NEW] — cross-tag SELF_WORTH
+- [VISUALISATION] The future you doing one ordinary task in the kitchen — known, named, embodied — [NEW] — cross-tag SELF_WORTH + ABUNDANCE
+- [ACTIVITY] Write your wanted job title on a slip, tape inside your phone case — [NEW] — cross-tag SELF_WORTH + BUSINESS
+
+##### Releasing the small old self
+
+- [RITUAL] Bury a written list of what no longer fits in the herb garden / a houseplant pot at the new moon — [NEW] — cross-tag SELF_WORTH
+- [SPELL] Salt over the left shoulder when the old story shows up — old, quiet, real — [NEW] — cross-tag SELF_WORTH
+
+### Joy, pleasure, play — manifesting / magical
+
+##### Claiming pleasure as a magical act
+
+- [ACTIVITY] Dress entirely for joy one morning a week — including underwear — [NEW] — cross-tag JOY + BODY
+- [RITUAL] Set the kitchen table for one person — yourself — once a week, with the good plate — [NEW] — cross-tag JOY
+- [SPELL] Light a candle on the morning of one decided pleasure day each month — name the pleasure — [NEW] — cross-tag JOY
+- [VISUALISATION] The room of your fully-pleasure life — walk it once a week — [NEW] — cross-tag JOY + ABUNDANCE
+
+##### Anniversaries and celebrations
+
+- [RITUAL] Light a candle on the morning of every Friday that closes a hard week — [NEW] — cross-tag JOY
+- [ACTIVITY] Wear something celebratory on an ordinary Tuesday, just because — [NEW] — cross-tag JOY + PLAY
+
+### Forgiveness — manifesting / magical (self-anchored only)
+
+##### Release rituals
+
+- [RITUAL] Wash hands of the wrong at the kitchen sink — water + name + dry slowly — [NEW] — cross-tag FORGIVENESS
+- [SPELL] Burn a slip with the wrong written on it, ash into the bin or the garden — [NEW] — cross-tag FORGIVENESS
+- [ACTIVITY] Bury a written sentence — "I am setting this down" — in a houseplant pot — [NEW] — cross-tag FORGIVENESS
+
+##### Forgiving yourself
+
+- [RITUAL] Light a candle on the day of the anniversary of the choice you're making peace with — [NEW] — cross-tag FORGIVENESS + SELF_WORTH
+- [SPELL] Rose petal under a glass of water on the dresser overnight — return-to-yourself shape — [NEW] — cross-tag FORGIVENESS
+
+### Ageing & seasons — manifesting / magical
+
+##### Crossing chapters
+
+- [ACTIVITY] Write the chapter you're closing on a slip; tuck it into the back of a kitchen drawer for a year — [NEW] — cross-tag AGEING
+- [RITUAL] Light a candle on each equinox and solstice — name the season's shape — [NEW] — cross-tag AGEING + SPIRITUALITY
+- [VISUALISATION] The next decade as a known house — walk one room — [NEW] — cross-tag AGEING + SELF_WORTH
+- [SPELL] Rose hip on the windowsill through autumn — gentle ageing, gentle holding — [NEW] — cross-tag AGEING
+
+##### Birthday and milestone practices
+
+- [RITUAL] One candle on the kitchen table on the morning of your birthday — alone, before the day starts — [NEW] — cross-tag AGEING + JOY
+- [ACTIVITY] Write a sealed letter to next-year-you on every birthday; open the previous year's — [NEW] — cross-tag AGEING + SELF_WORTH
+
+### Spirituality & intuition — manifesting / magical
+
+##### Daily knowing
+
+- [RITUAL] Pour out a small saucer of milk on the back step at the new moon — folk-magical, no creed needed — [NEW] — cross-tag SPIRITUALITY
+- [ACTIVITY] Hand on the kitchen counter, three breaths, ask the next question — [NEW] — cross-tag SPIRITUALITY
+- [VISUALISATION] The knowing as a small steady fire in the chest — found, fed, walked with — [NEW] — cross-tag SPIRITUALITY
+
+##### Signs and seasons
+
+- [RITUAL] Light a candle for the first frost, first snow, first daffodil — name what's coming — [NEW] — cross-tag SPIRITUALITY + AGEING
+- [ACTIVITY] Note three small signs across the week in a kitchen notebook — birds, light, weather — [NEW] — cross-tag SPIRITUALITY
+
+##### Asking, listening
+
+- [RITUAL] Three questions, written on three slips, in a kitchen jar overnight — read one each morning, no answer required — [NEW] — cross-tag SPIRITUALITY
+- [SPELL] A single lit candle at the dining table for the duration of a hard prayer — [NEW] — cross-tag SPIRITUALITY
+
+### Genre — reading entries
+
+- [READING] How folk magic works — practitioner state, not other-bending — [PD] + [NEW]
+- [READING] Manifesting without the wellness-industry frame — kitchen-table version — [PD] + [NEW]
+- [READING] Why the small physical action matters — the deposit-coin shape explained — [NEW]
+- [READING] When magical thinking helps and when it doesn't — honest version — [PD] + [NEW]
+- [READING] The line between symbolic claiming and bypassing — [NEW]
+
+---
+
 ## Cross-cutting indices (no new entries — references only)
 
 These tail-of-file indices reference library entries by title to surface
@@ -5696,6 +5959,7 @@ References to surface in the `UserFeeling` matcher (the schema's
 - **"It's Sunday and I want to start fresh"** — Home § Sunday slow morning; Time § Sunday-evening dread; Money § The Calm & Safe Money Reset; Sleep § Day 1.
 - **"I'm in the perimenopause years"** — Body § Perimenopause sub-category (all); Sleep § perimenopause sleep changes; Health § thyroid + anxiety; Ageing § "I'm running out of time" feeling.
 - **"I just had a baby"** — Motherhood § identity loss; Sleep § new-parent deprivation; Body § postpartum body changes; Self-worth § "good girl" wound.
+- **"I want the magical / manifesting register"** — Section 17 (cross-cutting), filtered by mood `manifesting` / `magical`. The bay-leaf burn (Money), cinnamon at the threshold (Home / Money), bless-and-pay (Money), the deposit-coin shape entries across asking / launches / new home / new chapter. Hard exclusion: grief, trauma, chronic illness, abuse-adjacent topics.
 
 ### Worker-handover note
 
