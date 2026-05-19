@@ -369,6 +369,14 @@ model Tutorial {
   hero        Media?  @relation(fields: [heroMediaId], references: [id])
   body        Json // TipTap document — the article body
 
+  // Snapshot of the pre-rewrite body, captured by the
+  // mindset-completeness audit + rewriter pipeline before replacing
+  // `body` with re-authored content. Null on rows that have never been
+  // rewritten by an audit pipeline. The same field can be reused by
+  // future audit cycles (cooking / baking / etc.) — same shape, same
+  // semantics. Recovery: restore by copying revisedFrom back into body.
+  revisedFrom Json?
+
   // Phase 8 Homepage rebuild — heroImageStrategy tracks where the current
   // hero came from. PROCEDURAL_CARD = the renderer should show the
   // category-tinted SVG card built at request time from title + category.
