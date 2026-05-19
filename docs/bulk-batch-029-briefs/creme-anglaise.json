@@ -1,0 +1,190 @@
+{
+  "slug": "creme-anglaise",
+  "title": "Crème Anglaise",
+  "subtitle": "Pouring custard, the foundational British dessert sauce",
+  "excerpt": "Egg yolks, sugar, and warm vanilla-infused milk cooked gently to a light, coating sauce. The foundational dessert accompaniment: poured warm over puddings, crumbles, and hot tarts, or chilled as the base for ice cream and bavarois.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "• Mrs Beeton, Book of Household Management (1861), §1395, boiled custard sauce. Project Gutenberg #10136. Beeton's proportions: 8 egg yolks to 1 pint of milk, with 3 oz sugar and lemon or almond flavour. This version uses vanilla and a mix of milk and cream for a more pourable consistency.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make up to two days ahead. Press cling film onto the surface to prevent a skin forming. Reheat gently in a bain-marie or microwave on low power.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": ["comfortFood", "slowSunday"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "mixing-bowl-medium", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "nappe",
+      "term": "Nappe",
+      "definition": "The point at which a custard is thick enough to coat the back of a spoon without running off when a finger is drawn through it, the classic test for a properly set crème anglaise."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Crème anglaise is pouring custard: thin enough to flow around a pudding, thick enough to coat a spoon. It is made entirely on the hob, with no oven or bain-marie required. The technique is the one thing that needs attention, the mixture must never exceed 82°C or the egg proteins seize and the sauce becomes granular. If you have a probe thermometer, use it; if not, the spoon test is reliable."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The spoon test: drag a finger across the back of the custard-coated spoon. If the line holds clearly without flooding back, the custard is at ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "nappe",
+            "marks": [
+              { "type": "glossaryTooltip", "attrs": { "termSlug": "nappe" } }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", the correct consistency. Pull the pan off the heat the moment this happens. The carryover heat continues to cook the eggs even off the hob, so prompt action matters."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "egg-yolks", "amount": 4, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 250, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vanilla-pod", "amount": 1, "unit": "each", "prepNote": "split and seeds scraped", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Infuse the milk" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put {{whole-milk}} of whole milk, {{double-cream}} of double cream, and the split vanilla pod with its scraped seeds into a saucepan. Bring to just below simmering point over medium heat, then remove from the heat and leave to infuse for 10 minutes. This is optional but measurably improves the vanilla flavour."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the custard base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Whisk {{egg-yolks}} egg yolks with {{caster-sugar}} of caster sugar in a bowl until the mixture is pale and slightly thickened. Remove the vanilla pod from the milk. Temper the eggs by pouring a ladleful of the warm milk mixture slowly into the yolks while whisking constantly. Pour the tempered egg mixture back into the saucepan with the remaining milk."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook to nappe" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook over medium-low heat, stirring constantly with a wooden spoon or silicone spatula in figure-of-eight movements, scraping the base and corners of the pan. The custard is ready when it reaches 78, 82°C, or when a finger drawn across the back of the coated spoon leaves a clean line that holds without flooding. This takes 8, 12 minutes. Pull the pan from the heat immediately and strain through a fine-mesh sieve into a jug or bowl. Serve warm."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Custard is lumpy and grainy",
+              "cause": "The heat was too high, scrambling the egg proteins before the sauce set",
+              "fix": "Pour immediately into a cold bowl and blend with a stick blender. If caught early enough, before the granules are too large, blending and straining can rescue it."
+            },
+            {
+              "symptom": "Custard is thin and pourable but not coating the spoon",
+              "cause": "Undercooked; the starch from the egg yolks has not fully hydrated the sauce",
+              "fix": "Return to the heat on low and stir for a further 3, 4 minutes, watching closely. The change from thin to nappe happens quickly."
+            },
+            {
+              "symptom": "Skin forms on the surface as it cools",
+              "cause": "Evaporation from the surface oxidises the proteins",
+              "fix": "Press a sheet of cling film directly onto the surface of the custard before it cools."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Crème anglaise is one of the foundational sauces of European pastry. Despite its French name, it has been made in English kitchens since at least the seventeenth century under the simpler description of 'boiled custard'. Mrs Beeton lists several variants including an almond-flavoured version and a lemon-infused one. In practice, the vanilla version has dominated since vanilla became widely available in the mid-nineteenth century. The sauce is the base from which both ice cream and crème caramel develop; understanding how it behaves at different temperatures makes those recipes much easier to execute."
+          }
+        ]
+      }
+    ]
+  }
+}

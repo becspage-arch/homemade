@@ -1,0 +1,274 @@
+{
+  "slug": "treacle-sponge-pudding",
+  "title": "Treacle Sponge Pudding",
+  "subtitle": "Steamed golden-syrup sponge with toffee sauce",
+  "excerpt": "A classic British steamed pudding: a butter sponge poured over a pool of golden syrup and steamed until soft and yielding. Served with proper custard or extra syrup poured over at the table.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "• Mrs Beeton, Book of Household Management (1861), §1302, 1310, steamed puddings chapter, suet sponges and golden-syrup variants. Project Gutenberg #10136. Modern butter-sponge adaptation derived from the proportions in Eliza Acton, Modern Cookery for Private Families (1845), pudding chapter, Project Gutenberg.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 90,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Cool completely, wrap the pudding basin in cling film, and freeze for up to three months. Reheat from frozen by steaming for 45 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Steam the pudding up to two days ahead, cool, and refrigerate in the basin. Reheat by steaming for 30 minutes before serving.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": ["comfortFood", "slowSunday"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "pudding-basin", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": true }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Treacle sponge is one of the great British steamed puddings: a soft butter sponge poured into a basin over a thick pool of golden syrup, then steamed for ninety minutes until the sponge swells upward and the syrup condenses into something close to toffee at the base. When you invert it onto a warmed plate, that caramelised syrup runs down over the domed sponge like a glaze."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The recipe uses the standard creaming-method sponge, butter, sugar, eggs, flour, rather than the older suet versions in Beeton. The butter version is lighter and more reliably consistent in a home kitchen. Steaming is the essential technique: the enclosed, moist heat gives the sponge its particular softness that oven baking cannot replicate."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 1.2-litre pudding basin is the right size for six people. Smaller basins work but require the cooking time adjusted downward to about 60 minutes. Serve with crème anglaise, double cream poured cold over the hot pudding, or extra golden syrup warmed in a small pan."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "golden-syrup", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the basin" },
+            { "ingredientSlug": "unsalted-butter", "amount": 150, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "For the sponge" },
+            { "ingredientSlug": "caster-sugar", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sponge" },
+            { "ingredientSlug": "eggs", "amount": 3, "unit": "each", "prepNote": "at room temperature", "isOptional": false, "groupLabel": "For the sponge" },
+            { "ingredientSlug": "vanilla-extract", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sponge" },
+            { "ingredientSlug": "self-raising-flour", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sponge" },
+            { "ingredientSlug": "whole-milk", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sponge" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a 1.2-litre pudding basin with a lid, or cover tightly with a double layer of foil pleated across the top to allow for expansion. A large saucepan deep enough that the basin sits on a trivet or folded cloth with the lid on the pan is essential, the water must not touch the bottom of the basin."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the basin" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Grease the pudding basin generously with soft butter. Pour {{golden-syrup}} of golden syrup into the base, tilting to coat evenly. Set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the sponge batter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Beat {{unsalted-butter}} of softened butter with {{caster-sugar}} of caster sugar using a hand mixer or wooden spoon until the mixture is pale and noticeably fluffy, about four minutes. This is the ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "creaming method",
+            "marks": [
+              { "type": "techniqueLink", "attrs": { "techniqueSlug": "creaming-method", "label": "creaming method" } }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "; the air beaten in here is what lifts the sponge during steaming."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add {{eggs}} eggs one at a time, beating well after each addition. Beat in {{vanilla-extract}} of vanilla extract. Sift in {{self-raising-flour}} of self-raising flour and fold through with a large spoon until just combined. Add {{whole-milk}} of whole milk and fold again to give a batter that drops slowly from the spoon."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill and cover" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Spoon the batter into the prepared basin over the golden syrup. Smooth the surface. Cover tightly with the basin lid or with a double layer of foil, pleated across the middle to allow the sponge room to rise. Secure with kitchen string tied under the lip."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Steam" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place a folded tea towel or a trivet in the base of a large saucepan. Set the basin on top. Pour boiling water into the pan until it reaches halfway up the sides of the basin. Bring to a steady simmer, cover the pan, and steam for 90 minutes. Check every 20 minutes and top up with boiling water as needed, the pan must not run dry."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Turn out and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lift the basin from the water and rest for 5 minutes. Remove the cover and run a palette knife around the edge. Place a warmed serving plate over the top, invert firmly, and lift the basin away. The syrup pools around the base. Serve at once with crème anglaise or cold double cream."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sponge is dense and stodgy",
+              "cause": "Butter and sugar were not beaten enough, or the eggs were added too quickly, curdling the batter",
+              "fix": "Cream the butter and sugar for a full four minutes before adding the eggs. If the mixture curdles, add a tablespoon of flour before each remaining egg."
+            },
+            {
+              "symptom": "Sponge did not rise and is still wet in the centre",
+              "cause": "Water in the pan fell below a simmer, or the basin cover was not sealed tightly enough",
+              "fix": "Ensure the water maintains a steady simmer throughout. If the sponge is underdone, replace the cover and steam for a further 20 minutes."
+            },
+            {
+              "symptom": "Golden syrup burns and turns bitter at the base",
+              "cause": "The water touched the base of the basin, or the heat was too high, creating a rolling boil rather than a simmer",
+              "fix": "Keep the water at a simmer, not a boil. A trivet or folded cloth under the basin prevents direct contact with the heat."
+            },
+            {
+              "symptom": "Pudding sticks to the basin",
+              "cause": "The basin was not greased thoroughly enough",
+              "fix": "Use softened (not melted) butter and press it into every curve of the basin before adding the syrup."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Replace the golden syrup with a 50/50 mix of golden syrup and black treacle for a darker, more intensely flavoured marmalade-pudding character. Add the finely grated zest of a lemon to the batter for a sharper note that cuts through the sweetness. Spotted dog is a variant of this same sponge with dried currants folded in, see the spotted dog recipe."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead, freezing, leftovers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steam the pudding up to two days ahead, cool completely in the basin, cover with cling film, and refrigerate. Reheat by steaming for 30 minutes. For the freezer, wrap the cooled basin tightly in cling film and freeze for up to three months; reheat from frozen by steaming for 45 minutes. Leftover steamed pudding reheats well in a microwave on medium power in 2-minute bursts."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steamed puddings are the defining British contribution to cold-weather desserts. Mrs Beeton devotes thirty pages to them in the 1861 edition, cataloguing suet sponges, bread puddings, and rice puddings as the practical winter repertoire of any household kitchen. The golden-syrup version arrived with the wider availability of Lyle's product from the 1880s onward, and by the early twentieth century the treacle sponge had displaced many of the older jam-and-suet variants as the household standard. It is, at its simplest, a demonstration of what enclosed steam does to a batter that a dry oven cannot: the sponge stays moist throughout and emerges with a pudding-soft interior that no amount of underbaking in the dry heat achieves."
+          }
+        ]
+      }
+    ]
+  }
+}
