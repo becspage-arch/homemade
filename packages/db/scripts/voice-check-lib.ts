@@ -429,6 +429,83 @@ export function extractMetadataChunks(input: Record<string, unknown>): Chunk[] {
   return out
 }
 
+// ─── Safety infoPanel structural rule ───────────────────────────────────────
+
+/**
+ * Keywords that identify a heading or infoPanel title as a safety-advice block.
+ * Checked case-insensitively via substring match.
+ */
+const SAFETY_HEADING_KEYWORDS = [
+  'before you start',
+  'safety warnings',
+  'safety notes',
+  'important safety',
+  'eye protection',
+  'personal protective equipment',
+  ' ppe',
+  'first aid',
+]
+
+/**
+ * Structural check: infoPanel nodes with tone "warning" that contain more than
+ * 25 words, or whose title contains a safety keyword, are errors. A warning-
+ * tone infoPanel with substantial content is a safety-advice block — the rule
+ * allows at most one compressed sentence. Also flags any heading whose text
+ * contains a safety keyword.
+ */
+function checkSafetyInfoPanels(body: unknown, report: VoiceCheckReport): void {
+  if (!body || typeof body !== 'object') return
+  const doc = body as TipTapNode
+  if (!Array.isArray(doc.content)) return
+
+  function walk(nodes: TipTapNode[], parentPath: string): void {
+    nodes.forEach((node, idx) => {
+      const nodePath = `${parentPath} > ${nodeLabel(node, idx)}`
+
+      if (node.type === 'infoPanel') {
+        const a = node.attrs ?? {}
+        const tone = typeof a.tone === 'string' ? a.tone : ''
+        const title = typeof a.title === 'string' ? a.title : ''
+        const body = typeof a.body === 'string' ? a.body : ''
+        const titleLower = title.toLowerCase()
+        const hasSafetyTitle = SAFETY_HEADING_KEYWORDS.some((kw) => titleLower.includes(kw))
+        const wordCount = body.trim().split(/\s+/).filter(Boolean).length
+
+        if (tone === 'warning' && (hasSafetyTitle || wordCount > 25)) {
+          const reason = hasSafetyTitle
+            ? `title "${title}" is a safety-advice heading`
+            : `body is ${wordCount} words`
+          report.errors.push({
+            severity: 'error',
+            kind: 'safety-block',
+            message: `infoPanel with tone "warning" and ${reason} — replace with at most one plain-English craft note (or remove); safety advice belongs inline as a numbered step, not in a dedicated block`,
+            path: nodePath,
+          })
+        }
+      }
+
+      if (node.type === 'heading') {
+        const headingText = flattenInline(node).toLowerCase()
+        const hasSafetyTitle = SAFETY_HEADING_KEYWORDS.some((kw) => headingText.includes(kw))
+        if (hasSafetyTitle) {
+          report.errors.push({
+            severity: 'error',
+            kind: 'safety-block',
+            message: `heading "${flattenInline(node)}" is a safety-advice section heading — remove the dedicated section; safety advice belongs inline as a numbered step or one compressed line`,
+            path: nodePath,
+          })
+        }
+      }
+
+      if (Array.isArray(node.content)) {
+        walk(node.content, nodePath)
+      }
+    })
+  }
+
+  walk(doc.content, 'body')
+}
+
 // ─── Rule application ───────────────────────────────────────────────────────
 
 export function runVoiceCheck(input: unknown): VoiceCheckReport {
@@ -451,6 +528,9 @@ export function runVoiceCheck(input: unknown): VoiceCheckReport {
     checkGlossaryCoverage(root, report)
     checkTemperatureCanonical(root, report)
     checkServingsAndYield(root, report)
+    checkSafetyInfoPanels(root.body, report)
+  } else {
+    checkSafetyInfoPanels(body, report)
   }
 
   return report

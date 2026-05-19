@@ -18,3 +18,10 @@ Each entry:
 
 - **coppicing-lime-tilia** — referenced by recipe `carved-lime-butter-knife` on 2026-05-17. Suggested technique title: "Coppicing Lime Tilia".
 - **coppicing-hazel-corylus** — referenced by recipe `carved-hazel-tent-peg` on 2026-05-17. Suggested technique title: "Coppicing Hazel Corylus".
+- **wedging-clay-spiral-method** — referenced by recipe `pinch-pot` on 2026-05-19. Suggested technique title: "Wedging Clay Spiral Method".
+- **coppicing-hazel-corylus** — referenced by recipe `carved-hazel-tent-peg` on 2026-05-19. Suggested technique title: "Coppicing Hazel Corylus".
+- **coppicing-lime-tilia** — referenced by recipe `carved-lime-butter-knife` on 2026-05-19. Suggested technique title: "Coppicing Lime Tilia".
+- **single-signature-pamphlet-binding** — referenced by recipe `foundational-hand-basic-strokes` on 2026-05-19. Suggested technique title: "Single Signature Pamphlet Binding".
+- **growing-elder-sambucus-nigra** — referenced by recipe `elderberry-syrup` on 2026-05-19. Suggested technique title: "Growing Elder Sambucus Nigra".
+- **calendula-salve-for-skin** — referenced by recipe `calendula-infused-oil` on 2026-05-19. Suggested technique title: "Calendula Salve For Skin".
+- **growing-calendula-officinalis** — referenced by recipe `calendula-infused-oil` on 2026-05-19. Suggested technique title: "Growing Calendula Officinalis".
