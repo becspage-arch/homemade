@@ -1,0 +1,181 @@
+{
+  "slug": "lasagne-al-forno",
+  "title": "Lasagne al forno",
+  "subtitle": "Baked pasta with Bolognese ragu and béchamel",
+  "excerpt": "Layers of pasta sheets, slow-cooked Bolognese ragu, and béchamel, baked until golden and bubbling. The Emilian classic that takes three hours from start to table (the ragu alone needs two) and feeds six people generously.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the Emilian lasagne al forno tradition as documented in Marcella Hazan, 'Essentials of Classic Italian Cooking' (1992) and Giuliano Bugialli, 'The Fine Art of Italian Cooking' (1977). The Bolognese sauce is cooked separately before assembly; the béchamel is made fresh; dried lasagne sheets are used as a practical substitute for fresh green pasta.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 155,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze before baking. Defrost overnight and bake from cold, adding 15 minutes to the oven time.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble the day before and refrigerate unbaked. Bake from cold, adding 10 minutes to the oven time.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "specialOccasion", "comfortFood"],
+    "temperatureCelsius": 190,
+    "temperatureNote": "Fan 170°C / Gas 5",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "roasting-tin", "isOptional": false },
+    { "slug": "whisk", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lasagne al forno is not a quick recipe. The ragu alone needs two hours at a bare simmer; the assembly and baking add another hour. This is Sunday cooking — something started in the morning and ready for lunch. What it returns for the time investment is a dish that makes a roasting tin feed six people generously, tastes better reheated the next day, and can be assembled a day in advance and refrigerated unbaked."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The béchamel should be slightly thicker than a pouring consistency: thick enough to stay in place between the layers but loose enough to seep through as it bakes. The ragu should be dense rather than soupy: excess liquid makes the layers slide apart. Dry lasagne sheets are used here without pre-boiling — they absorb liquid from the ragu and béchamel during baking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "lasagne-sheets", "amount": 250, "unit": "g", "prepNote": "dried, no pre-cooking required", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "beef-mince", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "pork-mince", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "carrot", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "stick", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "red-wine", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "whole-milk", "amount": 100, "unit": "ml", "prepNote": "added at the end of ragu cooking to enrich", "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "olive-oil", "amount": 40, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the béchamel" },
+            { "ingredientSlug": "plain-flour", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the béchamel" },
+            { "ingredientSlug": "whole-milk", "amount": 700, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the béchamel" },
+            { "ingredientSlug": "parmesan", "amount": 80, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the ragu" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat {{olive-oil}} of olive oil in a Dutch oven over a medium heat. Add {{onion}} diced onion, {{carrot}} carrot, and {{celery}} celery. Cook for 12 minutes until soft. Add {{garlic}} garlic, then {{beef-mince}} of beef mince and {{pork-mince}} of pork mince. Break up and cook until browned with no pink remaining. Pour in {{red-wine}} of red wine and bubble for 3 minutes. Add {{tinned-tomatoes}} of tinned tomatoes and season with {{sea-salt-fine}} of salt. Bring to a simmer, cover loosely, and cook on the lowest heat for 90 minutes, stirring occasionally. In the final 15 minutes, stir in {{whole-milk}} of whole milk. The ragu should be thick and dense."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the béchamel" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt {{unsalted-butter}} of butter in a medium saucepan over a medium heat. Add {{plain-flour}} of flour and stir for 2 minutes to cook out the raw flour taste. Gradually whisk in {{whole-milk}} of warm milk, a little at a time, until smooth and lump-free. Cook, stirring constantly, for 8 minutes until the sauce thickens to coat the back of a spoon. Season with salt, pepper, and a grating of nutmeg if available."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the oven to 190°C. Spoon a thin layer of ragu across the base of a roasting tin. Lay {{lasagne-sheets}} of pasta sheets over, breaking to fit. Add a layer of ragu, then béchamel, then a scatter of {{parmesan}} parmesan. Repeat: pasta, ragu, béchamel, parmesan — aiming for 4 layers total. Finish with béchamel and a generous scatter of parmesan. Bake for 40–45 minutes until golden, bubbling, and the pasta is cooked through. Rest for 15 minutes before cutting."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Pasta sheets still crunchy after 45 minutes",
+              "cause": "Ragu or béchamel too dry to hydrate the sheets",
+              "fix": "Add a splash of water to the ragu before assembling if it seems very dry. The pasta sheets need moisture from the sauces to cook through."
+            },
+            {
+              "symptom": "Béchamel has lumps",
+              "cause": "Milk added too fast before the roux was smooth",
+              "fix": "Add milk in small amounts, whisking each addition until fully incorporated before adding more. If lumps persist, pass through a sieve."
+            },
+            {
+              "symptom": "Lasagne collapses when cut",
+              "cause": "Not rested long enough, or ragu too wet",
+              "fix": "Rest for the full 15 minutes — the layers need to settle. If the ragu was too liquid, cook it longer next time."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lasagne al forno is the baked pasta of Emilia-Romagna, specifically Bologna, where it has been made with green egg pasta (sfoglia verde, coloured with spinach), a meaty ragu, and béchamel for at least three centuries. Marcella Hazan's version in 'Essentials of Classic Italian Cooking' became the reference preparation for English-speaking cooks from the 1990s onwards. Outside Italy, lasagne became one of the most widely made Italian dishes, appearing in countless domestic versions with varying degrees of faithfulness to the Emilian original."
+          }
+        ]
+      }
+    ]
+  }
+}

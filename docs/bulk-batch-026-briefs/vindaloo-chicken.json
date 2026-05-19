@@ -1,0 +1,163 @@
+{
+  "slug": "vindaloo-chicken",
+  "title": "Chicken vindaloo",
+  "subtitle": "Chicken in a vinegar and chilli paste, Goan style",
+  "excerpt": "Boneless chicken thighs marinated in a vinegar-based paste of dried chillies, garlic, and warm spices, then braised until the sauce is thick and deeply flavoured. The same vindaloo method as pork, with chicken's shorter cook time making this a quicker weeknight version.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on Goan vindaloo technique documented in Floyd Cardoz, 'Floyd Cardoz: Flavorwalla' (2016) and Madhur Jaffrey, 'Madhur Jaffrey's Indian Cooking' (1983). Chicken vindaloo is a later variant of the original pork dish, adapted for households and communities that do not eat pork.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 45,
+    "restingMinutes": 5,
+    "chillingMinutes": 120,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well. Reheat gently on the hob.",
+    "batchable": true,
+    "batchNotes": "Doubles well.",
+    "makeAheadNotes": "Better the next day. Reheat with a splash of water.",
+    "dietaryFlags": [],
+    "cuisine": "angloIndian",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "spice-grinder", "isOptional": false },
+    { "slug": "mixing-bowl-medium", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chicken vindaloo follows the same paste and method as the pork version but takes half the time to braise. Boneless thighs are the right cut: they remain moist throughout the long simmer, absorbing the vinegar paste without drying out the way breast meat does. The finished dish is sticky, deeply spiced, and sour — the flavour that defines vindaloo regardless of the protein."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The recipe requires the same vindaloo paste as the pork version: dried chillies or chilli flakes ground with garlic, ginger, vinegar, and whole spices. Make the paste and marinate for at least two hours. The braise itself takes only 35–40 minutes — enough time for the chicken to become tender and the sauce to reduce and coat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thigh", "amount": 700, "unit": "g", "prepNote": "boneless, skinless, cut into 3 cm pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-wine-vinegar", "amount": 60, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the vindaloo paste" },
+            { "ingredientSlug": "garlic", "amount": 6, "unit": "clove", "prepNote": null, "isOptional": false, "groupLabel": "For the vindaloo paste" },
+            { "ingredientSlug": "ginger-fresh", "amount": 25, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the vindaloo paste" },
+            { "ingredientSlug": "chilli-flakes", "amount": 2, "unit": "tsp", "prepNote": "reduce to 1 tsp for less heat", "isOptional": false, "groupLabel": "For the vindaloo paste" },
+            { "ingredientSlug": "cumin-seeds", "amount": 1, "unit": "tsp", "prepNote": "toasted", "isOptional": false, "groupLabel": "For the vindaloo paste" },
+            { "ingredientSlug": "cinnamon-stick", "amount": 1, "unit": "each", "prepNote": "broken", "isOptional": false, "groupLabel": "For the vindaloo paste" },
+            { "ingredientSlug": "cardamom-pods", "amount": 4, "unit": "each", "prepNote": "seeds only", "isOptional": false, "groupLabel": "For the vindaloo paste" },
+            { "ingredientSlug": "cloves", "amount": 4, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "For the vindaloo paste" },
+            { "ingredientSlug": "turmeric-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the vindaloo paste" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": "whole peppercorns", "isOptional": false, "groupLabel": "For the vindaloo paste" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sunflower-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 8, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the paste and marinate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Toast {{cumin-seeds}} of cumin seeds, the broken {{cinnamon-stick}}, the seeds from {{cardamom-pods}} cardamom pods, {{cloves}} cloves, and {{black-pepper}} peppercorns in a dry pan for 2 minutes until fragrant. Grind to a powder. Blend with {{garlic}} garlic cloves, {{ginger-fresh}} ginger, {{chilli-flakes}} of chilli, {{turmeric-ground}} of turmeric, and {{red-wine-vinegar}} of red wine vinegar to a smooth paste. Toss {{chicken-thigh}} of chicken pieces in the paste with {{sea-salt-fine}} of salt. Cover and refrigerate for at least 2 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat {{sunflower-oil}} of oil in a Dutch oven over a medium heat. Add {{onion}} sliced onions and cook for 10 minutes until golden. Add the marinated chicken with all the paste. Stir and cook for 5 minutes. Pour in 150 ml of water, bring to the boil, cover, and reduce to a low simmer. Cook for 30–35 minutes until the chicken is cooked through and the sauce is thick. Stir occasionally and add a splash of water if the sauce is catching. Rest for 5 minutes and serve with rice or flatbread."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Chicken is dry",
+              "cause": "Breast meat used, or thighs overcooked",
+              "fix": "Use boneless thighs only. Check at 30 minutes — the chicken is done when it pulls apart easily with two forks."
+            },
+            {
+              "symptom": "Sauce is too liquid",
+              "cause": "Too much water added, or lid too tight",
+              "fix": "Uncover for the last 10 minutes and simmer to reduce. The sauce should be thick enough to coat the chicken."
+            },
+            {
+              "symptom": "Heat level too high",
+              "cause": "Chilli quantity too much for this batch",
+              "fix": "Serve with plain yoghurt and rice. Next time start with 1 teaspoon of chilli flakes in the paste."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chicken vindaloo developed alongside the pork original as a version accessible to communities that do not eat pork, and it became standard on British Indian restaurant menus from the 1970s onwards. In Goa today both pork and chicken versions are common, though the pork dish retains its place as the original and the most culturally significant version. The chicken variant has the advantage of a much shorter cook time and is the more practical option on a weeknight."
+          }
+        ]
+      }
+    ]
+  }
+}

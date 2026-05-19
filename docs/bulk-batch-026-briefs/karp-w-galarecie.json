@@ -1,0 +1,192 @@
+{
+  "slug": "karp-w-galarecie",
+  "title": "Karp w galarecie",
+  "subtitle": "Polish fish in aspic",
+  "excerpt": "Poached trout set in a herb and vegetable aspic for the Polish Christmas Eve table. The fish is cooked gently in aromatic stock, lifted out, and the liquid clarified and set around it overnight. Cold, clean-tasting, and unmistakably festive.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the Polish wigilia (Christmas Eve) tradition of carp in aspic as documented in Maria Disslowa, 'Jak gotowac' (1931, public domain) and Robert Strybel and Maria Strybel, 'Polish Heritage Cookery' (1993). Carp is the canonical fish for this dish in Poland; trout is a straightforward British substitute that holds its shape well in aspic.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Must be made the day before to allow the aspic to set overnight. Keeps refrigerated for 2 days.",
+    "dietaryFlags": [],
+    "cuisine": "easternEuropean",
+    "mealType": "starter",
+    "mood": ["specialOccasion", "party", "slowSunday"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": false },
+    { "slug": "ladle", "isOptional": false },
+    { "slug": "roasting-tin", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Poach and set",
+      "body": "Poach the trout in the aromatic stock until just cooked. Remove the fish and arrange in a shallow dish. Add gelatine to the strained, seasoned stock, pour over the fish, and refrigerate.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Karp w galarecie is ready",
+      "body": "The aspic should be firmly set and glassy. Serve cold with horseradish and dark rye bread.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Karp w galarecie (carp in aspic) is one of the twelve meatless dishes of the Polish Christmas Eve supper, the wigilia. In Poland the fish is always carp, sold live from tanks in the days before Christmas; in Britain, trout is the practical substitute. The preparation is the same: the fish poaches gently in a light stock with vegetables and aromatics, is lifted out whole, and then the strained cooking liquid is clarified, set with gelatine, and poured over the fish to set overnight into a trembling, glassy aspic."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The result is a cold starter of real elegance: pale fish, rounds of carrot, and sprigs of parsley visible through the clear jelly. It requires patience: the aspic sets overnight, but the active work is minimal."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "trout-fillet", "amount": 800, "unit": "g", "prepNote": "skin on; carp is traditional but trout holds its shape equally well", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "whole for poaching, then sliced into rounds for decoration", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "stick", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": "whole peppercorns", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "gelatine-leaves", "amount": 6, "unit": "sheet", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley", "amount": 15, "unit": "g", "prepNote": "flat-leaf, for garnishing the aspic", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "juice only", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the poaching stock" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put {{carrot}} whole carrots, {{onion}} halved onion, {{celery}} celery sticks, {{bay-leaves}} bay leaves, and {{black-pepper}} whole peppercorns in a wide pan. Add 1.2 litres of cold water and {{sea-salt-fine}} of salt. Bring to the boil and simmer for 15 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Poach the fish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lower {{trout-fillet}} of trout fillets skin-side down into the simmering stock. Reduce to the barest simmer and poach for 8–10 minutes until the flesh is just opaque through. Carefully lift out with a slotted spoon and transfer to a shallow dish or loaf tin. Slice the reserved cooked carrot into rounds and arrange with sprigs of {{parsley}} fresh parsley around and over the fish."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Set the aspic" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Soak {{gelatine-leaves}} gelatine leaves in cold water for 5 minutes. Strain the poaching stock through a fine-mesh sieve and return it to a clean pan. Bring to a simmer and taste for seasoning — it should be well-flavoured. Squeeze the gelatine dry and dissolve in the hot stock, off the heat. Add {{lemon}} of lemon juice. Allow to cool to room temperature, then ladle gently over the fish. Refrigerate for at least 8 hours until firmly set."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Aspic is cloudy rather than clear",
+              "cause": "Stock boiled vigorously during poaching, or not strained finely enough",
+              "fix": "Keep the poaching at the barest simmer — motion in the water should be minimal. Strain through a double layer of muslin if you have it. Cloudiness is aesthetic; flavour is unaffected."
+            },
+            {
+              "symptom": "Aspic has not set after 8 hours",
+              "cause": "Gelatine not fully dissolved, or too much liquid used",
+              "fix": "Melt the aspic back down, check it is fully liquid, add 2 more soaked and squeezed gelatine leaves, re-cool and re-set."
+            },
+            {
+              "symptom": "Fish breaks apart when lifting",
+              "cause": "Overcooked, or lifted too soon while fragile",
+              "fix": "Poach only until just opaque. Use a wide spatula or two slotted spoons to support the full length of the fillet."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The wigilia, Poland's Christmas Eve supper, is traditionally meatless and built around twelve dishes representing the twelve apostles. Carp has been the centrepiece of the fish course since at least the eighteenth century, when carp farming was well-established in the Carpathian monastic tradition. The aspic version is one of several preparations alongside carp in grey sauce and fried carp, but the galareta has the advantage of being made the day before, when the kitchen is already busy with the rest of the feast."
+          }
+        ]
+      }
+    ]
+  }
+}

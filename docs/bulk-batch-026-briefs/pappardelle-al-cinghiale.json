@@ -1,0 +1,171 @@
+{
+  "slug": "pappardelle-al-cinghiale",
+  "title": "Pappardelle al cinghiale",
+  "subtitle": "Pappardelle with slow-braised pork ragu",
+  "excerpt": "Wide pappardelle ribbons with a deeply reduced ragu of pork shoulder braised for three hours in red wine with onion, carrot, celery, and rosemary. The Tuscan wild boar preparation adapted for pork shoulder — the same low-and-slow method, the same wine-dark sauce.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the Tuscan pappardelle al cinghiale tradition as documented in Giuliano Bugialli, 'The Fine Art of Italian Cooking' (1977) and Faith Heller Willinger, 'Eating in Italy' (1989). Wild boar (cinghiale) is the canonical meat for this ragu; pork shoulder is the practical substitute in British kitchens, with similar connective tissue content and a flavour that deepens comparably with long braising.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 195,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the ragu without pasta. Reheat gently and cook fresh pasta.",
+    "batchable": true,
+    "batchNotes": "Double the ragu and freeze half. The pasta is cooked fresh each time.",
+    "makeAheadNotes": "Ragu improves with a day in the fridge. Reheat gently and cook fresh pasta.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "specialOccasion", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "colander", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cinghiale (wild boar) is the most prized game animal of the Tuscan hills, and pappardelle al cinghiale is the dish that defines the autumn table in Siena and Arezzo. Boar has a deeper, gamier flavour than farmed pork, but pork shoulder braised in the same way, long and low with good red wine and a proper soffritto, produces a ragu of considerable depth. The key is time: three hours at a bare simmer until the meat falls apart and can be shredded into the sauce."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The wine matters here. Use a wine you would drink — a Tuscan red or any good full-bodied red. Poor wine makes a thin, sharp sauce. The wine reduces with the soffritto before the meat is added, losing its raw edge and contributing body."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pappardelle", "amount": 400, "unit": "g", "prepNote": "fresh or dried; fresh is traditional", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pork-shoulder", "amount": 600, "unit": "g", "prepNote": "boneless; wild boar is traditional but pork shoulder is the practical substitute", "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "carrot", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "stick", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "sliced", "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "red-wine", "amount": 250, "unit": "ml", "prepNote": "full-bodied", "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "rosemary", "amount": 2, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the ragu" },
+            { "ingredientSlug": "olive-oil", "amount": 50, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parmesan", "amount": 60, "unit": "g", "prepNote": "grated, to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 8, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the soffritto and brown the meat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat {{olive-oil}} of olive oil in a Dutch oven over a medium heat. Add {{onion}} diced onion, {{carrot}} carrot, and {{celery}} celery. Cook slowly for 15 minutes until soft and golden — this is the soffritto. Add {{garlic}} sliced garlic and cook for 2 minutes. Increase heat to high, add {{pork-shoulder}} of pork shoulder (left whole or cut into large chunks) and brown well on all sides."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add wine and braise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour in {{red-wine}} of red wine and let it bubble for 3 minutes, scraping up any browned bits. Add {{tinned-tomatoes}} of tinned tomatoes, {{rosemary}} rosemary sprigs, {{bay-leaves}} bay leaves, and {{sea-salt-fine}} of salt. Bring to a simmer, cover tightly, and cook on the lowest heat for 2.5–3 hours until the pork falls apart easily. Check every 45 minutes, adding a splash of water if the sauce is reducing too fast."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shred, toss, and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the rosemary and bay leaves. Shred the pork with two forks directly in the pot, mixing it into the sauce. Cook {{pappardelle}} of pappardelle in well-salted boiling water until al dente. Reserve a cup of pasta water, then drain. Toss the pasta through the ragu with a splash of pasta water to loosen. Serve with {{parmesan}} grated parmesan."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Ragu is thin and watery after 3 hours",
+              "cause": "Lid too tight or too much liquid added",
+              "fix": "Uncover and simmer for 20 minutes to reduce. The ragu should be thick enough to coat the pasta heavily."
+            },
+            {
+              "symptom": "Pork still tough at 3 hours",
+              "cause": "Temperature too low for a real braise",
+              "fix": "Ensure the liquid is properly simmering, not just steaming. Add 30 minutes and check again."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wild boar populations in Tuscany have grown substantially since the 1970s, and the hunting of cinghiale is part of the autumn social calendar in villages across the region. The ragu that results from the hunt is slow-cooked with the local red wine (Chianti, typically) and served over pappardelle, the wide pasta that holds a thick meat sauce without breaking. Restaurants across Siena, Arezzo, and Grosseto serve versions of this dish from October through February."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "slug": "anglicised-dhansak",
+  "title": "Anglicised dhansak",
+  "subtitle": "Lamb, lentil, and squash curry with tamarind",
+  "excerpt": "Lamb shoulder braised with red lentils, butternut squash, and tomato in a spiced onion base, soured with tamarind. The Anglo-Indian adaptation of the Parsi dhansak — richer and milder than the original, but keeping its defining combination of meat, lentil, and sweet-sour finish.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the Parsi dhansak tradition as adapted through Anglo-Indian cooking, documented in Niloufer Ichaporia King, 'My Bombay Kitchen' (2007) and Lizzie Collingham, 'Curry: A Tale of Cooks and Conquerors' (2005). The Parsi original uses a specific blend of dhansak masala; this version uses curry powder and garam masala as practical substitutes for the Anglo-Indian kitchen.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 100,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well. The lentils thicken further on freezing; add stock when reheating.",
+    "batchable": true,
+    "batchNotes": "Doubles well in a larger pot.",
+    "makeAheadNotes": "Better the next day. Reheat gently with a splash of water.",
+    "dietaryFlags": [],
+    "cuisine": "angloIndian",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "comfortFood", "specialOccasion"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dhansak is a Parsi dish, one of the great dishes of the Parsi community of western India descended from Zoroastrian immigrants from Iran, and it arrived in Anglo-Indian cooking as a prestige curry, a step above the everyday. The defining combination is meat braised alongside lentils and vegetables until everything collapses together, then sharpened with tamarind. The Parsi version uses a specific spice blend (dhansak masala) and up to four types of lentil; this adaptation uses curry powder and red lentils, trading some depth for accessibility."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The tamarind is the flavour that distinguishes dhansak from other lentil curries. Use tamarind paste rather than tamarind concentrate — the paste has more complexity. It goes in near the end and should be tasted carefully: the right amount of sourness is personal, but the dish should have a clear sweet-sour finish."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-shoulder", "amount": 600, "unit": "g", "prepNote": "boneless, cut into 4 cm cubes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-lentils", "amount": 150, "unit": "g", "prepNote": "rinsed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "butternut-squash", "amount": 300, "unit": "g", "prepNote": "peeled and cubed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 5, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-fresh", "amount": 25, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "curry-powder", "amount": 2, "unit": "tbsp", "prepNote": "medium", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garam-masala", "amount": 1, "unit": "tsp", "prepNote": "to finish", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "turmeric-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tamarind-paste", "amount": 2, "unit": "tbsp", "prepNote": "taste and adjust to preference", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sunflower-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 8, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coriander-fresh", "amount": 15, "unit": "g", "prepNote": "to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the lamb and build the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat {{sunflower-oil}} of oil in a Dutch oven over a high heat. Brown {{lamb-shoulder}} of lamb shoulder in batches and set aside. Reduce the heat to medium, add {{onion}} sliced onion, and cook for 10 minutes until golden. Add {{garlic}} garlic, {{ginger-fresh}} ginger, {{curry-powder}} of curry powder, and {{turmeric-ground}} of turmeric. Stir for 2 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise with lentils and squash" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Return the lamb to the pot. Add {{tinned-tomatoes}} of tinned tomatoes, {{red-lentils}} of rinsed lentils, {{butternut-squash}} of squash, and {{stock-chicken}} of chicken stock. Season with {{sea-salt-fine}} of salt. Bring to the boil, cover, and simmer on a low heat for 60–70 minutes until the lamb is tender and the lentils have dissolved into the sauce. Add {{tamarind-paste}} of tamarind paste, stir, and taste — add more if you want more sourness. Stir in {{garam-masala}} of garam masala, rest for 10 minutes, and scatter {{coriander-fresh}} fresh coriander to serve."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Curry is too thick and porridge-like",
+              "cause": "Lentils have absorbed all liquid",
+              "fix": "Add more stock or water and stir to loosen. Dhansak should be thick but sponable, not stiff."
+            },
+            {
+              "symptom": "Tamarind flavour is too sharp",
+              "cause": "Too much paste added",
+              "fix": "Start with 1 tablespoon and taste before adding more. The sourness intensifies after resting."
+            },
+            {
+              "symptom": "Lamb still tough at 70 minutes",
+              "cause": "Temperature too low for the cut, or cut too large",
+              "fix": "Shoulder at 4 cm cubes needs a proper simmer. Increase heat slightly and add a splash of water if needed."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dhansak is Parsi food first: a cornerstone of Zoroastrian cuisine in western India, eaten at celebrations and family gatherings, always with brown rice and caramelised onions. It entered the Anglo-Indian table during the colonial period, when Parsi merchants and professionals occupied a prominent position in Bombay society and their cooking became part of the shared food culture of the city. In British restaurants it has long occupied the space between a rogan josh and a balti, the dish for those who want complexity alongside the lentil body, though the restaurant version rarely matches the richness of the home-cooked original."
+          }
+        ]
+      }
+    ]
+  }
+}

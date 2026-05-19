@@ -1,0 +1,196 @@
+{
+  "slug": "holodets",
+  "title": "Holodets",
+  "subtitle": "Russian set pork and vegetable aspic",
+  "excerpt": "Slow-cooked pork set in its own natural gelatin with carrot, garlic, and parsley. Russia's classic cold starter for celebrations — a firm, clear jelly revealing the ingredients inside when sliced. Served with sharp mustard or horseradish.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the Russian holodets tradition documented in Elena Molokhovets, 'A Gift to Young Housewives' (1861, public domain) and Anya von Bremzen, 'Mastering the Art of Soviet Cooking' (2013). The dish appears under various names across Slavic cuisines — studienets in some Russian regions, kholodnoye in others.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 240,
+    "restingMinutes": 0,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Must be made the day before to allow time to set. Keeps refrigerated for 3 days.",
+    "dietaryFlags": [],
+    "cuisine": "easternEuropean",
+    "mealType": "starter",
+    "mood": ["specialOccasion", "party", "slowSunday"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Cook and set",
+      "body": "Braise the pork for 3–4 hours until the meat falls from the bone. Clarify the stock, arrange the meat in the moulds or a tray, and pour the stock over. Refrigerate overnight.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Holodets is ready",
+      "body": "The jelly should be firm and the surface opaque. Unmould or slice and serve with mustard or horseradish.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Holodets is made from the parts of the pig that are rich in collagen: trotters, knuckle, and shoulder. These cook together for three or four hours in a seasoned stock until the meat is falling off the bone and the liquid has drawn out enough gelatin to set firm without added gelatine. The stock is strained, seasoned, and poured over the picked meat arranged in moulds or a shallow tray. After a night in the fridge, it slices cleanly to reveal carrot rounds, flecks of parsley, and shreds of white meat suspended in pale, trembling jelly."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The key to a setting jelly is the right ratio of collagen-rich cuts to water. Pork trotters are ideal (the skin and cartilage release enough gelatin on their own) but if trotters are unavailable, a combination of pork shoulder and pig's knuckle will work, with gelatine leaves added to ensure a firm set. Keep the liquid at a bare simmer throughout: a rolling boil makes the stock cloudy."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "pork-shoulder", "amount": 700, "unit": "g", "prepNote": "bone-in if available; pork knuckle also works", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pork-belly", "amount": 300, "unit": "g", "prepNote": "skin on, for collagen", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "gelatine-leaves", "amount": 6, "unit": "sheet", "prepNote": "if using boneless meat that may not set on its own", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "whole", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "halved, skin on", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "whole, to serve alongside and in the jelly", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 3, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": "whole peppercorns", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dill", "amount": 10, "unit": "g", "prepNote": "fresh, to set in the jelly", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Long, slow braise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place {{pork-shoulder}} of pork shoulder, {{pork-belly}} of pork belly, {{carrot}} whole carrots, {{onion}} halved onion, {{garlic}} garlic cloves, {{bay-leaves}} of bay leaves, and {{black-pepper}} of whole peppercorns in the stockpot. Cover with cold water by 5 cm. Bring slowly to the boil, skimming any grey foam that rises. Reduce to the barest simmer, partially cover, and cook for 3–4 hours until the pork is falling from the bone."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Strain and test the set" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lift the pork out and set aside. Strain the stock through a fine-mesh sieve into a clean pan and discard the solids. Season with {{sea-salt-fine}} of salt. Pour a spoonful onto a cold plate and refrigerate for 10 minutes; if it sets to a firm jelly, you're done. If it remains liquid, soak {{gelatine-leaves}} of gelatine leaves in cold water for 5 minutes, squeeze dry, and dissolve in the hot stock."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Arrange and set" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pick the pork meat from the bones and shred into small pieces. Slice the reserved cooked carrot into rounds. Scatter the meat, carrot rounds, and {{dill}} of chopped fresh dill into a loaf tin or shallow dish. Pour the strained stock over to cover. Refrigerate for at least 8 hours until firmly set. To serve, dip the tin briefly in hot water and turn out onto a board. Slice with a sharp knife. Serve with mustard or grated horseradish."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Jelly has not set after 8 hours in the fridge",
+              "cause": "Not enough natural gelatin from the cuts, or too much water used",
+              "fix": "Melt the jelly back down in a pan, simmer uncovered for 20 minutes to reduce, add soaked and squeezed gelatine leaves, and re-set."
+            },
+            {
+              "symptom": "Stock is cloudy rather than clear",
+              "cause": "Boiled at a rolling boil rather than a bare simmer, or stock not skimmed",
+              "fix": "Clarity is cosmetic; the flavour is unaffected. For a clearer result next time, keep the temperature below a simmer throughout and skim diligently."
+            },
+            {
+              "symptom": "Meat is dry and stringy",
+              "cause": "Overcooked or heat too high",
+              "fix": "Remove the pork when it just falls from the bone — not earlier (tough) and not much later (dry). 3–4 hours at a bare simmer is correct."
+            },
+            {
+              "symptom": "Jelly collapses when sliced",
+              "cause": "Underchilled, or gelatine ratio too low",
+              "fix": "Keep refrigerated until the last moment. Slice cold. Add an extra 2 gelatine leaves next time."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Holodets appears on the Russian New Year's table alongside vinegret, Olivier salad, and herring under a fur coat, the canonical cold starters of the Soviet and post-Soviet celebration feast. Its origins are older than that: in Molokhovets's mid-nineteenth-century cookbook, several versions of set meat jelly appear under the name studienets. The name holodets comes from kholod ('cold' in Russian) and captures the dish's essential quality: it must be made ahead, kept cold, and eaten cold. It is December food, made in large quantities and left to set overnight while the rest of the holiday meal is prepared."
+          }
+        ]
+      }
+    ]
+  }
+}

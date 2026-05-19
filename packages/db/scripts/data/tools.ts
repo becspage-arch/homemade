@@ -919,4 +919,10 @@ export const TOOLS: ToolSeed[] = [
   { slug: 'tinder-box', name: 'Tinder box (jute + char cloth)', category: 'other', aliases: ['fire kit'], isPurchasable: true, typicalPriceGbp: 800, notes: 'A small tin holding dry tinder material — jute fibres, char cloth, fatwood shavings — kept dry in a pocket. The bridge between the spark and the kindling.' },
   { slug: 'paracord-550', name: 'Paracord (550, 30 m)', category: 'other', aliases: ['550 paracord', 'parachute cord'], isPurchasable: true, typicalPriceGbp: 1500, notes: 'A 4 mm nylon-sheath kernmantle cord rated to 550 lb. Seven-strand inner core can be pulled out and used as light cordage. The all-round bushcraft cord.' },
   { slug: 'tarp-3x3', name: 'Tarp, 3 × 3 m', category: 'other', aliases: ['bushcraft tarp', 'basha'], isPurchasable: true, typicalPriceGbp: 3500, notes: 'A 3 × 3 m sil-nylon or DCF tarp with reinforced corner and edge tie-outs. The bushcraft shelter platform — A-frame, lean-to, plough-point, or pitched flat.' },
+
+  // Batch-026 additions
+  { slug: 'frying-pan-28', name: 'Frying pan, 28 cm', category: 'pan', aliases: ['skillet 28 cm', 'medium skillet'], isPurchasable: true, typicalPriceGbp: 4000, notes: 'Mid-size everyday frying pan. Fits four portions of pasta sauce or a single-batch stir-fry.' },
+  { slug: 'roasting-tin', name: 'Roasting tin', category: 'pan', aliases: ['roasting pan', 'baking tray deep'], isPurchasable: true, typicalPriceGbp: 2500, notes: 'Deep-sided metal tin for roasts, lasagne, and oven braises.' },
+  { slug: 'potato-masher', name: 'Potato masher', category: 'utensil', aliases: ['masher', 'vegetable masher'], isPurchasable: true, typicalPriceGbp: 700, notes: 'Flat-grid or wavy-blade masher for potatoes and root vegetables. For a very smooth result, use a ricer instead.' },
+  { slug: 'whisk', name: 'Whisk', category: 'mixer', aliases: ['balloon whisk', 'hand whisk'], isPurchasable: true, typicalPriceGbp: 800, notes: 'Standard balloon whisk for sauces, dressings, and light emulsification.' },
 ]
