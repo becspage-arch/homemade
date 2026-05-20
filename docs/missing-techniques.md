@@ -25,3 +25,11 @@ Each entry:
 - **growing-elder-sambucus-nigra** — referenced by recipe `elderberry-syrup` on 2026-05-19. Suggested technique title: "Growing Elder Sambucus Nigra".
 - **calendula-salve-for-skin** — referenced by recipe `calendula-infused-oil` on 2026-05-19. Suggested technique title: "Calendula Salve For Skin".
 - **growing-calendula-officinalis** — referenced by recipe `calendula-infused-oil` on 2026-05-19. Suggested technique title: "Growing Calendula Officinalis".
+- **choosing-paper-for-bookbinding** — referenced by recipe `case-binding-introduction` on 2026-05-20. Suggested technique title: "Choosing Paper For Bookbinding".
+- **long-stitch-journal-over-tapes** — referenced by recipe `case-binding-introduction` on 2026-05-20. Suggested technique title: "Long Stitch Journal Over Tapes".
+- **coptic-stitch-notebook** — referenced by recipe `choosing-paper-for-bookbinding` on 2026-05-20. Suggested technique title: "Coptic Stitch Notebook".
+- **japanese-stab-binding-yotsume** — referenced by recipe `choosing-paper-for-bookbinding` on 2026-05-20. Suggested technique title: "Japanese Stab Binding Yotsume".
+- **long-stitch-journal-over-tapes** — referenced by recipe `french-link-stitch` on 2026-05-20. Suggested technique title: "Long Stitch Journal Over Tapes".
+- **sized-paper-for-calligraphy-alum-gelatin** — referenced by recipe `how-cotton-linter-behaves` on 2026-05-20. Suggested technique title: "Sized Paper For Calligraphy Alum Gelatin".
+- **long-stitch-journal-over-tapes** — referenced by recipe `kettle-stitch` on 2026-05-20. Suggested technique title: "Long Stitch Journal Over Tapes".
+- **recycled-paper-sheet-forming** — referenced by recipe `making-a-mould-and-deckle` on 2026-05-20. Suggested technique title: "Recycled Paper Sheet Forming".

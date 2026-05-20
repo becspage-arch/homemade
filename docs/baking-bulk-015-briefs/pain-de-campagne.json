@@ -1,0 +1,120 @@
+{
+  "slug": "pain-de-campagne",
+  "title": "Pain de campagne",
+  "subtitle": "French sourdough country loaf with an open crumb and crackling crust",
+  "excerpt": "A round sourdough loaf made from mostly strong white flour with a small wholemeal addition for colour and flavour. An autolyse rest before adding the levain and salt builds extensible gluten without mechanical work. The dough is folded during a four-hour bulk ferment, shaped into a boule, and retarded in the fridge overnight. Bake in a covered pot for the first 20 minutes to trap steam, then uncover for full crust development.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Pain de campagne (country bread) is a broad category of French sourdough loaves distinguished from baguette by a rounder shape and a proportion of wholemeal or rye flour. The modern high-hydration, autolyse-method version is closely associated with the methods Raymond Calvel documented in Le Goût du Pain (1990), which popularised the autolyse rest in professional and home baking internationally. Calvel's book is in commercial print; the method is otherwise widely disseminated in baking literature and is considered standard practice.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 large loaf",
+    "prepMinutes": 30,
+    "cookMinutes": 45,
+    "restingMinutes": 240,
+    "chillingMinutes": 720,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze on the day of baking. Refresh from frozen in a 200°C oven for 8 to 10 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The retarding step (overnight in the fridge) is built into this recipe. Bake straight from the fridge into a preheated oven.",
+    "dietaryFlags": ["vegan", "vegetarian", "dairyFree"],
+    "cuisine": "french",
+    "mealType": "breakfast",
+    "mood": ["weekendBake"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 72,
+      "saltPercent": 2.0,
+      "yeastPercent": null,
+      "levainPercent": 20,
+      "bulkFermentMinutes": 240,
+      "proofMinutes": 720,
+      "retardingMinutes": 720,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 240,
+      "bakeTemperatureNote": "conventional oven. Fan at 220°C. Bake covered for 20 minutes, then remove the lid and bake for a further 20 to 25 minutes until the crust is deep brown and the loaf sounds hollow when tapped underneath. Internal temperature should reach 96°C.",
+      "steamMethod": "covered pot (cast-iron casserole or Dutch oven) preheated with the oven",
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    { "slug": "banneton", "isOptional": false, "notes": "round banneton, well dusted with rice flour or rye flour" },
+    { "slug": "baking-tray", "isOptional": false, "notes": "or a preheated cast-iron casserole with a lid for best crust" },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "autolyse",
+      "term": "Autolyse",
+      "definition": "A rest period of 20 to 60 minutes after mixing flour and water together, before adding salt and levain. During this rest the flour fully hydrates and the gluten proteins align without any mechanical work, producing a smoother, more extensible dough that is easier to stretch and fold, easier to shape, and gives better oven spring. Developed by French baking scientist Raymond Calvel. Salt is always added after autolyse, not before, because salt tightens gluten and would slow the hydration."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The first step is an " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "autolyse", "term": "Autolyse" } }],
+            "text": "autolyse"
+          },
+          { "type": "text", "text": ": mix the flours and water and leave them to rest for 40 minutes before adding the levain and salt. This produces a smooth, extensible dough without heavy kneading. The dough then receives four stretch-and-fold sets during a four-hour bulk ferment, is shaped into a boule, and retards in the fridge overnight before baking." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "strong-bread-flour", "amount": 450, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "wholemeal-bread-flour", "amount": 50, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 340, "unit": "ml", "prepNote": "room temperature" } },
+          { "type": "ingredientItem", "attrs": { "slug": "sourdough-starter", "amount": 100, "unit": "g", "prepNote": "active, at peak (fed 4 to 8 hours before)" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt-table", "amount": 10, "unit": "g" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Autolyse: combine both flours with 330ml of the water in a large bowl and mix until no dry flour remains. Cover and rest for 40 minutes. Add the active sourdough starter and the remaining 10ml of water. Squeeze and fold to incorporate. Add the salt, wet your hand slightly, and work it into the dough by pinching and folding for 1 to 2 minutes. The dough should feel slightly sticky but hold its shape." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bulk ferment at room temperature (21 to 24°C) for 4 hours. During the first 2 hours, perform a set of stretch-and-folds every 30 minutes (four sets total): wet your hand, grab the dough from one side, stretch it upward, and fold it over the top. Rotate the bowl 90 degrees and repeat three more times per set. After the last set, cover and leave undisturbed for the remaining 2 hours. The dough should increase by about 50 percent and feel airy when gently pressed." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Dust the banneton generously with rice flour. Turn the dough onto a lightly floured surface and perform a pre-shape: fold the edges to the centre to build tension, then flip, cup the dough, and drag it toward you to tighten. Rest uncovered for 20 minutes. Final shape: flip the dough, fold the sides and top to the centre, roll toward you tightly, then place seam-side up in the banneton. Dust the surface, cover, and refrigerate for 10 to 14 hours." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 240°C conventional (220°C fan) with a cast-iron casserole (or covered baking vessel) inside for at least 45 minutes. Take the dough straight from the fridge and tip it onto a sheet of baking paper, scored quickly with a sharp blade at a 30-degree angle. Lower into the hot casserole using the paper, replace the lid, and bake for 20 minutes. Remove the lid and bake for a further 20 to 25 minutes until the crust is deep amber and the internal temperature reaches 96°C. Cool on a rack for at least 1 hour before cutting." }]
+      }
+    ]
+  }
+}

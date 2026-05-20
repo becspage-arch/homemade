@@ -1,0 +1,143 @@
+{
+  "slug": "eccles-cakes",
+  "title": "Eccles cakes",
+  "subtitle": "British flaky pastry rounds filled with currants, butter, and spice",
+  "excerpt": "Small, oval-shaped British pastries made from flaky rough puff pastry sealed around a filling of currants, butter, mixed spice, and mixed peel. The filled rounds are pressed flat, egg-washed, and sprinkled with caster sugar before baking. Three slashes on the top allow steam to escape and give the characteristic appearance. Best eaten warm on the day they are baked.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Eccles cakes are named after Eccles in Greater Manchester and are documented in British cookery literature from at least the early nineteenth century. William Radcliffe, Eccles and its Neighbourhood (1857), records the cakes as a local speciality. Mrs Isabella Beeton, Book of Household Management (1861, Project Gutenberg #10136), gives a recipe for Eccles cakes using puff pastry and currant filling. The combination of flaky pastry, currants, butter, and spice is consistent across British baking literature from the Victorian period onwards.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "12 cakes",
+    "prepMinutes": 45,
+    "cookMinutes": 20,
+    "restingMinutes": 60,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unbaked, assembled Eccles cakes on the tray before egg-washing. Bake from frozen adding 5 minutes to the bake time.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Rough puff can be made a day ahead. Assemble and bake on the day.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["weekendBake"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 250,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": 3,
+      "laminationRests": 3,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "conventional oven. Fan at 180°C. Bake for 18 to 22 minutes until the pastry is deep golden, the sugar topping is caramelised, and the bases are fully cooked through.",
+      "steamMethod": null,
+      "decoratingTechnique": "egg wash and caster sugar topping, three slashes",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false, "notes": "two baking trays, lined with baking paper" },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rough-puff-pastry",
+      "term": "Rough puff pastry",
+      "definition": "A shortcut puff pastry made by cutting very cold butter into rough, pea-sized lumps in flour and folding the dough through a series of turns, rather than encasing a solid butter block as in classic puff. The visible butter pieces flatten during rolling and create layers as they steam during baking, producing a flaky, layered texture. Rough puff has fewer, more irregular layers than classic puff but is significantly faster to make and produces excellent results for pies, tarts, turnovers, and Eccles cakes. The key rules are the same as classic puff: keep everything cold, rest between turns, and never stretch the dough when rolling."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Eccles cakes are built on " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rough-puff-pastry", "term": "Rough puff pastry" } }],
+            "text": "rough puff pastry"
+          },
+          { "type": "text", "text": ": cold butter is cut into flour in rough lumps rather than a smooth block, and the dough receives three folds. Keep everything cold and rest the pastry in the fridge before and after cutting. The filling is a simple stir-together; it does not need cooking." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Rough puff pastry" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 250, "unit": "g", "prepNote": "cold" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 175, "unit": "g", "prepNote": "very cold, cut into rough 1.5cm cubes" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt-table", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 100, "unit": "ml", "prepNote": "ice cold" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "dried-currants", "amount": 200, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": "melted" } },
+          { "type": "ingredientItem", "attrs": { "slug": "demerara-sugar", "amount": 75, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "mixed-peel", "amount": 50, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "mixed-spice", "amount": 2, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "allspice", "amount": 0.5, "unit": "tsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Topping" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for egg wash" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 2, "unit": "tbsp", "prepNote": "for sprinkling" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rough puff: toss the cold butter cubes in the flour and salt. Add the ice cold water and bring together with a knife to a rough, shaggy dough (some butter lumps visible). Flatten into a rectangle. Roll out to a long rectangle, fold into thirds, rotate 90 degrees, and repeat twice more. Wrap and refrigerate for 30 minutes." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Filling: combine the currants, melted butter, demerara sugar, mixed peel, mixed spice, and allspice in a bowl. Stir well." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 200°C conventional (180°C fan). Line two baking trays. Roll the pastry to about 3mm thick. Cut out 12cm circles using a cutter or a small plate. Place a heaped tablespoon of filling in the centre of each circle. Bring the edges up around the filling and pinch firmly to seal. Place sealed-side down on the tray and press gently with the palm to flatten slightly to a round about 8 cm across. Brush with beaten egg and sprinkle with caster sugar. Make three diagonal slashes across the top with a sharp knife. Bake for 18 to 22 minutes until deep golden and the sugar topping is caramelised. Cool on a rack for at least 10 minutes before eating." }]
+      }
+    ]
+  }
+}

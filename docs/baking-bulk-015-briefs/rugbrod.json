@@ -1,0 +1,119 @@
+{
+  "slug": "rugbrod",
+  "title": "Rugbrød",
+  "subtitle": "Danish sourdough rye loaf with sunflower seeds, pumpkin seeds, and caraway",
+  "excerpt": "A dense, sliceable loaf made from a high proportion of rye flour leavened with sourdough starter and packed with sunflower seeds, pumpkin seeds, flaxseed, and caraway. There is no shaping: the stiff, wet mixture is stirred together and pressed into a loaf tin for a long slow ferment before baking. The result cuts into thin, firm slices that hold toppings without tearing. The standard base for open-faced Danish sandwiches.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Rugbrød is a central part of Danish food culture. Dense seeded rye loaves leavened with sourdough are documented in Danish home-economics texts from the early twentieth century. The high-rye, seed-packed format became standard in Danish households through mid-century publications. The characteristic dense crumb, sour flavour, and extended fermentation are consistent across Danish baking literature from that period.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (about 20 slices)",
+    "prepMinutes": 20,
+    "cookMinutes": 90,
+    "restingMinutes": 480,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice the cooled loaf and freeze with baking paper between slices. Defrost at room temperature. Rugbrød is best from day 2 onwards after baking.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Bake at least a day before serving. Rugbrød improves in flavour and sliceability on days 2 and 3 as the crumb firms up.",
+    "dietaryFlags": ["vegan", "vegetarian", "dairyFree"],
+    "cuisine": "danish",
+    "mealType": "lunch",
+    "mood": ["weekendBake"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 75,
+      "saltPercent": 2.0,
+      "yeastPercent": null,
+      "levainPercent": 30,
+      "bulkFermentMinutes": null,
+      "proofMinutes": 480,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "conventional oven. Fan at 180°C. Cover the tin with foil for the first 45 minutes, then remove and bake for a further 40 to 45 minutes until deep brown and the loaf pulls away from the sides of the tin. The internal temperature should reach 98°C.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false, "notes": "1kg loaf tin, greased well" },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rye-sourdough-timing",
+      "term": "Rye sourdough timing",
+      "definition": "Rye flour ferments faster than wheat because it contains more sugars available to wild yeast and bacteria, and because rye's own enzymes (amylases) remain active at higher temperatures. In a high-rye dough, over-fermentation produces a sticky, gummy crumb and a sunken loaf rather than the firm, sliceable texture rugbrød needs. The correct sign that the dough is ready to bake is a visible dome above the tin rim with small bubbles on the surface, not a doubled volume as in a wheat sourdough. If the dome begins to fall, bake immediately."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Because rye ferments faster than wheat, " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rye-sourdough-timing", "term": "Rye sourdough timing" } }],
+            "text": "rye sourdough timing"
+          },
+          { "type": "text", "text": " is the most important variable. The loaf goes into the oven when a dome sits just above the tin rim and small bubbles appear at the surface; not before, and not after the dome starts to drop. There is no shaping: the stiff, wet mixture is stirred and pressed into the tin." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "rye-flour", "amount": 350, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "strong-bread-flour", "amount": 150, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 300, "unit": "ml", "prepNote": "room temperature" } },
+          { "type": "ingredientItem", "attrs": { "slug": "sourdough-starter", "amount": 150, "unit": "g", "prepNote": "active, at peak" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt-table", "amount": 10, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "sunflower-seeds", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "pumpkin-seeds", "amount": 75, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "flaxseed", "amount": 50, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caraway-seeds", "amount": 25, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "poppy-seeds", "amount": 25, "unit": "g" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Grease a 1kg loaf tin well. Mix the rye flour, strong bread flour, and salt in a large bowl. Add the water and sourdough starter and stir vigorously until fully combined; the mixture will look like a thick, sticky batter rather than a kneadable dough. Stir in all the seeds. The mixture should drop heavily from a spoon." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Press the mixture firmly into the prepared tin with wet hands, smoothing the surface flat. The tin should be about two-thirds full. Cover with a damp cloth or cling film. Leave at room temperature (18 to 22°C) for 6 to 10 hours. The correct endpoint is a dome sitting just above the tin rim with small bubbles visible on the surface. Preheat the oven to 200°C conventional (180°C fan) before the dome develops." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover the tin with foil. Bake for 45 minutes, then remove the foil and bake for a further 40 to 45 minutes until the loaf is deep brown, pulling away from the sides of the tin, and the internal temperature reads 98°C. Turn out onto a rack and leave to cool completely, at least 4 hours, before slicing. Cutting too soon produces a gummy crumb. Store wrapped in paper at room temperature and use within 5 days." }]
+      }
+    ]
+  }
+}

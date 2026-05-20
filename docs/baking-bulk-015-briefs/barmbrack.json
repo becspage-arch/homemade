@@ -1,0 +1,127 @@
+{
+  "slug": "barmbrack",
+  "title": "Barmbrack",
+  "subtitle": "Irish yeasted spiced fruit loaf, traditionally baked at Hallowe'en",
+  "excerpt": "A soft, enriched loaf packed with sultanas, currants, and mixed peel soaked overnight in strong black tea. The tea plumps the fruit and adds a gentle tannin note. Mixed spice, allspice, and cinnamon run through the dough. Slice thickly and butter generously. The loaf keeps well for three to four days wrapped in foil.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Barmbrack (Irish: báirín breac, speckled loaf) is documented in Irish cookery literature from the nineteenth century. Florence Irwin, Irish Country Recipes (1937), describes a yeasted barmbrack soaked in cold tea. Maura Laverty, Full and Plenty (1960), gives a version with sultanas and mixed peel soaked overnight in tea and folded into an enriched dough. The Hallowe'en tradition of baking a ring or coin into the loaf is recorded in Irish folklore collections from the same period.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 large loaf",
+    "prepMinutes": 25,
+    "cookMinutes": 45,
+    "restingMinutes": 105,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze in a single layer, then bag once solid. Toast from frozen or defrost at room temperature.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Soak the fruit the night before. The baked loaf keeps for three to four days wrapped in foil.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "irish",
+    "mealType": "breakfast",
+    "mood": ["weekendBake"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 450,
+      "hydrationPercent": null,
+      "saltPercent": 2.2,
+      "yeastPercent": 1.6,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 45,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "conventional oven. Fan at 170°C. Bake for 40 to 45 minutes, covering loosely with foil after 25 minutes if the top is darkening too quickly. A skewer inserted into the centre should come out clean.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false, "notes": "900g loaf tin, greased and lined with baking paper" },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "fruit-soaking-tea",
+      "term": "Tea-soaking dried fruit",
+      "definition": "Covering dried fruit (sultanas, currants, raisins, mixed peel) in strong black tea for at least 8 hours before adding to a baked dough. The tea plumps the fruit, reducing the moisture the fruit draws from the surrounding crumb during baking. Without soaking, dried fruit shrinks further in the oven and creates dry, chewy pockets. Any strong black tea works; cooled ordinary breakfast tea is standard for barmbrack."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Barmbrack starts the night before with " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fruit-soaking-tea", "term": "Tea-soaking dried fruit" } }],
+            "text": "tea-soaking the dried fruit"
+          },
+          { "type": "text", "text": ". The swollen, drained fruit goes into the dough at the mixing stage. Two rises follow: a bulk ferment in the bowl, then a final proof in the tin. The loaf is done when a skewer comes out clean and the base sounds hollow." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "strong-bread-flour", "amount": 450, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "yeast-fast-action", "amount": 7, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "mixed-spice", "amount": 2, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "allspice", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cinnamon-ground", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt-table", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 75, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": "softened" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 2, "unit": "each" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 150, "unit": "ml", "prepNote": "warm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "sultanas", "amount": 200, "unit": "g", "prepNote": "soaked in strong black tea overnight, well drained" } },
+          { "type": "ingredientItem", "attrs": { "slug": "dried-currants", "amount": 75, "unit": "g", "prepNote": "soaked with the sultanas" } },
+          { "type": "ingredientItem", "attrs": { "slug": "mixed-peel", "amount": 50, "unit": "g" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The night before: put the sultanas and currants in a bowl and cover with strong black tea. Cover the bowl and leave at room temperature for at least 8 hours. Drain well in a sieve before using; the fruit should look plump but not waterlogged." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Grease and line a 900g loaf tin with baking paper. Put the flour, yeast, mixed spice, allspice, cinnamon, salt, and sugar in a large bowl. Rub in the softened butter until the mixture resembles fine breadcrumbs. Beat the eggs into the warm milk, then pour into the flour mixture and stir to a soft, slightly sticky dough. Turn out onto a lightly floured surface and knead for 8 to 10 minutes until smooth and elastic." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Flatten the dough, scatter the drained sultanas, currants, and mixed peel across it, then fold and knead until the fruit is evenly distributed. The dough will feel sticky where the soaked fruit releases moisture; continue kneading and it will come together. Place in a lightly oiled bowl, cover, and leave in a warm place for 1 hour until roughly doubled." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 190°C conventional (170°C fan). Shape the dough into a smooth log to fit the tin and place it seam-side down. Cover and prove for 40 to 45 minutes until the dough has risen about 3 cm above the rim. Bake for 40 to 45 minutes, covering loosely with foil after 25 minutes if the top is browning too fast. The loaf is done when a skewer inserted into the centre comes out clean and the base sounds hollow when tapped. Transfer to a rack and cool for at least 30 minutes before slicing." }]
+      }
+    ]
+  }
+}

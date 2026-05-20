@@ -1,0 +1,134 @@
+{
+  "slug": "stollen",
+  "title": "Stollen",
+  "subtitle": "German enriched Christmas loaf with rum-soaked fruit, almonds, and a marzipan core",
+  "excerpt": "A dense, buttery German loaf made from enriched dough loaded with rum-soaked sultanas, raisins, mixed peel, and chopped almonds. After baking, the loaf is brushed generously with melted butter and rolled in icing sugar while still hot, forming a white coating as it cools. A cylinder of marzipan runs through the centre. Stollen keeps for several weeks at room temperature and improves in flavour as the spices meld.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Stollen is documented in German baking records from at least the fifteenth century, originally as a fasting bread for Advent before butter and sugar were permitted. The Dresdner Stollen style, with its marzipan core, became established in Dresden by the eighteenth century. Henriette Davidis, Praktisches Kochbuch (1844, Project Gutenberg), gives an early printed recipe for the enriched, marzipan-filled version that is now standard. The Christmas Stollen tradition and the icing-sugar coating are consistent across German baking literature from the nineteenth century onwards.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 large stollen (about 16 slices)",
+    "prepMinutes": 40,
+    "cookMinutes": 55,
+    "restingMinutes": 150,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze whole, well-wrapped in cling film then foil, for up to 3 months. Defrost at room temperature overnight.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Soak the fruit in rum the night before. Stollen improves significantly after 1 to 2 weeks at room temperature, wrapped in foil. Make in November for Christmas.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "german",
+    "mealType": "snack",
+    "mood": ["weekendBake"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": null,
+      "saltPercent": 1.8,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 90,
+      "proofMinutes": 60,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 175,
+      "bakeTemperatureNote": "conventional oven. Fan at 160°C. Bake for 50 to 55 minutes until deep golden. A skewer inserted into the deepest part should come out clean. The low temperature allows the dense, fruit-loaded dough to cook through evenly without burning.",
+      "steamMethod": null,
+      "decoratingTechnique": "marzipan log, melted butter brush, icing sugar coating",
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false, "notes": "large baking tray, lined with baking paper" },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "dough-hook", "isOptional": true, "notes": "stand mixer with dough hook makes the enriched dough easier" },
+    { "slug": "cooling-rack", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "stollen-marzipan-log",
+      "term": "Marzipan log in stollen",
+      "definition": "A cylinder of marzipan, about 3 cm in diameter and 25 cm long, pressed into the centre of stollen dough before the final fold. The dough is rolled into a roughly oval shape, the marzipan cylinder is placed off-centre, and the larger portion of dough is folded over it. The fold is pressed down firmly to seal and to create the sloped, humped shape characteristic of Dresden-style stollen. The marzipan softens during baking and provides a sweet, almond-rich core that contrasts with the spiced fruit dough. It can be omitted if you prefer a plain-centred loaf."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The defining feature of a Dresden-style stollen is the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stollen-marzipan-log", "term": "Marzipan log in stollen" } }],
+            "text": "marzipan log"
+          },
+          { "type": "text", "text": " folded into the centre before baking. After baking, the loaf is brushed with melted butter and rolled in icing sugar immediately, while it is still hot. This seals in moisture and creates the white coating that sets stollen apart. The finished loaf needs at least a week to mature before it reaches its best flavour." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "sultanas", "amount": 150, "unit": "g", "prepNote": "soaked in rum overnight, drained" } },
+          { "type": "ingredientItem", "attrs": { "slug": "raisins", "amount": 100, "unit": "g", "prepNote": "soaked with the sultanas" } },
+          { "type": "ingredientItem", "attrs": { "slug": "mixed-peel", "amount": 75, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "rum-dark", "amount": 50, "unit": "ml", "prepNote": "for soaking the fruit" } },
+          { "type": "ingredientItem", "attrs": { "slug": "strong-bread-flour", "amount": 500, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "yeast-fast-action", "amount": 7, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "mixed-spice", "amount": 1.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cinnamon-ground", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cardamom-ground", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "nutmeg", "amount": 0.25, "unit": "tsp", "prepNote": "freshly grated" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt-table", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 75, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "softened" } },
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 120, "unit": "ml", "prepNote": "warm" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 2, "unit": "each" } },
+          { "type": "ingredientItem", "attrs": { "slug": "blanched-almonds", "amount": 75, "unit": "g", "prepNote": "roughly chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "marzipan", "amount": 200, "unit": "g", "prepNote": "for the log" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 75, "unit": "g", "prepNote": "melted, for brushing after baking" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 75, "unit": "g", "prepNote": "for coating" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The night before: combine the sultanas and raisins in a bowl, pour over the rum, and leave to soak for at least 8 hours. Drain before using; reserve the rum for another use." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the flour, yeast, mixed spice, cinnamon, cardamom, nutmeg, salt, and sugar in the bowl of a stand mixer. Add the softened butter, warm milk, and eggs. Mix with the dough hook on medium speed for 8 to 10 minutes until the dough is smooth and slightly tacky. Add the drained fruit, mixed peel, and chopped almonds and mix on low speed until evenly incorporated. Cover the bowl and leave to rise in a warm place for 1 hour 30 minutes until puffed and roughly doubled." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 175°C conventional (160°C fan). Line a large baking tray with baking paper. Roll the marzipan into a cylinder about 25 cm long and 3 cm in diameter. Turn the dough onto a lightly floured surface and press into a rough oval about 35 cm long. Place the marzipan cylinder down the middle, slightly off-centre toward one long edge. Fold the larger portion of dough over the marzipan and press the top edge down firmly. Transfer to the tray. Leave to prove for 50 to 60 minutes until noticeably puffed." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake for 50 to 55 minutes until deep golden and a skewer inserted into the thickest part comes out clean. As soon as the stollen comes out of the oven, brush it all over immediately with melted butter; the hot loaf absorbs it readily. Sift icing sugar generously over the top, turning and coating the sides. Repeat the butter-and-sugar coat once more if you want a thicker crust. Cool completely on a rack, then wrap in foil and store at room temperature for at least 1 week before cutting." }]
+      }
+    ]
+  }
+}

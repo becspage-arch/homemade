@@ -1,0 +1,128 @@
+{
+  "slug": "ciabatta",
+  "title": "Ciabatta",
+  "subtitle": "Italian high-hydration bread with an open, irregular crumb and thin crust",
+  "excerpt": "A flat, airy Italian loaf made from a very wet dough built on a poolish overnight preferment. The high hydration (around 80 percent) is what produces the large, irregular holes in the crumb. The dough cannot be kneaded in the conventional sense; stretch-and-folds handle gluten development instead. Handle gently before baking to preserve the gas bubbles. The crust is thin and crackles when squeezed.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Ciabatta was developed in 1982 by Arnaldo Cavallari in Adria, Italy, as a response to the popularity of the French baguette. The recipe is well-documented in Italian baking literature from the 1980s and has become one of the standard Italian bread forms. Cavallari trademarked the name in Italy but the recipe itself is openly published. The poolish method and high-hydration approach are described in Carol Field, The Italian Baker (1985, Harper and Row), and have been standard in professional Italian baking texts since.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "2 loaves",
+    "prepMinutes": 20,
+    "cookMinutes": 30,
+    "restingMinutes": 120,
+    "chillingMinutes": 720,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze on the day of baking. Refresh from frozen in a 200°C oven for 8 to 10 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The poolish is made the night before and left overnight. The shaped loaves go straight from the floured cloth into the oven without a long proof.",
+    "dietaryFlags": ["vegan", "vegetarian", "dairyFree"],
+    "cuisine": "italian",
+    "mealType": "lunch",
+    "mood": ["weekendBake"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 80,
+      "saltPercent": 2.0,
+      "yeastPercent": 0.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 90,
+      "proofMinutes": 45,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 230,
+      "bakeTemperatureNote": "conventional oven. Fan at 210°C. Spray or splash water into the oven as the loaves go in for steam. Bake for 28 to 32 minutes until the crust is deep golden and the loaf sounds hollow when tapped on the base.",
+      "steamMethod": "water sprayed into the oven at the point of loading",
+      "decoratingTechnique": null,
+      "preFermentType": "POOLISH"
+    }
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false, "notes": "two baking trays, preheated in the oven" },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "high-hydration-dough",
+      "term": "High-hydration dough",
+      "definition": "Bread dough with a water-to-flour ratio of 75 percent or more (baker's percentage). At these hydration levels the dough is too wet and sticky to knead by hand in the traditional sense. Instead, gluten is built through stretch-and-folds during a resting bulk ferment: the baker reaches under the dough, stretches it upward as far as it will go without tearing, and folds it over the top. Repeated sets at 30-minute intervals align the gluten strands and build strength without deflating the gas already trapped. The high water content is what produces the large, irregular open crumb."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Ciabatta is a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "high-hydration-dough", "term": "High-hydration dough" } }],
+            "text": "high-hydration dough"
+          },
+          { "type": "text", "text": " that cannot be kneaded conventionally. Gluten develops through a series of stretch-and-fold sets during the bulk ferment. Handle the shaped loaves as little and as gently as possible before loading into the oven: deflating the dough at the last moment collapses the open crumb you have spent hours building." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Poolish (the night before)" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "strong-bread-flour", "amount": 250, "unit": "g", "prepNote": "for the poolish" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 250, "unit": "ml", "prepNote": "cool, for the poolish" } },
+          { "type": "ingredientItem", "attrs": { "slug": "yeast-fast-action", "amount": 0.5, "unit": "g", "prepNote": "a small pinch, for the poolish" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Final dough" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "strong-bread-flour", "amount": 250, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 150, "unit": "ml", "prepNote": "room temperature" } },
+          { "type": "ingredientItem", "attrs": { "slug": "yeast-fast-action", "amount": 1.5, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt-table", "amount": 10, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "olive-oil", "amount": 20, "unit": "ml" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The night before: stir together the poolish ingredients (250g flour, 250ml cool water, a tiny pinch of yeast) until smooth. Cover and leave at room temperature for 12 to 16 hours. The poolish is ready when it is bubbling and domed, and smells lightly of alcohol." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Final dough: combine the poolish with the remaining 250g flour, 150ml water, 1.5g yeast, olive oil, and salt. Mix until a shaggy, very wet dough forms. Cover and rest for 30 minutes. Perform a stretch-and-fold set every 30 minutes for the next 2 hours (four sets total). The dough should become noticeably smoother and stronger with each set. Leave undisturbed for a further 30 minutes after the last set." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 230°C conventional (210°C fan) with two baking trays inside. Generously flour a work surface. Tip the dough out, dust the top, and divide into two equal pieces with a bench scraper. Do not degas; use the scraper rather than your hands to transfer each piece to baking paper. Gently stretch each piece to a rough rectangle about 30 cm long. Slide onto the hot trays. Spray or splash water into the oven and bake for 28 to 32 minutes until deep golden and hollow-sounding when tapped on the base. Cool on a rack for at least 20 minutes before cutting." }]
+      }
+    ]
+  }
+}

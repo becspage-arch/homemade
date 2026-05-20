@@ -1,0 +1,159 @@
+{
+  "slug": "opera-cake",
+  "title": "Opéra cake",
+  "subtitle": "French layered almond sponge with coffee buttercream and chocolate ganache",
+  "excerpt": "An elegant French patisserie cake of three layers of almond joconde sponge soaked in coffee syrup, layered with coffee buttercream and dark chocolate ganache, and finished with a mirror-flat chocolate glaze. Each layer must be completely cold before the next goes on. The assembly is the challenge; each of the three components is straightforward on its own. The finished cake is served very cold, sliced cleanly with a hot knife.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Opéra cake is attributed to Gaston Lenôtre's pastry school in Paris, where it was developed in the 1950s or 1960s. The first named commercial appearance is at the patisserie Dalloyau in Paris in the 1960s, which popularised it. The recipe entered French culinary literature broadly through professional pastry training texts. Lenôtre's own cookbooks (translated into English in the 1970s and 1980s) give the recipe; those editions are out of print. The component recipes (joconde, coffee buttercream, ganache) are classical preparations documented in Escoffier (1903, Project Gutenberg) and Carême (various 1810s editions, Project Gutenberg).",
+  "recipe": {
+    "servings": 12,
+    "yieldDescription": null,
+    "prepMinutes": 90,
+    "cookMinutes": 20,
+    "restingMinutes": 30,
+    "chillingMinutes": 120,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble up to 24 hours ahead and refrigerate. Add the final chocolate glaze no more than 4 hours before serving. Slice with a knife dipped in hot water and wiped clean between cuts.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 60,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "conventional oven. Fan at 200°C. Joconde layers bake quickly at high heat: 8 to 10 minutes until set and barely coloured. Do not over-bake; they should remain flexible for easy handling.",
+      "steamMethod": null,
+      "decoratingTechnique": "mirror chocolate glaze, piped OPÉRA or gold leaf decoration optional",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false, "notes": "large rimmed baking tray (about 40 x 30cm), lined with baking paper" },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "icing-spatula", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "opera-joconde",
+      "term": "Joconde sponge for Opéra cake",
+      "definition": "A thin almond sponge made by folding beaten egg whites into a mixture of ground almonds, icing sugar, whole eggs, and a small amount of flour, then adding melted butter. The sponge is spread thinly (about 5mm) on a baking tray and baked quickly at high heat. The result is a flexible, moist sheet that stays pliable once cooled, which means it can be soaked generously with coffee syrup without falling apart. It is baked as one large sheet and then cut into three equal rectangles for the assembly layers."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The sponge base for Opéra is " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "opera-joconde", "term": "Joconde sponge for Opéra cake" } }],
+            "text": "joconde"
+          },
+          { "type": "text", "text": ": an almond sheet sponge baked in one large piece and cut into thirds. Make all three components (joconde, buttercream, ganache) and the coffee syrup before starting assembly. Have everything cold. Chill the cake on a flat tray after each layer goes on." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Joconde sponge" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "almond-flour", "amount": 150, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 150, "unit": "g", "prepNote": "sifted" } },
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 60, "unit": "g", "prepNote": "sifted" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 4, "unit": "each" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 3, "unit": "each", "prepNote": "whites only, for the meringue" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 30, "unit": "g", "prepNote": "for the meringue" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": "melted" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Coffee syrup" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 100, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "espresso-powder", "amount": 2, "unit": "tbsp" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Coffee buttercream" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 250, "unit": "g", "prepNote": "softened" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 150, "unit": "g", "prepNote": "sifted" } },
+          { "type": "ingredientItem", "attrs": { "slug": "espresso-powder", "amount": 2, "unit": "tsp", "prepNote": "dissolved in 1 tbsp hot water" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Chocolate ganache" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "dark-chocolate", "amount": 200, "unit": "g", "prepNote": "finely chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "double-cream", "amount": 150, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 20, "unit": "g" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Joconde: heat the oven to 220°C conventional (200°C fan). Line a large rimmed tray with baking paper. Whisk the whole eggs, almond flour, and icing sugar until thick and pale. Fold in the plain flour. Whisk the egg whites with the caster sugar to firm peaks and fold into the almond mixture in two additions. Fold in the melted butter last. Spread thinly and evenly across the tray. Bake 8 to 10 minutes until set and pale gold. Slide onto a rack still on its paper. Once cool, cut into three equal rectangles." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Coffee syrup: dissolve the sugar in the water over gentle heat, add the espresso powder, stir to dissolve. Cool completely. Buttercream: beat the butter until very pale, beat in the icing sugar, then beat in the dissolved espresso. Ganache: heat the cream to just below boiling, pour over the chocolate, leave 1 minute, then stir until smooth. Add the butter and stir until glossy. Cool to a thick, spreadable consistency." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Assembly on a flat board or tray: lay the first joconde layer paper-side down. Brush generously with coffee syrup. Spread with a thin, even layer of buttercream and smooth with a palette knife. Refrigerate for 15 minutes. Place the second joconde layer, soak with syrup, and spread with ganache. Refrigerate for 15 minutes. Place the third joconde layer and soak. Spread the remaining buttercream smoothly over the top. Refrigerate for 30 minutes, then pour over the remaining ganache (rewarmed to pourable) and tilt the board to level. Refrigerate until set, at least 1 hour. Trim the edges with a hot knife. Serve in slices cut with a hot knife wiped between each cut." }]
+      }
+    ]
+  }
+}

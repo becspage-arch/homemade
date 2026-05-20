@@ -920,4 +920,9 @@ export const INGREDIENTS: IngredientSeed[] = [
 
   // Stock
   { slug: 'vegetable-stock', name: 'Vegetable stock', category: 'condiment', defaultUnit: 'ml', dietaryFlags: ['vegan', 'vegetarian', 'glutenFree', 'dairyFree', 'nutFree'], commonSubstitutes: ['stock-vegetable', 'stock-chicken'], aliases: ['vegetable broth'], notes: 'Good-quality bought stock cube or fresh stock. Marigold powder is a reliable UK standby.', isStaple: true, isAllergen: false, shelfLifeDays: 5, storage: 'fridge' },
+
+  // Baking extras
+  { slug: 'vegetable-suet', name: 'Vegetable suet', category: 'baking', defaultUnit: 'g', dietaryFlags: ['vegan', 'vegetarian', 'dairyFree', 'nutFree'], commonSubstitutes: ['unsalted-butter'], aliases: ['suet', 'Atora vegetable suet'], notes: 'Shredded vegetable fat, sold in boxes (Atora). For suet pastry, dumplings, and steamed puddings.', isStaple: false, isAllergen: true, allergenType: 'gluten', shelfLifeDays: 365, storage: 'cupboard' },
+  { slug: 'anise-seeds', name: 'Anise seeds', category: 'spice', defaultUnit: 'tsp', dietaryFlags: ['vegan', 'vegetarian', 'glutenFree', 'dairyFree', 'nutFree'], commonSubstitutes: ['star-anise', 'fennel-seeds'], aliases: ['aniseed'], notes: 'Small seeds with a mild liquorice flavour. Used in springerle, pizzelle, and some pastis-flavoured breads.', isStaple: false, isAllergen: false, shelfLifeDays: 730, storage: 'cupboard' },
+  { slug: 'rolled-fondant', name: 'Rolled fondant', category: 'baking', defaultUnit: 'g', dietaryFlags: ['vegetarian', 'vegan', 'glutenFree', 'dairyFree', 'nutFree'], commonSubstitutes: ['marzipan'], aliases: ['ready-to-roll fondant', 'sugarpaste', 'fondant icing', 'regal ice'], notes: 'Pre-made pliable sugar paste for covering cakes. Knead until smooth before rolling.', isStaple: false, isAllergen: false, shelfLifeDays: 365, storage: 'cupboard' },
 ]

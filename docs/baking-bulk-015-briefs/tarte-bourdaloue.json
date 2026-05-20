@@ -1,0 +1,135 @@
+{
+  "slug": "tarte-bourdaloue",
+  "title": "Tarte Bourdaloue",
+  "subtitle": "French pear and almond cream tart in a pate sucree shell, finished with apricot glaze",
+  "excerpt": "A classic French patisserie tart of almond cream baked in a sweet shortcrust shell with poached pear halves pressed into the top. The almond cream puffs and browns around the pears during baking and the whole tart is brushed with warm apricot glaze as soon as it leaves the oven. Named after the Rue Bourdaloue in Paris. A confident pastry project that rewards the effort with a bakery-quality result.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Tarte Bourdaloue is a classic French patisserie preparation named after the Rue Bourdaloue in Paris, where it was reportedly created in the mid-nineteenth century. Auguste Escoffier, Le Guide Culinaire (1903, Project Gutenberg), describes the combination of sweet pastry, almond cream, and poached pears as a standard preparation. The pate sucree base and almond cream filling are consistent across French patisserie literature of the late nineteenth century.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "one 23cm tart, serves 8",
+    "prepMinutes": 45,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pate sucree can be made a day ahead. The poached pears keep in their syrup in the fridge for 3 days. Baked tart keeps at room temperature for 2 days.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["weekendBake", "party"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "conventional oven. Fan at 160°C. Blind-bake the pate sucree case for 15 minutes, remove weights, bake 5 minutes more. Add almond cream and pears and bake for 35 to 40 minutes until the almond cream is set and deep golden brown.",
+      "steamMethod": null,
+      "decoratingTechnique": "apricot glaze brushed over the hot tart on leaving the oven",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "tart-tin", "isOptional": false, "notes": "23cm loose-bottomed tart tin" },
+    { "slug": "baking-paper", "isOptional": false, "notes": "for blind-baking" },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false, "notes": "for poaching the pears and for warming the glaze" },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pate-sucree",
+      "term": "Pate sucree",
+      "definition": "A French sweet shortcrust pastry made with icing sugar, egg yolks, and cold butter. It is more tender and more fragile than plain shortcrust: the icing sugar and yolks create a finer, more biscuity texture. The dough must be chilled before rolling because the high fat content makes it sticky and prone to tearing at room temperature. Once baked, pate sucree has a dry, crisp, cookie-like snap rather than the flaky crumb of standard shortcrust. It is the classic base for French patisserie tarts because it holds its shape precisely and does not become soggy."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This is a two-stage preparation: " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pate-sucree", "term": "Pate sucree" } }],
+            "text": "pate sucree"
+          },
+          { "type": "text", "text": " needs a full hour to chill before rolling and the poached pears should be cold before they go on the almond cream. Both can be done the day before. Once both are ready, assembly and baking is straightforward." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 200, "unit": "g", "prepNote": "for the pastry" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 125, "unit": "g", "prepNote": "cold, diced, for the pastry" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 80, "unit": "g", "prepNote": "for the pastry" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 2, "unit": "each", "prepNote": "yolks only, for the pastry" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 0.5, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt-table", "amount": 0.25, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "pear", "amount": 4, "unit": "each", "prepNote": "ripe but firm, peeled, halved, and cored" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 100, "unit": "g", "prepNote": "for poaching the pears" } },
+          { "type": "ingredientItem", "attrs": { "slug": "lemon", "amount": 1, "unit": "each", "prepNote": "juice only, for the poaching syrup" } },
+          { "type": "ingredientItem", "attrs": { "slug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "softened, for the almond cream" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 100, "unit": "g", "prepNote": "for the almond cream" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 2, "unit": "each", "prepNote": "for the almond cream" } },
+          { "type": "ingredientItem", "attrs": { "slug": "almond-flour", "amount": 100, "unit": "g", "prepNote": "for the almond cream" } },
+          { "type": "ingredientItem", "attrs": { "slug": "plain-flour", "amount": 15, "unit": "g", "prepNote": "for the almond cream" } },
+          { "type": "ingredientItem", "attrs": { "slug": "rum-dark", "amount": 1, "unit": "tbsp", "prepNote": "optional, for the almond cream" } },
+          { "type": "ingredientItem", "attrs": { "slug": "apricot-jam", "amount": 3, "unit": "tbsp", "prepNote": "warmed and sieved, for glazing" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Make the pate sucree: rub the cold butter into the flour and icing sugar until it resembles fine crumbs. Add the egg yolks, vanilla, and salt and mix until the dough just comes together. Flatten into a disc, wrap, and refrigerate for at least 1 hour." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Poach the pears: combine the caster sugar with 300ml water and the lemon juice in a saucepan and bring to a gentle simmer. Add the pear halves and simmer for 8 to 12 minutes until just tender when pierced with a knife tip. They should still hold their shape. Leave to cool completely in the syrup." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 180°C conventional (160°C fan). Roll the chilled pastry and line the tart tin. Prick the base, line with baking paper and weights, and blind-bake for 15 minutes. Remove weights and bake for 5 minutes more until the base is pale and dry." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Make the almond cream: beat the softened butter and sugar until pale. Add the eggs one at a time. Fold in the almond flour, plain flour, and rum if using." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Spread the almond cream in the pastry case. Drain the pear halves well and press them cut-side down into the cream, fanning them from the centre. Bake for 35 to 40 minutes until the almond cream is set, puffed, and deep golden. While the tart is still hot, brush with the warmed sieved apricot jam for a glossy finish. Cool on a rack before slicing." }]
+      }
+    ]
+  }
+}

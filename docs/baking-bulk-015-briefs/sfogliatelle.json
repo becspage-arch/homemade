@@ -1,0 +1,137 @@
+{
+  "slug": "sfogliatelle",
+  "title": "Sfogliatelle",
+  "subtitle": "Neapolitan shell-shaped pastry with semolina and ricotta filling",
+  "excerpt": "A Neapolitan pastry with a dramatic shell or clamshell shape and dozens of paper-thin, shattering layers. The dough is rolled, stretched near-transparent, spread with lard, and rolled into a tight log which is then sliced into discs. Each disc is pressed into the shell shape, filled with sweetened semolina and ricotta cream, sealed, and baked until the layers separate and crisp. A project bake requiring patience at the lamination stage.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Sfogliatelle (singular: sfogliatella) originated at the Convent of Santa Rosa on the Amalfi Coast in the seventeenth century. The recipe entered Neapolitan pastry-making broadly in the nineteenth century through the influential Neapolitan pastry tradition. The combination of paper-thin lard-laminated pastry with a semolina and ricotta filling is documented in early twentieth-century Italian cookery texts. The technique of rolling the dough into a log and cutting discs for shaping is consistent across Neapolitan sources from that period.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "12 to 14 pastries",
+    "prepMinutes": 90,
+    "cookMinutes": 25,
+    "restingMinutes": 120,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough log can be made a day ahead and refrigerated. The semolina filling can also be made ahead. Assemble and bake on the day.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "italian",
+    "mealType": "snack",
+    "mood": ["weekendBake"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 40,
+      "saltPercent": 1.0,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "conventional oven. Fan at 180°C. Bake for 22 to 26 minutes until the layers are deep golden and visibly separated and crisp. Cool on a rack and dust with icing sugar while warm.",
+      "steamMethod": null,
+      "decoratingTechnique": "icing sugar dusting",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false, "notes": "two baking trays, lined with baking paper" },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sfogliatelle-stretch-lamination",
+      "term": "Stretch lamination for sfogliatelle",
+      "definition": "The method of developing dozens of paper-thin layers in sfogliatelle dough by stretching the dough progressively thinner (rather than folding it over itself as in croissant) and spreading it with softened lard before rolling it into a tight log. The dough is rested and then stretched repeatedly by working it over the hands until it is nearly transparent, then spread with a thin layer of lard and rolled up into a tight cylinder. When the cylinder is sliced into discs and the discs are pressed open by thumb from the centre, the layers fan out to form the characteristic shell shape. The lard prevents the layers from fusing during baking so they separate and shatter when bitten."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The dozens of shattering layers come from " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sfogliatelle-stretch-lamination", "term": "Stretch lamination for sfogliatelle" } }],
+            "text": "stretch lamination"
+          },
+          { "type": "text", "text": ": the dough is worked paper-thin over the hands, spread with lard, and rolled into a tight log. Slices from the log become the shells. The filling is a cooked semolina cream with ricotta, orange peel, and cinnamon." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pastry dough" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "strong-bread-flour", "amount": 500, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "water", "amount": 200, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "honey", "amount": 10, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "salt-table", "amount": 5, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "lard", "amount": 150, "unit": "g", "prepNote": "softened, for lamination" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Semolina and ricotta filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          { "type": "ingredientItem", "attrs": { "slug": "whole-milk", "amount": 400, "unit": "ml" } },
+          { "type": "ingredientItem", "attrs": { "slug": "semolina", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "caster-sugar", "amount": 100, "unit": "g" } },
+          { "type": "ingredientItem", "attrs": { "slug": "ricotta", "amount": 250, "unit": "g", "prepNote": "well drained" } },
+          { "type": "ingredientItem", "attrs": { "slug": "eggs", "amount": 2, "unit": "each" } },
+          { "type": "ingredientItem", "attrs": { "slug": "mixed-peel", "amount": 50, "unit": "g", "prepNote": "finely chopped" } },
+          { "type": "ingredientItem", "attrs": { "slug": "cinnamon-ground", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "vanilla-extract", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "orange-blossom-water", "amount": 1, "unit": "tsp" } },
+          { "type": "ingredientItem", "attrs": { "slug": "icing-sugar", "amount": 30, "unit": "g", "prepNote": "for dusting" } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Filling: bring the milk to the boil in a small saucepan. Pour in the semolina in a thin stream, stirring constantly. Add the sugar and continue stirring over medium heat for 3 to 4 minutes until very thick. Remove from the heat, stir in the ricotta, eggs, mixed peel, cinnamon, vanilla, and orange blossom water. Press cling film directly onto the surface and leave to cool completely." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Dough: combine the flour, water, honey, and salt into a stiff, smooth dough. Knead for 10 minutes until elastic. Rest, covered, for 1 hour. Divide into three pieces. Working one piece at a time, use a pasta machine or rolling pin to roll as thinly as possible, then stretch further by working the sheet over the backs of your hands until it is nearly transparent. Lay flat, spread a thin layer of softened lard all over, then roll tightly into a log. Wrap in cling film and refrigerate for 30 minutes. Repeat with the remaining dough, rolling each piece around the existing log to make one large cylinder." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 200°C conventional (180°C fan). Slice the chilled log into 1.5 cm thick discs. Working with one disc at a time, press the centre outward from the flat side with your thumbs to open the layers into a cone or clamshell shape. Fill with a heaped tablespoon of the cold semolina filling. Pinch the edges firmly to seal. Arrange on lined trays. Bake for 22 to 26 minutes until deep golden and the layers are visibly separated. Transfer to a rack and dust generously with icing sugar while still warm." }]
+      }
+    ]
+  }
+}
