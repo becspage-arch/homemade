@@ -1,0 +1,158 @@
+{
+  "slug": "smoked-haddock-and-leek-pie",
+  "title": "Smoked Haddock and Leek Pie",
+  "subtitle": "Flaked smoked haddock in a cream sauce with leeks, under a puff pastry lid",
+  "excerpt": "Smoked haddock has a particular affinity with cream and leeks. This pie uses a simple veloute sauce built from the haddock poaching milk, enriched with cream, and poured over the flaked fish and softened leeks before a puff pastry lid goes on.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional British fish pie tradition. Jane Grigson, Fish Cookery (1973): smoked haddock in cream sauce. Delia Smith, Complete Cookery Course (1978): fish pie method with puff pastry lid.",
+  "hero": {},
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 45,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The filling can be made and cooled a day ahead. Assemble and bake on the day.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "slowSunday", "cosy"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven throughout",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "veloute", "term": "Veloute", "definition": "One of the five French mother sauces: a pale roux thinned with a light stock (fish, chicken, or veal) and enriched with cream. For a fish pie, the poaching milk from the haddock becomes the liquid, giving the sauce a pronounced smoky flavour." },
+    { "slug": "naturally-smoked-haddock", "term": "Naturally smoked haddock", "definition": "Haddock cold-smoked over woodchips, resulting in a pale golden flesh. Distinct from the yellow-dyed version, which is artificially coloured. Finnan haddie is the traditional Scottish variety, smoked on the bone." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Smoked haddock is sold in two forms: " },
+          { "type": "text", "text": "naturally smoked haddock", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "naturally-smoked-haddock" } }] },
+          { "type": "text", "text": " (pale cream-coloured) and artificially dyed yellow haddock. Either works for this pie, but the natural version has a more delicate, complex smoke. Poach it in milk: the milk becomes the base of a cream " },
+          { "type": "text", "text": "veloute", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "veloute" } }] },
+          { "type": "text", "text": " that carries the smoked flavour through the whole dish." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "smoked-haddock", "amount": 600, "unit": "g", "prepNote": "skin on, undyed if possible", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 400, "unit": "ml", "prepNote": "for poaching", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "leek", "amount": 3, "unit": "each", "prepNote": "cleaned and sliced into rounds", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": "no salt needed; haddock is salty", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "puff-pastry", "amount": 320, "unit": "g", "prepNote": "ready-rolled, chilled", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for the egg wash", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Poach the haddock" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Put the haddock skin-down in a wide saucepan. Pour over the " },
+          { "type": "text", "text": "{{whole-milk}} of whole milk" },
+          { "type": "text", "text": " and bring to a gentle simmer. Poach for 8-10 minutes until the fish flakes easily. Remove the haddock, peel away the skin, and flake the flesh into large pieces, discarding any bones. Reserve the poaching milk." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the sauce and filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt " },
+          { "type": "text", "text": "{{unsalted-butter}} of butter" },
+          { "type": "text", "text": " in a saucepan over medium heat. Soften the onion for 8 minutes, then add the leeks and cook for 3 minutes. Stir in " },
+          { "type": "text", "text": "{{plain-flour}} of flour" },
+          { "type": "text", "text": " and cook for 2 minutes. Gradually add the reserved poaching milk, stirring constantly. Add the " },
+          { "type": "text", "text": "{{double-cream}} of cream" },
+          { "type": "text", "text": " and simmer for 5 minutes until thickened. Season with " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": " only; the haddock provides the salt. Fold in the flaked fish. Cool the filling completely before assembling." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Top and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C (180°C fan). Spoon the cooled filling into a deep pie dish. Roll or unroll the " },
+          { "type": "text", "text": "{{puff-pastry}} of puff pastry" },
+          { "type": "text", "text": " and lay it over the top, pressing the edges to the rim. Trim off the excess. Cut a steam vent in the centre. Brush with beaten egg. Bake for 35-40 minutes until the pastry is deeply golden and the filling is bubbling at the vent." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Pastry lid lifts off or sinks into the filling", "cause": "Filling was still warm when the pastry was laid on, causing steam to detach the lid", "fix": "Cool the filling completely. Set a pie funnel or upturned egg cup in the centre of the dish to support the pastry." },
+            { "symptom": "Sauce is too salty", "cause": "Smoked haddock releases a lot of salt into the poaching milk", "fix": "Never add salt to the sauce; the poaching milk carries enough. Taste before seasoning." },
+            { "symptom": "Pastry is golden but sauce is cold in the centre", "cause": "Filling was refrigerator-cold when it went into the oven", "fix": "Leave the filled dish at room temperature for 20 minutes before topping and baking." },
+            { "symptom": "Haddock breaks into very fine pieces and disappears into the sauce", "cause": "Overpoached or overhandled when folding", "fix": "Poach just until the fish flakes when pressed; fold gently in one or two turns, not repeatedly." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Smoked haddock and leek pie sits at the intersection of the Scottish fish pie tradition and the everyday British comfort kitchen. It is a winter and early spring dish, suited to cold evenings and simple serving with nothing more than a green salad." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "slug": "pork-pie",
+  "title": "Pork Pie",
+  "subtitle": "A hand-raised hot water crust filled with seasoned pork mince and jelly",
+  "excerpt": "The British pork pie is a cold pie in a rigid hot water crust pastry, filled with seasoned pork and sealed with savoury aspic poured in through a hole in the lid. Melton Mowbray is the most famous type, but the method is accessible at home with a loose-bottomed cake tin.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional British raised pie. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: raised pork pie method. Clarissa Dickson Wright and Jennifer Paterson, Two Fat Ladies (1996): pork pie with jelly. Melton Mowbray Pork Pie Association standards.",
+  "hero": {},
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 60,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pie must be made at least 8 hours ahead to allow the jelly to set. It keeps refrigerated for 3 days.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["specialOccasion", "picnic", "hearty"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "reduce to 180°C after the first 20 minutes",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "hot-water-crust", "term": "Hot water crust", "definition": "A pastry made by melting lard into boiling water and working the hot liquid into flour, producing a stiff, mouldable dough. Unlike shortcrust, it is worked while still warm and hardens as it cools, forming rigid walls capable of supporting a raised pie." },
+    { "slug": "aspic-jelly", "term": "Aspic jelly", "definition": "A savoury jelly made from highly reduced meat stock. Poured in liquid form through a hole in the pie lid after baking and allowed to set cold, it fills the gap left as the pork shrinks during cooking and keeps the filling moist." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The pork pie is one of the most technically demanding things in the British pastry tradition. The " },
+          { "type": "text", "text": "hot water crust", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-water-crust" } }] },
+          { "type": "text", "text": " must be worked quickly while warm and pliable, then moulded into a tin before it stiffens. The filling is raw seasoned pork that must reach 75°C throughout." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "text": "aspic jelly", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "aspic-jelly" } }] },
+          { "type": "text", "text": " is poured in after baking through a small hole left in the lid. As the pork cooks, it shrinks and leaves a gap; the jelly fills this and sets cold, giving the characteristic solid texture when sliced." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 400, "unit": "g", "prepNote": "for the pastry", "isOptional": false, "groupLabel": "For the hot water crust" },
+            { "ingredientSlug": "lard", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the hot water crust" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": "for the pastry", "isOptional": false, "groupLabel": "For the hot water crust" },
+            { "ingredientSlug": "pork-mince", "amount": 500, "unit": "g", "prepNote": "20% fat", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sausagemeat", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sage-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "mace", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": "for the filling", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 200, "unit": "ml", "prepNote": "for the jelly; use gelatine powder to set if stock is not rich enough to set naturally", "isOptional": false, "groupLabel": "For the jelly" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the hot water crust" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sift " },
+          { "type": "text", "text": "{{plain-flour}} of flour" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " into a large bowl and make a well. Heat " },
+          { "type": "text", "text": "{{lard}} of lard" },
+          { "type": "text", "text": " with 175 ml of water until the lard has melted and the liquid is just boiling. Pour into the flour well and stir quickly with a wooden spoon until the dough comes together. Tip onto a lightly floured board and knead for 1 minute until smooth. Work quickly: the dough stiffens as it cools." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Line the tin and fill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Reserve a quarter of the dough for the lid. Press the remaining dough into a lightly greased 900 g loaf tin, pushing it up the sides to an even thickness of about 5 mm. Combine the " },
+          { "type": "text", "text": "{{pork-mince}} of pork mince" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{sausagemeat}} of sausagemeat" },
+          { "type": "text", "text": " with the dried sage, " },
+          { "type": "text", "text": "{{mace}} of mace" },
+          { "type": "text", "text": ", " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": " and the filling salt. Pack firmly into the lined tin. Roll the reserved dough for the lid, lay it on top, and seal the edges. Make a 1 cm hole in the centre of the lid. Brush with beaten egg." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake and fill with jelly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C (180°C fan). Bake for 20 minutes, then reduce to 180°C (160°C fan) and bake for a further 60-70 minutes. A probe through the steam hole should read 75°C in the filling. Cool in the tin for 30 minutes, then turn out and cool completely. Heat the stock until just simmering (add gelatine powder if the stock is not rich enough to set naturally). Pour slowly through the steam hole; the jelly will fill the gaps as the pie sits. Refrigerate for at least 8 hours before slicing." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Pastry walls collapse inward during baking", "cause": "Pastry too thin, or pressed to the tin unevenly", "fix": "Aim for an even 5 mm wall throughout. Pack the filling firmly so it supports the walls from the inside." },
+            { "symptom": "Jelly does not set", "cause": "Stock was not rich enough in natural gelatine", "fix": "Add 2 tsp of powdered gelatine dissolved in 2 tbsp of cold water to the hot stock before pouring. Stir to combine." },
+            { "symptom": "Pastry is soggy at the base", "cause": "Too much fat in the filling, or the pie was cut before the jelly fully set", "fix": "Use pork mince with 20% fat rather than a higher-fat variety. Allow the full 8 hours of refrigeration." },
+            { "symptom": "The lid separates from the side walls", "cause": "The join was not sealed thoroughly when assembling", "fix": "Moisten the dough-to-dough join with a small amount of water and press firmly. Egg wash helps seal lids." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The British pork pie is picnic food, pub food, and ploughman's lunch food. Its origins are in the Victorian and Edwardian tradition of portable cold pies made for field workers and market-goers. Melton Mowbray in Leicestershire is the geographical heart of the tradition, with Protected Geographical Indication status. The home version is a worthy approximation." }
+        ]
+      }
+    ]
+  }
+}

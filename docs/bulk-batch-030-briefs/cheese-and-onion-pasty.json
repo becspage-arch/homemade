@@ -1,0 +1,159 @@
+{
+  "slug": "cheese-and-onion-pasty",
+  "title": "Cheese and Onion Pasty",
+  "subtitle": "A shortcrust pastry half-moon filled with cheddar, potato, and raw onion",
+  "excerpt": "The cheese and onion pasty is the vegetarian equivalent of the Cornish pasty. Raw potato, grated cheddar, and raw onion go into shortcrust pastry and bake together, producing a filling that is moist, savoury, and cohesive. Serve hot or cold.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional British pasty. Cornish pasty tradition adapted for vegetarian filling. Jane Grigson, English Food (1974): pasty variations. Contemporary British bakery practice.",
+  "hero": {},
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 35,
+    "cookMinutes": 45,
+    "restingMinutes": 5,
+    "chillingMinutes": 20,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unbaked pasties for up to 2 months. Bake from frozen at 190°C for 55 minutes.",
+    "batchable": true,
+    "batchNotes": "The recipe doubles easily. Make 8 pasties and freeze half unbaked.",
+    "makeAheadNotes": null,
+    "dietaryFlags": ["v"],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "picnic", "weeknight"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven throughout",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "cornish-crimp", "term": "Cornish crimp", "definition": "The distinctive rope-twist crimp along the curved top edge of a Cornish pasty, formed by folding and twisting the pastry edge in alternating directions. It seals the pastry and is the traditional badge of an authentic pasty. For a cheese pasty, a simple fork crimp works equally well." },
+    { "slug": "raw-filling", "term": "Raw pastry filling", "definition": "The technique of filling a pasty with raw rather than pre-cooked ingredients. The raw potato softens inside the sealed pastry during baking, cooking in its own steam. The pasty must be sealed tightly and baked at the correct temperature for the potato to cook fully." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The cheese and onion pasty uses the same " },
+          { "type": "text", "text": "raw filling", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "raw-filling" } }] },
+          { "type": "text", "text": " method as the traditional Cornish pasty: the potato goes in raw and steams inside the sealed pastry. The cheddar melts into it during baking, and the raw onion sweetens and softens. The result needs the full 40-45 minutes at 200°C to cook the potato through." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Grate the potato on a coarse grater and pat dry: excess moisture is the main enemy. For the " },
+          { "type": "text", "text": "Cornish crimp", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cornish-crimp" } }] },
+          { "type": "text", "text": " use your thumb and forefinger to fold and twist along the sealed top edge; for a simpler result, press with a fork." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "shortcrust-pastry", "amount": 500, "unit": "g", "prepNote": "shop-bought or homemade, chilled", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 3, "unit": "each", "prepNote": "Maris Piper or similar, peeled and grated, moisture pressed out", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "cheddar", "amount": 150, "unit": "g", "prepNote": "mature, grated", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "very finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "mustard-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": "For the filling" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for the egg wash", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Grate the potato on a coarse grater and immediately wrap in a clean cloth. Squeeze out as much moisture as possible. Combine with the " },
+          { "type": "text", "text": "{{cheddar}} of grated cheddar" },
+          { "type": "text", "text": ", " },
+          { "type": "text", "text": "{{onion}} finely chopped onion" },
+          { "type": "text", "text": ", " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": ", " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": " and mustard powder if using. The filling should be dry enough to hold its shape when squeezed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and seal" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Divide the " },
+          { "type": "text", "text": "{{shortcrust-pastry}} of shortcrust pastry" },
+          { "type": "text", "text": " into 4 pieces. Roll each into a rough circle about 22 cm across and 3 mm thick. Place a quarter of the filling on one half of each circle, leaving a 2 cm border. Moisten the border with water, fold the empty half over, and press firmly to seal. Crimp along the top curved edge with a fork or use a rope twist. Place on a lined baking tray and chill for 20 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C (180°C fan). Brush all surfaces with beaten egg. Make a small vent hole in the top of each pasty. Bake for 40-45 minutes until deep golden. The potato is cooked when a skewer pushed through the vent meets no resistance." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Potato is still hard in the centre", "cause": "Filling too thick, or bake time too short", "fix": "Aim for no more than 2 cm of filling depth. Pierce with a skewer to test: the potato should feel soft." },
+            { "symptom": "Pastry is soggy from the inside", "cause": "Grated potato was too wet", "fix": "Squeeze out as much water as possible; a cloth works better than kitchen paper for this." },
+            { "symptom": "Filling spills out during baking", "cause": "Seam not well sealed, or too much filling", "fix": "Moisten the pastry border thoroughly before pressing. Do not overfill." },
+            { "symptom": "Cheese has oozed out and burned on the tray", "cause": "A crack in the pastry, or cheese was placed near the seam edge", "fix": "Keep cheese away from the very edge of the filling. Check for thin spots in the pastry before sealing." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cheese and onion pasties are the vegetarian companion to the Cornish pasty. They are bakery food, school lunch food, and the thing to make when you need something satisfying with minimal fuss. Eaten hot they are savoury and comforting; cold from the fridge the next day, they are just as good." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "slug": "scotch-pie",
+  "title": "Scotch Pie",
+  "subtitle": "A hot water crust double pie filled with seasoned minced mutton or lamb, distinctive for its collar lid",
+  "excerpt": "The Scotch pie is a Scottish institution: a round double-crust hot water pastry pie filled with highly seasoned mutton mince, with a distinctive collar that sits proud of the lid. They are eaten hot at football grounds, at New Year, and as a daily lunch staple across Scotland.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional Scottish baking. F. Marian McNeill, The Scots Kitchen (1929): mutton pie method. Traditional Scottish baker's practice, Glasgow and Edinburgh variants.",
+  "hero": {},
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 50,
+    "cookMinutes": 45,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze baked pies for up to 2 months. Reheat from frozen at 180°C for 20-25 minutes.",
+    "batchable": true,
+    "batchNotes": "The recipe doubles easily. Make 8 pies and freeze half for fast lunches.",
+    "makeAheadNotes": "The pies can be baked and stored refrigerated for 2 days, then reheated.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "hearty"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven throughout",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "scotch-pie-collar", "term": "Scotch pie collar", "definition": "The raised rim on a Scotch pie: the pastry walls are deliberately made taller than the filling, leaving a space above the lid that can be filled with baked beans, mashed potato, or gravy when serving, or simply acts as a grip when eating by hand." },
+    { "slug": "mutton-flavour", "term": "Mutton", "definition": "Meat from a sheep over two years old, with a stronger and more complex flavour than lamb. Traditional Scotch pies are made with mutton; modern versions often use lamb mince. Mutton is available from specialist butchers and Middle Eastern meat shops." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The Scotch pie has a defining structural feature: the " },
+          { "type": "text", "text": "collar", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scotch-pie-collar" } }] },
+          { "type": "text", "text": ". The hot water crust walls are formed about 3 cm taller than the filling level, with the disc lid sitting inside the walls rather than on top. This creates the distinctive rim above the lid that a Scotch pie fan will recognise immediately." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The traditional filling is " },
+          { "type": "text", "text": "mutton", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mutton-flavour" } }] },
+          { "type": "text", "text": " mince, heavily seasoned with nutmeg, mace, and pepper. Lamb mince is the standard substitute; use whichever you can find. The pies are eaten hot, often with a layer of baked beans tipped into the collar." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 300, "unit": "g", "prepNote": "for the hot water crust", "isOptional": false, "groupLabel": "For the hot water crust" },
+            { "ingredientSlug": "lard", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the hot water crust" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": "for the pastry", "isOptional": false, "groupLabel": "For the hot water crust" },
+            { "ingredientSlug": "mutton", "amount": 400, "unit": "g", "prepNote": "minced, or use lamb mince", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "very finely grated", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "mace", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "nutmeg", "amount": 1, "unit": "tsp", "prepNote": "freshly grated", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": "coarsely ground", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": "for the filling", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-beef", "amount": 60, "unit": "ml", "prepNote": "or lamb stock; to moisten the filling", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for the egg wash", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the hot water crust" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sift " },
+          { "type": "text", "text": "{{plain-flour}} of flour" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " into a bowl. Melt " },
+          { "type": "text", "text": "{{lard}} of lard" },
+          { "type": "text", "text": " with 125 ml of water, bring just to the boil, and pour into the flour. Stir quickly and turn onto a floured board. Knead for 1 minute until smooth. Keep warm by covering with a bowl while working." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Form the pie cases" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Divide the dough into 4 pieces. Reserve a quarter of each piece for the lid. Use the remaining three quarters to mould a cylinder 8 cm in diameter and 6 cm tall, using the base of a glass jar as a former if needed. The walls should be about 4 mm thick. Place on a lined baking tray. Mix the " },
+          { "type": "text", "text": "{{mutton}} of mutton mince" },
+          { "type": "text", "text": " with the grated onion, " },
+          { "type": "text", "text": "{{mace}} of mace" },
+          { "type": "text", "text": ", " },
+          { "type": "text", "text": "{{nutmeg}} of nutmeg" },
+          { "type": "text", "text": ", pepper, filling salt, and the " },
+          { "type": "text", "text": "{{stock-beef}} of stock" },
+          { "type": "text", "text": ". Pack tightly into each case to 1 cm below the rim. Roll the reserved dough into a disc and set it inside the walls as a lid. Brush with beaten egg." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C (180°C fan). Bake for 40-45 minutes until golden all over. A probe pushed through the lid should read 75°C in the filling centre." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Pastry walls are uneven or collapsing", "cause": "Pastry cooled too much before moulding, becoming brittle", "fix": "Work quickly while the pastry is still warm. Keep it covered between pieces." },
+            { "symptom": "Filling is very dense and dry", "cause": "Insufficient fat in the mince, or no liquid added", "fix": "Use mutton or lamb mince with at least 15% fat. Add the stock to the filling and mix well." },
+            { "symptom": "Collar cracks at the top", "cause": "Pastry was too thick and baked unevenly", "fix": "Aim for a consistent 4 mm wall. A small crack at the collar is cosmetic only." },
+            { "symptom": "Pies slide on the baking tray", "cause": "Fat from the mince leaks through the base during baking", "fix": "Use baking paper to line the tray; this is normal for a hot-water-crust pie with a fat-rich filling." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The Scotch pie is as Scottish as haggis and as quotidian as a sandwich. It is the pie eaten at Hampden Park, at Hogmanay supper tables, and from paper bags outside baker's shops in Glasgow and Edinburgh on a cold morning. To eat it properly is to eat it hot, with the collar filled with something that contrasts: beans, mash, or just the cooking juices." }
+        ]
+      }
+    ]
+  }
+}

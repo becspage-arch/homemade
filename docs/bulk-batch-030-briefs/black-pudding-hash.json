@@ -1,0 +1,147 @@
+{
+  "slug": "black-pudding-hash",
+  "title": "Black Pudding Hash",
+  "subtitle": "Crispy fried black pudding with crushed potato and fried egg, a proper breakfast or brunch plate",
+  "excerpt": "Black pudding hash is a pan-fried mixture of crushed boiled potato and crumbled black pudding, cooked until deeply coloured and served with a fried egg. It is a proper full British breakfast element, served as a standalone plate.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional British breakfast tradition. Regional British black pudding use in Bury, Lancashire and the north of England. Contemporary British brunch culture.",
+  "hero": {},
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Boil the potatoes ahead and refrigerate. Cold potato produces a crispier hash.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "brunch",
+    "mood": ["brunchy", "comfortFood", "hearty"],
+    "temperatureCelsius": 0,
+    "temperatureNote": "hob only; no oven required",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-26", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "black-pudding-what", "term": "Black pudding", "definition": "A blood sausage made from pork blood, fat, oatmeal or barley, and spices, cooked and formed into a sausage shape. It is a staple of the full English and full Scottish breakfast. Bury in Lancashire and Stornoway in the Western Isles are the two regions with the most celebrated traditions." },
+    { "slug": "hash-method", "term": "Hash", "definition": "A dish of chopped or crushed cooked meat and potato fried together in a pan until browned on the outside. The word comes from the French 'hacher', to chop. The technique produces a crisp exterior and soft interior from ingredients that are already cooked." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "text": "hash", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hash-method" } }] },
+          { "type": "text", "text": " works best with cold potato. If the potatoes are still warm from boiling, they will stick to the pan and disintegrate rather than forming a crust. Boil them ahead or use leftover potatoes from yesterday." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Use a good " },
+          { "type": "text", "text": "black pudding", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "black-pudding-what" } }] },
+          { "type": "text", "text": ": Bury or Stornoway if you can find them. Cheap black pudding tends to fall apart during frying rather than crisping at the edges." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "potato", "amount": 3, "unit": "each", "prepNote": "medium, boiled in their skins and cooled, then peeled and crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pudding", "amount": 200, "unit": "g", "prepNote": "skin removed, crumbled into rough chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 20, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "apple-eating", "amount": 1, "unit": "each", "prepNote": "peeled and diced, for a sweet contrast", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "for frying, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat " },
+          { "type": "text", "text": "{{unsalted-butter}} of butter" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{olive-oil}} of olive oil" },
+          { "type": "text", "text": " together in a wide frying pan over medium-high heat. Add the onion and cook for 5 minutes until golden. Add the diced apple if using and cook for 2 minutes. Add the crushed potato and press it flat with a spatula. Season with " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": ". Cook without disturbing for 5 minutes until the base is crisp and golden." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the black pudding and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Scatter the " },
+          { "type": "text", "text": "{{black-pudding}} of black pudding" },
+          { "type": "text", "text": " chunks over the potato and press them in lightly. Turn the hash in sections, breaking it up, and cook for another 5 minutes until the black pudding is crisp and hot through. Divide between two warm plates. In the same pan, fry the eggs to your liking and place on top." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Hash is sticking to the pan and burning", "cause": "Pan not hot enough when the potato went in, or too little fat", "fix": "Use a combination of butter and oil. The oil raises the smoke point of the butter and prevents burning." },
+            { "symptom": "Black pudding falls apart rather than crisping", "cause": "Too much moisture in the pudding, or it was pressed too hard", "fix": "Leave the black pudding chunks alone for 3 minutes before touching; this allows a crust to form." },
+            { "symptom": "Potato is falling apart before the hash is cooked", "cause": "Overboiled potatoes, or not enough cold time in the fridge", "fix": "Boil potatoes until just tender, not falling apart. Cold, firm potato makes the best hash." },
+            { "symptom": "Hash tastes bland", "cause": "Insufficient seasoning, or potato was unsalted when boiled", "fix": "Salt the boiling water generously. Add more seasoning during frying and taste before serving." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Black pudding hash is a northern English and Scottish brunch staple. It sits alongside scrambled eggs and smoked salmon at the upper end of the breakfast table and beside baked beans and toast at the everyday end. The apple is optional but traditional in the northwest, where apple and black pudding are a long-established pairing." }
+        ]
+      }
+    ]
+  }
+}

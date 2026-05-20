@@ -1,0 +1,167 @@
+{
+  "slug": "chicken-and-ham-pie",
+  "title": "Chicken and Ham Pie",
+  "subtitle": "A deep-filled shortcrust pie with a creamy leek sauce and tender pulled chicken",
+  "excerpt": "Chicken and ham pie is the definitive British weekend pie: shortcrust pastry enclosing pulled roast chicken, flaked ham, leeks, and a cream sauce. It is best made with leftover roast chicken and a proper ham joint, but works equally well with poached thighs and cooked gammon.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional British savoury pie. Jane Grigson, English Food (1974): raised pie tradition. Delia Smith, Complete Cookery Course (1978): chicken pie with cream sauce. Cross-referenced across multiple period sources.",
+  "hero": {},
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 55,
+    "restingMinutes": 10,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the unbaked pie for up to 2 months. Bake from frozen at 190°C for 50-60 minutes, covering loosely with foil if the pastry colours too quickly.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The filling can be made a day ahead. Assemble the pie on the day of baking; the pastry will absorb moisture from the filling if left assembled overnight.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "slowSunday", "hearty"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven; cover loosely if pastry colours before filling heats through",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "blind-baking", "term": "Blind baking", "definition": "Pre-baking a pastry case before adding the filling, using baking beans or rice to hold the base flat. Used when the filling is wet or requires less cooking time than the pastry." },
+    { "slug": "egg-wash", "term": "Egg wash", "definition": "Beaten egg brushed over raw pastry before baking to produce a glossy, deep golden colour. One egg beaten with a tablespoon of milk or water is enough for a single pie top." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A proper chicken and ham pie has a thick shortcrust pastry case, a filling that is distinctly saucy rather than dry, and a top crust that goes in golden and crisp. The sauce is made from the poaching liquid if you cook the chicken from scratch, or from a good chicken stock if you are using leftovers. Either way, the sauce must be slightly over-seasoned at the making stage because the pastry will absorb some of the salt during baking." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The pastry base is not " },
+          { "type": "text", "text": "blind baked", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blind-baking" } }] },
+          { "type": "text", "text": " because the filling is already cooked; the pie needs only 50-55 minutes to heat through and colour the crust. An " },
+          { "type": "text", "text": "egg wash", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "egg-wash" } }] },
+          { "type": "text", "text": " on the lid before baking is not optional: it is what turns the top crust from pale and dull to the golden-brown that a pie deserves." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "shortcrust-pastry", "amount": 600, "unit": "g", "prepNote": "shop-bought or homemade, chilled", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-chicken", "amount": 1, "unit": "each", "prepNote": "roasted or poached, meat pulled; or 600 g cooked chicken thigh meat", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "gammon", "amount": 300, "unit": "g", "prepNote": "cooked gammon or ham, torn into pieces", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "leek", "amount": 2, "unit": "each", "prepNote": "cleaned and sliced into rounds", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 40, "unit": "g", "prepNote": "for the sauce", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-chicken", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": "leaves only", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for the egg wash", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt " },
+          { "type": "text", "text": "{{unsalted-butter}} of butter" },
+          { "type": "text", "text": " in a large saucepan over medium heat. Add the " },
+          { "type": "text", "text": "{{onion}} finely chopped onion" },
+          { "type": "text", "text": " and cook gently for 8 minutes until soft. Add the leeks and cook for 3 minutes. Stir in " },
+          { "type": "text", "text": "{{plain-flour}} of flour" },
+          { "type": "text", "text": " and cook for 2 minutes. Gradually add " },
+          { "type": "text", "text": "{{stock-chicken}} of chicken stock" },
+          { "type": "text", "text": ", stirring constantly. Add the " },
+          { "type": "text", "text": "{{double-cream}} of cream" },
+          { "type": "text", "text": " and thyme leaves. Simmer for 5 minutes until the sauce is thick enough to coat the back of a spoon. Season generously. Off the heat, stir in the pulled chicken and ham. Cool completely before filling the pie." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Line the dish and fill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "On a lightly floured surface, roll out two thirds of the " },
+          { "type": "text", "text": "{{shortcrust-pastry}} of shortcrust pastry" },
+          { "type": "text", "text": " to 4 mm thickness. Use it to line a deep 23-24 cm pie dish, leaving an overhang. Chill for 30 minutes. Spoon in the cooled filling. Roll the remaining pastry for the lid. Dampen the pastry rim with water and lay the lid on top. Press the edges to seal and trim. Cut a steam vent in the centre. Brush the lid with beaten egg." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C (180°C fan). Bake for 50-55 minutes until the lid is deep golden and the filling is bubbling through the steam vent. If the pastry colours before the filling heats through, cover loosely with foil. Rest for 10 minutes before cutting." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Pastry base is soggy", "cause": "Filling was too wet, or the pie was assembled while the filling was still warm", "fix": "Cool the filling completely before assembling. A slightly thicker sauce (reduce by an extra 2 minutes) helps. The bottom pastry will always be softer than the top; this is normal for a fully enclosed pie." },
+            { "symptom": "Filling leaks through the lid seams during baking", "cause": "Edges not properly sealed, or filling was overfilled", "fix": "Press the edges firmly and crimp with a fork. Do not overfill; leave 1 cm of headspace." },
+            { "symptom": "Pastry lid is pale despite egg wash", "cause": "Egg wash was too thin, or the oven temperature was too low", "fix": "Use undiluted beaten egg for a darker finish. Increase the temperature to 210°C for the last 10 minutes." },
+            { "symptom": "Sauce has disappeared and the filling is dry", "cause": "Sauce was too thin before baking, and absorbed fully into the pastry", "fix": "Make the sauce thicker: it should look slightly over-sauced before going into the dish." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Chicken and ham pie is the archetypal British savoury pie: a two-crust, deep-filled pastry that turns leftover roast chicken into something that feels like occasion cooking. It has appeared in British households for centuries under various names, and its appeal has not diminished. Cold from the fridge the next day, it is arguably better than when it was first cut." }
+        ]
+      }
+    ]
+  }
+}

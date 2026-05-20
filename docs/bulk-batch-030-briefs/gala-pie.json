@@ -1,0 +1,168 @@
+{
+  "slug": "gala-pie",
+  "title": "Gala Pie",
+  "subtitle": "A large raised pork pie with a row of hard-boiled eggs embedded in the filling",
+  "excerpt": "Gala pie is a pork pie with one distinguishing feature: three or four hard-boiled eggs buried lengthways in the filling before baking. When sliced, every piece reveals a circle of egg in the centre of the pork filling. It is the British butcher's classic cold centrepiece.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional British butcher's raised pie. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: raised pie methods. British pork pie tradition, Yorkshire and East Midlands variants.",
+  "hero": {},
+  "recipe": {
+    "servings": 10,
+    "yieldDescription": null,
+    "prepMinutes": 70,
+    "cookMinutes": 100,
+    "restingMinutes": 0,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Must be made at least 8 hours ahead to allow the jelly to set. Keeps refrigerated for 3 days.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["specialOccasion", "picnic", "party"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "reduce to 180°C after the first 20 minutes",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "hand-raised-pastry", "term": "Hand-raised pastry", "definition": "A hot water crust pastry worked and moulded by hand into the shape of the pie, without using a tin as a mould. The traditional method for Melton Mowbray pork pies, which have a characteristic gently bowed shape from being raised around a wooden dolly." },
+    { "slug": "jelly-pie", "term": "Aspic jelly", "definition": "A savoury jelly made from reduced meat stock, poured through the steam hole of a raised pie after baking to fill the gap left as the meat shrinks. It sets cold and seals the pie, keeping the filling moist and giving a firm, clean-cutting texture." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Gala pie follows the same method as a standard pork pie, with one extra step: hard-boiled eggs embedded lengthways in the filling before the lid goes on. The key is packing the pork filling around the eggs firmly enough that there are no air pockets, which would prevent the jelly from sealing properly. The pie is assembled in a large loaf tin and unmoulded after baking." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Use a " },
+          { "type": "text", "text": "hand-raised pastry", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hand-raised-pastry" } }] },
+          { "type": "text", "text": " technique or, more practically at home, line a well-greased loaf tin. The " },
+          { "type": "text", "text": "aspic jelly", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "jelly-pie" } }] },
+          { "type": "text", "text": " is poured in after baking through the steam hole in the lid." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 10,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 500, "unit": "g", "prepNote": "for the hot water crust", "isOptional": false, "groupLabel": "For the hot water crust" },
+            { "ingredientSlug": "lard", "amount": 175, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the hot water crust" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": "for the pastry", "isOptional": false, "groupLabel": "For the hot water crust" },
+            { "ingredientSlug": "pork-mince", "amount": 600, "unit": "g", "prepNote": "20% fat", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sausagemeat", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sage-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "mace", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "nutmeg", "amount": 1, "unit": "tsp", "prepNote": "freshly grated", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": "for the filling", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "eggs", "amount": 5, "unit": "each", "prepNote": "4 hard-boiled and peeled, 1 beaten for egg wash", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 200, "unit": "ml", "prepNote": "for the jelly", "isOptional": false, "groupLabel": "For the jelly" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the hot water crust and line the tin" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sift " },
+          { "type": "text", "text": "{{plain-flour}} of flour" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " into a bowl. Heat " },
+          { "type": "text", "text": "{{lard}} of lard" },
+          { "type": "text", "text": " with 200 ml of water until just boiling. Pour into the flour and stir quickly until the dough comes together. Work while warm. Reserve a quarter for the lid; press the rest evenly into a well-greased 900 g loaf tin, pushing it up the sides to 5 mm thickness." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill with pork and eggs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mix the " },
+          { "type": "text", "text": "{{pork-mince}} of pork mince" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{sausagemeat}} of sausagemeat" },
+          { "type": "text", "text": " with the sage, " },
+          { "type": "text", "text": "{{mace}} of mace" },
+          { "type": "text", "text": ", " },
+          { "type": "text", "text": "{{nutmeg}} of nutmeg" },
+          { "type": "text", "text": ", pepper, and filling salt. Press half the pork mixture into the lined tin. Lay the 4 hard-boiled eggs end-to-end in a row down the centre. Pack the remaining pork firmly around and over the eggs so there are no gaps. Roll the lid pastry and seal on top; make a steam hole and brush with beaten egg." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake and jelly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C (180°C fan). Bake for 20 minutes, then reduce to 180°C (160°C fan) for a further 70-80 minutes. A probe through the steam hole should read 75°C. Cool in the tin for 1 hour, then turn out. Heat the stock, pour slowly through the steam hole, and refrigerate for at least 8 hours. Slice with a sharp serrated knife." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Eggs have sunk to the bottom of the pie when sliced", "cause": "Not enough pork packed under the eggs to hold them central", "fix": "Press a thick layer of pork into the tin first, ensuring the eggs sit in the middle third of the tin height." },
+            { "symptom": "Egg white is grey-green around the yolk", "cause": "Hard-boiled eggs were overcooked", "fix": "Boil eggs for 8-9 minutes only, then plunge immediately into cold water. Overcooked eggs will have a sulphurous ring but still taste fine." },
+            { "symptom": "Jelly has not set after 8 hours", "cause": "Stock was not gelatine-rich enough", "fix": "Dissolve 2 tsp gelatine powder in 2 tbsp cold water, then stir into the hot stock before pouring." },
+            { "symptom": "Pastry walls are thin and cracking", "cause": "Pastry was worked when it had cooled too much and become brittle", "fix": "Work quickly: the pastry must be pressed into the tin while still warm and pliable." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Gala pie is the butcher's counter showpiece and the village fete centrepiece. The egg line running down the middle of each slice is the point: it transforms a plain pork pie into something that looks considered and celebratory. It is picnic food in the best British tradition." }
+        ]
+      }
+    ]
+  }
+}

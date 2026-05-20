@@ -1,0 +1,172 @@
+{
+  "slug": "rabbit-pie",
+  "title": "Rabbit Pie",
+  "subtitle": "Slow-braised wild rabbit in a mustard and cream sauce, under a puff pastry lid",
+  "excerpt": "Rabbit is the most underused British meat: cheap, lean, and flavourful. Jointed and braised in white wine with mustard and cream, then set under a puff pastry lid, it makes a deeply satisfying pie that takes less effort than it suggests.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional British game cookery. Jane Grigson, English Food (1974): rabbit in mustard sauce. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: rabbit pie method. Traditional British farmhouse cooking.",
+  "hero": {},
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 120,
+    "restingMinutes": 10,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The braised filling must be made a day ahead and cooled completely before the pie is assembled.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "slowSunday", "hearty"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven for the pastry lid",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "jointing-rabbit", "term": "Jointing", "definition": "Cutting a whole rabbit into portions at the joints: two back legs, two front legs, the saddle (back), and the rib section. Butchers will joint a rabbit on request; it takes about 5 minutes to do yourself with a heavy knife." },
+    { "slug": "mustard-cream-sauce", "term": "Mustard cream sauce", "definition": "A French-derived sauce made by deglazing a pan with white wine, adding cream, and finishing with Dijon mustard off the heat. The mustard must be added at the end; prolonged cooking destroys its sharpness. It is the classic French treatment for rabbit and chicken." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rabbit is a lean meat that benefits from the same approach as pheasant: a little fat added during cooking and a method that adds moisture. Ask the butcher to " },
+          { "type": "text", "text": "joint", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "jointing-rabbit" } }] },
+          { "type": "text", "text": " the rabbit for you when you buy it. Here the fat comes from lardons fried at the start, and the moisture from a white wine and cream sauce. The result, after the rabbit has braised for 90 minutes, is meat that pulls from the bones with no resistance." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After braising, pick all the meat from the bones before filling the pie. The small bones of a rabbit leg are easy to find when you are looking for them, but embarrassing in a pie when you are not. A " },
+          { "type": "text", "text": "mustard cream sauce", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mustard-cream-sauce" } }] },
+          { "type": "text", "text": " finishes the braising liquid; the mustard goes in off the heat, not into the hot pan." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "rabbit", "amount": 1, "unit": "each", "prepNote": "jointed into 6-8 pieces by the butcher", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lardons", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "white-wine-dry", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dijon-mustard", "amount": 2, "unit": "tsp", "prepNote": "added off the heat", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "puff-pastry", "amount": 320, "unit": "g", "prepNote": "ready-rolled", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for the egg wash", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise the rabbit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fry the " },
+          { "type": "text", "text": "{{lardons}} of lardons" },
+          { "type": "text", "text": " in a casserole until golden. Remove and set aside. Brown the rabbit pieces in the same fat. Remove and set aside. Soften the onion for 5 minutes. Add garlic, thyme, and bay. Return the rabbit and lardons. Pour over " },
+          { "type": "text", "text": "{{white-wine-dry}} of white wine" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{stock-chicken}} of chicken stock" },
+          { "type": "text", "text": ". Cover and braise over low heat or in a 160°C oven for 90 minutes until the meat pulls from the bones. Transfer the rabbit to a board, pick all the meat from the bones, and discard the bones. Return the meat to the braising liquid." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the sauce and fill the pie" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stir in the " },
+          { "type": "text", "text": "{{double-cream}} of cream" },
+          { "type": "text", "text": " and simmer for 5 minutes to reduce the sauce. Season with " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": ". Off the heat, stir in the " },
+          { "type": "text", "text": "{{dijon-mustard}} of Dijon mustard" },
+          { "type": "text", "text": ". Cool completely and refrigerate until cold. Spoon into the pie dish. Lay the " },
+          { "type": "text", "text": "{{puff-pastry}} of puff pastry" },
+          { "type": "text", "text": " over the top, press and trim the edges, score, cut a vent, and brush with beaten egg." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C (180°C fan). Bake for 35-40 minutes until the pastry is deep golden and the filling is bubbling. Rest for 10 minutes before cutting." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Meat is tough after 90 minutes of braising", "cause": "Heat was too low, or the rabbit was older and needs longer", "fix": "Continue braising in 20-minute increments. Wild rabbit can take up to 2 hours." },
+            { "symptom": "Sauce is very thin", "cause": "Lid was left off during braising, allowing too much evaporation", "fix": "Braise with the lid on. If the sauce is thin when finished, reduce it by simmering uncovered for 10 minutes before adding cream." },
+            { "symptom": "Small bones in the finished pie", "cause": "Rabbit has many small rib and vertebral bones that are easy to miss", "fix": "Work slowly and carefully when picking the meat. Run fingers through the shredded meat feeling for hard pieces." },
+            { "symptom": "Mustard taste is absent", "cause": "Mustard was added while the sauce was still hot", "fix": "Always add Dijon mustard off the heat; it loses its sharpness if cooked for more than a minute." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rabbit pie appears in almost every British period cookery book from Mrs Beeton onwards. Wild rabbit was a staple protein in the British countryside for centuries, and the pie was the most reliable way to make a whole rabbit feed four people. Today it sits on the menu of gastropubs and farmhouse restaurants as a seasonal special, usually with a note about it being local wild rabbit." }
+        ]
+      }
+    ]
+  }
+}

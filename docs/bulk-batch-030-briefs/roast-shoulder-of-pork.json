@@ -1,0 +1,170 @@
+{
+  "slug": "roast-shoulder-of-pork",
+  "title": "Roast Shoulder of Pork",
+  "subtitle": "Eight hours in a low oven until the meat pulls apart under a fork",
+  "excerpt": "Shoulder is the cut that rewards patience. Eight hours at 150°C renders the fat, breaks down the collagen, and produces meat that pulls apart in long fibres. The crackling comes last: twenty minutes at 240°C after the foil comes off.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional British slow-roast pork practice. Fergus Henderson, The Whole Beast (1999): shoulder slow-roast technique. Delia Smith, Complete Cookery Course (1978): shoulder timing and crackling method. Cross-referenced across multiple sources.",
+  "hero": {},
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 510,
+    "restingMinutes": 20,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Pulled pork freezes well for up to 3 months. Cool completely, pack into portions, and freeze without the crackling. The crackling does not survive freezing.",
+    "batchable": true,
+    "batchNotes": "A larger shoulder (3 kg) feeds 10-12 and follows the same method with an extra 2 hours in the oven. The pulled meat reheats well on the hob with a splash of cider.",
+    "makeAheadNotes": "Score the skin and rub with salt 24 hours ahead, then refrigerate uncovered. The dry skin makes far better crackling.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "comfortFood", "hearty"],
+    "temperatureCelsius": 150,
+    "temperatureNote": "all day; blast at 240°C for crackling at the end",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "carving-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "crackling", "term": "Crackling", "definition": "The crisp, blistered, salted skin of roasted pork, achieved by scoring the skin deeply, drying it thoroughly, and finishing at high heat to puff the fat between the scored lines." },
+    { "slug": "collagen", "term": "Collagen", "definition": "A tough connective protein found in working muscles like shoulder and shank. At temperatures above 70°C sustained over several hours, collagen dissolves into gelatin, giving pulled or braised meat its soft, yielding texture." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pork shoulder is a forgiving cut once you accept that it needs time rather than precision. Unlike a loin or a leg, where a degree or two of overcooking matters, the shoulder improves the longer it goes. The " },
+          { "type": "text", "text": "collagen", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "collagen" } }] },
+          { "type": "text", "text": " running through the muscle breaks down slowly into gelatin, leaving meat that is unctuous and pulls apart under a fork rather than slicing cleanly. Budget 8 hours for a 2 kg bone-in shoulder." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The crackling is a separate project from the slow roast. You need a very hot oven for the final 20 minutes, a bone-dry skin surface, and deep parallel scoring with a sharp knife. If the crackling does not blister during the final blast, a kitchen torch passed quickly over the surface will finish the job." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "pork-shoulder", "amount": 2000, "unit": "g", "prepNote": "bone-in, skin on, deeply scored by butcher", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 3, "unit": "tsp", "prepNote": "rubbed well into the scoring", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "fennel-seeds", "amount": 2, "unit": "tsp", "prepNote": "lightly crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dry-cider", "amount": 200, "unit": "ml", "prepNote": "for the roasting pan", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "apple-eating", "amount": 2, "unit": "each", "prepNote": "quartered, for the trivet", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Season the skin 24 hours ahead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pat the skin completely dry. Rub " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " firmly into all the score lines, then work " },
+          { "type": "text", "text": "{{fennel-seeds}} of fennel seeds" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": " over the flesh side. Leave uncovered in the fridge overnight. The salt draws moisture from the skin, which is essential for crisp " },
+          { "type": "text", "text": "crackling", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "crackling" } }] },
+          { "type": "text", "text": "." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Slow roast" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 150°C (130°C fan). Place the " },
+          { "type": "text", "text": "{{onion}} halved onions" },
+          { "type": "text", "text": " and apple quarters in the roasting pan. Pour in " },
+          { "type": "text", "text": "{{dry-cider}} of dry cider" },
+          { "type": "text", "text": ". Set the shoulder skin-up on top. Roast for 8 hours, checking every 2 hours that there is still liquid in the pan and adding water if needed. The internal temperature should reach at least 88°C for proper pull." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blast for crackling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remove the joint and pour the pan juices into a jug. Return the shoulder to the pan. Increase the oven to 240°C (220°C fan) and roast for 20 minutes until the crackling is deeply blistered and golden. Watch it closely: at this temperature it can scorch in minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pull and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rest the joint for 20 minutes. Lift away the crackling in shards and set aside. Use two forks to pull the meat apart in long fibres directly in the pan. Strain the reserved juices over the meat and serve with the crackling pieces on top." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Crackling remains leathery and pale after 20 minutes at 240°C", "cause": "Skin was still slightly damp when it went into the high-heat phase", "fix": "Pat the skin with kitchen paper before the final blast. If still pale, increase to 250°C for 5 minutes or use a kitchen torch." },
+            { "symptom": "Meat is not pulling apart after 8 hours", "cause": "Internal temperature has not reached 88°C, or the joint is larger than expected", "fix": "Continue cooking in 30-minute increments until the meat yields to a fork at the shoulder blade." },
+            { "symptom": "Pan has dried out and the bottom is scorching", "cause": "Insufficient liquid at the start or evaporation in a very dry oven", "fix": "Add 200 ml of water or cider. Check the pan every 2 hours." },
+            { "symptom": "Crackling breaks into shards when lifted", "cause": "This is correct behaviour; well-made crackling should be brittle and crisp", "fix": "This is not a problem. Serve the shards alongside the pulled meat." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Slow-roasted shoulder has become a fixture of the long Sunday lunch in the same way that pulled pork crossed into British cooking via American barbecue influence. The method owes something to Caribbean jerk traditions and something to the British farmhouse tradition of all-day cooking. Serve with apple sauce, roast potatoes, and a green vegetable. Any leftovers reheat beautifully the next day." }
+        ]
+      }
+    ]
+  }
+}

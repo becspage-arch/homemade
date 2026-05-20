@@ -1,0 +1,176 @@
+{
+  "slug": "vegan-wellington",
+  "title": "Vegan Wellington",
+  "subtitle": "Mushroom, chestnut, Puy lentil, and walnut filling in dairy-free puff pastry",
+  "excerpt": "A vegan wellington replaces the cream cheese of a vegetarian version with Puy lentils, which give structure and an earthy depth. The method is the same as a standard wellington: cook the filling completely dry, cool it, wrap in dairy-free puff pastry, chill, and bake at high heat.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Contemporary British vegan cooking. Developed from the beef Wellington tradition and the wider vegetarian centrepiece tradition. Dairy-free puff pastry (made with vegetable fat) has been commercially available in British supermarkets since the 2000s.",
+  "hero": {},
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 45,
+    "cookMinutes": 40,
+    "restingMinutes": 10,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the assembled but unbaked wellington for up to 1 month. Bake from frozen at 200°C for 55-60 minutes, tenting with foil if the pastry colours too quickly.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The filling can be made a day ahead and refrigerated. Assemble and wrap on the day, chill, then bake.",
+    "dietaryFlags": ["V", "v"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["party", "slowSunday", "comfortFood"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "vegan-wellington-binding", "term": "Lentil binding in vegan wellington", "definition": "Without cream cheese or egg, the vegan wellington filling relies on the starch from Puy lentils and the fat from walnuts for structure. Puy lentils hold their shape better than red lentils and provide a firmer, denser base. The critical step is cooking all excess moisture from the mushrooms and spinach before the lentils are added; any remaining liquid will collapse the pastry from inside." },
+    { "slug": "oat-milk-egg-wash", "term": "Oat milk glaze", "definition": "Oat milk makes a workable vegan glaze: it contains enough starch to brown during baking and gives a closer result to egg wash than plain water or non-dairy butter. Brush on two thin coats, allowing the first to dry for 5 minutes before the second, for an even golden finish. Use unsweetened oat milk; sweetened versions can cause uneven browning." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The vegan wellington uses the same structure as the vegetarian version but with Puy lentils in place of cream cheese. The " },
+          { "type": "text", "text": "lentil binding", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vegan-wellington-binding" } }] },
+          { "type": "text", "text": " gives a firmer, denser filling that slices cleanly and holds together without any dairy. The technique of cooking all moisture from the filling before assembly is even more important here: lentils add starch but they cannot compensate for a wet filling." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Use dairy-free puff pastry: most supermarket own-brand ready-rolled puff pastry is made with vegetable fat rather than butter and is suitable for vegans; check the packet. An " },
+          { "type": "text", "text": "oat milk glaze", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "oat-milk-egg-wash" } }] },
+          { "type": "text", "text": " gives a good golden finish without eggs." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "mushrooms-portobello", "amount": 4, "unit": "each", "prepNote": "stalks removed, chopped finely for the filling", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "spinach", "amount": 300, "unit": "g", "prepNote": "wilted and squeezed completely dry", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "chestnut-cooked", "amount": 200, "unit": "g", "prepNote": "vacuum-packed, roughly chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "walnuts", "amount": 100, "unit": "g", "prepNote": "roughly chopped and toasted", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "puy-lentils", "amount": 200, "unit": "g", "prepNote": "cooked weight, from approx. 90g dry; drain well", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": "leaves only", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "dijon-mustard", "amount": 2, "unit": "tsp", "prepNote": "for spreading on the pastry; check it is vegan", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "puff-pastry", "amount": 500, "unit": "g", "prepNote": "dairy-free: check packet for vegetable fat rather than butter", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "oat-milk", "amount": 30, "unit": "ml", "prepNote": "unsweetened, for the glaze", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and cool the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat " },
+          { "type": "text", "text": "{{olive-oil}} of olive oil" },
+          { "type": "text", "text": " in a large frying pan over medium-high heat. Cook the onion for 5 minutes. Add garlic, mushroom stalks, and thyme and cook for 3 minutes. Add the " },
+          { "type": "text", "text": "{{spinach}} of spinach" },
+          { "type": "text", "text": " and cook until wilted. Press out all liquid through a sieve. Return to the pan and cook until the pan is completely dry. Season with " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": ". Transfer to a bowl. Fold in the " },
+          { "type": "text", "text": "{{puy-lentils}} of Puy lentils" },
+          { "type": "text", "text": ", " },
+          { "type": "text", "text": "{{chestnut-cooked}} of chestnuts" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{walnuts}} of toasted walnuts" },
+          { "type": "text", "text": ". Taste and adjust seasoning. Cool completely, then refrigerate until cold and firm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Wrap and chill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C (180°C fan). Sear the whole portobello mushrooms in a hot, dry pan for 2 minutes per side. On a lightly floured surface, roll out the " },
+          { "type": "text", "text": "{{puff-pastry}} of puff pastry" },
+          { "type": "text", "text": " to a large rectangle. Brush with " },
+          { "type": "text", "text": "{{dijon-mustard}} of Dijon mustard" },
+          { "type": "text", "text": ". Arrange the portobello mushrooms in a row down the centre. Spoon the cold filling over and around the mushrooms and shape into a firm log. Fold the pastry over, seal the edges firmly, and place seam-side down on a lined baking tray. Score the top. Refrigerate for 30 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Glaze and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Brush the wellington with " },
+          { "type": "text", "text": "{{oat-milk}} of oat milk" },
+          { "type": "text", "text": ". Allow to dry for 5 minutes, then apply a second coat. Bake for 35-40 minutes until deep golden. Rest for 10 minutes before slicing with a serrated knife." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Pastry base is soggy", "cause": "Excess moisture in the filling", "fix": "Cook the mushrooms and spinach until completely dry before combining with the lentils. The pan should be fully dry; no pooling liquid." },
+            { "symptom": "Filling is too loose to slice", "cause": "Lentils not drained well enough, or filling not chilled before baking", "fix": "Drain lentils thoroughly and pat dry. Refrigerate the filled wellington for at least 30 minutes before baking." },
+            { "symptom": "Oat milk glaze is patchy or pale", "cause": "One coat applied, or milk was sweetened", "fix": "Use unsweetened oat milk. Apply two thin coats, allowing the first to dry between applications." },
+            { "symptom": "Pastry is not vegan", "cause": "Bought butter-enriched puff pastry rather than vegetable-fat", "fix": "Check the ingredients panel: dairy-free puff pastry lists vegetable fat or palm oil rather than butter. Most own-brand supermarket ready-rolled puff pastry is dairy-free." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The vegan wellington has become the default centrepiece for vegan guests at British Christmas and Sunday tables. Its success depends on using the same technique as a meat wellington: careful preparation, a dry filling, and the patience to chill before baking. Made well, it competes on equal terms with the vegetarian version and holds its own alongside a full roast. Serve with roast potatoes, a mushroom gravy, and seasonal green vegetables." }
+        ]
+      }
+    ]
+  }
+}

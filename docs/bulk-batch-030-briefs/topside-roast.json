@@ -1,0 +1,168 @@
+{
+  "slug": "topside-roast",
+  "title": "Topside Roast",
+  "subtitle": "A lean Sunday joint cooked low and slow for easy carving",
+  "excerpt": "Topside is the leaner alternative to rib and sirloin: tighter-grained, more economical, and forgiving if you pull it slightly past medium. Cooked low and slow with a vegetable trivet, then rested generously, it carves cleanly and makes an excellent base for leftovers.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: topside preparation and boiling methods. Jane Grigson, English Food (1974): lean beef roasting notes. Traditional British home-cooking practice, cross-referenced across period sources.",
+  "hero": {},
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 100,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Season the joint the night before and leave uncovered in the fridge to dry the surface. Bring to room temperature 1 hour before cooking.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "hearty", "comfortFood"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "fan oven recommended for even cooking",
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "carving-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "topside", "term": "Topside", "definition": "A lean boneless cut from the inner thigh of the hindquarter. Tighter-grained than rib or sirloin, it suits slow roasting at a lower temperature and should be served no more than medium to stay tender." },
+    { "slug": "trivet", "term": "Trivet", "definition": "A base of halved vegetables placed under a roasting joint to lift it off the pan base, allowing hot air to circulate underneath and providing aromatics for the gravy." }
+  ],
+  "techniqueSlugs": ["making-gravy"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Topside is the joint that rewards the economical cook. Cheaper than fore rib or sirloin, it still delivers a satisfying Sunday lunch when treated correctly: low heat, a good thermometer, and a proper rest. The tighter grain means it carves beautifully into thin, even slices, and any leftover beef makes excellent sandwiches the next day." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Unlike the fattier rib, " },
+          { "type": "text", "text": "topside", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "topside" } }] },
+          { "type": "text", "text": " dries quickly if overcooked. Pull it at 60°C internal for a rosy-pink result, 65°C for medium. Anything beyond 70°C and the texture loses its appeal. The joint weighs roughly 1.5 kg for six servings; allow about 15 minutes per 500 g at 160°C after a short initial blast." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-sirloin", "amount": 1500, "unit": "g", "prepNote": "topside joint, rolled and tied", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": "coarsely ground", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "halved, for the trivet", "isOptional": false, "groupLabel": "For the trivet" },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "halved lengthways", "isOptional": false, "groupLabel": "For the trivet" },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "snapped in half", "isOptional": false, "groupLabel": "For the trivet" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the trivet" },
+            { "ingredientSlug": "stock-beef", "amount": 300, "unit": "ml", "prepNote": "for the gravy", "isOptional": false, "groupLabel": "For the gravy" },
+            { "ingredientSlug": "red-wine", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": true, "groupLabel": "For the gravy" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the trivet and seal the joint" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220°C (200°C fan). Pat the joint dry with kitchen paper. Rub with " },
+          { "type": "text", "text": "{{olive-oil}} of olive oil" },
+          { "type": "text", "text": ", then press " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": " over all surfaces. Arrange the " },
+          { "type": "text", "text": "{{onion}} halved onions" },
+          { "type": "text", "text": ", " },
+          { "type": "text", "text": "{{carrot}} halved carrots" },
+          { "type": "text", "text": ", celery, and " },
+          { "type": "text", "text": "{{thyme}} of thyme" },
+          { "type": "text", "text": " in the roasting pan as a " },
+          { "type": "text", "text": "trivet", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trivet" } }] },
+          { "type": "text", "text": ". Set the joint on top and roast for 20 minutes to colour the outside." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Slow roast to temperature" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drop the oven to 160°C (140°C fan). Roast until the centre reaches 60°C for pink-and-juicy or 65°C for medium, probing away from any connective tissue seams. Start checking after 45 minutes and probe every 10 minutes thereafter." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rest and make gravy" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the joint to a warm board, cover loosely with foil, and rest for 30 minutes. Pour off excess fat from the roasting pan, leaving the vegetables and any dark fond. Set over medium heat, add " },
+          { "type": "text", "text": "{{red-wine}} of red wine" },
+          { "type": "text", "text": " if using, and scrape up the sediment. Add " },
+          { "type": "text", "text": "{{stock-beef}} of beef stock" },
+          { "type": "text", "text": " and simmer until reduced by a third. Strain into a warm jug before serving." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Slices are dry and grey rather than pink", "cause": "Joint cooked past 70°C internal", "fix": "Use a thermometer and check early. Topside dries out quickly past medium. Slicing thin and serving with plenty of gravy helps rescue an overcooked joint." },
+            { "symptom": "The joint is unevenly cooked, well done at the ends and rare in the middle", "cause": "Joint was very cold when it went in, or oven has hot spots", "fix": "Always rest at room temperature for at least 1 hour before cooking. Rotating the pan halfway through helps with oven hot spots." },
+            { "symptom": "The string is cutting into the meat", "cause": "Tied too tightly or meat swelled more than expected", "fix": "Snip and remove the strings before resting. The joint will hold its shape." },
+            { "symptom": "Gravy is too pale", "cause": "Trivet vegetables did not caramelise enough", "fix": "Let the roasting pan sit over high heat for 2 minutes before adding liquid to deepen the colour." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Topside has been the thrifty Sunday joint of British households for generations. Where the rib is a show-off cut, topside is the workhorse: good on the day, better cold the next day in a sandwich with mustard and horseradish. Serve with roast potatoes, seasonal greens, and the gravy from the pan." }
+        ]
+      }
+    ]
+  }
+}

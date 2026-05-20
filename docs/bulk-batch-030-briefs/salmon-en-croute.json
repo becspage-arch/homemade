@@ -1,0 +1,158 @@
+{
+  "slug": "salmon-en-croute",
+  "title": "Salmon en Croute",
+  "subtitle": "A whole salmon fillet wrapped in puff pastry with spinach and dill, baked until golden",
+  "excerpt": "Salmon en croute is a whole salmon fillet sandwiched with wilted spinach, dill, and cream cheese inside a sealed puff pastry case. It looks impressive, bakes in 25 minutes, and holds well for 15 minutes after coming out of the oven.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "French en croute technique applied to British salmon. Delia Smith, Complete Cookery Course (1978): salmon in pastry method. Elizabeth David, French Provincial Cooking (1960): en croute principles. British dinner party staple from the 1970s onwards.",
+  "hero": {},
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 25,
+    "restingMinutes": 10,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The assembled but unbaked parcel can be refrigerated for up to 4 hours. Brush with egg wash just before baking.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["specialOccasion", "dateNight", "showstopper"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "high heat throughout for maximum pastry lift",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "en-croute", "term": "En croute", "definition": "French for 'in a crust'. Describes any ingredient, typically a whole fillet or joint, enclosed entirely in pastry and baked. The pastry seals in moisture and cooking juices, and peels away at the table to reveal the filling." },
+    { "slug": "egg-wash-croute", "term": "Egg wash", "definition": "Beaten egg brushed over raw pastry before baking to produce a glossy, deep golden surface. For salmon en croute, the egg wash is applied just before the parcel goes into the oven, never more than 30 minutes ahead, or the pastry base will go soft." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Salmon " },
+          { "type": "text", "text": "en croute", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "en-croute" } }] },
+          { "type": "text", "text": " is one of those dishes that looks far harder than it is. The pastry is shop-bought and ready-rolled; the filling is wilted spinach and cream cheese spread onto the salmon. The whole thing wraps around the fish in five minutes and bakes in 25. The main risk is overcooking: salmon needs to reach only 55-58°C at the centre for a translucent, moist result." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An " },
+          { "type": "text", "text": "egg wash", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "egg-wash-croute" } }] },
+          { "type": "text", "text": " is applied just before baking. The pastry must be cold when it goes in; a warm parcel will give a greasy, flat result." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "salmon-fillet", "amount": 2, "unit": "each", "prepNote": "approx. 600 g total, skin removed, even thickness", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "puff-pastry", "amount": 500, "unit": "g", "prepNote": "2 sheets ready-rolled, chilled", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spinach", "amount": 200, "unit": "g", "prepNote": "wilted and squeezed dry", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "cream-cheese", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "dill", "amount": 15, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "zest only", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for the egg wash", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wilt the " },
+          { "type": "text", "text": "{{spinach}} of spinach" },
+          { "type": "text", "text": " in a dry frying pan for 2 minutes, then tip onto a clean cloth and squeeze out as much moisture as possible. Chop roughly. Mix with the cream cheese, most of the " },
+          { "type": "text", "text": "{{dill}} of dill" },
+          { "type": "text", "text": ", the lemon zest, " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": ". Taste; the mixture should be well seasoned." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Wrap and chill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lay one sheet of pastry on a lightly floured surface. Place one salmon fillet in the centre. Spread the spinach mixture over the top, then lay the second salmon fillet on top to form a sandwich. Lay the second pastry sheet over the top, tucking it under the base sheet all around. Trim the edges to 2 cm, then seal by crimping with a fork. Transfer to a baking tray lined with baking paper. Chill for 30 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake and rest" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220°C (200°C fan). Score the surface of the pastry lightly in a diagonal pattern, being careful not to cut through to the filling. Brush all over with beaten egg. Bake for 22-25 minutes until deeply golden and puffed. Rest for 10 minutes before slicing with a sharp knife." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Pastry base is soggy", "cause": "Spinach was not squeezed dry enough, releasing moisture during baking", "fix": "Squeeze the cooked spinach very hard in a clean cloth or several layers of kitchen paper. The filling must be dry before it touches the pastry." },
+            { "symptom": "Salmon is overcooked and dry inside", "cause": "Baked at too low a temperature, extending the time in the oven", "fix": "220°C is deliberate. High heat cooks the pastry quickly before the salmon has time to overcook. Probe through the side: 55°C is translucent and moist, 60°C is fully opaque." },
+            { "symptom": "Pastry bursts open at the seam", "cause": "Seam was not sealed well enough, or the filling was overstuffed", "fix": "Dampen the seam edges and crimp firmly. Make sure there is a 2 cm border of plain pastry all around." },
+            { "symptom": "The parcel is flat and unimpressive after baking", "cause": "Parcel was warm when it went into the oven, or pastry was warm", "fix": "Chill the assembled parcel for at least 30 minutes. Cold pastry rises higher and crisps better." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Salmon en croute was a 1970s dinner party staple in Britain, made fashionable by a generation of cooks discovering French technique applied to British ingredients. It has never entirely left the repertoire because it delivers: a beautiful golden parcel that slices cleanly, holds its shape, and needs nothing more than a cucumber salad or simple vegetables alongside." }
+        ]
+      }
+    ]
+  }
+}

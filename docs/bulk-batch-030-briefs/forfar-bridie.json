@@ -1,0 +1,158 @@
+{
+  "slug": "forfar-bridie",
+  "title": "Forfar Bridie",
+  "subtitle": "A Scottish hand pie of seasoned beef and onion folded into a half-moon pastry",
+  "excerpt": "The Forfar bridie is a Scottish savoury pasty: seasoned beef mince and onion enclosed in a rough hot water crust pastry folded into a half-moon and crimped on top, not along the side as with a Cornish pasty. It is a lunch-box staple from Angus.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional Scottish baking from Forfar, Angus. F. Marian McNeill, The Scots Kitchen (1929): bridie recipe with suet pastry. Traditional Scots hand-pie practice, Tayside region.",
+  "hero": {},
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 45,
+    "restingMinutes": 5,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unbaked bridies for up to 2 months. Bake from frozen at 190°C for 55-60 minutes.",
+    "batchable": true,
+    "batchNotes": "The recipe doubles easily. Make a larger batch and freeze half.",
+    "makeAheadNotes": "Assembled unbaked bridies can be refrigerated for up to 24 hours. Egg wash just before baking.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "hearty", "picnic"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven throughout",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "bridie-history", "term": "Bridie", "definition": "A Scottish savoury pastry from the town of Forfar in Angus, traditionally filled with beef and onion in a hot water or shortcrust pastry case, folded into a horseshoe or half-moon and crimped along the top edge rather than the side. Bridies are distinct from Cornish pasties in shape, pastry type, and filling." },
+    { "slug": "horseshoe-crimp", "term": "Horseshoe crimp", "definition": "The distinctive top crimp of a Forfar bridie, formed by pressing two layers of pastry together and folding and twisting the overlapping edge into a series of small flutes along the curved top of the half-moon shape." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "text": "bridie", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bridie-history" } }] },
+          { "type": "text", "text": " differs from the Cornish pasty in one key respect: it is crimped along the top of the curved edge, not along the side. The filling is raw seasoned beef, onion, and nothing more; no potato, no carrot. This simplicity is the point." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The traditional pastry was made with suet; shortcrust is an acceptable modern substitute. The " },
+          { "type": "text", "text": "horseshoe crimp", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "horseshoe-crimp" } }] },
+          { "type": "text", "text": " takes practice but is not structurally necessary: a simple fork-pressed edge seals equally well." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "shortcrust-pastry", "amount": 500, "unit": "g", "prepNote": "shop-bought or homemade, chilled", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "beef-mince", "amount": 400, "unit": "g", "prepNote": "20% fat, or diced beef skirt", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "very finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": "coarsely ground", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": "For the filling" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for the egg wash", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mix the " },
+          { "type": "text", "text": "{{beef-mince}} of beef mince" },
+          { "type": "text", "text": " with the " },
+          { "type": "text", "text": "{{onion}} finely chopped onion" },
+          { "type": "text", "text": ", " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": ", " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": " and Worcestershire sauce if using. The filling must be raw when it goes into the pastry. Do not add stock or egg; the natural juices are sufficient." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and crimp" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Divide the " },
+          { "type": "text", "text": "{{shortcrust-pastry}} of pastry" },
+          { "type": "text", "text": " into 4 equal pieces. Roll each into a rough oval about 22 cm long and 3-4 mm thick. Place a quarter of the filling on one half of each oval, leaving a 2 cm border. Moisten the border with water. Fold the empty half over the filling to form a half-moon and press the edges firmly together. Crimp with a fork along the curved top edge. Chill for 30 minutes on a lined baking tray." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C (180°C fan). Brush the bridies with beaten egg. Make a small steam vent in the top of each. Bake for 40-45 minutes until deeply golden. Rest for 5 minutes before serving." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Juices leak from the seam during baking", "cause": "Edge not sealed firmly enough, or too much filling used", "fix": "Press and crimp firmly; moisten the edges before joining. Leave a 2 cm unfilled border." },
+            { "symptom": "Filling is dry inside", "cause": "Beef mince was too lean, or overbaked", "fix": "Use mince with at least 20% fat. Pull the bridies at 40 minutes." },
+            { "symptom": "Pastry is pale", "cause": "Oven temperature lower than expected", "fix": "Check with an oven thermometer. Brush with undiluted beaten egg before baking." },
+            { "symptom": "Pastry shrinks and uncovers the filling", "cause": "Pastry was stretched rather than rolled to size", "fix": "Roll to size without pulling; stretched pastry always springs back in the oven." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Forfar bridies come from the town of Forfar in Angus, Scotland, where they have been sold by bakers since at least the 1850s. They remain a staple in Scottish baker's shops and butchers, and are a regional counterpart to the English pasty tradition. Eaten hot from the oven or cold for a packed lunch, they need nothing alongside." }
+        ]
+      }
+    ]
+  }
+}

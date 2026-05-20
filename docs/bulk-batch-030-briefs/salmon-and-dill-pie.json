@@ -1,0 +1,172 @@
+{
+  "slug": "salmon-and-dill-pie",
+  "title": "Salmon and Dill Pie",
+  "subtitle": "Flaked salmon in a cream and dill sauce, topped with a golden puff pastry crust",
+  "excerpt": "Salmon and dill are one of the most reliable flavour pairings in British cooking. This pie poaches salmon fillets in stock and white wine, flakes them into a thick cream and dill sauce, and finishes with a puff pastry lid baked until crisp and golden.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional British fish pie. Jane Grigson, Fish Cookery (1973): salmon with cream sauce and herbs. Delia Smith, Complete Cookery Course (1978): fish pie with puff pastry. British summer entertaining tradition.",
+  "hero": {},
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 45,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The filling can be made and cooled a day ahead. Assemble and bake on the day.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["specialOccasion", "comfortFood", "summery"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven throughout",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "court-bouillon", "term": "Court-bouillon", "definition": "A lightly flavoured poaching liquid, typically water with white wine, herbs, and aromatics, used to gently cook fish. It adds flavour without overwhelming the fish and, strained, can be used to build a sauce." },
+    { "slug": "dill-herb", "term": "Dill", "definition": "A feathery, anise-flavoured herb with a particular affinity for salmon, cucumber, and cream. British and Scandinavian fish cookery uses it extensively; the volatile flavour compounds are destroyed by heat, so add dill off the flame or just before serving." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Salmon for a pie should be poached rather than roasted. A brief poach in a " },
+          { "type": "text", "text": "court-bouillon", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "court-bouillon" } }] },
+          { "type": "text", "text": " of white wine and herbs leaves the flesh tender and the poaching liquid flavoured enough to become the sauce base. Flake the fish into large pieces rather than fine shreds; you want identifiable chunks of salmon in the finished pie." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add the " },
+          { "type": "text", "text": "dill", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dill-herb" } }] },
+          { "type": "text", "text": " off the heat, after the sauce has finished cooking. Dill loses its fragrance quickly at high temperatures." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "salmon-fillet", "amount": 4, "unit": "each", "prepNote": "approx. 150 g each, skin-on", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "white-wine-dry", "amount": 150, "unit": "ml", "prepNote": "for the poaching liquid", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 200, "unit": "ml", "prepNote": "for the poaching liquid", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dill", "amount": 20, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "capers", "amount": 1, "unit": "tbsp", "prepNote": "rinsed", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "plain-flour", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "puff-pastry", "amount": 320, "unit": "g", "prepNote": "ready-rolled, chilled", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for the egg wash", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Poach the salmon" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the " },
+          { "type": "text", "text": "{{white-wine-dry}} of white wine" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{stock-chicken}} of stock" },
+          { "type": "text", "text": " in a wide saucepan. Bring to a simmer and lay in the salmon fillets skin-down. Poach for 6-8 minutes until the flesh just flakes at the thickest point. Remove the fish, peel away the skin, and flake into large pieces. Reserve the poaching liquid." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt " },
+          { "type": "text", "text": "{{unsalted-butter}} of butter" },
+          { "type": "text", "text": " in a saucepan. Stir in " },
+          { "type": "text", "text": "{{plain-flour}} of flour" },
+          { "type": "text", "text": " and cook for 2 minutes. Gradually add the strained poaching liquid, stirring until smooth. Add " },
+          { "type": "text", "text": "{{double-cream}} of cream" },
+          { "type": "text", "text": " and simmer until the sauce thickens to a consistency that coats a spoon heavily. Season with " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": ". Off the heat, stir in most of the " },
+          { "type": "text", "text": "{{dill}} of dill" },
+          { "type": "text", "text": " and the capers if using. Fold in the salmon. Cool completely." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Top and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C (180°C fan). Spoon the cooled filling into the pie dish. Lay the " },
+          { "type": "text", "text": "{{puff-pastry}} of puff pastry" },
+          { "type": "text", "text": " over the top and press the edges to the rim. Score the surface lightly and cut a steam vent. Brush with beaten egg. Bake for 35-40 minutes until the pastry is deep golden and puffed. Rest for 5 minutes before serving." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Pastry is pale after 40 minutes", "cause": "Oven temperature lower than expected, or egg wash was thin", "fix": "Use undiluted beaten egg. Check oven temperature with a thermometer. A further 10 minutes at 210°C will colour pale pastry." },
+            { "symptom": "Filling leaks out at the edges", "cause": "Pastry edge was not pressed firmly to the dish rim", "fix": "Dampen the dish rim with water before pressing the pastry down. Crimp firmly with a fork." },
+            { "symptom": "Dill flavour is absent in the baked pie", "cause": "Dill was added to the sauce while it was still very hot, destroying the volatile flavour compounds", "fix": "Always add dill off the heat, after the sauce has cooled to below simmering." },
+            { "symptom": "Salmon has broken down into a paste", "cause": "Overpoached or folded too vigorously", "fix": "Poach just until the fish gives when pressed, not until it falls apart. Fold the fish in with one or two turns of a spatula." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Salmon and dill pie sits at the smarter end of the British fish pie repertoire. It is the kind of dish that appears at Easter lunches and summer weekend gatherings, made ahead, needing only the oven." }
+        ]
+      }
+    ]
+  }
+}

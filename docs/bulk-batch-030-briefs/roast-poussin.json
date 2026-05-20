@@ -1,0 +1,160 @@
+{
+  "slug": "roast-poussin",
+  "title": "Roast Poussin",
+  "subtitle": "A young bird buttered under the skin and roasted in 35 minutes, one per person",
+  "excerpt": "Poussin are young chickens weighing 400-500g, sold whole and roasted one per person. They cook in 35 minutes at high heat, need very little seasoning, and are a neater and more elegant plate than a carved roast chicken.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional British and French roasting practice. Fanny Cradock, The Ambitious Cook (1970s): poussin roasting guide. Jane Grigson, English Food (1974): small bird timing and presentation.",
+  "hero": {},
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Butter can go under the skin up to 24 hours ahead. Cover and refrigerate; bring to room temperature 30 minutes before roasting.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["dateNight", "specialOccasion", "comfortFood"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "high throughout",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "kitchen-twine", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "poussin", "term": "Poussin", "definition": "A young chicken of 4 to 6 weeks old, weighing 400 to 500 g and sold whole. One bird serves one person; the flesh is pale, fine-grained, and milder than a grown bird. The French word is standard in British butchery." },
+    { "slug": "spatchcock", "term": "Spatchcock", "definition": "Butterflying a bird by removing the backbone and pressing it flat so the breast and legs lie at the same level, giving even cooking at high heat. An alternative to roasting whole." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "text": "poussin", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "poussin" } }] },
+          { "type": "text", "text": " is the most forgiving roast you can cook: a bird so small that from cold oven door to resting board takes under an hour, and the margin for error is wide. Butter under the skin keeps the breast moist; a hot oven of 220°C gives colour quickly enough that the legs cook through before the breast dries." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "One bird per person makes serving straightforward. Each diner gets a whole roasted bird, needing no carving at the table. The alternative is to " },
+          { "type": "text", "text": "spatchcock", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "spatchcock" } }] },
+          { "type": "text", "text": " them flat, which reduces cooking time by 10 minutes and gives crispier skin all over, but the whole bird is more elegant for a dinner." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "whole-chicken", "amount": 2, "unit": "each", "prepNote": "poussin, approx. 450-500 g each, at room temperature", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": "at room temperature", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "unpeeled, crushed", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 20, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 150, "unit": "ml", "prepNote": "for the pan gravy", "isOptional": false, "groupLabel": "For the pan gravy" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Butter the birds" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220°C (200°C fan). Pat each bird dry. Ease the skin from the breast by working your fingers from the neck opening down toward the wishbone. Push " },
+          { "type": "text", "text": "{{unsalted-butter}} of butter" },
+          { "type": "text", "text": " under the skin, dividing it evenly between the two birds. Season the skin with " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": " and rub with " },
+          { "type": "text", "text": "{{olive-oil}} of olive oil" },
+          { "type": "text", "text": ". Tuck a sprig of thyme and a slice of lemon inside each cavity, along with a garlic clove if using." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roast and rest" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the birds breast-up in the roasting pan, not touching. Roast for 30-35 minutes until the skin is deep golden and the juices run clear when you pierce the thigh. A probe at the thickest part of the leg should read 75°C. Transfer to a warm plate and rest for 10 minutes before serving. The resting is brief; small birds lose heat quickly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make a quick pan gravy" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tip off most of the fat from the roasting pan. Add " },
+          { "type": "text", "text": "{{stock-chicken}} of chicken stock" },
+          { "type": "text", "text": " and scrape up any fond over medium heat. Simmer for 2 minutes, season, and strain into a warm jug." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Skin is pale after 35 minutes", "cause": "Oven was not fully preheated, or butter on the skin surface is preventing browning", "fix": "Check with an oven thermometer. A 5-minute blast at 240°C at the end will colour pale skin quickly without overcooking the flesh." },
+            { "symptom": "Juices run pink at 35 minutes", "cause": "Birds were cold from the fridge, or larger than 500 g", "fix": "Return to the oven for 5-minute increments. Always probe rather than relying on time. Cold birds take 5-10 minutes longer." },
+            { "symptom": "Breast is dry", "cause": "Overcooked or butter did not distribute evenly", "fix": "Pull birds at 75°C on the probe. Make sure butter covers both breast fillets, not just one side." },
+            { "symptom": "Legs and breast cooked unevenly", "cause": "Bird not at room temperature before roasting", "fix": "Rest birds at room temperature for 30 minutes before the oven." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Poussin fell out of fashion in British home cooking but remains a restaurant staple. They are particularly useful for a two-person dinner where a full roast chicken produces more leftovers than the occasion warrants. The cooking method is identical to a standard roast chicken; the scale is simply smaller, and the result is tidier." }
+        ]
+      }
+    ]
+  }
+}

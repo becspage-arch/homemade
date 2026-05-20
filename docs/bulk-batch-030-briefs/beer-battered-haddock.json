@@ -1,0 +1,147 @@
+{
+  "slug": "beer-battered-haddock",
+  "title": "Beer-Battered Haddock",
+  "subtitle": "Chip shop-style haddock in a crisp, bubbling batter fried at 180°C",
+  "excerpt": "Beer batter for fish depends on two things: a cold batter and oil at a consistent 180°C. The carbon dioxide in the beer creates a light, crisp shell; the cold temperature of the batter prevents the oil from dropping when the fish goes in. Haddock is the northern English chip shop standard.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional British chip shop. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: fried fish preparation. Heston Blumenthal, Heston at Home (2011): beer batter technique. British fish and chip tradition.",
+  "hero": {},
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dry batter ingredients can be mixed ahead; add the beer and chill just before frying.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "hearty"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "oil temperature throughout; do not let it drop below 170°C or rise above 190°C",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "deep-fryer", "isOptional": true },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "beer-batter", "term": "Beer batter", "definition": "A frying batter made with beer in place of water or milk. The carbonation in the beer creates bubbles in the batter as it fries, expanding to produce a light, crisp texture rather than a dense, doughy coating." },
+    { "slug": "flash-frying", "term": "Flash frying", "definition": "Deep-frying at a high temperature (170-190°C) for a short time, so that the exterior crisps quickly before the interior overcooks. The method relies on consistent oil temperature: too low and the batter absorbs oil; too high and the outside burns before the fish is cooked." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "text": "beer batter", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "beer-batter" } }] },
+          { "type": "text", "text": " should be cold when it goes onto the fish and the fish should go straight into the oil from the batter bowl. Any time the battered fish sits at room temperature, the batter relaxes and loses its lightness. Make the batter, chill it, and cook the fish directly." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Oil temperature is the other critical variable. " },
+          { "type": "text", "text": "Flash frying", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flash-frying" } }] },
+          { "type": "text", "text": " at 180°C works when the oil temperature does not drop significantly when the fish goes in. Use a large volume of oil (at least 2 litres) and fry one or two pieces at a time, never all four at once." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "haddock-fillet", "amount": 4, "unit": "each", "prepNote": "approx. 180-200 g each, skin removed, pin-boned", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 200, "unit": "g", "prepNote": "plus extra for dusting", "isOptional": false, "groupLabel": "For the batter" },
+            { "ingredientSlug": "baking-powder", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the batter" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the batter" },
+            { "ingredientSlug": "beer", "amount": 300, "unit": "ml", "prepNote": "cold, a pale lager or light ale works best", "isOptional": false, "groupLabel": "For the batter" },
+            { "ingredientSlug": "sunflower-oil", "amount": 2000, "unit": "ml", "prepNote": "for deep-frying", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "malt-vinegar", "amount": 30, "unit": "ml", "prepNote": "to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and chill the batter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Whisk " },
+          { "type": "text", "text": "{{plain-flour}} of flour" },
+          { "type": "text", "text": " with the " },
+          { "type": "text", "text": "{{baking-powder}} of baking powder" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " in a large bowl. Add the cold " },
+          { "type": "text", "text": "{{beer}} of beer" },
+          { "type": "text", "text": " gradually, whisking until just combined; a few lumps are fine. Refrigerate for 30 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Heat the oil and fry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat " },
+          { "type": "text", "text": "{{sunflower-oil}} of sunflower oil" },
+          { "type": "text", "text": " in a large, deep, heavy pan to 180°C. Pat the haddock fillets dry and dust lightly with plain flour. Dip each fillet into the cold batter, letting excess drip off, and lower gently into the oil. Fry 1-2 fillets at a time for 6-8 minutes, turning once, until the batter is deep golden and crisp. Remove with a slotted spoon and drain on kitchen paper. Bring the oil back to 180°C between batches." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Batter is thick and doughy, not crisp", "cause": "Batter was not cold, oil was below 180°C, or too many pieces were fried at once", "fix": "Keep the batter chilled in the fridge until the moment of use. Use a thermometer. Fry one piece at a time if needed." },
+            { "symptom": "Batter falls off the fish", "cause": "Fish was wet, or the flour dusting was skipped", "fix": "Pat the fish completely dry before dusting with flour. The flour is the glue that holds the batter to the fish." },
+            { "symptom": "Fish is not cooked through when the batter is golden", "cause": "Fillets were too thick, or oil temperature was too high", "fix": "For thick fillets, reduce the oil temperature to 170°C and extend the cooking time to 10 minutes." },
+            { "symptom": "Batter absorbs oil and is greasy", "cause": "Oil temperature was too low", "fix": "Never begin frying below 175°C. Allow the oil to recover fully between batches." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Beer-battered haddock is the northern English chip shop standard: in Yorkshire, Lancashire, and the northeast, haddock consistently outsells cod at the counter. The combination of a crisp beer batter with chips, malt vinegar, and mushy peas is one of the defining British fast food experiences. At home, the same quality is achievable with a deep pan and a thermometer." }
+        ]
+      }
+    ]
+  }
+}

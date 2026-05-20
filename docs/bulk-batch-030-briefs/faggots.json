@@ -1,0 +1,162 @@
+{
+  "slug": "faggots",
+  "title": "Faggots",
+  "subtitle": "Pork and liver meatballs baked in an onion gravy, the classic Midlands and Welsh offal dish",
+  "excerpt": "Faggots are meatballs made from minced pork and liver, bound with breadcrumbs and seasoned with sage and mace. They are baked in a rich onion gravy until the tops are dark and the gravy is thick. This is a dish of the Midlands and South Wales, resolutely unfashionable and deeply good.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional British Midlands and South Wales. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: force-meat balls from offal. Traditional Welsh faggots with caul fat. Mr Brain's Faggots as a twentieth-century factory product from the same tradition.",
+  "hero": {},
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "restingMinutes": 5,
+    "chillingMinutes": 30,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze baked faggots in their gravy for up to 3 months. Reheat covered in a 180°C oven for 25 minutes until piping hot.",
+    "batchable": true,
+    "batchNotes": "Double the batch easily. Form and refrigerate the faggots a day ahead; pour the gravy over just before baking.",
+    "makeAheadNotes": "Form the faggots and refrigerate for up to 24 hours before baking. The flavour improves.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "hearty", "weeknight"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "roasting-pan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "faggots-offal", "term": "Faggots", "definition": "A British offal dish of meatballs made from pig's liver, heart, and belly or mince, bound with breadcrumbs and spiced with sage and mace. The name may derive from an old word for a bundle of sticks. Faggots are a staple of the Black Country in the Midlands and of South Wales, where they were a cheap way of using up every part of the pig at slaughter." },
+    { "slug": "caul-fat-wrap", "term": "Caul fat", "definition": "The thin membrane of fat surrounding a pig's stomach, used to wrap faggots before baking. It melts during cooking, basting the meat and holding the faggot shape. Traditional recipes use it; modern home versions omit it and the faggots hold together well without it. Ask at a butcher if you want to use it." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Faggots", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "faggots-offal" } }] },
+          { "type": "text", "text": " are made from the cheaper parts of the pig: liver and belly or mince, stretched with breadcrumbs. They are not subtle. The sage and mace are strong, the gravy is dark, and the liver flavour is unmistakeable. Served with mushy peas and mashed potato, they are one of the most satisfying things you can make from inexpensive ingredients." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Traditional recipes wrap each faggot in " },
+          { "type": "text", "text": "caul fat", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "caul-fat-wrap" } }] },
+          { "type": "text", "text": " before baking. If you can get it from a butcher, use it; the faggots will be moister and hold their shape more cleanly. Without it, chilling the formed faggots for 30 minutes before baking achieves a similar result." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "calves-liver", "amount": 400, "unit": "g", "prepNote": "or pig's liver if available from a butcher, roughly chopped", "isOptional": false, "groupLabel": "For the faggots" },
+            { "ingredientSlug": "pork-mince", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the faggots" },
+            { "ingredientSlug": "lard", "amount": 50, "unit": "g", "prepNote": "or shredded beef suet for a more traditional result", "isOptional": false, "groupLabel": "For the faggots" },
+            { "ingredientSlug": "breadcrumbs-fresh", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the faggots" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely grated or processed", "isOptional": false, "groupLabel": "For the faggots" },
+            { "ingredientSlug": "sage", "amount": 10, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the faggots" },
+            { "ingredientSlug": "mace", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the faggots" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the faggots" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the faggots" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely sliced", "isOptional": false, "groupLabel": "For the gravy" },
+            { "ingredientSlug": "plain-flour", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the gravy" },
+            { "ingredientSlug": "stock-beef", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the gravy" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": "For the gravy" },
+            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the gravy" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the faggots" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mince the liver finely or pulse in a food processor until fine but not smooth. Combine with the " },
+          { "type": "text", "text": "{{pork-mince}} of pork mince" },
+          { "type": "text", "text": ", " },
+          { "type": "text", "text": "{{lard}} of lard" },
+          { "type": "text", "text": ", " },
+          { "type": "text", "text": "{{breadcrumbs-fresh}} of breadcrumbs" },
+          { "type": "text", "text": ", 1 grated onion, " },
+          { "type": "text", "text": "{{sage}} of chopped sage" },
+          { "type": "text", "text": ", " },
+          { "type": "text", "text": "{{mace}}" },
+          { "type": "text", "text": ", " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": ". Mix thoroughly. The mixture will be soft. Divide into 8 equal portions and roll into balls. Place on a plate, cover, and refrigerate for 30 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the onion gravy and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat " },
+          { "type": "text", "text": "{{olive-oil}} of olive oil" },
+          { "type": "text", "text": " in a large roasting pan over medium heat. Fry the 2 sliced onions for 15 minutes until deeply golden. Stir in " },
+          { "type": "text", "text": "{{plain-flour}} of flour" },
+          { "type": "text", "text": " and cook for 1 minute. Add " },
+          { "type": "text", "text": "{{stock-beef}} of beef stock" },
+          { "type": "text", "text": " and the Worcestershire sauce if using. Stir until smooth and bring to a simmer. Nestle the cold faggots into the gravy. Transfer to a 180°C oven and bake uncovered for 40-45 minutes until the tops are dark brown and the gravy has reduced and thickened. Rest for 5 minutes before serving." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Faggots fall apart in the gravy", "cause": "Mixture was too wet, or not chilled long enough before baking", "fix": "Add an extra 20 g of breadcrumbs to the mixture. Chill the formed faggots for at least 30 minutes; the fat firms up and holds them together." },
+            { "symptom": "Liver flavour is too strong", "cause": "The liver was not minced finely enough, or too high a proportion of liver to pork", "fix": "Process the liver until very fine. The ratio of 400g liver to 300g pork can be adjusted to 300g liver and 400g pork for a milder result." },
+            { "symptom": "Gravy is thin and watery", "cause": "Too much stock, or the lid was left on during baking", "fix": "Bake uncovered and allow the gravy to reduce. If still thin, transfer the faggots to a serving dish, reduce the gravy by simmering on the hob, and pour over." },
+            { "symptom": "Faggots are dry inside", "cause": "Overcooked, or too little fat in the mixture", "fix": "Faggots are done at 40 minutes. The lard is important: it keeps the inside moist during baking." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Faggots belong to the Midlands and South Wales, where they were made on pig-killing day using liver, heart, and belly trimmings that could not be stored. They are eaten with mushy peas, chips, and thick gravy. The factory product (Mr Brain's) made them a national convenience food in the twentieth century, but the homemade version bears almost no resemblance to the frozen one." }
+        ]
+      }
+    ]
+  }
+}

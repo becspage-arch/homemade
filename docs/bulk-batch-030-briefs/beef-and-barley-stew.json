@@ -1,0 +1,160 @@
+{
+  "slug": "beef-and-barley-stew",
+  "title": "Beef and Barley Stew",
+  "subtitle": "Slow-cooked beef shin with pearl barley and root vegetables in a thick, hearty broth",
+  "excerpt": "Beef and barley stew is a hob or oven braise of beef shin with pearl barley and root vegetables. The barley thickens the stock naturally as it cooks and adds a soft, nutty grain to each bowlful. It takes 2.5 hours and produces a stew that is richer and more filling than any recipe with fewer ingredients deserves to be.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional British and Scottish. F. Marian McNeill, The Scots Kitchen (1929): Scotch broth with barley and lamb. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: barley broth. British farmhouse cooking tradition.",
+  "hero": {},
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 150,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze for up to 3 months. The barley will soften further on reheating; this is not a problem. Reheat gently with a splash of stock to loosen.",
+    "batchable": true,
+    "batchNotes": "This recipe doubles easily in a large stockpot. Make a large batch on the weekend and refrigerate for up to 4 days.",
+    "makeAheadNotes": "The stew improves overnight. Make a day ahead and reheat slowly over low heat.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "hearty", "slowSunday", "weeknight"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "fan oven if baking; or simmer on the hob with the lid on",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "pearl-barley-grain", "term": "Pearl barley", "definition": "Hulled barley with the outer bran layer removed, leaving a smooth, round white grain. It absorbs liquid during cooking and thickens stew naturally through starch release. Unlike pasta, pearl barley continues to absorb stock even after the heat is off; add it with at least 40 minutes of cooking time remaining so it is cooked through but not collapsed." },
+    { "slug": "beef-shin-character", "term": "Beef shin", "definition": "The lower leg of the animal, a hard-working muscle that is dense with collagen. After 2 to 2.5 hours of slow cooking, the collagen dissolves into the cooking liquid, giving the broth a rich, silky body. Beef shin is inexpensive, holds its texture well during long braising, and produces a deeper result than dearer cuts." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The key to this stew is " },
+          { "type": "text", "text": "beef shin", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "beef-shin-character" } }] },
+          { "type": "text", "text": ": its high collagen content gives the broth a body that no amount of stock cube can replicate. Braising steak or beef chuck will produce a good stew, but the texture of the finished liquid with shin is noticeably richer." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add the " },
+          { "type": "text", "text": "pearl barley", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pearl-barley-grain" } }] },
+          { "type": "text", "text": " after 90 minutes of cooking, not at the start. Added too early, it absorbs too much liquid and the stew becomes claggy. Added at the right time, it swells to a soft, nutty grain and thickens the broth just enough." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-shin", "amount": 800, "unit": "g", "prepNote": "cut into large chunks, or use beef chuck", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pearl-barley", "amount": 150, "unit": "g", "prepNote": "rinsed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": "each", "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 3, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 1200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 30, "unit": "g", "prepNote": "for dusting the beef", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 15, "unit": "g", "prepNote": "roughly chopped, to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the beef and build the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat " },
+          { "type": "text", "text": "{{olive-oil}} of olive oil" },
+          { "type": "text", "text": " in a large casserole over high heat. Season the " },
+          { "type": "text", "text": "{{beef-shin}} of beef shin" },
+          { "type": "text", "text": " and dust with " },
+          { "type": "text", "text": "{{plain-flour}} of flour" },
+          { "type": "text", "text": ". Brown in batches for 3-4 minutes per side until deeply coloured. Remove and set aside. Reduce heat to medium. Add the onion, carrot, and celery and cook for 8 minutes. Add garlic, " },
+          { "type": "text", "text": "{{bay-leaves}} of bay" },
+          { "type": "text", "text": ", and " },
+          { "type": "text", "text": "{{thyme}} of thyme" },
+          { "type": "text", "text": ". Return the beef. Add " },
+          { "type": "text", "text": "{{stock-beef}} of beef stock" },
+          { "type": "text", "text": ". Bring to a simmer, cover, and cook on the lowest hob heat (or in a 160°C oven) for 90 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the barley and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stir in the " },
+          { "type": "text", "text": "{{pearl-barley}} of pearl barley" },
+          { "type": "text", "text": ". Check the liquid level; add a splash of water or stock if the pot is looking dry. Replace the lid and cook for a further 40-50 minutes until the beef is completely tender and the barley is soft. Season with " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": ". Remove the thyme sprigs and bay leaves. Serve with flat-leaf parsley if using." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Stew is too thick and the barley has absorbed all the stock", "cause": "Barley added too early, or pot was left on too high a heat", "fix": "Add hot stock or water in small amounts to reach the consistency you want. Barley keeps absorbing liquid; serve the stew as soon as it is ready." },
+            { "symptom": "Beef is tough after 2.5 hours", "cause": "The heat was too high, causing the muscle fibres to tighten rather than relax", "fix": "Reduce the heat to the barest simmer. Beef shin requires low, steady heat; boiling makes it tough rather than tender." },
+            { "symptom": "Broth is thin and lacks body", "cause": "Too much stock for the volume of collagen in the meat", "fix": "Remove the lid and simmer uncovered for 15-20 minutes to reduce. If still thin, the beef may not have been high enough in collagen; next time use more shin rather than chuck." },
+            { "symptom": "Vegetables are mushy", "cause": "Added at the start and cooked for too long", "fix": "For a tidier result, add fresh diced carrot and celery at the same time as the barley so they cook for only 40 minutes." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Beef and barley stew sits alongside Scotch broth as one of the defining British grain-thickened soups. The Scottish version traditionally uses lamb or mutton with barley, leek, and turnip; the English version more often uses beef and is served as a thick stew rather than a broth. Both are made to feed a large group from inexpensive cuts and last well in the refrigerator." }
+        ]
+      }
+    ]
+  }
+}

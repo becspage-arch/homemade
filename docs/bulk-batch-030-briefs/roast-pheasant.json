@@ -1,0 +1,166 @@
+{
+  "slug": "roast-pheasant",
+  "title": "Roast Pheasant",
+  "subtitle": "Barded with bacon, roasted briefly at high heat, and served with bread sauce and watercress",
+  "excerpt": "Pheasant is the most widely available British game bird, in season from October through February. Roasted at high heat for 30 minutes and barded with streaky bacon, the breast stays moist while the legs cook through. Bread sauce and game chips are the traditional accompaniments.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Jane Grigson, English Food (1974): roast pheasant with bread sauce. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: roasting game birds. Traditional British game cookery.",
+  "hero": {},
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 30,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The bread sauce can be made up to the point of adding cream, then refrigerated and reheated gently for 10 minutes before serving.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["specialOccasion", "slowSunday", "dateNight"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "high throughout; cover the breast with foil for the last 10 minutes if colouring too fast",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "carving-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "barding-game", "term": "Barding", "definition": "Laying strips of fat bacon or thin sheets of fat over the breast of a lean game bird before roasting, to baste the meat as the fat renders. A pheasant breast will dry and toughen without this protection, especially at high heat." },
+    { "slug": "bread-sauce", "term": "Bread sauce", "definition": "A thick, creamy sauce made from milk steeped with an onion studded with cloves, then thickened with white breadcrumbs. The classic British accompaniment to roast game and to turkey at Christmas." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pheasant is a lean bird. The breast in particular has almost no fat marbling, which means it can go from moist to dry in a matter of minutes. The traditional solution is " },
+          { "type": "text", "text": "barding", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "barding-game" } }] },
+          { "type": "text", "text": ": laying streaky rashers across the breast to self-baste as they render. The rashers come off for the last 10 minutes to give the breast skin a chance to colour." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The traditional accompaniments are " },
+          { "type": "text", "text": "bread sauce", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bread-sauce" } }] },
+          { "type": "text", "text": " and game chips (thinly sliced, deep-fried potatoes), with watercress on the plate for colour. The method below includes bread sauce made alongside the bird, using the same saucepan." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "pheasant", "amount": 1, "unit": "each", "prepNote": "oven-ready, hung for 3-5 days by your butcher", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "streaky-bacon", "amount": 100, "unit": "g", "prepNote": "rashers, to bard the breast", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": "for the cavity", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 150, "unit": "ml", "prepNote": "for the pan gravy", "isOptional": false, "groupLabel": "For the pan gravy" },
+            { "ingredientSlug": "whole-milk", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the bread sauce" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "peeled and halved", "isOptional": false, "groupLabel": "For the bread sauce" },
+            { "ingredientSlug": "cloves", "amount": 4, "unit": "each", "prepNote": "pushed into the onion halves", "isOptional": false, "groupLabel": "For the bread sauce" },
+            { "ingredientSlug": "breadcrumbs-fresh", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the bread sauce" },
+            { "ingredientSlug": "double-cream", "amount": 30, "unit": "ml", "prepNote": "to finish the bread sauce", "isOptional": true, "groupLabel": "For the bread sauce" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bard and roast" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220°C (200°C fan). Pat the bird dry. Rub the " },
+          { "type": "text", "text": "{{unsalted-butter}} of butter" },
+          { "type": "text", "text": " over the legs and tuck the thyme sprigs into the cavity. Season lightly with " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": ". Lay the bacon rashers in overlapping strips across the entire breast. Roast for 20 minutes, then remove the bacon and return the bird for 10 minutes to colour the breast skin. A probe at the deepest point of the thigh should read 75°C." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the bread sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "While the bird roasts, put the " },
+          { "type": "text", "text": "{{whole-milk}} of whole milk" },
+          { "type": "text", "text": " in a small saucepan with the clove-studded onion halves. Heat until barely simmering, then remove from the heat and leave for 20 minutes to infuse. Remove the onion, add the " },
+          { "type": "text", "text": "{{breadcrumbs-fresh}} of breadcrumbs" },
+          { "type": "text", "text": " and stir over low heat until the sauce thickens to a loose porridge consistency. Season, then stir in the double cream if using." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rest and make the pan gravy" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Transfer the pheasant to a warm board and rest for 10 minutes. Add " },
+          { "type": "text", "text": "{{stock-chicken}} of chicken stock" },
+          { "type": "text", "text": " to the roasting pan and scrape up the fond over medium heat. Simmer for 3 minutes, season, and strain. Carve at the table: the breast comes off the bone in two lobes; each person gets one breast and one leg." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Breast is dry and colourless", "cause": "Bacon was removed too early, or the bird was overcooked past 80°C", "fix": "Keep the bacon on for the full 20 minutes. Pull the bird at 75°C on the probe, not by time alone." },
+            { "symptom": "Legs are undercooked while the breast is done", "cause": "Pheasant legs are dense and carry-over temperature from the breast does not solve them", "fix": "Once the breast is at 72°C, cut the legs away and return them to the oven for 10 more minutes while the breast rests on the board." },
+            { "symptom": "Bread sauce is lumpy", "cause": "Breadcrumbs added too quickly or the milk was too hot", "fix": "Add crumbs gradually, stirring as you go. If lumpy, pass through a sieve." },
+            { "symptom": "The bird tastes very gamey", "cause": "Pheasant was hung for too long; older birds have a stronger flavour", "fix": "Request a younger bird or one hung for 3 days rather than 7. The season (October through February) affects flavour: early-season birds are milder." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Roast pheasant with bread sauce is the centre of British game-bird cookery. The combination has been unchanged for two centuries: the creaminess of the bread sauce against the leaner, more complex flavour of the bird, with the crunch of game chips or roast potatoes alongside. It is an autumn and winter table, hedgerow-to-plate." }
+        ]
+      }
+    ]
+  }
+}

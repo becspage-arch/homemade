@@ -1,0 +1,163 @@
+{
+  "slug": "game-pie",
+  "title": "Game Pie",
+  "subtitle": "Mixed game braised in red wine and juniper, in a shortcrust pastry case",
+  "excerpt": "A game pie uses whatever is in season or available: typically venison, pheasant breast, and rabbit, braised low and slow in red wine before being enclosed in a shortcrust pastry case and baked. It is served hot in winter and cold in summer.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional British raised pie tradition. Jane Grigson, English Food (1974): game pie with mixed game. Hugh Fearnley-Whittingstall, The River Cottage Meat Book (2004): game pie with red wine and juniper. Cross-referenced across multiple sources.",
+  "hero": {},
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 60,
+    "cookMinutes": 180,
+    "restingMinutes": 15,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "The unbaked pie freezes well for up to 2 months. Bake from frozen at 190°C for 65-70 minutes, covering loosely with foil if the pastry colours too quickly.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The braised filling must be made a day ahead to cool completely. Assemble and bake on the day.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["specialOccasion", "hearty", "slowSunday"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "reduce to 180°C after the first 20 minutes for even cooking",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "braising-game", "term": "Braising", "definition": "Cooking meat slowly in a covered pot with a small amount of liquid at a low oven temperature, usually 150-160°C. Game benefits from braising because the connective tissue in older or harder-worked animals dissolves into gelatin, enriching the sauce and making the meat tender." },
+    { "slug": "game-season", "term": "Game season", "definition": "The legally defined period during which specific wild species may be shot in Britain. Pheasant runs from October to February; venison depends on the species and gender; grouse from August to December. Outside season, farmed venison is available year-round." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A game pie is flexible by nature: use what is available. Venison dice, pheasant breast, and rabbit legs are a classic combination, but the method works with any game. The filling is " },
+          { "type": "text", "text": "braised", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "braising-game" } }] },
+          { "type": "text", "text": " the day before, cooled completely, and then enclosed in pastry. A warm filling will make the pastry greasy and prevent a clean cut." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Understanding " },
+          { "type": "text", "text": "game season", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "game-season" } }] },
+          { "type": "text", "text": " is useful: this pie is most naturally made between October and February when pheasant and venison are both available fresh. Outside season, farmed venison and frozen game work perfectly well." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "venison", "amount": 500, "unit": "g", "prepNote": "shoulder or haunch, diced into 3 cm pieces", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "pheasant", "amount": 1, "unit": "each", "prepNote": "breasts removed and diced, legs reserved for another use", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "rabbit", "amount": 1, "unit": "each", "prepNote": "jointed, bone-in", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "lardons", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "diced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "red-wine", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-beef", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "juniper-berries", "amount": 8, "unit": "each", "prepNote": "lightly crushed", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "shortcrust-pastry", "amount": 800, "unit": "g", "prepNote": "shop-bought or homemade, chilled", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for the egg wash", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise the game" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 160°C (140°C fan). Fry the " },
+          { "type": "text", "text": "{{lardons}} of lardons" },
+          { "type": "text", "text": " in a casserole until crisp. Remove and set aside. In the same fat, brown the venison and rabbit pieces in batches, then remove. Soften the " },
+          { "type": "text", "text": "{{onion}} onions" },
+          { "type": "text", "text": " and carrots in the casserole for 5 minutes. Add the garlic, " },
+          { "type": "text", "text": "{{juniper-berries}} juniper berries" },
+          { "type": "text", "text": ", thyme, and bay leaves. Return the meat and lardons. Pour over the " },
+          { "type": "text", "text": "{{red-wine}} of red wine" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{stock-beef}} of beef stock" },
+          { "type": "text", "text": ". Season with " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": ". Cover and braise for 2 hours. Cool completely; refrigerate overnight." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C (180°C fan). Pick out the bones from the rabbit pieces and discard. Roll two thirds of the " },
+          { "type": "text", "text": "{{shortcrust-pastry}} of shortcrust pastry" },
+          { "type": "text", "text": " and use it to line a deep 25 cm pie dish. Spoon in the cold filling, leaving 1 cm of headspace. Moisten the pastry rim with water, then lay the remaining pastry as a lid and seal. Trim and crimp the edges. Make a steam vent in the centre. Brush with beaten egg and bake for 20 minutes. Reduce to 180°C and bake for a further 25-30 minutes until deeply golden. Rest for 15 minutes before slicing." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Filling spills over the pastry rim during baking", "cause": "Filling was too liquid, or too much was used", "fix": "Reduce the braising liquid by a third before cooling if it seems very thin. Leave 1 cm of headroom in the dish." },
+            { "symptom": "Rabbit bones in the sliced pie", "cause": "Small bones are hard to find in the braised meat", "fix": "Run fingers through the braised rabbit meat carefully before filling the pie. Rabbit leg bones are obvious; the risk is small rib bones." },
+            { "symptom": "Pastry base is under-baked", "cause": "Filling was too wet or the dish too deep", "fix": "Use a pie tin rather than a ceramic dish for better base heat conduction. The filling must be cold." },
+            { "symptom": "Game flavour is very strong", "cause": "Later-season birds, or venison from a wild animal rather than farmed", "fix": "Soaking diced game in cold water for 1 hour before browning draws out some blood and reduces strong flavour." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Game pie has appeared on the British table in winter since at least the Tudor period, made from whatever was shot on the estate. The modern version draws on the French and British traditions equally: a braised filling with wine and herbs, a shortcrust pastry case, and the pleasure of a slice that holds its shape. It is a cold-weather centrepiece." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "slug": "pork-and-apple-casserole",
+  "title": "Pork and Apple Casserole",
+  "subtitle": "Braised pork shoulder with Bramley apple and dry cider in a cream-finished sauce",
+  "excerpt": "Pork shoulder braised with dry cider, Bramley apple, and sage produces a casserole that is rich, gently sweet, and deeply savoury. The apple dissolves into the sauce during cooking; the cream finishes it. This is a 2-hour dish with 20 minutes of active work.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional British. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: pork stewed with apple. Traditional West Country British cooking with cider. Jane Grigson, English Food (1974): pork with apple and cider.",
+  "hero": {},
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 120,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze before adding the cream. Add cream on reheating. Freeze for up to 2 months.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make a day ahead without the cream. Reheat and stir in the cream just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "hearty", "slowSunday"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "fan oven, or a covered pot on the lowest hob heat",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "cider-cooking-pork", "term": "Dry cider in cooking", "definition": "Dry cider has the acidity to cut through the fat of pork and enough apple character to complement the meat without sweetening the sauce. Sweet cider produces a cloying result. Use the driest bottle available; West Country still ciders work best, but any dry supermarket cider will do." },
+    { "slug": "bramley-cooking-apple", "term": "Bramley apple", "definition": "The principal British cooking apple. It is too sharp to eat raw but collapses quickly on heating, dissolving into sauces and casseroles. In pork dishes, it breaks down during the braise to create a natural applesauce within the cooking liquid, adding body and a gentle sharpness that balances the richness of the meat." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pork shoulder is the right cut here: fatty enough to stay moist through 2 hours of braising and flavourful enough to hold its own against the " },
+          { "type": "text", "text": "dry cider", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cider-cooking-pork" } }] },
+          { "type": "text", "text": " and apple. A leaner cut such as loin will dry out long before the braise is finished." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "text": "Bramley apple", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bramley-cooking-apple" } }] },
+          { "type": "text", "text": " needs no peeling or precise preparation: rough chunks added to the pot will dissolve entirely during the braise. The result is a sauce with apple woven through it rather than apple pieces in a sauce." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "pork-shoulder", "amount": 900, "unit": "g", "prepNote": "cut into large chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "apple-bramley", "amount": 2, "unit": "each", "prepNote": "peeled, cored, and roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cider-dry", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sage", "amount": 10, "unit": "g", "prepNote": "leaves only", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 30, "unit": "g", "prepNote": "for dusting the pork", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tsp", "prepNote": "added off the heat", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown and braise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat " },
+          { "type": "text", "text": "{{olive-oil}} of olive oil" },
+          { "type": "text", "text": " in a large casserole over high heat. Season the " },
+          { "type": "text", "text": "{{pork-shoulder}} of pork shoulder" },
+          { "type": "text", "text": " and dust with " },
+          { "type": "text", "text": "{{plain-flour}} of flour" },
+          { "type": "text", "text": ". Brown in batches until golden on all sides. Remove and set aside. Reduce heat to medium. Add the onion and cook for 5 minutes. Add garlic and " },
+          { "type": "text", "text": "{{sage}} of sage leaves" },
+          { "type": "text", "text": ". Return the pork. Pour in " },
+          { "type": "text", "text": "{{cider-dry}} of dry cider" },
+          { "type": "text", "text": " and let it bubble for 2 minutes. Add " },
+          { "type": "text", "text": "{{stock-chicken}} of chicken stock" },
+          { "type": "text", "text": " and the apple. Bring to a simmer. Cover and cook in a 160°C oven (or on the lowest hob heat) for 90-100 minutes until the pork is completely tender." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remove the pork and keep warm. If the sauce is thin, simmer uncovered for 10 minutes to reduce. Stir in " },
+          { "type": "text", "text": "{{double-cream}} of cream" },
+          { "type": "text", "text": " and the Dijon mustard if using. Season with " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": ". Return the pork to the sauce and serve." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Sauce is too sweet", "cause": "Sweet cider used instead of dry, or Bramley was substituted with eating apples", "fix": "Add a splash of cider vinegar or lemon juice to cut the sweetness. Next time use a fully dry cider and Bramley only." },
+            { "symptom": "Pork is dry and stringy", "cause": "Lean cut used, or cooked at too high a temperature", "fix": "Pork shoulder has enough fat to stay moist. Ensure the oven is no higher than 160°C and the pot is covered." },
+            { "symptom": "Apple pieces are still intact", "cause": "Added too late in cooking, or cut too large", "fix": "Add the apple at the start of the braise and cut it into small chunks so it dissolves fully." },
+            { "symptom": "Cream splits when added", "cause": "Sauce was boiling when the cream went in", "fix": "Allow the sauce to drop below a boil before adding cream. Once cream is in, do not let the sauce boil hard again." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pork and apple is one of the oldest pairing in British cooking. The combination appears in medieval cookery manuscripts and remains a constant across the centuries. The cider version is associated with the West Country, where both pigs and apple orchards have been central to the farming economy for centuries. Served with mashed potato or a plain boiled grain, it is one of the most satisfying autumn and winter suppers in the British repertoire." }
+        ]
+      }
+    ]
+  }
+}

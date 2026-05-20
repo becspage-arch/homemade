@@ -1,0 +1,190 @@
+{
+  "slug": "roast-beef-rib-on-the-bone",
+  "title": "Roast Rib of Beef on the Bone",
+  "subtitle": "A three-bone fore rib, slow-roasted to a deep pink centre",
+  "excerpt": "A standing rib roast is the grandest cut on the Sunday table. Slow-roasted at 160°C after an initial blast, it delivers a properly pink centre, rendered fat, and the kind of pan juices that need nothing more than a splash of red wine and a wooden spoon.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: rib roasting directions and resting guidance. Jane Grigson, English Food (1974): notes on fore-rib vs sirloin for roasting. Delia Smith, Complete Cookery Course (1978): slow-start method and resting ratios. Traditional British Sunday lunch practice, cross-referenced across multiple period sources.",
+  "hero": {},
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 150,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The beef can be brought to room temperature up to 2 hours before cooking. Season 24 hours ahead if you have time: the dry surface improves browning and the salt has time to draw back in.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "hearty", "specialOccasion"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "initial blast, then 160°C for the remainder",
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "roasting-rack", "isOptional": true },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "carving-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "kitchen-twine", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "fore-rib", "term": "Fore rib", "definition": "The fore rib comes from the front section of the rib, between the chuck and the sirloin. It has more marbling and connective tissue than the sirloin, which makes it better suited to a long, slow roast." },
+    { "slug": "resting", "term": "Resting", "definition": "Allowing roasted meat to sit off the heat before carving, so the muscle fibres relax and the juices redistribute through the joint rather than running out when cut." }
+  ],
+  "techniqueSlugs": ["making-gravy"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A three-bone " },
+          { "type": "text", "text": "fore rib", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fore-rib" } }] },
+          { "type": "text", "text": " is one of the grandest things you can put on a Sunday table. The bones act as a natural roasting rack, the fat cap bastes the meat as it renders, and the marbling through the eye delivers flavour that no sirloin can match. It is not a quick joint. From fridge to table the process takes the better part of an afternoon, but almost all of that time is unattended oven work." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The method here uses a high-heat blast to colour the fat, then a long low roast to 52°C internal for rare, 57°C for medium-rare, or 60°C for medium. A half-hour rest with foil draped loosely over the joint brings the temperature up another few degrees and allows the juices to settle. Plan on roughly 15 minutes per 500 g at 160°C after the initial blast, but the thermometer is the only reliable guide." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-rib", "amount": 2400, "unit": "g", "prepNote": "three-bone fore rib, chine bone removed by butcher", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": "coarsely ground", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 200, "unit": "ml", "prepNote": "for the pan", "isOptional": false, "groupLabel": "For the gravy" },
+            { "ingredientSlug": "red-wine", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the gravy" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "halved, for the roasting pan", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The only piece of kit that matters beyond a solid roasting pan is an instant-read thermometer. Guessing a rib roast by time alone is unreliable given the variation in bone mass from joint to joint." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Season and rest" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pat the joint thoroughly dry with kitchen paper. Rub all surfaces with " },
+          { "type": "text", "text": "{{olive-oil}} of olive oil" },
+          { "type": "text", "text": ", then press " },
+          { "type": "text", "text": "{{sea-salt-flakes}}" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "{{black-pepper}}" },
+          { "type": "text", "text": " firmly into the fat cap and over the meat. Stand the joint bone-side down on a plate and leave at room temperature for at least 1 hour, ideally 2. A cold joint goes into the oven at a disadvantage: the centre takes far longer to warm, and the outside overcooks before the inside is ready." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The initial blast" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220°C (200°C fan). Set the halved onion cut-side down in the roasting pan, place the joint bone-side down on top (the bones are the rack), and roast for 20 minutes until the fat cap is golden-brown and the kitchen smells of rendered beef fat. This crust does not form again once the temperature drops, so do not skip it." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Slow roast to temperature" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drop the oven to 160°C (140°C fan). Roast until the thickest part of the eye reaches 52°C for rare, 57°C for medium-rare, or 60°C for a pink-but-not-bloody result. Probe the centre of the eye away from the bone. Allow roughly 15 minutes per 500 g at 160°C after the blast, but begin checking earlier: ovens vary, and a probe is faster than waiting." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rest and carve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Transfer the joint to a warmed board and drape foil loosely over it. " },
+          { "type": "text", "text": "Resting", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "resting" } }] },
+          { "type": "text", "text": " for 30 minutes is not optional: the internal temperature climbs another 3-5°C as the heat redistributes, and the juices settle so they do not pour out on the board. To carve, run the knife along the bone curve to free the eye, then slice across the grain. Serve each guest a slice with a rib bone if desired." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the gravy" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour off excess fat from the roasting pan, leaving about 2 tablespoons. Set the pan over medium-high heat on the hob. Pour in " },
+          { "type": "text", "text": "{{red-wine}} of red wine" },
+          { "type": "text", "text": " and scrape up the caramelised sediment. Add " },
+          { "type": "text", "text": "{{stock-beef}} of beef stock" },
+          { "type": "text", "text": " and simmer for 5 minutes until reduced by a third. Season, strain into a warmed jug, and serve immediately." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "The fat cap is not browning in the first 20 minutes", "cause": "Oven not fully up to temperature, or the joint is still cold from the fridge", "fix": "Give the oven a full 15 minutes to preheat. If the joint is cold, the blast phase may take up to 30 minutes for colour." },
+            { "symptom": "Internal temperature rising much faster than expected", "cause": "The probe is sitting against bone rather than in the muscle", "fix": "Re-position the probe so the tip is in the thickest part of the eye, not touching bone. Bone conducts heat differently to muscle." },
+            { "symptom": "Pink juices running freely when carved", "cause": "Insufficient resting time", "fix": "Return the joint to the foil tent for a further 15 minutes. The juices need time to be reabsorbed into the muscle fibres." },
+            { "symptom": "Gravy too pale or watery", "cause": "Fond in the pan was not dark enough, or stock was diluted", "fix": "Reduce the gravy for a further 3-4 minutes over a brisk heat. If still pale, add a small knob of butter and whisk to gloss." },
+            { "symptom": "Outer slices well done while the centre is rare", "cause": "Joint was not rested long enough before carving, or oven runs hot", "fix": "Always rest for at least 30 minutes. Use an oven thermometer to calibrate your oven." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The fore rib is the traditional British joint for large Sunday gatherings and Christmas Day tables. Mrs Beeton described it in 1861 as the prestige cut, preferred over the sirloin precisely because the bone runs through it. The slow-roast approach has changed little in the intervening century and a half: high heat to colour the fat, lower heat to bring the centre up gently, and a long rest before carving. Serve with roast potatoes, Yorkshire puddings, a dish of horseradish cream, and gravy made in the pan." }
+        ]
+      }
+    ]
+  }
+}
