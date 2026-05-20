@@ -1,0 +1,323 @@
+{
+  "slug": "hot-process-herbal-soap",
+  "title": "Hot-process herbal soap",
+  "subtitle": "An oven-cooked cold-process bar, ready to use within a week",
+  "excerpt": "A hot-process bar soap cooked in the oven after blending to trace. The heat completes saponification in 1-2 hours instead of 4-6 weeks, so the bar is usable within a week. Essential oils and herbs added after cooking retain more of their fragrance than in cold-process.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Susan Miller Cavitch, The Soapmaker's Companion (1997), Ch. 6, hot-process soap in a crock pot and oven. Kevin Dunn, Caveman Chemistry (2003), Ch. 9, the temperature effect on saponification rate. SoapCalc SAP-value tables (v2024): olive 0.135, coconut 0.190, castor 0.128.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "~7 × 130 g bars, usable after 1 week",
+    "prepMinutes": 90,
+    "cookMinutes": 90,
+    "restingMinutes": 10080,
+    "chillingMinutes": 0,
+    "totalMinutes": 11260,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Doubles to 2 kg; use a larger oven-safe pot.",
+    "makeAheadNotes": "Active work 2-3 hours. Bars usable in 1 week, much better at 4 weeks.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "2 years in a cool dark cupboard. Hot-process bars dry out slightly faster than cold-process, so the bars harden well but can crumble at the edges if stored without wrapping."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "measuring-jug", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false },
+    { "slug": "silicone-spatula", "isOptional": false },
+    { "slug": "soap-cutter-wire", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "hot-process",
+      "term": "Hot process",
+      "definition": "A soap-making method where the batter is cooked after blending to trace, speeding saponification to completion in 1-2 hours. The resulting soap is fully saponified immediately and can be used in 1-2 weeks rather than 4-6."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oil left unsaponified. At 5% superfat this bar has extra conditioning oil."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point where batter thickens to warm-custard consistency, the starting point for the cook phase in hot-process."
+    },
+    {
+      "slug": "gel-phase",
+      "term": "Gel phase",
+      "definition": "The exothermic stage when soap batter turns translucent and gel-like as saponification proceeds. In hot-process, the oven holds the batter at the gel-phase temperature until saponification is complete."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 1,
+      "title": "Unmould and cut",
+      "body": "The soap is firm and saponification is complete. Unmould and cut into 130 g bars. The surface may be more rustic than cold-process; hot-process bars have a more textured, hand-worked finish. Stand on a wire rack for 1 week to firm further.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 7,
+      "title": "Bars are ready to use",
+      "body": "One week in. The bars are hard, fully saponified, and ready to use. Unlike cold-process, the cure is a hardening-only process rather than a saponification-completion process. The bars will improve further over 4 weeks.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": false
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-process" } }],
+            "text": "hot-process"
+          },
+          {
+            "type": "text",
+            "text": " herbal soap. The oil and lye are blended to trace exactly as in cold-process, then the batter goes into a warm oven at 80°C to complete saponification in 1-2 hours rather than 4-6 weeks. The oven holds the batter at the temperature of the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gel-phase" } }],
+            "text": "gel phase"
+          },
+          {
+            "type": "text",
+            "text": " until the soap is finished. Essential oils and dried herbs are stirred into the finished soap mass rather than into raw batter, which preserves more fragrance."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The lye calculation is the same as a standard cold-process bar: (600 × 0.135) + (300 × 0.190) + (100 × 0.128) = 150.8 g NaOH at 0% "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }],
+            "text": "superfat"
+          },
+          {
+            "type": "text",
+            "text": ". At 5%: 143 g NaOH. Water at 33%: 330 g distilled water."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "refined olive oil. 60% of the oil weight.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "coconut-oil",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "76°F-melt-point coconut oil. 30% of the oil weight.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "castor-oil",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "cold-pressed castor oil. 10% of the oil weight.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 330,
+              "unit": "g",
+              "prepNote": "distilled or deionised. 33% of the oil weight.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "sodium-hydroxide",
+              "amount": 143,
+              "unit": "g",
+              "prepNote": "99% pure cosmetic-grade NaOH. 5% superfat. 0.1 g precision.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "essential-oil-rose-geranium",
+              "amount": 20,
+              "unit": "ml",
+              "prepNote": "rose geranium or lavender essential oil. Added to the cooked soap mass after the oven phase, when the temperature has dropped below 65°C. This preserves more fragrance than cold-process addition.",
+              "isOptional": false,
+              "groupLabel": "Add after cooking"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Preheat the oven and kit out" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the oven to 80°C (fan or conventional). Put on splash-rated goggles and 8-mil nitrile gloves. Have a large oven-safe pot with a tight-fitting lid ready; a heavy stainless-steel saucepan or an enamelled casserole works. Open a window."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the lye and melt the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add 143 g NaOH to 330 g distilled water in the HDPE pitcher, stirring. Set aside to cool to 38-42°C. Melt the coconut oil with the olive and castor oils in the oven-safe pot over a low heat to 38-42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend to trace, then into the oven" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye into the oils in the oven-safe pot. Pulse the stick blender in 10-second bursts until the batter reaches "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }],
+            "text": "light trace"
+          },
+          {
+            "type": "text",
+            "text": ". Put the lid on the pot and place in the preheated oven. Cook at 80°C for 60-90 minutes. After 30 minutes the batter will enter a visible gel phase, turning translucent and gel-like from the centre outward. Check every 30 minutes; stir if the edges are cooking faster than the centre."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Test for doneness, add fragrance, mould" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hot-process soap is done when the batter looks like mashed potato: dry, glossy, and pulling away from the pot sides. The zap test: touch a tiny amount to the tip of your tongue; if it zaps (a sharp, brief electrical-sting sensation), the lye is not yet fully saponified and the soap needs another 20 minutes in the oven. No zap means the soap is done."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the pot from the oven. Allow the soap mass to cool to below 65°C. Add the 20 ml of rose geranium essential oil and fold through with the silicone spatula. The soap will be thick and lumpy; press and fold rather than stir. Transfer the soap mass into the silicone loaf mould, pressing firmly to fill all gaps and smooth the surface with the wet back of a spoon. Leave uncovered for 24 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cure: 1-4 weeks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Unmould after 24 hours. The bars will have a more rustic, textured surface than cold-process. Cut into bars; use within 1 week of unmoulding. The bars improve significantly over 4 weeks as residual moisture evaporates and the bar hardens."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Patch test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Patch-test on the inside forearm for 24-48 hours before regular use."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Two years in a cool dark cupboard. Wrap individually in greaseproof paper to prevent the bars from drying at the edges; hot-process bars are harder than cold-process from the start and can become brittle if left completely unwrapped in a dry room."
+          }
+        ]
+      }
+    ]
+  }
+}

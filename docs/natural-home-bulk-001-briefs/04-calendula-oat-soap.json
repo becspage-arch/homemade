@@ -1,0 +1,330 @@
+{
+  "slug": "calendula-oat-soap",
+  "title": "Calendula oat soap",
+  "subtitle": "An olive and shea cold-process bar with calendula-infused oil",
+  "excerpt": "A cold-process bar built on olive oil infused with dried calendula petals, shea butter for extra conditioning, and finely milled oat at trace. The calendula infusion turns the oil a warm gold; the bar after cure is mild, slightly exfoliating, and well-suited to dry skin.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Susan Miller Cavitch, The Soapmaker's Companion (1997), Ch. 4, soft-oil blends and cure time. Kevin Dunn, Caveman Chemistry (2003), Ch. 9, fatty-acid profile of olive and shea. SoapCalc SAP-value tables (v2024): olive 0.135, shea 0.128, coconut 0.190, castor 0.128.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "~7 × 130 g bars after cure",
+    "prepMinutes": 60,
+    "cookMinutes": 0,
+    "restingMinutes": 60480,
+    "chillingMinutes": 0,
+    "totalMinutes": 60540,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Doubles to 2 kg cleanly. Beyond that, batch in 1 kg lots.",
+    "makeAheadNotes": "The calendula infusion needs 2-4 weeks ahead of the soap session; cold-infuse in a cool dark place. Active soap work is 90 minutes, then 4-6 weeks cure.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "2 years in a cool dark cupboard once fully cured. Calendula-infused oil has a slightly higher iodine value than plain olive oil, so DOS can appear within the first year if the bar is stored warm. A cool, dark cupboard prevents this."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "measuring-jug", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false },
+    { "slug": "silicone-spatula", "isOptional": false },
+    { "slug": "soap-cutter-wire", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oil left unsaponified. Typically 5-7%. Higher superfat gives a more conditioning bar."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point where soap batter thickens to the consistency of warm custard and a drizzle leaves a brief surface trail."
+    },
+    {
+      "slug": "cure",
+      "term": "Cure",
+      "definition": "The 4-6 weeks after unmoulding during which water evaporates, saponification completes, and the bar hardens."
+    }
+  ],
+  "techniqueSlugs": ["double-boiler-method"],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 1,
+      "title": "Unmould and cut",
+      "body": "Twenty-four hours in. Press the surface with a gloved finger; firm and waxy with no stickiness. Unmould onto a greaseproof-lined board and cut into 130 g bars. Stand each bar on a wire rack with air space around all faces. The bars will be gold-coloured from the calendula infusion.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 28,
+      "title": "Cure test",
+      "body": "Four weeks in. Slice a thin sliver, wet it, and check the lather; rich and stable means the bar is ready. pH strip should read 9-10. Turn remaining bars 90 degrees to even the cure.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 42,
+      "title": "Cure complete",
+      "body": "Six weeks in. The cure is complete. Store in a paper-lined box with the lid ajar.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": false
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A cold-process calendula oat soap. The olive oil base is infused with dried calendula petals 2-4 weeks ahead; the infusion turns the oil a warm gold and draws some of the petals' skin-soothing compounds into the oil phase. Shea butter at 10% adds a conditioning quality to the superfat. Finely milled oat folded in at trace gives a gentle physical exfoliation."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The lye calculation at 5% "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }],
+            "text": "superfat"
+          },
+          {
+            "type": "text",
+            "text": ": (500 × 0.135) + (200 × 0.190) + (200 × 0.128) + (100 × 0.128) = 67.5 + 38.0 + 25.6 + 12.8 = 143.9 g NaOH at 0% superfat. At 5% superfat: 143.9 × 0.95 = 136.7 g. Working weight: 137 g NaOH. Water at 33%: 330 g."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "pre-infused with dried calendula petals (see method). 50% of the oil weight.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "coconut-oil",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "76°F-melt-point. 20% of the oil weight. Provides lather.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "shea-butter",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "unrefined shea butter. 20% of the oil weight. Conditioning superfat.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "castor-oil",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "cold-pressed castor oil. 10% of the oil weight. Stabilises lather.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 330,
+              "unit": "g",
+              "prepNote": "distilled or deionised. 33% of the oil weight.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "sodium-hydroxide",
+              "amount": 137,
+              "unit": "g",
+              "prepNote": "99% pure cosmetic-grade NaOH at 5% superfat. Weigh to 0.1 g precision.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "colloidal-oatmeal",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "finely milled oat for gentle exfoliation. Added at light trace. 2% of the oil weight.",
+              "isOptional": true,
+              "groupLabel": "Add at trace"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the calendula infusion (2-4 weeks ahead)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fill a clean jar with 500 g of refined olive oil and add 2 tablespoons of dried calendula petals. Seal the jar and leave in a cool, dark cupboard for 2-4 weeks, shaking every few days. The oil will deepen from pale yellow to warm gold. Strain out the petals through a fine-mesh sieve lined with muslin before using in the soap batch. The infused oil has the same SAP value as plain olive oil for lye calculation purposes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh 330 g of distilled water into the HDPE pitcher. Add 137 g NaOH into the water in a steady stream, stirring continuously. The pitcher heats immediately and fumes briefly; do not lean over it. Stir until clear, then set aside to cool to 38-42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Melt and warm the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh the calendula-infused olive oil, coconut oil, shea butter, and castor oil into a saucepan. The coconut oil and shea butter are solid; warm on a low heat until both have melted and the mixture is clear and homogenous. Remove from heat and check the temperature; the oil phase needs to be in the 38-42°C window."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Combine and blend to light trace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When both phases are at 38-42°C, pour the lye solution into the oils. Pulse the stick blender in 10-second bursts until the batter thickens to "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }],
+            "text": "light trace"
+          },
+          {
+            "type": "text",
+            "text": ". The shea butter can cause the batter to accelerate trace faster than a pure olive-oil recipe; stop blending the moment you see the custard-consistency thickening."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fold in the oat and pour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "At light trace, scatter the 20 g of finely milled oat over the surface and fold through with the silicone spatula in 30-second strokes until evenly distributed. Pour into the silicone mould, tap to settle, and smooth the surface. Cover with a tea towel and leave undisturbed for 24 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cure: 4-6 weeks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Unmould after 24 hours and cut into bars. Stand on a wire rack. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cure" } }],
+            "text": "Cure"
+          },
+          {
+            "type": "text",
+            "text": " for 4-6 weeks with the bars turned at 2 weeks. The bars will be a soft gold from the calendula infusion; the colour does not fade significantly during cure."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Patch test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Patch-test a sliver on the inside forearm for 24-48 hours. Calendula is considered a gentle botanical but belongs to the Asteraceae family; people with Asteraceae allergies (ragweed, chrysanthemum, chamomile) should use with caution."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Two years in a cool dark cupboard once fully cured. The calendula infusion introduces slightly more unsaturated fatty acids than plain olive, making the bar marginally more susceptible to DOS. A consistently cool storage location prevents this. Discard any bar that develops orange flecks or a sharp paint-like smell."
+          }
+        ]
+      }
+    ]
+  }
+}

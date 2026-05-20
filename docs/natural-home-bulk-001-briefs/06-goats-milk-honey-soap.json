@@ -1,0 +1,316 @@
+{
+  "slug": "goats-milk-honey-soap",
+  "title": "Goat's milk and honey soap",
+  "subtitle": "A cold-process bar with frozen goat's milk and raw honey",
+  "excerpt": "A cold-process soap that substitutes frozen goat's milk for the water phase, with raw honey folded in at trace. The milk proteins make a creamy, conditioning bar; the honey adds a faint sweetness and gives the bar an ivory to pale gold colour.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Susan Miller Cavitch, The Soapmaker's Companion (1997), Ch. 7, milk soaps and lye-on-milk technique. Kevin Dunn, Caveman Chemistry (2003), Ch. 9, lactose caramelisation in lye-milk reactions. SoapCalc SAP-value tables (v2024): olive 0.135, coconut 0.190, castor 0.128.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "~7 × 130 g bars after cure",
+    "prepMinutes": 75,
+    "cookMinutes": 0,
+    "restingMinutes": 60480,
+    "chillingMinutes": 0,
+    "totalMinutes": 60555,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Doubles to 2 kg. Freeze the full milk quantity the night before.",
+    "makeAheadNotes": "Freeze the goat's milk 24 hours ahead. Active work is 90 minutes plus 4-6 weeks cure.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "2 years in a cool dark cupboard once cured. Milk soaps can develop a slightly shorter shelf life than water-only bars; store in a cool location and check annually for DOS or an off smell."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false },
+    { "slug": "silicone-spatula", "isOptional": false },
+    { "slug": "soap-cutter-wire", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oil left unsaponified. At 5% superfat this milk bar has extra conditioning oil in the bar."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point where batter thickens to warm-custard consistency and a drizzle from the blender leaves a brief surface trail."
+    },
+    {
+      "slug": "cure",
+      "term": "Cure",
+      "definition": "The 4-6 weeks after unmoulding during which water evaporates, saponification completes, and the bar hardens."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 2,
+      "title": "Unmould and cut",
+      "body": "Milk soaps take 48 hours to firm in the mould. Unmould at 48 hours onto a greaseproof-lined board and cut into 130 g bars. The bars will be ivory to pale gold. Stand on a wire rack with air circulating around all faces.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 28,
+      "title": "Cure test",
+      "body": "Four weeks in. Slice a sliver from one bar, wet it, and check the lather. Rich and stable means ready. Turn the remaining bars 90 degrees.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 42,
+      "title": "Cure complete",
+      "body": "Six weeks in. The cure is complete. Store in a paper-lined box with the lid ajar.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": false
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A goat's milk and honey soap. The goat's milk replaces the water phase; the milk sugars and proteins give a more conditioning bar than a plain water soap and produce the characteristic ivory colour. Honey at 1% of the oil weight is folded in at trace for a slight sweetness in the cure and a warm pale-gold tint in the finished bar."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The technique difference from a standard water soap is that the lye is added to frozen milk rather than liquid water. Adding lye to liquid milk would caramelise the lactose and turn the batter orange and overheated. Frozen milk keeps the temperature low through the lye addition."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lye calculation at 5% "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }],
+            "text": "superfat"
+          },
+          {
+            "type": "text",
+            "text": ": (600 × 0.135) + (300 × 0.190) + (100 × 0.128) = 81.0 + 57.0 + 12.8 = 150.8 g NaOH at 0% superfat. At 5%: 150.8 × 0.95 = 143.3 g. Working weight: 143 g NaOH. Milk quantity at 33%: 330 g."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "refined olive oil. 60% of the oil weight.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "coconut-oil",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "76°F-melt-point coconut oil. 30% of the oil weight.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "castor-oil",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "cold-pressed castor oil. 10% of the oil weight.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 330,
+              "unit": "g",
+              "prepNote": "substitute: full-fat goat's milk, frozen solid. Weigh the liquid milk, then freeze in an ice-cube tray. Use the same weight as the water calculation.",
+              "isOptional": false,
+              "groupLabel": "Milk lye solution"
+            },
+            {
+              "ingredientSlug": "sodium-hydroxide",
+              "amount": 143,
+              "unit": "g",
+              "prepNote": "99% pure cosmetic-grade NaOH. 5% superfat. Weigh to 0.1 g precision.",
+              "isOptional": false,
+              "groupLabel": "Milk lye solution"
+            },
+            {
+              "ingredientSlug": "honey",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "raw or light clear honey. 1% of the oil weight. Warmed slightly to pour-able consistency before adding at trace.",
+              "isOptional": false,
+              "groupLabel": "Add at trace"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The night before: freeze the goat's milk" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh 330 g of full-fat goat's milk into an ice-cube tray. Freeze solid overnight. Have the tray ready in the freezer before starting the soap session."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add lye to frozen milk, very slowly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tip the frozen milk cubes into the HDPE pitcher. Weigh 143 g NaOH into a small dish. Add the NaOH to the frozen milk in small amounts, about 10 g at a time, stirring between each addition. The lye dissolves into the melting milk; the temperature climbs slowly rather than spiking as it would with liquid. Aim to keep the temperature below 40°C throughout by adding the lye in small increments and pausing if the pitcher feels warm. The mixture will turn yellow-orange as the lactose reacts; this is normal and the colour fades during cure. Once all the NaOH is dissolved and the pitcher is clear, it is ready to use immediately."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Melt the oils and combine" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "While the lye is dissolving, melt the oils in a saucepan over a low heat to 38-42°C. When both the milk lye and the oils are in the same temperature range, pour the milk lye into the oils. Pulse the stick blender in 10-second bursts until the batter reaches "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }],
+            "text": "light trace"
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fold in honey and pour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "At light trace, drizzle in the 10 g of warmed honey and fold through with the silicone spatula. Honey accelerates trace and can cause the batter to warm slightly; pour immediately into the mould. Smooth the surface. Leave covered with a tea towel for 48 hours. Do not insulate heavily; milk soaps already generate extra heat from the honey and milk sugars."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cure: 4-6 weeks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Unmould at 48 hours and cut into bars. Stand on a wire rack. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cure" } }],
+            "text": "Cure"
+          },
+          {
+            "type": "text",
+            "text": " 4-6 weeks. The ivory or pale gold colour deepens slightly in the first two weeks; it stabilises by the end of cure."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Patch test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Patch-test a sliver on the inside forearm for 24-48 hours. People with dairy allergies should note that saponification does not fully denature milk proteins; trace amounts may remain in the cured bar. If a dairy allergy is a concern, substitute the goat's milk with oat milk or coconut milk and recalculate nothing (the lye weight is unchanged by the milk type)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Two years in a cool dark cupboard. The milk proteins and lactose give the bar a slightly shorter shelf life than a plain water soap. Store in a paper-lined box, not airtight plastic. Discard any bar that develops an orange or rancid smell; milk soaps can sometimes develop off-odours faster than water soaps in warm, humid storage."
+          }
+        ]
+      }
+    ]
+  }
+}

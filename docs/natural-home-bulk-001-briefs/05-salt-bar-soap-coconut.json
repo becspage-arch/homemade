@@ -1,0 +1,279 @@
+{
+  "slug": "salt-bar-soap-coconut",
+  "title": "Coconut and sea salt bar soap",
+  "subtitle": "A 100% coconut-oil bar with coarse sea salt, high-superfat formula",
+  "excerpt": "A salt bar made from 100% coconut oil saponified at a high superfat of 20%. The high superfat compensates for coconut oil's stripping nature; the coarse sea salt gives a firm, dense bar with a fluffy lather and a gentle physical exfoliation.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Susan Miller Cavitch, The Soapmaker's Companion (1997), Ch. 5, coconut-oil properties and high-superfat bars. Kevin Dunn, Caveman Chemistry (2003), Ch. 9, lauric acid and lather structure. SoapCalc SAP-value tables (v2024): coconut oil NaOH SAP value 0.190.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "~8 × 100 g bars",
+    "prepMinutes": 45,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2925,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Doubles to 2 kg; use a larger mould. Salt bars harden very quickly, so pour into individual bar moulds rather than a loaf if doubling, which makes cutting optional.",
+    "makeAheadNotes": "Active work is 30 minutes. Salt bars harden and cure much faster than soft-oil bars; they are ready to use at 1-2 weeks rather than 4-6 weeks.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 365,
+    "shelfLifeNotes": "12 months in a cool dry cupboard. Salt bars have a shorter shelf life than olive-oil bars because coconut oil, even at high superfat, has a higher iodine value. Store wrapped to prevent surface sweating."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "measuring-jug", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false, "notes": "Pulse briefly only; salt bars trace very fast. You may not need the stick blender at all if the batch comes to trace quickly by hand-stirring." },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false },
+    { "slug": "silicone-spatula", "isOptional": false },
+    { "slug": "soap-cutter-wire", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oil left unsaponified. Salt bars use a higher superfat (18-20%) because coconut oil is naturally more cleansing and drying than olive oil; the extra unsaponified oil compensates."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point where soap batter thickens to the consistency of warm custard. Salt bars reach trace very quickly because salt accelerates saponification; pour immediately at trace."
+    },
+    {
+      "slug": "cure",
+      "term": "Cure",
+      "definition": "The resting period after unmoulding. Salt bars cure faster than soft-oil bars; 1-2 weeks is sufficient."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 2,
+      "title": "Unmould and cut",
+      "body": "Salt bars harden within 24-48 hours, but can seize in the mould if left past 48 hours. Unmould at 48 hours and cut into 100 g bars. Salt bars are very hard at this stage; a wire cutter cuts cleanly without crumbling. Stand on a wire rack for a further 1-2 weeks before using.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 14,
+      "title": "Bars are ready to use",
+      "body": "Two weeks in. The bars are cured and ready. They will be very hard and white, with a noticeably fluffy lather when wet. Store unwrapped in a dry cupboard.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": false
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A salt bar is 100% coconut oil soap with coarse sea salt added at trace. Coconut oil on its own makes a very cleansing, lathery bar that can be drying at a standard 5% "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }],
+            "text": "superfat"
+          },
+          {
+            "type": "text",
+            "text": ". Raising the superfat to 20% leaves enough unsaponified coconut oil to balance the cleansing action. The sea salt makes the bar extremely hard and fast-curing; it also produces a very dense, fluffy lather with a fine physical exfoliation from the salt crystals in the bar."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The lye calculation at 20% superfat: 800 g coconut oil × 0.190 = 152 g NaOH at 0% superfat. At 20% superfat: 152 × 0.80 = 121.6 g. Working weight: 122 g NaOH. Water at 33% of oil weight: 264 g distilled water."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "coconut-oil",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "76°F-melt-point coconut oil. 100% of the oil weight.",
+              "isOptional": false,
+              "groupLabel": "Oil phase"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 264,
+              "unit": "g",
+              "prepNote": "distilled or deionised. 33% of the oil weight.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "sodium-hydroxide",
+              "amount": 122,
+              "unit": "g",
+              "prepNote": "99% pure cosmetic-grade NaOH at 20% superfat. Weigh to 0.1 g precision.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "coarse sea salt. 50% of the oil weight; this is a high-salt bar. Fine table salt also works but produces a denser, less visually textured surface. Add at trace.",
+              "isOptional": false,
+              "groupLabel": "Add at trace"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh 264 g distilled water into the HDPE pitcher. Add 122 g NaOH to the water in a steady stream, stirring with a stainless-steel spoon. Never the reverse. The solution heats immediately and fumes briefly; do not lean over it. Stir until dissolved and clear, then set aside to cool to 38-42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Melt the coconut oil" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh 800 g coconut oil into a saucepan and warm on a very low heat until melted. Remove from the heat and cool to 38-42°C. Weigh the 400 g of sea salt into a separate bowl and have it ready beside the mould."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Combine, add salt, pour immediately" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When both phases are at 38-42°C, pour the lye into the coconut oil and stir briskly by hand. The batter may reach "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }],
+            "text": "trace"
+          },
+          {
+            "type": "text",
+            "text": " within 60-90 seconds without the stick blender; if not, give one short pulse on the blender. At trace, immediately tip in the sea salt and stir through with the silicone spatula with 15-20 strokes. The batter stiffens rapidly as the salt goes in; work quickly and pour into the mould as soon as the salt is incorporated."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Smooth the surface quickly. Do not tap the mould to settle, the batter is already setting. Leave uncovered at room temperature for 48 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cure: 1-2 weeks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Unmould at 48 hours and cut while the bar is still just firm enough to score cleanly. Salt bars "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cure" } }],
+            "text": "cure"
+          },
+          {
+            "type": "text",
+            "text": " in 1-2 weeks; they do not need the 4-6 week wait of soft-oil bars. The salt accelerates water evaporation and the bar is hard and mild quickly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Patch test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Patch-test on the inside forearm for 24-48 hours. Even at 20% superfat, the high coconut-oil content makes this bar more cleansing than most; people with very dry skin may find it too stripping for the face. It is well-suited as a body or hand bar."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "12 months in a cool dry cupboard. Salt bars sweat slightly in humid conditions; wrap individually in paper or cling film to prevent surface moisture. The salt in the bar is a natural preservative that slows rancidity, but coconut oil still has a shorter shelf life than olive; check for a rancid smell after 12 months and discard any affected bar."
+          }
+        ]
+      }
+    ]
+  }
+}

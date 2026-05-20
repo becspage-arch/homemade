@@ -1,0 +1,309 @@
+{
+  "slug": "marseille-soap",
+  "title": "Marseille soap",
+  "subtitle": "72% olive oil, the traditional Provençal blend",
+  "excerpt": "The Marseille formula: 72% olive oil with coconut and palm kernel to stiffen the lather. The 72% olive content is the historical and functional threshold, enough conditioning oil to make a mild bar, enough lauric-acid oil to produce a firm white bar with good lather.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Anne Bramson, Soap: Making It, Enjoying It (1972), Ch. 3, Marseille formula history and the 72% rule. Susan Miller Cavitch, The Soapmaker's Companion (1997), Ch. 5, lauric-acid oil balance in household soap. SoapCalc SAP-value tables (v2024): olive 0.135, coconut 0.190, castor 0.128.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "~7 × 130 g bars after cure",
+    "prepMinutes": 60,
+    "cookMinutes": 0,
+    "restingMinutes": 60480,
+    "chillingMinutes": 0,
+    "totalMinutes": 60540,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Doubles to 2 kg cleanly. Beyond that, batch in 1 kg lots.",
+    "makeAheadNotes": "Active work is one 90-minute session. Cure time is 4-6 weeks. Once cured the bars keep 2 years.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "2 years in a cool dark cupboard once cured. Discard if orange flecks (DOS) or a sharp paint-like smell develops."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "measuring-jug", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false },
+    { "slug": "silicone-spatula", "isOptional": false },
+    { "slug": "soap-cutter-wire", "isOptional": false },
+    { "slug": "ph-test-strips", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oil left unsaponified. Typically 5-7%. Higher superfat gives a more conditioning bar."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point where soap batter thickens to the consistency of warm custard and a drizzle from the stick blender leaves a brief trail on the surface."
+    },
+    {
+      "slug": "cure",
+      "term": "Cure",
+      "definition": "The 4-6 weeks of resting after unmoulding during which excess water evaporates, saponification completes, and the bar hardens and grows milder."
+    },
+    {
+      "slug": "dos",
+      "term": "DOS (dreaded orange spots)",
+      "definition": "Orange flecks on a bar surface indicating the superfat oil has gone rancid. Smells sharp and paint-like. Discard affected bars."
+    }
+  ],
+  "techniqueSlugs": ["double-boiler-method"],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 1,
+      "title": "Unmould and cut",
+      "body": "Twenty-four hours in. The loaf should be firm to press with a gloved finger. Unmould onto a greaseproof-lined board and cut into 130 g bars with the wire cutter. Stand each bar on a wire rack with air space around all faces.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 14,
+      "title": "Turn the bars",
+      "body": "Two weeks in. Turn each bar 90 degrees so the face resting on the rack is now upward. Even cure across all six faces.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 28,
+      "title": "Cure test",
+      "body": "Four weeks in. Slice a thin sliver off one corner bar, wet it, and check the lather and pH. Rich, stable lather and a pH strip reading of 9-10 means the bar is ready. Anything above 11 needs two more weeks.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 4,
+      "offsetDays": 42,
+      "title": "Cure complete",
+      "body": "Six weeks in. The cure is complete. Firm, white, mild bars with a creamy but present lather. Store in a paper-lined box with the lid ajar.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": false
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Marseille formula is 72% olive oil, 20% coconut oil, and 8% castor oil. The 72% olive content is the historical threshold: enough oleic acid for a conditioning bar, and the coconut and castor provide the lather structure that pure Castile lacks. The result is a firm white bar with a creamy lather, milder than most commercial soaps."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The lye calculation at 5% "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }],
+            "text": "superfat"
+          },
+          {
+            "type": "text",
+            "text": ": (720 × 0.135) + (200 × 0.190) + (80 × 0.128) = 97.2 + 38.0 + 10.2 = 145.4 g NaOH at 0% superfat. At 5% superfat: 145.4 × 0.95 = 138.1 g. Working weight: 138 g NaOH. Water at 33% of oil weight: 330 g distilled water."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 720,
+              "unit": "g",
+              "prepNote": "refined olive oil. 72% of the oil weight. The defining Marseille ratio.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "coconut-oil",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "76°F-melt-point coconut oil. 20% of the oil weight. Provides lather structure.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "castor-oil",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "cold-pressed castor oil. 8% of the oil weight. Stabilises the lather bubbles.",
+              "isOptional": false,
+              "groupLabel": "Oil phase (1 kg total)"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 330,
+              "unit": "g",
+              "prepNote": "distilled or deionised. 33% of the oil weight.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "sodium-hydroxide",
+              "amount": 138,
+              "unit": "g",
+              "prepNote": "99% pure cosmetic-grade NaOH. Calculated at 5% superfat. Weigh to 0.1 g precision.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh 330 g of distilled water into the HDPE pitcher. Weigh 138 g of sodium hydroxide into a small dish. Add the NaOH to the water in a steady stream, stirring with a stainless-steel spoon. Never reverse the order. The pitcher heats to 80-90°C within seconds and fumes briefly; do not lean over it. Stir until dissolved and clear, then set aside to cool to 38-42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Melt the oils to 38-42°C" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh all three oils into a saucepan. The coconut oil is solid; warm on a low heat until melted and combined. Check the temperature with the probe. Match the oil temperature to the lye temperature in the 38-42°C window before combining."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend to light trace and pour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution into the oils. Lower the stick blender below the surface and pulse on for 10-second bursts, stirring between. The 72% olive oil content means the batter traces slowly, typically 3-6 minutes of blending. Watch for "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }],
+            "text": "light trace"
+          },
+          {
+            "type": "text",
+            "text": " where a drizzle from the blender leaves a brief trail. Pour into the silicone mould, tap to settle, smooth the surface, and cover with a tea towel. Leave undisturbed for 24-48 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cure milestones" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Day 1-2: unmould and cut into 130 g bars, stand on a wire rack. Day 14: turn each bar 90 degrees. Day 28: "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cure" } }],
+            "text": "cure"
+          },
+          {
+            "type": "text",
+            "text": " test one sliver; rich lather and a pH of 9-10 means ready. Day 42: cure complete, bars are firm and mild."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Patch test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Patch-test a sliver on the inside forearm for 24-48 hours before regular use. The coconut oil in this formula can be drying for very dry skin; if that is a concern, reduce the coconut oil to 15% and increase olive oil to 77%, and recalculate the lye accordingly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Two years in a cool dark cupboard. Store on a wire rack or in a paper-lined box, not in airtight plastic. The failure mode to watch for is "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dos" } }],
+            "text": "DOS"
+          },
+          {
+            "type": "text",
+            "text": ", orange flecks indicating rancid superfat. Smell-check confirms; a rancid bar smells sharp and paint-like, not clean. Discard affected bars."
+          }
+        ]
+      }
+    ]
+  }
+}

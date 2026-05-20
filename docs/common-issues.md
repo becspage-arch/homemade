@@ -237,6 +237,20 @@ generic claims rather than concrete facts, etc.)
   directly (no `pnpm run`, no `--` separator). Or loop from `packages/db/` and use
   `pnpm exec tsx scripts/upload-tutorial.ts "$f" --status PUBLISHED`.
 
+- **`voice-check.ts` resolves paths relative to `packages/db/`, not the repo root** `[block]`
+  Pattern: `pnpm --filter "@homemade/db" exec tsx scripts/voice-check.ts docs/natural-home-bulk-001-briefs/01-foo.json`
+  fails silently or reads the wrong file.
+  **Why:** The voice-check script resolves its file argument relative to the `packages/db/`
+  directory (its `process.cwd()` when run via pnpm filter). A relative path like
+  `docs/…` will be looked up under `packages/db/docs/` which does not exist.
+  **How to fix:** Always pass an **absolute path** to `voice-check.ts`:
+  ```bash
+  REPO=$(git rev-parse --show-toplevel)
+  pnpm --filter "@homemade/db" exec tsx scripts/voice-check.ts "$REPO/docs/natural-home-bulk-001-briefs/01-foo.json"
+  ```
+  Or cd to the repo root and use `$(pwd)/docs/…`. The upload script does not have this
+  problem — it accepts relative paths. Only voice-check requires absolute paths.
+
 - **New PracticeTarget enum values not in generated Prisma client** `[block]`
   Pattern: Upload fails with `Invalid value for argument 'practiceTargets'. Expected PracticeTarget.`
   even though the value is present in `schema.prisma`.
