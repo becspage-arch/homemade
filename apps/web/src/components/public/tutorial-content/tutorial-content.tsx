@@ -17,6 +17,8 @@ import { CalligraphyExemplar } from '@/lib/chart-renderers/calligraphy-exemplar'
 import { OrigamiFoldBasic } from '@/lib/chart-renderers/origami-fold-basic'
 import { WeavingDraft } from '@/lib/chart-renderers/weaving-draft'
 import { MacrameKnot } from '@/lib/chart-renderers/macrame-knot'
+import { renderCrossStitchChart } from '@/lib/chart-renderers/cross-stitch'
+import type { CrossStitchChart as CrossStitchChartDefinition } from '@/lib/chart-renderers/cross-stitch'
 import type {
   CalligraphyExemplarDefinition,
   MacrameKnotDefinition,
@@ -277,6 +279,25 @@ function RenderNode({
         return <div className="craft-chart-missing">Chart not yet attached.</div>
       }
       return <CraftChart definition={def} />
+    }
+
+    case 'crossStitchChart': {
+      // Needlework — cross-stitch colour-symbol grid. The block carries an
+      // inline `definition` object with `width`, `height`, `palette`,
+      // `cells`. The renderer at `apps/web/src/lib/chart-renderers/
+      // cross-stitch.ts` returns a self-contained SVG string which we pipe
+      // through with dangerouslySetInnerHTML — server-rendered, no
+      // client-side React.
+      const def = attrs.definition as CrossStitchChartDefinition | undefined
+      if (!def || typeof def !== 'object') {
+        return <div className="craft-chart-missing">Chart not yet attached.</div>
+      }
+      return (
+        <div
+          className="craft-chart craft-chart-cross-stitch"
+          dangerouslySetInnerHTML={{ __html: renderCrossStitchChart(def) }}
+        />
+      )
     }
 
     case 'calligraphyExemplar': {
