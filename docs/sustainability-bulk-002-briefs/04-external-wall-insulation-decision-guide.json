@@ -1,0 +1,240 @@
+{
+  "slug": "external-wall-insulation-decision-guide",
+  "title": "External wall insulation: what the process involves",
+  "subtitle": "A decision guide for solid-wall homes considering EWI",
+  "excerpt": "External wall insulation wraps the outside of a solid-walled house in insulation and render, reducing heat loss through the walls by 50-70%. The work is nearly always installer work at significant cost. This is the decision guide.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Part L1B (2022) for U-value targets. CIBSE guide on EWI and condensation risk. Energy Saving Trust solid-wall insulation guidance. Historic England guidance on EWI for listed and traditional buildings.",
+  "approximateCostGbp": 15000,
+  "paybackYears": 22,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "humidity-meter", "isOptional": true }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "EWI decision guide",
+    "external insulation for solid walls",
+    "solid wall external insulation UK",
+    "render and insulate solid wall"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "solid-wall-insulation",
+      "term": "Solid wall insulation",
+      "definition": "Insulation added inside or outside a solid-wall house (pre-1930s UK construction, no cavity). Internal wall insulation (IWI) reduces room size by 60-100 mm per wall; external wall insulation (EWI) changes the facade."
+    },
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "Thermal transmittance (W/m²·K). An uninsulated Victorian solid brick wall is ~2.0 W/m²·K. With 100 mm EWI, it falls to approximately 0.30 W/m²·K."
+    },
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A localised gap or break in the insulation envelope where heat short-circuits the resistance. EWI wraps the whole facade continuously, eliminating the repeating thermal bridges at floor and ceiling junctions that IWI cannot address."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane on the warm side of insulation that limits humid air diffusing into colder layers where it would condense. EWI does not require an internal VCL; the insulation goes outside the wall, keeping the wall warm and preventing interstitial condensation."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Solid-wall homes (typically pre-1930s UK construction, built with a single leaf of brick or stone) lose roughly twice as much heat through their walls as cavity-wall homes of the same period. The wall "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+            "text": "U-value"
+          },
+          {
+            "type": "text",
+            "text": " of a 220 mm solid brick wall is approximately 2.1 W/m²·K. The Part L renovation target for solid walls is 0.30 W/m²·K. External wall insulation (EWI) is the method that achieves the biggest improvement while improving the appearance of the building and not reducing internal room size."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What EWI involves" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The process applies to the outside of the building. An installer fixes insulation boards (most often expanded polystyrene (EPS), mineral wool slabs, or phenolic boards) directly to the outer face of the wall using adhesive and mechanical fixings. A reinforcing mesh is embedded in a base coat, then a decorative render or cladding finish is applied over the top. Windows, doors, soffits, and all other elements that project from the wall face must be accommodated with extended sills, cavity closers, and careful detailing around every penetration."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The thermal advantage over internal wall insulation (IWI) is continuity. EWI wraps the facade without gaps at floor junctions, structural beams, or wall ties, eliminating the repeating "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }],
+            "text": "thermal bridges"
+          },
+          {
+            "type": "text",
+            "text": " that IWI cannot address. It also moves the wall itself onto the warm side of the insulation: the wall stores heat more effectively and is protected from freeze-thaw cycling. There is no "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }],
+            "text": "vapour control layer"
+          },
+          {
+            "type": "text",
+            "text": " requirement on the internal face."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The planning question" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "EWI thickens the building by 80-250 mm on each external face, changes the facade appearance, and may affect the building line on street-facing walls. The key planning questions for any property:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Listed building: EWI is almost certainly not permitted on a listed building. The internal option (IWI) is the only retrofit route, and even that requires listed-building consent. Check with the local planning authority before commissioning any survey." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Conservation area: EWI on a front elevation in a conservation area is likely to require planning permission, as it changes the external appearance of the building. Rear and side elevations are sometimes permitted development." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Standard permitted development (outside listed/conservation): a rear or side EWI install is typically permitted development. A front-elevation install that changes the building's material or substantially alters its appearance usually requires permission." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The worked example" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 1905 Victorian terrace in Bristol: three-bedroom mid-terrace, 100 m² floor area, 70 m² of exposed external wall. Wall U-value before: 2.1 W/m²·K. After 90 mm EPS EWI: 0.30 W/m²·K. Heat loss through walls reduces by approximately 85% (from 2.1 to 0.30 on the same 70 m²). At a 10°C temperature difference (average UK heating season), the wall heat loss reduces from approximately 1470 W to 210 W. Over a five-month heating season, that is approximately 1900 kWh saved per year. At current gas prices, the annual saving is modest. The installed cost for the rear and side walls is significant. Financial payback on energy savings alone is 70-105 years at current gas rates."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "The financial case at current UK gas rates",
+          "body": "EWI rarely pays back on energy savings alone at current gas prices. The case is environmental (large absolute carbon reduction for a hard-to-insulate house type), comfort (cold walls cause radiant discomfort even with adequate air temperature), and building condition (protected walls last longer). ECO4 and GBIS schemes may fund EWI for eligible households. The BUS grant does not cover EWI."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The moisture question" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Solid-wall houses in the UK are often breathable. Traditional lime-mortared brick walls move moisture in and out. Some EWI systems are not breathable; others use mineral wool with breathable renders. For a lime-mortared or stone house, specifying a breathable EWI system (mineral wool boards with mineral render, not EPS with a polymer coat) avoids trapping moisture in the wall. The installer must assess the wall's moisture behaviour before specifying the system."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to check before commissioning" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Planning permission status: confirm which elevations can be treated without permission before getting quotes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Installer certification: EWI installers should hold INCA (Insulated Render and Cladding Association) or equivalent certification. Required for any publicly-funded scheme." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Damp survey first: any rising damp, penetrating damp, or bridging across the cavity (if the house has any cavity section) must be resolved before the external envelope is sealed." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Party wall agreement: if the EWI continues to the party wall, a party wall surveyor's input may be required." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What solid wall insulation looks like done well vs done badly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Done well, EWI is flush with an even render colour and texture, extended window sills and door surrounds are level and properly sealed, all pipe and cable penetrations are sealed back to the new surface, and the reveal at each window is filled with insulation so there is no cold bridge at the window frame. Done badly, the system has cracked render over unbonded boards, uninsulated reveals visible as cold lines on a thermal image, poorly detailed junctions at the roof verge, and window sills that are too short and allow water to run behind the system."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solid-wall-insulation" } }],
+            "text": "solid wall insulation"
+          },
+          {
+            "type": "text",
+            "text": " decision is large and irreversible. A PAS 2035-aligned whole-house survey is the right starting point before commissioning any work."
+          }
+        ]
+      }
+    ]
+  }
+}

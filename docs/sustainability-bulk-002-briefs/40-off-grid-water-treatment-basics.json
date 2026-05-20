@@ -1,0 +1,171 @@
+{
+  "slug": "off-grid-water-treatment-basics",
+  "title": "Off-grid water treatment basics",
+  "subtitle": "Making collected or stored water safe for use on off-grid sites",
+  "excerpt": "Collected rainwater, spring water, and borehole water may contain bacteria, parasites, chemical contamination, or sediment. Off-grid treatment combines filtration, disinfection, and testing to produce water suitable for its intended use.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Drinking Water Inspectorate private water supply guidance. Environment Agency guidance on private water supplies. WHO guidelines for drinking-water quality, 4th edition. Centre for Alternative Technology off-grid water treatment guidance.",
+  "approximateCostGbp": 250,
+  "paybackYears": 3,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "soil-moisture-meter", "isOptional": true }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "off grid water purification UK",
+    "rainwater drinking water safe",
+    "private water supply treatment",
+    "borehole water filter system"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rainwater-harvesting",
+      "term": "Rainwater harvesting",
+      "definition": "Collecting roof runoff. Collected rainwater is not potable without treatment: it may contain atmospheric pollutants, bird faeces, algae, and roof surface contaminants. For drinking, it requires filtration and disinfection."
+    },
+    {
+      "slug": "greywater",
+      "term": "Greywater",
+      "definition": "Wastewater from washing, sinks, and bathing. Greywater contains detergents, bacteria, and skin cells. It requires separate treatment from incoming supply water and should not be mixed with collected rainwater in a treatment system."
+    },
+    {
+      "slug": "embodied-water",
+      "term": "Embodied water",
+      "definition": "The water used to produce goods. Off-grid water self-sufficiency does not reduce embodied water (the water in food production and manufactured goods) but does reduce dependence on mains distribution infrastructure."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Collected or stored water from non-mains sources is considered a private water supply under UK law. Premises relying on a private water supply (borehole, spring, well, or collected "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rainwater-harvesting" } }],
+            "text": "rainwater"
+          },
+          {
+            "type": "text",
+            "text": ") are subject to the Private Water Supply Regulations 2016, which require the supply to be risk-assessed and, where used for drinking or food preparation, to meet the quality standards of the Water Supply (Water Quality) Regulations."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Treatment stages" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sediment filtration: a 10-50 micron sediment cartridge filter removes particulate matter. This is the first stage, protecting downstream filters from premature clogging. Replace cartridges every 6-12 months or when flow rate drops." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Activated carbon filtration: removes organic compounds, chlorine taste, some pesticides, and improves taste. Carbon block filters (1-5 micron) also reduce some pathogens but are not a standalone disinfection stage. Replace every 6-12 months." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "UV disinfection: a UV lamp at 254 nm inactivates bacteria, viruses, and protozoa by damaging their DNA. The water must be clear (turbidity below 1 NTU) for UV to be effective; sediment filtration must precede UV. UV does not remove chemical contamination." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ceramic filtration: ceramic filters (0.1-0.5 micron) remove bacteria and protozoa by size exclusion. No electricity required; suitable for lower-flow applications. Does not remove viruses (too small to be trapped by the ceramic pore size)." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Water testing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Testing before and after treatment is essential to verify the system is working. UKAS-accredited laboratory tests can be ordered by post and test for E. coli, total coliform, nitrate, nitrite, pH, turbidity, and a range of chemical parameters. Test at the point of use (not at the storage tank inlet) to confirm the full treatment train is effective."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Legionella risk in stored water" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Legionella bacteria multiply in stored water held between 20 and 45°C. Below 20°C and above 60°C, multiplication stops. An off-grid cold water storage tank kept at ambient outdoor temperature in summer (which can reach 25-30°C in a south-facing outbuilding) creates legionella risk if water is stored for more than a few days. Minimise tank volume relative to daily throughput, ensure tanks are insulated against solar gain in summer, and drain the system if it is not in use for weeks at a time."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Non-potable versus potable use" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For toilet flushing, plant watering, and washing vehicles, untreated collected "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "greywater" } }],
+            "text": "rainwater"
+          },
+          {
+            "type": "text",
+            "text": " (with only a first-flush diverter and basic mesh filter) is adequate and the risk is acceptable. For handwashing, dishwashing, and food preparation, full treatment is required. Keep non-potable and potable distribution pipework physically separate, clearly labelled, and do not cross-connect them."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Responsibility and regulation",
+          "body": "If a property relies on a private water supply for drinking water and is served by a local authority area, the local authority has a duty to inspect and risk-assess the supply. For a single domestic property with a private supply, the householder bears responsibility for its safety. UKAS-accredited testing annually is the minimum verification standard. The Drinking Water Inspectorate publishes guidance on compliance for private supplies in England and Wales."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "embodied-water" } }],
+            "text": "water independence"
+          },
+          {
+            "type": "text",
+            "text": " that off-grid collection provides is operationally valuable on remote sites; the treatment infrastructure required to make that water safe for drinking is non-trivial and must be maintained actively."
+          }
+        ]
+      }
+    ]
+  }
+}

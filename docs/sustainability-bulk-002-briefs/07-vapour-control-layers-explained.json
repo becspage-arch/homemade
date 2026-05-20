@@ -1,0 +1,187 @@
+{
+  "slug": "vapour-control-layers-explained",
+  "title": "Vapour control layers in insulated walls and roofs",
+  "subtitle": "What VCLs do, where they go, and when they are needed",
+  "excerpt": "A vapour control layer prevents moisture-laden air moving through insulation and condensing on cold surfaces inside the construction. Getting the position wrong causes interstitial condensation and eventual rot. This is the decision guide.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BS 5250:2021 Code of Practice for control of condensation in buildings. BRE Report BR262 on vapour control in insulated constructions. CIBSE Guide A appendix on interstitial condensation and the Glaser method.",
+  "approximateCostGbp": 0,
+  "paybackYears": 0,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "utility-knife", "isOptional": true },
+    { "slug": "tape-measure", "isOptional": true }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "VCL position in wall",
+    "vapour barrier insulation",
+    "interstitial condensation insulation",
+    "where to put vapour barrier"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane with low vapour permeance placed on the warm side of insulation. It slows vapour diffusion into insulation layers where it would reach the dew point and condense. A vapour barrier is virtually impermeable; a VCL is slightly permeable, allowing limited drying back into the room."
+    },
+    {
+      "slug": "mineral-wool",
+      "term": "Mineral wool",
+      "definition": "Stone-fibre or glass-fibre insulation. Vapour-open: moisture moves through it freely. Requires a VCL on the warm face when used in wall or ceiling constructions to prevent interstitial condensation."
+    },
+    {
+      "slug": "pir-board",
+      "term": "PIR board",
+      "definition": "Polyisocyanurate rigid board. Virtually impermeable to vapour: the board itself acts as a vapour control layer when joints are taped. A separate VCL membrane is not normally required with PIR."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Warm indoor air holds more moisture than cold outdoor air. When humid air diffuses through an insulated wall, it cools as it approaches the cold side. At the dew point, moisture condenses inside the construction where it cannot be seen. A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }],
+            "text": "vapour control layer"
+          },
+          {
+            "type": "text",
+            "text": " on the warm side of the insulation reduces the amount of vapour reaching the cold zone, preventing interstitial condensation."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When a VCL is needed" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Internal wall insulation with "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mineral-wool" } }],
+                    "text": "mineral wool"
+                  },
+                  {
+                    "type": "text",
+                    "text": ": the insulation is vapour-open. A VCL on the warm (room) face is required to prevent moisture reaching the cold original wall surface."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Warm flat roof with mineral wool: the insulation sits below the cold waterproofing layer. A VCL on the warm side prevents moisture reaching the structural deck." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Floor insulation over a concrete slab: a 1200-gauge polythene DPM laid under the insulation boards acts as the vapour control layer, blocking ground moisture from entering the insulation." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When a VCL is not needed" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "PIR board used as the insulation layer: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pir-board" } }],
+                    "text": "PIR boards"
+                  },
+                  {
+                    "type": "text",
+                    "text": " are nearly impermeable. The board acts as the vapour control layer when all joints are taped with aluminium foil tape."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cold roof (ventilated loft) with mineral wool on the ceiling: ventilation under the roof carries moisture away before accumulation. No VCL is needed, but the eaves must remain open." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "External wall insulation (EWI): the insulation goes outside the wall, keeping the wall itself on the warm side. No vapour pressure difference drives moisture from the room into the wall." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The warm-side rule" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The VCL must be on the warm side of the insulation, not the cold side. A membrane placed on the cold side traps moisture inside the insulation: vapour that diffuses in cannot escape outward. The result is worse than no membrane. The rule of thumb: at least two-thirds of the total insulation R-value should be on the cold (outside) face of the VCL. This ensures the VCL surface stays above the dew point on cold days."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Lime plaster and breathable walls" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Solid-wall houses built with lime mortar and lime plaster manage moisture by absorption and slow drying. Adding a VCL to the inside of a lime-plastered wall blocks moisture movement the wall was designed to handle, potentially causing damage to the fabric. For breathable construction, an intelligent (hygroscopic) VCL membrane that increases vapour resistance in winter and decreases it in summer is the correct approach. A standard polythene sheet is not appropriate."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "VCL continuity matters more than the membrane itself",
+          "body": "The weakest point in a VCL is not the membrane but the junctions: around electrical sockets, at ceiling-wall junctions, and where the membrane meets window frames. Each gap in the VCL allows humid air through. Robust taping at all junctions with airtightness tape is as important as the membrane specification itself."
+        }
+      }
+    ]
+  }
+}

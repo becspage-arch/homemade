@@ -1,0 +1,164 @@
+{
+  "slug": "vermicomposting-troubleshooting",
+  "title": "Troubleshooting a wormery",
+  "subtitle": "Diagnosing and fixing common wormery problems",
+  "excerpt": "Wormeries fail in predictable ways: the worms escape, the bin smells, or it develops fruit flies. Most problems trace to the same root causes around moisture, acidity, and temperature. This guide works through each symptom and fix.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Garden Organic wormery guidance. Worm Research Centre husbandry recommendations for Eisenia fetida. Original Organics wormery troubleshooting guidance.",
+  "approximateCostGbp": 0,
+  "paybackYears": 0,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "worm bin problems",
+    "wormery not working",
+    "worms escaping wormery",
+    "wormery smells bad"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "wormery",
+      "term": "Wormery",
+      "definition": "A contained composting system using red or tiger worms (Eisenia fetida or Dendrobaena veneta) to process kitchen waste into worm castings and liquid feed. Worms process roughly half their body weight in food per day at optimum conditions."
+    },
+    {
+      "slug": "leachate",
+      "term": "Leachate",
+      "definition": "The liquid that drains from a wormery or compost bin. Wormery leachate is rich in micronutrients and can be diluted 10:1 with water and used as a liquid plant feed."
+    },
+    {
+      "slug": "cn-ratio",
+      "term": "C:N ratio",
+      "definition": "In a wormery context, feeding too many nitrogen-rich materials (fruit, vegetable scraps) without enough carbon (cardboard, paper) causes anaerobic conditions. Adding shredded cardboard with each feeding corrects the balance."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wormery" } }],
+            "text": "wormery"
+          },
+          {
+            "type": "text",
+            "text": " runs well within a narrow set of conditions: temperature 15 to 25°C, moisture 70 to 80% (the bedding should feel like a wrung-out sponge), pH 6.5 to 7.5, and adequate but not excessive food. Outside those ranges, the worms signal the problem by clustering at the lid, escaping, or dying."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Worms clustering at the lid or escaping",
+              "cause": "Conditions inside the bin are unfavourable: too wet, too acidic, too hot, or the bin was just set up and worms are exploring",
+              "fix": "Check moisture first (squeeze a handful of bedding: a few drops should come out, not a stream). If too wet, add dry shredded cardboard and leave the lid off overnight. If the bin is newly set up, worm exploration during the first week is normal: keep the lid on with light shining on the bin surface to encourage descent."
+            },
+            {
+              "symptom": "Bin smells bad",
+              "cause": "Anaerobic conditions from overfeeding, excess moisture, or compaction",
+              "fix": "Stop adding food for one week. Add a large quantity of shredded cardboard and mix gently with a fork to introduce air. Drain excess leachate from the sump. Do not add citrus or onion in high quantities, which decompose anaerobically."
+            },
+            {
+              "symptom": "Fruit flies",
+              "cause": "Uncovered fresh food on the surface",
+              "fix": "Bury food additions under bedding each time. Cover the surface with a damp sheet of newspaper or thin cardboard layer. If flies are already established, stop adding food for two weeks: the pupae will die without a food source."
+            },
+            {
+              "symptom": "White mites covering the food",
+              "cause": "Conditions are too acidic or too wet; white mites outcompete worms in these conditions",
+              "fix": "Add crushed eggshells or a small amount of garden lime to raise pH. Reduce moisture. White mites are harmless to the system in small numbers but indicate the balance is off."
+            },
+            {
+              "symptom": "Very few worms remaining",
+              "cause": "Worms have died or escaped, usually from temperature extremes (above 30°C or below 5°C), or from being given food treated with pesticides",
+              "fix": "In summer, move the wormery to shade and add extra bedding for insulation. In winter, bring indoors or into a shed. Do not add produce that was sprayed with systemic pesticides."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using the leachate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "leachate" } }],
+            "text": "leachate"
+          },
+          {
+            "type": "text",
+            "text": " that collects in the sump is diluted at 10 parts water to 1 part leachate and used as a liquid plant feed on growing crops. Very dark or foul-smelling leachate indicates anaerobic conditions in the bin: remedy the bin conditions before using it."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Foods to avoid" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Citrus and onions in large quantities: highly acidic, decompose slowly, and can lower pH below what worms tolerate. Small amounts are fine; a bag of citrus peel added at once is not. The "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cn-ratio" } }],
+                    "text": "balance"
+                  },
+                  {
+                    "type": "text",
+                    "text": " matters: add shredded cardboard alongside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Meat and dairy: attract vermin, cause bad smells, and decompose slowly in the cool wormery environment." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Grass clippings in bulk: break down to a slimy anaerobic mat. Add in thin layers with cardboard." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

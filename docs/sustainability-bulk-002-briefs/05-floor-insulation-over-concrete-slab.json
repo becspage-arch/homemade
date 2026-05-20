@@ -1,0 +1,238 @@
+{
+  "slug": "floor-insulation-over-concrete-slab",
+  "title": "Insulating a concrete slab floor",
+  "subtitle": "Laying PIR boards under a floating floor to cut ground heat loss",
+  "excerpt": "A bare concrete slab loses heat through the floor year-round. Laying 60-80 mm of rigid insulation board under a floating timber floor reduces that loss substantially and removes the cold underfoot. The floor height rises by 80-150 mm: doors need trimming.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Part L1B (2022) for ground-floor U-value renovation target (0.22 W/m²·K). BRE Good Repair Guide on ground-floor insulation. CIBSE guidance on DPM placement and vapour control in solid floor retrofits.",
+  "approximateCostGbp": 700,
+  "paybackYears": 10,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "handsaw", "isOptional": false },
+    { "slug": "utility-knife", "isOptional": false },
+    { "slug": "cordless-drill", "isOptional": false }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "insulate concrete floor",
+    "PIR boards under floating floor",
+    "ground floor insulation solid floor",
+    "floor insulation solid floor UK"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pir-board",
+      "term": "PIR board",
+      "definition": "Polyisocyanurate rigid insulation board. Lambda approximately 0.022 to 0.025 W/m·K: higher performance per millimetre than mineral wool, so useful where floor height rise must be minimised. Foil-faced; all board joints should be taped to limit vapour and air movement."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane that limits moisture-laden air diffusing from the ground into insulation layers. Under slab insulation, a 1200-gauge polythene DPM laid under the boards serves as the vapour control layer."
+    },
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "Thermal transmittance (W/m²·K). An uninsulated concrete slab is typically 0.70 W/m²·K. With 60 mm PIR board, this falls to approximately 0.22 W/m²·K, meeting the Part L renovation target."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A concrete slab floor has a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+            "text": "U-value"
+          },
+          {
+            "type": "text",
+            "text": " of approximately 0.70 W/m²·K in a typical post-war house. Adding 60 mm of "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pir-board" } }],
+            "text": "PIR board"
+          },
+          {
+            "type": "text",
+            "text": " over the slab brings this to approximately 0.22 W/m²·K, meeting the Part L renovation target. The floor level rises by 80 to 150 mm once DPM, insulation, and floating floor are stacked. Measure door clearances before ordering materials."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "When this is worth doing",
+          "body": "Ground floor insulation gives the best return when the room sits directly on an uninsulated slab with no underfloor heating. Suspended timber floors have a different solution (insulation between joists). Underfloor heating systems usually already include adequate insulation boards below the heating element."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Check for damp. If the concrete shows white crystalline deposits (salt efflorescence) or feels damp, there may be no original DPM in the existing floor. A 1200-gauge polythene sheet over the slab, lapped 150 mm up all walls and taped at joins, acts as the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }],
+            "text": "vapour control layer"
+          },
+          {
+            "type": "text",
+            "text": ". If rising damp is significant, remedy it before insulating."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Measure door clearances. The finished floor level rises by the sum of DPM, insulation board, and floating floor thickness. Mark this height on door frames and plan trimming before starting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Laying the DPM and insulation boards" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 1, clean and level the slab."
+          },
+          {
+            "type": "text",
+            "text": " Sweep the slab clean. Fill significant hollows or cracks with sharp sand and cement mix. Insulation boards need a reasonably flat surface; gaps underneath create cold spots and board flexing."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 2, lay the polythene DPM."
+          },
+          {
+            "type": "text",
+            "text": " Roll out 1200-gauge polythene across the floor. Lap sheets 300 mm and tape joins with polythene tape. Turn the polythene up all walls by at least 150 mm; it will be trimmed flush with the finished floor later. The polythene goes under the insulation boards."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 3, cut and lay PIR boards."
+          },
+          {
+            "type": "text",
+            "text": " Start at the far corner from the door. Cut boards with a handsaw or score-and-snap with a utility knife along a straightedge. Lay boards with staggered joints (like brickwork), pushing boards tightly together. Leave a 10 mm expansion gap at all perimeter walls."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 4, tape all board joints."
+          },
+          {
+            "type": "text",
+            "text": " Aluminium foil tape applied over every board joint reduces air infiltration and prevents moisture bridging at the joints. PIR boards are foil-faced; the tape bonds well to the foil surface."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Laying the floating floor" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 5, lay a floating floor."
+          },
+          {
+            "type": "text",
+            "text": " Engineered timber flooring or tongue-and-groove chipboard laid floating over the PIR boards completes the system. Maintain a 10-15 mm expansion gap at all walls. Do not glue the floating floor to the insulation. The perimeter gap is covered by the skirting board."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 6, trim and refit skirting boards."
+          },
+          {
+            "type": "text",
+            "text": " Refit the skirting boards at the new height, covering the perimeter expansion gap. Trim the DPM polythene flush with the finished floor before fixing skirting. Trim door bottoms to clear the new floor height by at least 4 mm."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Floor feels springy in places",
+              "cause": "PIR boards not fully supported on the slab beneath, usually because of hollows or debris under the DPM",
+              "fix": "Lift the boards in the affected area, check for voids, fill and level the slab before relaying."
+            },
+            {
+              "symptom": "Condensation or dampness under the boards",
+              "cause": "Rising damp entering through the slab perimeter or an existing crack, bypassing the DPM",
+              "fix": "Lift boards, allow to dry, resolve the damp ingress at source before relaying."
+            },
+            {
+              "symptom": "Door binds after installation",
+              "cause": "Door was not trimmed to account for the floor height rise",
+              "fix": "Remove the door, mark the new clearance line, plane or saw the bottom to give 4-6 mm clearance over the finished floor. Rehang."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

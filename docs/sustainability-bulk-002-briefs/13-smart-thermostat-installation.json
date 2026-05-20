@@ -1,0 +1,189 @@
+{
+  "slug": "smart-thermostat-installation",
+  "title": "Installing a smart thermostat",
+  "subtitle": "Replacing a basic programmer with a schedule-learning or app-controlled unit",
+  "excerpt": "A smart thermostat improves heating control by responding to occupancy, learning schedules, and allowing remote adjustment. The installation involves replacing the existing room thermostat wiring. Most models are compatible with standard UK combi boilers.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Manufacturer installation guides for Hive, Nest, tado, and Honeywell T6 models. BS 7671 wiring regulations for extra-low-voltage control wiring. Energy Saving Trust smart controls guidance (2024).",
+  "approximateCostGbp": 150,
+  "paybackYears": 3,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "cordless-drill", "isOptional": false },
+    { "slug": "tape-measure", "isOptional": true }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "fit smart thermostat UK",
+    "Nest Hive tado installation",
+    "replace room thermostat",
+    "smart heating controls UK"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "flow-temperature",
+      "term": "Flow temperature",
+      "definition": "The temperature at which water leaves the boiler and circulates to the radiators. Standard gas boilers are often set to 70-80°C. Lowering to 50-55°C improves boiler efficiency by around 6-8% for condensing boilers and is the correct setting for heat pumps."
+    },
+    {
+      "slug": "heat-pump",
+      "term": "Heat pump",
+      "definition": "A refrigeration-cycle device that extracts heat from outside air or the ground. Smart thermostats can be used with heat pumps but must be configured for the lower flow temperatures and slower response times that heat pumps operate at, compared with gas boilers."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A standard room thermostat controls only the air temperature at one point in the house and has no awareness of occupancy or schedule. A smart thermostat adds app control, occupancy sensing or schedule learning, remote access, and in some cases "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flow-temperature" } }],
+            "text": "flow temperature"
+          },
+          {
+            "type": "text",
+            "text": " optimisation. Most energy savings come from avoiding heating an empty house, not from the thermostat's intelligence per se."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Heat pump compatibility",
+          "body": "Check manufacturer compatibility before fitting with a heat pump; thermostats designed for gas on-off cycling can reduce heat pump efficiency."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Compatibility check" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before purchasing, check: (1) the boiler type (combi, system, or heat-only); (2) the existing wiring at the thermostat (most UK systems use two wires for the call-for-heat signal, but some models require a neutral wire); (3) whether the boiler is OpenTherm compatible (for modulating control rather than on-off). Most Hive, tado, and Nest models support standard two-wire UK systems; the Nest Learning Thermostat requires a neutral wire in most configurations."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Wiring" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 1, isolate the boiler at the fused spur."
+          },
+          {
+            "type": "text",
+            "text": " Turn off the power to the boiler at its dedicated fused spur before touching any wiring. Room thermostat wiring is typically extra-low voltage (12-24 V), but the wiring runs alongside mains cables in some installations."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 2, photograph the existing wiring."
+          },
+          {
+            "type": "text",
+            "text": " Before removing the old thermostat, photograph the wiring connections clearly. Note which terminals each wire connects to. Most UK room thermostats use three terminals: common (C), demand (D or 1), and sometimes a neutral."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 3, mount the base plate."
+          },
+          {
+            "type": "text",
+            "text": " Fix the new thermostat base plate to the wall using the provided screws and wall anchors. Position at approximately 1500 mm from floor level on an interior wall away from heat sources and direct sunlight. Thread the cables through the base plate."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 4, connect the wires per the manufacturer wiring guide."
+          },
+          {
+            "type": "text",
+            "text": " Connect each wire to the correct terminal as identified in the manufacturer's compatibility guide for your boiler type. Most UK combi boiler installations need only the switched live (L) and neutral (N) or common and demand connections. Restore power and test the boiler call-for-heat before fixing the thermostat to the base plate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "OpenTherm and modulating control" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "On-off control runs the boiler at full output and switches it off when the thermostat is satisfied. OpenTherm modulating control communicates target water temperature to the boiler and allows it to run at reduced output, improving the condensing efficiency of the heat exchanger. For a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heat-pump" } }],
+            "text": "heat pump"
+          },
+          {
+            "type": "text",
+            "text": ", modulating control is standard; the heat pump has its own controller and the room thermostat acts as a setpoint input only."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Boiler does not respond to thermostat call",
+              "cause": "Wiring terminals not correctly identified, or the boiler requires a specific voltage signal the new thermostat does not provide",
+              "fix": "Check wiring against the thermostat compatibility tool for your specific boiler model. Some older boilers require a thermostat that closes a dry contact rather than switching a voltage."
+            },
+            {
+              "symptom": "Thermostat shows temperature much higher or lower than room",
+              "cause": "Positioned near a heat source (lamp, oven proximity, sunlight) or on an external wall acting as a cold surface",
+              "fix": "Relocate to an interior wall away from heat sources at 1500 mm height. Most smart thermostats allow a calibration offset in the app."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

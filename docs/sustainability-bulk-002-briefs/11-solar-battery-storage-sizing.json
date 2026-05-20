@@ -1,0 +1,159 @@
+{
+  "slug": "solar-battery-storage-sizing",
+  "title": "Sizing a home battery for a solar PV system",
+  "subtitle": "How to match battery capacity to your generation and demand profile",
+  "excerpt": "A battery stores solar generation that would otherwise export at a low rate and releases it when the sun is not shining. Sizing it correctly depends on your daily evening load and how much generation surplus you have. This guide works through the calculation.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BEIS Smart Export Guarantee guidance on export rates. Energy Saving Trust home battery storage guidance (2024). Ofgem consumer guidance on battery storage warranties and cycle life. Solar Trade Association technical guidance on battery sizing.",
+  "approximateCostGbp": 4500,
+  "paybackYears": 12,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "energy-monitor-clamp", "isOptional": true }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "home battery size solar",
+    "how big a battery for solar PV",
+    "solar storage sizing UK",
+    "battery kWh sizing"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "battery-storage",
+      "term": "Battery storage",
+      "definition": "A lithium-ion (or LFP) battery system that stores electricity for later use. Key specs: usable capacity (kWh), round-trip efficiency (85-92%), cycle life (3000-6000 cycles to 80% capacity), and max charge/discharge rate (kW)."
+    },
+    {
+      "slug": "solar-pv",
+      "term": "Solar PV",
+      "definition": "Photovoltaic panels that convert sunlight to DC electricity. A UK domestic system is typically 3-5 kWp. Generation peaks in summer (4-5 peak sun hours per day) and is low in winter (0.5-1.5 peak sun hours per day)."
+    },
+    {
+      "slug": "kwh",
+      "term": "kWh",
+      "definition": "Kilowatt-hour: the unit of electrical energy. A 5 kWp solar PV system generates approximately 4500-5000 kWh per year in the UK. A typical UK home uses 3500-4000 kWh per year."
+    },
+    {
+      "slug": "inverter",
+      "term": "Inverter",
+      "definition": "Converts DC from solar panels to AC for household use. A hybrid inverter also manages battery charge and discharge, and is required for AC-coupled battery systems installed with new solar PV."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A home "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "battery-storage" } }],
+            "text": "battery"
+          },
+          {
+            "type": "text",
+            "text": " increases the fraction of "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-pv" } }],
+            "text": "solar PV"
+          },
+          {
+            "type": "text",
+            "text": " generation consumed in the home (self-consumption) by storing surplus daytime generation for use in the evening. Without a battery, a typical 4 kWp system self-consumes around 30 to 40 percent of its generation. With a correctly sized battery, self-consumption rises to 60 to 80 percent. The financial return depends on the difference between the import rate and the export rate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What size battery to target" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The target battery capacity is your typical evening "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kwh" } }],
+            "text": "kWh"
+          },
+          {
+            "type": "text",
+            "text": " demand from sunset to midnight. For a typical 3-bedroom UK house with occupancy in the evening, this is 3 to 6 kWh. A 5 kWh usable-capacity battery suits most 3 to 5 kWp systems. Going larger (10 kWh) costs roughly twice as much for modest additional self-consumption gain, because the extra capacity only fills during long summer days when generation already exceeds demand."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Measure your evening baseline before buying: read your meter or use an energy monitor at sunset and again at midnight across several typical evenings. That figure is the capacity worth targeting. Add 20 to 30 percent for the battery not being usable to zero (most systems allow 90 to 100% depth of discharge, but some reserve 10-20%)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Inverter compatibility" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If you are adding a battery to an existing solar installation, the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "inverter" } }],
+            "text": "inverter"
+          },
+          {
+            "type": "text",
+            "text": " determines your options. An AC-coupled battery works with any existing inverter; it charges from the AC side and has its own inverter. A DC-coupled battery connects directly to the solar strings and requires a hybrid inverter. Replacing a functioning string inverter with a hybrid to save a small sum rarely makes sense financially; AC coupling is normally the better retrofit choice."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cycle life and financial case" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A lithium iron phosphate (LFP) battery is typically warranted for 3000 to 6000 cycles to 80% of original capacity, roughly 10 to 15 years of daily cycling. Multiplied by usable capacity per cycle, that gives the total energy throughput over the warranty period. Divide the installed cost by total throughput to get cost per kWh cycled, then compare with the benefit per kWh (import rate minus export rate). A realistic financial payback in the UK at current rates is 10 to 15 years for a correctly sized system."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Round-trip efficiency",
+          "body": "A battery loses 8 to 15% of the energy stored on every charge-discharge cycle (round-trip efficiency 85-92%). At 85% efficiency, every 1 kWh stored costs 1.18 kWh of generation. This does not change the financial case significantly when importing at a rate much higher than exporting, but it reduces the carbon benefit calculation if the import electricity is low-carbon."
+        }
+      }
+    ]
+  }
+}

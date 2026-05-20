@@ -1,0 +1,154 @@
+{
+  "slug": "insulation-and-ventilation-together",
+  "title": "Balancing insulation with ventilation",
+  "subtitle": "Why sealing a house requires controlled fresh air",
+  "excerpt": "Draught-proofing and insulation reduce uncontrolled air infiltration. But houses need fresh air for occupant health and moisture management. Understanding the balance determines whether to add trickle vents, extract fans, or a heat recovery unit.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Building Regulations Part F (2021) ventilation requirements for dwellings. CIBSE Guide B on whole-building ventilation. Energy Saving Trust guide on ventilation and airtightness in retrofitted homes.",
+  "approximateCostGbp": 0,
+  "paybackYears": 0,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "humidity-meter", "isOptional": true }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "ventilation after draught proofing",
+    "trickle vents and insulation",
+    "MVHR retrofit",
+    "airtightness ventilation balance"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "In airtight construction, the VCL also acts as an air barrier. Where the VCL doubles as the air barrier, all joints and penetrations must be taped airtight. Uncontrolled gaps in the VCL also let humid air bypass the ventilation system."
+    },
+    {
+      "slug": "mineral-wool",
+      "term": "Mineral wool",
+      "definition": "Stone-fibre or glass-fibre insulation. Vapour-permeable: moisture can pass through it. When mineral wool is used with a VCL, the VCL controls where vapour goes; if it is used in a breathable construction without a VCL, moisture management relies on controlled ventilation to carry moisture away."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An unimproved pre-war UK house leaks around 15 to 20 air changes per hour at a 50 Pa pressure test. Standard retrofit draught-proofing (chimney sealing, floor-edge mastic, window draught strips) typically reduces this to 8 to 12 ACH. At below approximately 5 ACH, uncontrolled infiltration no longer reliably provides sufficient fresh air for normal occupancy. That threshold is rarely reached by basic draught-proofing alone, but it is relevant when adding internal wall insulation with taped "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }],
+            "text": "vapour control layers"
+          },
+          {
+            "type": "text",
+            "text": " or replacing windows with tightly sealed frames."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What Part F requires" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Building Regulations Part F requires background ventilation (8000 mm² of trickle vent per habitable room in new-build), extract ventilation in kitchens (30 l/s or 60 l/s for recirculation hoods) and bathrooms (15 l/s), and purge ventilation via openable windows. For most standard draught-proofing retrofit work, the existing window trickle vents and extract fans provide adequate controlled ventilation, provided they are open and functioning."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The first check after significant draught-proofing work: confirm trickle vents in habitable rooms are not blocked or closed. Many occupants close trickle vents in winter to reduce cold draughts, which reduces background ventilation below the minimum needed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Signs of insufficient ventilation" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Condensation on cold window glass in winter, particularly in bedrooms overnight. Some condensation on single-glazed windows is normal in cold weather. Sustained condensation on double-glazing suggests high moisture loads and poor extract." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Humidity consistently above 65% RH in living rooms or bedrooms. A humidity meter reading above 65% over multiple consecutive occupied days indicates moisture is not being extracted fast enough." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mould appearing at previously dry locations after sealing work. New mould at wall-ceiling junctions or in wardrobe corners following chimney balloon fitting or floor sealing suggests air exchange has dropped." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "MVHR: when to consider it" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mechanical ventilation with heat recovery (MVHR) extracts stale air from wet rooms, recovers 80 to 90 percent of its heat through a heat exchanger, and supplies fresh tempered air to bedrooms and living rooms. It makes sense when airtightness is below approximately 3 ACH and the building is insulated well enough that the heat recovered is a meaningful fraction of the remaining heat loss. In a standard UK retrofit to Part L target, MVHR is rarely justified financially. In a Passivhaus or equivalent deep retrofit, it is standard practice."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A more accessible alternative for houses that have been significantly draught-proofed is a single-room heat recovery unit: a through-wall device that alternately extracts and supplies via a ceramic heat store. These suit bedrooms where the main issue is overnight CO2 build-up and humidity, without the ductwork required for a full MVHR system."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Mineral wool in breathable construction" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Solid-wall houses insulated with "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mineral-wool" } }],
+            "text": "mineral wool"
+          },
+          {
+            "type": "text",
+            "text": " in a breathable construction (lime plaster finish, no VCL) rely on vapour-open walls and controlled ventilation working together. If extract fans are inadequate in this type of house, moisture that the wall once managed through slow outward drying accumulates indoors instead. Extract fan performance should be checked before and after any change to wall construction."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "slug": "standalone-home-battery-decision-guide",
+  "title": "Standalone home battery: the decision guide",
+  "subtitle": "Whether a battery without solar PV makes financial sense",
+  "excerpt": "A home battery without solar PV charges from the grid at cheap overnight rates and discharges during expensive peak hours, earning the spread. The economics depend on the tariff spread, battery cycle life, and round-trip efficiency. This guide works through the case.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ofgem time-of-use tariff guidance. Energy Saving Trust home battery guidance (2024). Solar Trade Association battery storage technical briefing.",
+  "approximateCostGbp": 5000,
+  "paybackYears": 20,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "home battery without solar",
+    "battery storage time of use",
+    "grid-connected home battery UK",
+    "Octopus Go battery arbitrage"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "battery-storage",
+      "term": "Battery storage",
+      "definition": "A lithium-ion or LFP battery system that stores electricity for later use. Key specs for arbitrage use: usable capacity (kWh), round-trip efficiency (85-92%), max charge rate (kW), and cycle life (3000-6000 cycles to 80% original capacity)."
+    },
+    {
+      "slug": "kwh",
+      "term": "kWh",
+      "definition": "Kilowatt-hour: the unit of energy. A 10 kWh usable-capacity battery charged at 7p overnight and discharged against 24p daytime imports saves approximately 17p per kWh cycled, minus round-trip efficiency losses."
+    },
+    {
+      "slug": "grid-carbon-intensity",
+      "term": "Grid carbon intensity",
+      "definition": "The gCO2e per kWh of grid electricity at a given time. Overnight charging during high-wind periods can coincide with low-carbon intensity, making battery charging lower-carbon than the annual average. This benefit varies by season and weather."
+    },
+    {
+      "slug": "payback-period",
+      "term": "Payback period",
+      "definition": "The time for cumulative savings to recover the initial investment. For a standalone battery, payback depends on the tariff spread, daily cycling frequency, and degradation rate."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A standalone "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "battery-storage" } }],
+            "text": "home battery"
+          },
+          {
+            "type": "text",
+            "text": " charged on a cheap overnight tariff and discharged during peak-rate hours earns the spread between the two rates. A 10 "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kwh" } }],
+            "text": "kWh"
+          },
+          {
+            "type": "text",
+            "text": " usable battery charged at 7p and discharged at 24p (before round-trip efficiency losses) saves approximately 15p per kWh cycled after accounting for 10% efficiency loss. Daily cycling at that rate generates a modest annual saving. At a typical installed cost, the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "payback-period" } }],
+            "text": "payback period"
+          },
+          {
+            "type": "text",
+            "text": " is 9 to 15 years."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The financial calculation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Annual saving = usable capacity (kWh) x cycles per year x (peak rate minus off-peak rate) x round-trip efficiency. For a 10 kWh battery cycling 330 days per year at 17p spread and 88% efficiency: 10 x 330 x 0.17 x 0.88 gives a saving in the low hundreds of pounds per year. At an installed cost, the simple payback is approximately 10 to 12 years. Battery warranty life is typically 10 to 15 years, meaning the battery may be near end of warranty before payback is complete."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tariff requirements" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Time-of-use tariffs with a significant off-peak rate are required. Octopus Go (approximately 7p overnight) and Octopus Flux (three-rate tariff with low import and export rates) are the main UK options. Standard flat-rate or Economy 7 tariffs offer smaller spreads. Check that the battery system is certified for the relevant tariff before purchase: some batteries are locked to a specific VPP (virtual power plant) contract."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Carbon benefit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Charging overnight when wind generation is high may coincide with lower "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "grid-carbon-intensity" } }],
+            "text": "grid carbon intensity"
+          },
+          {
+            "type": "text",
+            "text": ", but this is not guaranteed. During high-demand cold nights, overnight gas generation raises intensity. A battery charged overnight is not reliably low-carbon without combining it with a carbon-aware charging controller."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When a standalone battery makes more sense" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "EV charger combined use: if the battery can also buffer overnight EV charging to avoid upgrading the main electrical supply, the avoided supply upgrade cost can justify the battery independently." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Future-proofing with solar: a battery sized and wired for solar PV now, installed as standalone while PV is planned for the future, avoids a second installation cost later." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Grid resilience: some battery systems provide backup power during supply outages. For households with medical equipment or remote locations, the reliability value can justify cost beyond the financial return." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Battery safety certification",
+          "body": "Home batteries must hold a MCS product certification or equivalent (IEC 62619) for fire and electrical safety. LFP (lithium iron phosphate) chemistry is significantly safer than NMC (nickel manganese cobalt) at the cost of slightly lower energy density. Installation must comply with BS 7671 and the relevant G99/G98 grid connection standard. The battery management system (BMS) provides over-current, over-voltage, and thermal protection."
+        }
+      }
+    ]
+  }
+}

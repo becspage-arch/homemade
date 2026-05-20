@@ -1,0 +1,184 @@
+{
+  "slug": "composting-toilet-decision-guide",
+  "title": "Composting toilets: what the decision involves",
+  "subtitle": "A decision guide for off-grid, cabin, and outbuilding composting toilet systems",
+  "excerpt": "A composting toilet processes human waste on-site without water, using aerobic decomposition. It suits off-grid sites, eco-buildings, and outbuildings where mains drainage is unavailable. Understanding the maintenance requirements and regulatory context is essential before installation.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Environment Agency guidance on composting toilet compliance. Planning Portal permitted development rules for outbuilding sanitation. BSI PD 6523 guidance on composting toilets. Centre for Alternative Technology composting toilet guidance.",
+  "approximateCostGbp": 1200,
+  "paybackYears": 5,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "composting toilet UK off grid",
+    "dry toilet composting",
+    "waterless toilet UK",
+    "eco toilet installation"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cold-compost",
+      "term": "Cold compost",
+      "definition": "Most domestic composting toilets operate as slow, cold composting systems. The internal temperature does not reliably reach the 55°C needed to kill pathogens. The output is stabilised and reduced in volume but is not sterile compost in the same sense as a well-managed hot compost heap."
+    },
+    {
+      "slug": "hot-compost",
+      "term": "Hot compost",
+      "definition": "Some large-scale composting toilet systems are designed to reach thermophilic temperatures (55-70°C). These produce a more thoroughly processed output, but they require a large volume and active management not typical of a domestic self-contained unit."
+    },
+    {
+      "slug": "leachate",
+      "term": "Leachate",
+      "definition": "Liquid drainage from a composting toilet. Most self-contained units separate urine at the seat and drain it separately to a soakaway, because excess liquid prevents aerobic composting conditions in the main chamber."
+    },
+    {
+      "slug": "cn-ratio",
+      "term": "C:N ratio",
+      "definition": "Carbon-to-nitrogen balance in the composting toilet. Adding a carbon-rich bulking material (wood shavings, coir) after each use maintains the C:N ratio and provides the air channels needed for aerobic decomposition."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A composting toilet handles human waste without mains water or a drain connection. It uses aerobic decomposition with a carbon bulking material to reduce waste volume by approximately 90% over 6 to 12 months. The system suits outbuildings, cabins, and remote sites where drainage installation is impractical. The primary constraints are maintenance requirements, regulatory compliance, and what to do with the processed output."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Types of system" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Self-contained units (Separett, Nature's Head, Thetford): the composting chamber is below the seat. Urine is separated and drains to a soakaway or container. Requires ventilation (a 110 mm duct to outside). Suitable for low-use applications (holiday cabin, allotment hut). Capacity is limited; requires emptying every 3-6 months depending on use." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Split systems: the toilet seat connects via a chute to a composting chamber below floor or in a separate location. Larger chamber, higher capacity, suits residential use. Requires more installation space and is more complex to empty." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The C:N balance and bulking material" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Each use must be followed by a portion of bulking material (dry wood shavings, coir, straw, or dry sawdust) to maintain the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cn-ratio" } }],
+            "text": "C:N ratio"
+          },
+          {
+            "type": "text",
+            "text": " and provide air channels for aerobic decomposition. Without bulking material, the pile compacts, goes anaerobic, and produces foul odours. This is the most common cause of failure in composting toilets in domestic use."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ventilation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "All composting toilets require a continuous ventilation duct from the composting chamber to outside. This draws odours up and out of the chamber. A 110 mm duct of 2 to 4 m vertical height provides passive draw. A small inline fan (12 V DC) ensures ventilation even when the building is closed. The duct exit must be away from openable windows and below the ridge to ensure draw rather than backflow."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Output and planning" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The processed output is a stabilised, low-volume material. Most composting toilet guidance recommends a further 12 months of open-air composting before the output is used as a soil conditioner on non-food areas. Using it directly on food crops is not recommended in the UK; Environment Agency guidance classifies it as a controlled waste material if spread to land."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "leachate" } }],
+            "text": "urine"
+          },
+          {
+            "type": "text",
+            "text": " fraction separated from most modern units is sterile and nitrogen-rich. Diluted at 10:1 with water, it can be used as a liquid plant feed on ornamental plants and established trees, not on food crops or near water courses."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Planning and building regulations",
+          "body": "A composting toilet in a self-contained outbuilding or caravan that is not connected to a mains dwelling is generally permitted development. A composting toilet installed as the primary sanitation in a habitable building may require Building Regulations Part H compliance. Planning policy on composting toilets varies by local authority. Always check with the local planning authority before installation in a structure used for dwelling."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cold-compost" } }],
+            "text": "cold composting"
+          },
+          {
+            "type": "text",
+            "text": " toilet is not the same as a well-managed "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-compost" } }],
+            "text": "hot compost"
+          },
+          {
+            "type": "text",
+            "text": " heap in terms of pathogen management. Handle the output with the same hygiene care as raw compost and store away from the dwelling."
+          }
+        ]
+      }
+    ]
+  }
+}

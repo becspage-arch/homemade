@@ -1,0 +1,176 @@
+{
+  "slug": "thermal-bridging-explained",
+  "title": "Understanding thermal bridges",
+  "subtitle": "Where heat bypasses insulation and what to do about it",
+  "excerpt": "Thermal bridging is heat flowing around insulation rather than through it. Joist ends, window lintels, and structural frames are common bridge locations. In a well-insulated building, bridges can account for 20-30% of total heat loss.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIBSE TM54 on heat loss calculations including thermal bridging. BRE Report BR497 on conventions for calculating thermal bridging in SAP. BS EN ISO 10211 for detailed thermal bridge calculation methods.",
+  "approximateCostGbp": 0,
+  "paybackYears": 0,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "thermal-imaging-camera", "isOptional": true }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "cold bridge insulation",
+    "heat bypass insulation",
+    "repeating thermal bridge",
+    "linear thermal transmittance psi value"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A localised path of higher thermal conductivity through or around an insulation layer. Bridges cause cold internal surface temperatures (condensation risk) and increase heat loss beyond what the main element U-value predicts."
+    },
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "Thermal transmittance (W/m²·K). Standard U-value calculations assume homogeneous construction. Thermal bridges are accounted for separately using psi (linear transmittance, W/m·K) and chi (point transmittance, W/K) values."
+    },
+    {
+      "slug": "lambda-value",
+      "term": "Lambda value",
+      "definition": "Thermal conductivity (W/m·K). Steel: approximately 50. Timber: approximately 0.14. Mineral wool: approximately 0.044. Bridges form wherever a high-lambda material spans the insulation layer from warm to cold."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }],
+            "text": "thermal bridge"
+          },
+          {
+            "type": "text",
+            "text": " forms wherever a material with a higher "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lambda-value" } }],
+            "text": "lambda value"
+          },
+          {
+            "type": "text",
+            "text": " than the surrounding insulation spans from the warm interior to the cold exterior. In a timber-framed wall, studs conduct roughly three times more heat per unit area than the mineral wool between them. In a steel-framed structure, the steel carries approximately 1000 times more heat than the insulation: even a small frame fraction dominates the total heat loss."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Types of bridge" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeating bridges: regularly-spaced elements penetrating the insulation. Timber joists in a floor, rafters in a roof, studs in a wall. These are accounted for by correcting the U-value calculation, not by the insulation-only U-value. A 15% stud fraction in a timber-framed wall typically raises the corrected U-value by 10-15% above the insulation-only figure." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Linear bridges: at junctions between elements. Floor-to-wall junctions, window reveals, and the edge of an insulation layer where it meets the structure. Quantified as a psi value (linear thermal transmittance, W/m·K): the extra heat loss per metre of junction length." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Point bridges: fixings, brackets, and penetrations. A stainless-steel cavity wall tie through 100 mm of insulation contributes a measurable point bridge, quantified as chi (W/K per unit). Where ties are numerous, the combined chi values add significantly to wall heat loss." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Why bridging becomes more significant as insulation improves" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In a poorly insulated building, bridging losses are small relative to total heat loss through the main elements. As the main elements improve, bridging becomes proportionally larger. In a well-insulated building meeting current Part L standards, thermal bridges can account for 20 to 30 percent of total heat loss. This is why the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+            "text": "U-value"
+          },
+          {
+            "type": "text",
+            "text": " of the main element is not the full picture in a retrofit."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cold bridges also cause condensation problems. A bridge lowers the internal surface temperature at that point. If the surface falls below the dew point of indoor air, condensation forms. Mould follows within a few weeks. This is most visible at window reveals, wall-floor junctions in houses with solid floors, and around structural elements that penetrate the insulation layer."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finding bridges" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A thermal imaging camera used on a cold day with at least 10°C temperature difference between inside and outside shows bridges as warmer patches on the external face or cooler patches on the internal face. Bridges at floor junctions, window heads, and column positions are the most common findings in retrofitted UK houses."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Without a thermal imaging camera: feel internal wall surfaces on a cold morning, particularly at floor-wall junctions and window reveals. A noticeably colder patch indicates a bridge. Persistent mould in a corner that appears after insulation work is a reliable indicator."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How EWI eliminates repeating bridges" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "External wall insulation wraps the entire facade continuously over floor junctions, ceiling junctions, and structural elements, so there is no interruption in the insulation layer at joist ends or columns. Internal wall insulation must be interrupted at each floor and ceiling where the structure passes through, leaving repeating bridges at every joist end. This is the principal thermal performance advantage of EWI over IWI on solid-wall houses."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Corrected versus uncorrected U-values",
+          "body": "A standard U-value calculation gives heat loss through the homogeneous construction only. The corrected U-value accounts for repeating bridges by area-weighting insulation and structural elements. For a typical timber-framed wall at 15% frame fraction, the corrected U-value is 10-15% higher than the insulation-only figure. SAP calculations require the corrected value."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "slug": "rainwater-harvesting-underground-tank",
+  "title": "Underground rainwater harvesting tanks",
+  "subtitle": "What a buried tank system involves and when it is worth considering",
+  "excerpt": "An underground rainwater harvesting tank stores 1000-5000 litres of roof runoff for toilet flushing and garden use. It reduces mains demand by 30-50% depending on household size and use. This is the decision guide.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIRIA C539 guide on rainwater and greywater harvesting. Waterwise UK guidance on above-ground and underground rainwater systems. Environment Agency guidance on rainwater harvesting for toilet flushing (non-potable use).",
+  "approximateCostGbp": 3500,
+  "paybackYears": 25,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "underground rainwater tank UK",
+    "rainwater harvesting toilet flushing",
+    "buried water storage cistern",
+    "RWH system domestic UK"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rainwater-harvesting",
+      "term": "Rainwater harvesting",
+      "definition": "Collecting and storing roof runoff for use in the building or garden. Underground systems use a submersible or floating pump to deliver stored water to toilets, washing machines, and outdoor taps."
+    },
+    {
+      "slug": "water-butt",
+      "term": "Water butt",
+      "definition": "Above-ground water storage, typically 100-400 litres. Underground tanks extend this principle to 1000-10,000 litres with filtered collection and pumped delivery, stored underground to maintain near-constant temperature."
+    },
+    {
+      "slug": "greywater",
+      "term": "Greywater",
+      "definition": "Wastewater from washing and sinks. Underground rainwater harvesting systems use roof runoff only, not greywater. Greywater requires separate treatment before re-use due to pathogen and detergent content."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An underground "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rainwater-harvesting" } }],
+            "text": "rainwater harvesting"
+          },
+          {
+            "type": "text",
+            "text": " system collects filtered roof runoff into a buried tank, then pumps it to non-potable uses (toilets, washing machines, outdoor taps). Toilet flushing accounts for approximately 30% of household water use. A well-matched system reduces mains water consumption by 30 to 50%. Financial payback at current UK water prices is long: typically 20 to 30 years."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "System components" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Buried tank: HDPE or concrete, typically 1500-5000 litres for domestic use. Must be installed below the frost line (600 mm minimum depth) and away from trees, drains, and foundations. Tank lid must be access-able for maintenance." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "First-flush diverter: diverts the first 1-2 mm of rain from each event (which carries the most roof contamination from bird droppings and atmospheric deposits) away from the tank. Automatically resets after a dry period." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Calmed inlet: water enters the tank through a calming inlet at the base to prevent disturbing the settled sediment layer." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Floating filter or submersible pump: draws water from the top 100 mm of the tank (cleanest zone, above any settled sediment). Delivers to a header tank or direct to WC cisterns." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mains backup: when the tank is empty, a mains trickle refill or automatic diversion to mains supply ensures WCs are never without water." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sizing the tank" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tank size is determined by the balance between catchment area, average rainfall, and daily demand. A reasonable UK sizing rule: tank volume (litres) = daily non-potable demand (litres) x 20. For a 4-person household flushing 150 litres per day, the target is 3000 litres. The full calculation using local rainfall data and roof area can be done with the CIRIA rainfall calculator or the BS 8515 method."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Planning and water regulations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An underground rainwater harvesting system for toilet flushing must comply with the Water Supply (Water Fittings) Regulations 1999 to prevent cross-connection with the mains supply. The non-potable supply pipe must be labelled and clearly differentiated from the drinking water pipework. The system requires a type AA air gap between the mains backup supply and the tank to prevent backflow. Most systems are permitted development if they are for toilet flushing and garden use only."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Above-ground alternatives",
+          "body": "Before committing to excavation, assess whether two or three linked above-ground water butts (400-600 litres total) meet garden needs for a fraction of the cost. Underground tanks make most sense when the garden demand is high, the building has large roof areas, and the mains water cost in the area is significant. In metered households, the saving per year is approximately 1-1.5p per litre of rainwater used compared with mains."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rainwater must not be used for drinking, food preparation, or bathing without treatment. Keeping the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "greywater" } }],
+            "text": "non-potable"
+          },
+          {
+            "type": "text",
+            "text": " pipework completely separate from the drinking water supply, with labelled outlets, is a legal requirement under the Water Fittings Regulations."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A simple "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "water-butt" } }],
+            "text": "water butt"
+          },
+          {
+            "type": "text",
+            "text": " system linked to garden irrigation is lower risk, lower cost, and often the better starting point."
+          }
+        ]
+      }
+    ]
+  }
+}

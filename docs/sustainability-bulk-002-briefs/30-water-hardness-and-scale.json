@@ -1,0 +1,153 @@
+{
+  "slug": "water-hardness-and-scale",
+  "title": "Managing hard water and limescale",
+  "subtitle": "Understanding water hardness and reducing scale in appliances",
+  "excerpt": "Hard water leaves limescale deposits in kettles, boilers, showerheads, and hot water systems. Scale in a boiler heat exchanger reduces efficiency and shortens appliance life. Regular descaling and understanding your hardness level keeps systems running efficiently.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Drinking Water Inspectorate hardness classification guidance. WaterSafe guidance on water hardness by region. Which? guidance on water softeners and descaling methods.",
+  "approximateCostGbp": 15,
+  "paybackYears": 1,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "hard water UK limescale",
+    "descale kettle boiler",
+    "water softener UK",
+    "limescale appliance efficiency"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "embodied-water",
+      "term": "Embodied water",
+      "definition": "The water used to manufacture and replace an appliance. Limescale shortens appliance life by degrading heating elements and reducing heat exchanger efficiency, increasing the embodied water cost of premature replacement."
+    },
+    {
+      "slug": "operational-carbon",
+      "term": "Operational carbon",
+      "definition": "CO2 emissions from running a building. Limescale on a boiler heat exchanger or immersion element reduces efficiency: 1 mm of scale reduces heat transfer efficiency by approximately 10%, increasing the energy and carbon needed to heat water."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Water hardness is measured in milligrams of calcium carbonate per litre (mg/l CaCO3) or degrees of Clarke hardness. Soft water (below 50 mg/l) leaves little scale; hard water (150-300 mg/l) leaves significant deposits. Very hard water (above 300 mg/l) is common in South East England, East Anglia, and the Midlands. Check your local hardness level on your water company's website."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where scale causes problems" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Boiler heat exchanger: scale reduces heat transfer efficiency, raising "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "operational-carbon" } }],
+                    "text": "operational carbon"
+                  },
+                  {
+                    "type": "text",
+                    "text": " by 5-15% depending on scale thickness. A scale inhibitor dosing pot on the boiler filling loop is the standard UK approach."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Immersion heater element: 1 mm of scale requires approximately 10% more energy to heat the same water. Descale annually with citric acid solution (drain the cylinder, fill with dilute citric acid, drain, refill)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Kettle: scale reduces heating efficiency and enters drinking water. The "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "embodied-water" } }],
+                    "text": "embedded cost"
+                  },
+                  {
+                    "type": "text",
+                    "text": " of replacing a kettle every 2 years because of scale is higher than monthly descaling. Descale with 50% white vinegar or 20 g citric acid dissolved in water, boil, leave 30 minutes, rinse thoroughly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Showerhead: scale blocks jets and reduces flow rate. Soak in white vinegar overnight (put vinegar in a bag tied around the showerhead) to dissolve deposits without removal." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Water softeners" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An ion-exchange water softener replaces calcium and magnesium ions with sodium, completely preventing scale formation on everything downstream. It requires a salt supply (block or tablet salt, replenished every 4-8 weeks), a regeneration cycle that uses 40-50 litres of water per cycle, and installation by a qualified plumber. A softener with a separate hard water tap for drinking water (required because softened water has elevated sodium) is the standard UK installation."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Magnetic conditioners and electronic scale inhibitors (devices clamped to pipework) are widely sold but have no consistent independent evidence of effectiveness. They do not remove hardness ions; their claimed mechanism is that they alter crystal structure to prevent adhesion, which laboratory studies have not consistently confirmed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Threshold inhibitors" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A phosphate threshold inhibitor dosing pot fitted to the boiler cold-water fill uses a tiny quantity of polyphosphate to keep calcium in solution and prevent scale on the boiler heat exchanger. This is a plumber-installed, low-maintenance approach that does not require ongoing salt supply or a full softener. It is the most common scale protection method for combi boilers in hard-water areas."
+          }
+        ]
+      }
+    ]
+  }
+}

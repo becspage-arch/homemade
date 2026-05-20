@@ -1,0 +1,169 @@
+{
+  "slug": "wood-fuel-moisture-and-seasoning",
+  "title": "Seasoning firewood and checking moisture content",
+  "subtitle": "Why moisture content matters and how to achieve less than 20% before burning",
+  "excerpt": "Freshly felled wood contains 40-60% moisture. Burning it wastes most of its energy evaporating that water, creates creosote in the flue, and produces more particulate emissions. Properly seasoned wood below 20% moisture burns cleanly and efficiently.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "HETAS UK guidance on Ready to Burn certification and moisture thresholds. Environment Agency guidance on domestic solid fuel burning and air quality. Forestry England guidance on firewood seasoning.",
+  "approximateCostGbp": 25,
+  "paybackYears": 1,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "season firewood UK",
+    "wood moisture content burning",
+    "dry firewood faster",
+    "kiln dried vs seasoned wood"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "operational-carbon",
+      "term": "Operational carbon",
+      "definition": "Wood burning is considered carbon-neutral on a short timescale because trees absorb carbon as they grow. Inefficient burning (wet wood) does not change the carbon accounting, but it does increase particulate and carbon monoxide emissions and wastes the energy in the fuel."
+    },
+    {
+      "slug": "embodied-carbon",
+      "term": "Embodied carbon",
+      "definition": "The carbon in producing, transporting, and kiln-drying wood fuel. Kiln-dried logs use significant energy in the drying process. Air-dried logs have near-zero processing carbon. The difference is relevant when choosing between kiln-dried and self-seasoned fuel."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wood at 50% moisture content contains approximately half the usable energy of the same wood at 20% moisture content, because a large fraction of the combustion energy evaporates the water rather than producing heat. A log measuring 20% moisture burns cleanly; a log at 40% smoulders, tars the glass, and deposits creosote in the flue. UK regulations (since May 2021) require wood fuel sold for domestic use to be below 20% moisture under the Ready to Burn scheme."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How long does seasoning take?" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hardwoods (oak, ash, beech): 2 years minimum when split and stacked correctly. Unsplit hardwood logs take 3 or more years." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Softwoods (pine, larch, spruce): 1 to 1.5 years when split. Softwoods are lower in density and dry faster, but also have lower calorific value per volume." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ash: traditionally the fastest-seasoning hardwood. Fresh ash at around 30-35% moisture can be reduced to 20% in a single summer if split small and stacked in good airflow." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Stacking correctly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The stack must allow air movement through the wood, not just over it. Stack logs single file width (not more than 30 cm deep) with the cut faces exposed to the prevailing wind. Cover the top of the stack to shed rain, but leave the sides completely open. A stack against a solid wall with no airflow on one face dries significantly more slowly than a free-standing stack."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Logs stacked directly on soil absorb moisture from the ground. Stack on a wooden pallet, bricks, or a low gravel base to keep the bottom layer off the soil surface."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Checking moisture content" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A pin-type moisture meter measures the resistance between two probes pushed into the wood. It gives a reading directly in percent moisture content. For accuracy: split a log freshly and measure the freshly exposed face at the centre, not the end grain or the outer bark surface. Outer surface readings underestimate the moisture in the core."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Target below 20% before burning. Between 20 and 25% is borderline: the wood will burn but not cleanly. Above 25%, the log hisses and steams, produces little heat, and tars the flue."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Kiln-dried versus air-dried" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Kiln-dried logs are reliably below 20% moisture and are available year-round. The drying process uses significant energy, adding to the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "embodied-carbon" } }],
+            "text": "embodied carbon"
+          },
+          {
+            "type": "text",
+            "text": " of the fuel. Self-seasoned logs from local sources have near-zero processing carbon and are the lower-carbon choice if the two-year lead time is manageable. Buying a season ahead (purchasing a full delivery in spring for the following winter) is the practical solution."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Creosote and flue fires",
+          "body": "Burning wet wood is the main cause of creosote accumulation in chimneys. Creosote is a combustible deposit: a thick creosote build-up in a flue can ignite during a hot fire, producing a flue fire that can crack clay liner sections or spread to the building. A flue lined with significant creosote is a fire risk. Have chimneys swept annually and immediately if wet wood has been burned regularly."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "operational-carbon" } }],
+            "text": "carbon accounting"
+          },
+          {
+            "type": "text",
+            "text": " of wood burning considers the fuel as carbon-neutral on a forestry cycle, but the efficiency of combustion determines how much energy is actually recovered. Dry wood at 20% moisture converts approximately 65 to 75% of its energy to useful heat in a modern stove; wet wood converts 30 to 40%."
+          }
+        ]
+      }
+    ]
+  }
+}

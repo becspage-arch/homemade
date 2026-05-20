@@ -1,0 +1,167 @@
+{
+  "slug": "heat-pump-radiator-sizing",
+  "title": "Sizing radiators for heat pump operation",
+  "subtitle": "Why existing radiators may underperform and how to assess them",
+  "excerpt": "Heat pumps run most efficiently at 45-50°C flow temperature. Radiators sized for a gas boiler at 70-75°C deliver significantly less heat at that lower temperature. Understanding the output reduction helps you identify which radiators need upgrading before or after installation.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIBSE guidance on radiator output at reduced flow temperatures. Heat Pump Association radiator sizing guidance. BSRIA BG36 on heat emitter selection for heat pump systems.",
+  "approximateCostGbp": 0,
+  "paybackYears": 0,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "radiator size heat pump",
+    "heat pump emitter sizing",
+    "radiator output at 45 degrees",
+    "upgrade radiators for ASHP"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "heat-pump",
+      "term": "Heat pump",
+      "definition": "A device extracting heat from outside air or the ground and delivering it at a higher temperature to the heating system. Efficiency (COP) decreases as the difference between outside temperature and flow temperature increases."
+    },
+    {
+      "slug": "flow-temperature",
+      "term": "Flow temperature",
+      "definition": "The temperature at which water leaves the heat pump and enters the radiators. For efficient heat pump operation, 45-50°C is the target. Radiator manufacturers specify output at 70°C mean water temperature (Delta T50 conditions), which corresponds to approximately 80/60°C flow/return."
+    },
+    {
+      "slug": "cop",
+      "term": "COP",
+      "definition": "Coefficient of Performance: heat output divided by electrical energy input. For every 1°C rise in flow temperature, COP falls by approximately 2-3%. Reducing from 70°C to 50°C flow temperature improves COP by approximately 10-15%."
+    },
+    {
+      "slug": "scop",
+      "term": "SCOP",
+      "definition": "Seasonal Coefficient of Performance: average efficiency over the heating season. A system running with correctly sized radiators at 45°C flow will achieve significantly higher SCOP than the same system straining at 65°C to compensate for undersized radiators."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Radiator output ratings are specified at Delta T50 conditions (mean water temperature 70°C, room temperature 20°C), corresponding to a 80°C flow and 60°C return on a gas boiler. A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heat-pump" } }],
+            "text": "heat pump"
+          },
+          {
+            "type": "text",
+            "text": " running at 45°C "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flow-temperature" } }],
+            "text": "flow temperature"
+          },
+          {
+            "type": "text",
+            "text": " with a 40°C return has a mean water temperature of 42.5°C: a Delta T of 22.5 instead of 50. At Delta T22.5, the same radiator delivers approximately 40% of its rated output. To maintain the same room temperature, you need roughly 2.5 times the radiator area."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The Delta T correction factor" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The reduction in output follows the relationship: actual output = rated output x (actual Delta T / 50)^n, where n is approximately 1.3 for panel radiators. For a 50°C flow / 45°C return system with a 20°C room temperature, Delta T = (50+45)/2 - 20 = 27.5. Actual output = rated output x (27.5/50)^1.3 = rated x 0.50. The radiator delivers 50% of its rated output."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Assessing existing radiators" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For each room, calculate the room heat loss at the design temperature (typically -3°C outside, 21°C inside for living rooms, 18°C for bedrooms). Use the room dimensions and fabric from the heat loss calculation. Then check the existing radiator rating at Delta T50 from the manufacturer data or the radiator label. Apply the correction factor for your target flow temperature to find the actual heat output available. If actual output is below room heat loss, the radiator is undersized for heat pump operation."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Upgrade options" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Double panel convectors (Type 22): replace a single panel Type 11 with a double panel double convector. Same footprint, approximately double the output. This is the most common straightforward upgrade." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fan convectors: combine a small heat exchanger with a fan to dramatically increase heat output per unit size. Suitable for bathrooms and rooms where a larger panel radiator will not fit. Higher noise than passive radiators." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Underfloor heating (UFH): runs at 35-45°C mean water temperature, ideal for heat pump operation. Most efficient new-build or full room-strip renovation option. Retrofitting to existing floors is only practical during major renovation." }] }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cop" } }],
+            "text": "COP"
+          },
+          {
+            "type": "text",
+            "text": " benefit of running at lower flow temperature is significant. Improving the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scop" } }],
+            "text": "SCOP"
+          },
+          {
+            "type": "text",
+            "text": " from 2.5 (at 60°C flow) to 3.0 (at 45°C flow) on a system consuming 4000 kWh per year reduces consumption by approximately 665 kWh per year. Investing in radiator upgrades to allow lower flow temperatures often pays back faster than the heat pump hardware itself."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Not every radiator needs replacing",
+          "body": "In a typical house, 70-80% of rooms may have radiators that are adequately sized even after the Delta T correction. Bedrooms (cooler setpoint, lower heat loss) and small bathrooms often have more radiator capacity than the room needs. Focus upgrades on living rooms and kitchens, which typically have the highest heat demand and the radiators the boiler was most accurately sized for."
+        }
+      }
+    ]
+  }
+}

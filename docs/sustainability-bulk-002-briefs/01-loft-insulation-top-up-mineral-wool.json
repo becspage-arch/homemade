@@ -1,0 +1,316 @@
+{
+  "slug": "loft-insulation-top-up-mineral-wool",
+  "title": "Topping up loft insulation to 270 mm",
+  "subtitle": "Rolling a second layer of mineral wool across an under-insulated loft",
+  "excerpt": "Most UK lofts installed before 2005 have 100 mm of insulation or less. The current best-practice depth is 270 mm. Topping up a standard semi from 100 mm to 270 mm is a weekend project and pays back within a few heating seasons.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Part L1B (2022) for the 0.16 W/m²·K loft target. Energy Saving Trust loft-insulation guidance for the 270 mm recommendation and typical-loft statistics. BRE Good Repair Guide on loft insulation installation.",
+  "approximateCostGbp": 280,
+  "paybackYears": 5,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "utility-knife", "isOptional": false },
+    { "slug": "handsaw", "isOptional": true },
+    { "slug": "humidity-meter", "isOptional": true }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "top up loft insulation",
+    "add more loft insulation",
+    "loft insulation depth increase",
+    "mineral wool loft top-up"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mineral-wool",
+      "term": "Mineral wool",
+      "definition": "Stone-fibre or glass-fibre insulation, supplied as batts or rolls. Loft-default in the UK. Lambda 0.035-0.044. Itchy to handle; wear gloves, long sleeves, and a dust mask."
+    },
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "Thermal transmittance. The watts of heat that flow through one square metre of building fabric per degree of temperature difference (W/m²·K). Lower is better; uninsulated loft is ~2.0, current Part L target with 270 mm mineral wool is 0.16."
+    },
+    {
+      "slug": "lambda-value",
+      "term": "Lambda value",
+      "definition": "Thermal conductivity of an insulation material (W/m·K). Mineral wool rolls are typically 0.044. Divide the target insulation depth in metres by the lambda to get the R-value."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A loft with 100 mm of mineral wool loses roughly three times as much heat through the ceiling as one with 270 mm. The second 170 mm costs less to install than the first 100 mm ever did (the joist bays are already in place; the new roll goes perpendicular on top), and the material price per m² has fallen sharply. A typical three-bedroom semi takes about 50 m² of insulation to cover the loft floor and slopes."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "The saving at 2025/26 cap rates",
+          "body": "A semi-detached house with 100 mm of loft insulation wastes roughly 600-900 kWh of gas per year through the ceiling compared with the 270 mm standard. The top-up materials cost a modest sum; payback is typically 4-7 years at current gas prices. Older houses with less than 50 mm of existing insulation see larger savings."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Before you handle mineral wool" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Long sleeves, gloves (rigger or nitrile), a P2 dust mask, and safety glasses. The fibres from "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mineral-wool" } }],
+            "text": "mineral wool"
+          },
+          {
+            "type": "text",
+            "text": " irritate skin, eyes, and airways on contact. Discomfort passes; it is not a chronic-harm material at normal handling exposure. Shower afterwards, wash work clothes separately."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Check the existing depth first" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Measure the existing insulation depth with a tape measure in three or four places across the loft floor, including at the eaves (the lowest point, where cold air enters under the roof slope). Joists in a typical 1960s-1980s semi are 100 mm deep. If the existing insulation fills the joist bay to the top, you have roughly 100 mm. If it sits below the top of the joists, the first job is filling those bays before laying the second layer."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+            "text": "U-value"
+          },
+          {
+            "type": "text",
+            "text": " calculator (Energy Saving Trust and BRE both offer free online versions) to confirm the depth needed for your insulation product. Standard 0.044 "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lambda-value" } }],
+            "text": "lambda-value"
+          },
+          {
+            "type": "text",
+            "text": " mineral wool at 270 mm total achieves approximately 0.16 W/m²·K, meeting the Part L renovation target. To get the calculation right: 270 mm total minus existing depth equals the additional layer thickness required."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mineral wool rolls or batts, 100 mm thick (standard loft roll). The first layer fills the joist bays; the top-up second layer goes perpendicular across them. Measure your loft area in m², add 15% for cutting waste, divide by the roll coverage stated on the pack." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Loft hatch insulation quilt: the hatch is the single worst-insulated area in most lofts. A 100 mm thick proprietary hatch quilt, or off-cuts of the same mineral wool roll attached to the back of the hatch board, solves this." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Eaves ventilator trays (rigid polystyrene wedge-shaped channels): these keep a 50 mm air path open at the eaves when insulation fills to the top of the joist bay. Blocked eaves cause condensation at the cold timbers." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Loft boarding supports (if you need to keep stored items): purpose-made plastic stilts that sit over the insulation and carry board weight without compressing the wool. Compressed insulation is worse-than-useless; the compression reduces its R-value." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fitting eaves ventilator trays" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 1, clear the eaves."
+          },
+          {
+            "type": "text",
+            "text": " Push any existing insulation back from the eaves to expose the rafters at the point where they meet the wall plate. You will see (or need to check for) ventilation slots or gaps in the soffit."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 2, fit ventilator trays."
+          },
+          {
+            "type": "text",
+            "text": " Slide a rigid ventilator tray between each pair of rafters, wedge-side against the roof slope, so the air channel runs from the eaves gap up under the roof. This keeps the cold-roof ventilation path open even when the joist bays are filled to the top."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Filling the joist bays" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 3, fill any gaps in the first layer."
+          },
+          {
+            "type": "text",
+            "text": " If the existing insulation sits below the tops of the joists, cut strips to fill the remaining depth before going to the second layer. Cut mineral wool with a sharp utility knife on a temporary board; wear the protective gear. Push each strip fully into the bay with no air pockets."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Laying the second layer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 4, roll perpendicular to the joists."
+          },
+          {
+            "type": "text",
+            "text": " The second layer goes across the joists at 90 degrees. This crosses the thermal bridges at the joist tops and gives a continuous insulation layer. Start from one side and work back toward the hatch, keeping your weight on the joists (not on the insulation between them). Use a wide piece of board as a kneeling pad to distribute weight."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 5, cut around obstructions."
+          },
+          {
+            "type": "text",
+            "text": " Electric cables running across the loft floor must remain on top of the insulation, not buried inside it. Cables buried in insulation can overheat under load. Pull them up and lay them loosely on top before covering with the second layer. Do not cover light fittings in the ceiling below unless they are the sealed IC-rated type specifically designed for covering."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 6, carry the insulation to the eaves but not over the ventilator trays."
+          },
+          {
+            "type": "text",
+            "text": " Take the second layer to within 50-75 mm of the eaves, so the air channel in the ventilator trays remains open. There will be a wedge-shaped area at the eaves that is intentionally not insulated to the full depth."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Insulating the hatch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "bold" }],
+            "text": "Step 7, upgrade the loft hatch."
+          },
+          {
+            "type": "text",
+            "text": " The hatch is often the largest single heat-loss path in a newly-insulated loft. Glue or staple 100 mm of mineral wool to the top face of the hatch board. Fit draught-excluder strip around the hatch frame rebate. If the hatch is a thin single board with no rebate, replacing it with a proprietary insulated hatch box is worth the extra cost."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What good looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "On a cold morning, the loft above the insulation should be at close to outdoor air temperature. The ceiling below should feel warmer to the touch than before. If you have a humidity meter, check relative humidity in the loft after the install: 60-75%RH is normal in a ventilated cold loft. Much higher suggests a condensation problem that needs investigating before adding more insulation."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Condensation or mould on loft timbers after insulation",
+              "cause": "Eaves blocked, insufficient ventilation, or vapour from the house diffusing through and condensing on cold timbers",
+              "fix": "Check ventilator trays are seated and eaves are not blocked. Check ridge tiles for ventilation. If the problem persists, a hygrothermal survey is needed."
+            },
+            {
+              "symptom": "Cables feel warm after insulation",
+              "cause": "Cables were buried inside the insulation rather than left on top",
+              "fix": "Pull cables up through the insulation so they can dissipate heat into air. Do not bury circuits that carry load in insulation."
+            },
+            {
+              "symptom": "Insulation compresses under stored items",
+              "cause": "Boards laid directly on insulation",
+              "fix": "Lift the boards, fit proper loft boarding supports over the insulation, relay boards on the supports. Compressed mineral wool loses most of its insulation value."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

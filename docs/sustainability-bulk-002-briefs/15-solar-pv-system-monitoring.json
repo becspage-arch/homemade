@@ -1,0 +1,196 @@
+{
+  "slug": "solar-pv-system-monitoring",
+  "title": "Monitoring a solar PV system",
+  "subtitle": "Reading generation data and using it to shift household load",
+  "excerpt": "Solar PV monitoring shows when the system is generating, how much, and how much of that generation the household is using versus exporting. Understanding the data lets you shift loads to match generation and check the system is performing as expected.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Solar Trade Association guidance on system monitoring and performance expectations. Energy Saving Trust solar PV monitoring guidance. MCS consumer guidance on generation expectations by UK postcode.",
+  "approximateCostGbp": 50,
+  "paybackYears": 1,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "energy-monitor-clamp", "isOptional": true }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "solar PV monitoring app",
+    "check solar panel output",
+    "solar generation data UK",
+    "immersion diverter monitoring"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "solar-pv",
+      "term": "Solar PV",
+      "definition": "Photovoltaic panels generating electricity. Expected UK annual generation is approximately 850-1000 kWh per kWp installed. A 4 kWp system generates roughly 3400-4000 kWh per year."
+    },
+    {
+      "slug": "inverter",
+      "term": "Inverter",
+      "definition": "Converts DC from panels to AC for household use. The inverter logs generation data and provides the primary data source for monitoring apps. Most modern inverters have Wi-Fi connectivity for cloud monitoring."
+    },
+    {
+      "slug": "kwp",
+      "term": "kWp",
+      "definition": "Kilowatt-peak: the rated maximum output of a solar PV system under standard test conditions (1000 W/m², 25°C cell temperature). Actual output is typically 10-20% lower in real conditions."
+    },
+    {
+      "slug": "kwh",
+      "term": "kWh",
+      "definition": "Kilowatt-hour: the unit of electrical energy. Generation is measured in kWh. A 4 kWp system generating 4000 kWh per year produces an average of 11 kWh per day across the year, but with wide seasonal variation."
+    },
+    {
+      "slug": "immersion-diverter",
+      "term": "Immersion diverter",
+      "definition": "A device that monitors grid export and diverts surplus solar generation to a hot water immersion heater rather than exporting at the low SEG rate. Effectively stores solar energy as hot water."
+    },
+    {
+      "slug": "seg",
+      "term": "SEG",
+      "definition": "Smart Export Guarantee: the UK government scheme requiring licensed electricity suppliers to offer an export tariff for surplus solar generation. Rates vary by supplier; typical rates are 4-15p/kWh."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-pv" } }],
+            "text": "solar PV"
+          },
+          {
+            "type": "text",
+            "text": " system has an "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "inverter" } }],
+            "text": "inverter"
+          },
+          {
+            "type": "text",
+            "text": " that logs generation. Most modern inverters have manufacturer apps (Solaredge, SolarEdge, Growatt, GoodWe, Fronius) that show real-time and historical generation in "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kwh" } }],
+            "text": "kWh"
+          },
+          {
+            "type": "text",
+            "text": ". If the inverter has no connectivity, a clip-on energy monitor on the generation circuit shows real-time output."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What the monitoring data tells you" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Peak output: on a clear summer day, the system should reach close to its rated kWp. A 4 kWp system should show approximately 3.2-3.8 kW peak on a clear July midday. Significantly less (below 70% of rated kWp) suggests a fault, shading problem, or soiling." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Annual generation vs expected: compare total annual generation (kWh) against the expected figure for your "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kwp" } }],
+                    "text": "kWp"
+                  },
+                  {
+                    "type": "text",
+                    "text": " and location (MCS estimate or pvgis.ec.europa.eu). Generation more than 20% below expected persistently over a year suggests a fault."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Self-consumption ratio: how much of generation the household uses versus exports. A house with no battery and typical daytime occupation self-consumes approximately 30-50%. If your system has an energy monitor, the app will show import, export, and self-consumption separately." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Shifting loads to match generation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Each kWh of solar generation used in the home saves the import rate (approximately 24p); each kWh exported earns the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "seg" } }],
+            "text": "SEG"
+          },
+          {
+            "type": "text",
+            "text": " export rate (typically 4 to 15p). The financial benefit of using generation rather than exporting it is the import minus export rate difference: 9 to 20p per kWh. Running high-consumption appliances (washing machine, dishwasher, tumble dryer) during peak generation hours (10 am to 2 pm on clear days) increases self-consumption without any hardware cost."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Immersion diverter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "immersion-diverter" } }],
+            "text": "immersion diverter"
+          },
+          {
+            "type": "text",
+            "text": " (iBoost, myenergi Eddi, Solar iBoost) monitors the grid connection and automatically diverts surplus generation to a hot water immersion rather than exporting it. This requires a hot water cylinder with an immersion heater. The diverter installs at the consumer unit; the CT clamp clips around the import/export cable. For households that heat water with gas, the saving per kWh diverted is the avoided gas cost, not the electricity import rate, so the return is lower."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Checking for underperformance",
+          "body": "Panel soiling (bird droppings, lichen on shaded panels) reduces output but rarely by more than 5-10% on most UK installations. The more common causes of significant underperformance are partial shading from a newly grown tree, a faulty string of panels (shows as a flat section on the generation curve), or inverter age degradation. Compare daily generation against expected (pvgis or the original MCS estimate) before investigating hardware."
+        }
+      }
+    ]
+  }
+}

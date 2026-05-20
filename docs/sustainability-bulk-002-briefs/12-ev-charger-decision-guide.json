@@ -1,0 +1,143 @@
+{
+  "slug": "ev-charger-decision-guide",
+  "title": "Installing a home EV charger",
+  "subtitle": "What to consider before commissioning a home charge point",
+  "excerpt": "A dedicated home charge point provides faster, safer, and smarter charging than a three-pin plug. The decisions involve charger type, smart functionality, solar integration, and electrical supply capacity. This is the decision guide.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "OZEV (Office for Zero Emission Vehicles) EV chargepoint grant eligibility guidance (2024). BS 7671 IET Wiring Regulations for EV charge point installation. Energy Networks Association guidance on single-phase vs three-phase supply for EV charging.",
+  "approximateCostGbp": 900,
+  "paybackYears": 3,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "home EV charger install UK",
+    "electric car charger home",
+    "OZEV grant EV charger",
+    "smart EV charger solar"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "solar-pv",
+      "term": "Solar PV",
+      "definition": "Photovoltaic panels generating DC electricity. Smart EV chargers can integrate with a solar PV system to boost charging rate when surplus solar generation is available, reducing import from the grid."
+    },
+    {
+      "slug": "kwh",
+      "term": "kWh",
+      "definition": "Kilowatt-hour. A 7.4 kW home charger adds approximately 30 miles of range per hour of charging for a typical EV consuming 4 miles per kWh. A full charge from near-empty for a 75 kWh battery takes approximately 10 hours on a 7.4 kW unit."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A standard three-pin plug delivers 2.3 kW to a vehicle. A dedicated 7.4 kW home charge point charges three times faster and is built to handle continuous overnight load cycles safely. For most domestic use, a 7.4 kW single-phase unit is sufficient. Three-phase 22 kW units are available but most home electrical supplies are single-phase, and most EVs charge at a maximum of 7.4 kW AC regardless."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tethered or untethered" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tethered units have a fixed cable permanently attached. Convenient if one vehicle uses the charger. Untethered units have a socket; the driver connects their own cable. Better if multiple vehicles with different cable types (Type 1 vs Type 2) will use the charger. Both types deliver the same "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kwh" } }],
+            "text": "kWh"
+          },
+          {
+            "type": "text",
+            "text": " rate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Smart functionality" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Smart chargers connect to the internet and can be scheduled to charge during off-peak periods (overnight cheap-rate tariffs such as Octopus Go), pause during peak grid demand, or boost when surplus "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-pv" } }],
+            "text": "solar PV"
+          },
+          {
+            "type": "text",
+            "text": " generation is available. Since 2022, all new home charge points sold in Great Britain are required to have smart functionality by the EV Smart Charging regulations."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Solar integration" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A solar-integrated smart charger measures surplus generation via a CT clamp and dynamically adjusts the charge rate to consume exactly the surplus rather than importing from the grid. This requires a minimum surplus of around 1.4 kW (the minimum charge current of most 7.4 kW units at 6 amps) to activate the boost mode. Below that threshold, the car charges at the minimum rate or waits. In practice, solar-boosted EV charging contributes most in summer afternoons when generation exceeds household demand."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Electrical supply and installation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 7.4 kW charge point draws 32 amps on a single-phase supply. Most UK homes have a 60 to 100 amp main fuse. Adding 32 amps continuous load to an otherwise fully loaded supply can trip the main fuse. An OZEV-approved installer will assess the existing supply capacity as part of the survey. If the supply is marginal, load management (limiting the charge rate to keep total draw within the fuse rating) is included in most modern smart charger firmware."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The installation must be done by an OZEV-approved installer to qualify for the OZEV EV chargepoint grant (for renters and flat owners as of 2024; homeowners with solar PV may also qualify). The installer will register the installation and issue an OZEV certificate."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Overnight tariffs and the financial case",
+          "body": "The financial saving from a home charge point depends primarily on the electricity tariff, not the hardware. Overnight cheap-rate tariffs charge around 7 to 9p per kWh versus the standard 24p rate. For a driver covering 10,000 miles per year in a car consuming 4 miles per kWh, the difference between overnight cheap-rate and standard-rate charging is approximately 400 kWh per year. A smart charger that automatically uses cheap-rate periods pays back faster than the hardware cost alone suggests."
+        }
+      }
+    ]
+  }
+}
