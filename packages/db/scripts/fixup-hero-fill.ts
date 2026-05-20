@@ -16,6 +16,11 @@
  *
  * Run:
  *   pnpm --filter @homemade/db exec tsx scripts/fixup-hero-fill.ts [--limit N] [--dry-run]
+ *     [--category slug,slug,...] [--no-ai-fallback] [--delay-ms N]
+ *
+ * --category   Only process tutorials in these category slug(s).
+ * --no-ai-fallback  Skip Flux Schnell; stamp PROCEDURAL_CARD on failure.
+ * --delay-ms N  Sleep N ms between tutorials (rate-limit safety). Default 0.
  */
 
 import { config as loadEnv } from 'dotenv'
@@ -46,23 +51,45 @@ import { sourceHeroImage } from '../../../apps/web/src/lib/image-sourcing/orches
 interface CliFlags {
   limit: number | null
   dryRun: boolean
+  /** Filter to specific category slugs (comma-separated on CLI). */
+  categories: string[] | null
+  /** Skip Flux Schnell — pass excludeSources: ['flux-schnell'] to orchestrator. */
+  noAiFallback: boolean
+  /** ms to sleep between tutorials — keeps API calls within quota. Default 0. */
+  delayMs: number
 }
 
 function parseCliFlags(argv: string[]): CliFlags {
   let limit: number | null = null
   let dryRun = false
+  let categories: string[] | null = null
+  let noAiFallback = false
+  let delayMs = 0
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i]!
     if (a === '--dry-run') dryRun = true
+    else if (a === '--no-ai-fallback') noAiFallback = true
     else if (a === '--limit') {
       const v = Number(argv[++i])
       if (Number.isFinite(v) && v > 0) limit = v
     } else if (a.startsWith('--limit=')) {
       const v = Number(a.slice('--limit='.length))
       if (Number.isFinite(v) && v > 0) limit = v
+    } else if (a === '--delay-ms') {
+      const v = Number(argv[++i])
+      if (Number.isFinite(v) && v >= 0) delayMs = v
+    } else if (a.startsWith('--delay-ms=')) {
+      const v = Number(a.slice('--delay-ms='.length))
+      if (Number.isFinite(v) && v >= 0) delayMs = v
+    } else if (a === '--category') {
+      const raw = argv[++i] ?? ''
+      categories = raw.split(',').map((s) => s.trim()).filter(Boolean)
+    } else if (a.startsWith('--category=')) {
+      const raw = a.slice('--category='.length)
+      categories = raw.split(',').map((s) => s.trim()).filter(Boolean)
     }
   }
-  return { limit, dryRun }
+  return { limit, dryRun, categories, noAiFallback, delayMs }
 }
 
 function extFromContentType(ct: string | null): { ext: string; mime: string } {
@@ -104,7 +131,10 @@ interface PerTutorialResult {
 
 async function main(): Promise<void> {
   const flags = parseCliFlags(process.argv.slice(2))
-  console.log(`hero-fill: dryRun=${flags.dryRun}, limit=${flags.limit ?? 'none'}`)
+  console.log(
+    `hero-fill: dryRun=${flags.dryRun}, limit=${flags.limit ?? 'none'}, ` +
+    `categories=${flags.categories?.join(',') ?? 'all'}, noAiFallback=${flags.noAiFallback}`,
+  )
 
   const author = await prisma.user.findUnique({
     where: { email: 'rebecca@homemade.education' },
@@ -113,7 +143,11 @@ async function main(): Promise<void> {
   if (!author) throw new Error('Author rebecca@homemade.education not found.')
 
   const candidates = await prisma.tutorial.findMany({
-    where: { status: 'PUBLISHED', heroMediaId: null },
+    where: {
+      status: 'PUBLISHED',
+      heroMediaId: null,
+      ...(flags.categories ? { category: { slug: { in: flags.categories } } } : {}),
+    },
     select: {
       id: true,
       slug: true,
@@ -150,17 +184,28 @@ async function main(): Promise<void> {
 
     try {
       const ingredients = await topIngredients(t.id)
-      const result = await sourceHeroImage({
-        title: t.title,
-        category: t.category.slug,
-        subCategory: t.subCategory?.slug ?? null,
-        ingredients,
-      })
+      const result = await sourceHeroImage(
+        {
+          title: t.title,
+          category: t.category.slug,
+          subCategory: t.subCategory?.slug ?? null,
+          ingredients,
+        },
+        flags.noAiFallback ? { excludeSources: ['flux-schnell' as const] } : {},
+      )
 
       if (result.outcome === 'failed' || !result.image) {
         counts['failed'] += 1
         results.push({ slug: t.slug, outcome: 'failed', triedSources: result.triedSources })
         console.log(`${tag} FAILED — tried ${result.triedSources.join(', ')}`)
+        if (flags.noAiFallback && !flags.dryRun) {
+          // Explicitly stamp PROCEDURAL_CARD so the renderer knows this was
+          // intentional (free sources exhausted, AI deliberately skipped).
+          await prisma.tutorial.update({
+            where: { id: t.id },
+            data: { heroImageStrategy: 'PROCEDURAL_CARD' },
+          })
+        }
         continue
       }
 
@@ -269,6 +314,10 @@ async function main(): Promise<void> {
       const file = resolve(__dirname, '..', '..', '..', 'docs', 'hero-fill-progress.json')
       writeFileSync(file, JSON.stringify({ counts, results }, null, 2), 'utf8')
     }
+
+    if (flags.delayMs > 0 && i < total - 1) {
+      await new Promise((r) => setTimeout(r, flags.delayMs))
+    }
   }
 
   const file = resolve(__dirname, '..', '..', '..', 'docs', 'hero-fill-progress.json')
@@ -283,6 +332,8 @@ async function main(): Promise<void> {
         metadata: {
           runDate: new Date().toISOString().slice(0, 10),
           processed: total,
+          categories: flags.categories ?? 'all',
+          noAiFallback: flags.noAiFallback,
           counts,
         } as Prisma.InputJsonValue,
       },

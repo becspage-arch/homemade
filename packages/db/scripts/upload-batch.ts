@@ -30,6 +30,12 @@ interface BatchFlags {
   reportPath: string | null
   skipSlugs: Set<string>
   limit: number | null
+  /** Category slug(s) to pass to fixup-hero-fill after a PUBLISHED batch. */
+  heroCategory: string | null
+  /** Skip the automatic post-batch hero fill (e.g. for testing). */
+  skipHeroFill: boolean
+  /** Pass --no-ai-fallback through to fixup-hero-fill. */
+  heroNoAi: boolean
 }
 
 function parseArgs(argv: string[]): BatchFlags | null {
@@ -38,6 +44,9 @@ function parseArgs(argv: string[]): BatchFlags | null {
   let reportPath: string | null = null
   const skipSlugs = new Set<string>()
   let limit: number | null = null
+  let heroCategory: string | null = null
+  let skipHeroFill = false
+  let heroNoAi = false
 
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i]!
@@ -71,16 +80,31 @@ function parseArgs(argv: string[]): BatchFlags | null {
       if (Number.isFinite(n) && n > 0) limit = Math.floor(n)
       continue
     }
+    if (arg === '--hero-category') {
+      heroCategory = argv[++i] ?? null
+      continue
+    }
+    if (arg === '--skip-hero-fill') {
+      skipHeroFill = true
+      continue
+    }
+    if (arg === '--hero-no-ai') {
+      heroNoAi = true
+      continue
+    }
     if (!dir) {
       dir = arg
       continue
     }
   }
   if (!dir) {
-    console.error('Usage: upload-batch.ts <dir> [--status DRAFT|PUBLISHED] [--report path] [--skip-slugs a,b,c] [--limit N]')
+    console.error(
+      'Usage: upload-batch.ts <dir> [--status DRAFT|PUBLISHED] [--report path] ' +
+      '[--skip-slugs a,b,c] [--limit N] [--hero-category slug] [--skip-hero-fill] [--hero-no-ai]',
+    )
     return null
   }
-  return { dir, status, reportPath, skipSlugs, limit }
+  return { dir, status, reportPath, skipSlugs, limit, heroCategory, skipHeroFill, heroNoAi }
 }
 
 interface UploadEntry {
@@ -116,6 +140,25 @@ async function runUpload(briefPath: string, status: 'DRAFT' | 'PUBLISHED'): Prom
     child.stdout.on('data', d => { out += d.toString() })
     child.stderr.on('data', d => { out += d.toString() })
     child.on('close', code => resolveProm({ code: code ?? 1, out }))
+  })
+}
+
+async function runHeroFill(opts: {
+  category: string | null
+  noAi: boolean
+  limit: number | null
+}): Promise<void> {
+  return new Promise(resolveProm => {
+    const args = ['--filter', '@homemade/db', 'exec', 'tsx', 'scripts/fixup-hero-fill.ts']
+    if (opts.category) args.push('--category', opts.category)
+    if (opts.noAi) args.push('--no-ai-fallback')
+    if (opts.limit) args.push('--limit', String(opts.limit))
+    const child = spawn('pnpm', args, {
+      shell: process.platform === 'win32',
+      cwd: process.cwd(),
+      stdio: 'inherit',
+    })
+    child.on('close', () => resolveProm())
   })
 }
 
@@ -182,6 +225,19 @@ async function main(): Promise<void> {
   const created = entries.filter(e => e.status === 'created')
   const updated = entries.filter(e => e.status === 'updated')
   console.log(`\nSummary: ${created.length} created, ${updated.length} updated, ${failed.length} failed`)
+
+  // Auto-source heroes for any just-published tutorials that landed without one.
+  // Root cause fix: the upload path never calls sourceHeroImage, so without this
+  // step every batch would publish with heroMediaId = null.
+  const published = created.length + updated.length
+  if (flags.status === 'PUBLISHED' && published > 0 && !flags.skipHeroFill) {
+    console.log(`\nAuto hero-fill: sourcing heroes for ${published} newly published tutorial(s)...`)
+    await runHeroFill({
+      category: flags.heroCategory,
+      noAi: flags.heroNoAi,
+      limit: published,
+    })
+  }
 
   if (failed.length > 0) process.exit(0) // don't fail the batch; per-recipe failures captured in report
 }
