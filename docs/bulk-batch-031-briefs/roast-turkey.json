@@ -1,0 +1,186 @@
+{
+  "slug": "roast-turkey",
+  "title": "Roast Turkey",
+  "subtitle": "Christmas Day classic with chestnut and sausagemeat stuffing",
+  "excerpt": "A whole roast turkey is a larger undertaking than any other roast in this canon. The bird is too big and too anatomically uneven to cook without attention to detail: the legs need more heat than the breast, the stuffed cavity slows cooking, and the breast dries out if the oven runs too hot. A buttered muslin cloth draped over the breast for most of the cooking is the most reliable insurance against this.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: roast turkey method and stuffing guidance. Delia Smith, Complete Cookery Course (1978): the muslin cloth method for protecting the breast. Traditional British Christmas Day practice.",
+  "hero": {},
+  "recipe": {
+    "servings": 10,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 240,
+    "restingMinutes": 45,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The stuffing can be prepared the day before and kept refrigerated. Do not stuff the bird until just before roasting. The turkey can be rubbed with butter and seasoned the night before, covered loosely, and refrigerated.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["specialOccasion", "festive", "hearty"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "160°C fan",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "roasting-rack", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "carving-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "kitchen-twine", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "muslin-cloth-turkey", "term": "Muslin cloth (for turkey)", "definition": "A piece of loosely woven cotton cloth soaked in melted butter and draped over the turkey breast for most of the cooking time, basting the breast continuously as the butter melts and running down the cloth." },
+    { "slug": "trussing", "term": "Trussing", "definition": "Tying the legs of a bird to the body with kitchen twine before roasting, to hold the shape and ensure the leg joint cooks at the same rate as the body rather than splaying away." }
+  ],
+  "techniqueSlugs": ["making-gravy"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 5 kg turkey serves ten and takes about 3 hours 45 minutes at 180°C (160°C fan). The formula for timing is 40 minutes per kilogram at this temperature. The bird is done when the thickest part of the thigh reads 75°C on a probe, and the juices run clear when the joint is pierced." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The anatomy problem with turkey is that the breast has almost no fat and the thighs have plenty. The " },
+          { "type": "text", "text": "muslin cloth", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "muslin-cloth-turkey" } }] },
+          { "type": "text", "text": " method addresses this by saturating a piece of loosely woven cloth in melted butter and draping it over the breast for the first two-thirds of the cooking time. The butter melts down into the breast continuously, basting it from above. Remove the cloth for the final hour to let the skin colour." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 10,
+          "items": [
+            { "ingredientSlug": "turkey-whole", "amount": 5, "unit": "kg", "prepNote": "fresh or fully defrosted, giblets removed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 200, "unit": "g", "prepNote": "softened, for rubbing under and over the skin", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 3, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "halved, for the cavity", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "halved, for the cavity", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": "for the cavity", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sausagemeat", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the stuffing" },
+            { "ingredientSlug": "chestnut-cooked", "amount": 200, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "For the stuffing" },
+            { "ingredientSlug": "breadcrumbs-fresh", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the stuffing" },
+            { "ingredientSlug": "sage", "amount": 10, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the stuffing" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped and softened", "isOptional": false, "groupLabel": "For the stuffing" },
+            { "ingredientSlug": "stock-chicken", "amount": 500, "unit": "ml", "prepNote": "for the gravy", "isOptional": false, "groupLabel": "For the gravy" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The pan must be large enough that there is at least 5 cm of clearance between the bird and the pan sides. Overcrowding traps steam and prevents the skin colouring. A rack to hold the bird above the dripping juices is essential for even cooking." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the stuffing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mix {{sausagemeat}} of sausagemeat with {{chestnut-cooked}} of roughly chopped chestnuts, {{breadcrumbs-fresh}} of breadcrumbs, the chopped sage, and the softened onion. Season well with salt and pepper. Do not overmix; the stuffing should be loosely combined rather than compact. Make a ball and fry a small piece to check the seasoning." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the bird" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Take the turkey from the fridge 2 hours before cooking. Pat dry inside and out. Using your fingers, gently separate the skin from the breast meat and push softened {{unsalted-butter}} of butter into the gap, spreading it as evenly as possible. Rub the remaining butter over the outside. Season all over with {{sea-salt-flakes}} and {{black-pepper}}. Push the halved onion, lemon, and thyme sprigs into the cavity. Fill the neck cavity (not the body cavity) loosely with stuffing, pulling the skin flap over and securing with a skewer. " },
+          { "type": "text", "text": "Truss", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trussing" } }] },
+          { "type": "text", "text": " the legs together with kitchen twine." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roast with muslin" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 180°C (160°C fan). Soak a double layer of muslin in the remaining melted butter. Drape it over the breast. Set the bird on the rack, breast-side up, in the roasting pan. Roast for 40 minutes per kilogram. For a 5 kg bird this is approximately 3 hours 20 minutes. Remove the muslin for the final 50 to 60 minutes to allow the skin to colour." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Check and rest" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The turkey is done when the thickest part of the thigh reads 75°C and the juices at the thigh joint run clear rather than pink when pierced. Transfer to a board and rest under loose foil for at least 45 minutes. A large turkey retains heat well and will remain warm for an hour." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the gravy" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour off excess fat, leaving the dark pan juices and any vegetables. Set the pan on the hob over medium-high heat. Add {{stock-chicken}} of chicken stock and scrape up the caramelised sediment. Simmer for 8 minutes until reduced and well flavoured. Season and strain into a warm jug." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Breast dry before legs are cooked", "cause": "Muslin removed too early, or oven temperature too high", "fix": "Keep the muslin on for at least two-thirds of the total cooking time. Check oven temperature with a thermometer." },
+            { "symptom": "Legs not reaching 75°C even though breast is done", "cause": "Turkey was not at room temperature before going in", "fix": "Continue roasting with the breast covered in foil. The leg joint temperature will catch up." },
+            { "symptom": "Stuffing still cold at centre when turkey is cooked", "cause": "Stuffing was packed too densely or the neck cavity was overfilled", "fix": "Pack stuffing loosely. Check its temperature separately with a probe; it should reach 72°C." },
+            { "symptom": "Skin pale despite long cooking", "cause": "Muslin left on too long or oven temperature dropped during the cook", "fix": "Raise to 200°C (180°C fan) for the final 20 minutes if colour is lacking." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Turkey arrived on British Christmas tables via the Tudor period, when it was introduced from the Americas and quickly adopted as a festive bird suited to feeding large numbers. Mrs Beeton's 1861 recipe specifies roasting with plenty of butter and serving with chipolatas alongside, which remains the British standard. The muslin method was popularised by Delia Smith in the 1970s. The chestnut and sausagemeat stuffing is the most traditional British version, and it is baked in the neck cavity rather than the body for food safety reasons. Serve with all the trimmings: roast potatoes, Brussels sprouts, pigs in blankets, bread sauce, cranberry sauce, and gravy." }
+        ]
+      }
+    ]
+  }
+}

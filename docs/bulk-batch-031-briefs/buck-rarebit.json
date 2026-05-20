@@ -1,0 +1,148 @@
+{
+  "slug": "buck-rarebit",
+  "title": "Buck Rarebit",
+  "subtitle": "Welsh rarebit topped with a poached egg",
+  "excerpt": "Buck rarebit is Welsh rarebit, the thick Cheddar sauce on toast, with a poached egg placed on top. The yolk runs into the sauce when broken, making the whole thing richer and more substantial. It is a lunch or late-night supper dish, substantial enough to stand as a main, and one of the better things the British hob-and-grill combination produces.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Welsh rarebit (originally Welsh rabbit) is documented in British cookery from the eighteenth century. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: Welsh rabbit recipe. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg #35075: Welsh rarebit method. Buck rarebit is the version with a poached egg, named by analogy with male deer (buck).",
+  "hero": {},
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The rarebit sauce can be made up to 2 days ahead and stored in the fridge. Spread on toast and grill when needed.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["easyWin", "weeknight", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "rarebit-sauce", "term": "Rarebit sauce", "definition": "A thick, spreadable cheese sauce made from Cheddar, ale, mustard, and Worcestershire sauce, cooked until smooth. It is spread thickly on toast and grilled until puffed and browned. Authentic rarebit sauce is thick enough to hold its shape on the bread; a thin cheese sauce slides off and does not brown properly." },
+    { "slug": "poaching-egg", "term": "Poaching (eggs)", "definition": "Cooking a cracked egg in barely simmering water with a splash of vinegar for 2 to 3 minutes until the white is set and the yolk is still runny. Fresh eggs hold together better than older ones. The vinegar helps the white coagulate quickly." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "text": "rarebit sauce", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rarebit-sauce" } }] },
+          { "type": "text", "text": " should be thick enough to spread onto the toast without running: closer to a paste than a sauce. Spreading it too thinly gives a dry result under the grill. The poached egg is set on top after grilling, not before; the grill would set the yolk. The yolk should run when broken." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The timing requires a little coordination: grill the rarebit, " },
+          { "type": "text", "text": "poach the eggs", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "poaching-egg" } }] },
+          { "type": "text", "text": " in the same window, and bring both together while both are hot." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "cheddar", "amount": 120, "unit": "g", "prepNote": "mature, grated", "isOptional": false, "groupLabel": "rarebit" },
+            { "ingredientSlug": "stout", "amount": 3, "unit": "tbsp", "prepNote": "or stout", "isOptional": false, "groupLabel": "rarebit" },
+            { "ingredientSlug": "unsalted-butter", "amount": 15, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "rarebit" },
+            { "ingredientSlug": "plain-flour", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "rarebit" },
+            { "ingredientSlug": "english-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "rarebit" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "rarebit" },
+            { "ingredientSlug": "black-pepper", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "rarebit" },
+            { "ingredientSlug": "white-bread", "amount": 2, "unit": "slice", "prepNote": "thick-cut, toasted on one side only", "isOptional": false, "groupLabel": "base" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "very fresh", "isOptional": false, "groupLabel": "egg" },
+            { "ingredientSlug": "white-wine-vinegar", "amount": 1, "unit": "tsp", "prepNote": "for poaching water", "isOptional": false, "groupLabel": "egg" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the rarebit sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a small saucepan over a medium-low heat. Stir in {{plain-flour}} of flour and cook for 1 minute. Add {{stout}} of ale and stir until smooth. Add {{cheddar}} of grated Cheddar, {{english-mustard}}, {{worcestershire-sauce}}, and {{black-pepper}}. Stir over a low heat until the cheese melts into a thick, smooth paste. Remove from the heat." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Grill the rarebit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Spread the rarebit sauce thickly onto the untoasted sides of the {{white-bread}} bread slices. Place under a hot grill for 3 to 4 minutes until puffed, golden-brown, and bubbling at the edges." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Poach the eggs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "While the rarebit grills, bring a small saucepan of water to a bare simmer with {{white-wine-vinegar}}. Crack each {{eggs}} into a small cup. Swirl the water gently and slide the eggs in one at a time. Cook for 2 to 3 minutes until the whites are just set and the yolks are still runny. Remove with a slotted spoon. Place one poached egg on top of each grilled rarebit and serve immediately." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Rarebit sauce slides off the bread when grilled", "cause": "Sauce too thin", "fix": "The sauce must be thick enough to spread like a paste, not pour. Cook it a little longer to reduce, or add more grated cheese." },
+            { "symptom": "Egg white ragged and spread out in the water", "cause": "Egg not fresh, or water too vigorously boiling", "fix": "Very fresh eggs have firmer whites that hold together better. Keep the water at a bare simmer, not a rolling boil." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Welsh rarebit is one of the oldest named British dishes, appearing in cookery books from the early eighteenth century as Welsh Rabbit, a joke name for a dish without rabbit. Buck rarebit, with the poached egg, adds a richness that makes the dish a proper meal rather than a snack. It is a pub lunch dish, a late-night supper, and a kitchen staple for when there is good Cheddar and bread in the house and not much else." }
+        ]
+      }
+    ]
+  }
+}

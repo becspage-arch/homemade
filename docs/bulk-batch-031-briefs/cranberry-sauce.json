@@ -1,0 +1,111 @@
+{
+  "slug": "cranberry-sauce",
+  "title": "Cranberry Sauce",
+  "subtitle": "Sharp, jewel-red sauce for turkey and game",
+  "excerpt": "Cranberry sauce is one of the easiest things on the Christmas table: cranberries, sugar, and a little orange juice, simmered together for 10 minutes until the berries burst and the liquid sets to a loose, jammy consistency as it cools. The balance between sharp and sweet is the only thing to get right. Make it the day before; it improves overnight in the fridge.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Cranberry sauce became standard on the British Christmas table in the twentieth century, adopted from American Thanksgiving tradition via post-war cookery writing. Now a fixture alongside turkey. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: redcurrant and berry sauces for game. Modern British method.",
+  "hero": {},
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 12,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in a small jar or container for up to 3 months. Defrost overnight in the fridge.",
+    "batchable": true,
+    "batchNotes": "Doubles easily. Keeps in the fridge for 2 weeks.",
+    "makeAheadNotes": "Make up to 5 days ahead. Store in a clean jar in the fridge.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "family"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "cranberry-setting", "term": "Cranberry setting point", "definition": "Cranberries are high in pectin, a natural gelling agent. When cooked with sugar and acid, the pectin activates and the sauce sets to a loose, spoonable consistency as it cools. The sauce should look slightly liquid when hot; it will firm considerably once cold." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The only judgment call in cranberry sauce is sweetness. Cranberries are very sharp; the amount of sugar needed varies with personal preference and what the sauce is accompanying. Alongside turkey with a sweet chestnut stuffing, a sharper sauce (less sugar) provides contrast. Alongside game, more sugar balances the bitterness. The orange zest is optional but adds a brightness that prevents the sauce from tasting simply sour. Cranberry " },
+          { "type": "text", "text": "sets as it cools", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cranberry-setting" } }] },
+          { "type": "text", "text": "; take it off the heat when it still looks loose." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "cranberries", "amount": 300, "unit": "g", "prepNote": "fresh or frozen", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 100, "unit": "g", "prepNote": "adjust to taste", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "orange", "amount": 1, "unit": "each", "prepNote": "zest and juice", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 50, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Simmer the berries" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Put {{cranberries}} cranberries, {{caster-sugar}}, the juice and zest of {{orange}}, and {{water}} in a small saucepan. Bring to the boil, stirring to dissolve the sugar. Reduce the heat and simmer for 8 to 10 minutes, stirring occasionally, until most of the berries have burst and the liquid is syrupy. The sauce will look slightly thin; it sets further on cooling. Taste and add more sugar if needed. Pour into a bowl or jar and allow to cool." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Sauce too sharp even with full sugar", "cause": "Frozen cranberries are sometimes sharper than fresh", "fix": "Add sugar in stages; taste after each addition. A small amount of redcurrant jelly stirred in at the end balances sharpness without making the sauce sweet." },
+            { "symptom": "Sauce too runny after cooling", "cause": "Not simmered long enough for the pectin to activate", "fix": "Return to the heat and simmer for a further 5 minutes. The sauce should coat the back of a spoon when hot; it will be considerably thicker cold." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cranberry sauce became a British Christmas standard in the mid-twentieth century. It is now as fixed a part of the Christmas plate as the turkey it accompanies. It is also excellent with cold turkey and ham sandwiches the following day, with a sharp Cheddar, or as a condiment alongside venison and game throughout the autumn." }
+        ]
+      }
+    ]
+  }
+}

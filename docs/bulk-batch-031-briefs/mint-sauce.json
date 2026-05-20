@@ -1,0 +1,110 @@
+{
+  "slug": "mint-sauce",
+  "title": "Mint Sauce",
+  "subtitle": "Fresh mint, white wine vinegar, and a little sugar",
+  "excerpt": "Mint sauce is the traditional British accompaniment to roast lamb: finely chopped fresh mint leaves, a pinch of sugar, and enough white wine vinegar to make a sharp, pourable sauce. It takes five minutes to make and should be made fresh each time. Bottled mint sauce is an acceptable substitute but lacks the brightness of fresh mint. The vinegar must be white wine vinegar, not malt, which is too aggressive.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: mint sauce recipe. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg #35075: mint sauce with vinegar. Traditional British accompaniment to roast lamb, documented for centuries.",
+  "hero": {},
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 0,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make up to 2 hours ahead. The colour fades slightly as the mint oxidises but the flavour remains sharp and clean.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "family"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "macerating-mint", "term": "Macerating mint", "definition": "Sprinkling sugar over chopped fresh mint and allowing it to sit for several minutes before adding the vinegar. The sugar draws moisture from the mint leaves, concentrating the flavour and producing a small amount of natural juice that forms part of the sauce base." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fresh mint sauce has a brightness that no bottled version can replicate. The key is " },
+          { "type": "text", "text": "macerating the chopped mint", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "macerating-mint" } }] },
+          { "type": "text", "text": " in sugar for a few minutes before adding the vinegar: the sugar draws juice from the mint and concentrates the flavour before the vinegar sharpens the whole thing. Use spearmint rather than peppermint or apple mint; spearmint is the traditional British roast lamb companion." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "mint", "amount": 20, "unit": "g", "prepNote": "leaves only, finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "white-wine-vinegar", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 1, "unit": "tbsp", "prepNote": "boiling", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Macerate and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place the finely chopped {{mint}} in a small bowl. Sprinkle over {{caster-sugar}} and stir to coat. Leave for 5 minutes. Add {{water}} of boiling water and stir to dissolve the sugar. Add {{white-wine-vinegar}} and stir well. Taste: the sauce should be sharp and fresh with a light sweetness. Adjust the balance with a little more sugar or vinegar. Leave for a further 5 minutes before serving." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Sauce too sharp and harsh", "cause": "Ratio of vinegar to mint is too high", "fix": "Add a little more chopped mint and a pinch more sugar. The sauce should be sharp but not mouth-puckering." },
+            { "symptom": "Mint turning brown quickly", "cause": "Oxidation once the leaves are cut", "fix": "Make the sauce no more than 2 hours ahead. If the colour matters, make it immediately before serving." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mint sauce is so thoroughly associated with roast lamb in British cookery that it is difficult to encounter one without the other. The combination is old: mint with lamb appears in British cookery books from the sixteenth century. It is one of the few fresh, sharp condiments on the British Sunday table, and its acidity cuts the richness of the lamb in a way that no other accompaniment does." }
+        ]
+      }
+    ]
+  }
+}

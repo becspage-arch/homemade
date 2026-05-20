@@ -1,0 +1,111 @@
+{
+  "slug": "apple-sauce",
+  "title": "Apple Sauce",
+  "subtitle": "Bramley apples simmered with butter until collapsed and smooth",
+  "excerpt": "Apple sauce is one of the simplest preparations in British cookery: Bramley apples, a knob of butter, a little sugar, and a splash of water, cooked until the apple collapses. The result is light, fresh, and sharp. Bramley apples are the right variety because they collapse to a puree on cooking; dessert apples stay in chunks. A sharp sauce is correct for pork; a sweeter sauce suits duck.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: apple sauce for roast pork. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg #35075: apple sauce recipe. Traditional British accompaniment to roast pork.",
+  "hero": {},
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in small portions. Defrost overnight in the fridge.",
+    "batchable": true,
+    "batchNotes": "Doubles easily. Makes a good store in the fridge for up to 5 days.",
+    "makeAheadNotes": "Make up to 3 days ahead and store in the fridge. Serve at room temperature or warm gently before serving.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "family"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "bramley-collapse", "term": "Bramley collapse", "definition": "Bramley apples have a high acid and water content and a cell structure that breaks down rapidly on cooking, producing a smooth puree without blending. They are the standard British cooking apple. Dessert apples do not collapse in the same way and are not suitable for apple sauce." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Apple sauce depends on using the right apple. A Bramley " },
+          { "type": "text", "text": "collapses completely", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bramley-collapse" } }] },
+          { "type": "text", "text": " when cooked, producing a smooth, light puree with no stirring or blending needed. A Cox or Braeburn stays in chunks and requires mashing, producing a denser result with visible pieces. The sauce should be slightly sharp; adjust the sugar to taste but do not over-sweeten it, or it will compete with rather than complement the pork." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "apple-bramley", "amount": 3, "unit": "each", "prepNote": "peeled, cored, roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 1, "unit": "tbsp", "prepNote": "adjust to taste", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the apples" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Put the {{apple-bramley}} apple pieces, {{unsalted-butter}}, {{caster-sugar}}, and {{water}} in a small saucepan. Cover with a lid and cook over a low heat for 12 to 15 minutes, stirring once or twice, until the apple has completely collapsed into a smooth puree. Taste and adjust the sugar. Serve warm or at room temperature." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Apple not collapsing after 15 minutes", "cause": "Dessert apple used instead of Bramley, or heat too low", "fix": "Increase the heat slightly and add another tablespoon of water. If using a dessert apple, mash with a fork once soft." },
+            { "symptom": "Sauce too sour", "cause": "Bramley are very sharp", "fix": "Add sugar in small increments, tasting after each. A half-tablespoon at a time avoids over-sweetening." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Apple sauce is the traditional accompaniment to roast pork in British cookery. The acidity of the apple cuts through the richness of the crackling and the fat of the pork in a way that no other sauce does. It is also served with duck, goose, and pork sausages. The British tradition of pairing pork with fruit is ancient; apples and pork appear together in medieval cookery records." }
+        ]
+      }
+    ]
+  }
+}

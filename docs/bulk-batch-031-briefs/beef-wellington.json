@@ -1,0 +1,160 @@
+{
+  "slug": "beef-wellington",
+  "title": "Beef Wellington",
+  "subtitle": "Beef fillet wrapped in mushroom duxelles and puff pastry",
+  "excerpt": "Beef Wellington is a whole fillet of beef coated in a mushroom paste, wrapped in Parma ham and puff pastry, and baked until the pastry is deeply golden and the beef inside is pink. It requires planning but not difficult skill: the components can be made a day ahead, and the cooking time is short. The mushroom layer keeps the pastry from going soggy and adds an earthy depth to every slice.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Beef Wellington is a British dish of uncertain origin, popularised from the 1960s onward in British restaurant and home cooking. Gordon Ramsay's version with duxelles and Parma ham is now the standard British interpretation. Jane Grigson, English Food (1974): beef in pastry. Classic British dinner-party and celebration dish.",
+  "hero": {},
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 45,
+    "cookMinutes": 40,
+    "restingMinutes": 10,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Sear the beef, make the duxelles, and assemble up to the point of wrapping in pastry, up to 24 hours ahead. Refrigerate. Brush with egg wash and bake from cold, adding 5 minutes to the cooking time.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["dinnerParty", "slowSunday"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "200°C fan",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "food-processor", "isOptional": true },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "meat-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "duxelles", "term": "Duxelles", "definition": "A finely chopped mushroom mixture cooked slowly in butter until all moisture has evaporated and the mushrooms form a dry, concentrated paste. The dryness is important: wet duxelles will make the pastry soggy. The mixture should be almost black when ready." },
+    { "slug": "resting-beef", "term": "Resting (beef Wellington)", "definition": "Allowing the cooked Wellington to rest for 10 minutes before cutting. The internal temperature continues to rise by 2 to 3°C during this time, and the juices redistribute through the meat. Cutting too soon releases the juices and leaves the meat dry." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The two points at which a beef Wellington fails are soggy pastry and overcooked beef. Both are preventable. Soggy pastry comes from " },
+          { "type": "text", "text": "duxelles", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "duxelles" } }] },
+          { "type": "text", "text": " that were not cooked dry enough: the mushrooms must be cooked until completely dry with no moisture remaining. Overcooked beef comes from not using a meat thermometer: pull the Wellington at 50°C for rare, 55°C for medium-rare. " },
+          { "type": "text", "text": "Resting", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "resting-beef" } }] },
+          { "type": "text", "text": " takes it 2 to 3°C higher." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-fillet", "amount": 800, "unit": "g", "prepNote": "centre-cut, trimmed and tied into an even cylinder", "isOptional": false, "groupLabel": "beef" },
+            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": "for searing", "isOptional": false, "groupLabel": "beef" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "beef" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "beef" },
+            { "ingredientSlug": "dijon-mustard", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "beef" },
+            { "ingredientSlug": "mushrooms-chestnut", "amount": 400, "unit": "g", "prepNote": "finely chopped in a food processor or by hand", "isOptional": false, "groupLabel": "duxelles" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "duxelles" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": "leaves only", "isOptional": false, "groupLabel": "duxelles" },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "duxelles" },
+            { "ingredientSlug": "prosciutto", "amount": 8, "unit": "slice", "prepNote": "overlapping on clingfilm", "isOptional": false, "groupLabel": "assembly" },
+            { "ingredientSlug": "puff-pastry", "amount": 500, "unit": "g", "prepNote": "all-butter, rolled to 30 x 35 cm", "isOptional": false, "groupLabel": "assembly" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": "assembly" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sear and cool the beef" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Season the {{beef-fillet}} beef all over with {{sea-salt-flakes}} and {{black-pepper}}. Heat {{olive-oil}} of olive oil in a large frying pan until smoking. Sear the beef hard on all sides for 2 minutes per side until deeply browned. Remove from the heat, brush all over with {{dijon-mustard}}, and allow to cool completely. Refrigerate for at least 30 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the duxelles" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt {{unsalted-butter}} of butter in the same pan over a medium heat. Add the {{mushrooms-chestnut}} mushrooms, {{garlic}}, and thyme leaves. Cook, stirring frequently, for 15 to 20 minutes until all the moisture has evaporated and the mushrooms are dry and dark. Season and spread on a plate to cool completely." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and chill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lay a large piece of clingfilm on a work surface. Arrange the {{prosciutto}} Parma ham slices overlapping on the clingfilm to form a rectangle slightly longer than the beef. Spread the cooled duxelles evenly over the ham. Place the seared beef at one edge. Using the clingfilm, roll the ham tightly around the beef, twisting the ends to form a tight cylinder. Refrigerate for 30 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Wrap in pastry and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220°C (200°C fan). Unwrap the beef roll. Place on the rolled-out {{puff-pastry}} pastry and roll up tightly, sealing the edges with beaten {{eggs}}. Brush the outside generously with egg wash and score the surface lightly if desired. Bake for 25 to 30 minutes until the pastry is deep golden-brown and a probe reads 50°C at the centre for rare (55°C for medium-rare). Rest for 10 minutes before slicing." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Pastry soggy on the underside", "cause": "Duxelles too wet, or beef not cooled before wrapping", "fix": "The duxelles must be completely dry before use. Cook until all moisture is gone. Ensure the beef is fully cold before assembling." },
+            { "symptom": "Beef overcooked", "cause": "No probe thermometer used, or oven too hot", "fix": "A probe is not optional for this dish. Insert it at the start of cooking and monitor. Remove from the oven as soon as it reads 50°C (rare) or 55°C (medium-rare)." },
+            { "symptom": "Pastry splits during baking", "cause": "Not chilled before baking, or steam from inside", "fix": "Always chill the assembled Wellington for at least 15 minutes before baking. A small steam vent made with the tip of a knife in the top can help." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Beef Wellington is a dinner party dish in Britain, brought to the table whole before slicing. It became popular in British restaurant and home cooking from the 1960s onward and is now considered a celebration dish for Christmas Day, New Year's Eve, and significant entertaining occasions. The effort is front-loaded into the preparation; the baking itself is fast." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "slug": "roast-leg-of-lamb",
+  "title": "Roast Leg of Lamb",
+  "subtitle": "Studded with garlic and rosemary, roasted pink, with mint sauce",
+  "excerpt": "A whole leg of lamb studded with garlic and rosemary is one of the defining dishes of a British spring table. The method is simple: score the fat, push in the aromatics, and roast at a steady 180°C until the meat reads 60°C at the bone for a pink, juicy result. Mint sauce is the only accompaniment the dish asks for.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: roast leg of mutton method adapted for lamb. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg: garlic and rosemary studding technique. Traditional British Easter Sunday practice.",
+  "hero": {},
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 85,
+    "restingMinutes": 20,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Stud the leg up to 24 hours ahead and refrigerate uncovered. The garlic and rosemary perfume the meat more deeply with time. Bring to room temperature for 1 hour before cooking.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "specialOccasion", "hearty"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "180°C fan",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "carving-knife", "isOptional": false },
+    { "slug": "paring-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "kitchen-twine", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "studding", "term": "Studding", "definition": "Inserting slivers of garlic or sprigs of rosemary into small cuts made in the surface of a joint before roasting, so the aromatics perfume the meat from within as it cooks." }
+  ],
+  "techniqueSlugs": ["making-gravy"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Roast leg of lamb is the dish that marks Easter on the British table as reliably as roast beef marks Christmas. A whole bone-in leg, " },
+          { "type": "text", "text": "studded", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "studding" } }] },
+          { "type": "text", "text": " with garlic and rosemary and roasted at a steady temperature, is not a complex piece of cooking. The main variable is whether you prefer it pink (60°C internal) or fully cooked through (70°C). Most British households err toward the latter; most cooks who have tasted a properly pink leg prefer the former." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 2 kg leg serves six generously. At 200°C (180°C fan), plan on 25 minutes per 500 g for pink, or 30 minutes per 500 g for medium. An instant-read thermometer is more reliable than timing alone: the knuckle end of the leg is thinner and finishes faster than the thick rump end. Probe the thickest part, away from the bone." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "lamb-leg", "amount": 2000, "unit": "g", "prepNote": "bone-in, excess fat trimmed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "each cut into 4 slivers", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rosemary", "amount": 4, "unit": "sprig", "prepNote": "broken into short sprigs", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": "coarsely ground", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "halved, for the roasting pan", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 250, "unit": "ml", "prepNote": "or lamb stock for the gravy", "isOptional": false, "groupLabel": "For the gravy" },
+            { "ingredientSlug": "red-wine", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": true, "groupLabel": "For the gravy" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A roasting pan large enough to hold the leg comfortably, with room to add liquid for the gravy. No rack is needed: the knuckle bone acts as a natural stand." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Stud the leg" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Using a small paring knife, make 16 to 20 incisions about 2 cm deep across the surface of the leg, concentrating on the thick rump end and the fat cap. Push a sliver of {{garlic}} of garlic and a small sprig of rosemary into each cut. The aromatics should sit flush with the surface. Rub all over with {{olive-oil}} of olive oil, then press {{sea-salt-flakes}} and {{black-pepper}} firmly into the surface." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rest before roasting" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Leave the studded leg at room temperature for 1 hour. Heat the oven to 200°C (180°C fan). Place the halved onion cut-side down in the roasting pan, set the lamb on top. The onion adds colour to the pan juices." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roast" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Roast for 25 minutes per 500 g for a pink centre (internal 60°C), or 30 minutes per 500 g for medium (67°C). Begin probing at 15 minutes before the estimated time. Once at temperature, transfer to a board, drape loosely with foil, and rest for 20 minutes before carving. Do not cut before 20 minutes: the juices will run out." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the gravy" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour off most of the fat, leaving the brown pan juices. Set the pan over medium-high heat, pour in {{red-wine}} of red wine, and scrape up the sediment. Add {{stock-beef}} of stock and simmer for 5 minutes until slightly reduced. Season and strain into a warm jug." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Garlic slivers burning on the surface before the meat is done", "cause": "Slivers pushed too shallowly or protruding above the fat", "fix": "Push each sliver at least 2 cm in; trim any that protrude. Cover loosely with foil if browning too fast." },
+            { "symptom": "Leg taking much longer than expected to reach temperature", "cause": "Joint straight from the fridge, or an unusually large leg with a thick knuckle", "fix": "Rest at room temperature for at least 1 hour before roasting. Continue at temperature, checking every 10 minutes." },
+            { "symptom": "Meat pale and uncoloured on the outside", "cause": "Oven not fully preheated, or surface of the leg was wet", "fix": "Pat dry thoroughly before oiling. A damp surface steams rather than roasts." },
+            { "symptom": "Gravy too pale", "cause": "Onion in the pan did not colour sufficiently", "fix": "Add a tablespoon of tomato puree to the pan juices before deglazing. Simmer longer to concentrate colour." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The leg of lamb has been the centrepiece of the British Easter table since at least the seventeenth century, when spring lamb first became widely available after the lean winter months. The garlic-and-rosemary combination arrived later, most likely via French influence in the eighteenth and nineteenth centuries. Eliza Acton's 1845 recipe suggests the studding technique but notes that many cooks preferred the joint plain. By Mrs Beeton's time it was the standard approach. Serve with mint sauce, roast potatoes, and buttered spring greens." }
+        ]
+      }
+    ]
+  }
+}

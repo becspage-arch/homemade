@@ -1,0 +1,142 @@
+{
+  "slug": "fish-and-chips",
+  "title": "Fish and Chips",
+  "subtitle": "Battered cod or haddock with thick-cut chips, fried in the same oil",
+  "excerpt": "Fish and chips made at home requires a deep pan, a probe thermometer, and enough oil to cover the fish. The batter should be cold and thin enough to coat in a single pass; a warm or thick batter produces a doughy crust rather than the light, bubbly shell of a good chippie. Chips go in first at 130°C to cook through, then the temperature is raised to 190°C for the fish and to finish the chips.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Fish and chips became the defining British takeaway dish from the 1860s. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: fried fish in batter. The combination of battered fish and fried chips was established by the 1870s as the standard dish. Classic British home recreation of the chip-shop method.",
+  "hero": {},
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The chips can be par-fried at 130°C up to 1 hour ahead. The batter should be made 30 minutes before frying and kept cold.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "family", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "double-frying-chips", "term": "Double-frying (chips)", "definition": "A two-stage frying method for chips: a first fry at low temperature (130°C) to cook the interior through without colouring, followed by a second fry at high temperature (190°C) to crisp the outside. Chips that are only fried once at high heat are often dark outside and raw inside." },
+    { "slug": "beer-batter", "term": "Beer batter", "definition": "A batter made with fizzy liquid (beer or sparkling water) instead of still water. The carbonation creates bubbles in the batter as it hits the hot oil, producing a lighter, crispier crust than a still-liquid batter." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "text": "double-frying method", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "double-frying-chips" } }] },
+          { "type": "text", "text": " is what separates properly cooked chips from those that are dark on the outside and undercooked inside. The first fry at 130°C takes 6 to 8 minutes; it cooks the potato through. The second fry at 190°C takes 2 to 3 minutes and gives the colour and crispness. The fish goes in at 190°C after the chips are removed for their second fry. The " },
+          { "type": "text", "text": "beer batter", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "beer-batter" } }] },
+          { "type": "text", "text": " must be made 30 minutes before using and kept cold; warm batter does not bubble and crisp in the same way." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "cod-fillet", "amount": 4, "unit": "each", "prepNote": "approx. 180 g each, skin on or off", "isOptional": false, "groupLabel": "fish" },
+            { "ingredientSlug": "plain-flour", "amount": 150, "unit": "g", "prepNote": "plus extra for dusting the fish", "isOptional": false, "groupLabel": "batter" },
+            { "ingredientSlug": "baking-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "batter" },
+            { "ingredientSlug": "beer", "amount": 200, "unit": "ml", "prepNote": "cold, or cold sparkling water", "isOptional": false, "groupLabel": "batter" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "batter" },
+            { "ingredientSlug": "potato", "amount": 4, "unit": "each", "prepNote": "Maris Piper, approx. 200 g each, peeled and cut into 1.5 cm chips", "isOptional": false, "groupLabel": "chips" },
+            { "ingredientSlug": "sunflower-oil", "amount": 1.5, "unit": "litre", "prepNote": "or vegetable oil, for deep frying", "isOptional": false, "groupLabel": "chips" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the batter and rest" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Whisk {{plain-flour}} of flour, {{baking-powder}}, {{sea-salt-flakes}}, and {{beer}} of cold lager together until a smooth batter forms. It should coat the back of a spoon with a thin, even layer. Refrigerate for 30 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "First fry the chips" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat {{sunflower-oil}} of oil in a large, deep saucepan to 130°C. Add the {{potato}} chips in batches; do not crowd the pan. Fry for 6 to 8 minutes until cooked through but pale. Remove with a slotted spoon to a tray lined with kitchen paper. The chips will not be golden at this stage." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry the fish and finish the chips" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Raise the oil temperature to 190°C. Dust each {{cod-fillet}} cod fillet in plain flour, then dip in the cold batter, letting the excess drip back into the bowl. Lower into the oil away from you. Fry for 4 to 5 minutes per side until the batter is golden-brown and the fish is cooked through. Keep warm in a low oven. Return the chips to the 190°C oil and fry for 2 to 3 minutes until crisp and golden. Season with salt and serve immediately." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Batter falling off the fish during frying", "cause": "Fish not dried, or batter too thick", "fix": "Pat the fish completely dry before dusting in flour. The flour gives the batter something to grip. Batter should be thin enough to pour freely." },
+            { "symptom": "Soggy batter rather than crisp", "cause": "Oil not hot enough, or batter not cold", "fix": "Use a thermometer; do not estimate the oil temperature. Keep the batter refrigerated until use. Cold batter hitting hot oil is what creates the crust." },
+            { "symptom": "Chips pale even after second fry", "cause": "Oil temperature too low for second fry", "fix": "Ensure the oil is back at 190°C before adding the chips for the second fry. Crowded chips bring the temperature down; fry in small batches." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fish and chips is the defining British takeaway dish, with origins in the 1860s when fried fish sellers from the Jewish East End community and chip sellers from the industrial North began combining their offerings. By the early twentieth century the chip shop was a fixture of British working-class life. The home version is a project rather than a weeknight dish; the results are best eaten immediately from newspaper, if you are committed to the tradition, or from a warm plate." }
+        ]
+      }
+    ]
+  }
+}

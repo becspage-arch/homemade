@@ -1,0 +1,111 @@
+{
+  "slug": "horseradish-cream",
+  "title": "Horseradish Cream",
+  "subtitle": "Freshly grated horseradish folded into whipped cream, sharp and hot",
+  "excerpt": "Horseradish cream is the standard British accompaniment to roast beef: freshly grated horseradish root mixed into lightly whipped cream with a little vinegar and seasoning. The heat of fresh horseradish is more volatile than the prepared sauce from a jar; it fades within an hour of grating, so make this close to serving. If fresh root is not available, a good jar of prepared horseradish works well.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: horseradish sauce with cream. Traditional British accompaniment to roast beef. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg #35075: horseradish cream recipe.",
+  "hero": {},
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make no more than 1 hour before serving if using fresh horseradish. The pungency fades quickly once grated. Made with prepared horseradish, it keeps in the fridge for up to 3 days.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "dinnerParty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "box-grater", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "horseradish-volatility", "term": "Horseradish pungency", "definition": "The heat in horseradish comes from sinigrin, a compound that converts to the volatile allyl isothiocyanate when the root cells are broken. The compound evaporates rapidly once exposed to air, which is why freshly grated horseradish is significantly hotter than prepared sauce that has been jarred and sealed." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fresh horseradish root is available from farmers markets and some supermarkets from autumn through to spring. The freshly grated root is noticeably hotter and more pungent than anything from a jar because the " },
+          { "type": "text", "text": "heat compounds are still volatile", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "horseradish-volatility" } }] },
+          { "type": "text", "text": ". Grate it directly into the bowl, do not let it sit in the air. Work quickly and avoid leaning over the bowl; freshly grated horseradish is as sharp as a strong mustard in the sinuses." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "double-cream", "amount": 120, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "horseradish-fresh", "amount": 2, "unit": "tbsp", "prepNote": "freshly grated, or 3 tbsp prepared horseradish sauce", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "white-wine-vinegar", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Whip and fold" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Whip {{double-cream}} of double cream to soft peaks: the cream should just hold its shape when the whisk is lifted. Fold in the {{horseradish-fresh}}, {{white-wine-vinegar}}, {{caster-sugar}}, and {{sea-salt-flakes}}. Taste and adjust: more horseradish for heat, more vinegar for sharpness. Serve within 1 hour." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Cream too stiff and not spreadable", "cause": "Over-whipped", "fix": "Fold in a splash of unwhipped cream to loosen the mixture. Stop whipping before the cream reaches stiff peaks." },
+            { "symptom": "Not enough heat from fresh horseradish", "cause": "Root not fresh, or grated too far in advance", "fix": "Add an extra half tablespoon of grated horseradish and serve immediately. If the root is soft and past its best, supplement with prepared horseradish." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Horseradish cream is the classic British accompaniment to roast beef and cold beef. It also suits smoked fish, particularly smoked mackerel and smoked salmon. Horseradish has been cultivated in Britain since at least the sixteenth century; its association with beef appears in cookery writing from the seventeenth century. The cream version, rather than a sauce, became the standard presentation in the twentieth century." }
+        ]
+      }
+    ]
+  }
+}

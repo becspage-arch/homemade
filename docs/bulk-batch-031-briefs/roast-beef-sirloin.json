@@ -1,0 +1,179 @@
+{
+  "slug": "roast-beef-sirloin",
+  "title": "Roast Sirloin of Beef",
+  "subtitle": "A whole sirloin joint, salt-rubbed and roasted to a deep pink centre",
+  "excerpt": "The sirloin is leaner and finer-grained than the fore rib, with a generous fat cap that bastes the meat through the oven. High heat to colour it, lower heat to bring it up gently, and a long rest before carving. Serve with roast potatoes, Yorkshire puddings, and a proper red-wine gravy built in the pan.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: sirloin roasting method and carving guidance. Jane Grigson, English Food (1974): notes on choosing a sirloin joint and the fat cap's role. Traditional British Sunday lunch practice.",
+  "hero": {},
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 90,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Season the joint 24 hours ahead if you have time: salt the fat cap and refrigerate uncovered on a rack. The dry surface browns faster in the oven. Bring to room temperature for at least 1 hour before cooking.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "hearty", "specialOccasion"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "initial blast, then 160°C for the remainder",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "roasting-rack", "isOptional": true },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "carving-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "fat-cap", "term": "Fat cap", "definition": "The layer of external fat on a sirloin joint that renders during roasting, basting the meat below and forming the characteristic golden-brown crust." },
+    { "slug": "resting-meat", "term": "Resting", "definition": "Allowing roasted meat to sit off the heat before carving so the muscle fibres relax and redistribute juices through the joint rather than running out when cut." }
+  ],
+  "techniqueSlugs": ["making-gravy"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A sirloin joint is leaner than a fore rib but no less rewarding on a Sunday table. The " },
+          { "type": "text", "text": "fat cap", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fat-cap" } }] },
+          { "type": "text", "text": " sits along the top of the joint and renders as the oven heats it, basting the meat below and forming a deep golden crust. The grain is tight and fine, which makes for neat, even slices without the variation you get from a rib roast." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The method is straightforward: a high-heat blast to colour the fat, then a drop to 160°C to bring the centre up to temperature gently. For a 1.5 kg joint serving six, the slow phase takes about 50 to 60 minutes, but start checking at 45 minutes. Rare is 52°C, medium-rare is 57°C, medium is 60°C. A 30-minute rest carries the temperature up another 3-4°C, so pull the joint slightly before your target." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-sirloin", "amount": 1500, "unit": "g", "prepNote": "rolled and tied, fat cap on", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": "coarsely ground", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-wine", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the gravy" },
+            { "ingredientSlug": "stock-beef", "amount": 250, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the gravy" },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "to finish the gravy", "isOptional": true, "groupLabel": "For the gravy" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An instant-read thermometer removes all guesswork. The sirloin's lean muscle cooks unevenly compared to a rib roast, and the difference between medium-rare and medium is only 3°C. Have the thermometer ready before the joint goes in." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Season and rest" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pat the joint thoroughly dry. Rub all surfaces with {{olive-oil}} of olive oil, then press {{sea-salt-flakes}} and {{black-pepper}} firmly into the fat cap and all over the lean sides. Set on a plate and leave at room temperature for at least 1 hour. A cold joint meets the hot oven at a disadvantage: the outside overcooks before the centre warms through." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The initial blast" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220°C (200°C fan). Place the joint fat-cap up in a roasting pan. Roast for 20 minutes until the fat is deep golden and beginning to render at the edges. The crust sets during this phase and does not develop further once the temperature drops." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Slow roast to temperature" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drop the oven to 160°C (140°C fan). Roast until the thickest part of the eye reaches your target: 52°C for rare, 57°C for medium-rare, 60°C for medium. Probe through the side of the joint, keeping the tip away from the twine. Begin checking at 45 minutes. The joint is done when the probe reads your temperature; do not wait for juices to run clear." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rest and carve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Transfer the joint to a warmed board. Drape foil loosely over it." },
+          { "type": "text", "text": " Resting", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "resting-meat" } }] },
+          { "type": "text", "text": " for 30 minutes is not negotiable: the temperature climbs a further 3-4°C and the juices settle. Remove the twine before carving. Slice across the grain in 1 cm cuts, keeping the fat cap on each slice." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the gravy" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour off excess fat from the pan, leaving about 2 tablespoons. Set the pan over medium-high heat. Pour in {{red-wine}} of red wine and scrape up the caramelised sediment. Add {{stock-beef}} of beef stock and simmer for 5-6 minutes until reduced by a third. Finish with {{unsalted-butter}} of butter, whisked in off the heat to gloss the sauce. Season and strain into a warmed jug." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Fat cap not browning after 20 minutes", "cause": "Oven not fully preheated or joint still cold from fridge", "fix": "Give the oven a full 20 minutes to preheat. If the surface is damp, pat dry again before the joint goes in." },
+            { "symptom": "Temperature rising much faster than expected", "cause": "Probe tip is touching the twine or sitting near the surface rather than in the thickest part", "fix": "Reposition the probe so the tip sits in the geometric centre of the joint. The twine conducts heat faster than muscle." },
+            { "symptom": "Juices running freely when carved", "cause": "Insufficient resting time", "fix": "Return the joint to the foil tent for a further 15 minutes. The juices need time to redistribute." },
+            { "symptom": "Gravy too thin or pale", "cause": "Pan fond was not dark enough from the blast phase", "fix": "Reduce the gravy for a further 3-4 minutes over a brisk heat. A small knob of butter whisked in at the end will gloss and slightly thicken." },
+            { "symptom": "Outer slices overdone, centre raw", "cause": "Oven runs hot or the blast phase was too long", "fix": "Use an oven thermometer to calibrate. Drop the blast heat by 10°C and shorten to 15 minutes." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The sirloin has been the prestige Sunday joint in British cooking since at least Mrs Beeton's time. The apocryphal story of Henry VIII knighting the loin of beef is almost certainly invented, but it captures something true about the cut's standing. It sits just above the rump and below the rib, and butchers argue over whether to sell it bone-in or boned and rolled. Boned and tied is the easier option for a home cook: it roasts evenly, carves neatly, and takes up less shelf space in the oven. Serve with roast potatoes, Yorkshire puddings, and horseradish cream alongside the gravy." }
+        ]
+      }
+    ]
+  }
+}

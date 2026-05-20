@@ -1,0 +1,127 @@
+{
+  "slug": "sage-and-onion-stuffing",
+  "title": "Sage and Onion Stuffing",
+  "subtitle": "The classic British roast stuffing, baked separately in a dish",
+  "excerpt": "Sage and onion stuffing is made from breadcrumbs, softened onion, and fresh sage, bound with egg and butter. Baked separately in a dish rather than inside the bird it develops a crust on top and a moist, cohesive centre. The flavour depends almost entirely on the sage: use fresh leaves for a clean, herbal note; dried sage has a dustier, less distinct character.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: sage and onion stuffing for roast goose and pork. Delia Smith, Complete Cookery Course (1978): sage and onion stuffing method. Classic British roast stuffing.",
+  "hero": {},
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before baking. Defrost overnight in the fridge and bake from room temperature.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make and refrigerate the uncooked stuffing up to 24 hours ahead. Bake straight from the fridge, adding 10 minutes to the cooking time.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "comfortFood", "family"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "160°C fan",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "stuffing-separate", "term": "Baking stuffing separately", "definition": "Cooking stuffing in a baking dish rather than inside the bird. This is safer (the bird cavity is not a reliable heat conductor, so stuffing cooked inside may not reach a safe temperature), and the separate dish develops its own crust on top." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sage and onion stuffing is one of the simpler preparations on the Sunday roast table, but it rewards attention to the basics: the onion must be fully softened before it goes into the mix, or it will remain crunchy in the finished stuffing, and the breadcrumbs should be from day-old white bread rather than fresh, which produces a damp, dense result. " },
+          { "type": "text", "text": "Baking the stuffing separately", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stuffing-separate" } }] },
+          { "type": "text", "text": " gives it a crisp top and allows it to be prepared well ahead without holding up the roasting of the bird." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "breadcrumbs-fresh", "amount": 180, "unit": "g", "prepNote": "from day-old white bread", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sage", "amount": 12, "unit": "leaf", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soften the onion" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a saucepan over a low heat. Add the {{onion}} onion and cook gently for 12 to 15 minutes until very soft but not coloured. Remove from the heat and allow to cool for 10 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 180°C (160°C fan). Combine the cooled onion and butter with the {{breadcrumbs-fresh}}, {{sage}}, {{eggs}}, {{sea-salt-flakes}}, and {{black-pepper}}. Mix thoroughly. The mixture should hold together when squeezed but not be wet. Press into a buttered baking dish in an even layer roughly 4 cm deep. Bake for 35 to 45 minutes until the top is golden-brown and the centre is firm when pressed." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Stuffing crumbling when served", "cause": "Too little egg or butter to bind the breadcrumbs", "fix": "Add another beaten egg to the uncooked mix. The mixture should feel cohesive, not dry. Alternatively, a splash of warm water or a little more melted butter helps." },
+            { "symptom": "Pale and soft on top after 45 minutes", "cause": "Oven temperature too low or dish too deep", "fix": "Raise the oven by 20°C for the final 10 minutes, or switch on the grill and watch closely." },
+            { "symptom": "Dense and stodgy texture", "cause": "Fresh breadcrumbs used instead of day-old", "fix": "Use breadcrumbs from bread that is at least one day old. Fresh bread is too wet and produces a heavy, cakey stuffing." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sage and onion stuffing is the traditional accompaniment to roast pork, goose, and duck in British cooking. It appears alongside roast chicken as well, though chestnut and sausagemeat stuffing is the more traditional choice for chicken and turkey. The versions served with pork are sometimes flavoured with a little apple; those served with goose often include chopped liver." }
+        ]
+      }
+    ]
+  }
+}

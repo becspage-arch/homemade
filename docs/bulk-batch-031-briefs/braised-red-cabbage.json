@@ -1,0 +1,130 @@
+{
+  "slug": "braised-cabbage-red",
+  "title": "Braised Red Cabbage",
+  "subtitle": "Slow-cooked with apple, vinegar, and spice until tender and deeply coloured",
+  "excerpt": "Braised red cabbage is a long, gentle braise: the shredded cabbage, apple, and onion cook down for an hour to an hour and a half with vinegar, sugar, and spices until the cabbage is completely tender, deeply coloured, and sweet-sharp. It is better made the day before and reheated. The vinegar keeps the purple colour; without it the cabbage turns an unappetising blue-grey.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional British accompaniment to roast pork, goose, and game. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: red cabbage braised with vinegar. Jane Grigson, English Food (1974): braised red cabbage with apple. Standard British Sunday roast and Christmas dinner accompaniment.",
+  "hero": {},
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in portions once cooled. Defrost overnight in the fridge and reheat gently in a pan with a splash of water.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Cook in the largest available pan to allow even braising.",
+    "makeAheadNotes": "Best made the day before. Reheat gently in the pan over a low heat with a splash of water, stirring occasionally.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["slowSunday", "comfortFood", "family"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "braising-cabbage", "term": "Braising (cabbage)", "definition": "Cooking shredded cabbage in a small amount of liquid in a covered pan over low heat until completely tender. The cabbage releases its own moisture as it cooks; the acid from vinegar prevents the purple pigment from turning grey." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Red cabbage gets its colour from anthocyanins, pigments that turn blue in alkaline conditions and stay red or purple in acidic ones. The vinegar in this recipe is not just for flavour; it is the reason the finished dish stays a deep ruby-red rather than turning the dull, unappetising grey that " },
+          { "type": "text", "text": "braised", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "braising-cabbage" } }] },
+          { "type": "text", "text": " cabbage becomes without it. The apple adds sweetness and body; Bramley apples collapse into the dish, while a Cox-type stays in small pieces." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "cabbage-red", "amount": 1, "unit": "each", "prepNote": "approx. 800 g, quartered, core removed, finely shredded", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "apple-bramley", "amount": 2, "unit": "each", "prepNote": "peeled, cored, roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-wine-vinegar", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soft-brown-sugar", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cinnamon-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cloves", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soften the onion" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a large, heavy-based saucepan over a medium-low heat. Add the {{onion}} onion and cook gently for 8 to 10 minutes until soft and translucent." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the cabbage and braise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add the shredded {{cabbage-red}} cabbage, {{apple-bramley}} apple, {{red-wine-vinegar}}, {{soft-brown-sugar}}, {{cinnamon-ground}}, {{cloves}}, {{sea-salt-flakes}}, and {{black-pepper}}. Stir to combine. Cover with a lid and cook over a very low heat for 1 hour to 1 hour 30 minutes, stirring every 20 minutes. The cabbage should be completely tender and the liquid almost entirely absorbed. Taste and adjust the sweet-sharp balance with a little more vinegar or sugar." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Cabbage turning blue-grey", "cause": "Insufficient vinegar or alkaline water", "fix": "Add another tablespoon of vinegar and stir through. The colour will shift back to red-purple as the acid takes effect." },
+            { "symptom": "Cabbage still tough at 90 minutes", "cause": "Heat too low or lid not sealing well", "fix": "Add a splash of water, cover tightly, and continue for a further 20 to 30 minutes. The cabbage needs consistent steam to break down." },
+            { "symptom": "Too sharp", "cause": "Vinegar proportion too high for the apples used", "fix": "Add another tablespoon of sugar and stir through. The sweetness of apples varies considerably; Bramley is more acidic than a Cox." }
+          ]
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Braised red cabbage is the classic accompaniment to roast goose, duck, and pork in British and Northern European cooking. It appears at Christmas alongside the turkey as a colour contrast on the plate. Made the day before, it travels well in the fridge and reheats with no loss of quality, making it one of the most useful things to prepare ahead on a heavy cooking day." }
+        ]
+      }
+    ]
+  }
+}
