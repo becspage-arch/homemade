@@ -1,0 +1,141 @@
+{
+  "slug": "emergency-queen-cell-management",
+  "title": "Emergency queen cell management",
+  "subtitle": "Finding and selecting cells when the colony has decided to replace the queen.",
+  "excerpt": "Emergency queen cells appear when a colony loses its queen suddenly. The bees raise a new queen from young larvae in existing cells. This covers how to find the cells, which ones to keep, and how to manage the colony while it re-queens.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 45,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU Beekeeper's Toolkit (2024), section on queen replacement. BBKA Basic Assessment syllabus, queen rearing and replacement.",
+  "glossaryTerms": [
+    { "slug": "emergency-queen-cell", "term": "Emergency queen cell", "definition": "A queen cell built from a regular worker cell when the colony is queenless. The bees reconstruct the cell walls downward around a young larva that was already laid as a worker." },
+    { "slug": "supersedure-cell", "term": "Supersedure cell", "definition": "A queen cell built when the colony chooses to replace an ageing or failing queen. Usually one to three cells, built in the middle of a frame rather than on the edge." },
+    { "slug": "virgin-queen", "term": "Virgin queen", "definition": "An unmated queen that has hatched but not yet completed her mating flights. A virgin queen is slender, fast-moving, and does not start laying until 5 to 14 days after hatching." }
+  ],
+  "techniqueSlugs": ["lighting-a-bee-smoker", "inspecting-a-beehive-in-summer"],
+  "criticalTechniques": ["lighting-a-bee-smoker"],
+  "aliases": ["queen cell selection", "managing queenless colony"],
+  "recipeTools": [
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "smoker-fuel", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "bee-gloves", "isOptional": false },
+    { "slug": "hive-tool-j", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "emergency-queen-cell" } }],
+            "text": "emergency queen cell"
+          },
+          {
+            "type": "text",
+            "text": " appears when a colony has lost its queen unexpectedly, either through the beekeeper's error during an inspection, a queen death, or the queen's sudden failure to lay. The colony raises a replacement from the youngest available larvae, which must be no older than three days. The resulting queen is genetically identical to a planned queen cell but may be smaller if the larva was not fed maximum royal jelly from the first day."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Recognising the situation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A colony that has been queenless for three to five days shows a characteristic pattern: the bees are restless when you open the hive, the sound is different (a higher, more continuous hum), and there are no fresh eggs. You will find queen cells on the face of brood frames, built out from normal worker cells and angled downward. Unlike "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "supersedure-cell" } }],
+            "text": "supersedure cells"
+          },
+          {
+            "type": "text",
+            "text": " (one to three cells in the middle of a frame), emergency cells tend to appear in clusters, sometimes 10 to 20 on a single frame."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Selecting cells" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Leave the colony alone until the cells are sealed. Sealed cells are dome-shaped with a textured surface; they take 8 days from the egg to seal. Choose two of the largest, most prominent cells on the face of the frame rather than on the edge: central cells are better fed. Gently remove the remaining cells by pressing the base of each cell against the frame with a hive tool. Do not pull cells off; that tears the wax and can damage the adjacent larvae."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Leave two cells as insurance against a defective queen hatching from the first. The first queen to hatch will normally destroy the remaining cells herself within a few hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The mating period" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After the cell hatches, the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "virgin-queen" } }],
+            "text": "virgin queen"
+          },
+          {
+            "type": "text",
+            "text": " takes 5 to 12 days to complete her mating flights, depending on weather. Cold or wet conditions delay mating significantly. Do not open the hive during this period: disturbing a virgin queen during mating flight preparation can cause her to abscond or fail. The earliest point to check for eggs is 14 days after the cell hatched; 21 days from the first inspection is more realistic in a normal UK spring."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Problem outcomes",
+          "intro": "What can go wrong with an emergency re-queening.",
+          "items": [
+            {
+              "symptom": "Drone-only brood at day 21",
+              "cause": "An unmated or drone-laying queen. Drone brood in worker cells is raised, domed, and irregular.",
+              "fix": "Remove the failed queen, unite the colony with a queenright colony using the newspaper method, or introduce a mated queen from a supplier."
+            },
+            {
+              "symptom": "No sign of laying at day 28",
+              "cause": "The queen was lost on a mating flight, eaten by birds, or failed to hatch.",
+              "fix": "Check for worker-laying: small eggs placed at odd angles in cells. If present, the colony has lost all queen-rearing ability. Unite it."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

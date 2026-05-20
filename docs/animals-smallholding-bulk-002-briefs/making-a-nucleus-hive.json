@@ -1,0 +1,254 @@
+{
+  "slug": "making-a-nucleus-hive",
+  "title": "Making a nucleus hive",
+  "subtitle": "Splitting a strong colony to raise a new one.",
+  "excerpt": "A nucleus hive, or nuc, turns one healthy colony into two. The method works for swarm control, queen-rearing, or building up a spare stock for winter losses. This is the spring procedure for a National hive, from selecting the frames to leaving the nuc on site.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 60,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU Beekeeper's Toolkit (2024), section on swarm management and artificial swarm method. BBKA Basic Assessment syllabus, Colony management and division. Frank Pearson, Bee-keeping for All (1923), chapter on nucleus hives, Internet Archive.",
+  "glossaryTerms": [
+    { "slug": "nuc", "term": "Nuc", "definition": "A small nucleus colony, usually five frames, used as a starter unit or spare stock." },
+    { "slug": "queen-cell", "term": "Queen cell", "definition": "A large peanut-shaped wax cell in which a queen larva is raised. Found hanging from the bottom of a frame during swarm preparation." },
+    { "slug": "brood", "term": "Brood", "definition": "Eggs, larvae, and pupae in their cells. Capped brood has a wax seal; open brood does not." },
+    { "slug": "flying-bees", "term": "Flying bees", "definition": "Worker bees old enough to navigate; when a split is made on site, flying bees return to the original hive stand rather than staying in the nuc." },
+    { "slug": "drawn-comb", "term": "Drawn comb", "definition": "A frame with fully built honeycomb cells, ready for the queen to lay in or for stores to be placed." }
+  ],
+  "techniqueSlugs": ["lighting-a-bee-smoker", "inspecting-a-beehive-in-summer"],
+  "criticalTechniques": ["lighting-a-bee-smoker"],
+  "aliases": ["making a nuc", "splitting a colony", "artificial swarm nuc"],
+  "recipeTools": [
+    { "slug": "nuc-box", "isOptional": false },
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "smoker-fuel", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "bee-gloves", "isOptional": false },
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "bee-brush", "isOptional": true }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A nucleus hive is the standard way to increase colony numbers in spring and to manage swarm impulse in an established apiary. You take five frames from a donor colony, carrying brood, food stores, and a queen cell or a mated queen, and set them up independently in a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nuc" } }],
+            "text": "nuc"
+          },
+          {
+            "type": "text",
+            "text": " box. The procedure takes about an hour and needs a colony that is building well: plenty of bees across six or more frames, sealed and open "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brood" } }],
+            "text": "brood"
+          },
+          {
+            "type": "text",
+            "text": ", and a queen that is laying confidently."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to make a nuc" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "April to early June is the main window in the UK. The donor colony needs to have built up enough over-wintered bees and new spring bees that losing five frames does not set it back badly. Look for at least eight covered frames of bees before you split. Making nucs too early in the year (before the population has doubled from its winter cluster) leaves both units too small to thrive."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the colony has already started building "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "queen-cell" } }],
+            "text": "queen cells"
+          },
+          {
+            "type": "text",
+            "text": ", the split becomes swarm control rather than a planned operation. In that case, work through the full colony before moving frames, and follow the artificial swarm procedure: find the queen, move her to the new site, transfer the frame she is on, and select the best sealed queen cell for the original box."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A five-frame nuc box, clean and dry" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bee smoker loaded with dry fuel" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Full bee suit and gloves" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "J-type hive tool" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spare drawn comb or foundation frames to fill spaces in the donor hive" }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Opening and reading the donor colony" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Light the smoker and suit up. Use the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "lighting-a-bee-smoker", "label": "lighting-a-bee-smoker" } }],
+            "text": "standard smoker-lighting procedure"
+          },
+          {
+            "type": "text",
+            "text": ": a good coal of lit fuel, then slow bellows to generate cool white smoke. Approach the hive from the side. Two puffs under the crown board, 60 seconds to let the smoke work."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work through the brood box frame by frame. You are looking for three things before you commit to a split: a laying queen (tight pattern of sealed worker brood, eggs in cells), at least two frames of sealed honey or syrup stores, and enough population that five frames can go to the nuc and the donor still covers its remaining frames."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Selecting the five frames" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pick two frames of mixed "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brood" } }],
+            "text": "brood"
+          },
+          {
+            "type": "text",
+            "text": " (eggs, young larvae, and some sealed cells), one frame of sealed honey and pollen, one frame carrying a sealed queen cell (if available) or eggs young enough to raise a queen cell from, and one frame of "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "drawn-comb" } }],
+            "text": "drawn comb"
+          },
+          {
+            "type": "text",
+            "text": " for the queen to lay into."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the colony does not yet have a sealed queen cell, take frames with eggs and young larvae from which the bees will raise emergency cells. The new colony will be queenless for about 16 days while the new queen develops, so it needs a good store of food and enough young bees to maintain warmth. The bees on the frames carry with them all the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flying-bees" } }],
+            "text": "flying bees"
+          },
+          {
+            "type": "text",
+            "text": " that happened to be on them when you moved the frames. Those bees will leave within a day or two and return to the donor hive, so site the nuc box at least 5 m away from the donor, or on the other side of a hedge, to retain them."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Loading the nuc box" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lower each selected frame directly into the nuc box, keeping the same orientation (face pointing the same way it did in the donor). The queen cell, if present, goes on the second frame from the entrance side, never against the wall where it might get chilled. Fill the remaining slot with a drawn comb or foundation frame. Replace the frames removed from the donor with spare comb or foundation so the donor colony has no gaps."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Close the nuc entrance down to one bee-space with a rolled piece of grass or a piece of foam. This reduces the gap the small colony has to guard in its first few days. The entrance opens fully once the colony has built up, usually after 10 days."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Siting the nuc" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If you are moving the nuc to a new site more than 5 m from the donor, transport it the same afternoon and place it with the entrance facing the same compass direction as the donor. If you are keeping it in the same apiary, you need a barrier: a hedge, a wall, or 5 m of separation. Nucs placed too close to the donor will lose most of their forager population within 24 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to look for after seven days" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Open the nuc after seven days. If the colony started from eggs, you should see sealed queen cells. If you transferred a sealed queen cell, look for evidence the cell has hatched (a clean circular hole cut in the wax cap). At 14 days, look for eggs; at 21 days, sealed worker brood. A nuc that shows none of these by day 21 may be queenless, which requires a second intervention."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Queenless nucs",
+          "body": "A nuc with no eggs at 21 days and bees clustered in a ball in one corner is likely queenless. If the colony still has workers, a ripe queen cell or a mated queen from another colony can save it. If the worker population has crashed to a few hundred bees, unite the nuc back onto the donor colony rather than persisting."
+        }
+      }
+    ]
+  }
+}

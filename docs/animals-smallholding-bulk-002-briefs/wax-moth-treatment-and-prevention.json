@@ -1,0 +1,132 @@
+{
+  "slug": "wax-moth-treatment-and-prevention",
+  "title": "Wax moth treatment and prevention",
+  "subtitle": "Protecting spare comb and weak colonies from wax moth damage.",
+  "excerpt": "Wax moth destroys drawn comb in stored equipment and in weak colonies. This covers how to identify an infestation, treat stored supers with acetic acid or freezing, and prevent re-infestation when the comb goes back on the hive.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "timeMinutes": 45,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU Beekeeper's Toolkit (2024), section on wax moth control. BBKA technical note on Galleria mellonella and Achroia grisella. SAC Consulting Scotland apiary hygiene guidance.",
+  "glossaryTerms": [
+    { "slug": "wax-moth", "term": "Wax moth", "definition": "The larvae of the greater wax moth (Galleria mellonella) or lesser wax moth (Achroia grisella), which tunnel through drawn comb and contaminate it with silk webbing and droppings." },
+    { "slug": "acetic-acid", "term": "Acetic acid", "definition": "80% acetic acid, the standard treatment for fumigating stored comb against wax moth. Applied as a fume in a sealed stack; lethal to larvae, pupae, and eggs at all life stages." },
+    { "slug": "super", "term": "Super", "definition": "A shallower box placed above the brood chamber for honey storage. A standard National super holds eleven frames." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["wax moth control", "treating wax moth in supers"],
+  "recipeTools": [
+    { "slug": "hive-tool-standard", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": true }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wax moth destroys drawn comb faster than any other pest. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wax-moth" } }],
+            "text": "wax moth"
+          },
+          {
+            "type": "text",
+            "text": " larva tunnels through the cells, eating the wax and the pollen, and leaves behind a webbing that renders infested frames unusable. A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "super" } }],
+            "text": "super"
+          },
+          {
+            "type": "text",
+            "text": " box stacked in a shed from August to March is a risk if not treated. Strong colonies police their own combs; stored equipment cannot."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Identifying wax moth" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Open a stored super and look for grey silky webbing running between cells, along the top bars, or through the wax cappings. Early infestations show as small white eggs in corners and along frame runners. Advanced infestations have grey caterpillars (up to 28 mm long for the greater wax moth) inside galleries in the wax. Heavily damaged comb has a shredded appearance; the wooden frame may show carved grooves where pupae have burrowed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Acetic acid fumigation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The standard UK treatment for stored comb is "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "acetic-acid" } }],
+            "text": "acetic acid"
+          },
+          {
+            "type": "text",
+            "text": " fumigation. Soak a 100 ml pad of absorbent material (newspaper or felt) with 80% acetic acid and place it on the top of the uppermost super in a sealed stack. Stack the supers four or five high, seal the top and bottom with tape or a solid board, and leave for a week. The fumes penetrate every cell and kill all life stages including eggs. 80% acetic acid is corrosive: wear gloves and goggles when handling it; work outside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Freezing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A domestic chest freezer kills wax moth at all life stages if frames are left at -18°C or below for 24 hours. This is practical for small numbers of frames and avoids handling corrosive chemicals. Place frames in a sealed bag before putting them in the freezer to prevent cross-contamination, and thaw slowly at room temperature before returning to the hive."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preventing re-infestation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After treatment, store supers criss-crossed (rotated 90 degrees to one another) rather than stacked flat. The air circulation between boxes makes conditions less attractive to egg-laying moths. Keep stored supers in a cool, dry space: moths prefer warmth. Remove any comb that is more than five years old, heavily darkened with propolis, or carrying brood staining, and render the wax before storing the frames."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Wax moth in a live colony",
+          "body": "A strong colony manages its own moth population by clearing intruders. If you find wax moth tracks in a live hive, it is a sign the colony is too small to police all its frames. Reduce the brood box to match the actual cluster size by removing empty outer frames; the colony can then cover and defend the remaining comb."
+        }
+      }
+    ]
+  }
+}

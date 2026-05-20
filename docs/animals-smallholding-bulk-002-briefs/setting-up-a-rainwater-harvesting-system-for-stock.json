@@ -1,0 +1,97 @@
+{
+  "slug": "setting-up-a-rainwater-harvesting-system-for-stock",
+  "title": "Setting up a rainwater harvesting system for stock",
+  "subtitle": "Collecting roof run-off to supplement mains water for livestock.",
+  "excerpt": "A rainwater collection system from a livestock building roof can supply a significant proportion of daily stock water requirements, reducing mains water use and providing a buffer during summer dry periods. This covers the basic components, the sizing calculation, and the limitations on using rainwater for drinking water.",
+  "type": "PATTERN",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 240,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA farm water efficiency guidance. Environment Agency, rainwater harvesting for non-potable uses. ADAS, farm water management guide.",
+  "glossaryTerms": [
+    { "slug": "first-flush-diverter", "term": "First flush diverter", "definition": "A device that routes the first volume of water from a roof-drainage pipe to waste rather than the storage tank. The first run of rain after a dry period carries the highest concentration of bird droppings and debris; a first flush diverter improves the quality of water reaching the tank." },
+    { "slug": "header-tank", "term": "Header tank", "definition": "A tank positioned above the level of the drinkers to allow gravity-fed water supply without a pump. A header tank fed by a rainwater collection system requires a ball valve to prevent overflow when the tank is full." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["rainwater collection livestock", "farm rainwater harvesting", "stock water from roof"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A standard livestock building with a 100 sq m corrugated metal roof can yield approximately 60,000 litres of rainwater per year in a typical UK rainfall area. The system involves a downpipe diversion, storage tank, and gravity or pumped distribution to drinkers."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Basic components" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The minimum system requires: a downpipe leaf filter to prevent coarse debris entering the system, a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "first-flush-diverter" } }],
+            "text": "first flush diverter"
+          },
+          {
+            "type": "text",
+            "text": " on each downpipe entering the tank, a covered storage tank (1,000 to 5,000 litre IBC or purpose-made tank), an overflow pipe directed to a soakaway or drainage channel, and an outlet tap or automatic ball valve to supply drinkers."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sizing the tank" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "To estimate the monthly yield: roof catchment area in square metres multiplied by the average monthly rainfall in metres, multiplied by a run-off coefficient of 0.8 for metal roofing. For a 100 sq m roof and 50 mm of rainfall: 100 x 0.05 x 0.8 = 4,000 litres. Size the tank to store at least one month's expected yield for the driest month, which in the UK is typically July or August with 40 to 60 mm of rainfall."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using the water" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rainwater collected from agricultural roofs is suitable for watering stock, cleaning equipment, and irrigation, but is not treated drinking water. Algae growth in uncovered tanks reduces water quality; cover all tanks from light. Check the water regularly for unusual colour or smell. Connect the tank to the drinker system with a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "header-tank" } }],
+            "text": "header tank"
+          },
+          {
+            "type": "text",
+            "text": " at a higher elevation, or a low-pressure pump to maintain flow to drinkers."
+          }
+        ]
+      }
+    ]
+  }
+}

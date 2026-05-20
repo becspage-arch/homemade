@@ -1,0 +1,93 @@
+{
+  "slug": "notching-and-tagging-piglets",
+  "title": "Notching and tagging piglets",
+  "subtitle": "Identification requirements for pigs kept under UK pig identification regulations.",
+  "excerpt": "UK pig keepers must identify all pigs before movement off the holding. Ear notching gives permanent litter and individual identification; tags carrying the CPH number satisfy movement document requirements. This covers the legal requirements, the notching procedure, and tag application.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "timeMinutes": 10,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Animal and Plant Health Agency (APHA), pig identification rules for England (2021 update). DEFRA Pig Identification Regulations. National Pig Association, piglet identification guidance.",
+  "glossaryTerms": [
+    { "slug": "cph-number", "term": "CPH number", "definition": "County Parish Holding number: a nine-digit number identifying a holding registered with APHA. Required on all pig ear tags used for movement. Format is CC/PPP/NNNN (county, parish, number)." },
+    { "slug": "ear-notching", "term": "Ear notching", "definition": "A system of small V-shaped cuts applied to specific positions on both ears of a piglet to record litter and individual number in a permanent code. Notching is done at one to three days of age when the ear tissue is soft." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["pig ear tagging", "piglet identification", "ear notching pigs"],
+  "recipeTools": [
+    { "slug": "ear-notcher", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "UK pig keepers are legally required to identify all pigs before movement from the holding of birth. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ear-notching" } }],
+            "text": "Ear notching"
+          },
+          {
+            "type": "text",
+            "text": " done at one to three days of age provides permanent identification. Tags carrying the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cph-number" } }],
+            "text": "CPH number"
+          },
+          {
+            "type": "text",
+            "text": " are required for movement documents. Check the current APHA regulations for England, Wales, or Scotland as rules differ slightly between nations."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ear notching procedure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Notch at one to three days of age. Have a clean, dry work surface and disinfect the notcher between piglets with iodine solution. Restrain the piglet firmly, hold the ear flat, and apply the V-notch cleanly in one firm squeeze. Partial notches that tear rather than cut are difficult to read later; use sharp pliers and apply full pressure in one motion. The notching code varies by herd record system: standard UK systems use different positions of the right and left ear for litter and individual number. Record the code used in the herd records."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tag application" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Metal slap marks or plastic ear tags can be applied at any age before first movement. Apply tags to the middle third of the ear between the major ear veins. Tags applied in the lower third of the ear are prone to tearing out. Confirm the tag's CPH number is legible before the pig leaves the holding."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Register before keeping pigs",
+          "body": "You must be registered with APHA as a pig keeper before keeping pigs; a CPH number and a herd number are both required. The herd number appears on movement documents and ear tags. Registration is free via APHA."
+        }
+      }
+    ]
+  }
+}

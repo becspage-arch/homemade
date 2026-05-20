@@ -1,0 +1,117 @@
+{
+  "slug": "varroa-mite-count",
+  "title": "Varroa mite count",
+  "subtitle": "Measuring the mite load before deciding on a treatment threshold.",
+  "excerpt": "Treating for Varroa without first measuring the infestation is guesswork. A seven-day natural mite drop count or a sugar roll gives a reliable figure to work from. This covers both methods, how to interpret the results, and when a count indicates treatment is needed.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "BEGINNER",
+  "season": "SUMMER",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU Beekeeper's Toolkit (2024), Varroa management and counting. BBKA varroa assessment technical note. SAC Consulting Scotland integrated pest management guidance.",
+  "glossaryTerms": [
+    { "slug": "varroa", "term": "Varroa", "definition": "Varroa destructor, a parasitic mite that feeds on bee pupae in sealed brood cells. The primary pest of managed honey bee colonies in the UK." },
+    { "slug": "natural-mite-drop", "term": "Natural mite drop", "definition": "Mites that fall off bees and die naturally over a given period. Counted on a sticky board or varroa floor insert placed under an open-mesh floor." },
+    { "slug": "sugar-roll", "term": "Sugar roll", "definition": "A sampling method in which a measured cup of bees is coated in icing sugar, then shaken over a mesh. Mites dislodged by the sugar fall through and are counted." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["mite count", "varroa assessment", "counting varroa mites"],
+  "recipeTools": [
+    { "slug": "varroa-mite-board", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every managed honey bee colony in the UK carries "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "varroa" } }],
+            "text": "Varroa"
+          },
+          {
+            "type": "text",
+            "text": " mites. The question is not whether the colony has mites but whether the current population warrants treatment. Treating too early in the season is wasteful and contributes to resistance; treating too late lets mite numbers build to a level that weakens the colony before the treatment takes effect. A count gives you a number to act on rather than a guess."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method 1: Natural mite drop count" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Slide the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "natural-mite-drop" } }],
+            "text": "natural mite drop"
+          },
+          {
+            "type": "text",
+            "text": " board into position under the open-mesh floor. Leave it in place for exactly seven days, then remove and count the mites. Mites are pear-shaped, reddish-brown dots, about 1.5 mm across. Divide the total by 7 to get the daily mite drop. A daily drop of 5 to 6 mites in summer is the standard UK treatment threshold; a drop above 10 per day in July or August indicates a heavy infestation that needs treating before the colony builds its winter bees."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method 2: Sugar roll" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sugar-roll" } }],
+            "text": "sugar roll"
+          },
+          {
+            "type": "text",
+            "text": " gives a faster result and does not depend on counting fallen mites on a board. Fill a 300 ml jar with mesh lid two-thirds full of bees taken from a brood frame (around 300 bees). Add two heaped tablespoons of icing sugar. Roll the jar for two minutes until every bee is coated. Invert the jar over a white surface and shake for 60 seconds: mites fall through the mesh with the sugar. Count the mites. Divide by 3 to get the approximate mite load per 100 bees. Above 3 per 100 bees is the action threshold."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to count" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Do a count in June before the main summer honey flow, and again in late July when deciding whether treatment is needed before the winter bee population is raised. A colony treated in August with a licenced treatment (oxalic acid, Api-Bioxal, Apiguard, Apivar) goes into winter with a significantly lower mite burden than one left untreated, and winter losses from Varroa-associated viral disease are correspondingly lower."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Counting mites in broodless colonies",
+          "body": "After the oxalic acid trickle treatment in winter, the colony is broodless and all mites are phoretic (on adult bees). The natural mite drop rate is low, often 0 to 2 per day. This is normal. The treatment is most effective when the colony is broodless; do not interpret a low post-treatment mite drop as a sign the mites have gone."
+        }
+      }
+    ]
+  }
+}

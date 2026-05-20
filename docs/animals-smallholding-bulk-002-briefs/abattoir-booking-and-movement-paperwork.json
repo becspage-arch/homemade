@@ -1,0 +1,111 @@
+{
+  "slug": "abattoir-booking-and-movement-paperwork",
+  "title": "Abattoir booking and movement paperwork for pigs",
+  "subtitle": "What to arrange, fill in, and carry before pigs leave the holding.",
+  "excerpt": "Moving pigs to slaughter requires advance abattoir booking, a completed eAML2 movement document, and correct pig identification on the animals. Missing any of these prevents legal movement. This covers the sequence from booking to dispatch, the online movement system, and what the abattoir needs from you.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Animal and Plant Health Agency (APHA), pig movement rules for England (eAML2 guidance). DEFRA pig identification and traceability. Farming Connect Wales, pig keeper registration guidance.",
+  "glossaryTerms": [
+    { "slug": "eaml2", "term": "eAML2", "definition": "Electronic Animal Movement Licence 2: the online system used to record pig movements in England and Wales. All movements of pigs off a holding must be entered in eAML2 before or on the day of movement." },
+    { "slug": "food-chain-information", "term": "Food chain information (FCI)", "definition": "A declaration the keeper provides to the abattoir confirming that pigs have not received medicines within their withdrawal period and are fit for slaughter. The abattoir cannot legally accept animals without a completed FCI." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["pig movement licence", "eAML2 pigs", "sending pigs to slaughter paperwork"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Small abattoirs that accept pigs from smallholdings typically require booking several weeks in advance, particularly in spring and early summer when demand is high. Booking a slot well ahead and understanding the paperwork sequence before the day avoids delays and wasted journeys."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Book the abattoir slot" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Phone the abattoir directly with the number of pigs, approximate liveweight, and breed. Confirm whether the pigs need to be fasted before arrival (typically 12 hours for stomach content reduction) and whether transport needs to be arranged. Confirm the drop-off time and whether there is a small-batch minimum charge. If collecting the meat rather than having it dispatched, confirm the collection window at booking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Complete the eAML2 movement" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Log into "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "eaml2" } }],
+            "text": "eAML2"
+          },
+          {
+            "type": "text",
+            "text": " and create a movement from your CPH number to the abattoir's CPH number. Enter the number of pigs, their identification, and the movement date. Print or save the completed document; the abattoir will ask for the movement document reference on arrival. The eAML2 entry must be completed before the animals leave the holding."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Food chain information" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Complete the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "food-chain-information" } }],
+            "text": "FCI form"
+          },
+          {
+            "type": "text",
+            "text": " using your medicine book to confirm all treatment dates and withdrawal periods. If any pig has received treatment within its withdrawal period, it cannot be presented for slaughter until the period has passed. Record all medicine details in the holding's medicine book; the abattoir may ask to see it."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "On the day" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Arrive at the agreed time with the eAML2 reference, the FCI form, and animals correctly identified. Abattoirs cannot legally accept pigs without movement documentation. The abattoir will issue a kill sheet with deadweight and killing-out percentage; keep this for the holding records."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "slug": "spring-colony-assessment",
+  "title": "Spring colony assessment",
+  "subtitle": "Reading the colony after winter to plan the season ahead.",
+  "excerpt": "The first inspection of the year sets the strategy for the months that follow. This covers what to look for in February and March: cluster size, food stores, queen status, and signs of winter losses or disease that need acting on before the season gathers pace.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU Beekeeper's Toolkit (2024), spring management. BBKA Basic Assessment syllabus. DEFRA/APHA Advisory Note on spring inspections.",
+  "glossaryTerms": [
+    { "slug": "cleansing-flight", "term": "Cleansing flight", "definition": "Short flights bees take on the first warm days of the year to void waste accumulated during the winter cluster. A steady stream of bees flying out and returning within minutes is the sign." },
+    { "slug": "emergency-feed", "term": "Emergency feed", "definition": "Fondant or candy placed directly on the top bars of a colony that has exhausted its stores before forage is available. Spring starvation kills colonies within days." },
+    { "slug": "nosema", "term": "Nosema", "definition": "A microsporidian gut parasite causing dysentery in bees. Identified by yellow-brown streaking on the landing board and around the hive entrance in late winter." }
+  ],
+  "techniqueSlugs": ["lighting-a-bee-smoker", "inspecting-a-beehive-in-summer"],
+  "criticalTechniques": ["lighting-a-bee-smoker"],
+  "aliases": ["first inspection spring", "spring check bees"],
+  "recipeTools": [
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "smoker-fuel", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "bee-gloves", "isOptional": false },
+    { "slug": "hive-tool-j", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The spring assessment is the most important inspection of the year. It tells you which colonies came through winter intact, which need feeding to survive, which need a new queen, and which should be combined before they collapse. Opening too early chills the brood and sets colonies back; waiting too long means starvation goes unnoticed. The window is the first day above 12°C with no wind, typically February in the south and March in Scotland and the north."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Before opening the hive" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Watch the entrance first. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cleansing-flight" } }],
+            "text": "Cleansing flights"
+          },
+          {
+            "type": "text",
+            "text": " confirm live bees and an active cluster. Check for yellow or brown streaking on the landing board or up the front of the hive: that pattern suggests "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nosema" } }],
+            "text": "nosema"
+          },
+          {
+            "type": "text",
+            "text": ", which is worth noting but does not require immediate treatment in a healthy colony. A full frame of dead bees lying in front of the hive entrance indicates the colony died during winter."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Opening and reading the brood" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Light the smoker and suit up. Use the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "lighting-a-bee-smoker", "label": "lighting-a-bee-smoker" } }],
+            "text": "standard smoker procedure"
+          },
+          {
+            "type": "text",
+            "text": ". Two light puffs at the entrance, 60 seconds, then lift the crown board gently. In spring the bees are clustered on a few central frames; do not spread them apart to look at every frame. Lift the cluster frames only."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You are looking for: a laying queen (or eggs showing she has been laying recently), a tight cluster of healthy bees, and food on the outer frames. Look at the frames on the outside edge of the cluster: if they are empty of stores, the colony needs feeding immediately. A colony with no stores in March can die within four days of a cold snap."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Feeding" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If stores are low, place "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "emergency-feed" } }],
+            "text": "emergency feed"
+          },
+          {
+            "type": "text",
+            "text": " in the form of fondant directly on the top bars, over the cluster. Fondant is available from beekeeping suppliers in 2.5 kg blocks and does not need to be dissolved in water. Place the block in a shallow tray or a split bag with the paper removed. A colony with fewer than two full frames of stores needs at least 1 kg of fondant."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Recording what you found" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Note the size of the cluster (in frames of bees), the state of the stores, whether you saw eggs or a laying queen, and any signs of disease. The apiary record is the only way to track which colonies are building normally and which are lagging. A colony that is still on four frames of bees in April when the season should be expanding deserves a closer look."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What to do with problem findings",
+          "intro": "Common spring findings and the appropriate response.",
+          "items": [
+            {
+              "symptom": "Colony covering only one or two frames in March",
+              "cause": "Heavy winter losses, possible disease, or failure to build up.",
+              "fix": "Unite with a stronger colony using the newspaper method, or introduce a new queen if the existing queen is laying poorly."
+            },
+            {
+              "symptom": "No eggs by mid-April",
+              "cause": "The queen has died, failed to start laying after winter, or is drone-laying.",
+              "fix": "Check for drone-only brood (round-capped, bumpy surface). If found, the queen has failed; introduce a new mated queen or a frame of eggs from another colony."
+            },
+            {
+              "symptom": "Brown streaking on the landing board",
+              "cause": "Nosema or dysentery from poor-quality stores.",
+              "fix": "Ensure good ventilation; consider replacing old stores frames with fresh feed. Nosema clears naturally in most colonies once forage improves."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

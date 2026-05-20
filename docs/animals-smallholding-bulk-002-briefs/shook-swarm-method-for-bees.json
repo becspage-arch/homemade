@@ -1,0 +1,147 @@
+{
+  "slug": "shook-swarm-method-for-bees",
+  "title": "Shook swarm method for bees",
+  "subtitle": "Moving the colony onto fresh comb to break a disease cycle.",
+  "excerpt": "The shook swarm moves the entire adult bee population onto clean foundation, leaving all old comb behind. It interrupts the reproductive cycle of Varroa, clears contaminated stores, and is the recommended intervention when a colony shows signs of European foulbrood or has heavy Varroa burden.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 75,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU Advisory leaflet 10, European Foulbrood and the Shook Swarm method. APHA Bee Health Programme. NBU Beekeeper's Toolkit (2024), disease control.",
+  "glossaryTerms": [
+    { "slug": "european-foulbrood", "term": "European foulbrood", "definition": "A bacterial brood disease caused by Melissococcus plutonius, notifiable in the UK. Infected larvae turn yellow-brown and twisted in their cells before dying before capping. Confirmed by a APHA bee inspector." },
+    { "slug": "varroa", "term": "Varroa", "definition": "Varroa destructor, a parasitic mite that feeds on bee pupae in sealed brood cells. The primary pest of managed honey bee colonies in the UK." },
+    { "slug": "foundation", "term": "Foundation", "definition": "Sheets of wax or plastic embossed with a hexagonal cell pattern and fitted inside a frame. The bees draw the cells out into full comb from this template." }
+  ],
+  "techniqueSlugs": ["lighting-a-bee-smoker", "varroa-mite-count"],
+  "criticalTechniques": ["lighting-a-bee-smoker"],
+  "aliases": ["shook swarm", "shaking bees onto clean foundation"],
+  "recipeTools": [
+    { "slug": "nuc-box", "isOptional": true, "notes": "If the queen is to be temporarily held." },
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "smoker-fuel", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "bee-gloves", "isOptional": false },
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "national-frame", "isOptional": false, "notes": "A full set of frames fitted with fresh foundation." },
+    { "slug": "hive-feeder-rapid", "isOptional": false, "notes": "The colony needs immediate feeding to draw the new foundation." }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The shook swarm is the standard UK intervention for "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "european-foulbrood" } }],
+            "text": "European foulbrood"
+          },
+          {
+            "type": "text",
+            "text": " and for breaking a heavy "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "varroa" } }],
+            "text": "Varroa"
+          },
+          {
+            "type": "text",
+            "text": " cycle. It moves all the adult bees onto clean "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foundation" } }],
+            "text": "foundation"
+          },
+          {
+            "type": "text",
+            "text": " and destroys all old comb, which breaks the disease cycle and dramatically reduces the mite population by removing the sealed brood in which Varroa reproduces. It is done in spring once the colony is large enough to draw fresh comb quickly, typically when the trees are coming into blossom."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "EFB is notifiable",
+          "body": "European foulbrood confirmed by a laboratory test is a notifiable disease under the Bee Diseases and Pests Control Order. Contact the APHA bee inspector before doing a shook swarm if you suspect EFB rather than treating presumptively. The inspector may prescribe oxytetracycline alongside the shook swarm. Do not move frames off the holding."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Prepare a clean hive body with a full set of new frames fitted with foundation. Place it on the existing hive stand. Have a rapid feeder ready with sugar syrup: 1 kg sugar to 1 litre water. The bees will be on bare foundation with no stores after the shook swarm and need immediate feeding to draw comb."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The procedure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Suit up and light the smoker. Remove the old hive body from the stand and set it to one side. Place the new clean box on the stand. Work through the old box frame by frame, shaking the bees from each frame sharply over the new box. Three or four firm shakes per frame deposits most of the bees; a brush can clear stubborn clusters on the last few frames. Return each old frame to the old hive body as you work."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The queen will be on one of the frames. When you see her, either let her fall into the new box with the bees or place her on the new foundation directly. Do not leave her in the old box."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Disposing of the old comb" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the shook swarm was done for EFB or another notifiable disease, bag all old frames in double-bin bags, seal them, and burn. Do not render the wax or give the frames to another beekeeper. If the shook swarm was for Varroa management only (not disease), old frames can be scraped and the wax rendered in a solar wax melter or double-boiler for candle use, keeping the wax off any live colony."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "After the shook swarm" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Apply the rapid feeder immediately. In the absence of brood, the bees are entirely focused on drawing the new comb and need the energy. Check after four days: fresh comb should be drawn on at least five frames. At day 10, confirm the queen is laying. A shook swarm done in April on a strong colony should have several frames of sealed brood by day 21."
+          }
+        ]
+      }
+    ]
+  }
+}

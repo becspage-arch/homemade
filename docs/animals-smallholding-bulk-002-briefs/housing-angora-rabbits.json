@@ -1,0 +1,107 @@
+{
+  "slug": "housing-angora-rabbits",
+  "title": "Housing and grooming Angora rabbits",
+  "subtitle": "The housing setup, grooming schedule, and fibre harvest for a small Angora keeping.",
+  "excerpt": "Angora rabbits require more active management than meat or pet breeds. Their dense coat needs grooming every two to three days to prevent wool block, and their housing must be dry and well-ventilated to stop coat matting and skin problems. This covers cage setup, the grooming routine, and fibre collection.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "rabbits",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA Welfare Code of Practice for Rabbits (2019). British Angora Rabbit Society, breed husbandry guidance. Rabbit Welfare Association, environmental needs guidance.",
+  "glossaryTerms": [
+    { "slug": "wool-block", "term": "Wool block", "definition": "A form of GI stasis caused when a rabbit ingests loose coat fibre. Rabbits cannot vomit; ingested wool accumulates in the gut and can cause a fatal obstruction within 24 to 48 hours." },
+    { "slug": "angora-fibre", "term": "Angora fibre", "definition": "The fine, soft undercoat harvested from Angora rabbits. English Angora produces finer fibre; German Angora produces higher volume. Both breeds require harvest every 90 to 120 days to prevent coat matting and overgrowth." }
+  ],
+  "techniqueSlugs": ["gi-stasis-in-rabbits"],
+  "criticalTechniques": [],
+  "aliases": ["angora rabbit care", "angora rabbit grooming", "rabbit fibre harvest"],
+  "recipeTools": [
+    { "slug": "rabbit-cage", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An Angora rabbit in a well-managed setup produces between 300 g and 500 g of fibre per year and stays in good health with consistent grooming. The combination of a dry, ventilated cage and a regular grooming schedule prevents the two main problems: "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wool-block" } }],
+            "text": "wool block"
+          },
+          {
+            "type": "text",
+            "text": " from ingested loose fibre, and skin irritation from matted coat against damp bedding."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Housing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use a wire-floored or slatted cage raised off the ground: bedding that holds moisture will mat the coat within days. The cage should be at least 90 cm by 60 cm for a standard 3 to 4 kg Angora. Good ventilation matters more than warmth. A dry shed or barn with airflow is better than a warm, damp outbuilding. Avoid direct sunlight; a heavily coated rabbit overheats quickly and has limited ability to shed heat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Grooming schedule" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Groom every two to three days. Work section by section from the head back, parting the coat and checking the skin at the base. Look for mats at the armpits, around the hindquarters, and at the base of the ears. Cut out mats that have bonded to the skin rather than trying to pull or comb them out; pulling causes pain and distress. Collect loose fibre as you work: even fibre mixed with hay is usable "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "angora-fibre" } }],
+            "text": "Angora fibre"
+          },
+          {
+            "type": "text",
+            "text": " once debris is removed before spinning."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fibre harvest" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Harvest every 90 to 120 days. German Angora is clipped with scissors or small shears; clip close but not against the skin. English Angora can be plucked by hand when the coat is ready to release: a mature coat parts easily from the skin with gentle traction. If resistance is felt, clip rather than force. Store collected fibre in a paper bag rather than a sealed plastic container; trapped moisture causes the fibre to felt."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Check hindquarters at every session",
+          "body": "Urine staining and faecal matting at the base of the coat causes skin sores quickly and is the most common reason Angora rabbits are in poor condition. A rabbit that cannot keep this area clean may have dental problems that prevent normal cecotrope consumption."
+        }
+      }
+    ]
+  }
+}

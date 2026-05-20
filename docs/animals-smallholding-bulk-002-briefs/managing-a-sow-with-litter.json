@@ -1,0 +1,123 @@
+{
+  "slug": "managing-a-sow-with-litter",
+  "title": "Managing a sow with a litter",
+  "subtitle": "Daily checks and interventions from farrowing to weaning.",
+  "excerpt": "A first-time sow needs closer observation than an experienced one; both need daily checks on piglet condition, milk availability, and the sow's own health. This covers the checks at farrowing, the first week, colostrum access, and weaning at four to five weeks.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Pork, sow and litter management guide. DEFRA Welfare Code for Pigs (2003, updated 2022). Carla Emery, Encyclopedia of Country Living (10th edition), pig husbandry chapters.",
+  "glossaryTerms": [
+    { "slug": "colostrum", "term": "Colostrum", "definition": "The first milk produced by the sow in the 12 to 24 hours after farrowing, rich in antibodies. Piglets must receive colostrum within six hours of birth; piglets that do not receive it have very low survival rates." },
+    { "slug": "mma", "term": "Mastitis-metritis-agalactia (MMA)", "definition": "A complex of post-farrowing conditions in sows: inflammation of the udder (mastitis), uterine infection (metritis), and failure of milk let-down (agalactia). Signs include swollen, hot teats, reduced milk, and fever. Requires veterinary treatment." },
+    { "slug": "creep-feeding", "term": "Creep feeding", "definition": "Providing solid feed to piglets in the creep area from around 10 days of age. Creep feed encourages gut development and reduces weaning stress when the sow's milk is removed at four to five weeks." }
+  ],
+  "techniqueSlugs": ["farrowing-pen-setup-for-an-outdoor-sow", "notching-and-tagging-piglets"],
+  "criticalTechniques": ["farrowing-pen-setup-for-an-outdoor-sow"],
+  "aliases": ["sow litter management", "pig farrowing management", "piglet care"],
+  "recipeTools": [
+    { "slug": "farrowing-lamp", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most sows farrow without assistance if the pen is correctly prepared and the sow is in good condition. The critical work starts within an hour of farrowing: ensuring all piglets have accessed the sow's teats and received "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colostrum" } }],
+            "text": "colostrum"
+          },
+          {
+            "type": "text",
+            "text": " within the first six hours is the single biggest factor in early piglet survival."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "At farrowing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Check the nest every two hours once farrowing begins, which typically lasts two to four hours. Piglets born with membranes over the face should have them cleared immediately. Runt piglets that are not finding teats can be placed manually onto a rear teat, which has higher milk flow. Remove any stillborn piglets. Count the litter and match against previous records to identify if piglets are missing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Days one to seven" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Check twice daily: observe piglet behaviour, check the sow's teats for heat or hardness, and confirm the sow is eating and producing milk. Signs of "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mma" } }],
+            "text": "MMA"
+          },
+          {
+            "type": "text",
+            "text": " include restless or crying piglets, a sow refusing to lie for nursing, and hot swollen teats. This is a vet call; do not delay. Piglets that are cold and slow to move are not feeding adequately; check whether the heat lamp is providing sufficient warmth in the creep and whether each piglet is getting teat access."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Week two to four" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Introduce "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "creep-feeding" } }],
+            "text": "creep feed"
+          },
+          {
+            "type": "text",
+            "text": " from day 10 to 14 in the creep area in small amounts that will be cleared by the piglets within an hour. As the litter grows, the sow's milk declines relative to demand; creep feed bridges this gap and prepares the piglets' guts for weaning. Provide fresh water for piglets in a shallow container from week two."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Weaning" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wean at 28 to 35 days by moving the sow out of the paddock and leaving the piglets in the familiar space. The UK legal minimum weaning age is 28 days for outdoor systems. Move the sow to a separate paddock and feed a lower-energy diet for three to four days to allow milk dry-up. The litter remains together in the farrowing paddock for two to three weeks before moving to a grower pen."
+          }
+        ]
+      }
+    ]
+  }
+}
