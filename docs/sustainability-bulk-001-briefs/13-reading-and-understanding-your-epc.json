@@ -1,0 +1,170 @@
+{
+  "slug": "reading-and-understanding-your-epc",
+  "title": "Reading and understanding your EPC",
+  "subtitle": "What the rating, the SAP score, and the recommendations section actually tell you",
+  "excerpt": "An Energy Performance Certificate rates your home from A (most efficient) to G (least efficient) and lists the measures that would improve it. The certificate also gives individual U-values for each element of the building fabric. This guide explains how to read the numbers and what the recommendations are worth.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "MHCLG (Ministry of Housing) EPC guidance for homeowners. gov.uk/find-energy-certificate. BRE SAP 10.2 methodology documentation. DLUHC EPC register data.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipeTools": [],
+  "recipe": {
+    "foundational": false
+  },
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "what does my EPC mean",
+    "how to read EPC",
+    "EPC rating explained",
+    "energy performance certificate UK"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "Thermal transmittance (W/m²·K). The rate of heat flow through one square metre of building fabric per degree of temperature difference. The EPC lists a U-value for each fabric element — walls, roof, floor, windows."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An EPC has four sections that are worth reading: the overall rating band, the SAP score, the fabric"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "u-value"
+                }
+              }
+            ],
+            "text": "U-value"
+          },
+          {
+            "type": "text",
+            "text": "table, and the recommendations list. Most people look at the letter band and stop. The detailed sections are where the actionable information is."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The overall rating and SAP score"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The A-G band is derived from a numerical SAP score (Standard Assessment Procedure, 1-100). Band C corresponds to SAP 69-80; Band D to 55-68; Band E to 39-54. The average English home is band D (SAP 60). The certificate shows two ratings: the current rating and the potential rating (what could be achieved if all the recommended measures were implemented)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The fabric section"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The EPC lists an assessed U-value for each element: walls, roof, floor, and windows. These are not measured, they are estimated by the assessor based on the construction type and year, cross-referenced against BRE reference values. For a Victorian terrace, the assessor assigns the solid brick U-value of 2.1 unless there is evidence of subsequent insulation. If the values look wrong (e.g. your loft is insulated but the certificate shows an uninsulated roof U-value), request a reassessment with the correct evidence."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The recommendations section"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Recommendations are ranked by indicative cost band and estimated annual saving. The savings figures are not precise, they are generated from the SAP model at standardised occupancy assumptions, not from your actual energy use. Use them to rank the measures by order of magnitude: a +/year saving estimate is more significant than a estimate, but the absolute figures should not be taken literally."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "How long is an EPC valid?"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An EPC is valid for 10 years. If you have carried out significant retrofit work since your EPC was issued, the current certificate understates your home's actual performance and will not reflect the improvements for mortgage, sale, or grant purposes. Commission a new assessment with evidence of the completed work. Assessors need completion certificates, product specifications, or photographs to update the fabric U-values."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finding your EPC"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "All EPCs issued since 2008 are on the national register at gov.uk/find-energy-certificate. Search by postcode, results include the full PDF and the underlying data file. If your home was built or substantially altered before 2008, there may be no certificate on the register."
+          }
+        ]
+      }
+    ]
+  }
+}

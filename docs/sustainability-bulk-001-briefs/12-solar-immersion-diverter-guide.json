@@ -1,0 +1,219 @@
+{
+  "slug": "solar-immersion-diverter-guide",
+  "title": "Solar immersion diverter: how it works and whether it pays",
+  "subtitle": "Routing surplus solar export to a hot water cylinder instead of the grid",
+  "excerpt": "A solar immersion diverter monitors the household export signal and diverts any surplus generation to an immersion heater instead of feeding it to the grid at 4-15p/kWh. The hot water tank stores it at the equivalent of 27p/kWh. Payback on the diverter unit itself is typically one to two years.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Marlec / myenergi product documentation (Eddi, iBoost). Energy Saving Trust solar PV and diverters guidance. OFGEM Smart Export Guarantee rates data.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipeTools": [],
+  "recipe": {
+    "foundational": false
+  },
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "solar immersion diverter",
+    "Eddi solar diverter",
+    "iBoost solar",
+    "solar PV hot water diverter",
+    "surplus solar electricity hot water"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "solar-pv",
+      "term": "Solar PV",
+      "definition": "Photovoltaic solar panels — convert sunlight directly to DC electricity, then via an inverter to AC for household use."
+    },
+    {
+      "slug": "kwh",
+      "term": "kWh",
+      "definition": "Kilowatt-hour. A unit of energy equal to one kilowatt of power used (or generated) for one hour. UK electricity is billed in kWh at around 27p/kWh (2025/26 cap)."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "solar-pv"
+                }
+              }
+            ],
+            "text": "solar PV"
+          },
+          {
+            "type": "text",
+            "text": "system without a battery or diverter exports any generation above household consumption to the grid. The Smart Export Guarantee pays 4-15p per"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "kwh"
+                }
+              }
+            ],
+            "text": "kWh"
+          },
+          {
+            "type": "text",
+            "text": "for that export. A solar diverter intercepts that export and sends it to an immersion heater instead, saving the electricity that would otherwise heat the water at 27p/kWh. The arbitrage is 12-23p per kWh diverted."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "How the diverter works"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The diverter unit installs at the consumer unit and uses a clamp sensor on the grid import/export cable. It continuously measures the balance between generation and consumption. When generation exceeds consumption, the unit applies a proportional power signal to the immersion element, from 0 to 3 kW, to absorb exactly the surplus without drawing from the grid. The result is that surplus generation heats the hot water cylinder rather than trickling back to the grid at a low export rate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A solar PV system already generating."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A hot water cylinder with an immersion heater element (a combi boiler has no cylinder, a diverter has nothing to heat)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A diverter unit: Eddi (myenergi), iBoost (Marlec), or similar. Units cost supply-only."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A Part P registered electrician to carry out the installation, the unit connects to the consumer unit and the immersion circuit. This is not DIY work."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Part P requirement",
+          "body": "Connecting any device to a consumer unit is notifiable electrical work under Part P of the Building Regulations. It must be carried out by a Part P registered electrician who issues a Building Regulations Compliance Certificate. An unregistered installation will not be covered by buildings insurance and may void the warranty on the diverter unit."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Does it pay?"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 4 kWp system in the Midlands exports approximately 1,800-2,200 kWh/year (about half its generation). Diverting all of that to hot water saves: 2,000 kWh × 27p = in electricity avoided, minus the SEG income foregone (2,000 × 10p = ). Net annual benefit: approximately . At a total installed cost of , payback is under two years for most households."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The calculation changes if you are on a high-rate SEG tariff (15p+), the export income foregone is higher, and the case for diversion is weaker. It also requires a cylinder large enough to absorb the surplus: a 150 L cylinder can store roughly 7 kWh as heat, which is sufficient for most summer days."
+          }
+        ]
+      }
+    ]
+  }
+}

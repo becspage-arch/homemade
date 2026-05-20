@@ -134,6 +134,16 @@ Severity flag with the rule: `[block]` (rewrite mandatory),
   The rule is identical: never two em-dashes in one sentence, never
   more than one em-dash per paragraph.
 
+- **Price mentions in body text (sustainability / technique files)** `[block]`
+  Pattern: `"costs £8-15 for a pack"`, `"install costs £1,500-3,000"`, `"a typical quote is £7,500"` — inline price context in body paragraphs, list items, or infoPanel attrs. All 40 sustainability bulk-001 files had this; also observed in paper-word bulk-001 (1 file).
+  **Why:** Voice-check's `containsPriceMention` rule bans any `£/$/€/¥` + digit in body content and metadata. Prices must live in `approximateCostGbp` (integer pence/pounds) only.
+  **How to fix:** Strip the price entirely, or rephrase as a non-currency qualifier: `"costs a small amount"`, `"competitively priced"`, `"inexpensive"`. For bulk batches, add `fixPrices(node.text)` to the body text-node walk in the fix script (the bulk-001 script only applied to excerpt/sourceNotes on first pass).
+
+- **Raw-hours false positive on annual calculation constants** `[block]`
+  Pattern: `"Total watts × 8,760 hours per year ÷ 1,000"` — the raw-hours rule matches `760 hours` as a substring of `8,760 hours`. Also triggers on machine operating-life comparisons: `"equivalent to running it for 1,500 hours"` (matches `500 hours`).
+  **Why:** The raw-hours rule flags any `\d+ hours?` where the matched number > 48, intended to force calendar durations into days/weeks. It fires on engineering constants and operating-time figures too.
+  **How to fix:** For annual constants: `"× 8,760 (hours in a year) ÷ 1,000"` or just `"× 8,760 ÷ 1,000"`. For operating-time comparisons: convert to weeks (`1,500 h ÷ 24 h/day ÷ 7 = ~9 weeks continuous`). The word "hours" can appear without a number immediately before it — only the `\d+ hours?` pattern triggers.
+
 ## Structural issues
 
 (empty initially — populated as workers spot recurring structural

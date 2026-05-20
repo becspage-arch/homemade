@@ -1,0 +1,178 @@
+{
+  "slug": "home-energy-audit-measuring-your-baseload",
+  "title": "Measuring your household baseload",
+  "subtitle": "Clamp meter on the supply cable to find phantom loads and overnight draw",
+  "excerpt": "Baseload is the electricity your home draws when everything you think is off is off. An energy monitor clamp on the incoming supply cable measures it in real time. UK homes average 200-400 W of baseload. At 27p/kWh, 300 W running continuously costs . An hour's audit with a clamp meter identifies where it goes.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": 60,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "EST annual electricity consumption data for UK households. Carbon Trust good practice guides on phantom load identification. OFGEM energy use data.",
+  "approximateCostGbp": 0,
+  "paybackYears": 0,
+  "recipeTools": [
+    {
+      "slug": "energy-monitor-clamp",
+      "isOptional": false,
+      "notes": "Clips around the incoming supply cable at the consumer unit. No electrical connection required."
+    }
+  ],
+  "recipe": {
+    "foundational": false
+  },
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "measure household baseload",
+    "clamp meter electricity",
+    "phantom load audit",
+    "standby electricity use"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "kwh",
+      "term": "kWh",
+      "definition": "Kilowatt-hour. The unit electricity bills are measured in. 1 kWh = one kilowatt of power running for one hour."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Baseload is the steady draw from appliances in standby, always-on devices, and background systems, routers, set-top boxes, clocks, chargers, heat pump controllers, and poorly-specified boiler controls. It runs 24 hours a day, 365 days a year. At 300 W, that is 2,628"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "kwh"
+                }
+              }
+            ],
+            "text": "kWh"
+          },
+          {
+            "type": "text",
+            "text": "per year, at 27p/kWh, before you turn on a kettle or a light."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Setting up the clamp"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 1, clip the clamp sensor."
+          },
+          {
+            "type": "text",
+            "text": "Open the consumer unit cover if needed and clip the current transformer (CT) clamp around the single live cable coming in from the meter. The clamp does not cut the circuit, it measures the magnetic field around the cable. Follow the manufacturer's pairing instructions to connect to the display unit or app."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Consumer unit safety",
+          "body": "The CT clamp clips around the outside of the cable, it does not make electrical contact. You do not need to isolate the supply. Do not touch bare conductors or terminal connections inside the consumer unit. If the incoming cable is sheathed in a way that makes the clamp inaccessible, do not attempt to unsheathe it."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Taking the baseline reading"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 2, turn off everything you can."
+          },
+          {
+            "type": "text",
+            "text": "Switch off all lights. Turn off TVs, monitors, and computers at the wall (not just standby). Turn off the oven, kettle, washing machine, dishwasher. Leave on: fridge, freezer, boiler/heating controls, router, and any other items that cannot be switched off. Note the reading. This is your irreducible baseline."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "Step 3, turn devices back on one at a time."
+          },
+          {
+            "type": "text",
+            "text": "Restore each device from standby and note the increase in watts. Televisions typically add 1-3 W in standby. Set-top boxes (Freeview, Sky) can add 5-15 W. A network-attached storage (NAS) drive may add 20-50 W. Games consoles in standby: 1-15 W. Old first-generation smart speakers: 3-5 W."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Calculating the annual cost"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Total watts of baseload identified × 8,760 ÷ 1,000 = annual kWh (8,760 is the number of hours in a year). Multiply by 27p (or your actual unit rate) for the annual cost. If you find 80 W of unnecessary standby loads: 80 × 8,760 ÷ 1,000 = 701 kWh per year. Switch them to smart plugs with scheduling or turn them off at the wall."
+          }
+        ]
+      }
+    ]
+  }
+}

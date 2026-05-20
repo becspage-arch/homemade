@@ -1,0 +1,276 @@
+{
+  "slug": "heat-pump-cop-scop-explained",
+  "title": "Heat pump COP and SCOP explained",
+  "subtitle": "Why the efficiency ratio determines whether a heat pump is cheaper to run than a gas boiler",
+  "excerpt": "A heat pump's COP (Coefficient of Performance) is the ratio of heat output to electrical input. At COP 3, you get 3 kWh of heat for every 1 kWh of electricity. At current UK prices, 27p/kWh electricity, 6p/kWh gas, the break-even COP is 4.5. Most air source heat pumps achieve SCOP 2.5-3.5, meaning running costs are higher than gas. The numbers explain when and why.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "EN 14825:2022 Heat pump testing standard defining SCOP measurement. BEIS Heat Pump Ready programme SCOP field trial data (2023). Carbon Trust heat pump comparison guide.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipeTools": [],
+  "recipe": {
+    "foundational": true
+  },
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "heat pump COP",
+    "SCOP heat pump explained",
+    "heat pump running costs",
+    "air source heat pump efficiency"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cop",
+      "term": "COP",
+      "definition": "Coefficient of Performance. The ratio of heat output to electrical input at a specific moment (e.g. at 7°C outside air, 35°C flow temperature). COP varies with temperature: colder outside and hotter flow = lower COP."
+    },
+    {
+      "slug": "scop",
+      "term": "SCOP",
+      "definition": "Seasonal Coefficient of Performance. The average COP across a full heating season, accounting for the range of outdoor temperatures and operating conditions. The more useful real-world efficiency figure."
+    },
+    {
+      "slug": "heat-pump",
+      "term": "Heat pump",
+      "definition": "A device that moves heat from a cold source (outside air, ground, or water) to a warmer space by doing work on a refrigerant. Classified as air source (ASHP) or ground source (GSHP). Generates 2–4 kWh of heat per 1 kWh of electricity."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "heat-pump"
+                }
+              }
+            ],
+            "text": "heat pump"
+          },
+          {
+            "type": "text",
+            "text": "moves heat rather than generating it. For every 1 kWh of electricity it consumes, it delivers 2-4 kWh of heat. The ratio at any given moment is the"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cop"
+                }
+              }
+            ],
+            "text": "COP"
+          },
+          {
+            "type": "text",
+            "text": ". Averaged across the heating season, it is the"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "scop"
+                }
+              }
+            ],
+            "text": "SCOP"
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The break-even calculation"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "At the 2025/26 price cap: gas costs 6p/kWh and electricity costs 27p/kWh. A gas boiler at 90% efficiency delivers 1 kWh of heat for 6 ÷ 0.9 = 6.7p. A heat pump at COP X delivers 1 kWh of heat for 27 ÷ X pence. These are equal when 27 ÷ X = 6.7, i.e. X = 4.0. So a heat pump needs to achieve SCOP 4.0 or better to match a 90%-efficient gas boiler at current prices."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Typical UK field SCOP values"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Air source heat pump in a well-insulated house (35°C flow temperature): SCOP 3.0-3.5."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Air source heat pump in a poorly-insulated house (55°C flow temperature): SCOP 2.0-2.5."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Ground source heat pump: SCOP 3.5-4.5 (stable ground temperature improves performance in cold weather)."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "At SCOP 3.0 and current prices, an air source heat pump costs approximately 9p/kWh of delivered heat, around 35% more expensive than gas. The carbon case for heat pumps is stronger than the cost case at current UK electricity prices, which reflect the residual gas price premium in the grid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What drives COP down"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Higher flow temperature: every 5°C increase in the heating flow temperature reduces COP by roughly 0.3-0.4. Radiators sized for 70°C flow on a gas system will drop the SCOP significantly when that same system runs at 55°C on a heat pump."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lower outside air temperature: COP drops in very cold weather, exactly when you need the most heat. Below -5°C, some units use electric resistance backup."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Defrost cycles: in cold, humid conditions the outdoor unit frosts over and requires periodic defrost cycles that consume electricity without producing useful heat."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Improving SCOP in practice"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The single most effective action is reducing the required flow temperature. Upgrading radiators to low-temperature models (larger surface area) allows the heat pump to run at 40-45°C flow instead of 55-65°C, improving SCOP by 0.5-1.0. Insulating the building reduces the total heat demand, allowing smaller radiators to satisfy the load at lower flow temperatures."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "slug": "understanding-your-electricity-bill-and-smart-tariffs",
+  "title": "Understanding your electricity bill and smart tariffs",
+  "subtitle": "Unit rates, standing charges, Economy 7, time-of-use, and export payments",
+  "excerpt": "The standard electricity bill has two components: a standing charge (around 61p/day) and a unit rate (around 27p/kWh at the 2025/26 cap). Smart meters enable time-of-use tariffs that charge different rates by hour, useful if you have a battery, heat pump, or EV. This guide decodes the bill and the tariff options.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "OFGEM Energy Price Cap methodology Q3 2025. OFGEM Smart Export Guarantee register. OFGEM Economy 7 and time-of-use tariff guidance.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipeTools": [],
+  "recipe": {
+    "foundational": false
+  },
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "electricity bill explained UK",
+    "smart tariff UK",
+    "time of use tariff",
+    "Economy 7 explained",
+    "unit rate standing charge"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "kwh",
+      "term": "kWh",
+      "definition": "Kilowatt-hour. The unit electricity is billed in. One kilowatt-hour equals one kilowatt of power used for one hour (e.g., a 1 kW electric heater running for one hour)."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Your electricity bill has two distinct charges. The unit rate (p/"
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "kwh"
+                }
+              }
+            ],
+            "text": "kWh"
+          },
+          {
+            "type": "text",
+            "text": ") is what you pay for each unit of electricity you use. The standing charge (p/day) is a fixed daily fee regardless of consumption. At the 2025/26 price cap: unit rate 24.5p/kWh, standing charge 61p/day, approximately in standing charges alone before you use anything."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Economy 7"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Economy 7 is an older two-rate tariff with a lower overnight rate (usually midnight to 7 am) and a higher daytime rate. Day rate is typically 35-40p/kWh; night rate 12-15p/kWh. It was designed for storage heaters that charge overnight and release heat during the day. For households without storage heaters or overnight EV charging, Economy 7 is usually more expensive overall than a single-rate tariff because the higher daytime rate applies to most consumption."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Smart / time-of-use tariffs"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Smart meters enable half-hourly pricing. Tariffs such as Octopus Agile vary the rate every 30 minutes based on wholesale electricity prices. In periods of high wind generation, rates can drop to 1-5p/kWh or even go negative. Peak demand periods (4-7 pm in winter) can see rates of 40-80p/kWh. A battery or flexible heat pump load can shift consumption from peak to off-peak, saving at current price volatility."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Smart Export Guarantee"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If you have solar PV or other generation, the Smart Export Guarantee (SEG) requires licensed electricity suppliers with 150,000+ customers to offer an export tariff. Rates range from 4p/kWh (minimum) to 15p/kWh for competitive tariffs. You need a smart meter for SEG payments, as the exported units must be measured. Suppliers are not obliged to offer SEG to all generators, check eligibility requirements."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Checking what you pay"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The unit rate and standing charge for your current tariff are on any bill, on your online account, or on the OFGEM register. To compare tariffs: multiply your annual kWh consumption by the unit rate difference (in pence), add the standing charge difference × 365. The result is the annual cost difference between tariffs."
+          }
+        ]
+      }
+    ]
+  }
+}
