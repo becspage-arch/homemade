@@ -593,6 +593,8 @@ export default async function TutorialPage({ params }: PageProps) {
                   }
                 : null
             }
+            tutorialId={tutorial.id}
+            isSignedIn={Boolean(currentUser)}
           />
         </>
       }

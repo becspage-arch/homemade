@@ -17,14 +17,20 @@ import { CalligraphyExemplar } from '@/lib/chart-renderers/calligraphy-exemplar'
 import { OrigamiFoldBasic } from '@/lib/chart-renderers/origami-fold-basic'
 import { WeavingDraft } from '@/lib/chart-renderers/weaving-draft'
 import { MacrameKnot } from '@/lib/chart-renderers/macrame-knot'
-import { renderCrossStitchChart } from '@/lib/chart-renderers/cross-stitch'
-import type { CrossStitchChart as CrossStitchChartDefinition } from '@/lib/chart-renderers/cross-stitch'
+import {
+  renderCrossStitchChart,
+  type CrossStitchChart as CrossStitchChartDefinition,
+} from '@/lib/chart-renderers/cross-stitch'
 import type {
   CalligraphyExemplarDefinition,
   MacrameKnotDefinition,
   OrigamiFoldDefinition,
   WeavingDraftDefinition,
 } from '@/lib/chart-renderers/types'
+import { CrossStitchChartView } from '../chart-viewer/cross-stitch-chart-view'
+import { ReferenceChartView } from '../chart-viewer/reference-chart-view'
+import { ChartSignInGate } from '../chart-viewer/chart-sign-in-gate'
+import '../chart-viewer/chart-viewer.css'
 import { ScaleToken } from './scale-context'
 import type {
   GlossaryRef,
@@ -56,6 +62,18 @@ interface TutorialContentProps {
    * Null on technique pages.
    */
   recipeContext?: RecipeRenderContext | null
+  /**
+   * Tutorial id — required when the body contains a chart node so the
+   * chart viewer can persist progress per (user, tutorial, chartIndex).
+   * Pass null on preview surfaces that should not write progress.
+   */
+  tutorialId?: string | null
+  /**
+   * Whether the current viewer is signed in. Charts are auth-gated —
+   * anonymous users see a sign-in CTA in place of every chart node.
+   * Defaults to false; callers that know better must opt in.
+   */
+  isSignedIn?: boolean
 }
 
 export interface RecipeRenderContext {
@@ -79,6 +97,8 @@ export function TutorialContent({
   techniques = [],
   beginnerMode = false,
   recipeContext = null,
+  tutorialId = null,
+  isSignedIn = false,
 }: TutorialContentProps): ReactNode {
   if (!content || content.type !== 'doc' || !Array.isArray(content.content)) {
     return (
@@ -87,6 +107,10 @@ export function TutorialContent({
       </div>
     )
   }
+
+  // Chart nodes get a stable 0-based ordinal so the chart viewer can
+  // persist progress per chart. Walk the doc once to assign indices.
+  const chartIndexByNode = assignChartIndices(content.content)
 
   return (
     <div className={`tutorial-content${beginnerMode ? ' beginner' : ''}`}>
@@ -99,10 +123,38 @@ export function TutorialContent({
           techniques={techniques}
           beginnerMode={beginnerMode}
           recipeContext={recipeContext}
+          tutorialId={tutorialId}
+          isSignedIn={isSignedIn}
+          chartIndex={chartIndexByNode.get(node) ?? null}
         />
       ))}
     </div>
   )
+}
+
+/**
+ * Walk the top-level body once and assign every chart-bearing node a
+ * 0-based ordinal. Chart kinds are the six interactive renderers. Empty
+ * map when no charts are present.
+ */
+function assignChartIndices(nodes: TipTapNode[]): Map<TipTapNode, number> {
+  const CHART_TYPES = new Set([
+    'crossStitchChart',
+    'craftChart',
+    'weavingDraft',
+    'calligraphyExemplar',
+    'origamiFoldDiagram',
+    'macrameKnot',
+  ])
+  const map = new Map<TipTapNode, number>()
+  let i = 0
+  for (const node of nodes) {
+    if (node.type && CHART_TYPES.has(node.type)) {
+      map.set(node, i)
+      i++
+    }
+  }
+  return map
 }
 
 interface RenderContext {
@@ -111,6 +163,8 @@ interface RenderContext {
   techniques: TechniqueRef[]
   beginnerMode: boolean
   recipeContext: RecipeRenderContext | null
+  tutorialId: string | null
+  isSignedIn: boolean
 }
 
 interface RenderNodeProps {
@@ -120,6 +174,9 @@ interface RenderNodeProps {
   techniques: TechniqueRef[]
   beginnerMode: boolean
   recipeContext: RecipeRenderContext | null
+  tutorialId?: string | null
+  isSignedIn?: boolean
+  chartIndex?: number | null
 }
 
 function RenderNode({
@@ -129,8 +186,19 @@ function RenderNode({
   techniques,
   beginnerMode,
   recipeContext,
+  tutorialId = null,
+  isSignedIn = false,
+  chartIndex = null,
 }: RenderNodeProps): ReactNode {
-  const ctx: RenderContext = { glossary, subTutorials, techniques, beginnerMode, recipeContext }
+  const ctx: RenderContext = {
+    glossary,
+    subTutorials,
+    techniques,
+    beginnerMode,
+    recipeContext,
+    tutorialId,
+    isSignedIn,
+  }
   const attrs = (node.attrs ?? {}) as Record<string, unknown>
 
   switch (node.type) {
@@ -278,78 +346,102 @@ function RenderNode({
       if (!def || typeof def !== 'object') {
         return <div className="craft-chart-missing">Chart not yet attached.</div>
       }
-      return <CraftChart definition={def} />
+      if (!isSignedIn) return <ChartSignInGate subtitle="Crochet / knitting chart" />
+      return (
+        <ReferenceChartView ariaLabel="Craft chart">
+          <CraftChart definition={def} />
+        </ReferenceChartView>
+      )
     }
 
     case 'crossStitchChart': {
-      // Needlework — cross-stitch colour-symbol grid. The block carries an
-      // inline `definition` object with `width`, `height`, `palette`,
-      // `cells`. The renderer at `apps/web/src/lib/chart-renderers/
-      // cross-stitch.ts` returns a self-contained SVG string which we pipe
-      // through with dangerouslySetInnerHTML — server-rendered, no
-      // client-side React.
+      // Needlework — cross-stitch colour-symbol grid. Interactive client
+      // viewer wraps the chart with mark-stitch, view-mode toggles,
+      // legend highlight, palette swap, and progress persistence via
+      // `/api/me/chart-progress/[tutorialId]/[chartIndex]`. Anonymous
+      // users hit the sign-in gate.
       const def = attrs.definition as CrossStitchChartDefinition | undefined
       if (!def || typeof def !== 'object') {
         return <div className="craft-chart-missing">Chart not yet attached.</div>
       }
+      if (!isSignedIn) return <ChartSignInGate subtitle="Cross-stitch chart" />
+      if (!tutorialId || chartIndex === null) {
+        // Preview / non-persisted surface — render as reference-mode only.
+        return (
+          <ReferenceChartView ariaLabel={def.title ?? 'Cross-stitch chart'}>
+            <CrossStitchPreviewSvgFallback definition={def} />
+          </ReferenceChartView>
+        )
+      }
       return (
-        <div
-          className="craft-chart craft-chart-cross-stitch"
-          dangerouslySetInnerHTML={{ __html: renderCrossStitchChart(def) }}
+        <CrossStitchChartView
+          definition={def}
+          tutorialId={tutorialId}
+          chartIndex={chartIndex}
         />
       )
     }
 
     case 'calligraphyExemplar': {
-      // Paper & word — per-glyph calligraphy exemplar. Outline, numbered
-      // ductus, guide-lines, nib-angle chip. Definition is inline in the
-      // block; the renderer lives at
-      // `apps/web/src/lib/chart-renderers/calligraphy-exemplar.tsx`.
+      // Paper & word — per-glyph calligraphy exemplar. Reference-mode only
+      // (no mark-progress); zoom + pan + fullscreen via the shell.
       const def = attrs.definition as CalligraphyExemplarDefinition | undefined
       if (!def || typeof def !== 'object') {
         return <div className="craft-chart-missing">Exemplar not yet attached.</div>
       }
-      return <CalligraphyExemplar definition={def} />
+      if (!isSignedIn) return <ChartSignInGate subtitle="Calligraphy exemplar" />
+      return (
+        <ReferenceChartView ariaLabel="Calligraphy exemplar">
+          <CalligraphyExemplar definition={def} />
+        </ReferenceChartView>
+      )
     }
 
     case 'origamiFoldDiagram': {
       // Paper & word — origami fold sequence (v1 basic-folds renderer).
-      // Mountain + valley folds only. Inline-reverse / petal / squash /
-      // sink / swivel / 3D collapse require the deferred advanced
-      // renderer. Renderer at
-      // `apps/web/src/lib/chart-renderers/origami-fold-basic.tsx`.
+      // Reference-mode wrapper; per-step marking lands in a later
+      // iteration.
       const def = attrs.definition as OrigamiFoldDefinition | undefined
       if (!def || typeof def !== 'object') {
         return <div className="craft-chart-missing">Fold diagram not yet attached.</div>
       }
-      return <OrigamiFoldBasic definition={def} />
+      if (!isSignedIn) return <ChartSignInGate subtitle="Origami fold diagram" />
+      return (
+        <ReferenceChartView ariaLabel="Origami fold diagram">
+          <OrigamiFoldBasic definition={def} />
+        </ReferenceChartView>
+      )
     }
 
     case 'weavingDraft': {
       // Fibre arts — weaving draft (threading × shafts, tie-up,
-      // treadling, computed drawdown). Renderer at
-      // `apps/web/src/lib/chart-renderers/weaving-draft.tsx`. The
-      // `loomType` field on the definition switches the column
-      // labels so frame / rigid-heddle / four-shaft / tapestry /
-      // inkle / card all render off the same shape.
+      // treadling, computed drawdown). Reference-mode wrapper; per-pick
+      // marking lands in a later iteration.
       const def = attrs.definition as WeavingDraftDefinition | undefined
       if (!def || typeof def !== 'object') {
         return <div className="craft-chart-missing">Draft not yet attached.</div>
       }
-      return <WeavingDraft definition={def} />
+      if (!isSignedIn) return <ChartSignInGate subtitle="Weaving draft" />
+      return (
+        <ReferenceChartView ariaLabel="Weaving draft">
+          <WeavingDraft definition={def} />
+        </ReferenceChartView>
+      )
     }
 
     case 'macrameKnot': {
-      // Fibre arts — macramé knot diagram. Ten fundamental knots
-      // covered (square / alternating-square / half-hitch L+R /
-      // double-half-hitch L+R / lark's head / gathering / overhand /
-      // figure-8). Renderer at
-      // `apps/web/src/lib/chart-renderers/macrame-knot.tsx`.
+      // Fibre arts — macramé knot diagram. Single-knot reference;
+      // zoom + fullscreen only.
       const def = attrs.definition as MacrameKnotDefinition | undefined
       if (!def || typeof def !== 'object') {
         return <div className="craft-chart-missing">Knot diagram not yet attached.</div>
       }
-      return <MacrameKnot definition={def} />
+      if (!isSignedIn) return <ChartSignInGate subtitle="Macramé knot diagram" />
+      return (
+        <ReferenceChartView ariaLabel="Macramé knot diagram">
+          <MacrameKnot definition={def} />
+        </ReferenceChartView>
+      )
     }
 
     case 'ingredientsList': {
@@ -390,6 +482,21 @@ function RenderNode({
       // Unknown node — render any children so we don't lose nested text.
       return <>{renderChildren(node.content, ctx)}</>
   }
+}
+
+function CrossStitchPreviewSvgFallback({
+  definition,
+}: {
+  definition: CrossStitchChartDefinition
+}): ReactNode {
+  // Static SVG fallback for preview surfaces that don't have a tutorialId
+  // to persist progress against (e.g. /admin/dev/cross-stitch-preview).
+  return (
+    <div
+      className="craft-chart craft-chart-cross-stitch"
+      dangerouslySetInnerHTML={{ __html: renderCrossStitchChart(definition) }}
+    />
+  )
 }
 
 function renderChildren(

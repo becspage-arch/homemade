@@ -177,6 +177,12 @@ export function PreviewPane({
                 }
               : null
           }
+          // Admin preview — the viewer is always signed in (route is admin-
+          // gated), and we deliberately don't pass a tutorialId so the chart
+          // viewer falls back to the static SVG render (no progress
+          // persistence on previews).
+          isSignedIn={true}
+          tutorialId={null}
         />
       }
     />

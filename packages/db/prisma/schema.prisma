@@ -177,6 +177,11 @@ model User {
   // signed-in Makers exist.
   tutorialVisits TutorialVisit[]
 
+  // Chart-viewer rebuild (2026-05-20). Per-user mark-stitched / mark-row
+  // state for every chart the reader has touched. Charts require auth to
+  // view at all; this is the persistence layer.
+  chartProgress ChartProgress[]
+
   @@index([role])
   @@index([isSuspended])
   @@index([isCreator])
@@ -418,6 +423,7 @@ model Tutorial {
   patternTests      PatternTest[]
   recipeIngredients RecipeIngredient[]
   recipeTools       RecipeTool[]
+  chartProgress     ChartProgress[]
 
   weeklyEditorialPicks WeeklyEditorialPick[]
   projectSchedule      ProjectSchedule[]
@@ -1069,6 +1075,85 @@ enum UserProjectStatus {
   IN_PROGRESS
   COMPLETED
   ABANDONED
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Chart progress — per-user mark-stitched / mark-row / mark-step state
+// ────────────────────────────────────────────────────────────────────────────
+
+// One row per (user, tutorial, chart index) the reader has touched. Charts
+// are not anonymously viewable — every reader is signed-in by the time a
+// ChartProgress row exists. A single tutorial can contain multiple charts;
+// `chartIndex` is the 0-based ordinal of the chart node inside the tutorial
+// body (left-to-right, top-to-bottom traversal of the TipTap doc).
+//
+// The chart type (cross-stitch vs craft-chart vs origami vs weaving) drives
+// which fields are meaningful: cross-stitch uses `markedCells`; knitting /
+// crochet / weaving use `markedRows`; origami uses `markedSteps`. The
+// renderer reads only the field that matches its chart kind.
+model ChartProgress {
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  tutorialId String
+  tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+
+  /// 0-based ordinal of the chart node inside the tutorial body. Tutorials
+  /// often have a single chart (chartIndex = 0); the field exists so a
+  /// pattern with multiple charts (e.g. a sampler with three motifs) can
+  /// track them independently.
+  chartIndex Int
+
+  /// Cross-stitch marked cells. Sparse list of "x,y" strings — only the
+  /// cells the user has marked. Empty array on a fresh row.
+  markedCells String[] @default([])
+
+  /// Knitting / crochet / weaving marked rows. 1-indexed row numbers.
+  markedRows Int[] @default([])
+
+  /// Origami marked steps. 1-indexed step numbers.
+  markedSteps Int[] @default([])
+
+  /// View mode for symbol-vs-colour rendering. Cross-stitch only:
+  /// "symbol-on-colour" (default) | "symbol-only" (print-ink-saver) |
+  /// "colour-only" (preview the finished piece).
+  viewMode String @default("symbol-on-colour")
+
+  /// Display mode for stitched-vs-remaining view. "all" (default) shows
+  /// everything; "stitched" shows only completed cells; "remaining" greys
+  /// completed and emphasises what's left.
+  displayMode String @default("all")
+
+  /// Palette override — optional swap from the chart's authored palette
+  /// to e.g. Anchor codes or a custom recolour. JSON map of paletteKey
+  /// → { hex?, dmcCode?, anchorCode?, name? }. Null = use the authored
+  /// palette as-is.
+  paletteOverride Json?
+
+  /// Per-chart notes. JSON array of { id, cellX?, cellY?, rowNumber?,
+  /// stepNumber?, text, createdAt }. The renderer pins notes to whichever
+  /// anchor field is set (cell for cross-stitch, row for craft, step for
+  /// origami).
+  notes Json @default("[]")
+
+  /// Denormalised count of marked units (cells / rows / steps depending
+  /// on chart kind). Avoids re-counting the array on every list-render.
+  markedCount Int @default(0)
+
+  /// Total time spent in the viewer for this chart, in seconds.
+  /// Accumulated client-side and patched in batches.
+  timeSpentSeconds Int @default(0)
+
+  /// Last interactive touch (mark, toggle, note). Drives the "resume
+  /// where I left off" rail on the dashboard.
+  lastTouchedAt DateTime @default(now())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@id([userId, tutorialId, chartIndex])
+  @@index([userId, lastTouchedAt])
+  @@index([tutorialId])
 }
 
 // ────────────────────────────────────────────────────────────────────────────
