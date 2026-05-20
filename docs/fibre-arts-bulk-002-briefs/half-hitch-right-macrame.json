@@ -1,0 +1,144 @@
+{
+  "slug": "half-hitch-right-macrame",
+  "title": "The half hitch (right to left)",
+  "subtitle": "Mirror direction for diagonal bars that run from right to left",
+  "excerpt": "The right-to-left half hitch is the mirror of the left-to-right version. Two consecutive right-to-left half hitches form a right-to-left double half hitch, used to build diagonal bars that slope upward from left to right. Knowing both directions gives full control over diagonal bar angles in macramé patterns.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "macrame",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The half hitch is a standard knot in rope work and macramé. Observation-led.",
+  "recipeTools": [
+    { "slug": "macrame-board", "isOptional": false },
+    { "slug": "macrame-t-pins", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "right-to-left-half-hitch",
+      "term": "Right-to-left half hitch",
+      "definition": "A half hitch where the working cord begins on the right side and loops over the carrier from right to left. Two in sequence form a right-to-left double half hitch."
+    },
+    {
+      "slug": "diagonal-bar",
+      "term": "Diagonal bar",
+      "definition": "A row of double half hitches tied on a carrier cord angled at a diagonal. The bar travels in the direction the carrier cord is held: carrier held toward the lower left gives a left-leaning bar; toward the lower right gives a right-leaning bar."
+    }
+  ],
+  "aliases": [
+    "right half hitch macrame",
+    "reverse half hitch",
+    "right to left half hitch"
+  ],
+  "techniqueSlugs": ["larks-head-knot-macrame", "half-hitch-left-macrame"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "right-to-left-half-hitch" } }],
+            "text": "right-to-left half hitch"
+          },
+          {
+            "type": "text",
+            "text": " is the mirror of the left-to-right half hitch. It produces "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "diagonal-bar" } }],
+            "text": "diagonal bars"
+          },
+          {
+            "type": "text",
+            "text": " that rise from right to left, and spiral columns that twist in the opposite direction from the left-to-right version. Most macramé patterns use both directions to create V shapes, X shapes, and chevron rows."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Cotton macramé cord, 3 mm single-strand", "qty": "2 x 60 cm lengths" },
+            { "name": "Macramé board or firm cushion", "qty": "1" },
+            { "name": "T-pins", "qty": "4" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The knot, step by step" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pin one cord horizontally as the carrier cord. The working cord begins on the right side."
+          }
+        ]
+      },
+      {
+        "type": "macrameKnot",
+        "attrs": {
+          "knotName": "Half hitch (right to left)",
+          "steps": [
+            "Hold the working cord in your right hand. Bring it over the carrier cord from right to left.",
+            "Loop the working cord under the carrier cord, moving left to right.",
+            "Bring the working cord up and through the loop it has formed on the right side of itself.",
+            "Pull the working cord downward to tighten. One right-to-left half hitch is seated on the carrier.",
+            "As with the left-to-right half hitch, a single half hitch does not lock. Follow with a second right-to-left half hitch to form the stable double half hitch."
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using both directions in patterns" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chevron rows use two carrier cords: one angled toward the lower left (knotted with left-to-right half hitches working outward from centre) and one angled toward the lower right (knotted with right-to-left half hitches working outward). V rows and X rows are built on the same principle, with the carrier cords held at contrasting angles to create the shapes."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Two problems encountered when practising mirror-direction half hitches.",
+          "items": [
+            {
+              "symptom": "Diagonal bar curves rather than holding a straight angle",
+              "cause": "The carrier cord was not held at a consistent angle throughout the row.",
+              "fix": "Pin the carrier cord at both ends before beginning the row. Keep the working cord tension even across all knots."
+            },
+            {
+              "symptom": "V shape closes up too tightly",
+              "cause": "Carrier cords pulled too steeply inward.",
+              "fix": "Widen the angle of the two carrier cords at the start of the V. The meeting point drops lower and the shape opens."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

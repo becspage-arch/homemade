@@ -1,0 +1,136 @@
+{
+  "slug": "gathering-knot-macrame",
+  "title": "The gathering knot",
+  "subtitle": "Wrapping a bundle of cords to create a cylindrical column",
+  "excerpt": "The gathering knot (also called the wrapping knot) binds a group of cords into a tight column by wrapping one cord many times around the bundle and securing both ends inside. It is the standard finishing knot for plant-hanger necks and cords that converge to a single point, and the standard technique for creating decorative cylindrical sections in wall hangings.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "macrame",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The gathering (wrapping) knot is a standard macramé structure used for bundling and finishing cord groups. Observation-led.",
+  "recipeTools": [
+    { "slug": "macrame-board", "isOptional": false },
+    { "slug": "macrame-t-pins", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "gathering-knot",
+      "term": "Gathering knot",
+      "definition": "A macramé finishing and structural knot formed by wrapping one cord many times around a bundle of cords and threading both ends inside the column. Also called the wrapping knot."
+    },
+    {
+      "slug": "wrapping-cord",
+      "term": "Wrapping cord",
+      "definition": "The single cord used to wrap around the bundle in a gathering knot. It is separate from the bundle cords and is hidden inside the column once complete."
+    }
+  ],
+  "aliases": [
+    "wrapping knot macrame",
+    "macrame gathering knot",
+    "bundle knot macrame"
+  ],
+  "techniqueSlugs": ["square-knot-macrame"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gathering-knot" } }],
+            "text": "gathering knot"
+          },
+          {
+            "type": "text",
+            "text": " uses one separate "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wrapping-cord" } }],
+            "text": "wrapping cord"
+          },
+          {
+            "type": "text",
+            "text": " wound tightly around a bundle. A loop is laid along the top of the bundle before wrapping begins; after wrapping, the working end is threaded through the loop and the loop is pulled down under the wrapping to lock both ends inside the column. The result is a smooth cylinder with no visible knot."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Cotton macramé cord, 3 mm single-strand", "qty": "1 wrapping cord, 80 cm; bundle of at least 6 cords to practice on" },
+            { "name": "Macramé board", "qty": "1" },
+            { "name": "T-pins", "qty": "4" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The knot, step by step" }]
+      },
+      {
+        "type": "macrameKnot",
+        "attrs": {
+          "knotName": "Gathering knot",
+          "steps": [
+            "Hold the bundle of cords together. Lay the wrapping cord alongside the bundle with its tail pointing downward and a 5 cm loop formed at the top. The loop should run along the right side of the bundle.",
+            "Starting just below the loop, wrap the wrapping cord tightly around the bundle, moving downward. Each wrap sits close against the previous one.",
+            "Wrap to the desired column height (typically 2 to 4 cm for a plant-hanger neck; up to 6 cm for a decorative band). For each additional centimetre of column, allow approximately 6 to 8 cm of wrapping cord.",
+            "After the last wrap, thread the working end of the wrapping cord through the loop at the top of the column.",
+            "Pull the tail at the bottom of the column firmly downward. The loop tightens and draws the working end down inside the column, locking both ends.",
+            "Trim both the top tail and the bottom tail close to the wrapping. Neither end should be visible from outside the column."
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Column height and cord allowance" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 2 cm column takes approximately 15 to 20 cm of wrapping cord on a bundle of 8 cords in 3 mm rope. A 4 cm column needs 30 to 35 cm. Cut the wrapping cord generously: excess is trimmed at the end; insufficient cord means unwrapping and starting again."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Two common problems with gathering knots.",
+          "items": [
+            {
+              "symptom": "Loop pulls through the column completely and both ends come loose",
+              "cause": "The loop was too small and slipped through when the tail was pulled.",
+              "fix": "Leave a loop of at least 3 cm (the wrapping cord doubled back on itself should be thumb-width or wider). A larger loop grips as it is pulled down."
+            },
+            {
+              "symptom": "Column is lumpy rather than smooth",
+              "cause": "Wraps were spaced apart rather than touching each other.",
+              "fix": "Lay each wrap immediately against the previous one. Firm, consistent tension produces a smooth surface."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

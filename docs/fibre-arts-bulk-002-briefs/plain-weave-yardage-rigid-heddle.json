@@ -1,0 +1,191 @@
+{
+  "slug": "plain-weave-yardage-rigid-heddle",
+  "title": "Calculating and weaving yardage on a rigid heddle loom",
+  "subtitle": "Planning warp length for a finished cloth: allowances, sett, and take-up",
+  "excerpt": "Weaving a usable length of plain-weave cloth on a rigid heddle loom requires calculating warp length with allowances for loom waste, take-up, and draw-in. The sett determines how many threads per inch are required for the intended hand and drape of the cloth. This pattern walks through the calculation and weaves a sample panel long enough for a scarf or small project piece.",
+  "type": "PATTERN",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Plain weave yardage calculation follows standard rigid heddle loom practice. Technique is observation-led.",
+  "recipeTools": [
+    { "slug": "rigid-heddle-loom", "isOptional": false },
+    { "slug": "warping-board", "isOptional": false },
+    { "slug": "stick-shuttle", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sett",
+      "term": "Sett",
+      "definition": "The number of warp ends per inch (EPI) in a woven cloth. Sett determines whether the fabric is warp-dominant, weft-dominant, or balanced, and affects the drape and density of the finished piece."
+    },
+    {
+      "slug": "take-up",
+      "term": "Take-up",
+      "definition": "The reduction in length and width that occurs as the weft interlaces with the warp. Take-up is typically 10 to 15 percent on a rigid heddle loom and must be added to any warp length calculation."
+    },
+    {
+      "slug": "loom-waste",
+      "term": "Loom waste",
+      "definition": "The length of warp that cannot be woven because it is tied to the front and back beams. On a rigid heddle loom, loom waste is typically 45 to 60 cm and is included in the total warp length calculation."
+    }
+  ],
+  "aliases": [
+    "rigid heddle yardage weaving",
+    "weaving a scarf rigid heddle",
+    "rigid heddle warp calculation"
+  ],
+  "techniqueSlugs": ["warping-a-rigid-heddle-loom"],
+  "criticalTechniques": ["warping-a-rigid-heddle-loom"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Producing a useful length of cloth rather than a small sample requires calculating the full warp before warping begins. The three adjustments to add to the desired finished length are "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "loom-waste" } }],
+            "text": "loom waste"
+          },
+          {
+            "type": "text",
+            "text": " (typically 50 cm on a rigid heddle loom), "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "take-up" } }],
+            "text": "take-up"
+          },
+          {
+            "type": "text",
+            "text": " (10 to 15 percent of finished length), and a fringe or hem allowance if needed. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sett" } }],
+            "text": "sett"
+          },
+          {
+            "type": "text",
+            "text": " is determined by the reed: an 8-dent reed at one thread per dent gives 8 EPI; a 10-dent reed gives 10 EPI."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Materials and finished size" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This pattern produces a 20 cm x 150 cm scarf panel at 8 EPI in DK weight wool or cotton. Scale warp length and width proportionally for other projects."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "DK weight yarn (wool or cotton)", "qty": "approximately 150 g for a 20 x 150 cm scarf" },
+            { "name": "Rigid heddle loom, 8-dent reed, minimum 25 cm width", "qty": "1" },
+            { "name": "Warping board", "qty": "1" },
+            { "name": "Stick shuttle", "qty": "1" },
+            { "name": "Measuring tape", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Calculate the warp length" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a 150 cm finished length: add 50 cm loom waste + 20 cm take-up (13 percent) + 10 cm hem or fringe allowance = 230 cm total warp length per thread. For a 20 cm finished width at 8 EPI: 20 cm x 8 = 160 warp threads. Wind 160 threads to 230 cm on the warping board."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Thread and wind on" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Thread the heddle at 8 EPI, alternating threads through holes and slots. Spread the warp evenly across the back beam, using folded paper or card strips to maintain even tension as the warp is wound on. The warp should lie flat with no thread crossing another."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Weave the full length" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave a header of scrap yarn (5 to 6 rows) to spread the warp evenly before beginning the main cloth. Weave plain tabby (up-shed, weft, beat; down-shed, weft, beat) across the full warp length, checking selvedge width every 20 rows. Stop weaving when approximately 25 cm of warp remains unwoven."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Finish the cloth" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the cloth from the loom and secure the weft ends before washing. Machine or hand wash at 30°C (wool) or 40°C (cotton) and press while damp. The cloth will shrink slightly in both length and width as the weave sets. Measure the finished dimensions and compare to the target to calibrate future warp calculations."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Two problems in rigid heddle yardage weaving.",
+          "items": [
+            {
+              "symptom": "Finished cloth is narrower than the warp width",
+              "cause": "Draw-in during weaving pulled the selvedges inward.",
+              "fix": "Arc the weft before beating every row. Maintain a 15-degree weft angle to the fell line. Check selvedge width against the reed width at regular intervals."
+            },
+            {
+              "symptom": "Warp threads breaking mid-project",
+              "cause": "Warp tension is uneven, or the sett is too dense for the yarn weight.",
+              "fix": "Check that all threads are wound on evenly under consistent tension. If one side is looser, a rolled wad of paper under that edge of the beam corrects the imbalance."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

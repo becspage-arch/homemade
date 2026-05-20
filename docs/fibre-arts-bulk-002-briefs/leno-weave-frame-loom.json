@@ -1,0 +1,165 @@
+{
+  "slug": "leno-weave-frame-loom",
+  "title": "Leno weave on a frame loom",
+  "subtitle": "An open gauze structure made by crossing adjacent warp threads before each pick",
+  "excerpt": "Leno weave (also called gauze weave) crosses adjacent warp threads before the weft passes through. The locked crossing prevents threads from shifting, creating an open, stable mesh from widely spaced warps. On a frame loom leno is worked by hand rather than with heddles, making it accessible without complex equipment. The resulting cloth is open, light, and dimensionally stable.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Leno weave is a documented gauze structure found in ancient Egyptian and pre-Columbian textiles. Frame loom adaptation is observation-led.",
+  "recipeTools": [
+    { "slug": "frame-loom", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "leno-weave",
+      "term": "Leno weave",
+      "definition": "A gauze weave structure in which adjacent warp threads cross each other before the weft passes through. The crossed threads lock around the weft, preventing shifting, and create an open mesh cloth."
+    },
+    {
+      "slug": "twist-pair",
+      "term": "Twist pair",
+      "definition": "Two adjacent warp threads that are crossed over each other in leno weaving to form a locked unit. Each twist pair produces one open cell in the finished gauze cloth."
+    }
+  ],
+  "aliases": [
+    "leno weave tutorial",
+    "gauze weave frame loom",
+    "open weave frame loom"
+  ],
+  "techniqueSlugs": ["warping-a-frame-loom", "freeform-weaving-frame-loom"],
+  "criticalTechniques": ["warping-a-frame-loom"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "leno-weave" } }],
+            "text": "leno weave"
+          },
+          {
+            "type": "text",
+            "text": ", each pair of adjacent warp threads is twisted before the weft passes through. The weft locks inside the twist, preventing the threads from unravelling or sliding. On a frame loom, the twisting is done by hand on each row, with no heddle required. Working at a low EPI (4 to 6) produces a clearly open mesh. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "twist-pair" } }],
+            "text": "twist pairs"
+          },
+          {
+            "type": "text",
+            "text": " can be worked across the full width for an all-over gauze, or used in alternating bands with plain weave rows."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Frame loom, warped at 4 to 6 EPI in a smooth, strong thread", "qty": "1" },
+            { "name": "Weft thread (fine cotton, linen, or silk)", "qty": "small ball" },
+            { "name": "Blunt darning needle", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Warp the frame at low sett" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Warp the frame at 4 to 6 EPI. Leno does not work well at high sett: the threads need enough space to twist over each other and for the open cells to be visible. A smooth, strong warp thread is essential as it must survive repeated twisting. Linen or strong cotton are both suitable."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Form the first twist pair" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Starting at the left selvedge, take the first two warp threads. Cross the left thread over the right thread. Hold the cross with one finger. The opening between the crossed threads and the uncrossed threads behind them forms the leno shed. Pass the weft through this shed. Release the cross. Move to the next pair of warp threads and repeat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Complete the row" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work across the full warp width, crossing each pair in the same direction (left over right throughout the row). After the last pair, bring the weft end to the right selvedge. Do not beat heavily: leno cloth should remain open. A light press with a finger to seat the weft is enough."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Alternate with plain weave rows" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave one plain weave row between each leno row to space the cells and stabilise the cloth. For a denser mesh, work two leno rows before each plain weave row. The open cells become more pronounced as the cloth grows."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Two common problems in leno weaving.",
+          "items": [
+            {
+              "symptom": "Open cells collapsing and cloth looking like plain weave",
+              "cause": "The warp sett is too high, or the weft is beaten too firmly.",
+              "fix": "Re-warp at 4 EPI rather than 8. Handle the weft very lightly after each pick: leno should look open, not packed."
+            },
+            {
+              "symptom": "Warp threads breaking when twisted",
+              "cause": "Warp thread is too fine or too loosely spun to withstand repeated twisting.",
+              "fix": "Use a smooth, tightly plied warp thread. A 2-ply linen or strong cotton is more durable than a single-ply or loosely spun yarn for leno."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

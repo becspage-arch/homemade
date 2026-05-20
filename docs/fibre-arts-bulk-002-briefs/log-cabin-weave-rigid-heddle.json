@@ -1,0 +1,159 @@
+{
+  "slug": "log-cabin-weave-rigid-heddle",
+  "title": "Log cabin weave on a rigid heddle loom",
+  "subtitle": "A two-colour block pattern woven at 50/50 warp and weft ratio on a single heddle",
+  "excerpt": "Log cabin is a classic colour-block weave structure produced from a two-colour warp and a two-colour weft. Alternating the warp colour in adjacent threads and alternating the weft colour between picks produces a grid of interlocking colour blocks. The structure works on a single rigid heddle without pickup sticks, provided the threading is set up correctly at warping time.",
+  "type": "PATTERN",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Log cabin weave structure is a documented plain-weave variation used in American and Scandinavian textile traditions. Technique is observation-led.",
+  "recipeTools": [
+    { "slug": "rigid-heddle-loom", "isOptional": false },
+    { "slug": "warping-board", "isOptional": false },
+    { "slug": "stick-shuttle", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "log-cabin",
+      "term": "Log cabin",
+      "definition": "A plain-weave colour structure produced by alternating two colours in the warp at one thread each, and alternating the weft colour between picks. The result is a grid of colour blocks on both faces of the cloth."
+    },
+    {
+      "slug": "colour-block",
+      "term": "Colour block",
+      "definition": "A rectangular area of one warp-and-weft colour combination in a log cabin or similar two-colour weave. Block size is determined by how many picks of each weft colour are woven before switching."
+    }
+  ],
+  "aliases": [
+    "log cabin weaving",
+    "two colour rigid heddle",
+    "log cabin rigid heddle"
+  ],
+  "techniqueSlugs": ["warping-a-rigid-heddle-loom", "plain-weave-on-a-cardboard-loom"],
+  "criticalTechniques": ["warping-a-rigid-heddle-loom"],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "log-cabin" } }],
+            "text": "log cabin"
+          },
+          {
+            "type": "text",
+            "text": " warp alternates two colours: light/dark/light/dark across every thread position. This is set up at the warping board, not at the heddle. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colour-block" } }],
+            "text": "colour blocks"
+          },
+          {
+            "type": "text",
+            "text": " in the finished cloth form by switching weft colour after a set number of picks: 4 picks of light, then 4 picks of dark, and so on."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Materials and finished size" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This pattern produces a 25 cm x 30 cm swatch at 8 EPI. Scale warp length and width for larger projects. Both warp and weft use the same yarn weight."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "DK cotton or wool yarn, colour A (light)", "qty": "30 g" },
+            { "name": "DK cotton or wool yarn, colour B (dark)", "qty": "30 g" },
+            { "name": "Rigid heddle loom, 8-dent reed, minimum 30 cm width", "qty": "1" },
+            { "name": "Warping board", "qty": "1" },
+            { "name": "Two stick shuttles (one per weft colour)", "qty": "2" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Wind the two-colour warp" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wind the warp alternating colour A and colour B with every thread. The sequence must be strict: A, B, A, B throughout. Do not group two A threads or two B threads together: this breaks the log cabin structure. For a 25-cm-wide warp at 8 EPI, wind 20 threads of each colour (40 total)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Thread the heddle in alternating colour order" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Thread the heddle maintaining the A/B alternation from the warp. Colour A threads go through the holes; colour B threads go through the slots (or vice versa: the important thing is consistency, not which is which). This threading ensures each colour surfaces on opposite faces of the cloth."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Weave the pattern blocks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Load shuttle 1 with colour A and shuttle 2 with colour B. Weave 4 picks of colour A (alternating up-shed and down-shed). Switch to colour B and weave 4 picks. The pattern blocks will appear as colour A squares alternating with colour B squares in a grid. Adjust block size by changing the number of picks per colour."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "One common warping error that prevents log cabin from forming.",
+          "items": [
+            {
+              "symptom": "No colour blocks visible — the cloth looks like plain weave in a single colour",
+              "cause": "The warp was not wound in strict alternating colours, or two threads of the same colour were threaded adjacent to each other.",
+              "fix": "Check the warp at the cross. Each pair of threads at the cross should be colour A then colour B. If two same-colour threads are adjacent, re-thread those positions before weaving further."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

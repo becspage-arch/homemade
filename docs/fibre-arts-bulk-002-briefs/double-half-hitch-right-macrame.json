@@ -1,0 +1,136 @@
+{
+  "slug": "double-half-hitch-right-macrame",
+  "title": "The double half hitch (right to left)",
+  "subtitle": "The right-to-left version for diagonal bars that climb from right to left",
+  "excerpt": "The right-to-left double half hitch is two right-to-left half hitches in sequence on the same carrier cord. It is the mirror image of the left-to-right version. Combined with the left-to-right double half hitch, it builds the diagonal bars, V shapes, and chevrons that form the visual grammar of most macramé pattern work.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "macrame",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The double half hitch is a standard macramé knot equivalent to the clove hitch in rope work. Observation-led.",
+  "recipeTools": [
+    { "slug": "macrame-board", "isOptional": false },
+    { "slug": "macrame-t-pins", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "right-to-left-double-half-hitch",
+      "term": "Right-to-left double half hitch",
+      "definition": "Two consecutive right-to-left half hitches tied by the same working cord on the same carrier cord. The pair locks together and holds firmly without external tension."
+    },
+    {
+      "slug": "chevron-row",
+      "term": "Chevron row",
+      "definition": "A V-shaped or inverted-V row formed by meeting two rows of double half hitches: left-to-right hitches on the left-side carrier and right-to-left hitches on the right-side carrier, or vice versa."
+    }
+  ],
+  "aliases": [
+    "double half hitch right to left",
+    "reverse double half hitch",
+    "DHH right macrame"
+  ],
+  "techniqueSlugs": ["double-half-hitch-macrame", "half-hitch-right-macrame"],
+  "criticalTechniques": ["double-half-hitch-macrame"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "right-to-left-double-half-hitch" } }],
+            "text": "right-to-left double half hitch"
+          },
+          {
+            "type": "text",
+            "text": " is two right-to-left half hitches tied in sequence on the same carrier cord. Two half hitches lock together into a firm unit. This entry pairs with the published left-to-right double half hitch; together they produce "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chevron-row" } }],
+            "text": "chevron rows"
+          },
+          {
+            "type": "text",
+            "text": ", diamond frames, and diagonal-bar grids."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Cotton macramé cord, 3 mm single-strand", "qty": "8 x 60 cm lengths for a practice grid" },
+            { "name": "Macramé board", "qty": "1" },
+            { "name": "T-pins", "qty": "6" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The knot, step by step" }]
+      },
+      {
+        "type": "macrameKnot",
+        "attrs": {
+          "knotName": "Double half hitch (right to left)",
+          "steps": [
+            "Hold the carrier cord taut at a diagonal angled toward the lower left. Pin the top-right end to the board.",
+            "Take the rightmost working cord. Bring it over the carrier cord from right to left.",
+            "Loop it under the carrier cord, moving left to right, and bring it up through the loop it has formed. Pull to tighten. First half hitch seated.",
+            "With the same working cord, repeat: over the carrier right to left, under left to right, through the loop, tighten. Second half hitch seated.",
+            "One double half hitch is complete. Move to the next working cord to the left and repeat.",
+            "Continue leftward until all working cords are knotted onto the carrier."
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Combining with the left-to-right version" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "To make a chevron row: mount eight cords (16 working ends) on a dowel. Take the centre-right cord as the right-to-left carrier. Knot the remaining cords to the right of centre onto it, working right to left. Take the centre-left cord as the left-to-right carrier. Knot the cords to the left of centre onto it, working left to right. The two carrier cords will meet at the centre bottom, where they are joined with a square knot or a final double half hitch."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Common errors when building right-to-left rows.",
+          "items": [
+            {
+              "symptom": "Bar slopes in the wrong direction",
+              "cause": "Carrier cord was angled toward the lower right instead of the lower left.",
+              "fix": "The carrier cord angle determines bar direction. For a right-to-left bar, hold the carrier at a diagonal toward the lower left before pinning."
+            },
+            {
+              "symptom": "Knots feel loose and do not seat firmly",
+              "cause": "Only one half hitch was completed instead of two, or the second was pulled in the wrong direction.",
+              "fix": "Both half hitches must be in the same direction (both right to left). Check that the second pass also loops right over left before going through."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

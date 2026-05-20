@@ -1,0 +1,135 @@
+{
+  "slug": "reading-wraps-per-inch",
+  "title": "Reading wraps per inch (WPI)",
+  "subtitle": "How to use a wraps-per-inch measurement to match hand-spun yarn to patterns",
+  "excerpt": "Wraps per inch (WPI) is the standard measurement for comparing hand-spun yarn weight to commercial yarn categories and pattern specifications. Understanding WPI allows a spinner to test whether a finished skein will substitute for a commercial yarn in a pattern, and to set a consistent target during spinning. The same principle applies to metres per 100 g, which UK patterns more commonly specify.",
+  "type": "READING",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Wraps-per-inch measurement is a standard tool in hand-spinning instruction. Observation-led.",
+  "recipeTools": [
+    { "slug": "measuring-tape-soft", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "wraps-per-inch",
+      "term": "Wraps per inch",
+      "definition": "A measurement of yarn thickness: the number of times a length of yarn wraps around a 1-inch (2.5 cm) ruler without overlapping. Thicker yarn produces a lower WPI; finer yarn a higher WPI."
+    },
+    {
+      "slug": "yarn-weight-category",
+      "term": "Yarn weight category",
+      "definition": "A standardised system for describing yarn thickness, from lace (finest) through fingering, sport, DK, aran, bulky, and super bulky. Each category corresponds to a WPI range and a standard knit gauge."
+    }
+  ],
+  "aliases": [
+    "wraps per inch spinning",
+    "WPI yarn measurement",
+    "hand spun yarn weight"
+  ],
+  "techniqueSlugs": ["spinning-a-dk-yarn-on-the-wheel"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wraps-per-inch" } }],
+            "text": "wraps-per-inch"
+          },
+          {
+            "type": "text",
+            "text": " reading gives the spinner a number that can be compared directly to a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "yarn-weight-category" } }],
+            "text": "yarn weight category"
+          },
+          {
+            "type": "text",
+            "text": ". WPI is measured in imperial units (per inch) because the standard reference tables are set in imperial, but the measurement itself is taken from a 1-inch (2.5 cm) section of a ruler and the result is a dimensionless count."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to measure WPI" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hold the yarn in the non-dominant hand without tension (do not stretch it). Wrap it around a ruler or a dedicated WPI tool at a measured 1-inch section. Each wrap should touch the previous without overlapping or gapping. Count the wraps. Repeat twice and average the three readings."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "WPI to yarn weight table" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Approximate WPI ranges for each standard weight category:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lace: 30 to 40 WPI" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fingering / 4-ply: 18 to 28 WPI" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sport / 5-ply: 16 to 18 WPI" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "DK / 8-ply: 12 to 16 WPI" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Aran / 10-ply: 8 to 12 WPI" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bulky: 6 to 8 WPI" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Super bulky: below 6 WPI" }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "WPI versus metres per 100 g" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "UK patterns more often specify yarn weight in metres per 100 g (m/100 g) than in WPI. To find the m/100 g of a hand-spun skein: weigh the skein in grams, measure its total length in metres, then calculate (total length / weight) x 100. A DK hand-spun typically runs 180 to 220 m per 100 g; an aran runs 80 to 120 m per 100 g. Both systems converge on the same result; WPI is faster for a quick in-progress check, m/100 g is more exact for pattern matching."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A spinner produces a 100-g skein that measures 14 WPI. This falls in the DK category (12 to 16 WPI). The skein is 190 m in total, giving 190 m/100 g. A pattern calling for DK at 200 m/100 g will work with this yarn, though the spinner should knit a tension square to confirm gauge before committing to the full project."
+          }
+        ]
+      }
+    ]
+  }
+}
