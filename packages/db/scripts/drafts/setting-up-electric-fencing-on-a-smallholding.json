@@ -1,0 +1,92 @@
+{
+  "slug": "setting-up-electric-fencing-on-a-smallholding",
+  "title": "Setting up electric fencing on a smallholding",
+  "subtitle": "Energiser selection, stake placing, earthing, and testing for a multi-use temporary fence that works across species.",
+  "excerpt": "Electric fencing is one of the most versatile tools on a mixed smallholding: the same energiser and stakes that divide a sheep paddock in March can be reconfigured for pigs in May and poultry netting in July. Understanding the few principles that make any electric fence work (adequate earthing, consistent voltage, good strand tension) makes the rest straightforward.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "British Standards BS EN 60335-2-76 (Electric Fence Energisers). https://www.bsigroup.com\nHSE, Electricity at Work Regulations 1989, agricultural guidance. https://www.hse.gov.uk",
+  "glossaryTerms": [
+    {
+      "slug": "stored-energy-joules",
+      "term": "Stored energy (joules)",
+      "definition": "The energy available in the energiser's capacitor for each pulse. A higher joule rating means more energy is available to push current through a long fence with vegetation contact or high resistance. Match the joule rating to the fence length and species: sheep on a short run need 1 to 2 J; pigs or cattle on a long run may need 5 to 10 J."
+    },
+    {
+      "slug": "voltage-drop",
+      "term": "Voltage drop",
+      "definition": "The reduction in fence voltage measured at increasing distances from the energiser. A fence reading 8,000 V at the energiser should read at least 3,000 V at the far end to be effective. Excessive drop is caused by poor earthing, wire breaks, vegetation contact, or fence wire that is too thin for the length of the run."
+    }
+  ],
+  "techniqueSlugs": [
+    "setting-up-electric-fencing-for-pigs",
+    "fitting-electric-poultry-netting"
+  ],
+  "criticalTechniques": [],
+  "aliases": ["electric fence smallholding", "portable electric fencing UK", "energiser setup livestock"],
+  "recipeTools": [
+    { "slug": "electric-fence-energiser" },
+    { "slug": "electric-fence-stake" }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The energiser outputs a pulse of high-voltage, low-amperage current every second. The pulse travels from the live terminal through the fence wire, through any animal that touches it, and back through the ground to the earth stakes and the energiser's earth terminal. If any part of this circuit is broken or has high resistance, the shock delivered to the animal is weak or absent. Understanding this circuit makes fault diagnosis straightforward: start at the energiser terminal and work outward." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing an energiser" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Select an energiser rated for at least twice the fence length you are running: manufacturers' ratings assume an ideal fence with no vegetation contact. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stored-energy-joules" } }], "text": "Stored energy" },
+          { "type": "text", "text": " is the useful number to compare, not output voltage. A mains energiser gives consistent output with no maintenance; a battery energiser provides flexibility but requires regular charge monitoring." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Earthing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Drive at least three 1.2-metre galvanised steel stakes into the ground 1 metre apart, connected together with dedicated earth wire. Connect the chain back to the energiser's earth terminal. In dry conditions, the soil conductivity drops: if the fence voltage falls in a summer dry spell, water the soil around the earth stakes before looking for other faults. The earth system should be separate from any building earth or lightning protection system." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Strand heights by species" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Sheep: two strands at 30 cm and 50 cm for most breeds; add a third at 70 cm for large breeds. Pigs: 15 cm and 30 cm for weaners, add 45 cm as they grow. Cattle: one strand at 75 to 85 cm is often enough for trained stock; two strands for new or excitable animals. Setting the bottom strand at nose height relative to each species is the single most useful adjustment." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Testing and maintenance" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Test the fence with a digital tester at the energiser terminal and at the far end of the run before livestock are introduced, and each morning during use. A reading below 3,000 V at the far end indicates a fault. Walk the line looking for vegetation contact (the most common cause), broken wire, or a stake that has fallen. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "voltage-drop" } }], "text": "Voltage drop" },
+          { "type": "text", "text": " over 50 percent from energiser to far end suggests a wire-gauge or earthing problem rather than a simple fault on the line." }
+        ]
+      }
+    ]
+  }
+}

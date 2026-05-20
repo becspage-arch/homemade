@@ -1,0 +1,86 @@
+{
+  "slug": "worming-pigs",
+  "title": "Worming pigs",
+  "subtitle": "Assessing the worm burden and administering an oral anthelmintic to outdoor weaners at appropriate intervals.",
+  "excerpt": "Outdoor pigs on permanent or regularly-used ground carry a significant worm burden. The major species affecting UK pigs are roundworm (Ascaris suum) and whipworm (Trichuris suis), both of which reduce growth rate and feed conversion. A faecal egg count before treatment allows targeted dosing and avoids unnecessary anthelmintic use.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Pork, Parasite control in pigs guidance. https://ahdb.org.uk\nVeterinary Medicines Directorate, prescription-only medicines guidance. https://www.gov.uk/guidance/veterinary-medicines-regulations",
+  "glossaryTerms": [
+    {
+      "slug": "faecal-egg-count",
+      "term": "Faecal egg count (FEC)",
+      "definition": "A laboratory analysis of a dung sample that estimates the number of worm eggs per gram of faeces. In pigs, an FEC of over 200 eggs per gram (epg) generally indicates a treatment is warranted. FECs allow targeted treatment rather than routine blanket dosing."
+    },
+    {
+      "slug": "anthelmintic",
+      "term": "Anthelmintic",
+      "definition": "A drug that kills internal parasites (worms). Pig anthelmintics are prescription-only medicines in the UK and require a veterinary prescription before purchase. Common classes are benzimidazoles (e.g. flubendazole, in-feed) and macrocyclic lactones (e.g. ivermectin, injectable)."
+    },
+    {
+      "slug": "in-feed-wormer",
+      "term": "In-feed wormer",
+      "definition": "An anthelmintic incorporated into the pig's feed for a set number of days. The most commonly used method for treating outdoor weaners because it avoids handling. Requires all pigs in the group to eat the medicated feed fully, so competitive access to feed troughs must be confirmed."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["pig worming", "pig parasite control", "deworming pigs"],
+  "recipeTools": [
+    { "slug": "drenching-gun" }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "All anthelmintics for pigs in the UK are prescription-only medicines (POMs). You will need a veterinary prescription to purchase them, which requires an existing relationship with a vet and an on-farm visit for the first prescription. Collect a fresh dung sample from at least three pigs and send it to a vet lab for a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "faecal-egg-count" } }], "text": "faecal egg count" },
+          { "type": "text", "text": " before your first treatment: this establishes the burden level and justifies the prescription." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to treat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For outdoor weaners on heavily used ground, treating on arrival (as part of settling in) and again at 8 to 10 weeks on the holding is a common approach. Pigs showing poor growth, rough coat, pot-bellied appearance, or scouring despite adequate feed should have an FEC regardless of schedule. Blanket interval worming without FEC monitoring contributes to " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "anthelmintic" } }], "text": "anthelmintic" },
+          { "type": "text", "text": " resistance." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "In-feed treatment" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The most practical method for small groups is the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "in-feed-wormer" } }], "text": "in-feed wormer" },
+          { "type": "text", "text": " (commonly flubendazole powder mixed into pellets for five to seven days). Calculate the dose on body weight. Weigh or estimate each pig and mix the full dose into the correct amount of feed. Observe the group at every meal during treatment to confirm all pigs are eating their share and one pig is not consuming the medicated ration of another." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Oral drenching" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "If you need to dose an individual pig that is not eating well, a drenching gun allows precise delivery of a liquid anthelmintic. Restrain the pig against a corner or gate. Insert the nozzle into the side of the mouth behind the canines and deposit the dose slowly. Hold the pig's snout level: tipping the head too far back risks aspiration. Oral drenching on pigs requires practice; most keepers prefer in-feed treatment where individual dosing can be confirmed." }]
+      }
+    ]
+  }
+}

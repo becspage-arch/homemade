@@ -1,0 +1,88 @@
+{
+  "slug": "understanding-the-6-day-movement-standstill",
+  "title": "Understanding the 6-day movement standstill",
+  "subtitle": "What the livestock movement standstill requires, which species it covers, and which movements are exempt.",
+  "excerpt": "The 6-day movement standstill is one of the most commonly misunderstood rules in UK smallholding. It does not mean an animal that has just arrived cannot leave for six days: it means that after any eligible animal arrives on a holding, no animal of the same species may leave for the next six days (with specific exceptions). Getting this wrong is a criminal offence under the Disease Control (England) Order 2003.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 15,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Disease Control (England) Order 2003. https://www.legislation.gov.uk\nAPHA, livestock movement standstill guidance. https://www.gov.uk/guidance/animal-movement-licences\nDEFRA, movement standstill explanation. https://www.gov.uk",
+  "glossaryTerms": [
+    {
+      "slug": "standstill-trigger",
+      "term": "Standstill trigger",
+      "definition": "An event that starts the 6-day clock. For most species, the arrival of any animal on the holding triggers a standstill for all animals of that species on the holding. Day zero is the day of arrival; the standstill ends at midnight on day six. If a second animal arrives on day three, the clock resets to day zero from day three."
+    },
+    {
+      "slug": "exempt-movement",
+      "term": "Exempt movement",
+      "definition": "A movement that is either not subject to the standstill rule or is permitted during the standstill period. The main exempt movements are: pigs direct to slaughter from any holding; cattle direct to a licensed market; sheep moved for emergency veterinary treatment with a veterinary certificate. Specific conditions apply to each exemption and guidance changes: confirm current rules with APHA before relying on an exemption."
+    }
+  ],
+  "techniqueSlugs": [
+    "buying-weaners-and-settling-them-in",
+    "keeping-smallholding-livestock-records"
+  ],
+  "criticalTechniques": [],
+  "aliases": ["livestock standstill UK", "6 day standstill pigs", "movement standstill rules"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The rule applies to cattle, sheep, goats, and pigs. When any animal of a covered species arrives on your holding, you must not move any animal of the same species off your holding for the next six days. This is what the rule says. The most common mistake is to assume it only restricts the newly arrived animal, or that it only applies if you intend to sell. It applies to every animal of that species on the holding, including existing stock." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What counts as an arrival" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Any animal arriving on your CPH from another CPH triggers the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "standstill-trigger" } }], "text": "standstill clock" },
+          { "type": "text", "text": ". This includes animals brought back from a market (even if you bought and returned them the same day), animals borrowed from a neighbour for a specific purpose, and animals that arrive for foster or temporary grazing. It does not include animals born on your holding: a lamb born on your holding is not an arrival." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The clock resets on a new arrival" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "If a second group of animals arrives while you are already in a standstill period, the clock resets from the date of the most recent arrival. Two batches of sheep arriving on day one and day three of your first standstill means the standstill now runs from day three and does not end until day nine from the original first arrival. Planning all arrivals in a single movement on the same day is much simpler than managing a rolling standstill." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Exempt movements" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The main " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "exempt-movement" } }], "text": "exempt movements" },
+          { "type": "text", "text": " that can proceed during a standstill are: pigs moved directly to slaughter; cattle moved directly to a slaughterhouse; animals moved for urgent veterinary treatment with written veterinary certification. The exemptions are narrow and the conditions are specific: any animal moved under an exemption still requires a movement document, and the movement must be recorded." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Recording the standstill",
+          "body": "Note the arrival date in your livestock register immediately when animals arrive. Calculate the standstill end date (day of arrival plus 6 days) and write it beside the entry. If you receive a delivery on a Monday, the standstill ends at midnight on Sunday. Keep this visible during the standstill period: a keeper who moves animals during a standstill by mistake faces a fixed penalty notice and a formal warning on their holding record."
+        }
+      }
+    ]
+  }
+}

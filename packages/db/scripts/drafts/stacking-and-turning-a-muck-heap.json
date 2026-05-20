@@ -1,0 +1,77 @@
+{
+  "slug": "stacking-and-turning-a-muck-heap",
+  "title": "Stacking and turning a muck heap",
+  "subtitle": "Building a structured muck heap from livestock dung and soiled bedding, and turning it to produce usable compost within six months.",
+  "excerpt": "Livestock dung and soiled straw bedding is an asset on a smallholding, not just a waste management problem. A correctly built and turned muck heap reaches 60 to 70 degrees C internally within the first two weeks, which kills most weed seeds and parasite eggs. After six months the material is stable, crumbly, and a valuable soil improver. After twelve months it is indistinguishable from good compost.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Environment Agency, farm waste management guidance (Farming Rules for Water). https://www.gov.uk/guidance/rules-for-farmers-and-land-managers-to-prevent-water-pollution\nNatural England, farm compost guidance.",
+  "glossaryTerms": [
+    {
+      "slug": "thermophilic-phase",
+      "term": "Thermophilic phase",
+      "definition": "The hot first phase of composting, when microbial activity in the heap generates temperatures of 50 to 70 degrees C. This phase kills most weed seeds, fly eggs, and parasite larvae. A heap that does not reach the thermophilic phase (usually because it is too wet, too dry, or too small) composts slowly and does not reliably kill weed seeds."
+    },
+    {
+      "slug": "spreading-close-season",
+      "term": "Spreading close season",
+      "definition": "The period between 1 October and 31 January (in England) when spreading organic manure on agricultural land is restricted under the Farming Rules for Water. The restriction also applies within 50 metres of a watercourse at any time of year. Stacking the muck heap away from watercourses and planning to spread in spring or late summer avoids regulatory conflict."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["muck heap management", "composting livestock manure", "farm compost heap"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Site the muck heap on firm, dry ground at least 10 metres from any watercourse, ditch, or land drain, and downhill from any water supply. A concrete base is ideal because it prevents leachate running off into the ground. If no concrete base is available, compact the ground and use a sacrificial layer of straw or old hay at the base to absorb liquid." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Building the heap" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add material in layers as it comes from mucking out. Aim for a mix of roughly two parts straw bedding to one part dung by volume: a heap that is too wet (mostly dung with little straw) becomes anaerobic and slimy; one that is too dry (mostly clean straw) does not heat up. When the heap reaches about 1.5 metres high, cap it with a layer of straw or old hay to insulate it and start the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermophilic-phase" } }], "text": "thermophilic phase" },
+          { "type": "text", "text": ". Begin a new heap beside it rather than adding more to the capped one." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Turning the heap" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Turn the heap once at four to six weeks: the outside material goes into the centre and the centre material goes to the outside. This re-inoculates the cooler outer layers with active microbes and ensures uniform composting. After turning, the heap should reheat within two to three days. Turn a second time at three months. By six months the material should be dark, crumbly, and earthy-smelling with no recognisable straw." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Spreading rules" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "spreading-close-season" } }], "text": "spreading close season" },
+          { "type": "text", "text": " runs from 1 October to 31 January for most land in England. Well-composted manure after six months loses much of its fast-release nitrogen compared with fresh muck, which makes it a more stable and less water-pollution-risk soil improver. Pig muck should be composted for at least twelve months before spreading on any land that may be used for food crops, as a precaution against pathogen survival." }
+        ]
+      }
+    ]
+  }
+}

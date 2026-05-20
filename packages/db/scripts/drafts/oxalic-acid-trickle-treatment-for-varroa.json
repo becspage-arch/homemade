@@ -1,0 +1,106 @@
+{
+  "slug": "oxalic-acid-trickle-treatment-for-varroa",
+  "title": "Oxalic acid trickle treatment for varroa",
+  "subtitle": "The midwinter varroa treatment that works on broodless colonies, applied as a measured trickle over the bee cluster.",
+  "excerpt": "Varroa reproduces inside capped brood cells. In winter, when a colony is broodless, varroa mites have nowhere to hide and oxalic acid applied as a trickle is highly effective at that moment. This covers the legal requirements, the product to use, the dose calculation, and the application method.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "National Bee Unit, Beekeeper's Toolkit (2024 edition), varroa management section and oxalic acid guidance. https://www.nationalbeeunit.com\nBBKA technical data sheets on varroa treatment and resistance management.",
+  "glossaryTerms": [
+    {
+      "slug": "varroa",
+      "term": "Varroa",
+      "definition": "Varroa destructor, the external parasitic mite of honey bees. Reproduces inside capped brood cells, feeding on developing pupae. The single most significant managed pest of UK honey bees."
+    },
+    {
+      "slug": "broodless-period",
+      "term": "Broodless period",
+      "definition": "The weeks in midwinter, typically December to January in the UK, when the queen stops laying and there is no sealed brood in the hive. The only time when all varroa mites in the colony are on adult bees and therefore accessible to contact treatments."
+    },
+    {
+      "slug": "phoretic-mite",
+      "term": "Phoretic mite",
+      "definition": "A varroa mite riding on the body of an adult bee rather than reproducing inside a cell. Phoretic mites are the target of oxalic acid trickle and vaporisation treatments."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["oxalic acid treatment", "varroa winter treatment", "OA trickle varroa"],
+  "recipeTools": [
+    { "slug": "bee-suit" },
+    { "slug": "bee-gloves" },
+    { "slug": "drenching-gun" }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Oxalic acid trickle treatment works only during the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "broodless-period" } }], "text": "broodless period" },
+          { "type": "text", "text": " because it kills " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "phoretic-mite" } }], "text": "phoretic mites" },
+          { "type": "text", "text": " on adult bees but cannot penetrate sealed brood. In a colony with brood present, the mites reproduce inside the cells and the population recovers within weeks. The midwinter broodless window, typically December to late January in the UK, is when the treatment is most effective." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Product and legal status",
+          "body": "In the UK, only VMD-authorised products containing oxalic acid may be used for varroa treatment. Api-Bioxal (Vetos-Farma) is the licensed product for the trickle method. Using unlicensed oxalic acid (such as wood bleach) on bees kept for honey production is a legal issue, not merely a technical one. Buy Api-Bioxal from a beekeeping supplier and follow the label exactly. The label is the law."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to treat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Choose a day in December or January when the temperature is below 5°C and the cluster is tight. A warmer day risks disturbing the cluster and chilling brood if any is present. Do not treat unless you are confident the colony has been broodless for at least a week. If in doubt, wait until the coldest period of January." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Dose calculation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The Api-Bioxal label specifies 5 ml of solution per occupied seam of bees (a seam being the gap between two frames where bees are clustered). Estimate by looking across the top bars before closing the crown board: count the spaces with bees, not the frames. A colony of 5 seams gets 25 ml total. The maximum dose is 50 ml regardless of cluster size." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Application" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Fill the drenching gun or a syringe to the calculated dose. Lift the crown board quickly, keeping exposure brief to avoid chilling the cluster. Trickle the solution slowly along each seam of bees in a thin stream from front to back of the cluster. Do not drench the bees: the solution needs to reach each bee but not drown them. Replace the crown board immediately." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "varroa" } }], "text": "varroa" },
+          { "type": "text", "text": " mite-board drop over the following days will confirm the treatment is working. Mite bodies visible on the floor board for 10 to 14 days after treatment is a normal response." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safety" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Oxalic acid solution irritates skin and mucous membranes. Wear nitrile or rubber gloves and avoid contact with eyes. Mix outdoors or in a well-ventilated space. Dispose of unused solution per the label directions: do not pour into drains or water courses." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "slug": "introducing-new-hens-to-an-existing-flock",
+  "title": "Introducing new hens to an existing flock",
+  "subtitle": "Managing the pecking-order disruption that new birds always cause, so losses stay low and the flock settles within a week.",
+  "excerpt": "Every new hen introduced to an established flock will be pecked. The question is whether the pecking stays within normal hierarchy-setting limits or tips into serious injury. The standard approach, a period of side-by-side visibility before physical contact, shortens the aggression phase considerably.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "poultry",
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA, Code of Recommendations for the Welfare of Livestock: Laying Hens (2002), handling and grouping sections. https://www.gov.uk\nBritish Hen Welfare Trust resettlement guidance. https://www.bhwt.org.uk",
+  "glossaryTerms": [
+    {
+      "slug": "pecking-order",
+      "term": "Pecking order",
+      "definition": "The stable social hierarchy of a flock, established by ritual displays and low-level pecking. Every bird knows its rank and interactions are predictable. A new bird disrupts this by being an unknown quantity."
+    },
+    {
+      "slug": "vent-pecking",
+      "term": "Vent pecking",
+      "definition": "A serious escalation of normal flock aggression, where birds target the vent area of a lower-ranked hen. Triggered by blood visible at the vent, by overcrowding, or by extreme boredom. Requires immediate separation of the injured bird."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["adding hens to a flock", "integrating chickens", "mixing flocks"],
+  "recipeTools": [
+    { "slug": "electric-poultry-netting" }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pecking-order" } }], "text": "pecking order" },
+          { "type": "text", "text": " is not sentimentality: it is the mechanism by which a flock organises access to food, water, and roost space without fighting continuously. Introducing new birds disrupts it, and the flock has to re-establish its hierarchy from scratch. This takes between three days and two weeks. The beekeeper's job is to reduce the intensity of the disruption, not to prevent it entirely." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Before the new birds arrive" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Keep incoming birds quarantined for seven days if they come from an unknown source, in a separate pen where they cannot share air or water with the resident flock. Healthy birds from a known source can skip quarantine, but still run the side-by-side period below. Check the new birds for lice and mites before introduction: a visually clean bird from a clean flock is fine, but you do not want to import a red-mite infestation." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The see-but-cannot-touch period" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Run the new birds in an adjacent section of the run, separated by wire mesh, for a minimum of three days and ideally a week. Both groups get used to the sight and sound of each other without being able to make contact. By the time the divider comes down, the new birds are not strangers. Move the divider at dusk, when the new birds are roosting in the coop, to minimise the initial confrontation." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "First full contact" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For the first two days after full mixing, provide more feed and water points than usual so lower-ranked birds can eat without standing their ground against the existing flock. Scatter scratch feed in several spots rather than one central feeder. Watch the flock for the first hour and again at dusk when competition for roost space peaks." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Brief chasing and pecking are normal. Persistent cornering of one bird, blood drawn at the comb or vent, or a bird standing hunched in a corner and not feeding are escalation signs that need intervention. Separate any bird showing " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vent-pecking" } }], "text": "vent pecking" },
+          { "type": "text", "text": " injuries immediately and treat the wound with an antiseptic spray before returning." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "title": "Common integration problems",
+          "entries": [
+            {
+              "symptom": "One new bird being targeted continuously",
+              "cause": "Size or confidence difference; the smallest or most passive bird becomes the flock target",
+              "fix": "Remove the aggressor for 48 hours (rather than the victim). This resets the aggressor's rank when returned."
+            },
+            {
+              "symptom": "New birds refusing to go into the coop at dusk",
+              "cause": "Resident birds are blocking the pop-hole or occupying all perch space",
+              "fix": "Add a second perch in the coop at a different height. Lift new birds into the coop manually for the first three nights if necessary."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

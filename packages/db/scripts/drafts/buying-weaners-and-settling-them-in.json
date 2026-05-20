@@ -1,0 +1,242 @@
+{
+  "slug": "buying-weaners-and-settling-them-in",
+  "title": "Buying weaners and settling them in",
+  "subtitle": "Sourcing, transporting, and settling two to three outdoor weaners on their first day and first week.",
+  "excerpt": "A weaner arrives on your holding at six to eight weeks old weighing around 18 to 25 kg. The first 48 hours are the period of highest stress and the most common time for escape or injury. Getting the electric fence working, the shelter bedded, water available, and food routine established before the pigs arrive removes almost every avoidable first-week problem.",
+  "type": "PATTERN",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Pork, Outdoor Pig Production guide. https://ahdb.org.uk\nDEFRA, Code of Recommendations for the Welfare of Livestock: Pigs (2003). https://www.gov.uk\nAnimal & Plant Health Agency, pig movement and CPH registration. https://www.gov.uk/guidance/register-land-you-use-to-keep-livestock",
+  "glossaryTerms": [
+    {
+      "slug": "weaner",
+      "term": "Weaner",
+      "definition": "A piglet that has been weaned from the sow, typically at four to six weeks commercially, six to eight weeks for small-scale producers. Weaners are sold at 18 to 30 kg and are intended to grow on to slaughter weight over five to six months."
+    },
+    {
+      "slug": "eaml2",
+      "term": "eAML2",
+      "definition": "The electronic Animal Movement Licence required for all pig movements in England and Wales. Both the vendor and the buyer must have a CPH number registered with APHA before an eAML2 can be raised. The movement licence must accompany the pigs and be submitted within 3 days of the move."
+    },
+    {
+      "slug": "movement-standstill",
+      "term": "Movement standstill",
+      "definition": "A mandatory 6-day period after pigs arrive on a holding during which no other pigs may leave. The standstill protects disease spread between holdings. Different rules apply for pigs going directly to slaughter."
+    }
+  ],
+  "techniqueSlugs": [
+    "setting-up-electric-fencing-for-pigs",
+    "daily-feeding-and-checking-pigs",
+    "moving-pigs-with-a-pig-board"
+  ],
+  "criticalTechniques": [
+    "setting-up-electric-fencing-for-pigs"
+  ],
+  "aliases": [
+    "buying weaners",
+    "first pigs smallholding",
+    "outdoor pig setup"
+  ],
+  "recipeTools": [
+    {
+      "slug": "pig-arc"
+    },
+    {
+      "slug": "pig-board"
+    }
+  ],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Collect weaners",
+      "body": "Ensure your CPH number is registered with APHA and the vendor has raised an eAML2 before collection. Collect in a clean, ventilated trailer or box with adequate bedding. Do not mix pigs from different litters without quarantine. Electric fence should be tested and hot before the pigs arrive."
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 0,
+      "title": "First evening check",
+      "body": "Check that all pigs are in the arc by dusk and the electric fence is still standing. Weaners will test every metre of the fence in the first 12 hours. Water and ad-lib feed should be available. Do not handle or disturb them tonight: leave them to settle."
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 1,
+      "title": "First morning routine",
+      "body": "Check fence integrity, water, and feed before 8 am. Count all pigs. Look for any signs of respiratory distress, lameness, or a pig that is not eating with the others. A pig off feed on day 1 after transit stress is not unusual, but note it."
+    },
+    {
+      "stepNumber": 4,
+      "offsetDays": 6,
+      "title": "Movement standstill ends",
+      "body": "The 6-day movement standstill expires. No other pigs may have left your holding during this period. After day 6, movements resume normally. Record the arrival date and standstill end in the pig register."
+    },
+    {
+      "stepNumber": 5,
+      "offsetDays": 14,
+      "title": "Health check and worming assessment",
+      "body": "Pigs should be settled, eating well, and growing visibly. Assess whether worming treatment is appropriate based on a faecal egg count (FEC) or your vet's advice. Weight-based dosing requires an accurate estimate of body weight."
+    },
+    {
+      "stepNumber": 6,
+      "offsetDays": 42,
+      "title": "First rotation if using paddocks",
+      "body": "Move pigs to a fresh paddock if the current ground is significantly cut up. Rotate the arc and water trough. The rested paddock should recover within 6 to 8 weeks if not grazed by other stock in the meantime."
+    },
+    {
+      "stepNumber": 7,
+      "offsetDays": 168,
+      "title": "Slaughter weight",
+      "body": "Outdoor commercial pigs reach 85 to 95 kg deadweight (140 to 160 kg liveweight) at around 20 to 24 weeks, depending on breed and feeding level. Book the abattoir 4 to 6 weeks in advance. Confirm the eAML2 is raised before moving pigs to slaughter."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before buying "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "weaner"
+                }
+              }
+            ],
+            "text": "weaners"
+          },
+          {
+            "type": "text",
+            "text": ", register a County Parish Holding (CPH) number with the Animal and Plant Health Agency (APHA). You cannot legally receive pigs without one. The registration is free and takes a few days; apply online via the Rural Payments Agency portal. The vendor will need your CPH number to raise the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "eaml2"
+                }
+              }
+            ],
+            "text": "eAML2"
+          },
+          {
+            "type": "text",
+            "text": " movement licence before the pigs leave their holding."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Before collection: what to have ready"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The arc should be in position and bedded with dry straw. The electric fence should be set up, earthed, tested, and running hot. Water should be in place. Have feed on site before you collect. Arriving home with pigs and nothing for them to do except test the fence immediately is the most common first-day mistake."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Unloading"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Back the trailer to the paddock gate and open it. Let the pigs walk out in their own time. Never drag a pig by a leg. Use a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ],
+            "text": "pig board"
+          },
+          {
+            "type": "text",
+            "text": " to guide them toward the arc if they scatter. Pigs are curious and will explore the whole paddock in the first hour. This is normal."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The movement standstill"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once pigs arrive, a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "movement-standstill"
+                }
+              }
+            ],
+            "text": "movement standstill"
+          },
+          {
+            "type": "text",
+            "text": " of six days applies to your holding. No other pigs may leave during this period. Keep the arrival date in your pig register: the standstill is a legal requirement, not a recommendation."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Feeding rules",
+          "body": "You may feed pigs proprietary pig pellets, vegetables grown on your own land, and some milling co-products. You may not feed catering waste, kitchen scraps (including vegetable peelings that have been in a kitchen), or any material that has been in contact with meat. This is the swill-feeding ban under the Animal Feed (England) Regulations 2010. The rule exists because the 2001 UK foot-and-mouth outbreak is traceable to illegally fed catering waste."
+        }
+      }
+    ]
+  }
+}

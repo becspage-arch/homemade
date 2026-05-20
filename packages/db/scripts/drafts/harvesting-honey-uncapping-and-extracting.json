@@ -1,0 +1,111 @@
+{
+  "slug": "harvesting-honey-uncapping-and-extracting",
+  "title": "Harvesting honey: uncapping and extracting",
+  "subtitle": "Taking the supers off, uncapping the frames, and spinning the honey out in the right order.",
+  "excerpt": "Honey is ready to extract when the bees have capped most of the cells. Extract too soon and the moisture content is high enough to ferment in the jar. This tutorial covers the end-of-flow inspection check, clearing bees from the supers, uncapping, spinning, and settling before jarring.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "timeMinutes": 180,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "National Bee Unit, Beekeeper's Toolkit (2024 edition), honey harvest section. https://www.nationalbeeunit.com\nFrank Pearson, Bee-keeping for All (1923), Chapter XII on extracting, Internet Archive.",
+  "glossaryTerms": [
+    {
+      "slug": "capped-honey",
+      "term": "Capped honey",
+      "definition": "Honey sealed under a thin white beeswax cap, indicating the moisture content has been reduced to a storable level (below 20%). Uncapped or wet cells contain honey that may still be too high in moisture to store safely."
+    },
+    {
+      "slug": "uncapping",
+      "term": "Uncapping",
+      "definition": "Removing the thin wax caps from honey cells before extracting, to allow the centrifuge to spin the honey out. Done with a heated knife or a multi-tined uncapping fork."
+    },
+    {
+      "slug": "honey-ripening",
+      "term": "Honey ripening",
+      "definition": "The 24 to 48 hours fresh extracted honey spends in a settling tank, allowing wax particles and air bubbles to rise to the surface before jarring."
+    }
+  ],
+  "techniqueSlugs": ["lighting-a-bee-smoker"],
+  "criticalTechniques": [],
+  "aliases": ["extracting honey", "honey harvest", "uncapping honey frames"],
+  "recipeTools": [
+    { "slug": "hive-tool-j" },
+    { "slug": "bee-smoker" },
+    { "slug": "smoker-fuel" },
+    { "slug": "bee-suit" },
+    { "slug": "bee-gloves" },
+    { "slug": "bee-brush" },
+    { "slug": "honey-extractor-tangential" },
+    { "slug": "uncapping-fork" },
+    { "slug": "honey-settling-tank" }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Honey is ready to extract when at least three-quarters of the cells in a super are sealed under white " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "capped-honey" } }], "text": "capped honey" },
+          { "type": "text", "text": ". Extracting before this point puts honey with a higher moisture content into the jar, which can ferment. Check each frame by tilting it horizontally over the open hive: if honey drips freely from the open cells, leave it for another week." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Clearing bees from the supers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The cleanest approach is a bee escape, a one-way valve placed between the brood box and the super 24 hours before harvest. The bees cluster down overnight and the super is almost empty by morning. Alternatively, on a warm day with the bees flying freely, use a soft bee brush to sweep bees off each frame individually, working quickly and keeping the cleared frames in a closed box away from the hive." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Uncapping" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work in a bee-free space, indoors or in a closed shed. Lean each frame against the side of a clean tray or uncapping tank to catch the wax cappings. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "uncapping" } }], "text": "Uncapping" },
+          { "type": "text", "text": " with a fork: draw the tines across the capped surface in one smooth upward stroke to scratch open the cells without gouging the comb. Move methodically from the bottom bar upwards. Both sides of the frame need uncapping before it goes into the extractor." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Extracting" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Load frames into the extractor opposite each other to balance the drum. Start the spin slowly for the first minute so the comb does not blow out of the frames under sudden centrifugal force, then increase speed. For a tangential extractor, spin one side for 3 minutes at medium speed, reverse the frames, and spin the second side for 3 minutes. The honey collects at the base of the drum." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Settling and jarring" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Run the extracted honey through a coarse strainer into the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "honey-ripening" } }], "text": "honey ripening" },
+          { "type": "text", "text": " tank. Leave it for 24 to 48 hours. Wax fragments and air bubbles rise to the surface during this time and can be skimmed off. Jar from the bottom gate, filling jars from below to avoid introducing new air bubbles." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Labelling UK honey for sale",
+          "body": "Honey sold at the farm gate or market must carry the producer's name and address, the country of origin (United Kingdom), a best-before date (minimum sugar content makes honey technically shelf-stable, but 24 months is standard), and the net weight. If selling at market rather than at the door, check current HMRC honey labelling regulations before labelling your first batch."
+        }
+      }
+    ]
+  }
+}

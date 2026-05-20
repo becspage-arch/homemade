@@ -1,0 +1,85 @@
+{
+  "slug": "moving-pigs-with-a-pig-board",
+  "title": "Moving pigs with a pig board",
+  "subtitle": "Using a pig board and a second handler to move one to four pigs calmly from paddock to trailer or pen.",
+  "excerpt": "Trying to herd pigs by chasing or shouting is one of the most reliably ineffective things in livestock management. Pigs move away from pressure applied to the shoulder and go where they cannot see. The pig board, pressed against the pig's shoulder or side, creates a visual wall that guides movement without physical contact. Two people with two boards can move most pigs reliably.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Pork, Moving Pigs guidance. https://ahdb.org.uk\nDEFRA, Code of Recommendations for the Welfare of Livestock: Pigs (2003). https://www.gov.uk",
+  "glossaryTerms": [
+    {
+      "slug": "flight-zone",
+      "term": "Flight zone",
+      "definition": "The area around a pig within which the presence of a person triggers movement. When you step inside the flight zone from behind, the pig moves forward. When you step out of it, the pig slows or stops. Learning to work the flight zone is the basis of low-stress pig handling."
+    },
+    {
+      "slug": "point-of-balance",
+      "term": "Point of balance",
+      "definition": "The shoulder. Moving behind the shoulder drives the pig forward; moving in front of it stops or turns the pig. This is the key reference point for all pig handling: a handler behind the shoulder creates forward movement, a handler in front of it creates a stop or reversal."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["herding pigs", "moving pigs smallholding", "pig handling board"],
+  "recipeTools": [
+    { "slug": "pig-board" }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The pig board is most effective when held steady against the pig's side rather than waved at it. Place one board behind the group to keep them moving forward and one board to the side to prevent them turning. Position yourself behind the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "point-of-balance" } }], "text": "point of balance" },
+          { "type": "text", "text": " (the shoulder) to create forward movement." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up the route" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Before starting, close off all escape routes except the one you want the pigs to take. Pigs do not move well through unfamiliar gaps in poor light, so open gates wide and remove anything that might cause them to baulk: a flapping plastic bag, a puddle of water, or a sudden change in light between a dark shed and bright daylight can stop a pig group completely. Set up a clear lane if possible." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working the flight zone" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Step into the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flight-zone" } }], "text": "flight zone" },
+          { "type": "text", "text": " from behind the shoulder and the pig moves forward. Step out and the pig slows. This pulsed approach keeps the pigs walking steadily without running. Running pigs are much harder to direct than walking ones. Keep your own movements smooth and quiet: sudden gestures cause panic, and a panicked pig group is unpredictable." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Loading into a trailer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Back the trailer to a gate or pen so the pigs have only one way to go. Use boards to narrow the funnel toward the ramp. Scatter a small amount of feed on the ramp and inside the trailer: pigs follow food. Never push a pig up a ramp with your hands or a stick; use a board to fill the space beside it so it has no option but to go forward. The first pig in will draw the others." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Two handlers is not optional",
+          "body": "Moving pigs alone with one board is possible but unreliable. A single pig can get around you and you have no way to cover both sides at once. Two handlers, one on each side with a board each, can move a group of four pigs into a trailer in five minutes. The same task alone can take thirty minutes or fail entirely. Always have a second person for any move that matters."
+        }
+      }
+    ]
+  }
+}

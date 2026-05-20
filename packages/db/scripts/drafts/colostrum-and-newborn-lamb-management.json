@@ -1,0 +1,91 @@
+{
+  "slug": "colostrum-and-newborn-lamb-management",
+  "title": "Colostrum and newborn lamb management",
+  "subtitle": "The first six hours after birth, when colostrum intake, navel treatment, and bonding establish whether a lamb survives.",
+  "excerpt": "Lambs have no passive immunity at birth: their immune system depends entirely on the antibodies in colostrum, absorbed through the gut wall in the first six hours. After that window, the gut closes and colostrum is digested as food rather than absorbed as immunity. Getting enough colostrum into a lamb in the first two hours is the single most important task of the lambing shed.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 45,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Beef and Lamb, Better Returns Programme: Lambing (2013). https://ahdb.org.uk\nDEFRA, Code of Recommendations for the Welfare of Livestock: Sheep (1998). https://www.gov.uk",
+  "glossaryTerms": [
+    {
+      "slug": "colostrum",
+      "term": "Colostrum",
+      "definition": "The first milk produced by a ewe in the hours after birth, loaded with maternal antibodies, fat, and protein. A lamb must absorb colostrum through its gut wall within six hours of birth. After this window, the gut lining changes and the antibodies are digested rather than absorbed."
+    },
+    {
+      "slug": "gut-closure",
+      "term": "Gut closure",
+      "definition": "The process, complete by six to twelve hours after birth, by which the lamb's gut wall loses its ability to absorb large immunoglobulin molecules intact. After closure, colostrum is nutritionally useful but no longer confers passive immunity."
+    },
+    {
+      "slug": "joint-ill",
+      "term": "Joint ill",
+      "definition": "A bacterial infection of the joints of newborn lambs, entering through the open navel cord in the first hours of life. Prevented by strong iodine application to the navel within the first hour."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["colostrum lambs", "newborn lamb care", "lamb first hours"],
+  "recipeTools": [
+    { "slug": "iodine-spray-navel" }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A lamb born with no passive immunity is vulnerable to every pathogen in the lambing shed. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colostrum" } }], "text": "Colostrum" },
+          { "type": "text", "text": " provides the antibody cover that fills this gap until the lamb's own immune system begins to function at two to three weeks. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gut-closure" } }], "text": "gut closure" },
+          { "type": "text", "text": " window means every lambing shed decision in the first two hours should be organised around getting colostrum into the lamb." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The first thirty minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Clear mucus from the nostrils immediately after birth if the ewe does not do so herself. Leave the ewe to lick the lamb: the licking stimulates circulation, helps bonding, and dries the coat. Spray the navel with 7% strong iodine within the first hour. This is the primary prevention for " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "joint-ill" } }], "text": "joint ill" },
+          { "type": "text", "text": "; apply generously to the full cord and a centimetre of skin around it." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Checking colostrum intake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Check that the ewe has milk by squeezing each teat: you should see clear yellow colostrum flow easily. A wax plug may block the teat end; draw this off with a gentle strip before the lamb attempts to suckle. Observe the lamb feeding. A lamb that sucks strongly and steadily for a minute or more is getting colostrum. A lamb that mouths at the udder and gives up is not succeeding and may need assistance." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to supplement" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "If the lamb is weak, cold, or the ewe is not letting it feed within ninety minutes, supplement with colostrum. The lamb needs 50 ml per kg of body weight as its first feed. Ewe colostrum from the same flock is ideal; cow colostrum works as the second choice. Frozen ewe colostrum from the previous season is worth keeping in the freezer: thaw slowly in warm water, never in a microwave, which destroys the antibodies." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "The stomach tube",
+          "body": "A weak lamb that will not suck can be given colostrum via a stomach tube, a soft flexible tube passed gently over the tongue and down the oesophagus. The tube must enter the oesophagus, not the trachea: confirm placement by feeling the tube alongside the throat or by observing no coughing when the tube is in. Tube-feeding is a skill worth practising on a healthy lamb before you need it on a sick one."
+        }
+      }
+    ]
+  }
+}

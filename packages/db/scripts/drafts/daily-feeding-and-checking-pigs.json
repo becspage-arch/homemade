@@ -1,0 +1,85 @@
+{
+  "slug": "daily-feeding-and-checking-pigs",
+  "title": "Daily feeding and checking pigs",
+  "subtitle": "The morning and evening routine for two to four outdoor weaners from arrival to slaughter.",
+  "excerpt": "The daily check is not just about feeding: it is the main tool for catching health problems early. A pig that is slow to come forward at feeding time, sitting hunched, or separating from the group is usually showing the first signs of illness. Daily observation builds the baseline that makes deviations meaningful.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 15,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Pork, Outdoor Pig Production guide. https://ahdb.org.uk\nDEFRA, Code of Recommendations for the Welfare of Livestock: Pigs (2003). https://www.gov.uk",
+  "glossaryTerms": [
+    {
+      "slug": "ad-lib-feeding",
+      "term": "Ad-lib feeding",
+      "definition": "A feeding regime in which feed is available continuously, so the animal eats to appetite. Ad-lib feeding suits growing pigs that are being finished quickly; it is not generally recommended for breeding stock, where obesity causes reproductive problems."
+    },
+    {
+      "slug": "back-fat",
+      "term": "Back fat",
+      "definition": "The layer of subcutaneous fat along the pig's back and loin. In a growing weaner it should not be visible: you should be able to feel the hip and backbone with moderate pressure but not see them. Visibly prominent hip bones indicate the pig is too thin."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["feeding outdoor pigs", "pig daily routine", "checking pigs smallholding"],
+  "recipeTools": [
+    { "slug": "pig-arc" }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pigs should be checked at least twice a day: morning and evening. The morning check counts all pigs, confirms water and feed, inspects the fence, and gives a quick visual of each pig's body condition and demeanour. A healthy pig comes forward eagerly at feeding. A pig at the back of the group with its head down is worth watching." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Feed quantities" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A simple rule for growing weaners is to feed 1 kg of pellets per pig per day at eight weeks, increasing by roughly 0.1 kg per pig per day for each additional week. At 20 weeks approaching slaughter weight this puts each pig on around 2 to 2.5 kg per day. Adjust based on growth rate and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "back-fat" } }], "text": "back fat" },
+          { "type": "text", "text": " cover: a thin pig needs more, not just older pigs. Many small producers use " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ad-lib-feeding" } }], "text": "ad-lib feeding" },
+          { "type": "text", "text": " from a hopper for finishing pigs, which removes the guesswork." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Water requirements" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A growing pig at 30 to 60 kg drinks five to eight litres of water per day. A trough must be large enough that all pigs can drink simultaneously or dominant pigs will prevent subordinate pigs from accessing water. Check that trough valves are flowing and that the trough is not fouled with mud or dung, which pigs will avoid even when thirsty." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Health signs to monitor" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "At each check: confirm all pigs are standing and moving normally, watch each pig walk a few steps (lameness is one of the earliest health indicators), check for nasal discharge or coughing, and assess body condition. Weigh a pig every two weeks against your growth target if you have access to scales. A growth chart quickly shows whether a pig is falling behind before the loss is visible to the eye." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Supplementary feeding rules",
+          "body": "Root vegetables grown on your land (swede, carrots, sugar beet) are a legal supplement and pigs eat them readily. Stale bread from a home kitchen is not allowed under the swill feeding ban because it counts as catering waste. The test is not whether food is 'clean' or waste: it is whether it has been in or passed through a domestic or catering kitchen. If in doubt, do not feed it."
+        }
+      }
+    ]
+  }
+}

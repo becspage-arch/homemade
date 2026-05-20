@@ -1,0 +1,111 @@
+{
+  "slug": "understanding-the-sheep-year",
+  "title": "Understanding the sheep year",
+  "subtitle": "The annual cycle of a UK lowland flock, from tupping in October to weaning in June, and the management tasks at each point.",
+  "excerpt": "A sheep's year is driven by daylength, pasture, and the production cycle of pregnancy and lactation. The beekeeper who understands what the flock is doing physiologically at each season makes better decisions about when to supplement feed, when to worm, when to scan, and when to wean. This reading maps the year from tupping to weaning.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 15,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Beef and Lamb, Better Returns Programme publications. https://ahdb.org.uk\nDEFRA, Code of Recommendations for the Welfare of Livestock: Sheep (1998). https://www.gov.uk",
+  "glossaryTerms": [
+    {
+      "slug": "condition-score",
+      "term": "Condition score",
+      "definition": "A 1-to-5 scale assessment of a sheep's fat and muscle coverage, assessed by pressing the fingers over the backbone and loin. Score 1 is emaciated; score 5 is obese. The target varies by stage of the production cycle: 2.5 to 3.5 at tupping, 3 to 3.5 at scanning, 2.5 to 3 at lambing."
+    },
+    {
+      "slug": "peri-parturient-rise",
+      "term": "Peri-parturient rise",
+      "definition": "The seasonal increase in worm egg output that occurs in ewes around lambing, driven by hormonal changes that suppress immune function. A major contamination event for pasture used by young lambs."
+    },
+    {
+      "slug": "colostrum",
+      "term": "Colostrum",
+      "definition": "The first milk produced in the hours after birth, loaded with maternal antibodies. A lamb must absorb colostrum through its gut wall within six hours. After that window, the gut lining changes and the antibodies are digested rather than absorbed."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["sheep calendar", "lowland flock year", "sheep production cycle"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The lowland sheep year in the UK is organised around one fundamental cycle: ewe in lamb in October, ewe lambing in April, lamb weaned in June, ewe empty for the summer to recover " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "condition-score" } }], "text": "condition" },
+          { "type": "text", "text": " before the cycle begins again. Everything the keeper does flows from this rhythm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "October to November: tupping" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Ewes come into oestrus as daylength shortens past twelve hours. The ram goes in for five weeks to cover two full cycles. Ewes at condition score 2.5 to 3.5 have the highest ovulation rates. Flush ewes onto rising plane of nutrition two weeks before the ram goes in." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "December to January: early pregnancy" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The embryo requires little additional nutrition in the first ten weeks of pregnancy. Maintain ewes on maintenance rations: overfeeding now puts weight on the ewe but does not improve lamb birth weight and increases the lambing difficulty risk. A ewe scanning twins needs more in late pregnancy, not early." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "February: scanning" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Scanning at around day 70 of gestation confirms whether each ewe is carrying singles, twins, or triplets. This allows differential feeding in the last six weeks: twin-bearing ewes need more concentrate than singles, and triplet-bearing ewes may need supplementary teat support at lambing. Scanning is also the point to identify any barren ewes and decide whether to cull." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "March to April: late pregnancy and lambing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The last six weeks before lambing are the period of heaviest feed demand: the foetus grows fastest at this point and the ewe is building udder tissue. Clostridial vaccination boosters go in four to six weeks before lambing to ensure passive immunity passes to the lambs through " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colostrum" } }], "text": "colostrum" },
+          { "type": "text", "text": "." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "April to May: lactation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Ewes at peak lactation have a higher energy demand than in late pregnancy. Grass quality and quantity are the main management levers at this point. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "peri-parturient-rise" } }], "text": "peri-parturient rise" },
+          { "type": "text", "text": " in worm egg output means lambs on spring pasture are exposed to a high worm challenge from six weeks of age onward. Targeted treatment of ewes is the starting point for a SCOPS-compliant approach." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "June: weaning and the dry period" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Weaning at twelve weeks gives lambs enough immune development to continue growing without the ewe, and allows the ewe three to four months to recover condition before tupping. Move ewes off good pasture immediately at weaning to dry the udder quickly. Check the udder once a day for three days: a hot, swollen quarter suggests mastitis, which needs prompt veterinary treatment." }]
+      }
+    ]
+  }
+}

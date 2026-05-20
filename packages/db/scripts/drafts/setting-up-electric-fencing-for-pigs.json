@@ -1,0 +1,110 @@
+{
+  "slug": "setting-up-electric-fencing-for-pigs",
+  "title": "Setting up electric fencing for pigs",
+  "subtitle": "Running two or three electrified strands that pigs respect, from energiser selection to the finished fence.",
+  "excerpt": "Pigs learn quickly. A pig that escapes through a fence that is not working properly is almost impossible to contain reliably after that, because it has learned that the barrier is negotiable. The fence must be hot before pigs arrive, and the pigs must make contact with it on their own terms in the first few hours so they learn to avoid it.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Pork, Outdoor Pig Production guide. https://ahdb.org.uk\nDEFRA, Code of Recommendations for the Welfare of Livestock: Pigs (2003). https://www.gov.uk",
+  "glossaryTerms": [
+    {
+      "slug": "earthing",
+      "term": "Earthing",
+      "definition": "The connection of the energiser's earth terminal to metal stakes driven into the ground. The electric circuit from energiser to fence wire to animal to ground and back to the energiser earth only completes when the earthing is adequate. A poorly earthed fence delivers a weak or no shock regardless of the energiser output."
+    },
+    {
+      "slug": "fence-tester",
+      "term": "Fence tester",
+      "definition": "A handheld device that gives a digital or visual reading of the fence voltage at any point. Used to diagnose breaks, poor earthing, or voltage drop over a long run. A pig fence should read at least 3,000 V at the far end of the run to be effective."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["electric fence pigs", "pig fence setup", "outdoor pig paddock fencing"],
+  "recipeTools": [
+    { "slug": "electric-fence-energiser" },
+    { "slug": "electric-fence-stake" }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pigs are contained by respect for the shock, not by the physical barrier. An electric fence that is not hot at the moment a pig touches it teaches the pig nothing useful. Test the fence with a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fence-tester" } }], "text": "fence tester" },
+          { "type": "text", "text": " before the pigs arrive and again each morning." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Energiser selection" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A mains-powered energiser with at least 3 joules of stored energy is suitable for a small paddock with two to four strands. For a field with no mains power, a battery energiser of the same joule rating runs for two to three weeks on a leisure battery. Solar-assisted battery energisers are reliable in UK summer but may need supplementary charging in the winter months." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Strand height for pigs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For weaners at 18 to 30 kg, set two strands at 15 cm and 30 cm from the ground. As pigs grow, add a third strand at 45 cm. The pig's nose is its most sensitive part and the first thing it will poke toward any interesting smell at the fence. Setting the bottom strand at nose height teaches the fence lesson quickly and cleanly." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Earthing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Poor " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "earthing" } }], "text": "earthing" },
+          { "type": "text", "text": " is the most common reason a fence reads low on the tester. Drive at least three earth stakes (1.2 m of galvanised rod) into the ground in a line 1 m apart, connected together by earth wire. In dry summer conditions, the soil conductivity drops: water the area around the earth stakes if the fence voltage falls unexpectedly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Training the pigs to the fence" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Once the pigs are in the paddock, do not rush them toward the fence. They will find it themselves. When a pig makes contact, it jumps back sharply and usually retreats to the arc. After two or three contacts in the first few hours, most pigs develop a reliable 30 to 40 cm avoidance zone around the wire. Pigs that have been trained on an electric fence reliably are much easier to contain in subsequent paddocks." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "title": "Fence problems",
+          "entries": [
+            {
+              "symptom": "Tester reads below 2,000 V",
+              "cause": "Vegetation touching the wire (most common), broken wire, poor earthing, or energiser fault",
+              "fix": "Walk the fence line and clear all vegetation contact. Check each join and connection. Test the energiser output directly at the terminal. Water the earth stakes if the weather has been dry."
+            },
+            {
+              "symptom": "Pigs pushing through the fence",
+              "cause": "Fence voltage too low, or pigs have learned the fence is not reliable",
+              "fix": "Restore voltage first. If pigs have learned to push through, reinforce with a physical perimeter (stock netting or wooden rails) while re-establishing the electric deterrent."
+            },
+            {
+              "symptom": "Pigs not reacting to the fence at all",
+              "cause": "Circuit not completing: often a broken connection between energiser and wire, or the earth terminal disconnected",
+              "fix": "Check the energiser display or indicator light. Confirm the live terminal connects to the fence wire. Trace the earth wire to the stakes and confirm connection."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

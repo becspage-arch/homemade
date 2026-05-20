@@ -1,0 +1,83 @@
+{
+  "slug": "keeping-smallholding-livestock-records",
+  "title": "Keeping smallholding livestock records",
+  "subtitle": "The minimum legal records required for each livestock species and a simple system for keeping them up to date.",
+  "excerpt": "UK livestock keepers are required by law to keep records of movements, births, deaths, and medicine use for most species. The records must be kept for a minimum of three years (cattle and pigs) or five to ten years (medicine records), be available for inspection by an APHA officer, and be up to date at all times. A one-page record per species covers all the legal requirements and takes under five minutes per week to maintain.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 15,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "APHA, Livestock Keeper Guidance. https://www.gov.uk/guidance/sheep-and-goat-keepers-responsibilities\nVeterinary Medicines Directorate, medicine recording requirements. https://www.gov.uk/guidance/record-keeping-for-veterinary-medicines",
+  "glossaryTerms": [
+    {
+      "slug": "on-farm-register",
+      "term": "On-farm register",
+      "definition": "The legal record of livestock on a holding. Different species have different register formats but all require: identification of each animal (tag or ear number), date of birth or arrival, date and destination of any departure, and current location. The register must reflect the actual animals on the holding at all times and be available for inspection without notice."
+    },
+    {
+      "slug": "medicine-record",
+      "term": "Medicine record",
+      "definition": "A record of any veterinary medicine administered to a food-producing animal (cattle, sheep, goats, pigs, poultry). Required by the Veterinary Medicines Regulations 2013. Must include: name of medicine, batch number, date of administration, dose, animal identification, withdrawal period. Records must be kept for five years and available to inspectors."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["livestock record keeping UK", "on-farm register", "medicine records livestock"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Start the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "on-farm-register" } }], "text": "on-farm register" },
+          { "type": "text", "text": " on the day the first animal arrives. Do not wait until you have more animals, more space, or a better system: the entry date matters legally, and retrospective reconstruction from memory is unreliable and unacceptable at inspection." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What each register must contain" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Sheep and goats: each animal identified by ear tag number (double-tagged in most cases), date of birth or date of arrival on the holding, source holding CPH if purchased, date and destination CPH if sold or moved, and date of death. Pigs: individual pig identification is not required for the on-farm register, but batch arrivals must be recorded (number of pigs, date of arrival, source CPH, eAML2 reference) and the current number on the holding must be correct at all times. Cattle: the individual passport for each animal is the primary record; the on-farm register cross-references each animal's passport number." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Medicine records" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Every medicine given to a food-producing animal must be recorded as a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "medicine-record" } }], "text": "medicine record" },
+          { "type": "text", "text": ". Keep a separate medicine record book for each species. For each entry record: the date of treatment, the animal or group treated (with identification), the product name and batch number, the dose, the route of administration, the withdrawal period, and the name of the person who administered it. Records must be kept for five years from the date of the entry." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "A simple system" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A ring binder with one section per species works reliably and is easy to present at inspection. Use a printed template: movement in, movement out, death, and medicine entry columns. Update it the same day as the event, not at the weekend or at month-end. The most common inspection failure is records that are one to two weeks behind actual events, which cannot be reconstructed without relying on memory." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Online reporting alongside paper records",
+          "body": "Some online movements (cattle in the Cattle Tracing System, sheep via EIDCymru or the APHA online system) must also be reported electronically within specified timeframes. The electronic report does not replace the on-farm register: you need both. Cattle movements must be reported to BCMS within three days; sheep movements in England must be entered into the keeper's holding record within 48 hours of the movement. These are separate obligations."
+        }
+      }
+    ]
+  }
+}

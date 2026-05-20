@@ -1,0 +1,94 @@
+{
+  "slug": "planning-rotational-grazing-paddocks",
+  "title": "Planning rotational grazing paddocks",
+  "subtitle": "Dividing a smallholding into paddocks and building a rotation calendar that maintains sward quality and reduces the parasite burden.",
+  "excerpt": "Set-stocking a small area all season destroys the sward and builds up a worm burden in the soil that limits what can be grazed there for years afterward. Rotational grazing divides the same area into four to six paddocks, rests each one for long enough for the grass to recover and the parasite eggs to die off, and produces both better growth rates and better pasture by the end of the season.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Beef and Lamb, Better Returns Programme: Grazing management (2014). https://ahdb.org.uk\nNatural England, agri-environment grazing guidance. https://www.gov.uk/guidance/catchment-sensitive-farming",
+  "glossaryTerms": [
+    {
+      "slug": "rest-period",
+      "term": "Rest period",
+      "definition": "The number of days a paddock is rested between grazing events. In UK lowland conditions, a rest period of 21 to 42 days allows grass to recover to 8 to 10 cm before re-entry. Longer rest periods in summer and shorter ones in spring as growth rates change."
+    },
+    {
+      "slug": "stocking-density",
+      "term": "Stocking density",
+      "definition": "The number of animal units grazing a given area at any one time. In rotational grazing, the stocking density in each paddock is higher than in set-stocking, but the exposure time is shorter. High stocking density for a short period followed by a long rest produces faster grass recovery than continuous low-density grazing."
+    },
+    {
+      "slug": "sward-height",
+      "term": "Sward height",
+      "definition": "The height of the grass in a paddock. Move livestock onto a paddock when the sward reaches 8 to 10 cm; move them off when it is grazed to 4 to 5 cm. Below 4 cm, grass recovery slows significantly. Monitoring sward height with a plate meter or measuring stick removes the guesswork from entry and exit decisions."
+    }
+  ],
+  "techniqueSlugs": [
+    "setting-up-electric-fencing-on-a-smallholding"
+  ],
+  "criticalTechniques": [],
+  "aliases": ["rotational grazing UK", "paddock grazing plan", "smallholding grazing system"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A four-paddock rotation is the minimum that gives each paddock a meaningful " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rest-period" } }], "text": "rest period" },
+          { "type": "text", "text": ". With one paddock in use and three resting, each resting paddock has three times as long to recover as it spends being grazed. Six paddocks is better: the extra rest time breaks more of the parasite lifecycle and allows some paddocks to be shut up for hay or silage in a good year." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sizing the paddocks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Start with the total grazing area and divide by the number of paddocks. Then check the result against " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stocking-density" } }], "text": "stocking density" },
+          { "type": "text", "text": ": a single paddock should be large enough to provide at least seven to ten days of grazing at your target sward height before it is grazed out. If the paddock is grazed out in three days, the animals are staying too long; if there is still significant grass when you move them after ten days, the paddock is too large for the number of animals." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Entry and exit decisions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Move livestock into a paddock when the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sward-height" } }], "text": "sward height" },
+          { "type": "text", "text": " reaches 8 to 10 cm and move them out when it is grazed to 4 to 5 cm. Using a simple sward stick or plate meter to measure height at ten points across the paddock takes two minutes and removes subjective guesswork. Keep a notebook: recording sward height at entry and exit, plus the number of days each paddock was rested, builds a farm-specific picture in the first season that makes planning much more accurate in subsequent years." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Parasite management and rotation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Most infective larvae of the major livestock worm species die within six to eight weeks on the pasture surface in summer conditions. A rest period of eight weeks or more with no host grazing therefore provides significant 'clean' status for the re-entering stock. For sheep specifically, the SCOPS programme recommends never returning lambs to a paddock that was heavily grazed during their first weeks of life in the same season." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Mixed-species grazing",
+          "body": "Cattle and sheep can share a rotation on the same paddocks with significant benefit: the internal parasites of each species do not infect the other, so each acts as a biological vacuum cleaner for the other's larvae. Pigs should not share paddocks with sheep or cattle in the same rotation because they require longer rest periods and have different parasite burdens. Run the pig rotation on a separate land block."
+        }
+      }
+    ]
+  }
+}

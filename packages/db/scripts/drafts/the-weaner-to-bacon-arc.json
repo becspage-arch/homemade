@@ -1,0 +1,209 @@
+{
+  "slug": "the-weaner-to-bacon-arc",
+  "title": "The weaner-to-bacon arc",
+  "subtitle": "The full growing season from collecting two outdoor weaners in spring to delivering them to the abattoir at bacon weight in autumn.",
+  "excerpt": "A pair of outdoor weaners collected in April and grown on to 85 kg deadweight will be ready for the abattoir in September or October. The keeper's job in between is to keep the fence hot, the water flowing, the feed consistent, and the ground rotated before it becomes a worm reservoir. This pattern maps the five-month arc from first day to last.",
+  "type": "PATTERN",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Pork, Outdoor Pig Production guide. https://ahdb.org.uk\nDEFRA, Code of Recommendations for the Welfare of Livestock: Pigs (2003). https://www.gov.uk",
+  "glossaryTerms": [
+    {
+      "slug": "deadweight",
+      "term": "Deadweight",
+      "definition": "The weight of the carcass after slaughter, removal of head, feet, and offal, and the first 24-hour chill. Deadweight is approximately 72 to 75 percent of live weight for pigs. The abattoir payment and butchery yield are based on deadweight."
+    },
+    {
+      "slug": "draw-weight",
+      "term": "Draw weight",
+      "definition": "The live weight at which a pig is considered ready for slaughter. For bacon pigs the target is 90 to 110 kg live weight, corresponding to roughly 65 to 82 kg deadweight. Pigs taken significantly heavier than this carry excess back fat that reduces the percentage of lean meat."
+    }
+  ],
+  "techniqueSlugs": [
+    "buying-weaners-and-settling-them-in",
+    "setting-up-electric-fencing-for-pigs",
+    "daily-feeding-and-checking-pigs",
+    "mucking-out-a-pig-arc",
+    "moving-pigs-with-a-pig-board",
+    "worming-pigs"
+  ],
+  "criticalTechniques": [
+    "setting-up-electric-fencing-for-pigs",
+    "moving-pigs-with-a-pig-board"
+  ],
+  "aliases": [
+    "weaner to pork",
+    "pig growing season",
+    "outdoor pig lifecycle"
+  ],
+  "recipeTools": [
+    {
+      "slug": "pig-arc"
+    },
+    {
+      "slug": "pig-board"
+    },
+    {
+      "slug": "electric-fence-energiser"
+    }
+  ],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Weaners arrive",
+      "body": "Collect at six to eight weeks old, 18 to 25 kg. Fence must be hot before arrival. Arc bedded with dry straw. Water in place. Record arrival date in pig register and note start of 6-day movement standstill. eAML2 must accompany pigs."
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 14,
+      "title": "Settling-in review",
+      "body": "Both pigs should be eating confidently, fence-trained, and showing steady growth. Assess whether a first worming treatment is warranted based on faecal egg count or your vet's protocol for the ground history. Adjust feed quantities if one pig is noticeably lighter than the other."
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 42,
+      "title": "First paddock rotation",
+      "body": "Move the arc, water, and fence to fresh ground if the current paddock is significantly cut up. This is the most important single management action for reducing the worm burden and maintaining ground quality. Rest the first paddock for a minimum of 12 weeks before re-use."
+    },
+    {
+      "stepNumber": 4,
+      "offsetDays": 110,
+      "title": "Book the abattoir",
+      "body": "At 16 to 17 weeks the pigs should be at 60 to 70 kg live weight and growing well. Book the abattoir for five to six weeks ahead: most small abattoirs need advance notice and popular Friday slots fill early. Confirm the abattoir is licensed to take your species and has small producer capacity."
+    },
+    {
+      "stepNumber": 5,
+      "offsetDays": 140,
+      "title": "Pre-slaughter weight check",
+      "body": "Weigh or tape-measure to estimate live weight. The target draw weight is 90 to 110 kg for bacon. If pigs are ahead of target, bring the slaughter date forward; if behind, confirm with the abattoir that the date is still appropriate or adjust feed. Raise the eAML2 for the movement to the abattoir."
+    },
+    {
+      "stepNumber": 6,
+      "offsetDays": 168,
+      "title": "Delivery to abattoir",
+      "body": "Load the night before or very early on slaughter day using boards and a low-sided trailer with straw. Pigs that have been moved before (for paddock rotation) are easier to load. The abattoir will require the eAML2 on arrival. Collect the kill sheet after slaughter to confirm deadweight and confirm with the butcher how you want the carcass processed."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A pair of outdoor weaners is a five-month commitment: predictable inputs, predictable outputs, no overwintering, and a freezer full of pork at the end. The main variable is the ground. Pigs that stay on the same patch for five months destroy it and build up a worm burden that limits future use. Rotation is not optional: it is what makes the system repeatable year on year."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The growth curve"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A well-grown weaner doubles its weight in the first four weeks on your holding, from around 20 kg to 40 kg. After that, growth continues at 500 to 700 g per day on good rations. At "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "draw-weight"
+                }
+              }
+            ],
+            "text": "draw weight"
+          },
+          {
+            "type": "text",
+            "text": " (90 to 110 kg live), the conversion of feed to muscle slows and fat deposition accelerates. Taking pigs significantly over 110 kg live weight produces a carcass with a high fat percentage relative to lean yield."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Weekly tasks"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Each week: check fence voltage with a tester. Check and clear the water trough. Muck out the arc or add fresh straw on the deep-litter system. Observe growth rate visually: both pigs should be similar in size and condition. If one falls significantly behind the other, consult a vet: dominance-driven under-feeding is common and easy to miss in a small group."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Planning the slaughter date"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Book the abattoir at least five to six weeks before your target date. Calculate backwards from "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "deadweight"
+                }
+              }
+            ],
+            "text": "deadweight"
+          },
+          {
+            "type": "text",
+            "text": " target: if you want 80 kg deadweight, you need approximately 107 kg live weight, which at a growth rate of 600 g per day means knowing roughly how many days remain. Tape measures calibrated for pig live weight are available and more reliable than visual guesses at heavier weights."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "The movement licence to the abattoir",
+          "body": "The eAML2 to slaughter is a different document from the arrival eAML2: it is a movement from your holding to the abattoir. Raise it through the APHA eAML2 system 24 to 48 hours before the move. The abattoir will ask for your herd number (derived from your CPH) on the paperwork. Keep a copy: it forms part of your pig register."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "drenching-sheep-with-an-oral-wormer",
+  "title": "Drenching sheep with an oral wormer",
+  "subtitle": "Weighing, dosing, and recording a worm treatment without contributing to anthelmintic resistance.",
+  "excerpt": "Roundworm is the most economically significant parasite of sheep in the UK. Resistance to anthelmintic drugs is now widespread in British flocks because of years of blanket, under-dosed treatments. This tutorial covers correct dosing by weight, which group to treat and which to leave, and how to record the treatment in the holding register.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "timeMinutes": 15,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Beef and Lamb, Better Returns Programme: Improving Flock Performance (2013), parasite control section. https://ahdb.org.uk\nDEFRA, Code of Recommendations for the Welfare of Livestock: Sheep (1998). https://www.gov.uk\nSAC Consulting, Sustainable Control of Parasites in Sheep (SCOPS) guidelines. https://www.scops.org.uk",
+  "glossaryTerms": [
+    {
+      "slug": "anthelmintic",
+      "term": "Anthelmintic",
+      "definition": "A drug that kills internal parasites (worms). In sheep, the main classes are benzimidazoles (white drench), levamisoles (yellow drench), and macrocyclic lactones (clear drench). Resistance to each class has developed in UK flocks through overuse."
+    },
+    {
+      "slug": "targeted-selective-treatment",
+      "term": "Targeted selective treatment",
+      "definition": "The practice of treating only the sheep showing clinical signs of worm burden (weight loss, scouring, bottle jaw) rather than the whole flock. Preserves a refugia population of susceptible worms on pasture, slowing resistance development."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["sheep worming", "drenching sheep", "oral wormer sheep"],
+  "recipeTools": [
+    { "slug": "drenching-gun" },
+    { "slug": "shepherds-crook" }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The most important thing about worming sheep is dose accuracy. Under-dosing (calibrating to an average weight instead of the heaviest animal in the group) is the single biggest driver of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "anthelmintic" } }], "text": "anthelmintic" },
+          { "type": "text", "text": " resistance in UK flocks. Always weigh the heaviest animal in the treatment group and dose the whole group to that weight." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Who to treat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Use " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "targeted-selective-treatment" } }], "text": "targeted selective treatment" },
+          { "type": "text", "text": " rather than dosing the whole flock. Treat animals showing signs of worm burden: scouring, tucked-up condition, bottle jaw (fluid under the chin indicating protein loss), or significant weight loss. Check condition score on the backbone and ribs: a score of 2 or below with scouring in spring suggests worm burden. A flock in good condition on established pasture may not need treatment at all." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing a drench" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rotate between drench classes across seasons rather than using the same product every time. If you have not had a faecal egg count done on your flock in the last two years, arrange one with your vet before the spring treatment: it will tell you which classes still have efficacy against your flock's worm burden and which are no longer working. Using a resistant-class drug is waste and contributes nothing." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The dosing procedure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Weigh the heaviest animal in the group. Calibrate the drenching gun to that weight following the printed dose rate on the bottle. Set the sheep on its rump. Place the drenching gun nozzle over the back of the tongue, not just inside the lips, and deliver the dose while the head is in a natural position. A head held high causes the drench to run into the lungs rather than the stomach: keep the animal's nose at the level of its back while dosing." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Recording the treatment" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "UK sheep keepers are legally required to record all veterinary medicines given to livestock in the holding's medicine book. Record the product name, batch number, dose given, date of treatment, withdrawal period, and the animals treated (by ear tag or description). The medicine book must be retained for five years and be available for inspection." }]
+      }
+    ]
+  }
+}
