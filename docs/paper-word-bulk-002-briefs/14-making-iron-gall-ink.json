@@ -1,0 +1,174 @@
+{
+  "slug": "making-iron-gall-ink",
+  "title": "Making iron-gall ink from oak galls",
+  "subtitle": "The traditional tannin-iron ink used in European manuscripts for over a thousand years",
+  "excerpt": "Iron-gall ink is the dominant writing ink of European history from the early medieval period through the nineteenth century. This tutorial makes a working batch from powdered oak galls, ferrous sulphate, gum arabic, and water.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The standard European oak-gall ink formula is documented across dozens of pre-1928 sources including manuscript recipes from the British Library collection and Edward Cocker's penmanship copybooks (17th century). The method here follows the traditional cold-water extraction formula described in Johnston, Writing and Illuminating and Lettering (1906), appendix on inks. Internet Archive, archive.org/details/writingilluminat00john.",
+  "recipeTools": [
+    { "slug": "iron-gall-ink", "isOptional": false },
+    { "slug": "gum-sandarac", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "iron-gall-ink",
+      "term": "Iron-gall ink",
+      "definition": "An ink made from the reaction of tannin (extracted from oak galls) and ferrous sulphate (iron vitriol). The initial blue-black darkens to deep black as the ink oxidises on the page."
+    },
+    {
+      "slug": "oak-galls",
+      "term": "Oak galls",
+      "definition": "Hard round growths produced by oak trees in response to gall wasp eggs. Rich in tannic acid; the primary tannin source for iron-gall ink."
+    },
+    {
+      "slug": "gum-arabic",
+      "term": "Gum arabic",
+      "definition": "A water-soluble sap from the acacia tree, used to thicken calligraphy inks and gouache and to provide a small amount of adhesive binding to prevent the dried ink from smudging."
+    }
+  ],
+  "aliases": [
+    "oak gall ink recipe",
+    "historical calligraphy ink",
+    "medieval ink recipe"
+  ],
+  "techniqueSlugs": ["making-iron-gall-ink"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The documents in every European archive written before the nineteenth century were written with " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "iron-gall-ink" } }], "text": "iron-gall ink" },
+          { "type": "text", "text": ". It is one of the most durable writing fluids ever developed: when made correctly and stored on sized paper, the dried ink is still readable after a thousand years. The recipe has four ingredients: crushed " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "oak-galls" } }], "text": "oak galls" },
+          { "type": "text", "text": " for tannin, ferrous sulphate for iron, " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gum-arabic" } }], "text": "gum arabic" },
+          { "type": "text", "text": " for body, and water." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "type": "warning",
+          "heading": "Handling ferrous sulphate",
+          "body": "Ferrous sulphate (iron vitriol) is a mild skin irritant; rinse any contact with water. The finished ink is also mildly acidic; rinse skin and work surfaces after use."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Ingredients for approximately 100 ml of iron-gall ink",
+          "items": [
+            { "name": "Crushed oak galls (powdered, or whole galls crushed with a mortar)", "qty": "25 g" },
+            { "name": "Ferrous sulphate crystals (iron vitriol, FeSO4)", "qty": "10 g" },
+            { "name": "Gum arabic powder or crystals", "qty": "10 g" },
+            { "name": "Distilled water", "qty": "200 ml for extraction, plus 50 ml for dissolving gum" },
+            { "name": "Fine-mesh sieve or muslin cloth (for straining)", "qty": "1" },
+            { "name": "Clean glass jar (for storing the finished ink)", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Extracting the tannin" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the crushed oak galls in a glass jar. Pour 200 ml of distilled water over them. Cap the jar and leave to steep for 24 hours at room temperature, shaking occasionally. The water turns a deep amber-brown as the tannic acid extracts." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Strain the liquid through a fine sieve or muslin into a clean jar, pressing the crushed galls to extract as much liquid as possible. Discard the solids. You should have approximately 150 ml of tannin extract." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Dissolving the iron and gum" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "In a separate small jar, dissolve the ferrous sulphate crystals in 30 ml of distilled water. The solution should be clear pale green. Wear gloves if handling frequently." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "In another small jar, dissolve the gum arabic in 50 ml of warm distilled water. Leave for several hours until completely dissolved; stir occasionally. The solution should be clear and syrupy." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Combining and testing" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combine the tannin extract, the ferrous sulphate solution, and the gum arabic solution in one jar. Stir gently. The mixture will turn a cloudy blue-black immediately as the tannin and iron react." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Test the ink on a piece of 90 gsm cartridge paper with a broad-edge or pointed nib. The ink should flow without pooling or skipping. If too thick: add a small amount of distilled water. If too thin: let some water evaporate, or add a little more gum arabic solution." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Write a line and allow to dry. Iron-gall ink is initially a translucent blue-grey; it darkens to deep blue-black over the first few hours as the iron oxidises. After 2 days, the colour is fully developed." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Store in a tightly sealed glass jar. At room temperature, a batch keeps for several months. Sediment will collect at the bottom; strain before use. If the ink develops mould (a hairy growth on the surface), discard the batch and clean the jar before making a new one. A few drops of distilled white vinegar can slow mould growth without affecting ink quality." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "A note on the historical formula" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Medieval and early-modern iron-gall inks used higher iron concentrations, which is why the manuscripts they were written on are now damaged: the excess iron slowly attacked the parchment around the ink strokes. The formula here is based on the modern buffered ratio that preserves the paper. For archival use on sized cotton-rag paper, the ink described here is stable." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this leads" }]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "foundational-hand-lower-case-alphabet" }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "copperplate-lower-case-alphabet" }
+      }
+    ]
+  }
+}

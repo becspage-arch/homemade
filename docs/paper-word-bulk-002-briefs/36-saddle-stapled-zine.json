@@ -1,0 +1,136 @@
+{
+  "slug": "saddle-stapled-zine",
+  "title": "Saddle-stapled zine",
+  "subtitle": "A multi-signature booklet zine stapled through the spine fold",
+  "excerpt": "A saddle-stapled zine is a booklet of folded sheets stapled along the centre fold. The format is the same as a standard magazine or comic: sheets are nested one inside another, folded, and then stapled through the spine. It is the most common zine format and allows any page count that is a multiple of four.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "zines",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Saddle stitching and stapling as a binding format is a standard commercial and self-publishing technique. The self-published zine application is a 20th-century independent publishing practice. The construction described here is a synthesis of well-established saddle-bind formats.",
+  "recipeTools": [
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": true },
+    { "slug": "cutting-mat-a3", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saddle-stitch",
+      "term": "Saddle stitch",
+      "definition": "A binding method in which folded sheets are placed over a saddle (a V-shaped support) and stitched or stapled through the spine fold. Produces a flat-opening booklet with a single folded spine."
+    },
+    {
+      "slug": "folio",
+      "term": "Folio",
+      "definition": "A single sheet folded in half to produce four pages (two front, two back). Multiple folios nested together form the booklet block."
+    },
+    {
+      "slug": "trim",
+      "term": "Trim",
+      "definition": "The final trimming of the three open edges of the stapled booklet to produce flush, even edges. Trim is done after stapling."
+    }
+  ],
+  "aliases": [
+    "saddle staple booklet",
+    "stapled pamphlet zine",
+    "magazine-format zine"
+  ],
+  "techniqueSlugs": ["saddle-stapled-zine"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saddle-stitch" } }], "text": "saddle-stapled" },
+          { "type": "text", "text": " zine is constructed from " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "folio" } }], "text": "folios" },
+          { "type": "text", "text": " (sheets folded in half), nested inside each other. The page count is always a multiple of four: 8, 12, 16, 20, 24 pages are the typical sizes. The sheets nest in order (the outermost folio holds pages 1, 2, and the last two pages; the next folio holds pages 3, 4, and the pages just inside the last two), then the whole block is stapled through the fold. A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trim" } }], "text": "trim" },
+          { "type": "text", "text": " of the three open edges finishes it." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Kit for a saddle-stapled zine",
+          "items": [
+            { "name": "Paper for the text pages (standard 80 gsm copy paper works for a 16-page zine; heavier paper makes the block too thick to staple)", "qty": "One sheet per 4 pages" },
+            { "name": "Card for the cover (120 to 160 gsm), the same size as the text pages", "qty": "1 sheet" },
+            { "name": "Long-arm stapler (reaches to the centre of an A5 fold, about 12 cm reach)", "qty": "1" },
+            { "name": "Bone folder", "qty": "1" },
+            { "name": "Metal ruler and craft knife (for trimming edges)", "qty": "1 each" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Planning pages" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A 16-page zine uses 4 folios. Number every page before filling content to avoid layout errors. The outside of the front folio is pages 1 (cover) and 16 (back cover). The inside of the front folio is pages 2 and 15. Work inward: 3 and 14, 4 and 13, down to 8 and 9 at the centre fold." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Folding and nesting" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold each sheet in half, crease firmly with the bone folder. The cover sheet goes on the outside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open all the folios and nest them in order: innermost folio on top, outermost (cover) on the outside. Check that all fold lines align at the spine edge." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Stapling and trimming" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open the nested block at the centre fold and lay it flat on the cutting mat with the inner pages facing up. Place two staples through the spine: one 20 mm from the head, one 20 mm from the foot. Drive each staple through all layers from the inside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Close the zine and press the spine flat with the bone folder. Trim the three open edges (head, foot, foredge) against the metal ruler with the craft knife to produce flush, even pages." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this leads" }]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "eight-page-mini-zine-one-sheet" }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "risograph-zine-layout-basics" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "slug": "pamphlet-stitch-notebook",
+  "title": "Pamphlet-stitch notebook",
+  "subtitle": "A single-signature notebook sewn with three holes and a card cover",
+  "excerpt": "The pamphlet stitch is the simplest sewn binding: one signature, a card cover, and three holes. The result is a flat-opening notebook that holds 16 to 32 pages and takes under an hour to make.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on the pamphlet stitch. Internet Archive, archive.org/details/bookbindingandca00cock. The three-hole pattern and sewing path described here follow the canonical method unchanged.",
+  "recipeTools": [
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "bookbinding-board-1-5mm", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "signature",
+      "term": "Signature",
+      "definition": "A group of folded sheets sewn together at the fold to form one section of a book's text block."
+    },
+    {
+      "slug": "pamphlet-stitch",
+      "term": "Pamphlet stitch",
+      "definition": "A single-signature sewing pattern worked through three or five holes along the fold. The simplest sewn bookbinding structure."
+    },
+    {
+      "slug": "folio",
+      "term": "Folio",
+      "definition": "A single sheet folded once to produce two leaves and four pages."
+    }
+  ],
+  "aliases": [
+    "three-hole pamphlet binding",
+    "pamphlet binding notebook",
+    "simple sewn notebook"
+  ],
+  "techniqueSlugs": ["signature-folding-and-piercing", "pamphlet-stitch-notebook"],
+  "criticalTechniques": ["signature-folding-and-piercing"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The pamphlet stitch is the oldest sewn binding still in everyday use. Three holes, one continuous thread, a card cover: the resulting " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "signature" } }], "text": "signature" },
+          { "type": "text", "text": " lies flat when open and takes a few minutes to sew. This version makes a pocket-format notebook from four " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "folio" } }], "text": "folios" },
+          { "type": "text", "text": " of cartridge paper inside a card cover, producing 16 pages. Add more folios for a thicker book, up to about eight before the spine starts to arch." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials for one A6 pamphlet notebook",
+          "items": [
+            { "name": "Cartridge paper, 130 gsm, A5 (portrait)", "qty": "4 sheets (each folds to produce one A6 folio)" },
+            { "name": "Cover card, 300 gsm or heavier, A5", "qty": "1 sheet" },
+            { "name": "Bookbinding thread, waxed linen, 4-cord", "qty": "Twice the height of the book plus 15 cm" },
+            { "name": "Bookbinding needle (blunt tip)", "qty": "1" },
+            { "name": "Bookbinding awl", "qty": "1" },
+            { "name": "Bone folder", "qty": "1" },
+            { "name": "Cutting mat", "qty": "1" },
+            { "name": "Metal ruler, 30 cm", "qty": "1" },
+            { "name": "Craft knife", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "type": "warning",
+          "heading": "Cutting tools",
+          "body": "Always cut against a metal ruler held with the non-cutting hand at least two finger-widths back from the blade's path, on a self-healing cutting mat."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the signature" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold each A5 sheet in half, short-edge to short-edge, so the fold runs along the long axis. Crease firmly with the bone folder, running it along the entire fold from one end to the other." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Nest the four folded sheets inside each other with their spines aligned. This stack is the " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "signature" } }], "text": "signature" },
+              { "type": "text", "text": "." }
+            ] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold the cover card to match and wrap it around the outside of the signature. Crease it with the bone folder at the spine." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open the whole stack at the centre fold. Mark three sewing stations on the inner spine: one at the centre, and one 12 mm in from each end. These are the three holes of the " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pamphlet-stitch" } }], "text": "pamphlet stitch" },
+              { "type": "text", "text": "." }
+            ] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold the open signature in a folding jig or grip it firmly while you pierce each station straight through all layers with the bookbinding awl. Work over the cutting mat." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut a length of thread twice the height of the book plus 15 cm. Run it through the beeswax block twice, then once more. Threading the needle: fold the end of the thread back 4 cm over the needle and grip the fold against the needle shaft with finger and thumb, then draw the needle away so the fold locks in the eye." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Close the signature. Working from the outside of the spine, enter the centre hole and push the needle through to the inside. Pull the thread through, leaving a 5 cm tail on the outside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "From the inside, exit through the top hole (head station). Pull the thread snug." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "From the outside, re-enter the centre hole. Pull snug." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "From the inside, exit through the tail hole. Pull snug." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "From the outside, re-enter the centre hole one final time. The needle exits at the inside next to the original tail. The long thread now runs on the spine; the short tail runs alongside it on one side of the centre stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tie the long thread and the short tail together with a reef knot, making sure the knot sits on one side of the long centre stitch (not across it). Trim both ends to 8 mm." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "If the cover overhangs the text block, trim with the craft knife against the metal ruler. Press the closed notebook under a heavy book for an hour to flatten any curl from the cover card." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Store flat or upright with neighbours on either side to support the spine. The single-signature construction is robust for everyday use; the thread is unlikely to break before the paper wears out." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Five holes instead of three gives the binding a more finished appearance and distributes thread tension across more points. A longer stitch path in the five-hole version: enter the centre, go up to hole 2, back to centre, up to hole 1 (head), back to hole 2, centre, hole 4, centre, hole 5 (tail), hole 4, centre. Tie off beside the original centre exit." }]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "signature-folding-and-piercing" }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "kettle-stitch" }
+      }
+    ]
+  }
+}

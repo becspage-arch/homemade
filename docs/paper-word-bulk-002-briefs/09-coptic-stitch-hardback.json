@@ -1,0 +1,184 @@
+{
+  "slug": "coptic-stitch-hardback",
+  "title": "Coptic-stitch journal with hard boards",
+  "subtitle": "An exposed-spine Coptic binding with binders board covers",
+  "excerpt": "Adding hard boards to a Coptic-stitch binding raises it from notebook to journal. The boards give structure, the exposed Coptic spine remains the same, and the book opens fully flat at every page. This version uses 2 mm board and book cloth.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Coptic-stitch binding documented in Cockerell, Bookbinding and the Care of Books (1901), chapter on unsupported link stitch. The Coptic chain stitch is named for the early Christian Egyptians who used it from the second century onward. Internet Archive, archive.org/details/bookbindingandca00cock.",
+  "recipeTools": [
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "piercing-jig", "isOptional": true },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "book-cloth", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "coptic-chain-stitch",
+      "term": "Coptic chain stitch",
+      "definition": "The linking stitch worked between signatures in Coptic binding, visible on the exposed spine as a repeating chain pattern."
+    },
+    {
+      "slug": "exposed-spine",
+      "term": "Exposed spine",
+      "definition": "A binding in which the thread path remains visible on the outside of the spine rather than being hidden under a glued covering."
+    }
+  ],
+  "aliases": [
+    "hardback coptic notebook",
+    "coptic journal hard covers",
+    "exposed spine hardback"
+  ],
+  "techniqueSlugs": ["coptic-stitch-hardback", "covering-boards-with-paper"],
+  "criticalTechniques": ["covering-boards-with-paper"],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Prepare and cover the boards",
+      "body": "Cut and cover the boards with book cloth. Press under weight overnight before attaching to the text block.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Sew the signatures and boards",
+      "body": "Prepare signatures, pierce sewing stations on the boards to match, and sew the complete text block with the Coptic chain stitch.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The Coptic binding is named for the early Christian Egyptians who developed the link-stitch structure in the second century. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "exposed-spine" } }], "text": "exposed spine" },
+          { "type": "text", "text": " shows the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "coptic-chain-stitch" } }], "text": "Coptic chain stitch" },
+          { "type": "text", "text": " running between every pair of signatures, and every page opens fully flat without stressing the binding. This version adds 2 mm binders board covered in book cloth, turning the soft-cover notebook from the earlier tutorial into a journal that will last for years." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials for one A5 Coptic journal",
+          "items": [
+            { "name": "Text paper, 130 gsm, A5, grain-long", "qty": "120 sheets (folded into 8-sheet signatures)" },
+            { "name": "Binders board, 2 mm, cut 2 mm larger at head, tail, and foredge than the text block", "qty": "2 pieces" },
+            { "name": "Book cloth (enough to cover both boards with 20 mm turn-ins)", "qty": "2 pieces" },
+            { "name": "Acid-free PVA", "qty": "For covering boards" },
+            { "name": "Bookbinding thread, waxed linen, 4-cord", "qty": "Approximately 4 times the height of the book per signature" },
+            { "name": "Bookbinding needle", "qty": "1" },
+            { "name": "Beeswax block", "qty": "1" },
+            { "name": "Bookbinding awl", "qty": "1" },
+            { "name": "Bone folder and cutting mat", "qty": "1 each" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the boards" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover both boards with book cloth following the covering-boards-with-paper technique. Press overnight under weight. The boards should be flat and the cloth well adhered at all corners before proceeding." }]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "covering-boards-with-paper" }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Piercing the boards and signatures" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make a piercing template with the same station positions you will use for the signatures. For an A5 Coptic with 5 stations per signature: 12 mm from the head, then stations at equal intervals down to 12 mm from the tail." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold each board flat on the cutting mat. Pierce the sewing stations through the board (not through the book-cloth surface) using the template. Pierce from the inside face of the board to maintain consistent positioning." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold and pierce all signatures using the same template. Stack them in order." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sew the front board like a signature: enter the head station from the outside face, exit the tail station, then return up from tail to head, linking each station. The board is sewn as the first element in the text block." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the first text signature: sew it in the same direction as the board, linking each station to the previous station's loop with the Coptic chain stitch. See the coptic-stitch-notebook tutorial for the full stitch sequence." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue adding signatures until the last text signature is sewn. Add the back board last, sewing it as the final element and linking to the last signature at every station." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tie off at the back board with a reef knot. Trim ends to 8 mm." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing and care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "No additional pressing is needed; the sewn structure is self-tensioning. Store flat or upright with support. The Coptic chain stitch can be re-sewn at any single point if a stitch breaks later, without dismantling the whole book." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A leather cover is a traditional Coptic alternative. Split-leather (skivers) can be covered and pierced exactly as the boards here, with the advantage that leather softens and conforms to the spine over time." }]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "coptic-stitch-notebook" }
+      }
+    ]
+  }
+}

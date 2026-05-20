@@ -1,0 +1,205 @@
+{
+  "slug": "sewing-on-tapes",
+  "title": "Sewing signatures on tapes",
+  "subtitle": "Mounting a multi-signature text block on linen tapes for a case-bound book",
+  "excerpt": "Sewing on tapes is the standard text-block construction for case-bound books. Signatures are sewn onto three or five linen tapes, producing a firm, flexible spine that can be rounded and backed before casing in.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapters on sewing on tapes. Internet Archive, archive.org/details/bookbindingandca00cock. The three-tape and five-tape layouts described here follow Cockerell's standard specification.",
+  "recipeTools": [
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "cotton-tape-headband", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "signature",
+      "term": "Signature",
+      "definition": "A group of folded sheets nested together at the fold to form one section of a book's text block."
+    },
+    {
+      "slug": "sewing-station",
+      "term": "Sewing station",
+      "definition": "A pierced hole through the fold of a signature where the needle enters or exits the thread path."
+    },
+    {
+      "slug": "kettle-stitch",
+      "term": "Kettle stitch",
+      "definition": "The linking stitch worked at the head and tail stations of each signature to tie successive signatures together into a text block."
+    },
+    {
+      "slug": "tape",
+      "term": "Tape",
+      "definition": "A strip of woven linen or cotton webbing over which signatures are sewn. The tapes become the hinge points between the text block and the case boards."
+    }
+  ],
+  "aliases": [
+    "sewing on cords",
+    "hand sewing text block",
+    "tape binding bookbinding"
+  ],
+  "techniqueSlugs": ["sewing-on-tapes", "kettle-stitch", "signature-folding-and-piercing"],
+  "criticalTechniques": ["kettle-stitch", "signature-folding-and-piercing"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sewing on " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tape" } }], "text": "tapes" },
+          { "type": "text", "text": " is how a traditional case-bound book is assembled. Each " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "signature" } }], "text": "signature" },
+          { "type": "text", "text": " is sewn onto three or five horizontal linen tapes that run across the spine; the resulting text block is firm, the tapes project from the spine as short tabs, and those tabs are glued to the inside of the case boards to hinge the covers. The sewing path is exactly the same as sewing without tapes, with the addition of a loop around each tape as the needle crosses it." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Equipment for sewing on tapes",
+          "items": [
+            { "name": "Prepared and pierced signatures (see folding-and-piercing tutorial)", "qty": "Full text block (typically 10 to 20 signatures for a journal)" },
+            { "name": "Woven linen tape, 8 to 12 mm wide", "qty": "Cut to the same length, three or five tapes per book" },
+            { "name": "Bookbinding thread, waxed linen, 4-cord", "qty": "Approximately 3 times the combined height of all signatures, plus 50 cm" },
+            { "name": "Bookbinding needle (blunt tip)", "qty": "1" },
+            { "name": "Beeswax block", "qty": "For thread preparation" },
+            { "name": "Bone folder", "qty": "1" },
+            { "name": "Cutting mat and metal ruler", "qty": "1 each" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the sewing frame" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+        { "type": "text", "text": "A sewing frame holds the tapes upright while you sew. A DIY version: tie one end of each tape to a dowel rod supported above the work surface. Weight the other ends so the tapes hang taut and parallel. Three-tape layout for an A5 book: tapes at 20 mm, 90 mm, and 160 mm from the head; five-tape layout: tapes at 20, 60, 100, 140, and 180 mm. Mark the corresponding " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sewing-station" } }], "text": "sewing stations" },
+        { "type": "text", "text": " on the piercing template (one station on each side of each tape)." }
+      ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing the first signature" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Thread the needle with waxed thread. Do not knot the end." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open the first signature. Lay it on the sewing frame with the fold facing the tapes. Enter the needle at the head sewing station (outside to inside) and pull through, leaving a 5 cm tail outside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Exit at the station just before the first tape (inside to outside). Loop the thread around the tape from left to right, then re-enter the same hole (outside to inside). Pull snug: the tape is now looped." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Exit at the station just after the tape. Continue to the second tape and repeat the loop. Continue to the tail station." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the tail station, do not work a kettle stitch on the first signature (there is no previous signature to link to). Exit the tail hole, then hold the thread and the tail end together briefly while you add the second signature." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing subsequent signatures" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the second signature on top of the first, fold against the tapes. Enter at the tail station and sew through to the head, looping each tape as before." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the head station of the second signature, work the " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kettle-stitch" } }], "text": "kettle stitch" },
+              { "type": "text", "text": ": slide the needle under the linking thread between the previous two signatures at the head station, and re-enter the current signature. Pull snug." }
+            ] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue adding signatures and sewing toward the tail, working a kettle stitch at both the head and tail of every signature from the third onward." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing the text block" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "After the final signature, work the last kettle stitch and tie off with a reef knot at the tail station. Remove the text block from the sewing frame. The tapes project from the spine as 15 to 20 mm tabs on each side." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Clamp the text block between pressing boards and squeeze gently to consolidate the signatures. Apply a thin stripe of PVA down the spine only (not onto the tapes) and leave under weight for 30 minutes. The spine is now ready for rounding, backing, or direct casing in." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Problems that appear when sewing on tapes.",
+          "items": [
+            {
+              "symptom": "Thread breaks mid-signature",
+              "cause": "Thread not waxed enough, or the wax cracked from dry storage.",
+              "fix": "Pass the working thread through the beeswax block again. If the thread snaps repeatedly, it may be too old; switch to a fresh spool."
+            },
+            {
+              "symptom": "Tapes are not perpendicular to the spine after sewing",
+              "cause": "Tapes slipped sideways during sewing because the frame tension was too loose.",
+              "fix": "Re-tension the tapes and re-sew from the displaced signature. Minor lean can be corrected when gluing the spine."
+            },
+            {
+              "symptom": "Text block fans out at the spine rather than lying straight",
+              "cause": "Kettle stitches were not worked firmly enough, or thread was not kept taut between stations.",
+              "fix": "Press the text block under boards and weight before gluing the spine. The spine glue will consolidate the spread."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this leads" }]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "case-binding-introduction" }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "kettle-stitch" }
+      }
+    ]
+  }
+}

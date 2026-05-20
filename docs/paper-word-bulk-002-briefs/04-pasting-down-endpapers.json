@@ -1,0 +1,160 @@
+{
+  "slug": "pasting-down-endpapers",
+  "title": "Pasting down endpapers",
+  "subtitle": "Attaching the endpaper to the inside cover of a cased book",
+  "excerpt": "Pasting down is the final step in case binding: gluing the folded endpaper onto the inner face of each board to hide the turn-ins and complete the book. The technique controls moisture carefully to prevent the board from warping.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on casing in and pasting down. Internet Archive, archive.org/details/bookbindingandca00cock.",
+  "recipeTools": [
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "wheat-paste", "isOptional": true },
+    { "slug": "endpaper-stock", "isOptional": false },
+    { "slug": "book-press", "isOptional": true },
+    { "slug": "cutting-mat-a3", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "endpaper",
+      "term": "Endpaper",
+      "definition": "A folded sheet at the front and back of a cased book. One half (the paste-down) glues onto the inner board face; the other half (the free endpaper) becomes the first or last visible page."
+    },
+    {
+      "slug": "paste-down",
+      "term": "Paste-down",
+      "definition": "The half of the endpaper glued flat against the inner face of the board, covering the turn-ins."
+    },
+    {
+      "slug": "turn-in",
+      "term": "Turn-in",
+      "definition": "The strip of covering paper or cloth folded over the edge of the board onto the inner face."
+    }
+  ],
+  "aliases": [
+    "gluing endpapers",
+    "lining inside covers bookbinding"
+  ],
+  "techniqueSlugs": ["pasting-down-endpapers"],
+  "criticalTechniques": ["pasting-down-endpapers"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pasting down is the step that closes a cased book. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "endpaper" } }], "text": "endpaper" },
+          { "type": "text", "text": " sits folded at the front and back of the sewn text block; the outer half (the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "paste-down" } }], "text": "paste-down" },
+          { "type": "text", "text": ") is glued onto the inner face of the board, covering the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "turn-in" } }], "text": "turn-ins" },
+          { "type": "text", "text": " and completing the hinge. The challenge is moisture: PVA applied to paper carries water, and water in a confined space between two boards will warp the whole book if it cannot escape evenly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials for pasting down",
+          "items": [
+            { "name": "Endpaper stock, 120 to 140 gsm (already attached to text block at the spine)", "qty": "Front and back prepared" },
+            { "name": "Acid-free PVA", "qty": "Small amount, brush-applied" },
+            { "name": "Bone folder", "qty": "1" },
+            { "name": "Waste paper sheets (for gluing on)", "qty": "Several" },
+            { "name": "Book press or heavy flat weight", "qty": "1" },
+            { "name": "Silicone-release paper or waxed cartridge", "qty": "2 sheets (to prevent boards sticking to press)" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Gluing the paste-down" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open the front board fully. Slide a waste sheet under the free endpaper (the half facing the text block) so that when you glue the paste-down half, PVA cannot bleed onto the text block pages." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply PVA evenly across the paste-down leaf, working from the fold outward to the edges. The coat should be thin and even, with no pooling. Replace the waste sheet with a clean one as soon as the paste-down is glued (the old sheet will have PVA on it)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Close the board down onto the paste-down. The hinge joint (where the case and the text block connect at the spine) should sit in the groove between the board and the spine. Press the board firmly flat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open the board again. Use the bone folder to press the paste-down flat from the fold outward, smoothing out any bubbles. Work from the hinge side toward the foredge so air escapes at the open edge." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Close the board and, while the PVA is still wet, open and close it once more to check the hinge moves cleanly. If it binds, open and work the bone folder along the groove to free it." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat for the back board." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pressing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Slip silicone-release paper inside each board (between the paste-down and the text block pages) before pressing. Close the book. Place it in the press, or under a heavy flat weight, for at least 2 hours. If the book warps slightly despite pressing, open both boards and leave the book under light weight overnight with the covers at slightly more than 90 degrees. This lets moisture leave evenly." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Problems that appear after pasting down.",
+          "items": [
+            {
+              "symptom": "Board warps inward after drying",
+              "cause": "Moisture from PVA pulled one side of the board but not the other.",
+              "fix": "Dampen the outer face of the board lightly with a barely damp sponge. Close and press immediately. The moisture balances the tension."
+            },
+            {
+              "symptom": "Paste-down has a bubble in the centre",
+              "cause": "Air trapped before the board was pressed down.",
+              "fix": "While still wet, open the board, lift the paste-down, and re-set. Once dry, slit the bubble with the tip of a craft knife, work in a small amount of PVA on the tip of a toothpick, and press flat."
+            },
+            {
+              "symptom": "Hinge is stiff and will not open to a right angle",
+              "cause": "PVA squeezed into the hinge groove during pressing.",
+              "fix": "Work the bone folder along the groove repeatedly, opening and closing the board, until the PVA softens and the hinge frees."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this leads" }]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "case-binding-introduction" }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "covering-boards-with-paper" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "slug": "concertina-sketchbook",
+  "title": "Concertina sketchbook",
+  "subtitle": "An accordion-spine sketchbook with two hard covers glued at each end",
+  "excerpt": "A concertina sketchbook is a strip of heavy cartridge or watercolour paper folded into a continuous accordion between two hard boards. It opens fully flat as a single long sheet, or fans out as a freestanding display. No sewing is needed.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), accordion-fold and concertina structures noted in the chapter on unusual binding forms. Cyril Davenport, The Book: Its History and Development (1907).",
+  "recipeTools": [
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "book-cloth", "isOptional": true },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "concertina-fold",
+      "term": "Concertina fold",
+      "definition": "A series of alternating mountain and valley folds, each fold running parallel to the last. Also called an accordion fold or leporello fold."
+    },
+    {
+      "slug": "grain-direction",
+      "term": "Grain direction",
+      "definition": "The preferred bending direction of machine-made paper, caused by fibres aligning during manufacture. Grain-parallel folds crease cleanly; grain-perpendicular folds resist and crack."
+    }
+  ],
+  "aliases": [
+    "accordion sketchbook",
+    "leporello sketchbook",
+    "japanese fold sketchbook"
+  ],
+  "techniqueSlugs": ["concertina-sketchbook"],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Fold and glue the concertina",
+      "body": "Cut, score, fold the paper strip, and glue the first board in place. Leave under weight while the adhesive dries.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Glue the second board",
+      "body": "Once the first board end is dry, glue and press the second board. The sketchbook is ready to use after 1 hour under weight.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A concertina sketchbook is a strip of heavy paper folded back on itself at equal intervals between two boards. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "concertina-fold" } }], "text": "concertina fold" },
+          { "type": "text", "text": " opens fully to a single continuous work surface, closes into a neat block, or fans out as a freestanding display. It is a Japanese and East Asian binding form with a long PD documentary tradition; the Western leporello or accordion book is the same structure. This version makes an A5-format sketchbook from a 600 gsm watercolour paper strip." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials for one A5 concertina sketchbook (16 pages)",
+          "items": [
+            { "name": "Watercolour paper, cold-press, 300 gsm, cut to 148 mm × 2,560 mm (one long strip for 16 pages, each 148 × 160 mm)", "qty": "1 strip" },
+            { "name": "Binders board, 2 mm, cut to 160 mm × 165 mm", "qty": "2 pieces" },
+            { "name": "Covering paper or book cloth (at least 20 mm larger on all sides than the board)", "qty": "2 pieces" },
+            { "name": "Acid-free PVA", "qty": "Small amount" },
+            { "name": "Bone folder", "qty": "1" },
+            { "name": "Craft knife and metal ruler", "qty": "For trimming" },
+            { "name": "Cutting mat", "qty": "1" },
+            { "name": "Heavy flat weight (stack of books)", "qty": "For pressing" }
+          ]
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "type": "warning",
+          "heading": "Cutting",
+          "body": "Cut the paper strip against a metal ruler on a cutting mat, with fingers kept behind the blade's path."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the paper strip" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "grain-direction" } }], "text": "grain direction" },
+              { "type": "text", "text": " of the paper. The grain should run parallel to the short dimension of the strip (148 mm side), so the folds run across the grain. This means the individual pages flex naturally when the sketchbook is in use." }
+            ] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark fold positions at 160 mm intervals along the 2,560 mm strip, starting from one end. You will have 16 equal sections. Score each fold line gently with the bone folder against the ruler before folding." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold the first crease as a valley fold (folding toward you). Fold the second as a mountain fold (folding away from you). Continue alternating, working from one end of the strip to the other, so the strip closes into a neat stack of 16 sections." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When all folds are made, stack the concertina flat and press it under a heavy weight for 30 minutes so the folds set. The stack should be even and square when viewed from the top." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Covering the boards" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover both boards with your chosen paper or book cloth following the technique in the covering-boards-with-paper tutorial. Let them press for at least 1 hour before attaching them to the concertina." }]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "covering-boards-with-paper" }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Attaching the boards" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply a thin even coat of PVA to the outer face of the first section of the concertina (the end panel). Set the covered board face-down onto the glued section, centring it so the paper panel sits exactly in the middle of the board with an equal margin on all four sides." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Press firmly, then turn over and smooth the paper down with the bone folder, pushing out any air from centre to edges. Place under weight overnight." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Once dry (the next day), glue the other end panel to the second board in the same way. Press overnight." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The concertina should close flat and open fully without the boards pulling against the paper strip. If the boards resist lying flat, press the whole closed book under weight for a further hour." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Store flat or in a slipcase. Avoid storing upright without support; the weight of the boards will stress the glued panels at the ends over time." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Joining two strips: score and fold each strip separately, then join them end-to-end with a thin strip of Japanese tissue and wheat paste at the join. The join is invisible when the book opens flat." }]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "accordion-fold-book" }
+      }
+    ]
+  }
+}
