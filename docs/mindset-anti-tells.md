@@ -274,7 +274,9 @@ pilot / bulk batches surface recurring tells.
   Pattern: "building an identity that's genuinely comfortable at a
   higher level", "in places where money was genuinely limited", "I
   want you to genuinely believe this." Appeared in 3 files in
-  bulk-017; voice-check catches it as a banned phrase.
+  bulk-017 and again in 3 files in bulk-020 (standing-in-the-hallway,
+  the-instagram-home-performance, what-friendship-am-i-starving-for);
+  voice-check catches it as a banned phrase.
   **Why:** "Genuinely" is a padding word that adds register without
   adding meaning. The cooking-recipe prose test: would a recipe say
   "genuinely roast the chicken"? No. The Mindset prose should pass
@@ -282,7 +284,9 @@ pilot / bulk batches surface recurring tells.
   **How to fix:** Cut it. Rewrite the sentence without the intensifier.
   "An identity that is at ease with a higher level of income" needs no
   qualifier. If the sentence feels weaker without "genuinely", the
-  underlying claim needs strengthening, not the adverb.
+  underlying claim needs strengthening, not the adverb. Where a filler
+  intensifier is needed, "actually" or the verb "do" work as
+  replacements ("homes that actually work", "things you do need").
 
 - **Spiritual bypass — practice as replacement for action** `[block]`
   Pattern: practices framed as a way to avoid a real-world problem.
@@ -361,12 +365,16 @@ pilot / bulk batches surface recurring tells.
   errors block upload. Spotted 8 times across mindset-bulk-001;
   15 recurrences across mindset-bulk-007 (2026-05-18) in body,
   excerpt, and whenToUse — the pattern generalises beyond provenance
-  prose.
+  prose. 17 of 40 files in bulk-020 had em-dashes in body prose
+  (single and double), confirming this is the most persistent
+  structural error across all Mindset batches.
   **How to fix:** Replace the em-dash pair with parentheses or a
   comma clause. `The bed (the physical object, the sheets) becomes
   a stimulus.` Or: `The bed, with its specific textures and
-  temperature, becomes a stimulus.` Reserve a single em-dash for
-  a genuine break — never use two in one sentence.
+  temperature, becomes a stimulus.` For single trailing em-dashes
+  (`X — clause`), use a colon. For `X — not Y`, use a comma.
+  Reserve a single em-dash only for a genuine clause break; never
+  two in one sentence.
 
 - **Registering a glossary term you don't tooltip inline** `[block]`
   Pattern: a type-intro READING registers `glossaryTerms[]` entries
