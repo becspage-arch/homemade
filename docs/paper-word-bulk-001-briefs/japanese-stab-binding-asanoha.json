@@ -1,0 +1,163 @@
+{
+  "slug": "japanese-stab-binding-asanoha",
+  "title": "Japanese stab binding, asanoha",
+  "subtitle": "The hemp-leaf stab-stitch pattern",
+  "excerpt": "Asanoha toji, the hemp-leaf stitch, is the second-most common Japanese stab-binding pattern. It uses the same four base holes as the yotsume four-hole stitch but adds diagonal wraps between them that form a six-pointed star at each hole cluster. The result is a denser, more decorative thread pattern on the spine.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Asanoha toji documented in late-Meiji Japanese papercraft and bookbinding manuals (Internet Archive, ja.archive.org, Meiji-era craft collection). The hemp-leaf pattern is one of three canonical stab-stitch decorative patterns in the tradition alongside kikko (tortoiseshell) and yotsume (four-hole). Cross-referenced with Douglas Cockerell, Bookbinding and the Care of Books (1901), appendix on Eastern bindings.",
+  "recipeTools": [
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "asanoha-toji",
+      "term": "Asanoha toji",
+      "definition": "The hemp-leaf Japanese stab-binding pattern: asanoha (hemp leaf) + toji (binding). Named for the six-pointed star that the diagonal thread wraps form at each hole cluster."
+    },
+    {
+      "slug": "stab-binding",
+      "term": "Stab binding",
+      "definition": "A binding in which holes are pierced through the entire text block side-on, and thread is sewn through them at the spine margin. Pages open to roughly 90°."
+    }
+  ],
+  "aliases": [
+    "hemp leaf stab binding",
+    "asanoha toji",
+    "japanese star stitch binding"
+  ],
+  "techniqueSlugs": ["japanese-stab-binding-yotsume", "japanese-stab-binding-asanoha"],
+  "criticalTechniques": ["japanese-stab-binding-yotsume"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "asanoha-toji" } }], "text": "asanoha toji" },
+          { "type": "text", "text": " builds on the " },
+          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "japanese-stab-binding-yotsume", "label": "japanese-stab-binding-yotsume" } }], "text": "yotsume four-hole stitch" },
+          { "type": "text", "text": " by adding a second thread pass that laces diagonals between the base holes, forming a six-pointed star at each hole cluster. The base structure uses the same four holes as yotsume; the hemp-leaf pattern uses six holes per cluster: two at each base position plus additional positions between them. For a readable A5 " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stab-binding" } }], "text": "stab binding" },
+          { "type": "text", "text": ", use two clusters (head and tail), with the diagonal wraps linking them." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Practice the four-hole stitch first",
+          "body": "The asanoha pattern is significantly clearer to execute once the four-hole yotsume is familiar. Sew at least one four-hole booklet before attempting the hemp-leaf variation."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools for the asanoha stitch",
+          "items": [
+            { "name": "Pre-assembled text block, A5 or smaller, bulldog-clipped at the foredge", "qty": "1" },
+            { "name": "Bookbinding awl", "qty": "1" },
+            { "name": "Bookbinding needle", "qty": "1" },
+            { "name": "Waxed linen bookbinding thread, 4-cord, contrasting colour optional", "qty": "Approximately 5× the height of the book" },
+            { "name": "Beeswax block", "qty": "1" },
+            { "name": "Metal ruler and pencil for marking hole positions", "qty": "1 each" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Hole positions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For an A5 text block (210 mm tall), mark six holes from the head: holes A (5 mm), B (18 mm), C (35 mm) from the head; and holes D (35 mm), E (18 mm), F (5 mm) from the tail. Holes C and D are the inner limits of the two clusters; B and E are the middle hole of each cluster; A and F are the outermost. Pierce all six holes through the entire block from front to back." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The move" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Begin at hole A from the back. Enter front to back at A, leaving a 10 cm tail at the front. Loop around the head edge and back through A (anchor wrap). Run along the front face to hole B. Enter B back to front." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Loop around the spine edge at B and back through B. Run along the front face to hole C. Enter C back to front. Loop around the spine and back through C. Run to hole D; enter D back to front. Continue to E and F in the same pattern, looping at each." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "At hole F, loop the tail edge as with the head at A. Now work the return path: back through F, along the spine to E, through E, along to D, through D, along to C. At C begin the diagonal wraps." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "From C, angle the thread diagonally along the spine to hole B, passing over the C-to-D thread. Enter B from the back. Angle diagonally from B to hole A; enter A from the back. Loop around the head edge again and back through A. Angle from A diagonally back to B; enter B from the front. Angle from B diagonally to C; enter C from the front. The six-pointed star around the head cluster is now formed." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Repeat the diagonal sequence at the tail cluster (holes D, E, F). Tie off at A with two half-hitches around the initial tail. Trim both tails to 5 mm." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Problems that arise in asanoha toji.",
+          "items": [
+            {
+              "symptom": "The diagonal wraps cross each other in the wrong order and the star pattern looks tangled",
+              "cause": "The diagonal wraps must always pass over the main spine thread, not under it, to form the star correctly.",
+              "fix": "Draw a diagram of the six holes before sewing and mark the over-under crossing at each diagonal junction. In practice: when bringing the thread diagonally back across the main spine thread, keep the diagonal on the outside (front face) of the book."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

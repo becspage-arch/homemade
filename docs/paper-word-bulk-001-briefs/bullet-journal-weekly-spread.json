@@ -1,0 +1,126 @@
+{
+  "slug": "bullet-journal-weekly-spread",
+  "title": "Bullet journal weekly spread",
+  "subtitle": "Setting up and using a functional weekly layout",
+  "excerpt": "A bullet journal weekly spread organises seven days of tasks, events, and notes into a two-page layout drawn by hand at the start of each week. Unlike printed planners, the spread adapts to whatever structure the week actually needs, and a weekly review process at the end of each week keeps incomplete tasks from accumulating.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "journalling-craft",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The bullet journal method was developed by Ryder Carroll and is documented openly in widespread craft and planning literature. The specific spread layouts described here are generalisations from common practice across the journalling community, not copied from Carroll's proprietary material.",
+  "recipeTools": [
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rapid-log",
+      "term": "Rapid log",
+      "definition": "The bullet journal method of capturing items quickly using short sentences with bullet symbols: a dot for tasks, a circle for events, a dash for notes. Speed is the point; entries are compressed to their essential information."
+    },
+    {
+      "slug": "migration",
+      "term": "Migration",
+      "definition": "The weekly and monthly review process in bullet journalling. Incomplete tasks are evaluated and either carried forward (migrated) to the next period, or cancelled with a strikethrough if no longer worth doing."
+    },
+    {
+      "slug": "spread",
+      "term": "Spread",
+      "definition": "A two-page layout in a journal that functions as a single unit. Weekly spreads occupy two facing pages, treating the full opening as one workspace."
+    }
+  ],
+  "aliases": [
+    "bullet journal weekly layout",
+    "bujo weekly spread",
+    "weekly planner hand drawn journal"
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A weekly " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "spread" } }], "text": "spread" },
+          { "type": "text", "text": " is drawn at the start of each week, not designed once and repeated. The structure adapts to the week's actual demands: a week with many appointments needs columns with space for times; a project-heavy week needs a task list with checkboxes; a sparse week needs little more than a half-page list. The method depends on " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rapid-log" } }], "text": "rapid logging" },
+          { "type": "text", "text": " throughout the week and a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "migration" } }], "text": "migration" },
+          { "type": "text", "text": " review at week's end." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "For a weekly spread",
+          "items": [
+            { "name": "Dotted or grid journal, A5 is the common size", "qty": "1" },
+            { "name": "Fine liner pens, 0.3 mm and 0.5 mm", "qty": "2" },
+            { "name": "Ruler, 30 cm", "qty": "1" },
+            { "name": "Pencil and eraser for sketching the layout first", "qty": "1 set" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing a layout" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Three layouts cover most needs. The vertical layout puts each day in a column across two pages: seven columns, each with the day name at the top and tasks listed below. The horizontal layout puts each day in a row down the left-hand page, with a notes or habit-tracker section on the right. The two-page task layout uses the left page for a master weekly task list and the right for daily events in a simple numbered list. Sketch the layout in pencil before committing with pen; it takes under a minute and avoids miscounted grid squares." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using the spread through the week" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add entries using rapid-log symbols: a dot before tasks (fill it in when complete, cross it out if cancelled), a circle before events, a dash before notes. Write one idea per line. Long sentences are the enemy of rapid logging; compress each entry to its essence. At the end of each day, review the day's entries: incomplete tasks either carry to the next day's section or remain for the weekly migration review at week's end." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Weekly migration" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "At the end of the week, go through every incomplete task. For each one: is this still worth doing? If yes, carry it forward to next week's spread with a right-pointing arrow. If no, cross it out completely. The migration review is useful precisely because it forces a decision on every outstanding item. Anything carried forward more than three weeks running is either a project that needs its own dedicated page, or a task that will never actually be done." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Problems with bullet journal weekly spreads.",
+          "items": [
+            {
+              "symptom": "The spread fills up by Wednesday and there is no space for the rest of the week",
+              "cause": "Day sections are too small, or entries are written as full sentences rather than compressed notes.",
+              "fix": "Try a horizontal layout with a full line per day, which uses more vertical space per day. Alternatively, keep the day column for tasks only and use the facing page for overflow notes."
+            },
+            {
+              "symptom": "The journal goes unused for several days and feels impossible to catch up",
+              "cause": "The spread is too elaborate and takes too long to set up at the start of each week.",
+              "fix": "Reduce to a single task list and a daily entry line, the simplest functional spread. Decoration and habit trackers are optional, not requirements of the method."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

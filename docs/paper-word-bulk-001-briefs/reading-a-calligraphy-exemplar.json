@@ -1,0 +1,118 @@
+{
+  "slug": "reading-a-calligraphy-exemplar",
+  "title": "Reading a calligraphy exemplar",
+  "subtitle": "How to extract stroke order, nib angle, and proportions from a plate",
+  "excerpt": "A calligraphy exemplar is a teaching plate that shows finished letterforms annotated with the information needed to reproduce them: stroke order, stroke direction, nib angle, and proportions. This article explains how to read an exemplar systematically, whether from a historical manual or from the chart blocks in this collection.",
+  "type": "READING",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edward Johnston, Writing and Illuminating and Lettering (1906), chapter on the analysis of historical manuscripts and how to read letterform plates. Internet Archive, archive.org/details/writingilluminat00john. Johnston's method for analysing historic hands, examining weight distribution, pen angle, and stroke sequence from the finished letters, is the standard approach in calligraphy education.",
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "ductus",
+      "term": "Ductus",
+      "definition": "The prescribed sequence and direction of strokes for writing a letter. An exemplar shows the ductus with numbered arrows on each stroke."
+    },
+    {
+      "slug": "nib-angle",
+      "term": "Nib angle",
+      "definition": "The angle of the broad nib's edge to the baseline, in degrees. The nib angle is deducible from a finished letter by examining where the thickest and thinnest points fall."
+    },
+    {
+      "slug": "stress-axis",
+      "term": "Stress axis",
+      "definition": "The imaginary line connecting the thinnest points of a letter's oval. In a Foundational letter, the stress axis is nearly vertical; in an Italic letter, it tilts forward."
+    }
+  ],
+  "aliases": [
+    "how to read calligraphy plate",
+    "calligraphy exemplar analysis",
+    "letterform analysis calligraphy"
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A calligraphy exemplar encodes a complete set of instructions for reproducing a hand, if the reader knows how to decode it. The three layers of information are the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ductus" } }], "text": "ductus" },
+          { "type": "text", "text": " (which stroke is made in which order), the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nib-angle" } }], "text": "nib angle" },
+          { "type": "text", "text": " (how the nib was held), and the proportions (x-height in nib widths, letter width relative to height). With these three pieces of information, any letter can be reproduced from its exemplar." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reading the ductus" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A well-annotated exemplar numbers the strokes in the order they are made and adds an arrow to show the direction of each stroke. In the exemplar charts in this collection, each stroke is numbered and carries an arrow at its end. Read the strokes in numerical order. Note: calligraphy strokes are almost always pulled toward the writer or to the right, arrows pointing upward or to the left indicate a pushing motion, which is unusual and always noted explicitly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Deducing the nib angle from a finished letter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "When no nib-angle annotation is present, the angle can be deduced from the letter. Find the thinnest points of the letter's oval (the points where the stroke width is at minimum). Draw an imaginary line connecting these two thin points, this is the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stress-axis" } }], "text": "stress axis" },
+          { "type": "text", "text": ". The nib angle is perpendicular to the stress axis. A stress axis at 90° (vertical thin points at top and bottom of the oval) indicates a 0° nib angle, the nib was held flat. A stress axis at 60° from horizontal indicates a 30° nib angle." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reading proportions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Every exemplar should show a nib-width ladder alongside the letters: a stack of small squares, each one nib-width tall, beside the guide lines. Count the squares from baseline to x-height line to read the x-height in nib widths. Count from baseline to ascender line for the full ascender height. If the ladder is absent, measure the thickest stroke of a downstroke, this is the full nib width. Divide the x-height measurement by the full nib width to get the nib-width count." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working from a historical plate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Historical plates, Johnston's original plates from Writing and Illuminating and Lettering, or photographic reproductions of manuscript pages, do not have stroke-number annotations. The reader must infer the ductus from the letter shapes. Johnston gives a method: identify which strokes overlap others (the overlapping stroke was made after the one it crosses); note which direction the serifs point (serifs form at the entry and exit of each stroke); and use the principle that calligraphy strokes are pulled downward or rightward, which constrains the possible directions." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example, reading a Foundational o" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Examining the Foundational o from Johnston's plate: the thin points are at the top and bottom of the oval. The stress axis is therefore vertical. A vertical stress axis means the nib was held at ~30° (not 0°, which would produce horizontal thin points, and not 90°, which would produce a stress axis at 90° from vertical). The oval is as wide as it is tall. The strokes overlap at the bottom-right: the right arc underlies the left arc, indicating the right arc was written first. But Johnston annotates the left arc as stroke 1: he overlaps the closing arc under the opening arc at the bottom of the letter. The ductus is: left arc (from 1-o'clock, curving left and downward), then right arc (from 1-o'clock, curving right and downward to close the bottom)." }
+        ]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "foundational-hand-lower-case-alphabet" }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "italic-minuscule-alphabet" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "slug": "coptic-stitch-notebook",
+  "title": "Coptic-stitch notebook",
+  "subtitle": "A sewn multi-signature notebook with an exposed spine",
+  "excerpt": "The Coptic stitch sews multiple signatures together with a chain at the spine, leaving the thread visible and the book able to open completely flat. Named for the early Christian Egyptians who used the structure from the second century onward, it remains the most functional exposed-spine binding for a working notebook.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapters on sewing methods and Coptic structures. Internet Archive, archive.org/details/bookbindingandca00cock. Historical background on Coptic-stitch bindings drawn from Cyril Davenport, The Book: Its History and Development (1907), chapter on early Eastern bindings.",
+  "recipeTools": [
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "book-cloth", "isOptional": true },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "piercing-jig", "isOptional": true },
+    { "slug": "book-press", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "signature",
+      "term": "Signature",
+      "definition": "A folded group of sheets sewn together at the fold. A Coptic notebook uses five or more signatures sewn in sequence."
+    },
+    {
+      "slug": "sewing-station",
+      "term": "Sewing station",
+      "definition": "A pierced hole through the fold of a signature where the needle enters or exits the thread path."
+    },
+    {
+      "slug": "kettle-stitch",
+      "term": "Kettle stitch",
+      "definition": "The link stitch worked at the head and tail of each signature to pull successive signatures together into a text block."
+    },
+    {
+      "slug": "coptic-chain",
+      "term": "Coptic chain",
+      "definition": "The series of visible loop-links along the spine of a Coptic-stitch binding, formed where the thread passes back through the previous signature's stitch loop."
+    },
+    {
+      "slug": "foredge",
+      "term": "Foredge",
+      "definition": "The outer edge of a book's pages, opposite the spine. In a Coptic notebook, the foredge is the edge the book opens from."
+    }
+  ],
+  "aliases": [
+    "coptic bound notebook",
+    "exposed spine binding",
+    "coptic stitch book"
+  ],
+  "techniqueSlugs": ["kettle-stitch", "coptic-chain-stitch"],
+  "criticalTechniques": ["kettle-stitch"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The Coptic stitch binds signatures together through a chain of linked loops at the spine, with no adhesive holding the text block together. Named for the early Christian Egyptians who used it from the second century onward, the structure was the dominant codex binding form in Egypt for over a thousand years before European binding conventions replaced it. A well-made Coptic notebook opens completely flat at any page and carries no glued spine to crack. This pattern produces an A5 notebook of five signatures, each eight pages, for forty pages in all." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Cutting tools",
+          "body": "Change the blade at the first sign of dulling; cut against a metal ruler with the free hand behind the cut line."
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Bookbinding adhesives",
+          "body": "PVA skins quickly in warm rooms; work one board at a time and protect the table with scrap paper."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Cartridge paper, 90 gsm, long-grain A4", "qty": "20 sheets (yields 5 eight-page signatures)" },
+            { "name": "Bookbinding board, 2 mm", "qty": "2 pieces cut to cover size (A5 + 3 mm squares on three sides)" },
+            { "name": "Cover paper or book cloth", "qty": "Enough to wrap both boards with a 15 mm turn-in on all four sides" },
+            { "name": "Waxed linen bookbinding thread, 4-cord", "qty": "Approximately 4 m per signature (20 to 25 m total)" },
+            { "name": "Bookbinding needle", "qty": "1 (blunt tip, eye large enough for 4-cord thread)" },
+            { "name": "Beeswax block", "qty": "For waxing thread before sewing" },
+            { "name": "Bookbinding awl", "qty": "1" },
+            { "name": "Bone folder", "qty": "1" },
+            { "name": "Craft knife and No. 11 blades", "qty": "1 knife, spare blades" },
+            { "name": "Metal ruler, 30 cm", "qty": "1" },
+            { "name": "Self-healing cutting mat, A3", "qty": "1" },
+            { "name": "Acid-free PVA", "qty": "Small amount for cover boards" },
+            { "name": "Pencil and set square", "qty": "For marking sewing stations" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the signatures" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fold each A4 sheet in half along the long edge to produce an A5 " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "signature" } }], "text": "signature" },
+          { "type": "text", "text": ". Run the bone folder firmly along the fold from centre outward to both ends. Nest four sheets together per signature, pressing the folds flush. You will have five signatures of four sheets each, giving eight pages per signature. Stack the signatures in spine-order and label the spines lightly in pencil: 1 through 5." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mark " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sewing-station" } }], "text": "sewing stations" },
+          { "type": "text", "text": " on the fold of each signature. Five stations works well for an A5 notebook: two at 8 mm from the head and tail (these will become the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kettle-stitch" } }], "text": "kettle-stitch" },
+          { "type": "text", "text": " positions), and three evenly spaced between them at approximately 45 mm intervals. Mark all five signatures from the same template." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pierce each station with the awl. Rest the signature open in the piercing jig or hold it in one hand, spine up. Drive the awl straight through from inside to outside at each mark. The hole should be just large enough for the thread to pass through cleanly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the covers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut two pieces of 2 mm bookbinding board to A5 plus 3 mm on the foredge, head, and tail (the spine edge is flush). For an A5 text block (210 × 148 mm), the boards are 213 × 151 mm. Score and mark sewing stations on each board at the same positions as the signature stations, 5 mm in from the spine edge. Pierce the stations with the awl, working through from the inside face outward on a spare board." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut book cloth or cover paper to size. Apply PVA to the outside face of each board with a piece of card or a brush, working quickly. Press the board onto the cloth, leaving a 15 mm turn-in margin on all four sides. Mitre the corners at 45°, fold the turn-ins over, and burnish with the bone folder. Place under weights to dry for thirty minutes before sewing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing the text block" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut thread at three times the height of the book. Run it through the beeswax block twice. Thread the needle and leave a 15 cm tail." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Start with the back cover: position it inside-face-up, thread out through the top kettle-stitch station from inside to outside. Thread on signature 1. Enter station 1 from outside to inside. Work across to station 2, out; 3, in; 4, out; 5, in (the head kettle-stitch station). At station 5, exit the signature and re-enter the corresponding station on the back cover from outside to inside. Return across all stations, passing under the thread on the cover board at each station. At station 1, tie off with a half-hitch around the initial tail thread. Snug the tension." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Attach signature 2. At each station, before entering the new signature, pass the needle under the existing stitch on signature 1 and pull through, forming the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "coptic-chain" } }], "text": "Coptic chain" },
+          { "type": "text", "text": ". At the head and tail stations, work the kettle stitch: exit the new signature, pass under the stitch on the previous signature, and re-enter the new signature. Continue for signatures 3 and 4." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Attach the front cover last, in the same manner as the back cover but mirrored. Tie off with two half-hitches at the final station. Trim thread tails to 5 mm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place the finished notebook under weights for one hour. The PVA on the covers should be fully dry before the book is pressed. Check the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foredge" } }], "text": "foredge" },
+          { "type": "text", "text": " is even. If signatures protrude, trim with a sharp craft knife against a metal ruler, cutting in two or three passes rather than one heavy cut." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Store the notebook upright with neighbouring books to support the covers, or flat if the spine thread is still settling. The Coptic chain is durable under normal use but will loosen if the book is pulled open beyond 180° repeatedly at one page. Open the book gently at the first and last signatures until the spine thread has relaxed into use over the first few weeks." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "French-link variation: replace the Coptic chain stitch with a French-link stitch at the middle stations for a finer spine texture. The kettle-stitch positions remain the same." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Use marbled endpapers on the inside faces of both covers. See " },
+                  { "type": "text", "attrs": { "tutorialSlug": "suminagashi-ink-on-water" }, "type": "text", "text": "suminagashi marbling" }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "A sketchbook variant uses 200 gsm hot-press watercolour paper for the signatures. Reduce to three signatures to keep the book manageable; the sewing stations stay the same." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Problems that arise during Coptic sewing.",
+          "items": [
+            {
+              "symptom": "The thread breaks mid-signature",
+              "cause": "Thread was not waxed sufficiently, or tension was pulled too hard at the kettle-stitch positions.",
+              "fix": "Tie a square knot at the break, leaving both tails inside the signature. Continue with a new thread length from the nearest station. The knot will be invisible inside the fold."
+            },
+            {
+              "symptom": "The spine chain is uneven, some links are larger than others",
+              "cause": "Inconsistent tension when looping under the previous signature's stitch.",
+              "fix": "Pull the thread snug but not tight after each chain link. Place a fingertip on the previous chain link while pulling the new one to hold the loop in place before drawing it closed."
+            },
+            {
+              "symptom": "The covers bow outward after the PVA dries",
+              "cause": "PVA was applied too thickly or the cover paper absorbed moisture unevenly.",
+              "fix": "Apply PVA in a thin, even film. Press covers under heavy books while drying. If already bowed, lightly dampen the inside face of the board with a damp sponge and press again for two hours."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

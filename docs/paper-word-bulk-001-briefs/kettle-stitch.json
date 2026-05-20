@@ -1,0 +1,184 @@
+{
+  "slug": "kettle-stitch",
+  "title": "Kettle stitch",
+  "subtitle": "The link stitch at head and tail that ties signatures together",
+  "excerpt": "The kettle stitch is a small linking stitch worked at the head and tail sewing stations after the thread exits each successive signature. Without it, multi-signature bindings unravel from the ends. It takes two minutes to learn and a few hours of practice to make consistently tidy.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on sewing, the kettle stitch worked between successive signatures at head and tail. Internet Archive, archive.org/details/bookbindingandca00cock.",
+  "recipeTools": [
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "signature",
+      "term": "Signature",
+      "definition": "A group of folded sheets sewn together at the fold to form one section of a book's text block."
+    },
+    {
+      "slug": "sewing-station",
+      "term": "Sewing station",
+      "definition": "A pierced hole through the fold of a signature where the needle enters or exits the thread path."
+    },
+    {
+      "slug": "head-and-tail",
+      "term": "Head and tail",
+      "definition": "The top edge (head) and bottom edge (tail) of a book's spine. The kettle stitch is worked at the sewing stations closest to the head and tail."
+    }
+  ],
+  "aliases": [
+    "catch stitch bookbinding",
+    "link stitch bookbinding"
+  ],
+  "techniqueSlugs": ["kettle-stitch"],
+  "criticalTechniques": ["kettle-stitch"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "kettle-stitch", "label": "kettle-stitch" } }], "text": "kettle stitch" },
+          { "type": "text", "text": " holds every multi-signature sewn binding together. After the thread exits the last " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sewing-station" } }], "text": "sewing station" },
+          { "type": "text", "text": " on a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "signature" } }], "text": "signature" },
+          { "type": "text", "text": ", the stitch loops under the thread that links the previous two signatures and re-enters the new signature. It is worked at the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "head-and-tail" } }], "text": "head and tail" },
+          { "type": "text", "text": " stations of every signature from the second onward." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools for practising the kettle stitch",
+          "items": [
+            { "name": "Bookbinding needle (blunt tip, size 18 or 20)", "qty": "1" },
+            { "name": "Waxed linen bookbinding thread, 4-cord", "qty": "Approximately 1 m per practice run" },
+            { "name": "Beeswax block", "qty": "For thread preparation" },
+            { "name": "Two pre-sewn practice signatures", "qty": "Made from scrap paper, with head and tail stations pierced at 8 mm from the fold ends" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The move" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Sew through the text block to the head station of the current signature. Exit the signature from inside to outside at the head sewing station." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Locate the linking thread between the previous two signatures at the same head station. This thread runs along the spine between two exit holes one signature back." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Slide the needle under that linking thread, from the head toward the tail (into the gap). The needle passes through the loop without piercing any paper." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Pull the thread through until snug. Do not overtighten: snug closes the loop; tight cuts into the paper at the station." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Re-enter the current signature at the same head station, passing from outside to inside. The thread forms a small knot-like loop at the exit point. Proceed across the rest of the stations." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Repeat the same sequence at the tail station of the same signature. Each signature gets a kettle stitch at both head and tail." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Problems that arise when first practising the kettle stitch.",
+          "items": [
+            {
+              "symptom": "The linking thread is hard to find on the spine",
+              "cause": "On the first two signatures, there is only one linking thread, not two. Look for the single thread running between the exit holes of signatures 1 and 2.",
+              "fix": "Work in good raking light. Run a fingernail along the spine to lift the thread slightly off the surface before sliding the needle under."
+            },
+            {
+              "symptom": "The kettle stitch pulls loose after re-entering the signature",
+              "cause": "Thread was not drawn snug before re-entering, leaving slack in the loop.",
+              "fix": "Draw the thread through until the loop closes against the spine, then hold it lightly with a fingertip while re-entering the station."
+            },
+            {
+              "symptom": "The needle splits the linking thread rather than passing under it",
+              "cause": "The needle tip is too sharp, or the entry angle was too steep.",
+              "fix": "Use a blunt-tip bookbinding needle. Approach the linking thread from the side, sliding the needle horizontally under the thread rather than piercing down through it."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this leads" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The kettle stitch is used in every multi-signature sewn binding in this collection." }
+        ]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "coptic-stitch-notebook" }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "long-stitch-journal-over-tapes" }
+      }
+    ]
+  }
+}

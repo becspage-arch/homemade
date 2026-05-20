@@ -1,0 +1,205 @@
+{
+  "slug": "long-stitch-journal-over-tapes",
+  "title": "Long-stitch journal over tapes",
+  "subtitle": "A sewn multi-signature journal with exposed spine stitching over linen tapes",
+  "excerpt": "Long-stitch binding sews each signature individually to a set of horizontal tapes or cords at the spine, with no kettle stitch linking the signatures. The sewing path runs the full length of each signature in a single long stitch, hence the name. The finished spine shows the tapes and the thread in a geometric pattern that is both structural and decorative.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on sewing on tapes and cords, the long-stitch and its variations. Internet Archive, archive.org/details/bookbindingandca00cock. Cyril Davenport, The Book: Its History and Development (1907), chapter on earlier binding structures and their adaptation in the Arts-and-Crafts revival.",
+  "recipeTools": [
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "book-cloth", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "piercing-jig", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tape",
+      "term": "Tape (bookbinding)",
+      "definition": "A narrow strip of linen or cotton that runs horizontally across the spine. Signatures are sewn onto the tapes, and the tapes are then glued or sewn to the cover boards."
+    },
+    {
+      "slug": "long-stitch",
+      "term": "Long stitch",
+      "definition": "A sewing path in which the thread runs the full length of a signature before looping around the spine tape and returning. The stitch is visible on the spine between signatures."
+    },
+    {
+      "slug": "foredge",
+      "term": "Foredge",
+      "definition": "The outer edge of the pages, opposite the spine, where the book opens."
+    }
+  ],
+  "aliases": [
+    "long stitch binding",
+    "exposed spine journal sewing on tapes"
+  ],
+  "techniqueSlugs": ["kettle-stitch"],
+  "criticalTechniques": ["kettle-stitch"],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Prepare signatures and sew the text block",
+      "body": "Fold, score, and pierce the signatures. Sew all signatures onto the tapes.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Make and attach the covers",
+      "body": "Cut boards, cover with book cloth, attach the tape ends to the inside board faces. Press overnight.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Long-stitch binding sews each " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tape" } }], "text": "tape" },
+          { "type": "text", "text": " directly, with a single thread that runs from the head to the tail of each signature and wraps around the tape before returning. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "long-stitch" } }], "text": "long stitch" },
+          { "type": "text", "text": " leaves a visible thread path on the spine between signatures: on a five-signature book with three tapes, the spine shows three vertical columns of thread wraps and two diagonal threads between each column per signature. The result is geometric and structural at the same time." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Cutting tools",
+          "body": "Change the blade before beginning and cut against the ruler with the free hand behind the cut line throughout."
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Bookbinding adhesives",
+          "body": "Use acid-free PVA for the tape ends; apply in a thin film and press immediately."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Cartridge paper, 90 gsm, long-grain A4", "qty": "20 sheets for 5 eight-page signatures" },
+            { "name": "Linen bookbinding tape, 15 mm wide", "qty": "Three lengths, each 60 mm wider than the text block width" },
+            { "name": "Waxed linen bookbinding thread, 4-cord", "qty": "Approximately 3× the height of the book per signature (15 m total for 5 signatures)" },
+            { "name": "Bookbinding board, 2 mm", "qty": "2 pieces, A5 + 3 mm squares on three sides" },
+            { "name": "Book cloth for covers", "qty": "2 pieces, 15 mm turn-in on all sides" },
+            { "name": "Acid-free PVA", "qty": "Small amount for tape attachment and cover boards" },
+            { "name": "Bookbinding needle, bookbinding awl", "qty": "1 of each" },
+            { "name": "Beeswax block, bone folder, craft knife", "qty": "1 of each" },
+            { "name": "Metal ruler, cutting mat", "qty": "1 of each" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing signatures and sewing stations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fold and score five signatures of four sheets each (eight pages per signature). Mark sewing stations on each signature: two end stations 8 mm from the head and tail, and three tape stations at positions 40 mm, 105 mm, and 170 mm from the head (for an A5 spine of 210 mm). Each tape station is actually two holes spaced 6 mm apart, one on each side of the tape. Pierce all holes through each signature from inside to outside." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting the tapes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hold the three tapes against the spine of a spare board or a jig at the three tape positions, held under masking tape at the sides. The tapes must be taut and parallel. This is the sewing frame substitute, a proper bookbinding frame is ideal but not required for home binding at this scale." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing the text block" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut thread at three times the height of signature 1. Begin at the tail end station of signature 1: enter from outside to inside. Sew toward the head, entering and exiting at each tape station (entering before the tape on one side, looping around the tape, and exiting on the other side). At the head station, exit outside." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Attach signature 2. At the head of signature 1, the thread exits outside. Lay signature 2 immediately above signature 1. Enter signature 2 at its head end station from outside to inside. Work back toward the tail, entering and exiting at each tape station, wrapping around each tape in the same direction as on signature 1. At the tail station of signature 2, work the " },
+          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "kettle-stitch", "label": "kettle-stitch" } }], "text": "kettle stitch" },
+          { "type": "text", "text": " before adding signature 3. Continue for signatures 3, 4, and 5." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Attaching covers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Trim each tape to 30 mm beyond the spine edges. Cover the boards. Lay each tape flat against the inside face of the corresponding board, apply PVA under the tape end, and burnish flat. Allow to dry before closing. The tape holds each board to the text block without adhesive at the spine itself." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing and care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Press the finished journal under weights for one hour. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foredge" } }], "text": "foredge" },
+          { "type": "text", "text": " can be trimmed lightly after pressing if signatures are uneven. Store upright with neighbouring books for support." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Problems that arise in long-stitch binding.",
+          "items": [
+            {
+              "symptom": "The thread at the tape stations is loose and the tapes slide under tension",
+              "cause": "The two holes at each tape station are too far apart, leaving the tape insufficient purchase on the thread wrap.",
+              "fix": "The two holes at each tape station should be 4 to 6 mm apart, not more. Re-pierce if needed and sew again from that station."
+            },
+            {
+              "symptom": "The spine shows uneven gaps between signatures",
+              "cause": "Signatures were not packed snugly against each other before sewing.",
+              "fix": "Before starting each new signature, hold the stack of sewn signatures together and tap the head edge on the table to seat them. The new signature should sit flush against the previous one before the needle enters the first station."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

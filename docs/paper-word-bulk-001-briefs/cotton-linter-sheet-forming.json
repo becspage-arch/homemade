@@ -1,0 +1,211 @@
+{
+  "slug": "cotton-linter-sheet-forming",
+  "title": "Cotton-linter sheet forming",
+  "subtitle": "Pulling a sheet of fine white paper from cotton-linter pulp",
+  "excerpt": "Cotton linter is the short fibre left on the cottonseed after the long fibres are harvested for textile use. Processed into pulp, it produces some of the finest and strongest white papers in the Western tradition, the paper of banknotes, legal documents, and archival manuscripts. A home batch of twelve to fifteen sheets takes one afternoon.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Sheet-forming technique is documented in the traditional European papermaking method as described in Dard Hunter, Old Papermaking (1923), public domain. Internet Archive, archive.org/details/oldpapermaking00hunt. The cotton-linter application specifically references the western hand-papermaking tradition; the home-studio approach here synthesises from multiple public-domain sources.",
+  "recipeTools": [
+    { "slug": "paper-mould-deckle-a4", "isOptional": false },
+    { "slug": "papermaking-vat", "isOptional": false },
+    { "slug": "papermaking-blender", "isOptional": false },
+    { "slug": "papermaking-sponge", "isOptional": false },
+    { "slug": "papermaking-press-boards", "isOptional": false },
+    { "slug": "cutting-mat-a2", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cotton-linter",
+      "term": "Cotton linter",
+      "definition": "The short fibre left on the cottonseed after the long textile fibres are removed. Sold as dried sheets or pads for papermaking; produces strong, archival-quality paper with a long-fibre character."
+    },
+    {
+      "slug": "deckle",
+      "term": "Deckle",
+      "definition": "The removable upper frame of the mould-and-deckle set. It defines the edges of the sheet while the pulp is being drawn through the mould mesh."
+    },
+    {
+      "slug": "couching",
+      "term": "Couching",
+      "definition": "The process of transferring a freshly formed wet sheet from the mould onto a board or felt for pressing and drying."
+    },
+    {
+      "slug": "deckle-edge",
+      "term": "Deckle edge",
+      "definition": "The characteristic ragged, feathered edge of a hand-made sheet, formed where the pulp creeps slightly under the deckle frame during sheet-forming."
+    }
+  ],
+  "aliases": [
+    "cotton linter paper making",
+    "hand papermaking at home",
+    "pulling a sheet cotton fibre"
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Soak, blend, and pull sheets",
+      "body": "Soak the cotton linter overnight, blend into pulp the next day, fill the vat, and pull 12 to 15 sheets. Couch each sheet onto boards.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Press and begin drying",
+      "body": "Press the stacked sheets under weights for one hour, then peel and pin or hang to dry.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 3,
+      "title": "Peel and flatten",
+      "body": "After two days of air drying, peel sheets from the boards and press flat under heavy books.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hand-made " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cotton-linter" } }], "text": "cotton-linter" },
+          { "type": "text", "text": " paper is one of the most archival papers available to a home studio. The fibres are long relative to most recycled-paper pulps, which gives the finished sheet good strength and a surface that takes both calligraphy and printmaking inks without heavy sizing. The characteristic " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deckle-edge" } }], "text": "deckle edge" },
+          { "type": "text", "text": " on all four sides is the signature of a hand-pulled sheet." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Papermaking blender safety",
+          "body": "Keep the blender unplugged when loading or rinsing, and keep its plug away from the water vat at all times."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Cotton-linter pads or sheets (dry weight)", "qty": "50 g for a standard A4 batch of 12 to 15 sheets" },
+            { "name": "Paper mould + deckle, A4", "qty": "1 set" },
+            { "name": "Papermaking vat (storage box or washing-up bowl, wider than the mould)", "qty": "1" },
+            { "name": "Dedicated papermaking blender", "qty": "1" },
+            { "name": "Papermaking press boards (two pieces of smooth-faced plywood, 8 mm, slightly larger than A4)", "qty": "1 pair" },
+            { "name": "Papermaking sponge", "qty": "1" },
+            { "name": "Old towels or felts for couching", "qty": "1 per sheet, or one reusable felt" },
+            { "name": "Heavy books for pressing (at least 10 kg total)", "qty": "For overnight pressing" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the pulp" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tear the cotton-linter pads into small pieces and submerge in warm water overnight. By the following morning the linter will have absorbed water and become soft and slightly gelatinous. Fill the blender two-thirds with water, add a small handful of the soaked linter, and blend for thirty seconds at high speed. The pulp is ready when no intact fibres are visible, only a cloudy suspension. Repeat in batches to process all the linter." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Filling the vat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Half-fill the vat with water. Add all the blended pulp. Stir well, the pulp settles quickly. The ratio of pulp to water determines sheet thickness: more pulp gives a heavier sheet. For 90 to 100 gsm sheets from a 50 g batch, use approximately 8 to 10 litres of water in the vat." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pulling a sheet" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hold the mould and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deckle" } }], "text": "deckle" },
+          { "type": "text", "text": " together, the deckle on top, and dip them into the vat at a shallow angle. Bring the mould level underneath the pulp surface, then raise it horizontally so the pulp drains through the mesh. The sheet forms as the water drains. Shake the mould gently side to side and front to back while it is level and still draining: this disperses the fibres evenly across the mesh. Drain for thirty seconds." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Couching" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remove the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deckle" } }], "text": "deckle" },
+          { "type": "text", "text": " carefully without dripping onto the wet sheet. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "couching" } }], "text": "Couch" },
+          { "type": "text", "text": " the sheet by placing one long edge of the mould against the felt or board and rolling the mould forward so the sheet transfers face-down. Press the mould mesh against the felt with the sponge through the back of the mesh, working firmly to help the transfer. Lift the mould away. The sheet remains on the felt. Stir the vat and pull the next sheet." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pressing and drying" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stack the couched sheets between the press boards with felts between each sheet. Press under heavy weights for at least one hour. Then peel each sheet carefully from its felt and pin to a smooth board or hang to air-dry for two days. Once dry, press flat under heavy books for another day before use." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Store finished hand-made sheets flat in a dry environment. Cotton-linter paper is archival and does not require special storage conditions beyond avoiding sustained moisture." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Problems in sheet forming.",
+          "items": [
+            {
+              "symptom": "The sheet has thick and thin patches, uneven coverage",
+              "cause": "The mould was not shaken to distribute the fibres evenly while draining.",
+              "fix": "Shake the mould in a figure-of-eight motion while it is still level over the vat. Check the sheet in raking light before couching, an even grey surface indicates even distribution."
+            },
+            {
+              "symptom": "The sheet tears when being peeled from the felt",
+              "cause": "The sheet was not pressed long enough, leaving it too fragile to peel without support.",
+              "fix": "Press for a full hour before peeling. Place a smooth board against the sheet's upper face before peeling, and peel both together, then peel the felt from the board. This supports the wet sheet."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

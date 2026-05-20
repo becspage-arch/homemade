@@ -1,0 +1,159 @@
+{
+  "slug": "french-link-stitch",
+  "title": "French-link stitch",
+  "subtitle": "A chain-stitch variation that links successive signatures at every station",
+  "excerpt": "The French-link stitch links each signature to the previous one at every sewing station, not just at the head and tail kettle-stitch positions. The result is a more flexible spine than a Coptic binding and a neater visible stitch pattern. It is the standard exposed-spine linking stitch for books where the Coptic chain would look too prominent.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "French-link sewing documented in Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on sewing methods and their variations. Internet Archive, archive.org/details/bookbindingandca00cock.",
+  "recipeTools": [
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bookbinding-awl", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "french-link",
+      "term": "French link",
+      "definition": "A linking stitch in which the needle passes through the loop of the corresponding stitch on the previous signature at every sewing station, drawing the signatures together at multiple points across the spine."
+    },
+    {
+      "slug": "sewing-station",
+      "term": "Sewing station",
+      "definition": "A pierced hole through the fold of a signature where the needle enters or exits the thread path."
+    }
+  ],
+  "aliases": [
+    "french link bookbinding",
+    "link stitch multi-station"
+  ],
+  "techniqueSlugs": ["french-link-stitch"],
+  "criticalTechniques": ["french-link-stitch"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "french-link-stitch", "label": "french-link-stitch" } }], "text": "French-link stitch" },
+          { "type": "text", "text": " links successive signatures at every " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sewing-station" } }], "text": "sewing station" },
+          { "type": "text", "text": ", not only at the head and tail. At each station, after the thread exits the new signature, it passes through the loop that the same thread made when sewing the previous signature at that same station, then re-enters the new signature. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "french-link" } }], "text": "French link" },
+          { "type": "text", "text": " is subtler than the Coptic chain and produces a spine that lies flatter when the book is closed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools for practising the French link",
+          "items": [
+            { "name": "Three pre-pierced practice signatures, A5, 5 sewing stations", "qty": "For practice; real project uses more signatures" },
+            { "name": "Bookbinding needle (blunt tip)", "qty": "1" },
+            { "name": "Waxed linen bookbinding thread, 4-cord", "qty": "Approximately 2× the height of the book per signature" },
+            { "name": "Beeswax block", "qty": "1" },
+            { "name": "Bookbinding awl", "qty": "1 (for piercing practice signatures)" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The move" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Sew the first signature as a simple running stitch from station 1 to the final station. At the final station, exit outside. Tie off with a half-hitch at station 1, leaving the tail inside." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Attach the second signature. At station 1 of the new signature (the head kettle-stitch position), exit outside. Work the standard kettle stitch by passing under the thread between signatures 1 and 0 (or the cover if there is no earlier link). Re-enter station 1." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "At each subsequent station of the new signature, exit outside. Before re-entering: locate the loop of thread that loops through the corresponding station of the previous signature. Pass the needle under that loop (from the head toward the tail), then pull through until the link closes against the spine. Re-enter the same station of the current signature." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "At the final station (tail), exit outside and work the kettle stitch before beginning the next signature." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Continue this pattern for all remaining signatures. The spine will show a column of small chain links at each station position, running the full height of the book." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Problems that arise with the French-link stitch.",
+          "items": [
+            {
+              "symptom": "The chain links at middle stations are much larger than those at the head and tail",
+              "cause": "The thread loop at the middle stations was pulled through with more thread than needed before re-entering the signature.",
+              "fix": "After passing under the previous loop, draw the thread firmly until the new link is snug against the spine surface before re-entering. Hold the loop down with a fingertip while pulling to control the size."
+            },
+            {
+              "symptom": "It is difficult to locate the previous signature's loop at each station",
+              "cause": "The loops from the previous signature are very small, especially if the thread was drawn very tight on that signature.",
+              "fix": "Sew with consistent but not excessive tension throughout. A loop at each station should be visible from the outside as a small, evenly sized thread curve. Use a needle with a blunt tip to slide under the loop without splitting the thread."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this leads" }]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "coptic-stitch-notebook" }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "long-stitch-journal-over-tapes" }
+      }
+    ]
+  }
+}

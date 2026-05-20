@@ -1,0 +1,187 @@
+{
+  "slug": "recycled-paper-sheet-forming",
+  "title": "Recycled-paper sheet forming",
+  "subtitle": "Making new sheets from junk mail, envelopes, and office paper",
+  "excerpt": "Office paper, envelopes, and junk mail pulp back into workable sheets with a mould and deckle and a blender. The recycled sheets are more textured and less white than cotton-linter sheets, but they are free from the paper pile and straightforward to make. A useful introduction to sheet-forming mechanics before investing in specialist fibre.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Recycled-paper sheet forming technique synthesised from the traditional European papermaking method documented in Dard Hunter, Old Papermaking (1923), public domain, and from modern craft papermaking practice. The core mechanics of mould-and-deckle sheet forming are the same as for virgin-fibre pulp.",
+  "recipeTools": [
+    { "slug": "paper-mould-deckle-a5", "isOptional": false },
+    { "slug": "papermaking-vat", "isOptional": false },
+    { "slug": "papermaking-blender", "isOptional": false },
+    { "slug": "papermaking-sponge", "isOptional": false },
+    { "slug": "papermaking-press-boards", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "fibre-length",
+      "term": "Fibre length",
+      "definition": "The average length of individual cellulose fibres in a pulp. Office paper has short fibres (already processed once); the resulting sheets are more fragile than long-fibre cotton or kozo sheets."
+    },
+    {
+      "slug": "couching",
+      "term": "Couching",
+      "definition": "Transferring a freshly pulled wet sheet from the mould onto a board or felt for pressing and drying."
+    },
+    {
+      "slug": "deckle-edge",
+      "term": "Deckle edge",
+      "definition": "The characteristic feathered edge of a hand-formed sheet, created where pulp slips slightly under the deckle during forming."
+    }
+  ],
+  "aliases": [
+    "junk mail paper making",
+    "recycled paper pulp at home",
+    "hand made paper from waste"
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Soak, blend, and pull sheets",
+      "body": "Tear and soak paper for two hours, blend into pulp, fill vat, pull sheets.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Press and peel",
+      "body": "Press stacked sheets under heavy weights overnight, then peel and dry.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Office paper and envelopes are made from wood-pulp " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fibre-length" } }], "text": "short fibres" },
+          { "type": "text", "text": ". Recycled into new sheets, they produce a paper with a slightly softer, more textured surface than virgin cotton-linter sheets. The colour is off-white to cream unless bleaching agents were used in the original manufacture, in which case the pulp is whiter. A batch of twenty A5 sheets from a standard household paper bin can be made in an afternoon." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Blender safety",
+          "body": "Keep the blender unplugged when loading fibre and away from the vat edge when plugged in; never use it for food."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Waste paper, junk mail, envelopes (remove windows and tape), office printouts (avoid glossy coated stock)", "qty": "A good handful, approximately 30 to 40 g dry" },
+            { "name": "Paper mould + deckle, A5", "qty": "1 set" },
+            { "name": "Papermaking vat", "qty": "1 (large enough for the mould plus margin)" },
+            { "name": "Dedicated papermaking blender", "qty": "1" },
+            { "name": "Papermaking press boards", "qty": "1 pair" },
+            { "name": "Papermaking sponge", "qty": "1" },
+            { "name": "Smooth boards or old towels for couching", "qty": "1 per sheet" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the fibre" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tear the waste paper into pieces no larger than a postage stamp. Avoid glossy or laminated stock, the coating does not pulp. Soak in warm water for two hours. This softens the fibres and allows the blender to break them apart without heating the motor. Fill the blender two-thirds with warm water, add a small handful of the soaked paper, and blend for twenty seconds. Check: if white chunks of paper are visible, blend for another twenty seconds." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up the vat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fill the vat with water to a depth of 150 to 200 mm. Add the blended pulp. Stir well: the short wood-pulp fibres settle faster than cotton-linter fibres, so stir the vat before every sheet-pull." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pulling and couching" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hold the mould and deckle together and dip at an angle, bringing the mould level under the pulp surface. Raise horizontally. Shake gently as it drains. Remove the deckle and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "couching" } }], "text": "couch" },
+          { "type": "text", "text": " the sheet onto a smooth board by rolling the mould forward, pressing through the mesh with the sponge, then lifting the mould cleanly away. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deckle-edge" } }], "text": "deckle edge" },
+          { "type": "text", "text": " will be visible on all four sides." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pressing and drying" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stack the couched sheets between press boards. Weight heavily and leave overnight. Short fibres from recycled paper take longer to bond together during drying than cotton-linter fibres. After pressing, peel each sheet carefully and allow to air-dry for one day before use." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Add botanicals (dried flower petals, leaves, thread scraps) to the vat for inclusion sheets." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Mix one third cotton-linter pulp with two thirds recycled pulp for stronger sheets with more interesting surface texture." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "paper-inclusions-flowers-and-leaves" }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "tutorialSlug": "cotton-linter-sheet-forming" }
+      }
+    ]
+  }
+}
