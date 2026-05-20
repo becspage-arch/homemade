@@ -41,9 +41,26 @@ instead of pixels.
 
 The recommended shape: a single shared client viewer component that wraps
 each per-craft SVG renderer with a common interaction layer (zoom, pan,
-fullscreen, print, toggles, progress marking). Free tier gets the
-interaction-layer essentials; premium gates the progress-tracking,
-cross-device sync, print-tile-to-PDF, and alternative-palette preview.
+fullscreen, print, toggles, progress marking).
+
+### Decisions locked (Rebecca, 2026-05-20)
+
+1. **The chart viewer requires login.** Charts do not render to anonymous
+   visitors. Anonymous users see a "sign in to view the chart" gate where
+   the viewer would render. This applies to every craft renderer covered
+   in this doc.
+2. **Build every feature in this doc to "free" standard now.** No
+   free/premium gate enforced at v1. All logged-in users get pinch/pan,
+   mark-stitch, sync, print-tile, palette swap, magic-markers, notes —
+   the full surface. This matches the premium-philosophy memo (build to
+   free standard, decide gating later once we see how the product fits).
+3. **Design for later premium gating without enforcing it.** When the
+   Stripe / RBAC / user-tier session lands as part of the Master Plan,
+   we'll gate the "Future premium-gate candidates" list (see below). The
+   v1 build must make those gates trivial to add — feature checks against
+   a `userTier` field that always returns `free` today, premium-feature
+   code paths already isolated behind that check, no inline "is logged
+   in" coupling that would have to be unpicked.
 
 ---
 
@@ -76,7 +93,24 @@ Sources: [Pattern Keeper FAQ](https://patternkeeper.app/faq/), [Pattern Keeper n
 
 ## Feature priority list for Homemade
 
-### Free tier — table stakes (must-have at launch of the new viewer)
+> All features below ship at v1 to every logged-in user. The Future
+> premium-gate candidates list flags which of them will be moved behind
+> the paid tier when Stripe / RBAC / user-tier lands. The build for v1
+> should isolate those code paths behind a `userTier` check that always
+> returns `free` today so the gate is a one-line flip later.
+
+### Anonymous (logged-out) users — what they see
+
+A sign-in prompt where the chart would render. Title of the chart,
+optional cover thumbnail (low-resolution preview, no readable cells),
+and a "Sign in to view the chart" CTA. No interactive surface at all —
+zoom, pan, legend, print are all gated behind login.
+
+This applies to every craft renderer in the per-craft mapping table.
+
+### All logged-in users — v1 build surface
+
+#### Tier A — interaction essentials (no future premium gate)
 
 1. **Free pinch-zoom + one-finger pan** with full-bleed mobile rendering. Initial render is "fit-to-screen overview"; user pinches in. No fixed zoom presets, no minimap (the market doesn't use one and users don't ask for it).
 2. **Tap a legend swatch → highlight every cell of that colour** on the chart with a translucent overlay. Symbol stays readable underneath. Universal across leaders.
@@ -86,13 +120,18 @@ Sources: [Pattern Keeper FAQ](https://patternkeeper.app/faq/), [Pattern Keeper n
 6. **Persistent grid lines + 10×10 emphasis lines + centre lines.** Customisable colour and weight. Universal.
 7. **Accessible legend.** Renders below or beside the chart, sticky on scroll on desktop. Colour swatch + symbol + plain-English name + DMC / Anchor codes (already in the chart-definition schema).
 
-### Premium tier — the conversion drivers
+#### Tier B — future premium-gate candidates (ship now to all logged-in users, gate later)
+
+The following ship at v1 to every logged-in user. Each must be wired
+through a `userTier`-aware feature check so the eventual Stripe / RBAC
+session can flip the gate without refactoring. Today the check returns
+"allowed" for everyone.
 
 1. **Mark-stitch.** Tap a cell to mark/unmark; drag in any direction to mark a run; the marked cell fills with the assigned thread colour rather than the symbol. Per-colour remaining-stitch tally in the legend updates live. Position persists per-user-per-chart via account.
 2. **"Stitched view" / "remaining view" toggle.** Stitched view shows only completed cells (your in-progress photo, basically); remaining view greys completed cells and emphasises what's left. Both are valuable for different mental modes.
-3. **Cross-device progress sync.** Same account, mark on phone, open on laptop, continue. **This is the gold-standard premium feature** across knitCompanion, MarkUp Rx-P, and Cross Stitch Saga. Sync the existing-account mark-stitch state — no separate file format.
+3. **Cross-device progress sync.** Same account, mark on phone, open on laptop, continue. **The gold-standard paid feature** across knitCompanion, MarkUp Rx-P, and Cross Stitch Saga. Sync the existing-account mark-stitch state — no separate file format.
 4. **Print to PDF — page-tiled.** A4 (UK) and US Letter, portrait, 100% actual size, with overlap stitches between pages and cut-marks at trim edges, separate page for the colour key. Three density presets: large ~40×40 stitches per page, medium ~60×70, small ~80×90 — matches the convention. PCStitch is the reference implementation.
-5. **Alternative palette preview ("colour-swap").** Apply a different palette to the existing cells — switch from DMC 522 / 924 / 3045 to Anchor equivalents, or to a completely different colour scheme — and re-render in place. Premium because the underlying palette-mapping is the chart-author's work; the reader is just remixing.
+5. **Alternative palette preview ("colour-swap").** Apply a different palette to the existing cells — switch from DMC 522 / 924 / 3045 to Anchor equivalents, or to a completely different colour scheme — and re-render in place. The natural paid gate because the underlying palette-mapping is the chart-author's work; the reader is just remixing.
 6. **Magic-markers symbol search.** Tap any cell to find every cell of the same colour, with a running count. Borrowed from knitCompanion. Different from "tap legend → highlight" in that it works from the chart, not the legend, and it's a stateful focus, not a transient highlight.
 7. **Per-chart notes / annotations.** Sticky notes anchored to a cell, scribble layer over the chart. Knitters use this constantly; cross-stitchers less so but the pattern transfers cleanly to a single Comment layer.
 
@@ -233,14 +272,11 @@ v1.5 enhancement once the basic mark-stitch ships.
 
 ## Open questions for Rebecca to decide before any build session fires
 
-1. **Free vs premium boundary — confirm the split above.** The
-   recommendation gates progress tracking, sync, print-tile, palette
-   swap, magic-markers, and notes behind premium; keeps pinch/pan,
-   symbol toggle, dark mode, legend, fullscreen in free. Build-every-
-   feature-to-free-standard says "build it all"; the
-   business-model memo says cross-stitch is a chart-followed-project
-   craft so progress tracking is the obvious paywall. Confirm the line
-   before the build session writes any gate logic.
+1. ~~**Free vs premium boundary — confirm the split above.**~~ **RESOLVED
+   2026-05-20.** No free/premium gate enforced at v1. Login required to
+   view any chart; every logged-in user gets every feature. The Tier B
+   list is the future premium-gate candidate set, wired through a
+   `userTier` feature check that returns "allowed" for everyone today.
 
 2. **One shared viewer component, or per-craft viewers?** Recommendation
    is one shared wrapper around the existing per-craft renderers. The
