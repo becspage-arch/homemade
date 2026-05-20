@@ -1,0 +1,215 @@
+/* Print-friendly chart layout. Each `.chart-print-tile` is sized to a
+   full printable page; CSS @page rules set A4 / Letter portrait with no
+   margins (we draw our own margins inside each tile). The on-screen
+   preview shows the tiles stacked vertically with a controls strip at
+   the top; @media print strips the controls and lets the browser
+   paginate one tile per page. */
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+.chart-print--letter @page {
+  size: letter portrait;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #f4f1ea;
+  color: #1a1814;
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+.chart-print {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  gap: 16px;
+}
+
+.chart-print-controls {
+  background: #fff;
+  border: 1px solid #d8d2c6;
+  border-radius: 8px;
+  padding: 12px 16px;
+  max-width: 720px;
+  width: 100%;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chart-print-controls p {
+  margin: 0;
+}
+
+.chart-print-controls__hint {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.chart-print-controls__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chart-print-controls__link {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #f0eadf;
+  color: #302a24;
+  border: 1px solid #d8d2c6;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.chart-print-controls__link.is-active {
+  background: #302a24;
+  color: #fdfaf3;
+  border-color: #302a24;
+}
+
+.chart-print-tile {
+  background: #fff;
+  border: 1px solid #d8d2c6;
+  width: 210mm;
+  min-height: 297mm;
+  padding: 16mm 15mm 14mm;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  page-break-after: always;
+  break-after: page;
+}
+
+.chart-print--letter .chart-print-tile {
+  width: 215.9mm;
+  min-height: 279.4mm;
+}
+
+.chart-print-tile:last-child {
+  page-break-after: auto;
+}
+
+.chart-print-tile__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 10pt;
+  margin-bottom: 8mm;
+  padding-bottom: 3mm;
+  border-bottom: 0.4mm solid #777;
+}
+
+.chart-print-tile__title {
+  font-weight: 600;
+}
+
+.chart-print-tile__coords {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.75;
+}
+
+.chart-print-tile__svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.chart-print-tile__footer {
+  margin-top: auto;
+  font-size: 9pt;
+  text-align: center;
+  opacity: 0.7;
+  padding-top: 4mm;
+}
+
+.chart-print-tile--legend {
+  font-size: 11pt;
+}
+
+.chart-print-legend {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10pt;
+}
+
+.chart-print-legend th,
+.chart-print-legend td {
+  text-align: left;
+  padding: 1.5mm 2mm;
+  border-bottom: 0.2mm solid #d8d2c6;
+}
+
+.chart-print-legend th {
+  font-weight: 600;
+  background: #f4f1ea;
+}
+
+.chart-print-legend__symbol {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12pt;
+  width: 8mm;
+  text-align: center;
+}
+
+.chart-print-legend__swatch {
+  display: inline-block;
+  width: 6mm;
+  height: 6mm;
+  border: 0.3mm solid #444;
+  vertical-align: middle;
+}
+
+.chart-print-legend__meta {
+  margin-top: 8mm;
+  font-size: 10pt;
+  opacity: 0.8;
+}
+
+.chart-print-legend__caption {
+  margin-top: 4mm;
+  font-style: italic;
+  font-size: 10pt;
+  opacity: 0.75;
+}
+
+.chart-print-unsupported {
+  max-width: 640px;
+  margin: 60px auto;
+  background: #fff;
+  border: 1px dashed #c8c0ae;
+  border-radius: 8px;
+  padding: 32px;
+  text-align: center;
+}
+
+@media print {
+  body,
+  html {
+    background: #fff;
+  }
+  .chart-print {
+    padding: 0;
+    gap: 0;
+  }
+  .no-print,
+  .chart-print-controls {
+    display: none !important;
+  }
+  .chart-print-tile {
+    border: none;
+    padding: 12mm 12mm 10mm;
+  }
+  .chart-print-tile__svg {
+    /* Browser-printed colours need print-color-adjust to render fills. */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

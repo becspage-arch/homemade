@@ -6,6 +6,7 @@ import {
   useMemo,
   useRef,
   useState,
+  type MouseEvent as ReactMouseEvent,
   type PointerEvent as ReactPointerEvent,
 } from 'react'
 
@@ -27,6 +28,14 @@ type ViewMode = 'symbol-on-colour' | 'symbol-only' | 'colour-only'
 type DisplayMode = 'all' | 'stitched' | 'remaining'
 type PaletteFamily = 'authored' | 'anchor'
 
+interface CellNote {
+  id: string
+  cellX: number
+  cellY: number
+  text: string
+  createdAt: string
+}
+
 interface ProgressState {
   markedCells: Set<string>
   viewMode: ViewMode
@@ -35,6 +44,14 @@ interface ProgressState {
   /** Magic-markers highlight — when set, every cell of the named palette
    *  key glows. Click a cell to enter; click again or hit Escape to clear. */
   highlightKey: string | null
+  notes: CellNote[]
+}
+
+interface NoteEditorState {
+  cellX: number
+  cellY: number
+  noteId: string | null
+  text: string
 }
 
 const CELL_PX = 22
@@ -80,8 +97,10 @@ export function CrossStitchChartView({
     displayMode: 'all',
     paletteFamily: 'authored',
     highlightKey: null,
+    notes: [],
   })
   const [loaded, setLoaded] = useState(false)
+  const [noteEditor, setNoteEditor] = useState<NoteEditorState | null>(null)
 
   // Load persisted progress on first mount.
   useEffect(() => {
@@ -97,6 +116,11 @@ export function CrossStitchChartView({
           paletteOverride?: { family?: string } | null
         }
         if (cancelled) return
+        const incomingNotes = Array.isArray(
+          (data as unknown as { notes?: unknown }).notes,
+        )
+          ? ((data as unknown as { notes: unknown[] }).notes.filter(isCellNote))
+          : []
         setProgress((p) => ({
           ...p,
           markedCells: new Set(Array.isArray(data.markedCells) ? data.markedCells : []),
@@ -104,6 +128,7 @@ export function CrossStitchChartView({
           displayMode: validateDisplayMode(data.displayMode) ?? p.displayMode,
           paletteFamily:
             data.paletteOverride?.family === 'anchor' ? 'anchor' : 'authored',
+          notes: incomingNotes,
         }))
       } catch {
         // Silent: an unloaded progress row is equivalent to a fresh chart.
@@ -132,6 +157,7 @@ export function CrossStitchChartView({
           displayMode: progress.displayMode,
           paletteOverride:
             progress.paletteFamily === 'anchor' ? { family: 'anchor' } : null,
+          notes: progress.notes,
         }),
       }).catch(() => {
         // Network failure here is non-fatal; the next mutation re-tries.
@@ -148,6 +174,13 @@ export function CrossStitchChartView({
   // same operation to every cell the pointer crosses.
   const dragModeRef = useRef<'mark' | 'unmark' | null>(null)
   const lastCellRef = useRef<string | null>(null)
+
+  // Long-press detection for touch: hold > 500ms on a cell to open the note
+  // editor instead of marking. The press timer fires only if the pointer
+  // hasn't moved beyond a small slop.
+  const longPressTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const longPressStartRef = useRef<{ x: number; y: number; cellX: number; cellY: number } | null>(null)
+  const longPressFiredRef = useRef(false)
 
   const cellCoordsFromEvent = useCallback(
     (e: ReactPointerEvent<SVGSVGElement>): { x: number; y: number } | null => {
@@ -184,25 +217,81 @@ export function CrossStitchChartView({
     })
   }, [])
 
+  const openNoteEditor = useCallback(
+    (cellX: number, cellY: number) => {
+      const existing = progress.notes.find((n) => n.cellX === cellX && n.cellY === cellY)
+      setNoteEditor({
+        cellX,
+        cellY,
+        noteId: existing?.id ?? null,
+        text: existing?.text ?? '',
+      })
+    },
+    [progress.notes],
+  )
+
+  const cancelLongPress = useCallback(() => {
+    if (longPressTimerRef.current) {
+      clearTimeout(longPressTimerRef.current)
+      longPressTimerRef.current = null
+    }
+    longPressStartRef.current = null
+  }, [])
+
   const onPointerDownChart = useCallback(
     (e: ReactPointerEvent<SVGSVGElement>) => {
       // Two-finger pinch is the shell's job — ignore multi-pointer.
       if (e.pointerType === 'touch' && e.isPrimary === false) return
+      // Right-click opens the note editor directly. The contextmenu
+      // handler on the SVG calls openNoteEditor; we just early-out here.
+      if (e.button === 2) return
       const coord = cellCoordsFromEvent(e)
       if (!coord) return
       if (!cellExistsAt(coord.x, coord.y)) return
+
       const key = `${coord.x},${coord.y}`
       const wasMarked = progress.markedCells.has(key)
       const mode = wasMarked ? 'unmark' : 'mark'
+
+      // Set up long-press timer for touch — fires the note editor after
+      // 500ms if the user hasn't moved. On fire, undo the initial mark
+      // (we'd already applied it on pointer-down).
+      if (e.pointerType === 'touch') {
+        longPressFiredRef.current = false
+        longPressStartRef.current = {
+          x: e.clientX,
+          y: e.clientY,
+          cellX: coord.x,
+          cellY: coord.y,
+        }
+        longPressTimerRef.current = setTimeout(() => {
+          if (longPressStartRef.current) {
+            longPressFiredRef.current = true
+            // Undo the initial mark — long-press means "open note" not
+            // "toggle mark + open note".
+            applyMark(key, mode === 'mark' ? 'unmark' : 'mark')
+            openNoteEditor(longPressStartRef.current.cellX, longPressStartRef.current.cellY)
+            dragModeRef.current = null
+          }
+        }, 500)
+      }
+
       dragModeRef.current = mode
       lastCellRef.current = key
       applyMark(key, mode)
     },
-    [cellCoordsFromEvent, cellExistsAt, progress.markedCells, applyMark],
+    [cellCoordsFromEvent, cellExistsAt, progress.markedCells, applyMark, openNoteEditor],
   )
 
   const onPointerMoveChart = useCallback(
     (e: ReactPointerEvent<SVGSVGElement>) => {
+      // Cancel pending long-press if the user moves more than 8px from
+      // the initial touch position — that's a drag, not a hold.
+      if (longPressStartRef.current && longPressTimerRef.current) {
+        const dx = e.clientX - longPressStartRef.current.x
+        const dy = e.clientY - longPressStartRef.current.y
+        if (dx * dx + dy * dy > 64) cancelLongPress()
+      }
       if (!dragModeRef.current) return
       const coord = cellCoordsFromEvent(e)
       if (!coord) return
@@ -212,12 +301,60 @@ export function CrossStitchChartView({
       lastCellRef.current = key
       applyMark(key, dragModeRef.current)
     },
-    [cellCoordsFromEvent, cellExistsAt, applyMark],
+    [cellCoordsFromEvent, cellExistsAt, applyMark, cancelLongPress],
   )
 
   const onPointerUpChart = useCallback(() => {
+    cancelLongPress()
     dragModeRef.current = null
     lastCellRef.current = null
+  }, [cancelLongPress])
+
+  const onContextMenuChart = useCallback(
+    (e: ReactMouseEvent<SVGSVGElement>) => {
+      // Desktop right-click → open note editor without marking.
+      e.preventDefault()
+      const svg = e.currentTarget
+      const pt = svg.createSVGPoint()
+      pt.x = e.clientX
+      pt.y = e.clientY
+      const ctm = svg.getScreenCTM()
+      if (!ctm) return
+      const localPt = pt.matrixTransform(ctm.inverse())
+      const cellX = Math.floor((localPt.x - PADDING_LEFT) / CELL_PX)
+      const cellY = Math.floor((localPt.y - PADDING_TOP) / CELL_PX)
+      if (cellX < 0 || cellX >= width || cellY < 0 || cellY >= height) return
+      if (!cellExistsAt(cellX, cellY)) return
+      openNoteEditor(cellX, cellY)
+    },
+    [width, height, cellExistsAt, openNoteEditor],
+  )
+
+  const saveNote = useCallback((cellX: number, cellY: number, noteId: string | null, text: string) => {
+    setProgress((p) => {
+      const trimmed = text.trim()
+      const others = p.notes.filter((n) => !(n.cellX === cellX && n.cellY === cellY))
+      if (trimmed.length === 0) {
+        return { ...p, notes: others }
+      }
+      const newNote: CellNote = {
+        id: noteId ?? `note-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+        cellX,
+        cellY,
+        text: trimmed,
+        createdAt: new Date().toISOString(),
+      }
+      return { ...p, notes: [...others, newNote] }
+    })
+    setNoteEditor(null)
+  }, [])
+
+  const deleteNote = useCallback((cellX: number, cellY: number) => {
+    setProgress((p) => ({
+      ...p,
+      notes: p.notes.filter((n) => !(n.cellX === cellX && n.cellY === cellY)),
+    }))
+    setNoteEditor(null)
   }, [])
 
   // Escape clears the magic-markers highlight.
@@ -309,8 +446,75 @@ export function CrossStitchChartView({
       <span className="cross-stitch-status">
         {markedCount} / {totalStitches} ({percentComplete}%)
       </span>
+      <a
+        href={`/chart-print/${tutorialId}/${chartIndex}?paper=a4&density=medium&symbol=colour`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="chart-viewer-shell__button"
+        title="Open the print preview in a new tab"
+      >
+        Print
+      </a>
+      {progress.highlightKey ? (
+        <span className="cross-stitch-status cross-stitch-status--highlight">
+          Highlighting {paletteIndex.get(progress.highlightKey)?.name ?? progress.highlightKey} ·{' '}
+          {totalCellsByKey.get(progress.highlightKey) ?? 0} stitches
+          <button
+            type="button"
+            className="cross-stitch-status__clear"
+            onClick={() => setProgress((p) => ({ ...p, highlightKey: null }))}
+            aria-label="Clear highlight"
+          >
+            ✕
+          </button>
+        </span>
+      ) : null}
     </>
   )
+
+  const notesPanel =
+    progress.notes.length > 0 || noteEditor ? (
+      <div className="cross-stitch-notes">
+        {noteEditor ? (
+          <NoteEditor
+            cellX={noteEditor.cellX}
+            cellY={noteEditor.cellY}
+            initialText={noteEditor.text}
+            onCancel={() => setNoteEditor(null)}
+            onSave={(text) => saveNote(noteEditor.cellX, noteEditor.cellY, noteEditor.noteId, text)}
+            onDelete={
+              noteEditor.noteId
+                ? () => deleteNote(noteEditor.cellX, noteEditor.cellY)
+                : null
+            }
+          />
+        ) : null}
+        {progress.notes.length > 0 ? (
+          <details className="cross-stitch-notes__list" open>
+            <summary>Notes ({progress.notes.length})</summary>
+            <ul>
+              {progress.notes
+                .slice()
+                .sort((a, b) => a.cellY - b.cellY || a.cellX - b.cellX)
+                .map((note) => (
+                  <li key={note.id}>
+                    <button
+                      type="button"
+                      className="cross-stitch-notes__item"
+                      onClick={() => openNoteEditor(note.cellX, note.cellY)}
+                    >
+                      <span className="cross-stitch-notes__coord">
+                        ({note.cellX + 1}, {note.cellY + 1})
+                      </span>
+                      <span className="cross-stitch-notes__text">{note.text}</span>
+                    </button>
+                  </li>
+                ))}
+            </ul>
+          </details>
+        ) : null}
+      </div>
+    ) : null
 
   const legend = (
     <div className="cross-stitch-legend">
@@ -359,7 +563,12 @@ export function CrossStitchChartView({
   return (
     <ChartViewerShell
       toolbar={toolbar}
-      legend={legend}
+      legend={
+        <>
+          {notesPanel}
+          {legend}
+        </>
+      }
       ariaLabel={definition.title ?? 'Cross-stitch chart'}
       className="chart-viewer-shell--cross-stitch"
     >
@@ -373,6 +582,7 @@ export function CrossStitchChartView({
         onPointerUp={onPointerUpChart}
         onPointerCancel={onPointerUpChart}
         onPointerLeave={onPointerUpChart}
+        onContextMenu={onContextMenuChart}
       >
         {/* Grid background */}
         <rect
@@ -497,6 +707,32 @@ export function CrossStitchChartView({
             )
           })}
         </g>
+        {/* Note markers — small dot at the top-right of any cell that has
+            a note attached. Pure visual; the cell still responds to mark
+            and long-press as usual. */}
+        {progress.notes.map((note) => {
+          if (
+            note.cellX < 0 ||
+            note.cellX >= width ||
+            note.cellY < 0 ||
+            note.cellY >= height
+          )
+            return null
+          const px = PADDING_LEFT + note.cellX * CELL_PX
+          const py = PADDING_TOP + note.cellY * CELL_PX
+          return (
+            <circle
+              key={note.id}
+              cx={px + CELL_PX - 3}
+              cy={py + 3}
+              r={2.5}
+              fill="#f5b400"
+              stroke="var(--chart-fg)"
+              strokeWidth={0.6}
+              pointerEvents="none"
+            />
+          )
+        })}
         {/* Ruler labels every 10 stitches */}
         <g fontSize={9} fill="var(--chart-fg)" fillOpacity={0.7}>
           {Array.from({ length: Math.floor((width - 1) / 10) }).map((_, i) => {
@@ -520,6 +756,68 @@ export function CrossStitchChartView({
         </g>
       </svg>
     </ChartViewerShell>
+  )
+}
+
+function NoteEditor({
+  cellX,
+  cellY,
+  initialText,
+  onCancel,
+  onSave,
+  onDelete,
+}: {
+  cellX: number
+  cellY: number
+  initialText: string
+  onCancel: () => void
+  onSave: (text: string) => void
+  onDelete: (() => void) | null
+}) {
+  const [text, setText] = useState(initialText)
+  return (
+    <div className="cross-stitch-note-editor">
+      <div className="cross-stitch-note-editor__header">
+        Note on cell ({cellX + 1}, {cellY + 1})
+      </div>
+      <textarea
+        autoFocus
+        rows={3}
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="Write a note for this cell — colour change, parking, count check, anything."
+      />
+      <div className="cross-stitch-note-editor__actions">
+        <button type="button" className="chart-viewer-shell__button" onClick={() => onSave(text)}>
+          Save
+        </button>
+        {onDelete ? (
+          <button
+            type="button"
+            className="chart-viewer-shell__button"
+            onClick={onDelete}
+            aria-label="Delete note"
+          >
+            Delete
+          </button>
+        ) : null}
+        <button type="button" className="chart-viewer-shell__button" onClick={onCancel}>
+          Cancel
+        </button>
+      </div>
+    </div>
+  )
+}
+
+function isCellNote(value: unknown): value is CellNote {
+  if (!value || typeof value !== 'object') return false
+  const v = value as Record<string, unknown>
+  return (
+    typeof v.id === 'string' &&
+    typeof v.cellX === 'number' &&
+    typeof v.cellY === 'number' &&
+    typeof v.text === 'string' &&
+    typeof v.createdAt === 'string'
   )
 }
 

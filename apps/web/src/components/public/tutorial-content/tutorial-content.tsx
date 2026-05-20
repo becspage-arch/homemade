@@ -30,6 +30,9 @@ import type {
 import { CrossStitchChartView } from '../chart-viewer/cross-stitch-chart-view'
 import { ReferenceChartView } from '../chart-viewer/reference-chart-view'
 import { ChartSignInGate } from '../chart-viewer/chart-sign-in-gate'
+import { OrigamiFoldView } from '../chart-viewer/origami-fold-view'
+import { CraftChartView } from '../chart-viewer/craft-chart-view'
+import { WeavingDraftView } from '../chart-viewer/weaving-draft-view'
 import '../chart-viewer/chart-viewer.css'
 import { ScaleToken } from './scale-context'
 import type {
@@ -347,10 +350,19 @@ function RenderNode({
         return <div className="craft-chart-missing">Chart not yet attached.</div>
       }
       if (!isSignedIn) return <ChartSignInGate subtitle="Crochet / knitting chart" />
+      if (!tutorialId || chartIndex === null) {
+        return (
+          <ReferenceChartView ariaLabel="Craft chart">
+            <CraftChart definition={def} />
+          </ReferenceChartView>
+        )
+      }
       return (
-        <ReferenceChartView ariaLabel="Craft chart">
-          <CraftChart definition={def} />
-        </ReferenceChartView>
+        <CraftChartView
+          definition={def}
+          tutorialId={tutorialId}
+          chartIndex={chartIndex}
+        />
       )
     }
 
@@ -399,33 +411,52 @@ function RenderNode({
 
     case 'origamiFoldDiagram': {
       // Paper & word — origami fold sequence (v1 basic-folds renderer).
-      // Reference-mode wrapper; per-step marking lands in a later
-      // iteration.
+      // Interactive per-step marking; current-step highlight; persisted
+      // via the chart-progress API. Preview surfaces (no tutorialId)
+      // fall back to the static SVG inside a reference shell.
       const def = attrs.definition as OrigamiFoldDefinition | undefined
       if (!def || typeof def !== 'object') {
         return <div className="craft-chart-missing">Fold diagram not yet attached.</div>
       }
       if (!isSignedIn) return <ChartSignInGate subtitle="Origami fold diagram" />
+      if (!tutorialId || chartIndex === null) {
+        return (
+          <ReferenceChartView ariaLabel={def.title ?? 'Origami fold diagram'}>
+            <OrigamiFoldBasic definition={def} />
+          </ReferenceChartView>
+        )
+      }
       return (
-        <ReferenceChartView ariaLabel="Origami fold diagram">
-          <OrigamiFoldBasic definition={def} />
-        </ReferenceChartView>
+        <OrigamiFoldView
+          definition={def}
+          tutorialId={tutorialId}
+          chartIndex={chartIndex}
+        />
       )
     }
 
     case 'weavingDraft': {
       // Fibre arts — weaving draft (threading × shafts, tie-up,
-      // treadling, computed drawdown). Reference-mode wrapper; per-pick
-      // marking lands in a later iteration.
+      // treadling, computed drawdown). Interactive per-pick marking;
+      // preview surfaces (no tutorialId) fall back to reference mode.
       const def = attrs.definition as WeavingDraftDefinition | undefined
       if (!def || typeof def !== 'object') {
         return <div className="craft-chart-missing">Draft not yet attached.</div>
       }
       if (!isSignedIn) return <ChartSignInGate subtitle="Weaving draft" />
+      if (!tutorialId || chartIndex === null) {
+        return (
+          <ReferenceChartView ariaLabel="Weaving draft">
+            <WeavingDraft definition={def} />
+          </ReferenceChartView>
+        )
+      }
       return (
-        <ReferenceChartView ariaLabel="Weaving draft">
-          <WeavingDraft definition={def} />
-        </ReferenceChartView>
+        <WeavingDraftView
+          definition={def}
+          tutorialId={tutorialId}
+          chartIndex={chartIndex}
+        />
       )
     }
 

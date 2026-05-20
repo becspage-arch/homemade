@@ -213,6 +213,246 @@
   font-variant-numeric: tabular-nums;
 }
 
+.cross-stitch-status--highlight {
+  opacity: 1;
+  background: var(--chart-search-overlay);
+  border-radius: 4px;
+  padding: 4px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cross-stitch-status__clear {
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.cross-stitch-status__clear:hover {
+  opacity: 0.6;
+}
+
+/* Notes */
+
+.cross-stitch-notes {
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cross-stitch-note-editor {
+  border: 1px solid var(--chart-fg);
+  border-radius: 8px;
+  padding: 10px;
+  background: var(--chart-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cross-stitch-note-editor__header {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cross-stitch-note-editor textarea {
+  font: inherit;
+  font-size: 13px;
+  width: 100%;
+  resize: vertical;
+  padding: 6px 8px;
+  border: 1px solid var(--chart-grid);
+  border-radius: 6px;
+  background: var(--chart-bg);
+  color: var(--chart-fg);
+}
+
+.cross-stitch-note-editor__actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.cross-stitch-notes__list {
+  font-size: 13px;
+}
+
+.cross-stitch-notes__list summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 4px 0;
+}
+
+.cross-stitch-notes__list ul {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cross-stitch-notes__item {
+  width: 100%;
+  appearance: none;
+  background: transparent;
+  border: 1px solid transparent;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.cross-stitch-notes__item:hover {
+  background: var(--chart-button-bg);
+}
+
+.cross-stitch-notes__coord {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.cross-stitch-notes__text {
+  flex: 1;
+  font-size: 13px;
+  white-space: pre-wrap;
+}
+
+/* Origami step list */
+
+.origami-step-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.origami-step-list__item {
+  border-radius: 6px;
+}
+
+.origami-step-list__item--current {
+  background: var(--chart-highlight-overlay);
+}
+
+.origami-step-list__item--marked .origami-step-list__label {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.origami-step-list__toggle {
+  width: 100%;
+  appearance: none;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  text-align: left;
+  cursor: pointer;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: inherit;
+  color: inherit;
+}
+
+.origami-step-list__toggle:hover {
+  background: var(--chart-button-bg);
+}
+
+.origami-step-list__check {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid var(--chart-cell-stroke);
+  background: var(--chart-bg);
+  text-align: center;
+  line-height: 18px;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.origami-step-list__toggle[aria-pressed='true'] .origami-step-list__check {
+  background: var(--chart-fg);
+  color: var(--chart-bg);
+}
+
+.origami-step-list__label {
+  flex: 1;
+  font-size: 13px;
+}
+
+/* Per-row craft chart (knit / crochet) row list */
+
+.craft-chart-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.craft-chart-rows__rule-toggle {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.craft-chart-rows__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 2px;
+}
+
+.craft-chart-rows__row {
+  appearance: none;
+  background: var(--chart-button-bg);
+  color: var(--chart-fg);
+  border: 1px solid var(--chart-grid);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 4px 6px;
+  font: inherit;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.craft-chart-rows__row[aria-pressed='true'] {
+  background: var(--chart-fg);
+  color: var(--chart-bg);
+}
+
+.craft-chart-rows__row--current {
+  outline: 2px solid var(--chart-highlight-overlay);
+  outline-offset: -2px;
+}
+
+.craft-chart-rule-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  -webkit-mask: var(--craft-chart-rule-mask);
+          mask: var(--craft-chart-rule-mask);
+}
+
 /* Sign-in gate */
 
 .chart-sign-in-gate {
