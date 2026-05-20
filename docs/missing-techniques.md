@@ -33,3 +33,15 @@ Each entry:
 - **sized-paper-for-calligraphy-alum-gelatin** — referenced by recipe `how-cotton-linter-behaves` on 2026-05-20. Suggested technique title: "Sized Paper For Calligraphy Alum Gelatin".
 - **long-stitch-journal-over-tapes** — referenced by recipe `kettle-stitch` on 2026-05-20. Suggested technique title: "Long Stitch Journal Over Tapes".
 - **recycled-paper-sheet-forming** — referenced by recipe `making-a-mould-and-deckle` on 2026-05-20. Suggested technique title: "Recycled Paper Sheet Forming".
+- **signature-folding-and-piercing** — referenced by recipe `pamphlet-stitch-notebook` on 2026-05-20. Suggested technique title: "Signature Folding And Piercing".
+- **pasting-down-endpapers** — referenced by recipe `covering-boards-with-paper` on 2026-05-20. Suggested technique title: "Pasting Down Endpapers".
+- **versal-letters-illuminated** — referenced by recipe `uncial-lower-case-alphabet` on 2026-05-20. Suggested technique title: "Versal Letters Illuminated".
+- **copperplate-lower-case-alphabet** — referenced by recipe `making-iron-gall-ink` on 2026-05-20. Suggested technique title: "Copperplate Lower Case Alphabet".
+- **flourishing-copperplate** — referenced by recipe `copperplate-lower-case-alphabet` on 2026-05-20. Suggested technique title: "Flourishing Copperplate".
+- **flourishing-copperplate** — referenced by recipe `spencerian-capital-letters` on 2026-05-20. Suggested technique title: "Flourishing Copperplate".
+- **pulp-painting-on-wet-sheets** — referenced by recipe `abaca-fibre-sheet-forming` on 2026-05-20. Suggested technique title: "Pulp Painting On Wet Sheets".
+- **bouquet-combing-pattern** — referenced by recipe `stone-pattern-marbling` on 2026-05-20. Suggested technique title: "Bouquet Combing Pattern".
+- **spanish-wave-marbling** — referenced by recipe `bouquet-combing-pattern` on 2026-05-20. Suggested technique title: "Spanish Wave Marbling".
+- **index-and-key-pages** — referenced by recipe `hand-lettered-journal-headers` on 2026-05-20. Suggested technique title: "Index And Key Pages".
+- **saddle-stapled-zine** — referenced by recipe `accordion-fold-zine` on 2026-05-20. Suggested technique title: "Saddle Stapled Zine".
+- **origami-samurai-hat** — referenced by recipe `waterbomb-base` on 2026-05-20. Suggested technique title: "Origami Samurai Hat".
