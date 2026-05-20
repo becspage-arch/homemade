@@ -116,6 +116,58 @@
   font-size: 13px;
 }
 
+/* Tablet two-up: at landscape tablet width and above (≥900px), put
+   chart and legend side-by-side. Mobile and narrow desktop stack them
+   vertically. Fullscreen mode always uses the two-up layout if the
+   viewport allows it, so a sideways-rotated phone gets the chart on
+   the left and the legend on the right. */
+
+@media (min-width: 900px) {
+  .chart-viewer-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
+    grid-template-rows: auto 1fr;
+    gap: 12px;
+  }
+  .chart-viewer-shell__bar {
+    grid-column: 1 / -1;
+  }
+  .chart-viewer-shell__canvas {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .chart-viewer-shell__legend {
+    grid-column: 2;
+    grid-row: 2;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  /* Cross-stitch legend is a grid that wants more room — switch to a
+     single column at the side, so each colour gets a full row. */
+  .chart-viewer-shell--cross-stitch .cross-stitch-legend {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Fullscreen + landscape phone: same two-up. Coarse pointer + landscape
+   covers the rotated phone case. */
+.chart-viewer-shell--fullscreen.chart-viewer-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
+  grid-template-rows: auto 1fr;
+}
+@media (max-width: 899px) and (orientation: portrait) {
+  .chart-viewer-shell--fullscreen.chart-viewer-shell {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+  .chart-viewer-shell--fullscreen .chart-viewer-shell__legend {
+    grid-column: 1;
+    grid-row: 3;
+    max-height: 35vh;
+  }
+}
+
 /* Cross-stitch specific cell + legend styles */
 
 .cross-stitch-cell {

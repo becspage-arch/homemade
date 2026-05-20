@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { OrigamiFoldBasic } from '@/lib/chart-renderers/origami-fold-basic'
 import type { OrigamiFoldDefinition } from '@/lib/chart-renderers/types'
 import { ChartViewerShell } from './chart-viewer-shell'
+import { useTimeTracker } from './use-time-tracker'
 
 interface OrigamiFoldViewProps {
   definition: OrigamiFoldDefinition
@@ -34,6 +35,7 @@ export function OrigamiFoldView({
 }: OrigamiFoldViewProps) {
   const [markedSteps, setMarkedSteps] = useState<Set<number>>(new Set())
   const [loaded, setLoaded] = useState(false)
+  useTimeTracker(tutorialId, chartIndex, loaded)
 
   useEffect(() => {
     let cancelled = false

@@ -12,6 +12,7 @@ import {
 
 import type { CrossStitchChart } from '@/lib/chart-renderers/cross-stitch'
 import { ChartViewerShell } from './chart-viewer-shell'
+import { useTimeTracker } from './use-time-tracker'
 
 interface CrossStitchChartViewProps {
   /** Chart definition pulled from the TipTap node attrs. */
@@ -101,6 +102,7 @@ export function CrossStitchChartView({
   })
   const [loaded, setLoaded] = useState(false)
   const [noteEditor, setNoteEditor] = useState<NoteEditorState | null>(null)
+  useTimeTracker(tutorialId, chartIndex, loaded)
 
   // Load persisted progress on first mount.
   useEffect(() => {
@@ -707,6 +709,31 @@ export function CrossStitchChartView({
             )
           })}
         </g>
+        {/* Centre lines — emphasised cross-hair at the centre of the
+            chart. Stitchers use these to align fabric to the centre of
+            the embroidery hoop. Drawn distinct from the every-25 emphasis
+            so they always stand out, even on charts that happen to fall
+            on a 25-stitch boundary. */}
+        {(() => {
+          const centreX = PADDING_LEFT + Math.floor(width / 2) * CELL_PX
+          const centreY = PADDING_TOP + Math.floor(height / 2) * CELL_PX
+          return (
+            <g stroke="var(--chart-fg)" fill="none" strokeDasharray="4 3" strokeWidth={1.1}>
+              <line
+                x1={centreX}
+                y1={PADDING_TOP}
+                x2={centreX}
+                y2={PADDING_TOP + gridHeightPx}
+              />
+              <line
+                x1={PADDING_LEFT}
+                y1={centreY}
+                x2={PADDING_LEFT + gridWidthPx}
+                y2={centreY}
+              />
+            </g>
+          )
+        })()}
         {/* Note markers — small dot at the top-right of any cell that has
             a note attached. Pure visual; the cell still responds to mark
             and long-press as usual. */}

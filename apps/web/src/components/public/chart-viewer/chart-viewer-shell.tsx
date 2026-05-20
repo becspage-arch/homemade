@@ -169,9 +169,38 @@ export const ChartViewerShell = forwardRef<ChartViewerShellHandle, ChartViewerSh
       const el = containerRef.current
       if (!el) return
       if (document.fullscreenElement) {
+        // Releasing landscape on exit — best-effort, browsers without
+        // the Screen Orientation API silently noop.
+        const orientation = (screen as Screen & {
+          orientation?: { unlock?: () => void }
+        }).orientation
+        try {
+          orientation?.unlock?.()
+        } catch {
+          // unlock can throw on browsers that don't support it
+        }
         void document.exitFullscreen()
       } else if (el.requestFullscreen) {
-        void el.requestFullscreen()
+        void el.requestFullscreen().then(() => {
+          // Lock landscape on touch screens only — desktop users tend to
+          // resent forced orientation. Detection: coarse-pointer media
+          // query. Best-effort; the API is unavailable on iOS Safari and
+          // some embedded browsers.
+          const isCoarsePointer =
+            typeof window !== 'undefined' &&
+            window.matchMedia?.('(pointer: coarse)').matches
+          if (!isCoarsePointer) return
+          const orientation = (screen as Screen & {
+            orientation?: { lock?: (o: string) => Promise<void> }
+          }).orientation
+          try {
+            void orientation?.lock?.('landscape').catch(() => {
+              // user denied / not supported — silent
+            })
+          } catch {
+            // not supported
+          }
+        })
       }
     }, [])
 

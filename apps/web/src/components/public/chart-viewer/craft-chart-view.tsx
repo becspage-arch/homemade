@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { CraftChart } from '@/lib/craft-charts/svg-chart'
 import type { ChartDefinition } from '@/lib/craft-charts/types'
 import { ChartViewerShell } from './chart-viewer-shell'
+import { useTimeTracker } from './use-time-tracker'
 
 interface CraftChartViewProps {
   definition: ChartDefinition
@@ -43,6 +44,7 @@ export function CraftChartView({
   const [markedRows, setMarkedRows] = useState<Set<number>>(new Set())
   const [loaded, setLoaded] = useState(false)
   const [ruleMode, setRuleMode] = useState(false)
+  useTimeTracker(tutorialId, chartIndex, loaded)
 
   useEffect(() => {
     let cancelled = false

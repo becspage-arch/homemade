@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { WeavingDraft } from '@/lib/chart-renderers/weaving-draft'
 import type { WeavingDraftDefinition } from '@/lib/chart-renderers/types'
 import { ChartViewerShell } from './chart-viewer-shell'
+import { useTimeTracker } from './use-time-tracker'
 
 interface WeavingDraftViewProps {
   definition: WeavingDraftDefinition
@@ -30,6 +31,7 @@ export function WeavingDraftView({
   const [markedRows, setMarkedRows] = useState<Set<number>>(new Set())
   const [loaded, setLoaded] = useState(false)
   const [ruleMode, setRuleMode] = useState(false)
+  useTimeTracker(tutorialId, chartIndex, loaded)
 
   useEffect(() => {
     let cancelled = false
