@@ -109,6 +109,26 @@ function priorityFor(input: SourceHeroInput): { freeOrder: ImageSource[]; skipFr
     // kit — verified in the orchestrator's verify callback).
     return { freeOrder: ['pexels', 'unsplash', 'wikimedia', 'pixabay'], skipFreeForAi: false }
   }
+  if (
+    input.category === 'needlework' ||
+    input.category === 'knitting' ||
+    input.category === 'crochet' ||
+    input.category === 'sewing' ||
+    input.category === 'fibre-arts' ||
+    input.category === 'wood-natural-craft' ||
+    input.category === 'paper-word' ||
+    input.category === 'pottery-ceramics'
+  ) {
+    // Craft-instruction categories: Wikimedia FIRST. Niche technique queries
+    // ("treble crochet", "long-tail cast on", "magic ring") frequently get
+    // nonsensical Unsplash matches because lifestyle sources rank lifestyle
+    // photos, not technique reference. Wikimedia has dedicated tutorial-shot
+    // categories (Crochet Treble step 1-7, Knit Texture Ballband Dishcloth,
+    // historical samplers), PD historical engravings (Therese de Dillmont
+    // 1886, Caulfeild & Saward 1882, Weldon's 1880s), and museum-licensed
+    // antique pieces. Photo sources catch when Wikimedia misses.
+    return { freeOrder: ['wikimedia', 'pexels', 'unsplash', 'pixabay'], skipFreeForAi: false }
+  }
   // Garden / herbal-medicine / bushcraft and anything else: same as cooking generic.
   return { freeOrder: ['unsplash', 'pexels', 'wikimedia', 'pixabay'], skipFreeForAi: false }
 }
