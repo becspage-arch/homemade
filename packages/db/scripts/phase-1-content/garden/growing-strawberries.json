@@ -1,0 +1,71 @@
+{
+  "slug": "growing-strawberries",
+  "title": "Growing strawberries",
+  "subtitle": "A garden bed that fruits for three productive years and replants itself from its own runners.",
+  "excerpt": "A strawberry bed crops for about three years before yields drop. The standard British rhythm is plant in autumn, fruit the next June, and propagate fresh plants from summer runners. Once the bed is established it pays for itself.",
+  "type": "GROWING_GUIDE",
+  "categorySlug": "garden",
+  "subCategorySlug": "fruit",
+  "difficulty": "BEGINNER",
+  "season": "SUMMER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Cultural notes drawn from two references:\n\n• Royal Horticultural Society, strawberry growing guide (rhs.org.uk/fruit/strawberries) for the planting window, runner-management cadence, and netting practice.\n• Mrs Earle, Pot-Pourri from a Surrey Garden (1897), §The fruit garden. Project Gutenberg #14443. Public domain, used for the traditional rhythm of strawberry-bed renewal.",
+  "garden": {
+    "plantSlug": "strawberry",
+    "subTopic": "growing",
+    "plantingMonths": ["september", "october", "march", "april"],
+    "harvestMonths": ["june", "july"],
+    "containerFriendly": true,
+    "indoorFriendly": false,
+    "regionsApplicable": ["UK", "EU", "US_NORTH"]
+  },
+  "aliases": ["grow strawberries", "strawberry bed", "strawberry runners"],
+  "techniqueSlugs": [],
+  "recipeTools": [],
+  "glossaryTerms": [
+    { "slug": "runner", "term": "Runner", "definition": "A long horizontal stem a strawberry plant sends out in summer. Each runner roots where it touches the soil, producing a new plant clone of the parent." },
+    { "slug": "crown-strawberry", "term": "Crown", "definition": "The thick base of a strawberry plant where leaves emerge. The crown should sit at soil level after planting: too deep rots, too shallow dries out." },
+    { "slug": "everbearing", "term": "Everbearing", "definition": "A strawberry variety that produces two smaller crops in a season (early summer and late summer or autumn) rather than one main June crop." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Strawberries are a perennial fruit that crops well for about three years before the yields drop and the plants need replacing. The standard British growing rhythm is plant in autumn, fruit the next June, and start the next generation from summer runners. Once the bed is established it propagates itself: by year three the original plants tail off and the runner-grown plants take over." }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "The work each year is light: a winter mulch in November, a feed in March, netting against birds in May, a heavy crop in June, runner-management in July and August. Container-grown strawberries follow the same rhythm in a 30 to 40 litre pot or strawberry planter; the watering is more attentive because containers dry out faster than open ground." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Bare-root or potted strawberry plants from a nursery or garden centre, six to ten plants for a beginner's bed. A patch of sunny ground (six hours of sun a day minimum) or a 30 to 40 litre container with drainage holes. Compost or well-rotted manure to dig in before planting. Netting for the fruiting weeks. A trowel, a watering can, and secateurs for the runner pass." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Choosing varieties" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Strawberry varieties split into June-bearing (one main crop in June) and " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "everbearing" } }], "text": "everbearing" }, { "type": "text", "text": " (two smaller crops). For a first bed, a single June-bearing variety gives the heaviest crop and the simplest schedule. \"Cambridge Favourite\" is the traditional British choice, \"Honeoye\" is the modern early-cropper, \"Mara des Bois\" is the everbearing variety to try once the rhythm is familiar. Three different varieties stagger the harvest from late May to early August." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Planting (autumn or early spring)" }] },
+      { "type": "orderedList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dig the planting area to a fork's depth, working in a bucket of compost or well-rotted manure per square metre. Strawberries fruit best on free-draining soil with a fair amount of organic matter." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Space the plants 30 to 40 cm apart in rows, with 60 to 75 cm between rows. In a container, three plants in a 30 litre pot is the limit; more than that and they shade each other out." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set each plant so the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "crown-strawberry" } }], "text": "crown" }, { "type": "text", "text": " sits exactly at soil level. Roots spread, crown on top, leaves above. Firm the soil around each plant and water in." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Autumn-planted strawberries fruit the following June. Spring-planted strawberries pinch off the first season's flowers to put the plant's energy into roots, and fruit properly the year after that." }] }] }
+      ] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "The growing year" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "From the first proper cropping year, the bed runs on this cadence:" }] },
+      { "type": "bulletList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "March: a top-dress of general-purpose fertiliser around each plant (about a handful per plant). Pull off any dead leaves left from winter." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "May: tuck straw or strawberry mats around the plants so the developing fruit doesn't sit on wet soil. Net the bed against blackbirds and song-thrushes; this matters more than any other single step." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "June: pick fruit as it ripens, every two to three days, in the morning while the fruit is cool." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "July and August: remove the straw, lift the netting. Choose the strongest " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "runner" } }], "text": "runners" }, { "type": "text", "text": " (four or five per parent plant) and pin them into small pots of compost sunk in the soil next to the parent. Cut off any extra runners; they sap the parent without producing useful new plants." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "September: the rooted runners are ready to lift and replant elsewhere. They become next year's young plants in a fresh bed; the original bed continues producing for another year or two." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "November: a mulch of compost over the dormant crowns, leaves cleared. The bed sleeps until March." }] }] }
+      ] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      { "type": "troubleshooter", "attrs": {
+        "heading": "What goes wrong in a strawberry bed",
+        "intro": "Four habits that take the yield from a kilo per plant down to almost nothing.",
+        "items": [
+          { "symptom": "Birds eat the fruit before you reach it", "cause": "The bed wasn't netted, or the netting had gaps a bird could fit through.", "fix": "Net before the first fruit blushes. Use 15 mm mesh, peg it down all the way round, and check daily for any bird that got in (they panic and tangle). A simple cage of canes and netting is reusable for years." },
+          { "symptom": "Fruit develops grey fuzz and rots before it ripens", "cause": "Botrytis, encouraged by fruit touching wet soil or by overcrowded plants with poor airflow.", "fix": "Mulch with straw or strawberry mats so the fruit doesn't touch soil. Thin out crowded plants so each has room to breathe. Pick off any mouldy fruit and discard (not on the compost heap)." },
+          { "symptom": "Plants produce lots of leaves but few flowers", "cause": "Excess nitrogen, usually from heavy compost or chicken manure in spring.", "fix": "Switch to a high-potash feed (tomato feed works) from May. Don't add fresh manure in spring; a winter mulch of compost is enough." },
+          { "symptom": "Year three crop is dramatically smaller than year two", "cause": "The plants are tailing off as expected; this is when the runner-grown daughters take over.", "fix": "Plant the rooted runners from year two into a fresh bed in autumn. They become the productive bed for years four to six. The original bed gets dug up after one final cropping year and replanted in something else." }
+        ]
+      } },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Where this goes next" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "A full strawberry crop is more than most households eat fresh. The traditional next step is preserving: strawberry jam in the kitchen during the heaviest week, frozen whole strawberries for the winter, or vacuum-packed for short-term store. Surplus runners not needed for the next bed are easy to give away to neighbouring gardeners." }] }
+    ]
+  }
+}
