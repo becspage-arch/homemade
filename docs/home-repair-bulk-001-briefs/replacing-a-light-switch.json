@@ -1,0 +1,137 @@
+{
+  "slug": "replacing-a-light-switch",
+  "title": "Replacing a light switch",
+  "subtitle": "Isolate, prove dead, transfer conductors, test",
+  "excerpt": "How to replace a single-gang one-way or two-way light switch faceplate: isolating the lighting circuit, proving dead with the live-dead-live procedure, transferring conductors to the new switch, and testing before restoring the supply.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": 30,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Standard UK domestic electrical practice per IET Wiring Regulations 18th Edition (BS 7671). Two-way switching cable colours from the 2006 harmonised colours amendment. Safe isolation procedure from HSE guidance.",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false }
+  ],
+  "recipe": { "foundational": false },
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "how to replace a light switch",
+    "changing a light switch",
+    "light switch faceplate replacement",
+    "fitting a new light switch"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "three-core-and-earth",
+      "term": "Three-core-and-earth",
+      "definition": "A sheathed cable with three insulated conductors and one bare earth conductor. Used for two-way switching (a light controlled from two switches) and for retained-light fittings."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Replacing a switch faceplate follows exactly the same safe-isolation sequence as replacing a socket faceplate: isolate the circuit, lock off, prove dead with live-dead-live, photograph the connections, transfer, refit, restore, and test. The only additional complexity is at a two-way switch, which has three terminals and a three-core-and-earth cable rather than a simple twin-and-earth." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safe isolation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 1, identify and isolate the circuit. " },
+          { "type": "text", "text": "Switch on the light to confirm it works, then go to the consumer unit and switch off the lighting circuit MCB. Apply the lock-off device. Return to the switch and check the light no longer works. Perform the full live-dead-live test with the two-pole tester on the switch terminals after removing the faceplate as described in the socket replacement article." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Removing the old switch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 2, unscrew and remove the faceplate. " },
+          { "type": "text", "text": "Undo the two retaining screws and pull the faceplate away from the wall box. Photograph the wiring before touching it." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "One-way switch wiring. " },
+          { "type": "text", "text": "A one-way switch has two terminals. Twin-and-earth cable connects brown (line in) to one terminal and grey or black sleeved in red/brown (switch wire) to the other. The bare earth is sleeved green-and-yellow at the earth terminal on the switch plate." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Two-way switch wiring. " },
+          { "type": "text", "text": "A two-way switch has three terminals: Com (common), L1, and L2. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "three-core-and-earth" } }], "text": "Three-core-and-earth" },
+          { "type": "text", "text": " cable connects the brown conductor to Com, grey to L1, and black (both sleeved in the harmonised colours) to L2. Pre-2006 installations use red (L1), yellow (L2), and blue (Com). The photograph rule is especially important here." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fitting the new switch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 3, connect the new faceplate. " },
+          { "type": "text", "text": "Transfer each conductor to the matching terminal on the new switch, following the photograph. Use screw-terminal fixings only; backstab push-in terminals are not suitable for lighting circuits." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 4, fold and fix. " },
+          { "type": "text", "text": "Fold the cables into the wall box carefully and fix the faceplate. The faceplate should sit flush; tighten the retaining screws evenly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Testing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 5, restore and test. " },
+          { "type": "text", "text": "Remove the lock-off device and restore the circuit. Toggle the switch and confirm the light operates. For a two-way circuit, test from both switch positions." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Light stays on when the switch is in the off position. " },
+          { "type": "text", "text": "The switch wire and the line feed are swapped at the one-way terminals. Switch off, re-isolate, swap the conductors, and retest." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Two-way circuit: light on from one switch, off position does not work from the other. " },
+          { "type": "text", "text": "L1 and L2 are swapped. Switch off, re-isolate, swap the conductors at L1 and L2, and retest." }
+        ]
+      }
+    ]
+  }
+}

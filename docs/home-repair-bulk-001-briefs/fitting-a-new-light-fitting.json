@@ -1,0 +1,123 @@
+{
+  "slug": "fitting-a-new-light-fitting",
+  "title": "Fitting a new ceiling light fitting",
+  "subtitle": "Isolate, remove the old fitting, connect the new one",
+  "excerpt": "How to replace a ceiling light fitting: isolating the lighting circuit, removing the old fitting and rose, connecting the new fitting to the existing ceiling rose or flex-outlet backplate, and testing before restoring the supply.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": 45,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Standard UK domestic electrical practice per IET Wiring Regulations 18th Edition (BS 7671). Loop-in ceiling rose wiring from NAPIT guidance. Safe isolation from HSE.",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": true, "notes": "For drilling fixing holes in the ceiling backplate." }
+  ],
+  "recipe": { "foundational": false },
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "how to fit a light fitting",
+    "changing a ceiling light",
+    "replacing a light fixture",
+    "ceiling light installation"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cpc-earth",
+      "term": "CPC (Circuit Protective Conductor)",
+      "definition": "The earth conductor in a domestic circuit. In twin-and-earth cable, the bare conductor — sleeved in green-and-yellow at every termination, even though it has no insulation along the run."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Replacing a ceiling light fitting is covered by the same rules as replacing a socket faceplate: it is not notifiable work under Part P provided you are replacing an existing fitting and not adding a new circuit. The key hazard is working at height; use a stable platform rather than a chair. Isolate the circuit before touching any conductor." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safe isolation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 1, isolate the circuit. " },
+          { "type": "text", "text": "Switch off the lighting circuit MCB at the consumer unit and apply the lock-off device. Switch the light on at the wall switch and confirm the light does not operate. Perform live-dead-live with the two-pole tester at the light fitting terminals after opening the rose canopy." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Understanding what you have" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "UK domestic lights use one of two wiring systems: the loop-in ceiling rose (the flex to the pendant emerges from a rose that contains the wiring connections), or a junction-box system (the rose is simply a flex outlet, with the wiring connections in a separate junction box above the ceiling). In either case, only the conductors connecting to the pendant flex are touched; the conductors entering the ceiling rose from the ceiling are not disturbed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Removing the old fitting" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 2, remove the old ceiling rose or canopy. " },
+          { "type": "text", "text": "Unscrew the cover of the old rose or the canopy of the old fitting. Photograph the wiring. Undo the terminal screws and release the pendant flex or the fitting's supply wires. If the fitting was on a loop-in rose, the rose can be reused with the new pendant. If the new fitting comes with its own backplate, unscrew the old rose completely from the ceiling." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fitting the new light" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 3, fix the new backplate or rose. " },
+          { "type": "text", "text": "If the new fitting has its own backplate, fix it to the ceiling joist or plasterboard using the appropriate fixings. For a joist, drive screws directly. For plasterboard without a joist, use cavity toggles." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 4, connect the conductors. " },
+          { "type": "text", "text": "Connect the brown conductor of the flex or supply cable to the live terminal (L), the blue to neutral (N), and the green-and-yellow " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cpc-earth" } }], "text": "CPC" },
+          { "type": "text", "text": " to the earth terminal (E). If the fitting has no earth terminal and no metalwork exposed to touch, earth connection is not required but must still be terminated safely." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 5, fit the cover and restore supply. " },
+          { "type": "text", "text": "Close the canopy or cover over the wiring. Remove the lock-off device and restore the circuit. Test the light from the wall switch." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Light does not work after fitting. " },
+          { "type": "text", "text": "Check the lamp type and wattage matches the fitting. LED lamps require a compatible dimmer if a dimmer switch is on the circuit. If the wiring appears correct, check that the MCB has not tripped; a wiring fault may have tripped it on restoration." }
+        ]
+      }
+    ]
+  }
+}

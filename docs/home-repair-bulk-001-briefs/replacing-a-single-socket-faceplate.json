@@ -1,0 +1,146 @@
+{
+  "slug": "replacing-a-single-socket-faceplate",
+  "title": "Replacing a single socket faceplate",
+  "subtitle": "Isolate, confirm dead, transfer the conductors, test",
+  "excerpt": "How to replace a damaged or aged socket outlet faceplate: isolating the circuit at the consumer unit, verifying dead with a two-pole tester using the live-dead-live procedure, transferring the conductors to the new faceplate, and testing with a socket tester before restoring the supply.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": 30,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Standard UK domestic electrical practice. IET Wiring Regulations 18th Edition (BS 7671). HSE guidance on safe isolation. NAPIT and NICEIC guidance on socket faceplate replacement as non-notifiable work under Part P.",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "socket-tester", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false },
+    { "slug": "voltage-tester-pen", "isOptional": true, "notes": "As a secondary non-contact check only; never a substitute for the two-pole procedure." }
+  ],
+  "recipe": { "foundational": true },
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "how to replace a socket",
+    "changing a plug socket",
+    "socket faceplate replacement",
+    "fitting a new socket faceplate"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "live-dead-live",
+      "term": "Live-dead-live test",
+      "definition": "The safe isolation procedure: test your voltage tester on a known-live source, then on the conductor you intend to work on (must read dead), then back on the known-live source. Confirms the tester did not fail between tests."
+    },
+    {
+      "slug": "twin-and-earth",
+      "term": "Twin-and-earth cable",
+      "definition": "A flat sheathed cable with two insulated conductors (line and neutral) and one bare earth conductor. The standard UK domestic wiring cable. 1.0 / 1.5 / 2.5 / 4.0 mm² conductor sizes."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Replacing a socket faceplate is among the few electrical jobs a competent non-electrician can do legally in the UK (it is not notifiable work under Part P, because it is in an existing circuit, not a new circuit). The scope is strictly the faceplate only; the back box and the wiring inside the wall are not touched. The safety requirement is absolute: the circuit must be proved dead with the full " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "live-dead-live" } }], "text": "live-dead-live" },
+          { "type": "text", "text": " procedure before any conductor is touched." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safe isolation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 1, isolate the circuit. " },
+          { "type": "text", "text": "Identify the MCB or fuse for the socket ring at the consumer unit. Switch it off. Apply the lock-off device to the MCB so no one can switch it back on while you work. Write a warning label on it." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 2, perform the live-dead-live test. " },
+          { "type": "text", "text": "Test your two-pole voltage tester on the proving unit to confirm it reads live. Then test line-to-neutral, line-to-earth, and neutral-to-earth at the socket face. All must read zero. Then test the tester on the proving unit again to confirm it still reads live. If all three stages pass, the socket is confirmed dead." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Removing the old faceplate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 3, unscrew and remove the faceplate. " },
+          { "type": "text", "text": "Undo the two retaining screws and pull the faceplate away from the wall box. Note or photograph how the conductors are connected before touching anything. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "twin-and-earth" } }], "text": "Twin-and-earth" },
+          { "type": "text", "text": " cable has a brown conductor (line), a blue conductor (neutral), and a bare earth that should be sleeved in green-and-yellow at the terminal." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 4, unscrew the terminal screws on the old faceplate. " },
+          { "type": "text", "text": "Note that a ring-final socket has two conductors per terminal (ring-in and ring-out). Count the conductors at each terminal before removing. Release the terminals and withdraw the conductors." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fitting the new faceplate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 5, connect the conductors. " },
+          { "type": "text", "text": "Connect each conductor to the matching terminal on the new faceplate: brown to the L terminal, blue to N, green-and-yellow (or bare sleeved in green-and-yellow) to E or the earth symbol. Use screw-terminal fixings, not backstab push-in terminals. Tighten each terminal screw fully; a loose terminal will arc and char." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 6, fold the cables and fix the faceplate. " },
+          { "type": "text", "text": "Fold the cables carefully back into the wall box without kinking. Align the faceplate to the wall box and drive the two retaining screws. The faceplate should sit flush with the plaster; if not, check the wall box depth." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Testing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 7, restore supply and test. " },
+          { "type": "text", "text": "Remove the lock-off device and switch the MCB on. Plug the socket tester into the new socket. The tester's indicator should show correct wiring. If it shows incorrect wiring, switch off, re-isolate, and re-check each terminal connection before proceeding." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Socket tester shows reversed live and neutral. " },
+          { "type": "text", "text": "The brown and blue conductors are swapped at the terminals. Switch off, re-isolate, swap them, retest." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "MCB immediately trips when restored. " },
+          { "type": "text", "text": "A short circuit in the faceplate or a conductor touching another terminal. Switch off, re-isolate, re-check that each conductor is in its own terminal and that no bare earth is contacting the live or neutral terminals." }
+        ]
+      }
+    ]
+  }
+}
