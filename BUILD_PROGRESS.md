@@ -1582,7 +1582,7 @@ Revise the rates here when actuals diverge from estimates.
 | 8 | Needlework | 800 | 0 | Not started — ~1 wk setup | 0.8 |
 | 9 | Sewing | 1,200 | 0 | Not started — ~1 wk setup | 1.2 |
 | 10 | Fibre arts | 800 | 83 PUBLISHED (bulk-001 + bulk-002, 2026-05-20) | ✅ bulk-001 + bulk-002 done: felting ×25, spinning ×16, weaving ×16, natural-dyeing ×10, macramé ×10, rug-making ×6. Reports: docs/fibre-arts-bulk-001-report.md, docs/fibre-arts-bulk-002-report.md. | 0.8 |
-| 11 | Wood & natural craft | 800 | 40 PUBLISHED (bulk-001, 2026-05-19) | ✅ pipeline setup + bulk-001 done: spoon-carving ×7, whittling ×4, green-woodwork ×7, basketry-willow ×7, seasoned-wood ×4, pyrography ×2. Report: docs/wood-natural-craft-bulk-001-report.md. | 0.8 |
+| 11 | Wood & natural craft | 800 | 80 PUBLISHED (bulk-001 + bulk-002, 2026-05-20) | ✅ bulk-001 + bulk-002 done: spoon-carving ×12, whittling ×12, green-woodwork ×13, basketry-willow ×15, seasoned-wood ×10, pyrography ×8, reading ×4, technique ×6. Reports: docs/wood-natural-craft-bulk-001-report.md, docs/wood-natural-craft-bulk-002-report.md. | 0.8 |
 | 12 | Paper & word | 800 | 42 PUBLISHED (bulk-001, 2026-05-20) | ✅ pipeline setup + bulk-001 done: bookbinding ×10, calligraphy ×8, papermaking ×6, marbling ×4, journalling-craft ×4, papercutting ×3, zines ×2, scrapbooking ×2, origami ×1. Report: docs/paper-word-bulk-001-report.md. | 0.8 |
 | 13 | Pottery & ceramics | 500 | 0 | Not started — ~1 wk setup | 0.5 |
 | 14 | Animals & smallholding | 700 | 42 PUBLISHED (bulk-001, 2026-05-20) | ✅ pipeline setup + bulk-001 done: bees ×7, poultry ×7, sheep-and-goats ×7, rabbits ×4, pigs ×7, smallholding-skills ×8. 9 tools seeded. Report: docs/animals-smallholding-bulk-001-report.md. | 0.66 |

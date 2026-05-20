@@ -1,0 +1,256 @@
+{
+  "slug": "riven-ash-hoe-handle",
+  "title": "Riven ash hoe handle",
+  "subtitle": "A replacement garden hoe handle riven and shaped from a green ash pole",
+  "excerpt": "A riven ash handle follows the grain of the wood exactly, which makes it lighter and stronger than a sawn equivalent at the same dimensions. A garden hoe needs a handle that absorbs shock and flexes slightly; riven ash provides both. This project covers riving the blank from a round pole, drawknife shaping to the oval section, and tenon-cutting for the hoe socket.",
+  "type": "PATTERN",
+  "categorySlug": "wood-natural-craft",
+  "subCategorySlug": "green-woodwork",
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Cassell's Cyclopaedia of Mechanics vol. III (1885) for the riving and drawknife method on tool handles. Beeler, The Tools That Built America (1976) for the American handle-making tradition in ash.",
+  "woodState": "green",
+  "recommendedSpecies": ["ash", "hickory", "hazel"],
+  "recipeTools": [
+    { "slug": "froe", "isOptional": false },
+    { "slug": "beetle-mallet", "isOptional": false },
+    { "slug": "drawknife-straight", "isOptional": false },
+    { "slug": "spokeshave-flat", "isOptional": false },
+    { "slug": "shaving-horse", "isOptional": false },
+    { "slug": "sloyd-knife", "isOptional": true },
+    { "slug": "leather-strop", "isOptional": false },
+    { "slug": "wood-finish-boiled-linseed-oil", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "riven",
+      "term": "Riven",
+      "definition": "Split along the grain with a froe and maul rather than sawn across it. A riven handle follows the grain perfectly and is stronger than a sawn one."
+    },
+    {
+      "slug": "billet",
+      "term": "Billet",
+      "definition": "A short length of round or split timber ready to be worked."
+    },
+    {
+      "slug": "froe",
+      "term": "Froe",
+      "definition": "A wedge-shaped riving tool driven with a beetle to split a billet along the grain."
+    },
+    {
+      "slug": "drawknife",
+      "term": "Drawknife",
+      "definition": "A two-handled blade pulled toward the body along the workpiece; the main shaping tool in green-woodwork."
+    },
+    {
+      "slug": "shaving-horse",
+      "term": "Shaving horse",
+      "definition": "A foot-pedalled bench that clamps a workpiece for two-handed drawknife and spokeshave work."
+    }
+  ],
+  "aliases": ["ash tool handle", "replacement hoe handle", "green wood handle riving"],
+  "techniqueSlugs": ["riving-with-a-froe", "drawknife-shaping-technique", "spokeshave-shaping-technique"],
+  "criticalTechniques": ["riving-with-a-froe"],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Rive and rough shape the blank",
+      "body": "Rive the blank, drawknife to rough oval section.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 30,
+      "title": "Dry for a month",
+      "body": "A tool handle needs to be dry before final shaping and fitting; green ash shrinks as it dries and a wet tenon will loosen from the socket.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": false
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 30,
+      "title": "Final shape and fit the tenon",
+      "body": "Spokeshave to final section, carve the tenon, fit to the hoe socket, oil.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A garden hoe handle is subjected to impact shock every time the hoe head meets the soil. A handle that has been " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "riven" } }], "text": "riven" },
+          { "type": "text", "text": " along the grain of an ash pole rather than sawn across it runs parallel to the wood fibres along its full length; the fibres act as long continuous shock-absorbers. A sawn handle, by contrast, will have grain lines that exit through the surface at some point, and that is where it will break under repeated impact. Ash is the traditional British handle wood for this reason. Hickory is the American equivalent; hazel is acceptable for lighter tools like trowels and small hoes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need: wood" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A straight-grained ash log, 130 cm long, 12 to 14 cm in diameter, cut from the main stem between the coppice stool and first branching. The grain must be straight: look at the log end for even, concentric rings; look along the side for grain lines that run parallel to the axis rather than spiralling. A spiral-grain log will produce a handle that twists as it dries." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need: tools" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "froe" } }], "text": "froe" },
+          { "type": "text", "text": " and beetle for riving. A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "drawknife" } }], "text": "drawknife" },
+          { "type": "text", "text": " for the rough shaping. A spokeshave for the final round section. A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "shaving-horse" } }], "text": "shaving horse" },
+          { "type": "text", "text": " to clamp the work for both drawknife and spokeshave passes. A sloyd knife for the tenon and any fine trimming. Boiled linseed oil." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safety" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The drawknife requires both hands and a secured workpiece. On the shaving horse, the foot pedal clamps the work; keep feet firmly on the pedal throughout. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "froe" } }], "text": "froe" },
+          { "type": "text", "text": " is driven with the beetle mallet: stand clear of the log sides in case the froe skips off a hidden knot." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The work" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Rive the blank" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place the log on end. Set the froe blade across the end grain at the centre and drive it with the beetle until the log splits in two. Re-set and split each half into quarters. From the quarter, select the piece with the straightest grain and rive off any remaining outer sapwood. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "billet" } }], "text": "billet" },
+          { "type": "text", "text": " at this stage is a rough quarter-section with the grain running from end to end along its length." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Drawknife to rough oval" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Clamp the billet in the shaving horse with one end toward the operator. Take drawknife passes along the length, removing the corners of the quarter-section to bring the blank to a rough octagonal, then rounded section, 30 mm by 26 mm. Work from the butt (handle end) toward the tenon end, following the grain; if the surface tears, reverse direction. The drawknife removes material quickly; stop at rough oval and switch to the spokeshave." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Dry for a month" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hang the rough blank in a ventilated shed for four to six weeks. Ash dries relatively quickly in warm weather. The blank will lighten in colour and the surface will develop a slight roughened texture as the fibres rise. Do not dry faster; a hand tool will not warp significantly during slow drying, but a rapid-dried blank may check along the grain." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Spokeshave to final section" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After drying, the blank is workable with the spokeshave to the final oval section: 26 mm by 22 mm at the grip, tapering toward the tenon end. Work in overlapping passes along the full length, rotating the blank between passes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 5: Cut the tenon" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The hoe-socket tenon is a short reduced section at the handle end sized to fit the hoe socket. Most British hoe sockets take a 22 mm round tenon, 45 mm long. Use the sloyd knife to taper the tenon from the handle oval down to 22 mm diameter over the first 5 cm. Test-fit in the socket; the tenon should enter without force for the first 20 mm, then require moderate mallet pressure for the last 25 mm. A tight fit that drives with mallet pressure will not loosen with use." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Apply boiled linseed oil to the full handle length. Allow thirty minutes, wipe off. Two coats. Boiled linseed oil protects the handle from rain absorption and keeps the ash supple." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A spade handle is a longer version (110 cm) with a T-piece at the grip end. The T-piece can be tenoned into a cross-bored hole at the top of the handle." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A rake handle is the same process but longer and thinner (22 mm by 18 mm section over 140 cm). Ash at this dimension is still strong enough; hazel at the same size would flex too much." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Re-oil once a year. Store under cover; a handle left outdoors over winter will check and the tenon may loosen." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Problems in riving and shaping ash handles.",
+          "items": [
+            {
+              "symptom": "The rive runs out to one side rather than straight",
+              "cause": "The grain of the log spirals slightly, so the froe follows the grain rather than running down the axis.",
+              "fix": "Use a log with straight radial grain lines visible on the end. If the rive has already run out, reposition the froe on the off-axis riven face and rive again."
+            },
+            {
+              "symptom": "The handle checks (surface cracks) during drying",
+              "cause": "The blank was dried too quickly, usually in a heated space rather than a cool ventilated shed.",
+              "fix": "Surface checks are usually cosmetic only in a tool handle. Sand them out before the final spokeshave pass. For future handles, dry in a cool shed over four to eight weeks."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

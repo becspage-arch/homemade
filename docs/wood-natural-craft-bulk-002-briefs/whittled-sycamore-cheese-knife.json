@@ -1,0 +1,216 @@
+{
+  "slug": "whittled-sycamore-cheese-knife",
+  "title": "Whittled sycamore cheese knife",
+  "subtitle": "A flat-bladed seasoned-sycamore cheese spreader whittled with a sloyd knife",
+  "excerpt": "A cheese knife in sycamore is a useful first whittling project from seasoned stock: a flat blade that will not flex under the resistance of a firm cheese, a short handle, and no bowl hollow. All shaping is push cuts and thumb-pivot cuts. Food-safe after a raw-linseed cure.",
+  "type": "PATTERN",
+  "categorySlug": "wood-natural-craft",
+  "subCategorySlug": "whittling",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Cassell's Cyclopaedia of Mechanics vol. III (1885) for the sloyd-knife shaping method on flat seasoned-wood utensils.",
+  "woodState": "seasoned",
+  "recommendedSpecies": ["sycamore", "beech", "maple"],
+  "finishSlug": "wood-finish-raw-linseed-oil",
+  "recipeTools": [
+    { "slug": "sloyd-knife", "isOptional": false },
+    { "slug": "leather-strop", "isOptional": false },
+    { "slug": "sandpaper-180", "isOptional": true },
+    { "slug": "sandpaper-240", "isOptional": true },
+    { "slug": "wood-finish-raw-linseed-oil", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "seasoned-wood",
+      "term": "Seasoned wood",
+      "definition": "Air-dried or kiln-dried timber at a stable moisture content. Seasoned sycamore holds a flat shape and is food-safe when finished with a curing oil."
+    },
+    {
+      "slug": "push-cut",
+      "term": "Push cut",
+      "definition": "A carving cut in which the blade travels away from the body. The default safe cut throughout the shaping stages of a whittled piece."
+    },
+    {
+      "slug": "blank",
+      "term": "Blank",
+      "definition": "The sawn piece of wood from which a finished item is carved."
+    }
+  ],
+  "aliases": ["wooden cheese knife", "cheese spreader wood", "sycamore cheese tool"],
+  "techniqueSlugs": ["push-cut-technique", "thumb-pivot-cut-technique"],
+  "criticalTechniques": ["push-cut-technique"],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Shape the knife from blank",
+      "body": "Profile, bevel, and refine with the sloyd knife. One session.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 0,
+      "title": "Sand and first oil coat",
+      "body": "Sand blade face 180 then 240, apply raw linseed oil, wipe off after one hour.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 14,
+      "title": "Oil cured: food-safe",
+      "body": "Two weeks after oiling the cheese knife is food-safe.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": false
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A cheese knife in wood is a practical piece that is useful at any table: it will not corrode, it does not pick up refrigerator flavours from the metal, and the flat blade works well on both hard and soft cheese. This project uses " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "seasoned-wood" } }], "text": "seasoned sycamore" },
+          { "type": "text", "text": " because the blade must hold its shape: a green-wood blank would warp as it dried. Sycamore is the standard domestic treen wood in Britain. Beech and maple have similar properties; maple's slightly tighter grain gives a marginally smoother blade surface." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need: wood" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A sawn " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blank" } }], "text": "blank" },
+          { "type": "text", "text": " of seasoned sycamore: 22 cm long, 4 cm wide, 10 mm thick. Grain running along the length. A small off-cut from a board or a short turning blank will serve." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need: tools" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A sharp sloyd knife. A leather strop. Sandpaper at 180 and 240 grit. Raw linseed oil." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safety" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Four-finger grip on the work; every " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "push-cut" } }], "text": "push cut" },
+          { "type": "text", "text": " travels away from the body. Strop every ten minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The work" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Profile the blank" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mark the plan profile: a blade 13 cm long tapering from 35 mm at the shoulder to 28 mm at the tip (wider than a spreading knife for more cheese leverage), and a handle 7 cm long at 32 mm wide. Take push cuts along the edges to reach the line. The shoulder between blade and handle is a smooth concave curve." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Bevel the blade" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The cheese knife has a bevel on both faces of the blade, meeting at a slightly thickened centreline (5 mm at the shoulder, 3 mm at the tip). Take push cuts down each face of the blade at about fifteen degrees to the face, working from the shoulder toward the tip with the grain. A symmetrical bevel gives better cheese-cutting performance than a one-sided bevel." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Shape the handle" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The handle is oval in section: 28 mm by 8 mm at the grip. Push cuts along the handle edges round the corners; thumb-pivot cuts refine the oval. A small swell at the butt end prevents the knife from slipping through the fingers when working with a moist cheese rind." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Sand and oil" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sand the blade faces along the grain at 180 grit then 240 grit. Do not sand the handle; the knife-finished texture provides grip. Apply raw linseed oil, leave one hour, wipe off. Cure two weeks before food contact." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A set of four or six matching cheese knives from the same board makes a table set. Mark all blanks from the board before starting; a consistent pencil template keeps the profiles uniform." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For a formal look, chip-carve a simple geometric border along the handle back once the oil has dried." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hand wash, dry at once. Re-oil with raw linseed every few months." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Problems in a flat-bladed whittled piece.",
+          "items": [
+            {
+              "symptom": "The blade warps after oiling",
+              "cause": "The blank was not fully seasoned, or the oil was applied to one face only. The oiled face absorbed moisture from the oil and expanded; the dry face did not.",
+              "fix": "Always oil both faces simultaneously. If the warp is slight it will correct as the oil sets and the faces equilibrate. For future projects, use timber below 12 per cent moisture content."
+            },
+            {
+              "symptom": "The bevel is uneven, thicker on one side",
+              "cause": "The push cuts were not taken symmetrically: more passes on one face than the other.",
+              "fix": "Take one pass on one face, then one on the other, alternating to keep them in step. Check by looking along the blade edge from the tip toward the shoulder."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "slug": "pyrography-celtic-border-panel",
+  "title": "Pyrography Celtic border panel",
+  "subtitle": "A knotwork border burned into a sycamore plaque with shading",
+  "excerpt": "Celtic knotwork is a continuous interlaced pattern where ribbons pass over and under each other in a regular alternating sequence. On a flat sycamore plaque, a single knotwork border band burned with a writing tip and shaded with a shading tip produces a finished panel suitable for framing or display. This intermediate project covers transferring a knotwork grid, burning the outlines, and shading the ribbon passes to create the over-under illusion.",
+  "type": "PATTERN",
+  "categorySlug": "wood-natural-craft",
+  "subCategorySlug": "pyrography",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The Art Amateur vol. 47 (1902) for Celtic knotwork design and pyrography technique. Celtic ornament tradition as documented in Owen Jones, The Grammar of Ornament (1856).",
+  "woodState": "seasoned",
+  "recommendedSpecies": ["sycamore", "lime", "birch"],
+  "recipeTools": [
+    { "slug": "pyrography-nichrome-wire-burner", "isOptional": false },
+    { "slug": "pyrography-tip-writing", "isOptional": false },
+    { "slug": "pyrography-tip-shading", "isOptional": false },
+    { "slug": "pyrography-cooling-stand", "isOptional": false },
+    { "slug": "sandpaper-240", "isOptional": false },
+    { "slug": "sandpaper-320", "isOptional": false },
+    { "slug": "sandpaper-400", "isOptional": false },
+    { "slug": "wood-finish-danish-oil", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "knotwork",
+      "term": "Knotwork",
+      "definition": "An interlaced ornamental pattern in which one or more continuous ribbons pass alternately over and under each other. The over-under sequence is what makes the pattern appear three-dimensional."
+    },
+    {
+      "slug": "writing-tip",
+      "term": "Writing tip",
+      "definition": "A fine-pointed pyrography nib for line work and outlines. Used for the ribbon edges in knotwork pyrography."
+    }
+  ],
+  "aliases": ["celtic knotwork pyrography", "burned wood celtic", "pyrography panel knotwork", "sycamore celtic plaque"],
+  "techniqueSlugs": ["pyrography-shading-technique", "pyrography-lettering-technique"],
+  "criticalTechniques": ["pyrography-shading-technique"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A Celtic " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "knotwork" } }], "text": "knotwork" },
+          { "type": "text", "text": " border in pyrography works because the shading on one ribbon pass is lighter than the shading on the pass below it at every crossing; this simple tonal rule is what creates the over-under illusion. The pattern itself is constructed on a regular diagonal grid; once the grid is understood, any knotwork pattern can be drawn and burned. Sycamore is the best species for this project: its pale, even grain provides maximum contrast with the burned lines, and its fine texture produces clean edges on the writing-tip outlines." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need: wood" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A flat sycamore plaque, 20 cm by 15 cm, 10 to 12 mm thick, sanded to 400 grit before burning. Lime is an easier alternative; birch plywood gives a fine and consistent surface at lower cost." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need: tools" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A wire-nib pyrography burner with a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "writing-tip" } }], "text": "writing tip" },
+          { "type": "text", "text": " for outlines and a shading tip for the ribbon tones. A cooling stand. Pencil and ruler for the layout grid. Danish oil for the finish." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safety" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work with ventilation. Rest the tip on the cooling stand between passes. Do not touch the nib or the metal parts near the nib during use." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The work" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Draw the knotwork grid" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lightly pencil a grid of 10 mm squares across the border area (a 20 mm wide band around the panel perimeter). Mark diagonal lines through each square in both directions to produce a diagonal grid at 45 degrees. The knotwork ribbon will follow these diagonals, turning at the grid nodes where the diagonals cross. The ribbon width is the distance between two parallel diagonal lines (approximately 7 mm on a 10 mm grid)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Draw the ribbon pattern" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Draw the ribbon edges: two parallel lines following the diagonal, curving at the turns, and crossing alternately over and under at each intersection. Mark which ribbon strand passes over at each crossing; the crossings alternate, so if strand A passes over at one crossing, it passes under at the next. Mark every crossing with a small O (over) or U (under) in pencil to track the sequence before burning." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Burn the outlines" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Switch to the writing tip at a medium heat. Burn along the ribbon edges with a consistent, flowing stroke. At each crossing, burn the outline of the over-strand continuously; lift the tip and start again at the far side of the under-strand to leave a gap in the under-strand outline. This gap is where the over-strand will appear to pass across the under one." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Shade the ribbon bodies" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Switch to the shading tip. Shade each ribbon strand with a consistent mid-tone. At each crossing, shade the under-strand slightly darker than the over-strand; this tonal difference is the only thing that makes the crossing readable as over-under rather than two flat stripes. Use a consistent pattern: over-strands receive three shading passes; under-strands receive four or five. The background areas between the ribbons can be left as bare wood or shaded very lightly to add further depth." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Erase remaining pencil lines gently. Apply one coat of Danish oil, leave 15 minutes, wipe off. A second coat after 24 hours. The oil deepens the sycamore colour and makes the burned lines more prominent against the background." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A central medallion panel uses the same knotwork grid scaled up; a single large circle knotwork motif centred on the plaque, framed by the border." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Animal interlace (Insular style) uses the same over-under principle but with the ribbon's ends formed as animal heads and feet. The construction method is identical; only the turning shapes at the ribbon ends change." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Problems in knotwork pyrography.",
+          "items": [
+            {
+              "symptom": "The crossings do not read as over-under",
+              "cause": "The shading tone difference between the over and under strand is too small.",
+              "fix": "Darken the under-strand at each crossing with two additional shading passes at slow speed. The tonal difference needs to be clear to the eye from 30 cm."
+            },
+            {
+              "symptom": "The outline strokes are uneven in width",
+              "cause": "The burner speed varied during the stroke, or the tip pressure changed.",
+              "fix": "Keep the writing tip moving at the same pace from start to finish of each stroke. A slightly faster speed produces a thinner line; use this deliberately to taper the ends of strokes at the turns."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "slug": "carved-sycamore-porridge-spurtle",
+  "title": "Carved sycamore porridge spurtle",
+  "subtitle": "A green-wood Scottish stirring stick carved with axe and sloyd knife",
+  "excerpt": "A spurtle is a Scottish porridge-stirring stick: a tapered rod, slightly flattened on one face, that breaks lumps without trapping them the way a spoon bowl would. Green sycamore carves to one in an hour. This tutorial covers the axe-to-knife roughing, the sloyd-knife taper, the flat face, and the raw-linseed finish.",
+  "type": "PATTERN",
+  "categorySlug": "wood-natural-craft",
+  "subCategorySlug": "spoon-carving",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Cassell's Cyclopaedia of Mechanics vol. III (1885) for axe-and-knife shaping of small domestic implements in green broadleaf timber. The spurtle form itself is documented in early-twentieth-century Scottish domestic manuals.",
+  "woodState": "green",
+  "recommendedSpecies": ["sycamore", "birch", "ash"],
+  "finishSlug": "wood-finish-raw-linseed-oil",
+  "recipeTools": [
+    { "slug": "carving-axe", "isOptional": true },
+    { "slug": "sloyd-knife", "isOptional": false },
+    { "slug": "leather-strop", "isOptional": false },
+    { "slug": "sandpaper-180", "isOptional": true },
+    { "slug": "wood-finish-raw-linseed-oil", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "green-wood",
+      "term": "Green wood",
+      "definition": "Freshly felled or recently riven wood, still high in moisture content. Green sycamore carves with much less effort than seasoned timber."
+    },
+    {
+      "slug": "billet",
+      "term": "Billet",
+      "definition": "A short length of round or split timber, ready to be worked into a finished item."
+    },
+    {
+      "slug": "push-cut",
+      "term": "Push cut",
+      "definition": "A carving cut in which the blade travels away from the body. The standard safe cut for shaping spurtles and other small implements."
+    }
+  ],
+  "aliases": ["spurtle carving", "porridge stick", "wooden stirring stick"],
+  "techniqueSlugs": ["push-cut-technique", "thumb-pivot-cut-technique"],
+  "criticalTechniques": ["push-cut-technique"],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Rough and shape the spurtle",
+      "body": "Axe to rough cylinder, sloyd knife to taper and flatten. One session.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 7,
+      "title": "Dry for a week",
+      "body": "Leave in a warm ventilated place. Green sycamore dries to pale and stable in a week.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": false
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 7,
+      "title": "Oil and begin cure",
+      "body": "Light sand, apply raw linseed oil, wipe off after one hour.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 4,
+      "offsetDays": 21,
+      "title": "Oil cured: food-safe",
+      "body": "Two weeks after oiling the spurtle is food-safe and ready for the kitchen.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": false
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A spurtle is not a spoon. It has no bowl, no hollow, and no edge; it is a tapered rod, oval in section, slightly flattened on the stirring face, used to break porridge lumps against the bottom of the pan rather than to scoop or lift. This project uses " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "green-wood" } }], "text": "green wood" },
+          { "type": "text", "text": " because a fresh sycamore " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "billet" } }], "text": "billet" },
+          { "type": "text", "text": " shapes in a fraction of the time of seasoned timber. Sycamore is the traditional choice: it carves cleanly, dries food-safe and pale, and has no notable taste. Birch behaves identically and is common in the same places sycamore grows. Ash is harder and takes more effort green but produces a denser, more resilient finished spurtle." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need: wood" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A fresh sycamore billet, 30 cm long and 4 to 5 cm in diameter, or a straight-grained riven quarter that is at least 4 cm across the grain face. Windfall or coppice stool off-cuts are ideal. Tree surgeons with sycamore jobs will have the right-sized branches; a polite request at the site is usually effective. The billet must be freshly cut and green: the cut end-grain should darken within a few seconds, and the wood should feel cool and slightly damp to the touch." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need: tools" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A sloyd knife that will shave the forearm. A leather strop. A carving axe to rough the billet to a round section (optional; a sloyd knife alone is sufficient with a little more time). Raw linseed oil for the finish." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safety" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Four-finger grip on the work at all times. Every " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "push-cut" } }], "text": "push cut" },
+          { "type": "text", "text": " travels away from the body into open air beyond the end of the billet. Strop every fifteen minutes of carving." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The work" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Remove the bark and rough to shape" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If using the carving axe, rough the billet to an approximately round section. If working knife-only, remove the bark first with push cuts along the length; the bark is thin on sycamore and lifts cleanly. A round section at this stage is the target; exact circularity matters less than removing the bark and major surface irregularities." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Taper the shaft" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The finished spurtle tapers from 28 mm in diameter at the handle end to 16 mm at the tip. Take push cuts from the handle end toward the tip, cutting with the grain. The grain in a straight-grained billet runs along the length; cuts from handle toward tip follow it. Work the taper evenly all the way around the shaft, rotating the piece between passes. A consistent taper rather than a lumpy reduction makes the spurtle easier to hold and easier to clean." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Flatten the stirring face" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The bottom 14 cm of the spurtle (the stirring section) is flattened on one face. Take a series of push cuts along one side of the shaft to create a flat, slightly concave face about 20 mm wide at the base tapering to 12 mm at the tip. This flat face is what gives the spurtle its advantage over a round stick: it follows the curved bottom of a pan and breaks lumps more efficiently." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Shape the handle" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The handle (top 12 cm) stays at the full diameter with the cross-section refined to an oval. Four-to-five push cuts along each long edge of the handle reduce the circular section to an oval that sits comfortably between thumb and fingers. A gentle swell at the very top of the handle prevents the spurtle from slipping through a wet grip." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 5: Dry for a week" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Leave the shaped spurtle in a warm, ventilated room for a week. A spurtle has much thicker walls than a spoon and dries slowly; do not try to accelerate drying over a radiator. Slight surface checking (hairline cracks in the end grain) is normal and cosmetic only. After a week the wood will have lightened noticeably and the surface will feel dry to the touch." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A light 180-grit sand along the grain removes the raised-grain texture. Apply raw linseed oil generously, work it in with a cloth, and allow to penetrate for one hour. Wipe off all surface oil thoroughly. Cure for two weeks before food contact. Raw linseed oil is food-safe after curing; a spoon in use for decades can be re-oiled any time the surface looks dry." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A spurtle set of three in graduated lengths (25, 30, 35 cm) covers every pot size. Make them from the same branch for a matching set." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A decorative thistle head can be carved at the handle end: leave 30 mm of extra length on the handle, rough it to a cylinder, and carve four raised petals from the top with a chip-cut sequence." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ash spurtles are denser and hold an edge longer. Carve green ash in the same way; allow two weeks to dry because ash dries more slowly than sycamore." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hand wash in warm water, dry at once. No dishwasher, no long soaking. Re-oil when the wood looks pale or feels rough." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Problems when shaping a spurtle.",
+          "items": [
+            {
+              "symptom": "The shaft develops a curve as it dries",
+              "cause": "The billet had tension wood on one side; as moisture left, that side contracted more than the other.",
+              "fix": "A gentle curve is not structurally significant in a spurtle. For future billets, choose the straightest-grained material available and dry slowly to allow even moisture loss."
+            },
+            {
+              "symptom": "The surface tears in one section of the taper",
+              "cause": "The grain reverses direction at a point where a branch joined the main stem. The cut that was with the grain above this point is against it below.",
+              "fix": "Reverse the cut direction at that point. Take very light slicing cuts across the reversal zone rather than along it."
+            },
+            {
+              "symptom": "The flat stirring face has ripples rather than a smooth surface",
+              "cause": "Each push cut was a different depth, leaving small ridges between passes.",
+              "fix": "Take light overlapping passes along the full length of the flat face, keeping the knife angle constant throughout each cut. Rotate the cut slightly at the end of each pass to blend the edges."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
