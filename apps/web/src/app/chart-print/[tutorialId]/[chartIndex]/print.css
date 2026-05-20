@@ -10,9 +10,9 @@
   margin: 0;
 }
 
-.chart-print--letter @page {
-  size: letter portrait;
-}
+/* Letter override is injected inline from the page component when the
+   user picks `paper=letter` — `@page` is a top-level at-rule and can't
+   be nested inside a class selector. */
 
 html,
 body {

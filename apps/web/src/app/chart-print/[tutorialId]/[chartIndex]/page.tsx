@@ -135,6 +135,14 @@ export default async function ChartPrintPage({ params, searchParams }: PageProps
 
   return (
     <div className={`chart-print chart-print--${paper}`} data-symbol-mode={symbol}>
+      {paper === 'letter' ? (
+        <style
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: '@page { size: letter portrait; margin: 0; }',
+          }}
+        />
+      ) : null}
       <div className="chart-print-controls no-print">
         <strong>Print this chart</strong>
         <p>
