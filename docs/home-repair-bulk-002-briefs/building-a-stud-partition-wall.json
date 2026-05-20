@@ -1,0 +1,193 @@
+{
+  "slug": "building-a-stud-partition-wall",
+  "title": "Building a stud partition wall",
+  "subtitle": "Frame in timber, board in plasterboard, tape and fill the joints",
+  "excerpt": "How to build a non-load-bearing timber stud partition wall: setting out the sole plate and head plate, spacing the studs and noggins, fixing the plasterboard, and taping and filling the joints ready for decoration.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "walls-and-floors",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "timeMinutes": 720,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Newey and Drage, Practical Carpentry and Joinery (c. 1905). Collins Complete DIY Manual. British Gypsum White Book (technical guidance, publicly available). City and Guilds Level 2 Site Carpentry syllabus.",
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "spirit-level-1200mm", "isOptional": false },
+    { "slug": "spirit-level-200mm", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "plasterboard-screws", "isOptional": false },
+    { "slug": "claw-hammer-450g", "isOptional": false },
+    { "slug": "tenon-saw", "isOptional": false },
+    { "slug": "filling-knife-100mm", "isOptional": false },
+    { "slug": "patching-plaster-filler", "isOptional": false },
+    { "slug": "sanding-block", "isOptional": false },
+    { "slug": "plasterboard-patch-100mm", "isOptional": true, "notes": "For cutting plasterboard to size — a purpose-made plasterboard saw or a jigsaw is faster, but a standard saw or craft knife score-and-snap also works." }
+  ],
+  "recipe": { "foundational": false },
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "building a partition wall",
+    "stud wall construction",
+    "how to build a timber partition",
+    "stud and plasterboard wall"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sole-plate",
+      "term": "Sole plate",
+      "definition": "The horizontal timber fixed to the floor that forms the base of a stud partition frame. Also called a bottom plate or floor plate."
+    },
+    {
+      "slug": "noggin",
+      "term": "Noggin",
+      "definition": "A short horizontal timber fitted between studs to provide stiffness and a fixing point for fixtures. Typically spaced at mid-height in the stud bay."
+    },
+    {
+      "slug": "stud",
+      "term": "Stud",
+      "definition": "The vertical timbers in a partition wall frame. Standard spacing is 400 mm or 600 mm centre to centre, chosen to align with standard 1200 mm plasterboard sheets."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A stud partition wall is a non-load-bearing wall built from a softwood timber frame filled with plasterboard. It divides a room without carrying floor or roof loads. The construction sequence is: sole plate and head plate, vertical " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stud" } }], "text": "studs" },
+          { "type": "text", "text": " at 400 mm or 600 mm centres, horizontal " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "noggin" } }], "text": "noggins" },
+          { "type": "text", "text": " for stiffness, plasterboard fixed to each face, and taped and filled joints. A weekend job for a working room; allow an extra day if the wall includes a door opening." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning" },
+        "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "This tutorial covers a non-load-bearing partition. A load-bearing wall supports the floor or roof above. Before cutting into any existing wall or floor to place the sole plate, confirm whether the wall is load-bearing by reading the floor joist direction. Removing or opening a load-bearing wall requires structural calculations and Building Regulations notification." }] }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Materials and sizing" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "Sawn softwood, 75 x 50 mm." }, { "type": "text", "text": " For all plates and studs. For walls taller than 2.7 m or where extra stiffness is needed (wet-room partition, a wall carrying a large TV bracket), use 100 x 50 mm." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "Plasterboard, 12.5 mm standard." }, { "type": "text", "text": " Sheets are 1200 x 2400 mm. Buy moisture-resistant board for bathrooms. Sound-insulation board is thicker and denser; useful for party walls between rooms." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "Plasterboard screws, 38 mm." }, { "type": "text", "text": " Self-tapping drywall screws. One screw every 300 mm into every stud and plate edge." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "Joint tape and jointing compound." }, { "type": "text", "text": " Paper tape bedded in compound for the board joints. 75 mm joint tape and a 5 kg tub of lightweight compound covers an average room partition." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, check the wall before you cut" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sweep a cable-and-pipe detector across the floor and any adjacent walls at the sole-plate line. Cables and pipes run close to the surface; a drill or screw through a hidden cable creates a fault that may not be immediately apparent. Mark any detected runs and route fixings away from them." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting out the frame" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 2, fix the sole plate. " },
+          { "type": "text", "text": "Mark the wall position on the floor with a chalk line. Cut the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sole-plate" } }], "text": "sole plate" },
+          { "type": "text", "text": " to length; leave a gap where the door opening will be. Fix the sole plate to the floor with 75 mm No. 10 screws into plugged holes or with a powder-actuated nail gun if the floor is concrete. Spacing: 450 mm centres." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 3, fix the head plate. " },
+          { "type": "text", "text": "The head plate is a continuous timber fixed to the ceiling. Transfer the wall position straight up with a plumb bob or a long spirit level. Fix the head plate into the ceiling joists where it runs across them; where it runs parallel to the joists, add noggings between the nearest joist and the head plate fixing point." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 4, fix the end studs. " },
+          { "type": "text", "text": "The end studs run from sole plate to head plate against the existing walls. These need to be plumb in both directions. Fix through the stud into the wall using frame anchors or suitable fixings for the wall type (screw-and-plug for masonry, direct screw for timber-frame)." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 5, mark and fit the intermediate studs. " },
+          { "type": "text", "text": "Mark stud positions at 400 mm centres (measured from one end) along both sole plate and head plate. 400 mm spacing suits three plasterboard sheets of 1200 mm across a 3-stud bay. Measure each stud individually, as floor-to-ceiling heights often vary. Toenail each stud through the face into the plate using two 75 mm nails per joint, or use metal stud connectors for a quicker and neater result." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 6, fit the noggins. " },
+          { "type": "text", "text": "Fit one row of noggins at mid-height between each pair of studs. Noggins prevent the studs twisting and provide solid fixing points for wall-mounted furniture and fittings. Stagger the noggins alternately above and below the same line so they can be toenailed from each side." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fixing the plasterboard" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 7, fix the boards. " },
+          { "type": "text", "text": "Start at one end and work across the wall. Fix the first board with one edge on the centre of a stud so the joints between boards always land on a stud. The tapered face of the board faces outward; the taper creates a recess for the joint tape and compound. Screw at 300 mm centres into each stud and into the plates top and bottom. Keep screws 10 mm from board edges." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 8, tape and fill the joints. " },
+          { "type": "text", "text": "Apply a thin bed of jointing compound into the recessed joint with the 100 mm filling knife. Bed paper tape into the wet compound, pressing it in and smoothing it flat. Allow to dry fully (minimum 4 to 6 hours in a warm room). Apply a second coat of compound, slightly wider than the tape, feathering the edges. Sand smooth when dry. A third coat, very thin, may be needed on deep joints." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Studs are bowed after fitting",
+              "cause": "Timber was wet when fixed and dried out in place, or the timber had a pre-existing bow.",
+              "fix": "Check stud straightness before fitting: sight down the length. Bowed studs can be straightened by cutting a kerf partway through the convex face, bending the stud straight, and driving a wedge into the kerf before fixing."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Plasterboard joints crack after redecoration",
+              "cause": "Joint compound was not allowed to dry fully between coats, or the first coat was applied too thick.",
+              "fix": "Apply compound in thin coats, each one fully dry before the next. In a cold or damp room, allow 24 hours between coats."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Screw heads snap below the board surface",
+              "cause": "Correct for drywall screws: the head should dimple the surface without breaking the paper face.",
+              "fix": "Adjust the clutch on the screwdriver or drill to stop the screw just below the board surface. If the paper is broken, the screw has gone too deep and provides less holding."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

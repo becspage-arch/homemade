@@ -1,0 +1,106 @@
+{
+  "slug": "testing-sockets-and-circuits-with-a-socket-tester",
+  "title": "Testing sockets and circuits with a socket tester",
+  "subtitle": "What the three lights mean, what they catch, and what they miss",
+  "excerpt": "An explanation of how a plug-in socket tester works, what faults it detects (reversed polarity, missing earth), what it cannot detect (high-resistance earths, loose neutrals under load), and when a two-pole tester is required instead.",
+  "type": "READING",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "IET Wiring Regulations guidance (BS 7671, 18th Edition). Napit and NICEIC educational guidance (publicly available). Collins Complete DIY Manual.",
+  "recipeTools": [
+    { "slug": "socket-tester", "isOptional": false },
+    { "slug": "voltage-tester-2-pole", "isOptional": true, "notes": "Required for the live-dead-live isolate-and-verify procedure, which the socket tester cannot substitute for." }
+  ],
+  "recipe": { "foundational": false },
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "how to use a socket tester",
+    "plug-in socket tester guide",
+    "checking socket wiring"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "socket-tester-tool",
+      "term": "Socket tester",
+      "definition": "A plug-in device that reads the voltage between the three pins of a socket outlet and lights a pattern of LEDs to indicate correct wiring, reversed polarity, missing earth, or open circuit neutral. The standard first check after any socket work."
+    },
+    {
+      "slug": "reversed-polarity",
+      "term": "Reversed polarity",
+      "definition": "A wiring fault where the live and neutral conductors are connected to the wrong terminals. The socket appears to work normally but the switch of a lamp (connected to the neutral) leaves the bulb cap live, creating a shock risk when changing the bulb."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "socket-tester-tool" } }], "text": "socket tester" },
+          { "type": "text", "text": " plugs into a socket outlet and reads the voltage between live, neutral, and earth in about two seconds. An inexpensive device, it catches the most common wiring errors after a socket or ring-circuit repair. It does not replace a proper electrical installation test." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reading the lights" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A standard three-light socket tester has three LEDs labelled or colour-coded to indicate the wiring condition. The normal result is two lights on (varies by manufacturer; the tester label shows the correct pattern). The common fault codes are:" }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "Correct wiring." }, { "type": "text", "text": " Pattern printed on the tester body. Two or three lights on in the correct combination." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "Reversed polarity (live and neutral swapped)." }, { "type": "text", "text": " Different light combination. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "reversed-polarity" } }], "text": "Reversed polarity" },
+          { "type": "text", "text": " means the socket works electrically but is unsafe: the switch on a lamp disconnects the neutral, not the live." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "No earth." }, { "type": "text", "text": " One light on only (or a specific low-count pattern). The socket will operate appliances but there is no earth fault protection." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "No live." }, { "type": "text", "text": " No lights. The circuit is not energised, or the MCB has tripped, or the neutral is open circuit." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What a socket tester does not detect" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A socket tester reads voltage, not resistance. It will not detect a high-resistance earth connection (which passes voltage but cannot carry fault current safely), a neutral that is marginally connected and will fail under load, or correct polarity on a circuit where the live and neutral conductors are both incorrectly connected together elsewhere. For any of these, a proper installation test with a multifunction tester is required." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to use the RCD test button" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Some socket testers include an RCD test button that passes a small trip current to test whether an RCD upstream of the socket is working. Press the button: the RCD should trip within 40 milliseconds, cutting power to the socket. If the RCD does not trip, it has failed and needs replacement. After the test, reset the RCD at the consumer unit. The RCD test button on a socket tester does not replace the monthly test button on the RCD itself." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to use a two-pole voltage tester instead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Before working on any circuit, use a two-pole voltage tester and a proving unit for the live-dead-live isolate-and-verify sequence. The socket tester is a post-work check that wiring is correct; it does not confirm a circuit is safe to work on because it operates with the circuit live. Never use a socket tester to decide whether it is safe to open a back box or touch conductors." }
+        ]
+      }
+    ]
+  }
+}
