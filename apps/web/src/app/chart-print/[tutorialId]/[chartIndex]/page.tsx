@@ -2,6 +2,18 @@ import { redirect, notFound } from 'next/navigation'
 import { prisma } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import type { CrossStitchChart } from '@/lib/chart-renderers/cross-stitch'
+import type { ChartDefinition } from '@/lib/craft-charts/types'
+import type {
+  CalligraphyExemplarDefinition,
+  MacrameKnotDefinition,
+  OrigamiFoldDefinition,
+  WeavingDraftDefinition,
+} from '@/lib/chart-renderers/types'
+import { CraftChart } from '@/lib/craft-charts/svg-chart'
+import { CalligraphyExemplar } from '@/lib/chart-renderers/calligraphy-exemplar'
+import { OrigamiFoldBasic } from '@/lib/chart-renderers/origami-fold-basic'
+import { WeavingDraft } from '@/lib/chart-renderers/weaving-draft'
+import { MacrameKnot } from '@/lib/chart-renderers/macrame-knot'
 import './print.css'
 
 export const dynamic = 'force-dynamic'
@@ -43,24 +55,33 @@ const FALLBACK_SYMBOLS = [
   '✦', '✱', '⬟', '⬢', '✕', '◐', '◑', '◒', '◓', '⬣',
 ]
 
+const CHART_TYPES = new Set([
+  'crossStitchChart',
+  'craftChart',
+  'weavingDraft',
+  'calligraphyExemplar',
+  'origamiFoldDiagram',
+  'macrameKnot',
+])
+
 /**
- * Print-friendly page for the cross-stitch chart. Splits the chart into
- * A4 / Letter tiles, draws overlap stitches between pages and cut marks
- * at trim edges, includes a legend page at the end.
+ * Print-friendly page for every chart kind.
  *
- * The user reaches this from the chart-viewer toolbar's "Print" button.
- * They use the browser's standard print dialog (Ctrl/Cmd+P) and pick
- * "Save as PDF" to write a PDF, or print straight to paper. No PDF
- * library on the server.
+ *   - Cross-stitch: A4 / Letter tile layout, 3 density presets, overlap
+ *     stitches, cut marks, separate legend page, symbol-only / colour
+ *     modes.
+ *   - Knit / crochet (craftChart): single-page render of the existing
+ *     stitch-glyph chart; tiles automatically if the chart is wider than
+ *     one printable page.
+ *   - Weaving: single-page landscape render of the four-block draft.
+ *   - Calligraphy exemplar: each glyph at exact nib-width scale per the
+ *     spec.
+ *   - Origami fold diagram: each step on its own page (helpful for
+ *     hands-busy folding).
+ *   - Macramé knot: single-page render of the knot diagram.
  *
- * Density presets per the synthesis doc:
- *   large    40×40 cells/page
- *   medium   60×70 cells/page
- *   small    80×90 cells/page
- *
- * Symbol modes:
- *   colour       Cell fills + symbol overlay (saves nothing on ink)
- *   symbol-only  Black-and-white symbols only (ink-saver)
+ * All paths use the browser's standard print dialog ("Save as PDF" or
+ * print straight to paper). No PDF library on the server.
  */
 export default async function ChartPrintPage({ params, searchParams }: PageProps) {
   const user = await getCurrentDbUser()
@@ -84,106 +105,13 @@ export default async function ChartPrintPage({ params, searchParams }: PageProps
   const body = tutorial.body as { content?: TipTapNodeShape[] } | null
   if (!body || !Array.isArray(body.content)) notFound()
 
-  // Walk the body to find the Nth chart node. Currently only cross-stitch
-  // print is supported; other crafts fall through to a "not yet printable"
-  // message rather than 404.
-  const chartNodes = body.content.filter((n) =>
-    n.type === 'crossStitchChart' ||
-      n.type === 'craftChart' ||
-      n.type === 'weavingDraft' ||
-      n.type === 'calligraphyExemplar' ||
-      n.type === 'origamiFoldDiagram' ||
-      n.type === 'macrameKnot',
+  const chartNodes = body.content.filter(
+    (n): n is TipTapNodeShape => Boolean(n.type && CHART_TYPES.has(n.type)),
   )
   const node = chartNodes[chartIndex]
   if (!node) notFound()
 
-  if (node.type !== 'crossStitchChart') {
-    return (
-      <div className="chart-print-unsupported">
-        <h1>Print not yet supported for this chart type</h1>
-        <p>
-          Cross-stitch charts can be printed today. Print for{' '}
-          {labelForType(node.type)} charts is on the roadmap.
-        </p>
-        <p>
-          <a href={`/sign-in`}>Back</a>
-        </p>
-      </div>
-    )
-  }
-
-  const def = node.attrs?.definition as CrossStitchChart | undefined
-  if (!def || typeof def !== 'object') notFound()
-
-  // Load the user's progress so the print can render marked cells
-  // visually (small tick mark) if they want.
-  const progress = await prisma.chartProgress.findUnique({
-    where: {
-      userId_tutorialId_chartIndex: {
-        userId: user.id,
-        tutorialId,
-        chartIndex,
-      },
-    },
-    select: { markedCells: true },
-  })
-  const markedCells = new Set<string>(progress?.markedCells ?? [])
-
-  const { cellsPerPageX, cellsPerPageY } = DENSITY_PRESETS[density]
-  const tiles = tileChart(def, cellsPerPageX, cellsPerPageY, OVERLAP_CELLS)
-
-  return (
-    <div className={`chart-print chart-print--${paper}`} data-symbol-mode={symbol}>
-      {paper === 'letter' ? (
-        <style
-          dangerouslySetInnerHTML={{
-            __html: '@page { size: letter portrait; margin: 0; }',
-          }}
-        />
-      ) : null}
-      <div className="chart-print-controls no-print">
-        <strong>Print this chart</strong>
-        <p>
-          {def.title ?? 'Cross-stitch chart'} ·{' '}
-          {def.width}×{def.height} stitches · {tiles.length} tile
-          {tiles.length === 1 ? '' : 's'} ·{' '}
-          {PAPER_LABEL[paper]} · {density} ·{' '}
-          {symbol === 'symbol-only' ? 'symbol-only' : 'colour + symbol'}
-        </p>
-        <p className="chart-print-controls__hint">
-          Use your browser&apos;s print dialog (Ctrl/Cmd+P) and pick
-          &ldquo;Save as PDF&rdquo; or print straight to paper. Trim each
-          tile along the dashed cut marks and tape together — the overlap
-          stitches help align adjacent tiles.
-        </p>
-        <div className="chart-print-controls__links">
-          <PrintLink label="A4 · medium · colour" href={buildHref({ paper: 'a4', density: 'medium', symbol: 'colour' })} active={paper === 'a4' && density === 'medium' && symbol === 'colour'} />
-          <PrintLink label="A4 · medium · symbol-only" href={buildHref({ paper: 'a4', density: 'medium', symbol: 'symbol-only' })} active={paper === 'a4' && density === 'medium' && symbol === 'symbol-only'} />
-          <PrintLink label="A4 · large · colour" href={buildHref({ paper: 'a4', density: 'large', symbol: 'colour' })} active={paper === 'a4' && density === 'large' && symbol === 'colour'} />
-          <PrintLink label="A4 · small · colour" href={buildHref({ paper: 'a4', density: 'small', symbol: 'colour' })} active={paper === 'a4' && density === 'small' && symbol === 'colour'} />
-          <PrintLink label="Letter · medium · colour" href={buildHref({ paper: 'letter', density: 'medium', symbol: 'colour' })} active={paper === 'letter' && density === 'medium' && symbol === 'colour'} />
-        </div>
-      </div>
-
-      {tiles.map((tile, i) => (
-        <ChartTilePage
-          key={i}
-          tile={tile}
-          tileIndex={i}
-          totalTiles={tiles.length}
-          definition={def}
-          markedCells={markedCells}
-          paper={paper}
-          symbolMode={symbol}
-        />
-      ))}
-
-      <LegendPage definition={def} paper={paper} />
-    </div>
-  )
-
-  function buildHref(opts: { paper: PaperKey; density: DensityKey; symbol: SymbolMode }): string {
+  const buildHref = (opts: { paper: PaperKey; density: DensityKey; symbol: SymbolMode }): string => {
     const qs = new URLSearchParams({
       paper: opts.paper,
       density: opts.density,
@@ -191,23 +119,259 @@ export default async function ChartPrintPage({ params, searchParams }: PageProps
     })
     return `/chart-print/${tutorialId}/${chartIndex}?${qs.toString()}`
   }
-}
 
-function labelForType(type: string | undefined): string {
-  switch (type) {
-    case 'craftChart':
-      return 'knitting / crochet'
-    case 'weavingDraft':
-      return 'weaving draft'
-    case 'calligraphyExemplar':
-      return 'calligraphy exemplar'
-    case 'origamiFoldDiagram':
-      return 'origami fold'
-    case 'macrameKnot':
-      return 'macramé knot'
-    default:
-      return 'this'
+  const heading = (subtitle: string) => (
+    <>
+      <strong>Print this chart</strong>
+      <p>{subtitle}</p>
+      <p className="chart-print-controls__hint">
+        Use your browser&apos;s print dialog (Ctrl/Cmd+P) and pick
+        &ldquo;Save as PDF&rdquo; to write a PDF or print straight to
+        paper.
+      </p>
+    </>
+  )
+
+  const inlineLetter = paper === 'letter' ? (
+    <style
+      dangerouslySetInnerHTML={{
+        __html: '@page { size: letter portrait; margin: 0; }',
+      }}
+    />
+  ) : null
+
+  // Cross-stitch is the most complex case — keep its dedicated path.
+  if (node.type === 'crossStitchChart') {
+    const def = node.attrs?.definition as CrossStitchChart | undefined
+    if (!def || typeof def !== 'object') notFound()
+
+    const progress = await prisma.chartProgress.findUnique({
+      where: {
+        userId_tutorialId_chartIndex: {
+          userId: user.id,
+          tutorialId,
+          chartIndex,
+        },
+      },
+      select: { markedCells: true },
+    })
+    const markedCells = new Set<string>(progress?.markedCells ?? [])
+
+    const { cellsPerPageX, cellsPerPageY } = DENSITY_PRESETS[density]
+    const tiles = tileChart(def, cellsPerPageX, cellsPerPageY, OVERLAP_CELLS)
+
+    return (
+      <div className={`chart-print chart-print--${paper}`} data-symbol-mode={symbol}>
+        {inlineLetter}
+        <div className="chart-print-controls no-print">
+          {heading(
+            `${def.title ?? 'Cross-stitch chart'} · ${def.width}×${def.height} stitches · ${tiles.length} tile${tiles.length === 1 ? '' : 's'} · ${PAPER_LABEL[paper]} · ${density} · ${symbol === 'symbol-only' ? 'symbol-only' : 'colour + symbol'}`,
+          )}
+          <p className="chart-print-controls__hint">
+            Trim each tile along the dashed cut marks and tape together —
+            the overlap stitches help align adjacent tiles.
+          </p>
+          <div className="chart-print-controls__links">
+            <PrintLink label="A4 · medium · colour" href={buildHref({ paper: 'a4', density: 'medium', symbol: 'colour' })} active={paper === 'a4' && density === 'medium' && symbol === 'colour'} />
+            <PrintLink label="A4 · medium · symbol-only" href={buildHref({ paper: 'a4', density: 'medium', symbol: 'symbol-only' })} active={paper === 'a4' && density === 'medium' && symbol === 'symbol-only'} />
+            <PrintLink label="A4 · large · colour" href={buildHref({ paper: 'a4', density: 'large', symbol: 'colour' })} active={paper === 'a4' && density === 'large' && symbol === 'colour'} />
+            <PrintLink label="A4 · small · colour" href={buildHref({ paper: 'a4', density: 'small', symbol: 'colour' })} active={paper === 'a4' && density === 'small' && symbol === 'colour'} />
+            <PrintLink label="Letter · medium · colour" href={buildHref({ paper: 'letter', density: 'medium', symbol: 'colour' })} active={paper === 'letter' && density === 'medium' && symbol === 'colour'} />
+          </div>
+        </div>
+
+        {tiles.map((tile, i) => (
+          <CrossStitchTilePage
+            key={i}
+            tile={tile}
+            tileIndex={i}
+            totalTiles={tiles.length}
+            definition={def}
+            markedCells={markedCells}
+            paper={paper}
+            symbolMode={symbol}
+          />
+        ))}
+
+        <CrossStitchLegendPage definition={def} paper={paper} />
+      </div>
+    )
   }
+
+  // Knit / crochet — print the existing CraftChart on a single page.
+  if (node.type === 'craftChart') {
+    const def = node.attrs?.definition as ChartDefinition | undefined
+    if (!def || typeof def !== 'object') notFound()
+    return (
+      <div className={`chart-print chart-print--${paper}`}>
+        {inlineLetter}
+        <div className="chart-print-controls no-print">
+          {heading(`${def.title ?? 'Chart'} · ${def.layout === 'round' ? 'in-the-round' : 'flat'} · ${PAPER_LABEL[paper]}`)}
+          <div className="chart-print-controls__links">
+            <PrintLink label="A4" href={buildHref({ paper: 'a4', density: 'medium', symbol: 'colour' })} active={paper === 'a4'} />
+            <PrintLink label="Letter" href={buildHref({ paper: 'letter', density: 'medium', symbol: 'colour' })} active={paper === 'letter'} />
+          </div>
+        </div>
+        <div className="chart-print-tile chart-print-tile--scale-fit">
+          <div className="chart-print-tile__header">
+            <span className="chart-print-tile__title">{def.title ?? 'Craft chart'}</span>
+            <span className="chart-print-tile__coords">
+              {def.layout === 'round' ? 'In the round' : 'Flat'}
+            </span>
+          </div>
+          <div className="chart-print-tile__svg chart-print-tile__svg--fit">
+            <CraftChart definition={def} />
+          </div>
+          {def.caption ? (
+            <p className="chart-print-legend__caption">{def.caption}</p>
+          ) : null}
+        </div>
+      </div>
+    )
+  }
+
+  // Weaving — print on a single landscape page.
+  if (node.type === 'weavingDraft') {
+    const def = node.attrs?.definition as WeavingDraftDefinition | undefined
+    if (!def || typeof def !== 'object') notFound()
+    return (
+      <div className={`chart-print chart-print--${paper} chart-print--landscape`}>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `@page { size: ${paper === 'letter' ? 'letter' : 'A4'} landscape; margin: 0; }`,
+          }}
+        />
+        <div className="chart-print-controls no-print">
+          {heading(`${def.title ?? 'Weaving draft'} · ${def.loomType} loom · ${PAPER_LABEL[paper]} landscape`)}
+          <div className="chart-print-controls__links">
+            <PrintLink label="A4 landscape" href={buildHref({ paper: 'a4', density: 'medium', symbol: 'colour' })} active={paper === 'a4'} />
+            <PrintLink label="Letter landscape" href={buildHref({ paper: 'letter', density: 'medium', symbol: 'colour' })} active={paper === 'letter'} />
+          </div>
+        </div>
+        <div className="chart-print-tile chart-print-tile--landscape chart-print-tile--scale-fit">
+          <div className="chart-print-tile__header">
+            <span className="chart-print-tile__title">{def.title ?? 'Weaving draft'}</span>
+            <span className="chart-print-tile__coords">{def.loomType} loom</span>
+          </div>
+          <div className="chart-print-tile__svg chart-print-tile__svg--fit">
+            <WeavingDraft definition={def} />
+          </div>
+          {def.caption ? (
+            <p className="chart-print-legend__caption">{def.caption}</p>
+          ) : null}
+        </div>
+      </div>
+    )
+  }
+
+  // Calligraphy — print the exemplar at exact nib-width scale (per spec).
+  // The exemplar renderer draws in a 100×100 unit box; for nib-width
+  // accuracy we scale so 1 nib width on the page equals the configured
+  // nib size. v1 ships a sensible default at full-page width.
+  if (node.type === 'calligraphyExemplar') {
+    const def = node.attrs?.definition as CalligraphyExemplarDefinition | undefined
+    if (!def || typeof def !== 'object') notFound()
+    return (
+      <div className={`chart-print chart-print--${paper}`}>
+        {inlineLetter}
+        <div className="chart-print-controls no-print">
+          {heading(`Calligraphy exemplar — letter "${def.letter}" · ${def.alphabet} · nib angle ${def.nibAngle}° · ${PAPER_LABEL[paper]}`)}
+          <p className="chart-print-controls__hint">
+            The exemplar prints at exact nib-width scale so a stitcher
+            (or scribe) can hold their paper to the screen and check
+            their guide-lines.
+          </p>
+          <div className="chart-print-controls__links">
+            <PrintLink label="A4" href={buildHref({ paper: 'a4', density: 'medium', symbol: 'colour' })} active={paper === 'a4'} />
+            <PrintLink label="Letter" href={buildHref({ paper: 'letter', density: 'medium', symbol: 'colour' })} active={paper === 'letter'} />
+          </div>
+        </div>
+        <div className="chart-print-tile chart-print-tile--scale-fit">
+          <div className="chart-print-tile__header">
+            <span className="chart-print-tile__title">
+              Letter &ldquo;{def.letter}&rdquo;
+            </span>
+            <span className="chart-print-tile__coords">
+              {def.alphabet} · {def.nibAngle}°
+            </span>
+          </div>
+          <div className="chart-print-tile__svg chart-print-tile__svg--fit">
+            <CalligraphyExemplar definition={def} />
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // Origami — print each step on its own page so the user has hands
+  // free to fold while reading.
+  if (node.type === 'origamiFoldDiagram') {
+    const def = node.attrs?.definition as OrigamiFoldDefinition | undefined
+    if (!def || typeof def !== 'object') notFound()
+    return (
+      <div className={`chart-print chart-print--${paper}`}>
+        {inlineLetter}
+        <div className="chart-print-controls no-print">
+          {heading(`${def.title ?? 'Origami fold sequence'} · ${def.stepCount} step${def.stepCount === 1 ? '' : 's'} · ${PAPER_LABEL[paper]}`)}
+          <p className="chart-print-controls__hint">
+            Each step prints on its own page so you have hands free to
+            fold while reading.
+          </p>
+          <div className="chart-print-controls__links">
+            <PrintLink label="A4" href={buildHref({ paper: 'a4', density: 'medium', symbol: 'colour' })} active={paper === 'a4'} />
+            <PrintLink label="Letter" href={buildHref({ paper: 'letter', density: 'medium', symbol: 'colour' })} active={paper === 'letter'} />
+          </div>
+        </div>
+        {def.steps.map((step) => (
+          <div key={step.stepNumber} className="chart-print-tile chart-print-tile--scale-fit">
+            <div className="chart-print-tile__header">
+              <span className="chart-print-tile__title">
+                {def.title ?? 'Origami'} — step {step.stepNumber} of {def.stepCount}
+              </span>
+            </div>
+            <div className="chart-print-tile__svg chart-print-tile__svg--fit">
+              <OrigamiFoldBasic
+                definition={{ ...def, stepCount: 1, steps: [step] }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+  // Macramé knot — single-page print.
+  if (node.type === 'macrameKnot') {
+    const def = node.attrs?.definition as MacrameKnotDefinition | undefined
+    if (!def || typeof def !== 'object') notFound()
+    return (
+      <div className={`chart-print chart-print--${paper}`}>
+        {inlineLetter}
+        <div className="chart-print-controls no-print">
+          {heading(`Macramé knot — ${def.knotType} · ${PAPER_LABEL[paper]}`)}
+          <div className="chart-print-controls__links">
+            <PrintLink label="A4" href={buildHref({ paper: 'a4', density: 'medium', symbol: 'colour' })} active={paper === 'a4'} />
+            <PrintLink label="Letter" href={buildHref({ paper: 'letter', density: 'medium', symbol: 'colour' })} active={paper === 'letter'} />
+          </div>
+        </div>
+        <div className="chart-print-tile chart-print-tile--scale-fit">
+          <div className="chart-print-tile__header">
+            <span className="chart-print-tile__title">{def.knotType} knot</span>
+          </div>
+          <div className="chart-print-tile__svg chart-print-tile__svg--fit">
+            <MacrameKnot definition={def} />
+          </div>
+          {def.caption ? (
+            <p className="chart-print-legend__caption">{def.caption}</p>
+          ) : null}
+        </div>
+      </div>
+    )
+  }
+
+  // Unknown — shouldn't happen because the filter above limits to known
+  // types, but TypeScript wants the fall-through.
+  notFound()
 }
 
 function PrintLink({
@@ -260,7 +424,7 @@ function tileChart(
   return tiles
 }
 
-function ChartTilePage({
+function CrossStitchTilePage({
   tile,
   tileIndex,
   totalTiles,
@@ -279,11 +443,7 @@ function ChartTilePage({
 }) {
   const tileWidth = tile.endX - tile.startX
   const tileHeight = tile.endY - tile.startY
-  // Compute a per-page printable area in mm. We work in mm so the
-  // browser's print scaling produces a true-to-scale chart.
   const printableMm = paper === 'a4' ? { w: 180, h: 257 } : { w: 175, h: 240 }
-  // Cell size in mm — pick whichever fits, capped at 4.5mm so the
-  // largest tiles still leave a margin for labels + cut marks.
   const cellMm = Math.min(
     printableMm.w / (tileWidth + 2),
     printableMm.h / (tileHeight + 4),
@@ -292,11 +452,10 @@ function ChartTilePage({
   const gridWidthMm = tileWidth * cellMm
   const gridHeightMm = tileHeight * cellMm
 
-  // Palette index
   const paletteIndex = new Map<string, { hex: string; symbol: string; name: string }>()
   definition.palette.forEach((entry, i) => {
-    const symbol = entry.symbol ?? FALLBACK_SYMBOLS[i % FALLBACK_SYMBOLS.length] ?? '?'
-    paletteIndex.set(entry.key, { hex: entry.hex, symbol, name: entry.name })
+    const sym = entry.symbol ?? FALLBACK_SYMBOLS[i % FALLBACK_SYMBOLS.length] ?? '?'
+    paletteIndex.set(entry.key, { hex: entry.hex, symbol: sym, name: entry.name })
   })
 
   return (
@@ -318,7 +477,6 @@ function ChartTilePage({
         height={`${gridHeightMm}mm`}
         className="chart-print-tile__svg"
       >
-        {/* Cells */}
         {definition.cells.map((cell, i) => {
           if (
             cell.x < tile.startX ||
@@ -334,10 +492,8 @@ function ChartTilePage({
           const localY = cell.y - tile.startY
           const px = localX * cellMm
           const py = localY * cellMm
-          const isOverlapCol =
-            tile.startX > 0 && localX < OVERLAP_CELLS && tile.startX !== 0
-          const isOverlapRow =
-            tile.startY > 0 && localY < OVERLAP_CELLS && tile.startY !== 0
+          const isOverlapCol = tile.startX > 0 && localX < OVERLAP_CELLS && tile.startX !== 0
+          const isOverlapRow = tile.startY > 0 && localY < OVERLAP_CELLS && tile.startY !== 0
           const isOverlap = isOverlapCol || isOverlapRow
           const fillOpacity = isOverlap ? 0.4 : 1
           const isMarked = markedCells.has(`${cell.x},${cell.y}`)
@@ -359,11 +515,7 @@ function ChartTilePage({
                 fontSize={cellMm * 0.6}
                 textAnchor="middle"
                 dominantBaseline="central"
-                fill={
-                  symbolMode === 'symbol-only'
-                    ? '#000'
-                    : textOnFill(indexed.hex)
-                }
+                fill={symbolMode === 'symbol-only' ? '#000' : textOnFill(indexed.hex)}
               >
                 {indexed.symbol}
               </text>
@@ -381,7 +533,6 @@ function ChartTilePage({
           )
         })}
 
-        {/* Grid lines */}
         <g stroke="#444" fill="none">
           {Array.from({ length: tileWidth + 1 }).map((_, c) => {
             const absC = tile.startX + c
@@ -425,9 +576,6 @@ function ChartTilePage({
           })}
         </g>
 
-        {/* Ruler labels every 10 stitches, using the chart's absolute
-            coordinates rather than the tile-local ones so a stitcher can
-            cross-reference tiles. */}
         <g fontSize={cellMm * 0.45} fill="#222" fillOpacity={0.7}>
           {Array.from({ length: tileWidth + 1 }).map((_, c) => {
             const absC = tile.startX + c
@@ -459,7 +607,6 @@ function ChartTilePage({
           })}
         </g>
 
-        {/* Cut marks at the trim edges */}
         <CutMarks
           gridWidthMm={gridWidthMm}
           gridHeightMm={gridHeightMm}
@@ -495,31 +642,10 @@ function CutMarks({
   const len = 4
   return (
     <g stroke="#000" strokeDasharray="1 1" strokeWidth={0.2}>
-      {showTop ? (
-        <line x1={0} y1={0} x2={gridWidthMm} y2={0} strokeDasharray="2 2" />
-      ) : null}
-      {showBottom ? (
-        <line
-          x1={0}
-          y1={gridHeightMm}
-          x2={gridWidthMm}
-          y2={gridHeightMm}
-          strokeDasharray="2 2"
-        />
-      ) : null}
-      {showLeft ? (
-        <line x1={0} y1={0} x2={0} y2={gridHeightMm} strokeDasharray="2 2" />
-      ) : null}
-      {showRight ? (
-        <line
-          x1={gridWidthMm}
-          y1={0}
-          x2={gridWidthMm}
-          y2={gridHeightMm}
-          strokeDasharray="2 2"
-        />
-      ) : null}
-      {/* Crosshairs at the corners */}
+      {showTop ? <line x1={0} y1={0} x2={gridWidthMm} y2={0} strokeDasharray="2 2" /> : null}
+      {showBottom ? <line x1={0} y1={gridHeightMm} x2={gridWidthMm} y2={gridHeightMm} strokeDasharray="2 2" /> : null}
+      {showLeft ? <line x1={0} y1={0} x2={0} y2={gridHeightMm} strokeDasharray="2 2" /> : null}
+      {showRight ? <line x1={gridWidthMm} y1={0} x2={gridWidthMm} y2={gridHeightMm} strokeDasharray="2 2" /> : null}
       {showTop && showLeft ? <Crosshair x={0} y={0} len={len} /> : null}
       {showTop && showRight ? <Crosshair x={gridWidthMm} y={0} len={len} /> : null}
       {showBottom && showLeft ? <Crosshair x={0} y={gridHeightMm} len={len} /> : null}
@@ -537,7 +663,7 @@ function Crosshair({ x, y, len }: { x: number; y: number; len: number }) {
   )
 }
 
-function LegendPage({
+function CrossStitchLegendPage({
   definition,
   paper,
 }: {

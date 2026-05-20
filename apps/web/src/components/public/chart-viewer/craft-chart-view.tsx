@@ -112,6 +112,15 @@ export function CraftChartView({
       >
         Rule mode
       </button>
+      <a
+        href={`/chart-print/${tutorialId}/${chartIndex}?paper=a4`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="chart-viewer-shell__button"
+        title="Open the print preview in a new tab"
+      >
+        Print
+      </a>
     </>
   )
 

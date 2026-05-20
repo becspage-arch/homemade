@@ -1,8 +1,10 @@
 'use client'
 
 import {
+  createContext,
   forwardRef,
   useCallback,
+  useContext,
   useEffect,
   useImperativeHandle,
   useMemo,
@@ -13,6 +15,21 @@ import {
   type ReactNode,
   type WheelEvent as ReactWheelEvent,
 } from 'react'
+
+import { SettingsPopover } from './settings-popover'
+import { DEFAULT_PREFS, useViewerPrefs, type ChartViewerPrefs } from './use-viewer-prefs'
+
+/**
+ * Context exposing the viewer-prefs to chart renderers nested inside
+ * the shell — they read this to apply grid colour / weight overrides.
+ * Defaults to the built-in DEFAULT_PREFS so the context value is always
+ * safe to read.
+ */
+const ViewerPrefsContext = createContext<Required<ChartViewerPrefs>>(DEFAULT_PREFS)
+
+export function useChartViewerPrefs(): Required<ChartViewerPrefs> {
+  return useContext(ViewerPrefsContext)
+}
 
 /**
  * Shared client-side chart-viewer shell. Wraps any chart renderer in:
@@ -66,6 +83,7 @@ export const ChartViewerShell = forwardRef<ChartViewerShellHandle, ChartViewerSh
     const [ty, setTy] = useState(0)
     const [isFullscreen, setIsFullscreen] = useState(false)
     const [isDarkMode, setIsDarkMode] = useState(false)
+    const { prefs, updatePrefs } = useViewerPrefs()
 
     // Pointer-state tracking. We support: single-pointer drag (pan), and
     // two-pointer pinch (zoom). React's synthetic event recycling means
@@ -223,7 +241,17 @@ export const ChartViewerShell = forwardRef<ChartViewerShellHandle, ChartViewerSh
       .join(' ')
 
     return (
-      <div ref={containerRef} className={containerClassName}>
+      <ViewerPrefsContext.Provider value={prefs}>
+      <div
+        ref={containerRef}
+        className={containerClassName}
+        style={
+          {
+            '--chart-grid': prefs.gridColor,
+            '--chart-grid-weight-scale': prefs.gridWeightScale,
+          } as CSSProperties
+        }
+      >
         <div className="chart-viewer-shell__bar">
           <div className="chart-viewer-shell__bar-left">{toolbar}</div>
           <div className="chart-viewer-shell__bar-right">
@@ -272,6 +300,7 @@ export const ChartViewerShell = forwardRef<ChartViewerShellHandle, ChartViewerSh
             >
               {isFullscreen ? '⛶' : '⛶'}
             </button>
+            <SettingsPopover prefs={prefs} onChange={updatePrefs} />
           </div>
         </div>
         <div
@@ -292,6 +321,7 @@ export const ChartViewerShell = forwardRef<ChartViewerShellHandle, ChartViewerSh
         </div>
         {legend ? <div className="chart-viewer-shell__legend">{legend}</div> : null}
       </div>
+      </ViewerPrefsContext.Provider>
     )
   },
 )

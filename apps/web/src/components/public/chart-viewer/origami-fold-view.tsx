@@ -89,9 +89,20 @@ export function OrigamiFoldView({
   const currentStep = definition.steps.find((s) => !markedSteps.has(s.stepNumber))?.stepNumber ?? null
 
   const toolbar = (
-    <span className="cross-stitch-status">
-      Step {currentStep ?? totalSteps} of {totalSteps} · {completedCount} done
-    </span>
+    <>
+      <span className="cross-stitch-status">
+        Step {currentStep ?? totalSteps} of {totalSteps} · {completedCount} done
+      </span>
+      <a
+        href={`/chart-print/${tutorialId}/${chartIndex}?paper=a4`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="chart-viewer-shell__button"
+        title="Open the print preview in a new tab"
+      >
+        Print
+      </a>
+    </>
   )
 
   const legend = (

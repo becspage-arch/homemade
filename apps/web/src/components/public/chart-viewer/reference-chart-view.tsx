@@ -9,21 +9,45 @@ interface ReferenceChartViewProps {
   children: ReactNode
   /** Accessible name announced for the chart. */
   ariaLabel?: string
+  /** When both are set, a Print button surfaces in the toolbar pointing
+   *  at /chart-print/[tutorialId]/[chartIndex]. */
+  tutorialId?: string | null
+  chartIndex?: number | null
 }
 
 /**
- * Wraps a non-mark-stitch chart renderer (calligraphy exemplar, macramé
- * knot, weaving draft, knit/crochet craft chart, origami fold) with the
- * shared zoom + pan + fullscreen + dark-mode shell. Reference-mode only;
- * no per-cell / per-row / per-step interactivity.
+ * Wraps a reference-only chart renderer (calligraphy exemplar, macramé
+ * knot) with the shared zoom + pan + fullscreen + dark-mode shell. Used
+ * by interactive views' preview-mode fallback too.
  *
- * Knit / crochet / weaving / origami get per-row / per-step marking in a
- * later iteration. For v1 they share this thin wrapper so they at least
- * get the universal interaction layer.
+ * No per-cell / per-row / per-step interactivity — just the universal
+ * shell. If a tutorialId + chartIndex pair is passed, a Print button
+ * surfaces in the toolbar.
  */
-export function ReferenceChartView({ children, ariaLabel }: ReferenceChartViewProps) {
+export function ReferenceChartView({
+  children,
+  ariaLabel,
+  tutorialId,
+  chartIndex,
+}: ReferenceChartViewProps) {
+  const canPrint = tutorialId && typeof chartIndex === 'number'
   return (
-    <ChartViewerShell ariaLabel={ariaLabel}>
+    <ChartViewerShell
+      ariaLabel={ariaLabel}
+      toolbar={
+        canPrint ? (
+          <a
+            href={`/chart-print/${tutorialId}/${chartIndex}?paper=a4`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="chart-viewer-shell__button"
+            title="Open the print preview in a new tab"
+          >
+            Print
+          </a>
+        ) : null
+      }
+    >
       <div className="reference-chart-view__inner">{children}</div>
     </ChartViewerShell>
   )

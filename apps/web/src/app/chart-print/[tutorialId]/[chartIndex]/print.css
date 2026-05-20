@@ -134,6 +134,43 @@ body {
   font-size: 11pt;
 }
 
+/* "Scale-fit" tiles host an existing renderer's full SVG and constrain
+   it to the printable area. Used by knit/crochet, weaving, calligraphy,
+   origami, macramé. The inner SVG keeps its intrinsic aspect ratio and
+   shrinks to fit. */
+.chart-print-tile__svg--fit {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.chart-print-tile__svg--fit > * {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.chart-print-tile__svg--fit svg {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Landscape variant for the weaving draft. */
+.chart-print-tile--landscape {
+  width: 297mm;
+  min-height: 210mm;
+}
+
+.chart-print--letter .chart-print-tile--landscape {
+  width: 279.4mm;
+  min-height: 215.9mm;
+}
+
 .chart-print-legend {
   width: 100%;
   border-collapse: collapse;

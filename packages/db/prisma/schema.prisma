@@ -182,6 +182,12 @@ model User {
   // view at all; this is the persistence layer.
   chartProgress ChartProgress[]
 
+  // Chart-viewer user-level preferences — applied to every chart the
+  // user views. JSON shape: { gridColor?: string, gridWeightScale?:
+  // number (0.5–2), showCentreLines?: boolean }. Null = built-in
+  // defaults. Set via /api/me/preferences/chart-viewer.
+  chartViewerPrefs Json?
+
   @@index([role])
   @@index([isSuspended])
   @@index([isCreator])

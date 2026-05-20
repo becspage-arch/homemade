@@ -403,7 +403,11 @@ function RenderNode({
       }
       if (!isSignedIn) return <ChartSignInGate subtitle="Calligraphy exemplar" />
       return (
-        <ReferenceChartView ariaLabel="Calligraphy exemplar">
+        <ReferenceChartView
+          ariaLabel="Calligraphy exemplar"
+          tutorialId={tutorialId}
+          chartIndex={chartIndex}
+        >
           <CalligraphyExemplar definition={def} />
         </ReferenceChartView>
       )
@@ -469,7 +473,11 @@ function RenderNode({
       }
       if (!isSignedIn) return <ChartSignInGate subtitle="Macramé knot diagram" />
       return (
-        <ReferenceChartView ariaLabel="Macramé knot diagram">
+        <ReferenceChartView
+          ariaLabel="Macramé knot diagram"
+          tutorialId={tutorialId}
+          chartIndex={chartIndex}
+        >
           <MacrameKnot definition={def} />
         </ReferenceChartView>
       )

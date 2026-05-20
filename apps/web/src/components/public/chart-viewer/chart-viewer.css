@@ -290,6 +290,79 @@
   opacity: 0.6;
 }
 
+/* Settings popover */
+
+.chart-settings {
+  position: relative;
+}
+
+.chart-settings__panel {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 20;
+  background: var(--chart-bg);
+  color: var(--chart-fg);
+  border: 1px solid var(--chart-grid);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  padding: 12px;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.chart-settings__row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.chart-settings__label {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.chart-settings__color-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chart-settings__swatch {
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--chart-grid);
+  padding: 0;
+  cursor: pointer;
+}
+
+.chart-settings__swatch.is-active {
+  border-color: var(--chart-fg);
+  box-shadow: 0 0 0 2px var(--chart-bg), 0 0 0 4px var(--chart-fg);
+}
+
+.chart-settings__checkbox {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.chart-settings__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+input[type='range'] {
+  accent-color: var(--chart-fg);
+}
+
 /* Notes */
 
 .cross-stitch-notes {

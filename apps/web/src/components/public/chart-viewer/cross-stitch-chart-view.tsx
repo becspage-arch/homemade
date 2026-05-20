@@ -13,6 +13,7 @@ import {
 import type { CrossStitchChart } from '@/lib/chart-renderers/cross-stitch'
 import { ChartViewerShell } from './chart-viewer-shell'
 import { useTimeTracker } from './use-time-tracker'
+import { useViewerPrefs } from './use-viewer-prefs'
 
 interface CrossStitchChartViewProps {
   /** Chart definition pulled from the TipTap node attrs. */
@@ -103,6 +104,7 @@ export function CrossStitchChartView({
   const [loaded, setLoaded] = useState(false)
   const [noteEditor, setNoteEditor] = useState<NoteEditorState | null>(null)
   useTimeTracker(tutorialId, chartIndex, loaded)
+  const { prefs: viewerPrefs } = useViewerPrefs()
 
   // Load persisted progress on first mount.
   useEffect(() => {
@@ -676,11 +678,11 @@ export function CrossStitchChartView({
             </g>
           )
         })}
-        {/* Grid lines */}
-        <g stroke="var(--chart-fg)" fill="none">
+        {/* Grid lines — weights scale with user prefs */}
+        <g stroke="var(--chart-grid)" fill="none">
           {Array.from({ length: width + 1 }).map((_, c) => {
             const x = PADDING_LEFT + c * CELL_PX
-            const weight =
+            const base =
               c === 0 || c === width ? 1.4 : c % 25 === 0 ? 1.2 : c % 10 === 0 ? 0.85 : 0.35
             return (
               <line
@@ -689,13 +691,13 @@ export function CrossStitchChartView({
                 y1={PADDING_TOP}
                 x2={x}
                 y2={PADDING_TOP + gridHeightPx}
-                strokeWidth={weight}
+                strokeWidth={base * viewerPrefs.gridWeightScale}
               />
             )
           })}
           {Array.from({ length: height + 1 }).map((_, r) => {
             const y = PADDING_TOP + r * CELL_PX
-            const weight =
+            const base =
               r === 0 || r === height ? 1.4 : r % 25 === 0 ? 1.2 : r % 10 === 0 ? 0.85 : 0.35
             return (
               <line
@@ -704,7 +706,7 @@ export function CrossStitchChartView({
                 y1={y}
                 x2={PADDING_LEFT + gridWidthPx}
                 y2={y}
-                strokeWidth={weight}
+                strokeWidth={base * viewerPrefs.gridWeightScale}
               />
             )
           })}
@@ -713,27 +715,34 @@ export function CrossStitchChartView({
             chart. Stitchers use these to align fabric to the centre of
             the embroidery hoop. Drawn distinct from the every-25 emphasis
             so they always stand out, even on charts that happen to fall
-            on a 25-stitch boundary. */}
-        {(() => {
-          const centreX = PADDING_LEFT + Math.floor(width / 2) * CELL_PX
-          const centreY = PADDING_TOP + Math.floor(height / 2) * CELL_PX
-          return (
-            <g stroke="var(--chart-fg)" fill="none" strokeDasharray="4 3" strokeWidth={1.1}>
-              <line
-                x1={centreX}
-                y1={PADDING_TOP}
-                x2={centreX}
-                y2={PADDING_TOP + gridHeightPx}
-              />
-              <line
-                x1={PADDING_LEFT}
-                y1={centreY}
-                x2={PADDING_LEFT + gridWidthPx}
-                y2={centreY}
-              />
-            </g>
-          )
-        })()}
+            on a 25-stitch boundary. Toggleable via viewer prefs. */}
+        {viewerPrefs.showCentreLines
+          ? (() => {
+              const centreX = PADDING_LEFT + Math.floor(width / 2) * CELL_PX
+              const centreY = PADDING_TOP + Math.floor(height / 2) * CELL_PX
+              return (
+                <g
+                  stroke="var(--chart-grid)"
+                  fill="none"
+                  strokeDasharray="4 3"
+                  strokeWidth={1.1 * viewerPrefs.gridWeightScale}
+                >
+                  <line
+                    x1={centreX}
+                    y1={PADDING_TOP}
+                    x2={centreX}
+                    y2={PADDING_TOP + gridHeightPx}
+                  />
+                  <line
+                    x1={PADDING_LEFT}
+                    y1={centreY}
+                    x2={PADDING_LEFT + gridWidthPx}
+                    y2={centreY}
+                  />
+                </g>
+              )
+            })()
+          : null}
         {/* Note markers — small dot at the top-right of any cell that has
             a note attached. Pure visual; the cell still responds to mark
             and long-press as usual. */}
