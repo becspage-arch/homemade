@@ -1,0 +1,200 @@
+{
+  "slug": "time-of-use-tariff-guide",
+  "title": "Time-of-use electricity tariffs: how they work and when to use them",
+  "subtitle": "Agile, Octopus Go, and Economy 7: shifting household loads to cheap windows",
+  "excerpt": "Time-of-use tariffs charge different rates at different times of day. Dishwashers, washing machines, and EV chargers run cheaply overnight or during cheap windows. Shifting flexible loads consistently to the off-peak window produces a meaningful reduction in the annual electricity bill.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ofgem guidance on smart tariffs and time-of-use pricing. Octopus Energy published tariff specifications (Agile, Go, Flux). National Grid ESO half-hourly carbon intensity API (carbonintensity.org.uk). Which? guide to Economy 7 and smart tariffs (2025).",
+  "approximateCostGbp": 0,
+  "paybackYears": 0,
+  "recipeTools": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "Octopus Agile tariff how it works",
+    "Economy 7 smart tariff guide",
+    "off peak electricity UK",
+    "shift loads off peak electricity"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "time-of-use-tariff",
+      "term": "Time-of-use tariff",
+      "definition": "An electricity tariff with rates that vary by time of day. Rates are higher during peak demand (typically 4-7 pm) and lower at night or at midday on sunny days. Smart meters are required because the supplier reads consumption in half-hourly slots."
+    },
+    {
+      "slug": "economy-7",
+      "term": "Economy 7",
+      "definition": "The original UK time-of-use tariff with two rates: a day rate and a 7-hour off-peak overnight rate (typically 00:30-07:30, varying by region and network). Designed for storage heaters and immersion heaters. Still widely available on two-rate smart meters."
+    },
+    {
+      "slug": "smart-meter",
+      "term": "Smart meter",
+      "definition": "A gas or electricity meter that sends half-hourly readings to the supplier automatically. Required for time-of-use tariffs. The display unit (IHD) shows current consumption and can show tariff rates on some systems."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Standard electricity tariffs charge the same price per kWh regardless of when you use it. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "time-of-use-tariff" } }],
+            "text": "Time-of-use tariffs"
+          },
+          {
+            "type": "text",
+            "text": " match the price to the wholesale cost of electricity, which varies enormously through the day: from around 5-10p/kWh overnight (when nuclear and wind generation often exceed demand) to over 40p/kWh during the evening peak (when gas peakers are running to meet demand). Shifting flexible loads out of the peak window reduces your bill without changing how much electricity you use."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The main tariff types" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Economy 7" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "economy-7" } }],
+            "text": "Economy 7"
+          },
+          {
+            "type": "text",
+            "text": " is the oldest and simplest: a 7-hour overnight off-peak rate and a higher day rate. It was designed for electric storage heaters and immersion tanks that charge overnight. If you have an immersion heater, fitting a timer to run it overnight (23:00-06:00) and insulating the cylinder well moves nearly all your hot water energy cost to the cheap rate. The saving for a typical household depends on current tariff levels but is significant for high-usage immersion heaters."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Octopus Go and similar EV tariffs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Several suppliers offer a very cheap overnight window (typically 00:30-04:30), aimed at EV charging. Outside that window, the unit rate is similar to a standard tariff. If you drive a significant annual mileage in an EV and charge entirely within the cheap window, the saving over charging at the standard rate is substantial."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Octopus Agile and similar half-hourly tariffs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Half-hourly tariffs like Agile publish the next day's prices by 4 pm. Prices track the wholesale market. On average, the overnight rate is 8-15p/kWh and the evening peak is 30-50p/kWh. Negative prices occur occasionally (wholesale market is oversupplied): you can earn money by using electricity during those half-hours. Agile requires engagement: you or your smart devices need to act on the prices. Home automation systems (Home Assistant, Ohme EV charger, Sunsynk battery controller) can automate load-shifting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What can realistically be shifted" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Dishwasher (1.0-1.5 kWh/cycle): set delayed start to run in the overnight cheap window. Saving over an evening start depends on the tariff rate difference, but at one cycle per day the annual saving is meaningful." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Washing machine (0.5-1.5 kWh/cycle, 30-40°C wash): most machines have a delayed start. Same saving pattern as dishwasher." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Immersion heater (2-3 kWh per full tank): shift to overnight via a timer relay or a smart switch. Biggest single saving available from load-shifting in most households." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "EV charging (4-10 kWh per overnight charge depending on vehicle range and daily distance): use the vehicle's scheduled departure time to target the cheap overnight window." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What cannot be shifted" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heating, lighting during occupied hours, refrigerators, and standby loads cannot be shifted without affecting comfort or food safety. The total flexible load in a typical house is 3-6 kWh/day: a significant proportion of total consumption (typical UK household uses 8-12 kWh/day electricity) but not the whole bill."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Requirements" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "All time-of-use tariffs require a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "smart-meter" } }],
+            "text": "smart meter"
+          },
+          {
+            "type": "text",
+            "text": " (SMETS2 generation for most suppliers). Request a smart meter installation from your current supplier if you don't have one. Economy 7 also works on the older two-rate SMETS1 meters and mechanical two-rate meters."
+          }
+        ]
+      }
+    ]
+  }
+}

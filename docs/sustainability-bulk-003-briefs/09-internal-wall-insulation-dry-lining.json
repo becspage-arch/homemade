@@ -1,0 +1,257 @@
+{
+  "slug": "internal-wall-insulation-dry-lining",
+  "title": "Fitting internal wall insulation with PIR and dry lining",
+  "subtitle": "Boards on dabs or studwork: the step-by-step installation process",
+  "excerpt": "Internal wall insulation with PIR bonded plasterboard reduces a solid external wall from 2.0 W/m2K to around 0.28 W/m2K. The work requires removing skirting boards and window boards, relocating sockets, and re-making the window reveals. A 20 m2 wall takes one experienced person two to three days.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Approved Document L1B (2022) for solid wall U-value targets. STBA (Solid Wall Insulation and Building Retrofit Association) technical guide for internal wall insulation. Historic England Practical Building Conservation series on insulation in traditional buildings. Energy Saving Trust solid wall insulation guidance.",
+  "approximateCostGbp": 3200,
+  "paybackYears": 22,
+  "recipeTools": [
+    { "slug": "cordless-drill", "isOptional": false },
+    { "slug": "spirit-level", "isOptional": false },
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "utility-knife", "isOptional": false },
+    { "slug": "scraper-filling", "isOptional": false }
+  ],
+  "techniqueSlugs": ["vapour-control-layers-explained", "thermal-bridging-explained"],
+  "criticalTechniques": ["vapour-control-layers-explained"],
+  "aliases": [
+    "PIR board on dabs internal insulation",
+    "dry lining insulation solid wall",
+    "install internal wall insulation",
+    "bonded plasterboard insulation"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pir-board",
+      "term": "PIR board",
+      "definition": "Polyisocyanurate rigid foam insulation board faced with foil. Lambda approximately 0.022 W/mK. In IWI work, PIR is sold pre-bonded to a plasterboard face (a composite insulated plasterboard) or as plain boards to be fixed with a plasterboard layer on top."
+    },
+    {
+      "slug": "cold-bridge",
+      "term": "Cold bridge",
+      "definition": "A localised path through the insulation layer where heat bypasses the insulation. In internal wall insulation, the floor joists that are embedded in the external wall are bridges; they conduct heat outward past the insulation."
+    },
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "Equivalent to cold bridge: a path of higher thermal conductivity through or around an insulation layer. In internal wall insulation, the perimeter of the insulated panel (junction with floors, ceilings, party walls) is a bridge zone that needs careful detailing."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Internal wall insulation is the main route for insulating solid external walls where external cladding is not possible: in a terrace, in a conservation area, or on a listed building. A 215 mm solid brick wall has a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pir-board" } }],
+            "text": "PIR board"
+          },
+          {
+            "type": "text",
+            "text": " layer on its internal face brings the U-value from approximately 2.0 W/m2K to around 0.28 W/m2K. Annual heat loss saving for one 20 m2 exposed wall: approximately 840 kWh/year."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Internal wall insulation on a solid wall moves the dew point and changes condensation behaviour. In most UK solid brick walls the risk is low, but on walls with existing damp problems, get a specialist assessment before insulating. Trapping existing damp behind insulation will cause structural damage."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "PIR composite insulated plasterboard (IWI board): PIR layer pre-bonded to 12.5 mm plasterboard. Common thicknesses: 37.5 mm (25 mm PIR + 12.5 mm), 52.5 mm, 62.5 mm." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Board adhesive (gypsum-based bonding compound): applied in dabs to the existing wall surface to bond the composite board" }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Perimeter sealant: flexible sealant for the board edges at floor, ceiling, and side junctions to reduce air movement behind the boards" }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Extension electrical back-boxes: single and double sockets need back-boxes extended by the depth of the board. Buy the correct depth before starting." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparation" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Remove all skirting boards (save and refit or replace). Remove the window board and window sill on all windows in the wall. Photograph all socket and switch positions." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Turn off the electrical circuits for the sockets in the wall. Extend all back-boxes to the new depth. Re-cable any socket on the external wall into the service cavity behind the new board if using the studwork method (preferable where several sockets are on the wall)." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Check the wall is dry with a moisture meter. Readings above 20% indicate a damp problem that must be addressed before insulating." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Boards on dabs: the installation" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Apply board adhesive as 50 mm round dabs at approximately 400 mm centres across the wall face. Use a spirit level to check the wall is plumb and apply more adhesive on the low spots." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Press the composite board onto the dabs from bottom to top. Use a long spirit level to keep all boards in the same plane. Pack behind low spots with card until the adhesive sets." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Cut boards around sockets and switches. Cut window reveals: the reveal boards run from the new wall face to the window frame, insulating the reveal and reducing the "
+              },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cold-bridge" } }],
+                "text": "cold bridge"
+              },
+              {
+                "type": "text",
+                "text": " at the window frame junction."
+                }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Tape all joints between boards with jointing tape. Apply flexible sealant at all perimeters (floor, ceiling, and the junction with any uninsulated wall). The seal at the floor-board junction is critical for reducing air movement behind the boards." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Skim-coat the boards. Refit skirting boards against the new face, extending to cover the floor junction. Refit window boards and reveals." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Thermal bridging at the perimeter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }],
+            "text": "thermal bridge"
+          },
+          {
+            "type": "text",
+            "text": " at the junction between the insulated wall and the floor, the ceiling, and the party wall is the biggest performance gap in typical internal wall insulation. Where possible, return the insulation board 300 mm along the party wall face and across the ceiling and floor zone at the wall base. In practice, party wall returns are often the hardest: the skirting board junction with the party wall is not usually accessible."
+          }
+        ]
+      }
+    ]
+  }
+}

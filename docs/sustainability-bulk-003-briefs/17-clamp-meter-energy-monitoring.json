@@ -1,0 +1,147 @@
+{
+  "slug": "clamp-meter-energy-monitoring",
+  "title": "Monitoring household energy with a clamp meter",
+  "subtitle": "Whole-house and per-circuit monitoring to find wasteful loads",
+  "excerpt": "A clip-on CT clamp attached to the main supply cable gives a real-time whole-house power reading in watts. Combined with a data logger or a smart home monitor, it produces an hour-by-hour consumption graph that shows exactly when loads are running, how much they draw, and what the overnight baseload is.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ofgem smart meter and monitoring guidance. Energy Saving Trust home energy monitoring guide. Hildebrand Glow, Octopus Home Mini, and Shelly EM product documentation.",
+  "approximateCostGbp": 40,
+  "paybackYears": 1,
+  "recipeTools": [
+    { "slug": "energy-monitor", "isOptional": false }
+  ],
+  "techniqueSlugs": ["reading-an-in-home-display"],
+  "criticalTechniques": [],
+  "aliases": [
+    "CT clamp energy monitor",
+    "whole house electricity monitor",
+    "clip on energy meter",
+    "monitor electricity consumption"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ct-clamp",
+      "term": "CT clamp",
+      "definition": "Current transformer clamp. A clip-on sensor that measures alternating current in a cable by detecting the magnetic field around it. Requires no electrical connection and no consumer unit modification. The clamp output is a small AC voltage proportional to the current in the cable."
+    },
+    {
+      "slug": "baseload",
+      "term": "Baseload",
+      "definition": "The minimum electricity consumption of a home when all deliberate devices are off. Consists of standby loads from refrigeration, networking equipment, set-top boxes, and other always-on devices. Typically 150-500 W in a UK home."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ct-clamp" } }],
+            "text": "CT clamp"
+          },
+          {
+            "type": "text",
+            "text": " attached to the live cable feeding the consumer unit gives a whole-house power reading without any electrician and without any modification to the consumer unit. The clamp does not touch the live wire: it clips around the cable's insulation and measures the magnetic field."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "The CT clamp clips onto the live cable without touching it. You may need to open the consumer unit cover to reach the main supply cable. Consumer unit covers may be fixed with a screw. Never touch the main incoming supply terminals: they are live at all times, even when the main switch is off. Clip the CT clamp only onto the insulated cable run, not near any terminal block."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Monitor types" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Smart meter add-ons (no CT clamp needed)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If you have a SMETS2 smart meter, a CAD (Consumer Access Device) like the Hildebrand Glow or the Octopus Home Mini reads your meter's zigbee output and displays or logs consumption without any CT clamp. This is the simplest option: plug in, configure in the app, and historical half-hourly data is available within 24 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "CT clamp monitors (real-time, any meter type)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Shelly EM, Emporia Vue, and similar devices combine a CT clamp with a wi-fi module that sends data to an app. Install the CT clamp on the main live cable at the consumer unit (usually a 100 A split-core CT clamp that opens like a hinge to clip over the cable). Connect the CT output to the monitor box. Power the monitor box from a standard socket. Configure wi-fi credentials. Data appears in the app within minutes, showing watts in real time and kWh per day."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reading the overnight profile" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After 24 hours of monitoring, look at the consumption graph between midnight and 6 am. The minimum wattage during this period is your "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "baseload" } }],
+            "text": "baseload"
+          },
+          {
+            "type": "text",
+            "text": ". Spikes in the overnight profile indicate refrigerators cycling, a fish tank heater, or an overnight appliance charge. A 300 W baseload uses approximately 2.6 kWh/day, or around 950 kWh/year. Reducing it is one of the most reliable energy-saving actions available."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Per-circuit monitoring" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Monitors with multiple CT inputs (Shelly EM 3-phase, Emporia Vue 16-channel) can clip onto individual circuit cables within the consumer unit. This gives circuit-level visibility: kitchen ring, upstairs sockets, EV charger, immersion heater. Circuit-level monitoring is useful when you want to verify that a specific appliance is drawing what you expect, or when you are investigating an unexpectedly high consumption figure for a specific circuit."
+          }
+        ]
+      }
+    ]
+  }
+}

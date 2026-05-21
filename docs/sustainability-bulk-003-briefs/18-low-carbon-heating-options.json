@@ -1,0 +1,223 @@
+{
+  "slug": "low-carbon-heating-options",
+  "title": "Low-carbon heating options: what is available and when each makes sense",
+  "subtitle": "Heat pumps, electric direct, biomass, and district heating compared",
+  "excerpt": "Gas boilers are being phased out of new-build homes in England from 2025. For existing homes, the main replacement routes are air-source heat pumps, ground-source heat pumps, direct electric heating, biomass boilers, and district heating connections. Each has a different cost, carbon impact, and suitability profile.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Future Homes Standard consultation (2024). Energy Saving Trust heat pump and heating comparison guidance. Heat Pump Association market data (2025). Carbon Trust and BRE guidance on building heat decarbonisation pathways.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "techniqueSlugs": ["heat-pump-installation-what-to-expect", "heat-pump-cop-scop-explained"],
+  "criticalTechniques": [],
+  "aliases": [
+    "replace gas boiler alternatives",
+    "heat pump vs electric heating",
+    "biomass boiler vs heat pump",
+    "low carbon heating systems UK"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "heat-pump",
+      "term": "Heat pump",
+      "definition": "A device that moves heat from a low-temperature source (outside air, ground, or water) to a building's heating and hot water system. Produces 2.5-4 units of heat per unit of electricity depending on source temperature and flow temperature."
+    },
+    {
+      "slug": "scop",
+      "term": "SCOP",
+      "definition": "Seasonal Coefficient of Performance. The ratio of heat energy delivered to electrical energy consumed over the whole heating season. A Seasonal COP of 3.0 means the heat pump delivers 3 kWh of heat per kWh of electricity on average across the year, accounting for cold days when efficiency is lower."
+    },
+    {
+      "slug": "bus",
+      "term": "BUS",
+      "definition": "Boiler Upgrade Scheme. UK government grant (England and Wales) of £7,500 toward an air-source or ground-source heat pump, or £7,500 toward a biomass boiler, for eligible properties. Applied for by the MCS-certified installer, not the householder."
+    },
+    {
+      "slug": "mcs",
+      "term": "MCS",
+      "definition": "Microgeneration Certification Scheme. Certification scheme for installers and products covering solar PV, heat pumps, and other low-carbon technologies. MCS certification is required for a heat pump installation to qualify for the Boiler Upgrade Scheme (BUS)."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heating accounts for around 80% of domestic energy use in the UK: approximately 80% of that is met by natural gas. The grid electricity carbon intensity has fallen substantially (from 450 g/kWh in 2012 to approximately 150 g/kWh in 2025), making electric heating increasingly low-carbon. A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heat-pump" } }],
+            "text": "heat pump"
+          },
+          {
+            "type": "text",
+            "text": " running at "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scop" } }],
+            "text": "SCOP"
+          },
+          {
+            "type": "text",
+            "text": " 3.0 produces approximately 50 g CO2e/kWh of heat, compared with a gas boiler at approximately 210 g CO2e/kWh."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Air-source heat pump (ASHP)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An ASHP extracts heat from outdoor air even at temperatures down to -15°C. SCOP for UK conditions is typically 2.5-3.5 depending on flow temperature and local climate."
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bus" } }],
+            "text": "BUS"
+          },
+          {
+            "type": "text",
+            "text": " grant deducted at point of sale by the installer. ASHPs are suitable for well-insulated homes with radiators or underfloor heating sized for low flow temperatures (35-45°C). Noise output from the outdoor unit: 40-50 dB at 1 m distance."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ground-source heat pump (GSHP)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A GSHP extracts heat from the ground via buried pipework (horizontal slinky loops or vertical boreholes). Ground temperature in the UK stays at 8-12°C year-round, giving GSHPs a higher and more consistent SCOP (3.5-5.0) than ASHPs. Installation costs are higher than an ASHP due to groundwork. BUS grant applies. Suitable where garden space allows horizontal coils (approximately 2-3 times the floor area of the house) or where boreholes are acceptable (approximately 100 m deep per 5 kW). Silent operation."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Direct electric heating" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Storage heaters (charged overnight on Economy 7), panel heaters, and infrared panels use electricity directly. Carbon intensity: approximately 150 g CO2e/kWh at current grid mix (better than gas but worse than a heat pump). Running cost at standard tariff (27p/kWh) is significantly higher than gas or a well-performing heat pump. Storage heaters on Economy 7 (approximately 12p/kWh overnight) are cost-competitive with gas in smaller, well-insulated properties. Suitable where heat pump installation is impractical (flats, rented properties, very small houses) or where the landlord cannot permit external unit installation."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Biomass boiler" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A biomass boiler burns wood pellets or wood chips and connects to the existing wet heating system. Pellet fuel cost is broadly comparable with mains gas per kWh. Carbon: counted as near-zero in UK policy but depends on fuel sourcing (UK-grown sustainable woodland vs imported pellets with high logistics carbon). BUS grant applies for eligible properties. Requires a fuel delivery and storage space. Suitable for rural properties with space for fuel delivery and with no gas connection."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "District heating" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In areas with district heating networks (mainly new urban developments and social housing in cities), properties receive hot water from a central heat source (typically a large heat pump, gas-fired CHP, or waste heat from industry). The building has a heat interface unit (HIU) instead of a boiler. The carbon intensity depends entirely on the network's heat source. Properties connected to a district network have no individual upgrade path: the network operator's fuel mix determines carbon performance."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When each option makes sense" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Detached house, 90+ m2, EPC C or better, garden: ASHP is the standard recommendation. Upgrade radiators in 2-3 rooms if needed. Apply for BUS grant." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Large property with significant garden and good insulation: GSHP offers lower running costs and silent operation at higher upfront cost." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Flat or property with no outdoor space for a unit: direct electric with Economy 7 storage heaters, or wait for the district network." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Rural property with no gas connection: biomass boiler if fuel delivery is practical; ASHP if the house is well insulated." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mcs" } }],
+            "text": "MCS"
+          },
+          {
+            "type": "text",
+            "text": "-certified heat pump installer will carry out a heat loss calculation (to BS EN 12831) and size the system. The heat loss calculation is the critical step: an undersized heat pump will not maintain temperature on the coldest UK design day."
+          }
+        ]
+      }
+    ]
+  }
+}

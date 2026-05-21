@@ -1,0 +1,161 @@
+{
+  "slug": "led-lighting-home-upgrade",
+  "title": "Replacing halogen and fluorescent lighting with LED",
+  "subtitle": "Which bulbs to choose, what the numbers say, and how to handle dimmers",
+  "excerpt": "A house with 20 halogen spotlights running 4 hours a day uses around 1,460 kWh/year on lighting alone. Replacing them with 5 W LED equivalents cuts this to 146 kWh/year. Dimmer compatibility is the main complication.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Energy Saving Trust LED lighting guidance. Carbon Trust lighting efficiency guide. Electrical Safety First guidance on lamp replacement. The Lighting Industry Association guidance on LED dimmer compatibility.",
+  "approximateCostGbp": 60,
+  "paybackYears": 0,
+  "recipeTools": [
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "replace halogen with LED",
+    "led spotlights replace GU10",
+    "halogen to LED bulb upgrade",
+    "energy saving light bulbs"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "lumens",
+      "term": "Lumens",
+      "definition": "The measure of total light output from a bulb. Replaces watts as the useful measure when comparing different lamp types. 800 lumens is the equivalent of a 60 W incandescent. A 9 W LED produces 800 lumens; a 50 W halogen spotlight produces 500 lumens."
+    },
+    {
+      "slug": "colour-temperature",
+      "term": "Colour temperature",
+      "definition": "The colour of the light, measured in Kelvin. 2700-3000 K is warm white (similar to incandescent, suitable for living rooms and bedrooms). 4000 K is cool white (suitable for kitchens and bathrooms). 6500 K is daylight (used in task lighting)."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Halogen lamps are the largest remaining source of unnecessary electricity use in many UK homes. GU10 spotlights (50 W each), R80 reflector bulbs, and G9 capsule halogens all have LED replacements that produce equivalent or greater "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lumens" } }],
+            "text": "lumen"
+          },
+          {
+            "type": "text",
+            "text": " output at 5-7 W instead of 35-50 W. Replacing 20 x 50 W GU10 halogens with 5 W LED equivalents saves 900 W of installed load: at 4 hours per day, 365 days per year, this is 1,314 kWh/year."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing replacements" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "GU10 spotlights" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Standard GU10 LED replacements are 4.5-6 W. Choose a beam angle matching the original (35-38° for general room lighting). Look for 400-500 lumens per lamp. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colour-temperature" } }],
+            "text": "Colour temperature"
+          },
+          {
+            "type": "text",
+            "text": " 2700 K for living rooms; 4000 K for kitchens. The fit is identical to the original GU10: twist out, twist in."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bayonet (B22) and Edison Screw (E27)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For globe and candle shapes, LED replacements are widely available in both B22 and E27 fittings. A direct replacement for a 60 W incandescent is an 8-9 W LED at 800 lumens. For a 40 W incandescent, a 5-6 W LED. The physical size and shape of LED globes is now very similar to traditional bulbs."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fluorescent tubes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "T8 fluorescent tubes (the 600 mm and 1,200 mm tubes common in garages and kitchens) have LED retrofit options. Type A LED T8 tubes work in the existing fitting with the ballast in place. Type B requires bypassing the ballast and wiring directly to mains. Type A is simpler; Type B is more reliable long-term because it removes the failing ballast from the circuit. At 4,000 K, LED T8 tubes produce noticeably better colour rendering than the original cool-white fluorescent."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Dimmers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "LED lamps on existing leading-edge (TRIAC) dimmers often flicker, hum, or fail to dim smoothly. LEDs draw much lower minimum loads than halogens: many TRIAC dimmers require a minimum 40-60 W load to operate correctly. With 4 x 5 W LEDs (20 W total) on a dimmer designed for 4 x 50 W halogens, the minimum load may not be met."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Solutions: buy LEDs specifically marked as dimmable and LED-dimmer compatible; replace the dimmer with a trailing-edge (ELV/MOSFET) dimmer designed for low-load LED circuits; or check the LED manufacturer's approved dimmer list and buy accordingly. Replacing a dimmer is a straightforward electrical job: switch off the circuit at the consumer unit, unscrew the dimmer faceplate, swap the wired connections like-for-like, and refit."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Heat and fire risk of old halogen fittings" }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Halogen spotlights recessed into a ceiling void run at 300°C at the bulb. The LED replacement runs cool. If the original housing had no intumescent cap (required to prevent fire spreading through the ceiling void), fitting an intumescent cap to each recessed LED fitting is good practice and may be required where the ceiling separates a habitable room from a loft space."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

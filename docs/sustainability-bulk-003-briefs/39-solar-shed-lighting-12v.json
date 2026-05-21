@@ -1,0 +1,181 @@
+{
+  "slug": "solar-shed-lighting-12v",
+  "title": "Wiring a solar-powered 12V lighting system for a shed or outbuilding",
+  "subtitle": "Panel sizing, battery choice, and the 12V circuit that avoids mains wiring",
+  "excerpt": "A 20 W solar panel, a 20 Ah leisure battery, and a small PWM charge controller give enough capacity to run two 5 W LED lights for 3-4 hours each evening for 4-5 consecutive days without sun. This is a complete off-grid lighting system for a shed, workshop, or outbuilding that requires no mains connection and no Part P notification.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Solar industry standard guidance on small 12V standalone PV systems. Victron Energy and Renogy documentation on charge controller and battery sizing for small off-grid systems. IET guidance on 12V extra-low voltage systems and Part P exemptions.",
+  "approximateCostGbp": 120,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "solar shed lighting",
+    "12v solar system shed",
+    "off-grid shed lights",
+    "small solar panel battery shed"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pwm-charge-controller",
+      "term": "PWM charge controller",
+      "definition": "Pulse Width Modulation charge controller. A device that regulates the charging of a battery from a solar panel by rapidly switching the panel connection on and off to control current. Suitable for small 12V systems up to approximately 200 W. Prevents overcharging and extends battery life."
+    },
+    {
+      "slug": "leisure-battery",
+      "term": "Leisure battery",
+      "definition": "A deep-cycle lead-acid battery designed for repeated partial discharge and recharge, as opposed to a starter battery which is designed for a single high-current burst. Used in campervans, boats, and small off-grid systems. Rated in amp-hours (Ah): a 20 Ah battery stores 20 amps for 1 hour, or 2 amps for 10 hours."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 12V system working at extra-low voltage does not require a Part P notification in England, Wales, or Scotland, unlike mains voltage (230V AC) work in outbuildings. This makes a 12V solar lighting system accessible to anyone comfortable with basic electrical connections."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Component list" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "20 W monocrystalline or polycrystalline solar panel (typical: 450 x 650 mm, 12V nominal output)" }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "20 Ah 12V leisure battery (sealed AGM is easier to manage indoors than flooded lead-acid)" }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "10 A "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pwm-charge-controller" } }],
+                    "text": "PWM charge controller"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (a 10 A controller handles a 20 W panel with significant headroom)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "2 x 5 W 12V LED light strips or 12V GU10 LED spotlights" }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "2.5 mm2 twin-core cable from panel to controller; 1.5 mm2 from battery to lights; appropriate 12V fuse holders (5 A inline fuse for the lighting circuit)" }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Wiring order" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Connect the battery to the charge controller first (controller to battery terminals). Most controllers require this sequence to initialise." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Connect the solar panel to the controller (panel terminals). The controller LED should show a charge status." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Connect the lighting circuit to the controller's load output terminals. The load output has low-voltage disconnect: it switches off the lights if the battery drops below approximately 11.5 V, protecting the battery from deep discharge." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Panel placement" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mount the panel on the south-facing roof slope of the shed at the same angle as the roof pitch, or on an adjustable bracket at 30-40°. The cable run from panel to controller should be as short as practical to minimise losses. A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "leisure-battery" } }],
+            "text": "leisure battery"
+          },
+          {
+            "type": "text",
+            "text": " stored indoors or in an insulated box lasts longer than one left in a cold outbuilding in winter: cold significantly reduces effective capacity."
+          }
+        ]
+      }
+    ]
+  }
+}

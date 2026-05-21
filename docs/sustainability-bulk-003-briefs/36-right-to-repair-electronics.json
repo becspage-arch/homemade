@@ -1,0 +1,121 @@
+{
+  "slug": "right-to-repair-electronics",
+  "title": "Repairing electronics instead of replacing: what is feasible and how to start",
+  "subtitle": "Battery replacements, screen repairs, and the iFixit-first approach to common faults",
+  "excerpt": "From October 2021, UK regulations require manufacturers of washing machines, dishwashers, TVs, and lighting to make spare parts available for 7-10 years. Smartphones and laptops are not yet in scope, but a thriving market in parts and repair guides means screen replacements, battery swaps, and charging port repairs are within reach for most people.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "waste-reduction",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "UK Right to Repair Regulations 2021 (SI 2021/1487). iFixit.com repairability scores and repair guides database. Restart Project and Repair Cafe network guidance on common consumer electronics faults.",
+  "approximateCostGbp": 20,
+  "paybackYears": 0,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "repair electronics instead of replace",
+    "right to repair UK",
+    "iFixit phone repair",
+    "smartphone battery replacement"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "repairability-score",
+      "term": "Repairability score",
+      "definition": "A rating used by iFixit and (since 2021 in France, 2026 proposed in UK) official labelling schemes to indicate how repairable a product is. Scored 1-10. Factors include availability of spare parts, documentation, tool requirements, and ease of disassembly. A score of 7+ indicates a product where common repairs are feasible without specialist tools."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The most impactful electronics repairs by volume of waste prevented are battery replacements in smartphones and laptops (the single most common reason for disposal), screen replacements in phones, and heating element or pump replacements in washing machines and dishwashers. All of these have established repair markets, available parts, and step-by-step guides on iFixit."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Assessing repairability" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Search iFixit.com for your device model before buying parts. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "repairability-score" } }],
+            "text": "repairability score"
+          },
+          {
+            "type": "text",
+            "text": " and the number of available guides tells you what repairs are documented. iFixit also stocks parts for many common devices. Check whether the guide requires specialist tools (pentalobe screwdrivers for Apple products, for example): these cost a few pounds and are reusable."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Battery replacement" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A smartphone battery that holds less than 80% of its original charge typically needs replacement after 2-3 years of normal use. Battery health can be checked in Settings on iPhone; Android battery health apps give similar information. Replacement batteries for most current smartphones are available from iFixit or specialist phone parts suppliers. Most guides rate battery replacement 4-6 difficulty on a 10-point scale: it requires care but not specialist training."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where to get help" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Repair Cafes: volunteer-run events in libraries and community centres where skilled volunteers help repair electronics, clothing, and household items. Repair Cafe International's website lists events by location." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "The Restart Project (London-based, with national network): focuses on consumer electronics and runs Restart Parties at which fixers help with repairs." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Independent mobile phone repair shops: often offer screen and battery replacement at lower cost than manufacturer service centres, frequently while you wait." }]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

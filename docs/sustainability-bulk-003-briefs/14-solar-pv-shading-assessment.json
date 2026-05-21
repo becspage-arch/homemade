@@ -1,0 +1,188 @@
+{
+  "slug": "solar-pv-shading-assessment",
+  "title": "Assessing shading losses before installing solar PV",
+  "subtitle": "Horizon surveys, pitch and orientation, and PVGIS as a planning tool",
+  "excerpt": "Shading from a neighbouring chimney that covers one row of panels for two hours in December can reduce annual yield by 5-15% depending on inverter type. A horizon survey with a compass and inclinometer, combined with the PVGIS online tool, gives a good annual yield estimate before you commit.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "EU Joint Research Centre PVGIS (Photovoltaic Geographical Information System, re.jrc.ec.europa.eu/pvg_tools). MCS 012 Product Certification Standard for solar PV, shading calculation methodology. Solar Energy UK technical guidance on shading assessment.",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false }
+  ],
+  "techniqueSlugs": ["sizing-a-solar-pv-array-for-a-uk-roof"],
+  "criticalTechniques": [],
+  "aliases": [
+    "solar panel shading check",
+    "horizon survey solar",
+    "PVGIS shading assessment",
+    "solar pv self shading"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "solar-pv",
+      "term": "Solar PV",
+      "definition": "Photovoltaic solar panels that convert sunlight to direct current (DC) electricity. Converted to alternating current (AC) by an inverter for household use or grid export."
+    },
+    {
+      "slug": "shading-factor",
+      "term": "Shading factor",
+      "definition": "The fraction of a solar panel's annual yield lost to shading, expressed as a decimal or percentage. A shading factor of 0.05 means 5% annual yield reduction from shade. MCS requires a shading factor below 0.20 for a compliant installation."
+    },
+    {
+      "slug": "pvgis",
+      "term": "PVGIS",
+      "definition": "Photovoltaic Geographical Information System. Free EU Joint Research Centre online tool that calculates expected annual PV yield for any location, panel angle, and orientation, with optional shading horizon input."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Shading is the largest variable in "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-pv" } }],
+            "text": "solar PV"
+          },
+          {
+            "type": "text",
+            "text": " performance after orientation and pitch. A roof that looks clear from ground level may have a chimney or neighbouring roofline that shades the panels during the low winter sun angles. For a string inverter (the standard installation), shading even one cell in a series string reduces output from the entire string, not just the shaded panel. Microinverters (one per panel) or DC optimisers mitigate this at extra cost."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The horizon survey" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "From the proposed panel position (the roof surface), identify all objects above the skyline: neighbouring chimneys, trees, dormer windows on your own roof, pylons. For each, estimate or measure its azimuth (compass bearing, in degrees from north) and its elevation angle (the angle above horizontal). A simple method: use a compass app on a phone for azimuth and a clinometer app (or a spirit level held at arm's length) for elevation angle."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Plot the results on a sun path diagram for your latitude. For most of the UK (51-53° N), winter solstice sun paths range from elevation 15° at midday in Edinburgh to 20° at midday in London. A chimney at elevation 25° and azimuth 160° (slightly east of south) will shade south-facing panels at around 10 am and 2 pm in December."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using PVGIS" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pvgis" } }],
+            "text": "PVGIS"
+          },
+          {
+            "type": "text",
+            "text": " (re.jrc.ec.europa.eu/pvg_tools) allows horizon shading input as a series of azimuth-elevation pairs. The tool then calculates the annual yield accounting for shading losses."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Go to PVGIS and select your location on the map or enter the postcode." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Set system parameters: panel peak power (a typical 350 W panel), array inclination (roof pitch in degrees), azimuth (0 = south, -90 = east, +90 = west for UK convention)." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "In Horizon tab, enter your measured horizon profile: list azimuth and elevation pairs for each identified obstruction." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Run the calculation. The output shows estimated annual yield in kWh and the shading loss in percentage. Compare the shaded result against the unshaded result to find the "
+              },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "shading-factor" } }],
+                "text": "shading factor"
+              },
+              {
+                "type": "text",
+                "text": "."
+                }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What MCS requires" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "MCS-certified installers must calculate the shading factor and document it in the design specification. A shading factor above 0.20 (more than 20% yield loss from shading) is a red flag: the installation may not be eligible for the Smart Export Guarantee, and the annual yield will be significantly below the PVGIS unshaded estimate. For trees, the MCS calculation should use the worst-case (full-leaf, summer deciduous) condition."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "East-west split arrays" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A dual-pitch roof with east and west faces and a neighbouring structure shading the south aspect is a candidate for an east-west split array. East panels capture morning sun; west panels capture afternoon. Annual yield is 15-20% lower than a clear south-facing array, but the morning-and-evening generation pattern better matches household consumption. Each roof face requires its own PVGIS calculation with the appropriate azimuth and the relevant horizon profile."
+          }
+        ]
+      }
+    ]
+  }
+}

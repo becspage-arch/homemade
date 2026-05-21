@@ -1,0 +1,207 @@
+{
+  "slug": "reading-an-in-home-display",
+  "title": "Reading your smart meter's in-home display",
+  "subtitle": "What the IHD shows, how to interpret it, and how to use it to cut consumption",
+  "excerpt": "The in-home display (IHD) that comes with a smart meter shows current electricity and gas consumption in real time. The consistent findings from smart meter trials: households that actively use the IHD to change behaviour save 3-6% on energy bills versus those who ignore it.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BEIS smart meter customer experience study (2022). Energy Saving Trust smart meters and IHD guidance. Ofgem IHD standards requirements for smart meter installations.",
+  "approximateCostGbp": 0,
+  "paybackYears": 0,
+  "recipeTools": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "smart meter display guide",
+    "IHD smart meter reading",
+    "how to use smart meter display",
+    "in home display energy monitor"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "smart-meter",
+      "term": "Smart meter",
+      "definition": "A gas or electricity meter that sends half-hourly readings automatically to your supplier. A separate in-home display unit (IHD) shows real-time consumption and cost. The IHD is not the meter: it is a wireless display that communicates with the meter hub."
+    },
+    {
+      "slug": "ihd",
+      "term": "IHD",
+      "definition": "In-home display. The small wireless unit supplied with a smart meter installation that shows current electricity and gas usage in kWh, watts, or pence-per-hour. The IHD must be kept within range of the meter's communications hub (typically the electricity meter location)."
+    },
+    {
+      "slug": "baseload",
+      "term": "Baseload",
+      "definition": "The minimum electricity consumption of a home when all deliberate devices are off: standby loads from TVs, set-top boxes, routers, fridges, and freezers. Typical UK household baseload is 200-500 W. High baseload indicates devices drawing more than expected."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ihd" } }],
+            "text": "IHD"
+          },
+          {
+            "type": "text",
+            "text": " shows current consumption in two ways: instantaneous power draw in watts (or kilowatts) and estimated spend in pence per hour or pounds per day. The real-time wattage reading is the more useful: it lets you find out what individual appliances draw by turning them on and off and watching the reading change."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finding your baseload" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Turn off everything you can: all lights off, dishwasher off, washing machine off, kettle off. Leave the fridge and freezer running. Read the IHD. This is your "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "baseload" } }],
+            "text": "baseload"
+          },
+          {
+            "type": "text",
+            "text": ". Typical range: 200-500 W. A reading above 500 W with everything off suggests a high-draw standby device: satellite receiver, old set-top box, network switch with inefficient power supply, or an old fridge running inefficiently."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 400 W baseload running continuously uses 3.5 kWh/day: approximately 1,300 kWh/year. Reducing it by half cuts that consumption accordingly. Finding the cause is worth the effort."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Identifying high-draw appliances" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stand at the IHD and switch appliances on one at a time. Note the increase in watts. Typical draws:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Kettle: 2,000-3,000 W. Brief but high." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Oven: 1,500-3,000 W during preheat, lower once stabilised." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Dishwasher: 1,000-2,000 W during the heating phase, 200-400 W during wash and drain." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Tumble dryer: 2,000-3,000 W continuously for a full cycle." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "LED TV (50 inch): 80-120 W." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Halogen spotlights (12 x 50 W): 600 W. Replacing with LED (12 x 5 W) saves 540 W whenever the lights are on." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Daily and weekly totals" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most IHDs show a daily kWh total for electricity and (where gas is metered separately, which is usual) a daily gas kWh total. The gas total is the most variable from day to day and most responsive to heating behaviour. A heating-season baseline for a 3-bedroom semi in the Midlands is approximately 25-40 kWh/day of gas. On an unusually cold day (5°C outside), gas consumption rises to 40-60 kWh; on a mild day (12°C outside), it drops to 10-20 kWh. Comparing daily gas use with the outside temperature reveals how the house responds to weather and whether behaviour changes (turning the thermostat down by 1°C, reducing heating hours by 30 minutes) have the expected effect."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The IHD's limitations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "smart-meter" } }],
+            "text": "smart meter"
+          },
+          {
+            "type": "text",
+            "text": "'s IHD does not show which device is drawing power, only the total load. For more granular analysis, a plug-in energy monitor (plugged into a single socket) or a whole-house clamp meter that shows per-circuit breakdown is more useful. The IHD also does not typically show solar export or import breakdown if a solar system is installed; the solar inverter's own monitoring is the right tool for that."
+          }
+        ]
+      }
+    ]
+  }
+}

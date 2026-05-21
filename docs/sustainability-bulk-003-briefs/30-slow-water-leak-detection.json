@@ -1,0 +1,108 @@
+{
+  "slug": "slow-water-leak-detection",
+  "title": "Detecting slow water leaks in a house",
+  "subtitle": "Using the water meter, dye tablets, and visual checks to find drips and seeps",
+  "excerpt": "A dripping tap loses around 5,500 litres per year. A running toilet loses 200-400 litres per day. Neither are immediately obvious. Reading the water meter with all taps off, overnight, is the fastest way to confirm whether a leak exists. Dye tablets identify toilet cistern leaks without dismantling anything.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Waterwise UK guidance on household leak detection. Water UK guidance on reading meters and detecting leaks. Anglian Water and Thames Water customer leak detection guidance.",
+  "approximateCostGbp": 5,
+  "paybackYears": 0,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "detect toilet leak",
+    "water meter leak test",
+    "dripping tap water waste",
+    "household water leak check"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "water-meter-test",
+      "term": "Water meter test",
+      "definition": "A leak detection method that uses the water meter to identify consumption when no taps are in use. Read the meter, use no water for 1-2 hours (or overnight), and read again. Any movement in the meter reading indicates a leak somewhere in the internal plumbing."
+    },
+    {
+      "slug": "dye-tablet",
+      "term": "Dye tablet",
+      "definition": "A coloured tablet dropped into a toilet cistern to detect whether water is leaking past the flush valve into the pan. If the dye appears in the toilet bowl without flushing, the flush valve seal is worn and allowing water to pass continuously."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "water-meter-test" } }],
+            "text": "water meter test"
+          },
+          {
+            "type": "text",
+            "text": " is the starting point. Locate the meter (usually in a pavement box outside the property boundary, or under the kitchen sink in newer properties). Write down the reading on all dials. Make sure all taps, appliances, and irrigation are off. Leave overnight and read again in the morning. Any increase indicates a leak in the supply pipe or internal plumbing. A small increase (0.1-0.5 m3 overnight) points to a slow drip; a large increase points to a significant leak."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Toilet cistern leaks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dye-tablet" } }],
+            "text": "Dye tablets"
+          },
+          {
+            "type": "text",
+            "text": " (available from water companies and online suppliers, often free from water utility websites) confirm cistern leaks without any dismantling. Drop a tablet into the cistern, wait 15 minutes without flushing, and check whether the dye has appeared in the bowl. If it has, the flush valve seal has failed. Replacement flush valve seals cost a few pounds and are available from plumbing suppliers; replacement takes 20-30 minutes. If the cistern is continuously refilling in short cycles (you can hear the fill valve running briefly every few minutes), the flush valve is leaking past."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Dripping taps" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A dripping tap typically needs a new washer (for compression taps with separate hot and cold valves) or a new ceramic cartridge (for single-lever mixer taps). Turn off the water supply at the isolation valve under the sink or at the stopcock. Unscrew the tap head (usually a small grub screw under a decorative cap). Replace the washer (a 13 mm or 19 mm rubber washer) or the cartridge (brand-specific; take the old one to a plumber's merchant to match). Reassemble and test."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Supply pipe leaks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the overnight meter test shows consumption but all internal fittings are dry, the leak may be in the supply pipe between the meter and the property. Signs include persistently damp or soft ground along the pipe route, or a section of lawn that is greener in dry weather than the surrounding area. Supply pipe leaks between the meter and the property boundary are the householder's responsibility; leaks in the mains are the water company's. Contact the water company if you suspect a mains leak."
+          }
+        ]
+      }
+    ]
+  }
+}

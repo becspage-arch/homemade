@@ -1,0 +1,220 @@
+{
+  "slug": "garage-conversion-insulation",
+  "title": "Insulating a garage conversion",
+  "subtitle": "Meeting current U-value targets for walls, roof, and floor in a converted garage",
+  "excerpt": "A garage conversion requires insulation at the walls, flat or sloping roof, and the existing concrete slab floor. All three elements need different approaches and different target U-values. The door opening is usually the most disruptive element.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Approved Document L1B (2022) for U-value targets on existing buildings. Approved Document C for ground-floor moisture and damp-proof requirements. Planning Portal garage conversion guidance.",
+  "approximateCostGbp": 2500,
+  "paybackYears": 16,
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "spirit-level", "isOptional": false },
+    { "slug": "cordless-drill", "isOptional": false }
+  ],
+  "techniqueSlugs": ["floor-insulation-over-concrete-slab", "vapour-control-layers-explained"],
+  "criticalTechniques": ["floor-insulation-over-concrete-slab"],
+  "aliases": [
+    "insulate garage conversion",
+    "garage to habitable room insulation",
+    "garage room conversion thermal"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "Thermal transmittance in W/m2K. The Building Regulations targets for existing buildings being converted: wall 0.28, flat roof 0.18, ground floor 0.22 W/m2K."
+    },
+    {
+      "slug": "dpm",
+      "term": "DPM",
+      "definition": "Damp-proof membrane. A continuous polythene or bituminous sheet placed on top of a concrete slab before insulation and screed to prevent ground moisture rising through the floor."
+    },
+    {
+      "slug": "pir-board",
+      "term": "PIR board",
+      "definition": "Polyisocyanurate rigid foam insulation board. Lambda approximately 0.022 W/mK. Used in wall, roof, and floor insulation in garage conversions where thin profiles are needed."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Converting a garage into a habitable room is a common project in houses from the 1960s onward. The thermal envelope of a typical garage is poor: single-brick walls, a concrete slab floor with no damp-proof membrane, and a pitched or flat roof with no insulation. Bringing it to current Building Regulations standard requires work on all three elements."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "U-value targets for a garage conversion" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "External walls: 0.28 W/m2K (or as close as reasonable given party wall or planning constraints)" }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Flat roof: 0.18 W/m2K" }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Ground floor: 0.22 W/m2K" }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Window and door openings (new glazing): maximum 1.4 W/m2K for the whole window unit" }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The walls" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A single-skin 100 mm brick wall has a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+            "text": "U-value"
+          },
+          {
+            "type": "text",
+            "text": " of approximately 2.0 W/m2K. To reach 0.28 W/m2K from the inside: 60 mm of "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pir-board" } }],
+            "text": "PIR board"
+          },
+          {
+            "type": "text",
+            "text": " on dabs plus 12.5 mm plasterboard achieves approximately 0.27 W/m2K, losing 72.5 mm of internal width on each insulated wall. For a standard 5 m x 3 m garage, this reduces the floor area from 15 m2 to approximately 13.5 m2 if three external walls are insulated."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Alternatively, a metal-frame independent studwork wall at 50 mm off the brick allows mineral wool batts (100 mm at 0.044 W/mK) plus 12.5 mm plasterboard: approximately 0.28 W/m2K. The studwork method is faster if there are services to run in the wall."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The floor" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The existing concrete slab almost certainly has no "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dpm" } }],
+            "text": "DPM"
+          },
+          {
+            "type": "text",
+            "text": ". Before any insulation, a 1,200-gauge polythene DPM is laid on the slab, lapped up the walls by 150 mm, and taped at all joints. The floor insulation (PIR or EPS) goes on top of the DPM, then either a floating chipboard deck or a sand-and-cement screed. For 0.22 W/m2K: 80 mm of PIR (lambda 0.022 W/mK) gives R 3.64, which combined with the slab and floor surfaces achieves the target."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The floor build-up adds 100-130 mm to the internal floor level. Check the threshold at the door opening: the finished floor must clear the external DPC by at least 150 mm to prevent bridging."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The roof" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most integral garages have a flat roof. If it is also the floor of a room above, it must be insulated at one of the two faces. Usually this is done above the ceiling of the garage using a new suspended plasterboard ceiling with mineral wool above. Where the flat roof is exposed (no room above), a warm deck re-cover is required at the next covering replacement."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The door opening" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The garage door opening is typically 2.1-2.4 m wide and 2 m tall. It is usually the most disruptive element of a garage conversion and often requires steel lintel modification to accept a new window and door combination. A 0.18 W/m2K target for the new infill wall is not required (it is a replacement of an uninsulated door with a partially glazed infill, so Approved Document L1B's 'consequential improvement' clause applies), but achieving 0.28 W/m2K at the wall and 1.4 W/m2K for the glazing is standard practice."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Building Regulations submission" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A garage conversion into a habitable room requires a Full Plans submission (or Building Notice) to Building Control. The thermal specification must be included. Building Control will inspect the floor DPM, wall insulation, and ceiling before they are covered. Do not board over the floor insulation or plasterboard the walls without a Building Control inspection at each stage."
+          }
+        ]
+      }
+    ]
+  }
+}

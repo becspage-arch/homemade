@@ -1,0 +1,192 @@
+{
+  "slug": "loft-conversion-insulation-options",
+  "title": "Insulation options for a loft conversion",
+  "subtitle": "Cold roof, warm roof, and hybrid: choosing the right configuration",
+  "excerpt": "A loft conversion needs insulation at the sloping ceiling and gable walls, not at the original ceiling level. The choice between insulating between-and-below the rafters, above the rafters, or using a hybrid depends on the rafter depth, headroom, and whether the roof is being re-covered.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Approved Document L1B (2022) and Approved Document F (2021) for loft conversion thermal and ventilation requirements. TRADA Technology guidance on timber-frame insulation. NHBC Standards Chapter 7.2 on loft conversions.",
+  "approximateCostGbp": 1800,
+  "paybackYears": 14,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false }
+  ],
+  "techniqueSlugs": ["insulating-below-rafters-warm-roof", "vapour-control-layers-explained", "thermal-bridging-explained"],
+  "criticalTechniques": [],
+  "aliases": [
+    "loft conversion roof insulation",
+    "warm roof loft conversion",
+    "rafter insulation loft room"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "warm-roof",
+      "term": "Warm roof",
+      "definition": "A roof construction where insulation is placed at or above the structural deck, keeping the structure warm. In a loft conversion, this means insulation between and below the rafters (or above them if the covering is being replaced). Condensation risk in the structure is eliminated."
+    },
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "Thermal transmittance in W/m2K. Building Regulations target for a new or substantially refurbished loft conversion roof is 0.18 W/m2K."
+    },
+    {
+      "slug": "pir-board",
+      "term": "PIR board",
+      "definition": "Polyisocyanurate rigid foam insulation board. Lambda approximately 0.022 W/mK. The high-performance rigid insulation used between and below rafters in loft conversions."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When a loft is converted into a habitable room, the insulation moves from the original ceiling (the floor of the loft) to the sloping ceiling and the gable walls. The original ceiling-level insulation is removed from the affected areas. The unoccupied sides of the loft retain their ceiling-level insulation as before."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The target "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+            "text": "U-value"
+          },
+          {
+            "type": "text",
+            "text": " for the roof is 0.18 W/m2K. For a sloping ceiling with exposed rafters, meeting this target requires "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pir-board" } }],
+            "text": "PIR board"
+          },
+          {
+            "type": "text",
+            "text": " in two positions: between the rafters and below them."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The three configurations" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Between and below the rafters (standard approach)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a typical 100 mm rafter depth: leave a 25 mm ventilation gap at the top, fill 75 mm with PIR between the rafters, then fix a continuous layer of 40 mm PIR below the rafters. This achieves approximately 0.18 W/m2K with the rafter bridging correction. For 150 mm rafters: 125 mm between the rafters plus 25 mm below gives around 0.15 W/m2K."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warm-roof" } }],
+            "text": "warm roof"
+          },
+          {
+            "type": "text",
+            "text": " configuration keeps the structural timber warm. The ventilation gap above the insulation is still required to drain any moisture that reaches the space below the covering. A vapour control layer below the between-rafter insulation (room side) reduces moisture movement from the interior."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Above the rafters (roof being re-covered)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the roof covering is being replaced as part of the conversion, insulation can go above the rafters before the new covering. This avoids any headroom loss inside and eliminates the rafter bridge entirely. Structural calculations are needed to check that the rafters can carry the combined weight of insulation and new covering. The total insulation thickness above the rafters for 0.18 W/m2K is 120 mm of PIR."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Hybrid: above and below, no between-rafter layer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Where rafter depth is shallow (75 mm, common in 1950s-1970s houses) and the covering is being replaced, a hybrid approach puts 80 mm PIR above the rafters and 40 mm PIR below. This avoids stuffing a thin rafter bay with insulation and achieves better thermal performance. Structural check required."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Gable walls" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gable walls in a loft conversion are typically a single-leaf brick or block skin. The target U-value is 0.28 W/m2K for the wall. Internal wall insulation (a service cavity with mineral wool, or PIR boards on dabs) is the normal approach. The same rules apply here as for any solid wall: vapour control layer on the warm side, airtight joints at perimeters."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ventilation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A newly occupied loft room adds moisture from occupants and any bathroom. Building Regulations Part F requires either background ventilation (trickle vents in any new windows) or mechanical ventilation. Where a bathroom is being added, a mechanically ventilated system with heat recovery (MVHR) is often specified to avoid moisture accumulation in a tightly insulated conversion."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a specialist" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A loft conversion always requires Building Regulations approval. The structural calculations, fire-escape provisions, and staircase width are all Building Control matters. The insulation specification should be part of the drawings submitted. A qualified energy assessor or architectural technologist can produce the thermal envelope spec as part of the drawings."
+          }
+        ]
+      }
+    ]
+  }
+}

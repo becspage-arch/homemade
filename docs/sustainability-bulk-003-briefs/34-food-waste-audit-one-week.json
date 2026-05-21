@@ -1,0 +1,132 @@
+{
+  "slug": "food-waste-audit-one-week",
+  "title": "Running a one-week food waste audit",
+  "subtitle": "Tracking what you throw away to find the patterns worth changing",
+  "excerpt": "UK households throw away around 4.5 million tonnes of edible food each year. The most common wasted items are fresh vegetables and salad, bread, fruit, cooked food, and milk. A one-week audit (weighing and categorising waste before it goes in the bin) reveals which specific items your household wastes most, which is the precondition for changing the behaviour.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "waste-reduction",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "WRAP Household Food Waste in the UK 2021 report. WRAP Love Food Hate Waste campaign guidance on waste audit methodology. Food Standards Agency guidance on use-by vs best-before dates.",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "kitchen-scales", "isOptional": false }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "food waste audit",
+    "track food waste home",
+    "reduce food waste household",
+    "food waste diary"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "avoidable-food-waste",
+      "term": "Avoidable food waste",
+      "definition": "Food thrown away that was edible at some point before disposal. Distinct from unavoidable food waste (vegetable peelings, bones, coffee grounds). WRAP research finds that approximately 70% of UK household food waste is avoidable."
+    },
+    {
+      "slug": "use-by-vs-best-before",
+      "term": "Use-by vs best-before",
+      "definition": "Use-by is a safety date: food after this date may be unsafe and should not be eaten. Best-before is a quality date: food after this date may have reduced quality but is safe to eat. Most canned and dry goods, and many dairy products, have best-before dates not use-by dates. Confusing the two is a significant source of unnecessary food waste."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An audit works by making the invisible visible. Most households have no accurate sense of how much "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "avoidable-food-waste" } }],
+            "text": "avoidable food waste"
+          },
+          {
+            "type": "text",
+            "text": " they produce per week. A week of recording gives enough data to identify patterns, which are almost always consistent across households: specific vegetables that are bought in excess of what is used, bread that goes stale, leftovers that are not eaten within a day."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Running the audit" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Before anything goes in the bin or compost, weigh it on kitchen scales and write down: what it was, approximately how much, and why it is being thrown away (forgotten, gone off, cooked too much, didn't like it, past use-by date)." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Keep a running list on paper or phone notes. Do this for seven consecutive days including the shopping day." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "At the end of the week, total by category: vegetables, bread, fruit, cooked food, dairy, other." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Identify the single largest category by weight and the single item that appeared most often in the list. Address one category at a time." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Acting on what you find" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The most common audit finding is fresh vegetables bought in excess: a bag of spinach used once, a cucumber started and abandoned. The fix is usually buying smaller quantities more frequently, or switching to frozen equivalents for vegetables that are inconsistently used. Bread waste is usually solved by keeping bread in the freezer and slicing as needed. Check whether waste is labelled with "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "use-by-vs-best-before" } }],
+            "text": "use-by vs best-before"
+          },
+          {
+            "type": "text",
+            "text": " dates: a significant amount of waste comes from discarding food that has passed its best-before date but is still safe to eat."
+          }
+        ]
+      }
+    ]
+  }
+}

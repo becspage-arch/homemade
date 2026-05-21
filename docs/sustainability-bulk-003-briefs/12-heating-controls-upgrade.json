@@ -1,0 +1,169 @@
+{
+  "slug": "heating-controls-upgrade",
+  "title": "Upgrading your heating controls: programmer, room stat, and TRVs",
+  "subtitle": "What the controls do, what to upgrade, and what the numbers say",
+  "excerpt": "Good heating controls can reduce gas consumption by 15-20% without any changes to the boiler or radiators. The standard upgrade path is a seven-day programmer, a single room thermostat in the main living area, and thermostatic radiator valves on every radiator except the one with the room stat.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "HHIC (Heating and Hotwater Industry Council) Best Practice Guides on heating system controls. Energy Saving Trust heating controls guidance. Ofgem consultation on smart heating controls. EST research on control upgrades and consumption reduction (2023).",
+  "approximateCostGbp": 280,
+  "paybackYears": 3,
+  "recipeTools": [
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "thermostatic radiator valve upgrade",
+    "heating programmer upgrade",
+    "room thermostat installation guide",
+    "improve heating controls"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "trv",
+      "term": "TRV",
+      "definition": "Thermostatic radiator valve. Replaces the standard lockshield valve on the flow side of a radiator and limits flow based on air temperature at the valve. Prevents overheating individual rooms; typically set to numbers 1-5 where 1 is approximately 10°C and 5 is approximately 22°C."
+    },
+    {
+      "slug": "room-thermostat",
+      "term": "Room thermostat",
+      "definition": "A temperature sensor and switch that controls the boiler: when the room reaches the set temperature, the boiler turns off. Mounted in the main living area away from draughts and direct heat sources. The single most important heating control after a programmer."
+    },
+    {
+      "slug": "programmer",
+      "term": "Programmer",
+      "definition": "A timer that sets when the heating and hot water are on. A seven-day programmer allows different heating patterns on weekdays and weekends. A smart programmer (wi-fi connected) can be adjusted from a phone and may learn occupancy patterns."
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A house heated with a modern condensing boiler and no controls beyond an on/off switch on the boiler will consume significantly more gas than the same house with a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "programmer" } }],
+            "text": "programmer"
+          },
+          {
+            "type": "text",
+            "text": ", a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "room-thermostat" } }],
+            "text": "room thermostat"
+          },
+          {
+            "type": "text",
+            "text": ", and "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trv" } }],
+            "text": "TRVs"
+          },
+          {
+            "type": "text",
+            "text": " on every radiator. The Energy Saving Trust estimates that adding a programmer and room stat to a home with no controls saves 15-20% on annual gas consumption; adding TRVs to a home that already has basic controls saves a further 5-10%."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What each control does" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The programmer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The programmer tells the boiler when to be available to provide heat and hot water. Without one, the boiler either runs continuously or is switched manually. A seven-day programmer allows the heating to come on at 6:30 am on weekdays (just before getting up) and at 7:30 am on weekends, then off at 8:30 pm. Savings come from not heating an empty house during the day and not overheating before sleep."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The room thermostat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The room thermostat controls the boiler based on temperature in the main room. When the room reaches the set point (typically 18-20°C for a living area), the boiler shuts off. Raising the set point by 1°C increases gas consumption by approximately 6-8%. A single degree of unnecessary set-point creep adds 6-8% to the annual gas bill. The thermostat is typically mounted 1.5 m above floor level on an interior wall, away from draughts and heat sources. Do not mount it near an exterior door or in a room with south-facing glazing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Thermostatic radiator valves" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "TRVs prevent the boiler from overheating rooms that don't need to be at full temperature. Set bedroom TRVs to 2-3 (approximately 16-18°C). Set the bathroom TRV to 3 or leave it fully open (bathrooms benefit from full heat during the brief period they are occupied). Set the living room TRV to fully open and control the living room temperature with the room thermostat; if the room stat is in the hallway, fit a wireless stat and put the TRV on the hallway radiator to prevent the hallway from holding heat back."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Smart controls" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Smart heating systems (Hive, Nest, Tado, and others) add remote adjustment and, on some systems, geofencing (the heating turns on when your phone approaches home). The saving from a smart thermostat over a good conventional programmer and room stat is modest: the HHIC estimates 4-7% additional saving. The real benefit is convenience and the ability to inspect and adjust the schedule remotely. Tado and Hive also offer weather compensation: the boiler modulates flow temperature based on outside temperature, which improves condensing boiler efficiency."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What an installer will do versus what you can do yourself" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Replacing a programmer: a competent DIYer can swap a like-for-like programmer (same wiring configuration) with the power off. Connecting to a new wiring scheme requires knowing which terminal is call-for-heat, which is hot water, and which is live/neutral; a wiring diagram and a multimeter are needed. If unsure, use a Gas Safe registered heating engineer."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Replacing TRVs: a competent DIYer can remove and fit a TRV on a drained system. On a pressurised sealed system, isolating the radiator with the lockshield valve and a TRV valve head allows head replacement without draining. Replacing the valve body (the piece screwed into the radiator) requires draining and carries a risk of fitting problems if the old valve has corroded."
+          }
+        ]
+      }
+    ]
+  }
+}
