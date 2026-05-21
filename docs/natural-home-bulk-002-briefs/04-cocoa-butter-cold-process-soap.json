@@ -1,0 +1,286 @@
+{
+  "slug": "cocoa-butter-cold-process-soap",
+  "title": "Cocoa butter cold-process soap",
+  "subtitle": "A firm, lathery bar with cocoa butter at 10% and a hint of sweet orange",
+  "excerpt": "A cold-process bar soap with cocoa butter added for hardness and a creamy lather. The blend is 50% olive, 30% coconut, 10% cocoa butter, 10% castor, scented with sweet orange essential oil. Allow 4-6 weeks to harden before use.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Susan Miller Cavitch, The Soapmaker's Companion (1997), chapter 5: hardening butters in soap formulas. SoapCalc (accessed May 2026): cocoa butter SAP value 0.137. USDA ACS oil database: cocoa butter stearic acid content and INS value.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "4 bars (~120 g each after cure)",
+    "prepMinutes": 60,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2940,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Doubles to 1 kg oil weight cleanly.",
+    "makeAheadNotes": "The cured bar keeps 2 years. The faint natural cocoa scent in undeodorised butter fades during cure; use deodorised cocoa butter if a neutral base for essential oils is preferred.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "2 years from cure date in a cool, dark place on an open rack. Cocoa butter is highly stable. Discard on DOS (orange spots) or rancidity smell."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The reaction between oil and sodium hydroxide that produces soap and glycerin. Cocoa butter has a saponification value of 0.137: each gram of cocoa butter requires 0.137 g of sodium hydroxide to convert fully to soap."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point at which the soap batter thickens enough that a drizzle of batter leaves a momentary trail. Cocoa butter can accelerate trace; work at the lower end of the temperature window."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of unreacted oil left in the finished soap. At 5%, the superfat fraction (including cocoa butter's stable stearic acid) contributes to a conditioning lather."
+    }
+  ],
+  "techniqueSlugs": ["cold-process-soap-method", "working-with-lye-safely"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cocoa butter adds two things to a cold-process bar: hardness and a creamy, cushioned lather. It is high in stearic and palmitic acids, which raise the INS hardness number of the formula and mean the bar holds its shape well in the shower. At 10% of the oil weight it gives a noticeably firmer bar without making the lather dry. The sweet orange essential oil at 3% is a clean, warm scent that pairs well with the faint background of the cocoa."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cocoa butter and shea butter can both accelerate "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": ". Keep the combined temperature of the oils and lye solution at 38-42°C, not higher, and use the stick blender in short bursts to avoid pushing the batter over a heavy trace before the essential oil is added."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wear protective gloves and splash-rated goggles for the lye work. Add lye to water in a ventilated space."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": "50% of oil weight. Conditioning base.",
+              "isOptional": false,
+              "groupLabel": "Oils (500 g total)"
+            },
+            {
+              "ingredientSlug": "coconut-oil",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "30%. Melt if solid. Cleansing and large bubbles.",
+              "isOptional": false,
+              "groupLabel": "Oils (500 g total)"
+            },
+            {
+              "ingredientSlug": "cocoa-butter",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "10%. Melt with coconut oil. Use deodorised for a neutral scent base.",
+              "isOptional": false,
+              "groupLabel": "Oils (500 g total)"
+            },
+            {
+              "ingredientSlug": "castor-oil",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "10%. Lather binder.",
+              "isOptional": false,
+              "groupLabel": "Oils (500 g total)"
+            },
+            {
+              "ingredientSlug": "sodium-hydroxide",
+              "amount": 70,
+              "unit": "g",
+              "prepNote": "At 5% superfat: (250x0.134 + 150x0.190 + 50x0.137 + 50x0.128) x 0.95 = 70.5 g. Weigh to 0.1 g.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 165,
+              "unit": "g",
+              "prepNote": "33% of oil weight.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "essential-oil-sweet-orange",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "3% of oil weight. Citrus oils fade faster than florals in cold-process soap; the scent is subtle in the finished bar. Add at light trace.",
+              "isOptional": false,
+              "groupLabel": "Scent"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gloves and goggles on. Weigh the water into the HDPE pitcher. Add the sodium hydroxide to the water slowly and stir until dissolved. Allow to cool to 38-42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Melt the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the coconut oil and cocoa butter together. The cocoa butter has a higher melting point (32-35°C) than coconut oil; gentle heat dissolves both cleanly. Combine with olive and castor oil, stir, and allow to cool to 38-42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend to trace and mould" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution into the oils slowly. Stick-blend in 5-second bursts, hand-stirring between. The batter will reach light "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": " faster than a bastille-style blend. Add the essential oil at light trace and blend briefly until incorporated. Pour into the silicone mould, insulate, and leave 24-48 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Unmould and cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Unmould in gloves. The cocoa butter makes the bar noticeably firmer than a standard olive-coconut recipe at this stage. Cut cleanly and cure on an open rack for 4-6 weeks. The "
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": " fraction, rich in stearic acid from both cocoa butter and olive oil, gives the lather its creamy texture once cured."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": " continues at a low level during the first weeks of cure. At 4 weeks the zap test should pass. At 6 weeks the bar is ready to use."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Keep bars on a draining rack in a cool, dark spot. Cocoa butter is very stable and the bar keeps 2 years from cure date. Check at 18 months for DOS (orange flecks) or a rancidity smell, particularly near the edges where any uncured essential oil may have oxidised."
+          }
+        ]
+      }
+    ]
+  }
+}

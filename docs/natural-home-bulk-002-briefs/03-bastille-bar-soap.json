@@ -1,0 +1,261 @@
+{
+  "slug": "bastille-bar-soap",
+  "title": "Bastille bar soap",
+  "subtitle": "An 80% olive oil bar for sensitive or dry skin",
+  "excerpt": "A high-olive cold-process bar soap inspired by Castile tradition but with a small coconut-oil addition for lather. The 80:10:10 oil ratio gives a mild, conditioning bar suited to dry or reactive skin. Allow 6 weeks to harden before use.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Anne Bramson, Soap: Making It, Enjoying It (1972): high-olive soap traditions and Castile origins. Susan Miller Cavitch, The Soapmaker's Companion (1997): high-oleic bars and the extended cure timeline. SoapCalc SAP values (accessed May 2026): olive 0.134, coconut 0.190, castor 0.128.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "4 bars (~120 g each after cure)",
+    "prepMinutes": 60,
+    "cookMinutes": 0,
+    "restingMinutes": 4320,
+    "chillingMinutes": 0,
+    "totalMinutes": 4380,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Doubles cleanly to 1 kg oil weight.",
+    "makeAheadNotes": "This bar benefits from a long cure. Six weeks is the minimum; 3 months produces a notably harder, longer-lasting bar.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "2 years or more from cure date in a cool, dark place. High-olive bars last well. Discard on DOS (orange spots) or paint-like rancidity smell."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The reaction between oil and sodium hydroxide that produces soap and glycerin. Each oil has its own saponification value."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point at which cold-process batter thickens enough that a drizzle of batter leaves a trail on the surface before sinking. High-olive batters can take 20-30 minutes of hand stirring to reach even a light trace."
+    },
+    {
+      "slug": "lye-discount",
+      "term": "Lye discount",
+      "definition": "A reduction in the water used to dissolve the lye, expressed as a percentage of oil weight. In bastille soap, 33% is standard; lower water content helps offset the slow-tracing nature of high-olive batters."
+    }
+  ],
+  "techniqueSlugs": ["cold-process-soap-method", "working-with-lye-safely"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bastille soap is a modern variant of traditional Castile: 80% olive oil with a small amount of coconut oil (10%) to improve lather, and castor oil (10%) to bind it. Pure Castile is 100% olive and takes months to cure to a usable hardness. Bastille reaches a workable bar in 6 weeks while keeping most of the mildness and conditioning properties that make high-olive soap well suited to dry and sensitive skin."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The main difference from a standard cold-process recipe is the slow "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": ". High-olive batters can take 20-30 minutes of hand stirring, or 5-10 minutes of intermittent stick-blending, before the batter thickens noticeably. This is normal. The stick blender makes it manageable; hand-only stirring is possible but slow."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wear protective gloves and splash-rated goggles for lye work. Add lye to water, never water to lye, in a ventilated space. The lye solution reaches around 85°C instantly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "80% of total oil weight. Standard refined olive oil, not extra-virgin. EVOO can cause soda ash and a strong herbal scent that competes with added fragrance.",
+              "isOptional": false,
+              "groupLabel": "Oils (500 g total)"
+            },
+            {
+              "ingredientSlug": "coconut-oil",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "10%. Provides the cleansing fraction and larger bubbles that olive alone cannot produce.",
+              "isOptional": false,
+              "groupLabel": "Oils (500 g total)"
+            },
+            {
+              "ingredientSlug": "castor-oil",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "10%. Lather binder; keeps the bubble profile stable.",
+              "isOptional": false,
+              "groupLabel": "Oils (500 g total)"
+            },
+            {
+              "ingredientSlug": "sodium-hydroxide",
+              "amount": 68,
+              "unit": "g",
+              "prepNote": "Calculated at 5% superfat: (400x0.134 + 50x0.190 + 50x0.128) x 0.95 = 68.2 g. Weigh to 0.1 g.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 165,
+              "unit": "g",
+              "prepNote": "33% of oil weight. The lower-water formula helps the bastille bar reach trace faster and unmould more cleanly.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gloves and goggles on. Weigh the water into the HDPE pitcher. Add the sodium hydroxide to the water in a steady pour, stirring continuously. The solution heats rapidly and releases fumes. Allow it to cool to 38-42°C before combining with the oils."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the coconut oil if solid. Combine with the olive oil and castor oil in a heatproof jug and allow to cool to 38-42°C. The oils will be at room temperature in most kitchens; if they are particularly cold (below 25°C), warm them briefly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend to trace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution into the oils in a slow, steady stream. Use the stick blender in 5-second bursts alternated with 30 seconds of hand stirring. The high olive content means "
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": " is slower than with a coconut-heavy formula. The batter may look and behave like thin soup for 10-15 minutes before the first signs of thickening appear. Patience and intermittent stick-blending are all that is needed. Stop at light trace."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mould and cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the batter into the mould and insulate to promote gel phase. A bastille bar may need 48 hours in the mould before it is firm enough to unmould without deforming. Wear gloves when handling. Cut into bars and stand them on an open rack."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The cure is longer than a standard cold-process recipe. Six weeks is the minimum; the bar will still be soft and prone to a slimy feel in the shower before that. The "
+          },
+          {
+            "type": "text",
+            "text": "lye discount",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lye-discount" } }]
+          },
+          {
+            "type": "text",
+            "text": " speeds this up compared with a higher-water formula. At 3 months the bastille bar has hardened considerably and the lather has developed its characteristic creamy quality."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Keep bars on a draining rack in a cool, dark place with good air circulation. Olive oil is naturally high in antioxidants and the cured bar keeps 2 years or more. Discard on DOS (orange spots on the cut face) or a sharp, paint-like rancidity smell."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,278 @@
+{
+  "slug": "shea-butter-cold-process-soap",
+  "title": "Shea butter cold-process soap",
+  "subtitle": "A conditioning bar with shea butter at 15% of the oil blend",
+  "excerpt": "A cold-process bar soap with shea butter added for a richer, more emollient lather. The blend is 45% olive, 30% coconut, 15% shea, 10% castor, calculated at 5% superfat. Allow 4-6 weeks to harden before use.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Susan Miller Cavitch, The Soapmaker's Companion (1997), chapter 5: conditioning butters in cold-process formulas. SoapCalc (soapcalc.net, accessed May 2026): SAP values for shea butter (0.128), olive (0.134), coconut (0.190), castor (0.128). USDA ACS oil-fatty-acid database: shea stearic acid profile and INS value.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "4 bars (~125 g each after cure)",
+    "prepMinutes": 60,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2940,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Doubles to 1 kg oil weight cleanly. Work in separate 500 g batches beyond that.",
+    "makeAheadNotes": "The cured bar keeps 2 years. Shea butter accelerates rancidity slightly compared with an olive-only bar; check the 18-month mark for DOS.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 540,
+    "shelfLifeNotes": "18 months in a cool, dark place on an open rack. Shea has a shorter shelf life than olive oil. Discard on DOS (orange spots) or a rancid smell."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The reaction between oil and sodium hydroxide that produces soap and glycerin. Each oil has a saponification value: grams of NaOH needed per gram of oil."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oil left unreacted after saponification. At 5%, roughly 5% of the oil becomes the unsaponified conditioning fraction of the finished bar."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point at which the soap batter thickens enough that a drizzle of batter leaves a brief trail on the surface. Light trace: the texture of warm custard."
+    }
+  ],
+  "techniqueSlugs": ["cold-process-soap-method", "working-with-lye-safely"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Adding shea butter to a cold-process bar changes the texture of both the batter and the finished soap. Shea is high in stearic acid, which makes the bar harder and gives the lather a creamy, cushioning quality. At 15% of the oil weight it contributes without dominating; the olive stays primary, and the coconut oil provides the cleansing backbone."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Shea can accelerate "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": " in cold-process batter. Keep your blend and lye solution both at the lower end of the 38-45°C window before combining, and work briskly once you start stick-blending."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wear protective gloves and splash-rated goggles throughout the lye work. The "
+          },
+          {
+            "type": "text",
+            "text": "cold-process method",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "cold-process-soap-method" } }]
+          },
+          {
+            "type": "text",
+            "text": " uses sodium hydroxide, which is corrosive. Add lye to water in a well-ventilated space."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 225,
+              "unit": "g",
+              "prepNote": "45% of oil weight. Conditioning, mild, slow lather.",
+              "isOptional": false,
+              "groupLabel": "Oils (500 g total)"
+            },
+            {
+              "ingredientSlug": "coconut-oil",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "30%. Melt if solid before weighing. Cleansing and large bubbles.",
+              "isOptional": false,
+              "groupLabel": "Oils (500 g total)"
+            },
+            {
+              "ingredientSlug": "shea-butter",
+              "amount": 75,
+              "unit": "g",
+              "prepNote": "15% of oil weight. Melt with the coconut oil. Use raw or refined; refined is odourless and neutral in the finished bar.",
+              "isOptional": false,
+              "groupLabel": "Oils (500 g total)"
+            },
+            {
+              "ingredientSlug": "castor-oil",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "10%. Lather binder.",
+              "isOptional": false,
+              "groupLabel": "Oils (500 g total)"
+            },
+            {
+              "ingredientSlug": "sodium-hydroxide",
+              "amount": 70,
+              "unit": "g",
+              "prepNote": "Calculated for this blend at 5% superfat: (225x0.134 + 150x0.190 + 75x0.128 + 50x0.128) x 0.95 = 70.1 g. Weigh to 0.1 g precision.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 165,
+              "unit": "g",
+              "prepNote": "33% of oil weight.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gloves and goggles on. Weigh the distilled water into the HDPE pitcher, then weigh the sodium hydroxide separately. Pour the lye into the water slowly, stirring throughout. The solution heats immediately to around 85°C. Set it somewhere heat-safe and allow to cool to 38-42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Melt and combine the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the coconut oil and shea butter together in a heatproof jug over low heat or in short bursts in a microwave. Once liquid, add the olive oil and castor oil and stir to combine. Allow the blend to cool to 38-42°C before proceeding."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend to trace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution into the oils in a slow stream. Use the stick blender in 5-second bursts, alternating with hand stirring. Because shea butter can accelerate "
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": ", the batter may thicken faster than a plain olive-coconut blend. Stop blending at light trace (the texture of warm custard). Blend in any essential oil at this point, if using."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mould, insulate, and cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the batter into the silicone loaf mould and cover immediately to insulate. Shea-butter bars benefit from gel phase (the batter turns translucent and warm in the centre), which the insulation promotes. Leave for 24-48 hours before unmoulding. Wear gloves to unmould and cut. Stand bars on an open rack with air circulating around them."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": " fraction continues to condition the bar as it hardens. Allow at least 4 weeks; 6 weeks gives a noticeably harder bar. Shea raises the INS hardness of the finished soap, so it will feel firmer than an equivalent olive-only bar at the same cure stage."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Keep cured bars on a draining soap rack in a cool, dark spot. The shelf life is 18 months from the cure date; shea butter has more polyunsaturated fatty acids than olive oil and goes rancid sooner. Check the bars at 12 months for DOS (orange flecks on the cut face). A sharp, paint-like smell rather than the original scent is the rancidity cue. Discard any bar showing either sign."
+          }
+        ]
+      }
+    ]
+  }
+}

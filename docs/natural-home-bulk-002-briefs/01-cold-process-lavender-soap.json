@@ -1,0 +1,302 @@
+{
+  "slug": "cold-process-lavender-soap",
+  "title": "Cold-process lavender soap",
+  "subtitle": "A 500 g oil batch at 5% superfat, scented with lavender",
+  "excerpt": "A straightforward cold-process bar soap with an olive, coconut, and castor oil base, scented with Lavandula angustifolia essential oil. The batch makes roughly four 125 g bars after a 4-week cure.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Susan Miller Cavitch, The Soapmaker's Companion (1997), chapters 4-6: SAP values, water-as-percentage-of-oils lye discount, superfat calculation. SoapCalc lye calculator (soapcalc.net, accessed May 2026): per-oil NaOH SAP values used to derive lye weight. Bramble Berry beginner cold-process guide (brambleberry.com, accessed May 2026): temperature window and trace guidance.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "4 bars (~125 g each after cure)",
+    "prepMinutes": 60,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2940,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Doubles cleanly to 1 kg oil weight. Beyond that, work in separate 500 g batches rather than scaling the lye linearly.",
+    "makeAheadNotes": "The cured bar keeps 2 years in a cool, dark place on an open rack. Making well ahead improves the bar: 6 weeks gives a noticeably harder, milder result than 4.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "2 years in a cool, dark place on an open rack, air circulating around each bar. Discard if the bar develops orange spots (DOS; the superfat oils have gone rancid) or smells sharp and paint-like rather than herbal."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The chemical reaction between a fat and an alkali (lye) that produces soap and glycerin. Each oil has a saponification value: the grams of sodium hydroxide needed to fully convert one gram of that oil into soap."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oil left unreacted after saponification. A 5% superfat means 5% of the oil weight was not converted to soap. The result is a slightly richer, less drying bar."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point in cold-process soap making when the batter thickens enough that a drizzle of batter leaves a brief trail on the surface before sinking. Light trace is the texture of warm custard; heavy trace is thick enough to hold a peak."
+    },
+    {
+      "slug": "lye-discount",
+      "term": "Lye discount",
+      "definition": "A reduction in the amount of water used to dissolve the lye, expressed as a percentage of total oil weight. A 33% lye discount means the water weight equals 33% of the oil weight. Lower water content speeds unmoulding and reduces the risk of soda ash."
+    }
+  ],
+  "techniqueSlugs": ["cold-process-soap-method", "working-with-lye-safely"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cold-process soap is bar soap made from scratch, combining plant oils with sodium hydroxide (lye) to produce soap and glycerin through "
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": ". This batch uses 500 g of oils, olive-heavy for a conditioning bar, with coconut for lather and castor to bind the bubbles. The essential oil is lavender at 3% of oil weight. The bars need 4 weeks to cure before use."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "text": "cold-process method",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "cold-process-soap-method" } }]
+          },
+          {
+            "type": "text",
+            "text": " requires lye handling. Put on protective gloves and splash-rated goggles before opening the lye container. Add lye to water, never water to lye. The solution reaches 80-90°C instantly and releases fumes; work near an open window or outdoors."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "60% of total oil weight. Provides conditioning, mildness, and a slow, stable lather.",
+              "isOptional": false,
+              "groupLabel": "Oils (500 g total)"
+            },
+            {
+              "ingredientSlug": "coconut-oil",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "30%. Hard at room temperature; melt before weighing if needed. Provides cleansing and large, fluffy bubbles.",
+              "isOptional": false,
+              "groupLabel": "Oils (500 g total)"
+            },
+            {
+              "ingredientSlug": "castor-oil",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "10%. Binds lather, makes bubbles creamy and long-lasting.",
+              "isOptional": false,
+              "groupLabel": "Oils (500 g total)"
+            },
+            {
+              "ingredientSlug": "sodium-hydroxide",
+              "amount": 71,
+              "unit": "g",
+              "prepNote": "Calculated for this oil blend at 5% superfat: (300 x 0.134 + 150 x 0.190 + 50 x 0.128) x 0.95 = 71.3 g, rounded to 71 g. Weigh precisely. Use 99% pure cosmetic-grade NaOH only.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 165,
+              "unit": "g",
+              "prepNote": "33% of oil weight (lye discount). Use distilled, not tap water; minerals in tap water react with the lye and can cause spots.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "essential-oil-lavender",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "3% of oil weight (approximately 15 ml). Lavandula angustifolia. Added at light trace.",
+              "isOptional": false,
+              "groupLabel": "Scent"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put on gloves and goggles. Weigh the distilled water into the HDPE pitcher. Weigh the sodium hydroxide separately. Pour the lye into the water in a slow, steady stream, stirring as you go. Never add water to the lye. The solution heats to 80-90°C and releases fumes. Stir until the granules dissolve completely. Set aside to cool."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh all three oils into a heatproof jug or pan. Melt the coconut oil if it is solid, then combine with the olive and castor oils. Heat gently to around 45°C if the oils are cold, or simply wait at room temperature if they are already liquid. The oils and lye solution both need to reach a temperature of 38-42°C before combining."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend to trace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the cooled lye solution into the oils in a slow stream, stirring as you pour. Use the stick blender in short 5-second bursts, alternating with stirring by hand. After 2-3 minutes of blending, the batter reaches "
+          },
+          {
+            "type": "text",
+            "text": "light trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": ": the texture of warm custard, and a drizzle leaves a brief trail on the surface. Add the lavender essential oil and blend for a further 10-15 seconds until evenly incorporated."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mould and insulate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the batter into the silicone loaf mould. Tap the mould gently on the worktop to release any air. Cover with a piece of cardboard or a wooden lid, then wrap with a tea towel or old blanket. The insulation encourages the soap to enter gel phase, which gives a translucent, dense bar with better colour retention. Leave for 24-48 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Unmould and cut" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After 24-48 hours, test the soap by pressing a gloved fingertip into the surface. If it springs back without sticking, it is ready to unmould. Peel the mould away. Wear gloves at this stage: the soap is still alkaline and can irritate skin. Cut into four bars of roughly equal width with a sharp knife or a dedicated soap cutter. A 500 g oil batch fills a standard 1 kg silicone loaf to about 3 cm depth; four cuts gives bars around 3 cm wide."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stand the bars on an open rack in a cool, dark, well-ventilated spot. The "
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": " oils in the bar continue to saponify slowly over the next 4 weeks, and excess water evaporates, making the bar harder and milder. Turn the bars at 2 weeks to even the drying. At 4 weeks, lick the edge of one bar: if it gives a faint tingle (the zap test), the bar needs more cure time. At 6 weeks it will be fully cured. The "
+          },
+          {
+            "type": "text",
+            "text": "lye discount",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lye-discount" } }]
+          },
+          {
+            "type": "text",
+            "text": " in this recipe (water at 33% of oil weight) means the bars are typically ready at 4-6 weeks."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Keep cured bars on an open rack in a cool, dark cupboard with air circulating around them. A soap dish with drainage slots works well in the bathroom; a solid dish that holds water will shorten bar life considerably. The bar keeps 2 years or more from the cure date. Discard if orange spots appear on the surface (DOS, dreaded orange spots), which signal that the superfat oils have gone rancid. A sharp, paint-like smell rather than the original lavender scent is the same cue."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "slug": "colloidal-oat-cold-process-soap",
+  "title": "Colloidal oat cold-process soap",
+  "subtitle": "A gentle, exfoliating bar for sensitive and dry skin",
+  "excerpt": "A cold-process bar soap with finely milled colloidal oatmeal stirred in at trace for gentle exfoliation and skin-calming properties. The oil base is 55% olive, 30% coconut, 15% castor. Unscented. Allow 4-6 weeks to harden before use.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Susan Miller Cavitch, The Soapmaker's Companion (1997): natural additives for texture and skin effect. Scientific literature on colloidal oatmeal (Avena sativa) as a skin-protective barrier agent (FDA-approved skin protectant). SoapCalc (accessed May 2026): SAP values for this oil blend.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "4 bars (~120 g each after cure)",
+    "prepMinutes": 60,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2940,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Doubles to 1 kg oil weight cleanly.",
+    "makeAheadNotes": "Left unscented, the bar has a very neutral, clean smell. It keeps 2 years from cure date.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "2 years from cure date on an open rack in a cool, dark place. Colloidal oatmeal does not shorten shelf life. Discard on DOS (orange spots) or a rancid smell."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point at which the soap batter thickens enough that a drizzled trail briefly holds on the surface. Colloidal oatmeal goes in at light trace; it thickens the batter quickly and should be poured soon after addition."
+    },
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The reaction between plant oil and sodium hydroxide that produces soap and glycerin. The colloidal oatmeal remains unsaponified in the finished bar, contributing its skin-protective beta-glucan fraction."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of unreacted oil in the finished bar. The 5% superfat here works alongside the colloidal oatmeal to condition the skin during cleansing."
+    }
+  ],
+  "techniqueSlugs": ["cold-process-soap-method", "working-with-lye-safely"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Colloidal oatmeal (Avena sativa, finely milled to a flour-like powder) is one of the few cosmetic additives with a robust body of research supporting its skin-protective effect. The beta-glucans and avenanthramides in oats form a temporary barrier on the skin surface during washing. In a cold-process bar, the oatmeal remains unsaponified and provides a gentle, slightly gritty texture that removes dead skin without abrasion. This is the simplest effective formula for dry or reactive skin."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The bar is left unscented, which makes it suitable for skin that reacts to essential oils. The oil base is a mild, conditioning blend. Adding oatmeal at "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": " thickens the batter quickly; work fast once it goes in."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wear protective gloves and splash-rated goggles for lye work. Add lye to water in a ventilated space."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 275,
+              "unit": "g",
+              "prepNote": "55% of oil weight. Conditioning base.",
+              "isOptional": false,
+              "groupLabel": "Oils (500 g total)"
+            },
+            {
+              "ingredientSlug": "coconut-oil",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "30%. Melt if solid.",
+              "isOptional": false,
+              "groupLabel": "Oils (500 g total)"
+            },
+            {
+              "ingredientSlug": "castor-oil",
+              "amount": 75,
+              "unit": "g",
+              "prepNote": "15%. Higher castor for a creamy, stable lather that pairs well with the oatmeal texture.",
+              "isOptional": false,
+              "groupLabel": "Oils (500 g total)"
+            },
+            {
+              "ingredientSlug": "sodium-hydroxide",
+              "amount": 71,
+              "unit": "g",
+              "prepNote": "At 5% superfat: (275x0.134 + 150x0.190 + 75x0.128) x 0.95 = 71.0 g.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 165,
+              "unit": "g",
+              "prepNote": "33% of oil weight.",
+              "isOptional": false,
+              "groupLabel": "Lye solution"
+            },
+            {
+              "ingredientSlug": "colloidal-oatmeal",
+              "amount": 25,
+              "unit": "g",
+              "prepNote": "5% of oil weight. Cosmetic-grade, finely milled. Stir into a tablespoon of olive oil to make a slurry before adding to the batter at light trace. Not the same as porridge oats or oat flour.",
+              "isOptional": false,
+              "groupLabel": "Additive (at trace)"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the oatmeal slurry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix the colloidal oatmeal with one tablespoon of the weighed olive oil, stirring until a smooth, paste-like slurry forms. Adding it as a slurry prevents dry clumps in the finished bar."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the lye solution and prepare the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gloves and goggles on. Add the sodium hydroxide to the distilled water slowly and stir until dissolved. Allow to cool to 38-42°C. Melt the coconut oil, combine with the remaining olive oil and castor oil, and allow to reach 38-42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend to trace and add oatmeal" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution into the oils. Stick-blend in short bursts to reach light "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": ". Add the oatmeal slurry and stir in by hand until evenly distributed. The "
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": " process continues while you stir; the oatmeal will thicken the batter quickly. Pour into the mould without delay."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mould and cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Insulate with light coverings and leave 24-48 hours. Wear gloves to unmould and cut. The oatmeal gives the cut face a speckled, warm appearance. Cure on an open rack for 4-6 weeks. The "
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": " oils and oatmeal work together in the finished bar: the oils soften the skin and the oatmeal calms any reactive response during washing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Keep cured bars on a draining rack in a cool, dark spot. The bar keeps 2 years from cure date. Colloidal oatmeal does not shorten shelf life. Discard on DOS (orange spots on the cut face) or a rancid smell."
+          }
+        ]
+      }
+    ]
+  }
+}
