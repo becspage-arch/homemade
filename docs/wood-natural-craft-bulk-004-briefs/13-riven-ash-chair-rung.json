@@ -1,0 +1,156 @@
+{
+  "slug": "riven-ash-chair-rung",
+  "title": "Riven ash chair rung",
+  "subtitle": "A turned-form green-ash rung for a Windsor or ladder-back chair",
+  "excerpt": "A chair rung riven from green ash, shaved to a cylinder on the shaving horse, and turned to tenon ends on the pole lathe. Ash rungs are the traditional component of Windsor and ladder-back chairs; the riven blank is stronger than a sawn one because the grain runs the full length without interruption. An intermediate green-woodwork project.",
+  "type": "PATTERN",
+  "categorySlug": "wood-natural-craft",
+  "subCategorySlug": "green-woodwork",
+  "woodState": "green",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Cassell's Cyclopaedia of Mechanics vol. III (1885) for chair construction methods; Roy Underhill The Woodwright's Shop (1981) for Windsor chair rung methods (referenced for technique authority, not reproduced); early-twentieth-century Windsor chair making manuals available via the Internet Archive.",
+  "recipeTools": [
+    { "slug": "froe", "isOptional": false },
+    { "slug": "beetle-mallet", "isOptional": false },
+    { "slug": "shaving-horse", "isOptional": false },
+    { "slug": "drawknife-straight", "isOptional": false },
+    { "slug": "spokeshave-flat", "isOptional": false },
+    { "slug": "leather-strop", "isOptional": false },
+    { "slug": "wood-finish-raw-linseed-oil", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "green-wood", "term": "Green wood", "definition": "Freshly felled or recently riven timber, still high in moisture content. Green ash is the correct state for rung-making; it is shaved and turned wet, then the rung dries in the chair and shrinks slightly to lock into the leg mortises." },
+    { "slug": "riven", "term": "Riven", "definition": "Split along the grain with a froe and maul, rather than sawn across it. A riven rung follows the grain perfectly and is far stronger than a sawn equivalent; critical for a structural component under repeated loading." },
+    { "slug": "shaving-horse", "term": "Shaving horse", "definition": "A foot-pedalled bench that clamps the workpiece for two-handed drawknife and spokeshave work. The standard green-woodwork bench." },
+    { "slug": "drawknife", "term": "Drawknife", "definition": "A two-handled blade pulled toward the body along the workpiece. The green-woodwork rough-shaping tool." },
+    { "slug": "tenon", "term": "Tenon", "definition": "The projecting end of a component shaped to fit into a mortise in another piece. A chair rung has a round tenon at each end that presses into a round mortise in the leg." }
+  ],
+  "techniqueSlugs": ["riving-with-a-froe", "drawknife-shaping-technique", "spokeshave-shaping-technique"],
+  "criticalTechniques": ["riving-with-a-froe"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A Windsor chair rung is a component designed to be made from " },
+          { "type": "text", "text": "riven", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "riven" } }] },
+          { "type": "text", "text": " " },
+          { "type": "text", "text": "green", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "green-wood" } }] },
+          { "type": "text", "text": " ash and to dry in place. The rung is shaved and turned wet; it is installed while still damp; and as the green wood dries, the rung shrinks slightly and tightens its tenon ends into the leg mortises. This shrinkage-joint is one of the reasons Windsor chairs are so durable. A sawn rung, by contrast, shrinks across the grain and can loosen over time. The technique here covers riving the billet, shaving the cylinder on the shaving horse, and turning the " },
+          { "type": "text", "text": "tenon", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tenon" } }] },
+          { "type": "text", "text": " ends." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "default",
+          "title": "Before you start cutting"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Grip: both hands on the drawknife handle; foot pressure on the shaving horse pedal clamps the work. Never make a drawknife stroke that travels toward a body part not protected by the shaving horse clamp." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Froe and beetle: the froe is driven with a beetle; keep the off-hand clear of the line of blow. Once the split starts, steer it by levering the froe handle, not by driving further." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sharpening: strop the drawknife and spokeshave every 15 to 20 minutes. A dull drawknife tears the grain rather than shaving it." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "First aid: keep a styptic pencil, gauze, and a clean dressing within reach." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Workspace: the shaving horse must be stable on a level floor. Bench height matters; the standard horse height puts the work at mid-thigh level." }] }] }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The wood" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Source green ash billets from a freshly felled tree or a coppice; the billet should be 50 cm long (rung length plus 10 cm for waste) and 12 cm in diameter. Ash splits cleanly along the grain with the froe; it will not follow the grain at an angle the way oak sometimes does. If fresh ash is unavailable, hazel or oak are alternatives. Oak is harder to shave and requires a sharper drawknife edge." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Riving the billet" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stand the billet on end on a firm surface; an end-grain block or stump. Place the " },
+          { "type": "text", "text": "froe", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "riven" } }] },
+          { "type": "text", "text": " blade across the end grain, aligned with the pith. Drive the froe with the beetle; two or three blows will start the split. Once the split runs 10 cm, lever the froe handle down and back to steer the split along the grain rather than toward the knuckle. A 12 cm diameter billet yields four rung-sized splits; each split is then quartered again to the correct diameter." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Shaving the cylinder" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Mount the split billet in the " },
+            { "type": "text", "text": "shaving horse", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "shaving-horse" } }] },
+            { "type": "text", "text": "; foot on the pedal, billet clamped. Pull the " },
+            { "type": "text", "text": "drawknife", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "drawknife" } }] },
+            { "type": "text", "text": " along the billet with both hands, reading the grain; the shaving should lift cleanly. If it dives into the wood, reverse direction. Remove the corners of the split to produce an octagonal cross-section." }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Refine the cylinder with the flat-bottomed spokeshave, working along the length. The rung should be 20 mm in diameter at the centre and 15 mm at the tenon shoulders, 50 mm from each end." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn the tenon ends to 16 mm diameter and 30 mm long, using the spokeshave with a rotating pass around the tenon shoulder. Check the tenon diameter against a test mortise; the tenon should push in by hand and be tight enough to require a gentle mallet tap to seat fully." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Install the rung while green, within 3 days of shaving. The drying shrinkage locks the tenon in the mortise. If the rung must wait before installation, keep it in a cool damp place or loosely wrapped in a damp cloth; a rung that dries before installation will not shrink in the joint and the lock will not occur. Apply raw linseed oil to the visible shaft after assembly; not to the tenon ends, which must grip the mortise wood directly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ladder-back rung: the same method; the rung is straight rather than slightly bowed as in some Windsor styles." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stool rung: a shorter diameter rung for a three-legged stool; same shaving-horse method, shorter tenon." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A correctly installed green-ash rung needs no maintenance. If a rung loosens in use; usually because a replacement was installed dry; remove it, pare the tenon slightly thicker with the spokeshave, re-wet the tenon end in water for 30 minutes, and reinstall. The water swells the tenon temporarily; as it dries, the lock re-establishes." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What can go wrong",
+          "intro": "Common problems and their fixes.",
+          "items": [
+            { "symptom": "Froe split runs off-axis and exits through the side of the billet", "cause": "Pith not centred in the billet; or froe not aligned with a straight grain line", "fix": "Read the end grain before placing the froe. The grain rings are the grain direction; the froe blade should follow the widest ring chord. Steer the split by levering the froe handle; pushing the handle down steers toward the pith, pulling it back steers away." },
+            { "symptom": "Drawknife tears the grain in long stringy chips", "cause": "Cutting against the grain direction along the billet length", "fix": "Reverse direction. Ash grain runs from one end to the other; on one half of the billet the grain runs toward you and the drawknife goes with it; on the other half it runs away from you. Work each face in the correct direction." }
+          ]
+        }
+      }
+    ]
+  }
+}

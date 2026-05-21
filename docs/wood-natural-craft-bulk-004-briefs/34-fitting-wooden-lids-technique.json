@@ -1,0 +1,108 @@
+{
+  "slug": "fitting-wooden-lids-technique",
+  "title": "Fitting wooden lids",
+  "subtitle": "Planing and paring a wooden lid to fit a box opening accurately",
+  "excerpt": "The technique of fitting a wooden lid: planing the lid blank to the correct width and length, cutting or paring the shoulder that drops into the box opening, and tuning the fit by feel and test. Applies to drop-on lids, sliding lids, and rebated lift-off lids in any hardwood or softwood box project.",
+  "type": "TECHNIQUE",
+  "categorySlug": "wood-natural-craft",
+  "subCategorySlug": "seasoned-wood",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Cassell's Cyclopaedia of Mechanics vol. III (1885) for box-making and lid-fitting techniques; Victorian cabinet-making manuals.",
+  "recipeTools": [
+    { "slug": "smoothing-plane-no-4", "isOptional": false },
+    { "slug": "block-plane", "isOptional": false },
+    { "slug": "bevel-edge-chisel-12mm", "isOptional": false },
+    { "slug": "marking-gauge", "isOptional": false },
+    { "slug": "card-scraper", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "rebate", "term": "Rebate", "definition": "A step cut into the edge or underside of a lid to produce a shoulder that drops into the box opening. The shoulder locates the lid and prevents it sliding sideways." },
+    { "slug": "piston-fit", "term": "Piston fit", "definition": "The ideal lid fit: the lid drops into the opening under its own weight with a slight resistance from trapped air, then settles without gaps. Not so tight it must be forced; not so loose it rattles." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A well-fitted lid is the difference between a box that feels made and one that merely holds things. The target is a " },
+          { "type": "text", "text": "piston fit", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "piston-fit" } }] },
+          { "type": "text", "text": ": the lid drops in under its own weight, pauses for a moment as air escapes, and settles without gaps. Achieving this fit is a matter of small adjustments, checking between every pass of the plane." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sizing the lid blank" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut the lid blank 2 to 3 mm wider and 2 to 3 mm longer than the box opening on all sides. This oversize becomes the shoulder that forms the " },
+          { "type": "text", "text": "rebate", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rebate" } }] },
+          { "type": "text", "text": ". Do not cut the blank to the exact opening size; there is no way to recover from a lid that is too small." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Marking the shoulder" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set a marking gauge to the depth of the shoulder: the thickness of the box wall minus 0.5 mm, so the shoulder drops in without fouling the bottom of the rebate groove. Mark a line around all four sides of the lid on the underside, 2 to 3 mm in from each edge. This defines the shoulder width and the shoulder depth." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Removing the waste" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pare the shoulder in stages. Work the long sides of the lid first, paring across the grain with a bevel-edge chisel. Then work the short ends, paring with the grain. Test the fit after removing waste from each side; the first side to reach size acts as a reference for the others. The goal is to reach the marked line without going past it." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tuning the fit" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lower the lid into the opening. If it jams, rub chalk or carpenter's pencil on the shoulder edge. Press the lid down and lift out; the chalk marks on the box walls show where the shoulder is tight." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pare or plane only the chalked areas. One or two strokes with the block plane on a long side, or one chisel stroke on a corner, is usually enough." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat until the lid drops in with slight friction and no forcing. The piston effect is a sign of a square, even-fitting lid." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "After fitting" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Apply oil or wax finish after confirming the dry fit, not before. Oil swells wood fibres slightly and can tighten a well-fitting lid to a jammed one. If a lid tightens after finishing, plane a single thin shaving from each long edge and test again." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What can go wrong",
+          "intro": "Common problems and their fixes.",
+          "items": [
+            { "symptom": "Lid rocks on one corner after fitting", "cause": "One corner of the shoulder is slightly lower than the other three, so the lid tips rather than sitting flat", "fix": "Place the lid upside down on a flat surface and check which corner is high. Pare a single stroke from the high corner only. A rocking lid that also fits tightly in the opening suggests the box sides are not perfectly level; plane the top edge of the box walls before re-fitting." }
+          ]
+        }
+      }
+    ]
+  }
+}

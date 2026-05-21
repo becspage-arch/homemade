@@ -1,0 +1,112 @@
+{
+  "slug": "walnut-pencil-box",
+  "title": "Walnut pencil box",
+  "subtitle": "A small pinned-and-glued walnut box with a rebated drop-on lid",
+  "excerpt": "A simple walnut pencil box 220 mm long, 55 mm wide, and 35 mm deep, with a drop-on lid retained by a narrow rebated shoulder. Glued and pinned at the corners. Walnut's close grain and warm colour make a quiet, handsome object from a small offcut. A first box project in a hardwood.",
+  "type": "PATTERN",
+  "categorySlug": "wood-natural-craft",
+  "subCategorySlug": "seasoned-wood",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Victorian domestic craft manuals for small wooden boxes and stationery cases; Cassell's Cyclopaedia of Mechanics vol. III (1885).",
+  "recipeTools": [
+    { "slug": "tenon-saw", "isOptional": false },
+    { "slug": "block-plane", "isOptional": false },
+    { "slug": "marking-gauge", "isOptional": false },
+    { "slug": "combination-square", "isOptional": false },
+    { "slug": "chisel-bench", "isOptional": false },
+    { "slug": "card-scraper", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "rebate", "term": "Rebate", "definition": "A step cut into the edge or face of a board to accept a lid, panel, or glass. In this box, the lid has a rebated shoulder around its underside that drops into the box opening." },
+    { "slug": "grain-direction", "term": "Grain direction", "definition": "The orientation of wood fibres relative to the cutting tool. Planing or chiselling with the grain produces a clean surface; cutting against the grain causes the fibres to tear and lift." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "neutral", "heading": "Sharp-tool safety" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "Keep both hands behind the cutting edge. Secure the workpiece in a vice or with a bench hook before sawing." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Walnut is forgiving to work: the grain is straight in most seasoned boards, the surface planes to a glassy finish without a card scraper, and the dark colour conceals minor glue marks. The " },
+          { "type": "text", "text": "rebate", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rebate" } }] },
+          { "type": "text", "text": " on the lid underside is the only joint requiring accuracy. Everything else is saw-to-the-line and glue-up." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Materials" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Seasoned walnut: two side walls 220 mm by 35 mm by 9 mm; two end walls 55 mm by 35 mm by 9 mm; base 220 mm by 55 mm by 6 mm; lid 224 mm by 59 mm by 9 mm with a 2 mm shoulder all round on the underside." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The box" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Saw the four walls to length, checking square at each end. Mark and saw the base to fit inside the walls." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Plane the long edges of the walls until the face is smooth, working with the " },
+            { "type": "text", "text": "grain direction", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "grain-direction" } }] },
+            { "type": "text", "text": " to avoid tearing." }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Glue and pin the four walls together, checking square with the combination square. Allow to set, then glue and pin the base." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The lid" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut the lid 2 mm wider and 2 mm longer than the box opening on all sides. Mark the rebate shoulder with a marking gauge: 2 mm down from the underside face, 2 mm in from each edge. Chop and pare the shoulder with a bench chisel, testing the fit in the opening frequently. The lid should drop in under its own weight with a slight friction fit; it should not rattle." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Smooth all outer faces with a block plane and, if available, a card scraper. Walnut benefits from a single coat of oil rubbed in with a cloth, wiped off before it dries. The oil brings out the warm brown of the heartwood without a thick film finish." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What can go wrong",
+          "intro": "Common problems and their fixes.",
+          "items": [
+            { "symptom": "Lid shoulder fits at one corner but not others", "cause": "Shoulder pared to an uneven depth, thinning at one corner", "fix": "Test the lid against the opening and feel which corner binds. Mark it with a pencil. Pare only that corner, one stroke at a time, re-testing after each pass." }
+          ]
+        }
+      }
+    ]
+  }
+}

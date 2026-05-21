@@ -1,0 +1,110 @@
+{
+  "slug": "pyrography-dog-portrait",
+  "title": "Dog portrait in pyrography",
+  "subtitle": "A tonal dog portrait burned on seasoned birch, worked from a reference photograph",
+  "excerpt": "A tonal dog portrait burned on a 200 mm by 250 mm seasoned birch panel, worked from a close-cropped reference photograph. The project covers grid-based design transfer, fur-stroke technique, value range building, and fine-detail work on the nose and eyes. This is an advanced pyrography project requiring a variable-temperature nichrome-wire burner.",
+  "type": "PATTERN",
+  "categorySlug": "wood-natural-craft",
+  "subCategorySlug": "pyrography",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Victorian pokerwork and pyrography manuals for portrait and animal subject techniques; Cassell's Cyclopaedia of Mechanics vol. III (1885) for decorative wood burning.",
+  "recipeTools": [
+    { "slug": "pyrography-nichrome-wire-burner", "isOptional": false },
+    { "slug": "pyrography-tip-writing", "isOptional": false },
+    { "slug": "pyrography-tip-shading", "isOptional": false },
+    { "slug": "pyrography-tip-ball-stylus", "isOptional": false },
+    { "slug": "pyrography-cooling-stand", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "pyrography", "term": "Pyrography", "definition": "The art of decorating wood by burning designs with a heated tip. Also called pokerwork in Victorian manuals." },
+    { "slug": "value-range", "term": "Value range", "definition": "The full tonal spectrum from the lightest unburned wood to the deepest dark brown. A convincing portrait uses the full value range; flat portraits that sit in the mid-tones lack depth." },
+    { "slug": "fur-stroke", "term": "Fur stroke", "definition": "A thin curved line burned with the writing tip, following the direction of growth of individual hairs. Fur strokes are applied in layers from dark to light, with the tip lifted at the end of each stroke so the line tapers to a point." }
+  ],
+  "techniqueSlugs": ["pyrography-texture-techniques"],
+  "criticalTechniques": ["pyrography-texture-techniques"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "neutral", "heading": "Hot-tip safety" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "A pyrography tip at working temperature can cause a serious burn in under a second. Return the burner to its cooling stand between every stroke. Never rest the burner on the bench surface or on fabric." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "text": "pyrography", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pyrography" } }] },
+          { "type": "text", "text": " portrait succeeds or fails on " },
+          { "type": "text", "text": "value range", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "value-range" } }] },
+          { "type": "text", "text": ": the unburned birch must be the lightest tone in the image and the deepest shadows must approach the darkest brown the burner can achieve. Most beginner portraits sit in the mid-tones and read as flat. This project covers the full range, with the darkest values in the pupils and the shadow under the chin." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reference and transfer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Choose a reference photograph with clear directional light from one side: a single light source creates the shadow depth needed for a tonal portrait. Print the image to the panel size. Draw a grid over the print (10 mm squares) and a matching grid lightly in pencil on the panel. Transfer the key tonal boundaries square by square; do not try to copy every detail at this stage, only the outline of each tonal region." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fur strokes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fit the writing tip. Work the dark shadow areas first: apply " },
+          { "type": "text", "text": "fur strokes", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fur-stroke" } }] },
+          { "type": "text", "text": " in the direction of hair growth, laying down three layers of crossing strokes to build depth. Reduce the temperature slightly for the mid-tone areas and work in the same directional stroke. Leave the lightest fur areas unburned or with only a single sparse layer of strokes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Eyes and nose" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The eyes and nose require the highest temperature and the finest tip. Burn the pupil solid at full temperature with the writing tip; leave a small spot of unburned wood at the highlight position. The iris is a ring of radial strokes at medium temperature. The nose is worked with the ball stylus at medium temperature: stippled dots building from dark at the edges to lighter at the raised centre." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Erase remaining pencil lines after all burning is complete. Step back and assess the value range: the darkest areas should appear almost black and the lightest areas remain pale birch. If the portrait reads flat, deepen the shadow areas with an additional layer of dense fur strokes at the highest temperature the burner allows. Finish with a single coat of matte wax or lacquer." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What can go wrong",
+          "intro": "Common problems and their fixes.",
+          "items": [
+            { "symptom": "Portrait looks flat with no shadows", "cause": "All tones burned at similar temperatures; not enough contrast between shadow and light areas", "fix": "Identify the three to four darkest areas in the reference photograph. Burn those areas again at the highest temperature, layering additional strokes until a strong dark value is achieved. Contrast must be established early; adding depth later over completed work is harder than building it in from the start." }
+          ]
+        }
+      }
+    ]
+  }
+}

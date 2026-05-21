@@ -1,0 +1,110 @@
+{
+  "slug": "ash-serving-tray",
+  "title": "Ash serving tray with cut-out handles",
+  "subtitle": "A flat ash tray with integral cut-out handles at each end",
+  "excerpt": "A flat ash serving tray 450 mm by 320 mm with 100 mm oval cut-out handles at each short end. The tray is cut from a single 18 mm ash board; the handles are cut out with a coping saw and finished with a chisel and spokeshave. Ash's open grain is sealed and oiled to a smooth food-safe finish.",
+  "type": "PATTERN",
+  "categorySlug": "wood-natural-craft",
+  "subCategorySlug": "seasoned-wood",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Victorian kitchen and domestic craft manuals for wooden trays and salvers; Cassell's Cyclopaedia of Mechanics vol. III (1885).",
+  "recipeTools": [
+    { "slug": "tenon-saw", "isOptional": false },
+    { "slug": "coping-saw", "isOptional": false },
+    { "slug": "bevel-edge-chisel-12mm", "isOptional": false },
+    { "slug": "spokeshave-flat", "isOptional": false },
+    { "slug": "smoothing-plane-no-4", "isOptional": false },
+    { "slug": "card-scraper", "isOptional": false },
+    { "slug": "marking-gauge", "isOptional": false },
+    { "slug": "combination-square", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "spokeshave", "term": "Spokeshave", "definition": "A small two-handled plane for shaping and smoothing curves. The flat-bottomed spokeshave follows convex curves; the round-bottomed variant works concave surfaces. Used here to smooth the inside of the cut-out handles after coping-saw work." },
+    { "slug": "grain-filling", "term": "Grain-filling", "definition": "Applying a sanding sealer or fine paste filler to open-grained hardwoods (ash, oak) before the final coat of oil or finish. Ash has a coarse open grain that traps food particles if left unsealed on a serving surface." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "neutral", "heading": "Sharp-tool safety" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "Keep both hands behind the cutting edge. Clamp the tray blank to the bench before coping-saw or chisel work." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A flat tray without raised sides requires no joinery; the difficulty is in achieving a surface flat and smooth enough to hold a glass without rocking, and in shaping the cut-out handles so they are comfortable and clean-edged. The " },
+          { "type": "text", "text": "spokeshave", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "spokeshave" } }] },
+          { "type": "text", "text": " does the work inside the handle opening that a plane cannot reach." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Materials" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "One seasoned ash board 450 mm by 320 mm by 18 mm. Sanding sealer and food-grade oil for finishing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cutting the tray" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Saw the tray blank to size and square all four edges. Mark the handle opening at each short end: an oval 100 mm by 45 mm, centred, 30 mm from the end edge and 30 mm from each long side. Drill a 12 mm starter hole inside the marked oval, then cut around the outline with a coping saw." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Shaping the handles" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The coping saw leaves a rough edge. Pare the long sides of the oval with a bevel-edge chisel, then work the curved ends with the flat-bottomed spokeshave, taking light cuts with the grain. The inside surface should be smooth and free of saw marks before finishing. Ease all edges with a light chamfer using a chisel or a few passes with 120-grit sandpaper." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing the surface" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Plane the top face flat with the smoothing plane, working diagonally then with the grain. Finish with a card scraper. Ash is open-grained; apply one coat of sanding sealer and rub back with 320-grit paper before oiling, to achieve the " },
+          { "type": "text", "text": "grain-filling", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "grain-filling" } }] },
+          { "type": "text", "text": " that makes the surface food-safe and easy to wipe clean. Apply two coats of food-grade oil after sealing." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What can go wrong",
+          "intro": "Common problems and their fixes.",
+          "items": [
+            { "symptom": "Handle edge feels rough under the hand even after spokeshave work", "cause": "Spokeshave taken against the grain on the curved end of the handle; fibres torn rather than cut", "fix": "Reverse direction at the midpoint of each curved end: approach the tight curve from one side, then the other. The spokeshave cuts cleanly only when moving with the grain." }
+          ]
+        }
+      }
+    ]
+  }
+}
