@@ -1,8 +1,15 @@
 import Link from 'next/link'
 import { prisma, TutorialStatus } from '@homemade/db'
-import { mediaSrcSet } from '@/lib/media'
+import { tutorialHeroSrc } from '@/lib/tutorial-hero'
 
 import './related-tutorials.css'
+
+type HeroStrategyLike =
+  | 'UNSET'
+  | 'PROCEDURAL_CARD'
+  | 'PUBLIC_DOMAIN_PLATE'
+  | 'REAL_PHOTO'
+  | 'AI_GENERATED'
 
 interface RelatedTutorialsProps {
   currentTutorialId: string
@@ -42,6 +49,7 @@ export async function RelatedTutorials({
     excerpt: string | null
     category: { slug: string; name: string }
     hero: { cloudflareId: string | null; r2Key: string | null } | null
+    heroImageStrategy: HeroStrategyLike
   }> = []
 
   function take(list: typeof picks) {
@@ -94,6 +102,7 @@ function relatedSelect() {
     slug: true,
     title: true,
     excerpt: true,
+    heroImageStrategy: true,
     category: { select: { slug: true, name: true } },
     hero: { select: { cloudflareId: true, r2Key: true } },
   } as const
@@ -115,25 +124,23 @@ function renderRail(picks: Array<{
       </h2>
       <ul className="related-tutorials-list">
         {picks.map((t) => {
-          const card = mediaSrcSet(t.hero, 'card', ['public'])
+          const card = tutorialHeroSrc(t, 'card', ['public'])
           return (
             <li key={t.id} className="related-tutorials-item">
               <Link
                 href={`/${t.category.slug}/${t.slug}` as never}
                 className="related-tutorials-link"
               >
-                {card && (
-                  <span className="related-tutorials-thumb">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={card.src}
-                      srcSet={card.srcSet}
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </span>
-                )}
+                <span className="related-tutorials-thumb">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={card.src}
+                    srcSet={card.srcSet}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </span>
                 <span className="related-tutorials-body">
                   <span className="related-tutorials-eyebrow">
                     {t.category.name}

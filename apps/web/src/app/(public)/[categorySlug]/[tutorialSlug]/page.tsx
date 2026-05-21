@@ -12,7 +12,7 @@ import { extractScaleIngredients } from '@/components/public/tutorial-content/sc
 import { TutorialChrome } from '@/components/public/tutorial-chrome'
 import type { TipTapNode } from '@/components/public/tutorial-content/types'
 import { loadContentRefs } from '@/lib/tutorial-refs'
-import { mediaUrl } from '@/lib/media'
+import { tutorialHeroUrl } from '@/lib/tutorial-hero'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { harvestSupplies } from '@/lib/supplies'
 import { loadTutorialUgc } from '@/lib/ugc-loader'
@@ -82,6 +82,10 @@ const loadTutorial = cache(async (categorySlug: string, tutorialSlug: string) =>
       include: {
         category: { select: { name: true, slug: true } },
         subCategory: { select: { name: true } },
+        // `heroImageStrategy` is selected so the public renderer can fall
+        // back to the procedural card whenever image-verification rejected
+        // the stored photo — the attached Media row's `r2Key` points at a
+        // 404 in that case, so it must not be served.
         hero: {
           select: {
             cloudflareId: true,
@@ -123,7 +127,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
   const tutorial = await loadTutorial(categorySlug, tutorialSlug)
   if (!tutorial) return notFoundMetadata()
-  const heroUrl = mediaUrl(tutorial.hero, 'hero')
+  const heroUrl = tutorialHeroUrl(tutorial, 'hero')
   const authorName = tutorial.creator?.name ?? tutorial.creator?.displayHandle ?? 'Homemade Editorial'
   const description =
     tutorial.excerpt
@@ -181,7 +185,7 @@ export default async function TutorialPage({ params }: PageProps) {
 
   const body = tutorial.body as TipTapNode | null
   const refs = await loadContentRefs(body, tutorial.id)
-  const heroUrl = mediaUrl(tutorial.hero, 'hero')
+  const heroUrl = tutorialHeroUrl(tutorial, 'hero')
   const beginnerMode = currentUser?.beginnerMode === true
 
   // Fire-and-forget pageview analytics. Anonymous readers get a stable

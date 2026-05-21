@@ -6,7 +6,7 @@ import { TutorialCard } from '@/components/public/tutorial-card'
 import { RecentlyMadeRail } from '@/components/public/recently-made-rail'
 import { Breadcrumbs } from '@/components/public/breadcrumbs'
 import { JsonLd } from '@/components/seo/json-ld'
-import { mediaSrcSet } from '@/lib/media'
+import { tutorialHeroSrc } from '@/lib/tutorial-hero'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { loadRecentlyMade } from '@/lib/recently-made'
 import {
@@ -132,6 +132,10 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
         subCategoryId: true,
         requiresKiln: true,
         requiresWheel: true,
+        // `heroImageStrategy` keeps the card off any Media row whose photo
+        // was rejected by image-verification — those rows still carry an
+        // `r2Key`, but it points at a deleted object that 404s.
+        heroImageStrategy: true,
         hero: { select: { cloudflareId: true, r2Key: true } },
       },
     }),
@@ -267,15 +271,15 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
               )}
               <div className="category-grid">
                 {items.map((t) => {
-                  const card = mediaSrcSet(t.hero, 'card', ['public'])
+                  const card = tutorialHeroSrc(t, 'card', ['public'])
                   return (
                     <TutorialCard
                       key={t.id}
                       href={`/${category.slug}/${t.slug}`}
                       title={t.title}
                       excerpt={t.excerpt}
-                      heroUrl={card?.src ?? null}
-                      heroSrcSet={card?.srcSet}
+                      heroUrl={card.src}
+                      heroSrcSet={card.srcSet}
                       difficulty={t.difficulty}
                       season={t.season}
                       requiresKiln={t.requiresKiln}
