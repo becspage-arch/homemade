@@ -1,0 +1,99 @@
+{
+  "slug": "monthly-planner-spread",
+  "title": "Monthly planner spread",
+  "subtitle": "Designing and ruling a two-page monthly calendar spread by hand",
+  "excerpt": "A hand-ruled monthly spread can be completed in under 15 minutes per month and is far more flexible than any printed planner: the layout adapts to the month's actual day count, and the grid can be sized to match how much you write per day. This tutorial covers the layout mathematics, the ruling sequence, and header styles for each month.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "journalling-craft",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Widely-practised bullet journal and planner technique, synthesised from Ryder Carroll, The Bullet Journal Method (2018, Fourth Estate), chapter on monthly logs, and standard hand-lettered planner design practice.",
+  "recipeTools": [
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "light-box-a4", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "grid-spread",
+      "term": "Grid spread",
+      "definition": "A two-page journal layout in which a rectangular grid of equal cells represents the days of the month. Each cell holds one day's entry."
+    },
+    {
+      "slug": "tracker-column",
+      "term": "Tracker column",
+      "definition": "A vertical or horizontal column beside the day-grid that records a repeated daily habit with a small mark, filled circle, tick, or colour, rather than written text."
+    }
+  ],
+  "aliases": [
+    "bullet journal monthly spread",
+    "monthly calendar journal",
+    "hand-drawn planner"
+  ],
+  "techniqueSlugs": ["monthly-planner-spread"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A two-page A5 " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "grid-spread" } }], "text": "grid spread" },
+          { "type": "text", "text": " for a 31-day month needs 31 cells: one common layout is a 7-column, 5-row grid (35 cells) with the unused cells at the end filled differently or left blank. A 5-column, 7-row grid works better for months with 31 days written vertically. Choose before ruling." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Layout mathematics" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A5 page interior (excluding margins) is about 130 mm wide × 180 mm tall. For a 7-column grid, each column is about 18 mm wide; for a 5-column grid, 26 mm wide. Each row at 5 rows is 36 mm tall; at 7 rows, 25 mm tall. Choose the layout that gives the cell size you actually need for your daily entries, if you write a lot, 36 mm rows are better; for brief notes, 25 mm rows are sufficient." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ruling the grid" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mark the top-left corner of the grid and the bottom-right corner with a pencil dot. Mark all column positions along the top edge and all row positions along the left edge. Rule horizontal lines across the full grid width, then vertical lines across the full grid height. Use a light pencil line for the interior grid; rule over the pencil with a pen once the positions are confirmed. Leave the outermost border lines in pen only, no pencil under the border, as erasing close to finished ruled lines smears." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Adding day numbers and headers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Write the day number in the top-left corner of each cell in a small, consistent style. The day of the week can go below the number in a lighter script. Add a month header above the grid at the top of the left page, this is the most visible decorative element and rewards a calligraphic treatment. Keep it to one or two lines: month name, then year. Don't add more than one decorative detail: a single drawn element (a small botanical motif, a simple geometric rule) reads cleanly across both pages." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tracker column" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Reserve a strip of 25 mm on the right margin of the right page for a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tracker-column" } }], "text": "tracker column" },
+          { "type": "text", "text": ": a vertical column of 31 small circles or squares, one per day, with a label at the top. Each circle is filled when the habit is completed. Limit to two or three tracker columns at most, more than three is visually cluttered and harder to maintain." }
+        ]
+      }
+    ]
+  }
+}

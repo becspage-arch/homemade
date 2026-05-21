@@ -1,0 +1,133 @@
+{
+  "slug": "case-making-for-hardcover",
+  "title": "Case-making for a hardcover book",
+  "subtitle": "Cutting and covering boards to make the hard shell before casing in",
+  "excerpt": "Case-making is the step that separates a hard-cover book from a soft one. The case is built independently of the text block: boards are cut, hinged with a spine piece, covered in cloth or paper, and left to dry before the text block is glued inside.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on making the case. Internet Archive, archive.org/details/bookbindingandca00cock. Proportions and turn-in dimensions follow Cockerell's instructions for cased bindings.",
+  "recipeTools": [
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "book-cloth", "isOptional": false },
+    { "slug": "endpaper-stock", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "bone-folder-teflon", "isOptional": true },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "spine-liner",
+      "term": "Spine liner",
+      "definition": "A strip of card or stiff paper glued to the inside of the spine panel of a case, giving it rigidity and preventing the cloth from sagging between the boards when the book opens."
+    },
+    {
+      "slug": "square",
+      "term": "Square (bookbinding)",
+      "definition": "The amount by which the boards of a case extend beyond the text block at head, tail, and foredge, typically 3 mm on each edge."
+    }
+  ],
+  "aliases": [
+    "making a book case",
+    "hardcover case binding",
+    "cased book boards"
+  ],
+  "techniqueSlugs": ["case-making-for-hardcover"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Case-making is its own session, completed before the text block goes in. The advantage is that a well-made case can be left to cure properly and examined before committing to the paste-down; a poorly covered board can be stripped and re-covered without risk to the book inside. This tutorial covers a single-material full-cloth case." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials for one A5 full-cloth case",
+          "items": [
+            { "name": "Bookbinding board, 2 mm", "qty": "Two pieces: text-block height + 6 mm × text-block width + 3 mm each" },
+            { "name": "Book cloth (buckram or starched cotton)", "qty": "One piece: board height + 40 mm × (two board widths + spine thickness + 6 mm joint gaps + 40 mm)" },
+            { "name": "Spine liner card (thin)", "qty": "One strip: board height + 2 mm × spine thickness exactly" },
+            { "name": "Acid-free PVA", "qty": "Small quantity" },
+            { "name": "Bone folder", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Mark up the cloth" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "On the reverse of the cloth, mark the positions of the two boards and the spine liner with a pencil. The boards sit 20 mm in from each short edge (the turn-in allowance). Between the two board positions leave a gap equal to the spine thickness plus 6 mm, 3 mm each side for the hinge joint. The spine liner strip fills this gap exactly. Write 'head' on the top edge in pencil so the grain direction stays consistent when you flip the cloth to paste." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Paste and set the boards" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Brush a thin even coat of PVA over the back of one board. Lay it onto the cloth at the marked position, press down firmly, and bone-fold across it from the centre outward to remove air pockets. Repeat for the second board. Glue the spine liner into its central position. Leave 2 minutes for the PVA to become tacky, then bone-fold firmly across all three pieces once more." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fold the turn-ins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work the long edges first. Brush PVA onto the 20 mm cloth margin at one long edge, fold over onto the board, and bone-fold from the spine outward to the corners. At the corners, mitre by cutting at 45° leaving a 1.5 mm gap from the board corner, then fold the short edge turn-in over. The two mitre flaps should butt neatly against each other without overlapping. Repeat at all four corners, then fold the remaining short-edge turn-ins. Bone-fold all turn-ins firmly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Press and cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place the case between two clean flat boards and press under several kilograms of weight for at least 2 hours, preferably overnight. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "square" } }], "text": "square" },
+          { "type": "text", "text": " (the board overhang beyond the text block at head, tail, and foredge) should be even: 3 mm on a standard A5 case. Check once you know the actual text-block dimensions and adjust the board cut if needed before the case cures." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "Board bows inward (dishes) after drying", "cause": "The wet PVA on the cloth side pulls the board into a concave curve as it dries", "fix": "Press hard under weight on both sides alternately while still damp; the boards usually relax flat. Serious bowing: paste a similar-weight paper to the inside face of each board as a balancing layer." },
+            { "problem": "Corner mitres gap or overlap", "cause": "The 45° cut was too close to (overlap) or too far from (gap) the board corner", "fix": "Trim or patch with a small triangle of cloth. For future cases, leave exactly 1.5 mm between the mitre cut and the board corner." },
+            { "problem": "Cloth stretches unevenly across the boards", "cause": "PVA was applied too wet; cloth expanded before setting", "fix": "Allow PVA to tack up for 30 seconds before setting the boards. Bone-fold from the spine out to avoid dragging." }
+          ]
+        }
+      }
+    ]
+  }
+}

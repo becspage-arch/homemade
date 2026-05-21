@@ -1,0 +1,135 @@
+{
+  "slug": "hollow-back-binding",
+  "title": "Hollow-back binding",
+  "subtitle": "A case-bound structure with a detached spine that opens flat",
+  "excerpt": "In a hollow-back binding the spine cloth is not glued directly to the sewn signatures; instead it forms a tube over the spine. The text block can rotate inside the case as the book opens, so the book lies flat without straining the glue joins. The structure is used for large, heavy, or frequently referenced books.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on hollow-back bindings. Internet Archive, archive.org/details/bookbindingandca00cock. The three-layer hollow tube construction follows Cockerell's description.",
+  "recipeTools": [
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "book-cloth", "isOptional": false },
+    { "slug": "endpaper-stock", "isOptional": false },
+    { "slug": "cartridge-paper-220", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-awl", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "hollow-back",
+      "term": "Hollow back",
+      "definition": "A binding structure in which the spine covering is not glued to the text block; a paper tube bridges the gap between the two, allowing the spine to bow outward as the book opens flat."
+    },
+    {
+      "slug": "mull",
+      "term": "Mull",
+      "definition": "An open-weave gauze glued to the spine of a sewn text block to distribute the stress of opening across the first and last signatures."
+    }
+  ],
+  "aliases": [
+    "loose-back binding",
+    "French groove binding",
+    "tube-spine bookbinding"
+  ],
+  "techniqueSlugs": ["hollow-back-binding", "case-making-for-hardcover"],
+  "criticalTechniques": ["case-making-for-hardcover"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hollow-back" } }], "text": "hollow-back" },
+          { "type": "text", "text": " binding looks identical to a tight-back case-bound book from the outside, but behaves very differently: the spine can arch away from the text block as the book opens, so the pages lie genuinely flat without the reader holding them down. This tutorial builds a hollow-back A5 journal with a three-layer paper tube spine inside a full cloth case." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials for one A5 hollow-back journal",
+          "items": [
+            { "name": "Sewn and glued text block, A5", "qty": "Already complete from a previous sewing session" },
+            { "name": "Mull (open-weave gauze) or kraft-paper strips", "qty": "One piece: spine length × (spine width + 40 mm)" },
+            { "name": "Cartridge paper, 220 gsm, for the hollow tube", "qty": "Three strips: each spine length × (spine width × 3)" },
+            { "name": "Bookbinding board, 2 mm", "qty": "Two boards cut to case dimensions" },
+            { "name": "Book cloth", "qty": "Case-size piece" },
+            { "name": "Acid-free PVA", "qty": "Small quantity" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Glue the mull and liner" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fan the text block open slightly and brush dilute PVA into the spine. Lay the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mull" } }], "text": "mull" },
+          { "type": "text", "text": " strip onto the spine, centred, with 20 mm overlapping each side of the spine onto the first and last signatures. Smooth from the spine outward, press firmly, and dry under weight. Once dry, add a thin kraft-paper or cartridge-paper liner over the mull to stiffen the spine slightly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Build the hollow tube" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut three strips of 220 gsm cartridge, each the length of the spine and three times the spine width. Fold the first strip around the spine as a close-fitting tube: fold it into thirds lengthways so it wraps the spine exactly. Glue the tube closed with PVA, but do not glue the tube to the spine itself, the tube is loose-fit. Slide the tube over the spine; it should rotate slightly when the book flexes open. Reinforce the tube with a second and third paper wrap, each glued only to the previous layer, not to the text block." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make and attach the case" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Build a standard full-cloth case as described in the case-making tutorial, but use the outer diameter of the hollow tube as the spine thickness measurement. When the case is cured, glue the tube to the inside of the case spine using a thin coat of PVA on the outer surface of the tube; the text block stays unglued to the case. Paste down the endpapers against the boards in the usual way." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Test the opening action" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Open the book to the centre: the spine should bow outward smoothly and the pages should lie completely flat. If the pages still dome, the tube is too tight; make the next tube with a slightly larger circumference. If the spine wrinkles or the tube collapses, it is too thin; add one more paper layer." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The hollow-back structure suits sketchbooks and reference notebooks that will be opened thousands of times. It also suits any book that is heavy enough to pull tight-back bindings open by its own weight. Sewing on raised cords and allowing the cord ends to extend onto the boards before covering gives the spine a traditional ribbed appearance without affecting the hollow-back action." }
+        ]
+      }
+    ]
+  }
+}

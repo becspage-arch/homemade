@@ -1,0 +1,100 @@
+{
+  "slug": "italic-joined-letterforms",
+  "title": "Italic joined letterforms",
+  "subtitle": "Linking letters in formal italic with exit strokes and entry joins",
+  "excerpt": "Formal italic calligraphy is normally written with letters unjoined. This tutorial introduces the joins: the exit stroke angles, the hairline connectors, and the letters that resist joining because their endings are incompatible with flowing entry strokes. The result is a semiformal italic that moves faster and reads more warmly than a fully separated hand.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Tom Gourdie, Italic Handwriting (1955, Studio Vista). Gourdie's formal italic method documents the joining strokes for each letter family. Also draws on Edward Johnston, Writing and Illuminating and Lettering (1906, public domain), appendix on joined italic.",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "walnut-ink", "isOptional": false },
+    { "slug": "iron-gall-ink", "isOptional": true },
+    { "slug": "light-box-a4", "isOptional": true },
+    { "slug": "tracing-paper", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "exit-stroke",
+      "term": "Exit stroke",
+      "definition": "The final hairline or thin stroke that leaves a letter at its base, angling upward toward the baseline of the next letter. In italic, exit strokes rise at roughly 45° and invite the next letter to begin from their tip."
+    },
+    {
+      "slug": "entry-join",
+      "term": "Entry join",
+      "definition": "The point at which an exit stroke from one letter connects to the beginning of the next. In formal italic, the join must be a hairline, any broadening at the join point indicates the nib angle shifted."
+    }
+  ],
+  "aliases": [
+    "joined italic calligraphy",
+    "italic cursive calligraphy",
+    "connected formal italic"
+  ],
+  "techniqueSlugs": ["italic-joined-letterforms"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Italic calligraphy is usually taught as a separated hand; joins are introduced once the individual letterforms are stable. The key to clean joins is the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "exit-stroke" } }], "text": "exit stroke" },
+          { "type": "text", "text": ": a hairline that leaves the letter base at 45° and sets the angle for the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "entry-join" } }], "text": "entry join" },
+          { "type": "text", "text": " into the next letter. If the exit stroke is wrong, too steep, too flat, or too thick, the join will look forced." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Before you add joins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Before trying to join letters, confirm that your separated italic is consistent: the branching arch of n, m, h, and u should spring from the same height every time, and the exit stroke on every letter that has one should rise at the same angle. Trace your practice work with tracing paper against a guide sheet and compare the arch heights. Joins will not look right if the underlying letterforms are not first consistent." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Letters that join naturally" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Most lowercase letters have natural exit strokes that can be extended to reach the next letter: a, d, e, h, i, k, l, m, n, r, t, u. Practice each pair: a-n, e-n, i-n, r-u. The join is simply the extension of the exit stroke into the entry of the following letter. The exit hairline touches the x-height line of the next letter at the start of its entry arch." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Letters that resist joining" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Some letters end in a way that makes joining awkward: b, g, j, p, q, s, x, y, z. These letters are conventionally left unjoined in formal italic, a small gap before and after them is correct, not an error. In semiformal and informal italic, b connects via an arch that pushes forward and down; g and y connect to the next letter from their descender exit if you choose to. Don't force joins on resistant letters: it produces awkward cramping." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Rhythm check" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Write the sentence \"minimum\" fully joined: it uses only minims, arches, and exit strokes. The diagonal joins should form consistent parallel diagonals. Then write \"minimum number\" and check that the interword spacing equals roughly one n-width. If the joins produce crowded-looking text, open the exit stroke angle slightly from 45° to 50°; this gives more horizontal space between letters." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "typewriter-aesthetic-zine",
+  "title": "Typewriter-aesthetic zine",
+  "subtitle": "Making a hand-assembled 8-page zine with a typewriter or monospaced text look",
+  "excerpt": "The typewriter zine is a single folded sheet trimmed into an 8-page booklet: all the pages come from one A3 or A4 sheet, and the binding is a single staple or saddle stitch at the spine. The typewriter aesthetic, monospaced or hand-lettered text, irregular spacing, cut-and-paste layout, is as much a production ethic as a visual style.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "zines",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Self-publishing tradition documented in Teal Triggs, Fanzines (2010, Thames and Hudson), chapter on construction methods. The 8-page single-sheet fold-and-cut binding is the standard zine construction used since the 1970s photocopier era.",
+  "recipeTools": [
+    { "slug": "cartridge-paper-90", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": true },
+    { "slug": "bookbinding-thread-linen", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "8-page-imposition",
+      "term": "8-page imposition",
+      "definition": "The arrangement of eight pages on a single sheet so that when the sheet is folded and cut, the pages appear in the correct reading order. A standard technique in bookbinding and printing."
+    },
+    {
+      "slug": "saddle-stitch-zine",
+      "term": "Saddle stitch (zine)",
+      "definition": "Binding the folded zine by passing thread through the centrefold from outside to inside, creating two or three stitches that hold the pages together. The alternative to stapling."
+    }
+  ],
+  "aliases": [
+    "single sheet zine",
+    "one-page zine",
+    "mini book zine"
+  ],
+  "techniqueSlugs": ["typewriter-aesthetic-zine"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The complete 8-page zine starts as a single A4 sheet. Understanding the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "8-page-imposition" } }], "text": "8-page imposition" },
+          { "type": "text", "text": ", where each page lands on the unfolded sheet, is the only technical skill required. Everything else is layout and typography." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The fold and cut" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fold an A4 sheet in half along the long axis (landscape fold). Then fold in half again (bringing the short edges together). Then fold in half once more. Unfold completely. You now have a grid of eight rectangles. Make one cut: with the sheet folded in half along the long axis only, cut along the centre fold from the left edge to the centre point. Refold along the long axis, then the short axis. The sheet should now stand open in a cross shape. Push both short ends together to form a booklet. Flatten and crease all folds with the bone folder." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The imposition diagram" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "To fill in the pages correctly before printing or writing, number a dummy copy first. Make the zine from a scrap sheet, number each panel 1-8 in reading order, then unfold: note which panel is in which position on the flat sheet. Pages 1 and 8 share one rectangle (front cover and back cover); pages 2 and 7 share another, and so on. The centre spread (pages 4 and 5) is the only two-page spread that reads across the full width of a rectangle without a fold interrupt." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Typewriter aesthetic" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The typewriter aesthetic relies on: monospaced or hand-lettered text (irregular character spacing, visible corrections, deliberate gaps), cut-and-pasted elements (clippings, typed text stuck down with marks showing), and a single photocopy or mimeo look (not digitally clean). To achieve this by hand: write all text with a fixed-width pen or brush, cut any images to irregular shapes and paste to the page, leave some corrections visible rather than erasing them." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Binding" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two staples at the spine fold is the standard zine binding. For a hand-sewn finish, use the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saddle-stitch-zine" } }], "text": "saddle stitch" },
+          { "type": "text", "text": ": open the zine flat to the centrefold. Pierce three holes through the fold (top, middle, bottom). Thread a needle with 40 cm of linen thread. Enter from outside at the middle hole, exit at the top, return to outside through the top, enter the bottom hole, exit inside, and re-enter the middle hole. Tie off and trim. The visible stitched spine is a visual feature of hand-made zines." }
+        ]
+      }
+    ]
+  }
+}

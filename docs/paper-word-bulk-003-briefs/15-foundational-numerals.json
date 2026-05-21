@@ -1,0 +1,92 @@
+{
+  "slug": "foundational-numerals",
+  "title": "Foundational hand numerals",
+  "subtitle": "Writing 0-9 in the broad-edge pen tradition",
+  "excerpt": "Numerals are often the last thing taught in calligraphy, and frequently the least practised, most learners focus on the alphabet and write numbers inconsistently. This tutorial covers the construction of each digit in the foundational hand tradition, with attention to the proportions and stroke sequences that differ from how we write numbers day-to-day.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Margaret Shepherd, Learn Calligraphy (2001, Broadway Books), numerals chapter. The proportions follow Edward Johnston's foundational numerals as published in Writing and Illuminating and Lettering (1906, public domain).",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "iron-gall-ink", "isOptional": false },
+    { "slug": "light-box-a4", "isOptional": true },
+    { "slug": "tracing-paper", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "lining-numerals",
+      "term": "Lining numerals",
+      "definition": "Numerals that are all the same height and sit on the baseline, also called ranging numerals. The style used in most modern printed text."
+    },
+    {
+      "slug": "oldstyle-numerals",
+      "term": "Old-style numerals",
+      "definition": "Numerals with ascenders and descenders, historically used in calligraphic and early-print traditions. 3, 4, 5, 7, and 9 descend below the baseline; 6 and 8 have ascenders. They sit more naturally within lowercase text than lining numerals."
+    }
+  ],
+  "aliases": [
+    "calligraphy numbers",
+    "broad-edge numerals",
+    "foundational hand 0-9"
+  ],
+  "techniqueSlugs": ["foundational-numerals"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The broad-edge nib handles numerals in exactly the same way as letters: every stroke is built from the same four basic moves (downstroke, cross-stroke, arch, and curve). Both " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lining-numerals" } }], "text": "lining numerals" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "oldstyle-numerals" } }], "text": "old-style numerals" },
+          { "type": "text", "text": " are covered here; choose the style that fits the piece you are working on." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Set up the guide sheet for numerals" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lining numerals sit at cap-height, typically six to seven nib-widths. Use the same nib-staircase method as for the alphabet: mark six nib-width squares stacked up, and that is your numeral height. For old-style numerals, add a descender zone of three nib-widths below the baseline." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Stroke sequences" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "0: One continuous oval stroke, beginning at the top and going left and down; close the oval at the top. 1: A single downstroke with a small diagonal entry stroke at the top. 2: Begin with a curve from 2 o'clock down to the right, flatten into a horizontal baseline stroke to the right. 3: Two separate arcs, the upper smaller; keep the join point centred on the stem. 4: A diagonal downstroke from top-right to the midpoint, then a horizontal cross-stroke, then a vertical down from the top of the diagonal. 5: Horizontal top, then a curved lower bowl going right, then finish with a horizontal top return. 6: A curve down from the top, sweeping into a full lower oval. 7: A top horizontal, then a diagonal down to the right. 8: Two stacked ovals, the lower slightly larger. 9: An upper oval closed from inside, then a descender stroke down." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "3 looks like a backwards E", "cause": "The two arcs are too flat and too parallel", "fix": "Make the two arcs tighter curves, and let the lower arc be larger than the upper. The join point should be sharp and centred, not a flat horizontal." },
+            { "problem": "5 looks like an S", "cause": "The top horizontal was too short and the bowl was too round at the bottom-right", "fix": "The top of a 5 is a flat horizontal; the bowl opens to the right and closes at the bottom with the bowl sitting square. Don't curve the top." },
+            { "problem": "Numerals too narrow compared to the letters", "cause": "Calligraphers often write numerals at letter width, but numerals are conventionally wider, typically the same width as a capital O", "fix": "Write a capital O first and match each numeral's width to it." }
+          ]
+        }
+      }
+    ]
+  }
+}

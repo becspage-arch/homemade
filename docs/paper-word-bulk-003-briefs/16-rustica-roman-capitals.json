@@ -1,0 +1,101 @@
+{
+  "slug": "rustica-roman-capitals",
+  "title": "Rustica Roman capitals",
+  "subtitle": "Writing the compressed display capitals of the Roman rustic hand",
+  "excerpt": "Rustica is a compressed, slightly condensed form of Roman capitals used for headings and emphasis in classical manuscripts. Its characteristic features are a nib angle near vertical, tightly compressed letterforms, and small diagonal serifs. It pairs well with a broader-spaced Foundational or Italic minuscule body text.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edward Johnston, Writing and Illuminating and Lettering (1906, John Hogg), chapter on Roman rustic writing. Public domain via Project Gutenberg. Johnston's analysis of the Palatinus manuscript (Vienna, 5th century) is the basis for the nib-angle and proportion analysis used here.",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-0", "isOptional": false },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "cartridge-paper-220", "isOptional": false },
+    { "slug": "iron-gall-ink", "isOptional": false },
+    { "slug": "calligraphy-gouache", "isOptional": true },
+    { "slug": "light-box-a4", "isOptional": true },
+    { "slug": "tracing-paper", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rustica",
+      "term": "Rustica",
+      "definition": "A compressed Roman capital hand used for book headings and titles in late antique and early medieval manuscripts. Written with the nib held nearly vertical, producing unusually thick horizontals relative to the verticals."
+    },
+    {
+      "slug": "compressed-letterform",
+      "term": "Compressed letterform",
+      "definition": "A letter whose width is proportionally narrower than the classical Roman standard. Rustica capitals are roughly half the width of the equivalent Roman square capital."
+    }
+  ],
+  "aliases": [
+    "Roman rustic script",
+    "rustica capitals calligraphy",
+    "compressed Roman display hand"
+  ],
+  "techniqueSlugs": ["rustica-roman-capitals"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The distinguishing mark of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rustica" } }], "text": "Rustica" },
+          { "type": "text", "text": " is a nib angle near 70-75° from the horizontal (nearly upright), which means the strokes that are thick in other scripts are thin here, and vice versa. The thick strokes in Rustica are horizontal; the vertical strokes are thin. This creates the unusual look of a compressed, energetic letter that reads quickly even at small scale." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Set up the guide sheet" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rustica capitals are written at 4-5 nib-widths in height, which is lower than Roman square capitals. Use the Mitchell 0 (broadest nib) and stack four nib-width squares; this is your cap-height. The letters sit between the baseline and cap-height with no descenders. No ascender zone is needed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The steep nib angle" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rotate your pen holder so the nib faces nearly upward: the nib edge should make about a 70° angle with the baseline. Write a straight horizontal stroke first to feel the thick result. Then write a vertical: it will be distinctly thinner than the horizontal. This is the reverse of what you're used to from most broad-edge scripts. Keep the angle fixed throughout; don't rotate back to a lower angle on the curved strokes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The compressed width" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Each " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "compressed-letterform" } }], "text": "compressed" },
+          { "type": "text", "text": " Rustica capital is roughly half as wide as it is tall. An O is an upright oval, not a circle. An M has steeply angled strokes that barely spread at the bottom. Practice the letters in this order: O (the oval), C, G, D (built from O), then A, V, N, M, the arch letters (R, B, P), and finally the straight letter families (E, F, L, H, I, T, K, X, Y, Z)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Serifs and terminals" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rustica serifs are small diagonal entry strokes at the head of vertical stems, written before the main stroke, angling from lower-left to upper-right. The exit terminal on vertical stems is a simple hairline kick to the right. Keep the serifs uniform in size: they should be no more than one nib-width long. Avoid adding hairline swashes, they belong to later calligraphic traditions, not Rustica." }
+        ]
+      }
+    ]
+  }
+}

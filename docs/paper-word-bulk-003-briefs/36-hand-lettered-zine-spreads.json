@@ -1,0 +1,101 @@
+{
+  "slug": "hand-lettered-zine-spreads",
+  "title": "Hand-lettered zine spreads",
+  "subtitle": "Designing and laying out zine page spreads using hand lettering",
+  "excerpt": "A hand-lettered zine has a visual character that photocopied or digital text cannot replicate: the slight variation in each letter, the tension between careful construction and spontaneous mark-making. This tutorial covers text hierarchy in a small format, how to fit a hand-lettered spread to the zine's tiny page size, and how to combine headline lettering with body text efficiently.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "zines",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Broad self-publishing technique, synthesised from Teal Triggs, Fanzines (2010, Thames and Hudson), lettering appendix, and standard hand-lettering practice as documented in Showit Studios, The Hand Lettering Workbook (2016).",
+  "recipeTools": [
+    { "slug": "cartridge-paper-90", "isOptional": false },
+    { "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "iron-gall-ink", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "text-hierarchy",
+      "term": "Text hierarchy",
+      "definition": "The visual ordering of text elements from most important (largest, boldest, most decorative) to least important (smallest, lightest). A zine typically uses three levels: headline, standfirst, and body text."
+    },
+    {
+      "slug": "dummy-copy",
+      "term": "Dummy copy",
+      "definition": "Placeholder text or marks used to plan the layout before writing the final lettering. In zine design, a dummy is made from a folded scrap sheet with rectangles marking where each text block will sit."
+    }
+  ],
+  "aliases": [
+    "hand lettered zine",
+    "lettered mini book",
+    "zine lettering layout"
+  ],
+  "techniqueSlugs": ["hand-lettered-zine-spreads"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A zine page is small, half an A5 sheet, roughly 74 × 105 mm, which means crowding happens immediately if the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "text-hierarchy" } }], "text": "text hierarchy" },
+          { "type": "text", "text": " is not clear. The three elements, headline, standfirst, and body, must have distinct sizes. In a small format, this means: headline at 8-10 mm x-height, standfirst at 4 mm x-height, body text at 2 mm x-height." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make a dummy first" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fold a scrap sheet into a zine. On each page, draw a rectangle showing where the text block will sit, leaving at least 8 mm margins on all sides. Block in the headline with a solid rectangle; block the standfirst and body as line areas. This " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dummy-copy" } }], "text": "dummy" },
+          { "type": "text", "text": " shows whether the content fits before you commit any lettering to the final paper." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Headline lettering" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Choose one calligraphic style for the headlines throughout the zine: consistency makes the whole thing feel coherent. A simple Foundational hand at 8 mm x-height reads clearly on a small page. Keep headlines short, two to five words at most. Work on the full-size sheet before folding; a folded sheet is hard to letter on because the fold creates an uneven surface." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Body text for small formats" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Body text at 2 mm x-height requires either a very fine nib or a small fineliner pen. A Mitchell Roundhand size 6 (finest) gives a 2 mm body at a standard 5-nib-width x-height. Rule guide lines lightly in pencil, write the text, then erase the guides once the ink is dry. Keep line spacing to 1.5× the x-height minimum, smaller line spacing makes small body text illegible." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Illustration and white space" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The most common hand-lettered zine mistake is filling every page with text. Leave at least one spread as predominantly white space with only a single short headline. This rest page gives the eye a break and makes the text-heavy pages more readable. A small line illustration (3-4 cm square), cut and pasted from a separate sheet, gives a rough-paste visual that suits the hand-made aesthetic." }
+        ]
+      }
+    ]
+  }
+}

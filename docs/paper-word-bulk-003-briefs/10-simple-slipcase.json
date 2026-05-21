@@ -1,0 +1,119 @@
+{
+  "slug": "simple-slipcase",
+  "title": "Simple slipcase",
+  "subtitle": "A three-sided box that protects a book from dust and light",
+  "excerpt": "A slipcase is a box open on one side from which a book can be drawn. It protects the spine, boards, and foredge from dust, UV, and handling damage. This tutorial builds a cloth-covered slipcase sized to an existing book, using card and book cloth with no specialist tools.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Arthur Johnson, The Thames and Hudson Manual of Bookbinding (1978), chapter on slipcases and boxes. The three-panel mitre construction follows Johnson's instructions for an open-spine slipcase.",
+  "recipeTools": [
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "book-cloth", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "bookbinding-board-3mm", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "slipcase",
+      "term": "Slipcase",
+      "definition": "A rigid three-sided or four-sided box open at one end (usually the spine or foredge) that a book slides into for storage and protection."
+    },
+    {
+      "slug": "capping-piece",
+      "term": "Capping piece",
+      "definition": "The inner card or board strip glued inside the open end of a slipcase to reinforce the mouth and prevent the flap walls from splaying open."
+    }
+  ],
+  "aliases": [
+    "book slipcase",
+    "clamshell box",
+    "protective book box"
+  ],
+  "techniqueSlugs": ["simple-slipcase"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A well-fitted " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "slipcase" } }], "text": "slipcase" },
+          { "type": "text", "text": " should be snug enough to hold the book firmly but loose enough to draw out with one hand. The book opens from the front of the case, spine facing outward so the title is readable on the shelf. This construction uses five pieces of 2 mm board: top, base, back, and two sides." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials for one A5-book slipcase",
+          "items": [
+            { "name": "Bookbinding board, 2 mm", "qty": "Enough to cut five panels: measure your book's height, width, and thickness before cutting" },
+            { "name": "Book cloth", "qty": "Enough to wrap the entire exterior plus turn-ins, roughly (board height + 40 mm) × (case perimeter + 40 mm)" },
+            { "name": "Thin card (cereal-box weight), for inner lining", "qty": "Two strips, each the inner dimensions of the two open panels, to line the interior" },
+            { "name": "Acid-free PVA", "qty": "Small quantity" },
+            { "name": "Bone folder", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Measure and cut the panels" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Measure the book: height (H), width (W), and depth at the spine (D). Add 3 mm to each dimension for clearance inside the case. Cut five panels from 2 mm board: two side panels at H × D; one top panel at H × W; one base panel at H × W; one back panel at (W + 4 mm) × (D + 4 mm). The back panel is slightly larger because it will sit outside the assembled sides and top/base." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Assemble the box" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Apply PVA to the long edge of one side panel and press it flat against the top panel at 90°. Hold firmly until it grips (about 30 seconds), then tape the corner on the outside to hold while curing. Repeat for the base and second side. Finally glue the back panel flush over the back edges of the four assembled walls. Square the box by checking all corners with a set-square before leaving to cure for 20 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cover with cloth" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut a single piece of book cloth large enough to wrap around the three outer walls of the case (top, back, and base) with 20 mm turn-ins at the open end and both outer edges. Brush PVA onto the outside of the case and roll the cloth on, smoothing out air bubbles toward the edges. Fold and glue the turn-ins, mitring the corners. Add a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "capping-piece" } }], "text": "capping piece" },
+          { "type": "text", "text": " of thin card inside each open side wall, covering the raw board edge and the turn-in fold." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Test the fit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Slide the book in: it should be snug but not forced. If the book sticks, check that no cloth fold is proud inside the corners. If the book rattles, the clearance was too large, line the interior with an additional strip of 0.5 mm card glued flat to the appropriate inner wall." }
+        ]
+      }
+    ]
+  }
+}

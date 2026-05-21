@@ -1,0 +1,100 @@
+{
+  "slug": "letter-spacing-and-rhythm",
+  "title": "Letter spacing and rhythm",
+  "subtitle": "Balancing the white space between letters for even calligraphic text",
+  "excerpt": "Letter spacing in calligraphy is not about measuring the gaps between letters, it is about making the visual weight of the white counter spaces between letters appear equal. This tutorial covers the three spacing situations every calligrapher encounters and shows how to adjust by eye rather than by ruler.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Edward Johnston, Writing and Illuminating and Lettering (1906, John Hogg), chapter on spacing. Public domain. Also draws on Hermann Zapf, Manuale Typographicum (1954), the typographic analogue for optical spacing principles.",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "iron-gall-ink", "isOptional": false },
+    { "slug": "light-box-a4", "isOptional": true },
+    { "slug": "tracing-paper", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "counter-space",
+      "term": "Counter space",
+      "definition": "The enclosed or partially enclosed white area inside a letterform, the hole in an 'o', the arch of an 'n'. Counter spaces define how much white to put between letters."
+    },
+    {
+      "slug": "optical-spacing",
+      "term": "Optical spacing",
+      "definition": "Spacing set by visual judgment rather than by physical measurement. Two letters with open sides (such as r and n) require a smaller physical gap than two letters with vertical sides (such as n and n) to appear equally spaced."
+    }
+  ],
+  "aliases": [
+    "calligraphy spacing",
+    "letter spacing practice",
+    "visual rhythm calligraphy"
+  ],
+  "techniqueSlugs": ["letter-spacing-and-rhythm"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Well-spaced calligraphy has the same amount of visual white space between each pair of adjacent letters, regardless of whether those letters are round, straight-sided, or open-ended. This is " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "optical-spacing" } }], "text": "optical spacing" },
+          { "type": "text", "text": ", and it requires making different physical gaps depending on the letter shapes involved, exactly the opposite of what a ruler would tell you to do." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The three spacing cases" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Between two vertical-sided letters (n-n, h-i): leave a gap of roughly one n-width. Between a vertical-sided and a round letter (n-o, h-o): close the gap by 25% from the n-n standard, because the curved side of the round letter is already receding visually. Between two round letters (o-o): close the gap by 50% from the n-n standard. The actual white areas between the three pairs will look roughly equal to the eye, even though the physical measurements differ." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using the counter space as a reference" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Look at the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "counter-space" } }], "text": "counter space" },
+          { "type": "text", "text": " inside the last letter you wrote. The space you leave before the next letter should look about the same size as that counter. This is the core rule. When practicing, write a row of n letters first: the gaps between them are your spacing standard. Then insert other letters between the n letters and adjust the gaps to match." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Practice exercise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Write the word 'noon' and check: all four inter-letter gaps should look equal, but the physical gaps are different (n-o is tighter than n-n). Then write 'noncombatant' and mark any gaps that look too wide or too narrow. Adjust by reducing the gap before and after the next attempt. Most beginners over-space after letters that have open right sides (r, f, t) and under-space between round letters (c, o, e)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Word and line spacing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Word spacing in calligraphy is conventionally one lowercase 'o' width. Line spacing is set by the ascender and descender zones: typically the total line spacing equals the x-height plus the ascender zone plus the descender zone plus a small gap so ascenders and descenders on adjacent lines don't clash. On a guide sheet, this means the inter-line gap equals roughly half the x-height. Closer lines feel dense and formal; wider lines feel open and informal." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "slug": "bradel-binding",
+  "title": "Bradel binding",
+  "subtitle": "A German-style quarter binding with an exposed paper-covered spine board",
+  "excerpt": "The Bradel binding is a German construction in which the spine board is covered and shaped before the text block is sewn, then the two halves are hinged together with a narrow cloth joint. The structure exposes the spine-board edges on the finished book and suits decorated or marbled paper sides.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Franz Anton Bradel ( to ), whose workshop in Paris originated the style, as documented in Arthur Johnson, The Thames and Hudson Manual of Bookbinding (1978), chapter on Bradel bindings. The step sequence here follows Johnson's description adjusted for a home-studio scale.",
+  "recipeTools": [
+    { "slug": "bookbinding-board-1-5mm", "isOptional": false },
+    { "slug": "book-cloth", "isOptional": false },
+    { "slug": "endpaper-stock", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "book-press", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bradel-spine-board",
+      "term": "Bradel spine board",
+      "definition": "In a Bradel binding, the single board that forms the spine and is covered with paper or cloth before the text block is attached. Its edges are visible on the finished book, giving the characteristic step at the front and back hinges."
+    },
+    {
+      "slug": "french-link-stitch",
+      "term": "French link stitch",
+      "definition": "A sewing pattern in which the thread links adjacent signatures with a backwards loop at each kettle stitch, producing a herringbone pattern on the spine and a tightly consolidated text block without tapes."
+    }
+  ],
+  "aliases": [
+    "Bradel Einband",
+    "half-Bradel binding",
+    "exposed-spine binding"
+  ],
+  "techniqueSlugs": ["bradel-binding", "case-making-for-hardcover"],
+  "criticalTechniques": ["case-making-for-hardcover"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The Bradel binding sits structurally between a pamphlet and a full case-bound book: the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bradel-spine-board" } }], "text": "Bradel spine board" },
+          { "type": "text", "text": " is made and covered first, the text block is sewn through its own signatures, and the two halves are hinged with cloth strips along each joint. The spine edges remain visible as a decorative feature. This is the binding to choose when you want clean mechanical exposure of the construction as part of the aesthetic." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials for one A5 Bradel binding",
+          "items": [
+            { "name": "Bookbinding board, 1.5 mm", "qty": "One spine board (spine width × text-block height) plus two side boards (text-block height + 6 mm × text-block width + 3 mm each)" },
+            { "name": "Book cloth (buckram), for the spine and joint strips", "qty": "Spine board height + 40 mm × spine board width + 80 mm (20 mm cloth overlap onto side boards each side)" },
+            { "name": "Decorative or plain paper, 120 gsm, for the side boards", "qty": "Two pieces: board height + 40 mm × board width + 20 mm" },
+            { "name": "Cartridge paper, 90 gsm, for text-block signatures", "qty": "Eight A4 sheets folded to A5, producing 8 × 8-leaf signatures" },
+            { "name": "Waxed linen thread, 4-cord", "qty": "Approx. 3 m" },
+            { "name": "Acid-free PVA", "qty": "Small quantity" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make and cover the spine board" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut the spine board to exact text-block height by the measured spine width (see step 3 for how to measure). Cover it on the outside face with a strip of book cloth slightly wider than the board, folding the cloth over the two long edges and both short edges. Bone-fold along all creases. The cloth-covered face will be the outer spine; the raw board face faces the text block's spine." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sew the text block" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fold and nest the A5 signatures. Pierce three sewing stations per signature. Sew the signatures together using " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "french-link-stitch" } }], "text": "French link stitch" },
+          { "type": "text", "text": ": the link loop goes backwards around the thread of the previous signature at each kettle stitch, pulling the block tight without tapes. Once all signatures are sewn, glue the spine lightly with dilute PVA, fan open, re-close, and press under boards for 30 minutes. Measure the cured spine thickness, this is the final spine-board width." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Build the two side boards" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut two side boards: each is text-block height plus 6 mm by text-block width plus 3 mm. Cover each with decorative paper, folding 20 mm turn-ins at all four edges, mitring the corners. Do not glue the side boards to the spine board yet, they will be hinged with cloth strips." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Attach the hinge strips" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut two strips of book cloth, each the height of the boards by 60 mm wide. Glue each strip with PVA, then position it so 20 mm overlaps the side board and 10 mm overlaps the spine board, with a 3 mm free gap between board edges to form the hinge groove. Press the hinge strips firmly and leave to cure flat. Once both joints are set, the case opens correctly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Case in the text block" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Open the case flat. Brush PVA onto the raw inner face of the spine board only; lay the text-block spine onto it, centred at head and tail. Close both boards over the text block: they should sit square with an even square on all three edges. Press overnight. Finally, brush PVA onto both endpapers and paste them down against the inside faces of the side boards." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "Hinge groove too tight, boards won't open past 90°", "cause": "The gap between spine board and side board was too small before cloth was applied", "fix": "Score the cloth in the groove with the bone-folder tip to relax the crease; bone-fold repeatedly until the hinge moves freely. For future bindings, leave 4-5 mm gap." },
+            { "problem": "Spine board rocks instead of staying centred on text block", "cause": "PVA applied too wet; board floated before curing", "fix": "Allow PVA to tack for 30 seconds before setting. Press under boards with a shaped spine piece to hold position." }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "slug": "moire-double-combed-marbling",
+  "title": "Moiré double-combed marbling",
+  "subtitle": "Producing an optical wave interference pattern by crossing two fine comb passes",
+  "excerpt": "The moiré pattern in marbling comes from two fine-combed passes at 90° to each other with very closely spaced teeth. Where the two grid patterns cross, they produce an interference effect that creates the characteristic circular or wavy optical illusion. It is among the most technically demanding of the standard carrageenan marbling patterns.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "marbling",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Micha Gold, The Marbling Book (2005, Lark), chapter on advanced combed patterns. Gold's analysis of moiré interference in carrageenan marbling covers the tooth-spacing requirements and colour contrast needed for the optical effect to emerge.",
+  "recipeTools": [
+    { "slug": "carrageenan", "isOptional": false },
+    { "slug": "alum-potash", "isOptional": false },
+    { "slug": "marbling-acrylic-liquid", "isOptional": false },
+    { "slug": "ox-gall", "isOptional": false },
+    { "slug": "marbling-tray", "isOptional": false },
+    { "slug": "marbling-comb", "isOptional": false },
+    { "slug": "eyedropper", "isOptional": false },
+    { "slug": "marbling-paper-alum", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "moire-marbling",
+      "term": "Moiré marbling",
+      "definition": "A carrageenan marbling pattern created by two fine-comb passes at 90° to each other, producing an optical interference wave that gives the impression of circular or hypnotic concentric movement."
+    },
+    {
+      "slug": "tooth-spacing",
+      "term": "Tooth spacing",
+      "definition": "The distance between the teeth of a marbling comb. For moiré, teeth must be at 3-5 mm spacing; wider spacing loses the interference effect; narrower spacing stalls the colour flow."
+    }
+  ],
+  "aliases": [
+    "moire paper marbling",
+    "double-combed marbling",
+    "optical marbling pattern"
+  ],
+  "techniqueSlugs": ["moire-double-combed-marbling"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "moire-marbling" } }], "text": "moiré" },
+          { "type": "text", "text": " effect is a consequence of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tooth-spacing" } }], "text": "tooth spacing" },
+          { "type": "text", "text": " and colour contrast working together. The pattern doesn't display well in low-contrast colour combinations, choose pairs with strong value difference (dark navy and pale cream, or black and gold) to make the optical wave visible." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Comb requirements" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The comb for moiré must have teeth at 3-5 mm spacing, and ideally two combs of exactly the same spacing. A standard fine-toothed marbling comb with pins at 4 mm centres is suitable. If you can only make one comb, make it wide enough to span the full tray width so a single pass combs the entire surface simultaneously." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Colour dropping" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drop colours in tight parallel rows using the eyedropper, starting with the background colour over the entire surface, then the second colour in rows spaced to match the tooth spacing of the comb. The closer and more regular the colour drops, the more even the resulting moiré. Aim for drops no larger than 10 mm across, use more ox-gall than for other patterns to keep the drops small." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The two comb passes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "First pass: draw the fine comb from top to bottom of the tray in a single slow, even movement. The colours will arrange into fine parallel stripes. Second pass: without disturbing the pattern, rotate the tray 90° and draw the comb from the new top to bottom. The second pass crosses the first at right angles. Where the two grid sets intersect, the interference wave appears. Work without hesitation through both passes, pausing mid-pass distorts the regularity and breaks the optical effect." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Lifting and finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lay the mordanted sheet immediately after the second pass, the moiré effect is at its clearest before the pattern drifts. Hold the sheet at one short edge, lower it onto the surface at one end, and let it roll down onto the size from that end rather than pressing both ends simultaneously. This avoids trapping air. Lift, rinse, and dry as for other carrageenan patterns." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "type": "info",
+          "body": "The moiré effect is only visible in the finished dry sheet, not on the wet size. If the first attempt produces only parallel stripes rather than a visible wave, try a higher-contrast colour combination and reduce the tooth spacing to 3 mm."
+        }
+      }
+    ]
+  }
+}
