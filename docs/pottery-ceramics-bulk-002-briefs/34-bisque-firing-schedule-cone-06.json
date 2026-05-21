@@ -1,0 +1,177 @@
+{
+  "slug": "bisque-firing-schedule-cone-06",
+  "title": "Bisque firing schedule: cone 06",
+  "subtitle": "A standard slow-climb firing cycle for low-fire bisqueware at 999°C",
+  "excerpt": "Bisque firing converts bone-dry greenware into a durable, porous bisqueware ready for glazing. Cone 06 is 999°C, the standard low-fire bisque temperature. A controlled slow climb through three key temperature zones prevents cracking, burns off organic material, and completes the quartz inversion safely.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "firing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Bisque firing schedule derived from first principles and standard ceramic practice. Cone temperature reference: Orton Ceramic Foundation cone chart.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": ["stoneware-smooth", "earthenware-red"],
+  "requiredCraftMaterials": [],
+  "recipeTools": [],
+  "recipe": { "foundational": true },
+  "glossaryTerms": [
+    {
+      "slug": "bisque-fire",
+      "term": "Bisque fire",
+      "definition": "The first kiln firing that converts bone-dry greenware into hard, porous bisqueware. Bisqueware can be handled, glazed, and re-fired."
+    },
+    {
+      "slug": "cone",
+      "term": "Cone",
+      "definition": "A temperature measurement unit in ceramics. Cone 06 is approximately 999°C; cone numbers with zero prefix are low-fire; cones without prefix are mid- and high-fire."
+    },
+    {
+      "slug": "quartz-inversion",
+      "term": "Quartz inversion",
+      "definition": "A physical change in silica at approximately 573°C where clay particles rearrange. Rapid temperature change through this point causes cracking. The firing schedule slows at this zone."
+    },
+    {
+      "slug": "greenware",
+      "term": "Greenware",
+      "definition": "Bone-dry unfired clay. Fragile and water-soluble. Bisque firing converts greenware into durable bisqueware."
+    }
+  ],
+  "aliases": ["bisque firing schedule", "cone 06 firing", "low fire bisque temperature"],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Kiln safety",
+          "body": "Never open the kiln above 90°C. Ensure the kiln area is ventilated throughout the firing; organic material in clay burns off as gas between 200-400°C. Keep the kiln area clear of flammable material. Follow the kiln manufacturer's manual for initial break-in firings."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bisque-fire" } }], "text": "bisque fire" },
+          { "type": "text", "text": " converts fragile " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "greenware" } }], "text": "greenware" },
+          { "type": "text", "text": " into hard, porous bisqueware. Cone 06 (999°C) is the standard low-fire bisque temperature. The schedule below gives a slow enough climb to prevent thermal shock cracking, particularly through the critical " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "quartz-inversion" } }], "text": "quartz inversion" },
+          { "type": "text", "text": " at 573°C. Pieces must be fully bone-dry before loading; any residual moisture will produce steam explosions inside the kiln." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What cone 06 means" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cone" } }], "text": "cone" },
+          { "type": "text", "text": " measures heat work (the combination of temperature and time), not temperature alone. Cone 06 bends at approximately 999°C at a standard firing rate of 150°C per hour in the final approach. Faster climbs require a slightly higher temperature to achieve the same cone; slower climbs achieve cone bend at lower temperatures. Most electric kiln controllers accept a target temperature and ramp rate rather than a cone number directly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Loading the kiln" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bisqueware can be stacked: rims can touch, pieces can be placed inside each other. Greenware shrinks slightly during bisque firing so pieces stacked rim-to-rim will separate as the firing progresses. Do not stack pieces with one sitting on another's base; uneven heat distribution causes cracking. Place a witness cone at mid-height in the kiln visible through the peephole." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The firing schedule" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "1. Slow warm-up phase: room temperature to 120°C" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Climb at 30-50°C per hour to 120°C and hold for 1 hour. This evaporates residual moisture from thick-walled pieces without steam pressure cracking. Skip this hold only for very thin, bone-dry work." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "2. Organic burn-off: 120°C to 570°C" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Climb at 80-100°C per hour. Between 200°C and 400°C, organic material in the clay burns off as carbon dioxide and water vapour; the kiln may produce visible fumes at this stage and the vent should remain open. By 570°C the clay is beginning to sinter and the organic content has fully burned." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "3. Through quartz inversion: 570°C to 620°C" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Slow to 30-50°C per hour through the quartz inversion zone. The silica particles in the clay rearrange physically at 573°C and the clay expands slightly. Too fast a rise here causes cracking. This is the most critical zone in bisque firing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "4. Final climb to cone 06: 620°C to 999°C" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Resume at 100-150°C per hour to 999°C. Hold at 999°C for 10-15 minutes to even out temperature across the kiln. Switch off and allow to cool with the lid closed; no forced cooling. The kiln can be opened cautiously once it reaches 90°C or below." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "After the firing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bisqueware is hard, slightly porous, and pale; stoneware fired at cone 06 will be lighter in colour than the unfired clay because the iron content has not yet developed. The bisqueware is ready for glazing once completely cool." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Bisque firing problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Pieces crack or explode in the kiln",
+              "cause": "Residual moisture in the greenware, or too fast a rise through the warm-up phase",
+              "fix": "Ensure pieces are fully bone-dry before loading; use the slow warm-up schedule with a hold at 120°C"
+            },
+            {
+              "symptom": "Bisqueware still porous but very fragile",
+              "cause": "Kiln did not reach cone 06; temperature too low or hold too short",
+              "fix": "Verify with a witness cone; check that the kiln controller reached 999°C at a rate slow enough to achieve full cone bend"
+            },
+            {
+              "symptom": "Pieces stick to kiln shelves",
+              "cause": "Glaze or slip dripped onto the shelf in a previous firing, or pieces placed directly on uncoated shelves",
+              "fix": "Apply kiln wash (bat wash) to shelves before each firing; bisqueware placed on bare shelves will not typically stick"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

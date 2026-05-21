@@ -1,0 +1,127 @@
+{
+  "slug": "underglaze-painting-on-bisqueware-no-kiln",
+  "title": "Underglaze-style painting on air-dry clay",
+  "subtitle": "Applying commercial acrylic underglaze colours to an air-dry clay surface",
+  "excerpt": "Commercial pre-mixed underglazes designed for ceramic bisqueware also work on sealed air-dry clay, producing the same painterly brushwork without kiln firing. The result is a matte, ceramic-look painted surface sealed with acrylic varnish rather than a glaze firing.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "surface-decoration",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Underglaze application technique adapted for air-dry clay; derived from first principles.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": false,
+  "requiresWheel": false,
+  "requiredClayBodies": ["air-dry-clay"],
+  "requiredCraftMaterials": ["underglaze-pre-mixed"],
+  "recipeTools": [
+    { "slug": "pottery-brush-liner", "isOptional": false },
+    { "slug": "pottery-brush-mop", "isOptional": false }
+  ],
+  "recipe": { "foundational": true },
+  "glossaryTerms": [
+    {
+      "slug": "underglaze-pre-mixed",
+      "term": "Underglaze",
+      "definition": "A commercial pre-mixed coloured ceramic coating designed to be applied before firing. On air-dry clay, it acts as a ceramic-texture paint without needing a kiln."
+    },
+    {
+      "slug": "bone-dry",
+      "term": "Bone-dry",
+      "definition": "Air-dried but unfired. The correct stage for applying underglaze paint to air-dry clay."
+    }
+  ],
+  "aliases": ["underglaze on air dry clay", "ceramic paint without kiln", "underglaze no fire"],
+  "techniqueSlugs": ["applying-pva-sealer-and-varnish"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Commercial pre-mixed underglazes (the coloured slips used by ceramic studios on bisqueware before glaze firing) also work as surface paints on bone-dry air-dry clay. They produce a denser, more ceramic-like colour than standard acrylics because they are formulated with more clay content. Apply to a bone-dry sealed surface, let dry, then seal again with acrylic varnish." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the surface" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The air-dry clay piece must be fully " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bone-dry" } }], "text": "bone-dry" },
+          { "type": "text", "text": " before applying underglaze. Apply one coat of diluted PVA as a sealer first: this closes the surface pores and prevents the underglaze from absorbing unevenly and drying patchy. Let the PVA dry fully before painting." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Applying the underglaze" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Shake or stir the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "underglaze-pre-mixed" } }], "text": "underglaze" },
+          { "type": "text", "text": " thoroughly before opening; the pigment settles on standing. Apply with a wide flat brush or a liner brush depending on the design. Underglazes require two or three coats for full coverage because the pigment fades as it dries. The colour looks lighter than expected when wet and darkens back on drying; avoid the temptation to add more pigment to compensate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Layering and blending" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Underglazes blend and layer over each other while wet, similar to watercolour. Apply a lighter base colour, allow to surface-dry, then add a darker colour on top for depth. The clay content in underglaze means blended areas do not look as flat as acrylic paint blends; the slight texture of brush strokes adds character." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sealing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once the underglaze is fully dry, apply two coats of acrylic matte or gloss varnish. Underglaze on air-dry clay without a top coat remains water-soluble; it will run if the piece gets wet. The varnish is essential." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What it looks like when it is right" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The finished surface reads as a slightly textured ceramic-look paint with visible brush marks. The colours are denser and slightly chalky in appearance compared to acrylic paint, which suits the handmade quality of the clay form." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Underglaze problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Underglaze absorbs unevenly, patchy result",
+              "cause": "PVA sealer was not applied first",
+              "fix": "Apply one coat of diluted PVA and let dry fully before painting"
+            },
+            {
+              "symptom": "Colour fades more than expected on drying",
+              "cause": "Normal for underglaze; it lightens significantly while drying",
+              "fix": "Apply three coats and judge the final colour at dryness, not while wet"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

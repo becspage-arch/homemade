@@ -1,0 +1,240 @@
+{
+  "slug": "coil-pot-paper-clay-vase",
+  "title": "Coil-pot vase in paper clay",
+  "subtitle": "Building a tall vessel from stacked and smoothed coils",
+  "excerpt": "A coil-built vase stacks hand-rolled ropes of clay, blending each coil into the wall below to build height gradually. Paper clay is the better choice here: the cellulose fibres bridge the coil joints and resist cracking on taller forms that air-dry clay alone would struggle to hold.",
+  "type": "PATTERN",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "hand-building-no-equipment",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Coil building is one of the oldest documented ceramic construction methods, used across Near Eastern, African, and pre-Columbian American traditions. Encyclopaedia Britannica, 11th edition (1911), ceramics entry. Technique derived from first principles.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": false,
+  "requiresWheel": false,
+  "requiredClayBodies": ["paper-clay-air-dry"],
+  "requiredCraftMaterials": [],
+  "recipeTools": [
+    { "slug": "wooden-rib", "isOptional": false },
+    { "slug": "pottery-sponge", "isOptional": false },
+    { "slug": "needle-tool", "isOptional": true },
+    { "slug": "fettling-knife", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "coil-building",
+      "term": "Coil-building",
+      "definition": "A hand-building method in which ropes of clay are stacked and blended to build up the walls of a vessel."
+    },
+    {
+      "slug": "leather-hard",
+      "term": "Leather-hard",
+      "definition": "The drying stage where clay holds its shape but is still damp enough to join and smooth."
+    },
+    {
+      "slug": "paper-clay",
+      "term": "Paper clay",
+      "definition": "Clay with cellulose fibres mixed in, which strengthens joins and reduces cracking on taller or more complex forms."
+    }
+  ],
+  "aliases": ["coil pot vase", "paper clay vase", "hand-built vase"],
+  "techniqueSlugs": ["rolling-clay-coils", "joining-clay-score-and-slip", "wedging-clay-for-hand-building"],
+  "criticalTechniques": ["rolling-clay-coils", "joining-clay-score-and-slip"],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Build the base and first six coils",
+      "body": "Form the base disc and stack the first six coils, blending each one before adding the next. Stop at about 10 cm height and let the walls firm to leather-hard overnight before continuing.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Add the upper coils and neck",
+      "body": "Once the lower walls are leather-hard, add the remaining coils to reach the full height. Allow the completed vase to dry slowly over two to three days.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 4,
+      "title": "Sand and seal",
+      "body": "The vase should be bone-dry by now. Sand smooth, then seal with two coats of PVA or acrylic varnish.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Coil-building is one of the oldest methods for making a tall vessel by hand. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "paper-clay" } }], "text": "Paper clay" },
+          { "type": "text", "text": " suits this project because its cellulose fibres span the boundaries between coils and reduce the cracking that plain air-dry clay often shows at coil joints as the piece shrinks. This is a decorative vase: not waterproof, not food-safe. For cut flowers use a separate jar of water placed inside." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Paper clay (air-dry)", "quantity": "400 g", "substitution": "Air-dry clay works but expect more hairline cracks at joins" },
+            { "name": "Wooden rib", "quantity": "1", "substitution": null },
+            { "name": "Damp sponge", "quantity": "1", "substitution": null },
+            { "name": "Canvas board or wooden board", "quantity": "1", "substitution": null },
+            { "name": "Small jar for slurry", "quantity": "1", "substitution": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Make a small pot of slurry: dissolve 20 g of paper clay scraps in a teaspoon of water until it reaches thick yoghurt consistency. Keep it covered with a damp cloth between uses. Wedge the remaining clay for two minutes before starting." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Building the vase" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "1. Form the base disc" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Take 80 g of clay and press it into a flat disc about 10 cm in diameter and 8 mm thick. The base is the foundation: if it is too thin it will crack under the weight of the walls as they dry. Place the disc on the canvas board; this is where the vase will stay until it is " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "leather-hard" } }], "text": "leather-hard" },
+          { "type": "text", "text": " enough to pick up." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "2. Roll the coils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "coil-building" } }], "text": "Coil-building" },
+          { "type": "text", "text": " works best when all the coils are the same diameter. Roll each coil to about 12 mm thick by placing a ball of clay on the canvas and rolling outward with both palms, moving the hands apart as the coil lengthens. A uniform coil has no thick or thin points. Roll enough coils for two or three rounds before starting to place them." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "3. Score, slurry, and place the first coil" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Score the rim of the base disc with a needle tool or fork: a crosshatch of light scratches. Brush slurry onto the scored rim. Lay a coil around the top edge, pressing it down gently to bond. Trim the ends where they meet and blend the join. Press the inside of the coil-to-base junction downward with a finger or rib, working around the whole diameter. The inside seam is more important than the outside: a well-sealed interior seam holds the shape while drying." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "4. Continue stacking coils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Score and slurry the top of each coil before placing the next. Blend the interior seam of each new coil before adding another. Work in rounds of two or three coils, then pause. If the walls feel soft and begin to bow outward, stop and let them firm for 20 minutes with a loose plastic cover before continuing. On a 25 cm vase, this rhythm is: build 8 cm, rest, build 8 cm, rest, build the neck." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "5. Shape the neck" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "To narrow the top into a neck, angle each successive coil slightly inward, placing it inside the rim of the coil below rather than on top of it. To flare the rim outward, angle the final coil slightly outward. Smooth the neck with a damp sponge once it is in place." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Drying" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Leave the vase on the board covered loosely with plastic for the first day. Remove the plastic on day two and let it dry open. Full drying takes two to four days depending on wall thickness. The vase is ready to remove from the board once the base is leather-hard; it then lifts cleanly without deforming." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once bone-dry, sand any coil ridges smooth if a clean exterior is wanted. Two coats of PVA or acrylic varnish brush on evenly. The vase can be painted with acrylics before sealing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Keep indoors. Air-dry clay is not waterproof: do not fill with water. For cut flowers, place a narrow jar of water inside the vase." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave the coil ridges visible on the exterior for a textured, handmade look rather than smoothing them away." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add slip-trailed decoration or pressed textures while the walls are still soft." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Build a wider, lower form by angling the coils outward from the base for a deep bowl shape rather than a tall vase." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Coil-pot problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Walls bow outward as you build",
+              "cause": "Clay is too wet or the walls are too thin",
+              "fix": "Rest the walls under loose plastic until they firm; for walls already bowing, support the exterior with a rolled cloth while the clay stiffens"
+            },
+            {
+              "symptom": "Coil joints crack as the piece dries",
+              "cause": "Coils were not scored and slurried before placing, or the seam was not blended from the inside",
+              "fix": "Press paper clay slurry into the crack and cover loosely with plastic to slow the drying"
+            },
+            {
+              "symptom": "Base detaches from the walls",
+              "cause": "Base was too dry when the first coil was added",
+              "fix": "Re-score, slurry, and press the base join firmly; dry very slowly from that point"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

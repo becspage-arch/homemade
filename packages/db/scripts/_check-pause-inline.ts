@@ -22,9 +22,10 @@ async function main() {
       pausedAt: { not: null },
     },
   })
-  console.log(JSON.stringify(paused))
+  if (paused.length > 0) {
+    console.log('PAUSED:' + JSON.stringify(paused))
+    process.exit(2)
+  }
+  console.log('NOT_PAUSED')
 }
-main().catch((e) => {
-  console.error(e)
-  process.exit(1)
-})
+main().catch(e => { console.error(e); process.exit(1) })

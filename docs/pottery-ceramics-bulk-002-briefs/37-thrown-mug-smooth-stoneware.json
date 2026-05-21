@@ -1,0 +1,190 @@
+{
+  "slug": "thrown-mug-smooth-stoneware",
+  "title": "Thrown stoneware mug",
+  "subtitle": "A wheel-thrown cylinder with a pulled handle, trimmed and glaze-fired at cone 6",
+  "excerpt": "A wheel-thrown mug in smooth stoneware: a cylinder thrown to mug proportions, trimmed at leather-hard, fitted with a pulled strap handle, bisque-fired, glazed, and fired to cone 6 (1222°C). Intermediate difficulty because of the handle attachment step and the taller cylinder required.",
+  "type": "PATTERN",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "throwing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Thrown mug construction derived from first principles.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": true,
+  "requiredClayBodies": ["stoneware-smooth"],
+  "requiredCraftMaterials": ["low-fire-glaze-pre-mixed"],
+  "recipeTools": [
+    { "slug": "pottery-sponge", "isOptional": false },
+    { "slug": "wire-cutter", "isOptional": false },
+    { "slug": "loop-tool", "isOptional": false },
+    { "slug": "needle-tool", "isOptional": false },
+    { "slug": "pottery-calipers", "isOptional": true },
+    { "slug": "throwing-stick", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "centring",
+      "term": "Centring",
+      "definition": "Pushing the clay mound into a state where it rotates without wobbling; required before the cylinder can be opened."
+    },
+    {
+      "slug": "pulled-handle",
+      "term": "Pulled handle",
+      "definition": "A clay strap handle drawn from a lump of clay by stroking downward with a wet hand. Stronger than an extruded handle because the drawing motion aligns the clay particles."
+    },
+    {
+      "slug": "foot-ring",
+      "term": "Foot ring",
+      "definition": "A recessed ring trimmed from the base of the leather-hard mug that defines the standing surface and base profile."
+    },
+    {
+      "slug": "bisque-fire",
+      "term": "Bisque fire",
+      "definition": "The first firing at cone 06 (999°C) that converts dry greenware into durable bisqueware ready for glazing."
+    }
+  ],
+  "aliases": ["thrown stoneware mug", "wheel thrown mug", "how to throw a mug"],
+  "techniqueSlugs": [
+    "centring-half-kilo-of-stoneware",
+    "opening-a-thrown-mound",
+    "pulling-a-cylinder-wall",
+    "trimming-a-foot-ring-on-the-wheel",
+    "attaching-a-pulled-handle",
+    "bisque-firing-schedule-cone-06",
+    "dipping-glaze-on-a-bisque-bowl"
+  ],
+  "criticalTechniques": ["centring-half-kilo-of-stoneware", "attaching-a-pulled-handle"],
+  "projectSchedule": [
+    { "stepNumber": 1, "offsetDays": 0, "title": "Throw the cylinder and wire off", "body": "Centre, open, pull to mug proportions. Wire off and leave to firm.", "surfaceAs": "RAIL_CARD", "requiresUserAction": true },
+    { "stepNumber": 2, "offsetDays": 1, "title": "Trim and attach handle", "body": "At leather-hard: trim foot ring, pull handle separately, attach using score and slip.", "surfaceAs": "RAIL_CARD", "requiresUserAction": true },
+    { "stepNumber": 3, "offsetDays": 7, "title": "Bisque fire", "body": "Fully bone-dry before loading. Cone 06 (999°C).", "surfaceAs": "RAIL_CARD", "requiresUserAction": true },
+    { "stepNumber": 4, "offsetDays": 14, "title": "Glaze and glaze fire", "body": "Wax foot ring, dip in glaze, fire to cone 6 (1222°C).", "surfaceAs": "RAIL_CARD", "requiresUserAction": true }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Kiln safety",
+          "body": "Never open the kiln above 90°C. Use only food-safe glazes rated for cone 6 if the mug will be used for hot drinks. Ventilate the kiln area during both firings. Do not use a mug whose glaze has crazing visible on the interior for hot liquids."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A mug is a tall, narrow cylinder with a handle. Getting the proportions right matters: a mug that is too wide looks like a bowl; one that is too narrow is hard to use. Three hundred and fifty to four hundred grams of smooth stoneware produces a mug roughly 90 mm tall, 80 mm diameter, holding approximately 250 ml. The handle adds a second construction session at leather-hard." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Smooth stoneware (mug body)", "quantity": "350-400 g", "substitution": null },
+            { "name": "Smooth stoneware (handle)", "quantity": "80 g", "substitution": null },
+            { "name": "Pottery sponge", "quantity": "1", "substitution": null },
+            { "name": "Wire cutter", "quantity": "1", "substitution": null },
+            { "name": "Loop tool", "quantity": "1", "substitution": null },
+            { "name": "Needle tool", "quantity": "1", "substitution": null },
+            { "name": "Pre-mixed cone 6 glaze", "quantity": "enough to dip the mug", "substitution": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Throwing the cylinder" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "1. Centre and open narrow" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wedge 350-400 g and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "centring" } }], "text": "centre" },
+          { "type": "text", "text": " on the wheel. Open a narrower floor than for a bowl (about 55-60 mm diameter) to keep the mug form upright. Floor thickness 8-10 mm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "2. Pull tall and keep the walls straight" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pull the wall upward with even inward-outward pressure. The mug needs straight vertical walls rather than a bowl's outward curve; resist the temptation to flare the rim. For the narrow upper section of a tall cylinder, a throwing stick helps the inside hand maintain contact without knuckles hitting the rim. Aim for 6-7 mm wall thickness." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "3. Shape the rim" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A slight outward flare at the top 10-15 mm of the rim makes the mug more comfortable to drink from. Apply gentle outward pressure from inside as the wheel spins. Smooth the rim with a damp sponge, then wire off and leave on the board." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Trimming and handle attachment" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "At leather-hard, trim the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foot-ring" } }], "text": "foot ring" },
+          { "type": "text", "text": ". Then pull a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pulled-handle" } }], "text": "pulled handle" },
+          { "type": "text", "text": " from 80 g of clay and let it firm for 10-15 minutes. Score and slip both attachment points on the mug body and both ends of the handle. Press the top of the handle into position just below the rim, curve the strap, and attach the lower end two-thirds of the way down the mug. Blend the joins. Allow the assembled mug to dry slowly under light plastic for 24 hours before opening." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Bisque and glaze firing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once bone-dry, " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bisque-fire" } }], "text": "bisque fire" },
+          { "type": "text", "text": " to cone 06 (999°C). Wax the foot ring. Glaze the interior by pouring, holding the mug over a bucket and sloshing glaze inside; the exterior by dipping. Fire to cone 6 (1222°C)." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Mug problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Handle cracks off at the join",
+              "cause": "Scoring or slip incomplete, or handle and mug were at very different moisture levels",
+              "fix": "Thorough scoring and slipping on both surfaces; handle should be slightly softer than the mug body at attachment"
+            },
+            {
+              "symptom": "Mug collapses outward during pulling; walls go soft",
+              "cause": "Too much water used during throwing, or too many pulls on a small amount of clay",
+              "fix": "Use the minimum water needed; three pulls maximum on 400 g; wire off and rest if the walls begin to soften"
+            },
+            {
+              "symptom": "Interior glaze pools heavily at the base",
+              "cause": "Too much glaze poured inside, or interior not drained properly",
+              "fix": "Pour interior glaze in a thin coat, rotate quickly, and drain completely before exterior glazing"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

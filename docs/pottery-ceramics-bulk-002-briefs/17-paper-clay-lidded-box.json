@@ -1,0 +1,194 @@
+{
+  "slug": "paper-clay-lidded-box",
+  "title": "Paper clay lidded box",
+  "subtitle": "A slab-built box with a fitting lid, sized for jewellery or small keepsakes",
+  "excerpt": "A small slab-built box with a lid that rests on a rebate: a stepped inner rim that locates the lid without a hinge or clasp. Paper clay holds the corners without cracking and tolerates the close tolerances needed for a fitting lid.",
+  "type": "PATTERN",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "hand-building-no-equipment",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Slab-built box construction derived from first principles.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": false,
+  "requiresWheel": false,
+  "requiredClayBodies": ["paper-clay-air-dry"],
+  "requiredCraftMaterials": [],
+  "recipeTools": [
+    { "slug": "pottery-rolling-pin", "isOptional": false },
+    { "slug": "fettling-knife", "isOptional": false },
+    { "slug": "wooden-rib", "isOptional": false },
+    { "slug": "needle-tool", "isOptional": false },
+    { "slug": "pottery-calipers", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "paper-clay",
+      "term": "Paper clay",
+      "definition": "Clay with cellulose fibres mixed in, which strengthens joins and reduces cracking; especially useful for slab boxes where corner joins are under stress."
+    },
+    {
+      "slug": "leather-hard",
+      "term": "Leather-hard",
+      "definition": "The drying stage where clay holds its shape but is still damp enough to join and trim."
+    },
+    {
+      "slug": "score-and-slip",
+      "term": "Score and slip",
+      "definition": "Scratching joining surfaces and brushing them with slurry before pressing together."
+    }
+  ],
+  "aliases": ["paper clay box", "slab built box with lid", "clay jewellery box"],
+  "techniqueSlugs": ["rolling-a-clay-slab", "joining-clay-score-and-slip", "making-clay-slip-and-slurry"],
+  "criticalTechniques": ["rolling-a-clay-slab", "joining-clay-score-and-slip"],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Build box body and let walls firm",
+      "body": "Assemble the four walls and base and leave to reach leather-hard overnight before adding the rebate strip.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Add rebate strip and build lid",
+      "body": "Attach the inner rebate strip to the box top, and cut and fit the lid slab. Let the whole assembly dry for two more days.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A lidded " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "paper-clay" } }], "text": "paper clay" },
+          { "type": "text", "text": " box requires accurate slab cutting, careful corner joining, and a rebate strip: a thin inner rim that the lid rests on. The cellulose fibres in paper clay make it more tolerant of the thin walls and tight joins that a fitting lid demands. Target box size: 10 cm by 7 cm by 5 cm tall." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Paper clay (air-dry)", "quantity": "250 g", "substitution": null },
+            { "name": "Pottery rolling pin", "quantity": "1", "substitution": null },
+            { "name": "6 mm guide rails", "quantity": "1 pair", "substitution": null },
+            { "name": "Fettling knife", "quantity": "1", "substitution": "Craft knife" },
+            { "name": "Needle tool", "quantity": "1", "substitution": null },
+            { "name": "Small jar of slurry", "quantity": "1", "substitution": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cutting the parts" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Roll a slab to 6 mm thickness. Cut the following pieces with a fettling knife against a ruler:" }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Base: 10 cm by 7 cm" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Two long sides: 10 cm by 5 cm (each)" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Two short sides: 5.8 cm by 5 cm (each, allowing for the wall thickness on both long-side ends)" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lid: 10 cm by 7 cm (same as the base)" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rebate strip: 8 mm wide and long enough to run inside all four walls, about 28 cm total; this can be cut in sections" }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Assembling the box" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "1. Join the walls to the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Use the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "score-and-slip" } }], "text": "score-and-slip" },
+          { "type": "text", "text": " method on every join. Start with the two long sides, standing them up on the base, their outer faces flush with the base edge. Then join the two short sides into the gaps. Reinforce each inside corner with a thin coil of clay, blended flush with a finger." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "2. Let the box firm to leather-hard" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cover loosely with plastic overnight. The box body needs to be " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "leather-hard" } }], "text": "leather-hard" },
+          { "type": "text", "text": " before the rebate strip is added; adding it while the box is still soft deforms the walls." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "3. Attach the rebate strip" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The rebate strip runs around the inside of the box, 3 mm below the top rim. Score the inside wall surface and slurry it. Press the strip firmly in place and smooth the inside face. This strip is the shelf the lid rests on." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "4. Fit the lid" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The lid slab should sit on the rebate strip with 1-2 mm clearance on each side. Check the fit while the box and lid are both still at leather-hard: if the lid is too wide, trim with a fettling knife; if the fit is correct, leave. Do not join the lid to the box; it should lift off freely." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Drying and finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dry the box and lid separately on a flat board for two to three days. Once bone-dry, sand smooth and seal with PVA inside and out. The sealed box holds jewellery, small keys, or other dry keepsakes." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Lidded box problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Corners crack as the box dries",
+              "cause": "Walls were at different moisture stages when joined",
+              "fix": "Press paper clay slurry into the crack; cover the box loosely with plastic to slow drying"
+            },
+            {
+              "symptom": "Lid does not fit after drying",
+              "cause": "Shrinkage pulled the walls inward as the clay dried, tightening the opening",
+              "fix": "At leather-hard stage, gently press the top rim outward slightly; allow for 5-8% shrinkage when cutting the lid"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

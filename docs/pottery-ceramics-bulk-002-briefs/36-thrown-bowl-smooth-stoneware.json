@@ -1,0 +1,202 @@
+{
+  "slug": "thrown-bowl-smooth-stoneware",
+  "title": "Thrown stoneware bowl",
+  "subtitle": "A wheel-thrown open bowl in smooth stoneware, trimmed and glaze-fired at cone 6",
+  "excerpt": "A wheel-thrown bowl in smooth stoneware: centred, opened, pulled to a curved wall, trimmed at leather-hard, bisque-fired at cone 06, glazed by dipping, and glaze-fired to cone 6 (1222°C). Beginner-appropriate size: 500 g of clay producing a bowl roughly 140 mm across and 70 mm deep.",
+  "type": "PATTERN",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "throwing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Thrown bowl construction derived from first principles.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": true,
+  "requiredClayBodies": ["stoneware-smooth"],
+  "requiredCraftMaterials": ["low-fire-glaze-pre-mixed"],
+  "recipeTools": [
+    { "slug": "pottery-sponge", "isOptional": false },
+    { "slug": "wire-cutter", "isOptional": false },
+    { "slug": "loop-tool", "isOptional": false },
+    { "slug": "wooden-rib", "isOptional": true },
+    { "slug": "pottery-chamois", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "centring",
+      "term": "Centring",
+      "definition": "Pushing the clay mound into a state where it rotates without wobbling; the essential first step before opening."
+    },
+    {
+      "slug": "pulling",
+      "term": "Pulling",
+      "definition": "Drawing clay upward from the floor of an opened mound to form the bowl wall, using coordinated inside and outside hand pressure."
+    },
+    {
+      "slug": "foot-ring",
+      "term": "Foot ring",
+      "definition": "A recessed ring cut into the base of the leather-hard bowl that lifts it off the kiln shelf and refines the base profile."
+    },
+    {
+      "slug": "bisque-fire",
+      "term": "Bisque fire",
+      "definition": "The first firing at cone 06 (999°C) that converts greenware into durable, porous bisqueware ready for glazing."
+    }
+  ],
+  "aliases": ["thrown stoneware bowl", "beginner wheel thrown bowl", "how to throw a bowl on the wheel"],
+  "techniqueSlugs": [
+    "centring-half-kilo-of-stoneware",
+    "opening-a-thrown-mound",
+    "pulling-a-cylinder-wall",
+    "trimming-a-foot-ring-on-the-wheel",
+    "dipping-glaze-on-a-bisque-bowl",
+    "bisque-firing-schedule-cone-06"
+  ],
+  "criticalTechniques": ["centring-half-kilo-of-stoneware"],
+  "projectSchedule": [
+    { "stepNumber": 1, "offsetDays": 0, "title": "Throw and wire off", "body": "Centre, open, pull, shape. Wire off and leave on board to firm.", "surfaceAs": "RAIL_CARD", "requiresUserAction": true },
+    { "stepNumber": 2, "offsetDays": 1, "title": "Trim the foot ring", "body": "At leather-hard (8-24 hours later). Trim foot ring with loop tool.", "surfaceAs": "RAIL_CARD", "requiresUserAction": true },
+    { "stepNumber": 3, "offsetDays": 7, "title": "Bisque fire", "body": "Fully bone-dry before loading. Cone 06 (999°C). Cool before unloading.", "surfaceAs": "RAIL_CARD", "requiresUserAction": true },
+    { "stepNumber": 4, "offsetDays": 14, "title": "Glaze and glaze fire", "body": "Wax foot ring, dip in glaze, load kiln, fire to cone 6 (1222°C).", "surfaceAs": "RAIL_CARD", "requiresUserAction": true }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Kiln safety",
+          "body": "Never open the kiln above 90°C. Glaze contains metal oxides; do not use the finished bowl for food or drink unless the glaze is rated food-safe and fired to the manufacturer's specified cone. Ventilate the kiln area during both bisque and glaze firings."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A simple thrown bowl is the most direct project for learning how centring, opening, and pulling work together. Five hundred grams of smooth stoneware produces a bowl roughly 140 mm across and 70 mm deep, large enough to use as a cereal bowl. The project takes four separate sessions across two to three weeks: throwing, trimming, bisque, and glaze firing." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Smooth stoneware", "quantity": "500 g", "substitution": null },
+            { "name": "Pottery sponge", "quantity": "1", "substitution": null },
+            { "name": "Wire cutter", "quantity": "1", "substitution": null },
+            { "name": "Loop tool", "quantity": "1", "substitution": null },
+            { "name": "Pre-mixed cone 6 glaze", "quantity": "enough to dip a 140 mm bowl", "substitution": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Throwing the bowl" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "1. Centre 500 g" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wedge and slap the clay onto the wheel head. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "centring" } }], "text": "Centring" },
+          { "type": "text", "text": " is complete when the clay feels still under resting palms: no pulsing, no vibration. Take the time to centre fully before opening." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "2. Open to a wide, shallow floor" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Open the mound wider and shallower than for a cylinder; a bowl shape needs more floor width and less height. Press thumbs down 8-10 mm from the wheel head and pull outward to a floor diameter of 80-90 mm. Compress the floor with a circular sweep." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "3. Pull and flare the wall" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pulling" } }], "text": "Pull" },
+          { "type": "text", "text": " the wall upward and slightly outward with each pass. After the first pull produces a low cylinder, use a wooden rib against the outer wall while the inside hand presses gently outward to open the bowl curve. The rim should flare out at a wider angle than the base. Aim for walls 6-8 mm thick throughout." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once shaped, smooth the rim with a damp chamois. Wire off the base and leave on the bat or wheel head to firm to leather-hard." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Trimming the foot ring" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "When leather-hard (8-24 hours), mount the bowl upside-down on the wheel head, centred. Mark the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foot-ring" } }], "text": "foot ring" },
+          { "type": "text", "text": " diameter and cut with a loop tool. Remove excess base clay to lighten the bowl and establish a clean foot ring. The foot ring should sit about 15-20 mm inside the outer wall line." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Drying and bisque firing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dry slowly under light plastic for the first 24 hours, then open. Full drying to bone-dry takes two to five days depending on wall thickness and room humidity. Load when fully dry and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bisque-fire" } }], "text": "bisque fire" },
+          { "type": "text", "text": " to cone 06 (999°C) using a slow climb schedule." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Glazing and glaze firing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wax the foot ring. Dip the bowl in a bucket of cone 6 glaze, holding by the foot ring, submerging fully, and lifting out with a slow rotation. Allow to dry before loading. Fire to cone 6 (1222°C) following the manufacturer's schedule." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Bowl problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Bowl warps during drying; rim goes oval",
+              "cause": "One side of the rim dried faster than the other, or rim too thin",
+              "fix": "Cover with plastic for slower, even drying; compress the rim with a damp chamois immediately after throwing"
+            },
+            {
+              "symptom": "Base too thick after trimming; heavy and chunky",
+              "cause": "Floor was not opened wide enough, or too much clay used for the bowl size",
+              "fix": "Trim more aggressively; the recessed base area can be trimmed to 8-10 mm without risk, use a knuckle tap test to check"
+            },
+            {
+              "symptom": "Glaze crawls off in patches during firing",
+              "cause": "Glaze applied too thick, or dust and oils on bisqueware surface before glazing",
+              "fix": "Wipe bisqueware with a damp sponge before dipping; dip at a consistent speed for even coat thickness"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

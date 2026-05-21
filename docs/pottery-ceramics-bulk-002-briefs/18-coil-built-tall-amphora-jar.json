@@ -1,0 +1,229 @@
+{
+  "slug": "coil-built-tall-amphora-jar",
+  "title": "Coil-built tall amphora jar",
+  "subtitle": "A two-handled tall vessel built in coils over three sessions",
+  "excerpt": "An amphora form (a tall oval body narrowing to a foot, with two short handles at the shoulders) built entirely from coils of air-dry clay over two or three sessions. Advanced difficulty because the form requires building in stages to let lower walls firm before height is added.",
+  "type": "PATTERN",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "hand-building-no-equipment",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Coil-building technique. Historical amphora form reference: V&A open-access collection, Greek and Roman ceramics. Technique derived from first principles.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": false,
+  "requiresWheel": false,
+  "requiredClayBodies": ["air-dry-clay", "paper-clay-air-dry"],
+  "requiredCraftMaterials": [],
+  "recipeTools": [
+    { "slug": "wooden-rib", "isOptional": false },
+    { "slug": "pottery-sponge", "isOptional": false },
+    { "slug": "needle-tool", "isOptional": false },
+    { "slug": "banding-wheel", "isOptional": true },
+    { "slug": "fettling-knife", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "coil-building",
+      "term": "Coil-building",
+      "definition": "A hand-building method in which ropes of clay are stacked and blended to build up the walls of a vessel."
+    },
+    {
+      "slug": "leather-hard",
+      "term": "Leather-hard",
+      "definition": "The drying stage where clay holds its shape but is still damp enough to join and smooth."
+    },
+    {
+      "slug": "score-and-slip",
+      "term": "Score and slip",
+      "definition": "Scratching joining surfaces and brushing them with slurry before pressing together."
+    }
+  ],
+  "aliases": ["amphora clay", "coil built vase advanced", "tall coil jar air dry"],
+  "techniqueSlugs": ["rolling-clay-coils", "joining-clay-score-and-slip", "wedging-clay-for-hand-building"],
+  "criticalTechniques": ["rolling-clay-coils", "joining-clay-score-and-slip"],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Build base and lower body",
+      "body": "Build the wide base disc and the lower body up to the widest point. Let the walls firm to leather-hard overnight before continuing.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Add upper body and neck",
+      "body": "Once the lower body is firm, add the tapering upper coils and neck. Let the full jar firm for a further day.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 2,
+      "title": "Attach handles and dry",
+      "body": "Attach the two shoulder handles at leather-hard stage and allow the whole piece to dry slowly for three or four more days.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An amphora form built from " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "coil-building" } }], "text": "coil-building" },
+          { "type": "text", "text": " over three sessions. The form (a wide oval belly narrowing to a foot at the base and a short neck at the top, with two loop handles at the shoulders) requires staged construction: build the lower half, wait for it to firm, build the upper half, wait again, attach the handles. Attempting to build the full height in one session produces walls that collapse under their own weight before the clay stiffens. Paper clay is better suited than plain air-dry clay for this form; the cellulose fibres carry the coil joints through the slow multi-day build." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Paper clay (air-dry)", "quantity": "600 g", "substitution": "Air-dry clay works but expect more coil-joint cracking" },
+            { "name": "Wooden rib", "quantity": "1", "substitution": null },
+            { "name": "Pottery sponge", "quantity": "1", "substitution": null },
+            { "name": "Needle tool", "quantity": "1", "substitution": null },
+            { "name": "Banding wheel", "quantity": "1", "substitution": "Rotate on a lazy Susan; a board works but a banding wheel makes even coiling much easier" },
+            { "name": "Slurry jar", "quantity": "1", "substitution": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Session 1: base and lower body" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "1. Form the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Press 120 g of clay into an oval disc about 12 cm by 9 cm and 10 mm thick, thicker than usual because the amphora is a tall, heavy form and the base takes significant weight. Set it on the banding wheel or board." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "2. Build the wide lower belly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Roll coils of 12-15 mm diameter. Use the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "score-and-slip" } }], "text": "score-and-slip" },
+          { "type": "text", "text": " method on every join. Angle each successive coil slightly outward for the first 6-7 coils to produce the widening belly, placing the coil just outside the rim of the previous coil. The belly should reach its widest point at about 14 cm across and 12 cm height. Stop here for session 1. Cover and let the lower body firm overnight." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Session 2: upper body and neck" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "3. Check and score" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The lower body should feel firm but not brittle when pressed at the base. Score and slurry the top rim of the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "leather-hard" } }], "text": "leather-hard" },
+          { "type": "text", "text": " walls before placing the next coil." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "4. Build the tapering upper body" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Switch to slightly thinner coils of 10 mm diameter. Angle each successive coil inward, placing it inside the rim of the previous coil, to taper the upper body. After 4 coils the form should be narrowing to about 9 cm across at the shoulders. Add a further 2-3 coils to build the neck to about 5 cm wide and 4 cm tall." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Session 3: handles and final drying" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "5. Form the handles" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Roll two coils of 10 mm diameter and 15 cm length. Curve each into a D-shape about 6 cm long. Let them rest for 15 minutes so they firm slightly before attachment." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "6. Attach the handles" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Attach each handle between the shoulder and the neck: upper attachment at the base of the neck, lower attachment 5 cm below at the widest point of the shoulder. Use score and slip on all four attachment points. Press and hold each attachment for 30 seconds. Smooth with a damp finger." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Drying and finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dry very slowly: cover with a loose plastic bag for the first two days, then remove the plastic and allow to finish drying open. A form this size can take a full week to reach bone-dry. Once bone-dry, sand smooth and seal with PVA in two coats." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Display indoors on a level surface. Air-dry clay is not waterproof: do not use as a water vessel. The amphora holds dried flowers, tall stems, or serves as a sculptural object." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Amphora problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Lower walls bulge outward during building",
+              "cause": "Clay still too wet when upper coils were added",
+              "fix": "Stop building and let the lower section firm to leather-hard; support the bulge with a rolled cloth against the exterior"
+            },
+            {
+              "symptom": "Handle falls off during drying",
+              "cause": "Handle attached when body was too dry, or score-and-slip not applied",
+              "fix": "Rebind with paper clay slurry; cover with plastic and dry very slowly from that point"
+            },
+            {
+              "symptom": "Coil joints visible on the exterior",
+              "cause": "Exterior was not smoothed after each coil was added",
+              "fix": "At leather-hard stage, wet a wooden rib and smooth the exterior in long strokes"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
