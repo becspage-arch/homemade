@@ -1,0 +1,121 @@
+{
+  "slug": "fitting-a-door-closer",
+  "title": "Fitting a door closer",
+  "subtitle": "Fix an overhead hydraulic closer and adjust the closing force and speed",
+  "excerpt": "How to fit a standard overhead hydraulic door closer: choosing between standard and parallel-arm configurations, fixing the body to the door and the arm plate to the frame, setting the closing force, and adjusting the latch speed and back-check valves.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "woodwork",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual. Reader's Digest Complete DIY Manual.",
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "combination-square-300mm", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false },
+    { "slug": "spirit-level-200mm", "isOptional": false },
+    { "slug": "carpenters-pencil", "isOptional": false }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "glossaryTerms": [
+    {
+      "slug": "door-closer-arm",
+      "term": "Closer arm",
+      "definition": "The articulated arm connecting the closer body on the door to the arm plate on the frame. In a standard arm configuration the arm crosses the top of the door. In a parallel arm configuration the arm runs parallel to the door face, keeping the mechanism close to the frame."
+    },
+    {
+      "slug": "latch-speed-valve",
+      "term": "Latch speed",
+      "definition": "The adjustable closing speed of a hydraulic door closer in the final 15 to 20 degrees before the door closes. The latch speed valve controls this zone separately from the main sweep speed, allowing the door to close firmly into the latch without slamming."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Most domestic hydraulic closers fit in a standard " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "door-closer-arm" } }], "text": "arm" },
+          { "type": "text", "text": " configuration (arm visible across the top of the door). The closer body goes on the door; the arm plate goes on the frame head. The critical step is the arm geometry: if the pivot-to-pivot distance is wrong, the door will not close fully or will close with excessive force." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, check hinge side and arm type" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Most closers can be fitted on a hinge-side or non-hinge-side door face, and with a standard or parallel arm. The hinge-side fitting is the stronger option; the non-hinge-side fitting works on doors where the frame head is exposed. Check the kit instructions for the correct body position for each configuration and note the mounting template position, which changes with door thickness." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, fix the closer body to the door" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hold the closer body against the door face at the hinge side, using the kit's template to mark the fixing hole centres. The body should be positioned so the arm spindle is centred on the door thickness. Drill pilot holes and fix the body with the screws supplied. The fixings must go into solid door timber, not into any glazed rebate or hollow section of the door." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, fix the arm plate to the frame" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Close the door. Attach the arm to the closer body spindle and hold the arm plate against the frame head in the closed-door position. Mark the arm plate holes and check the arm is parallel to the door top edge when the door is closed. Fix the arm plate. Open the door to 90 degrees and verify the arm does not bind against the frame or the top of the door opening." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4, adjust closing force and latch speed" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Open the door to 90 degrees and release it. The door should swing closed and latch within 5 to 8 seconds. Adjust the main sweep speed using the valve marked S or 1 (usually a small hex-head grub screw in the end of the closer body). Turn clockwise to slow, anticlockwise to speed. Set the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "latch-speed-valve" } }], "text": "latch speed" },
+          { "type": "text", "text": " (valve marked L or 2) so the door accelerates slightly into the frame in the last 15 degrees. Adjust in quarter-turn increments and test after each adjustment." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Door slams shut at full speed regardless of valve adjustment",
+              "cause": "The sweep speed valve has been wound fully anticlockwise (open); the oil bypass is at maximum.",
+              "fix": "Wind the sweep speed valve (S or 1) clockwise by 4 to 5 full turns to close the bypass. Test after each half turn; over-tightening will stall the closer."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Door stops 50 mm short of closing and will not latch",
+              "cause": "The latch speed zone is not engaged, or the arm pivot geometry is giving insufficient closing force in the last few degrees.",
+              "fix": "Increase the latch speed (valve L or 2) anticlockwise. If the door still does not latch, check the arm pivot distance against the template: the pivot may be too far from the frame, reducing mechanical advantage at the closed position."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "slug": "fitting-a-dimmer-switch",
+  "title": "Fitting a dimmer switch",
+  "subtitle": "Replace a standard light switch with a leading-edge or LED dimmer",
+  "excerpt": "How to replace a one-gang light switch with a dimmer: locking off and proving the circuit dead, removing the old switch, identifying and reconnecting the conductors, selecting the correct dimmer type for the load, and setting the minimum-load trim.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual. IET On-Site Guide (BS 7671). City and Guilds Level 2 Electrotechnical Technology syllabus.",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "side-cutters", "isOptional": false }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "glossaryTerms": [
+    {
+      "slug": "leading-edge-dimmer",
+      "term": "Leading-edge dimmer",
+      "definition": "The standard TRIAC-based dimmer type designed for resistive and inductive loads (conventional incandescent and halogen lamps). Most leading-edge dimmers do not work correctly with LED bulbs, which require a trailing-edge (capacitive) dimmer."
+    },
+    {
+      "slug": "trailing-edge-dimmer",
+      "term": "Trailing-edge dimmer",
+      "definition": "A capacitive dimmer type designed for electronic loads including LED and low-voltage halogen. Produces less electromagnetic interference and operates more quietly (no buzz) than a leading-edge dimmer on LED loads."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The correct dimmer type depends on the bulb: LEDs require a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trailing-edge-dimmer" } }], "text": "trailing-edge dimmer" },
+          { "type": "text", "text": "; incandescent and halogen lamps use a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "leading-edge-dimmer" } }], "text": "leading-edge dimmer" },
+          { "type": "text", "text": ". Fitting the wrong type results in flickering, buzzing, or the bulbs failing to dim at all. Check the bulb packaging confirms the lamps are dimmable before starting." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, lock off the MCB and prove the circuit dead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Identify the MCB protecting the lighting circuit at the consumer unit. Switch it off. Fit a circuit-breaker lock-off device over the MCB and attach a written warning tag. Test the two-pole voltage tester on the proving unit to confirm it is working (this is the first 'live' in the live-dead-live sequence). At the switch, remove the faceplate and test between all conductors and between each conductor and earth with the two-pole tester to confirm the circuit is dead (the 'dead' step). Test the tester on the proving unit again to confirm it still works after the dead test (the final 'live' step). Only then proceed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, remove the old switch and record the wiring" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Photograph the existing switch connections before disconnecting anything. In a loop-at-switch wiring arrangement, the switch cable contains a permanent live (red or brown), a switched live (yellow/red or blue with brown sleeve), and an earth. In newer installations the wiring follows BS 7671 colour harmonisation (brown = line, blue = neutral, grey = second switch line). Identify and label each conductor." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, prepare and connect to the dimmer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Strip the conductor ends to the dimmer's required length (typically 8 to 10 mm). Dimmer switches have two terminals labelled L1 and L2 (or COM and L), and an earth terminal. Connect as labelled: the permanent live goes to COM or L1, the switched live to L2, and the earth to the earth terminal. If the dimmer has a neutral terminal for neutral-required LED dimmers, connect the neutral. Ensure all conductors are sleeved in the correct colours where cores do not match their function." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4, restore power and test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fold the conductors carefully into the back box and fit the faceplate without fully tightening the screws. Remove the lock-off device and restore the MCB. Test the dimmer through its full range. If the lamps flicker at the low end of the range, adjust the minimum-load trim screw (usually accessible through a small hole on the faceplate with a flathead screwdriver) until the flicker is eliminated. Tighten the faceplate screws when the dimmer operates correctly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "LED lamps flicker or buzz after fitting a new dimmer",
+              "cause": "A leading-edge dimmer has been fitted with LED bulbs, or the LED lamps are not rated as dimmable.",
+              "fix": "Replace the dimmer with a trailing-edge type rated for LED loads. Confirm the bulbs are marked as dimmable on the lamp packaging."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Lamps glow dimly when the dimmer is at minimum or switched off",
+              "cause": "The dimmer leaks a small current when off; some LED drivers light dimly even under very low current.",
+              "fix": "Fit a trailing-edge dimmer with a zero-voltage output at the minimum setting, or replace the lamps with a model that has a higher off-state current threshold."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "MCB trips when the dimmer is switched on",
+              "cause": "The total load on the circuit exceeds the dimmer's rated wattage, or the dimmer has an internal fault.",
+              "fix": "Calculate the total wattage of all lamps on the circuit and confirm it is within the dimmer's rated maximum. If the wattage is within rating, the dimmer is faulty and should be replaced."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

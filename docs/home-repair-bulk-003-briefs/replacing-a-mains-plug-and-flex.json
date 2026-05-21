@@ -1,0 +1,111 @@
+{
+  "slug": "replacing-a-mains-plug-and-flex",
+  "title": "Replacing a mains plug and flex",
+  "subtitle": "Fit a new BS 1363 plug and replace a damaged appliance flex",
+  "excerpt": "How to replace a damaged mains plug or appliance flex: identifying the three conductors by colour, selecting the correct fuse rating for the appliance, stripping the flex to the correct lengths, connecting each conductor to the correct terminal, and fitting the correct fuse.",
+  "type": "TECHNIQUE",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual. IET On-Site Guide (BS 7671). BS 1363 standard.",
+  "recipeTools": [
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "utility-knife", "isOptional": false }
+  ],
+  "recipe": { "foundational": true },
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "wiring a plug",
+    "fitting a 13 amp plug",
+    "replacing appliance lead"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "earth-conductor",
+      "term": "Earth conductor",
+      "definition": "The yellow-and-green striped conductor in a three-core flex. The earth connects to the largest pin in a BS 1363 plug (the top pin). It provides a safe path to earth if the appliance develops a fault. Never omit the earth connection on an earthed appliance."
+    },
+    {
+      "slug": "neutral-conductor-plug",
+      "term": "Neutral conductor",
+      "definition": "The blue conductor in a three-core flex. The neutral connects to the terminal marked N in a BS 1363 plug (the left pin when the plug is viewed from the terminal side with the earth pin at the top). The neutral carries current back to the supply under normal operation."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Unplug the appliance from the wall socket before starting. Never work on a plug that is in the socket. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "earth-conductor" } }], "text": "earth conductor" },
+          { "type": "text", "text": " (yellow-green) must be the longest of the three inside the plug so it is the last conductor to pull free if the flex is yanked. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "neutral-conductor-plug" } }], "text": "neutral conductor" },
+          { "type": "text", "text": " (blue) connects to N; the live conductor (brown) connects to L." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, select the correct fuse" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The fuse rating depends on the appliance wattage: appliances rated up to 700 W take a 3 A fuse; appliances rated 700 W to 3000 W take a 13 A fuse. Common examples: lamp with LED bulbs (3 A), toaster (13 A), kettle (13 A), phone charger (3 A). Using a 13 A fuse on a lamp does not protect the thin flex of the lamp; the fuse must be sized for the appliance, not just the socket." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, prepare the flex" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remove the plug case screw and open the plug. Loosen the cord grip. Insert the flex through the cord grip and under the plug body, and determine the length each conductor needs to reach its terminal. The earth conductor needs to be 10 to 15 mm longer than the other two so it is the last to pull free under strain. Cut and strip the outer sheath to the correct length with a utility knife, taking care not to nick the inner conductors. Strip each conductor to 6 to 8 mm of bare wire." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, connect the conductors" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Twist the strands of each conductor clockwise before inserting into the terminal to prevent stray strands touching adjacent terminals. Connect brown to L (live, right terminal), blue to N (neutral, left terminal), and yellow-green to the E or earth terminal (top, largest pin). Tighten each terminal screw firmly; a loose connection causes arcing and overheating. No bare copper should be visible outside the terminal." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4, fit the fuse and close the plug" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fit the correct fuse into the fuse holder between the L terminal and the live pin. Tighten the cord grip firmly around the outer sheath of the flex (not around the individual conductors) so that pulling the flex puts strain on the grip, not on the terminal connections. Close the plug and tighten the case screw." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "Connecting blue to L and brown to N." }, { "type": "text", "text": " This reverses the live and neutral. The appliance will work but the live conductor will be connected to the neutral terminal, making the appliance unsafe and the fuse ineffective." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "Fitting the cord grip over the individual conductors rather than the outer sheath." }, { "type": "text", "text": " If the cord grip does not hold the outer sheath, any tug on the flex puts strain directly on the terminal screws, which eventually work loose." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "Leaving stray strands outside the terminal." }, { "type": "text", "text": " A single stray strand touching the adjacent terminal creates a short circuit. Twist the conductor before inserting and check no strands have escaped." }] }] }
+        ]
+      }
+    ]
+  }
+}

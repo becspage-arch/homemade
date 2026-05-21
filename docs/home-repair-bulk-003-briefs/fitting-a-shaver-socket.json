@@ -1,0 +1,133 @@
+{
+  "slug": "fitting-a-shaver-socket",
+  "title": "Fitting a shaver socket",
+  "subtitle": "Install a BS EN 61558-2-5 shaver socket in a bathroom or bedroom",
+  "excerpt": "How to fit a shaver socket: understanding the isolating transformer requirement, choosing a surface-mounted or flush-mounted installation, locking off and proving the feed circuit dead, wiring the socket, and testing the output.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual. IET On-Site Guide (BS 7671). BS EN 61558-2-5.",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "utility-knife", "isOptional": true }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "glossaryTerms": [
+    {
+      "slug": "shaver-isolating-transformer",
+      "term": "Shaver isolating transformer",
+      "definition": "A safety transformer built inside a shaver socket that provides galvanic isolation between the mains supply and the output. Required by BS 7671 for any shaver socket in a bathroom; the isolation breaks the earth reference and prevents electric shock if the shaver is dropped in water."
+    },
+    {
+      "slug": "zone-classification-bathroom",
+      "term": "Bathroom zone",
+      "definition": "The classified zones in a bathroom (Zones 0, 1, and 2) defined by their distance from water sources. Electrical fittings in each zone must meet minimum ingress protection (IP) ratings. A shaver socket must be positioned outside Zone 1 (more than 600 mm from the bath or shower head) and must be an IP44-rated unit for bathroom use."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A shaver socket contains a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "shaver-isolating-transformer" } }], "text": "shaver isolating transformer" },
+          { "type": "text", "text": " and is the only socket type permitted in a bathroom under BS 7671. The position must comply with " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "zone-classification-bathroom" } }], "text": "bathroom zone" },
+          { "type": "text", "text": " restrictions: it must be at least 600 mm horizontally from the edge of the bath or shower tray. A standard 13 A socket in a bathroom is not permitted." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, plan the feed and check the zone position" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A shaver socket can be fed from the lighting circuit (via a fused connection unit rated at 3 A), from the ring main via a spur, or from a dedicated circuit. The simplest domestic installation is a spur from the nearest ring main socket outside the bathroom, run in 2.5 mm twin-and-earth cable, terminating in a fused spur unit (3 A fuse) outside the bathroom from which the shaver socket is fed. Confirm the intended socket position is outside Zone 1 by measuring 600 mm horizontally from the bath edge." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, lock off and prove the feed circuit dead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Identify the MCB protecting the ring main or lighting circuit being used as the feed. Switch it off and fit a lock-off device. Test the two-pole voltage tester on the proving unit (first live). Test at the socket or connection point to confirm all conductors are dead (dead test). Test the tester on the proving unit again to confirm it is still functioning (second live). Proceed only when the circuit is confirmed dead." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, run the cable and prepare the socket position" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Run the 1.0 mm twin-and-earth feed cable from the fused spur to the shaver socket position, chased into the wall or surface-mounted in conduit. In a bathroom, all cables must be enclosed in conduit or embedded in plaster; no surface-mounted clip cables are permitted. Mark and cut the surface-mounted box position or fix the dry-lining box. Thread the cable into the box." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4, wire the socket" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Strip the outer sheath and individual conductors to the length required by the shaver socket terminals. Connect brown to L, blue to N, and the sleeved earth to E. Shaver sockets have three terminals on the input side; some also have an output connection point for a secondary feed. Tighten all terminal screws firmly. Fold the conductors into the back box and fix the faceplate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 5, restore power and test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remove the lock-off device and restore the MCB. Test the socket output with a shaver or a suitable tester. The output voltage should be 230 V on the UK/European socket position. Check the fused spur is functioning and the fuse is the correct rating (3 A). Check the socket faceplate is secure and that there are no gaps between the faceplate and the wall that would allow water ingress." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "No output at the socket after commissioning",
+              "cause": "The fuse in the fused spur is blown, or the feed circuit MCB has tripped.",
+              "fix": "Check the fused spur fuse first; replace with a 3 A fuse if blown. If the MCB has tripped, investigate whether the new cable has been damaged during installation before resetting."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Socket faceplate does not sit flush against the wall",
+              "cause": "The back box is set too deep or the cables are bunched behind the socket rather than being folded flat.",
+              "fix": "Remove the faceplate and refold the cables flat against the back of the box. If the box is too deep, fit a surface-mounting ring to bring the faceplate level."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
