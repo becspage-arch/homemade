@@ -86,6 +86,20 @@ export function HomeCard({ tutorial, state, overline, size = 'card' }: HomeCardP
             <BookmarkGlyph />
           </span>
         )}
+        {state?.projectStatus === 'IN_PROGRESS' &&
+          typeof state.projectProgressPercent === 'number' && (
+            <span
+              className="home-card-progress"
+              aria-label={`${state.projectProgressPercent}% complete`}
+            >
+              <span
+                className="home-card-progress-fill"
+                style={{
+                  width: `${Math.max(0, Math.min(100, state.projectProgressPercent))}%`,
+                }}
+              />
+            </span>
+          )}
         {dietary.length > 0 && (
           <span className="home-card-dietary" aria-hidden="false">
             {dietary.map((flag) => (

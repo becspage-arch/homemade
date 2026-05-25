@@ -1,6 +1,5 @@
-import Link from 'next/link'
-import { mediaSrcSet } from '@/lib/media'
-import { HomeRail } from './home-rail'
+import { PinterestCard } from './home-cards/pinterest-card'
+import { RailScroll } from './rail-scroll'
 import type { RecentlyMadeTile } from '@/lib/recently-made'
 
 interface RecentlyMadeRailProps {
@@ -10,16 +9,15 @@ interface RecentlyMadeRailProps {
 }
 
 /**
- * Pinterest-style rail of recent public makes. One tile per UserProject,
- * showing the hero photo + tutorial title + "Made by {Name}" caption.
+ * Recently-made-by-the-community rail. Desktop is a horizontal-scroll
+ * rail of Pinterest Caption Cards with varied aspect ratios (4:5, 1:1,
+ * 3:4 rotated) so the rhythm breaks. Mobile is a 2-column masonry grid
+ * driven by CSS columns. The mobile masonry is the one place Pinterest's
+ * mobile model fits Homemade better than the swipe rail.
  *
- * The whole tile links to the Made it detail page (which itself links to
- * the Maker profile). Nesting a maker-profile link inside the tile would
- * produce nested anchors — invalid HTML — so the maker name renders as
- * plain text here and the tap target is the tile + detail page.
- *
- * Renders nothing when there are no tiles — the parent should already
- * check this but we belt-and-braces it.
+ * The whole tile links to the Made-it detail page. The Maker handle
+ * renders as plain text below the image (nested anchors would be
+ * invalid HTML).
  */
 export function RecentlyMadeRail({
   heading,
@@ -27,42 +25,33 @@ export function RecentlyMadeRail({
   tiles,
 }: RecentlyMadeRailProps) {
   if (tiles.length === 0) return null
+
+  const items = tiles.map((t) => (
+    <PinterestCard
+      key={t.projectId}
+      href={`/m/${t.makerHandle}/made/${t.projectId}`}
+      imageMedia={t.heroSource}
+      title={t.tutorialTitle}
+      byline={`Made by ${t.makerName}`}
+    />
+  ))
+
   return (
-    <HomeRail heading={heading} subheading={subheading}>
-      {tiles.map((t) => {
-        const card = mediaSrcSet(t.heroSource, 'card', ['public'])
-        return (
-          <Link
-            key={t.projectId}
-            href={`/m/${t.makerHandle}/made/${t.projectId}`}
-            className="home-card home-card-card"
-          >
-            <span className="home-card-image-wrap">
-              {card ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  className="home-card-image"
-                  src={card.src}
-                  srcSet={card.srcSet}
-                  sizes="(min-width: 900px) 28vw, (min-width: 600px) 44vw, 80vw"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              ) : (
-                <span className="home-card-image procedural" />
-              )}
-            </span>
-            <span className="home-card-body">
-              <span className="home-card-category">{t.categoryName}</span>
-              <span className="home-card-title">{t.tutorialTitle}</span>
-              <span className="home-card-meta">
-                <span>Made by {t.makerName}</span>
-              </span>
-            </span>
-          </Link>
-        )
-      })}
-    </HomeRail>
+    <section className="home-rail home-recently-made-rail">
+      <header className="home-rail-header">
+        <h2 className="home-rail-heading">{heading}</h2>
+        {subheading && <p className="home-rail-subheading">{subheading}</p>}
+      </header>
+
+      {/* Desktop: horizontal swipe rail with varied-aspect cards. */}
+      <div className="home-recently-made-desktop">
+        <RailScroll>
+          <div className="home-rail-track">{items}</div>
+        </RailScroll>
+      </div>
+
+      {/* Mobile: 2-column masonry grid. */}
+      <div className="home-recently-made-masonry">{items}</div>
+    </section>
   )
 }

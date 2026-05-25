@@ -37,6 +37,7 @@ interface TutorialCardSelect {
   season: string | null
   cuisine: string | null
   mealType: string | null
+  heroQuality: 'EDITORIAL' | 'STANDARD' | 'FALLBACK'
 }
 
 const CARD_SELECT = {
@@ -56,6 +57,7 @@ const CARD_SELECT = {
   season: true,
   cuisine: true,
   mealType: true,
+  heroQuality: true,
 } as const
 
 export interface HomepageScheduledAction {
@@ -372,10 +374,20 @@ export async function loadHomepageData(
         : thisWeeksEditorialPicks[0]
           ? { kind: 'EDITORIAL_PICK', tutorial: thisWeeksEditorialPicks[0] }
           : { kind: 'WORDMARK_FALLBACK' }
-    } else if (thisWeeksEditorialPicks[0]) {
-      hero = { kind: 'EDITORIAL_PICK', tutorial: thisWeeksEditorialPicks[0] }
     } else {
-      hero = { kind: 'WORDMARK_FALLBACK' }
+      // Hero-quality gate (Decision 2 locked 2026-05-25): prefer the first
+      // editorial pick whose photo is graded EDITORIAL. Fall back to the
+      // first pick of any quality so the page never lands on the wordmark
+      // fallback purely because no photo is graded yet — the grading is a
+      // gradual editorial activity, not a launch blocker.
+      const editorialPick =
+        thisWeeksEditorialPicks.find((t) => t.heroQuality === 'EDITORIAL') ??
+        thisWeeksEditorialPicks[0]
+      if (editorialPick) {
+        hero = { kind: 'EDITORIAL_PICK', tutorial: editorialPick }
+      } else {
+        hero = { kind: 'WORDMARK_FALLBACK' }
+      }
     }
   }
 

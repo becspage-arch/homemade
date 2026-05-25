@@ -416,6 +416,13 @@ model Tutorial {
   // `packages/db/scripts/apply-media-verdicts.ts`.
   excludedImageSources String[] @default([])
 
+  // Phase 8 homepage redesign — hero photo quality gate. The homepage
+  // hero loader filters EDITORIAL_PICK candidates to `heroQuality =
+  // EDITORIAL` so weak photos don't surface in the full-bleed Netflix-
+  // style hero. STANDARD = default (eligible for card grid, not hero).
+  // FALLBACK = weak / procedural photo, never used as a hero.
+  heroQuality HeroQuality @default(STANDARD)
+
   // Lifecycle
   status       TutorialStatus @default(DRAFT)
   publishedAt  DateTime?
@@ -884,6 +891,16 @@ enum TutorialStatus {
   SCHEDULED
   PUBLISHED
   ARCHIVED
+}
+
+// Hero photo quality gate — Phase 8 homepage redesign.
+// EDITORIAL: hero-grade photo, OK for the full-bleed editorial-pick hero.
+// STANDARD : default; eligible for card-grid surfaces, never chosen for hero.
+// FALLBACK : weak or procedural photo, never used as a hero anywhere.
+enum HeroQuality {
+  EDITORIAL
+  STANDARD
+  FALLBACK
 }
 
 // One row per save in the admin editor. Used for version history + rollback.

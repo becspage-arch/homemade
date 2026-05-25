@@ -1,9 +1,13 @@
-import Link from 'next/link'
 import type { Metadata } from 'next'
 import { HomeCard } from '@/components/public/home-card'
 import { HomeRail } from '@/components/public/home-rail'
 import { OnboardingCard } from '@/components/public/onboarding-card'
 import { RecentlyMadeRail } from '@/components/public/recently-made-rail'
+import { InSeasonMosaic } from '@/components/public/in-season-mosaic'
+import { CategoryImageTiles } from '@/components/public/category-image-tiles'
+import { HeaderModeController } from '@/components/public/header-mode-controller'
+import { HeroOverlay } from '@/components/public/home-cards/hero-overlay'
+import { ScheduledActionCard } from '@/components/public/home-cards/scheduled-action-card'
 import { Wordmark } from '@/components/wordmark'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { loadHomepageData } from '@/lib/homepage-data'
@@ -11,7 +15,6 @@ import { loadRecentlyMade } from '@/lib/recently-made'
 import { loadActiveMakerOfTheMonth } from '@/lib/maker-of-the-month'
 import { MakerOfTheMonthTile } from '@/components/public/maker-of-the-month-tile'
 import { readerStateFor } from '@/lib/user-state'
-import { tutorialHeroSrc } from '@/lib/tutorial-hero'
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import { prisma } from '@homemade/db'
 
@@ -52,8 +55,7 @@ export default async function HomePage() {
     )
   }
 
-  // Onboarding hero takes the whole stage when needed; we still load the
-  // categories list so the picker doesn't roundtrip a second time.
+  // Onboarding hero takes the whole stage when needed.
   let onboardingCategories: { id: string; slug: string; name: string }[] = []
   if (data.isOnboardingPending) {
     onboardingCategories = await prisma.category.findMany({
@@ -65,30 +67,53 @@ export default async function HomePage() {
 
   return (
     <div className="home-page">
-      {/* ──────────────────────────────────────────────────────────────────
-          Inline onboarding card — shown above rails for new users only
-        ────────────────────────────────────────────────────────────────── */}
+      {/* Top nav transparent-over-hero treatment (homepage only). */}
+      <HeaderModeController />
+
+      {/* Inline onboarding card — new users only, above the hero. */}
       {data.isOnboardingPending && (
         <section className="home-onboarding-zone">
           <OnboardingCard categories={onboardingCategories} />
         </section>
       )}
 
-      {/* ──────────────────────────────────────────────────────────────────
-          State-aware hero (non-onboarding users)
-        ────────────────────────────────────────────────────────────────── */}
+      {/* State-aware hero — full-bleed image with overlay. */}
       {!data.isOnboardingPending && (
         <section className="home-hero-zone">
           {data.hero.kind === 'SCHEDULED_STEP' && (
-            <HeroScheduledStep action={data.hero.action} />
+            <HeroOverlay
+              href={`/${data.hero.action.tutorial.category.slug}/${data.hero.action.tutorial.slug}`}
+              imageMedia={data.hero.action.tutorial.hero}
+              overline={`Today on your ${data.hero.action.tutorial.title.toLowerCase()}`}
+              eyebrow={`Day ${data.hero.action.step.stepNumber}`}
+              title={data.hero.action.step.title}
+              excerpt={data.hero.action.step.body}
+              ctaLabel="Open the project →"
+            />
           )}
 
           {data.hero.kind === 'CONTINUE_MAKING' && (
-            <HeroContinueMaking tutorial={data.hero.project} />
+            <HeroOverlay
+              href={`/${data.hero.project.category.slug}/${data.hero.project.slug}`}
+              imageMedia={data.hero.project.hero}
+              overline="Continue making"
+              eyebrow={data.hero.project.category.name}
+              title={data.hero.project.title}
+              excerpt={data.hero.project.excerpt}
+              ctaLabel="Pick up where you left off →"
+            />
           )}
 
           {data.hero.kind === 'EDITORIAL_PICK' && (
-            <HeroEditorialPick tutorial={data.hero.tutorial} />
+            <HeroOverlay
+              href={`/${data.hero.tutorial.category.slug}/${data.hero.tutorial.slug}`}
+              imageMedia={data.hero.tutorial.hero}
+              overline="This week's editorial pick"
+              eyebrow={data.hero.tutorial.category.name}
+              title={data.hero.tutorial.title}
+              excerpt={data.hero.tutorial.excerpt}
+              ctaLabel="Read the guide →"
+            />
           )}
 
           {data.hero.kind === 'WORDMARK_FALLBACK' && (
@@ -100,9 +125,7 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* ──────────────────────────────────────────────────────────────────
-          Rail stack
-        ────────────────────────────────────────────────────────────────── */}
+      {/* Rail stack. */}
 
       {data.thisWeeksEditorialPicks.length > 0 && (
         <HomeRail heading="This week's editorial picks">
@@ -138,18 +161,14 @@ export default async function HomePage() {
           subheading="The next step on what you're already making."
         >
           {data.todaysScheduledActions.map((action) => (
-            <article key={action.userProjectId} className="home-scheduled-card">
-              <Link
-                href={`/${action.tutorial.category.slug}/${action.tutorial.slug}`}
-                className="home-scheduled-card-link"
-              >
-                <span className="home-scheduled-overline">
-                  Day {action.step.stepNumber} · {action.tutorial.title}
-                </span>
-                <span className="home-scheduled-title">{action.step.title}</span>
-                <span className="home-scheduled-body">{action.step.body}</span>
-              </Link>
-            </article>
+            <ScheduledActionCard
+              key={action.userProjectId}
+              href={`/${action.tutorial.category.slug}/${action.tutorial.slug}`}
+              overline={`Day ${action.step.stepNumber} · ${action.tutorial.title}`}
+              title={action.step.title}
+              body={action.step.body}
+              tutorial={action.tutorial}
+            />
           ))}
         </HomeRail>
       )}
@@ -187,15 +206,11 @@ export default async function HomePage() {
       )}
 
       {data.inSeasonNow.length > 0 && (
-        <HomeRail heading="In season right now">
-          {data.inSeasonNow.map((t) => (
-            <HomeCard
-              key={t.id}
-              tutorial={t}
-              state={readerStateFor(data.readerState, t.id)}
-            />
-          ))}
-        </HomeRail>
+        <InSeasonMosaic
+          heading="In season right now"
+          tutorials={data.inSeasonNow}
+          readerState={data.readerState}
+        />
       )}
 
       {data.newSinceLastVisit.length > 0 && (
@@ -236,143 +251,7 @@ export default async function HomePage() {
         />
       )}
 
-      <section className="home-all-categories">
-        <header className="home-rail-header">
-          <h2 className="home-rail-heading">Browse all categories</h2>
-        </header>
-        <div className="home-categories-grid">
-          {data.allCategories.map((cat) => (
-            <Link
-              key={cat.slug}
-              href={`/${cat.slug}`}
-              className="home-category-tile"
-            >
-              <span className="home-category-tile-name">{cat.name}</span>
-              {cat.description && (
-                <span className="home-category-tile-description">
-                  {cat.description}
-                </span>
-              )}
-            </Link>
-          ))}
-        </div>
-      </section>
+      <CategoryImageTiles categories={data.allCategories} />
     </div>
-  )
-}
-
-interface HeroTutorial {
-  id: string
-  slug: string
-  title: string
-  excerpt: string | null
-  category: { slug: string; name: string }
-  hero: { cloudflareId: string | null; r2Key: string | null; alt: string | null } | null
-}
-
-function HeroEditorialPick({ tutorial }: { tutorial: HeroTutorial }) {
-  const hero = tutorialHeroSrc(tutorial, 'public', ['hero'])
-  return (
-    <Link
-      href={`/${tutorial.category.slug}/${tutorial.slug}`}
-      className="home-hero-feature"
-    >
-      <span className="home-hero-image-wrap">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          className={`home-hero-image${hero.isProcedural ? ' procedural' : ''}`}
-          src={hero.src}
-          srcSet={hero.srcSet}
-          sizes="(min-width: 900px) 60vw, 100vw"
-          alt={tutorial.hero?.alt ?? ''}
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-        />
-      </span>
-      <div className="home-hero-body">
-        <span className="home-hero-overline">This week&apos;s editorial pick</span>
-        <span className="home-hero-eyebrow">{tutorial.category.name}</span>
-        <h1 className="home-hero-title">{tutorial.title}</h1>
-        {tutorial.excerpt && (
-          <p className="home-hero-excerpt">{tutorial.excerpt}</p>
-        )}
-        <span className="home-hero-cta">Read the guide →</span>
-      </div>
-    </Link>
-  )
-}
-
-function HeroContinueMaking({ tutorial }: { tutorial: HeroTutorial }) {
-  const hero = tutorialHeroSrc(tutorial, 'public', ['hero'])
-  return (
-    <Link
-      href={`/${tutorial.category.slug}/${tutorial.slug}`}
-      className="home-hero-feature"
-    >
-      <span className="home-hero-image-wrap">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          className={`home-hero-image${hero.isProcedural ? ' procedural' : ''}`}
-          src={hero.src}
-          srcSet={hero.srcSet}
-          sizes="(min-width: 900px) 60vw, 100vw"
-          alt={tutorial.hero?.alt ?? ''}
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-        />
-      </span>
-      <div className="home-hero-body">
-        <span className="home-hero-overline">Continue making</span>
-        <span className="home-hero-eyebrow">{tutorial.category.name}</span>
-        <h1 className="home-hero-title">{tutorial.title}</h1>
-        {tutorial.excerpt && (
-          <p className="home-hero-excerpt">{tutorial.excerpt}</p>
-        )}
-        <span className="home-hero-cta">Pick up where you left off →</span>
-      </div>
-    </Link>
-  )
-}
-
-interface ScheduledActionLike {
-  userProjectId: string
-  tutorial: HeroTutorial
-  step: { title: string; body: string; stepNumber: number }
-}
-
-function HeroScheduledStep({ action }: { action: ScheduledActionLike }) {
-  const hero = tutorialHeroSrc(action.tutorial, 'public', ['hero'])
-  return (
-    <Link
-      href={`/${action.tutorial.category.slug}/${action.tutorial.slug}`}
-      className="home-hero-feature"
-    >
-      <span className="home-hero-image-wrap">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          className={`home-hero-image${hero.isProcedural ? ' procedural' : ''}`}
-          src={hero.src}
-          srcSet={hero.srcSet}
-          sizes="(min-width: 900px) 60vw, 100vw"
-          alt={action.tutorial.hero?.alt ?? ''}
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-        />
-      </span>
-      <div className="home-hero-body">
-        <span className="home-hero-overline">
-          Today on your {action.tutorial.title.toLowerCase()}
-        </span>
-        <span className="home-hero-eyebrow">
-          Day {action.step.stepNumber}
-        </span>
-        <h1 className="home-hero-title">{action.step.title}</h1>
-        <p className="home-hero-excerpt">{action.step.body}</p>
-        <span className="home-hero-cta">Open the project →</span>
-      </div>
-    </Link>
   )
 }
