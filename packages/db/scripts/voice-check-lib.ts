@@ -33,6 +33,14 @@ export type FindingKind =
   | 'raw-hours'
   | 'unflagged-jargon'
   | 'empty-glossary-def'
+  // Added 2026-05-25 (voice-spec-2026-05-21 retrofit).
+  | 'year-in-body'
+  | 'institutional-in-body'
+  | 'historical-figure-in-body'
+  | 'prose-style-steps'
+  | 'clinical-vocab'
+  | 'grade-level'
+  | 'missing-node-type'
 
 export interface Finding {
   severity: Severity
@@ -97,6 +105,120 @@ const JARGON_WATCHLIST: { word: string; note: string }[] = [
   { word: 'drenching', note: 'domain jargon — register in glossaryTerms[] with a definition' },
   { word: 'standstill', note: 'domain jargon in animal husbandry context — register in glossaryTerms[]' },
   { word: 'tare', note: 'domain jargon — register in glossaryTerms[] or write "the empty container weight" in plain English' },
+]
+
+/**
+ * Voice-spec 2026-05-21 rules — apply ONLY to body prose, never to
+ * `sourceNotes` (chunks whose path starts with `body >` rather than
+ * `sourceNotes`). These rules formalise the grade-6-8 register.
+ */
+
+/** Years in parentheses ((1652), (1898), (1931), (2008), …). */
+const YEAR_IN_BODY_PATTERN = /\((1[6-9]\d{2}|20\d{2})\)/
+
+/**
+ * Institutional / regulatory names that may appear in sourceNotes but not
+ * in body prose. Case-insensitive whole-phrase match. The "Project
+ * Gutenberg" entry is included because the citation belongs in the
+ * Sources block, not the body.
+ */
+const INSTITUTIONAL_NAMES = [
+  'German Commission E',
+  'Commission E',
+  'British Herbal Pharmacopoeia',
+  'BHP',
+  'FDA',
+  'MHRA',
+  'NHS',
+  'RHS',
+  'USDA',
+  'NCCIH',
+  'ESCOP',
+  'EMA HMPC',
+  'EMA',
+  'AHDB',
+  'DEFRA',
+  'AECB',
+  'Passivhaus Trust',
+  'Energy Saving Trust',
+  'National Trust',
+  'English Heritage',
+  'Project Gutenberg',
+  'Botanical.com',
+]
+
+/**
+ * Historical author surnames. When they appear in body prose without a
+ * plain-English gloss in the same sentence, fire. Gloss tokens include
+ * "century", "herbalist", "Victorian", "manual", "cookery", etc. The
+ * heuristic is intentionally loose — false positives are fine because
+ * the rule flags lines for human / Sonnet rewrite.
+ */
+const HISTORICAL_FIGURES = [
+  'Culpeper',
+  'Gerard',
+  'Grieve',
+  'Quincy',
+  'Beeton',
+  'Mrs Beeton',
+  'de Dillmont',
+  'Caulfeild',
+  'Saward',
+  'Glasse',
+  'Acton',
+  'Jekyll',
+  'Sackville-West',
+  'Pellaprat',
+  'Carême',
+  'Careme',
+  'Gladstar',
+  'Tisserand',
+  'Felter',
+]
+
+/** Gloss tokens that, if present in the same sentence as a historical
+ *  figure, suppress the finding. Case-insensitive. */
+const HISTORICAL_GLOSS_TOKENS = [
+  'century',
+  '17th-century',
+  '18th-century',
+  '19th-century',
+  '20th-century',
+  'herbalist',
+  'manual',
+  'cookery',
+  'cookbook',
+  'victorian',
+  'edwardian',
+  'wrote',
+  'documented',
+  'recorded',
+  'sister',
+  'author of',
+]
+
+/**
+ * Prose-style sequential step openers. A body-context paragraph that
+ * STARTS with one of these AND has a sibling paragraph that also starts
+ * with one is a numbered list written badly — fire.
+ */
+const STEP_OPENERS = ['First,', 'Then,', 'Next,', 'Finally,', 'After that,', 'Lastly,']
+
+/** Clinical / Latin vocabulary that must appear via glossaryTooltip or be
+ *  replaced with plain English. Body-only. */
+const CLINICAL_VOCAB: { word: string; plain: string }[] = [
+  { word: 'catarrh', plain: 'chest congestion / mucus build-up' },
+  { word: 'expectorant', plain: 'loosens phlegm' },
+  { word: 'antispasmodic', plain: 'eases muscle spasm' },
+  { word: 'emmenagogue', plain: 'do not use in body; sources block only' },
+  { word: 'anti-inflammatory', plain: 'calms swelling' },
+  { word: 'decoction', plain: '"simmered in water" or use a tooltip' },
+  { word: 'maceration', plain: '"soaked in liquid" or use a tooltip' },
+  { word: 'saponification', plain: 'soap-making chemistry; technical notes only' },
+  { word: 'vulnerary', plain: '"wound-healing" or use a tooltip' },
+  { word: 'anhydrous', plain: '"water-free" or use a tooltip' },
+  { word: 'determinate', plain: '"bush variety"' },
+  { word: 'indeterminate', plain: '"cordon variety"' },
 ]
 
 /** Banned phrases — block. Case-insensitive, whole-word. */
@@ -521,7 +643,11 @@ export function runVoiceCheck(input: unknown): VoiceCheckReport {
   // Apply rules.
   for (const chunk of chunks) {
     scanChunk(chunk, report)
+    scanChunkBodyOnly(chunk, report)
   }
+
+  // Cross-chunk: prose-style sequential steps across consecutive paragraphs.
+  checkProseStyleSteps(chunks, report)
 
   // Structural rules — run over the upload-input level when available.
   if (root.body !== undefined) {
@@ -529,11 +655,242 @@ export function runVoiceCheck(input: unknown): VoiceCheckReport {
     checkTemperatureCanonical(root, report)
     checkServingsAndYield(root, report)
     checkSafetyInfoPanels(root.body, report)
+    checkTipTapTextNodeType(root.body, report)
+    checkInlineClinicalVocab(root.body, report)
   } else {
     checkSafetyInfoPanels(body, report)
+    checkTipTapTextNodeType(body, report)
+    checkInlineClinicalVocab(body, report)
   }
 
   return report
+}
+
+// ─── 2026-05-21 voice-spec rules (body-only) ────────────────────────────────
+
+/**
+ * Body-only scans. Run alongside the existing scanChunk; gated on
+ * `chunk.path.startsWith('body')`. sourceNotes (the Sources block) is
+ * exempt — citations, institutional names, years, and historical figures
+ * all live there legitimately.
+ */
+function scanChunkBodyOnly(chunk: Chunk, report: VoiceCheckReport): void {
+  if (!chunk.path.startsWith('body')) return
+  const { text, path } = chunk
+
+  // Year in parentheses — block.
+  const yearMatch = YEAR_IN_BODY_PATTERN.exec(text)
+  if (yearMatch) {
+    report.errors.push({
+      severity: 'error',
+      kind: 'year-in-body',
+      message: `year-only reference "${yearMatch[0]}" in body prose — move historical context to sourceNotes`,
+      path,
+      snippet: yearMatch[0],
+    })
+  }
+
+  // Institutional / regulatory names — block.
+  for (const name of INSTITUTIONAL_NAMES) {
+    const re = new RegExp(`\\b${name.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\$&')}\\b`, 'i')
+    if (re.test(text)) {
+      report.errors.push({
+        severity: 'error',
+        kind: 'institutional-in-body',
+        message: `institutional name "${name}" in body prose — move to sourceNotes (Sources block on the public page)`,
+        path,
+        snippet: name,
+      })
+    }
+  }
+
+  // Historical figure surnames without an inline gloss in the same sentence.
+  for (const figure of HISTORICAL_FIGURES) {
+    const re = new RegExp(`\\b${figure.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\$&')}\\b`)
+    if (!re.test(text)) continue
+    // Find the sentence containing the surname.
+    const sentences = text.split(/(?<=[.!?])\s+/)
+    for (const s of sentences) {
+      if (!re.test(s)) continue
+      const lower = s.toLowerCase()
+      const hasGloss = HISTORICAL_GLOSS_TOKENS.some((t) => lower.includes(t.toLowerCase()))
+      if (!hasGloss) {
+        report.errors.push({
+          severity: 'error',
+          kind: 'historical-figure-in-body',
+          message: `historical figure "${figure}" in body prose without plain-English gloss — move to sourceNotes or introduce as e.g. "the 17th-century herbalist ${figure}"`,
+          path,
+          snippet: figure,
+        })
+        break
+      }
+    }
+  }
+
+  // Grade-level (Flesch-Kincaid) per paragraph chunk only.
+  if (chunk.paragraph) {
+    const grade = fleschKincaidGrade(text)
+    if (grade !== null && grade > GRADE_LEVEL_BLOCK_THRESHOLD) {
+      report.errors.push({
+        severity: 'error',
+        kind: 'grade-level',
+        message: `paragraph reads at grade ${grade.toFixed(1)} (threshold: ${GRADE_LEVEL_BLOCK_THRESHOLD.toFixed(1)}) — simplify vocabulary or shorten sentences (grade 6-8 register)`,
+        path,
+      })
+    }
+  }
+}
+
+/**
+ * Grade-level threshold. Calibrated 2026-05-25 against the 10 approved
+ * voice-pilot bodies (all paragraphs below grade ~11) and the
+ * pre-rewrite calendula-salve / thyme-cough-syrup (paragraphs at grade
+ * 13-15). Set to 12 so genuine academic register blocks; ordinary
+ * recipe prose passes. Tighten over time once the library catches up.
+ */
+const GRADE_LEVEL_BLOCK_THRESHOLD = 12
+
+/**
+ * Flesch-Kincaid Grade Level. Returns null on too-short input
+ * (<10 words) where the score is meaningless.
+ *   FKGL = 0.39 * (words / sentences) + 11.8 * (syllables / words) - 15.59
+ */
+export function fleschKincaidGrade(text: string): number | null {
+  const cleaned = text.trim()
+  if (!cleaned) return null
+  const sentences = cleaned.split(/[.!?]+(?:\s|$)/).filter((s) => s.trim().length > 0)
+  const words = cleaned.split(/\s+/).filter(Boolean)
+  if (words.length < 10) return null
+  const sentenceCount = Math.max(sentences.length, 1)
+  let syllables = 0
+  for (const w of words) syllables += countSyllables(w)
+  return (
+    0.39 * (words.length / sentenceCount) +
+    11.8 * (syllables / words.length) -
+    15.59
+  )
+}
+
+function countSyllables(word: string): number {
+  const w = word.toLowerCase().replace(/[^a-z]/g, '')
+  if (!w) return 0
+  if (w.length <= 3) return 1
+  // Count vowel groups.
+  const groups = w
+    .replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '')
+    .match(/[aeiouy]+/g)
+  return Math.max(groups?.length ?? 1, 1)
+}
+
+/**
+ * Cross-chunk check: two or more consecutive body paragraphs that start
+ * with a step-opener (First, / Then, / Next, / Finally, …) are a numbered
+ * list written badly. Fire on each one after the first match.
+ */
+function checkProseStyleSteps(chunks: Chunk[], report: VoiceCheckReport): void {
+  const bodyParas = chunks.filter((c) => c.paragraph && c.path.startsWith('body'))
+  let runStartIdx = -1
+  for (let i = 0; i < bodyParas.length; i++) {
+    const para = bodyParas[i]
+    if (!para) continue
+    const opensWith = STEP_OPENERS.find((opener) =>
+      para.text.trimStart().toLowerCase().startsWith(opener.toLowerCase()),
+    )
+    if (opensWith) {
+      if (runStartIdx < 0) runStartIdx = i
+      // If the previous paragraph also opened with a step-opener, we have a run.
+      const prev = bodyParas[i - 1]
+      if (
+        prev &&
+        STEP_OPENERS.some((o) => prev.text.trimStart().toLowerCase().startsWith(o.toLowerCase()))
+      ) {
+        report.errors.push({
+          severity: 'error',
+          kind: 'prose-style-steps',
+          message: `prose-style sequential step ("${opensWith} …") — sequential instructions belong in an orderedList block, not prose`,
+          path: para.path,
+          snippet: opensWith,
+        })
+      }
+    } else {
+      runStartIdx = -1
+    }
+  }
+}
+
+/**
+ * Structural validator: every text-bearing leaf in the body MUST have
+ * `type: "text"`. Missing the type field makes the public renderer's
+ * switch on node.type drop the node silently via its default case.
+ * Caught during the voice-pilot when orderedList step contents were
+ * authored without the type field. Blocking error from now on.
+ */
+function checkTipTapTextNodeType(body: unknown, report: VoiceCheckReport): void {
+  if (!body || typeof body !== 'object') return
+  let missing = 0
+  function walk(node: any, path: string): void {
+    if (!node || typeof node !== 'object') return
+    // Leaf with text but no type field.
+    if (typeof node.text === 'string' && !node.type) {
+      missing++
+      if (missing <= 5) {
+        report.errors.push({
+          severity: 'error',
+          kind: 'missing-node-type',
+          message: `TipTap text node missing "type": "text" — would render as empty on the public page; add the type field`,
+          path,
+          snippet: node.text.slice(0, 60),
+        })
+      }
+    }
+    if (Array.isArray(node.content)) {
+      node.content.forEach((c: any, i: number) => walk(c, `${path} > [${i}]`))
+    }
+  }
+  walk(body, 'body')
+  if (missing > 5) {
+    report.errors.push({
+      severity: 'error',
+      kind: 'missing-node-type',
+      message: `${missing - 5} additional text nodes missing "type": "text" (only first 5 listed)`,
+      path: 'body',
+    })
+  }
+}
+
+/**
+ * Clinical / Latin vocab check. Fires when a watchlist word appears in
+ * body prose AND the text node is NOT wrapped in a glossaryTooltip mark.
+ * Walks the body directly (not chunks) so we can read mark context.
+ */
+function checkInlineClinicalVocab(body: unknown, report: VoiceCheckReport): void {
+  if (!body || typeof body !== 'object') return
+  function walk(node: any, path: string, parentTone: string | null): void {
+    if (!node || typeof node !== 'object') return
+    // Skip nodes inside info / source blocks where the term may be allowed.
+    if (node.type === 'text' && typeof node.text === 'string') {
+      const marks: any[] = Array.isArray(node.marks) ? node.marks : []
+      const tooltipped = marks.some((m) => m?.type === 'glossaryTooltip')
+      if (!tooltipped) {
+        for (const entry of CLINICAL_VOCAB) {
+          const re = new RegExp(`\\b${entry.word}\\b`, 'i')
+          if (re.test(node.text)) {
+            report.errors.push({
+              severity: 'error',
+              kind: 'clinical-vocab',
+              message: `clinical/Latin vocabulary "${entry.word}" in body prose without glossary tooltip — use ${entry.plain}`,
+              path,
+              snippet: entry.word,
+            })
+          }
+        }
+      }
+    }
+    if (Array.isArray(node.content)) {
+      node.content.forEach((c: any, i: number) => walk(c, `${path} > [${i}]`, parentTone))
+    }
+  }
+  walk(body, 'body', null)
 }
 
 // ─── Structural rules (phase_8_content_integration_001) ─────────────────────
