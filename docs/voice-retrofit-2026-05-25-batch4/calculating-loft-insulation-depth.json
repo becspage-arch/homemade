@@ -1,0 +1,684 @@
+{
+  "_meta": {
+    "tutorialId": "cmpba7qkx00000wv4po6m9mqs",
+    "categorySlug": "sustainability",
+    "subCategorySlug": "insulation-and-draughtproofing",
+    "publicUrl": "https://homemade.education/sustainability/calculating-loft-insulation-depth",
+    "type": "TECHNIQUE"
+  },
+  "slug": "calculating-loft-insulation-depth",
+  "title": "Calculating how much loft insulation you need",
+  "subtitle": "A worked example for a typical UK home",
+  "excerpt": "Most UK lofts carry 100 to 150 mm of mineral wool, installed decades ago and compressed by storage. Current Part L practice targets 270 to 300 mm. This is the calculation that tells you what depth you have, what depth you need, and how many packs to buy.",
+  "type": "TECHNIQUE",
+  "sourceNotes": "gov.uk Building Regulations Approved Document Part L1B (2022) for the 0.16 W/m²·K loft U-value target on retrofit. Energy Saving Trust loft-insulation guidance (current at 2025) for the 270 mm typical retrofit depth, the average installation cost figure, and the annual heating-bill saving figure for an English semi-detached house. Knauf Earthwool / Rockwool technical data sheets for the 0.044 W/m·K lambda value used in the worked example. UK Building Research Establishment SAP 10 conventions for assumed loft U-values on legacy stock.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Topping up loft insulation is the single best-value retrofit on a UK home. The materials are cheap. The work is DIY-friendly if your loft is accessible. The heat saving shows up on the first winter bill. The sum that tells you how many packs to buy is short. Three lines of arithmetic. It sits behind three working numbers most people don't have to hand. The current depth, the target ",
+            "type": "text"
+          },
+          {
+            "text": "U-value",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3am5000b4ov4yec2iqbd"
+                }
+              }
+            ]
+          },
+          {
+            "text": ", and the ",
+            "type": "text"
+          },
+          {
+            "text": "lambda value",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3anl000d4ov4z7126rp6"
+                }
+              }
+            ]
+          },
+          {
+            "text": " of the product you'll buy.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "body": "Topping up from 100 mm to 270 mm of mineral wool on a typical UK three-bedroom semi saves around 1400 kWh a year on heating. On gas at the 2025/26 cap rate that is around eighty-five pounds a year. On oil or electric it is closer to two hundred pounds. Some industry estimates put gas savings a bit higher. Both numbers point to a payback in the three to five year range. Materials for a 50 m² loft topped up by 170 mm of lambda 0.044 wool: roughly nine packs of 200 mm by 8.5 m mineral wool, around two hundred and seventy to three hundred pounds. DIY install is one afternoon. A professional installer charges around three hundred and fifty to five hundred pounds for the same job.",
+          "tone": "info",
+          "title": "What this saves"
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "What you need to know first",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Four numbers drive the calculation. Measure the first two, look up the second two.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Loft footprint in m²",
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ]
+                  },
+                  {
+                    "text": ". Measure the inside of the loft. For a regular rectangle, length × width is the footprint. Subtract for the water-tank platform if there is one, and for any chimney breast that rises through the loft. A typical UK three-bed semi loft is 35 to 50 m²; a Victorian terrace might be 40 to 60 m²; a bungalow can be 70 to 100 m².",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Current insulation depth in mm",
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ]
+                  },
+                  {
+                    "text": ". Push the tape down through the existing wool until it hits the ceiling plasterboard below; read off the depth. Take three or four measurements across the loft and use the average. Modern (2002+) installs are usually 250+ mm. Pre-2000 installs are 100 mm or less. Pre-1980 installs are often nothing at all, or vermiculite that has settled to nothing.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Target U-value in W/m²·K",
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ]
+                  },
+                  {
+                    "text": ". The current ",
+                    "type": "text"
+                  },
+                  {
+                    "text": "Part L",
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termId": "cmpba3apk000g4ov4r3i24bzk"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": " retrofit target is 0.16. New-build target is 0.13. Anything looser than 0.20 is unusual on modern guidance; anything tighter than 0.10 starts to need rigid PIR rather than mineral wool to keep the depth manageable.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Lambda value of the product you'll buy",
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ]
+                  },
+                  {
+                    "text": ". The thermal-conductivity number printed on the pack. ",
+                    "type": "text"
+                  },
+                  {
+                    "text": "Mineral wool",
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termId": "cmpba3b2t000z4ov4vo8fyyxc"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": " ranges 0.035 to 0.044 (the lower the better). 0.044 is the loft-roll default; 0.035 is the higher-performance batt for the same money on rolls but more on batts. Sheep wool sits at 0.038 to 0.040. PIR boards are 0.022 to 0.024 but only used where depth is constrained.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "The calculation",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Total insulation depth required (in metres) is the lambda value divided by the target U-value:",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "depth (m) = lambda ÷ target U-value",
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Then subtract the depth you already have to get the top-up depth. Then divide the loft footprint by the coverage area of one pack to get the number of packs. That's it, three lines of arithmetic.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Worked example, a 1970s semi in Leeds",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "The loft is 6.5 m × 7.5 m, a rectangle with no chimney breast in the loft and no water tank (the house has a combi boiler). Existing insulation is the original 100 mm yellow glass-wool roll, slightly compressed under boarding-out near the hatch. Target U-value is 0.16 (Part L 2022). The chosen product is 200 mm × 1140 mm × 6750 mm mineral wool with lambda 0.044, the loft-default supermarket pack.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Loft footprint",
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ]
+                  },
+                  {
+                    "text": " = 6.5 × 7.5 = 48.75 m².",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Required total depth",
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ]
+                  },
+                  {
+                    "text": " = lambda ÷ U-value = 0.044 ÷ 0.16 = 0.275 m = 275 mm.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Top-up depth required",
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ]
+                  },
+                  {
+                    "text": " = 275 − 100 = 175 mm. Round up to the next stocked depth: 200 mm. (Compressed and settled existing wool sometimes measures less than its as-installed depth; the round-up is a safety margin.)",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Coverage per pack",
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ]
+                  },
+                  {
+                    "text": " = 1.14 × 6.75 = 7.7 m² per pack of 200 mm wool. (Read off the pack, most loft-default packs cover 6 to 9 m² depending on roll width and length.)",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Number of packs",
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ]
+                  },
+                  {
+                    "text": " = 48.75 ÷ 7.7 = 6.3. Round up to 7 packs. (The round-up covers the 5 to 10% offcuts from fitting around joists and trimming at the eaves.)",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Seven packs of 200 mm loft roll at around forty pounds each comes to about two hundred and eighty pounds. The top-up gets the U-value from about 0.40 (the as-installed value of 100 mm of legacy glass wool) down to about 0.15, a touch tighter than the 0.16 target. On a typical Leeds heating demand of 12,000 kWh a year for a three-bed semi, that saves around 1400 kWh. At gas prices around 6p per kWh, that is roughly eighty-five pounds a year.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Payback: 280 ÷ 85 = 3.3 years if you do it yourself. Add another two to three hundred pounds for a professional install and the payback stretches to six or seven years. Still well inside the forty-year service life of the insulation.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Common variations",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "text": "If the loft is partly boarded for storage",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "The boarded area cannot take 275 mm of wool in the same plane. The joists are usually 100 mm deep. The boards sit straight on the joists. That leaves only 100 mm of void for the wool. There are two routes. Raise the boarded area on loft-legs. These are plastic spacers that lift the boards 175 mm above the joists. That gives room for the full 275 mm of wool below. The other route is to accept reduced performance on the boarded area and add deeper wool elsewhere to make up for it. Loft-legs cost a few pounds each. They need fitting on a 600 mm grid under the boards. For a 6 m² storage area that is about eighteen legs.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "text": "If the loft has a cold-water tank or pipework",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Don't insulate underneath the tank, the warmth from the room below keeps the tank from freezing. Wrap the tank and any feed pipes with a proprietary tank-jacket and pipe-lagging instead. The tank then sits in the cooler loft microclimate but is itself protected. Modern combi-boiler installs have no loft tank, so this only applies to older systems with a header tank.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "text": "If the loft has a low pitch or is a room-in-roof",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Pitched-roof insulation is a different sum. The wool goes between and over the rafters, not on the loft floor. The retrofit is a bigger job. It usually uses PIR boards because the depth is set by the rafter depth. Out of scope here. See a separate room-in-roof tutorial when it lands.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "text": "If the existing insulation is vermiculite or has been damp",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Vermiculite (a loose-fill mineral pebble used through the 1960s, 1970s) is rare in the UK but appears in older installs, particularly in Scotland. Some historic stock contains traces of asbestos; have a sample tested before you disturb it. Damp insulation has lost most of its thermal performance and should be removed (in sealed bags, lifted out through the hatch) before re-insulating. Damp also indicates either a roof leak or a ventilation problem; fix the cause before re-insulating.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "When to call a professional",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Topping up an accessible, dry loft is the most DIY-friendly retrofit there is. Call a professional when:",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "The loft has any sign of damp, mould, or a roof leak. Insulating over a moisture problem traps it and accelerates the damage.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "The old insulation may hold asbestos. This is common in pre-1990 stock, especially round boiler flues and old water tanks.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "The wiring in the loft is unprotected and runs under where the new wool will sit. Wiring at high ambient temperature derates; an electrician can check whether it needs re-routing first.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "The household qualifies for funded retrofit under ECO4 or local authority schemes. The funded route requires a registered installer, and the install is free.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "The loft is a room-in-roof or has limited access (a hatch under 500 mm × 500 mm makes carrying 200 mm rolls in awkward to impossible).",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Wear long sleeves and gloves. A dust mask helps with the fibres. The packs are vacuum-packed and expand to full thickness within an hour of being opened, so open them in the loft, not on the driveway.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "What it looks like done well versus done badly",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Done well, a loft is uniformly insulated to the eaves, the wool is laid in two layers, one between the joists, one across the joists at right angles, to break ",
+            "type": "text"
+          },
+          {
+            "text": "thermal bridges",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3ao9000e4ov4b7vfde1b"
+                }
+              }
+            ]
+          },
+          {
+            "text": " at the joist tops. The eaves are filled but not stuffed against the underside of the roof felt (a 25 mm air gap stays clear for ventilation, often kept open with proprietary eaves baffles). Any cold water tank is wrapped, not buried. The hatch is draught-sealed and itself insulated. No walking-boards span the insulation directly; the storage area uses loft-legs.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Done badly, the insulation is patchy. Bare ceiling plasterboard shows between the rolls. The eaves are either left uninsulated or stuffed solid against the roof felt. Bare eaves cause perimeter cold and damp on the bedroom ceilings below. Stuffed eaves block ventilation and cause roof-timber damp. The tank is uninsulated and now sits in colder air, ready to freeze in the first hard winter. The walking-boards sit straight on the insulation, crushing the wool to a useless mat under the storage. The hatch is uninsulated and runs a steady cold draught into the landing.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Look at the loft from below with a thermal-imaging camera after the install. Entry-level models start around two hundred pounds. You can also hire one for fifty pounds a day. Done well, the ceiling surface should sit within 1°C of the room air. Done badly, you will see bright patches where the heat is escaping.",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}

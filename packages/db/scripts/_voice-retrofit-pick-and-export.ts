@@ -76,10 +76,9 @@ async function main() {
   if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true })
 
   const { prisma } = await import('../src/index.js')
-  const { Prisma } = await import('@prisma/client')
 
   const candidates: any[] = await prisma.tutorial.findMany({
-    where: { status: 'PUBLISHED', revisedFrom: { equals: Prisma.DbNull } },
+    where: { status: 'PUBLISHED', voiceRetrofittedAt: null },
     select: {
       slug: true,
       title: true,
@@ -89,7 +88,7 @@ async function main() {
     orderBy: { slug: 'asc' },
   })
 
-  console.log(`[INFO] ${candidates.length} candidate(s) (PUBLISHED + revisedFrom IS NULL)`)
+  console.log(`[INFO] ${candidates.length} candidate(s) (PUBLISHED + voiceRetrofittedAt IS NULL)`)
 
   if (candidates.length === 0) {
     writeFileSync(

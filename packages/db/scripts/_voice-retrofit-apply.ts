@@ -99,6 +99,11 @@ async function main() {
       subtitle: data.subtitle,
       excerpt: data.excerpt,
       sourceNotes: data.sourceNotes,
+      // Dedicated voice-retrofit tracker (migration
+      // 20260725000000_phase_voice_retrofit_tracking). Always set on a
+      // successful apply so the candidate picker can filter on it
+      // without colliding with `revisedFrom`, which other pipelines write.
+      voiceRetrofittedAt: new Date(),
     }
     if (current.revisedFrom == null) {
       updateData.revisedFrom = current.body
