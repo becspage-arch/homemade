@@ -24,12 +24,94 @@ Pinterest is dense AND calm. Netflix is image-rich AND deliberate. Homemade
 should be both. The voice doesn't change. The page just stops apologising
 for the size of its library.
 
-> **Note on reference screenshots.** The brief points to
-> `docs/homepage-redesign-2026-05-25/references/screenshots-captured.md`
-> for visual references. That file isn't on disk in this worktree, so this
-> spec works from Rebecca's verbatim brief quote plus the six benchmark
-> sites researched in Part 1. If the screenshots land later, Part 1 should
-> be reconciled with the actual reference shots before build.
+> **Note on reference screenshots.** Five screenshots (Pinterest home
+> feed, Netflix hero, Netflix scrolled, Homemade current hero,
+> Homemade current scrolled) were shared mid-session and described in
+> detail at
+> [docs/homepage-redesign-2026-05-25/references/screenshots-captured.md](docs/homepage-redesign-2026-05-25/references/screenshots-captured.md).
+> The section "Reconciliation against received screenshots" below this
+> summary captures the spec adjustments that fall out of seeing the
+> actual references.
+
+---
+
+## Reconciliation against received screenshots
+
+Five reference shots ground the spec partway through the session. The
+adjustments below override the original Part 3 / Part 4 text where they
+differ.
+
+1. **Hero goes full viewport width on screens above 1440px, and taller
+   than originally proposed.** Netflix's hero is edge-to-edge and
+   ~75vh. The spec originally proposed content-width-capped at 1280px
+   and 56vh. Update: full viewport width above 1440px, container-width
+   below; height 65-70vh desktop, 60vh tablet, 52vh mobile.
+2. **Add a centered tagline overlay on the hero.** Netflix's hero
+   shows the title chip and CTAs bottom-left AND a floating tagline
+   centered on the imagery. The tagline is the show's pitch in one
+   sentence. For Homemade this maps to the tutorial's `excerpt`
+   surfaced as a centered overlay in cream Fraunces italic, distinct
+   from the bottom-left title. Keep the bottom-left title compact;
+   move the lyrical sentence to the center.
+3. **Card aspect ratio stays at the current 3:2 landscape.** The spec
+   originally proposed 4:5 portrait. Seeing the current Homemade
+   scrolled state in context, the landscape food photos read well at
+   3:2 and the column-count math already lands at 5 + edge of 6th.
+   The portrait swap was overcautious. Keep 3:2.
+4. **Pattern C (Pinterest Caption Card) defaults to caption-below,
+   not text-on-image.** The screenshots confirm the default Pinterest
+   card has its caption *under* the image; text-on-image happens only
+   on designer-graphic pins (covers, branded layouts). Update: Pattern
+   C's primary form is caption-below; the text-on-image variant moves
+   to the category index cards (Section 3.11) where Homemade controls
+   the image and can compose for overlay.
+5. **Pinterest masonry can go denser than originally implied.**
+   Pinterest's home feed renders 8 columns at 1490px. The "Recently
+   made by the community" rail can sit at 6-8 columns on desktop
+   masonry, not 4-5. The cards are smaller; the page reads more like
+   actual Pinterest at that count.
+6. **The single highest-leverage change is rail-to-rail vertical
+   compression.** The current Homemade scrolled state has ~80-100px of
+   cream between rails. The spec's compression to 32-40px is the
+   biggest visual unlock, more than the card-shape work. Treat this
+   as priority one in the build.
+7. **Card-design changes are smaller than originally framed.** The
+   current Homemade cards (3:2 image, sage category kicker, Fraunces
+   title, Lora meta) work well. The build session should focus on the
+   hero shell, the page composition (gaps, hero height), the
+   category-index image cards, and the new InSeasonMosaic /
+   RecentlyMadeMasonry layouts. Most "rails" work is CSS gap and
+   font tweaks, not a card-shape rewrite.
+
+The screenshot-grounded patterns from Pinterest and Netflix below
+supplement (not replace) the six additional sites in Part 1.
+
+### Pinterest home feed (uk.pinterest.com)
+
+- **Above-fold density (1490px):** 8 columns of masonry, ~24-30 items
+  visible above fold.
+- **Card treatment:** caption-below default; text-on-image is a
+  variant for designer-graphic pins (covers).
+- **Borrow:** masonry density at desktop; varied card heights breaking
+  the uniform rhythm.
+- **Don't borrow:** the infinite-feed pure-chronological browse model.
+  Homemade needs section-anchored discovery, not a single feed.
+
+### Netflix (netflix.com/browse)
+
+- **Hero:** full viewport width, ~75vh, autoplay video frame as
+  background. Title overlay bottom-left + tagline overlay centered.
+  Solid black top nav (over-hero transparency is subtle).
+- **Scrolled rails:** 5 landscape cards per row, edge of 6th visible.
+  Cards use the show's own poster art (text baked into image). Thin
+  progress bar on "Continue watching" cards.
+- **Above-fold density (scrolled):** ~20 items across 4 rows. This is
+  the target density Homemade should match.
+- **Borrow:** full-width hero, autoplay-video-as-hero affordance
+  (long term), progress bar on Continue-Making cards.
+- **Don't borrow:** show-poster cards (Homemade doesn't ship designed
+  key art per tutorial). Use category kicker + title + meta, not text
+  baked into the image.
 
 ---
 
