@@ -87,6 +87,20 @@ export default async function EditTutorialPage({
           >
             {tutorial._count.versions} version{tutorial._count.versions === 1 ? '' : 's'}
           </Link>
+          {tutorial.status === TutorialStatus.PUBLISHED && (
+            <>
+              {' '}
+              ·{' '}
+              <a
+                href={`/${tutorial.category.slug}/${tutorial.slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--color-sage)] hover:text-[var(--color-forest)]"
+              >
+                view live →
+              </a>
+            </>
+          )}
         </div>
       </div>
 
