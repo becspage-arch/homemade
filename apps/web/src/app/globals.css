@@ -50,14 +50,32 @@
   }
 }
 
-/* Tutorial body: restore decimal list markers on numbered step lists.
-   Tailwind v4 Preflight resets list-style on every ol/ul; the body
-   renderer wraps sequential steps in <ol><li>... and needs the
-   numbers back. Outside the layered base rules so it beats Preflight. */
+/* Tutorial body: numbered step lists.
+   Tailwind v4 Preflight resets list-style on every ol/ul. A single
+   tutorial body can contain several <ol> blocks (one per H3 section
+   under Method); per-list decimal counters restart at 1 in each block,
+   which reads as "Step 1 / Step 1 / Step 1" across a single recipe.
+   Use a single counter scoped to the whole tutorial body so numbers
+   continue across all <ol> blocks on the page. Rendered via ::before
+   to bypass list-style entirely. */
+.tutorial-content {
+  counter-reset: tutorial-step;
+}
 .tutorial-content ol {
-  list-style: decimal outside !important;
-  padding-left: 1.6em;
+  list-style: none !important;
+  padding-left: 2.2em;
 }
 .tutorial-content ol li {
-  display: list-item !important;
+  counter-increment: tutorial-step;
+  position: relative;
+}
+.tutorial-content ol li::before {
+  content: counter(tutorial-step) ".";
+  position: absolute;
+  left: -2.2em;
+  width: 1.8em;
+  text-align: right;
+  font-family: var(--font-display);
+  color: var(--color-sage);
+  font-style: italic;
 }
