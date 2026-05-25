@@ -4,20 +4,25 @@
  * Given a tutorial title + category + a few ingredient hints, walks a per-category
  * priority list of free sources, picks the first acceptable result, and falls
  * through to Flux Schnell when nothing matches. Returns null when both free
- * search and AI generation fail — the caller (upload-tutorial / audit script)
- * then falls back to the procedural card.
+ * search and AI generation fail.
  *
  * Priority lists are taken from `docs/free-image-research.md`. Cooking
  * Middle-Eastern / preserves / specialty paths skip Wikimedia (low hit rate);
  * Mindset somatic paths skip free sources entirely and go straight to AI.
  *
+ * Pixabay was dropped from every priority chain on 2026-05-25 after the
+ * subject-relevance audit (see docs/image-relevance-audit-2026-05-25-recommendation.md).
+ * Pixabay carried 50% of the published hero pool but 65% of its picks
+ * showed a different subject from the tutorial title — keyword-matching
+ * stock without subject-matching. The Pixabay client + ImageSource enum
+ * entry remain for backwards compatibility with historical Media rows.
+ *
  * Verification: callers may pass a `verify` callback. When provided, every
  * candidate (free or AI) is run through verification; on rejection the
- * orchestrator advances to the next source, and on rejection of the Flux
- * fallback returns `failed` so the caller falls back to the procedural card.
- * Without a callback the orchestrator returns the first quality-passing
- * candidate (legacy behaviour) and stamps `verificationStatus = UNVERIFIED`
- * so a later sweep can fill it in.
+ * orchestrator advances to the next source. Without a callback the
+ * orchestrator returns the first quality-passing candidate (legacy
+ * behaviour) and stamps `verificationStatus = UNVERIFIED` so a later
+ * sweep can fill it in.
  */
 
 import { searchUnsplash } from './unsplash'
@@ -68,38 +73,35 @@ function priorityFor(input: SourceHeroInput): { freeOrder: ImageSource[]; skipFr
   }
   if (category === 'cooking') {
     if (COOKING_SPECIALTY.has(sub)) {
-      return { freeOrder: ['unsplash', 'pexels', 'pixabay'], skipFreeForAi: false }
+      return { freeOrder: ['unsplash', 'pexels'], skipFreeForAi: false }
     }
-    return { freeOrder: ['unsplash', 'pexels', 'wikimedia', 'pixabay'], skipFreeForAi: false }
+    return { freeOrder: ['unsplash', 'pexels', 'wikimedia'], skipFreeForAi: false }
   }
   if (input.category === 'baking') {
-    return { freeOrder: ['unsplash', 'pexels', 'wikimedia', 'pixabay'], skipFreeForAi: false }
+    return { freeOrder: ['unsplash', 'pexels', 'wikimedia'], skipFreeForAi: false }
   }
   if (input.category === 'animals-smallholding') {
     // Pexels first — livestock photography on Pexels is consistently
     // strong (hens, hives, lambs in pasture). Wikimedia second because
     // there's deep public-domain agricultural and vintage-husbandry
-    // material there (USDA plates, RHS-era illustrations). Pixabay
-    // and Unsplash as the tail catch-all before Flux fallback.
-    return { freeOrder: ['pexels', 'wikimedia', 'unsplash', 'pixabay'], skipFreeForAi: false }
+    // material there (USDA plates, RHS-era illustrations). Unsplash as
+    // the tail catch-all before Flux fallback.
+    return { freeOrder: ['pexels', 'wikimedia', 'unsplash'], skipFreeForAi: false }
   }
   if (input.category === 'sustainability') {
     // Sustainability content leans on technical diagrams (insulation
     // cross-sections, solar wiring) more than lifestyle photography.
     // Wikimedia carries the canonical Building Regs / energy diagrams.
     // Unsplash + Pexels supply the practical-skills photography for
-    // composting / draughtproofing / water work. Pixabay is the
-    // pragmatic last-free fallback before Flux.
-    return { freeOrder: ['unsplash', 'pexels', 'wikimedia', 'pixabay'], skipFreeForAi: false }
+    // composting / draughtproofing / water work.
+    return { freeOrder: ['unsplash', 'pexels', 'wikimedia'], skipFreeForAi: false }
   }
   if (input.category === 'natural-home') {
     // Pexels-first: hand-poured soap, candles, balm tins, and amber-bottle
     // styling are over-represented on Pexels relative to Unsplash. Wikimedia
     // earns a slot for the botanical-ingredient hero variant (a calendula
-    // flower close-up doing the work for a calendula balm). Pixabay catches
-    // commodity beeswax / lye / pipette product shots that the lifestyle
-    // libraries skip.
-    return { freeOrder: ['pexels', 'unsplash', 'wikimedia', 'pixabay'], skipFreeForAi: false }
+    // flower close-up doing the work for a calendula balm).
+    return { freeOrder: ['pexels', 'unsplash', 'wikimedia'], skipFreeForAi: false }
   }
   if (input.category === 'home-repair') {
     // Pexels first — modern workshop and trade photography reads cleaner
@@ -107,7 +109,7 @@ function priorityFor(input: SourceHeroInput): { freeOrder: ImageSource[]; skipFr
     // covers vintage plumbing / joinery manuals (good when the technique
     // is unchanged; rejected when the era's fittings differ from modern
     // kit — verified in the orchestrator's verify callback).
-    return { freeOrder: ['pexels', 'unsplash', 'wikimedia', 'pixabay'], skipFreeForAi: false }
+    return { freeOrder: ['pexels', 'unsplash', 'wikimedia'], skipFreeForAi: false }
   }
   if (
     input.category === 'needlework' ||
@@ -127,10 +129,10 @@ function priorityFor(input: SourceHeroInput): { freeOrder: ImageSource[]; skipFr
     // historical samplers), PD historical engravings (Therese de Dillmont
     // 1886, Caulfeild & Saward 1882, Weldon's 1880s), and museum-licensed
     // antique pieces. Photo sources catch when Wikimedia misses.
-    return { freeOrder: ['wikimedia', 'pexels', 'unsplash', 'pixabay'], skipFreeForAi: false }
+    return { freeOrder: ['wikimedia', 'pexels', 'unsplash'], skipFreeForAi: false }
   }
   // Garden / herbal-medicine / bushcraft and anything else: same as cooking generic.
-  return { freeOrder: ['unsplash', 'pexels', 'wikimedia', 'pixabay'], skipFreeForAi: false }
+  return { freeOrder: ['unsplash', 'pexels', 'wikimedia'], skipFreeForAi: false }
 }
 
 function buildQuery(input: SourceHeroInput): string {
