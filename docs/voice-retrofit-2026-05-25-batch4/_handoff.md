@@ -1,4 +1,4 @@
-Batch 2026-05-25-batch4: 50 tutorials retrofitted. Deploy pending (see below); voiceRetrofittedAt populated on all 50 rows.
+Batch 2026-05-25-batch4: 50 tutorials retrofitted. Deploy green, healthz 200.
 
 ## DB verification
 
@@ -179,4 +179,7 @@ The content-type spread cap no longer applies from batch4 onwards per the worker
 
 ## Deploy verification
 
-Deploy verification block has not yet run at the time this hand-off file was written. The commit + push + gh run watch + healthz curl sequence runs immediately after this file is saved; deploy outcome will be appended below on completion.
+- Run ID 26415454533 on workflow deploy.yml against main.
+- gh run watch exited 0 (deploy green).
+- healthz smoke: https://homemade.education/healthz returned 200.
+- Rebase note: a fast-forward push was blocked because origin/main had picked up three new commits (homepage-redesign reconcile + add screenshots-captured + voice-retrofit batch1 verify script) while the batch4 work was in flight. Stashed an untracked file that collided with the incoming change to docs/homepage-redesign-2026-05-25/references/screenshots-captured.md, rebased cleanly onto origin/main, then restored the stash. No conflicts. The untracked file kept in stash@{0} for safety; not deleted because it may represent Rebecca's in-progress work.
