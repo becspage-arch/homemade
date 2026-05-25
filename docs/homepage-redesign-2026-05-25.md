@@ -355,11 +355,10 @@ Twelve sections covered. New / restructured components flagged.
   to the lower 40%. The 50/50 horizontal split is dropped on mobile
   entirely (vertical stacking inflated the page height).
 - **Data:** same as current. No schema change required.
-- **Editorial consideration:** the editorial-pick slot needs hero-quality
-  photos. Recommendation: introduce a `Tutorial.heroQuality` enum
+- **Locked editorial gate:** introduce a `Tutorial.heroQuality` enum
   ('editorial' | 'standard' | 'fallback') so the homepage hero loader
-  filters to 'editorial' only. Flagged as Open Decision 2 (Rebecca may
-  prefer hand-curation without a schema field).
+  filters to 'editorial' only. Add the Prisma migration as part of
+  this build session. (Decision 2 locked 2026-05-25.)
 - **Complexity:** medium. Restructure `HeroEditorialPick` /
   `HeroContinueMaking` / `HeroScheduledStep` to share one `HeroOverlay`
   layout component. The current three are nearly identical and would
@@ -487,6 +486,10 @@ Twelve sections covered. New / restructured components flagged.
 
 ### 9. "Makers to follow" rail (NEW)
 
+**DEFERRED (Decision 5 locked 2026-05-25): dropped from this build
+session. Add as a follow-up after Session A's Maker public surfaces
+ship, so card clicks land on working profile pages.**
+
 - **Current:** doesn't exist on the homepage. Maker of the Month is the
   only Maker-surface today and it sits at the bottom.
 - **Proposed:** add a "Makers to follow" rail above the category index.
@@ -523,7 +526,9 @@ Twelve sections covered. New / restructured components flagged.
   gets a curated category-hero photo (derived from the category's
   anchor tutorial's hero, already in the DB, no migration). Category
   name overlaid bottom-left in Fraunces 24-28px with a subtle gradient.
-  Description drops entirely from the card. The photo plus name carries it.
+  Below the image, a single short Lora line gives a one-line
+  description of what's in the category (orientation for newcomers, per
+  Decision 4 locked 2026-05-25).
   Grid: 4 col at 1440px, 3 col at 1024px, 2 col at 768px, 2 col at
   375px. Cards are 4:5 portrait at the larger breakpoints.
 - **Brand tokens:** Fraunces 24-28px in cream overlaid; sage gradient
@@ -764,8 +769,8 @@ that admin changes manually?
 - **Fixed:** simpler, calmer, demands one truly excellent photo per
   week from editorial.
 
-Orchestrator lean: **fixed** for launch. Rotation can come after
-content velocity proves the editorial team can supply 3-5 hero-quality
+**LOCKED 2026-05-25: fixed.** Rotation can come after content
+velocity proves the editorial team can supply 3-5 hero-quality
 photos weekly without strain.
 
 ### Decision 2: Hero photo-quality gate
@@ -780,8 +785,9 @@ with no schema field?
 - **Admin judgement:** no schema change, no migration. Risk: a weak
   photo slips through if admin isn't paying attention.
 
-Orchestrator lean: **schema flag.** Cheap to add now (per
+**LOCKED 2026-05-25: schema flag.** Cheap to add now (per
 `feedback_schema_all_fields_upfront.md`), expensive to retrofit later.
+Add the Prisma migration as part of the build session.
 
 ### Decision 3: Mobile pattern for "Recently made by the community"
 
@@ -794,7 +800,7 @@ other section?
 - **Swipe rail:** consistent with every other mobile rail, less code,
   less engaging.
 
-Orchestrator lean: **masonry.** This rail is the one place the
+**LOCKED 2026-05-25: masonry.** This rail is the one place the
 Pinterest pattern earns its keep on mobile, and the engagement model is
 meaningfully different.
 
@@ -810,10 +816,9 @@ orienting)?
   what "Mindset" means yet; safer if anchor-tutorial photos for some
   categories aren't strong yet.
 
-Orchestrator lean: **image cards** with a small "what's in this
-category" line *below* the card image (compromise position). Best of
-both: visual at the top of the card, orientation at the bottom in
-small Lora.
+**LOCKED 2026-05-25: image cards with a small one-line description
+below the image.** Best of both: visual at the top of the card,
+orientation at the bottom in small Lora.
 
 ### Decision 5: "Makers to follow" rail sequencing
 
@@ -826,8 +831,9 @@ A's Maker public surfaces to ship first?
 - **Wait:** cleaner sequencing; the rail's destinations (Maker profile
   pages) don't exist yet so clicks lead nowhere or to placeholders.
 
-Orchestrator lean: **wait.** The rail without working destinations is
-worse than no rail. Add it as a follow-up after Session A ships.
+**LOCKED 2026-05-25: wait.** The rail without working destinations is
+worse than no rail. Add as a follow-up after Session A's Maker public
+surfaces ship. Component 3.9 is dropped from the build session scope.
 
 ---
 
@@ -853,8 +859,8 @@ Breakdown:
 | Category index image redesign      | Medium     |
 | Onboarding card                    | Zero       |
 
-Plus one schema migration if Decision 2 = schema flag
-(`Tutorial.heroQuality`).
+Plus one Prisma migration for the locked `Tutorial.heroQuality` enum
+(Decision 2).
 
 The work is parallelisable into 3-4 components inside one session: a
 hero shell, the card library expansion, the mosaic / masonry layouts,
@@ -865,8 +871,9 @@ fight for the same component.
 
 ## Hand-off
 
-When this spec is approved, the build session reads it and works
-through the components in this order:
+Spec approved by Rebecca 2026-05-25. All five decisions in Part 6 are
+locked. The build session reads this doc and works through the
+components in this order:
 
 1. Card pattern library: implement the 5 patterns in
    `apps/web/src/components/public/home-cards/` so subsequent sections
@@ -881,5 +888,6 @@ through the components in this order:
 9. Top nav transparent treatment.
 10. Continue-making progress bar.
 
-Build session brief should include this doc by reference and the
-Rebecca answers from Part 6.
+Component 9 ("Makers to follow" rail) is deferred. Build session brief
+should include this doc by reference; Part 6 answers are already
+locked inline above each decision.
