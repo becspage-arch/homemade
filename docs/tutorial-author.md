@@ -639,7 +639,223 @@ Rules:
 
 These block the draft. The deterministic `voice-check` CLI also blocks
 them, and `docs/voice-editor-prompt.md` walks through the patterns. The
-list lives in `feedback_homemade_voice.md`.
+list lives in `feedback_homemade_voice.md`. The 2026-05-21 voice-spec
+additions (grade 6-8 register, opening pattern per content type,
+Sources block, numbered steps) are below alongside the existing rules.
+
+### Grade 6-8 reading level — hard rule (added 2026-05-21)
+
+The bulk of every tutorial reads at grade 6-8 level (~11-14 year old
+reading). This is the Mary Berry / Martha Stewart register: warm,
+plain-spoken, confident expertise without academic gloss.
+
+Concrete tests for whether a paragraph is in register:
+
+- Could a 12-year-old read it aloud and roughly understand?
+- Are the longest words 3 syllables or fewer (rare exceptions for
+  unavoidable craft terms, all tooltipped)?
+- Are sentences mostly 8-15 words?
+- Does it sound like a knowledgeable friend explaining at the kitchen
+  table?
+
+If the answer to any test is no, rewrite the paragraph. `voice-check`
+blocks any body paragraph scoring above grade 12 on Flesch-Kincaid.
+
+Banned vocabulary in body prose (replace with plain English):
+
+- Clinical / Latin: catarrh, expectorant, antispasmodic, emmenagogue,
+  anti-inflammatory ("calms swelling"), decoction, infusion,
+  maceration ("simmered in water" / "steeped in water" / use a
+  glossaryTooltip), saponification, vulnerary, anhydrous.
+- Domain Latin (Solanum lycopersicum, Avena sativa, Thymi herba,
+  Calendula officinalis, Arnica montana, Mentha piperita, Eucalyptus
+  globulus): cut from body. Optional in sourceNotes or wrapped in a
+  glossaryTooltip with a real definition.
+- Bureaucratic register: "the integration of", "the optimisation of",
+  "in the context of", "with respect to", "in relation to",
+  "represents the convergence of".
+
+Banned references in body prose (move to sourceNotes — the Sources
+block on the public page):
+
+- Year-only references: (1652), (1898), (1908), (1931), (2008).
+- Institutional names: German Commission E, BHP, FDA, MHRA, NHS, RHS,
+  USDA, ESCOP, EMA HMPC, NCCIH, AHDB, DEFRA, AECB, Passivhaus Trust,
+  National Trust, English Heritage, Project Gutenberg, Botanical.com.
+- Historical figures without context: Culpeper, Gerard, Grieve,
+  Quincy, Beeton, de Dillmont, Caulfeild, Saward, Glasse, Acton,
+  Jekyll, Sackville-West, Carême, Pellaprat, Gladstar, Tisserand,
+  Felter.
+
+A historical figure may appear in body prose ONLY if introduced with
+a plain-English gloss ("the 17th-century herbalist Nicholas
+Culpeper") AND only once per tutorial AND only if genuinely useful.
+Default is the Sources block, not the body.
+
+### Opening pattern per content type — hard rule (added 2026-05-21)
+
+The first paragraph of every body is the orientation paragraph. Three
+sentences max. Plain English. Grade 6-8. Follow the shape for the
+content type. The first SENTENCE can be a definition, a
+characterisation, a practical fact, a direct instruction, a
+family-friendly framing, or a sensory cue — vary it across tutorials.
+Don't lock onto a single opener like "The secret of...".
+
+| Content type | Opening pattern (three sentences max) |
+|---|---|
+| Recipe (cooking + baking) | [What the dish is, in one short clause.] [What it gives you — texture, flavour, yield, time.] [One sentence on what makes it work or what to watch for.] |
+| Herbal remedy | [Name the preparation: what it is, what it's made of.] [State factually what tradition has used it for — no efficacy claims.] [One sentence on what to expect — texture, taste, yield, time.] |
+| Mindset practice | [Name the practice: what you'll do.] [State what it's for — one sentence on the intended shift.] [One sentence on what it'll feel like or how long it'll take.] |
+| Craft technique | [Name the technique: what it is, when you use it.] [Optional: other names for it.] [One sentence on what makes it work or what's tricky.] |
+| Craft project | [Name the finished item: what it is, what it's for, who it fits or how big it is.] [The technique base — which stitches / seams / construction.] [Yield + skill level + time.] |
+| Growing guide | [Name the crop and the climate / zone assumption.] [The sowing-to-harvest arc in plain English.] [One sentence on conditions — sun, soil, spacing.] |
+| Home repair | [Name the repair: what's broken or being built.] [One sentence on the approach.] [One sentence on what you need and roughly how long.] |
+| Natural home recipe | [Name the preparation: what it is, what's in it.] [State what it's for and how the result feels / smells / behaves.] [Yield + working time + cure time where applies.] |
+
+Optional second short paragraph: a single sensory or practical note
+(the smell at a stage, the colour at finish, the way the kitchen
+feels). Earn it by having something specific to say. Otherwise stop
+at the first paragraph.
+
+### Sources block + Technical notes — hard rule (added 2026-05-21)
+
+The `sourceNotes` field on the upload input is the canonical sources
+list. The public renderer surfaces it at the bottom of the page under
+a "Sources" heading. It is the ONLY place in the page where historical
+figures, years, and institutional names appear.
+
+Format: one bullet per source. Plain prose. Title, author, year,
+archive identifier (Project Gutenberg ID, USDA bulletin, Botanical.com
+slug, EMA monograph code, etc.) and one clause on what was drawn from
+it.
+
+Example:
+
+```
+Nicholas Culpeper, The English Physician (1652) — Project Gutenberg
+#49513. Thyme entry, traditional use for coughs and chest complaints.
+
+Maud Grieve, A Modern Herbal (1931) — Botanical.com archive. Thyme
+monograph, antiseptic and expectorant actions.
+```
+
+#### Technical notes section (optional)
+
+Optional H2 between the body and the Sources block. Use it ONLY when
+the reader who wants depth would otherwise drop out of register inside
+the body — chemistry, etymology, regional history, constituent
+analysis, institutional context that genuinely earns its place.
+
+Two short paragraphs maximum. Keep it factual, no efficacy claims, no
+prescription. The reader is opting in — don't volunteer more than they
+asked for.
+
+**Default is to omit the Technical notes section.** Only include where
+there's genuinely something useful to say. The risk: every tutorial
+sprouts a technical-notes section it doesn't need.
+
+### Numbered steps — hard rule (added 2026-05-21)
+
+Sequential instructions are an `orderedList` block, not a paragraph
+and not a `bulletList`.
+
+A reader scanning the page must be able to count steps and find her
+place. Prose-style sequential instructions ("First, simmer the thyme.
+Then strain it. Add the honey.") are a numbered list written badly —
+convert to an `orderedList` of three items.
+
+The renderer continues numbering across every `orderedList` block on
+the page via a CSS counter scoped to `.tutorial-content`. A recipe
+with four `H3` sections under Method, each carrying an `orderedList`,
+will number 1 → 2 → ... → N sequentially across all sections rather
+than restarting at 1 in each. Authors just structure the body as H3 +
+orderedList; the counter handles the numbering.
+
+Exceptions:
+- Orientation paragraphs (non-sequential).
+- "Where this dish lives" / "How it adapts" sections (non-sequential).
+- Single-action notes that don't have follow-on steps.
+- Non-sequential checks or surveys (use `bulletList` instead).
+
+#### TipTap text-node type — hard rule (added 2026-05-25)
+
+Every text leaf in a TipTap body MUST have `"type": "text"`.
+
+```json
+{
+  "type": "text",
+  "text": "Heat the oven to 180°C..."
+}
+```
+
+NOT:
+
+```json
+{
+  "text": "Heat the oven to 180°C..."
+}
+```
+
+The public renderer is a switch on `node.type`. Nodes with no type
+field fall through to the default case which calls `renderChildren`
+on the missing content array — text leaves render as empty. Caught
+during the voice-pilot when orderedList step contents shipped without
+the type field, making whole step lists invisible on the public page.
+`voice-check` now blocks this as a binary error. Double-check every
+freshly-authored text node carries the type field.
+
+The same applies to: `paragraph`, `heading` (with attrs.level), and
+every other block node type. Easy to get right when copying from a
+working example; easy to get wrong when authoring fresh.
+
+### Voice retrofit: don't over-prune (added 2026-05-25)
+
+When rewriting an existing tutorial to voice, the job is to FIX the
+register, not to delete content.
+
+If a paragraph or section trips a rule, REWRITE the language; don't
+delete the section. If a whole section is about something a new rule
+disallows (e.g. a multi-paragraph safety block when the rule allows
+max one inline safety line), COMPRESS the section to one line — don't
+delete the topic. The reader who got value from the original deserves
+the substance in the new register.
+
+Specific medical thresholds ("burns larger than the size of your
+palm", "fifteen minutes of pressure") get rewritten to the canonical
+safety pattern ("Run cold water over a burn and seek medical care if
+needed.") — the SUBSTANCE stays, the language changes. Same for any
+academic citation in body prose: the citation moves to sourceNotes,
+the substance (what the source says) gets restated in plain English.
+
+The bar: a reader of the rewritten page should NOT lose useful
+information vs the original. Should gain readability, not lose
+substance. Word-count drops over 20% need an explicit reason or
+restoration.
+
+### Verbatim energy statements (mindset only) — hard rule (added 2026-05-25)
+
+For Mindset tutorials (`type: "PRACTICE"` / `type: "READING"`), any
+text taken verbatim from Rebecca's books stays exactly as written:
+
+- Affirmations
+- Energy alignment statements
+- Energy release statements
+- Specific phrasings like "I am ready to", "release feeling stuck",
+  "align / allow", "I claim", "I release", "I receive"
+- Tapping scripts where the exact wording matters
+- Any phrase she has authored elsewhere
+
+Voice register / grade-6-8 rewrites do NOT apply to these statements.
+They are exempt from sentence-shortening, vocabulary-simplifying, or
+rephrasing. Surrounding prose (orientation paragraphs, "how this
+practice works" intros, methodology framing) CAN be rewritten to
+register. The statements themselves cannot.
+
+If unsure whether a piece of mindset text is verbatim from a book vs.
+authored fresh for homemade.education, default to NOT rewriting.
+Leave it alone and flag in the worker hand-off.
+
+
 
 **Banned phrases (never use, case-insensitive):**
 "delve into", "delving into", "at its core", "in the realm of", "in the
