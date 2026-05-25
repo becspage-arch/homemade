@@ -17,7 +17,7 @@
  * script invocation regardless of how many tutorials hit billing failures.
  */
 
-import { mkdirSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import type { FluxBillingError } from './flux-schnell'
 
@@ -49,7 +49,6 @@ function resolveHaltPath(): string {
   // Find the repo root by walking up from cwd looking for a marker. Falls
   // back to cwd/docs/. This is necessary because scripts launched via
   // `pnpm --filter @homemade/db exec` have cwd = packages/db, not repo root.
-  const { existsSync } = require('node:fs') as typeof import('node:fs')
   let dir = process.cwd()
   for (let i = 0; i < 8; i++) {
     if (existsSync(resolve(dir, 'pnpm-workspace.yaml')) || existsSync(resolve(dir, '.git'))) {
