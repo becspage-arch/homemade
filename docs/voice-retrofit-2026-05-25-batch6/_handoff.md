@@ -187,9 +187,10 @@ NEW:
 
 ## Deploy verification
 
-- Run ID and gh run watch result captured after the push; see commit log for the run URL.
+- Run ID 26419206064 on workflow deploy.yml against main.
 - gh run watch exited 0 (deploy green).
 - healthz smoke: https://homemade.education/healthz returned 200.
+- Rebase note: a fast-forward pull was required because origin/main had picked up one new commit (image-relevance pass3 verdicts) while the batch6 work was in flight. Fast-forwarded cleanly with no conflicts before staging.
 
 ## Script changes shipped with this batch
 
