@@ -225,28 +225,19 @@ async function main(): Promise<void> {
       continue
     }
 
-    if (v.tier === 'PARTIAL') {
-      if (!flags.dryRun) {
-        await prisma.media.update({
-          where: { id: media.id },
-          data: {
-            verificationReason: `relevance=PARTIAL (${v.confidence.toFixed(2)}): ${v.reason}`,
-            verifiedAt: new Date(),
-          },
-        })
-      }
-      summary.partial += 1
-      console.log(`${tag} PARTIAL — flagged for review`)
-      continue
-    }
+    // PARTIAL and WRONG both trigger the re-source flow. Rebecca's rule:
+    // 100% correct means EXACT. "Right class, not the specific subject" is
+    // not good enough. Treat PARTIAL exactly like WRONG below.
+    if (v.tier === 'PARTIAL') summary.partial += 1
 
-    // WRONG — mirror the rejection-with-regen flow.
+    // WRONG/PARTIAL — mirror the rejection-with-regen flow.
+    const reasonPrefix = v.tier === 'PARTIAL' ? 'relevance=PARTIAL' : 'relevance=WRONG'
     if (!flags.dryRun) {
       await prisma.media.update({
         where: { id: media.id },
         data: {
           verificationStatus: 'REJECTED',
-          verificationReason: `relevance=WRONG (${v.confidence.toFixed(2)}): ${v.reason}`,
+          verificationReason: `${reasonPrefix} (${v.confidence.toFixed(2)}): ${v.reason}`,
         },
       })
     }

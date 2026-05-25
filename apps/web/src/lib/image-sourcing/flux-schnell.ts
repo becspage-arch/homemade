@@ -52,12 +52,10 @@ function buildPrompt(input: SourceHeroInput): string {
   )
 }
 
-export async function generateWithFluxSchnell(input: SourceHeroInput): Promise<ImageSearchResult | null> {
-  const key = process.env.FAL_KEY
-  if (!key) return null
-
-  const prompt = buildPrompt(input)
-
+async function fluxAttempt(
+  key: string,
+  prompt: string,
+): Promise<{ ok: true; img: FalImage } | { ok: false; status: number; reason: string }> {
   const ctrl = new AbortController()
   const timer = setTimeout(() => ctrl.abort(), 60_000)
   try {
@@ -76,25 +74,60 @@ export async function generateWithFluxSchnell(input: SourceHeroInput): Promise<I
       }),
       signal: ctrl.signal,
     })
-    if (!res.ok) return null
+    if (!res.ok) {
+      return { ok: false, status: res.status, reason: `http ${res.status}` }
+    }
     const data = (await res.json()) as FalResponse
     const img = data.images?.[0]
-    if (!img?.url) return null
-    return {
-      url: img.url,
-      pageUrl: img.url,
-      source: 'flux-schnell',
-      creatorName: null,
-      licenceCode: 'PROPRIETARY',
-      licenceUrl: null,
-      requiresAttribution: computeRequiresAttribution('PROPRIETARY'),
-      width: img.width ?? 1280,
-      height: img.height ?? 720,
-      upstreamId: null,
-    }
-  } catch {
-    return null
+    if (!img?.url) return { ok: false, status: 200, reason: 'no image in response' }
+    return { ok: true, img }
+  } catch (err) {
+    const reason = err instanceof Error ? err.message : String(err)
+    return { ok: false, status: 0, reason }
   } finally {
     clearTimeout(timer)
   }
+}
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((r) => setTimeout(r, ms))
+}
+
+export async function generateWithFluxSchnell(input: SourceHeroInput): Promise<ImageSearchResult | null> {
+  const key = process.env.FAL_KEY
+  if (!key) return null
+
+  const prompt = buildPrompt(input)
+
+  // Retry with exponential backoff on transient failures. Bulk runs hit
+  // fal.ai rate limits in bursts; a single retry recovers ~all of them.
+  // 4xx (auth, validation, content safety) is permanent — no retry.
+  const backoffs = [0, 2_000, 5_000, 12_000]
+  let lastReason = ''
+  for (let i = 0; i < backoffs.length; i++) {
+    if (backoffs[i]! > 0) await sleep(backoffs[i]!)
+    const r = await fluxAttempt(key, prompt)
+    if (r.ok) {
+      const img = r.img
+      return {
+        url: img.url,
+        pageUrl: img.url,
+        source: 'flux-schnell',
+        creatorName: null,
+        licenceCode: 'PROPRIETARY',
+        licenceUrl: null,
+        requiresAttribution: computeRequiresAttribution('PROPRIETARY'),
+        width: img.width ?? 1280,
+        height: img.height ?? 720,
+        upstreamId: null,
+      }
+    }
+    lastReason = r.reason
+    // 4xx is permanent (auth, validation, safety filter). Don't retry.
+    if (r.status >= 400 && r.status < 500) break
+  }
+  if (process.env.FAL_DEBUG === '1') {
+    console.warn(`[flux-schnell] failed after retries: ${lastReason}`)
+  }
+  return null
 }
