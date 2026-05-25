@@ -61,6 +61,8 @@ import type { Prisma } from '@prisma/client'
 import { sourceHeroImage } from '../../../apps/web/src/lib/image-sourcing/orchestrator'
 import type { ImageSource } from '../../../apps/web/src/lib/image-sourcing/types'
 import type { RelevanceTier } from '../../../apps/web/src/lib/image-sourcing/relevance'
+import { FluxBillingError } from '../../../apps/web/src/lib/image-sourcing/flux-schnell'
+import { writeFluxBillingHalt } from '../../../apps/web/src/lib/image-sourcing/flux-billing-halt'
 
 interface VerdictRow {
   mediaId: string
@@ -387,6 +389,20 @@ async function main(): Promise<void> {
       summary.wrongRegenerated += 1
       console.log(`${tag} WRONG + regen OK via ${img.source}`)
     } catch (err) {
+      if (err instanceof FluxBillingError) {
+        writeFluxBillingHalt(err, {
+          script: 'apply-relevance-verdicts',
+          processed: i,
+          total: file.verdicts.length,
+          extra: {
+            exactSoFar: summary.exact,
+            partialSoFar: summary.partial,
+            wrongRegenerated: summary.wrongRegenerated,
+            wrongRegenFailed: summary.wrongRegenFailed,
+          },
+        })
+        process.exit(2)
+      }
       const message = err instanceof Error ? err.message : String(err)
       summary.errors.push(`${tutorial.slug}: ${message}`)
       summary.wrongRegenFailed += 1

@@ -39,7 +39,8 @@ for (let depth = 0; depth < 8; depth++) {
 
 import { prisma, r2Upload } from '../src'
 import type { Prisma } from '@prisma/client'
-import { generateWithFluxSchnell } from '../../../apps/web/src/lib/image-sourcing/flux-schnell'
+import { generateWithFluxSchnell, FluxBillingError } from '../../../apps/web/src/lib/image-sourcing/flux-schnell'
+import { writeFluxBillingHalt } from '../../../apps/web/src/lib/image-sourcing/flux-billing-halt'
 
 interface CliFlags {
   limit: number | null
@@ -122,12 +123,26 @@ async function main(): Promise<void> {
     const tag = `[${i + 1}/${total}] ${t.slug}`
     try {
       const ingredients = await topIngredients(t.id)
-      const img = await generateWithFluxSchnell({
-        title: t.title,
-        category: t.category.slug,
-        subCategory: t.subCategory?.slug ?? null,
-        ingredients,
-      })
+      let img
+      try {
+        img = await generateWithFluxSchnell({
+          title: t.title,
+          category: t.category.slug,
+          subCategory: t.subCategory?.slug ?? null,
+          ingredients,
+        })
+      } catch (err) {
+        if (err instanceof FluxBillingError) {
+          writeFluxBillingHalt(err, {
+            script: 'rescue-procedural-via-flux',
+            processed: i,
+            total,
+            extra: { recoveredSoFar: recovered, failedSoFar: failed },
+          })
+          process.exit(2)
+        }
+        throw err
+      }
       if (!img) {
         failed += 1
         failures.push({ slug: t.slug, reason: 'flux returned null' })

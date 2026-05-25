@@ -37,14 +37,19 @@ For each per-batch autopilot run that publishes ≥ 1 tutorial:
    `heroMediaId = null`. The public renderer falls back to the
    procedural card automatically (see [tutorial-hero.ts](../apps/web/src/lib/tutorial-hero.ts)).
 
-2. **Hero fill.** Run
-   `pnpm --filter @homemade/db exec tsx scripts/fixup-hero-fill.ts`
-   for the newly-published categor(ies). Sources via the orchestrator;
-   attaches the first quality-passing candidate as UNVERIFIED. The
-   batch ends with N tutorials whose `Media.verificationStatus =
-   UNVERIFIED`.
+2. **Hero fill + relevance enqueue (one step).** Run
+   `pnpm --filter @homemade/db exec tsx scripts/fixup-hero-fill.ts \
+      --category {SLUG} \
+      --emit-relevance-queue docs/image-relevance-queue-batch-{N}.json`.
+   The `--emit-relevance-queue` flag (added 2026-05-25) tells the script
+   to write a relevance manifest alongside the run — one entry per newly
+   attached hero, with the just-downloaded image bytes cached locally so
+   the worker doesn't fetch them again. Saves the separate
+   score-relevance-batch.ts step entirely on this first cycle.
 
-3. **Relevance enqueue.** Run
+3. **(Subsequent cycles only) Relevance enqueue.** If after step 5 there
+   are still UNVERIFIED Media rows (re-sourced replacements need scoring
+   too), run
    `pnpm --filter @homemade/db exec tsx scripts/score-relevance-batch.ts \
       --unverified-only --batch-size 1000 \
       --queue docs/image-relevance-queue-batch-{N}.json`.
@@ -84,26 +89,36 @@ For each per-batch autopilot run that publishes ≥ 1 tutorial:
    cappedToProcedural. This is the per-batch log the autopilot reports
    in its hand-off summary.
 
-## PARTIAL acceptance rationale
+## PARTIAL → re-source (Rebecca's "100% correct" rule)
 
-PARTIAL means "right class, wrong specific subject" — a generic stew for
-a regional stew, a thyme sprig for a thyme-syrup tutorial, a hen for a
-specific-hen-disease tutorial. The image still depicts something
-recognisably related to the tutorial; it isn't actively misleading.
+Per Rebecca's 2026-05-25 instruction, PARTIAL is *not* good enough — only
+EXACT is acceptable for live tutorials. `apply-relevance-verdicts.ts`
+treats PARTIAL the same as WRONG: stamps REJECTED, appends source to
+`Tutorial.excludedImageSources`, calls the orchestrator excluding the
+rejected source. After 3 distinct real-photo rejections the orchestrator
+falls to Flux Schnell.
 
-The autopilot keeps PARTIAL because:
-- Free-source catalogues often have no closer match. A thyme-cough-syrup
-  with a thyme sprig hero is better than a procedural card.
-- The lenient-disagreements section of the audit doc surfaces these for
-  Rebecca's manual review; she can flip individual entries to procedural
-  or hand-source replacements.
+## Flux billing monitoring
 
-If Rebecca later wants the autopilot stricter, the single change is to
-flip `verdictToVerify(verdict)` in
-[relevance.ts](../apps/web/src/lib/image-sourcing/relevance.ts) so
-PARTIAL maps to `rejected` instead of `verified`. The orchestrator and
-apply-script behaviour then forces PARTIAL through the same re-source
-cycle as WRONG.
+fal.ai (Flux Schnell) is a paid API. When the balance is exhausted,
+fal.ai returns `HTTP 403 { "detail": "User is locked. Reason: Exhausted balance." }`.
+The Flux client recognises this and throws `FluxBillingError`. Every
+script that calls Flux at bulk (fixup-hero-fill, apply-relevance-verdicts,
+rescue-procedural-via-flux) catches this exception and writes a clear
+halt-signal file at `docs/_flux-billing-halt.md` before exiting non-zero.
+
+**What to do when the halt file appears:**
+1. Top up at https://fal.ai/dashboard/billing
+2. Re-run the script that wrote the halt. All three scripts are
+   idempotent — they pick up where they left off without duplicating
+   work on already-processed entries.
+3. Delete the halt file (the autopilot worker can use its presence as a
+   "do not start new batches" gate).
+
+**Cost guide:** Flux Schnell is £0.0024 per image. At an estimated
+~30 % gap rate (the share of new tutorials whose orchestrator chain
+falls through to Flux), a £10 top-up covers roughly 4,000 new tutorials
+(or ~1,300 if every new hero went through 2 cycles of re-source + Flux).
 
 ## Threshold guidance for autopilot batches
 

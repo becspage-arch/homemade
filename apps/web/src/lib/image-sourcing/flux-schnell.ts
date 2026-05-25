@@ -52,6 +52,38 @@ function buildPrompt(input: SourceHeroInput): string {
   )
 }
 
+/**
+ * Thrown when fal.ai returns 403 with "Exhausted balance" or "User is
+ * locked". Distinct from generic null-return failures so callers can
+ * halt the whole run rather than spend hours retrying every entry.
+ *
+ * Detected once on 2026-05-25 mid-rescue: the rescue had used the last
+ * of the balance, then every subsequent call returned 403. Callers
+ * (rescue / apply / fixup-hero-fill) catch this and write a clear
+ * docs/_flux-billing-halt.md so Rebecca knows to top up.
+ */
+export class FluxBillingError extends Error {
+  readonly status: number
+  readonly body: string
+  constructor(body: string) {
+    super(`fal.ai billing error: ${body.slice(0, 200)}`)
+    this.name = 'FluxBillingError'
+    this.status = 403
+    this.body = body
+  }
+}
+
+function looksLikeBillingError(body: string): boolean {
+  const lower = body.toLowerCase()
+  return (
+    lower.includes('exhausted balance') ||
+    lower.includes('user is locked') ||
+    lower.includes('top up your balance') ||
+    lower.includes('insufficient balance') ||
+    lower.includes('balance too low')
+  )
+}
+
 async function fluxAttempt(
   key: string,
   prompt: string,
@@ -75,13 +107,20 @@ async function fluxAttempt(
       signal: ctrl.signal,
     })
     if (!res.ok) {
-      return { ok: false, status: res.status, reason: `http ${res.status}` }
+      const body = await res.text().catch(() => '')
+      // 403 + balance-style body → throw so the caller halts the whole run
+      // rather than burn through every remaining entry with the same error.
+      if (res.status === 403 && looksLikeBillingError(body)) {
+        throw new FluxBillingError(body)
+      }
+      return { ok: false, status: res.status, reason: `http ${res.status}: ${body.slice(0, 120)}` }
     }
     const data = (await res.json()) as FalResponse
     const img = data.images?.[0]
     if (!img?.url) return { ok: false, status: 200, reason: 'no image in response' }
     return { ok: true, img }
   } catch (err) {
+    if (err instanceof FluxBillingError) throw err
     const reason = err instanceof Error ? err.message : String(err)
     return { ok: false, status: 0, reason }
   } finally {

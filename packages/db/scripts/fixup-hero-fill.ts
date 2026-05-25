@@ -47,6 +47,29 @@ const __dirname = dirname(__filename)
 import { prisma, r2Upload } from '../src'
 import type { Prisma } from '@prisma/client'
 import { sourceHeroImage } from '../../../apps/web/src/lib/image-sourcing/orchestrator'
+import { FluxBillingError } from '../../../apps/web/src/lib/image-sourcing/flux-schnell'
+import { writeFluxBillingHalt } from '../../../apps/web/src/lib/image-sourcing/flux-billing-halt'
+import { buildRelevancePrompt } from '../../../apps/web/src/lib/image-sourcing/relevance'
+import { cacheKeyFor, downloadToCache } from '../../../apps/web/src/lib/image-sourcing/verify'
+import { mkdir, writeFile } from 'node:fs/promises'
+
+interface RelevanceQueueEntry {
+  mediaId: string
+  tutorialId: string
+  tutorialSlug: string
+  tutorialTitle: string
+  tutorialSubtitle: string | null
+  tutorialExcerpt: string | null
+  category: string
+  subCategory: string | null
+  keyIngredients: string[]
+  imageUrl: string
+  imageSource: string
+  licenceCode: string | null
+  imagePath: string
+  promptHints: string
+  existingVerificationStatus: string
+}
 
 interface CliFlags {
   limit: number | null
@@ -57,6 +80,10 @@ interface CliFlags {
   noAiFallback: boolean
   /** ms to sleep between tutorials — keeps API calls within quota. Default 0. */
   delayMs: number
+  /** When set, write a relevance queue manifest alongside the run that the
+   *  autopilot worker session immediately scores + applies. This is the
+   *  per-batch relevance gate documented in docs/relevance-gate-autopilot.md. */
+  emitRelevanceQueue: string | null
 }
 
 function parseCliFlags(argv: string[]): CliFlags {
@@ -65,6 +92,7 @@ function parseCliFlags(argv: string[]): CliFlags {
   let categories: string[] | null = null
   let noAiFallback = false
   let delayMs = 0
+  let emitRelevanceQueue: string | null = null
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i]!
     if (a === '--dry-run') dryRun = true
@@ -87,9 +115,13 @@ function parseCliFlags(argv: string[]): CliFlags {
     } else if (a.startsWith('--category=')) {
       const raw = a.slice('--category='.length)
       categories = raw.split(',').map((s) => s.trim()).filter(Boolean)
+    } else if (a === '--emit-relevance-queue') {
+      emitRelevanceQueue = argv[++i] ?? null
+    } else if (a.startsWith('--emit-relevance-queue=')) {
+      emitRelevanceQueue = a.slice('--emit-relevance-queue='.length)
     }
   }
-  return { limit, dryRun, categories, noAiFallback, delayMs }
+  return { limit, dryRun, categories, noAiFallback, delayMs, emitRelevanceQueue }
 }
 
 function extFromContentType(ct: string | null): { ext: string; mime: string } {
@@ -177,6 +209,7 @@ async function main(): Promise<void> {
     'error': 0,
   }
   const results: PerTutorialResult[] = []
+  const relevanceQueue: RelevanceQueueEntry[] = []
 
   for (let i = 0; i < total; i++) {
     const t = candidates[i]!
@@ -301,8 +334,56 @@ async function main(): Promise<void> {
         triedSources: result.triedSources,
         mediaId: media.id,
       })
+
+      // When --emit-relevance-queue is set, capture the entry for the
+      // post-batch relevance gate. Cache the bytes we already downloaded
+      // so the worker doesn't fetch them again.
+      if (flags.emitRelevanceQueue) {
+        const ingNames = ingredients
+        const promptHints = buildRelevancePrompt({
+          tutorialTitle: t.title,
+          tutorialSubtitle: t.subtitle ?? null,
+          tutorialExcerpt: t.excerpt ?? null,
+          category: t.category.slug,
+          subCategory: t.subCategory?.slug ?? null,
+          keyIngredients: ingNames,
+          imageSource: img.source,
+          imageUrl: img.url,
+        })
+        const cacheDir = resolve(__dirname, '..', '..', '..', '.claude', 'tmp', 'relevance-cache')
+        await mkdir(cacheDir, { recursive: true })
+        const cachedPath = resolve(cacheDir, `${media.id}-${cacheKeyFor(img.url)}.${ext}`)
+        await writeFile(cachedPath, buf)
+        relevanceQueue.push({
+          mediaId: media.id,
+          tutorialId: t.id,
+          tutorialSlug: t.slug,
+          tutorialTitle: t.title,
+          tutorialSubtitle: t.subtitle ?? null,
+          tutorialExcerpt: t.excerpt ?? null,
+          category: t.category.slug,
+          subCategory: t.subCategory?.slug ?? null,
+          keyIngredients: ingNames,
+          imageUrl: img.url,
+          imageSource: img.source,
+          licenceCode: img.licenceCode,
+          imagePath: cachedPath,
+          promptHints,
+          existingVerificationStatus: 'UNVERIFIED',
+        })
+      }
+
       console.log(`${tag} OK ${img.source} (${img.width}x${img.height})${img.requiresAttribution ? ' [attr]' : ''}`)
     } catch (err) {
+      if (err instanceof FluxBillingError) {
+        writeFluxBillingHalt(err, {
+          script: 'fixup-hero-fill',
+          processed: i,
+          total,
+          extra: { ...counts },
+        })
+        process.exit(2)
+      }
       counts['error'] += 1
       const message = err instanceof Error ? err.message : String(err)
       results.push({ slug: t.slug, outcome: 'error', errorMessage: message })
@@ -338,6 +419,29 @@ async function main(): Promise<void> {
         } as Prisma.InputJsonValue,
       },
     })
+  }
+
+  if (flags.emitRelevanceQueue && relevanceQueue.length > 0) {
+    const queueFile = {
+      generatedAt: new Date().toISOString(),
+      totalCandidates: relevanceQueue.length,
+      enqueued: relevanceQueue.length,
+      filter: {
+        category: flags.categories ? flags.categories.join(',') : 'all',
+        sources: ['unsplash', 'pexels', 'wikimedia', 'pixabay', 'flux-schnell'],
+        stratify: false,
+      },
+      entries: relevanceQueue,
+    }
+    const queuePath = resolve(process.cwd(), flags.emitRelevanceQueue)
+    await mkdir(dirname(queuePath), { recursive: true })
+    await writeFile(queuePath, JSON.stringify(queueFile, null, 2), 'utf8')
+    console.log(`\nrelevance queue written to ${queuePath}`)
+    console.log(
+      `Next step (autopilot worker): score each entry against its promptHints, ` +
+        `write verdicts JSON, run apply-relevance-verdicts.ts. See ` +
+        `docs/relevance-gate-autopilot.md.`,
+    )
   }
 
   console.log('\nDONE')
