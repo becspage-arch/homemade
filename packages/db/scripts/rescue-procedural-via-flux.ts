@@ -133,12 +133,14 @@ async function main(): Promise<void> {
         })
       } catch (err) {
         if (err instanceof FluxBillingError) {
-          writeFluxBillingHalt(err, {
+          await writeFluxBillingHalt(err, {
             script: 'rescue-procedural-via-flux',
             processed: i,
             total,
             extra: { recoveredSoFar: recovered, failedSoFar: failed },
+            prisma,
           })
+          // Every entry in this script needs Flux. No point continuing.
           process.exit(2)
         }
         throw err

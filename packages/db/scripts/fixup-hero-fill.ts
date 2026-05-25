@@ -210,6 +210,11 @@ async function main(): Promise<void> {
   }
   const results: PerTutorialResult[] = []
   const relevanceQueue: RelevanceQueueEntry[] = []
+  // Once fal.ai billing fails for any tutorial, skip Flux for the rest
+  // of this run. Tutorials that need Flux stay UNSET — they get picked
+  // up automatically on the next batch when balance is healthy. Notify
+  // Rebecca once via SYSTEM notification + push.
+  let fluxUnavailable = false
 
   for (let i = 0; i < total; i++) {
     const t = candidates[i]!
@@ -217,6 +222,11 @@ async function main(): Promise<void> {
 
     try {
       const ingredients = await topIngredients(t.id)
+      // If a prior tutorial in this run hit a fal.ai billing error,
+      // skip Flux for the remainder. Tutorials that would have needed
+      // Flux land as outcome='failed' and stay UNSET — the next batch
+      // retries them automatically when balance is healthy.
+      const skipFlux = flags.noAiFallback || fluxUnavailable
       const result = await sourceHeroImage(
         {
           title: t.title,
@@ -224,7 +234,7 @@ async function main(): Promise<void> {
           subCategory: t.subCategory?.slug ?? null,
           ingredients,
         },
-        flags.noAiFallback ? { excludeSources: ['flux-schnell' as const] } : {},
+        skipFlux ? { excludeSources: ['flux-schnell' as const] } : {},
       )
 
       if (result.outcome === 'failed' || !result.image) {
@@ -376,13 +386,29 @@ async function main(): Promise<void> {
       console.log(`${tag} OK ${img.source} (${img.width}x${img.height})${img.requiresAttribution ? ' [attr]' : ''}`)
     } catch (err) {
       if (err instanceof FluxBillingError) {
-        writeFluxBillingHalt(err, {
-          script: 'fixup-hero-fill',
-          processed: i,
-          total,
-          extra: { ...counts },
+        // First time this run we see a billing error: notify Rebecca,
+        // then flip into skip-Flux mode for the rest of this batch.
+        // Don't exit — keep processing for tutorials that the free
+        // sources can satisfy without Flux.
+        if (!fluxUnavailable) {
+          await writeFluxBillingHalt(err, {
+            script: 'fixup-hero-fill',
+            processed: i,
+            total,
+            extra: { ...counts },
+            prisma,
+          })
+          fluxUnavailable = true
+        }
+        counts['failed'] += 1
+        results.push({
+          slug: t.slug,
+          outcome: 'failed',
+          triedSources: [],
+          errorMessage: 'flux billing — left UNSET for next batch',
         })
-        process.exit(2)
+        console.log(`${tag} flux-billing → left UNSET; next batch retries`)
+        continue
       }
       counts['error'] += 1
       const message = err instanceof Error ? err.message : String(err)

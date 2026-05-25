@@ -98,27 +98,70 @@ treats PARTIAL the same as WRONG: stamps REJECTED, appends source to
 rejected source. After 3 distinct real-photo rejections the orchestrator
 falls to Flux Schnell.
 
-## Flux billing monitoring
+## Flux billing — automatic notification + auto-backfill
 
 fal.ai (Flux Schnell) is a paid API. When the balance is exhausted,
 fal.ai returns `HTTP 403 { "detail": "User is locked. Reason: Exhausted balance." }`.
-The Flux client recognises this and throws `FluxBillingError`. Every
-script that calls Flux at bulk (fixup-hero-fill, apply-relevance-verdicts,
-rescue-procedural-via-flux) catches this exception and writes a clear
-halt-signal file at `docs/_flux-billing-halt.md` before exiting non-zero.
+The Flux client recognises this and throws `FluxBillingError`.
 
-**What to do when the halt file appears:**
-1. Top up at https://fal.ai/dashboard/billing
-2. Re-run the script that wrote the halt. All three scripts are
-   idempotent — they pick up where they left off without duplicating
-   work on already-processed entries.
-3. Delete the halt file (the autopilot worker can use its presence as a
-   "do not start new batches" gate).
+### What happens automatically when billing fails
 
-**Cost guide:** Flux Schnell is £0.0024 per image. At an estimated
-~30 % gap rate (the share of new tutorials whose orchestrator chain
-falls through to Flux), a £10 top-up covers roughly 4,000 new tutorials
-(or ~1,300 if every new hero went through 2 cycles of re-source + Flux).
+The bulk-Flux scripts (`fixup-hero-fill`, `apply-relevance-verdicts`)
+do three things on the first billing error of a run:
+
+1. **Create a SYSTEM Notification** for `rebecca@homemade.education` —
+   the existing `Notification` pipeline fires a push to her mobile and
+   surfaces a banner in `/admin`. No checking files required. The
+   notification body includes the current backlog (`PUBLISHED` tutorials
+   with no hero) and an estimated top-up cost (£0.0024 × 30 % of backlog)
+   to clear the remaining work.
+2. **Write a halt-signal file** at `docs/_flux-billing-halt.md` with the
+   full HTTP response, backlog count, and estimated top-up. (Belt-and-
+   braces for anyone watching the filesystem.)
+3. **Continue the run in skip-Flux mode.** The script does NOT exit.
+   For the remaining tutorials in this batch:
+   - Free sources (Unsplash / Pexels / Wikimedia) still run normally.
+   - Tutorials that would have needed Flux fall to `outcome='failed'`
+     and stay with `heroMediaId = null` — they are NOT stamped
+     `PROCEDURAL_CARD`. The renderer shows the temporary procedural
+     fallback for those entries until the next batch picks them up.
+
+`rescue-procedural-via-flux.ts` is the exception: every entry there
+needs Flux, so it does exit on billing failure (still creates the
+notification first).
+
+### Auto-backfill on next batch
+
+Because skipped tutorials stay as `heroImageStrategy = UNSET` +
+`heroMediaId = null`, the next `fixup-hero-fill` run picks them up
+automatically — `fixup-hero-fill.ts` already queries on those exact
+conditions. The autopilot's per-batch finalize step calls
+`fixup-hero-fill` at the end of every publish batch, so as soon as
+balance is healthy the backlog drains over the next 1-2 batches.
+
+### Cost guide
+
+| Action | Estimated Flux calls | Estimated £ |
+|---|---:|---:|
+| Per new tutorial via autopilot | ~0.3 | ~£0.001 |
+| Per 1,000 new tutorials | ~300 | ~£0.72 |
+| Per 5,000 new tutorials | ~1,500 | ~£3.60 |
+| Worst case (every new tutorial needs Flux) | 1.0 per tutorial | £0.0024 per tutorial |
+
+The 30 % rate is what the 2026-05-25 audit observed after Pixabay was
+dropped from the orchestrator. £10 of credit covers ~4,000 new tutorials
+at the typical 30 % rate. A £5 top-up is plenty for routine autopilot
+batches.
+
+### Manual balance check
+
+To check whether fal.ai is responsive without running a bulk job:
+
+```bash
+pnpm --filter @homemade/db exec tsx scripts/check-fal-balance.ts
+```
+
+Exit codes: 0 = healthy, 2 = `BILLING_LOCKED`, 1 = transient / unknown.
 
 ## Threshold guidance for autopilot batches
 

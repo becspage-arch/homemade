@@ -178,6 +178,8 @@ async function main(): Promise<void> {
     errors: [],
   }
 
+  let fluxUnavailable = false
+
   for (let i = 0; i < file.verdicts.length; i++) {
     const v = file.verdicts[i]!
     const tag = `[${i + 1}/${file.verdicts.length}] ${v.mediaId} (${v.tier})`
@@ -275,15 +277,25 @@ async function main(): Promise<void> {
       const realPhotoRejected = REAL_PHOTO_SOURCES.filter((s) => accumulated.has(s))
       const forcedToFlux = realPhotoRejected.length >= 3
       const capSkipFlux = forcedToFlux && flags.noAiFallback
+      // If billing failed earlier in this run, exclude flux-schnell so
+      // the orchestrator doesn't waste a call. Tutorials that would
+      // have needed Flux fall to outcome='failed' and stay on their
+      // existing (REJECTED) Media — they'll get picked up by the
+      // autopilot's next batch when balance is healthy.
       const excludeSources: ImageSource[] = forcedToFlux
         ? Array.from(
             new Set<ImageSource>([
               ...accumulated,
               ...REAL_PHOTO_SOURCES,
-              ...(capSkipFlux ? (['flux-schnell'] as ImageSource[]) : []),
+              ...(capSkipFlux || fluxUnavailable ? (['flux-schnell'] as ImageSource[]) : []),
             ]),
           )
-        : Array.from(accumulated)
+        : Array.from(
+            new Set<ImageSource>([
+              ...accumulated,
+              ...(fluxUnavailable ? (['flux-schnell'] as ImageSource[]) : []),
+            ]),
+          )
 
       const result = await sourceHeroImage(
         {
@@ -390,18 +402,28 @@ async function main(): Promise<void> {
       console.log(`${tag} WRONG + regen OK via ${img.source}`)
     } catch (err) {
       if (err instanceof FluxBillingError) {
-        writeFluxBillingHalt(err, {
-          script: 'apply-relevance-verdicts',
-          processed: i,
-          total: file.verdicts.length,
-          extra: {
-            exactSoFar: summary.exact,
-            partialSoFar: summary.partial,
-            wrongRegenerated: summary.wrongRegenerated,
-            wrongRegenFailed: summary.wrongRegenFailed,
-          },
-        })
-        process.exit(2)
+        // First time this run: notify Rebecca (once), then continue
+        // processing in skip-Flux mode for the remaining verdicts.
+        // Tutorials that need Flux land as wrongRegenFailed but keep
+        // their existing hero — the next batch retries.
+        if (!fluxUnavailable) {
+          await writeFluxBillingHalt(err, {
+            script: 'apply-relevance-verdicts',
+            processed: i,
+            total: file.verdicts.length,
+            extra: {
+              exactSoFar: summary.exact,
+              partialSoFar: summary.partial,
+              wrongRegenerated: summary.wrongRegenerated,
+              wrongRegenFailed: summary.wrongRegenFailed,
+            },
+            prisma,
+          })
+          fluxUnavailable = true
+        }
+        summary.wrongRegenFailed += 1
+        console.log(`${tag} flux-billing — left for next batch`)
+        continue
       }
       const message = err instanceof Error ? err.message : String(err)
       summary.errors.push(`${tutorial.slug}: ${message}`)
