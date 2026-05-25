@@ -628,16 +628,26 @@ export default async function TutorialPage({ params }: PageProps) {
           initialPercent={project?.readingProgressPercent ?? 0}
         />
       )}
-      {isRecipe ? (
-        <ScaleProvider
-          defaultServings={tutorial.servings ?? null}
-          ingredients={extractScaleIngredients(body)}
-        >
-          {chrome}
-        </ScaleProvider>
-      ) : (
-        chrome
-      )}
+      {(() => {
+        // Wrap in ScaleProvider whenever the body actually carries an
+        // `ingredientsList` block, regardless of TutorialType. Recipes
+        // always have one; remedies (herbal salves, syrups) and natural-
+        // home preparations also use them with scaling tokens in the
+        // method prose. Without the provider, `{{slug}}` tokens fall
+        // through as literal text.
+        const scaleIngredients = extractScaleIngredients(body)
+        if (scaleIngredients.length > 0) {
+          return (
+            <ScaleProvider
+              defaultServings={tutorial.servings ?? null}
+              ingredients={scaleIngredients}
+            >
+              {chrome}
+            </ScaleProvider>
+          )
+        }
+        return chrome
+      })()}
     </CookingModeShell>
   )
 }
