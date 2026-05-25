@@ -94,8 +94,16 @@ async function main() {
       subtitle: data.subtitle,
       excerpt: data.excerpt,
       sourceNotes: data.sourceNotes,
+      // Voice-retrofit tracking — dedicated field so the voice-retrofit
+      // routine filter (voiceRetrofittedAt IS NULL) stays isolated from
+      // other pipelines that touch `revisedFrom`. Always set when this
+      // apply path runs.
+      voiceRetrofittedAt: new Date(),
     }
     // Snapshot the pre-rewrite body if revisedFrom not already set.
+    // Note: `revisedFrom` is shared with other pipelines (image-relevance,
+    // mindset audit), so we only write it when null — never overwrite an
+    // existing snapshot from another pipeline.
     if (current.revisedFrom == null) {
       updateData.revisedFrom = current.body
     }

@@ -386,7 +386,18 @@ model Tutorial {
   // rewritten by an audit pipeline. The same field can be reused by
   // future audit cycles (cooking / baking / etc.) — same shape, same
   // semantics. Recovery: restore by copying revisedFrom back into body.
+  //
+  // NOTE: this field is shared across multiple pipelines (mindset audit,
+  // image-relevance worker, etc.) so its presence does NOT specifically
+  // mean "voice retrofitted". Use `voiceRetrofittedAt` for that.
   revisedFrom Json?
+
+  // Voice-retrofit tracking — set to the time a tutorial was rewritten to
+  // the voice-spec-2026-05-21 grade 6-8 register. The voice-retrofit
+  // routine filters candidates on this field, so it stays isolated from
+  // any other pipeline that touches `body` or `revisedFrom`. Null until
+  // the voice-retrofit apply script has processed the row.
+  voiceRetrofittedAt DateTime?
 
   // Phase 8 Homepage rebuild — heroImageStrategy tracks where the current
   // hero came from. PROCEDURAL_CARD = the renderer should show the
