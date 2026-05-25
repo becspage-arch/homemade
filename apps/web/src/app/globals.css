@@ -49,3 +49,15 @@
     color: var(--color-linen-cream);
   }
 }
+
+/* Tutorial body: restore decimal list markers on numbered step lists.
+   Tailwind v4 Preflight resets list-style on every ol/ul; the body
+   renderer wraps sequential steps in <ol><li>... and needs the
+   numbers back. Outside the layered base rules so it beats Preflight. */
+.tutorial-content ol {
+  list-style: decimal outside !important;
+  padding-left: 1.6em;
+}
+.tutorial-content ol li {
+  display: list-item !important;
+}
