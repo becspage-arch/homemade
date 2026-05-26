@@ -59,7 +59,7 @@ DB first-paragraph text:
 
 > A winter spice simmer pot. The way it works is simple. Scented oils in the spices, peel, and herbs lift with the steam as it rises, carrying the fragrance through the room. Cinnamon and cloves give a warm, sweet base. Star anise adds a liquorice note that deepens the blend. Orange peel adds a bright top note. Fresh rosemary adds a clean herbal edge so the blend doesn't get too sweet.
 
-Live URL: https://homemade.education/natural-home/winter-spice-simmer-pot. The live page rendered the new opening paragraph identical to the DB text above after the deploy turned green.
+Public URL: https://homemade.education/natural-home/winter-spice-simmer-pot. The URL returns HTTP 200. The public site sits behind the splash gate, so anonymous visits to a tutorial URL still resolve to the coming-soon page rather than the tutorial body. The DB-side spot-check above is the live state that the tutorial page renders once a visitor is past the gate.
 
 ### 4. Full slug list (50)
 
