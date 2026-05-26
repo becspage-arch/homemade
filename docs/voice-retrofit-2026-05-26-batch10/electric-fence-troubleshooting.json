@@ -1,0 +1,176 @@
+{
+  "_meta": {
+    "tutorialId": "cmpf20iau0002vcv45o1u52uh",
+    "categorySlug": "animals-smallholding",
+    "subCategorySlug": "smallholding-skills",
+    "publicUrl": "https://homemade.education/animals-smallholding/electric-fence-troubleshooting",
+    "type": "TECHNIQUE"
+  },
+  "slug": "electric-fence-troubleshooting",
+  "title": "Electric fence troubleshooting",
+  "subtitle": "How to diagnose and fix a fence that is not holding its charge.",
+  "excerpt": "An electric fence that is not working is effectively no fence at all. Most faults trace back to one of four causes: poor earth, a short to ground, insufficient energiser output, or a connection problem. Working through them in order finds the fault without replacing parts unnecessarily.",
+  "type": "TECHNIQUE",
+  "sourceNotes": "Gallagher Fencing, electric fence installation and fault-finding guide. Farmers Guardian, electric fence troubleshooting notes. Livestock fencing industry technical reference.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Before troubleshooting, confirm the ",
+            "type": "text",
+            "marks": []
+          },
+          {
+            "text": "fence energiser",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpf20i810000vcv4rhny25zj"
+                }
+              }
+            ]
+          },
+          {
+            "text": " is switched on and the indicator light is flashing. If the light is not flashing, the energiser has no power; check the mains supply or replace the battery before anything else.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Step 1: check the earth",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "The ",
+            "type": "text",
+            "marks": []
+          },
+          {
+            "text": "earth stake",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpf20i8r0001vcv4ccscagqu"
+                }
+              }
+            ]
+          },
+          {
+            "text": " is the first thing to check. Disconnect the earth lead from the energiser, then hold the lead and touch the bare metal end to the ground. You should not feel a pulse. If you feel a pulse, the earth stake is not providing a return path and the fence cannot work correctly. Drive a new earth stake (at least 1 metre of metal rod) into moist soil at least 2 metres from the energiser and re-connect.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Step 2: check for shorts to ground",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A short is any point where the fence wire touches the ground or a grounded object; a post, a wet wooden stake, long grass or weeds growing up into the wire. Walk the fence line and look for wire touching vegetation. In dry summer conditions, grass shorts are the most common cause of low fence voltage. Cut back any vegetation touching the wire, or raise the wire height. In wet conditions, a wire resting on a wet metal or wood post will short the circuit.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Step 3: check connections",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Check every junction in the fence: the connection from the energiser to the wire, any joins in the fence line where wires are connected, and gate handles where the current crosses a gap. Corroded or loose connections lose voltage. Joints should use purpose-made fence connectors rather than wire twisted together, which corrodes quickly in damp conditions.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Step 4: test the voltage",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A fence voltage tester or multi-meter with a fence testing function lets you read actual voltage at different points along the line. Test at the energiser terminal, then at intervals along the fence. A significant voltage drop between two testing points indicates a short or poor connection in that section. A good working stock fence should read at least 2,000 to 3,000 volts under load for sheep; more for cattle.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "entries": [
+            {
+              "cue": "Energiser light flashing but animals not respecting fence",
+              "fix": "Work through Steps 1 to 4. If the earth and shorts are clear and the battery energiser is more than a year old, replace the battery and re-test.",
+              "cause": "Low voltage from poor earth, vegetation shorts, or a weak battery energiser"
+            },
+            {
+              "cue": "Voltage drops to near zero at far end of long fence run",
+              "fix": "Check and replace any twisted-wire joins with proper connectors. For very long runs, add a second feed point from the energiser at the far end.",
+              "cause": "High resistance in a long fence run, often from too-small wire gauge or multiple connector joints"
+            },
+            {
+              "cue": "Fence works in dry weather but fails in wet",
+              "fix": "Replace wooden stakes at known short points with insulated plastic stakes. Keep vegetation cut back from the wire.",
+              "cause": "Wet wooden stakes or wet vegetation creating ground shorts that only exist when saturated"
+            }
+          ]
+        },
+        "content": []
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}
