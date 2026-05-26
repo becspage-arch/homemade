@@ -1,4 +1,4 @@
-Batch 2026-05-26-batch7: 50 tutorials retrofitted. Deploy verification pending at write time; this file written immediately after voice apply, before the commit and deploy-watch block. The remainder of the brief continues below.
+Batch 2026-05-26-batch7: 50 tutorials retrofitted. Deploy green, healthz 200.
 
 ## DB verification
 
@@ -200,7 +200,10 @@ NEW:
 
 ## Deploy verification
 
-Pending at the time this hand-off was written. The commit and `gh run watch` block runs immediately after this file is written, and a follow-up section will be appended to this file if the deploy result is anything other than green. If this file is read with no follow-up, the deploy was green and healthz returned 200.
+- Run ID 26445642916 on workflow deploy.yml against main.
+- gh run watch exited 0 (deploy green).
+- healthz smoke: https://homemade.education/healthz returned 200.
+- Rebase note: a fast-forward pull was required because origin/main had picked up one new commit (per-sub-category flux prompts for mindset) while the batch7 work was in flight. Rebased cleanly with no conflicts before re-pushing.
 
 ## Script changes shipped with this batch
 
