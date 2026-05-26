@@ -27,17 +27,121 @@ interface FalResponse {
   images?: FalImage[]
 }
 
-function buildPrompt(input: SourceHeroInput): string {
-  const isMindset = input.category === 'mindset'
-  if (isMindset) {
-    return (
-      'Quiet contemplative still life. ' +
-      `${input.title} concept. Cream and sage palette. ` +
-      'Single candle, open notebook, or hands in soft light as appropriate. ' +
-      'No faces. Magazine-quality editorial photography. ' +
-      'Natural soft light, linen textures, slow-living atmosphere.'
-    )
+/**
+ * Per-sub-category scene anchors for mindset content. The 2026-05-25
+ * audit found the previous generic mindset prompt collapsed every title
+ * to the same "candle + notebook + linen" template, scoring as
+ * WRONG/PARTIAL because the photograph didn't depict the named practice.
+ * Each scene below ties Flux to a recognisable visual identity for that
+ * practice type so viewers can tell at a glance what category a hero
+ * belongs to.
+ */
+function buildMindsetPrompt(input: SourceHeroInput): string {
+  const sub = (input.subCategory ?? '').toLowerCase()
+  const base =
+    'Magazine-quality editorial photography. ' +
+    'Warm natural light. Cream and sage palette. ' +
+    'Linen and wool textures. No faces visible.'
+  const title = input.title
+
+  switch (sub) {
+    case 'tapping':
+      // EFT tapping — fingertips on collarbone or karate-chop point.
+      // Must show the technique, not just a meditative scene.
+      return (
+        `${base} ` +
+        'Close-up of a hand with fingertips lightly touching the collarbone (an EFT acupressure tapping point), viewed from chest down. ' +
+        'Soft shoulder, neutral linen top, side window light. ' +
+        `Practice: ${title}.`
+      )
+
+    case 'meditation':
+      return (
+        `${base} ` +
+        'A figure seated cross-legged on a wool cushion, palms resting on knees, side view, eyes closed. ' +
+        'Quiet room, side window light. ' +
+        `Practice: ${title}.`
+      )
+
+    case 'embodiment':
+      return (
+        `${base} ` +
+        'Hands resting open on the lap, viewed from above. One hand placed gently over the heart. ' +
+        'Soft window light on neutral linen. ' +
+        `Practice: ${title}.`
+      )
+
+    case 'ritual':
+      return (
+        `${base} ` +
+        'A small home altar on a wooden surface: a single lit candle, a sprig of dried herbs, a small ceramic bowl, a folded card on warm parchment. ' +
+        'Soft side light, contemplative. ' +
+        `Ritual: ${title}.`
+      )
+
+    case 'spell':
+      return (
+        `${base} ` +
+        'A folk-craft still life: scattered dried herbs, a small bowl of sea salt, a folded paper intention on a wooden surface, a single lit candle. ' +
+        `Spell: ${title}.`
+      )
+
+    case 'affirmation':
+    case 'energy-statement':
+      return (
+        `${base} ` +
+        'A handwritten card resting on a warm wooden surface, side window light at golden hour, a ceramic mug and a small sprig of greenery nearby. ' +
+        'Slow-living tableau, no books or candles. ' +
+        `Theme of the card: ${title}.`
+      )
+
+    case 'journal-prompt':
+      return (
+        `${base} ` +
+        'An open journal mid-write on a wooden desk, fountain pen resting across the page, real handwriting visible on cream paper, mug of tea in the background. ' +
+        'Side window light. ' +
+        `Journal prompt: ${title}.`
+      )
+
+    case 'visualisation':
+      return (
+        `${base} ` +
+        'A figure seen from behind walking through a softly-lit interior doorway into a calm room, no face visible. ' +
+        'Linen curtain, wooden floor, slow-living atmosphere. ' +
+        `Scene visualised: ${title}.`
+      )
+
+    case 'activity':
+      return (
+        `${base} ` +
+        'A purposeful desk scene: notebook open, pen poised, a small focal object related to the practice (a phone, an envelope, a coin, a printed page). ' +
+        'Side window light. ' +
+        `Activity: ${title}.`
+      )
+
+    case 'reading':
+      return (
+        `${base} ` +
+        'A stack of well-thumbed reference books on a wooden table with a single bookmark in the top volume, warm reading-lamp light, a notepad and pencil to the side. ' +
+        'Editorial study scene. ' +
+        `Subject of the reading: ${title}.`
+      )
+
+    default:
+      // Fallback for any mindset sub-category not enumerated above.
+      // Deliberately distinct from the old default template so the
+      // image still varies per title.
+      return (
+        `${base} ` +
+        'A quiet practice space — a single meaningful object in soft window light: a stone, a cup, a folded letter, or a sprig of dried herbs. ' +
+        `Subject: ${title}.`
+      )
   }
+}
+
+function buildPrompt(input: SourceHeroInput): string {
+  if (input.category === 'mindset') return buildMindsetPrompt(input)
+
   const ingredientHint =
     input.ingredients && input.ingredients.length
       ? ` Key ingredients: ${input.ingredients.slice(0, 3).join(', ')}.`
