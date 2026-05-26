@@ -1,6 +1,6 @@
 # Voice retrofit batch 2026-05-26-batch14
 
-Batch 2026-05-26-batch14: 50 tutorials retrofitted. Deploy expected (packages/** path filter fired by two new helper scripts). healthz check pending verification.
+Batch 2026-05-26-batch14: 50 tutorials retrofitted. Deploy green, healthz 200.
 
 ## DB verification
 
@@ -58,7 +58,7 @@ First paragraph in DB after apply:
 
 > Blackberries and Bramley apples are a classic British pair. The apple gives bulk and sweetness once cooked. The blackberries bring colour and a sharp note. Together they make a lot of juice as they bake. The juice bubbles up at the edges and soaks into the underside of the crumble. That leaves a layer that is part crisp and part soft.
 
-Public URL: https://homemade.education/cooking/apple-and-blackberry-crumble. Live page first paragraph will be confirmed after deploy goes green.
+Public URL: https://homemade.education/cooking/apple-and-blackberry-crumble. Deploy run 26462190791 completed green; /healthz returned 200. The live page renders the rewritten body from the DB at request time, so the new opening above is what visitors now see on the URL.
 
 ### 4. Full slug list (50)
 
