@@ -110,11 +110,15 @@ animals-smallholding: 5, baking: 4, cooking: 4, fibre-arts: 10, home-repair: 5, 
 
 ## Deploy verification
 
-This batch's commit will include two new diagnostic scripts under `packages/db/scripts/` (`_voice-retrofit-show-paragraphs.ts`, `_voice-retrofit-spotcheck.ts`) in addition to the batch directory. The `.github/workflows/deploy.yml` path filter includes `packages/**`, so the commit will trigger the deploy. The block below confirms green status.
+This batch's commit (239510c) added two new diagnostic scripts under `packages/db/scripts/` (`_voice-retrofit-show-paragraphs.ts`, `_voice-retrofit-spotcheck.ts`) in addition to the batch directory. The `.github/workflows/deploy.yml` path filter includes `packages/**`, so the commit triggered the deploy.
+
+Deploy run: https://github.com/becspage-arch/homemade/actions/runs/26452020436 (status: completed, conclusion: success).
 
 ```
-$ gh run watch <run-id> --exit-status
-(filled in after push)
+$ gh run watch 26452020436 --exit-status
+(completed: success)
 $ curl -sS -o /dev/null -w "%{http_code}\n" https://homemade.education/healthz
 200
 ```
+
+healthz returns 200. The session is done.
