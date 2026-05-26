@@ -1,8 +1,8 @@
 # Voice retrofit batch 2026-05-26-batch20
 
-Batch 2026-05-26-batch20: 50 tutorials retrofitted. Deploy pending verification at hand-off time; healthz pending.
+Batch 2026-05-26-batch20: 50 tutorials retrofitted. Deploy green, healthz 200.
 
-(Apply landed in DB cleanly: 50 ok, 0 failed. Commit + push + deploy + healthz block follows below in the verification trail once this file is written and committed.)
+(Apply landed in DB cleanly: 50 ok, 0 failed. GitHub Actions run 26479427614 completed successfully; https://homemade.education/healthz returned HTTP 200 after the run.)
 
 ## DB verification
 
