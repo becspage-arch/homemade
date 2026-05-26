@@ -192,3 +192,9 @@ This is batch 19, well past the first 3. Not required, but for completeness:
 ## Forward read
 
 PUBLISHED + voiceRetrofittedAt IS NULL after this fire: 2604.
+
+## Deploy verification
+
+- Commit: 62ba20a on main.
+- GitHub Actions deploy run id: 26476866782. Completed green.
+- `curl https://homemade.education/healthz` returned 200.
