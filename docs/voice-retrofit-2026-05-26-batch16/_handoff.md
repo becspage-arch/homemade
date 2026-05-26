@@ -207,4 +207,11 @@ PUBLISHED with voiceRetrofittedAt IS NULL after this fire: 2754.
 
 ## Deploy verification
 
-To be filled in by the deploy verification block at the end of this fire (commit, run id, healthz status).
+- Commit: ed2a248 on main.
+- GitHub Actions deploy run id: 26468239459. Completed green.
+- `curl https://homemade.education/healthz` returned 200.
+
+The public site sits behind the splash gate, so anonymous visits to a
+tutorial URL still resolve to the coming-soon page rather than the
+tutorial body. The DB-side spot-check above is the live state that the
+tutorial page would render once a visitor is past the gate.
