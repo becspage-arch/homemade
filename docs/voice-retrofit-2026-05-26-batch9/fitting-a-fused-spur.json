@@ -1,0 +1,226 @@
+{
+  "_meta": {
+    "tutorialId": "cmpe8rkz50000o4v4bliq3i4r",
+    "categorySlug": "home-repair",
+    "subCategorySlug": "electrical",
+    "publicUrl": "https://homemade.education/home-repair/fitting-a-fused-spur",
+    "type": "PATTERN"
+  },
+  "slug": "fitting-a-fused-spur",
+  "title": "Fitting a fused spur",
+  "subtitle": "Isolate the circuit, connect the new spur, and verify dead before touching anything",
+  "excerpt": "How to connect a fused connection unit (fused spur) to an existing ring or radial circuit: isolating the circuit with a lock-off device, connecting the spur from a junction box or socket, and testing the new outlet.",
+  "type": "PATTERN",
+  "sourceNotes": "IET On-Site Guide (BS 7671, 18th Edition, publicly available guidance). Collins Complete DIY Manual. Hager and MK technical installation guides.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A ",
+            "type": "text"
+          },
+          {
+            "text": "fused spur",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba2wp80017tcv4w4pk4uup"
+                }
+              }
+            ]
+          },
+          {
+            "text": " is a branch off an existing socket or junction box on a ",
+            "type": "text"
+          },
+          {
+            "text": "ring final circuit",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba2wpv0018tcv4xvxn8ale"
+                }
+              }
+            ]
+          },
+          {
+            "text": ". Only one spur is allowed per socket on a ring circuit. In England and Wales, new circuits or certain bathroom additions count as notifiable work under Part P of the Building Regulations. Adding a spur from a socket in other rooms is usually not notifiable. Check with your local authority if in doubt.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Step 1, isolate the circuit and verify dead",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Switch off the MCB for the circuit at the consumer unit. Fit a lock-off device on the MCB and attach a written warning label. Use the proving unit to confirm your two-pole voltage tester is working: test the proving unit (live result). Go to the socket or junction box you will work on and test between live and neutral, live and earth, and neutral and earth: all three tests must show dead. Return to the proving unit and test again (live result). This live-dead-live sequence confirms the tester was working both before and after the dead reading.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Choosing the supply point",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "The spur can be taken from the terminals of an existing socket (provided that socket does not already supply a spur) or from a three-terminal junction box inserted into the ring cable. Taking from a socket is simpler and does not require disturbing the cable run.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Step 2, run the spur cable",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Run 2.5 mm² twin-and-earth cable from the supply point to the location of the new fused spur. The cable must be clipped at 250 mm intervals (or run in conduit or trunking) or buried in the wall to at least 50 mm depth in the 'safe zones' defined in BS 7671. Fit the back box (flush or surface) at the spur location.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Step 3, connect the supply point",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "At the supply socket, strip 10 mm of insulation from each conductor of the new spur cable. Sleeve the bare earth conductor in green-and-yellow sleeving. Connect brown (live) to L, blue (neutral) to N, and earth to E alongside the existing conductors. Do not remove the existing conductors; the spur is connected in parallel at the same terminals.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Step 4, connect and fit the fused spur",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Connect the spur cable to the SUPPLY terminals of the fused connection unit (marked S or SUPPLY on the back of the unit). If the fused spur will connect to an appliance cable, connect the appliance lead to the LOAD terminals. Fit the correct fuse cartridge: 3 A for lighting and small appliances, 13 A for appliances up to 3 kW. Fold the cable into the back box and screw the unit faceplate home.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Step 5, restore power and test",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Remove the lock-off device and switch the MCB on. Test the original supply socket and the new fused spur for correct polarity using a socket tester. Switch on the fused spur and confirm the connected appliance operates.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Troubleshooter",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "fix": "Isolate and verify dead. Open the fused spur and supply socket and check that no bare conductor is bridging terminals or touching the metal back box.",
+              "cause": "A short circuit in the new spur cable, most likely at a terminal where stripped insulation is touching an adjacent conductor.",
+              "symptom": "MCB trips when the circuit is restored"
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "fix": "Isolate and verify dead. Open the fused spur and swap the brown and blue conductors at the SUPPLY terminals.",
+              "cause": "Brown and blue conductors swapped at the spur supply terminal.",
+              "symptom": "Socket tester shows reversed polarity at the fused spur"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}
