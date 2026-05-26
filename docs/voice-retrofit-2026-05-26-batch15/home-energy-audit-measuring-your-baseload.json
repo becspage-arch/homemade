@@ -1,0 +1,158 @@
+{
+  "_meta": {
+    "tutorialId": "cmpdo9piw00009gv4jpm0vrtj",
+    "categorySlug": "sustainability",
+    "subCategorySlug": "solar-and-energy",
+    "publicUrl": "https://homemade.education/sustainability/home-energy-audit-measuring-your-baseload",
+    "type": "PATTERN"
+  },
+  "slug": "home-energy-audit-measuring-your-baseload",
+  "title": "Measuring your household baseload",
+  "subtitle": "Clamp meter on the supply cable to find phantom loads and overnight draw",
+  "excerpt": "Baseload is the electricity your home draws when everything you think is off is off. An energy monitor clamp on the incoming supply cable measures it in real time. UK homes average 200-400 W of baseload. At 27p/kWh, 300 W running continuously costs . An hour's audit with a clamp meter identifies where it goes.",
+  "type": "PATTERN",
+  "sourceNotes": "EST annual electricity consumption data for UK households. Carbon Trust good practice guides on phantom load identification. OFGEM energy use data.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Baseload is the steady draw from appliances in standby, always-on devices, and background systems, routers, set-top boxes, clocks, chargers, heat pump controllers, and poorly-specified boiler controls. It runs 24 hours a day, 365 days a year. At 300 W, that is 2,628",
+            "type": "text"
+          },
+          {
+            "text": "kWh",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3aie00064ov4vqi50jp0"
+                }
+              }
+            ]
+          },
+          {
+            "text": "per year, at 27p/kWh, before you turn on a kettle or a light.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Setting up the clamp",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Step 1, clip the clamp sensor.",
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "text": "Open the consumer unit cover if needed and clip the current transformer (CT) clamp around the single live cable coming in from the meter. The clamp does not cut the circuit, it measures the magnetic field around the cable. Follow the manufacturer's pairing instructions to connect to the display unit or app.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "body": "The CT clamp clips around the outside of the cable, it does not make electrical contact. You do not need to isolate the supply. Do not touch bare conductors or terminal connections inside the consumer unit. If the incoming cable is sheathed in a way that makes the clamp inaccessible, do not attempt to unsheathe it.",
+          "tone": "info",
+          "title": "Consumer unit safety"
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Taking the baseline reading",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Step 2, turn off everything you can.",
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "text": "Switch off all lights. Turn off TVs, monitors, and computers at the wall (not just standby). Turn off the oven, kettle, washing machine, dishwasher. Leave on: fridge, freezer, boiler/heating controls, router, and any other items that cannot be switched off. Note the reading. This is your irreducible baseline.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Step 3, turn devices back on one at a time.",
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "text": "Restore each device from standby and note the increase in watts. Televisions typically add 1-3 W in standby. Set-top boxes (Freeview, Sky) can add 5-15 W. A network-attached storage (NAS) drive may add 20-50 W. Games consoles in standby: 1-15 W. Old first-generation smart speakers: 3-5 W.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Calculating the annual cost",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Total watts of baseload identified × 8,760 ÷ 1,000 = annual kWh (8,760 is the number of hours in a year). Multiply by 27p (or your actual unit rate) for the annual cost. If you find 80 W of unnecessary standby loads: 80 × 8,760 ÷ 1,000 = 701 kWh per year. Switch them to smart plugs with scheduling or turn them off at the wall.",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}
