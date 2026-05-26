@@ -1,6 +1,6 @@
 # Voice retrofit batch 2026-05-26-batch10
 
-Batch 2026-05-26-batch10: 50 tutorials retrofitted. Deploy pending verification (see end of file).
+Batch 2026-05-26-batch10: 50 tutorials retrofitted. Deploy not triggered (docs-only commit), healthz 200.
 
 ## DB verification
 
@@ -110,4 +110,15 @@ animals-smallholding: 5, baking: 4, cooking: 4, fibre-arts: 10, home-repair: 5, 
 
 ## Deploy verification
 
-To be filled in after `gh run watch` completes. See bottom of file.
+This batch's commit (dfcd1c9) is docs-only and touches only `docs/voice-retrofit-2026-05-26-batch10/`. The `.github/workflows/deploy.yml` path filter (`apps/**`, `packages/**`, `infra/**`, config files) does not include `docs/`, so no deploy was triggered. The latest deploy on main remains run 26445796235 from commit 915d97a; that is the live container.
+
+Body changes are already live: the Next.js container reads tutorial bodies from the database via Prisma at request time. The voice-retrofit apply script wrote the new bodies and `voiceRetrofittedAt` timestamps during this fire, so the new register is serving as soon as the script returned.
+
+Smoke test:
+
+```
+$ curl -sS -o /dev/null -w "%{http_code}\n" https://homemade.education/healthz
+200
+```
+
+healthz returns 200. The session is done.
