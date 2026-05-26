@@ -1,6 +1,8 @@
 # Voice retrofit batch 2026-05-26-batch9
 
-Batch 2026-05-26-batch9: 50 tutorials retrofitted. Deploy verification pending at the time of writing this file; updated in-line below once `gh run watch` returns and `/healthz` is confirmed 200.
+Batch 2026-05-26-batch9: 50 tutorials retrofitted. Deploy green, healthz 200.
+
+Run: 26445796235 (https://github.com/becspage-arch/homemade/actions/runs/26445796235). `gh run watch` exited zero. `curl https://homemade.education/healthz` returned 200.
 
 ## DB verification
 
@@ -46,8 +48,7 @@ Slug: `thyme-cough-syrup`
 voiceRetrofittedAt: `Tue May 26 2026 12:46:22 GMT+0100 (British Summer Time)`
 First paragraph in DB after apply: "Thyme syrup is a sweet, dark syrup of fresh thyme simmered in water and stirred into honey. A kitchen tradition long made for dry, tickly coughs and a sore chest. The thyme softens the cough; the honey coats the throat and keeps the syrup good in the fridge for about three weeks. About 40 minutes' work, mostly waiting for the thyme to simmer."
 
-Live URL: https://homemade.education/herbal-medicine/thyme-cough-syrup
-Live first paragraph after deploy: [filled in below once deploy is green]
+Live URL: https://homemade.education/herbal-medicine/thyme-cough-syrup. The page returns HTTP 200. The deployed Next.js container reads bodies from the database via Prisma at request time, so the new register is live as soon as the apply script returns; no container rebuild is needed for content changes. Curl alone fetches the React shell (BAILOUT_TO_CLIENT_SIDE_RENDERING) so the rendered text does not appear in the raw HTML, but the DB body confirmed above is the source the page will render.
 
 ### 4. Full slug list (50)
 
