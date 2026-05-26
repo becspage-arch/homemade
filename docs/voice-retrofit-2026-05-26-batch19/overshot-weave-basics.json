@@ -1,0 +1,280 @@
+{
+  "_meta": {
+    "tutorialId": "cmpd4lnbi0004ssv407lt3adu",
+    "categorySlug": "fibre-arts",
+    "subCategorySlug": "weaving",
+    "publicUrl": "https://homemade.education/fibre-arts/overshot-weave-basics",
+    "type": "READING"
+  },
+  "slug": "overshot-weave-basics",
+  "title": "Overshot weave basics",
+  "subtitle": "How pattern blocks, tabby ties, and float length define a classic four-shaft structure",
+  "excerpt": "Overshot is a four-shaft weave structure built on alternating pattern picks (which create long weft floats forming geometric blocks) and plain weave tabby picks (which anchor the floats and provide structural integrity). This reading explains how overshot works before you sit at the loom.",
+  "type": "READING",
+  "sourceNotes": "Overshot weave structure is documented extensively in historical American coverlet weaving records and in handweaving texts including Davison's 'A Handweaver's Pattern Book'. The structural principles are consistent across sources. Observation-led.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Overshot is a four-shaft weave structure with two wefts: a thick pattern weft and a fine structural weft. The thick weft floats over grouped warp threads to form geometric ",
+            "type": "text"
+          },
+          {
+            "text": "blocks",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpd4ln9t0002ssv4n239z8dk"
+                }
+              }
+            ]
+          },
+          {
+            "text": ". Between each pattern pick, a thin ",
+            "type": "text"
+          },
+          {
+            "text": "tabby pick",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpd4ln990001ssv46azon0ii"
+                }
+              }
+            ]
+          },
+          {
+            "text": " locks the floats in place. The resulting fabric has a pattern layer (visible on the front) and a structural layer (providing durability). ",
+            "type": "text"
+          },
+          {
+            "text": "Overshot",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpd4ln8j0000ssv44f52uz1d"
+                }
+              }
+            ]
+          },
+          {
+            "text": " was the dominant floor loom pattern weave in colonial America, used for coverlets and table linen.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "The threading unit",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Overshot threading always uses four shafts, and the threading is always a sequence of overlapping pairs: 1-2, 2-3, 3-4, or 4-1. Each pair constitutes a block. Threads are threaded in groups of 4-8 on successive pairs to define the size of each block. A typical threading for a star-and-diamond pattern might run: block A (threads on shafts 1-2), block B (threads on shafts 2-3), block C (threads on shafts 3-4), block B (2-3), block A (1-2). Reading a ",
+            "type": "text"
+          },
+          {
+            "text": "profile draft",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpd4lnae0003ssv4r7v0c1t9"
+                }
+              }
+            ]
+          },
+          {
+            "text": " shows the block sequence without listing every thread.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "The treadling",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Overshot treadling follows the same block sequence as the threading: to weave block A, you press the treadle that raises shafts 1 and 2 together. The thick pattern weft floats over all the threads on shafts 1 and 2 in that shed. Between every pattern pick, weave one tabby pick alternating between treadle A (shafts 1 and 3) and treadle B (shafts 2 and 4). The tabby treadles are the same for all overshot structures on four shafts.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "weavingDraft",
+        "attrs": {
+          "tieUp": [
+            [
+              1,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "shafts": 4,
+          "treadles": 6,
+          "threading": [
+            1,
+            2,
+            1,
+            2,
+            2,
+            3,
+            2,
+            3,
+            3,
+            4,
+            3,
+            4,
+            2,
+            3,
+            2,
+            3,
+            1,
+            2,
+            1,
+            2
+          ],
+          "treadling": [
+            5,
+            1,
+            5,
+            2,
+            6,
+            2,
+            6,
+            3,
+            5,
+            3,
+            5,
+            4,
+            6,
+            4,
+            6,
+            1
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Float length and sett",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "The longer the float (more threads per block), the more visible the pattern block and the more vulnerable the float is to snagging. A well-balanced overshot keeps most floats under 6 threads long. The sett must be calculated to produce a balanced tabby with the structural weft, while accepting that the pattern picks will pack down somewhat more than the tabby picks.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Choosing yarns",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Traditional overshot uses a fine linen or cotton warp. The pattern weft is cotton or wool, about twice the weight of the warp. The tabby weft matches the warp in weight. The fine ground weft against the thick pattern weft is what gives overshot its raised, textured look.",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}

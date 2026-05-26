@@ -1,0 +1,205 @@
+{
+  "_meta": {
+    "tutorialId": "cmpe8t27500025kv4lurss9dx",
+    "categorySlug": "home-repair",
+    "subCategorySlug": "electrical",
+    "publicUrl": "https://homemade.education/home-repair/replacing-a-ceiling-rose",
+    "type": "PATTERN"
+  },
+  "slug": "replacing-a-ceiling-rose",
+  "title": "Replacing a ceiling rose",
+  "subtitle": "Isolate the lighting circuit, reconnect the loop-in wiring, refit the new rose",
+  "excerpt": "How to replace a damaged or outdated ceiling rose on a loop-in lighting circuit: isolating the circuit, recording the existing wiring, connecting the new rose, and restoring power.",
+  "type": "PATTERN",
+  "sourceNotes": "IET On-Site Guide (BS 7671, 18th Edition, publicly available guidance). Collins Complete DIY Manual. Crabtree and BG Electrical installation guides.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A ",
+            "type": "text"
+          },
+          {
+            "text": "ceiling rose",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpe8t24a00005kv4svmg2zr5"
+                }
+              }
+            ]
+          },
+          {
+            "text": " on a ",
+            "type": "text"
+          },
+          {
+            "text": "loop-in circuit",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpe8t25600015kv48hktna15"
+                }
+              }
+            ]
+          },
+          {
+            "text": " can carry up to four cables: two ring cables (in and out), a switch cable, and the pendant flex. Before removing the old rose, photograph the existing wiring clearly from two angles. The photograph is the wiring diagram for the new rose.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Step 1, isolate the circuit and verify dead",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Switch off the lighting circuit MCB at the consumer unit. Fit a lock-off device on the MCB and attach a written warning label. Use the proving unit to confirm your two-pole voltage tester is working: test the proving unit (live result). Switch the wall switch to the ON position to bring the switch-wire conductors to the highest potential, then test at the ceiling rose cover: test between live and neutral, live and earth, and neutral and earth. All three must show dead. Return to the proving unit and test again (live result). Only then remove the rose cover.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Step 2, photograph and disconnect",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "With the cover removed, photograph all the existing connections. Label each conductor with a short piece of tape if the terminal positions differ from the new rose. Loosen the terminal screws and remove each conductor. Unscrew the rose base from the ceiling and lower it.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Step 3, prepare conductors",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Inspect each conductor: they should be bright copper with 8 to 10 mm of stripped insulation. Re-strip any that are discoloured or too short. Sleeve any bare earth conductors in green-and-yellow sleeving if not already done. Any red conductors in older wiring correspond to brown (live); black to blue (neutral). For older installations with a red switch-return wire, it must be sleeved with brown tape at both ends to mark it as a live (switched live) conductor.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Step 4, fit the new rose base and connect",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Screw the new rose base to the ceiling joist or cavity anchor. Following the photograph from Step 2, connect each conductor to the corresponding terminal in the new rose: all lives to the live (or loop-in) terminal block, all neutrals to the neutral block, the switch-wire pair to the switch terminal, and the pendant flex. Tighten all terminals firmly: a loose connection causes heat build-up.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Step 5, restore and test",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Fit the rose cover. Remove the lock-off device. Switch the MCB on and test the light from the wall switch. Test that all other lights on the same circuit are also working, to confirm the loop-in connections were not disturbed.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Troubleshooter",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "fix": "Isolate and verify dead. Open the rose cover and press-check each conductor in its terminal. Check the switch cable colours against the photograph.",
+              "cause": "A conductor not fully inserted into its terminal, or the switch-return wire connected to the wrong block.",
+              "symptom": "Light does not work after new rose fitted"
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "fix": "Isolate and verify dead. Open the rose cover and check that all the conductors from the ring cable are still connected to their blocks, not just the switch cable and pendant.",
+              "cause": "A loop-in conductor was not reconnected to the live or neutral block.",
+              "symptom": "Other lights on the circuit stop working"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}
