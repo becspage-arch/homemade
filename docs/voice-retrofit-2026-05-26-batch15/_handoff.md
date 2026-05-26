@@ -1,6 +1,6 @@
 # Voice retrofit batch 2026-05-26-batch15
 
-Batch 2026-05-26-batch15: 50 tutorials retrofitted. Deploy verification pending at write time (see end of file for outcome).
+Batch 2026-05-26-batch15: 50 tutorials retrofitted. Deploy green, healthz 200.
 
 ## DB verification
 
@@ -203,4 +203,11 @@ PUBLISHED with voiceRetrofittedAt IS NULL after this fire: 2804.
 
 ## Deploy verification
 
-(Updated post-commit.)
+- Commit: c39afc6 on main.
+- GitHub Actions deploy run id: 26465176699. Completed green.
+- `curl https://homemade.education/healthz` returned 200.
+
+The public site sits behind the splash gate, so anonymous visits to a
+tutorial URL still resolve to the coming-soon page rather than the
+tutorial body. The DB-side spot-check above is the live state that the
+tutorial page would render once a visitor is past the gate.
