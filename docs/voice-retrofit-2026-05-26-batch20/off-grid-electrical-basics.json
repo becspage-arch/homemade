@@ -1,0 +1,221 @@
+{
+  "_meta": {
+    "tutorialId": "cmpdob8yu0000r0v4rzuk5lpc",
+    "categorySlug": "sustainability",
+    "subCategorySlug": "off-grid",
+    "publicUrl": "https://homemade.education/sustainability/off-grid-electrical-basics",
+    "type": "TECHNIQUE"
+  },
+  "slug": "off-grid-electrical-basics",
+  "title": "Off-grid electrical systems: the basics",
+  "subtitle": "Panels, charge controller, battery, and inverter, how the components connect",
+  "excerpt": "An off-grid solar electrical system has four stages: solar panels generate DC; a charge controller regulates the charging of a battery bank; the battery stores it; and an inverter converts DC to AC for household loads. Sizing each stage requires knowing your daily kWh consumption and how many days of autonomy you need without generation.",
+  "type": "TECHNIQUE",
+  "sourceNotes": "Solar Trade Association off-grid guidance. Victron Energy system sizing documentation. BS 7671 (IET Wiring Regulations) Appendix 17 for ELV and LV off-grid installations.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "An off-grid ",
+            "type": "text"
+          },
+          {
+            "text": "solar PV",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3atq000m4ov4qsct2dv5"
+                }
+              }
+            ]
+          },
+          {
+            "text": " system runs on its own, with no link to the wider grid. Extra power cannot be sold out, and shortfalls cannot be drawn in. The battery has to cover every gap. That makes sizing the key choice. Too small a battery means power cuts. Too large a battery means money spent and wasted.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "The four components",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Solar panels: generate DC electricity during daylight. Sized in",
+                    "type": "text",
+                    "marks": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Solar panels: generate DC electricity during daylight. Rated in ",
+                    "type": "text"
+                  },
+                  {
+                    "text": "kWp",
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termId": "cmpba3aj300074ov4m7mg0qnc"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": ". Real daily output varies with weather and season.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Charge controller: regulates current from panels to battery. MPPT (Maximum Power Point Tracking) controllers are more efficient than older PWM controllers. Critical for battery health and longevity.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Battery bank: stores energy for use when panels are not generating. Sized in kWh capacity. Lithium batteries (LFP chemistry) are the current standard for off-grid, longer cycle life and usable at full rated capacity vs lead-acid which should not be discharged below 50%.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Inverter: converts battery DC to AC for household loads. Sized by peak load (W) not average load.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Sizing the battery",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Battery capacity (kWh) = daily consumption (",
+            "type": "text"
+          },
+          {
+            "text": "kWh",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3aie00064ov4vqi50jp0"
+                }
+              }
+            ]
+          },
+          {
+            "text": ") × days of autonomy ÷ depth of discharge. For a system with 2 kWh/day consumption, 3 days autonomy, and LFP batteries (DoD 90%): 2 × 3 ÷ 0.9 = 6.7 kWh battery capacity. In the UK, plan for 3-5 days of autonomy to handle consecutive cloudy winter days.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "DC vs AC systems",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A 12V or 24V DC system (no inverter) is appropriate for outbuildings, cabins, or low-consumption setups (LED lighting, USB charging, 12V appliances). It avoids inverter losses (typically 5-15%) and inverter cost. A 230V AC system using an inverter is needed for standard UK appliances (fridges, washing machines, laptops, power tools). An inverter/charger combination unit handles both the inversion and a backup generator or grid top-up connection in a single unit.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "body": "Connecting any AC wiring to an inverter or to household circuits is electrical installation work covered by BS 7671. It requires either a qualified electrician or a suitably qualified DIYer working within permitted self-notification rules. DC wiring below 50V is not covered by Part P but battery banks store large amounts of energy, short circuits can cause fires. Fuse every DC circuit close to the battery.",
+          "tone": "info",
+          "title": "Electrical work"
+        }
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "_meta": {
+    "tutorialId": "cmpebl3l80000zwv47e00v0ra",
+    "categorySlug": "sustainability",
+    "subCategorySlug": "waste-reduction",
+    "publicUrl": "https://homemade.education/sustainability/measuring-household-carbon-footprint",
+    "type": "TECHNIQUE"
+  },
+  "slug": "measuring-household-carbon-footprint",
+  "title": "Measuring your household carbon footprint",
+  "subtitle": "Calculating operational carbon from energy bills and travel data",
+  "excerpt": "A UK household generates approximately 8-12 tonnes of CO2 equivalent per year from all sources. The home heating and electricity contribution is typically 2-4 tonnes. Measuring it accurately using actual energy data identifies where reductions have the most impact.",
+  "type": "TECHNIQUE",
+  "sourceNotes": "DESNZ (UK Department for Energy Security and Net Zero), 2024 carbon factors for UK natural gas and grid electricity. Used for the 0.182 kgCO2e/kWh gas factor and the 0.207 kgCO2e/kWh grid-average electricity factor in the calculation steps.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Home energy is the part of a household carbon footprint you can read straight off your bills. Take your annual gas use in kWh and multiply by 0.182 to get gas kg CO2e. Take your annual electricity use in kWh and multiply by 0.207 to get electricity kg CO2e. Both factors are the 2024 UK figures. Add the two for total home-energy carbon."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Worked example",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A 3-bedroom semi-detached house in the UK: gas 12,000 kWh/year, electricity 3,500 kWh/year.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Gas: 12,000 x 0.182 = 2184 kg CO2e per year (2.18 tonnes)",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Electricity: 3,500 x 0.207 = 725 kg CO2e per year (0.72 tonnes) at UK average ",
+                    "type": "text"
+                  },
+                  {
+                    "text": "grid carbon intensity",
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termId": "cmpba3bgb001i4ov4zsitarzq"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Total home energy: approximately 2.9 tonnes CO2e per year",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Finding your consumption data",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Your energy supplier provides annual kWh consumption on your bill or online account. If you have a smart meter, you can see daily and hourly consumption data. If you do not have smart metering, read your meter at the same time on two days exactly one week apart, multiply by 52 for an annual figure. An energy monitor clamp measures electricity consumption in real-time without requiring a smart meter.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Comparing intervention impact",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Once you have a baseline, each improvement can be evaluated for its carbon reduction. Loft insulation top-up (100 mm to 270 mm) typically saves 600 to 900 kWh of gas per year: 109 to 164 kg CO2e per year. A smart thermostat saves 10 to 15% of heating energy: 200 to 330 kg CO2e per year in this example household. A heat pump replacing the gas boiler, at SCOP 3 with the current grid factor, saves approximately 1700 kg CO2e per year.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rank improvements by lifetime saving and by carbon payback. Carbon payback is the upfront carbon of the measure divided by the yearly saving. Insulation and draught-proofing usually pay back in under two years. Heating-system replacements take longer to pay back, but cut a bigger total amount."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "body": "Home energy typically accounts for 25-35% of a UK household's total carbon footprint. Flights (if taken), car use, and food account for most of the rest. A household that flies long-haul twice a year adds approximately 4-8 tonnes of CO2e from flights alone. The home energy calculation is the starting point for identifying where effort has the most impact, not the whole picture.",
+          "tone": "info",
+          "title": "The full footprint picture"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The carbon built into what you buy (goods, food, services) is usually bigger than the carbon of running your home for UK households. Both matter. This home-energy figure is the slice you can change directly with technical upgrades."
+          }
+        ]
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}
