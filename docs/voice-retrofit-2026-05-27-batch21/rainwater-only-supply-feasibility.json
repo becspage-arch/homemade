@@ -1,0 +1,182 @@
+{
+  "_meta": {
+    "tutorialId": "cmpdobdqr000038v4b16vn6uy",
+    "categorySlug": "sustainability",
+    "subCategorySlug": "off-grid",
+    "publicUrl": "https://homemade.education/sustainability/rainwater-only-supply-feasibility",
+    "type": "TECHNIQUE"
+  },
+  "slug": "rainwater-only-supply-feasibility",
+  "title": "Rainwater-only water supply: feasibility in the UK",
+  "subtitle": "Storage sizing, treatment requirements, and the legal position for off-grid properties",
+  "excerpt": "Using collected rainfall as a sole water supply is legal in England for non-mains properties. UK average rainfall of 885 mm/year means a 100 m² roof catches around 70,000 litres annually, more than a household needs. Reliable year-round supply requires storage for the longest dry spell at your location (typically 60-90 days), plus a three-stage treatment system.",
+  "type": "TECHNIQUE",
+  "sourceNotes": "Environment Agency Private water supply regulations guidance. Drinking Water Inspectorate Private Water Supplies Regulations 2016 (England). CIRIA rainwater harvesting design guide C765.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "",
+            "type": "text"
+          },
+          {
+            "text": "Rainwater harvesting",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3bbd001b4ov4ghbyktv6"
+                }
+              }
+            ]
+          },
+          {
+            "text": "as a sole supply is used by many rural UK properties that have no mains connection. The technical requirements are well established. The main challenge is not the annual volume, UK rainfall is sufficient, but ensuring reliable supply through dry spells without an impractical tank size.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Annual catchment calculation",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Annual yield (litres) = roof area (m²) × annual rainfall (mm) × 0.85. The 0.85 factor accounts for evaporation, splash losses, and first-flush diversion. For a 100 m² roof at 800 mm annual rainfall: 100 × 800 × 0.85 = 68,000 litres. A household of two people using 142 L/day needs 103,660 litres/year, requiring approximately 155 m² of roof catchment at 800 mm rainfall.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Storage sizing",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Tank storage must cover the longest dry spell expected at your location. UK dry periods: south-east England may see 60-90 dry days in summer; Wales and Scotland rarely exceed 30-45. Tank sizing (litres) = daily demand × dry spell days. For two people at 142 L/day over 90 dry days: 142 × 2 × 90 = 25,560 litres. Underground tanks of 25,000-50,000 litres are practical for most properties with adequate garden area.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Treatment",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Rainwater for potable use (drinking, cooking) requires three treatment stages:",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "First-flush diverter: discards the first 1 litre per 25 m² of roof area after each rainfall event, removing bird droppings and accumulated debris.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Sediment and carbon filters: a 5-micron sediment filter, then an activated carbon filter. Together they take out grit and certain dissolved chemicals.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "UV disinfection: a UV-C lamp at the point of use kills bacteria and viruses. UV requires clear water to work, the sediment filter upstream is essential.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Legal and regulatory position",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A rainwater-only supply for a single home counts as a private water supply under the Private Water Supplies Regulations in England. You have to tell the local authority, and they have to do a first risk assessment. They set how often the water is sampled after that. A private supply is free of water-company charges, but the quality is your responsibility.",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}
