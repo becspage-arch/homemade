@@ -1,0 +1,193 @@
+{
+  "_meta": {
+    "tutorialId": "cmpf6lz56000230v4mnqczwkf",
+    "categorySlug": "sustainability",
+    "subCategorySlug": "solar-and-energy",
+    "publicUrl": "https://homemade.education/sustainability/heat-pump-flow-temperature",
+    "type": "TECHNIQUE"
+  },
+  "slug": "heat-pump-flow-temperature",
+  "title": "Heat pump flow temperature: why it matters and what to set it to",
+  "subtitle": "The relationship between flow temperature, COP, and radiator sizing",
+  "excerpt": "A heat pump running at 55°C flow temperature operates at a COP of around 2.0-2.5. The same heat pump at 35°C flow operates at COP 3.5-4.5. Reducing the flow temperature by 10°C improves efficiency by approximately 20-30%, but only if the heat emitters (radiators or underfloor heating) can deliver enough heat at the lower temperature.",
+  "type": "TECHNIQUE",
+  "sourceNotes": "Heat Pump Association technical guides on flow temperature and efficiency. HHIC Best Practice guidance for heat pump system commissioning. Carbon Trust and Energy Saving Trust guidance on heat pump performance. Nibe and Vaillant installation manuals for flow temperature setting guidance.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A heat pump's ",
+            "type": "text"
+          },
+          {
+            "text": "COP",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3axw000s4ov4jr8ltx6d"
+                }
+              }
+            ]
+          },
+          {
+            "text": " falls as ",
+            "type": "text"
+          },
+          {
+            "text": "flow temperature",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3azb000u4ov47f8pj8qm"
+                }
+              }
+            ]
+          },
+          {
+            "text": " rises: this is a fundamental thermodynamic constraint, not a design flaw. A heat pump running at 45°C flow uses around 20% less electricity per unit of heat than the same pump running at 55°C. Running at 35°C saves around 35% versus 55°C. The UK electricity price of 27p/kWh versus gas at 6p/kWh means a heat pump needs a COP of 4.5 just to match a gas boiler on running cost. Achieving that requires flow temperatures below 40°C in typical UK conditions.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Why most UK heat pump installations run too hot",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Heat pumps often go into houses with radiators sized for a gas boiler at 70°C flow. At 70°C the radiator gives its full rated output. At 45°C the same radiator gives about 45% of that. If the radiators were only just big enough to begin with (common in older houses), the rooms will not reach temperature on cold days. The installer then raises the flow to compensate.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "The right fix is to size the radiators for the target flow before or during install. Not to raise the flow to suit small radiators. See the linked tutorial on radiator sizing for heat pumps.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Weather compensation",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Weather compensation",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpf6lz3r000130v48w9d7t1n"
+                }
+              }
+            ]
+          },
+          {
+            "text": " is the control mode that varies flow temperature with outdoor temperature. On a mild day (10°C outside) the heat loss from the house is low: the heating system only needs to supply a small amount of heat, and a low flow temperature (35-38°C) is sufficient. On the coldest design day (-3°C in most of England) the full heat pump output is needed and the flow temperature rises to its maximum (typically 45-50°C for an air-source heat pump). Most modern heat pumps have weather compensation built in; it just needs enabling and calibrating by the installer.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Worked example: 1930s semi in Leeds",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A 1930s semi in Leeds with a calculated design heat loss of 7 kW at -3°C. The heat pump is an 8 kW unit rated at COP 3.4 at 7°C outdoor, 35°C flow. With the flow temperature set to 55°C by the original installer, the measured running COP (from electricity and heat meters) is 2.1 over the heating season: 1 kWh electricity generates 2.1 kWh heat. Annual electricity for heating: approximately 4,200 kWh.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "After fitting four bigger radiators and turning on weather compensation (flow range 38 to 48°C), seasonal COP rises to 3.2. Annual heating electricity comes to about 2,760 kWh. That is a saving of around 1,440 kWh a year.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "The Delta T question",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Delta T",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpf6lz2w000030v4iep69vxh"
+                }
+              }
+            ]
+          },
+          {
+            "text": " in a heat pump circuit should be 5 to 7°C, against 20°C for a gas boiler. The pump has to move water about three times faster to deliver the same heat at a smaller temperature gap. Old gas-boiler pipework is usually big enough. The circulating pump may need upgrading. And the system has to be balanced (flow rate set at each radiator) for even heat across the house.",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}
