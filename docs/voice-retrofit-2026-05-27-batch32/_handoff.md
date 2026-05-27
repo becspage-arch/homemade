@@ -1,4 +1,4 @@
-Batch 2026-05-27-batch32: 63 tutorials retrofitted. Deploy pending verification at commit time.
+Batch 2026-05-27-batch32: 63 tutorials retrofitted. Deploy green, healthz 200.
 
 ## DB audit (audit-recent-state.ts)
 
