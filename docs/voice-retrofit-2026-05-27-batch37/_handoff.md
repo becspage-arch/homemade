@@ -1,4 +1,4 @@
-Batch 2026-05-27-batch37: 63 tutorials retrofitted. Deploy: verifying.
+Batch 2026-05-27-batch37: 63 tutorials retrofitted. Deploy green (run 26525174098), healthz 200.
 
 ## DB audit (audit-recent-state.ts)
 
