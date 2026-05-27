@@ -29,8 +29,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
   }
 }
 
-const BATCH_SIZE = 50
-const PER_CATEGORY_CAP = 15
+const BATCH_SIZE = Number(process.env.BATCH_SIZE ?? 63)
+const PER_CATEGORY_CAP = Number(process.env.PER_CATEGORY_CAP ?? 19)
 
 /**
  * Content-type buckets used for the first-3-batches spread rule. Mapped from
