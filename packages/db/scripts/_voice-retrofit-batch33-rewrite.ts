@@ -145,7 +145,7 @@ function navigatePath(body: any, path: string): { parent: any; key: string | num
     if (!m) return null
     const idx = parseInt(m[2]!, 10)
     if (i === parts.length - 1) {
-      // The leaf — return the node itself, not its parent.
+      // The leaf: return the node itself, not its parent.
       const child = node?.content?.[idx]
       if (!child) return null
       return { parent: child, key: 'content' }
