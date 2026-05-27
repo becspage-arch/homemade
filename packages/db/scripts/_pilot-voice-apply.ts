@@ -37,8 +37,12 @@ import { prisma } from '../src'
 
 async function main() {
   const worktreeRoot = resolve(__dirname, '../../..')
-  const pilotDir = resolve(worktreeRoot, 'docs/voice-pilot-2026-05-25')
+  const argDir = process.argv[2] ?? process.env.VOICE_BATCH_DIR
+  const pilotDir = argDir
+    ? resolve(worktreeRoot, argDir)
+    : resolve(worktreeRoot, 'docs/voice-pilot-2026-05-25')
   const files = readdirSync(pilotDir).filter((f) => f.endsWith('.json') && !f.startsWith('_'))
+  console.log(`[apply] reading from ${pilotDir} (${files.length} files)`)
 
   let ok = 0
   let fail = 0
