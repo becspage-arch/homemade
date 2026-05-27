@@ -1,0 +1,240 @@
+{
+  "_meta": {
+    "tutorialId": "cmpebji1o0000kcv45x5et20x",
+    "categorySlug": "sustainability",
+    "subCategorySlug": "solar-and-energy",
+    "publicUrl": "https://homemade.education/sustainability/solar-pv-system-monitoring",
+    "type": "PATTERN"
+  },
+  "slug": "solar-pv-system-monitoring",
+  "title": "Monitoring a solar PV system",
+  "subtitle": "Reading generation data and using it to shift household load",
+  "excerpt": "Solar PV monitoring shows when the system is generating, how much, and how much of that generation the household is using versus exporting. Understanding the data lets you shift loads to match generation and check the system is performing as expected.",
+  "type": "PATTERN",
+  "sourceNotes": "Solar Trade Association guidance on system monitoring and performance expectations. Energy Saving Trust solar PV monitoring guidance. MCS consumer guidance on generation expectations by UK postcode.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Every ",
+            "type": "text"
+          },
+          {
+            "text": "solar PV",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3atq000m4ov4qsct2dv5"
+                }
+              }
+            ]
+          },
+          {
+            "text": " system has an ",
+            "type": "text"
+          },
+          {
+            "text": "inverter",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3av6000o4ov465nknuo8"
+                }
+              }
+            ]
+          },
+          {
+            "text": " that logs generation. Most modern inverters have an app from the maker (Solaredge, SolarEdge, Growatt, GoodWe, Fronius). The app shows live and past generation in ",
+            "type": "text"
+          },
+          {
+            "text": "kWh",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3aie00064ov4vqi50jp0"
+                }
+              }
+            ]
+          },
+          {
+            "text": ". If the inverter is not online, a clip-on energy monitor on the generation circuit shows live output.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "What the monitoring data tells you",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Peak output: on a clear summer day, the system should reach close to its rated kWp. A 4 kWp system should show approximately 3.2-3.8 kW peak on a clear July midday. Significantly less (below 70% of rated kWp) suggests a fault, shading problem, or soiling.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Annual generation against expected. Compare your total kWh for the year against the figure expected for your ",
+                    "type": "text"
+                  },
+                  {
+                    "text": "kWp",
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termId": "cmpba3aj300074ov4m7mg0qnc"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "text": " and location (the MCS estimate or pvgis.ec.europa.eu). If generation sits more than 20% below expected for a full year, that points to a fault.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Self-consumption ratio. How much of your generation the house uses versus what gets exported. A house with no battery, with people in during the day, self-consumes about 30 to 50%. If your system has an energy monitor, the app shows import, export, and self-consumption as separate figures.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Shifting loads to match generation",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Each kWh you use in the home saves the import rate (about 24p). Each kWh exported earns the ",
+            "type": "text"
+          },
+          {
+            "text": "SEG",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3arl000j4ov4n2fyiomi"
+                }
+              }
+            ]
+          },
+          {
+            "text": " export rate (usually 4 to 15p). The gain from using your generation rather than exporting it is the gap between the two rates: 9 to 20p per kWh. Run high-use appliances (washing machine, dishwasher, tumble dryer) during peak generation hours (10 am to 2 pm on clear days). That lifts your self-consumption with no hardware spend.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Immersion diverter",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "An ",
+            "type": "text"
+          },
+          {
+            "text": "immersion diverter",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3avx000p4ov4up0zw34f"
+                }
+              }
+            ]
+          },
+          {
+            "text": " (iBoost, myenergi Eddi, Solar iBoost) watches the grid connection. Spare generation goes to a hot water immersion instead of exporting. You need a hot water cylinder with an immersion heater. The diverter fits at the consumer unit. The CT clamp clips around the import/export cable. If you heat water with gas, the saving per kWh diverted is the avoided gas cost, not the electricity import rate. The return is lower in that case.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "body": "Dirt on the panels (bird droppings, lichen on shaded panels) drops output, but rarely by more than 5 to 10% on most UK roofs. The bigger causes of poor output are a tree that has grown into the panels, a faulty string (it shows as a flat section on the daily curve), or an aging inverter. Compare daily generation against the expected figure (pvgis or the MCS estimate) before you look at hardware.",
+          "tone": "info",
+          "title": "Checking for underperformance"
+        }
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}
