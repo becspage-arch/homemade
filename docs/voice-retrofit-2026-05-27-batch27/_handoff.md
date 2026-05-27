@@ -1,4 +1,4 @@
-Batch 2026-05-27-batch27: 50 tutorials retrofitted. Deploy verification pending push; apply script wrote directly to DB so content is live regardless of deploy outcome.
+Batch 2026-05-27-batch27: 50 tutorials retrofitted. Deploy green, healthz 200.
 
 ## DB audit (audit-recent-state.ts)
 
