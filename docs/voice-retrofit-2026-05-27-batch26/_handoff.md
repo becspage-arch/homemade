@@ -1,4 +1,4 @@
-Batch 2026-05-27-batch26: 50 tutorials retrofitted. Deploy green pending verify, healthz check pending.
+Batch 2026-05-27-batch26: 50 tutorials retrofitted. Docs-only commit (no packages/** changes), so deploy workflow did not fire. Healthz already 200 from prior deploy. DB content live (apply script writes directly to DB, not via the deploy path).
 
 ## DB audit (audit-recent-state.ts)
 
