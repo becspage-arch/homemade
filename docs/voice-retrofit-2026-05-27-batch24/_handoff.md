@@ -1,6 +1,6 @@
 # Voice retrofit batch 2026-05-27-batch24
 
-Batch 2026-05-27-batch24: 50 tutorials retrofitted. Deploy pending verification at write time; deploy + healthz checks recorded below.
+Batch 2026-05-27-batch24: 50 tutorials retrofitted. Deploy green, healthz 200.
 
 ## DB verification
 
