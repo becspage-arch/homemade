@@ -1,0 +1,354 @@
+{
+  "_meta": {
+    "tutorialId": "cmpdo93q40000lov4rec61xyu",
+    "categorySlug": "sustainability",
+    "subCategorySlug": "insulation-and-draughtproofing",
+    "publicUrl": "https://homemade.education/sustainability/understanding-u-values"
+  },
+  "slug": "understanding-u-values",
+  "title": "Understanding U-values and what they mean for your home",
+  "subtitle": "How thermal transmittance translates into heat loss and money",
+  "excerpt": "A U-value tells you how fast heat moves through a wall, floor, or roof. Lower is better. This guide explains what the numbers mean, how they combine with area and temperature difference, and how to use them to prioritise retrofit decisions.",
+  "type": "TECHNIQUE",
+  "sourceNotes": "gov.uk Building Regulations Part L 2022 Approved Document, Appendix A U-value reference table. BRE Report BR 443 Conventions for U-value Calculations (2006). Energy Saving Trust insulation guidance.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Heat moves through a wall at a rate proportional to three things: the area of the wall, the temperature difference between inside and outside, and a property of the wall's construction called its",
+            "type": "text",
+            "marks": []
+          },
+          {
+            "text": "U-value",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3am5000b4ov4yec2iqbd"
+                }
+              }
+            ]
+          },
+          {
+            "text": ". The formula is: heat loss (W) = U × area (m²) × ΔT (°C). A lower U-value means slower heat transfer; adding insulation reduces U.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "What the numbers mean",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Uninsulated solid brick wall (Victorian): ~2.1 W/m²·K",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Cavity wall, pre-1995, unfilled: ~1.5 W/m²·K",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Cavity wall with blown mineral wool fill: ~0.4-0.5 W/m²·K",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Loft, 100 mm mineral wool: ~0.5 W/m²·K",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Loft, 270 mm mineral wool (current best practice): ~0.13 W/m²·K",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Double glazing (1990s argon gap): ~2.8 W/m²·K",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Double glazing (modern low-e argon): ~1.4-1.6 W/m²·K",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Triple glazing (modern): ~0.8-1.0 W/m²·K",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Worked example",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A 1930s Leeds semi has a north-facing rear wall 7.2 m wide × 5.4 m tall = 39 m² (minus 4 m² for a window, so 35 m² of wall). It is an unfilled cavity wall, U-value 1.5 W/m²·K. The design temperature difference (inside 20°C minus UK outside design temperature of -3°C) is 23°C.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Heat loss through that wall: 1.5 × 35 × 23 = 1,207 W. Running at full boiler output for 2500 heating hours per year: 1.207 kW × 2500 h = 3,018 kWh. At 6p/kWh gas, that is just from that one wall.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "After cavity fill (U = 0.45 W/m²·K): 0.45 × 35 × 23 = 362 W. Annual heat: 0.362 × 2500 = 905 kWh = . Saving: from one wall, at a cavity fill cost of ~ installed.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Relating U-value to lambda and insulation depth",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "The relationship between insulation depth and U-value improvement goes through",
+            "type": "text",
+            "marks": []
+          },
+          {
+            "text": "lambda value",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3anl000d4ov4z7126rp6"
+                }
+              }
+            ]
+          },
+          {
+            "text": "and",
+            "type": "text",
+            "marks": []
+          },
+          {
+            "text": "R-value",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3amw000c4ov4cbm369pu"
+                }
+              }
+            ]
+          },
+          {
+            "text": ". R = depth / lambda. Total R = sum of all layers. U = 1 / total R. For mineral wool at lambda 0.040: 100 mm gives R = 2.5 m²·K/W. 270 mm gives R = 6.75 m²·K/W, corresponding to U = 0.13 (not accounting for surface resistances and joist bridging, which are small corrections).",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Thermal bridges",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "The U-value sum assumes one even, unbroken layer. In practice, ",
+            "type": "text",
+            "marks": []
+          },
+          {
+            "text": "thermal bridges",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3ao9000e4ov4b7vfde1b"
+                }
+              }
+            ]
+          },
+          {
+            "text": " bypass the sum. Window reveals, steel lintels, and joist ends that pass through the insulation line all do this. A wall can have a very good main-area U-value. But with bare reveals it still loses a lot of heat at the bridge paths. The Part L approved document gives correction factors for common bridge shapes.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "How to use U-values to prioritise",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Rank retrofits by: (current U − improved U) × area. The largest improvement on the largest surface area delivers the greatest saving. For most UK homes, this ranking comes out roughly as: loft (largest area, largest U-value improvement) → cavity walls → solid walls → floor → windows. Draught-proofing is not a U-value improvement but is usually first in priority because payback is immediate.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Where to find U-values for existing construction",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Your EPC report includes the assessed U-values for each element of your building fabric. BRE Report BR 443 (free download from BRE Group) gives reference U-values for over 200 construction types. If the house has already been partially retrofitted, the installer should have provided a certificate with the measured or calculated post-retrofit U-value.",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}
