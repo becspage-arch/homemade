@@ -1,0 +1,409 @@
+{
+  "_meta": {
+    "tutorialId": "cmp8mdsu70000bkv4bhkbxnhd",
+    "categorySlug": "cooking",
+    "subCategorySlug": null,
+    "publicUrl": "https://homemade.education/cooking/curry-chicken",
+    "type": "RECIPE"
+  },
+  "slug": "curry-chicken",
+  "title": "Jamaican curry chicken",
+  "subtitle": "Bone-in chicken thighs braised in turmeric-yellow curry powder with scotch bonnet and thyme.",
+  "excerpt": "Bone-in chicken thighs marinated in Jamaican curry powder, browned, then braised with onion, scotch bonnet, and a single potato that thickens the gravy as it cooks. The yellow-gravy curry of weeknight Jamaican kitchens.",
+  "type": "RECIPE",
+  "sourceNotes": "Jamaican curry chicken descends from the indentured-labour migration of Indians to Jamaica in the 19th century, who brought the curry tradition that fused with West African and English colonial cooking. Modern Jamaican curry powder is turmeric-heavy with allspice (pimento), giving the gravy its characteristic yellow colour and warm, sweet edge that distinguishes it from Indian curries. Levi Roots and Riaz Phillips both document the post-Windrush evolution of the dish in British Caribbean home cooking.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Jamaican curry powder is the key ingredient and it is not the same as Madras curry powder. The Jamaican blend leans on turmeric and allspice, with the warm sweetness of pimento dominating the spice profile. Substituting Madras gives a different, flatter dish; if Jamaican powder is hard to source, mix two teaspoons of Madras with one teaspoon of ground allspice and an extra half teaspoon of turmeric.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "The recipe needs scotch bonnet for the heat that defines Caribbean curries. It is hot. Add the whole pepper for flavour without too much heat, removing it once cooked; chop it for a serious burn. Substitute habanero if scotch bonnet is unavailable; the flavour is almost identical.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "What you need",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "items": [
+            {
+              "name": "Chicken thigh",
+              "unit": "each",
+              "amount": 8,
+              "prepNote": "bone-in, skin-on",
+              "groupLabel": null,
+              "isOptional": false,
+              "ingredientId": "cmp49f4jy002urkv4hqbmgi5o",
+              "ingredientSlug": "chicken-thigh"
+            },
+            {
+              "name": "Curry powder",
+              "unit": "tbsp",
+              "amount": 3,
+              "prepNote": "Jamaican-style if you can find it",
+              "groupLabel": "For the marinade",
+              "isOptional": false,
+              "ingredientId": "cmp49f87f009arkv4gy62vlbc",
+              "ingredientSlug": "curry-powder"
+            },
+            {
+              "name": "Garlic",
+              "unit": "clove",
+              "amount": 4,
+              "prepNote": "crushed",
+              "groupLabel": "For the marinade",
+              "isOptional": false,
+              "ingredientId": "cmp49f5bt0046rkv4vhu2h5ze",
+              "ingredientSlug": "garlic"
+            },
+            {
+              "name": "Ginger",
+              "unit": "g",
+              "amount": 20,
+              "prepNote": "grated",
+              "groupLabel": "For the marinade",
+              "isOptional": false,
+              "ingredientId": "cmp49f6ha0065rkv4qay70yyq",
+              "ingredientSlug": "ginger-root"
+            },
+            {
+              "name": "Thyme",
+              "unit": "sprig",
+              "amount": 4,
+              "prepNote": "leaves picked",
+              "groupLabel": "For the marinade",
+              "isOptional": false,
+              "ingredientId": "cmp49f7a5007mrkv4so2xz03y",
+              "ingredientSlug": "thyme"
+            },
+            {
+              "name": "Allspice",
+              "unit": "tsp",
+              "amount": 1,
+              "prepNote": null,
+              "groupLabel": "For the marinade",
+              "isOptional": false,
+              "ingredientId": "cmp49f7zd008vrkv4vu4m3uhk",
+              "ingredientSlug": "allspice"
+            },
+            {
+              "name": "Fine sea salt",
+              "unit": "tsp",
+              "amount": 1,
+              "prepNote": null,
+              "groupLabel": "For the marinade",
+              "isOptional": false,
+              "ingredientId": "cmp49f7kz0086rkv4lsr8ds3o",
+              "ingredientSlug": "sea-salt-fine"
+            },
+            {
+              "name": "Vegetable oil",
+              "unit": "tbsp",
+              "amount": 3,
+              "prepNote": null,
+              "groupLabel": null,
+              "isOptional": false,
+              "ingredientId": "cmp49fant00dlrkv4gy5hjxkm",
+              "ingredientSlug": "vegetable-oil"
+            },
+            {
+              "name": "Onion",
+              "unit": "each",
+              "amount": 1,
+              "prepNote": "sliced",
+              "groupLabel": null,
+              "isOptional": false,
+              "ingredientId": "cmp49f59k0042rkv4afimm5ox",
+              "ingredientSlug": "onion"
+            },
+            {
+              "name": "Spring onion",
+              "unit": "each",
+              "amount": 4,
+              "prepNote": "thinly sliced",
+              "groupLabel": null,
+              "isOptional": false,
+              "ingredientId": "cmp49f5ap0044rkv4ho0qxvkx",
+              "ingredientSlug": "spring-onion"
+            },
+            {
+              "name": "Scotch bonnet",
+              "unit": "each",
+              "amount": 1,
+              "prepNote": "whole or chopped for more heat",
+              "groupLabel": null,
+              "isOptional": false,
+              "ingredientId": "cmp49f5rn004xrkv4u6urkoe5",
+              "ingredientSlug": "scotch-bonnet"
+            },
+            {
+              "name": "Tomato",
+              "unit": "each",
+              "amount": 2,
+              "prepNote": "chopped",
+              "groupLabel": null,
+              "isOptional": false,
+              "ingredientId": "cmp49f5k1004krkv4ayg1a89l",
+              "ingredientSlug": "tomato"
+            },
+            {
+              "name": "Potato",
+              "unit": "each",
+              "amount": 2,
+              "prepNote": "peeled, cut into 3 cm chunks",
+              "groupLabel": null,
+              "isOptional": false,
+              "ingredientId": "cmp49f5fz004drkv4xvm4u4jd",
+              "ingredientSlug": "potato"
+            },
+            {
+              "name": "Chicken stock",
+              "unit": "ml",
+              "amount": 500,
+              "prepNote": "hot",
+              "groupLabel": null,
+              "isOptional": false,
+              "ingredientId": "cmp49f8xo00alrkv49cprn7ss",
+              "ingredientSlug": "stock-chicken"
+            },
+            {
+              "name": "Bay leaves",
+              "unit": "leaf",
+              "amount": 2,
+              "prepNote": null,
+              "groupLabel": null,
+              "isOptional": false,
+              "ingredientId": "cmp49f7bs007prkv44bn4jypj",
+              "ingredientSlug": "bay-leaves"
+            }
+          ],
+          "defaultServings": 4
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A heavy casserole dish or dutch oven with a tight-fitting lid. Steamed white rice and a side of fried plantain to serve.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Method",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "text": "Marinate the chicken",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Combine {{curry-powder}} of curry powder, {{garlic}} of crushed garlic, {{ginger-root}} of grated ginger, {{thyme}} of picked thyme leaves, {{allspice}} of allspice, and {{sea-salt-fine}} of salt in a large bowl. Add {{chicken-thigh}} chicken thighs and turn to coat thoroughly. Cover and refrigerate for at least an hour, ideally overnight. The longer the marinade sits, the deeper the flavour.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "text": "Burn the curry powder",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Warm {{vegetable-oil}} of oil in a heavy casserole over a medium-high heat. Lift the chicken from the marinade, leaving the marinade behind in the bowl. Scrape the marinade from the bowl into the hot oil and fry for 90 seconds, stirring constantly. This is called burning the curry powder and is essential to the dish; the spices toast and bloom in the oil, transforming the raw, bitter powder into a fragrant base. Take it just to the edge of catching.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "text": "Brown the chicken",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Add the chicken thighs to the toasted spice paste, skin-side down. Fry for 4 minutes a side until golden. Add the sliced {{onion}} onion, the {{spring-onion}} spring onions, and the whole {{scotch-bonnet}} scotch bonnet. Stir for 3 minutes until the onion softens.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "text": "Braise",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Add the chopped {{tomato}} tomatoes, the {{potato}} potato chunks, {{stock-chicken}} of hot chicken stock, and {{bay-leaves}} of bay. Bring to a simmer. Cover and cook on a low heat for 35 minutes, stirring every 10 minutes to stop the potatoes catching on the base.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "text": "Finish and serve",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "After 35 minutes the chicken should be tender and starting to pull from the bone, and the potatoes should be soft enough to break apart with the back of a spoon. Use the spoon to mash about half the potato into the gravy; this thickens it to the right consistency. Fish out the whole scotch bonnet (do not eat it whole) and the bay leaves. Taste and adjust the salt. Serve over white rice.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "fix": "Mash more of the potato into the gravy and simmer uncovered for 5 minutes. Next time, fry the spice paste for the full 90 seconds.",
+              "cause": "Curry powder was not toasted long enough, or the potatoes did not break down.",
+              "symptom": "Gravy is thin and pale"
+            },
+            {
+              "fix": "Stir a tablespoon of plain yoghurt or a splash of coconut milk into your serving bowl. Always add the scotch bonnet whole and intact; the moment its skin breaks, the heat floods the dish.",
+              "cause": "Scotch bonnet was punctured or split.",
+              "symptom": "Too hot"
+            },
+            {
+              "fix": "Use bone-in, skin-on thighs and keep the heat at the lowest simmer once the stock goes in. Bone-in cuts can take the longer cook without drying out.",
+              "cause": "Boneless thighs cooked at too high a heat.",
+              "symptom": "Chicken is tough"
+            },
+            {
+              "fix": "The toasting step is not optional. If skipped, you can rescue by simmering the dish uncovered for an extra 15 minutes, but the depth of flavour will not be the same.",
+              "cause": "Curry powder was not burned in oil before the stock went in.",
+              "symptom": "Spices taste raw and bitter"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Variations",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "For curry goat, use 800 g of mutton or goat shoulder cut into 4 cm chunks and extend the braise to 2 hours; tough cuts need long, slow cooking. For curry fish, use whole snapper or king prawns and reduce the braise to 10 minutes.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Where this dish lives",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Curry chicken is the weeknight standard of Jamaican home cooking. It is on the menu of every Caribbean takeaway from Brixton to Birmingham. The curry tradition came through Trinidad, Guyana, and Jamaica by different routes. Each island made it its own. The Jamaican yellow-gravy version is what most British eaters know. It is served with rice and peas, which is coconut-and-kidney-bean rice, not literal peas. It is one of the most reliable cheap meals in British food culture.",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}
