@@ -1,0 +1,224 @@
+{
+  "_meta": {
+    "tutorialId": "cmpf48we50002okv4eysh7szn",
+    "categorySlug": "home-repair",
+    "subCategorySlug": "electrical",
+    "publicUrl": "https://homemade.education/home-repair/understanding-domestic-lighting-circuits",
+    "type": "READING"
+  },
+  "slug": "understanding-domestic-lighting-circuits",
+  "title": "Understanding domestic lighting circuits",
+  "subtitle": "How a UK lighting circuit is wired and how to identify the layout in your house",
+  "excerpt": "A reference guide to UK domestic lighting circuit wiring: the loop-at-luminaire and junction-box wiring arrangements, how to trace which lights are on which circuit, how to identify conductor functions by colour in old and new cable, and what to check before working on any light fitting or switch.",
+  "type": "READING",
+  "sourceNotes": "IET On-Site Guide (BS 7671). Collins Complete DIY Manual. City and Guilds Level 2 Electrotechnical Technology syllabus.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "UK domestic lighting circuits run as a radial circuit, not a ring: cable runs from the consumer unit and daisy-chains through each lighting outlet in sequence. Most post-1970s houses use ",
+            "type": "text"
+          },
+          {
+            "text": "loop-at-luminaire wiring",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpf48wbm0000okv4v3of21xe"
+                }
+              }
+            ]
+          },
+          {
+            "text": "; pre-1970s houses often use ",
+            "type": "text"
+          },
+          {
+            "text": "junction box wiring",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpf48wca0001okv4lttjhh1y"
+                }
+              }
+            ]
+          },
+          {
+            "text": ". Identifying the arrangement in your house is the first step before modifying any lighting.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "How a loop-at-luminaire circuit works",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "In a loop-at-luminaire wiring, the ceiling rose or back box holds three groups of connections. The first is the permanent live and neutral arriving from the previous fitting (or from the consumer unit at the first fitting). The second is the switch cable running down to the switch. The third is the feed continuing on to the next fitting. The 1.0 mm twin-and-earth cable used for the switch drop has a permanent live, a switched live, and an earth. The switched live returns from the switch. It carries current when the switch is on.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Old and new cable colours",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Cables installed before 2006 use pre-harmonisation colours: red = line (permanent live), black = neutral, bare copper = earth. Cables installed from 2006 use harmonisation colours: brown = line, blue = neutral, grey = second switch conductor, bare copper with green-yellow sleeve = earth. In the switch cable, an older installation has red = permanent live and black = switched live; the black should have a red or brown sleeve on it to indicate it is a live conductor under switch control, not a neutral.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "How to map your lighting circuits",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "At the consumer unit, label each lighting circuit MCB with the area it covers. Switch off one MCB at a time and identify which lights go off. Draw a simple room plan and mark which MCB feeds each room. Most houses have two to four lighting circuits; a large house or one that has been extended may have more. Confirm the mapping with a non-contact voltage tester pen at the switch or ceiling rose with the MCB on, and re-check with the MCB off.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "What to check before working on any light fitting",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Lock off the MCB for the circuit and attach a warning tag.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Use a two-pole tester rather than a non-contact pen alone. Check that all conductors at the fitting are dead. Test between line and neutral, line and earth, and neutral and earth.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Test the tester on a proving unit before and after the dead test (the live-dead-live sequence).",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Do not assume that turning the light switch off makes the fitting safe; the permanent live to the switch cable is always live when the MCB is on.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "When to call a qualified electrician",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "In England and Wales, adding a new lighting circuit or a new light point needs notification to Building Control. The rule is Part P of the Building Regulations. The notification is not needed if the work sits outside a kitchen or bathroom and is a like-for-like swap only. Swapping an existing switch or fitting for one of the same type and rating does not need notification. Any work in a bathroom or kitchen is notifiable, whatever its scope.",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}
