@@ -51,7 +51,11 @@ First paragraph (DB body, post-rewrite):
 
 (The hob-nobs change in this batch was inside the Method orderedList step 5, not paragraph[0]. The opening above was already in register pre-rewrite.)
 
-Live page first paragraph (after deploy): see deploy verification block below.
+Live page first paragraph: the public site is still behind the
+pre-launch splash gate (`apps/web/src/app/coming-soon/`), so the public
+URL renders the "coming soon" page rather than the tutorial body. The
+DB row is the source of truth for verification. Same pattern as
+batches 41 to 43.
 
 ## 5 sample public URLs across the batch
 
@@ -182,4 +186,10 @@ PUBLISHED with voiceRetrofittedAt IS NULL after this fire: 1180.
 
 ## Deploy verification
 
-(Filled in after deploy completes.)
+GitHub Actions deploy.yml run 26545572990 completed with conclusion
+"success". `gh run watch` exited zero.
+
+`curl -sS -o /dev/null -w "%{http_code}\n" https://homemade.education/healthz`
+returned `200`.
+
+Session is done.
