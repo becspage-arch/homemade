@@ -1,0 +1,220 @@
+{
+  "_meta": {
+    "tutorialId": "cmpebh51900003gv4pw3af96s",
+    "categorySlug": "sustainability",
+    "subCategorySlug": "solar-and-energy",
+    "publicUrl": "https://homemade.education/sustainability/smart-thermostat-installation",
+    "type": "PATTERN"
+  },
+  "slug": "smart-thermostat-installation",
+  "title": "Installing a smart thermostat",
+  "subtitle": "Replacing a basic programmer with a schedule-learning or app-controlled unit",
+  "excerpt": "A smart thermostat improves heating control by responding to occupancy, learning schedules, and allowing remote adjustment. The installation involves replacing the existing room thermostat wiring. Most models are compatible with standard UK combi boilers.",
+  "type": "PATTERN",
+  "sourceNotes": "Manufacturer installation guides for Hive, Nest, tado, and Honeywell T6 models. BS 7671 wiring regulations for extra-low-voltage control wiring. Energy Saving Trust smart controls guidance (2024).",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A standard room thermostat controls air temperature at one point in the house. It does not know who is in or out, or what your schedule is. A smart thermostat adds app control, sensors that learn when you are in, remote access, and in some cases ",
+            "type": "text"
+          },
+          {
+            "text": "flow temperature",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3azb000u4ov47f8pj8qm"
+                }
+              }
+            ]
+          },
+          {
+            "text": " tuning. Most of the energy you save comes from not heating an empty house, not from any clever feature.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "body": "Check the thermostat works with your heat pump before fitting. A gas-boiler on-off thermostat can drag down a heat pump's efficiency.",
+          "tone": "warning",
+          "title": "Heat pump compatibility"
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Compatibility check",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Check three things before you buy. First, the boiler type: combi, system, or heat-only. Second, the wiring at the existing thermostat. Most UK setups use two wires for the call-for-heat signal, but some models need a neutral wire too. Third, whether the boiler is OpenTherm-ready (for steady heating rather than on-and-off). Most Hive, tado, and Nest models work with standard UK two-wire setups. The Nest Learning Thermostat usually needs a neutral wire.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Wiring",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Step 1, isolate the boiler at the fused spur.",
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "text": " Turn off the power to the boiler at its dedicated fused spur before touching any wiring. Room thermostat wiring is typically extra-low voltage (12-24 V), but the wiring runs alongside mains cables in some installations.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Step 2, photograph the existing wiring.",
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "text": " Before removing the old thermostat, photograph the wiring connections clearly. Note which terminals each wire connects to. Most UK room thermostats use three terminals: common (C), demand (D or 1), and sometimes a neutral.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Step 3, mount the base plate.",
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "text": " Fix the new thermostat base plate to the wall using the provided screws and wall anchors. Position at approximately 1500 mm from floor level on an interior wall away from heat sources and direct sunlight. Thread the cables through the base plate.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Step 4, connect the wires per the manufacturer wiring guide.",
+            "type": "text",
+            "marks": [
+              {
+                "type": "bold"
+              }
+            ]
+          },
+          {
+            "text": " Connect each wire to the correct terminal as identified in the manufacturer's compatibility guide for your boiler type. Most UK combi boiler installations need only the switched live (L) and neutral (N) or common and demand connections. Restore power and test the boiler call-for-heat before fixing the thermostat to the base plate.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "OpenTherm and modulating control",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "On-off control runs the boiler at full power, then switches it off when the room reaches the set temperature. OpenTherm sends a target water temperature to the boiler. The boiler runs at lower power, which lets the heat exchanger condense more steam and gives better efficiency. For a ",
+            "type": "text"
+          },
+          {
+            "text": "heat pump",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3ax8000r4ov4mjfsrnje"
+                }
+              }
+            ]
+          },
+          {
+            "text": ", this kind of control is standard. The heat pump has its own controller, and the room thermostat only sets the target.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "intro": null,
+          "items": [
+            {
+              "fix": "Check wiring against the thermostat compatibility tool for your specific boiler model. Some older boilers require a thermostat that closes a dry contact rather than switching a voltage.",
+              "cause": "Wiring terminals are not labelled the same as on the new thermostat, or the boiler needs a voltage signal the new thermostat cannot send.",
+              "symptom": "Boiler does not respond to thermostat call"
+            },
+            {
+              "fix": "Relocate to an interior wall away from heat sources at 1500 mm height. Most smart thermostats allow a calibration offset in the app.",
+              "cause": "Positioned near a heat source (lamp, oven proximity, sunlight) or on an external wall acting as a cold surface",
+              "symptom": "Thermostat shows temperature much higher or lower than room"
+            }
+          ],
+          "heading": "Common problems"
+        }
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}

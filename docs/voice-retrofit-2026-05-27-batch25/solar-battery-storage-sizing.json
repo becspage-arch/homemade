@@ -1,0 +1,179 @@
+{
+  "_meta": {
+    "tutorialId": "cmpebjcnn00007sv4tjvgd4mj",
+    "categorySlug": "sustainability",
+    "subCategorySlug": "solar-and-energy",
+    "publicUrl": "https://homemade.education/sustainability/solar-battery-storage-sizing",
+    "type": "TECHNIQUE"
+  },
+  "slug": "solar-battery-storage-sizing",
+  "title": "Sizing a home battery for a solar PV system",
+  "subtitle": "How to match battery capacity to your generation and demand profile",
+  "excerpt": "A battery stores solar generation that would otherwise export at a low rate and releases it when the sun is not shining. Sizing it correctly depends on your daily evening load and how much generation surplus you have. This guide works through the calculation.",
+  "type": "TECHNIQUE",
+  "sourceNotes": "BEIS Smart Export Guarantee guidance on export rates. Energy Saving Trust home battery storage guidance (2024). Ofgem consumer guidance on battery storage warranties and cycle life. Solar Trade Association technical guidance on battery sizing.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A home ",
+            "type": "text"
+          },
+          {
+            "text": "battery",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3awk000q4ov4iopxgwu7"
+                }
+              }
+            ]
+          },
+          {
+            "text": " increases the fraction of ",
+            "type": "text"
+          },
+          {
+            "text": "solar PV",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3atq000m4ov4qsct2dv5"
+                }
+              }
+            ]
+          },
+          {
+            "text": " generation consumed in the home (self-consumption) by storing surplus daytime generation for use in the evening. Without a battery, a typical 4 kWp system self-consumes around 30 to 40 percent of its generation. With a correctly sized battery, self-consumption rises to 60 to 80 percent. The financial return depends on the difference between the import rate and the export rate.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "What size battery to target",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "The target battery capacity is your typical evening ",
+            "type": "text"
+          },
+          {
+            "text": "kWh",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3aie00064ov4vqi50jp0"
+                }
+              }
+            ]
+          },
+          {
+            "text": " demand from sunset to midnight. For a typical 3-bedroom UK house with occupancy in the evening, this is 3 to 6 kWh. A 5 kWh usable-capacity battery suits most 3 to 5 kWp systems. Going larger (10 kWh) costs roughly twice as much for modest additional self-consumption gain, because the extra capacity only fills during long summer days when generation already exceeds demand.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Measure your evening baseline before buying: read your meter or use an energy monitor at sunset and again at midnight across several typical evenings. That figure is the capacity worth targeting. Add 20 to 30 percent for the battery not being usable to zero (most systems allow 90 to 100% depth of discharge, but some reserve 10-20%).",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Inverter compatibility",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "If you are adding a battery to an existing solar installation, the ",
+            "type": "text"
+          },
+          {
+            "text": "inverter",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3av6000o4ov465nknuo8"
+                }
+              }
+            ]
+          },
+          {
+            "text": " determines your options. An AC-coupled battery works with any existing inverter; it charges from the AC side and has its own inverter. A DC-coupled battery connects directly to the solar strings and requires a hybrid inverter. Replacing a functioning string inverter with a hybrid to save a small sum rarely makes sense financially; AC coupling is normally the better retrofit choice.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Cycle life and financial case",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A lithium iron phosphate (LFP) battery is typically warranted for 3000 to 6000 cycles to 80% of original capacity, roughly 10 to 15 years of daily cycling. Multiplied by usable capacity per cycle, that gives the total energy throughput over the warranty period. Divide the installed cost by total throughput to get cost per kWh cycled, then compare with the benefit per kWh (import rate minus export rate). A realistic financial payback in the UK at current rates is 10 to 15 years for a correctly sized system.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "body": "A battery loses 8 to 15% of its stored energy on each charge-discharge cycle. Round-trip efficiency is 85 to 92%. At 85%, every 1 kWh you store costs 1.18 kWh of generation. The money case does not shift much when you import at a much higher rate than you export. It does cut the carbon benefit if your import electricity is already low-carbon.",
+          "tone": "info",
+          "title": "Round-trip efficiency"
+        }
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}

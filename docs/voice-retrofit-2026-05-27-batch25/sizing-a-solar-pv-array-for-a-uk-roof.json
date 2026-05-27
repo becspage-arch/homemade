@@ -1,0 +1,217 @@
+{
+  "_meta": {
+    "tutorialId": "cmpdo9fqc0000fsv423r7n5ea",
+    "categorySlug": "sustainability",
+    "subCategorySlug": "solar-and-energy",
+    "publicUrl": "https://homemade.education/sustainability/sizing-a-solar-pv-array-for-a-uk-roof",
+    "type": "TECHNIQUE"
+  },
+  "slug": "sizing-a-solar-pv-array-for-a-uk-roof",
+  "title": "Sizing a solar PV array for a UK roof",
+  "subtitle": "Panels, kWp, annual yield, and self-consumption: the numbers that drive the decision",
+  "excerpt": "A 4 kWp south-facing array yields 3,400-4,000 kWh per year in most UK locations. How much of that you use directly, rather than export, depends on household load profile. This guide covers array sizing, roof orientation adjustment, and self-consumption calculation.",
+  "type": "TECHNIQUE",
+  "sourceNotes": "PVGIS (Photovoltaic Geographical Information System), EU JRC tool for UK yield estimates at any postcode. MCS MIS 3002 UK solar PV installation standard. Energy Saving Trust solar panels guidance.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A",
+            "type": "text"
+          },
+          {
+            "text": "solar PV",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3atq000m4ov4qsct2dv5"
+                }
+              }
+            ]
+          },
+          {
+            "text": "system is sized in",
+            "type": "text"
+          },
+          {
+            "text": "kWp",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3aj300074ov4m7mg0qnc"
+                }
+              }
+            ]
+          },
+          {
+            "text": "and converts to an annual kWh yield using a multiplier that depends on location and roof orientation. In southern England, a south-facing roof at 35° pitch yields around 950-1,000 kWh/kWp per year. In northern Scotland, that drops to 750-850 kWh/kWp. PVGIS gives site-specific figures for any UK postcode.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Orientation correction factors",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "South-facing, 35° pitch: 100% of rated yield (reference case).",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "East or west-facing, 35° pitch: approximately 80% of south-facing yield.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "South-east or south-west, 35° pitch: approximately 93%.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Flat roof, any direction: about 87% (a low tilt angle gives less output than the best).",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Shading: any shade falling on panels during the generation day reduces output non-linearly. Chimney stacks and adjacent roof slopes are the most common culprits.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "System size and panel count",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A modern 400 W panel is approximately 1.7 m × 1.0 m. A 4 kWp system requires 10 × 400 W panels (17 m²). A 6 kWp system requires 15 panels (25.5 m²). Most domestic installations are limited to 3.68 kWp for single-phase G98 grid connection (no notification required). Above 3.68 kWp on single-phase requires a G99 application to the Distribution Network Operator.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Self-consumption vs export",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A 4 kWp south-facing array in the Midlands yields approximately 3,600 kWh/year. A household using 3,500 kWh/year will self-consume roughly 1,400-1,800 kWh of that directly (saving at 27p/kWh) and export the remainder (earning the Smart Export Guarantee rate, typically 4-15p/kWh depending on supplier). Self-consumption is higher with a battery or solar diverter.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Planning",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Roof-mounted solar PV is permitted development in England for most houses, with a few rules. Panels must not stick out more than 200 mm from the roof. They cannot go on a listed building. They must come down when no longer needed. In conservation areas, panels that show from the road need planning permission.",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}

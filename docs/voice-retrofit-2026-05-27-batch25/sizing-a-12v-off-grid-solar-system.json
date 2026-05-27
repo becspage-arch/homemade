@@ -1,0 +1,237 @@
+{
+  "_meta": {
+    "tutorialId": "cmpeblcbd00000wv4s5frg135",
+    "categorySlug": "sustainability",
+    "subCategorySlug": "off-grid",
+    "publicUrl": "https://homemade.education/sustainability/sizing-a-12v-off-grid-solar-system",
+    "type": "TECHNIQUE"
+  },
+  "slug": "sizing-a-12v-off-grid-solar-system",
+  "title": "Sizing a 12 V off-grid solar system",
+  "subtitle": "Calculating panel, battery, and controller size for a shed, cabin, or narrowboat",
+  "excerpt": "A 12 V solar system for a shed, outbuilding, or narrowboat powers lighting, phone charging, and 12 V appliances without a grid connection. Sizing it correctly means working out daily load in Wh, then calculating panel and battery capacity from that figure.",
+  "type": "TECHNIQUE",
+  "sourceNotes": "REUK (Renewable Energy UK) 12V solar system sizing guidance. IET Wiring Regulations BS 7671 for low-voltage off-grid systems. pvgis.ec.europa.eu for UK peak sun hours data by location.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Sizing a 12 V ",
+            "type": "text"
+          },
+          {
+            "text": "solar",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3atq000m4ov4qsct2dv5"
+                }
+              }
+            ]
+          },
+          {
+            "text": " system takes three steps. First, work out the daily load in watt-hours. Second, work out the panel size needed to meet that load with the sunlight hours you actually get. Third, work out the battery size needed to cover days without sun.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Step 1: calculate daily load",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "List every load that will run from the system. Multiply each by daily hours of use. Example: 2 x LED lights (5 W each) for 4 hours = 40 Wh; phone charger (5 W) for 2 hours = 10 Wh; radio (8 W) for 3 hours = 24 Wh. Total: 74 Wh per day. Add 20% for cable losses and controller efficiency: target generation = 74 x 1.2 = 89 Wh per day.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Step 2: calculate panel size",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "UK peak sun hours vary by season and location. Use the pvgis tool for your postcode. Summer average (April-September): approximately 3.5-4.5 peak sun hours per day. Winter average (October-March): approximately 0.5-1.5 peak sun hours per day. If the system must work year-round, size for winter: panel Wp = daily Wh target / winter peak sun hours. For 89 Wh daily at 1 peak sun hour: 89 / 1 = 89 Wp minimum. Choose the next standard panel size above that, typically 100 Wp or 120 Wp.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Step 3: calculate battery size",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Battery capacity depends on days of autonomy (how many sunless days the system must support). For a weekend cabin: 2-3 days autonomy. Battery Ah = (daily Wh x days of autonomy) / (12 V x maximum depth of discharge). For AGM at 50% DoD: (74 Wh x 3) / (12 x 0.5) = 37 Ah. For LFP at 80% DoD: (74 Wh x 3) / (12 x 0.8) = 23 Ah. A 50 Ah AGM or 30 Ah LFP battery provides comfortable margin.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "The charge controller",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A solar charge controller sits between panel and ",
+            "type": "text"
+          },
+          {
+            "text": "battery",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3awk000q4ov4iopxgwu7"
+                }
+              }
+            ]
+          },
+          {
+            "text": " and prevents overcharge. PWM (pulse width modulation) controllers are cheaper and suit smaller systems where the panel voltage is close to the battery voltage. MPPT (maximum power point tracking) controllers are 10-30% more efficient and suit larger panels where the panel voltage is significantly higher than the battery voltage. For a single 100 Wp panel charging a 12 V battery, a 10-amp PWM controller is sufficient and affordable.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "AC loads",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Avoid AC loads where possible. An ",
+            "type": "text"
+          },
+          {
+            "text": "inverter",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3av6000o4ov465nknuo8"
+                }
+              }
+            ]
+          },
+          {
+            "text": " adds cost, draws standby current, and reduces efficiency. A 12 V laptop charger, 12 V phone charger, and 12 V LED strip avoid the need for an inverter entirely. If an inverter is required (for a mains tool or laptop without a 12 V option), size it to the peak load with a 50% safety margin. A 300 W pure-sine inverter handles most power tools.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "body": "A 12 V system carries high current for the same power as 230 V. A 100 W load at 12 V draws 8.3 amps; the same load at 230 V draws 0.43 amps. Cable must be sized for the maximum current in each circuit. A 10-amp circuit on a 1-metre run needs at least 2.5 mm² cable. Fit a fuse on the positive cable within 300 mm of the battery, sized to the cable, not the load.",
+          "tone": "info",
+          "title": "Fusing and cable sizing"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Check expected generation against actual load using the ",
+            "type": "text"
+          },
+          {
+            "text": "energy",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3aie00064ov4vqi50jp0"
+                }
+              }
+            ]
+          },
+          {
+            "text": " data from the ",
+            "type": "text"
+          },
+          {
+            "text": "panel rating",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3aj300074ov4m7mg0qnc"
+                }
+              }
+            ]
+          },
+          {
+            "text": " and your peak sun hours. The system only works if generation is greater than load on average. If the batteries are flat by the end of each day, add panel capacity before you add battery capacity.",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "_meta": {
+    "tutorialId": "cmpdavqy90003g4v432y018kn",
+    "categorySlug": "paper-word",
+    "subCategorySlug": "zines",
+    "publicUrl": "https://homemade.education/paper-word/risograph-zine-layout-basics",
+    "type": "READING"
+  },
+  "slug": "risograph-zine-layout-basics",
+  "title": "Risograph zine layout basics",
+  "subtitle": "How risograph printing works and what it means for layout decisions",
+  "excerpt": "Risograph printing uses spot ink colours printed one layer at a time on a drum-based duplicator. Understanding the machine's constraints, a fixed palette of ink colours, imprecise layer registration, specific paper weights, and a characteristic ink texture, makes the difference between a layout that fights the process and one that works with it.",
+  "type": "READING",
+  "sourceNotes": "Risograph printing documentation synthesised from machine manufacturer specifications (Riso Kagaku Corporation) and the widespread zine-making and small-press printing literature. The Riso machine and ink specifications are public information. The design guidance described here is based on common practice documented in the independent publishing community.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Risograph",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpdavqvk0000g4v4fahxtt2w"
+                }
+              }
+            ]
+          },
+          {
+            "text": " is a small-press printing method. It costs less per copy than laser printing for runs of 50 and up. The ink sits on the paper with a slightly rough feel, not the flat finish of toner. It also limits your colours in ways that shape the design. A riso print is not a CMYK copy of a screen image. It is a stack of ",
+            "type": "text"
+          },
+          {
+            "text": "spot colours",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpdavqwf0001g4v4jjjfnd45"
+                }
+              }
+            ]
+          },
+          {
+            "text": ", each with its own character and the way it overlaps the rest.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "The ink palette",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Riso inks come in a specific palette of approximately 20 standard colours: fluorescent pink, fluorescent orange, risograph yellow, red, blue, green, purple, black, and others. These are not the same as Pantone or CMYK equivalents. The inks are semi-transparent; where two ink layers overlap, they produce a third colour. Black and yellow overlapping produce a deep olive. Fluorescent pink and blue overlapping produce a muted purple. Knowing the overlap colours for your chosen ink pair is essential to using the overlap intentionally in the layout rather than being surprised by it.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Misregistration as a design tool",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Each colour is printed on a separate pass through the machine. ",
+            "type": "text"
+          },
+          {
+            "text": "Misregistration",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpdavqx30002g4v4oelsgvqm"
+                }
+              }
+            ]
+          },
+          {
+            "text": " of 1 to 3 mm between passes is inherent to the machine and the paper-feeding process. Layouts that rely on perfect alignment of two colours will consistently disappoint. Layouts that treat misregistration as an intentional offset, a drop shadow, a layered colour effect, a deliberate echo of each line in a second colour, use the machine's character rather than fighting it. A 2 to 4 mm offset between a black line-art layer and a colour background layer often looks more intentional than the same offset produced by imperfect registration.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Paper weight and choice",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Risograph inks are soy-based and slightly wet when printed; paper that is too thin or too heavily coated does not absorb the ink properly. The standard range is 52 to 157 gsm uncoated paper. Recycled uncoated stock at 80 to 100 gsm gives a characteristic texture and shows the ink's soy sheen clearly. Coated papers cause ink smearing and are not recommended unless specifically tested. The paper's colour affects the ink colour: yellow ink on cream paper reads as a different shade than on white.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Preparing files for riso",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Riso print shops typically accept separate greyscale files for each colour layer. A two-colour risograph zine requires two files: one in greyscale representing the first ink colour (black areas print in that ink colour, grey areas print as halftone dots), and one in greyscale representing the second ink colour. Areas that are 100% black print at full ink density; grey values print as halftone dot patterns of varying density. Photographic images reproduce as halftone screens, which are part of the aesthetic of risograph printing.",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}
