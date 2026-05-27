@@ -1,4 +1,4 @@
-Batch 2026-05-27-batch35: 63 tutorials retrofitted. DB updated, voiceRetrofittedAt count moved by exactly 63 (1746 to 1809). First commit (docs only) did not trigger the deploy workflow; the hand-off commit, which adds helper scripts under packages/db/scripts/, fires deploy.yml and is verified separately below.
+Batch 2026-05-27-batch35: 63 tutorials retrofitted. DB updated, voiceRetrofittedAt count moved by exactly 63 (1746 to 1809). First commit (docs only) did not trigger the deploy workflow; the hand-off commit, which adds helper scripts under packages/db/scripts/, fired deploy.yml run 26519154734 (success) and healthz returned 200.
 
 ## DB audit (audit-recent-state.ts)
 
