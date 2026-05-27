@@ -1,0 +1,229 @@
+{
+  "_meta": {
+    "tutorialId": "cmpebjo0n0000j4v4xojvkw9w",
+    "categorySlug": "sustainability",
+    "subCategorySlug": "solar-and-energy",
+    "publicUrl": "https://homemade.education/sustainability/standalone-home-battery-decision-guide",
+    "type": "TECHNIQUE"
+  },
+  "slug": "standalone-home-battery-decision-guide",
+  "title": "Standalone home battery: the decision guide",
+  "subtitle": "Whether a battery without solar PV makes financial sense",
+  "excerpt": "A home battery without solar PV charges from the grid at cheap overnight rates and discharges during expensive peak hours, earning the spread. The economics depend on the tariff spread, battery cycle life, and round-trip efficiency. This guide works through the case.",
+  "type": "TECHNIQUE",
+  "sourceNotes": "Ofgem time-of-use tariff guidance. Energy Saving Trust home battery guidance (2024). Solar Trade Association battery storage technical briefing.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "A standalone ",
+            "type": "text"
+          },
+          {
+            "text": "home battery",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3awk000q4ov4iopxgwu7"
+                }
+              }
+            ]
+          },
+          {
+            "text": " charged on a cheap overnight tariff and discharged during peak-rate hours earns the spread between the two rates. A 10 ",
+            "type": "text"
+          },
+          {
+            "text": "kWh",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3aie00064ov4vqi50jp0"
+                }
+              }
+            ]
+          },
+          {
+            "text": " usable battery charged at 7p and discharged at 24p (before round-trip efficiency losses) saves approximately 15p per kWh cycled after accounting for 10% efficiency loss. Daily cycling at that rate generates a modest annual saving. At a typical installed cost, the ",
+            "type": "text"
+          },
+          {
+            "text": "payback period",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3bh0001j4ov4f19k9spt"
+                }
+              }
+            ]
+          },
+          {
+            "text": " is 9 to 15 years.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "The financial calculation",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Annual saving = usable capacity (kWh) x cycles per year x (peak rate minus off-peak rate) x round-trip efficiency. For a 10 kWh battery cycling 330 days per year at 17p spread and 88% efficiency: 10 x 330 x 0.17 x 0.88 gives a saving in the low hundreds of pounds per year. At an installed cost, the simple payback is approximately 10 to 12 years. Battery warranty life is typically 10 to 15 years, meaning the battery may be near end of warranty before payback is complete.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Tariff requirements",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Time-of-use tariffs with a significant off-peak rate are required. Octopus Go (approximately 7p overnight) and Octopus Flux (three-rate tariff with low import and export rates) are the main UK options. Standard flat-rate or Economy 7 tariffs offer smaller spreads. Check that the battery system is certified for the relevant tariff before purchase: some batteries are locked to a specific VPP (virtual power plant) contract.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "Carbon benefit",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Charging at night when wind power is high can cut your carbon use, but this is not guaranteed. Cold high-demand nights pull in gas power, which raises the "
+          },
+          {
+            "type": "text",
+            "text": "grid carbon intensity",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3bgb001i4ov4zsitarzq"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". A battery charged overnight is not reliably low-carbon unless you pair it with a carbon-aware charging controller."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "When a standalone battery makes more sense",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "EV charger combined use. If the battery can also hold power for overnight EV charging, you may not need to upgrade the main electrical supply. That saving can pay for the battery on its own."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Future-proofing for solar. Size and wire the battery for solar PV now, even if the panels come later. That saves a second install cost later."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Grid resilience. Some battery systems keep working through power cuts. If you run medical equipment or live somewhere remote, that reliability can be worth more than the money the battery saves."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "body": "Home batteries must have a MCS product certificate or its equal (IEC 62619) for fire and electrical safety. LFP (lithium iron phosphate) chemistry is much safer than NMC (nickel manganese cobalt). It just stores a bit less energy per kilo. The install must follow BS 7671 and the grid connection standard G99 or G98. The battery management system (BMS) guards against over-current, over-voltage, and over-heating.",
+          "tone": "info",
+          "title": "Battery safety certification"
+        }
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}
