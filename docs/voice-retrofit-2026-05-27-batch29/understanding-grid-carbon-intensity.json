@@ -1,0 +1,222 @@
+{
+  "_meta": {
+    "tutorialId": "cmpebjl6p00005sv4a2igfp9f",
+    "categorySlug": "sustainability",
+    "subCategorySlug": "solar-and-energy",
+    "publicUrl": "https://homemade.education/sustainability/understanding-grid-carbon-intensity",
+    "type": "TECHNIQUE"
+  },
+  "slug": "understanding-grid-carbon-intensity",
+  "title": "Understanding grid carbon intensity",
+  "subtitle": "How the carbon content of grid electricity varies and why it matters",
+  "excerpt": "The carbon emitted per kWh of grid electricity varies by hour, season, and location, depending on what is generating at that moment. Understanding this variation helps you time high-consumption tasks for low-carbon hours and accurately calculate your household carbon footprint.",
+  "type": "TECHNIQUE",
+  "sourceNotes": "National Grid ESO Carbon Intensity API (carbonintensity.agneswebsite.co.uk). DESNZ greenhouse gas conversion factors for company reporting (2024 edition). Ember Climate UK electricity generation data.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "The ",
+            "type": "text"
+          },
+          {
+            "text": "grid carbon intensity",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3bgb001i4ov4zsitarzq"
+                }
+              }
+            ]
+          },
+          {
+            "text": " in the UK on a windy winter afternoon can be below 50 gCO2e per ",
+            "type": "text"
+          },
+          {
+            "text": "kWh",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3aie00064ov4vqi50jp0"
+                }
+              }
+            ]
+          },
+          {
+            "text": " when wind and nuclear supply most of demand. On a cold, still winter evening with high demand and gas plants filling the gap, the same metric can pass 250 gCO2e per kWh. The annual average for UK grid electricity is around 207 gCO2e per kWh. Timing high-load tasks for low-carbon hours can halve the carbon content of that electricity use.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "What drives carbon intensity",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Wind generation: the UK has large installed wind capacity. On windy days, wind can supply 40-60% of total UK demand. Carbon intensity drops sharply. Wind generation varies by hour and by weather system.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Nuclear: provides approximately 15-20% of UK generation as a stable background. Does not vary quickly and provides a constant low-carbon base.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Gas (CCGT): the marginal generator in most conditions. When demand rises above what wind, nuclear, and solar can supply, gas plants provide the balance. Gas generation is approximately 200-400 gCO2/kWh depending on plant efficiency.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Solar: reduces midday demand in summer, reducing gas generation needed during peak daytime hours.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "How to check current intensity",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "The National Grid ESO runs a Carbon Intensity API at carbonintensity.org.uk, plus a companion app. It shows the current intensity, a 24-hour forecast, and the figure by region. You can use the forecast to slot high-load tasks (EV charging, washing machine, ",
+            "type": "text"
+          },
+          {
+            "text": "battery",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3awk000q4ov4iopxgwu7"
+                }
+              }
+            ]
+          },
+          {
+            "text": " charging) to low-carbon windows.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "text": "The heat pump carbon calculation",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Whether switching from gas to an electric heat pump reduces ",
+            "type": "text"
+          },
+          {
+            "text": "operational carbon",
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termId": "cmpba3bfn001h4ov41s9b0h52"
+                }
+              }
+            ]
+          },
+          {
+            "text": " depends on the heat pump's SCOP and the carbon intensity of the electricity used. Gas emits approximately 200 gCO2e per kWh of heat delivered (at 100% boiler efficiency). A heat pump with SCOP 3.0 consuming grid electricity at the UK annual average (207 gCO2e/kWh) emits approximately 69 gCO2e per kWh of heat delivered. The heat pump emits roughly a third of the gas equivalent on annual average grid electricity. As the grid decarbonises further, that advantage increases.",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "body": "Carbon intensity varies by region within the UK, not just by time. Scotland typically has lower carbon intensity due to higher wind and hydro capacity. London and the South East typically run higher. The National Grid API provides regional intensity figures by postcode area, which gives more accurate calculations for local projects.",
+          "tone": "info",
+          "title": "Regional variation"
+        }
+      }
+    ]
+  },
+  "glossaryTerms": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": null,
+    "temperatureCelsius": null
+  }
+}
