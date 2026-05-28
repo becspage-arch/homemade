@@ -421,27 +421,34 @@ export default async function TutorialPage({ params }: PageProps) {
     />
   )
 
-  const actionsSlot = currentUser ? (
+  // Hero ghost actions — bookmark + share, always available. The
+  // primary CTA pill is built into TutorialHero itself.
+  const heroActionsSlot = (
     <>
-      <BookmarkButton
-        tutorialId={tutorial.id}
-        initialBookmarked={Boolean(bookmark)}
-      />
-      <ProjectButton
-        tutorialId={tutorial.id}
-        projectId={project?.id ?? null}
-        status={project?.status ?? null}
-        completedAt={project?.completedAt ?? null}
-      />
+      {currentUser && (
+        <BookmarkButton
+          tutorialId={tutorial.id}
+          initialBookmarked={Boolean(bookmark)}
+        />
+      )}
       {shareButton}
-      {tutorial.type === 'RECIPE' && <CookingModeToggle />}
-    </>
-  ) : (
-    <>
-      {shareButton}
-      {tutorial.type === 'RECIPE' && <CookingModeToggle />}
     </>
   )
+
+  // Cooking-mode toggle joins the jump-chip row for recipes only.
+  const cookingModeSlot =
+    tutorial.type === 'RECIPE' ? <CookingModeToggle /> : null
+
+  // Project action bar (signed-in only) — Start / Continue project pill
+  // below the jump chips. Anonymous readers don't see this row.
+  const projectActionsSlot = currentUser ? (
+    <ProjectButton
+      tutorialId={tutorial.id}
+      projectId={project?.id ?? null}
+      status={project?.status ?? null}
+      completedAt={project?.completedAt ?? null}
+    />
+  ) : null
 
   const showRails = Boolean(currentUser)
   const leftRail = showRails ? <StickyToc /> : null
@@ -466,38 +473,22 @@ export default async function TutorialPage({ params }: PageProps) {
     (project?.status === UserProjectStatus.IN_PROGRESS ||
       project?.status === UserProjectStatus.COMPLETED)
 
+  // Above-body social proof. Pinterest pattern — makers who've already
+  // made this tutorial render as a small rail just above the body.
+  const preBodySlot = (
+    <MadeByMakers
+      tiles={madeByMakers}
+      totalCount={madeByTotal}
+      tutorialCategorySlug={tutorial.category.slug}
+      tutorialSlug={tutorialSlug}
+    />
+  )
+
+  // Footer cluster — Reviews, Photos, Q&A, What to make next, and the
+  // collapsible About-this-recipe (Beginner help + Errata) at the very
+  // bottom.
   const footerSlot = (
     <>
-      {beginnerMode && (
-        <BeginnerHelpFooter
-          glossary={refs.glossary}
-          categorySlug={tutorial.category.slug}
-          categoryName={tutorial.category.name}
-          subCategoryName={tutorial.subCategory?.name ?? null}
-        />
-      )}
-
-      <MadeByMakers
-        tiles={madeByMakers}
-        totalCount={madeByTotal}
-        tutorialCategorySlug={tutorial.category.slug}
-        tutorialSlug={tutorialSlug}
-      />
-
-      <RelatedTutorials
-        currentTutorialId={tutorial.id}
-        categoryId={tutorial.categoryId}
-        subCategoryId={tutorial.subCategoryId ?? null}
-        techniqueSlugs={tutorial.techniqueSlugs}
-      />
-
-      <PhotosBlock
-        tutorialId={tutorial.id}
-        signedIn={Boolean(currentUser)}
-        canUpload={canUploadPhoto}
-        photos={ugc.photos}
-      />
-
       <ReviewsBlock
         tutorialId={tutorial.id}
         signedIn={Boolean(currentUser)}
@@ -509,13 +500,42 @@ export default async function TutorialPage({ params }: PageProps) {
         reviews={ugc.reviews.rows}
       />
 
+      <PhotosBlock
+        tutorialId={tutorial.id}
+        signedIn={Boolean(currentUser)}
+        canUpload={canUploadPhoto}
+        photos={ugc.photos}
+      />
+
       <QaBlock
         tutorialId={tutorial.id}
         signedIn={Boolean(currentUser)}
         questions={ugc.questions}
       />
 
-      <ErrataLink tutorialId={tutorial.id} />
+      <RelatedTutorials
+        currentTutorialId={tutorial.id}
+        categoryId={tutorial.categoryId}
+        subCategoryId={tutorial.subCategoryId ?? null}
+        techniqueSlugs={tutorial.techniqueSlugs}
+      />
+
+      <details className="tutorial-about-cluster">
+        <summary className="tutorial-about-cluster-summary">
+          About this recipe
+        </summary>
+        <div className="tutorial-about-cluster-body">
+          {beginnerMode && (
+            <BeginnerHelpFooter
+              glossary={refs.glossary}
+              categorySlug={tutorial.category.slug}
+              categoryName={tutorial.category.name}
+              subCategoryName={tutorial.subCategory?.name ?? null}
+            />
+          )}
+          <ErrataLink tutorialId={tutorial.id} />
+        </div>
+      </details>
     </>
   )
 
@@ -544,7 +564,6 @@ export default async function TutorialPage({ params }: PageProps) {
       }
       publishedAt={tutorial.publishedAt}
       updatedAt={tutorial.updatedAt}
-      readingTime={estimateReadingTime(body)}
       sourceType={tutorial.sourceType}
       sourceNotes={tutorial.sourceNotes}
       attribution={
@@ -602,7 +621,10 @@ export default async function TutorialPage({ params }: PageProps) {
           />
         </>
       }
-      actionsSlot={actionsSlot}
+      heroActionsSlot={heroActionsSlot}
+      cookingModeSlot={cookingModeSlot}
+      projectActionsSlot={projectActionsSlot}
+      preBodySlot={preBodySlot}
       leftRail={leftRail}
       rightRail={rightRail}
       footerSlot={footerSlot}
@@ -665,9 +687,3 @@ function countWords(body: TipTapNode | null): number {
   return words
 }
 
-function estimateReadingTime(body: TipTapNode | null): string | null {
-  const words = countWords(body)
-  if (words < 60) return null
-  const minutes = Math.max(1, Math.round(words / 220))
-  return `${minutes} min`
-}

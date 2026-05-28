@@ -120,7 +120,7 @@ function renderRail(picks: Array<{
   return (
     <aside className="related-tutorials" aria-labelledby="related-tutorials-heading">
       <h2 id="related-tutorials-heading" className="related-tutorials-heading">
-        Related tutorials
+        What to make next
       </h2>
       <ul className="related-tutorials-list">
         {picks.map((t) => {

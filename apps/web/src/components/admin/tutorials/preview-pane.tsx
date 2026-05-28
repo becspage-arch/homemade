@@ -137,10 +137,8 @@ export function PreviewPane({
       heroUrl={heroUrl}
       heroAlt={heroMedia?.alt ?? null}
       publishedAt={null}
-      readingTime={estimateReadingTime(body as unknown as TipTapNode)}
       sourceType={sourceType}
       sourceNotes={sourceNotes || null}
-      linkBreadcrumb={false}
       recipeMeta={
         recipeMeta
           ? {
@@ -204,17 +202,3 @@ export function PreviewPane({
   )
 }
 
-function estimateReadingTime(body: TipTapNode | null): string | null {
-  if (!body) return null
-  let words = 0
-  function walk(n: TipTapNode): void {
-    if (n.text) {
-      words += n.text.split(/\s+/).filter(Boolean).length
-    }
-    if (n.content) n.content.forEach(walk)
-  }
-  walk(body)
-  if (words < 60) return null
-  const minutes = Math.max(1, Math.round(words / 220))
-  return `${minutes} min`
-}
