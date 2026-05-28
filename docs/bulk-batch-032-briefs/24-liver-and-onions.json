@@ -1,0 +1,221 @@
+{
+  "slug": "liver-and-onions",
+  "title": "Liver and Onions",
+  "subtitle": "Thinly sliced calves' liver with slow-cooked golden onions and a quick pan gravy",
+  "excerpt": "Liver and onions is one of the most unforgiving dishes in British cooking: the liver must be thin, the pan searingly hot, and the cooking time measured in seconds, not minutes. Overcooked liver goes grey, grainy, and bitter. Done right, it is tender, rich, and ready in 20 minutes.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: fried liver and onion entry. Liver and onions is documented as a standard British meat dish from the 18th century and remains in continuous production in pub and domestic cooking.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "restingMinutes": 2,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The onions can be cooked up to 2 days ahead and refrigerated. Reheat before cooking the liver.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": "Hob only; no oven temperature required.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sear",
+      "term": "Sear",
+      "definition": "To cook the surface of food over a very high heat until a well-browned crust forms. Searing concentrates flavour on the surface and adds colour and texture. It does not seal moisture inside — that is a common myth."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Liver and onions has a bad reputation earned almost entirely by overcooking. Calves' liver is delicate: it wants 60 to 90 seconds per side in a very hot pan and should remain slightly pink at the thickest point. The onions are cooked separately and slowly, which is the opposite approach: 25 to 30 minutes of low heat until completely golden and sweet. The two elements meet at the end."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "calves-liver", "amount": 600, "unit": "g", "prepNote": "sliced 5 mm thick; lamb's liver also works", "isOptional": false, "groupLabel": "For the liver" },
+            { "ingredientSlug": "plain-flour", "amount": 25, "unit": "g", "prepNote": "for dredging", "isOptional": false, "groupLabel": "For the liver" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "to season", "isOptional": false, "groupLabel": "For the liver" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": "For the liver" },
+            { "ingredientSlug": "onion", "amount": 3, "unit": "each", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": "For the onions" },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the onions" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the onions" },
+            { "ingredientSlug": "stock-beef", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the gravy" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the gravy" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the onions" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt half the butter in a wide frying pan over a medium-low heat. Add the {{onion}} sliced onion and thyme with a pinch of salt. Cook, stirring occasionally, for 25 to 30 minutes until the onions are completely soft, golden, and sweet. Transfer to a bowl and keep warm."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sear the liver" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season the {{plain-flour}} of flour with salt and pepper in a shallow bowl. Dust the {{calves-liver}} of liver slices lightly in the seasoned flour, shaking off the excess. Increase the heat under the pan to high and add the remaining butter with a little oil."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "When the butter is foaming and just starting to colour, add the liver slices in a single layer and "
+                  },
+                  {
+                    "type": "text",
+                    "text": "sear",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sear" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": " for 60 to 90 seconds per side until browned on the outside but still slightly pink at the centre. Remove immediately to a warm plate. Do not cook in batches that crowd the pan."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the gravy and serve" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the {{stock-beef}} of beef stock and Worcestershire sauce into the hot pan, scraping up the residue. Boil for 2 minutes until reduced slightly. Return the onions to the pan to warm through. Serve the liver alongside the onions with the gravy spooned over."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Liver is grey, grainy, and bitter",
+              "cause": "Overcooked. Liver continues to firm up in the residual heat after it leaves the pan.",
+              "fix": "The liver is done when it is still faintly pink at the centre. Remove it from the pan the moment it colours on both sides. It will finish cooking on the plate."
+            },
+            {
+              "symptom": "Liver sticks to the pan",
+              "cause": "Pan not hot enough before the liver went in, or the flour coating was too thick.",
+              "fix": "The pan must be very hot before the liver touches it. A thin dusting of flour is enough; a thick coating absorbs fat and causes sticking."
+            },
+            {
+              "symptom": "Onions are not sweet after 20 minutes",
+              "cause": "Heat was too high, browning the edges before the centre softened.",
+              "fix": "Lower the heat and add a tablespoon of water if they are catching. Properly sweet onions need at least 25 minutes over a low flame."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Liver and onions is one of the oldest British meat dishes, documented in household management guides from the Victorian cookery writer Mrs Beeton onward. Its decline from the 1970s onward came from offal falling out of fashion and from the dish being badly served in institutional kitchens for decades. Well-cooked calves' liver bears no resemblance to the grey, rubbery slices served in school canteens. It is one of the most nutritionally dense and economical cuts available."
+          }
+        ]
+      }
+    ]
+  }
+}

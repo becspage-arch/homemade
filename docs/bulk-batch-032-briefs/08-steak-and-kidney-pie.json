@@ -1,0 +1,257 @@
+{
+  "slug": "steak-and-kidney-pie",
+  "title": "Steak and Kidney Pie",
+  "subtitle": "Braised beef and ox kidney in a rich dark gravy, under a golden puff pastry lid",
+  "excerpt": "Steak and kidney pie is a British pub classic built on a long braise. The kidney gives depth to the gravy; the puff pastry lid gets properly golden. The braise takes most of the time but needs little attention.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: beefsteak and kidney pie entry. Method consistent with Victorian pub and household tradition across British household manuals.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 150,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the braised filling for up to 3 months. Thaw overnight in the fridge, assemble with fresh pastry, and bake at 200°C for 30 to 35 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The braised filling can be made two days ahead and refrigerated. Cool completely before topping with pastry.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "cosy"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "braise",
+      "term": "Braise",
+      "definition": "A slow-cooking method where food is first browned in fat, then cooked in a small amount of liquid in a covered pot over low heat. The enclosed, moist heat tenderises tough cuts over one to three hours."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steak and kidney pie is two things done well: a long-braised filling and a short spell in a hot oven under pastry. The kidney is not an afterthought; it gives the gravy a deep, specific flavour that nothing else quite matches. Given time, the braising steak softens to something yielding and rich."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The braise takes around two hours but needs almost no attention once it is in the oven. The pastry lid takes thirty minutes more. Plan for an afternoon cook with a long, idle middle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "braising-steak", "amount": 600, "unit": "g", "prepNote": "cut into 3 cm pieces", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "ox-kidney", "amount": 200, "unit": "g", "prepNote": "white core removed, cut into 2 cm pieces", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 30, "unit": "g", "prepNote": "for dredging", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stout", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "to season", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "puff-pastry", "amount": 375, "unit": "g", "prepNote": "ready-rolled or block", "isOptional": false, "groupLabel": "For the lid" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": "For the lid" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the meat" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 160°C. Season the braising steak and toss lightly in the {{plain-flour}} of plain flour. Heat a thin film of oil in a wide frying pan over a high heat and brown the beef in batches for 3 to 4 minutes per side until deeply coloured. Transfer to a casserole dish."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the same pan, brown the {{ox-kidney}} of ox kidney in a little oil for 2 minutes until sealed. Add to the casserole. Fry the {{onion}} diced onions in the same pan for 5 minutes until softened, scraping up any residue from the base. Add to the casserole."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise the filling" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the {{stock-beef}} of beef stock and {{stout}} of stout over the meat. Add the {{thyme}} of thyme, {{bay-leaves}} of bay, and the Worcestershire sauce. Cover and "
+                  },
+                  {
+                    "type": "text",
+                    "text": "braise",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "braise" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": " in the oven at 160°C for 2 hours until the beef is very tender and the gravy has thickened. Taste and season. Remove the thyme and bay. Cool the filling before topping."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Top and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 200°C. Spoon the cooled filling into a pie dish. Roll the puff pastry to about 3 mm thick and lay it over the top. Press the edges against the rim to seal, trim the excess, and crimp. Brush with beaten egg. Cut two small slits in the top."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 25 to 30 minutes until the pastry is deep golden and the filling is bubbling at the edges. Rest for 10 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Beef is still tough after braising",
+              "cause": "The braise wasn't long enough, or the oven was too hot.",
+              "fix": "Return to the oven, covered, for 30 minutes more. Braising steak needs time to convert collagen to gelatin; at 160°C this takes a minimum of 1 hour 45 minutes and often more."
+            },
+            {
+              "symptom": "Gravy is too thin",
+              "cause": "The filling wasn't reduced enough before topping.",
+              "fix": "Strain the liquid into a saucepan and boil hard for 5 to 10 minutes until thickened, then recombine with the meat before filling the pie dish."
+            },
+            {
+              "symptom": "Kidney flavour is too strong",
+              "cause": "The kidney wasn't trimmed before cooking.",
+              "fix": "Remove the white core from each piece of kidney before cooking. Soaking in cold water for 30 minutes before cooking also reduces the intensity."
+            },
+            {
+              "symptom": "Pastry lid is soggy underneath",
+              "cause": "The filling was too hot or too wet when the pastry was laid on.",
+              "fix": "Always cool the filling before topping. A very wet filling can be thickened by simmering uncovered for 5 minutes before cooling."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steak and kidney pie is the pub standard against which other pie fillings are measured. the Victorian cookery writer Mrs Beeton includes a beefsteak and kidney pie that differs from the modern version only in the cut of meat and the pastry style. The kidney in the Victorian recipe is ox kidney, as it still is in most traditional versions. The stout in the gravy is a later development, a natural partner to the dark, iron-rich sauce that the kidney produces. In older recipes the liquid is often just stock and the colour comes from long browning alone."
+          }
+        ]
+      }
+    ]
+  }
+}

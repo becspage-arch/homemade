@@ -1,0 +1,264 @@
+{
+  "slug": "smoked-haddock-and-leek-pie",
+  "title": "Smoked Haddock and Leek Pie",
+  "subtitle": "Flaked smoked haddock and tender leeks in a parsley cream sauce under puff pastry",
+  "excerpt": "Smoked haddock and leek pie is a lighter, quicker fish pie with a clear, smoky flavour. The haddock is poached in milk, which becomes the sauce. Leeks add sweetness and bulk. A puff pastry lid keeps it simple.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: smoked haddock and cream sauce method. Eliza Acton, Modern Cookery for Private Families (1845): fish and white sauce finishing. Smoked haddock pie documented in British regional cookbooks from the 19th century.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Assemble the pie, cool completely, and freeze before baking. Thaw overnight in the fridge, then bake covered at 180°C for 35 minutes, uncovering for the last 10.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the filling up to a day ahead and refrigerate. Top with pastry and bake on the day.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "cosy"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "poach",
+      "term": "Poach",
+      "definition": "To cook food gently in a barely simmering liquid, well below boiling point. Poaching keeps delicate fish tender and moist; the liquid used takes on the ingredient's flavour and can be used as a sauce base."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Smoked haddock and leek pie is a clean, focused dish. The haddock carries all the flavour: poaching it gently in milk draws its smokiness through to the sauce. Leeks soften in butter alongside, then everything comes together in a cream sauce under a puff pastry lid. The whole thing bakes in half an hour."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "smoked-haddock", "amount": 500, "unit": "g", "prepNote": "skin on", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "leek", "amount": 2, "unit": "each", "prepNote": "white and pale green parts, sliced into rounds", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "whole-milk", "amount": 500, "unit": "ml", "prepNote": "for poaching", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "halved, for poaching", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "plain-flour", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "double-cream", "amount": 80, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "juice only", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "taste before adding: smoked haddock is salty", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "white-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "puff-pastry", "amount": 375, "unit": "g", "prepNote": "ready-rolled or block", "isOptional": false, "groupLabel": "For the lid" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": "For the lid" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Poach the fish and soften the leeks" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put the smoked haddock in a wide saucepan. Pour over the {{whole-milk}} of milk, add the halved {{onion}} onion and the {{bay-leaves}} of bay. Bring to a gentle simmer and "
+                  },
+                  {
+                    "type": "text",
+                    "text": "poach",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "poach" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": " for 6 to 8 minutes until the fish just flakes. Lift out, set aside to cool slightly, then flake into large pieces, removing skin and any bones. Strain and reserve the poaching milk."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In a separate pan, melt a little butter over a low heat and cook the {{leek}} leeks for 8 to 10 minutes until completely soft. Set aside."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the sauce" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt the {{unsalted-butter}} of butter in a clean saucepan over a medium heat. Add the {{plain-flour}} of plain flour and stir for 2 minutes. Gradually whisk in the reserved warm poaching milk, adding it in three additions and whisking smooth between each. Bring to a gentle simmer and cook for 5 minutes until the sauce coats the back of a spoon. Stir in the {{double-cream}} of double cream and {{lemon}} lemon juice. Taste before seasoning with salt; smoked haddock makes the sauce salty. Season with white pepper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove from the heat. Fold in the leeks and flaked haddock. Stir in the chopped parsley. Pour into a pie dish and leave to cool slightly."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Top and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 200°C. Roll the puff pastry to about 3 mm thick and lay over the filled pie dish. Press the edges to seal, trim, and crimp. Brush with beaten egg. Cut two small slits in the centre."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 25 to 30 minutes until the pastry is deep golden. Rest for 5 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is too thin after baking",
+              "cause": "The sauce wasn't thickened enough before assembly.",
+              "fix": "The sauce should coat the back of a spoon firmly before the fish is folded in. If it runs off the spoon, return to the heat and simmer for 2 minutes more."
+            },
+            {
+              "symptom": "Fish is rubbery and overcooked",
+              "cause": "Poached for too long, or baked at too high a temperature.",
+              "fix": "The fish only needs 6 to 8 minutes of poaching; it will continue cooking in the oven. Remove it from the milk as soon as it just flakes."
+            },
+            {
+              "symptom": "Filling is too salty",
+              "cause": "Salt was added without tasting first.",
+              "fix": "Smoked haddock makes the sauce salty enough on its own. Always taste before adding any salt, and add only if the sauce is underseasoned."
+            },
+            {
+              "symptom": "Pastry doesn't puff",
+              "cause": "Filling was still hot when the pastry went on, melting the fat layers.",
+              "fix": "Let the filling cool until it is just warm to the touch before topping. If in doubt, chill the assembled pie for 20 minutes before baking."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Smoked haddock is one of the defining flavours of British cooking, used in kedgeree, chowder, gratin, and pie with equal naturalness. The pairing with leek is Scottish in origin, running through the same tradition that gives cock-a-leekie soup its character: the leek's mild sweetness balances the assertive smoke of the fish. This pie is smaller and faster than a full fish pie, and more focused: two main ingredients, one sauce, one pastry. On a cold weeknight it is exactly as much as you need."
+          }
+        ]
+      }
+    ]
+  }
+}

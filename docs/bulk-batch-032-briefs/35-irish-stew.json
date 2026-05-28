@@ -1,0 +1,196 @@
+{
+  "slug": "irish-stew",
+  "title": "Irish Stew",
+  "subtitle": "Lamb neck with potato, carrot, and onion in a simple, clear broth",
+  "excerpt": "Irish stew is the most stripped-back of the British lamb stews: no browned meat, no thick gravy, no crust. The lamb, potato, carrot, and onion are placed raw into the pot with water and thyme and simmered gently for 2 hours. The broth clarifies as it cooks.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Irish and British cookery tradition. Irish stew is documented from the early 19th century as a standard Irish domestic dish. The traditional version uses mutton or lamb on the bone with potato and onion only; carrot was added in later adaptations.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 120,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the stew once cooled. The potato may become slightly softer on thawing but the stew reheats well.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Makes the next day. Reheat gently and adjust seasoning before serving.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "cosy"],
+    "temperatureCelsius": null,
+    "temperatureNote": "Hob only; no oven temperature required.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "simmer",
+      "term": "Simmer",
+      "definition": "To heat a liquid to just below boiling, where small bubbles break the surface gently and steadily. Simmering is the correct temperature for slow-cooked stews and braises: a rolling boil toughens meat fibres, while a simmer allows them to relax into tenderness."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Irish stew has no searing, no roux, no wine. The lamb goes in raw with the vegetables and the heat does the work over two hours. The result is a clean, direct dish: a clear broth, tender lamb, soft potato. The traditional version uses neck on the bone; bone-in pieces give a richer broth than boneless cuts."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "lamb-neck", "amount": 700, "unit": "g", "prepNote": "bone-in pieces for preference", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 800, "unit": "g", "prepNote": "peeled, cut into large chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": "each", "prepNote": "peeled and cut into chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "roughly chopped, to finish", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "to season", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the {{lamb-neck}} of lamb pieces in a large pot. Add the {{onion}} onion, {{carrot}} carrot, thyme, and bay. Season well. Pour over enough cold water to cover by about 4 cm (roughly 1.5 litres)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to the boil and skim the grey foam from the surface. Reduce to a bare "
+                  },
+                  {
+                    "type": "text",
+                    "text": "simmer",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "simmer" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": ". Cover and cook for 1 hour."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the {{potato}} of potato chunks. Continue to simmer, covered, for 45 minutes to 1 hour until the lamb is completely tender and falling from the bone, and the potato is cooked through."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the thyme stalks and bay leaves. Taste and adjust the seasoning. Stir in the {{parsley-flat}} of parsley. Rest for 10 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Broth is cloudy",
+              "cause": "Heat too high, or foam not skimmed at the start.",
+              "fix": "Keep the heat very low: a gentle simmer, not a rolling boil. Skim carefully for the first 10 minutes as the water comes to temperature."
+            },
+            {
+              "symptom": "Potato has dissolved into the broth",
+              "cause": "Added too early or cooked at too high a heat.",
+              "fix": "Add potato with 45 to 60 minutes left, not from the start. Keep the heat gentle throughout."
+            },
+            {
+              "symptom": "Broth is thin and flat",
+              "cause": "Not enough lamb, or too much water.",
+              "fix": "Season assertively just before serving. Remove the lid for the final 20 minutes to reduce slightly. Bone-in lamb makes a richer broth than boneless."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Irish stew is one of the simplest dishes in the British Isles and one of the most direct. The traditional version used mutton, an older and more flavoursome sheep meat, and contained only mutton, potato, onion, and water. The inclusion of carrot came in later British adaptations. The dish has been the subject of debate in Ireland as to what constitutes the authentic version; the shortest ingredient list is probably closest to the original. What is not debatable is the method: low heat, long time, bone-in meat."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "slug": "fish-pie",
+  "title": "Fish Pie",
+  "subtitle": "Smoked haddock, salmon, and prawns under a creamy mashed-potato crust",
+  "excerpt": "A proper fish pie holds three kinds of fish in a parsley-cream sauce under a mash lid. It takes patience to do each element well, but none of it is difficult. The result freezes well and reheats cleanly.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: fish pie entries, cream sauce technique. Eliza Acton, Modern Cookery for Private Families (1845): white sauce and fish finishing methods.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 60,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Assemble the pie, cool completely, and freeze before baking. Thaw overnight in the fridge, then bake covered at 180°C for 40 minutes, uncovering for the last 10 to brown.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble up to a day ahead and refrigerate. Add 10 minutes to the baking time.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "slowSunday", "cosy"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "masher", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bechamel",
+      "term": "Béchamel",
+      "definition": "A white sauce made by whisking hot milk into a cooked butter-and-flour roux. It forms the base of many cream sauces in British and French cooking and thickens as it simmers."
+    },
+    {
+      "slug": "poach",
+      "term": "Poach",
+      "definition": "To cook food gently in a barely simmering liquid, well below boiling point. Poaching preserves the texture and moisture of delicate ingredients such as fish and eggs."
+    }
+  ],
+  "techniqueSlugs": ["bechamel"],
+  "criticalTechniques": ["bechamel"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fish pie is three kinds of fish in a creamy parsley sauce, finished under a mashed-potato crust and baked until golden. Smoked haddock gives depth, fresh salmon gives colour and richness, and prawns add sweetness. The key step is making the sauce from the poaching milk: waste nothing and the flavour carries through."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "smoked-haddock", "amount": 400, "unit": "g", "prepNote": "skin on", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "salmon-fillet", "amount": 400, "unit": "each", "prepNote": "skinless, about 400 g total", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "prawns-raw", "amount": 200, "unit": "g", "prepNote": "peeled", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "whole-milk", "amount": 600, "unit": "ml", "prepNote": "for poaching", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "halved", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "plain-flour", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "juice only", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "to season", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "white-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "potato", "amount": 1200, "unit": "g", "prepNote": "peeled and cut into chunks", "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "whole-milk", "amount": 80, "unit": "ml", "prepNote": "warmed", "isOptional": false, "groupLabel": "For the mash" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Poach the fish" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put the smoked haddock and salmon in a wide saucepan. Pour over the {{whole-milk}} of milk for poaching, add the halved {{onion}} onion and the {{bay-leaves}} of bay. Bring to a gentle simmer over a medium heat and "
+                  },
+                  {
+                    "type": "text",
+                    "text": "poach",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "poach" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": " for 6 to 8 minutes until the fish just flakes. Lift out the fish and set aside. Pour the poaching milk through a sieve and reserve it for the sauce."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "When the fish is cool enough to handle, flake it into large pieces, removing any skin and bones. Set aside with the raw prawns."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the sauce" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt the {{unsalted-butter}} of butter in a clean saucepan over a medium heat. Add the plain flour and stir constantly for 2 minutes to make a pale roux. This is the base of the "
+                  },
+                  {
+                    "type": "text",
+                    "text": "béchamel",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bechamel" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": "."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Gradually whisk in the warm reserved poaching milk, adding it in three or four additions and whisking smooth between each. Once all the milk is incorporated, bring to a gentle simmer and cook for 5 minutes, stirring, until the sauce coats the back of a spoon. Stir in the double cream, mustard, and lemon juice. Season with salt and white pepper. Remove from heat and fold in the chopped parsley."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Gently fold the flaked fish and raw prawns into the sauce. Pour into a large, deep baking dish and spread level. Cool slightly before topping."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mash and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Boil the {{potato}} of potato chunks in well-salted water until tender, about 15 to 20 minutes. Drain, steam dry for a minute, then mash with the butter and warm milk until smooth. Season well."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spoon or pipe the mash over the filling. Score with a fork. Bake at 200°C for 25 to 30 minutes until the top is golden and the sauce is bubbling at the edges. Rest 5 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is too thin",
+              "cause": "Not enough flour in the roux, or the milk was added too fast and the roux didn't cook properly.",
+              "fix": "Simmer the sauce a little longer to reduce it. Or make a small additional roux (1 tsp butter, 1 tsp flour) and whisk it in."
+            },
+            {
+              "symptom": "Fish is overcooked and dry",
+              "cause": "Poached for too long, or baked in a very hot oven for too long after assembly.",
+              "fix": "The fish only needs 6 to 8 minutes of poaching, and the baking step is just to heat through and brown the mash. Undercook slightly in the poaching step."
+            },
+            {
+              "symptom": "Filling is watery after baking",
+              "cause": "The sauce was too thin before baking, or the fish released extra water.",
+              "fix": "Thicken the sauce before adding the fish. Salting the poaching milk helps to draw excess moisture out of the fish during poaching."
+            },
+            {
+              "symptom": "Prawns are rubbery",
+              "cause": "Added cooked prawns rather than raw, and then baked for too long.",
+              "fix": "Use raw prawns. They cook through in the oven during baking and stay tender. Cooked prawns go in only if the dish is being served immediately with minimal reheating."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fish pie is the British answer to the question of what to do with good fish on a cold evening. The combination of smoked and fresh fish under a cream-sauce-and-mash crust is a mid-20th-century standardisation of older white-fish pie recipes that ran through any available fish, whatever the catch had brought. Smoked haddock as an anchor fish became standard by the 1970s. It is not a humble dish; the ingredients are generous and the work, while gentle, requires attention at every stage."
+          }
+        ]
+      }
+    ]
+  }
+}

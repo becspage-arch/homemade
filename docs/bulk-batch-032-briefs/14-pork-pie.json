@@ -1,0 +1,280 @@
+{
+  "slug": "pork-pie",
+  "title": "Pork Pie",
+  "subtitle": "Seasoned pork shoulder in a crisp hot water crust, with a stock jelly poured in after baking",
+  "excerpt": "A proper pork pie uses hot water crust pastry and raw seasoned pork that cooks inside the case. The jelly poured in after baking is what separates a good pork pie from a dry one. It takes patience but the method is straightforward.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: pork pie entry, hot water crust technique, stock jelly method. The Melton Mowbray style of pork pie, documented from the 18th century in Leicestershire, is the British benchmark for the form.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 45,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 180,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Pork pie must be made at least 3 hours ahead to allow the jelly to set. Best made the day before serving; keeps in the fridge for up to 3 days.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["picnic", "party"],
+    "temperatureCelsius": 180,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "springform-tin", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "hot-water-crust",
+      "term": "Hot water crust",
+      "definition": "A pastry made by mixing flour into boiling water and melted lard. The heat gelatinises the starch, producing a firm, mouldable dough that can be raised into a free-standing case without a tin. It sets hard and crisp when baked."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A pork pie is defined by three things: the seasoning of the filling, the crispness of the pastry case, and the jelly that fills the gap between them after baking. Get all three right and the result is one of the best things in British food. None of it is technically difficult, but it requires attention to each stage."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The pastry here is a hot water crust. It must be worked while warm and pliable; once it cools it firms up and cracks. Have the filling ready before you make the pastry and move quickly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "pork-shoulder", "amount": 600, "unit": "g", "prepNote": "finely diced, not minced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "back-bacon", "amount": 150, "unit": "g", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sage", "amount": 6, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "mace", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "nutmeg", "amount": 0.25, "unit": "tsp", "prepNote": "freshly grated", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 8, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "lard", "amount": 150, "unit": "g", "prepNote": "diced", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 5, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "stock-chicken", "amount": 200, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": "For the jelly" },
+            { "ingredientSlug": "gelatine-leaves", "amount": 3, "unit": "sheet", "prepNote": "soaked in cold water for 5 minutes", "isOptional": false, "groupLabel": "For the jelly" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the filling" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the {{pork-shoulder}} of diced pork shoulder, {{back-bacon}} of diced bacon, sage, mace, nutmeg, {{sea-salt-fine}} of salt, and {{black-pepper}} of pepper in a bowl. Mix well with your hands until evenly combined. Chill while you make the pastry."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the hot water crust and line the tin" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 180°C. Put the {{plain-flour}} of plain flour and {{sea-salt-fine}} of salt in a bowl and make a well in the centre. In a small saucepan, heat the {{lard}} of lard with 150 ml of water until the lard has melted and the liquid is just boiling. Pour immediately into the flour and stir vigorously until a smooth, pliable dough forms. This is the "
+                  },
+                  {
+                    "type": "text",
+                    "text": "hot water crust",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-water-crust" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": ". Work quickly while it is warm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Grease a 20 cm springform tin. Reserve one-quarter of the dough for the lid. Press the remaining dough into the base and up the sides of the tin to an even thickness of about 5 mm. Work quickly before it cools and stiffens."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pack the filling firmly into the lined tin, pressing out any air pockets. Roll the reserved pastry into a circle the size of the tin and lay it on top. Press the edges together firmly and crimp to seal. Brush with beaten egg. Cut a small hole in the centre of the lid."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 85 to 90 minutes until deep golden. An instant-read thermometer inserted through the central hole should read 75°C at the thickest point. Leave to cool completely in the tin before removing."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the jelly" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Once the pie has cooled to room temperature, squeeze the excess water from the soaked {{gelatine-leaves}} of gelatine leaves and dissolve them in the {{stock-chicken}} of warm stock. Let it cool to room temperature, then carefully pour it through the hole in the lid a little at a time, pausing to let it find its way into the gaps. Refrigerate for at least 3 hours until the jelly has set."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Pastry cracks when pressed into the tin",
+              "cause": "The dough cooled too much before lining the tin.",
+              "fix": "Work quickly once the dough is made and keep it as warm as possible. If it cracks, patch it with extra warm dough pressed firmly over the crack."
+            },
+            {
+              "symptom": "Filling is dry and crumbly",
+              "cause": "The pork was too lean, or the pie was overbaked.",
+              "fix": "Use pork shoulder, not loin or fillet. Shoulder has enough fat to keep the filling moist. Check the internal temperature rather than relying on time."
+            },
+            {
+              "symptom": "Jelly doesn't set",
+              "cause": "Too little gelatine, or the stock was too hot when the gelatine dissolved and lost its setting power.",
+              "fix": "Dissolve the gelatine in stock that is warm but not boiling. If the jelly stays liquid after 3 hours, add one more softened gelatine leaf dissolved in a little warm stock and try again."
+            },
+            {
+              "symptom": "Pie collapses when released from the tin",
+              "cause": "Removed from the tin before the pastry had set firm.",
+              "fix": "Let the pie cool completely before unclipping the springform. The hot water crust sets hard as it cools; warm pastry will slump."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The pork pie is one of Britain's oldest portable meat dishes. Hot water crust was developed to make a self-supporting case that could be carried without a tin, which made it practical for market days and long journeys. Melton Mowbray in Leicestershire is the most famous source; the town's version has protected geographical indication status. The traditional pork pie uses grey, uncured pork (not pink like commercial versions), a savoury jelly, and a crisp amber crust."
+          }
+        ]
+      }
+    ]
+  }
+}

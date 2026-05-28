@@ -1,0 +1,230 @@
+{
+  "slug": "kedgeree",
+  "title": "Kedgeree",
+  "subtitle": "Smoked haddock with buttered rice, hard-boiled eggs, and warm curry spices",
+  "excerpt": "Kedgeree is a breakfast or brunch dish of smoked haddock poached in milk, flaked and folded into spiced buttered rice with hard-boiled eggs and parsley. It is adapted from the Indian dish khichdi, brought back by British colonial officers in the 19th century and anglicised into the dish that appears on hotel menus today.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: kedgeree entry. The dish is an Anglo-Indian adaptation of khichdi, a South Asian dish of rice and lentils. Documented in British cookbooks from the early 19th century as a breakfast dish for the English-speaking ruling class in India, then transported back to Britain.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Poach the haddock and hard-boil the eggs the night before. Assemble and reheat gently in the morning.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": "Hob only; no oven temperature required.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "temper",
+      "term": "Temper",
+      "definition": "To heat spices or aromatics briefly in hot fat to release their volatile flavour compounds. The fat carries these compounds through the whole dish. Common in South Asian cooking and used in kedgeree as a direct link to its Indian origins."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Kedgeree moves through three stages: poaching the haddock in milk, cooking the rice and hard-boiling the eggs, and bringing everything together in a buttered pan with the curry spices. The stages can run in parallel, which makes the dish faster than it looks. The milk from the haddock poach can be used to enrich the butter and spice base at the end."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "smoked-haddock", "amount": 400, "unit": "g", "prepNote": "undyed if available", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 400, "unit": "ml", "prepNote": "for poaching", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "long-grain-rice", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "curry-powder", "amount": 2, "unit": "tsp", "prepNote": "mild", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "juice only", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "to season", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Poach the haddock and cook the rice" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the {{smoked-haddock}} of smoked haddock in a wide pan. Pour over the {{whole-milk}} of milk with the bay leaves. Bring to a very gentle simmer and poach for 5 to 6 minutes until the fish just flakes when pressed. Lift out, cool slightly, and flake into large pieces. Reserve 100 ml of the poaching milk."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the {{long-grain-rice}} of rice in plenty of well-salted boiling water for 12 minutes until just tender. Drain and spread on a tray to steam-dry. At the same time, hard-boil the {{eggs}} eggs for 10 minutes; cool in cold water, peel, and quarter."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt the {{unsalted-butter}} of butter in a wide frying pan over a medium heat. Add the {{onion}} diced onion and cook for 5 minutes until soft. Add the {{curry-powder}} of curry powder and "
+                  },
+                  {
+                    "type": "text",
+                    "text": "temper",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "temper" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": " for 1 minute, stirring constantly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the cooked rice and the reserved poaching milk. Stir gently to combine. Fold in the flaked haddock, taking care not to break it up too much. Add the lemon juice and most of the parsley. Season well. Heat through gently for 2 to 3 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve in deep bowls with the quartered eggs arranged on top and the remaining parsley scattered over."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Rice is wet and clumping",
+              "cause": "Too much liquid retained or not allowed to steam-dry after boiling.",
+              "fix": "Drain the rice as thoroughly as possible after boiling and spread on a tray for 2 minutes. The steam-drying step separates the grains and prevents the kedgeree from becoming porridgy."
+            },
+            {
+              "symptom": "Haddock is too salty",
+              "cause": "Heavily smoked fish or salted haddock used rather than naturally smoked.",
+              "fix": "Undyed, naturally smoked haddock is milder than the brightly dyed version. If the fish is very salty, poach it in half-milk, half-water rather than pure milk."
+            },
+            {
+              "symptom": "Curry powder flavour is raw and harsh",
+              "cause": "The spices were not tempered in fat long enough.",
+              "fix": "Stir the curry powder into the hot butter and onion for at least 1 full minute before adding the rice. The fat carries the flavour compounds through the dish."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Kedgeree is a direct adaptation of khichdi, a South Asian rice and lentil dish. British colonial officers encountered it in India and brought a version home, substituting smoked fish for lentils and adding eggs. By the Victorian period it was established as a standard British breakfast dish, appearing in the Victorian cookery writer Mrs Beeton and documented in country house menus. The spicing is mild, enough to give warmth and fragrance without heat. The undyed, naturally smoked haddock is preferable on both flavour and aesthetic grounds; the bright yellow dyed version is a 20th-century commercial product."
+          }
+        ]
+      }
+    ]
+  }
+}

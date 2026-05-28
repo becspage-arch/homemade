@@ -1,0 +1,238 @@
+{
+  "slug": "vegetarian-shepherds-pie",
+  "title": "Vegetarian Shepherd's Pie",
+  "subtitle": "Puy lentils and chestnut mushrooms in a rich tomato and rosemary sauce, under buttery mash",
+  "excerpt": "Vegetarian shepherd's pie uses puy lentils and chestnut mushrooms to build the depth that lamb mince would give in the original. The rosemary and tomato base carries the same flavour logic. The mash goes on top and browns in the oven.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Method synthesised from British vegetarian cookery tradition. Puy lentil and mushroom combination as a meat substitute documented in British vegetarian cooking guides from the 1980s onward. Potato mash topping and bake technique follows the traditional shepherd's pie method.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 60,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the assembled, unbaked pie for up to 3 months. Thaw overnight in the fridge, then bake covered with foil at 180°C for 40 minutes, uncovering for the last 10 to brown the top.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble up to 24 hours ahead and refrigerate. Add 10 minutes to the baking time.",
+    "dietaryFlags": ["VEGETARIAN"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "kidFriendly"],
+    "temperatureCelsius": 190,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "masher", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "deglaze",
+      "term": "Deglaze",
+      "definition": "To add liquid to a hot pan after frying in order to loosen the browned residue from the base. The residue dissolves into the liquid and enriches the sauce or filling."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Vegetarian shepherd's pie follows the same structure as the original: a deep, savoury filling under a mash crust, baked until golden and bubbling. Puy lentils and chestnut mushrooms together give the body and flavour that lamb mince would provide. The rosemary, tomato puree, and marmite pull everything into a sauce with real depth."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "puy-lentils", "amount": 250, "unit": "g", "prepNote": "rinsed", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "chestnut-mushrooms", "amount": 350, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "rosemary", "amount": 2, "unit": "sprig", "prepNote": "leaves stripped and finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "marmite", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-vegetable", "amount": 600, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "to season", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "potato", "amount": 1200, "unit": "g", "prepNote": "peeled and cut into chunks", "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "whole-milk", "amount": 80, "unit": "ml", "prepNote": "warmed", "isOptional": false, "groupLabel": "For the mash" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the filling" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat a wide, heavy pan over a high heat. Add the {{chestnut-mushrooms}} of mushrooms and cook without stirring for 3 to 4 minutes until golden and any water has evaporated. Push to one side."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add a little oil and the {{onion}} diced onions and {{carrot}} diced carrots. Reduce the heat to medium and cook for 8 minutes until the onion is soft. Add the {{garlic}} of garlic and rosemary and stir for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in the tomato puree and marmite. Cook for 2 minutes. Add the {{puy-lentils}} of puy lentils, then "
+                  },
+                  {
+                    "type": "text",
+                    "text": "deglaze",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deglaze" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": " with the {{stock-vegetable}} of vegetable stock. Season and simmer uncovered for 25 to 30 minutes until the lentils are tender and the sauce is thick. Pour into a baking dish."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mash and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Boil the {{potato}} of potato chunks in well-salted water for 15 to 20 minutes until tender. Drain, let steam escape for a minute, then mash with the {{unsalted-butter}} of butter and {{whole-milk}} of warm milk until smooth. Season well."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spoon the mash over the filling and spread to the edges. Score the surface with a fork to create ridges. Bake at 190°C for 25 to 30 minutes until golden and bubbling at the edges. Rest for 5 minutes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Filling is watery",
+              "cause": "Lentils absorbed liquid and released it again, or mushrooms released water.",
+              "fix": "Simmer the filling uncovered until it thickens before transferring to the baking dish. It should hold its shape when spooned, not pool."
+            },
+            {
+              "symptom": "Filling tastes flat",
+              "cause": "The marmite and tomato puree were undercooked, or the seasoning was light.",
+              "fix": "Cook the tomato puree and marmite for 2 full minutes before adding the lentils; this concentrates and rounds their flavour. Taste again after the lentils have cooked and add salt and pepper as needed."
+            },
+            {
+              "symptom": "Mash is stiff and hard to spread",
+              "cause": "Not enough butter or milk, or the potatoes were overcooked.",
+              "fix": "Beat in more warm milk a tablespoon at a time until the mash loosens to a spreadable consistency."
+            },
+            {
+              "symptom": "Lentils are still firm after 30 minutes",
+              "cause": "Old lentils take longer to cook, or the pan ran dry.",
+              "fix": "Add more stock and continue simmering. Puy lentils from a new bag cook in 25 minutes; older stock can take 40 minutes or more."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The vegetarian shepherd's pie became a serious dish in Britain from the 1980s, when vegetarian cooking moved beyond nut roasts and quiche. Puy lentils hold their texture under a mash crust in the same way lamb mince does. Mushrooms give the savoury depth. The combination works because the structure is the same as the meat version."
+          }
+        ]
+      }
+    ]
+  }
+}

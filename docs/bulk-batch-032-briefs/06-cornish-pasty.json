@@ -1,0 +1,256 @@
+{
+  "slug": "cornish-pasty",
+  "title": "Cornish Pasty",
+  "subtitle": "Beef skirt, swede, potato, and onion in shortcrust, crimped along the top",
+  "excerpt": "A proper Cornish pasty has raw meat and vegetables folded raw into shortcrust pastry and baked together. The raw-fill method makes a pastry that is moist inside from the juices. The crimp goes along the top, not the side.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "The Cornish Pasty Association publishes a traditional specification. Public-domain method consistent with printed Cornish cookbooks from the early 20th century in the British Library. The raw-fill method is historically documented in Cornish miners' accounts.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 55,
+    "restingMinutes": 10,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unbaked, assembled pasties on a lined tray until solid, then bag. Bake from frozen at 180°C for 60 to 65 minutes.",
+    "batchable": true,
+    "batchNotes": "Double the quantities to make 8 pasties. Freeze half unbaked.",
+    "makeAheadNotes": "Assemble and refrigerate for up to 4 hours before baking.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "picnic"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "crimp",
+      "term": "Crimp",
+      "definition": "To seal and decorate the edge of a pasty or pie by pinching or pressing the pastry into a rope-like pattern. On a Cornish pasty, the crimp runs along the top and acts as a handle."
+    },
+    {
+      "slug": "shortcrust",
+      "term": "Shortcrust pastry",
+      "definition": "A crumbly, rich pastry made by rubbing cold fat into flour until the mixture resembles breadcrumbs, then binding with water or egg. It is used for both sweet and savoury pies and pastries."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A Cornish pasty holds raw beef, swede, potato, and onion inside shortcrust pastry, baked as one. Filling the pastry raw, rather than pre-cooking the filling, is what gives the finished pasty its characteristic moist, intensely savoury interior: the meat juices steam the vegetables from within. The crimp runs along the top edge and is the traditional way to seal the parcel."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Which cut to use",
+          "body": "Beef skirt is the traditional cut for a Cornish pasty: it is flavourful, affordable, and its thin fibres cook through in the time it takes the pastry to bake. Braising steak is a common substitute. Avoid minced beef; it turns grainy."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "braising-steak", "amount": 300, "unit": "g", "prepNote": "sliced thin, then cut into 1 cm pieces (use beef skirt if available)", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "swede", "amount": 150, "unit": "g", "prepNote": "peeled and very thinly sliced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "potato", "amount": 200, "unit": "g", "prepNote": "peeled and very thinly sliced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely sliced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "generous seasoning", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "generous seasoning", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "lard", "amount": 75, "unit": "g", "prepNote": "cold, diced", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "unsalted-butter", "amount": 75, "unit": "g", "prepNote": "cold, diced", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "a pinch", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for wash", "isOptional": false, "groupLabel": "For the pastry" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and rest the pastry" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rub the cold fat into the flour and salt with your fingertips until the mixture resembles fine breadcrumbs. This is the base of the "
+                  },
+                  {
+                    "type": "text",
+                    "text": "shortcrust",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "shortcrust" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": ". Add 5 to 6 tablespoons of cold water, one at a time, and bring together into a firm dough. Do not overwork. Wrap and chill for 30 minutes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 200°C. Divide the rested pastry into 4 equal portions. Roll each into a circle about 25 cm across and 3 mm thick."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Layer the filling onto one half of each circle: start with a few slices of potato, then swede, then beef, then onion. Season each layer generously with salt and pepper. The filling should be well-seasoned because the pastry will dilute the flavour."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Brush the edges of the circle with beaten egg. Fold the empty half of the pastry over the filling and press the edges together. Lift the pasty onto its base and bring the sealed edge up to the top. "
+                  },
+                  {
+                    "type": "text",
+                    "text": "Crimp",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "crimp" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": " the top edge by pushing and folding the pastry into a rope pattern. Brush with egg wash. Cut a small slit in the side."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake on a lined tray for 50 to 55 minutes until the pastry is deep golden. Rest for 10 minutes before eating; the filling will be very hot."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Filling is undercooked in the centre",
+              "cause": "Potato and swede sliced too thick, or oven temperature too high so the pastry browned before the filling cooked.",
+              "fix": "Slice potato and swede as thin as possible, no more than 3 mm. If the pastry browns too fast, cover loosely with foil and continue baking."
+            },
+            {
+              "symptom": "Pastry tears when crimping",
+              "cause": "Overfilled, or pastry was not cold enough and became too soft to handle.",
+              "fix": "Use less filling and work quickly. If the pastry warms up, chill the assembled pasties for 15 minutes before baking."
+            },
+            {
+              "symptom": "Filling is bland",
+              "cause": "Insufficient seasoning. Raw meat and vegetables need more salt than pre-cooked ones.",
+              "fix": "Season each layer generously. The filling should taste slightly over-seasoned raw; the heat mellows it."
+            },
+            {
+              "symptom": "Pastry is soggy underneath",
+              "cause": "Juices from the filling softened the base before the pastry set.",
+              "fix": "Bake on the bottom shelf of the oven for the first 20 minutes to firm the base, then move to the middle."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Cornish pasty was carried into the tin mines of Cornwall by miners who needed a self-contained, portable lunch that could be eaten without cutlery and reheated underground. The crimped top was both a handle and a means of identification, each family crimping in a different style. The protected status of the Cornish Pasty was formally granted in 2011. The recipe has not changed in any essential way for two centuries."
+          }
+        ]
+      }
+    ]
+  }
+}

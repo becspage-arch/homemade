@@ -1,0 +1,198 @@
+{
+  "slug": "scotch-broth",
+  "title": "Scotch Broth",
+  "subtitle": "Slow-cooked lamb with pearl barley, swede, carrot, and leek in a clear broth",
+  "excerpt": "Scotch broth is a substantial meal in a bowl: lamb neck simmered for 2 hours until tender, pearl barley swollen with the lamb's fat and flavour, and a tumble of root vegetables. The broth forms itself from the lamb and barley without any additional stock.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: Scotch barley broth entry. Scotch broth is documented from the early 18th century in Scottish cooking literature and represents the standard Scottish lamb and barley soup tradition.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 120,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freezes well. Thaw overnight and reheat gently, adding a splash of water if the barley has absorbed too much liquid.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make up to 3 days ahead and refrigerate. The flavour improves the next day.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "cosy"],
+    "temperatureCelsius": null,
+    "temperatureNote": "Hob only; no oven temperature required.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "broth",
+      "term": "Broth",
+      "definition": "A light, clear cooking liquid derived from meat, bones, or vegetables. Unlike a thick soup, a broth has a thin to medium body that comes from dissolved collagen and starch rather than from pureeing. In Scotch broth, the pearl barley thickens the liquid as it cooks."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Scotch broth builds its own stock as it cooks: the lamb neck releases collagen and fat over two hours of gentle simmering, and the pearl barley absorbs that flavour while simultaneously thickening the liquid. No additional stock is needed. The vegetables go in later so they do not overcook; the parsley and a squeeze of seasoning go in at the end."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "lamb-neck", "amount": 600, "unit": "g", "prepNote": "bone-in pieces if available", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pearl-barley", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": "each", "prepNote": "peeled and diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "swede", "amount": 1, "unit": "each", "prepNote": "about 300 g, peeled and diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "leek", "amount": 2, "unit": "each", "prepNote": "sliced into rounds", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "to season", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the {{lamb-neck}} of lamb neck pieces in a large pot. Cover with 1.8 litres of cold water. Bring to the boil and skim off any grey foam that rises to the surface. Reduce to a bare simmer and add the onion, thyme, bay leaves, and a generous pinch of salt."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the {{pearl-barley}} of pearl barley. Cover and simmer gently for 1 hour. The barley will swell and begin to thicken the "
+                  },
+                  {
+                    "type": "text",
+                    "text": "broth",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "broth" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": "."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the {{carrot}} carrot, swede, and {{leek}} leek. Continue simmering for 40 to 50 minutes until the vegetables are tender and the lamb is falling from the bone."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lift the lamb pieces out. Remove the meat from the bones, shred it, and return it to the pot. Discard the thyme stalks and bay leaves. Stir in the {{parsley-flat}} of parsley, taste, and season well. Rest for 10 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Broth is cloudy",
+              "cause": "Foam was not skimmed at the start, or the heat was too high.",
+              "fix": "Skim diligently for the first 10 minutes as the water comes to the boil. Keep the heat very gentle throughout: a rolling boil emulsifies the fat into the liquid and clouds it permanently."
+            },
+            {
+              "symptom": "Barley is still firm after 1 hour",
+              "cause": "Old barley or heat too low.",
+              "fix": "Pearl barley takes 40 to 60 minutes at a steady simmer. If still firm, continue cooking. Very old barley can take longer."
+            },
+            {
+              "symptom": "Broth tastes thin and flat",
+              "cause": "Not enough lamb, or too much water used.",
+              "fix": "Remove the lid for the final 20 minutes to let the broth reduce slightly. Season assertively just before serving."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Scotch broth is documented in Scottish cooking literature from the early 18th century and has changed little since. It is the Scottish version of what other traditions call a pot-au-feu or potaje: meat and vegetables simmered in water until the water becomes a broth. The pearl barley is the defining ingredient; it thickens and enriches the liquid without making it heavy. The dish improves overnight as the collagen from the lamb sets slightly in the cold and gives the next day's portion a fuller body."
+          }
+        ]
+      }
+    ]
+  }
+}

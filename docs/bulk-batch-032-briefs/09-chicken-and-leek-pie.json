@@ -1,0 +1,262 @@
+{
+  "slug": "chicken-and-leek-pie",
+  "title": "Chicken and Leek Pie",
+  "subtitle": "Tender chicken thighs and sweet leeks in a creamy white sauce under puff pastry",
+  "excerpt": "Chicken and leek pie is a lighter take on the chicken and mushroom version, with leeks softened in butter providing the body of the filling. The sauce is white, creamy, and well-seasoned. A puff pastry lid takes it to the table.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: chicken fricassee and white sauce methods. Leek and chicken combination documented in British regional cookery from the 18th century onward.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 55,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the assembled, unbaked pie for up to 3 months. Thaw overnight in the fridge and bake as normal, adding 10 minutes to the time.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the filling up to two days ahead and refrigerate. Top with pastry and bake on the day.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "cosy"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sweat",
+      "term": "Sweat",
+      "definition": "To cook vegetables gently in fat over a low heat until they soften and release their moisture, without taking on any colour. Sweating draws out sweetness and builds the base flavour of a sauce or filling."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chicken and leek pie uses the same white sauce base as chicken and mushroom pie, but the leeks carry a different flavour: softer, sweeter, and more distinctly British. The leeks need proper time in butter to soften fully before the sauce is built around them. Rushed, they will be fibrous in the finished pie."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "chicken-thighs-boneless", "amount": 8, "unit": "each", "prepNote": "cut into 3 cm pieces", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "leek", "amount": 3, "unit": "each", "prepNote": "white and pale green parts only, sliced into rounds", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": "leaves stripped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "plain-flour", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "stock-chicken", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "to season", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "puff-pastry", "amount": 375, "unit": "g", "prepNote": "ready-rolled or block", "isOptional": false, "groupLabel": "For the lid" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": "For the lid" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the filling" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season the {{chicken-thighs-boneless}} boneless chicken thigh pieces. Heat a little oil in a wide pan over a medium-high heat and brown the chicken in batches for 4 to 5 minutes until golden on the outside. Transfer to a plate; it does not need to be fully cooked through at this stage."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the same pan, melt a little butter over a low heat and "
+                  },
+                  {
+                    "type": "text",
+                    "text": "sweat",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sweat" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": " the {{leek}} leeks for 8 to 10 minutes, stirring occasionally, until completely soft and sweet. Add the {{garlic}} of garlic and the thyme leaves. Stir for 1 minute."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the sauce" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In a separate saucepan, melt the {{unsalted-butter}} of butter over a medium heat. Add the {{plain-flour}} of plain flour and stir for 2 minutes. Gradually whisk in the {{stock-chicken}} of warm chicken stock and the {{double-cream}} of double cream. Bring to a gentle simmer and cook for 5 minutes until thickened. Season well. Stir in the mustard if using."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the chicken, leek mixture, and sauce in one pan. Simmer gently for 10 minutes until the chicken is cooked through. Taste and adjust seasoning. Cool the filling before topping."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Top and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 200°C. Spoon the cooled filling into a pie dish. Roll the puff pastry to about 3 mm thick and lay over the top. Press the edges to seal, trim, and crimp. Brush with beaten egg. Cut two small slits in the centre."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 25 to 30 minutes until the pastry is deep golden and puffed. Rest for 10 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Leeks are still fibrous in the finished pie",
+              "cause": "They weren't cooked long enough before the sauce was added.",
+              "fix": "Give the leeks a full 10 minutes over low heat until they are completely soft and silky. They should offer no resistance when pressed with a spoon."
+            },
+            {
+              "symptom": "Sauce is too thick after baking",
+              "cause": "The sauce reduced further in the oven.",
+              "fix": "Make the sauce a little looser than seems right before assembly. It should coat a spoon but flow freely when tilted."
+            },
+            {
+              "symptom": "Pastry doesn't puff properly",
+              "cause": "Filling was too hot when the pastry went on, melting the butter layers.",
+              "fix": "Always use cold filling and cold pastry. Rest the assembled pie in the fridge for 20 minutes before baking if possible."
+            },
+            {
+              "symptom": "Filling leaks out during baking",
+              "cause": "Dish overfilled, or pastry edges weren't sealed firmly.",
+              "fix": "Leave 1 to 2 cm of headroom in the dish. Press the pastry edges firmly against the rim before crimping."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chicken and leek is a pairing that runs through Welsh and British cookery in many forms: soups, casseroles, tarts, and pies. The leek brings its own sweetness and a softer, less earthy flavour than mushrooms. This version sits at the family-dinner end of the spectrum: straightforward enough for a weeknight if the filling is made ahead, satisfying enough for a Sunday table. The white sauce holds its shape under the pastry and carries the chicken through the bake without drying."
+          }
+        ]
+      }
+    ]
+  }
+}

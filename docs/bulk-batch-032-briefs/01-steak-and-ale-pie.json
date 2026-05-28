@@ -1,0 +1,319 @@
+{
+  "slug": "steak-and-ale-pie",
+  "title": "Steak and Ale Pie",
+  "subtitle": "Chuck steak braised in dark stout, topped with a golden shortcrust lid",
+  "excerpt": "Deeply savoury braised chuck under a crisp shortcrust lid. The filling is made low and slow, two days ahead if you like, and the pie goes together in half an hour on the day.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: beef stewing and pie method. Eliza Acton, Modern Cookery for Private Families (1845): braised beef and pastry-lid technique.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 180,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the filling without the pastry lid, in portions. Thaw in the fridge overnight, reheat to a full simmer, reduce if needed, then top with fresh pastry and bake.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the filling up to two days ahead and refrigerate. Top with pastry and bake on the day.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "slowSunday", "cosy"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "braise",
+      "term": "Braise",
+      "definition": "A two-stage cooking method: first sear the meat in a hot pan to build colour, then cook it low and slow in a small amount of liquid with the lid on until the collagen breaks down and the meat turns tender."
+    },
+    {
+      "slug": "dredge",
+      "term": "Dredge",
+      "definition": "To coat food lightly in flour or another dry ingredient before cooking. The flour creates colour and flavour when the meat is seared, and later thickens the braising liquid as it cooks."
+    }
+  ],
+  "techniqueSlugs": ["braising"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steak and ale pie is braised chuck steak in a dark, sticky gravy, baked under a short pastry lid. The filling takes about two and a half hours of gentle oven heat; the pie itself is assembled and baked in thirty minutes. Most of the work is hands-off."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The sear is where the flavour starts. Brown the beef in batches over a properly hot pan, letting each piece sit without moving until it lifts cleanly from the base. A rushed, crowded sear produces grey meat and a thin gravy. A patient one gives the deep colour that carries through the whole dish."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-chuck", "amount": 900, "unit": "g", "prepNote": "cut into 4 cm cubes", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 3, "unit": "tbsp", "prepNote": "for dredging", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "vegetable-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "diced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stout", "amount": 330, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "to season", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "shortcrust-pastry", "amount": 500, "unit": "g", "prepNote": "ready-made or homemade", "isOptional": false, "groupLabel": "For the lid" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": "For the lid" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A heavy casserole dish with a tight-fitting lid is needed for the braise. The pie dish should be deep enough to hold the filling with a couple of centimetres of headroom for the pastry lid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the beef" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pat the "
+                  },
+                  {
+                    "type": "text",
+                    "text": "{{beef-chuck}} of beef chuck"
+                  },
+                  {
+                    "type": "text",
+                    "text": " dry with kitchen paper. Season well, then toss in the plain flour to "
+                  },
+                  {
+                    "type": "text",
+                    "text": "dredge",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dredge" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": " them lightly. Heat the vegetable oil in the casserole over a high flame until it shimmers."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Brown the beef in 3 or 4 batches so the pan stays hot. Give each piece good contact with the base and resist the urge to move it for 3 to 4 minutes; the meat will lift cleanly when the colour has formed. Transfer each batch to a plate and continue. Do not crowd the pan."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the filling" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce the heat to medium. Add a splash more oil if the pan is dry, then soften the {{onion}} chopped onions, {{carrot}} diced carrots, and {{celery}} sticks of celery for 8 to 10 minutes until the onion is soft and golden."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the {{garlic}} of crushed garlic and the {{tomato-puree}} of tomato puree. Stir for 2 minutes. Pour in the {{stout}} of stout and scrape up any sticky bits from the base. Add the {{stock-beef}} of beef stock, the Worcestershire sauce, {{bay-leaves}} of bay, and {{thyme}} of thyme. Return the browned beef and any resting juices."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to a gentle simmer, cover tightly, and "
+                  },
+                  {
+                    "type": "text",
+                    "text": "braise",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "braise" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": " in the oven at 160°C for 2 to 2.5 hours, until the beef is completely tender and the gravy is rich and thick. Remove the bay leaves and thyme stems. Taste and correct the seasoning. Let the filling cool fully before topping."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Top and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 200°C. Spoon the cooled filling into the pie dish. Roll the {{shortcrust-pastry}} of shortcrust pastry to about 4 mm thick, a little larger than the pie dish. Brush the rim of the dish with beaten egg, drape the pastry over, and press the edges to seal. Trim and crimp."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Brush the top with the beaten egg wash and cut two small slits to let steam escape. Bake for 30 to 35 minutes until the pastry is deep golden. Rest for 10 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Filling is too runny",
+              "cause": "The braise didn't reduce enough, or the lid was too loose.",
+              "fix": "Simmer the filling uncovered on the hob for 10 to 15 minutes until it thickens. Stir in a paste of 1 tsp cornflour mixed with a little cold water if needed."
+            },
+            {
+              "symptom": "Pastry is soggy",
+              "cause": "The filling was too hot when the pastry was laid on, causing steam to soak in from below.",
+              "fix": "Always cool the filling completely before topping. Set the pie dish on a preheated baking tray to help crisp the base."
+            },
+            {
+              "symptom": "Beef is still tough after braising",
+              "cause": "Insufficient time, or the oven was too hot and the collagen tightened rather than melted.",
+              "fix": "Return to the oven at 150°C with a splash more stock and check after another 30 to 45 minutes. Chuck needs genuine low heat to turn tender."
+            },
+            {
+              "symptom": "Pastry shrinks and pulls away from the rim",
+              "cause": "Pastry was not rested before rolling, or was stretched rather than draped over the dish.",
+              "fix": "Rest rolled shortcrust in the fridge for 15 minutes before using. Lay it over the dish without pulling; it will shrink less."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Meat pies have been part of British cooking since medieval times, and the dark-ale braise version became a pub-menu fixture in the industrial Midlands, where brewing and butchery ran side by side. the Victorian cookery writer Mrs Beeton gives a beef-and-kidney version in 1861 that is recognisably the same dish: sear, braise, top with pastry. The stout version became standard as pale ale gave way to porter in Victorian working-class cooking. It is a winter pie, built for cold kitchens and hungry people."
+          }
+        ]
+      }
+    ]
+  }
+}

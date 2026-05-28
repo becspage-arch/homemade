@@ -1,0 +1,205 @@
+{
+  "slug": "lancashire-hotpot",
+  "title": "Lancashire Hotpot",
+  "subtitle": "Slow-braised lamb with onion under a crisp, overlapping potato crust",
+  "excerpt": "Lancashire hotpot is defined by its potato lid: overlapping slices of potato laid over seasoned lamb and onion, baked for 2 hours until the lamb is completely tender and the potato is deeply golden and crisp on top. The braise happens below the lid; the crust crisps above.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "British regional tradition from Lancashire, north-west England. Lancashire hotpot is documented from the early 19th century and is one of the most distinctively regional British dishes. The potato crust is the defining characteristic, distinguishing it from other lamb stews.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 150,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze after the initial long bake, before the final crisping. Thaw overnight and bake at 200°C for 30 minutes to crisp the lid.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Can be assembled the day before. Add the potato lid, cover with foil, and refrigerate. The full 2-hour bake can be done on the day.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "cosy"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "Start at 160°C for the braise, then raise to 200°C for the final 30 minutes to crisp the potato lid.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "braise",
+      "term": "Braise",
+      "definition": "A slow-cooking method where food is first seared or layered in fat, then cooked in a small amount of liquid in a covered vessel over low heat. The combination of gentle heat and moisture breaks down connective tissue, making tough cuts tender and flavoursome."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lancashire hotpot is built in two stages: a slow, covered braise at 160°C for 2 hours, then an uncovered 30 minutes at 200°C to crisp the potato lid. The lamb releases its fat and collagen into the stock below; the potatoes absorb steam from above and crisp where they meet the dry oven air. The dish needs minimal attention once it goes in."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "lamb-neck", "amount": 800, "unit": "g", "prepNote": "cut into 4 cm pieces, bone-in for preference", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 3, "unit": "each", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "peeled and sliced into rounds", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-chicken", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 20, "unit": "g", "prepNote": "for dredging the lamb", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "to season", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "potato", "amount": 800, "unit": "g", "prepNote": "peeled and sliced 3 mm thick", "isOptional": false, "groupLabel": "For the lid" },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "melted, for brushing the potato lid", "isOptional": false, "groupLabel": "For the lid" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build and braise" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 160°C. Season the {{lamb-neck}} of lamb and toss in the {{plain-flour}} of flour. Heat a film of oil in a wide frying pan over a high heat and brown the lamb in batches. Transfer to a deep casserole or oven-safe pot."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the same pan, fry the {{onion}} sliced onion over a medium heat for 6 minutes until softened and beginning to colour. Add the {{carrot}} carrot, thyme, and bay. Tip over the lamb. Add the Worcestershire sauce and pour over the {{stock-chicken}} of stock."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Arrange the {{potato}} potato slices in overlapping layers over the top of the filling to form the lid. Brush generously with the {{unsalted-butter}} of melted butter and season. Cover tightly with a lid or foil and "
+                  },
+                  {
+                    "type": "text",
+                    "text": "braise",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "braise" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": " in the oven at 160°C for 2 hours."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Raise the oven temperature to 200°C. Remove the lid or foil and bake for a further 25 to 30 minutes until the potato lid is deeply golden and crisp. Rest for 10 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Potato lid is soggy and pale",
+              "cause": "Lid left on for the final crisping stage, or potato slices too thick.",
+              "fix": "Remove the lid or foil completely for the final 30 minutes. Potato slices should be no more than 3 mm; thicker slices take longer to crisp and can become stodgy."
+            },
+            {
+              "symptom": "Lamb is still chewy after 2 hours",
+              "cause": "Oven temperature too low, or the casserole lid was not tight enough.",
+              "fix": "Ensure a tight seal for the braise stage. If the lamb is still tough, return to the oven with the lid on for 30 more minutes before the crisping stage."
+            },
+            {
+              "symptom": "Filling is too dry",
+              "cause": "Too much liquid evaporated during the uncovered crisping stage, or not enough stock at the start.",
+              "fix": "Add an extra 100 ml of stock before going in if the filling looks dry after 2 hours. The braise should have enough liquid to cover the bottom third of the pot."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lancashire hotpot is one of the most regionally specific British dishes. It is associated with the industrial towns of Lancashire in north-west England, where it was an economical way to cook the cheaper cuts of lamb. The pot was assembled in the morning, left in a low oven through the working day, and the lid removed in the final stretch to crisp the potato. The dish appears in British cookbooks from the early 19th century and has not changed in its essentials since: lamb, onion, potato lid, low heat, patience."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "slug": "chicken-and-mushroom-pie",
+  "title": "Chicken and Mushroom Pie",
+  "subtitle": "Tender chicken and chestnut mushrooms in a white sauce, under golden puff pastry",
+  "excerpt": "Chicken and mushroom pie is a white-sauce filling under puff pastry. The filling is creamy and well-seasoned, the pastry is golden and flaky. It works with leftover roast chicken as well as fresh poached thighs.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: white sauce and chicken pie techniques. Eliza Acton, Modern Cookery for Private Families (1845): cream fricassee method.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 55,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the assembled, unbaked pie for up to 3 months. Thaw overnight in the fridge and bake as normal, adding 10 minutes to the time.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the filling up to two days ahead and refrigerate. Top with pastry and bake on the day.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "cosy"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "roux",
+      "term": "Roux",
+      "definition": "A cooked mixture of equal weights of flour and fat, used to thicken sauces. The flour and butter are stirred together over heat until the raw flour taste is gone before liquid is added."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chicken and mushroom pie uses a simple white sauce as its base: butter, flour, stock, cream. The chicken and mushrooms are cooked first, then folded in and finished under a puff pastry lid. It is one of the easier pies in the repertoire, and it takes leftover roast chicken just as well as fresh poached thighs."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "chicken-thighs-boneless", "amount": 8, "unit": "each", "prepNote": "cut into 3 cm pieces", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "chestnut-mushrooms", "amount": 300, "unit": "g", "prepNote": "quartered", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": "leaves stripped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "plain-flour", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "stock-chicken", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "to season", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "puff-pastry", "amount": 375, "unit": "g", "prepNote": "ready-rolled or block", "isOptional": false, "groupLabel": "For the lid" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": "For the lid" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the filling" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season the {{chicken-thighs-boneless}} boneless chicken thigh pieces. Heat a little oil in a wide pan over a medium-high flame and brown the chicken in batches for 4 to 5 minutes until golden on the outside. Transfer to a plate; it does not need to be fully cooked through at this stage."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the same pan, add a little butter and fry the {{chestnut-mushrooms}} of quartered chestnut mushrooms over a high heat for 5 to 6 minutes until they are golden and any water has evaporated. Add the {{onion}} diced onion and {{garlic}} of garlic and cook for 3 minutes more. Add the thyme leaves."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the sauce" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In a separate saucepan, melt the {{unsalted-butter}} of butter over a medium heat. Add the plain flour and stir for 2 minutes to make a "
+                  },
+                  {
+                    "type": "text",
+                    "text": "roux",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "roux" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": ". Gradually whisk in the {{stock-chicken}} of warm chicken stock and the {{double-cream}} of double cream. Bring to a gentle simmer and cook for 5 minutes until thickened. Season well. Stir in the mustard if using."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the chicken and mushroom mixture with the sauce in one pan. Simmer gently for 10 minutes until the chicken is cooked through. Taste and adjust. Cool the filling before topping."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Top and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 200°C. Spoon the cooled filling into a pie dish. Roll the puff pastry to about 3 mm thick and lay over the top. Press the edges to seal, trim, and crimp. Brush with beaten egg. Cut two small slits in the centre."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 25 to 30 minutes until the pastry is deep golden and puffed. Rest for 10 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Pastry doesn't puff properly",
+              "cause": "Filling was too hot when the pastry was laid on, melting the butter layers, or the pastry wasn't cold when it went into the oven.",
+              "fix": "Always use cold filling and cold pastry. Rest the assembled pie in the fridge for 20 minutes before baking if possible."
+            },
+            {
+              "symptom": "Sauce is too thick after baking",
+              "cause": "The sauce reduced further in the oven.",
+              "fix": "Make the sauce slightly looser than you think you need before baking. It should coat the back of a spoon, not hold a firm shape."
+            },
+            {
+              "symptom": "Chicken is dry",
+              "cause": "Overcooked in the browning stage, and then overcooked again in the oven.",
+              "fix": "Brown quickly to get colour, not to cook through. The filling simmers in the sauce for 10 minutes, which is enough."
+            },
+            {
+              "symptom": "Filling leaks out of the pastry during baking",
+              "cause": "Filling overfilled the dish, or the pastry edges weren't sealed tightly.",
+              "fix": "Leave 1 to 2 cm of headroom in the dish. Press and crimp the edges firmly against the rim of the dish."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The chicken-and-white-sauce pie sits at the practical end of British cooking: it is what happens when yesterday's roast chicken and a packet of mushrooms from the fridge meet a sheet of pastry. The formula is older than that convenience suggests. Fricassee, which is chicken in a cream sauce without the pastry lid, appears in the Victorian cookery writer Mrs Beeton and in Eliza Acton before her. The pie lid makes it more substantial and more forgiving. The filling reheats from the fridge and will hold in the oven while everything else comes together."
+          }
+        ]
+      }
+    ]
+  }
+}

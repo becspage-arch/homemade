@@ -1,0 +1,234 @@
+{
+  "slug": "steak-and-mushroom-pie",
+  "title": "Steak and Mushroom Pie",
+  "subtitle": "Braised beef and chestnut mushrooms in a rich gravy under golden puff pastry",
+  "excerpt": "Steak and mushroom pie uses the same method as the kidney version: a long, slow braise of braising steak, a deep gravy, and a puff pastry lid baked golden. The mushrooms provide body and earthiness in place of the kidney. The result is a reliable pub-style pie with no contentious ingredients.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "British pub cookery tradition. The steak and mushroom pie is a widely documented variant of the British beef pie, established as a standard menu item in British pubs and restaurants from the mid-20th century.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 150,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the cooked filling separately, cooled. Thaw overnight in the fridge, top with pastry, and bake at 200°C for 30 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the filling up to two days ahead and refrigerate. Top with pastry on the day and bake.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "cosy"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "braise",
+      "term": "Braise",
+      "definition": "A slow-cooking method where food is first browned in hot fat, then cooked in a small amount of liquid in a covered pot over low heat. The combination of dry and moist heat breaks down tough connective tissue, making cheaper cuts of meat tender and flavoursome."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steak and mushroom pie follows the same logic as steak and kidney: braise the beef low and slow, build the gravy in the process, cool the filling, and finish under puff pastry. The mushrooms are not a garnish added at the end; they go in from the start and become part of the gravy. The long braise is what separates a good pie from a tough one."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "braising-steak", "amount": 600, "unit": "g", "prepNote": "cut into 3 cm pieces", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "chestnut-mushrooms", "amount": 300, "unit": "g", "prepNote": "quartered", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 30, "unit": "g", "prepNote": "for dredging", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-beef", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "to season", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "puff-pastry", "amount": 375, "unit": "g", "prepNote": "ready-rolled or block", "isOptional": false, "groupLabel": "For the lid" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": "For the lid" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise the filling" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season the braising steak and toss in the {{plain-flour}} of plain flour. Heat a film of oil in a wide frying pan over a high heat and brown the beef in batches for 3 to 4 minutes per batch, turning once. Transfer to a casserole."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce the heat to medium. Add the {{onion}} diced onion to the frying pan and cook for 4 minutes, scraping up the residue. Add the {{garlic}} of garlic and tomato puree and stir for 1 minute. Tip everything into the casserole."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the {{chestnut-mushrooms}} of mushrooms to the casserole. Pour over the {{stock-beef}} of beef stock and add the Worcestershire sauce, thyme, and bay. Season well. Bring to a simmer, cover, and "
+                  },
+                  {
+                    "type": "text",
+                    "text": "braise",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "braise" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": " over the lowest heat for 2 hours until the beef is completely tender. Remove the lid for the final 20 minutes to reduce the gravy. Leave to cool completely."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Top and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 200°C. Spoon the cooled filling into a deep pie dish. Roll the puff pastry to fit the top with a little overhang. Lay it over the dish, press the edges to seal, and trim. Brush with beaten egg and cut two slits in the centre."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 25 to 30 minutes until the pastry is deep golden and the filling is bubbling at the edges. Rest for 10 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Beef is still tough after 2 hours",
+              "cause": "The heat was too high during braising, causing the meat to seize rather than relax.",
+              "fix": "Braise at the lowest possible heat: the liquid should only just tremble, not simmer actively. Add a splash more stock and continue for another 30 minutes."
+            },
+            {
+              "symptom": "Gravy is too thin",
+              "cause": "The lid stayed on throughout, preventing any reduction.",
+              "fix": "Remove the lid for the final 20 to 30 minutes of braising. If the filling is still loose when cold, transfer the liquid to a small pan, reduce by half, and return it to the filling."
+            },
+            {
+              "symptom": "Pastry is pale and soft on the underside",
+              "cause": "Filling was too hot when the pastry went on, or the dish is too deep.",
+              "fix": "Cool the filling completely before adding the pastry. Place the dish on a hot baking sheet in the oven to give the base of the filling more heat."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steak and mushroom pie is the version of the British beef pie that requires no persuasion. Without kidney, it asks nothing contentious of the diner. The mushrooms do a different job to kidney: they absorb the beef gravy and provide earthy bulk rather than their own sharp note. The result is a gentler, rounder pie that has become the default on British pub menus precisely because it offends no one and satisfies everyone."
+          }
+        ]
+      }
+    ]
+  }
+}

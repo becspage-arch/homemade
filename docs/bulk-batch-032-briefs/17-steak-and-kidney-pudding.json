@@ -1,0 +1,296 @@
+{
+  "slug": "steak-and-kidney-pudding",
+  "title": "Steak and Kidney Pudding",
+  "subtitle": "Slow-cooked beef and kidney in a rich gravy, encased in a steamed suet crust",
+  "excerpt": "Steak and kidney pudding is the steamed version of the pie: the same filling, but enclosed in a soft suet crust and cooked over boiling water for three hours. The result is altogether more yielding, the gravy trapped inside the pastry throughout the cook.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: beef and kidney pudding entry, suet crust method, steaming instructions. The steamed suet pudding is documented as a distinct British dish from the late 18th century.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 35,
+    "cookMinutes": 180,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pudding can be assembled the evening before and steamed the next day. Keep refrigerated and add 20 minutes to the steaming time.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "cosy"],
+    "temperatureCelsius": null,
+    "temperatureNote": "Steamed on the hob; no oven temperature required.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "pudding-basin", "isOptional": false },
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "foil", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "suet-crust",
+      "term": "Suet crust",
+      "definition": "A pastry made from flour and shredded suet (the hard fat around beef or mutton kidneys), mixed with water into a soft, sticky dough. Steaming turns it light and yielding, quite unlike baked shortcrust. Lard can substitute for suet in most recipes."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steak and kidney pudding is older and more distinctly British than the pie version. The suet crust steams soft and yielding around the filling; the gravy, sealed inside for three hours, concentrates into something deeply savoury. It is the kind of dish that requires no accompaniment beyond mashed potato and an afternoon at home."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Suet and its substitutes",
+          "body": "Traditional suet crust uses shredded beef suet. Lard is the most practical substitute: use it in the same quantity and the crust will be only marginally less light. Vegetable suet also works. The crust must be soft and slightly sticky before steaming; don't be alarmed if it seems looser than ordinary pastry dough."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "braising-steak", "amount": 500, "unit": "g", "prepNote": "cut into 2 cm pieces", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "ox-kidney", "amount": 200, "unit": "g", "prepNote": "white core removed, cut into 2 cm pieces", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 30, "unit": "g", "prepNote": "for dredging", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-beef", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "to season", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the suet crust" },
+            { "ingredientSlug": "lard", "amount": 100, "unit": "g", "prepNote": "coarsely grated or finely diced (or use shredded beef suet)", "isOptional": false, "groupLabel": "For the suet crust" },
+            { "ingredientSlug": "baking-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the suet crust" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "a pinch", "isOptional": false, "groupLabel": "For the suet crust" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the filling" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season the braising steak and ox kidney and toss in the {{plain-flour}} of plain flour. Heat a film of oil in a wide frying pan over a high heat and brown the meat in batches for 3 minutes, turning once, until well coloured. Transfer to a bowl."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the same pan, fry the {{onion}} diced onion for 4 minutes until softened, scraping up the residue. Add to the bowl with the meat. Stir in the Worcestershire sauce and season well. Set aside to cool while you make the pastry."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the suet crust and line the basin" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the {{plain-flour}} of plain flour, {{lard}} of grated lard (or beef suet), baking powder, and salt in a bowl. Mix well. Add enough cold water, a tablespoon at a time, to bring the mixture to a soft, slightly sticky dough. This is the "
+                  },
+                  {
+                    "type": "text",
+                    "text": "suet crust",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "suet-crust" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": "; it should feel softer and stickier than ordinary pastry dough."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Grease a 1.2-litre pudding basin well with butter. Reserve one-quarter of the dough for the lid. Roll the remaining dough into a circle large enough to line the basin with a little overhang. Press it gently into the basin, smoothing against the sides."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill, seal, and steam" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pack the browned meat and onion into the lined basin. Pour over the {{stock-beef}} of beef stock. Roll the reserved dough into a circle to fit the top. Lay it over the filling and press the edges of the lid against the sides of the lining to seal."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cover the basin with a double layer of greased foil, pleated once across the centre to allow the pudding to expand. Tie securely with string around the rim."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the basin in a large pot and add boiling water to come halfway up the sides. Cover the pot and steam over a medium heat for 3 hours, checking the water level every 45 minutes and topping up with boiling water as needed. Do not let the pot run dry."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove from the pot and leave to settle for 5 minutes. Run a knife around the edge and turn out onto a deep plate, or serve directly from the basin."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Crust is dense and stodgy",
+              "cause": "Too much water in the dough, or the pan ran out of water during steaming.",
+              "fix": "Add water gradually until the dough just comes together. A suet crust should be soft, not wet. Keep the water topped up throughout steaming."
+            },
+            {
+              "symptom": "Filling is dry",
+              "cause": "Not enough stock added, or the seal wasn't tight.",
+              "fix": "The beef and kidney will release their own juices during steaming, but they need the initial stock as a base. Check the lid is well sealed before steaming."
+            },
+            {
+              "symptom": "Pudding sticks to the basin",
+              "cause": "Basin wasn't greased well enough.",
+              "fix": "Grease the basin generously with butter, covering the base and sides completely. A circle of greased baking paper in the base also helps."
+            },
+            {
+              "symptom": "Beef is still tough after 3 hours",
+              "cause": "The water level dropped and the pudding stopped steaming properly.",
+              "fix": "Check and top up the water every 45 minutes without fail. If the pudding steamed properly for 3 hours and the beef is still tough, it needs longer: return to the heat for 30 minutes more."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steak and kidney pudding is a distinctly British form: a savoury dish cooked by steaming in a basin, a technique that runs from suet puddings through to Christmas pudding and Sussex pond pudding. The combination of beef, kidney, and suet crust was established by the mid-19th century and the Victorian cookery writer Mrs Beeton gives a version that has not changed in any substantial way. The pudding is a winter dish, patient and warming. It does not travel well; it must be eaten at the table, still in its basin or just turned out, with mash and a glass of something dark."
+          }
+        ]
+      }
+    ]
+  }
+}

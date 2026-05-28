@@ -1,0 +1,176 @@
+{
+  "slug": "cheese-on-toast",
+  "title": "Cheese on Toast",
+  "subtitle": "Thick-cut bread toasted and loaded with melted mature cheddar under the grill",
+  "excerpt": "Cheese on toast is the simpler sibling of Welsh rarebit: no sauce, no roux. Grated cheddar is piled onto toast and placed under a very hot grill until bubbling and brown. The result depends entirely on using good cheese and getting the grill hot enough.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "British domestic cookery. Cheese on toast is documented as a standard British quick meal from the 19th century, distinct from Welsh rarebit by the absence of a sauce. It represents the simplest form of the grilled cheese category.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 8,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["VEGETARIAN"],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": "Finished under a hot grill; no oven temperature required.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "grill",
+      "term": "Grill",
+      "definition": "To cook food directly below an overhead heat source, browning the surface rapidly with radiant heat. In British cooking, 'grill' refers to the overhead element inside an oven, not a barbecue. A very hot grill gives colour in minutes without significantly heating the interior of the food."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cheese on toast is the simplest version of a grilled cheese dish. There is no sauce, no roux, no technique beyond choosing good cheese, toasting the bread first, and getting the grill hot. The variables that matter are the bread (thick enough to support the cheese without going soggy), the cheese (mature cheddar with enough fat to melt without seizing), and the grill temperature (high enough to brown the cheese before the toast overcooks)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "bread-white", "amount": 2, "unit": "each", "prepNote": "thick-cut slices", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cheddar", "amount": 120, "unit": "g", "prepNote": "mature, coarsely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tsp", "prepNote": "optional", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "worcestershire-sauce", "amount": null, "unit": "tsp", "prepNote": "a few drops, optional", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the grill to its highest setting. Toast the {{bread-white}} bread slices until pale golden on one side only, under the grill or in a toaster."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "If using, spread a thin layer of mustard on the toasted side. Pile the {{cheddar}} of grated cheddar thickly over the toast, covering it right to the edges. Add a few drops of Worcestershire sauce if using, and a grind of black pepper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place on a baking tray and "
+                  },
+                  {
+                    "type": "text",
+                    "text": "grill",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "grill" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": " close to the element for 3 to 4 minutes until the cheese is bubbling and deeply golden in patches. Watch it closely; it can go from golden to burnt in under a minute."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Cheese is pale and greasy rather than browned",
+              "cause": "Grill not hot enough, or the tray placed too far from the element.",
+              "fix": "The grill must be at maximum and the tray placed as close to the element as possible. Cheese needs high radiant heat to brown; low heat just melts it without colour."
+            },
+            {
+              "symptom": "Toast is soggy under the cheese",
+              "cause": "Bread not pre-toasted, or bread too thin.",
+              "fix": "Pre-toast the bread before adding the cheese. Thick-cut bread with a firmer structure holds up better under the weight and moisture of melted cheese."
+            },
+            {
+              "symptom": "Cheese slides off when eaten",
+              "cause": "Too much cheese added in a single thick layer, or spread to the very edge without adhering.",
+              "fix": "Press the cheese gently onto the toast before grilling so it has contact with the surface. The mustard layer, if used, also helps it adhere."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cheese on toast and Welsh rarebit occupy adjacent positions in British cooking. The rarebit is the more elaborate, sauce-based version; cheese on toast is the daily domestic version that requires no preparation beyond grating cheese and operating a grill. Both belong to a tradition of grilled cheese dishes documented in British cookbooks since the 18th century. The dish is at its best with mature or extra-mature cheddar; a mild cheese does not have enough flavour to carry the dish, and it runs rather than bubbles under the grill."
+          }
+        ]
+      }
+    ]
+  }
+}

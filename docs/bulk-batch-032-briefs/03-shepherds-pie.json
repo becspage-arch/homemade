@@ -1,0 +1,238 @@
+{
+  "slug": "shepherds-pie",
+  "title": "Shepherd's Pie",
+  "subtitle": "Lamb mince with rosemary and onion under a buttery mashed-potato crust",
+  "excerpt": "Shepherd's pie uses lamb mince where cottage pie uses beef. The filling is quicker and lighter than a braise, with rosemary doing most of the seasoning work. The mash goes on top and browns in the oven.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136: minced mutton and potato crust entry. The name shepherd's pie (lamb) versus cottage pie (beef) was established in British domestic cookbooks by the 1880s.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 55,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the assembled, unbaked pie for up to 3 months. Thaw overnight in the fridge, then bake covered with foil at 180°C for 40 minutes, uncovering for the last 10 to brown the top.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble up to 24 hours ahead and refrigerate. Add 10 minutes to the baking time.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "kidFriendly"],
+    "temperatureCelsius": 190,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "masher", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "fond",
+      "term": "Fond",
+      "definition": "The browned, sticky residue left in a pan after meat has been seared or fried. It is highly flavourful and should be dissolved into the sauce by adding liquid and scraping the base."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Shepherd's pie is made with lamb mince, as opposed to the beef-mince cottage pie. The filling is quicker than a long braise: the mince browns, the vegetables soften, the stock reduces, and rosemary carries most of the seasoning. Mashed potato goes on top and the whole thing bakes for half an hour."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "lamb-mince", "amount": 700, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "rosemary", "amount": 2, "unit": "sprig", "prepNote": "leaves stripped and finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-beef", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "peas-frozen", "amount": 100, "unit": "g", "prepNote": null, "isOptional": true, "groupLabel": "For the filling" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "g", "prepNote": "to season", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "potato", "amount": 1200, "unit": "g", "prepNote": "peeled and cut into chunks", "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "whole-milk", "amount": 80, "unit": "ml", "prepNote": "warmed", "isOptional": false, "groupLabel": "For the mash" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the filling" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat a wide, heavy pan over a high flame. Add the {{lamb-mince}} of lamb mince in one layer and leave it for 3 to 4 minutes without touching it, until a brown crust forms. Break it up, stir, and continue cooking until there is no pink remaining. Drain off excess fat if the mince is fatty."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the {{onion}} diced onions and {{carrot}} diced carrots. Reduce the heat to medium and cook for 8 minutes until the onion is soft. Add the {{garlic}} of garlic and the rosemary and stir for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in the tomato puree and cook for 2 minutes. Add the Worcestershire sauce and the {{stock-beef}} of stock. Scrape up the "
+                  },
+                  {
+                    "type": "text",
+                    "text": "fond",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fond" } }]
+                  },
+                  {
+                    "type": "text",
+                    "text": " from the base. Season well and simmer uncovered for 20 minutes until the filling is thick. Stir in the frozen peas for the last 2 minutes if using. Pour into a baking dish."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mash and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Boil the {{potato}} of potato chunks in well-salted water for 15 to 20 minutes until tender. Drain, let steam escape for a minute, then mash with the {{unsalted-butter}} of butter and {{whole-milk}} of warm milk until smooth. Season well."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spoon the mash over the filling and spread to the edges. Score the surface with a fork to create ridges. Bake at 190°C for 25 to 30 minutes until golden and bubbling at the edges. Rest for 5 minutes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Filling is greasy",
+              "cause": "Lamb mince holds more fat than beef and the excess wasn't drained.",
+              "fix": "After browning the mince, tilt the pan and spoon off the fat, or drain in a colander before returning to the pan."
+            },
+            {
+              "symptom": "Mash is too stiff to spread",
+              "cause": "Not enough liquid or butter, or the potatoes were overcooked and lost too much moisture.",
+              "fix": "Beat in a little more warm milk, one tablespoon at a time, until the mash loosens to a spreadable consistency."
+            },
+            {
+              "symptom": "Lamb flavour is bland",
+              "cause": "Not enough rosemary, or the fat was drained along with the flavour.",
+              "fix": "Add a little more rosemary and an extra teaspoon of Worcestershire sauce. Taste after the filling has reduced and season again before topping."
+            },
+            {
+              "symptom": "Top browns unevenly",
+              "cause": "Mash not spread to even depth, or oven temperature is inconsistent.",
+              "fix": "Use a fork or palette knife to smooth the mash to an even 1 to 1.5 cm thickness. Rotate the dish halfway through baking."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Shepherd's pie and cottage pie are so closely related that older cookbooks use the names interchangeably. The lamb version appears under that specific name from the late Victorian period, when cheap lamb offcuts and leftover roast shoulder were the natural filling. The dish is a Monday use for Sunday's roast leg, though fresh mince works just as well. Rosemary is the herb that separates it from the beef version; without it, the two pies are identical in structure."
+          }
+        ]
+      }
+    ]
+  }
+}
