@@ -3,6 +3,11 @@
 @theme {
   /* Primary palette */
   --color-linen-cream: #f5f0e8;
+  /* Alias for the cream — every component file uses --color-cream;
+     the variable was historically undefined and silently fell back to
+     the inherited text colour (warm-taupe), making cream text
+     invisible on dark backgrounds. */
+  --color-cream: #f5f0e8;
   --color-soft-parchment: #efe6d6;
   --color-oat: #e8ddc8;
   --color-sage: #6b7558;

@@ -92,8 +92,8 @@ export default async function HomePage() {
             <HeroOverlay
               href={`/${data.hero.project.category.slug}/${data.hero.project.slug}`}
               imageMedia={data.hero.project.hero}
-              overline="Continue making"
-              eyebrow={data.hero.project.category.name}
+              overline={null}
+              eyebrow={null}
               title={data.hero.project.title}
               excerpt={data.hero.project.excerpt}
               ctaLabel="Pick up where you left off →"
@@ -104,11 +104,11 @@ export default async function HomePage() {
             <HeroOverlay
               href={`/${data.hero.tutorial.category.slug}/${data.hero.tutorial.slug}`}
               imageMedia={data.hero.tutorial.hero}
-              overline="This week's editorial pick"
-              eyebrow={data.hero.tutorial.category.name}
+              overline={null}
+              eyebrow={null}
               title={data.hero.tutorial.title}
               excerpt={data.hero.tutorial.excerpt}
-              ctaLabel="Read the guide →"
+              ctaLabel={heroCtaLabel(data.hero.tutorial.category.slug)}
             />
           )}
 
@@ -250,4 +250,20 @@ export default async function HomePage() {
       <CategoryImageTiles categories={data.allCategories} />
     </div>
   )
+}
+
+/**
+ * Per-category CTA verb for the editorial-pick hero. Cooking and baking
+ * get domain verbs; everything else falls to the generic "Start now".
+ * Sentence case in the source; CSS uppercases at render time.
+ */
+function heroCtaLabel(categorySlug: string): string {
+  switch (categorySlug) {
+    case 'cooking':
+      return 'Start cooking →'
+    case 'baking':
+      return 'Start baking →'
+    default:
+      return 'Start now →'
+  }
 }

@@ -10,7 +10,7 @@ interface MediaLike {
 interface HeroOverlayProps {
   href: string
   imageMedia: MediaLike | null
-  overline: string
+  overline?: string | null
   eyebrow?: string | null
   title: string
   excerpt?: string | null
@@ -53,7 +53,7 @@ export function HeroOverlay({
       </span>
       <span className="home-hero-gradient" aria-hidden="true" />
       <span className="home-hero-content-bottom">
-        <span className="home-hero-overline">{overline}</span>
+        {overline && <span className="home-hero-overline">{overline}</span>}
         {eyebrow && <span className="home-hero-eyebrow">{eyebrow}</span>}
         <h1 className="home-hero-title">{title}</h1>
         {excerpt && <p className="home-hero-excerpt">{excerpt}</p>}
