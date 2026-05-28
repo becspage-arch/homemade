@@ -1,0 +1,271 @@
+{
+  "slug": "zine-editorial-grid",
+  "title": "Zine editorial grid",
+  "subtitle": "Understanding column grids and margins for consistent zine page layout",
+  "excerpt": "An editorial grid is an invisible framework of columns, margins, and baselines that organises text and images on the page. A consistent grid is what separates a zine that reads well from one that feels random. A one-column grid suffices for text-heavy zines; a two-column grid allows image and text to sit side by side. Setting the margins and column width before writing saves reformatting later.",
+  "type": "READING",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "zines",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Editorial grid theory is documented in twentieth-century graphic design and typography literature. Josef Muller-Brockmann, Grid Systems in Graphic Design (1981, still in print), is the canonical reference. No pre-1928 source covers grid layout as applied to zines specifically. Synthesised from contemporary craft and typography documentation.",
+  "recipeTools": [
+    {
+      "slug": "ruler",
+      "isOptional": false
+    },
+    {
+      "slug": "pencil",
+      "isOptional": false
+    },
+    {
+      "slug": "metal-ruler-15cm",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "column-grid",
+      "term": "Column grid",
+      "definition": "A layout framework that divides the page into vertical columns of equal width, with a gutter (gap) between each column. Text and images are placed within column units."
+    },
+    {
+      "slug": "text-margin",
+      "term": "Text margin",
+      "definition": "The blank area between the page edge and the live area (text and image area). Inside (spine) margins are typically wider than outside (fore-edge) margins to allow for binding."
+    },
+    {
+      "slug": "baseline-grid",
+      "term": "Baseline grid",
+      "definition": "A horizontal grid of evenly spaced lines on which the bottom of each line of text sits. Aligning body text to a baseline grid ensures consistent vertical rhythm across columns."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "column-grid",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "column-grid"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " does not restrict a layout. It gives it a repeating structure so the reader's eye can move from page to page without having to re-learn where the content is. A zine without a grid can still look good, but maintaining visual consistency across 12 or 20 pages by eye alone is much harder."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Setting the margins"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "text-margin",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "text-margin"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " proportions matter as much as their absolute size. A traditional starting point for a hand-bound booklet is: inner margin 12 mm, outer margin 15 mm, top margin 15 mm, bottom margin 20 mm. The bottom margin is largest because the eye expects the text block to sit slightly above the visual centre of the page."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "One-column and two-column grids"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "One column: the full live area (page minus margins) is a single text block. This works for prose-heavy zines and is the simplest to maintain."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Two columns: divide the live area into two equal columns with a 4 to 6 mm gutter between them. One column can hold body text while the other holds images, captions, or pull quotes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Three columns: fine for A4-sized zines, but cramped at A6 or half-letter. Body text at 10 pt in a column narrower than 45 mm becomes hard to read."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The baseline grid"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "baseline-grid",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "baseline-grid"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " interval is set at the body text line spacing: if the body text is 11 pt on 14 pt leading, the baseline grid interval is 14 pt (approximately 5 mm). Headings and images are placed to land on a multiple of this interval, so the text columns align when seen side by side."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Marking a hand-drawn grid"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mark the four margin lines in pencil on a master template sheet."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mark the column division and gutter if using a two-column layout."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rule baseline intervals across the live area. Place this template under each zine page as a guide for hand-lettered layouts."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
