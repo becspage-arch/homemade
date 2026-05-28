@@ -1,0 +1,126 @@
+{
+  "slug": "calligraphy-border-design",
+  "title": "Calligraphy border design with a broad-edge nib",
+  "subtitle": "Building decorative rule lines, vine borders, and geometric frames",
+  "excerpt": "A calligraphy border uses the same broad-edge nib as the text inside it. Simple borders can be built from ruled lines in varied weights; more elaborate ones use vine scrolls, diamond patterns, and pen-made interlace. The key is planning the border width before ruling the page.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edward Johnston, Writing and Illuminating and Lettering (1906), public domain, Internet Archive, chapters on borders and decoration. Johnston describes rule-line borders, vine borders, and their relationship to the letter height.",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+    { "slug": "nib-mitchell-roundhand-6", "isOptional": false },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "iron-gall-ink", "isOptional": false },
+    { "slug": "cartridge-paper-220", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "tracing-paper", "isOptional": false },
+    { "slug": "light-box-a4", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rule-line-border",
+      "term": "Rule-line border",
+      "definition": "A calligraphy border made from parallel horizontal and vertical lines drawn with a broad-edge nib and ruler. The simplest form of calligraphic framing."
+    }
+  ],
+  "techniqueSlugs": ["calligraphy-border-construction"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A border drawn with the same nib as the text it frames looks as though it belongs on the page; a border drawn with a different tool or at a different weight reads as a separate element. The practical rule: the inner border line is at the weight of the text's minor strokes, and the outer border line is at the weight of the text's major strokes. For a Mitchell size 3 text, the inner line uses a size 6 nib (thinner); the outer line uses a size 0 or size 1 (thicker)."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Mitchell Roundhand nib, size 3 (slug: nib-mitchell-roundhand-3)",
+              "description": "For the main text and mid-weight border lines."
+            },
+            {
+              "name": "Mitchell Roundhand nib, size 6 (slug: nib-mitchell-roundhand-6)",
+              "description": "For the finest border lines (inner rule lines, vine stems)."
+            },
+            {
+              "name": "Iron-gall ink (slug: iron-gall-ink)",
+              "description": "Use the same ink for both text and border."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Rule-line borders" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "text": "rule-line border",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rule-line-border" } }]
+          },
+          {
+            "type": "text",
+            "text": " is the simplest form: a rectangle of ruled lines. Plan it before writing the text. Mark the text area dimensions lightly in pencil, then mark a second rectangle 6 mm outside the first for the inner border and a third rectangle 3 mm outside the second for the outer border. Rule the inner lines with the size 6 nib and the outer lines with the size 3 nib. The corners are simply overlapped; the overlap reads as a corner ornament if kept consistent."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Diamond and square patterns" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Between the two rule lines, small repeated shapes can be added. A diamond is a square rotated 45° and drawn in two pen strokes: one diagonal down-left and one diagonal down-right, meeting at the foot. At pen angle 30°, the two strokes are at roughly equal weight. Equally spaced diamonds fill the border strip. Spacing: centre each diamond over a nib-width interval; for a size 3 nib, one diamond every 4-5 mm along the border strip."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Vine borders" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A vine border uses a continuous S-curve (the vine stem) worked with the size 6 nib, with small leaf or berry shapes added at each curve. Work the vine stem first: a flowing line of connected S-curves running along the border strip, keeping the curves consistent in depth and spacing. Then add leaves: small oval shapes made with two curved strokes at the extremities of each S-curve loop. For a period-appropriate flavour, turn the leaf strokes so the leaf axis points toward the border centre rather than outward."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The most useful planning tool is a pencil sketch of the full border at actual size before picking up a nib. Border design is measurement work first, execution second."
+          }
+        ]
+      }
+    ]
+  }
+}

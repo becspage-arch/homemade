@@ -1,0 +1,121 @@
+{
+  "slug": "straw-pulp-sheet-forming",
+  "title": "Straw pulp sheet forming from agricultural waste fibre",
+  "subtitle": "Making rough, warm-toned paper from wheat straw or reed",
+  "excerpt": "Before wood-pulp paper, straw and reed were widely used papermaking fibres in regions without abundant trees. A straw-pulp sheet is rough, warm-buff in colour, and distinctly textured. The preparation is more involved than cotton: straw must be cooked to break down its silica and lignin: but the resulting paper has a character that cotton cannot replicate.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Dard Hunter, Old Papermaking (1923), public domain, Internet Archive. Hunter documents straw and esparto grass as historical European papermaking fibres widely adopted in the mid-nineteenth century before the dominance of wood pulp.",
+  "recipeTools": [
+    { "slug": "papermaking-blender", "isOptional": false },
+    { "slug": "papermaking-vat", "isOptional": false },
+    { "slug": "paper-mould-deckle-a4", "isOptional": false },
+    { "slug": "papermaking-sponge", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "soda-cooking",
+      "term": "Soda cooking",
+      "definition": "The process of simmering plant material in a sodium carbonate (washing soda) solution to dissolve lignin and silica, separating the cellulose fibres for papermaking."
+    }
+  ],
+  "techniqueSlugs": ["papermaking-non-wood-fibre"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Safety: soda cooking",
+          "variant": "warning",
+          "body": "Sodium carbonate (washing soda) solution at cooking temperatures is caustic; use rubber gloves when handling hot cooking liquids. Work outdoors or in a well-ventilated space; the steam from cooking straw smells strongly. Do not use the cooking pot for food after use."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Straw cannot be blended directly into pulp because its silica content prevents the fibres from separating cleanly. "
+          },
+          {
+            "type": "text",
+            "text": "Soda cooking",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "soda-cooking" } }]
+          },
+          {
+            "type": "text",
+            "text": " breaks down the silica and lignin, leaving behind cellulose fibres that can be blended. The process takes 2-3 hours of simmering plus rinsing time, so plan for a half-day session."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Wheat straw or dried reed, 200 g",
+              "description": "Harvest after the growing season; the drier the better. Cut into 5 cm lengths. Straw from a farm or garden supply; avoid treated straw (fertiliser-treated straw produces a darker, less clean fibre)."
+            },
+            {
+              "name": "Sodium carbonate (washing soda), 40 g",
+              "description": "Sold as a laundry product. Dissolve in 2 litres of water in a non-food pot."
+            },
+            {
+              "name": "Non-food cooking pot, 4-litre minimum",
+              "description": "Stainless steel or enamel. Reserve this pot for fibre work only."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cooking the straw" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the cut straw to the sodium carbonate solution in the pot. Bring to a gentle simmer and maintain for 2 hours, adding water if the level drops below the straw. The straw will soften, lose its rigidity, and the liquid will turn a deep amber-brown. After 2 hours, remove the pot from the heat and let it cool completely before handling. Pour the cooking liquid down an outside drain; do not pour it into a septic tank."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Rinsing and blending" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rinse the cooked straw thoroughly in several changes of cold water until the rinse water runs clear. The fibres are now soft enough to blend. Place a small handful in the blender with 600 ml of water and blend for 15-20 seconds. The slurry will be warm buff or straw-coloured. Add to the vat and form sheets as for cotton linter."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sheet character" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Straw sheets dry to a warm buff-tan colour that darkens slightly over time. The surface is rougher than cotton and the sheet is slightly brittle compared to long-fibre materials. It takes brush, pencil, and pastel well but bleeds with watercolour unless heavily sized. The historical use for straw paper was newspaper, packaging, and inexpensive writing paper; for craft use it works best as a background material or as a mixed-fibre element (30% straw, 70% cotton linter gives a sheet with colour interest and reasonable strength)."
+          }
+        ]
+      }
+    ]
+  }
+}

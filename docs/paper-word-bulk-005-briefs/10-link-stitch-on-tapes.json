@@ -1,0 +1,122 @@
+{
+  "slug": "link-stitch-on-tapes",
+  "title": "Link stitch on tapes, a supported sewing structure",
+  "subtitle": "Sewing signatures onto fabric tapes for a strong, flat-opening text block",
+  "excerpt": "Link stitch on tapes sews each signature onto two or three fabric tapes, with a linking stitch between stations that prevents the thread from simply wrapping around the tape. The text block can be laced into wooden boards or glued into a case. The structure is stronger than sewn-on-tapes with a plain wrap because the link distributes load across the tape width.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), public domain, chapter on sewing on tapes and the link-stitch variation. Cockerell recommends linen tapes and distinguishes plain wrap-around sewing from the interlocking link stitch.",
+  "recipeTools": [
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tape-sewing",
+      "term": "Tape sewing",
+      "definition": "A sewing structure in which each signature is attached to fabric tapes that span the spine. The tape ends are laced into boards or glued to the spine mull to hold the text block in the cover."
+    }
+  ],
+  "techniqueSlugs": ["bookbinding-tape-sewing"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In simple "
+          },
+          {
+            "type": "text",
+            "text": "tape sewing",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tape-sewing" } }]
+          },
+          {
+            "type": "text",
+            "text": ", the sewing thread exits the signature, passes behind the tape, and re-enters: the tape is wrapped once. In link-stitch sewing, the thread does not wrap around the tape at all. Instead, it links into the corresponding stitch of the previous signature at each tape station, creating a chain that runs between the signatures across the tape face. The tape is sandwiched between linked stitches rather than wrapped, which distributes the opening stress across a wider area."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Linen tape, 15 mm wide",
+              "description": "Two or three tapes for an A5 book; positioned at 25%, 50%, and 75% of the spine height. Linen bookbinding tape or woven cotton twill tape serves; ribbon does not (too stretchy)."
+            },
+            {
+              "name": "Text paper, 130 gsm, grain short",
+              "description": "Six sheets per signature; ten signatures for a 120-page A5 book. Grain parallel to the spine."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up the sewing frame" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Set up the sewing frame with three tapes running vertically, positioned at 25%, 50%, and 75% of the spine height. Add kettle-stitch sewing stations (awl holes only, no tapes) 10 mm from head and tail. Mark a piercing template with five positions: head kettle, three tape centres, tail kettle: and pierce all signatures."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing the link stitch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sew the first signature plain: head kettle, over the tape and back in, along to the next tape, over and back in, to the tail, kettle stitch. The second signature is where the link begins. At each tape station, the needle exits the second signature on the same side as the tape but then hooks under the loop of thread from the first signature at that station: not around the tape: before re-entering. The tape is between the two loops but not wrapped by either."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pull each link snug: the first and second signature thread loops should grip each other flat against the tape face, with the tape sandwiched cleanly between them. Continue this pattern for all ten signatures. Finish with a half-hitch over the previous kettle stitch at the final signature and trim."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using the finished text block" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The tape ends are trimmed to 25 mm each side of the spine. In a laced-in binding, they are threaded into the boards through drilled channels. In a case-bound book, they are folded and glued under the book mull. The link stitches are visible on the spine face between the tapes; once the book mull or covering cloth is applied they are hidden, but the structural benefit remains."
+          }
+        ]
+      }
+    ]
+  }
+}

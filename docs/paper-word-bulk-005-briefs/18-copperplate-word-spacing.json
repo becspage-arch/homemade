@@ -1,0 +1,123 @@
+{
+  "slug": "copperplate-word-spacing",
+  "title": "Copperplate word and letter spacing",
+  "subtitle": "Achieving even rhythm and legibility in Copperplate script",
+  "excerpt": "Uneven spacing is the most common reason Copperplate looks amateurish even when individual letters are correct. Word spacing follows a one-letter-width rule; inter-letter spacing within a word follows the branching rhythm of the connecting strokes. This tutorial covers both with a systematic practice method.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edward Cocker, Pen's Triumph (1660s), public domain. Cocker's Copperplate examples establish the spacing norms for the English roundhand tradition that became Copperplate. Platt Rogers Spencer, Spencerian Key to Practical Penmanship (1866), public domain: Spencer's inter-letter distance guidelines apply equally to Copperplate spacing.",
+  "recipeTools": [
+    { "slug": "nib-nikko-g", "isOptional": false },
+    { "slug": "oblique-pen-holder", "isOptional": false },
+    { "slug": "iron-gall-ink", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "tracing-paper", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "connecting-stroke",
+      "term": "Connecting stroke",
+      "definition": "The hairline stroke that joins the exit of one Copperplate letter to the entry of the next. The connecting stroke travels from the baseline upward at 54° before curving into the entry of the following letter."
+    }
+  ],
+  "techniqueSlugs": ["calligraphy-copperplate-spacing"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Even spacing in Copperplate is governed by the rhythm of the "
+          },
+          {
+            "type": "text",
+            "text": "connecting strokes",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "connecting-stroke" } }]
+          },
+          {
+            "type": "text",
+            "text": ". Every Copperplate letter exits at the baseline with a thin hairline rising at 54°; every Copperplate letter enters from a hairline descending at 54° from the entry point. If the exit hairline of one letter meets the entry hairline of the next at consistent heights and distances, the spacing is even. If the distances vary, the script looks twitchy."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Nikko G nib (slug: nib-nikko-g)",
+              "description": "The standard beginner's pointed nib for Copperplate. Consistent ink flow is more important than nib flexibility for this exercise."
+            },
+            {
+              "name": "Oblique pen holder (slug: oblique-pen-holder)",
+              "description": "Angles the nib to the correct 54° slant without requiring the right-handed writer to rotate the wrist awkwardly."
+            },
+            {
+              "name": "Cartridge paper, 130 gsm (slug: cartridge-paper-130)",
+              "description": "Rule a four-line grid: baseline, x-height line, cap line, and a lower guide 2 mm above the baseline to mark the connecting-stroke rise height."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The letter-spacing unit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The spacing unit in Copperplate is the distance between the left edge of the main downstroke of one letter and the left edge of the main downstroke of the following letter. For most letter pairs, this distance should be equal to the width of the letter n. Measure the n on your practice sheet: if the n is 4 mm wide, every main-stroke interval in the word should be 4 mm. This is not a rule about the white space between letters; it is a rule about the rhythm of the main strokes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Word spacing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The word space is one letter-width of white space: approximately one n-width. The exit stroke of the last letter of word one rises to x-height. It stops without touching the next word. The entry stroke of word two starts one letter-width to the right. The word space narrows slightly before rounded letters (a, o, c) and widens before vertical-entry letters (m, n, h)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Diagnostic exercise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Write the word \"minimum\" in Copperplate. It contains five m-strokes and one other entry. Measure the main-stroke intervals. If they are not equal, identify whether the variation is in the connecting-stroke length (the exit rise) or in the letter width. Correcting the connecting-stroke length is easier: practise the exit-rise as a standalone hairline, keeping it to a fixed height before curving into the next entry. Correcting letter-width requires returning to letter drills."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Follow \"minimum\" with \"minim\", then with longer words that repeat n and m strokes. The same spacing principle applies to any Copperplate word. Once the muscle memory is set on diagnostic words, it carries through to full text."
+          }
+        ]
+      }
+    ]
+  }
+}

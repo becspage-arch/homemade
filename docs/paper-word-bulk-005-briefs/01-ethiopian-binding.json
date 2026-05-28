@@ -1,0 +1,235 @@
+{
+  "slug": "ethiopian-binding",
+  "title": "Ethiopian binding, a single-quire Coptic-tradition structure",
+  "subtitle": "The oldest surviving continuous bookbinding tradition",
+  "excerpt": "Ethiopian binding sews a single multi-leaf quire directly to its wooden boards through paired holes at the spine. No adhesive. The structure, still used in Ethiopian Orthodox monasteries, dates from at least the fifth century.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Cyril Davenport, The Book: Its History and Development (1907), public domain, pp. 18-22 on early codex structures and the Coptic tradition. Supplementary context from Douglas Cockerell, Bookbinding and the Care of Books (1901), public domain, chapter on the history of the structure. The Ethiopian binding is a direct descendant of the Coptic two-board sewing technique.",
+  "recipeTools": [
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "quire",
+      "term": "Quire",
+      "definition": "A single folded group of sheets gathered together and sewn as one unit. An Ethiopian binding uses one large quire rather than multiple signatures."
+    },
+    {
+      "slug": "sewing-station",
+      "term": "Sewing station",
+      "definition": "A pierced hole through which the needle passes during sewing. The spacing and count of sewing stations determines the stitch pattern and the strength of the spine."
+    }
+  ],
+  "techniqueSlugs": ["bookbinding-single-quire-sewing"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ethiopian binding is named for the "
+          },
+          {
+            "type": "text",
+            "text": "quire",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "quire" } }]
+          },
+          {
+            "type": "text",
+            "text": "-and-board structure that has been in continuous use in Ethiopian Christian manuscript production since at least the fifth century. A large group of folded sheets is gathered into a single quire, and the quire is sewn to two thin wooden boards through paired holes at the spine. There is no adhesive in the structure: the thread alone holds the text block and the boards together. The finished book opens flat to any page and lies flat on a reading surface without a spine-crease problem."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This version is sized for A5 pages, which places the finished book comfortably in the hand as a journal or sketchbook. The boards can be thin ply, solid hardwood, or bookbinding board covered in cloth or decorated paper. Waxed linen thread is the traditional choice; the knot that begins and ends the sewing is placed at the back-board hole, out of sight when the book is held."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Text paper, 90 gsm, grain short, A4 sheets",
+              "description": "Fold each A4 sheet in half to give an A5 folio. For a 64-page book, use 16 sheets. Paper weight: 80-100 gsm. Grain must run parallel to the spine; test by folding and noting which direction flexes smoothly."
+            },
+            {
+              "name": "Front and back boards",
+              "description": "Cut from 2-3 mm bookbinding board or 3 mm birch ply to 155 x 220 mm (A5 plus 5 mm head/tail margin). The boards can be left plain, covered with cloth, or painted."
+            },
+            {
+              "name": "Bookbinding thread, linen, waxed (slug: bookbinding-thread-linen)",
+              "description": "4-cord waxed linen. Cut a working length of approximately 1.2 metres; longer threads tangle during sewing."
+            },
+            {
+              "name": "Beeswax block (slug: beeswax-block)",
+              "description": "If the thread is unwaxed, draw it once through the beeswax before threading the needle."
+            },
+            {
+              "name": "Bookbinding awl (slug: bookbinding-awl)",
+              "description": "For piercing sewing stations through the quire and boards. Work on a piercing jig or folded scrap paper to avoid punching holes in the table."
+            },
+            {
+              "name": "Bookbinding needle (slug: bookbinding-needle)",
+              "description": "Blunt-tipped, large-eyed needle sized for 4-cord linen thread."
+            },
+            {
+              "name": "Bone folder (slug: bone-folder)",
+              "description": "For folding and pressing the signatures before gathering."
+            },
+            {
+              "name": "Craft knife (slug: craft-knife) and metal ruler (slug: metal-ruler-30cm)",
+              "description": "For trimming boards to size. Work on the cutting mat."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the quire" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fold each sheet in half along the short axis to give an A5 folio. Use the bone folder to score the fold cleanly before pressing it down. Stack the folded sheets inside one another, nest-fashion, to build up the quire. For a 64-page book, this means 16 sheets nested together. Tap the quire on the table, spine-edge down, to align the folds."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Trim the open edges of the quire if the sheets have shifted. Cut a strip of scrap paper 150 mm long and mark five "
+          },
+          {
+            "type": "text",
+            "text": "sewing stations",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sewing-station" } }]
+          },
+          {
+            "type": "text",
+            "text": " at 15 mm, 40 mm, 85 mm, 130 mm, and 155 mm from the head. Use this strip as a piercing template: hold it against the spine and mark all stations with a pencil, then pierce through all layers at once with the bookbinding awl."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the boards" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mark the spine edge of each board with the same five sewing-station positions, set 5 mm in from the edge. Pierce the boards through from the inside face (the face that will be against the paper). The holes should be clean and vertical; a slanted hole puts the thread at an angle when sewn."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the boards are wood, support them on a piece of scrap wood when piercing. Bookbinding board can be pierced from a folded paper support. In both cases, use a firm push-and-rotate motion rather than hammering; the awl tip should exit cleanly on the outside face."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing the binding" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the quire between the boards, aligning all spine holes. Thread the needle. Starting at the back-board hole nearest the head, push the needle from outside the back board through to the inside of the quire, pulling the thread through until about 80 mm of tail remains outside. Hold the tail against the board to keep it from pulling through."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "From inside the quire, push the needle out through the corresponding hole in the front board. Pull firmly but not so tightly that the board buckles. Return from the front board through the next hole down, through the quire, and out through the back board at the same station. Continue in this figure-eight sequence down the spine: back-board out, quire in, front-board out, front-board in, quire out, back-board in."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When all five stations have been worked, finish at the back board. Tie the working thread to the tail with a reef knot, pull tight, and trim both ends to 10 mm. Tuck the knot into the last hole by pushing it gently with the awl tip; it should sit flush with the board surface."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Open the book fully and press it flat under a weight for 30 minutes. The spine hinge will soften slightly as the thread settles. Ethiopian-bound books do not need glued hinges; the thread structure alone allows the book to flex open fully at any page. If the boards feel loose, the thread was pulled too lightly during sewing: unpick and resew with more tension."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The boards splay outward when the book is closed",
+              "cause": "Thread tension too low, or sewing stations too few for the quire thickness",
+              "fix": "Resew with the thread pulled tighter at each figure-eight turn. For a thick quire (30+ sheets), add two extra sewing stations near head and tail."
+            },
+            {
+              "symptom": "The pages bunch or buckle near the spine",
+              "cause": "Grain direction wrong; paper grain running across the spine rather than parallel to it",
+              "fix": "Grain must run parallel to the spine edge. Recut sheets so the grain aligns before folding."
+            },
+            {
+              "symptom": "Thread breaks during sewing",
+              "cause": "Thread too thin, or not waxed",
+              "fix": "Use 4-cord waxed linen. Draw it through the beeswax block twice before threading."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

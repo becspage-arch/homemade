@@ -1,0 +1,117 @@
+{
+  "slug": "concertina-photo-zine",
+  "title": "Concertina photo zine",
+  "subtitle": "An accordion-fold booklet designed around a sequence of photographs",
+  "excerpt": "A concertina zine is a single long strip folded into panels that stand up in a row when fully open. It is particularly well suited to a sequence of photographs because the images can be laid out across the full unfolded length as a continuous panorama, or read panel by panel as a standard booklet. No adhesive and no sewing is required.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "zines",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Technique synthesised from general accordion-book making practice and from artist's book conventions for concertina photo books, a well-established format in small-press and self-publishing.",
+  "recipeTools": [
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "concertina-fold",
+      "term": "Concertina fold",
+      "definition": "A folding structure in which a strip of paper or card is folded in alternating directions: valley-mountain-valley: so it collapses flat like a bellows and opens out into a freestanding row of panels. Also called an accordion fold."
+    }
+  ],
+  "techniqueSlugs": ["zine-accordion-structure"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          {
+            "type": "text",
+            "text": "concertina fold",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "concertina-fold" } }]
+          },
+          { "type": "text", "text": " is one of the oldest bookbinding structures. For photographs, it has a key advantage over saddle-stitched or perfect-bound formats. It can be read as a standard booklet from front to back. It can also be fully opened and stood upright to show all images at once. A sequence of six to twelve images across an A4-height strip reads like a contact sheet when open and like a small book when closed." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Safety: cutting tools",
+          "variant": "warning",
+          "body": "Use a metal ruler for all trimming cuts. Keep fingers behind the ruler. Change the blade when it starts to drag; a fresh blade through paper and card requires far less force than a dull one."
+        }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Cartridge paper or photo-quality inkjet paper, 120-200 gsm",
+              "description": "Heavier paper holds the accordion structure without the panels drooping when the zine is stood open. If printing photographs, use paper rated for inkjet printing. The strip must be long enough for all panels."
+            },
+            {
+              "name": "Cover card, 240-300 gsm",
+              "description": "Optional. Two pieces, each cut to the panel size. Glued to the first and last panels to give the zine a stiff front and back cover."
+            },
+            {
+              "name": "Bone folder (slug: bone-folder)",
+              "description": "For scoring each fold line before folding and pressing the creases flat."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Planning the layout" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Decide the panel count: typically 6, 8, 10, or 12 panels for a standard zine. An even number of panels means the back of the strip can carry a second sequence of images or text that reads in reverse when the zine is flipped. Each panel is one page. Decide whether the images will bleed across the panel folds (creating a panoramic image when open) or sit within the panels as individual prints." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Printing and assembling the strip" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For an A5-panel zine (148 mm wide, 210 mm tall), an 8-panel strip is 1184 mm long: about three A4 sheets joined end to end. Print or paste images onto the strip before folding, positioning each image within its panel area. If printing on individual sheets and joining, align the printed sheets at the join and tape from behind with double-sided tape. Check that the image alignment across fold lines is correct before taping." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Scoring and folding" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mark fold lines at equal intervals: every 148 mm for an A5 panel. Score each line with the bone folder against the metal ruler. Score lightly on photographic paper to avoid cracking the ink layer; on plain cartridge, score more firmly. Fold in alternating directions, pressing each crease firmly. The completed zine should sit flat without the panels springing apart; if it does not stay closed, add a belly band (a strip of paper or card that wraps around the folded zine and slides off to open it)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Attaching covers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut two cover panels from 240-300 gsm card to exactly the panel size. Apply PVA glue to the back face of the front cover and press it against the first panel of the accordion, aligning all edges. Repeat for the back cover and the last panel. Place under a board and weight for 30 minutes. The stiff covers make the zine easier to handle and protect the outer images from curling." }
+        ]
+      }
+    ]
+  }
+}

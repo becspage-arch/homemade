@@ -1,0 +1,144 @@
+{
+  "slug": "split-board-construction",
+  "title": "Split-board construction for flush-cover bindings",
+  "subtitle": "Building a book with no visible groove at the hinge",
+  "excerpt": "A split board is made from two laminated layers of bookbinding board with a channel cut between them. The text-block spine folds into the channel rather than pressing against the outside of the board, giving a flush cover with no visible step at the hinge and an exceptionally smooth opening action.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), public domain, chapter on board construction and hinge variations. Cockerell describes the split-board as the correct structure for a flush-jointed fine binding; the technique is named for the channel cut to receive the super or mull.",
+  "recipeTools": [
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "paste-brush-bookbinding", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "bookbinding-board-1-5mm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "split-board",
+      "term": "Split board",
+      "definition": "A board made from two laminated layers with a channel between them. The book's super or tapes are glued into this channel to attach the text block to the cover without an external joint."
+    },
+    {
+      "slug": "super",
+      "term": "Super",
+      "definition": "An open-weave stiffened cloth (also called mull) glued to the spine of a sewn text block. The super wings extend beyond the spine to attach the text block to the inside of the boards."
+    }
+  ],
+  "techniqueSlugs": ["bookbinding-board-attachment"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Standard case-binding attaches the text block to the boards by gluing the "
+          },
+          {
+            "type": "text",
+            "text": "super",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "super" } }]
+          },
+          {
+            "type": "text",
+            "text": " wings and the endpapers to the inside face of the boards. This produces a visible raised ridge at the hinge: the spine covering wraps around the board edge and sits proud of the board surface. A "
+          },
+          {
+            "type": "text",
+            "text": "split board",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "split-board" } }]
+          },
+          {
+            "type": "text",
+            "text": " eliminates this ridge: the super is tucked inside the channel between two laminated board layers, so the cover lies completely flush with no external step."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Bookbinding board, 2 mm (slug: bookbinding-board-2mm)",
+              "description": "The outer layer of each split board. Cut to the finished board dimensions plus 5 mm extra on the spine edge for later trimming."
+            },
+            {
+              "name": "Bookbinding board, 1.5 mm (slug: bookbinding-board-1-5mm)",
+              "description": "The inner layer. Cut to the same dimensions but 8 mm shorter on the spine edge: this gap becomes the channel."
+            },
+            {
+              "name": "PVA, acid-free (slug: pva-acid-free) and paste brush (slug: paste-brush-bookbinding)",
+              "description": "For laminating the two board layers together."
+            },
+            {
+              "name": "Craft knife (slug: craft-knife), metal ruler (slug: metal-ruler-30cm), cutting mat (slug: cutting-mat-a3)",
+              "description": "For trimming the assembled split board to final size."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Laminating the layers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Apply a thin, even coat of PVA to the face of the 1.5 mm inner board. Align the foredge and the head/tail edges with the outer 2 mm board, leaving the 8 mm channel gap at the spine edge. Press the layers together firmly and slide the assembly under a flat weight. The two layers must be absolutely flat against each other before the PVA grips: any gap will create a bump visible through the covering cloth. Leave under weight for at least 1 hour."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Trimming to size" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once dry, trim the assembled split board to the final dimensions with the craft knife and metal ruler. The channel should be visible along the spine edge: a 7-8 mm slot running the full height of the board. This slot receives the super and one or both tapes when the text block is cased in."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Casing in with split boards" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Prepare the text block with super wings trimmed to 12 mm on each side and tapes trimmed to 12 mm. Apply PVA to the inside of the channel on each board. Slide the corresponding super wing and tape into the channel and press the spine edge of the board against the shoulder of the text block. The board face should sit flush with the spine covering, with no visible ridge. Clamp or weight for at least 1 hour before pasting down the endpapers."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The finished book should open smoothly with the boards lying flat. The absence of the external hinge groove means that the covering cloth is not stressed at the hinge line as the book opens, which is the main reason fine bindings use this construction for long-life work."
+          }
+        ]
+      }
+    ]
+  }
+}

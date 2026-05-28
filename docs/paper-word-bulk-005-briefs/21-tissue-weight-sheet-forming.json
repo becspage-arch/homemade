@@ -1,0 +1,122 @@
+{
+  "slug": "tissue-weight-sheet-forming",
+  "title": "Tissue-weight sheet forming, 10-20 gsm hand-made sheets",
+  "subtitle": "Producing very thin translucent sheets for conservation and bookbinding use",
+  "excerpt": "Tissue-weight hand-made sheets: 10 to 20 gsm: are used for Japanese tissue mending, book repair, and transparent overlay work in scrapbooking and paper crafts. Forming them requires a very dilute slurry and a smooth-mesh mould; the main challenge is peeling the fragile wet sheet without tearing.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Technique synthesised from Dard Hunter, Old Papermaking (1923), public domain, Internet Archive, on washi tissue production methods; and from general hand-papermaking practice in conservation texts. Hunter describes the nagashizuki formation technique used for thin Japanese sheets.",
+  "recipeTools": [
+    { "slug": "papermaking-blender", "isOptional": false },
+    { "slug": "papermaking-vat", "isOptional": false },
+    { "slug": "paper-mould-deckle-a5", "isOptional": false },
+    { "slug": "papermaking-sponge", "isOptional": false },
+    { "slug": "washi-kozo", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "nagashizuki",
+      "term": "Nagashizuki",
+      "definition": "The Japanese sheet-formation technique in which the vat water is infused with a natural formation aid (neri), and the mould is rocked forward and backward repeatedly to disperse the fibres in a thin, even layer. Used for tissue-weight washi."
+    }
+  ],
+  "techniqueSlugs": ["papermaking-thin-sheets"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Safety: blender use",
+          "variant": "warning",
+          "body": "Use a dedicated papermaking blender only. For kozo fibre, blend very briefly: 5 to 10 seconds: to avoid cutting the long fibres short. Over-blended kozo loses the long-fibre character that makes tissue-weight sheets strong."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 20 gsm sheet contains approximately 0.2 g of fibre per A5 sheet. The slurry for pulling it must therefore be extremely dilute: far more water per gramme of fibre than for standard sheets. "
+          },
+          {
+            "type": "text",
+            "text": "Nagashizuki",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nagashizuki" } }]
+          },
+          {
+            "type": "text",
+            "text": " formation adds a viscous formation aid (neri, from the tororo-aoi plant or, in practice, a small amount of guar gum) to slow drainage and allow the fibres to disperse more evenly before the water drains."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Washi kozo fibre or kozo paper (slug: washi-kozo)",
+              "description": "Tear into small pieces and soak for 1 hour. Kozo's long fibres are what give the tissue-weight sheet its strength despite thinness."
+            },
+            {
+              "name": "Guar gum (not in master tool table: available from baking suppliers)",
+              "description": "A very small amount: 1-2 g in 10 litres of vat water: slows drainage to allow even fibre distribution. Add before the pulp. A tororo-aoi root infusion is the historical formation aid; guar gum is a practical substitute."
+            },
+            {
+              "name": "Paper mould and deckle, A5 (slug: paper-mould-deckle-a5)",
+              "description": "A5 size makes thin sheets easier to handle. The mould mesh should be fine (fine-weave brass mesh or nylon mesh)."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Dilution and vat preparation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add 0.5-1 g of dry kozo fibre (blended briefly) to 10 litres of water with the guar gum dissolved in. The slurry should look barely cloudy. Stir gently. The guar gum will have made the water slightly viscous: it drains slowly and feels slightly slippery. This is correct."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Forming the sheet" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dip the mould and deckle together at a 45° angle into the vat. As the mould comes level, rock it forward and backward three to five times in slow smooth movements: the nagashizuki rocking disperses the fibres evenly across the mesh. Then tilt the far edge of the mould downward slightly and allow the excess water to drain off the far end. The sheet on the mesh will be barely visible: just a trace of fibres. This is correct for tissue weight."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Couching and drying" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A tissue-weight sheet cannot be couched onto a felt in the usual way: it is too fragile wet. Instead, place the mould mesh-side down on a clean smooth board and sponge the back of the mesh to press the sheet onto the board surface. Lift the mould away slowly; the sheet should remain on the board. Let it air dry completely on the board before attempting to peel it. Trying to peel a damp tissue sheet will tear it. Once dry, the kozo fibres bond into a coherent, strong sheet that can be peeled cleanly."
+          }
+        ]
+      }
+    ]
+  }
+}

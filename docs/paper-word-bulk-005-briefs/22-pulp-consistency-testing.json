@@ -1,0 +1,105 @@
+{
+  "slug": "pulp-consistency-testing",
+  "title": "Testing and adjusting pulp consistency for hand papermaking",
+  "subtitle": "How to read a slurry and know when it is ready to pull from",
+  "excerpt": "The right pulp consistency for a given sheet weight is not a fixed number; it depends on the fibre type, the beating level, and the mould size. This tutorial covers three simple on-the-spot tests that tell the papermaker whether the vat is at the right concentration before pulling sheets.",
+  "type": "READING",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Dard Hunter, Old Papermaking (1923), public domain, Internet Archive. Hunter describes pulp consistency and its relationship to sheet weight throughout his documentation of East Asian and Western papermaking methods.",
+  "recipeTools": [
+    { "slug": "papermaking-vat", "isOptional": false },
+    { "slug": "paper-mould-deckle-a4", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sheet-weight",
+      "term": "Sheet weight",
+      "definition": "The mass of paper per square metre, expressed in grams (gsm). Ordinary copy paper is 80 gsm; standard cartridge is 90-120 gsm; tissue paper is 15-30 gsm."
+    }
+  ],
+  "techniqueSlugs": ["papermaking-vat-management"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pulp consistency: the ratio of fibre to water in the vat: directly determines "
+          },
+          {
+            "type": "text",
+            "text": "sheet weight",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sheet-weight" } }]
+          },
+          {
+            "type": "text",
+            "text": ". Too much fibre produces a heavy, uneven sheet with thick areas where the fibres clustered; too little produces a tissue-thin result when a heavier sheet was intended. Three visual and tactile tests help calibrate the vat without weighing the dry sheet."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Test 1: The glass test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Scoop a glass of vat water and hold it to the light. The suspension should be uniformly milky: evenly cloudy throughout, with no visible fibre clumps and no clear water at the top. If clear water floats on top, the pulp is sitting rather than dispersed; stir again. If the suspension is opaque rather than translucent milky, the concentration is probably too high for standard-weight sheets: dilute with a litre of water and retest. For tissue-weight work, the glass should barely show any cloudiness."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Test 2: The mould test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dip the mould and deckle as for a normal sheet, drain, and remove the deckle. Tilt the mould slightly and look at the wet fibre mat from the side. A standard sheet: targeting 80-100 gsm dry: should show a continuous white mat covering the mesh with no gaps or thin spots. If you can see the mesh through the mat in places, the vat is too dilute; add more blended pulp and stir. If the mat looks thick and lumpy, dilute with water."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Test 3: The drain time test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Count seconds from the moment the mould clears the vat surface until water stops actively draining from the mesh. For standard cotton-linter sheets, drain time should be 5-8 seconds. Under 5 seconds: the pulp is over-dilute or over-beaten, producing a thin sheet. Over 12 seconds: the pulp is under-dilute or the fibre is very long (hemp, kozo), and the sheet may be thick. Adjust the vat accordingly and test again before pulling finished sheets."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Consistency across a session" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The vat concentration drops with each sheet pulled because the sheet removes fibre from the water. For a consistent batch, add a small amount of blended pulp back to the vat every third or fourth sheet to maintain concentration. The glass test is the fastest check: scoop and look before each pull once you have established the right appearance for the target weight."
+          }
+        ]
+      }
+    ]
+  }
+}

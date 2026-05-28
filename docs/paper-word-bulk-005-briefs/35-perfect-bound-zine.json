@@ -1,0 +1,123 @@
+{
+  "slug": "perfect-bound-zine",
+  "title": "Perfect bound zine",
+  "subtitle": "Assembling a square-spine booklet with a glued cover",
+  "excerpt": "A perfect bound zine has a flat spine: pages are gathered into a block, the spine edge is roughened, and a cover is glued around the outside. The result has a book-like appearance and lies flat when open. Perfect binding works well for zines with more than 32 pages where saddle-stitching would leave a thick, domed spine.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "zines",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Technique synthesised from general perfect-binding practice as used in self-publishing and small-press bookmaking. Perfect binding has been used in commercial publishing since the early twentieth century and is described in general bookbinding guides.",
+  "recipeTools": [
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "paste-brush-bookbinding", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "perfect-binding",
+      "term": "Perfect binding",
+      "definition": "A binding method in which single sheets or folded signatures are gathered into a block, the spine edge is roughened or notched to improve adhesive grip, and a cover is glued around the spine. The finished book has a flat, squared spine."
+    }
+  ],
+  "techniqueSlugs": ["zine-binding-methods"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "" },
+          {
+            "type": "text",
+            "text": "Perfect binding",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "perfect-binding" } }]
+          },
+          { "type": "text", "text": " gives a zine a professional, bookshop appearance for minimal equipment cost. The main requirement is patience: the adhesive must be applied in multiple thin coats and each coat must dry fully before the next is added. Rushing the gluing stage produces a spine that pulls away from the text block when the cover is opened." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Safety: cutting tools",
+          "variant": "warning",
+          "body": "Use a metal ruler when trimming the text block and cover. Change the blade after every several cuts through a thick paper stack; a blunt blade compresses the paper and crushes the cut edge rather than slicing it cleanly. Keep fingers behind the ruler at all times."
+        }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Printed or blank pages, 80-100 gsm",
+              "description": "Pages should be printed or prepared first, then trimmed to the same height and width. Keep all pages in order: perfect binding does not allow for signature collation errors."
+            },
+            {
+              "name": "Cover stock, 200-300 gsm",
+              "description": "Cut to the page height and to a width of: (2 x page width) + spine thickness. Spine thickness is approximately 1 mm per 10 sheets of 80 gsm paper."
+            },
+            {
+              "name": "PVA glue, acid-free (slug: pva-acid-free)",
+              "description": "Flexible PVA is better than stiff PVA for perfect binding: it allows the spine to flex when the book is opened. Dilute slightly with water to improve brush application."
+            },
+            {
+              "name": "Paste brush (slug: paste-brush-bookbinding)",
+              "description": "For applying PVA to the spine edge. A small, stiff brush gives better control than a wide brush."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the text block" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stack all the pages in order and tap the block on a flat surface to align the spine edges. Clamp the block firmly between two pieces of board, with the spine edge protruding by about 5 mm. Roughen the spine edge with coarse sandpaper or score it lightly with the craft knife in a cross-hatch pattern: this gives the PVA more surface area to grip. Wipe away any dust before applying adhesive." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Gluing the spine" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Apply a thin coat of PVA to the spine edge with the paste brush, working it into the gaps between the pages. Let the first coat penetrate and dry for 15-20 minutes. Apply a second thin coat and allow to dry again. A third, slightly thicker coat completes the spine. The final coat should be a coherent skin that holds the pages firmly but is not so thick that it stiffens the spine. Total drying time between three coats is about one hour." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Scoring and attaching the cover" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Score the two fold lines on the cover stock at the measured spine width. The spine panel sits between the two score lines; the front and back cover panels fold outward from it. Apply a coat of PVA to the spine panel of the cover and to 5 mm of the inner face of each cover panel (these become the inner hinges). Position the glued spine of the text block against the cover spine panel, press the covers firmly against the sides of the block, and hold for 2-3 minutes. Stand the zine on its spine and leave to dry fully: at least two hours." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Trimming to finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once the adhesive is fully cured, trim all three open edges of the bound zine with a sharp craft knife and metal ruler to give clean, aligned edges. A single confident cut per edge is cleaner than multiple short passes. The finished zine should open to lie reasonably flat: if the spine is too stiff to open easily, the PVA coats were too heavy or not diluted enough; adjust for the next batch." }
+        ]
+      }
+    ]
+  }
+}

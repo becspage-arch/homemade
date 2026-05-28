@@ -1,0 +1,171 @@
+{
+  "slug": "exposed-spine-accordion-binding",
+  "title": "Exposed-spine accordion binding with sewn text blocks",
+  "subtitle": "Combining accordion folds with sewn signatures for a book that expands fully",
+  "excerpt": "An exposed-spine accordion binding pairs a folded accordion spine with sewn text-block panels. Each panel of the accordion holds a small sewn signature; the spine folds allow the book to be read as a sequence of panels or opened flat as a single long scroll.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Technique synthesised from Douglas Cockerell, Bookbinding and the Care of Books (1901), public domain, chapters on accordion structures and text-block sewing; and from general hand-bookbinding practice documented in Arts and Crafts era manuals.",
+  "recipeTools": [
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "paste-brush-bookbinding", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "bookbinding-board-2mm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "accordion-spine",
+      "term": "Accordion spine",
+      "definition": "A strip of paper folded in a zigzag pattern that forms the spine of an accordion or concertina book. Alternate peaks of the accordion attach to boards; the valleys form the hinge between panels."
+    }
+  ],
+  "techniqueSlugs": ["bookbinding-accordion-fold", "bookbinding-pamphlet-stitch"],
+  "criticalTechniques": ["bookbinding-accordion-fold"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An exposed-spine accordion binding is a hybrid: the "
+          },
+          {
+            "type": "text",
+            "text": "accordion spine",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "accordion-spine" } }]
+          },
+          {
+            "type": "text",
+            "text": " holds five sewn signatures, each glued to one peak of the fold. The book reads conventionally when closed but opens flat into a 700 mm scroll. The sewing is visible because no covering cloth hides the spine: the thread wraps around each panel peak before passing to the next station, making the structure part of the finished appearance."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This version is sized for A6 panels (105 x 148 mm each), giving five panels sewn on an A6-wide accordion. A heavier text paper: 130 gsm cartridge: takes ink well and gives the pages enough body to turn without the signatures drooping when the book is held. Paper weight: 110-140 gsm, grain short."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Accordion spine strip: 110 gsm cartridge or cover stock, 115 mm x 800 mm, grain short",
+              "description": "The spine strip folds into ten sections of 80 mm each. The two end sections attach to the boards; the eight inner sections form the peaks and valleys of the accordion."
+            },
+            {
+              "name": "Text paper, 130 gsm, grain short, A5 sheets",
+              "description": "Fold each A5 sheet in half to give an A6 folio. Four sheets per signature, five signatures. Grain parallel to the spine."
+            },
+            {
+              "name": "Bookbinding board, 2 mm (slug: bookbinding-board-2mm)",
+              "description": "Two boards cut to 110 x 152 mm for front and back covers."
+            },
+            {
+              "name": "Bookbinding thread, linen (slug: bookbinding-thread-linen)",
+              "description": "4-cord waxed linen. Each signature uses approximately 300 mm of thread."
+            },
+            {
+              "name": "PVA, acid-free (slug: pva-acid-free) and paste brush (slug: paste-brush-bookbinding)",
+              "description": "For gluing signatures to the accordion peaks."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Folding the accordion spine" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Score and fold the spine strip into alternating mountain and valley folds, each section 80 mm wide. Use the bone folder against a metal ruler to score each fold line before pressing. The first and last sections are glue-tabs that attach to the boards; the inner eight sections pair into four peaks (outward folds) and four valleys (inward folds). Number the peaks 1 through 4 in light pencil on the outside face."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing and attaching the signatures" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sew each signature separately with a simple three-hole pamphlet stitch. Mark three stations: 15 mm from head, centre, 15 mm from tail. Pierce from inside, sew from outside through centre to tail, loop back to head and re-enter the centre hole; finish with a square knot inside the spine fold. Trim the thread tail to 10 mm."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Apply a thin, even coat of PVA to one accordion peak face. Press the matching signature's spine fold against it, aligning head and tail. Repeat for all four inner peaks and five signatures. (The fifth signature occupies the centre valley rather than a peak; it faces outward in the same direction as the others.) Weight each glued assembly under a book while the PVA sets: about 20 minutes per signature."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Attaching the boards" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Apply PVA to the inner face of the first accordion tab and press it against the inner face of the back board, centred across the board's spine edge and with 5 mm margin at head and tail. Weight under a board for 20 minutes. Repeat for the front board with the last accordion tab. The boards should sit parallel when the accordion is folded closed."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Accordion does not fold flat when closed",
+              "cause": "Fold widths unequal, or mountain/valley direction inconsistent",
+              "fix": "Remeasure and re-score. Each section must be the same width; alternate folds must reverse direction cleanly."
+            },
+            {
+              "symptom": "Signatures pull away from the accordion peaks",
+              "cause": "PVA applied too thinly, or weight removed before PVA cured",
+              "fix": "Reseat with fresh PVA and weight for at least 30 minutes. The gluing surface must be dry and clean before reapplying."
+            },
+            {
+              "symptom": "Pages buckle at the spine fold",
+              "cause": "Grain direction incorrect; paper grain running across the fold",
+              "fix": "Text paper grain must run parallel to the spine fold. Refold with correctly grained sheets."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

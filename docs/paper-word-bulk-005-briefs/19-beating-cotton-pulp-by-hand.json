@@ -1,0 +1,116 @@
+{
+  "slug": "beating-cotton-pulp-by-hand",
+  "title": "Beating cotton pulp by hand for short-fibre sheets",
+  "subtitle": "How manual beating affects sheet character without a Hollander beater",
+  "excerpt": "A Hollander beater cuts and fibrillates paper fibres to control sheet strength and translucency. Without one, hand beating by stamping or mallet work achieves a partial version of the same result. This tutorial covers what hand beating can and cannot do and the two methods available at home scale.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Dard Hunter, Old Papermaking (1923), public domain, Internet Archive. Hunter describes hand-beating methods and their effects on sheet formation in pre-industrial papermaking traditions. Supplementary context from general papermaking practice in the public-domain craft literature.",
+  "recipeTools": [
+    { "slug": "papermaking-blender", "isOptional": false },
+    { "slug": "papermaking-vat", "isOptional": false },
+    { "slug": "paper-mould-deckle-a4", "isOptional": false },
+    { "slug": "papermaking-sponge", "isOptional": false },
+    { "slug": "cotton-linter", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "fibrillation",
+      "term": "Fibrillation",
+      "definition": "The process by which beating roughens the surface of individual cellulose fibres so they bond more tightly during sheet formation. More fibrillation produces a stronger, slightly translucent sheet."
+    },
+    {
+      "slug": "freeness",
+      "term": "Freeness",
+      "definition": "A measure of how quickly water drains from a pulp slurry. High freeness (fast draining) produces a bulky, rough-surfaced sheet. Low freeness (slow draining) produces a denser, smoother sheet."
+    }
+  ],
+  "techniqueSlugs": ["papermaking-pulp-preparation"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Safety: blender use",
+          "variant": "warning",
+          "body": "Use a dedicated papermaking blender, not a kitchen blender also used for food. Paper fibres are not food-safe to ingest. Never blend dry fibres; always add water first and keep fibres below the fill line to prevent overloading the motor."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In a Hollander beater, the roll and bedplate work the fibres continuously for 30-90 minutes, controlling "
+          },
+          {
+            "type": "text",
+            "text": "fibrillation",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fibrillation" } }]
+          },
+          {
+            "type": "text",
+            "text": " precisely. A kitchen blender does something simpler: it chops and disperses the fibres into a slurry but does not fibrillate them as thoroughly. The resulting pulp has relatively high "
+          },
+          {
+            "type": "text",
+            "text": "freeness",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "freeness" } }]
+          },
+          {
+            "type": "text",
+            "text": ": it drains quickly and forms a bulky, rough sheet. Hand beating after blending can reduce this freeness slightly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method 1: Mallet beating" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Drain blended cotton-linter pulp through a mesh and pile it onto a flat stone or wooden surface. Use a smooth hardwood mallet to beat the pile: lift and strike with moderate force, turning the pile 90° every 50 strokes. The beating compresses and slightly fibrillates the fibres. Check consistency by pulling a small ball of the beaten pulp and stretching it: a lightly beaten pulp tears immediately; a more beaten pulp shows slight cohesion before tearing. After 150-200 strikes, re-slurry the pulp in the vat and form a sheet. The sheet will be slightly denser and more translucent than an unbeaten sheet from the same stock."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method 2: Stamping" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stamping mills historically used heavy wooden stamps to pound wet rags into pulp. At home scale, a thick wooden dowel or a pestle-and-mortar approximates this. Stamp the wet, drained pulp in a bowl or on a stone surface: hold the stamping tool vertically and drop it repeatedly onto the pile, walking the stamps across the surface rather than repeatedly hitting one spot. The key difference from mallet beating is the impact force: stamping uses drop weight rather than swing weight, and the contact area is smaller."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What hand beating cannot do" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A Hollander beater working for 90 minutes produces a pulp with low freeness and strong inter-fibre bonding. The sheet formed from it is smooth, dense, and strong. Hand beating for 200 strikes produces a modest improvement in bond strength but does not approach the effect of a Hollander. The home papermaker's sheets are therefore inevitably slightly bulkier and rougher than mill sheets from equivalent stock. That quality is not a flaw: it is what makes hand-made paper legible as hand-made paper."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "slug": "hemp-fibre-sheet-forming",
+  "title": "Hemp fibre sheet forming",
+  "subtitle": "Pulling sheets from hemp cordage pulp for strong, textured paper",
+  "excerpt": "Hemp paper was the standard writing surface in Asia before wood-pulp paper arrived. Hemp fibres are long and strong, producing tough sheets with visible texture. The papermaker's starting material is hemp rope or twine soaked and beaten to a pulp; the sheet-forming technique is the same as for cotton.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Dard Hunter, Old Papermaking (1923), public domain, Internet Archive. Hunter documents hemp as one of the original East Asian papermaking fibres alongside kozo and gampi, and describes its properties relative to shorter-fibre cotton.",
+  "recipeTools": [
+    { "slug": "papermaking-blender", "isOptional": false },
+    { "slug": "papermaking-vat", "isOptional": false },
+    { "slug": "paper-mould-deckle-a4", "isOptional": false },
+    { "slug": "papermaking-sponge", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "long-fibre-pulp",
+      "term": "Long-fibre pulp",
+      "definition": "Pulp made from fibres that are significantly longer than cotton or wood fibres. Hemp, flax, kozo, and abaca are long-fibre plants. Long-fibre sheets have visible texture and high tear resistance."
+    }
+  ],
+  "techniqueSlugs": ["papermaking-sheet-formation"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Safety: blender use",
+          "variant": "warning",
+          "body": "Hemp rope contains natural oils and sizing that can leave residue in a blender. Use a dedicated papermaking blender only. Rinse the blender immediately after use; hemp fibres bind in the blade mechanism if left to dry."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hemp is a "
+          },
+          {
+            "type": "text",
+            "text": "long-fibre pulp",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "long-fibre-pulp" } }]
+          },
+          {
+            "type": "text",
+            "text": " material. The individual fibres are visibly longer in a dilute slurry than cotton-linter fibres, and they drain more slowly from the mould. The sheet that results is tougher and more translucent than a cotton sheet of the same weight, with a rougher surface texture from the fibre orientation."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Hemp rope or hemp garden twine (uncoated, undyed)",
+              "description": "Cut into 5 cm lengths. Soak in water for 48 hours before use. The soaking softens the fibres and removes surface sizing. Discard heavily coated or synthetic-blended twine; only natural-fibre hemp pulps cleanly."
+            },
+            {
+              "name": "Papermaking vat (slug: papermaking-vat)",
+              "description": "Fill with 15-20 litres of water; hemp needs a larger water volume than cotton because the long fibres form clumps without dilution."
+            },
+            {
+              "name": "Paper mould and deckle, A4 (slug: paper-mould-deckle-a4)",
+              "description": "Standard A4 mould and deckle. Hemp fibres drain slowly; the deckle must sit firmly on the mould throughout the drain."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the pulp" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After soaking, wring the hemp pieces and place a small handful in the blender with 800 ml of water. Blend on a medium speed for 30-40 seconds. Over-blending cuts the fibres too short and removes the characteristic texture. Check consistency: pour a small amount of slurry into a clear glass and hold it to the light. The fibres should be separated but still visibly elongated: not a smooth opaque suspension."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pulling the sheet" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the blended hemp to the vat and stir vigorously to disperse. The long fibres tend to clump at the surface; stir from the bottom with a wide sweep before each pull. Dip the mould and deckle vertically into the far side of the vat, scoop forward and upward in one smooth movement, and level the mould as it clears the water surface. Shake gently: left-right, then forward-back. Hemp fibres take slightly longer to settle into the mesh than cotton; wait 5-6 seconds before lifting the deckle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pressing and drying" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hemp sheets release from the mould more readily than cotton but stick firmly to each other during pressing if not interleaved with felts. Couch onto a dampened wool felt; press under 40-50 kg weight for 30 minutes per sheet; peel and air dry on a smooth board. The finished sheet has a rough, open texture on both sides. It takes pencil and charcoal well; ink bleeds slightly unless the sheet is sized with alum-gelatin after drying."
+          }
+        ]
+      }
+    ]
+  }
+}

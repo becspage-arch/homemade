@@ -1,0 +1,176 @@
+{
+  "slug": "recessed-cord-sewing",
+  "title": "Recessed-cord sewing for a flush-spine hand binding",
+  "subtitle": "Sewing on cords set into grooves so the spine lies smooth under the covering",
+  "excerpt": "Recessed-cord sewing cuts narrow grooves into the spine of each signature before sewing, so the cords sit in the grooves rather than standing proud. The result is a spine that needs no spine-lining to smooth out the cord bumps before covering.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), public domain, chapter on sewing structures. Cockerell describes both raised-cord and recessed-cord variants; the recessed version was adopted as a faster method in commercial binderies from the late eighteenth century.",
+  "recipeTools": [
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "book-mull", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "paste-brush-bookbinding", "isOptional": false },
+    { "slug": "cartridge-paper-220", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "recessed-cord",
+      "term": "Recessed cord",
+      "definition": "A sewing cord set into a groove cut across the spine of each signature. Because the cord sits below the spine surface rather than standing proud, the covered spine lies flat without extra padding."
+    },
+    {
+      "slug": "saw-kerf",
+      "term": "Saw kerf",
+      "definition": "The narrow groove cut across the spine of a text block to seat a recessed cord or to mark a sewing station for saw-mark sewing."
+    }
+  ],
+  "techniqueSlugs": ["bookbinding-recessed-cord-sewing", "bookbinding-kettle-stitch"],
+  "criticalTechniques": ["bookbinding-recessed-cord-sewing"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Raised-cord sewing produces a spine with visible bands where the cords sit proud of the spine surface. "
+          },
+          {
+            "type": "text",
+            "text": "Recessed-cord",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "recessed-cord" } }]
+          },
+          {
+            "type": "text",
+            "text": " sewing reverses this: a "
+          },
+          {
+            "type": "text",
+            "text": "saw kerf",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saw-kerf" } }]
+          },
+          {
+            "type": "text",
+            "text": " is cut across each signature spine at each sewing station, and the cord lies in the groove. The covered spine is smooth. The technique produces slightly less board-attachment strength than raised-cord lacing-in because the groove weakens the paper at each station, but for any book that will be covered in cloth or leather it gives a better-looking result."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Safety: cutting spines",
+          "variant": "warning",
+          "body": "Cutting saw kerfs across a stacked text block requires firm control of the blade. Clamp the text block in a sewing frame or between wooden boards before cutting. Never draw the knife across unsupported signatures."
+        }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Text block: 12 signatures of 4 sheets each, 220 gsm cartridge, A5 format",
+              "description": "Grain short. Fold each sheet to A5. Gather into signatures of 4 sheets each. The heavier paper weight supports the groove cuts."
+            },
+            {
+              "name": "Linen cord, 2 mm diameter (not in master table: sub in bookbinding-thread-linen at 4-cord weight)",
+              "description": "The sewing support. Three cords for an A5 book: positioned at 25%, 50%, and 75% of the spine height."
+            },
+            {
+              "name": "Book mull / super (slug: book-mull)",
+              "description": "Cut 20 mm narrower than the spine height, to attach the text block to the boards."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Marking the stations and cutting the kerfs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stack all signatures in order and clamp them between two scrap boards. Mark five station positions on the spine with a pencil line across all signatures at once: the head kettle-stitch position (10 mm from head), three cord stations (at 25%, 50%, 75% of spine height), and the tail kettle-stitch position (10 mm from tail). The kettle-stitch stations are sewing-awl holes only; the cord stations are groove cuts."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "At each cord station, use the craft knife and metal ruler to cut a kerf approximately 2 mm deep and 1.5 mm wide across the stacked spine. Cut firmly in one pass; multiple shallow passes widen and weaken the groove. Test the groove depth by pressing a short length of cord into it: the cord should sit flush with or just below the spine surface."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up the sewing frame" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A sewing frame holds the cords vertical while you sew. If you do not have a bookbinding sewing frame, make a simple substitute from a wooden batten and two upright pegs or bulldog clips. Tie the three cords between the uprights at the correct spacing, keeping them taut and parallel. The text block will rest against the horizontal cross-piece of the frame with the spine facing up and the cords running perpendicular to the spine."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Thread the needle with 2.5 metres of waxed linen thread. Sew the first signature from the inside: out at the head kettle-stitch, in over the first cord, out on the other side, in over the second cord, out, in over the third cord, out at the tail kettle-stitch. The thread wraps around each cord by exiting one side and re-entering the other, pulling the cord into the kerf."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the second signature on top of the first. Sew from the tail kettle-stitch back to the head, linking each cord station, and finishing with a kettle stitch at the head by passing under the stitch of the first signature before returning inside. Continue this way for all 12 signatures. At the final signature, tie off with a half-hitch around the previous kettle stitch and trim the tail."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing the text block" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove from the sewing frame. Round the spine by pressing gently with the bone folder from each side, coaxing a slight forward curve. Apply a thin coat of PVA to the spine and set aside for 30 minutes. Once dry, trim the cord tails to 25 mm each side and paste on the book mull. The mull wings will attach to the boards when casing in."
+          }
+        ]
+      }
+    ]
+  }
+}

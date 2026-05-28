@@ -1,0 +1,175 @@
+{
+  "slug": "coptic-chain-variation",
+  "title": "Coptic chain stitch, the three-hole variation",
+  "subtitle": "A compact visible-spine structure for small journals and notebooks",
+  "excerpt": "The three-hole Coptic chain uses only three sewing stations per signature instead of the standard five to seven, producing a visible spine with a coarser chain pattern. The reduced station count works well on small-format books where the standard spacing would crowd.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), public domain, chapter on sewing structures. Cockerell describes the chain-link sewing at head and tail; the three-station variation is a scale reduction of the same principle applied to pocket-format work.",
+  "recipeTools": [
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "bookbinding-board-1-5mm", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "chain-link",
+      "term": "Chain link",
+      "definition": "The stitch worked between the last hole of one signature and the head or tail station of the next. The needle passes under the loop of the previous signature's thread to form the chain."
+    },
+    {
+      "slug": "exposed-spine-binding",
+      "term": "Exposed-spine binding",
+      "definition": "Any binding where the sewing is visible on the outside of the spine rather than concealed under a covering."
+    }
+  ],
+  "techniqueSlugs": ["bookbinding-coptic-stitch", "bookbinding-kettle-stitch"],
+  "criticalTechniques": ["bookbinding-coptic-stitch"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The standard Coptic-stitch notebook uses five to seven "
+          },
+          {
+            "type": "text",
+            "text": "chain links",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chain-link" } }]
+          },
+          {
+            "type": "text",
+            "text": " per signature. Stations are spaced 20-25 mm apart for an A5 book. A three-hole version uses only three stations: head, tail, and centre. This suits small-format books (A6 or smaller) where the standard spacing would crowd the spine. It also works for samplers where the coarser chain pattern is the point."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The stitch sequence is identical to the full Coptic; only the station count changes. The "
+          },
+          {
+            "type": "text",
+            "text": "exposed-spine binding",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "exposed-spine-binding" } }]
+          },
+          {
+            "type": "text",
+            "text": " opens completely flat and can be sewn to thin card covers without boards. This version covers eight signatures of six sheets each, giving 96 pages at A6 format."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Text paper, 90 gsm, grain short, A5 sheets",
+              "description": "Fold each A5 sheet to A6 (folded size 148 x 105 mm). Six sheets per signature; eight signatures. Grain must run parallel to the spine."
+            },
+            {
+              "name": "Cover boards (optional)",
+              "description": "1.5 mm bookbinding board cut to 152 x 109 mm (4 mm larger than text block on three edges). Alternatively, use heavyweight cartridge wrapped around the first and last signatures."
+            },
+            {
+              "name": "Bookbinding thread, linen (slug: bookbinding-thread-linen)",
+              "description": "Waxed 4-cord linen. Cut one length of 2.5 metres for the entire book."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Marking and piercing the stations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mark three stations on a card template: 8 mm from head, centre of the spine, and 8 mm from tail. The head and tail stations are the chain-link positions; the central station is the pass-through. Hold the template against the folded spine of each signature and mark the stations with a pencil dot inside the fold. Pierce all signatures at once when stacked, working with the bookbinding awl through the fold from inside outward."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing the first signature" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If using boards, pierce the boards to match the signature template and begin with the back board. Thread the needle. Starting inside the first signature at the tail station, push the needle out through the tail hole. Pass the thread around the back board's tail hole and back through the signature tail hole to the inside. Move to the centre station: exit, circle the board's centre hole, return. Move to the head station: exit, circle the board hole, return. The thread is now anchored to the back board through all three stations."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Adding subsequent signatures" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the second signature next to the first, inside face down. From inside the second signature at the head station, push the needle out. Hook the needle under the corresponding thread loop on the first signature: this is the chain link. Return the needle through the second signature's head hole. Pass inside to the centre station; exit; hook under the centre loop of the first signature; return inside. Pass to the tail; exit; hook the tail loop; return inside. The second signature is now chained to the first. Pull each chain link firm but not tight: the thread should sit flat, not saw into the paper."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Repeat for all eight signatures. After sewing the last signature, attach the front board by passing the thread through each front-board hole in turn, as with the back board. Finish with a square knot at the tail station, trim the tail to 10 mm, and press the knot flat with the bone folder."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Chain links visible on the inside of the signatures",
+              "cause": "The needle passed through the fold rather than the pierced hole",
+              "fix": "The chain-link pass must loop under the thread on the outside spine. Keep the needle on the outside of the spine when forming each chain link."
+            },
+            {
+              "symptom": "Signatures shift sideways during sewing",
+              "cause": "Head and tail not kept aligned as signatures are added",
+              "fix": "Hold the sewn sections together at head and tail with one hand while sewing with the other. A spring clamp at the tail helps on the early signatures."
+            },
+            {
+              "symptom": "Thread pulls through the paper at the chain-link station",
+              "cause": "Thread too thin, or paper too light for the station spacing",
+              "fix": "Use 4-cord rather than 2-cord thread. For very thin paper, add a small reinforcing disc of washi kozo tissue over each sewing-station hole before piercing."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

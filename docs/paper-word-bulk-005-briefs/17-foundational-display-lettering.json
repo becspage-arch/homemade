@@ -1,0 +1,116 @@
+{
+  "slug": "foundational-display-lettering",
+  "title": "Foundational hand at display scale for headings and certificates",
+  "subtitle": "Scaling up the Foundational hand for large calligraphic text",
+  "excerpt": "At display scale: 20 mm or larger body height: the Foundational hand requires more deliberate pen control because small inconsistencies in pen angle and letter width become visible at arm's length. This tutorial covers the adjustments needed when moving from a 10 mm x-height to a 25 mm one.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edward Johnston, Writing and Illuminating and Lettering (1906), public domain, Internet Archive, chapter on large writing and display use. Johnston addresses the scale transition specifically in his notes on panel letters and formal pieces.",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-0", "isOptional": false },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "iron-gall-ink", "isOptional": false },
+    { "slug": "cartridge-paper-220", "isOptional": false },
+    { "slug": "tracing-paper", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "light-box-a4", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "display-scale",
+      "term": "Display scale",
+      "definition": "Any calligraphic lettering intended to be read at a distance, typically with an x-height of 20 mm or more. Display lettering requires heavier paper, larger nibs, and more ink per stroke than text-scale work."
+    }
+  ],
+  "techniqueSlugs": ["calligraphy-foundational-display"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Mitchell Roundhand size 0 nib, the broadest of the series, produces a thick stroke suitable for "
+          },
+          {
+            "type": "text",
+            "text": "display-scale",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "display-scale" } }]
+          },
+          {
+            "type": "text",
+            "text": " Foundational at 4 nib-widths x-height (approximately 25-30 mm). At this scale the hand slows slightly because the nib carries more ink and the strokes are longer. The angle: 30° from the horizontal: is unchanged, and the proportions: 4 nib-widths x-height, 3 nib-widths cap height above the x-height: remain the same. What changes is the physical feel: a large nib requires more deliberate pressure to keep the ink flowing evenly."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Mitchell Roundhand nib, size 0 (slug: nib-mitchell-roundhand-0)",
+              "description": "The broadest Mitchell nib. At 4 nib-widths x-height, the letter body is approximately 25 mm."
+            },
+            {
+              "name": "Cartridge paper, 220 gsm (slug: cartridge-paper-220)",
+              "description": "Rule guidelines at 25 mm x-height, 12 mm for ascenders/descenders, using the metal ruler."
+            },
+            {
+              "name": "Iron-gall ink (slug: iron-gall-ink)",
+              "description": "At large scale, ink flow becomes more critical; iron-gall is free-flowing and does not clog the large nib."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ink management at large scale" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A size 0 nib holds a substantial ink reservoir. Load the nib from an eyedropper or pipette rather than dipping: dipping loads too much ink and the first stroke of each letter pools. Check ink load by making a test stroke on a scrap sheet: the stroke should be smooth and consistent for its full length, not heavy at the start and fading at the end. A light stroke from the underside of the nib onto scrap paper removes excess."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Speed and deliberateness" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "At text scale, the strokes are drawn quickly. At display scale, each stroke moves more deliberately. The pen must keep full contact throughout a long stroke. This means a slower, more controlled arm movement. Stroke endings are more visible at display scale. The foot of a Foundational stem is a curved serif. At 25 mm height, that serif must be formed in a separate stroke rather than implied by the main stroke's momentum."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Layout for headings" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a heading, rule three lines: the baseline, the x-height line, and the cap line (7-8 nib-widths above the baseline for the full Foundational majuscule). Mark the horizontal centre of the page. Write the heading on a practice sheet first and measure its full width. Centre it on the practice sheet, then trace or re-rule to the final sheet. Centring calculations: total letter widths plus inter-letter spaces divided by two; subtract from the page centre to find the start position."
+          }
+        ]
+      }
+    ]
+  }
+}

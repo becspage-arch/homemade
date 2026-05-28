@@ -1,0 +1,125 @@
+{
+  "slug": "marbling-on-fabric",
+  "title": "Marbling on fabric using a carrageenan size",
+  "subtitle": "Transferring combed and stylus patterns to cotton or silk cloth",
+  "excerpt": "Fabric marbling uses the same carrageenan size as paper marbling but replaces the alum mordant with an alum fabric-mordant solution. Lightweight cotton or silk takes the pattern most cleanly. The finished piece is heat-set and then hand-washed; the pattern is lightfast but will soften with repeated washing.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "marbling",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Technique synthesised from Josef Halfer, The Progress of the Marbling Art (1893, English translation 1894), public domain, chapter on marbling on silk; and from general textile-marbling practice in Arts and Crafts era sources.",
+  "recipeTools": [
+    { "slug": "marbling-tray", "isOptional": false },
+    { "slug": "carrageenan", "isOptional": false },
+    { "slug": "marbling-acrylic-liquid", "isOptional": false },
+    { "slug": "marbling-comb", "isOptional": false },
+    { "slug": "marbling-stylus", "isOptional": false },
+    { "slug": "ox-gall", "isOptional": false },
+    { "slug": "eyedropper", "isOptional": false },
+    { "slug": "alum-potash", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "fabric-mordanting",
+      "term": "Fabric mordanting",
+      "definition": "Treating fabric with an alum solution before marbling so the acrylic pigment bonds to the fibre. Without mordanting, the pattern washes off completely."
+    }
+  ],
+  "techniqueSlugs": ["marbling-fabric"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Paper marbling uses a 15% alum water solution to mordant the paper surface. "
+          },
+          {
+            "type": "text",
+            "text": "Fabric mordanting",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fabric-mordanting" } }]
+          },
+          {
+            "type": "text",
+            "text": " works similarly but requires a higher alum concentration and a soaking rather than brushing method, because fabric has a greater surface area per square centimetre than paper. The basic process is: soak, dry, marble, heat-set, rinse gently."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Safety: marbling chemistry",
+          "variant": "warning",
+          "body": "Alum solution at higher concentrations irritates skin and eyes. Wear rubber gloves during fabric mordanting. The carrageenan and acrylic pigments are non-toxic at marbling concentrations. Wash hands after each step."
+        }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Lightweight cotton or silk, pre-washed, prewashed without fabric conditioner",
+              "description": "Muslin, cotton lawn, or habutai silk. Heavy fabric does not transfer well. Pre-wash to remove sizing; do not use fabric conditioner (it repels the mordant)."
+            },
+            {
+              "name": "Alum solution for fabric: 30 g alum per litre of warm water (slug: alum-potash)",
+              "description": "Double the paper concentration. Mix thoroughly; add the fabric and let it soak for at least 1 hour, ideally overnight."
+            },
+            {
+              "name": "Carrageenan size (slug: carrageenan)",
+              "description": "Prepared the day before. Use a tray at least as large as the fabric piece."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Mordanting the fabric" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Submerge the fabric in the alum solution and leave for 1 hour minimum. Wring the fabric gently: do not rinse: and hang to dry completely. The fabric should feel slightly stiff when dry. Work with the fabric within 24 hours of mordanting; the alum effectiveness declines after that."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Marbling the fabric" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Prepare a pattern on the size as for paper: colour drops, then stylus or comb work. Lay the fabric face-down on the size in the same way as paper: hold it at a bow, release from the centre. Fabric is slightly heavier than paper and may take 45-60 seconds rather than 30. Lift by one corner and hold above the tray to let the excess size drip off."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Heat-setting and rinsing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rinse the fabric briefly in cold water to remove the surface carrageenan. Pat flat on a clean board and let air dry. Once dry, heat-set by pressing with a medium-hot iron (cotton setting for cotton; silk setting for silk) with a pressing cloth between the iron and the fabric. The heat fuses the acrylic pigment to the fabric fibres. After heat-setting, the fabric can be rinsed gently by hand in cool water; the pattern will hold but lighten slightly."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "slug": "dot-grid-page-setup",
+  "title": "Setting up a dot grid journal page",
+  "subtitle": "Making a reusable template and tracing dot grids onto blank pages",
+  "excerpt": "A dot grid page carries a regular pattern of small dots at 5 mm spacing that acts as a guide for writing, ruling, and drawing without the visual weight of full ruled or squared lines. Making a reusable master template and using a light box to trace dots through the page is faster and more consistent than ruling each page by hand.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "journalling-craft",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Technique synthesised from bullet journalling practice as popularised by Ryder Carroll's Bullet Journal method (2013 onwards) and from general hand-ruling conventions in stationery design.",
+  "recipeTools": [
+    { "slug": "light-box-a4", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "dot-grid",
+      "term": "Dot grid",
+      "definition": "A page layout with dots arranged in a regular grid: typically at 5 mm spacing: that serves as a flexible visual guide for writing and drawing. The dots are light enough to recede when the page is full but visible enough to align handwriting and diagrams."
+    }
+  ],
+  "techniqueSlugs": ["journalling-dot-grid-method"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          {
+            "type": "text",
+            "text": "dot grid",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dot-grid" } }]
+          },
+          { "type": "text", "text": " page gives the practical benefits of a squared grid: alignment guides for handwriting, tables, and diagrams: without the visual noise of full lines running across every page. The dots disappear once the page is in use. Commercial dot-grid journals are widely available, but ruling your own gives control over spacing, dot size, and margins, and lets you add dot grids to pages in journals that were not originally designed with them." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Cartridge paper or journal pages",
+              "description": "The pages to be dotted. Works on any paper light enough to show the master template beneath on a light box: up to about 120 gsm."
+            },
+            {
+              "name": "Light box, A4 (slug: light-box-a4)",
+              "description": "Used to shine through the master template to the page above, making the dot positions visible for tracing without transferring marks to the page directly."
+            },
+            {
+              "name": "Fine liner pen, 0.1-0.3 mm tip",
+              "description": "For placing the dots. A light touch gives small, unobtrusive dots. Use a grey or light blue ink for even less visual weight than black."
+            },
+            {
+              "name": "Metal ruler (slug: metal-ruler-30cm)",
+              "description": "For constructing the master template by ruling parallel lines at 5 mm intervals."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Making the master template" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Print a dot grid from a free online generator or rule one by hand. To rule by hand: mark points at 5 mm intervals along the top and bottom edges of a piece of cartridge paper, then connect them with faint pencil lines. Repeat for the left and right edges to create horizontal lines. Where vertical and horizontal lines intersect, place a bold dot with a fine liner. Erase the pencil construction lines after the dots are inked. Laminate the finished template or seal it with tape so it survives repeated use on the light box." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting the margins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Before tracing, position the margin borders on the template. Most journalling systems work with a 5-10 mm margin on the outer edges and a slightly wider gutter margin on the inner edge for pages that will be bound. Mark these margins on the template with a contrasting colour. When placing the page on the light box, align the template margin marks with the page edges to ensure the dot grid sits consistently from page to page." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tracing the dots" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place the template on the lit light box and lay the journal page face-up over it, aligned to the margin marks. The dots on the template show through as small dark points. Touch a fine liner briefly to each point: a dot, not a circle. Work row by row rather than column by column; this reduces the chance of missing a row or doubling up. For a 148 mm by 210 mm (A5) page with 5 mm dot spacing and 10 mm margins, the grid is approximately 26 columns by 38 rows: about 990 dots per page." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Batch ruling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rule pages in batches of 10-20 before binding them into a journal. Tracing 990 dots per page takes 3-5 minutes with practice; a 20-page batch is around 90 minutes of focused work. Alternatively, print dot grids onto cartridge paper directly from a template file and cut to size: this is faster for large batches and gives perfectly consistent results." }
+        ]
+      }
+    ]
+  }
+}
