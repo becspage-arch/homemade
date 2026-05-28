@@ -183,6 +183,11 @@ PRACTICE: 31
 - One subtitle on `oeufs-en-cocotte` carried an em dash. Voice-check only scans body content, so it had slipped through. Replaced with a comma in the export JSON before apply.
 - No file lost more than ~20% of its word count. Word-count drops were modest because the rewrite is sentence-level (split, simplify, swap vocabulary), not section-level.
 
+## Deploy
+
+- Batch commit `ec254b4` (the `feat(voice-retrofit):` commit that ships the 63 rewrites) triggered the deploy workflow run `26567814160`, which completed with conclusion `success`. `/healthz` returned 200 after the run completed.
+- This hand-off commit is `docs/**`-only and does not match the `packages/**` path filter on `.github/workflows/deploy.yml`, so no deploy is expected for it.
+
 ## Forward read
 
 After this fire: 652 PUBLISHED tutorials remain with `voiceRetrofittedAt IS NULL`.
