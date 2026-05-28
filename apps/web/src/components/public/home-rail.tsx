@@ -2,6 +2,8 @@ import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { RailScroll } from './rail-scroll'
 
+import './home-cards/home-cards.css'
+
 interface HomeRailProps {
   heading: string
   /** Optional small body line under the heading. */

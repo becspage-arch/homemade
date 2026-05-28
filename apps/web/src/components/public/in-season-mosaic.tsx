@@ -3,6 +3,8 @@ import { HomeCard } from './home-card'
 import type { ReaderStateMap } from '@/lib/user-state'
 import { readerStateFor } from '@/lib/user-state'
 
+import './home-cards/home-cards.css'
+
 interface MediaLike {
   cloudflareId?: string | null
   r2Key?: string | null

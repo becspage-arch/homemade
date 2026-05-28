@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { prisma, TutorialStatus } from '@homemade/db'
 import { mediaSrcSet } from '@/lib/media'
 
+import './home-cards/home-cards.css'
+
 interface CategoryRow {
   slug: string
   name: string

@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { tutorialHeroSrc } from '@/lib/tutorial-hero'
 import type { ReaderTutorialState } from '@/lib/user-state'
 
+import './home-cards/home-cards.css'
+
 interface MediaLike {
   cloudflareId?: string | null
   r2Key?: string | null

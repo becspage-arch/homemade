@@ -2,6 +2,8 @@ import { PinterestCard } from './home-cards/pinterest-card'
 import { RailScroll } from './rail-scroll'
 import type { RecentlyMadeTile } from '@/lib/recently-made'
 
+import './home-cards/home-cards.css'
+
 interface RecentlyMadeRailProps {
   heading: string
   subheading?: string

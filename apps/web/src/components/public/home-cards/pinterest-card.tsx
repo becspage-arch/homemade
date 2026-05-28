@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { mediaSrcSet } from '@/lib/media'
 
+import './home-cards.css'
+
 interface MediaLike {
   cloudflareId: string | null
   r2Key: string | null

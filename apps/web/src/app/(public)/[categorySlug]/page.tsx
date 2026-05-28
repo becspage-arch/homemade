@@ -28,12 +28,6 @@ import {
   readerStateFor,
 } from '@/lib/user-state'
 
-// Shared component styles (.home-hero-*, .home-card-*, .home-rail-*,
-// .rs-*, .home-pinterest-card-*, .home-magazine-card-*, etc.) live in
-// home-page.css. They need to be bundled with the category page too,
-// since HeroOverlay / HomeCard / HomeRail / RecentlyMadeRail are
-// reused here. Without this import the components render unstyled.
-import '../home-page.css'
 import './category-page.css'
 
 export const dynamic = 'force-dynamic'
