@@ -1,0 +1,349 @@
+{
+  "slug": "long-stitch-on-wooden-boards",
+  "title": "Long-stitch binding on wooden boards",
+  "subtitle": "The Ethiopian-style exposed-stitch structure with thin wooden covers",
+  "excerpt": "Ethiopian Coptic binding uses thin wooden boards instead of the grey board and cloth of European case binding. The sewing is visible on the spine, running in long diagonal links between signature head and tail. No adhesive touches the text block; the structure holds entirely through tension in the thread.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The Ethiopian long-stitch Coptic binding structure is documented in J.A. Szirmai, The Archaeology of Medieval Bookbinding (Ashgate, 1999), and in the broader Coptic bookbinding literature. The structural principles are derived from the same public-domain tradition as Cockerell's Coptic notes. Synthesis of public-domain board-attachment methods with documented contemporary hand-bookbinding practice.",
+  "recipeTools": [
+    {
+      "slug": "bookbinding-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "bookbinding-awl",
+      "isOptional": false
+    },
+    {
+      "slug": "bookbinding-thread-linen",
+      "isOptional": false
+    },
+    {
+      "slug": "beeswax-block",
+      "isOptional": false
+    },
+    {
+      "slug": "bone-folder",
+      "isOptional": false
+    },
+    {
+      "slug": "piercing-jig",
+      "isOptional": true
+    },
+    {
+      "slug": "metal-ruler-30cm",
+      "isOptional": false
+    },
+    {
+      "slug": "cutting-mat-a3",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-knife",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ethiopian-coptic-binding",
+      "term": "Ethiopian Coptic binding",
+      "definition": "A board-attached long-stitch sewing structure originating in early Christian Ethiopian manuscript traditions. Thin wooden boards are attached directly by the sewing thread, with no adhesive in the text block."
+    },
+    {
+      "slug": "sewing-station",
+      "term": "Sewing station",
+      "definition": "A pre-pierced hole through which the needle and thread pass when sewing signatures together. Stations are marked consistently at head, tail, and intervals along the spine fold."
+    },
+    {
+      "slug": "chain-link",
+      "term": "Chain link",
+      "definition": "The stitch that links adjacent signatures at each sewing station, forming a visible chain along the spine. Each link passes through the loop of the previous signature's stitch at that station."
+    }
+  ],
+  "techniqueSlugs": [
+    "bookbinding-kettle-stitch",
+    "bookbinding-long-stitch"
+  ],
+  "criticalTechniques": [
+    "bookbinding-long-stitch"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "text": "Ethiopian Coptic binding",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "ethiopian-coptic-binding"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is one of the oldest surviving multi-signature bindings, used from the second century onward in the Ethiopian Christian manuscript tradition. Unlike European case binding, the boards are attached directly by the sewing thread with no adhesive in the structure. The spine is fully exposed and the sewing links show as a diagonal grid running from head to tail."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The book opens completely flat at any page. This is inherent in the structure: because there are no adhesive joints to resist the opening movement, the only force holding the book shut is the thread tension. Plan for at least five signatures. Fewer than five and the linking chain does not look balanced; more than twenty and the thread tension becomes difficult to manage consistently through the full sewing."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Safety: cutting tools",
+          "body": "Sharp blades are safer than blunt blades. Always cut against a metal ruler on a self-healing mat. Keep the hand holding the ruler at least two finger-widths back from the blade path. Change blades at the first sign of dulling."
+        }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Paper for signatures",
+              "description": "Cartridge or drawing paper, 90-120 gsm, grain parallel to the spine. Fold into signatures of 4 sheets each (16 pages per signature)."
+            },
+            {
+              "name": "Thin wooden boards",
+              "description": "3 mm birch plywood or basswood, cut to the same height as the signatures and 5 mm wider than a closed signature (for the square). Sand smooth. Two boards per book."
+            },
+            {
+              "name": "Bookbinding thread, waxed linen (slug: bookbinding-thread-linen)",
+              "description": "Strong waxed linen, 4-cord weight. The thread carries the entire structural load."
+            },
+            {
+              "name": "Bookbinding needle (slug: bookbinding-needle)",
+              "description": "Blunt-tip, large eye to take 4-cord thread."
+            },
+            {
+              "name": "Bookbinding awl (slug: bookbinding-awl)",
+              "description": "For piercing sewing stations in the signatures and the wooden boards."
+            },
+            {
+              "name": "Beeswax block (slug: beeswax-block)",
+              "description": "Wax the thread before and partway through sewing. The waxing reduces friction on long passes through thick sections."
+            },
+            {
+              "name": "Bone folder (slug: bone-folder)",
+              "description": "For folding signatures and scoring fold lines."
+            },
+            {
+              "name": "Piercing jig (slug: piercing-jig)",
+              "description": "Optional but strongly recommended for consistent hole placement across many signatures."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Preparing the signatures and boards"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fold and nest four sheets per signature. Score the fold line with the bone folder before folding. Stack all signatures in order. Using the piercing jig, mark "
+          },
+          {
+            "type": "text",
+            "text": "sewing station",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sewing-station"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "s at the head and tail of each signature, and at intervals of 25-30 mm between them. Pierce each station with the awl."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Transfer the same station marks to both wooden boards. The board stations must align exactly with the signature stations. Pierce the boards with the awl; press the awl through slowly with a twisting motion to avoid splitting the wood. For the Ethiopian structure, the outermost stations sit 5 mm from the head and tail edges of the board."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The sewing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Thread the needle with a length of thread equal to three times the book height plus twice the spine length. Wax the full length. Begin with the front board, sewing from the outside in through the first station. Come through the first signature from the inside, out through the first station at the head. Pass over the board edge and back through the same station from the outside."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Move along to the next station and sew the same attachment stitch. Once the first signature is attached to the front board at all stations, introduce the second signature. At each station, pass the needle through the corresponding station of the new signature, then link through the loop of thread left at that station in the previous signature. This is the "
+          },
+          {
+            "type": "text",
+            "text": "chain link",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "chain-link"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Continue sewing signature by signature. Pull each stitch with firm, consistent tension: tight enough that the chain links lie flat against the spine, not so tight that the paper distorts at the sewing stations. When the thread runs short, finish on a knot inside a signature fold; begin a new length at the same station."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Attaching the back board"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "On the final signature, sew through the last signature's stations and then through the corresponding stations in the back board, mirroring the front board attachment. Knot off on the inside of the last signature. The book should close firmly with even tension on both boards."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Trim the text block foredge with a craft knife and metal ruler if the signatures are uneven. Sand the wooden boards lightly with fine-grit paper if any splinters appeared from the piercing. Oil or wax the boards if the wood is raw; linseed or beeswax both work. No trimming at head or tail is normally needed as the sewing itself levels the spine."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A coloured linen thread used for the final three signatures creates a visual accent at the spine end. Using two needles simultaneously, one at each end of a double-threaded length, allows both stations at head and tail to be sewn in one pass, a faster method once the rhythm is established."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Board pulls away from the sewing at one station",
+              "cause": "Thread tension uneven; one station pulled tighter than its neighbours",
+              "fix": "Work a fresh length of thread through the loose station from outside the board to inside the adjacent signature and tie off, reinforcing the attachment stitch."
+            },
+            {
+              "symptom": "Chain links show on alternate sides of the spine",
+              "cause": "Thread direction reversed mid-sewing",
+              "fix": "The links should all lie on the same plane. Maintain consistent needle direction (always entering from the same face) at each station throughout the sewing."
+            },
+            {
+              "symptom": "Signatures fan out at the foredge when open",
+              "cause": "Too many sheets per signature, or paper grain running across rather than parallel to the spine",
+              "fix": "This is a structural consequence of thick signatures; use 3 sheets per signature instead of 4 for the next iteration."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

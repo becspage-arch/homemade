@@ -1,0 +1,344 @@
+{
+  "slug": "limp-cover-binding",
+  "title": "Limp cover binding",
+  "subtitle": "A soft wrap-around cover sewn over thin card and covered in book cloth",
+  "excerpt": "Limp cover bindings have no rigid boards. The cover is a single piece of thin card covered in cloth or paper, scored at the hinge lines and wrapped around the text block. The result flexes naturally, lies flat when open, and is lighter than a case binding of the same page count.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on soft-cover bindings. Limp bindings predate rigid case bindings; the structure is documented in Cockerell as a legitimate finishing choice for journals and notebooks. Internet Archive, archive.org/details/bookbindingandca00cock.",
+  "recipeTools": [
+    {
+      "slug": "bookbinding-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "bookbinding-awl",
+      "isOptional": false
+    },
+    {
+      "slug": "bookbinding-thread-linen",
+      "isOptional": false
+    },
+    {
+      "slug": "beeswax-block",
+      "isOptional": false
+    },
+    {
+      "slug": "bone-folder",
+      "isOptional": false
+    },
+    {
+      "slug": "cutting-mat-a3",
+      "isOptional": false
+    },
+    {
+      "slug": "metal-ruler-30cm",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "pva-acid-free",
+      "isOptional": false
+    },
+    {
+      "slug": "paste-brush-bookbinding",
+      "isOptional": false
+    },
+    {
+      "slug": "piercing-jig",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "limp-cover",
+      "term": "Limp cover",
+      "definition": "A bookbinding cover with no rigid boards. Made from thin card and cloth or paper, scored at the spine and hinge lines. Softer and lighter than a case binding."
+    },
+    {
+      "slug": "hinge-line",
+      "term": "Hinge line",
+      "definition": "The scored fold line between the cover spine and a board panel. The score allows the cover to open without cracking."
+    },
+    {
+      "slug": "text-block",
+      "term": "Text block",
+      "definition": "The sewn or glued body of pages, excluding the cover. Also called the book block."
+    }
+  ],
+  "techniqueSlugs": [
+    "bookbinding-pamphlet-stitch",
+    "bookbinding-long-stitch"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "text": "limp cover",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "limp-cover"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " binding wraps a cloth- or paper-covered sheet of thin card directly around a sewn "
+          },
+          {
+            "type": "text",
+            "text": "text block",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "text-block"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". There are no separate boards, no case to make, and no rounding or backing of the spine. The cover is scored at the "
+          },
+          {
+            "type": "text",
+            "text": "hinge line",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "hinge-line"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "s so it opens flat, and the whole book flexes easily. Field notebooks, sketchbooks, and travel journals suit the format well."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This version uses a long-stitch or pamphlet-stitch sewn text block and a single-piece limp cover. The cover card is 0.5 mm mount board or the lighter 1.5 mm bookbinding board. You will need to sew the text block first before cutting the cover."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Safety: cutting tools",
+          "body": "Sharp blades are safer than blunt blades; a blunt blade skids. Always cut against a metal ruler on a self-healing mat. Keep the hand holding the ruler at least two finger-widths back from the blade path."
+        }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Paper for signatures",
+              "description": "Cartridge or drawing paper, 80-100 gsm, grain parallel to the spine. Fold into signatures of 4-6 folded sheets (8-12 pages)."
+            },
+            {
+              "name": "Cover card: mount board or bookbinding board, 0.5-1.5 mm",
+              "description": "One piece cut to final cover size. If using 1.5 mm board (slug: bookbinding-board-1-5mm), the cover will be slightly stiffer; mount board gives a more supple result."
+            },
+            {
+              "name": "Book cloth (home-made or commercial, slug: book-cloth)",
+              "description": "For covering the card. Cut 20 mm larger than the card on all sides for turn-ins."
+            },
+            {
+              "name": "PVA, acid-free (slug: pva-acid-free)",
+              "description": "For adhering the cloth to the card."
+            },
+            {
+              "name": "Bookbinding thread, waxed linen (slug: bookbinding-thread-linen)",
+              "description": "4-cord weight for sewing the signatures."
+            },
+            {
+              "name": "Bookbinding needle (slug: bookbinding-needle)",
+              "description": "Blunt-tip for sewing signatures."
+            },
+            {
+              "name": "Bookbinding awl (slug: bookbinding-awl)",
+              "description": "For piercing sewing stations."
+            },
+            {
+              "name": "Beeswax block (slug: beeswax-block)",
+              "description": "Run the thread through before sewing to prevent fraying."
+            },
+            {
+              "name": "Bone folder (slug: bone-folder)",
+              "description": "For scoring hinge lines and burnishing turn-ins."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Preparing the text block"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fold the paper into signatures. Each signature is a group of sheets nested together, folded once along the spine edge. Four or five sheets per signature gives 16 or 20 pages per signature. Score the fold line with the bone folder against the metal ruler before folding so the crease is clean and does not drag the paper."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stack the signatures in order and mark the sewing stations with a pencil on the outermost fold. Pierce each station with the bookbinding awl, holding the signature open in the piercing jig. Wax the thread by drawing it across the beeswax block twice."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sew the signatures together using a long-stitch or pamphlet stitch, knotting off firmly at the head and tail. Set the sewn block aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Making the limp cover"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Measure the text block accurately: height, total width when closed (front board + spine + back board), and spine thickness. Cut the cover card to height equal to the text block height plus 3 mm at head and tail for squares. Cut the cover width as: front panel width + spine width + back panel width. The spine width equals the text block spine thickness."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Score the hinge lines on the inside face of the card. The hinge line sits 3 mm in from each side of the spine width, not at the spine edge itself. This small offset prevents the cloth from cracking at the fold when the cover flexes. Use the bone folder and metal ruler; press firmly enough to compress the board slightly but not to cut through."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Covering the card"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lay the cloth face down. Centre the card on the cloth and mark the turn-in allowance. Brush PVA evenly across the card, working quickly. Place the card onto the cloth and press down firmly. Turn the assembly over and smooth out air bubbles with the bone folder from the centre outward."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Trim the cloth at each corner to a 45-degree mitre, leaving enough cloth to wrap around the corner point. Fold the turn-ins over and burnish with the bone folder. The cloth at the hinge lines will want to pull; keep it taut but not stretched as you fold. Press under a board and weight for 30 minutes until the PVA sets."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Attaching the text block"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fold the cover along the scored hinge lines. Brush a thin coat of PVA onto the outer face of the first and last signatures of the text block (the sections that will lie against the inside of the front and back cover panels). Press the text block into the cover, aligning the head and tail squares equally. Fold the cover around and clamp shut with bulldog clips at the head and tail, or place in the book press for 30 minutes. Allow to dry fully before using."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A marbled or decorated paper cover follows the same method as cloth; grain direction must run parallel to the spine. A limp vellum cover uses an outer layer of vellum paper rather than cloth; the hinge score needs to go through only partway to avoid cracking. Tie closures (a length of ribbon sewn through the foredge) add character to travel notebooks and sketchbooks."
+          }
+        ]
+      }
+    ]
+  }
+}

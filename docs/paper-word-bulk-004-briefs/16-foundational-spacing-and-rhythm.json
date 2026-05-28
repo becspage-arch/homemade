@@ -1,0 +1,225 @@
+{
+  "slug": "foundational-spacing-and-rhythm",
+  "title": "Foundational spacing and rhythm",
+  "subtitle": "How to achieve even visual spacing between letters and words",
+  "excerpt": "Letter spacing in calligraphy is not a mechanical measurement between the letter edges. It is an optical exercise: the aim is equal visual weight of white space between each letter pair. For a broad-edge script such as Foundational, this requires wider spacing between upright strokes and tighter spacing between curved forms.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edward Johnston, Writing and Illuminating and Lettering (1906), chapter on spacing and rhythm. Johnston's analysis of letter spacing as optical rather than mechanical is the basis for all subsequent broad-edge spacing instruction. Internet Archive, archive.org/details/writingilluminat00john.",
+  "recipeTools": [
+    {
+      "slug": "nib-mitchell-roundhand-3",
+      "isOptional": false
+    },
+    {
+      "slug": "straight-pen-holder",
+      "isOptional": false
+    },
+    {
+      "slug": "iron-gall-ink",
+      "isOptional": false
+    },
+    {
+      "slug": "cartridge-paper-130",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "optical-spacing",
+      "term": "Optical spacing",
+      "definition": "Adjusting the physical distance between letters so that the enclosed and surrounding white space appears visually equal, rather than measuring equal distances between letter edges."
+    },
+    {
+      "slug": "counter",
+      "term": "Counter",
+      "definition": "The enclosed or partially enclosed space within a letter, such as the bowl of an 'o' or the inside of an 'n' arch. The counter area informs how wide the inter-letter spacing should be."
+    }
+  ],
+  "techniqueSlugs": [
+    "calligraphy-foundational-hand-lower-case-alphabet"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Even letter spacing in a broad-edge script is "
+          },
+          {
+            "type": "text",
+            "text": "optical spacing",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "optical-spacing"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ": it is an optical exercise, not a mechanical one. Measuring the gap between letter edges gives the wrong result. Round letters appear to have more space around them than upright letters at the same physical distance. To make spacing look even, vary the physical gap to match the optical difference."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The three inter-letter space types"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In practice, every pair of letters falls into one of three spacing types."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Two straight edges: the space between two upright strokes (n followed by m, for example). This requires the largest physical gap because the two parallel vertical edges trap a clean rectangular space of white that reads as heavy."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "One straight edge and one curve: a stem letter followed by or preceded by a bowl letter (n followed by o). The physical gap is smaller. The "
+          },
+          {
+            "type": "text",
+            "text": "counter",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "counter"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " of the round letter opens outward and reduces the enclosed white space compared to a straight edge."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Two curves facing each other: an o followed by another o, or a c followed by an o. The physical gap is the smallest of the three types, because both curves open toward each other, dispersing the enclosed space outward."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The reference space"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before writing a line, establish the reference space. Write the two-straight-edge letter pair nn. The gap between the two arches is the reference white space for that line. All other letter pairs on that line aim to contain the same visual weight of white, varied by the method above."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Word spacing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Word spacing in Foundational is traditionally one full letter o width. This is wider than modern typeset word spacing and narrower than a full letter space. The aim is for the word gaps to be visible but not so wide that the text line fragments into separate islands."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Line spacing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Line spacing for Foundational: the space between the descender line of one row and the ascender line of the next should be at least 2 nib-widths. Closer than this and the ascenders and descenders tangle. A comfortable working line spacing is a gap of 3 to 4 nib-widths between rows. The interlinear space can be increased for effect in display work; in text work, consistent rhythm matters more than generous air."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Practice routine"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Write the pattern nmonn across a practice sheet, repeating for one full line. Then write noomon. These exercise the three space-type transitions directly. Step back and look at the line from a distance of 1.5 to 2 metres; unevenness in the spacing is more visible at distance than close up."
+          }
+        ]
+      }
+    ]
+  }
+}
