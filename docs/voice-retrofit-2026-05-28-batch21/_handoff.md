@@ -1,4 +1,7 @@
-Batch 2026-05-28-batch21: 75 tutorials retrofitted. Deploy pending verification at commit.
+Batch 2026-05-28-batch21: 75 tutorials retrofitted. Deploy green, healthz 200.
+
+Deploy run: https://github.com/becspage-arch/homemade/actions/runs/26594891391
+healthz: 200 from https://homemade.education/healthz
 
 ## Mandatory DB verification
 
