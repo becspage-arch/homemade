@@ -1,4 +1,4 @@
-Batch 2026-05-28-batch18: 75 tutorials retrofitted. Deploy pending verification.
+Batch 2026-05-28-batch18: 75 tutorials retrofitted. Deploy green, healthz 200.
 
 ## Mandatory DB verification
 
