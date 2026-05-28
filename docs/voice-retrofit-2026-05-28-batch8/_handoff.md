@@ -200,5 +200,6 @@ PUBLISHED with voiceRetrofittedAt IS NULL after this fire: 791.
 
 ## Deploy verification
 
-See trailing block; updated by this worker after gh run watch and healthz
-return their final values.
+GitHub Actions deploy.yml run 26559374847 completed with conclusion `success` on commit 9ecc876.
+
+`curl -sS -o /dev/null -w "%{http_code}\n" https://homemade.education/healthz` returned `200`.
