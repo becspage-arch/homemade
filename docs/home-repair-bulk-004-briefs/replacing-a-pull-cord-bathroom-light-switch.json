@@ -1,0 +1,162 @@
+{
+  "slug": "replacing-a-pull-cord-bathroom-light-switch",
+  "title": "Replacing a pull-cord bathroom light switch",
+  "subtitle": "Swap a worn or sticky pull-cord ceiling switch for a new one",
+  "excerpt": "How to replace a pull-cord ceiling switch in a bathroom safely. Covers isolating the lighting circuit, the verify-dead test, transferring the conductors to the new switch, and refitting on the ceiling.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual. BS 7671:2018 IET Wiring Regulations reference.",
+  "recipeTools": [
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "voltage-tester-2-pole", "isOptional": false }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "glossaryTerms": [
+    {
+      "slug": "switched-live",
+      "term": "Switched live",
+      "definition": "A line conductor that runs from a switch back to the light fitting, only live when the switch is in the on position. In a UK pull-cord switch the switched live is the conductor that goes back up to the ceiling rose."
+    },
+    {
+      "slug": "verify-dead-procedure",
+      "term": "Verify-dead procedure",
+      "definition": "The three-step test using a known-working voltage tester: test against a known live source, test the working conductors, retest against the known live source. Confirms the conductors are dead and the tester did not fail mid-procedure."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A pull-cord switch wears out after years of pulls. The mechanism sticks, the cord pulls without a click, or the light stays on after release. The fix is a like-for-like swap; the wiring stays the same." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, isolate, lock off, verify dead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Switch the relevant lighting circuit off at the consumer unit. Identify the breaker that protects the bathroom lighting; switch it to off and apply a lock-off device or a written warning tag the rest of the household can see. Test the voltage tester against a known-live source to confirm it is working. Test the conductors at the switch (line to neutral, line to earth) and confirm they read dead. Test the tester again against the known-live source to confirm it did not fail. This live-dead-live sequence is the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "verify-dead-procedure" } }], "text": "verify-dead procedure" },
+          { "type": "text", "text": " and is the single safety step that must run before any conductor is touched." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, undo the old switch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The pull-cord switch is held to the ceiling by two screws through its base plate. Loosen and remove the two screws. Lower the switch body away from the ceiling so the cable still connects but the back of the switch can be seen." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, record the conductor positions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Take a photo of the back of the old switch on a phone, with the conductors connected. Most pull-cord switches in modern wiring have one brown (line) and one brown sleeved (or marked) " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "switched-live" } }], "text": "switched live" },
+          { "type": "text", "text": " in the line terminal pair, plus a green-and-yellow earth in the earth terminal. The photo is the reference for fitting the new switch." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4, transfer the conductors" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Loosen the terminal screws on the old switch. Pull each conductor free. Loosen the terminal screws on the new switch. Push each conductor into the matching terminal on the new switch in the same position as the photo shows. Tighten the terminal screws firmly. Tug each conductor by hand to confirm grip." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 5, refit the switch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the switch body up to the ceiling. Tuck the conductors back into the back box or ceiling void without crushing them. Drive the two fixing screws into the back box. Snug each screw evenly so the switch sits flush against the ceiling." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 6, restore supply and test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remove the lock-off and switch the breaker back on at the consumer unit. Pull the cord on the new switch. The light should turn on; pull again, the light should turn off. The click of the new mechanism is firm and the cord returns to its rest position." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "On a switch with no earth conductor (often the case in pre-1966 wiring), the new switch must be a plastic body and double-insulated. A metal-bodied switch needs an earth and cannot be fitted on an earth-free circuit. A two-way pull-cord switch (used where two switches control the same light) has extra terminals; check the photo against the manufacturer's diagram before transferring." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A pull-cord switch in a bathroom lasts five to ten years before the cord or the mechanism fails. Replacing the cord alone is possible on some models; replacing the whole switch is the standard fix." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Light does not come on after the swap",
+              "cause": "Switched live moved to a different terminal, or a conductor is loose in its terminal.",
+              "fix": "Isolate and verify dead. Open the switch. Check each conductor matches the photo position. Tug each conductor to confirm grip. Refit and re-test."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Breaker trips when the switch is pulled",
+              "cause": "A conductor strand is touching the back box, or two conductors have been put into one terminal incorrectly.",
+              "fix": "Isolate and verify dead. Inspect each conductor for stray strands. Confirm each terminal has only the conductors shown in the photo. Refit and re-test."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
