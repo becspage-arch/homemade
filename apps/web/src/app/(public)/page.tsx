@@ -5,7 +5,6 @@ import { OnboardingCard } from '@/components/public/onboarding-card'
 import { RecentlyMadeRail } from '@/components/public/recently-made-rail'
 import { InSeasonMosaic } from '@/components/public/in-season-mosaic'
 import { CategoryImageTiles } from '@/components/public/category-image-tiles'
-import { HeaderModeController } from '@/components/public/header-mode-controller'
 import { HeroOverlay } from '@/components/public/home-cards/hero-overlay'
 import { ScheduledActionCard } from '@/components/public/home-cards/scheduled-action-card'
 import { Wordmark } from '@/components/wordmark'
@@ -67,9 +66,6 @@ export default async function HomePage() {
 
   return (
     <div className="home-page">
-      {/* Top nav transparent-over-hero treatment (homepage only). */}
-      <HeaderModeController />
-
       {/* Inline onboarding card — new users only, above the hero. */}
       {data.isOnboardingPending && (
         <section className="home-onboarding-zone">

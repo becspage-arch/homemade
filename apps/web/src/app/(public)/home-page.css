@@ -64,40 +64,39 @@
   background-color: transparent;
 }
 
-/* Linear gradient: heavy dark at the bottom for guaranteed text
-   legibility against any photo. Belt-and-braces — strong gradient
-   PLUS text-shadow on the title so even a bright photo doesn't wash
-   the title out. */
+/* Light gradient at the bottom — just enough to keep the photo from
+   feeling sharp at the edge. The sage scrim on the content panel does
+   the legibility work, so this stays subtle. */
 .home-hero-gradient {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.85) 0%,
-      rgba(0, 0, 0, 0.7) 18%,
-      rgba(0, 0, 0, 0.35) 42%,
-      rgba(0, 0, 0, 0.05) 65%,
-      rgba(0, 0, 0, 0) 100%
-    ),
-    linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.35) 0%,
-      rgba(0, 0, 0, 0) 55%
-    );
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.1) 25%,
+    rgba(0, 0, 0, 0) 55%
+  );
   pointer-events: none;
 }
 
+/* Sage scrim card — Option A. The text block sits in a sage-tinted
+   panel so legibility is guaranteed on any photo, in our brand colour
+   pair (cream on sage). Padding and rounded corners give it the
+   editorial caption-block feel. */
 .home-hero-content-bottom {
   position: absolute;
   left: max(calc(50vw - 620px), 32px);
-  right: 32px;
   bottom: 32px;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  max-width: 720px;
+  max-width: 560px;
   color: var(--color-cream);
+  background: rgba(74, 86, 64, 0.88);
+  padding: 26px 30px 28px;
+  border-radius: 4px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 .home-hero-overline {
@@ -106,8 +105,7 @@
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--color-cream);
-  opacity: 0.95;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+  opacity: 0.9;
   margin-bottom: 2px;
 }
 
@@ -117,27 +115,23 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-cream);
-  opacity: 0.85;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+  opacity: 0.8;
 }
 
 .home-hero-title {
   font-family: var(--font-fraunces);
   font-weight: 400;
-  font-size: 64px;
-  line-height: 1;
+  font-size: 56px;
+  line-height: 1.02;
   letter-spacing: -0.015em;
   color: var(--color-cream);
   margin: 0;
-  text-shadow:
-    0 2px 12px rgba(0, 0, 0, 0.55),
-    0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .home-hero-excerpt {
   font-family: var(--font-fraunces);
   font-style: italic;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.45;
   color: var(--color-cream);
   opacity: 0.94;
@@ -146,8 +140,7 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
-  max-width: 560px;
+  max-width: 500px;
 }
 
 .home-hero-cta {
@@ -913,11 +906,12 @@
 
   .home-hero-content-bottom {
     bottom: 40px;
-    max-width: 760px;
+    max-width: 600px;
+    padding: 30px 34px 32px;
   }
 
   .home-hero-title {
-    font-size: 76px;
+    font-size: 64px;
   }
 }
 
@@ -940,13 +934,15 @@
     height: auto;
   }
   .home-hero-content-bottom {
-    left: 20px;
-    right: 20px;
-    bottom: 24px;
-    gap: 6px;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    gap: 4px;
+    max-width: none;
+    padding: 18px 18px 20px;
   }
   .home-hero-title {
-    font-size: 38px;
+    font-size: 32px;
   }
   .home-hero-excerpt {
     font-size: 14px;
