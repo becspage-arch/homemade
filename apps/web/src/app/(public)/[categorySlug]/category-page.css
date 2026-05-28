@@ -1,142 +1,188 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Category page — 2026-05-25 redesign.
+   Spec: docs/homepage-redesign-2026-05-25.md + post-launch UX session.
+   Matches the homepage register: full-bleed hero, sage scrim, chip
+   wayfinding, sub-category rails, single filtered grid when chips active.
+   ───────────────────────────────────────────────────────────────────────── */
+
 .category-page {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 48px 32px;
+  padding: 0 24px 48px;
 }
 
-.category-header {
-  text-align: center;
-  margin: 24px 0 64px;
-  padding-bottom: 48px;
-  border-bottom: 0.5px solid var(--color-linen-grey);
+/* ── Category hero ─────────────────────────────────────────────────────── */
+
+/* The hero breaks out to full viewport width and is shorter than the
+   homepage hero — it's a section header, not the marquee. Inherits all
+   the .home-hero-* internal styling (sage scrim, fonts, gradient). */
+.category-hero-zone {
+  position: relative;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-bottom: 24px;
 }
 
-.category-eyebrow {
-  display: block;
-  font-family: var(--font-lora);
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--color-sage);
-  margin-bottom: 14px;
+.category-hero-zone .home-hero-feature {
+  height: 50vh;
+  min-height: 360px;
+  max-height: 560px;
 }
 
-.category-title {
-  font-family: var(--font-fraunces);
-  font-weight: 400;
-  font-size: 64px;
-  color: var(--color-espresso);
-  letter-spacing: -0.02em;
-  margin: 0 0 18px;
-  line-height: 1;
+.category-hero-zone .home-hero-title {
+  font-size: 52px;
 }
 
-.category-description {
-  font-family: var(--font-fraunces);
-  font-style: italic;
-  font-size: 18px;
-  color: var(--color-warm-taupe);
-  max-width: 620px;
-  margin: 0 auto;
-  line-height: 1.5;
+@media (min-width: 1440px) {
+  .category-hero-zone .home-hero-feature {
+    height: 52vh;
+    min-height: 420px;
+  }
+  .category-hero-zone .home-hero-title {
+    font-size: 60px;
+  }
 }
 
-.category-filter-note {
-  margin: 18px auto 0;
+/* ── Chip rows (sub-categories + filters) ──────────────────────────────── */
+
+.category-chip-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.category-chip-strip {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+  margin: 0 -24px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.category-chip-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.category-chip {
+  flex: 0 0 auto;
   font-family: var(--font-lora);
   font-size: 13px;
   letter-spacing: 0.04em;
-  color: var(--color-warm-taupe);
-}
-
-.category-filter-note a {
-  color: var(--color-sage);
+  color: var(--color-espresso);
+  background: var(--color-soft-parchment);
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 999px;
+  padding: 8px 16px;
   text-decoration: none;
-  border-bottom: 0.5px solid var(--color-sage);
-  margin-left: 6px;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
 }
 
-.category-filter-note a:hover {
-  color: var(--color-forest);
-  border-bottom-color: var(--color-forest);
+.category-chip:hover {
+  border-color: var(--color-sage);
+  color: var(--color-sage);
 }
 
-.category-equipment-filter {
-  margin: 24px auto 0;
+.category-chip.is-active {
+  background: var(--color-sage);
+  border-color: var(--color-sage);
+  color: var(--color-cream);
+}
+
+.category-filter-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px 12px;
+  gap: 8px;
 }
 
-.category-equipment-filter-link {
+.category-filter-chip {
   font-family: var(--font-lora);
   font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: var(--color-sage);
-  text-decoration: none;
-  padding: 6px 14px;
+  background: transparent;
   border: 0.5px solid var(--color-sage);
   border-radius: 999px;
+  padding: 6px 14px;
+  text-decoration: none;
   transition: background-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
 }
 
-.category-equipment-filter-link:hover {
+.category-filter-chip:hover {
+  background: var(--color-soft-parchment);
+}
+
+.category-filter-chip.is-active {
   background: var(--color-sage);
-  color: var(--color-linen-cream);
+  color: var(--color-cream);
+}
+
+/* ── Filtered grid (single dense grid when a filter is active) ─────────── */
+
+.category-filtered-section {
+  padding: 24px 0;
+  border-top: 0.5px solid var(--color-linen-grey);
+}
+
+.category-filtered-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px 16px;
 }
 
 .category-empty {
-  margin: 48px auto 0;
+  margin: 48px auto;
   max-width: 540px;
   text-align: center;
   font-family: var(--font-fraunces);
   font-style: italic;
-  font-size: 18px;
+  font-size: 17px;
   color: var(--color-warm-taupe);
 }
 
-.category-section {
-  margin-bottom: 80px;
-}
+/* ── Tablet / mobile ───────────────────────────────────────────────────── */
 
-.category-section-header {
-  margin-bottom: 32px;
-  padding-bottom: 18px;
-  border-bottom: 0.5px solid var(--color-linen-grey);
-}
-
-.category-section-title {
-  font-family: var(--font-fraunces);
-  font-weight: 500;
-  font-size: 26px;
-  color: var(--color-espresso);
-  margin: 0;
-}
-
-.category-section-description {
-  margin: 8px 0 0;
-  font-family: var(--font-fraunces);
-  font-style: italic;
-  font-size: 15px;
-  color: var(--color-warm-taupe);
-}
-
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 48px 32px;
-}
-
-@media (max-width: 720px) {
-  .category-title {
-    font-size: 44px;
+@media (max-width: 1024px) {
+  .category-filtered-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
-  .category-section {
-    margin-bottom: 56px;
+}
+
+@media (max-width: 900px) {
+  .category-page {
+    padding: 0 16px 32px;
   }
-  .category-grid {
-    gap: 40px 20px;
+  .category-hero-zone {
+    margin-bottom: 16px;
+  }
+  .category-hero-zone .home-hero-feature {
+    aspect-ratio: 4 / 5;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+  }
+  .category-hero-zone .home-hero-title {
+    font-size: 32px;
+  }
+  .category-chip-strip {
+    margin: 0 -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .category-filtered-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-filtered-grid {
+    gap: 16px 10px;
   }
 }

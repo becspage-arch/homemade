@@ -14,6 +14,7 @@ interface HeroOverlayProps {
   eyebrow?: string | null
   title: string
   excerpt?: string | null
+  /** Empty string hides the CTA entirely (used by the category hero). */
   ctaLabel: string
 }
 
@@ -57,7 +58,7 @@ export function HeroOverlay({
         {eyebrow && <span className="home-hero-eyebrow">{eyebrow}</span>}
         <h1 className="home-hero-title">{title}</h1>
         {excerpt && <p className="home-hero-excerpt">{excerpt}</p>}
-        <span className="home-hero-cta">{ctaLabel}</span>
+        {ctaLabel && <span className="home-hero-cta">{ctaLabel}</span>}
       </span>
     </Link>
   )
