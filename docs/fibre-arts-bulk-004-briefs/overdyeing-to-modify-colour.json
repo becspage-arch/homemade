@@ -1,0 +1,144 @@
+{
+  "slug": "overdyeing-to-modify-colour",
+  "title": "Overdyeing to modify colour",
+  "subtitle": "Using a second dye bath to deepen, shift, or correct the colour of previously dyed fibre",
+  "excerpt": "Overdyeing passes already-dyed fibre through a second dye bath to mix the two colours. The result depends on the starting colour and the overdye: yellow over blue gives green, red over yellow gives orange. Overdyeing is also useful for correcting colours that are too pale, too pink, or not quite the intended shade.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "natural-dyeing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Overdyeing as a colour-modification technique is documented in Jenny Dean, Wild Colour (1999). The colour-mixing principles described follow standard natural dye subtractive colour theory.",
+  "recipeTools": [
+    { "slug": "dye-pot-stainless", "isOptional": false },
+    { "slug": "kitchen-scales", "isOptional": false },
+    { "slug": "dye-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "subtractive-colour-mixing",
+      "term": "Subtractive colour mixing",
+      "definition": "The colour mixing system that applies to dyes, paints, and pigments, where overlaid colours absorb more light and the result is darker than either starting colour. Overdyeing follows subtractive mixing rules: yellow over blue gives green, not a lighter secondary colour. This is distinct from additive mixing (light), where combining colours produces lighter results."
+    },
+    {
+      "slug": "scouring-before-overdye",
+      "term": "Scouring before overdyeing",
+      "definition": "Washing previously dyed fibre in warm water with a small amount of soap to remove any oils, finishing agents, or loose dye before introducing it to a second dye bath. Scouring ensures the overdye bath makes even contact with the fibre and prevents contamination of the new dye bath."
+    }
+  ],
+  "aliases": ["overdye yarn", "natural dye colour correction", "second dye bath technique"],
+  "techniqueSlugs": ["natural-dye-mordanting-with-alum", "dyeing-with-marigold-petals", "dyeing-with-woad-for-blue"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Mordant safety",
+          "body": "Wear gloves when handling mordant chemicals. Do not reuse dye pots for food after dyeing."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Overdyeing follows " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "subtractive-colour-mixing" } }], "text": "subtractive colour mixing" },
+          { "type": "text", "text": " rules: the second dye sits on top of the first, filtering the light that bounces off the fibre. The starting colour matters as much as the overdye. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scouring-before-overdye" } }], "text": "Scour the fibre before overdyeing" },
+          { "type": "text", "text": " to remove any residue that might block uptake. If the original dye has already used up the mordant sites on the fibre, a re-mordanting step may be needed before the overdye." }
+        ]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "mordant-safety" }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Colour mixing guide" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The following combinations are reliable starting points for overdyeing natural plant dyes on wool. All assume alum-mordanted fibre unless otherwise stated." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Colour mixing reference",
+          "items": [
+            { "name": "Yellow (goldenrod/marigold) overdyed with woad or indigo", "qty": "Green" },
+            { "name": "Yellow (goldenrod/marigold) overdyed with madder", "qty": "Orange" },
+            { "name": "Woad blue overdyed with goldenrod or marigold", "qty": "Green" },
+            { "name": "Madder red overdyed with woad or indigo", "qty": "Purple-brown" },
+            { "name": "Pale tan (walnut, dilute) overdyed with weld yellow", "qty": "Warm gold" },
+            { "name": "Pale grey overdyed with woad or indigo", "qty": "Slate blue" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Prepare the fibre" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Scour the previously dyed fibre gently in warm water with a small amount of soap. Rinse and wet out thoroughly. If the original mordant was alum and the dye is fresh, re-mordanting is usually not needed. If the fibre was dyed more than three months ago or was commercially dyed, add a half-strength alum mordant step (7-8 g per 100 g) before proceeding." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Prepare the overdye bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Prepare the overdye bath at half to full strength depending on how strong a shift you want. A half-strength bath gives a gentle shift; a full-strength bath produces a more saturated result that may obscure the original colour completely. Test a small amount of the wet fibre in a small jar of overdye liquid before committing the whole batch." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Overdye" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Enter the fibre into the overdye bath at the same temperature as the bath. Heat slowly to 80°C and hold for 45-60 minutes. Remove, rinse in descending temperatures, and dry away from direct sun." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The overdye result is much darker than expected",
+              "cause": "Full-strength overdye bath on a fibre that already had strong colour",
+              "fix": "Use a half-strength or quarter-strength bath for subtle shifts. Overdyeing compounds colour quickly; it is easier to add depth than to remove it."
+            },
+            {
+              "problem": "The overdye is very uneven with patches of the original colour showing through",
+              "cause": "Fibre not properly scoured before overdyeing, blocking uptake in areas",
+              "fix": "Scour thoroughly before the overdye step and ensure the fibre is fully wet through before entering the bath."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

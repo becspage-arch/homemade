@@ -1,0 +1,141 @@
+{
+  "slug": "dyeing-with-woad-for-blue",
+  "title": "Dyeing with woad for blue",
+  "subtitle": "Extracting indigo-blue dye from fresh woad leaves using the cold extraction vat method",
+  "excerpt": "Woad (Isatis tinctoria) contains small quantities of indigotin, the same blue pigment found in tropical indigo. The cold extraction method extracts and oxidises the dye in one step using fresh leaves, giving blues from pale sky to mid-blue on unmordanted wool. The process is seasonal: woad leaves must be used fresh within hours of harvest.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "natural-dyeing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Woad dyeing is documented in Jenny Dean, Wild Colour (1999) and in the woad research literature from the University of Hertfordshire woad project. The cold extraction method described follows the standard UK natural dyeing practice for fresh-leaf woad.",
+  "recipeTools": [
+    { "slug": "dye-pot-stainless", "isOptional": false },
+    { "slug": "kitchen-scales", "isOptional": false },
+    { "slug": "dye-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "indigotin",
+      "term": "Indigotin",
+      "definition": "The blue pigment compound found in both woad (Isatis tinctoria) and tropical indigo (Indigofera tinctoria). Indigotin is insoluble in water in its oxidised form and must be chemically reduced to a soluble yellow-green leuco form before it can enter and bond to fibre. Oxidation during and after dyeing converts it back to the insoluble blue form, fixing the colour."
+    },
+    {
+      "slug": "leuco-indigo",
+      "term": "Leuco-indigo",
+      "definition": "The reduced, soluble form of indigotin that forms inside a correctly set-up indigo or woad vat. Leuco-indigo is yellow-green rather than blue: the fibre dipped in the vat appears yellow-green and turns blue on exposure to air as the leuco-indigo oxidises back to indigotin. Multiple short dips build up colour depth more effectively than a single long immersion."
+    }
+  ],
+  "aliases": ["woad blue dye", "Isatis tinctoria dyeing", "fresh leaf woad vat"],
+  "techniqueSlugs": ["cold-water-indigo-vat", "natural-dye-mordanting-with-alum"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Mordant safety",
+          "body": "Woad uses no mordant chemicals, but keep dye pots food-free and wash hands after handling plant material."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Woad is the UK's native blue dye plant, cultivated for dyeing since at least the Iron Age. The blue pigment " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "indigotin" } }], "text": "indigotin" },
+          { "type": "text", "text": " is present in fresh woad leaves at around 0.2-0.5% dry weight (far less than tropical indigo), so large quantities of leaf are needed for a dye bath. The cold extraction method produces " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "leuco-indigo" } }], "text": "leuco-indigo" },
+          { "type": "text", "text": " without chemical reduction agents, using only the natural reducing compounds in the plant. The colour range is limited to pale blue; for deeper blues, use a full indigo vat." }
+        ]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "mordant-safety" }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "growing-woad-for-dye" }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Unmordanted, scoured wool yarn or fleece", "qty": "50 g" },
+            { "name": "Fresh woad leaves (Isatis tinctoria), first-year rosette", "qty": "500-700 g" },
+            { "name": "Washing soda (sodium carbonate)", "qty": "1 tsp" },
+            { "name": "Stainless steel or plastic bucket, minimum 5 litre", "qty": "1" },
+            { "name": "Thermometer", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Extract the dye from the leaves" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Harvest fresh leaves in the morning when the plant is hydrated. Bring 3 litres of water to 80°C. Pack the leaves into the hot water and hold at 80°C for 10 minutes. Do not boil. Strain off all leaf material and pour the hot liquid into a clean bucket. The liquid will be yellowy-green at this stage." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Raise the pH and whisk" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add 1 tsp of washing soda to the warm liquid and stir to dissolve. The pH should rise to around 9-10. Whisk vigorously with a hand whisk for 2-3 minutes to oxygenate the liquid. The surface foam should turn from yellow-green to blue as the leuco-indigo oxidises. Stop whisking, allow the bubbles to subside, and let the liquid settle for 5 minutes. A successful vat will have blue sediment settling at the bottom." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Dye the wool" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Gently lower the wet wool into the settled vat without introducing air bubbles. Hold the wool submerged for 10-15 minutes. Remove carefully and expose to air for 5-10 minutes: the wool will turn from yellow-green to blue as the leuco-indigo oxidises. Rinse in cool water. Repeat for additional depth, allowing full oxidation between dips." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The wool turns green rather than blue after oxidation",
+              "cause": "The vat is over-reduced or pH is too high; the leuco-indigo is not converting fully",
+              "fix": "Allow more air exposure time after removing from the vat. Green that does not shift to blue after 10 minutes in air indicates the dye did not bond fully."
+            },
+            {
+              "problem": "No colour at all appears on the wool",
+              "cause": "Leaves were old or dehydrated, or extraction temperature was too low",
+              "fix": "Woad leaves must be very fresh; use within 2-4 hours of harvest. Check extraction temperature reaches 80°C and hold for the full 10 minutes."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

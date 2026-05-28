@@ -1,0 +1,136 @@
+{
+  "slug": "bundle-dyeing-on-wool",
+  "title": "Bundle dyeing on wool",
+  "subtitle": "Wrapping plant material in wool fabric and steaming to transfer colour and pattern",
+  "excerpt": "Bundle dyeing wraps leaves, petals, and other plant material directly onto wool cloth or yarn, then steams the bundle to transfer dye and tannins onto the fibre. The contact prints of leaves and flowers produce unique botanical impressions. Results vary by plant species, season, and mordant used.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "natural-dyeing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Bundle dyeing as a botanical contact-print technique has been popularised by India Flint (Eco Colour, 2008) and is now widely practiced in natural dyeing. Method follows standard UK instruction.",
+  "recipeTools": [
+    { "slug": "dye-pot-stainless", "isOptional": false },
+    { "slug": "kitchen-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "contact-printing",
+      "term": "Contact printing",
+      "definition": "A dyeing technique in which plant material is placed directly on the surface of the cloth and the pigments and tannins transfer from the plant onto the fibre through direct contact, heat, and moisture. The resulting print carries the shape and venation pattern of the leaf or petal. Contact printing is distinct from vat dyeing: colour transfer is localised to the contact area rather than distributed through the bath."
+    },
+    {
+      "slug": "mordanting-for-bundle-dye",
+      "term": "Mordanting for bundle dye",
+      "definition": "Pre-treating cloth with a mordant before bundle dyeing to fix the contact-print colours. Alum-mordanted cloth gives clearer, more saturated prints than unmordanted cloth. Iron-mordanted cloth shifts the prints to greyed, darker tones. The mordant choice is made before the bundle is assembled and affects the final palette."
+    }
+  ],
+  "aliases": ["eco print wool", "botanical contact print fabric", "plant bundle dye"],
+  "techniqueSlugs": ["natural-dye-mordanting-with-alum", "dyeing-with-marigold-petals"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Mordant safety",
+          "body": "Wear gloves when handling alum or iron mordants. Keep steam pots away from children and use a trivet."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bundle dyeing is the most accessible form of natural dyeing because the materials are the mordant, the dye, and the pattern simultaneously. The principle of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "contact-printing" } }], "text": "contact printing" },
+          { "type": "text", "text": " means the plant material does the design work: each leaf transfers its own exact shape onto the cloth. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mordanting-for-bundle-dye" } }], "text": "Mordanting the cloth beforehand" },
+          { "type": "text", "text": " is the main preparation step; the bundle assembly and steaming are straightforward." }
+        ]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "mordant-safety" }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Alum-mordanted wool fabric or fleece, damp", "qty": "A 50 x 50 cm piece or 100 g yarn" },
+            { "name": "Fresh leaves with high tannin content (oak, walnut, eucalyptus, rose)", "qty": "A generous double layer" },
+            { "name": "Fresh petals (marigold, coreopsis, or onion skin)", "qty": "Optional, for additional colour" },
+            { "name": "String or natural twine for tying the bundle", "qty": "1 m" },
+            { "name": "Steamer or pot with a trivet", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Lay out the plant material" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lay the damp mordanted cloth flat. Arrange leaves and petals on one half of the cloth, pressing them flat and as close together as possible without overlapping. Overlap the other half of the cloth over the arranged plants to make a sandwich. The plants must be in direct contact with the fibre on both sides." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Roll and secure the bundle" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Roll the cloth sandwich tightly around a stick, pipe, or wooden dowel. Tie the bundle at intervals with natural twine to hold it tight. The tighter the roll, the better the contact prints. For a second layer of colour, wrap the tied bundle in a piece of onion skin or rusty-iron cloth before the final tie." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Steam the bundle" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stand the bundle upright in a steamer or on a trivet in a covered pot with 5 cm of water. Steam for 60-90 minutes. Top up the water as needed. Allow to cool completely before untying. Unwrap slowly and peel the plant material away. Rinse in cold water and dry away from direct sun." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The prints are very faint or barely visible",
+              "cause": "Plants too dry, or cloth not mordanted before bundling",
+              "fix": "Use fresh, hydrated leaves and ensure the cloth is damp before rolling. Pre-mordant with alum for significantly better colour transfer."
+            },
+            {
+              "problem": "The prints bleed into each other and lose sharpness",
+              "cause": "Bundle rolled too loosely or unrolled while still hot",
+              "fix": "Tie the bundle as tightly as possible and allow it to cool completely before unwrapping. Heat causes the dyes to migrate; a cooled bundle gives sharper print edges."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

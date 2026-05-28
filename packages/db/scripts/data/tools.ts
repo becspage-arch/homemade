@@ -679,6 +679,7 @@ export const TOOLS: ToolSeed[] = [
   { slug: 'raddle', name: 'Raddle', category: 'other', aliases: [], isPurchasable: true, typicalPriceGbp: 3500, notes: 'Toothed bar clamped to the back beam during warping. Spreads the warp at the right sett before beaming.' },
   { slug: 'warping-board', name: 'Warping board', category: 'other', aliases: ['warping mill'], isPurchasable: true, typicalPriceGbp: 6000, notes: 'Pegged board (or rotating mill) for measuring out the warp threads at a known length before dressing the loom.' },
   { slug: 'tapestry-comb', name: 'Tapestry comb', category: 'other', aliases: ['beater'], isPurchasable: true, typicalPriceGbp: 1200, notes: 'Hand-held weighted comb for beating tapestry weft down firmly between picks. The frame-loom + upright-loom beater.' },
+  { slug: 'weaving-pick-up-stick', name: 'Pick-up stick (rigid heddle)', category: 'other', aliases: ['pickup stick'], isPurchasable: true, typicalPriceGbp: 1000, notes: 'Flat stick slid between selected warp threads on a rigid heddle loom to create an additional shed, enabling pick-up patterns and doubleweave.' },
 
   // Felting — needles, mats, soaps, palm fitters.
   { slug: 'felting-needles-36', name: 'Felting needles, size 36 (coarse)', pluralName: 'felting needles', category: 'other', aliases: [], isPurchasable: true, typicalPriceGbp: 500, notes: 'Coarse barbed needle for initial shape-building in needle felting. Pack of five — needles break easily on hard cores.' },
@@ -707,6 +708,7 @@ export const TOOLS: ToolSeed[] = [
   { slug: 'macrame-clipboard', name: 'Clipboard (macramé starter)', category: 'other', aliases: [], isPurchasable: true, typicalPriceGbp: 500, notes: 'A heavy-duty clipboard as a starter macramé work-holder. Clip the bundle of cords at the top; knot downward.' },
   { slug: 'cord-measuring-tape', name: 'Cord measuring tape (macramé)', category: 'measuring', aliases: [], isPurchasable: true, typicalPriceGbp: 300, notes: 'A long soft tape (3 m or more) for measuring cut lengths of macramé cord. Most plant hangers need 4-5 m of cord per strand.' },
   { slug: 'macrame-fringe-comb', name: 'Macramé fringe comb', category: 'other', aliases: ['cord comb'], isPurchasable: true, typicalPriceGbp: 400, notes: 'Stiff comb (or a cheap pet-grooming slicker brush) for unbraiding and fluffing macramé cord ends into a soft fringe.' },
+  { slug: 'macrame-ring', name: 'Macramé ring or dowel', category: 'other', aliases: ['macrame dowel', 'wooden dowel macrame'], isPurchasable: true, typicalPriceGbp: 500, notes: 'A wooden dowel, metal ring, or branch used as the mounting point for macrame wall hangings and plant holders. Cords are attached with lark head knots.' },
 
   // Rug-making — hooks, frames, backing aids.
   { slug: 'rug-hook', name: 'Rug hook (traditional)', category: 'other', aliases: ['traditional rug hook'], isPurchasable: true, typicalPriceGbp: 1500, notes: 'Hand-held barbed hook (or hooked needle in a wooden handle) for pulling wool strips up through a backing fabric. The traditional UK / North American rug-hooking tool.' },

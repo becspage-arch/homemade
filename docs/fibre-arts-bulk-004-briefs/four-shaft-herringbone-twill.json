@@ -1,0 +1,139 @@
+{
+  "slug": "four-shaft-herringbone-twill",
+  "title": "Four-shaft herringbone twill",
+  "subtitle": "A reversing twill that produces a V-pattern cloth on a four-shaft floor loom",
+  "excerpt": "Herringbone twill reverses direction every eight to sixteen threads to produce a chevron pattern across the cloth. The structure uses the same threading and tie-up as a standard 2/2 twill but with the threading sequence mirrored at regular intervals. The resulting cloth has the diagonal texture of twill but with a woven-in pattern that does not require colour change.",
+  "type": "PATTERN",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Herringbone twill is documented in Hooper, Hand-Loom Weaving (1910) and in J. Tovey, The Technique of Weaving (1965, Batsford). The threading and treadling sequences described are standard four-shaft herringbone as reproduced in UK weaving curricula.",
+  "recipeTools": [
+    { "slug": "floor-loom-4-shaft", "isOptional": false },
+    { "slug": "boat-shuttle", "isOptional": false },
+    { "slug": "weaving-reed", "isOptional": false },
+    { "slug": "weaving-heddles", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "herringbone-threading",
+      "term": "Herringbone threading",
+      "definition": "A threading sequence that reverses direction at regular intervals to create a mirrored diagonal pattern in the cloth. A standard herringbone uses the sequence 1-2-3-4-3-2-1-2-3-4-3-2 repeating, producing a chevron or V-pattern. The reversal point is the pivot thread where the sequence turns back on itself."
+    },
+    {
+      "slug": "broken-twill",
+      "term": "Broken twill",
+      "definition": "Any twill threading that departs from the straight 1-2-3-4 draw by introducing reversals, skips, or point repeats. Herringbone is a point-reversing broken twill. Broken twills produce geometric patterns in the weave structure without requiring more than four shafts."
+    }
+  ],
+  "aliases": ["herringbone weave four shaft", "chevron twill weaving", "reversing twill loom"],
+  "techniqueSlugs": ["threading-four-shaft-floor-loom", "four-shaft-twill-scarf"],
+  "criticalTechniques": ["threading-four-shaft-floor-loom"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Herringbone twill is a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "broken-twill" } }], "text": "broken twill" },
+          { "type": "text", "text": ": the threading sequence reverses direction at regular intervals using a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "herringbone-threading" } }], "text": "herringbone threading" },
+          { "type": "text", "text": " sequence rather than a straight draw. The reversal creates a V or chevron shape in the diagonal lines of the twill weave. This entry covers a wool or wool-blend herringbone for a scarf or sampler cloth." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The draft" }]
+      },
+      {
+        "type": "weavingDraft",
+        "attrs": {
+          "definition": {
+            "title": "Four-shaft herringbone twill",
+            "loomType": "four-shaft",
+            "threading": [1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1, 2, 3, 4],
+            "tieUp": [
+              [1, 1, 0, 0],
+              [0, 1, 1, 0],
+              [0, 0, 1, 1],
+              [1, 0, 0, 1]
+            ],
+            "treadling": [1, 2, 3, 4, 1, 2, 3, 4, 4, 3, 2, 1, 4, 3, 2, 1]
+          }
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The threading sequence is 1-2-3-4-3-2 repeating, which reverses at shafts 4 and 1. The treadling follows a straight progression 1-2-3-4 then reverses to 4-3-2-1, creating a herringbone pattern in both threading and treadling directions. The reversal points in both threading and treadling must align for the chevron to appear cleanly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "DK or worsted wool warp yarn", "qty": "150 g" },
+            { "name": "DK or worsted wool weft yarn (same or matching colour)", "qty": "120 g" },
+            { "name": "Four-shaft floor loom, at least 30 cm weaving width", "qty": "1" },
+            { "name": "Boat shuttle", "qty": "1" },
+            { "name": "8-dent reed", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sett and threading notes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set DK wool at 8 ends per 10 cm (one end per dent in an 8-dent reed). Thread following the herringbone sequence: 1-2-3-4-3-2, repeat. Count threads carefully at each reversal point; a threading error at the pivot produces a step in the chevron rather than a sharp point. Use a threading hook and count each group of six threads (one repeat) before moving to the next. Tie up as shown in the draft." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Treadling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Treadle in sequence 1-2-3-4, then reverse to 4-3-2-1 and repeat. The reversal point in the treadling should mirror the reversal point in the threading. If the threading reverses every 6 threads, the treadling typically reverses every 8 picks to give a near-square herringbone cell. Adjust the number of picks per block to change the proportion of the chevron." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The chevron has a step rather than a sharp point at the reversal",
+              "cause": "The threading or treadling reversal count is off by one thread",
+              "fix": "Recount the threading at the reversal point and confirm the pivot thread. The pivot shaft (1 or 4) should appear once at the reversal, not twice."
+            },
+            {
+              "problem": "The herringbone pattern is not visible until after wet-finishing",
+              "cause": "Wool cloth needs wet-finishing to bloom and set the weave structure",
+              "fix": "This is normal: wet-finish the cloth before judging the pattern. Wool herringbone typically becomes clearly visible only after washing and pressing."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

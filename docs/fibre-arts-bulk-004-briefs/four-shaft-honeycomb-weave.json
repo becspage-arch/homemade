@@ -1,0 +1,121 @@
+{
+  "slug": "four-shaft-honeycomb-weave",
+  "title": "Four-shaft honeycomb weave",
+  "subtitle": "A textured cell-pattern fabric on a four-shaft floor loom using a simple tie-up and treadling",
+  "excerpt": "Honeycomb weave produces a fabric with raised hexagonal cells in the cloth surface: the cells trap air and give the cloth excellent insulation. The structure uses only two treadles in alternation on a four-shaft loom and is easier to treadle than twill or overshot. This entry covers a standard cotton honeycomb set up for a sampler or tea towel.",
+  "type": "PATTERN",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Honeycomb weave is documented in Hooper, Hand-Loom Weaving (1910), available via Internet Archive. The structure and threading described are standard four-shaft honeycomb as presented in the Edwardian weaving tradition.",
+  "recipeTools": [
+    { "slug": "floor-loom-4-shaft", "isOptional": false },
+    { "slug": "boat-shuttle", "isOptional": false },
+    { "slug": "weaving-reed", "isOptional": false },
+    { "slug": "weaving-heddles", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "honeycomb-cells",
+      "term": "Honeycomb cells",
+      "definition": "The raised hexagonal or rectangular pockets in honeycomb weave, created by blocks of plain weave alternating with floats in a specific threading and treadling sequence. The floats form the walls of the cell and the plain weave sections form the cell floors."
+    }
+  ],
+  "aliases": ["honeycomb weave four shaft", "loom honeycomb fabric", "textured weave structure"],
+  "techniqueSlugs": ["threading-four-shaft-floor-loom", "four-shaft-twill-scarf"],
+  "criticalTechniques": ["threading-four-shaft-floor-loom"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Honeycomb weave creates " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "honeycomb-cells" } }], "text": "honeycomb cells" },
+          { "type": "text", "text": " by alternating sections of plain weave and float weave in a block sequence. The floats allow the cloth to pucker and trap air in the finished fabric. On a four-shaft loom the threading uses a straight draw (shafts 1-2-3-4 repeating) with a specific treadling sequence that creates the block pattern without requiring a complex threading." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The draft" }]
+      },
+      {
+        "type": "weavingDraft",
+        "attrs": {
+          "definition": {
+            "title": "Four-shaft honeycomb, straight draw",
+            "loomType": "four-shaft",
+            "threading": [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4],
+            "tieUp": [
+              [1, 0, 1, 0],
+              [0, 1, 0, 1],
+              [1, 1, 0, 0],
+              [0, 0, 1, 1]
+            ],
+            "treadling": [1, 2, 1, 2, 3, 4, 3, 4, 1, 2, 1, 2, 3, 4, 3, 4]
+          }
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Treadle 1 and 2 alternate to produce plain weave on shafts 1+3 and 2+4 respectively. Treadles 3 and 4 produce the long floats that form the cell walls. The treadling sequence alternates a block of plain weave picks (1-2-1-2) with a block of float picks (3-4-3-4). The cell size is determined by how many picks of each block are woven before switching: more picks in each block produce taller, more pronounced cells." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "8/2 cotton or linen warp yarn", "qty": "200 g" },
+            { "name": "10/2 cotton weft yarn in contrast colour", "qty": "150 g" },
+            { "name": "Four-shaft floor loom, at least 40 cm weaving width", "qty": "1" },
+            { "name": "Boat shuttle", "qty": "1" },
+            { "name": "10-dent reed", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sett and weaving" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the warp at 20 ends per 10 cm (2 ends per dent in a 10-dent reed). Thread a straight draw: shaft 1, 2, 3, 4, repeat across the full width. Tie up as shown in the draft above. Begin with 4 picks on treadles 1-2 alternating (plain weave), then 4 picks on treadles 3-4 alternating (float picks). Repeat the 8-pick block throughout. Beat firmly: honeycomb needs a firm beat to set the cells clearly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The cells are not visible in the woven cloth",
+              "cause": "Beat too soft or weft yarn too fine relative to the warp sett",
+              "fix": "Firm up the beat. The float picks should be visibly looser between the plain-weave sections. Use a weft yarn at least as heavy as the warp."
+            },
+            {
+              "problem": "The cloth is very stiff and the cells remain flat",
+              "cause": "Warp sett too close, preventing the float picks from raising",
+              "fix": "Open the sett slightly (to 15 ends per 10 cm for this structure) so the floats have room to rise above the plain-weave ground."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

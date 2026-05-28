@@ -1,0 +1,126 @@
+{
+  "slug": "tapestry-weave-colour-blocking",
+  "title": "Tapestry weave colour blocking",
+  "subtitle": "Building bold flat-colour areas in tapestry by managing weft joins and managing outline sharpness",
+  "excerpt": "Colour blocking in tapestry produces bold, flat areas of a single colour meeting at a clean boundary. The technical challenge is in how two adjacent colour areas join at their shared boundary: the two weft threads must interlock or share a warp so the join holds without creating a slit in the cloth.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Tapestry colour joining techniques are documented across the international tapestry tradition, including Aubusson, Gobelin, and Scandinavian kelim practice. Method draws on the standard interlocking and shared-warp join techniques as taught in UK tapestry workshops.",
+  "recipeTools": [
+    { "slug": "frame-loom", "isOptional": false },
+    { "slug": "tapestry-loom-upright", "isOptional": true },
+    { "slug": "tapestry-shuttle", "isOptional": false },
+    { "slug": "tapestry-comb", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "interlocking-join",
+      "term": "Interlocking join",
+      "definition": "A tapestry colour join in which two adjacent weft threads loop around each other between the warp threads at their shared boundary before returning in their respective directions. The interlock prevents a slit from forming at the colour boundary."
+    },
+    {
+      "slug": "slit-tapestry",
+      "term": "Slit tapestry",
+      "definition": "A tapestry technique in which two adjacent colour areas share no warp thread or interlock, creating a vertical slit at their boundary. In Kelim work, slits are a deliberate structural feature that can be sewn closed or left open as decoration. In most European tapestry traditions, slits are avoided by using interlocking joins."
+    }
+  ],
+  "aliases": ["tapestry colour join technique", "interlocking weft tapestry", "bold colour tapestry"],
+  "techniqueSlugs": ["warping-a-frame-loom", "tapestry-weave-diamond-pattern", "soumak-stitch-tapestry"],
+  "criticalTechniques": ["warping-a-frame-loom"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bold colour blocking requires a clear decision at every colour boundary: will you use an " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "interlocking-join" } }], "text": "interlocking join" },
+          { "type": "text", "text": ", a shared warp thread, or a deliberate " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "slit-tapestry" } }], "text": "slit" },
+          { "type": "text", "text": "? Each option changes the cloth structure and the look of the boundary. An interlocking join produces a slightly blended edge. A shared-warp join gives a cleaner edge but a slightly open structure. A slit gives the sharpest edge of all but must be sewn closed before the tapestry can hang." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Frame loom or upright tapestry loom, warped in cotton warp", "qty": "1" },
+            { "name": "Tapestry weft yarn in two or three colours", "qty": "50 g per colour" },
+            { "name": "Tapestry shuttle (one per colour in use)", "qty": "3" },
+            { "name": "Tapestry comb or fork", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The interlocking join" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Establish the two colour areas" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Warp the loom as normal. Begin weaving the first colour block from the left edge to the centre boundary warp. When the shuttle reaches the boundary warp, leave the weft thread inside the shed, do not beat yet." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Work the interlock" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bring the second colour in from the right edge up to the same boundary warp. Loop the second colour's weft around the first colour's weft thread between the boundary warps. Both weft threads should now be looped around each other at the boundary. Beat down both sections of the pick together with the tapestry comb. On the next pick, the threads cross at the same point and interlock again. The interlock should fall at the same point pick after pick to create a clean vertical join." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Managing diagonal boundaries" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A vertical boundary stays at the same warp throughout. A diagonal boundary moves one warp thread left or right each pick. For a 45-degree diagonal, shift the boundary by one warp every pick. For a shallower diagonal, shift by one warp every two or three picks. The join method is the same; only the position of the interlock point shifts." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "A visible slit forms at the colour boundary even when interlocking",
+              "cause": "The interlock loop is not forming tightly between the warps",
+              "fix": "After looping, pull both weft threads snug before beating. The loop should be tight enough that no gap is visible between the warps when the pick is beaten down."
+            },
+            {
+              "problem": "The boundary weaves as a series of steps rather than a clean diagonal",
+              "cause": "Boundary position not shifted consistently each pick",
+              "fix": "Mark the intended diagonal with a light pencil line on the warp before weaving begins. Follow the line boundary warp by boundary warp."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

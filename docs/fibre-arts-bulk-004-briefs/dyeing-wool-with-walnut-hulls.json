@@ -1,0 +1,141 @@
+{
+  "slug": "dyeing-wool-with-walnut-hulls",
+  "title": "Dyeing wool with walnut hulls",
+  "subtitle": "A tannin-rich, mordant-free brown dye from fresh or dried black walnut hulls",
+  "excerpt": "Walnut hulls contain high concentrations of juglone, a natural dye compound that bonds to wool without a mordant. The colour ranges from tan to deep warm brown depending on hull freshness and fibre preparation. Walnut dye stains everything it touches, including skin and clothing, so protective equipment is important.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "natural-dyeing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Walnut hull dyeing is documented in Jenny Dean, Wild Colour (1999) and Dominique Cardon, Natural Dyes (2007). The mordant-free method described follows standard UK practice.",
+  "recipeTools": [
+    { "slug": "dye-pot-stainless", "isOptional": false },
+    { "slug": "kitchen-scales", "isOptional": false },
+    { "slug": "dye-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "juglone",
+      "term": "Juglone",
+      "definition": "A natural polyphenol found in the husks, bark, and roots of walnut trees (Juglans species). Juglone functions as a natural dye compound that bonds directly to protein fibres without requiring a mordant. It is also allelopathic (toxic to many other plants) and stains skin, cloth, and equipment a persistent brown-black on contact."
+    },
+    {
+      "slug": "mordant-free-dye",
+      "term": "Mordant-free dye",
+      "definition": "A natural dye that bonds directly to fibre without a separate mordanting step. Tannin-rich dyes (walnut, oak gall, pomegranate rind) are the most common mordant-free options for protein fibres. They produce reliable colour without the pre-treatment step required by most other plant dyes."
+    }
+  ],
+  "aliases": ["black walnut dye", "walnut hull natural dye", "juglone wool dye"],
+  "techniqueSlugs": ["natural-dye-mordanting-with-alum", "natural-dye-exhaust-bath-technique"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Mordant safety",
+          "body": "Walnut hulls stain skin and fabric permanently. Wear gloves and old clothes. Keep dye pots food-free."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Walnut is a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mordant-free-dye" } }], "text": "mordant-free dye" },
+          { "type": "text", "text": ": the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "juglone" } }], "text": "juglone" },
+          { "type": "text", "text": " in the hulls bonds directly to wool. This makes it an accessible first dye for anyone without mordant chemicals. The main practical caution is the staining: walnut will permanently mark skin, work surfaces, and clothing. Set up on newspaper or old sheeting and wear gloves throughout." }
+        ]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "mordant-safety" }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "growing-walnuts-for-dye" }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Wool yarn, scoured and wet out", "qty": "100 g" },
+            { "name": "Fresh green walnut hulls, or dried hulls", "qty": "300 g fresh / 100 g dried" },
+            { "name": "Stainless steel dye pot, minimum 5 litre", "qty": "1" },
+            { "name": "Protective gloves", "qty": "1 pair" },
+            { "name": "Thermometer", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Prepare the dye bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place the hulls in the dye pot with enough water to cover. Bring to a simmer and hold for 1 hour. Strain off all hull material. The liquid will be a deep brown-black. For a paler tan colour, dilute the dye bath with additional water." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Dye the wool" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add the wet wool to the dye bath at around 50°C. Heat slowly to 80°C and hold for 45-60 minutes, turning the wool gently every 10-15 minutes. Remove, rinse in water of the same temperature, then rinse again in cooler water. Walnut colour will continue to deepen slightly as it dries." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Cold extraction (alternative)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Walnut also works as a cold dye: place the hulls in a jar of cold water and leave for 2-3 weeks to ferment and extract. Strain and use the cold liquid as a dye bath without heating. The colour range from cold extraction tends toward tan and khaki rather than the deeper browns from a hot bath." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The dyed wool smells unpleasant after drying",
+              "cause": "Residual hull material or fermented dye liquid not fully rinsed out",
+              "fix": "Rinse the wool thoroughly in three changes of water after dyeing and wash with a small amount of wool wash before drying."
+            },
+            {
+              "problem": "The brown colour is uneven with darker patches",
+              "cause": "The wool was not moved enough in the dye bath, allowing concentrated dye to pool on the fibre",
+              "fix": "Turn the wool every 10 minutes throughout dyeing. Walnut exhausts quickly and unevenness sets fast."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

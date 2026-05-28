@@ -1,0 +1,122 @@
+{
+  "slug": "spinning-corriedale-wool",
+  "title": "Spinning Corriedale wool",
+  "subtitle": "A medium-staple, dual-coated breed that bridges the gap between fine merino and coarser longwools",
+  "excerpt": "Corriedale is the first breed many spinners move to after mastering fine merino, because it is forgiving, versatile, and available prepared as either roving or combed top. Its 24-31 micron diameter and 8-12 cm staple allow both the woollen and worsted draw, making it useful for everything from lace knitting to rug warp.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Corriedale is one of the most widely spun breeds in UK and Australasian spinning guilds. Method draws on breed-specific guidance from guild instruction and general spinning practice.",
+  "recipeTools": [
+    { "slug": "spinning-wheel-saxony", "isOptional": false },
+    { "slug": "drop-spindle-top-whorl", "isOptional": true },
+    { "slug": "swift", "isOptional": true },
+    { "slug": "ball-winder", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "dual-coated-fleece",
+      "term": "Dual-coated fleece",
+      "definition": "A fleece containing two distinct fibre types: a fine underwool and a coarser outer coat. Corriedale is technically a dual-coated breed but has been selectively bred so that the two coats are much closer in diameter than breeds like Icelandic or Shetland. In practice, Corriedale behaves as a single-coated breed for most spinning purposes."
+    }
+  ],
+  "aliases": ["Corriedale spinning tutorial", "spinning medium wool", "how to spin Corriedale"],
+  "techniqueSlugs": ["spinning-a-dk-yarn-on-the-wheel", "woollen-vs-worsted-draw", "the-short-forward-draw"],
+  "criticalTechniques": ["woollen-vs-worsted-draw"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Spinning wheel safety",
+          "body": "Keep hair and clothing clear of the drive band and flyer when treadling."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Corriedale is described as " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dual-coated-fleece" } }], "text": "dual-coated" },
+          { "type": "text", "text": " in technical literature, but for practical spinning purposes it behaves as a single-coated medium wool. Its staple sits in the middle range: long enough for the worsted draw, short enough for the woollen draw. This flexibility makes Corriedale the closest thing to a breed with no wrong technique." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Corriedale roving or combed top", "qty": "100 g" },
+            { "name": "Spinning wheel (any type) or top-whorl drop spindle", "qty": "1" },
+            { "name": "Yarn swift and ball winder (optional)", "qty": "1 pair" },
+            { "name": "Niddy-noddy", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing your approach" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a woollen yarn (lofty, elastic, good for outerwear knitting): card or use carded roving, spin with the short forward draw, keeping the drafting zone tight. For a worsted yarn (smooth, dense, strong for sock yarn or warp): use combed top, spin with the worsted draw. Corriedale combed top drafted with the woollen draw produces an intermediate result with moderate lustre and moderate loft." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Twist requirements" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Corriedale needs slightly more twist than fine merino because its coarser fibres do not lock together as readily. Aim for about 4-5 twists per centimetre (10-12 TPI) for a DK-weight singles intended for 2-ply use. The finished singles should feel springy when stretched; if it drafts apart with light tension it is under-twisted." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Good projects for Corriedale" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Corriedale felts readily. A 2-ply yarn knitted at a loose tension will shrink and felt quickly in a warm wash, which makes it a good choice for projects meant to be felted after knitting. For projects that should not felt, wash Corriedale knitting in cold water at 30 degrees. Woven cloth in Corriedale warp can be washed at 30-40 degrees without much shrinkage if the twist is firm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The yarn feels scratchy rather than soft",
+              "cause": "Corriedale at the coarser end of its range (over 28 micron) can feel scratchy against sensitive skin",
+              "fix": "Use Corriedale for outerwear, bags, blankets, and hard-wearing items rather than against-skin garments. For skin-contact items, use fine Corriedale (under 25 micron) or switch to merino."
+            },
+            {
+              "problem": "The finished yarn has less lustre than expected",
+              "cause": "Woollen preparation on fibre intended for a smooth worsted result",
+              "fix": "Use combed top and the worsted draw for smooth, lustrous Corriedale. Carded roving produces a loftier but duller yarn."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
