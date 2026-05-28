@@ -50,21 +50,15 @@
   cursor: default;
 }
 
-/* ── Tile row (via RailScroll) ───────────────────────────────────────────── */
+/* ── Tile row ────────────────────────────────────────────────────────────── */
 
 .ob-tiles-wrap {
   flex: 1;
 }
 
-.ob-rail-scroll .rs-track {
-  /* Override default rail-track behaviour — no grid, just flex */
-  display: flex !important;
-  gap: 10px;
-  padding-bottom: 4px;
-}
-
 .ob-tile-row {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 

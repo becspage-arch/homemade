@@ -74,8 +74,7 @@ export default async function HomePage() {
       )}
 
       {/* State-aware hero — full-bleed image with overlay. */}
-      {!data.isOnboardingPending && (
-        <section className="home-hero-zone">
+      <section className="home-hero-zone">
           {data.hero.kind === 'SCHEDULED_STEP' && (
             <HeroOverlay
               href={`/${data.hero.action.tutorial.category.slug}/${data.hero.action.tutorial.slug}`}
@@ -119,7 +118,6 @@ export default async function HomePage() {
             </div>
           )}
         </section>
-      )}
 
       {/* Rail stack. */}
 

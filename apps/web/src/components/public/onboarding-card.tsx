@@ -5,7 +5,6 @@ import {
   completeOnboardingAction,
   skipOnboardingAction,
 } from '@/lib/onboarding-actions'
-import { RailScroll } from './rail-scroll'
 
 import './onboarding-card.css'
 
@@ -114,63 +113,57 @@ export function OnboardingCard({ categories }: OnboardingCardProps) {
 
       <div className="ob-tiles-wrap">
         {step === 0 && (
-          <RailScroll className="ob-rail-scroll">
-            <div className="ob-tile-row">
-              {categories.map((cat) => {
-                const picked = pickedCategories.includes(cat.id)
-                return (
-                  <button
-                    key={cat.id}
-                    type="button"
-                    className={`ob-tile${picked ? ' picked' : ''}`}
-                    onClick={() => toggleCategory(cat.id)}
-                    aria-pressed={picked}
-                  >
-                    {cat.name}
-                  </button>
-                )
-              })}
-            </div>
-          </RailScroll>
+          <div className="ob-tile-row">
+            {categories.map((cat) => {
+              const picked = pickedCategories.includes(cat.id)
+              return (
+                <button
+                  key={cat.id}
+                  type="button"
+                  className={`ob-tile${picked ? ' picked' : ''}`}
+                  onClick={() => toggleCategory(cat.id)}
+                  aria-pressed={picked}
+                >
+                  {cat.name}
+                </button>
+              )
+            })}
+          </div>
         )}
 
         {step === 1 && (
-          <RailScroll className="ob-rail-scroll">
-            <div className="ob-tile-row">
-              {DIETARY_OPTIONS.map((opt) => {
-                const picked = pickedDietary.includes(opt.value)
-                return (
-                  <button
-                    key={opt.value}
-                    type="button"
-                    className={`ob-tile${picked ? ' picked' : ''}`}
-                    onClick={() => toggleDietary(opt.value)}
-                    aria-pressed={picked}
-                  >
-                    {opt.label}
-                  </button>
-                )
-              })}
-            </div>
-          </RailScroll>
-        )}
-
-        {step === 2 && (
-          <RailScroll className="ob-rail-scroll">
-            <div className="ob-tile-row">
-              {EXPERIENCE_OPTIONS.map((opt) => (
+          <div className="ob-tile-row">
+            {DIETARY_OPTIONS.map((opt) => {
+              const picked = pickedDietary.includes(opt.value)
+              return (
                 <button
                   key={opt.value}
                   type="button"
-                  className="ob-tile ob-tile-experience"
-                  onClick={() => handleExperience(opt.value)}
-                  disabled={isPending}
+                  className={`ob-tile${picked ? ' picked' : ''}`}
+                  onClick={() => toggleDietary(opt.value)}
+                  aria-pressed={picked}
                 >
                   {opt.label}
                 </button>
-              ))}
-            </div>
-          </RailScroll>
+              )
+            })}
+          </div>
+        )}
+
+        {step === 2 && (
+          <div className="ob-tile-row">
+            {EXPERIENCE_OPTIONS.map((opt) => (
+              <button
+                key={opt.value}
+                type="button"
+                className="ob-tile ob-tile-experience"
+                onClick={() => handleExperience(opt.value)}
+                disabled={isPending}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
         )}
       </div>
 
