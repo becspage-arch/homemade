@@ -3,8 +3,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+const __dirname = dirname(fileURLToPath(import.meta.url))
 {
   let dir = __dirname
   for (let depth = 0; depth < 8; depth++) {
@@ -19,22 +18,21 @@ const __dirname = dirname(__filename)
   }
 }
 
-import { prisma } from '../src'
+const BATCH_ID = process.env.BATCH_ID || '2026-05-28-batch11'
 
 async function main() {
-  const batchId = process.argv[2]
-  if (!batchId) throw new Error('batch id required')
-
+  const { prisma } = await import('../src/index.js')
   const worktreeRoot = resolve(__dirname, '../../..')
-  const batchDir = resolve(worktreeRoot, `docs/voice-retrofit-${batchId}`)
-  if (!existsSync(batchDir)) throw new Error(`batch dir not found: ${batchDir}`)
-  const slugList = JSON.parse(readFileSync(resolve(batchDir, '_slugs.json'), 'utf8')) as Array<{
-    slug: string
-  }>
+  const outDir = resolve(worktreeRoot, `docs/voice-retrofit-${BATCH_ID}`)
+  if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true })
+
+  const slugFile = resolve(outDir, '_slugs.json')
+  const slugs = JSON.parse(readFileSync(slugFile, 'utf8')) as string[]
+  console.log(`Exporting ${slugs.length} tutorials to ${outDir}`)
 
   let ok = 0
   let miss = 0
-  for (const { slug } of slugList) {
+  for (const slug of slugs) {
     const t: any = await prisma.tutorial.findUnique({
       where: { slug },
       include: { category: true, subCategory: true },
@@ -44,6 +42,7 @@ async function main() {
       miss++
       continue
     }
+    const glossaryTerms: any[] = []
     const out: Record<string, unknown> = {
       _meta: {
         tutorialId: t.id,
@@ -58,23 +57,18 @@ async function main() {
       type: t.type,
       sourceNotes: t.sourceNotes,
       body: t.body,
-      glossaryTerms: [],
+      glossaryTerms,
       recipe: {
         servings: t.servings,
         yieldDescription: t.yieldDescription,
         temperatureCelsius: t.temperatureCelsius,
       },
     }
-    const outPath = resolve(batchDir, `${slug}.json`)
+    const outPath = resolve(outDir, `${slug}.json`)
     writeFileSync(outPath, JSON.stringify(out, null, 2) + '\n', 'utf8')
     ok++
   }
-  console.log(`[done] exported ${ok} ok, ${miss} missing into ${batchDir}`)
+  console.log(`Done: ${ok} ok, ${miss} miss`)
+  await prisma.$disconnect()
 }
-
-main()
-  .catch((e) => {
-    console.error(e)
-    process.exit(1)
-  })
-  .finally(() => prisma.$disconnect())
+main().catch((e) => { console.error(e); process.exit(1) })

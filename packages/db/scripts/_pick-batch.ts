@@ -3,8 +3,7 @@ import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+const __dirname = dirname(fileURLToPath(import.meta.url))
 {
   let dir = __dirname
   for (let depth = 0; depth < 8; depth++) {
@@ -19,76 +18,60 @@ const __dirname = dirname(__filename)
   }
 }
 
-import { prisma } from '../src'
+const BATCH_ID = process.env.BATCH_ID || '2026-05-28-batch11'
+const BATCH_SIZE = Number(process.env.BATCH_SIZE || '63')
+const MAX_PER_CATEGORY = Number(process.env.MAX_PER_CATEGORY || '19')
 
 async function main() {
-  const batchId = process.argv[2]
-  const target = parseInt(process.argv[3] ?? '63', 10)
-  if (!batchId) throw new Error('batch id required')
-
-  const remainingCount = await prisma.tutorial.count({
-    where: { status: 'PUBLISHED', voiceRetrofittedAt: null },
-  })
-  console.log(`[before] PUBLISHED with voiceRetrofittedAt IS NULL: ${remainingCount}`)
+  const { prisma } = await import('../src/index.js')
+  const worktreeRoot = resolve(__dirname, '../../..')
+  const outDir = resolve(worktreeRoot, `docs/voice-retrofit-${BATCH_ID}`)
+  if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true })
 
   const candidates = await prisma.tutorial.findMany({
     where: { status: 'PUBLISHED', voiceRetrofittedAt: null },
     select: { slug: true, title: true, type: true, category: { select: { slug: true } } },
     orderBy: { slug: 'asc' },
   })
-  console.log(`[candidates] ${candidates.length}`)
 
-  if (candidates.length === 0) {
-    console.log('[done] no remaining candidates')
-    return
-  }
+  console.log(`Total candidates: ${candidates.length}`)
 
-  const take = Math.min(target, candidates.length)
-
-  // Category cap: max 19 per category (per spec)
-  const CAT_CAP = 19
-  const catCount: Record<string, number> = {}
   const picked: typeof candidates = []
+  const byCategory: Record<string, number> = {}
+  const byType: Record<string, number> = {}
+
   for (const c of candidates) {
-    if (picked.length >= take) break
-    const cs = c.category?.slug ?? 'unknown'
-    if ((catCount[cs] ?? 0) >= CAT_CAP) continue
-    catCount[cs] = (catCount[cs] ?? 0) + 1
+    if (picked.length >= BATCH_SIZE) break
+    const catSlug = c.category?.slug ?? 'unknown'
+    if ((byCategory[catSlug] ?? 0) >= MAX_PER_CATEGORY) continue
     picked.push(c)
+    byCategory[catSlug] = (byCategory[catSlug] ?? 0) + 1
+    byType[c.type] = (byType[c.type] ?? 0) + 1
   }
-  if (picked.length < take) {
-    // Couldn't satisfy cap; fall back to fill anyway
+
+  if (picked.length < BATCH_SIZE) {
     for (const c of candidates) {
-      if (picked.length >= take) break
+      if (picked.length >= BATCH_SIZE) break
       if (picked.find((p) => p.slug === c.slug)) continue
       picked.push(c)
+      const catSlug = c.category?.slug ?? 'unknown'
+      byCategory[catSlug] = (byCategory[catSlug] ?? 0) + 1
+      byType[c.type] = (byType[c.type] ?? 0) + 1
     }
   }
 
-  console.log(`[picked] ${picked.length}`)
-  const typeCount: Record<string, number> = {}
-  for (const p of picked) {
-    typeCount[p.type] = (typeCount[p.type] ?? 0) + 1
-  }
-  console.log(`[types] ${JSON.stringify(typeCount)}`)
-  console.log(`[cats] ${JSON.stringify(catCount)}`)
+  console.log(`Picked: ${picked.length}`)
+  console.log('By category:', byCategory)
+  console.log('By type:', byType)
 
-  const worktreeRoot = resolve(__dirname, '../../..')
-  const outDir = resolve(worktreeRoot, `docs/voice-retrofit-${batchId}`)
-  if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true })
-  const out = picked.map((p) => ({
-    slug: p.slug,
-    title: p.title,
-    type: p.type,
-    categorySlug: p.category?.slug ?? null,
-  }))
-  writeFileSync(resolve(outDir, '_slugs.json'), JSON.stringify(out, null, 2) + '\n', 'utf8')
-  console.log(`[saved] ${outDir}/_slugs.json`)
+  const slugList = picked.map((p) => p.slug)
+  writeFileSync(resolve(outDir, '_slugs.json'), JSON.stringify(slugList, null, 2) + '\n', 'utf8')
+  writeFileSync(
+    resolve(outDir, '_pick-summary.json'),
+    JSON.stringify({ batchId: BATCH_ID, count: picked.length, byCategory, byType }, null, 2) + '\n',
+    'utf8',
+  )
+  console.log(`Slugs written to ${resolve(outDir, '_slugs.json')}`)
+  await prisma.$disconnect()
 }
-
-main()
-  .catch((e) => {
-    console.error(e)
-    process.exit(1)
-  })
-  .finally(() => prisma.$disconnect())
+main().catch((e) => { console.error(e); process.exit(1) })
