@@ -1,0 +1,133 @@
+{
+  "slug": "incubating-hatching-eggs",
+  "title": "Incubating hatching eggs",
+  "subtitle": "A three-week guide from setting eggs to hatch day.",
+  "excerpt": "An incubator gives you control over hatching outside the traditional broody season. You choose the breed, you choose the timing, and you handle the variables that a broody hen manages instinctively. The margin for error is thin but the process is straightforward once you understand what the egg needs at each stage.",
+  "type": "PATTERN",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "poultry",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA, Code of Practice for the Welfare of Laying Hens and Chickens (2018). Lewis Wright, The Practical Poultry Keeper (1867), Internet Archive, chapter on artificial incubation.",
+  "glossaryTerms": [
+    { "slug": "lockdown", "term": "Lockdown (incubation)", "definition": "The final 3 days of incubation (days 19–21 for chickens) when the eggs are laid on their sides and not turned. The humidity is raised to 65–70% and the incubator is not opened. The chick is manoeuvring into hatching position and must not be disturbed." },
+    { "slug": "candling-incubation", "term": "Candling (during incubation)", "definition": "Briefly holding the incubating egg against a bright light in a darkened room to check development. At day 7, a fertile egg shows a network of blood vessels; at day 14 it is mostly dark with an air cell at the broad end. Clear eggs are infertile or early dead-in-shell." },
+    { "slug": "pip", "term": "Pip", "definition": "The first crack or hole a chick makes in the shell from the inside using its egg tooth. Internal pip (the chick has broken into the air cell) happens a day before external pip (the shell cracks). Do not assist a pipping chick unless it has been pipped for more than 24 hours with no progress." }
+  ],
+  "techniqueSlugs": ["raising-chicks-to-point-of-lay"],
+  "criticalTechniques": [],
+  "aliases": ["hatching eggs incubator", "chicken egg incubation", "artificial incubation chickens"],
+  "recipeTools": [
+    { "slug": "egg-incubator", "isOptional": false }
+  ],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Set the eggs",
+      "body": "Run the incubator empty for 12 to 24 hours to stabilise at 37.5°C and 45 to 50% relative humidity. Set fertile eggs point-down in the racks. Write the set date on the eggs lightly in pencil. Begin automatic or manual turning (3 times per day minimum).",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 7,
+      "title": "First candling",
+      "body": "Candle each egg in a darkened room against a bright torch. Fertile developing eggs show a red spider of blood vessels around a dark central mass. Clear eggs are infertile; remove them. Any egg with a blood ring (a faint red ring and no development) has died early; remove it.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 14,
+      "title": "Second candling",
+      "body": "Candle again. Developing eggs are now mostly dark with only the air cell at the broad end visible as a clear zone. Check the air cell has grown; it should occupy roughly the top third of the egg. Remove any eggs that show no development or smell off.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 4,
+      "offsetDays": 18,
+      "title": "Lockdown",
+      "body": "Lay all remaining eggs on their sides (remove turning racks if using an auto-turner). Raise humidity to 65 to 70%. Do not open the incubator from now until all chicks have hatched or 24 hours have passed since the last chick emerged. Mark the lid to remind yourself.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 5,
+      "offsetDays": 21,
+      "title": "Hatch day",
+      "body": "Chicks typically hatch on day 21. A pip followed by a crack, then a hatching chick, takes 12 to 24 hours. Leave newly hatched chicks in the incubator for up to 12 hours; they do not need food or water immediately and will disturb unhatched eggs if transferred too soon. Once all have hatched, move to a brooder set at 35°C.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A broody hen maintains temperature, humidity, and turning automatically. An incubator requires you to monitor all three. The three-week arc is consistent across all chicken breeds; the key variables are the first candling at day 7 to identify infertile eggs, the second at day 14 to check air cell development, and the " }, { "type": "text", "text": "lockdown", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lockdown" } }] }, { "type": "text", "text": " at day 18 when you stop turning and raise the humidity." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sourcing and storing eggs before setting" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Hatching eggs from your own flock need a cockerel that has been running with the hens for at least a week; he will have fertilised the eggs held in lay over that period. Eggs can be stored pointed-end down at room temperature (15 to 18°C) for up to 10 days before incubation without a significant drop in hatchability; after 14 days hatchability falls sharply. Do not refrigerate them." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Temperature and humidity" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Days 1 to 18: 37.5°C, 45 to 55% relative humidity. Days 19 to 21 (lockdown): 37.5°C, 65 to 70% relative humidity. A forced-air incubator with a built-in humidity reader will monitor both. In a still-air incubator without a fan, measure temperature at the top of the egg rather than at the base of the incubator; still-air machines run hotter at the top." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Turning" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Turn eggs a minimum of 3 times daily up to day 18, always an odd number of turns per day so the egg finishes each night on the opposite side from where it started. An automatic turner built into the incubator handles this; if turning by hand, mark each egg with an X on one side so you can track which way it has been turned." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Candling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "At day 7, remove each egg from the incubator, hold it point-down against a torch in a darkened room, and look through the shell. " }, { "type": "text", "text": "Candling", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "candling-incubation" } }] }, { "type": "text", "text": " takes less than a minute per egg. Work quickly; the egg should not be out of the incubator for more than 10 minutes total. Infertile eggs show as completely clear; remove them to prevent any burst egg contaminating the incubator." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Hatch day and pipping" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The first sign of hatch is a " }, { "type": "text", "text": "pip", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pip" } }] }, { "type": "text", "text": ": a small crack or hole in the shell near the broad end. The chick then works around the circumference of the shell, cutting with its egg tooth. The process from first pip to fully out of the shell takes 12 to 24 hours. Do not open the incubator during hatching; the drop in humidity is the most common cause of chicks becoming shrink-wrapped in the shell." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "entries": [
+            { "cue": "No eggs showing development at day 7 candling", "cause": "Either the cockerel is infertile, has not had access to the hens long enough, or the eggs were stored too long or at the wrong temperature before setting", "fix": "Remove all clear eggs and check the cockerel's mating behaviour before the next batch. A fresh batch of eggs from a proven pair is the most reliable remedy." },
+            { "cue": "Chicks pipping but not progressing after 24 hours", "cause": "Low humidity has caused the membrane to dry and shrink around the chick; the chick cannot turn", "fix": "Increase incubator humidity to 75% and wait a further 12 hours before considering assisted hatching. Assisted hatching carries real risk; leave it as a last resort." },
+            { "cue": "Incubator temperature fluctuating more than 0.5°C", "cause": "Draft in the room, lid not fully sealed, or faulty thermostat", "fix": "Move the incubator away from windows and doors. Check the seal on the viewing window. If the thermostat is failing, the hatch rate will be poor but eggs already developing are worth continuing." }
+          ]
+        },
+        "content": []
+      }
+    ]
+  }
+}
+

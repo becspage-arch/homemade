@@ -1,0 +1,88 @@
+{
+  "slug": "combining-two-colonies",
+  "title": "Combining two colonies",
+  "subtitle": "The newspaper method for merging a weak or queenless colony with a strong one.",
+  "excerpt": "A weak colony going into winter rarely makes it through. One colony with 30,000 bees has a far better chance than two with 15,000 each. Combining before the frosts is a reliable way to save the bees from a colony you are not confident will survive on its own.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "timeMinutes": 45,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "National Bee Unit, Beekeeper's Toolkit (2024), colony management in autumn. BBKA Technical Bulletin on uniting colonies. Frank Pearson, Bee-keeping for All (1923), Internet Archive.",
+  "glossaryTerms": [
+    { "slug": "newspaper-combine", "term": "Newspaper combine", "definition": "The standard method for merging two colonies. A single sheet of newspaper is placed between the two boxes. Bees from each colony chew through the paper over 24 to 48 hours; by the time they meet, the scents have merged and fighting is minimal." },
+    { "slug": "queenless-colony", "term": "Queenless colony", "definition": "A colony that has lost its queen and has no viable queen cells. A queenless colony will fail within weeks as the worker population ages and there is no replacement brood. Uniting it with a queen-right colony is the most reliable remedy." }
+  ],
+  "techniqueSlugs": ["lighting-a-bee-smoker", "spring-colony-assessment"],
+  "criticalTechniques": ["lighting-a-bee-smoker"],
+  "aliases": ["uniting colonies", "merging hives", "newspaper method bees"],
+  "recipeTools": [
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "bee-gloves", "isOptional": false },
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "national-frame", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combining two colonies is one of the most useful autumn tools a beekeeper has. A weak colony, a " }, { "type": "text", "text": "queenless colony", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "queenless-colony" } }] }, { "type": "text", "text": ", or one that has failed to build winter stores can be merged into a strong colony using the " }, { "type": "text", "text": "newspaper combine", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "newspaper-combine" } }] }, { "type": "text", "text": " method. The key principle is that the two colonies must be allowed to merge gradually, so they adopt a shared scent before meeting face to face." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Before you combine" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "You need one queen-right colony and one you want to absorb into it. The colony being absorbed may be queenless, or it may have a queen you are choosing to remove because she is failing. If the absorbed colony has a queen, remove and dispatch her first. You cannot combine two queen-right colonies; only one queen will survive, and the fight will be prolonged." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Move the weaker colony to sit immediately beside the stronger colony the day before you combine, if they are currently more than a metre apart. Bees navigate to within a few metres of their original location; moving a hive across the garden in one jump will leave many bees returning to the old spot." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The combining step" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Suit up and light the smoker. Remove the roof and crown board from the strong colony. Lay a single sheet of broadsheet newspaper over the top bars and prick several small holes through it with a hive tool; this hastens the chewing-through process without exposing the colonies to each other immediately." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Lift the entire brood box of the weaker colony (without its floor) and place it directly on top of the newspaper, on top of the strong colony's brood box. Replace the roof. The entrances to both boxes should face the same direction if possible; block the upper entrance with a small piece of foam or grass for the first day." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "What happens over the next 48 hours", "body": "The bees from both colonies chew through the newspaper from both sides. By the time they meet in the middle, the colony scents have merged through the paper and flying has redistributed individual bees across both boxes. The merger is usually quiet. You will find shredded newspaper on the floor below the hive entrance." },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "After the combine" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "After 3 to 4 days, open the hive and consolidate the two boxes into one. Move the best-covered frames of brood into the lower box and fill with the best honey stores. Any frames with poor brood pattern or mould can be set aside. The combined colony will sort itself out over the following fortnight; do a quick inspection at 10 days to confirm the queen is laying across the combined box." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "entries": [
+            { "cue": "Bees fighting at the entrance after combining", "cause": "The newspaper was chewed through too quickly, or the holes were too large, meaning the bees met before scents had merged", "fix": "This is usually minor and short-lived. Add a light puff of smoke to the entrance. Ensure the entrance is small enough that fighting bees cannot form a large cluster outside it." },
+            { "cue": "Large clump of bees outside the combined hive after 24 hours", "cause": "Bees from the absorbed colony are returning to their original position and clustering outside the hive entrance", "fix": "Move the hive slightly toward where the old position was. Open the entrance block you fitted on day one so they can get in. This usually resolves within a day as the bees recalibrate." }
+          ]
+        },
+        "content": []
+      }
+    ]
+  }
+}

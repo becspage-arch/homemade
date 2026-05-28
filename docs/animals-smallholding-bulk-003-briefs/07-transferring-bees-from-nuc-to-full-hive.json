@@ -1,0 +1,94 @@
+{
+  "slug": "transferring-bees-from-nuc-to-full-hive",
+  "title": "Transferring bees from a nuc to a full hive",
+  "subtitle": "How to move a five-frame nucleus colony into a full-size national brood box.",
+  "excerpt": "A nuc that has been hived for two to three weeks will be filling its frames. Leave the transfer too long and the colony starts laying wall-to-wall brood with no room to build further. Move at the right moment and the colony expands smoothly into its new space.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 45,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "National Bee Unit, Beekeeper's Toolkit (2024), nucleus management. BBKA Good Practice Guide on hiving a swarm and a nucleus. Frank Pearson, Bee-keeping for All (1923), Internet Archive.",
+  "glossaryTerms": [
+    { "slug": "nuc", "term": "Nuc", "definition": "Short for nucleus colony — a small colony of 5 frames housed in a five-frame nucleus box. Used for queen rearing, swarm collection, and selling new colonies. The standard way of establishing a new hive from scratch." },
+    { "slug": "frame-order", "term": "Frame order", "definition": "The sequence of frames in the brood box — brood frames in the centre, honey and pollen on the outside. Keeping this order consistent when transferring frames preserves the colony's internal temperature gradient and helps the bees settle faster." }
+  ],
+  "techniqueSlugs": ["lighting-a-bee-smoker", "making-a-nucleus-hive"],
+  "criticalTechniques": ["lighting-a-bee-smoker"],
+  "aliases": ["hiving a nuc", "transferring a nucleus colony", "nuc to hive"],
+  "recipeTools": [
+    { "slug": "nuc-box", "isOptional": false },
+    { "slug": "national-frame", "isOptional": false },
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "bee-gloves", "isOptional": false },
+    { "slug": "bee-brush", "isOptional": true }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The transfer from " }, { "type": "text", "text": "nuc", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nuc" } }] }, { "type": "text", "text": " to full hive is the first major operation on a new colony. The aim is to move five frames without breaking the " }, { "type": "text", "text": "frame order", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "frame-order" } }] }, { "type": "text", "text": ", find the queen without alarming the colony, and leave the bees with enough room to build for the next four weeks." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to transfer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Transfer when the nuc has been in place for two to three weeks and the outermost frames are drawing new foundation. A well-established nuc will have wall-to-wall brood on its centre three frames and bees hanging in a curtain between the outer frames. Waiting longer risks the colony swarming inside the confined nuc box." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up the full hive" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Position the full hive on its stand in the same spot where the nuc currently sits, or as close to it as you can manage. Remove eight or nine frames from the full brood box and set them aside; you will place the nuc frames in the centre and add the empty frames on the outside." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The transfer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Light the smoker. Apply two gentle puffs at the nuc entrance and under the nuc roof before opening. Remove the nuc roof and crown board. Lift the first brood frame out of the nuc and lower it into the centre of the full brood box, keeping it in exactly the same orientation it sat in the nuc. Repeat for all five frames, preserving the left-to-right sequence. Do not rotate any frame; the temperature gradient across the brood nest and the position of the queen will already be oriented to the existing arrangement." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add the remaining frames from the full hive on the outside of the transferred frames, one on each side, working outward. Use drawn comb if you have it; new foundation is fine but the colony will take longer to expand if all the empty frames are unwaxed." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Clearing the nuc box" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Give the empty nuc box a firm downward knock above the entrance of the full hive to dislodge any remaining bees. Set the nuc box at a distance from the hive; any lingering bees will find their way home over the next hour. Fit the crown board and roof on the full hive." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Checking the queen during the transfer", "body": "You do not need to find the queen to complete the transfer. The nuc comes with a laying queen; as long as you kept the frames in order and did not drop or jolt any frame hard enough to knock her off, she is in the full hive. If you do spot her on one of the frames, note which frame she is on and watch she is not accidentally trapped between a frame and the hive wall as you close up." },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "First inspection" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Do not inspect for the first seven days. The colony needs time to accept the new space and settle the pheromone environment. After seven days, open and confirm that eggs are present on the transferred frames, that no swarm cells are building on the outer frames, and that the new foundation is beginning to draw out." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "reading-the-brood-frame",
+  "title": "Reading a brood frame",
+  "subtitle": "What a healthy frame looks like and what the warning signs are.",
+  "excerpt": "Experienced beekeepers make their assessment in ten seconds per frame. They are looking at pattern, colour, and the surface of capped cells. This is what they see, and what they look for when something is not right.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "BEGINNER",
+  "season": "SUMMER",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "National Bee Unit, Managing Varroa (2017), BeeBase. BBKA Technical Bulletin on brood diseases. Frank Pearson, Bee-keeping for All (1923), Internet Archive. NBU Fera Hive Inspection Record sheets, current version.",
+  "glossaryTerms": [
+    { "slug": "brood", "term": "Brood", "definition": "The collective term for eggs, larvae, and pupae inside the hive. Open brood is uncapped; sealed brood is capped under wax or propolis. Healthy brood is the main thing you look for at every inspection." },
+    { "slug": "capped-brood", "term": "Capped brood", "definition": "Cells covered with a wax cap under which the larva has pupated. Worker brood caps are flat or slightly domed and biscuit-coloured. Drone brood caps are distinctly domed, like bullet heads. Sunken, perforated, or darkened caps are warning signs." },
+    { "slug": "larvae", "term": "Larvae", "definition": "The legless grub stage of the bee life cycle, between egg and pupa. Healthy worker larvae are white, plump, and curled in a C-shape in the base of the cell. Discoloured, twisted, or sunken larvae indicate a brood problem." },
+    { "slug": "chalk-brood", "term": "Chalk brood", "definition": "A fungal disease (Ascosphaera apis) that mummifies larvae into white or grey chalky pellets. Usually self-limiting in strong colonies; the bees remove the pellets themselves. Look for the white 'mummies' on the landing board." },
+    { "slug": "sacbrood", "term": "Sacbrood", "definition": "A viral disease that kills larvae after capping. The larva dries into a flattened scale that tapers to a curved point at the head end — like a canoe viewed from above. Mild cases self-clear; severe cases in stressed colonies may need requeening." }
+  ],
+  "techniqueSlugs": ["lighting-a-bee-smoker", "inspecting-a-beehive-in-summer"],
+  "criticalTechniques": ["inspecting-a-beehive-in-summer"],
+  "aliases": ["brood inspection", "what healthy brood looks like", "brood pattern"],
+  "recipeTools": [
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "bee-gloves", "isOptional": false },
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "bee-brush", "isOptional": true }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Every hive inspection is a brood assessment. The condition of the " }, { "type": "text", "text": "brood", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brood" } }] }, { "type": "text", "text": " tells you whether the queen is laying well, whether the colony is building as it should, and whether any notifiable or common diseases are present. Learning to read a frame takes a few seasons; learning what to look for takes about ten minutes of careful attention." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Holding the frame" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Lift the frame out of the brood box with both hands, keeping it vertical. Tilt the top bar slightly toward you so the sun crosses the face of the comb at a low angle. This rakes light across the cells and shows you the eggs standing upright in their bases, which is only visible in the correct light. Turn the frame on its long axis (like turning a page) to inspect the other side without tipping any larvae out of open cells." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What healthy open brood looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Eggs are tiny white rods standing upright in the base of the cell. They are difficult to see without good light and take practice. Younger " }, { "type": "text", "text": "larvae", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "larvae" } }] }, { "type": "text", "text": " are a bright pearlescent white, plump, C-shaped, and floating on a small pool of royal jelly. As they age they fill the cell and straighten slightly before capping. The overall impression of a healthy open brood frame is uniform white comma-shapes on a background of gleaming cells." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Eggs confirm the queen was laying 3 days ago", "body": "Worker eggs take 3 days to hatch. If you see eggs, you know the queen was present and laying 3 days before your inspection. If you cannot find the queen but can see eggs, the colony is queen-right. Larvae visible but no eggs means the queen laid more than 3 days ago. She could still be present or have been lost since then." },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What healthy capped brood looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Healthy " }, { "type": "text", "text": "capped brood", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "capped-brood" } }] }, { "type": "text", "text": " is a dense, unbroken carpet of uniformly domed caps in a warm biscuit or tan colour. The pattern matters: a solid, continuous spread of sealed cells with few gaps is what you want. Scattered capped cells across a frame of open brood, or many empty cells within an area of capping, indicates a patchy pattern." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Warning signs in the brood" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Work through the frame and note any of the following:" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Sunken or perforated caps: a worker brood cap that sits below the cell rim, or has a small hole pecked in it, can indicate American Foulbrood or European Foulbrood. Any suspicion of either is a statutory notifiable disease; contact the National Bee Unit immediately." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "White or grey chalky pellets on the landing board or in empty cells: this is " }, { "type": "text", "text": "chalk brood", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chalk-brood" } }] }, { "type": "text", "text": ". Common and self-limiting in strong colonies, but a sign of stress in a large outbreak. Improve ventilation and ensure the colony is populous enough to keep the brood warm." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Canoe-shaped dried scales curled inside cells: " }, { "type": "text", "text": "sacbrood", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sacbrood" } }] }, { "type": "text", "text": ". The larva died after capping and dried into a curved husk with the head pointing inward. Mild cases clear on their own; a widespread outbreak in a stressed colony may benefit from requeening." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Discoloured or twisted larvae in uncapped cells: healthy larvae are white and C-shaped. Brown, yellow, twisted, or sunken larvae are cause for concern. If a larva smells distinctly of rotting fish when you press a matchstick into the cell and pull it out slowly, treat this as possible American Foulbrood and call the NBU." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "entries": [
+            { "cue": "Patchy capped brood — many empty cells scattered through the capped area", "cause": "Can be normal in a newly started colony; in an established colony often indicates a failing or poorly mated queen, or heavy varroa infestation killing pupae before they emerge", "fix": "Check the queen — look for her, assess her laying pattern on adjacent frames. Do a varroa wash if the colony shows other varroa signs (deformed wing virus, stunted bees)." },
+            { "cue": "Darkened or greasy-looking larvae in open cells", "cause": "European Foulbrood (EFB) — the most common brood bacterial disease in UK hives. Larvae die before capping and take on a melted, off-white to yellow-brown colour.", "fix": "Contact the National Bee Unit via BeeBase. EFB is a notifiable disease in the UK — do not attempt to treat independently without NBU advice." },
+            { "cue": "Many domed dome-topped cells among worker brood", "cause": "Drone brood capped at the centre of the brood nest, or a laying worker producing unfertilised eggs (solid dome caps scattered without worker brood pattern)", "fix": "Drone brood within the worker area is normal in summer. A laying worker pattern (all-drone brood with no worker eggs and no queen) requires introducing a new queen or uniting the colony." }
+          ]
+        },
+        "content": []
+      }
+    ]
+  }
+}

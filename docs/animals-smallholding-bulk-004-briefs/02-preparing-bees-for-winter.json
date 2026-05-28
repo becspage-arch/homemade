@@ -1,0 +1,134 @@
+{
+  "slug": "preparing-bees-for-winter",
+  "title": "Preparing bees for winter",
+  "subtitle": "The autumn jobs that decide whether a colony reaches spring.",
+  "excerpt": "The colony that survives the winter is the one set up right in September. This covers checking stores, feeding sugar syrup to weight, the autumn varroa treatment, mouse-guard fitting, and the bedding-in for the long quiet months when the cluster is on its own.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "timeMinutes": 60,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "National Bee Unit Beekeeper's Toolkit, autumn management chapter. BBKA Bee Craft autumn columns. Frank Pearson, Bee-keeping for All, Internet Archive.",
+  "glossaryTerms": [
+    { "slug": "cluster", "term": "Cluster", "definition": "The tight ball of bees that forms inside the hive once outside temperatures fall below about eight degrees. The cluster moves slowly through the stored honey as winter progresses." },
+    { "slug": "ivy-flow", "term": "Ivy flow", "definition": "The last major nectar source of the UK year, when ivy in hedgerows flowers from late September through October. Ivy honey crystallises fast and is left in the hive as winter food rather than harvested." },
+    { "slug": "fondant", "term": "Fondant", "definition": "Stiff bakers' fondant or commercial bee fondant, used as winter emergency feed when bees can no longer take syrup but stores have run short. Placed directly above the cluster on the crown board." },
+    { "slug": "oxalic-acid", "term": "Oxalic acid", "definition": "The mid-winter varroa treatment, applied as a trickle of syrup solution down the seams between frames when the colony is broodless. Highly effective in the narrow window when no capped brood is hiding the mites." },
+    { "slug": "varroa", "term": "Varroa", "definition": "Varroa destructor, the parasitic mite that weakens colonies and spreads viruses. Every UK colony has some; the working keeper monitors the count and treats when the threshold is hit." }
+  ],
+  "techniqueSlugs": ["oxalic-acid-trickle-treatment-for-varroa", "autumn-feeding-sugar-syrup-to-bees", "fitting-a-mouse-guard"],
+  "criticalTechniques": ["autumn-feeding-sugar-syrup-to-bees"],
+  "aliases": ["winterising-bees", "putting-bees-to-bed-for-winter"],
+  "recipeTools": [
+    { "slug": "hive-feeder-rapid", "isOptional": false, "notes": "For feeding 2:1 syrup to weight in September." },
+    { "slug": "mouse-guard", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "smoker-fuel", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Winter preparation begins in early September while the bees are still flying. The colony that comes through to March in good shape is one that goes into October with enough stored honey, a low mite count, and a tight clean entrance the mice cannot squeeze through. Get those three things right and the bees largely look after themselves until the willow flowers." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "When to start" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The window opens after the last summer honey is off and closes when daytime temperatures drop below twelve degrees and the bees stop taking syrup down. In the southern UK that is roughly the first three weeks of September. Further north, start a week earlier and finish a week earlier. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ivy-flow" } }], "text": "ivy flow" },
+          { "type": "text", "text": " in late September and October adds weight after you are done; do not count on it before it arrives, because a wet October leaves the bees unable to forage even when the flowers are open." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Weighing the hive" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A National brood-and-a-half colony needs roughly eighteen to twenty kilos of stored honey to overwinter in the UK. The traditional check is the heft: lift the back of the hive a couple of centimetres with one hand and judge whether it feels heavy enough. A hive that lifts easily is light; a hive that you can barely shift is well-provisioned. Anyone new to the heft can put scales under the back of one hive in midsummer when it is empty and learn what the weight of the empty kit feels like." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Feeding sugar syrup" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Any colony that hefts light is fed with a thick 2:1 sugar syrup: two kilos of white granulated sugar to one litre of warm water, stirred until the sugar is dissolved. Filled into a rapid feeder over the crown-board feed hole, the bees take it down and store it as if it were autumn nectar. A strong colony will take five kilos of syrup in two days and then slow as the cluster begins to settle. Refill until the heft is right, then stop. Feeding into November is poor practice; the bees cannot dry the syrup down to honey-water content and end up with damp stores." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A weak colony, a small swarm caught in July, or a nuc going into its first winter is often fed regardless of heft. These small colonies do not have enough flying bees to bring in the ivy flow and would otherwise starve before December. Keep a slab of bakers' " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fondant" } }], "text": "fondant" },
+          { "type": "text", "text": " in reserve in the workshop for any colony that still feels short in late November." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Treating for varroa" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The autumn " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "varroa" } }], "text": "varroa" },
+          { "type": "text", "text": " treatment goes on while there is still brood in the hive and ambient temperature is high enough for the treatment to work. Thymol-based strips and formic-acid-based pads both have temperature windows printed on the packet; read those and pick the product that fits the weather. Whichever you pick, time the treatment so it is finished by early October and the bees have a clear window to clean up before the cluster forms." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A midwinter " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "oxalic-acid" } }], "text": "oxalic acid" },
+          { "type": "text", "text": " trickle is the second half of the autumn programme, delivered between Christmas and New Year when the colony is broodless. The autumn treatment knocks down the worst of the mite load; the oxalic trickle catches the mites that emerged from the last capped brood and are now sitting on the adult bees. Together they reset the count for spring." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Mouse guards on" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fit the mouse guard the moment the bees stop coming and going freely, usually a sharp cold snap in mid-October. A field mouse can squeeze through any gap a 9 mm pencil will go through, and a mouse inside a hive over winter will eat the comb, soil the stores, and leave the bees too distressed to cluster properly. The guard pins on with two panel pins through the entrance block; the bees pass freely through the holes and the mouse cannot." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Ventilation, damp, and the crown board" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bees in winter generate water vapour as they metabolise stored honey. The vapour rises and condenses on the cold crown board. A small ventilation gap, often a matchstick under one corner of the crown board, lets the moisture out. The bees themselves keep the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cluster" } }], "text": "cluster" },
+          { "type": "text", "text": " warm; the hive does not need to be warm. A damp hive kills more colonies than a cold one. Open-mesh floors are kept open through winter for the same reason." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Closing up" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Strap the roof down with a hive strap against autumn gales. Tilt the hive slightly forward so rain does not pool on the floor. Move equipment, supers, and unused kit into the workshop for the winter rather than leaving them outdoors to warp. Note the heft, the mite-treatment dates, and any feeding in the apiary log; you will want them for reference when the first warm March day arrives and the first inspection begins." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you might have found" }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Late autumn troubleshooting",
+          "intro": "The most common winter loss is starvation in February. The next most common is damp.",
+          "items": [
+            { "symptom": "Hive hefts light even after twenty kilos of syrup.", "cause": "Colony may be queenless or have laying workers; the bees take syrup but do not store it efficiently.", "fix": "Open and check for queenright signs on a mild day. A failing colony is best united with a stronger one in late September using newspaper between the brood boxes. A united strong colony goes through winter better than two weak ones." },
+            { "symptom": "Bees are still flying heavily into November and not clustering.", "cause": "Mild autumn, ivy still in flower, or syrup has been fed too late.", "fix": "Stop feeding. The cluster forms on its own once temperatures drop. The bees use up their flying-bee stores, and the cluster stage starts when it is meant to." },
+            { "symptom": "Water dripping off the crown board in January when you peek under.", "cause": "Not enough air flow. The damp from the cluster has nowhere to go.", "fix": "Add a matchstick under one corner of the crown board to raise it a couple of millimetres. Do not put insulation under the crown board; the bees do not want a warm hive, they want a dry one." },
+            { "symptom": "Mouse droppings on the floor at the spring inspection.", "cause": "Mouse guard fitted too late, or guard had a bent bar.", "fix": "Pull and rebuild any soiled comb in spring, scrub the floor with washing soda, fit the guard in mid-October next year. Strong colonies often kill an intruding mouse themselves, but the damage is done before they get to it." },
+            { "symptom": "Bees feel light at the New Year peek and you can hear them rustling near the top of the cluster.", "cause": "Stores have run short and the cluster has eaten its way up to the top of the brood box.", "fix": "Add a slab of bakers' fondant directly over the feed hole in the crown board, above the cluster. Do not feed syrup in winter; bees cannot process it at low temperatures." }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A hive prepared in September is largely silent through the dark months. The next inspection is a quick peek through the crown-board hole on the first mild day of February. After that, the year begins again with the willow." }
+        ]
+      }
+    ]
+  }
+}

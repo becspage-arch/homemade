@@ -1,0 +1,68 @@
+{
+  "slug": "pig-ailment-identification",
+  "title": "Pig ailment identification",
+  "subtitle": "A quick reference for the signs that indicate a pig needs closer attention or veterinary care.",
+  "excerpt": "A healthy pig is active, curious, and eating. Changes in behaviour are the earliest and most reliable sign that something is wrong. A pig that separates from the group, stands with its head down, or stops moving to the feed trough should be examined the same day.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 10,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NADIS, pig disease recognition factsheet. AHDB Pork, pig health management guide. Merck Veterinary Manual, swine diseases section.",
+  "glossaryTerms": [
+    { "slug": "erysipelas-pigs", "term": "Erysipelas", "definition": "A bacterial infection caused by Erysipelothrix rhusiopathiae. One of the most common serious diseases in pigs. The acute form causes sudden death or severe illness; the sub-acute form produces characteristic diamond-shaped skin lesions (raised, pink, roughly 3 to 5 cm diamonds on the skin). Treatable with antibiotics if caught early. Pigs can be vaccinated." },
+    { "slug": "PRRS", "term": "PRRS (Porcine Reproductive and Respiratory Syndrome)", "definition": "A viral disease causing reproductive failure in breeding sows and respiratory disease in growing pigs. In breeding herds, it causes abortions, stillbirths, and weak piglets. In growing pigs, it causes respiratory signs, growth depression, and increased susceptibility to secondary infections. Reportable in some circumstances; diagnosis requires vet involvement." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["sick pig symptoms", "pig disease signs", "pig health problems"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pigs that are unwell often show behavioural signs before obvious physical signs. The daily observation routine (watching pigs move to feed, checking posture and gait, listening for coughing or laboured breathing) is the most effective early detection system available." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Lameness" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A lame pig is usually reluctant to bear weight on one or more legs, moves slowly, and may stay in the bedded area rather than going to the feeder. Common causes include foot rot, joint infections (especially in young pigs), foot-and-mouth disease (notifiable: call a vet immediately if multiple animals are lame and have blisters on the feet or snout), and injury. Examine the feet for cuts, swelling, or separation of the hoof wall." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Skin changes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Raised diamond-shaped skin lesions (pink or purple, roughly 3 to 5 cm across, scattered across the flanks and back) are the signature sign of sub-acute ", "marks": [] }, { "type": "text", "text": "erysipelas", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "erysipelas-pigs" } }] }, { "type": "text", "text": ". This is a vet emergency; the disease progresses quickly. Other skin changes to watch for: generalised redness and blister formation on the snout, feet, or teats (foot-and-mouth, notifiable); crusty, greasy skin in young pigs (greasy pig disease, a bacterial skin infection that is treatable)." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Respiratory signs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Coughing in pigs is often group-level: when one pig coughs, check whether others are doing the same. A single coughing pig is less concerning than half a group coughing simultaneously. Consistent coughing in growing pigs, combined with slow growth and occasional thumping respirations (laboured abdominal breathing), suggests enzootic pneumonia or ", "marks": [] }, { "type": "text", "text": "PRRS", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "PRRS" } }] }, { "type": "text", "text": "; both require veterinary diagnosis." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Notifiable diseases" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Several pig diseases are legally notifiable in the UK, meaning you must contact the Animal and Plant Health Agency (APHA) and your vet immediately if you suspect them: foot-and-mouth disease, classical swine fever, African swine fever, and swine vesicular disease. Do not wait for a confirmed diagnosis; the suspicion alone triggers notification requirements." }]
+      }
+    ]
+  }
+}
