@@ -1,0 +1,172 @@
+{
+  "slug": "vollkornbrot-german",
+  "title": "Vollkornbrot",
+  "subtitle": "Dense German whole-grain rye bread leavened with sourdough, packed with seeds.",
+  "excerpt": "Vollkornbrot is a dense, dark, moist German bread made almost entirely from whole rye flour. It is leavened with sourdough and takes two days: a long cold ferment overnight, then a slow bake the following morning. The result is a compact loaf that slices very thinly, keeps for a week, and improves over three or four days as the flavour deepens.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "ADVANCED",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Vollkornbrot (whole-grain bread) is a staple of German bakeries, with regional variants across Germany and Scandinavia. The high-rye sourdough method is traditional in northern Germany. Because rye contains less gluten than wheat, the dough cannot develop the same elastic network; it relies instead on pentosans in the rye bran to hold its structure, and on the low pH of a mature sourdough for a close, moist crumb. Recipe proportions follow the German whole-grain baking tradition as described in Stanley Ginsberg and Norman Berg's 'Inside the Jewish Bakery' and the Tartine bread principles adapted for rye. Temperatures are for a fan oven.",
+  "voiceRetrofittedAt": "2026-05-28T00:00:00.000Z",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf, about 900 g",
+    "prepMinutes": 20,
+    "cookMinutes": 90,
+    "restingMinutes": 60,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice when fully cool and freeze flat in a bag. Defrost slices at room temperature for 20 minutes, or toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "This loaf is significantly better after resting for 24 to 48 hours after baking. Wrap in baking paper and keep at room temperature; do not refrigerate.",
+    "dietaryFlags": ["vegetarian", "vegan", "dairyFree"],
+    "cuisine": "german",
+    "mealType": null,
+    "mood": ["weekend"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven; 220°C conventional",
+    "foundational": false
+  },
+  "bakingMetadata": {
+    "totalFlourWeightG": 400,
+    "hydrationPercent": 90,
+    "preFermentType": "LEVAIN",
+    "preFermentPercent": 25,
+    "bakeTempCelsius": 200,
+    "bakeTimeMins": 90,
+    "steamBaking": true
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false, "notes": "Standard 2 lb (900 g) loaf tin, oiled and dusted with rye flour." },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true, "notes": "The internal temperature should reach 96 to 98 degrees Celsius. Rye bread is difficult to judge by look alone." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "levain",
+      "term": "Levain",
+      "definition": "A portion of sourdough starter fed with fresh flour and water, then left to ripen for several hours before being added to a dough. Using a freshly fed levain at peak activity gives a more predictable and livelier ferment than using starter straight from the fridge."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Vollkornbrot is not bread in the everyday sense. The dough is almost a paste: too wet and sticky to shape with bare hands, impossible to score. You line a tin with the mixture using a wet spatula and leave it to ferment overnight. The bake is slow and the result is dense, dark, and moist, a loaf you cut with a sharp knife into thin slices." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rye contains very little gluten. What holds a rye loaf together is the sourdough's acidity, which sets the proteins and starches during the long bake, plus the seeds distributed through the dough. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "levain" } }], "text": "levain" },
+          { "type": "text", "text": " must be at peak activity, so feed your starter 8 hours before you mix, and use it when it is domed and just starting to recede." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Why it needs two days",
+          "body": "The overnight cold ferment is not just for flavour. Rye dough needs an extended, slow fermentation for the starches to fully hydrate and for the lactic acid bacteria to lower the pH enough to prevent a gummy crumb. Rushing the ferment (or baking the same day) produces a loaf with a sticky, unpleasant interior even when fully baked. The rest after baking is equally important: freshly baked rye is gummy; after 24 hours it firms up and slices cleanly."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 12,
+          "items": [
+            { "ingredientSlug": "rye-flour", "amount": 300, "unit": "g", "prepNote": "whole rye flour, not light rye", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "wholemeal-bread-flour", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sourdough-starter", "amount": 100, "unit": "g", "prepNote": "fed and at peak, or active levain", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 350, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": "about 1 and a half teaspoons", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sunflower-seeds", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pumpkin-seeds", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caraway-seeds", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combine {{rye-flour}}, {{wholemeal-bread-flour}}, and {{sea-salt-fine}} in a large bowl. Add {{sunflower-seeds}}, {{pumpkin-seeds}}, and {{caraway-seeds}} and stir to mix." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add {{sourdough-starter}} and {{water}}. Mix thoroughly with a stiff spatula or your hand until no dry flour remains. The mixture is a thick, sticky batter rather than a kneadable dough." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Oil a 900 g loaf tin generously and dust with rye flour. Scrape the dough in with a wet spatula, packing it into the corners and smoothing the top. The surface will not be perfectly smooth; wet your hand and press it flat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cover tightly with cling film and leave at room temperature for 1 hour, then transfer to the fridge for 8 to 12 hours. The dough will rise slightly but not dramatically." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When ready to bake, place a small metal tin on the oven floor and heat the oven to 200°C fan (220°C conventional). Remove the loaf tin from the fridge." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the loaf tin in the oven. Pour 150 ml of boiling water into the metal tin on the oven floor and shut the door immediately. Bake for 20 minutes, then remove the water tin and lower the temperature to 180°C fan (200°C conventional). Continue baking for 60 to 70 minutes more." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The loaf is done when an instant-read thermometer inserted in the centre reads 96 to 98°C, and the top is deeply brown. It will not sound hollow when tapped like a wheat loaf." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn out onto a cooling rack immediately. Leave for a minimum of 24 hours before slicing. Wrapped in baking paper, it keeps at room temperature for up to a week." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "Rye bread has its own set of failure modes, mostly related to fermentation and timing.",
+          "items": [
+            {
+              "symptom": "Gummy, sticky crumb even after full baking.",
+              "cause": "Underfermented, or cut too soon after baking.",
+              "fix": "The loaf must rest for at least 24 hours. If still gummy after 48 hours, the ferment was not long enough; refrigerate the tin for 14 to 16 hours next time instead of 8."
+            },
+            {
+              "symptom": "Loaf did not rise at all during the cold proof.",
+              "cause": "Sourdough starter not active enough.",
+              "fix": "Feed your starter 8 to 12 hours before mixing. It should be domed and bubbly, showing about 50% growth from the feed. A starter straight from the fridge is too slow for rye."
+            },
+            {
+              "symptom": "Top cracked severely during baking.",
+              "cause": "Dough proofed at room temperature too long before going into the fridge.",
+              "fix": "One hour at room temperature is enough. A long room-temperature proof makes the top skin dry out, which causes it to crack when the interior expands in the oven."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

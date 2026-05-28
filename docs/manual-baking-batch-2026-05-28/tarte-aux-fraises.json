@@ -1,0 +1,189 @@
+{
+  "slug": "tarte-aux-fraises",
+  "title": "Tarte aux fraises",
+  "subtitle": "French strawberry tart with a crisp pastry case, vanilla cream, and fresh strawberries.",
+  "excerpt": "Tarte aux fraises is a French patisserie classic: a blind-baked sweet pastry case filled with vanilla cream and topped with fresh strawberries. The pastry is a pâte sucrée, which is richer and crisper than standard shortcrust. The cream is a pastry cream thickened with cornflour. The strawberries are arranged on top and finished with a light glaze.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "The strawberry tart is one of the foundational items of French patisserie. The format of a blind-baked pâte sucrée case filled with crème pâtissière and topped with fresh seasonal fruit appears in French pastry books from the nineteenth century. The tarte is associated with summer and the strawberry season, which in France runs from May to July. The glaze (typically apricot jam thinned with water) gives the finished tart its characteristic sheen. This recipe follows the standard method used in both professional and home French kitchens.",
+  "voiceRetrofittedAt": "2026-05-28T00:00:00.000Z",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 50,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 120,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": "The assembled tart does not freeze. The blind-baked pastry case can be frozen, wrapped, for up to two months.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pastry case can be blind-baked the day before and stored at room temperature. The cream can be made the day before and refrigerated. Assemble and top with strawberries up to two hours before serving.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["entertaining", "weekend"],
+    "temperatureCelsius": 170,
+    "temperatureNote": "fan oven; 190°C conventional, Gas Mark 5",
+    "foundational": false
+  },
+  "bakingMetadata": {
+    "totalFlourWeightG": 200,
+    "preFermentType": "NONE",
+    "bakeTempCelsius": 170,
+    "bakeTimeMins": 25,
+    "steamBaking": false
+  },
+  "recipeTools": [
+    { "slug": "tart-tin", "isOptional": false, "notes": "23 cm loose-bottomed fluted tart tin." },
+    { "slug": "baking-beans", "isOptional": false, "notes": "For blind baking." },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false, "notes": "For the pastry cream." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "blind-baking",
+      "term": "Blind baking",
+      "definition": "Baking a pastry case without a filling. The case is lined with baking paper and filled with baking beans to stop it rising. After a partial bake, the beans and paper are removed and the case is returned to the oven to colour the base."
+    },
+    {
+      "slug": "creme-patissiere",
+      "term": "Crème pâtissière",
+      "definition": "A thick vanilla custard made by cooking egg yolks, sugar, and cornflour with hot milk. Richer and firmer than a pouring custard. The base filling for French tarts, choux pastry, and mille-feuille."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This tart has three parts: the pastry case, the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "creme-patissiere" } }], "text": "crème pâtissière" },
+          { "type": "text", "text": ", and the fruit. The pastry case needs to be " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blind-baking" } }], "text": "blind-baked" },
+          { "type": "text", "text": " until crisp and pale golden. The cream needs to be made, cooled, and set. The strawberries go on last. Make everything in that order." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "unsalted-butter", "amount": 120, "unit": "g", "prepNote": "cold, cubed", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "icing-sugar", "amount": 50, "unit": "g", "prepNote": "sifted", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "egg-yolks", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "vanilla-extract", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "whole-milk", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Pastry cream" },
+            { "ingredientSlug": "vanilla-extract", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Pastry cream" },
+            { "ingredientSlug": "egg-yolks", "amount": 4, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "Pastry cream" },
+            { "ingredientSlug": "caster-sugar", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry cream" },
+            { "ingredientSlug": "cornflour", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry cream" },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "cut into small pieces", "isOptional": false, "groupLabel": "Pastry cream" },
+            { "ingredientSlug": "strawberries", "amount": 500, "unit": "g", "prepNote": "hulled", "isOptional": false, "groupLabel": "Topping" },
+            { "ingredientSlug": "jam", "amount": 3, "unit": "tbsp", "prepNote": "apricot or strawberry, sieved and warmed", "isOptional": false, "groupLabel": "Topping" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and blind-bake the pastry" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rub {{plain-flour}}, {{icing-sugar}}, and {{unsalted-butter}} (the pastry quantity) together until the mixture resembles fine breadcrumbs. Add the egg yolk and {{vanilla-extract}} and mix to a firm dough, adding a teaspoon of cold water if needed. Flatten, wrap, and refrigerate for 30 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 170°C fan (190°C conventional). Roll the pastry to 3 mm thick on a floured surface and line the tart tin. Press into the edges and trim the overhang. Refrigerate for 15 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Line the pastry case with baking paper and fill with baking beans. Bake for 15 minutes, then remove the paper and beans and bake for a further 8 to 10 minutes until pale golden and dry to the touch. Cool completely." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pastry cream" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat {{whole-milk}} and {{vanilla-extract}} in a saucepan until steaming. Whisk the egg yolks, {{caster-sugar}}, and {{cornflour}} together in a bowl until smooth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour the hot milk slowly over the egg mixture, whisking constantly. Return everything to the pan and cook over medium heat, stirring constantly with a wooden spoon or spatula, until the cream thickens and bubbles. Cook for 1 minute more, then remove from the heat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir in the butter quantity of {{unsalted-butter}} until melted. Press a sheet of cling film directly onto the surface to prevent a skin forming. Refrigerate until cold, at least 1 hour." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Whisk the chilled pastry cream briefly until smooth. Spread it into the cooled pastry case in an even layer." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Arrange {{strawberries}} on top, standing them cut-side down or halved, working from the outside in. Brush gently with the warmed {{jam}} glaze." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "The pastry cream is the part most people find difficult the first time.",
+          "items": [
+            {
+              "symptom": "Pastry cream lumpy after cooking.",
+              "cause": "Heat too high, or not stirred constantly.",
+              "fix": "Pass through a fine sieve while still warm. If it has scrambled, it cannot be recovered; make it again. Medium heat and constant stirring prevents this."
+            },
+            {
+              "symptom": "Pastry case shrinking during blind baking.",
+              "cause": "Pastry stretched into the tin rather than pressed, or not chilled before baking.",
+              "fix": "Always chill the lined case before blind baking. The 15-minute refrigeration is not optional."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

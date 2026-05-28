@@ -1,0 +1,172 @@
+{
+  "slug": "christmas-cake-last-minute",
+  "title": "Last-minute Christmas cake",
+  "subtitle": "A Christmas fruit cake that can be made and iced in the same week, skipping the traditional months of maturing.",
+  "excerpt": "Traditional Christmas cake is made weeks or months in advance and fed with brandy through the autumn. This version is made and decorated in the same week. Soaking the dried fruit overnight in orange juice and brandy compensates for the missing maturation time. The result is a moist, well-flavoured cake that tastes properly festive without the forward planning.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Traditional British Christmas cake descends from the plum cake tradition documented in seventeenth-century cookbooks, evolving into the spiced fruit cake form recognisable today by the mid-nineteenth century. Mrs Beeton's 'Book of Household Management' (1861) includes a Christmas cake designed for long keeping. The 'last-minute' approach of overnight fruit soaking has become widely published since the 1990s as a practical adaptation for time-limited cooks. The overnight orange juice soak is a technique used by food writers including Nigella Lawson and Delia Smith in various Christmas baking guides.",
+  "voiceRetrofittedAt": "2026-05-28T00:00:00.000Z",
+  "recipe": {
+    "servings": 16,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 150,
+    "restingMinutes": 0,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the uniced cake wrapped in cling film for up to three months. Defrost fully before marzipanning and icing.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The cake keeps for up to two weeks at room temperature, well wrapped in baking paper and stored in a tin. It can be made up to a week before icing.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": null,
+    "mood": ["entertaining", "weekend"],
+    "temperatureCelsius": 140,
+    "temperatureNote": "fan oven; 160°C conventional, Gas Mark 3",
+    "foundational": false
+  },
+  "bakingMetadata": {
+    "totalFlourWeightG": 250,
+    "preFermentType": "NONE",
+    "bakeTempCelsius": 140,
+    "bakeTimeMins": 150,
+    "steamBaking": false
+  },
+  "recipeTools": [
+    { "slug": "round-cake-tin-20", "isOptional": false, "notes": "20 cm round deep cake tin, lined with a double layer of baking paper on the base and sides." },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true, "notes": "Helpful for the creaming stage, though this can be done by hand." },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "foil", "isOptional": false, "notes": "To tent the top of the cake during the long bake if it colours too fast." }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Traditional Christmas cake is made in October or November and fed weekly with brandy until December. This version takes the same ingredients and compresses the timing. The fruit soaks overnight in orange juice and a generous slug of brandy, and much of what the long maturing period achieves in flavour is replicated in that soak. It is a proper Christmas cake, not a simplified one." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The baking is slow: 2.5 hours at 140°C fan. Line the tin generously and wrap the outside in a double layer of newspaper or brown paper tied with string, which slows the heat at the edges and prevents the outside cooking before the centre." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Protecting the tin",
+          "body": "Long-baked fruit cakes burn at the outside edge before the centre is cooked if the tin is not insulated. Wrap the outside of the tin with a double layer of newspaper or brown paper tied with string, and place a folded newspaper on the oven shelf below the cake. Alternatively, reduce the temperature by a further 10 degrees and extend the baking time by 20 minutes."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 16,
+          "items": [
+            { "ingredientSlug": "sultanas", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Soaked fruit" },
+            { "ingredientSlug": "raisins", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Soaked fruit" },
+            { "ingredientSlug": "currants", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Soaked fruit" },
+            { "ingredientSlug": "glace-cherries", "amount": 75, "unit": "g", "prepNote": "rinsed, patted dry, and halved", "isOptional": false, "groupLabel": "Soaked fruit" },
+            { "ingredientSlug": "mixed-peel", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Soaked fruit" },
+            { "ingredientSlug": "orange-juice", "amount": 100, "unit": "ml", "prepNote": "freshly squeezed", "isOptional": false, "groupLabel": "Soaked fruit" },
+            { "ingredientSlug": "unsalted-butter", "amount": 225, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "Cake" },
+            { "ingredientSlug": "muscovado-dark", "amount": 225, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Cake" },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "each", "prepNote": "large", "isOptional": false, "groupLabel": "Cake" },
+            { "ingredientSlug": "plain-flour", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Cake" },
+            { "ingredientSlug": "mixed-spice", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Cake" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Cake" },
+            { "ingredientSlug": "ginger-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Cake" },
+            { "ingredientSlug": "almonds", "amount": 75, "unit": "g", "prepNote": "whole blanched", "isOptional": false, "groupLabel": "Cake" },
+            { "ingredientSlug": "black-treacle", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Cake" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soak the fruit (night before)" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combine {{sultanas}}, {{raisins}}, {{currants}}, {{glace-cherries}}, and {{mixed-peel}} in a large bowl. Pour over {{orange-juice}}. Stir, cover, and leave overnight at room temperature. The fruit should absorb most of the liquid." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake the cake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 140°C fan (160°C conventional). Line a deep 20 cm round tin with a double layer of baking paper on the base and sides, with the paper extending 5 cm above the tin edge." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Beat {{unsalted-butter}} and {{muscovado-dark}} together in a large bowl until pale and fluffy, about 3 to 4 minutes with an electric mixer. Add {{black-treacle}} and mix briefly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add {{eggs}} one at a time, beating well between each addition. If the mixture curdles, add a tablespoon of flour with each egg." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sift together {{plain-flour}}, {{mixed-spice}}, {{cinnamon-ground}}, and {{ginger-ground}}. Fold into the butter mixture until just combined." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the soaked fruit and any remaining soaking liquid. Add {{almonds}} and fold everything together." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spoon into the prepared tin and level the surface. Wrap the outside of the tin with a double layer of brown paper tied with string. Bake for 2.5 to 3 hours. After 1.5 hours, check and cover the top loosely with foil if it is browning too fast." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The cake is done when a skewer comes out clean and the edges have pulled away slightly from the tin. Leave to cool completely in the tin before removing. Store wrapped in baking paper in a tin at room temperature." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "To finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Brush the top and sides of the cake with warmed apricot jam, then cover with rolled marzipan. Leave the marzipan to dry for 24 hours, then cover with royal icing or ready-to-roll fondant. Dust with icing sugar or decorate as you like." }
+        ]
+      }
+    ]
+  }
+}

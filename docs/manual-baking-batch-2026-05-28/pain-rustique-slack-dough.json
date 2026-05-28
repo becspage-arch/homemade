@@ -1,0 +1,164 @@
+{
+  "slug": "pain-rustique-slack-dough",
+  "title": "Pain rustique",
+  "subtitle": "A high-hydration French loaf with an open crumb and thick crust, made from a very wet dough.",
+  "excerpt": "Pain rustique is a French country loaf built from a slack, high-hydration dough. The wetness produces a wide, irregular crumb with large pockets and a crust that shatters when you cut it. The dough is too sticky to knead by hand in the usual sense; instead, a series of short stretch-and-fold sequences builds the gluten over two hours. One loaf takes about four hours from mixing to the oven.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Pain rustique is a French country loaf style documented in professional bakery texts from the twentieth century, including references in Raymond Calvel's 'The Taste of Bread' (1990, translated 2001). It belongs to the family of high-hydration French breads alongside ciabatta's Italian cousin. The stretch-and-fold technique described here follows the approach common in artisan bakeries, where a series of short folds replaces conventional kneading for wet doughs. Temperatures are for a fan oven; add 20 degrees Celsius for conventional or reduce by one gas mark.",
+  "voiceRetrofittedAt": "2026-05-28T00:00:00.000Z",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 large loaf (about 750 g)",
+    "prepMinutes": 20,
+    "cookMinutes": 35,
+    "restingMinutes": 120,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice the cooled loaf and freeze flat, then transfer to a bag. Defrost slices at room temperature for 30 minutes or toast directly from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough can be retarded after shaping. Place the shaped dough on a floured tray, cover loosely with cling film, and refrigerate for up to 16 hours. Bake straight from the fridge; add 5 minutes to the baking time.",
+    "dietaryFlags": ["vegetarian", "vegan", "dairyFree"],
+    "cuisine": "french",
+    "mealType": null,
+    "mood": ["weekend"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "fan oven; 240°C conventional",
+    "foundational": false
+  },
+  "bakingMetadata": {
+    "totalFlourWeightG": 500,
+    "hydrationPercent": 75,
+    "preFermentType": "NONE",
+    "bakeTempCelsius": 220,
+    "bakeTimeMins": 35,
+    "steamBaking": true
+  },
+  "recipeTools": [
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": false, "notes": "Essential for handling the sticky dough and folding it without adding flour." },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true, "notes": "The internal temperature of a baked loaf should reach 96 to 98 degrees Celsius." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "stretch-and-fold",
+      "term": "Stretch and fold",
+      "definition": "A technique for developing gluten in a wet dough without kneading. The baker lifts one side of the dough and folds it over the rest, rotating the bowl 90 degrees each time. Done in sets over a two-hour window, it builds strength without adding flour."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pain rustique is a high-hydration French loaf built on a dough too wet to shape in the usual way. You pour it more than you handle it, and because the dough is sticky and extensible, it produces a crust that shatters and a crumb full of large, uneven holes." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The method replaces kneading with a series of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stretch-and-fold" } }], "text": "stretch-and-fold" },
+          { "type": "text", "text": " sets. Each set takes about a minute and you do four of them over two hours. Patience is the technique. The wet dough develops strength without ever sitting on a worktop." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Steam in the oven",
+          "body": "Bread crusts form from surface starch that first gelatinises when wet, then dries into a hard shell. Without steam in the first 10 to 15 minutes of baking, the crust sets too quickly and the loaf cannot expand fully. Add steam by placing a small metal roasting tin in the bottom of the oven when you preheat it, then pouring in 200 ml of boiling water when the loaf goes in. Shut the door immediately. Remove the tin after 15 minutes."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": "1 sachet", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 375, "unit": "ml", "prepNote": "cool tap water, not warm", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 10, "unit": "g", "prepNote": "about 1 and a half teaspoons", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combine {{strong-bread-flour}}, {{yeast-fast-action}}, and {{sea-salt-fine}} in a large bowl. Add {{water}} and mix with your hand until you have a rough, shaggy mass with no dry patches of flour. It will be very sticky. Cover the bowl." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rest for 30 minutes. Then do the first stretch-and-fold: wet your hand, reach under one side of the dough, lift it as high as it will stretch, and fold it over to the far side. Rotate the bowl 90 degrees and repeat. Do this four times, rotating each time. That is one set. Re-cover." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat three more stretch-and-fold sets, spaced 30 minutes apart. After the fourth set the dough will feel noticeably more elastic and less sticky than at the start." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place a sheet of baking paper on a baking tray. Dust it with flour. Tip the dough onto the paper using a bench scraper; try not to deflate it. Gently coax it into a rough oval. Do not try to roll it; just nudge the edges into shape. Dust the top lightly with flour. Leave uncovered for 45 minutes at room temperature." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place a small metal tin on the oven floor and heat the oven to 220°C fan (240°C conventional) for at least 30 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slide the tray into the oven. Pour 200 ml of boiling water into the hot tin on the oven floor and shut the door immediately. Bake for 15 minutes, then remove the water tin and bake for a further 20 minutes until the crust is deep brown and the loaf sounds hollow when tapped on the base. An internal temperature of 97°C confirms it is done." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Transfer to a cooling rack and leave for at least 30 minutes before cutting. Cutting too early lets steam escape and turns the crumb gummy." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "Most problems with high-hydration bread trace back to dough handling or oven temperature.",
+          "items": [
+            {
+              "symptom": "Loaf spread flat rather than holding its shape.",
+              "cause": "Dough was overproofed, or the oven was not hot enough.",
+              "fix": "Shorten the final prove to 35 minutes and confirm the oven is fully preheated before the dough goes in. A stone-cold oven produces a flat loaf."
+            },
+            {
+              "symptom": "Dense crumb with no open holes.",
+              "cause": "Not enough stretch-and-fold development, or underproofed.",
+              "fix": "The dough should feel pillowy and slightly jiggly before baking. If it still feels dense and heavy after the final prove, give it another 20 minutes."
+            },
+            {
+              "symptom": "Pale, soft crust.",
+              "cause": "Not enough baking time or steam removed too early.",
+              "fix": "Extend baking by 5 minutes and check the base colour. The crust needs the full 35 minutes to dry and colour properly."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

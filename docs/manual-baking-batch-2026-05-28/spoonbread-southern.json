@@ -1,0 +1,152 @@
+{
+  "slug": "spoonbread-southern",
+  "title": "Southern spoonbread",
+  "subtitle": "A soft, baked cornmeal pudding from the American South, eaten with a spoon.",
+  "excerpt": "Spoonbread is a baked cornmeal dish that sits between a bread and a savoury pudding. It is too soft to slice: you serve it with a spoon, warm from the dish. The texture is custardy and light, closer to a corn souffle than a cornbread. It pairs with roasted meats, braised greens, or piled into a bowl on its own.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Spoonbread is a dish of the American South, documented in Virginia cookery records from the eighteenth century. It was a common feature in the cooking of the Chesapeake Bay region and Appalachia. Mary Randolph's 'The Virginia House-Wife' (1824), one of the first regional American cookbooks, includes a version. The name refers to the consistency: this is bread eaten with a spoon, not cut with a knife. This recipe follows the standard method of scalding cornmeal with boiling milk, enriching it with eggs, and baking until just set.",
+  "voiceRetrofittedAt": "2026-05-28T00:00:00.000Z",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": "Spoonbread does not freeze well. The custardy texture becomes grainy on defrosting. Eat on the day.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The batter can be mixed up to an hour before baking and left to sit, covered, at room temperature.",
+    "dietaryFlags": ["vegetarian", "glutenFree"],
+    "cuisine": "american",
+    "mealType": "side",
+    "mood": ["comfortFood", "weekend"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "fan oven; 200°C conventional, Gas Mark 6",
+    "foundational": false
+  },
+  "bakingMetadata": {
+    "totalFlourWeightG": 140,
+    "preFermentType": "NONE",
+    "bakeTempCelsius": 180,
+    "bakeTimeMins": 40,
+    "steamBaking": false
+  },
+  "recipeTools": [
+    { "slug": "medium-saucepan", "isOptional": false, "notes": "For scalding the milk and cooking the cornmeal porridge." },
+    { "slug": "mixing-bowl-medium", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false, "notes": "Or a 23 cm round ceramic baking dish, about 5 cm deep." },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "scald",
+      "term": "Scald",
+      "definition": "To heat milk or cream to just below boiling point, around 82 to 85 degrees Celsius. The liquid will steam and tiny bubbles will form at the edge of the pan. Scalding gelatinises cornmeal and prevents it from cooking unevenly in a batter."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Spoonbread sits in a gap between cornbread and a savoury pudding. It is too soft to slice, served straight from the dish with a large spoon, and it has the consistency of a very light, egg-enriched porridge that has been baked until just set. It is a side dish, not a bread you eat in hand." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The method is: make a thick cornmeal porridge by " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scald" } }], "text": "scalding" },
+          { "type": "text", "text": " milk and stirring in polenta, then enrich it with butter and beaten eggs, then bake. The eggs are what separate the layers: whites beaten to soft peaks fold in at the end to keep the spoonbread light rather than dense." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "polenta", "amount": 140, "unit": "g", "prepNote": "fine or medium-ground; not quick-cook polenta", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 600, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "plus extra for greasing", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 3, "unit": "each", "prepNote": "separated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "baking-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 180°C fan (200°C conventional). Grease a 23 cm round baking dish or equivalent with butter." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat {{whole-milk}} in a medium saucepan over medium heat until it steams and just begins to show tiny bubbles at the edge. Do not let it boil." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add {{polenta}} in a slow, steady stream, whisking constantly. Reduce the heat to low and stir with a wooden spoon for 3 to 4 minutes until the mixture thickens to the consistency of soft porridge. Remove from the heat. Stir in {{unsalted-butter}} and {{sea-salt-fine}} until the butter melts." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Separate the eggs. Beat the egg yolks and {{baking-powder}} in a small bowl, then stir into the warm cornmeal mixture. Leave to cool for 5 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "In a clean bowl, whisk the egg whites to soft peaks. They should hold a curve but not be stiff or dry." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold one third of the egg whites into the cornmeal mixture to loosen it, then fold in the remaining two thirds gently until no white streaks remain." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour into the prepared dish. Bake for 35 to 40 minutes until puffed and just set in the centre; it should wobble slightly but not slosh. Serve immediately from the dish." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "Spoonbread's main failure modes are lumps and collapse.",
+          "items": [
+            {
+              "symptom": "Lumpy texture throughout.",
+              "cause": "Polenta added too quickly to the hot milk.",
+              "fix": "Whisk steadily while adding polenta, especially at the start. Once all the polenta is in, switch to a wooden spoon and keep stirring until smooth."
+            },
+            {
+              "symptom": "Flat and dense rather than puffed.",
+              "cause": "Egg whites over-beaten, or the mixture too hot when folded.",
+              "fix": "Soft peaks fold in more successfully than stiff ones for a batter this heavy. Let the cornmeal cool for at least 5 minutes so the eggs do not scramble when folded in."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

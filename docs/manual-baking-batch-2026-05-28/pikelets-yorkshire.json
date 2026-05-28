@@ -1,0 +1,168 @@
+{
+  "slug": "pikelets-yorkshire",
+  "title": "Yorkshire pikelets",
+  "subtitle": "Holey griddle breads from northern England, cooked without a crumpet ring.",
+  "excerpt": "Yorkshire pikelets are yeast-leavened griddle breads with a pitted surface and a soft, slightly chewy crumb. They cook free-form on a hot pan, spreading into rough rounds and blistering with holes as the batter rises. Ready in just over an hour from start to finish, butter melting into the holes the moment they come off the heat.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Yorkshire pikelets are documented across northern England from at least the early nineteenth century. The name may share a root with the Welsh 'bara pyglyd', a pitchy or sticky bread, though the direct connection is debated. They are distinct from crumpets in that no metal ring is used, so the batter spreads freely and the bread is thinner with a crisper edge. Mrs Beeton's Book of Household Management (1861) includes a version under 'crumpets and pikelets'. This recipe follows the standard West Riding method: a thin batter, plain flour, fast-action yeast, and a dry griddle.",
+  "voiceRetrofittedAt": "2026-05-28T00:00:00.000Z",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 to 10 pikelets",
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "restingMinutes": 60,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Cool completely, stack with baking paper between each, freeze in a sealed bag for up to two months. Reheat in a toaster directly from frozen.",
+    "batchable": true,
+    "batchNotes": "Double the batter and cook in batches. The batter keeps for up to two hours at room temperature if it has already proved.",
+    "makeAheadNotes": "The batter can prove overnight in the fridge. Remove it an hour before cooking and bring it to room temperature.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "breakfast",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": "Griddle only, no oven",
+    "foundational": false
+  },
+  "bakingMetadata": {
+    "totalFlourWeightG": 200,
+    "hydrationPercent": 150,
+    "preFermentType": "NONE",
+    "bakeTempCelsius": null,
+    "steamBaking": false
+  },
+  "recipeTools": [
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false },
+    { "slug": "measuring-jug", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false, "notes": "Or a flat griddle. Must be heavy enough to hold an even heat." },
+    { "slug": "ladle", "isOptional": false, "notes": "For pouring consistent amounts of batter." },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "hydration",
+      "term": "Hydration",
+      "definition": "The ratio of water (or liquid) to flour in a bread recipe, expressed as a percentage. A 150% hydration means 150 ml of liquid for every 100 g of flour. Pikelets use a batter much wetter than any bread dough, which is what creates the holey, lacy surface."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Yorkshire pikelets are crumpets without a ring. The batter is the same high-" },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hydration" } }], "text": "hydration" },
+          { "type": "text", "text": " yeast mixture, and the holes form the same way, but because there is nothing to contain it, the batter spreads into free-form rounds and sets thinner than a crumpet. The edge crisps slightly; the centre stays soft. Butter disappears into the holes the moment you spread it." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The batter needs an hour to prove, but the work is about five minutes. Rest it, then cook. Each pikelet takes about five minutes on a hot pan. They are best eaten straight from the pan." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 10,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": "1 sachet", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 200, "unit": "ml", "prepNote": "warm, not hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 100, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 15, "unit": "g", "prepNote": "melted, for greasing the pan", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combine {{plain-flour}}, {{yeast-fast-action}}, and {{sea-salt-fine}} in a large bowl. Make a well in the centre." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix {{whole-milk}} and {{water}} together; both should feel warm on your wrist but not hot. Pour into the flour and whisk to a smooth, thin batter with no lumps." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cover the bowl with a damp tea towel and leave in a warm place for 45 to 60 minutes. The batter should be bubbling and slightly foamy across the top." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat a heavy frying pan or flat griddle over a medium heat. Brush lightly with {{unsalted-butter}}. The pan is ready when a drop of water skates across the surface and evaporates in two seconds." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour a small ladle (about 60 ml) of batter into the pan. Cook without touching for 3 to 4 minutes. Holes will appear across the surface and the edges will look set and dry." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Flip once and cook for 1 to 2 minutes on the second side, until pale gold. The second side never colours as dark as the first. Set aside and keep warm while you cook the rest, re-greasing the pan lightly between batches." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Serve immediately with butter. The holes are the whole point; butter should melt in before the pikelet reaches the table." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "Most pikelet problems come from the batter temperature, the pan heat, or not waiting for the holes.",
+          "items": [
+            {
+              "symptom": "No holes forming on the surface.",
+              "cause": "Pan is too cool, or the batter did not prove long enough.",
+              "fix": "Turn the heat up a little and test with a drop of water. A properly hot pan needs 3 to 4 minutes for holes to form naturally. If after 5 minutes there are still no holes, the batter may need another 20 minutes to prove."
+            },
+            {
+              "symptom": "Batter spreads too thin and sets like a crepe.",
+              "cause": "Pan is too hot, or the batter is too liquid.",
+              "fix": "Lower the heat to medium and let the pan cool for a minute. A very fluid batter can be thickened by whisking in a tablespoon of flour."
+            },
+            {
+              "symptom": "Pikelets raw in the centre after flipping.",
+              "cause": "Flipped too soon before the surface set.",
+              "fix": "Wait until the edges look dry and the centre has lost its glossy wet sheen before flipping. The second side only needs 1 to 2 minutes."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Notes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cold pikelets reheat well in a toaster, or face-down in a dry pan for a minute. They freeze well too: stack with a square of baking paper between each one, seal in a bag, and toast from frozen." }
+        ]
+      }
+    ]
+  }
+}

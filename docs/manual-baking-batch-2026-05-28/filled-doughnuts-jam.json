@@ -1,0 +1,181 @@
+{
+  "slug": "filled-doughnuts-jam",
+  "title": "Jam doughnuts",
+  "subtitle": "Soft yeasted doughnuts deep-fried and filled with strawberry or raspberry jam.",
+  "excerpt": "Jam doughnuts are soft, yeasted balls of enriched dough that are deep-fried until golden, rolled in caster sugar while still hot, and then filled with jam through a piping bag. The dough is a standard enriched bread dough: strong flour, butter, eggs, milk, and a little sugar. They take time (two rises) but the technique is not difficult. Makes 12.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Yeasted fried doughnuts appear across European baking traditions under many names: Berliner in Germany, sufganiyot in Israel, bomboloni in Italy, paczki in Poland. All share the same basic formula: enriched yeast dough, deep-fried, filled with jam or cream. The British jam doughnut has been a fairground and bakery staple since the late nineteenth century. The format of a spherical dough ball without a hole, filled after frying via a small cut or puncture, is the British standard, distinct from the ring doughnuts of American influence.",
+  "voiceRetrofittedAt": "2026-05-28T00:00:00.000Z",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "12 doughnuts",
+    "prepMinutes": 30,
+    "cookMinutes": 30,
+    "restingMinutes": 150,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": "Fried doughnuts do not freeze well. Eat on the day of frying.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough can be made the night before and left to rise slowly in the fridge overnight. Bring to room temperature for 30 minutes before shaping.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": null,
+    "mood": ["entertaining", "weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": "No oven needed. Deep-fry at 175°C.",
+    "foundational": false
+  },
+  "bakingMetadata": {
+    "totalFlourWeightG": 500,
+    "preFermentType": "NONE",
+    "bakeTempCelsius": null,
+    "bakeTimeMins": null,
+    "steamBaking": false
+  },
+  "recipeTools": [
+    { "slug": "stand-mixer", "isOptional": false, "notes": "For the enriched dough. A hand mixer with dough hooks also works; kneading by hand takes 12 to 15 minutes." },
+    { "slug": "deep-fryer", "isOptional": true, "notes": "Or a large, deep saucepan with at least 8 cm of oil." },
+    { "slug": "large-saucepan", "isOptional": true, "notes": "For frying if not using a deep fryer." },
+    { "slug": "sugar-thermometer", "isOptional": false, "notes": "Essential for monitoring oil temperature." },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "piping-bag", "isOptional": false, "notes": "For filling the doughnuts with jam after frying." }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The dough needs to be soft and smooth but not sticky. Enriched doughs take longer to knead than plain bread doughs because the fat coats the flour and slows gluten development. Give it a full 10 minutes in the stand mixer." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Oil temperature is the most important variable when frying. Too hot and the outside browns before the inside cooks; too cool and the doughnuts absorb oil and turn greasy. Keep it at 175°C throughout and fry in small batches." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 12,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "caster-sugar", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 8, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "large", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "whole-milk", "amount": 150, "unit": "ml", "prepNote": "warm (about 35°C)", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 75, "unit": "g", "prepNote": "softened, cut into pieces", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "sunflower-oil", "amount": 1, "unit": "litre", "prepNote": "for deep frying", "isOptional": false, "groupLabel": "For frying" },
+            { "ingredientSlug": "caster-sugar", "amount": 100, "unit": "g", "prepNote": "for rolling", "isOptional": false, "groupLabel": "To finish" },
+            { "ingredientSlug": "jam", "amount": 200, "unit": "g", "prepNote": "strawberry or raspberry, smooth not chunky", "isOptional": false, "groupLabel": "Filling" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and prove the dough" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combine {{strong-bread-flour}}, {{yeast-fast-action}}, {{caster-sugar}}, and {{sea-salt-fine}} in the bowl of a stand mixer fitted with a dough hook. Add {{eggs}} and warm {{whole-milk}} and mix on low speed until combined, about 2 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Increase to medium speed and knead for 5 minutes. Add {{unsalted-butter}} a few pieces at a time, allowing each addition to incorporate before adding the next. Continue kneading for a further 8 to 10 minutes until the dough is smooth, stretchy, and pulls away from the sides of the bowl." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cover the bowl and leave to rise at room temperature for 1.5 to 2 hours until doubled in size." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and second prove" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tip the risen dough onto a lightly floured surface. Divide into 12 equal pieces (about 80g each). Shape each into a smooth ball by cupping your palm over the dough and rolling with light pressure. Place on baking paper squares or a lightly oiled tray." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cover loosely and prove for a further 45 minutes to 1 hour until noticeably puffed." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry and fill" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat {{sunflower-oil}} in a deep fryer or large saucepan to 175°C. Have kitchen paper and a tray ready." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fry 3 to 4 doughnuts at a time for 2.5 to 3 minutes per side, turning once, until deep golden brown all over. Lift out with a slotted spoon and drain briefly on kitchen paper." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "While still hot, roll each doughnut in {{caster-sugar}} to coat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Once cool enough to handle (about 5 minutes), use a skewer to make a small hole in the side of each doughnut. Fit a piping bag with a round nozzle, fill with {{jam}}, and pipe 15 to 20g of jam into each doughnut. You will feel resistance when the doughnut is full." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "Frying temperature and proving time are the two critical factors.",
+          "items": [
+            {
+              "symptom": "Pale outside but raw doughy inside.",
+              "cause": "Oil too hot.",
+              "fix": "Reduce to 170°C and fry slightly longer. The inside needs time to cook through."
+            },
+            {
+              "symptom": "Dense, heavy doughnuts.",
+              "cause": "Underproved, or oil too cool so they absorbed fat.",
+              "fix": "Both proves matter. A cold oil temperature means the doughnut sits in the oil absorbing fat rather than crisping. Keep the temperature consistent."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

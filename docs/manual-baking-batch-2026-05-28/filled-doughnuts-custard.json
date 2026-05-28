@@ -1,0 +1,176 @@
+{
+  "slug": "filled-doughnuts-custard",
+  "title": "Custard doughnuts",
+  "subtitle": "Soft yeasted doughnuts deep-fried and filled with thick vanilla custard.",
+  "excerpt": "Custard doughnuts use the same enriched yeast dough as jam doughnuts but are filled with a thick vanilla pastry cream instead of jam. The custard is made from scratch with egg yolks, milk, sugar, and cornflour, and must be made and chilled before the doughnuts are fried. Rolled in caster sugar while hot, they are best eaten within a few hours. Makes 12.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Custard-filled doughnuts follow the same European fried dough tradition as jam doughnuts, with a thick pastry cream filling in place of jam. The format is common across Northern European baking: German Berliner can be filled with custard, vanilla cream, or jam; Italian bomboloni are often filled with crema pasticcera. In Britain the custard doughnut became popular in the twentieth century as a bakery alternative to the jam version. The custard filling is a standard pastry cream (crème pâtissière) made thick enough to pipe into the doughnut without running.",
+  "voiceRetrofittedAt": "2026-05-28T00:00:00.000Z",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "12 doughnuts",
+    "prepMinutes": 45,
+    "cookMinutes": 30,
+    "restingMinutes": 150,
+    "chillingMinutes": 120,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": "Fried doughnuts do not freeze. Eat on the day of frying.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The custard must be made at least two hours ahead and chilled. The dough can be made the night before and proved in the fridge overnight.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": null,
+    "mealType": null,
+    "mood": ["entertaining", "weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": "No oven needed. Deep-fry at 175°C.",
+    "foundational": false
+  },
+  "bakingMetadata": {
+    "totalFlourWeightG": 500,
+    "preFermentType": "NONE",
+    "bakeTempCelsius": null,
+    "bakeTimeMins": null,
+    "steamBaking": false
+  },
+  "recipeTools": [
+    { "slug": "stand-mixer", "isOptional": false, "notes": "For the enriched dough." },
+    { "slug": "deep-fryer", "isOptional": true, "notes": "Or a large, deep saucepan with at least 8 cm of oil." },
+    { "slug": "large-saucepan", "isOptional": true, "notes": "For frying if not using a deep fryer, and for the custard." },
+    { "slug": "sugar-thermometer", "isOptional": false, "notes": "For monitoring oil temperature." },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "piping-bag", "isOptional": false, "notes": "For filling the doughnuts with custard." }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The custard must be made first and chilled for at least two hours so it is thick enough to pipe. A runny custard will not stay inside the doughnut. The dough method is identical to jam doughnuts: it is the filling that makes these different." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 12,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "caster-sugar", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 8, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "large", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "whole-milk", "amount": 150, "unit": "ml", "prepNote": "warm (about 35°C)", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 75, "unit": "g", "prepNote": "softened, cut into pieces", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "whole-milk", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Vanilla custard filling" },
+            { "ingredientSlug": "vanilla-extract", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Vanilla custard filling" },
+            { "ingredientSlug": "egg-yolks", "amount": 4, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "Vanilla custard filling" },
+            { "ingredientSlug": "caster-sugar", "amount": 75, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Vanilla custard filling" },
+            { "ingredientSlug": "cornflour", "amount": 35, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Vanilla custard filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 25, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Vanilla custard filling" },
+            { "ingredientSlug": "sunflower-oil", "amount": 1, "unit": "litre", "prepNote": "for deep frying", "isOptional": false, "groupLabel": "For frying" },
+            { "ingredientSlug": "caster-sugar", "amount": 100, "unit": "g", "prepNote": "for rolling", "isOptional": false, "groupLabel": "To finish" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the custard (at least 2 hours ahead)" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat {{whole-milk}} (filling quantity) and {{vanilla-extract}} until steaming. In a bowl, whisk {{egg-yolks}} and {{caster-sugar}} (filling quantity). Add {{cornflour}} and whisk until smooth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour the hot milk slowly over the egg mixture, whisking constantly. Return to the pan and cook over medium heat, stirring constantly, until the custard thickens and bubbles. Cook for 1 minute more, then stir in {{unsalted-butter}} (filling quantity) until melted." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Press cling film directly onto the surface and refrigerate until cold and firm, at least 2 hours. The custard must be stiff enough to hold its shape when piped." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and prove the dough" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combine {{strong-bread-flour}}, {{yeast-fast-action}}, {{caster-sugar}} (dough quantity), and {{sea-salt-fine}} in a stand mixer bowl with a dough hook. Add {{eggs}} and warm {{whole-milk}} (dough quantity) and mix on low for 2 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Increase speed to medium and knead for 5 minutes. Add {{unsalted-butter}} (dough quantity) a few pieces at a time, letting each piece incorporate before adding the next. Knead for a further 8 to 10 minutes until smooth and elastic." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cover and prove for 1.5 to 2 hours until doubled. Divide into 12 balls (about 80g each), shape into smooth rounds, and prove again for 45 minutes to 1 hour until puffed." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry and fill" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat {{sunflower-oil}} to 175°C. Fry 3 to 4 doughnuts at a time for 2.5 to 3 minutes per side until deep golden. Drain on kitchen paper, then roll in {{caster-sugar}} (finishing quantity) while hot." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Once cool enough to handle, whisk the chilled custard briefly to loosen it. Spoon into a piping bag fitted with a round nozzle. Use a skewer to make a small hole in the side of each doughnut, then pipe custard in until the doughnut feels heavy and resists further filling." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "Custard consistency and frying temperature are the two things to watch.",
+          "items": [
+            {
+              "symptom": "Custard leaks back out of the doughnut.",
+              "cause": "Custard not thick enough, or filling hole too large.",
+              "fix": "The custard must be cold and set firm before piping. If it is still soft after 2 hours, refrigerate for a further hour. Use the skewer to make only a small entry hole."
+            },
+            {
+              "symptom": "Doughnuts heavy and greasy.",
+              "cause": "Oil temperature dropped too low during frying.",
+              "fix": "Fry in small batches and monitor the temperature; adding cold dough lowers the oil temperature. Wait for it to return to 175°C between batches."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
