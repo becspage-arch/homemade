@@ -279,3 +279,29 @@ generic claims rather than concrete facts, etc.)
   souvlaki-chicken).
   **How to fix:** Replace with "aim", "correct", or "goal": `"the aim is set whites"`,
   `"the correct internal temperature is 74°C"`.
+
+- **Grade-level threshold of 12.0 on provenance paragraphs** `[block]`
+  Pattern: the "Where this practice comes from" / "Where this recipe comes from"
+  paragraph at the bottom of any tutorial trips the `grade-level` voice-check
+  rule. Hit 15 of 40 files in mindset-bulk-022. The classic offender is the
+  multi-clause "X is shared across A, across B, and across C" attribution
+  shape, which scores above 12 on Flesch-Kincaid even with common vocabulary.
+  **How to fix:** Break the provenance paragraph into 2–3 short declarative
+  sentences. Avoid `staple of`, `shared across`, multi-clause attribution
+  lists. Pattern that worked: `Original to homemade.education. The X shape
+  is a common one. It appears in Y and in Z.` One fact per sentence.
+
+- **Year-only references in body prose** `[block]`
+  Pattern: bare-year citations like `(2014)` or `(1994)` placed inside body
+  prose for a researcher or book trigger `year-in-body` voice-check errors.
+  The rule applies across all categories.
+  **How to fix:** Strip bare years from body. Keep the figure or book name
+  if it carries weight; move the full citation (with year) to `sourceNotes`.
+
+- **Em-dash zero-tolerance in body content** `[block]`
+  Pattern: any em-dash or en-dash anywhere in body prose, including inside a
+  sample script or quoted line, blocks upload. The 2026-05-19 voice rules
+  tightened the older "max one per paragraph" threshold to zero.
+  **How to fix:** Replace every em-dash with a full stop, a comma, a colon,
+  brackets, or a reworded sentence. Scripted speech inside body content
+  (sample messages, sample replies) counts too.

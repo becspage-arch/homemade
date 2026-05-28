@@ -508,3 +508,45 @@ Cooking content in the library and patterns emerge that cross both.)
   to give up" → "What is this asking you to give up?" "Write an honest
   description" → "Write a direct description" or "Write what is real
   for you right now."
+
+- **Provenance paragraph grade-level** `[block]`
+  Pattern: the "Where this practice comes from" paragraph at the bottom
+  of each entry trips the `grade-level` voice-check rule (threshold 12.0).
+  The classic offender is the multi-clause "X is shared across A, across
+  B, and across C" anaphora, which pushes Flesch-Kincaid above 12 even
+  with otherwise common words. Hit 15 of 40 files in bulk-022 on first
+  draft.
+  **Why:** Voice-check's grade-level rule is strict; the body prose
+  needs to stay in a grade 6–8 register. Long multi-clause sentences
+  with parallel "across X / across Y" structure read above threshold
+  even when individual words are common.
+  **How to fix:** Break the provenance paragraph into 2–3 short
+  declarative sentences. Pattern that worked across bulk-022:
+  `Original to homemade.education. The X shape is a common one. It
+  appears in Y and in Z.` Avoid `staple of`, `shared across`, and
+  multi-clause attribution lists; one fact per sentence.
+
+- **Bare-year references in body** `[block]`
+  Pattern: a year-only citation like `(2014)` or `(1994)` placed inside
+  body prose for a researcher or a book. Voice-check fires
+  `year-in-body` and blocks upload. Caught in bulk-022's
+  `what-anxiety-is-biologically` provenance paragraph.
+  **Why:** Historical context belongs in `sourceNotes`, not body prose.
+  Body prose stays focused on the practice and the reader; the publication
+  metadata lives in the attribution field.
+  **How to fix:** Strip bare years from the body. Keep the named figure
+  if it adds weight (e.g. "Jon Kabat-Zinn" rather than "Jon Kabat-Zinn,
+  1979"). Put the full citation in `sourceNotes` where the year is
+  expected and useful.
+
+- **Em-dash zero-tolerance in body content** `[block]`
+  Pattern: any em-dash or en-dash in body content, including inside a
+  scripted quote, fires `em-dash-paragraph` and blocks upload. The older
+  "max one em-dash per paragraph, never two in a sentence" rule has been
+  tightened to zero. Caught once in bulk-022 (`cancel-one-thing` had an
+  em-dash inside a sample cancel-message script).
+  **Why:** The 2026-05-19 voice rules updated the threshold to ZERO
+  em-dashes in body prose (see `feedback_homemade_voice.md`).
+  **How to fix:** Replace every em-dash with a full stop, a comma, a
+  colon, brackets, or a reworded sentence. Even em-dashes inside scripted
+  speech (sample cancel messages, sample reply lines) count and must go.
