@@ -63,10 +63,19 @@ interface IngredientsListItem {
   groupLabel?: string | null
 }
 
-interface ApplyPayload {
+interface ApplyPayloadSingle {
   defaultServings: number | null
   items: IngredientsListItem[]
+  blocks?: never
 }
+
+interface ApplyPayloadMulti {
+  defaultServings: number | null
+  items?: never
+  blocks: Array<{ items: IngredientsListItem[] }>
+}
+
+type ApplyPayload = ApplyPayloadSingle | ApplyPayloadMulti
 
 interface TipTapNode {
   type?: string
@@ -186,6 +195,31 @@ async function main(): Promise<void> {
     return
   }
 
+  if (cmd === '--count-blocks') {
+    const slug = args[1]
+    if (!slug) {
+      console.error('--count-blocks requires a slug.')
+      process.exit(1)
+    }
+    const justSlug = slug.includes('/') ? slug.split('/').pop()! : slug
+    const t = await prisma.tutorial.findFirst({
+      where: { slug: justSlug, type: TutorialType.RECIPE },
+      select: { body: true },
+    })
+    if (!t) {
+      console.error(`Tutorial "${justSlug}" not found.`)
+      process.exit(1)
+    }
+    const body = t.body as TipTapNode | null
+    let n = 0
+    for (const node of body?.content ?? []) {
+      if (node?.type === 'ingredientsList') n++
+    }
+    console.log(n)
+    await prisma.$disconnect()
+    return
+  }
+
   if (cmd === '--apply') {
     const slug = args[1]
     if (!slug) {
@@ -203,19 +237,37 @@ async function main(): Promise<void> {
       console.error('Invalid JSON on stdin:', (e as Error).message)
       process.exit(1)
     }
-    if (!Array.isArray(payload.items) || payload.items.length === 0) {
-      console.error('Payload must include items[] with at least one entry.')
+
+    // Normalise payload to blocks[] form.
+    let blocksIn: Array<{ items: IngredientsListItem[] }>
+    if (Array.isArray(payload.blocks)) {
+      blocksIn = payload.blocks
+    } else if (Array.isArray(payload.items)) {
+      blocksIn = [{ items: payload.items }]
+    } else {
+      console.error('Payload must include items[] OR blocks[] with at least one entry.')
       process.exit(1)
     }
+    if (blocksIn.length === 0) {
+      console.error('blocks[] must have at least one entry.')
+      process.exit(1)
+    }
+    for (const b of blocksIn) {
+      if (!Array.isArray(b.items) || b.items.length === 0) {
+        console.error('Every block must include items[] with at least one entry.')
+        process.exit(1)
+      }
+    }
 
-    // Resolve every ingredient slug against the master table.
-    const slugs = payload.items.map((i) => i.ingredientSlug).filter(Boolean)
+    // Flatten for slug resolution.
+    const allItems = blocksIn.flatMap((b) => b.items)
+    const slugs = allItems.map((i) => i.ingredientSlug).filter(Boolean)
     const masterRows = await prisma.ingredient.findMany({
       where: { slug: { in: slugs } },
       select: { id: true, slug: true, name: true, defaultUnit: true },
     })
     const masterBySlug = new Map(masterRows.map((r) => [r.slug, r]))
-    const missing = slugs.filter((s) => !masterBySlug.has(s))
+    const missing = Array.from(new Set(slugs.filter((s) => !masterBySlug.has(s))))
     if (missing.length > 0) {
       console.error(
         `Missing ingredient slugs in master table: ${missing.join(', ')}. ` +
@@ -224,25 +276,30 @@ async function main(): Promise<void> {
       process.exit(2)
     }
 
-    // Build the populated items[] for the body (with ingredientId and back-
-    // filled name/unit where missing).
-    const populatedItems = payload.items.map((raw) => {
+    function populate(raw: IngredientsListItem): {
+      ingredientId: string
+      ingredientSlug: string
+      name: string
+      amount: number | null
+      unit: string | null
+      prepNote: string | null
+      isOptional: boolean
+      groupLabel: string | null
+    } {
       const master = masterBySlug.get(raw.ingredientSlug)!
       return {
         ingredientId: master.id,
         ingredientSlug: master.slug,
-        name: typeof raw.unit === 'string' && raw.unit.length > 0
-          ? master.name
-          : master.name,
+        name: master.name,
         amount: typeof raw.amount === 'number' ? raw.amount : null,
         unit: raw.unit ?? master.defaultUnit ?? null,
         prepNote: raw.prepNote ?? null,
         isOptional: raw.isOptional === true,
         groupLabel: raw.groupLabel ?? null,
       }
-    })
+    }
 
-    // Load the existing body and splice in the populated ingredientsList.
+    // Load the existing body.
     const t = await prisma.tutorial.findFirst({
       where: { slug: justSlug, type: TutorialType.RECIPE },
       select: { id: true, body: true, servings: true },
@@ -255,22 +312,48 @@ async function main(): Promise<void> {
     if (!doc.content) doc.content = []
 
     const defaultServings = payload.defaultServings ?? t.servings ?? null
-    const newBlock: TipTapNode = {
-      type: 'ingredientsList',
-      attrs: { defaultServings, items: populatedItems as unknown as Record<string, unknown>[] },
+
+    // Find every existing ingredientsList block.
+    const existingIdx: number[] = []
+    for (let i = 0; i < doc.content.length; i++) {
+      if (doc.content[i]?.type === 'ingredientsList') existingIdx.push(i)
     }
 
-    // Replace the first existing ingredientsList block (if any), else insert
-    // before the first heading that says "Method", else append.
-    let replaced = false
-    for (let i = 0; i < doc.content.length; i++) {
-      if (doc.content[i]?.type === 'ingredientsList') {
-        doc.content[i] = newBlock
-        replaced = true
-        break
-      }
+    if (existingIdx.length > 0 && existingIdx.length !== blocksIn.length) {
+      console.error(
+        `Body has ${existingIdx.length} ingredientsList block(s) but payload provides ${blocksIn.length}. ` +
+          `Use --count-blocks <slug> to check and supply a matching blocks[] payload.`,
+      )
+      process.exit(3)
     }
-    if (!replaced) {
+
+    const populatedBlocks = blocksIn.map((b) => b.items.map(populate))
+
+    if (existingIdx.length > 0) {
+      // Replace each existing block in order.
+      for (let k = 0; k < existingIdx.length; k++) {
+        const items = populatedBlocks[k]
+        doc.content[existingIdx[k]!] = {
+          type: 'ingredientsList',
+          attrs: { defaultServings, items: items as unknown as Record<string, unknown>[] },
+        }
+      }
+    } else {
+      // No existing block — insert one (single block) before the first
+      // "Method" heading, else append. Multi-block payloads must target a body
+      // that already has the matching block scaffold.
+      if (blocksIn.length > 1) {
+        console.error(
+          'Body has no existing ingredientsList block but payload provides multiple blocks. ' +
+            'Apply via a single items[] (or hand-edit the body first to scaffold groups).',
+        )
+        process.exit(3)
+      }
+      const items = populatedBlocks[0]!
+      const newBlock: TipTapNode = {
+        type: 'ingredientsList',
+        attrs: { defaultServings, items: items as unknown as Record<string, unknown>[] },
+      }
       let methodIndex = -1
       for (let i = 0; i < doc.content.length; i++) {
         const n = doc.content[i]
@@ -289,7 +372,10 @@ async function main(): Promise<void> {
       }
     }
 
-    // Apply: update body + delete-then-insert RecipeIngredient rows.
+    // Flatten all items for the RecipeIngredient rows, preserving order
+    // across blocks.
+    const allPopulated = populatedBlocks.flat()
+
     await prisma.$transaction(async (tx) => {
       await tx.tutorial.update({
         where: { id: t.id },
@@ -297,7 +383,7 @@ async function main(): Promise<void> {
       })
       await tx.recipeIngredient.deleteMany({ where: { tutorialId: t.id } })
       await tx.recipeIngredient.createMany({
-        data: populatedItems.map((item, position) => ({
+        data: allPopulated.map((item, position) => ({
           tutorialId: t.id,
           position,
           ingredientId: item.ingredientId,
@@ -310,7 +396,7 @@ async function main(): Promise<void> {
       })
     })
 
-    console.log(`OK ${justSlug} — ${populatedItems.length} items applied`)
+    console.log(`OK ${justSlug} — ${allPopulated.length} items applied across ${populatedBlocks.length} block(s)`)
     await prisma.$disconnect()
     return
   }
@@ -323,8 +409,9 @@ function printUsage(): void {
   console.error('Usage:')
   console.error('  --list                                List all broken recipe slugs')
   console.error('  --inspect <slug>                      Print title + method prose')
+  console.error('  --count-blocks <slug>                 Print count of existing ingredientsList blocks')
   console.error('  --check-slugs <comma,separated>       Validate ingredient slugs against master')
-  console.error('  --apply <slug>  < items.json          Apply repair (JSON on stdin)')
+  console.error('  --apply <slug>  < payload.json        Apply repair (JSON on stdin)')
 }
 
 function collectText(node: TipTapNode | undefined): string {
