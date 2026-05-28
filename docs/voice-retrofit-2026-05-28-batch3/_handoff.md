@@ -114,4 +114,6 @@ PUBLISHED with voiceRetrofittedAt IS NULL after this fire: 1059.
 
 ## Deploy verification
 
-GitHub Actions deploy.yml run and healthz check appended below by the cron worker once the push is verified.
+GitHub Actions deploy.yml run 26549442780 completed with conclusion `success` on commit a2500df.
+
+`curl -sS -o /dev/null -w "%{http_code}\n" https://homemade.education/healthz` returned `200`.
