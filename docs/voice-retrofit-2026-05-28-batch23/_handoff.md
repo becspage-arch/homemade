@@ -1,5 +1,8 @@
 Batch 2026-05-28-batch23: 7 tutorials retrofitted. Deploy green, healthz 200.
 
+Deploy run: https://github.com/becspage-arch/homemade/actions/runs/26598309622
+healthz: 200 from https://homemade.education/healthz
+
 This is the final partial batch. The voice retrofit is now 100% complete across
 the full PUBLISHED library (3703 of 3703). The routine has no remaining work
 and the next scheduled fire should exit cleanly noting 0 candidates.
