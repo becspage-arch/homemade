@@ -19,12 +19,6 @@ const DIETARY_BADGES: Record<string, { glyph: string; label: string }> = {
   kosher: { glyph: 'K', label: 'Kosher' },
 }
 
-const DIFFICULTY_LABEL: Record<string, string> = {
-  BEGINNER: 'Beginner',
-  INTERMEDIATE: 'Intermediate',
-  ADVANCED: 'Advanced',
-}
-
 interface HomeCardTutorial {
   id: string
   slug: string
@@ -47,19 +41,9 @@ export interface HomeCardProps {
   size?: 'card' | 'wide'
 }
 
-function formatMinutes(min: number | null | undefined): string | null {
-  if (!min || min <= 0) return null
-  if (min < 60) return `${min} min`
-  const h = Math.floor(min / 60)
-  const m = min % 60
-  return m === 0 ? `${h} hr` : `${h} hr ${m} min`
-}
-
 export function HomeCard({ tutorial, state, overline, size = 'card' }: HomeCardProps) {
   const href = `/${tutorial.category.slug}/${tutorial.slug}`
   const hero = tutorialHeroSrc(tutorial, 'card', ['public'])
-  const time = formatMinutes(tutorial.totalMinutes ?? tutorial.timeMinutes ?? null)
-  const difficulty = DIFFICULTY_LABEL[tutorial.difficulty] ?? null
   const dietary = (tutorial.dietaryFlags ?? [])
     .filter((flag) => DIETARY_BADGES[flag])
     .slice(0, 3)
@@ -119,16 +103,6 @@ export function HomeCard({ tutorial, state, overline, size = 'card' }: HomeCardP
         {overline && <span className="home-card-overline">{overline}</span>}
         <span className="home-card-category">{tutorial.category.name}</span>
         <span className="home-card-title">{tutorial.title}</span>
-        {tutorial.excerpt && size === 'wide' && (
-          <span className="home-card-excerpt">{tutorial.excerpt}</span>
-        )}
-        {(time || difficulty) && (
-          <span className="home-card-meta">
-            {time && <span>{time}</span>}
-            {time && difficulty && <span aria-hidden="true">·</span>}
-            {difficulty && <span>{difficulty}</span>}
-          </span>
-        )}
       </span>
     </Link>
   )

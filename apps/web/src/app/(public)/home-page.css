@@ -18,14 +18,15 @@
 /* ── Hero zone (full-bleed image + text overlay) ───────────────────────── */
 
 /* The hero is the single component allowed to break out of the page
-   container. It spans the full viewport width on screens >= 1440px via a
-   100vw width + negative margin; below 1440px it sits inside the
-   container with rounded corners. The 100vw trick uses an inner element
-   so the negative margin doesn't fight the container's padding. */
+   container. From tablet up it spans the full viewport width via a
+   100vw width + negative margin trick. On mobile it sits inside the
+   container with rounded corners and a 4:5 portrait crop. */
 
 .home-hero-zone {
   position: relative;
-  padding: 16px 0 24px;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0;
 }
 
 .home-hero-feature {
@@ -34,11 +35,11 @@
   text-decoration: none;
   color: inherit;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  max-height: 70vh;
-  min-height: 420px;
+  height: 72vh;
+  min-height: 520px;
+  max-height: 820px;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 0;
   background-color: var(--color-soft-parchment);
 }
 
@@ -63,29 +64,39 @@
   background-color: transparent;
 }
 
-/* Linear gradient: dark at the bottom for legibility under the title,
-   transparent at the top. Keeps the image breathing. */
+/* Linear gradient: heavy dark at the bottom for guaranteed text
+   legibility against any photo. Belt-and-braces — strong gradient
+   PLUS text-shadow on the title so even a bright photo doesn't wash
+   the title out. */
 .home-hero-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.58) 0%,
-    rgba(0, 0, 0, 0.42) 18%,
-    rgba(0, 0, 0, 0) 55%
-  );
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.7) 18%,
+      rgba(0, 0, 0, 0.35) 42%,
+      rgba(0, 0, 0, 0.05) 65%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0) 55%
+    );
   pointer-events: none;
 }
 
 .home-hero-content-bottom {
   position: absolute;
-  left: 40px;
-  right: 40px;
-  bottom: 36px;
+  left: max(calc(50vw - 620px), 32px);
+  right: 32px;
+  bottom: 32px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  max-width: 640px;
+  gap: 6px;
+  max-width: 720px;
   color: var(--color-cream);
 }
 
@@ -96,6 +107,8 @@
   text-transform: uppercase;
   color: var(--color-cream);
   opacity: 0.95;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+  margin-bottom: 2px;
 }
 
 .home-hero-eyebrow {
@@ -104,49 +117,56 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-cream);
-  opacity: 0.8;
+  opacity: 0.85;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
 }
 
 .home-hero-title {
   font-family: var(--font-fraunces);
   font-weight: 400;
   font-size: 64px;
-  line-height: 1.02;
+  line-height: 1;
   letter-spacing: -0.015em;
   color: var(--color-cream);
   margin: 0;
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.55),
+    0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .home-hero-excerpt {
   font-family: var(--font-fraunces);
   font-style: italic;
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: 17px;
+  line-height: 1.45;
   color: var(--color-cream);
-  opacity: 0.92;
-  margin: 0;
+  opacity: 0.94;
+  margin: 4px 0 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+  max-width: 560px;
 }
 
 .home-hero-cta {
   display: inline-block;
   width: fit-content;
-  margin-top: 4px;
-  padding: 9px 18px;
+  margin-top: 14px;
+  padding: 10px 20px;
   font-family: var(--font-lora);
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-cream);
-  background: rgba(255, 255, 255, 0.12);
-  border: 0.5px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.16);
+  border: 0.5px solid rgba(255, 255, 255, 0.6);
   border-radius: 999px;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   transition: background 0.2s ease;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
 }
 
 .home-hero-feature:hover .home-hero-cta {
@@ -324,7 +344,7 @@
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center;
   filter: saturate(0.92);
@@ -583,7 +603,7 @@
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center;
   filter: saturate(0.92);
@@ -883,32 +903,21 @@
   }
 }
 
-/* ── ≥ 1440px: hero breaks out to full viewport width ─────────────────── */
+/* ── ≥ 1440px: bump title size, widen the text-block max-width ────────── */
 
 @media (min-width: 1440px) {
-  .home-hero-zone {
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   .home-hero-feature {
-    border-radius: 0;
-    min-height: 520px;
-    aspect-ratio: auto;
-    height: 70vh;
+    height: 75vh;
+    min-height: 560px;
   }
 
   .home-hero-content-bottom {
-    left: max(calc(50vw - 620px), 40px);
-    right: max(calc(50vw - 620px), 40px);
-    bottom: 48px;
-    max-width: 720px;
+    bottom: 40px;
+    max-width: 760px;
   }
 
   .home-hero-title {
-    font-size: 72px;
+    font-size: 76px;
   }
 }
 
@@ -922,7 +931,7 @@
     padding: 16px 0 12px;
   }
   .home-hero-zone {
-    padding: 12px 0 16px;
+    padding: 0;
   }
   .home-hero-feature {
     aspect-ratio: 4 / 5;
@@ -934,14 +943,14 @@
     left: 20px;
     right: 20px;
     bottom: 24px;
-    gap: 10px;
+    gap: 6px;
   }
   .home-hero-title {
     font-size: 38px;
   }
   .home-hero-excerpt {
-    font-size: 15px;
-    -webkit-line-clamp: 3;
+    font-size: 14px;
+    -webkit-line-clamp: 2;
   }
   .home-rail {
     padding: 20px 0;

@@ -375,14 +375,17 @@ export async function loadHomepageData(
           ? { kind: 'EDITORIAL_PICK', tutorial: thisWeeksEditorialPicks[0] }
           : { kind: 'WORDMARK_FALLBACK' }
     } else {
-      // Hero-quality gate (Decision 2 locked 2026-05-25): prefer the first
-      // editorial pick whose photo is graded EDITORIAL. Fall back to the
-      // first pick of any quality so the page never lands on the wordmark
-      // fallback purely because no photo is graded yet — the grading is a
-      // gradual editorial activity, not a launch blocker.
-      const editorialPick =
-        thisWeeksEditorialPicks.find((t) => t.heroQuality === 'EDITORIAL') ??
-        thisWeeksEditorialPicks[0]
+      // Hero rotation (Rebecca override of Decision 1, 2026-05-25): rotate
+      // through this week's editorial picks every ~3 days. The pool is
+      // filtered to EDITORIAL-graded photos first if any qualify;
+      // otherwise we fall back to the full pick list so the page never
+      // lands on the wordmark just because grading is incomplete.
+      const editorialPool = thisWeeksEditorialPicks.filter(
+        (t) => t.heroQuality === 'EDITORIAL',
+      )
+      const rotationPool =
+        editorialPool.length > 0 ? editorialPool : thisWeeksEditorialPicks
+      const editorialPick = pickByDayBucket(rotationPool, now, 3)
       if (editorialPick) {
         hero = { kind: 'EDITORIAL_PICK', tutorial: editorialPick }
       } else {
@@ -425,3 +428,16 @@ export async function loadHomepageData(
  * Re-export for use by the page renderer.
  */
 export { isoWeekStartUtc }
+
+/**
+ * Deterministic round-robin pick from `pool`, advancing every `windowDays`.
+ * Uses the UTC epoch so every server instance picks the same item on a
+ * given day without coordination. Returns null on empty input.
+ */
+function pickByDayBucket<T>(pool: T[], now: Date, windowDays: number): T | null {
+  if (pool.length === 0) return null
+  const msPerWindow = windowDays * 24 * 60 * 60 * 1000
+  const bucket = Math.floor(now.getTime() / msPerWindow)
+  const index = ((bucket % pool.length) + pool.length) % pool.length
+  return pool[index] ?? null
+}

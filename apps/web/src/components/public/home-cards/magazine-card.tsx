@@ -11,32 +11,15 @@ interface MagazineCardTutorial {
   id: string
   slug: string
   title: string
-  excerpt: string | null
-  difficulty: string
-  totalMinutes?: number | null
-  timeMinutes?: number | null
   category: { slug: string; name: string }
   hero?: MediaLike | null
-}
-
-const DIFFICULTY_LABEL: Record<string, string> = {
-  BEGINNER: 'Beginner',
-  INTERMEDIATE: 'Intermediate',
-  ADVANCED: 'Advanced',
-}
-
-function formatMinutes(min: number | null | undefined): string | null {
-  if (!min || min <= 0) return null
-  if (min < 60) return `${min} min`
-  const h = Math.floor(min / 60)
-  const m = min % 60
-  return m === 0 ? `${h} hr` : `${h} hr ${m} min`
 }
 
 /**
  * Magazine Editorial Card (Pattern D). Wider than the standard discovery
  * card. Used as the lead tile in the In Season mosaic and other slots
- * that deserve a dek (italic Fraunces excerpt) alongside the title.
+ * that want a larger image with category + title only — no meta, no
+ * excerpt, so the image dominates the card.
  */
 export function MagazineCard({
   tutorial,
@@ -49,8 +32,6 @@ export function MagazineCard({
 }) {
   const href = `/${tutorial.category.slug}/${tutorial.slug}`
   const hero = tutorialHeroSrc(tutorial, 'card', ['public'])
-  const time = formatMinutes(tutorial.totalMinutes ?? tutorial.timeMinutes ?? null)
-  const difficulty = DIFFICULTY_LABEL[tutorial.difficulty] ?? null
 
   return (
     <Link href={href} className="home-magazine-card">
@@ -71,16 +52,6 @@ export function MagazineCard({
           {kicker ?? tutorial.category.name}
         </span>
         <span className="home-magazine-card-title">{tutorial.title}</span>
-        {tutorial.excerpt && (
-          <span className="home-magazine-card-excerpt">{tutorial.excerpt}</span>
-        )}
-        {(time || difficulty) && (
-          <span className="home-magazine-card-meta">
-            {time && <span>{time}</span>}
-            {time && difficulty && <span aria-hidden="true">·</span>}
-            {difficulty && <span>{difficulty}</span>}
-          </span>
-        )}
       </span>
     </Link>
   )
