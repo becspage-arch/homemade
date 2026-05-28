@@ -890,7 +890,18 @@ export interface UploadResult {
 
 const SLUG_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/
 
-export function validateInput(input: TutorialUploadInput): void {
+/**
+ * Lifecycle context for validation. Passed by `upload-tutorial.ts` so
+ * publish-gate checks (e.g. RECIPE must carry ingredients) only fire
+ * when the row is actually going live. DRAFT uploads are allowed to be
+ * incomplete — that's the editor's iteration loop.
+ */
+export type ValidateInputContext = { desiredStatus?: 'DRAFT' | 'PUBLISHED' }
+
+export function validateInput(
+  input: TutorialUploadInput,
+  context: ValidateInputContext = {},
+): void {
   if (!input.slug) throw new Error('input.slug is required.')
   if (!SLUG_PATTERN.test(input.slug)) {
     throw new Error(`input.slug "${input.slug}" must be lowercase letters, numbers, and hyphens only.`)
@@ -1290,4 +1301,46 @@ export function validateInput(input: TutorialUploadInput): void {
       previousOffsetDays = step.offsetDays
     }
   }
+
+  // Publish-gate: a RECIPE going to PUBLISHED must carry at least one
+  // populated `ingredientsList` block. This blocks the autopilot regression
+  // that shipped ~390 recipes in 2026-05-14 → 2026-05-20 with empty
+  // ingredient blocks (RecipeIngredient table also empty for those rows).
+  // DRAFT uploads are allowed to be incomplete — that's the editor's
+  // iteration loop. TECHNIQUE / READING / HERB_PROFILE / STITCH rows are
+  // exempt because they're reference content, not recipes.
+  const effectiveType = input.type ?? 'RECIPE'
+  if (effectiveType === 'RECIPE' && context.desiredStatus === 'PUBLISHED') {
+    const ingredientItemCount = countIngredientsListItems(input.body)
+    if (ingredientItemCount === 0) {
+      throw new Error(
+        `RECIPE "${input.slug}" cannot be PUBLISHED with an empty ingredients list. ` +
+          `Body must contain at least one ingredientsList block with items[]. ` +
+          `See docs/tutorial-author.md § "Structured ingredients" for the schema. ` +
+          `If this is genuinely an article rather than a recipe, set type: "TECHNIQUE".`,
+      )
+    }
+  }
+}
+
+/**
+ * Walk a TipTap body and sum the items in every `ingredientsList` block.
+ * Returns 0 when no block exists or every block is empty.
+ */
+function countIngredientsListItems(body: unknown): number {
+  if (!body || typeof body !== 'object') return 0
+  let count = 0
+  function walk(node: unknown): void {
+    if (!node || typeof node !== 'object') return
+    const n = node as { type?: string; attrs?: { items?: unknown }; content?: unknown[] }
+    if (n.type === 'ingredientsList') {
+      const items = Array.isArray(n.attrs?.items) ? n.attrs.items : []
+      count += items.length
+    }
+    if (Array.isArray(n.content)) {
+      for (const child of n.content) walk(child)
+    }
+  }
+  walk(body)
+  return count
 }

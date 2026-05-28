@@ -601,6 +601,30 @@ function arraysEqual(a: string[], b: string[]): boolean {
   return sortedA.every((v, i) => v === sortedB[i])
 }
 
+/**
+ * Walk a TipTap body and sum the items in every `ingredientsList` block.
+ * Used by the publish-gate to refuse publishing a RECIPE with empty
+ * ingredients. Mirrors `countIngredientsListItems` in the upload-tutorial
+ * script so the rule fires identically from both upload paths.
+ */
+function countIngredientsListItemsInBody(body: unknown): number {
+  if (!body || typeof body !== 'object') return 0
+  let count = 0
+  function walk(node: unknown): void {
+    if (!node || typeof node !== 'object') return
+    const n = node as { type?: string; attrs?: { items?: unknown }; content?: unknown[] }
+    if (n.type === 'ingredientsList') {
+      const items = Array.isArray(n.attrs?.items) ? n.attrs.items : []
+      count += items.length
+    }
+    if (Array.isArray(n.content)) {
+      for (const child of n.content) walk(child)
+    }
+  }
+  walk(body)
+  return count
+}
+
 export async function transitionTutorialStatus(
   id: string,
   formData: FormData,
@@ -646,6 +670,21 @@ export async function transitionTutorialStatus(
   }
 
   if (target === TutorialStatus.PUBLISHED) {
+    // Publish-gate: a RECIPE going live must carry at least one populated
+    // ingredientsList block. Mirrors the same check in the upload-tutorial
+    // script (see packages/db/scripts/upload-tutorial-types.ts). Blocks the
+    // regression that shipped ~390 baking recipes with empty ingredients
+    // in the 2026-05-14 → 2026-05-20 batch.
+    if (existing.type === TutorialType.RECIPE) {
+      const itemCount = countIngredientsListItemsInBody(existing.body)
+      if (itemCount === 0) {
+        throw new Error(
+          'Cannot publish this recipe — the body has no ingredientsList items. ' +
+            'Add the structured ingredients block in the editor before publishing, ' +
+            'or change the tutorial type to TECHNIQUE if it isn\'t a recipe.',
+        )
+      }
+    }
     data.publishedAt = existing.publishedAt ?? new Date()
     data.scheduledFor = null
   }

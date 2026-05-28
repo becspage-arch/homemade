@@ -234,6 +234,12 @@ recipe in the slice:
    `pnpm --filter "@homemade/db" run tutorial:upload -- docs/bulk-batch-${BATCH_ID}-briefs/<slug>.json --status PUBLISHED`.
    On upload failure (missing ingredient slug, season enum, etc.), fix
    the brief and retry — same 3-retry cap. On 3rd failure, drop and log.
+   - **Publish-gate (added 2026-05-28).** The upload script REFUSES to
+     publish a RECIPE whose body has an empty `ingredientsList` block.
+     If you hit `RECIPE ... cannot be PUBLISHED with an empty
+     ingredients list`, your draft is missing structured ingredients
+     — fix the body (populate every `ingredientsList` item per
+     `docs/tutorial-author.md` § "Structured ingredients") and retry.
 
 Image generation is **deferred** for this phase. Briefs do not set
 `hero.localPath`; heroes batch-fill from a separate session.

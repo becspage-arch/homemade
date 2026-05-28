@@ -230,6 +230,14 @@ Use `TodoWrite` to chunk the run. For each recipe:
 4. Upload as PUBLISHED:
    `pnpm --filter "@homemade/db" run tutorial:upload -- docs/baking-bulk-${BATCH_ID}-briefs/<slug>.json --status PUBLISHED`.
    3-retry cap on upload failure; drop and log.
+   - **Publish-gate (added 2026-05-28).** The upload script REFUSES to
+     publish a RECIPE whose body has an empty `ingredientsList` block.
+     If you hit `RECIPE ... cannot be PUBLISHED with an empty
+     ingredients list`, your draft is missing structured ingredients
+     — fix the body (populate every `ingredientsList` item per
+     `docs/tutorial-author.md` § "Structured ingredients") and retry.
+     This was added after a baking batch shipped ~390 recipes with
+     empty ingredient blocks. Don't let it recur.
 
 Image generation deferred — `hero.localPath` unset.
 

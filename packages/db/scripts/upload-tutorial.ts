@@ -144,7 +144,9 @@ async function uploadTutorial(
   inputFilePath: string,
   desiredStatus: DesiredStatus = 'DRAFT',
 ): Promise<UploadResult> {
-  validateInput(input)
+  // Pass desiredStatus so the publish-gate check (RECIPE must carry
+  // ingredients) only fires when the row is actually going live.
+  validateInput(input, { desiredStatus })
 
   const {
     prisma,
