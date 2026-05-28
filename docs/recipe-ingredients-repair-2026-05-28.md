@@ -11,10 +11,15 @@ Backfilling structured ingredients on the 391 recipes that shipped from the
 - Repaired: 391
 - Skipped: 0
 - Deferred: 0
-- New master ingredient slugs added: 10 (baking-beans, lemon-curd, lemonade,
-  quark, mixed-dried-fruit, andouille-sausage, ham-cooked, stock-lamb,
-  tea-black, tagliatelle)
-- Total RecipeIngredient rows written: 3,596 (avg 9.2 items per recipe)
+- New master ingredient slugs added: 21
+  - Round 1: baking-beans, lemon-curd, lemonade, quark, mixed-dried-fruit,
+    andouille-sausage, ham-cooked, stock-lamb, tea-black, tagliatelle.
+  - Round 2 (backfilled after the agents flagged them):
+    elderflower-cordial, kataifi-pastry, mahlab, malt-extract,
+    butterscotch-chips, pistachio-paste, peppermint-extract, grano-cotto,
+    bourbon, cracked-rye, pearl-sugar.
+- Total RecipeIngredient rows written: 3,596 (avg 9.2 items per recipe).
+  Round 2 swapped 124 items into 12 recipes to remove placeholders.
 
 ## How it ran
 
@@ -33,34 +38,35 @@ Backfilling structured ingredients on the 391 recipes that shipped from the
 5. Consolidated each chunk's payloads file and applied via the
    throwaway `repair-apply-batch-tmp.ts` (one transaction per recipe).
 
-## Master-list gaps surfaced but NOT added this pass
+## Master-list gaps — backfilled in round 2
 
-These came up while inferring payloads. The agents either omitted them
-or substituted a near-equivalent. They are reasonable candidates for
-the next batch of master additions if you want full coverage.
+The first pass left these as agent-flagged placeholders or omissions.
+Round 2 added the 11 missing slugs to master and re-applied the
+affected recipes so each carries the authentic ingredient.
 
-- **elderflower-cordial** — wanted for elderflower-and-lemon-cake (block 2
-  soaking syrup, block 3 icing). Agent substituted caster-sugar +
-  lemon-juice as a placeholder.
-- **kataifi-pastry** — kunafa-cheese core ingredient. Omitted; recipe
-  shows other ingredients only.
-- **mahlab** — maamoul-date-pistachio. Omitted.
-- **malt-extract** — malt-loaf-dark, malted-seeded-loaf. Omitted.
-- **butterscotch-chips** — hello-dolly-bars. Omitted.
-- **pistachio-paste** — macarons-pistachio. Agent worked around with
-  finely ground pistachios.
-- **peppermint-extract** — peppermint-creams. Agent used vanilla-extract
-  as placeholder with prepNote.
-- **grano-cotto** — pastiera-napoletana. Omitted; recipe is incomplete
-  without it for an authentic version.
-- **bourbon** — pecan-bourbon-tart. Agent used `whisky` with prepNote
-  "bourbon-style".
-- **cracked-rye / rye-chops** — pumpernickel-loaf. Used `rye-flour` with
-  prepNote.
-- **pearl-sugar** — cardamom-buns topping. Used `caster-sugar` with
-  prepNote "coarse sugar for topping".
-- **beeswax** — caneles-de-bordeaux mould prep. Not really a food
-  ingredient; omitted is correct.
+- **elderflower-cordial** — added. elderflower-and-lemon-cake now carries
+  60 ml in the soaking syrup + 30 ml in the lemon icing.
+- **kataifi-pastry** — added. kunafa-cheese block 1 now leads with 450 g.
+- **mahlab** — added. maamoul-date-pistachio dough block carries ½ tsp.
+- **malt-extract** — added. malt-loaf-dark carries 75 g; malted-seeded-loaf
+  carries 40 g.
+- **butterscotch-chips** — added. hello-dolly-bars now carries 170 g
+  alongside the chocolate chips.
+- **pistachio-paste** — added. macarons-pistachio buttercream block now
+  uses 50 g paste for the real flavour.
+- **peppermint-extract** — added. peppermint-creams now uses 1 tsp
+  peppermint-extract instead of the vanilla-extract placeholder.
+- **grano-cotto** — added. pastiera-napoletana filling block now carries
+  250 g of the pre-cooked wheat.
+- **bourbon** — added. pecan-bourbon-tart now uses 45 ml bourbon instead
+  of "whisky, bourbon-style".
+- **cracked-rye** — added. pumpernickel-loaf swaps the second
+  rye-flour-coarse line for 200 g cracked-rye soaked overnight.
+- **pearl-sugar** — added. cardamom-buns topping block now uses 30 g
+  pearl-sugar instead of caster-sugar.
+
+Beeswax (caneles-de-bordeaux mould prep) is not a food ingredient and
+remains omitted; that's correct.
 
 ## Patterns worth flagging back into the pipeline
 
