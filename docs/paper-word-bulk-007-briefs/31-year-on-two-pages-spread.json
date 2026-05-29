@@ -1,0 +1,116 @@
+{
+  "slug": "year-on-two-pages-spread",
+  "title": "Year-on-two-pages spread",
+  "subtitle": "Designing a full-year overview layout across a double-page spread",
+  "excerpt": "A year-on-two-pages spread, all twelve months laid out side by side on a double page, gives a quick visual overview of the whole year from a single opening. The layout relies on a consistent grid: all months must be the same size and orientation to read across the spread without the eye having to recalibrate. This tutorial covers designing the grid from scratch on any page size.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "journalling-craft",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The year-overview spread is a standard element of diary and planner design documented in stationery and print planning manuals throughout the twentieth century. No single definitive source; the design principles used here follow standard typographic and planning conventions.",
+  "recipeTools": [
+    { "slug": "pencil", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "double-page-spread", "term": "Double-page spread", "definition": "Two facing pages of a notebook or journal treated as a single design surface. In a hand-bound book, the spine fold divides the spread; in a spiral-bound journal, the pages lie flat and the spread can be read as a single unit." },
+    { "slug": "year-grid", "term": "Year grid", "definition": "A matrix layout in which each column represents a month and each row a week or day of the month. Allows the reader to see the whole year at a glance and to mark events, goals, or habits across the full twelve months." },
+    { "slug": "guttering", "term": "Guttering", "definition": "The visual break at the centre of a double-page spread where the pages meet the spine. Text and lines running across the gutter must account for the curvature; in a tightly bound book the gutter may obscure a narrow strip." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "year-grid" } }], "text": "year grid" },
+          { "type": "text", "text": " across a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "double-page-spread" } }], "text": "double-page spread" },
+          { "type": "text", "text": " works because the human eye can read a 6-by-2 grid arrangement (six months per page) more easily than a single 12-column strip. The critical design choice is how to represent each month: as a full calendar grid (7 columns × 5 or 6 rows of day numbers) or as a simple 31-row list with hash marks. The full calendar takes more space but allows day-of-week reading; the list is faster to draw and easier to annotate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            { "name": "Pencil and ruler", "qty": "one each", "link": null, "substitutions": null },
+            { "name": "Cartridge paper, 130 gsm, or your journal pages", "qty": "a double-page spread (or two A5 sheets side by side)", "link": null, "substitutions": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Calculating the grid" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure the usable width of your spread (minus margins). Divide by 12 to get the width per month. For an A5 spread (290 mm usable after 10 mm margin each side), each month column is 24 mm wide. This is narrow but readable if the numbers are small (approximately 3 mm high)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For a less cramped layout, use 6 months per page and allow 40 mm per column on A5. This is the more comfortable standard." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rule all vertical column dividers first in pencil. Then rule horizontal rows: one header row for the month abbreviation and day-of-week labels, then 31 rows for day numbers (each row 3 mm tall for A5)." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "" },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "guttering" } }], "text": "Guttering" },
+          { "type": "text", "text": " at the spine" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If the journal does not lie flat, allow a 10 mm gutter at the centre of the spread. Place the month break at this position rather than a date column, months 6 and 7 either side of the gutter centre keeps all day rows uninterrupted. Do not run day rows across the gutter: they will be unreadable where the paper curves." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The months do not all fit evenly across the spread",
+              "cause": "Column widths were not calculated before ruling; individual months were drawn freehand.",
+              "fix": "Always calculate and mark the full column widths in pencil before drawing any lines. Start from the outer edges and work inward."
+            },
+            {
+              "symptom": "The pencil grid lines show through the ink annotations later",
+              "cause": "Pencil lines too dark.",
+              "fix": "Use a hard pencil (H or 2H) for the grid and erase lightly. A hard pencil leaves a faint line that erases cleanly; a soft B pencil smears under erasing."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

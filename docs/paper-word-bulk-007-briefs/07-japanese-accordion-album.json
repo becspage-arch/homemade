@@ -1,0 +1,151 @@
+{
+  "slug": "japanese-accordion-album",
+  "title": "Japanese accordion album with hard covers",
+  "subtitle": "A leporello-fold book with board covers for photographs and prints",
+  "excerpt": "A Japanese accordion album, sometimes called a leporello, is a single long sheet folded back and forth in a concertina, with hard boards glued to the first and last panels as covers. It opens in a continuous panorama or folds flat. A simple structure with no sewing, completed in one session.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The accordion or leporello fold is documented in nineteenth-century bookbinding manuals including Cockerell's Bookbinding and the Care of Books (1901). The Japanese variant uses a single sheet of washi rather than joined papers; the covered version attaches boards as described in Cockerell.",
+  "recipeTools": [
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "book-cloth", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "cartridge-paper-220", "isOptional": false },
+    { "slug": "washi-kozo", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "leporello", "term": "Leporello", "definition": "A book structure made from a single sheet folded concertina-style into equal panels; named after Don Giovanni's servant in Mozart's opera who unfolds a long list of conquests." },
+    { "slug": "accordion-fold", "term": "Accordion fold", "definition": "A series of parallel valley and mountain folds creating an equal panel concertina, so the structure can expand into a panorama or compress flat." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Cutting tools",
+          "body": "Use sharp blades only; change when they dull. Cut on a self-healing mat against a metal ruler, non-cutting hand well back."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "leporello" } }], "text": "leporello" },
+          { "type": "text", "text": " needs no sewing and no complex adhesive work. It produces a panoramic photograph album or a display fold in under an hour. The version described here makes an A5 album with eight panels plus two board covers." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            { "name": "Cartridge paper, 220 gsm, cut to 21 cm x 160 cm (A5 height by eight A5 panels)", "qty": "one long strip", "link": null, "substitutions": "Two strips of 80 cm each, joined with a 10 mm overlapping butt joint; washi kozo is the traditional Japanese alternative" },
+            { "name": "Bookbinding board, 2 mm, cut to A5 plus 3 mm on three sides", "qty": "two boards", "link": null, "substitutions": null },
+            { "name": "Book cloth or decorative paper for covers", "qty": "enough to cover both boards with 20 mm turn-in", "link": null, "substitutions": null },
+            { "name": "PVA, acid-free", "qty": "small amount", "link": null, "substitutions": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Folding the text block" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut the long strip to exactly 160 cm (eight 20 cm panels for an A5 album). Check the grain direction: fold parallel to the grain." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold the strip in half lengthways, then in half again, then in half once more. The result is eight equal panels." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open the strip completely. Refold it " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "accordion-fold" } }], "text": "accordion-style" },
+              { "type": "text", "text": " by alternating valley and mountain folds at each crease. Score each fold with the bone folder against a ruler for a crisp edge." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Press the folded block flat under weight for 30 minutes." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Making the covers" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut the covering material 20 mm larger than each board on all four sides. Paste with PVA, lay the board, fold the turn-ins and mitre the corners." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut a liner paper for the inside of each cover and paste it down." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave covers to dry under weight for 1 hour." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Attaching covers to the text block" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Brush PVA onto the liner of the front cover. Press the first panel of the folded text block firmly onto it, aligning the edges. Rub down with the bone folder." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat for the back cover and the last panel." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Press the closed album under a flat board and weights for 2 hours before use." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The album opens as a panorama (all panels in sequence) or as a conventional page-turn book from the front cover. It can be displayed accordion-open on a shelf. If ribbon ties are wanted, glue them to the inside of the covers before attaching the text block, as described in the portfolio tutorial." }
+        ]
+      }
+    ]
+  }
+}

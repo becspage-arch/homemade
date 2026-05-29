@@ -1,0 +1,129 @@
+{
+  "slug": "linen-hinge-for-case-binding",
+  "title": "Attaching a linen hinge to a case-bound text block",
+  "subtitle": "The strip of mull or super that connects the text block to its case",
+  "excerpt": "The linen hinge, a narrow strip of mull or crash glued along each side of the spine lining and extending onto the endpapers, is what holds a case-bound book together after the spine glue ages and shrinks. A properly applied hinge distributes the opening stress along the length of the spine rather than concentrating it at the joints.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on casing in and hinging. The mull-and-kraft lining method described here follows Cockerell's standard practice for library-quality case binding.",
+  "recipeTools": [
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "endpaper-stock", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "mull", "term": "Mull", "definition": "An open-weave cotton or linen gauze glued to the spine of a sewn text block as the primary structural hinge. Called super or crash in some traditions." },
+    { "slug": "casing-in", "term": "Casing in", "definition": "Gluing a finished text block into its pre-made case (boards plus covering material), the final stage of case binding." },
+    { "slug": "hinge-strip", "term": "Hinge strip", "definition": "The portion of mull that extends beyond the spine onto the endpaper, forming the flexible hinge between text block and board." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mull" } }], "text": "mull" },
+          { "type": "text", "text": " layer on a case-bound book does two things: it strengthens the spine, and it provides the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hinge-strip" } }], "text": "hinge strips" },
+          { "type": "text", "text": " that fan out onto the endpapers. Without those strips, the spine glue is the only thing attaching the text block to the case, and spine glue alone fails within a few years of regular use." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            { "name": "Mull or super (open-weave cotton gauze)", "qty": "one strip per book, width = spine width + 50 mm", "link": null, "substitutions": "Stiff cheesecloth; the gauze from a bandage roll" },
+            { "name": "Kraft paper", "qty": "one strip per book, width = spine width exactly", "link": null, "substitutions": "Brown parcel paper" },
+            { "name": "PVA, acid-free", "qty": "small amount", "link": null, "substitutions": null },
+            { "name": "Endpaper stock (120-140 gsm)", "qty": "one folded pair per book", "link": null, "substitutions": "Heavy cartridge paper, 130 gsm" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Applying the mull" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut the mull strip so it is the spine width plus 25 mm on each side, and the full height of the book minus 15 mm at head and tail (to avoid the glue reaching the headbands)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Brush a thin coat of PVA onto the spine. Centre the mull on the spine and rub it down firmly with the bone folder. The open weave should fill with PVA." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply a second thin coat of PVA over the mull. While still wet, lay the kraft-paper strip (same height, spine width exactly) on top of the mull, centred over the spine." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Let dry under light pressure. When dry, the spine will be firm but flexible, and the mull wings will extend 25 mm on each side." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Attaching endpapers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fold the endpaper pairs so the grain runs parallel to the spine. Glue a thin strip of PVA along the inner fold edge of each endpaper, about 10 mm wide. Press the inner leaf of the endpaper against the first (and last) signature's innermost sheet, aligning the fold with the spine. This glued strip is the signature attachment; the mull hinge will support it from the outside." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The outer leaf of each endpaper (the pastedown) is glued to the inside of the board during " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "casing-in" } }], "text": "casing in" },
+          { "type": "text", "text": ". The mull hinge wing is sandwiched between the pastedown and the board, adding structural strength to the joint." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Mull delaminates from the spine",
+              "cause": "Too little PVA, or the PVA was applied to the mull rather than to the spine.",
+              "fix": "Always apply PVA to the spine first, then lay the mull into the wet adhesive."
+            },
+            {
+              "symptom": "Book hinges stiffly after casing in",
+              "cause": "PVA used neat without dilution, making the mull rigid.",
+              "fix": "Dilute PVA slightly (1 part water to 10 parts PVA) for the mull layer; undiluted PVA for the kraft lining on top."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

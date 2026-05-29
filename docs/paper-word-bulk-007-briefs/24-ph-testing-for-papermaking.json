@@ -1,0 +1,123 @@
+{
+  "slug": "ph-testing-for-papermaking",
+  "title": "pH testing for archival papermaking",
+  "subtitle": "Why acidity destroys paper and how to check and correct your vat water",
+  "excerpt": "Paper made in acidic water turns brittle and yellow within decades. The cause is residual acid in the cellulose fibres, which slowly breaks down the fibre chains in a process called acid hydrolysis. Testing the pH of your vat water and pulp before forming sheets costs thirty seconds and can make the difference between a sheet that lasts a hundred years and one that crumbles in twenty.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Dard Hunter, Papermaking: The History and Technique of an Ancient Craft (1943), Hunter discusses acid degradation in paper and the importance of neutral-to-alkaline formation conditions. The chemistry of acid hydrolysis in cellulose is well established and documented in twentieth-century conservation science.",
+  "recipeTools": [
+    { "slug": "ph-testing-strips", "isOptional": false },
+    { "slug": "papermaking-vat", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "acid-hydrolysis", "term": "Acid hydrolysis", "definition": "The chemical breakdown of cellulose fibre chains by residual acid within the paper. Produces shorter and shorter fibre chains over time, leading to a brittle, yellowed, and eventually friable sheet. The primary cause of historic paper deterioration." },
+    { "slug": "alkaline-reserve", "term": "Alkaline reserve", "definition": "A small excess of alkaline material (typically calcium carbonate) added to paper during manufacture to neutralise acids that may form over time or migrate from adjacent materials. Archival papers have a pH of 7.5 to 9." },
+    { "slug": "neutral-ph-paper", "term": "Neutral pH (paper)", "definition": "Paper made and stored at or above pH 7. Neutral or slightly alkaline conditions prevent acid hydrolysis; archival conservation standards require pH 7 or above for permanent paper." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "" },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "acid-hydrolysis" } }], "text": "Acid hydrolysis" },
+          { "type": "text", "text": " is the enemy of paper permanence. It works slowly and invisibly: a sheet made in acidic water looks fine for years, then begins to yellow at the edges, then becomes brittle, then finally crumbles. The acid in old newspaper is a visible example, newsprint is made without pH correction and degrades within a generation. For archival work, " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "neutral-ph-paper" } }], "text": "neutral or alkaline conditions" },
+          { "type": "text", "text": " during formation are not optional." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            { "name": "pH testing strips, range 5 to 9 (or a wider range)", "qty": "a small packet, lasts for many sessions", "link": null, "substitutions": "A digital pH meter (more accurate; recommended if you make paper regularly)" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Testing the vat water" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dip a pH testing strip into the vat water for 1 to 2 seconds. Remove it and compare the colour change to the chart on the packet within 30 seconds, do not wait longer as the colour continues to develop." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Aim for pH 7 to 8.5 for archival work. pH 6.5 is acceptable for decorative papers that do not need long-term permanence. Below pH 6, correct the water before forming sheets." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "To raise pH: dissolve a small amount of calcium carbonate (chalk) or bicarbonate of soda in the vat water. Add a pinch at a time, stir, and re-test. Each addition raises the pH by a small increment; go slowly." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Adding an " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "alkaline-reserve" } }], "text": "alkaline reserve" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For truly archival work, add a small amount of calcium carbonate directly to the pulp during beating. This builds an alkaline reserve into the paper itself, a buffer that will neutralise any acids that form later from atmospheric pollution or migration from adjacent acidic materials. The standard quantity is 2% calcium carbonate by dry weight of pulp." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Test the vat at the start of each session. Tap water pH varies by season and by area (softwater regions tend to be slightly acidic). If you are using plant-fibre pulps that have been cooked in soda ash, the pulp itself may be alkaline and will raise the vat pH, test before correcting either direction." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "pH reads 9 or above, too alkaline",
+              "cause": "Too much calcium carbonate or soda ash added; or plant fibre not adequately rinsed after alkaline cooking.",
+              "fix": "Add a small amount of white vinegar (dilute acetic acid) drop by drop to bring the pH back toward neutral. Re-test after each addition."
+            },
+            {
+              "symptom": "pH strips give inconsistent readings",
+              "cause": "The strips are old or have been exposed to moisture in storage.",
+              "fix": "Replace the strips. Store in a sealed container. A digital pH meter is more reliable for regular use."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

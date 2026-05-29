@@ -1,0 +1,115 @@
+{
+  "slug": "zine-edition-numbering-colophon",
+  "title": "Edition numbering and the colophon page",
+  "subtitle": "The conventions for numbering a limited print run and writing a zine colophon",
+  "excerpt": "A hand-numbered limited edition is one of the few things a home-printed zine can do that a commercially printed magazine cannot. Edition numbering, a colophon page, and a hand-signed title page together give a small-run zine the status of a produced object rather than a photocopy. This tutorial covers the conventions and the practical decisions: how many copies to number, what goes in a colophon, and where they appear.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "zines",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edition numbering and colophon conventions derive from the fine printing and artists' book tradition of the late nineteenth and early twentieth centuries. The colophon as a publishing convention is documented in printing manuals and bibliographic references from the nineteenth century onward.",
+  "recipeTools": [
+    { "slug": "pencil", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "colophon", "term": "Colophon", "definition": "A page at the end of a book or zine giving production details: title, author, date, edition size, printing method, and any credits. From the Greek 'finishing touch'. In artists' books and zines, it is also the place for the handwritten edition number and signature." },
+    { "slug": "edition-number", "term": "Edition number", "definition": "The fraction handwritten on each copy of a limited print run, 1/50, 2/50, indicating which copy this is (numerator) out of the total edition size (denominator). A convention from print and artists' book publishing." },
+    { "slug": "hors-serie", "term": "Hors série", "definition": "Copies printed outside the numbered edition, author copies, review copies, or archival copies. Written as 'A/P' (Artist's Proof) or 'H.S.' (Hors Série) rather than numbered. Standard in edition printing; optional in zines." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colophon" } }], "text": "colophon" },
+          { "type": "text", "text": " is a practical page with a clear purpose: it tells the reader who made the thing, when, how, and in what quantity. For a small zine it is also a declaration of intent, this is a finished publication, not a draft." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What goes in a colophon" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A minimal colophon needs four things: title, author name or alias, date, and edition size. Optional: printing method, paper stock, credits, and a contact address." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "" },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "edition-number" } }], "text": "Edition numbering" },
+          { "type": "text", "text": ", the conventions" }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Decide the total edition size before printing. Print exactly that number plus a few extras for your own archive (these become the " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hors-serie" } }], "text": "hors série" },
+              { "type": "text", "text": " copies)." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Number each copy by hand in pencil or pen: write the fraction (for example, 7/30) on the colophon page or the title page. The hand-writing is the point, a rubber-stamped number is acceptable; a printed one defeats the purpose." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sign below the edition number. Your name, initials, or alias, whatever you use as the author identification for this zine." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Keep a record of who received which number if you are distributing copies, it is useful for reprints and for tracking your own distribution. A simple list in a notebook is sufficient." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Placing the colophon in the layout" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In book publishing tradition the colophon goes on the last page (verso) or the back of the title page. In a saddle-stitched zine, the final recto (page 7 in an 8-page zine) or the inner back cover are the natural positions. The colophon text can be set in a smaller type size or a different style from the main text, it is production information, not editorial content." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The edition size stated in the colophon is wrong, more or fewer copies were printed",
+              "cause": "The colophon was written before the final print run count was confirmed.",
+              "fix": "Print the colophon page last, or leave a blank space for the edition number and fill it in by hand after the run. Never state an edition size you have not yet confirmed."
+            },
+            {
+              "symptom": "Numbers are inconsistent across the run, some smeared, some too faint",
+              "cause": "Numbering was rushed or done with an inconsistent pen pressure.",
+              "fix": "Work through the entire edition in one sitting with the same pen. Test the pen on scrap paper first."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

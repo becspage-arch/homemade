@@ -1,0 +1,122 @@
+{
+  "slug": "guard-book-structure",
+  "title": "Guard book, a flat-opening structure for photographs and prints",
+  "subtitle": "Stub-and-guard sewing creates a text block that opens completely flat",
+  "excerpt": "A guard book uses narrow paper stubs sewn alongside the regular signatures; each stub takes the place of the spine bulk a mounted photograph or print would add if tipped in. The result is a text block that lies flat open at every page, and a spine that stays straight even as the book fills with mounted work.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on extra-illustrated books and guard books. The stub-and-guard technique is the standard Victorian solution for photograph and print albums. Internet Archive: https://archive.org/details/bookbindingandca00cock.",
+  "recipeTools": [
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "guard-stub", "term": "Guard stub", "definition": "A narrow folded paper strip sewn alongside a regular signature; its bulk compensates for the additional thickness added by mounting photographs or prints." },
+    { "slug": "compensating-stubs", "term": "Compensating stubs", "definition": "Guard stubs sized to match the thickness of the material that will be tipped in, keeping the text block even and square." },
+    { "slug": "tipping-in", "term": "Tipping in", "definition": "Attaching a loose leaf (photograph, print, or map) to the gutter of a book page with a narrow strip of adhesive along one edge only." }
+  ],
+  "techniqueSlugs": ["tipping-in-plates-and-inserts"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Cutting tools",
+          "body": "Sharp blades are safer than blunt blades. Change the blade at the first sign of dulling. Always cut on a self-healing cutting mat."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A guard book solves a simple problem: mounted photographs make the spine thicker than the foredge, so the book will not close flat. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "guard-stub" } }], "text": "guard stub" },
+          { "type": "text", "text": " pre-loads the spine with equivalent bulk before anything is tipped in, so both edges grow at the same rate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            { "name": "Cartridge paper, 130 gsm, folded into signatures of 4 leaves (8 pages)", "qty": "eight signatures for a 64-page album", "link": null, "substitutions": null },
+            { "name": "Guard stub paper, 90 gsm cartridge, cut into 12 mm wide strips the full height of the signatures", "qty": "one stub per signature", "link": null, "substitutions": null },
+            { "name": "Bookbinding thread, linen (waxed), 4-cord", "qty": "per book", "link": null, "substitutions": null },
+            { "name": "Bookbinding board, 2 mm", "qty": "two boards per book", "link": null, "substitutions": null },
+            { "name": "PVA, acid-free", "qty": "small amount", "link": null, "substitutions": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the stubs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "" },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "compensating-stubs" } }], "text": "Compensating stubs" },
+          { "type": "text", "text": " are sized to match the eventual mountings. For 120 gsm photographic prints " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tipping-in" } }], "text": "tipped in" },
+          { "type": "text", "text": " two per page, the stub thickness equals two layers of 120 gsm: a 12 mm folded strip of 90 gsm paper gives approximately the right bulk. Fold each strip in half lengthways to produce a 6 mm folded stub." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing the signatures and stubs" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Nest each folded guard stub around the outside of its signature, so the open edge of the stub aligns with the spine fold of the signature. Pierce both together at the sewing stations." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sew the signatures together using a standard long-stitch or Coptic sewing pattern. The stub is sewn into the same holes as its signature and shares its kettle stitch at head and tail." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After sewing, the spine of the text block will appear lumpy and the stubs will project forward of the foredge. This is correct: once the spine is glued and the stubs are trimmed flush with the foredge, the block will compress evenly." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing and casing in" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Glue the spine, then trim the foredge with a straight edge and craft knife to remove the projecting stub ends. The text block is now ready to round and back as a normal case binding. " },
+          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "tipping-in-plates-and-inserts", "label": "Tipping in" } }], "text": "Tipping in" },
+          { "type": "text", "text": " the photographs comes after binding is complete." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "slug": "making-a-portfolio-with-ties",
+  "title": "Making a tied portfolio folder for loose sheets",
+  "subtitle": "A simple board-and-cloth folder with ribbon ties for drawings or prints",
+  "excerpt": "A tied portfolio is a flat folder, two boards hinged along one edge with cloth and fastened with ribbon ties, for storing loose sheets, prints, or drawings without rolling or folding them. The construction takes under an hour and scales from A5 up to A2.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on portfolios and cases. The cloth-hinged portfolio construction is a standard bookbinding utility piece; Cockerell describes the tied variant for print and drawing storage.",
+  "recipeTools": [
+    { "slug": "bookbinding-board-3mm", "isOptional": false },
+    { "slug": "book-cloth", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-60cm", "isOptional": false },
+    { "slug": "bookbinding-board-1-5mm", "isOptional": false },
+    { "slug": "endpaper-stock", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "portfolio", "term": "Portfolio", "definition": "A flat folder, usually hinged at the spine or long edge, for storing unbound sheets without rolling or folding." },
+    { "slug": "cloth-hinge", "term": "Cloth hinge", "definition": "A strip of book cloth spanning the gap between two boards, forming the spine of a portfolio or clamshell box." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Cut boards and glue spine cloth",
+      "body": "Cut the two boards to size, apply the spine cloth hinge, and leave overnight under a weight to prevent warping.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": false
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Cover boards and attach ties",
+      "body": "Cover the boards with decorative paper, attach ribbon ties, and paste the liners. Press flat for 2 hours.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Cutting tools",
+          "body": "Use sharp blades only; change when they dull. Cut on a self-healing mat against a metal ruler, non-cutting hand well back."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "portfolio" } }], "text": "portfolio" },
+          { "type": "text", "text": " is the gentlest way to store flat work. The example here makes an A2 folder from two boards and a book-cloth spine hinge, covered with decorative paper and closed with four ribbon ties, one pair on each long edge." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            { "name": "Bookbinding board, 3 mm, cut to A2 plus 10 mm on each side (about 44 cm x 62 cm)", "qty": "two pieces", "link": null, "substitutions": "2 mm board for an A4 or A3 portfolio; 3 mm is the minimum for A2" },
+            { "name": "Book cloth for the spine hinge", "qty": "one strip 8 cm wide, A2 length plus 4 cm", "link": null, "substitutions": null },
+            { "name": "Decorative or marbled paper for the board faces, 120 gsm or heavier", "qty": "two pieces to cover each board", "link": null, "substitutions": "Plain cartridge or coloured paper" },
+            { "name": "Grosgrain or linen ribbon, 15 to 20 mm wide", "qty": "four lengths of 50 cm each", "link": null, "substitutions": "Bookbinding thread, tied in a bow" },
+            { "name": "PVA, acid-free", "qty": "small amount", "link": null, "substitutions": null },
+            { "name": "Liner paper, 100-120 gsm, for the inside faces", "qty": "two pieces", "link": null, "substitutions": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Day 1, boards and hinge" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut both boards to A2 size plus 10 mm bleed on three sides. The fourth side (the hinge edge) is flush." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the boards face-down on the cutting mat, with the two hinge edges aligned and a 10 mm gap between them. This gap forms the spine; adjust for the thickness of your sheets." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Brush PVA onto the " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cloth-hinge" } }], "text": "cloth hinge" },
+              { "type": "text", "text": " strip. Lay it over the gap centred, press firmly, and rub down with the bone folder. Turn the portfolio over and rub down the front face of the hinge cloth too." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave overnight face-down under a flat board and weights. A damp-pasted assembly will warp during drying if not weighted." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Day 2, covering and ties" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut the covering paper 25 mm larger than each board on the three outer sides. Paste the paper with PVA, lay the board face-down onto it, and fold the turn-ins over the edges, mitring the corners." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Before pasting the liner onto the inside face, attach the ribbon ties. Sandwich the end of each ribbon between the board and the liner, with the ribbon end about 10 mm inside the board. Use two ties on the long side (head and tail), one on each board." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Paste the liner paper and press it over the inside face of each board, trapping the ribbon ends. Rub down firmly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Press the assembled portfolio flat under a heavy weight for at least 2 hours before closing it for the first time." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A single flap glued to one board makes a presentation folder rather than a tied portfolio. An inner spine board cut to the same height as the boards but narrower (50 mm) and positioned in the spine gap creates a rigid spine strip for portfolios holding many sheets." }
+        ]
+      }
+    ]
+  }
+}

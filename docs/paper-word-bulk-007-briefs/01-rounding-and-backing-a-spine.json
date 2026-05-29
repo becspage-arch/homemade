@@ -1,0 +1,171 @@
+{
+  "slug": "rounding-and-backing-a-spine",
+  "title": "Rounding and backing a spine",
+  "subtitle": "The two-stage operation that gives a case-bound book its hinges",
+  "excerpt": "A flat-sewn text block rounds into a gentle convex curve along the spine, then backing hammers that curve outward so the boards can hinge cleanly. Without both stages, a heavy book will splay open and the joints will crack.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapters on rounding and backing. Internet Archive: https://archive.org/details/bookbindingandca00cock. Cockerell gives the detailed hand positions and hammer angles still followed today.",
+  "recipeTools": [
+    { "slug": "finishing-press", "isOptional": false },
+    { "slug": "book-press", "isOptional": true },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "rounding", "term": "Rounding", "definition": "Hammering or pressing a sewn text block so the spine takes on a gentle convex curve from head to tail." },
+    { "slug": "backing", "term": "Backing", "definition": "Hammering the shoulders of a rounded text block outward over the edge of a finishing press to create the groove into which the boards fit." },
+    { "slug": "spine-shoulder", "term": "Spine shoulder", "definition": "The ridge formed along each side of the spine after backing; the board sits against this ridge, creating the hinge." },
+    { "slug": "text-block", "term": "Text block", "definition": "The assembled, sewn group of signatures that forms the book's pages before the boards and cover are attached." }
+  ],
+  "techniqueSlugs": ["rounding-and-backing-a-spine"],
+  "criticalTechniques": ["rounding-and-backing-a-spine"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A freshly sewn " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "text-block" } }], "text": "text block" },
+          { "type": "text", "text": " is flat. A finished case-bound book is not. The spine curves outward, and each board sits in a groove at its shoulder. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rounding" } }], "text": "Rounding" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "backing" } }], "text": "backing" },
+          { "type": "text", "text": " are the two operations that create those features. Douglas Cockerell called them the most important stages of forwarding, and he was right: a book that skips them will splay open under its own weight within a year." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Before you begin" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The text block must be sewn and the spine glued with a single thin coat of " },
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "PVA, acid-free" },
+          { "type": "text", "text": ". Let that coat dry to a slightly tacky state, not fully cured. The PVA keeps the signatures together during rounding; it should not have set hard or the block will be brittle." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "You need a finishing press or, at minimum, a strong book press and two smooth hardwood boards. A cobbler's hammer or a veneer hammer with a slightly domed face works better than a flat-faced hammer, which leaves marks." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Rounding" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold the text block spine-up in one hand. Fan the signatures very slightly with the thumb of the other hand, spreading them into an even fan." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Using the side of the bone folder, push gently from the centre of the spine outward toward each edge, walking the curvature gradually. Work from head to tail and back. The spine should begin to curve convexly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn the block and push from the foredge inward, supporting the back of the spine with one hand. This counteracts any tendency for the spine to splay at the shoulders." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue working until the spine forms a smooth arc that is between one-third and one-sixth of the book's thickness in depth. For a 2 cm thick block, roughly 3 to 5 mm of rise." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Nip the rounded block in the book press for 30 minutes to set the shape before backing." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Backing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Backing creates the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "spine-shoulder" } }], "text": "spine shoulders" },
+          { "type": "text", "text": ", the raised ridges on either side of the spine that the boards fit against. The operation opens the outer signatures outward at the joint, forming a groove the thickness of the board." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the rounded text block in the finishing press (or between two smooth hardwood boards clamped in a vice), spine upward, with the joint lines at the level of the press jaws. The joint line should be exactly level with the press edge." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Angle the hammer at 30 to 45 degrees. Tap the outermost signature on each side outward, working from the spine centre toward the head, then toward the tail." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work inward signature by signature, each one angled out a little less than the last. The goal is a smooth slope rather than a sharp step at each signature." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When both sides are done, check the shoulder from the head of the book. The spine should be smoothly curved and the shoulders clean and even. A rough shoulder catches on the case when opening." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Spine refuses to curve during rounding",
+              "cause": "The PVA is fully cured and rigid.",
+              "fix": "Dampen the spine lightly with a wet sponge, let it absorb for a minute, then round immediately. Do not soak."
+            },
+            {
+              "symptom": "Shoulders are uneven or stepped",
+              "cause": "Hammering too hard or not working inward gradually.",
+              "fix": "Flatten the spine back in the press overnight, then re-back more slowly, tapping each signature the same amount before moving to the next."
+            },
+            {
+              "symptom": "The spine loses its curve and collapses flat",
+              "cause": "The book was not nipped in the press after rounding.",
+              "fix": "Re-round and nip for a full hour before backing."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where it leads" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rounding and backing is the gateway to cased-in bookbinding. Once the shoulders are formed, the book can be lined (see " },
+          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "book-mull-and-spine-lining", "label": "spine gluing and lining" } }], "text": "spine gluing and lining" },
+          { "type": "text", "text": "), then cased in." }
+        ]
+      }
+    ]
+  }
+}

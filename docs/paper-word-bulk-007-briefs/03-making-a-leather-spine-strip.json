@@ -1,0 +1,170 @@
+{
+  "slug": "making-a-leather-spine-strip",
+  "title": "Making a leather spine strip for a half-leather binding",
+  "subtitle": "Paring, measuring, and attaching a quarter or half spine in leather",
+  "excerpt": "A half-leather binding adds a spine and corner pieces in leather over the existing boards, creating a more durable joint and a traditional appearance. The work centres on cutting and paring the leather to the right width and thickness, then attaching it cleanly to the rounded spine.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapters on leather covering and half-binding. Internet Archive: https://archive.org/details/bookbindingandca00cock. The measurements and paring angles given here follow Cockerell's standard half-binding method.",
+  "recipeTools": [
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "craft-knife-blades-11", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "methyl-cellulose", "isOptional": false },
+    { "slug": "bookbinding-board-2mm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "paring", "term": "Paring", "definition": "Skiving the back of a leather piece at its edges so the leather tapers to a thin, flexible edge that folds neatly around corners without a visible ridge." },
+    { "slug": "half-binding", "term": "Half binding", "definition": "A binding where the spine and corners are covered in one material (usually leather or book cloth) and the boards are covered in a second material (often marbled paper or plain cloth)." },
+    { "slug": "turn-in", "term": "Turn-in", "definition": "The portion of the covering material folded over the edge of the board to the inside; usually 15 to 20 mm." }
+  ],
+  "techniqueSlugs": ["leather-paring-for-bookbinding"],
+  "criticalTechniques": ["leather-paring-for-bookbinding"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Cutting tools",
+          "body": "Use sharp blades only; change when they dull. Cut on a self-healing mat against a metal ruler, non-cutting hand well back."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "half-binding" } }], "text": "half-leather binding" },
+          { "type": "text", "text": " splits the cover into two materials: leather on the spine and corners, paper or cloth on the rest of the boards. The leather strip is cut slightly wider than the book's spine, plus enough on each side to wrap around the front edge of the board, typically 30 to 40 mm on each side for a quarter-width spine piece." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            { "name": "Goatskin or calf binding leather, 0.5 to 0.8 mm after paring", "qty": "one piece per book", "link": null, "substitutions": "Craft-grade bookbinding leather from a specialist supplier; standard garment leather is too thick and too stretchy" },
+            { "name": "PVA, acid-free", "qty": "small amount", "link": null, "substitutions": null },
+            { "name": "Methyl cellulose (50% mix with PVA)", "qty": "small amount", "link": null, "substitutions": "Plain PVA, but methyl cellulose slows the open time for repositioning" },
+            { "name": "Bookbinding board, 2 mm", "qty": "two boards per book", "link": null, "substitutions": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Measuring the spine strip" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure the width of the backed spine, from shoulder to shoulder. Add 35 mm on each side for the turn-around onto the boards." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The strip length should equal the book's height plus 25 mm at head and 25 mm at tail, enough for the turn-in to the inside of the boards." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark these dimensions on the grain side of the leather with a soft pencil. Cut with a sharp craft knife against a metal ruler." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Paring the edges" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "" },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "paring" } }], "text": "Paring" },
+          { "type": "text", "text": " removes thickness from the flesh side of the leather at its edges, so the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "turn-in" } }], "text": "turn-in" },
+          { "type": "text", "text": " lies flat. Work at a shallow angle with a very sharp blade, taking thin shavings. Aim for approximately 0.2 mm at the very edge, thin enough to see light through." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pare the long edges (head and tail of the strip) and the two short edges (where the leather wraps onto the board faces). Pare a band about 25 mm wide on the flesh side along each edge." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Attaching the strip" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix PVA and methyl cellulose 50:50. Paste the flesh side of the leather thoroughly, working the paste into the pored surface." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the leather on the spine, grain side up, aligning it centrally. Rub the spine down through the leather with the bone folder, working from the centre outward." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold the leather over the boards, pulling it firmly to remove any wrinkles. Rub down the turn-around onto the board faces." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mitre the corners at head and tail: cut at 45 degrees, leaving a gap of one board thickness from the corner point. Fold the head and tail turn-ins, pinch the corners, and rub down." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave to dry overnight under light weight, with the book open slightly to keep the joint from setting stiff." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Leather wrinkles at the joint",
+              "cause": "The leather was not damp enough or the spine was not rounded sufficiently.",
+              "fix": "Dampen the spine side of the leather with a barely-damp sponge and re-rub the joint."
+            },
+            {
+              "symptom": "Visible ridge where the leather ends on the board",
+              "cause": "The edges were not pared thin enough.",
+              "fix": "Carefully pare the edge thinner before the adhesive sets. Once dry, the ridge will telegraph through the board covering."
+            },
+            {
+              "symptom": "Leather lifting at the head and tail turn-in",
+              "cause": "Insufficient adhesive or the leather was not held down long enough.",
+              "fix": "Lift the turn-in, apply fresh PVA, and press under a weight for 2 hours."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

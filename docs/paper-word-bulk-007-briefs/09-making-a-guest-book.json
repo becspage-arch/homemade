@@ -1,0 +1,131 @@
+{
+  "slug": "making-a-guest-book",
+  "title": "Making a guest book with a single-section text block",
+  "subtitle": "A wide-gutter book for signatures, messages, and small drawings",
+  "excerpt": "A guest book asks for generous page margins, a wide gutter, and paper heavy enough to take a variety of pens. This version sews a single long section of 200 gsm cartridge with tapes, cases it into cloth-covered boards, and finishes with a ribbon placeholder, built to last thirty years of occasional, careful use.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Construction follows standard single-section sewn-on-tapes case binding as described in Cockerell, Bookbinding and the Care of Books (1901). The wide-gutter specification and paper weight are adapted from contemporary bookbinding practice for presentation volumes.",
+  "recipeTools": [
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "book-cloth", "isOptional": false },
+    { "slug": "endpaper-stock", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "cotton-tape-headband", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "single-section", "term": "Single section", "definition": "A text block made from one long group of nested folded sheets, sewn through the fold. Simpler to construct than multi-signature sewn books but limited to a single thickness." },
+    { "slug": "gutter", "term": "Gutter", "definition": "The inner margin at the spine edge of each page; should be wider than the outer margin in a sewn book to account for the curvature at the binding." }
+  ],
+  "techniqueSlugs": ["sewing-on-tapes", "kettle-stitch"],
+  "criticalTechniques": ["sewing-on-tapes"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Cutting tools",
+          "body": "Use sharp blades only; change when they dull. Cut on a self-healing mat against a metal ruler, non-cutting hand well back."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A guest book should be easy to write in, durable enough to survive decades of storage, and impressive enough to be handed over with some ceremony. The heaviest practical paper weight (200 gsm) gives the pages body; the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "single-section" } }], "text": "single-section" },
+          { "type": "text", "text": " construction keeps the spine flat and the opening smooth." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            { "name": "Cartridge paper, 200 gsm, A3 sheets folded to A4, 30 sheets (making 60 leaves)", "qty": "30 sheets per book", "link": null, "substitutions": "Cartridge 220 gsm if available; do not go below 170 gsm for a guest book" },
+            { "name": "Linen sewing tape, 25 mm wide", "qty": "three lengths at 120 mm each", "link": null, "substitutions": "Stiff cloth ribbon; folded strips of book cloth" },
+            { "name": "Bookbinding thread, linen (waxed), 4-cord", "qty": "per book", "link": null, "substitutions": null },
+            { "name": "Bookbinding board, 2 mm", "qty": "two boards per book", "link": null, "substitutions": null },
+            { "name": "Book cloth, for covers", "qty": "enough to cover boards plus 20 mm turn-in", "link": null, "substitutions": null },
+            { "name": "Endpaper stock, 130 gsm, folded pairs", "qty": "two pairs per book", "link": null, "substitutions": "Marbled paper for a more decorative interior" },
+            { "name": "Grosgrain ribbon, 15 mm wide, as placeholder", "qty": "one length at 40 cm", "link": null, "substitutions": null },
+            { "name": "PVA, acid-free", "qty": "small amount", "link": null, "substitutions": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing and sewing the section" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold each A3 sheet in half with the bone folder, grain parallel to the spine fold. Nest all sheets together into one long section." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark the sewing stations on the spine fold: a " },
+              { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "kettle-stitch", "label": "kettle stitch" } }], "text": "kettle stitch" },
+              { "type": "text", "text": " hole 15 mm from the head, one at the tail, and three tape positions equally spaced between them. Mark the tape width (25 mm) around each position." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pierce the sewing stations with the bookbinding awl. Thread the needle and wax the thread on the beeswax block." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "" },
+              { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "sewing-on-tapes", "label": "Sew the section on tapes" } }], "text": "Sew the section on tapes" },
+              { "type": "text", "text": " using a long running stitch, coming out between the tape edges and returning in at the next hole. Tie off with two kettle-stitch loops at head and tail." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gutter" } }], "text": "gutter" },
+          { "type": "text", "text": " consideration" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A single thick section will not open quite flat at the centre pages. The gutter margin on the inner pages should be at least 30 mm to give a comfortable writing area even at the worst-opening pages." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Glue up the spine with a single thin coat of PVA. Attach endpapers, make and attach a case in book cloth (as for any standard case binding), case in, and press for 2 hours. If a ribbon placeholder is wanted, glue it to the spine before the final lining." }
+        ]
+      }
+    ]
+  }
+}

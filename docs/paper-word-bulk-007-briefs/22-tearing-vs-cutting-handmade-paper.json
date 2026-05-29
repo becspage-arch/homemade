@@ -1,0 +1,111 @@
+{
+  "slug": "tearing-vs-cutting-handmade-paper",
+  "title": "Tearing and cutting handmade paper",
+  "subtitle": "When to use the deckle edge, when to cut clean, and how to tear a straight line",
+  "excerpt": "Handmade paper has no grain direction, which means it tears differently in every direction and cuts differently from machine-made stock. The deckle edge, the soft, feathered margin left by the mould frame, is a characteristic of handmade work and is often kept as a design element. This tutorial covers when to use each approach and how to produce a clean straight tear using a bone folder and metal ruler.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "General craft papermaking practice. The deckle edge is described in Dard Hunter, Papermaking: The History and Technique of an Ancient Craft (1943) and in multiple craft papermaking manuals as a characteristic of hand-formed sheets.",
+  "recipeTools": [
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": true },
+    { "slug": "cutting-mat-a4", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "deckle-edge", "term": "Deckle edge", "definition": "The soft, feathered edge of a handmade sheet of paper, created where the wet pulp crept slightly under the deckle frame during sheet formation. Considered a mark of quality in handmade paper; often preserved as a design element in fine printing and bookbinding." },
+    { "slug": "grain-direction", "term": "Grain direction", "definition": "The alignment of fibres in machine-made paper, caused by the direction of travel on the Fourdrinier machine. Machine-made paper tears and folds more cleanly along the grain than against it. Handmade paper has no grain direction, fibres lie in all orientations." },
+    { "slug": "scored-tear", "term": "Scored tear", "definition": "A tear made by first scoring a line with a bone folder along a ruler, then tearing along the compressed fibre path. Produces a straighter, more controlled tear than an unguided tear by hand." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Handmade paper has no " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "grain-direction" } }], "text": "grain direction" },
+          { "type": "text", "text": ". This is both an advantage and a complication. The paper folds with equal ease in any direction, which is good for bookbinding use. But it also tears unpredictably if you do not guide the tear, because there is no preferred fibre path to follow. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deckle-edge" } }], "text": "deckle edge" },
+          { "type": "text", "text": " on the original four sides of the sheet is soft and visually distinctive; deciding whether to preserve it or cut it away is a design decision as much as a practical one." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to keep the deckle edge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In fine printing, letterpress, and bookbinding, the deckle edge is a mark of handmade quality. Retain it when the sheet is a finished object in its own right, a calligraphy piece, a print, a hand-bound book's endpaper. Cutting it away makes the paper look manufactured." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Producing a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scored-tear" } }], "text": "scored tear" }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark the tear line lightly in pencil." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay a metal ruler along the line. Draw the pointed end of the bone folder firmly along the ruler edge, scoring a compressed groove into the paper surface. Do not break through the surface." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold the paper back and forth along the scored line several times to weaken it. Then hold one side flat on the table and tear slowly along the groove, keeping the ruler in place as a guide. The tear will follow the scored line." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to cut clean" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut with a craft knife and metal ruler when the sheet needs a crisp machine-straight edge: for book signatures, journal inserts, or any work that will be trimmed and bound. Handmade paper cuts well on a cutting mat; it is softer than machine-made stock and the knife cuts without skipping." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The tear wanders away from the scored line",
+              "cause": "The score was not deep enough, or the bone folder was not run firmly against the ruler edge.",
+              "fix": "Score twice, pressing harder the second time. The groove needs to be deep enough to be felt with a fingertip."
+            },
+            {
+              "symptom": "The craft knife tears rather than cuts the paper",
+              "cause": "The blade is blunt.",
+              "fix": "Change the blade. Handmade paper contains mineral content (calcium carbonate in sized sheets) that dulls blades faster than machine-made stock."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
