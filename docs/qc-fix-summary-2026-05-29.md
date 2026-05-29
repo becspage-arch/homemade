@@ -1200,3 +1200,63 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 21:08:15
+
+Generated: 2026-05-29T21:08:15.246Z
+
+Processed: 64
+PASS: 64
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 21:17:59
+
+Generated: 2026-05-29T21:17:59.240Z
+
+Processed: 4209
+PASS: 4188
+STILL_BLOCKED: 21
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 63 |
+| grade-level-strict | 5 |
+| body-missing-method | 2 |
+
+## Still BLOCKED (sample 20)
+
+- drop-spindle-park-and-draft: hero-missing
+- fleece-selection-at-the-farm: hero-missing
+- frame-loom-continuous-warp-technique: hero-missing
+- frame-loom-warp-stripe-sampler: hero-missing
+- latch-hook-geometric-cushion-cover: hero-missing
+- macrame-headboard: hero-missing
+- macrame-lampshade: hero-missing
+- macrame-mirror-frame: hero-missing
+- needle-felted-butterfly: hero-missing
+- needle-felted-hedgehog-pin-cushion: hero-missing
+- needle-felted-mushroom-gnome: hero-missing
+- spinning-a-crepe-yarn: hero-missing
+- spinning-a-three-ply-yarn: hero-missing
+- spinning-gotland-wool: hero-missing
+- spinning-manx-loaghtan-wool: hero-missing
+- tapestry-wedge-weave-technique: hero-missing
+- tension-and-twist-ratios-explained: hero-missing
+- wet-felted-cat-toy: hero-missing
+- wet-felted-soap-wrap: hero-missing
+- wheel-oiling-and-basic-maintenance: hero-missing

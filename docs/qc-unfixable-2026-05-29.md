@@ -615,3 +615,25 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - stripping-and-staining-floorboards hero-missing — applied: hero-fill-deferred-to-standalone-script
 - understanding-paint-finishes-interior-walls hero-missing — applied: hero-fill-deferred-to-standalone-script
 - wiring-a-simple-doorbell hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- drop-spindle-park-and-draft hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fleece-selection-at-the-farm hero-missing — applied: hero-fill-deferred-to-standalone-script
+- frame-loom-continuous-warp-technique hero-missing — applied: hero-fill-deferred-to-standalone-script
+- frame-loom-warp-stripe-sampler hero-missing — applied: hero-fill-deferred-to-standalone-script
+- latch-hook-geometric-cushion-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- macrame-headboard hero-missing — applied: hero-fill-deferred-to-standalone-script
+- macrame-lampshade hero-missing — applied: hero-fill-deferred-to-standalone-script
+- macrame-mirror-frame hero-missing — applied: hero-fill-deferred-to-standalone-script
+- needle-felted-butterfly hero-missing — applied: hero-fill-deferred-to-standalone-script
+- needle-felted-hedgehog-pin-cushion hero-missing — applied: hero-fill-deferred-to-standalone-script
+- needle-felted-mushroom-gnome hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spinning-a-crepe-yarn hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spinning-a-three-ply-yarn hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spinning-gotland-wool hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spinning-manx-loaghtan-wool hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tapestry-wedge-weave-technique hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tension-and-twist-ratios-explained hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wet-felted-cat-toy hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wet-felted-soap-wrap hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wheel-oiling-and-basic-maintenance hero-missing — applied: hero-fill-deferred-to-standalone-script
+- woven-wall-hanging-gradient-weft hero-missing — applied: hero-fill-deferred-to-standalone-script
