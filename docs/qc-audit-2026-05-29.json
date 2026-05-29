@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-29T10:07:30.300Z",
-  "totalScanned": 4267,
+  "generatedAt": "2026-05-29T10:42:52.935Z",
+  "totalScanned": 4306,
   "passCount": 0,
-  "blockCount": 382,
+  "blockCount": 393,
   "warnOnlyCount": 0,
   "perCategory": {
     "sustainability": {
@@ -18,15 +18,15 @@
       "warnOnly": 0
     },
     "paper-word": {
-      "total": 26,
+      "total": 65,
       "pass": 0,
-      "block": 26,
+      "block": 65,
       "warnOnly": 0
     },
     "animals-smallholding": {
-      "total": 22,
+      "total": 13,
       "pass": 0,
-      "block": 22,
+      "block": 13,
       "warnOnly": 0
     },
     "cooking": {
@@ -42,9 +42,9 @@
       "warnOnly": 0
     },
     "wood-natural-craft": {
-      "total": 37,
+      "total": 18,
       "pass": 0,
-      "block": 37,
+      "block": 18,
       "warnOnly": 0
     },
     "herbal-medicine": {
@@ -79,10 +79,11 @@
     }
   },
   "perRuleKind": {
-    "grade-level-strict": 385,
-    "voice-violation": 265,
-    "body-missing-method": 29,
-    "hero-missing": 4
+    "grade-level-strict": 396,
+    "voice-violation": 270,
+    "hero-missing": 39,
+    "body-missing-method": 1,
+    "historical-century-in-body": 1
   },
   "verdicts": [
     {
@@ -251,6 +252,44 @@
       ]
     },
     {
+      "slug": "adhesive-types-for-bookbinding",
+      "tutorialId": "cmpqsht0b0003g8v4djxv0l48",
+      "type": "READING",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:39:09.073Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[6]",
+          "snippet": "Cooked wheat-paste (flour and water, stirred over heat until thick) has a long open time, typically twenty minutes or more. It bonds less ag"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[10]",
+          "snippet": "Japanese rice paste (nori) is finer and more adhesive than wheat-paste for its weight. It is the traditional adhesive for washi mending and "
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[13]",
+          "snippet": "Mixing acid-free PVA and wheat-paste in roughly equal parts gives an adhesive with the longer open time of paste and closer to the bond stre"
+        }
+      ]
+    },
+    {
       "slug": "airtightness-survey-smoke-pencil",
       "tutorialId": "cmpf6lbgt0002f0v4xpns3t14",
       "type": "TECHNIQUE",
@@ -291,6 +330,23 @@
           "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[0]",
           "snippet": "Aloha Pineapple Smoothie. An American family-table recipe, generous, comforting, built for a crowd. Adjustable for what you need."
+        }
+      ]
+    },
+    {
+      "slug": "alum-mordanting-for-marbling",
+      "tutorialId": "cmpqsjne300005sv4nzw6dug3",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:40:35.094Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -729,6 +785,23 @@
       ]
     },
     {
+      "slug": "calendering-handmade-sheets",
+      "tutorialId": "cmpqsj2d40001zwv4u0sf2ex0",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:40:07.852Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
       "slug": "calendula-compress-for-minor-wounds",
       "tutorialId": "cmpd1hdjr00003ov4xprqu8x2",
       "type": "REMEDY",
@@ -750,6 +823,36 @@
           "kind": "voice-violation",
           "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
           "path": "sourceNotes"
+        }
+      ]
+    },
+    {
+      "slug": "calligraphy-warm-up-exercises",
+      "tutorialId": "cmpqsiole0003esv4df3hrnbd",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:39:49.997Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > orderedList[4] > listItem[0] > paragraph[0] > text",
+          "snippet": "Target"
         }
       ]
     },
@@ -823,23 +926,6 @@
       ]
     },
     {
-      "slug": "carved-ash-salad-spoon",
-      "tutorialId": "cmpqq7e5d0000icv4nrznszo8",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T09:35:04.015Z",
-      "heroMediaId": "cmpqqaj230004msv4ebk1t3vr",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
       "slug": "carved-beech-mustard-spoon",
       "tutorialId": "cmpeq862s000054v4m076edtd",
       "type": "PATTERN",
@@ -862,53 +948,6 @@
           "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[11] > listItem[2] > paragraph[0]",
           "snippet": "Left-handed version: invert the neck angle slightly so the bowl sits naturally in the non-dominant hand for scooping."
-        }
-      ]
-    },
-    {
-      "slug": "carved-birch-kuksa",
-      "tutorialId": "cmpd85d620000jgv41frcr25p",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:48:38.722Z",
-      "publishedAt": "2026-05-29T09:34:57.186Z",
-      "heroMediaId": "cmpqqakx90006msv4z948i38d",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[1] > text"
-        }
-      ]
-    },
-    {
-      "slug": "carved-birch-skimmer",
-      "tutorialId": "cmpqq7l880000ncv4c5cn2nxv",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T09:35:13.185Z",
-      "heroMediaId": "cmpqqamhn0008msv4an1qmahn",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[9] > text",
-          "snippet": "Target"
         }
       ]
     },
@@ -951,23 +990,6 @@
       ]
     },
     {
-      "slug": "carved-maple-sauce-spoon",
-      "tutorialId": "cmpqq7gny0000h8v4991tozxg",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T09:35:07.275Z",
-      "heroMediaId": "cmpqqao18000amsv4vbmsiuh8",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
       "slug": "carved-oak-mixing-spoon",
       "tutorialId": "cmpeq8cba0000n8v42n5d0y8q",
       "type": "PATTERN",
@@ -1006,23 +1028,6 @@
       ]
     },
     {
-      "slug": "carved-sycamore-ladle",
-      "tutorialId": "cmpqq7bke0000swv4ja449wu7",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T09:35:00.668Z",
-      "heroMediaId": "cmpqqap0p000cmsv4c82eddfj",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
       "slug": "carved-sycamore-salad-servers",
       "tutorialId": "cmpd80i9300012gv4zmi7dfz6",
       "type": "PATTERN",
@@ -1044,30 +1049,6 @@
           "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[22] > listItem[2] > paragraph[0]",
           "snippet": "Use beech instead of sycamore: beech is slightly harder and produces a tighter-grained surface that shows the knife finish very clearly."
-        }
-      ]
-    },
-    {
-      "slug": "castrating-male-piglets",
-      "tutorialId": "cmpqrat6d00033wv4sn6gebmd",
-      "type": "TECHNIQUE",
-      "categorySlug": "animals-smallholding",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T10:05:43.081Z",
-      "heroMediaId": "cmpqrbt8j0002ksv4vsdwcqgm",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "Castrating male pigs bred for pork removes the risk of boar taint at slaughter. The UK permits the keeper (not only a vet) to castrate pigle"
         }
       ]
     },
@@ -1289,6 +1270,42 @@
       ]
     },
     {
+      "slug": "choosing-paper-for-different-uses",
+      "tutorialId": "cmpqsjh8q0002g4v4vkwotpmj",
+      "type": "READING",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:40:27.130Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[7]",
+          "snippet": "Text block paper must have its grain direction parallel to the spine. Cross-grained text paper fights every page-turn and causes the binding"
+        }
+      ]
+    },
+    {
       "slug": "christmas-salmon",
       "tutorialId": "cmp5nqxti0000lkv44kwa1i4t",
       "type": "RECIPE",
@@ -1393,6 +1410,23 @@
           "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[8] > listItem[0] > paragraph[0]",
           "snippet": "Vegetarian swap: replace meat with mushrooms, lentils, or beans, adjust seasoning to compensate."
+        }
+      ]
+    },
+    {
+      "slug": "cloth-corner-application",
+      "tutorialId": "cmpqshfvb0000r8v4cgpltewk",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:38:52.033Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -1527,6 +1561,36 @@
           "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[9] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Colostrum and newborn lamb management go here."
+        }
+      ]
+    },
+    {
+      "slug": "colour-palette-scrapbooking",
+      "tutorialId": "cmpqskmhg0002sov4kisvc8c1",
+      "type": "READING",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:41:20.584Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "A scrapbook page is a composition of photographs, paper, text, and embellishments. Every element has a colour. Without a chosen palette, the"
         }
       ]
     },
@@ -1683,6 +1747,30 @@
       ]
     },
     {
+      "slug": "concertina-with-extra-signatures",
+      "tutorialId": "cmpqsi4xt0001qsv4jsr1sjtn",
+      "type": "PATTERN",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:39:24.531Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0]",
+          "snippet": "Open the first valley fold of the accordion and mark three sewing stations in the valley fold line, matching the signature station positions"
+        }
+      ]
+    },
+    {
       "slug": "conditioning-and-protecting-a-leather-belt",
       "tutorialId": "cmpq39bcn0002z4v4ex1sn61p",
       "type": "PATTERN",
@@ -1775,6 +1863,35 @@
           "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[22] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Copperplate lower-case alphabet, a to z go here."
+        }
+      ]
+    },
+    {
+      "slug": "copperplate-uppercase-study",
+      "tutorialId": "cmpqsih1e00017wv464u24dp0",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:39:40.206Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "The Copperplate lower-case alphabet rewards consistent oval repetition. The uppercase is different: each capital has individual character, a"
         }
       ]
     },
@@ -1933,23 +2050,6 @@
       ]
     },
     {
-      "slug": "diagnosing-coccidiosis-in-chicks",
-      "tutorialId": "cmpqr9hqe0002jkv4hfjpkmh3",
-      "type": "TECHNIQUE",
-      "categorySlug": "animals-smallholding",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T10:04:41.593Z",
-      "heroMediaId": "cmpqrbxk2000cksv436m1ewsh",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
       "slug": "double-chocolate-peppermint-cookies",
       "tutorialId": "cmp5nrw9y0000bkv4chsus9x6",
       "type": "RECIPE",
@@ -1998,29 +2098,6 @@
           "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[8] > listItem[0] > paragraph[0]",
           "snippet": "Vegetarian swap: replace meat with mushrooms, lentils, or beans, adjust seasoning to compensate."
-        }
-      ]
-    },
-    {
-      "slug": "drawknife-technique",
-      "tutorialId": "cmpqq88z7000000v47r50t46e",
-      "type": "TECHNIQUE",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T09:35:43.966Z",
-      "heroMediaId": "cmpqqarq7000gmsv4d12jqz9i",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[0] > text"
         }
       ]
     },
@@ -2399,51 +2476,6 @@
       ]
     },
     {
-      "slug": "fitting-fondant-for-the-winter-cluster",
-      "tutorialId": "cmpqr9d8k0000vsv4n762onde",
-      "type": "TECHNIQUE",
-      "categorySlug": "animals-smallholding",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T10:04:35.753Z",
-      "heroMediaId": "cmpqrbyhm000eksv4sb79ducn",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "unflagged-jargon: \"propolis\" — domain jargon — register in glossaryTerms[] with a definition",
-          "path": "body > bulletList[5] > listItem[3] > paragraph[0] > text",
-          "snippet": "propolis"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "unflagged-jargon: \"varroa\" — domain jargon — register in glossaryTerms[] with a definition",
-          "path": "body > troubleshooter[15] > item[2] > fix",
-          "snippet": "varroa"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[5] > listItem[0] > paragraph[0]",
-          "snippet": "Bakers fondant, 2.5 kg block, or a tray of ready-prepared bakers fondant (plain white sugar paste, not flavoured confectionery fondant)"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > infoPanel[6] > body",
-          "snippet": "Bakers fondant (also called bakers sugar paste) is plain sucrose in a semi-solid form, available from baking supply shops in 2.5 kg blocks. "
-        }
-      ]
-    },
-    {
       "slug": "flat-roof-insulation-options",
       "tutorialId": "cmpf6kxd30003jkv4jtc50wy4",
       "type": "TECHNIQUE",
@@ -2522,6 +2554,30 @@
       ]
     },
     {
+      "slug": "folk-art-bird-papercut",
+      "tutorialId": "cmpqskd8000020ov4gcehrl7b",
+      "type": "PATTERN",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:41:08.581Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Bird's\" — generic equivalent is \"custard powder\"",
+          "path": "body > orderedList[5] > listItem[2] > paragraph[0] > text",
+          "snippet": "Bird's"
+        }
+      ]
+    },
+    {
       "slug": "fondant-modelling-figures",
       "tutorialId": "cmpazygjt000188v4x1ngfzdk",
       "type": "TECHNIQUE",
@@ -2549,6 +2605,37 @@
           "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[8]",
           "snippet": "Place finished figures on baking paper and leave to dry at room temperature for at least 2 hours before handling or placing on a cake. Figur"
+        }
+      ]
+    },
+    {
+      "slug": "formal-italic-chancery-cursive",
+      "tutorialId": "cmpqsiwd000039sv439j8j8yk",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:40:00.069Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > troubleshooter[11] > item[1] > fix",
+          "snippet": "Target"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "Ludovico degli Arrighi wrote the first printed manual for chancery cursive in Rome in 1522. La Operina contains 28 pages of exemplars and in"
         }
       ]
     },
@@ -2603,31 +2690,33 @@
       ]
     },
     {
-      "slug": "froe-riving-technique",
-      "tutorialId": "cmpqq869n0000gov41uo6nkh6",
+      "slug": "fraktur-blackletter-alphabet",
+      "tutorialId": "cmpqsidyw0003zcv4jif9ssec",
       "type": "TECHNIQUE",
-      "categorySlug": "wood-natural-craft",
+      "categorySlug": "paper-word",
       "status": "BLOCK",
       "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T09:35:40.453Z",
-      "heroMediaId": "cmpqqat50000imsv4kyz6m6ud",
+      "publishedAt": "2026-05-29T10:39:36.232Z",
+      "heroMediaId": null,
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         },
         {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[0] > text"
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[6]",
+          "snippet": "The letter n illustrates the technique for the full minuscule alphabet."
         },
         {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[3] > text"
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[11]",
+          "snippet": "Textura Quadrata (see the Gothic Textura tutorials) has a strictly upright, diamond-foot structure: every stroke terminates in a precise hor"
         }
       ]
     },
@@ -2736,6 +2825,23 @@
       ]
     },
     {
+      "slug": "gothic-rotunda-script",
+      "tutorialId": "cmpqsirmh00025cv4q98hsdc6",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:39:53.929Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
       "slug": "gourmet-grilled-cheese-sandwich",
       "tutorialId": "cmp5nsx4h0000t4v4hmnojmcb",
       "type": "RECIPE",
@@ -2755,25 +2861,19 @@
       ]
     },
     {
-      "slug": "green-ash-stool-leg",
-      "tutorialId": "cmpqq8bs3000090v4uxdvcvqz",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
+      "slug": "grain-direction-in-paper",
+      "tutorialId": "cmpqsj5bx0000e0v474lo4qq6",
+      "type": "READING",
+      "categorySlug": "paper-word",
       "status": "BLOCK",
       "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T09:35:47.599Z",
-      "heroMediaId": "cmpqqaunu000kmsv4v8dy43lm",
+      "publishedAt": "2026-05-29T10:40:11.683Z",
+      "heroMediaId": null,
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[0] > text"
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -2875,23 +2975,6 @@
       ]
     },
     {
-      "slug": "hand-cut-dovetail-technique",
-      "tutorialId": "cmpqq9khx0001e0v4cjnf659j",
-      "type": "TECHNIQUE",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T09:36:45.563Z",
-      "heroMediaId": "cmpqqaygq000omsv4flwh5nzu",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
       "slug": "hand-on-belly-hand-on-heart-three-rounds-of-breath",
       "tutorialId": "cmppsov180000msv4r17qnwdo",
       "type": "PRACTICE",
@@ -2987,23 +3070,6 @@
       ]
     },
     {
-      "slug": "hazel-hurdle-garden-screen",
-      "tutorialId": "cmpqq8xrr0000zov4mngtzyfw",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T09:36:16.100Z",
-      "heroMediaId": "cmpqqazji000qmsv4qand3w1m",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
       "slug": "health-anxiety-the-loop-and-the-exit",
       "tutorialId": "cmpqo8n6h0000xwv4dm2g03zv",
       "type": "PRACTICE",
@@ -3064,6 +3130,23 @@
           "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[0]",
           "snippet": "A one-minute affirmation for the comparison. The comparison happens fast and often without noticing. The affirmation names what is actually "
+        }
+      ]
+    },
+    {
+      "slug": "herringbone-long-stitch",
+      "tutorialId": "cmpqshcj80000isv4wjptqfg2",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:38:47.708Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -3219,37 +3302,6 @@
           "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[6] > listItem[2] > paragraph[0]",
           "snippet": "High packaging waste: identify the three or four product types generating the most packaging. Switching to a loose or bulk alternative for t"
-        }
-      ]
-    },
-    {
-      "slug": "housing-in-lamb-ewes-before-lambing",
-      "tutorialId": "cmpqram820002j4v4xs4qm6lo",
-      "type": "TECHNIQUE",
-      "categorySlug": "animals-smallholding",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T10:05:34.068Z",
-      "heroMediaId": "cmpqrc045000iksv42ghuysz7",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "unflagged-jargon: \"colostrum\" — domain jargon — register in glossaryTerms[] with a definition",
-          "path": "body > paragraph[15] > text",
-          "snippet": "colostrum"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "Bringing in-lamb ewes indoors 4 to 6 weeks before the first due date gives you control over their feed, a warmer environment for early sprin"
         }
       ]
     },
@@ -3465,23 +3517,6 @@
           "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > pullQuote[3] > paragraph[0]",
           "snippet": "I joyfully steward wealth that blesses my family, my community, and future generations."
-        }
-      ]
-    },
-    {
-      "slug": "installing-a-field-gate-for-livestock",
-      "tutorialId": "cmpqrb78x0003u0v4fiyzvdop",
-      "type": "TECHNIQUE",
-      "categorySlug": "animals-smallholding",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T10:06:01.314Z",
-      "heroMediaId": "cmpqrc1i4000kksv4vl3gphdn",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
         }
       ]
     },
@@ -4143,6 +4178,29 @@
       ]
     },
     {
+      "slug": "lombardic-capitals-alphabet",
+      "tutorialId": "cmpqsiay7000148v4y6sh75g2",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:39:32.324Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        }
+      ]
+    },
+    {
       "slug": "macarons-coffee",
       "tutorialId": "cmpbd4god00018gv4o5trxs1m",
       "type": "RECIPE",
@@ -4296,6 +4354,67 @@
           "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Measuring your household carbon footprint go here."
+        }
+      ]
+    },
+    {
+      "slug": "medieval-link-stitch-binding",
+      "tutorialId": "cmpqsi7yb0001jov4ndpf0p1x",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:39:28.439Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "historical-century-in-body",
+          "message": "historical century reference \"sixth century\" in body — move to sourceNotes or introduce with a person (e.g. \"the 17th-century herbalist X\")",
+          "path": "body > paragraph[0]",
+          "snippet": "sixth century"
+        }
+      ]
+    },
+    {
+      "slug": "memorabilia-preservation-page",
+      "tutorialId": "cmpqskpha00027wv4uiiitz9v",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:41:24.465Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[5] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Sellotape\" — generic equivalent is \"sticky tape\"",
+          "path": "body > paragraph[6] > text",
+          "snippet": "Sellotape"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[5]",
+          "snippet": "Tickets, labels, and printed ephemera: these can take direct acid-free PVA application to the back surface if preservation is not critical. "
         }
       ]
     },
@@ -4476,26 +4595,19 @@
       ]
     },
     {
-      "slug": "nest-box-management-and-kit-checking",
-      "tutorialId": "cmpqrb0kw00005gv485y4h7yb",
-      "type": "TECHNIQUE",
-      "categorySlug": "animals-smallholding",
+      "slug": "newspaper-fold-zine",
+      "tutorialId": "cmpqskg910001dkv4l3ubf0d8",
+      "type": "PATTERN",
+      "categorySlug": "paper-word",
       "status": "BLOCK",
       "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T10:05:52.666Z",
-      "heroMediaId": "cmpqrc491000qksv4igqbq67w",
+      "publishedAt": "2026-05-29T10:41:12.505Z",
+      "heroMediaId": null,
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "The nest box is the highest-risk point in the rabbit operation. Kits are born without thermoregulation and depend entirely on the warmth of "
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -4515,23 +4627,6 @@
           "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Using night-rate electricity to cut bills go here."
-        }
-      ]
-    },
-    {
-      "slug": "oak-wall-shelf-through-tenon",
-      "tutorialId": "cmpqq9b9d0000ecv4zo5qcm8x",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T09:36:33.575Z",
-      "heroMediaId": "cmpqqb0w1000smsv4x3aq842s",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
         }
       ]
     },
@@ -4605,6 +4700,40 @@
       ]
     },
     {
+      "slug": "origami-envelope-fold",
+      "tutorialId": "cmpqskw4s0002i8v4q21ot5rb",
+      "type": "PATTERN",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:41:33.085Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "origami-lotus-flower",
+      "tutorialId": "cmpqsksqz0001d8v4uo8rezfq",
+      "type": "PATTERN",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:41:28.702Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
       "slug": "oven-roasted-carrots-with-garlic-and-coriander",
       "tutorialId": "cmp5nuqno0000wgv4as1fig1o",
       "type": "RECIPE",
@@ -4620,6 +4749,44 @@
           "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[8] > listItem[0] > paragraph[0]",
           "snippet": "Vegetarian swap: replace meat with mushrooms, lentils, or beans, adjust seasoning to compensate."
+        }
+      ]
+    },
+    {
+      "slug": "ox-gall-surfactant-in-marbling",
+      "tutorialId": "cmpqsjqe80001qsv4h84jto74",
+      "type": "READING",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:40:38.996Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > orderedList[6] > listItem[0] > paragraph[0] > text",
+          "snippet": "fall"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "Marbling depends on pigments floating on the surface of a thickened size rather than sinking into it. Acrylic paint out of the tube is too d"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[6] > listItem[3] > paragraph[0]",
+          "snippet": "If the colour spreads too fast, thin it further with water (which reduces pigment concentration and therefore density), then retest."
         }
       ]
     },
@@ -4702,6 +4869,23 @@
           "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Oxalic acid trickle treatment for varroa go here."
+        }
+      ]
+    },
+    {
+      "slug": "pamphlet-with-pocket-insert",
+      "tutorialId": "cmpqsi1yt0000b4v49od85d9f",
+      "type": "PATTERN",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:39:20.671Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -5039,6 +5223,23 @@
       ]
     },
     {
+      "slug": "pointed-pen-fundamentals",
+      "tutorialId": "cmpqsizf100035gv4twkexqy5",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:40:04.034Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
       "slug": "polymer-clay-bead-set",
       "tutorialId": "cmpe38g5x0001jov4lik0kky1",
       "type": "PATTERN",
@@ -5096,6 +5297,61 @@
       ]
     },
     {
+      "slug": "pouring-a-sheet",
+      "tutorialId": "cmpqsjeb900008wv4jmku6ara",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:40:23.323Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[4]",
+          "snippet": "Traditional nagashizuki uses a mucilaginous plant extract called neri, made from tororo-aoi root, to slow drainage and extend the working ti"
+        }
+      ]
+    },
+    {
+      "slug": "project-planner-journal-spread",
+      "tutorialId": "cmpqsk5gu0002qcv40ctho3n3",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:40:58.524Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > orderedList[4] > listItem[0] > paragraph[0] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[4] > listItem[2] > paragraph[0]",
+          "snippet": "Organise the brain dump into three or four phases or categories. Typical project phases: planning, preparation/materials, execution, finishi"
+        }
+      ]
+    },
+    {
       "slug": "pyrography-geometric-tile-panel",
       "tutorialId": "cmpqemfc20000bsv4t813qu9f",
       "type": "PATTERN",
@@ -5117,36 +5373,6 @@
           "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[11] > listItem[0] > paragraph[0]",
           "snippet": "Hexagonal grid instead of square: mark a hex grid and divide each hexagon into six equilateral triangles. Alternate fill patterns produce a "
-        }
-      ]
-    },
-    {
-      "slug": "pyrography-lettering-technique",
-      "tutorialId": "cmpdyv46r000184v4ipoijlqu",
-      "type": "TECHNIQUE",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:52:48.355Z",
-      "publishedAt": "2026-05-29T09:36:55.638Z",
-      "heroMediaId": "cmpqqb1p9000umsv4iqbi76nf",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[1] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[5] > text",
-          "snippet": "Target"
         }
       ]
     },
@@ -5260,36 +5486,6 @@
       ]
     },
     {
-      "slug": "rat-control-on-a-smallholding",
-      "tutorialId": "cmpqrbb5a0002twv450b17swj",
-      "type": "TECHNIQUE",
-      "categorySlug": "animals-smallholding",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T10:06:06.368Z",
-      "heroMediaId": "cmpqrc4zs000sksv4ehlb3mia",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "excerpt"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > infoPanel[12] > body",
-          "snippet": "Target"
-        }
-      ]
-    },
-    {
       "slug": "reading-an-in-home-display",
       "tutorialId": "cmpf6ltxo0002k8v4934ljcnv",
       "type": "TECHNIQUE",
@@ -5341,6 +5537,29 @@
       ]
     },
     {
+      "slug": "reading-log-page-design",
+      "tutorialId": "cmpqsjwjg00019kv4lgjupe2z",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:40:46.960Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > orderedList[6] > listItem[2] > paragraph[0] > text"
+        }
+      ]
+    },
+    {
       "slug": "rearrange-one-shelf-today",
       "tutorialId": "cmppspw1f0000i0v4uy715e96",
       "type": "PRACTICE",
@@ -5356,6 +5575,29 @@
           "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[11]",
           "snippet": "Original to homemade.education. The small-act-on-the-home shape is common in slow-living writing and in any house-keeping custom that has ha"
+        }
+      ]
+    },
+    {
+      "slug": "recipe-collection-journal",
+      "tutorialId": "cmpqsk2f700028kv4wmrpln2g",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:40:54.578Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > orderedList[5] > listItem[4] > paragraph[0] > text"
         }
       ]
     },
@@ -5540,23 +5782,6 @@
           "message": "paragraph reads at grade 12.6 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Repairing electronics instead of replacing: what is feasible and how to start go here."
-        }
-      ]
-    },
-    {
-      "slug": "riven-oak-bowl-blank-roughout",
-      "tutorialId": "cmpqq8kcl0000gcv4eui30r94",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T09:35:58.705Z",
-      "heroMediaId": "cmpqqb45n000ymsv4gx1aykuh",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
         }
       ]
     },
@@ -6018,21 +6243,66 @@
       ]
     },
     {
-      "slug": "sharpening-hand-saws-guide",
-      "tutorialId": "cmpqq9pov0002d0v4boivp9nr",
-      "type": "READING",
-      "categorySlug": "wood-natural-craft",
+      "slug": "sewn-boards-binding",
+      "tutorialId": "cmpqshyzb0002ucv4qgjd96li",
+      "type": "PATTERN",
+      "categorySlug": "paper-word",
       "status": "BLOCK",
       "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T09:36:52.290Z",
-      "heroMediaId": "cmpqqb8sq0012msv4qtz7zwo4",
+      "publishedAt": "2026-05-29T10:39:16.809Z",
+      "heroMediaId": null,
       "findings": [
         {
           "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[5] > text"
+        }
+      ]
+    },
+    {
+      "slug": "sewn-multi-section-zine",
+      "tutorialId": "cmpqskj9d00024cv4g57189n3",
+      "type": "PATTERN",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:41:16.406Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[10]",
-          "snippet": "A saw that has been sharpened several times will have teeth that are shorter than the original profile and a gullet that is reduced in depth"
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[4] > listItem[1] > paragraph[0]",
+          "snippet": "Cut the cover from bookbinding board at the same height as the folded sections plus 3 mm (1.5 mm top and bottom overhang) and wide enough to"
+        }
+      ]
+    },
+    {
+      "slug": "shell-pattern-marbling",
+      "tutorialId": "cmpqsjk6x0001awv4n3nangl9",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:40:30.955Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -6429,6 +6699,44 @@
       ]
     },
     {
+      "slug": "starch-sizing-for-paper",
+      "tutorialId": "cmpqsjbcy0001wgv4erlgvr9b",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:40:19.510Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > paragraph[9] > text",
+          "snippet": "fall"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "Handmade paper without surface sizing absorbs water-based ink quickly. The ink bleeds into the fibre network rather than sitting on the surf"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[3]",
+          "snippet": "You also need: rice starch or wheat starch (kitchen-grade is suitable); a small saucepan; a flat dish or tray larger than the sheet; blottin"
+        }
+      ]
+    },
+    {
       "slug": "stewed-fruit-compote",
       "tutorialId": "cmp5nxsrl0000xkv4krkkxofc",
       "type": "RECIPE",
@@ -6489,6 +6797,23 @@
           "message": "brand-trademark: brand name \"Flake\" — generic equivalent is \"flaked chocolate (the ingredient) or Cadbury Flake (the bar)\"",
           "path": "body > orderedList[24] > listItem[1] > paragraph[0] > text",
           "snippet": "Flake"
+        }
+      ]
+    },
+    {
+      "slug": "suminagashi-basics",
+      "tutorialId": "cmpqsjtk30001ewv4klrh27ja",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:40:43.094Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -7417,6 +7742,23 @@
       ]
     },
     {
+      "slug": "textile-inclusions-in-pulp",
+      "tutorialId": "cmpqsj8dn0002hgv4vxup42m9",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:40:15.646Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
       "slug": "the-body-across-the-decades",
       "tutorialId": "cmpqob71h00005kv4n3q69cyl",
       "type": "PRACTICE",
@@ -7965,23 +8307,6 @@
       ]
     },
     {
-      "slug": "thumb-pivot-cut",
-      "tutorialId": "cmpqq7pen0000rkv46rx3c3gm",
-      "type": "TECHNIQUE",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T09:35:18.602Z",
-      "heroMediaId": "cmpqqba5a0014msv4f6q4ofww",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
       "slug": "torn-paper-collage-background",
       "tutorialId": "cmpqicod40003y0v4i94eltpt",
       "type": "TECHNIQUE",
@@ -8023,6 +8348,37 @@
           "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[12]",
           "snippet": "Original to homemade.education. It draws on research into stress and physical contact in mothers."
+        }
+      ]
+    },
+    {
+      "slug": "travel-journal-spread",
+      "tutorialId": "cmpqsjzha0001sov4u2h5g70r",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:40:50.772Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > orderedList[5] > listItem[1] > paragraph[0] > text",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[5] > listItem[4] > paragraph[0]",
+          "snippet": "Attach ephemera with washi tape temporarily on the day (so you can reposition) and fix permanently with PVA when you settle the final layout"
         }
       ]
     },
@@ -8074,6 +8430,30 @@
           "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[4]",
           "snippet": "Weave the following sequence, repeating it continuously to produce the twill diagonal:."
+        }
+      ]
+    },
+    {
+      "slug": "two-colour-sewn-headband",
+      "tutorialId": "cmpqshvz80001ggv4qjllhksr",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:39:12.920Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > orderedList[7] > listItem[3] > paragraph[0] > text",
+          "snippet": "Anchor"
         }
       ]
     },
@@ -8352,83 +8732,15 @@
       ]
     },
     {
-      "slug": "using-a-broody-hen-to-hatch-eggs",
-      "tutorialId": "cmpqrafe2000018v4tjh6txpu",
-      "type": "TECHNIQUE",
-      "categorySlug": "animals-smallholding",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T10:05:25.202Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
-      "slug": "using-a-clearer-board-to-clear-a-super",
-      "tutorialId": "cmpqr955i0002jgv41er3cquq",
-      "type": "TECHNIQUE",
-      "categorySlug": "animals-smallholding",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T10:04:25.277Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "unflagged-jargon: \"propolis\" — domain jargon — register in glossaryTerms[] with a definition",
-          "path": "body > bulletList[5] > listItem[1] > paragraph[0] > text",
-          "snippet": "propolis"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "unflagged-jargon: \"propolis\" — domain jargon — register in glossaryTerms[] with a definition",
-          "path": "body > paragraph[10] > text",
-          "snippet": "propolis"
-        }
-      ]
-    },
-    {
       "slug": "vaccinating-sheep-with-a-clostridial-vaccine",
       "tutorialId": "cmpqr9t750002o8v4c4ii2s8c",
       "type": "TECHNIQUE",
       "categorySlug": "animals-smallholding",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-29T10:41:54.080Z",
       "publishedAt": "2026-05-29T10:04:56.453Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpqrc9yi0014ksv4tadsvjmf",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
         {
           "severity": "WARN",
           "kind": "voice-violation",
@@ -8446,23 +8758,9 @@
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "The clostridial vaccination programme is one of the most cost-effective things a sheep keeper does. Products such as Heptavac-P (or its gene"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[2]",
-          "snippet": "Clostridial diseases such as enterotoxaemia, lamb dysentery, tetanus, and braxy are the most common reasons for finding a sheep dead with no"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[14]",
-          "snippet": "Record the date, product name, batch number, expiry date, number of animals treated, and the name of the person who administered the vaccine"
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[17] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Vaccinating sheep with a clostridial vaccine go here."
         }
       ]
     },
@@ -8549,19 +8847,31 @@
       ]
     },
     {
-      "slug": "waling-weave-technique",
-      "tutorialId": "cmpqq95yo0000xwv4eklf4jxh",
+      "slug": "vytynanky-ukrainian-papercutting",
+      "tutorialId": "cmpqska6n0002v4v4ff0cntp9",
       "type": "TECHNIQUE",
-      "categorySlug": "wood-natural-craft",
+      "categorySlug": "paper-word",
       "status": "BLOCK",
       "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T09:36:26.714Z",
-      "heroMediaId": "cmpqqbdqy0018msv4ispjc354",
+      "publishedAt": "2026-05-29T10:41:04.642Z",
+      "heroMediaId": null,
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[9] > text"
         }
       ]
     },
@@ -8822,13 +9132,8 @@
       "status": "BLOCK",
       "voiceRetrofittedAt": "2026-05-29T08:55:31.442Z",
       "publishedAt": "2026-05-29T08:46:33.997Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpqrcaqj0016ksv4d3qavt1i",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
         {
           "severity": "BLOCK",
           "kind": "voice-violation",
@@ -8844,21 +9149,16 @@
       "type": "PATTERN",
       "categorySlug": "wood-natural-craft",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-29T10:41:38.117Z",
       "publishedAt": "2026-05-29T09:35:21.908Z",
       "heroMediaId": "cmpqqbikz001amsv4fwf8wapo",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
           "kind": "grade-level-strict",
           "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[4]",
-          "snippet": "If ash is unavailable, sycamore is the easier substitute (softer, smoother grain). Hazel is another option from hedgerow coppice."
+          "snippet": "If ash is unavailable, sycamore is the easier substitute. Hazel is another option from hedgerow coppice."
         }
       ]
     },
@@ -8878,23 +9178,6 @@
           "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[9] > listItem[2] > paragraph[0]",
           "snippet": "Chip-carved spine: simple chip-carving patterns on the spine face are consistent with the scale and add decorative detail to a gift piece."
-        }
-      ]
-    },
-    {
-      "slug": "whittled-lime-relief-panel",
-      "tutorialId": "cmpqq7z2x0000n4v40fbj62x1",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T09:35:31.142Z",
-      "heroMediaId": "cmpqqbkeu001cmsv4fi9k8r5w",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
         }
       ]
     },
@@ -9052,40 +9335,6 @@
       ]
     },
     {
-      "slug": "willow-melon-basket",
-      "tutorialId": "cmpqq8t7h0000nwv4y23k8w3h",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T09:36:10.187Z",
-      "heroMediaId": "cmpqqbo5n001imsv4svfnlo7n",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
-      "slug": "willow-potato-basket",
-      "tutorialId": "cmpqq93ei00008wv48gui1aej",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T09:36:23.400Z",
-      "heroMediaId": "cmpqqbpx7001kmsv42hncmdas",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
       "slug": "wood-fuel-moisture-and-seasoning",
       "tutorialId": "cmpeblf230000icv4fp3al4ys",
       "type": "PATTERN",
@@ -9219,6 +9468,23 @@
       ]
     },
     {
+      "slug": "wooden-boards-for-bookbinding",
+      "tutorialId": "cmpqshpqb0002bsv4yp6vmsyy",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:39:04.823Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
       "slug": "worming-chickens",
       "tutorialId": "cmpe6lr4p0003pgv4l5hnt6do",
       "type": "TECHNIQUE",
@@ -9253,6 +9519,23 @@
           "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[13]",
           "snippet": "Original to homemade.education. The named-gap exercise is a common shape in coaching work on pricing."
+        }
+      ]
+    },
+    {
+      "slug": "x-height-and-nib-width-explained",
+      "tutorialId": "cmpqsil7e0001gwv4w21kion7",
+      "type": "READING",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T10:39:45.559Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },

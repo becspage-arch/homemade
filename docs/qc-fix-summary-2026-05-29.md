@@ -274,3 +274,65 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 10:38:14
+
+Generated: 2026-05-29T10:38:14.132Z
+
+Processed: 67
+PASS: 67
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 10:41:40
+
+Generated: 2026-05-29T10:41:40.045Z
+
+Processed: 219
+PASS: 218
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 19 |
+| grade-level-strict | 4 |
+
+## Still BLOCKED (sample 20)
+
+- whittled-ash-butter-knife: grade-level-strict
+
+---
+
+## Run at 10:41:54
+
+Generated: 2026-05-29T10:41:54.717Z
+
+Processed: 139
+PASS: 138
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 10 |
+| grade-level-strict | 10 |
+
+## Still BLOCKED (sample 20)
+
+- vaccinating-sheep-with-a-clostridial-vaccine: grade-level-strict

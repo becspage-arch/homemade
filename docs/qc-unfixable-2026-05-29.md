@@ -365,3 +365,7 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - worming-chickens grade-level-strict — applied: 
 - write-the-price-you-want-next-to-the-price-you-charge-activity grade-level-strict — applied: 
 - yakitori-chicken grade-level-strict — applied: 
+
+- whittled-ash-butter-knife grade-level-strict — applied: 
+
+- vaccinating-sheep-with-a-clostridial-vaccine grade-level-strict — applied: 
