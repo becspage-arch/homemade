@@ -1,0 +1,141 @@
+{
+  "slug": "setting-up-a-small-quarantine-pen",
+  "title": "Setting up a small quarantine pen",
+  "subtitle": "Where new stock land before they join the flock, and where sick stock go when they need to leave it.",
+  "excerpt": "A working smallholding wants a small pen kept aside for two jobs: holding new sheep, goats, pigs, or poultry away from the resident stock for the first three weeks, and isolating any home animal that needs treatment. A walk through siting, hurdles, biosecurity, and the small list of kit that lives in the pen permanently.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 120,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA Codes of Practice for sheep, goats, and pigs (statutory UK welfare codes). AHDB Beef & Lamb biosecurity factsheet. SAC Consulting Scotland, on-farm quarantine notes. NBU BeeBase guidance on the equivalent quarantine for new hives.",
+  "glossaryTerms": [
+    { "slug": "biosecurity", "term": "Biosecurity", "definition": "The set of routine measures that stop disease, parasites, and weed seeds moving from one part of the holding (or one farm) to another. Hand-washing, dedicated boots for the quarantine pen, and feed kept separate are the working basics." },
+    { "slug": "scab", "term": "Scab", "definition": "Sheep scab; a mite infestation that spreads fast and is notifiable in Scotland. The single most-checked-for problem during a new-sheep quarantine in the UK." },
+    { "slug": "quarantine-drench", "term": "Quarantine drench", "definition": "A wormer dose given to incoming sheep on arrival, using a wormer class the holding has not used recently, to clear any resistant worms the new stock might carry in." },
+    { "slug": "hurdle", "term": "Hurdle", "definition": "A short freestanding panel of welded steel or hardwood, used to build temporary pens and races. Standard UK lengths are 4 ft, 6 ft, and 8 ft. Two clip-pins join one hurdle to the next." }
+  ],
+  "techniqueSlugs": ["drenching-sheep-with-an-oral-wormer", "biosecurity-on-a-smallholding"],
+  "criticalTechniques": [],
+  "aliases": ["isolation pen", "new stock pen", "quarantine area smallholding", "hospital pen"],
+  "recipeTools": [
+    { "slug": "post-rammer", "isOptional": true, "notes": "Only if the corner posts are going in for a permanent pen rather than a hurdle build." },
+    { "slug": "hay-rack", "isOptional": false },
+    { "slug": "livestock-water-trough", "isOptional": false },
+    { "slug": "fencing-pliers", "isOptional": true },
+    { "slug": "muck-fork", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Every smallholding that buys in stock benefits from a quarantine pen. New sheep arriving from a market or a farm sale carry whatever the seller's flock was carrying. New chickens carry whatever the breeder's coop had. New pigs carry whatever the supplier did not bother to mention. A three-week separation before the new stock meet the resident stock gives the keeper time to look, treat, and refuse to mix if something turns up." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The same pen doubles as a hospital pen during the year. A ewe needing a course of antibiotics, a hen on the mend from impacted crop, a pig recovering from a foot injury all want the same thing: a small space away from competition, with food, water, and the keeper visiting twice a day. Setting the pen up once and keeping it ready saves the panicked half-hour at the start of every incident." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Where to put it" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Three things to weigh. Distance from the main flock matters most for " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "biosecurity" } }], "text": "biosecurity" },
+          { "type": "text", "text": ": ideally fifty metres or more from the field gate the resident sheep use, with no shared fence line. Walkable from the house, so a 6 am check does not feel like a hike. Sheltered from the prevailing wind, with hard standing or well-drained ground underneath. The corner of a barn, a paddock against a stone wall, or a small fenced patch behind the holding all work. Avoid the field gate, the muck heap, and anywhere the rest of the flock can stand at the fence and breathe over." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Pen size by species" }] },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Minimum quarantine pen sizes",
+          "body": "Two sheep or goats: 3 by 3 m (9 m squared). Two weaner pigs: 3 by 3 m plus a small arc for shelter. Six adult laying hens: 2 by 2 m run plus a small coop or covered shelter. Two adult rabbits: 1.5 by 1.5 m run with a hutch. These are minimums for a three-week quarantine; longer holds need more space."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to build it from" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For occasional use, four " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hurdle" } }], "text": "hurdles" },
+          { "type": "text", "text": " tied at the corners with orange baler twine give a pen that goes up in twenty minutes and packs away in five. For regular use, a permanent timber-post-and-stock-wire pen is worth the day's work to put in: corner posts, a single gate, stock wire with two strands of barbed wire above for sheep, an electric line for pigs. Either way, leave a wide single gate (not double) and a small slip-pen entrance the keeper steps through without opening the main gate. The slip-pen entrance is where dedicated quarantine boots and a foot-dip live." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "The fixed kit in the pen" }] },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A hay rack at the back wall." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A galvanised water trough or a clipped-on water bucket on the opposite side." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A small shelter (a pig arc, a coop, a low timber lean-to) sized to species." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A bedding store: a tarpaulin-covered straw bale at one corner is enough." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A muck fork hanging on the gate post, used only in the pen and stored there." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A foot-dip tray at the entrance with a strong veterinary disinfectant, refreshed weekly when the pen is in use." }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Biosecurity routine when stock is in the pen" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Visit the quarantine pen last on the daily round, never first. Keep a pair of wellies and an old waterproof in a sealed tub at the entrance and change into them at the slip-pen step. Wash hands at the house tap before and after each visit. Feed and bedding for the quarantine pen come from a separate sub-bag, not the main store. Mucking-out goes into a dedicated heap at least twenty metres from the main muck heap, and that heap waits six months before any use." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "The three-week protocol for new sheep" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "On arrival day: pen, water, hay, and a hands-off twelve hours so the stock settles. Day one: a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "quarantine-drench" } }], "text": "quarantine drench" },
+          { "type": "text", "text": " using a wormer class the holding has not used in the last twelve months. Day three to five: a close look-over for " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scab" } }], "text": "scab" },
+          { "type": "text", "text": ", lameness, condition, fleece state, and eye colour against the gum (the FAMACHA card check). Day seven to ten: a foot trim and a footbath if anything looked off in the first inspection. Day fourteen: a second worm-egg-count sample to the vet. Day twenty-one: if everything is clean, the new stock joins the main flock at the next quiet moment. If anything is unclear, hold longer and re-test." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "The shorter protocol for hospital use" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "When the pen is in use for a home animal under treatment, the biosecurity routine is the same but the timeline is set by the condition rather than a fixed three weeks. Most home cases (impacted crop, foot rot, mastitis under treatment) clear inside a week. The animal returns to the flock once the cause is resolved and she has stood her own for three steady days." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Cleaning between uses" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Strip the bedding out and fork it onto the dedicated heap. Scrape the floor of the shelter, wash down with a veterinary detergent, and let dry. Wash the feeders, the trough, and the muck fork. Refresh the foot dip. Leave the pen empty and open to the air for a fortnight before the next use if possible; the daylight, the drying, and the rest do as much for the next animal as the disinfectant." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you might have found" }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Quarantine pen problems",
+          "intro": "What can go wrong during a quarantine hold and how to recover.",
+          "items": [
+            { "symptom": "Pen built right against the resident-flock field fence.", "cause": "The site chosen was too convenient.", "fix": "Move the pen. A shared fence line means nose-to-nose contact and the quarantine is functionally useless. Even a 3 metre gap with a closed alley between makes a real difference." },
+            { "symptom": "Resident dog has been crossing the quarantine pen daily.", "cause": "Dog routes were not re-planned when the pen was set up.", "fix": "Confine the dog away from the pen for the hold. Dogs carry mud, dung, and parasites between pens as efficiently as any boot." },
+            { "symptom": "New ewe scoured on day three of the hold.", "cause": "Diet change, transport stress, or a wormer kicking in.", "fix": "Hold the position; do not move her on. Take a dung sample to the vet for a faecal egg count and an oocyst check (for coccidia). Adjust diet if dung is still loose after 48 hours." },
+            { "symptom": "Pen is sodden underfoot after a wet fortnight.", "cause": "The site drains badly and the bedding cannot keep up.", "fix": "Lift the stock onto fresh hard standing (a clean barn corner) while the original pen dries and gets a stone or hardcore base. A long-term wet pen is a foot rot factory." },
+            { "symptom": "Bird in the quarantine pen has died and the cause is not obvious.", "cause": "Could be many things; could be something contagious.", "fix": "Bag the carcass, store cool, contact the vet for a post-mortem. Do not bring the rest of the stock into the main flock until the cause is known." }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "When the pen is empty" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Most of the year, the quarantine pen sits empty. Keep it that way: do not store hay, the trailer, or seasonal kit in it. An empty pen ready to use the same evening is what makes the difference when a new pair of pigs arrives unannounced or a hen comes out of the coop limping. The half-hour of monthly tidying is what keeps the pen useful." }
+        ]
+      }
+    ]
+  }
+}

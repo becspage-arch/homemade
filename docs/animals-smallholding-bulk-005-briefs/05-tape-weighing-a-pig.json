@@ -1,0 +1,144 @@
+{
+  "slug": "tape-weighing-a-pig",
+  "title": "Tape-weighing a pig",
+  "subtitle": "The heart-girth-and-length calculation that gives a useful weight without a scale.",
+  "excerpt": "A small holding rarely runs to a livestock weighbridge. The standard alternative is a tape measure around the heart girth and along the back, fed into a calculation that lands within about 5 per cent of the true weight. A walk through where to measure, the formula, the booking decision it supports, and what changes when the pig is below 25 kg or above 130.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 15,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Pork, on-farm weight estimation factsheet. SAC Consulting Scotland, weaner-grower weight tables. Pig Veterinary Society notes on Wright's formula for liveweight estimation. River Cottage Handbook 14 (Pigs), butchering and slaughter chapter (weight reference).",
+  "glossaryTerms": [
+    { "slug": "heart-girth", "term": "Heart girth", "definition": "The circumference of a pig's body taken in a complete loop just behind the front legs, where the rib cage is widest. The single most important measurement in any tape-weighing formula." },
+    { "slug": "deadweight", "term": "Deadweight", "definition": "The weight of the carcass after slaughter, with head, hooves, and gut removed. For a UK fattening pig, deadweight is typically 72 to 75 per cent of liveweight." },
+    { "slug": "weaner", "term": "Weaner", "definition": "A young pig from weaning (around eight weeks) to the start of the fattening period (around 12 weeks). Most outdoor smallholding pigs come home as weaners at 20 to 30 kg." }
+  ],
+  "techniqueSlugs": ["catching-and-loading-a-pig", "abattoir-booking-and-movement-paperwork"],
+  "criticalTechniques": [],
+  "aliases": ["pig weighing without a scale", "estimating pig weight", "Wright's formula pig", "tape measure pig weight"],
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false, "notes": "A flexible cloth tailor's tape works better than a stiff steel tape for the heart-girth loop." }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A smallholder fattening a pair of pigs over the summer needs a clear answer to one question by late August: are they ready for the abattoir slot. The booking is months out, the abattoir wants a target liveweight on the form, and finding out on the day that the pig is 95 kg rather than the booked 80 puts the cuts in the wrong category and the kill fee in the wrong band. A scale on the holding is rare. The tape works." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tape-weighing rests on a simple fact. Most pigs of common body shape carry their weight in much the same proportions. So a tape around the chest and along the back lines up with the true weight closely. The method is older than the modern outdoor pig. It still lands within about 5 per cent on a pig in normal condition." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "When to do this" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Three points in the arc. At arrival home, to check the new weaners against what the seller said (and against your feed-conversion plan for the summer). At the midpoint, six to eight weeks in, to check growth against the curve. At eight to ten days out from the abattoir slot, to confirm she is on target and to make a final call on whether she goes on the booked day or moves slot." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A flexible cloth or fibreglass tape measure, at least 200 cm long." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A pig in a small pen or against a corner where she will stand still." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A bucket of feed in someone else's hands to keep her head down and her body square." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A pencil and the holding record book to write the figure down." }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Where to measure the heart girth" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heart-girth" } }], "text": "heart girth" },
+          { "type": "text", "text": " is a complete loop around the body just behind the front legs, at the widest point of the ribcage. Slip the tape under the belly first, then walk round to the back and pass it over the spine. The tape must lie flat, not twisted, and the pig should be standing square (head down, weight on all four feet). Read at the lower side of the spine where the tape meets itself. Note the figure in centimetres." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Where to measure the length" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Length runs from the centre of the forehead, between the ears, along the back, to the base of the tail (the spot where it joins the rump, not the tip). Lay the tape flat along the spine. Read in centimetres. If she shakes mid-measure, re-read; do not estimate." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "The formula" }] },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Tape-weight calculation (metric)",
+          "body": "Liveweight in kg = (heart girth in cm) squared, multiplied by length in cm, divided by 14,400. Worked example: a pig with a heart girth of 110 cm and a length of 100 cm: 110 x 110 = 12,100. 12,100 x 100 = 1,210,000. 1,210,000 / 14,400 = 84 kg (rounded to the nearest kg). For an Imperial-only book, the same calculation in inches divides by 400 instead of 14,400."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Run the numbers twice and write the result alongside the date in the holding book. Across a growing season the line of figures gives a growth curve in front of you, which is more useful than any single reading." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What the figure tells you" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The tape gives a liveweight. The cuts you take home depend on the carcass " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deadweight" } }], "text": "deadweight" },
+          { "type": "text", "text": ", which is around 72 to 75 per cent of liveweight on a standard outdoor pig at slaughter conditioning. A 90 kg liveweight pig will hang on the rail at around 65 to 68 kg deadweight. The abattoir will weigh on the hook and bill you in deadweight terms; knowing the multiplier saves a surprise when the cuts come back." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "When the formula drifts" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two cases. A very young " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "weaner" } }], "text": "weaner" },
+          { "type": "text", "text": " under 25 kg has not finished filling out behind the shoulder, so the heart girth reads light for her weight. Use a small bathroom scale instead at that age (most weaners will tolerate being held by an adult standing on a scale, with the difference between the two figures giving the pig). A very heavy fattener over 130 kg starts to lay down belly fat that pulls the heart girth wider without adding proportional length, so the formula reads heavy. Subtract about 5 per cent above 130 kg for a working estimate." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Body shape also matters. Pedigree breeds with shorter backs (Berkshire, Tamworth on its day) read lighter on tape than the modern commercial hybrids. After a few measurements against the abattoir's deadweight ticket you will know the offset for your breed and can adjust." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Booking the slot" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Most small UK abattoirs work to a liveweight band on the booking form. The standard pork band runs roughly 60 to 85 kg liveweight; bacon band runs 90 to 120 kg. If the tape reads 70 kg eight weeks out and the booking is for pork at 80 kg in ten weeks, the math is fine. If the tape reads 85 kg eight weeks out and the booking is for pork, she is heading for the bacon band sooner than planned and the slot wants moving forward or the booking changing." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you might have found" }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common tape-weighing issues",
+          "intro": "Problems that come up the first time the tape goes round, and how to handle them.",
+          "items": [
+            { "symptom": "Pig will not stand still long enough for a clean read.", "cause": "She is bored or unfed, with no reason to stand square.", "fix": "Have a second person hold a feed bucket low and steady at her head height. Most pigs hold position for as long as the bucket is still slightly out of reach." },
+            { "symptom": "Heart-girth figure changes by 5 cm between two reads.", "cause": "Tape is twisted under the belly, or the pig is curving her back to dodge.", "fix": "Re-loop the tape, check it lies flat under the front legs, and read again. Take the average if the second read is still 2-3 cm out." },
+            { "symptom": "Liveweight figure is much lower than the abattoir's later deadweight ticket suggests.", "cause": "Heart girth measured too far back, behind the widest point of the ribcage.", "fix": "Next time, take the tape closer to the front legs (within a hand's width). The widest point of the ribcage is just behind the elbow." },
+            { "symptom": "Two pigs in the same pen, only need one measured.", "cause": "The other will lean in and confuse the tape.", "fix": "Pen-divide with a pig board, or weigh both and write down both figures while you are at it." },
+            { "symptom": "The tape gives the same reading three weeks running on a weaner-stage pig.", "cause": "She has stopped growing, which is not a tape problem.", "fix": "Look at diet and gut health. A weaner stalling at 8-10 weeks is usually a worm burden, a feed change taken badly, or a long bout of scour. Address the cause; the tape will move with her." }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Recording" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "One row in the holding book each measurement, with date, ear tag number, heart girth, length, calculated liveweight, and the body-condition note. By the day of the abattoir booking the row above the last one tells you what the pig was a fortnight ago and the curve says whether the booked slot still fits. That is the whole point of the tape." }
+        ]
+      }
+    ]
+  }
+}

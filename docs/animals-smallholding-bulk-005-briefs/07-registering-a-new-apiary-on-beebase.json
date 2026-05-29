@@ -1,0 +1,127 @@
+{
+  "slug": "registering-a-new-apiary-on-beebase",
+  "title": "Registering a new apiary on BeeBase",
+  "subtitle": "The free UK system that puts a regional bee inspector on your side.",
+  "excerpt": "BeeBase is the National Bee Unit's voluntary register of UK apiaries. Registration is free, takes ten minutes online, and gets you free advice from your regional inspector plus an alert if a notifiable disease turns up nearby. A walk through what you need to register, what to expect from the first inspection, and the small ongoing job of keeping the entry up to date.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 15,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "National Bee Unit BeeBase guidance (nationalbeeunit.com), registration page and FAQ. BBKA member guidance on apiary registration. Bee Diseases and Pests Control (England) Order 2006, as amended (legal basis for notifiable disease control).",
+  "glossaryTerms": [
+    { "slug": "beebase", "term": "BeeBase", "definition": "The National Bee Unit's free online register of UK apiaries and beekeepers. The route by which the regional bee inspector contacts you about local disease alerts and inspections." },
+    { "slug": "afb", "term": "AFB", "definition": "American foul brood, a serious bacterial disease of honey bee larvae. Notifiable under UK law; confirmed cases must be reported and the affected colony is usually destroyed." },
+    { "slug": "efb", "term": "EFB", "definition": "European foul brood, a less aggressive bacterial disease of honey bee larvae. Also notifiable; control measures include shook-swarm or antibiotic treatment under the bee inspector's direction." },
+    { "slug": "apiary", "term": "Apiary", "definition": "A site where hives are kept. A keeper with hives in two locations registers each as a separate apiary on BeeBase." }
+  ],
+  "techniqueSlugs": ["shook-swarm-method-for-bees"],
+  "criticalTechniques": [],
+  "aliases": ["BeeBase registration", "registering hives with the NBU", "joining BeeBase"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Keeping bees in the UK does not require a licence. There is no statutory duty to register the hives. So the question every new beekeeper asks at some point is whether registering on BeeBase is worth the ten minutes. The plain answer is yes, and the reasoning is worth a short read." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "BeeBase is run by the National Bee Unit, part of the Animal and Plant Health Agency. It is free. The register is voluntary. The keeper gives a postal address, the apiary location, and a few details about the hives. In return, the regional bee inspector knows you are there." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you get from registering" }] },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "An email alert when a notifiable disease is confirmed within three miles of your apiary." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "An offer of a free apiary inspection from your regional bee inspector. Most inspectors carry a year of summer visits; new keepers are usually visited within the first two seasons." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Access to the free Beekeeper's Toolkit. The Toolkit is a set of PDFs covering disease identification and seasonal management." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A regional newsletter, usually quarterly, with what to look out for in the coming weeks." }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need before you sign up" }] },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Your postal address, and any landowner permission you hold for the apiary site (verbal is fine; written easier later)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A grid reference or accurate latitude and longitude for the apiary location. A six-figure OS grid reference is fine; the NBU map will pin the location automatically once you confirm." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The number of colonies you currently keep and the hive type (National, WBC, Commercial, Langstroth, Top-bar)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "An email address you check. Disease alerts go by email." }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "The registration steps" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Go to nationalbeeunit.com and click Register on " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "beebase" } }], "text": "BeeBase" },
+          { "type": "text", "text": ". Create the account with your email and a password. The first form takes contact details. The second adds the first " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "apiary" } }], "text": "apiary" },
+          { "type": "text", "text": " (location, colony count, hive type). Submit. A confirmation email arrives within a few minutes; the regional bee inspector is notified in the background and will email or telephone within a few weeks to introduce themselves." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Adding extra apiaries" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Each separate site where hives are kept gets its own apiary entry. Bees from a single apiary count as one local population for disease-alert purposes; bees in two locations want both registered so the inspector knows where to look if a problem turns up in either neighbourhood. The add-apiary form on BeeBase repeats the same fields as the first registration." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What an inspector visit looks like" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The inspector arrives on a day arranged in advance, wearing their own suit. They open each colony in turn, look through the brood for the visible signs of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "afb" } }], "text": "AFB" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "efb" } }], "text": "EFB" },
+          { "type": "text", "text": ", check the queen status, comment on hive hygiene, and answer any questions about colony management. Most visits last under an hour for a small apiary and end with the inspector giving a verbal summary plus an emailed report. New keepers learn more from a single inspector visit than from a season of reading." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Keeping the entry up to date" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Log in once a year, usually after the autumn feed when you know the colony count going into winter, and update the colony number. If a colony has been lost or a new apiary site has been started, update those too. Move house, and the postal address gets updated. The five minutes a year is what makes the alerts continue to be relevant." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What an alert looks like" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An alert email arrives when a notifiable disease is confirmed within three miles. It names the disease, the area, and the recommended actions: usually a closer brood inspection on the next warm day, and a request to report any suspect symptoms to the inspector. The alert is not panic; it is a heads-up so the next inspection is done with the right things in mind." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you might wonder" }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common questions about registering",
+          "intro": "Questions that come up the first time round and the working answers.",
+          "items": [
+            { "symptom": "Will registering bring any obligations or charges?", "cause": "Worry about a hidden cost.", "fix": "No. BeeBase registration is free and voluntary. There is no annual fee, no required inspections, no obligation to attend training. The only commitment is to keep the entry up to date and to report any suspected notifiable disease." },
+            { "symptom": "I do not want the public to know where my hives are.", "cause": "Concern about site privacy.", "fix": "The map of registered apiaries is only visible to NBU staff and the registered beekeeper. The public cannot see your apiary location." },
+            { "symptom": "I have only one colony in a back garden; is it worth it?", "cause": "Sense that BeeBase is for larger keepers.", "fix": "Yes. The disease-alert system works the same for one hive as for a hundred, and a small back-garden colony is just as vulnerable to AFB or EFB drifting in from a nearby apiary." },
+            { "symptom": "The inspector turned up unannounced.", "cause": "Disease alert in the area or routine surveillance visit.", "fix": "Inspectors can visit registered apiaries with reasonable notice. If the visit was a surprise, ask politely whether you can have a date for next time; most inspectors will accommodate. Refusing a visit is possible but loses you the advantages of the relationship." },
+            { "symptom": "I have moved my hives to a new field; what do I do?", "cause": "Apiary location has changed.", "fix": "Log into BeeBase. Update the apiary location. If the new field sits in another region, the new regional inspector takes over from the old one." }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Worth the ten minutes" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A small back-garden apiary that has been registered and inspected once is a more confident apiary. The keeper has met the inspector, knows the email address to use if something looks wrong, and gets the local disease intelligence that the unregistered keeper next door does not. For ten minutes online and no annual cost, BeeBase is the most useful sign-up in UK beekeeping." }
+        ]
+      }
+    ]
+  }
+}
