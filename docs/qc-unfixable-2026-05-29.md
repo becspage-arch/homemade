@@ -637,3 +637,24 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - wet-felted-soap-wrap hero-missing — applied: hero-fill-deferred-to-standalone-script
 - wheel-oiling-and-basic-maintenance hero-missing — applied: hero-fill-deferred-to-standalone-script
 - woven-wall-hanging-gradient-weft hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- botanical-impression-slab-tile hero-missing — applied: hero-fill-deferred-to-standalone-script
+- paper-clay-christmas-ornament-set hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- paper-clay-pressed-flower-frame hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- polymer-clay-faux-agate-pendant grade-level-strict — applied: 
+- polymer-clay-miniature-cacti-trio grade-level-strict — applied: 
+- saggar-firing-basics grade-level-strict — applied: 
+- slab-built-geometric-planter-with-feet grade-level-strict — applied: 
+- throwing-a-set-of-matching-soup-bowls grade-level-strict — applied: 
+- wood-ash-glaze-surface-decoration grade-level-strict — applied: 
+
+- building-a-pig-arc hero-missing — applied: hero-fill-deferred-to-standalone-script
+- foot-bathing-sheep hero-missing — applied: hero-fill-deferred-to-standalone-script
+- goat-fencing-and-escape-prevention hero-missing — applied: hero-fill-deferred-to-standalone-script
+- growing-fodder-for-meat-rabbits hero-missing — applied: hero-fill-deferred-to-standalone-script
+- keeping-quail-on-a-smallholding hero-missing — applied: hero-fill-deferred-to-standalone-script
+- livestock-market-day-checklist hero-missing — applied: hero-fill-deferred-to-standalone-script
+- managing-ducks-for-egg-production hero-missing — applied: hero-fill-deferred-to-standalone-script
+- rabbit-hutch-and-run-siting hero-missing — applied: hero-fill-deferred-to-standalone-script
+- rabbit-weaning-and-doe-rebreeding hero-missing — applied: hero-fill-deferred-to-standalone-script
+- swarm-prevention-in-spring hero-missing — applied: hero-fill-deferred-to-standalone-script

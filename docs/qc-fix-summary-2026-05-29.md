@@ -1260,3 +1260,130 @@ SKIPPED: 0
 - wet-felted-cat-toy: hero-missing
 - wet-felted-soap-wrap: hero-missing
 - wheel-oiling-and-basic-maintenance: hero-missing
+
+---
+
+## Run at 22:29:36
+
+Generated: 2026-05-29T22:29:36.805Z
+
+Processed: 120
+PASS: 111
+STILL_BLOCKED: 9
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 36 |
+| body-missing-method | 18 |
+| hero-missing | 9 |
+
+## Still BLOCKED (sample 20)
+
+- botanical-impression-slab-tile: hero-missing
+- paper-clay-christmas-ornament-set: hero-missing, grade-level-strict
+- paper-clay-pressed-flower-frame: hero-missing, grade-level-strict
+- polymer-clay-faux-agate-pendant: grade-level-strict
+- polymer-clay-miniature-cacti-trio: grade-level-strict
+- saggar-firing-basics: grade-level-strict
+- slab-built-geometric-planter-with-feet: grade-level-strict
+- throwing-a-set-of-matching-soup-bowls: grade-level-strict
+- wood-ash-glaze-surface-decoration: grade-level-strict
+
+---
+
+## Run at 22:31:10
+
+Generated: 2026-05-29T22:31:10.976Z
+
+Processed: 4268
+PASS: 4259
+STILL_BLOCKED: 9
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 31 |
+| hero-missing | 9 |
+| body-missing-method | 2 |
+
+## Still BLOCKED (sample 20)
+
+- botanical-impression-slab-tile: hero-missing
+- paper-clay-christmas-ornament-set: hero-missing, grade-level-strict
+- paper-clay-pressed-flower-frame: hero-missing, grade-level-strict
+- polymer-clay-faux-agate-pendant: grade-level-strict
+- polymer-clay-miniature-cacti-trio: grade-level-strict
+- saggar-firing-basics: grade-level-strict
+- slab-built-geometric-planter-with-feet: grade-level-strict
+- throwing-a-set-of-matching-soup-bowls: grade-level-strict
+- wood-ash-glaze-surface-decoration: grade-level-strict
+
+---
+
+## Run at 22:33:04
+
+Generated: 2026-05-29T22:33:04.476Z
+
+Processed: 4259
+PASS: 4259
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 23:02:08
+
+Generated: 2026-05-29T23:02:08.890Z
+
+Processed: 81
+PASS: 71
+STILL_BLOCKED: 10
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 30 |
+| body-missing-method | 8 |
+| grade-level-strict | 4 |
+
+## Still BLOCKED (sample 20)
+
+- building-a-pig-arc: hero-missing
+- foot-bathing-sheep: hero-missing
+- goat-fencing-and-escape-prevention: hero-missing
+- growing-fodder-for-meat-rabbits: hero-missing
+- keeping-quail-on-a-smallholding: hero-missing
+- livestock-market-day-checklist: hero-missing
+- managing-ducks-for-egg-production: hero-missing
+- rabbit-hutch-and-run-siting: hero-missing
+- rabbit-weaning-and-doe-rebreeding: hero-missing
+- swarm-prevention-in-spring: hero-missing
+
+---
+
+## Run at 23:06:30
+
+Generated: 2026-05-29T23:06:30.218Z
+
+Processed: 64
+PASS: 64
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

@@ -1,10 +1,16 @@
 {
-  "generatedAt": "2026-05-29T21:09:18.320Z",
-  "totalScanned": 4787,
+  "generatedAt": "2026-05-29T23:07:21.147Z",
+  "totalScanned": 4898,
   "passCount": 0,
-  "blockCount": 121,
+  "blockCount": 130,
   "warnOnlyCount": 0,
   "perCategory": {
+    "pottery-ceramics": {
+      "total": 9,
+      "pass": 0,
+      "block": 9,
+      "warnOnly": 0
+    },
     "wood-natural-craft": {
       "total": 27,
       "pass": 0,
@@ -37,12 +43,36 @@
     }
   },
   "perRuleKind": {
+    "hero-missing": 3,
+    "voice-violation": 68,
     "body-missing-method": 25,
-    "voice-violation": 59,
     "body-missing-orientation": 1,
-    "grade-level-strict": 106
+    "grade-level-strict": 116
   },
   "verdicts": [
+    {
+      "slug": "botanical-impression-slab-tile",
+      "tutorialId": "cmprhtey40000y4v4petsrpe0",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T22:28:46.974Z",
+      "publishedAt": "2026-05-29T22:28:17.844Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        }
+      ]
+    },
     {
       "slug": "bridle-joint-technique",
       "tutorialId": "cmpr4blyk0002j0v47epvct9r",
@@ -681,6 +711,60 @@
       ]
     },
     {
+      "slug": "paper-clay-christmas-ornament-set",
+      "tutorialId": "cmprhtahg0000osv4xlboghrl",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T22:29:31.158Z",
+      "publishedAt": "2026-05-29T22:28:12.212Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[13] > listItem[1] > paragraph[0]",
+          "snippet": "Press dried herb sprigs into the surface before cutting for botanical-imprint ornaments."
+        }
+      ]
+    },
+    {
+      "slug": "paper-clay-pressed-flower-frame",
+      "tutorialId": "cmprht7xm0000zov4kbqnem2l",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T22:29:31.553Z",
+      "publishedAt": "2026-05-29T22:28:08.817Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[3] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[13] > listItem[1] > paragraph[0]",
+          "snippet": "Make a set of three graduating frames in different sizes using the same botanical arrangement for a wall grouping."
+        }
+      ]
+    },
+    {
       "slug": "pole-lathe-turned-bobbin",
       "tutorialId": "cmpr4qpr00000s4v44mi7owm8",
       "type": "PATTERN",
@@ -694,6 +778,58 @@
           "severity": "BLOCK",
           "kind": "body-missing-method",
           "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        }
+      ]
+    },
+    {
+      "slug": "polymer-clay-faux-agate-pendant",
+      "tutorialId": "cmprhmrmw0001hsv47nxkaubg",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T22:29:33.116Z",
+      "publishedAt": "2026-05-29T22:26:31.771Z",
+      "heroMediaId": "cmprhsv85001ef0v4shsk3ylu",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[17] > listItem[0] > paragraph[0]",
+          "snippet": "Add a small inclusion of mica-powder-dusted clay in the accent layer for a metallic shimmer within the banding."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[17] > listItem[2] > paragraph[0]",
+          "snippet": "Use earthy red and terracotta with translucent for a carnelian agate effect instead of the cooler teal and white version."
+        }
+      ]
+    },
+    {
+      "slug": "polymer-clay-miniature-cacti-trio",
+      "tutorialId": "cmprhn09f0000s8v4jhw9hxrl",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T22:29:33.761Z",
+      "publishedAt": "2026-05-29T22:26:41.937Z",
+      "heroMediaId": "cmprhsxkd001mf0v4329n2d7o",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > paragraph[13] > text",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[17] > listItem[2] > paragraph[0]",
+          "snippet": "Make succulent-style pieces with flat, layered petal forms radiating from a central point as an alternative to cacti."
         }
       ]
     },
@@ -897,6 +1033,57 @@
           "severity": "BLOCK",
           "kind": "body-missing-method",
           "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        }
+      ]
+    },
+    {
+      "slug": "saggar-firing-basics",
+      "tutorialId": "cmprhosd90000ykv4oz2yv56c",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T22:29:34.360Z",
+      "publishedAt": "2026-05-29T22:24:25.227Z",
+      "heroMediaId": "cmprhq3kj001itkv49qf8m8pg",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[5] > listItem[2] > paragraph[0]",
+          "snippet": "Combustible packing materials: coarse sawdust, coarse salt, dried seaweed, or copper carbonate."
+        }
+      ]
+    },
+    {
+      "slug": "slab-built-geometric-planter-with-feet",
+      "tutorialId": "cmprhlyjb0000wgv44vtmlv89",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T22:29:34.970Z",
+      "publishedAt": "2026-05-29T22:25:57.178Z",
+      "heroMediaId": "cmprht3wb0024f0v4yefaqf3w",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[18] > listItem[0] > paragraph[0]",
+          "snippet": "Score a geometric pattern into the side panels at the leather-hard stage using the needle tool before assembly."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[18] > listItem[2] > paragraph[0]",
+          "snippet": "Finish with a wash of watered-down acrylic paint in white or terracotta before the clear seal coat for a coloured surface."
         }
       ]
     },
@@ -2236,6 +2423,53 @@
       ]
     },
     {
+      "slug": "throwing-a-set-of-matching-soup-bowls",
+      "tutorialId": "cmprhoal50000qkv4mjgqt6lg",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T22:29:35.936Z",
+      "publishedAt": "2026-05-29T22:24:02.182Z",
+      "heroMediaId": "cmprhti5v002kf0v42mgz3bvp",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[1] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > heading[3] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[4] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[6] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[14]",
+          "snippet": "Cone 6 stoneware with a food-safe glaze is microwave-safe and dishwasher-safe once the glaze is verified as non-crazing."
+        }
+      ]
+    },
+    {
       "slug": "touched-out-the-science-and-the-soft-answer",
       "tutorialId": "cmpqclipc0000a4v4j8iwbg80",
       "type": "PRACTICE",
@@ -2742,6 +2976,31 @@
           "severity": "BLOCK",
           "kind": "body-missing-method",
           "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        }
+      ]
+    },
+    {
+      "slug": "wood-ash-glaze-surface-decoration",
+      "tutorialId": "cmprhovc50002z8v4mzqgxnqj",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T22:29:36.574Z",
+      "publishedAt": "2026-05-29T22:24:29.083Z",
+      "heroMediaId": "cmprhttcl0032f0v4pvuukvwk",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[3] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[3]",
+          "snippet": "Wood ash application suits functional stoneware where a natural, irregular surface is desirable. Results are not uniform. Each piece fires d"
         }
       ]
     },
