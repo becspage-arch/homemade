@@ -1,1305 +1,370 @@
 {
-  "generatedAt": "2026-05-29T15:50:49.055Z",
-  "totalScanned": 4552,
-  "passCount": 0,
-  "blockCount": 78,
-  "warnOnlyCount": 0,
+  "generatedAt": "2026-05-29T17:12:36.170Z",
+  "totalScanned": 162,
+  "passCount": 106,
+  "blockCount": 0,
+  "warnOnlyCount": 56,
   "perCategory": {
-    "mindset": {
-      "total": 78,
-      "pass": 0,
-      "block": 78,
-      "warnOnly": 0
+    "pottery-ceramics": {
+      "total": 162,
+      "pass": 106,
+      "block": 0,
+      "warnOnly": 56
     }
   },
   "perRuleKind": {
-    "body-missing-orientation": 1,
-    "grade-level-strict": 81,
-    "voice-violation": 31
+    "voice-violation": 82
   },
   "verdicts": [
     {
-      "slug": "cancel-one-thing-this-week-with-kindness",
-      "tutorialId": "cmppsol9j0000f0v4fh8l2tsh",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:46.463Z",
-      "publishedAt": "2026-05-29T14:38:32.322Z",
-      "heroMediaId": "cmpr167rj0002u8v47y8yct4k",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-orientation",
-          "message": "No orientation paragraph (first paragraph empty or under 12 words)"
-        }
-      ]
-    },
-    {
-      "slug": "expansion-continues-with-ease-affirmation",
-      "tutorialId": "cmpccjduu00008sv4c282epce",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:49:55.447Z",
-      "publishedAt": "2026-05-19T08:03:42.419Z",
-      "heroMediaId": "cmpmfwy31003c2gv4orpv5o4a",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 13.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > pullQuote[3] > paragraph[0]",
-          "snippet": "I allow expansion to continue with ease, generosity, and alignment."
-        }
-      ]
-    },
-    {
-      "slug": "five-senses-scan-three-minutes",
-      "tutorialId": "cmpr0qqyh0000q8v4kx0a33bb",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:43:49.863Z",
-      "publishedAt": "2026-05-29T14:38:44.207Z",
-      "heroMediaId": "cmpr16ag80008u8v4qlgn6h23",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[10]",
-          "snippet": "This technique is used in mindfulness and therapy. Script by homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "giving-feels-expansive-and-fearless-affirmation",
-      "tutorialId": "cmpbufihg000050v4syx6gixt",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:50:25.793Z",
-      "publishedAt": "2026-05-18T23:36:48.706Z",
-      "heroMediaId": "cmpmfxlux00482gv4atzqjpin",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 12.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > pullQuote[3] > paragraph[0]",
-          "snippet": "I allow giving to feel expansive and fearless, knowing every act of generosity multiplies my wealth."
-        }
-      ]
-    },
-    {
-      "slug": "i-steward-wealth-with-purpose-and-joy",
-      "tutorialId": "cmpc7mwbt0000psv4mhhqw3ls",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:50:56.033Z",
-      "publishedAt": "2026-05-19T05:46:28.233Z",
-      "heroMediaId": "cmpmg2t9300bg2gv4ligpnfft",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > pullQuote[3] > paragraph[0]",
-          "snippet": "I joyfully steward wealth that blesses my family, my community, and future generations."
-        }
-      ]
-    },
-    {
-      "slug": "long-exhale-breath-for-perimenopause-anxiety",
-      "tutorialId": "cmpr0rdmk000048v4pewfk1ov",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
+      "slug": "air-dry-clay-herb-markers",
+      "tutorialId": "cmpr4san700000ov4da7yi4a3",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
       "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T14:39:15.565Z",
-      "heroMediaId": "cmpr16iqs000ou8v4er83av5h",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[9]",
-          "snippet": "Extended exhale breathing draws on the vagal brake. A long, slow exhale activates the body's calming system. This is public-domain physiolog"
-        }
-      ]
+      "publishedAt": "2026-05-29T16:58:39.378Z",
+      "heroMediaId": "cmpr656ej0000wov4sbdyafji",
+      "findings": []
     },
     {
-      "slug": "my-anxiety-is-information-not-identity",
-      "tutorialId": "cmpcyjqfn00001kv4hzyzq5e6",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:44:20.682Z",
-      "publishedAt": "2026-05-29T14:39:24.348Z",
-      "heroMediaId": "cmpr16k8v000su8v4b3a64bln",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[1]",
-          "snippet": "This affirmation is for restoring the gap between the experience and the experiencer."
-        }
-      ]
-    },
-    {
-      "slug": "new-moon-full-moon-two-monthly-anchors",
-      "tutorialId": "cmpr13bii0000c8v4d5izwv5p",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:44:23.865Z",
-      "publishedAt": "2026-05-29T14:39:49.745Z",
-      "heroMediaId": "cmpr16rdd0014u8v4iwft63vo",
+      "slug": "applying-pva-sealer-and-varnish",
+      "tutorialId": "cmpez46q70000ssv4z0n31d6y",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-25T17:10:32.059Z",
+      "publishedAt": "2026-05-21T04:11:16.853Z",
+      "heroMediaId": "cmplk5yul000aokv4i2hqfiy3",
       "findings": [
         {
           "severity": "WARN",
           "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
-          "path": "sourceNotes",
-          "snippet": "Anchor"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[12]",
-          "snippet": "By homemade.education. The lunar cycle as a marker appears across many cultural traditions. This version is secular."
-        }
-      ]
-    },
-    {
-      "slug": "reclaiming-homemaker-as-feminist-identity",
-      "tutorialId": "cmpdswh7p0000pgv499q7jwn1",
-      "type": "READING",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:50.308Z",
-      "publishedAt": "2026-05-20T08:29:33.325Z",
-      "heroMediaId": "cmpmg88jw00is2gv44iw3szkk",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "A reading on what happens when we treat running a home as a consolation prize. The cultural messaging that homemaking is lesser work is so p"
-        }
-      ]
-    },
-    {
-      "slug": "sudden-vs-anticipated-loss",
-      "tutorialId": "cmpr0seym0000e0v4okzejynn",
-      "type": "READING",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:01.417Z",
-      "publishedAt": "2026-05-29T14:40:08.744Z",
-      "heroMediaId": "cmpr16w8s001eu8v4uzkshq4z",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[10]",
-          "snippet": "Drawn from bereavement research. No single source. Framing by homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-always-behind",
-      "tutorialId": "cmpr13syz0000s4v41q2m3wma",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:03.602Z",
-      "publishedAt": "2026-05-29T14:40:12.372Z",
-      "heroMediaId": "cmpr16xv2001gu8v4suoay1g2",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-bold-action-without-fear",
-      "tutorialId": "cmpbhyc0b0000d8v4kr06qhef",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:15.040Z",
-      "publishedAt": "2026-05-18T17:47:31.764Z",
-      "heroMediaId": "cmpmgab9t00lg2gv4lke3pjtp",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though I sometimes hesitate when action is needed, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-calm-mornings",
-      "tutorialId": "cmpbhyewp0000gsv4uko0n6jr",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:15.371Z",
-      "publishedAt": "2026-05-18T17:47:35.522Z",
-      "heroMediaId": "cmpmgae2y00lk2gv43e4nuls5",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "body > bulletList[12] > listItem[0] > paragraph[0] > text",
-          "snippet": "fall"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "body > bulletList[16] > listItem[7] > paragraph[0] > text",
-          "snippet": "fall"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[5] > listItem[0] > paragraph[0]",
-          "snippet": "Even though my mornings often begin in a blur of movement, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-chronic-pain",
-      "tutorialId": "cmpr13vzm00002gv4ydqkqdl4",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:04.196Z",
-      "publishedAt": "2026-05-29T14:40:16.282Z",
-      "heroMediaId": "cmpr16zdr001iu8v4o9c4grmy",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-fear-of-judgment",
-      "tutorialId": "cmpr13z2j0000ncv4jk0xwz17",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:04.706Z",
-      "publishedAt": "2026-05-29T14:40:20.278Z",
-      "heroMediaId": "cmpr170yh001ku8v4xqt13ua6",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-fear-of-owning-property",
-      "tutorialId": "cmpavm9ui0000tsv4w3nl8gz1",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:16.011Z",
-      "publishedAt": "2026-05-18T07:22:17.543Z",
-      "heroMediaId": "cmpmgarht00m22gv4l47t63b7",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though owning property feels heavy and risky, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-fear-of-repeating-family-patterns",
-      "tutorialId": "cmpa834o20000swv43lj9j585",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:16.377Z",
-      "publishedAt": "2026-05-17T20:23:33.192Z",
-      "heroMediaId": "cmpmgatbp00m42gv4kx9x6vby",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though I fear I am turning into the family money story, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-financial-admin-dread",
-      "tutorialId": "cmpbocwu90000vcv48jt7s99d",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:16.703Z",
-      "publishedAt": "2026-05-18T20:46:49.646Z",
-      "heroMediaId": "cmpmgavw300m82gv4bkb97udg",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though financial paperwork once drained me, I deeply and completely accept myself."
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[2] > paragraph[0]",
-          "snippet": "Even though I worried I'd miss something important, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-hosting-anxiety",
-      "tutorialId": "cmpqckm7c0000w8v465pe5fi4",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:51.728Z",
-      "publishedAt": "2026-05-29T14:40:24.103Z",
-      "heroMediaId": "cmpr172fs001mu8v4kg4gxkiq",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though I'm anxious about people coming over, I deeply and completely accept myself."
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-i-am-a-natural-investor",
-      "tutorialId": "cmpb1pysm0000qkv49pqe5hgy",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:17.557Z",
-      "publishedAt": "2026-05-18T10:13:07.528Z",
-      "heroMediaId": "cmpmgb3s500mk2gv41x1c7ehu",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though I believed investing was for wealthier people, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-i-feel-guilty-asking-for-more",
-      "tutorialId": "cmpcgjknv00002kv498wkt0v6",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:17.998Z",
-      "publishedAt": "2026-05-19T09:55:49.700Z",
-      "heroMediaId": "cmpmgbbrk00mq2gv4w5x9ao4z",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[5] > listItem[1] > paragraph[0]",
-          "snippet": "Even though asking feels like a demand rather than a reasonable request, there is something more solid underneath."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-i-should-be-over-it",
-      "tutorialId": "cmpr1480j000070v41z5pa8d0",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:05.459Z",
-      "publishedAt": "2026-05-29T14:40:31.865Z",
-      "heroMediaId": "cmpr173xz001ou8v4x9q2exc4",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-imposter-syndrome",
-      "tutorialId": "cmpr144sh0000vsv4m8rznxv6",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:05.843Z",
-      "publishedAt": "2026-05-29T14:40:27.692Z",
-      "heroMediaId": "cmpr17591001qu8v4u1jatpiz",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-investing-isnt-for-me",
-      "tutorialId": "cmpcj72n80000d4v4kaitli6s",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:50.755Z",
-      "publishedAt": "2026-05-19T11:10:05.316Z",
-      "heroMediaId": "cmpmgbk2400n22gv4tjijs58o",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[5] > listItem[0] > paragraph[0]",
-          "snippet": "Even though I believe investing isn't really for someone like me, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-is-it-selfish-to-enjoy-this",
-      "tutorialId": "cmpqo6n6i0000rwv45vq5o2ad",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:51.680Z",
-      "publishedAt": "2026-05-29T08:41:22.646Z",
-      "heroMediaId": "cmpqor21w00iigcv4efblhkaw",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
-          "snippet": "Even though I keep pulling back from enjoyment before it fully arrives, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-mum-guilt",
-      "tutorialId": "cmp9bjtk1000020v47ytbnj5n",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:06.495Z",
-      "publishedAt": "2026-05-29T14:40:36.238Z",
-      "heroMediaId": "cmpr176qh001su8v4ggn0q0vz",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-never-enough-hours",
-      "tutorialId": "cmpcyknqs00009cv4imfeqgh6",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:47.293Z",
-      "publishedAt": "2026-05-29T03:13:29.657Z",
-      "heroMediaId": "cmpqor3nj00ikgcv4bzf640qn",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though there is never enough time and today is already behind, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-perimenopause-mood-swings",
-      "tutorialId": "cmpr14eip000068v40ithey5z",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:06.899Z",
-      "publishedAt": "2026-05-29T14:40:40.297Z",
-      "heroMediaId": "cmpr1786y001uu8v4jefn4ych",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education. Framing draws on perimenopause research."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-permission-to-play",
-      "tutorialId": "cmpr14j1g00005sv4cgz7fa9h",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:07.249Z",
-      "publishedAt": "2026-05-29T14:40:46.153Z",
-      "heroMediaId": "cmpr179px001wu8v4z8m04dfu",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-safety-in-stillness",
-      "tutorialId": "cmpa83atu00000ov4onqx2cfm",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:20.954Z",
-      "publishedAt": "2026-05-17T20:23:41.175Z",
-      "heroMediaId": "cmpmgcba000o82gv42qrbjxa7",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "sourceNotes",
-          "snippet": "fall"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though stillness feels uneasy and unsafe, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-self-forgiveness",
-      "tutorialId": "cmpefo0lr0000gkv46yp59t35",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:46.355Z",
-      "publishedAt": "2026-05-20T19:06:49.713Z",
-      "heroMediaId": "cmpmgcf4100oe2gv4c2f17pl9",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[5] > listItem[0] > paragraph[0]",
-          "snippet": "Even though I did something I am still holding against myself, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-spiritual-but-not-religious",
-      "tutorialId": "cmpdsx8220000e0v4exsul5nk",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:50.897Z",
-      "publishedAt": "2026-05-29T03:13:33.498Z",
-      "heroMediaId": "cmpqor4yk00imgcv4s18hvy06",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
-          "snippet": "Even though my spirituality is made of pieces from many places, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-the-ageing-body",
-      "tutorialId": "cmppsq4n80000o0v42rp6ghxl",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:50.831Z",
-      "publishedAt": "2026-05-28T17:57:51.211Z",
-      "heroMediaId": "cmppx2jnt006048v4eb4sqctw",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[2] > paragraph[0]",
-          "snippet": "Even though the marketing-world body is not my body, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-the-family-money-story-i-inherited",
-      "tutorialId": "cmpa80wpr0000l4v4dq99g0wp",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-27T22:49:28.080Z",
-      "publishedAt": "2026-05-17T20:21:49.579Z",
-      "heroMediaId": "cmpmgcqaw00ow2gv49w0ek3te",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though I absorbed money beliefs that aren't mine to carry, I deeply and completely accept myself."
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
-          "snippet": "Even though these beliefs ran my money for years without me noticing, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-the-fear-of-being-seen-with-money",
-      "tutorialId": "cmpai9ulw00008wv4gd6vwe5n",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:24.937Z",
-      "publishedAt": "2026-05-18T01:08:42.913Z",
-      "heroMediaId": "cmpmgcrnn00oy2gv4b3fwb203",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
-          "snippet": "Even though attention around money makes me nervous, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-the-money-fight-that-keeps-returning",
-      "tutorialId": "cmpcgjwj2000008v4oj7r4h41",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:26.120Z",
-      "publishedAt": "2026-05-19T09:56:05.052Z",
-      "heroMediaId": "cmpmgczbk00pa2gv4wzynu4jg",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[5] > listItem[1] > paragraph[0]",
-          "snippet": "Even though our money histories are different in ways that keep creating friction, something more is possible."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-the-new-family-story",
-      "tutorialId": "cmpaa2zrx000008v4z6xut0fc",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:26.551Z",
-      "publishedAt": "2026-05-17T21:50:17.637Z",
-      "heroMediaId": "cmpmgd1kl00pe2gv4cvuiwe49",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
-          "snippet": "Even though that story ran for generations, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-the-parent-money-tangle",
-      "tutorialId": "cmpcgk17t0000fgv4uygi8kys",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:46.390Z",
-      "publishedAt": "2026-05-19T09:56:11.138Z",
-      "heroMediaId": "cmpmgd5wg00pk2gv4fam9he0t",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[8] > listItem[3] > paragraph[0]",
-          "snippet": "Under nose: my security and their care are not automatically opposed."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-the-wait-for-apology-trap",
-      "tutorialId": "cmpehzfw70000ugv4fh2rgjis",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:09.120Z",
-      "publishedAt": "2026-05-29T14:40:50.150Z",
-      "heroMediaId": "cmpr17b6t001yu8v4e4h515pc",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
-          "snippet": "Even though I don't want to let go without acknowledgement, I deeply and completely accept myself."
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-trust-in-perfect-timing",
-      "tutorialId": "cmpbhyl1f000090v4ptawumpb",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:28.629Z",
-      "publishedAt": "2026-05-18T17:47:43.467Z",
-      "heroMediaId": "cmpmgdl7j00q62gv4j8ocu0jz",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though I've worried about missing the perfect moment, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-turning-40",
-      "tutorialId": "cmpcyl5zb0000fov4e9052qhn",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:09.555Z",
-      "publishedAt": "2026-05-29T14:40:54.148Z",
-      "heroMediaId": "cmpr17cql0020u8v4gvkb7ofe",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-we-cant-talk-anymore",
-      "tutorialId": "cmpehygya0000g4v4k81mq2jg",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:29.019Z",
-      "publishedAt": "2026-05-20T20:10:56.691Z",
-      "heroMediaId": "cmpmgdor200qc2gv4hov4x50p",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though we keep having the same conversation and it goes nowhere, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-to-allow-myself-to-be-the-wealthy-one",
-      "tutorialId": "cmpaabye60000eov47evjx9e7",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:29.962Z",
-      "publishedAt": "2026-05-17T21:50:25.379Z",
-      "heroMediaId": "cmpmgdzng00qs2gv480huic5k",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though wealth felt impossible in my family line, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-to-anchor-calm-as-the-default",
-      "tutorialId": "cmpaa36pc0000o0v4ogp8xxmw",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:22:01.542Z",
-      "publishedAt": "2026-05-17T21:19:35.057Z",
-      "heroMediaId": "cmpmge27o00qw2gv4148eylpy",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
-          "path": "title",
-          "snippet": "Anchor"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "sourceNotes",
-          "snippet": "fall"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
-          "path": "body > bulletList[9] > listItem[5] > paragraph[0] > text",
-          "snippet": "Anchor"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[12] > listItem[0] > paragraph[0]",
-          "snippet": "Even though I've spent the whole day running on adrenaline, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-to-anchor-trust-in-multi-million-investments",
-      "tutorialId": "cmpc7ncid0000t4v41ukegneh",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:30.778Z",
-      "publishedAt": "2026-05-19T05:46:49.206Z",
-      "heroMediaId": "cmpmge77g00r22gv4m18xw0ly",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
-          "path": "title",
-          "snippet": "Anchor"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though multi-million deals once felt scary, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-to-attract-the-right-advisors-and-deals",
-      "tutorialId": "cmpc7nfpv0000lkv4k40yg4qt",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:31.093Z",
-      "publishedAt": "2026-05-19T05:46:53.371Z",
-      "heroMediaId": "cmpmge8h800r42gv4jmpxf5o5",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though I once felt alone in big financial decisions, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-to-begin-the-30-day-sleep-reset",
-      "tutorialId": "cmpr14scg00008wv4phcizmxt",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:10.380Z",
-      "publishedAt": "2026-05-29T14:40:58.218Z",
-      "heroMediaId": "cmpr17e9u0022u8v4nyvqlopq",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-to-celebrate-her",
-      "tutorialId": "cmpavaxbm000088v4ajkfz8fo",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:31.806Z",
-      "publishedAt": "2026-05-18T07:13:28.096Z",
-      "heroMediaId": "cmpmgegbn00rg2gv4j4mrwmn8",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though I've only just begun to claim this identity, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-to-celebrate-new-opportunities",
-      "tutorialId": "cmpax84ib0000c0v4m5kpwr90",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:32.202Z",
-      "publishedAt": "2026-05-18T08:07:16.673Z",
-      "heroMediaId": "cmpmgekoy00rm2gv4a2bfnhxv",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > bulletList[8] > listItem[2] > paragraph[0] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though I sometimes hesitate when new chances appear, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-to-claim-calm-sleeper-identity",
-      "tutorialId": "cmpbhyr6h0000asv4jjbctkex",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:32.668Z",
-      "publishedAt": "2026-05-18T17:47:51.423Z",
-      "heroMediaId": "cmpmgep0e00rs2gv40xbyghho",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
-          "path": "excerpt",
-          "snippet": "Anchor"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > heading[10] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "body > bulletList[16] > listItem[7] > paragraph[0] > text",
-          "snippet": "fall"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[12] > listItem[0] > paragraph[0]",
-          "snippet": "Even though the old label sometimes whispers, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-to-come-back-to-now",
-      "tutorialId": "cmpaa3a3n0000jov4kdez3f7r",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:22:01.568Z",
-      "publishedAt": "2026-05-17T21:50:31.397Z",
-      "heroMediaId": "cmpmgerrn00rw2gv4p67rxbiz",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "sourceNotes",
-          "snippet": "fall"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "body > bulletList[8] > listItem[7] > paragraph[0] > text",
-          "snippet": "fall"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though my mind keeps time-travelling, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-to-fall-asleep-in-belonging",
-      "tutorialId": "cmpbugqw60000lgv4bmok2s0b",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:33.428Z",
-      "publishedAt": "2026-05-18T23:37:46.257Z",
-      "heroMediaId": "cmpmgew9f00s22gv4rzz2p4xl",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "title",
-          "snippet": "fall"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "sourceNotes",
-          "snippet": "fall"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "body > bulletList[6] > listItem[7] > paragraph[0] > text",
-          "snippet": "fall"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "body > bulletList[8] > listItem[6] > paragraph[0] > text",
-          "snippet": "fall"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though night sometimes feels lonely, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-to-give-freely-without-fear",
-      "tutorialId": "cmpbugw3z0000dcv4ksw9nkmd",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:34.062Z",
-      "publishedAt": "2026-05-18T23:37:53.020Z",
-      "heroMediaId": "cmpmgf4wo00se2gv49x0isbmi",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
-          "snippet": "Even though giving has sometimes felt unsafe, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-to-live-in-daily-overflow",
-      "tutorialId": "cmpbugynl00002gv44elbkkh4",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:34.771Z",
-      "publishedAt": "2026-05-18T23:37:56.318Z",
-      "heroMediaId": "cmpmgfjcc00sy2gv4ff1k5jmq",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > bulletList[8] > listItem[4] > paragraph[0] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Even though overflow once felt rare and temporary, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-to-lock-in-ease-with-receiving-and-spending",
-      "tutorialId": "cmpcckuik0000gsv4ongdb0ds",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:35.088Z",
-      "publishedAt": "2026-05-19T08:04:50.665Z",
-      "heroMediaId": "cmpmgfkor00t02gv4yz2ywamy",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[2] > paragraph[0]",
-          "snippet": "Even though I worried about each decision, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-to-release-guilt-about-wanting-wealth",
-      "tutorialId": "cmpaac1bc000088v47025wop7",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:35.711Z",
-      "publishedAt": "2026-05-17T21:26:27.985Z",
-      "heroMediaId": "cmpmgfu5800te2gv4nkm11ths",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[2] > paragraph[0]",
-          "snippet": "Even though I worry people will judge me for wanting financial freedom, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-to-see-myself-as-someone-who-has-it",
-      "tutorialId": "cmpav96740000j8v4b6a03wwe",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:36.312Z",
-      "publishedAt": "2026-05-18T07:13:38.092Z",
-      "heroMediaId": "cmpmgg3n900tq2gv4ls21citt",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
-          "snippet": "Even though \"having money\" has felt like it belongs to other people, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "the-first-thing-my-savings-will-buy-journal",
-      "tutorialId": "cmpbodo7s0000d0v4p94jfquy",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:44.393Z",
-      "publishedAt": "2026-05-18T20:47:25.125Z",
-      "heroMediaId": "cmpmgi7wm00wm2gv4raydgv05",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[14]",
-          "snippet": "A concrete action: set up an automatic transfer, open a new savings account, move a specific amount."
-        }
-      ]
-    },
-    {
-      "slug": "the-legacy-alignment-activation",
-      "tutorialId": "cmpc7ody30000q8v434b8ignq",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:46.101Z",
-      "publishedAt": "2026-05-19T05:47:37.731Z",
-      "heroMediaId": "cmpmgj52k00xq2gv41wekesye",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
-          "path": "excerpt",
-          "snippet": "Anchor"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "message": "brand-trademark: brand name \"Flake\" — generic equivalent is \"flaked chocolate (the ingredient) or Cadbury Flake (the bar)\"",
           "path": "body > paragraph[0] > text",
+          "snippet": "Flake"
+        }
+      ]
+    },
+    {
+      "slug": "applying-wax-resist-for-glaze-decoration",
+      "tutorialId": "cmpez5ru30003hov4qb6zsg8i",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-25T17:10:32.138Z",
+      "publishedAt": "2026-05-21T04:12:30.874Z",
+      "heroMediaId": "cmplk60ms000cokv4p54h4r97",
+      "findings": []
+    },
+    {
+      "slug": "attaching-a-pulled-handle",
+      "tutorialId": "cmpez5mcl0001bwv4nx8utyzo",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:37.291Z",
+      "publishedAt": "2026-05-21T04:12:23.770Z",
+      "heroMediaId": "cmplk62pm000gokv4n2xfse6g",
+      "findings": []
+    },
+    {
+      "slug": "bisque-firing-schedule-cone-06",
+      "tutorialId": "cmpez5p3z0003kwv4e9fj50i3",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:45.486Z",
+      "publishedAt": "2026-05-21T04:12:27.346Z",
+      "heroMediaId": "cmplk67v2000qokv4mvm26znf",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[3] > text",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "brushed-underglaze-decoration-on-bisqueware",
+      "tutorialId": "cmpez61tp0001usv4rppqs5b6",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-25T17:10:33.271Z",
+      "publishedAt": "2026-05-21T04:12:43.825Z",
+      "heroMediaId": "cmplk6ahn000uokv47cyyyunf",
+      "findings": []
+    },
+    {
+      "slug": "building-an-armature-for-air-dry-clay",
+      "tutorialId": "cmpqeswcd0001gkv439ype2cd",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:45.067Z",
+      "publishedAt": "2026-05-29T04:15:51.987Z",
+      "heroMediaId": "cmpqod84m001ggcv45mtw6100",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > bulletList[4] > listItem[1] > paragraph[0] > text",
           "snippet": "Anchor"
         },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > heading[8] > text",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > troubleshooter[29] > item[0] > fix",
+          "snippet": "Anchor"
+        }
+      ]
+    },
+    {
+      "slug": "burnishing-clay-with-river-stones",
+      "tutorialId": "cmpqesr9b0000zcv4mxkurjaw",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:43.919Z",
+      "publishedAt": "2026-05-29T04:15:45.387Z",
+      "heroMediaId": "cmpqoda2q001igcv4rdchin3f",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[3] > text"
+        }
+      ]
+    },
+    {
+      "slug": "carved-relief-decoration-air-dry-tile",
+      "tutorialId": "cmpqesorh00008wv41xpulrb1",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T08:41:35.114Z",
+      "publishedAt": "2026-05-29T04:15:42.155Z",
+      "heroMediaId": "cmpqodpzm0028gcv409bupqyl",
+      "findings": []
+    },
+    {
+      "slug": "carving-patterns-leather-hard-clay",
+      "tutorialId": "cmpe3fdg100023sv45nifa9al",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:45.699Z",
+      "publishedAt": "2026-05-20T13:24:11.079Z",
+      "heroMediaId": "cmpl9c3gb00agqov4zw1gob5m",
+      "findings": []
+    },
+    {
+      "slug": "celadon-glaze-on-carved-stoneware",
+      "tutorialId": "cmpr5luqa00026kv49wd7oebo",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T17:11:52.437Z",
+      "heroMediaId": "cmpr6j9g80000bwv4s48zqdyi",
+      "findings": []
+    },
+    {
+      "slug": "centring-half-kilo-of-stoneware",
+      "tutorialId": "cmpez53uh0002lcv48n4geggw",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:36.516Z",
+      "publishedAt": "2026-05-21T04:11:59.790Z",
+      "heroMediaId": "cmplk6yt8001wokv4f71rdywg",
+      "findings": []
+    },
+    {
+      "slug": "clay-texture-roller-technique",
+      "tutorialId": "cmpez4n0o0000f8v4f41tzwe5",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T08:49:10.100Z",
+      "publishedAt": "2026-05-21T04:11:37.973Z",
+      "heroMediaId": "cmplk7bx4002cokv4v7g1xj8s",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > troubleshooter[16] > item[0] > cause",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "coil-and-pinch-combined-bowl",
+      "tutorialId": "cmpe37sfr0000dkv440ql58q5",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-25T17:10:33.519Z",
+      "publishedAt": "2026-05-20T13:18:17.253Z",
+      "heroMediaId": "cmplgw7qj001coov46n3xbmae",
+      "findings": []
+    },
+    {
+      "slug": "coil-built-bird-feeder",
+      "tutorialId": "cmpqeru4c0000xov4svd2d259",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T04:15:02.440Z",
+      "heroMediaId": "cmpqoe7de0034gcv43ulmz2cr",
+      "findings": []
+    },
+    {
+      "slug": "coil-built-herb-pot-trio",
+      "tutorialId": "cmpez37nk0000jwv4we232dzk",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:39.446Z",
+      "publishedAt": "2026-05-21T04:10:31.405Z",
+      "heroMediaId": "cmplk7g33002kokv4mb140kg0",
+      "findings": []
+    },
+    {
+      "slug": "coil-built-mug-with-handle-air-dry",
+      "tutorialId": "cmpqerega0000wov4y1s5p4b0",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T04:14:42.125Z",
+      "heroMediaId": "cmpqoe8cy0036gcv48aflqwhb",
+      "findings": []
+    },
+    {
+      "slug": "coil-built-planter-air-dry-clay",
+      "tutorialId": "cmpe37i6y0000j4v44osdapw3",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:35.833Z",
+      "publishedAt": "2026-05-20T13:18:03.976Z",
+      "heroMediaId": "cmplgw8vm001eoov4yf2p2f1r",
+      "findings": []
+    },
+    {
+      "slug": "coil-built-square-vessel",
+      "tutorialId": "cmpr5k9hu0000eov4wqlfvc11",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:58:51.039Z",
+      "heroMediaId": "cmpr6588d0004wov44sgh8sw8",
+      "findings": []
+    },
+    {
+      "slug": "coil-built-tall-amphora-jar",
+      "tutorialId": "cmpez413m0000bgv4s3bj9fsk",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:36.562Z",
+      "publishedAt": "2026-05-21T04:11:09.567Z",
+      "heroMediaId": "cmplk7iqn002mokv493fft3r7",
+      "findings": []
+    },
+    {
+      "slug": "coil-built-wall-pocket-planter",
+      "tutorialId": "cmpr4s5wa0000y8v48lpact7u",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:58:33.576Z",
+      "heroMediaId": "cmpr6591i0006wov477z0qckz",
+      "findings": []
+    },
+    {
+      "slug": "coil-pinch-handled-tankard-air-dry",
+      "tutorialId": "cmpqesjo700004wv4ueh521eu",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T15:07:06.800Z",
+      "publishedAt": "2026-05-29T04:15:35.556Z",
+      "heroMediaId": "cmpqoea1d0038gcv4sm74lwdz",
+      "findings": []
+    },
+    {
+      "slug": "coil-pot-bowl-air-dry-clay",
+      "tutorialId": "cmpe377sf000108v4fpyezk69",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T15:07:06.834Z",
+      "publishedAt": "2026-05-20T13:17:50.499Z",
+      "heroMediaId": "cmplgw9tk001goov40ewnqjm3",
+      "findings": []
+    },
+    {
+      "slug": "coil-pot-curved-vase-air-dry",
+      "tutorialId": "cmpqeabbm0000vcv44fhu9r2h",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T08:41:41.467Z",
+      "publishedAt": "2026-05-29T04:01:24.862Z",
+      "heroMediaId": "cmpqoeb1b003agcv4wqto2bxy",
+      "findings": []
+    },
+    {
+      "slug": "coil-pot-paper-clay-vase",
+      "tutorialId": "cmpez2z3q0000l4v4sfve6ee8",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-25T18:52:08.631Z",
+      "publishedAt": "2026-05-21T04:10:20.320Z",
+      "heroMediaId": "cmplk7k63002ookv4uifjlce0",
+      "findings": []
+    },
+    {
+      "slug": "colouring-clay-body-with-dry-pigment",
+      "tutorialId": "cmpr4sstd0000h0v46mkh7srz",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:59:08.527Z",
+      "heroMediaId": "cmpr659vp0008wov4kaktbg3a",
+      "findings": []
+    },
+    {
+      "slug": "comparing-air-dry-paper-and-polymer-clay",
+      "tutorialId": "cmpqestuf0001bkv4xdtuqrza",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:45.234Z",
+      "publishedAt": "2026-05-29T04:15:48.743Z",
+      "heroMediaId": "cmpqoecps003cgcv4f5zcbf2d",
+      "findings": [
         {
           "severity": "WARN",
           "kind": "voice-violation",
@@ -1309,435 +374,2017 @@
         {
           "severity": "WARN",
           "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
-          "path": "body > heading[11] > text",
-          "snippet": "Anchor"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > pullQuote[13] > paragraph[0]",
-          "snippet": "I am grateful that I am building a legacy of abundance, safety, and freedom for generations to come."
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[4] > text"
         }
       ]
     },
     {
-      "slug": "the-overflow-and-circulation-activation",
-      "tutorialId": "cmpciwvc800008sv4grj3m1xy",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:48.018Z",
-      "publishedAt": "2026-05-19T11:11:22.742Z",
-      "heroMediaId": "cmpmgk3l200yy2gv4v145i7vk",
+      "slug": "decorating-polymer-clay-with-alcohol-inks",
+      "tutorialId": "cmpez4hdq0000jgv4bywszo93",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-26T10:45:48.306Z",
+      "publishedAt": "2026-05-21T04:11:30.666Z",
+      "heroMediaId": "cmplk892p003mokv47cu7r361",
+      "findings": []
+    },
+    {
+      "slug": "dipping-glaze-on-a-bisque-bowl",
+      "tutorialId": "cmpez5ywd0001lov4os8lhd19",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-25T18:52:08.677Z",
+      "publishedAt": "2026-05-21T04:12:40.035Z",
+      "heroMediaId": "cmplk8bx8003qokv48be3wc2c",
+      "findings": []
+    },
+    {
+      "slug": "double-dip-glaze-two-colour-bowl",
+      "tutorialId": "cmpr5lyl60001p4v4gniwco18",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T17:00:14.694Z",
+      "heroMediaId": "cmpr65am2000awov460xos22e",
       "findings": [
         {
           "severity": "WARN",
           "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[8] > text"
+        }
+      ]
+    },
+    {
+      "slug": "drape-moulded-bowl-air-dry-clay",
+      "tutorialId": "cmpe37d100000nwv4d3pln75z",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:37.532Z",
+      "publishedAt": "2026-05-20T13:17:57.283Z",
+      "heroMediaId": "cmplbfvy600dsygv4qtu51ghu",
+      "findings": []
+    },
+    {
+      "slug": "drape-moulded-fruit-bowl-air-dry",
+      "tutorialId": "cmpqeahe5000078v46gtp8mf3",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T04:01:32.795Z",
+      "heroMediaId": "cmpqoeure004agcv49i9f8klm",
+      "findings": []
+    },
+    {
+      "slug": "drape-moulded-shallow-dish-set",
+      "tutorialId": "cmpqe9nc30000o8v4vm7opfvk",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T04:00:53.842Z",
+      "heroMediaId": "cmpqoevrh004cgcv44hhcppna",
+      "findings": []
+    },
+    {
+      "slug": "embossed-lace-impression-tile",
+      "tutorialId": "cmpqesm9n00019gv4ya4c554i",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T04:15:38.927Z",
+      "heroMediaId": "cmpqofcpg0050gcv4ctn2krhx",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > bulletList[32] > listItem[0] > paragraph[0] > text"
+        }
+      ]
+    },
+    {
+      "slug": "flat-slab-wall-hanging",
+      "tutorialId": "cmpe37pun0000u0v404y7uc1v",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-26T09:51:40.763Z",
+      "publishedAt": "2026-05-20T13:18:13.901Z",
+      "heroMediaId": "cmplb4onm001wygv4h49me60r",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        }
+      ]
+    },
+    {
+      "slug": "glaze-firing-schedule-cone-6",
+      "tutorialId": "cmpqec50400027kv4lqy0z575",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:44.167Z",
+      "publishedAt": "2026-05-29T04:02:50.051Z",
+      "heroMediaId": "cmpqog6qi0064gcv4fzkjgnqc",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "safety-block: possible safety-advice block (3 safety keywords: ventilat, fire extinguisher, hazard). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
+          "path": "body > infoPanel[1] > body"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[3] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[4] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[7] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[18] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[27] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[33] > text",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "glaze-trailing-on-a-flat-stoneware-plate",
+      "tutorialId": "cmpr5m3en0002fov4wxgfvs6u",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T17:00:20.864Z",
+      "heroMediaId": "cmpr65b9t000cwov4ylk9ok3p",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[8] > text"
+        }
+      ]
+    },
+    {
+      "slug": "hump-moulded-plate-air-dry-clay",
+      "tutorialId": "cmpe37nap0000ekv4jrljqepa",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T08:50:50.540Z",
+      "publishedAt": "2026-05-20T13:18:10.591Z",
+      "heroMediaId": "cmpeirycs00dok8v46gahttio",
+      "findings": []
+    },
+    {
+      "slug": "incised-name-sign-clay",
+      "tutorialId": "cmpe3gtbd0000k0v4asa99992",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T08:50:57.265Z",
+      "publishedAt": "2026-05-20T13:25:18.296Z",
+      "heroMediaId": "cmplb4qrq001yygv4s7zj7wck",
+      "findings": []
+    },
+    {
+      "slug": "inlay-coloured-clay-veneer-air-dry",
+      "tutorialId": "cmpqeb51300012sv4y2sj45nd",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:45.382Z",
+      "publishedAt": "2026-05-29T04:02:03.434Z",
+      "heroMediaId": "cmpqoh7ov007mgcv4u94twgx5",
+      "findings": []
+    },
+    {
+      "slug": "iron-oxide-wash-on-air-dry-clay",
+      "tutorialId": "cmpr5kgvz0001t4v4w0dlb24k",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:58:59.681Z",
+      "heroMediaId": "cmpr65c0j000ewov4das7hib2",
+      "findings": []
+    },
+    {
+      "slug": "iron-oxide-wash-on-bisqueware",
+      "tutorialId": "cmpr5lsch00013wv4au130buc",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T17:00:06.706Z",
+      "heroMediaId": "cmpr65co2000gwov4g0x34ru3",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        }
+      ]
+    },
+    {
+      "slug": "joining-clay-score-and-slip",
+      "tutorialId": "cmpe36xd90002hgv4flojv7il",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-26T16:45:03.077Z",
+      "publishedAt": "2026-05-20T13:17:36.991Z",
+      "heroMediaId": "cmplhrrvz00lqp8v4u87ys1sh",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        }
+      ]
+    },
+    {
+      "slug": "kiln-wash-preparation-and-shelf-care",
+      "tutorialId": "cmpr5mc6q00025cv4rh89lutn",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T17:00:30.319Z",
+      "heroMediaId": "cmpr65dbs000iwov40hxhap6m",
+      "findings": []
+    },
+    {
+      "slug": "lace-texture-pressing-into-clay",
+      "tutorialId": "cmpr5kea20000rsv4esc1t505",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:58:56.797Z",
+      "heroMediaId": "cmpr65e15000kwov45j3am2g9",
+      "findings": []
+    },
+    {
+      "slug": "layered-glaze-dip-two-colour-effect",
+      "tutorialId": "cmpez64xo0002ncv4feu1gx45",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T08:51:19.795Z",
+      "publishedAt": "2026-05-21T04:12:47.850Z",
+      "heroMediaId": "cmplkc8cx007cokv415fy6xog",
+      "findings": []
+    },
+    {
+      "slug": "leaf-impression-tile-set",
+      "tutorialId": "cmpe3gqzi0000qcv4iovksk71",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-26T10:45:48.835Z",
+      "publishedAt": "2026-05-20T13:25:15.276Z",
+      "heroMediaId": "cmpl96cg7002wqov4xk2b5vny",
+      "findings": []
+    },
+    {
+      "slug": "loading-an-electric-kiln-for-bisque",
+      "tutorialId": "cmpr5m5rg0002tsv45n9qh36v",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T17:11:58.311Z",
+      "heroMediaId": "cmpr6jab80002bwv4y0ivx9my",
+      "findings": []
+    },
+    {
+      "slug": "majolica-style-painted-tile",
+      "tutorialId": "cmpr5kbum0001esv42df2ts73",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T17:11:37.401Z",
+      "heroMediaId": "cmpr6jbdf0004bwv4ly5htocf",
+      "findings": []
+    },
+    {
+      "slug": "making-a-hump-mould-for-bowls",
+      "tutorialId": "cmpez2tem00000ov4o7npgn52",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-26T17:44:27.281Z",
+      "publishedAt": "2026-05-21T04:10:12.934Z",
+      "heroMediaId": "cmplkckb5007uokv4m3e49a2i",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > paragraph[9] > text",
+          "snippet": "fall"
+        }
+      ]
+    },
+    {
+      "slug": "making-a-simple-drape-mould",
+      "tutorialId": "cmpe3757q0002h4v4eww76rva",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-26T17:44:27.377Z",
+      "publishedAt": "2026-05-20T13:17:47.165Z",
+      "heroMediaId": "cmpley1b300jmtkv4hsi3v47e",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        }
+      ]
+    },
+    {
+      "slug": "making-and-using-clay-slab-templates",
+      "tutorialId": "cmpr4sv2x00007gv4sobrvlxj",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:59:13.302Z",
+      "heroMediaId": "cmpr65h0h000qwov4l93gta5b",
+      "findings": []
+    },
+    {
+      "slug": "making-clay-slip-and-slurry",
+      "tutorialId": "cmpez2nqs0000egv46vnaa308",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-26T17:44:27.408Z",
+      "publishedAt": "2026-05-21T04:10:05.594Z",
+      "heroMediaId": "cmplkcoz20082okv4tk8lnlxx",
+      "findings": []
+    },
+    {
+      "slug": "making-sprig-moulds-from-found-objects",
+      "tutorialId": "cmpr5kt1k0000esv4ab5k372b",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:59:16.464Z",
+      "heroMediaId": "cmpr65huh000swov46e5bgw4s",
+      "findings": []
+    },
+    {
+      "slug": "marbling-two-tone-air-dry-clay",
+      "tutorialId": "cmpe3gi1z00007gv42ct7awre",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:43.246Z",
+      "publishedAt": "2026-05-20T13:25:03.698Z",
+      "heroMediaId": "cmpleydq000k4tkv4365gpf9h",
+      "findings": []
+    },
+    {
+      "slug": "mishima-inlay-on-air-dry-clay",
+      "tutorialId": "cmpez4k3p0002gwv4fv07m3vr",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:39.264Z",
+      "publishedAt": "2026-05-21T04:11:34.195Z",
+      "heroMediaId": "cmplkctwp008aokv4pac9h9eg",
+      "findings": []
+    },
+    {
+      "slug": "mixing-a-commercial-dry-glaze",
+      "tutorialId": "cmpqebwii0002nsv4qbnklf22",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:44.648Z",
+      "publishedAt": "2026-05-29T04:02:39.054Z",
+      "heroMediaId": "cmpqoiq3b009wgcv4zh5tx61e",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "sourceNotes",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "opening-a-thrown-mound",
+      "tutorialId": "cmpez58f40001lsv40k170qvf",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:35.534Z",
+      "publishedAt": "2026-05-21T04:12:05.677Z",
+      "heroMediaId": "cmplkczhk008kokv4wb2k4v05",
+      "findings": []
+    },
+    {
+      "slug": "painting-air-dry-clay-acrylics",
+      "tutorialId": "cmpe3gke00001f0v4kvm8inis",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:43.341Z",
+      "publishedAt": "2026-05-20T13:25:06.733Z",
+      "heroMediaId": "cmplhyhnc00u2p8v4i0yl5a0f",
+      "findings": []
+    },
+    {
+      "slug": "painting-underglaze-on-leather-hard-stoneware",
+      "tutorialId": "cmpr5m0z300025gv4wjbtjau7",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T17:11:55.368Z",
+      "heroMediaId": "cmpr6jc1k0006bwv4wv34kkzw",
+      "findings": []
+    },
+    {
+      "slug": "paper-clay-hanging-wall-stars",
+      "tutorialId": "cmpez3v320000nov4z59g0spd",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-26T14:44:35.215Z",
+      "publishedAt": "2026-05-21T04:11:01.772Z",
+      "heroMediaId": "cmplkd4us008uokv4tu1kxoue",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        }
+      ]
+    },
+    {
+      "slug": "paper-clay-house-number-plaque",
+      "tutorialId": "cmpqerz2o0000nov4p8083fle",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T04:15:08.860Z",
+      "heroMediaId": "cmpqok1ew00bugcv4vlwperwd",
+      "findings": []
+    },
+    {
+      "slug": "paper-clay-leaf-bowl",
+      "tutorialId": "cmpe38dfb0000qwv48ej5wfzz",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-26T14:44:35.260Z",
+      "publishedAt": "2026-05-20T13:18:44.452Z",
+      "heroMediaId": "cmplf0zop00notkv45tmox6id",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        }
+      ]
+    },
+    {
+      "slug": "paper-clay-lidded-box",
+      "tutorialId": "cmpez3y4c00004kv4e82tbe6l",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:39.677Z",
+      "publishedAt": "2026-05-21T04:11:05.701Z",
+      "heroMediaId": "cmplkd6tl008wokv4e6rgysmw",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
           "path": "body > paragraph[0] > text",
-          "snippet": "Anchor"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
-          "path": "body > heading[11] > text",
-          "snippet": "Anchor"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
-          "path": "body > paragraph[12] > text",
-          "snippet": "Anchor"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > pullQuote[13] > paragraph[0]",
-          "snippet": "This week, overflow and generosity move together in every area of my life."
+          "snippet": "Target"
         }
       ]
     },
     {
-      "slug": "the-overflow-and-circulation-ritual",
-      "tutorialId": "cmpbuhlro0000agv4uqkal3d0",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:48.273Z",
-      "publishedAt": "2026-05-18T23:38:26.272Z",
-      "heroMediaId": "cmpmgk5fd00z02gv42whieqty",
+      "slug": "paper-clay-mobile-fish-shapes",
+      "tutorialId": "cmpqes1jw0000owv45px2jgs4",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T15:07:06.870Z",
+      "publishedAt": "2026-05-29T04:15:12.073Z",
+      "heroMediaId": "cmpqok2qe00bwgcv4s6z9902b",
+      "findings": []
+    },
+    {
+      "slug": "paper-clay-moon-mobile",
+      "tutorialId": "cmpez514b0000d4v42unfar5r",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-26T14:44:35.345Z",
+      "publishedAt": "2026-05-21T04:11:56.249Z",
+      "heroMediaId": "cmplkd89g008yokv4tjmtpihx",
+      "findings": []
+    },
+    {
+      "slug": "paper-clay-name-plaque",
+      "tutorialId": "cmpe38an7000000v47vj4uzn9",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-26T15:43:16.545Z",
+      "publishedAt": "2026-05-20T13:18:40.850Z",
+      "heroMediaId": "cmplf11rz00nqtkv4dd9x22bb",
+      "findings": []
+    },
+    {
+      "slug": "paper-clay-relief-portrait-tile",
+      "tutorialId": "cmpqea18500013kv41mv1z3ej",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T04:01:11.852Z",
+      "heroMediaId": "cmpqok59n00bygcv4ctlcfrax",
+      "findings": []
+    },
+    {
+      "slug": "paper-clay-sculpted-organic-vessel",
+      "tutorialId": "cmpqes6m80000gsv4pb5j3j69",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T08:42:34.866Z",
+      "publishedAt": "2026-05-29T04:15:18.637Z",
+      "heroMediaId": "cmpqok6l000c0gcv4e93k5yil",
+      "findings": []
+    },
+    {
+      "slug": "paper-clay-sculptural-bird",
+      "tutorialId": "cmpe385dx0001iov4cdw488zy",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:41.418Z",
+      "publishedAt": "2026-05-20T13:18:34.036Z",
+      "heroMediaId": "cmpl9x83000woqov4u0m2gnrb",
       "findings": [
         {
           "severity": "WARN",
           "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > heading[9] > text"
+        }
+      ]
+    },
+    {
+      "slug": "paper-clay-wall-tile",
+      "tutorialId": "cmpe387ym0000rwv47amrcpd1",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-26T15:43:16.633Z",
+      "publishedAt": "2026-05-20T13:18:37.371Z",
+      "heroMediaId": "cmplf13q000nstkv419pl88hb",
+      "findings": []
+    },
+    {
+      "slug": "paper-clay-wearable-brooch",
+      "tutorialId": "cmpr5k1ta00009gv48g0wiwzr",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:58:42.296Z",
+      "heroMediaId": "cmpr65j2t000wwov4gma5w4qe",
+      "findings": []
+    },
+    {
+      "slug": "pinch-and-coil-handled-mug-air-dry",
+      "tutorialId": "cmpez3h9c0000qgv4lujfyw65",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-26T15:43:16.674Z",
+      "publishedAt": "2026-05-21T04:10:43.846Z",
+      "heroMediaId": "cmplkdk4k009iokv4y4o5jens",
+      "findings": []
+    },
+    {
+      "slug": "pinch-pot",
+      "tutorialId": "cmpb7rmu800048gv4rwog3rdy",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-26T15:43:16.725Z",
+      "publishedAt": "2026-05-19T17:09:02.424Z",
+      "heroMediaId": "cmplf2igd00q4tkv4umz077mt",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > bulletList[4] > listItem[3] > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > troubleshooter[32] > item[2] > fix",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "pinch-pot-bird-figurine",
+      "tutorialId": "cmpqea7r700005gv407ybkenv",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T04:01:20.302Z",
+      "heroMediaId": "cmpqokrue00ckgcv46yx2cxxa",
+      "findings": []
+    },
+    {
+      "slug": "pinch-pot-bowl-air-dry-clay",
+      "tutorialId": "cmpez2waa0000akv4f6fzmd9g",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-26T16:45:03.446Z",
+      "publishedAt": "2026-05-21T04:10:16.673Z",
+      "heroMediaId": "cmplkdled009kokv4dzl96tqt",
+      "findings": []
+    },
+    {
+      "slug": "pinch-pot-candle-holder-trio",
+      "tutorialId": "cmpr4s8cl0000gov4bwbxfjjw",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:58:36.468Z",
+      "heroMediaId": "cmpr65jsj000ywov4jm2uj863",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[7] > text",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "pinch-pot-egg-cup-set",
+      "tutorialId": "cmpqe9q4h0000lsv4sgfdmkpx",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T04:00:57.454Z",
+      "heroMediaId": "cmpqoktjf00cmgcv4fonnqgw1",
+      "findings": []
+    },
+    {
+      "slug": "pinch-pot-ring-dish",
+      "tutorialId": "cmpe37v0a0000nkv4yuhl3yvp",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:36.674Z",
+      "publishedAt": "2026-05-20T13:18:20.582Z",
+      "heroMediaId": "cmplf2j9b00q6tkv4guhq1ny6",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        }
+      ]
+    },
+    {
+      "slug": "pinch-pot-tea-light-holder",
+      "tutorialId": "cmpe37fkz000030v45eofzo0i",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:39.060Z",
+      "publishedAt": "2026-05-20T13:18:00.593Z",
+      "heroMediaId": "cmplf2l8f00q8tkv47s8p5gy7",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-bead-set",
+      "tutorialId": "cmpe38g5x0001jov4lik0kky1",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T15:07:06.897Z",
+      "publishedAt": "2026-05-20T13:18:48.010Z",
+      "heroMediaId": "cmplhzh6700v8p8v4rw7do0ef",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-brooch",
+      "tutorialId": "cmpe38nyl0000wsv4dujckv6w",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-26T17:44:27.648Z",
+      "publishedAt": "2026-05-20T13:18:58.106Z",
+      "heroMediaId": "cmplf3ilp00ritkv4yq51fs8g",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-buttons",
+      "tutorialId": "cmpe38vw3000044v4x9g4ob6r",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-26T17:44:27.682Z",
+      "publishedAt": "2026-05-20T13:19:08.381Z",
+      "heroMediaId": "cmpl9zzys00zuqov45qnao045",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-face-bead",
+      "tutorialId": "cmpez4y7d0000pcv46vr9cxtu",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:37.638Z",
+      "publishedAt": "2026-05-21T04:11:52.471Z",
+      "heroMediaId": "cmplkdxlt009yokv41un66j96",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > troubleshooter[16] > item[0] > symptom",
+          "snippet": "fall"
+        }
+      ]
+    },
+    {
+      "slug": "polymer-clay-faux-marble-bowl",
+      "tutorialId": "cmpqeseer0000dcv4mu44xtmc",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:44.808Z",
+      "publishedAt": "2026-05-29T04:15:28.735Z",
+      "heroMediaId": "cmpqokzs200csgcv4ftieb6nh",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-faux-stone-cabochons",
+      "tutorialId": "cmpqes97z0001x4v40azyrgex",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:37.390Z",
+      "publishedAt": "2026-05-29T04:15:22.018Z",
+      "heroMediaId": "cmpqol21100cugcv4kmq0dy6s",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-flower-cane-earrings",
+      "tutorialId": "cmpez3pja00005wv4ni5xig8q",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:39.662Z",
+      "publishedAt": "2026-05-21T04:10:54.579Z",
+      "heroMediaId": "cmplkdzbw00a0okv4co252t6b",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-flower-hair-clip",
+      "tutorialId": "cmpe38ysb00008sv4jdfn0fry",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-26T17:44:27.782Z",
+      "publishedAt": "2026-05-20T13:19:12.068Z",
+      "heroMediaId": "cmplf3kk000rktkv4rkdlrnic",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > troubleshooter[18] > item[0] > symptom",
+          "snippet": "fall"
+        }
+      ]
+    },
+    {
+      "slug": "polymer-clay-geometric-pendant",
+      "tutorialId": "cmpez3k5v0000dsv44w3vzfcs",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-26T18:45:16.174Z",
+      "publishedAt": "2026-05-21T04:10:47.615Z",
+      "heroMediaId": "cmplke0cz00a2okv4f6f65qqf",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        }
+      ]
+    },
+    {
+      "slug": "polymer-clay-leaf-pendant",
+      "tutorialId": "cmpe38ir20000iov4n8a88nqy",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T15:07:06.925Z",
+      "publishedAt": "2026-05-20T13:18:51.356Z",
+      "heroMediaId": "cmpla047b00zyqov43b7kfvcu",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-marble-effect-coasters",
+      "tutorialId": "cmpez3mq00000hgv4qj92zloi",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-26T18:45:16.256Z",
+      "publishedAt": "2026-05-21T04:10:50.925Z",
+      "heroMediaId": "cmplke1cq00a4okv4md01jitu",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-millefiori-bead-bracelet",
+      "tutorialId": "cmpr5l7ip0000ukv4ivbnlafe",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:59:35.812Z",
+      "heroMediaId": "cmpr65kj50010wov4aljo0zie",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-millefiori-cane",
+      "tutorialId": "cmpe38ld2000248v4xmj0g50a",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:38.931Z",
+      "publishedAt": "2026-05-20T13:18:54.746Z",
+      "heroMediaId": "cmplf3m2600rmtkv4f2m2m7oc",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
           "path": "excerpt",
-          "snippet": "Anchor"
+          "snippet": "Target"
         },
         {
           "severity": "WARN",
           "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > heading[13] > text"
+        }
+      ]
+    },
+    {
+      "slug": "polymer-clay-miniature-succulent",
+      "tutorialId": "cmpe38t4x0000z0v4pju5bme8",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:39.345Z",
+      "publishedAt": "2026-05-20T13:19:04.816Z",
+      "heroMediaId": "cmpla09g20102qov44ppoouh8",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > troubleshooter[18] > item[0] > symptom",
+          "snippet": "fall"
+        }
+      ]
+    },
+    {
+      "slug": "polymer-clay-mokume-gane-pendant",
+      "tutorialId": "cmpr5l0cy0001z4v4oav2btv7",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:59:26.063Z",
+      "heroMediaId": "cmpr65l5h0012wov4fmbgynhc",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-mushroom-figurines",
+      "tutorialId": "cmpqesh1a000030v40weutowu",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:37.711Z",
+      "publishedAt": "2026-05-29T04:15:32.137Z",
+      "heroMediaId": "cmpqol4mx00cwgcv4f0j8luez",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-resist-texture-technique",
+      "tutorialId": "cmpr5lbzo0000ncv462mssuke",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:59:43.566Z",
+      "heroMediaId": "cmpr65lss0014wov41dta0npt",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-ring-with-embedded-petals",
+      "tutorialId": "cmpr4tcyw0000tgv4lwayz75j",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T17:11:46.180Z",
+      "heroMediaId": "cmpr6jcrt0008bwv477g89hul",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-sculpted-hedgehog",
+      "tutorialId": "cmpr5k4f00000w4v4czyjx789",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:58:45.175Z",
+      "heroMediaId": "cmpr65n2h0018wov4k8p1n8sz",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > troubleshooter[22] > item[1] > symptom",
+          "snippet": "fall"
+        }
+      ]
+    },
+    {
+      "slug": "polymer-clay-sculpted-snail",
+      "tutorialId": "cmpr4t7ht00002sv4gpm9qd59",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:59:29.410Z",
+      "heroMediaId": "cmpr65nnn001awov4xsm5ibe9",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-skinner-blend-technique",
+      "tutorialId": "cmpr5ky2u0001wkv4ya94hpgk",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:59:22.779Z",
+      "heroMediaId": "cmpr65ofo001cwov432r1utt4",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-tassel-earrings",
+      "tutorialId": "cmpqesbs90000hwv4upunkb7y",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T04:15:25.334Z",
+      "heroMediaId": "cmpqol6vj00cygcv4t6whbipl",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-teardrop-earrings",
+      "tutorialId": "cmpe38ql80000ecv4rvy7e4k6",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-26T20:40:26.953Z",
+      "publishedAt": "2026-05-20T13:19:01.507Z",
+      "heroMediaId": "cmplf3o4s00rotkv4hth20hf1",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > heading[13] > text"
+        }
+      ]
+    },
+    {
+      "slug": "polymer-clay-textured-bangle",
+      "tutorialId": "cmpez3sf40000ncv4h0p3nel8",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-26T20:40:26.991Z",
+      "publishedAt": "2026-05-21T04:10:58.314Z",
+      "heroMediaId": "cmplke2dn00a6okv4r0t2oal6",
+      "findings": []
+    },
+    {
+      "slug": "polymer-clay-textured-keychain",
+      "tutorialId": "cmpqeaxiz0001jov41e4ttnsc",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T04:01:53.708Z",
+      "heroMediaId": "cmpqol8xg00d0gcv425ob27by",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[27] > text"
+        }
+      ]
+    },
+    {
+      "slug": "polymer-clay-translucent-leaf-pendants",
+      "tutorialId": "cmpr5l57r0000ikv4gh7mpnr4",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:59:32.601Z",
+      "heroMediaId": "cmpr65p5w001ewov42y2aw58c",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[4] > text"
+        }
+      ]
+    },
+    {
+      "slug": "pouring-glaze-inside-a-narrow-vessel",
+      "tutorialId": "cmpqet83t0000ukv498qz61jg",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T04:16:07.220Z",
+      "heroMediaId": "cmpqoletf00d6gcv4vsk4349w",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "safety-block: possible safety-advice block (4 safety keywords: ventilat, respirator, fire extinguisher, hazard). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
+          "path": "body > infoPanel[1] > body"
+        }
+      ]
+    },
+    {
+      "slug": "pulling-a-cylinder-wall",
+      "tutorialId": "cmpez5gx60002r0v4j016h4rm",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:35.662Z",
+      "publishedAt": "2026-05-21T04:12:16.733Z",
+      "heroMediaId": "cmplke5yv00acokv4sktg1d8g",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        }
+      ]
+    },
+    {
+      "slug": "pulling-and-attaching-a-thrown-spout",
+      "tutorialId": "cmpr5lnqd000038v4apkuywd7",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T17:00:00.761Z",
+      "heroMediaId": "cmpr65pv7001gwov47yzs3mdl",
+      "findings": []
+    },
+    {
+      "slug": "raku-firing-outdoor-process",
+      "tutorialId": "cmpr5m9ua0002s0v4vi04rwdm",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T17:12:01.260Z",
+      "heroMediaId": "cmpr6jdgi000abwv4jvfx70fu",
+      "findings": []
+    },
+    {
+      "slug": "reading-clay-drying-stages",
+      "tutorialId": "cmpe370080002acv4pvnsq7aj",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T15:07:06.953Z",
+      "publishedAt": "2026-05-20T13:17:40.414Z",
+      "heroMediaId": "cmpli083200w4p8v4vsd8bdf3",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
           "path": "body > paragraph[0] > text",
+          "snippet": "fall"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        }
+      ]
+    },
+    {
+      "slug": "reclaiming-air-dry-clay",
+      "tutorialId": "cmpe372lk00026wv4r88lhys1",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-26T23:43:12.903Z",
+      "publishedAt": "2026-05-20T13:17:43.769Z",
+      "heroMediaId": "cmplf58s800tgtkv4qri37my0",
+      "findings": []
+    },
+    {
+      "slug": "repairing-cracks-in-air-dry-greenware",
+      "tutorialId": "cmpr5kvrs000044v4o5ojgci4",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T17:11:43.238Z",
+      "heroMediaId": "cmpr6je3o000cbwv458lktk8w",
+      "findings": []
+    },
+    {
+      "slug": "resist-decoration-wax-emulsion-on-clay",
+      "tutorialId": "cmpr5klio0000sov4xugus8x1",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:59:05.656Z",
+      "heroMediaId": "cmpr65ry8001mwov4fap62mpz",
+      "findings": []
+    },
+    {
+      "slug": "rolling-a-clay-slab",
+      "tutorialId": "cmpe36s3g0002swv48flnigzy",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:40.741Z",
+      "publishedAt": "2026-05-20T13:24:47.894Z",
+      "heroMediaId": "cmpl96a1t002sqov4280cfano",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[0] > text",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "rolling-clay-coils",
+      "tutorialId": "cmpe36uqk0002u0v44gjrx1pu",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-27T00:41:18.688Z",
+      "publishedAt": "2026-05-20T13:17:33.585Z",
+      "heroMediaId": "cmplf6c0q00uotkv4ntpvic6s",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[10] > text",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "sgraffito-abstract-tile",
+      "tutorialId": "cmpez4pw80000hkv404s6d79i",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-26T20:40:27.288Z",
+      "publishedAt": "2026-05-21T04:11:41.698Z",
+      "heroMediaId": "cmplkfsx600cwokv4lcr9d538",
+      "findings": []
+    },
+    {
+      "slug": "sgraffito-line-work-tile",
+      "tutorialId": "cmpr5kj960000v8v4pg8p6c8k",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T17:11:40.309Z",
+      "heroMediaId": "cmpr6jes4000ebwv4ni33m6bx",
+      "findings": []
+    },
+    {
+      "slug": "sgraffito-on-air-dry-clay",
+      "tutorialId": "cmpe392730001hcv4e74rvh40",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:40.306Z",
+      "publishedAt": "2026-05-20T13:19:16.564Z",
+      "heroMediaId": "cmplf7rqy00wmtkv48g3fq1ru",
+      "findings": []
+    },
+    {
+      "slug": "sgraffito-on-thrown-stoneware-greenware",
+      "tutorialId": "cmpr5mgr40000i4v4t8ujh0bp",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T17:12:07.124Z",
+      "heroMediaId": "cmpr6jfes000gbwv43jvs6zov",
+      "findings": []
+    },
+    {
+      "slug": "slab-angled-wall-vase",
+      "tutorialId": "cmpr5k76b0000fgv4tg2xvfa9",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:58:48.118Z",
+      "heroMediaId": "cmpr65tx8001swov4xt2yutyn",
+      "findings": []
+    },
+    {
+      "slug": "slab-box-with-lid-air-dry-clay",
+      "tutorialId": "cmpe37abx0000ogv44wwngzln",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:35.392Z",
+      "publishedAt": "2026-05-20T13:17:53.787Z",
+      "heroMediaId": "cmplf8pmi00xetkv494dj3m9r",
+      "findings": []
+    },
+    {
+      "slug": "slab-built-clay-lantern",
+      "tutorialId": "cmpqe9sz10000e8v4fkzevpcl",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T15:07:06.983Z",
+      "publishedAt": "2026-05-29T04:01:01.149Z",
+      "heroMediaId": "cmpqoozzl00gkgcv4192plqow",
+      "findings": []
+    },
+    {
+      "slug": "slab-built-oval-planter",
+      "tutorialId": "cmpez43z80000dsv4mgcijip8",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-26T21:38:54.184Z",
+      "publishedAt": "2026-05-21T04:11:13.296Z",
+      "heroMediaId": "cmplkg05000dcokv439jrgww8",
+      "findings": []
+    },
+    {
+      "slug": "slab-built-rectangular-box-with-lid",
+      "tutorialId": "cmpr5js7e0000a4v4hf6kwy1c",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:58:30.331Z",
+      "heroMediaId": "cmpr65ul7001uwov40ai03gs8",
+      "findings": []
+    },
+    {
+      "slug": "slab-coaster-set-air-dry-clay",
+      "tutorialId": "cmpqe9k7000001kv4xuho8fef",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T08:43:05.943Z",
+      "publishedAt": "2026-05-29T04:00:49.772Z",
+      "heroMediaId": "cmpqop2n200gmgcv4zspdmo0c",
+      "findings": []
+    },
+    {
+      "slug": "slab-cup-air-dry-clay",
+      "tutorialId": "cmpe37xkf0000q0v4elkl59l8",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:42.118Z",
+      "publishedAt": "2026-05-20T13:18:23.901Z",
+      "heroMediaId": "cmplfmkhc000i94v4p3oxhtd1",
+      "findings": []
+    },
+    {
+      "slug": "slab-jewellery-dish",
+      "tutorialId": "cmpe3805b0000dsv4g3hyumgi",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-26T21:38:54.255Z",
+      "publishedAt": "2026-05-20T13:18:27.245Z",
+      "heroMediaId": "cmplf8rvd00xgtkv4dvyjnllc",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        }
+      ]
+    },
+    {
+      "slug": "slab-jewellery-stand-air-dry",
+      "tutorialId": "cmpqeaej70000kwv4795karzm",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T04:01:29.090Z",
+      "heroMediaId": "cmpqop4ra00gogcv4boxs4ppp",
+      "findings": []
+    },
+    {
+      "slug": "slab-oval-soap-dish",
+      "tutorialId": "cmpez31t20000mwv44a7rj2p4",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-26T21:38:54.289Z",
+      "publishedAt": "2026-05-21T04:10:23.828Z",
+      "heroMediaId": "cmplkg1ld00deokv4k10pi6ry",
+      "findings": []
+    },
+    {
+      "slug": "slab-picture-frame-clay",
+      "tutorialId": "cmpez34tk00002sv4qz7uc1uc",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:40.024Z",
+      "publishedAt": "2026-05-21T04:10:27.731Z",
+      "heroMediaId": "cmplkg3an00dgokv4ju2dy0ib",
+      "findings": []
+    },
+    {
+      "slug": "slab-rectangular-trinket-tray",
+      "tutorialId": "cmpqerwjh00005cv45i9hbsv9",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T04:15:05.579Z",
+      "heroMediaId": "cmpqop6vx00gqgcv4ldunifb9",
+      "findings": []
+    },
+    {
+      "slug": "slab-tile-pendant-set",
+      "tutorialId": "cmpqes42j0000dgv4edecwi6r",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T04:15:15.335Z",
+      "heroMediaId": "cmpqop91e00gsgcv4ufks4ws9",
+      "findings": []
+    },
+    {
+      "slug": "slab-tray-with-folded-rim",
+      "tutorialId": "cmpez3akp0000zgv41c7s1dr8",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:39.478Z",
+      "publishedAt": "2026-05-21T04:10:35.191Z",
+      "heroMediaId": "cmplkg56000diokv4y05hfn6b",
+      "findings": []
+    },
+    {
+      "slug": "slab-vase-air-dry-clay",
+      "tutorialId": "cmpe37kr60000a8v434cuhuxv",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:40.040Z",
+      "publishedAt": "2026-05-20T13:18:07.296Z",
+      "heroMediaId": "cmplf8tyc00xitkv4jgjo29lc",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        }
+      ]
+    },
+    {
+      "slug": "slip-decorated-coaster-set",
+      "tutorialId": "cmpez4spi0000jkv4bvoxeoeq",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T08:53:36.928Z",
+      "publishedAt": "2026-05-21T04:11:45.345Z",
+      "heroMediaId": "cmplkg6kx00dkokv4xds4d4f5",
+      "findings": []
+    },
+    {
+      "slug": "slip-trailing-on-air-dry-clay",
+      "tutorialId": "cmpe394rw0001ekv4k5a39961",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:40.158Z",
+      "publishedAt": "2026-05-20T13:19:19.901Z",
+      "heroMediaId": "cmplf8x0j00xktkv4kml2rq4u",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[6] > text"
+        }
+      ]
+    },
+    {
+      "slug": "sprig-moulding-technique",
+      "tutorialId": "cmpe3goo50001v8v42ph44zc9",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-27T00:41:19.203Z",
+      "publishedAt": "2026-05-20T13:25:12.271Z",
+      "heroMediaId": "cmplfb2nz00z8tkv4gtaah052",
+      "findings": []
+    },
+    {
+      "slug": "stamping-texture-into-clay",
+      "tutorialId": "cmpe397do00010ov4jqh6b26r",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T08:54:02.926Z",
+      "publishedAt": "2026-05-20T13:19:23.275Z",
+      "heroMediaId": "cmpli33lm00zup8v4vue6j6hs",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        }
+      ]
+    },
+    {
+      "slug": "storing-and-reconditioning-clay",
+      "tutorialId": "cmpqebeiw00023wv48ei57v8x",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:44.987Z",
+      "publishedAt": "2026-05-29T04:02:15.732Z",
+      "heroMediaId": "cmpqoqdpu00hsgcv4fnywurb2",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[20] > text"
+        }
+      ]
+    },
+    {
+      "slug": "tall-coil-cylinder-vase",
+      "tutorialId": "cmpe382s90000zwv4x3dknrtw",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:42.056Z",
+      "publishedAt": "2026-05-20T13:18:30.658Z",
+      "heroMediaId": "cmplc5pe2011qygv44ij22113",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[14] > text",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "terra-sigillata-burnishing-air-dry",
+      "tutorialId": "cmpqeb0a20001qov48rncg82s",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:43.538Z",
+      "publishedAt": "2026-05-29T04:01:57.277Z",
+      "heroMediaId": "cmpqorqd700jggcv4vj5f9qju",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Flake\" — generic equivalent is \"flaked chocolate (the ingredient) or Cadbury Flake (the bar)\"",
+          "path": "body > paragraph[16] > text",
+          "snippet": "Flake"
+        }
+      ]
+    },
+    {
+      "slug": "testing-clay-dryness-by-colour-and-touch",
+      "tutorialId": "cmpez2qot000000v4tz8qdcww",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:43.296Z",
+      "publishedAt": "2026-05-21T04:10:09.404Z",
+      "heroMediaId": "cmplkgnzs00eiokv4cnjxu3g7",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[5] > text"
+        }
+      ]
+    },
+    {
+      "slug": "testing-glaze-on-test-tiles",
+      "tutorialId": "cmpqetdbt00001sv4smc1bn7i",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T08:43:23.705Z",
+      "publishedAt": "2026-05-29T04:16:13.982Z",
+      "heroMediaId": "cmpqorskp00jigcv4ered4r6m",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "safety-block: possible safety-advice block (5 safety keywords: ppe, ventilat, respirator, fire extinguisher). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
+          "path": "body > infoPanel[1] > body"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[18] > text",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "throwing-a-cylinder-from-half-kilo",
+      "tutorialId": "cmpqet08s0001vwv4k7wv9h9t",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:45.830Z",
+      "publishedAt": "2026-05-29T04:15:57.037Z",
+      "heroMediaId": "cmpqos8d700jygcv4ost5yax0",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[11] > text",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "throwing-a-flat-plate-stoneware",
+      "tutorialId": "cmpqebl3m0000b8v4wjgwhgvu",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:44.955Z",
+      "publishedAt": "2026-05-29T04:02:24.254Z",
+      "heroMediaId": "cmpqos9go00k0gcv4ctp6yqk5",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "safety-block: possible safety-advice block (5 safety keywords: ppe, ventilat, respirator, fire extinguisher). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
+          "path": "body > infoPanel[1] > body"
+        }
+      ]
+    },
+    {
+      "slug": "throwing-a-jug-with-pulled-spout",
+      "tutorialId": "cmpqebpmr00002wv4m0f4zvel",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:36.337Z",
+      "publishedAt": "2026-05-29T04:02:30.120Z",
+      "heroMediaId": "cmpqosahx00k2gcv4565rzemr",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "safety-block: possible safety-advice block (5 safety keywords: ppe, ventilat, respirator, fire extinguisher). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
+          "path": "body > infoPanel[1] > body"
+        }
+      ]
+    },
+    {
+      "slug": "throwing-a-lidded-honey-pot",
+      "tutorialId": "cmpr5lpzj0000cgv42dw3s4wf",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T17:00:03.761Z",
+      "heroMediaId": "cmpr65v9t001wwov4oidyu86r",
+      "findings": []
+    },
+    {
+      "slug": "throwing-a-lidded-jar-stoneware",
+      "tutorialId": "cmpqet2wi0001k4v41gy67rtn",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:39.293Z",
+      "publishedAt": "2026-05-29T04:16:00.477Z",
+      "heroMediaId": "cmpqosds000k4gcv474ca89gv",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "safety-block: possible safety-advice block (5 safety keywords: ppe, ventilat, respirator, fire extinguisher). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
+          "path": "body > infoPanel[1] > body"
+        }
+      ]
+    },
+    {
+      "slug": "throwing-a-set-of-matching-espresso-cups",
+      "tutorialId": "cmpr5lli10001scv4frheek4x",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:59:57.749Z",
+      "heroMediaId": "cmpr65vw1001ywov4d3uzroq0",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[0] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[6] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[8] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > bulletList[12] > listItem[1] > paragraph[0] > text",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "throwing-a-shallow-open-bowl",
+      "tutorialId": "cmpr5lgrg0000akv4g4kiyeb9",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T17:11:49.432Z",
+      "heroMediaId": "cmpr6jfzr000ibwv4mbkog87t",
+      "findings": []
+    },
+    {
+      "slug": "throwing-a-tea-bowl",
+      "tutorialId": "cmpr5lj3l0000vkv488skm3da",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:59:54.671Z",
+      "heroMediaId": "cmpr65xee0022wov4h8i5zqjk",
+      "findings": []
+    },
+    {
+      "slug": "throwing-a-vase-with-narrow-neck",
+      "tutorialId": "cmpr5ledh0003wcv4z8s3xqtm",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:59:46.557Z",
+      "heroMediaId": "cmpr65yiy0024wov49fx1cykn",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > orderedList[4] > listItem[0] > paragraph[0] > text",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "thrown-bowl-smooth-stoneware",
+      "tutorialId": "cmpez947l0000msv4r6ttlisa",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:37.361Z",
+      "publishedAt": "2026-05-21T04:15:06.871Z",
+      "heroMediaId": "cmplkgts200emokv4zs2sz4nm",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[1] > text"
+        }
+      ]
+    },
+    {
+      "slug": "thrown-mug-smooth-stoneware",
+      "tutorialId": "cmpez97690000ucv4kj5n3phc",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:43.612Z",
+      "publishedAt": "2026-05-21T04:15:10.716Z",
+      "heroMediaId": "cmplkgwe700eookv4gc1xuib9",
+      "findings": []
+    },
+    {
+      "slug": "trimming-a-foot-ring-on-the-wheel",
+      "tutorialId": "cmpez5jqu0002y0v4x1b8yo8f",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T14:13:37.999Z",
+      "publishedAt": "2026-05-21T04:12:20.390Z",
+      "heroMediaId": "cmplkhaer00f4okv4m7amfeki",
+      "findings": []
+    },
+    {
+      "slug": "trimming-a-thrown-bowl-leather-hard",
+      "tutorialId": "cmpqet5eo0000t8v4bh2j3jl7",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:45.123Z",
+      "publishedAt": "2026-05-29T04:16:03.725Z",
+      "heroMediaId": "cmpqospzb00kggcv44091chrl",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > paragraph[13] > text",
           "snippet": "Anchor"
         },
         {
           "severity": "WARN",
           "kind": "voice-violation",
           "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
-          "path": "body > heading[10] > text",
+          "path": "body > paragraph[24] > text",
           "snippet": "Anchor"
         },
         {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > pullQuote[12] > paragraph[0]",
-          "snippet": "This week, I am grateful that overflow and generosity now dance together in every area of my life."
-        }
-      ]
-    },
-    {
-      "slug": "the-perfect-advisors-find-me-easily",
-      "tutorialId": "cmpc7olvz0000ogv4udearyd8",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:48.676Z",
-      "publishedAt": "2026-05-19T05:47:48.017Z",
-      "heroMediaId": "cmpmgkf6400zc2gv46o6zmdau",
-      "findings": [
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > troubleshooter[34] > item[0] > cause",
+          "snippet": "Anchor"
+        },
         {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > pullQuote[3] > paragraph[0]",
-          "snippet": "The perfect advisors, opportunities, and partnerships align with my vision of generational wealth. They find me easily."
-        }
-      ]
-    },
-    {
-      "slug": "the-slow-leak-what-drains-your-energy",
-      "tutorialId": "cmpr1y9xr0000jov4oe7zc315",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T15:07:17.789Z",
-      "publishedAt": "2026-05-29T15:03:54.034Z",
-      "heroMediaId": "cmpr1zncx000ebcv420u9h6ah",
-      "findings": [
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > troubleshooter[34] > item[0] > fix",
+          "snippet": "Anchor"
+        },
         {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[8]",
-          "snippet": "Slow leaks often appear in the heavier column repeatedly without the person registering them as a pattern. Once the pattern is visible, deci"
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > troubleshooter[34] > item[2] > fix",
+          "snippet": "Anchor"
         }
       ]
     },
     {
-      "slug": "three-habits-wealthy-me-already-has-journal",
-      "tutorialId": "cmpbodwf80000dov43i5ywoun",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:52.065Z",
-      "publishedAt": "2026-05-18T20:47:35.761Z",
-      "heroMediaId": "cmpmgm4lc011o2gv4cmj2952t",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[7]",
-          "snippet": "Write the specific qualities: calm, orderly, intentional, unhurried. What else?"
-        }
-      ]
+      "slug": "underglaze-painting-on-bisqueware-no-kiln",
+      "tutorialId": "cmpez4vl70001ysv4kbcwet72",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T15:07:07.012Z",
+      "publishedAt": "2026-05-21T04:11:49.086Z",
+      "heroMediaId": "cmplkhkyf00fgokv4lf2po4xv",
+      "findings": []
     },
     {
-      "slug": "touched-out-the-science-and-the-soft-answer",
-      "tutorialId": "cmpqclipc0000a4v4j8iwbg80",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:51.981Z",
-      "publishedAt": "2026-05-29T03:14:08.476Z",
-      "heroMediaId": "cmpqosoaz00kegcv4neo3lbh3",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[3]",
-          "snippet": "At the same time, caregiving requires sustained attention: monitoring, responding, adjusting. This adds to the physical load. The combinatio"
-        }
-      ]
+      "slug": "understanding-reduction-atmosphere-in-kilns",
+      "tutorialId": "cmpr5megg0001jcv4fh3fxdn9",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T17:12:04.238Z",
+      "heroMediaId": "cmpr6jgmk000kbwv46gwed7ut",
+      "findings": []
     },
     {
-      "slug": "two-voices-on-the-same-budget-activity",
-      "tutorialId": "cmpcgl2u90000ecv4o8h6nhyp",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:51.550Z",
-      "publishedAt": "2026-05-19T14:47:50.673Z",
-      "heroMediaId": "cmpmgmfsw01222gv4u7k4rbo5",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[3] > listItem[0] > paragraph[0]",
-          "snippet": "One shared real financial document: the monthly budget, a bank-account summary, a savings statement, the credit-card bill. Not hypothetical "
-        }
-      ]
-    },
-    {
-      "slug": "what-body-neutrality-actually-means",
-      "tutorialId": "cmpr1ydav0000icv4v3g70yzi",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T15:07:29.037Z",
-      "publishedAt": "2026-05-29T15:03:58.400Z",
-      "heroMediaId": "cmpr1zpk2000ibcv43c2u5dsw",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Drawn from body image research and clinical writing on body dissatisfaction. No single source. By homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "what-does-safe-with-money-feel-like-in-my-body-journal",
-      "tutorialId": "cmpaiasps0000kov4cejrqk0u",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:55:25.354Z",
-      "publishedAt": "2026-05-18T01:09:27.118Z",
-      "heroMediaId": "cmpmgoiky014w2gv4ughuh1xn",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[7]",
-          "snippet": "Name the specific physical signals, not \"anxious\" but the actual sensation of anxiety in your body."
-        }
-      ]
-    },
-    {
-      "slug": "what-does-the-sleepless-version-of-me-deserve-to-hear-journal",
-      "tutorialId": "cmpaxh9q30000oov42jdo6zhz",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:55:25.973Z",
-      "publishedAt": "2026-05-18T08:14:23.337Z",
-      "heroMediaId": "cmpmgomto01522gv4jelagejl",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[5]",
-          "snippet": "Write the specific thing, not a general description of tiredness but the particular cost that didn't get acknowledged."
-        }
-      ]
-    },
-    {
-      "slug": "what-forgiveness-is-what-it-isnt",
-      "tutorialId": "cmpefnrri0000rsv4t41zshyg",
-      "type": "READING",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:48.410Z",
-      "publishedAt": "2026-05-20T19:06:38.263Z",
-      "heroMediaId": "cmpmgowy1015g2gv4j3rc60zs",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[6]",
-          "snippet": "The most clinically consistent finding in forgiveness research is that the person who benefits from forgiveness is the person who does the f"
-        }
-      ]
-    },
-    {
-      "slug": "what-is-available-to-her-is-available-to-me",
-      "tutorialId": "cmpaa4nzz000008v4vz9qi7t7",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:55:27.136Z",
-      "publishedAt": "2026-05-19T14:47:50.673Z",
-      "heroMediaId": "cmpmgpdj801622gv4psj7ues8",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[9]",
-          "snippet": "If the Allow won't land, name the specific woman whose win triggered the feeling. Say the Release with her name in it: \"I am ready to releas"
-        }
-      ]
-    },
-    {
-      "slug": "when-the-sleepless-years-leave-a-mark",
-      "tutorialId": "cmpaxh74600003gv4904k8eiv",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:49.583Z",
-      "publishedAt": "2026-05-19T14:47:50.673Z",
-      "heroMediaId": "cmpmgr5l4018e2gv4rfgu8tyw",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[2]",
-          "snippet": "Low-level resentment toward the body, because it lets you down in a way with real, visible consequences. Hypervigilance, monitoring sleepine"
-        }
-      ]
-    },
-    {
-      "slug": "when-womens-friendships-disappear-in-midlife",
-      "tutorialId": "cmpefphvf0000sov4hxcrzbus",
-      "type": "READING",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:48.896Z",
-      "publishedAt": "2026-05-20T19:07:58.751Z",
-      "heroMediaId": "cmpmgra34018k2gv4oerg049v",
+      "slug": "wax-resist-double-glaze-overlap",
+      "tutorialId": "cmpqetapf0002yov496da5zi5",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T04:16:10.601Z",
+      "heroMediaId": "cmpqotbdm00kygcv4tnd1xevn",
       "findings": [
         {
           "severity": "WARN",
           "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "body > paragraph[2] > text",
-          "snippet": "fall"
+          "message": "safety-block: possible safety-advice block (4 safety keywords: ventilat, respirator, fire extinguisher, hazard). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
+          "path": "body > infoPanel[1] > body"
         },
         {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[3]",
-          "snippet": "The result is not a character deficiency in women who find themselves friendship-lonely. It is the predictable output of a set of structural"
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[4] > text",
+          "snippet": "Target"
         }
       ]
     },
     {
-      "slug": "where-to-start-with-money-work",
-      "tutorialId": "cmpcj9vk3000060v48vb52moo",
-      "type": "READING",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:55:31.138Z",
-      "publishedAt": "2026-05-19T11:12:16.109Z",
-      "heroMediaId": "cmpmgrpxs01962gv4hg9ubfcg",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[12]",
-          "snippet": "Written for homemade.education as a way in to the money section of the Mindset library."
-        }
-      ]
-    },
-    {
-      "slug": "why-anxiety-hits-in-perimenopause",
-      "tutorialId": "cmpr0u3360000ncv4k3f89pyq",
-      "type": "READING",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:31.689Z",
-      "publishedAt": "2026-05-29T14:41:43.649Z",
-      "heroMediaId": "cmpr17q51002ou8v4jtnbq81r",
+      "slug": "wedging-clay-for-hand-building",
+      "tutorialId": "cmpez2kqm0001v4v4iz7w5xw6",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "WARN_ONLY",
+      "voiceRetrofittedAt": "2026-05-29T14:13:39.798Z",
+      "publishedAt": "2026-05-21T04:10:01.713Z",
+      "heroMediaId": "cmplki77p00g2okv4247p3n7s",
       "findings": [
         {
           "severity": "WARN",
           "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "body > paragraph[2] > text",
-          "snippet": "fall"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[8]",
-          "snippet": "The usual anxiety toolkit is a useful starting point: breathwork, tapping, reducing caffeine and alcohol, consistent sleep. These address th"
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
         }
       ]
     },
     {
-      "slug": "why-debt-obsession-grows-in-the-dark",
-      "tutorialId": "cmpa4yg3p0000c8v485vo04b9",
-      "type": "READING",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:55:35.852Z",
-      "publishedAt": "2026-05-17T18:55:55.883Z",
-      "heroMediaId": "cmpmgsb4f019w2gv4g0jbckjd",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[13]",
-          "snippet": "The avoidance-rumination cycle is well documented in cognitive-behavioural therapy and in anxiety research. The specific debt-avoidance patt"
-        }
-      ]
-    },
-    {
-      "slug": "why-inheritance-and-tax-fear-slows-down-wealth-planning",
-      "tutorialId": "cmpc7rumi00004cv45kji9zbw",
-      "type": "READING",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:51.643Z",
-      "publishedAt": "2026-05-19T05:50:19.297Z",
-      "heroMediaId": "cmpmgsgu501a42gv46tbjtfpg",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[3]",
-          "snippet": "Inheritance and tax anxiety has several distinct components and most people are running two or three at once."
-        }
-      ]
-    },
-    {
-      "slug": "why-we-fight-about-the-same-things",
-      "tutorialId": "cmpr1ywwl000010v4g43zy5xb",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T15:07:34.798Z",
-      "publishedAt": "2026-05-29T15:04:23.805Z",
-      "heroMediaId": "cmpr1ztu6000qbcv422fz67fp",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Drawn from Gottman relationship research and attachment theory. No single source. By homemade.education."
-        }
-      ]
+      "slug": "wedging-clay-spiral-method",
+      "tutorialId": "cmpb7rrs50004mgv4e6o8gkgm",
+      "type": "TECHNIQUE",
+      "categorySlug": "pottery-ceramics",
+      "status": "PASS",
+      "voiceRetrofittedAt": "2026-05-29T08:55:20.365Z",
+      "publishedAt": "2026-05-19T17:09:10.784Z",
+      "heroMediaId": "cmpejapwn00wgk8v4ghe1uiln",
+      "findings": []
     }
   ]
 }

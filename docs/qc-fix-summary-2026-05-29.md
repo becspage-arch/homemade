@@ -887,3 +887,117 @@ SKIPPED: 0
 - ev-charger-decision-guide: grade-level-strict
 - flat-roof-insulation-options: grade-level-strict
 - gravity-fed-spring-water-supply: grade-level-strict
+
+---
+
+## Run at 16:27:47
+
+Generated: 2026-05-29T16:27:47.241Z
+
+Processed: 4110
+PASS: 4079
+STILL_BLOCKED: 31
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 81 |
+| grade-level-strict | 30 |
+
+## Still BLOCKED (sample 20)
+
+- air-dry-clay-herb-markers: 
+- bridle-joint-technique: 
+- carved-birch-spice-spoon: 
+- carved-cherry-tasting-spoon: 
+- carved-lime-broth-ladle: 
+- carved-sycamore-spatula-spoon: 
+- carving-a-kuksa-interior: 
+- cleft-ash-spade-handle: 
+- colouring-clay-body-with-dry-pigment: 
+- drawknife-on-chair-backs: 
+- green-birch-coat-pegs: 
+- green-hazel-bean-pole-arch: 
+- pole-lathe-turned-bobbin: 
+- polymer-clay-ring-with-embedded-petals: 
+- polymer-clay-sculpted-snail: 
+- pyrography-christmas-tree-ornaments: 
+- pyrography-on-curved-surfaces: 
+- pyrography-round-slice-decoration: 
+- pyrography-tip-maintenance: 
+- riven-ash-garden-fork-handle: 
+
+---
+
+## Run at 16:48:17
+
+Generated: 2026-05-29T16:48:17.902Z
+
+Processed: 148
+PASS: 129
+STILL_BLOCKED: 19
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 60 |
+| body-missing-method | 24 |
+
+## Still BLOCKED (sample 20)
+
+- celadon-glaze-on-carved-stoneware: 
+- coil-built-square-vessel: 
+- kiln-wash-preparation-and-shelf-care: 
+- loading-an-electric-kiln-for-bisque: 
+- majolica-style-painted-tile: 
+- painting-underglaze-on-leather-hard-stoneware: 
+- paper-clay-wearable-brooch: 
+- polymer-clay-skinner-blend-technique: 
+- raku-firing-outdoor-process: 
+- repairing-cracks-in-air-dry-greenware: 
+- resist-decoration-wax-emulsion-on-clay: 
+- sgraffito-line-work-tile: 
+- sgraffito-on-thrown-stoneware-greenware: 
+- slab-angled-wall-vase: 
+- throwing-a-lidded-honey-pot: 
+- throwing-a-shallow-open-bowl: 
+- throwing-a-tea-bowl: 
+- throwing-a-vase-with-narrow-neck: 
+- understanding-reduction-atmosphere-in-kilns: 
+
+---
+
+## Run at 16:48:30
+
+Generated: 2026-05-29T16:48:30.511Z
+
+Processed: 129
+PASS: 129
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 17:09:17
+
+Generated: 2026-05-29T17:09:17.308Z
+
+Processed: 65
+PASS: 65
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
