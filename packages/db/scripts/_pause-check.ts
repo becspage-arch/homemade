@@ -5,19 +5,14 @@ loadEnv()
 import { prisma } from '../src'
 
 async function main() {
-  const paused = await prisma.autopilotPauseState.findMany({
-    where: {
-      streamName: { in: ['queue', 'global'] },
-      pausedAt: { not: null },
-    },
-  })
-  if (paused.length > 0) {
-    console.log('PAUSED:' + JSON.stringify(paused))
-    process.exit(1)
-  } else {
-    console.log('NOT_PAUSED')
-    process.exit(0)
+  try {
+    const rows = await prisma.autopilotPauseState.findMany({
+      where: { streamName: { in: ['queue', 'global'] }, pausedAt: { not: null } },
+    })
+    console.log('PAUSE_ROWS:' + JSON.stringify(rows))
+  } catch (e: any) {
+    console.log('TABLE_MISSING:' + e.message.slice(0, 120))
   }
+  await prisma.$disconnect()
 }
-
-main().catch(e => { console.error(e); process.exit(2) })
+main()

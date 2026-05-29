@@ -1,0 +1,249 @@
+{
+  "slug": "dyeing-with-lichen",
+  "title": "Dyeing with lichen",
+  "subtitle": "The ammonia fermentation method for orchil-class lichens giving purple-red, and the boiling-water method for non-orchil lichens giving green-gold",
+  "excerpt": "Lichen dyeing covers two distinct methods. The orchil-class lichens (including Ochrolechia tartarea and Evernia prunastri) give a purple-red through an ammonia fermentation vat with no mordant. Non-orchil lichens such as Parmelia species give a green-gold by the simpler boiling-water method with alum mordant. Species identification matters: the orchil method only works on the correct genus. Lichen grows slowly; collect with restraint.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "natural-dyeing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Pellew, Charles Livingston. Dyes and Dyeing. New York, 1913. Public domain. Internet Archive. Hummel, J. J. The Dyeing of Textile Fabrics. London, 1885. Public domain. Internet Archive. Both sources document orchil and cudbear (Ochrolechia class) ammonia fermentation and the boiling-water method for non-orchil lichens.",
+  "recipeTools": [
+    { "slug": "dye-pot-stainless", "isOptional": false },
+    { "slug": "dye-thermometer", "isOptional": false },
+    { "slug": "dyeing-gloves-long", "isOptional": false },
+    { "slug": "dyeing-apron", "isOptional": false },
+    { "slug": "kitchen-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mordant",
+      "term": "Mordant",
+      "definition": "A metallic salt or mineral compound that bonds to both the fibre and the dye molecule, creating a stable bridge between them. Orchil-class lichen dye is substantive and requires no mordant: the orcein compound bonds directly to wool protein fibre. Non-orchil lichens benefit from an alum mordant to give a clear green-gold result."
+    },
+    {
+      "slug": "fermentation-vat",
+      "term": "Fermentation vat",
+      "definition": "In lichen dyeing, a cold fermentation pot where lichen is macerated in an ammonia solution (historically human urine, now dilute household ammonia) for several weeks. The ammonia releases the orcein compound from the lichen cells. No heat is needed; the process is entirely cold. The resulting purple-red liquid is used directly as the dye bath."
+    },
+    {
+      "slug": "dye-bath",
+      "term": "Dye bath",
+      "definition": "The liquid in which dyed fibre is immersed to take up colour. For orchil-class lichen, the fermentation liquid is itself the dye bath. For non-orchil lichens, the dye bath is prepared by simmering the lichen in water, straining out the solids, and using the remaining liquid."
+    }
+  ],
+  "aliases": [
+    "lichen natural dye",
+    "orchil dye wool purple",
+    "cudbear dye",
+    "evernia prunastri dye",
+    "lichen fermentation pot"
+  ],
+  "techniqueSlugs": [
+    "natural-dye-mordanting-with-alum",
+    "natural-dye-mordant-overview"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Mordant safety",
+          "body": "Dye-pots are dedicated and never return to food use. Use stainless steel or enamelled pots. Wear gloves and apron. Work with extractor running or outdoors."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lichen dyeing uses two methods depending on the lichen genus. Orchil-class lichens such as Ochrolechia tartarea and Evernia prunastri contain orcin compounds. In an alkaline ammonia environment, orcin converts to orcein and produces a purple-red dye. It bonds directly to wool without a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mordant" } }],
+            "text": "mordant"
+          },
+          { "type": "text", "text": ". This requires a cold " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fermentation-vat" } }],
+            "text": "fermentation vat"
+          },
+          { "type": "text", "text": " and several weeks of waiting. Non-orchil lichens such as Parmelia species give a green-gold by the boiling-water method with alum mordant." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Lichen collection",
+          "body": "Lichen grows very slowly. Take only small amounts from abundant colonies. Never strip bark or remove whole growths. Many species are protected."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Species identification is important before collecting. The orchil method does not work on all lichens. Only orcin-containing genera produce purple-red by this method. Lichens that look similar (foliose, grey-green, on bark or rock) may not contain orcin compounds. They will give nothing from an ammonia fermentation vat. Using the wrong species wastes time and plant material. If in doubt, use the spot test: put a drop of household bleach on a small piece of lichen. Orchil-class lichens turn red within seconds." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Wool yarn or fleece, dry weight", "qty": "100 g" },
+            { "name": "Orchil-class lichen (for fermentation method) OR non-orchil lichen (for boiling-water method)", "qty": "50 to 100 g" },
+            { "name": "Household ammonia solution 5 to 10% (for orchil fermentation method)", "qty": "300 ml" },
+            { "name": "Alum potash (for non-orchil boiling-water method only, 25% weight of fibre)", "qty": "25 g" },
+            { "name": "Glass jar with lid, dedicated to fermentation vat", "qty": "1" },
+            { "name": "Stainless steel dye-pot, dedicated to dyeing", "qty": "1" },
+            { "name": "Dye-pot thermometer (dedicated)", "qty": "1" },
+            { "name": "Fine-mesh sieve for straining (boiling-water method)", "qty": "1" },
+            { "name": "Long rubber gloves (dyeing)", "qty": "1 pair" },
+            { "name": "Apron (dyeing-dedicated)", "qty": "1" },
+            { "name": "Kitchen scales", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method A: Orchil fermentation vat (purple-red)" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Build the fermentation vat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Crumble the dry lichen into a glass jar. Pour the ammonia solution over to cover the lichen by 2 to 3 cm. Seal the jar loosely (to allow gas to escape) and place in a warm location at roughly 20°C. Shake or stir the jar daily. The liquid will gradually shift from pale to a brownish-purple over 2 to 4 weeks." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Test the fermentation vat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After 2 weeks, dip a small piece of pre-wetted wool into the strained liquid and hold at room temperature for 20 minutes. Rinse and dry. A purple or purple-red result indicates the fermentation vat is ready. If the result is pale beige, wait another week. The fermentation vat can be used immediately once ready or stored sealed at room temperature for several months." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Dye bath (orchil method)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pre-wet the wool in cool water for 30 minutes. Strain the fermentation liquid through a fine-mesh sieve into the dye-pot, discarding the lichen residue. Add enough water to submerge the wool comfortably. Lower the pre-wetted wool in. Bring to 80°C over 30 minutes and hold for 60 minutes, turning the wool every 15 minutes. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dye-bath" } }],
+            "text": "dye bath"
+          },
+          { "type": "text", "text": " colour will shift from purple-brown to lighter as the dye is taken up. Remove the wool, cool slightly, and rinse in water at a similar temperature until nearly clear. Dry in shade." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method B: Boiling-water method (green-gold on non-orchil lichens)" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Pre-wet and mordant" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pre-wet the wool in cool water for 30 minutes. Mordant with 25 g alum potash dissolved in hot water, added to a pot of warm water. Lower the wool in, bring to 80°C over 30 minutes, hold for 45 minutes. Remove and set aside without rinsing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Prepare the dye bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place the non-orchil lichen in the dye-pot and cover with water. Bring to a simmer and hold at 80°C for 60 minutes. Strain and return the golden-brown liquid to the pot." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Dye bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lower the mordanted wool into the strained bath. Bring to 80°C over 20 minutes and hold for 60 minutes, turning every 15 minutes. The result on alum-mordanted wool is a green-gold to warm brown-gold. Rinse, squeeze gently, and dry in shade." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Colour variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Orchil fermentation on unmordanted wool gives a dusty purple-red to dusky mauve. Longer fermentation time and more lichen relative to fibre deepens the result. Orchil purple is not highly light-fast: it will soften and shift toward grey-pink over months in daylight, which was well documented in historical use. Non-orchil lichen on alum mordant gives green-gold; on iron mordant the result shifts to grey-brown." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Fermentation vat produced beige rather than purple after four weeks",
+              "cause": "Lichen species used does not contain orcin compounds, or the ammonia concentration was too low",
+              "fix": "Confirm the species with the bleach spot test before starting. Use household ammonia at 5 to 10% concentration, not diluted further. The lichen must be from the orchil class."
+            },
+            {
+              "problem": "Purple came out very pale after dyeing",
+              "cause": "Insufficient lichen in the fermentation vat, or the dye bath temperature was too low",
+              "fix": "Use at least 50 g of lichen per 100 g of wool for a visible result. Hold the dye bath at 80°C throughout. Below 70°C the orchil compound bonds poorly to wool."
+            },
+            {
+              "problem": "Green-gold from boiling-water method is dull and grey",
+              "cause": "Mordant bath did not reach or hold 80°C, or the wrong lichen species was used",
+              "fix": "Confirm the alum mordant was held at 80°C for 45 minutes. Non-orchil lichens such as Parmelia species give green-gold; other genera may give different results."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Wastewater disposal" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Spent orchil fermentation liquid and alum mordant bath are low-hazard at home quantities and can go down a foul drain once neutralised and cooled. The fermentation liquid is alkaline from the ammonia: dilute it well with water before flushing down the foul drain. The spent lichen residue can go in general waste. Do not compost ammonia-soaked lichen residue without fully rinsing and drying it first." }
+        ]
+      }
+    ]
+  }
+}

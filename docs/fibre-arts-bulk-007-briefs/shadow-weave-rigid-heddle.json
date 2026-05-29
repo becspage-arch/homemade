@@ -1,0 +1,244 @@
+{
+  "slug": "shadow-weave-rigid-heddle",
+  "title": "Shadow weave on a rigid heddle loom",
+  "subtitle": "A two-colour pick-up pattern that creates geometric shadow at 8 epi",
+  "excerpt": "Shadow weave on a rigid heddle uses a pick-up stick to alternate between plain weave and a lifted pattern shed, building a geometric optical illusion from two alternating warp colours. Worked at 8 epi (approximately 3 ends per cm) on a standard rigid heddle loom with a supplementary pick-up stick.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from modern rigid-heddle technique instruction. Shadow weave as a pick-up structure on rigid heddle looms is an observation-led development documented in contemporary guild workshops and published rigid-heddle manuals; no single source is followed verbatim.",
+  "recipeTools": [
+    { "slug": "rigid-heddle-loom", "isOptional": false },
+    { "slug": "weaving-pick-up-stick", "isOptional": false },
+    { "slug": "stick-shuttle", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "shadow-weave",
+      "term": "Shadow weave",
+      "definition": "A weave structure where two alternating warp colours and a specific pick-up sequence create an optical illusion of depth or shadow on the cloth surface. The shadow effect arises because the same colour appears on both the raised and lowered threads in a controlled alternating pattern, producing areas of light and dark that shift depending on the viewing angle."
+    },
+    {
+      "slug": "pick-up-stick",
+      "term": "Pick-up stick",
+      "definition": "A flat, smooth stick inserted through the warp threads in a specific sequence to create a supplementary shed. On a rigid heddle loom, a pick-up stick is placed below the heddle to lift selected threads that the heddle alone cannot isolate, enabling complex patterns without additional shafts."
+    },
+    {
+      "slug": "epi",
+      "term": "EPI (ends per inch)",
+      "definition": "Ends per inch: the number of warp threads within one inch of warp width. EPI is the standard sett measurement in British and North American weaving practice. An 8-epi sett has 8 warp threads per inch, equivalent to approximately 3 threads per centimetre."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "rigid heddle shadow weave",
+    "two-colour pick-up rigid heddle",
+    "shadow weave pick-up stick"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Shadow weave produces its characteristic geometric depth by pairing two warp colours in strict alternation and then manipulating which colour rises to the surface through a pick-up sequence. On a rigid heddle loom the " },
+          {
+            "type": "text",
+            "text": "pick-up stick",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pick-up-stick" } }]
+          },
+          { "type": "text", "text": " does the work that multiple shafts would perform on a floor loom. The result is a " },
+          {
+            "type": "text",
+            "text": "shadow weave",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "shadow-weave" } }]
+          },
+          { "type": "text", "text": " cloth with a clean geometric figure, woven at 8 " },
+          {
+            "type": "text",
+            "text": "epi",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "epi" } }]
+          },
+          { "type": "text", "text": " (approximately 3 ends per cm)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The pick-up draft" }]
+      },
+      {
+        "type": "weavingDraft",
+        "attrs": {
+          "definition": {
+            "title": "Shadow weave pick-up pattern on rigid heddle",
+            "loomType": "rigid-heddle",
+            "threading": [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],
+            "tieUp": [
+              [1, 0],
+              [0, 1],
+              [1, 1]
+            ],
+            "treadling": [1, 3, 2, 3, 1, 3, 2, 3, 1, 3, 2, 3, 1, 3, 2, 3]
+          }
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In the draft: shaft 1 represents the hole threads (those threaded through holes in the heddle), and shaft 2 represents the slot threads. The pick-up stick creates the third shed (treadle 3 in the draft notation) by lifting selected slot threads from below while the heddle is in the neutral position. The alternating treadling sequence produces the shadow geometry." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {},
+        "content": [
+          { "type": "suppliesItem", "attrs": { "name": "8-dent rigid heddle loom, 40 cm or wider", "slug": "rigid-heddle-loom", "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Pick-up stick, slightly wider than the loom", "slug": "weaving-pick-up-stick", "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Stick shuttle, two (one per weft colour)", "slug": "stick-shuttle", "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Warp yarn: two contrasting colours of DK or worsted-weight yarn, enough to dress the loom at 8 epi", "slug": null, "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Weft yarn: same two colours as warp, or a single neutral", "slug": null, "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Soft measuring tape", "slug": "measuring-tape-soft", "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Craft scissors", "slug": "craft-scissors", "isOptional": false }, "content": [] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Dress the loom with two alternating warp colours" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wind the warp alternating colour A and colour B: one end of A in a slot, one end of B through the adjacent hole, one end of A in the next slot, and so on across the full width. The strict colour alternation is the structural foundation of the shadow pattern. A single break in the sequence will disrupt the optical effect over several centimetres of cloth." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the heddle at 8 epi (3 per cm) and dress the loom at your planned width. At 8 epi a 40 cm warp needs 125 ends; round to 126 for an even number of colour pairs (63 pairs of A/B)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2: Place the pick-up stick" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "With the heddle in the down position, reach under the warp and use your fingers to pick up only the slot threads of colour B (every other slot thread). Slide the pick-up stick under these threads and turn it on edge to hold the shed open. The stick lives in this position permanently and is turned on edge or laid flat to open or close the pick-up shed." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "neutral", "title": "Keeping the pick-up stick in place" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Push the pick-up stick back towards the back beam after setting it. It stays there throughout weaving and is slid forward only to open the pick-up shed." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3: The four-pick weaving sequence" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Each repeat of the shadow weave pattern uses four picks in sequence. Repeat this sequence throughout the cloth:" }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pick 1: heddle up. Throw colour A weft. Beat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pick 2: heddle in neutral, pick-up stick on edge (pick-up shed open). Throw colour A weft. Beat. Return pick-up stick to flat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pick 3: heddle down. Throw colour B weft. Beat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pick 4: heddle in neutral, pick-up stick on edge. Throw colour B weft. Beat. Return pick-up stick to flat." }] }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This four-pick sequence builds up the shadow pattern row by row. Colour A weft and colour B weft alternate; the pick-up-stick picks interleave between the plain heddle picks to create the geometry. After 8-12 cm of weaving the shadow figure should be visible as a diagonal or checked pattern across the cloth." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reading the shadow figure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The shadow effect is most visible in even, diffuse light. In bright direct light the pattern can flatten out. If the pattern looks more like plain stripe than a shadow figure, check that the pick-up stick is lifting the correct threads: it should lift only the slot threads of colour B, not all slot threads." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Varying the weft colours changes the figure. Using colour A for all four picks eliminates the two-colour weft and produces a warp-dominant shadow. Using the two warp colours as two weft colours in the sequence described gives the classic shadow weave appearance." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The shadow figure appears as a simple two-colour plain weave stripe with no geometric depth",
+              "cause": "The pick-up stick is not being turned on edge, so the pick-up shed is never opened",
+              "fix": "On picks 2 and 4, slide the pick-up stick forward towards the heddle and turn it to stand on its narrow edge. This raises the picked-up threads to create the supplementary shed. If the stick is too thin to hold the shed open long enough to pass the shuttle, use a wider pick-up stick."
+            },
+            "content": []
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Floats appear across the cloth face that are longer than expected",
+              "cause": "The pick-up stick has picked up too many threads, or the colour sequence in the warp was not strictly alternated",
+              "fix": "Re-check the warp colour alternation across the full width. Remove and re-set the pick-up stick, lifting only the colour-B slot threads. Count that the number of threads on the stick is exactly half the total slot thread count."
+            },
+            "content": []
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The selvedge is drawing in on one side",
+              "cause": "The weft is being pulled too tight in the pick-up-stick shed, which has a narrower opening than the plain heddle sheds",
+              "fix": "Angle the weft at a steeper arc before beating on the pick-up shed picks. The pick-up shed holds fewer threads raised and needs a generous weft arc to avoid pulling the edge in."
+            },
+            "content": []
+          }
+        ]
+      }
+    ]
+  }
+}

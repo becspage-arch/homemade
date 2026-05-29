@@ -500,3 +500,390 @@ SKIPPED: 0
 |---|---:|
 | ingredient-amount-missing | 4 |
 | grade-level-strict | 3 |
+
+
+---
+
+## Run at 13:06:22
+
+Generated: 2026-05-29T13:06:22.630Z
+
+Processed: 66
+PASS: 66
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 13:56:50
+
+Generated: 2026-05-29T13:56:50.743Z
+
+Processed: 83
+PASS: 81
+STILL_BLOCKED: 2
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| ingredient-amount-missing | 49 |
+| grade-level-strict | 8 |
+| historical-century-in-body | 4 |
+
+## Still BLOCKED (sample 20)
+
+- devilled-ham-sandwich: grade-level-strict
+- spaghetti-cacio-e-pepe: grade-level-strict
+
+---
+
+## Run at 14:06:43
+
+Generated: 2026-05-29T14:06:43.100Z
+
+Processed: 66
+PASS: 66
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 14:23:50
+
+Generated: 2026-05-29T14:23:50.557Z
+
+Processed: 75
+PASS: 71
+STILL_BLOCKED: 4
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 15 |
+
+## Still BLOCKED (sample 20)
+
+- 12v-shed-battery-bank: grade-level-strict
+- abaca-fibre-sheet-forming: grade-level-strict
+- abattoir-booking-and-movement-paperwork: grade-level-strict
+- adding-a-honey-super: grade-level-strict
+
+---
+
+## Run at 14:24:59
+
+Generated: 2026-05-29T14:24:59.040Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- 12v-shed-battery-bank: grade-level-strict
+
+---
+
+## Run at 14:40:22
+
+Generated: 2026-05-29T14:40:22.587Z
+
+Processed: 75
+PASS: 72
+STILL_BLOCKED: 3
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 12 |
+
+## Still BLOCKED (sample 20)
+
+- abaca-fibre-sheet-forming: grade-level-strict
+- abattoir-booking-and-movement-paperwork: grade-level-strict
+- adding-a-honey-super: grade-level-strict
+
+---
+
+## Run at 14:44:00
+
+Generated: 2026-05-29T14:44:00.984Z
+
+Processed: 75
+PASS: 72
+STILL_BLOCKED: 3
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 12 |
+
+## Still BLOCKED (sample 20)
+
+- abaca-fibre-sheet-forming: grade-level-strict
+- abattoir-booking-and-movement-paperwork: grade-level-strict
+- adding-a-honey-super: grade-level-strict
+
+---
+
+## Run at 14:44:12
+
+Generated: 2026-05-29T14:44:12.553Z
+
+Processed: 75
+PASS: 72
+STILL_BLOCKED: 3
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 12 |
+
+## Still BLOCKED (sample 20)
+
+- abaca-fibre-sheet-forming: grade-level-strict
+- abattoir-booking-and-movement-paperwork: grade-level-strict
+- adding-a-honey-super: grade-level-strict
+
+---
+
+## Run at 14:44:23
+
+Generated: 2026-05-29T14:44:23.366Z
+
+Processed: 75
+PASS: 72
+STILL_BLOCKED: 3
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 12 |
+
+## Still BLOCKED (sample 20)
+
+- abaca-fibre-sheet-forming: grade-level-strict
+- abattoir-booking-and-movement-paperwork: grade-level-strict
+- adding-a-honey-super: grade-level-strict
+
+---
+
+## Run at 14:45:34
+
+Generated: 2026-05-29T14:45:34.756Z
+
+Processed: 4060
+PASS: 4043
+STILL_BLOCKED: 17
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 64 |
+
+## Still BLOCKED (sample 20)
+
+- five-senses-scan-three-minutes: grade-level-strict
+- long-exhale-breath-for-perimenopause-anxiety: grade-level-strict
+- my-anxiety-is-information-not-identity: grade-level-strict
+- new-moon-full-moon-two-monthly-anchors: grade-level-strict
+- sudden-vs-anticipated-loss: grade-level-strict
+- tapping-for-always-behind: grade-level-strict
+- tapping-for-chronic-pain: grade-level-strict
+- tapping-for-fear-of-judgment: grade-level-strict
+- tapping-for-i-should-be-over-it: grade-level-strict
+- tapping-for-imposter-syndrome: grade-level-strict
+- tapping-for-mum-guilt: grade-level-strict
+- tapping-for-perimenopause-mood-swings: grade-level-strict
+- tapping-for-permission-to-play: grade-level-strict
+- tapping-for-the-wait-for-apology-trap: grade-level-strict
+- tapping-for-turning-40: grade-level-strict
+- tapping-to-begin-the-30-day-sleep-reset: grade-level-strict
+- why-anxiety-hits-in-perimenopause: grade-level-strict
+
+---
+
+## Run at 14:47:51
+
+Generated: 2026-05-29T14:47:51.194Z
+
+Processed: 4060
+PASS: 4043
+STILL_BLOCKED: 17
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 54 |
+
+## Still BLOCKED (sample 20)
+
+- five-senses-scan-three-minutes: grade-level-strict
+- long-exhale-breath-for-perimenopause-anxiety: grade-level-strict
+- my-anxiety-is-information-not-identity: grade-level-strict
+- new-moon-full-moon-two-monthly-anchors: grade-level-strict
+- sudden-vs-anticipated-loss: grade-level-strict
+- tapping-for-always-behind: grade-level-strict
+- tapping-for-chronic-pain: grade-level-strict
+- tapping-for-fear-of-judgment: grade-level-strict
+- tapping-for-i-should-be-over-it: grade-level-strict
+- tapping-for-imposter-syndrome: grade-level-strict
+- tapping-for-mum-guilt: grade-level-strict
+- tapping-for-perimenopause-mood-swings: grade-level-strict
+- tapping-for-permission-to-play: grade-level-strict
+- tapping-for-the-wait-for-apology-trap: grade-level-strict
+- tapping-for-turning-40: grade-level-strict
+- tapping-to-begin-the-30-day-sleep-reset: grade-level-strict
+- why-anxiety-hits-in-perimenopause: grade-level-strict
+
+---
+
+## Run at 14:49:46
+
+Generated: 2026-05-29T14:49:46.864Z
+
+Processed: 4043
+PASS: 4043
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 15:07:37
+
+Generated: 2026-05-29T15:07:37.496Z
+
+Processed: 4086
+PASS: 4053
+STILL_BLOCKED: 33
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 90 |
+| grade-level-strict | 29 |
+| body-missing-method | 7 |
+
+## Still BLOCKED (sample 20)
+
+- backstrap-loom-plain-weave-band: hero-missing
+- clasped-warp-colour-gradients: hero-missing
+- double-weave-floor-loom-pocket: hero-missing
+- drum-carder-striped-batt: hero-missing
+- dyeing-with-heather: hero-missing
+- dyeing-with-st-johns-wort: hero-missing
+- felted-wool-cord: hero-missing
+- four-shaft-networked-twill: hero-missing
+- hooked-rug-floral-pattern: hero-missing
+- macrame-owl-wall-hanging: hero-missing
+- macrame-rainbow-wall-hanging: hero-missing
+- macrame-sunburst-wall-art: hero-missing
+- making-a-test-skein: hero-missing
+- multi-layer-nuno-felt-colour-blending: hero-missing
+- needle-felted-christmas-ornament: hero-missing
+- pre-felt-collage-sampler: hero-missing
+- respinning-commercial-yarn: hero-missing
+- reverse-felting-cut-out-design: hero-missing
+- scandinavian-rya-rug-sample: hero-missing
+- shadow-weave-rigid-heddle: hero-missing
+
+---
+
+## Run at 15:16:35
+
+Generated: 2026-05-29T15:16:35.829Z
+
+Processed: 83
+PASS: 83
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 2 |
+| grade-level-strict | 2 |
+| historical-century-in-body | 1 |
+
+
+---
+
+## Run at 15:18:32
+
+Generated: 2026-05-29T15:18:32.617Z
+
+Processed: 75
+PASS: 58
+STILL_BLOCKED: 17
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 66 |
+| voice-violation | 3 |
+
+## Still BLOCKED (sample 20)
+
+- airtightness-survey-smoke-pencil: grade-level-strict
+- anaerobic-digestion-at-home: grade-level-strict
+- basement-and-cellar-insulation: grade-level-strict
+- battery-recycling-and-disposal: grade-level-strict
+- buying-secondhand-for-quality: grade-level-strict
+- choosing-between-solar-pv-and-solar-thermal: grade-level-strict
+- choosing-eco-cleaning-products: grade-level-strict
+- compost-activators: grade-level-strict
+- compostable-packaging-reality: grade-level-strict
+- composting-toilet-decision-guide: grade-level-strict
+- conservatory-roof-replacement-decision: grade-level-strict
+- cooking-oil-and-fat-disposal: voice-violation
+- demand-response-smart-tariff: grade-level-strict
+- electronic-waste-recycling: grade-level-strict
+- ev-charger-decision-guide: grade-level-strict
+- flat-roof-insulation-options: grade-level-strict
+- gravity-fed-spring-water-supply: grade-level-strict

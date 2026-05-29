@@ -1,0 +1,254 @@
+{
+  "slug": "exhaust-bath-layered-dyeing",
+  "title": "Exhaust bath layered dyeing",
+  "subtitle": "Planning a sequence of three skeins from one dye bath: full colour, pale tint, and ghost tint",
+  "excerpt": "A single madder or weld dye bath can produce three different shades from one session by working each skein in sequence as the dye depletes. The first skein takes the full colour on full mordant; the second goes into the same bath after the first is removed and takes a paler tint; the third enters the near-exhausted bath with no mordant and picks up a ghost tint through surface affinity. Planning the sequence avoids waste and gives a naturally coordinated palette.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "natural-dyeing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Observation-led. The exhaust-bath layering technique is standard practice in natural-dye guild workshops in the UK and has no single named pre-1928 canonical source. The mordant chemistry underlying each skein's behaviour (alum-mordanted fibre drawing more dye molecules, unmordanted cellulose relying on surface affinity) draws on Hummel, J. J. The Dyeing of Textile Fabrics, London, 1885, public domain, on mordant bond theory applied to exhausting baths.",
+  "recipeTools": [
+    { "slug": "dye-pot-stainless", "isOptional": false },
+    { "slug": "dye-thermometer", "isOptional": false },
+    { "slug": "dyeing-gloves-long", "isOptional": false },
+    { "slug": "dyeing-apron", "isOptional": false },
+    { "slug": "kitchen-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "exhaust-bath",
+      "term": "Exhaust bath",
+      "definition": "A dye bath from which most of the active dye has been taken up by one or more fibre loads. An exhausted bath still contains residual dye molecules and can produce progressively lighter shades on subsequent fibre loads. In planned exhaust-bath dyeing, this depletion is exploited deliberately to produce a coordinated sequence of shades from a single starting bath."
+    },
+    {
+      "slug": "mordant",
+      "term": "Mordant",
+      "definition": "A metallic salt or mineral compound that bonds to both the fibre and the dye molecule, creating a stable bridge between them. Mordanted fibre draws dye molecules more efficiently than unmordanted fibre, which is why the fully mordanted skein takes the deepest colour from the first fresh bath, while an unmordanted skein in the same bath takes only the residual surface-affinity colour."
+    },
+    {
+      "slug": "dye-bath",
+      "term": "Dye bath",
+      "definition": "The liquid in which dyed fibre is immersed to take up colour. In exhaust-bath dyeing the same dye bath is used for successive fibre loads, with each load taking progressively less colour as the bath depletes. The temperature, mordant status of each fibre load, and time in the bath all affect how quickly the bath exhausts."
+    }
+  ],
+  "aliases": [
+    "exhaust dye bath sequence",
+    "layered natural dyeing",
+    "sequential dye bath skeins",
+    "natural dye three shades one pot"
+  ],
+  "techniqueSlugs": [
+    "natural-dye-mordanting-with-alum",
+    "natural-dye-mordant-overview"
+  ],
+  "criticalTechniques": [
+    "natural-dye-mordanting-with-alum"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Mordant safety",
+          "body": "Dye-pots are dedicated and never return to food use. Use stainless steel or enamelled pots. Wear gloves and apron. Work with extractor running or outdoors."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A freshly prepared madder or weld " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dye-bath" } }],
+            "text": "dye bath"
+          },
+          { "type": "text", "text": " contains far more dye molecules than a single skein can take up, even with good " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mordant" } }],
+            "text": "mordanting"
+          },
+          { "type": "text", "text": ". The residual colour after the first skein is enough for two more loads at lighter shades. Plan three skeins before you start. Prepare and mordant each one to suit its position in the sequence." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The three-skein sequence works as follows. Skein 1 enters the fresh bath fully " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mordant" } }],
+            "text": "mordanted"
+          },
+          { "type": "text", "text": " with alum and takes the full colour. Skein 2 is lightly mordanted (roughly half the standard alum quantity). It enters the same " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "exhaust-bath" } }],
+            "text": "exhaust bath"
+          },
+          { "type": "text", "text": " after Skein 1 is removed and takes a pale tint, roughly a third to half the depth of Skein 1. Skein 3 is unmordanted. It enters the near-exhausted bath after Skein 2 and takes a ghost tint through surface affinity alone, a fraction of Skein 2's depth." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Wool yarn, 3 skeins each 50 g (dry weight), labelled Skein 1, 2, 3", "qty": "150 g total" },
+            { "name": "Madder root or weld plant material for the dye bath (100% weight of fibre of total batch)", "qty": "150 g" },
+            { "name": "Alum potash for Skein 1 mordant (25% weight of fibre)", "qty": "12.5 g" },
+            { "name": "Alum potash for Skein 2 mordant (12% weight of fibre)", "qty": "6 g" },
+            { "name": "No mordant needed for Skein 3", "qty": "" },
+            { "name": "Stainless steel dye-pot, dedicated to dyeing", "qty": "1" },
+            { "name": "Dye-pot thermometer (dedicated)", "qty": "1" },
+            { "name": "Fine-mesh sieve or muslin for straining", "qty": "1" },
+            { "name": "Long rubber gloves (dyeing)", "qty": "1 pair" },
+            { "name": "Apron (dyeing-dedicated)", "qty": "1" },
+            { "name": "Kitchen scales", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Pre-wet all three skeins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Submerge all three skeins in cool water and leave for at least 30 minutes. Skeins 1 and 2 will then go into their mordant baths. Skein 3 stays in the pre-wet water until it is needed for the third dye bath sequence; it needs no mordant." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Mordant Skein 1 and Skein 2" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mordant Skein 1 and Skein 2 in separate mordant baths (or in sequence in the same mordant pot, which can be reused). Skein 1: dissolve 12.5 g alum potash in hot water, add to a pot of warm water, lower Skein 1 in, bring to 80°C, hold 45 minutes. Skein 2: dissolve 6 g alum potash, same process. Both skeins can be mordanted the evening before. Set aside without rinsing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Prepare the dye bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Prepare a madder or weld dye bath at 100% weight of fibre of the total batch (150 g dye material for 150 g total wool). Simmer the plant material in water for 45 to 60 minutes, strain, and return the liquid to the pot. This bath is intentionally generous: the excess dye is what makes the three-skein sequence possible." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Dye Skein 1" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lower Skein 1 (full alum mordant) into the fresh dye bath. Bring to 80°C over 20 minutes and hold for 60 minutes, turning every 15 minutes. Lift and rinse quickly to check the colour. Remove Skein 1 and set aside in cool water. Do not rinse it fully yet. Leave the dye bath in the pot: this is now the first exhaust bath." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 5: Dye Skein 2" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Without refreshing or diluting the dye bath, lower Skein 2 (light alum mordant) into the same pot. The bath colour will be noticeably lighter than when Skein 1 entered. Bring back to 80°C and hold for 60 minutes, turning every 15 minutes. The result will be a pale tint of the Skein 1 colour: perceptibly the same family but clearly lighter. Remove Skein 2. The pot is now the second exhaust bath." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 6: Dye Skein 3" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lower Skein 3 (unmordanted) into the near-exhausted bath. The liquid may appear nearly colourless at this stage; the remaining dye molecules are adsorbed to the fibre through surface affinity rather than mordant bond. Bring back to 80°C and hold for 60 minutes. The result is a ghost tint: a very pale impression of the original colour on wool, noticeable against white but not a strong hue. This ghost-tint skein is the most useful for blending in a palette where a very pale accent is wanted." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 7: Rinse and dry all three skeins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rinse each skein separately in water at a similar temperature until the water runs clear. Squeeze gently without wringing. Dry all three skeins in shade. Label them once dry for reference: the batch will show a natural gradation from the same dye source." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Colour variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Madder gives a sequence from warm coral-red (Skein 1) through soft peachy-pink (Skein 2) to a pale blush-cream (Skein 3). Weld gives a sequence from clear butter-yellow (Skein 1) through soft pale yellow (Skein 2) to a near-white cream tint (Skein 3). The exact spread of the sequence depends on how generous the initial bath was: a 150% weight of fibre bath extends the usable exhaust range further than a 100% bath, pushing Skein 3 toward a more visible tint." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Skeins 2 and 3 came out the same colour as Skein 1",
+              "cause": "The initial dye bath was too large relative to the first skein; the bath had not exhausted significantly after Skein 1",
+              "fix": "For a visible gradation, the first skein must take up a large fraction of the available dye. Increase the fibre load for Skein 1 or reduce the bath volume. Use 100 g dye material for 50 g wool in Skein 1 for a pronounced exhaust."
+            },
+            {
+              "problem": "Skein 3 came out colourless",
+              "cause": "The bath was fully exhausted after Skein 2, leaving no residual dye for surface affinity uptake",
+              "fix": "For three usable skeins, start with a generous bath (150% weight of fibre total). Use a smaller Skein 1 and 2 relative to bath size to preserve residual dye for Skein 3."
+            },
+            {
+              "problem": "Skein 2 is uneven and patchy",
+              "cause": "Temperature dropped significantly between removing Skein 1 and adding Skein 2, or the skein was lowered into the bath too quickly",
+              "fix": "Keep the bath at temperature throughout the sequence. Lower each skein slowly into the warm bath and bring back up to 80°C before starting the timing."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Wastewater disposal" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The exhausted dye bath from a madder or weld session with alum mordant is low-hazard at home quantities. The spent bath can go down a foul drain once cooled. Spent plant material (madder root residue or weld stems) goes in general waste or compost. If an iron or copper modifier was used at any stage in the session, that bath must go down a foul drain only and never into a storm drain, watercourse, or soakaway." }
+        ]
+      }
+    ]
+  }
+}

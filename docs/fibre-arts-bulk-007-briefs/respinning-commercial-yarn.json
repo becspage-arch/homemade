@@ -1,0 +1,169 @@
+{
+  "slug": "respinning-commercial-yarn",
+  "title": "Unplying and re-spinning commercial yarn",
+  "subtitle": "Separating the singles from a 2-ply or 3-ply yarn, then re-plying with adjusted twist",
+  "excerpt": "Over-soft commercial 2-ply and 3-ply yarn can be corrected by unplying the strands, separating the singles, and re-plying in the opposite direction with added twist. The process also lets you customise the ply angle for a specific project. The critical step is the twist-direction check before you start: an S-plied yarn needs a Z-direction unply, and confusing the two creates a tangled mess rather than clean separated singles.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Re-spinning and re-plying commercial yarn to adjust twist angle is documented in contemporary spinning texts and craft guild resources. The twist-direction check method is standard spinning practice.",
+  "recipeTools": [
+    { "slug": "spinning-wheel-castle", "isOptional": false },
+    { "slug": "spinning-wheel-saxony", "isOptional": true },
+    { "slug": "measuring-tape-soft", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "plying",
+      "term": "Plying",
+      "definition": "The process of twisting two or more singles together in the direction opposite to their original spin twist. A balanced 2-ply has the two singles twisted together with enough ply twist to cancel out the active twist in the singles without over-twisting in the opposite direction."
+    },
+    {
+      "slug": "singles",
+      "term": "Singles",
+      "definition": "A single strand of yarn before plying. In a commercial 2-ply or 3-ply, each component strand is a singles. When you unply a commercial yarn, you are separating it back into its component singles."
+    },
+    {
+      "slug": "twist-direction",
+      "term": "Twist direction",
+      "definition": "The direction in which a yarn is twisted, described as Z-twist (diagonal from lower-left to upper-right, like the middle stroke of the letter Z) or S-twist (like the middle stroke of the letter S). Commercial yarn singles are almost always Z-spun and S-plied. To unply an S-plied yarn, you must turn it in the Z direction."
+    }
+  ],
+  "techniqueSlugs": ["spinning-2-ply", "spinning-setting-twist"],
+  "criticalTechniques": ["spinning-2-ply"],
+  "aliases": ["unplying commercial yarn", "re-spinning yarn", "correcting over-soft yarn twist"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Wheel safety",
+          "body": "Keep loose hair and clothing back from the drive band and flyer. The flyer turns fast; tie hair back and roll sleeves."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Commercial yarn is spun and plied to a consistent standard for average use, but that standard does not suit every project. A 2-ply sock yarn may be too soft for a stitch-definition-critical project; a standard DK may ply too loosely for a firm weaving yarn. By separating the " },
+          { "type": "text", "text": "singles", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "singles" } }] },
+          { "type": "text", "text": " and re-doing the " },
+          { "type": "text", "text": "plying", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "plying" } }] },
+          { "type": "text", "text": " with more twist, you can adjust the ply angle to suit the project. You can also use the separated singles directly in weaving or other craft uses that need a finer, more active strand than the plied yarn." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Commercial 2-ply or 3-ply yarn to be re-spun", "qty": "1 skein or ball" },
+            { "name": "Spinning wheel (castle or Saxony)", "qty": "1" },
+            { "name": "Lazy kate or makeshift dowel stand for holding bobbins during plying", "qty": "1" },
+            { "name": "Soft tape measure", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Check the twist direction" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hold a 20-30 cm length of the yarn and look at the angle of the surface twist. Most commercial yarn is S-plied: the twist runs from lower-left to upper-right when the yarn hangs vertically, like the diagonal stroke of the letter S. The component singles within will be Z-spun." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Confirm this by holding one end of the length and rolling the other end away from you on your thigh: the two plies should separate cleanly. If they tighten instead, you are rolling in the wrong direction. This is the " },
+          { "type": "text", "text": "twist direction", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "twist-direction" } }] },
+          { "type": "text", "text": " check. Use it to establish the correct unply direction before mounting anything on the wheel." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2: Unply a short test length by hand" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Before using the wheel, unply a 50 cm test section by hand in the confirmed direction. Hold both strands at the mid-point and let each end hang separately. If they begin to snarl around each other rather than separating, you are still turning in the wrong direction. A properly unplied 2-ply produces two relatively relaxed singles that hang without twisting aggressively around themselves." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3: Unply onto bobbins at the wheel" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the wheel to turn in the unply direction (Z for S-plied yarn). Mount the yarn supply on a swift or a chair back so it feeds freely. Feed the yarn through the orifice and separate the two strands at the orifice, guiding one strand onto the bobbin and holding the other aside. Set the wheel to a low ratio and moderate take-up." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Treadle slowly and guide one singles strand onto the bobbin. The second strand will be winding back on itself slightly as the ply twist is removed: keep it controlled by holding it lightly with your free hand. When the first bobbin is full, wind the second singles onto a second bobbin in the same way." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Keep both singles under gentle tension during the whole process. Allowing a slack section to form while the wheel is running will cause it to snarl back on itself immediately." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4: Re-ply with added twist" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mount both bobbins on a lazy kate. Set the wheel to ply in the S direction (opposite to the Z-spun singles). Set a higher ratio than you used for the unply: 6:1 to 8:1 suits most re-plying work. Ply at a treadle speed that adds noticeably more twist per inch than the original yarn had. Check the strand balance every few metres: let a short loop hang free and confirm the curl direction and amount." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The singles snarl into tight knots during unplying",
+              "cause": "The unply direction is correct but a section of slack was allowed to form and twist back on itself before it fed onto the bobbin.",
+              "fix": "Stop the wheel immediately and carefully unsnarl the section by hand before continuing. Keep both strands under constant gentle tension throughout the unply process: use your non-dominant hand to control the second strand."
+            },
+            {
+              "problem": "The separated singles are weak and break during re-plying",
+              "cause": "Commercial singles are often lower-twist than handspun singles and have been set in their plied form; unplying leaves them with less active twist than expected.",
+              "fix": "Reduce the take-up tension during re-plying and ply at a lower ratio (4:1 to 5:1) to keep the ply twist gentle. Very weak singles may need re-spinning with added twist before plying: run them through the wheel in the Z direction at low tension to add twist before the ply step."
+            },
+            {
+              "problem": "The re-plied yarn is over-twisted and stiff",
+              "cause": "The re-ply ratio was set too high relative to the active twist remaining in the singles.",
+              "fix": "Reduce the ply ratio and check the loop hang test more frequently. Over-plied commercial re-spun yarn can often be relaxed by soaking in warm water under weight tension for 30 minutes."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

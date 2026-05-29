@@ -1,0 +1,232 @@
+{
+  "slug": "four-shaft-networked-twill",
+  "title": "Four-shaft networked twill",
+  "subtitle": "A design system where the twill line follows a curved or zigzag path across the cloth",
+  "excerpt": "Networked twill takes the diagonal line of a standard twill and routes it along a curved or zigzag profile by varying the threading sequence according to a drawn profile draft. The result is a wavy or undulating twill drawdown on four shafts, derived from a simple design step rather than calculated thread by thread.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mary E. Black, The Key to Weaving (1945), cited as standard reference for profile draft theory and unit weave derivation; not quoted verbatim. Handweaver's Pattern Directory tradition provides the broader canon of networked and wavy twill threadings. Basic threading principle for networked twill from Hooper, Hand-Loom Weaving (1910), public domain, Internet Archive.",
+  "recipeTools": [
+    { "slug": "floor-loom-4-shaft", "isOptional": false },
+    { "slug": "boat-shuttle", "isOptional": false },
+    { "slug": "weaving-reed", "isOptional": false },
+    { "slug": "warping-board", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "networked-twill",
+      "term": "Networked twill",
+      "definition": "A threading system in which the shaft sequence of a standard twill is modified to follow a drawn profile line, causing the twill diagonal to curve, zigzag, or wave across the cloth rather than running in a straight diagonal. The network is derived from a profile draft: a simplified design drawing showing the intended path of the twill line."
+    },
+    {
+      "slug": "profile-draft",
+      "term": "Profile draft",
+      "definition": "A simplified notation showing the intended block structure or design path of a weave, drawn on a grid where each cell represents one weave block rather than one thread. A profile draft is a design tool that is then converted to a full threading sequence by substituting each profile block for the corresponding threading unit."
+    },
+    {
+      "slug": "threading-sequence",
+      "term": "Threading sequence",
+      "definition": "The order in which warp threads are drawn through the heddle shafts, read from right to left across the loom. The threading sequence determines what pattern structures are possible; a standard 1-2-3-4 sequence produces straight twill, while a modified sequence produces networked or wavy twill."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "wavy twill four shaft",
+    "curved twill threading",
+    "networked threading weaving"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In a standard twill, the " },
+          {
+            "type": "text",
+            "text": "threading sequence",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "threading-sequence" } }]
+          },
+          { "type": "text", "text": " runs 1-2-3-4-1-2-3-4 and the twill line advances one shaft per pick in a straight diagonal. In " },
+          {
+            "type": "text",
+            "text": "networked twill",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "networked-twill" } }]
+          },
+          { "type": "text", "text": " the threading is derived from a " },
+          {
+            "type": "text",
+            "text": "profile draft",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "profile-draft" } }]
+          },
+          { "type": "text", "text": " that describes a curve or zigzag. The profile is converted to a threading by a substitution rule, and the result is a threading in which the twill progression moves up and down the shaft sequence rather than advancing steadily in one direction." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The draft" }]
+      },
+      {
+        "type": "weavingDraft",
+        "attrs": {
+          "definition": {
+            "title": "Two-block networked twill on four shafts",
+            "loomType": "four-shaft",
+            "threading": [1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1, 2],
+            "tieUp": [
+              [1, 1, 0, 0],
+              [0, 1, 1, 0],
+              [0, 0, 1, 1],
+              [1, 0, 0, 1]
+            ],
+            "treadling": [1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1, 2]
+          }
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The threading above shows a simple two-block networked sequence. The standard twill progression 1-2-3-4 runs up to shaft 4, then reverses to 3-2-1 before going up again. This reversal creates a V-shaped or zigzag path. The treadling mirrors the threading profile for a straight draw, which produces a wavy drawdown. A standard 2/2 twill tie-up (each treadle lifting two adjacent shafts) is used throughout." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {},
+        "content": [
+          { "type": "suppliesItem", "attrs": { "name": "Four-shaft floor loom with at least four treadles", "slug": "floor-loom-4-shaft", "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Boat shuttle", "slug": "boat-shuttle", "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Weaving reed, sett to suit yarn", "slug": "weaving-reed", "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Warping board", "slug": "warping-board", "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Graph paper or weave design software for drawing the profile draft", "slug": null, "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Warp and weft yarn in a tone-on-tone or contrasting colour combination", "slug": null, "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Soft measuring tape", "slug": "measuring-tape-soft", "isOptional": false }, "content": [] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to draw a profile draft" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A profile draft for networked twill is drawn on a small grid. Each column of the grid represents one block of threading (typically 4-8 threads). Each row represents one of the four shafts. Mark a line of cells across the grid that describes the path you want the twill line to follow: a smooth S-curve, a sharp V-shape, a gentle wave, or any other profile." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The rule is that the profile line can only move one row at a time (up or down one shaft) per column. It cannot jump from shaft 1 to shaft 4 in a single step; the progression must be gradual. This is the network constraint: it ensures the resulting threading still produces clean twill interlacement between adjacent blocks." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Converting a profile draft to a threading sequence" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once the profile is drawn, convert it to a threading by substituting each block with its corresponding threading unit. For four-shaft 2/2 twill, the substitution units are:" }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Profile block at shaft 1: thread 1, 2" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Profile block at shaft 2: thread 2, 3" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Profile block at shaft 3: thread 3, 4" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Profile block at shaft 4: thread 4, 1" }] }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work across the profile from right to left, substituting each profile block with its two-thread unit. Read the substituted threads out in order: this is the full threading sequence. For a 24-thread warp section using the profile 1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, the threading sequence becomes: 1-2, 2-3, 3-4, 4-1, 3-4, 2-3, 1-2, 2-3, 3-4, 4-1, 3-4, 2-3. Written out in full: 1, 2, 2, 3, 3, 4, 4, 1, 3, 4, 2, 3, 1, 2, 2, 3, 3, 4, 4, 1, 3, 4, 2, 3." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How the networked threading creates a wavy twill drawdown" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "When the threading reverses direction (from ascending 1-2-3-4 to descending 4-3-2-1), the twill diagonal also reverses. In the drawdown, this appears as the twill line bending back on itself, creating a V or wave shape rather than a straight diagonal. The wave profile in the cloth matches the profile drawn at the design stage, scaled by the number of threads per block." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Using a straight draw treadling (treadles 1, 2, 3, 4 in sequence, mirroring the threading) reproduces the profile shape in both directions, giving a symmetric wavy drawdown. A different treadling produces a different result. For example, a straight 1-2-3-4 treadling applied to a networked threading creates a different surface pattern because the two profiles no longer match." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Practical notes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Networked twill threading sequences are longer and more irregular than standard twill threading, so threading errors are easier to make and harder to spot. Before sleying the reed, press each treadle in sequence and check that the drawdown visible in the warp matches the expected profile. A threading mistake in a networked sequence typically shows as a straight-line interruption in what should be a curved pattern." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Keep the profile draft and the full threading sequence printed or drawn and visible at the loom throughout threading. Tick off each threading unit as it is completed." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The woven cloth shows a straight diagonal twill line rather than a curve or wave",
+              "cause": "The threading was woven straight 1-2-3-4 rather than following the network profile",
+              "fix": "Check the first threading repeat against the profile-derived threading sequence. If the first several threads read as a straight 1-2-3-4 progression with no reversals, the network threading was not applied. Re-thread from the beginning following the substituted sequence."
+            },
+            "content": []
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Long weft floats appear at random points across the cloth",
+              "cause": "Two-thread substitution units were applied with a step larger than one shaft, producing an invalid network junction",
+              "fix": "In a valid network, no threading unit can skip a shaft: you cannot go directly from a 1-2 unit to a 3-4 unit without a 2-3 unit between them. Review the profile draft and ensure every column-to-column step in the profile moves only one shaft at a time. Re-derive the threading from the corrected profile."
+            },
+            "content": []
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "slug": "dyeing-cotton-with-alum-acetate",
+  "title": "Dyeing cotton with alum acetate",
+  "subtitle": "The preferred alum mordant for cellulose fibres, with a chalk afterbath to fix the mordant, using weld for a clear butter-yellow",
+  "excerpt": "Alum acetate is the standard alum mordant for cotton, linen, and hemp. It bonds to plant fibre in a way that alum potash does not, and requires a chalk afterbath to fix the mordant before dyeing. The example dye here is weld, which gives a clear butter-yellow on alum-acetate-mordanted cotton rather than the greenish-grey result that alum potash often gives on cellulose fibres.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "natural-dyeing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Pellew, Charles Livingston. Dyes and Dyeing. New York, 1913. Public domain. Internet Archive. Hummel, J. J. The Dyeing of Textile Fabrics. London, 1885. Public domain. Internet Archive. Both sources document alum acetate as the preferred cellulose mordant and the chalk afterbath (calcium carbonate fixation) method.",
+  "recipeTools": [
+    { "slug": "dye-pot-stainless", "isOptional": false },
+    { "slug": "dye-thermometer", "isOptional": false },
+    { "slug": "dyeing-gloves-long", "isOptional": false },
+    { "slug": "dyeing-apron", "isOptional": false },
+    { "slug": "kitchen-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mordant",
+      "term": "Mordant",
+      "definition": "A metallic salt or mineral compound that bonds to both the fibre and the dye molecule, creating a stable bridge between them. Alum acetate is the alum mordant specifically formulated for cellulose fibres (cotton, linen, hemp). It forms a stronger bond with plant fibre than alum potash, which is better suited to protein fibres (wool, silk)."
+    },
+    {
+      "slug": "alum-acetate",
+      "term": "Alum acetate",
+      "definition": "Aluminium acetate, the preferred alum mordant for cotton, linen, and hemp. It bonds to plant cell walls more effectively than alum potash (aluminium sulphate) because the acetate group allows the aluminium ion to penetrate and bind within the cellulose structure. It requires a chalk (calcium carbonate) afterbath to convert the acetate salt into a stable aluminium-hydroxide mordant layer within the fibre."
+    },
+    {
+      "slug": "cellulose-fibre",
+      "term": "Cellulose fibre",
+      "definition": "A plant-derived textile fibre composed primarily of cellulose, including cotton, linen, hemp, and nettle. Cellulose fibres do not naturally attract metallic mordants in the same way as protein fibres (wool, silk). Most standard mordant recipes are designed for wool; cellulose fibres require either a tannin pre-treatment, alum acetate, or both to achieve equivalent dye uptake."
+    }
+  ],
+  "aliases": [
+    "alum acetate cotton mordant",
+    "aluminium acetate natural dye cotton",
+    "dyeing cotton natural dye",
+    "mordanting linen cotton hemp"
+  ],
+  "techniqueSlugs": [
+    "natural-dye-mordant-overview",
+    "tannin-pre-treatment-cotton"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Mordant safety",
+          "body": "Dye-pots are dedicated and never return to food use. Use stainless steel or enamelled pots. Wear gloves and apron. Work with extractor running or outdoors."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cotton, linen, and hemp are " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cellulose-fibre" } }],
+            "text": "cellulose fibres"
+          },
+          { "type": "text", "text": " and do not attract " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mordant" } }],
+            "text": "mordant"
+          },
+          { "type": "text", "text": " in the way wool does. Alum potash works well on wool but gives poor results on cotton. The dye may take initially but washes out quickly. Yellows often shift toward greenish-grey rather than the clear tones seen on mordanted wool. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "alum-acetate" } }],
+            "text": "Alum acetate"
+          },
+          { "type": "text", "text": " solves this. It penetrates plant cell walls and creates stable bonding sites for plant dyes. A chalk (calcium carbonate) afterbath then converts the aluminium acetate into a stable aluminium-hydroxide layer within the fibre. This locks in the mordant before the dye bath." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The example dye here is weld (Reseda luteola). It gives a clear butter-yellow on alum-acetate-mordanted cotton. The same mordant method works with any standard plant dye. Weld is used here because flavone yellows show the difference between good and poor mordanting most clearly on cellulose fibre." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Cotton yarn or fabric, dry weight", "qty": "100 g" },
+            { "name": "Alum acetate mordant (15% weight of fibre)", "qty": "15 g" },
+            { "name": "Chalk (calcium carbonate, food grade) for afterbath (5% weight of fibre)", "qty": "5 g" },
+            { "name": "Weld plant material for dye bath, dried or fresh (100% weight of fibre)", "qty": "100 g" },
+            { "name": "Stainless steel dye-pot, dedicated to dyeing", "qty": "1" },
+            { "name": "Dye-pot thermometer (dedicated)", "qty": "1" },
+            { "name": "Fine-mesh sieve or muslin for straining", "qty": "1" },
+            { "name": "Long rubber gloves (dyeing)", "qty": "1 pair" },
+            { "name": "Apron (dyeing-dedicated)", "qty": "1" },
+            { "name": "Kitchen scales", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Pre-wet the fibre" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Submerge the cotton in cool water and leave for at least 30 minutes. Cotton absorbs water slowly and needs more pre-wetting time than wool. Squeeze gently before moving it to the mordant bath." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Mordant bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dissolve 15 g of alum acetate in 300 ml of warm water. Stir into a pot of warm water large enough for the cotton to move freely. Lower the pre-wetted cotton in. Bring to 50°C over 20 minutes and hold at 50°C for 45 minutes. Do not exceed 60°C for the alum acetate bath: higher temperatures cause the mordant to fix before the chalk step and reduce its effectiveness. Turn the cotton every 10 minutes. Remove and set aside without rinsing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Chalk afterbath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dissolve 5 g of chalk (calcium carbonate) in 200 ml of warm water by stirring vigorously. The chalk will not fully dissolve; this is normal. Add it to a fresh pot of warm water and stir. Lower the mordant-treated cotton directly into the chalk bath without rinsing it first. The alum acetate in the fibre reacts with the calcium carbonate to form a stable aluminium-hydroxide layer. Hold at 50°C for 15 minutes. Remove and squeeze gently. The cotton is now mordanted and ready for the dye bath." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Prepare the dye bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Simmer 100 g of weld plant material in water at 80°C for 45 minutes. Strain and return the golden-yellow liquid to the pot. The weld dye bath is ready for the cotton." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 5: Dye bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lower the mordanted cotton into the weld dye bath. Bring to 80°C over 20 minutes and hold for 60 minutes, turning every 15 minutes. Lift a small amount at 45 minutes to check the colour: clear butter-yellow is expected. Cotton requires longer at temperature than wool to allow the dye to fully penetrate the fibre. Remove once the colour is where you want it." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 6: Rinse and dry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rinse the cotton in water at a similar temperature until the rinse water runs clear. Cotton can be rinsed at slightly lower temperatures than wool without damage. Squeeze gently and dry in shade. The butter-yellow on alum-acetate-mordanted cotton has reasonable light-fastness for a plant dye; it will soften gradually over years in strong sunlight." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Colour variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Weld on alum-acetate-mordanted cotton gives a clear butter-yellow. Madder gives a soft coral-orange-red. This is noticeably clearer than the brown-red that cotton often gives in alum-potash madder baths. St John's Wort gives a warm gold-yellow, similar in tone to wool but slightly less saturated. The chalk afterbath is essential for all of these results. Omitting the chalk step gives weaker and less even colour." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Cotton came out greenish-grey rather than clear yellow",
+              "cause": "Alum potash was used instead of alum acetate, or the chalk afterbath was omitted",
+              "fix": "Use alum acetate specifically, not alum potash. Complete the chalk afterbath before entering the dye bath. These two steps together are what gives the clear colour result on cellulose fibre."
+            },
+            {
+              "problem": "Colour washed out significantly after the first hand wash",
+              "cause": "Mordant bath was run too hot, above 60°C, causing the alum acetate to precipitate before the chalk fixation step",
+              "fix": "Keep the alum acetate bath at or below 50°C. The chalk step relies on the mordant still being in its acetate form within the fibre; if it has already precipitated as aluminium hydroxide from heat, the chalk step cannot improve the fixation."
+            },
+            {
+              "problem": "Uneven colour with pale sections",
+              "cause": "Cotton was not pre-wetted long enough and entered the mordant bath unevenly dry",
+              "fix": "Pre-wet cotton for at least 30 minutes, squeezing and re-submerging to ensure thorough wetting throughout. Cotton fibre resists wetting more than wool and needs longer preparation time."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Wastewater disposal" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Alum acetate mordant bath, chalk afterbath, and weld dye bath are all low-hazard at home quantities. All three can go down a foul drain once cooled. The spent weld plant material is organic and can go in general waste or compost. If an iron or copper modifier is used in a variation of this recipe, that bath must go down the foul drain only and never into a storm drain, watercourse, or soakaway." }
+        ]
+      }
+    ]
+  }
+}

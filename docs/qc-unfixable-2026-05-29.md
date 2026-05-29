@@ -444,3 +444,58 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - voltage-optimiser-for-home hero-missing — applied: hero-fill-deferred-to-standalone-script
 - water-efficient-garden-design hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
 - windrow-composting hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+
+- devilled-ham-sandwich grade-level-strict — applied: 
+- spaghetti-cacio-e-pepe grade-level-strict — applied: 
+
+- five-senses-scan-three-minutes grade-level-strict — applied: 
+- long-exhale-breath-for-perimenopause-anxiety grade-level-strict — applied: 
+- my-anxiety-is-information-not-identity grade-level-strict — applied: 
+- new-moon-full-moon-two-monthly-anchors grade-level-strict — applied: 
+- sudden-vs-anticipated-loss grade-level-strict — applied: 
+- tapping-for-always-behind grade-level-strict — applied: 
+- tapping-for-chronic-pain grade-level-strict — applied: 
+- tapping-for-fear-of-judgment grade-level-strict — applied: 
+- tapping-for-i-should-be-over-it grade-level-strict — applied: 
+- tapping-for-imposter-syndrome grade-level-strict — applied: 
+- tapping-for-mum-guilt grade-level-strict — applied: 
+- tapping-for-perimenopause-mood-swings grade-level-strict — applied: 
+- tapping-for-permission-to-play grade-level-strict — applied: 
+- tapping-for-the-wait-for-apology-trap grade-level-strict — applied: 
+- tapping-for-turning-40 grade-level-strict — applied: 
+- tapping-to-begin-the-30-day-sleep-reset grade-level-strict — applied: 
+- why-anxiety-hits-in-perimenopause grade-level-strict — applied: 
+
+- backstrap-loom-plain-weave-band hero-missing — applied: hero-fill-deferred-to-standalone-script
+- clasped-warp-colour-gradients hero-missing — applied: hero-fill-deferred-to-standalone-script
+- double-weave-floor-loom-pocket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- drum-carder-striped-batt hero-missing — applied: hero-fill-deferred-to-standalone-script
+- dyeing-with-heather hero-missing — applied: hero-fill-deferred-to-standalone-script
+- dyeing-with-st-johns-wort hero-missing — applied: hero-fill-deferred-to-standalone-script
+- felted-wool-cord hero-missing — applied: hero-fill-deferred-to-standalone-script
+- four-shaft-networked-twill hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hooked-rug-floral-pattern hero-missing — applied: hero-fill-deferred-to-standalone-script
+- macrame-owl-wall-hanging hero-missing — applied: hero-fill-deferred-to-standalone-script
+- macrame-rainbow-wall-hanging hero-missing — applied: hero-fill-deferred-to-standalone-script
+- macrame-sunburst-wall-art hero-missing — applied: hero-fill-deferred-to-standalone-script
+- making-a-test-skein hero-missing — applied: hero-fill-deferred-to-standalone-script
+- multi-layer-nuno-felt-colour-blending hero-missing — applied: hero-fill-deferred-to-standalone-script
+- needle-felted-christmas-ornament hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pre-felt-collage-sampler hero-missing — applied: hero-fill-deferred-to-standalone-script
+- respinning-commercial-yarn hero-missing — applied: hero-fill-deferred-to-standalone-script
+- reverse-felting-cut-out-design hero-missing — applied: hero-fill-deferred-to-standalone-script
+- scandinavian-rya-rug-sample hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shadow-weave-rigid-heddle hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spinning-bamboo-fibre hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spinning-bulky-weight-on-wheel hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spinning-mixed-raw-fleece hero-missing — applied: hero-fill-deferred-to-standalone-script
+- the-slow-leak-what-drains-your-energy grade-level-strict — applied: 
+- warp-painting-before-weaving hero-missing — applied: hero-fill-deferred-to-standalone-script
+- weaving-with-handspun-yarn hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wet-felted-basket-tray hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wet-felted-flower-pin hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wet-felted-lampshade-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wet-felted-phone-case hero-missing — applied: hero-fill-deferred-to-standalone-script
+- what-body-neutrality-actually-means grade-level-strict — applied: 
+- wheel-tension-and-take-up-guide hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- why-we-fight-about-the-same-things grade-level-strict — applied: 

@@ -1,0 +1,270 @@
+{
+  "slug": "backstrap-loom-plain-weave-band",
+  "title": "Backstrap loom plain weave band",
+  "subtitle": "A 5 cm wide, 120 cm long tabby band for a hair tie or bag strap",
+  "excerpt": "A plain-weave band woven on a backstrap loom: 5 cm wide and 120 cm long, suitable for a hair tie or bag strap. The backstrap loom is set up from a warping board using two posts and a dowel back-beam; tension is maintained by leaning away from the loom with the backstrap belt. The band is woven in tabby (plain weave) with a stick shuttle.",
+  "type": "PATTERN",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Backstrap loom warp layout adapted from Hooper, Hand-Loom Weaving (1910), public domain, Internet Archive, which describes two-post warp-stretching methods. Traditional Andean and Central American backstrap weaving practice; technique catalogued in V&A textile collection documentation. Body mechanics and tension management are observation-led.",
+  "recipeTools": [
+    { "slug": "stick-shuttle", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "backstrap-loom",
+      "term": "Backstrap loom",
+      "definition": "A portable loom in which one end of the warp is fixed to a stationary point (a post, hook, or door handle) and the other end is attached to a strap that passes around the weaver's lower back or hips. The weaver leans back to create warp tension and shifts position to adjust it. No rigid frame is needed; the weaver's body is the loom."
+    },
+    {
+      "slug": "tabby",
+      "term": "Tabby",
+      "definition": "The simplest weave structure, in which the weft alternates over and under each successive warp thread on every pick, and the next pick reverses the sequence. Every other warp thread is lifted for one shed, and the remaining threads are lifted for the next shed. Also called plain weave."
+    },
+    {
+      "slug": "warp",
+      "term": "Warp",
+      "definition": "The set of parallel threads that run lengthwise on the loom, held under tension throughout weaving. In a backstrap loom, the warp is stretched between a fixed point and the weaver's backstrap. Every weft pick interlaces over and under the warp threads to build the cloth structure."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "backstrap loom beginner",
+    "Andean weaving band",
+    "plain weave hair tie strap"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          {
+            "type": "text",
+            "text": "backstrap loom",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "backstrap-loom" } }]
+          },
+          { "type": "text", "text": " is one of the oldest and most portable weaving tools in the world. The weaver provides the tension; the cloth grows in the lap. This band uses " },
+          {
+            "type": "text",
+            "text": "tabby",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tabby" } }]
+          },
+          { "type": "text", "text": " (plain weave), which requires only two alternating sheds and needs no pick-up stick or pattern work. The finished band is 5 cm wide and 120 cm long: the right length for a hair tie (fold in half and loop) or a single-strap bag handle." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {},
+        "content": [
+          { "type": "suppliesItem", "attrs": { "name": "Warp yarn: approx 30 m of smooth 4-ply or DK weight cotton or linen in your chosen colour", "slug": null, "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Weft yarn: same or contrasting yarn, approx 15 m", "slug": null, "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Two upright posts or a warping board (to wind the warp)", "slug": null, "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Dowel or smooth stick, 20 cm long (back-beam)", "slug": null, "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Flat shed stick or smooth ruler, 20 cm long (shed rod)", "slug": null, "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Heddle string: a length of smooth yarn or cord (to make the heddle loops)", "slug": null, "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Backstrap belt: a strip of cloth, leather, or webbing wide enough to sit comfortably across the lower back", "slug": null, "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Stick shuttle", "slug": "stick-shuttle", "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Blunt darning needle", "slug": "tapestry-needle", "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Soft measuring tape", "slug": "measuring-tape-soft", "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Craft scissors", "slug": "craft-scissors", "isOptional": false }, "content": [] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Calculating the warp" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a 5 cm wide band at 20 epi (approximately 8 ends per cm, appropriate for 4-ply cotton), the " },
+          {
+            "type": "text",
+            "text": "warp",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warp" } }]
+          },
+          { "type": "text", "text": " needs 40 ends. Wind the warp to 160 cm: 120 cm of weaving plus 20 cm of front loom waste (tie-on and fringe) and 20 cm of back-beam and knotting waste. Total warp length per end: 160 cm. Total yarn for the warp: 40 ends x 160 cm = 64 m. At the yardage of typical 4-ply cotton (200 m per 50 g), the warp uses approximately 16 g." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Wind the warp between two posts" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fix two posts (chair legs, C-clamps on a table edge, or a warping board) 160 cm apart. Wind the yarn back and forth between the posts, making the cross at one end on each pass: over one post, under the other, and back. The cross preserves thread order. Wind until you have 40 ends (20 passes back and forth). Tie the cross with contrasting yarn in a figure-of-eight before removing from the posts." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2: Attach the back-beam and make the shed stick" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Slide the dowel back-beam through the loop at the non-cross end of the warp chain. This end connects to the backstrap via cords tied to each end of the dowel. The other end (the cross end) will become the front tie-on." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Open the cross and insert the flat shed stick through it, lifting all the upper-cross threads. The shed stick sits in the warp and can be turned on edge to open shed 1 (the stick shed) at any time." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3: Make the string heddle" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The string heddle lifts the threads that the shed stick does not lift, giving shed 2 (the heddle shed). With the shed stick lying flat (not on edge), use a length of heddle string to loop around each warp thread that lies below the stick in a simple looping knot. Slide all the loops onto a smooth stick (the heddle rod). When you pull the heddle rod up towards you, the lower-cross threads rise and shed 2 opens." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "neutral", "title": "Checking both sheds" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Before attaching the backstrap, check both sheds are clear: insert a hand into each shed in turn and confirm all threads are present. A missing thread means one heddle loop was not made." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4: Attach the backstrap and establish tension" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tie the front end of the warp (the cross end) to a fixed point: a door handle, a hook in a wall, or a post. Clip or tie the back-beam dowel cords to the backstrap belt. Sit on the floor or a low stool, place the backstrap belt across your lower back or hips, and lean back to tension the warp." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lean back until the warp threads are taut but not rigid: you should be able to open the sheds cleanly without the threads pinging with excess tension. Adjust the distance from the fixed point by moving your seat position forwards or backwards. This is the working tension for the whole band; once established it becomes instinctive to maintain." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 5: Weave the band" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wind the weft yarn onto the stick shuttle. Weave a 5 cm header in scrap yarn first to spread the warp and establish the fell line." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Shed 1: turn the shed stick on edge. Pass the shuttle through the shed from right to left. Lay the weft in an arc before beating." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Beat: use the shed stick or your fingers to press the weft pick down to the fell line." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Shed 2: lay the shed stick flat and pull the heddle rod up towards you to lift the heddle threads. Pass the shuttle from left to right. Lay the weft in an arc. Beat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat steps 1-3 until the band reaches 120 cm of woven length." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Maintaining body tension" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Keep the warp tension steady by maintaining the same lean-back position throughout weaving. When the woven portion grows and the available warp shortens, shift your seat a small amount away from the fixed point to take up the slack. A warp that has gone slack will produce a loose, baggy pick that is difficult to correct by beating alone." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For flat tabby, the beat is light: just enough to close the weft arc against the last pick. A heavy beat in plain weave on a narrow backstrap band will make the weft-face dominant and the band thick; a light beat makes a balanced cloth where both warp and weft are visible." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing the band" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remove the shed stick and heddle rod when the band is at the planned length. Tie the warp tail ends in pairs with overhand knots close to the last pick, or work a row of overhand knots in groups of four ends. Weave in any weft tails using the blunt darning needle: run the tail back into the shed for 2-3 cm on each side of the selvedge." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wet-finish the band by washing briefly in warm water and pressing flat to dry. Cotton and linen bands hold their dimensions well; wool bands will bloom slightly. Trim any fringe to an even length or knot the warp tails into a braided cord." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The band is drawing in significantly at the selvedges, narrowing from 5 cm to 3 cm",
+              "cause": "The weft is being pulled too tight before beating, drawing the outer warp threads inwards",
+              "fix": "Lay the weft in a more generous arc before beating — roughly a 45-degree angle from the selvedge. After laying the arc, pat it into a dome with a finger before using the shed stick to beat. The extra weft length in the arc is taken up during interlacement without pulling the edge in."
+            },
+            "content": []
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The heddle shed is difficult to open and some threads stick to the shed stick",
+              "cause": "The heddle loops are too loose and the threads are not rising cleanly when the heddle rod is lifted",
+              "fix": "Check that each heddle loop is snug around its thread and sits at a consistent height above the warp. If a loop is too long, it will not lift the thread when the heddle rod is raised. Retie any long loops closer to the thread level."
+            },
+            "content": []
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The warp threads are slipping off one end of the back-beam dowel during weaving",
+              "cause": "The dowel is too short for the warp width, or the cords attaching the dowel to the backstrap are not spread evenly",
+              "fix": "Use a dowel at least 10 cm wider than the warp. Tie the backstrap cords to points on the dowel that are outside the warp width, not within it."
+            },
+            "content": []
+          }
+        ]
+      }
+    ]
+  }
+}

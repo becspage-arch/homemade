@@ -1,0 +1,232 @@
+{
+  "slug": "clay-ochre-mordanting",
+  "title": "Clay ochre mordanting",
+  "subtitle": "Using iron-rich ochre clay as a mineral mordant on tannin-treated fibre before the dye bath",
+  "excerpt": "Iron-rich ochre clay can be used as a surface mordant on tannin-treated wool or cotton: the clay is prepared as a slip, painted onto the dampened fibre, dried, and then entered into the dye bath. The mineral iron in the clay acts as a mordant in a similar way to iron sulphate, slightly dulling and deepening the dye colour. The technique requires a tannin pre-treatment (oak galls or sumac) to help the clay slip adhere to the fibre before dyeing.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "natural-dyeing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised based on Hummel, J. J. The Dyeing of Textile Fabrics, London, 1885, public domain, on iron mordant chemistry and mordant-bath behaviour. The ochre clay surface-application technique is observation-led from traditional resist and surface-mordant practice documented in ethnographic textile studies; no single named pre-1928 source covers this specific application method.",
+  "recipeTools": [
+    { "slug": "dye-pot-stainless", "isOptional": false },
+    { "slug": "dye-thermometer", "isOptional": false },
+    { "slug": "dyeing-gloves-long", "isOptional": false },
+    { "slug": "dyeing-apron", "isOptional": false },
+    { "slug": "kitchen-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mordant",
+      "term": "Mordant",
+      "definition": "A metallic salt or mineral compound that bonds to both the fibre and the dye molecule, creating a stable bridge between them. In ochre mordanting the iron mineral in the clay acts as the mordant, attaching to the tannin-prepared fibre surface and creating bonding sites for the dye molecule."
+    },
+    {
+      "slug": "tannin",
+      "term": "Tannin",
+      "definition": "A class of plant-derived compounds, found in oak galls, sumac, and black tea, that bind to fibre surfaces and provide adhesion sites for mineral mordants such as clay ochre. In natural dyeing, a tannin pre-treatment is standard preparation for applying clay-based mordants and for mordanting cotton and linen before alum."
+    },
+    {
+      "slug": "iron-mordant",
+      "term": "Iron mordant",
+      "definition": "An iron compound used as a mordant in natural dyeing. Iron saddens (dulls and deepens) colours, shifting yellows toward olive-green and reds toward brown. Iron sulphate is the soluble chemical form; ochre clay provides iron in a less soluble mineral form with a milder saddening effect than iron sulphate. Both forms require foul-drain disposal of the spent bath."
+    }
+  ],
+  "aliases": [
+    "ochre clay mordant",
+    "iron clay mordant natural dye",
+    "mineral mordant dyeing",
+    "clay slip dye mordant"
+  ],
+  "techniqueSlugs": [
+    "natural-dye-mordant-overview",
+    "tannin-pre-treatment-cotton",
+    "iron-after-bath-mordant-modifier"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Mordant safety",
+          "body": "Dye-pots are dedicated and never return to food use. Use stainless steel or enamelled pots. Wear gloves and apron. Work with extractor running or outdoors."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Ochre is an iron-rich clay mineral that has been used as a pigment and surface " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mordant" } }],
+            "text": "mordant"
+          },
+          { "type": "text", "text": " across many textile traditions. Its iron content acts in the same way as dissolved iron sulphate. It shifts colours toward duller, deeper results, saddening yellows toward olive and reds toward brown. Ochre provides iron in a mineral form, bound to the clay particle rather than fully dissolved. This gives a milder saddening effect than iron sulphate." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For the clay to adhere to the fibre and release its iron into the dye bath, the fibre must first be treated with " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tannin" } }],
+            "text": "tannin"
+          },
+          { "type": "text", "text": ". Oak galls and sumac are the strongest tannin sources for this purpose. The tannin pre-treatment makes the fibre surface slightly adhesive. This allows the clay slip to coat the fibre before it dries. Once dry, the coated fibre enters the dye bath. The iron in the clay then acts as the mordant during dyeing. The technique works on both wool and cotton. Tannin pre-treatment is especially important for cotton, which does not naturally attract clay particles." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The spent ochre bath contains " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "iron-mordant" } }],
+            "text": "iron mordant"
+          },
+          { "type": "text", "text": " residue and must be disposed of down a foul drain only. See the wastewater section." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Wool yarn or cotton, dry weight", "qty": "100 g" },
+            { "name": "Powdered ochre clay (iron-rich, high iron content preferred)", "qty": "30 g" },
+            { "name": "Oak gall powder or sumac leaves for tannin pre-treatment (10% weight of fibre)", "qty": "10 g" },
+            { "name": "Plant dye material for the dye bath (weld, madder, or similar)", "qty": "100 g" },
+            { "name": "Stainless steel dye-pot, dedicated to dyeing", "qty": "1" },
+            { "name": "Dye-pot thermometer (dedicated)", "qty": "1" },
+            { "name": "Fine-mesh sieve for straining dye bath", "qty": "1" },
+            { "name": "Flat brush or sponge for applying clay slip", "qty": "1" },
+            { "name": "Small bowl for mixing clay slip", "qty": "1" },
+            { "name": "Long rubber gloves (dyeing)", "qty": "1 pair" },
+            { "name": "Apron (dyeing-dedicated)", "qty": "1" },
+            { "name": "Kitchen scales", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Tannin pre-treatment" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pre-wet the fibre in cool water for 30 minutes. Dissolve 10 g of oak gall powder (or simmer 10 g of sumac leaves in water for 30 minutes and strain) into enough warm water to cover the fibre. Lower the pre-wetted fibre in. Bring to 60°C and hold for 30 minutes for wool; 70°C for 45 minutes for cotton. Remove the fibre and squeeze gently without rinsing. The tannin remains in the fibre: rinsing would remove some of it." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Prepare the clay slip" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In a small bowl, mix 30 g of ochre powder with just enough water to form a thick paste or slip: it should have the consistency of yoghurt and coat a brush or sponge cleanly without running. Add water gradually; ochre absorbs water slowly. Keep the slip on the thick side: a thin slip will not deposit enough iron on the fibre." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Paint and dry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "While the tannin-treated fibre is still damp (not wet), paint the clay slip evenly over the entire surface using a brush or sponge. Work it into a skein by untwisting it and painting section by section. Hang the painted fibre to dry completely at room temperature. This may take several hours. Once dry, the fibre will have a visible ochre-brown coating. Do not shake out the dried clay before dyeing; the particle coating is the mordant." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Dye bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Prepare the plant dye bath by simmering the dye material in water for 45 to 60 minutes and straining. Lower the ochre-coated fibre gently into the warm dye bath. Bring to 80°C over 20 minutes and hold for 60 minutes. The clay particles will release from the fibre as it wets out; the dye bath will cloud slightly from the clay particles. This is expected. The released iron continues to act as a mordant within the bath. Turn the fibre every 15 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 5: Rinse and dry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the fibre from the dye bath. Rinse in water at a similar temperature until the water runs clear; clay particles will continue to rinse out for several passes. Squeeze gently without wringing. Dry in shade. The result will be a saddened version of the dye colour: a weld bath gives olive-to-khaki, a madder bath gives a warm brick-brown rather than the coral-red of an alum-mordanted bath." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Colour variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The ochre mordant saddens colours. Weld (plant yellow) with ochre gives olive-gold to khaki. Madder with ochre gives warm brick-red to brownish-red rather than the coral-red of an alum bath. Tannin pre-treatment alone (without any added mordant, including ochre) gives a golden-tan on cotton from a plant yellow bath. The ochre shifts this further toward olive-brown. Higher iron content in the ochre powder gives a stronger saddening effect." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "No saddening effect: colour came out as if no mordant was applied",
+              "cause": "Ochre powder had low iron content, or the clay slip was applied too thinly",
+              "fix": "Use ochre with high iron content (reddish-brown ochre rather than pale yellow ochre). Apply the slip thickly and ensure complete coverage. Yellow ochre has less iron oxide than red ochre."
+            },
+            {
+              "problem": "Very uneven colour with pale patches",
+              "cause": "Clay slip dried unevenly and the fibre entered the bath before the clay fully re-wet",
+              "fix": "Lower the fibre very slowly into a warm bath, not hot, and allow it to wet out fully before raising the temperature. Turn the fibre frequently in the early stages of the dye bath."
+            },
+            {
+              "problem": "Dye bath turned thick and cloudy and the colour result was muddy",
+              "cause": "Too much clay relative to water volume; the suspended clay particles interfered with dye uptake",
+              "fix": "Use a larger water volume in the dye bath to allow the released clay to disperse. If the bath becomes very cloudy, carefully siphon the fibre out and transfer to a fresh strained dye bath to complete the dyeing."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Wastewater disposal" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The spent dye bath contains dissolved iron released from the ochre clay. Iron-containing wastewater must go down a foul drain only. Never pour iron bath water into a storm drain, watercourse, garden soakaway, or onto the garden: iron is toxic to aquatic invertebrates at low concentrations and persistent in the environment. Allow the bath to cool, then dispose of it down the foul drain with plenty of water. The clay solids that settle in the bath can go into general waste once dry." }
+        ]
+      }
+    ]
+  }
+}

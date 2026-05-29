@@ -1,0 +1,247 @@
+{
+  "slug": "double-weave-floor-loom-pocket",
+  "title": "Double weave pocket on a four-shaft floor loom",
+  "subtitle": "Two simultaneous cloth layers sewn at one selvedge to make a woven pocket",
+  "excerpt": "Double weave on four shafts produces two separate cloth layers at once, open on three sides by default. By connecting the two selvedges at one edge the structure becomes a woven pocket. Shafts 1 and 3 carry the upper layer; shafts 2 and 4 carry the lower layer.",
+  "type": "PATTERN",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Threading principle for double-cloth on four shafts from Hooper, Hand-Loom Weaving (1910), public domain, Internet Archive. Chapter on double-cloth provides the shaft separation rationale. Mary E. Black, The Key to Weaving (1945), cited as reference for sett and selvedge connection method; not quoted verbatim.",
+  "recipeTools": [
+    { "slug": "floor-loom-4-shaft", "isOptional": false },
+    { "slug": "end-feed-shuttle", "isOptional": false },
+    { "slug": "weaving-reed", "isOptional": false },
+    { "slug": "warping-board", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "double-weave",
+      "term": "Double weave",
+      "definition": "A weave structure in which two separate layers of cloth are woven simultaneously on the same loom, one above the other. Each layer uses its own set of warp threads and its own weft, controlled by separate shafts. The two layers can be joined at the selvedges to create a tube or a pocket, or left entirely separate and peeled apart after weaving."
+    },
+    {
+      "slug": "selvedge",
+      "term": "Selvedge",
+      "definition": "The self-finished edge of a woven cloth, formed where the weft turns at each side of the warp. A clean selvedge requires the weft to enter the shed at a consistent angle and the outermost warp threads to interlace normally on every pick."
+    },
+    {
+      "slug": "sett",
+      "term": "Sett",
+      "definition": "The number of warp threads per unit of width, expressed as ends per inch (epi) or ends per centimetre. Sett determines how open or how dense the cloth will be and is chosen to suit the yarn weight and the intended weave structure."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "four-shaft double weave",
+    "woven pocket double cloth",
+    "double weave tube loom"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In " },
+          {
+            "type": "text",
+            "text": "double weave",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "double-weave" } }]
+          },
+          { "type": "text", "text": " two cloths are built simultaneously on the same loom, one stacked above the other. On four shafts the layers are separated cleanly: shafts 1 and 3 carry the upper layer, shafts 2 and 4 carry the lower layer. Each layer uses plain weave independently. Because the two layers share a warp width but are mechanically separate, they can be peeled apart after cutting off to give two half-width cloths, or the " },
+          {
+            "type": "text",
+            "text": "selvedge",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "selvedge" } }]
+          },
+          { "type": "text", "text": " of one layer can be connected to the selvedge of the other at one edge to close three sides and make a pocket." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The draft" }]
+      },
+      {
+        "type": "weavingDraft",
+        "attrs": {
+          "definition": {
+            "title": "Double weave pocket on four shafts",
+            "loomType": "four-shaft",
+            "threading": [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4],
+            "tieUp": [
+              [1, 0, 1, 0],
+              [0, 1, 0, 1],
+              [1, 0, 0, 0],
+              [0, 0, 1, 0],
+              [0, 1, 0, 0],
+              [0, 0, 0, 1]
+            ],
+            "treadling": [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]
+          }
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Threading repeats 1-2-3-4 across the full warp width. Treadles 1 and 2 weave upper and lower plain weave independently to keep the layers separate. Treadles 3 and 4 weave the upper layer only; treadles 5 and 6 weave the lower layer only. To close one selvedge (making the pocket), at the right edge the upper-layer weft wraps around the outermost lower-layer warp end before returning, linking the two layers at that edge." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {},
+        "content": [
+          { "type": "suppliesItem", "attrs": { "name": "Four-shaft floor loom with at least six treadles", "slug": "floor-loom-4-shaft", "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "End-feed shuttle, two (one per layer)", "slug": "end-feed-shuttle", "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Weaving reed, sett to suit yarn weight", "slug": "weaving-reed", "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Warping board", "slug": "warping-board", "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Warp yarn: two cones of compatible yarn (one per layer colour, or both the same)", "slug": null, "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Weft yarn: same or contrasting colours for the two layers", "slug": null, "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Blunt darning needle", "slug": "tapestry-needle", "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Soft measuring tape", "slug": "measuring-tape-soft", "isOptional": false }, "content": [] },
+          { "type": "suppliesItem", "attrs": { "name": "Craft scissors", "slug": "craft-scissors", "isOptional": false }, "content": [] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sett calculation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In double weave the two layers share the warp width, so the effective " },
+          {
+            "type": "text",
+            "text": "sett",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sett" } }]
+          },
+          { "type": "text", "text": " for each individual layer is half the total warp " },
+          { "type": "text", "text": "sett" },
+          { "type": "text", "text": ". For a standard 8-epi plain weave yarn, the total warp should be wound at 16 epi (approximately 6 ends per cm). Each layer then has 8 epi of its own threads. This is a denser warp than single-layer cloth of the same yarn and requires a reed that can accommodate it, or two-end-per-dent sleying in an 8-dent reed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Threading and tie-up" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wind the warp alternating upper-layer ends and lower-layer ends: shaft 1, shaft 2, shaft 3, shaft 4, repeating. If the two layers are different colours, wind one colour on shafts 1 and 3, the other on shafts 2 and 4. Thread the heddles in strict 1-2-3-4 order." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tie up the treadles as follows. Treadle 1 lifts shafts 1 and 3 together (upper layer plain weave shed A). Treadle 2 lifts shafts 2 and 4 together (lower layer plain weave shed A). Treadle 3 lifts shaft 1 only (upper layer shed B). Treadle 4 lifts shaft 3 only (upper layer shed A). Treadle 5 lifts shaft 2 only (lower layer shed B). Treadle 6 lifts shaft 4 only (lower layer shed A)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Weaving the pocket" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Use two shuttles: shuttle U for the upper layer and shuttle L for the lower layer. The pocket is woven open on three sides (top, bottom after cutting off, and left selvedge). The right selvedge connects the two layers to close the pocket at that edge." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Press treadle 3 (upper shed A). Pass shuttle U from left to right. At the right edge, wrap the weft around the outermost lower-layer warp end before returning. This is the selvedge connection that closes the right edge of the pocket." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Press treadle 4 (upper shed B). Pass shuttle U from right to left. Beat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Press treadle 5 (lower shed A). Pass shuttle L from right to left (inside the lower layer shed). Beat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Press treadle 6 (lower shed B). Pass shuttle L from left to right. Beat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat from step 1." }] }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "To keep the lower-layer shuttle inside the lower layer, open the lower shed (treadle 5 or 6) and then visually check that the shuttle path runs between the two warp layers, not above both of them. On the first few picks, separate the layers with a finger to confirm the structure is forming correctly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Checking the pocket structure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After weaving 5-6 cm, advance the warp and insert a hand between the two cloth layers near the fell. The layers should be entirely separate except at the right selvedge where the upper-layer weft wraps the connection. If the layers are connected at the left selvedge too, the lower-layer shuttle is travelling above rather than between the layers on some picks. Re-check the treadle sequence." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The pocket is finished by cutting off the loom at the planned length, leaving at least 10 cm of warp tails. Weave in the tails using the blunt darning needle. The open end (top) of the pocket can be left raw with a twisted fringe, hemstitched on the loom, or folded and stitched after cutting off." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The two layers are joined across the full width, not just at the right selvedge",
+              "cause": "Both shuttles are passing through the same combined shed rather than separate layer sheds",
+              "fix": "Check the treadle tie-up. Treadles 3 and 4 should each lift only one upper-layer shaft; treadles 5 and 6 should each lift only one lower-layer shaft. If treadle 5 is lifting a shaft 1 or 3 thread, the tie-up is incorrect."
+            },
+            "content": []
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The layers are loose and bag out between the fell and the front beam",
+              "cause": "The two layers have different weft tension; the tighter layer is advancing faster",
+              "fix": "Ensure both shuttles are wound to the same tension and that the weft arc before beating is consistent on both layers. Beat both layers on the same beat — one firm press forward for each treadle pair."
+            },
+            "content": []
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "A line of connection appears partway across the cloth, dividing the pocket into two narrow pockets",
+              "cause": "The upper-layer shuttle accidentally caught a lower-layer thread mid-width",
+              "fix": "Open the upper-layer shed and check that no lower-layer threads have been lifted into it. If a lower-layer thread is crossing into the upper shed, it indicates a threading error at that point: a shaft-2 or shaft-4 thread has been threaded on shaft 1 or 3. Re-thread that section."
+            },
+            "content": []
+          }
+        ]
+      }
+    ]
+  }
+}

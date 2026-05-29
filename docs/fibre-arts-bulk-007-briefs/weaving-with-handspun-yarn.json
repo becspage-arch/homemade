@@ -1,0 +1,218 @@
+{
+  "slug": "weaving-with-handspun-yarn",
+  "title": "Weaving with handspun yarn",
+  "subtitle": "How to calculate sett, check twist, and adjust beat for hand-produced yarn",
+  "excerpt": "Handspun yarn is variable in diameter and twist level in ways that commercial yarn is not. Using it as weft is more forgiving than using it as warp, but both are possible with the right preparation. This reading covers measuring wraps per inch, calculating sett from WPI, checking twist stability before beaming, and adjusting the beat for the variable diameter of handspun.",
+  "type": "READING",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from established handspun weaving practice. WPI measurement, sett calculation from WPI, and twist-stability assessment are observation-led standards documented across multiple published spinning and weaving manuals and guild resources. No single source is followed verbatim.",
+  "recipeTools": [
+    { "slug": "rigid-heddle-loom", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "wpi",
+      "term": "WPI (wraps per inch)",
+      "definition": "Wraps per inch: a measurement of yarn diameter made by wrapping the yarn snugly around a ruler for one inch and counting the wraps. WPI is used to calculate the appropriate sett for weaving: a common rule is to set the warp at half the WPI for a balanced plain weave. Handspun yarn should be measured at several points along its length and an average taken, because the diameter varies."
+    },
+    {
+      "slug": "sett",
+      "term": "Sett",
+      "definition": "The number of warp threads per unit of width, expressed as ends per inch (epi) or ends per centimetre. Sett determines how open or how dense the cloth will be and is chosen to suit the yarn weight and the intended weave structure. For handspun yarn, the sett is typically calculated from the WPI measurement of the actual yarn rather than from a yarn-weight label."
+    },
+    {
+      "slug": "twist-stability",
+      "term": "Twist stability",
+      "definition": "The property of a spun yarn that describes how much the twist will migrate, unwind, or kink when the yarn is held under tension or released. A twist-stable yarn hangs without curling into a loop; an unstable yarn will spiral, kink, or snarl when it comes off the bobbin. Warp yarn needs high twist stability to survive the repeated stress of the heddle; weft yarn needs only enough stability to pass through the shed without snagging."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "handspun warp sett",
+    "spinning for weaving",
+    "handspun weft weaving"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Handspun yarn produces a cloth that no commercial yarn can replicate. The slight irregularity of diameter creates a soft, lively surface texture. Fibre choices are unlimited. The preparation work before putting handspun on the loom is more involved than with commercial yarn, but each step is straightforward once you understand the reasoning." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Measuring WPI and calculating sett" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The starting point for any handspun project is a " },
+          {
+            "type": "text",
+            "text": "WPI",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wpi" } }]
+          },
+          { "type": "text", "text": " measurement. Wrap the yarn snugly (not stretched, not compressed) around a ruler for one inch. Count the wraps. Repeat at three or four different places along the length of the skein and average the results; handspun can vary by 20% or more across a single skein." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "From the average WPI, calculate the weaving " },
+          {
+            "type": "text",
+            "text": "sett",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sett" } }]
+          },
+          { "type": "text", "text": " as follows:" }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Plain weave: sett in epi = WPI divided by 2. For a handspun DK-weight yarn averaging 12 WPI, the plain weave sett is 6 epi (approximately 2.4 ends per cm)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "2/2 twill: sett in epi = WPI divided by 1.5. The twill structure floats over two ends at a time and can accommodate a slightly denser sett than plain weave." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For a relaxed, weft-dominant cloth: reduce the calculated sett by 15-20%. The open sett lets the weft pack more densely against the warp." }] }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "These figures are starting points. Always weave a 10-15 cm sample before committing to a full warp. Wet-finish the sample and measure the sett again after washing to see how much the yarn has bloomed. Handspun wool typically blooms 15-25% on the first wet-finish, which closes the sett considerably." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Handspun as weft vs handspun as warp" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Handspun weft is much more forgiving than handspun warp. Weft yarn is never under sustained tension; it passes through the shed and stays. Warp yarn, by contrast, must survive hundreds of cycles of raising and lowering through the heddle, friction against the reed, and the cumulative stress of beating. For this reason, most weavers start with handspun as weft on a commercial warp before attempting a full handspun warp." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For handspun weft, the main preparation is checking that the yarn is smooth enough to pass through the shed without catching on the warp threads. A yarn with lots of halo (long protruding fibres) will catch and pull. If the handspun is very airy or loosely twisted, pre-wind it onto a stick shuttle rather than a boat shuttle bobbin: the stick shuttle lets the yarn unwind sideways without the rotation that can cause a loosely twisted yarn to un-ply in the shed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Checking twist stability before beaming" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Before putting handspun yarn on the loom as warp, test its " },
+          {
+            "type": "text",
+            "text": "twist stability",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "twist-stability" } }]
+          },
+          { "type": "text", "text": ". Cut a 30 cm length and hold one end. Let the other end hang freely. A twist-stable yarn will hang in a gentle curve with minimal rotation. An unstable yarn will rotate, fold back on itself, or form a spiral. An unstable warp will snarl during beaming and break repeatedly during weaving." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "To improve twist stability before beaming: wind the skeins and wash them under moderate tension (hang with a small weight, no more than 100-150 g per skein for medium-weight wool). This sets the twist by allowing the fibres to relax into the spun configuration. Let dry completely before winding the warp." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "neutral", "title": "Wetting before beaming" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Dampening a handspun warp chain slightly before beaming helps even out twist variation and makes the threads lie more calmly on the back beam. Spritz with water and allow to dry 80% before beaming." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Adjusting the beat for variable diameter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The most practical challenge with handspun weft is that the yarn diameter changes unpredictably. A thicker section beaten at the same pressure as a thinner section will produce a denser pick, creating an uneven weft-face density across the cloth." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two approaches manage this:" }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Variable beat: adjust the beat pressure by eye and feel. When a thick section of yarn enters the shed, back off the beat slightly; when a thin section enters, beat a little more firmly. This takes practice and attention but produces the most even result." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lean into the texture: at a relaxed sett with a very open beat, the thick and thin sections become part of the visual character of the cloth rather than a fault. This works especially well for plain weave scarves or wraps where an even, regular surface is not the point." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Which weave structures suit handspun" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Plain weave and 2/2 twill are the most accommodating structures for handspun. Both tolerate variations in yarn diameter without creating obvious faults. In plain weave, every thread interlaces on every pick, which means the cloth locks together quickly and thickness variations are averaged over many interlacement points. In 2/2 twill, the diagonal line disguises irregularities better than a horizontal stripe-like plain weave effect." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Very dense overshot is not well-suited to handspun warp. The overshot structure requires the warp to open a clean shed repeatedly against the friction of the pattern weft floats, and the variable diameter of handspun means some threads will bind in the heddles before others. If overshot with handspun yarn is the goal, use handspun for the weft only (both pattern and tabby) on a commercial linen or cotton warp." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Practical notes for the loom" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wind the warp at slightly lower tension than you would for commercial yarn: handspun is more elastic and a tighter wind may compress thinner sections. When beaming, use warp sticks or paper between each layer as normal. Check frequently for threads that are pulling tighter than their neighbours; handspun can have uneven twist across ends from the same skein if the spinning was not consistent." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If threads break during weaving, the break almost always occurs at a thin or overspun section of the yarn. Mend the break by overlapping a new length of yarn in the shed for 8-10 cm each side of the break, rather than tying a knot at the surface." }
+        ]
+      }
+    ]
+  }
+}
