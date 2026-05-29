@@ -1,0 +1,299 @@
+{
+  "slug": "foundational-spacing",
+  "title": "Foundational Hand Spacing",
+  "subtitle": "Understanding the three spacing groups and achieving optical balance between letters",
+  "excerpt": "Good calligraphy depends as much on the space between letters as on the strokes themselves. Foundational Hand spacing is governed by three relationship groups, a word-space standard, and a principle of optical rather than measured equality.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Johnston, Edward. Writing and Illuminating and Lettering. London: John Hogg, 1906. Section on spacing and letter-fit.",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "sumi-ink", "isOptional": false },
+    { "slug": "light-box-a4", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "counter-shape",
+      "term": "Counter-shape",
+      "definition": "The enclosed or partially enclosed space inside a letter, such as the interior of 'o', 'n', or 'b'. The counter is the unit against which inter-letter spacing is visually calibrated."
+    },
+    {
+      "slug": "inter-letter-spacing",
+      "term": "Inter-letter spacing",
+      "definition": "The space between adjacent letters in a word, measured visually rather than mechanically. Correct inter-letter spacing makes each gap appear equal in area, not in measured distance."
+    },
+    {
+      "slug": "word-spacing",
+      "term": "Word spacing",
+      "definition": "The space between words. In Foundational Hand, the standard word space is approximately equal to the width of a compressed lowercase 'o' in that script."
+    }
+  ],
+  "techniqueSlugs": ["foundational-spacing"],
+  "criticalTechniques": ["foundational-spacing"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Spacing is not measurement" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The instinct when learning calligraphy is to space letters by measuring the gap between them. This produces visibly uneven results because different letter combinations have different amounts of space implied by their forms. Two adjacent round letters share almost nothing; two adjacent upright strokes leave an open rectangle between them. The space that looks equal is not the space that measures equal."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The standard approach in Johnston's tradition is to calibrate spacing against the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "counter-shape" } }],
+            "text": "counter-shape"
+          },
+          {
+            "type": "text",
+            "text": " of the letter 'n'. The interior of 'n' is the benchmark: every gap between adjacent letters should have the same visual area as that interior. This is an optical judgement, not a calculation."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The three spacing groups" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Letters are grouped by the shape of their right and left strokes. Each group pairing produces a different natural spatial relationship."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Round-round" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When a letter ending in a curve (o, c, e, d, q, g) meets a letter beginning in a curve (o, b, p, d, q), the two forms naturally shed space. Their curves lean away from each other, and the gap between them is inherently smaller in visual area than a gap between two uprights. These pairs can be placed closest together."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In practice: write 'oo', 'oc', 'bo', 'do', 'op'. The letters should almost touch at the middle height without ever actually touching. The gap, viewed as a shape, should be a narrow lens."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Round-arch (and arch-round)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When a curve meets an arch or upright with a rounded shoulder (n, m, h, u, a), or vice versa, slightly more physical space is needed to maintain visual equality. The arch already contains some visual weight at the top of its stroke, and bringing a round letter too close creates a compressed-looking join."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In practice: write 'on', 'no', 'na', 'an', 'em'. The gap should look the same area as the counter-shape of 'n' itself."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Arch-arch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When two letters with vertical or near-vertical strokes on both sides meet (n, m, h, u, i, l, k, f, t), the most space is required. The rectangle implied between two upright strokes is visually heavier than the same measurement between curves. If these pairs are spaced at the same physical distance as round-round pairs, the word will look gapped between the straight letters."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In practice: write 'nn', 'mn', 'ni', 'hn', 'im'. The counter-shape inside one 'n' and the gap between the two letters should be indistinguishable in area."
+          }
+        ]
+      },
+      {
+        "type": "calligraphyExemplar",
+        "attrs": {
+          "definition": {
+            "alphabet": "Foundational",
+            "letter": "n",
+            "nibAngle": 30,
+            "xHeight": 4,
+            "guideLines": ["x-height", "baseline"],
+            "ductus": [
+              { "stroke": 1, "path": "M 12 60 L 12 20", "arrowAt": "end" },
+              { "stroke": 2, "path": "M 12 20 C 12 10 28 10 28 25 L 28 60", "arrowAt": "end" }
+            ],
+            "outline": "M 10 62 L 10 18 C 10 6 30 6 30 25 L 30 62 Z"
+          }
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Word spacing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The standard "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "word-spacing" } }],
+            "text": "word spacing"
+          },
+          {
+            "type": "text",
+            "text": " in Foundational Hand is approximately equal to the width of a compressed lowercase 'o' at that nib size. This is narrower than most beginners use. A word space wide enough to park a full 'o' in is too wide; the words float apart and the line loses cohesion."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A quick check: write 'minimum'. It has only arch-arch gaps. Use the inside of those letters as your guide for both the space between letters and the space between words."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Optical balance in practice" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "inter-letter-spacing" } }],
+            "text": "inter-letter spacing"
+          },
+          {
+            "type": "text",
+            "text": " rules above describe the goal, but achieving it requires practice of specific letter sequences. Work through these in order."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Write 'oooo' until all four letters look equally spaced. This calibrates your eye to the round-round interval."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Write 'noon', 'moon', 'boon'. Compare the no and on gaps to the oo gap. Adjust."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Write 'minimum'. All gaps should read as one value. This is the hardest test because all three group types are present."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Turn the sheet upside down to check spacing. Inverted, the letters become abstract shapes and you see only the relative white areas. Uneven spacing is immediately obvious."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "A note on 'f', 't', 'r', 'v', 'w', 'y'",
+          "body": "Certain letters have projecting arms or diagonal strokes that reduce the apparent space on one or both sides. 'f', 'r', 't', 'v', 'w', and 'y' all need to be placed slightly closer to adjacent letters than the three-group rules suggest, because their projections already occupy visual space above the x-height or in the lateral margins. Adjust by eye; no formula covers every combination."
+        }
+      }
+    ]
+  }
+}

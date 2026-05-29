@@ -1,0 +1,200 @@
+{
+  "slug": "origami-pinwheel",
+  "title": "Origami Pinwheel",
+  "subtitle": "Classic four-bladed pinwheel from one 15 cm square, valley folds only",
+  "excerpt": "The classic Fröbel pinwheel from a single 15 cm square of kami. All folds are valley folds. The finished pinwheel has four symmetrical blades and lies flat without glue.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "origami",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Kindergarten Gifts and Occupations literature, Froebel tradition; the pinwheel is among the canonical pre-1928 Froebel folds documented in open-access library collections.",
+  "recipeTools": [
+    { "slug": "origami-bone-folder-mini", "isOptional": false },
+    { "slug": "kami-15cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "froebel-fold",
+      "term": "Fröbel fold",
+      "definition": "Any of the folding sequences systematised by Friedrich Fröbel for use in kindergarten education in the nineteenth century, intended to teach geometric thinking through paper manipulation."
+    },
+    {
+      "slug": "valley-fold",
+      "term": "Valley fold",
+      "definition": "A fold where the paper bends toward the maker, creating a crease that looks like the bottom of a valley when viewed from the side. The standard fold direction in most origami diagrams."
+    },
+    {
+      "slug": "pinwheel-blade",
+      "term": "Pinwheel blade",
+      "definition": "One of the four identical angled sections of a pinwheel, formed by folding the corners of the paper inward and rotating them to produce a rotational symmetry."
+    }
+  ],
+  "techniqueSlugs": ["origami-valley-fold", "origami-crease-sharpening"],
+  "criticalTechniques": ["origami-valley-fold"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "About this fold" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The pinwheel is one of the foundational forms in the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "froebel-fold" } }],
+            "text": "Fröbel fold"
+          },
+          { "type": "text", "text": " sequence. Friedrich Fröbel used it in the 1840s as a demonstration of rotational symmetry for young children: the same shape repeated four times, each rotated 90 degrees from the previous. All six steps use only " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "valley-fold" } }],
+            "text": "valley folds"
+          },
+          { "type": "text", "text": ". No mountain folds, no sinks, no squash folds." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Kami 15 cm square", "slug": "kami-15cm", "isOptional": false },
+            { "name": "Mini origami bone folder", "slug": "origami-bone-folder-mini", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Safety",
+          "body": "Crease quality is what makes this model look finished or rough. Each fold should be pressed firmly from the centre of the crease outward to both edges, using the flat side of the mini bone folder. Creases made only with a fingernail are less sharp and cause the blades to sit unevenly. Use kami with different colours on each face: the reverse colour will appear on the backs of the blades and add to the visual rhythm of the finished piece."
+        }
+      },
+      {
+        "type": "origamiFoldDiagram",
+        "attrs": {
+          "definition": {
+            "title": "Origami Pinwheel",
+            "stepCount": 6,
+            "steps": [
+              {
+                "stepNumber": 1,
+                "caption": "Place the square colour-side down. Fold in half diagonally, bottom-right corner to top-left corner. Crease and unfold. Fold in half diagonally the other way, bottom-left to top-right. Crease and unfold. You now have two diagonal crease lines crossing at the centre.",
+                "folds": [
+                  { "kind": "valley", "from": [0, 100], "to": [100, 0] },
+                  { "kind": "valley", "from": [0, 0], "to": [100, 100] }
+                ]
+              },
+              {
+                "stepNumber": 2,
+                "caption": "Fold the bottom edge up to meet the top edge. Crease firmly and unfold. Fold the left edge across to meet the right edge. Crease firmly and unfold. You now have four crease lines through the centre: two diagonals and two medians.",
+                "folds": [
+                  { "kind": "valley", "from": [0, 50], "to": [100, 50] },
+                  { "kind": "valley", "from": [50, 0], "to": [50, 100] }
+                ]
+              },
+              {
+                "stepNumber": 3,
+                "caption": "Fold all four corners to the centre point, one at a time. Each corner should meet the centre exactly. Crease each fold firmly with the bone folder before folding the next. The result is a smaller square (the preliminary blintz base).",
+                "folds": [
+                  { "kind": "valley", "from": [0, 0], "to": [50, 50] },
+                  { "kind": "valley", "from": [100, 0], "to": [50, 50] },
+                  { "kind": "valley", "from": [0, 100], "to": [50, 50] },
+                  { "kind": "valley", "from": [100, 100], "to": [50, 50] }
+                ]
+              },
+              {
+                "stepNumber": 4,
+                "caption": "Rotate the square 45 degrees so it sits as a diamond. Fold the bottom point up to the centre. Fold the top point down to the centre. Crease both folds firmly. You now have a rectangle.",
+                "folds": [
+                  { "kind": "valley", "from": [50, 100], "to": [50, 50] },
+                  { "kind": "valley", "from": [50, 0], "to": [50, 50] }
+                ]
+              },
+              {
+                "stepNumber": 5,
+                "caption": "Fold the left end of the rectangle to the right end, bringing the short edges together. Crease firmly. Unfold. Open the model back to the blintz square from Step 3. The extra crease line from this step creates the blade fold guides.",
+                "folds": [
+                  { "kind": "valley", "from": [0, 50], "to": [100, 50] }
+                ]
+              },
+              {
+                "stepNumber": 6,
+                "caption": "Open the model to the flat sheet. Using all the existing crease lines as guides, lift each corner and fold it inward along the diagonal crease while simultaneously folding the adjacent median creases. Work around the square in one direction, tucking each blade under the previous one. The four pinwheel blades will form as you work around. Flatten firmly with the bone folder.",
+                "folds": [
+                  { "kind": "valley", "from": [0, 0], "to": [50, 50] },
+                  { "kind": "valley", "from": [100, 0], "to": [50, 50] },
+                  { "kind": "valley", "from": [100, 100], "to": [50, 50] },
+                  { "kind": "valley", "from": [0, 100], "to": [50, 50] }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Each " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pinwheel-blade" } }],
+            "text": "pinwheel blade"
+          },
+          { "type": "text", "text": " should sit at the same angle to produce a balanced visual rotation. If one blade is higher than the others, press it down gently and run the bone folder along its lower crease to reinforce it." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The finished pinwheel lies flat without glue. If you want to mount it, apply a single small dot of PVA to the centre back. Press onto the page and allow to dry under a light weight. Do not apply glue to the blade tips or the rotational effect will be disrupted." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Use a two-tone kami square (different colours front and back) to produce a pinwheel where the blade faces and blade backs alternate in two colours. Use a 20 cm square for a larger version; all the proportions scale exactly. Use kami with a printed pattern on one side to create blades that read as a single pattern when the model is assembled." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Blades are different sizes",
+              "cause": "Corners in Step 3 did not reach the exact centre point",
+              "fix": "Unfold and re-fold Step 3. Use the crease-line intersection at the centre as the precise target for each corner tip."
+            },
+            {
+              "symptom": "Model does not lie flat after Step 6",
+              "cause": "The blades were not tucked under each other in sequence",
+              "fix": "Open the model back to the blintz base. Work around the four blades in one consistent direction (clockwise or anticlockwise) rather than folding opposite blades first."
+            },
+            {
+              "symptom": "Creases are visible on the colour side of the blades",
+              "cause": "The median folds from Step 2 show through the blade faces",
+              "fix": "This is inherent to the model. Using a kami colour that contrasts with the crease lines minimises the visual effect."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

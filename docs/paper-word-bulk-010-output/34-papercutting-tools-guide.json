@@ -1,0 +1,212 @@
+{
+  "slug": "papercutting-tools-guide",
+  "title": "Papercutting Tools Guide",
+  "subtitle": "Scalpel versus craft knife, blade types, cutting mats, and light boxes for template transfer",
+  "excerpt": "A practical overview of every tool involved in papercutting: the difference between a scalpel and a craft knife, when to use each, how cutting mats work, and how a light box simplifies template transfer.",
+  "type": "READING",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papercutting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "General papercutting practice; no single PD canonical source.",
+  "recipeTools": [
+    { "slug": "scalpel-10a", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a4", "isOptional": false },
+    { "slug": "light-box-a4", "isOptional": false },
+    { "slug": "metal-ruler-15cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "10a-blade",
+      "term": "10A blade",
+      "definition": "A scalpel blade with a short, curved cutting belly and a pointed tip, numbered 10A in the standard UK surgical/craft classification. It is the standard blade for tight-curve papercutting."
+    },
+    {
+      "slug": "self-healing-mat",
+      "term": "Self-healing mat",
+      "definition": "A cutting surface made of multiple layers of compressed polymer that closes over cut marks after the blade passes through, maintaining a flat smooth surface for repeated use."
+    },
+    {
+      "slug": "template-transfer",
+      "term": "Template transfer",
+      "definition": "The process of copying a design from a printed or drawn template onto the cutting paper, either by tracing, carbon paper, or light-box back-lighting."
+    }
+  ],
+  "techniqueSlugs": ["blade-changing-safety", "light-box-tracing"],
+  "criticalTechniques": ["blade-changing-safety"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Cutting safely",
+          "body": "Sharp blades are safer than blunt ones. Change the blade at the first sign of dulling. Always cut on a self-healing mat. Hold the metal ruler firmly with the non-cutting hand behind the line of cut, fingers at least two finger-widths back from the blade's path."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Why tool choice matters in papercutting" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Paper offers less resistance than fabric or wood, which means blade control is almost entirely about how sharp and well-matched the tool is to the cut you need to make. A craft knife that excels at straight lines will fight you on a tight concave curve. A scalpel with a 10A blade will follow a curving line effortlessly but can wander on a long straight." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Scalpel with a 10A blade" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The scalpel is the primary tool for papercutting. A standard scalpel handle accepts a range of blade shapes; the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "10a-blade" } }],
+            "text": "10A blade"
+          },
+          { "type": "text", "text": " is the most useful for this craft. Its curved belly lets you roll through a curve while maintaining consistent contact with the cutting mat. The pointed tip cuts internal corners cleanly." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hold the scalpel like a pencil, not like a knife. The barrel rests in the crook between thumb and index finger. The angle to the paper should be about 70 degrees; steeper than a pencil, not vertical. A steeper angle gives more control and reduces the tendency to skive (shave the paper rather than cut cleanly through it)." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Scalpel blades are surgical-grade steel and are designed to be replaced rather than resharpened. A blade that needs noticeably more pressure to start a cut is past its useful life. Replace it before continuing, not after the cut fails." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Craft knife" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A standard craft knife (the type with a retractable snap-off blade) is better suited to straight cuts and gentle curves at larger scale. Its advantage over the scalpel is the length of the cutting edge: a craft knife blade has more usable surface and is easier to hold steady against a metal ruler for ruled cuts." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The snap-off blade must be snapped off at the first score mark when it begins to drag. Running the blade lightly across a ceramic tile a few times can temporarily restore edge but is not a substitute for snapping off a used segment." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For tight papercut motifs, a craft knife is a second-choice tool. Use the scalpel for anything with curves smaller than about 3 cm in radius. Use the craft knife for trimming straight edges and cutting card stock where the longer blade gives better leverage." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Small scissors for jianzhi-style cuts" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Chinese jianzhi papercuts are traditionally made entirely with small sharp scissors, without any cutting mat. The paper is rotated in the non-dominant hand while the scissors cut in short, precise snips. Embroidery scissors or small nail scissors with pointed blades work better than large craft scissors for this technique. Scissors allow cutting with the paper lifted off the table, which helps with symmetrical fold-cuts where a mat would prevent rotating the paper freely." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The self-healing cutting mat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "self-healing-mat" } }],
+            "text": "self-healing mat"
+          },
+          { "type": "text", "text": " protects the work surface and, more importantly, protects the blade tip. Cutting on a hard surface (glass, tile, wood) destroys the tip of a scalpel blade on the first pass. On a self-healing mat the blade enters the surface and exits cleanly." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A4 is the minimum useful size for most papercutting work. Mats should be replaced when the surface develops deep grooves that redirect the blade path. A mat with deep parallel ruts from previous ruler cuts will cause the blade to follow the groove rather than the drawn line." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The light box for template transfer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The simplest " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "template-transfer" } }],
+            "text": "template transfer"
+          },
+          { "type": "text", "text": " method for papercutting is back-lighting. Place the printed or drawn template flat on the light box. Lay your cutting paper on top. The illuminated template lines show through the cutting paper well enough to cut directly, without transferring the design to the surface first." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This method avoids pencil residue on the cutting paper. It also allows the cutter to work on both sides of the paper without marking either face, which matters when the finished piece will be viewed from multiple angles." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tape the template and cutting paper together at one corner with a small piece of washi tape so they do not shift during cutting. Do not tape across the design area or around all four edges; you need to be able to rotate the paper stack freely." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Blade care and disposal" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Used scalpel blades are sharps. They must be placed in a rigid container such as a metal tin with a lid, never loose in a bin or wrapped in paper. Pharmacies and GP surgeries accept sharps containers for safe disposal; a sealed metal tin can also be disposed of in general waste in most areas if labelled as sharps." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Blade tears the paper rather than cutting cleanly",
+              "cause": "Blade is dull or the angle is too shallow",
+              "fix": "Replace the blade. If the blade is new, steepen the angle to about 70 degrees from the paper surface."
+            },
+            {
+              "symptom": "Straight cuts wander even with a ruler",
+              "cause": "Ruler is lifting slightly or shifting under pressure",
+              "fix": "Use a metal ruler with a cork or rubber backing. Apply firm downward pressure with the full non-cutting hand, not just the fingertips."
+            },
+            {
+              "symptom": "Light-box template not visible through the cutting paper",
+              "cause": "Paper is too thick or too heavily coloured",
+              "fix": "Increase the light box brightness if adjustable. Trace the template onto thinner paper first (60 to 80 gsm copy paper) and use that as the immediate guide layer."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

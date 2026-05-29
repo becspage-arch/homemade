@@ -1,0 +1,238 @@
+{
+  "slug": "hand-lettered-headers",
+  "title": "Hand-Lettered Headers",
+  "subtitle": "Three treatments: foundational pen lettering, drop-shadow block letter, and watercolour wash with ink outline",
+  "excerpt": "Three approaches to heading design for journal pages and paper projects. Foundational pen lettering with a broad nib, drop-shadow constructed block letters in pencil, and a watercolour wash title with pen outline over the top.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "journalling-craft",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edward Johnston, Writing and Illuminating and Lettering (1906), chapters on layouts and headings.",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "pencil", "isOptional": false },
+    { "slug": "metal-ruler-15cm", "isOptional": false },
+    { "slug": "watercolour-pan-set", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "drop-shadow-letter",
+      "term": "Drop-shadow letter",
+      "definition": "A block letter with a second offset outline drawn behind and to one side, creating the illusion of a cast shadow and visual depth."
+    },
+    {
+      "slug": "watercolour-wash-title",
+      "term": "Watercolour wash title",
+      "definition": "A heading where the letter area is first filled with a wet watercolour wash and the final ink outline is drawn over it once the wash has dried."
+    },
+    {
+      "slug": "foundational-header",
+      "term": "Foundational header",
+      "definition": "A heading written with a broad-edged pen in the Foundational hand, derived from the Ramsey Psalter script and popularised by Edward Johnston."
+    }
+  ],
+  "techniqueSlugs": ["broad-nib-pen-hold", "pencil-construction-letters", "watercolour-wet-on-dry"],
+  "criticalTechniques": ["broad-nib-pen-hold"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Johnston's foundational approach relies on two things: a steady pen angle (30 to 45 degrees) and a letter height set in nib widths. Work through the nib-angle exercise in Method 1 before starting any heading. It takes three minutes and prevents the most common mistakes." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Mitchell Roundhand no. 3 nib", "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+            { "name": "Straight pen holder", "slug": "straight-pen-holder", "isOptional": false },
+            { "name": "Pencil", "slug": "pencil", "isOptional": false },
+            { "name": "15 cm metal ruler", "slug": "metal-ruler-15cm", "isOptional": false },
+            { "name": "Watercolour pan set", "slug": "watercolour-pan-set", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method 1: Foundational pen lettering" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foundational-header" } }],
+            "text": "foundational header"
+          },
+          { "type": "text", "text": " uses a Mitchell no. 3 nib at a 30-degree pen angle. Fill your nib from the reservoir and make a ladder of horizontal strokes: lay the nib flat and draw short side-by-side strokes, each one nib-width tall, stacking them vertically. Count five strokes: that stack height is your x-height (the height of a lowercase letter body)." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rule two pencil guide lines: baseline and x-height (5 nib widths apart). Add a cap line 7 nib widths from the baseline for capitals." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold the pen so the full width of the nib contacts the paper and the pen angle is constant at 30 to 35 degrees. Do not twist the pen mid-stroke." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Write each heading word slowly in capitals. The broad nib produces its own thick and thin contrast automatically through the pen angle; do not press harder on downstrokes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave spacing between letters approximately one stroke width: tight enough to read as a word, loose enough that letters do not crowd." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Erase pencil guide lines once the ink is fully dry (at least 10 minutes for sumi ink on cartridge paper)." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Ink flow",
+          "body": "If the nib skips or drags, the ink is too thick. Add one drop of water to the ink well and stir. If the nib floods, the reservoir is overfull: touch the underside of the nib to a scrap piece of paper to draw off the excess before returning to the heading."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method 2: Drop-shadow block letter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "drop-shadow-letter" } }],
+            "text": "drop-shadow letter"
+          },
+          { "type": "text", "text": " is constructed entirely in pencil first, then outlined in ink. The shadow adds depth without requiring any calligraphy skills." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rule a baseline and cap line in pencil. The letter height can be whatever suits the page; 8 to 12 mm is typical for a journal header." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sketch the heading word in plain block capitals between the lines. Keep stroke width consistent: about one-fifth of the cap height." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Decide a shadow direction: 2 mm down and 2 mm to the right is conventional. Lightly mark the offset at three or four anchor points on each letter." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Draw the shadow outline by connecting those offset marks, producing a second letter shape behind each block letter. Only the edges that are behind and below need a line; the front face stays clean." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill the shadow shape with hatching or a flat pencil shade. Outline the front block letter in ink using a fountain pen on medium nib." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Erase all pencil construction lines once the ink is dry." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method 3: Watercolour wash with ink outline" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "watercolour-wash-title" } }],
+            "text": "watercolour wash title"
+          },
+          { "type": "text", "text": " reverses the usual order: paint first, outline second. The wash must be fully dry before the pen outline is applied." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sketch the heading word lightly in pencil. Large, open block capitals work best because they give the wash room to show." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix a dilute wash in one colour. Load a brush or use a waterbrush pen. Paint within each letter shape, staying approximately inside the pencil outline. Small bleed outside the lines is fine; the ink outline will correct it." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "While the first wash is still damp, drop a slightly stronger mix of the same colour into the lower half of each letter for a gradient. The wet paper will spread the drop gently. Do not manipulate it further." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Allow to dry completely, at least 15 minutes. The paper may cockle slightly; press flat under a heavy book if needed before proceeding." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Outline each letter shape in ink with a fountain pen on medium nib or a dip pen. Follow the pencil lines closely. The ink outline defines the crisp edge that the wash did not supply." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Erase pencil lines once the ink is dry." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing between the three methods" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Foundational lettering is the most demanding technique because the pen angle must be held consistently throughout. It rewards practice and produces headers with authentic calligraphic weight. The drop-shadow method is more forgiving: it is drawn slowly in stages and any error can be corrected with an eraser before the ink stage. The watercolour wash method is the quickest once you are comfortable with a brush and produces the most visually varied results." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Broad nib produces uniform thin strokes with no contrast",
+              "cause": "Pen angle is too steep (closer to 90 degrees than 30)",
+              "fix": "Flatten the pen so more of the nib edge contacts the paper. Check by drawing a thick horizontal stroke: if the full nib width transfers, the angle is correct."
+            },
+            {
+              "symptom": "Drop-shadow letters look flat, no depth effect",
+              "cause": "Shadow offset is too small or the shadow tone matches the letter face",
+              "fix": "Increase the offset to 3 mm. Fill the shadow solidly with hatching in one direction only, darker than the letter face."
+            },
+            {
+              "symptom": "Ink outline bleeds into the damp watercolour area",
+              "cause": "Watercolour wash was not fully dry when the ink was applied",
+              "fix": "Wait longer before outlining. Test with a dry fingertip on the paper edge: if any coolness is felt, the paper is still holding moisture."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

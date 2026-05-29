@@ -1,0 +1,276 @@
+{
+  "slug": "bullet-journal-setup",
+  "title": "Setting Up a Bullet Journal",
+  "subtitle": "Page numbering, index, key and future-log in a blank notebook",
+  "excerpt": "A blank notebook becomes a working system when you add four physical structures: numbered pages, a hand-written index, a key legend, and a future-log spread. This technique covers each in sequence.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "journalling-craft",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Modern bullet-journal practice; the Ryder Carroll format is widely documented in open-access sources. No single PD canonical text.",
+  "recipeTools": [
+    { "slug": "pencil", "isOptional": false },
+    { "slug": "metal-ruler-15cm", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "washi-tape", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "index-spread",
+      "term": "Index spread",
+      "definition": "Two facing pages at the front of the notebook reserved for recording page numbers and topic titles, used to locate content quickly."
+    },
+    {
+      "slug": "key-legend",
+      "term": "Key legend",
+      "definition": "A reference page listing the symbols used throughout the journal, such as a dot for a task, a circle for an event, or a dash for a note."
+    },
+    {
+      "slug": "future-log",
+      "term": "Future log",
+      "definition": "A spread divided into monthly sections for recording events and tasks that fall beyond the current month, acting as a long-range calendar."
+    }
+  ],
+  "techniqueSlugs": ["page-numbering", "hand-lettering-basics"],
+  "criticalTechniques": ["page-numbering"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you are making" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A bullet journal is a blank notebook that you structure yourself. The system works because every page has a number, every collection is logged in a central reference, and symbols carry consistent meanings throughout. These four steps set the structure before any daily content begins." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Pencil", "slug": "pencil", "isOptional": false },
+            { "name": "15 cm metal ruler", "slug": "metal-ruler-15cm", "isOptional": false },
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false },
+            { "name": "Washi tape (for tab markers)", "slug": "washi-tape", "isOptional": true }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Numbering the pages" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Start at the very first page. Write a small numeral in the bottom outer corner of each page, front and back, until the notebook is fully numbered. Work through the entire book before writing any other content." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Use a light pencil touch. The number only needs to be legible; it does not need to be decorative. A consistent position, bottom-right on right-hand pages and bottom-left on left-hand pages, means you can riffle through and read numbers without opening to a spread." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If your notebook has 200 leaves, this takes about 15 minutes. Do not skip it. Every other structure depends on page numbers being in place." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2: The index spread" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Reserve the first two pages (pages 1 and 2) for the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "index-spread" } }],
+            "text": "index spread"
+          },
+          { "type": "text", "text": ". Write the word \"Index\" as a heading at the top of page 1." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rule light horizontal lines across both pages using your pencil and metal ruler. Space them at 6 mm or 8 mm, whichever suits your handwriting. These lines do not need to be inked; pencil is fine because the index is a working reference, not a display page." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Each line in the index holds one entry: a topic name on the left and one or more page numbers on the right. Separate them with a dash or a colon. As you fill pages later in the notebook, return here and add the new entry. The index is only useful if it is updated each time you start a new collection." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two pages are usually enough for a 200-page notebook. If you prefer, take four pages (1 to 4) and split alphabetically: A to M on the first spread, N to Z on the second." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3: The key legend" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The next page (or next available page after the index) holds the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "key-legend" } }],
+            "text": "key legend"
+          },
+          { "type": "text", "text": ". This is the shortest entry in the whole notebook, but it must exist before you start daily pages." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A minimal key has five symbols. Draw each one in the left margin, then write its meaning beside it." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bullet dot: a task to complete." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "X through the dot: task completed." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Right-pointing arrow through the dot: task migrated forward to a future page." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open circle: an event (something with a fixed date)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dash: a note, observation or piece of information." }] }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add a star or asterisk as a priority marker if you want one. Do not add more symbols than you will reliably use. A key with eight symbols that you only half-remember is less useful than a key with four symbols you have memorised." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Write the page number of the key in your index as \"Key: 3\" before moving on." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4: The future-log spread" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "future-log" } }],
+            "text": "future log"
+          },
+          { "type": "text", "text": " sits on the next spread after the key. Reserve four pages for it (two spreads). You are dividing these pages into monthly sections." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "One common layout places six months on the first spread and six on the second. Divide each page into three equal horizontal sections with your ruler, giving you six boxes per spread across two pages. Write the month name as a small heading in the top-left corner of each box." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Alternatively, use a two-column layout across a single spread: twelve rows, one per month, with the month name on the left and a wide ruled column for entries on the right. Measure column width with your ruler and mark lightly in pencil before scoring or ruling." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Use a bone folder and ruler to score any fold or ruled line that will be heavy use. The scored line keeps the page flat and prevents the pencil or pen from wandering." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Note the future-log page range in your index before closing the notebook." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tab markers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stick a short strip of washi tape to the outer edge of the index page, the key page, and the first future-log page, folding it around so it forms a visible tab. This lets you open directly to any of the three reference sections without thumbing through pages." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Keep tabs to three or four maximum. More than that and they overlap and stop being useful as quick-finds." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Moving forward" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once these four structures are in place, the next available page is ready for a monthly or daily log. Every new collection you open gets its own page number and an index entry. The system runs on those two habits: number, then index. Everything else is optional." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Numbers look uneven or too large",
+              "cause": "Writing the numeral freehand without a size reference",
+              "fix": "Lightly mark a small box with pencil in the corner before writing the number inside it. Erase the box outline after."
+            },
+            {
+              "symptom": "Index fills up before the notebook is half used",
+              "cause": "Too many collections indexed individually instead of grouped",
+              "fix": "Index a spread rather than individual pages where possible, e.g. \"Weekly logs: 18, 24, 31\" as one entry."
+            },
+            {
+              "symptom": "Future-log boxes feel too small",
+              "cause": "Six-per-page layout with a large notebook",
+              "fix": "Switch to four months per page (eight pages total) for a bit more writing room in each box, or use the two-column single-spread method instead."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

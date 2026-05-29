@@ -1,0 +1,243 @@
+{
+  "slug": "accordion-fold-zine",
+  "title": "Accordion-Fold Zine",
+  "subtitle": "Scoring and folding an A3 or A2 sheet into a concertina book with optional board cover",
+  "excerpt": "An accordion fold converts a single large sheet into a multi-page booklet with no staples or binding. This pattern covers calculating fold positions, scoring the sheet, the order of mountain and valley folds, and attaching an optional bookbinding-board cover.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "zines",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "General zine-making practice; the accordion fold is a public-domain structure.",
+  "recipeTools": [
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a4", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "pva-regular", "isOptional": true },
+    { "slug": "bookbinding-board-1-5mm", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "accordion-fold",
+      "term": "Accordion fold",
+      "definition": "A folding pattern where a strip of paper is folded alternately in opposite directions, producing a zigzag structure that fans open or closes flat."
+    },
+    {
+      "slug": "concertina-book",
+      "term": "Concertina book",
+      "definition": "A book or zine format that uses an accordion fold as its structure, with no adhesive binding, so it can be read either as sequential pages or opened out to display the full strip."
+    },
+    {
+      "slug": "mountain-valley-fold",
+      "term": "Mountain and valley fold",
+      "definition": "The two basic fold directions: a valley fold curves toward the maker (like a valley), a mountain fold curves away (like a ridge). Alternating the two creates an accordion."
+    }
+  ],
+  "techniqueSlugs": ["bone-folder-scoring", "bookbinding-board-cutting"],
+  "criticalTechniques": ["bone-folder-scoring"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Cutting safely",
+          "body": "Sharp blades are safer than blunt ones. Change the blade at the first sign of dulling. Always cut on a self-healing mat. Hold the metal ruler firmly with the non-cutting hand behind the line of cut, fingers at least two finger-widths back from the blade's path."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you are making" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "accordion-fold" } }],
+            "text": "accordion fold"
+          },
+          { "type": "text", "text": " zine, also called a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "concertina-book" } }],
+            "text": "concertina book"
+          },
+          { "type": "text", "text": ", is a single long strip folded in alternating directions into equal sections. The result reads as a sequence of pages when closed, and opens into one continuous panoramic surface. It needs no staples, no thread, and no adhesive for the basic form." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false },
+            { "name": "Craft knife", "slug": "craft-knife", "isOptional": false },
+            { "name": "A4 cutting mat", "slug": "cutting-mat-a4", "isOptional": false },
+            { "name": "30 cm metal ruler", "slug": "metal-ruler-30cm", "isOptional": false },
+            { "name": "PVA glue (for cover attachment)", "slug": "pva-regular", "isOptional": true },
+            { "name": "1.5 mm bookbinding board (for covers)", "slug": "bookbinding-board-1-5mm", "isOptional": true }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing your sheet size" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An A3 sheet (297 x 420 mm) folded into eight equal sections produces pages approximately 52 mm wide by 297 mm tall: a tall narrow format, good for a text zine. An A2 sheet (420 x 594 mm) folded into eight sections produces pages 74 mm wide by 420 mm tall: more comfortable for images and hand lettering. An A2 sheet folded into six sections produces 99 mm wide pages." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Plan your page count before cutting. An accordion can have any even number of sections: six, eight, ten, or twelve. More than twelve sections from a single sheet produces pages that are too narrow to be useful." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Calculating fold positions" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the sheet landscape (long edge horizontal). Decide the number of sections, for example eight." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Divide the total width by the number of sections: for an A3 sheet (420 mm) into eight sections, each section is 52.5 mm." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark the fold positions along the top and bottom edges with a pencil: at 52.5 mm, 105 mm, 157.5 mm, and so on to 367.5 mm (seven fold lines for eight sections)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Verify that the final section ends flush with the sheet edge. If your sheet is not exactly A3, adjust the section width accordingly." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Scoring the fold lines" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the sheet on the cutting mat. Place the 30 cm metal ruler precisely over the first fold mark, aligning both the top and bottom pencil marks." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Draw the bone folder firmly along the ruler edge from top to bottom of the sheet. Apply medium pressure: enough to compress the paper fibres, not enough to cut through." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Score all seven fold lines before making any folds. If you fold before scoring all lines, the sheet distorts and later marks become misaligned." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Folding in mountain and valley sequence" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mountain-valley-fold" } }],
+            "text": "mountain and valley folds"
+          },
+          { "type": "text", "text": " must alternate. The easiest method is to fold all lines in one direction first, then reverse alternate folds." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold the sheet along the first scored line, bringing the right portion over the left, and crease firmly with the bone folder." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Unfold. Fold along the second scored line in the same direction. Crease. Unfold. Repeat for all seven lines." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Now go back to the first fold. Fold in the opposite direction (away from you). Crease. Unfold. Skip the second fold. Reverse the third fold. Continue: reverse odd-numbered folds, leave even-numbered folds as they are." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the whole strip together into its accordion form. The sections should stack flat on top of each other. Compress gently and run the bone folder along all closed edges to sharpen the creases." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Optional board cover" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 1.5 mm bookbinding board cover gives the zine a spine it can stand on and protects the outer pages from wear." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut two pieces of bookbinding board to exactly the size of one accordion section (52.5 x 297 mm for the A3 eight-section example above)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply PVA to the outer face of the first accordion section (the back of the first page). Press the board onto this face and hold under a heavy book for 20 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat for the last accordion section. Leave overnight before using." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Accordion does not lie flat when closed",
+              "cause": "Fold lines are not all scored to the same depth",
+              "fix": "Go over any fold line that resists with the bone folder and ruler again. Press the closed accordion under a stack of heavy books overnight."
+            },
+            {
+              "symptom": "Section widths are uneven",
+              "cause": "Pencil marks were placed by eye rather than measured",
+              "fix": "Use a ruler and mark every fold position with a small clear dot before scoring. Check by measuring between adjacent marks before scoring."
+            },
+            {
+              "symptom": "Board covers warp after PVA dries",
+              "cause": "PVA on one face only causes differential drying tension",
+              "fix": "Dampen the reverse face of each board piece lightly before gluing, or apply a thin layer of PVA to both faces (one glued to the paper, one facing out). Press under weight during the full drying time."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "slug": "formation-aid-in-vat",
+  "title": "Using Formation Aid in the Vat",
+  "subtitle": "How PEO slows drainage and improves sheet evenness",
+  "excerpt": "Formation aid (polyethylene oxide, PEO) changes the drainage behaviour of the vat slurry, giving the papermaker more time to distribute fibre evenly across the mould before water leaves. Used correctly, it transforms difficult short fibres and thin sheets. Used too freely, it produces sluggish drainage and sheets that take hours to release.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Modern hand-papermaking practice; synthesis from Dard Hunter, Old Papermaking (1923) and contemporary papermaking documentation.",
+  "recipeTools": [
+    { "slug": "papermaking-vat", "isOptional": false },
+    { "slug": "paper-mould-deckle-a4", "isOptional": false },
+    { "slug": "papermaking-sponge", "isOptional": false },
+    { "slug": "formation-aid-peo", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "formation-aid",
+      "term": "Formation aid",
+      "definition": "A water-soluble polymer, typically polyethylene oxide (PEO), added to the papermaking vat in small quantities to increase water viscosity and slow fibre drainage, improving sheet formation."
+    },
+    {
+      "slug": "vat-slurry",
+      "term": "Vat slurry",
+      "definition": "The dilute suspension of fibre in water that fills the papermaking vat. Typical consistency is around 0.5% fibre by weight."
+    },
+    {
+      "slug": "drainage",
+      "term": "Drainage",
+      "definition": "The process by which water leaves the newly formed sheet through the mould mesh after lifting from the vat. Drainage rate affects sheet thickness, evenness, and the ease of couching."
+    }
+  ],
+  "techniqueSlugs": ["formation-aid-in-vat"],
+  "criticalTechniques": ["formation-aid-in-vat"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Blender safety",
+          "body": "Keep the blender unplugged when loading with fibre. Drain the vat before reaching in. Treat the blender the same way you would any electrical appliance near water."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What formation aid does" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When you lift the mould from a plain-water "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vat-slurry" } }],
+            "text": "vat slurry"
+          },
+          {
+            "type": "text",
+            "text": ", water begins draining immediately through the mesh. Long fibres have time to settle into position; short fibres drain through or pile unevenly before the sheet consolidates. The result is a patchy sheet with thick and thin spots visible when held to light."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A small amount of "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "formation-aid" } }],
+            "text": "formation aid"
+          },
+          {
+            "type": "text",
+            "text": " dissolved in the vat water increases the viscosity of the liquid phase. The water becomes slightly thicker, not perceptibly so to the touch, but enough to slow the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "drainage" } }],
+            "text": "drainage"
+          },
+          {
+            "type": "text",
+            "text": " rate by 30 to 60 percent. This extra time allows the shake of the mould to distribute fibres evenly before they lock in place."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Quantity" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "PEO is effective at vanishingly small concentrations. For a standard 30-litre vat, the working quantity is approximately 1 to 3 grams of dry PEO dissolved in 500 ml of water before adding to the vat. Add at the lower end first. More is rarely better."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "To dissolve: add the PEO powder to cold water and stir slowly for several minutes. Do not use hot water; PEO dissolves in cold water and hot water can degrade the polymer. The solution will become clear and very slightly viscous. Once dissolved, add it to the filled vat and stir gently to distribute."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How the correct vat feels" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Reach into the vat and stir with your hand after adding PEO. The water should feel very slightly slippery, not thick or syrupy. If it feels noticeably viscous, the concentration is already too high. The slippery quality is subtle; many people notice it only when they compare a treated and untreated vat side by side."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "On the mould, a correctly treated vat drains slowly enough that you can see the sheet forming rather than watching it appear already formed. Lift the mould, give it a single figure-of-eight shake, and the fibres should still be moving fractionally when you stop. In an untreated vat, the fibres lock in place almost as soon as the mould clears the water surface."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Over-concentration" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Too much PEO produces a vat that feels noticeably slippery and drains so slowly that sheets take 15 to 20 minutes to release enough water for safe couching. The sheet surface may be glassy rather than textured, because the slow drainage allows fibres to settle into too tight a formation. Over time, excess PEO can cause the vat to develop a slight foam that is difficult to disperse."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the vat is over-concentrated, dilute it by scooping out a portion of the water and replacing with fresh water. Stir and test again. Do not add more fibre to compensate without also adjusting the water; this makes the slurry too thick."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Drainage effects on the finished sheet" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Controlled drainage changes the sheet in measurable ways. Slower drainage produces a more even distribution of fibre, visible as a uniform translucency when the sheet is held to light. The surface feels slightly more consolidated because the fibres had time to settle and interlock. For writing paper, this is desirable: an uneven sheet accepts ink in patches."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For rough or rustic sheets, some papermakers skip formation aid. The uneven drainage leaves variations that look handmade. PEO is a tool, not a requirement."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Refreshing the vat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "PEO breaks down over time in the vat, particularly if the vat is in a warm environment or if it is stirred vigorously. After a long session, the slippery quality fades and drainage accelerates. Add a small additional amount of dissolved PEO, stir, and test by hand before continuing. Do not add dry PEO directly to the vat; it clumps and does not distribute evenly."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Sheet drains almost instantly and has thick and thin spots",
+              "cause": "PEO concentration too low or not yet added",
+              "fix": "Add more dissolved PEO solution, stir gently, and test before pulling the next sheet."
+            },
+            {
+              "symptom": "Sheet takes more than 10 minutes to drain enough to couch",
+              "cause": "PEO over-concentrated",
+              "fix": "Scoop out a litre of vat water, replace with fresh water, stir, and retest. Repeat until drainage is faster."
+            },
+            {
+              "symptom": "Vat developing foam on the surface",
+              "cause": "Excess PEO combined with vigorous stirring",
+              "fix": "Reduce PEO concentration, stir with a slow paddle motion rather than fast agitation."
+            },
+            {
+              "symptom": "Sheet looks glassy and rejects ink",
+              "cause": "Over-concentrated PEO can produce a surface with very fine formation and little tooth",
+              "fix": "Reduce PEO concentration in subsequent sessions. Sizing after drying will also help ink adhesion."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

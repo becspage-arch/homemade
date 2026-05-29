@@ -1,0 +1,275 @@
+{
+  "slug": "double-needle-coptic",
+  "title": "Double-Needle Coptic Stitch",
+  "subtitle": "Two-needle unsupported-link sewing for books that open completely flat",
+  "excerpt": "The double-needle coptic method links signatures together with exposed chain stitches on the outside of the spine, requiring no tapes or cords. The finished book opens fully flat at any page.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Sewing structure based on Cockerell, Douglas. Bookbinding and the Care of Books. London: Pitman, 1901. Unsupported-link sewing variations.",
+  "recipeTools": [
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "piercing-jig", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "coptic-stitch",
+      "term": "Coptic stitch",
+      "definition": "A family of exposed-spine sewing structures in which signatures are linked directly to each other without adhesive or sewing supports. The name derives from early Coptic Christian manuscripts from Egypt. The spine remains visible and the book opens fully flat."
+    },
+    {
+      "slug": "chain-link",
+      "term": "Chain link",
+      "definition": "The connecting stitch between signatures in Coptic and related structures. The needle passes under the stitch of the previous signature before re-entering the current one, forming a visible chain on the outside of the spine."
+    },
+    {
+      "slug": "signature",
+      "term": "Signature",
+      "definition": "A single folded unit of pages, typically 4 to 8 sheets folded together. Multiple signatures sewn in sequence form the text block of a book."
+    }
+  ],
+  "techniqueSlugs": ["kettle-stitch-link", "pamphlet-stitch"],
+  "criticalTechniques": ["kettle-stitch-link"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "coptic-stitch" } }],
+            "text": "coptic stitch"
+          },
+          { "type": "text", "text": " is one of the oldest bookbinding structures still in regular use. Unlike most Western bindings it needs no adhesive on the spine and no tapes or cords: the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "signature" } }],
+            "text": "signatures"
+          },
+          { "type": "text", "text": " are joined directly to each other by a visible chain of stitches. The double-needle variant uses two needles simultaneously to work from both sides of the spine, producing a tighter and more symmetric link than single-needle methods." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How the stitch works" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Each sewing station across the spine has two exits, one on each side of the fold. One needle exits left; one exits right. At the link between signatures the two threads cross and each catches under the loop of the previous signature's corresponding stitch before re-entering the new " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "signature" } }],
+            "text": "signature"
+          },
+          { "type": "text", "text": ". The resulting " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chain-link" } }],
+            "text": "chain link"
+          },
+          { "type": "text", "text": " shows as paired diagonal crosses on the spine." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparation" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Fold and prepare signatures" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fold your pages into signatures of 4 to 5 sheets each (8 to 10 pages per signature). Aim for a minimum of 5 signatures; 8 to 12 is typical. Press each fold firmly with the bone folder. Stack and collate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2: Mark and pierce sewing stations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For double-needle coptic you need an even number of sewing stations. Six stations (3 pairs) works well for A5 books; 8 stations for A4. Mark stations on a card template: stations come in pairs 5 to 8 mm apart across the spine fold. One hole of each pair sits 2 to 3 mm to the left of the fold line; its partner 2 to 3 mm to the right." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Use the template to pierce every signature from inside outward. Hold the signature open and pierce at a right angle to the page." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3: Prepare thread and needles" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut two lengths of waxed linen thread, each about three times the spine height for every six signatures. Thread one needle onto each length. Run both threads over the beeswax block, pulling them firmly through the wax to coat them fully." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing the first two signatures" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4: Sew signature 1" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Open signature 1. Enter at the left hole of station pair 1 (head end), leaving a 50 mm tail. Pass along the inside to the right hole of the same pair and exit. This threads across the spine of the signature. Continue: enter the left hole of pair 2 from outside, pass across, exit right hole of pair 2. Repeat for all pairs to the tail. Both threads should now exit at the tail end, one on each side of the fold." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 5: Begin signature 2" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place signature 2 on top of signature 1, spines aligned. The two threads from signature 1 exit at the tail. Enter signature 2 from outside: left thread enters left hole of tail pair; right thread enters right hole. Pass both threads along the inside to the next pair and exit. Continue up the signature toward the head." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Adding subsequent signatures with the chain link" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 6: Work the chain link" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "From signature 3 onward, every exit from a station hole on the outside of the spine requires a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chain-link" } }],
+            "text": "chain link"
+          },
+          { "type": "text", "text": " before re-entering. The sequence at each station pair is:" }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Exit the left hole of the current signature." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Pass the left needle under the left thread loop that links signatures 1 and 2 at this station (the thread sitting on the spine surface)." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Re-enter the left hole of the current signature." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Repeat symmetrically with the right needle through the right hole." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pull both threads to the same tension before continuing to the next station pair. Uneven tension is the main source of a lumpy spine." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 7: Complete all signatures" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Continue adding signatures one at a time, working the chain link at every external station. When the last signature is complete, tie off each thread pair with two half-hitches around the nearest spine thread. Trim tails to 5 mm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Coptic books do not need a spine lining or adhesive. The boards, if used, attach directly to the outermost signatures by sewing through pre-pierced holes in a thin cover board. Set the finished block under a light press for an hour to consolidate." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Spine threads are uneven or lumpy",
+              "cause": "Inconsistent tension when working the chain link.",
+              "fix": "Work one station pair at a time and pull both threads to equal tension after each link. Use a consistent pulling motion rather than adjusting after the fact."
+            },
+            {
+              "symptom": "Thread breaks during sewing",
+              "cause": "Thread not adequately waxed, or the awl holes are too small, causing friction on every pass.",
+              "fix": "Wax thread before each new signature. Re-pierce holes with a slightly larger awl if resistance is high."
+            },
+            {
+              "symptom": "Signatures fan open and do not sit flush",
+              "cause": "Station holes not aligned between signatures.",
+              "fix": "Use a card template consistently. Check alignment by stacking two signatures spine-to-spine and holding them to the light before piercing the stack."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "slug": "decorative-paper-case-binding",
+  "title": "Decorative Paper Case Binding",
+  "subtitle": "A complete case binding using hand-decorated or marbled paper for the boards",
+  "excerpt": "Sew a text block, make a stiff case covered in decorative or marbled paper, then join the two in a classic case-in. A satisfying multi-day project that produces a sturdy, handsome notebook or journal.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Construction based on Cockerell, Douglas. Bookbinding and the Care of Books. London: Pitman, 1901. Case binding structure and covering methods.",
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Day 0: Fold and sew the text block",
+      "body": "Fold your sheets into signatures, collate them, pierce the stations, and sew the text block with a simple kettle-stitch link. Set the sewn block under a light weight overnight to consolidate the spine.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Day 1: Make the case and cover it",
+      "body": "Cut the boards and spine piece, paste out the decorative or marbled paper, and wrap the case. Rub down all surfaces firmly and leave flat under a press until fully dry.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 2,
+      "title": "Day 2: Case in and final press",
+      "body": "Paste the endpapers, drop the sewn text block into the case, nip in the press for 10 minutes, then leave under a board and weight for several hours. Check the hinges are free before putting down for a final overnight press.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "recipeTools": [
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "endpaper-stock", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "book-press", "isOptional": false },
+    { "slug": "piercing-jig", "isOptional": true },
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "cartridge-paper-90", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "signature",
+      "term": "Signature",
+      "definition": "A single folded unit of pages, typically 4 to 8 sheets folded together to form a self-contained booklet. Multiple signatures sewn together form the text block."
+    },
+    {
+      "slug": "kettle-stitch",
+      "term": "Kettle stitch",
+      "definition": "The linking stitch worked at the head and tail of each signature to connect it to its neighbour. It locks the chain of signatures together and gives the spine its characteristic ladder pattern."
+    },
+    {
+      "slug": "case-in",
+      "term": "Case in",
+      "definition": "The operation of gluing the sewn text block into its pre-made case by pasting the outermost endpaper leaves and pressing them against the inside faces of the boards."
+    },
+    {
+      "slug": "turn-in",
+      "term": "Turn-in",
+      "definition": "The margin of covering paper or cloth that folds over the edge of a board to the inside. A standard turn-in is 15 to 20 mm wide."
+    }
+  ],
+  "techniqueSlugs": ["pamphlet-stitch", "kettle-stitch-link"],
+  "criticalTechniques": ["kettle-stitch-link"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Sharp tools",
+          "body": "Sharp blades are safer than blunt ones. Change the blade at the first sign of dulling. Always cut on a self-healing mat. Hold the metal ruler firmly with the non-cutting hand behind the line of cut, fingers at least two finger-widths back from the blade's path."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What this project makes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A case-bound book is how most printed hardbacks are made. The sewn text block is built apart from the stiff outer case. Then the two are joined in one step called the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "case-in" } }],
+            "text": "case in"
+          },
+          { "type": "text", "text": ". Covering the boards in hand-decorated or marbled paper rather than plain cloth gives a finished book that looks distinctive." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The project is spread across three days to allow each glued layer to dry flat before the next operation. Rushing the drying will cause the boards to warp." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Materials" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Text paper, 90 gsm cartridge, cut to your page size", "slug": "cartridge-paper-90", "isOptional": false },
+            { "name": "Endpaper stock", "slug": "endpaper-stock", "isOptional": false },
+            { "name": "Bookbinding board, 2 mm", "slug": "bookbinding-board-2mm", "isOptional": false },
+            { "name": "Linen thread", "slug": "bookbinding-thread-linen", "isOptional": false },
+            { "name": "Bookbinding needle", "slug": "bookbinding-needle", "isOptional": false },
+            { "name": "Beeswax block", "slug": "beeswax-block", "isOptional": false },
+            { "name": "Acid-free PVA", "slug": "pva-acid-free", "isOptional": false },
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false },
+            { "name": "Craft knife", "slug": "craft-knife", "isOptional": false },
+            { "name": "A3 cutting mat", "slug": "cutting-mat-a3", "isOptional": false },
+            { "name": "30 cm metal ruler", "slug": "metal-ruler-30cm", "isOptional": false },
+            { "name": "Bookbinding awl", "slug": "bookbinding-awl", "isOptional": false },
+            { "name": "Book press or heavy boards and weights", "slug": "book-press", "isOptional": false },
+            { "name": "Piercing jig (optional)", "slug": "piercing-jig", "isOptional": true }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Day 0: Fold and sew the text block" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Fold the signatures" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Decide on a page size. A5 (148 x 210 mm) is a good starting size. Each " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "signature" } }],
+            "text": "signature"
+          },
+          { "type": "text", "text": " will be 4 sheets of 90 gsm cartridge folded once to give 8 pages. Aim for 6 to 8 signatures for a useful notebook." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fold each group of 4 sheets together with the bone folder, pressing the fold crisply from the centre outward. Collate all signatures in order." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2: Pierce the sewing stations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mark five sewing stations on each signature fold: one 10 mm from the head, one 10 mm from the tail, and three evenly spaced between them. Use a piercing jig or a strip of card as a template so every signature matches. Pierce through with the awl held at a right angle to the fold." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3: Sew with the kettle stitch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Draw the linen thread over the beeswax block to reduce friction and tangling. Sew the first signature from inside outward through station 1 (head), leaving a short tail. Pass to the inside and out through each station in turn, then begin the second signature. At the head and tail stations of each new signature, work a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kettle-stitch" } }],
+            "text": "kettle stitch"
+          },
+          { "type": "text", "text": " to link it to the previous one: pass the needle under the exposed thread of the signature below, then back through the loop before pulling tight. Repeat for every signature." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After the last signature, tie off with two half-hitches. Place the sewn block under a light weight overnight." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Day 1: Make the case" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4: Measure the text block" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Measure the sewn text block accurately: height, width through the pages (not the spine), and spine thickness. The boards should be cut 3 mm taller than the text block (1.5 mm overhang at head and tail) and 3 mm wider than the page width (3 mm overhang at the foredge)." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The spine piece is a strip of lighter card cut to the exact spine thickness and the same height as the boards." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 5: Cut the boards and spine" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place the 2 mm board on the cutting mat. Score along each cut line with a light first pass before cutting through fully. Keep the metal ruler very still; walk the fingers back along the ruler as the knife advances." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut two boards for front and back, and one spine strip. The gap between each board and the spine strip should be 5 to 6 mm to form the hinge channel." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 6: Assemble and cover the case" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut the covering paper to size. The width should span both boards, the spine, and four hinge-gap widths. Add 30 to 40 mm on every side for the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "turn-in" } }],
+            "text": "turn-in"
+          },
+          { "type": "text", "text": "." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lay the paper face down. Using a thin, even coat of PVA, paste out the paper (work from the centre to the edges to avoid air bubbles). Lay the boards and spine strip in position, press down firmly, then fold the turn-in over the edges. Mitre the corners neatly: cut at 45 degrees 1 to 2 mm from the corner of the board, fold the head and tail turn-ins first, then the spine and foredge." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rub down every surface with the bone folder through a sheet of waste paper to ensure full contact. Place flat under a press until fully dry." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Day 2: Case in and press" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 7: Prepare the endpapers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fold two sheets of endpaper stock to the same size as the text block pages. Attach one to each end of the text block: paste a narrow strip (3 to 5 mm) along the spine edge of the first endpaper and press it flush to the first signature. Repeat at the tail end. These become the gluing surfaces for the case in." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 8: Case in" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Open the case flat. Paste out the top endpaper with an even coat of PVA; work quickly. Lay the text block spine-down into the case, centring it so the head, tail, and foredge overhangs are equal. Press the pasted endpaper down onto the board. Close the case, flip the book over, open the back board, and paste out and press down the second endpaper." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Close the book and nip it in the press for 10 minutes. Remove, open slightly to check the hinges are not sticking, then place flat under a board and weight for several hours. A final overnight press between boards will consolidate the whole book." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Boards warp outward",
+              "cause": "The covering paper absorbed moisture and dried unevenly, or the endpaper paste dried faster on one side.",
+              "fix": "Dampen the concave face lightly with a barely-damp sponge, then press overnight between flat boards. To prevent recurrence, balance the moisture: the endpaper and covering paper should have similar weights."
+            },
+            {
+              "symptom": "Bubbles under the covering paper",
+              "cause": "Insufficient paste coverage or the paper was laid down too slowly.",
+              "fix": "Paste out fully and work from the centre outward when laying the paper onto the boards. Rub down firmly with the bone folder immediately."
+            },
+            {
+              "symptom": "Hinge is stiff after casing in",
+              "cause": "Excess PVA crept into the hinge channel during the case in.",
+              "fix": "Open and close the book several times while the adhesive is still slightly flexible. If fully set, carefully work the hinge gently back and forth to loosen it."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

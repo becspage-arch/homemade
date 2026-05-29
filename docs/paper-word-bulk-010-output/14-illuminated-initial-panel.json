@@ -1,0 +1,326 @@
+{
+  "slug": "illuminated-initial-panel",
+  "title": "Illuminated Initial Panel",
+  "subtitle": "Full illuminated initial on gesso ground with gold leaf, gouache pigment, and ink outline",
+  "excerpt": "An illuminated initial combines a raised gesso ground, gold leaf burnished to a mirror surface, flat opaque gouache colour, and a fine ink outline. This multi-day project follows the medieval sequence: sketch, trace, lay gesso, cure, gild, then paint.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Johnston, Edward. Writing and Illuminating and Lettering. London: Pitman, 1906. Illumination and gilding chapters.",
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Day 0: Sketch and trace the design",
+      "body": "Draw the initial design at final size on layout paper. Refine until the letter proportions, background panel, and any foliate decoration are resolved. Transfer to the working surface using a light box or tracing paper.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Day 1: Lay the gesso ground",
+      "body": "Apply raised gesso to all gold areas using a dropper or fine brush. Build up in two or three thin coats, allowing each to skin over before adding the next. The gesso must form a slightly domed mound.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 2,
+      "title": "Days 2 to 3: Gesso cure",
+      "body": "Leave the gesso undisturbed for 48 hours in a dust-free environment at room temperature. Do not press, touch, or place the work face-down.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": false
+    },
+    {
+      "stepNumber": 4,
+      "offsetDays": 4,
+      "title": "Day 4: Gild",
+      "body": "Breathe on the gesso surface to re-activate the adhesive, lay a sheet of loose gold leaf, burnish through tissue, then burnish directly. Repeat with a second layer if necessary. Clean up edges with a fine brush.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 5,
+      "offsetDays": 5,
+      "title": "Day 5: Paint and outline",
+      "body": "Apply flat gouache to the letter body and background panel. Work from lightest to darkest. When dry, add decorative details in contrasting gouache, then apply the final ink outline with a fine mapping nib.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "recipeTools": [
+    { "slug": "nib-hunt-101", "isOptional": false },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "sumi-ink", "isOptional": false },
+    { "slug": "manuscript-raised-gesso", "isOptional": false },
+    { "slug": "gold-leaf-loose", "isOptional": false },
+    { "slug": "calligraphy-gouache", "isOptional": false },
+    { "slug": "cartridge-paper-220", "isOptional": false },
+    { "slug": "watercolour-paper-hotpress", "isOptional": true },
+    { "slug": "tracing-paper", "isOptional": false },
+    { "slug": "light-box-a4", "isOptional": false },
+    { "slug": "pencil", "isOptional": false },
+    { "slug": "gum-arabic", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "gesso-ground",
+      "term": "Gesso ground",
+      "definition": "In gilding for manuscripts, a raised ground made from white lead, gypsum (or chalk), fish glue, sugar, and Armenian bole. The dried mound is slightly domed and contains enough residual stickiness to accept gold leaf when the surface is re-activated by breath. Manuscript gesso is distinct from gesso used in painting."
+    },
+    {
+      "slug": "gilding",
+      "term": "Gilding",
+      "definition": "The application of gold leaf to an adhesive or gesso ground, followed by burnishing to produce a reflective surface. In manuscript illumination the gold is laid on a raised gesso ground so that it catches the light at different angles as the page is turned."
+    },
+    {
+      "slug": "illuminated-letter",
+      "term": "Illuminated letter",
+      "definition": "An initial or decorative capital decorated with gold, silver, or bright pigments, often with foliate, zoomorphic, or geometric ornament. The term illuminated refers to the way gold leaf catches and reflects light, literally illuminating the page."
+    }
+  ],
+  "techniqueSlugs": ["uncial-hand", "versals-built-capitals"],
+  "criticalTechniques": ["versals-built-capitals"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Gold leaf safety",
+          "body": "Loose gold leaf is extremely light and will fly off the sheet with the smallest air movement. Work in a still room with doors and windows closed. Keep the gold book flat on the table until the moment of application. Breathe gently through the nose, not the mouth, when working near open gold."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "illuminated-letter" } }],
+            "text": "illuminated letter"
+          },
+          { "type": "text", "text": " is the most demanding single exercise in the manuscript tradition. It combines draftsmanship, " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gilding" } }],
+            "text": "gilding"
+          },
+          { "type": "text", "text": ", flat opaque painting, and fine penwork in one object. The operations must be done in the correct sequence: gold is always laid before paint, because burnishing the gold after paint is applied would crush the pigment." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing and preparing the support" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hot-press watercolour paper (at least 300 gsm) or heavy cartridge (220 gsm) are both suitable. The surface must be smooth enough that the gesso edges are clean and the fine nib does not catch. If using a vellum surface, size it lightly with diluted gum sandarac powder to prevent ink and gouache bleeding into the skin. For paper, a light burnish with a glass burnisher before working reduces surface tooth." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Day 0: Sketch and transfer the design" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Draw and refine the design" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work out the initial design at full size on layout paper. The initial letter (use the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "versals-built-capitals", "label": "versal capitals technique" } }],
+            "text": "versal capitals technique"
+          },
+          { "type": "text", "text": " for the letterform) should sit within a rectangular panel. Decide which areas will be gilded, usually the letter body, and which will be painted in the main colour, such as blue or red for the panel background. Mark where any foliate or geometric decoration will go." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Resolve the design fully before transferring: changes after gesso has been laid are very difficult to make." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2: Transfer to the working surface" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tape tracing paper over the layout paper design and trace the key outlines in pencil. Place the tracing face-down on the working surface and tape in position. Scribble over the back of every traced line with a soft pencil (or use graphite transfer paper). Remove the tracing. The design should be lightly visible on the working surface as faint pencil lines." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Do not press hard: deep pencil grooves in the paper surface will show under thin paint or under the gilded gold." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Day 1: Laying the gesso" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3: Prepare the gesso" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gesso-ground" } }],
+            "text": "gesso ground"
+          },
+          { "type": "text", "text": " for gilding is available ready-made from calligraphy suppliers (Manuscript brand raised gesso is widely available). If using a ready-made preparation, place a small amount in a ceramic palette and let it settle for 5 minutes before use. It should flow from a dropper or a loaded fine brush with a slight drag, not run freely. If too thick, add one drop of distilled water and mix." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4: Apply the gesso" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Using a dropper or fine brush, lay the gesso within the gold areas defined by the pencil lines. Work in thin layers, building up to a domed surface over two or three coats. Allow each coat to skin over (about 15 minutes at room temperature) before adding the next. Do not attempt to correct the edges with a knife until the gesso is fully dry." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The finished gesso dome should project about 0.5 to 1 mm above the paper surface. Thicker is better than thinner for gilding: too thin a ground produces flat gold with no light-catching quality." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Days 2 to 3: Cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Leave the gesso for 48 hours in a dust-free environment. A sheet of clean paper loosely placed over the work will protect from dust without trapping moisture. Do not place the work face-down or under any weight." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Day 4: Gilding" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 5: Re-activate the gesso" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hold the work 3 to 4 cm from your lips and breathe on the gesso surface for 3 to 4 seconds: a steady, warm, moist exhalation. The gesso surface should appear very slightly glossy immediately after breathing. This re-activates the natural stickiness of the gesso just enough to accept the gold." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 6: Lay the gold" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work quickly after breathing on the surface: you have about 5 seconds. Lift a sheet of loose gold leaf from the book using a gilder's tip or a piece of folded tissue paper. Lower it over the gesso and press it gently through the tissue. The gold will stick immediately. Do not attempt to move it once placed." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Burnish through the tissue first with a smooth agate or bone burnisher, using firm circular strokes. Then lift the tissue and burnish the gold directly, working from the centre outward. Surplus gold around the edges can be removed with a dry brush." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Repeat with a second layer of gold for maximum coverage: apply as before, burnishing again after the second layer. Two layers give a much richer result than one." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Day 5: Painting and outlining" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 7: Apply gouache" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mix calligraphy-grade gouache to a consistency of single cream: it should flow from the brush without running and dry to a flat, opaque coat. Apply the main background colour to the panel (ultramarine, vermilion, or malachite green are traditional for manuscript work). Work steadily up to the gesso edges but do not paint over the gold." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "When the main colour is dry, add secondary colours for any decorative elements: leaf shapes, acanthus scrolls, or geometric knotwork. Work from the lightest colour to the darkest." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 8: Ink outline" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Let all the gouache dry fully, at least an hour after the last coat. Then apply the ink outline with a fine nib (Hunt 101 or a very fine mapping nib). Use the same sumi ink as for the calligraphy. Outline the letter edges, the panel border, and any decorative elements. The outline ties the gilded and painted areas together and sharpens every edge." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "White heightening can be added last. Apply white gouache in fine lines over the coloured areas to suggest highlights on foliate decoration." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Gold does not stick after breathing on the gesso",
+              "cause": "Humidity too low, gesso too fully cured, or not enough moisture in the breath.",
+              "fix": "Breathe twice or three times on the surface for a longer duration. In very dry conditions, hold the work briefly over a cup of steaming hot water (5 cm above the surface) before breathing."
+            },
+            {
+              "symptom": "Gold is patchy with bare spots",
+              "cause": "Gesso applied too thinly in places, or gold sheet not large enough to cover the whole area.",
+              "fix": "Apply a second layer of gold over the same area immediately after the first. Bare spots on thin gesso may need a further application of gesso, full cure, and re-gilding."
+            },
+            {
+              "symptom": "Gouache bleeds or crawls on the gilded surface",
+              "cause": "Paint applied too wet, or the gold surface is slightly greasy from handling.",
+              "fix": "Add one drop of ox gall (or gum arabic) to the gouache mix to improve adhesion. Do not touch the gold surface with fingers once burnished."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

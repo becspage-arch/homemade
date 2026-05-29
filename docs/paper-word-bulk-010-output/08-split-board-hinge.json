@@ -1,0 +1,204 @@
+{
+  "slug": "split-board-hinge",
+  "title": "Split-Board Hinge",
+  "subtitle": "Constructing a flexible, durable hinge by laminating the board from two layers",
+  "excerpt": "A split-board hinge sandwiches the sewing supports between two laminated layers of bookbinding board, producing a flexible groove along the inner face that opens without stressing the cover material. It is the standard hinge for fine or heavily used bindings.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Board attachment and hinge construction based on Cockerell, Douglas. Bookbinding and the Care of Books. London: Pitman, 1901.",
+  "recipeTools": [
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "bookbinding-board-1-5mm", "isOptional": false },
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "book-press", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "split-board",
+      "term": "Split board",
+      "definition": "A board constructed from two laminated layers. The inner layer is narrower, leaving a channel along the spine edge into which sewing supports are laced. The outer layer covers the supports and closes the sandwich, anchoring the board mechanically to the text block."
+    },
+    {
+      "slug": "french-groove",
+      "term": "French groove",
+      "definition": "A narrow channel or valley cut or formed along the outside of a board parallel to the spine, separating the spine from the board proper. The groove allows the board to open freely without bending the spine covering material along a sharp right angle."
+    },
+    {
+      "slug": "hinge",
+      "term": "Hinge",
+      "definition": "The flexible joint between the boards and the spine of a book. In a well-made binding the hinge carries the repeated mechanical stress of opening and closing without tearing the covering material or pulling the board free."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Sharp tools",
+          "body": "Sharp blades are safer than blunt ones. Change the blade at the first sign of dulling. Always cut on a self-healing mat. Hold the metal ruler firmly with the non-cutting hand behind the line of cut, fingers at least two finger-widths back from the blade's path."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "split-board" } }],
+            "text": "split board"
+          },
+          { "type": "text", "text": " technique attaches the boards to the sewn text block by trapping the sewing supports (tapes or cords) inside a laminated sandwich. Because the support is buried in the board rather than pasted onto its surface, the attachment is very strong and distributes stress across the full width of the support rather than at a single glue line. The result is a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hinge" } }],
+            "text": "hinge"
+          },
+          { "type": "text", "text": " that can withstand years of heavy use." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to use a split board" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Split-board attachment is appropriate for any binding that will be used frequently: reference books, journals, sketchbooks used in the field. It requires a text block sewn on raised supports (linen tapes or flax cords) rather than sewn in recessed channels, because the supports must extend far enough beyond the spine to be laced into the boards. Allow at least 30 mm of exposed support beyond the spine edge of the text block." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Materials and preparation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "You will need two thicknesses of board for each cover: one piece of 2 mm board (the outer layer) and one of 1.5 mm board (the inner layer). Both should be cut to the finished board size, which is the text block height plus 3 mm and the page width plus 3 mm." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Before laminating, trim the inner layer: remove a strip from its spine edge equal to the width of the sewing supports plus 4 mm. For 20 mm linen tape, remove 24 mm. This gap is where the supports will sit." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Prepare the sewing supports" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If the text block is already sewn on tapes, fan out the tape ends and flatten them. Frayed or wrinkled tape ends must be trimmed cleanly and pressed flat with a bone folder before laminating, because any unevenness inside the sandwich will telegraph through the outer board." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2: Glue the inner layer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Apply a thin, even coat of acid-free PVA to the face of the inner layer board. Position the inner layer on the back face of the outer board, aligning all edges except the spine side (where the trimmed gap sits away from the outer board's spine edge). Press down firmly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3: Lay in the sewing supports" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fold each tape end over so it lies flat in the channel between the outer board and the gap in the inner layer. Arrange the tapes so they point toward the foredge of the board (away from the spine). Apply a thin coat of PVA to the tape surfaces and to the exposed area of the outer board that the tape now covers." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4: Close the laminate and press" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lay a second 2 mm board over the inner layer and tapes to close the sandwich, or use a thin waste board as a pressing caul. Apply firm, even pressure across the whole board and press for at least two hours. Use a book press if available; stacking heavy books on a flat board also works." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After pressing, check that the board lies flat and that the spine edge of the board is firm. If the outer surface shows a ridge where the inner layer ends, the inner layer was slightly too thick relative to the tape. Sand lightly with fine abrasive paper to level before covering." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Forming the French groove" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once the boards are glued in place on the text block and the book is covered, the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "french-groove" } }],
+            "text": "french groove"
+          },
+          { "type": "text", "text": " is formed by pressing a bone folder firmly into the joint between the spine and the board while the covering adhesive is still slightly plastic. Lay the closed book on a flat surface and draw the bone folder along the joint with firm, even pressure. Repeat on both covers." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The groove should be visible as a narrow valley 1 to 2 mm wide running parallel to the spine. It allows the board to swing open without the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hinge" } }],
+            "text": "hinge"
+          },
+          { "type": "text", "text": " bending sharply against the covering material." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Board pulls away from text block when opened",
+              "cause": "Tape ends too short inside the sandwich, or insufficient PVA coverage inside the laminate.",
+              "fix": "Allow at least 30 mm of tape inside the board. Ensure PVA covers the full tape surface. If the board has already separated, open the laminate carefully with a thin palette knife, re-glue with fresh PVA, and re-press."
+            },
+            {
+              "symptom": "Board warps after pressing",
+              "cause": "Moisture from PVA absorbed unevenly by one layer.",
+              "fix": "Use the thinnest even coat of PVA that gives full coverage. Press between boards that are both free of moisture. A second press after the book has dried for 24 hours usually corrects mild warp."
+            },
+            {
+              "symptom": "French groove does not form or disappears after drying",
+              "cause": "Covering material applied too dry, or bone folder worked too late when adhesive had set.",
+              "fix": "Form the groove immediately after the covering material is laid on, while the adhesive is still plastic. Tape a piece of string into the groove and leave it under press to hold the channel shape as the adhesive dries."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
