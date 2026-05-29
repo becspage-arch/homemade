@@ -551,3 +551,14 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - throwing-a-tea-bowl  — applied: method-scaffold,dry-run
 - throwing-a-vase-with-narrow-neck  — applied: method-scaffold,dry-run
 - understanding-reduction-atmosphere-in-kilns  — applied: method-scaffold,body-rewrite:5,dry-run
+
+- adjusting-pig-feed-from-weaner-to-finisher hero-missing — applied: hero-fill-deferred-to-standalone-script
+- daily-health-check-for-meat-rabbits hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-raddle-on-a-tup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- introducing-a-mated-queen-to-a-colony hero-missing — applied: hero-fill-deferred-to-standalone-script
+- keeping-ducks-on-a-smallholding hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lamb-pneumonia-recognition-and-response hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- making-sugar-syrup-for-bees hero-missing — applied: hero-fill-deferred-to-standalone-script
+- managing-a-doe-from-kindle-to-weaning hero-missing — applied: hero-fill-deferred-to-standalone-script
+- managing-feather-pecking-in-a-flock hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sourcing-replacement-stock-after-a-disease-outbreak hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script

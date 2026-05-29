@@ -1001,3 +1001,52 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 17:15:57
+
+Generated: 2026-05-29T17:15:57.074Z
+
+Processed: 30
+PASS: 20
+STILL_BLOCKED: 10
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 30 |
+| grade-level-strict | 9 |
+| body-missing-method | 7 |
+
+## Still BLOCKED (sample 20)
+
+- adjusting-pig-feed-from-weaner-to-finisher: hero-missing
+- daily-health-check-for-meat-rabbits: hero-missing
+- fitting-a-raddle-on-a-tup: hero-missing
+- introducing-a-mated-queen-to-a-colony: hero-missing
+- keeping-ducks-on-a-smallholding: hero-missing
+- lamb-pneumonia-recognition-and-response: hero-missing, grade-level-strict
+- making-sugar-syrup-for-bees: hero-missing
+- managing-a-doe-from-kindle-to-weaning: hero-missing
+- managing-feather-pecking-in-a-flock: hero-missing
+- sourcing-replacement-stock-after-a-disease-outbreak: hero-missing, grade-level-strict
+
+---
+
+## Run at 18:07:09
+
+Generated: 2026-05-29T18:07:09.130Z
+
+Processed: 64
+PASS: 64
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
