@@ -1,0 +1,172 @@
+{
+  "slug": "swarm-prevention-in-spring",
+  "title": "Swarm prevention in spring",
+  "subtitle": "Reading the colony's intentions before cells appear and acting while there is still time.",
+  "excerpt": "A colony that swarms is a colony that has told you something you missed. Swarm prevention is not about eliminating the impulse; it is about reading the colony's population pressure and relieving it before queen cells are capped. A guide to the inspection cycle, the early warning signs, and the three techniques that reliably stop colonies from leaving.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 60,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "National Bee Unit, Beekeeper's Toolkit (2024 edition), swarm control section. https://www.nationalbeeunit.com\nBritish Beekeepers Association (BBKA) swarm control advisory sheets. Frank Pearson, Bee-keeping for All (1923), chapter on swarm prevention, Internet Archive.",
+  "glossaryTerms": [
+    {
+      "slug": "queen-cell",
+      "term": "Queen cell",
+      "definition": "A peanut-shaped wax cell hanging from the bottom or side of a brood frame in which a new queen is reared. The presence of capped queen cells means a swarm is imminent or has already occurred."
+    },
+    {
+      "slug": "swarm-impulse",
+      "term": "Swarm impulse",
+      "definition": "The colony's natural drive to reproduce by splitting. Triggered by congestion in the brood nest, an ageing queen, and warm spring conditions with a strong nectar flow."
+    },
+    {
+      "slug": "brace-comb",
+      "term": "Brace comb",
+      "definition": "Irregular wax comb built by bees to fill gaps between frames or between frames and the hive body. A sign of a populous, actively building colony."
+    },
+    {
+      "slug": "colony",
+      "term": "Colony",
+      "definition": "The full social unit of a hive: one mated queen, several thousand worker bees, and seasonally a few hundred drones, all sharing a single nest."
+    },
+    {
+      "slug": "brood-box",
+      "term": "Brood box",
+      "definition": "The lower hive body where the queen lays and the brood is reared. Also called the brood chamber. The workers raise young in this space and the queen rarely moves into the supers above."
+    },
+    {
+      "slug": "super",
+      "term": "Super",
+      "definition": "A shallower box placed above the queen excluder where bees store surplus honey for harvest."
+    }
+  ],
+  "techniqueSlugs": ["swarm-control-artificial-swarm"],
+  "criticalTechniques": [],
+  "aliases": ["swarm control spring", "stopping bees swarming", "bee swarm prevention"],
+  "recipeTools": [
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "bee-gloves", "isOptional": false },
+    { "slug": "nuc-box", "isOptional": true }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In the UK, swarm season runs from late April through June. The conditions that trigger swarming are a colony at peak population, a brood nest that is running out of space, and warm weather with a good flow of nectar bringing bees back to the hive in large numbers. Most swarms are preventable if you inspect weekly and act on what you find." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The inspection cycle" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "During swarm season, inspect every seven days without fail. The critical threshold is the point at which queen cells are started but not yet capped. Once cells are capped, swarming can happen within days and there is nothing reliably left to do but wait. A weekly inspection gives you a window to act before that point." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "At each inspection, work through the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brood-box" } }], "text": "brood box" },
+          { "type": "text", "text": " frame by frame. Look for the queen to confirm she is present and laying. Look for charged queen cells on the bottom bars of frames. Check whether the brood nest is congested: frames covered wall-to-wall with brood, eggs, and bees, with no empty space for the queen to expand into." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Early warning signs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Four signs ahead of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "queen-cell" } }], "text": "queen cells" },
+          { "type": "text", "text": " tell you a colony is building toward the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "swarm-impulse" } }], "text": "swarm impulse" },
+          { "type": "text", "text": ": large amounts of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brace-comb" } }], "text": "brace comb" },
+          { "type": "text", "text": " between frames, the colony filling all available " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "super" } }], "text": "super" },
+          { "type": "text", "text": " space, large numbers of drones present, and a beard of bees hanging at the hive entrance on a warm afternoon (called festooning). Each of these alone is a prompt to add space or prepare for intervention. All four together mean swarm season is already upon you." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Giving the colony more space" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The simplest prevention is space. Add a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "super" } }], "text": "super" },
+          { "type": "text", "text": " above the excluder as soon as the existing super is three-quarters full. In a strong season, a colony can fill a super in three weeks. Running out of honey-storage space crowds the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colony" } }], "text": "colony" },
+          { "type": "text", "text": " below and accelerates the swarm impulse. Add the second super before the first is full, not after." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If the brood nest is full, you can add a second brood box below or beside the existing one. Move two or three frames of capped brood and bees into the new box, then fill the gap in the original box with drawn comb or foundation. This gives the queen room to expand and breaks the congestion." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "If you find charged queen cells" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If you find unsealed queen cells at your weekly inspection, you still have time. Perform an " },
+          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "swarm-control-artificial-swarm", "label": "artificial swarm" } }], "text": "artificial swarm" },
+          { "type": "text", "text": ". This splits the colony and satisfies the swarm impulse by giving the old queen a new home on a fresh site. It is the most reliable swarm-control method for a beginner with one or two hives." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Capped cells mean act now",
+          "body": "If you find capped queen cells, the swarm may leave within 24 to 48 hours. There is little to be done to stop it at this stage short of caging the queen, which requires finding her. Check the hive entrance for the loud roar of a swarm preparing to leave and be ready to collect it if it does. After it goes, the original colony will requeen from the remaining cells."
+        }
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What you might find",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Colony has swarmed despite weekly inspections",
+              "cause": "A cell was missed. The hive may have sent a second swarm.",
+              "fix": "Check all remaining cells. If more than one capped cell is present, keep the best one and remove the rest. A new queen will emerge in around 25 days."
+            },
+            {
+              "symptom": "Queen cells on every frame including newly drawn frames",
+              "cause": "The colony is very large and the urge to swarm is strong. Adding space alone will not stop it.",
+              "fix": "Do an artificial swarm now. Move the old queen and the flying bees to a new hive on the old site. Leave the brood frames and cells on a new site."
+            },
+            {
+              "symptom": "Cells present but no queen found",
+              "cause": "The queen has already left with a prime swarm, or the colony has become queenless by another means",
+              "fix": "Look for eggs. If you find eggs less than three days old, the queen was present within the last three days. If no eggs and no queen, leave the strongest cell in place and monitor for laying in 25 to 28 days."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
