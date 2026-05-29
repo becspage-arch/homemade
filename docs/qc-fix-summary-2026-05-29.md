@@ -258,3 +258,19 @@ SKIPPED: 0
 - basement-and-cellar-insulation: grade-level-strict
 - batarde-gothic-script: grade-level-strict
 - beef-bourguignon: grade-level-strict
+
+---
+
+## Run at 10:06:38
+
+Generated: 2026-05-29T10:06:38.434Z
+
+Processed: 67
+PASS: 67
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
