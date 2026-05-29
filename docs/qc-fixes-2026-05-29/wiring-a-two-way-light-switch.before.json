@@ -1,0 +1,172 @@
+{
+  "slug": "wiring-a-two-way-light-switch",
+  "tutorialId": "cmpqul4qm0002e0v4keg19kng",
+  "capturedAt": "2026-05-29T11:39:05.381Z",
+  "preFix": {
+    "title": "Wiring a two-way light switch",
+    "subtitle": "Replace or extend a single one-way switch to two-way control using three-core-and-earth cable",
+    "excerpt": "How to wire a two-way switching arrangement so a light can be controlled from two locations, the bottom and top of a staircase, for example. Covers the cable layout, the terminal connections at each switch, and testing.",
+    "sourceNotes": "BS 7671 (18th Edition Wiring Regulations). Traditional UK domestic switching practice.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Two-way switching is widely misunderstood, but the terminal labels on modern UK switches make it clear. Three cores run between the two switches: the two strappers (L1 and L2) and the common. The common carries the live feed at one switch and the switched-live output at the other.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 1, Isolate and verify dead",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "At the consumer unit, switch off the MCB for the lighting circuit. Lock off the MCB. Carry out the live-dead-live test at both switch positions using the two-pole tester and proving unit before touching any conductors. Test live, test dead, retest live, only a passed three-step test proves isolation.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 2, Understand the cable layout",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "In the standard UK two-way arrangement: a twin-and-earth cable brings the live feed and neutral to switch 1. A ",
+              "type": "text"
+            },
+            {
+              "text": "three-core-and-earth strapper cable",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpqul4oj0001e0v430txdxga"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " runs between switch 1 and switch 2. A twin-and-earth cable runs from switch 2 to the light fitting. At switch 1: the incoming live goes to COM; the two strappers go to L1 and L2. At switch 2: the two strappers go to L1 and L2; the outgoing switched-live goes to COM.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 3, Connect switch 1 (feed switch)",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "At switch 1, connect the incoming live (brown) to ",
+              "type": "text"
+            },
+            {
+              "text": "COM",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpqul4nt0000e0v4f28x87ee"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ". Connect the brown core of the three-core cable to L1, and the black core (sleeve it with brown tape at each end) to L2. Connect all earths to the earth terminal. The neutral conductor from the incoming cable is not connected at the switch, it runs through to the light fitting or junction box.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 4, Connect switch 2 (load switch)",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "At switch 2, connect the brown core of the three-core cable to L1 and the black core (sleeved brown) to L2, matching the connections at switch 1. Connect the outgoing switched-live to COM. This conductor leaves switch 2 and joins the live terminal at the light fitting. Connect all earths. Fold both cables neatly into the back boxes and screw on the faceplates.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 5, Restore and test",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Restore the MCB. Operate switch 1, the light should come on. Operate switch 2, the light should go off. Operate switch 2 again, the light should come on. Operate switch 1 again, the light should go off. Every combination of both switches should control the light. If the light does not respond to one switch, the strappers are swapped at one end, reverse L1 and L2 at one switch only.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    }
+  ]
+}

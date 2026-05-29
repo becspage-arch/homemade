@@ -1,0 +1,350 @@
+{
+  "slug": "voltage-optimiser-for-home",
+  "title": "Installing a voltage optimiser to reduce electricity consumption",
+  "subtitle": "Reducing the supply voltage to the design range to cut running costs on resistive loads",
+  "excerpt": "UK mains voltage averages 242 V, above the EU standard nominal of 230 V. A voltage optimiser reduces this to 220 to 225 V for resistive loads such as electric heaters, incandescent and halogen lights, and some motors. Studies by the Carbon Trust and the Energy Saving Trust found average household savings of 6 to 13 percent on electricity bills where heating and older lighting were the main loads.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Carbon Trust CTL165 for voltage optimisation savings in buildings. Energy Saving Trust voltage optimisation report 2012. EA Technology Technical Report for DNO voltage quality monitoring 2020.",
+  "approximateCostGbp": 400,
+  "paybackYears": 8,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "multimeter-digital",
+      "isOptional": false
+    },
+    {
+      "slug": "energy-monitor",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "voltage-optimiser",
+      "term": "Voltage optimiser",
+      "definition": "A device fitted at the incoming supply that reduces the voltage from the distribution network level (typically 237 to 250 V) to a set point, usually 220 to 225 V, to reduce energy consumption of loads whose demand is proportional to voltage."
+    },
+    {
+      "slug": "resistive-load",
+      "term": "Resistive load",
+      "definition": "An electrical load whose power consumption varies with the square of the voltage. Examples include incandescent bulbs, halogen downlights, electric fan heaters, and storage heaters. Reducing voltage by 5 percent reduces power consumption by around 10 percent for these loads."
+    },
+    {
+      "slug": "switched-mode-power-supply",
+      "term": "Switched-mode power supply",
+      "definition": "A power supply that regulates its output independently of the input voltage over a wide range (typically 100 to 240 V). Used in all modern LED drivers, phone chargers, laptop power supplies, and inverter appliances. Voltage optimisation has no effect on these loads."
+    },
+    {
+      "slug": "power-factor",
+      "term": "Power factor",
+      "definition": "The ratio of real power (watts) to apparent power (volt-amps) in an AC circuit. A load with a power factor of 1 draws current in phase with voltage. Inductive loads (motors, transformers) have a power factor below 1. Voltage optimisers affect real power but not the reactive component."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "voltage-optimiser"
+                }
+              }
+            ],
+            "text": "voltage optimiser"
+          },
+          {
+            "type": "text",
+            "text": " saves energy only on loads that use less power at lower voltage. These are the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "resistive-load"
+                }
+              }
+            ],
+            "text": "resistive loads"
+          },
+          {
+            "type": "text",
+            "text": ": electric space heaters, immersion heaters, and halogen lights. Modern homes with LED lighting, heat pumps, and phone chargers will see little or no benefit. The key step is checking which loads you have before buying."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "When voltage optimisation does NOT save money"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "A "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "glossaryTooltip",
+                    "attrs": {
+                      "termSlug": "switched-mode-power-supply"
+                    }
+                  }
+                ],
+                "text": "switched-mode power supply"
+              },
+              {
+                "type": "text",
+                "text": " compensates for voltage variation automatically. All LED lighting, modern computers, televisions, washing machines with inverter motors, and heat pumps use switched-mode or variable-frequency supplies. In a home where 80 percent of the electricity bill is accounted for by these loads, a voltage optimiser will save at most 2 to 3 percent of the total bill, giving a payback of 15 to 25 years at 400 pounds installed cost."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Load audit: is it worth it?"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Measure the supply voltage with a multimeter at any socket, overnight. If the average reads below 237 V, the supply is already close to the target. A voltage optimiser will offer little saving in this case."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "List all significant loads and classify each as resistive or switched-mode. Resistive loads: electric shower, storage heater, immersion heater, fan heater, halogen bulbs. Switched-mode or inverter: heat pump, fridge-freezer with inverter compressor, LED lighting, washing machine, tumble dryer with heat pump. Sum the wattage of the resistive loads only."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Estimate the annual kWh from resistive loads. Multiply each wattage by daily hours, then by 365. If resistive loads are above 40 percent of total use, a voltage optimiser will likely pay back within 10 years."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Installation requirements"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A voltage optimiser is fitted before the consumer unit by a Part P electrician. The work is notifiable in England and Wales."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Confirm the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "power-factor"
+                        }
+                      }
+                    ],
+                    "text": "power factor"
+                  },
+                  {
+                    "type": "text",
+                    "text": " of the main loads. If the home has a large electric motor load (well pump, industrial equipment), a combined voltage optimiser and power factor correction unit may offer additional saving. Standard domestic loads do not need power factor correction."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "After installation, read the electricity meter daily for two weeks before and after, at the same time each day, and compare to a prior-year baseline adjusted for temperature. The saving should be visible in the daily meter readings within the first week."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done well looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A load audit confirmed that electric storage heaters and an immersion hot water cylinder account for 55 percent of the annual electricity bill. The supply voltage was measured at 245 V average. The voltage optimiser was installed and the daily meter readings show a consistent 8 to 9 percent reduction against the prior-year baseline over the following winter. The payback is confirmed at seven to eight years."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done badly looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The home had switched entirely to LED lighting and heat pump heating two years previously. The voltage optimiser was sold on the basis that it would save 15 percent of the electricity bill. The actual saving after installation was under 3 percent because the remaining resistive loads (one electric shower and occasional fan heater use) accounted for less than 20 percent of the total bill. Payback at 400 pounds installed cost will exceed 25 years."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooter"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "No measurable saving after 30 days",
+              "cause": "The load mix is predominantly switched-mode and inverter appliances, not resistive loads",
+              "fix": "Re-run the load audit with the energy monitor measuring load-by-load. If resistive loads account for less than 25 percent of measured consumption, the voltage optimiser is not suited to this property."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Electric shower runs noticeably less hot after installation",
+              "cause": "The shower element is a resistive load; reducing voltage reduces its power output proportionally",
+              "fix": "This is expected and reflects the actual energy saving on the shower. If the shower temperature is inadequate, check whether the optimiser can be bypassed for the shower circuit, or replace the shower with a model that has a higher wattage element to compensate."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Older fridge-freezer is running longer after installation",
+              "cause": "The compressor motor is a resistive-inductive load that develops less torque at lower voltage and takes longer to pull the evaporator down to temperature",
+              "fix": "Older non-inverter compressors can be marginal at reduced voltage. If the fridge-freezer runs more than 20 percent longer than before optimisation, exclude its circuit from the optimiser or replace the appliance with a modern inverter model."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

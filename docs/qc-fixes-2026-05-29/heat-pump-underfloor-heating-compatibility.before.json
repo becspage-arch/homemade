@@ -1,0 +1,348 @@
+{
+  "slug": "heat-pump-underfloor-heating-compatibility",
+  "tutorialId": "cmpqwjt6v0002kkv4h6fv4lz2",
+  "capturedAt": "2026-05-29T12:45:13.292Z",
+  "preFix": {
+    "title": "Checking underfloor heating compatibility with a heat pump",
+    "subtitle": "Assessing whether an existing UFH system can work at the lower flow temperatures a heat pump requires",
+    "excerpt": "An air source heat pump operates most efficiently at flow temperatures of 35 to 45 °C, compared to the 60 to 70 °C typical of a gas boiler. Whether an existing underfloor heating system can deliver enough heat at these lower temperatures depends on the loop spacing, floor construction, and the room's heat loss. This guide sets out how to check compatibility before committing to a heat pump installation.",
+    "sourceNotes": "CIBSE TM65 for heat pump system design. MCS MIS 3005 for heat pump sizing requirements. EN 1264 for underfloor heating output calculations. BEIS Heat Pump Ready programme guidance 2023.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The ",
+              "type": "text"
+            },
+            {
+              "text": "COP",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpba3axw000s4ov4jr8ltx6d"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " of a heat pump drops by 2 to 3 percent for every additional degree of ",
+              "type": "text"
+            },
+            {
+              "text": "flow temperature",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpba3azb000u4ov47f8pj8qm"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ". A system designed to run at 45 °C instead of 35 °C will have a COP roughly 20 to 30 percent lower than the manufacturer's headline figure, and will cost proportionally more to run. Existing underfloor heating is often sized to a gas boiler at 55 °C; whether it will still meet the room's ",
+              "type": "text"
+            },
+            {
+              "text": "heat loss",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpqwjt3l0000kkv4ge372zzr"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " at 40 °C depends on the loop density and floor construction.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "infoPanel",
+          "attrs": {
+            "tone": "info",
+            "title": "The three factors that determine compatibility"
+          },
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Compatibility depends on: (1) the floor's heat output at low flow temperatures, which is a function of loop spacing and floor construction; (2) the room's heat loss at the design outdoor temperature; and (3) the floor area available. A heavily glazed Victorian extension with 200 mm loop spacing may need 50 °C flow to match the heat loss, while a well-insulated room with 100 mm spacing will work comfortably at 35 °C.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 1: Find the loop spacing",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Check the original installation records or the manifold label for the loop spacing. Common spacings are 100, 150, and 200 mm. If records are not available, use a thermal imaging camera after running the system for 30 minutes: the loops will appear as warm stripes on the floor surface and the spacing can be measured from the image.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Find the floor construction type. The ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "underfloor loop output",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "glossaryTooltip",
+                          "attrs": {
+                            "termId": "cmpqwjt4c0001kkv4vqq9vqbg"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "text": " at 35 °C flow in a 75 mm screed with 100 mm spacing is approximately 55 to 60 W/m2. In a timber suspended floor with the same spacing it drops to 35 to 45 W/m2 because timber conducts heat less efficiently than screed.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 2: Calculate the room heat loss",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Use the room dimensions and envelope U-values to calculate the design heat loss in watts at -3 °C external (the UK design temperature for most regions). A simple room-by-room calculation uses the formula: heat loss (W) = U-value x area x (room temperature minus external temperature). Sum the fabric losses and add 10 to 15 percent for ventilation losses.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Divide the calculated heat loss by the floor area to get the required output per square metre. Compare this to the loop output figure at the target flow temperature. If the required output per m2 exceeds the available output at 40 °C flow, the room is not compatible without additional loop area or supplementary radiators.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 3: Trial the system at low flow",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Before committing to a heat pump, trial the existing boiler at a reduced flow temperature. Set the boiler to 45 °C flow and run it for a full cold week. Monitor the indoor temperature in each room using a digital thermometer. If all rooms reach the target temperature within two hours of start-up, the loop density is sufficient for the heat pump target flow temperature. If some rooms fail to reach temperature, identify those rooms for supplementary radiators before the heat pump is installed.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What done well looks like",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A room-by-room heat loss calculation was completed before the heat pump was specified. The trial at 45 °C confirmed all rooms reach temperature. The heat pump installer used the heat loss figures for sizing, not a rule-of-thumb kW per square metre. The heat pump runs at 38 to 42 °C in mild weather and 45 °C only during the coldest 30 hours per year. Annual bills are 30 to 40 percent lower than the equivalent gas boiler at current tariff rates.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What done badly looks like",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The heat pump was installed without a heat loss calculation. The installer sized it at 1 kW per 10 m2, which underpowered the building by 40 percent. The heat pump runs continuously in winter and cannot maintain design temperature, so a backup electric immersion heater compensates, making the system more expensive to run than the original gas boiler. The UFH loops in the conservatory extension were 200 mm spacing and could not match the heat loss at 45 °C flow, but this was not identified before installation.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Troubleshooter",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "content": [
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Fit a supplementary low-temperature radiator in the underperforming room, sized to the room's heat loss at 40 °C flow minus the available UFH output at 40 °C flow. This tops up the shortfall without raising the system flow temperature.",
+                "cause": "That room has a higher heat loss or lower loop density than the others",
+                "symptom": "One room consistently 3 to 4 °C colder than others when heat pump runs at 40 °C"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Set the legionella prevention cycle to run once per week at 60 °C, not daily. At current grid carbon intensities, once-weekly pasteurisation adds around 50 kWh per year to consumption, acceptable for legionella control.",
+                "cause": "Domestic hot water cylinder is raising the system flow temperature to 60 °C for legionella prevention cycles, dragging the seasonal COP down",
+                "symptom": "Heat pump bill is higher than expected despite low flow temperatures"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Request a full MCS-compliant heat loss calculation under MIS 3005 before installation. MCS-certified installers are required to conduct this calculation and size the system to the result, not to a rule of thumb.",
+                "cause": "Installer has not conducted a heat loss calculation and is defaulting to a higher temperature to cover uncertainty",
+                "symptom": "Flow temperature trial shows all rooms reach temperature at 45 °C but the heat pump installer wants to run at 55 °C"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "ADVANCED"
+  },
+  "initialFindings": [
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "path": "body > orderedList[5] > listItem[1] > paragraph[0] > text",
+      "snippet": "Target"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "path": "body > paragraph[7] > text",
+      "snippet": "Target"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[0]",
+      "snippet": "The COP of a heat pump drops by 2 to 3 percent for every additional degree of flow temperature. A system designed to run at 45 °C instead of"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 15.3 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > infoPanel[1] > paragraph[0]",
+      "snippet": "Compatibility depends on: (1) the floor's heat output at low flow temperatures, which is a function of loop spacing and floor construction; "
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > orderedList[5] > listItem[0] > paragraph[0]",
+      "snippet": "Use the room dimensions and envelope U-values to calculate the design heat loss in watts at -3 °C external (the UK design temperature for mo"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[11]",
+      "snippet": "The heat pump was installed without a heat loss calculation. The installer sized it at 1 kW per 10 m2, which underpowered the building by 40"
+    }
+  ]
+}

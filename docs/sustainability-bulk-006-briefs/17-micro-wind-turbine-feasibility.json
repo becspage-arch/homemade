@@ -1,0 +1,317 @@
+{
+  "slug": "micro-wind-turbine-feasibility",
+  "title": "Assessing whether a micro wind turbine is viable on your site",
+  "subtitle": "Understanding the site conditions that determine whether small wind produces usable energy",
+  "excerpt": "A 2.5 kW micro wind turbine in a well-exposed UK rural location generates 2,000 to 4,000 kWh per year. In a suburban garden with mean wind speeds below 5 m/s and high turbulence from buildings and trees, the same turbine may generate under 500 kWh per year. Annual energy output scales as the cube of mean wind speed, making site assessment the single most important step before any investment.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Carbon Trust Renewable Energy Guide for Businesses micro-wind section. Energy Technology Support Unit ETSU-R-97 for wind turbine noise assessment. gov.uk Town and Country Planning permitted development for micro-wind. NOABL wind speed database (gov.uk) for UK site mean wind speed estimates.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "mean-wind-speed",
+      "term": "Mean wind speed",
+      "definition": "The average wind speed at a specific location and height, measured over at least one year. The NOABL database provides 1 km resolution mean wind speed estimates for the UK at 10, 25, and 45 m heights. Annual energy output scales as the cube of mean wind speed: doubling the mean speed multiplies output eightfold."
+    },
+    {
+      "slug": "turbulence-intensity",
+      "term": "Turbulence intensity",
+      "definition": "The standard deviation of wind speed divided by the mean wind speed, expressed as a percentage. High turbulence (above 20 percent) from buildings, trees, and topographic features reduces turbine output and accelerates mechanical wear. Rural open sites have turbulence intensities of 10 to 15 percent; suburban sites commonly exceed 25 percent."
+    },
+    {
+      "slug": "rotor-swept-area",
+      "term": "Rotor swept area",
+      "definition": "The area of the circular disc swept by the turbine blades, in square metres. Energy capture is proportional to swept area: a 3 m diameter rotor sweeps 7 m2 and captures roughly twice the energy of a 2 m diameter rotor (3.1 m2) at the same site and wind speed."
+    },
+    {
+      "slug": "microgeneration-certification",
+      "term": "MCS certification",
+      "definition": "Microgeneration Certification Scheme. MCS-certified wind turbines have been independently tested for energy performance and acoustic emissions. An MCS-certified installer is required to access the Smart Export Guarantee for exported wind electricity."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The energy output of a wind turbine is proportional to the cube of the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "mean-wind-speed"
+                }
+              }
+            ],
+            "text": "mean wind speed"
+          },
+          {
+            "type": "text",
+            "text": ": a site with 6 m/s mean speed produces eight times the energy of a site with 3 m/s. The NOABL database provides mean wind speed estimates for any UK location, but these are for open-country conditions at standard heights. A suburban garden surrounded by houses and trees will have a mean wind speed 30 to 60 percent lower than the NOABL figure at 10 m height, and far higher "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "turbulence-intensity"
+                }
+              }
+            ],
+            "text": "turbulence intensity"
+          },
+          {
+            "type": "text",
+            "text": ". Most roof-mounted domestic turbines sold in the UK before 2015 were installed in unsuitable suburban sites and produced less than 10 percent of their rated output."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "When micro-wind does make sense"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Micro-wind is appropriate for: off-grid properties in rural or coastal locations with a NOABL mean speed above 6 m/s, sites where a turbine can be mounted on a guyed mast at least twice the height of any obstruction within 250 m, and properties where solar is limited by shading or orientation. A hybrid wind-solar system at a suitable rural site can provide year-round generation where solar alone would leave an energy gap in winter."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The four-step assessment"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Check the NOABL mean wind speed. Look up your postcode at the NOABL database (gov.uk). If the 25 m height mean speed is below 5.5 m/s, micro-wind is unlikely to be economic at any practical mast height. Below 5 m/s it is almost certainly not viable."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Assess the turbulence environment. Stand at the intended turbine site and observe wind direction on a windy day. If the wind is visibly disturbed by buildings, trees, or slopes within 200 m in any direction, turbulence will reduce output and shorten turbine life. Open coastal, hilltop, and flat agricultural sites have the lowest turbulence."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Estimate the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "rotor-swept-area"
+                        }
+                      }
+                    ],
+                    "text": "rotor swept area"
+                  },
+                  {
+                    "type": "text",
+                    "text": " needed. Use the turbine manufacturer's power curve at your site mean speed to calculate annual energy output. Compare this to your annual consumption. If the turbine would contribute less than 20 percent of consumption, the economics are unlikely to justify the installation cost."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Check planning requirements. Permitted development for micro-wind in England requires the turbine to be the only one on the property, no taller than 15 m including the hub, and not in a conservation area or listed building. Above 50 kW, full planning consent is always required. For grid-connected systems use an "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "microgeneration-certification"
+                        }
+                      }
+                    ],
+                    "text": "MCS-certified"
+                  },
+                  {
+                    "type": "text",
+                    "text": " installer."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Noise and neighbour considerations"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wind turbines generate both mechanical noise (from the generator and gearbox) and aerodynamic noise (from the blades). The ETSU-R-97 methodology sets acceptable noise levels at the nearest noise-sensitive receptor as 35 to 40 dB(A) during wind speeds of 7 to 12 m/s. A turbine within 50 m of the property boundary will almost always require a noise assessment before planning permission is granted. Night-time limits are tighter than daytime limits."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done well looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A coastal smallholding was assessed using the NOABL database (6.8 m/s at 25 m), a site survey, and three months of mast anemometer data before purchase. The 5 kW turbine generates 9,000 kWh per year. This covers 70 percent of the site's electricity needs and works well alongside a 4 kWp solar array in winter."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done badly looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A roof-mounted 1 kW turbine was installed in a suburban semi in a midlands town. The NOABL 10 m height mean speed was 4.2 m/s, and the actual roof-level speed was lower due to nearby houses. Actual generation in year one was 180 kWh, against a manufacturer's estimate of 800 kWh. The turbine induced vibration in the roof structure and was removed after three years having generated less than 540 kWh total."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooter"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Turbine output is consistently 50 percent below the manufacturer's estimate",
+              "cause": "Site mean wind speed is lower than assumed, or turbulence from nearby obstructions is causing the turbine to cut out more frequently than expected",
+              "fix": "Install a calibrated anemometer and data logger at hub height for 90 days. Calculate the actual mean speed from the measured data. Compare to the manufacturer's power curve. If the mean speed is more than 15 percent below the assumed figure, the turbine is oversized for the site."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Vibration and humming noise audible inside the house from a roof-mounted turbine",
+              "cause": "The turbine mounting bracket is transmitting vibration through the roof structure at resonant frequency",
+              "fix": "Fit anti-vibration isolation mounts between the turbine bracket and the roof structure. If the turbine is permanently coupled to a rafter, the resonant frequency of the rafter will amplify specific blade-pass frequencies. An acoustic isolation plate reduces transmission by 15 to 25 dB."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Turbine stops generating after a few months",
+              "cause": "Charge controller has triggered a high-voltage shutdown because the battery bank is full and there is no dump load",
+              "fix": "Check the charge controller dump load connection. Off-grid wind systems require a dump load (typically a heating element) that absorbs generation when the battery is full. Without a dump load the turbine will overspeed or the controller will brake it."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

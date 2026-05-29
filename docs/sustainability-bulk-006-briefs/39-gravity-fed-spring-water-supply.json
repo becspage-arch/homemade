@@ -1,0 +1,395 @@
+{
+  "slug": "gravity-fed-spring-water-supply",
+  "title": "Setting up a gravity-fed spring water supply",
+  "subtitle": "Capturing, filtering, and distributing spring water to a remote property without a pump",
+  "excerpt": "A gravity-fed spring supply requires a water source above the point of use, a protected catchment chamber, settlement and filtration, and a distribution pipe to a storage tank. When properly designed and maintained, a spring system can supply 300 to 1,000 litres per day to a dwelling without electricity and with annual maintenance costs under 50 pounds. Poor protection of the catchment chamber is the primary cause of contamination failures.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Scottish Government Private Water Supplies Regulations 2006 guidance. Drinking Water Inspectorate guidance on private water supplies 2024. CIEH (Chartered Institute of Environmental Health) private water supplies best practice note. Centre for Alternative Technology water supply guidance.",
+  "approximateCostGbp": 2500,
+  "paybackYears": null,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "spade",
+      "isOptional": false
+    },
+    {
+      "slug": "tape-measure-5m",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "spring-box",
+      "term": "Spring box",
+      "definition": "A watertight concrete, brick, or plastic chamber built around a spring emergence point to protect it from surface water contamination. The spring box captures groundwater before it reaches the surface, keeping it free from soil runoff, animal waste, and debris. A well-constructed spring box is the single most important element of a safe private water supply."
+    },
+    {
+      "slug": "private-water-supply",
+      "term": "Private water supply",
+      "definition": "A water supply that is not provided by a water company. In England and Wales, private water supplies are regulated under the Private Water Supplies (England) Regulations 2016. Local authorities are required to inspect and risk-assess private supplies serving two or more properties or commercial premises annually. Single-property domestic supplies are subject to a risk assessment on request or complaint."
+    },
+    {
+      "slug": "slow-sand-filter",
+      "term": "Slow sand filter",
+      "definition": "A water treatment unit consisting of a bed of fine sand (0.15 to 0.35 mm grain size) through which water passes slowly at a rate of 0.1 to 0.3 m/hour. The upper 10 to 20 mm of the sand bed develops a biological layer (schmutzdecke) that removes bacteria, protozoa, and organic matter. Slow sand filters can achieve 99.9 percent removal of E. coli without chemicals when properly maintained."
+    },
+    {
+      "slug": "uv-disinfection",
+      "term": "UV disinfection",
+      "definition": "A water treatment method using ultraviolet light at 254 nm wavelength to inactivate bacteria, viruses, and protozoa by damaging their DNA. Effective at 16 to 30 mJ/cm2 dosage for 99.9 percent inactivation of most pathogens. UV disinfection leaves no chemical residual and does not change water taste or chemistry. Requires pre-filtration to turbidity below 1 NTU to be effective."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A gravity-fed spring supply needs no pumping or electricity once installed. Water flows continuously with no recurring fuel or chemical costs. The main challenge is protecting the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "spring-box"
+                }
+              }
+            ],
+            "text": "spring box"
+          },
+          {
+            "type": "text",
+            "text": " from contamination and treating the water adequately before use. A supply that fails a microbiological test is a health risk and will attract enforcement action from the local authority."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Legal obligations"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "A "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "glossaryTooltip",
+                    "attrs": {
+                      "termSlug": "private-water-supply"
+                    }
+                  }
+                ],
+                "text": "private water supply"
+              },
+              {
+                "type": "text",
+                "text": " serving any premises other than a single domestic dwelling must be registered with and risk-assessed by the local authority environmental health team. The local authority has powers to require improvements if the supply does not meet drinking water standards. Contact the local authority's environmental health department before commissioning a new private supply to confirm the regulatory requirements for your specific situation."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 1: Assess and protect the source"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Locate the spring emergence point at its highest natural exit from the ground. A spring box should be built at the primary emergence, not at a lower point where the water has already run along the surface. The spring box captures groundwater at the point it first becomes accessible."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Construct a concrete or pre-formed plastic spring box at the emergence point. The chamber must be fully watertight with a sealed lid, have an overflow pipe discharging downhill away from the supply pipe inlet, and be fenced to exclude livestock within at least a 10 m radius. The overflow pipe prevents the chamber from flooding during high flow periods."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Protect the catchment area uphill of the spring: no septic tanks, no manure spreading, no pesticides, and no vehicle access within 50 m upslope. Identify any pollution sources in the upslope catchment. One contamination event (a fuel spill, an animal carcass) can take the supply out of action for weeks."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 2: Distribution pipe and storage"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Run a 25 to 50 mm MDPE supply pipe from the spring box outlet to a covered storage tank at the property. The pipe should be buried to at least 600 mm depth to protect against frost and UV degradation. Calculate the required pipe diameter from the available head (height difference between spring box and storage tank) and the desired flow rate using standard hydraulic formulae."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Size the storage tank to provide 3 to 5 days of supply at normal consumption rates. For a 2-person household using 300 litres per day, a 1,500-litre tank provides 5 days of buffer against low-flow periods. Site the tank above the property's inlet to maintain gravity pressure. Food-grade polyethylene tanks are the standard choice."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 3: Treatment"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Install a "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "slow-sand-filter"
+                        }
+                      }
+                    ],
+                    "text": "slow sand filter"
+                  },
+                  {
+                    "type": "text",
+                    "text": " between the storage tank and the distribution point. A correctly sized slow sand filter handles 50 to 100 litres per hour per m2 of filter area and requires minimal maintenance beyond annual scraping of the top 20 mm of sand."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Install "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "uv-disinfection"
+                        }
+                      }
+                    ],
+                    "text": "UV disinfection"
+                  },
+                  {
+                    "type": "text",
+                    "text": " as the final treatment stage before the point of use. UV units require electricity but consume only 15 to 35 watts. They require a pre-filter at 5 microns to remove turbidity before the UV chamber. Annual lamp replacement costs 30 to 60 pounds per unit."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Test the treated water annually at minimum using an accredited laboratory. Basic microbiological testing (E. coli, total coliforms, enterococci) costs 30 to 60 pounds per sample. Test after any nearby land use change, flood event, or unusually high turbidity. Local authority environmental health can advise on the appropriate test parameter set for the site's specific risk profile."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done well looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A spring 40 m above a rural dwelling is captured in a 250-litre concrete spring box. The supply pipe delivers 800 litres per day to a 2,000-litre storage tank. A slow sand filter reduces turbidity to below 0.5 NTU. A UV unit with a pre-filter provides final disinfection. Annual water tests confirm zero E. coli. Total running cost after installation: 80 pounds per year for UV lamp replacement and testing. The household has had a reliable gravity-fed supply for 12 years."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done badly looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A spring is captured at a surface emergence downstream of the main groundwater exit point, capturing surface runoff as well as groundwater. The spring box lid is left off or poorly sealed, and surface water enters during heavy rain. No treatment is installed on the basis that 'spring water is natural.' Water tests after 2 years reveal E. coli at 12 cfu/100 ml. The local authority issues a notice requiring improvement. Fitting a proper spring box, slow sand filter, and UV unit retrospectively costs more than if the system had been built correctly from the start."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooter"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Spring flow drops significantly in summer",
+              "cause": "The aquifer recharge is seasonal; summer abstraction exceeds the low-flow recharge rate",
+              "fix": "Increase storage tank capacity to buffer seasonal variation. A 5,000-litre tank filled during high-flow winter months provides reserves for the summer low. Alternatively, install a secondary supply (rainwater harvesting or borehole) to supplement the spring during droughts. Monitor flow rate monthly using a simple bucket and stopwatch test."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Water test returns elevated E. coli after heavy rain",
+              "cause": "Surface runoff is entering the spring box during storm events, bypassing the filter",
+              "fix": "Check the spring box lid seal and overflow pipe position. The overflow pipe must discharge well clear of the intake. Add a diversion bund uphill of the spring box to redirect surface runoff away from the catchment area. Consider adding a first-flush bypass in the distribution pipe that diverts the first 50 litres after a rain event before returning to normal supply."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "UV unit alarm light indicates low intensity but lamp was replaced recently",
+              "cause": "Turbidity (suspended solids) in the water is absorbing UV light, reducing effective dose below the threshold the alarm monitors",
+              "fix": "Check and clean the pre-filter before the UV unit. If the filter is clean and the alarm persists, measure turbidity with a turbidity meter or send a sample for analysis. Turbidity above 1 NTU significantly reduces UV effectiveness. The root cause is usually upstream: a disturbed spring box, failure of the sand filter layer, or new construction activity in the catchment."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

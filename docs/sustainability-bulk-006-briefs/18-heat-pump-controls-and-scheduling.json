@@ -1,0 +1,339 @@
+{
+  "slug": "heat-pump-controls-and-scheduling",
+  "title": "Setting up heat pump controls for efficiency",
+  "subtitle": "Weather compensation, heating curves, and setback settings that reduce running costs",
+  "excerpt": "A heat pump running at a correctly configured weather compensation curve uses 15 to 25 percent less electricity than one set to a fixed flow temperature. Weather compensation automatically reduces the flow temperature on mild days, keeping the heat pump in its highest efficiency range instead of overshooting a fixed setpoint. This guide covers the three controller settings that have the largest impact on running cost.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BEIS Heat Pump Ready programme 2023 for weather compensation savings evidence. MCS MIS 3005 for heat pump commissioning requirements. Nibe, Daikin, and Vaillant installation manuals for heating curve configuration. CIBSE TM65 for heat pump control strategies.",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "energy-monitor",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "weather-compensation",
+      "term": "Weather compensation",
+      "definition": "A control strategy that automatically reduces the heat pump flow temperature as outdoor temperature rises. On a mild day of 10 °C, the flow temperature might be 35 °C; on a cold day of -3 °C, it rises to 45 °C. This keeps the heat pump in its most efficient operating range continuously."
+    },
+    {
+      "slug": "heating-curve",
+      "term": "Heating curve (flow curve)",
+      "definition": "The programmed relationship between outdoor temperature and flow temperature in a weather-compensated heat pump. Defined by two parameters: the design-day flow temperature at the coldest expected outdoor temperature, and the gradient (slope) of the relationship. A steeper curve suits a poorly insulated building; a shallower curve suits a well-insulated one."
+    },
+    {
+      "slug": "cop",
+      "term": "Coefficient of performance (COP)",
+      "definition": "The ratio of heat output to electrical input. A heat pump with a COP of 3.8 produces 3.8 kWh of heat per kWh of electricity consumed. COP improves as the difference between outdoor temperature and flow temperature narrows: lowering flow temperature by 5 °C on a mild day typically increases COP by 8 to 12 percent."
+    },
+    {
+      "slug": "setback-temperature",
+      "term": "Setback temperature",
+      "definition": "A lower target room temperature used during unoccupied periods or overnight. Heat pumps are more efficient running continuously at a lower output than cycling on and off to reach a higher setpoint. Deep setbacks of more than 4 °C are generally counterproductive for heat pumps and increase energy use over a full day."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most heat pumps are installed and left at default settings that do not exploit the machine's full efficiency potential. The default setting is often a fixed flow temperature of 45 to 50 °C, which the heat pump maintains regardless of the outdoor temperature. On a mild autumn day of 12 °C, this is unnecessary: the building's heat loss is so low that the heat pump could meet it at 35 to 38 °C, with a significantly higher "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cop"
+                }
+              }
+            ],
+            "text": "COP"
+          },
+          {
+            "type": "text",
+            "text": ". Switching to "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "weather-compensation"
+                }
+              }
+            ],
+            "text": "weather compensation"
+          },
+          {
+            "type": "text",
+            "text": " is a free setting change that costs nothing and typically reduces annual electricity consumption by 15 to 25 percent."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Where to find these settings"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Weather compensation settings are in the installer menu of the heat pump controller, not the user menu. Most manufacturers lock these behind a service code (commonly 1234, 0000, or the last four digits of the serial number — check the installation manual). If the installer set a custom code, they must provide it. Changing weather compensation settings does not void the warranty."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Setting 1: Enable weather compensation"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Access the installer menu using the service code. Navigate to the heating curve or flow curve section. Confirm that weather compensation is enabled (not disabled or overridden to a fixed setpoint). If an outdoor temperature sensor is installed, the controller will use it directly. If not, some units use a weather forecast feed via an internet connection."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Set the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "heating-curve"
+                        }
+                      }
+                    ],
+                    "text": "heating curve"
+                  },
+                  {
+                    "type": "text",
+                    "text": " parameters. The design-day flow temperature is set from the heat loss calculation completed at installation. For a system designed at -3 °C outdoor and 45 °C flow, these are the curve endpoints. The gradient is the slope between the two endpoints. Start with the recommended gradient from the heat loss calculation and adjust based on comfort feedback."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Setting 2: Reduce the overnight setback"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Set the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "setback-temperature"
+                        }
+                      }
+                    ],
+                    "text": "setback temperature"
+                  },
+                  {
+                    "type": "text",
+                    "text": " to no more than 2 to 3 °C below the daytime target. A setback from 21 °C to 18 °C overnight is appropriate. Deeper setbacks (to 15 or 16 °C) force the heat pump to run at higher flow temperatures to recover quickly in the morning, erasing the overnight saving."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Set the recovery start time to allow the building to warm up slowly. A well-insulated house with thermal mass may need one hour before occupancy; a poorly insulated house with little mass may need two to three hours. Measure this on a cold morning rather than guessing."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Setting 3: Domestic hot water scheduling"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Run domestic hot water heating once per day. The best time is early afternoon when outdoor temperatures are highest (giving the highest COP) and solar PV output peaks if fitted. Avoid a daily 60 °C legionella cycle. Once per week is enough, and a daily cycle cuts seasonal efficiency by a meaningful amount."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done well looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weather compensation is enabled and the flow temperature drops from 45 °C in cold weather to 32 °C on days above 12 °C. The energy monitor shows the heat pump running continuously at modest output on mild days rather than cycling on and off at high flow temperature. Annual electricity consumption is 20 percent lower than in the first year of operation when the heat pump ran at a fixed 48 °C. All rooms maintain comfortable temperatures."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done badly looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weather compensation was never enabled and the heat pump runs at a fixed 50 °C flow year-round. On the 200 mildest days of the year the COP is 10 to 15 percent lower than necessary. The hot water cylinder heats to 60 °C every morning regardless of the daily demand or outdoor temperature. The first winter bill is 40 percent above what a correctly configured system of the same size would cost."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooter"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "One cold room after enabling weather compensation",
+              "cause": "The heating curve flow temperature at design-day outdoor temperature is too low for that room's heat emitter output",
+              "fix": "Check the thermostatic radiator valve (TRV) in the cold room is fully open. If the room emitter is undersized for the new lower flow temperature, either add a supplementary radiator panel or raise the design-day endpoint on the heating curve by 3 to 5 °C."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Heat pump runs continuously but house never reaches target temperature on cold days",
+              "cause": "The heating curve design-day flow temperature is set too low, or the heat pump is undersized for the building heat loss",
+              "fix": "Raise the design-day flow temperature on the heating curve by 5 °C and monitor room temperatures over the following week. If the problem persists, the heat pump may be undersized: check whether the commissioning heat loss calculation matches the measured building heat loss in use."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Heat pump electricity bill increases after enabling weather compensation",
+              "cause": "The outdoor temperature sensor was faulty or reporting a lower temperature than actual, causing the heat pump to run at higher flow temperatures than needed",
+              "fix": "Compare the outdoor temperature sensor reading on the controller display to an independent weather station or digital thermometer. If the sensor is reading 2 to 3 °C low, replace it or apply a calibration offset in the installer menu."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

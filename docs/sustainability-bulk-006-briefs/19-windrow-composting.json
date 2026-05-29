@@ -1,0 +1,407 @@
+{
+  "slug": "windrow-composting",
+  "title": "Composting garden waste in a windrow",
+  "subtitle": "Building and managing a long low heap that hot-composts larger volumes than a bin",
+  "excerpt": "A windrow is a long ridge of composting material, typically 1 to 1.5 m tall and as long as the garden allows. The large volume retains heat better than a small bin: a well-built windrow can reach 55 to 65 °C in the core, killing weed seeds and pathogens within five days. Turning the windrow once every two to three weeks produces finished compost in eight to twelve weeks in summer.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "WRAP Good Compost Guide 2024. RHS composting guidance on hot composting temperatures. PAS 100:2018 for composting quality standards. Cardiff University composting research on windrow turning frequency and temperature.",
+  "approximateCostGbp": 40,
+  "paybackYears": null,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "garden-fork",
+      "isOptional": false
+    },
+    {
+      "slug": "compost-thermometer",
+      "isOptional": false
+    },
+    {
+      "slug": "spade",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "carbon-to-nitrogen-ratio",
+      "term": "Carbon-to-nitrogen ratio (C:N)",
+      "definition": "The ratio of carbon to nitrogen in a composting mix, expressed as the mass of carbon per unit of nitrogen. The ideal range for fast hot composting is 25:1 to 30:1. Too high (over 40:1) slows decomposition; too low (under 15:1) causes ammonia release and a strong smell."
+    },
+    {
+      "slug": "thermophilic-composting",
+      "term": "Thermophilic composting",
+      "definition": "Composting in which the core temperature reaches 55 to 70 °C through the metabolic heat of thermophilic bacteria and fungi. Temperatures above 55 °C for five or more consecutive days kill weed seeds, plant pathogens, and most fly larvae."
+    },
+    {
+      "slug": "turning-frequency",
+      "term": "Turning frequency",
+      "definition": "How often the windrow is turned with a fork to aerate the mass and bring cooler outer material to the hot core. Turning every 2 to 3 weeks maintains aerobic conditions, prevents the pile from drying or souring, and ensures uniform decomposition."
+    },
+    {
+      "slug": "finished-compost",
+      "term": "Finished compost",
+      "definition": "Compost that has passed through the active decomposition phase and stabilised. Finished compost is dark brown, crumbly, and smells of earth rather than ammonia or rot. Temperature has returned to ambient and the material no longer heats when turned."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A compost bin processes kitchen and garden waste in small batches at ambient temperature, producing finished compost in six to twelve months. A windrow handles the volume of a large garden (hedge clippings, grass mowings, vegetable bed clearings) in a fraction of the time because the large mass generates and retains metabolic heat. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "thermophilic-composting"
+                }
+              }
+            ],
+            "text": "Thermophilic composting"
+          },
+          {
+            "type": "text",
+            "text": " is not possible in a standard 300 litre bin: the small volume loses heat to the air faster than the microbes can generate it. A windrow of 2 cubic metres or more sustains itself."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "What you can and cannot compost in a windrow"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "A well-managed hot windrow can handle diseased plant material, bolted weeds, and seeding grass clippings that would not be safe to cold-compost. Do not add meat, fish, cooked food, or pet waste to a garden windrow: these attract pests and require hot composting under controlled conditions not achievable in a domestic windrow. Dairy and eggs are also best excluded."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A balance of brown and green material. Browns (carbon-rich): cardboard torn into 20 cm pieces, dry straw, wood chip, autumn leaves. Greens (nitrogen-rich): grass mowings, fresh vegetable tops, coffee grounds, nettles. Aim for a 25:1 to 30:1 "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "carbon-to-nitrogen-ratio"
+                        }
+                      }
+                    ],
+                    "text": "carbon-to-nitrogen ratio"
+                  },
+                  {
+                    "type": "text",
+                    "text": " by mixing roughly two parts brown to one part green by volume."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Water source to moisten the heap if the material is dry. The ideal moisture is like a wrung-out sponge: a handful squeezed hard should release only a few drops."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A compost thermometer with at least a 300 mm probe to reach the core of the heap and read the internal temperature accurately."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Dust and handling"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Turning a compost heap releases fungal spores and fine organic dust. Wear an FFP2 mask when turning, especially with those who have asthma or are immunocompromised. Wear gloves when handling material: compost organisms include actinomycetes and moulds that can cause skin sensitisation in some people."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Building the windrow"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lay a 150 mm base layer of coarse material (wood chip, straw, or torn cardboard) directly on the ground to allow air entry from below and liquid drainage."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Build in alternating 100 to 150 mm layers of browns and greens. Shred or break large pieces to a maximum of 50 to 100 mm before adding: smaller pieces expose more surface area to microbial attack and speed decomposition."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Continue layering until the windrow is 1 to 1.5 m tall and at least 1 m wide. Below 1 m in any dimension, the volume is too small to sustain heat. Shape the cross-section as a rounded ridge to shed rain rather than a flat-topped heap that channels water into the centre."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Probe the core with the compost thermometer after 48 hours. In warm weather with a good C:N ratio, the core should reach 45 to 55 °C within two to three days. If the temperature does not rise above 35 °C, the pile is too dry (add water), too wet (add more browns), or has insufficient nitrogen (add fresh grass clippings or coffee grounds)."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Turning the windrow"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Turn the windrow with a fork every two to three weeks, moving the outer material to the centre and the centre to the outside. Check the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "turning-frequency"
+                }
+              }
+            ],
+            "text": "turning frequency"
+          },
+          {
+            "type": "text",
+            "text": " against the temperature: if the core drops below 45 °C between turnings, increase frequency. After three to four turnings the temperature will no longer rise above 40 °C after turning, which indicates the active phase is complete and the windrow is maturing into "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "finished-compost"
+                }
+              }
+            ],
+            "text": "finished compost"
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done well looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The core reaches 60 °C within three days of building. The windrow is turned four times over eight weeks. By week ten the material is dark brown, crumbly, and no longer heats when disturbed. Weed seeds in the original material have been killed and do not germinate when the compost is applied to beds."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done badly looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Grass mowings were added in a thick unbroken layer and immediately compacted to an anaerobic mat. The windrow never heated above 30 °C and smelled of ammonia within a week. After three months the material is still recognisable as grass clippings at the core, while the outer material has dried to a dusty crust with no decomposition. The pile was never turned after initial construction."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooter"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Windrow smells of ammonia",
+              "cause": "Too much nitrogen relative to carbon — the excess nitrogen off-gasses as ammonia",
+              "fix": "Fork the heap to aerate it and add a 100 mm layer of torn cardboard or wood chip for every 50 mm layer of green material already in the pile. Turn and re-mix thoroughly."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Temperature peaked at 40 °C then dropped after three days without turning",
+              "cause": "Oxygen depletion: the microbes have consumed the available air and the active aerobic zone has shrunk to the surface",
+              "fix": "Turn the windrow to reintroduce oxygen and move the cooler outer material to the core. After turning, temperature should recover to 50 to 60 °C within 24 hours if moisture and C:N are correct."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Windrow drying out and not heating even after watering",
+              "cause": "Excess water evaporation in hot, windy weather combined with a high ratio of dry browns",
+              "fix": "Cover the windrow with a sheet of damp hessian or a loose tarpaulin that allows air exchange but retains moisture. Check that water is penetrating to the core and not just wetting the surface layer."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

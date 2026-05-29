@@ -1,0 +1,431 @@
+{
+  "slug": "hugelkultur-raised-bed",
+  "title": "Building a hugelkultur raised bed",
+  "subtitle": "Constructing a raised bed over buried wood to create long-term fertility and water retention",
+  "excerpt": "Hugelkultur buries logs, branches, and woody debris under soil and compost. As the wood decomposes over five to fifteen years, it releases nutrients, hosts fungal networks, and acts as a sponge that holds 100 to 200 litres of water per cubic metre of wood. A 3 m x 1.5 m bed requires roughly 1 cubic metre of wood and 0.5 cubic metres of compost and soil, and begins producing usable fertility from year two.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Sepp Holzer 'Sepp Holzer's Permaculture' for hugelkultur principles. WRAP soil amendment guidance. RHS guidance on raised bed construction. International Permaculture Research Institute for decomposition timelines.",
+  "approximateCostGbp": 70,
+  "paybackYears": null,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "garden-fork",
+      "isOptional": false
+    },
+    {
+      "slug": "spade",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "hugelkultur",
+      "term": "Hugelkultur",
+      "definition": "A German permaculture technique meaning 'mound culture'. Logs and branches are buried under soil and compost to create a long-lived fertility and water-retention reservoir as the wood decomposes. The technique originates in Austrian and German forest gardening."
+    },
+    {
+      "slug": "wood-decomposition",
+      "term": "Wood decomposition",
+      "definition": "The breakdown of woody material by fungi, bacteria, and soil invertebrates. Hardwood logs of 100 to 200 mm diameter take 5 to 10 years to fully decompose in soil. During decomposition they release nitrogen, phosphorus, calcium, and trace minerals and create complex pore structures for water storage."
+    },
+    {
+      "slug": "nitrogen-drawdown",
+      "term": "Nitrogen drawdown",
+      "definition": "The temporary reduction in plant-available nitrogen caused by fresh wood decomposition. Soil bacteria consume nitrogen as they break down the high-carbon woody material. Fresh wood in the upper layers can stunt plant growth for the first season; this is why compost and aged material must separate plants from the raw wood layer."
+    },
+    {
+      "slug": "mycorrhizal-network",
+      "term": "Mycorrhizal network",
+      "definition": "The web of fungal hyphae connecting plant roots and colonising decomposing wood. Mycorrhizal fungi transfer water and nutrients from the decomposing wood to plant roots in exchange for photosynthate. Hugelkultur beds develop rich mycorrhizal networks over the first two to three years."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "hugelkultur"
+                }
+              }
+            ],
+            "text": "hugelkultur"
+          },
+          {
+            "type": "text",
+            "text": " bed converts waste wood into a long-term fertility reservoir. The wood core stores water during dry periods and releases nutrients as "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "wood-decomposition"
+                }
+              }
+            ],
+            "text": "decomposition"
+          },
+          {
+            "type": "text",
+            "text": " proceeds over years. The bed is self-fertilising from year two as the decomposing wood releases nutrients, and self-watering to a degree: a 3 m x 1.5 m bed with 1 m3 of wood can hold an additional 100 to 200 litres of water that is available to plants during dry spells. In practice, most established hugelkultur beds need no irrigation in all but the driest UK summers."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Wood species and what to avoid"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "All deciduous hardwoods work well: oak, apple, pear, ash, hazel, alder. Softwoods (pine, spruce) can be used but decompose more slowly and temporarily acidify the soil. Avoid: black walnut (juglone toxic to many plants), freshly treated timber (preservatives may be harmful), and cedar (natural antimicrobial compounds slow soil biology). Partially rotted wood is ideal as the decomposition process has already started."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Logs and branches, 50 to 300 mm diameter, to form the core layer. Volume: 0.5 to 1 m3 per 3 m x 1.5 m bed. These can be pruning waste, fallen branches, or off-cuts."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Smaller woody debris (twigs, small branches) to fill the gaps between the larger logs."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Compost (0.25 m3) and topsoil (0.25 m3) for the upper growing layer. The upper layer must separate the plants from the raw wood to avoid nitrogen drawdown."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Nitrogen-rich material to activate the wood layer: grass clippings, manure, comfrey, or nettle. Adding a nitrogen source between the wood and soil layers speeds early breakdown and offsets nitrogen drawdown."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Stability on slopes"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "On a slope, the downhill face of a hugelkultur bed must be stabilised with boards, stone, or a hedge to prevent the mound from slumping. A 1 m tall mound built directly on a slope without support can slump significantly in the first wet winter. On flat ground, stability is not an issue once the soil settles."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Building the bed"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mark out the bed dimensions with string. Dig the top 100 to 150 mm of turf and soil and set it aside. The exposed subsoil becomes the base of the mound."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Water the wood thoroughly before burying. Dry wood absorbs soil moisture for weeks after burial, competing with plants. Soaking the logs for 24 hours before building is the simplest approach."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the largest logs as a core layer on the excavated area. Pack smaller branches and twigs around them to fill gaps. The wood layer should be 300 to 500 mm deep."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cover the wood layer with a 50 to 100 mm layer of nitrogen-rich material: manure, fresh grass clippings, or nettles. This inoculates the wood surface with nitrogen-fixing organisms and offsets early "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "nitrogen-drawdown"
+                        }
+                      }
+                    ],
+                    "text": "nitrogen drawdown"
+                  },
+                  {
+                    "type": "text",
+                    "text": " in the upper growing layer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Layer the excavated turf upside-down over the nitrogen material. Then add the reserved topsoil and 150 to 200 mm of mature compost as the final growing layer. The finished mound should be 500 to 800 mm above the original ground level."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Planting and the first season"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Plant nitrogen-fixing species in the first year: beans, peas, clover, or comfrey as a companion to other crops. These supplement the available nitrogen while the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "mycorrhizal-network"
+                }
+              }
+            ],
+            "text": "mycorrhizal network"
+          },
+          {
+            "type": "text",
+            "text": " becomes established. By year two the decomposing wood begins releasing nutrients and the mound becomes self-fertilising. Deep-rooted perennials such as comfrey reach the wood layer and mine minerals directly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done well looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "By year two, bean and courgette yields are higher than on a conventional raised bed with the same soil. In summer dry spells the hugelkultur bed wilts a day later than surrounding beds. The mound profile settles by 100 to 150 mm in year one as the wood absorbs water and compressed, then stabilises. The bed requires no irrigation in all except the driest periods."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done badly looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fresh untreated logs were not soaked before burial and the dry wood absorbed moisture from the upper growing layer throughout the first summer, making the bed drier than a conventional bed. No nitrogen-rich layer was added between wood and soil, and nitrogen drawdown stunted all brassica and leafy crops in year one. The bed was planted with sweetcorn before it was established and none of the nitrogen-feeding crops performed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooter"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Yellowing leaves and poor growth in year one",
+              "cause": "Nitrogen drawdown from fresh wood decomposition is locking up plant-available nitrogen in the growing layer",
+              "fix": "Apply a liquid nitrogen feed (diluted comfrey tea, 10:1 water to liquid, or fish emulsion) every two weeks for the first growing season. Add a 50 mm layer of worm compost or manure to the surface and water in."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Mound collapsed by 300 mm in winter",
+              "cause": "Dry wood absorbed water and compressed as it became saturated; this is normal and expected",
+              "fix": "Top up the growing layer with 100 to 150 mm of compost in spring. The mound will continue to settle annually for the first three years as the wood decomposes. After year three, settling slows significantly."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Slugs and woodlice are significantly more numerous than on other beds",
+              "cause": "The decomposing wood layer is providing ideal habitat for slugs and woodlice",
+              "fix": "This is a feature of the system during the first two years, not a failure. Use physical barriers (copper tape, wool pellets) around vulnerable seedlings rather than trying to eliminate the habitat. The slug population naturally declines as the wood decomposition stabilises."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "slug": "loft-room-rafter-insulation",
+  "title": "Insulating between and below rafters in a converted loft room",
+  "subtitle": "Achieving a Part L1B roof U-value in an occupied room-in-roof",
+  "excerpt": "A converted loft room with no insulation in the rafters has a ceiling U-value of around 0.9 W/m2K through a 25 mm tile batten void. Fitting mineral wool or PIR board between the rafters and adding a second insulation layer below on counter battens brings this to 0.18 W/m2K. The work requires removing the existing ceiling lining and refitting plasterboard after insulation.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Part L1B (2022) pitched roof 0.18 W/m2K target for existing dwellings. BRE BR443 for U-value conventions on sloped roofs. CIBSE Guide A for thermal bridging corrections on rafter assemblies.",
+  "approximateCostGbp": 550,
+  "paybackYears": 8,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "utility-knife", "isOptional": false },
+    { "slug": "saw-hand", "isOptional": false },
+    { "slug": "drill-driver", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rafter",
+      "term": "Rafter",
+      "definition": "A sloping structural timber member forming the framework of a pitched roof. Rafters run from the ridge to the eaves wall plate. Their depth determines the maximum insulation thickness in a between-rafter assembly."
+    },
+    {
+      "slug": "cold-roof-void",
+      "term": "Cold roof void",
+      "definition": "The ventilated space required above insulation in a cold roof. For rafter insulation, a minimum 50 mm void must be maintained between the top of the insulation and the underside of the tile underlay or breather membrane to allow moisture to escape."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane fitted on the warm side of insulation to reduce vapour migration from the warm room into the cold roof structure, preventing interstitial condensation."
+    },
+    {
+      "slug": "thermal-bridging",
+      "term": "Thermal bridging",
+      "definition": "Heat loss through elements, typically rafters or joists, that conduct faster than the surrounding insulation. Rafters at 600 mm centres reduce the effective whole-assembly U-value by 10 to 15 percent compared to a perfectly continuous layer."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In a room-in-roof conversion, the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rafter" } }], "text": "rafters" },
+          { "type": "text", "text": " form both the structural frame and the insulated ceiling. The depth of the rafter constrains how much insulation can fit between them while maintaining the required ventilation void above. Most pre-1980 conversions used 100 to 125 mm rafters, which cannot achieve the Part L1B target of 0.18 W/m2K in a single layer. The standard solution is to fill the between-rafter void, maintain a 50 mm " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cold-roof-void" } }], "text": "cold roof void" },
+          { "type": "text", "text": " above, then add a second insulation layer below the rafters on counter battens before reboarding with plasterboard." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Is the breather membrane intact?" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "Before starting, confirm there is a breather membrane between the tiles and the top of the insulation. In conversions from before 2000, this is often absent. Without it, the cold roof void relies on ventilation through the tile gaps alone. If no membrane is present, the insulation thickness must be reduced to keep the void above 50 mm, or the roof covering must be lifted to install one. Check this before ordering materials." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mineral wool batts sized to the rafter centres (typically 400 mm or 600 mm), at a depth of (rafter depth minus 50 mm void). For 100 mm rafters, this is 50 mm batts." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "PIR board for the second layer below the rafters: 50 to 75 mm, sized to the room width. This layer provides the additional insulation thickness to reach U 0.18." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Vapour control layer membrane and VCL tape for sealing the warm face of the insulation assembly." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Counter battens, 25 x 50 mm, fixed horizontally across the rafter soffits at 400 to 600 mm centres to carry the second insulation layer and the plasterboard." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "12.5 mm plasterboard for the finished ceiling, fixed to the counter battens." }] }] }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Dust mask and cable check" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "Wear an FFP2 mask throughout: cutting mineral wool and old plasterboard generates dust. Use a cable detector before drilling or cutting into the existing ceiling lining. Rooflights and Velux windows are often wired through the rafter bays." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparation" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the existing ceiling lining. This is typically painted plasterboard or tongue-and-groove cladding. Expose the full underside of the rafters." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure the rafter depth and the clear space to the underside of the tile underlay. Calculate the maximum mineral wool thickness that leaves 50 mm of void: typically (rafter depth minus 50 mm)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut ventilation stop blocks at 75 mm depth to fit across the eaves end of each rafter bay. These hold the mineral wool back from the eaves and maintain the cold void connection from eaves to ridge." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fitting the insulation" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Push the mineral wool batts up between the rafters from below. They should friction-fit at the correct thickness, leaving the 50 mm void above. Do not compress the batts: compressed mineral wool loses insulation performance at the rate of roughly 0.5 percent per mm of over-compression." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Fix counter battens (25 x 50 mm) across the underside of the rafters at 600 mm centres. These create the space for the second PIR layer and break the " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridging" } }], "text": "thermal bridging" },
+            { "type": "text", "text": " pathway through the rafters." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit the PIR board layer flat against the counter battens, cutting each board to the room width. All joints should be butted tight with no gaps greater than 5 mm." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Hang the " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }], "text": "vapour control layer" },
+            { "type": "text", "text": " across the warm face of the PIR boards. Lap all joints by 100 mm and tape every lap and perimeter. Run the membrane down the gable walls and tape to the floor at the eaves junction." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Board over with 12.5 mm plasterboard fixed to the counter battens. The rafter line will be visible as a slight shadow line on the finished ceiling unless a skim coat levels it out." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done well looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The cold roof void runs unbroken from eaves to ridge above the insulation. The vapour control layer is taped continuously across the ceiling and down the walls to the floor. The room stays at a stable temperature throughout the night with significantly less heat loss than before. A thermal camera shows no cold stripes at the rafter positions." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done badly looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The mineral wool was compressed to fit more thickness into the rafter depth, eliminating the cold roof void. Condensation now forms on the underside of the tile underlay and drips through. The vapour control layer was left untaped at the gable junction, allowing warm air to bypass the membrane and condense inside the rafter bay. The counter battens were omitted to save material cost, and the rafter thermal bridges account for 15 percent of the residual heat loss." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Moisture staining on the ceiling shortly after insulating",
+              "cause": "Cold roof void is blocked at the eaves, trapping moisture in the rafter bay",
+              "fix": "Lift the first tile course above the eaves and confirm the void is clear. If the mineral wool has expanded into the void at the eaves, refit the stop blocks and trim the batt to restore the 50 mm clearance."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Plasterboard ceiling is cold to the touch despite insulation",
+              "cause": "Second PIR layer was omitted or the between-rafter mineral wool is thinner than calculated",
+              "fix": "Measure the mineral wool depth through the nearest ceiling rose hole. If the between-rafter depth is below the calculated target, add the second PIR layer on counter battens before boarding."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Cracking plasterboard at the wall-ceiling junction",
+              "cause": "Thermal movement in the rafter assembly is transmitting to the plasterboard where it abuts the wall",
+              "fix": "Fill the junction with flexible decorators' caulk rather than rigid filler. The junction between a sloped ceiling and a vertical wall is a movement joint in timber-framed roofs."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

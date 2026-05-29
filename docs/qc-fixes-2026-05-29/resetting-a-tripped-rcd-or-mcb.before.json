@@ -1,0 +1,196 @@
+{
+  "slug": "resetting-a-tripped-rcd-or-mcb",
+  "tutorialId": "cmpqukybx0002lwv4s5xtulq4",
+  "capturedAt": "2026-05-29T11:39:04.911Z",
+  "preFix": {
+    "title": "Resetting a tripped RCD or MCB",
+    "subtitle": "Identify which protective device has tripped, find the cause, and restore the circuit safely",
+    "excerpt": "How to reset a tripped RCD or MCB in a domestic consumer unit. Covers reading the consumer unit, identifying the cause of the trip, and the safe sequence for restoring individual circuits without masking a fault.",
+    "sourceNotes": "Traditional UK domestic electrical practice.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A tripped ",
+              "type": "text"
+            },
+            {
+              "text": "RCD",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpquky960000lwv4i3s03nbv"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " or ",
+              "type": "text"
+            },
+            {
+              "text": "MCB",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpquky9y0001lwv4w9126l1z"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " is the consumer unit doing its job. The correct approach is to find the cause before restoring, pressing the reset button without investigating can restore power to a dangerous circuit.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 1, Identify which device has tripped",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Open the consumer unit door. A tripped MCB will be in the 'off' or middle position, different manufacturers show this differently, but the tripped MCB will be visibly different from the others. A tripped RCD is larger (a wide rocker switch) and will have its rocker in the down or middle position. If an RCD has tripped, all MCBs downstream of it will also be dead, the RCD failure cuts everything it protects.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 2, For a single MCB trip: identify and remove the overload",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A single MCB trip is usually an overloaded socket ring or a faulty appliance. Unplug all appliances on the affected circuit. Push the MCB to full 'off' then back to 'on'. If it holds, plug appliances back in one at a time, the faulty one will trip the MCB when it is plugged in. If the MCB trips immediately with everything unplugged, the fault is in the fixed wiring and requires an electrician.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 3, For an RCD trip: isolate each circuit in turn",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "An RCD trip means a live-to-earth fault somewhere. Switch all individual MCBs downstream of the tripped RCD to 'off'. Try to reset the RCD. If it holds with all MCBs off, switch each MCB back on one at a time, pausing after each. When the RCD trips again, the last MCB you switched on is the faulty circuit. Leave that MCB off, investigate that circuit (often a damaged appliance or a water ingress at an outdoor socket).",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 4, If the RCD will not reset even with all MCBs off",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "An RCD that will not hold even with every downstream MCB switched off has either a fault in the fixed wiring between the RCD and the MCBs, or the RCD itself has failed. This is not a task for a householder to diagnose, call a qualified electrician. Do not attempt to bridge out or bypass the device.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Variations",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "RCBO consumer units: some modern consumer units have individual RCBOs (combined RCD and MCB) per circuit. A tripped RCBO is reset the same way as an MCB. The advantage is that a fault on one circuit does not knock out the others.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Monthly RCD test: press the test button on the RCD (not the reset button) monthly. The RCD should trip immediately. Press reset to restore. An RCD that does not trip on the test button has failed and must be replaced by an electrician.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    }
+  ]
+}

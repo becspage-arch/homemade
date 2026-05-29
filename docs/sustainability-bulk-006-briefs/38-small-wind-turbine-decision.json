@@ -1,0 +1,364 @@
+{
+  "slug": "small-wind-turbine-decision",
+  "title": "Deciding whether a small wind turbine is viable for your site",
+  "subtitle": "Assessing wind resource, planning constraints, and financial case before purchasing a turbine",
+  "excerpt": "A small domestic wind turbine (1 to 6 kW) produces economically useful output only on sites with a mean annual wind speed of at least 5 m/s at hub height. Most urban and suburban locations in England and Wales average 3 to 4.5 m/s, making the output insufficient to justify the capital cost. Turbines on exposed rural, coastal, and upland sites often perform well. The assessment process takes 30 to 60 minutes and avoids a common 8,000 to 25,000 pound mistake.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BEIS Wind Speed Database (NOABL) for UK site assessment. MCS MIS 3003 Installation Standard for small wind turbines. Renewable Energy Consumer Code guidance on turbine performance claims. Energy Saving Trust small wind turbine guidance 2024.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "noabl-wind-speed",
+      "term": "NOABL wind speed database",
+      "definition": "The Numerical Objective Analysis of Boundary Layer (NOABL) model, maintained by BEIS, which provides modelled mean annual wind speeds at 10 m, 25 m, and 45 m above ground level for any UK grid reference. Used as the starting point for domestic wind turbine site assessments. Available free online at ukwindspeed.co.uk and similar tools. NOABL gives a baseline figure only; local topography and shelter can raise or lower actual wind speeds significantly."
+    },
+    {
+      "slug": "capacity-factor",
+      "term": "Capacity factor",
+      "definition": "The ratio of a turbine's actual annual energy output to its theoretical maximum if it ran at full rated power continuously. A 2 kW turbine with a capacity factor of 20 percent produces 2 kW × 8,760 hours × 0.20 = 3,504 kWh per year. Domestic wind turbines on good UK sites typically achieve capacity factors of 15 to 30 percent. Claims of more than 30 percent for a non-coastal urban site should be treated with scepticism."
+    },
+    {
+      "slug": "mcs-wind-certification",
+      "term": "MCS certification (wind)",
+      "definition": "Certification under the Microgeneration Certification Scheme that a turbine model has met performance and safety standards and that the installer is accredited. Required to access the Smart Export Guarantee (SEG) for exporting surplus electricity to the grid. Turbines not installed by an MCS-accredited installer cannot claim SEG payments regardless of the turbine model."
+    },
+    {
+      "slug": "permitted-development-wind",
+      "term": "Permitted development (wind turbine)",
+      "definition": "Planning rules in England that allow a single freestanding domestic wind turbine to be installed without full planning permission, subject to conditions: maximum blade tip height 11.5 m, set back from the property boundary by a distance equal to the total height plus 10 percent, not in a conservation area or AONB, and subject to prior approval from the local planning authority. Different rules apply in Scotland, Wales, and Northern Ireland. Roof-mounted turbines in England always require full planning permission."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The most common reason domestic wind turbines fail to deliver a return on investment is that they were installed on sites with insufficient wind resource. A turbine's power output scales with the cube of wind speed: doubling the wind speed multiplies power output by eight. This means the difference between a 4 m/s and a 6 m/s site is not 50 percent more energy but approximately 3.4 times more energy. Site selection is the single most important factor, and it can be assessed before any money changes hands."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "NOABL gives a floor, not a ceiling"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "The "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "glossaryTooltip",
+                    "attrs": {
+                      "termSlug": "noabl-wind-speed"
+                    }
+                  }
+                ],
+                "text": "NOABL wind speed database"
+              },
+              {
+                "type": "text",
+                "text": " gives modelled wind speed at 10 m above ground level across a 1 km grid. It does not account for local shelter from trees, buildings, or hills within that grid square. The actual wind speed at a specific site can be 30 to 60 percent lower than the NOABL figure if significant sheltering is present. A site assessment visit by an MCS accredited installer, or a 3-month anemometer measurement, is necessary before committing to a turbine purchase."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 1: Screen the wind resource"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Look up the NOABL mean annual wind speed for the site grid reference at 10 m, 25 m, and 45 m. If the 10 m figure is below 4.5 m/s, the site is marginal at best for a 10 m pole turbine. If it is below 4 m/s, a grid-connected turbine is unlikely to be financially viable at current electricity prices regardless of turbine efficiency improvements."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Assess local shelter: any obstruction (tree, building, hill) within a distance of 10 times its own height upwind of the turbine hub creates turbulence and reduces yield. A 10 m tree 80 m upwind creates significant turbulence at the hub. An open field or coastal aspect with 360 degrees of clear fetch is ideal."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Calculate indicative annual output using the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "capacity-factor"
+                        }
+                      }
+                    ],
+                    "text": "capacity factor"
+                  },
+                  {
+                    "type": "text",
+                    "text": " estimate for the site's wind speed. For a 2 kW turbine at 5 m/s mean wind speed, a capacity factor of 18 percent gives 2 × 8,760 × 0.18 = 3,154 kWh per year. At 24 p/kWh this offsets 757 pounds of electricity per year. A 12,000 pound installation takes 16 years to reach payback, which is within the turbine's expected 20 to 25-year life but only just."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 2: Check planning constraints"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Confirm whether "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "permitted-development-wind"
+                        }
+                      }
+                    ],
+                    "text": "permitted development"
+                  },
+                  {
+                    "type": "text",
+                    "text": " applies to the site. Conservation areas, listed buildings, AONBs, and some article 4 direction areas require full planning permission. Even where permitted development applies, a prior approval application is required and the local authority has 28 days to object."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Consider the effect on neighbours. Turbine noise at 35 to 43 dB at 40 m is usually below background noise at rural sites, but can be heard in quiet conditions. "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "permitted-development-wind"
+                        }
+                      }
+                    ],
+                    "text": "Permitted development"
+                  },
+                  {
+                    "type": "text",
+                    "text": " sets a minimum setback, but neighbours within 200 m may still object on noise or visual grounds during the prior approval process."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 3: Check MCS certification and SEG access"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Only turbines installed by an "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "mcs-wind-certification"
+                }
+              }
+            ],
+            "text": "MCS-certified"
+          },
+          {
+            "type": "text",
+            "text": " installer and using an MCS-listed turbine model are eligible for Smart Export Guarantee (SEG) payments. The SEG rate varies by supplier but currently ranges from 3 to 24 p/kWh. For a turbine producing 3,000 kWh/year and exporting 40 percent, SEG adds 36 to 288 pounds per year. Check that the installer being quoted is currently MCS registered at mcscertified.com before signing a contract."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done well looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A rural smallholding in North Yorkshire with an exposed south-west aspect checks NOABL: 6.1 m/s at 10 m. No sheltering within 200 m upwind. Planning: not in a conservation area, sufficient boundary setback. An MCS installer visits and confirms the assessment with a 3-month anemometer reading averaging 5.8 m/s at 10 m. A 5 kW turbine is installed at 17,500 pounds. At a capacity factor of 25 percent, annual output is 10,950 kWh. At 24 p/kWh offset and 15 p/kWh SEG on exports, total annual value is approximately 2,300 pounds, giving a payback of 7.6 years."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done badly looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A householder in a Midlands suburb is sold a 2.5 kW turbine by a salesperson who cites the NOABL figure of 5.2 m/s without mentioning that the site is sheltered on three sides by 8 m trees and a row of houses. Actual measured annual output after installation is 900 kWh: 30 percent of the projected 3,000 kWh. At this output the turbine would take over 60 years to pay back the 9,500 pound installation cost. Planning consent was also not obtained before installation, resulting in an enforcement notice."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooter"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "NOABL wind speed shows 5.5 m/s but the site feels much calmer than expected",
+              "cause": "NOABL models open terrain at grid scale; local shelter from buildings or trees within the site is not captured",
+              "fix": "Commission a 3-month anemometer measurement at hub height before purchasing a turbine. Anemometer hire costs 500 to 1,000 pounds; this is money well spent versus a turbine that will underperform for 20 years. The logger data also provides bankable evidence for an MCS installer to produce a more accurate energy yield assessment."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Local planning authority objects to the prior approval application",
+              "cause": "Visual impact, noise concerns from neighbours, or a heritage designation not captured in the initial screening",
+              "fix": "Review the grounds of objection. Noise objections can sometimes be addressed with a revised turbine model with lower noise specification. Visual impact objections at the pre-approval stage are harder to overcome and may require a full planning application with a landscape and visual impact assessment. Consult a planning consultant experienced in renewable energy applications."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Turbine output is 40 percent lower than the installer projected",
+              "cause": "Performance projection was based on NOABL rather than measured wind data, or the turbine's swept area is obstructed by new growth since installation",
+              "fix": "Review the original energy yield assessment and compare the assumed wind speed to measured output data from the inverter. If the projection was based on uncorrected NOABL data and the installer was MCS-certified, raise a complaint via the MCS Complaint Resolution Service. If new tree growth has reduced the wind resource, raising the pole height or trimming trees within the setback zone may partially recover output."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

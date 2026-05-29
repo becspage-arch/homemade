@@ -1,0 +1,165 @@
+{
+  "slug": "mvhr-decision-guide",
+  "title": "Is mechanical ventilation with heat recovery right for your home?",
+  "subtitle": "Assessing whether MVHR makes sense in a retrofit before you specify a system",
+  "excerpt": "Mechanical ventilation with heat recovery can reclaim 85 to 95 percent of the heat from extracted air, but only in a well-sealed building. In a typical older UK house with an air permeability above 5 m3/h.m2, duct leakage and envelope infiltration cut that figure to 40 to 60 percent and stretch the payback beyond 20 years. This guide sets out the three tests your house needs to pass before MVHR is the right choice.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIBSE AM13:2000 and ASHRAE 62.2 for ventilation rates. Passivhaus Institut ductwork guidance for specific fan power limits. BRE BR478 Whole House Ventilation for heat recovery efficiency measurement. gov.uk Part F (2021) for background ventilation requirements.",
+  "approximateCostGbp": 3500,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "mvhr",
+      "term": "MVHR",
+      "definition": "Mechanical ventilation with heat recovery. A centralised unit extracts stale air from wet rooms and kitchens, passes it through a heat exchanger, and transfers up to 95 percent of that heat to fresh incoming air before distributing it to habitable rooms."
+    },
+    {
+      "slug": "specific-fan-power",
+      "term": "Specific fan power (SFP)",
+      "definition": "The electrical power consumed by a ventilation fan divided by the airflow it moves, in W/(l/s). A well-designed MVHR system runs at 0.5 to 1.0 W/(l/s). Systems above 2.0 W/(l/s) consume more electricity than they save in heat."
+    },
+    {
+      "slug": "heat-recovery-efficiency",
+      "term": "Heat recovery efficiency",
+      "definition": "The fraction of heat from extracted air that is transferred to incoming fresh air. Measured under standard conditions at balanced airflows. Manufacturer figures of 90 percent assume balanced flows and well-sealed ductwork; installed performance is typically 10 to 15 percentage points lower."
+    },
+    {
+      "slug": "air-permeability",
+      "term": "Air permeability",
+      "definition": "The uncontrolled air leakage rate of a building envelope at 50 Pa pressure difference, measured by a blower-door test and expressed in m3/h.m2. New Part L dwellings target 8 or below; Passivhaus targets 0.6 or below."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A correctly installed " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mvhr" } }], "text": "MVHR" },
+          { "type": "text", "text": " system provides controlled ventilation to every habitable room and recovers most of the heat that would otherwise leave with the stale air. In a house built or retrofitted to near-Passivhaus airtightness, the running cost of the fans is offset by the heat saved within two to four heating seasons. In a standard Victorian terraced house, the same system will almost certainly cost more to run than it saves." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "When MVHR is the wrong choice" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "Do not specify MVHR if your home has an " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "air-permeability" } }], "text": "air permeability" },
+              { "type": "text", "text": " above 5 m3/h.m2 (a typical post-1960 UK house sits at 8 to 12), if ductwork cannot be routed without major disruption to the building fabric, or if the building is a listed structure where penetrations and duct routes are not feasible. In these cases, a combination of trickle vents, intermittent extract fans, and targeted draughtproofing gives a better return per pound." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The three tests" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Airtightness test. Commission a blower-door test before specifying the system. If the result is above 5 m3/h.m2, the priority is air-sealing the envelope first. MVHR is only worth specifying once the building is tight enough to force most ventilation air through the unit rather than through gaps in the fabric." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ductwork feasibility. A whole-house MVHR system needs a central unit (typically in a plant room, loft, or utility space) plus rigid or semi-rigid ductwork to every kitchen, bathroom, bedroom, and living room. Measure the duct routes before committing. Duct runs above 10 m per branch increase pressure drop and raise the specific fan power above acceptable limits." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Thermal performance of the unit. Check the declared " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heat-recovery-efficiency" } }], "text": "heat recovery efficiency" },
+            { "type": "text", "text": " at your design airflow rate. British Standards require units to be tested to EN 13141-7. Look for efficiency above 85 percent at the balanced flow rate your home requires (typically 0.3 to 0.5 l/s per m2 of floor area for UK residential)." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sizing and commissioning" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A correctly sized system balances supply and extract airflows within 10 percent of each other. When they are out of balance, the building sits at a slight positive or negative pressure. This pushes extra air in or out through gaps in the fabric and cuts the effective " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "specific-fan-power" } }], "text": "specific fan power" },
+          { "type": "text", "text": " below the design value. Commissioning should measure all supply and extract grille flows with a balometer, adjust the fan speed, and produce a written record." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Maintenance" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "MVHR filters require replacement every six to twelve months depending on local air quality. Neglected filters increase static pressure, raise fan power, and reduce heat recovery efficiency by 15 to 25 percent. Most units have a filter-change reminder built into the control panel. The heat exchanger core itself should be cleaned every three to five years according to the manufacturer's schedule." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done well looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The building was tested to below 3 m3/h.m2 before the system was specified. Ductwork runs are under 8 m per branch and are insulated in the loft zone to prevent heat loss before the air reaches the rooms. Commissioning records confirm supply and extract are within 5 percent of each other. Filters are replaced on schedule. The house stays at comfortable humidity and CO2 levels below 1,000 ppm without opening windows in winter." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done badly looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The system was installed in a leaky 1970s semi without prior airtightness work. The fans run continuously but most ventilation air enters through gaps in the walls and windows rather than through the supply grilles. Heat recovery efficiency is effectively near zero because the extracted air is replaced by cold infiltration rather than by the conditioned supply air. The electricity bill for the fans adds to the energy cost rather than offsetting it." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Rooms feel stuffy despite the system running",
+              "cause": "Supply grilles are blocked by furniture or filters are overdue for replacement",
+              "fix": "Check all supply grilles are unobstructed by at least 300 mm on all sides. Replace the filters if the filter-change indicator is lit. After filter replacement, allow 24 hours for CO2 levels to normalise."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Unit is noticeably loud in the nearest room",
+              "cause": "Ductwork is undersized, increasing velocity and noise at the grilles, or the unit is mounted rigidly without anti-vibration mounts",
+              "fix": "Check duct diameters against the design specification. Each 100 mm round duct should carry no more than 25 l/s to stay below 3 m/s velocity. If the unit is rigid-mounted, fit rubber anti-vibration bushings between the unit bracket and the structure."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Condensation dripping from the ductwork in the loft",
+              "cause": "Uninsulated supply ducts in the loft space are below dew point",
+              "fix": "Wrap all supply ductwork in the loft zone with 25 mm closed-cell foam duct insulation, vapour-sealed at all joints. Extract ducts in the loft also benefit from insulation to retain the heat being returned to the unit."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

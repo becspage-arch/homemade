@@ -1,0 +1,327 @@
+{
+  "slug": "battery-recycling-and-disposal",
+  "title": "Recycling and disposing of batteries correctly",
+  "subtitle": "Where different battery types go and why landfill is not an option for any of them",
+  "excerpt": "UK law prohibits the disposal of batteries in general household waste. All portable batteries must be collected separately for recycling under the Batteries and Accumulators Regulations 2009. A single lithium-ion battery in landfill can contaminate 60,000 litres of groundwater with cobalt, nickel, and lithium. All five battery types commonly found in domestic households have designated collection routes that are free of charge.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "waste-reduction",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "UK Batteries and Accumulators Regulations 2009 (SI 2009/890). DEFRA batteries collection guidance 2024. Valpak and CBA battery take-back scheme data. Environment Agency contamination guidance for battery types.",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "lithium-battery",
+      "term": "Lithium battery",
+      "definition": "A battery using lithium chemistry, either lithium primary (non-rechargeable, found in coin cells and some AA batteries) or lithium-ion secondary (rechargeable, found in phones, laptops, power tools, and e-bikes). Both types must be collected separately. Damaged or swollen lithium batteries carry a fire risk and must be handled with care."
+    },
+    {
+      "slug": "alkaline-battery",
+      "term": "Alkaline battery",
+      "definition": "A primary (non-rechargeable) battery using zinc and manganese dioxide. The most common household battery type (AA, AAA, C, D, 9V). Contains mercury, zinc, and manganese. Banned from landfill in the UK since 2010. Collected at supermarkets, hardware shops, and HWRC sites."
+    },
+    {
+      "slug": "lead-acid-battery",
+      "term": "Lead-acid battery",
+      "definition": "A rechargeable battery using lead plates in sulphuric acid electrolyte. Used in vehicles, UPS systems, and older solar installations. Highly recyclable (95 percent recycling rate in the UK). Must be disposed of as hazardous waste at a registered HWRC or via a motor factor who will take the old battery when a new one is purchased."
+    },
+    {
+      "slug": "battery-directive",
+      "term": "Battery Directive",
+      "definition": "The EU Battery Directive (2006/66/EC), implemented in UK law via the Batteries and Accumulators Regulations 2009, which requires producers to fund collection and recycling of batteries and bans mercury- and cadmium-containing batteries. Post-Brexit UK regulations maintain equivalent obligations."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "battery-directive"
+                }
+              }
+            ],
+            "text": "Battery Directive"
+          },
+          {
+            "type": "text",
+            "text": " requires UK retailers selling more than 32 kg of batteries per year to take back used batteries free of charge. This means almost every supermarket and hardware shop has a collection point. Despite this, WRAP estimates only 45 percent of portable batteries are returned for recycling. The other 55 percent go to landfill illegally."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Lithium battery fire risk"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "A swollen, punctured, or physically damaged "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "glossaryTooltip",
+                    "attrs": {
+                      "termSlug": "lithium-battery"
+                    }
+                  }
+                ],
+                "text": "lithium battery"
+              },
+              {
+                "type": "text",
+                "text": " should be placed in a sealed metal container (a biscuit tin works) and taken to an HWRC as soon as possible. Do not transport it in a bag with other flammable materials. Lithium battery fires caused by thermal runaway cannot be extinguished with water and require a class D or sand-based extinguishing agent."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Battery types and collection routes"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Standard portable batteries ("
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "alkaline-battery"
+                        }
+                      }
+                    ],
+                    "text": "alkaline"
+                  },
+                  {
+                    "type": "text",
+                    "text": " AA, AAA, C, D, 9V): collect in a household tub and drop at any supermarket collection point or HWRC. Also accepted at most GP surgeries, leisure centres, and libraries that have opted in to collection schemes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lithium coin cells (CR2032, CR2016 etc.): collected at supermarket battery points and HWRC. Tape the terminals with clear tape before depositing to prevent short circuits against other batteries in the collection bin."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rechargeable lithium-ion packs (phone, laptop, power tool): take to an HWRC or a major electronics retailer. Do not post damaged packs. Royal Mail bans lithium batteries above certain watt-hour limits by post, and prohibits damaged cells entirely."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Vehicle and UPS "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "lead-acid-battery"
+                        }
+                      }
+                    ],
+                    "text": "lead-acid batteries"
+                  },
+                  {
+                    "type": "text",
+                    "text": ": take to the HWRC hazardous waste bay, or return to a motor factor when buying a replacement. A 10-litre bucket is a safe way to transport a sealed battery that may be leaking."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "E-bike and e-scooter batteries: most brands must take these back by law. Ask the brand or the shop where you bought them for a return label or drop-off point."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Reducing battery waste at source"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The best way to cut battery waste is to switch from single-use alkaline to rechargeable NiMH batteries in high-drain devices such as remote controls, clocks, and torches. One rechargeable AA replaces around 500 alkaline batteries over its 10-year life. NiMH batteries work the same as alkaline in most devices and cost far less per unit of stored energy over their lifetime."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done well looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A small labelled collection box in the kitchen catches all used portable batteries as they come out of devices. The box is emptied every two months at the nearest supermarket collection point. All high-drain devices (remote controls, keyboard, mouse) have been switched to rechargeable NiMH. The household now disposes of fewer than 10 single-use batteries per year, down from 80."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done badly looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Used batteries sit in a kitchen drawer for two years and are eventually binned because a trip to the HWRC is inconvenient. A swollen laptop battery goes in the black bin and the compactor punctures it, causing a fire in the vehicle. Both are illegal under the Batteries Regulations."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooter"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Supermarket collection bin is full and will not accept any more batteries",
+              "cause": "High-demand collection points fill up between collection rounds",
+              "fix": "Use the Recycle Now website (recyclenow.com) to find all battery collection points within 2 miles. Most areas have multiple points at libraries, GP surgeries, and leisure centres in addition to supermarkets."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "HWRC will not accept an e-bike battery",
+              "cause": "Some HWRCs have limited storage for large lithium batteries or staff may not be trained to accept them",
+              "fix": "Contact the HWRC operator in advance to confirm they accept e-bike batteries. If not, contact the original manufacturer or importer who has a statutory take-back obligation under the Battery Directive. Most brands offer a postal return service for large batteries."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "NiMH rechargeable batteries drain faster than expected in a device",
+              "cause": "The device is a low-drain device (wall clock, smoke alarm) where NiMH performs poorly due to its higher self-discharge rate compared to alkaline",
+              "fix": "Use low-self-discharge (LSD) NiMH batteries (often marketed as 'Ready to Use' or 'Pre-charged') in low-drain devices. These have a self-discharge rate of 15 to 20 percent per year, comparable to standard alkaline batteries."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

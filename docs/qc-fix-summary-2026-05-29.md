@@ -396,3 +396,89 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 11:39:05
+
+Generated: 2026-05-29T11:39:05.516Z
+
+Processed: 50
+PASS: 47
+STILL_BLOCKED: 3
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 41 |
+| grade-level-strict | 21 |
+
+## Still BLOCKED (sample 20)
+
+- hanging-a-feature-wall-with-paste-the-wall-paper: grade-level-strict
+- repairing-a-dripping-compression-fitting: grade-level-strict
+- repairing-a-rotted-door-bottom-rail: grade-level-strict
+
+---
+
+## Run at 12:07:04
+
+Generated: 2026-05-29T12:07:04.110Z
+
+Processed: 66
+PASS: 66
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 12:46:40
+
+Generated: 2026-05-29T12:46:40.819Z
+
+Processed: 3999
+PASS: 3970
+STILL_BLOCKED: 29
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 105 |
+| hero-missing | 57 |
+| voice-violation | 2 |
+| ingredient-amount-missing | 1 |
+| em-dash-in-content | 1 |
+
+## Still BLOCKED (sample 20)
+
+- anaerobic-digestion-at-home: grade-level-strict
+- battery-recycling-and-disposal: grade-level-strict
+- cooking-oil-and-fat-disposal: voice-violation
+- demand-response-smart-tariff: grade-level-strict
+- gravity-fed-spring-water-supply: grade-level-strict
+- ground-mounted-solar-pv: grade-level-strict
+- hazardous-household-waste-disposal: grade-level-strict
+- hugelkultur-raised-bed: grade-level-strict
+- mains-drip-irrigation-with-timer: grade-level-strict
+- mvhr-decision-guide: grade-level-strict
+- passive-house-retrofit-principles: hero-missing
+- perimeter-floor-insulation-cold-bridge: hero-missing
+- pir-board-flat-roof-warm-deck: hero-missing
+- pound-cake-classic: hero-missing
+- rainwater-first-flush-diverter: hero-missing
+- root-cellar-food-storage: hero-missing, grade-level-strict
+- rye-sourdough-100-percent: hero-missing
+- salambo-kirsch-cream-choux: hero-missing
+- small-wind-turbine-decision: hero-missing
+- solar-diverter-vs-battery: hero-missing, grade-level-strict

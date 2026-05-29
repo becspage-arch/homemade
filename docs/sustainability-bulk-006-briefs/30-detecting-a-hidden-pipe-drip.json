@@ -1,0 +1,173 @@
+{
+  "slug": "detecting-a-hidden-pipe-drip",
+  "title": "Detecting a hidden water leak in domestic pipes",
+  "subtitle": "Using the water meter and systematic isolation to find slow leaks in supply and drain pipes",
+  "excerpt": "A dripping tap wastes 15 litres per day; a slow internal pipe leak can waste 100 litres or more without any visible water. The water meter zero-consumption test identifies whether a leak exists; systematic isolation of circuits locates which branch is leaking; damp mapping and infrared thermal photography find the exact position. Most domestic supply pipe leaks can be traced in a day without breaking into walls.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIBSE TM62 Leak Detection for the guidance methodology. OFWAT Water UK household leakage survey 2022. Water UK 'Fix a Leak' guidance 2024 for domestic meter testing protocols.",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "thermal-imaging-camera", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "water-meter",
+      "term": "Water meter",
+      "definition": "A device fitted to the mains supply at the boundary of a property that measures consumption in cubic metres (1 cubic metre = 1,000 litres). Most meters have a low-flow indicator (a small triangle or dial) that rotates when there is any flow, even very small leaks."
+    },
+    {
+      "slug": "minimum-night-flow",
+      "term": "Minimum night flow",
+      "definition": "The minimum rate of water consumption in a building during the night period (01:00 to 05:00) when occupants are asleep and no appliances are running. Any flow above zero during this period indicates a leak unless a cistern or appliance is filling legitimately."
+    },
+    {
+      "slug": "supply-pipe",
+      "term": "Supply pipe",
+      "definition": "The mains-pressure pipe that runs from the water company's boundary stopcock to the property. The household is responsible for maintenance of the supply pipe from the boundary to the internal stop valve. Supply pipe leaks are often buried underground and can go undetected for years."
+    },
+    {
+      "slug": "stopcock",
+      "term": "Stopcock",
+      "definition": "A valve that controls flow in a water pipe. The internal stopcock (usually under the kitchen sink) isolates the household supply from the incoming mains. Individual circuit stopcocks isolate specific branches such as the WC, kitchen, or outdoor taps."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hidden pipe leaks in UK homes account for an estimated 20 to 25 percent of household water bills. A 2 mm continuous drip in a supply pipe wastes around 100 litres per day, adding roughly 30 to 40 pounds per year to the water bill and potentially causing damp damage to floors and structural elements. The first step is confirming a leak exists using the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "water-meter" } }], "text": "water meter" },
+          { "type": "text", "text": " test before spending time on localisation." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Responsible for the pipe or not?" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "The household is responsible for the " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "supply-pipe" } }], "text": "supply pipe" },
+              { "type": "text", "text": " from the boundary stopcock to the internal stop valve. A leak in this section is the household's responsibility to repair, but the water company may offer a Leak Allowance on the bill if the leak is detected and repaired promptly. For a leak before the boundary stopcock, contact the water company: this is their pipe." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Confirm a leak with the meter test" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Locate the water meter (usually in the pavement outside, under a small plastic cover). Note the current reading." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn off all taps, appliances, and anything that uses water in the house. Ensure no cisterns are filling." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Check the low-flow indicator (small triangle or star on the meter face). If it is rotating, a leak is present. Leave the water off for 30 minutes and take a second reading. If the " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "minimum-night-flow" } }], "text": "minimum night flow" },
+            { "type": "text", "text": " test confirms consumption during the 30-minute period, a leak is confirmed." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2: Locate the leak branch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Close the internal " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stopcock" } }], "text": "stopcock" },
+            { "type": "text", "text": " (under the kitchen sink). Repeat the meter test. If the indicator stops, the leak is inside the house. If it continues, the leak is in the supply pipe between the boundary and the internal stopcock." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If the leak is inside, isolate circuits one by one: close the WC cistern valve, the bath/shower isolator, and the kitchen branch. After each closure, check whether the indicator stops. The circuit that makes the indicator stop when closed contains the leak." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If the leak is in the supply pipe between boundary and house, look for soft wet ground along the pipe route (usually straight from the boundary to the house wall entry) or for unusual grass growth in a dry period. A damp patch 300 to 500 mm below the surface may be visible with a thermal camera in cold weather." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3: Find the exact leak position" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once the branch is isolated, run your hand slowly along exposed pipes in the circuit. A slow drip feels cold and wet. For pipes within walls, a thermal imaging camera shows cooler patches where water is soaking into plasterboard or masonry. Mark the position on the wall before calling a plumber or before opening the wall yourself." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done well looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The meter test confirms a 150 litre per day leak. Isolation locates it to the WC branch. Visual inspection reveals a slow drip from a compression joint on the cistern supply pipe. The joint is retightened with an adjustable spanner and the leak stops. The meter reading the following morning shows zero overnight consumption. Total investigation time: one hour." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done badly looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An unusual water bill prompted a visual inspection of visible pipework, which showed nothing. The supply pipe in the garden was not checked. The wet patch in the flower bed 2 m from the house was attributed to rain. The leak continued for a further 18 months and the water company eventually identified it during a meter audit. The household had overpaid by approximately 400 pounds on water bills during this period." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Meter indicator rotates even when internal stopcock is closed",
+              "cause": "The leak is in the supply pipe between the boundary and the internal stopcock, which is the household's responsibility but outside the internal pipework",
+              "fix": "Trace the pipe route from the boundary stopcock to the house. Look for soft ground, lush grass, or damp patches along the route. Contact a drainage leak detection specialist who uses acoustic or gas tracer methods if the pipe cannot be located by visual inspection."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Meter indicator stops when isolating a circuit, but no visible leak on that circuit",
+              "cause": "Leak is within a plastered wall, under a floor, or inside a washing machine or dishwasher on that circuit",
+              "fix": "Disconnect the appliance supply hoses and cap them temporarily. Re-test the meter. If the indicator stops with appliances disconnected, the fault is in the appliance inlet valve or internal pipework. Check the appliance first before opening walls."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Bill is unusually high but meter test shows no leak",
+              "cause": "The high bill is from actual use, not a leak",
+              "fix": "Review consumption month by month using smart meter data or billing records. A sudden increase in February is unusual and suggests a leak or a change in household behaviour. A summer peak is typically garden watering. Use an energy monitor with water sensor clip on the supply pipe (if available) to log 24-hour consumption profiles."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "slug": "cooking-oil-and-fat-disposal",
+  "title": "Disposing of cooking oil and fat correctly",
+  "subtitle": "Why fats and oils must never go down the drain and what to do with them instead",
+  "excerpt": "Fats, oils, and grease poured down kitchen drains are the primary cause of sewer blockages in the UK. Thames Water alone spends over 18 million pounds per year clearing fat-based blockages from the sewer network. Cooking oil can be recycled into biodiesel, collected at HWRC sites, or reused in composting and bird feeding. Solidified fat must go in the general waste, not down the drain.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "waste-reduction",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Water UK 'Bin It, Don't Block It' campaign data 2024. Thames Water fatberg statistics 2023. Renewable Fuels Association used cooking oil biodiesel data. WRAP food waste and cooking oil guidance.",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "fatberg",
+      "term": "Fatberg",
+      "definition": "A mass of congealed fat, wet wipes, and other non-flushable materials that accumulates in sewers when fats poured down drains solidify on contact with cooler pipe walls and bind with other debris. Fatbergs can block sewer pipes entirely and require water jetting and manual excavation to remove. The Whitechapel fatberg (2017) weighed 130 tonnes and took 8 weeks to remove."
+    },
+    {
+      "slug": "used-cooking-oil",
+      "term": "Used cooking oil (UCO)",
+      "definition": "Vegetable, sunflower, rapeseed, or olive oil that has been used for frying or cooking and is no longer suitable for re-use. Classified as a waste by-product but also a valuable feedstock for biodiesel production. UK biodiesel producers pay collection companies to collect UCO; many collection points offer free sealed collection containers."
+    },
+    {
+      "slug": "cold-saponification",
+      "term": "Cold saponification",
+      "definition": "A chemical reaction between fat and alkali (such as sodium hydroxide) at room temperature that produces soap and glycerol. Surplus cooking fat and oil can be processed into usable bar soap through cold saponification as an alternative to disposal. Requires care in handling lye (sodium hydroxide)."
+    },
+    {
+      "slug": "grease-trap",
+      "term": "Grease trap",
+      "definition": "A tank or insert fitted in the kitchen drain that slows flow velocity, allowing grease to float to the surface and be trapped rather than entering the main sewer. Standard in commercial kitchens; available as small under-sink versions for domestic use. Requires emptying every 1 to 4 weeks depending on use volume."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fat poured down a kitchen drain at 80 degrees Celsius solidifies to a wax-like consistency within 30 cm of the plughole as it meets the cooler temperature of the drain pipe. Over months, accumulated fat coats the inside of pipes, narrowing the bore and eventually causing a blockage. At sewer level, this fat combines with wet wipes and other debris to form a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fatberg" } }], "text": "fatberg" },
+          { "type": "text", "text": ". The problem is entirely preventable: every fat disposal route except the drain is free and takes under a minute." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Hot water does not help" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "Pouring boiling water after fat does not prevent blockages. The water cools rapidly in the pipe and the fat resolidifies further down the drain, often at a pipe joint or bend. Washing-up liquid thins fat in the sink but does not prevent it from re-congealing in the pipe or sewer. The only effective method is to not put fat or oil down the drain at all." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Disposal routes by fat type" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Used vegetable oil (large quantities, regular deep-frying): collect in a sealed container and donate to a " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "used-cooking-oil" } }], "text": "used cooking oil" },
+            { "type": "text", "text": " biodiesel collection point. Many councils and local biodiesel producers offer free 5-litre collection containers. One litre of UCO produces approximately 0.97 litres of biodiesel and is worth around 50 to 70 pence per litre as a raw material." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Used oil (small quantities, occasional pan frying): allow to cool completely. Pour into a sealed container (the original oil bottle or a jam jar) and place in the general waste. Never pour into compost bins as oil forms a waterproof barrier over materials and inhibits decomposition." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Solid fats (lard, dripping, coconut oil): allow to solidify completely in the pan at room temperature, then scoop into a sealed container or bag and place in the general waste. Solidified fat is not hazardous waste. Alternatively, use small amounts of clean animal fat as winter bird fat block material mixed with bird seed." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Surplus cooking oil (alternative disposal): make soap using " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cold-saponification" } }], "text": "cold saponification" },
+            { "type": "text", "text": ". 1 kg of oil combined with the correct weight of sodium hydroxide (lye) produces approximately 1.4 kg of bar soap. Requires accurate scales and careful handling of lye, which is corrosive." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fitting a grease trap" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A domestic " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "grease-trap" } }], "text": "grease trap" },
+          { "type": "text", "text": " inserted between the kitchen sink waste and the drain pipe captures grease before it enters the drain. Cost is 15 to 40 pounds for a standard under-sink model. It must be emptied weekly if the household cooks with significant fat volumes. The collected grease goes in the general waste or to a UCO collection point. A well-maintained grease trap prevents the need for annual drain jetting, which costs 80 to 150 pounds when called out professionally." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done well looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 5-litre sealed container sits next to the hob and receives all surplus cooking oil after every frying session. Every 6 to 8 weeks the container is dropped at a local UCO collection point at the entrance to the HWRC. Solid fat from roasting is scraped into a jar while warm and placed in the bin once solid. The household has not had a blocked drain in the 3 years since adopting this habit and no longer needs to buy drain-unblocking products." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done badly looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Roasting tray fat is tipped into the kitchen sink after every Sunday roast. Over 18 months, the kitchen drain develops a slow drainage problem. A plumber is called and discovers a 40 cm fat plug in the soil pipe junction below floor level; clearing it costs 120 pounds. The same household also pours small amounts of used frying oil directly into the compost bin, which prevents decomposition of the surrounding material and attracts vermin." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Kitchen drain runs slowly but has not blocked completely",
+              "cause": "Partial fat build-up narrowing the pipe bore without fully blocking it",
+              "fix": "Pour a kettle of boiling water down the drain to soften the fat, followed by a cup of bicarbonate of soda and a cup of white vinegar. Leave 15 minutes, then flush with another kettle of boiling water. This dissolves soft fat deposits but does not address hard fatbergs further down the system. If the problem returns within a month, the blockage is in the sewer-level pipe and requires a drain jet."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "No UCO collection point is accessible nearby",
+              "cause": "Rural or low-density areas may have fewer biodiesel collection points",
+              "fix": "The HWRC will accept used cooking oil as a liquid waste at most sites. Seal in a plastic bottle. Some councils also collect UCO from kerbside on the same round as glass; check the council's recycling pages. For small household quantities, cooling and binning in sealed containers is the simplest fallback."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Cold saponification soap is soft and will not harden",
+              "cause": "Oil-to-lye ratio was slightly off, or the soap was not kept warm during saponification",
+              "fix": "Check the oil weight and the lye calculator figure again. Wrap the soap mould in towels immediately after pouring to insulate it and allow the exothermic reaction to complete. Leave undisturbed for 48 hours before cutting. Soft soap can be rebatched: chop it, melt with a small amount of water in a slow cooker, and pour into moulds again."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,328 @@
+{
+  "slug": "passive-house-retrofit-principles",
+  "tutorialId": "cmpqwjmfh0003psv4ouqcrail",
+  "capturedAt": "2026-05-29T12:45:41.712Z",
+  "preFix": {
+    "title": "Understanding the EnerPHit retrofit standard",
+    "subtitle": "What the Passivhaus retrofit path requires and when it makes sense",
+    "excerpt": "EnerPHit is the Passivhaus Institute's certification standard for deep retrofits. It sets a primary energy demand target of 25 kWh/m2 per year for heating and cooling, achievable through component-by-component upgrades over several years rather than a single whole-house renovation. Fewer than 200 UK homes are certified to EnerPHit, but its principles inform cost-effective retrofit sequencing even without formal certification.",
+    "sourceNotes": "Passivhaus Institut EnerPHit criteria document 2023. BRE and AECB for UK EnerPHit case study data. CIBSE TM54 for energy modelling conventions. gov.uk Heat Buildings Strategy 2021 for retrofit context.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The ",
+              "type": "text"
+            },
+            {
+              "text": "EnerPHit",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpqwjmck0000psv487n902x0"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " standard uses a whole-building energy model. Every upgrade is run through Passivhaus Planning Package (PHPP) software. This tracks how each measure affects the final ",
+              "type": "text"
+            },
+            {
+              "text": "primary energy demand",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpqwjmec0002psv437898kh9"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " before any work is done. You know in advance how much each measure contributes rather than guessing after the fact.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "infoPanel",
+          "attrs": {
+            "tone": "info",
+            "title": "Two certification pathways"
+          },
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "EnerPHit has two pathways. The energy demand pathway requires the whole building to reach 25 kWh/m2 per year before certification. The component pathway allows certification measure by measure, with each component (wall, roof, windows, etc.) independently reaching the EnerPHit component standard as it is upgraded. The component approach suits phased retrofits over three to ten years.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "The key requirements",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Airtightness: ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "air permeability",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "glossaryTooltip",
+                          "attrs": {
+                            "termId": "cmpqwj8310003xgv4ig92pek8"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "text": " below 1.0 m3/h.m2 at 50 Pa. This is eight times tighter than standard UK Building Regulations. Every penetration and junction must be systematically air-sealed before the final blower-door test.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Thermal envelope: all wall, floor, and roof elements should approach ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "thermal bridge free construction",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "glossaryTooltip",
+                          "attrs": {
+                            "termId": "cmpqwjmdm0001psv4hgqkfamb"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "text": ", meaning all junctions have a psi-value below 0.01 W/mK. Window reveals, floor-wall junctions, and penetrations all need careful detailing. 3D thermal modelling software is often used to check these details.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Ventilation: mechanical ventilation with heat recovery (MVHR) to keep air quality high without relying on gaps in the fabric. The building must be tight enough that the MVHR handles most of the air exchange.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Window performance: triple glazing with a whole-window U-value below 0.85 W/m2K for the energy demand pathway. The component pathway is less strict, requiring below 1.4 W/m2K.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "When EnerPHit principles are useful without certification",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Even without formal certification, the EnerPHit design process helps avoid common retrofit mistakes. A PHPP model at the outset shows the value of each upgrade. In a typical 1930s semi, wall insulation, roof insulation, and airtightness together account for about 80 percent of the achievable heating reduction. Windows and floor insulation cover the rest. This makes it easy to see that spending 30,000 pounds on windows before tackling the walls gives poor returns.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Finding a designer",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "PHPP modelling requires software training. The Passivhaus certification body in the UK maintains a register of certified designers and consultants. For an EnerPHit project, expect to pay for an initial PHPP assessment (typically 500 to 1,500 pounds) that will rank all measures by cost-per-kWh-saved and identify the sequencing for the phased component approach. This is most useful for projects above 40,000 pounds of planned retrofit spend.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What done well looks like",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A PHPP model was run before any work started. The first phase addressed the roof (the highest-value measure per pound) and air-sealing. The second phase addressed the walls. MVHR was specified only after the building was confirmed tight enough to make heat recovery effective. The blower-door result after each phase is recorded and compared to the model prediction to validate the work. The household heating bill reduces by a predictable percentage after each phase.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What done badly looks like",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "New windows were fitted first because they were the most visible change. A PHPP model would have shown they give only 8 percent of the achievable heating reduction. The old boiler was kept for 12 more years because it still worked. The well-insulated house stayed on a 78 percent efficient gas boiler long after a heat pump would have cut running costs to around 80 pounds a year.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Troubleshooter",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "content": [
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Re-run the model with actual occupancy data: hours of heating, thermostat settings, domestic hot water use, and plug loads. PHPP uses standard occupancy by default; calibrated models narrow the gap between predicted and measured performance significantly.",
+                "cause": "Occupancy patterns and internal heat gains differ from the standard PHPP assumptions",
+                "symptom": "PHPP model predicts 25 kWh/m2 but post-retrofit bills are 60 percent higher than the model"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Run the blower-door test with an assistant inside to identify leakage points using a smoke pencil or hand over each penetration. Each unsealed pipe sleeve or cable grommet can account for 0.05 to 0.10 m3/h.m2 on a typical semi.",
+                "cause": "Penetrations through the airtightness layer (cables, pipes, structural fixings) have not all been sealed",
+                "symptom": "Blower-door result is 1.8 m3/h.m2 after airtightness work, not the EnerPHit target of 1.0"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "The component pathway allows dispensation for constrained elements under the EnerPHit criteria. Apply for a dispensation via the certifier, documenting why the standard cannot be achieved and what mitigation has been applied.",
+                "cause": "A party wall or structural floor cannot be insulated to the required depth without disproportionate disruption",
+                "symptom": "Component approach certification stalls because one element cannot meet the EnerPHit component standard"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "ADVANCED"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "hero-missing",
+      "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "path": "excerpt",
+      "snippet": "Target"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "path": "body > orderedList[3] > listItem[1] > paragraph[0] > text"
+    }
+  ]
+}

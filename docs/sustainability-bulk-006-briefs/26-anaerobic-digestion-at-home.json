@@ -1,0 +1,417 @@
+{
+  "slug": "anaerobic-digestion-at-home",
+  "title": "Setting up a small-scale anaerobic digester",
+  "subtitle": "Fermenting food waste in a sealed vessel to produce biogas and nutrient-rich digestate",
+  "excerpt": "A 50 to 200 litre home anaerobic digester converts food waste, garden biomass, and cardboard into biogas (60 to 70 percent methane) and liquid digestate. A household generating 1 kg of food waste per day can produce 40 to 60 litres of biogas daily in summer, equivalent to around 0.5 kWh, enough to boil a kettle three to four times. The digestate is a concentrated liquid fertiliser.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "WRAP food waste treatment options guidance. Practical Action technical brief on small-scale biogas digesters. Homebiogas and Puxin commercial systems for domestic-scale performance data. BSI BS EN 17304:2020 for biogas safety in domestic settings.",
+  "approximateCostGbp": 200,
+  "paybackYears": null,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "aquarium-pump",
+      "isOptional": false
+    },
+    {
+      "slug": "bucket-10l",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "anaerobic-digestion",
+      "term": "Anaerobic digestion",
+      "definition": "The breakdown of organic material by bacteria in the absence of oxygen, producing biogas (methane and CO2) and a nutrient-rich liquid digestate. The process occurs naturally in sealed, warm, wet environments such as swamps, landfill sites, and cattle stomachs."
+    },
+    {
+      "slug": "biogas",
+      "term": "Biogas",
+      "definition": "The gas produced by anaerobic digestion, typically 55 to 70 percent methane and 30 to 45 percent CO2. Methane is a combustible fuel with a calorific value of 9.9 kWh/m3. One cubic metre of raw biogas at 60 percent methane delivers around 6 kWh of heat."
+    },
+    {
+      "slug": "digestate",
+      "term": "Digestate",
+      "definition": "The liquid residue remaining after anaerobic digestion. Contains ammonium nitrogen, phosphates, and potassium from the original feedstock in plant-available form. Diluted 1:10 to 1:20 with water, it is an effective liquid fertiliser for fruit and vegetable crops."
+    },
+    {
+      "slug": "hydraulic-retention-time",
+      "term": "Hydraulic retention time (HRT)",
+      "definition": "The average time organic material spends inside the digester before being displaced by new input. Domestic-scale digesters typically operate at 20 to 40 days HRT. Shorter HRT means more throughput but less complete digestion; longer HRT produces more gas per unit of feedstock."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": ""
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "anaerobic-digestion"
+                }
+              }
+            ],
+            "text": "Anaerobic digestion"
+          },
+          {
+            "type": "text",
+            "text": " works best at 35 to 40 °C (mesophilic range) or 55 to 60 °C (thermophilic range). In a UK climate, outdoor digesters are productive from April to October and very slow in winter unless insulated or heated. The simplest domestic system is an insulated sealed tank with a gas collection bladder, fed daily with blended food waste and emptied monthly of digestate."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Gas safety"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Biogas contains methane, which is flammable and explosive at 5 to 15 percent concentration in air. Site the digester outdoors or in a well-ventilated outbuilding. Never open or inspect the vessel near a naked flame or electrical spark. Gas collection and cooking equipment must be designed for biogas (not natural gas without modification) and fitted with an appropriate burner to combust the remaining CO2 fraction. Do not store a gas collection bladder indoors."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The simplest DIY setup"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A 100 to 200 litre food-grade sealed barrel with a 50 mm inlet port fitted with a twist-cap at the top, and a 50 mm outlet port near the base for digestate removal."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A gas outlet at the top connected to a 25 to 50 litre inner-tube or purpose-made biogas bladder for storage. The bladder inflates as gas is produced and deflates as it is used."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "An aquarium pump with airline tubing to agitate the slurry daily. Bubbling recirculates gas through the slurry to mix it without adding oxygen. Some designs use a paddle stirrer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A thermal cover to hold warmth in cold weather: old duvets, rigid foam board, or a second outer barrel packed with mineral wool."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Commercial digesters are simpler and safer"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Purpose-designed domestic digesters (Homebiogas, Biogas4UK) include properly tested seals, pressure relief valves, and burner units. A DIY barrel system requires careful attention to gas-tightness, pressure, and burner matching. If in any doubt about gas-system construction, buy a commercial unit rather than building from scratch."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Starting the digester"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Inoculate with active microbial culture: fresh cattle slurry, active septic tank liquor, or the digestate from a running digester. Add 10 to 20 litres of inoculant to the vessel before the first feed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add blended food waste (liquidised with water to a ratio of 1 part waste to 1 part water by weight). The "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "hydraulic-retention-time"
+                        }
+                      }
+                    ],
+                    "text": "hydraulic retention time"
+                  },
+                  {
+                    "type": "text",
+                    "text": " determines the daily feed rate. For a 100 litre vessel at 30 days HRT, add 3 to 4 litres of slurry per day."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Allow 2 to 4 weeks for the microbial population to establish before expecting consistent "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "biogas"
+                        }
+                      }
+                    ],
+                    "text": "biogas"
+                  },
+                  {
+                    "type": "text",
+                    "text": " production. Gas from the first two weeks may be low in methane and should be allowed to vent rather than collected."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Use the aquarium pump to agitate the slurry once per day by recirculating the headspace gas through the slurry. This prevents a surface crust from blocking gas release and keeps the bacterial population evenly distributed."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Using the digestate"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Collect "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "digestate"
+                }
+              }
+            ],
+            "text": "digestate"
+          },
+          {
+            "type": "text",
+            "text": " from the outlet port using the 10 litre bucket. Dilute 1 part digestate to 10 to 20 parts water before applying to plants. The diluted liquid is high in ammonium nitrogen and phosphorus: apply during the growing season, not in winter when the ground is waterlogged."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done well looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The gas bladder inflates consistently each day from May to September. The daily gas production matches the expected yield for the feed volume. Digestate diluted 1:15 with water produces visible crop growth responses on nitrogen-hungry vegetables within one week of application. The system runs without blockages and the slurry stays liquid and pumpable."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done badly looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Too much citrus peel and coffee grounds in the feed raised the acidity (pH dropped below 6.0), inhibiting the methanogenic bacteria and halting gas production. The digester was not agitated and a floating crust of solids formed across the entire liquid surface, blocking gas release for two weeks. Undiluted digestate was applied directly to seedling beds and caused nitrogen scorch on young plants."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooter"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Gas production stopped after two weeks of normal operation",
+              "cause": "Acid inhibition: too much easily fermentable sugar or citrus in the feed has dropped the pH below 6.5",
+              "fix": "Stop feeding for one week. Add 100 g of sodium bicarbonate dissolved in 500 ml of water to the digester to raise pH. Resume feeding with lower proportions of citrus and high-sugar materials. Test pH monthly using a pool test kit."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Digester produces gas but it does not burn cleanly at the burner",
+              "cause": "Methane content is below 50 percent because the digestion is incomplete or the gas is contaminated with excess CO2 and hydrogen sulphide",
+              "fix": "Check the feed carbon-to-nitrogen ratio. A ratio below 20:1 produces excess CO2. Add more carbon-rich material (shredded cardboard, straw) to the feed mix. A simple CO2 scrubber (a container of iron filings that the gas passes through) removes hydrogen sulphide."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Slurry becomes solid and cannot be pumped from the outlet",
+              "cause": "Feedstock contained too much fibrous material that has matted into a solid plug",
+              "fix": "Blend all feedstock thoroughly before adding. Solid fibrous materials (coarse garden waste, corn husks) should be excluded from domestic digester feedstock. Break up the existing blockage by adding 5 litres of warm water and agitating vigorously through the inlet port."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

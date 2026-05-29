@@ -1,0 +1,351 @@
+{
+  "slug": "humanure-composting",
+  "title": "Composting human waste in a hot compost system",
+  "subtitle": "Using a composting toilet and a dedicated thermophilic heap to safely process humanure",
+  "excerpt": "Human waste composted at 55 °C for a minimum of three consecutive days, or at 50 °C for two weeks, is considered safe for application to non-food areas under UK and WHO guidelines. A composting toilet combined with a dedicated hot compost system is the standard approach for off-grid properties. The finished compost takes 12 to 24 months to fully stabilise and is used for trees, hedging, and non-edible ornamental areas only.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "WHO Guidelines for the Safe Use of Wastewater, Excreta and Greywater Vol. 4 (2006) for pathogen reduction targets. Joseph Jenkins 'The Humanure Handbook' 4th edition for hot composting protocols. BS 8525-1:2010 for greywater systems (context for off-grid sanitation). DEFRA composting exemption guidance for personal use.",
+  "approximateCostGbp": 80,
+  "paybackYears": null,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "compost-thermometer",
+      "isOptional": false
+    },
+    {
+      "slug": "garden-fork",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "humanure",
+      "term": "Humanure",
+      "definition": "Human faeces and urine composted using thermophilic hot composting to produce a stable, pathogen-reduced soil amendment. The term distinguishes hot-composted human waste from raw sewage sludge, which requires industrial treatment."
+    },
+    {
+      "slug": "pathogen-log-reduction",
+      "term": "Pathogen log reduction",
+      "definition": "A measure of how many times pathogens are reduced by a factor of ten during treatment. WHO guidelines for compost reaching log 6 reduction (99.9999 percent destruction of faecal coliforms) require sustained temperatures of 55 °C or above."
+    },
+    {
+      "slug": "cover-material",
+      "term": "Cover material",
+      "definition": "Dry carbonaceous material (sawdust, wood chip, straw, shredded cardboard) added over each deposit in a composting toilet to suppress odour, control moisture, and maintain the carbon-to-nitrogen balance for hot composting."
+    },
+    {
+      "slug": "thermophilic-phase",
+      "term": "Thermophilic phase",
+      "definition": "The hot active stage of composting in which microbial activity raises the core temperature above 45 °C. For humanure, the heap must sustain 55 °C at every point (including the outer layer) for three consecutive days to achieve adequate pathogen reduction."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": ""
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "humanure"
+                }
+              }
+            ],
+            "text": "Humanure"
+          },
+          {
+            "type": "text",
+            "text": " composting suits off-grid properties and smallholdings without mains sewage. The key requirement is temperature. The heap must reach and hold a thermophilic phase at 55 °C or above before the compost is safe to use. Cold composting does not meet this standard."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "thermophilic-phase"
+                }
+              }
+            ],
+            "text": "thermophilic phase"
+          },
+          {
+            "type": "text",
+            "text": " at 55 °C or above before the material can be safely used. Cold composting human waste is not an alternative and does not meet the safety standard."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Legal position in the UK"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Composting human waste for personal use on your own land is covered by the composting exemption under the Environmental Permitting (England and Wales) Regulations. The compost cannot be sold or given away. It must not be applied to ground within 50 m of a watercourse, and must not be applied to land used for growing food crops. Some local authorities have additional requirements; check with your Environmental Health Officer before establishing a system."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The composting toilet"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A composting toilet collects faeces with a bulking agent. Urine is diverted to a soak-away or used as diluted fertiliser. It is sterile in a healthy person and rich in nitrogen, phosphorus, and potassium. Each deposit is covered at once with "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cover-material"
+                }
+              }
+            ],
+            "text": "cover material"
+          },
+          {
+            "type": "text",
+            "text": " at roughly two parts cover to one part deposit by volume. This keeps the carbon-to-nitrogen balance right and stops odour from the toilet."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Illness and medication"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Do not add waste from anyone undergoing cancer treatment, antibiotic therapy, or who has an active gastrointestinal infection to the hot compost system. Cytotoxic drugs do not decompose at compost temperatures. Pharmaceutical residues from prescription medications pass through the system and must be disposed of through clinical waste routes, not composting."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Building the hot compost system"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Build a dedicated two-bay compost system using pallets or timber. Bay 1 receives fresh material from the toilet; bay 2 holds material that has passed through one hot phase and is maturing. Each bay should be at least 1 m x 1 m x 1 m to generate sufficient thermal mass."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Layer toilet contents from bay 1 with additional cover material, kitchen scraps, and fresh garden waste to reach a carbon-to-nitrogen ratio of 25:1 to 30:1. Toilet material is nitrogen-rich; additional brown material is nearly always needed to balance it."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Monitor the core temperature daily with the compost thermometer. Record the date when temperature first exceeds 55 °C. The heap must stay above 55 °C for three consecutive days. Turn the outer material to the core and record a new three-day count."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Achieving the pathogen reduction target"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The WHO standard for safe use requires a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pathogen-log-reduction"
+                }
+              }
+            ],
+            "text": "pathogen log reduction"
+          },
+          {
+            "type": "text",
+            "text": " achieved by turning the heap at least three times, each time recording the temperature after turning. After turning, the new core must reach 55 °C again within 24 hours for the three-day count to restart. Keep a written temperature log with dates and readings. This log documents that the sanitation standard has been met."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done well looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The core temperature log shows three consecutive turning cycles each reaching 55 to 65 °C. After 12 months in bay 2, the material is dark brown, crumbly, and smells of forest floor rather than waste. It is applied around fruit trees at 100 mm depth and forked in. No flies, no odour, no observable problems in three growing seasons."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done badly looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The heap was built too small at 0.5 m x 0.5 m and never heated above 38 °C because the volume was insufficient to retain heat. Material was applied to a vegetable bed after six months without a temperature log. Weed seeds germinated in the compost indicating the thermophilic phase was never reached."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooter"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Core temperature peaks at 45 °C and will not reach 55 °C",
+              "cause": "Heap is too small, too wet, or the carbon-to-nitrogen balance is too high in carbon",
+              "fix": "Add fresh nitrogen-rich material (fresh grass clippings, diluted urine at 20:1 water to urine) and water to bring moisture to the wrung-sponge level. If the heap is under 1 m3, consolidate with additional material from the toilet before re-measuring."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Composting toilet smells strongly of ammonia",
+              "cause": "Insufficient cover material added after each deposit, or the toilet has urine diversion set incorrectly and urine is accumulating",
+              "fix": "Double the cover material dose per deposit. Check the urine diverter is directing urine to the separate container and not the main chamber. A well-managed system has no noticeable odour at the toilet."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Heap becomes waterlogged and stops heating after rainfall",
+              "cause": "The compost bay has no rain cover and excess water has driven out oxygen, creating anaerobic conditions",
+              "fix": "Cover the active bay with a loose-fitting lid or tarpaulin that excludes rain but allows air. Fork the waterlogged material to aerate it and add a 100 mm layer of dry wood chip or sawdust to absorb excess moisture."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

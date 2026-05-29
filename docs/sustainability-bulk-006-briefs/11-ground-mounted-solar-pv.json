@@ -1,0 +1,168 @@
+{
+  "slug": "ground-mounted-solar-pv",
+  "title": "Installing a ground-mounted solar PV array",
+  "subtitle": "Planning and permitting a solar array in a garden when the roof is unsuitable",
+  "excerpt": "Ground-mounted solar PV makes sense when a roof is north-facing, heavily shaded, or structurally unsuitable for panels. A 4 kWp ground array on a south-facing slope at 35 degrees generates around 3,600 kWh per year in central England, virtually identical to the same array on a south-facing roof. Planning permission is normally required unless the array falls within permitted development limits.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Town and Country Planning (Permitted Development) Order 2015 for solar permitted development limits. MCS Planning Standards MIS 3002 for ground arrays. Ofgem SEG scheme rules 2024. PVGIS EU solar irradiation tool for UK yield estimates.",
+  "approximateCostGbp": 6500,
+  "paybackYears": 11,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "tape-measure-8m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "peak-kilowatt",
+      "term": "Peak kilowatt (kWp)",
+      "definition": "The rated output of a solar PV system under standard test conditions (1,000 W/m2 irradiance, 25 °C cell temperature). A 4 kWp system produces 4,000 watts at peak. Actual annual yield in the UK is roughly 900 kWh per kWp on a south-facing array."
+    },
+    {
+      "slug": "smart-export-guarantee",
+      "term": "Smart Export Guarantee (SEG)",
+      "definition": "The UK government scheme under which licensed electricity suppliers must offer a tariff for surplus solar electricity exported to the grid. SEG rates in 2024 ranged from 1p to over 15p per kWh depending on the supplier and tariff."
+    },
+    {
+      "slug": "mcs-certification",
+      "term": "MCS certification",
+      "definition": "Microgeneration Certification Scheme. An MCS-certified installer is required for any solar installation that wants to access the Smart Export Guarantee. The scheme certifies both installers and products."
+    },
+    {
+      "slug": "specific-yield",
+      "term": "Specific yield",
+      "definition": "The annual energy output of a solar PV system per installed kWp, expressed in kWh/kWp. In the UK, south-facing panels at 30 to 40 degrees tilt achieve 900 to 1,000 kWh/kWp per year in the south and 800 to 900 kWh/kWp in the north."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A well-sited ground array achieves a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "specific-yield" } }], "text": "specific yield" },
+          { "type": "text", "text": " of 900 to 1,050 kWh per " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "peak-kilowatt" } }], "text": "peak kilowatt" },
+          { "type": "text", "text": " per year in southern England, matching a roof installation on a south-facing pitch at 30 to 40 degrees. A ground array lets you pick the best tilt, direction, and row spacing to cut shading losses. You are not limited by the existing roof." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Permitted development limits" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "In England, ground-mounted solar in a domestic garden falls within permitted development if: the array is not in a conservation area, the panels are not higher than 4 m, no panel projects more than 200 mm from the roof or racking when on a building, and the ground footprint does not exceed 9 m2. Most practical arrays are larger than 9 m2 and will require a full planning application. Scotland and Wales have different thresholds." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Site assessment" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Plot the shadows from nearby trees, fences, and buildings at the winter solstice (21 December) using a solar path calculator. A ground array is unlikely to pay back if it is shaded for more than two hours a day in December and January. UK irradiance is already at its winter low of 0.6 to 0.8 kWh/m2/day in those months." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure the available garden area. A 4 kWp system with standard 400 Wp panels occupies around 20 m2 of panel area plus inter-row spacing. At a 35-degree tilt, the inter-row spacing to avoid self-shading at the winter solstice is approximately 2.5 times the panel height, giving a total ground footprint of around 50 to 60 m2." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Assess the cable route from the array to the consumer unit. The DC cable run should be under 30 m to avoid excessive resistive losses. If the consumer unit is in a detached garage or at the opposite end of the house, budget for the cable route before committing to the array location." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Structural options" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ground screw foundations: helical steel screws driven into the ground with a handheld torque wrench. No concrete, no excavation, fully removable. Suitable for most UK garden soils that are not waterlogged or rocky. Each screw takes 30 to 45 minutes to install and costs around 60 to 80 pounds per screw including the post adapter." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Concrete pad foundations: 300 mm deep concrete pads with cast-in threaded anchors. Permanent, suitable for all soil types, but requires excavation and 28 days curing before the frame can be loaded. Used where ground screws cannot achieve adequate torque resistance." }] }] }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "DNO notification and Part P" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "Systems above 3.68 kW single-phase require a G98 or G99 application to your distribution network operator (DNO) before export is permitted. Electrical installation must be carried out or certified by a Part P registered electrician. Panels and inverters must be on the MCS product list for " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mcs-certification" } }], "text": "MCS certification" },
+              { "type": "text", "text": " and access to the " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "smart-export-guarantee" } }], "text": "Smart Export Guarantee" },
+              { "type": "text", "text": "." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done well looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Planning permission was obtained before any foundations were installed. The array is sited with no shading before 10:00 and after 14:00 on the winter solstice. The inverter is sited in a ventilated space away from direct sun. An MCS-certified installer completed and registered the electrical installation. SEG registration is in place and exporting tariff payments began within one billing cycle of commissioning." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done badly looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The array was installed without checking for partial shading from a neighbouring hedge that grows 1 m taller each year. By year three, the hedge shades two panels from 11:00 to 13:00, and because those panels are in series with unshaded panels, the whole string output drops by 40 percent during peak generating hours. Planning permission was not sought; enforcement notice received 18 months after installation." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Array generates 30 to 40 percent less than the installer's estimate in the first year",
+              "cause": "Shading or soiling was underestimated at the design stage",
+              "fix": "Log the inverter output in 15-minute intervals. Compare the generation curve to the expected curve for an unshaded array at the same location using PVGIS. If the generation dips at specific times, a nearby obstruction is causing partial shading. Power optimisers on each panel reduce the impact of partial shading by disconnecting each panel from the series string independently."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Ground screws are pulling out of the soil after two years",
+              "cause": "Soil is a high-clay content that shrinks in summer, reducing grip around the screw helix",
+              "fix": "Use longer screws (1.2 m rather than 0.8 m) to reach below the shrink-swell zone. If pulling has already started, re-torque and fit a locking collar or replace with concrete pad foundations."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Inverter trips out on high DC voltage on sunny winter days",
+              "cause": "Too many panels in series for the inverter's maximum input voltage at low cell temperatures",
+              "fix": "Check the panel open-circuit voltage at -10 °C using the manufacturer's temperature coefficient. If the string voltage exceeds the inverter maximum input, reduce the string by one panel or replace the inverter with one rated for the actual string voltage."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

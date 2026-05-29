@@ -1,0 +1,364 @@
+{
+  "slug": "furniture-repair-decision",
+  "title": "Deciding whether to repair or replace furniture",
+  "subtitle": "A structured approach to assessing what is worth fixing, what is not, and how to fix it well",
+  "excerpt": "Manufacturing a new sofa generates 90 to 120 kg of CO2; a dining chair generates 15 to 25 kg. A skilled repair or reupholster job extends the functional life by 10 to 20 years and generates a fraction of that footprint. The decision framework turns on three questions: is the frame structurally sound, is the repair technically within reach, and does the repaired cost undercut replacement quality at the same price point?",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "waste-reduction",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "WRAP Furniture and Flooring resource efficiency guidance 2023. Ellen MacArthur Foundation circular economy furniture case studies. Furniture Reuse Network annual report 2023. Carbon Trust furniture lifecycle data.",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "screwdriver-set-phillips-slot",
+      "isOptional": false
+    },
+    {
+      "slug": "drill-driver",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mortise-and-tenon",
+      "term": "Mortise and tenon joint",
+      "definition": "A woodworking joint where a tenon (projecting tongue) on one piece fits into a mortise (socket) in the other. The primary structural joint in chairs and tables. A loose mortise and tenon joint can be reglued with PVA or hide glue; a broken tenon requires replacement of the component or a skilled repair splice."
+    },
+    {
+      "slug": "reupholstery",
+      "term": "Reupholstery",
+      "definition": "The process of stripping a padded furniture piece to its frame and replacing the webbing, foam, batting, and fabric covering. Extends functional life of sound frames by 10 to 20 years. Cost ranges from 150 to 800 pounds for a standard armchair depending on fabric choice and the reupholsterer's labour rate."
+    },
+    {
+      "slug": "furniture-reuse-network",
+      "term": "Furniture Reuse Network",
+      "definition": "A UK charity network of around 400 furniture reuse organisations that collect unwanted furniture from households, refurbish it where needed, and sell or donate it to people on low incomes. Most organisations offer free collection services from residential addresses and accept sofas, chairs, tables, and white goods in resaleable condition."
+    },
+    {
+      "slug": "hide-glue",
+      "term": "Hide glue",
+      "definition": "A traditional woodworking adhesive made from animal collagen. Unlike modern PVA or epoxy, hide glue is reversible when reheated with steam or hot water, making joints easy to disassemble for repair without damaging the wood. The standard adhesive in antique and high-quality furniture; old hide-glued joints can be cleaned and re-glued indefinitely."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most furniture that ends up in skips or at the HWRC fails because of one repairable fault: a broken joint, worn upholstery fabric, a damaged veneer, or missing hardware. The frame itself, often solid wood, is sound and worth more than the cost of a new piece of similar quality. The repair decision starts with the frame, not the visible damage."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Donation before disposal"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "If a piece is not worth repairing but is still functional, the "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "glossaryTooltip",
+                    "attrs": {
+                      "termSlug": "furniture-reuse-network"
+                    }
+                  }
+                ],
+                "text": "Furniture Reuse Network"
+              },
+              {
+                "type": "text",
+                "text": " offers free collection from residential addresses across the UK. Items must be clean, structurally sound, and free of tears or stains. Sofas and upholstered furniture must have original fire-safety labels attached to be accepted. Find the nearest organisation at frn.org.uk."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Frame assessment: the go / no-go decision"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Check all joints for structural integrity. Push and pull each leg and back rail of chairs and tables. A "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "mortise-and-tenon"
+                        }
+                      }
+                    ],
+                    "text": "mortise and tenon"
+                  },
+                  {
+                    "type": "text",
+                    "text": " joint that is loose but intact is repairable with a 15-minute glue injection. A joint where the tenon has sheared through the wood requires a skilled splice or component replacement and may not be worth pursuing on low-cost furniture."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Look for structural wood defects. Cracks along the grain in legs or stretchers covering more than 30 percent of the cross-section are a failure risk that cannot be reliably repaired in load-bearing parts. Surface cracks in non-structural areas such as tabletops or panel backs can be filled."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Check upholstered pieces for frame condition by pressing on all surfaces and rocking the frame. A soft spot in the seat base indicates broken webbing or a failed spring unit. Both are repairable; webbing costs 3 to 5 pounds per metre and a spring replacement kit for a standard sofa costs 30 to 60 pounds in materials."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Apply the economic test: if the repair costs less than 70 percent of a new piece of similar quality, it is worth doing. Include materials plus labour, or materials plus your time. For pieces with sentimental value, this test does not apply."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common repairs and skill requirements"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Loose joints (chairs, tables): inject PVA or "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "hide-glue"
+                        }
+                      }
+                    ],
+                    "text": "hide glue"
+                  },
+                  {
+                    "type": "text",
+                    "text": " into the joint, clamp or strap tightly while curing, and leave 24 hours. Cost: under 5 pounds. DIY skill level: beginner. Success rate in solid wood furniture: over 90 percent."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reupholstery of chair seat pads: a drop-in seat pad (the removable cushion on a dining chair) can be "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "reupholstery"
+                        }
+                      }
+                    ],
+                    "text": "reupholstered"
+                  },
+                  {
+                    "type": "text",
+                    "text": " in 30 minutes per chair with a staple gun, new foam, and 0.5 m of upholstery fabric. Cost: 15 to 25 pounds per chair in materials. Full sofa reupholstery requires professional work."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Missing or broken hardware (handles, drawer runners, hinges): source from architectural salvage yards or online suppliers. Most standard hardware sizes are catalogued and available as spare parts. A matching drawer runner costs 3 to 8 pounds; a replacement hinge for a cabinet door costs 1 to 3 pounds."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done well looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 30-year-old oak dining chair set with loose joints is assessed: all 4 chairs have sound frames but loose back rails. Two hours of disassembly, cleaning, and re-gluing with PVA restores all 4 chairs to structural soundness for a material cost of 4 pounds. The fabric seat pads, which were worn, are reupholstered with 2 m of new linen fabric at 22 pounds per metre. Total cost: 50 pounds. Equivalent new chairs of comparable quality would cost 120 to 160 pounds per chair. Carbon saving versus replacement: approximately 80 to 100 kg CO2."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done badly looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A sound oak sideboard with a damaged veneer panel goes to the HWRC because it looks past repair. Fixing it would have taken 30 minutes and 3 pounds of iron-on veneer tape. A sofa with a good frame but worn fabric is replaced rather than reupholstered. The household assumed reupholstery cost more than a new sofa; a local quote would have been 280 pounds against 450 pounds for the cheapest equivalent new sofa."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooter"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Glued joint re-opens within weeks of repair",
+              "cause": "Old glue was not fully removed before re-gluing, or the joint was not clamped under sufficient pressure during curing",
+              "fix": "Disassemble the joint again. Remove all old glue with a chisel, hot water (for hide glue), or sandpaper. The wood must be clean and dry before applying fresh adhesive. Clamp with ratchet straps or proper furniture clamps at sufficient pressure to close the joint completely. Leave 24 hours before loading the joint."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Cannot find a matching fabric for reupholstery of a piece in a set",
+              "cause": "The original fabric is discontinued or the dye lot has changed",
+              "fix": "For a set where all pieces need to match, reupholster the whole set in a new complementary fabric rather than trying to match one piece. Alternatively, use the opportunity to introduce a contrasting but intentionally different fabric on the damaged piece. Mismatched sets are acceptable in most domestic contexts."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Furniture Reuse Network will not collect because the sofa lacks a fire-safety label",
+              "cause": "UK regulations require upholstered furniture sold second-hand to carry the original fire-safety label; charity collectors cannot accept items without it",
+              "fix": "Post the sofa on Freecycle or Facebook Marketplace as a free item for collection. Private sale or donation between individuals is not subject to the same fire-safety label requirement as commercial resale. If genuinely stuck, the HWRC will accept it, though some councils charge a bulky waste fee."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

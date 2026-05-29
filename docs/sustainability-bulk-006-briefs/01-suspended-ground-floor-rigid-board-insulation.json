@@ -1,0 +1,216 @@
+{
+  "slug": "suspended-ground-floor-rigid-board-insulation",
+  "title": "Insulating a suspended timber ground floor with rigid boards",
+  "subtitle": "Fitting PIR boards between joists from above",
+  "excerpt": "A suspended timber ground floor with no insulation loses roughly 15 percent of a home's heat through the boards. Fitting PIR boards between the joists from above brings the U-value from around 1.0 down to 0.25 W/m2K for a typical 100 mm board depth. The job suits a one-room weekend with a helper.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Part L1B (2022) for the 0.25 W/m2K suspended floor target. CIBSE Guide A for heat-loss calculations. Energy Saving Trust floor insulation guidance 2024.",
+  "approximateCostGbp": 420,
+  "paybackYears": 6,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "utility-knife", "isOptional": false },
+    { "slug": "saw-hand", "isOptional": false },
+    { "slug": "drill-driver", "isOptional": false },
+    { "slug": "spirit-level-1200mm", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "A measure of how fast heat passes through a building element. Expressed in W/m2K. Lower is better: a well-insulated wall might be 0.18; a single-glazed window is around 5.8."
+    },
+    {
+      "slug": "pir-board",
+      "term": "PIR board",
+      "definition": "Polyisocyanurate rigid foam insulation board. High lambda value of 0.022-0.023 W/mK means you need less depth for the same U-value than mineral wool. Typically foil-faced on both sides."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane or foil layer that slows the passage of water vapour through a building assembly, preventing interstitial condensation forming within the structure."
+    },
+    {
+      "slug": "thermal-bridging",
+      "term": "Thermal bridging",
+      "definition": "A point or line in a building assembly that conducts heat faster than the surrounding insulation. Floor joists are linear thermal bridges through an otherwise-insulated floor."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A suspended timber ground floor sits above a ventilated void. Without insulation, heat travels through the boards and into that cold air below at a rate that can account for 15 percent or more of a whole-house heat loss. In a 1930s semi with 60 m2 of ground floor, bringing the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }], "text": "U-value" },
+          { "type": "text", "text": " from 1.0 to 0.25 W/m2K with 100 mm of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pir-board" } }], "text": "PIR board" },
+          { "type": "text", "text": " saves roughly 1,200 kWh per year. Payback depends on the initial state of the floor but runs 5 to 8 years." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Access method: from above or below" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "Access from above (lifting floorboards) is the standard domestic approach. Access from below via a crawl space is faster if the void is at least 600 mm deep and the boarding will not come up cleanly. This tutorial covers the from-above method." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Materials per 10 m2 of floor:" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "PIR rigid insulation board, 100 mm thick (or two 50 mm layers if 100 mm boards are harder to source), foil-faced. Quantity: floor area plus 10 percent wastage." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Timber battens, 25 x 50 mm, screwed to joist sides to carry the board at the right height. One batten per joist bay, cut 10 mm shorter than the joist spacing." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Expanding foam for sealing gaps around pipes and at the perimeter." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Foil tape for sealing board joints if relying on the foil facing as a vapour check." }] }] }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Eye and dust protection" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "Eye protection and a dust mask (FFP2) for cutting rigid foam boards. The cut foam produces fine particles. Long sleeves for handling foil edges." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparation" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lift the floorboards in one room. Use a bolster or stiff scraper to prise the first board at a nail point. Modern boards are often tongue-and-groove: cut the tongue along the long edge with a utility knife before lifting." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure the joist depth and spacing. In most pre-1970 UK timber-frame construction, joists are at 400 to 450 mm centres. Confirm the actual centre-to-centre distance and the clear gap between joists." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check for pipes or cables in the joist bays. Cold-water pipes below floorboards must remain accessible. If they are present, cut the PIR board in two pieces per bay and fit around the pipe rather than trapping it." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ensure the sub-floor void is ventilated. The ventilation bricks or airbricks in the external wall must remain clear. Do not block them with insulation. The void stays ventilated to remove moisture from the ground; only the floor deck is insulated." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fitting the boards" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut the PIR board to fit snugly between the joists. The board should sit within 5 mm of each joist face; a loose fit allows a convection current that bypasses the insulation. Use a hand saw or score-and-snap with a utility knife and a straight edge." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Position the board at the correct height. For a 100 mm board in a 175 mm joist, the top face of the board should sit 75 mm below the top of the joist so the boarding can be reinstated at the original level. Screw battens to the joist sides to carry the board at this height." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Seal the perimeter gaps with expanding foam applied in a single thin bead. Do not over-apply: the foam will compress the board if it expands against both joist and sub-floor. Cap at 15 mm bead width." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Seal board-to-board joints with foil tape. The foil face of the PIR board acts as a light " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }], "text": "vapour control layer" },
+            { "type": "text", "text": " when the joints are taped. This is not the same as a full vcl but reduces vapour drive from the warm room into the cold sub-floor." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Addressing thermal bridges" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The joists themselves remain as linear " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridging" } }], "text": "thermal bridges" },
+          { "type": "text", "text": " through the floor. For a 50 mm joist at 400 mm centres, the bridging effect reduces the whole-floor U-value improvement by about 15 percent compared to a perfectly continuous insulation layer. Across a 60 m2 floor this is still a significant saving; the bridge is acceptable." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reinstating the floor" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Relay the floorboards and renail. Ring-shank nails or screws give a more stable deck than the original cut nails, especially if the boards are old and the nail holes are oversize. Sand and refinish if required." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done well looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Boards fit snugly in each joist bay with joints taped and perimeter foam-sealed. The sub-floor void is still ventilated via the airbricks. The floorboards above are reinstated at the original level with no bounce or creak. Walking over the floor in winter, you notice the boards are warm underfoot rather than cold." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done badly looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Boards are cut loose and drop below the battens over time, leaving an air gap between insulation and floorboard. The airbricks are blocked during the works and not reopened, causing moisture to accumulate in the void and eventually rot the joists. No vapour tape means condensation forms on the cold foil face of the board and drips into the void." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Floor feels cold in patches after insulating",
+              "cause": "Boards cut too narrow, leaving air gaps at joist faces",
+              "fix": "Lift the relevant boards, recut the insulation pieces 5 mm wider, and re-fit. Foam-seal the perimeter of each new piece."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Musty smell coming from below the floor after insulating",
+              "cause": "Airbricks are blocked or the void ventilation has been inadvertently reduced",
+              "fix": "Lift a board and check whether airbrick openings are clear of insulation or expanding foam. Clear any obstruction. The sub-floor void must remain ventilated."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Boards cannot be relaid at the original level",
+              "cause": "Battens fitted too high, so the board plus insulation stack is proud of the joist top",
+              "fix": "Remove the battens and refit 5 to 10 mm lower. Measure the full stack height before cutting: (joist depth minus board thickness minus 2 mm clearance) equals the batten drop."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

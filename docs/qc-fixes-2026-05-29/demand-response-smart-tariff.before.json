@@ -1,0 +1,361 @@
+{
+  "slug": "demand-response-smart-tariff",
+  "tutorialId": "cmpqwk32j0002ncv46ovmd5ok",
+  "capturedAt": "2026-05-29T12:44:55.154Z",
+  "preFix": {
+    "title": "Shifting demand with time-of-use electricity tariffs",
+    "subtitle": "Using smart tariffs and flexible loads to reduce electricity bills without reducing consumption",
+    "excerpt": "Time-of-use electricity tariffs charge as little as 7p/kWh in overnight off-peak periods and as much as 35p/kWh at peak (17:00 to 19:00). A household with a dishwasher, washing machine, and EV charger on delayed timers can shift 3 to 5 kWh per day from peak to off-peak periods, saving 60 to 90 pounds per year on the tariff difference alone, with no investment beyond a smart meter.",
+    "sourceNotes": "Ofgem demand flexibility service guidance 2023/24. Octopus Energy Agile and Flux tariff rate data 2024. National Grid ESO demand flexibility service results 2023. BEIS Heat Buildings Strategy demand response section.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Washing machines, dishwashers, EV chargers, and immersion heaters can all run at times that cut costs rather than times that are just convenient. A ",
+              "type": "text"
+            },
+            {
+              "text": "time-of-use tariff",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpf6lon80000hkv4njc61ino"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " turns this into bill savings. The only hardware needed is a ",
+              "type": "text"
+            },
+            {
+              "text": "smart meter",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpf6loom0002hkv4ja6ffswf"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ", which your supplier fits for free, and a willingness to use flexible loads at off-peak times.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "infoPanel",
+          "attrs": {
+            "tone": "info",
+            "title": "Which tariff type suits which household"
+          },
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Simple two-rate tariffs (Economy 7 or equivalent): suited to households with electric storage heating or EV charging that can all run overnight. The overnight cheap rate is fixed and predictable. Dynamic 30-minute tariffs: suited to households with a battery or automation that can track the variable rate. Rates occasionally go negative (supplier pays you to consume) during periods of surplus renewable generation. If you have no battery and no automation, dynamic tariffs carry the risk of accidentally leaving high-consumption loads on during expensive periods.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What you need",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "A second-generation smart meter (SMETS2) with a communications hub that can transmit half-hourly data. If your current smart meter was installed before 2019, it may be a first-generation SMETS1 meter; ask your supplier whether it can support the tariff you want.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "An energy monitor or your supplier app to check real-time and half-hourly use. This lets you confirm loads have moved to the cheap period.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Delay timer settings on applicable appliances. Most washing machines, dishwashers, and EV chargers made after 2010 have a delay-start or scheduled-start feature accessible through the control panel.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Getting started",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Measure the current half-hourly consumption profile using an energy monitor for two weeks. Identify the loads that run between 17:00 and 19:00 (the typical peak window) and whether they are shift-able without inconvenience.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Contact your current supplier to request a smart meter installation if you do not already have one. The installation is free. Allow four to six weeks for an appointment.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Compare time-of-use tariff offers. Switching suppliers for a better tariff is a common outcome. Calculate the saving by multiplying each shiftable load's kWh per day by the rate difference between peak and off-peak, then multiply by 365.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Register for the ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "demand flexibility service",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "glossaryTooltip",
+                          "attrs": {
+                            "termId": "cmpqwk2zk0000ncv4b2iknkmy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "text": " through your supplier if available. National Grid called 26 DFS events in winter 2022/23, paying participants an average of 3 to 15 pounds per event for reducing demand during 1 to 3 hour periods.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What done well looks like",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The household shifted the dishwasher (1.2 kWh), washing machine (0.8 kWh), and EV charge (8 kWh) to the overnight window at 7.5p/kWh versus the previous flat rate of 28p/kWh. Annual saving from the tariff difference alone is around 320 pounds on 1,100 kWh of shifted consumption. The ",
+              "type": "text"
+            },
+            {
+              "text": "half-hourly settlement",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpqwk30e0001ncv4kcq8rtv7"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " data in the supplier app confirms the shift is consistently happening on 6 of 7 nights per week.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What done badly looks like",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Signed up to a dynamic tariff without automation or monitoring. On three occasions the rate spiked above 60p/kWh during cold snaps and the oven and electric shower ran at peak because the household was unaware of the rate change. The annual bill was higher than on the previous flat-rate tariff because the peak consumption was not reduced.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Troubleshooter",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "content": [
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Ask your supplier to check whether the SMETS1 meter can be remotely enrolled in DCC. If not, request a SMETS2 replacement at no cost. The government programme to upgrade orphaned SMETS1 meters covers this.",
+                "cause": "The meter is a SMETS1 first-generation device that has not been enrolled in the Data Communications Company (DCC) system",
+                "symptom": "Smart meter shows correct data in the in-home display but the supplier's app shows flat-rate bills, not half-hourly"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Set the delay so the programme finishes at the time you wake up rather than starting at midnight. Most machines allow end-time programming rather than start-time delay.",
+                "cause": "Clothes left in a warm, sealed drum develop mildew if the programme ends hours before the household wakes",
+                "symptom": "Washing machine timer delay set to run in the cheap window but the clothes smell after 8 hours in the drum"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Calculate the total annual cost (standing charge x 365 plus unit costs) not just the unit rate. If the standing charge differential exceeds the unit savings, the tariff switch is not economic.",
+                "cause": "The standing charge on the new time-of-use tariff is higher than the previous tariff, and the volume savings do not exceed the standing charge increase",
+                "symptom": "Annual bill increased despite shifting loads to off-peak"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "path": "body > paragraph[0] > text"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 13.0 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > infoPanel[1] > paragraph[0]",
+      "snippet": "Simple two-rate tariffs (Economy 7 or equivalent): suited to households with electric storage heating or EV charging that can all run overni"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > bulletList[3] > listItem[0] > paragraph[0]",
+      "snippet": "A second-generation smart meter (SMETS2) with a communications hub that can transmit half-hourly data. If your current smart meter was insta"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > bulletList[3] > listItem[2] > paragraph[0]",
+      "snippet": "Delay timer settings on applicable appliances. Most washing machines, dishwashers, and EV chargers made after 2010 have a delay-start or sch"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > orderedList[5] > listItem[0] > paragraph[0]",
+      "snippet": "Measure the current half-hourly consumption profile using an energy monitor for two weeks. Identify the loads that run between 17:00 and 19:"
+    }
+  ]
+}

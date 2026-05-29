@@ -410,3 +410,37 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - vytynanky-ukrainian-papercutting hero-missing — applied: hero-fill-deferred-to-standalone-script
 - wooden-boards-for-bookbinding hero-missing — applied: hero-fill-deferred-to-standalone-script
 - x-height-and-nib-width-explained hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- hanging-a-feature-wall-with-paste-the-wall-paper grade-level-strict — applied: 
+- repairing-a-dripping-compression-fitting grade-level-strict — applied: 
+- repairing-a-rotted-door-bottom-rail grade-level-strict — applied: 
+
+- anaerobic-digestion-at-home grade-level-strict — applied: 
+- battery-recycling-and-disposal grade-level-strict — applied: 
+- cooking-oil-and-fat-disposal voice-violation — applied: 
+- demand-response-smart-tariff grade-level-strict — applied: 
+- gravity-fed-spring-water-supply grade-level-strict — applied: 
+- ground-mounted-solar-pv grade-level-strict — applied: 
+- hazardous-household-waste-disposal grade-level-strict — applied: 
+- hugelkultur-raised-bed grade-level-strict — applied: 
+- mains-drip-irrigation-with-timer grade-level-strict — applied: 
+- mvhr-decision-guide grade-level-strict — applied: 
+- passive-house-retrofit-principles hero-missing — applied: hero-fill-deferred-to-standalone-script
+- perimeter-floor-insulation-cold-bridge hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pir-board-flat-roof-warm-deck hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pound-cake-classic hero-missing — applied: hero-fill-deferred-to-standalone-script
+- rainwater-first-flush-diverter hero-missing — applied: hero-fill-deferred-to-standalone-script
+- root-cellar-food-storage hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- rye-sourdough-100-percent hero-missing — applied: hero-fill-deferred-to-standalone-script
+- salambo-kirsch-cream-choux hero-missing — applied: hero-fill-deferred-to-standalone-script
+- small-wind-turbine-decision hero-missing — applied: hero-fill-deferred-to-standalone-script
+- solar-diverter-vs-battery hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- sourdough-ciabatta hero-missing — applied: hero-fill-deferred-to-standalone-script
+- suspended-ground-floor-rigid-board-insulation hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tartine-style-country-loaf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- timber-frame-wall-insulation hero-missing — applied: hero-fill-deferred-to-standalone-script
+- understanding-house-water-pressure hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- ventilation-after-draughtproofing hero-missing — applied: hero-fill-deferred-to-standalone-script
+- voltage-optimiser-for-home hero-missing — applied: hero-fill-deferred-to-standalone-script
+- water-efficient-garden-design hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- windrow-composting hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script

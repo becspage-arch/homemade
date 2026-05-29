@@ -1,0 +1,186 @@
+{
+  "slug": "pir-board-flat-roof-warm-deck",
+  "title": "Insulating a flat roof as a warm deck",
+  "subtitle": "Laying PIR boards above the structural deck during a flat roof re-cover",
+  "excerpt": "A flat roof without insulation has a U-value of around 1.5 W/m2K. Fitting 120 mm of PIR board as a warm deck above the structural deck brings it to 0.18 W/m2K, meeting the Part L1B existing-building target. The insulation must be done at the same time as the waterproofing re-cover, making timing critical: this is not a standalone DIY job but an informed brief for a roofing contractor.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Part L1B (2022) flat roof 0.18 W/m2K target. CIBSE Guide A and BS EN 6229:2011 for flat roof design conventions. NHBC Standards for warm-deck and inverted-roof assemblies.",
+  "approximateCostGbp": 1800,
+  "paybackYears": 12,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "utility-knife", "isOptional": false },
+    { "slug": "saw-hand", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "warm-deck-roof",
+      "term": "Warm deck roof",
+      "definition": "A flat roof assembly where insulation sits above the structural deck, keeping the deck at or near room temperature. The waterproofing membrane goes on top of the insulation. Eliminates the risk of interstitial condensation within the deck itself."
+    },
+    {
+      "slug": "cold-deck-roof",
+      "term": "Cold deck roof",
+      "definition": "A flat roof assembly where insulation sits between the joists below the structural deck, leaving the deck cold. Requires ventilation of the void above the insulation, which is difficult to achieve reliably and leads to high condensation failure rates."
+    },
+    {
+      "slug": "pir-board",
+      "term": "PIR board",
+      "definition": "Polyisocyanurate rigid foam insulation board with a thermal conductivity of 0.022 to 0.023 W/mK. Foil-faced. Requires an overlay board (such as OSB or woodfibre) before the waterproofing membrane in most flat roof assemblies."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane laid over the structural deck before the insulation in a warm deck roof to prevent moisture in the warm moist indoor air from diffusing upward into the insulation during cold weather."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Flat roofs on extensions and bay windows are one of the most common uninsulated surfaces in UK housing. Many were built as " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cold-deck-roof" } }], "text": "cold deck roofs" },
+          { "type": "text", "text": " in the 1960s and 1970s, a design now known to be prone to condensation failure. When one of these roofs needs re-covering, converting it to a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warm-deck-roof" } }], "text": "warm deck roof" },
+          { "type": "text", "text": " with 120 mm of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pir-board" } }], "text": "PIR board" },
+          { "type": "text", "text": " costs around 40 to 50 percent more than a like-for-like strip and re-cover but delivers a U-value of 0.18 W/m2K for the life of the new roof." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Inverted roofs: an alternative" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "An inverted roof places the insulation above the waterproofing membrane rather than below it. The membrane is protected from temperature cycling and UV. The insulation must be extruded polystyrene (XPS), which resists water absorption, rather than PIR. Paving or ballast holds it in place. Inverted roofs suit green roof and terrace uses but are heavier and require a structural check of the deck." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What the assembly needs" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Vapour control layer: a self-adhesive or torch-on bitumen sheet over the structural deck, fully bonded. All laps must be at least 100 mm and turned up at upstands." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "PIR insulation boards, 120 mm thick, laid in two staggered layers (2 x 60 mm) with all joints offset by at least 300 mm between layers to eliminate thermal pathways through the board joints." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Overlay board: 18 mm OSB3 or woodfibre board over the PIR. It gives the waterproofing membrane a firm base and spreads foot traffic loads so the foam beneath is not crushed." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Waterproofing membrane: single-ply (TPO, EPDM) or built-up felt on top of the overlay board. Dress all upstands up to at least 150 mm above the finished roof level." }] }] }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Working at height and structural checks" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "All flat roof work must comply with the Work at Height Regulations 2005. Use a properly secured scaffold or tower platform, not a ladder for prolonged work. Before adding the insulation assembly, confirm that the existing structural deck can carry the added dead load (typically 12 to 15 kg/m2 for the full assembly). If the deck shows signs of deflection or rot, replace it before insulating." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the deck" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Strip the existing waterproofing down to the structural deck. Check every board and joist for rot. Replace any deck area where probing reveals soft spots; a firm solid deck is the starting point for a warm roof that will last 30 to 50 years." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Confirm the falls. A flat roof must drain at a minimum fall of 1:80 (about 12 mm per metre). If the existing deck is level or ponding, tapered insulation boards from 30 mm to 120 mm create the falls within the insulation layer itself, avoiding structural alteration." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply the " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }], "text": "vapour control layer" },
+            { "type": "text", "text": " to the clean dry deck before any insulation is placed. All joints lapped and sealed. Turn the VCL up at perimeters and abutments by 150 mm minimum." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Laying the insulation" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the first 60 mm PIR layer with all joints butted tight. Stagger board joints from the VCL joints below. Work from the drainage point outward so offcuts fall at the upstands where they can be supplemented with cut pieces." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the second 60 mm PIR layer with all joints offset by at least half a board width from the first layer. No joint in either layer should align with a joint in the other layer." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the overlay board over the second PIR layer. Fix it to the deck below with long timber screws through the insulation, or use a mechanical fixing system rated for the assembly thickness. Do not leave the insulation exposed overnight: a single rainstorm can saturate the boards before the membrane goes on." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done well looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The finished roof sheds water cleanly to the outlets with no ponding after rain. The insulation is continuous from drain to upstand with no gaps at parapets or rooflights. The room below no longer shows the temperature ceiling effect (cold ceiling in winter) that was characteristic of the cold deck. The waterproofing membrane sits flat with no ridging or bubbling over the board joints." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done badly looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The VCL was omitted or left with untaped laps, and moisture from the room has diffused into the PIR layer and started to delaminate the foil facing. Tapered insulation was not specified, so the original flat deck ponds water behind the drainage outlet. The overlay board was left out to save cost and the waterproofing membrane has cracked over the PIR board joints where there is no rigid substrate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Ponding water visible on the finished roof after rain",
+              "cause": "Falls were not checked before laying the insulation, and the original flat deck has a low spot",
+              "fix": "If the roof is still under construction, add a tapered wedge of insulation at the low point to redirect drainage. On a finished roof, remove the membrane at the low point and insert a tapered infill board under the overlay."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Membrane bubbling up in patches",
+              "cause": "Moisture trapped in the deck or VCL before the insulation was laid",
+              "fix": "Probe the bubble to check if it is air or water. Air bubbles indicate the VCL was not fully bonded to the deck. Water indicates deck moisture was trapped. In both cases the affected area needs stripping back to the deck and relaying."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Ceiling below is colder than expected after insulating",
+              "cause": "Insulation layer is not continuous at the upstands, leaving a thermal bridge at the wall-roof junction",
+              "fix": "Check the detail at the perimeter upstand. The insulation must wrap down the upstand face to meet the external wall insulation below. A 50 mm overlap at the junction reduces the linear thermal transmittance of this cold bridge by around 60 percent."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

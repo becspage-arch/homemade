@@ -1,0 +1,193 @@
+{
+  "slug": "timber-frame-wall-insulation",
+  "title": "Insulating a timber-frame stud wall from the inside",
+  "subtitle": "Fitting PIR board between and below studs to upgrade an existing partition or external wall",
+  "excerpt": "A timber stud wall with no insulation has a U-value of around 0.6 W/m2K. Fitting 75 mm of mineral wool between the studs and adding 25 mm of PIR board below on counter battens, sealed with a vapour control layer, brings it to around 0.28 W/m2K. The work requires removing the existing plasterboard on one face and replastering after insulation.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Part L1B (2022) existing-wall targets. BRE BR443 for stud wall U-value calculations including thermal bridging corrections. CIBSE Guide A Table 3.14.",
+  "approximateCostGbp": 850,
+  "paybackYears": 10,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "utility-knife", "isOptional": false },
+    { "slug": "saw-hand", "isOptional": false },
+    { "slug": "drill-driver", "isOptional": false },
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "stud",
+      "term": "Stud",
+      "definition": "A vertical timber member in a framed wall, typically 47 x 100 mm or 47 x 75 mm. Studs are the primary structural members that also form the bays that hold the insulation."
+    },
+    {
+      "slug": "thermal-bridging",
+      "term": "Thermal bridging",
+      "definition": "Heat loss through studs and other framing members that conduct faster than the surrounding insulation. In a stud wall with studs at 400 mm centres, thermal bridging reduces the effective U-value by 10 to 18 percent compared to a continuous insulation layer."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane placed on the warm inner face of the wall insulation to limit vapour diffusion into the colder parts of the assembly, preventing interstitial condensation."
+    },
+    {
+      "slug": "pir-board",
+      "term": "PIR board",
+      "definition": "Polyisocyanurate rigid foam insulation board with a thermal conductivity of 0.022 to 0.023 W/mK. Used as a continuous layer below stud framing to cut thermal bridging and to supplement mineral wool for a higher whole-wall performance."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Many 1970s to 1990s timber-framed houses were built with 75 to 100 mm " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stud" } }], "text": "studs" },
+          { "type": "text", "text": " and either no insulation or a partial mineral wool fill from the original construction. Improving these walls from the inside is the only option when external cladding cannot be touched. The target is to fill the full stud depth, overlay with a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pir-board" } }], "text": "PIR board" },
+          { "type": "text", "text": " layer to offset thermal bridging, then seal the warm face before reboarding." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Services and fire stopping" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "Stud walls in existing houses often contain electrical cables, socket back-boxes, and TV aerial cables. Map all socket and switch positions before removing the plasterboard. When rerouting cables that will be buried behind insulation, use cable rated for the relevant BS 7671 zone. Any penetrations through the insulation layer for new sockets must be sealed with intumescent rings where required by local fire stopping regulations." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mineral wool batts to the stud depth (typically 75 or 100 mm), sized to the stud centres (400 or 600 mm). Add 10 percent for cut waste." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "PIR board, 25 to 50 mm thick, for the continuous layer below the studs. This layer eliminates the thermal bridging through the stud faces." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Vapour control layer membrane and VCL tape for the warm face of the assembly." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Counter battens, 25 x 50 mm, screwed horizontally across the stud faces to carry the PIR layer and the new plasterboard." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "12.5 mm plasterboard (or 15 mm for fire-rated assemblies) for the finished wall face." }] }] }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Asbestos in pre-1999 buildings" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "In dwellings built before 1999, some textured coatings and certain types of artex plasterboard may contain asbestos fibres. Before removing plasterboard, check the Control of Substances Hazardous to Health (COSHH) guidance. If in doubt, have a sample tested before cutting or drilling." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparation" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Isolate the circuit serving any sockets or switches in the wall. Remove the socket face-plates and note the cable routes. Extend the cables as needed so they can be repositioned onto the new inner face of the assembly." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the existing plasterboard from the side of the wall to be insulated. Expose the full stud bay depth. Check the stud dimensions and confirm the bay widths at multiple heights, as studs in older construction are not always at precise centres." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the condition of the existing studs, sole plate, and head plate for any rot or damage. Treat affected timber with preservative before covering with insulation." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fitting the insulation" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Push mineral wool batts into each stud bay from the open face. The batts should fill the full depth and spring lightly against the back face. Do not compress; compressed mineral wool loses around 10 percent performance per 25 mm of over-compression." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Fix counter battens (25 x 50 mm) horizontally across the stud faces at 600 mm centres using 75 mm screws. Then fit the PIR layer flat against the battens. This layer breaks the " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridging" } }], "text": "thermal bridging" },
+            { "type": "text", "text": " pathway and adds continuous insulation value across the full wall width." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Hang the " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }], "text": "vapour control layer" },
+            { "type": "text", "text": " across the warm face of the PIR layer. Lap and tape all joints by at least 100 mm. Tape to the floor, ceiling, and adjacent walls to form a continuous moisture barrier." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Board over with plasterboard fixed to the counter battens at 300 mm centres. Tape and joint, then skim and decorate. Sockets and switches are repositioned on the new face using deep pattress boxes." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done well looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The finished wall has a continuous vapour control layer behind the plasterboard, a PIR thermal break layer across the stud faces, and full-depth mineral wool in every stud bay. The room feels noticeably warmer in cold weather. No cold patches are visible at stud lines on a thermal camera. Socket and switch positions are correctly offset and circuits are fully tested before boarding." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done badly looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mineral wool was stuffed into the bays but compressed to get a thicker layer, creating a denser layer that performs no better than the design depth and has less R-value because of the compression. The PIR layer was omitted to save 50 pounds, leaving every stud as an unbroken thermal bridge. The vapour control layer was left with unstapled lap joints that pull apart as the studs dry, allowing moist air to enter the cold zone and condense on the outer sheathing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "New plasterboard is damp to the touch after a few weeks",
+              "cause": "The outer face of the stud wall is cold enough for condensation to form on the back of the plasterboard if the VCL was omitted or poorly taped",
+              "fix": "Lift the plasterboard in the affected area and inspect the back face. If wet, confirm the VCL is correctly positioned and all laps are taped. Allow the assembly to dry fully before reboarding."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Wall has lost 75 mm of room width, which the owner did not expect",
+              "cause": "The full counter-batten plus PIR plus plasterboard stack adds more depth than anticipated",
+              "fix": "The nominal stack (25 mm battens plus 25 mm PIR plus 12.5 mm board) adds 62.5 mm. If room depth is critical, use 15 mm PIR plus 12.5 mm board directly onto the stud face without counter battens, accepting the reduced thermal bridge improvement."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Socket recesses not deep enough after refitting on the new face",
+              "cause": "Standard 25 mm pattress box was used but the insulation stack puts the wall face 60 to 75 mm in front of the original position",
+              "fix": "Replace with a 47 mm deep pattress box and confirm the cable length is adequate before boarding. If cables are too short, add a through-box joint behind the insulation before completing the assembly."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

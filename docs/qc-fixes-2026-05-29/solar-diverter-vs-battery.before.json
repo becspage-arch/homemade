@@ -1,0 +1,367 @@
+{
+  "slug": "solar-diverter-vs-battery",
+  "tutorialId": "cmpqwk0en0004dov4m4bmts9e",
+  "capturedAt": "2026-05-29T12:46:07.952Z",
+  "preFix": {
+    "title": "Solar diverter or battery: which is right for your solar PV system?",
+    "subtitle": "Comparing the economics of immersion diverters and home battery storage for surplus solar",
+    "excerpt": "A 4 kWp solar PV system in the UK generates around 3,600 kWh per year, of which a typical household self-consumes around 30 percent without storage. An immersion diverter costing 250 to 400 pounds raises self-consumption to around 50 percent. A 5 kWh battery costing 2,500 to 4,000 pounds raises it to 70 to 80 percent. The diverter pays back in two to four years; the battery in eight to twelve years at current tariffs.",
+    "sourceNotes": "BEIS Solar Energy UK 2024 for UK PV yield averages. Solar Trade Association self-consumption analysis 2023. Battery storage round-trip efficiency data from REUK and manufacturer datasheets. Ofgem SEG export tariffs 2024.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Every unit of solar electricity exported earns the ",
+              "type": "text"
+            },
+            {
+              "text": "export tariff",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpqwk0cl0003dov4wyr0yr80"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " (typically 4 to 15p/kWh in 2024). Every unit self-consumed saves the import rate (typically 24 to 28p/kWh). The value of self-consumption is two to four times the value of export, which means any device that shifts consumption to daytime solar hours has a strong economic case. The question is whether to use a cheap ",
+              "type": "text"
+            },
+            {
+              "text": "diverter",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpqwk0ao0000dov4yslb8n4b"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " for thermal storage or a more expensive battery for flexible electrical storage.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "infoPanel",
+          "attrs": {
+            "tone": "info",
+            "title": "Diverter and battery can coexist"
+          },
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "An immersion diverter and a battery are not mutually exclusive. The optimal strategy is to charge the battery first, then divert any remaining surplus to the immersion heater. This maximises ",
+                  "type": "text"
+                },
+                {
+                  "text": "self-consumption",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "glossaryTooltip",
+                      "attrs": {
+                        "termId": "cmpqwk0bz0002dov4nxwff3y3"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "text": " by using the battery for high-value flexible loads in the evening and the diverter for the lower-grade thermal load that would otherwise be wasted. Most home battery systems allow the diverter to be wired in priority after the battery is full.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "The case for an immersion diverter",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "An immersion diverter converts surplus solar to hot water at 95 to 98 percent efficiency. If the household has an immersion heater, the diverter cuts the gas or electricity used for water heating. A typical household (120 litres per day) can heat the full cylinder on a summer day from solar alone, saving 1.5 to 2 kWh.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "The diverter pays back in two to four years. At 300 pounds installed cost and 100 to 150 kWh per year of displaced immersion electricity (or equivalent gas), the payback is driven by the avoided import cost. The device has no moving parts and a typical lifespan of 15 to 20 years.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "The diverter does nothing when the cylinder is already hot or when solar output is below 50 to 100 W above current use. In those periods it exports generation to the grid as normal.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "The case for a battery",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "A 5 kWh battery (",
+                      "type": "text"
+                    },
+                    {
+                      "text": "round-trip efficiency",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "glossaryTooltip",
+                          "attrs": {
+                            "termId": "cmpqwk0bc0001dov46hsbcqe4"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "text": " 92 percent) stores surplus midday solar and releases it in the evening. On a 4 kWp system in summer, this shifts 3 to 4 kWh per day from export to self-use, saving roughly 12 to 18p per kWh on the rate difference.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "A battery also lets you join demand-flexibility schemes and time-of-use tariffs. Some tariffs let you charge the battery from the grid at night (6 to 8p/kWh) and use it in the evening at higher rates (28 to 35p/kWh). This earns a return from the price gap, separate from solar savings.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "At 3,000 to 4,500 pounds installed for a 5 kWh battery, payback depends heavily on the export tariff rate, the household's evening demand profile, and whether a time-of-use tariff is used. Pure solar-capture payback is typically eight to twelve years. Including tariff arbitrage can reduce this to five to seven years on the right tariff.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Which to choose",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Fit the diverter first if you have an immersion cylinder and no battery yet. The payback is faster and the diverter works well alongside a battery fitted later. Add the battery once you know the household's generation pattern, which helps with sizing. Households with electric vehicles or high evening loads benefit most from a battery.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What done well looks like",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A diverter was fitted first at 320 pounds. After one year of monitoring with an energy monitor, the household decided that 4 kWh of evening demand was unmet by the 5 kWh battery capacity and sized up to 10 kWh before purchasing. The combined system covers 75 percent of annual electricity demand from solar, and the time-of-use tariff arbitrage provides an additional 150 to 200 pounds per year credit.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What done badly looks like",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A 10 kWh battery was bought without first fitting a diverter or monitoring the generation profile. The battery is routinely fully charged by 11:00 on summer days, and the remaining afternoon surplus is exported at 4p/kWh because there is no diverter and no high-consumption afternoon load. 400 to 600 kWh of surplus is wasted at low export value each year that a 300 pound diverter would have captured at import-price value.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Troubleshooter",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "content": [
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Check the cylinder temperature with a contact thermometer. If it is already above 55 °C, the diverter is working correctly — the cylinder is fully heated. If the household uses more hot water than the solar supply can maintain, consider adding a second immersion element dedicated to the solar circuit.",
+                "cause": "Cylinder thermostat is already at its set point so the immersion element is not drawing power",
+                "symptom": "Diverter is not heating the cylinder despite good solar days"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Check the battery's reserve setting — some systems hold 20 percent as a resilience reserve by default. Reduce to 10 percent if whole-home backup is not a requirement. Confirm all household circuits route through the battery AC output, not just dedicated circuits.",
+                "cause": "The battery inverter is not connected to the circuits that matter, or the battery management system is holding a reserve",
+                "symptom": "Battery cycles from 80 percent to 20 percent every day but the evening lights and TV still draw from the grid"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Set the battery management system to charge ceiling of 90 percent and discharge floor of 15 percent. This typically extends cycle life by 30 to 50 percent at the cost of a small reduction in usable capacity per cycle.",
+                "cause": "The battery was regularly charged to 100 percent and discharged below 10 percent, which accelerates lithium cell degradation",
+                "symptom": "Battery degraded to 80 percent capacity after three years"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "hero-missing",
+      "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[0]",
+      "snippet": "Every unit of solar electricity exported earns the export tariff (typically 4 to 15p/kWh in 2024). Every unit self-consumed saves the import"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > infoPanel[1] > paragraph[0]",
+      "snippet": "An immersion diverter and a battery are not mutually exclusive. The optimal strategy is to charge the battery first, then divert any remaini"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[9]",
+      "snippet": "A diverter was fitted first at 320 pounds. After one year of monitoring with an energy monitor, the household decided that 4 kWh of evening "
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[11]",
+      "snippet": "A 10 kWh battery was bought without first fitting a diverter or monitoring the generation profile. The battery is routinely fully charged by"
+    }
+  ]
+}

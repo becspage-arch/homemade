@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-29T11:08:03.007Z",
-  "totalScanned": 4307,
+  "generatedAt": "2026-05-29T12:08:00.479Z",
+  "totalScanned": 4348,
   "passCount": 0,
-  "blockCount": 357,
+  "blockCount": 360,
   "warnOnlyCount": 0,
   "perCategory": {
     "sustainability": {
@@ -60,9 +60,9 @@
       "warnOnly": 0
     },
     "home-repair": {
-      "total": 8,
+      "total": 11,
       "pass": 0,
-      "block": 8,
+      "block": 11,
       "warnOnly": 0
     },
     "fibre-arts": {
@@ -79,8 +79,8 @@
     }
   },
   "perRuleKind": {
-    "grade-level-strict": 380,
-    "voice-violation": 252
+    "grade-level-strict": 383,
+    "voice-violation": 253
   },
   "verdicts": [
     {
@@ -2696,6 +2696,25 @@
       ]
     },
     {
+      "slug": "hanging-a-feature-wall-with-paste-the-wall-paper",
+      "tutorialId": "cmpqujt4000037kv4f959hsvf",
+      "type": "PATTERN",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T11:39:02.148Z",
+      "publishedAt": "2026-05-29T11:36:41.748Z",
+      "heroMediaId": "cmpqum53n001ahcv4jf7sx6do",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[16] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Hanging paste-the-wall wallpaper on a feature wall go here."
+        }
+      ]
+    },
+    {
       "slug": "hans-christian-andersen-silhouette",
       "tutorialId": "cmpq1dkuf000100v49yyb843t",
       "type": "TECHNIQUE",
@@ -5077,6 +5096,50 @@
           "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Repair or replace: a decision framework go here."
+        }
+      ]
+    },
+    {
+      "slug": "repairing-a-dripping-compression-fitting",
+      "tutorialId": "cmpqukhl80002dcv4lx04m7i7",
+      "type": "PATTERN",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T11:39:04.006Z",
+      "publishedAt": "2026-05-29T11:37:13.473Z",
+      "heroMediaId": "cmpqumdf2001uhcv451skzmyl",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Repairing a dripping compression fitting go here."
+        }
+      ]
+    },
+    {
+      "slug": "repairing-a-rotted-door-bottom-rail",
+      "tutorialId": "cmpqukk7n0002tcv4ivl240cs",
+      "type": "PATTERN",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T11:39:04.205Z",
+      "publishedAt": "2026-05-29T11:37:16.871Z",
+      "heroMediaId": "cmpqumf28001whcv47fz0ijzz",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > troubleshooter[16] > item[1] > fix"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[8]",
+          "snippet": "Apply two coats of wood hardener to the remaining porous timber using the paint brush. Allow each coat to soak in fully and become dry and f"
         }
       ]
     },

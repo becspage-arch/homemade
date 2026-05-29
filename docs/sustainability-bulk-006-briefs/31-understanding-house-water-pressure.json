@@ -1,0 +1,372 @@
+{
+  "slug": "understanding-house-water-pressure",
+  "title": "Understanding and adjusting domestic water pressure",
+  "subtitle": "What controls household pressure, what the acceptable range is, and when to adjust it",
+  "excerpt": "UK water companies supply mains water at a minimum dynamic pressure of 1.0 bar at the boundary stopcock. Most domestic properties operate at 2 to 4 bar, while high-rise and high-demand situations can reach 6 bar or more. Pressure above 3 bar is the most common cause of water hammer, washer failure, and appliance damage. A pressure-reducing valve set at 3 bar resolves most of these problems.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "WRAS Water Supply (Water Fittings) Regulations 1999 for pressure requirements. British Standards BS EN 1567 for pressure-reducing valves. CIBSE Guide G for Public Health Engineering water pressure guidance.",
+  "approximateCostGbp": 40,
+  "paybackYears": null,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "adjustable-spanner",
+      "isOptional": false
+    },
+    {
+      "slug": "tap-flow-restrictor",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "dynamic-pressure",
+      "term": "Dynamic pressure",
+      "definition": "Water pressure measured when water is flowing through the pipe. Typically 15 to 20 percent lower than static pressure due to friction losses. This is the relevant pressure for appliance performance and flow rates."
+    },
+    {
+      "slug": "static-pressure",
+      "term": "Static pressure",
+      "definition": "Water pressure when no water is flowing in the pipe. Measured overnight or with all outlets closed. Higher than dynamic pressure by 15 to 20 percent. Used to check whether pressure is within safe limits for the pipework fittings."
+    },
+    {
+      "slug": "pressure-reducing-valve",
+      "term": "Pressure-reducing valve (PRV)",
+      "definition": "A device fitted in the supply pipe that automatically reduces the downstream pressure to a preset value regardless of the inlet pressure. Fitted after the internal stopcock to limit household supply pressure to 3 bar. Reduces tap-flow velocity, water hammer, and appliance stress."
+    },
+    {
+      "slug": "water-hammer",
+      "term": "Water hammer",
+      "definition": "A banging or thumping noise in pipes caused by rapid pressure changes when taps or valves close suddenly at high flow velocity. Common at mains pressures above 3 bar. Can be reduced by fitting a pressure-reducing valve or a hydraulic shock arrestor at the appliance."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most household fittings are rated to 10 bar, well above typical mains supply. But pressures above 3 to 4 bar cause real problems: washer wear, solenoid valve failure, and "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "water-hammer"
+                }
+              }
+            ],
+            "text": "water hammer"
+          },
+          {
+            "type": "text",
+            "text": ". Checking the supply pressure and fitting a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pressure-reducing-valve"
+                }
+              }
+            ],
+            "text": "pressure-reducing valve"
+          },
+          {
+            "type": "text",
+            "text": " costs around 40 pounds and takes 30 minutes."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "How to measure your pressure"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Fit a pressure gauge (available from plumbing suppliers for under 10 pounds) to an outdoor tap or the cold supply to a washing machine. Close all other taps and measure "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "glossaryTooltip",
+                    "attrs": {
+                      "termSlug": "static-pressure"
+                    }
+                  }
+                ],
+                "text": "static pressure"
+              },
+              {
+                "type": "text",
+                "text": " (no flow). Then open the tap to full and measure "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "glossaryTooltip",
+                    "attrs": {
+                      "termSlug": "dynamic-pressure"
+                    }
+                  }
+                ],
+                "text": "dynamic pressure"
+              },
+              {
+                "type": "text",
+                "text": " (flowing). The difference between these two readings indicates the flow loss through the supply pipe. A dynamic pressure below 1 bar indicates the mains supply is inadequate and you should contact your water company."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When to fit a pressure-reducing valve"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Static pressure above 3.5 bar: most modern appliances are optimised for 2 to 3 bar. Higher pressures wear solenoid valves in washing machines and dishwashers faster and increase the risk of hose failure."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Water hammer noise: banging pipes when taps or appliances close suddenly is a symptom of high flow velocity caused by excess pressure."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Repeated tap washer failure: washers wear faster at high pressure. If tap washers need replacing more than once per year on a ceramic-disc or monobloc tap, check the pressure first."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fitting a pressure-reducing valve"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Turn off the mains supply at the internal stopcock."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cut the supply pipe 100 to 150 mm downstream of the internal stopcock. Fit the PRV on the mains side of any branch to ensure the whole household is regulated. Most PRVs are 15 mm compression or push-fit."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Set the PRV to 2.5 to 3.0 bar using the adjustment screw on the body. Turn anticlockwise to reduce pressure. Fit a pressure gauge downstream of the PRV and test under flow conditions after reinstating the supply."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fit a flow restrictor aerator ("
+                  },
+                  {
+                    "type": "text",
+                    "text": "tap flow restrictor"
+                  },
+                  {
+                    "type": "text",
+                    "text": ") to high-flow kitchen and bathroom taps if flow rate after pressure reduction is still above 8 to 10 litres per minute. Restrictor aerators also reduce the splashing and noise that come with high-pressure tap flow."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done well looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The static pressure was measured at 4.2 bar. A PRV set to 2.8 bar eliminates the water hammer that was occurring every time the washing machine solenoid closed. The bath fills in the same time as before because filling time was dominated by the flow restriction at the taps, not the supply pressure. Appliance solenoid valves last longer at the reduced pressure."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done badly looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A PRV was fitted but set too low at 1.5 bar. The shower pump cannot develop adequate pressure above the PRV, and the shower pressure is insufficient on upper floors. The pressure was set without measuring dynamic pressure first: the actual pressure was 2.1 bar, not the 4 bar assumed, and the PRV was not needed at all."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooter"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Shower pressure drops dramatically after PRV is fitted",
+              "cause": "PRV is set too low, or the shower is served from a branch before the PRV",
+              "fix": "Check the PRV setting. Raise to 3.0 bar. If the shower branch was taken off before the PRV, re-route the shower supply through the PRV or fit a separate shower pump downstream."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Water hammer returns six months after PRV was fitted",
+              "cause": "PRV diaphragm has worn and is no longer regulating pressure effectively",
+              "fix": "Measure the downstream pressure again. If it has risen above the set point, the diaphragm needs replacing. PRV service kits are available for most models and cost 5 to 15 pounds."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Pressure at the tap is too low despite high mains pressure",
+              "cause": "Partial blockage in the supply pipe from lime scale or corrosion, or a flow restrictor aerator is too restrictive",
+              "fix": "Remove the tap aerator and measure flow rate without it. If flow rate returns to normal, fit a 6 litre per minute aerator rather than the most restrictive type. If flow is still low without the aerator, the supply pipe has scale deposits and may need flushing or replacement."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
