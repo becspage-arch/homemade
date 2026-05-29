@@ -1,0 +1,140 @@
+{
+  "slug": "airbrush-glaze-spraying-technique",
+  "title": "Airbrush glaze spraying",
+  "subtitle": "Applying ceramic glaze with a gravity-feed airbrush for gradient effects",
+  "excerpt": "A gravity-feed airbrush applies ceramic glaze as a fine mist, allowing gradients and layered colour transitions that are difficult to achieve by dipping or brushing. This tutorial covers glaze dilution ratio, distance settings, masking bisqueware, and the overlapping pass technique. Requires kiln access and an airbrush with a compressor.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "glazing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Airbrush glaze application technique derived from first principles.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": ["stoneware-smooth"],
+  "requiredCraftMaterials": [],
+  "recipeTools": [
+    { "slug": "pottery-sponge", "isOptional": false },
+    { "slug": "wooden-board", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bisque",
+      "term": "Bisque",
+      "definition": "Clay fired once at cone 06, producing a porous surface that absorbs sprayed glaze evenly."
+    },
+    {
+      "slug": "specific-gravity",
+      "term": "Specific gravity",
+      "definition": "The density of a glaze suspension relative to water. A hydrometer reading of 1.35-1.40 is typical for airbrush application."
+    },
+    {
+      "slug": "cone",
+      "term": "Cone",
+      "definition": "A pyrometric measure of heat-work. Cone 6 is roughly 1220 degrees C."
+    },
+    {
+      "slug": "crawling",
+      "term": "Crawling",
+      "definition": "A firing defect in which glaze pulls back from the clay surface, leaving bare patches. Common when layers are too thick."
+    }
+  ],
+  "aliases": ["airbrush pottery glaze", "spray glaze technique ceramics", "gravity feed airbrush ceramic"],
+  "techniqueSlugs": ["bisque-firing-schedule-cone-06"],
+  "criticalTechniques": [],
+  "recipe": { "foundational": true },
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning", "heading": "Safety" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Silica dust is the chronic studio hazard. Silicosis is irreversible. Glaze spraying creates fine airborne particles. Spray only in a dedicated spray booth with an extraction fan, or outdoors. Wear a P100 respirator for all spraying sessions, not just when mixing. Wet-clean the spray area; do not use compressed air to blow dust. Never open a hot kiln below 80 degrees C." }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Airbrush application produces glaze gradients by building up thin overlapping coats in controlled passes. The technique requires a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bisque" } }], "text": "bisque" },
+          { "type": "text", "text": " surface, correct glaze dilution, and consistent spraying distance. Glaze too thick clogs the airbrush and causes " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "crawling" } }], "text": "crawling" },
+          { "type": "text", "text": " in the firing. Glaze too thin requires too many coats and produces uneven results." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to use it" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Airbrush application suits gradient effects, textured surfaces where dipping would fill the texture detail, and precise masking work. For a plain single-colour coat, dipping is faster and more even." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bisque-fired stoneware piece" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Gravity-feed airbrush with 0.5 mm nozzle" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Air compressor set to 30-40 psi" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ceramic glaze of choice, sieved to remove lumps" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spray booth or outdoor setting with respirator" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Banding wheel or turntable to rotate the piece during spraying" }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step-by-step" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Dilute the glaze to a " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "specific-gravity" } }], "text": "specific gravity" },
+            { "type": "text", "text": " of 1.35-1.40 for airbrush application. This is thinner than dipping consistency. Sieve through 80 mesh to remove any lumps that would block the nozzle." }
+          ]}] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold the airbrush 150-200 mm from the piece. Test on a piece of paper first. The spray should produce a soft-edged fan pattern with no spitting." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply glaze in overlapping horizontal passes, rotating the piece on the banding wheel after each full pass. Each pass should be a light mist, not a wet coat. Build up the layer in 3-4 passes before checking thickness." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For a gradient, concentrate passes at the base and reduce to one pass near the rim. Allow each light pass to dry before adding the next for the cleanest gradient edge." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Total dry glaze thickness should be 2-3 mm. Clean the foot of glaze with a sponge. Fire to " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cone" } }], "text": "cone" },
+            { "type": "text", "text": " 6 as normal." }
+          ]}] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What it looks like when it is working" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Dry sprayed glaze looks even and matte across the surface with no runs or thick patches. The gradient transitions smoothly with no visible demarcation line. After firing, the gradient is visible in the glaze colour and surface texture." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Airbrush spits: glaze is too thick, or there are lumps in the mixture. Dilute further and re-sieve." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Glaze runs: each pass was too wet rather than a light mist. Build up in more, thinner passes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Gradient line too hard: the airbrush was held at constant distance. Move the airbrush back slightly as it approaches the light end of the gradient to diffuse the edge." }] }] }
+        ]
+      }
+    ]
+  }
+}

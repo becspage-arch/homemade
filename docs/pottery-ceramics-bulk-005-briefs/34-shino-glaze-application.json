@@ -1,0 +1,143 @@
+{
+  "slug": "shino-glaze-application",
+  "title": "Shino glaze application",
+  "subtitle": "Applying and firing shino glaze for characteristic orange-white surfaces",
+  "excerpt": "Shino is a high-feldspar white glaze known for its orange blush and carbon-trap surface where the glaze pools or sits thin. This tutorial covers applying shino by dipping and painting, the thickness needed for the characteristic effect, and what to expect from the firing at cone 6 in an electric kiln.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "glazing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Shino glaze tradition originates in the Momoyama period (16th century) Japan. Technique and cone 6 electric adaptation derived from first principles. V&A open-access collection for historical shino reference.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": ["stoneware-smooth"],
+  "requiredCraftMaterials": [],
+  "recipeTools": [
+    { "slug": "pottery-sponge", "isOptional": false },
+    { "slug": "wooden-board", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "shino",
+      "term": "Shino",
+      "definition": "A family of high-feldspar white glazes that produce characteristic orange flashing and carbon trapping where the glaze is thin or pools."
+    },
+    {
+      "slug": "bisque",
+      "term": "Bisque",
+      "definition": "Clay fired once at cone 06, producing a porous surface that absorbs glazes evenly."
+    },
+    {
+      "slug": "cone",
+      "term": "Cone",
+      "definition": "A pyrometric measure of heat-work in the kiln. Cone 6 is roughly 1220 degrees C."
+    },
+    {
+      "slug": "crawling",
+      "term": "Crawling",
+      "definition": "A firing defect in which the glaze pulls back from the clay surface, leaving bare patches. Common when glaze is applied too thickly or over a dusty bisque surface."
+    }
+  ],
+  "aliases": ["shino glaze pottery", "cone 6 shino technique", "applying shino glaze stoneware"],
+  "techniqueSlugs": ["bisque-firing-schedule-cone-06", "glaze-dipping-technique"],
+  "criticalTechniques": [],
+  "recipe": { "foundational": true },
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning", "heading": "Safety" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Silica dust is the chronic studio hazard. Silicosis is irreversible. Mix wet whenever possible. Wear a P100 respirator any time raw glaze powders are open. Wet-clean only: no sweeping, no compressed air, no dry sanding indoors." }] },
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Ventilate the kiln room during and after firing. Never open a hot kiln below 80 degrees C. Keep a Class A fire extinguisher within reach of the studio." }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Shino is one of the defining glazes in Japanese ceramics. It has been adapted for cone 6 electric firing, though electric oxidation produces a paler result than traditional wood or gas reduction. The characteristic orange comes from iron in the clay body bleeding through the white glaze where it sits thin. Understanding " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "shino" } }], "text": "shino" },
+          { "type": "text", "text": " begins with thickness. The correct dry thickness is 3-5 mm, substantially more than most other glazes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to use it" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Apply shino to " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bisque" } }], "text": "bisque" },
+          { "type": "text", "text": " stoneware with at least moderate iron content, which is what produces the orange blush. White stoneware or grogged stoneware with low iron content produces a pale, milky result with less orange character. The glaze works best on textured surfaces and sculptural forms." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bisque-fired stoneware piece" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pre-mixed shino glaze, cone 6, in a bucket or container large enough to dip the piece" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pottery sponge for cleaning the foot and any drips" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Glaze hydrometer or a finger-thickness test" }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step-by-step" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir the shino glaze thoroughly. The specific gravity should be higher than a standard glaze, around 1.45-1.55 measured with a hydrometer. It should coat a finger to 3-4 mm and not slip off immediately." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wipe the bisque surface with a barely damp sponge to remove dust. Dust prevents the glaze from bonding to the bisque surface." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dip the piece into the glaze for 3-4 seconds, longer than a standard glaze dip. Shino needs extra time to build up the required thickness. For interiors, pour glaze in, swirl, and pour out. Allow the surface to dry before handling." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Clean the foot thoroughly with a damp sponge down to bare clay. Shino at 4 mm thickness will fuse to kiln shelves. The foot must be completely clean." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Fire to " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cone" } }], "text": "cone" },
+            { "type": "text", "text": " 6 on a normal schedule. Do not rush the cooling: shino is thick and needs the same cooling rate as other stoneware." }
+          ]}] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What it looks like when it is working" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The fired surface is off-white with orange and amber flashing where the glaze is thinner or the iron bleeds through from the clay. The surface has a slight orange peel or pitted texture rather than a flat glass surface. Thick pool areas may be slightly translucent. The foot shows the bare clay in contrast to the glaze." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Glaze too thin: the surface fires chalky white without the orange character. The glaze needs enough thickness to produce the effect. If the dry surface can be scratched away, apply a second coat." }
+          ]}] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Crawling: " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "crawling" } }], "text": "Crawling" },
+            { "type": "text", "text": " happens when the glaze is applied over a dusty surface or too thickly. Always wipe the bisque before glazing and check the glaze consistency." }
+          ]}] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Piece sticks to the kiln shelf: the foot was not cleaned completely. Shino at the required thickness is particularly prone to this. Use kiln wash on shelves as a precaution." }] }] }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "slug": "majolica-glaze-painting-stoneware",
+  "title": "Majolica glaze painting on stoneware",
+  "subtitle": "Painting coloured detail onto an opaque white glaze base",
+  "excerpt": "Majolica is a technique in which coloured underglaze or oxide-stained glaze is painted onto a raw opaque white glaze surface before firing. The white glaze provides a bright background that makes the painted colours vibrant after firing. This tutorial covers the approach on bisqueware stoneware at cone 6. Requires kiln access.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "glazing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Majolica tradition originates in Islamic tin-glazed earthenware, reaching Europe via Spain (through Majorca). British slipware and Delftware are related traditions. Technique derived from first principles for cone 6 stoneware application. V&A open-access collection for historical majolica reference.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": ["stoneware-smooth"],
+  "requiredCraftMaterials": ["majolica-glaze-pre-mixed", "underglaze-pre-mixed"],
+  "recipeTools": [
+    { "slug": "wooden-board", "isOptional": false },
+    { "slug": "pottery-sponge", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "majolica",
+      "term": "Majolica",
+      "definition": "A surface decoration technique in which coloured designs are painted onto a raw opaque white glaze surface before the glaze firing."
+    },
+    {
+      "slug": "bisque",
+      "term": "Bisque",
+      "definition": "Clay fired once at cone 06 to harden it into porous bisqueware, ready for glazing."
+    },
+    {
+      "slug": "underglaze",
+      "term": "Underglaze",
+      "definition": "A ceramic colourant applied to clay or bisqueware before a glaze coat is applied over the top."
+    },
+    {
+      "slug": "cone",
+      "term": "Cone",
+      "definition": "A pyrometric measure of heat-work. Cone 06 is roughly 1000°C; cone 6 is roughly 1220°C."
+    },
+    {
+      "slug": "greenware",
+      "term": "Greenware",
+      "definition": "Unfired clay in any stage of drying."
+    }
+  ],
+  "aliases": ["majolica pottery technique", "tin glaze painting", "stoneware majolica decoration"],
+  "techniqueSlugs": ["bisque-firing-schedule-cone-06"],
+  "criticalTechniques": [],
+  "recipe": { "foundational": true },
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning", "heading": "Safety" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Silica dust is the chronic studio hazard. Silicosis is irreversible. Mix wet whenever possible. Wear a P100 respirator any time raw glaze powders are open. Wet-clean only: no sweeping, no compressed air, no dry sanding indoors." }] },
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Ventilation matters. Either a downdraft vent on the kiln or an open window with an extractor. Never open a hot kiln below 80°C. Keep a Class A fire extinguisher within reach of the studio." }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "majolica" } }], "text": "majolica" },
+          { "type": "text", "text": " tradition uses an opaque white glaze as a painting surface. The white base reflects light through the painted colours after firing, giving more vivid results than a plain transparent glaze over " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "underglaze" } }], "text": "underglaze" },
+          { "type": "text", "text": " cannot match. This tutorial uses pre-mixed majolica glaze and pre-mixed underglaze on " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bisque" } }], "text": "bisque" },
+          { "type": "text", "text": " stoneware at " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cone" } }], "text": "cone" },
+          { "type": "text", "text": " 6." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to use it" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Apply majolica glazing to bisqueware pieces. The bisque surface is porous and absorbs the glaze well. The technique works on plates, tiles, bowls, and mugs. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "greenware" } }], "text": "Greenware" },
+          { "type": "text", "text": " can also be used for the base coat in some traditions, but bisqueware is more stable for detailed painting." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bisque-fired stoneware piece" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pre-mixed majolica glaze (opaque white, cone 6)" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pre-mixed underglaze colourants for painting (2-3 colours to start)" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Soft paintbrushes: a flat brush for the base coat, fine brushes for detail" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pottery sponge and clean water" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Kiln with cone 6 capability" }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step-by-step" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wipe the bisque surface with a barely damp sponge to remove dust. Allow to dry fully before glazing." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply two coats of majolica glaze over the decorating surface, allowing each coat to dry before the next. The glaze should cover evenly to a thickness of about 1-1.5 mm. The dry white glaze surface is the painting ground." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sketch the design lightly in pencil on the dry white glaze surface. The pencil lines burn out in the firing." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Paint the design with underglaze colourants using fine brushes. The glaze surface absorbs the underglaze quickly; apply each stroke once without over-brushing. Unlike painting on paper, majolica brushwork cannot be blended once it has touched the surface." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mistakes in the raw glaze can be sponged off gently if caught immediately. Once the underglaze has dried into the white glaze, it cannot be removed without scraping away the glaze entirely." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fire in the kiln according to the cone 6 glaze schedule. The white glaze and the painted colours mature together in the firing." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What it looks like when it is working" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "After firing, the painted design sits within a slightly raised glaze surface on the white background. The colours are bright and opaque. The surface has a slight texture from the brushstrokes rather than the perfectly flat surface of underglaze under transparent glaze. This textured quality is characteristic of the tradition." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Over-brushing the underglaze: the wet underglaze lifts the dry glaze surface beneath. Apply each stroke once and leave it." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "White glaze coat too thin: the base coat must be opaque. If it is thin enough to show the clay body through, add a third coat." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Handling the piece after painting: fingerprints in the raw glaze leave marks that show after firing. Handle from the unglazed base only." }] }] }
+        ]
+      }
+    ]
+  }
+}

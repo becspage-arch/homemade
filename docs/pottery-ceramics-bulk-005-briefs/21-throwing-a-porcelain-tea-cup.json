@@ -1,0 +1,224 @@
+{
+  "slug": "throwing-a-porcelain-tea-cup",
+  "title": "Throwing a porcelain tea cup",
+  "subtitle": "A delicate wheel-thrown cup in porcelain with thin pulled walls",
+  "excerpt": "A wheel-thrown tea cup in porcelain with walls pulled to 3-4 mm and a graceful foot ring. Porcelain is the most demanding throwing body: its low plasticity means it collapses at slight overwork. This tutorial covers the modified throwing sequence that manages porcelain's narrower working window. Requires a potter's wheel and kiln access.",
+  "type": "PATTERN",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "throwing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Porcelain throwing technique derived from first principles. Encyclopedia Britannica 11th edition (1911), porcelain entry, for historical context.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": true,
+  "requiredClayBodies": ["porcelain"],
+  "requiredCraftMaterials": [],
+  "recipeTools": [
+    { "slug": "potters-wheel-electric", "isOptional": false },
+    { "slug": "wire-cutter", "isOptional": false },
+    { "slug": "needle-tool", "isOptional": false },
+    { "slug": "wooden-rib", "isOptional": false },
+    { "slug": "pottery-sponge", "isOptional": false },
+    { "slug": "pottery-chamois", "isOptional": false },
+    { "slug": "pottery-calipers", "isOptional": true },
+    { "slug": "loop-tool", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "porcelain",
+      "term": "Porcelain",
+      "definition": "A translucent, white-firing high-temperature clay body. Fires to maturity at cone 10 (1280°C). Very low plasticity compared with stoneware; it collapses faster at the wheel."
+    },
+    {
+      "slug": "centring",
+      "term": "Centring",
+      "definition": "Settling a clay mound on the wheel head so it rotates without wobbling. The foundation of all wheel work."
+    },
+    {
+      "slug": "opening",
+      "term": "Opening",
+      "definition": "Pressing a hole into the centre of a centred mound to start a thrown pot."
+    },
+    {
+      "slug": "pulling-a-wall",
+      "term": "Pulling a wall",
+      "definition": "Drawing clay upward between fingers to thin and raise the wall of a thrown pot."
+    },
+    {
+      "slug": "leather-hard",
+      "term": "Leather-hard",
+      "definition": "The drying stage where clay holds its shape but is still damp enough to trim."
+    },
+    {
+      "slug": "foot-ring",
+      "term": "Foot ring",
+      "definition": "The trimmed-back base ridge a finished pot sits on, carved at the leather-hard stage."
+    },
+    {
+      "slug": "bisque",
+      "term": "Bisque",
+      "definition": "The first firing, around cone 06 (1000°C), that hardens greenware into porous bisqueware."
+    },
+    {
+      "slug": "cone",
+      "term": "Cone",
+      "definition": "A pyrometric measure of heat-work in the kiln. Cone 06 is roughly 1000°C; cone 6 is roughly 1220°C; cone 10 is roughly 1280°C."
+    }
+  ],
+  "aliases": ["porcelain tea cup wheel thrown", "thrown porcelain cup", "wheel porcelain cup tutorial"],
+  "techniqueSlugs": ["centring-half-kilo-of-stoneware", "opening-a-thrown-mound", "pulling-a-cylinder-wall", "trimming-a-foot-ring-on-the-wheel"],
+  "criticalTechniques": ["centring-half-kilo-of-stoneware", "pulling-a-cylinder-wall"],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning", "heading": "Safety" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Silica dust is the chronic studio hazard. Silicosis is irreversible. Mix wet whenever possible. Wear a P100 respirator any time raw glaze powders are open. Wet-clean only: no sweeping, no compressed air, no dry sanding indoors. Greenware sanding happens outdoors with a mask and never in a kitchen-air-shared space." }] },
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Ventilation matters. Either a downdraft vent on the kiln or an open window with an extractor pulling air past the kiln. Wear welder shade-5 glasses when peephole-watching at high temperatures. Never open a hot kiln below 80°C. Keep a Class A fire extinguisher within reach of the studio area." }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Porcelain is the glass of the clay world: beautiful, white, translucent when thinned to 3-4 mm, and unforgiving at the wheel. Its low plasticity means that a stoneware centring technique applied to " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "porcelain" } }], "text": "porcelain" },
+          { "type": "text", "text": " collapses the wall within one or two additional pulls. This cup is thrown from 250 g of porcelain. A kiln and wheel are required. The finished cup fires to approximately 85 mm diameter by 70 mm tall, with walls 3-4 mm thick." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Porcelain", "quantity": "250 g per cup", "substitution": "Porcelain-grogged for more forgiving walls at the cost of some translucency" },
+            { "name": "Electric potter's wheel", "quantity": "1", "substitution": "Kick wheel" },
+            { "name": "Wire cutter", "quantity": "1", "substitution": null },
+            { "name": "Needle tool", "quantity": "1", "substitution": null },
+            { "name": "Wooden rib", "quantity": "1", "substitution": null },
+            { "name": "Pottery sponge", "quantity": "1", "substitution": null },
+            { "name": "Pottery chamois", "quantity": "1", "substitution": null },
+            { "name": "Loop tool", "quantity": "1", "substitution": null },
+            { "name": "Kiln with cone 10 capability", "quantity": "1", "substitution": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wedge the porcelain thoroughly. Porcelain air bubbles cause blowouts in the kiln. Spiral wedge or ram-head wedge until the cut-through surface shows no visible bubbles. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "centring" } }], "text": "Centring" },
+          { "type": "text", "text": " porcelain requires a faster wheel speed and lighter hands than stoneware. The clay is less plastic and responds more to friction than pressure." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Centring" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Attach the 250 g ball firmly to the bat. Run the wheel at medium-high speed. Use both hands to centre the mound, keeping hands wet and pressure even. Porcelain slides under too much pressure; centre with a light downward squeeze from both palms rather than pushing from one side. The mound is centred when it runs still under a fixed fingertip." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Opening" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Apply " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "opening" } }], "text": "opening" },
+          { "type": "text", "text": " with the dominant thumb pressing straight down into the centre. Stop 6-8 mm from the bat: this becomes the base thickness. Porcelain bases thinner than 5 mm crack under their own weight during drying. Open to about 50 mm in diameter for this cup size." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pulling the walls" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Porcelain cups need two pulls at most, sometimes one. Each pull removes clay at the base of the wall and transfers it upward. For " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pulling-a-wall" } }], "text": "pulling a wall" },
+          { "type": "text", "text": " in porcelain, place the inside fingers at the base of the wall and the outside fingers opposite. Apply a light lifting pressure while moving both hands upward at the same speed as the wall rises. The pull should take 3-4 seconds per revolution. Do not add extra water mid-pull; porcelain saturates quickly and loses structure." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "After the first pull the wall should be around 6-7 mm thick. The second pull brings it to 3-4 mm. If the rim wobbles after the second pull, do not attempt to straighten it by pushing. Let the cup stiffen on the bat for 10-15 minutes, then use the needle tool to cut a level rim before continuing." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing the rim" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Compress the rim by folding the chamois over it and drawing it gently around as the wheel turns slowly. A compressed rim is thicker and more even than an un-compressed one. Porcelain rims are prone to warping in the bisque firing if they are too thin or uneven." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Drying, trimming, and firing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dry the cup under plastic for the first 12 hours so the rim and base dry at the same rate. When " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "leather-hard" } }], "text": "leather-hard" },
+          { "type": "text", "text": ", turn the cup and trim a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foot-ring" } }], "text": "foot ring" },
+          { "type": "text", "text": " with the loop tool. The foot ring on a porcelain cup is delicate: 3-4 mm wide and 5-6 mm tall. Load the kiln once bone-dry. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bisque" } }], "text": "Bisque" },
+          { "type": "text", "text": " at " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cone" } }], "text": "cone" },
+          { "type": "text", "text": " 06, then glaze and fire to cone 10 for mature porcelain." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cone 10 porcelain with a food-safe glaze is suitable for daily use. Dishwasher-safe once the glaze has been verified as non-crazing. The thin walls make the cup more fragile than a stoneware cup; handle with care when washing by hand." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add a pulled handle at the leather-hard stage for a handled tea cup shape." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Throw a saucer from a second 150 g ball to match; centre and open to a wide shallow form." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply a celadon glaze for the classic translucent blue-green finish on white porcelain." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "problem": "Wall collapses during pulling", "cause": "Too much water, or the pull speed was too slow", "fix": "Remove excess water from the inside with the sponge before pulling. Pull the wall at a steady pace without pausing mid-pull." },
+            { "problem": "Rim warps in the bisque firing", "cause": "Rim was too thin or unevenly compressed before drying", "fix": "Compress the rim with the chamois after each pull. Dry the cup slowly under plastic." },
+            { "problem": "Cup cracks at the base after throwing", "cause": "Base was too thin, or the bat was wet when the cup was set to dry", "fix": "Leave at least 6 mm of clay at the base. Set the cup on a dry plaster bat or a board to dry." }
+          ]
+        }
+      }
+    ]
+  }
+}

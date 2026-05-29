@@ -1,0 +1,142 @@
+{
+  "slug": "saggar-firing-basics",
+  "title": "Saggar firing basics",
+  "subtitle": "Firing unglazed stoneware inside a sealed container with combustible materials",
+  "excerpt": "Saggar firing places unglazed clay inside a sealed refractory container packed with combustible materials such as salt, sawdust, copper carbonate, and seaweed. The materials off-gas during firing and mark the clay surface with colour and texture. Requires a kiln and an understanding of basic kiln safety.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "firing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Saggar firing technique derived from first principles. V&A open-access collection for historical saggar and atmospheric firing reference.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": ["stoneware-smooth"],
+  "requiredCraftMaterials": ["copper-carbonate"],
+  "recipeTools": [
+    { "slug": "pottery-sponge", "isOptional": false },
+    { "slug": "wooden-board", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saggar",
+      "term": "Saggar",
+      "definition": "A refractory ceramic container used to enclose one or more pots during firing, creating a localised atmosphere inside independent of the main kiln."
+    },
+    {
+      "slug": "bisque",
+      "term": "Bisque",
+      "definition": "Clay fired once to cone 06. Saggar work is typically applied to burnished bisqueware rather than glazed pieces."
+    },
+    {
+      "slug": "burnishing",
+      "term": "Burnishing",
+      "definition": "Rubbing the leather-hard clay surface with a smooth stone or spoon to compress and polish it before bisque firing."
+    },
+    {
+      "slug": "cone",
+      "term": "Cone",
+      "definition": "A pyrometric measure of heat-work. Cone 06 is roughly 1000 degrees C."
+    }
+  ],
+  "aliases": ["saggar pottery firing", "atmospheric saggar technique", "salt saggar kiln firing"],
+  "techniqueSlugs": ["bisque-firing-schedule-cone-06"],
+  "criticalTechniques": [],
+  "recipe": { "foundational": true },
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning", "heading": "Safety" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Silica dust is the chronic studio hazard. Silicosis is irreversible. Wear a P100 respirator when handling dry materials and when loading the saggar. Wet-clean only." }] },
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Saggar firing generates smoke and fumes. Fire ONLY in a kiln with an active downdraft vent or outdoors with a vented portable kiln. Never fire a saggar in an enclosed room without direct ventilation. Copper compounds are toxic. Wear nitrile gloves when handling copper carbonate or other metal oxides. Never open a hot kiln below 80 degrees C. Keep a Class A fire extinguisher within reach of the kiln." }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saggar" } }], "text": "saggar" },
+          { "type": "text", "text": " is a clay box inside the kiln. The combustible materials packed around the pot off-gas in the heat, creating a localised atmosphere of smoke, metal vapours, and salt that marks the clay surface. The results are unpredictable and non-repeatable; each firing produces a unique surface." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to use it" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Saggar firing produces its best results on " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "burnishing" } }], "text": "burnishing" },
+          { "type": "text", "text": " pieces. The polished clay surface shows the colour marks clearly. Unpolished bisque absorbs the marks but does not show their definition as well. The technique suits small to medium forms; large pieces need a large saggar or their own saggar, which requires a correspondingly large kiln." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Burnished bisqueware stoneware piece" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A hand-built saggar: a refractory clay box with a lid, sized to hold the piece with 30-50 mm clearance on all sides" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combustible packing materials: coarse sawdust, coarse salt, dried seaweed, or copper carbonate" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Metal spoon for packing materials" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Kiln with a downdraft ventilation system" }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step-by-step" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Start with a well-burnished " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bisque" } }], "text": "bisque" },
+            { "type": "text", "text": " piece. The piece should be sanded smooth and rubbed with a soft cloth to bring up the polish." }
+          ]}] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place a 20-30 mm layer of sawdust in the base of the saggar. Set the piece on the sawdust layer." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pack further sawdust around the piece to within 20 mm of the top. Scatter 1-2 teaspoons of coarse salt into the sawdust in the middle layer. If using copper carbonate, scatter a pinch (no more than half a teaspoon) in close proximity to areas where you want a green mark." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place dried seaweed pieces, if using, in contact with or touching the pot surface. Seaweed marks leave distinctive dark flashes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Lid the saggar, leaving a small gap of about 5 mm for gases to escape. Load into the kiln. Fire to " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cone" } }], "text": "cone" },
+            { "type": "text", "text": " 06. A slower ramp rate of 60-80 degrees C per hour gives the combustibles more time to work at lower temperatures." }
+          ]}] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What it looks like when it is working" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The fired piece has flashes of amber, grey, black, and orange across its polished surface. Areas near seaweed show dark carbon flashes. Areas near copper carbonate have hints of green. Salt produces a slight texture and lighter marks. No two firings from the same saggar setup produce the same surface." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Too much copper carbonate: the green marks become dominant and the subtlety is lost. Use copper sparingly: a pinch, not a tablespoon." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Saggar lid sealed completely: the gases cannot escape and pressure builds. Always leave a small gap." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Piece placed directly on the kiln shelf: the bottom of the piece should rest on sawdust, not bare refractory." }] }] }
+        ]
+      }
+    ]
+  }
+}

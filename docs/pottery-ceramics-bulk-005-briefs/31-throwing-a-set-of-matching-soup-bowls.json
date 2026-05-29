@@ -1,0 +1,181 @@
+{
+  "slug": "throwing-a-set-of-matching-soup-bowls",
+  "title": "Throwing a set of matching soup bowls",
+  "subtitle": "Wheel-thrown stoneware soup bowls made to a consistent size",
+  "excerpt": "Four matching wheel-thrown stoneware soup bowls, each made from 350 g of smooth stoneware. The tutorial covers the throwing sequence for a deep, straight-sided bowl shape and the use of calipers to keep all four bowls consistent in diameter. Requires a potter's wheel and kiln access to cone 6.",
+  "type": "PATTERN",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "throwing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Soup bowl throwing technique and caliper use derived from first principles.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": true,
+  "requiredClayBodies": ["stoneware-smooth"],
+  "requiredCraftMaterials": [],
+  "recipeTools": [
+    { "slug": "potters-wheel-electric", "isOptional": false },
+    { "slug": "wire-cutter", "isOptional": false },
+    { "slug": "needle-tool", "isOptional": false },
+    { "slug": "wooden-rib", "isOptional": false },
+    { "slug": "pottery-sponge", "isOptional": false },
+    { "slug": "pottery-calipers", "isOptional": false },
+    { "slug": "loop-tool", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "centring",
+      "term": "Centring",
+      "definition": "Settling a clay mound on the wheel head so it rotates without wobbling."
+    },
+    {
+      "slug": "pulling-a-wall",
+      "term": "Pulling a wall",
+      "definition": "Drawing clay upward between fingers to thin and raise the wall of a thrown pot."
+    },
+    {
+      "slug": "leather-hard",
+      "term": "Leather-hard",
+      "definition": "The drying stage where clay holds its shape but is still damp enough to trim."
+    },
+    {
+      "slug": "foot-ring",
+      "term": "Foot ring",
+      "definition": "The trimmed base ridge a pot sits on, carved at the leather-hard stage."
+    },
+    {
+      "slug": "bisque",
+      "term": "Bisque",
+      "definition": "The first firing at cone 06 that hardens greenware into porous bisqueware."
+    },
+    {
+      "slug": "cone",
+      "term": "Cone",
+      "definition": "A pyrometric measure of heat-work. Cone 06 is roughly 1000 degrees C; cone 6 is roughly 1220 degrees C."
+    }
+  ],
+  "aliases": ["wheel thrown soup bowl set", "matching thrown stoneware bowls", "production bowl throwing stoneware"],
+  "techniqueSlugs": ["centring-half-kilo-of-stoneware", "pulling-a-cylinder-wall", "trimming-a-foot-ring-on-the-wheel"],
+  "criticalTechniques": ["centring-half-kilo-of-stoneware"],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning", "heading": "Safety" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Silica dust is the chronic studio hazard. Silicosis is irreversible. Mix wet whenever possible. Wear a P100 respirator any time raw glaze powders are open. Wet-clean only: no sweeping, no compressed air, no dry sanding indoors." }] },
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Ventilation matters. Either a downdraft vent on the kiln or an open window with an extractor. Never open a hot kiln below 80 degrees C. Keep a Class A fire extinguisher within reach of the studio." }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Throwing a matching set requires one additional tool beyond the standard throwing kit: pottery " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "centring" } }], "text": "centring" },
+          { "type": "text", "text": " calipers set to the target rim diameter. The calipers act as a physical gauge at the end of each throw, confirming the opening is the correct width before you wire the bowl off the bat. Four bowls at 350 g each require 1.4 kg of clay, wedged and pre-weighed into 350 g balls before throwing begins." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Smooth stoneware, pre-weighed into 350 g balls", "quantity": "4 balls (1.4 kg total)", "substitution": null },
+            { "name": "Electric potter's wheel", "quantity": "1", "substitution": null },
+            { "name": "Wire cutter", "quantity": "1", "substitution": null },
+            { "name": "Needle tool", "quantity": "1", "substitution": null },
+            { "name": "Wooden rib", "quantity": "1", "substitution": null },
+            { "name": "Pottery sponge", "quantity": "1", "substitution": null },
+            { "name": "Pottery calipers", "quantity": "1", "substitution": null },
+            { "name": "Loop tool for trimming", "quantity": "1", "substitution": null },
+            { "name": "Kiln with cone 6 capability", "quantity": "1", "substitution": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting the target dimensions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Before throwing, decide on the target measurements for the bowl: 160 mm rim diameter, 80 mm tall, walls 5-6 mm thick. Set the calipers to 160 mm. Throw the first bowl to these dimensions, then use the calipers and a ruler to check each subsequent bowl against the first. The goal is not perfection but consistency within about 5 mm across the set." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Throwing the bowl shape" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Centre the 350 g mound. Open to 80 mm at the base. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pulling-a-wall" } }], "text": "Pulling a wall" },
+          { "type": "text", "text": " upward in two or three pulls until the wall reaches 80 mm tall. On the final pull, angle the inside fingers slightly outward as they travel upward to flare the bowl opening to the 160 mm target. A soup bowl should be deeper than a cereal bowl: the walls curve outward rather than widely, keeping the volume deep." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Checking with calipers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "At the end of each throw, hold the calipers across the rim to check the diameter. If the bowl is too narrow, one more pass of outward pressure from inside will open it slightly. If the bowl is already too wide, the wall cannot be narrowed without collapsing. Accept a range of 155-165 mm as within the set tolerance." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Drying and trimming" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wire each bowl off the bat and allow to dry under plastic. At " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "leather-hard" } }], "text": "leather-hard" },
+          { "type": "text", "text": ", trim a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foot-ring" } }], "text": "foot ring" },
+          { "type": "text", "text": " on each bowl using the loop tool. Use the calipers again to check that all four foot rings are within 5 mm of each other in diameter so the bowls nest well." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Firing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bone-dry, then " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bisque" } }], "text": "bisque" },
+          { "type": "text", "text": " at " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cone" } }], "text": "cone" },
+          { "type": "text", "text": " 06. Glaze with a food-safe liner glaze on interior surfaces. Load nested or stacked with kiln posts as spacers. Fire to cone 6." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cone 6 stoneware with a food-safe glaze is microwave-safe and dishwasher-safe once the glaze is verified as non-crazing." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "problem": "Bowls in the set vary widely in height", "cause": "The amount of outward flaring on the final pull varied between pieces", "fix": "Check height with a ruler as well as diameter with calipers at the end of each throw. Adjust flare angle to match the first bowl." },
+            { "problem": "Walls are thicker at the base than at the rim", "cause": "Not enough clay was transferred upward on the first pull", "fix": "Begin each pull from the very base of the wall, not from mid-height. The first pull should move the most clay." },
+            { "problem": "Foot ring diameters vary between bowls", "cause": "Trimming was done by eye rather than with calipers", "fix": "Set calipers to a fixed foot ring diameter before trimming each bowl. Mark the centre of the inverted bowl before cutting." }
+          ]
+        }
+      }
+    ]
+  }
+}
