@@ -1,0 +1,209 @@
+{
+  "slug": "four-shaft-blanket-sample",
+  "title": "Four-shaft 2/2 twill blanket sample",
+  "subtitle": "A 50 x 50 cm swatch in wool twill to check sett, colour, and shrinkage before warping a full blanket",
+  "excerpt": "This 50 x 50 cm sample blanket is woven on a four-shaft loom in 2/2 twill, using 4-ply wool at 8 epi and 8 ppi. Its purpose is to test sett, beat, and colour before committing to a full blanket warp. The sample shrinks approximately 10% on washing; measure before and after wet-finishing to calibrate the full warp calculation.",
+  "type": "PATTERN",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Mary E. Black, The Key to Weaving (1945), cited as the standard reference for four-shaft threading conventions and twill sett guidance; written around, not quoted. Hooper, Hand-Loom Weaving (1910), public domain, Internet Archive, for general twill structure description.",
+  "recipeTools": [
+    { "slug": "floor-loom-4-shaft", "isOptional": false },
+    { "slug": "weaving-reed", "isOptional": false },
+    { "slug": "weaving-heddles", "isOptional": false },
+    { "slug": "boat-shuttle", "isOptional": false },
+    { "slug": "warping-board", "isOptional": false },
+    { "slug": "raddle", "isOptional": true },
+    { "slug": "digital-scales", "isOptional": true },
+    { "slug": "measuring-tape-soft", "isOptional": false },
+    { "slug": "tapestry-needle-20", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "twill",
+      "term": "Twill",
+      "definition": "A weave structure in which each weft thread passes over two or more warp threads and then under one or more, with each row offset by one thread from the previous. The offset creates a diagonal line or rib on the cloth surface. 2/2 twill means the weft passes over two warp threads, then under two, producing a balanced diagonal that looks the same on both faces of the cloth."
+    },
+    {
+      "slug": "sett",
+      "term": "Sett",
+      "definition": "The number of warp threads per unit of width, stated in ends per inch (epi) or ends per centimetre. Sett determines whether a cloth is warp-dominant, weft-dominant, or balanced. For 2/2 twill in 4-ply wool at 8 epi, the cloth is approximately balanced: warp and weft threads are equally visible on both faces."
+    }
+  ],
+  "aliases": ["four shaft twill sample", "blanket swatch weaving", "2/2 twill wool swatch"],
+  "techniqueSlugs": ["four-shaft-loom-threading", "wet-finishing-wool-cloth"],
+  "criticalTechniques": ["four-shaft-loom-threading"],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This sample is woven in 2/2 " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "twill" } }], "text": "twill" },
+          { "type": "text", "text": " on a four-shaft loom. Its purpose is practical: to verify " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sett" } }], "text": "sett" },
+          { "type": "text", "text": ", beat, colour, and shrinkage before winding a full blanket warp. A 50 x 50 cm washed and measured sample tells you whether the proposed 8 epi sett in 4-ply wool produces the handle and density you want, whether the colour combination works at weaving scale, and by how much the cloth will shrink on its first washing. A sample that shrinks 11% instead of the expected 10% changes the full warp calculation by enough to matter on a large blanket. The warp for this sample is 56 ends wide (to allow for draw-in) at 8 epi, wound to 75 cm (50 cm finished + 15 cm loom waste + 10 cm take-up and shrinkage). Warp and weft are both 4-ply wool at 8 epi and 8 ppi." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The draft" }]
+      },
+      {
+        "type": "weavingDraft",
+        "attrs": {
+          "definition": {
+            "title": "2/2 twill on four shafts, straight draw",
+            "loomType": "four-shaft",
+            "threading": [1, 2, 3, 4, 1, 2, 3, 4],
+            "tieUp": [
+              [1, 1, 0, 0],
+              [0, 1, 1, 0],
+              [0, 0, 1, 1],
+              [1, 0, 0, 1]
+            ],
+            "treadling": [1, 2, 3, 4, 1, 2, 3, 4]
+          }
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The draft shows eight warp ends threaded on four shafts in a straight draw: end 1 on shaft 1, end 2 on shaft 2, end 3 on shaft 3, end 4 on shaft 4, repeating. The tie-up shows each of the four treadles lifting two adjacent shafts: treadle 1 lifts shafts 1 and 2, treadle 2 lifts shafts 2 and 3, treadle 3 lifts shafts 3 and 4, treadle 4 lifts shafts 4 and 1. The treadling sequence repeats treadles 1, 2, 3, 4 for each block of four picks. The drawdown shows the characteristic diagonal twill rib stepping one thread to the right with each successive pick. Reversing the treadling sequence (4, 3, 2, 1) reverses the diagonal; alternating blocks of 4 in each direction produces a herringbone." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Four-shaft floor loom with at least four treadles", "qty": "1" },
+            { "name": "Warp yarn: 4-ply wool in the planned blanket main colour", "qty": "100 g (approx)" },
+            { "name": "Weft yarn: 4-ply wool in the same or contrasting colour", "qty": "80 g (approx)" },
+            { "name": "Weaving reed, 8-dent", "qty": "1" },
+            { "name": "Weaving heddles, four shafts", "qty": "Approx 60 per shaft" },
+            { "name": "Warping board", "qty": "1" },
+            { "name": "Raddle (for spreading the warp when beaming)", "qty": "1" },
+            { "name": "Boat shuttle", "qty": "1" },
+            { "name": "Soft measuring tape", "qty": "1" },
+            { "name": "Digital scales", "qty": "1" },
+            { "name": "Blunt darning needle (for finishing warp tails)", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Warping and threading" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the warping board pegs 75 cm apart. Wind 56 ends at even tension, making the threading cross at the near peg. Tie the cross securely with contrasting yarn before removing the warp from the board." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Spread the warp through the raddle at one end per slot, with the raddle set for the 56-end width. Beam the warp onto the back beam under even tension, winding sticks between layers. The sample warp is short enough to beam in one pull without advancing the warp." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Thread the heddles from right to left following the straight draw: shaft 1, shaft 2, shaft 3, shaft 4, repeating across all 56 ends. The final four ends will complete the last repeat exactly; 56 is divisible by 4. Check the sequence at every repeat boundary." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sley the 8-dent reed at one end per dent for 8 epi. Tie the front bouts to the apron rod in groups of 8-10 ends, pulling each group forward to an equal tension before tying the bow knot or overhead knot. Check warp tension across the width by pressing on each group; they should all spring back with the same resistance." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Weaving" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tie up the four treadles as shown in the draft: treadle 1 to shafts 1 and 2, treadle 2 to shafts 2 and 3, treadle 3 to shafts 3 and 4, treadle 4 to shafts 4 and 1. Wind the weft yarn onto the boat shuttle. Weave four to six passes of scrap yarn as a header to spread the warp." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Weave the sample treadling treadles 1, 2, 3, 4 in sequence, repeating for every block of four picks. At 8 ppi in 4-ply wool, you need approximately 400 picks (50 cm x 8 ppi) to reach the planned 50 cm on the loom. A firm, even beat is important for a useful sample: if the beat varies across the sample, the shrinkage figure will not be reliable for calculating the full warp." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Advance the warp every 8-10 cm. Check the fell line is horizontal after each advance and correct any uneven tension before continuing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut the sample off the loom with 15 cm of warp tail at each end. Measure the unwashed sample and record its length and width. Tie the warp tails in groups with overhand knots close to the weaving to prevent unravelling." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wet-finish the sample by submerging it in hand-warm water with a small amount of wool wash. Press gently and leave for 10 minutes. Press out the water between two towels. Lay flat, ease to as square a shape as the cloth allows, and leave to dry." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once dry, measure the sample again and record the washed dimensions. Calculate the shrinkage as a percentage: (unwashed length minus washed length) divided by unwashed length, multiplied by 100. Repeat for width. A typical 4-ply wool 2/2 twill sample shrinks 8-12% in length and 5-8% in width on the first wash. Apply these percentages to the full blanket warp calculation. If you want a 150 x 200 cm finished blanket and the sample shows 10% length shrinkage, the loom length should be at least 222 cm plus loom waste." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The twill diagonal does not appear: the cloth looks like a muddled tabby",
+              "cause": "The treadle tie-up is incorrect, or the treadles are pressed in the wrong sequence",
+              "fix": "Press each treadle in turn and look at which shafts rise. Treadle 1 must lift shafts 1 and 2 only; treadle 2 must lift shafts 2 and 3 only; and so on. Re-tie any mislashed treadle before weaving. Confirm the sequence by weaving a single repeat of four picks and examining the drawdown on the cloth face."
+            },
+            {
+              "problem": "The sample shows an uneven beat: some sections have more picks per cm than others",
+              "cause": "Pressure on the beater varied, or warp tension changed between advances",
+              "fix": "Maintain steady beater pressure throughout. A piece of tape on the beater at the correct fell position serves as a reference for each pick. Re-tension the warp after every advance and check that the tension is even before continuing."
+            },
+            {
+              "problem": "The sample shrank more than 15% in length and the full blanket calculation seems very long",
+              "cause": "The wool yarn chosen has a high lanolin content and felts readily, or the wet-finishing water was too warm or the cloth was agitated",
+              "fix": "Wet-finish the sample again, this time in cooler water with no agitation, and re-measure. If the sample felted on the first wash, the full blanket will felt too unless wet-finishing is done with greater care. Reduce water temperature to 30 C and handle the cloth gently."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -93,6 +93,40 @@ spinning, weaving, natural dyeing, macramé, rug-making).
   **How to fix:** Remove the adverb. "Roll it until it is round and
   dense" is stronger than "until it is genuinely round and dense".
 
+- **`"target"` triggers brand-trademark substring check (Target retailer)** `[warn]`
+  Pattern: phrases like "target tension", "target colour", "target
+  yarn weight", "weft target" anywhere in body prose, glossary
+  definitions, troubleshooter strings, or excerpt. Recurred 5+ times
+  in bulk-005 across weaving, dyeing, and spinning briefs.
+  **Why:** `voice-check`'s brand-trademark rule matches "Target"
+  (US retailer) on the substring "target" with `whole: false`. False
+  positive for the generic noun, but still flagged.
+  **How to fix:** Substitute with `desired`, `aim for`, `the count to
+  hold`, `planned`, `intended`. "Spin to a desired DK weight" reads
+  cleaner than "spin to a target DK weight" anyway.
+
+- **`"anchor"` / `"Anchor"` triggers brand-trademark substring check (Anchor butter / Anchor cord)** `[warn]`
+  Pattern: weaving and macramé entries that say "anchor cord",
+  "anchor end", "anchor knot", "anchor to a wall". Recurred 2+ times
+  in bulk-005 (backstrap-loom, macramé curtain tieback).
+  **Why:** `voice-check`'s brand-trademark rule matches "Anchor"
+  (UK dairy brand + cord brand). False positive but flagged.
+  **How to fix:** Substitute with `mount cord`, `tie point`, `fixed
+  wall hook`, `holding cord`, `securing knot`. Where the cord
+  genuinely serves a structural anchoring role, `mount` reads more
+  natural than `anchor` in macramé instruction.
+
+- **`"Jacob"` as sheep breed name triggers brand-trademark check** `[warn]`
+  Pattern: any spinning, fleece, or sheep entry that names the Jacob
+  breed (multi-coloured British heritage sheep).
+  **Why:** `voice-check`'s brand-trademark rule matches "Jacob" on
+  the Jacob's biscuit brand. The breed name is the entire subject of
+  any Jacob-fleece tutorial; it cannot be omitted.
+  **How to fix:** Accept the warnings — the breed name is correct
+  usage. Tag the brief in its report as "warnings accepted: Jacob
+  breed name". Do not paraphrase as "Jacob's" or "Jacobs" — both
+  alternatives are wrong; the breed is named "Jacob".
+
 ---
 
 ## Glossary coverage issues

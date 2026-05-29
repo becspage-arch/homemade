@@ -1,0 +1,211 @@
+{
+  "slug": "dyeing-with-elderberries",
+  "title": "Dyeing with elderberries",
+  "subtitle": "Simmering Sambucus nigra berries to dye alum-mordanted wool a muted purple-grey",
+  "excerpt": "Elderberries give wool a soft muted purple-grey on an alum mordant, shifting to a deep grey-violet with an iron modifier. The dye is fugitive and benefits from cool soft-water washing to preserve colour. This tutorial covers the full method from pre-soaking mordanted wool to a finished skein.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "natural-dyeing",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Pellew, Charles Livingston. Dyes and Dyeing. New York, 1913. Public domain. Internet Archive. Plant-dye mordant tables and berry-dye handling notes.\n\nHummel, J. J. The Dyeing of Textile Fabrics. London: Cassell, 1885. Public domain. Internet Archive. General mordant-and-plant-dye chemistry baseline.",
+  "recipeTools": [
+    { "slug": "dye-pot-stainless", "isOptional": false },
+    { "slug": "dye-thermometer", "isOptional": false },
+    { "slug": "alum-potash", "isOptional": false },
+    { "slug": "dyeing-gloves-long", "isOptional": false },
+    { "slug": "dyeing-apron", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": false },
+    { "slug": "kitchen-scales", "isOptional": false },
+    { "slug": "measuring-jug", "isOptional": false },
+    { "slug": "mordant-jar", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "weight-of-fibre",
+      "term": "WOF",
+      "definition": "Weight of fibre. A dye or mordant ratio expressed as a percentage of WOF means that quantity relative to the dry weight of the fibre being dyed. For example, 25% WOF alum with 100 g of wool means 25 g of alum potash."
+    },
+    {
+      "slug": "fugitive-dye",
+      "term": "Fugitive dye",
+      "definition": "A dye that is prone to fading or washing out over time, especially when exposed to light, heat, or hard alkaline water. Elderberry is a classic fugitive natural dye: the colour is real but less stable than mordanted weld or madder. Fugitive dyes require particular care in washing and drying."
+    }
+  ],
+  "aliases": [
+    "elder berry wool dye",
+    "sambucus nigra dye",
+    "elderberry natural dye wool",
+    "purple grey natural dye"
+  ],
+  "techniqueSlugs": ["natural-dye-mordanting-with-alum", "natural-dye-iron-modifier"],
+  "criticalTechniques": ["natural-dye-mordanting-with-alum"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Mordant safety",
+          "body": "Dye-pots are dedicated and never return to food use. Wear gloves, an apron, and closed-toe shoes. Mordant work goes outdoors or with extraction."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Elderberries (Sambucus nigra) give alum-mordanted wool a muted purple-grey, one of the few cool-toned colours available from a UK hedgerow. The colour shifts to a deep grey-violet with a spent iron modifier. Elderberry is a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fugitive-dye" } }],
+            "text": "fugitive dye"
+          },
+          { "type": "text", "text": ": the mordant fixes it reasonably well, but it will soften over months if washed in hard or alkaline water or dried in strong sun. The method uses a ratio of 100% " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "weight-of-fibre" } }],
+            "text": "WOF"
+          },
+          { "type": "text", "text": " elderberries to fibre, with 25% WOF alum potash as the mordant. The dye-bath is kept below boiling at 70 to 80 degrees C throughout. Boiling destroys the berry pigment and yields a grey-brown rather than purple." }
+        ]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "mordant-safety" }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "elderberry-growing-and-harvesting" }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Wool yarn or fleece, pre-wetted in cool water for 30 minutes", "qty": "100 g" },
+            { "name": "Fresh or frozen elderberries (100% WOF)", "qty": "100 g" },
+            { "name": "Alum potash (25% WOF)", "qty": "25 g" },
+            { "name": "Iron modifier, optional: a small lump of iron sulphate in water (2% WOF)", "qty": "2 g dissolved in 200 ml water" },
+            { "name": "Stainless steel dye-pot, dedicated to dyeing", "qty": "1" },
+            { "name": "Dye thermometer", "qty": "1" },
+            { "name": "Fine mesh sieve or muslin cloth for straining", "qty": "1" },
+            { "name": "Long dyeing gloves", "qty": "1 pair" },
+            { "name": "Dyeing apron", "qty": "1" },
+            { "name": "Kitchen scales", "qty": "1" },
+            { "name": "Mordant jar for alum bath", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Mordant the wool" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dissolve 25 g of alum potash in 200 ml of hot water in the mordant jar, then add to the dye-pot filled with enough warm water to allow the wool to move freely. Lower the pre-wetted wool into the mordant bath. Bring slowly to 80 degrees C over 30 minutes and hold at that temperature for 45 minutes. Stir gently every 10 minutes to ensure even mordant penetration. Remove the wool, squeeze gently without wringing, and set aside. Do not rinse the mordanted wool." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Extract the dye bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place the elderberries in the dye-pot with enough water to cover and allow movement. Heat gently to 70 degrees C and hold for 30 minutes, pressing the berries occasionally with a wooden spoon to release their juice. Strain through a fine mesh sieve, discarding the spent berries, and return the liquid to the pot. The extracted bath will be a deep purple-red." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Dye the wool" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lower the mordanted wool into the dye bath. Bring slowly to 70 to 80 degrees C over 20 minutes. Hold at that temperature for 60 minutes. Keep the dye-bath below 80 degrees C throughout. Temperatures above 85 degrees C shift the colour toward a dull grey-brown as the anthocyanin pigment breaks down. Stir or turn the wool every 10 to 15 minutes to avoid uneven take-up." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Optional iron modifier" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "To shift the colour toward deep grey-violet, dissolve 2 g of iron sulphate in 200 ml of water and add to the dye-bath in the final 10 minutes. Keep the heat low. Stir well and watch the colour shift. Remove the wool promptly once the colour is achieved: leaving wool in an iron bath for too long causes fibre damage over time." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 5: Rinse and dry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the wool from the dye-bath and allow it to cool slightly before rinsing. Rinse in cool soft water only; hard water and alkaline water both strip elderberry colour rapidly. Rinse gently until the water runs clear. Do not use soap or detergent on the first wash. Squeeze gently and dry in shade, away from direct sun." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Alum mordant gives the most consistent result with elderberry: a muted purple-grey. An iron modifier added at the end shifts the wool to deep grey-violet. Copper mordant (25% WOF copper sulphate) gives a muted blue-grey where iron is not available, but copper needs careful wastewater handling. Unmordanted wool takes up elderberry colour weakly and fades faster." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Adding a small amount of cream of tartar (6% WOF) to the mordant bath brightens the alum result slightly and helps keep the wool soft. Vinegar added to the dye-bath (a tablespoon per litre) shifts the pH toward acid and can increase colour take-up on protein fibres such as wool, silk, and alpaca." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The colour came out grey-brown rather than purple-grey",
+              "cause": "The dye-bath exceeded 80 degrees C, breaking down the anthocyanin pigment",
+              "fix": "Keep a thermometer in the dye-bath at all times and reduce heat as soon as the temperature climbs toward 82 to 85 degrees C. An elderberry dye-bath that boils will not recover its purple tone."
+            },
+            {
+              "problem": "The colour faded noticeably after the first wash",
+              "cause": "Rinsed in hard or alkaline water, or washed with detergent too soon",
+              "fix": "Use cool soft water for the first several washes. Hard water alkalinity shifts elderberry from purple-grey toward brown. Rainwater or filtered water is preferable where tap water is hard."
+            },
+            {
+              "problem": "Colour is patchy or uneven across the skein",
+              "cause": "Wool was not stirred regularly, or entered the dye-bath cold and stuck together",
+              "fix": "Pre-wet the wool thoroughly for at least 30 minutes before dyeing, lower it into a warm (not cold) bath, and turn every 10 minutes throughout the dye time."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

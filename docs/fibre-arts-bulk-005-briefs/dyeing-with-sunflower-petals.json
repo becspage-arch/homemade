@@ -1,0 +1,205 @@
+{
+  "slug": "dyeing-with-sunflower-petals",
+  "title": "Dyeing with sunflower petals",
+  "subtitle": "Extracting colour from yellow Helianthus annuus petals to dye alum-mordanted wool",
+  "excerpt": "Yellow sunflower petals yield a soft butter-yellow to old-gold on alum-mordanted wool, shifting to a muted olive-green with an iron modifier. The petals are low-cost and abundantly available in summer, making this a good first dye-bath project. This tutorial covers the method from mordanting through to a finished rinse.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "natural-dyeing",
+  "difficulty": "BEGINNER",
+  "season": "SUMMER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Pellew, Charles Livingston. Dyes and Dyeing. New York, 1913. Public domain. Internet Archive. Covers yellow-flower dye extraction and alum-mordant take-up on wool.",
+  "recipeTools": [
+    { "slug": "dye-pot-stainless", "isOptional": false },
+    { "slug": "dye-thermometer", "isOptional": false },
+    { "slug": "alum-potash", "isOptional": false },
+    { "slug": "dyeing-gloves-long", "isOptional": false },
+    { "slug": "dyeing-apron", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": false },
+    { "slug": "kitchen-scales", "isOptional": false },
+    { "slug": "measuring-jug", "isOptional": false },
+    { "slug": "mordant-jar", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "petal-dye",
+      "term": "Petal dye",
+      "definition": "A natural dye extracted from the petals of flowering plants rather than from bark, root, or heartwood. Petal dyes are typically flavonoid or carotenoid based, yielding yellow, orange, or pink tones depending on species and mordant. Colour depth depends on the ratio of petals to fibre and the freshness of the material."
+    },
+    {
+      "slug": "extraction-temperature",
+      "term": "Extraction temperature",
+      "definition": "The temperature at which plant material is simmered to release its dye compounds into the bath. Different pigments release at different temperatures: anthocyanins (berry dyes) are destroyed above 80 degrees C, while flavonoids (weld, sunflower, coreopsis) are stable up to 90 to 95 degrees C. Holding extraction too low leaves pigment in the plant; holding it too high risks degrading heat-sensitive pigments."
+    }
+  ],
+  "aliases": [
+    "sunflower natural dye",
+    "helianthus annuus dye wool",
+    "yellow petal dye",
+    "sunflower petal wool"
+  ],
+  "techniqueSlugs": ["natural-dye-mordanting-with-alum"],
+  "criticalTechniques": ["natural-dye-mordanting-with-alum"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Mordant safety",
+          "body": "Dye-pots are dedicated and never return to food use. Wear gloves, an apron, and closed-toe shoes. Mordant work goes outdoors or with extraction."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Yellow sunflower petals (Helianthus annuus) are a reliable source of " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "petal-dye" } }],
+            "text": "petal dye"
+          },
+          { "type": "text", "text": " for wool, giving a soft butter-yellow to old-gold on an alum mordant. The colour deepens with longer dye time and shifts to a muted olive-green with an iron modifier. The flavonoid pigments in sunflower petals are stable enough to withstand an " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "extraction-temperature" } }],
+            "text": "extraction temperature"
+          },
+          { "type": "text", "text": " of 80 degrees C without degradation. Use yellow petals only: the dark central disc and brown or red petal varieties give a different and more muted result. The ratio is 100% weight of fibre (WOF) petals to fibre, with 25% WOF alum potash as the mordant." }
+        ]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "mordant-safety" }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "sunflower-growing-and-harvesting" }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Wool yarn or fleece, pre-wetted in cool water for 30 minutes", "qty": "100 g" },
+            { "name": "Yellow sunflower petals, fresh or dried (100% WOF)", "qty": "100 g" },
+            { "name": "Alum potash (25% WOF)", "qty": "25 g" },
+            { "name": "Stainless steel dye-pot, dedicated to dyeing", "qty": "1" },
+            { "name": "Dye thermometer", "qty": "1" },
+            { "name": "Fine mesh sieve or muslin cloth for straining", "qty": "1" },
+            { "name": "Long dyeing gloves", "qty": "1 pair" },
+            { "name": "Dyeing apron", "qty": "1" },
+            { "name": "Kitchen scales", "qty": "1" },
+            { "name": "Mordant jar for alum bath", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Mordant the wool" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dissolve 25 g of alum potash in 200 ml of hot water in the mordant jar, then stir into the dye-pot filled with enough warm water to allow the wool to move freely. Lower the pre-wetted wool into the mordant bath. Raise the temperature slowly to 80 degrees C over 30 minutes and hold for 45 minutes. Stir or turn the wool every 10 minutes. Remove the wool, squeeze gently without wringing, and set aside without rinsing. The mordant bath can be cooled and kept for a second batch if the alum concentration is still reasonable." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Extract the dye bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place the petals in the dye-pot with enough water to cover and allow some movement. Bring slowly to 80 degrees C and hold for 45 minutes, pressing the petals occasionally to release their colour. The bath will turn a clear, mid-yellow. Strain through a fine mesh sieve, pressing the petals firmly to extract all liquid, and discard the spent petals. Return the strained dye bath to the pot." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Dye the wool" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lower the mordanted wool into the dye-bath. Raise the temperature slowly to 80 degrees C over 20 minutes and hold for 45 to 60 minutes. Stir or turn the wool every 10 to 15 minutes. The wool will take on colour gradually; the final result should be a soft butter-yellow to old-gold depending on the concentration of the bath and the length of time held at temperature." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Rinse and dry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the wool from the dye-bath, cool slightly, then rinse in water at a similar temperature to avoid felting. Rinse gently until the water runs clear. Squeeze without wringing and dry in shade. Sunflower-dyed wool is reasonably wash-fast once mordanted with alum; avoid soaking for extended periods or washing in strongly alkaline detergents, both of which strip the flavonoid colour." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "On an alum mordant, sunflower petals give a soft butter-yellow at 45 minutes, moving toward old-gold at 60 minutes in a concentrated bath. With an iron modifier (2% WOF iron sulphate added in the final 10 minutes), the colour shifts to a muted olive-green. The shift is most noticeable on a deeper gold base; a pale butter-yellow will shift to a cooler sage-green." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Using dried sunflower petals rather than fresh requires the same weight but produces a slightly more concentrated bath because the moisture has been removed. Soak dried petals in cool water for 30 minutes before extraction to re-hydrate them and improve colour release. Both fresh and dried petals give a comparable final result on the skein." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The colour is very pale, barely visible on the wool",
+              "cause": "Petal weight too low relative to the fibre, or extraction temperature held too low",
+              "fix": "Use the full 100% WOF of petals and hold the extraction at 80 degrees C for the full 45 minutes. Press the petals firmly through the sieve to recover all pigment."
+            },
+            {
+              "problem": "The mordanted wool felted slightly during the dye-bath",
+              "cause": "Temperature rose too fast, or the wool was agitated too vigorously",
+              "fix": "Bring the dye-bath up slowly over at least 20 minutes. Turn or lift the wool gently rather than stirring briskly. Sunflower-petal baths can be held at 80 degrees C without issue; the risk is in rapid temperature change combined with agitation."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Wastewater disposal" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An alum and sunflower-petal dye bath is low-hazard. Small home quantities can go down a foul drain or be composted once cooled. If an iron modifier was used, the spent bath must go down a foul drain only: not a storm drain, stream, soak-away, or compost heap. Iron sulphate, even in small amounts, is harmful to aquatic life and should not enter any watercourse. For larger quantities of iron modifier bath, contact your local council waste service before disposal." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,311 @@
+{
+  "slug": "macrame-keyring-set",
+  "title": "Macramé keyring set",
+  "subtitle": "Three knotted keyrings on 25 mm steel split-rings in natural cream, dusty rose, and sage green",
+  "excerpt": "A set of three macramé keyrings made from 3 mm cotton cord on steel split-rings. Each keyring uses four cords mounted with lark's head knots, a short alternating-square or double-half-hitch body, a gathering-knot finish, and a 4 cm fringe. The whole set takes under an hour.",
+  "type": "PATTERN",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "macrame",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Observation-led from the mid-20th-century macramé revival. The lark's head mount is documented across sailors' ropework in the public domain, including Graumont and Hensel, Encyclopedia of Knots and Fancy Rope Work (1939), Cornell Maritime Press. The alternating-square body and gathering-knot finish are standard constructions in the modern macramé guild tradition.",
+  "recipeTools": [
+    { "slug": "macrame-board", "isOptional": false },
+    { "slug": "macrame-t-pins", "isOptional": false },
+    { "slug": "macrame-ring", "isOptional": false },
+    { "slug": "macrame-fringe-comb", "isOptional": false },
+    { "slug": "cord-measuring-tape", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "lark-s-head",
+      "term": "Lark's head",
+      "definition": "A two-loop mounting knot used to attach a folded cord to a ring, dowel, or anchor cord. The cord is folded in half, the loop is passed over the ring, and both tails are pulled through the loop from front to back. The result is a secure mount with two working ends hanging below. The lark's head is the standard starting knot for macramé panels and keyrings."
+    },
+    {
+      "slug": "fringe-finish",
+      "term": "Fringe finish",
+      "definition": "The unworked cord tails left below the final knot of a macramé piece, trimmed to a stated length and combed or left plain. On a keyring the fringe is short, typically 3 to 5 cm. Combing separates the plied cord into fine strands for a softer, fuller look."
+    }
+  ],
+  "aliases": ["macrame keychain", "knotted keyring", "macrame key fob set"],
+  "techniqueSlugs": [
+    "larks-head-knot-macrame",
+    "alternating-square-knot-macrame",
+    "double-half-hitch-macrame",
+    "gathering-knot-macrame"
+  ],
+  "criticalTechniques": ["larks-head-knot-macrame"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "These three keyrings are made from 3 mm cotton macramé cord on 25 mm steel split-rings. Each ring carries four cords at 60 cm each, mounted with "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lark-s-head" } }],
+            "text": "lark's head knots"
+          },
+          {
+            "type": "text",
+            "text": " so the working length after mounting is 30 cm per cord. The body is knotted with alternating-square knots or double-half-hitch rows depending on the colour, then gathered and trimmed to a 4 cm "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fringe-finish" } }],
+            "text": "fringe finish"
+          },
+          {
+            "type": "text",
+            "text": ". The three colourways are natural cream, dusty rose, and sage green. You need 240 cm of cord per keyring (four cords at 60 cm each), so 720 cm total for the set."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "3 mm cotton macramé cord, natural cream", "qty": "240 cm" },
+            { "name": "3 mm cotton macramé cord, dusty rose", "qty": "240 cm" },
+            { "name": "3 mm cotton macramé cord, sage green", "qty": "240 cm" },
+            { "name": "25 mm steel split-rings", "qty": "3" },
+            { "name": "Macramé board or clipboard", "qty": "1" },
+            { "name": "T-pins", "qty": "4 to 6" },
+            { "name": "Fringe comb or stiff bristle brush", "qty": "1" },
+            { "name": "Sharp scissors", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The knots" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Each keyring uses three knot types. The lark's head mounts the cords to the ring. The alternating-square knot or double-half-hitch rows form the decorative body. The gathering knot collects all tails before the fringe."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lark's head: fold a cord in half, pass the loop over the split-ring from front to back, bring the two tails through the loop, and pull snug." }
+        ]
+      },
+      {
+        "type": "macrameKnot",
+        "attrs": {
+          "definition": {
+            "knotType": "larks-head",
+            "cordCount": 2,
+            "showSteps": false,
+            "caption": "Lark's head: fold cord in half, loop over the ring, pull both tails through."
+          }
+        }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "larks-head-knot-macrame" }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Alternating-square knot: tie a square knot with cords 1 and 4 around cords 2 and 3, then offset the next row so the knot straddles cords 2, 3, and 4. Alternating the working pairs row by row produces a neat diamond lattice." }
+        ]
+      },
+      {
+        "type": "macrameKnot",
+        "attrs": {
+          "definition": {
+            "knotType": "alternating-square",
+            "cordCount": 4,
+            "showSteps": false,
+            "caption": "Alternating-square knot: offset each row by one cord pair to build a lattice."
+          }
+        }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "alternating-square-knot-macrame" }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Double half-hitch: wrap one working cord over and under a horizontal filler cord twice, pulling firmly after each wrap. Worked across all cords in one direction it creates a solid horizontal bar." }
+        ]
+      },
+      {
+        "type": "macrameKnot",
+        "attrs": {
+          "definition": {
+            "knotType": "double-half-hitch-left",
+            "cordCount": 4,
+            "showSteps": false,
+            "caption": "Double half-hitch: two wraps of each working cord around the filler cord produce a firm bar."
+          }
+        }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "double-half-hitch-macrame" }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Gathering knot: take a short separate length of cord and wrap it tightly around all the hanging tails, then pass the working end back through the wraps to secure. Pull until the wraps sit firm and the tail ends disappear inside the coil." }
+        ]
+      },
+      {
+        "type": "macrameKnot",
+        "attrs": {
+          "definition": {
+            "knotType": "gathering",
+            "cordCount": 4,
+            "showSteps": false,
+            "caption": "Gathering knot: a wrapped-and-secured coil that collects all tails before the fringe."
+          }
+        }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "gathering-knot-macrame" }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Cut the cords" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cut four lengths of 3 mm cotton cord at 60 cm each for the first keyring. Use a cord-measuring tape or mark a cutting guide on your board. Cut cleanly at each end with sharp scissors. Cords cut slightly on the short side are hard to recover from, so cut at 62 cm and trim the fringe to length at the end. Repeat for each of the remaining two keyrings in their own colour."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Mount the cords on the split-ring" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hold the split-ring steady by pinning it to the macramé board with a T-pin through the ring, or clip the ring to a clipboard hook. Fold each cord in half and mount it to the ring using a lark's head knot. After all four cords are mounted you will have eight working ends hanging below the ring. Push the cords together so they sit neatly side by side before knotting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Knot the body" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For the cream keyring, tie three rows of alternating-square knots. The first row ties two square knots: one using cords 1, 2, 3, 4 (cords 1 and 4 are the working cords, 2 and 3 are the filler cords) and one using cords 5, 6, 7, 8 (cords 5 and 8 working, 6 and 7 filler). Leave 3 mm of space above each knot before tying. The second row ties one square knot using cords 3, 4, 5, 6 (cords 3 and 6 working). The third row repeats the first-row arrangement. The result is a compact alternating diamond body roughly 3 to 4 cm tall."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For the dusty rose keyring, tie three horizontal double-half-hitch bars. Lay cord 1 horizontally across the other seven cords from left to right. Each of cords 2 through 8 wraps twice around cord 1, working left to right, producing a firm horizontal bar. Repeat with cord 2 as the new filler cord to make the second bar, then cord 3 for the third bar. The result is a striped horizontal body."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For the sage green keyring, mix the two methods. Tie one row of alternating-square knots (two knots, as in the cream row 1). Tie one horizontal double-half-hitch bar. Finish with one more row of alternating-square knots."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Tie the gathering knot" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cut 30 cm of cord in the same colour. Lay it against the back of the eight hanging tails, about 1 cm below the last knot. Leave one short tail pointing up; let the rest hang down. Wrap the long end tightly around all eight tails and the short tail, moving upward, for six to eight close wraps. Feed the working end through the loop at the top that the short tail formed. Pull the short tail down to lock both ends inside the wraps. Trim both ends flush with the base of the knot."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 5: Trim and comb the fringe" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Trim all eight tails to 4 cm below the gathering knot, cutting straight across. Comb each tail with the fringe comb or stiff brush, working from the tip upward, to separate the plied strands into fine fibres. A few light passes give a fluffy fringe; more passes give a fully fanned-out tassel. Trim any uneven strands after combing. Repeat for all three keyrings."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The lark's head knots slide around the ring instead of sitting in place",
+              "cause": "The cords were not pulled firmly enough when mounting, or the split-ring is too wide for the cord diameter",
+              "fix": "After mounting each cord, hold the two tails and pull downward firmly until the knot grips the ring. For a 25 mm ring, 3 mm cord fills the gap well; thinner cord will need a second lark's head on top of the first to take up slack."
+            },
+            {
+              "problem": "The alternating-square body pulls to one side",
+              "cause": "The working cords were tensioned unevenly, tightening more firmly on one side than the other",
+              "fix": "After each square knot, hold both working cords and pull horizontally outward with equal pressure before moving to the next knot. Pin the work to the board so both sides have the same angle of pull."
+            },
+            {
+              "problem": "The gathering knot unravels when the fringe is combed",
+              "cause": "The working end was not locked inside the wraps before trimming",
+              "fix": "Ensure the short upward-pointing tail is long enough to grip when pulled, and pull it firmly before trimming. If the knot slips, undo the wraps and start again, keeping the new wraps tight and closely packed."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

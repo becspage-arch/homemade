@@ -1,0 +1,183 @@
+{
+  "slug": "spinning-jacob-wool",
+  "title": "Spinning Jacob wool into aran-weight marled 2-ply",
+  "subtitle": "Sorting by colour, spinning separate singles, and plying for a naturally variegated yarn",
+  "excerpt": "Jacob fleece comes in black, brown, white, and all the combinations between them. Sorting the top by colour, spinning each shade as a separate singles, and plying two contrasting singles together produces a marled yarn with a naturally shifting palette. Two singles at about 20 WPI ply to approximately 10 WPI, a firm aran weight suited to outerwear and accessories.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Observation-led. Jacob fleece sorting and marled plying is standard practice in British smallholding spinning; the colour-sorting step is documented across UK fleece-to-yarn guides and spinning guild teaching. No single modern published text is quoted.",
+  "recipeTools": [
+    { "slug": "spinning-wheel-castle", "isOptional": false },
+    { "slug": "spinning-wheel-saxony", "isOptional": true },
+    { "slug": "drum-carder", "isOptional": true },
+    { "slug": "niddy-noddy", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "marled-yarn",
+      "term": "Marled yarn",
+      "definition": "A plied yarn in which the two (or more) singles are of different colours. As the singles twist around each other in the ply, the two colours appear side-by-side, creating a heathered or streaked appearance in the finished cloth. In Jacob spinning, the natural black-and-white range of the breed produces a classic marled effect without any dyeing."
+    },
+    {
+      "slug": "colour-blending",
+      "term": "Colour blending",
+      "definition": "Mixing fibres of two or more colours before spinning, so the spun singles carries a mixed tone rather than a single solid colour. Blending before carding produces a heathered single; plying different-coloured singles without blending produces the marled effect. Both approaches work with Jacob fleece; this entry covers the ply approach for a clearer two-colour result."
+    }
+  ],
+  "aliases": ["jacob fleece spinning", "marled ply jacob", "jacob aran weight"],
+  "techniqueSlugs": ["spinning-short-forward-draw", "spinning-2-ply", "spinning-colour-sorting", "spinning-setting-twist"],
+  "criticalTechniques": ["spinning-short-forward-draw", "spinning-2-ply"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Wheel safety",
+          "body": "Tie hair back, roll sleeves, no necklaces near the drive band, flyer, or bobbin. Loose fibres caught in spinning gear stop the wheel."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Jacob is a multi-coloured British breed with a fleece that ranges from near-white through fawn, brown, and dark chocolate to near-black. A single animal carries all of these shades at once. Separating the top by colour before spinning lets the spinner control where each shade appears in the finished yarn. Plying a dark singles with a light singles produces a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "marled-yarn" } }],
+            "text": "marled yarn"
+          },
+          { "type": "text", "text": ": the two colours twist around each other in a repeating spiral. The alternative, " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colour-blending" } }],
+            "text": "colour blending"
+          },
+          { "type": "text", "text": " before spinning, produces a more uniform heathered tone. This entry covers the ply-for-marled approach. Two singles at around 20 WPI ply together to approximately 10 WPI, a firm aran weight." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Jacob top or carded batt, sorted by colour", "qty": "100 g (50 g dark, 50 g light)" },
+            { "name": "Spinning wheel (castle or Saxony)", "qty": "1, set to a twist ratio of 7:1-8:1" },
+            { "name": "Drum carder (optional, for sorting mixed top)", "qty": "1" },
+            { "name": "Niddy-noddy", "qty": "1" },
+            { "name": "A second bobbin for plying", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the fibre" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Jacob top often arrives as a blend of shades rather than a single sorted colour. Lay the top on a clean surface and separate it by eye into dark, mid, and light piles. The division does not need to be precise: small amounts of mid-tone fibre mixed into the dark or light pile simply soften the contrast. For a strong marled effect, keep the dark and light piles as separate as practical." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If the top has sections with fibres of two or three colours running side by side, a drum carder helps: pass the mixed section across the drum twice to blend it into a uniform shade, then set it aside as a separate mid-tone pile for another project. Aim to spin only from the pale and dark piles for this marled batch." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Jacob's staple length is typically 8-12 cm and the crimp is moderate. It behaves similarly to mid-grade Shetland at the wheel, and a short-forward draw at a twist ratio of 7:1 to 8:1 suits it well for aran weight." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Spinning" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Spin the dark singles" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the wheel to a twist ratio of 8:1 and spin the dark top using a short-forward draw. Z-twist, as for all singles. Aim for 8 twists per inch on the singles; this gives enough twist for a sound aran-weight singles that plies cleanly. The dark Jacob top will look slightly different from the light: the dark fibres have a stronger lustre and may draft marginally more easily. Keep the drafting zone to 8-10 cm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Spin the light singles" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Without changing the wheel settings, spin the light top at the same twist count onto a second bobbin. The goal is two bobbins as closely matched in twist, diameter, and tension as possible. Variations in diameter between the two singles show up in the marled effect: if one singles is consistently thicker, the marled yarn will have a thicker-and-thinner repeat as the two strands spiral around each other." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Plying and setting the twist" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place both bobbins on the lazy kate. Ply S-twist at a ratio of about 5:1, holding the dark and light singles separately in the back hand so they feed into the ply evenly without tangling around each other. Watch the marled pattern form as you ply: the two colours should spiral cleanly every 1-2 cm. If one colour is dominating, the singles from that bobbin is feeding faster; apply slightly more drag to it with your fingers." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wind onto the niddy-noddy and tie the hank in four places (Jacob aran is heavy enough that three ties can let the hank shift during soaking). Soak in lukewarm water for 20 minutes. Remove, press gently in a towel, and snap once or twice to set the twist. Hang under no tension to dry. Jacob dries slowly due to moderate crimp; allow several hours or an overnight hang in a warm room." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Measure WPI after drying. A marled aran-weight 2-ply sits at approximately 10 WPI. Because the two colours of Jacob have slightly different visual weights, it can look thicker than it measures; trust the WPI count rather than the visual impression." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The marled pattern is blurry rather than a clear two-colour spiral",
+              "cause": "Colour was not sorted thoroughly: mid-tone fibre is mixed into both the dark and light piles.",
+              "fix": "For the next batch, sort more rigorously by setting any mid-tone sections aside. A small amount of contamination is unavoidable and produces a soft heathered look; heavy contamination loses the marled effect."
+            },
+            {
+              "problem": "One colour wraps around the other rather than spiralling evenly",
+              "cause": "The two singles have different twist counts, or one is significantly thicker than the other.",
+              "fix": "Check the twist counts on both bobbins before plying. If one is tighter (more twists), it will wrap around the slacker singles rather than plying evenly with it. Re-balance the feed tension on the lazy kate to compensate slightly."
+            },
+            {
+              "problem": "The finished yarn is noticeably stiffer than expected for aran weight",
+              "cause": "Over-twist on the singles, combined with a standard ply ratio, producing a wiry yarn.",
+              "fix": "Jacob has a firmer handle than Merino at the same twist count. Reduce singles twist to 7 twists per inch rather than 8, or soak the finished hank in slightly warmer water (40 degrees C) to help the twist relax."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

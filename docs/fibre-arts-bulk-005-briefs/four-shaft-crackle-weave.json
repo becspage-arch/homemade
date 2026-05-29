@@ -1,0 +1,184 @@
+{
+  "slug": "four-shaft-crackle-weave",
+  "title": "Crackle weave on a four-shaft floor loom",
+  "subtitle": "Threading and treadling a unit-weave structure that produces alternating warp-float and weft-float blocks",
+  "excerpt": "Crackle weave is a unit weave worked on four shafts. Each threading unit creates a small block of warp or weft floats determined by the treadling order. The structure requires a tabby tie-up alongside the pattern treadles, so the floor loom must have at least six treadles. The result reads as a field of interlocking colour blocks, each bordered by a diagonal crackle line where the units meet.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Mary Atwater developed the systematic American version of crackle weave in her pattern booklets of the 1920s-1930s; booklets pre-dating 1928 are in the public domain in the US. Technical substance written around Atwater's pattern booklet material. Mary E. Black, The Key to Weaving (1945) cited as a standard reference for four-shaft threading conventions; written around, not quoted.",
+  "recipeTools": [
+    { "slug": "floor-loom-4-shaft", "isOptional": false },
+    { "slug": "weaving-reed", "isOptional": false },
+    { "slug": "weaving-heddles", "isOptional": false },
+    { "slug": "boat-shuttle", "isOptional": false },
+    { "slug": "warping-board", "isOptional": false },
+    { "slug": "raddle", "isOptional": true },
+    { "slug": "tapestry-needle-20", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "unit-weave",
+      "term": "Unit weave",
+      "definition": "A family of weave structures in which the draft is built from repeating threading units, each unit occupying a fixed number of shafts. Any number of units may be combined across the warp to produce colour blocks, diagonal lines, or pattern fields. Crackle, overshot, and Summer-and-Winter are all unit weaves on four shafts."
+    },
+    {
+      "slug": "crackle",
+      "term": "Crackle",
+      "definition": "A four-shaft unit weave in which each threading unit uses three adjacent shafts in a point-twill sequence (e.g. 1-2-3-2 or 2-3-4-3). The treadling alternates pattern treadles with tabby treadles, producing warp and weft float blocks separated by a characteristic diagonal crack line at block boundaries."
+    }
+  ],
+  "aliases": ["crackle weave four shaft", "atwater crackle", "crackle threading draft"],
+  "techniqueSlugs": ["four-shaft-loom-threading", "tabby-weave-foundation"],
+  "criticalTechniques": ["four-shaft-loom-threading"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Crackle weave sits in the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "unit-weave" } }], "text": "unit weave" },
+          { "type": "text", "text": " family. Each threading unit assigns three of the four shafts in a point-twill sequence, and adjacent units share one shaft end with their neighbours. The treadling uses two kinds of treadle: pattern treadles that raise the correct shaft combination for the block, and tabby treadles that interleave plain weave picks to stabilise the floats. The effect on cloth is a colour-block pattern where blocks of warp-face and weft-face weave alternate, separated by a fine diagonal crack where the units change shaft assignment. This cracked border line gives the structure its name. A six-treadle floor loom is the minimum: four pattern treadles plus two tabby treadles." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Four-shaft floor loom with at least six treadles", "qty": "1" },
+            { "name": "Warp yarn: 8/2 cotton or 5/2 cotton, smooth twist", "qty": "As calculated for the project width and length at planned sett" },
+            { "name": "Pattern weft yarn: wool or cotton in a contrasting colour, similar grist to warp", "qty": "One bobbin" },
+            { "name": "Tabby weft yarn: finer yarn in a neutral or matching colour", "qty": "One bobbin" },
+            { "name": "Weaving reed, 10 dent or 12 dent", "qty": "1" },
+            { "name": "Weaving heddles, set for four shafts", "qty": "As needed for the number of warp ends" },
+            { "name": "Warping board and raddle", "qty": "1 each" },
+            { "name": "Boat shuttle for each weft yarn", "qty": "2" },
+            { "name": "Blunt darning needle (for weaving in tails)", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Understand the threading units" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Each " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "crackle" } }], "text": "crackle" },
+          { "type": "text", "text": " unit uses four ends threaded on three shafts in a point-twill sequence. The four standard units are:" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Unit A: 1-2-3-2 (shafts 1, 2, 3, 2). Unit B: 2-3-4-3 (shafts 2, 3, 4, 3). Unit C: 3-4-1-4 (shafts 3, 4, 1, 4). Unit D: 4-1-2-1 (shafts 4, 1, 2, 1). Adjacent units share one shaft end: Unit A ends on shaft 2, Unit B begins on shaft 2. The shared end is not doubled; each end appears once in the threading sequence." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Plan the block layout and warp" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Decide how many blocks and in what sequence. A simple two-block layout alternates Unit A and Unit B across the warp. A four-block layout uses all four units in sequence. Wind the warp on the warping board at the planned sett (10 epi is a working starting point for 8/2 cotton in crackle). Thread the warping board pegs at the correct width for the block sequence. Beam the warp through the raddle at the back beam, spreading it evenly before winding on." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Thread the heddles" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Thread the heddles from right to left, following the block sequence. Each unit is four heddle positions: for Unit A, thread heddle 1, then heddle 2, then heddle 3, then heddle 2 again. Move to the next unit and begin at its first shaft. Work slowly and check the sequence at every unit boundary; a threading error at one block causes the pattern to collapse in that section only, not across the whole warp, making errors easier to locate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Sley the reed and tie on" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sley the reed at the planned sett, two ends per dent in a 5-dent reed for 10 epi, or one end per dent in a 10-dent reed. Tie the bouts to the front beam apron rod with a lark's-head knot and tension evenly. Check warp tension across the width by pressing down on each group of ends: all groups should spring back with the same resistance. Correct any uneven sections before beginning to weave." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 5: Set up the treadle tie-up" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Crackle requires six treadles in a standard two-block layout. Treadles 1-4 are pattern treadles, each lifting a different shaft combination to weave one block in weft-face or warp-face mode. Treadles 5 and 6 are the tabby treadles: treadle 5 lifts shafts 1 and 3; treadle 6 lifts shafts 2 and 4. The tie-up for a two-block weft-face pattern, lifting the non-pattern shafts, is:" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Treadle 1: lift shafts 2, 3, 4 (pattern weft-face on Block A). Treadle 2: lift shafts 1, 3, 4 (pattern weft-face on Block B). Treadle 3: lift shafts 1, 2, 4 (pattern weft-face on Block C). Treadle 4: lift shafts 1, 2, 3 (pattern weft-face on Block D). Treadle 5: lift shafts 1 and 3 (tabby A). Treadle 6: lift shafts 2 and 4 (tabby B). Lash the tie-up cords to the correct treadles before beginning to weave." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 6: Weave the treadling sequence" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Each pattern pick is followed immediately by a tabby pick. To weave Block A in weft-face: press treadle 1, pass the pattern weft left to right. Press treadle 5, pass the tabby weft right to left. Press treadle 1, pass the pattern weft left to right. Press treadle 6, pass the tabby weft right to left. Continue in this pattern-tabby alternation. Beat each pick firmly with the beater to cover the warp in the pattern block areas. The tabby picks must be beaten as firmly as the pattern picks; under-beating the tabby causes the floats to bubble and lift." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The blocks do not appear: the cloth looks like a disordered tabby",
+              "cause": "The treadle tie-up has shafts reversed, or the treadles are pressed in the wrong sequence",
+              "fix": "Lift each pattern treadle by hand before weaving begins and look at which shafts rise. Compare them to the planned tie-up and correct any mislashed treadle cords. A sample weave of four picks on each treadle shows immediately whether the block pattern is correct."
+            },
+            {
+              "problem": "The crackle lines at block boundaries are very wide and ragged",
+              "cause": "Adjacent threading units share too many ends, or the block change has been placed mid-unit rather than at a unit boundary",
+              "fix": "Check that every unit is exactly four ends and that the shared end between adjacent units appears only once. A block change that occurs mid-unit produces a wide, disordered crack line rather than the characteristic fine diagonal crack."
+            },
+            {
+              "problem": "The pattern weft floats do not cover the warp in the block areas",
+              "cause": "Sett is too open for the weft grist, or the pattern picks are not being beaten firmly enough",
+              "fix": "Re-sley at a closer sett, or use a heavier pattern weft. The pattern weft in weft-face crackle must be significantly heavier or at a closer sett than a balanced weave. Beat each pattern pick back against the fell before inserting the tabby pick."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

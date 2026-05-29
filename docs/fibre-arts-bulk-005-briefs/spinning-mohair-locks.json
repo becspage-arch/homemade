@@ -1,0 +1,210 @@
+{
+  "slug": "spinning-mohair-locks",
+  "title": "Spinning mohair locks into a core-spun textured yarn",
+  "subtitle": "Using a wool singles as a core to control the lustrous halo of Angora goat fibre",
+  "excerpt": "Mohair from Angora goats has long, lustrous staples (8-12 cm) and high tensile strength. Spinning the locks directly produces a hairy singles, but core-spinning onto a pre-spun wool singles gives a structured yarn that holds its shape without losing the characteristic halo. The finished core-spun yarn wraps to approximately 10 WPI with bulk from the halo included.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Observation-led. Core-spinning is documented in modern art-yarn practice and the technique is centuries old. The combination of mohair over a wool core for a hairy textured yarn is the standard approach taught across fibre arts guilds. No single modern published text is quoted.",
+  "recipeTools": [
+    { "slug": "spinning-wheel-castle", "isOptional": false },
+    { "slug": "spinning-wheel-saxony", "isOptional": true },
+    { "slug": "niddy-noddy", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "core-spinning",
+      "term": "Core-spinning",
+      "definition": "A technique in which a pre-spun yarn (the core) is fed into the orifice while a second fibre is drafted around it. The core provides structure and tensile strength; the outer fibre provides texture, colour, or surface character. Core-spinning is used for art yarn production (mohair, silk, raw fleece locks) and for spinning fibres that have insufficient tensile strength or length to form a stable singles on their own."
+    },
+    {
+      "slug": "halo",
+      "term": "Halo",
+      "definition": "The soft cloud of fibre ends that stands away from the surface of a plied or singles yarn. Halo is characteristic of certain fibres (mohair, kid mohair, angora rabbit) and is produced by fibres whose ends are not locked into the twist structure. In knitted fabric, halo softens stitch definition and gives the cloth a fuzzy surface. In spun yarn, halo develops further after the first wash as surface fibres relax and bloom outward."
+    }
+  ],
+  "aliases": ["mohair core spinning", "angora goat locks yarn", "textured mohair singles"],
+  "techniqueSlugs": ["spinning-core-spinning", "spinning-2-ply", "spinning-setting-twist"],
+  "criticalTechniques": ["spinning-core-spinning"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Wheel safety",
+          "body": "Tie hair back, roll sleeves, no necklaces near the drive band, flyer, or bobbin. Loose fibres caught in spinning gear stop the wheel."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mohair locks from Angora goats are long (8-12 cm), highly lustrous, and have more tensile strength than most wool fibres at the same diameter. They do not crimp in the same way as wool, and if spun as a singles without support they produce a hairy yarn that is difficult to keep consistent in diameter. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "core-spinning" } }],
+            "text": "Core-spinning"
+          },
+          { "type": "text", "text": " solves the structural problem: a pre-spun wool singles feeds into the orifice as the core, and the mohair locks are drafted around it. The wool core provides the yarn's strength and shape; the mohair provides the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "halo" } }],
+            "text": "halo"
+          },
+          { "type": "text", "text": ". The finished yarn wraps to approximately 10 WPI when you include the bulk of the halo, consistent with an aran weight, though the structural core is closer to DK." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Mohair locks, washed and dried, uncombed", "qty": "50 g" },
+            { "name": "Pre-spun wool singles (DK-weight Z-twist, any breed)", "qty": "50 g on a bobbin or wound into a centre-pull ball" },
+            { "name": "Spinning wheel (castle or Saxony)", "qty": "1, set to a slow whorl ratio of 5:1-6:1" },
+            { "name": "Niddy-noddy", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the fibre" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sort the mohair locks by length and set aside any shorter or matted sections. The best locks for core-spinning are clean, open at the tip, and 8 cm or longer. Hold each lock by the cut end: the tip (growing end) should open into a small fan of fibres when you breathe gently across it. If the tip is sealed or felted, tease it open gently between finger and thumb before spinning." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The wool core must be a Z-twist singles. The mohair wraps around it with S-twist as you spin. This tightens the core's Z-twist rather than loosening it. Wind the core into a centre-pull ball or load it onto a spare bobbin on the lazy kate. It should feed smoothly without bouncing." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the wheel on a slow whorl (5:1 to 6:1 ratio) with a light brake. Core-spinning works at a slower pace than standard spinning: the core feeds in continuously while you control how much mohair drafts around it, and a fast take-up pulls the core through before enough mohair has wrapped." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Spinning" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Set up the core feed" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Thread the core yarn through the orifice and tie onto the leader. Hold the core in your front hand alongside the leader and treadle a few times to establish the S-twist direction. The core should advance straight through the orifice without twisting; only the mohair wraps around it." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pick up the first mohair lock with your back hand. Hold it by the cut end (the end that was closest to the skin). This lets the tip fibres stand outward and form the halo rather than lock into the core. Hold the lock at about 45 degrees to the core so the fibres fan across the twist zone." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Wrap the mohair around the core" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "As the wheel turns S-twist, the twist wraps the lock around the core. Let the lock travel toward the orifice as the fibres are taken up. Do not pull back against the twist; let the wheel do the wrapping. Control the angle of the lock to change how tightly it binds. A steeper angle (lock more upright) wraps fewer fibres per centimetre and leaves more halo. A shallower angle wraps more and reduces the halo." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "When the first lock is almost fully wrapped, overlap the cut end of the next lock with the tip end of the previous one by about 2 cm and continue spinning. The overlap joins the locks without a gap in the halo. Work through all the sorted locks in order. If a lock is short, use two together, held side by side." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Check the core coverage" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Every metre or so, stop treadling and look back along the yarn on the bobbin. The core should not be visible: mohair should cover it fully. If you can see the core colour through the wrapping, advance the next lock more slowly or hold it at a shallower angle to add more fibres per centimetre." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Plying and setting the twist" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A core-spun mohair yarn can be used as a singles or plied with a second strand. For a singles, wind directly onto the niddy-noddy without any plying step. The core's Z-twist structure gives it more stability than a conventional singles." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "To ply: spin a second core-spun bobbin at the same settings, then ply the two together with Z-twist (same direction as the singles, which creates an unusual but stable structure for a heavily textured yarn). Or ply one core-spun bobbin against a plain wool singles to balance the structure. S-twist plying works for a standard balanced yarn; Z-twist plying produces a cabled-texture effect." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "To set the twist on a singles: wind onto the niddy-noddy and tie in four places. Soak in lukewarm water for 20 minutes. Mohair's high lustre means it absorbs water slowly; submerge the hank fully and press it down gently in the water rather than just floating it on the surface. Remove, press in a towel without wringing, and hang under a small weight (a full niddy-noddy or a light filled bottle threaded through the hank) to encourage the yarn to dry straight. Mohair does not snap like wool; hanging it taut is the equivalent step." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The halo will develop further after the first wash in the finished project: fibres that were held against the core by the twist relax and bloom outward. The dry finished yarn should measure approximately 10 WPI including the halo; without the halo the core alone is closer to 12-14 WPI." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The core is visible in patches through the mohair wrapping",
+              "cause": "Locks ran out and there was a gap before the next lock was added, or a lock was held at too steep an angle and left a sparse section.",
+              "fix": "Overlap subsequent locks more generously (3-4 cm) and hold them at a shallower angle to increase fibre coverage per centimetre. Sparse sections can be reinforced after spinning by threading a short lock through the gap with a blunt needle and pressing it into the halo around it."
+            },
+            {
+              "problem": "The mohair felts onto itself rather than forming a loose halo",
+              "cause": "Agitation during the soak, or water temperature too warm (above 40 degrees C). Mohair felts more readily than most wools when wet.",
+              "fix": "Keep the soak in cool to lukewarm water (30-35 degrees C) and do not agitate: submerge and leave still. Press gently to remove water rather than squeezing. If felting has already begun in a section, tease the fibres gently apart while the yarn is still wet."
+            },
+            {
+              "problem": "The locks wrap unevenly, with some sections thick and some thin",
+              "cause": "Lock lengths were inconsistent, or the take-up speed varied across the bobbin.",
+              "fix": "Sort locks into consistent lengths before spinning and use pairs of shorter locks to fill in where needed. Check that the core yarn is feeding smoothly without catching: a snag in the core feed causes a sudden burst of take-up that pulls the mohair lock in unevenly."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

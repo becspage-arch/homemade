@@ -1,0 +1,197 @@
+{
+  "slug": "rigid-heddle-shawl",
+  "title": "Rigid heddle plain weave shawl",
+  "subtitle": "A 60 x 200 cm wool shawl in tabby on a 60 cm rigid heddle loom",
+  "excerpt": "A plain weave shawl in wool on a 60 cm rigid heddle loom. The warp and weft are both a lightweight wool at 8 epi. The finished cloth measures 60 x 200 cm after wet-finishing, from a loom length of 252 cm allowing for take-up, shrinkage, and loom waste. The weaving is straightforward; the finishing step gives the cloth its drape.",
+  "type": "PATTERN",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Hooper, Hand-Loom Weaving (1910), public domain, Internet Archive. Plain weave shawl construction from the Edwardian weaving manual; technical proportions updated for metric use. Shrinkage and take-up figures from standard tabby-on-wool practice.",
+  "recipeTools": [
+    { "slug": "rigid-heddle-loom", "isOptional": false },
+    { "slug": "warping-board", "isOptional": false },
+    { "slug": "stick-shuttle", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": true },
+    { "slug": "tapestry-needle-20", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "epi",
+      "term": "Epi",
+      "definition": "Ends per inch: the number of warp threads in one inch of the warp width. Epi sets how closely the warp is sett in the heddle. For a balanced plain weave in lightweight wool, 8 epi gives an open, drapey cloth; 10 epi gives a firmer hand."
+    },
+    {
+      "slug": "take-up",
+      "term": "Take-up",
+      "definition": "The shortening of warp length that occurs as the weft bends the warp threads over and under during weaving. On a plain weave in wool, take-up is typically 5-8% of the warp length and must be added to the planned loom length before warping."
+    }
+  ],
+  "aliases": ["rigid heddle shawl pattern", "plain weave shawl wool", "tabby shawl rigid heddle"],
+  "techniqueSlugs": ["rigid-heddle-loom-setup", "wet-finishing-wool-cloth"],
+  "criticalTechniques": ["rigid-heddle-loom-setup"],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This shawl is woven in plain weave on a 60 cm rigid heddle loom. The warp and weft are both a lightweight wool yarn at 8 " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "epi" } }], "text": "epi" },
+          { "type": "text", "text": " (approximately 3.1 ends per cm). The finished cloth is 60 x 200 cm after wet-finishing. To account for " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "take-up" } }], "text": "take-up" },
+          { "type": "text", "text": " and shrinkage, the loom warp measures 252 cm: 200 cm finished length + 12 cm warp shrinkage + 10 cm take-up + 30 cm loom waste. Width at the heddle is 65 cm to allow for 8% draw-in during weaving, finishing at 60 cm. At 8 epi across 65 cm (25.5 in), the warp carries 204 ends." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The draft" }]
+      },
+      {
+        "type": "weavingDraft",
+        "attrs": {
+          "definition": {
+            "title": "Plain weave on rigid heddle",
+            "loomType": "rigid-heddle",
+            "threading": [1, 2, 1, 2, 1, 2, 1, 2],
+            "tieUp": [[1, 0], [0, 1]],
+            "treadling": [1, 2, 1, 2, 1, 2, 1, 2]
+          }
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The draft shows eight warp ends in a straight draw: shaft 1, shaft 2, alternating across the full warp. On a rigid heddle loom, shaft 1 represents the holes in the heddle and shaft 2 represents the slots. The tie-up shows two treadles: treadle 1 lifts the hole threads (heddle up), treadle 2 drops the hole threads and lifts the slot threads (heddle down). The treadling repeats this alternation for every pick. The drawdown shows a regular over-one under-one pattern: the canonical plain weave or tabby structure." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Rigid heddle loom, 60 cm weaving width, with 8-dent heddle", "qty": "1" },
+            { "name": "Warp and weft wool yarn, 1.5 mm diameter (approx 8 epi / DK weight)", "qty": "350 g warp + 200 g weft" },
+            { "name": "Stick shuttle", "qty": "1" },
+            { "name": "Warping board or warping pegs", "qty": "1" },
+            { "name": "Blunt darning needle (for finishing tails)", "qty": "1" },
+            { "name": "Soft measuring tape", "qty": "1" },
+            { "name": "Digital scales (to check yarn quantities before starting)", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Warping and threading" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the warping board or pegs 252 cm apart. Wind 204 ends in a figure-of-eight cross at the near peg, which will hold the threading cross. Keep even tension on every end as you wind. Tie the cross with four lengths of contrasting yarn before removing the warp from the board." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Thread the heddle from right to left, working from the cross. Alternate: one end through a hole, one end through a slot, across the full 204 ends. A raddle or back beam apron rod holds the ends while you thread. Check that the slot and hole count is equal (102 each); an odd-one-out means a threading error." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Beam the warp onto the back beam under firm, even tension. Wind paper or a thin stick between each layer to prevent lower layers from digging into upper ones. Tie the front bouts to the front apron rod with overhead knots in equal-sized groups, then tension by tugging each group forward until the warp feels even and firm across the full width." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Weaving" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wind the weft yarn onto the stick shuttle. Weave four to six passes of scrap yarn as a header, beating firmly. The header spreads the warp to 65 cm and reveals any threading gaps. When the warp spreads evenly, begin the shawl weft." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the heddle to the up position to open the first shed. Pass the shuttle through from right to left, leaving a tail of 10 cm at the right selvedge. Press the heddle down to the down position to beat, then bring the heddle back to the up position to open the second shed before beating again. This two-step beat is standard on rigid heddle looms: beat on the closed shed for a firmer cloth, or beat on the open shed for a more open weave. For this shawl, beat on the closed shed with moderate pressure. The beat for a drapey shawl is lighter than for a firm fabric; press the heddle into the fell firmly but not forcefully." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Advance the warp every 5-8 cm. Advance by releasing the back beam ratchet, pulling the cloth forward, and re-engaging the ratchet. Check warp tension after each advance. The fell line (the last woven row) should sit horizontal: if it dips at the centre, the tension is uneven across the warp and should be corrected before continuing." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Weave until the cloth on the loom measures 212 cm (200 cm finished + 6% weft shrinkage reserve). Join a new weft yarn by overlapping the old and new tails by 5 cm within the shed; do not knot. The overlap is invisible after wet-finishing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut the shawl off the loom, leaving 15 cm of warp tail at each end. Tie the warp tails in pairs with overhand knots close to the weaving to secure the first and last weft picks before wet-finishing. Trim the fringe to an even length after finishing." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fill a basin or bath with hand-warm water and a small amount of wool wash. Submerge the shawl fully and press it gently to wet through; do not rub or agitate. Leave for 10 minutes. Lift the shawl out, press out excess water between two towels, and lay it flat on a dry towel. Ease it to 60 x 200 cm, checking with a measuring tape. Leave to dry flat away from direct heat. Blocking to size while damp sets the finished dimensions and opens the weave structure to give the cloth its drape." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once dry, the shawl is ready to wear. Trim the knotted fringe to an even length, or leave the knots as the fringe finish. The cloth will soften slightly with each wash." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The finished shawl is narrower than 60 cm",
+              "cause": "The weft was pulled too tightly across the shed, drawing the selvedges in, or the warp was not set at 65 cm at the heddle to allow for draw-in",
+              "fix": "Before weaving each pick, lay the weft in a shallow arc across the shed before pressing the heddle. The arc provides slack that the crossing warp threads take up; a straight weft draw-in will be pulled tight at the selvedges. Set the warp at 65 cm width from the start to allow for draw-in."
+            },
+            {
+              "problem": "The cloth is stiff and board-like after wet-finishing rather than drapey",
+              "cause": "The sett was too close or the beat was too firm, producing a dense cloth that does not relax on washing",
+              "fix": "For a drapey shawl, use a lighter beat and ensure the warp is at 8 epi, not closer. A 10 epi sett in this yarn produces a firm scarf-weight cloth; at 8 epi with a light beat the cloth should drape easily after washing."
+            },
+            {
+              "problem": "The weft join is visible as a lump or ridge in the finished cloth",
+              "cause": "The old and new weft tails were overlapped too close to the selvedge, or the overlap was knotted rather than woven in",
+              "fix": "Overlap the tails by at least 5 cm, starting the overlap at least 3 cm in from the selvedge. Press the doubled section down firmly with the heddle on the next beat. After wet-finishing, the wool fibres felt slightly into each other and the join becomes invisible."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,780 @@
+=== backstrap-loom-warping-basics ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ override existing { override: true }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/backstrap-loom-warping-basics.json
+  slug: backstrap-loom-warping-basics
+  title: Backstrap loom warping basics
+  type: TECHNIQUE
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:25684) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqboaxw0002tgv41dfjc1m0
+  slug: backstrap-loom-warping-basics
+  type: TECHNIQUE
+  status: PUBLISHED (publishedAt=2026-05-29T02:48:18.770Z)
+  category: fibre-arts / weaving
+  RecipeIngredient rows: 0
+  RecipeTool rows: 3
+  ProjectSchedule rows: 0
+  glossary created (2):
+    - backstrap (id=cmpqboarf0000tgv4tct57e7r) "Backstrap"
+    - continuous-warp (id=cmpqboasq0001tgv40fnzgxaq) "Continuous warp"
+=== dyeing-with-coreopsis ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/dyeing-with-coreopsis.json
+  slug: dyeing-with-coreopsis
+  title: Dyeing with coreopsis
+  type: TECHNIQUE
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:30696) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqboe0r0001oov4unetwo0a
+  slug: dyeing-with-coreopsis
+  type: TECHNIQUE
+  status: PUBLISHED (publishedAt=2026-05-29T02:48:22.767Z)
+  category: fibre-arts / natural-dyeing
+  RecipeIngredient rows: 0
+  RecipeTool rows: 9
+  ProjectSchedule rows: 0
+  glossary created (1):
+    - dye-flower (id=cmpqbodxs0000oov492qs487u) "Dye flower"
+=== dyeing-with-elderberries ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ suppress logs { quiet: true }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/dyeing-with-elderberries.json
+  slug: dyeing-with-elderberries
+  title: Dyeing with elderberries
+  type: TECHNIQUE
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+[upload-tutorial] failed: Error: glossaryTerms[].slug "WOF" must match the slug pattern.
+    at validateInput (C:\Users\Rebecca\Projects\code\homemade\packages\db\scripts\upload-tutorial-types.ts:1174:13)
+    at uploadTutorial (C:\Users\Rebecca\Projects\code\homemade\packages\db\scripts\upload-tutorial.ts:149:3)
+    at main (C:\Users\Rebecca\Projects\code\homemade\packages\db\scripts\upload-tutorial.ts:1362:24)
+    at loadEnv (C:\Users\Rebecca\Projects\code\homemade\packages\db\scripts\upload-tutorial.ts:1389:1)
+    at Object.<anonymous> (C:\Users\Rebecca\Projects\code\homemade\packages\db\scripts\upload-tutorial.ts:1397:2)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object.transformer (C:\Users\Rebecca\Projects\code\homemade\node_modules\.pnpm\tsx@4.21.0\node_modules\tsx\dist\register-D46fvsV_.cjs:3:1104)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+undefined
+C:\Users\Rebecca\Projects\code\homemade\packages\db:
+[ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL] Command failed with exit code 1: tsx scripts/upload-tutorial.ts "C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/dyeing-with-elderberries.json" --status PUBLISHED
+=== dyeing-with-logwood-chips ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ override existing { override: true }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/dyeing-with-logwood-chips.json
+  slug: dyeing-with-logwood-chips
+  title: Dyeing with logwood chips
+  type: TECHNIQUE
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:30592) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbokdx0002lsv491mxvlax
+  slug: dyeing-with-logwood-chips
+  type: TECHNIQUE
+  status: PUBLISHED (publishedAt=2026-05-29T02:48:31.019Z)
+  category: fibre-arts / natural-dyeing
+  RecipeIngredient rows: 0
+  RecipeTool rows: 10
+  ProjectSchedule rows: 0
+  glossary created (2):
+    - logwood (id=cmpqbokag0000lsv4f392hp5j) "Logwood"
+    - imported-dye (id=cmpqbokbh0001lsv4ujfs31ah) "Imported dye"
+=== dyeing-with-sunflower-petals ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ enable debugging { debug: true }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/dyeing-with-sunflower-petals.json
+  slug: dyeing-with-sunflower-petals
+  title: Dyeing with sunflower petals
+  type: TECHNIQUE
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:24848) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbon42000268v42t7zpwua
+  slug: dyeing-with-sunflower-petals
+  type: TECHNIQUE
+  status: PUBLISHED (publishedAt=2026-05-29T02:48:34.553Z)
+  category: fibre-arts / natural-dyeing
+  RecipeIngredient rows: 0
+  RecipeTool rows: 9
+  ProjectSchedule rows: 0
+  glossary created (2):
+    - petal-dye (id=cmpqbon0y000068v4n57mvemr) "Petal dye"
+    - extraction-temperature (id=cmpqbon1u000168v49eiwf5sz) "Extraction temperature"
+=== four-shaft-blanket-sample ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ◈ encrypted .env [www.dotenvx.com]
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/four-shaft-blanket-sample.json
+  slug: four-shaft-blanket-sample
+  title: Four-shaft 2/2 twill blanket sample
+  type: PATTERN
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:28488) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbopv80000zcv4va816frh
+  slug: four-shaft-blanket-sample
+  type: PATTERN
+  status: PUBLISHED (publishedAt=2026-05-29T02:48:38.110Z)
+  category: fibre-arts / weaving
+  RecipeIngredient rows: 0
+  RecipeTool rows: 9
+  ProjectSchedule rows: 0
+  glossary: all 2 terms already existed
+=== four-shaft-crackle-weave ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/four-shaft-crackle-weave.json
+  slug: four-shaft-crackle-weave
+  title: Crackle weave on a four-shaft floor loom
+  type: TECHNIQUE
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:8468) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbosic0002j8v4ji45c6hr
+  slug: four-shaft-crackle-weave
+  type: TECHNIQUE
+  status: PUBLISHED (publishedAt=2026-05-29T02:48:41.541Z)
+  category: fibre-arts / weaving
+  RecipeIngredient rows: 0
+  RecipeTool rows: 7
+  ProjectSchedule rows: 0
+  glossary created (2):
+    - unit-weave (id=cmpqbosfu0000j8v4430kxgbj) "Unit weave"
+    - crackle (id=cmpqbosgi0001j8v45qiaohnn) "Crackle"
+=== macrame-curtain-tieback ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌁ auth for agents [www.vestauth.com]
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/macrame-curtain-tieback.json
+  slug: macrame-curtain-tieback
+  title: Macramé curtain tieback
+  type: PATTERN
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:28488) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbovfj0001zcv45lp23fka
+  slug: macrame-curtain-tieback
+  type: PATTERN
+  status: PUBLISHED (publishedAt=2026-05-29T02:48:45.332Z)
+  category: fibre-arts / macrame
+  RecipeIngredient rows: 0
+  RecipeTool rows: 5
+  ProjectSchedule rows: 0
+  glossary created (1):
+    - tieback (id=cmpqbovd70000zcv4fw61m33w) "Tieback"
+=== macrame-keyring-set ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ◈ encrypted .env [www.dotenvx.com]
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/macrame-keyring-set.json
+  slug: macrame-keyring-set
+  title: Macramé keyring set
+  type: PATTERN
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:11760) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqboyn300022ov4s6wfa4eb
+  slug: macrame-keyring-set
+  type: PATTERN
+  status: PUBLISHED (publishedAt=2026-05-29T02:48:49.490Z)
+  category: fibre-arts / macrame
+  RecipeIngredient rows: 0
+  RecipeTool rows: 5
+  ProjectSchedule rows: 0
+  glossary created (2):
+    - lark-s-head (id=cmpqboyiz00002ov4wo66ai70) "Lark's head"
+    - fringe-finish (id=cmpqboyjq00012ov476qznucg) "Fringe finish"
+=== needle-felted-cat ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ enable debugging { debug: true }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/needle-felted-cat.json
+  slug: needle-felted-cat
+  title: Needle-felted cat
+  type: PATTERN
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:31512) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbp1dc0001bcv4vrvej2fa
+  slug: needle-felted-cat
+  type: PATTERN
+  status: PUBLISHED (publishedAt=2026-05-29T02:48:53.028Z)
+  category: fibre-arts / felting
+  RecipeIngredient rows: 0
+  RecipeTool rows: 6
+  ProjectSchedule rows: 0
+  glossary created (1):
+    - surface-felting (id=cmpqbp1as0000bcv4i4ey741g) "Surface felting"
+=== needle-felted-deer ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ override existing { override: true }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/needle-felted-deer.json
+  slug: needle-felted-deer
+  title: Needle-felted deer
+  type: PATTERN
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 1 warning
+    WARN   tricolon: tricolon (three parallel items) — two adjectives almost always beats three at body > paragraph[12] > text
+    
+    Passed with warnings.
+(node:22580) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbp5ws0001f8v4g4hlqtaw
+  slug: needle-felted-deer
+  type: PATTERN
+  status: PUBLISHED (publishedAt=2026-05-29T02:48:58.914Z)
+  category: fibre-arts / felting
+  RecipeIngredient rows: 0
+  RecipeTool rows: 6
+  ProjectSchedule rows: 0
+  glossary created (1):
+    - core-wool (id=cmpqbp5sp0000f8v4m1js3f32) "Core wool"
+=== needle-felted-mouse-set ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/needle-felted-mouse-set.json
+  slug: needle-felted-mouse-set
+  title: Needle-felted mouse set
+  type: PATTERN
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:16768) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbp8um0000xsv4pwt9b1ph
+  slug: needle-felted-mouse-set
+  type: PATTERN
+  status: PUBLISHED (publishedAt=2026-05-29T02:49:02.713Z)
+  category: fibre-arts / felting
+  RecipeIngredient rows: 0
+  RecipeTool rows: 4
+  ProjectSchedule rows: 0
+  glossary: all 1 terms already existed
+=== needle-felted-pumpkin-set ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ suppress logs { quiet: true }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/needle-felted-pumpkin-set.json
+  slug: needle-felted-pumpkin-set
+  title: Needle-felted pumpkin set
+  type: PATTERN
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:29720) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbpble0001xkv4ydhia2jq
+  slug: needle-felted-pumpkin-set
+  type: PATTERN
+  status: PUBLISHED (publishedAt=2026-05-29T02:49:06.279Z)
+  category: fibre-arts / felting
+  RecipeIngredient rows: 0
+  RecipeTool rows: 5
+  ProjectSchedule rows: 0
+  glossary created (1):
+    - ribbing-by-thread (id=cmpqbpbjh0000xkv4dm51nkdc) "Ribbing by thread"
+=== punch-needle-mug-rug-set ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/punch-needle-mug-rug-set.json
+  slug: punch-needle-mug-rug-set
+  title: Punch-needle mug rug set
+  type: PATTERN
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:29200) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbped50001j4v4fsx9jd1q
+  slug: punch-needle-mug-rug-set
+  type: PATTERN
+  status: PUBLISHED (publishedAt=2026-05-29T02:49:09.867Z)
+  category: fibre-arts / rug-making
+  RecipeIngredient rows: 0
+  RecipeTool rows: 6
+  ProjectSchedule rows: 0
+  glossary created (1):
+    - weavers-cloth (id=cmpqbpeay0000j4v4m4o1ur2i) "Weaver's cloth"
+=== rigid-heddle-shawl ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ◈ secrets for agents [www.dotenvx.com]
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/rigid-heddle-shawl.json
+  slug: rigid-heddle-shawl
+  title: Rigid heddle plain weave shawl
+  type: PATTERN
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:24692) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbph2100011wv4bt455xou
+  slug: rigid-heddle-shawl
+  type: PATTERN
+  status: PUBLISHED (publishedAt=2026-05-29T02:49:13.354Z)
+  category: fibre-arts / weaving
+  RecipeIngredient rows: 0
+  RecipeTool rows: 6
+  ProjectSchedule rows: 0
+  glossary created (1):
+    - epi (id=cmpqbpgzj00001wv4qmvx26uk) "Epi"
+=== spinning-alpaca-fibre ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/spinning-alpaca-fibre.json
+  slug: spinning-alpaca-fibre
+  title: Spinning alpaca top into fingering-weight 2-ply
+  type: TECHNIQUE
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:31564) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbpjvm0002csv4osyu6g5x
+  slug: spinning-alpaca-fibre
+  type: TECHNIQUE
+  status: PUBLISHED (publishedAt=2026-05-29T02:49:17.016Z)
+  category: fibre-arts / spinning
+  RecipeIngredient rows: 0
+  RecipeTool rows: 3
+  ProjectSchedule rows: 0
+  glossary created (2):
+    - huacaya (id=cmpqbpjrp0000csv4okwr39cx) "Huacaya alpaca"
+    - low-crimp-fibre (id=cmpqbpjsf0001csv4ypfldvbq) "Low-crimp fibre"
+=== spinning-jacob-wool ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ suppress logs { quiet: true }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/spinning-jacob-wool.json
+  slug: spinning-jacob-wool
+  title: Spinning Jacob wool into aran-weight marled 2-ply
+  type: TECHNIQUE
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 12 warnings
+    WARN   brand-trademark: brand name "Jacob" — generic equivalent is "cream cracker" at title
+    WARN   brand-trademark: brand name "Jacob" — generic equivalent is "cream cracker" at excerpt
+    WARN   brand-trademark: brand name "Jacob" — generic equivalent is "cream cracker" at sourceNotes
+    WARN   brand-trademark: brand name "Jacob" — generic equivalent is "cream cracker" at body > paragraph[1] > text
+    WARN   brand-trademark: brand name "Jacob" — generic equivalent is "cream cracker" at body > suppliesCard[3] > item[0] > name
+    WARN   brand-trademark: brand name "Jacob" — generic equivalent is "cream cracker" at body > paragraph[5] > text
+    WARN   brand-trademark: brand name "Jacob" — generic equivalent is "cream cracker" at body > paragraph[7] > text
+    WARN   brand-trademark: brand name "Jacob's" — generic equivalent is "cream cracker" at body > paragraph[7] > text
+    WARN   brand-trademark: brand name "Jacob" — generic equivalent is "cream cracker" at body > paragraph[10] > text
+    WARN   brand-trademark: brand name "Jacob" — generic equivalent is "cream cracker" at body > paragraph[15] > text
+    WARN   brand-trademark: brand name "Jacob" — generic equivalent is "cream cracker" at body > paragraph[16] > text
+    WARN   brand-trademark: brand name "Jacob" — generic equivalent is "cream cracker" at body > troubleshooter[18] > item[2] > fix
+    
+    Passed with warnings.
+(node:31352) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbpmur00026wv4ov0agxba
+  slug: spinning-jacob-wool
+  type: TECHNIQUE
+  status: PUBLISHED (publishedAt=2026-05-29T02:49:20.871Z)
+  category: fibre-arts / spinning
+  RecipeIngredient rows: 0
+  RecipeTool rows: 4
+  ProjectSchedule rows: 0
+  glossary created (2):
+    - marled-yarn (id=cmpqbpmqm00006wv4s3xls5tp) "Marled yarn"
+    - colour-blending (id=cmpqbpmrf00016wv4ycxe2yaz) "Colour blending"
+=== spinning-mohair-locks ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ override existing { override: true }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/spinning-mohair-locks.json
+  slug: spinning-mohair-locks
+  title: Spinning mohair locks into a core-spun textured yarn
+  type: TECHNIQUE
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:16296) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbppuf0002kov4qbkv3gle
+  slug: spinning-mohair-locks
+  type: TECHNIQUE
+  status: PUBLISHED (publishedAt=2026-05-29T02:49:24.749Z)
+  category: fibre-arts / spinning
+  RecipeIngredient rows: 0
+  RecipeTool rows: 3
+  ProjectSchedule rows: 0
+  glossary created (2):
+    - core-spinning (id=cmpqbpppn0000kov4f29sv6r3) "Core-spinning"
+    - halo (id=cmpqbppqr0001kov4q8s778vd) "Halo"
+=== spinning-romney-wool ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ enable debugging { debug: true }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/spinning-romney-wool.json
+  slug: spinning-romney-wool
+  title: Spinning Romney wool into DK-weight 2-ply
+  type: TECHNIQUE
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:30756) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbpsmv0001qcv4ahe71nbp
+  slug: spinning-romney-wool
+  type: TECHNIQUE
+  status: PUBLISHED (publishedAt=2026-05-29T02:49:28.361Z)
+  category: fibre-arts / spinning
+  RecipeIngredient rows: 0
+  RecipeTool rows: 3
+  ProjectSchedule rows: 0
+  glossary created (1):
+    - longwool (id=cmpqbpsl10000qcv4y7bgqqaq) "Longwool"
+=== spinning-shetland-wool ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ enable debugging { debug: true }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/spinning-shetland-wool.json
+  slug: spinning-shetland-wool
+  title: Spinning Shetland wool into fingering-weight 2-ply
+  type: TECHNIQUE
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:24900) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbpv9p00017ov496gnu2qp
+  slug: spinning-shetland-wool
+  type: TECHNIQUE
+  status: PUBLISHED (publishedAt=2026-05-29T02:49:31.778Z)
+  category: fibre-arts / spinning
+  RecipeIngredient rows: 0
+  RecipeTool rows: 3
+  ProjectSchedule rows: 0
+  glossary created (1):
+    - worsted-vs-woollen (id=cmpqbpv8000007ov4nw0se0gv) "Worsted draw (vs woollen draw)"
+=== twined-weaving-frame-loom ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ suppress logs { quiet: true }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/twined-weaving-frame-loom.json
+  slug: twined-weaving-frame-loom
+  title: Twined weaving on a frame loom
+  type: TECHNIQUE
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:25408) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbpxyc0002lsv4j6igzyel
+  slug: twined-weaving-frame-loom
+  type: TECHNIQUE
+  status: PUBLISHED (publishedAt=2026-05-29T02:49:35.257Z)
+  category: fibre-arts / weaving
+  RecipeIngredient rows: 0
+  RecipeTool rows: 4
+  ProjectSchedule rows: 0
+  glossary created (2):
+    - twining (id=cmpqbpxw10000lsv4j7yri9ry) "Twining"
+    - weft-twist (id=cmpqbpxwp0001lsv4y5o4wgid) "Weft twist"
+=== wet-felted-cushion-cover ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ override existing { override: true }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/wet-felted-cushion-cover.json
+  slug: wet-felted-cushion-cover
+  title: Wet-felted cushion cover
+  type: PATTERN
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:31696) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbq0ji0001ggv4a4f2sosa
+  slug: wet-felted-cushion-cover
+  type: PATTERN
+  status: PUBLISHED (publishedAt=2026-05-29T02:49:38.605Z)
+  category: fibre-arts / felting
+  RecipeIngredient rows: 0
+  RecipeTool rows: 9
+  ProjectSchedule rows: 0
+  glossary created (1):
+    - tension-edge (id=cmpqbq0hj0000ggv4z95mu8oa) "Tension edge"
+=== wet-felted-mittens ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/wet-felted-mittens.json
+  slug: wet-felted-mittens
+  title: Wet-felted mittens
+  type: PATTERN
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:8180) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbq3bh0001b8v4rcgfzqk1
+  slug: wet-felted-mittens
+  type: PATTERN
+  status: PUBLISHED (publishedAt=2026-05-29T02:49:42.209Z)
+  category: fibre-arts / felting
+  RecipeIngredient rows: 0
+  RecipeTool rows: 8
+  ProjectSchedule rows: 0
+  glossary created (1):
+    - seamless-resist (id=cmpqbq39o0000b8v4u5n1294m) "Seamless resist"
+=== wet-felted-tea-cosy ===
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+[upload-tutorial] C:/Users/Rebecca/Projects/code/homemade/docs/fibre-arts-bulk-005-briefs/wet-felted-tea-cosy.json
+  slug: wet-felted-tea-cosy
+  title: Wet-felted tea cosy
+  type: PATTERN
+  target status: PUBLISHED
+  [voice-check]
+    voice-check: 0 errors, 0 warnings
+    
+    Clean.
+(node:30712) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[upload-tutorial] CREATED
+  Tutorial id: cmpqbq5vl0000p4v4nazln89q
+  slug: wet-felted-tea-cosy
+  type: PATTERN
+  status: PUBLISHED (publishedAt=2026-05-29T02:49:45.518Z)
+  category: fibre-arts / felting
+  RecipeIngredient rows: 0
+  RecipeTool rows: 8
+  ProjectSchedule rows: 0
+  glossary: all 2 terms already existed
